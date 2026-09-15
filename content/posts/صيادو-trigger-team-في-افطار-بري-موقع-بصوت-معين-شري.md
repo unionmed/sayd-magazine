@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2016/06/زمار-فيليج-14.jpg
 wp_id: 3601
+views: 1521
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2016/06/زمار-فيليج-14.jpg"><img class="alignnone size-full wp-image-3615" src="https://sayd-magazine.com/wp-content/uploads/2016/06/زمار-فيليج-14.jpg" alt="زمار فيليج 14" width="600" height="400" /></a>

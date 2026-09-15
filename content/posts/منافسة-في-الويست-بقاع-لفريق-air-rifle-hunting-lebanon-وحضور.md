@@ -6,6 +6,7 @@ author: nhakeem
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2014/09/MED-138230573660-843-26.jpg
 wp_id: 381
+views: 1178
 ---
 
 <div>أقام  فريق AIR RIFLE HUNTING LEBANON  اليوم الأحد 20 -10 - 2013 مباراة ببندقية ضغط الهواء " الخردقة " PCP   و SPRING  في ويست بقاع كونتري كلوب - خربة قنافار. وشارك في المباراة اكثر من 40 مشترك تنافسوا على تحقيق افضل نتيجة ممكنة وربحوا جوائز قيمة من بنادق وخرطوش وعتاد صيد  مقدمة من MIRA و Joseph RAMIA و ASSI و NORICA و DIANA و LEBANESE  HUNTINE CLUB و WEST BEKAA COUNTRY CLUB .</div>

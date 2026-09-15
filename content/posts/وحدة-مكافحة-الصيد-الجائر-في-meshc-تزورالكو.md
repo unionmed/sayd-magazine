@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2019/03/كولونيل-الاسمر.jpg
 wp_id: 5141
+views: 1329
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2019/03/كولونيل-الاسمر.jpg"><img class="alignnone size-full wp-image-5142" src="https://sayd-magazine.com/wp-content/uploads/2019/03/كولونيل-الاسمر.jpg" alt="كولونيل الاسمر" width="600" height="400" /></a>

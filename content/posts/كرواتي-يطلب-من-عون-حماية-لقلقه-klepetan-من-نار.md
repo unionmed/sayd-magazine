@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار, ثقافة وتراث]
 featured: https://sayd-magazine.com/wp-content/uploads/2017/04/رسالة-من-كرواتي-الى-ميشال-عون.jpg
 wp_id: 4478
+views: 1240
 ---
 
 &nbsp;

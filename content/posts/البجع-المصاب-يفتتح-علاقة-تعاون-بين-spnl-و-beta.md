@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار, شريط]
 featured: https://sayd-magazine.com/wp-content/uploads/2020/10/ماهر-بجع-2.jpg
 wp_id: 6157
+views: 534
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2020/10/ماهر-بجع-2.jpg"><img class="alignnone size-full wp-image-6159" src="https://sayd-magazine.com/wp-content/uploads/2020/10/ماهر-بجع-2.jpg" alt="" width="600" height="400" /></a>

@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار, صيد بري]
 featured: https://sayd-magazine.com/wp-content/uploads/2021/02/مخابرات-جيش-1.jpg
 wp_id: 6252
+views: 449
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2021/02/مخابرات-جيش-1.jpg"><img class="alignnone size-full wp-image-6253" src="https://sayd-magazine.com/wp-content/uploads/2021/02/مخابرات-جيش-1.jpg" alt="" width="600" height="400" /></a>

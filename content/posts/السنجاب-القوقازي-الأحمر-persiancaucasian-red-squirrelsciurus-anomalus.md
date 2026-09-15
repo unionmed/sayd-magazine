@@ -6,6 +6,7 @@ author: akhatib
 categories: [جعبة المنوعات]
 featured: https://sayd-magazine.com/wp-content/uploads/2018/09/سنجاب-1.jpg
 wp_id: 4985
+views: 2347
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2018/09/سنجاب-1.jpg"><img class="alignnone size-full wp-image-4986" src="https://sayd-magazine.com/wp-content/uploads/2018/09/سنجاب-1.jpg" alt="سنجاب 1" width="600" height="400" /></a>

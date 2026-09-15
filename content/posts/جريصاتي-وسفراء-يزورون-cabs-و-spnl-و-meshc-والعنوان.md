@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2019/10/اغبة-2.jpg
 wp_id: 5381
+views: 509
 ---
 
 &nbsp;

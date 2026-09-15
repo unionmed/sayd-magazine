@@ -6,6 +6,7 @@ author: akhatib
 categories: [عتاد وسلاح الصيد]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/03/maxresdefault1.jpg
 wp_id: 1796
+views: 5975
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2015/03/maxresdefault1.jpg"><img class="alignnone size-full wp-image-1871" src="https://sayd-magazine.com/wp-content/uploads/2015/03/maxresdefault1.jpg" alt="maxresdefault" width="640" height="360" /></a>

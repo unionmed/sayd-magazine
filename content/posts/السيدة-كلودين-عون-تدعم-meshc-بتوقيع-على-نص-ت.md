@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2018/11/كلودين-عون.jpg
 wp_id: 5053
+views: 1087
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2018/11/كلودين-عون.jpg"><img class="alignnone size-full wp-image-5054" src="https://sayd-magazine.com/wp-content/uploads/2018/11/كلودين-عون.jpg" alt="كلودين عون" width="600" height="400" /></a>

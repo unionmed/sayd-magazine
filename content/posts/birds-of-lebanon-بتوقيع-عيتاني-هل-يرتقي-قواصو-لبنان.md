@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2016/06/عيتاني-1.jpg
 wp_id: 3659
+views: 1759
 ---
 
 &nbsp;

@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2017/04/مدرسة-صليما-4.jpg
 wp_id: 4403
+views: 902
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2017/04/مدرسة-صليما-4.jpg"><img class="alignnone size-full wp-image-4408" src="https://sayd-magazine.com/wp-content/uploads/2017/04/مدرسة-صليما-4.jpg" alt="مدرسة صليما 4" width="600" height="400" /></a>

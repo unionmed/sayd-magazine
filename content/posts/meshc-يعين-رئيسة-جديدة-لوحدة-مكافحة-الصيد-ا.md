@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2018/05/شرين-بو-رفول.jpg
 wp_id: 4919
+views: 2388
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2018/05/شرين-بو-رفول.jpg"><img class="alignnone size-full wp-image-4920" src="https://sayd-magazine.com/wp-content/uploads/2018/05/شرين-بو-رفول.jpg" alt="شرين بو رفول" width="600" height="400" /></a>

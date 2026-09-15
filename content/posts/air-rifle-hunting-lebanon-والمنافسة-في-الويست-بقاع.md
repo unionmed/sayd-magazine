@@ -6,6 +6,7 @@ author: nhakeem
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2014/09/AR.jpg
 wp_id: 377
+views: 2626
 ---
 
 <p align="right">برعاية MIRA و Joseph RAMIA و ASSI و NORICA و DIANA و Lebanese hunting Club و مجلة " صيد " يقيم فريق Air rifle hunting lebanon مباراة ذات مستوى دولي في بندقية PCP ، Spring air rifle في نادي البقاع الغربي في خربة قنافار ( west bekaa country club ) الأحد في 20 تشرين الأول 2013 الساعة التاسعة صباحا.</p>

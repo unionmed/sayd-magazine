@@ -6,6 +6,7 @@ author: akhatib
 categories: [صيد بري, صيد وفروسية, عتاد وسلاح الصيد]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/04/غلاف-توب-5.jpg
 wp_id: 2070
+views: 26993
 ---
 
 &nbsp;

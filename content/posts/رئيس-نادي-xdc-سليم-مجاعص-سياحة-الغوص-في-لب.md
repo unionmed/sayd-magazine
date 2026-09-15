@@ -6,6 +6,7 @@ author: akhatib
 categories: [رياضات, رياضات وسياحة بيئية]
 featured: https://sayd-magazine.com/wp-content/uploads/2019/04/salim-5.jpg
 wp_id: 5216
+views: 1728
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2019/04/salim-5.jpg"><img class="alignnone size-full wp-image-5221" src="https://sayd-magazine.com/wp-content/uploads/2019/04/salim-5.jpg" alt="salim 5" width="600" height="400" /></a>

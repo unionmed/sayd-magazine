@@ -6,6 +6,7 @@ author: akhatib
 categories: [عتاد وسلاح الصيد]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/03/beretta-بيريتا.jpg
 wp_id: 1756
+views: 6723
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2015/03/beretta-بيريتا.jpg"><img class="alignnone size-full wp-image-1764" src="https://sayd-magazine.com/wp-content/uploads/2015/03/beretta-بيريتا.jpg" alt="beretta بيريتا" width="600" height="400" /></a>

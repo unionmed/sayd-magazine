@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2016/08/بولاريس-2.jpg
 wp_id: 3772
+views: 2548
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2016/08/بولاريس-2.jpg"><img class="alignnone size-full wp-image-3774" src="https://sayd-magazine.com/wp-content/uploads/2016/08/بولاريس-2.jpg" alt="بولاريس 2" width="600" height="400" /></a>

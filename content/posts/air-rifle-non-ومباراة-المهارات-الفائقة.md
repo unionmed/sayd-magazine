@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/04/air-rifile.jpg
 wp_id: 2024
+views: 1222
 ---
 
 &nbsp;

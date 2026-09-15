@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2018/03/كابس11.jpg
 wp_id: 4873
+views: 1443
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2018/03/كابس11.jpg"><img class="alignnone size-full wp-image-4884" src="https://sayd-magazine.com/wp-content/uploads/2018/03/كابس11.jpg" alt="كابس11" width="600" height="400" /></a>

@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار, كلمتكم]
 featured: https://sayd-magazine.com/wp-content/uploads/2017/02/wild-boar-hunters.jpg
 wp_id: 4250
+views: 1045
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2017/02/wild-boar-hunters.jpg"><img class="alignnone size-full wp-image-4251" src="https://sayd-magazine.com/wp-content/uploads/2017/02/wild-boar-hunters.jpg" alt="wild boar hunters" width="600" height="400" /></a>

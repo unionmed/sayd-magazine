@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2019/04/للمجلة-ادونيس-ولوغو.jpg
 wp_id: 5207
+views: 625
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2019/04/للمجلة-ادونيس-ولوغو.jpg"><img class="alignnone size-full wp-image-5208" src="https://sayd-magazine.com/wp-content/uploads/2019/04/للمجلة-ادونيس-ولوغو.jpg" alt="للمجلة ادونيس ولوغو" width="600" height="400" /></a>

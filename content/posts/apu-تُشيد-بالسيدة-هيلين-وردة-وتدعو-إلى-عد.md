@@ -6,6 +6,7 @@ author: jabourached
 categories: [أخبار, صيد بري]
 featured: https://sayd-magazine.com/wp-content/uploads/2020/05/هيلين-1.jpg
 wp_id: 5701
+views: 425
 ---
 
 <p dir="rtl" style="text-align: justify;"><a href="https://sayd-magazine.com/wp-content/uploads/2020/05/هيلين-1.jpg"><img class="alignnone size-full wp-image-5726" src="https://sayd-magazine.com/wp-content/uploads/2020/05/هيلين-1.jpg" alt="" width="600" height="400" /></a>

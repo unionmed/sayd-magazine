@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2018/03/رئيسة-وحدة-مكافحة-الصيد-الجائر.jpg
 wp_id: 4855
+views: 998
 ---
 
 &nbsp;

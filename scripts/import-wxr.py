@@ -14,6 +14,7 @@ Outputs:
 from __future__ import annotations
 
 import argparse
+import csv
 import html
 import json
 import re
@@ -36,6 +37,7 @@ DEFAULT_XML = ROOT / "exports" / "saydmagazine-.WordPress.2026-09-15.xml"
 DEFAULT_OUT = ROOT / "docs"
 CONTENT_DIR = ROOT / "content"
 ASSETS_SRC = ROOT / "assets"
+VIEWS_CSV = ROOT / "analytics" / "post-views.csv"
 
 SITE_TITLE = "مجلة صيد"
 SITE_TITLE_EN = "Sayd Magazine"
@@ -146,6 +148,89 @@ def format_ar_date(dt: datetime | None) -> str:
         "تموز", "آب", "أيلول", "تشرين الأول", "تشرين الثاني", "كانون الأول",
     ]
     return f"{dt.day} {months[dt.month - 1]} {dt.year}"
+
+
+
+def load_post_views(path: Path = VIEWS_CSV) -> tuple[dict[str, int], dict[str, int]]:
+    """Load analytics/post-views.csv → (by_slug, by_post_id) view maps.
+
+    Uses utf-8-sig to tolerate a BOM on the post_id column header.
+    """
+    by_slug: dict[str, int] = {}
+    by_id: dict[str, int] = {}
+    if not path.exists():
+        print(f"Warning: views CSV not found at {path}")
+        return by_slug, by_id
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            raw_views = (row.get("views") or "").strip()
+            try:
+                views = int(raw_views)
+            except ValueError:
+                continue
+            pid = (row.get("post_id") or "").strip()
+            if pid:
+                by_id[pid] = views
+            raw_slug = (row.get("slug") or "").strip()
+            if raw_slug:
+                by_slug[slugify(raw_slug)] = views
+    return by_slug, by_id
+
+
+def attach_views(
+    posts: list[dict], by_slug: dict[str, int], by_id: dict[str, int]
+) -> dict[str, int]:
+    """Match views onto posts: slug first, then wp post_id. Mutates posts."""
+    matched_slug = 0
+    matched_id = 0
+    for p in posts:
+        views = None
+        how = None
+        slug = p.get("slug") or ""
+        # Prefer exact slug; also try base slug before dedupe suffix (-2, -3…)
+        candidates = [slug]
+        if slug and re.search(r"-\d+$", slug):
+            candidates.append(re.sub(r"-\d+$", "", slug))
+        for cand in candidates:
+            if cand and cand in by_slug:
+                views = by_slug[cand]
+                how = "slug"
+                break
+        if views is None:
+            pid = str(p.get("id") or "").strip()
+            if pid and pid in by_id:
+                views = by_id[pid]
+                how = "id"
+        p["views"] = views  # int or None (unknown)
+        if how == "slug":
+            matched_slug += 1
+        elif how == "id":
+            matched_id += 1
+    return {
+        "matched": matched_slug + matched_id,
+        "matched_slug": matched_slug,
+        "matched_id": matched_id,
+        "total_posts": len(posts),
+        "csv_slugs": len(by_slug),
+        "csv_ids": len(by_id),
+    }
+
+
+def format_views_label(n: int) -> str:
+    """Arabic views label: مشاهدة (1) / مشاهدات (else), with thousands separators."""
+    label = "مشاهدة" if n == 1 else "مشاهدات"
+    return f"{n:,} {label}"
+
+
+def views_chip(p: dict, cls: str = "meta-views") -> str:
+    """Compact views chip HTML. Hide when views unknown; show 0 when known."""
+    views = p.get("views")
+    if views is None:
+        return ""
+    return (
+        f'<span class="views {cls}">{esc(format_views_label(int(views)))}</span>'
+    )
 
 
 def esc(s: str) -> str:
@@ -330,6 +415,7 @@ def write_markdown(data: dict) -> None:
             f"categories: [{cats}]",
             f"featured: {p['featured']}",
             f"wp_id: {p['id']}",
+            f"views: {p['views'] if p.get('views') is not None else ''}",
             "---",
             "",
             p["content"],
@@ -670,7 +756,7 @@ def build_site(data: dict, out: Path) -> None:
 <article class="card {cls}">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb_html(p["featured"], p["title"])}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}{cat}</div>
+    <div class="meta">{esc(p["date_display"])}{cat}{views_chip(p)}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
   </div>
 </article>"""
@@ -680,7 +766,7 @@ def build_site(data: dict, out: Path) -> None:
 <article class="card card-compact overlay">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb_html(p["featured"], p["title"])}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
+    <div class="meta">{esc(p["date_display"])}{views_chip(p)}</div>
     <h3><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></h3>
   </div>
 </article>"""
@@ -695,7 +781,7 @@ def build_site(data: dict, out: Path) -> None:
     <span class="feed-text">
       {cat_html}
       <span class="feed-title">{esc(p["title"])}</span>
-      <span class="feed-date">{esc(p["date_display"])}</span>
+      <span class="feed-date">{esc(p["date_display"])}{views_chip(p, "meta-views feed-views")}</span>
     </span>
   </a>
 </li>"""
@@ -924,6 +1010,9 @@ def build_site(data: dict, out: Path) -> None:
             meta_bits.append(f'<span class="meta-item">{esc(p["date_display"])}</span>')
         if p["author"]:
             meta_bits.append(f'<span class="meta-item">{esc(p["author"])}</span>')
+        vc = views_chip(p, "meta-item meta-views")
+        if vc:
+            meta_bits.append(vc)
         # Related: same first category, exclude self
         related_html = ""
         related = []
@@ -1042,7 +1131,7 @@ def build_site(data: dict, out: Path) -> None:
 <article class="post-row">
   <a class="thumb" href="{post_href(p["slug"], 2)}">{thumb_html(p["featured"], p["title"])}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
+    <div class="meta">{esc(p["date_display"])}{views_chip(p)}</div>
     <h2><a href="{post_href(p["slug"], 2)}">{esc(p["title"])}</a></h2>
     <p class="excerpt">{esc(p["excerpt"])}</p>
   </div>
@@ -1095,7 +1184,7 @@ def build_site(data: dict, out: Path) -> None:
 <article class="post-row">
   <a class="thumb" href="{post_href(p["slug"], 1)}">{thumb_html(p["featured"], p["title"])}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}{" · " + esc(p["categories"][0]["name"]) if p["categories"] else ""}</div>
+    <div class="meta">{esc(p["date_display"])}{" · " + esc(p["categories"][0]["name"]) if p["categories"] else ""}{views_chip(p)}</div>
     <h2><a href="{post_href(p["slug"], 1)}">{esc(p["title"])}</a></h2>
     <p class="excerpt">{esc(p["excerpt"])}</p>
   </div>
@@ -1132,6 +1221,7 @@ def build_site(data: dict, out: Path) -> None:
         "pages": len(pages),
         "categories_with_posts": sum(1 for c in cat_info.values() if c["count"] > 0),
         "attachments_mapped": len(data["attachments"]),
+        "views_stats": data.get("views_stats", {}),
         "output": str(out),
     }
     (out / ".nojekyll").write_text("", encoding="utf-8")
@@ -1156,6 +1246,15 @@ def main() -> None:
         f"Imported: {len(data['posts'])} posts, {len(data['pages'])} pages, "
         f"{len(data['attachments'])} attachment URLs, {len(data['categories'])} categories"
     )
+
+    by_slug, by_id = load_post_views()
+    views_stats = attach_views(data["posts"], by_slug, by_id)
+    print(
+        f"Views matched: {views_stats['matched']}/{views_stats['total_posts']} "
+        f"(slug={views_stats['matched_slug']}, id={views_stats['matched_id']}; "
+        f"csv slugs={views_stats['csv_slugs']}, ids={views_stats['csv_ids']})"
+    )
+    data["views_stats"] = views_stats
 
     if not args.skip_markdown:
         print("Writing markdown to content/ …")

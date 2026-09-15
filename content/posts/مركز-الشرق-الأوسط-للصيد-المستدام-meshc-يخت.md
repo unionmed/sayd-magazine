@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/04/لوغو-المركز.jpg
 wp_id: 2088
+views: 2498
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2015/04/لوغو-المركز.jpg"><img class="alignnone size-full wp-image-2092" src="https://sayd-magazine.com/wp-content/uploads/2015/04/لوغو-المركز.jpg" alt="لوغو المركز" width="833" height="556" /></a>

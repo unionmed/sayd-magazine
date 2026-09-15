@@ -6,6 +6,7 @@ author: akhatib
 categories: [عتاد وسلاح الصيد]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/05/خرطوش-سلوغ.png
 wp_id: 2262
+views: 13049
 ---
 
 خرطوش الـ (Slug) ويعرف أيضا بأسماء كثيرة (فراش - شفر...) وهو يستخدم لصيد الحيوانات الكبيرة (كالخنزير)..

@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2021/08/مسابقة-اسعد-6.jpg
 wp_id: 6304
+views: 213
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2021/08/مسابقة-اسعد-6.jpg"><img class="alignnone size-full wp-image-6310" src="https://sayd-magazine.com/wp-content/uploads/2021/08/مسابقة-اسعد-6.jpg" alt="" width="600" height="400" /></a>

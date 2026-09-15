@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار, رماية]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/10/EDDY-PCP-4.jpg
 wp_id: 2833
+views: 4018
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2015/10/EDDY-PCP-4.jpg"><img class="alignnone size-full wp-image-2836" src="https://sayd-magazine.com/wp-content/uploads/2015/10/EDDY-PCP-4.jpg" alt="EDDY PCP 4" width="600" height="400" /></a>

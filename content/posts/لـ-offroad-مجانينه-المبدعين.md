@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2016/02/لادا-دبابة.jpg
 wp_id: 3254
+views: 1250
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2016/02/لادا-دبابة.jpg" rel="attachment wp-att-3255"><img class="alignnone size-full wp-image-3255" src="https://sayd-magazine.com/wp-content/uploads/2016/02/لادا-دبابة.jpg" alt="لادا دبابة" width="600" height="400" /></a>

@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار, صيد بري]
 featured: https://sayd-magazine.com/wp-content/uploads/2021/01/صورة-الدورة.jpg
 wp_id: 6233
+views: 193
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2021/01/صورة-الدورة.jpg"><img class="alignnone size-full wp-image-6234" src="https://sayd-magazine.com/wp-content/uploads/2021/01/صورة-الدورة.jpg" alt="" width="600" height="400" /></a>

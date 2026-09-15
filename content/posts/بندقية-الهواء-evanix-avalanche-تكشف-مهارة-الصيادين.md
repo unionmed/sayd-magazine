@@ -6,6 +6,7 @@ author: nhakeem
 categories: [عتاد وسلاح الصيد]
 featured: https://sayd-magazine.com/wp-content/uploads/2014/09/Evanix-Avalanche.jpg
 wp_id: 635
+views: 2535
 ---
 
 <address> </address>&nbsp;

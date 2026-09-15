@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2020/11/شيرين.jpg
 wp_id: 6186
+views: 266
 ---
 
 &nbsp;
