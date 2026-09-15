@@ -654,7 +654,7 @@ def build_site(data: dict, out: Path) -> None:
     ticker2 = news_strip(2)
 
     # --- Homepage: latest feed + featured mosaic ---
-    latest_news = posts[:10]
+    latest_news = posts[:8]
     featured_pool = [p for p in posts if p.get("featured")][:7]
     if len(featured_pool) < 5:
         featured_pool = posts[:7]
@@ -942,11 +942,11 @@ def build_site(data: dict, out: Path) -> None:
     </section>"""
         aside_html = f"""
       <aside class="sidebar article-aside">
-        {ad_slot("rectangle")}
         <div class="widget">
           <h3>الأحدث</h3>
           <div class="widget-body"><ul class="latest-list">{latest_lis_at(2)}</ul></div>
         </div>
+        {ad_slot("rectangle")}
         <div class="widget">
           <h3>التصنيفات</h3>
           <div class="widget-body"><ul class="cat-list">{cat_lis_at(2)}</ul></div>
