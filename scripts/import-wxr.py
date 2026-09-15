@@ -50,17 +50,39 @@ ABOUT_BLURB = (
     "فروسية وتراث من لبنان والعالم العربي."
 )
 
-# Categories to highlight in nav (by Arabic name)
+# Main nav categories closer to live Multi News order.
+# Each entry: (display_label, match_names_or_slugs…)
 NAV_CATS = [
-    "أخبار",
-    "صيد وفروسية",
-    "رماية",
-    "رياضات وسياحة بيئية",
-    "ثقافة وتراث",
-    "صور",
-    "مقابلات وتحقيقات",
-    "قوانين وخرائط",
+    ("صيد وفروسية", ["صيد وفروسية", "صيد", "صيد-وفروسية"]),
+    ("رماية", ["رماية"]),
+    ("عتاد وسلاح", ["عتاد وسلاح الصيد", "عتاد وسلاح", "عتاد-وسلاح-الصيد", "عتاد-وسلاح"]),
+    ("رياضات وسياحة بيئية", ["رياضات وسياحة بيئية", "رياضات-وسياحة-بيئية"]),
+    ("مقابلات وتحقيقات", ["مقابلات وتحقيقات", "مقابلات-تحقيقات"]),
+    ("صور", ["صور"]),
+    ("قوانين وخرائط", ["قوانين وخرائط", "قوانين-وخرائط"]),
+    ("جعبة المنوعات", ["جعبة المنوعات", "جعبة-المنوعات"]),
 ]
+
+# Homepage magazine section blocks after hero: (title, accent_class, match keys)
+HOME_SECTIONS = [
+    ("أخبار", "accent-red", ["أخبار", "اخبار"]),
+    ("صيد وفروسية", "accent-olive", ["صيد وفروسية", "صيد"]),
+    ("رماية", "accent-olive", ["رماية"]),
+    ("عتاد وسلاح", "accent-red", ["عتاد وسلاح الصيد", "عتاد وسلاح"]),
+    ("رياضات وسياحة بيئية", "accent-olive", ["رياضات وسياحة بيئية"]),
+    ("مقابلات وتحقيقات", "accent-red", ["مقابلات وتحقيقات"]),
+    ("جعبة المنوعات", "accent-olive", ["جعبة المنوعات"]),
+]
+
+# Top-bar secondary links: (label, page_slug or None for home)
+TOP_SECONDARY = [
+    ("الرئيسية", None),
+    ("فريقنا", "من-نحن"),
+    ("إتصل بنا", "إتصل-بنا"),
+    ("تصفح صيد", "تصفح-صيد"),
+]
+
+TICKER_LABEL = "من كل وادي خبر"
 
 
 def text(el: ET.Element | None, default: str = "") -> str:
@@ -341,6 +363,23 @@ def write_markdown(data: dict) -> None:
     )
 
 
+def top_secondary_html(pages: list[dict], depth: int) -> str:
+    """Secondary links in the dark/olive top bar (live: الرئيسية، فريقنا، …)."""
+    by_slug = {p["slug"]: p for p in pages}
+    home = rel_home(depth)
+    parts = []
+    for label, slug in TOP_SECONDARY:
+        if slug is None:
+            href = home
+        else:
+            p = by_slug.get(slug)
+            if not p:
+                continue
+            href = page_href(slug, depth)
+        parts.append(f'<a href="{href}">{esc(label)}</a>')
+    return "\n        ".join(parts)
+
+
 def layout(
     title: str,
     body: str,
@@ -350,6 +389,7 @@ def layout(
     extra_nav: str = "",
     footer_cats: str = "",
     footer_links: str = "",
+    top_links: str = "",
 ) -> str:
     css = rel_css(depth)
     home = rel_home(depth)
@@ -359,6 +399,7 @@ def layout(
         "&family=Noto+Naskh+Arabic:wght@400;500;600;700"
         "&family=Tajawal:wght@400;500;700&display=swap"
     )
+    top_right = top_links or f'<a href="{home}">{SITE_TITLE_EN}</a>'
     return f"""<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -375,8 +416,10 @@ def layout(
 <body>
   <div class="top-bar">
     <div class="container top-bar-inner">
-      <span class="tagline-mini">{SITE_TAGLINE}</span>
-      <a href="{home}">{SITE_TITLE_EN}</a>
+      <nav class="top-secondary" aria-label="روابط علوية">
+        {top_right}
+      </nav>
+      <a class="top-en" href="{home}">{SITE_TITLE_EN}</a>
     </div>
   </div>
   <header class="site-header">
@@ -392,9 +435,9 @@ def layout(
   <div class="nav-bar">
     <div class="container">
       <nav class="main-nav" aria-label="القائمة الرئيسية">
-        <a href="{home}">الرئيسية</a>
-        <a href="{articles}">كل المقالات</a>
+        <a class="nav-home" href="{home}" title="الرئيسية">الرئيسية</a>
         {extra_nav}
+        <a class="nav-all" href="{articles}">كل المقالات</a>
       </nav>
     </div>
   </div>
@@ -440,16 +483,39 @@ def thumb_html(url: str, alt: str = "") -> str:
     return '<div class="placeholder-thumb">صيد</div>'
 
 
+def resolve_cat(cat_counts: dict[str, dict], keys: list[str]) -> dict | None:
+    """Find a category by display name or slug (first match with posts)."""
+    by_name = {c["name"]: c for c in cat_counts.values()}
+    by_slug = {c["slug"]: c for c in cat_counts.values()}
+    for key in keys:
+        c = by_name.get(key) or by_slug.get(key)
+        if c and c.get("count", 0) > 0:
+            return c
+    return None
+
+
 def cat_nav_html(cat_counts: dict[str, dict], depth: int) -> str:
     parts = []
-    by_name = {c["name"]: c for c in cat_counts.values()}
-    for name in NAV_CATS:
-        c = by_name.get(name)
-        if c and c["count"] > 0:
+    for label, keys in NAV_CATS:
+        c = resolve_cat(cat_counts, list(keys) + [label])
+        if c:
             parts.append(
-                f'<a href="{cat_href(c["slug"], depth)}">{esc(name)}</a>'
+                f'<a href="{cat_href(c["slug"], depth)}">{esc(label)}</a>'
             )
     return "\n        ".join(parts)
+
+
+def is_video_post(p: dict) -> bool:
+    title = p.get("title") or ""
+    content = p.get("content") or ""
+    if re.search(r"فيديو|بالفيديو", title):
+        return True
+    if re.search(r"youtube\.com|youtu\.be|youtube-nocookie|iframe[^>]+youtube", content, re.I):
+        return True
+    for c in p.get("categories") or []:
+        if c.get("slug") in ("استديو-صيد",) or "فيديو" in (c.get("name") or ""):
+            return True
+    return False
 
 
 def build_site(data: dict, out: Path) -> None:
@@ -497,26 +563,37 @@ def build_site(data: dict, out: Path) -> None:
     nav0 = cat_nav_html(cat_info, 0)
     nav1 = cat_nav_html(cat_info, 1)
     nav2 = cat_nav_html(cat_info, 2)
+    top0 = top_secondary_html(pages, 0)
+    top1 = top_secondary_html(pages, 1)
+    top2 = top_secondary_html(pages, 2)
 
-    # --- News strip helper ---
-    def news_strip(depth: int, n: int = 12) -> str:
+    # --- News strip helper (live: red bar + olive «من كل وادي خبر» + CSS marquee) ---
+    def news_strip(depth: int, n: int = 14) -> str:
         items = []
         for p in posts[:n]:
             items.append(
                 f'<a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a>'
             )
+        ticker_inner = "".join(items)
+        # Duplicate track for seamless CSS marquee
         return f"""
   <div class="news-strip">
     <div class="container news-strip-inner">
-      <span class="label">عاجل</span>
-      <div class="ticker">{"".join(items)}</div>
+      <span class="label">{TICKER_LABEL}</span>
+      <div class="ticker-viewport" aria-label="{TICKER_LABEL}">
+        <div class="ticker-track">
+          <div class="ticker">{ticker_inner}</div>
+          <div class="ticker" aria-hidden="true">{ticker_inner}</div>
+        </div>
+      </div>
     </div>
   </div>"""
 
     # --- Homepage ---
     featured = posts[:1]
     side = posts[1:4]
-    rest = posts[4:16]
+    rest = posts[4:10]
+    used_slugs: set[str] = {p["slug"] for p in featured + side + rest}
 
     def card(p: dict, depth: int, heading: str = "h3", cls: str = "") -> str:
         cat = ""
@@ -532,9 +609,18 @@ def build_site(data: dict, out: Path) -> None:
   </div>
 </article>"""
 
+    def compact_card(p: dict, depth: int) -> str:
+        return f"""
+<article class="card card-compact">
+  <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb_html(p["featured"], p["title"])}</a>
+  <div class="body">
+    <div class="meta">{esc(p["date_display"])}</div>
+    <h3><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></h3>
+  </div>
+</article>"""
+
     hero_main = card(featured[0], 0, "h2", "hero-main") if featured else ""
     hero_side = "\n".join(card(p, 0) for p in side)
-
     grid = "\n".join(card(p, 0) for p in rest)
 
     # Sidebar categories
@@ -576,6 +662,95 @@ def build_site(data: dict, out: Path) -> None:
             for p in picks[:6]
         )
 
+    def cat_lis_at(depth: int) -> str:
+        return "\n".join(
+            f'<li><a href="{cat_href(c["slug"], depth)}"><span>{esc(c["name"])}</span>'
+            f'<span class="count">{c["count"]}</span></a></li>'
+            for c in top_cats
+        )
+
+    def latest_lis_at(depth: int, n: int = 8) -> str:
+        return "\n".join(
+            f'<li><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a>'
+            f'<span class="meta">{esc(p["date_display"])}</span></li>'
+            for p in posts[:n]
+        )
+
+    def section_block(title: str, accent: str, items: list[dict], more_href: str) -> str:
+        if not items:
+            return ""
+        cards = "\n".join(card(p, 0) for p in items)
+        more = f'<a href="{more_href}">عرض الكل ←</a>' if more_href else ""
+        return f"""
+    <section class="home-section">
+      <div class="section-title {accent}">
+        <h2>{esc(title)}</h2>
+        {more}
+      </div>
+      <div class="grid-3">{cards}</div>
+    </section>"""
+
+    # Category magazine blocks
+    section_html_parts = []
+    for title, accent, keys in HOME_SECTIONS:
+        c = resolve_cat(cat_info, list(keys) + [title])
+        if not c:
+            continue
+        # Prefer posts not already in hero/latest grid; fall back to category order
+        fresh = [p for p in c["posts"] if p["slug"] not in used_slugs][:3]
+        if len(fresh) < 3:
+            for p in c["posts"]:
+                if p not in fresh:
+                    fresh.append(p)
+                if len(fresh) >= 3:
+                    break
+        for p in fresh:
+            used_slugs.add(p["slug"])
+        section_html_parts.append(
+            section_block(title, accent, fresh, cat_href(c["slug"], 0))
+        )
+
+    # صيد TV — video-like posts
+    video_posts = [p for p in posts if is_video_post(p)][:6]
+    if len(video_posts) < 3:
+        # Fall back to استديو صيد / عين النسر categories
+        for key in ("استديو-صيد", "عين-النسر-تختار-لكم"):
+            c = cat_info.get(key) or resolve_cat(cat_info, [key])
+            if not c:
+                continue
+            for p in c["posts"]:
+                if p not in video_posts:
+                    video_posts.append(p)
+                if len(video_posts) >= 6:
+                    break
+    tv_html = ""
+    if video_posts:
+        tv_cards = "\n".join(compact_card(p, 0) for p in video_posts[:6])
+        tv_html = f"""
+    <section class="home-section sayd-tv">
+      <div class="section-title accent-red">
+        <h2>صيد TV</h2>
+      </div>
+      <div class="grid-photos">{tv_cards}</div>
+    </section>"""
+
+    # Photos strip
+    photos_cat = resolve_cat(cat_info, ["صور"])
+    photos_html = ""
+    if photos_cat and photos_cat["posts"]:
+        photo_items = photos_cat["posts"][:8]
+        photo_cards = "\n".join(compact_card(p, 0) for p in photo_items)
+        photos_html = f"""
+    <section class="home-section photos-strip">
+      <div class="section-title accent-olive">
+        <h2>صور</h2>
+        <a href="{cat_href(photos_cat["slug"], 0)}">مكتبة الصور ←</a>
+      </div>
+      <div class="grid-photos">{photo_cards}</div>
+    </section>"""
+
+    sections_joined = "\n".join(section_html_parts)
+
     home_body = f"""
 {news_strip(0)}
 <main class="page-main">
@@ -585,12 +760,17 @@ def build_site(data: dict, out: Path) -> None:
       <div class="hero-side">{hero_side}</div>
     </section>
     <div class="home-layout">
-      <div>
-        <div class="section-title">
-          <h2>أحدث المقالات</h2>
-          <a href="articles/index.html">عرض الكل ←</a>
-        </div>
-        <div class="grid-3">{grid}</div>
+      <div class="home-main">
+        <section class="home-section">
+          <div class="section-title accent-olive">
+            <h2>أحدث المقالات</h2>
+            <a href="articles/index.html">عرض الكل ←</a>
+          </div>
+          <div class="grid-3">{grid}</div>
+        </section>
+        {tv_html}
+        {photos_html}
+        {sections_joined}
       </div>
       <aside class="sidebar">
         <div class="widget">
@@ -614,6 +794,7 @@ def build_site(data: dict, out: Path) -> None:
             extra_nav=nav0,
             footer_cats=footer_cats_at(0),
             footer_links=footer_links_at(0),
+            top_links=top0,
         ),
         encoding="utf-8",
     )
@@ -657,13 +838,25 @@ def build_site(data: dict, out: Path) -> None:
             related_cards = "\n".join(card(r, 2) for r in related)
             related_html = f"""
     <section class="related-block">
-      <div class="section-title"><h2>ذات صلة</h2></div>
+      <div class="section-title accent-olive"><h2>ذات صلة</h2></div>
       <div class="related-grid">{related_cards}</div>
     </section>"""
+        aside_html = f"""
+      <aside class="sidebar article-aside">
+        <div class="widget">
+          <h3>التصنيفات</h3>
+          <div class="widget-body"><ul class="cat-list">{cat_lis_at(2)}</ul></div>
+        </div>
+        <div class="widget">
+          <h3>الأحدث</h3>
+          <div class="widget-body"><ul class="latest-list">{latest_lis_at(2)}</ul></div>
+        </div>
+      </aside>"""
         body = f"""
 {news_strip(2, 8)}
 <main class="page-main">
   <div class="container">
+    <div class="article-layout">
     <div class="article-shell">
     <div class="breadcrumb"><a href="{rel_home(2)}">الرئيسية</a>{cat_crumb} / مقال</div>
     <header class="article-header">
@@ -677,6 +870,8 @@ def build_site(data: dict, out: Path) -> None:
     </article>
     {related_html}
     </div>
+    {aside_html}
+    </div>
   </div>
 </main>
 """
@@ -689,6 +884,7 @@ def build_site(data: dict, out: Path) -> None:
                 extra_nav=nav2,
                 footer_cats=footer_cats_at(2),
                 footer_links=footer_links_at(2),
+                top_links=top2,
             ),
             encoding="utf-8",
         )
@@ -720,6 +916,7 @@ def build_site(data: dict, out: Path) -> None:
                 extra_nav=nav2,
                 footer_cats=footer_cats_at(2),
                 footer_links=footer_links_at(2),
+                top_links=top2,
             ),
             encoding="utf-8",
         )
@@ -760,6 +957,7 @@ def build_site(data: dict, out: Path) -> None:
                 extra_nav=nav2,
                 footer_cats=footer_cats_at(2),
                 footer_links=footer_links_at(2),
+                top_links=top2,
             ),
             encoding="utf-8",
         )
@@ -813,6 +1011,7 @@ def build_site(data: dict, out: Path) -> None:
             extra_nav=nav1,
             footer_cats=footer_cats_at(1),
             footer_links=footer_links_at(1),
+            top_links=top1,
         )
         if page_i == 1:
             (articles_dir / "index.html").write_text(html_page, encoding="utf-8")

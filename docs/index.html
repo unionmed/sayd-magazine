@@ -14,8 +14,13 @@
 <body>
   <div class="top-bar">
     <div class="container top-bar-inner">
-      <span class="tagline-mini">مجلة أسياد الطبيعة في البر والبحر والجو</span>
-      <a href="index.html">Sayd Magazine</a>
+      <nav class="top-secondary" aria-label="روابط علوية">
+        <a href="index.html">الرئيسية</a>
+        <a href="pages/من-نحن/index.html">فريقنا</a>
+        <a href="pages/إتصل-بنا/index.html">إتصل بنا</a>
+        <a href="pages/تصفح-صيد/index.html">تصفح صيد</a>
+      </nav>
+      <a class="top-en" href="index.html">Sayd Magazine</a>
     </div>
   </div>
   <header class="site-header">
@@ -31,16 +36,16 @@
   <div class="nav-bar">
     <div class="container">
       <nav class="main-nav" aria-label="القائمة الرئيسية">
-        <a href="index.html">الرئيسية</a>
-        <a href="articles/index.html">كل المقالات</a>
-        <a href="category/أخبار/index.html">أخبار</a>
+        <a class="nav-home" href="index.html" title="الرئيسية">الرئيسية</a>
         <a href="category/صيد/index.html">صيد وفروسية</a>
         <a href="category/رماية/index.html">رماية</a>
+        <a href="category/عتاد-وسلاح-الصيد/index.html">عتاد وسلاح</a>
         <a href="category/رياضات-وسياحة-بيئية/index.html">رياضات وسياحة بيئية</a>
-        <a href="category/ثقافة-وتراث/index.html">ثقافة وتراث</a>
-        <a href="category/صور/index.html">صور</a>
         <a href="category/مقابلات-تحقيقات/index.html">مقابلات وتحقيقات</a>
+        <a href="category/صور/index.html">صور</a>
         <a href="category/قوانين-وخرائط/index.html">قوانين وخرائط</a>
+        <a href="category/جعبة-المنوعات/index.html">جعبة المنوعات</a>
+        <a class="nav-all" href="articles/index.html">كل المقالات</a>
       </nav>
     </div>
   </div>
@@ -48,8 +53,13 @@
 
   <div class="news-strip">
     <div class="container news-strip-inner">
-      <span class="label">عاجل</span>
-      <div class="ticker"><a href="posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html">«كابس» و«مكشب» لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي</a><a href="posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا/index.html">«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض</a><a href="posts/السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ/index.html">السعودية | 5 آلاف ريال غرامة الصيد في الأماكن المحظورة</a><a href="posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html">قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»</a><a href="posts/السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري/index.html">السعودية تشدد على ضوابط الصيد: 5 آلاف ريال غرامة الصيد في الأماكن المحظورة</a><a href="posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html">80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة</a><a href="posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html">السعودية تطلق موسم الصيد السادس بضوابط تعزز الصيد المستدام</a><a href="posts/البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك/index.html">البجع الأبيض الكبير — Great White Pelican | بعدسة نايف كريم — أوتوستراد المتن السريع، ربيع 2026</a><a href="posts/بالفيديو-مقناص-سعود-عبد-العزيز-الباب/index.html">بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان</a><a href="posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a><a href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html">«صيد» تعود… وهذا ما نريد أن نقدّمه لكم</a><a href="posts/مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية/index.html">مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان</a></div>
+      <span class="label">من كل وادي خبر</span>
+      <div class="ticker-viewport" aria-label="من كل وادي خبر">
+        <div class="ticker-track">
+          <div class="ticker"><a href="posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html">«كابس» و«مكشب» لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي</a><a href="posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا/index.html">«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض</a><a href="posts/السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ/index.html">السعودية | 5 آلاف ريال غرامة الصيد في الأماكن المحظورة</a><a href="posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html">قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»</a><a href="posts/السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري/index.html">السعودية تشدد على ضوابط الصيد: 5 آلاف ريال غرامة الصيد في الأماكن المحظورة</a><a href="posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html">80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة</a><a href="posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html">السعودية تطلق موسم الصيد السادس بضوابط تعزز الصيد المستدام</a><a href="posts/البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك/index.html">البجع الأبيض الكبير — Great White Pelican | بعدسة نايف كريم — أوتوستراد المتن السريع، ربيع 2026</a><a href="posts/بالفيديو-مقناص-سعود-عبد-العزيز-الباب/index.html">بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان</a><a href="posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a><a href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html">«صيد» تعود… وهذا ما نريد أن نقدّمه لكم</a><a href="posts/مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية/index.html">مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان</a><a href="posts/صيد-تعود-بحلة-جديدة-ورؤية-اوسع/index.html">صيد تعود... بحلة جديدة ورؤية اوسع</a><a href="posts/عصفور-الشمس-الفلسطيني/index.html">عصفور الشمس الفلسطيني</a></div>
+          <div class="ticker" aria-hidden="true"><a href="posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html">«كابس» و«مكشب» لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي</a><a href="posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا/index.html">«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض</a><a href="posts/السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ/index.html">السعودية | 5 آلاف ريال غرامة الصيد في الأماكن المحظورة</a><a href="posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html">قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»</a><a href="posts/السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري/index.html">السعودية تشدد على ضوابط الصيد: 5 آلاف ريال غرامة الصيد في الأماكن المحظورة</a><a href="posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html">80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة</a><a href="posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html">السعودية تطلق موسم الصيد السادس بضوابط تعزز الصيد المستدام</a><a href="posts/البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك/index.html">البجع الأبيض الكبير — Great White Pelican | بعدسة نايف كريم — أوتوستراد المتن السريع، ربيع 2026</a><a href="posts/بالفيديو-مقناص-سعود-عبد-العزيز-الباب/index.html">بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان</a><a href="posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a><a href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html">«صيد» تعود… وهذا ما نريد أن نقدّمه لكم</a><a href="posts/مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية/index.html">مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان</a><a href="posts/صيد-تعود-بحلة-جديدة-ورؤية-اوسع/index.html">صيد تعود... بحلة جديدة ورؤية اوسع</a><a href="posts/عصفور-الشمس-الفلسطيني/index.html">عصفور الشمس الفلسطيني</a></div>
+        </div>
+      </div>
     </div>
   </div>
 <main class="page-main">
@@ -93,12 +103,13 @@
 </article></div>
     </section>
     <div class="home-layout">
-      <div>
-        <div class="section-title">
-          <h2>أحدث المقالات</h2>
-          <a href="articles/index.html">عرض الكل ←</a>
-        </div>
-        <div class="grid-3">
+      <div class="home-main">
+        <section class="home-section">
+          <div class="section-title accent-olive">
+            <h2>أحدث المقالات</h2>
+            <a href="articles/index.html">عرض الكل ←</a>
+          </div>
+          <div class="grid-3">
 <article class="card ">
   <a class="thumb" href="posts/السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2026/09/saudi-hunting-season-2026.jpg" alt="السعودية تشدد على ضوابط الصيد: 5 آلاف ريال غرامة الصيد في الأماكن المحظورة" loading="lazy"></a>
   <div class="body">
@@ -151,17 +162,140 @@
     <h3><a href="posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a></h3>
     <p class="excerpt">دراسة تحذّر من تراجع الأنواع المهاجرة، ومعركة لحماية بحيرة ألبانية، وحماية البط الحديدي من كرواتيا الى مصر: مستجدات دولية تفتح أسئلة الموسم.</p>
   </div>
-</article>
-
-<article class="card ">
-  <a class="thumb" href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html"><div class="placeholder-thumb">صيد</div></a>
+</article></div>
+        </section>
+        
+    <section class="home-section sayd-tv">
+      <div class="section-title accent-red">
+        <h2>صيد TV</h2>
+      </div>
+      <div class="grid-photos">
+<article class="card card-compact">
+  <a class="thumb" href="posts/بالفيديو-مقناص-سعود-عبد-العزيز-الباب/index.html"><div class="placeholder-thumb">صيد</div></a>
   <div class="body">
-    <div class="meta">8 أيلول 2026<span class="cat-pill">كلمتنا</span></div>
-    <h3><a href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html">«صيد» تعود… وهذا ما نريد أن نقدّمه لكم</a></h3>
-    <p class="excerpt">أدونيس الخطيب حين أسّسنا «صيد»، انطلقنا من قناعة بأن الصيد مسؤولية وثقافة ومعرفة بالطبيعة وأصول الممارسة. فالإنسان الذي يخرج إلى الطبيعة يحتاج أن يعرف طيورها وحيواناتها، وأن يفهم…</p>
+    <div class="meta">8 أيلول 2026</div>
+    <h3><a href="posts/بالفيديو-مقناص-سعود-عبد-العزيز-الباب/index.html">بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان</a></h3>
   </div>
 </article>
 
+<article class="card card-compact">
+  <a class="thumb" href="posts/لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2024/06/Bird-02.jpeg" alt="لا تصدق وجود هذا الطائر، إنه مُصمَّم ببرنامج الذكاء الاصطناعي" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">5 حزيران 2024</div>
+    <h3><a href="posts/لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب/index.html">لا تصدق وجود هذا الطائر، إنه مُصمَّم ببرنامج الذكاء الاصطناعي</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/من-هم-الصيادين-المسوؤلين-الذين-كرمهم-م/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2018/02/تكريم-صيادين.jpg" alt="من هم الصيادون المسوؤلون الذين كرمهم &quot;مركز الشرق الأوسط للصيد المستدام&quot;" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">7 شباط 2018</div>
+    <h3><a href="posts/من-هم-الصيادين-المسوؤلين-الذين-كرمهم-م/index.html">من هم الصيادون المسوؤلون الذين كرمهم &quot;مركز الشرق الأوسط للصيد المستدام&quot;</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/كرواتي-يطلب-من-عون-حماية-لقلقه-klepetan-من-نار/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2017/04/رسالة-من-كرواتي-الى-ميشال-عون.jpg" alt="كرواتي يطلب من عون حماية لقلقه Klepetan من نار القواصين في لبنان .. وصيادون محترفون يجيدون حماية اللقالق" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">28 نيسان 2017</div>
+    <h3><a href="posts/كرواتي-يطلب-من-عون-حماية-لقلقه-klepetan-من-نار/index.html">كرواتي يطلب من عون حماية لقلقه Klepetan من نار القواصين في لبنان .. وصيادون محترفون يجيدون حماية اللقالق</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/قتل-عقاب-نادر-اصطاد-أفعى-في-شمال-لبنان/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2017/02/عقاب-صرارة.jpg" alt="قتل عقاب نادر اصطاد أفعى في شمال لبنان‎ و Green Area ستضع الفيديو بتصرف النيابة العامة في الشمال" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">23 شباط 2017</div>
+    <h3><a href="posts/قتل-عقاب-نادر-اصطاد-أفعى-في-شمال-لبنان/index.html">قتل عقاب نادر اصطاد أفعى في شمال لبنان‎ و Green Area ستضع الفيديو بتصرف النيابة العامة في الشمال</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/بالصور-والفيديو-صياد-مسؤول-ينقذ-طائر-ا/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2017/02/كمال-اغا-1.jpg" alt="بالصور والفيديو &quot;صياد مسؤول ينقذ طائر اللقلق&quot; هذه اخلاق الصيد" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">23 شباط 2017</div>
+    <h3><a href="posts/بالصور-والفيديو-صياد-مسؤول-ينقذ-طائر-ا/index.html">بالصور والفيديو &quot;صياد مسؤول ينقذ طائر اللقلق&quot; هذه اخلاق الصيد</a></h3>
+  </div>
+</article></div>
+    </section>
+        
+    <section class="home-section photos-strip">
+      <div class="section-title accent-olive">
+        <h2>صور</h2>
+        <a href="category/صور/index.html">مكتبة الصور ←</a>
+      </div>
+      <div class="grid-photos">
+<article class="card card-compact">
+  <a class="thumb" href="posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2026/09/سهيل-2026-—-من-جولة-الافتتاح.jpg" alt="«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">13 أيلول 2026</div>
+    <h3><a href="posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا/index.html">«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg" alt="البجع الأبيض الكبير — Great White Pelican | بعدسة نايف كريم — أوتوستراد المتن السريع، ربيع 2026" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">9 أيلول 2026</div>
+    <h3><a href="posts/البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك/index.html">البجع الأبيض الكبير — Great White Pelican | بعدسة نايف كريم — أوتوستراد المتن السريع، ربيع 2026</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/صور-بعدسة-الآنسة-نور-لبابيدي/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2015/06/نور-8.jpg" alt="صور بعدسة نور لبابيدي - لبنان ( صور من سيريلنكا)" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">13 حزيران 2015</div>
+    <h3><a href="posts/صور-بعدسة-الآنسة-نور-لبابيدي/index.html">صور بعدسة نور لبابيدي - لبنان ( صور من سيريلنكا)</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/صور-الصياد-اللبناني-الياس-سلهب/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2015/06/سلهب-3.jpg" alt="صور الصياد اللبناني الياس سلهب" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">2 حزيران 2015</div>
+    <h3><a href="posts/صور-الصياد-اللبناني-الياس-سلهب/index.html">صور الصياد اللبناني الياس سلهب</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/صور-من-رحلات-الصياد-العراقي-أحمد-زهير/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2015/04/51.jpg" alt="صور من رحلات الصياد العراقي أحمد زهير" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">3 نيسان 2015</div>
+    <h3><a href="posts/صور-من-رحلات-الصياد-العراقي-أحمد-زهير/index.html">صور من رحلات الصياد العراقي أحمد زهير</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/صور-للصياد-اللبناني-رجل-الاعمال-ربيع-ع/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2015/03/ربيع-عقل-7.jpg" alt="صور للصياد اللبناني رجل الاعمال ربيع عقل" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">17 آذار 2015</div>
+    <h3><a href="posts/صور-للصياد-اللبناني-رجل-الاعمال-ربيع-ع/index.html">صور للصياد اللبناني رجل الاعمال ربيع عقل</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/بعدسة-التاريخ-صورتان-لعائلتين-من-أبلح/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2015/03/عائلتان-من-بلدة-ابلح-غرقتا-في-حادثة-التايتانيك.jpg" alt="بعدسة التاريخ .. صورتان لعائلتين من أبلح غرقتا في حادثة التايتانيك" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">14 آذار 2015</div>
+    <h3><a href="posts/بعدسة-التاريخ-صورتان-لعائلتين-من-أبلح/index.html">بعدسة التاريخ .. صورتان لعائلتين من أبلح غرقتا في حادثة التايتانيك</a></h3>
+  </div>
+</article>
+
+<article class="card card-compact">
+  <a class="thumb" href="posts/صور-بعدسة-محمد-حلّال-فرنسا/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2015/03/محمد-حلال-4.jpg" alt="صور بعدسة محمد حلّال - فرنسا" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">9 آذار 2015</div>
+    <h3><a href="posts/صور-بعدسة-محمد-حلّال-فرنسا/index.html">صور بعدسة محمد حلّال - فرنسا</a></h3>
+  </div>
+</article></div>
+    </section>
+        
+    <section class="home-section">
+      <div class="section-title accent-red">
+        <h2>أخبار</h2>
+        <a href="category/أخبار/index.html">عرض الكل ←</a>
+      </div>
+      <div class="grid-3">
 <article class="card ">
   <a class="thumb" href="posts/مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2026/09/1000468655.jpg" alt="مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان" loading="lazy"></a>
   <div class="body">
@@ -172,14 +306,200 @@
 </article>
 
 <article class="card ">
-  <a class="thumb" href="posts/صيد-تعود-بحلة-جديدة-ورؤية-اوسع/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2026/09/01-1000469327.jpg" alt="صيد تعود... بحلة جديدة ورؤية اوسع" loading="lazy"></a>
+  <a class="thumb" href="posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2025/09/Adonis.jpg" alt="تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة" loading="lazy"></a>
   <div class="body">
-    <div class="meta">6 أيلول 2026<span class="cat-pill">كلمتنا</span></div>
-    <h3><a href="posts/صيد-تعود-بحلة-جديدة-ورؤية-اوسع/index.html">صيد تعود... بحلة جديدة ورؤية اوسع</a></h3>
-    <p class="excerpt">فرضت الظروف القاسية التي مرّ بها لبنان خلال السنوات الماضية تحدياتها على كثير من المؤسسات والقطاعات، ولم يكن موقع «صيد» بعيدًا عن تداعياتها. واليوم، ورغم استمرار بعض هذه الظروف، ي…</p>
+    <div class="meta">30 أيلول 2025<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/index.html">تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة</a></h3>
+    <p class="excerpt">أثبتت تجربة منع الصيد في لبنان خلال السنوات الفائتة عدم جدواها، إذ لم توقف الانتهاكات، بل حوّلتها إلى أنماط أكثر خطورة. فقد ظهرت شريحة واسعة من القوّاصين الذين يستخدمون بنادق رخيص…</p>
   </div>
 </article>
 
+<article class="card ">
+  <a class="thumb" href="posts/الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2025/07/IMG_3009-2-1024x683.jpg" alt="الشهرمان الشائع: طائر مائي محمي ومهاجر نادر في لبنان" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">11 تموز 2025<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر/index.html">الشهرمان الشائع: طائر مائي محمي ومهاجر نادر في لبنان</a></h3>
+    <p class="excerpt">يُعرف الشهرمان الشائع ( Common Shelduck ) بأنه طائر مُهاجر شَحيح ومشتٍ إلى الأراضي الرطبة، السواحل، والجزر في لبنان. ينتمي إلى عائلة البطيات ( Anatidae ) ويتميّز بحجمه الكبير وريش…</p>
+  </div>
+</article></div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-title accent-olive">
+        <h2>صيد وفروسية</h2>
+        <a href="category/صيد/index.html">عرض الكل ←</a>
+      </div>
+      <div class="grid-3">
+<article class="card ">
+  <a class="thumb" href="posts/اللي-ما-يعرف-الصقر-يشويه/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2020/10/Kark1-1.jpeg" alt="اللي ما يعرف الصقر يشويه" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">24 تشرين الأول 2020<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/اللي-ما-يعرف-الصقر-يشويه/index.html">اللي ما يعرف الصقر يشويه</a></h3>
+    <p class="excerpt">في محيط بحيرة الحولة في فلسطين المحتلة يقوم الإسرائيليين بإطعام طيور الكرك أطنانًا من الذرة بواسطة الجرارات الزراعية. ثم يستقطبون السياح من جميع أنحاء العالم لمشاهدة هذه الطيور ال…</p>
+  </div>
+</article>
+
+<article class="card ">
+  <a class="thumb" href="posts/ما-هي-مناطق-الصيد-المسؤول-؟/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2018/01/maher-Copy.jpg" alt="ما هي مناطق الصيد المسؤول ؟" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">23 كانون الثاني 2018<span class="cat-pill">ثقافة وتراث</span></div>
+    <h3><a href="posts/ما-هي-مناطق-الصيد-المسؤول-؟/index.html">ما هي مناطق الصيد المسؤول ؟</a></h3>
+    <p class="excerpt">بسبب تدهور هواية الصيد وتضرر الصيادين نتيجة الصيد الجائر الذي يمارسه القواصون ،وتدهور حالة الطيور في لبنان، قامت جمعية حماية الطبيعة في لبنان SPNL بالتعاون والشراكة مع مركز الشرق…</p>
+  </div>
+</article>
+
+<article class="card ">
+  <a class="thumb" href="posts/المعرض-الدولي-للصيد-والفروسية-في-أبو-ظ/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2015/09/معرض-الصيد-والفروسية.jpg" alt="المعرض الدولي للصيد والفروسية في أبو ظبي .. بصمة إمارتية في عالم ثقافة التراث" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">1 أيلول 2015<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/المعرض-الدولي-للصيد-والفروسية-في-أبو-ظ/index.html">المعرض الدولي للصيد والفروسية في أبو ظبي .. بصمة إمارتية في عالم ثقافة التراث</a></h3>
+    <p class="excerpt">يعتبر المعرض الدولي للصيد والفروسية في أبو ظبي أهم معرض في الشرق الأوسط على الاطلاق، ومن أهم المعارض العالمية التي تستقطب جمهورا كبيرا من هواة الصيد والفروسية وهواة التخييم ورياضا…</p>
+  </div>
+</article></div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-title accent-olive">
+        <h2>رماية</h2>
+        <a href="category/رماية/index.html">عرض الكل ←</a>
+      </div>
+      <div class="grid-3">
+<article class="card ">
+  <a class="thumb" href="posts/لماذا-ترغب-المرأة-بتعلم-الصيد-والرماي/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2020/07/رامية.jpg" alt="لماذا ترغب المرأة بتعلّم الصيد والرماية؟" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">2 تموز 2020<span class="cat-pill">رماية</span></div>
+    <h3><a href="posts/لماذا-ترغب-المرأة-بتعلم-الصيد-والرماي/index.html">لماذا ترغب المرأة بتعلّم الصيد والرماية؟</a></h3>
+    <p class="excerpt">في الماضي كانت رياضة الصيد ذو طابع ذكوري، ولكن في السنوات الأخيرة، ظهر تحوّل مثير حيث أخذ عدد لا يصدّق من النساء بتعلم الصيد والرماية. وباتت صناعة أكسسوارات وملابس الصيد الخاصة با…</p>
+  </div>
+</article>
+
+<article class="card ">
+  <a class="thumb" href="posts/سيرة-رامي-اللبناني-رالف-عراج/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2020/05/رالف-2.jpg" alt="سيرة الرامي: اللبناني رالف عراج" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">11 حزيران 2020<span class="cat-pill">رماية</span></div>
+    <h3><a href="posts/سيرة-رامي-اللبناني-رالف-عراج/index.html">سيرة الرامي: اللبناني رالف عراج</a></h3>
+    <p class="excerpt">الجنسية: لبناني الإسم والشهرة: رالف عراج محل وتاريخ الولادة: ضهر الصوان- 1988/9/11 تاريخ دخول عالم الرماية: 2015 نوع الرماية: Olympic Trap نوع سلاحك: جفت بيريتا DT11 النادي المنتس…</p>
+  </div>
+</article>
+
+<article class="card ">
+  <a class="thumb" href="posts/تعرّف-على-فوائد-الرماية/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2020/05/فوائد-الرماية.jpg" alt="تعرّف على فوائد الرماية..." loading="lazy"></a>
+  <div class="body">
+    <div class="meta">28 أيار 2020<span class="cat-pill">رماية</span></div>
+    <h3><a href="posts/تعرّف-على-فوائد-الرماية/index.html">تعرّف على فوائد الرماية...</a></h3>
+    <p class="excerpt">فوائد المشاركة في أنشطة الرماية هي صحيّة، جسديّة وعقليّة. فإن الرماية بمختلف أنواع السلاح يُعزّز الانضباط الجسدي والعقلي لدى الرامي. إليك بعض مزايا الرماية: 1. التنسيق بين اليد وا…</p>
+  </div>
+</article></div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-title accent-red">
+        <h2>عتاد وسلاح</h2>
+        <a href="category/عتاد-وسلاح-الصيد/index.html">عرض الكل ←</a>
+      </div>
+      <div class="grid-3">
+<article class="card ">
+  <a class="thumb" href="posts/البنادق-الهوائية/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2022/12/بارودة.png" alt="البنادق الهوائية" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">20 كانون الأول 2022<span class="cat-pill">عتاد وسلاح الصيد</span></div>
+    <h3><a href="posts/البنادق-الهوائية/index.html">البنادق الهوائية</a></h3>
+    <p class="excerpt">بعد موضوع غلاء أسعار الخرطوش والبدائل المتاحة، لا بدّ من التنويه بأن أوّل البدائل المُمكنة هي الصيد بالبنادق الهوائية لرخصها ورخص خرطوشها النسبي. سنبدأ موضوعنا عن البنادق الهوائية…</p>
+  </div>
+</article>
+
+<article class="card ">
+  <a class="thumb" href="posts/بعد-غلاء-الاسعار-ما-هو-مصير-الصياد-العا/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2020/06/خرطوش-صيد.jpg" alt="بعد غلاء أسعار الخرطوش.. ما هو مصير الصياد العاشق لهواية الملوك ...؟" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">17 حزيران 2020<span class="cat-pill">عتاد وسلاح الصيد</span></div>
+    <h3><a href="posts/بعد-غلاء-الاسعار-ما-هو-مصير-الصياد-العا/index.html">بعد غلاء أسعار الخرطوش.. ما هو مصير الصياد العاشق لهواية الملوك ...؟</a></h3>
+    <p class="excerpt">لا بدّ لنا من الوقوف عند الغلاء الفاحش في البلد وما آلت إليه الظروف الاقتصادية الراهنة، حيث أدّى ارتفاع سعر صرف الدولار إلى غلاء فاحش في كل أنواع البضائع، ولا سيما الخرطوش. لتلامس…</p>
+  </div>
+</article>
+
+<article class="card ">
+  <a class="thumb" href="posts/تعرّف-على-شخصيّتك-من-خلال-سلاح-صيدك/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2015/06/تعرف-على-شخصيتك.jpg" alt="تعرّف على شخصيّتك من خلال سلاح صيدك.." loading="lazy"></a>
+  <div class="body">
+    <div class="meta">20 نيسان 2020<span class="cat-pill">صيد بري</span></div>
+    <h3><a href="posts/تعرّف-على-شخصيّتك-من-خلال-سلاح-صيدك/index.html">تعرّف على شخصيّتك من خلال سلاح صيدك..</a></h3>
+    <p class="excerpt">لكل صياد شخصيته، وكل إختيار يعبر عن نوع شخصية صاحبه وملامحها ومزاجها.. مجلة&quot; صيد &quot; تقدم لك نبذة عن شخصيتك من خلال إختيارك لنوع سلاح صيدك. إذا كنت من أنصار &quot;البومب أكشن&quot; فأنت تحب ا…</p>
+  </div>
+</article></div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-title accent-olive">
+        <h2>رياضات وسياحة بيئية</h2>
+        <a href="category/رياضات-وسياحة-بيئية/index.html">عرض الكل ←</a>
+      </div>
+      <div class="grid-3">
+<article class="card ">
+  <a class="thumb" href="posts/رئيس-نادي-xdc-سليم-مجاعص-سياحة-الغوص-في-لب/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2019/04/salim-5.jpg" alt="رئيس نادي XDC سليم مجاعص : سياحة الغوص في لبنان غنّية جدا ولدينا متحف سفن غارقة تحت مياهنا" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">7 نيسان 2019<span class="cat-pill">رياضات</span></div>
+    <h3><a href="posts/رئيس-نادي-xdc-سليم-مجاعص-سياحة-الغوص-في-لب/index.html">رئيس نادي XDC سليم مجاعص : سياحة الغوص في لبنان غنّية جدا ولدينا متحف سفن غارقة تحت مياهنا</a></h3>
+    <p class="excerpt">سليم مجاعص رئيس نادي Xtreme Dive Center Lebanon - XDC مدرّب وخبيرعاشق للبحر والمغامرة، يعيش مزاجه فوق الماء بالفرح والضحك وتحت الماء بالجدية المناسبة والمسؤولية القانونية للتمتع ب…</p>
+  </div>
+</article>
+
+<article class="card ">
+  <a class="thumb" href="posts/المغامرة-الأردنية-دينا-غلايني-في-البد/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2015/05/دينا-4.jpg" alt="المغامرة الأردنية دينا غلايني: في البداية اعتبرني أهلي مجنونة، ولكن.." loading="lazy"></a>
+  <div class="body">
+    <div class="meta">10 أيار 2015<span class="cat-pill">رياضات</span></div>
+    <h3><a href="posts/المغامرة-الأردنية-دينا-غلايني-في-البد/index.html">المغامرة الأردنية دينا غلايني: في البداية اعتبرني أهلي مجنونة، ولكن..</a></h3>
+    <p class="excerpt">عالم المغامرة لا ينتمي إلى دولة أو زمن أو جنس معيّن، هو عالم قائم بذاته ينتمي إليه الطموح والحب والشغف في الاكتشاف،إنه عالم اختبار القدرات والتحدي وتذليل الصعوبات. دينا شابة مغامِ…</p>
+  </div>
+</article>
+
+<article class="card ">
+  <a class="thumb" href="posts/عبدالله-بني-سعيد-لـصيد-لينخرط-الناس-ف/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2015/04/16.jpg" alt="عبدالله بني سعيد لـ&quot;صيد&quot;  : لينخرط الناس في مغامراتنا ويتمتعوا بمناظر الأردن الرائعة" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">5 نيسان 2015<span class="cat-pill">رياضات</span></div>
+    <h3><a href="posts/عبدالله-بني-سعيد-لـصيد-لينخرط-الناس-ف/index.html">عبدالله بني سعيد لـ&quot;صيد&quot;  : لينخرط الناس في مغامراتنا ويتمتعوا بمناظر الأردن الرائعة</a></h3>
+    <p class="excerpt">بعد أن أنهى خدماته في القوات الخاصة الأردنية أسس عبدالله بني سعيد مع صديقه صقر أبو سويلم فريق أدرينالين للمغامرات&quot; مستفيدا من خبرته الكبيرة كمدرّب صاعقة ومظليين، جاعلا هذه الخبرة…</p>
+  </div>
+</article></div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-title accent-red">
+        <h2>مقابلات وتحقيقات</h2>
+        <a href="category/مقابلات-تحقيقات/index.html">عرض الكل ←</a>
+      </div>
+      <div class="grid-3">
+<article class="card ">
+  <a class="thumb" href="posts/الصيد-بين-الفوضى-والنظام-تجارب-الصي-3/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2024/09/Design.png" alt="الصيد بين الفوضى والنظام – تجارب الصيادين اللبنانيين المغتربين" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">10 كانون الأول 2024<span class="cat-pill">مقابلات وتحقيقات</span></div>
+    <h3><a href="posts/الصيد-بين-الفوضى-والنظام-تجارب-الصي-3/index.html">الصيد بين الفوضى والنظام – تجارب الصيادين اللبنانيين المغتربين</a></h3>
+    <p class="excerpt">الصياد اللبناني المغترب - 3 المعروف أنّ الصيد هواية قديمة ومُتجذّرة في التراث اللبناني، حيث تشكّل الطبيعة الخلابة في الجبال والأودية بيئة مثالية لممارستها. مع هجرة الكثير من اللبن…</p>
+  </div>
+</article>
+
+<article class="card ">
+  <a class="thumb" href="posts/الصيد-بين-الفوضى-والنظام-تجارب-الصي-2/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2024/09/Design.png" alt="الصيد بين الفوضى والنظام – تجارب الصيادين اللبنانيين المغتربين" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">14 تشرين الأول 2024<span class="cat-pill">مقابلات وتحقيقات</span></div>
+    <h3><a href="posts/الصيد-بين-الفوضى-والنظام-تجارب-الصي-2/index.html">الصيد بين الفوضى والنظام – تجارب الصيادين اللبنانيين المغتربين</a></h3>
+    <p class="excerpt">الصياد اللبناني المغترب - 2 المعروف أنّ الصيد هواية قديمة ومُتجذّرة في التراث اللبناني، حيث تشكّل الطبيعة الخلابة في الجبال والأودية بيئة مثالية لممارستها. مع هجرة الكثير من اللبن…</p>
+  </div>
+</article>
+
+<article class="card ">
+  <a class="thumb" href="posts/الصيد-بين-الفوضى-والنظام-تجارب-الصي/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2024/09/Design.png" alt="الصيد بين الفوضى والنظام – تجارب الصيادين اللبنانيين المغتربين" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">10 أيلول 2024<span class="cat-pill">مقابلات وتحقيقات</span></div>
+    <h3><a href="posts/الصيد-بين-الفوضى-والنظام-تجارب-الصي/index.html">الصيد بين الفوضى والنظام – تجارب الصيادين اللبنانيين المغتربين</a></h3>
+    <p class="excerpt">الصياد اللبناني المغترب - 1 المعروف أنّ الصيد هواية قديمة ومُتجذّرة في التراث اللبناني، حيث تشكّل الطبيعة الخلابة في الجبال والأودية بيئة مثالية لممارستها. مع هجرة الكثير من اللبن…</p>
+  </div>
+</article></div>
+    </section>
+
+    <section class="home-section">
+      <div class="section-title accent-olive">
+        <h2>جعبة المنوعات</h2>
+        <a href="category/جعبة-المنوعات/index.html">عرض الكل ←</a>
+      </div>
+      <div class="grid-3">
 <article class="card ">
   <a class="thumb" href="posts/عصفور-الشمس-الفلسطيني/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2025/09/AP4I9156-Enhanced-NR-1024x683.jpg" alt="عصفور الشمس الفلسطيني" loading="lazy"></a>
   <div class="body">
@@ -190,22 +510,23 @@
 </article>
 
 <article class="card ">
-  <a class="thumb" href="posts/الطبيعلوجيا-تقدِّم-تطبيق-inaturalist-نافذة-مجا/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2025/10/02.jpeg" alt="الطبيعلوجيا تُقدِّم: تطبيق &quot;iNaturalist&quot; نافذةٌ مجّانيةٌ على عالمِ الكائناتِ الحيّةِ" loading="lazy"></a>
+  <a class="thumb" href="posts/العُوَيْسِق/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2025/09/AP4I0032-1024x683.jpg" alt="العُوَيْسِق" loading="lazy"></a>
   <div class="body">
-    <div class="meta">9 تشرين الأول 2025<span class="cat-pill">الطبيعلوجيا</span></div>
-    <h3><a href="posts/الطبيعلوجيا-تقدِّم-تطبيق-inaturalist-نافذة-مجا/index.html">الطبيعلوجيا تُقدِّم: تطبيق &quot;iNaturalist&quot; نافذةٌ مجّانيةٌ على عالمِ الكائناتِ الحيّةِ</a></h3>
-    <p class="excerpt">مهما ابتعد الإنسان عن تفاصيل الطبيعة، فهو يعود إليها بطرق مختلفة. لأنها الذاكرة التي لا تنطفئ في داخله والملاذ الأخير الذي يعيد له توازنه. تقدِّم مجلة &quot;صيد فقرة الطبيعَلوجيا&quot;، وهي…</p>
+    <div class="meta">30 أيلول 2025<span class="cat-pill">جعبة المنوعات</span></div>
+    <h3><a href="posts/العُوَيْسِق/index.html">العُوَيْسِق</a></h3>
+    <p class="excerpt">العُوَيْسِق أو العوسَق الصغير، ويُعرف بالإنكليزية باسم (Lesser Kestrel)، هو أحد أنواع الصقور التي تتكاثر صيفًا بشكل عَرَضي. ويُعتبر مهاجرًا عابرًا إلى لبنان، حيث يظهر في المناطق ش…</p>
   </div>
 </article>
 
 <article class="card ">
-  <a class="thumb" href="posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2025/09/Adonis.jpg" alt="تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة" loading="lazy"></a>
+  <a class="thumb" href="posts/طائر-الوروار-الأوروبي/index.html"><img src="https://sayd-magazine.com/wp-content/uploads/2025/09/AP4I0956-1024x683.jpg" alt="طائر الوروار الأوروبي" loading="lazy"></a>
   <div class="body">
-    <div class="meta">30 أيلول 2025<span class="cat-pill">أخبار</span></div>
-    <h3><a href="posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/index.html">تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة</a></h3>
-    <p class="excerpt">أثبتت تجربة منع الصيد في لبنان خلال السنوات الفائتة عدم جدواها، إذ لم توقف الانتهاكات، بل حوّلتها إلى أنماط أكثر خطورة. فقد ظهرت شريحة واسعة من القوّاصين الذين يستخدمون بنادق رخيص…</p>
+    <div class="meta">17 أيلول 2025<span class="cat-pill">جعبة المنوعات</span></div>
+    <h3><a href="posts/طائر-الوروار-الأوروبي/index.html">طائر الوروار الأوروبي</a></h3>
+    <p class="excerpt">طائر الوروار الأوروبي، ويُعرف بالإنكليزية باسم (European Bee-eater)، هو طائر مهاجر شائع في لبنان. وقد سُجّل حديثًا وجوده في عدّة مناطق لبنانية خلال فصل الصيف، مما يطرح احتمال أن ي…</p>
   </div>
 </article></div>
+    </section>
       </div>
       <aside class="sidebar">
         <div class="widget">

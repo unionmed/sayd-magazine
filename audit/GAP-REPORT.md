@@ -77,32 +77,40 @@
 
 ## Implementation status
 
-_(Updated after this pass — 2026-09-15.)_
+_(Updated after parity pass 2 — 2026-09-15.)_
 
-### Fixed in this pass
+### Fixed in pass 1 (commit a7fc870)
 
-- [x] Multi News–like chrome: black top bar + white logo header + dark olive nav (`#3e421d`)
-- [x] Live logo images (header `Sayd-Magazine-Logo.png` + footer `Sayd-Footer-Logo.png`)
-- [x] Verified olive/gold CSS variables (`#3e421d`, `#2c421d`, `#565a37`, `#a78643`)
-- [x] Google Fonts: Cairo, Tajawal, Noto Naskh Arabic
-- [x] Breaking-news style ticker with `عاجل` label (`#2c421d`)
-- [x] Hero: large overlay feature + compact horizontal side stack
-- [x] Denser card grid, category pills, Multi News–style section title bars
-- [x] Richer footer (about blurb, top categories, page links, copyright bar)
-- [x] Article: `article-shell`, stronger typography/meta, breadcrumb with category, related posts
-- [x] Regenerated `docs/` (705 posts) via `python3 scripts/import-wxr.py`; `.nojekyll` restored
+- [x] Multi News–like chrome: white logo header + dark olive nav (`#3e421d`)
+- [x] Live logo images (header + footer)
+- [x] Olive/gold CSS variables; Google Fonts (Cairo / Tajawal / Noto Naskh Arabic)
+- [x] Hero overlay + compact side stack; denser cards; richer footer
+- [x] Article shell, breadcrumb, related posts
+
+### Fixed in this pass (pass 2)
+
+- [x] Ticker: red bar `#e10000` + olive label chip «من كل وادي خبر» (`#2c421d`) + white links
+- [x] CSS marquee (`ticker-track` / `@keyframes sayd-ticker`) without JS; pause on hover; reduced-motion fallback
+- [x] Top secondary links: الرئيسية، فريقنا (`من-نحن`)، إتصل بنا، تصفح صيد
+- [x] Top bar color aligned to live utility strip (`#3e421d`)
+- [x] Main nav closer to live order: صيد وفروسية، رماية، عتاد وسلاح، رياضات وسياحة بيئية، مقابلات وتحقيقات، صور، قوانين وخرائط، جعبة المنوعات (aliases map to real category folders)
+- [x] Denser Multi News homepage: hero → أحدث المقالات → صيد TV → صور strip → per-category section blocks with red/olive title bars
+- [x] صيد TV surfaces posts with فيديو in title, YouTube embeds in content, or استديو-صيد
+- [x] Article pages: `article-layout` + aside (التصنيفات + الأحدث)
+- [x] Regenerated `docs/` (705 posts) via `python3 scripts/import-wxr.py --skip-markdown`; `.nojekyll` restored
 
 ### Remaining
 
 - [ ] Mega menu / sticky nav / LayerSlider-style slider (P2 — JS-heavy)
-- [ ] Header search UI (P2)
+- [ ] Header search / weather chips on ticker left (live br-right) (P2)
+- [ ] Full live three-column hero (صيد TV + عين النسر widgets beside feature) (P1 polish)
 - [ ] Localize media off WP hotlinks (P2)
-- [ ] Per-category accent colors (P2)
-- [ ] CSS marquee animation for ticker (optional P2)
+- [ ] Per-category accent colors beyond red/olive section bars (P2)
 - [ ] Side-by-side pixel QA after GitHub Pages deploy
 - [ ] Deduplicate featured image when also embedded in WXR content (polish)
+- [ ] WP admin toolbar is live-session-only — not reproduced (correct)
 
-## Files touched
+## Files touched (this pass)
 
 - `audit/GAP-REPORT.md` (this file)
 - `assets/css/site.css`
@@ -114,3 +122,4 @@ _(Updated after this pass — 2026-09-15.)_
 - Live WordPress and DNS **not** touched  
 - GitHub Pages still served from `docs/` on `main`  
 - No push from this agent (parent handles deploy)
+- No commit from this agent unless parent requests
