@@ -3,5 +3,13 @@
   "pages": 12,
   "categories_with_posts": 31,
   "attachments_mapped": 3220,
+  "views_stats": {
+    "matched": 705,
+    "matched_slug": 705,
+    "matched_id": 0,
+    "total_posts": 705,
+    "csv_slugs": 706,
+    "csv_ids": 721
+  },
   "output": "/workspace/sayd-magazine/docs"
 }

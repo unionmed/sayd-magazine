@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2016/11/اساطير-ورايد-1.jpg
 wp_id: 4045
+views: 1463
 ---
 
 &nbsp;

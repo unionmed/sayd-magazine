@@ -6,6 +6,7 @@ author: akhatib
 categories: [عتاد وسلاح الصيد]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/03/كشّفات-ليد-للطبيعة.jpg
 wp_id: 1536
+views: 3702
 ---
 
 <a href="http://sayd.alfalivehost.com/wp-content/uploads/2015/03/كشّفات-ليد-للطبيعة.jpg"><img class="alignnone size-full wp-image-1538" src="http://sayd.alfalivehost.com/wp-content/uploads/2015/03/كشّفات-ليد-للطبيعة.jpg" alt="كشّفات ليد للطبيعة" width="600" height="400" /></a>

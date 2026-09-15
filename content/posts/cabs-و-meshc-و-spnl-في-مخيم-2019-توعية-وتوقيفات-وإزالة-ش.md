@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار, صيد بري]
 featured: https://sayd-magazine.com/wp-content/uploads/2019/12/cabs-5.jpg
 wp_id: 5394
+views: 451
 ---
 
 &nbsp;

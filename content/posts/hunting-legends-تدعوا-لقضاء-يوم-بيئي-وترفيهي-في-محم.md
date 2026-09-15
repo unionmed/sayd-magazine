@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2016/04/يوم-بيئي.jpg
 wp_id: 3414
+views: 856
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2016/04/يوم-بيئي.jpg" rel="attachment wp-att-3415"><img class="alignnone size-full wp-image-3415" src="https://sayd-magazine.com/wp-content/uploads/2016/04/يوم-بيئي.jpg" alt="يوم بيئي" width="600" height="400" /></a>

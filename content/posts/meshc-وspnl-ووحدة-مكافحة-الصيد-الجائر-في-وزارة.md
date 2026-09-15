@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2018/11/منير-شعبان.jpg
 wp_id: 5068
+views: 772
 ---
 
 &nbsp;

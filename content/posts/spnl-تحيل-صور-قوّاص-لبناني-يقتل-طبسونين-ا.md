@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2017/02/طبسون.jpg
 wp_id: 4290
+views: 1739
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2017/02/طبسون.jpg"><img class="alignnone size-full wp-image-4291" src="https://sayd-magazine.com/wp-content/uploads/2017/02/طبسون.jpg" alt="طبسون" width="600" height="400" /></a>

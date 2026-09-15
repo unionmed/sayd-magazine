@@ -6,6 +6,7 @@ author: akhatib
 categories: [صيد بري, كلمتنا]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/04/هل-ال-هانت-؟؟.jpg
 wp_id: 2041
+views: 2431
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2015/04/هل-ال-هانت-؟؟.jpg"><img class="alignnone size-full wp-image-2053" src="https://sayd-magazine.com/wp-content/uploads/2015/04/هل-ال-هانت-؟؟.jpg" alt="هل ال هانت ؟؟" width="600" height="400" /></a>

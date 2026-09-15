@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2016/06/بيرو-فيريتاس-2.jpg
 wp_id: 3518
+views: 2053
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2016/06/بيرو-فيريتاس-2.jpg"><img class="alignnone size-full wp-image-3523" src="https://sayd-magazine.com/wp-content/uploads/2016/06/بيرو-فيريتاس-2.jpg" alt="بيرو فيريتاس 2" width="600" height="400" /></a>اقامت شركة بيرو فيريتاس BUREAU VERITAS في مكاتبها في منطقة الدورة - بيروت  الجمعة 3 حزيران 2016 ورشة عمل لموظفيها حول الصيد المستدام في لبنان، بالتعاون مع جمعية حماية الطبيعة في لبنان SPNL ومركز الشرق الاوسط للصيد المستدام MESHC ومجلة صيد.

@@ -6,6 +6,7 @@ author: akhatib
 categories: [صيد بري, عتاد وسلاح الصيد]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/03/Pulsar-600-Jerry.jpg
 wp_id: 1589
+views: 5250
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2015/03/Pulsar-600-Jerry.jpg"><img class="alignnone size-full wp-image-1590" src="https://sayd-magazine.com/wp-content/uploads/2015/03/Pulsar-600-Jerry.jpg" alt="Pulsar-600-Jerry" width="600" height="412" /></a>

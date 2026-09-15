@@ -6,6 +6,7 @@ author: jabourached
 categories: [الطبيعلوجيا]
 featured: https://sayd-magazine.com/wp-content/uploads/2025/10/02.jpeg
 wp_id: 6709
+views: 132
 ---
 
 <p dir="rtl" style="text-align: justify;"><a href="https://sayd-magazine.com/wp-content/uploads/2025/10/02.jpeg"><img class="aligncenter size-full wp-image-6712" src="https://sayd-magazine.com/wp-content/uploads/2025/10/02.jpeg" alt="" width="1016" height="713" /></a></p>

@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2016/07/20.jpg
 wp_id: 3682
+views: 1445
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2016/07/20.jpg"><img class="alignnone size-full wp-image-3702" src="https://sayd-magazine.com/wp-content/uploads/2016/07/20.jpg" alt="20" width="600" height="400" /></a>

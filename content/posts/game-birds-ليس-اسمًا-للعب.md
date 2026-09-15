@@ -6,6 +6,7 @@ author: jabourached
 categories: [جعبة المنوعات]
 featured: https://sayd-magazine.com/wp-content/uploads/2025/07/GAME-BIRD.jpg
 wp_id: 6664
+views: 55
 ---
 
 <p dir="rtl"></p>

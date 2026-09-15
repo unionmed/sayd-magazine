@@ -6,6 +6,7 @@ author: akhatib
 categories: [عتاد وسلاح الصيد]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/03/benelli_super_vinci-t2.jpg
 wp_id: 1794
+views: 7964
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2015/03/benelli_super_vinci-t2.jpg"><img class="alignnone size-full wp-image-1853" src="https://sayd-magazine.com/wp-content/uploads/2015/03/benelli_super_vinci-t2.jpg" alt="benelli_super_vinci-t2" width="580" height="363" /></a>

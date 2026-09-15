@@ -6,6 +6,7 @@ author: nhakeem
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2014/09/MED-136044493694-421-1.jpg
 wp_id: 180
+views: 1116
 ---
 
 حازت جمعية حماية الطبيعة في لبنان (SPNL) مؤخراً على شهادة تقدير لأفضل الممارسات في مجال تحسين ظروف المعيشة من  "جائزة دبي الدولية" في دورتها التاسعة التي نظّمتها بلدية دبي وبرنامج الأمم المتحدة للمستوطنات البشرية "الموئل". وكانت الشهادة عربون تقدير لمشروع حمى شاطىء القليلة (قضاء صور) . <img class="alignleft wp-image-181 size-full" src="http://sayd.alfalivehost.com/wp-content/uploads/2014/09/MED-136044493694-421-1.jpg" alt=" SPNL" width="288" height="172" />

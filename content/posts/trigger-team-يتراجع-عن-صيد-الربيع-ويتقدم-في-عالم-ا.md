@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار, رياضات, صيد بري]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/06/خالد-1.jpg
 wp_id: 2333
+views: 3929
 ---
 
 <img class="alignnone size-full wp-image-2336" src="https://sayd-magazine.com/wp-content/uploads/2015/06/خالد-1.jpg" alt="خالد 1" width="600" height="400" />

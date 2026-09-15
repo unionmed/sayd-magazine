@@ -6,6 +6,7 @@ author: akhatib
 categories: [مصيدة]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/08/كلاب-صيد-مع-نظارات-صور-غريبة.jpg
 wp_id: 2668
+views: 3294
 ---
 
 &nbsp;

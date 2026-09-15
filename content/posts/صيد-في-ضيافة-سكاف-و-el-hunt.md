@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2015/04/ماهر-عميق.jpg
 wp_id: 2018
+views: 1549
 ---
 
 <img class="alignnone size-full wp-image-2019" src="https://sayd-magazine.com/wp-content/uploads/2015/04/ماهر-عميق.jpg" alt="ماهر عميق" width="600" height="400" />

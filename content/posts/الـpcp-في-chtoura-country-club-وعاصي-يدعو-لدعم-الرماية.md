@@ -6,6 +6,7 @@ author: nhakeem
 categories: [أخبار, رماية]
 featured: https://sayd-magazine.com/wp-content/uploads/2014/09/صورة-تذكارية-للمشاركين.jpg
 wp_id: 483
+views: 2867
 ---
 
 بتنظيم من فريق Air Rifle hunting Lebanon وبرعاية كل من  Mira - Baikal - Diana - Deer hunter -Nutrivet num'axes - Kaa Country Logde - ومجلتي <strong>صيد</strong> و H&amp;S استضاف Chtoura country club مباراة للبنادق الهوائية PCP و SPRING  نهار الاحد في 4 ايار 2014 ،بحضور رئيس بلدية شتورا الاستاذ نقولا عاصي ورئيسي اتحاد الرماية والصيد السابقين سامي ساسين وفوزي نحاس وبعض من ابطال الرماية في لبنان الكبار امثال منير سكاف والابطال الشباب ايلي عقيقي و ميشال الحاج.

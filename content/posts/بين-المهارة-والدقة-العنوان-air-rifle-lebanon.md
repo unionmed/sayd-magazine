@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2016/06/12pcp.jpg
 wp_id: 3558
+views: 1172
 ---
 
 &nbsp;

@@ -6,6 +6,7 @@ author: akhatib
 categories: [أخبار]
 featured: https://sayd-magazine.com/wp-content/uploads/2019/01/جولة-ليطاني-3.jpg
 wp_id: 5085
+views: 700
 ---
 
 <a href="https://sayd-magazine.com/wp-content/uploads/2019/01/جولة-ليطاني-3.jpg"><img class="alignnone size-full wp-image-5089" src="https://sayd-magazine.com/wp-content/uploads/2019/01/جولة-ليطاني-3.jpg" alt="جولة ليطاني 3" width="600" height="400" /></a>

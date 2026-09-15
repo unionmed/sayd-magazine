@@ -6,6 +6,7 @@ author: akhatib
 categories: [جعبة المنوعات]
 featured: http://sayd.alfalivehost.com/wp-content/uploads/2015/02/البطاطا-الاغلى-2.jpg
 wp_id: 1337
+views: 996
 ---
 
 <div></div>
