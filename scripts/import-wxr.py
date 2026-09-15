@@ -1011,11 +1011,11 @@ def build_site(data: dict, out: Path) -> None:
     </section>"""
         aside_html = f"""
       <aside class="sidebar article-aside">
-        {ad_slot("rectangle")}
         <div class="widget">
           <h3>الأحدث</h3>
           <div class="widget-body"><ul class="latest-list">{latest_lis_at(2)}</ul></div>
         </div>
+        {ad_slot("rectangle")}
         <div class="widget">
           <h3>التصنيفات</h3>
           <div class="widget-body"><ul class="cat-list">{cat_lis_at(2)}</ul></div>
