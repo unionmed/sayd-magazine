@@ -42,6 +42,14 @@ SITE_TITLE_EN = "Sayd Magazine"
 SITE_TAGLINE = "مجلة أسياد الطبيعة في البر والبحر والجو"
 SITE_BASE = ""  # relative paths for GitHub Pages (docs/ on main)
 
+# Live logos (hotlink; Multi News assets on sayd-magazine.com)
+LOGO_URL = "https://sayd-magazine.com/wp-content/uploads/2020/04/Sayd-Magazine-Logo.png"
+FOOTER_LOGO_URL = "https://sayd-magazine.com/wp-content/uploads/2015/03/Sayd-Footer-Logo.png"
+ABOUT_BLURB = (
+    "مجلة أسياد الطبيعة في البر والبحر والجو — صيد، حياة برّية، طيور، "
+    "فروسية وتراث من لبنان والعالم العربي."
+)
+
 # Categories to highlight in nav (by Arabic name)
 NAV_CATS = [
     "أخبار",
@@ -340,14 +348,17 @@ def layout(
     depth: int = 0,
     description: str = SITE_TAGLINE,
     extra_nav: str = "",
+    footer_cats: str = "",
+    footer_links: str = "",
 ) -> str:
     css = rel_css(depth)
     home = rel_home(depth)
-    nav_links = [
-        ("الرئيسية", home),
-        ("كل المقالات", "../" * depth + "articles/index.html"),
-    ]
-    # Fixed category shortcuts by known slugify of Arabic nicenames — filled at render time via extra_nav
+    articles = "../" * depth + "articles/index.html"
+    fonts = (
+        "https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800"
+        "&family=Noto+Naskh+Arabic:wght@400;500;600;700"
+        "&family=Tajawal:wght@400;500;700&display=swap"
+    )
     return f"""<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -355,34 +366,72 @@ def layout(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{esc(title)} — {SITE_TITLE}</title>
   <meta name="description" content="{esc(strip_html(description, 160))}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="{fonts}">
   <link rel="stylesheet" href="{css}">
+  <link rel="icon" href="{esc(LOGO_URL)}">
 </head>
 <body>
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <span class="tagline-mini">{SITE_TAGLINE}</span>
+      <a href="{home}">{SITE_TITLE_EN}</a>
+    </div>
+  </div>
   <header class="site-header">
     <div class="container">
       <div class="brand-row">
         <a class="brand" href="{home}">
-          <span class="logo">{SITE_TITLE} · {SITE_TITLE_EN}</span>
+          <img class="logo-img" src="{esc(LOGO_URL)}" width="156" height="56" alt="{SITE_TITLE} — {SITE_TITLE_EN}">
           <span class="tagline">{SITE_TAGLINE}</span>
         </a>
       </div>
+    </div>
+  </header>
+  <div class="nav-bar">
+    <div class="container">
       <nav class="main-nav" aria-label="القائمة الرئيسية">
         <a href="{home}">الرئيسية</a>
-        <a href="{"../" * depth}articles/index.html">كل المقالات</a>
+        <a href="{articles}">كل المقالات</a>
         {extra_nav}
       </nav>
     </div>
-  </header>
+  </div>
   {body}
   <footer class="site-footer">
-    <div class="container">
-      <div><strong>{SITE_TITLE}</strong> — موقع ثابت مُولَّد من تصدير ووردبريس. الهدف: GitHub Pages.</div>
-      <div class="note">الصور ما زالت تُحمَّل من خادم sayd-magazine.com (لم نُنزّل المرفقات محلياً في الإصدار الأول).</div>
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <img class="footer-logo" src="{esc(FOOTER_LOGO_URL)}" width="195" height="61" alt="{SITE_TITLE}">
+          <p>{ABOUT_BLURB}</p>
+          <p>نسخة ثابتة على GitHub Pages — المحتوى من تصدير ووردبريس.</p>
+        </div>
+        <div class="footer-col">
+          <h3>التصنيفات</h3>
+          <ul>{footer_cats or "<li><a href=\"" + articles + "\">كل المقالات</a></li>"}</ul>
+        </div>
+        <div class="footer-col">
+          <h3>روابط</h3>
+          <ul>
+            <li><a href="{home}">الرئيسية</a></li>
+            <li><a href="{articles}">كل المقالات</a></li>
+            {footer_links}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>© {SITE_TITLE} · {SITE_TITLE_EN}</div>
+        <div class="note">الصور تُحمَّل من sayd-magazine.com (مرفقات غير مُنزَّلة محلياً بعد).</div>
+      </div>
     </div>
   </footer>
 </body>
 </html>
 """
+
 
 
 def thumb_html(url: str, alt: str = "") -> str:
@@ -459,7 +508,7 @@ def build_site(data: dict, out: Path) -> None:
         return f"""
   <div class="news-strip">
     <div class="container news-strip-inner">
-      <span class="label">شريط الأخبار</span>
+      <span class="label">عاجل</span>
       <div class="ticker">{"".join(items)}</div>
     </div>
   </div>"""
@@ -470,11 +519,14 @@ def build_site(data: dict, out: Path) -> None:
     rest = posts[4:16]
 
     def card(p: dict, depth: int, heading: str = "h3", cls: str = "") -> str:
+        cat = ""
+        if p["categories"]:
+            cat = f'<span class="cat-pill">{esc(p["categories"][0]["name"])}</span>'
         return f"""
 <article class="card {cls}">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb_html(p["featured"], p["title"])}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}{" · " + esc(p["categories"][0]["name"]) if p["categories"] else ""}</div>
+    <div class="meta">{esc(p["date_display"])}{cat}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
     <p class="excerpt">{esc(p["excerpt"])}</p>
   </div>
@@ -501,6 +553,29 @@ def build_site(data: dict, out: Path) -> None:
         if p["title"].strip() and p["slug"] not in ("home-page", "under-construction", "118-2")
     )
 
+    def footer_cats_at(depth: int) -> str:
+        return "\n".join(
+            f'<li><a href="{cat_href(c["slug"], depth)}">{esc(c["name"])}</a></li>'
+            for c in top_cats[:10]
+        )
+
+    def footer_links_at(depth: int) -> str:
+        picks = [
+            p for p in pages
+            if p["slug"] in ("من-نحن", "إتصل-بنا", "شركاؤنا", "تصفح-صيد")
+            or p["title"] in ("فريق العمل", "إتصل بنا", "شركاؤنا")
+        ]
+        if len(picks) < 3:
+            picks = [
+                p for p in pages
+                if p["title"].strip()
+                and p["slug"] not in ("home-page", "under-construction", "118-2", "الدخول")
+            ][:5]
+        return "\n".join(
+            f'<li><a href="{page_href(p["slug"], depth)}">{esc(p["title"])}</a></li>'
+            for p in picks[:6]
+        )
+
     home_body = f"""
 {news_strip(0)}
 <main class="page-main">
@@ -520,11 +595,11 @@ def build_site(data: dict, out: Path) -> None:
       <aside class="sidebar">
         <div class="widget">
           <h3>التصنيفات</h3>
-          <ul class="cat-list">{cat_lis}</ul>
+          <div class="widget-body"><ul class="cat-list">{cat_lis}</ul></div>
         </div>
         <div class="widget">
           <h3>صفحات</h3>
-          <ul class="page-list">{page_lis}</ul>
+          <div class="widget-body"><ul class="page-list">{page_lis}</ul></div>
         </div>
       </aside>
     </div>
@@ -532,10 +607,24 @@ def build_site(data: dict, out: Path) -> None:
 </main>
 """
     (out / "index.html").write_text(
-        layout(SITE_TITLE, home_body, depth=0, extra_nav=nav0), encoding="utf-8"
+        layout(
+            SITE_TITLE,
+            home_body,
+            depth=0,
+            extra_nav=nav0,
+            footer_cats=footer_cats_at(0),
+            footer_links=footer_links_at(0),
+        ),
+        encoding="utf-8",
     )
 
     # --- Article pages ---
+    # Index posts by category slug for related
+    by_cat: dict[str, list[dict]] = {}
+    for _p in posts:
+        for _c in _p["categories"]:
+            by_cat.setdefault(_c["slug"], []).append(_p)
+
     for p in posts:
         d = out / "posts" / p["slug"]
         d.mkdir(parents=True, exist_ok=True)
@@ -543,28 +632,64 @@ def build_site(data: dict, out: Path) -> None:
             f'<a class="badge" href="{cat_href(c["slug"], 2)}">{esc(c["name"])}</a>'
             for c in p["categories"]
         )
+        cat_crumb = ""
+        if p["categories"]:
+            c0 = p["categories"][0]
+            cat_crumb = f' / <a href="{cat_href(c0["slug"], 2)}">{esc(c0["name"])}</a>'
         featured_block = ""
         if p["featured"]:
             featured_block = f'<div class="article-featured">{thumb_html(p["featured"], p["title"])}</div>'
+        meta_bits = []
+        if p["date_display"]:
+            meta_bits.append(f'<span class="meta-item">{esc(p["date_display"])}</span>')
+        if p["author"]:
+            meta_bits.append(f'<span class="meta-item">{esc(p["author"])}</span>')
+        # Related: same first category, exclude self
+        related_html = ""
+        related = []
+        if p["categories"]:
+            for cand in by_cat.get(p["categories"][0]["slug"], []):
+                if cand["slug"] != p["slug"]:
+                    related.append(cand)
+                if len(related) >= 3:
+                    break
+        if related:
+            related_cards = "\n".join(card(r, 2) for r in related)
+            related_html = f"""
+    <section class="related-block">
+      <div class="section-title"><h2>ذات صلة</h2></div>
+      <div class="related-grid">{related_cards}</div>
+    </section>"""
         body = f"""
 {news_strip(2, 8)}
 <main class="page-main">
-  <div class="container" style="max-width:860px">
-    <div class="breadcrumb"><a href="{rel_home(2)}">الرئيسية</a> / مقال</div>
+  <div class="container">
+    <div class="article-shell">
+    <div class="breadcrumb"><a href="{rel_home(2)}">الرئيسية</a>{cat_crumb} / مقال</div>
     <header class="article-header">
       <div>{cats}</div>
       <h1>{esc(p["title"])}</h1>
-      <div class="article-meta">{esc(p["date_display"])}{" · " + esc(p["author"]) if p["author"] else ""}</div>
+      <div class="article-meta">{"".join(meta_bits)}</div>
     </header>
     {featured_block}
     <article class="article-content">
       {p["content"] or "<p class='empty-note'>لا يوجد محتوى نصي لهذا المقال في التصدير.</p>"}
     </article>
+    {related_html}
+    </div>
   </div>
 </main>
 """
         (d / "index.html").write_text(
-            layout(p["title"], body, depth=2, description=p["excerpt"], extra_nav=nav2),
+            layout(
+                p["title"],
+                body,
+                depth=2,
+                description=p["excerpt"],
+                extra_nav=nav2,
+                footer_cats=footer_cats_at(2),
+                footer_links=footer_links_at(2),
+            ),
             encoding="utf-8",
         )
 
@@ -574,7 +699,8 @@ def build_site(data: dict, out: Path) -> None:
         d.mkdir(parents=True, exist_ok=True)
         body = f"""
 <main class="page-main">
-  <div class="container" style="max-width:860px">
+  <div class="container">
+    <div class="article-shell">
     <div class="breadcrumb"><a href="{rel_home(2)}">الرئيسية</a> / صفحة</div>
     <header class="article-header">
       <h1>{esc(p["title"] or p["slug"])}</h1>
@@ -582,11 +708,19 @@ def build_site(data: dict, out: Path) -> None:
     <article class="article-content">
       {p["content"] or "<p class='empty-note'>لا يوجد محتوى لهذه الصفحة في التصدير.</p>"}
     </article>
+    </div>
   </div>
 </main>
 """
         (d / "index.html").write_text(
-            layout(p["title"] or p["slug"], body, depth=2, extra_nav=nav2),
+            layout(
+                p["title"] or p["slug"],
+                body,
+                depth=2,
+                extra_nav=nav2,
+                footer_cats=footer_cats_at(2),
+                footer_links=footer_links_at(2),
+            ),
             encoding="utf-8",
         )
 
@@ -619,7 +753,15 @@ def build_site(data: dict, out: Path) -> None:
 </main>
 """
         (d / "index.html").write_text(
-            layout(c["name"], body, depth=2, extra_nav=nav2), encoding="utf-8"
+            layout(
+                c["name"],
+                body,
+                depth=2,
+                extra_nav=nav2,
+                footer_cats=footer_cats_at(2),
+                footer_links=footer_links_at(2),
+            ),
+            encoding="utf-8",
         )
 
     # --- Paginated articles index ---
@@ -665,7 +807,12 @@ def build_site(data: dict, out: Path) -> None:
 </main>
 """
         html_page = layout(
-            f"كل المقالات — صفحة {page_i}", body, depth=1, extra_nav=nav1
+            f"كل المقالات — صفحة {page_i}",
+            body,
+            depth=1,
+            extra_nav=nav1,
+            footer_cats=footer_cats_at(1),
+            footer_links=footer_links_at(1),
         )
         if page_i == 1:
             (articles_dir / "index.html").write_text(html_page, encoding="utf-8")
@@ -679,6 +826,7 @@ def build_site(data: dict, out: Path) -> None:
         "attachments_mapped": len(data["attachments"]),
         "output": str(out),
     }
+    (out / ".nojekyll").write_text("", encoding="utf-8")
     (out / "build-manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
     )
