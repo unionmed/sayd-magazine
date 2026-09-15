@@ -83,6 +83,7 @@ TOP_SECONDARY = [
 ]
 
 TICKER_LABEL = "من كل وادي خبر"
+TICKER_URGENT = "عاجل"
 
 
 def text(el: ET.Element | None, default: str = "") -> str:
@@ -364,7 +365,7 @@ def write_markdown(data: dict) -> None:
 
 
 def top_secondary_html(pages: list[dict], depth: int) -> str:
-    """Secondary links in the dark/olive top bar (live: الرئيسية، فريقنا، …)."""
+    """Slim utility links (فريقنا، إتصل بنا، …)."""
     by_slug = {p["slug"]: p for p in pages}
     home = rel_home(depth)
     parts = []
@@ -380,6 +381,22 @@ def top_secondary_html(pages: list[dict], depth: int) -> str:
     return "\n        ".join(parts)
 
 
+def ad_slot(kind: str = "rectangle", label: str = "مساحة إعلانية") -> str:
+    """Reserved, labeled ad placeholder — not an empty white gap."""
+    sizes = {
+        "leaderboard": ("728×90", "ad-leaderboard"),
+        "rectangle": ("300×250", "ad-rectangle"),
+        "inline": ("728×90", "ad-inline"),
+    }
+    size, cls = sizes.get(kind, sizes["rectangle"])
+    return f"""
+<aside class="ad-slot {cls}" aria-label="{esc(label)}">
+  <span class="ad-kicker">Ad</span>
+  <span class="ad-copy">{esc(label)}</span>
+  <span class="ad-size">{size}</span>
+</aside>"""
+
+
 def layout(
     title: str,
     body: str,
@@ -390,6 +407,8 @@ def layout(
     footer_cats: str = "",
     footer_links: str = "",
     top_links: str = "",
+    ticker: str = "",
+    is_home: bool = False,
 ) -> str:
     css = rel_css(depth)
     home = rel_home(depth)
@@ -400,13 +419,23 @@ def layout(
         "&family=Tajawal:wght@400;500;700&display=swap"
     )
     top_right = top_links or f'<a href="{home}">{SITE_TITLE_EN}</a>'
+    page_title = (
+        f"{SITE_TITLE} · {SITE_TITLE_EN}"
+        if is_home
+        else f"{esc(title)} — {SITE_TITLE}"
+    )
+    nav_links = f"""
+        <a class="nav-home" href="{home}">الرئيسية</a>
+        {extra_nav}
+        <a class="nav-all" href="{articles}">الأرشيف</a>"""
     return f"""<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{esc(title)} — {SITE_TITLE}</title>
+  <title>{page_title}</title>
   <meta name="description" content="{esc(strip_html(description, 160))}">
+  <meta name="theme-color" content="#3e421d">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="{fonts}">
@@ -414,32 +443,32 @@ def layout(
   <link rel="icon" href="{esc(LOGO_URL)}">
 </head>
 <body>
-  <div class="top-bar">
-    <div class="container top-bar-inner">
-      <nav class="top-secondary" aria-label="روابط علوية">
-        {top_right}
-      </nav>
-      <a class="top-en" href="{home}">{SITE_TITLE_EN}</a>
-    </div>
-  </div>
-  <header class="site-header">
-    <div class="container">
-      <div class="brand-row">
-        <a class="brand" href="{home}">
-          <img class="logo-img" src="{esc(LOGO_URL)}" width="156" height="56" alt="{SITE_TITLE} — {SITE_TITLE_EN}">
-          <span class="tagline">{SITE_TAGLINE}</span>
-        </a>
+  <a class="skip-link" href="#content">إلى المحتوى</a>
+  <div class="site-sticky">
+    <div class="mast-top">
+      <div class="container mast-top-inner">
+        <nav class="top-secondary" aria-label="روابط علوية">
+          {top_right}
+        </nav>
+        <a class="top-en" href="{home}">{SITE_TITLE_EN}</a>
       </div>
     </div>
-  </header>
-  <div class="nav-bar">
-    <div class="container">
-      <nav class="main-nav" aria-label="القائمة الرئيسية">
-        <a class="nav-home" href="{home}" title="الرئيسية">الرئيسية</a>
-        {extra_nav}
-        <a class="nav-all" href="{articles}">كل المقالات</a>
-      </nav>
-    </div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="{home}">
+          <img class="logo-img" src="{esc(LOGO_URL)}" width="140" height="50" alt="{SITE_TITLE} — {SITE_TITLE_EN}">
+          <span class="tagline">{SITE_TAGLINE}</span>
+        </a>
+        <nav class="main-nav" aria-label="القائمة الرئيسية">{nav_links}
+        </nav>
+        <details class="nav-toggle">
+          <summary>القائمة</summary>
+          <nav class="drawer-nav" aria-label="قائمة الجوال">{nav_links}
+          </nav>
+        </details>
+      </div>
+    </header>
+    {ticker}
   </div>
   {body}
   <footer class="site-footer">
@@ -452,13 +481,13 @@ def layout(
         </div>
         <div class="footer-col">
           <h3>التصنيفات</h3>
-          <ul>{footer_cats or "<li><a href=\"" + articles + "\">كل المقالات</a></li>"}</ul>
+          <ul>{footer_cats or "<li><a href=\"" + articles + "\">الأرشيف</a></li>"}</ul>
         </div>
         <div class="footer-col">
           <h3>روابط</h3>
           <ul>
             <li><a href="{home}">الرئيسية</a></li>
-            <li><a href="{articles}">كل المقالات</a></li>
+            <li><a href="{articles}">الأرشيف — كل المقالات</a></li>
             {footer_links}
           </ul>
         </div>
@@ -475,6 +504,36 @@ def layout(
 </html>
 """
 
+
+
+def paginate_links(page_i: int, pages_n: int) -> str:
+    """Compact archive pagination: السابق / window / التالي."""
+    if pages_n <= 1:
+        return ""
+    links: list[str] = []
+    if page_i > 1:
+        prev_href = "index.html" if page_i == 2 else f"page-{page_i - 1}.html"
+        links.append(f'<a class="page-prev" href="{prev_href}">السابق</a>')
+
+    def href_for(i: int) -> str:
+        return "index.html" if i == 1 else f"page-{i}.html"
+
+    def page_btn(i: int) -> str:
+        if i == page_i:
+            return f'<span class="current">{i}</span>'
+        return f'<a href="{href_for(i)}">{i}</a>'
+
+    window = {1, pages_n, page_i, page_i - 1, page_i + 1, page_i - 2, page_i + 2}
+    shown = sorted(i for i in window if 1 <= i <= pages_n)
+    last = 0
+    for i in shown:
+        if last and i > last + 1:
+            links.append('<span class="ellipsis">…</span>')
+        links.append(page_btn(i))
+        last = i
+    if page_i < pages_n:
+        links.append(f'<a class="page-next" href="page-{page_i + 1}.html">التالي</a>')
+    return '<nav class="pagination" aria-label="ترقيم الصفحات">' + "".join(links) + "</nav>"
 
 
 def thumb_html(url: str, alt: str = "") -> str:
@@ -567,7 +626,6 @@ def build_site(data: dict, out: Path) -> None:
     top1 = top_secondary_html(pages, 1)
     top2 = top_secondary_html(pages, 2)
 
-    # --- News strip helper (live: red bar + olive «من كل وادي خبر» + CSS marquee) ---
     def news_strip(depth: int, n: int = 14) -> str:
         items = []
         for p in posts[:n]:
@@ -575,25 +633,34 @@ def build_site(data: dict, out: Path) -> None:
                 f'<a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a>'
             )
         ticker_inner = "".join(items)
-        # Duplicate track for seamless CSS marquee
         return f"""
-  <div class="news-strip">
-    <div class="container news-strip-inner">
-      <span class="label">{TICKER_LABEL}</span>
-      <div class="ticker-viewport" aria-label="{TICKER_LABEL}">
-        <div class="ticker-track">
-          <div class="ticker">{ticker_inner}</div>
-          <div class="ticker" aria-hidden="true">{ticker_inner}</div>
+    <div class="news-strip">
+      <div class="container news-strip-inner">
+        <div class="labels">
+          <span class="label-urgent">{TICKER_URGENT}</span>
+          <span class="label-feed">{TICKER_LABEL}</span>
+        </div>
+        <div class="ticker-viewport" aria-label="{TICKER_URGENT} — {TICKER_LABEL}">
+          <div class="ticker-track">
+            <div class="ticker">{ticker_inner}</div>
+            <div class="ticker" aria-hidden="true">{ticker_inner}</div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>"""
+    </div>"""
 
-    # --- Homepage ---
-    featured = posts[:1]
-    side = posts[1:4]
-    rest = posts[4:10]
-    used_slugs: set[str] = {p["slug"] for p in featured + side + rest}
+    ticker0 = news_strip(0)
+    ticker1 = news_strip(1)
+    ticker2 = news_strip(2)
+
+    # --- Homepage: latest feed + featured mosaic ---
+    latest_news = posts[:10]
+    featured_pool = [p for p in posts if p.get("featured")][:7]
+    if len(featured_pool) < 5:
+        featured_pool = posts[:7]
+    featured_lead = featured_pool[:1]
+    featured_side = featured_pool[1:5]
+    used_slugs: set[str] = {p["slug"] for p in latest_news + featured_pool}
 
     def card(p: dict, depth: int, heading: str = "h3", cls: str = "") -> str:
         cat = ""
@@ -605,13 +672,12 @@ def build_site(data: dict, out: Path) -> None:
   <div class="body">
     <div class="meta">{esc(p["date_display"])}{cat}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
-    <p class="excerpt">{esc(p["excerpt"])}</p>
   </div>
 </article>"""
 
     def compact_card(p: dict, depth: int) -> str:
         return f"""
-<article class="card card-compact">
+<article class="card card-compact overlay">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb_html(p["featured"], p["title"])}</a>
   <div class="body">
     <div class="meta">{esc(p["date_display"])}</div>
@@ -619,9 +685,28 @@ def build_site(data: dict, out: Path) -> None:
   </div>
 </article>"""
 
-    hero_main = card(featured[0], 0, "h2", "hero-main") if featured else ""
-    hero_side = "\n".join(card(p, 0) for p in side)
-    grid = "\n".join(card(p, 0) for p in rest)
+    def news_item(p: dict, depth: int) -> str:
+        cat = esc(p["categories"][0]["name"]) if p["categories"] else ""
+        cat_html = f'<span class="feed-cat">{cat}</span>' if cat else ""
+        return f"""
+<li>
+  <a href="{post_href(p["slug"], depth)}">
+    <span class="feed-thumb">{thumb_html(p["featured"], p["title"])}</span>
+    <span class="feed-text">
+      {cat_html}
+      <span class="feed-title">{esc(p["title"])}</span>
+      <span class="feed-date">{esc(p["date_display"])}</span>
+    </span>
+  </a>
+</li>"""
+
+    latest_items = "\n".join(news_item(p, 0) for p in latest_news)
+    hero_main = (
+        card(featured_lead[0], 0, "h2", "overlay feature-lead")
+        if featured_lead
+        else ""
+    )
+    hero_side = "\n".join(card(p, 0, "h3", "overlay") for p in featured_side)
 
     # Sidebar categories
     top_cats = sorted(
@@ -679,15 +764,15 @@ def build_site(data: dict, out: Path) -> None:
     def section_block(title: str, accent: str, items: list[dict], more_href: str) -> str:
         if not items:
             return ""
-        cards = "\n".join(card(p, 0) for p in items)
-        more = f'<a href="{more_href}">عرض الكل ←</a>' if more_href else ""
+        cards = "\n".join(card(p, 0, "h3", "overlay") for p in items)
+        more = f'<a href="{more_href}">المزيد</a>' if more_href else ""
         return f"""
     <section class="home-section">
-      <div class="section-title {accent}">
+      <div class="section-head {accent}">
         <h2>{esc(title)}</h2>
         {more}
       </div>
-      <div class="grid-3">{cards}</div>
+      <div class="grid-4">{cards}</div>
     </section>"""
 
     # Category magazine blocks
@@ -696,13 +781,13 @@ def build_site(data: dict, out: Path) -> None:
         c = resolve_cat(cat_info, list(keys) + [title])
         if not c:
             continue
-        # Prefer posts not already in hero/latest grid; fall back to category order
-        fresh = [p for p in c["posts"] if p["slug"] not in used_slugs][:3]
-        if len(fresh) < 3:
+        # Prefer posts not already in latest/featured; fall back to category order
+        fresh = [p for p in c["posts"] if p["slug"] not in used_slugs][:4]
+        if len(fresh) < 4:
             for p in c["posts"]:
                 if p not in fresh:
                     fresh.append(p)
-                if len(fresh) >= 3:
+                if len(fresh) >= 4:
                     break
         for p in fresh:
             used_slugs.add(p["slug"])
@@ -728,7 +813,7 @@ def build_site(data: dict, out: Path) -> None:
         tv_cards = "\n".join(compact_card(p, 0) for p in video_posts[:6])
         tv_html = f"""
     <section class="home-section sayd-tv">
-      <div class="section-title accent-red">
+      <div class="section-head accent-tv">
         <h2>صيد TV</h2>
       </div>
       <div class="grid-photos">{tv_cards}</div>
@@ -742,9 +827,9 @@ def build_site(data: dict, out: Path) -> None:
         photo_cards = "\n".join(compact_card(p, 0) for p in photo_items)
         photos_html = f"""
     <section class="home-section photos-strip">
-      <div class="section-title accent-olive">
+      <div class="section-head accent-olive">
         <h2>صور</h2>
-        <a href="{cat_href(photos_cat["slug"], 0)}">مكتبة الصور ←</a>
+        <a href="{cat_href(photos_cat["slug"], 0)}">المزيد</a>
       </div>
       <div class="grid-photos">{photo_cards}</div>
     </section>"""
@@ -752,27 +837,39 @@ def build_site(data: dict, out: Path) -> None:
     sections_joined = "\n".join(section_html_parts)
 
     home_body = f"""
-{news_strip(0)}
-<main class="page-main">
+<main class="page-main" id="content">
   <div class="container">
-    <section class="hero">
-      <div>{hero_main}</div>
-      <div class="hero-side">{hero_side}</div>
+    {ad_slot("leaderboard")}
+    <section class="masthead" aria-label="آخر الأخبار والقصص المميزة">
+      <div class="latest-col">
+        <div class="section-head">
+          <h2>آخر الأخبار</h2>
+          <a href="articles/index.html">المزيد</a>
+        </div>
+        <ul class="latest-feed">{latest_items}</ul>
+      </div>
+      <div class="featured-col">
+        <div class="section-head">
+          <h2>قصص مميزة</h2>
+        </div>
+        <div class="featured-mosaic">
+          {hero_main}
+          <div class="feature-stack">{hero_side}</div>
+        </div>
+      </div>
     </section>
     <div class="home-layout">
       <div class="home-main">
-        <section class="home-section">
-          <div class="section-title accent-olive">
-            <h2>أحدث المقالات</h2>
-            <a href="articles/index.html">عرض الكل ←</a>
-          </div>
-          <div class="grid-3">{grid}</div>
-        </section>
         {tv_html}
+        {ad_slot("inline")}
         {photos_html}
         {sections_joined}
+        <div class="more-news">
+          <a class="more-btn" href="articles/index.html">المزيد من الأخبار — الأرشيف</a>
+        </div>
       </div>
       <aside class="sidebar">
+        {ad_slot("rectangle")}
         <div class="widget">
           <h3>التصنيفات</h3>
           <div class="widget-body"><ul class="cat-list">{cat_lis}</ul></div>
@@ -795,6 +892,8 @@ def build_site(data: dict, out: Path) -> None:
             footer_cats=footer_cats_at(0),
             footer_links=footer_links_at(0),
             top_links=top0,
+            ticker=ticker0,
+            is_home=True,
         ),
         encoding="utf-8",
     )
@@ -818,7 +917,7 @@ def build_site(data: dict, out: Path) -> None:
             c0 = p["categories"][0]
             cat_crumb = f' / <a href="{cat_href(c0["slug"], 2)}">{esc(c0["name"])}</a>'
         featured_block = ""
-        if p["featured"]:
+        if p["featured"] and p["featured"] not in (p["content"] or ""):
             featured_block = f'<div class="article-featured">{thumb_html(p["featured"], p["title"])}</div>'
         meta_bits = []
         if p["date_display"]:
@@ -835,26 +934,26 @@ def build_site(data: dict, out: Path) -> None:
                 if len(related) >= 3:
                     break
         if related:
-            related_cards = "\n".join(card(r, 2) for r in related)
+            related_cards = "\n".join(card(r, 2, "h3", "overlay") for r in related)
             related_html = f"""
     <section class="related-block">
-      <div class="section-title accent-olive"><h2>ذات صلة</h2></div>
+      <div class="section-head"><h2>ذات صلة</h2></div>
       <div class="related-grid">{related_cards}</div>
     </section>"""
         aside_html = f"""
       <aside class="sidebar article-aside">
-        <div class="widget">
-          <h3>التصنيفات</h3>
-          <div class="widget-body"><ul class="cat-list">{cat_lis_at(2)}</ul></div>
-        </div>
+        {ad_slot("rectangle")}
         <div class="widget">
           <h3>الأحدث</h3>
           <div class="widget-body"><ul class="latest-list">{latest_lis_at(2)}</ul></div>
         </div>
+        <div class="widget">
+          <h3>التصنيفات</h3>
+          <div class="widget-body"><ul class="cat-list">{cat_lis_at(2)}</ul></div>
+        </div>
       </aside>"""
         body = f"""
-{news_strip(2, 8)}
-<main class="page-main">
+<main class="page-main" id="content">
   <div class="container">
     <div class="article-layout">
     <div class="article-shell">
@@ -868,6 +967,7 @@ def build_site(data: dict, out: Path) -> None:
     <article class="article-content">
       {p["content"] or "<p class='empty-note'>لا يوجد محتوى نصي لهذا المقال في التصدير.</p>"}
     </article>
+    {ad_slot("inline")}
     {related_html}
     </div>
     {aside_html}
@@ -885,6 +985,7 @@ def build_site(data: dict, out: Path) -> None:
                 footer_cats=footer_cats_at(2),
                 footer_links=footer_links_at(2),
                 top_links=top2,
+                ticker=ticker2,
             ),
             encoding="utf-8",
         )
@@ -894,7 +995,7 @@ def build_site(data: dict, out: Path) -> None:
         d = out / "pages" / p["slug"]
         d.mkdir(parents=True, exist_ok=True)
         body = f"""
-<main class="page-main">
+<main class="page-main" id="content">
   <div class="container">
     <div class="article-shell">
     <div class="breadcrumb"><a href="{rel_home(2)}">الرئيسية</a> / صفحة</div>
@@ -917,20 +1018,27 @@ def build_site(data: dict, out: Path) -> None:
                 footer_cats=footer_cats_at(2),
                 footer_links=footer_links_at(2),
                 top_links=top2,
+                ticker=ticker2,
             ),
             encoding="utf-8",
         )
 
-    # --- Category archives ---
+    # --- Category archives (paginated) ---
+    cat_per_page = 24
     for c in cat_info.values():
         if c["count"] == 0:
             continue
         d = out / "category" / c["slug"]
         d.mkdir(parents=True, exist_ok=True)
-        rows = []
-        for p in c["posts"]:
-            rows.append(
-                f"""
+        cat_posts = c["posts"]
+        cat_pages_n = max(1, (len(cat_posts) + cat_per_page - 1) // cat_per_page)
+
+        for page_i in range(1, cat_pages_n + 1):
+            chunk = cat_posts[(page_i - 1) * cat_per_page : page_i * cat_per_page]
+            rows = []
+            for p in chunk:
+                rows.append(
+                    f"""
 <article class="post-row">
   <a class="thumb" href="{post_href(p["slug"], 2)}">{thumb_html(p["featured"], p["title"])}</a>
   <div class="body">
@@ -939,18 +1047,24 @@ def build_site(data: dict, out: Path) -> None:
     <p class="excerpt">{esc(p["excerpt"])}</p>
   </div>
 </article>"""
+                )
+            page_note = (
+                f" — صفحة {page_i}" if cat_pages_n > 1 else ""
             )
-        body = f"""
-<main class="page-main">
+            body = f"""
+<main class="page-main" id="content">
   <div class="container">
     <div class="breadcrumb"><a href="{rel_home(2)}">الرئيسية</a> / تصنيفات / {esc(c["name"])}</div>
-    <div class="section-title"><h2>{esc(c["name"])} <span class="badge">{c["count"]}</span></h2></div>
+    <div class="section-head"><h2>{esc(c["name"])} <span class="badge">{c["count"]}</span>{page_note}</h2>
+      <a href="../../articles/index.html">الأرشيف</a>
+    </div>
+    {ad_slot("leaderboard")}
     <div class="post-list">{"".join(rows)}</div>
+    {paginate_links(page_i, cat_pages_n)}
   </div>
 </main>
 """
-        (d / "index.html").write_text(
-            layout(
+            html_page = layout(
                 c["name"],
                 body,
                 depth=2,
@@ -958,9 +1072,12 @@ def build_site(data: dict, out: Path) -> None:
                 footer_cats=footer_cats_at(2),
                 footer_links=footer_links_at(2),
                 top_links=top2,
-            ),
-            encoding="utf-8",
-        )
+                ticker=ticker2,
+            )
+            if page_i == 1:
+                (d / "index.html").write_text(html_page, encoding="utf-8")
+            if cat_pages_n > 1:
+                (d / f"page-{page_i}.html").write_text(html_page, encoding="utf-8")
 
     # --- Paginated articles index ---
     per_page = 24
@@ -968,16 +1085,6 @@ def build_site(data: dict, out: Path) -> None:
     pages_n = max(1, (total + per_page - 1) // per_page)
     articles_dir = out / "articles"
     articles_dir.mkdir(parents=True)
-
-    def pagination(page_i: int, depth: int) -> str:
-        links = []
-        for i in range(1, pages_n + 1):
-            href = "index.html" if i == 1 else f"page-{i}.html"
-            if i == page_i:
-                links.append(f'<span class="current">{i}</span>')
-            else:
-                links.append(f'<a href="{href}">{i}</a>')
-        return '<nav class="pagination" aria-label="ترقيم الصفحات">' + "".join(links) + "</nav>"
 
     for page_i in range(1, pages_n + 1):
         chunk = posts[(page_i - 1) * per_page : page_i * per_page]
@@ -995,23 +1102,25 @@ def build_site(data: dict, out: Path) -> None:
 </article>"""
             )
         body = f"""
-<main class="page-main">
+<main class="page-main" id="content">
   <div class="container">
-    <div class="breadcrumb"><a href="{rel_home(1)}">الرئيسية</a> / كل المقالات</div>
-    <div class="section-title"><h2>كل المقالات ({total})</h2></div>
+    <div class="breadcrumb"><a href="{rel_home(1)}">الرئيسية</a> / الأرشيف</div>
+    <div class="section-head"><h2>الأرشيف — كل المقالات ({total})</h2></div>
+    {ad_slot("leaderboard")}
     <div class="post-list">{"".join(rows)}</div>
-    {pagination(page_i, 1)}
+    {paginate_links(page_i, pages_n)}
   </div>
 </main>
 """
         html_page = layout(
-            f"كل المقالات — صفحة {page_i}",
+            f"الأرشيف — صفحة {page_i}",
             body,
             depth=1,
             extra_nav=nav1,
             footer_cats=footer_cats_at(1),
             footer_links=footer_links_at(1),
             top_links=top1,
+            ticker=ticker1,
         )
         if page_i == 1:
             (articles_dir / "index.html").write_text(html_page, encoding="utf-8")
