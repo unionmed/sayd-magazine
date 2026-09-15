@@ -723,7 +723,7 @@ def build_site(data: dict, out: Path) -> None:
     ticker1 = news_strip(1)
     ticker2 = news_strip(2)
 
-    # --- Homepage: latest feed + featured mosaic ---
+    # --- Homepage: featured mosaic first, then compact latest feed ---
     latest_news = posts[:10]
     featured_pool = [p for p in posts if p.get("featured")][:7]
     if len(featured_pool) < 5:
@@ -761,7 +761,6 @@ def build_site(data: dict, out: Path) -> None:
         return f"""
 <li>
   <a href="{post_href(p["slug"], depth)}">
-    <span class="feed-thumb">{thumb_html(p["featured"], p["title"])}</span>
     <span class="feed-text">
       {cat_html}
       <span class="feed-title">{esc(p["title"])}</span>
@@ -910,14 +909,7 @@ def build_site(data: dict, out: Path) -> None:
 <main class="page-main" id="content">
   <div class="container">
     {ad_slot("leaderboard")}
-    <section class="masthead" aria-label="آخر الأخبار والقصص المميزة">
-      <div class="latest-col">
-        <div class="section-head">
-          <h2>آخر الأخبار</h2>
-          <a href="articles/index.html">المزيد</a>
-        </div>
-        <ul class="latest-feed">{latest_items}</ul>
-      </div>
+    <section class="masthead" aria-label="القصص المميزة وآخر الأخبار">
       <div class="featured-col">
         <div class="section-head">
           <h2>قصص مميزة</h2>
@@ -926,6 +918,13 @@ def build_site(data: dict, out: Path) -> None:
           {hero_main}
           <div class="feature-stack">{hero_side}</div>
         </div>
+      </div>
+      <div class="latest-col">
+        <div class="section-head">
+          <h2>آخر الأخبار</h2>
+          <a href="articles/index.html">المزيد</a>
+        </div>
+        <ul class="latest-feed">{latest_items}</ul>
       </div>
     </section>
     <div class="home-layout">
