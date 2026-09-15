@@ -35,11 +35,15 @@
 | [sayd-gulf-research-2026-09-08.md](sayd-gulf-research-2026-09-08.md) | موجز رصد الرحلات الخليجية |
 | [sayd-babtain-pending.md](sayd-babtain-pending.md) | بابطين: مذكرة 8 أيلول + حالة الإرسال S05 |
 | [actionable-before-23-sep.md](actionable-before-23-sep.md) | ما يجب حسمه قبل **23 أيلول** (محدّث مساء 15) |
+| [editorial-calendar-4weeks-draft.md](editorial-calendar-4weeks-draft.md) | تقويم أربعة أسابيع — عناوين وزوايا مقترحة فقط، بحالة مسودة |
+| [media-kit-draft-safe.md](media-kit-draft-safe.md) | Media Kit عربي آمن — بلا أرقام جمهور أو أسعار معتمدة |
 | [crossover-2114-sayd.md](crossover-2114-sayd.md) | تقاطع 2114 ↔ صيد فقط |
 | [mail-triage-2026-09-15.md](mail-triage-2026-09-15.md) | فرز بريد 15 أيلول (مارس→بلبل) |
+
+- **الوضع الآن:** أولوية نايف = NOX؛ ملفات صيد التالية تجهيز داخلي هادئ فقط، بلا دفع قرارات AR02/S08 أو تواصل خارجي.
 
 نسخ موازية تحت `briefs/from-chatgpt/organized/`.
 
 
 ## تسليم قيادة
-- `MARS-FULL-HANDOFF.md` · `ar02-approval-pack.md` · `s08-nayef-review-card.md` · `media-kit-draft-safe.md`
+- `MARS-FULL-HANDOFF.md` · `ar02-approval-pack.md` · `s08-nayef-review-card.md` · `media-kit-draft-safe.md` · `editorial-calendar-4weeks-draft.md`
