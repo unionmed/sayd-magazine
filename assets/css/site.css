@@ -576,58 +576,6 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 
-/* View-count chip — compact olive/gold accent */
-.views,
-.meta-views {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.15rem;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: var(--olive);
-  background: rgba(167, 134, 67, 0.14);
-  border: 1px solid rgba(167, 134, 67, 0.45);
-  border-radius: 999px;
-  padding: 0.05rem 0.45rem;
-  margin-inline-start: 0.3rem;
-  white-space: nowrap;
-  line-height: 1.4;
-  vertical-align: middle;
-}
-
-.card .meta .views {
-  font-size: 0.64rem;
-  padding: 0.02rem 0.38rem;
-  color: var(--olive-deep);
-  background: rgba(167, 134, 67, 0.16);
-}
-
-.card.overlay .meta .views {
-  color: #fff8e8;
-  background: rgba(62, 66, 29, 0.55);
-  border-color: rgba(167, 134, 67, 0.65);
-}
-
-.feed-date .views,
-.feed-views {
-  margin-inline-start: 0.35rem;
-  font-size: 0.64rem;
-  color: var(--olive-soft);
-}
-
-.article-meta .meta-views {
-  font-size: 0.75rem;
-  color: var(--olive-deep);
-  background: rgba(167, 134, 67, 0.12);
-  border-color: var(--gold);
-}
-
-.post-row .meta .views {
-  font-size: 0.66rem;
-}
-
-
 .card h2, .card h3 {
   margin: 0;
   line-height: 1.35;
