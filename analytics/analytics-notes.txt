@@ -1,0 +1,18 @@
+Sayd Magazine read-only analytics inventory (checked 2026-09-15 UTC)
+
+Per-post views:
+- WordPress Posts list (37 pages, 721 posts: 705 published + 16 drafts) exposes Views column.
+- Values are stored in post meta key post_views_count; the single-post Custom Fields box visibly shows this key and value (example post 6836 = 25).
+- Exported to post-views.csv from the WordPress export, preserving post ID, title, slug, view count, post date, and status. The export has 721 unique post rows; two posts contain duplicate identical post_views_count meta entries, de-duplicated to one row each.
+
+Aggregate:
+- Jetpack Site Stats admin page is present but current day/week/month panels show no stats. Legacy summary remains: all-time 140 views, 23 comments; best-ever date 2013-01-22. Monthly values are in jetpack-stats-monthly.csv; summary is in jetpack-stats-summary.csv.
+- Jetpack stats panels for referrers, search terms, top posts/pages, clicks, and video plays show no data. No country analytics panel/data was available. The monthly CSV normalizes blank pre-2012-month cells to 0.
+- Site Kit by Google is installed but unconfigured (setup screen), so no Google Analytics/Search Console aggregate export exists.
+- Wordfence Live Traffic contains security/request logs with IP/country entries, but it is not page-view analytics; it was not exported as visitor stats.
+- No WP Statistics, Post Views, Count Per Day, or similar analytics plugin is installed.
+- Multi News 2.8 dashboard/welcome and Theme Options contain no aggregate stats panel.
+
+Network/source check:
+- Posts view values were server-rendered in td.post_views; no stats JSON endpoint was needed. The list links to Jetpack/WordPress.com per-post stats, but those are unavailable for this disconnected setup.
+- Jetpack connect/setup was not retried; no settings/content/plugins were changed.

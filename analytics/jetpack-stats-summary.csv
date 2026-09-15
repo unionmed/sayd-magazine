@@ -1,0 +1,11 @@
+metric,value,source,notes
+all_time_views,140,Jetpack Site Stats local admin,"Monthly table total; legacy data only"
+all_time_comments,23,Jetpack Site Stats local admin,"Displayed beside all-time views"
+today_views,0,Jetpack Site Stats local admin,"Displayed for current period on 2026-09-15"
+best_ever_date,2013-01-22,Jetpack Site Stats local admin,"Best-ever day shown; daily count not exposed in page"
+current_period_data,none,Jetpack Site Stats local admin,"No stats available for current day/week/month chart"
+referrers,none,Jetpack Site Stats local admin,"No referrers"
+search_engine_terms,none,Jetpack Site Stats local admin,"No search terms"
+top_posts_pages,none,Jetpack Site Stats local admin,"No top posts or pages"
+clicks,none,Jetpack Site Stats local admin,"No clicks recorded"
+country_data,none,Jetpack Site Stats local admin,"No country panel/data available"
