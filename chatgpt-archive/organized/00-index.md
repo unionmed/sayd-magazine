@@ -39,3 +39,7 @@
 | [mail-triage-2026-09-15.md](mail-triage-2026-09-15.md) | فرز بريد 15 أيلول (مارس→بلبل) |
 
 نسخ موازية تحت `briefs/from-chatgpt/organized/`.
+
+
+## تسليم قيادة
+- `MARS-FULL-HANDOFF.md` · `ar02-approval-pack.md` · `s08-nayef-review-card.md` · `media-kit-draft-safe.md`
