@@ -52,6 +52,8 @@ If you cannot re-export WP, add a post as Markdown under `content/posts/` follow
 - الصفحة الأولى تعرض آخر الأخبار والقصص المميزة. الأقدم في الأرشيف والتصنيفات.
 - Theme source of truth: `assets/css/site.css` + templates in `scripts/import-wxr.py`. Do not hand-edit `docs/**/*.html`.
 - مصدر التصميم: CSS + سكربت التوليد. لا تعدّل ملفات `docs/` يدوياً.
+- View counts / المشاهدات come from `analytics/post-views.csv` (WP `post_views_count`), matched by slug or post id at build time.
+- أرقام المشاهدة من الملف التحليلي وتُدمَج عند التوليد.
 
 ## Deploy / النشر
 

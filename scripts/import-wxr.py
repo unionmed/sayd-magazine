@@ -150,6 +150,20 @@ def format_ar_date(dt: datetime | None) -> str:
     return f"{dt.day} {months[dt.month - 1]} {dt.year}"
 
 
+def format_views_label(n: int) -> str:
+    """Arabic views label: مشاهدة (1) / مشاهدات (else), Western digits with separators."""
+    label = "مشاهدة" if n == 1 else "مشاهدات"
+    return f"{n:,} {label}"
+
+
+def views_chip(p: dict, cls: str = "meta-views") -> str:
+    """Compact views chip. Omit when unknown; show 0 when the CSV has a count."""
+    views = p.get("views")
+    if views is None:
+        return ""
+    return f'<span class="views {cls}">{esc(format_views_label(int(views)))}</span>'
+
+
 
 def load_post_views(path: Path = VIEWS_CSV) -> tuple[dict[str, int], dict[str, int]]:
     """Load analytics/post-views.csv → (by_slug, by_post_id) view maps.
@@ -740,7 +754,7 @@ def build_site(data: dict, out: Path) -> None:
 <article class="card {cls}">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb_html(p["featured"], p["title"])}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}{cat}</div>
+    <div class="meta">{esc(p["date_display"])}{cat}{views_chip(p)}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
   </div>
 </article>"""
@@ -750,7 +764,7 @@ def build_site(data: dict, out: Path) -> None:
 <article class="card card-compact overlay">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb_html(p["featured"], p["title"])}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
+    <div class="meta">{esc(p["date_display"])}{views_chip(p)}</div>
     <h3><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></h3>
   </div>
 </article>"""
@@ -765,6 +779,7 @@ def build_site(data: dict, out: Path) -> None:
       {cat_html}
       <span class="feed-title">{esc(p["title"])}</span>
       <span class="feed-date">{esc(p["date_display"])}</span>
+      {views_chip(p, "feed-views")}
     </span>
   </a>
 </li>"""
@@ -993,6 +1008,9 @@ def build_site(data: dict, out: Path) -> None:
             meta_bits.append(f'<span class="meta-item">{esc(p["date_display"])}</span>')
         if p["author"]:
             meta_bits.append(f'<span class="meta-item">{esc(p["author"])}</span>')
+        views_meta = views_chip(p)
+        if views_meta:
+            meta_bits.append(f'<span class="meta-item">{views_meta}</span>')
         # Related: same first category, exclude self
         related_html = ""
         related = []
