@@ -225,6 +225,10 @@ def rel_css(depth: int) -> str:
     return "../" * depth + "assets/css/site.css"
 
 
+def rel_tokens_css(depth: int) -> str:
+    return "../" * depth + "assets/css/tokens.css"
+
+
 def rel_home(depth: int) -> str:
     return "../" * depth + "index.html"
 
@@ -481,12 +485,12 @@ def layout(
     is_home: bool = False,
 ) -> str:
     css = rel_css(depth)
+    tokens = rel_tokens_css(depth)
     home = rel_home(depth)
     articles = "../" * depth + "articles/index.html"
     fonts = (
-        "https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800"
-        "&family=Noto+Naskh+Arabic:wght@400;500;600;700"
-        "&family=Tajawal:wght@400;500;700&display=swap"
+        "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:"
+        "wght@400;500;600;700&display=swap"
     )
     top_right = top_links or f'<a href="{home}">{SITE_TITLE_EN}</a>'
     page_title = (
@@ -505,10 +509,11 @@ def layout(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{page_title}</title>
   <meta name="description" content="{esc(strip_html(description, 160))}">
-  <meta name="theme-color" content="#3e421d">
+  <meta name="theme-color" content="#0C231A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="{fonts}">
+  <link rel="stylesheet" href="{tokens}">
   <link rel="stylesheet" href="{css}">
   <link rel="icon" href="{esc(LOGO_URL)}">
 </head>
@@ -527,7 +532,10 @@ def layout(
       <div class="container header-inner">
         <a class="brand" href="{home}">
           <img class="logo-img" src="{esc(LOGO_URL)}" width="140" height="50" alt="{SITE_TITLE} — {SITE_TITLE_EN}">
-          <span class="tagline">{SITE_TAGLINE}</span>
+          <span class="brand-text">
+            <span class="brand-name">{SITE_TITLE}</span>
+            <span class="tagline">{SITE_TAGLINE} • التأسيس 2012</span>
+          </span>
         </a>
         <nav class="main-nav" aria-label="القائمة الرئيسية">{nav_links}
         </nav>
@@ -726,22 +734,25 @@ def build_site(data: dict, out: Path) -> None:
     # --- Homepage: featured mosaic first, then compact latest feed ---
     latest_news = posts[:10]
     featured_pool = [p for p in posts if p.get("featured")][:7]
-    if len(featured_pool) < 5:
+    if len(featured_pool) < 3:
         featured_pool = posts[:7]
     featured_lead = featured_pool[:1]
-    featured_side = featured_pool[1:5]
+    featured_side = featured_pool[1:3]  # Stitch 8:4 — two stacked side stories
     used_slugs: set[str] = {p["slug"] for p in latest_news + featured_pool}
 
     def card(p: dict, depth: int, heading: str = "h3", cls: str = "") -> str:
         cat = ""
         if p["categories"]:
             cat = f'<span class="cat-pill">{esc(p["categories"][0]["name"])}</span>'
+        excerpt = esc(strip_html(p.get("excerpt") or "", 140))
+        excerpt_html = f'<p class="excerpt">{excerpt}</p>' if excerpt else ""
         return f"""
 <article class="card {cls}">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb_html(p["featured"], p["title"])}</a>
   <div class="body">
     <div class="meta">{esc(p["date_display"])}{cat}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
+    {excerpt_html}
   </div>
 </article>"""
 
@@ -769,13 +780,61 @@ def build_site(data: dict, out: Path) -> None:
   </a>
 </li>"""
 
+    def prestige_lead(p: dict, depth: int = 0) -> str:
+        cat = esc(p["categories"][0]["name"]) if p["categories"] else "قصص مميزة"
+        excerpt = esc(strip_html(p.get("excerpt") or "", 200))
+        href = post_href(p["slug"], depth)
+        return f"""
+<article class="hero-lead">
+  <a class="hero-bg" href="{href}" aria-hidden="true" tabindex="-1">{thumb_html(p["featured"], p["title"])}</a>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-body">
+    <div class="hero-meta">
+      <span class="hero-badge">{cat}</span>
+      <span>{esc(p["date_display"])}</span>
+    </div>
+    <h2><a href="{href}">{esc(p["title"])}</a></h2>
+    <p class="hero-excerpt">{excerpt}</p>
+    <a class="hero-cta" href="{href}">قراءة التحقيق الكامل ←</a>
+  </div>
+</article>"""
+
+    def prestige_side(p: dict, depth: int = 0, text_only: bool = False) -> str:
+        cat = esc(p["categories"][0]["name"]) if p["categories"] else ""
+        excerpt = esc(strip_html(p.get("excerpt") or "", 120))
+        href = post_href(p["slug"], depth)
+        if text_only:
+            return f"""
+<article class="side-card side-text">
+  <div class="flex-top">
+    <span class="side-tag">{cat or "تشريعات وتقارير"}</span>
+    <span class="side-meta">{esc(p["date_display"])}</span>
+  </div>
+  <h3><a href="{href}">{esc(p["title"])}</a></h3>
+  <p class="side-excerpt">{excerpt}</p>
+</article>"""
+        cat_badge = f'<span class="side-cat">{cat}</span>' if cat else ""
+        return f"""
+<article class="side-card">
+  <a class="side-thumb" href="{href}">{thumb_html(p["featured"], p["title"])}{cat_badge}</a>
+  <div class="side-meta">{esc(p["date_display"])}</div>
+  <h3><a href="{href}">{esc(p["title"])}</a></h3>
+  <p class="side-excerpt">{excerpt}</p>
+</article>"""
+
     latest_items = "\n".join(news_item(p, 0) for p in latest_news)
-    hero_main = (
-        card(featured_lead[0], 0, "h2", "overlay feature-lead")
-        if featured_lead
-        else ""
-    )
-    hero_side = "\n".join(card(p, 0, "h3", "overlay") for p in featured_side)
+    if featured_lead:
+        hero_main = prestige_lead(featured_lead[0], 0)
+        side_parts = []
+        for i, p in enumerate(featured_side):
+            # Second side card leans text-first when no strong image needed
+            side_parts.append(prestige_side(p, 0, text_only=(i == 1 and not p.get("featured"))))
+        if len(side_parts) < 2 and len(featured_pool) > 2:
+            side_parts.append(prestige_side(featured_pool[2], 0, text_only=True))
+        hero_side = "\n".join(side_parts)
+    else:
+        hero_main = ""
+        hero_side = ""
 
     # Sidebar categories
     top_cats = sorted(
@@ -864,10 +923,9 @@ def build_site(data: dict, out: Path) -> None:
             section_block(title, accent, fresh, cat_href(c["slug"], 0))
         )
 
-    # صيد TV — video-like posts
+    # صيد TV — video-like posts (theater layout)
     video_posts = [p for p in posts if is_video_post(p)][:6]
     if len(video_posts) < 3:
-        # Fall back to استديو صيد / عين النسر categories
         for key in ("استديو-صيد", "عين-النسر-تختار-لكم"):
             c = cat_info.get(key) or resolve_cat(cat_info, [key])
             if not c:
@@ -879,13 +937,45 @@ def build_site(data: dict, out: Path) -> None:
                     break
     tv_html = ""
     if video_posts:
-        tv_cards = "\n".join(compact_card(p, 0) for p in video_posts[:6])
+        lead_v = video_posts[0]
+        lead_excerpt = esc(strip_html(lead_v.get("excerpt") or "", 180))
+        lead_href = post_href(lead_v["slug"], 0)
+        playlist = []
+        for p in video_posts[1:4]:
+            playlist.append(f"""
+<a class="tv-item" href="{post_href(p["slug"], 0)}">
+  <span class="tv-thumb">{thumb_html(p["featured"], p["title"])}</span>
+  <span class="tv-item-body">
+    <h4>{esc(p["title"])}</h4>
+    <span class="tv-item-meta">{esc(p["date_display"])}</span>
+  </span>
+</a>""")
         tv_html = f"""
-    <section class="home-section sayd-tv">
-      <div class="section-head accent-tv">
-        <h2>صيد TV</h2>
+    <section class="sayd-tv-theater" aria-label="صيد TV">
+      <div class="tv-head">
+        <div>
+          <p class="tv-kicker">صيد TV • الاستديو الوثائقي المرئي</p>
+          <h2>أفلام المقناص، وثائقيات الأعماق وتجارب البرية</h2>
+        </div>
+        <a class="tv-more" href="articles/index.html">جميع البرامج</a>
       </div>
-      <div class="grid-photos">{tv_cards}</div>
+      <div class="tv-grid">
+        <article class="tv-feature">
+          <a class="tv-media" href="{lead_href}">
+            {thumb_html(lead_v["featured"], lead_v["title"])}
+            <span class="tv-play" aria-hidden="true">▶</span>
+          </a>
+          <div class="tv-body">
+            <div class="tv-meta">{esc(lead_v["date_display"])}</div>
+            <h3><a href="{lead_href}">{esc(lead_v["title"])}</a></h3>
+            <p>{lead_excerpt}</p>
+          </div>
+        </article>
+        <div class="tv-playlist">
+          <p class="tv-playlist-title">قائمة العرض المختارة</p>
+          {"".join(playlist)}
+        </div>
+      </div>
     </section>"""
 
     # Photos strip
@@ -905,34 +995,94 @@ def build_site(data: dict, out: Path) -> None:
 
     sections_joined = "\n".join(section_html_parts)
 
+    # Platform archive metrics (counts of published pieces — never public view counts)
+    n_posts = len(posts)
+    n_cats = sum(1 for c in cat_info.values() if c["count"] > 0 and c["name"] != "Uncategorized")
+    hunt_cat = resolve_cat(cat_info, ["صيد وفروسية", "صيد"])
+    invest_cat = resolve_cat(cat_info, ["مقابلات وتحقيقات", "مقابلات-تحقيقات"])
+    photos_n = (photos_cat["count"] if photos_cat else 0)
+    hunt_n = hunt_cat["count"] if hunt_cat else 0
+    invest_n = invest_cat["count"] if invest_cat else 0
+
+    laws_c = resolve_cat(cat_info, ["قوانين وخرائط", "قوانين-وخرائط"])
+    laws_btn = ""
+    if laws_c:
+        laws_btn = (
+            f'<a class="btn-secondary" href="{cat_href(laws_c["slug"], 0)}">'
+            f"قوانين وخرائط</a>"
+        )
+    stats_fourth_label = "تحقيق ومقابلة" if invest_n else "تصنيف تحريري"
+    stats_fourth_n = invest_n or n_cats
+
     home_body = f"""
 <main class="page-main" id="content">
   <div class="container">
     {ad_slot("leaderboard")}
-    <section class="masthead" aria-label="القصص المميزة وآخر الأخبار">
-      <div class="featured-col">
-        <div class="section-head">
-          <h2>قصص مميزة</h2>
-        </div>
-        <div class="featured-mosaic">
-          {hero_main}
-          <div class="feature-stack">{hero_side}</div>
-        </div>
-      </div>
-      <div class="latest-col">
-        <div class="section-head">
-          <h2>آخر الأخبار</h2>
-          <a href="articles/index.html">المزيد</a>
-        </div>
-        <ul class="latest-feed">{latest_items}</ul>
-      </div>
+    <section class="prestige-hero" aria-label="القصة الرئيسية">
+      {hero_main}
+      <aside class="hero-side">{hero_side}</aside>
     </section>
+    <section class="prestige-latest" aria-label="آخر الأخبار">
+      <div class="section-head">
+        <h2>آخر الأخبار</h2>
+        <a href="articles/index.html">المزيد</a>
+      </div>
+      <ul class="latest-feed">{latest_items}</ul>
+    </section>
+    <div class="prestige-charter">
+      <div class="charter-copy">
+        <div class="charter-icon" aria-hidden="true">◈</div>
+        <div>
+          <span class="charter-badge">ميثاق شرف</span>
+          <h2>دليل الصياد المسؤول وميثاق حماية الطيور المهاجرة</h2>
+          <p>نلتزم في مجلة صيد بتكريس ثقافة الصيد الأخلاقي المستدام، ومنع أجهزة المناداة الإلكترونية، وحماية الطيور الحوامة والمهددة بالانقراض.</p>
+        </div>
+      </div>
+      <div class="charter-actions">
+        <a class="btn-primary" href="articles/index.html">طالع الأرشيف</a>
+        {laws_btn}
+      </div>
+    </div>
     <div class="home-layout">
       <div class="home-main">
         {tv_html}
         {ad_slot("inline")}
         {photos_html}
         {sections_joined}
+        <section class="prestige-stats" aria-label="أرقام المنصة">
+          <div class="stats-head">
+            <div>
+              <p class="stats-kicker">أرقام وتاريخ المنصة</p>
+              <h2>مجلة صيد: الريادة في توثيق الطبيعة والرياضات الأصيلة</h2>
+            </div>
+            <span style="background:rgba(253,252,247,0.15);color:#fff;padding:0.35rem 0.75rem;border-radius:999px;font-size:0.75rem">تأسست عام 2012</span>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card"><span class="stat-num">+{n_posts}</span><span class="stat-label">مقال وتغطية في الأرشيف</span></div>
+            <div class="stat-card"><span class="stat-num">+{hunt_n}</span><span class="stat-label">صيد وفروسية</span></div>
+            <div class="stat-card"><span class="stat-num">+{photos_n}</span><span class="stat-label">صور وعدسات ميدانية</span></div>
+            <div class="stat-card"><span class="stat-num">+{stats_fourth_n}</span><span class="stat-label">{stats_fourth_label}</span></div>
+          </div>
+        </section>
+        <section class="prestige-newsletter" aria-label="النشرة البريدية">
+          <div>
+            <p class="nl-kicker">عضوية نخبة مجلة صيد</p>
+            <h2>انضم إلى مجتمع الصقارين ورواد الطبيعة الأكبر في العالم العربي</h2>
+            <p>نرسل لك فجر كل يوم خميس نشرة ترصد أسراب الطيور العابرة، حالة الطقس، تحديثات لوائح المحميات، وتحليلات أحدث عتاد الصيد.</p>
+          </div>
+          <div class="nl-box">
+            <h3>التسجيل السريع في النشرة</h3>
+            <p class="nl-note">الموقع قيد التحديث — سيتم تفعيل الاشتراك قريباً.</p>
+            <form id="sayd-newsletter-form" action="#" method="post">
+              <label for="nl-name">الاسم الكريم</label>
+              <input id="nl-name" name="name" type="text" placeholder="مثال: سعود المهيري" autocomplete="name">
+              <label for="nl-email">البريد الإلكتروني</label>
+              <input id="nl-email" name="email" type="email" placeholder="name@domain.com" autocomplete="email" required>
+              <button type="submit">تأكيد الاشتراك والانضمام</button>
+            </form>
+            <div class="nl-success" id="newsletter-success" role="status">أهلاً بك — سيتم تفعيل النشرة عند اكتمال التحديث.</div>
+          </div>
+        </section>
         <div class="more-news">
           <a class="more-btn" href="articles/index.html">المزيد من الأخبار — الأرشيف</a>
         </div>
@@ -950,8 +1100,20 @@ def build_site(data: dict, out: Path) -> None:
       </aside>
     </div>
   </div>
+  <script>
+  (function(){{
+    var form = document.getElementById("sayd-newsletter-form");
+    if (!form) return;
+    form.addEventListener("submit", function(e){{
+      e.preventDefault();
+      var ok = document.getElementById("newsletter-success");
+      if (ok) ok.classList.add("is-visible");
+    }});
+  }})();
+  </script>
 </main>
 """
+
     (out / "index.html").write_text(
         layout(
             SITE_TITLE,
@@ -1205,6 +1367,7 @@ def build_site(data: dict, out: Path) -> None:
         "output": str(out),
     }
     (out / ".nojekyll").write_text("", encoding="utf-8")
+    (out / "CNAME").write_text("sayd-magazine.com\n", encoding="utf-8")
     (out / "build-manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
     )

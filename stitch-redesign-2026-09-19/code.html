@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;font-family:'IBM Plex Sans Arabic',sans-serif;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-container":"#ecefe9","on-primary-fixed":"#002115","on-primary":"#ffffff","on-error":"#ffffff","on-secondary-container":"#735700","background":"#f7faf5","on-secondary":"#ffffff","surface-bright":"#f7faf5","error-container":"#ffdad6","surface-cream":"#F6F3EA","on-tertiary-fixed-variant":"#633f19","surface":"#f7faf5","primary-container":"#133326","inverse-on-surface":"#eff2ec","tertiary-fixed-dim":"#f1bc8c","surface-parchment":"#FDFCF7","on-surface-variant":"#414844","secondary":"#775a00","surface-container-low":"#f1f4ef","tertiary-container":"#452603","surface-muted":"#EFECE1","on-background":"#191d1a","tertiary":"#291400","outline":"#727974","primary":"#001e12","inverse-surface":"#2d312e","brand-gold-bright":"#D4AF37","on-secondary-fixed":"#251a00","tertiary-fixed":"#ffdcbf","secondary-fixed":"#ffdf98","inverse-primary":"#abcebc","on-tertiary":"#ffffff","surface-variant":"#e0e3de","on-tertiary-container":"#bb8b5f","surface-dim":"#d8dbd6","on-primary-container":"#7a9c8b","on-secondary-fixed-variant":"#5a4300","text-on-dark-secondary":"#C8D1CC","error":"#ba1a1a","accent-crimson":"#B82E2E","surface-container-lowest":"#ffffff","surface-tint":"#456556","on-tertiary-fixed":"#2d1600","brand-forest-deep":"#0C231A","surface-container-highest":"#e0e3de","outline-variant":"#c1c8c2","on-error-container":"#93000a","surface-container-high":"#e6e9e4","primary-fixed-dim":"#abcebc","secondary-container":"#fece57","secondary-fixed-dim":"#eec14b","on-surface":"#191d1a","primary-fixed":"#c7ebd7","on-primary-fixed-variant":"#2d4d3f","border-brass-light":"#E8DCB8"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"space-2xl":"4rem","gutter-mobile":"0.75rem","margin":"2.5rem","margin-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem","gutter":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","space-lg":"1.5rem"},fontFamily:{"headline-lg-mobile":["IBM Plex Sans"],"display-xl":["IBM Plex Sans"],"body-lg":["IBM Plex Sans"],"body-sm":["IBM Plex Sans"],"headline-sm":["IBM Plex Sans"],"body-md":["IBM Plex Sans"],"title-md":["IBM Plex Sans"],"headline-md":["IBM Plex Sans"],"label-lg":["IBM Plex Sans"],"label-sm":["IBM Plex Sans"],"display-xl-mobile":["IBM Plex Sans"],"headline-lg":["IBM Plex Sans"]},fontSize:{"headline-lg-mobile":["26px",{lineHeight:"36px",fontWeight:"700"}],"display-xl":["52px",{lineHeight:"68px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-lg":["19px",{lineHeight:"32px",fontWeight:"400"}],"body-sm":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"body-md":["16px",{lineHeight:"27px",fontWeight:"400"}],"title-md":["17px",{lineHeight:"24px",fontWeight:"600"}],"headline-md":["26px",{lineHeight:"36px",fontWeight:"600"}],"label-lg":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.03em",fontWeight:"600"}],"display-xl-mobile":["34px",{lineHeight:"46px",letterSpacing:"-0.005em",fontWeight:"700"}],"headline-lg":["36px",{lineHeight:"48px",fontWeight:"700"}]}}}}</script></head><body class="bg-surface-parchment font-body-md text-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface-parchment/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-56 flex flex-col justify-between"><div class="bg-brand-forest-deep text-text-on-dark-secondary px-margin h-10 flex items-center justify-between font-label-sm text-label-sm"><div class="flex items-center gap-space-lg"><span>السبت 14 ربيع الأول 1448 هـ | 29 أغسطس 2026 م</span><span class="flex items-center gap-space-xs text-brand-gold-bright"><span class="material-symbols-outlined text-[15px]">wb_sunny</span>طقس المقناص 26°C - رياح شمالية معتدلة</span><span class="hidden lg:inline-flex items-center gap-space-xs text-secondary-fixed"><span class="material-symbols-outlined text-[15px]">nest_cam_wired_stand</span>موسم هجرة طيور الخريف 2026</span></div><div class="flex items-center gap-space-md"><span class="hidden md:inline text-text-on-dark-secondary">نسخة الخليج العربي والشرق الأوسط</span><div class="flex items-center gap-space-xs"><button aria-label="مشاركة وإرسال" class="w-6 h-6 flex items-center justify-center rounded-lg hover:bg-primary-container hover:text-on-primary transition-colors"><span class="material-symbols-outlined text-[16px]">share</span></button><button aria-label="تغيير نمط الإضاءة" class="w-6 h-6 flex items-center justify-center rounded-lg hover:bg-primary-container hover:text-on-primary transition-colors"><span class="material-symbols-outlined text-[16px]">light_mode</span></button></div></div></div><div class="h-24 px-margin flex items-center justify-between border-b border-surface-container"><div class="flex items-center gap-space-md"><img alt="شعار مجلة صيد" class="h-16 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8P9YWvCV_VMVo3o0_NGQo5JN-0b_nnsYtWGipuAtqBtx555V6jR4oBO-lah4uyFwv5T8NTwwQi1XWW6SGFBJoSMmjqs-RE4hwQ3bMoPtISGFeo-LGwxsZcxzRh98aLN2DYVkSNmnJRcwpQ_RzaWB5RS0BEZjHsZqNIy2PY0n8PHkrzGoN5w4NC974a5NtzWS6RQrIiDO6oZa1b74wO_nf_rqNuH1NH7di1Y9jrlVEqPeoSWP3jN5ZCT8"/><div class="flex flex-col"><span class="font-headline-md text-headline-md text-primary tracking-tight">مجلة صَيـد</span><span class="font-label-sm text-label-sm text-secondary font-semibold">أسياد الطبيعة في البر والبحر والجو • التأسيس 2012</span></div></div><div class="hidden md:flex flex-1 max-w-lg mx-space-xl"><div class="relative w-full"><input class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg px-space-md py-space-sm pl-space-2xl border border-outline-variant/50 focus:outline-none focus:border-secondary" placeholder="ابحث عن طيور الحبارى، سلالات الصقور، البنادق، أو القوانين..." type="search"/><button aria-label="بحث" class="absolute left-space-sm top-1/2 -translate-y-1/2 text-outline"><span class="material-symbols-outlined text-[20px]">search</span></button></div></div><div class="flex items-center gap-space-md"><button class="hidden sm:flex items-center gap-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[20px]">bookmark</span><span>قائمة القراءة</span></button><button class="bg-primary-container text-on-primary hover:bg-primary px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg transition-colors shadow-sm">انضم إلى النخبة</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="h-12 px-margin flex items-center overflow-x-auto bg-surface-parchment"><nav class="flex items-center gap-space-lg whitespace-nowrap" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg"><a aria-current="page" class="px-space-sm py-space-xs transition-colors bg-primary-container text-on-primary font-bold rounded-lg" data-path="home" href="#">الرئيسية</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="falconry-and-equestrian" href="#">صيد وفروسية</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="shooting" href="#">رماية</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="gear-and-arms" href="#">عتاد وسلاح</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="sayd-tv" href="#">صيد TV</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="ecotourism-and-adventure" href="#">رياضات وسياحة بيئية</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="investigations-and-interviews" href="#">مقابلات وتحقيقات</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="readers-lens" href="#">بعدستكم</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="regulations-and-maps" href="#">قوانين وخرائط</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="hunting-bag" href="#">جعبة المنوعات</a><a class="px-space-sm py-space-xs text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="archive" href="#">الأرشيف</a></nav></div><div class="h-10 bg-surface-cream px-margin flex items-center border-t border-surface-container-high overflow-hidden"><div class="flex items-center gap-space-sm bg-accent-crimson text-on-error px-space-md py-space-xs rounded-DEFAULT shrink-0 font-label-sm text-label-sm font-bold"><span class="w-2 h-2 rounded-full bg-on-error animate-pulse"></span>عاجل</div><div class="flex items-center gap-space-xl overflow-x-auto whitespace-nowrap pr-space-md font-body-sm text-body-sm text-on-surface"><span class="inline-flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-secondary">campaign</span>إعلان فتح باب تصاريح الصيد البري لموسم 2026/2027 بالمحميات الملكية</span><span class="text-outline-variant">•</span><span class="inline-flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-secondary">trophy</span>اختتام بطولة فزاع للصيد بالصقور التلواح وتتويج أبطال شوط النخبة</span><span class="text-outline-variant">•</span><span class="inline-flex items-center gap-space-xs"><span class="material-symbols-outlined text-[14px] text-secondary">public</span>رصد مسارات عبور طائر الصقر الحر عبر سواحل البحر الأحمر</span></div></div></div></header><main class="w-full pt-56 bg-surface-parchment min-h-screen"><div class="flex flex-col w-full">
+<!-- WEATHER / MIGRATION METEOROLOGY STRIP -->
+<section class="w-full bg-surface-cream border-b border-border-brass-light/40 py-space-sm px-margin">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-space-lg flex-wrap">
+<div class="flex items-center gap-space-xs text-primary font-bold">
+<span class="material-symbols-outlined text-[18px] text-secondary">air</span>
+<span>مرصد المقناص والرياح:</span>
+<span class="text-on-surface font-normal">رياح شمالية شرقية 14 عقدة | مدى الرؤية 10 كم</span>
+</div>
+<div class="h-3 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">flight_takeoff</span>
+<span>موسم هجرة الخريف:</span>
+<span class="bg-primary-container text-on-primary px-space-xs py-0.5 rounded-DEFAULT font-semibold">عبور نشط فوق بلاد الشام والخليج</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="inline-flex items-center gap-space-xs text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[16px] text-brand-gold-bright">verified</span>
+<span>محدث لحظياً بالتعاون مع مراكز الرصد البيئي</span>
+</span>
+<button class="hover:text-primary transition-colors flex items-center gap-space-xs text-on-surface-variant" id="btn-sound-toggle" title="تنبيهات الهجرة">
+<span class="material-symbols-outlined text-[16px]">notifications_active</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 1. HERO EDITORIAL SHOWCASE (Asymmetrical 8:4 Grid) -->
+<section class="w-full max-w-7xl mx-auto px-margin py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Lead 8-Column Monumental Story Card -->
+<article class="lg:col-span-8 group relative flex flex-col justify-end min-h-[540px] lg:min-h-[600px] rounded-xl overflow-hidden shadow-xl">
+<!-- Background Wildlife Photojournalism Imagery -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Stunning aerial view of thousands of migratory raptors and white pelicans soaring through dramatic golden sunset skies over the Lebanese cedar mountains, framed with deep forest green pines and warm amber evening sunlight. Professional wildlife editorial photography, majestic and pristine light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqFyzxWa-dygKZEP45NYcExsUOMFQ0AMulSAD69anqoxrfbCVs9iHyX1Qc4rI8K_wzAbJ_mcfTmAIn-kSI34-0V2oq_NRWQBuThGYWrRtell-jz1kOCE1sAh7ogeRUfyWay7OqbKOe6dMnbapEeAqG9uHfDnEOOJuUvavQgbuf3sFwYbu3uAj6h6bhbfWXFupgQVHzjR_CsvwwgyiOU0dt4PirSO5LaNP6aU-M1BgMlIzyrGmMtCxC')"></div>
+<!-- Subtle Vignette & Scrim Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-brand-forest-deep via-brand-forest-deep/60 to-transparent"></div>
+<!-- Top Editorial Badges -->
+<div class="absolute top-space-lg right-space-lg flex items-center gap-space-sm z-10">
+<span class="bg-secondary text-surface-parchment font-label-lg text-label-lg px-space-md py-space-xs rounded-DEFAULT shadow-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            تحقيق الغلاف الميداني
+          </span>
+<span class="bg-primary-container/85 text-on-primary font-label-sm text-label-sm px-space-sm py-space-xs rounded-DEFAULT backdrop-blur-md">
+            طبعة الخريف الخاصة
+          </span>
+</div>
+<div class="absolute top-space-lg left-space-lg flex items-center gap-space-xs z-10">
+<button aria-label="حفظ المقال" class="w-9 h-9 rounded-full bg-surface-parchment/20 backdrop-blur-md hover:bg-surface-parchment hover:text-primary text-surface-parchment flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[19px]">bookmark_border</span>
+</button>
+<button aria-label="مشاركة المقال" class="w-9 h-9 rounded-full bg-surface-parchment/20 backdrop-blur-md hover:bg-surface-parchment hover:text-primary text-surface-parchment flex items-center justify-center transition-all shadow-sm">
+<span class="material-symbols-outlined text-[19px]">share</span>
+</button>
+</div>
+<!-- Content Overlay -->
+<div class="relative z-10 p-space-lg lg:p-space-2xl text-on-primary flex flex-col gap-space-md">
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-secondary-fixed">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px]">calendar_today</span>
+              13 أيلول 2026
+            </span>
+<span>•</span>
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+              4 دقائق قراءة
+            </span>
+<span>•</span>
+<span class="text-brand-gold-bright">تحقيقات وحماية البيئة</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-primary leading-tight hover:text-secondary-fixed transition-colors">
+<a href="#">«كابس» و«مكشب» لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي لا عدو للطبيعة</a>
+</h1>
+<p class="font-body-md text-body-md text-text-on-dark-secondary max-w-2xl line-clamp-3 leading-relaxed">
+            تحرّك ميداني شامل يجمع الهيئات البيئية ونوادي الصيد المستدام في ممرات عنجر والضنية لضبط ممارسات الصيد العشوائي، وفتح ممرات آمنة للطيور المهاجرة في تجربة بيئية يحتذى بها في المشرق العربي.
+          </p>
+<div class="pt-space-sm flex items-center justify-between border-t border-surface-parchment/20 mt-space-xs">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border-2 border-brand-gold-bright/60">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of an Arab environmental wildlife journalist and field falconer wearing a crisp desert safari jacket, warm sunset desert backdrop, realistic editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbAQcK0dTkQ2VlHesqylLfvunVHkijFU4-qVTz3ew8l5hpVjI36mHJMxDWiP4jeWXFMHxi4a3e4jBjdopX7PzzdoRFqeYzjhfYuvcEaZKvHiQdeJ9bwQl--gkv9zUKJXsahKBF_A_DWd-AbS_KDBQ6ELfuBaQ89j690HcpuanF1HHbcCgZ2LEIbxTrf3Wy3IdyqS5NWzINDXBvNdELt2Aym4RqG0aWFXKONE8f4Tmy4M6OB5OnHJI1"/>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-primary">هيئة التحرير والمتابعة الميدانية</span>
+<span class="font-label-sm text-label-sm text-text-on-dark-secondary">بيروت - ممرات البقاع</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-space-xs text-brand-gold-bright font-label-lg text-label-lg hover:underline" href="#">
+<span>قراءة التحقيق الكامل</span>
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Right 4-Column Stacked Lead Stories -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Secondary Story Card 1 -->
+<article class="flex-1 bg-surface-cream rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex flex-col gap-space-sm">
+<div class="relative w-full h-44 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Majestic close up portrait of an authentic Arab Saker falcon hooded in luxury leather and gold stitching, resting on an ornate falconer's glove at the Katara Suhail International Hunting Exhibition in Doha Qatar, luxury exhibition lighting, high detail photographic art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq7ZdzzCy0aBdGtL2Xas6Z4mPu1F_vQDNW17tlGTvIC5leifuczlqSsgez5xxo6ekIE9AyA4E_NbCoKqSZvkZaGCxDev6xORyaWK1-TXGQnr5c0KDFyTGkAFOcbQhdNVo0uLLhDTXOCcwzhGbVITmjO0RVejDNFQNJvGRrEayLrPFcrCDKoyD1UYaw6Md8N9YvqyKFlOojsaLjSA5OfyHpSFDPJ26ukTfD_UshvrD2uFF6VAPihaR_"/>
+<span class="absolute bottom-space-xs right-space-xs bg-brand-forest-deep text-on-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded-DEFAULT">معارض وتراث</span>
+<span class="absolute top-space-xs left-space-xs bg-surface-parchment/90 text-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded-DEFAULT flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span> 18 صورة
+              </span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary pt-space-xs">
+<span>قطر • كتارا</span>
+<span>•</span>
+<span class="text-on-surface-variant">13 أيلول 2026</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">
+<a href="#">80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة</a>
+</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              سجلت النسخة العاشرة مزادات قياسية على أرقى فصائل الجيرات والشواهين والبنادق التراثية المنقوشة يدوياً بمشاركة عريضة لنخبة الصقارين.
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px]">visibility</span> 14.8 ألف قراءة
+            </span>
+<a class="text-secondary font-semibold hover:underline flex items-center gap-space-xs" href="#">
+              التفاصيل المصورة <span class="material-symbols-outlined text-[14px]">arrow_back</span>
+</a>
+</div>
+</article>
+<!-- Secondary Story Card 2 -->
+<article class="flex-1 bg-surface-cream rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="bg-accent-crimson/10 text-accent-crimson font-label-sm text-label-sm font-bold px-space-sm py-space-xs rounded-DEFAULT flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[15px]">gavel</span>
+                تشريعات رسمية
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">9 أيلول 2026</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">
+<a href="#">السعودية تطلق موسم الصيد السادس بضوابط تعزز الصيد المستدام وعقوبات صارمة على صيد الليل</a>
+</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              المركز الوطني لتنمية الحياة الفطرية يحدد 5 آلاف ريال غرامة للصيد في المحميات والأماكن المحظورة مع إطلاق منصة الفطري للتصاريح الرقمية المسبقة.
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between bg-surface-container-low p-space-sm rounded-lg mt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[17px] text-secondary">download</span>
+<span>لائحة الطرائد المحظورة 2026</span>
+</div>
+<a class="text-primary font-bold text-label-sm hover:text-secondary transition-colors" href="#">تحميل PDF</a>
+</div>
+</article>
+</aside>
+</div>
+</section>
+<!-- 2. SUSTAINABLE HUNTING CHARTER & LEGAL DIRECTORY BANNER -->
+<section class="w-full bg-surface-container-low py-space-lg my-space-md">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="bg-surface-cream rounded-xl p-space-lg lg:p-space-xl flex flex-col lg:flex-row items-center justify-between gap-space-xl shadow-sm">
+<div class="flex items-center gap-space-lg max-w-3xl">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[32px] text-brand-gold-bright">shield</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="bg-secondary text-surface-parchment font-label-sm text-label-sm px-space-xs py-0.5 rounded-DEFAULT font-semibold">ميثاق شرف</span>
+<h2 class="font-title-md text-title-md text-primary font-bold">دليل الصياد المسؤول وميثاق حماية الطيور المهاجرة 2026</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              نلتزم في مجلة صيد بتكريس ثقافة الصيد الأخلاقي المستدام، ومنع أجهزة المناداة الإلكترونية، وحماية الطيور الحوامة والمهددة بالانقراض وفق الاتفاقيات الدولية (CITES).
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 w-full lg:w-auto justify-end">
+<a class="bg-primary text-on-primary hover:bg-primary-container px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg transition-colors shadow-sm flex items-center gap-space-xs" href="#">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>طالع بنود الميثاق</span>
+</a>
+<a class="bg-surface-parchment text-secondary hover:bg-surface-container px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg transition-colors flex items-center gap-space-xs" href="#">
+<span class="material-symbols-outlined text-[18px]">map</span>
+<span>خارطة المحميات المصرحة</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. SAYD TV & DOCUMENTARY STUDIO (CINEMATIC DARK THEATER) -->
+<section class="w-full bg-brand-forest-deep text-on-primary py-space-2xl my-space-lg">
+<div class="max-w-7xl mx-auto px-margin flex flex-col gap-space-xl">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-surface-container/15 pb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-brand-gold-bright font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[19px]">live_tv</span>
+<span>صيد TV • الاستديو الوثائقي المرئي</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-primary tracking-tight">
+            أفلام المقناص، وثائقيات الأعماق وتجارب البرية
+          </h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-text-on-dark-secondary">بث بدقة 4K HDR الفائقة</span>
+<a class="bg-surface-container/10 hover:bg-surface-container/20 text-on-primary px-space-md py-space-xs rounded-lg font-label-lg text-label-lg transition-colors flex items-center gap-space-xs" href="#">
+<span>جميع البرامج</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</a>
+</div>
+</div>
+<!-- Theater Layout: Big Feature Video (8 cols) + Playlist Sidebar (4 cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Video Card -->
+<div class="lg:col-span-8 flex flex-col bg-primary-container/40 rounded-xl overflow-hidden shadow-2xl group">
+<div class="relative w-full aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Cinematic wide frame from high mountain expedition in rugged snowy Afghanistan terrain, showing traditional Gulf falconer Saud Abdulaziz Al-Babtain holding a magnificent white gyrfalcon scanning mountain cliffs, golden hour cinematic lighting 4K resolution documentary scene" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_bEZNEnhlgK8axHoidIktKIdymLUiiG2yybEx5U3cUJp7PnVtNYKvHFd-l_cZ4TqEyemQMGwQRGqDeVT7256xwfD-p7ZUU9326k8k1bx6qBDanX-u5VIa_VvvbFruAClq-6tQfNoj7VgXdI7i0rZ_W_6mt7PIpfP505H2PUd4H2L-fxykazMXcGVsmCBga-QRKPvjIIkMUVGTWRwbrvl3x5VL8lov89M4ZeaLG1sBuAWOkayfkZdw"/>
+<!-- Video Gradient & Badges -->
+<div class="absolute inset-0 bg-gradient-to-t from-brand-forest-deep via-transparent to-black/40"></div>
+<div class="absolute top-space-md right-space-md flex items-center gap-space-xs">
+<span class="bg-accent-crimson text-on-error font-label-sm text-label-sm px-space-xs py-0.5 rounded-DEFAULT font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-on-error animate-ping"></span>
+                وثائقي حصري
+              </span>
+<span class="bg-brand-forest-deep/80 text-brand-gold-bright font-label-sm text-label-sm px-space-xs py-0.5 rounded-DEFAULT backdrop-blur-md">
+                4K HDR
+              </span>
+</div>
+<div class="absolute bottom-space-md left-space-md bg-brand-forest-deep/90 text-on-primary font-label-sm text-label-sm px-space-sm py-space-xs rounded-DEFAULT backdrop-blur-md flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">timer</span> 08:45
+            </div>
+<!-- Central Play Button -->
+<button aria-label="تشغيل الفيديو الوثائقي" class="absolute inset-0 m-auto w-20 h-20 rounded-full bg-brand-gold-bright/90 text-brand-forest-deep flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-brand-gold-bright transition-all duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-[44px] ml-1">play_arrow</span>
+</button>
+</div>
+<div class="p-space-lg lg:p-space-xl flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-md font-label-sm text-label-sm text-text-on-dark-secondary">
+<span>8 أيلول 2026</span>
+<span>•</span>
+<span class="text-brand-gold-bright">سلسلة رحلات المقناص الكبرى</span>
+<span>•</span>
+<span>124 ألف مشاهدة</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-primary leading-snug group-hover:text-brand-gold-bright transition-colors">
+              بالفيديو… وثائقي مقناص سعود عبد العزيز البابطين في جبال وسهول أفغانستان الوعرة
+            </h3>
+<p class="font-body-md text-body-md text-text-on-dark-secondary leading-relaxed line-clamp-2">
+              توثيق سينمائي نادر لرحلة القنص على طيور الحبارى واستخدام سلالات الصقور الجير والحرّة في أصعب الظروف الجغرافية والمناخية، مسلطاً الضوء على عادات الصقارين العرب وتقاليدهم التاريخية.
+            </p>
+</div>
+</div>
+<!-- Playlist Sidebar Rail -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="font-title-md text-title-md text-brand-gold-bright font-bold pb-space-xs flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">queue_music</span>
+<span>قائمة العرض المختارة الآن</span>
+</div>
+<!-- Video Item 1 -->
+<article class="p-space-sm rounded-xl bg-primary-container/30 hover:bg-primary-container/60 transition-colors flex gap-space-md group cursor-pointer">
+<div class="relative w-36 h-24 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An Arab ethical hunter gently rescuing a wounded white stork entangled in branches, caring for wild birds, high compassion nature documentary shot with soft warm sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE1wLH_Bvw1PJ9EhNSV9RYVT65U8aynpBqIdjFthNrs75du6ifJ_Q0XkHdWmzqIL36Drm2Zxxqyy2MFsClvdcEd3FiI75O-YvdoPT_YfqU0zIxfCAQfKq7KWaZkg9wU0yy8eQM9My3vR3CNBLo1gmeCu7--HgXJ7fVBoR0qCqBl-QlVQQsyTiPU-E6Ne2hDf7lr88SPJoFqzi1rKtorID0PvyWctRJoD2W_LAynVZ3D-FCE-PG1Fea"/>
+<span class="absolute bottom-1 left-1 bg-brand-forest-deep/90 text-on-primary text-[10px] px-1 rounded-DEFAULT font-mono">05:40</span>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-[24px]">play_circle</span>
+</div>
+</div>
+<div class="flex flex-col justify-between py-0.5">
+<span class="font-label-sm text-label-sm text-secondary-fixed">أخلاق الصيد</span>
+<h4 class="font-title-md text-title-md text-on-primary line-clamp-2 group-hover:text-brand-gold-bright transition-colors">
+                صياد مسؤول ينقذ طائر اللقلق الجريح ويوثق تعافيه وإطلاقه
+              </h4>
+<span class="font-label-sm text-label-sm text-text-on-dark-secondary">23 شباط 2026</span>
+</div>
+</article>
+<!-- Video Item 2 -->
+<article class="p-space-sm rounded-xl bg-primary-container/30 hover:bg-primary-container/60 transition-colors flex gap-space-md group cursor-pointer">
+<div class="relative w-36 h-24 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Digital forensic investigative lab screen comparing AI synthesized synthetic bird species against real migratory falcon footage, technology and wildlife research" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALVdcH5JA7ohrpRBCMerjzE5hs8jLed671wjWEclddaZA-ppP7vdftYTaaHMU2k9azTUVpvBfS2JRtY97epuIHhFNQaNctFNITF6LMNE6asdSlDF5_MzaNUpfDzu6n02Xh5ZlCU6DNIizzwX5nQXKSNdNcmiyuu9n8IlAmLl_VXwM4Evb4JBVRIC6LtKZ94Gqq7PMyzdcwZdPtlWIbaWBAsrEZavEtdCeQ1IMqWG1ywhWqmzYirY9G"/>
+<span class="absolute bottom-1 left-1 bg-brand-forest-deep/90 text-on-primary text-[10px] px-1 rounded-DEFAULT font-mono">03:12</span>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-[24px]">play_circle</span>
+</div>
+</div>
+<div class="flex flex-col justify-between py-0.5">
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim">تحري وتزييف بيئي</span>
+<h4 class="font-title-md text-title-md text-on-primary line-clamp-2 group-hover:text-brand-gold-bright transition-colors">
+                لا تصدق وجود هذا الطائر.. مُصمَّم بالذكاء الاصطناعي وكيف تم كشفه
+              </h4>
+<span class="font-label-sm text-label-sm text-text-on-dark-secondary">5 حزيران 2026</span>
+</div>
+</article>
+<!-- Video Item 3 -->
+<article class="p-space-sm rounded-xl bg-primary-container/30 hover:bg-primary-container/60 transition-colors flex gap-space-md group cursor-pointer">
+<div class="relative w-36 h-24 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Deep sea Mediterranean scuba diver exploring historic sunken warship wreckage off Lebanon coast, surrounded by turquoise water, coral growths, and schools of sea bream, high resolution underwater photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrdwuxhlrLUG7nwG0oT3BlxIOqrZScV2jj36CEn0pZI8SJHtNoJwvdbvLG41-vX8BG2LuDwqbUqFHID4oSBwhOsXJm5cjNWjxCbzbubTEtTahaPDmI9KKivrPG1uHRtv_zs1guVpbk25NsZZuWsdQPMnnyIRDTFoBf1aBjZSM-HdG7ur2kht92wd3pYn1szaahoYzR7QWiW7OxcKIH_JDlpJDkrwLPAs4xo_XfR6B2Oou8eT3kn_Wh"/>
+<span class="absolute bottom-1 left-1 bg-brand-forest-deep/90 text-on-primary text-[10px] px-1 rounded-DEFAULT font-mono">06:25</span>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-[24px]">play_circle</span>
+</div>
+</div>
+<div class="flex flex-col justify-between py-0.5">
+<span class="font-label-sm text-label-sm text-primary-fixed">سياحة الغوص والأعماق</span>
+<h4 class="font-title-md text-title-md text-on-primary line-clamp-2 group-hover:text-brand-gold-bright transition-colors">
+                متحف سفن الأعماق الغارقة في لبنان مع خبير الغوص سليم مجاعص
+              </h4>
+<span class="font-label-sm text-label-sm text-text-on-dark-secondary">7 نيسان 2026</span>
+</div>
+</article>
+<!-- Action block in sidebar -->
+<div class="bg-surface-cream/10 p-space-md rounded-xl mt-space-xs flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-primary font-bold">اشترك بقناة صيد TV</span>
+<span class="font-label-sm text-label-sm text-text-on-dark-secondary">تنبيهات فورية عند صدور الأفلام الجديدة</span>
+</div>
+<button class="bg-brand-gold-bright text-brand-forest-deep font-bold px-space-md py-space-xs rounded-lg font-label-sm text-label-sm hover:bg-white transition-colors">
+              متابعة
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. NATURE LENS & WILDLIFE PHOTOGRAPHY (عدسة الطبيعة بعدستكم) -->
+<section class="w-full max-w-7xl mx-auto px-margin py-space-xl">
+<div class="flex flex-col gap-space-lg">
+<!-- Section Bar -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm border-b border-border-brass-light pb-space-sm">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-secondary font-label-lg text-label-lg font-semibold">
+<span class="material-symbols-outlined text-[18px]">photo_library</span>
+<span>معرض المصورين الميدانيين</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary">
+            بعدستكم: كائنات البرية والطيور المقيمة والمهاجرة
+          </h2>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="bg-secondary text-surface-parchment hover:bg-primary px-space-md py-space-sm rounded-lg font-label-lg text-label-lg transition-colors flex items-center gap-space-xs shadow-sm" id="upload-lens-btn">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+<span>شارك لقطتك بعدستك</span>
+</button>
+<a class="text-on-surface-variant hover:text-primary font-label-lg text-label-lg flex items-center gap-space-xs" href="#">
+<span>أرشيف الصور (42+ ألبوم)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</a>
+</div>
+</div>
+<!-- Photographic Grid: 4 items showcase -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Photo 1 -->
+<div class="group bg-surface-cream rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative w-full h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Exquisite detailed close up photograph of a Great White Pelican in mid-flight soaring through clear blue morning skies over the Metn highway corridor in Lebanon, majestic white wings spread wide, professional wildlife avian photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVMVRYahBDyQTnThjiuc0IIATlLvslvJHkBkFK4wSnU3Sf9Kq2hUmNUCzY3lhbC4hi7X6qXAhgKPUA0FslG7fX9w1KgVtqHU09In_uXH5_gmxAtgHo4-AttV8EiYeYS2COxGYDzxwDMWN1Lxa42md3gyUzIRzo-pqKYKGKvtm3Zmu9_0ZMCCR0maNjSshT-3a9fqL4p3s0lltLpIAiIYaficFaCU5sWuVdbsPfjroNmKcOXLkQYCM2"/>
+<span class="absolute top-space-xs right-space-xs bg-brand-forest-deep/80 text-brand-gold-bright font-label-sm text-label-sm px-space-xs py-0.5 rounded-DEFAULT backdrop-blur-md">
+              هجرة أيلول 2026
+            </span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">البجع الأبيض الكبير • Pelican</span>
+<h3 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">
+                أسراب البجع الأبيض تعبر سماء المتن
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+                لقطة استثنائية وثقت عبور السرب الموسمي في ربيع وخريف 2026 في ممر ساحلي نادر.
+              </p>
+</div>
+<div class="pt-space-sm border-t border-surface-container flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">camera</span> نايف كريم
+              </span>
+<span class="text-secondary font-medium">عدسة 600mm</span>
+</div>
+</div>
+</div>
+<!-- Photo 2 -->
+<div class="group bg-surface-cream rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative w-full h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Macro close-up photograph of the tiny iridescent Palestine Sunbird perching on an exotic desert flower blossom, brilliant shimmering green and royal blue feathers in sunlight, crisp focal depth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwT7ceZMdj6a0n4rXlOyijdVXDT6Nb9dM1ejedyNs5XvV0tKmM0vgCg82JOauYGWMmuehcKg8kjS0C6cyCM6X2pvCJmmK--ozWexEh9py1_FYbh6TAiqf8Pi2q-Dn7gw8krv8MR73WwPZXZtBm8zrJ8QNAqpaw2ebUeJftkMtd_aBKguYLWKxzEJDr_dQAIVSpByQVESut7OZHqQnP2MZi0XP-gOfN2JHKaPXk9LQ2BnOEK0wbXjod"/>
+<span class="absolute top-space-xs right-space-xs bg-primary-container text-on-primary font-label-sm text-label-sm px-space-xs py-0.5 rounded-DEFAULT">
+              طائر متوطن فريد
+            </span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">عصفور الشمس الفلسطيني</span>
+<h3 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">
+                بريق الريش وقوس قزح الطبيعة
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+                رمز بيئي أصيل للمنطقة، يتميز بمنقاره المعقوف وريشه المتلألئ في ضوء الصباح.
+              </p>
+</div>
+<div class="pt-space-sm border-t border-surface-container flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">camera</span> إلياس سلهب
+              </span>
+<span class="text-secondary font-medium">ماكرو ميداني</span>
+</div>
+</div>
+</div>
+<!-- Photo 3 -->
+<div class="group bg-surface-cream rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative w-full h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Intense high-definition wildlife portrait of a nocturnal Barn Owl perched on ancient sandstone ruins under moonlight, haunting heart-shaped white face and sharp amber eyes, moody fine-art photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH0ut6Cc2k4aHJz5xxjthz9nppWLY0KGZ0e_EgUYMi3B2hmxMGP9rScZXg0Y0Bk3oa2sFWAmAyeA2Et4SD09TEQEaysu3Rm3XrCuwc3wJIPuqteqph_sQrGJb8wQZMV2OLiDMMLjNYrDJGS0Cg46zY4wjOzXa_oiP3m7Pqr09eDMje7g_DlbDhU_lqvy1lUeofX3Ct57t5HNYFePMjYPJsqW3hl2HDnYfL-9VALWkAB_NgoAgLv9z9"/>
+<span class="absolute top-space-xs right-space-xs bg-brand-forest-deep/80 text-brand-gold-bright font-label-sm text-label-sm px-space-xs py-0.5 rounded-DEFAULT backdrop-blur-md">
+              حارس التوازن
+            </span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">بومة المخازن • Barn Owl</span>
+<h3 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">
+                سيدة الليل الصامتة وحامية الحقول
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+                دراسة ميدانية تبرز دور بومة المخازن في مكافحة القوارض الزراعية طبيعياً دون سموم.
+              </p>
+</div>
+<div class="pt-space-sm border-t border-surface-container flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">camera</span> د. أحمد زهير
+              </span>
+<span class="text-secondary font-medium">تصوير ليلي IR</span>
+</div>
+</div>
+</div>
+<!-- Photo 4 -->
+<div class="group bg-surface-cream rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative w-full h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Vibrant multi-colored European Bee-eater bird resting on an olive tree twig holding a dragon fly in its beak, rich turquoise, yellow and chestnut plumage, crystal sharp nature photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR3FyLw77U2m4VtCmt9MCgXWfFvzJns74791BusoWGx6e1lkwIdJcb4jZ3EhPqDup1lpXWgZOc6uthjkJfT_wp6f__0m6-52okdQMitebPTneCC7AzC4XxNoAPKm65K4A6anupwRurSlU5gaDTHApQzdyJ-ZoBwDKe_F2tS2ALOKN5pZo_VnczYFlMd0A-5x9gBqNTTEkr_UBDyUT5ZRCRxP6nSx1Y-9TyyHzNOs-86HWkfBPfoaYl"/>
+<span class="absolute top-space-xs right-space-xs bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm px-space-xs py-0.5 rounded-DEFAULT">
+              مهاجر خريفي
+            </span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs flex-1 justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">طائر الوروار الأوروبي</span>
+<h3 class="font-title-md text-title-md text-primary font-bold group-hover:text-secondary transition-colors">
+                ألوان البهجة على أغصان الزيتون
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+                يعبر بأعداد غفيرة في أيلول، ويعتبر مؤشراً حيوياً على سلامة التنوع الحشري في الأرياف.
+              </p>
+</div>
+<div class="pt-space-sm border-t border-surface-container flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">camera</span> نور لبابيدي
+              </span>
+<span class="text-secondary font-medium">سهل البقاع</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Photography Community Interactive Callout Banner -->
+<div class="bg-surface-cream border-2 border-dashed border-border-brass-light rounded-xl p-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md" id="lens-uploader-box">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-primary font-bold">هل التقطت صورة فريدة لطائر أو مشهد بري؟</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">نشر صورك مع اسمك وتفاصيل العدسة في مجلة صيد المطبوعة والموقع الإلكتروني.</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary hover:bg-secondary px-space-xl py-space-sm rounded-lg font-label-lg text-label-lg transition-colors shrink-0" onclick="alert('تم تفعيل بوابة إرسال الصور: يمكنك رفع ملفاتك بدقة RAW أو JPEG مع بيانات الـ EXIF.')">
+          إرسال مشاركة مصورة
+        </button>
+</div>
+</div>
+</section>
+<!-- 5. THREE-PILLAR EDITORIAL DOSSIERS (ملفات وتحقيقات استقصائية) -->
+<section class="w-full bg-surface-cream py-space-2xl border-y border-border-brass-light/50">
+<div class="max-w-7xl mx-auto px-margin flex flex-col gap-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-lg text-label-lg text-secondary font-semibold">أعمدة التحرير الكبرى</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">
+            الملفات المتخصصة: التحقيقات، التراث، والعتاد الفني
+          </h2>
+</div>
+<div class="flex items-center gap-space-xs font-label-md text-on-surface-variant">
+<span>توثيق أرشيفي مستمر منذ عام 2012</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Column 1: Investigations (تحقيقات ومقابلات) -->
+<div class="flex flex-col gap-space-md bg-surface-parchment p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-border-brass-light">
+<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md font-bold">
+<span class="material-symbols-outlined text-[20px] text-accent-crimson">travel_explore</span>
+<span>تحقيقات استقصائية</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">73 تحقيق</span>
+</div>
+<article class="flex flex-col gap-space-xs group">
+<div class="w-full h-44 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Arab diaspora hunters in autumn forests of Romania and Eastern Europe carrying shotguns in disciplined ethical hunting group, realistic documentary editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBarHB4CeZyfVnyIPIZteO08emPX6houtkXGi5Aas-YBB16oCJFZlpwdGALM2fgwgkiWxXVpgQC0L60B1xQkTQHxxE1yUD0I4WiaSpjkhCYNtMI9gPBMjUwtAfyPj6yoCI2gTp3Is6gBQlAWHFTTIspZ-yh5-EwNfJ5f6drngPDYRo4eqYDLmgylJHMSMhxVL0lN3ypFujhjCg73A4tAxDAee5cpB0CPeWfN5z07yumKil7uTbF9obi"/>
+<span class="absolute bottom-2 right-2 bg-primary-container text-on-primary text-[11px] px-2 py-0.5 rounded-DEFAULT">سلسلة ثلاثية</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary pt-space-xs">
+<span>تجارب الاغتراب</span>
+<span>•</span>
+<span class="text-on-surface-variant">10 كانون الأول 2026</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">
+<a href="#">الصيد بين الفوضى والنظام – تجارب وخبرات الصيادين اللبنانيين في بلاد الاغتراب</a>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              مقارنة معمقة بين قوانين الصيد في رومانيا وفرنسا وكندا، وكيف انعكست تلك الثقافة المنضبطة على حماية البيئة وتكاثر الطرائد.
+            </p>
+</article>
+<div class="flex flex-col gap-space-sm pt-space-sm border-t border-surface-container">
+<a class="group/item flex items-start gap-space-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-accent-crimson mt-2 shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface group-hover/item:text-secondary transition-colors line-clamp-2">
+                  الصيادة ريتا حبيب الشعار: أدعو لتشديد الرقابة على صيد الليل ومخالفات الشباك
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">21 شباط 2026</span>
+</div>
+</a>
+<a class="group/item flex items-start gap-space-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-accent-crimson mt-2 shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface group-hover/item:text-secondary transition-colors line-clamp-2">
+                  تنظيم الصيد يحمي الحياة البرية… ومنعه التام فاقم الأزمة في الميدان
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">30 أيلول 2025</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Column 2: Falconry & Equestrian Heritage (صيد وفروسية) -->
+<div class="flex flex-col gap-space-md bg-surface-parchment p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-border-brass-light">
+<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md font-bold">
+<span class="material-symbols-outlined text-[20px] text-brand-gold-bright">psychology_alt</span>
+<span>صيد وفروسية وتراث</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">48 مقالاً أرشيفياً</span>
+</div>
+<article class="flex flex-col gap-space-xs group">
+<div class="w-full h-44 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Historical vintage feel photograph of Arab Bedouin desert elders sitting around campfire at sunset discussing falcon breeds with magnificent horses in the soft desert background, fine art heritage mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9LraQFxW7zdOFkaKgRChLCEcbgS4xb2dKUAZbFh4yu4jIR6OrLpCCdUGyoijl2k8CEdyVSU8pI4lc6a7aiLmWco81k3zFinNl7jlDT1NaIr_n1cpG630EJIH9_mGYcoNDDxu1xXYdamQDXzS6mB_3UGq_61dkLBGh2haEvgp5QHKmXrNpSMevJ8F0Z5URJZVyQg6dlCdlDI88DTR1N3rZpGt_2mINo91Ut8m8jarbl1zU6JuZHTBC"/>
+<span class="absolute bottom-2 right-2 bg-secondary text-surface-parchment text-[11px] px-2 py-0.5 rounded-DEFAULT">أمثال وتاريخ</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary pt-space-xs">
+<span>تراث البادية</span>
+<span>•</span>
+<span class="text-on-surface-variant">24 تشرين الأول</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">
+<a href="#">«اللي ما يعرف الصقر يشويه» — جذور الحكمة البدوية وفنون تقفي الأثر</a>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              بحث في القصة الحقيقية للمثل العربي الشهير، وكيف يفرّق الخبير بين الصقر الحر والشاهين الجبلي وطائر الباشق عبر سلوكه في السماء.
+            </p>
+</article>
+<div class="flex flex-col gap-space-sm pt-space-sm border-t border-surface-container">
+<a class="group/item flex items-start gap-space-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-brand-gold-bright mt-2 shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface group-hover/item:text-secondary transition-colors line-clamp-2">
+                  المعرض الدولي للصيد والفروسية بأبو ظبي: بصمة إماراتية رائدة في صون التراث
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">تغطية سنوية</span>
+</div>
+</a>
+<a class="group/item flex items-start gap-space-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-brand-gold-bright mt-2 shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface group-hover/item:text-secondary transition-colors line-clamp-2">
+                  سلالات الخيل العربية الأصيلة: صفات الشجاعة والتحمل في سباقات القدرة
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">دراسة سلالات</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Column 3: Gear, Arms & Ballistics (عتاد وسلاح ورماية) -->
+<div class="flex flex-col gap-space-md bg-surface-parchment p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-border-brass-light">
+<div class="flex items-center gap-space-xs text-primary font-title-md text-title-md font-bold">
+<span class="material-symbols-outlined text-[20px] text-secondary">tune</span>
+<span>عتاد، سلاح ورماية</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">30 مراجعة فنية</span>
+</div>
+<article class="flex flex-col gap-space-xs group">
+<div class="w-full h-44 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High precision modern Italian sporting shotgun and high-end PCP air rifle laid out on rich dark walnut table with ammunition shells, cleaning gear, and ballistic optical scope, luxury weapon craft photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2tC8NWMq_V8w8WnuzRgptNkKI6I0EUlj04PGEGfoYB2fL-gyWAptUcemC0Uo69VDgOCtgd2B-HDhxVukT1xyfOdr0noohBpMgHdzAMO6JPrZKSjJ4Qn8KRiJQel_l-3KabS-3xVyNFSkIPTFwnBN0fiapzQVDo-DPXNMTFZzJmerFRtslg8Icti2f4T4WfK0lQdf2AwuhkVtICWWaFlaASFzrEvZXrolCuA68RMw25TigrQAllUc4"/>
+<span class="absolute bottom-2 right-2 bg-primary text-on-primary text-[11px] px-2 py-0.5 rounded-DEFAULT">مقارنة فنية 2026</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-secondary pt-space-xs">
+<span>هندسة الرماية</span>
+<span>•</span>
+<span class="text-on-surface-variant">20 كانون الأول</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">
+<a href="#">دليل البنادق الهوائية PCP وأسلحة الصيد: مواصفات الدقة واختبارات المدى</a>
+</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              مقارنة بين ضغط الهواء والعيارات الشائعة (5.5 و 6.35 ملم)، وقواعد السلامة والأهداف الرياضية المنصوص عليها قانوناً.
+            </p>
+</article>
+<div class="flex flex-col gap-space-sm pt-space-sm border-t border-surface-container">
+<a class="group/item flex items-start gap-space-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface group-hover/item:text-secondary transition-colors line-clamp-2">
+                  خرطوش الصيد لكل طريدة: الفرق بين خردق الفولاذ والرصاص وتأثيره على البيئة
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">دليل الذخيرة</span>
+</div>
+</a>
+<a class="group/item flex items-start gap-space-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-secondary mt-2 shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface group-hover/item:text-secondary transition-colors line-clamp-2">
+                  سيرة الرامي اللبناني رالف عراج وتتويجه في مسابقات رماية الأطباق
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">أبطال الرماية</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. PLATFORM DATA ARCHIVE & METRIC COUNTERS -->
+<section class="w-full max-w-7xl mx-auto px-margin py-space-xl">
+<div class="bg-primary text-on-primary rounded-xl p-space-xl relative overflow-hidden shadow-xl">
+<!-- Ambient decorative contour SVG -->
+<div class="absolute inset-0 opacity-5 pointer-events-none">
+<svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 800 400">
+<path d="M0,200 C200,100 400,300 600,150 C700,75 750,220 800,180"></path>
+<path d="M0,250 C250,150 350,350 650,200 C720,130 770,260 800,220"></path>
+<path d="M0,300 C150,220 450,380 700,250 C760,180 790,290 800,260"></path>
+</svg>
+</div>
+<div class="relative z-10 flex flex-col gap-space-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md border-b border-surface-parchment/15 pb-space-lg">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-brand-gold-bright">أرقام وتاريخ المنصة</span>
+<h2 class="font-headline-md text-headline-md text-on-primary">
+              مجلة صيد: الريادة في توثيق الطبيعة والرياضات الأصيلة
+            </h2>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="bg-surface-container/20 text-on-primary font-label-sm text-label-sm px-space-md py-space-xs rounded-full">
+              تأسست عام 2012 • 14 عاماً من العطاء
+            </span>
+</div>
+</div>
+<!-- Metric Cards Bento -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="bg-surface-parchment/10 backdrop-blur-sm rounded-lg p-space-lg flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[32px] text-brand-gold-bright mb-space-xs">newspaper</span>
+<span class="font-display-xl text-display-xl text-on-primary font-bold tracking-tight">+285</span>
+<span class="font-label-lg text-label-lg text-text-on-dark-secondary">خبر وتغطية حصرية</span>
+</div>
+<div class="bg-surface-parchment/10 backdrop-blur-sm rounded-lg p-space-lg flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[32px] text-secondary-fixed mb-space-xs">explore</span>
+<span class="font-display-xl text-display-xl text-on-primary font-bold tracking-tight">+105</span>
+<span class="font-label-lg text-label-lg text-text-on-dark-secondary">تقرير صيد ومقناص بري</span>
+</div>
+<div class="bg-surface-parchment/10 backdrop-blur-sm rounded-lg p-space-lg flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[32px] text-tertiary-fixed-dim mb-space-xs">inventory</span>
+<span class="font-display-xl text-display-xl text-on-primary font-bold tracking-tight">+113</span>
+<span class="font-label-lg text-label-lg text-text-on-dark-secondary">طائر وكائن موثّق بالجعبة</span>
+</div>
+<div class="bg-surface-parchment/10 backdrop-blur-sm rounded-lg p-space-lg flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[32px] text-primary-fixed mb-space-xs">nest_cam_wired_stand</span>
+<span class="font-display-xl text-display-xl text-on-primary font-bold tracking-tight">73</span>
+<span class="font-label-lg text-label-lg text-text-on-dark-secondary">تحقيق ومقابلة استقصائية</span>
+</div>
+</div>
+<!-- Live interactive chart sparkline -->
+<div class="bg-surface-parchment/5 rounded-lg p-space-md flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-3 h-3 rounded-full bg-brand-gold-bright animate-ping"></div>
+<span class="font-body-sm text-body-sm text-text-on-dark-secondary">
+              معدل قراءة المقالات البيئية ارتفع بنسبة 42% مع انطلاق حملات حماية ممرات الطيور في 2026.
+            </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<!-- Inline Mini Sparkline SVG -->
+<svg class="w-36 h-8 text-brand-gold-bright" fill="none" viewbox="0 0 100 24">
+<polyline points="0,20 15,18 30,15 45,16 60,10 75,12 90,4 100,2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline>
+</svg>
+<span class="font-label-sm text-label-sm text-brand-gold-bright font-bold">+42%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. VIP EDITORIAL NEWSLETTER & CLUB (نادي نخبة صيد) -->
+<section class="w-full max-w-7xl mx-auto px-margin py-space-xl">
+<div class="bg-surface-cream rounded-xl p-space-xl lg:p-space-2xl shadow-sm flex flex-col lg:flex-row items-center justify-between gap-space-2xl">
+<div class="flex flex-col gap-space-md max-w-xl">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-lg text-label-lg text-secondary font-bold">عضوية نخبة مجلة صيد</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary leading-snug">
+          انضم إلى مجتمع الصقارين ورواد الطبيعة الأكبر في العالم العربي
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          نرسل لك فجر كل يوم خميس: نشرة خاصة ترصد أسراب الطيور العابرة، حالة الطقس وهبوب الرياح، تحديثات لوائح المحميات، وتحليلات أحدث أسلحة وعتاد الصيد.
+        </p>
+<div class="grid grid-cols-2 gap-space-sm font-label-md text-label-md text-on-surface pt-space-xs">
+<label class="flex items-center gap-space-xs cursor-pointer">
+<input checked="" class="rounded text-secondary focus:ring-secondary accent-secondary" type="checkbox"/>
+<span>تقارير عبور الصقور والحبارى</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer">
+<input checked="" class="rounded text-secondary focus:ring-secondary accent-secondary" type="checkbox"/>
+<span>مواعيد مزادات ومعارض السلاح</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer">
+<input checked="" class="rounded text-secondary focus:ring-secondary accent-secondary" type="checkbox"/>
+<span>ضوابط الصيد وتصاريح المحميات</span>
+</label>
+<label class="flex items-center gap-space-xs cursor-pointer">
+<input class="rounded text-secondary focus:ring-secondary accent-secondary" type="checkbox"/>
+<span>أفلام صيد TV الحصرية</span>
+</label>
+</div>
+</div>
+<div class="w-full lg:max-w-md bg-surface-parchment p-space-xl rounded-xl shadow-md flex flex-col gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-title-md text-title-md text-primary font-bold">التسجيل السريع في النشرة المرموقة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">مجانية بالكامل وبدون إعلانات مزعجة.</span>
+</div>
+<form class="flex flex-col gap-space-sm" onsubmit="event.preventDefault(); document.getElementById('newsletter-success').classList.remove('hidden');">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-medium">الاسم الكريم</label>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="مثال: سعود المهيري" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant font-medium">البريد الإلكتروني</label>
+<input class="w-full bg-surface-container-low px-space-md py-space-sm rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="name@domain.com" required="" type="email"/>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary py-space-md rounded-lg font-label-lg text-label-lg transition-all shadow-md font-bold mt-space-xs flex items-center justify-center gap-space-xs" type="submit">
+<span>تأكيد الاشتراك والانضمام</span>
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+</button>
+</form>
+<div class="hidden p-space-sm bg-primary-fixed text-on-primary-fixed rounded-lg font-label-sm text-label-sm text-center" id="newsletter-success">
+          أهلاً بك في نخبة صيد! تم إرسال رسالة الترحيب والعدد الأسبوعي إلى بريدك.
+        </div>
+<div class="flex items-center justify-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">lock</span>
+<span>بياناتك مصانة بدقة وفق سياسة الخصوصية التحريرية</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Micro-interactions and sound alert toggle simulation
+  document.getElementById('btn-sound-toggle')?.addEventListener('click', function() {
+    const icon = this.querySelector('.material-symbols-outlined');
+    if (icon.textContent === 'notifications_active') {
+      icon.textContent = 'notifications_off';
+      alert('تم كتم تنبيهات طقس المقناص الفورية.');
+    } else {
+      icon.textContent = 'notifications_active';
+      alert('تم تفعيل التنبيهات الفورية لحركة عبور الطيور المهاجرة.');
+    }
+  });
+
+  document.getElementById('upload-lens-btn')?.addEventListener('click', function() {
+    const target = document.getElementById('lens-uploader-box');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+      target.classList.add('bg-secondary-fixed/30');
+      setTimeout(() => target.classList.remove('bg-secondary-fixed/30'), 1500);
+    }
+  });
+</script></main><footer class="w-full bg-surface-container-low border-t border-surface-container-highest mt-space-2xl"><div class="max-w-7xl mx-auto px-margin py-space-2xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-2xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="شعار مجلة صيد" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X8P9YWvCV_VMVo3o0_NGQo5JN-0b_nnsYtWGipuAtqBtx555V6jR4oBO-lah4uyFwv5T8NTwwQi1XWW6SGFBJoSMmjqs-RE4hwQ3bMoPtISGFeo-LGwxsZcxzRh98aLN2DYVkSNmnJRcwpQ_RzaWB5RS0BEZjHsZqNIy2PY0n8PHkrzGoN5w4NC974a5NtzWS6RQrIiDO6oZa1b74wO_nf_rqNuH1NH7di1Y9jrlVEqPeoSWP3jN5ZCT8"/><span class="font-headline-sm text-headline-sm text-primary">مجلة صيد الدولية</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">المطبوعة التوثيقية الدورية الأولى في العالم العربي المعنية برياضات الصيد الأصيلة، ثقافة الصقارة، سباقات الخيل، حفظ الحياة الفطرية والتوازن البيئي. نصدر من الرياض ودبي لقرّاء النخبة حول العالم.</p><div class="flex items-center gap-space-md pt-space-xs"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-secondary">14+</span><span class="font-label-sm text-label-sm text-on-surface-variant">عاماً من التوثيق</span></div><div class="h-8 w-px bg-outline-variant"></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-secondary">168</span><span class="font-label-sm text-label-sm text-on-surface-variant">عدداً مطبوعاً</span></div><div class="h-8 w-px bg-outline-variant"></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-secondary">24,000+</span><span class="font-label-sm text-label-sm text-on-surface-variant">تقرير واستكشاف</span></div></div></div><div class="flex flex-col gap-space-sm"><h3 class="font-title-md text-title-md text-primary font-bold">أقسام المجلة</h3><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">الصقارة وتراث المقناص</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">سلالات الخيل والفروسية</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">الرماية وبنادق الصيد التراثية</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">الحياة البحرية وصيد الأعماق</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">المحميات الطبيعية وتكاثر الطرائد</a></div><div class="flex flex-col gap-space-sm"><h3 class="font-title-md text-title-md text-primary font-bold">الميثاق والتحرير</h3><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">ميثاق الصيد المستدام 2030</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">هيئة التحرير والمستشارون</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">قوانين وتراخيص الصيد الإقليمية</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">أكاديمية تدريب الصقارين الجدد</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">فرص النشر والمساهمات المصورة</a></div><div class="flex flex-col gap-space-md"><h3 class="font-title-md text-title-md text-primary font-bold">النشرة البريدية المتخصصة</h3><p class="font-body-sm text-body-sm text-on-surface-variant">تصلك فجر كل خميس: تقارير دروب القنص، وتحديثات الطقس، وحركة الطيور المهاجرة.</p><div class="flex flex-col gap-space-xs"><input class="w-full bg-surface-container-lowest px-space-md py-space-sm rounded-lg font-body-sm text-body-sm border border-outline-variant/60 focus:outline-none focus:border-secondary" placeholder="بريدك الإلكتروني..." type="email"/><button class="w-full bg-brand-forest-deep text-on-primary hover:bg-primary py-space-sm rounded-lg font-label-lg text-label-lg transition-colors">اشتراك في الموجز الأسبوعي</button></div></div></div><div class="pt-space-lg border-t border-surface-container-highest flex flex-col sm:flex-row items-center justify-between gap-space-md font-label-sm text-label-sm text-on-surface-variant"><span>جميع الحقوق محفوظة © 2026 لمجلة صيد التراثية والبيئية. مرخصة من هيئات الإعلام والبيئة.</span><div class="flex items-center gap-space-lg"><a class="hover:text-primary transition-colors" href="#">الشروط والأحكام</a><a class="hover:text-primary transition-colors" href="#">سياسة الخصوصية</a><a class="hover:text-primary transition-colors" href="#">الإعلان والرعايات الفاخرة</a></div></div></div></footer></body></html>
