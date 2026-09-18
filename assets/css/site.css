@@ -379,6 +379,26 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 700;
 }
 
+.ad-slot.ad-under-construction {
+  background: #f3efe4;
+  border: 1px solid var(--gold-dark);
+  gap: 0.25rem;
+  padding: 0.85rem 1rem;
+}
+
+.ad-slot.ad-under-construction .ad-copy-ar {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--olive);
+}
+
+.ad-slot.ad-under-construction .ad-copy-en {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
 .ad-slot .ad-size {
   font-size: 0.7rem;
   color: var(--muted);

@@ -451,19 +451,19 @@ def top_secondary_html(pages: list[dict], depth: int) -> str:
     return "\n        ".join(parts)
 
 
-def ad_slot(kind: str = "rectangle", label: str = "مساحة إعلانية") -> str:
-    """Reserved, labeled ad placeholder — not an empty white gap."""
+def ad_slot(kind: str = "rectangle", label: str = "الموقع قيد التحديث") -> str:
+    """Homepage ad slot currently shows under-construction notice (EN+AR)."""
     sizes = {
         "leaderboard": ("728×90", "ad-leaderboard"),
         "rectangle": ("300×250", "ad-rectangle"),
         "inline": ("728×90", "ad-inline"),
     }
     size, cls = sizes.get(kind, sizes["rectangle"])
+    aria = "الموقع قيد التحديث — Under construction"
     return f"""
-<aside class="ad-slot {cls}" aria-label="{esc(label)}">
-  <span class="ad-kicker">Ad</span>
-  <span class="ad-copy">{esc(label)}</span>
-  <span class="ad-size">{size}</span>
+<aside class="ad-slot {cls} ad-under-construction" aria-label="{esc(aria)}">
+  <span class="ad-copy ad-copy-ar">الموقع قيد التحديث</span>
+  <span class="ad-copy ad-copy-en">Under construction</span>
 </aside>"""
 
 
