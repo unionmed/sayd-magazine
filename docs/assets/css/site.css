@@ -719,6 +719,62 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 
+
+/* Feature-stack cards: image on top, title below — no text over photo */
+.feature-stack .card.card-stack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--card);
+}
+.feature-stack .card.card-stack .thumb {
+  position: relative;
+  inset: auto;
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 170px;
+  height: auto;
+}
+.feature-stack .card.card-stack .thumb::after {
+  display: none;
+}
+.feature-stack .card.card-stack .body {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  flex: 1 1 auto;
+  background: var(--card);
+  color: var(--ink);
+  padding: 0.55rem 0.65rem 0.7rem;
+}
+.feature-stack .card.card-stack .meta {
+  color: var(--muted);
+}
+.feature-stack .card.card-stack h3 {
+  font-size: 0.88rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.feature-stack .card.card-stack h3 a {
+  color: var(--ink);
+}
+.feature-stack .card.card-stack h3 a:hover {
+  color: var(--gold-dark);
+}
+@media (min-width: 821px) {
+  .featured-mosaic {
+    min-height: 480px;
+  }
+  .feature-stack .card.card-stack .thumb {
+    min-height: 200px;
+  }
+}
+
 .home-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
