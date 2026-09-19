@@ -1,117 +1,77 @@
-/**
- * Sayd Editorial Prestige — design tokens (CSS custom properties)
- * Source of truth: assets/design-tokens.json + stitch DESIGN.md
- * Imported by site.css; do not redefine these on individual pages.
- */
+/* Sayd Editorial Prestige — design tokens
+   Source of truth: assets/design-tokens.json (copied into docs/assets/).
+   Homepage chrome uses these; do not depend on Tailwind CDN. */
 
 :root {
-  /* ——— Colors ——— */
-  --color-surface: #f7faf5;
-  --color-surface-dim: #d8dbd6;
-  --color-surface-bright: #f7faf5;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f1f4ef;
-  --color-surface-container: #ecefe9;
-  --color-surface-container-high: #e6e9e4;
-  --color-surface-container-highest: #e0e3de;
-  --color-on-surface: #191d1a;
-  --color-on-surface-variant: #414844;
-  --color-inverse-surface: #2d312e;
-  --color-inverse-on-surface: #eff2ec;
-  --color-outline: #727974;
-  --color-outline-variant: #c1c8c2;
-  --color-surface-tint: #456556;
-  --color-primary: #001e12;
-  --color-on-primary: #ffffff;
-  --color-primary-container: #133326;
-  --color-on-primary-container: #7a9c8b;
-  --color-inverse-primary: #abcebc;
-  --color-secondary: #775a00;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #fece57;
-  --color-on-secondary-container: #735700;
-  --color-tertiary: #291400;
-  --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #452603;
-  --color-on-tertiary-container: #bb8b5f;
-  --color-error: #ba1a1a;
-  --color-on-error: #ffffff;
-  --color-error-container: #ffdad6;
-  --color-on-error-container: #93000a;
-  --color-primary-fixed: #c7ebd7;
-  --color-primary-fixed-dim: #abcebc;
-  --color-on-primary-fixed: #002115;
-  --color-on-primary-fixed-variant: #2d4d3f;
-  --color-secondary-fixed: #ffdf98;
-  --color-secondary-fixed-dim: #eec14b;
-  --color-on-secondary-fixed: #251a00;
-  --color-on-secondary-fixed-variant: #5a4300;
-  --color-tertiary-fixed: #ffdcbf;
-  --color-tertiary-fixed-dim: #f1bc8c;
-  --color-on-tertiary-fixed: #2d1600;
-  --color-on-tertiary-fixed-variant: #633f19;
-  --color-background: #f7faf5;
-  --color-on-background: #191d1a;
-  --color-surface-variant: #e0e3de;
-  --color-surface-parchment: #FDFCF7;
-  --color-surface-cream: #F6F3EA;
-  --color-surface-muted: #EFECE1;
-  --color-border-brass-light: #E8DCB8;
-  --color-accent-crimson: #B82E2E;
-  --color-brand-gold: #C59B27;
-  --color-brand-gold-bright: #D4AF37;
-  --color-brand-forest-deep: #0C231A;
-  --color-brand-saddle: #8C6239;
-  --color-text-on-dark-secondary: #C8D1CC;
+  --surface: #f7faf5;
+  --surface-dim: #d8dbd6;
+  --surface-bright: #f7faf5;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f1f4ef;
+  --surface-container: #ecefe9;
+  --surface-container-high: #e6e9e4;
+  --surface-container-highest: #e0e3de;
+  --on-surface: #191d1a;
+  --on-surface-variant: #414844;
+  --inverse-surface: #2d312e;
+  --inverse-on-surface: #eff2ec;
+  --outline: #727974;
+  --outline-variant: #c1c8c2;
+  --surface-tint: #456556;
+  --primary: #001e12;
+  --on-primary: #ffffff;
+  --primary-container: #133326;
+  --on-primary-container: #7a9c8b;
+  --inverse-primary: #abcebc;
+  --secondary: #775a00;
+  --on-secondary: #ffffff;
+  --secondary-container: #fece57;
+  --on-secondary-container: #735700;
+  --tertiary: #291400;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #452603;
+  --on-tertiary-container: #bb8b5f;
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+  --primary-fixed: #c7ebd7;
+  --primary-fixed-dim: #abcebc;
+  --on-primary-fixed: #002115;
+  --on-primary-fixed-variant: #2d4d3f;
+  --secondary-fixed: #ffdf98;
+  --secondary-fixed-dim: #eec14b;
+  --on-secondary-fixed: #251a00;
+  --on-secondary-fixed-variant: #5a4300;
+  --tertiary-fixed: #ffdcbf;
+  --tertiary-fixed-dim: #f1bc8c;
+  --on-tertiary-fixed: #2d1600;
+  --on-tertiary-fixed-variant: #633f19;
+  --background: #f7faf5;
+  --on-background: #191d1a;
+  --surface-variant: #e0e3de;
+  --surface-parchment: #FDFCF7;
+  --surface-cream: #F6F3EA;
+  --surface-muted: #EFECE1;
+  --border-brass-light: #E8DCB8;
+  --accent-crimson: #B82E2E;
+  --brand-gold-bright: #D4AF37;
+  --brand-gold: #C59B27;
+  --brand-earth: #8C6239;
+  --brand-forest-deep: #0C231A;
+  --text-on-dark-secondary: #C8D1CC;
 
-  /* ——— Typography ——— */
-  --font-sans: "IBM Plex Sans Arabic", "IBM Plex Sans", Tahoma, Arial, sans-serif;
-  --font-size-display-xl: 52px;
-  --line-height-display-xl: 68px;
-  --font-weight-display-xl: 700;
-  --letter-spacing-display-xl: -0.01em;
-  --font-size-display-xl-mobile: 34px;
-  --line-height-display-xl-mobile: 46px;
-  --font-size-headline-lg: 36px;
-  --line-height-headline-lg: 48px;
-  --font-weight-headline-lg: 700;
-  --font-size-headline-lg-mobile: 26px;
-  --line-height-headline-lg-mobile: 36px;
-  --font-size-headline-md: 26px;
-  --line-height-headline-md: 36px;
-  --font-weight-headline-md: 600;
-  --font-size-headline-sm: 20px;
-  --line-height-headline-sm: 28px;
-  --font-weight-headline-sm: 600;
-  --font-size-title-md: 17px;
-  --line-height-title-md: 24px;
-  --font-weight-title-md: 600;
-  --font-size-body-lg: 19px;
-  --line-height-body-lg: 32px;
-  --font-size-body-md: 16px;
-  --line-height-body-md: 27px;
-  --font-size-body-sm: 14px;
-  --line-height-body-sm: 22px;
-  --font-size-label-lg: 13px;
-  --line-height-label-lg: 18px;
-  --letter-spacing-label-lg: 0.02em;
-  --font-size-label-sm: 11px;
-  --line-height-label-sm: 16px;
-  --letter-spacing-label-sm: 0.03em;
+  --font: "IBM Plex Sans Arabic", "IBM Plex Sans", "Cairo", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "IBM Plex Sans", "Noto Naskh Arabic", Georgia, serif;
 
-  /* ——— Radii ——— */
   --radius-sm: 0.125rem;
-  --radius-DEFAULT: 0.25rem;
+  --radius: 0.25rem;
   --radius-md: 0.375rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
-  --radius-full: 9999px;
 
-  /* ——— Spacing ——— */
-  --space-gutter: 1.5rem;
-  --space-gutter-mobile: 0.75rem;
-  --space-margin: 2.5rem;
-  --space-margin-mobile: 1rem;
+  --gutter: 1.5rem;
+  --margin: 2.5rem;
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
@@ -119,10 +79,34 @@
   --space-xl: 2.5rem;
   --space-2xl: 4rem;
 
-  /* ——— Elevation / layout ——— */
-  --elevation-card: 0 8px 24px -6px rgba(19, 32, 22, 0.07);
-  --elevation-card-border: rgba(19, 51, 38, 0.08);
-  --hero-scrim: linear-gradient(180deg, rgba(12, 35, 26, 0) 35%, rgba(12, 35, 26, 0.92) 100%);
-  --layout-max: 1380px;
-  --layout-container: 1280px;
+  --container: 1380px;
+  --display-xl: 52px;
+  --headline-lg: 36px;
+  --headline-md: 26px;
+  --headline-sm: 20px;
+  --title-md: 17px;
+  --body-lg: 19px;
+  --body-md: 16px;
+  --body-sm: 14px;
+  --label-lg: 13px;
+  --label-sm: 11px;
+
+  /* Back-compat aliases used by older article/archive rules */
+  --olive: var(--primary-container);
+  --olive-deep: var(--brand-forest-deep);
+  --olive-hover: #1d4736;
+  --olive-soft: var(--on-primary-container);
+  --gold: var(--brand-gold);
+  --gold-dark: var(--secondary);
+  --gold-soft: var(--brand-gold-bright);
+  --earth: var(--primary-container);
+  --earth-mid: var(--on-primary-fixed-variant);
+  --ink: var(--on-surface);
+  --muted: var(--on-surface-variant);
+  --paper: var(--surface-parchment);
+  --card: var(--surface-container-lowest);
+  --hair: var(--border-brass-light);
+  --ad-bg: var(--surface-cream);
+  --breaking: var(--accent-crimson);
+  --shadow: 0 8px 24px -6px rgba(19, 32, 22, 0.07);
 }

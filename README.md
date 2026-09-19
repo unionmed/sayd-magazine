@@ -61,9 +61,14 @@ If you cannot re-export WP, add a post as Markdown under `content/posts/` follow
 
 ## Media / الوسائط
 
-Images still **hotlink** `https://sayd-magazine.com/wp-content/uploads/...` (no bulk download of ~3220 attachments). Logos too. Later we can mirror into `media/` and rewrite URLs.
+Homepage, logos, and **2022+** uploads are mirrored into `docs/media/uploads/YYYY/MM/`. The importer rewrites every WordPress / Jetpack / Wayback upload URL to a depth-relative `media/uploads/…` path (custom domain and `github.io/sayd-magazine`). Missing files use a CSS placeholder — **no** live `wp-content` or `web.archive.org` image `src`. Pre-2022 archive bulk download is deferred.
 
-الصور والشعارات ما زالت من خادم الموقع الأصلي.
+```bash
+python3 scripts/mirror-media.py          # homepage 2022+ + chrome logos only
+python3 scripts/import-wxr.py --skip-markdown
+```
+
+لا ننزّل أرشيف ما قبل 2022 دفعة واحدة. شعارات الصفحة والملفات من 2022 فصاعداً تُحفظ محلياً إن وُجدت في Wayback.
 
 ## Structure / البنية
 
