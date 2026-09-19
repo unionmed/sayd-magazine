@@ -192,6 +192,11 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
     assert leftover == []
     assert related_ok > 0
 
+    en_home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "kaps-makshab-apu-fries-hero.jpg" not in en_home
+    after_latest = en_home.split("Latest news", 1)[1]
+    assert 'class="thumb" href="posts/autumn-migration-field-action-protect-flyways-lebanon' not in after_latest
+
     src = (ROOT / "scripts" / "build_en_edition.py").read_text(encoding="utf-8")
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src
     assert "kaps-lead" in src

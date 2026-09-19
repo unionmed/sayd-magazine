@@ -116,19 +116,23 @@ def test_batch2_species_fills_are_unique() -> None:
     )
 
 
-def test_uwaisiq_is_sparrowhawk_not_kestrel() -> None:
-    """العويسق must use Accipiter nisus, never the AP4I0032 kestrel/sunbird mix-up."""
+def test_uwaisiq_is_lesser_kestrel_not_sparrowhawk() -> None:
+    """العويسق is Lesser Kestrel (article text). Never a sparrowhawk stand-in."""
     root = Path(__file__).resolve().parents[1]
     home = (root / "docs" / "index.html").read_text(encoding="utf-8")
     article = (root / "docs" / "posts" / "العُوَيْسِق" / "index.html").read_text(
         encoding="utf-8"
     )
-    assert "accipiter-nisus-eurasian-sparrowhawk.jpg" in home
-    assert "accipiter-nisus-eurasian-sparrowhawk.jpg" in article
-    assert "AP4I0032" not in home
-    assert "AP4I0032" not in article
-    hawk = root / "docs" / "media" / "uploads/2026/09/accipiter-nisus-eurasian-sparrowhawk.jpg"
-    assert hawk.is_file() and hawk.stat().st_size > 32
+    mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
+    after_latest = home[home.find("آخر الأخبار") :]
+    assert "AP4I0032-1024x683.jpg" in after_latest
+    assert "accipiter-nisus-eurasian-sparrowhawk.jpg" not in after_latest
+    assert "accipiter-nisus-eurasian-sparrowhawk.jpg" not in article
+    assert "AP4I0032-1024x683.jpg" in article
+    assert "Lesser Kestrel" in article
+    kestrel = root / "docs" / "media" / "uploads/2025/09/AP4I0032-1024x683.jpg"
+    assert kestrel.is_file() and kestrel.stat().st_size > 32
+    assert "accipiter-nisus" not in mosaic
 
 
 def test_homepage_unique_card_srcs() -> None:
@@ -310,7 +314,7 @@ if __name__ == "__main__":
     test_homepage_unique_card_srcs()
     test_featured_mosaic_keeps_homepage_json()
     test_apply_does_not_drop_homepage_or_en_heroes()
-    test_uwaisiq_is_sparrowhawk_not_kestrel()
+    test_uwaisiq_is_lesser_kestrel_not_sparrowhawk()
     test_batch2_species_fills_are_unique()
     test_visible_2022_articles_local_only()
     test_homepage_linked_pages_have_no_wp_hotlinks()

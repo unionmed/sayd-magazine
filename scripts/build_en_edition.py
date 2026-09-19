@@ -33,7 +33,10 @@ FONTS = (
     "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
     "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
-CSS_CACHE = "20260919-en-plex-kaps-p"
+CSS_CACHE = "20260919-en-plex-kaps-q"
+NO_THUMB_SLUGS = {
+    "autumn-migration-field-action-protect-flyways-lebanon",
+}
 ABOUT_EN = (
     "The magazine of nature’s masters on land, sea, and sky — hunting, "
     "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
@@ -160,8 +163,8 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-07",
         "category": "News",
         "author": "Sayd",
-        "image": "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-        "image_alt": "Field work to protect migratory birds over Lebanon",
+        "image": "",
+        "image_alt": "",
     },
     "sayd-returns-new-look-wider-vision": {
         "date": "6 September 2026",
@@ -632,8 +635,12 @@ def related_for(slug: str, articles: dict[str, dict]) -> list[str]:
 
 
 def related_card_html(other: str, articles: dict[str, dict], media_prefix: str) -> str:
+    if other in NO_THUMB_SLUGS:
+        return ""
     o = articles[other]
-    thumb = o.get("card_image") or o.get("image") or "media/brand/sayd-logo.png"
+    thumb = o.get("card_image") or o.get("image")
+    if not thumb:
+        return ""
     alt = o.get("card_image_alt") or o.get("image_alt") or o["title"]
     return f"""<article class="card overlay">
   <a class="thumb" href="../{other}/index.html"><img src="{media_prefix}{thumb}" alt="{escape(alt, quote=True)}" loading="lazy"></a>
@@ -704,6 +711,7 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
         "cabs-mecshap-autumn-birds-lebanon-khatib",
         "suhail-2026-in-photos-falcons-visitors",
         "video-saud-al-babtain-maqnas-afghanistan",
+        *NO_THUMB_SLUGS,
     }:
         featured = (
             f'<div class="article-featured"><img src="{media_prefix}{image}" '
@@ -817,7 +825,7 @@ def write_home(articles: dict[str, dict]) -> None:
     more = [
         s
         for s in articles
-        if s not in HOME_FEATURED
+        if s not in HOME_FEATURED and s not in NO_THUMB_SLUGS
     ]
     more.sort(key=lambda s: articles[s]["date_sort"], reverse=True)
     more_cards = []
@@ -891,7 +899,11 @@ def write_home(articles: dict[str, dict]) -> None:
 
 
 def write_stories(articles: dict[str, dict]) -> None:
-    slugs = sorted(articles, key=lambda s: articles[s]["date_sort"], reverse=True)
+    slugs = sorted(
+        (s for s in articles if s not in NO_THUMB_SLUGS),
+        key=lambda s: articles[s]["date_sort"],
+        reverse=True,
+    )
     rows = []
     for slug in slugs:
         item = articles[slug]
