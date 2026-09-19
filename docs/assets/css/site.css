@@ -1324,3 +1324,32 @@ html[lang="en"] .card h3 {
   }
   .latest-feed { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* EN wordmark — Latin title instead of Arabic logo glyph */
+html[dir="ltr"] .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+html[dir="ltr"] .brand-wordmark {
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.65rem;
+  letter-spacing: 0.04em;
+  color: var(--olive);
+  line-height: 1;
+  text-transform: none;
+}
+html[dir="ltr"] .brand .tagline {
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  font-size: 0.78rem;
+  max-width: 16rem;
+}
+html[dir="ltr"] .footer-wordmark {
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
