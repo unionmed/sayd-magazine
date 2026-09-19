@@ -444,22 +444,30 @@ html[lang="en"] .site-footer {
   100% { transform: translateX(50%); }
 }
 
-/* LTR ticker scroll — English edition (homepage + interior chrome) */
+/* LTR ticker — do not depend on html[dir] alone (homepage once missed it) */
 @keyframes sayd-ticker-ltr {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
+html[lang="en"] .ticker-track,
 html[dir="ltr"] .ticker-track,
+html[lang="en"] .news-strip .ticker-track,
 html[dir="ltr"] .news-strip .ticker-track,
-html[dir="ltr"] .ticker-viewport .ticker-track {
-  animation: sayd-ticker-ltr 58s linear infinite !important;
+html[lang="en"] .ticker-viewport .ticker-track,
+html[dir="ltr"] .ticker-viewport .ticker-track,
+.ticker-track.ticker-track-ltr {
+  animation-name: sayd-ticker-ltr !important;
+  animation-duration: 58s !important;
+  animation-timing-function: linear !important;
+  animation-iteration-count: infinite !important;
 }
 
+html[lang="en"] .ticker-viewport,
 html[dir="ltr"] .ticker-viewport {
-  padding-inline-end: 0.5rem;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 40px), transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 40px), transparent 100%);
+  padding-inline: 0.35rem;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 48px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 48px), transparent 100%);
 }
 
 

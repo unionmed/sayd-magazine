@@ -139,7 +139,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             assert "أحد أفراد وحدة APU يعدّ الطعام في الهواء الطلق خلال استراحة" in lead
         else:
             assert "A member of the APU team prepares food outdoors during a break" in lead
-        assert "kaps-stack" in html.split("site.css?v=", 1)[1][:40]
+        assert "?v=" in html.split("site.css", 1)[1][:48]
 
     assert_kaps_lead(DOCS / "index.html", ar=True)
     assert_kaps_lead(DOCS / "en" / "index.html", ar=False)
@@ -216,9 +216,10 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "border-left: 4px solid #a78643" not in css
     assert "sayd-ticker-ltr" in css
     assert "translateX(-50%)" in css
-    assert "calc(100% - 40px)" in css
+    assert "calc(100% - 48px)" in css
     assert "saudi-hunting-season-2026" in css
-    assert "sayd-ticker-ltr 58s linear infinite !important" in css
+    assert "animation-name: sayd-ticker-ltr !important" in css
+    assert "ticker-track-ltr" in css
     assert 'html[lang="en"] .card h2' in css
     assert "font-family: var(--font-en)" in css
     # Headings must not fall back to the Arabic Cairo stack
@@ -238,8 +239,9 @@ def test_en_nested_nav_paths() -> None:
     assert 'href="../../category/صيد/index.html"' in stories
     assert 'href="../../../category/صيد/index.html"' in article
     assert "IBM+Plex+Sans" in article
-    assert "?v=20260919-kaps-stack-en" in article
-    assert "?v=20260919-kaps-stack-en" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "?v=20260919-ticker-home" in article
+    assert "?v=20260919-ticker-home" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     grid = home.split("September 2026", 1)[1]
     assert "Awareness and Responsibility… Personalities" not in grid
@@ -262,9 +264,10 @@ def test_every_en_page_is_ltr_plex() -> None:
         assert "IBM+Plex+Sans" in html
         assert "IBM+Plex+Serif" in html
         assert "family=Cairo" not in html
-        assert "?v=20260919-kaps-stack-en" in html
+        assert "?v=20260919-ticker-home" in html
+        assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html
-        assert 'class="ticker-track"' in html
+        assert "ticker-track" in html
 
 
 if __name__ == "__main__":

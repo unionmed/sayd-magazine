@@ -22,7 +22,7 @@ FONTS = (
     "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
     "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
-CSS_CACHE = "20260919-kaps-stack-en"
+CSS_CACHE = "20260919-ticker-home"
 ABOUT_EN = (
     "The magazine of nature’s masters on land, sea, and sky — hunting, "
     "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
@@ -464,7 +464,7 @@ def ticker_html(depth: int, articles: dict[str, dict], lang: str) -> str:
           <span class="label-feed">{escape(label)}</span>
         </div>
         <div class="ticker-viewport" aria-label="{escape(label)}">
-          <div class="ticker-track">
+          <div class="ticker-track ticker-track-ltr">
             <div class="ticker">{inner}</div>
             <div class="ticker" aria-hidden="true">{inner}</div>
           </div>
