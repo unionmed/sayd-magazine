@@ -62,6 +62,20 @@ def test_september_2026_ar_stories_have_en_twins() -> None:
     assert len(PAIRS) >= 14
 
 
+def test_en_home_keeps_all_2022_plus_twins() -> None:
+    """Do not shrink /en/ to September-2026-only; keep every 2022+ EN twin."""
+    home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert len(PAIRS) >= 14
+    for en_slug in PAIRS.values():
+        assert en_slug in home, en_slug
+    assert "great-white-pelican-matn-highway-nayef-krayem" in home
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" in home
+    assert "ريتا-الشعار6.jpg" in home
+    assert ">Shooting<" not in home
+    assert ">Laws &amp; Maps<" not in home
+    assert home.count("<section class=\"home-section") >= 7
+
+
 def test_en_home_has_no_arabic_archive_mix() -> None:
     """EN home/grids: English twins only; hide empty desks; no AR archive cards."""
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -360,6 +374,24 @@ def test_en_nested_nav_paths() -> None:
     assert "saudi-hunting-season-2026-card.jpg" in home
 
 
+def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
+    """Nayef: auto-fit sparse grids; hide empty thumbs; hide empty EN desks."""
+    css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert "repeat(auto-fit, minmax(min(100%, 11rem), 1fr))" in css
+    assert "repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr))" in css
+    assert ".card .thumb:not(:has(img))" in css
+    assert "html[dir=\"ltr\"] .home-section:not(:has(article))" in css
+    home = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "?v=20260919-en-plex-kaps-r" in home
+    assert "?v=20260919-en-plex-kaps-r" in en
+    assert ">Shooting<" not in en
+    assert ">Laws &amp; Maps<" not in en
+    mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
+    assert "ريتا-الشعار6.jpg" in mosaic
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in mosaic
+
+
 def test_every_en_page_is_ltr_plex() -> None:
     """Single source of truth: every EN page, not homepage only."""
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
@@ -383,6 +415,7 @@ def test_every_en_page_is_ltr_plex() -> None:
 if __name__ == "__main__":
     test_pairs_cover_reviewed_drafts()
     test_september_2026_ar_stories_have_en_twins()
+    test_en_home_keeps_all_2022_plus_twins()
     test_en_home_has_no_arabic_archive_mix()
     test_homepage_has_visible_language_switch()
     test_en_homepage_featured_2026()
@@ -392,5 +425,6 @@ if __name__ == "__main__":
     test_css_keeps_mast_top_visible()
     test_en_ltr_typography_and_ticker()
     test_en_nested_nav_paths()
+    test_homepage_sparse_grids_hide_empty_en_desks()
     test_every_en_page_is_ltr_plex()
     print("test_en_edition: ok")
