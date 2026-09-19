@@ -62,11 +62,11 @@ def test_en_homepage_featured_2026() -> None:
     assert SUHAIL_EN in html
     assert "80,000" in html or "80,000 Visitors" in html
     assert "kaps-makshab-apu-fries-hero.jpg" in html
-    assert "Short-toed snake eagle (Circaetus gallicus)" in html
     assert "AP4I0032" not in html
     mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
-    assert "kaps-makshab-apu-fries-hero.jpg" in mosaic
-    assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic.split("feature-side", 1)[0]
+    lead = mosaic.split("feature-side", 1)[0]
+    assert "kaps-makshab-apu-fries-hero.jpg" in lead
+    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
     assert "placeholder-thumb" not in html
     assert "GitHub Pages" not in html
     for slug in HOME_TICKER_EN:
@@ -81,7 +81,6 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert "اقرأ بالعربية" in cabs
     assert "اقرأ بالعربية" in suhail
     assert "kaps-makshab-apu-fries-hero.jpg" in cabs
-    assert "Short-toed snake eagle (Circaetus gallicus)" in cabs
     assert "AP4I0032" not in cabs
     assert "grus-grus-common-crane.jpg" not in cabs
     assert "hero-closing-80k.jpg" in suhail
@@ -98,8 +97,8 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert fries.is_file() and fries.stat().st_size == 304313
 
 
-def test_kaps_card_thumbs_are_circaetus_not_fries() -> None:
-    """Single source of truth: Kaps/CABS cards use the snake-eagle, never fries."""
+def test_kaps_related_thumbs_are_circaetus_both_locales() -> None:
+    """Related/stories cards for Kaps/CABS use circaetus in AR and EN."""
     assert (
         HOMEPAGE_UNIQUE_THUMBS[CABS_AR]
         == "uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg"
@@ -109,27 +108,12 @@ def test_kaps_card_thumbs_are_circaetus_not_fries() -> None:
         r'<a\s+class="thumb"[^>]*href="([^"]+)"[^>]*>\s*<img\s+src="([^"]+)"\s+alt="([^"]*)"',
         re.I,
     )
-    leftover: list[str] = []
-    alts: set[str] = set()
-    for path in DOCS.rglob("*.html"):
-        text = path.read_text(encoding="utf-8")
-        for href, src, alt in thumb_re.findall(text):
-            if CABS_AR not in href and CABS_EN not in href:
-                continue
-            assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in src, path
-            assert "kaps-makshab-apu-fries-hero.jpg" not in src, path
-            alts.add(alt)
-            if "kaps-makshab-apu-fries-hero.jpg" in src:
-                leftover.append(str(path))
-    assert leftover == []
-    assert "Short-toed snake eagle (Circaetus gallicus)" in alts
-    assert "عقاب صرارة (Circaetus gallicus)" in alts
 
+    # Featured mosaic list stays; Nayef story image on the lead is fries.
     ar_home = (DOCS / "index.html").read_text(encoding="utf-8")
     mosaic = ar_home.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     lead = mosaic.split("feature-side", 1)[0]
-    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in lead
-    assert "kaps-makshab-apu-fries-hero.jpg" not in lead
+    assert "kaps-makshab-apu-fries-hero.jpg" in lead
     assert CABS_AR in mosaic
     assert "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع" in mosaic
 
@@ -164,6 +148,7 @@ def test_kaps_card_thumbs_are_circaetus_not_fries() -> None:
     assert en_related_cabs >= 12
 
     ar_related_kaps = 0
+    leftover = []
     for path in (DOCS / "posts").glob("*/index.html"):
         html = path.read_text(encoding="utf-8")
         if '<section class="related-block">' not in html:
@@ -173,9 +158,12 @@ def test_kaps_card_thumbs_are_circaetus_not_fries() -> None:
             if CABS_AR not in href:
                 continue
             ar_related_kaps += 1
+            if "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src:
+                leftover.append(str(path))
             assert src.endswith(
                 "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg"
             ), path
+    assert leftover == []
     assert ar_related_kaps > 0
 
 
@@ -195,6 +183,6 @@ if __name__ == "__main__":
     test_homepage_has_visible_language_switch()
     test_en_homepage_featured_2026()
     test_cabs_and_suhail_twins_link_back()
-    test_kaps_card_thumbs_are_circaetus_not_fries()
+    test_kaps_related_thumbs_are_circaetus_both_locales()
     test_css_keeps_mast_top_visible()
     print("test_en_edition: ok")

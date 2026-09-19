@@ -63,7 +63,9 @@ META: dict[str, dict] = {
         "category": "News",
         "author": "Sayd",
         "image": "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-        "image_alt": "Short-toed snake eagle (Circaetus gallicus)",
+        "image_alt": "A member of the APU team prepares food outdoors during a break",
+        "card_image": "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
+        "card_image_alt": "Short-toed snake eagle (Circaetus gallicus)",
     },
     "suhail-2026-closes-decade-katara-80000-visitors": {
         "date": "13 September 2026",
@@ -264,8 +266,8 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
     if slug == "cabs-mecshap-autumn-birds-lebanon-khatib":
         extra = figure(
             "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-            "Short-toed snake eagle (Circaetus gallicus)",
-            "Short-toed snake eagle (Circaetus gallicus)",
+            "A member of the APU team prepares food outdoors during a break",
+            "From the daily field life of the Anti-Poaching Unit (APU) team: a break to prepare food outdoors.",
             media_prefix,
         )
         lead_html = "<p><strong>Beirut — Sayd</strong></p>"
@@ -585,8 +587,8 @@ def related_for(slug: str, articles: dict[str, dict]) -> list[str]:
 
 def related_card_html(other: str, articles: dict[str, dict], media_prefix: str) -> str:
     o = articles[other]
-    thumb = o.get("image") or "media/brand/sayd-logo.png"
-    alt = o.get("image_alt") or o["title"]
+    thumb = o.get("card_image") or o.get("image") or "media/brand/sayd-logo.png"
+    alt = o.get("card_image_alt") or o.get("image_alt") or o["title"]
     return f"""<article class="card overlay">
   <a class="thumb" href="../{other}/index.html"><img src="{media_prefix}{thumb}" alt="{escape(alt, quote=True)}" loading="lazy"></a>
   <div class="body">
@@ -847,9 +849,11 @@ def write_stories(articles: dict[str, dict]) -> None:
     rows = []
     for slug in slugs:
         item = articles[slug]
+        img = item.get("card_image") or item["image"]
+        alt = item.get("card_image_alt") or item.get("image_alt") or item["title"]
         rows.append(
             f"""<article class="card overlay">
-  <a class="thumb" href="../posts/{slug}/index.html"><img src="../../{item["image"]}" alt="{escape(item.get("image_alt") or item["title"], quote=True)}" loading="lazy"></a>
+  <a class="thumb" href="../posts/{slug}/index.html"><img src="../../{img}" alt="{escape(alt, quote=True)}" loading="lazy"></a>
   <div class="body">
     <div class="meta">{escape(item["date"])}<span class="cat-pill">{escape(item["category"])}</span></div>
     <h3><a href="../posts/{slug}/index.html">{escape(item["title"])}</a></h3>
