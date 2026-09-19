@@ -201,10 +201,10 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
 
 
 def test_en_footer_has_official_mecshap_harvest_label() -> None:
-    """Footer uses Harvest; Kaps homepage caption stays Hunting."""
+    """Footer uses Harvest; Kaps homepage caption stays the Nayef/PR #29 line."""
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     caption = home.split("kaps-caption", 1)[1].split("</p>", 1)[0]
-    assert "Sustainable Hunting and Anti-Poaching (MECSHAP)" in caption
+    assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in caption
     assert "Harvest" not in caption
     samples = [
         DOCS / "en" / "index.html",
