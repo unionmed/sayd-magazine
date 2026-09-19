@@ -32,9 +32,9 @@ def wire_kaps_logos() -> None:
         f'<img src="../../media/{mesh}" alt="شعار مركز الشرق الأوسط للصيد المستدام '
         'ومكافحة الصيد الجائر — مكشب MECSHAP" width="220" '
         'style="display:block;flex:0 1 220px;width:42%;max-width:220px;height:auto;object-fit:contain;">'
-        f'<img src="../../media/{cabs}" alt="شعار كابس CABS" width="220" '
+        f'<img src="../../media/{cabs}" alt="شعار CABS" width="220" '
         'style="display:block;flex:0 1 160px;width:28%;max-width:160px;height:auto;object-fit:contain;">'
-        f'<img src="../../media/{guard}" alt="شعار كابس CABS Bird Guard" width="220" '
+        f'<img src="../../media/{guard}" alt="شعار CABS Bird Guard" width="220" '
         'style="display:block;flex:0 1 220px;width:42%;max-width:220px;height:auto;object-fit:contain;">'
         "</div>"
     )
@@ -48,8 +48,8 @@ def wire_kaps_logos() -> None:
         )
     else:
         html = html.replace(
-            "<p>أعلنت منظمة «كابس»",
-            block + "\n<p>أعلنت منظمة «كابس»",
+            "<p>أعلنت منظمة CABS",
+            block + "\n<p>أعلنت منظمة CABS",
             1,
         )
     if FORBIDDEN_SRC_RE.search(html):
