@@ -62,6 +62,20 @@ def test_september_2026_ar_stories_have_en_twins() -> None:
     assert len(PAIRS) >= 14
 
 
+def test_en_home_keeps_all_2022_plus_twins() -> None:
+    """Do not shrink /en/ to September-2026-only; keep every 2022+ EN twin."""
+    home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert len(PAIRS) >= 14
+    for en_slug in PAIRS.values():
+        assert en_slug in home, en_slug
+    assert "great-white-pelican-matn-highway-nayef-krayem" in home
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" in home
+    assert "ريتا-الشعار6.jpg" in home
+    assert ">Shooting<" not in home
+    assert ">Laws &amp; Maps<" not in home
+    assert home.count("<section class=\"home-section") >= 7
+
+
 def test_en_home_has_no_arabic_archive_mix() -> None:
     """EN home/grids: English twins only; hide empty desks; no AR archive cards."""
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -401,6 +415,7 @@ def test_every_en_page_is_ltr_plex() -> None:
 if __name__ == "__main__":
     test_pairs_cover_reviewed_drafts()
     test_september_2026_ar_stories_have_en_twins()
+    test_en_home_keeps_all_2022_plus_twins()
     test_en_home_has_no_arabic_archive_mix()
     test_homepage_has_visible_language_switch()
     test_en_homepage_featured_2026()
