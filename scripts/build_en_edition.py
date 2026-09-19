@@ -62,8 +62,8 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-13",
         "category": "News",
         "author": "Sayd",
-        "image": "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-        "image_alt": "A member of the APU team prepares food outdoors during a break",
+        "image": "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
+        "image_alt": "Short-toed snake eagle (Circaetus gallicus)",
     },
     "suhail-2026-closes-decade-katara-80000-visitors": {
         "date": "13 September 2026",
@@ -263,9 +263,9 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
     extra = ""
     if slug == "cabs-mecshap-autumn-birds-lebanon-khatib":
         extra = figure(
-            "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-            "A member of the APU team prepares food outdoors during a break",
-            "From the daily field life of the Anti-Poaching Unit (APU) team: a break to prepare food outdoors.",
+            "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
+            "Short-toed snake eagle (Circaetus gallicus)",
+            "Short-toed snake eagle (Circaetus gallicus)",
             media_prefix,
         )
         lead_html = "<p><strong>Beirut — Sayd</strong></p>"
