@@ -495,7 +495,7 @@ def en_chrome(
         ("", "category/صيد/index.html", "Hunting &amp; Equestrian"),
         ("", "category/رماية/index.html", "Shooting"),
         ("", "category/عتاد-وسلاح-الصيد/index.html", "Gear &amp; Arms"),
-        ("", "category/رياضات-وسياحة-بيئية/index.html", "Sports &amp; Eco-Tourism"),
+        ("", "category/رياضات-وسياحة-بيئية/index.html", "Eco-Tourism"),
         ("", "category/مقابلات-تحقيقات/index.html", "Interviews &amp; Investigations"),
         ("", "category/صور/index.html", "Photos"),
         ("", "category/قوانين-وخرائط/index.html", "Laws &amp; Maps"),
