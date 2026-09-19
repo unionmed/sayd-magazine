@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Sanity checks for media URL rewrite (no network)."""
 
+import re
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -68,9 +69,73 @@ def test_rewrite_html() -> None:
             0,
             root,
         )
-        assert "placeholder-thumb" in missing
+        assert "placeholder-thumb" not in missing
         assert "web.archive.org" not in missing
         assert "wp-content" not in missing
+        assert "<img" not in missing
+
+
+def test_uwaisiq_is_sparrowhawk_not_kestrel() -> None:
+    """العويسق must use Accipiter nisus, never the AP4I0032 kestrel/sunbird mix-up."""
+    root = Path(__file__).resolve().parents[1]
+    home = (root / "docs" / "index.html").read_text(encoding="utf-8")
+    article = (root / "docs" / "posts" / "العُوَيْسِق" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "accipiter-nisus-eurasian-sparrowhawk.jpg" in home
+    assert "accipiter-nisus-eurasian-sparrowhawk.jpg" in article
+    assert "AP4I0032" not in home
+    assert "AP4I0032" not in article
+    hawk = root / "docs" / "media" / "uploads/2026/09/accipiter-nisus-eurasian-sparrowhawk.jpg"
+    assert hawk.is_file() and hawk.stat().st_size > 32
+
+
+def test_homepage_unique_card_srcs() -> None:
+    """Homepage mosaic + section cards must not share one file across slugs."""
+    from collections import defaultdict
+
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "docs" / "index.html").read_text(encoding="utf-8")
+    blocks = re.findall(
+        r'<a class="thumb" href="posts/([^/]+)/index.html"[^>]*>(.*?)</a>',
+        html,
+        re.I | re.S,
+    )
+    by_src: dict[str, list[str]] = defaultdict(list)
+    for slug, inner in blocks:
+        src_m = re.search(r"""src=["']([^"']+)["']""", inner, re.I)
+        if not src_m:
+            continue
+        by_src[src_m.group(1)].append(slug)
+    dupes = {src: slugs for src, slugs in by_src.items() if len(set(slugs)) > 1}
+    assert not dupes, dupes
+
+
+def test_no_green_placeholders_on_home_related_featured() -> None:
+    """Nayef: homepage + featured + related never show a green «صيد» square."""
+    root = Path(__file__).resolve().parents[1]
+    home = (root / "docs" / "index.html").read_text(encoding="utf-8")
+    assert "placeholder-thumb" not in home
+    for path in (root / "docs" / "posts").rglob("index.html"):
+        text = path.read_text(encoding="utf-8")
+        if '<section class="related-block">' in text:
+            rel_m = re.search(
+                r'<section class="related-block">.*?</section>',
+                text,
+                re.I | re.S,
+            )
+            if rel_m:
+                assert "placeholder-thumb" not in rel_m.group(0), path
+        feat = re.search(r'<div class="article-featured">(.*?)</div>', text, re.I | re.S)
+        if feat:
+            assert "placeholder-thumb" not in feat.group(1), path
+        body = re.search(
+            r'<article class="article-content">(.*?)</article>',
+            text,
+            re.I | re.S,
+        )
+        if body:
+            assert "placeholder-thumb" not in body.group(1), path
 
 
 def test_homepage_local_media() -> None:
@@ -138,5 +203,8 @@ if __name__ == "__main__":
     test_public_src_local_only()
     test_rewrite_html()
     test_homepage_local_media()
+    test_homepage_unique_card_srcs()
+    test_uwaisiq_is_sparrowhawk_not_kestrel()
     test_visible_2022_articles_local_only()
+    test_no_green_placeholders_on_home_related_featured()
     print("ok")

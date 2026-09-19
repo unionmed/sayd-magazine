@@ -25,7 +25,9 @@ from pathlib import Path
 from urllib.parse import unquote, urlparse
 from xml.etree import ElementTree as ET
 
+from homepage_thumbs import resolve_home_thumb
 from media_rewrite import (
+    FORBIDDEN_SRC_RE,
     FOOTER_LOGO_ORIGINAL,
     LOGO_ORIGINAL,
     local_media_file,
@@ -995,27 +997,22 @@ def paginate_links(page_i: int, pages_n: int) -> str:
     return '<nav class="pagination" aria-label="ترقيم الصفحات">' + "".join(links) + "</nav>"
 
 
-# 2026 WP binaries were never archived. Homepage uses already-mirrored
-# local files as temporary stand-ins (audit/MEDIA-RECOVERY.md).
-_STANDIN_RULES = [
-    (["كابس", "مكشب", "خطيب"], "uploads/2025/09/Adonis.jpg"),
-    (["بجع", "pelican"], "uploads/2025/09/AP4I0956-1024x683.jpg"),
-    (["سهيل", "كتارا"], "uploads/2015/09/معرض-الصيد-والفروسية.jpg"),
-    (["السعودية", "غرامة", "موسم"], "uploads/2022/12/بارودة.png"),
-    (["مقناص", "بابطين"], "uploads/2018/01/maher-Copy.jpg"),
-    (["رماية", "رامي", "رالف"], "uploads/2020/05/سينتيا.jpg"),
-    (["صقر", "يشويه"], "uploads/2024/09/Design.png"),
-    (["وروار"], "uploads/2025/09/AP4I0032-1024x683.jpg"),
-]
-_DEFAULT_HOME_STANDIN = "uploads/2024/06/Bird-02.jpeg"
+# Unique local thumb per slug. Never a shared stand-in or green placeholder.
+_assigned_thumbs: dict[str, str] = {}
+_used_thumb_files: set[str] = set()
+
+
+def _rel_from_public(src: str) -> str | None:
+    m = re.search(r"(?:(?:\.\./)*)media/(uploads/.+)$", src or "")
+    return m.group(1) if m else None
 
 
 def standin_rel(title: str = "", slug: str = "") -> str:
-    blob = f"{slug} {title}"
-    for keys, rel in _STANDIN_RULES:
-        if any(k in blob for k in keys):
-            return rel
-    return _DEFAULT_HOME_STANDIN
+    """Unique local thumb for a homepage slug. Empty if none on disk."""
+    if not slug:
+        return ""
+    pick = resolve_home_thumb(slug, MEDIA_ROOT)
+    return pick or ""
 
 
 def thumb_html(
@@ -1026,17 +1023,49 @@ def thumb_html(
     home_standin: bool = False,
     slug: str = "",
 ) -> str:
-    src = media_url(url, depth) if url else ""
-    if not src and home_standin:
-        rel = standin_rel(alt, slug)
-        if (MEDIA_ROOT / rel).is_file() and (MEDIA_ROOT / rel).stat().st_size > 32:
-            src = f"{'../' * depth}media/{rel}"
-    if src:
+    """Local media/… only. Distinct file per slug; never a WP/Wayback src."""
+    rel = None
+    if slug and slug in _assigned_thumbs:
+        rel = _assigned_thumbs[slug]
+    elif slug:
+        pick = resolve_home_thumb(slug, MEDIA_ROOT)
+        if pick and pick not in _used_thumb_files:
+            rel = pick
+        elif pick and _assigned_thumbs.get(slug) == pick:
+            rel = pick
+    if not rel:
+        src = media_url(url, depth) if url else ""
+        cand = _rel_from_public(src)
+        if cand and slug and cand in _used_thumb_files and _assigned_thumbs.get(slug) != cand:
+            src = ""
+            cand = None
+        if cand:
+            rel = cand
+        elif home_standin:
+            rel = standin_rel(alt, slug) or None
+            if rel and rel in _used_thumb_files and _assigned_thumbs.get(slug) != rel:
+                rel = None
+    if rel and slug:
+        _assigned_thumbs[slug] = rel
+        _used_thumb_files.add(rel)
+        src = f"{'../' * depth}media/{rel}"
         return (
             f'<img src="{esc(src)}" alt="{esc(alt)}" loading="lazy" '
             f'onerror="this.classList.add(\'is-broken\')">'
         )
-    return '<div class="placeholder-thumb" aria-hidden="true">صيد</div>'
+    if rel:
+        src = f"{'../' * depth}media/{rel}"
+        return (
+            f'<img src="{esc(src)}" alt="{esc(alt)}" loading="lazy" '
+            f'onerror="this.classList.add(\'is-broken\')">'
+        )
+    src = media_url(url, depth) if url and not slug else ""
+    if src and not FORBIDDEN_SRC_RE.search(src):
+        return (
+            f'<img src="{esc(src)}" alt="{esc(alt)}" loading="lazy" '
+            f'onerror="this.classList.add(\'is-broken\')">'
+        )
+    return ""
 
 
 def resolve_cat(cat_counts: dict[str, dict], keys: list[str]) -> dict | None:
@@ -1153,12 +1182,15 @@ def build_site(data: dict, out: Path) -> None:
         )
 
     def card(p: dict, depth: int, heading: str = "h3", cls: str = "") -> str:
+        thumb = home_thumb(p, depth)
+        if "<img" not in thumb:
+            return ""
         cat = ""
         if p["categories"]:
             cat = f'<span class="cat-pill">{esc(p["categories"][0]["name"])}</span>'
         return f"""
 <article class="card {cls}">
-  <a class="thumb" href="{post_href(p["slug"], depth)}">{home_thumb(p, depth)}</a>
+  <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb}</a>
   <div class="body">
     <div class="meta">{esc(p["date_display"])}{cat}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
@@ -1166,9 +1198,12 @@ def build_site(data: dict, out: Path) -> None:
 </article>"""
 
     def compact_card(p: dict, depth: int) -> str:
+        thumb = home_thumb(p, depth)
+        if "<img" not in thumb:
+            return ""
         return f"""
 <article class="card card-compact overlay">
-  <a class="thumb" href="{post_href(p["slug"], depth)}">{home_thumb(p, depth)}</a>
+  <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb}</a>
   <div class="body">
     <div class="meta">{esc(p["date_display"])}</div>
     <h3><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></h3>
@@ -1206,12 +1241,15 @@ def build_site(data: dict, out: Path) -> None:
 </article>"""
 
     def hero_side_html(p: dict) -> str:
+        thumb = home_thumb(p, 0)
+        if "<img" not in thumb:
+            return ""
         cat = esc(p["categories"][0]["name"]) if p["categories"] else ""
         excerpt = esc(strip_html(p.get("excerpt") or "", 140))
         cat_html = f'<span class="cat-pill">{cat}</span>' if cat else ""
         return f"""
 <article class="hero-side">
-  <a class="thumb" href="{post_href(p["slug"], 0)}">{home_thumb(p, 0)}{cat_html}</a>
+  <a class="thumb" href="{post_href(p["slug"], 0)}">{thumb}{cat_html}</a>
   <div class="meta">{esc(p["date_display"])}</div>
   <h3><a href="{post_href(p["slug"], 0)}">{esc(p["title"])}</a></h3>
   <p class="excerpt">{excerpt}</p>
@@ -1588,8 +1626,9 @@ def build_site(data: dict, out: Path) -> None:
             c0 = p["categories"][0]
             cat_crumb = f' / <a href="{cat_href(c0["slug"], 2)}">{esc(c0["name"])}</a>'
         featured_block = ""
-        if p["featured"] and p["featured"] not in (p["content"] or ""):
-            featured_block = f'<div class="article-featured">{thumb_html(p["featured"], p["title"], 2)}</div>'
+        feat_thumb = thumb_html(p["featured"], p["title"], 2, slug=p.get("slug") or "")
+        if p["featured"] and p["featured"] not in (p["content"] or "") and "<img" in feat_thumb:
+            featured_block = f'<div class="article-featured">{feat_thumb}</div>'
         meta_bits = []
         if p["date_display"]:
             meta_bits.append(f'<span class="meta-item">{esc(p["date_display"])}</span>')
@@ -1605,8 +1644,11 @@ def build_site(data: dict, out: Path) -> None:
                 if len(related) >= 3:
                     break
         if related:
-            related_cards = "\n".join(card(r, 2, "h3", "overlay") for r in related)
-            related_html = f"""
+            related_cards = "\n".join(
+                c for c in (card(r, 2, "h3", "overlay") for r in related) if c.strip()
+            )
+            if related_cards.strip():
+                related_html = f"""
     <section class="related-block">
       <div class="section-head"><h2>ذات صلة</h2></div>
       <div class="related-grid">{related_cards}</div>
@@ -1708,10 +1750,16 @@ def build_site(data: dict, out: Path) -> None:
             chunk = cat_posts[(page_i - 1) * cat_per_page : page_i * cat_per_page]
             rows = []
             for p in chunk:
+                t = thumb_html(p["featured"], p["title"], 2, slug=p.get("slug") or "")
+                thumb_a = (
+                    f'<a class="thumb" href="{post_href(p["slug"], 2)}">{t}</a>'
+                    if "<img" in t
+                    else ""
+                )
                 rows.append(
                     f"""
 <article class="post-row">
-  <a class="thumb" href="{post_href(p["slug"], 2)}">{thumb_html(p["featured"], p["title"], 2)}</a>
+  {thumb_a}
   <div class="body">
     <div class="meta">{esc(p["date_display"])}</div>
     <h2><a href="{post_href(p["slug"], 2)}">{esc(p["title"])}</a></h2>
@@ -1761,10 +1809,16 @@ def build_site(data: dict, out: Path) -> None:
         chunk = posts[(page_i - 1) * per_page : page_i * per_page]
         rows = []
         for p in chunk:
+            t = thumb_html(p["featured"], p["title"], 1, slug=p.get("slug") or "")
+            thumb_a = (
+                f'<a class="thumb" href="{post_href(p["slug"], 1)}">{t}</a>'
+                if "<img" in t
+                else ""
+            )
             rows.append(
                 f"""
 <article class="post-row">
-  <a class="thumb" href="{post_href(p["slug"], 1)}">{thumb_html(p["featured"], p["title"], 1)}</a>
+  {thumb_a}
   <div class="body">
     <div class="meta">{esc(p["date_display"])}{" · " + esc(p["categories"][0]["name"]) if p["categories"] else ""}</div>
     <h2><a href="{post_href(p["slug"], 1)}">{esc(p["title"])}</a></h2>

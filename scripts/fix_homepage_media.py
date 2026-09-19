@@ -75,30 +75,10 @@ CHROME = {
     "https://sayd-magazine.com/wp-content/uploads/2015/03/Sayd-Footer-Logo.png": "media/brand/sayd-footer-logo.png",
 }
 
-# Mars owns Kaps/Makshab + Adonis editor photos on main. Do not stand-in
-# those two stories. Remaining missing thumbs use already-local files.
-STANDINS = {
-    "uploads/2026/09/saudi-hunting-season-2026.jpg": "uploads/2022/12/بارودة.png",
-    "uploads/2026/09/المركز-الوطني-لتنمية-الحياة-الفطرية-–-السعودية.png": "uploads/2022/12/بارودة.png",
-    "uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg": "uploads/2025/09/AP4I0956-1024x683.jpg",
-    "uploads/2026/09/1000468655.jpg": "uploads/2025/09/AP4I0956-1024x683.jpg",
-    "uploads/2025/09/AP4I9156-Enhanced-NR-1024x683.jpg": "uploads/2025/09/AP4I0032-1024x683.jpg",
-    "uploads/2020/05/رالف-2.jpg": "uploads/2020/05/سينتيا.jpg",
-    "uploads/2020/05/فوائد-الرماية.jpg": "uploads/2020/05/سينتيا.jpg",
-    "uploads/2020/07/رامية.jpg": "uploads/2020/05/سينتيا.jpg",
-    "uploads/2020/06/خرطوش-صيد.jpg": "uploads/2018/02/صورة-لموضوع-الخرطوش-المناسب.jpg",
-    "uploads/2020/10/Kark1-1.jpeg": "uploads/2024/09/Design.png",
-    "uploads/2015/05/وروار-خد-أزرق.jpg": "uploads/2025/09/AP4I0032-1024x683.jpg",
-    "uploads/2017/02/عقاب-صرارة.jpg": "uploads/2024/06/Bird-02.jpeg",
-    "uploads/2017/04/رسالة-من-كرواتي-الى-ميشال-عون.jpg": "uploads/2017/02/كمال-اغا-1.jpg",
-    "uploads/2015/06/نور-8.jpg": "uploads/2015/06/سلهب-3.jpg",
-    "uploads/2015/04/51.jpg": "uploads/2015/06/سلهب-3.jpg",
-    "uploads/2015/04/16.jpg": "uploads/2015/05/دينا-4.jpg",
-    "uploads/2015/03/ربيع-عقل-7.jpg": "uploads/2015/06/سلهب-3.jpg",
-    "uploads/2015/03/محمد-حلال-4.jpg": "uploads/2015/06/سلهب-3.jpg",
-}
-
-DEFAULT_STANDIN = "uploads/2024/06/Bird-02.jpeg"
+# Nayef rule: never map two stories onto the same stand-in file.
+# Missing originals stay missing; homepage_thumbs.py assigns unique cards.
+STANDINS: dict[str, str] = {}
+DEFAULT_STANDIN = ""
 FOOTER_NOTE_OLD = "الصور تُحمَّل من sayd-magazine.com (مرفقات غير مُنزَّلة محلياً بعد)."
 FOOTER_NOTE_NEW = "صور الرئيسية والشعار تُخدم محلياً من media/ على GitHub Pages."
 
@@ -120,7 +100,9 @@ def local_rel_for(url: str) -> str | None:
     path = MEDIA / rel
     if path.is_file() and path.stat().st_size > 32:
         return f"media/{rel}"
-    standin = STANDINS.get(rel, DEFAULT_STANDIN)
+    standin = STANDINS.get(rel) or DEFAULT_STANDIN
+    if not standin:
+        return None
     standin_path = MEDIA / standin
     if standin_path.is_file() and standin_path.stat().st_size > 32:
         return f"media/{standin}"

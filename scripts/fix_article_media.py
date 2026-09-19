@@ -18,6 +18,7 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from homepage_thumbs import ARTICLE_UNIQUE_THUMBS  # noqa: E402
 from media_rewrite import (  # noqa: E402
     FORBIDDEN_SRC_RE,
     PLACEHOLDER_HTML,
@@ -54,31 +55,16 @@ ALIASES: dict[str, str] = {
     "uploads/2025/09/AP4I9156-Enhanced-NR-scaled.jpg": "uploads/2025/09/AP4I0032-1024x683.jpg",
 }
 
-# Unrecoverable originals → already-local thematic stand-in (same bytes, new name).
-STANDINS: dict[str, str] = {
-    "uploads/2026/09/saudi-hunting-season-2026.jpg": "uploads/2022/12/بارودة.png",
-    "uploads/2026/09/saudi-hunting-season-2026-1024x683.jpg": "uploads/2022/12/بارودة.png",
-    "uploads/2026/09/saudi-hunting-season-2026-300x200.jpg": "uploads/2022/12/بارودة.png",
-    "uploads/2026/09/المركز-الوطني-لتنمية-الحياة-الفطرية-–-السعودية.png": "uploads/2026/09/ncw-saudi-wildlife-logo.png",
-    "uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg": "uploads/2025/09/AP4I0956-1024x683.jpg",
-    "uploads/2026/09/1000468655.jpg": "uploads/2025/09/AP4I0956-1024x683.jpg",
-    "uploads/2026/09/ChatGPT-Image-Sep-7-2026-01_33_30-AM-853x1024.png": "uploads/2025/09/AP4I0956-1024x683.jpg",
-    "uploads/2026/09/duck-aswan-960.jpg": "uploads/2025/09/AP4I0956-1024x683.jpg",
-    "uploads/2026/09/narta-egret.jpg": "uploads/2024/06/Bird-02.jpeg",
-    "uploads/2022/12/piston-springer.jpg": "uploads/2022/12/بارودة.png",
-    "uploads/2022/04/اتحاد-2.jpg": "uploads/2022/12/بارودة.png",
-    "uploads/2023/02/شبك.jpg": "uploads/2024/06/Bird-02.jpeg",
-    "uploads/2022/11/قزحيا-ساسين.jpg": "uploads/2018/01/maher-Copy.jpg",
-    "uploads/2024/09/Design.png": "uploads/2024/09/Design.png",
-}
+# Do not copy stand-in bytes under another story's filename.
+STANDINS: dict[str, str] = {}
 
 RITA_STANDIN = "uploads/2024/02/ريتا-الشعار6.jpg"
 DEFAULT_LISTING = "uploads/2024/06/Bird-02.jpeg"
 DESIGN = "uploads/2024/09/Design.png"
 
-# Pre-2022 files already on disk or homepage stand-ins — only for listing
-# cards / critical embeds on visible 2022+ pages (not a bulk archive fetch).
-PRE2022_STANDINS: dict[str, str] = {
+# Do not copy another story's bytes under these names.
+PRE2022_STANDINS: dict[str, str] = {}
+_PRE2022_STANDINS_DISABLED: dict[str, str] = {
     "uploads/2015/06/نور-8.jpg": "uploads/2015/06/سلهب-3.jpg",
     "uploads/2020/05/رالف-2.jpg": "uploads/2020/05/سينتيا.jpg",
     "uploads/2020/05/فوائد-الرماية.jpg": "uploads/2020/05/سينتيا.jpg",
@@ -104,25 +90,7 @@ FOOTER_NOTE_NEW = "صور المقالات الظاهرة (2022+) والشعار
 
 # Wire Mars/Suhail/Adonis files (and other known local heroes) into
 # listing cards that were generated as empty placeholders.
-SLUG_THUMBS: dict[str, str] = {
-    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-    "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا": "uploads/2026/09/gallery-alsharq.jpg",
-    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": "uploads/2026/09/hero-closing-80k.jpg",
-    "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": "uploads/2026/09/hero-closing-80k.jpg",
-    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم": "uploads/2026/09/sayd-returns-adonis-editor.jpg",
-    "صيد-تعود-بحلة-جديدة-ورؤية-اوسع": "uploads/2026/09/sayd-returns-adonis-editor.jpg",
-    "السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري": "uploads/2026/09/saudi-hunting-season-2026.jpg",
-    "السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ": "uploads/2026/09/saudi-hunting-season-2026.jpg",
-    "السعودية-تطلق-موسم-الصيد-السادس-بضواب": "uploads/2026/09/saudi-hunting-season-2026.jpg",
-    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg",
-    "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية": "uploads/2025/09/AP4I0956-1024x683.jpg",
-    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": "uploads/2026/09/duck-aswan-960.jpg",
-    "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر": "uploads/2025/07/IMG_3009-2-1024x683.jpg",
-    "المنصة-الرائدة-لنخبة-الصيادين-اللبنا": "uploads/2024/09/Jocy-229x300.jpeg",
-    "اللي-ما-يعرف-الصقر-يشويه": "uploads/2024/09/Design.png",
-    "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه": "uploads/2025/09/Adonis.jpg",
-    "البنادق-الهوائية": "uploads/2022/12/بارودة.png",
-}
+SLUG_THUMBS: dict[str, str] = dict(ARTICLE_UNIQUE_THUMBS)
 
 WP_RE = re.compile(
     r"""(?P<url>
@@ -251,17 +219,9 @@ def materialize(refs: dict[str, set[str]]) -> dict[str, str]:
             or "/related" in p
             for p in pages
         )
-        if on_home_article:
-            # Portrait / logo names stay missing → CSS placeholder (honest).
-            if any(k in name for k in ("شعار", "الدكتور", "مدير-معرض", "ملكة-محمد")):
-                status[rel] = "missing"
-                continue
-            theme = DESIGN if any(k in name.lower() for k in ("ghassan", "img-2023", "nassour")) else DEFAULT_LISTING
-            if copy_as(rel, theme):
-                status[rel] = "standin"
-                continue
-        if listing_only and copy_as(rel, DEFAULT_LISTING):
-            status[rel] = "standin"
+        # Do not copy one thematic file onto many article names (Nayef unique-image rule).
+        if on_home_article or listing_only:
+            status[rel] = "missing"
             continue
         status[rel] = "missing"
 
