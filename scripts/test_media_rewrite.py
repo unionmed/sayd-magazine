@@ -73,9 +73,29 @@ def test_rewrite_html() -> None:
         assert "wp-content" not in missing
 
 
+def test_homepage_local_media() -> None:
+    """Chrome + homepage card images must be relative docs/media paths."""
+    import re
+
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "docs" / "index.html").read_text(encoding="utf-8")
+    assert "wp-content" not in html
+    assert "web.archive.org" not in html
+    assert "ad-under-construction" in html
+    assert 'src="media/brand/sayd-logo.png"' in html
+    assert 'src="media/brand/sayd-footer-logo.png"' in html
+    srcs = re.findall(r"""(?:src|href)=["']([^"']+\.(?:png|jpe?g|gif|webp|svg))["']""", html, re.I)
+    assert srcs
+    for src in srcs:
+        assert src.startswith("media/"), src
+        path = root / "docs" / src
+        assert path.is_file() and path.stat().st_size > 32, src
+
+
 if __name__ == "__main__":
     test_uploads_rel()
     test_scope()
     test_public_src_local_only()
     test_rewrite_html()
+    test_homepage_local_media()
     print("ok")

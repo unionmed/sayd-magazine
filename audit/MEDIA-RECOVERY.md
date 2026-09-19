@@ -1,5 +1,26 @@
 # Media recovery — Sayd Magazine static site
 
+## Homepage + chrome (2026-09-19 night, pre-Stitch)
+
+Stay on the restored Multi News homepage. Chrome and visible homepage card `<img src>` are relative `media/…` only. No WordPress `/wp-content` hotlinks. Suhail `docs/media/uploads/2026/09/` files were reused, not rewritten.
+
+**Mars owns these two on `main` — do not rewire:** `kaps-makshab-apu-fries-hero.jpg` (كابس/مكشب) and `sayd-returns-adonis-editor.jpg` (أدونيس / صيد تعود).
+
+| Role | Local path |
+|------|------------|
+| Header / favicon | `docs/media/brand/sayd-logo.png` (restored historical mark) |
+| Footer | `docs/media/brand/sayd-footer-logo.png` |
+| Historical copies | `docs/media/uploads/2020/04/Sayd-Magazine-Logo.png`, `docs/media/uploads/2015/03/Sayd-Footer-Logo.png` |
+| Suhail homepage thumbs | `docs/media/uploads/2026/09/gallery-alsharq.jpg`, `hero-closing-80k.jpg` |
+| Kaps/Makshab (Mars) | `docs/media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg` — keep as published |
+| Adonis editor (Mars) | `docs/media/uploads/2026/09/sayd-returns-adonis-editor.jpg` — article only; no extra homepage wiring |
+| Restored homepage thumbs | `docs/media/uploads/{2015–2025}/…` from git (`c0538991`) |
+| Missing 2026 / unarchived thumbs | existing local stand-ins (بارودة, pelican, سينتيا, سلهب-3, …) — **not** Adonis/Kaps — see `scripts/fix_homepage_media.py` |
+
+Archive article pages are **out of scope** for this step.
+
+---
+
 **Scope (Nayef via Mars):** mirror **2022+** uploads plus homepage chrome logos only. Pre-2022 archive bulk download is deferred.
 
 **Standing rule:** the Pages site is fully independent of WordPress. No `sayd-magazine.com/wp-content`, Jetpack, or `web.archive.org` image `src`. Missing **article** files use a CSS placeholder. Homepage hero / card thumbs that lack a local featured file use a thematically matching already-mirrored image (see stand-ins below).
