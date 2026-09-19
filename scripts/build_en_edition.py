@@ -62,10 +62,9 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-13",
         "category": "News",
         "author": "Sayd",
+        # Nayef-locked: fries is the only Kaps/CABS image (hero + cards).
         "image": "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
         "image_alt": "A member of the APU team prepares food outdoors during a break",
-        "card_image": "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
-        "card_image_alt": "Short-toed snake eagle (Circaetus gallicus)",
     },
     "suhail-2026-closes-decade-katara-80000-visitors": {
         "date": "13 September 2026",
@@ -794,12 +793,12 @@ def write_home(articles: dict[str, dict]) -> None:
           <h2>Featured stories</h2>
         </div>
         <div class="featured-mosaic">
-<article class="card overlay feature-lead">
-  <a class="thumb" href="posts/{lead}/index.html"><img src="../{lead_item["image"]}" alt="{escape(lead_item.get("image_alt") or lead_item["title"], quote=True)}" loading="lazy"></a>
+<article class="card feature-lead kaps-lead">
   <div class="body">
     <div class="meta">{escape(lead_item["date"])}<span class="cat-pill">{escape(lead_item["category"])}</span></div>
     <h2><a href="posts/{lead}/index.html">{escape(lead_item["title"])}</a></h2>
   </div>
+  <a class="thumb" href="posts/{lead}/index.html"><img src="../{lead_item["image"]}" alt="{escape(lead_item.get("image_alt") or lead_item["title"], quote=True)}" loading="lazy"></a>
 </article>
           <div class="feature-side">
           <div class="feature-stack">
