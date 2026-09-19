@@ -31,7 +31,6 @@ from media_rewrite import (
     local_media_file,
     public_src,
     rewrite_html,
-    year_of,
 )
 
 NS = {
@@ -251,13 +250,8 @@ def rel_tokens(depth: int) -> str:
 
 
 def media_url(original: str, depth: int) -> str:
-    """Local media/… if mirrored; Wayback for older missing; empty for 2026 (no capture)."""
+    """Local media/… if mirrored; empty otherwise (CSS placeholder — no WP/Wayback)."""
     if not original:
-        return ""
-    if local_media_file(MEDIA_ROOT, original):
-        return public_src(original, depth, MEDIA_ROOT)
-    # 2026 uploads were never archived — avoid a guaranteed-broken Wayback icon.
-    if (year_of(original) or 0) >= 2026:
         return ""
     return public_src(original, depth, MEDIA_ROOT)
 

@@ -37,7 +37,7 @@ def test_scope() -> None:
     )
 
 
-def test_public_src_local_and_wayback() -> None:
+def test_public_src_local_only() -> None:
     with TemporaryDirectory() as tmp:
         root = Path(tmp)
         dest = root / "uploads/2024/09/Design.png"
@@ -47,9 +47,9 @@ def test_public_src_local_and_wayback() -> None:
         assert public_src(url, 0, root) == "media/uploads/2024/09/Design.png"
         assert public_src(url, 2, root) == "../../media/uploads/2024/09/Design.png"
         missing = "https://sayd-magazine.com/wp-content/uploads/2026/09/nope.jpg"
-        assert public_src(missing, 0, root).startswith(
-            "https://web.archive.org/web/0im_/"
-        )
+        assert public_src(missing, 0, root) == ""
+        wb = "https://web.archive.org/web/0im_/https://sayd-magazine.com/wp-content/uploads/2024/09/Design.png"
+        assert public_src(wb, 0, root) == "media/uploads/2024/09/Design.png"
 
 
 def test_rewrite_html() -> None:
@@ -62,11 +62,20 @@ def test_rewrite_html() -> None:
         out = rewrite_html(html, 0, root)
         assert 'src="media/uploads/2024/09/Design.png"' in out
         assert "sayd-magazine.com/wp-content" not in out
+        assert "web.archive.org" not in out
+        missing = rewrite_html(
+            '<img src="https://web.archive.org/web/0im_/https://sayd-magazine.com/wp-content/uploads/2015/06/old.jpg">',
+            0,
+            root,
+        )
+        assert "placeholder-thumb" in missing
+        assert "web.archive.org" not in missing
+        assert "wp-content" not in missing
 
 
 if __name__ == "__main__":
     test_uploads_rel()
     test_scope()
-    test_public_src_local_and_wayback()
+    test_public_src_local_only()
     test_rewrite_html()
     print("ok")
