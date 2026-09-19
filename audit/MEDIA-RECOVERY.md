@@ -198,7 +198,7 @@ Do **not** start Stitch redesign until these images are honest.
 
 **Scope:** remaining gaps after PR#17 (`5020f69`). Homepage / recent first. Pre-2022 archive bulk still deferred. Targeted next-batch names (`نور-8`, portraits, `1000468655`, …) were attempted via Wayback **CDX** (not only `0im_`).
 
-**Nayef rules unchanged:** local `media/…` only; one unique file per slug; bird photo must match the species name; homepage / featured / related never emit `placeholder-thumb`.
+**Nayef rules:** local `media/…` only; bird photo must match the species name; related cards omit if no unique thumb. **Hard rule (Mars `e35cc20` / `83797aa0`):** never remove a card from homepage «قصص مميزة» without explicit Nayef-via-Mars order. `content/homepage.json` featured list is exact (includes «من ذاكرة صيد»). Memory stays above Adonis even when it shares Rita’s photo. Batch 2 may fix images or omit related cards only — never drop featured homepage cards. `apply_unique_thumbs.py` stashes the mosaic and does not delete homepage / listing cards.
 
 ### Attempted / mirrored / missing
 

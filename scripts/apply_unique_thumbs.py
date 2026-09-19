@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Apply unique, species-accurate thumbs. No green «صيد» placeholders
-on homepage section cards, related cards, or article bodies.
+on related cards or article bodies.
 
-Mars is stripping body placeholders — we omit them, never reinsert.
-Related / homepage section cards: real matching image or remove the card.
-Featured mosaic («قصص مميزة»): NEVER remove a card. Image/placeholder
-fixes must not delete a Nayef-listed featured story.
+Nayef/Mars hard rule: NEVER drop a card from the homepage featured
+mosaic («قصص مميزة»). That block is stashed and written back unchanged.
+Related cards: real matching image or remove the card.
+Homepage / listing cards are not deleted by image cleanup.
 """
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from homepage_thumbs import assigned_file_set, standin_hashes, _md5  # noqa: E402
+from homepage_thumbs import assigned_file_set, is_featured_mosaic_slug, standin_hashes, _md5  # noqa: E402
 from media_rewrite import FORBIDDEN_SRC_RE  # noqa: E402
 
 DOCS = ROOT / "docs"
@@ -58,10 +58,6 @@ CARD_RE = re.compile(
     r"""<article class="card[^"]*">\s*<a class="thumb"[^>]*>.*?</a>\s*<div class="body">.*?</div>\s*</article>""",
     re.I | re.S,
 )
-POST_ROW_RE = re.compile(
-    r"""<article class="post-row">\s*(?P<thumb><a class="thumb"[^>]*>.*?</a>)\s*<div class="body">.*?</div>\s*</article>""",
-    re.I | re.S,
-)
 RELATED_BLOCK_RE = re.compile(
     r"""<section class="related-block">.*?</section>""",
     re.I | re.S,
@@ -76,6 +72,21 @@ EMPTY_LOGOS_RE = re.compile(
     r'<div id="sayd-cabs-partner-logos"[^>]*>\s*</div>',
     re.I,
 )
+
+
+def _stash_featured_mosaic(html: str) -> tuple[str, str | None]:
+    """Pull «قصص مميزة» / featured-mosaic out so dedupe cannot delete it."""
+    start = html.find('<div class="featured-mosaic">')
+    end = html.find('<div class="latest-col">')
+    if start < 0 or end < 0 or end <= start:
+        return html, None
+    return html[:start] + "<!--FEATURED_MOSAIC_STASH-->" + html[end:], html[start:end]
+
+
+def _restore_featured_mosaic(html: str, mosaic: str | None) -> str:
+    if mosaic is None:
+        return html
+    return html.replace("<!--FEATURED_MOSAIC_STASH-->", mosaic, 1)
 
 
 def slug_from_href(href: str) -> str | None:
@@ -103,6 +114,7 @@ def rewrite_page(
 ) -> int:
     html = path.read_text(encoding="utf-8")
     original = html
+    html, mosaic = _stash_featured_mosaic(html)
     depth = html_depth(path)
     changed = 0
     featured = featured if featured is not None else editorial_featured_slugs()
@@ -112,9 +124,13 @@ def rewrite_page(
         slug = slug_from_href(m.group("href"))
         if not slug or slug not in mapping:
             return m.group(0)
+        inner = m.group("inner")
+        # Overlay tiles use an empty <a class="thumb"> next to sibling <img>s.
+        # str.replace("", img) would prepend a duplicate in front of the tag.
+        if not inner.strip():
+            return m.group(0)
         rel = mapping[slug]
         src = public_src(rel, depth)
-        inner = m.group("inner")
         img_m = IMG_SRC_RE.search(inner)
         if img_m and img_m.group(2) == src:
             return m.group(0)
@@ -134,10 +150,9 @@ def rewrite_page(
     def mark_wrong(m: re.Match[str]) -> str:
         nonlocal changed
         slug = slug_from_href(m.group("href"))
-        if slug and slug in featured:
-            # Keep the featured mosaic thumb as-is (gap / stand-in / empty).
-            return m.group(0)
-        if slug and slug in mapping:
+        if slug and (
+            slug in mapping or slug in featured or is_featured_mosaic_slug(slug)
+        ):
             return m.group(0)
         inner = m.group("inner")
         img_m = IMG_SRC_RE.search(inner)
@@ -158,31 +173,26 @@ def rewrite_page(
             return m.group(0).replace(inner, '<div class="placeholder-thumb" aria-hidden="true">صيد</div>', 1)
         return m.group(0)
 
-    html = THUMB_BLOCK_RE.sub(mark_wrong, html)
+    # Nayef: omit related cards only. Never mark/drop homepage or listing cards.
+    def related_mark(m: re.Match[str]) -> str:
+        return THUMB_BLOCK_RE.sub(mark_wrong, m.group(0))
+
+    html = RELATED_BLOCK_RE.sub(related_mark, html)
 
     slug = path.parent.name if path.parent.parent.name == "posts" else None
-    if slug and FEATURED_RE.search(html):
-        if slug in mapping:
-            src = public_src(mapping[slug], depth)
+    if slug and slug in mapping and FEATURED_RE.search(html):
+        src = public_src(mapping[slug], depth)
 
-            def feat_sub(m: re.Match[str]) -> str:
-                nonlocal changed
-                inner = m.group("inner")
-                img_m = IMG_SRC_RE.search(inner)
-                if img_m and img_m.group(2) == src:
-                    return m.group(0)
-                changed += 1
-                return f'<div class="article-featured"><img src="{src}" alt="" loading="lazy"></div>'
+        def feat_sub(m: re.Match[str]) -> str:
+            nonlocal changed
+            inner = m.group("inner")
+            img_m = IMG_SRC_RE.search(inner)
+            if img_m and img_m.group(2) == src:
+                return m.group(0)
+            changed += 1
+            return f'<div class="article-featured"><img src="{src}" alt="" loading="lazy"></div>'
 
-            html = FEATURED_RE.sub(feat_sub, html, count=1)
-        else:
-            # No unique image — drop the featured block (no green square).
-            def feat_drop(m: re.Match[str]) -> str:
-                nonlocal changed
-                changed += 1
-                return ""
-
-            html = FEATURED_RE.sub(feat_drop, html, count=1)
+        html = FEATURED_RE.sub(feat_sub, html, count=1)
 
     if html != original:
         img_srcs = re.findall(r'<img[^>]+src="([^"]+)"', html, flags=re.I)
@@ -194,6 +204,7 @@ def rewrite_page(
         if year_2022:
             raise RuntimeError(f"forbidden 2022+ img src in {path}: {year_2022[:4]}")
 
+    html = _restore_featured_mosaic(html, mosaic)
     if html != original:
         path.write_text(html, encoding="utf-8")
     return changed
@@ -222,13 +233,14 @@ def strip_body_placeholders(html: str) -> str:
 
 def _card_is_featured(block: str, featured: set[str]) -> bool:
     slugs = re.findall(r"posts/([^/\"]+)/index\.html", block)
-    return any(s in featured for s in slugs)
+    return any(s in featured or is_featured_mosaic_slug(s) for s in slugs)
 
 
 def drop_placeholder_cards(html: str, featured: set[str] | None = None) -> str:
-    """Homepage section + related: delete whole card if thumb is a placeholder.
+    """Related cards only: delete the card if the thumb is still a placeholder.
 
-    Featured mosaic cards are never deleted — even with a gap / placeholder.
+    Featured mosaic is stashed first and never deleted (PR#20 / Nayef).
+    Homepage section cards are not removed here.
     """
     featured = featured if featured is not None else editorial_featured_slugs()
     stashed: list[str] = []
@@ -245,27 +257,8 @@ def drop_placeholder_cards(html: str, featured: set[str] | None = None) -> str:
         flags=re.I | re.S,
     )
 
-    def card_sub(m: re.Match[str]) -> str:
-        block = m.group(0)
-        if _card_is_featured(block, featured):
-            return block
-        if has_placeholder(block):
-            return ""
-        return block
-
-    html = CARD_RE.sub(card_sub, html)
-
-    def row_sub(m: re.Match[str]) -> str:
-        block = m.group(0)
-        if has_placeholder(m.group("thumb")):
-            return block.replace(m.group("thumb"), "", 1)
-        return block
-
-    html = POST_ROW_RE.sub(row_sub, html)
-
     def related_sub(m: re.Match[str]) -> str:
         block = m.group(0)
-        # Drop leftover placeholder cards (in case CARD_RE missed a variant).
         block = CARD_RE.sub(
             lambda c: (
                 c.group(0)
@@ -399,11 +392,11 @@ def apply_display_cleanup(featured: set[str] | None = None) -> int:
     featured = featured if featured is not None else editorial_featured_slugs()
     n = 0
     for path in sorted(DOCS.rglob("*.html")):
-        html = path.read_text(encoding="utf-8")
-        new = strip_body_placeholders(html)
+        original = path.read_text(encoding="utf-8")
+        new = strip_body_placeholders(original)
         new = drop_placeholder_cards(new, featured=featured)
         new = re.sub(r"\n{3,}", "\n\n", new)
-        if new != html:
+        if new != original:
             path.write_text(new, encoding="utf-8")
             n += 1
     return n

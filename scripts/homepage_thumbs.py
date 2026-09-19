@@ -14,6 +14,7 @@ Nayef rules:
 from __future__ import annotations
 
 import hashlib
+import json
 from pathlib import Path
 
 # Mars-owned binaries — never overwrite or rewire away from these slugs.
@@ -43,6 +44,8 @@ HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": "uploads/2026/09/hero-closing-80k.jpg",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب": "uploads/2026/09/ncw-wildlife-card.jpg",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم": "uploads/2026/09/sayd-returns-adonis-editor.jpg",
+    # Mars e35cc20: Memory stays in «قصص مميزة» even if this file is also Rita’s.
+    "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": "uploads/2024/02/ريتا-الشعار6.jpg",
     "بالفيديو-مقناص-سعود-عبد-العزيز-الباب": "uploads/2026/09/babtain-maqnas-afghanistan-yt.jpg",
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب": "uploads/2024/06/Bird-02.jpeg",
     "من-هم-الصيادين-المسوؤلين-الذين-كرمهم-م": "uploads/2018/02/تكريم-صيادين.jpg",
@@ -135,12 +138,33 @@ HOMEPAGE_FETCH_RELS = [
     "uploads/2015/04/16.jpg",
 ]
 
-# No unique original on disk — do not invent a thumb. Featured slugs in this
-# set still keep their mosaic card (Nayef hard rule); only the image is omitted.
+# No unique original on disk — do not invent a thumb. NEVER put a
+# homepage.json featured slug here (Nayef/Mars: Memory stays in mosaic).
 HOMEPAGE_GAPS = {
-    "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
     "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
 }
+
+_HOMEPAGE_JSON = Path(__file__).resolve().parents[1] / "content" / "homepage.json"
+
+
+def featured_mosaic_slugs() -> list[str]:
+    """Exact Nayef featured list from content/homepage.json — do not edit here."""
+    data = json.loads(_HOMEPAGE_JSON.read_text(encoding="utf-8"))
+    return [str(s).strip() for s in (data.get("featured") or []) if str(s).strip()]
+
+
+# EN edition slugs for the same five mosaic stories.
+FEATURED_MOSAIC_EN_SLUGS = {
+    "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "suhail-2026-closes-decade-katara-80000-visitors",
+    "saudi-sixth-hunting-season-2026-2027-rules",
+    "memory-of-sayd-awareness-responsibility-2016-2024",
+    "sayd-returns-what-we-want-to-offer",
+}
+
+
+def is_featured_mosaic_slug(slug: str) -> bool:
+    return slug in featured_mosaic_slugs() or slug in FEATURED_MOSAIC_EN_SLUGS
 
 # Known stand-in source files — a copy of these bytes is not a unique original.
 _STANDIN_SOURCE_RELS = (
@@ -215,27 +239,34 @@ def resolve_home_thumb(slug: str, media_root: Path) -> str | None:
 
 
 def assigned_file_set(media_root: Path) -> dict[str, str]:
-    """slug → rel for every mapping that exists as unique bytes (no collisions)."""
+    """slug → rel for every mapping that exists as unique bytes (no collisions).
+
+    Featured mosaic slugs may reuse another story’s file (Mars restored
+    Memory with Rita’s photo). Non-mosaic slugs still get first claim.
+    """
     out: dict[str, str] = {}
     used_rel: dict[str, str] = {}
     used_hash: dict[str, str] = {}
+    featured = set(featured_mosaic_slugs()) | FEATURED_MOSAIC_EN_SLUGS
     slugs = list(dict.fromkeys([*ARTICLE_UNIQUE_THUMBS, *SPECIES_FALLBACKS]))
-    for slug in slugs:
-        if slug in HOMEPAGE_GAPS:
+    ordered = [s for s in slugs if s not in featured] + [s for s in slugs if s in featured]
+    for slug in ordered:
+        if slug in HOMEPAGE_GAPS and slug not in featured:
             continue
         for rel in candidates_for(slug):
             allow = rel in _STANDIN_SOURCE_RELS and ARTICLE_UNIQUE_THUMBS.get(slug) == rel
             if not is_unique_binary(media_root, rel, allow_source=allow):
                 continue
             owner_rel = used_rel.get(rel)
-            if owner_rel and owner_rel != slug:
+            if owner_rel and owner_rel != slug and slug not in featured:
                 continue
             digest = _md5(media_root / rel)
             owner_h = used_hash.get(digest)
-            if owner_h and owner_h != slug:
+            if owner_h and owner_h != slug and slug not in featured:
                 continue
             out[slug] = rel
-            used_rel[rel] = slug
-            used_hash[digest] = slug
+            if slug not in featured:
+                used_rel[rel] = slug
+                used_hash[digest] = slug
             break
     return out
