@@ -173,6 +173,13 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in latest
     assert MEMORY in featured
     assert featured.find(MEMORY) < featured.find(ADONIS)
+    assert lists["featured"] == [
+        "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+        "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+        "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
+        MEMORY,
+        ADONIS,
+    ]
 
     latest_slugs = re.findall(r'href="posts/([^/"]+)/index.html"', latest)
     assert latest_slugs == lists["latest"]
