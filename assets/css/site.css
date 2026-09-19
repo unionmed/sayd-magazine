@@ -36,6 +36,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* English edition must be true LTR — do not inherit Arabic magazine direction */
+html[dir="ltr"] {
+  direction: ltr;
+}
+
+html[dir="ltr"] body {
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
 body {
   margin: 0;
   font-family: var(--font);
