@@ -128,11 +128,22 @@ def test_layout_footer_and_default_ticker() -> None:
     assert 'rel="noopener"' in footer
     assert MECSHAP_LABEL_AR in footer
     assert MECSHAP_LABEL_EN not in footer
+    assert "مكشب" not in footer
+    assert "كابس" not in footer
     assert "عاجل" not in footer
     assert "GitHub Pages" not in footer
 
 
 def test_shared_footer_helper_is_locale_aware() -> None:
+    assert MECSHAP_LABEL_AR == (
+        "MECSHAP — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر"
+    )
+    assert MECSHAP_LABEL_EN == (
+        "MECSHAP — Middle East Center for Sustainable Harvest and Anti-Poaching"
+    )
+    assert MECSHAP_LABEL_AR.startswith("MECSHAP")
+    assert "مكشب" not in MECSHAP_LABEL_AR
+    assert "كابس" not in MECSHAP_LABEL_AR
     ar = footer_bottom_inner_html("ar")
     en = footer_bottom_inner_html("en")
     assert MECSHAP_URL in ar and MECSHAP_URL in en
@@ -143,6 +154,8 @@ def test_shared_footer_helper_is_locale_aware() -> None:
     assert MECSHAP_LABEL_AR not in en
     assert "Sustainable Hunting" not in en
     assert "Harvest" in en
+    assert "مكشب" not in ar and "مكشب" not in en
+    assert "كابس" not in ar and "كابس" not in en
     once = apply_footer_bottom(
         '<html lang="ar"><div class="container footer-bottom-inner">'
         "<div>© مجلة صيد · Sayd Magazine</div></div>",
@@ -179,6 +192,8 @@ def test_docs_already_share_clean_chrome() -> None:
         assert MECSHAP_LABEL_AR in footer
         assert 'target="_blank"' in footer
         assert 'rel="noopener"' in footer
+        assert "مكشب" not in footer
+        assert "كابس" not in footer
 
 
 def test_every_docs_page_footer_has_mecshap() -> None:
@@ -198,6 +213,8 @@ def test_every_docs_page_footer_has_mecshap() -> None:
                 missing.append(("no-en-label", str(path.relative_to(ROOT))))
         elif MECSHAP_LABEL_AR not in footer:
             missing.append(("no-ar-label", str(path.relative_to(ROOT))))
+        if "مكشب" in footer or "كابس" in footer:
+            missing.append(("arabic-org-name", str(path.relative_to(ROOT))))
     assert missing == []
 
 

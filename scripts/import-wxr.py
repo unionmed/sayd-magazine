@@ -676,9 +676,10 @@ def chrome_ticker(depth: int, items: list[tuple[str, str]] | None = None) -> str
 
 
 # Official MECSHAP labels from https://www.mecshap.org/ — Harvest, not Hunting.
+# Footer (and org names): Latin MECSHAP / CABS only — never Arabic مكشب or كابس.
 # Homepage Kaps caption stays “Sustainable Hunting” unless Nayef asks otherwise.
 MECSHAP_URL = "https://www.mecshap.org/"
-MECSHAP_LABEL_AR = "مكشب — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر"
+MECSHAP_LABEL_AR = "MECSHAP — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر"
 MECSHAP_LABEL_EN = "MECSHAP — Middle East Center for Sustainable Harvest and Anti-Poaching"
 FOOTER_COPY_AR = f"© {SITE_TITLE} · {SITE_TITLE_EN}"
 FOOTER_COPY_EN = "© Sayd Magazine"
