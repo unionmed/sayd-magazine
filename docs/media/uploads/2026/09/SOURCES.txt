@@ -1,0 +1,28 @@
+# Suhail 2026 local mirrors — credits
+# Relative paths only. Do not hotlink WordPress /wp-content.
+
+hero-closing-80k.jpg	وكالة الأنباء القطرية (قنا)	https://cdn.qna.org.qa/media/t0odo12a/qna_suhail0120902026.jpg
+	Stories: featured + lead for 80-ألف-زائر-و158-جهة… and قطر-أكثر-من-80-ألف-زائر…
+	Also gallery closer «ملتقى الصقارين والزوار» on سهيل-2026-بالصور…
+	Alias copy: qna_suhail0120902026.jpg (original WP attachment filename; same bytes)
+
+gallery-alsharq.jpg	صحيفة الشرق	https://al-sharq.com/get/maximage/20260912_1789242473-703.jpg
+	Stories: featured / homepage thumb for سهيل-2026-بالصور… ; gallery «على أبواب سهيل» uses katara-crowd instead
+
+gallery-katara-crowd.jpg	قنا	https://cdn.qna.org.qa/media/parbr1ts/qna_katara0120902025.jpg
+	Stories: album «على أبواب سهيل»
+
+gallery-shil-day2.jpg	قنا	https://cdn.qna.org.qa/media/cssltljo/qna_shil_09092026.jpg
+	Stories: album «في أجنحة الصقور»; second figure on 80k closing news
+
+gallery-qna-extra-1.jpg	قنا	https://cdn.qna.org.qa/media/2h1knq1j/qna_suhail_qtr.jpg
+	Stories: album «من جولة الافتتاح» / «الصقر وصاحبه»
+
+gallery-qna-extra-3.jpg	قنا	https://cdn.qna.org.qa/media/basjyyay/qna_qatar_musuems_shail_08092026.jpg
+	Stories: album «اهتمام من كل الأعمار» (جناح متاحف قطر)
+
+gallery-qatarliving.png	Qatar Living	https://cdn-content.qatarliving.com/articles/featured/1789282368780-db0f0561-d4bd-48ea-bd63-b0dee618a2f1.png
+	Stored locally; portrait (not used as exhibition featured)
+
+gallery-qna-extra-2.jpg	قنا	https://cdn.qna.org.qa/media/aghbwstj/qna_ali_falcon0120902026.jpg
+	Al Gannas chief portrait — stored only, not wired (does not match named organizers)
