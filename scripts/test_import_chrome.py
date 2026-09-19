@@ -19,6 +19,8 @@ import_wxr = importlib.util.module_from_spec(_spec)
 assert _spec.loader is not None
 _spec.loader.exec_module(import_wxr)
 
+import apply_unique_thumbs  # noqa: E402
+
 ABOUT_BLURB = import_wxr.ABOUT_BLURB
 DEFAULT_TICKER_ITEMS = import_wxr.DEFAULT_TICKER_ITEMS
 TICKER_LABEL = import_wxr.TICKER_LABEL
@@ -30,6 +32,10 @@ apply_nayef_category_rule = import_wxr.apply_nayef_category_rule
 build_cat_info = import_wxr.build_cat_info
 sort_posts_newest_first = import_wxr.sort_posts_newest_first
 load_category_extras = import_wxr.load_category_extras
+featured_posts = import_wxr.featured_posts
+featured_side_html = import_wxr.featured_side_html
+featured_slugs = import_wxr.featured_slugs
+DEFAULT_FEATURED_SLUGS = import_wxr.DEFAULT_FEATURED_SLUGS
 
 SUHAIL_80K = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
 QATAR_80K = "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026"
@@ -39,6 +45,8 @@ BABTAIN = "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
 MIGRATE_HOW = "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو"
 MIGRATE_START = "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية"
 OLD_HUNT = "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه"
+MEMORY = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024"
+ADONIS = "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
 
 # Mars 62e435c5 editorial prefix on docs/category/صيد — do not regress.
 MARS_HUNTING_TOP = [
@@ -163,6 +171,8 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "قطر-أكثر-من-80-ألف-زائر" in ticker
     assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in featured
     assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in latest
+    assert MEMORY in featured
+    assert featured.find(MEMORY) < featured.find(ADONIS)
 
     latest_slugs = re.findall(r'href="posts/([^/"]+)/index.html"', latest)
     assert latest_slugs == lists["latest"]
@@ -277,6 +287,95 @@ def test_docs_hunting_category_keeps_mars_recency() -> None:
     assert slugs.index(KAPS) < slugs.index(OLD_HUNT)
 
 
+def _mosaic_featured_slugs(html: str) -> list[str]:
+    """Card slugs inside «قصص مميزة» — ignore ticker / latest / section grids."""
+    mosaic = _section(html, "featured-mosaic", "latest-feed")
+    return re.findall(
+        r'<article class="card[^"]*">\s*<a class="thumb" href="posts/([^/"]+)/index\.html"',
+        mosaic,
+    )
+
+
+def test_featured_mosaic_matches_homepage_json() -> None:
+    """Nayef hard rule: mosaic count/order = homepage.json featured array."""
+    html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+    lists = load_homepage_lists()
+    slugs = _mosaic_featured_slugs(html)
+    assert slugs == lists["featured"], slugs
+    assert slugs == list(DEFAULT_FEATURED_SLUGS)
+    assert MEMORY in slugs
+    assert slugs.index(MEMORY) < slugs.index(ADONIS)
+    # Memory sits in the side stack (Kaps is the lead).
+    assert slugs[0] == KAPS
+    assert slugs[slugs.index(MEMORY) - 1] == SAUDI
+
+
+def test_featured_pool_never_drops_for_missing_image() -> None:
+    """Importer keeps every homepage.json slug even with no thumb / no WXR row."""
+    ordered = featured_slugs()
+    assert ordered[0] == KAPS
+    assert MEMORY in ordered
+    posts = [
+        _fake_post(ordered[0], "كابس", "2026-09-13", [("أخبار", "أخبار")]),
+        _fake_post(ordered[1], "سهيل", "2026-09-13", [("أخبار", "أخبار")]),
+        _fake_post(ordered[2], "السعودية", "2026-09-09", [("أخبار", "أخبار")]),
+        # Memory omitted from posts on purpose — stub must still appear.
+        _fake_post(ADONIS, "صيد تعود", "2026-09-06", [("كلمتنا", "كلمتنا")]),
+        _fake_post("random-latest", "حشو", "2026-09-19", [("أخبار", "أخبار")]),
+    ]
+    for p in posts:
+        p["featured"] = ""
+    pool = featured_posts(posts, ordered)
+    assert [p["slug"] for p in pool] == ordered
+    assert "random-latest" not in [p["slug"] for p in pool]
+    memory = next(p for p in pool if p["slug"] == MEMORY)
+    assert memory["title"]
+    html = featured_side_html(memory, thumb="")
+    assert MEMORY in html
+    assert html.strip()
+
+
+def test_featured_side_card_stays_without_img() -> None:
+    html = featured_side_html(
+        {
+            "slug": MEMORY,
+            "title": "من ذاكرة «صيد»",
+            "date_display": "19 أيلول 2026",
+            "categories": [{"name": "من ذاكرة صيد"}],
+            "excerpt": "",
+        },
+        thumb="",
+    )
+    assert MEMORY in html
+    assert "hero-side" in html
+    assert "<img" not in html
+
+
+def test_thumb_cleanup_cannot_drop_featured_memory() -> None:
+    """Replay the image-dedupe path that silently removed Memory."""
+    fixture = f"""
+<div class="featured-mosaic">
+<article class="card card-stack feature-memory">
+  <a class="thumb" href="posts/{MEMORY}/index.html"><div class="placeholder-thumb" aria-hidden="true">صيد</div></a>
+  <div class="body"><h3>من ذاكرة «صيد»</h3></div>
+</article>
+<article class="card card-stack feature-adonis">
+  <a class="thumb" href="posts/{ADONIS}/index.html"><img src="media/uploads/2026/09/sayd-returns-adonis-editor.jpg" alt=""></a>
+  <div class="body"><h3>صيد تعود</h3></div>
+</article>
+</div>
+<div class="latest-col"></div>
+<article class="card overlay">
+  <a class="thumb" href="posts/some-other/index.html"><div class="placeholder-thumb" aria-hidden="true">صيد</div></a>
+  <div class="body"><h3>other</h3></div>
+</article>
+"""
+    out = apply_unique_thumbs.drop_placeholder_cards(fixture)
+    assert MEMORY in out
+    assert ADONIS in out
+    assert "some-other" not in out
+
+
 if __name__ == "__main__":
     test_source_has_no_regression_strings()
     test_ticker_source_is_mars_list()
@@ -288,4 +387,8 @@ if __name__ == "__main__":
     test_nayef_rule_adds_thematic_sayd_for_home_ticker()
     test_new_ticker_hunting_story_lands_on_sayd_near_top()
     test_docs_hunting_category_keeps_mars_recency()
+    test_featured_mosaic_matches_homepage_json()
+    test_featured_pool_never_drops_for_missing_image()
+    test_featured_side_card_stays_without_img()
+    test_thumb_cleanup_cannot_drop_featured_memory()
     print("ok")

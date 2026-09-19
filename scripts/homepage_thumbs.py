@@ -5,8 +5,10 @@ Nayef rules:
 - Never reuse the same image *bytes* across different stories.
 - Bird / species image must match the name literally. If unsure: omit.
 - Same slug may repeat the same file on homepage + article + related cards.
-- Homepage / featured / related: real matching image or no card — never a
+- Homepage section / related: real matching image or no card — never a
   green «صيد» placeholder-thumb.
+- Featured mosaic («قصص مميزة»): slugs come only from homepage.json /
+  DEFAULT_FEATURED. A gap / missing image never removes the card.
 """
 
 from __future__ import annotations
@@ -129,7 +131,8 @@ HOMEPAGE_FETCH_RELS = [
     "uploads/2015/04/16.jpg",
 ]
 
-# Cards we refuse to invent an image for (no unique original, no species name).
+# No unique original on disk — do not invent a thumb. Featured slugs in this
+# set still keep their mosaic card (Nayef hard rule); only the image is omitted.
 HOMEPAGE_GAPS = {
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
     "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
@@ -194,7 +197,10 @@ def candidates_for(slug: str) -> list[str]:
 
 
 def resolve_home_thumb(slug: str, media_root: Path) -> str | None:
-    """Return uploads/… rel for this slug, or None if we must omit the card."""
+    """Return uploads/… rel for this slug, or None if there is no unique file.
+
+    Featured mosaic cards still render when this returns None.
+    """
     if slug in HOMEPAGE_GAPS:
         return None
     for rel in candidates_for(slug):
