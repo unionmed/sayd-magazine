@@ -31,6 +31,7 @@ Source: CABS announcement — 8 September 2026, and Adonis Al-Khatib’s stateme
 - EN alt: **A member of the APU team prepares food outdoors during a break**. Caption: “From the daily field life of the Anti-Poaching Unit (APU) team: a break to prepare food outdoors.”
 - AR alt: **أحد أفراد وحدة APU يعدّ الطعام في الهواء الطلق خلال استراحة**. Caption: «من يوميات فريق وحدة مكافحة الصيد الجائر APU: استراحة لإعداد الطعام في الهواء الطلق.»
 - Homepage Kaps lead (AR+EN) is stacked `kaps-lead`: title above the photo, not overlay.
+- Homepage Kaps lead caption under the fries thumb (full MECSHAP line only, never a short fallback): AR «صورة من مخيم فريق وحدة مكافحة الصيد الجائر في مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر (مكشب)» / EN “Photo from the anti-poaching unit camp at the Middle East Center for Sustainable Hunting and Anti-Poaching (MECSHAP)”.
 - CABS expanded in EN as Committee Against Bird Slaughter (standard English name of the organization); AR uses «كابس» (CABS).
 - MECSHAP expanded from AR «مكشب» / center name as given in the quote and byline.
 - Birdlime = الدبق (glue/lime trapping); nets = الشباك.
