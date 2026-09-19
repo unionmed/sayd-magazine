@@ -154,6 +154,13 @@ img { max-width: 100%; height: auto; display: block; }
 html[lang="en"] {
   direction: ltr;
 }
+
+/* EN/LTR pages: any rule using var(--font) must resolve to IBM Plex, not Cairo */
+html[lang="en"],
+html[dir="ltr"] {
+  --font: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+}
 html[lang="en"] .article-content {
   font-family: var(--font-en-serif);
 }
@@ -437,22 +444,24 @@ html[lang="en"] .site-footer {
   100% { transform: translateX(50%); }
 }
 
-/* LTR ticker: crawl left (0 → -50% on a duplicated track). Fade the exit
-   (inline-start / left) so headlines are not clipped on the right. */
+/* LTR ticker scroll — English edition (homepage + interior chrome) */
 @keyframes sayd-ticker-ltr {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-html[dir="ltr"] .ticker-track {
-  animation-name: sayd-ticker-ltr;
+html[dir="ltr"] .ticker-track,
+html[dir="ltr"] .news-strip .ticker-track,
+html[dir="ltr"] .ticker-viewport .ticker-track {
+  animation: sayd-ticker-ltr 58s linear infinite !important;
 }
 
 html[dir="ltr"] .ticker-viewport {
-  padding-inline-end: 0.35rem;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 1px), transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 1px), transparent 100%);
+  padding-inline-end: 0.5rem;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 32px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 32px), transparent 100%);
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
@@ -1430,4 +1439,23 @@ html[dir="ltr"],
 html[dir="ltr"] body {
   direction: ltr !important;
   text-align: start;
+}
+
+/* EN nav: full labels must not overflow the header */
+html[dir="ltr"] .header-inner {
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+}
+html[dir="ltr"] .main-nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 0.25rem;
+  max-width: 100%;
+}
+html[dir="ltr"] .main-nav a {
+  font-size: 0.78rem;
+  padding-inline: 0.45rem;
+}
+@media (max-width: 1100px) {
+  html[dir="ltr"] .main-nav a { font-size: 0.72rem; padding-inline: 0.35rem; }
 }

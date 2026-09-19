@@ -2,6 +2,7 @@
 """Sanity checks for media URL rewrite (no network)."""
 
 import re
+import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -75,6 +76,42 @@ def test_rewrite_html() -> None:
         assert "<img" not in missing
 
 
+def test_batch2_species_fills_are_unique() -> None:
+    """Batch 2 bird fills must not be the AP4I0956 bee-eater stand-in."""
+    import hashlib
+
+    root = Path(__file__).resolve().parents[1]
+    media = root / "docs" / "media"
+    bee = media / "uploads/2025/09/AP4I0956-1024x683.jpg"
+    bee_h = hashlib.md5(bee.read_bytes()).hexdigest()
+    fills = {
+        "narta-egret.jpg": "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
+        "duck-aswan-960.jpg": "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
+        "pelecanus-onocrotalus-great-white-pelican.jpg": "البجع-الأبيض-الكبير",
+    }
+    for name, slug_part in fills.items():
+        path = media / "uploads" / "2026" / "09" / name
+        assert path.is_file() and path.stat().st_size > 32, name
+        assert hashlib.md5(path.read_bytes()).hexdigest() != bee_h, name
+    how = (root / "docs" / "posts" / "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "narta-egret.jpg" in how
+    assert "duck-aswan-960.jpg" in how
+    pel = next((root / "docs" / "posts").glob("البجع-الأبيض-الكبير*/index.html"))
+    text = pel.read_text(encoding="utf-8")
+    assert "pelecanus-onocrotalus-great-white-pelican.jpg" in text
+    assert "Codex-Image-Sep-9" not in text
+    home = (root / "docs" / "index.html").read_text(encoding="utf-8")
+    assert "duck-aswan-960.jpg" in home
+    kaps = (root / "docs" / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "mecshap-official-logo.png" in kaps
+    assert "cabs-official-logo.png" in kaps
+    assert "kaps-makshab-apu-fries-hero.jpg" in kaps
+
+
 def test_uwaisiq_is_sparrowhawk_not_kestrel() -> None:
     """العويسق must use Accipiter nisus, never the AP4I0032 kestrel/sunbird mix-up."""
     root = Path(__file__).resolve().parents[1]
@@ -91,14 +128,14 @@ def test_uwaisiq_is_sparrowhawk_not_kestrel() -> None:
 
 
 def test_homepage_unique_card_srcs() -> None:
-    """Homepage mosaic + section cards must not share one file across slugs.
+    """Non-mosaic homepage cards must not share one file across slugs.
 
-    Featured gap cards (Memory) may keep a stand-in so the mosaic card stays;
-    they are excluded from the uniqueness check.
+    Featured mosaic may reuse a section-card file (Mars restored Memory
+    with Rita’s photo). Those slugs are exempt from the uniqueness check.
     """
     from collections import defaultdict
 
-    from homepage_thumbs import HOMEPAGE_GAPS
+    from homepage_thumbs import is_featured_mosaic_slug
 
     root = Path(__file__).resolve().parents[1]
     html = (root / "docs" / "index.html").read_text(encoding="utf-8")
@@ -109,7 +146,7 @@ def test_homepage_unique_card_srcs() -> None:
     )
     by_src: dict[str, list[str]] = defaultdict(list)
     for slug, inner in blocks:
-        if slug in HOMEPAGE_GAPS:
+        if is_featured_mosaic_slug(slug):
             continue
         src_m = re.search(r"""src=["']([^"']+)["']""", inner, re.I)
         if not src_m:
@@ -117,6 +154,43 @@ def test_homepage_unique_card_srcs() -> None:
         by_src[src_m.group(1)].append(slug)
     dupes = {src: slugs for src, slugs in by_src.items() if len(set(slugs)) > 1}
     assert not dupes, dupes
+
+
+def test_featured_mosaic_keeps_homepage_json() -> None:
+    """Nayef: never drop a «قصص مميزة» card. List is content/homepage.json."""
+    import json
+
+    root = Path(__file__).resolve().parents[1]
+    lists = json.loads((root / "content" / "homepage.json").read_text(encoding="utf-8"))
+    featured = lists["featured"]
+    assert featured[3].startswith("من-ذاكرة-صيد")
+    assert featured[4].startswith("صيد-تعود")
+    home = (root / "docs" / "index.html").read_text(encoding="utf-8")
+    mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
+    for slug in featured:
+        assert slug in mosaic, slug
+    assert mosaic.find("من-ذاكرة-صيد") < mosaic.find("صيد-تعود-وهذا-ما-نريد")
+    assert "feature-memory" in mosaic
+    en = (root / "docs" / "en" / "index.html").read_text(encoding="utf-8")
+    en_mosaic = en[en.find("featured-mosaic") : en.find("latest-col")]
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" in en_mosaic
+    assert "feature-memory" in en_mosaic
+    assert en_mosaic.find("feature-memory") < en_mosaic.find("feature-adonis")
+
+
+def test_apply_does_not_drop_homepage_or_en_heroes() -> None:
+    """Batch 2: fix images / omit related cards only — keep homepage cards."""
+    root = Path(__file__).resolve().parents[1]
+    home = (root / "docs" / "index.html").read_text(encoding="utf-8")
+    assert home.count("babtain-maqnas-afghanistan-yt.jpg") == 1
+    en = (root / "docs" / "en" / "index.html").read_text(encoding="utf-8")
+    assert "qatar-suhail-2026-80000-visitors-teaser" in en
+    assert "suhail-2026-in-photos-falcons-visitors" in en
+    adonis_en = (
+        root / "docs" / "en" / "posts" / "sayd-returns-what-we-want-to-offer" / "index.html"
+    ).read_text(encoding="utf-8")
+    assert "article-featured" in adonis_en
+    assert "sayd-returns-adonis-editor.jpg" in adonis_en
 
 
 def test_no_green_placeholders_on_home_related_featured() -> None:
@@ -205,6 +279,18 @@ def test_visible_2022_articles_local_only() -> None:
     assert (docs / "CNAME").read_text(encoding="utf-8").strip() == "sayd-magazine.com"
 
 
+def test_homepage_linked_pages_have_no_wp_hotlinks() -> None:
+    """Open item #1: homepage-linked / recent pages ship no live WP/Jetpack src."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from hotlink_sweep import HOTLINK_RE, homepage_linked_pages
+    from media_rewrite import FORBIDDEN_SRC_RE
+
+    for path in homepage_linked_pages():
+        text = path.read_text(encoding="utf-8")
+        assert not FORBIDDEN_SRC_RE.search(text), path
+        assert not HOTLINK_RE.search(text), path
+
+
 if __name__ == "__main__":
     test_uploads_rel()
     test_scope()
@@ -212,7 +298,11 @@ if __name__ == "__main__":
     test_rewrite_html()
     test_homepage_local_media()
     test_homepage_unique_card_srcs()
+    test_featured_mosaic_keeps_homepage_json()
+    test_apply_does_not_drop_homepage_or_en_heroes()
     test_uwaisiq_is_sparrowhawk_not_kestrel()
+    test_batch2_species_fills_are_unique()
     test_visible_2022_articles_local_only()
+    test_homepage_linked_pages_have_no_wp_hotlinks()
     test_no_green_placeholders_on_home_related_featured()
     print("ok")

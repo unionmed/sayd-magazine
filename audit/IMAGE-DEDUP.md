@@ -153,3 +153,18 @@ Fetch **real** originals (Wayback), not stand-in copies, for:
 - Memory of Sayd unique hero
 - 2026 originals still stand-in copies: `1000468655.jpg`, `duck-aswan-960.jpg`, `saudi-hunting-season-2026.jpg`, CABS/MECSHAP logos, Suhail organizer portraits
 - Body galleries 2022–2025 still missing (~160 names)
+
+---
+
+## Batch 2 — bird / logo fills for Mars QA (do not mark done)
+
+These are **new** assignments. Species matches the caption/title. They are **not** the missing WP camera originals.
+
+| Slug / surface | File | Species / mark | Why | Credit | Mars action |
+|----------------|------|----------------|-----|--------|-------------|
+| `مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو` body + homepage card | `narta-egret.jpg` | *Egretta garzetta* (Little Egret) | Replaced AP4I0956 bee-eater stand-in. Caption already named this Commons file. | Pasztilla (Attila Terbócs), [Narta Lagoon, Albania – Little egret](https://commons.wikimedia.org/wiki/File:Narta_Lagoon,_Albania_%E2%80%93_Little_egret.jpg), CC BY-SA 4.0 | Confirm it is an egret (not a flamingo; article is about Narta flamingo protests — image is the site ID already in the caption) |
+| same article body + homepage thumb | `duck-aswan-960.jpg` | *Aythya nyroca* (Ferruginous Duck / البط الحديدي) | Title/body name البط الحديدي. Replaced bee-eater stand-in. | terolinjama / iNaturalist, [Ferruginous Duck, Aswan](https://commons.wikimedia.org/wiki/File:Ferruginous_Duck,_Aswan.jpg), CC0 | Confirm ferruginous duck (chestnut, white undertail) |
+| `البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك` | `pelecanus-onocrotalus-great-white-pelican.jpg` | *Pelecanus onocrotalus* | **Not** Nayef Kareem’s 2026 Matn flight photo. Caption says so. | Wikimedia Commons Great White Pelican | Replace with Nayef original when available; do not credit نايف on this file |
+| Kaps/Makshab partner row | `cabs-official-logo.png` + `cabs-bird-guard-logo.jpg` + `mecshap-official-logo.png` | CABS + MECSHAP official marks | WP 2026 logo binaries were never archived | komitee.de + mecshap.org | Confirm these are the marks Sayd wants next to APU fries |
+
+**Not assigned (honest omit):** `1000468655.jpg`, ChatGPT flyway PNG, gallery portraits (`نور-8` …), shooting portraits, Suhail organizer faces, Memory hero.
