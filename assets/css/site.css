@@ -420,6 +420,19 @@ html[lang="en"] .card h3 {
   100% { transform: translateX(50%); }
 }
 
+/* LTR ticker scroll — English edition (homepage + interior chrome) */
+html[dir="ltr"] .ticker-viewport {
+  mask-image: linear-gradient(to right, transparent 0, #000 14px, #000 calc(100% - 6px), transparent 100%);
+}
+html[dir="ltr"] .ticker-track {
+  animation-name: sayd-ticker-ltr;
+}
+@keyframes sayd-ticker-ltr {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
   .ticker-viewport { overflow-x: auto; }
