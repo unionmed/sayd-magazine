@@ -1353,3 +1353,11 @@ html[dir="ltr"] .footer-wordmark {
   color: #fff;
   margin: 0 0 0.5rem;
 }
+
+/* Hard guarantee: every LTR document lays out left-to-right, including article pages */
+html[dir="ltr"],
+html[dir="ltr"] body {
+  direction: ltr !important;
+  text-align: start;
+}
+
