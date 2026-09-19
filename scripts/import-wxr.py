@@ -97,6 +97,7 @@ TOP_SECONDARY = [
 TICKER_LABEL = "من كل وادي خبر"
 TICKER_CONFIG = CONTENT_DIR / "ticker.json"
 HOMEPAGE_CONFIG = CONTENT_DIR / "homepage.json"
+CATEGORY_OVERLAY = CONTENT_DIR / "category-overlay.json"
 # Never put these in ticker or latest-feed (80k long form stays featured-only).
 DEFAULT_HOME_OMIT = {
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
@@ -147,6 +148,43 @@ DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
 ]
 _TICKER_LINK_RE = re.compile(
     r'<a href="(?:(?:\.\./)*)posts/([^/"]+)/index\.html">([^<]+)</a>'
+)
+
+# Nayef rule: homepage / ticker stories must also land on their magazine
+# section pages (e.g. سهيل → صيد وفروسية). Overlay adds categories and
+# never drops WordPress ones. Rebuilds must emit newest-first listings.
+HUNTING_CAT = {"nicename": "صيد", "name": "صيد وفروسية", "slug": "صيد"}
+NEWS_CAT = {"nicename": "أخبار", "name": "أخبار", "slug": "أخبار"}
+KNOWN_CATEGORY_RECORDS = {
+    "صيد": HUNTING_CAT,
+    "صيد-وفروسية": HUNTING_CAT,
+    "صيد وفروسية": HUNTING_CAT,
+    "أخبار": NEWS_CAT,
+    "اخبار": NEWS_CAT,
+}
+# Mars/Nayef extras for current editorial surfaces (Suheil, Kaps, season…).
+DEFAULT_CATEGORY_EXTRAS: dict[str, list[str]] = {
+    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": ["صيد"],
+    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": ["صيد"],
+    "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": ["صيد", "أخبار"],
+    "السعودية-تطلق-موسم-الصيد-السادس-بضواب": ["صيد"],
+    "بالفيديو-مقناص-سعود-عبد-العزيز-الباب": ["صيد"],
+    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": ["صيد"],
+    "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية": ["صيد"],
+}
+# Title/slug hints so a future homepage hunting item gets صيد without a map edit.
+# Do not match the magazine name «صيد» alone (editorials like «صيد تعود»).
+HUNTING_SURFACE_HINTS = (
+    "سهيل",
+    "80-ألف",
+    "80 ألف",
+    "كابس",
+    "مكشب",
+    "مقناص",
+    "موسم-الصيد",
+    "موسم الصيد",
+    "هجرة-الخريف",
+    "هجرة الخريف",
 )
 
 
@@ -397,6 +435,146 @@ def load_homepage_lists() -> dict[str, list[str]]:
 def pick_posts_by_slug(posts: list[dict], slugs: list[str]) -> list[dict]:
     by_slug = {p.get("slug"): p for p in posts}
     return [by_slug[s] for s in slugs if s in by_slug]
+
+
+def post_sort_key(p: dict) -> str:
+    """Datetime descending key — never title or slug."""
+    return str(p.get("datetime") or p.get("date") or "")
+
+
+def sort_posts_newest_first(posts: list[dict]) -> list[dict]:
+    return sorted(posts, key=post_sort_key, reverse=True)
+
+
+def editorial_surface_slugs() -> set[str]:
+    """Slugs on homepage featured/latest or the ticker «من كل وادي خبر»."""
+    lists = load_homepage_lists()
+    slugs = set(lists.get("featured") or []) | set(lists.get("latest") or [])
+    slugs.update(slug for slug, _ in load_ticker_items())
+    return {s for s in slugs if s}
+
+
+def _merge_extra_lists(dest: dict[str, list[str]], raw: object) -> None:
+    if not isinstance(raw, dict):
+        return
+    for slug, cats in raw.items():
+        slug = str(slug).strip()
+        if not slug or slug in {"comment", "label", "by_slug", "category_extras"}:
+            continue
+        if not isinstance(cats, list):
+            continue
+        dest.setdefault(slug, [])
+        for cat in cats:
+            name = str(cat).strip()
+            if name and name not in dest[slug]:
+                dest[slug].append(name)
+
+
+def load_category_extras() -> dict[str, list[str]]:
+    extras = {k: list(v) for k, v in DEFAULT_CATEGORY_EXTRAS.items()}
+    if HOMEPAGE_CONFIG.exists():
+        try:
+            home = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            home = {}
+        _merge_extra_lists(extras, home.get("category_extras"))
+    if CATEGORY_OVERLAY.exists():
+        try:
+            overlay = json.loads(CATEGORY_OVERLAY.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            overlay = {}
+        _merge_extra_lists(extras, overlay.get("by_slug") or overlay)
+    return extras
+
+
+def looks_like_hunting_story(post: dict) -> bool:
+    blob = f"{post.get('slug') or ''} {post.get('title') or ''}"
+    return any(hint in blob for hint in HUNTING_SURFACE_HINTS)
+
+
+def category_record(key: str, catalog: dict | None = None) -> dict[str, str]:
+    """Resolve an overlay key to nicename/name/slug. Prefer WXR catalog."""
+    if catalog:
+        for nicename, c in catalog.items():
+            if key in (c.get("slug"), c.get("name"), nicename, c.get("nicename")):
+                return {
+                    "nicename": c.get("nicename") or nicename,
+                    "name": c.get("name") or key,
+                    "slug": c.get("slug") or slugify(nicename, "cat"),
+                }
+    known = KNOWN_CATEGORY_RECORDS.get(key)
+    if known:
+        return dict(known)
+    slug = slugify(key, "cat")
+    return {"nicename": key, "name": key, "slug": slug}
+
+
+def apply_nayef_category_rule(
+    posts: list[dict],
+    extras: dict[str, list[str]] | None = None,
+    catalog: dict | None = None,
+    surface: set[str] | None = None,
+) -> list[dict]:
+    """Add magazine-section categories for homepage/ticker stories.
+
+    WordPress categories are kept. Hunting-hint items on those surfaces
+    also get صيد (صيد وفروسية) so سهيل / Kaps / season news stay on top
+    of that listing after a rebuild.
+    """
+    extras = extras if extras is not None else load_category_extras()
+    surface = surface if surface is not None else editorial_surface_slugs()
+    for p in posts:
+        slug = p.get("slug") or ""
+        add = list(extras.get(slug, []))
+        if slug in surface and looks_like_hunting_story(p) and "صيد" not in add:
+            add.append("صيد")
+        if not add:
+            continue
+        cats = p.setdefault("categories", [])
+        existing = {
+            c.get("slug") or slugify(c.get("nicename") or "", "cat") for c in cats
+        }
+        for key in add:
+            rec = category_record(key, catalog)
+            if rec["slug"] in existing:
+                continue
+            cats.append(rec)
+            existing.add(rec["slug"])
+    return posts
+
+
+def build_cat_info(categories: dict, posts: list[dict]) -> dict[str, dict]:
+    """Index posts per category slug, newest datetime first."""
+    cat_info: dict[str, dict] = {}
+    for nicename, c in (categories or {}).items():
+        cat_info[c["slug"]] = {
+            "slug": c["slug"],
+            "name": c["name"],
+            "nicename": nicename,
+            "count": 0,
+            "posts": [],
+        }
+    for p in posts:
+        for c in p.get("categories") or []:
+            slug = c.get("slug") or slugify(c.get("nicename") or "", "cat")
+            if slug not in cat_info:
+                cat_info[slug] = {
+                    "slug": slug,
+                    "name": c.get("name") or slug,
+                    "nicename": c.get("nicename") or slug,
+                    "count": 0,
+                    "posts": [],
+                }
+            if p not in cat_info[slug]["posts"]:
+                cat_info[slug]["posts"].append(p)
+            # Keep the longer Arabic display name (صيد وفروسية over صيد).
+            name = c.get("name") or ""
+            if name and len(name) >= len(cat_info[slug].get("name") or ""):
+                cat_info[slug]["name"] = name
+    for c in cat_info.values():
+        c["posts"] = sort_posts_newest_first(c["posts"])
+        c["count"] = len(c["posts"])
+    return cat_info
 
 
 def chrome_ticker(depth: int, items: list[tuple[str, str]] | None = None) -> str:
@@ -928,35 +1106,13 @@ def build_site(data: dict, out: Path) -> None:
     else:
         (assets_dst / "css").mkdir(parents=True)
 
+    apply_nayef_category_rule(data["posts"], catalog=data.get("categories"))
+    data["posts"] = sort_posts_newest_first(data["posts"])
     posts = data["posts"]
     pages = data["pages"]
 
-    # Category counts
-    cat_info: dict[str, dict] = {}
-    for nicename, c in data["categories"].items():
-        cat_info[c["slug"]] = {
-            "slug": c["slug"],
-            "name": c["name"],
-            "nicename": nicename,
-            "count": 0,
-            "posts": [],
-        }
-    for p in posts:
-        for c in p["categories"]:
-            slug = c["slug"]
-            if slug not in cat_info:
-                cat_info[slug] = {
-                    "slug": slug,
-                    "name": c["name"],
-                    "nicename": c["nicename"],
-                    "count": 0,
-                    "posts": [],
-                }
-            cat_info[slug]["count"] += 1
-            cat_info[slug]["posts"].append(p)
-            # prefer Arabic display name from post assignment
-            if c["name"]:
-                cat_info[slug]["name"] = c["name"]
+    # Category counts — Nayef extras included, datetime descending
+    cat_info = build_cat_info(data.get("categories") or {}, posts)
 
     nav0 = cat_nav_html(cat_info, 0)
     nav1 = cat_nav_html(cat_info, 1)
@@ -1545,7 +1701,7 @@ def build_site(data: dict, out: Path) -> None:
             continue
         d = out / "category" / c["slug"]
         d.mkdir(parents=True, exist_ok=True)
-        cat_posts = c["posts"]
+        cat_posts = sort_posts_newest_first(c["posts"])
         cat_pages_n = max(1, (len(cat_posts) + cat_per_page - 1) // cat_per_page)
 
         for page_i in range(1, cat_pages_n + 1):
@@ -1668,6 +1824,8 @@ def main() -> None:
 
     print(f"Parsing {args.xml} …")
     data = parse_wxr(args.xml)
+    apply_nayef_category_rule(data["posts"], catalog=data.get("categories"))
+    data["posts"] = sort_posts_newest_first(data["posts"])
     print(
         f"Imported: {len(data['posts'])} posts, {len(data['pages'])} pages, "
         f"{len(data['attachments'])} attachment URLs, {len(data['categories'])} categories"
