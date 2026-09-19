@@ -458,8 +458,8 @@ html[dir="ltr"] .ticker-viewport .ticker-track {
 
 html[dir="ltr"] .ticker-viewport {
   padding-inline-end: 0.5rem;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 32px), transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 32px), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 40px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 40px), transparent 100%);
 }
 
 
@@ -1429,9 +1429,18 @@ html[dir="ltr"] .card.overlay h2,
 html[dir="ltr"] .card.overlay h3,
 html[dir="ltr"] .card.overlay.feature-lead h2 {
   -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 html[dir="ltr"] .feature-stack .card.card-stack h3 {
   -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Rifle diagram labels sit at the bottom of this stand-in — keep them out of the overlay */
+html[dir="ltr"] .card.overlay .thumb img[src*="saudi-hunting-season-2026"] {
+  object-position: center 8%;
 }
 
 /* Hard guarantee: every LTR document lays out left-to-right, including article pages */
