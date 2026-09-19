@@ -35,6 +35,7 @@ HOME_FEATURED = [
     "cabs-mecshap-autumn-birds-lebanon-khatib",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
+    "memory-of-sayd-awareness-responsibility-2016-2024",
     "sayd-returns-what-we-want-to-offer",
 ]
 HOME_LATEST = [
@@ -62,8 +63,8 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-13",
         "category": "News",
         "author": "Sayd",
-        "image": "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-        "image_alt": "A member of the APU team prepares food outdoors during a break",
+        "image": "media/uploads/2025/09/AP4I0032-1024x683.jpg",
+        "image_alt": "Male common kestrel (Falco tinnunculus), a migratory raptor",
     },
     "suhail-2026-closes-decade-katara-80000-visitors": {
         "date": "13 September 2026",
@@ -263,9 +264,10 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
     extra = ""
     if slug == "cabs-mecshap-autumn-birds-lebanon-khatib":
         extra = figure(
-            "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-            "A member of the APU team prepares food outdoors during a break",
-            "From the daily field life of the Anti-Poaching Unit (APU) team: a break to prepare food outdoors.",
+            "media/uploads/2025/09/AP4I0032-1024x683.jpg",
+            "Male common kestrel (Falco tinnunculus), a migratory raptor",
+            "A migratory raptor — the CABS–MECSHAP autumn campaign focuses on "
+            "protecting birds of prey passing through Lebanon. Photo: Fouad Itani.",
             media_prefix,
         )
         lead_html = "<p><strong>Beirut — Sayd</strong></p>"
@@ -682,6 +684,8 @@ def write_home(articles: dict[str, dict]) -> None:
         cls = "card card-stack"
         if slug == "sayd-returns-what-we-want-to-offer":
             cls += " feature-adonis"
+        if slug == "memory-of-sayd-awareness-responsibility-2016-2024":
+            cls += " feature-memory"
         item = articles[slug]
         img = item["image"]
         byline = ""

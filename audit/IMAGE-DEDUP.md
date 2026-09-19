@@ -43,7 +43,7 @@ Copies of `Bird-02.jpeg` (AI bird) were **not** used as stand-ins for any other 
 
 | Slug | Title (short) | Before | After | Why |
 |------|---------------|--------|-------|-----|
-| كابس-ومكشب-… | كابس / مكشب | `kaps-makshab-apu-fries-hero.jpg` | **unchanged** | Mars-owned; APU field photo |
+| كابس-ومكشب-… | كابس / مكشب | `kaps-makshab-apu-fries-hero.jpg` | **AR unchanged**; EN → `AP4I0032-1024x683.jpg` | AR keeps Mars fries binary. EN homepage + EN article hero use unique 2022+ male kestrel (*Falco tinnunculus*) matching the CABS raptor campaign. |
 | 80-ألف-زائر-… | سهيل 80 ألف | `hero-closing-80k.jpg` | **unchanged** | Suhail closer |
 | السعودية-تطلق-… | موسم السعودية | `ncw-wildlife-card.jpg` | **unchanged** | Unique NCW desert card |
 | من-ذاكرة-صيد-… | ذاكرة صيد | `ريتا-الشعار6.jpg` (Rita’s photo) | **GAP** | Shared Rita file; no unique Memory original |

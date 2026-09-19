@@ -4,7 +4,9 @@
 
 Stay on the restored Multi News homepage. Chrome and visible homepage card `<img src>` are relative `media/…` only. No WordPress `/wp-content` hotlinks. Suhail `docs/media/uploads/2026/09/` files were reused, not rewritten.
 
-**Mars owns these two on `main` — do not rewire:** `kaps-makshab-apu-fries-hero.jpg` (كابس/مكشب) and `sayd-returns-adonis-editor.jpg` (أدونيس / صيد تعود).
+**Mars owns these two binaries on `main` — do not delete or overwrite:** `kaps-makshab-apu-fries-hero.jpg` (كابس/مكشب AR body) and `sayd-returns-adonis-editor.jpg` (أدونيس / صيد تعود).
+
+**EN Kaps/CABS homepage hero (2026-09-19):** do **not** use the fries photo as the English featured lead. EN uses `uploads/2025/09/AP4I0032-1024x683.jpg` (male common kestrel — migratory raptor, campaign topic). AR keeps the fries file as the authentic APU field-life featured.
 
 | Role | Local path |
 |------|------------|

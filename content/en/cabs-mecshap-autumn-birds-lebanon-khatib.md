@@ -27,7 +27,9 @@ Source: CABS announcement — 8 September 2026, and Adonis Al-Khatib’s stateme
 
 ## Notes
 
-- Caption under lead image in AR: “From the daily field life of the APU anti-poaching team: a break to prepare food outdoors.” Kept as lead context.
+- EN homepage + EN article hero use `uploads/2025/09/AP4I0032-1024x683.jpg` (male common kestrel / *Falco tinnunculus*, Fouad Itani) — unique unused 2022+ raptor photo matching the campaign’s migratory-raptor focus. Mars QA before calling done.
+- AR article keeps Mars-owned `kaps-makshab-apu-fries-hero.jpg` (authentic WP featured: APU field-camp food break). Binary not deleted or overwritten.
+- Caption under lead image in AR: “From the daily field life of the APU anti-poaching team: a break to prepare food outdoors.” Kept on AR only.
 - CABS expanded in EN as Committee Against Bird Slaughter (standard English name of the organization); AR uses «كابس» (CABS).
 - MECSHAP expanded from AR «مكشب» / center name as given in the quote and byline.
 - Birdlime = الدبق (glue/lime trapping); nets = الشباك.
