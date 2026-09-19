@@ -180,8 +180,16 @@ html[lang="en"] .drawer-nav,
 html[lang="en"] .news-strip,
 html[lang="en"] .mast-top,
 html[lang="en"] .feed-title,
-html[lang="en"] .site-footer {
-  font-family: var(--font-en);
+html[lang="en"] .site-footer,
+html[dir="ltr"] h1,
+html[dir="ltr"] h2,
+html[dir="ltr"] h3,
+html[dir="ltr"] .section-head h2,
+html[dir="ltr"] .card h2,
+html[dir="ltr"] .card h3,
+html[dir="ltr"] .main-nav,
+html[dir="ltr"] .feed-title {
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 .lang-twin {
   margin: 0.45rem 0 0;

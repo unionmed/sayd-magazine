@@ -222,7 +222,9 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "animation-name: sayd-ticker-ltr !important" in css
     assert "ticker-track-ltr" in css
     assert 'html[lang="en"] .card h2' in css
-    assert "font-family: var(--font-en)" in css
+    assert 'html[dir="ltr"] .section-head h2' in css
+    assert 'html[dir="ltr"] .card h2' in css
+    assert 'font-family: "IBM Plex Sans"' in css
     # Headings must not fall back to the Arabic Cairo stack
     en_head = re.search(
         r'html\[lang="en"\] \.card h2,\s*html\[lang="en"\] \.card h3,\s*'
@@ -240,8 +242,8 @@ def test_en_nested_nav_paths() -> None:
     assert 'href="../../category/صيد/index.html"' in stories
     assert 'href="../../../category/صيد/index.html"' in article
     assert "IBM+Plex+Sans" in article
-    assert "?v=20260919-ticker-fade" in article
-    assert "?v=20260919-ticker-fade" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "?v=20260919-en-plex2" in article
+    assert "?v=20260919-en-plex2" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     grid = home.split("September 2026", 1)[1]
@@ -265,7 +267,7 @@ def test_every_en_page_is_ltr_plex() -> None:
         assert "IBM+Plex+Sans" in html
         assert "IBM+Plex+Serif" in html
         assert "family=Cairo" not in html
-        assert "?v=20260919-ticker-fade" in html
+        assert "?v=20260919-en-plex2" in html
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html
         assert "ticker-track" in html
