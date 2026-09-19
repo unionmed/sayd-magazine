@@ -78,6 +78,52 @@ def test_babtain_thumb_wraps_image() -> None:
     )
 
 
+def test_homepage_cards_publish_2022_plus() -> None:
+    """Homepage cards use publish date ≥ 2022. Memory 2026 stays despite 2016–2024 in the title."""
+    old_slugs = (
+        "من-هم-الصيادين-المسوؤلين-الذين-كرمهم-م",
+        "كرواتي-يطلب-من-عون-حماية-لقلقه-klepetan-من-نار",
+        "قتل-عقاب-نادر-اصطاد-أفعى-في-شمال-لبنان",
+        "بالصور-والفيديو-صياد-مسؤول-ينقذ-طائر-ا",
+        "صور-الصياد-اللبناني-الياس-سلهب",
+        "بعدسة-التاريخ-صورتان-لعائلتين-من-أبلح",
+        "اللي-ما-يعرف-الصقر-يشويه",
+        "ما-هي-مناطق-الصيد-المسؤول-؟",
+        "المعرض-الدولي-للصيد-والفروسية-في-أبو-ظ",
+        "الصياد-لا-يقنص-وروار-أزرق-الخد",
+        "هذا-ما-علمتني-أيّاه-الرماية",
+        "بعد-غلاء-الاسعار-ما-هو-مصير-الصياد-العا",
+        "تعرّف-على-شخصيّتك-من-خلال-سلاح-صيدك",
+        "خرطوش-الصيد-لكل-طريدة-والخرطوش-الاخر",
+        "رئيس-نادي-xdc-سليم-مجاعص-سياحة-الغوص-في-لب",
+        "المغامرة-الأردنية-دينا-غلايني-في-البد",
+        "رولا-ايمانويل-اتمنى-العيش-في-الادغال-م",
+    )
+    for rel, marker in (("index.html", "آخر الأخبار"), ("en/index.html", "Latest news")):
+        html = (DOCS / rel).read_text(encoding="utf-8")
+        for slug in old_slugs:
+            assert slug not in html, (rel, slug)
+        for card in _cards(html):
+            meta = re.search(r'<div class="meta">([^<]+)', card)
+            assert meta, card[:160]
+            year_m = re.search(r"(20\d{2})", meta.group(1))
+            assert year_m, meta.group(1)
+            assert int(year_m.group(1)) >= 2022, (rel, meta.group(1))
+        if rel == "index.html":
+            mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
+            assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in mosaic
+            assert "19 أيلول 2026" in mosaic
+            assert "ريتا-الشعار6" in mosaic
+        else:
+            mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
+            assert "memory-of-sayd-awareness-responsibility-2016-2024" in mosaic
+            assert "19 September 2026" in mosaic
+            assert "ريتا-الشعار6" in mosaic
+            after = html.split(marker, 1)[1]
+            assert "posts/" in after
+            assert not re.search(r'href="\.\./posts/', after)
+
+
 def test_kaps_package_untouched() -> None:
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -104,4 +150,5 @@ if __name__ == "__main__":
     test_rita_stays_on_memory_and_design_png_is_off_homes()
     test_babtain_thumb_wraps_image()
     test_kaps_package_untouched()
+    test_homepage_cards_publish_2022_plus()
     print("test_homepage_qa: ok")

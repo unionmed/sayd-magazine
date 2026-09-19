@@ -839,7 +839,9 @@ def write_home(articles: dict[str, dict]) -> None:
     more = [
         s
         for s in articles
-        if s not in HOME_FEATURED and s not in NO_THUMB_SLUGS
+        if s not in HOME_FEATURED
+        and s not in NO_THUMB_SLUGS
+        and str(articles[s].get("date_sort") or "") >= "2022"
     ]
     more.sort(key=lambda s: articles[s]["date_sort"], reverse=True)
     more_cards = []
@@ -1121,7 +1123,8 @@ def main() -> None:
     patch_css()
     apply_footer_partner_css_files()
     n = patch_existing_html(pairs)
-    write_home(articles)
+    # Hand-extended EN homepage (TV / Photos / desks). write_home() would
+    # wipe those sections; mosaic + latest stay in docs/en/index.html.
     write_stories(articles)
     for slug in articles:
         write_article(slug, articles, pairs_inv)

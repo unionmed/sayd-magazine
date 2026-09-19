@@ -78,6 +78,9 @@ NAV_CATS = [
     ("جعبة المنوعات", ["جعبة المنوعات", "جعبة-المنوعات"]),
 ]
 
+# Homepage desks: publish date 2022 → today. Pre-2022 stays in the archive only.
+HOME_PUBLISH_YEAR_MIN = 2022
+
 # Homepage magazine section blocks after hero: (title, accent_class, match keys)
 HOME_SECTIONS = [
     ("أخبار", "accent-red", ["أخبار", "اخبار"]),
@@ -262,6 +265,37 @@ def parse_date(s: str) -> datetime | None:
         except ValueError:
             continue
     return None
+
+
+def post_publish_year(p: dict) -> int:
+    """Story publish year from WXR/editorial date — not years mentioned in the title."""
+    dt = parse_date(str(p.get("date") or p.get("datetime") or ""))
+    return dt.year if dt else 0
+
+
+def featured_year(p: dict) -> int:
+    m = re.search(r"/uploads/(\d{4})/", p.get("featured") or "")
+    return int(m.group(1)) if m else 0
+
+
+def prefer_recent(
+    items: list[dict], n: int, media_root: Path | None = None
+) -> list[dict]:
+    """Homepage desks: 2022→today publish dates only. Never pad with older stories.
+
+    Among eligible items, prefer locally mirrored thumbs, then newest first.
+    """
+    root = media_root if media_root is not None else MEDIA_ROOT
+    fresh = [p for p in items if post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN]
+    fresh.sort(key=lambda p: str(p.get("date") or ""), reverse=True)
+    local, rest = [], []
+    for p in fresh:
+        feat = p.get("featured") or ""
+        if feat and local_media_file(root, feat):
+            local.append(p)
+        else:
+            rest.append(p)
+    return (local + rest)[:n]
 
 
 def format_ar_date(dt: datetime | None) -> str:
@@ -1569,23 +1603,6 @@ def build_site(data: dict, out: Path) -> None:
       <div class="grid-4">{cards}</div>
     </section>"""
 
-    def featured_year(p: dict) -> int:
-        m = re.search(r"/uploads/(\d{4})/", p.get("featured") or "")
-        return int(m.group(1)) if m else 0
-
-    def prefer_recent(items: list[dict], n: int) -> list[dict]:
-        """Prefer locally mirrored thumbs, then 2022–2025, then the rest."""
-        local, mid, rest = [], [], []
-        for p in items:
-            feat = p.get("featured") or ""
-            if feat and local_media_file(MEDIA_ROOT, feat):
-                local.append(p)
-            elif 2022 <= featured_year(p) <= 2025:
-                mid.append(p)
-            else:
-                rest.append(p)
-        return (local + mid + rest)[:n]
-
     def pick_cat_posts(keys: list[str], n: int) -> tuple[dict | None, list[dict]]:
         c = resolve_cat(cat_info, keys)
         if not c:
@@ -1655,14 +1672,8 @@ def build_site(data: dict, out: Path) -> None:
   </div>
 </section>"""
 
-    # Photos / بعدستكم — 4 cards, prefer 2022+
+    # Photos / بعدستكم — same-category, publish date 2022→today only
     photos_cat, photo_items = pick_cat_posts(["صور", "بعدستكم"], 4)
-    if len(photo_items) < 4:
-        extras = prefer_recent(
-            [p for p in posts if featured_year(p) >= 2022 and p not in photo_items],
-            4 - len(photo_items),
-        )
-        photo_items = photo_items + extras
     photos_html = ""
     if photo_items:
         photo_cards = "\n".join(card(p, 0, "h3") for p in photo_items[:4])
@@ -1786,22 +1797,22 @@ def build_site(data: dict, out: Path) -> None:
   </div>
 </section>"""
 
-    # Prefer 2022+ items in remaining magazine grids
+    # Magazine grids: 2022→today only. Hide a desk when the category has none.
     section_html_parts = []
     for title, accent, keys in HOME_SECTIONS:
         c = resolve_cat(cat_info, list(keys) + [title])
         if not c:
             continue
-        fresh = prefer_recent(
-            [p for p in c["posts"] if p["slug"] not in used_slugs],
-            4,
-        )
+        unused = [p for p in c["posts"] if p["slug"] not in used_slugs]
+        fresh = prefer_recent(unused, 4)
         if len(fresh) < 4:
             for p in prefer_recent(c["posts"], 8):
                 if p not in fresh:
                     fresh.append(p)
                 if len(fresh) >= 4:
                     break
+        if not fresh:
+            continue
         for p in fresh:
             used_slugs.add(p["slug"])
         section_html_parts.append(

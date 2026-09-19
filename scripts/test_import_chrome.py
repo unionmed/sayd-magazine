@@ -33,6 +33,9 @@ footer_bottom_inner_html = import_wxr.footer_bottom_inner_html
 apply_footer_bottom = import_wxr.apply_footer_bottom
 load_ticker_items = import_wxr.load_ticker_items
 load_homepage_lists = import_wxr.load_homepage_lists
+prefer_recent = import_wxr.prefer_recent
+HOME_PUBLISH_YEAR_MIN = import_wxr.HOME_PUBLISH_YEAR_MIN
+post_publish_year = import_wxr.post_publish_year
 apply_nayef_category_rule = import_wxr.apply_nayef_category_rule
 build_cat_info = import_wxr.build_cat_info
 sort_posts_newest_first = import_wxr.sort_posts_newest_first
@@ -381,6 +384,28 @@ def _mosaic_featured_slugs(html: str) -> list[str]:
     return slugs
 
 
+def test_prefer_recent_skips_pre_2022_even_with_local_thumb() -> None:
+    """Publish date is the homepage rule — title years and old local files do not qualify."""
+    assert HOME_PUBLISH_YEAR_MIN == 2022
+    old = _fake_post(
+        "من-هم-الصيادين-المسوؤلين-الذين-كرمهم-م",
+        "تكريم 2018",
+        "2018-02-07 00:00:00",
+        [("استديو-صيد", "استديو صيد")],
+    )
+    old["featured"] = "uploads/2018/02/تكريم-صيادين.jpg"
+    memory = _fake_post(
+        MEMORY,
+        "من ذاكرة «صيد»: مسيرة الوعي والمسؤولية (2016 – 2024)",
+        "2026-09-19 00:00:00",
+        [("ثقافة-وتراث", "من ذاكرة صيد")],
+    )
+    picked = prefer_recent([old, memory], 4, media_root=ROOT / "docs" / "media")
+    assert [p["slug"] for p in picked] == [MEMORY]
+    assert post_publish_year(memory) == 2026
+    assert post_publish_year(old) == 2018
+
+
 def test_featured_mosaic_matches_homepage_json() -> None:
     """Nayef hard rule: mosaic count/order = homepage.json featured array."""
     html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
@@ -480,6 +505,7 @@ if __name__ == "__main__":
     test_nayef_rule_adds_thematic_sayd_for_home_ticker()
     test_new_ticker_hunting_story_lands_on_sayd_near_top()
     test_docs_hunting_category_keeps_mars_recency()
+    test_prefer_recent_skips_pre_2022_even_with_local_thumb()
     test_featured_mosaic_matches_homepage_json()
     test_featured_pool_never_drops_for_missing_image()
     test_featured_side_card_stays_without_img()
