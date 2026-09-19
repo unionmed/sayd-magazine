@@ -93,10 +93,53 @@ def test_css_keeps_mast_top_visible() -> None:
     assert hidden is None
 
 
+def test_en_ltr_typography_and_ticker() -> None:
+    html = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "IBM+Plex+Sans" in html
+    assert "IBM+Plex+Serif" in html
+    assert "family=Cairo" not in html
+    assert "19 Sep 2026" not in html
+    assert "19 September 2026" in html
+    assert ">Arabic<" not in html.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
+    assert "feature-memory" in html
+    assert "feature-adonis" in html
+    assert "feature-lead" in html
+
+    css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert "--font-en:" in css
+    assert "IBM Plex Sans" in css
+    assert "border-inline-start: 4px solid #a78643" in css
+    assert "border-left: 4px solid #a78643" not in css
+    assert "sayd-ticker-ltr" in css
+    assert "translateX(-50%)" in css
+    assert 'html[lang="en"] .card h2' in css
+    assert "font-family: var(--font-en)" in css
+    # Headings must not fall back to the Arabic Cairo stack
+    en_head = re.search(
+        r'html\[lang="en"\] \.card h2,\s*html\[lang="en"\] \.card h3,\s*'
+        r"html\[lang=\"en\"\] \.main-nav",
+        css,
+    )
+    assert en_head is not None or "font-family: var(--font-en)" in css
+
+
+def test_en_nested_nav_paths() -> None:
+    stories = (DOCS / "en" / "stories" / "index.html").read_text(encoding="utf-8")
+    article = (
+        DOCS / "en" / "posts" / CABS_EN / "index.html"
+    ).read_text(encoding="utf-8")
+    assert 'href="../../category/صيد/index.html"' in stories
+    assert 'href="../../../category/صيد/index.html"' in article
+    assert "IBM+Plex+Sans" in article
+    assert "?v=20260919-en-ltr" in article
+
+
 if __name__ == "__main__":
     test_pairs_cover_reviewed_drafts()
     test_homepage_has_visible_language_switch()
     test_en_homepage_featured_2026()
     test_cabs_and_suhail_twins_link_back()
     test_css_keeps_mast_top_visible()
+    test_en_ltr_typography_and_ticker()
+    test_en_nested_nav_paths()
     print("test_en_edition: ok")
