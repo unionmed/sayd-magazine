@@ -146,6 +146,38 @@ def test_kaps_card_thumbs_are_circaetus_not_fries() -> None:
     assert "kaps-makshab-apu-fries-hero.jpg" in stories
     assert "autumn-migration-field-action-protect-flyways-lebanon" in stories
 
+    # Nayef: AR related thumbs must land on EN Related in the same PR.
+    en_related_cabs = 0
+    for path in (DOCS / "en" / "posts").glob("*/index.html"):
+        html = path.read_text(encoding="utf-8")
+        assert '<section class="related-block">' in html, path
+        related = html.split('<section class="related-block">', 1)[1].split("</section>", 1)[0]
+        for href, src, alt in thumb_re.findall(related):
+            if CABS_EN not in href:
+                continue
+            en_related_cabs += 1
+            assert src.endswith(
+                "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg"
+            ), path
+            assert alt == "Short-toed snake eagle (Circaetus gallicus)"
+            assert "kaps-makshab-apu-fries-hero.jpg" not in src
+    assert en_related_cabs >= 12
+
+    ar_related_kaps = 0
+    for path in (DOCS / "posts").glob("*/index.html"):
+        html = path.read_text(encoding="utf-8")
+        if '<section class="related-block">' not in html:
+            continue
+        related = html.split('<section class="related-block">', 1)[1].split("</section>", 1)[0]
+        for href, src, alt in thumb_re.findall(related):
+            if CABS_AR not in href:
+                continue
+            ar_related_kaps += 1
+            assert src.endswith(
+                "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg"
+            ), path
+    assert ar_related_kaps > 0
+
 
 def test_css_keeps_mast_top_visible() -> None:
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")

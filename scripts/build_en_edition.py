@@ -583,6 +583,66 @@ def related_for(slug: str, articles: dict[str, dict]) -> list[str]:
     return seen[:3]
 
 
+def related_card_html(other: str, articles: dict[str, dict], media_prefix: str) -> str:
+    o = articles[other]
+    thumb = o.get("image") or "media/brand/sayd-logo.png"
+    alt = o.get("image_alt") or o["title"]
+    return f"""<article class="card overlay">
+  <a class="thumb" href="../{other}/index.html"><img src="{media_prefix}{thumb}" alt="{escape(alt, quote=True)}" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">{escape(o["date"])}<span class="cat-pill">{escape(o["category"])}</span></div>
+    <h3><a href="../{other}/index.html">{escape(o["title"])}</a></h3>
+  </div>
+</article>"""
+
+
+def related_block_html(slug: str, articles: dict[str, dict]) -> str:
+    cards = "".join(
+        related_card_html(other, articles, "../../../")
+        for other in related_for(slug, articles)
+    )
+    return f"""    <section class="related-block">
+      <div class="section-head"><h2>Related</h2></div>
+      <div class="related-grid">
+{cards}
+      </div>
+    </section>
+"""
+
+
+def ensure_en_related_blocks(articles: dict[str, dict]) -> int:
+    """Insert or refresh Related on published EN articles without rewriting chrome."""
+    n = 0
+    for slug in articles:
+        path = DOCS / "en" / "posts" / slug / "index.html"
+        if not path.is_file():
+            continue
+        html = path.read_text(encoding="utf-8")
+        block = related_block_html(slug, articles)
+        if '<section class="related-block">' in html:
+            new_html = re.sub(
+                r'[ \t]*<section class="related-block">.*?</section>\s*',
+                block,
+                html,
+                count=1,
+                flags=re.S,
+            )
+        else:
+            new_html, count = re.subn(
+                r'(<article class="article-content">.*?</article>)(\s*)',
+                r"\1\n" + block + r"\2",
+                html,
+                count=1,
+                flags=re.S,
+            )
+            if count != 1:
+                continue
+        if new_html != html:
+            path.write_text(new_html, encoding="utf-8")
+            n += 1
+    return n
+
+
 def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str]) -> None:
     item = articles[slug]
     ar_slug = pairs_inv[slug]
@@ -603,17 +663,7 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
         )
     related = []
     for other in related_for(slug, articles):
-        o = articles[other]
-        thumb = o.get("image") or "media/brand/sayd-logo.png"
-        related.append(
-            f"""<article class="card overlay">
-  <a class="thumb" href="../{other}/index.html"><img src="{media_prefix}{thumb}" alt="{escape(o["title"], quote=True)}" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">{escape(o["date"])}<span class="cat-pill">{escape(o["category"])}</span></div>
-    <h3><a href="../{other}/index.html">{escape(o["title"])}</a></h3>
-  </div>
-</article>"""
-        )
+        related.append(related_card_html(other, articles, media_prefix))
     ar_href = f"../../../posts/{ar_slug}/index.html"
     en_href = "index.html"
     main = f"""
@@ -998,8 +1048,10 @@ def main() -> None:
     write_stories(articles)
     for slug in articles:
         write_article(slug, articles, pairs_inv)
+    related_n = ensure_en_related_blocks(articles)
     print(f"patched {n} Arabic HTML files")
     print(f"wrote {len(articles)} English articles + /en/index.html")
+    print(f"ensured Related on {related_n} English articles")
 
 
 if __name__ == "__main__":
