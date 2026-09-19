@@ -19,6 +19,7 @@ from pathlib import Path
 
 # Mars-owned binaries — never overwrite or rewire away from these slugs.
 MARS_OWNED = {
+    "uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
     "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
     "uploads/2026/09/sayd-returns-adonis-editor.jpg",
 }
@@ -40,7 +41,7 @@ BRAND_KEEP = {
 
 # Homepage mosaic + section cards: unique local file per slug.
 HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
-    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
+    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": "uploads/2026/09/hero-closing-80k.jpg",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب": "uploads/2026/09/ncw-wildlife-card.jpg",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم": "uploads/2026/09/sayd-returns-adonis-editor.jpg",

@@ -5,9 +5,12 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from homepage_thumbs import HOMEPAGE_UNIQUE_THUMBS  # noqa: E402
 DOCS = ROOT / "docs"
 PAIRS = json.loads((ROOT / "content" / "en" / "pairs.json").read_text(encoding="utf-8"))["pairs"]
 
@@ -59,11 +62,11 @@ def test_en_homepage_featured_2026() -> None:
     assert SUHAIL_EN in html
     assert "80,000" in html or "80,000 Visitors" in html
     assert "kaps-makshab-apu-fries-hero.jpg" in html
-    assert "Short-toed snake eagle (Circaetus gallicus)" in html
     assert "AP4I0032" not in html
     mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
-    assert "kaps-makshab-apu-fries-hero.jpg" in mosaic
-    assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic.split("feature-side", 1)[0]
+    lead = mosaic.split("feature-side", 1)[0]
+    assert "kaps-makshab-apu-fries-hero.jpg" in lead
+    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
     assert "placeholder-thumb" not in html
     assert "GitHub Pages" not in html
     for slug in HOME_TICKER_EN:
@@ -78,7 +81,6 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert "اقرأ بالعربية" in cabs
     assert "اقرأ بالعربية" in suhail
     assert "kaps-makshab-apu-fries-hero.jpg" in cabs
-    assert "Short-toed snake eagle (Circaetus gallicus)" in cabs
     assert "AP4I0032" not in cabs
     assert "grus-grus-common-crane.jpg" not in cabs
     assert "hero-closing-80k.jpg" in suhail
@@ -93,6 +95,76 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert "AP4I0032" not in ar_cabs
     fries = DOCS / "media" / "uploads" / "2026" / "09" / "kaps-makshab-apu-fries-hero.jpg"
     assert fries.is_file() and fries.stat().st_size == 304313
+
+
+def test_kaps_related_thumbs_are_circaetus_both_locales() -> None:
+    """Related/stories cards for Kaps/CABS use circaetus in AR and EN."""
+    assert (
+        HOMEPAGE_UNIQUE_THUMBS[CABS_AR]
+        == "uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg"
+    )
+
+    thumb_re = re.compile(
+        r'<a\s+class="thumb"[^>]*href="([^"]+)"[^>]*>\s*<img\s+src="([^"]+)"\s+alt="([^"]*)"',
+        re.I,
+    )
+
+    # Featured mosaic list stays; Nayef story image on the lead is fries.
+    ar_home = (DOCS / "index.html").read_text(encoding="utf-8")
+    mosaic = ar_home.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    lead = mosaic.split("feature-side", 1)[0]
+    assert "kaps-makshab-apu-fries-hero.jpg" in lead
+    assert CABS_AR in mosaic
+    assert "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع" in mosaic
+
+    stories = (DOCS / "en" / "stories" / "index.html").read_text(encoding="utf-8")
+    cabs_cards = [
+        (href, src, alt)
+        for href, src, alt in thumb_re.findall(stories)
+        if CABS_EN in href
+    ]
+    assert cabs_cards
+    assert all("circaetus-gallicus-short-toed-snake-eagle.jpg" in src for _, src, _ in cabs_cards)
+    assert all(alt == "Short-toed snake eagle (Circaetus gallicus)" for _, _, alt in cabs_cards)
+    # Field-action twin may still use fries — different story, not a Kaps card.
+    assert "kaps-makshab-apu-fries-hero.jpg" in stories
+    assert "autumn-migration-field-action-protect-flyways-lebanon" in stories
+
+    # Nayef: AR related thumbs must land on EN Related in the same PR.
+    en_related_cabs = 0
+    for path in (DOCS / "en" / "posts").glob("*/index.html"):
+        html = path.read_text(encoding="utf-8")
+        assert '<section class="related-block">' in html, path
+        related = html.split('<section class="related-block">', 1)[1].split("</section>", 1)[0]
+        for href, src, alt in thumb_re.findall(related):
+            if CABS_EN not in href:
+                continue
+            en_related_cabs += 1
+            assert src.endswith(
+                "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg"
+            ), path
+            assert alt == "Short-toed snake eagle (Circaetus gallicus)"
+            assert "kaps-makshab-apu-fries-hero.jpg" not in src
+    assert en_related_cabs >= 12
+
+    ar_related_kaps = 0
+    leftover = []
+    for path in (DOCS / "posts").glob("*/index.html"):
+        html = path.read_text(encoding="utf-8")
+        if '<section class="related-block">' not in html:
+            continue
+        related = html.split('<section class="related-block">', 1)[1].split("</section>", 1)[0]
+        for href, src, alt in thumb_re.findall(related):
+            if CABS_AR not in href:
+                continue
+            ar_related_kaps += 1
+            if "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src:
+                leftover.append(str(path))
+            assert src.endswith(
+                "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg"
+            ), path
+    assert leftover == []
+    assert ar_related_kaps > 0
 
 
 def test_css_keeps_mast_top_visible() -> None:
@@ -111,5 +183,6 @@ if __name__ == "__main__":
     test_homepage_has_visible_language_switch()
     test_en_homepage_featured_2026()
     test_cabs_and_suhail_twins_link_back()
+    test_kaps_related_thumbs_are_circaetus_both_locales()
     test_css_keeps_mast_top_visible()
     print("test_en_edition: ok")
