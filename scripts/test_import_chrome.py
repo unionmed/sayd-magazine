@@ -297,10 +297,12 @@ def test_docs_hunting_category_keeps_mars_recency() -> None:
 def _mosaic_featured_slugs(html: str) -> list[str]:
     """Card slugs inside «قصص مميزة» — ignore ticker / latest / section grids."""
     mosaic = _section(html, "featured-mosaic", "latest-feed")
-    return re.findall(
-        r'<article class="card[^"]*">\s*<a class="thumb" href="posts/([^/"]+)/index\.html"',
-        mosaic,
-    )
+    slugs: list[str] = []
+    for block in re.findall(r'<article class="card[^"]*">.*?</article>', mosaic, re.S):
+        m = re.search(r'href="posts/([^/"]+)/index\.html"', block)
+        if m and m.group(1) not in slugs:
+            slugs.append(m.group(1))
+    return slugs
 
 
 def test_featured_mosaic_matches_homepage_json() -> None:

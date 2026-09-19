@@ -25,7 +25,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlparse
 from xml.etree import ElementTree as ET
 
-from homepage_thumbs import resolve_home_thumb
+from homepage_thumbs import NAYEF_LOCKED_PRIMARY_ALTS, resolve_home_thumb
 from media_rewrite import (
     FORBIDDEN_SRC_RE,
     FOOTER_LOGO_ORIGINAL,
@@ -1131,6 +1131,8 @@ def thumb_html(
     slug: str = "",
 ) -> str:
     """Local media/… only. Distinct file per slug; never a WP/Wayback src."""
+    if slug and slug in NAYEF_LOCKED_PRIMARY_ALTS:
+        alt = NAYEF_LOCKED_PRIMARY_ALTS[slug]
     rel = None
     if slug and slug in _assigned_thumbs:
         rel = _assigned_thumbs[slug]
