@@ -35,10 +35,53 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 13
+    assert len(PAIRS) == 14
     for en_slug in PAIRS.values():
         assert (ROOT / "content" / "en" / f"{en_slug}.md").is_file()
         assert (DOCS / "en" / "posts" / en_slug / "index.html").is_file()
+    assert "great-white-pelican-matn-highway-nayef-krayem" in PAIRS.values()
+
+
+def test_september_2026_ar_stories_have_en_twins() -> None:
+    """Every AR story dated September 2026+ must have an English twin."""
+    missing = []
+    for path in (DOCS / "posts").glob("*/index.html"):
+        html = path.read_text(encoding="utf-8")
+        meta = re.search(
+            r'<div class="article-meta"><span class="meta-item">([^<]+)</span>', html
+        )
+        if not meta:
+            continue
+        date = meta.group(1)
+        if "2026" not in date or "أيلول" not in date:
+            continue
+        slug = path.parent.name
+        if slug not in PAIRS:
+            missing.append(slug)
+    assert missing == []
+    assert len(PAIRS) >= 14
+
+
+def test_en_home_has_no_arabic_archive_mix() -> None:
+    """EN home/grids: English twins only; hide empty desks; no AR archive cards."""
+    home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    stories = (DOCS / "en" / "stories" / "index.html").read_text(encoding="utf-8")
+    after_latest = home.split("Latest news", 1)[1]
+    assert "Arabic archive" not in home
+    assert "en-callout" not in after_latest
+    assert ">Shooting<" not in home
+    assert ">Laws &amp; Maps<" not in home
+    assert "great-white-pelican-matn-highway-nayef-krayem" in home
+    assert "great-white-pelican-matn-highway-nayef-krayem" in stories
+    assert "pelecanus-onocrotalus-great-white-pelican.jpg" in home
+    assert "pelecanus-onocrotalus-great-white-pelican.jpg" in stories
+    for card in re.findall(r"<article class=\"card[^\"]*\">(.*?)</article>", after_latest, re.S):
+        hrefs = re.findall(r'href="([^"]+)"', card)
+        assert hrefs, card[:120]
+        assert all(h.startswith("posts/") for h in hrefs), hrefs
+    for card in re.findall(r"<article class=\"card[^\"]*\">(.*?)</article>", stories, re.S):
+        hrefs = re.findall(r'href="([^"]+)"', card)
+        assert hrefs and all(h.startswith("../posts/") for h in hrefs), hrefs
 
 
 def test_homepage_has_visible_language_switch() -> None:
@@ -192,6 +235,11 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
     assert leftover == []
     assert related_ok > 0
 
+    en_home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "kaps-makshab-apu-fries-hero.jpg" not in en_home
+    after_latest = en_home.split("Latest news", 1)[1]
+    assert 'class="thumb" href="posts/autumn-migration-field-action-protect-flyways-lebanon' not in after_latest
+
     src = (ROOT / "scripts" / "build_en_edition.py").read_text(encoding="utf-8")
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src
     assert "kaps-lead" in src
@@ -253,12 +301,12 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "feature-lead" in html
     assert "home-layout" in html
     assert ">Sayd TV<" in html
-    assert ">Laws &amp; Maps<" in html
     assert ">Photos<" in html
     assert ">Hunting &amp; Equestrian<" in html
     assert ">Gear &amp; Arms<" in html
-    assert ">Shooting<" in html
     assert ">Miscellany<" in html
+    assert ">Shooting<" not in html
+    assert ">Laws &amp; Maps<" not in html
     assert (DOCS / "en" / "team" / "index.html").is_file()
     assert (DOCS / "en" / "contact" / "index.html").is_file()
     assert "en/team/index.html" in html
@@ -332,6 +380,8 @@ def test_every_en_page_is_ltr_plex() -> None:
 
 if __name__ == "__main__":
     test_pairs_cover_reviewed_drafts()
+    test_september_2026_ar_stories_have_en_twins()
+    test_en_home_has_no_arabic_archive_mix()
     test_homepage_has_visible_language_switch()
     test_en_homepage_featured_2026()
     test_cabs_and_suhail_twins_link_back()

@@ -10,7 +10,7 @@ Nayef rules:
 - Featured mosaic («قصص مميزة»): slugs come only from homepage.json /
   DEFAULT_FEATURED. A gap / missing image never removes the card.
 - Never change a story’s primary image without an explicit Nayef order.
-  Kaps/CABS is locked to the APU fries diary photo (not a bird species ID).
+  Kaps/CABS thumbs are locked to the Baalbek rescue photo; fries is in-article only.
 """
 
 from __future__ import annotations
@@ -72,6 +72,7 @@ HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
     "بالصور-والفيديو-صياد-مسؤول-ينقذ-طائر-ا": "uploads/2017/02/كمال-اغا-1.jpg",
     "صور-الصياد-اللبناني-الياس-سلهب": "uploads/2015/06/سلهب-3.jpg",
     "بعدسة-التاريخ-صورتان-لعائلتين-من-أبلح": "uploads/2015/03/عائلتان-من-بلدة-ابلح-غرقتا-في-حادثة-التايتانيك.jpg",
+    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه": "uploads/2025/09/Adonis.jpg",
     "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر": "uploads/2025/07/IMG_3009-2-1024x683.jpg",
     "المنصة-الرائدة-لنخبة-الصيادين-اللبنا": "uploads/2024/09/Jocy-229x300.jpeg",
@@ -87,7 +88,7 @@ HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
     "رولا-ايمانويل-اتمنى-العيش-في-الادغال-م": "uploads/2015/03/رولا-1.jpg",
     "الصيد-بين-الفوضى-والنظام-تجارب-الصي": "uploads/2024/09/Design.png",
     "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي": "uploads/2024/02/ريتا-الشعار6.jpg",
-    "العُوَيْسِق": "uploads/2026/09/accipiter-nisus-eurasian-sparrowhawk.jpg",
+    "العُوَيْسِق": "uploads/2025/09/AP4I0032-1024x683.jpg",
     "طائر-الوروار-الأوروبي": "uploads/2025/09/AP4I0956-1024x683.jpg",
     "بومة-المخازن": "uploads/2025/09/AP4I6377-1024x683.jpg",
     # Homepage cards that were GAPs — WP original if unique, else omitted.
@@ -138,6 +139,7 @@ ARTICLE_UNIQUE_THUMBS: dict[str, str] = {
     "مخاطر-السمنة-لدى-الحيوانات-الأليفة": "uploads/2022/10/ddi.jpg",
     "إنقذ-كلبَك-بالملح": "uploads/2022/12/كلب.png",
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
+    "great-white-pelican-matn-highway-nayef-krayem": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": "uploads/2026/09/duck-aswan-960.jpg",
 }
 
@@ -161,6 +163,7 @@ HOMEPAGE_FETCH_RELS = [
 # homepage.json featured slug here (Nayef/Mars: Memory stays in mosaic).
 HOMEPAGE_GAPS = {
     "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
+    "autumn-migration-field-action-protect-flyways-lebanon",
 }
 
 _HOMEPAGE_JSON = Path(__file__).resolve().parents[1] / "content" / "homepage.json"
