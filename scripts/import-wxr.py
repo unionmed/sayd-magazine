@@ -675,6 +675,164 @@ def chrome_ticker(depth: int, items: list[tuple[str, str]] | None = None) -> str
     </div>"""
 
 
+# Official MECSHAP labels from https://www.mecshap.org/ — Harvest, not Hunting.
+# Homepage Kaps caption stays “Sustainable Hunting” unless Nayef asks otherwise.
+MECSHAP_URL = "https://www.mecshap.org/"
+MECSHAP_LABEL_AR = "مكشب — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر"
+MECSHAP_LABEL_EN = "MECSHAP — Middle East Center for Sustainable Harvest and Anti-Poaching"
+FOOTER_COPY_AR = f"© {SITE_TITLE} · {SITE_TITLE_EN}"
+FOOTER_COPY_EN = "© Sayd Magazine"
+
+
+def footer_copyright(lang: str = "ar") -> str:
+    return FOOTER_COPY_EN if lang == "en" else FOOTER_COPY_AR
+
+
+def footer_partner_html(lang: str = "ar") -> str:
+    """MECSHAP partner link for footer-bottom. Official site labels only."""
+    label = MECSHAP_LABEL_EN if lang == "en" else MECSHAP_LABEL_AR
+    return (
+        f'<a class="footer-partner" href="{MECSHAP_URL}" '
+        f'target="_blank" rel="noopener">{esc(label)}</a>'
+    )
+
+
+def footer_bottom_inner_html(lang: str = "ar") -> str:
+    """Single shared footer-bottom: copyright + MECSHAP, AR or EN."""
+    return (
+        f'<div class="footer-copy">{footer_copyright(lang)}</div>\n'
+        f"        {footer_partner_html(lang)}"
+    )
+
+
+def page_lang(html: str) -> str:
+    m = re.search(r"<html\b[^>]*\blang=[\"']([a-z]+)", html, re.I)
+    if m and m.group(1).lower().startswith("en"):
+        return "en"
+    return "ar"
+
+
+def _replace_named_div(html: str, open_tag: str, inner: str) -> str:
+    """Replace the inner HTML of the first matching element, nested-div safe."""
+    start = html.find(open_tag)
+    if start < 0:
+        return html
+    i = start + len(open_tag)
+    depth = 1
+    while i < len(html) and depth:
+        nxt_open = html.find("<div", i)
+        nxt_close = html.find("</div>", i)
+        if nxt_close < 0:
+            return html
+        if nxt_open >= 0 and nxt_open < nxt_close:
+            depth += 1
+            i = nxt_open + 4
+            continue
+        depth -= 1
+        if depth == 0:
+            return (
+                html[:start]
+                + open_tag
+                + "\n        "
+                + inner
+                + "\n      </div>"
+                + html[nxt_close + len("</div>") :]
+            )
+        i = nxt_close + 6
+    return html
+
+
+def apply_footer_bottom(html: str, lang: str | None = None) -> str:
+    """Patch one page’s footer-bottom-inner from the shared helper."""
+    if 'class="container footer-bottom-inner"' not in html:
+        return html
+    lang = lang or page_lang(html)
+    patched = _replace_named_div(
+        html,
+        '<div class="container footer-bottom-inner">',
+        footer_bottom_inner_html(lang),
+    )
+    return (
+        patched.replace(
+            "assets/css/site.css?v=20260919-en-plex-kaps\"",
+            "assets/css/site.css?v=20260919-en-plex-kaps-p\"",
+            1,
+        ).replace(
+            "assets/css/site.css?v=20260919-kaps-caption\"",
+            "assets/css/site.css?v=20260919-kaps-caption-p\"",
+            1,
+        )
+    )
+
+
+def apply_footer_bottom_docs(root: Path | None = None) -> int:
+    """Walk docs/** and docs/en/** so every page shares the same footer-bottom."""
+    root = root or DEFAULT_OUT
+    changed = 0
+    for path in sorted(root.rglob("*.html")):
+        text = path.read_text(encoding="utf-8")
+        new = apply_footer_bottom(text)
+        if new != text:
+            path.write_text(new, encoding="utf-8")
+            changed += 1
+    return changed
+
+
+FOOTER_PARTNER_CSS = """
+.footer-bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.45rem 1.25rem;
+}
+
+.footer-copy {
+  color: #9aa08c;
+}
+
+.footer-partner {
+  color: #c6c1ab;
+  text-decoration: none;
+  max-width: min(40rem, 100%);
+  line-height: 1.45;
+}
+
+.footer-partner:hover {
+  color: var(--gold-soft);
+}
+"""
+
+
+def apply_footer_partner_css(css: str) -> str:
+    """Keep footer-bottom-inner flex, add partner link styles once."""
+    if ".footer-partner" in css:
+        return css
+    old = """.footer-bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem 1rem;
+}"""
+    new = FOOTER_PARTNER_CSS.strip()
+    if old in css:
+        return css.replace(old, new, 1)
+    anchor = ".footer-bottom-inner {"
+    if anchor in css:
+        return css.replace(anchor, new + "\n\n" + anchor, 1)
+    return css + "\n" + new + "\n"
+
+
+def apply_footer_partner_css_files() -> None:
+    for css_path in (ASSETS_SRC / "css" / "site.css", DEFAULT_OUT / "assets" / "css" / "site.css"):
+        if not css_path.is_file():
+            continue
+        css = css_path.read_text(encoding="utf-8")
+        new = apply_footer_partner_css(css)
+        if new != css:
+            css_path.write_text(new, encoding="utf-8")
+
+
 def extract_meta(item: ET.Element) -> dict[str, str]:
     meta: dict[str, str] = {}
     for pm in findall(item, "wp:postmeta"):
@@ -1066,7 +1224,7 @@ def layout(
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div>© {SITE_TITLE} · {SITE_TITLE_EN}</div>
+        {footer_bottom_inner_html("ar")}
       </div>
     </div>
   </footer>
@@ -1978,7 +2136,18 @@ def main() -> None:
     ap.add_argument("--xml", type=Path, default=DEFAULT_XML)
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--skip-markdown", action="store_true")
+    ap.add_argument(
+        "--patch-footer",
+        action="store_true",
+        help="Patch shared footer-bottom (MECSHAP) on existing docs HTML only.",
+    )
     args = ap.parse_args()
+
+    if args.patch_footer:
+        apply_footer_partner_css_files()
+        n = apply_footer_bottom_docs(args.out)
+        print(f"Patched MECSHAP footer-bottom on {n} pages under {args.out}.")
+        return
 
     if not args.xml.exists():
         raise SystemExit(f"XML not found: {args.xml}")
@@ -2007,6 +2176,9 @@ def main() -> None:
 
     print(f"Building static site → {args.out} …")
     build_site(data, args.out)
+    apply_footer_partner_css_files()
+    n = apply_footer_bottom_docs(args.out)
+    print(f"Shared MECSHAP footer-bottom on {n} pages.")
     print("Done.")
     print(f"Preview: open {args.out / 'index.html'} or serve docs/ with any static server.")
 

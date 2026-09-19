@@ -200,6 +200,33 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
     assert "Short-toed snake eagle" not in src
 
 
+def test_en_footer_has_official_mecshap_harvest_label() -> None:
+    """Footer uses Harvest; Kaps homepage caption stays Hunting."""
+    home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    caption = home.split("kaps-caption", 1)[1].split("</p>", 1)[0]
+    assert "Sustainable Hunting and Anti-Poaching (MECSHAP)" in caption
+    assert "Harvest" not in caption
+    samples = [
+        DOCS / "en" / "index.html",
+        DOCS / "en" / "stories" / "index.html",
+        DOCS / "en" / "posts" / CABS_EN / "index.html",
+    ]
+    for path in samples:
+        html = path.read_text(encoding="utf-8")
+        footer = html.split('class="footer-bottom"', 1)[1]
+        assert 'href="https://www.mecshap.org/"' in footer
+        assert 'target="_blank"' in footer
+        assert 'rel="noopener"' in footer
+        assert (
+            "MECSHAP — Middle East Center for Sustainable Harvest and Anti-Poaching"
+            in footer
+        )
+        assert "عاجل" not in html
+        assert "GitHub Pages" not in html
+    css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert ".footer-partner" in css
+
+
 def test_css_keeps_mast_top_visible() -> None:
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
     assert ".lang-switch" in css
@@ -309,6 +336,7 @@ if __name__ == "__main__":
     test_en_homepage_featured_2026()
     test_cabs_and_suhail_twins_link_back()
     test_kaps_thumbs_are_fries_and_lead_is_stacked()
+    test_en_footer_has_official_mecshap_harvest_label()
     test_css_keeps_mast_top_visible()
     test_en_ltr_typography_and_ticker()
     test_en_nested_nav_paths()

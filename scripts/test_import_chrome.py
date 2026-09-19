@@ -24,8 +24,13 @@ import apply_unique_thumbs  # noqa: E402
 ABOUT_BLURB = import_wxr.ABOUT_BLURB
 DEFAULT_TICKER_ITEMS = import_wxr.DEFAULT_TICKER_ITEMS
 TICKER_LABEL = import_wxr.TICKER_LABEL
+MECSHAP_URL = import_wxr.MECSHAP_URL
+MECSHAP_LABEL_AR = import_wxr.MECSHAP_LABEL_AR
+MECSHAP_LABEL_EN = import_wxr.MECSHAP_LABEL_EN
 chrome_ticker = import_wxr.chrome_ticker
 layout = import_wxr.layout
+footer_bottom_inner_html = import_wxr.footer_bottom_inner_html
+apply_footer_bottom = import_wxr.apply_footer_bottom
 load_ticker_items = import_wxr.load_ticker_items
 load_homepage_lists = import_wxr.load_homepage_lists
 apply_nayef_category_rule = import_wxr.apply_nayef_category_rule
@@ -117,6 +122,35 @@ def test_layout_footer_and_default_ticker() -> None:
     assert ">English<" in page
     assert 'class="lang-switch"' in page
     assert 'class="top-en"' not in page
+    footer = page.split('class="footer-bottom"', 1)[1]
+    assert MECSHAP_URL in footer
+    assert 'target="_blank"' in footer
+    assert 'rel="noopener"' in footer
+    assert MECSHAP_LABEL_AR in footer
+    assert MECSHAP_LABEL_EN not in footer
+    assert "عاجل" not in footer
+    assert "GitHub Pages" not in footer
+
+
+def test_shared_footer_helper_is_locale_aware() -> None:
+    ar = footer_bottom_inner_html("ar")
+    en = footer_bottom_inner_html("en")
+    assert MECSHAP_URL in ar and MECSHAP_URL in en
+    assert 'target="_blank"' in ar and 'rel="noopener"' in ar
+    assert MECSHAP_LABEL_AR in ar
+    assert MECSHAP_LABEL_EN in en
+    assert MECSHAP_LABEL_EN not in ar
+    assert MECSHAP_LABEL_AR not in en
+    assert "Sustainable Hunting" not in en
+    assert "Harvest" in en
+    once = apply_footer_bottom(
+        '<html lang="ar"><div class="container footer-bottom-inner">'
+        "<div>© مجلة صيد · Sayd Magazine</div></div>",
+        "ar",
+    )
+    twice = apply_footer_bottom(once, "ar")
+    assert once == twice
+    assert once.count(MECSHAP_URL) == 1
 
 
 def test_docs_already_share_clean_chrome() -> None:
@@ -140,6 +174,31 @@ def test_docs_already_share_clean_chrome() -> None:
         assert m, path
         found = re.findall(r">([^<]+)</a>", m.group(1))
         assert found == titles, (path.name, found)
+        footer = html.split('class="footer-bottom"', 1)[1]
+        assert MECSHAP_URL in footer
+        assert MECSHAP_LABEL_AR in footer
+        assert 'target="_blank"' in footer
+        assert 'rel="noopener"' in footer
+
+
+def test_every_docs_page_footer_has_mecshap() -> None:
+    """AR pages get the Arabic official label; EN pages get Harvest."""
+    missing: list[tuple[str, str]] = []
+    for path in (ROOT / "docs").rglob("*.html"):
+        html = path.read_text(encoding="utf-8")
+        if 'class="footer-bottom"' not in html:
+            missing.append(("no-footer", str(path.relative_to(ROOT))))
+            continue
+        footer = html.split('class="footer-bottom"', 1)[1]
+        if MECSHAP_URL not in footer or 'target="_blank"' not in footer:
+            missing.append(("no-link", str(path.relative_to(ROOT))))
+            continue
+        if "/en/" in path.as_posix():
+            if MECSHAP_LABEL_EN not in footer:
+                missing.append(("no-en-label", str(path.relative_to(ROOT))))
+        elif MECSHAP_LABEL_AR not in footer:
+            missing.append(("no-ar-label", str(path.relative_to(ROOT))))
+    assert missing == []
 
 
 def _section(html: str, start: str, end: str) -> str:
@@ -396,7 +455,9 @@ if __name__ == "__main__":
     test_ticker_source_is_mars_list()
     test_shared_ticker_all_depths()
     test_layout_footer_and_default_ticker()
+    test_shared_footer_helper_is_locale_aware()
     test_docs_already_share_clean_chrome()
+    test_every_docs_page_footer_has_mecshap()
     test_homepage_latest_matches_nayef()
     test_category_sort_is_datetime_not_title()
     test_nayef_rule_adds_thematic_sayd_for_home_ticker()

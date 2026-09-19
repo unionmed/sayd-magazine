@@ -8,6 +8,7 @@ behind a "Sayd Magazine" brand link.
 
 from __future__ import annotations
 
+import importlib.util
 import json
 import re
 from html import escape
@@ -18,11 +19,21 @@ DOCS = ROOT / "docs"
 CONTENT_EN = ROOT / "content" / "en"
 PAIRS_PATH = CONTENT_EN / "pairs.json"
 
+_spec = importlib.util.spec_from_file_location(
+    "import_wxr", ROOT / "scripts" / "import-wxr.py"
+)
+import_wxr = importlib.util.module_from_spec(_spec)
+assert _spec.loader is not None
+_spec.loader.exec_module(import_wxr)
+footer_bottom_inner_html = import_wxr.footer_bottom_inner_html
+apply_footer_bottom_docs = import_wxr.apply_footer_bottom_docs
+apply_footer_partner_css_files = import_wxr.apply_footer_partner_css_files
+
 FONTS = (
     "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
     "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
-CSS_CACHE = "20260919-en-plex-kaps"
+CSS_CACHE = "20260919-en-plex-kaps-p"
 ABOUT_EN = (
     "The magazine of nature’s masters on land, sea, and sky — hunting, "
     "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
@@ -602,7 +613,7 @@ def en_chrome(
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div>© Sayd Magazine</div>
+        {footer_bottom_inner_html("en")}
       </div>
     </div>
   </footer>
@@ -1082,15 +1093,18 @@ def main() -> None:
     articles = load_articles(pairs)
     pairs_inv = invert(pairs)
     patch_css()
+    apply_footer_partner_css_files()
     n = patch_existing_html(pairs)
     write_home(articles)
     write_stories(articles)
     for slug in articles:
         write_article(slug, articles, pairs_inv)
     related_n = ensure_en_related_blocks(articles)
+    footer_n = apply_footer_bottom_docs(DOCS)
     print(f"patched {n} Arabic HTML files")
     print(f"wrote {len(articles)} English articles + /en/index.html")
     print(f"ensured Related on {related_n} English articles")
+    print(f"shared MECSHAP footer-bottom on {footer_n} pages")
 
 
 if __name__ == "__main__":

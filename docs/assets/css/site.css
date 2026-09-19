@@ -1337,7 +1337,23 @@ html[dir="ltr"] .news-strip .ticker-viewport {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 0.4rem 1rem;
+  align-items: baseline;
+  gap: 0.45rem 1.25rem;
+}
+
+.footer-copy {
+  color: #9aa08c;
+}
+
+.footer-partner {
+  color: #c6c1ab;
+  text-decoration: none;
+  max-width: min(40rem, 100%);
+  line-height: 1.45;
+}
+
+.footer-partner:hover {
+  color: var(--gold-soft);
 }
 
 .placeholder-thumb {
