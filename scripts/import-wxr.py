@@ -92,11 +92,45 @@ TOP_SECONDARY = [
     ("الرئيسية", None),
     ("فريقنا", "من-نحن"),
     ("إتصل بنا", "إتصل-بنا"),
-    ("تصفح صيد", "تصفح-صيد"),
 ]
 
 TICKER_LABEL = "من كل وادي خبر"
-TICKER_URGENT = "عاجل"
+TICKER_CONFIG = CONTENT_DIR / "ticker.json"
+# Mars/Nayef editorial list. One shared chrome for every page — never latest-N
+# posts and never a breaking/urgent label. Rebuilds must emit this same strip.
+DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
+    (
+        "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+        "«كابس» و«مكشب» لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي",
+    ),
+    (
+        "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
+        "قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»",
+    ),
+    (
+        "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
+        "السعودية تطلق موسم الصيد السادس وتشدد على الضوابط: 5 آلاف ريال غرامة الأماكن المحظورة",
+    ),
+    (
+        "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
+        "بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان",
+    ),
+    (
+        "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
+        "مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟",
+    ),
+    (
+        "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
+        "«صيد» تعود… وهذا ما نريد أن نقدّمه لكم",
+    ),
+    (
+        "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
+        "مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان",
+    ),
+]
+_TICKER_LINK_RE = re.compile(
+    r'<a href="(?:(?:\.\./)*)posts/([^/"]+)/index\.html">([^<]+)</a>'
+)
 
 
 def text(el: ET.Element | None, default: str = "") -> str:
@@ -270,6 +304,78 @@ def page_href(slug: str, depth: int = 0) -> str:
 
 def cat_href(slug: str, depth: int = 0) -> str:
     return "../" * depth + f"category/{slug}/index.html"
+
+
+def _ticker_pairs(raw: list) -> list[tuple[str, str]]:
+    pairs: list[tuple[str, str]] = []
+    seen: set[str] = set()
+    for item in raw:
+        if isinstance(item, dict):
+            slug = (item.get("slug") or "").strip()
+            title = (item.get("title") or "").strip()
+        elif isinstance(item, (list, tuple)) and len(item) >= 2:
+            slug, title = str(item[0]).strip(), str(item[1]).strip()
+        else:
+            continue
+        if not slug or not title or slug in seen:
+            continue
+        seen.add(slug)
+        pairs.append((slug, title))
+    return pairs
+
+
+def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
+    """Single editorial ticker list for every page.
+
+    Prefer content/ticker.json, then the current homepage strip, then the
+    Mars/Nayef default. Never invent items from latest posts (that undoes
+    the cleaned list) and never attach an urgent label.
+    """
+    if TICKER_CONFIG.exists():
+        try:
+            data = json.loads(TICKER_CONFIG.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            data = {}
+        pairs = _ticker_pairs(data.get("items") or [])
+        if pairs:
+            return pairs
+
+    home = home_html or (DEFAULT_OUT / "index.html")
+    if home.exists():
+        text_html = home.read_text(encoding="utf-8", errors="ignore")
+        block = re.search(r'<div class="ticker">(.*?)</div>', text_html, re.S)
+        if block:
+            found = [
+                (m.group(1), html.unescape(m.group(2)).strip())
+                for m in _TICKER_LINK_RE.finditer(block.group(1))
+            ]
+            pairs = _ticker_pairs(found)
+            if pairs:
+                return pairs
+
+    return list(DEFAULT_TICKER_ITEMS)
+
+
+def chrome_ticker(depth: int, items: list[tuple[str, str]] | None = None) -> str:
+    """Shared news strip. Same items on home, posts, and static pages."""
+    pairs = items if items is not None else load_ticker_items()
+    links = "".join(
+        f'<a href="{post_href(slug, depth)}">{esc(title)}</a>' for slug, title in pairs
+    )
+    return f"""
+    <div class="news-strip">
+      <div class="container news-strip-inner">
+        <div class="labels">
+          <span class="label-feed">{TICKER_LABEL}</span>
+        </div>
+        <div class="ticker-viewport" aria-label="{TICKER_LABEL}">
+          <div class="ticker-track">
+            <div class="ticker">{links}</div>
+            <div class="ticker" aria-hidden="true">{links}</div>
+          </div>
+        </div>
+      </div>
+    </div>"""
 
 
 def extract_meta(item: ET.Element) -> dict[str, str]:
@@ -519,6 +625,12 @@ def layout(
     is_home: bool = False,
     utility_date: str = "",
 ) -> str:
+    """Single shared chrome (masthead + ticker + footer) for every page.
+
+    Home, articles, categories, and static pages (فريقنا, إتصل بنا, …)
+    all call this builder. Ticker items come from chrome_ticker(); there
+    is no per-page ticker or footer special-case.
+    """
     css = rel_css(depth)
     tokens = rel_tokens(depth)
     home = rel_home(depth)
@@ -532,6 +644,10 @@ def layout(
         if is_home
         else f"{esc(title)} — {SITE_TITLE}"
     )
+    # Shared ticker: callers pass chrome_ticker(depth, items); if omitted,
+    # still emit the same editorial strip so no page can diverge.
+    if not ticker:
+        ticker = chrome_ticker(depth)
     # New brand path — never reuse the edge-cached 404
     # /media/uploads/2020/04/Sayd-Magazine-Logo.png
     logo = "../" * depth + "media/brand/sayd-logo.png"
@@ -601,7 +717,6 @@ def layout(
         <div class="footer-col">
           <img class="footer-logo" src="{esc(footer_logo)}" width="195" height="61" alt="{SITE_TITLE}">
           <p>{ABOUT_BLURB}</p>
-          <p>نسخة ثابتة على GitHub Pages — المحتوى من تصدير ووردبريس.</p>
         </div>
         <div class="footer-col">
           <h3>التصنيفات</h3>
@@ -620,7 +735,6 @@ def layout(
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
         <div>© {SITE_TITLE} · {SITE_TITLE_EN}</div>
-        <div class="note">الصور من أرشيف المجلة؛ الملفات المتوفرة تُخدم من /media/uploads.</div>
       </div>
     </div>
   </footer>
@@ -808,32 +922,10 @@ def build_site(data: dict, out: Path) -> None:
     top1 = top_secondary_html(pages, 1)
     top2 = top_secondary_html(pages, 2)
 
-    def news_strip(depth: int, n: int = 14) -> str:
-        items = []
-        for p in posts[:n]:
-            items.append(
-                f'<a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a>'
-            )
-        ticker_inner = "".join(items)
-        return f"""
-    <div class="news-strip">
-      <div class="container news-strip-inner">
-        <div class="labels">
-          <span class="label-urgent">{TICKER_URGENT}</span>
-          <span class="label-feed">{TICKER_LABEL}</span>
-        </div>
-        <div class="ticker-viewport" aria-label="{TICKER_URGENT} — {TICKER_LABEL}">
-          <div class="ticker-track">
-            <div class="ticker">{ticker_inner}</div>
-            <div class="ticker" aria-hidden="true">{ticker_inner}</div>
-          </div>
-        </div>
-      </div>
-    </div>"""
-
-    ticker0 = news_strip(0)
-    ticker1 = news_strip(1)
-    ticker2 = news_strip(2)
+    ticker_items = load_ticker_items()
+    ticker0 = chrome_ticker(0, ticker_items)
+    ticker1 = chrome_ticker(1, ticker_items)
+    ticker2 = chrome_ticker(2, ticker_items)
 
     # --- Homepage: featured mosaic first, then compact latest feed ---
     latest_news = posts[:10]
