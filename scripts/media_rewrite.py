@@ -6,9 +6,14 @@ Site-relative srcs are depth-aware:
   media/uploads/2020/04/Sayd-Magazine-Logo.png          (homepage)
   ../../media/uploads/2020/04/Sayd-Magazine-Logo.png    (posts/)
 
-Missing files become empty srcs; rewrite_html swaps those <img> tags
-for a CSS placeholder. NEVER emit sayd-magazine.com/wp-content,
-Jetpack, or web.archive.org image URLs.
+Missing files become empty srcs; rewrite_html *omits* those <img> tags
+(Mars strips body placeholders — never reinsert a green «صيد» square).
+NEVER emit sayd-magazine.com/wp-content, Jetpack, or web.archive.org
+image URLs.
+
+Rebuilds must keep using local media/… paths. Homepage / featured / related
+cards use one unique file per article slug (see homepage_thumbs.py) — never
+reintroduce a shared stand-in or a placeholder-thumb.
 """
 
 from __future__ import annotations
@@ -165,7 +170,7 @@ _IMG_RE = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 
 
 def rewrite_html(html: str, depth: int, media_root: Path) -> str:
-    """Rewrite upload URLs to local paths; replace missing images with placeholders."""
+    """Rewrite upload URLs to local paths; omit missing body images."""
     if not html:
         return html
 
@@ -204,7 +209,7 @@ def rewrite_html(html: str, depth: int, media_root: Path) -> str:
             or src.startswith(("http://", "https://", "//"))
             or FORBIDDEN_SRC_RE.search(src)
         ):
-            return PLACEHOLDER_HTML
+            return ""
         return tag
 
     return _IMG_RE.sub(img_sub, html)

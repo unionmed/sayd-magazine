@@ -124,5 +124,71 @@ cards. Pre-2022 archive bulk download is still deferred. No Stitch redesign.
 - CABS + MECSHAP partner logos on the Kaps/Makshab article
 - Named organizer portraits on «سهيل 2026» بالصور (no matching local file)
 
-Next: **(3) Stitch redesign** after these images are solid.
+---
+
+## Batch 1 — 2022+ mirror + homepage unique / species match (2026-09-19)
+
+**Scope:** homepage-visible + recent/featured first; 2022–2026 upload paths only for new mirrors. Pre-2022 bulk fetch still deferred (except targeted homepage originals / open-license species fills).
+
+**Nayef rules now in importer:** local `media/…` only (never WP/Jetpack/Wayback `src`); **one file per slug**; bird cards must match the species name or the card is omitted; homepage / featured / related never emit `placeholder-thumb`.
+
+### Attempted / mirrored / missing (this run)
+
+Prior Step 2 claimed 272 unique 2022+ refs, 109 on disk, 163 missing. Most of those 109 “on disk” names were **stand-in copies** of a handful of files (`Bird-02.jpeg`, `Design.png`, `ريتا-الشعار6.jpg`, `AP4I0032`, `AP4I0956`, `بارودة.png`, …). This batch:
+
+- Does **not** count a stand-in copy as a recovered original.
+- Adds open-license species binaries where the original was wrong or missing and the species is certain.
+- Leaves the **card off** homepage / related / featured when there is no unique matching binary (never a green «صيد» square).
+- Omits missing **body** images (Mars is stripping article-body placeholders).
+
+| Result | Count |
+|--------|------:|
+| New unique binaries added this batch (open-license + YT thumb + targeted originals) | **18+** |
+| Homepage cards with a unique matching file | **32** |
+| Homepage cards omitted (no unique original) | **12** |
+| Green `placeholder-thumb` left on homepage / featured / related / body | **0** |
+| Related cards remaining (each a real unique thumb) | **1152** |
+| Duplicate homepage cases found | **12** |
+| Duplicate cases fixed, filled, or omitted | **12** |
+| Still missing real 2022–2026 originals (next batch) | **~160+** names (body galleries + 2026 WP uploads that were never archived) |
+
+Exact bytes: see `git diff --stat` for `docs/media/`. Open-license files live under `docs/media/uploads/2026/09/` (sparrowhawk, sunbird) and the original WP paths for bee-eater / snake-eagle.
+
+### High-visibility pages fixed
+
+- Homepage mosaic: Memory no longer shares Rita; Kaps / Suhail / Saudi / Adonis unchanged (Mars/Suhail owned).
+- العُوَيْسِق card + article: AP4I0032 kestrel **removed**; open-license *Accipiter nisus*.
+- وروار أزرق الخد: kestrel stand-in **removed**; open-license *Merops persicus*.
+- عقاب صرارة: AI-bird stand-in **removed**; open-license *Circaetus gallicus*.
+- عصفور الشمس الفلسطيني (not on homepage): kestrel copy **removed**; open-license *Cinnyris osea*.
+- European bee-eater / barn owl / shelduck: verified local photos kept.
+- بابطين TV card: YouTube thumb (was empty placeholder).
+
+### Mars-owned (untouched)
+
+- `docs/media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg`
+- `docs/media/uploads/2026/09/sayd-returns-adonis-editor.jpg`
+- Suhail `gallery-*` / `hero-closing-80k.jpg` / brand logos
+- `docs/CNAME` = `sayd-magazine.com`
+
+### Scripts
+
+- `scripts/homepage_thumbs.py` — unique slug → path; gaps explicit; no shared stand-in table.
+- `scripts/import-wxr.py` — `thumb_html` uses that map; never emits WP hotlinks; never assigns the same file to two slugs.
+- `scripts/media_rewrite.py` — still local-only rewrite.
+- `scripts/fix_homepage_media.py` / `fix_article_media.py` — shared STANDINS removed.
+- `scripts/apply_unique_thumbs.py` — applies the map, omits body placeholders, drops related/home/featured cards without a unique thumb.
+- `scripts/fetch_gap_originals.py` — Wayback 0im_ for featured originals + Commons species fills.
+
+Full before/after table + licenses: `audit/IMAGE-DEDUP.md`.
+
+### Next batch (remaining 2022–2026)
+
+1. Wayback CDX (not just 0im_) for gallery originals still missing: `نور-8`, `51`, `ربيع-عقل-7`, `محمد-حلال-4`, `Kark1-1`, `رالف-2`, `فوائد-الرماية`, `رامية`, `16.jpg`, Memory hero, `1000468655.jpg`.
+2. Replace stand-in **copies** under 2022–2026 names with real Wayback bytes (do not overwrite Mars/Suhail/open-license files).
+3. CABS/MECSHAP logos + Suhail organizer portraits (body stays clean until real logos exist).
+4. Remaining 2022–2025 article body galleries.
+5. Restore omitted homepage cards only when a unique matching original lands.
+
+Do **not** start Stitch redesign until these images are honest.
 
