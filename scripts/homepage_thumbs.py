@@ -72,6 +72,7 @@ HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
     "بالصور-والفيديو-صياد-مسؤول-ينقذ-طائر-ا": "uploads/2017/02/كمال-اغا-1.jpg",
     "صور-الصياد-اللبناني-الياس-سلهب": "uploads/2015/06/سلهب-3.jpg",
     "بعدسة-التاريخ-صورتان-لعائلتين-من-أبلح": "uploads/2015/03/عائلتان-من-بلدة-ابلح-غرقتا-في-حادثة-التايتانيك.jpg",
+    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه": "uploads/2025/09/Adonis.jpg",
     "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر": "uploads/2025/07/IMG_3009-2-1024x683.jpg",
     "المنصة-الرائدة-لنخبة-الصيادين-اللبنا": "uploads/2024/09/Jocy-229x300.jpeg",
@@ -138,6 +139,7 @@ ARTICLE_UNIQUE_THUMBS: dict[str, str] = {
     "مخاطر-السمنة-لدى-الحيوانات-الأليفة": "uploads/2022/10/ddi.jpg",
     "إنقذ-كلبَك-بالملح": "uploads/2022/12/كلب.png",
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
+    "great-white-pelican-matn-highway-nayef-krayem": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": "uploads/2026/09/duck-aswan-960.jpg",
 }
 

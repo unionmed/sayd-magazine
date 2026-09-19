@@ -4,6 +4,12 @@
 Reads reviewed drafts from content/en/, writes docs/en/, and patches
 existing docs HTML so the mast-top language switch is never hidden
 behind a "Sayd Magazine" brand link.
+
+Nayef EN rule: /en/ shows 2022→today English twins only — never mix
+untranslated Arabic archive cards. Pre-2022 stays Arabic-only.
+September 2026+ stories must have twins on EN home/sections; hide a
+desk when it has no EN cards. Do not run write_home() against the
+hand-extended EN homepage (it would wipe the desks).
 """
 
 from __future__ import annotations
@@ -173,6 +179,14 @@ META: dict[str, dict] = {
         "author": "Editorial Board",
         "image": "media/uploads/2026/09/sayd-returns-adonis-editor.jpg",
         "image_alt": "Sayd returns in a new look and a wider vision",
+    },
+    "great-white-pelican-matn-highway-nayef-krayem": {
+        "date": "9 September 2026",
+        "date_sort": "2026-09-09",
+        "category": "Photos",
+        "author": "Nayef Krayem",
+        "image": "media/uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
+        "image_alt": "Great White Pelican — Pelecanus onocrotalus",
     },
 }
 

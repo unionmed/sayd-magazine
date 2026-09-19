@@ -54,6 +54,30 @@ def test_section_titles_sit_under_photos() -> None:
     assert "max-width: 17.5rem" in css
 
 
+def test_rita_stays_on_memory_and_design_png_is_off_homes() -> None:
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    mosaic_ar = ar.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    mosaic_en = en.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    assert "feature-memory" in mosaic_ar
+    assert "ريتا-الشعار6" in mosaic_ar
+    assert "feature-memory" in mosaic_en
+    assert "ريتا-الشعار6" in mosaic_en
+    assert "Design.png" not in ar
+    assert "Design.png" not in en
+    assert "الصيد-بين-الفوضى-والنظام-تجارب-الصي" not in ar
+
+
+def test_babtain_thumb_wraps_image() -> None:
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    tv = ar.split("صيد TV", 1)[1].split("photos-strip", 1)[0]
+    assert re.search(
+        r'<a class="thumb" href="posts/بالفيديو-مقناص-سعود-عبد-العزيز-الباب/index.html">'
+        r'<img src="media/uploads/2026/09/babtain-maqnas-afghanistan-yt.jpg"',
+        tv,
+    )
+
+
 def test_kaps_package_untouched() -> None:
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -77,5 +101,7 @@ if __name__ == "__main__":
     test_no_empty_thumbs_or_missing_files()
     test_en_homepage_has_no_fries_thumbs()
     test_section_titles_sit_under_photos()
+    test_rita_stays_on_memory_and_design_png_is_off_homes()
+    test_babtain_thumb_wraps_image()
     test_kaps_package_untouched()
     print("test_homepage_qa: ok")
