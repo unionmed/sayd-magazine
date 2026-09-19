@@ -109,7 +109,11 @@ def test_batch2_species_fills_are_unique() -> None:
     )
     assert "mecshap-official-logo.png" in kaps
     assert "cabs-official-logo.png" in kaps
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in kaps
     assert "kaps-makshab-apu-fries-hero.jpg" in kaps
+    assert kaps.index("mecshap-apu-cabs-baalbek-release.jpg") < kaps.index(
+        "kaps-makshab-apu-fries-hero.jpg"
+    )
 
 
 def test_uwaisiq_is_sparrowhawk_not_kestrel() -> None:
@@ -266,7 +270,11 @@ def test_visible_2022_articles_local_only() -> None:
     kaps = (docs / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html").read_text(
         encoding="utf-8"
     )
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in kaps
     assert "kaps-makshab-apu-fries-hero.jpg" in kaps
+    assert kaps.index("mecshap-apu-cabs-baalbek-release.jpg") < kaps.index(
+        "kaps-makshab-apu-fries-hero.jpg"
+    )
     suhail = (
         docs / "posts" / "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا" / "index.html"
     ).read_text(encoding="utf-8")

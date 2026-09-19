@@ -1,7 +1,7 @@
 # CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner
 
 **Source AR URL:** https://sayd-magazine.com/posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/
-**Source AR title:** «كابس» و«مكشب» لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي
+**Source AR title:** CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي
 **Suggested slug:** cabs-mecshap-autumn-birds-lebanon-khatib
 **Category:** News
 
@@ -9,7 +9,7 @@
 
 Beirut — Sayd
 
-From the daily field life of the Anti-Poaching Unit (APU) team: a break to prepare food outdoors.
+APU and CABS members with rescued birds during a joint patrol — MECSHAP
 
 ## Body
 

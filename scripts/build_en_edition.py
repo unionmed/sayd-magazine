@@ -69,9 +69,8 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-13",
         "category": "News",
         "author": "Sayd",
-        # Nayef-locked: fries is the only Kaps/CABS image (hero + cards).
-        "image": "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-        "image_alt": "A member of the APU team prepares food outdoors during a break",
+        "image": "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+        "image_alt": "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
     },
     "suhail-2026-closes-decade-katara-80000-visitors": {
         "date": "13 September 2026",
@@ -270,13 +269,32 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
     body_html = md_blocks(draft["body"]) if draft["body"] else ""
     extra = ""
     if slug == "cabs-mecshap-autumn-birds-lebanon-khatib":
-        extra = figure(
+        lead_html = (
+            "<p><strong>Beirut — Sayd</strong></p>\n"
+            + figure(
+                "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+                "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
+                "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
+                media_prefix,
+            ).replace("<figcaption>", '<figcaption class="kaps-caption">')
+        )
+        fries = figure(
             "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
             "A member of the APU team prepares food outdoors during a break",
             "From the daily field life of the Anti-Poaching Unit (APU) team: a break to prepare food outdoors.",
             media_prefix,
         )
-        lead_html = "<p><strong>Beirut — Sayd</strong></p>"
+        extra = ""
+        if "He added:" in body_html:
+            body_html = re.sub(
+                r"(<p>He added:.*?</p>)",
+                r"\1\n" + fries,
+                body_html,
+                count=1,
+                flags=re.S,
+            )
+        else:
+            extra = fries
     elif slug == "suhail-2026-closes-decade-katara-80000-visitors":
         extra = (
             '<p class="en-callout"><a href="../suhail-2026-in-photos-falcons-visitors/index.html">'
@@ -809,9 +827,6 @@ def write_home(articles: dict[str, dict]) -> None:
   <div class="container">
     <section class="masthead" aria-label="Featured stories and latest news">
       <div class="featured-col">
-        <div class="section-head">
-          <h2>Featured stories</h2>
-        </div>
         <div class="featured-mosaic">
 <article class="card feature-lead kaps-lead">
   <div class="body">
@@ -819,7 +834,7 @@ def write_home(articles: dict[str, dict]) -> None:
     <h2><a href="posts/{lead}/index.html">{escape(lead_item["title"])}</a></h2>
   </div>
   <a class="thumb" href="posts/{lead}/index.html"><img src="../{lead_item["image"]}" alt="{escape(lead_item.get("image_alt") or lead_item["title"], quote=True)}" loading="lazy"></a>
-  <p class="kaps-caption">Photo from the anti-poaching unit camp at the Middle East Center for Sustainable Hunting and Anti-Poaching (MECSHAP)</p>
+  <p class="kaps-caption">APU and CABS members with rescued birds during a joint patrol — MECSHAP</p>
 </article>
           <div class="feature-side">
           <div class="feature-stack">

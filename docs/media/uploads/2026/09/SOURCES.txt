@@ -26,3 +26,8 @@ gallery-qatarliving.png	Qatar Living	https://cdn-content.qatarliving.com/article
 
 gallery-qna-extra-2.jpg	قنا	https://cdn.qna.org.qa/media/aghbwstj/qna_ali_falcon0120902026.jpg
 	Al Gannas chief portrait — stored only, not wired (does not match named organizers)
+
+mecshap-apu-cabs-baalbek-release.jpg	مكشب MECSHAP	Transfer and Release of Protected Wild Birds / Joint APU and CABS Patrol Baalbek-Hermel
+	Local copy only — do not hotlink mecshap.org / vercel.
+	Homepage kaps-lead + Kaps article hero + related/stories thumbs.
+	Fries camp photo stays in-article only (kaps-makshab-apu-fries-hero.jpg).

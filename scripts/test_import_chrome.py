@@ -317,6 +317,12 @@ def test_featured_mosaic_matches_homepage_json() -> None:
     # Memory sits in the side stack (Kaps is the lead).
     assert slugs[0] == KAPS
     assert slugs[slugs.index(MEMORY) - 1] == SAUDI
+    assert "<h2>قصص مميزة</h2>" not in html
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in html
+    mosaic = _section(html, "featured-mosaic", "latest-feed")
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in mosaic
+    assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
+    assert "CABS و MECSHAP لحماية طيور الخريف" in html
 
 
 def test_featured_pool_never_drops_for_missing_image() -> None:

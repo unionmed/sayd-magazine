@@ -65,11 +65,13 @@ def test_en_homepage_featured_2026() -> None:
     assert CABS_EN in html
     assert SUHAIL_EN in html
     assert "80,000" in html or "80,000 Visitors" in html
-    assert "kaps-makshab-apu-fries-hero.jpg" in html
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in html
+    assert "<h2>Featured stories</h2>" not in html
     assert "AP4I0032" not in html
     mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     lead = mosaic.split("feature-side", 1)[0]
-    assert "kaps-makshab-apu-fries-hero.jpg" in lead
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in lead
+    assert "kaps-makshab-apu-fries-hero.jpg" not in lead
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
     assert "placeholder-thumb" not in html
     assert "GitHub Pages" not in html
@@ -84,7 +86,11 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert f"../../../posts/{SUHAIL_AR}/index.html" in suhail
     assert "اقرأ بالعربية" in cabs
     assert "اقرأ بالعربية" in suhail
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in cabs
     assert "kaps-makshab-apu-fries-hero.jpg" in cabs
+    assert cabs.index("mecshap-apu-cabs-baalbek-release.jpg") < cabs.index(
+        "kaps-makshab-apu-fries-hero.jpg"
+    )
     assert "AP4I0032" not in cabs
     assert "grus-grus-common-crane.jpg" not in cabs
     assert "hero-closing-80k.jpg" in suhail
@@ -95,19 +101,23 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert f"en/posts/{CABS_EN}/index.html" in ar_cabs
     assert ">English<" in ar_cabs
     assert ">العربية<" in ar_cabs
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in ar_cabs
     assert "kaps-makshab-apu-fries-hero.jpg" in ar_cabs
+    assert ar_cabs.index("mecshap-apu-cabs-baalbek-release.jpg") < ar_cabs.index(
+        "kaps-makshab-apu-fries-hero.jpg"
+    )
     assert "AP4I0032" not in ar_cabs
     fries = DOCS / "media" / "uploads" / "2026" / "09" / "kaps-makshab-apu-fries-hero.jpg"
     assert fries.is_file() and fries.stat().st_size == 304313
 
 
 def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
-    """Nayef: fries only on Kaps/CABS; homepage lead is title-above, not overlay."""
-    assert HOMEPAGE_UNIQUE_THUMBS[CABS_AR].endswith("kaps-makshab-apu-fries-hero.jpg")
-    assert NAYEF_LOCKED_PRIMARY_IMAGES[CABS_AR].endswith("kaps-makshab-apu-fries-hero.jpg")
-    assert NAYEF_LOCKED_PRIMARY_IMAGES[CABS_EN].endswith("kaps-makshab-apu-fries-hero.jpg")
-    assert "APU" in NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR]
-    assert "APU" in NAYEF_LOCKED_PRIMARY_ALTS[CABS_EN]
+    """Nayef: Baalbek on home/thumbs; fries in-article only; lead stays stacked."""
+    assert HOMEPAGE_UNIQUE_THUMBS[CABS_AR].endswith("mecshap-apu-cabs-baalbek-release.jpg")
+    assert NAYEF_LOCKED_PRIMARY_IMAGES[CABS_AR].endswith("mecshap-apu-cabs-baalbek-release.jpg")
+    assert NAYEF_LOCKED_PRIMARY_IMAGES[CABS_EN].endswith("mecshap-apu-cabs-baalbek-release.jpg")
+    assert "مكشب" in NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR]
+    assert "MECSHAP" in NAYEF_LOCKED_PRIMARY_ALTS[CABS_EN]
 
     fries = DOCS / "media" / "uploads" / "2026" / "09" / "kaps-makshab-apu-fries-hero.jpg"
     circaetus = (
@@ -135,20 +145,22 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         assert "overlay" not in lead
         assert lead.find("class=\"body\"") < lead.find("class=\"thumb\"")
         assert lead.find("class=\"thumb\"") < lead.find("kaps-caption")
-        assert "kaps-makshab-apu-fries-hero.jpg" in lead
+        assert "mecshap-apu-cabs-baalbek-release.jpg" in lead
+        assert "kaps-makshab-apu-fries-hero.jpg" not in lead
         assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
         if ar:
-            assert "أحد أفراد وحدة APU يعدّ الطعام في الهواء الطلق خلال استراحة" in lead
-            assert "صورة من مخيم فريق وحدة مكافحة الصيد الجائر في مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر (مكشب)" in lead
-            assert "مخيم وحدة مكافحة الصيد الجائر — مكشب" not in lead
+            assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) وCABS مع طيور أنقذت خلال دورية مشتركة — مكشب" in lead
+            assert "<h2>قصص مميزة</h2>" not in html
+            assert "CABS و MECSHAP لحماية طيور الخريف" in html
         else:
-            assert "A member of the APU team prepares food outdoors during a break" in lead
-            assert "Photo from the anti-poaching unit camp at the Middle East Center for Sustainable Hunting and Anti-Poaching (MECSHAP)" in lead
+            assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in lead
+            assert "<h2>Featured stories</h2>" not in html
         assert "?v=20260919-en-plex-kaps" in html.split("site.css", 1)[1][:64]
         body = lead.split("class=\"body\"", 1)[1].split("class=\"thumb\"", 1)[0]
         assert "kaps-caption" not in body
         assert "anti-poaching unit camp" not in body
         assert "صورة من مخيم فريق" not in body
+        assert "kaps-makshab-apu-fries-hero.jpg" not in lead
 
     assert_kaps_lead(DOCS / "index.html", ar=True)
     assert_kaps_lead(DOCS / "en" / "index.html", ar=False)
@@ -162,7 +174,9 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         for href, src, alt in thumb_re.findall(text):
             if not any(n in href for n in href_needles):
                 continue
-            if "kaps-makshab-apu-fries-hero.jpg" not in src:
+            if "articles" in path.parts or "category" in path.parts:
+                continue
+            if "mecshap-apu-cabs-baalbek-release.jpg" not in src:
                 leftover.append((str(path.relative_to(ROOT)), href, src))
             if "circaetus" in src.lower() or "snake eagle" in alt.lower():
                 leftover.append((str(path.relative_to(ROOT)), href, src, alt))
@@ -177,7 +191,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src
     assert "kaps-lead" in src
     assert "kaps-caption" in src
-    assert "Photo from the anti-poaching unit camp at the Middle East Center for Sustainable Hunting and Anti-Poaching (MECSHAP)" in src
+    assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in src
     assert "Short-toed snake eagle" not in src
 
 

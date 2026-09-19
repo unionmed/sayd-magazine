@@ -23,20 +23,22 @@ from pathlib import Path
 MARS_OWNED = {
     "uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
     "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
+    "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
     "uploads/2026/09/sayd-returns-adonis-editor.jpg",
 }
 
-# Nayef 19 Sep 2026: fries is the only allowed Kaps/CABS story image.
+# Nayef: homepage/thumbs = Baalbek rescue; fries stays in-article only.
 KAPS_AR_SLUG = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
 KAPS_EN_SLUG = "cabs-mecshap-autumn-birds-lebanon-khatib"
+KAPS_BAALBEK_REL = "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg"
 KAPS_FRIES_REL = "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg"
 NAYEF_LOCKED_PRIMARY_IMAGES: dict[str, str] = {
-    KAPS_AR_SLUG: KAPS_FRIES_REL,
-    KAPS_EN_SLUG: KAPS_FRIES_REL,
+    KAPS_AR_SLUG: KAPS_BAALBEK_REL,
+    KAPS_EN_SLUG: KAPS_BAALBEK_REL,
 }
 NAYEF_LOCKED_PRIMARY_ALTS: dict[str, str] = {
-    KAPS_AR_SLUG: "أحد أفراد وحدة APU يعدّ الطعام في الهواء الطلق خلال استراحة",
-    KAPS_EN_SLUG: "A member of the APU team prepares food outdoors during a break",
+    KAPS_AR_SLUG: "أعضاء من وحدة مكافحة الصيد الجائر (APU) وCABS مع طيور أنقذت خلال دورية مشتركة — مكشب",
+    KAPS_EN_SLUG: "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
 }
 SUHAIL_KEEP = {
     "uploads/2026/09/hero-closing-80k.jpg",
@@ -56,8 +58,8 @@ BRAND_KEEP = {
 
 # Homepage mosaic + section cards: unique local file per slug.
 HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
-    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-    "cabs-mecshap-autumn-birds-lebanon-khatib": "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
+    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+    "cabs-mecshap-autumn-birds-lebanon-khatib": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": "uploads/2026/09/hero-closing-80k.jpg",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب": "uploads/2026/09/ncw-wildlife-card.jpg",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم": "uploads/2026/09/sayd-returns-adonis-editor.jpg",
