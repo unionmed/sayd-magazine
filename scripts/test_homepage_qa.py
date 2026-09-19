@@ -143,6 +143,16 @@ def test_kaps_package_untouched() -> None:
     assert "kaps-makshab-apu-fries-hero.jpg" in kaps
 
 
+def test_platform_card_uses_uncropped_jocy() -> None:
+    """Keep the 2024 platform card; do not use the 229×300 WP crop on the home surface."""
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    assert "المنصة-الرائدة-لنخبة-الصيادين-اللبنا" in ar
+    assert "media/uploads/2024/09/Jocy-card.jpg" in ar
+    assert "Jocy-229x300.jpeg" not in ar
+    card = (DOCS / "media" / "uploads" / "2024" / "09" / "Jocy-card.jpg")
+    assert card.is_file() and card.stat().st_size > 32
+
+
 if __name__ == "__main__":
     test_no_empty_thumbs_or_missing_files()
     test_en_homepage_has_no_fries_thumbs()
@@ -151,4 +161,5 @@ if __name__ == "__main__":
     test_babtain_thumb_wraps_image()
     test_kaps_package_untouched()
     test_homepage_cards_publish_2022_plus()
+    test_platform_card_uses_uncropped_jocy()
     print("test_homepage_qa: ok")
