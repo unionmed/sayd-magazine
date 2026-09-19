@@ -532,8 +532,10 @@ def layout(
         if is_home
         else f"{esc(title)} — {SITE_TITLE}"
     )
-    logo = media_url(LOGO_URL, depth)
-    footer_logo = media_url(FOOTER_LOGO_URL, depth)
+    # Chrome logos live under assets/media/ (copied with the theme) so they
+    # are not stuck behind a cached 404 on /media/uploads/2020/04/….
+    logo = "../" * depth + "assets/media/sayd-logo.png"
+    footer_logo = "../" * depth + "assets/media/sayd-footer-logo.png"
     date_bit = utility_date or format_ar_long_date(datetime.now())
     nav_links = f"""
         <a class="nav-home" href="{home}">الرئيسية</a>
