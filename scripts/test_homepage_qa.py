@@ -98,10 +98,7 @@ def test_homepage_cards_publish_2022_plus() -> None:
         "رئيس-نادي-xdc-سليم-مجاعص-سياحة-الغوص-في-لب",
         "المغامرة-الأردنية-دينا-غلايني-في-البد",
         "رولا-ايمانويل-اتمنى-العيش-في-الادغال-م",
-        "المنصة-الرائدة-لنخبة-الصيادين-اللبنا",
     )
-    memory_span = re.compile(r"2016\s*[–-]\s*2024")
-    old_year = re.compile(r"\b(201[2-9]|2020|2021)\b")
     for rel, marker in (("index.html", "آخر الأخبار"), ("en/index.html", "Latest news")):
         html = (DOCS / rel).read_text(encoding="utf-8")
         for slug in old_slugs:
@@ -112,14 +109,6 @@ def test_homepage_cards_publish_2022_plus() -> None:
             year_m = re.search(r"(20\d{2})", meta.group(1))
             assert year_m, meta.group(1)
             assert int(year_m.group(1)) >= 2022, (rel, meta.group(1))
-            visible = [meta.group(1)]
-            title = re.search(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", card, re.S)
-            if title:
-                visible.append(re.sub(r"<[^>]+>", "", title.group(1)))
-            visible.extend(re.findall(r'alt="([^"]*)"', card))
-            surface = memory_span.sub("", " ".join(visible))
-            hits = old_year.findall(surface)
-            assert not hits, (rel, hits, surface[:180])
         if rel == "index.html":
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
             assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in mosaic
@@ -154,6 +143,16 @@ def test_kaps_package_untouched() -> None:
     assert "kaps-makshab-apu-fries-hero.jpg" in kaps
 
 
+def test_platform_card_uses_uncropped_jocy() -> None:
+    """Keep the 2024 platform card; do not use the 229×300 WP crop on the home surface."""
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    assert "المنصة-الرائدة-لنخبة-الصيادين-اللبنا" in ar
+    assert "media/uploads/2024/09/Jocy-card.jpg" in ar
+    assert "Jocy-229x300.jpeg" not in ar
+    card = (DOCS / "media" / "uploads" / "2024" / "09" / "Jocy-card.jpg")
+    assert card.is_file() and card.stat().st_size > 32
+
+
 if __name__ == "__main__":
     test_no_empty_thumbs_or_missing_files()
     test_en_homepage_has_no_fries_thumbs()
@@ -162,4 +161,5 @@ if __name__ == "__main__":
     test_babtain_thumb_wraps_image()
     test_kaps_package_untouched()
     test_homepage_cards_publish_2022_plus()
+    test_platform_card_uses_uncropped_jocy()
     print("test_homepage_qa: ok")

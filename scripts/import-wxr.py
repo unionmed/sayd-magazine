@@ -80,12 +80,6 @@ NAV_CATS = [
 
 # Homepage desks: publish date 2022 → today. Pre-2022 stays in the archive only.
 HOME_PUBLISH_YEAR_MIN = 2022
-# Old about/platform promo — publish date may be 2022+ but the visible title
-# still says 2012. Keep it in the archive; never put it on a home desk.
-DEFAULT_HOME_DESK_OMIT = {
-    "المنصة-الرائدة-لنخبة-الصيادين-اللبنا",
-}
-PLATFORM_PROMO_TITLE_RE = re.compile(r"المنصة الرائدة|منذ عام 2012")
 
 # Homepage magazine section blocks after hero: (title, accent_class, match keys)
 HOME_SECTIONS = [
@@ -284,29 +278,15 @@ def featured_year(p: dict) -> int:
     return int(m.group(1)) if m else 0
 
 
-def is_platform_promo(p: dict) -> bool:
-    """About/platform promo cards (2012 founding pitch) stay off the home surface."""
-    slug = str(p.get("slug") or "")
-    title = str(p.get("title") or "")
-    if slug in home_desk_omit_slugs():
-        return True
-    return bool(PLATFORM_PROMO_TITLE_RE.search(title))
-
-
 def prefer_recent(
     items: list[dict], n: int, media_root: Path | None = None
 ) -> list[dict]:
     """Homepage desks: 2022→today publish dates only. Never pad with older stories.
 
     Among eligible items, prefer locally mirrored thumbs, then newest first.
-    Skip old about/platform promo cards even when their WP date is 2022+.
     """
     root = media_root if media_root is not None else MEDIA_ROOT
-    fresh = [
-        p
-        for p in items
-        if post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN and not is_platform_promo(p)
-    ]
+    fresh = [p for p in items if post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN]
     fresh.sort(key=lambda p: str(p.get("date") or ""), reverse=True)
     local, rest = [], []
     for p in fresh:
@@ -490,20 +470,6 @@ def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
     return [p for p in DEFAULT_TICKER_ITEMS if p[0] not in DEFAULT_HOME_OMIT]
 
 
-def home_desk_omit_slugs() -> set[str]:
-    """Slugs that must never appear on homepage desks (about/platform promo)."""
-    omit = set(DEFAULT_HOME_DESK_OMIT)
-    if HOMEPAGE_CONFIG.exists():
-        try:
-            data = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            data = {}
-        for s in data.get("omit_from_home_desks") or []:
-            if str(s).strip():
-                omit.add(str(s).strip())
-    return omit
-
-
 def load_homepage_lists() -> dict[str, list[str]]:
     """Nayef editorial homepage: featured + latest slugs, plus omit set.
 
@@ -512,7 +478,6 @@ def load_homepage_lists() -> dict[str, list[str]]:
     featured = list(DEFAULT_FEATURED_SLUGS)
     latest = [slug for slug, _ in load_ticker_items()]
     omit = set(DEFAULT_HOME_OMIT)
-    desk_omit = set(DEFAULT_HOME_DESK_OMIT)
     if HOMEPAGE_CONFIG.exists():
         try:
             data = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
@@ -524,16 +489,8 @@ def load_homepage_lists() -> dict[str, list[str]]:
             latest = [str(s).strip() for s in data["latest"] if str(s).strip()]
         if data.get("omit_from_ticker_and_latest"):
             omit = {str(s).strip() for s in data["omit_from_ticker_and_latest"] if str(s).strip()}
-        for s in data.get("omit_from_home_desks") or []:
-            if str(s).strip():
-                desk_omit.add(str(s).strip())
     latest = [s for s in latest if s not in omit]
-    return {
-        "featured": featured,
-        "latest": latest,
-        "omit": sorted(omit),
-        "desk_omit": sorted(desk_omit),
-    }
+    return {"featured": featured, "latest": latest, "omit": sorted(omit)}
 
 
 def pick_posts_by_slug(posts: list[dict], slugs: list[str]) -> list[dict]:
