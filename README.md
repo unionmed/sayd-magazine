@@ -65,6 +65,8 @@ Chrome logos live at **`docs/media/brand/sayd-logo.png`** and **`sayd-footer-log
 
 ```bash
 python3 scripts/mirror-media.py          # homepage 2022+ + chrome logos only
+python3 scripts/fix_homepage_media.py    # homepage chrome + card thumbs
+python3 scripts/fix_article_media.py     # 2022+ article pages + listing cards
 python3 scripts/import-wxr.py --skip-markdown
 ```
 

@@ -1,0 +1,9 @@
+{
+  "step": 2,
+  "unique": 272,
+  "on_disk_2022": 109,
+  "mirrored": 109,
+  "missing": 163,
+  "leftover_pages": [],
+  "note": "109 local 2022+ binaries (originals + aliases + stand-ins). 163 unique WP names still use CSS placeholder. Zero 2022+ wp-content hotlinks remain."
+}

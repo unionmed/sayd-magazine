@@ -95,3 +95,34 @@ Homepage hero / TV / photos / dossiers / cards use `<img src="media/…">` when 
 ## Import rewrite
 
 `scripts/import-wxr.py` + `scripts/media_rewrite.py` rewrite every WP/Jetpack/Wayback upload URL to a depth-relative `media/…` path when the file exists. Homepage missing featured images use the stand-in table above (`<img src>`). Other pages still use a `placeholder-thumb` block. Future rebuilds do not reintroduce live WP hotlinks. `docs/CNAME` remains `sayd-magazine.com`.
+
+## Step 2 — 2022+ visible articles
+
+P1 homepage chrome/thumbs stay as merged. This pass mirrors **2022+**
+uploads used by homepage-linked posts, recent article HTML, and listing
+cards. Pre-2022 archive bulk download is still deferred. No Stitch redesign.
+
+- Unique 2022+ upload URLs referenced before rewrite: **272**
+- 2022+ image files now under `docs/media/uploads/2022–2026/`: **109** (kept originals + aliases + stand-in copies)
+- Still missing a binary (CSS `placeholder-thumb`): **163** (mostly 2022–2025 archive body galleries; plus CABS/MECSHAP logos and Suhail organizer portraits)
+- Pages with leftover 2022+ `wp-content` after rewrite: **0**
+
+## Status breakdown
+
+- Already on disk from P1 / git history: 10 referenced names
+- Aliased or stand-in copies added this pass: 99
+- Placeholder (portrait/logo or unrecoverable archive body): 163
+
+## Mars-owned 2026/09 files (kept, wired where the WP name was missing)
+
+- `kaps-makshab-apu-fries-hero.jpg` → also served as the APU fries WP name
+- `sayd-returns-adonis-editor.jpg` → also `01-1000469327.jpg`
+- Suhail gallery-* / hero-closing / qna_suhail0120902026.jpg unchanged
+
+## Honest placeholders on visible 2026 stories
+
+- CABS + MECSHAP partner logos on the Kaps/Makshab article
+- Named organizer portraits on «سهيل 2026» بالصور (no matching local file)
+
+Next: **(3) Stitch redesign** after these images are solid.
+
