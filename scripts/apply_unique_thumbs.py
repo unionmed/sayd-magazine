@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """Apply unique, species-accurate thumbs. No green «صيد» placeholders
-on homepage cards, featured leads, related cards, or article bodies.
+on homepage section cards, related cards, or article bodies.
 
 Mars is stripping body placeholders — we omit them, never reinsert.
-Related / homepage / featured: real matching image or remove the card/block.
+Related / homepage section cards: real matching image or remove the card.
+Featured mosaic («قصص مميزة»): NEVER remove a card. Image/placeholder
+fixes must not delete a Nayef-listed featured story.
 """
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -20,6 +23,28 @@ from media_rewrite import FORBIDDEN_SRC_RE  # noqa: E402
 
 DOCS = ROOT / "docs"
 MEDIA = DOCS / "media"
+HOMEPAGE_CONFIG = ROOT / "content" / "homepage.json"
+# Fallback matches import-wxr.DEFAULT_FEATURED_SLUGS (homepage.json wins).
+_DEFAULT_FEATURED = [
+    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+    "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
+    "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
+    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
+]
+
+
+def editorial_featured_slugs() -> set[str]:
+    """Nayef featured list — image work must not drop these mosaic cards."""
+    if HOMEPAGE_CONFIG.is_file():
+        try:
+            data = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            data = {}
+        slugs = [str(s).strip() for s in data.get("featured") or [] if str(s).strip()]
+        if slugs:
+            return set(slugs)
+    return set(_DEFAULT_FEATURED)
 THUMB_BLOCK_RE = re.compile(
     r"""<a\s+class="thumb"[^>]*href="(?P<href>[^"]+)"[^>]*>(?P<inner>.*?)</a>""",
     re.I | re.S,
@@ -71,11 +96,16 @@ def has_placeholder(html: str) -> bool:
     return "placeholder-thumb" in html
 
 
-def rewrite_page(path: Path, mapping: dict[str, str]) -> int:
+def rewrite_page(
+    path: Path,
+    mapping: dict[str, str],
+    featured: set[str] | None = None,
+) -> int:
     html = path.read_text(encoding="utf-8")
     original = html
     depth = html_depth(path)
     changed = 0
+    featured = featured if featured is not None else editorial_featured_slugs()
 
     def thumb_sub(m: re.Match[str]) -> str:
         nonlocal changed
@@ -104,6 +134,9 @@ def rewrite_page(path: Path, mapping: dict[str, str]) -> int:
     def mark_wrong(m: re.Match[str]) -> str:
         nonlocal changed
         slug = slug_from_href(m.group("href"))
+        if slug and slug in featured:
+            # Keep the featured mosaic thumb as-is (gap / stand-in / empty).
+            return m.group(0)
         if slug and slug in mapping:
             return m.group(0)
         inner = m.group("inner")
@@ -187,11 +220,35 @@ def strip_body_placeholders(html: str) -> str:
     )
 
 
-def drop_placeholder_cards(html: str) -> str:
-    """Homepage + related: delete whole card if thumb is still a placeholder."""
+def _card_is_featured(block: str, featured: set[str]) -> bool:
+    slugs = re.findall(r"posts/([^/\"]+)/index\.html", block)
+    return any(s in featured for s in slugs)
+
+
+def drop_placeholder_cards(html: str, featured: set[str] | None = None) -> str:
+    """Homepage section + related: delete whole card if thumb is a placeholder.
+
+    Featured mosaic cards are never deleted — even with a gap / placeholder.
+    """
+    featured = featured if featured is not None else editorial_featured_slugs()
+    stashed: list[str] = []
+
+    def stash_mosaic(m: re.Match[str]) -> str:
+        stashed.append(m.group(0))
+        return f"<!--SAYD_FEATURED_MOSAIC_{len(stashed) - 1}-->"
+
+    html = re.sub(
+        r'<div class="featured-mosaic">.*?(?=<div class="latest-col">)',
+        stash_mosaic,
+        html,
+        count=1,
+        flags=re.I | re.S,
+    )
 
     def card_sub(m: re.Match[str]) -> str:
         block = m.group(0)
+        if _card_is_featured(block, featured):
+            return block
         if has_placeholder(block):
             return ""
         return block
@@ -210,7 +267,11 @@ def drop_placeholder_cards(html: str) -> str:
         block = m.group(0)
         # Drop leftover placeholder cards (in case CARD_RE missed a variant).
         block = CARD_RE.sub(
-            lambda c: "" if has_placeholder(c.group(0)) else c.group(0),
+            lambda c: (
+                c.group(0)
+                if _card_is_featured(c.group(0), featured)
+                else ("" if has_placeholder(c.group(0)) else c.group(0))
+            ),
             block,
         )
         if '<article class="card' not in block:
@@ -222,6 +283,8 @@ def drop_placeholder_cards(html: str) -> str:
         lambda m: "" if has_placeholder(m.group("inner")) else m.group(0),
         html,
     )
+    for i, block in enumerate(stashed):
+        html = html.replace(f"<!--SAYD_FEATURED_MOSAIC_{i}-->", block)
     return html
 
 
@@ -323,12 +386,13 @@ def fix_species_article_bodies() -> None:
         page.write_text(html, encoding="utf-8")
 
 
-def apply_display_cleanup() -> int:
+def apply_display_cleanup(featured: set[str] | None = None) -> int:
+    featured = featured if featured is not None else editorial_featured_slugs()
     n = 0
     for path in sorted(DOCS.rglob("*.html")):
         html = path.read_text(encoding="utf-8")
         new = strip_body_placeholders(html)
-        new = drop_placeholder_cards(new)
+        new = drop_placeholder_cards(new, featured=featured)
         new = re.sub(r"\n{3,}", "\n\n", new)
         if new != html:
             path.write_text(new, encoding="utf-8")
@@ -338,12 +402,13 @@ def apply_display_cleanup() -> int:
 
 def main() -> int:
     mapping = assigned_file_set(MEDIA)
+    featured = editorial_featured_slugs()
     print(f"mapped slugs={len(mapping)}")
     total = 0
     for path in sorted(DOCS.rglob("*.html")):
-        total += rewrite_page(path, mapping)
+        total += rewrite_page(path, mapping, featured=featured)
     fix_species_article_bodies()
-    cleaned = apply_display_cleanup()
+    cleaned = apply_display_cleanup(featured=featured)
     cname = (DOCS / "CNAME").read_text(encoding="utf-8").strip()
     if cname != "sayd-magazine.com":
         print("ERROR CNAME", cname)

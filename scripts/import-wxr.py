@@ -110,6 +110,9 @@ DEFAULT_HOME_OMIT = {
     "السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري",
     "السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ",
 }
+# Nayef hard rule: NEVER remove a «قصص مميزة» story without an explicit
+# Nayef-via-Mars order. Image / placeholder / gap-thumb work must not drop
+# a listed card. Source of truth is content/homepage.json, else this list.
 DEFAULT_FEATURED_SLUGS = [
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
@@ -117,6 +120,22 @@ DEFAULT_FEATURED_SLUGS = [
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
 ]
+# Hand-crafted editorial extras that may not be in the WXR dump. Featured
+# mosaic still emits these cards (gap / existing thumb) so a rebuild cannot
+# silently drop Memory or any other Nayef-listed slug.
+FEATURED_CARD_STUBS: dict[str, dict] = {
+    "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": {
+        "title": "من ذاكرة «صيد»: مسيرة الوعي والمسؤولية (2016 – 2024)",
+        "date_display": "19 أيلول 2026",
+        "datetime": "2026-09-19 00:00:00",
+        "date": "2026-09-19 00:00:00",
+        "categories": [
+            {"nicename": "ثقافة-وتراث", "name": "من ذاكرة صيد", "slug": "ثقافة-وتراث"}
+        ],
+        "excerpt": "شخصيات وأصوات في محراب الطبيعة (2016 – 2024)",
+        "featured": "",
+    },
+}
 # Mars/Nayef editorial list. One shared chrome for every page — never latest-N
 # posts and never a breaking/urgent label. Rebuilds must emit this same strip.
 DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
@@ -416,7 +435,10 @@ def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
 
 
 def load_homepage_lists() -> dict[str, list[str]]:
-    """Nayef editorial homepage: featured + latest slugs, plus omit set."""
+    """Nayef editorial homepage: featured + latest slugs, plus omit set.
+
+    Featured slugs are never derived from images or latest-N posts.
+    """
     featured = list(DEFAULT_FEATURED_SLUGS)
     latest = [slug for slug, _ in load_ticker_items()]
     omit = set(DEFAULT_HOME_OMIT)
@@ -438,6 +460,55 @@ def load_homepage_lists() -> dict[str, list[str]]:
 def pick_posts_by_slug(posts: list[dict], slugs: list[str]) -> list[dict]:
     by_slug = {p.get("slug"): p for p in posts}
     return [by_slug[s] for s in slugs if s in by_slug]
+
+
+def featured_slugs() -> list[str]:
+    """Editorial «قصص مميزة» slugs — homepage.json or DEFAULT_FEATURED_SLUGS."""
+    return list(load_homepage_lists()["featured"])
+
+
+def featured_card_stub(slug: str) -> dict:
+    """Minimal card so a listed featured slug still renders without a WXR row."""
+    known = FEATURED_CARD_STUBS.get(slug, {})
+    return {
+        "slug": slug,
+        "title": known.get("title") or slug.replace("-", " "),
+        "date_display": known.get("date_display") or "",
+        "datetime": known.get("datetime") or "",
+        "date": known.get("date") or "",
+        "categories": list(known.get("categories") or []),
+        "excerpt": known.get("excerpt") or "",
+        "featured": known.get("featured") or "",
+        "content": known.get("content") or "",
+    }
+
+
+def featured_posts(posts: list[dict], slugs: list[str] | None = None) -> list[dict]:
+    """Resolve the Nayef featured list in editorial order.
+
+    Never pad or replace from latest-N. Never skip a listed slug because
+    its image is missing or the post is absent from WXR — emit a stub so
+    the mosaic card stays.
+    """
+    if slugs is None:
+        slugs = featured_slugs()
+    by_slug = {p.get("slug"): p for p in posts}
+    return [by_slug[s] if s in by_slug else featured_card_stub(s) for s in slugs]
+
+
+def featured_side_html(p: dict, thumb: str = "") -> str:
+    """Always emit a featured side card. Missing image keeps the card."""
+    cats = p.get("categories") or []
+    cat = esc(cats[0]["name"]) if cats else ""
+    excerpt = esc(strip_html(p.get("excerpt") or "", 140))
+    cat_html = f'<span class="cat-pill">{cat}</span>' if cat else ""
+    return f"""
+<article class="hero-side">
+  <a class="thumb" href="{post_href(p["slug"], 0)}">{thumb}{cat_html}</a>
+  <div class="meta">{esc(p.get("date_display") or "")}</div>
+  <h3><a href="{post_href(p["slug"], 0)}">{esc(p.get("title") or "")}</a></h3>
+  <p class="excerpt">{excerpt}</p>
+</article>"""
 
 
 def post_sort_key(p: dict) -> str:
@@ -1193,15 +1264,13 @@ def build_site(data: dict, out: Path) -> None:
     en_pairs = load_en_pairs()
 
     # --- Homepage: Nayef editorial lists (never latest-N / omitted slugs) ---
+    # Featured mosaic slugs come only from homepage.json / DEFAULT_FEATURED.
+    # Missing / gap images never drop a listed card (Nayef hard rule).
     home_lists = load_homepage_lists()
     latest_news = pick_posts_by_slug(posts, home_lists["latest"])
-    featured_pool = pick_posts_by_slug(posts, home_lists["featured"])
-    if len(featured_pool) < 4:
-        featured_pool = [
-            p for p in posts if p.get("slug") not in DEFAULT_HOME_OMIT
-        ][:5]
+    featured_pool = featured_posts(posts, home_lists["featured"])
     featured_lead = featured_pool[:1]
-    featured_side = featured_pool[1:5]
+    featured_side = featured_pool[1:]
     used_slugs: set[str] = {p["slug"] for p in latest_news + featured_pool}
     utility_date = ""
     if posts and posts[0].get("datetime"):
@@ -1278,19 +1347,8 @@ def build_site(data: dict, out: Path) -> None:
 </article>"""
 
     def hero_side_html(p: dict) -> str:
-        thumb = home_thumb(p, 0)
-        if "<img" not in thumb:
-            return ""
-        cat = esc(p["categories"][0]["name"]) if p["categories"] else ""
-        excerpt = esc(strip_html(p.get("excerpt") or "", 140))
-        cat_html = f'<span class="cat-pill">{cat}</span>' if cat else ""
-        return f"""
-<article class="hero-side">
-  <a class="thumb" href="{post_href(p["slug"], 0)}">{thumb}{cat_html}</a>
-  <div class="meta">{esc(p["date_display"])}</div>
-  <h3><a href="{post_href(p["slug"], 0)}">{esc(p["title"])}</a></h3>
-  <p class="excerpt">{excerpt}</p>
-</article>"""
+        # Featured cards stay even when the thumb is a gap / empty.
+        return featured_side_html(p, home_thumb(p, 0))
 
     hero_main = hero_lead_html(featured_lead[0]) if featured_lead else ""
     hero_side = "\n".join(hero_side_html(p) for p in featured_side)

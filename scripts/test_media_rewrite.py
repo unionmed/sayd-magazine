@@ -91,8 +91,14 @@ def test_uwaisiq_is_sparrowhawk_not_kestrel() -> None:
 
 
 def test_homepage_unique_card_srcs() -> None:
-    """Homepage mosaic + section cards must not share one file across slugs."""
+    """Homepage mosaic + section cards must not share one file across slugs.
+
+    Featured gap cards (Memory) may keep a stand-in so the mosaic card stays;
+    they are excluded from the uniqueness check.
+    """
     from collections import defaultdict
+
+    from homepage_thumbs import HOMEPAGE_GAPS
 
     root = Path(__file__).resolve().parents[1]
     html = (root / "docs" / "index.html").read_text(encoding="utf-8")
@@ -103,6 +109,8 @@ def test_homepage_unique_card_srcs() -> None:
     )
     by_src: dict[str, list[str]] = defaultdict(list)
     for slug, inner in blocks:
+        if slug in HOMEPAGE_GAPS:
+            continue
         src_m = re.search(r"""src=["']([^"']+)["']""", inner, re.I)
         if not src_m:
             continue
