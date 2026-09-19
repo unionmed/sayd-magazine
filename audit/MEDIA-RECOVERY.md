@@ -192,3 +192,67 @@ Full before/after table + licenses: `audit/IMAGE-DEDUP.md`.
 
 Do **not** start Stitch redesign until these images are honest.
 
+---
+
+## Batch 2 — 2022–2026 originals + named next-batch (2026-09-19)
+
+**Scope:** remaining gaps after PR#17 (`5020f69`). Homepage / recent first. Pre-2022 archive bulk still deferred. Targeted next-batch names (`نور-8`, portraits, `1000468655`, …) were attempted via Wayback **CDX** (not only `0im_`).
+
+**Nayef rules unchanged:** local `media/…` only; one unique file per slug; bird photo must match the species name; homepage / featured / related never emit `placeholder-thumb`.
+
+### Attempted / mirrored / missing
+
+| Result | Count |
+|--------|------:|
+| New unique binaries this batch (Commons species + official partner logos) | **6** (~1.5 MB) |
+| Named next-batch WP originals recovered from Wayback CDX | **0** (no 200 image capture) |
+| Homepage cards with a unique matching file | **33** (+1: «مع هجرة الخريف») |
+| Homepage cards still omitted (no unique original / no article page) | **11** |
+| Green `placeholder-thumb` left on homepage / featured / related / body | **0** |
+| Related cards remaining (each a real unique thumb) | **1166** |
+| `docs/media/` on disk after this batch | **37 MB** / **177** image files |
+| 2022–2026 files under `docs/media/uploads/` | **140** (7+2+47+39+45) |
+| Still missing real 2022–2026 originals (stand-in copies or absent) | **~77** stand-in copies + unarchived 2026 WP names |
+
+### Recovered this batch (local `docs/media/` only)
+
+| Path | What it is | Source |
+|------|------------|--------|
+| `uploads/2026/09/narta-egret.jpg` | *Egretta garzetta* — replaces bee-eater stand-in | Commons (caption already named this file) |
+| `uploads/2026/09/duck-aswan-960.jpg` | *Aythya nyroca* — replaces bee-eater stand-in | Commons `Ferruginous Duck, Aswan.jpg`, CC0 |
+| `uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg` | *Pelecanus onocrotalus* species fill | Commons — **not** Nayef’s Matn original |
+| `uploads/2026/09/cabs-official-logo.png` | CABS trapped-bird mark | https://www.komitee.de/media/komitee_logo_neu.png |
+| `uploads/2026/09/cabs-bird-guard-logo.jpg` | CABS Bird Guard lockup | https://www.komitee.de/media/bird-guard-logo.jpg |
+| `uploads/2026/09/mecshap-official-logo.png` | MECSHAP triangle / star | https://www.mecshap.org/logonew.png |
+
+WP 2026 logo filenames (`شعار-كابس-—-CABS-Bird-Guard.jpg`, `شعار-مركز-…MECSHAP.jpg`) hold the same official bytes so rebuilds can resolve them locally.
+
+### Wired
+
+- «كابس» و«مكشب»: partner logos restored in-body (`#sayd-cabs-partner-logos`). Mars `kaps-makshab-apu-fries-hero.jpg` unchanged.
+- «مع هجرة الخريف»: body egret + ferruginous duck are now the credited Commons photos; homepage أخبار card restored with `duck-aswan-960.jpg`.
+- «البجع الأبيض الكبير»: bee-eater stand-in removed; Commons pelican used; caption **does not** claim نايف كريم.
+- ChatGPT “Lebanon flyway map” slot: bee-eater stand-in **omitted** (no honest map binary). Card for «مع بدء هجرة الخريف» stays off the mosaic.
+
+### Mars / Suhail / brand (untouched)
+
+- `kaps-makshab-apu-fries-hero.jpg`
+- `sayd-returns-adonis-editor.jpg` + editor-in-chief byline
+- Suhail `gallery-*` / `hero-closing-80k.jpg`
+- `docs/CNAME` = `sayd-magazine.com`
+
+### Still missing (next pass)
+
+Wayback CDX + live WP returned no image for:
+
+1. Gallery / portrait originals: `نور-8.jpg`, `51.jpg`, `ربيع-عقل-7.jpg`, `محمد-حلال-4.jpg`, `رالف-2.jpg`, `فوائد-الرماية.jpg`, `رامية.jpg`, `16.jpg`
+2. `1000468655.jpg` (autumn-start featured — still a bee-eater stand-in, unused)
+3. `Codex-Image-Sep-9-2026-12_28_47-AM.jpg` (Nayef’s pelican — pending photographer original)
+4. ChatGPT Lebanon flyway PNG
+5. `saudi-hunting-season-2026.jpg` (still `بارودة.png` bytes; Saudi card keeps NCW)
+6. Suhail organizer portraits (خالد السليطي / عبدالعزيز البوهاشم / ملكة آل شريم) — figures stay empty
+7. Memory of Sayd unique hero — **and** the article page itself is not in `docs/posts/`
+8. Remaining 2022–2025 body-gallery stand-in copies (~77 names)
+
+Bird assignments in this batch are **not done until Mars reviews** — see PR body + `audit/IMAGE-DEDUP.md`.
+

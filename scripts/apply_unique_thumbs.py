@@ -362,6 +362,15 @@ def fix_species_article_bodies() -> None:
             )
         page.write_text(html, encoding="utf-8")
 
+    page = DOCS / "posts" / "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" / "index.html"
+    if page.is_file():
+        html = page.read_text(encoding="utf-8")
+        html = html.replace(
+            "uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg",
+            "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
+        )
+        page.write_text(html, encoding="utf-8")
+
     for slug, rel in (
         ("الصياد-لا-يقنص-وروار-أزرق-الخد", "uploads/2015/05/وروار-خد-أزرق.jpg"),
         ("قتل-عقاب-نادر-اصطاد-أفعى-في-شمال-لبنان", "uploads/2017/02/عقاب-صرارة.jpg"),

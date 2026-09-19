@@ -75,6 +75,42 @@ def test_rewrite_html() -> None:
         assert "<img" not in missing
 
 
+def test_batch2_species_fills_are_unique() -> None:
+    """Batch 2 bird fills must not be the AP4I0956 bee-eater stand-in."""
+    import hashlib
+
+    root = Path(__file__).resolve().parents[1]
+    media = root / "docs" / "media"
+    bee = media / "uploads/2025/09/AP4I0956-1024x683.jpg"
+    bee_h = hashlib.md5(bee.read_bytes()).hexdigest()
+    fills = {
+        "narta-egret.jpg": "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
+        "duck-aswan-960.jpg": "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
+        "pelecanus-onocrotalus-great-white-pelican.jpg": "البجع-الأبيض-الكبير",
+    }
+    for name, slug_part in fills.items():
+        path = media / "uploads" / "2026" / "09" / name
+        assert path.is_file() and path.stat().st_size > 32, name
+        assert hashlib.md5(path.read_bytes()).hexdigest() != bee_h, name
+    how = (root / "docs" / "posts" / "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "narta-egret.jpg" in how
+    assert "duck-aswan-960.jpg" in how
+    pel = next((root / "docs" / "posts").glob("البجع-الأبيض-الكبير*/index.html"))
+    text = pel.read_text(encoding="utf-8")
+    assert "pelecanus-onocrotalus-great-white-pelican.jpg" in text
+    assert "Codex-Image-Sep-9" not in text
+    home = (root / "docs" / "index.html").read_text(encoding="utf-8")
+    assert "duck-aswan-960.jpg" in home
+    kaps = (root / "docs" / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "mecshap-official-logo.png" in kaps
+    assert "cabs-official-logo.png" in kaps
+    assert "kaps-makshab-apu-fries-hero.jpg" in kaps
+
+
 def test_uwaisiq_is_sparrowhawk_not_kestrel() -> None:
     """العويسق must use Accipiter nisus, never the AP4I0032 kestrel/sunbird mix-up."""
     root = Path(__file__).resolve().parents[1]
@@ -213,6 +249,7 @@ if __name__ == "__main__":
     test_homepage_local_media()
     test_homepage_unique_card_srcs()
     test_uwaisiq_is_sparrowhawk_not_kestrel()
+    test_batch2_species_fills_are_unique()
     test_visible_2022_articles_local_only()
     test_no_green_placeholders_on_home_related_featured()
     print("ok")

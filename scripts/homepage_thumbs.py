@@ -93,6 +93,8 @@ SPECIES_FALLBACKS: dict[str, str] = {
     "أسرار-الأرض-عشبة-الشُكران-السمّ-الص": "uploads/2026/09/conium-maculatum.jpg",
     "الصيّاد-يعرف-شجرة-اللزاب-في-لبنان": "uploads/2026/09/juniperus-excelsa.jpg",
     "الأخطبوط-عبقريّ-الأعماق-وشهيد-الزواج": "uploads/2026/09/octopus-vulgaris.jpg",
+    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
+    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": "uploads/2026/09/duck-aswan-960.jpg",
 }
 
 # Extra slugs (related cards / articles) that still need a unique matching thumb.
@@ -113,6 +115,8 @@ ARTICLE_UNIQUE_THUMBS: dict[str, str] = {
     "مشاكل-جلد-الكلاب": "uploads/2023/04/جلد-الكلب.png",
     "مخاطر-السمنة-لدى-الحيوانات-الأليفة": "uploads/2022/10/ddi.jpg",
     "إنقذ-كلبَك-بالملح": "uploads/2022/12/كلب.png",
+    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
+    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": "uploads/2026/09/duck-aswan-960.jpg",
 }
 
 HOMEPAGE_FALLBACKS: dict[str, str] = {}
