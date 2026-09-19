@@ -185,8 +185,8 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-09",
         "category": "Photos",
         "author": "Nayef Krayem",
-        "image": "media/uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
-        "image_alt": "Great White Pelican — Pelecanus onocrotalus",
+        "image": "media/uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
+        "image_alt": "Great White Pelican (Pelecanus onocrotalus) — photo by Nayef Krayem, Matn Expressway, spring 2026",
     },
 }
 

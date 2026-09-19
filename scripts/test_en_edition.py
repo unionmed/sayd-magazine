@@ -73,8 +73,10 @@ def test_en_home_has_no_arabic_archive_mix() -> None:
     assert ">Laws &amp; Maps<" not in home
     assert "great-white-pelican-matn-highway-nayef-krayem" in home
     assert "great-white-pelican-matn-highway-nayef-krayem" in stories
-    assert "pelecanus-onocrotalus-great-white-pelican.jpg" in home
-    assert "pelecanus-onocrotalus-great-white-pelican.jpg" in stories
+    assert "great-white-pelican-nayef-krayem-matn-2026.jpg" in home
+    assert "great-white-pelican-nayef-krayem-matn-2026.jpg" in stories
+    assert "pelecanus-onocrotalus-great-white-pelican.jpg" not in home
+    assert "pelecanus-onocrotalus-great-white-pelican.jpg" not in stories
     for card in re.findall(r"<article class=\"card[^\"]*\">(.*?)</article>", after_latest, re.S):
         hrefs = re.findall(r'href="([^"]+)"', card)
         assert hrefs, card[:120]

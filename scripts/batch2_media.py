@@ -116,10 +116,10 @@ COMMONS_FILLS: list[dict] = [
             "Pelecanus onocrotalus 2.jpg",
             "Great White Pelican in flight.jpg",
         ],
-        "note": "Pelecanus onocrotalus — species fill; NOT Nayef Kareem’s 2026 Matn photo",
+        "note": "Commons species fill kept on disk only; live pages use Nayef Krayem original",
         "bird": True,
         "species": "Pelecanus onocrotalus (Great White Pelican)",
-        "review": "Mars QA — pending Nayef original Codex-Image-Sep-9-2026; do not claim photographer credit",
+        "review": "Live hero is uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
     },
     {
         "rel": "uploads/2026/09/africa-eurasia-flyway-map.jpg",
@@ -540,24 +540,20 @@ def wire_kaps_logos() -> None:
 
 
 def wire_pelican_fill() -> None:
-    """Replace bee-eater stand-in on Nayef pelican article with Commons species fill."""
-    dest = MEDIA / "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg"
+    """Wire Nayef Krayem’s Matn original on the existing AR/EN pelican piece."""
+    dest = MEDIA / "uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg"
     if not dest.is_file():
         return
     page = DOCS / "posts" / "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" / "index.html"
-    if not page.is_file():
-        return
-    html = page.read_text(encoding="utf-8")
-    html = html.replace(
-        "uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg",
-        "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
-    )
-    page.write_text(html, encoding="utf-8")
-    # Copy bytes onto the WP name only if it is still a stand-in, so other refs work
-    wp = MEDIA / "uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg"
-    if is_standin_copy("uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg") or not wp.is_file():
-        wp.write_bytes(dest.read_bytes())
-    print("wired pelican Commons fill (Mars QA — not Nayef original)", flush=True)
+    if page.is_file():
+        html = page.read_text(encoding="utf-8")
+        for old in (
+            "uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg",
+            "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
+        ):
+            html = html.replace(old, "uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg")
+        page.write_text(html, encoding="utf-8")
+    print("wired Nayef Krayem pelican original", flush=True)
 
 
 def wire_flyway_map() -> None:
@@ -787,7 +783,7 @@ def main() -> int:
     duck = "uploads/2026/09/duck-aswan-960.jpg"
     if is_unique_binary(MEDIA, duck):
         mapping.setdefault("مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو", duck)
-    pelican = "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg"
+    pelican = "uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg"
     if is_unique_binary(MEDIA, pelican):
         mapping.setdefault(
             "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك", pelican

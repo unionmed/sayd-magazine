@@ -31,3 +31,7 @@ mecshap-apu-cabs-baalbek-release.jpg	مكشب MECSHAP	Transfer and Release of Pr
 	Local copy only — do not hotlink mecshap.org / vercel.
 	Homepage kaps-lead + Kaps article hero + related/stories thumbs.
 	Fries camp photo stays in-article only (kaps-makshab-apu-fries-hero.jpg).
+
+great-white-pelican-nayef-krayem-matn-2026.jpg	نايف كريم / Nayef Krayem	Great White Pelican, Matn Expressway, Spring 2026
+	Existing AR photo piece + EN twin. Live src on all pelican surfaces.
+	AR credit: بعدسة نايف كريم · البجع الأبيض الكبير · أوتوستراد المتن · ربيع 2026

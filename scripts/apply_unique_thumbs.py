@@ -378,10 +378,14 @@ def fix_species_article_bodies() -> None:
     page = DOCS / "posts" / "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" / "index.html"
     if page.is_file():
         html = page.read_text(encoding="utf-8")
-        html = html.replace(
+        for old in (
             "uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg",
             "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
-        )
+        ):
+            html = html.replace(
+                old,
+                "uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
+            )
         page.write_text(html, encoding="utf-8")
 
     for slug, rel in (

@@ -87,7 +87,7 @@ def test_batch2_species_fills_are_unique() -> None:
     fills = {
         "narta-egret.jpg": "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
         "duck-aswan-960.jpg": "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
-        "pelecanus-onocrotalus-great-white-pelican.jpg": "البجع-الأبيض-الكبير",
+        "great-white-pelican-nayef-krayem-matn-2026.jpg": "البجع-الأبيض-الكبير",
     }
     for name, slug_part in fills.items():
         path = media / "uploads" / "2026" / "09" / name
@@ -100,8 +100,11 @@ def test_batch2_species_fills_are_unique() -> None:
     assert "duck-aswan-960.jpg" in how
     pel = next((root / "docs" / "posts").glob("البجع-الأبيض-الكبير*/index.html"))
     text = pel.read_text(encoding="utf-8")
-    assert "pelecanus-onocrotalus-great-white-pelican.jpg" in text
+    assert "great-white-pelican-nayef-krayem-matn-2026.jpg" in text
+    assert "pelecanus-onocrotalus-great-white-pelican.jpg" not in text
     assert "Codex-Image-Sep-9" not in text
+    assert "ويكيميديا" not in text
+    assert "بعدسة نايف كريم" in text
     home = (root / "docs" / "index.html").read_text(encoding="utf-8")
     assert "duck-aswan-960.jpg" in home
     kaps = (root / "docs" / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html").read_text(

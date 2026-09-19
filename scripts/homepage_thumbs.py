@@ -32,13 +32,20 @@ KAPS_AR_SLUG = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
 KAPS_EN_SLUG = "cabs-mecshap-autumn-birds-lebanon-khatib"
 KAPS_BAALBEK_REL = "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg"
 KAPS_FRIES_REL = "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg"
+PELICAN_AR_SLUG = "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"
+PELICAN_EN_SLUG = "great-white-pelican-matn-highway-nayef-krayem"
+PELICAN_REL = "uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg"
 NAYEF_LOCKED_PRIMARY_IMAGES: dict[str, str] = {
     KAPS_AR_SLUG: KAPS_BAALBEK_REL,
     KAPS_EN_SLUG: KAPS_BAALBEK_REL,
+    PELICAN_AR_SLUG: PELICAN_REL,
+    PELICAN_EN_SLUG: PELICAN_REL,
 }
 NAYEF_LOCKED_PRIMARY_ALTS: dict[str, str] = {
     KAPS_AR_SLUG: "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP",
     KAPS_EN_SLUG: "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
+    PELICAN_AR_SLUG: "بعدسة نايف كريم · البجع الأبيض الكبير · أوتوستراد المتن · ربيع 2026",
+    PELICAN_EN_SLUG: "Great White Pelican (Pelecanus onocrotalus) — photo by Nayef Krayem, Matn Expressway, spring 2026",
 }
 SUHAIL_KEEP = {
     "uploads/2026/09/hero-closing-80k.jpg",
@@ -72,7 +79,7 @@ HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
     "بالصور-والفيديو-صياد-مسؤول-ينقذ-طائر-ا": "uploads/2017/02/كمال-اغا-1.jpg",
     "صور-الصياد-اللبناني-الياس-سلهب": "uploads/2015/06/سلهب-3.jpg",
     "بعدسة-التاريخ-صورتان-لعائلتين-من-أبلح": "uploads/2015/03/عائلتان-من-بلدة-ابلح-غرقتا-في-حادثة-التايتانيك.jpg",
-    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
+    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه": "uploads/2025/09/Adonis.jpg",
     "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر": "uploads/2025/07/IMG_3009-2-1024x683.jpg",
     "المنصة-الرائدة-لنخبة-الصيادين-اللبنا": "uploads/2024/09/Jocy-229x300.jpeg",
@@ -116,7 +123,7 @@ SPECIES_FALLBACKS: dict[str, str] = {
     "أسرار-الأرض-عشبة-الشُكران-السمّ-الص": "uploads/2026/09/conium-maculatum.jpg",
     "الصيّاد-يعرف-شجرة-اللزاب-في-لبنان": "uploads/2026/09/juniperus-excelsa.jpg",
     "الأخطبوط-عبقريّ-الأعماق-وشهيد-الزواج": "uploads/2026/09/octopus-vulgaris.jpg",
-    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
+    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": "uploads/2026/09/duck-aswan-960.jpg",
 }
 
@@ -138,8 +145,8 @@ ARTICLE_UNIQUE_THUMBS: dict[str, str] = {
     "مشاكل-جلد-الكلاب": "uploads/2023/04/جلد-الكلب.png",
     "مخاطر-السمنة-لدى-الحيوانات-الأليفة": "uploads/2022/10/ddi.jpg",
     "إنقذ-كلبَك-بالملح": "uploads/2022/12/كلب.png",
-    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
-    "great-white-pelican-matn-highway-nayef-krayem": "uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg",
+    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
+    "great-white-pelican-matn-highway-nayef-krayem": "uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": "uploads/2026/09/duck-aswan-960.jpg",
 }
 

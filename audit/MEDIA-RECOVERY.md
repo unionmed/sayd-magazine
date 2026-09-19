@@ -220,7 +220,7 @@ Do **not** start Stitch redesign until these images are honest.
 |------|------------|--------|
 | `uploads/2026/09/narta-egret.jpg` | *Egretta garzetta* — replaces bee-eater stand-in | Commons (caption already named this file) |
 | `uploads/2026/09/duck-aswan-960.jpg` | *Aythya nyroca* — replaces bee-eater stand-in | Commons `Ferruginous Duck, Aswan.jpg`, CC0 |
-| `uploads/2026/09/pelecanus-onocrotalus-great-white-pelican.jpg` | *Pelecanus onocrotalus* species fill | Commons — **not** Nayef’s Matn original |
+| `uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg` | *Pelecanus onocrotalus* species fill | Commons — **not** Nayef’s Matn original |
 | `uploads/2026/09/cabs-official-logo.png` | CABS trapped-bird mark | https://www.komitee.de/media/komitee_logo_neu.png |
 | `uploads/2026/09/cabs-bird-guard-logo.jpg` | CABS Bird Guard lockup | https://www.komitee.de/media/bird-guard-logo.jpg |
 | `uploads/2026/09/mecshap-official-logo.png` | MECSHAP triangle / star | https://www.mecshap.org/logonew.png |

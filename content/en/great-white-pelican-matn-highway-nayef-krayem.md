@@ -16,4 +16,4 @@ Photographed by Nayef Krayem on the Matn highway, spring 2026.
 ## Notes
 
 - AR title used the old “Kareem” Latinization; EN byline is Nayef Krayem.
-- Open-license species still stands in for the unpublished original Matn frame.
+- Live image is Nayef Krayem’s original: `docs/media/uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg`.
