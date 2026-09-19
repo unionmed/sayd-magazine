@@ -25,6 +25,7 @@ TICKER_LABEL = import_wxr.TICKER_LABEL
 chrome_ticker = import_wxr.chrome_ticker
 layout = import_wxr.layout
 load_ticker_items = import_wxr.load_ticker_items
+load_homepage_lists = import_wxr.load_homepage_lists
 
 FORBIDDEN = (
     "عاجل",
@@ -105,10 +106,47 @@ def test_docs_already_share_clean_chrome() -> None:
         assert found == titles, (path.name, found)
 
 
+def _section(html: str, start: str, end: str) -> str:
+    i = html.find(start)
+    j = html.find(end, i + 1) if i >= 0 else -1
+    assert i >= 0 and j > i, (start, end)
+    return html[i:j]
+
+
+def test_homepage_latest_matches_nayef() -> None:
+    html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+    lists = load_homepage_lists()
+    featured = _section(html, "featured-mosaic", "latest-feed")
+    latest = _section(html, "latest-feed", "</ul>")
+    ticker = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
+
+    assert "80-ألف-زائر-و158-جهة" in featured
+    assert "80-ألف-زائر-و158-جهة" not in latest
+    assert "80-ألف-زائر-و158-جهة" not in ticker
+    assert "البجع-الأبيض" not in latest
+    assert "البجع-الأبيض" not in ticker
+    assert "البجع-الأبيض" not in featured
+    assert "عصفور-الشمس" not in latest
+    assert "عصفور-الشمس" not in ticker
+    assert "عصفور-الشمس" not in featured
+    assert "صيد-تعود-بحلة-جديدة" not in html
+    assert "السعودية-تشدد-على-ضوابط" not in html
+    assert "قطر-أكثر-من-80-ألف-زائر" in latest
+    assert "قطر-أكثر-من-80-ألف-زائر" in ticker
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in featured
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in latest
+
+    latest_slugs = re.findall(r'href="posts/([^/"]+)/index.html"', latest)
+    assert latest_slugs == lists["latest"]
+    assert "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع" not in lists["latest"]
+    assert "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" in lists["omit"]
+
+
 if __name__ == "__main__":
     test_source_has_no_regression_strings()
     test_ticker_source_is_mars_list()
     test_shared_ticker_all_depths()
     test_layout_footer_and_default_ticker()
     test_docs_already_share_clean_chrome()
+    test_homepage_latest_matches_nayef()
     print("ok")
