@@ -121,6 +121,12 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "feature-lead" in html
     assert "home-layout" in html
     assert ">Sayd TV<" in html
+    assert ">Laws &amp; Maps<" in html
+    assert ">Photos<" in html
+    assert ">Hunting &amp; Equestrian<" in html
+    assert ">Gear &amp; Arms<" in html
+    assert ">Shooting<" in html
+    assert ">Miscellany<" in html
     assert (DOCS / "en" / "team" / "index.html").is_file()
     assert (DOCS / "en" / "contact" / "index.html").is_file()
     assert "en/team/index.html" in html
