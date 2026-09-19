@@ -850,6 +850,57 @@ html[dir="ltr"] .ticker-viewport {
   font-weight: 800;
 }
 
+/* Nayef: Kaps/CABS homepage lead only — title above the photo, not bottom overlay. */
+.featured-mosaic > .card.feature-lead.kaps-lead {
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  max-height: 480px;
+  overflow: hidden;
+  align-self: start;
+}
+.featured-mosaic > .card.feature-lead.kaps-lead .body {
+  position: static;
+  inset: auto;
+  flex: 0 0 auto;
+  z-index: auto;
+  background: var(--card);
+  color: var(--ink);
+  padding: 0.55rem 0.7rem 0.5rem;
+}
+.featured-mosaic > .card.feature-lead.kaps-lead .meta { color: var(--muted); }
+.featured-mosaic > .card.feature-lead.kaps-lead .meta .cat-pill {
+  background: var(--olive);
+  color: #fff;
+}
+.featured-mosaic > .card.feature-lead.kaps-lead h2 {
+  font-size: clamp(1rem, 1.7vw, 1.28rem);
+  font-weight: 800;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.featured-mosaic > .card.feature-lead.kaps-lead h2 a { color: var(--ink); }
+.featured-mosaic > .card.feature-lead.kaps-lead h2 a:hover { color: var(--gold-dark); }
+.featured-mosaic > .card.feature-lead.kaps-lead .thumb {
+  position: relative;
+  inset: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: auto;
+  max-height: none;
+}
+.featured-mosaic > .card.feature-lead.kaps-lead .thumb::after { content: none; }
+.featured-mosaic > .card.feature-lead.kaps-lead .thumb img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
 .featured-col .section-head h2 {
   font-size: 1.15rem;
 }
@@ -1306,6 +1357,15 @@ html[dir="ltr"] .ticker-viewport {
     height: 240px;
     max-height: 240px;
     min-height: 0;
+  }
+  .featured-mosaic > .card.feature-lead.kaps-lead {
+    grid-column: 1 / -1;
+    height: auto;
+    max-height: none;
+  }
+  .featured-mosaic > .card.feature-lead.kaps-lead .thumb {
+    aspect-ratio: 16 / 10;
+    min-height: 160px;
   }
   .featured-mosaic > .card.overlay.feature-lead .thumb {
     position: absolute;

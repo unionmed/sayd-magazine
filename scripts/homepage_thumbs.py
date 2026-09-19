@@ -9,6 +9,8 @@ Nayef rules:
   green «صيد» placeholder-thumb.
 - Featured mosaic («قصص مميزة»): slugs come only from homepage.json /
   DEFAULT_FEATURED. A gap / missing image never removes the card.
+- Never change a story’s primary image without an explicit Nayef order.
+  Kaps/CABS is locked to the APU fries diary photo (not a bird species ID).
 """
 
 from __future__ import annotations
@@ -19,8 +21,22 @@ from pathlib import Path
 
 # Mars-owned binaries — never overwrite or rewire away from these slugs.
 MARS_OWNED = {
+    "uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
     "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
     "uploads/2026/09/sayd-returns-adonis-editor.jpg",
+}
+
+# Nayef 19 Sep 2026: fries is the only allowed Kaps/CABS story image.
+KAPS_AR_SLUG = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
+KAPS_EN_SLUG = "cabs-mecshap-autumn-birds-lebanon-khatib"
+KAPS_FRIES_REL = "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg"
+NAYEF_LOCKED_PRIMARY_IMAGES: dict[str, str] = {
+    KAPS_AR_SLUG: KAPS_FRIES_REL,
+    KAPS_EN_SLUG: KAPS_FRIES_REL,
+}
+NAYEF_LOCKED_PRIMARY_ALTS: dict[str, str] = {
+    KAPS_AR_SLUG: "أحد أفراد وحدة APU يعدّ الطعام في الهواء الطلق خلال استراحة",
+    KAPS_EN_SLUG: "A member of the APU team prepares food outdoors during a break",
 }
 SUHAIL_KEEP = {
     "uploads/2026/09/hero-closing-80k.jpg",
@@ -41,6 +57,7 @@ BRAND_KEEP = {
 # Homepage mosaic + section cards: unique local file per slug.
 HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
+    "cabs-mecshap-autumn-birds-lebanon-khatib": "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": "uploads/2026/09/hero-closing-80k.jpg",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب": "uploads/2026/09/ncw-wildlife-card.jpg",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم": "uploads/2026/09/sayd-returns-adonis-editor.jpg",
@@ -214,6 +231,7 @@ def candidates_for(slug: str) -> list[str]:
     seen: set[str] = set()
     out: list[str] = []
     for rel in (
+        NAYEF_LOCKED_PRIMARY_IMAGES.get(slug),
         ARTICLE_UNIQUE_THUMBS.get(slug),
         HOMEPAGE_UNIQUE_THUMBS.get(slug),
         SPECIES_FALLBACKS.get(slug),
@@ -228,7 +246,11 @@ def resolve_home_thumb(slug: str, media_root: Path) -> str | None:
     """Return uploads/… rel for this slug, or None if there is no unique file.
 
     Featured mosaic cards still render when this returns None.
+    Nayef-locked primary images win and must not be swapped.
     """
+    locked = NAYEF_LOCKED_PRIMARY_IMAGES.get(slug)
+    if locked and local_ok(media_root, locked):
+        return locked
     if slug in HOMEPAGE_GAPS:
         return None
     for rel in candidates_for(slug):
@@ -248,9 +270,17 @@ def assigned_file_set(media_root: Path) -> dict[str, str]:
     used_rel: dict[str, str] = {}
     used_hash: dict[str, str] = {}
     featured = set(featured_mosaic_slugs()) | FEATURED_MOSAIC_EN_SLUGS
-    slugs = list(dict.fromkeys([*ARTICLE_UNIQUE_THUMBS, *SPECIES_FALLBACKS]))
+    slugs = list(
+        dict.fromkeys(
+            [*ARTICLE_UNIQUE_THUMBS, *SPECIES_FALLBACKS, *NAYEF_LOCKED_PRIMARY_IMAGES]
+        )
+    )
     ordered = [s for s in slugs if s not in featured] + [s for s in slugs if s in featured]
     for slug in ordered:
+        locked = NAYEF_LOCKED_PRIMARY_IMAGES.get(slug)
+        if locked and local_ok(media_root, locked):
+            out[slug] = locked
+            continue
         if slug in HOMEPAGE_GAPS and slug not in featured:
             continue
         for rel in candidates_for(slug):

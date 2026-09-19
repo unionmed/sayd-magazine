@@ -18,7 +18,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from homepage_thumbs import assigned_file_set, is_featured_mosaic_slug, standin_hashes, _md5  # noqa: E402
+from homepage_thumbs import (  # noqa: E402
+    NAYEF_LOCKED_PRIMARY_ALTS,
+    NAYEF_LOCKED_PRIMARY_IMAGES,
+    assigned_file_set,
+    is_featured_mosaic_slug,
+    standin_hashes,
+    _md5,
+)
 from media_rewrite import FORBIDDEN_SRC_RE  # noqa: E402
 
 DOCS = ROOT / "docs"
@@ -122,19 +129,22 @@ def rewrite_page(
     def thumb_sub(m: re.Match[str]) -> str:
         nonlocal changed
         slug = slug_from_href(m.group("href"))
-        if not slug or slug not in mapping:
+        locked = NAYEF_LOCKED_PRIMARY_IMAGES.get(slug or "")
+        if not slug or (slug not in mapping and not locked):
             return m.group(0)
         inner = m.group("inner")
         # Overlay tiles use an empty <a class="thumb"> next to sibling <img>s.
         # str.replace("", img) would prepend a duplicate in front of the tag.
         if not inner.strip():
             return m.group(0)
-        rel = mapping[slug]
+        rel = locked or mapping[slug]
         src = public_src(rel, depth)
         img_m = IMG_SRC_RE.search(inner)
-        if img_m and img_m.group(2) == src:
+        alt = NAYEF_LOCKED_PRIMARY_ALTS.get(slug, "")
+        if img_m and img_m.group(2) == src and (not alt or f'alt="{alt}"' in inner):
             return m.group(0)
-        new_inner = f'<img src="{src}" alt="" loading="lazy">'
+        alt_attr = alt or ""
+        new_inner = f'<img src="{src}" alt="{alt_attr}" loading="lazy">'
         changed += 1
         return m.group(0).replace(inner, new_inner, 1)
 

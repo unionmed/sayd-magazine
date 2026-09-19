@@ -22,7 +22,7 @@ FONTS = (
     "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
     "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
-CSS_CACHE = "20260919-en-qa"
+CSS_CACHE = "20260919-kaps-stack-en"
 ABOUT_EN = (
     "The magazine of nature’s masters on land, sea, and sky — hunting, "
     "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
@@ -69,8 +69,9 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-13",
         "category": "News",
         "author": "Sayd",
-        "image": "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
-        "image_alt": "Short-toed snake eagle (Circaetus gallicus)",
+        # Nayef-locked: fries is the only Kaps/CABS image (hero + cards).
+        "image": "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
+        "image_alt": "A member of the APU team prepares food outdoors during a break",
     },
     "suhail-2026-closes-decade-katara-80000-visitors": {
         "date": "13 September 2026",
@@ -270,9 +271,9 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
     extra = ""
     if slug == "cabs-mecshap-autumn-birds-lebanon-khatib":
         extra = figure(
-            "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
-            "Short-toed snake eagle (Circaetus gallicus)",
-            "Short-toed snake eagle (Circaetus gallicus)",
+            "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
+            "A member of the APU team prepares food outdoors during a break",
+            "From the daily field life of the Anti-Poaching Unit (APU) team: a break to prepare food outdoors.",
             media_prefix,
         )
         lead_html = "<p><strong>Beirut — Sayd</strong></p>"
@@ -601,6 +602,66 @@ def related_for(slug: str, articles: dict[str, dict]) -> list[str]:
     return seen[:3]
 
 
+def related_card_html(other: str, articles: dict[str, dict], media_prefix: str) -> str:
+    o = articles[other]
+    thumb = o.get("card_image") or o.get("image") or "media/brand/sayd-logo.png"
+    alt = o.get("card_image_alt") or o.get("image_alt") or o["title"]
+    return f"""<article class="card overlay">
+  <a class="thumb" href="../{other}/index.html"><img src="{media_prefix}{thumb}" alt="{escape(alt, quote=True)}" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">{escape(o["date"])}<span class="cat-pill">{escape(o["category"])}</span></div>
+    <h3><a href="../{other}/index.html">{escape(o["title"])}</a></h3>
+  </div>
+</article>"""
+
+
+def related_block_html(slug: str, articles: dict[str, dict]) -> str:
+    cards = "".join(
+        related_card_html(other, articles, "../../../")
+        for other in related_for(slug, articles)
+    )
+    return f"""    <section class="related-block">
+      <div class="section-head"><h2>Related</h2></div>
+      <div class="related-grid">
+{cards}
+      </div>
+    </section>
+"""
+
+
+def ensure_en_related_blocks(articles: dict[str, dict]) -> int:
+    """Insert or refresh Related on published EN articles without rewriting chrome."""
+    n = 0
+    for slug in articles:
+        path = DOCS / "en" / "posts" / slug / "index.html"
+        if not path.is_file():
+            continue
+        html = path.read_text(encoding="utf-8")
+        block = related_block_html(slug, articles)
+        if '<section class="related-block">' in html:
+            new_html = re.sub(
+                r'[ \t]*<section class="related-block">.*?</section>\s*',
+                block,
+                html,
+                count=1,
+                flags=re.S,
+            )
+        else:
+            new_html, count = re.subn(
+                r'(<article class="article-content">.*?</article>)(\s*)',
+                r"\1\n" + block + r"\2",
+                html,
+                count=1,
+                flags=re.S,
+            )
+            if count != 1:
+                continue
+        if new_html != html:
+            path.write_text(new_html, encoding="utf-8")
+            n += 1
+    return n
+
+
 def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str]) -> None:
     item = articles[slug]
     ar_slug = pairs_inv[slug]
@@ -621,17 +682,7 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
         )
     related = []
     for other in related_for(slug, articles):
-        o = articles[other]
-        thumb = o.get("image") or "media/brand/sayd-logo.png"
-        related.append(
-            f"""<article class="card overlay">
-  <a class="thumb" href="../{other}/index.html"><img src="{media_prefix}{thumb}" alt="{escape(o["title"], quote=True)}" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">{escape(o["date"])}<span class="cat-pill">{escape(o["category"])}</span></div>
-    <h3><a href="../{other}/index.html">{escape(o["title"])}</a></h3>
-  </div>
-</article>"""
-        )
+        related.append(related_card_html(other, articles, media_prefix))
     ar_href = f"../../../posts/{ar_slug}/index.html"
     en_href = "index.html"
     main = f"""
@@ -762,12 +813,12 @@ def write_home(articles: dict[str, dict]) -> None:
           <h2>Featured stories</h2>
         </div>
         <div class="featured-mosaic">
-<article class="card overlay feature-lead">
-  <a class="thumb" href="posts/{lead}/index.html"><img src="../{lead_item["image"]}" alt="{escape(lead_item.get("image_alt") or lead_item["title"], quote=True)}" loading="lazy"></a>
+<article class="card feature-lead kaps-lead">
   <div class="body">
     <div class="meta">{escape(lead_item["date"])}<span class="cat-pill">{escape(lead_item["category"])}</span></div>
     <h2><a href="posts/{lead}/index.html">{escape(lead_item["title"])}</a></h2>
   </div>
+  <a class="thumb" href="posts/{lead}/index.html"><img src="../{lead_item["image"]}" alt="{escape(lead_item.get("image_alt") or lead_item["title"], quote=True)}" loading="lazy"></a>
 </article>
           <div class="feature-side">
           <div class="feature-stack">
@@ -817,9 +868,11 @@ def write_stories(articles: dict[str, dict]) -> None:
     rows = []
     for slug in slugs:
         item = articles[slug]
+        img = item.get("card_image") or item["image"]
+        alt = item.get("card_image_alt") or item.get("image_alt") or item["title"]
         rows.append(
             f"""<article class="card overlay">
-  <a class="thumb" href="../posts/{slug}/index.html"><img src="../../{item["image"]}" alt="{escape(item.get("image_alt") or item["title"], quote=True)}" loading="lazy"></a>
+  <a class="thumb" href="../posts/{slug}/index.html"><img src="../../{img}" alt="{escape(alt, quote=True)}" loading="lazy"></a>
   <div class="body">
     <div class="meta">{escape(item["date"])}<span class="cat-pill">{escape(item["category"])}</span></div>
     <h3><a href="../posts/{slug}/index.html">{escape(item["title"])}</a></h3>
@@ -1018,8 +1071,10 @@ def main() -> None:
     write_stories(articles)
     for slug in articles:
         write_article(slug, articles, pairs_inv)
+    related_n = ensure_en_related_blocks(articles)
     print(f"patched {n} Arabic HTML files")
     print(f"wrote {len(articles)} English articles + /en/index.html")
+    print(f"ensured Related on {related_n} English articles")
 
 
 if __name__ == "__main__":

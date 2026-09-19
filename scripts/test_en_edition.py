@@ -5,9 +5,16 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from homepage_thumbs import (  # noqa: E402
+    HOMEPAGE_UNIQUE_THUMBS,
+    NAYEF_LOCKED_PRIMARY_ALTS,
+    NAYEF_LOCKED_PRIMARY_IMAGES,
+)
 DOCS = ROOT / "docs"
 PAIRS = json.loads((ROOT / "content" / "en" / "pairs.json").read_text(encoding="utf-8"))["pairs"]
 
@@ -58,12 +65,12 @@ def test_en_homepage_featured_2026() -> None:
     assert CABS_EN in html
     assert SUHAIL_EN in html
     assert "80,000" in html or "80,000 Visitors" in html
-    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in html
-    assert "Short-toed snake eagle (Circaetus gallicus)" in html
+    assert "kaps-makshab-apu-fries-hero.jpg" in html
     assert "AP4I0032" not in html
     mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
-    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in mosaic
-    assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic.split("feature-side", 1)[0]
+    lead = mosaic.split("feature-side", 1)[0]
+    assert "kaps-makshab-apu-fries-hero.jpg" in lead
+    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
     assert "placeholder-thumb" not in html
     assert "GitHub Pages" not in html
     for slug in HOME_TICKER_EN:
@@ -77,8 +84,7 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert f"../../../posts/{SUHAIL_AR}/index.html" in suhail
     assert "اقرأ بالعربية" in cabs
     assert "اقرأ بالعربية" in suhail
-    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in cabs
-    assert "Short-toed snake eagle (Circaetus gallicus)" in cabs
+    assert "kaps-makshab-apu-fries-hero.jpg" in cabs
     assert "AP4I0032" not in cabs
     assert "grus-grus-common-crane.jpg" not in cabs
     assert "hero-closing-80k.jpg" in suhail
@@ -93,6 +99,75 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert "AP4I0032" not in ar_cabs
     fries = DOCS / "media" / "uploads" / "2026" / "09" / "kaps-makshab-apu-fries-hero.jpg"
     assert fries.is_file() and fries.stat().st_size == 304313
+
+
+def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
+    """Nayef: fries only on Kaps/CABS; homepage lead is title-above, not overlay."""
+    assert HOMEPAGE_UNIQUE_THUMBS[CABS_AR].endswith("kaps-makshab-apu-fries-hero.jpg")
+    assert NAYEF_LOCKED_PRIMARY_IMAGES[CABS_AR].endswith("kaps-makshab-apu-fries-hero.jpg")
+    assert NAYEF_LOCKED_PRIMARY_IMAGES[CABS_EN].endswith("kaps-makshab-apu-fries-hero.jpg")
+    assert "APU" in NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR]
+    assert "APU" in NAYEF_LOCKED_PRIMARY_ALTS[CABS_EN]
+
+    fries = DOCS / "media" / "uploads" / "2026" / "09" / "kaps-makshab-apu-fries-hero.jpg"
+    circaetus = (
+        DOCS / "media" / "uploads" / "2026" / "09" / "circaetus-gallicus-short-toed-snake-eagle.jpg"
+    )
+    assert fries.is_file() and fries.stat().st_size == 304313
+    assert circaetus.is_file() and circaetus.stat().st_size > 32
+
+    css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert ".card.feature-lead.kaps-lead" in css
+    assert "flex-direction: column" in css
+
+    thumb_re = re.compile(
+        r'<a\s+class="thumb"[^>]*href="([^"]+)"[^>]*>\s*<img\s+src="([^"]+)"\s+alt="([^"]*)"',
+        re.I,
+    )
+    href_needles = (CABS_EN + "/", CABS_AR + "/")
+
+    def assert_kaps_lead(path: Path, *, ar: bool) -> None:
+        html = path.read_text(encoding="utf-8")
+        mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+        lead = mosaic.split("feature-side", 1)[0]
+        assert "kaps-lead" in lead
+        assert "overlay" not in lead
+        assert lead.find("class=\"body\"") < lead.find("class=\"thumb\"")
+        assert "kaps-makshab-apu-fries-hero.jpg" in lead
+        assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
+        if ar:
+            assert "أحد أفراد وحدة APU يعدّ الطعام في الهواء الطلق خلال استراحة" in lead
+        else:
+            assert "A member of the APU team prepares food outdoors during a break" in lead
+        assert "kaps-stack" in html.split("site.css?v=", 1)[1][:40]
+
+    assert_kaps_lead(DOCS / "index.html", ar=True)
+    assert_kaps_lead(DOCS / "en" / "index.html", ar=False)
+
+    leftover = []
+    related_ok = 0
+    for path in DOCS.rglob("*.html"):
+        text = path.read_text(encoding="utf-8")
+        if not any(n in text for n in href_needles):
+            continue
+        for href, src, alt in thumb_re.findall(text):
+            if not any(n in href for n in href_needles):
+                continue
+            if "kaps-makshab-apu-fries-hero.jpg" not in src:
+                leftover.append((str(path.relative_to(ROOT)), href, src))
+            if "circaetus" in src.lower() or "snake eagle" in alt.lower():
+                leftover.append((str(path.relative_to(ROOT)), href, src, alt))
+            related_ok += 1
+        if path.name == "index.html" and any(p in str(path) for p in (CABS_EN, CABS_AR)):
+            if "circaetus-gallicus-short-toed-snake-eagle.jpg" in text:
+                leftover.append((str(path.relative_to(ROOT)), "article-body", "circaetus"))
+    assert leftover == []
+    assert related_ok > 0
+
+    src = (ROOT / "scripts" / "build_en_edition.py").read_text(encoding="utf-8")
+    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src
+    assert "kaps-lead" in src
+    assert "Short-toed snake eagle" not in src
 
 
 def test_css_keeps_mast_top_visible() -> None:
@@ -163,8 +238,8 @@ def test_en_nested_nav_paths() -> None:
     assert 'href="../../category/صيد/index.html"' in stories
     assert 'href="../../../category/صيد/index.html"' in article
     assert "IBM+Plex+Sans" in article
-    assert "?v=20260919-en-qa" in article
-    assert "?v=20260919-en-qa" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "?v=20260919-kaps-stack-en" in article
+    assert "?v=20260919-kaps-stack-en" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     grid = home.split("September 2026", 1)[1]
     assert "Awareness and Responsibility… Personalities" not in grid
@@ -173,12 +248,33 @@ def test_en_nested_nav_paths() -> None:
     assert "saudi-hunting-season-2026-card.jpg" in home
 
 
+def test_every_en_page_is_ltr_plex() -> None:
+    """Single source of truth: every EN page, not homepage only."""
+    css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert "direction: ltr !important" in css
+    pages = sorted((DOCS / "en").rglob("index.html"))
+    assert len(pages) >= 16
+    for path in pages:
+        html = path.read_text(encoding="utf-8")
+        assert 'lang="en"' in html
+        assert 'dir="ltr"' in html
+        assert 'dir="rtl"' not in html
+        assert "IBM+Plex+Sans" in html
+        assert "IBM+Plex+Serif" in html
+        assert "family=Cairo" not in html
+        assert "?v=20260919-kaps-stack-en" in html
+        assert "19 Sep 2026" not in html
+        assert 'class="ticker-track"' in html
+
+
 if __name__ == "__main__":
     test_pairs_cover_reviewed_drafts()
     test_homepage_has_visible_language_switch()
     test_en_homepage_featured_2026()
     test_cabs_and_suhail_twins_link_back()
+    test_kaps_thumbs_are_fries_and_lead_is_stacked()
     test_css_keeps_mast_top_visible()
     test_en_ltr_typography_and_ticker()
     test_en_nested_nav_paths()
+    test_every_en_page_is_ltr_plex()
     print("test_en_edition: ok")
