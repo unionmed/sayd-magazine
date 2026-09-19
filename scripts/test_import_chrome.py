@@ -26,6 +26,30 @@ chrome_ticker = import_wxr.chrome_ticker
 layout = import_wxr.layout
 load_ticker_items = import_wxr.load_ticker_items
 load_homepage_lists = import_wxr.load_homepage_lists
+apply_nayef_category_rule = import_wxr.apply_nayef_category_rule
+build_cat_info = import_wxr.build_cat_info
+sort_posts_newest_first = import_wxr.sort_posts_newest_first
+load_category_extras = import_wxr.load_category_extras
+
+SUHAIL_80K = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+QATAR_80K = "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026"
+KAPS = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
+SAUDI = "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
+BABTAIN = "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
+MIGRATE_HOW = "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو"
+MIGRATE_START = "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية"
+OLD_HUNT = "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه"
+
+# Mars 62e435c5 editorial prefix on docs/category/صيد — do not regress.
+MARS_HUNTING_TOP = [
+    KAPS,
+    SUHAIL_80K,
+    QATAR_80K,
+    SAUDI,
+    BABTAIN,
+    MIGRATE_HOW,
+    MIGRATE_START,
+]
 
 FORBIDDEN = (
     "عاجل",
@@ -142,6 +166,113 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" in lists["omit"]
 
 
+def _listing_slugs(html: str) -> list[str]:
+    """Post-list slugs only — ignore ticker / nav / sidebar."""
+    return re.findall(
+        r'<article class="post-row">.*?<h2><a href="(?:(?:\.\./)*)posts/([^/"]+)/index\.html"',
+        html,
+        re.S,
+    )
+
+
+def _fake_post(
+    slug: str,
+    title: str,
+    when: str,
+    cats: list[tuple[str, str]],
+) -> dict:
+    return {
+        "slug": slug,
+        "title": title,
+        "datetime": when,
+        "date": when,
+        "categories": [
+            {"nicename": nicename, "name": name, "slug": nicename} for nicename, name in cats
+        ],
+    }
+
+
+def test_category_sort_is_datetime_not_title() -> None:
+    posts = [
+        _fake_post("ب-قديم", "أ أول أبجديا", "2015-01-01 00:00:00", [("صيد", "صيد وفروسية")]),
+        _fake_post("ا-جديد", "ي آخر أبجديا", "2026-09-13 12:00:00", [("صيد", "صيد وفروسية")]),
+    ]
+    cats = build_cat_info({}, posts)
+    slugs = [p["slug"] for p in cats["صيد"]["posts"]]
+    assert slugs == ["ا-جديد", "ب-قديم"]
+    assert sort_posts_newest_first(posts)[0]["slug"] == "ا-جديد"
+
+
+def test_nayef_rule_adds_thematic_sayd_for_home_ticker() -> None:
+    """WXR-only أخبار/شريط must still land on صيد after the importer rule."""
+    posts = [
+        _fake_post(OLD_HUNT, "تنظيم الصيد", "2025-09-30 00:00:00", [("صيد", "صيد وفروسية")]),
+        _fake_post(SUHAIL_80K, "80 ألف… سهيل 2026", "2026-09-13 15:22:10", [("أخبار", "أخبار")]),
+        _fake_post(QATAR_80K, "قطر | سهيل 2026", "2026-09-13 15:22:37", [("شريط", "شريط")]),
+        _fake_post(KAPS, "كابس ومكشب", "2026-09-13 22:06:46", [("أخبار", "أخبار")]),
+        _fake_post(SAUDI, "السعودية موسم الصيد", "2026-09-09 03:29:12", [("أخبار", "أخبار")]),
+        _fake_post(
+            BABTAIN,
+            "بالفيديو… مقناص البابطين",
+            "2026-09-08 22:06:01",
+            [("استديو-صيد", "استديو صيد")],
+        ),
+        _fake_post(
+            "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
+            "«صيد» تعود",
+            "2026-09-06 00:00:00",
+            [("كلمتنا", "كلمتنا")],
+        ),
+    ]
+    apply_nayef_category_rule(posts)
+    by_slug = {p["slug"]: p for p in posts}
+    for slug in (SUHAIL_80K, QATAR_80K, KAPS, SAUDI, BABTAIN):
+        slugs = {c["slug"] for c in by_slug[slug]["categories"]}
+        assert "صيد" in slugs, slug
+    # Overlay adds; WordPress categories stay.
+    assert {c["slug"] for c in by_slug[BABTAIN]["categories"]} >= {"استديو-صيد", "صيد"}
+    assert {c["slug"] for c in by_slug[SUHAIL_80K]["categories"]} >= {"أخبار", "صيد"}
+    # Magazine editorial is not auto-tagged hunting just because the title has صيد.
+    assert "صيد" not in {c["slug"] for c in by_slug["صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"]["categories"]}
+
+    hunt = [p["slug"] for p in build_cat_info({}, posts)["صيد"]["posts"]]
+    assert hunt[0] == KAPS
+    assert QATAR_80K in hunt and SUHAIL_80K in hunt
+    assert hunt.index(QATAR_80K) < hunt.index(OLD_HUNT)
+    assert hunt.index(SUHAIL_80K) < hunt.index(OLD_HUNT)
+    assert "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم" not in hunt
+
+
+def test_new_ticker_hunting_story_lands_on_sayd_near_top() -> None:
+    """A future homepage/ticker hunting slug (not in the extras map) still gets صيد."""
+    newbie = "سهيل-2027-افتتاح-المعرض"
+    extras = load_category_extras()
+    assert newbie not in extras
+    posts = [
+        _fake_post(OLD_HUNT, "تنظيم الصيد", "2025-09-30 00:00:00", [("صيد", "صيد وفروسية")]),
+        _fake_post(newbie, "افتتاح سهيل 2027", "2027-09-01 10:00:00", [("أخبار", "أخبار")]),
+    ]
+    apply_nayef_category_rule(posts, extras=extras, surface={newbie})
+    slugs = {c["slug"] for c in posts[1]["categories"]}
+    assert slugs >= {"أخبار", "صيد"}
+    hunt = [p["slug"] for p in build_cat_info({}, posts)["صيد"]["posts"]]
+    assert hunt[0] == newbie
+    assert hunt.index(newbie) < hunt.index(OLD_HUNT)
+
+
+def test_docs_hunting_category_keeps_mars_recency() -> None:
+    """Live صيد وفروسية list from 62e435c5 — Suhail/Kaps stay above archive."""
+    html = (ROOT / "docs" / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
+    slugs = _listing_slugs(html)
+    assert slugs[:7] == MARS_HUNTING_TOP, slugs[:10]
+    assert SUHAIL_80K in slugs
+    assert QATAR_80K in slugs
+    assert OLD_HUNT in slugs
+    assert slugs.index(SUHAIL_80K) < slugs.index(OLD_HUNT)
+    assert slugs.index(QATAR_80K) < slugs.index(OLD_HUNT)
+    assert slugs.index(KAPS) < slugs.index(OLD_HUNT)
+
+
 if __name__ == "__main__":
     test_source_has_no_regression_strings()
     test_ticker_source_is_mars_list()
@@ -149,4 +280,8 @@ if __name__ == "__main__":
     test_layout_footer_and_default_ticker()
     test_docs_already_share_clean_chrome()
     test_homepage_latest_matches_nayef()
+    test_category_sort_is_datetime_not_title()
+    test_nayef_rule_adds_thematic_sayd_for_home_ticker()
+    test_new_ticker_hunting_story_lands_on_sayd_near_top()
+    test_docs_hunting_category_keeps_mars_recency()
     print("ok")
