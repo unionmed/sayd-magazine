@@ -1063,6 +1063,13 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.9rem;
 }
 
+.article-content .placeholder-thumb,
+.article-featured .placeholder-thumb {
+  min-height: 220px;
+  border-radius: 6px;
+  margin: 0.6rem 0;
+}
+
 .empty-note {
   background: #fff8e6;
   border: 1px solid #e6d7a8;

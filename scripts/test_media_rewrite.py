@@ -92,10 +92,51 @@ def test_homepage_local_media() -> None:
         assert path.is_file() and path.stat().st_size > 32, src
 
 
+def test_visible_2022_articles_local_only() -> None:
+    """Homepage-linked 2022+ stories must not hotlink WP uploads from 2022+."""
+    import re
+
+    root = Path(__file__).resolve().parents[1]
+    docs = root / "docs"
+    html = (docs / "index.html").read_text(encoding="utf-8")
+    slugs = sorted(set(re.findall(r'href="posts/([^/"]+)/index.html"', html)))
+    assert slugs
+    year_re = re.compile(r"wp-content/uploads/202[2-6]/", re.I)
+    for slug in slugs:
+        page = docs / "posts" / slug / "index.html"
+        assert page.is_file(), slug
+        text = page.read_text(encoding="utf-8")
+        assert not year_re.search(text), slug
+        assert "media/brand/sayd-logo.png" in text
+        srcs = re.findall(r'<img[^>]+src="([^"]+)"', text, re.I)
+        for src in srcs:
+            if "media/" not in src:
+                continue
+            rel = src.split("media/", 1)[1]
+            path = docs / "media" / rel
+            assert path.is_file() and path.stat().st_size > 32, (slug, src)
+    # Kaps / Suhail / Adonis already-local files stay wired
+    kaps = (docs / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "kaps-makshab-apu-fries-hero.jpg" in kaps
+    suhail = (
+        docs / "posts" / "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا" / "index.html"
+    ).read_text(encoding="utf-8")
+    assert "gallery-alsharq.jpg" in suhail
+    assert "gallery-qna-extra-1.jpg" in suhail
+    adonis = (docs / "posts" / "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "sayd-returns-adonis-editor.jpg" in adonis
+    assert (docs / "CNAME").read_text(encoding="utf-8").strip() == "sayd-magazine.com"
+
+
 if __name__ == "__main__":
     test_uploads_rel()
     test_scope()
     test_public_src_local_only()
     test_rewrite_html()
     test_homepage_local_media()
+    test_visible_2022_articles_local_only()
     print("ok")
