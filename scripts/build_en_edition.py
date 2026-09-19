@@ -101,7 +101,7 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-13",
         "category": "News",
         "author": "Sayd",
-        "image": "media/uploads/2026/09/saudi-hunting-season-2026.jpg",
+        "image": "media/uploads/2026/09/saudi-hunting-season-2026-card.jpg",
         "image_alt": "Saudi Arabia tightens hunting rules",
     },
     "saudi-5000-riyal-hunting-fine-teaser": {

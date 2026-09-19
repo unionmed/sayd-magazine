@@ -170,6 +170,7 @@ def test_en_nested_nav_paths() -> None:
     assert "Awareness and Responsibility… Personalities" not in grid
     assert "brand-wordmark" in home and ">Sayd<" in home
     assert "Untranslated" not in home and "Break Barat" not in home
+    assert "saudi-hunting-season-2026-card.jpg" in home
 
 
 if __name__ == "__main__":
