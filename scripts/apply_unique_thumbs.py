@@ -257,6 +257,16 @@ def drop_placeholder_cards(html: str, featured: set[str] | None = None) -> str:
         flags=re.I | re.S,
     )
 
+    def card_sub(m: re.Match[str]) -> str:
+        block = m.group(0)
+        if _card_is_featured(block, featured):
+            return block
+        if has_placeholder(block):
+            return ""
+        return block
+
+    html = CARD_RE.sub(card_sub, html)
+
     def related_sub(m: re.Match[str]) -> str:
         block = m.group(0)
         block = CARD_RE.sub(

@@ -256,3 +256,23 @@ Wayback CDX + live WP returned no image for:
 
 Bird assignments in this batch are **not done until Mars reviews** — see PR body + `audit/IMAGE-DEDUP.md`.
 
+---
+
+## Hotlink sweep — homepage-linked / recent (2026-09-19)
+
+Mars/Nayef open item #1 (priority over further species fills). No AR/EN CSS or layout edits (ديزاين / Mars LTR stay on `main`). Featured mosaic untouched.
+
+| Result | Count |
+|--------|------:|
+| Shipped HTML pages with live `wp-content` / Jetpack **before** this pass | **550** |
+| Of those, 2022+ **upload-year** hotlinks | **0** (already clean) |
+| Of those, 2022+ **article-dated** posts | **0** (already clean) |
+| Homepage-linked / recent / footer-chrome pages rewritten | **11** |
+| New binaries mirrored (live WP + Wayback CDX / `0im_`) | **0** |
+| Already-local file reused (`رسالة-من-كرواتي-الى-ميشال-عون.jpg`) | **1** |
+| Unrecoverable binaries on those 11 pages (omitted, not green «صيد») | **67** |
+| Homepage-linked pages still shipping a WP/Jetpack URL | **0** |
+| Remaining shipped HTML with pre-2022 archive hotlinks (**deferred**) | **539** |
+
+Touched pages: 10 homepage-linked archive articles (2015–2020) plus footer `pages/شركاؤنا`. Missing gallery / partner-logo files have no Wayback 200 image capture and live WP returns 404 — body `<img>` tags were omitted. Pre-2022 bulk (~539 pages) is still deferred.
+

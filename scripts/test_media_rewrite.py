@@ -2,6 +2,7 @@
 """Sanity checks for media URL rewrite (no network)."""
 
 import re
+import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -278,6 +279,18 @@ def test_visible_2022_articles_local_only() -> None:
     assert (docs / "CNAME").read_text(encoding="utf-8").strip() == "sayd-magazine.com"
 
 
+def test_homepage_linked_pages_have_no_wp_hotlinks() -> None:
+    """Open item #1: homepage-linked / recent pages ship no live WP/Jetpack src."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from hotlink_sweep import HOTLINK_RE, homepage_linked_pages
+    from media_rewrite import FORBIDDEN_SRC_RE
+
+    for path in homepage_linked_pages():
+        text = path.read_text(encoding="utf-8")
+        assert not FORBIDDEN_SRC_RE.search(text), path
+        assert not HOTLINK_RE.search(text), path
+
+
 if __name__ == "__main__":
     test_uploads_rel()
     test_scope()
@@ -290,5 +303,6 @@ if __name__ == "__main__":
     test_uwaisiq_is_sparrowhawk_not_kestrel()
     test_batch2_species_fills_are_unique()
     test_visible_2022_articles_local_only()
+    test_homepage_linked_pages_have_no_wp_hotlinks()
     test_no_green_placeholders_on_home_related_featured()
     print("ok")
