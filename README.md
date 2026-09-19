@@ -61,7 +61,7 @@ If you cannot re-export WP, add a post as Markdown under `content/posts/` follow
 
 ## Media / الوسائط
 
-Homepage, logos, and **2022+** uploads are mirrored into `docs/media/uploads/YYYY/MM/`. The importer rewrites every WordPress / Jetpack / Wayback upload URL to a depth-relative `media/uploads/…` path (custom domain and `github.io/sayd-magazine`). Missing files use a CSS placeholder — **no** live `wp-content` or `web.archive.org` image `src`. Pre-2022 archive bulk download is deferred.
+Chrome logos live at **`docs/media/brand/sayd-logo.png`** and **`sayd-footer-logo.png`** (never the old cached-404 `media/uploads/2020/04/Sayd-Magazine-Logo.png`). Homepage, logos, and **2022+** uploads are mirrored into `docs/media/`. The importer rewrites every WordPress / Jetpack / Wayback upload URL to a depth-relative `media/…` path (custom domain and `github.io/sayd-magazine`). Missing article files use a CSS placeholder — **no** live `wp-content` or `web.archive.org` image `src`. Homepage hero cards that lack a 2026 binary use a thematically matching already-mirrored local image (see `audit/MEDIA-RECOVERY.md`). Pre-2022 archive bulk download is deferred.
 
 ```bash
 python3 scripts/mirror-media.py          # homepage 2022+ + chrome logos only

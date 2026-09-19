@@ -532,10 +532,10 @@ def layout(
         if is_home
         else f"{esc(title)} — {SITE_TITLE}"
     )
-    # Chrome logos live under assets/media/ (copied with the theme) so they
-    # are not stuck behind a cached 404 on /media/uploads/2020/04/….
-    logo = "../" * depth + "assets/media/sayd-logo.png"
-    footer_logo = "../" * depth + "assets/media/sayd-footer-logo.png"
+    # New brand path — never reuse the edge-cached 404
+    # /media/uploads/2020/04/Sayd-Magazine-Logo.png
+    logo = "../" * depth + "media/brand/sayd-logo.png"
+    footer_logo = "../" * depth + "media/brand/sayd-footer-logo.png"
     date_bit = utility_date or format_ar_long_date(datetime.now())
     nav_links = f"""
         <a class="nav-home" href="{home}">الرئيسية</a>
@@ -660,8 +660,42 @@ def paginate_links(page_i: int, pages_n: int) -> str:
     return '<nav class="pagination" aria-label="ترقيم الصفحات">' + "".join(links) + "</nav>"
 
 
-def thumb_html(url: str, alt: str = "", depth: int = 0) -> str:
+# 2026 WP binaries were never archived. Homepage uses already-mirrored
+# local files as temporary stand-ins (audit/MEDIA-RECOVERY.md).
+_STANDIN_RULES = [
+    (["كابس", "مكشب", "خطيب"], "uploads/2025/09/Adonis.jpg"),
+    (["بجع", "pelican"], "uploads/2025/09/AP4I0956-1024x683.jpg"),
+    (["سهيل", "كتارا"], "uploads/2015/09/معرض-الصيد-والفروسية.jpg"),
+    (["السعودية", "غرامة", "موسم"], "uploads/2022/12/بارودة.png"),
+    (["مقناص", "بابطين"], "uploads/2018/01/maher-Copy.jpg"),
+    (["رماية", "رامي", "رالف"], "uploads/2020/05/سينتيا.jpg"),
+    (["صقر", "يشويه"], "uploads/2024/09/Design.png"),
+    (["وروار"], "uploads/2025/09/AP4I0032-1024x683.jpg"),
+]
+_DEFAULT_HOME_STANDIN = "uploads/2024/06/Bird-02.jpeg"
+
+
+def standin_rel(title: str = "", slug: str = "") -> str:
+    blob = f"{slug} {title}"
+    for keys, rel in _STANDIN_RULES:
+        if any(k in blob for k in keys):
+            return rel
+    return _DEFAULT_HOME_STANDIN
+
+
+def thumb_html(
+    url: str,
+    alt: str = "",
+    depth: int = 0,
+    *,
+    home_standin: bool = False,
+    slug: str = "",
+) -> str:
     src = media_url(url, depth) if url else ""
+    if not src and home_standin:
+        rel = standin_rel(alt, slug)
+        if (MEDIA_ROOT / rel).is_file() and (MEDIA_ROOT / rel).stat().st_size > 32:
+            src = f"{'../' * depth}media/{rel}"
     if src:
         return (
             f'<img src="{esc(src)}" alt="{esc(alt)}" loading="lazy" '
@@ -815,13 +849,22 @@ def build_site(data: dict, out: Path) -> None:
     if not utility_date:
         utility_date = format_ar_long_date(datetime.now())
 
+    def home_thumb(p: dict, depth: int = 0) -> str:
+        return thumb_html(
+            p.get("featured") or "",
+            p.get("title") or "",
+            depth,
+            home_standin=True,
+            slug=p.get("slug") or "",
+        )
+
     def card(p: dict, depth: int, heading: str = "h3", cls: str = "") -> str:
         cat = ""
         if p["categories"]:
             cat = f'<span class="cat-pill">{esc(p["categories"][0]["name"])}</span>'
         return f"""
 <article class="card {cls}">
-  <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb_html(p["featured"], p["title"], depth)}</a>
+  <a class="thumb" href="{post_href(p["slug"], depth)}">{home_thumb(p, depth)}</a>
   <div class="body">
     <div class="meta">{esc(p["date_display"])}{cat}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
@@ -831,7 +874,7 @@ def build_site(data: dict, out: Path) -> None:
     def compact_card(p: dict, depth: int) -> str:
         return f"""
 <article class="card card-compact overlay">
-  <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb_html(p["featured"], p["title"], depth)}</a>
+  <a class="thumb" href="{post_href(p["slug"], depth)}">{home_thumb(p, depth)}</a>
   <div class="body">
     <div class="meta">{esc(p["date_display"])}</div>
     <h3><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></h3>
@@ -859,7 +902,7 @@ def build_site(data: dict, out: Path) -> None:
         excerpt = esc(strip_html(p.get("excerpt") or p.get("content") or "", 220))
         return f"""
 <article class="hero-lead">
-  <a class="hero-media thumb" href="{post_href(p["slug"], 0)}">{thumb_html(p["featured"], p["title"], 0)}</a>
+  <a class="hero-media thumb" href="{post_href(p["slug"], 0)}">{home_thumb(p, 0)}</a>
   <div class="hero-overlay">
     <div class="hero-kicker"><span>{esc(p["date_display"])}</span><span class="cat-pill">{cat}</span></div>
     <h1><a href="{post_href(p["slug"], 0)}">{esc(p["title"])}</a></h1>
@@ -874,7 +917,7 @@ def build_site(data: dict, out: Path) -> None:
         cat_html = f'<span class="cat-pill">{cat}</span>' if cat else ""
         return f"""
 <article class="hero-side">
-  <a class="thumb" href="{post_href(p["slug"], 0)}">{thumb_html(p["featured"], p["title"], 0)}{cat_html}</a>
+  <a class="thumb" href="{post_href(p["slug"], 0)}">{home_thumb(p, 0)}{cat_html}</a>
   <div class="meta">{esc(p["date_display"])}</div>
   <h3><a href="{post_href(p["slug"], 0)}">{esc(p["title"])}</a></h3>
   <p class="excerpt">{excerpt}</p>
@@ -993,7 +1036,7 @@ def build_site(data: dict, out: Path) -> None:
             cat = esc(p["categories"][0]["name"]) if p["categories"] else "صيد TV"
             playlist.append(f"""
 <article class="tv-item">
-  <a class="thumb" href="{post_href(p["slug"], 0)}">{thumb_html(p["featured"], p["title"], 0)}</a>
+  <a class="thumb" href="{post_href(p["slug"], 0)}">{home_thumb(p, 0)}</a>
   <div>
     <div class="meta">{cat}</div>
     <h4><a href="{post_href(p["slug"], 0)}">{esc(p["title"])}</a></h4>
@@ -1019,7 +1062,7 @@ def build_site(data: dict, out: Path) -> None:
     <div class="tv-theater">
       <article class="tv-lead">
         <a class="thumb" href="{post_href(lead["slug"], 0)}">
-          {thumb_html(lead["featured"], lead["title"], 0)}
+          {home_thumb(lead, 0)}
           <span class="play" aria-hidden="true"></span>
         </a>
         <div class="body">
@@ -1087,7 +1130,7 @@ def build_site(data: dict, out: Path) -> None:
     <span class="count">{count} مادة</span>
   </div>
   <article class="dossier-lead">
-    <a class="thumb" href="{post_href(lead["slug"], 0)}">{thumb_html(lead["featured"], lead["title"], 0)}</a>
+    <a class="thumb" href="{post_href(lead["slug"], 0)}">{home_thumb(lead, 0)}</a>
     <div class="meta">{esc(lead["date_display"])}</div>
     <h4><a href="{post_href(lead["slug"], 0)}">{esc(lead["title"])}</a></h4>
     <p>{esc(strip_html(lead.get("excerpt") or "", 140))}</p>

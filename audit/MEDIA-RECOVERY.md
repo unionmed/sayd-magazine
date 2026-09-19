@@ -2,7 +2,7 @@
 
 **Scope (Nayef via Mars):** mirror **2022+** uploads plus homepage chrome logos only. Pre-2022 archive bulk download is deferred.
 
-**Standing rule:** the Pages site is fully independent of WordPress. No `sayd-magazine.com/wp-content`, Jetpack, or `web.archive.org` image `src`. Missing files use a CSS placeholder.
+**Standing rule:** the Pages site is fully independent of WordPress. No `sayd-magazine.com/wp-content`, Jetpack, or `web.archive.org` image `src`. Missing **article** files use a CSS placeholder. Homepage hero / card thumbs that lack a local featured file use a thematically matching already-mirrored image (see stand-ins below).
 
 ## Attempted this ship (homepage 2022+ + logos)
 
@@ -31,7 +31,20 @@
 
 A few pre-2022 homepage thumbs were already on disk from an earlier pass; they stay and are used when those cards appear. No further pre-2022 bulk fetch.
 
-## Placeholders (no external URL)
+## Chrome logos (new path — do not reuse cached 404)
+
+GitHub Pages / Fastly cached a 404 for `media/uploads/2020/04/Sayd-Magazine-Logo.png` even though the file is a valid PNG in the repo. Chrome now uses **new** paths only:
+
+| Role | New URL (repo + live) |
+|------|------------------------|
+| Header / favicon | `docs/media/brand/sayd-logo.png` → `https://sayd-magazine.com/media/brand/sayd-logo.png` |
+| Footer | `docs/media/brand/sayd-footer-logo.png` → `https://sayd-magazine.com/media/brand/sayd-footer-logo.png` |
+
+Do **not** point HTML at `media/uploads/2020/04/Sayd-Magazine-Logo.png` or the previous `assets/media/` chrome copies.
+
+## 2026 featured binaries (unrecoverable)
+
+These WP 2026 uploads were never in Wayback / export / repo. Article pages still show a CSS placeholder for the featured block if the file is missing.
 
 - `uploads/2025/09/AP4I9156-Enhanced-NR-1024x683.jpg`
 - `uploads/2026/09/1000468655.jpg`
@@ -42,6 +55,22 @@ A few pre-2022 homepage thumbs were already on disk from an earlier pass; they s
 - `uploads/2026/09/سهيل-2026-—-من-جولة-الافتتاح.jpg`
 - `uploads/2026/09/من-يوميات-فريق-وحدة-مكافحة-الصيد-الجائر-APU-—-استراحة-وإعداد-الطعام.jpg`
 
+## Homepage temporary stand-ins (already-mirrored locals)
+
+Homepage hero / TV / photos / dossiers / cards use `<img src="media/…">` when a local featured file exists. If the 2026 binary is missing, the importer picks a **thematic stand-in already on disk** (not a WP/Wayback hotlink). Replace these when original 2026 files arrive.
+
+| Homepage card (title match) | Stand-in local file | Why |
+|-----------------------------|---------------------|-----|
+| كابس / مكشب / خطيب (lead 2026) | `uploads/2025/09/Adonis.jpg` | autumn bird / field photo already mirrored |
+| بجع / pelican | `uploads/2025/09/AP4I0956-1024x683.jpg` | large waterbird photo already mirrored |
+| سهيل / كتارا (2026 show) | `uploads/2015/09/معرض-الصيد-والفروسية.jpg` | hunting-show / exhibition photo |
+| السعودية / غرامة / موسم (hunting rules) | `uploads/2022/12/بارودة.png` | hunting-arms / season imagery |
+| مقناص / بابطين | `uploads/2018/01/maher-Copy.jpg` | field / hunter portrait |
+| رماية / رامي / رالف | `uploads/2020/05/سينتيا.jpg` | shooting / markswoman |
+| صقر / يشويه | `uploads/2024/09/Design.png` | falcon / magazine art |
+| وروار | `uploads/2025/09/AP4I0032-1024x683.jpg` | bird photography already mirrored |
+| any other homepage card without a file | `uploads/2024/06/Bird-02.jpeg` | default wildlife still |
+
 ## Import rewrite
 
-`scripts/import-wxr.py` + `scripts/media_rewrite.py` rewrite every WP/Jetpack/Wayback upload URL to a depth-relative `media/uploads/…` path when the file exists, otherwise a `placeholder-thumb` block. Future rebuilds do not reintroduce live WP hotlinks. `docs/CNAME` remains `sayd-magazine.com`.
+`scripts/import-wxr.py` + `scripts/media_rewrite.py` rewrite every WP/Jetpack/Wayback upload URL to a depth-relative `media/…` path when the file exists. Homepage missing featured images use the stand-in table above (`<img src>`). Other pages still use a `placeholder-thumb` block. Future rebuilds do not reintroduce live WP hotlinks. `docs/CNAME` remains `sayd-magazine.com`.
