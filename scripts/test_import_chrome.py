@@ -36,6 +36,8 @@ load_homepage_lists = import_wxr.load_homepage_lists
 prefer_recent = import_wxr.prefer_recent
 HOME_PUBLISH_YEAR_MIN = import_wxr.HOME_PUBLISH_YEAR_MIN
 post_publish_year = import_wxr.post_publish_year
+is_platform_promo = import_wxr.is_platform_promo
+home_desk_omit_slugs = import_wxr.home_desk_omit_slugs
 apply_nayef_category_rule = import_wxr.apply_nayef_category_rule
 build_cat_info = import_wxr.build_cat_info
 sort_posts_newest_first = import_wxr.sort_posts_newest_first
@@ -406,6 +408,28 @@ def test_prefer_recent_skips_pre_2022_even_with_local_thumb() -> None:
     assert post_publish_year(old) == 2018
 
 
+def test_prefer_recent_skips_2012_platform_promo() -> None:
+    """2024 WP date does not qualify an about/platform promo that still says 2012."""
+    promo = _fake_post(
+        "المنصة-الرائدة-لنخبة-الصيادين-اللبنا",
+        "المنصة الرائدة لنخبة الصيادين اللبنانيين والعرب ولعشّاق الصيد والطبيعة منذ عام 2012",
+        "2024-10-01 00:00:00",
+        [("أخبار", "أخبار")],
+    )
+    promo["featured"] = "uploads/2024/09/Jocy-229x300.jpeg"
+    news = _fake_post(
+        "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر",
+        "الشهرمان الشائع: طائر مائي محمي ومهاجر نادر في لبنان",
+        "2025-07-11 00:00:00",
+        [("أخبار", "أخبار")],
+    )
+    assert is_platform_promo(promo)
+    assert "المنصة-الرائدة-لنخبة-الصيادين-اللبنا" in home_desk_omit_slugs()
+    picked = prefer_recent([promo, news], 4, media_root=ROOT / "docs" / "media")
+    assert [p["slug"] for p in picked] == [news["slug"]]
+    assert post_publish_year(promo) == 2024
+
+
 def test_featured_mosaic_matches_homepage_json() -> None:
     """Nayef hard rule: mosaic count/order = homepage.json featured array."""
     html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
@@ -506,6 +530,7 @@ if __name__ == "__main__":
     test_new_ticker_hunting_story_lands_on_sayd_near_top()
     test_docs_hunting_category_keeps_mars_recency()
     test_prefer_recent_skips_pre_2022_even_with_local_thumb()
+    test_prefer_recent_skips_2012_platform_promo()
     test_featured_mosaic_matches_homepage_json()
     test_featured_pool_never_drops_for_missing_image()
     test_featured_side_card_stays_without_img()

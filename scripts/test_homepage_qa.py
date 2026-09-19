@@ -98,7 +98,10 @@ def test_homepage_cards_publish_2022_plus() -> None:
         "رئيس-نادي-xdc-سليم-مجاعص-سياحة-الغوص-في-لب",
         "المغامرة-الأردنية-دينا-غلايني-في-البد",
         "رولا-ايمانويل-اتمنى-العيش-في-الادغال-م",
+        "المنصة-الرائدة-لنخبة-الصيادين-اللبنا",
     )
+    memory_span = re.compile(r"2016\s*[–-]\s*2024")
+    old_year = re.compile(r"\b(201[2-9]|2020|2021)\b")
     for rel, marker in (("index.html", "آخر الأخبار"), ("en/index.html", "Latest news")):
         html = (DOCS / rel).read_text(encoding="utf-8")
         for slug in old_slugs:
@@ -109,6 +112,14 @@ def test_homepage_cards_publish_2022_plus() -> None:
             year_m = re.search(r"(20\d{2})", meta.group(1))
             assert year_m, meta.group(1)
             assert int(year_m.group(1)) >= 2022, (rel, meta.group(1))
+            visible = [meta.group(1)]
+            title = re.search(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", card, re.S)
+            if title:
+                visible.append(re.sub(r"<[^>]+>", "", title.group(1)))
+            visible.extend(re.findall(r'alt="([^"]*)"', card))
+            surface = memory_span.sub("", " ".join(visible))
+            hits = old_year.findall(surface)
+            assert not hits, (rel, hits, surface[:180])
         if rel == "index.html":
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
             assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in mosaic
