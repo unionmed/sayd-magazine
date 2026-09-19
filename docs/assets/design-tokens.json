@@ -1,10 +1,5 @@
 {
   "name": "Sayd Editorial Prestige",
-  "version": "2026-09-19",
-  "direction": "rtl",
-  "fontFamily": {
-    "sans": ["IBM Plex Sans Arabic", "IBM Plex Sans", "Tahoma", "Arial", "sans-serif"]
-  },
   "colors": {
     "surface": "#f7faf5",
     "surface-dim": "#d8dbd6",
@@ -58,25 +53,13 @@
     "surface-muted": "#EFECE1",
     "border-brass-light": "#E8DCB8",
     "accent-crimson": "#B82E2E",
-    "brand-gold": "#C59B27",
     "brand-gold-bright": "#D4AF37",
-    "brand-forest-deep": "#0C231A",
-    "brand-saddle": "#8C6239",
-    "text-on-dark-secondary": "#C8D1CC"
+    "brand-gold": "#C59B27",
+    "brand-earth": "#8C6239",
+    "brand-forest-deep": "#0C231A"
   },
   "typography": {
-    "display-xl": { "fontSize": "52px", "fontWeight": "700", "lineHeight": "68px", "letterSpacing": "-0.01em" },
-    "display-xl-mobile": { "fontSize": "34px", "fontWeight": "700", "lineHeight": "46px", "letterSpacing": "-0.005em" },
-    "headline-lg": { "fontSize": "36px", "fontWeight": "700", "lineHeight": "48px" },
-    "headline-lg-mobile": { "fontSize": "26px", "fontWeight": "700", "lineHeight": "36px" },
-    "headline-md": { "fontSize": "26px", "fontWeight": "600", "lineHeight": "36px" },
-    "headline-sm": { "fontSize": "20px", "fontWeight": "600", "lineHeight": "28px" },
-    "title-md": { "fontSize": "17px", "fontWeight": "600", "lineHeight": "24px" },
-    "body-lg": { "fontSize": "19px", "fontWeight": "400", "lineHeight": "32px" },
-    "body-md": { "fontSize": "16px", "fontWeight": "400", "lineHeight": "27px" },
-    "body-sm": { "fontSize": "14px", "fontWeight": "400", "lineHeight": "22px" },
-    "label-lg": { "fontSize": "13px", "fontWeight": "600", "lineHeight": "18px", "letterSpacing": "0.02em" },
-    "label-sm": { "fontSize": "11px", "fontWeight": "600", "lineHeight": "16px", "letterSpacing": "0.03em" }
+    "fontFamily": "IBM Plex Sans Arabic, IBM Plex Sans, sans-serif"
   },
   "rounded": {
     "sm": "0.125rem",
@@ -97,14 +80,5 @@
     "space-lg": "1.5rem",
     "space-xl": "2.5rem",
     "space-2xl": "4rem"
-  },
-  "elevation": {
-    "card": "0 8px 24px -6px rgba(19, 32, 22, 0.07)",
-    "card-border": "rgba(19, 51, 38, 0.08)",
-    "hero-scrim": "linear-gradient(180deg, rgba(12, 35, 26, 0) 35%, rgba(12, 35, 26, 0.92) 100%)"
-  },
-  "layout": {
-    "maxWidth": "1380px",
-    "container": "1280px"
   }
 }

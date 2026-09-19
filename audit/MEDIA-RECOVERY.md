@@ -1,6 +1,8 @@
 # Media recovery — Sayd Magazine static site
 
-**Scope (Nayef via Mars, 2026-09-18):** mirror **2022+** uploads plus homepage chrome logos only. Pre-2022 archive bulk download is deferred. Older article-body images use Wayback `0im_` interim URLs.
+**Scope (Nayef via Mars):** mirror **2022+** uploads plus homepage chrome logos only. Pre-2022 archive bulk download is deferred.
+
+**Standing rule:** the Pages site is fully independent of WordPress. No `sayd-magazine.com/wp-content`, Jetpack, or `web.archive.org` image `src`. Missing files use a CSS placeholder.
 
 ## Attempted this ship (homepage 2022+ + logos)
 
@@ -8,7 +10,7 @@
 |--------|------:|
 | Attempted unique URLs | 20 |
 | Mirrored locally | **12** |
-| Failed (no Wayback image) | **8** |
+| Not on disk (placeholder) | **8** |
 | Unrecoverable 2026 | **7** |
 | Failed 2025 (no capture) | **1** |
 
@@ -27,13 +29,11 @@
 - `uploads/2025/09/AP4I6377-1024x683.jpg`
 - `uploads/2025/09/Adonis.jpg`
 
-A few pre-2022 homepage thumbs were already on disk from the first (now-stopped) download pass; they stay and are used when those cards appear. No further pre-2022 bulk fetch.
+A few pre-2022 homepage thumbs were already on disk from an earlier pass; they stay and are used when those cards appear. No further pre-2022 bulk fetch.
 
-## Unrecoverable / placeholder
+## Placeholders (no external URL)
 
-Wayback has **no image capture**. Homepage featured thumbs use a forest CSS placeholder (not a broken-image icon). Article bodies still point at `https://web.archive.org/web/0im_/ORIGINAL` as an interim.
-
-- `uploads/2025/09/AP4I9156-Enhanced-NR-1024x683.jpg` (عصفور الشمس الفلسطيني — size variant)
+- `uploads/2025/09/AP4I9156-Enhanced-NR-1024x683.jpg`
 - `uploads/2026/09/1000468655.jpg`
 - `uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg`
 - `uploads/2026/09/qna_suhail0120902026.jpg`
@@ -44,9 +44,4 @@ Wayback has **no image capture**. Homepage featured thumbs use a forest CSS plac
 
 ## Import rewrite
 
-`scripts/import-wxr.py` + `scripts/media_rewrite.py` rewrite every `sayd-magazine.com/wp-content/uploads` and Jetpack `i*.wp.com` URL to:
-
-- `media/uploads/YYYY/MM/file` (depth-relative) when the file exists locally
-- Wayback `0im_` otherwise (except 2026 featured thumbs → CSS placeholder)
-
-Future `python3 scripts/import-wxr.py` will not reintroduce live WP hotlinks. `docs/CNAME` is preserved as `sayd-magazine.com`.
+`scripts/import-wxr.py` + `scripts/media_rewrite.py` rewrite every WP/Jetpack/Wayback upload URL to a depth-relative `media/uploads/…` path when the file exists, otherwise a `placeholder-thumb` block. Future rebuilds do not reintroduce live WP hotlinks. `docs/CNAME` remains `sayd-magazine.com`.
