@@ -58,6 +58,12 @@ def test_en_homepage_featured_2026() -> None:
     assert CABS_EN in html
     assert SUHAIL_EN in html
     assert "80,000" in html or "80,000 Visitors" in html
+    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in html
+    assert "Short-toed snake eagle (Circaetus gallicus)" in html
+    assert "AP4I0032" not in html
+    mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in mosaic
+    assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic.split("feature-side", 1)[0]
     assert "placeholder-thumb" not in html
     assert "GitHub Pages" not in html
     for slug in HOME_TICKER_EN:
@@ -71,7 +77,10 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert f"../../../posts/{SUHAIL_AR}/index.html" in suhail
     assert "اقرأ بالعربية" in cabs
     assert "اقرأ بالعربية" in suhail
-    assert "kaps-makshab-apu-fries-hero.jpg" in cabs
+    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in cabs
+    assert "Short-toed snake eagle (Circaetus gallicus)" in cabs
+    assert "AP4I0032" not in cabs
+    assert "grus-grus-common-crane.jpg" not in cabs
     assert "hero-closing-80k.jpg" in suhail
     assert "placeholder-thumb" not in cabs
     assert "placeholder-thumb" not in suhail
@@ -80,6 +89,10 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert f"en/posts/{CABS_EN}/index.html" in ar_cabs
     assert ">English<" in ar_cabs
     assert ">العربية<" in ar_cabs
+    assert "kaps-makshab-apu-fries-hero.jpg" in ar_cabs
+    assert "AP4I0032" not in ar_cabs
+    fries = DOCS / "media" / "uploads" / "2026" / "09" / "kaps-makshab-apu-fries-hero.jpg"
+    assert fries.is_file() and fries.stat().st_size == 304313
 
 
 def test_css_keeps_mast_top_visible() -> None:
