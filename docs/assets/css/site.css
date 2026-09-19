@@ -720,6 +720,25 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 
+
+.feature-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 0;
+}
+.feature-side .feature-stack {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.feature-side .feature-adonis {
+  flex: 0 0 auto;
+}
+.feature-side .feature-adonis .thumb {
+  aspect-ratio: 16 / 9;
+  min-height: 140px;
+}
+
 /* Feature-stack cards: image on top, title below — no text over photo */
 .feature-stack .card.card-stack {
   display: flex;
