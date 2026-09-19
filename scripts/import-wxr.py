@@ -755,8 +755,12 @@ def apply_footer_bottom(html: str, lang: str | None = None) -> str:
     )
     return (
         patched.replace(
-            "assets/css/site.css?v=20260919-en-plex-kaps-p\"",
             "assets/css/site.css?v=20260919-en-plex-kaps-q\"",
+            "assets/css/site.css?v=20260919-en-plex-kaps-r\"",
+            1,
+        ).replace(
+            "assets/css/site.css?v=20260919-en-plex-kaps-p\"",
+            "assets/css/site.css?v=20260919-en-plex-kaps-r\"",
             1,
         ).replace(
             "assets/css/site.css?v=20260919-kaps-caption\"",

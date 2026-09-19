@@ -613,6 +613,15 @@ html[dir="ltr"] .news-strip .ticker-viewport {
 
 .home-section { margin-bottom: 1.15rem; }
 
+/* EN empty / Arabic-only desks: hide vacant shelves. Keep HTML for Bulbul.
+   Do not hide sections that already have EN cards. */
+html[dir="ltr"] .home-section:not(:has(article)),
+html[lang="en"] .home-section:not(:has(article)),
+html[dir="ltr"] .home-section:has(> .en-callout):not(:has(article)),
+html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
+  display: none;
+}
+
 /* ========== Homepage: featured mosaic first, then compact latest ========== */
 .masthead {
   display: flex;
@@ -763,6 +772,30 @@ html[dir="ltr"] .news-strip .ticker-viewport {
   overflow: hidden;
   display: block;
   position: relative;
+}
+
+/* Empty thumbs must not reserve a beige 16/10 box */
+.card .thumb:not(:has(img)),
+.card-compact .thumb:not(:has(img)),
+.post-row .thumb:not(:has(img)) {
+  display: none;
+}
+
+.card.overlay:not(:has(img)) {
+  height: auto;
+}
+.card.overlay:not(:has(img)) .body {
+  position: static;
+  inset: auto;
+  background: var(--card);
+  color: var(--ink);
+  padding: 0.5rem 0.6rem 0.65rem;
+}
+.card.overlay:not(:has(img)) .meta { color: var(--muted); }
+.card.overlay:not(:has(img)) h2 a,
+.card.overlay:not(:has(img)) h3 a { color: var(--ink); }
+.post-row:not(:has(.thumb img)) {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .card .thumb img {
@@ -1008,20 +1041,29 @@ html[dir="ltr"] .news-strip .ticker-viewport {
 
 .grid-4 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
   gap: 0.5rem;
+}
+.grid-4:has(> :nth-child(4)) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
   gap: 0.5rem;
+}
+.grid-3:has(> :nth-child(3)) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-photos {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr));
   gap: 0.45rem;
+}
+.grid-photos:has(> :nth-child(4)) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .card.card-compact .thumb { aspect-ratio: 16 / 10; }
@@ -1386,7 +1428,13 @@ html[dir="ltr"] .news-strip .ticker-viewport {
 @media (max-width: 1040px) {
   .home-layout,
   .article-layout { grid-template-columns: 1fr; }
-  .grid-4 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4,
+  .grid-4:has(> :nth-child(4)) {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  }
+  .grid-4:has(> :nth-child(3)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .featured-mosaic { min-height: 0; }
 }
 
@@ -1431,8 +1479,19 @@ html[dir="ltr"] .news-strip .ticker-viewport {
     max-height: 92px;
   }
   .grid-4,
+  .grid-4:has(> :nth-child(3)),
+  .grid-4:has(> :nth-child(4)),
   .grid-3,
-  .grid-photos { grid-template-columns: repeat(2, 1fr); }
+  .grid-3:has(> :nth-child(3)),
+  .grid-photos,
+  .grid-photos:has(> :nth-child(4)) {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  }
+  .grid-4:has(> :nth-child(2)),
+  .grid-3:has(> :nth-child(2)),
+  .grid-photos:has(> :nth-child(2)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .related-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
