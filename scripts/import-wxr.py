@@ -928,7 +928,9 @@ def build_site(data: dict, out: Path) -> None:
     ticker2 = chrome_ticker(2, ticker_items)
 
     # --- Homepage: featured mosaic first, then compact latest feed ---
-    latest_news = posts[:10]
+    # Featured-only: long Suheil 80k/158 stays in mosaic; Qatar | 80k short stays in ticker/latest.
+    _skip_latest = {"80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"}
+    latest_news = [p for p in posts if p.get("slug") not in _skip_latest][:10]
     featured_pool = [p for p in posts if p.get("featured")][:7]
     if len(featured_pool) < 4:
         featured_pool = posts[:7]
