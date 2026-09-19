@@ -799,6 +799,7 @@ def write_home(articles: dict[str, dict]) -> None:
     <h2><a href="posts/{lead}/index.html">{escape(lead_item["title"])}</a></h2>
   </div>
   <a class="thumb" href="posts/{lead}/index.html"><img src="../{lead_item["image"]}" alt="{escape(lead_item.get("image_alt") or lead_item["title"], quote=True)}" loading="lazy"></a>
+  <p class="kaps-caption">Photo from the anti-poaching unit camp at the Middle East Center for Sustainable Hunting and Anti-Poaching (MECSHAP)</p>
 </article>
           <div class="feature-side">
           <div class="feature-stack">
@@ -837,6 +838,11 @@ def write_home(articles: dict[str, dict]) -> None:
         ar_href="../index.html",
         en_href="index.html",
         articles=articles,
+    )
+    html = html.replace(
+        "assets/css/site.css\"",
+        "assets/css/site.css?v=20260919-kaps-caption\"",
+        1,
     )
     dest = DOCS / "en"
     dest.mkdir(parents=True, exist_ok=True)

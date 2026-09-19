@@ -872,6 +872,14 @@ html[dir="ltr"] .ticker-viewport .ticker-track {
   object-fit: cover;
   object-position: center 28%;
 }
+.featured-mosaic > .card.feature-lead.kaps-lead .kaps-caption {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0.35rem 0.7rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
 
 .featured-col .section-head h2 {
   font-size: 1.15rem;

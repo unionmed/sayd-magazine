@@ -119,6 +119,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
     assert ".card.feature-lead.kaps-lead" in css
     assert "flex-direction: column" in css
+    assert ".kaps-caption" in css
 
     thumb_re = re.compile(
         r'<a\s+class="thumb"[^>]*href="([^"]+)"[^>]*>\s*<img\s+src="([^"]+)"\s+alt="([^"]*)"',
@@ -133,13 +134,21 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         assert "kaps-lead" in lead
         assert "overlay" not in lead
         assert lead.find("class=\"body\"") < lead.find("class=\"thumb\"")
+        assert lead.find("class=\"thumb\"") < lead.find("kaps-caption")
         assert "kaps-makshab-apu-fries-hero.jpg" in lead
         assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
         if ar:
             assert "أحد أفراد وحدة APU يعدّ الطعام في الهواء الطلق خلال استراحة" in lead
+            assert "صورة من مخيم فريق وحدة مكافحة الصيد الجائر في مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر (مكشب)" in lead
+            assert "مخيم وحدة مكافحة الصيد الجائر — مكشب" not in lead
         else:
             assert "A member of the APU team prepares food outdoors during a break" in lead
-        assert "kaps-stack" in html.split("site.css?v=", 1)[1][:40]
+            assert "Photo from the anti-poaching unit camp at the Middle East Center for Sustainable Hunting and Anti-Poaching (MECSHAP)" in lead
+        assert "kaps-caption" in html.split("site.css?v=", 1)[1][:40]
+        body = lead.split("class=\"body\"", 1)[1].split("class=\"thumb\"", 1)[0]
+        assert "kaps-caption" not in body
+        assert "anti-poaching unit camp" not in body
+        assert "صورة من مخيم فريق" not in body
 
     assert_kaps_lead(DOCS / "index.html", ar=True)
     assert_kaps_lead(DOCS / "en" / "index.html", ar=False)
@@ -167,6 +176,8 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
     src = (ROOT / "scripts" / "build_en_edition.py").read_text(encoding="utf-8")
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src
     assert "kaps-lead" in src
+    assert "kaps-caption" in src
+    assert "Photo from the anti-poaching unit camp at the Middle East Center for Sustainable Hunting and Anti-Poaching (MECSHAP)" in src
     assert "Short-toed snake eagle" not in src
 
 
