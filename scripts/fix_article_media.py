@@ -59,7 +59,7 @@ STANDINS: dict[str, str] = {
     "uploads/2026/09/saudi-hunting-season-2026.jpg": "uploads/2022/12/بارودة.png",
     "uploads/2026/09/saudi-hunting-season-2026-1024x683.jpg": "uploads/2022/12/بارودة.png",
     "uploads/2026/09/saudi-hunting-season-2026-300x200.jpg": "uploads/2022/12/بارودة.png",
-    "uploads/2026/09/المركز-الوطني-لتنمية-الحياة-الفطرية-–-السعودية.png": "uploads/2022/12/بارودة.png",
+    "uploads/2026/09/المركز-الوطني-لتنمية-الحياة-الفطرية-–-السعودية.png": "uploads/2026/09/ncw-saudi-wildlife-logo.png",
     "uploads/2026/09/Codex-Image-Sep-9-2026-12_28_47-AM.jpg": "uploads/2025/09/AP4I0956-1024x683.jpg",
     "uploads/2026/09/1000468655.jpg": "uploads/2025/09/AP4I0956-1024x683.jpg",
     "uploads/2026/09/ChatGPT-Image-Sep-7-2026-01_33_30-AM-853x1024.png": "uploads/2025/09/AP4I0956-1024x683.jpg",
