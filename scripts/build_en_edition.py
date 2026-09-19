@@ -19,10 +19,10 @@ CONTENT_EN = ROOT / "content" / "en"
 PAIRS_PATH = CONTENT_EN / "pairs.json"
 
 FONTS = (
-    "https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800"
-    "&family=Noto+Naskh+Arabic:wght@400;500;600;700"
-    "&family=Tajawal:wght@400;500;700&display=swap"
+    "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
+    "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
+CSS_CACHE = "20260919-en-plex-kaps"
 ABOUT_EN = (
     "The magazine of nature’s masters on land, sea, and sky — hunting, "
     "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
@@ -35,6 +35,13 @@ HOME_FEATURED = [
     "cabs-mecshap-autumn-birds-lebanon-khatib",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
+    "sayd-returns-what-we-want-to-offer",
+]
+# Mosaic side stack (includes Memory; do not drop featured stories).
+HOME_MOSAIC_SIDE = [
+    "suhail-2026-closes-decade-katara-80000-visitors",
+    "saudi-sixth-hunting-season-2026-2027-rules",
+    "memory-of-sayd-awareness-responsibility-2016-2024",
     "sayd-returns-what-we-want-to-offer",
 ]
 HOME_LATEST = [
@@ -95,7 +102,7 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-13",
         "category": "News",
         "author": "Sayd",
-        "image": "media/uploads/2026/09/saudi-hunting-season-2026.jpg",
+        "image": "media/uploads/2026/09/saudi-hunting-season-2026-card.jpg",
         "image_alt": "Saudi Arabia tightens hunting rules",
     },
     "saudi-5000-riyal-hunting-fine-teaser": {
@@ -457,7 +464,7 @@ def ticker_html(depth: int, articles: dict[str, dict], lang: str) -> str:
           <span class="label-feed">{escape(label)}</span>
         </div>
         <div class="ticker-viewport" aria-label="{escape(label)}">
-          <div class="ticker-track">
+          <div class="ticker-track ticker-track-ltr">
             <div class="ticker">{inner}</div>
             <div class="ticker" aria-hidden="true">{inner}</div>
           </div>
@@ -477,20 +484,30 @@ def en_chrome(
     articles: dict[str, dict],
     extra_head: str = "",
 ) -> str:
-    css = rel(depth, "assets/css/site.css")
+    css = rel(depth, "assets/css/site.css") + f"?v={CSS_CACHE}"
     logo = rel(depth, "media/brand/sayd-logo.png")
-    footer_logo = rel(depth, "media/brand/sayd-footer-logo.png")
     home_en = rel(depth, "en/index.html")
     home_ar = rel(depth, "index.html")
     stories = rel(depth, "en/stories/index.html")
-    team = rel(depth, "pages/من-نحن/index.html")
-    contact = rel(depth, "pages/إتصل-بنا/index.html")
-    nav = f"""
-        <a class="nav-home" href="{home_en}">Home</a>
-        <a href="{stories}">Stories</a>
-        <a href="{home_ar}">Arabic</a>
-        <a href="{team}">Team</a>
-        <a href="{contact}">Contact</a>"""
+    team = rel(depth, "en/team/index.html")
+    contact = rel(depth, "en/contact/index.html")
+    nav_items = [
+        ("nav-home", "en/index.html", "Home"),
+        ("", "category/صيد/index.html", "Hunting &amp; Equestrian"),
+        ("", "category/رماية/index.html", "Shooting"),
+        ("", "category/عتاد-وسلاح-الصيد/index.html", "Gear &amp; Arms"),
+        ("", "category/رياضات-وسياحة-بيئية/index.html", "Eco-Tourism"),
+        ("", "category/مقابلات-تحقيقات/index.html", "Interviews &amp; Investigations"),
+        ("", "category/صور/index.html", "Photos"),
+        ("", "category/قوانين-وخرائط/index.html", "Laws &amp; Maps"),
+        ("", "category/جعبة-المنوعات/index.html", "Miscellany"),
+        ("nav-all", "articles/index.html", "Archive"),
+    ]
+    nav_links = []
+    for cls, path, label in nav_items:
+        attr = f' class="{cls}"' if cls else ""
+        nav_links.append(f'        <a{attr} href="{rel(depth, path)}">{label}</a>')
+    nav = "\n".join(nav_links)
     return f"""<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -513,7 +530,6 @@ def en_chrome(
     <div class="mast-top">
       <div class="container mast-top-inner">
         <nav class="top-secondary" aria-label="Top links">
-          <a href="{home_en}">Home</a>
           <a href="{team}">Team</a>
           <a href="{contact}">Contact</a>
         </nav>
@@ -523,14 +539,16 @@ def en_chrome(
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="{home_en}">
-          <img class="logo-img" src="{logo}" width="140" height="50" alt="Sayd Magazine">
+          <span class="brand-wordmark" lang="en">Sayd</span>
           <span class="tagline">{escape(TAGLINE_EN)}</span>
         </a>
-        <nav class="main-nav" aria-label="Main menu">{nav}
+        <nav class="main-nav" aria-label="Main menu">
+{nav}
         </nav>
         <details class="nav-toggle">
           <summary>Menu</summary>
-          <nav class="drawer-nav" aria-label="Mobile menu">{nav}
+          <nav class="drawer-nav" aria-label="Mobile menu">
+{nav}
           </nav>
         </details>
       </div>
@@ -542,7 +560,7 @@ def en_chrome(
     <div class="footer-main">
       <div class="container footer-grid">
         <div class="footer-col">
-          <img class="footer-logo" src="{footer_logo}" width="195" height="61" alt="Sayd Magazine">
+          <p class="footer-wordmark" lang="en">Sayd</p>
           <p>{escape(ABOUT_EN)}</p>
         </div>
         <div class="footer-col">
@@ -566,7 +584,7 @@ def en_chrome(
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div>© مجلة صيد · Sayd Magazine</div>
+        <div>© Sayd Magazine</div>
       </div>
     </div>
   </footer>
@@ -727,10 +745,12 @@ def card(slug: str, articles: dict[str, dict], href: str, heading: str = "h3") -
 
 def write_home(articles: dict[str, dict]) -> None:
     lead = HOME_FEATURED[0]
-    side = HOME_FEATURED[1:]
+    side = HOME_MOSAIC_SIDE
     side_html = []
     for slug in side:
         cls = "card card-stack"
+        if slug == "memory-of-sayd-awareness-responsibility-2016-2024":
+            cls += " feature-memory"
         if slug == "sayd-returns-what-we-want-to-offer":
             cls += " feature-adonis"
         item = articles[slug]
@@ -838,11 +858,6 @@ def write_home(articles: dict[str, dict]) -> None:
         ar_href="../index.html",
         en_href="index.html",
         articles=articles,
-    )
-    html = html.replace(
-        "assets/css/site.css\"",
-        "assets/css/site.css?v=20260919-kaps-caption\"",
-        1,
     )
     dest = DOCS / "en"
     dest.mkdir(parents=True, exist_ok=True)
@@ -969,13 +984,13 @@ html[lang="en"] {
   direction: ltr;
 }
 html[lang="en"] .article-content {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-en-serif);
 }
 html[lang="en"] .article-header h1,
 html[lang="en"] .section-head h2,
 html[lang="en"] .card h2,
 html[lang="en"] .card h3 {
-  font-family: var(--font);
+  font-family: var(--font-en);
 }
 .lang-twin {
   margin: 0.45rem 0 0;
@@ -985,7 +1000,7 @@ html[lang="en"] .card h3 {
 .en-callout {
   padding: 12px 16px;
   background: #f7f3e9;
-  border-left: 4px solid #a78643;
+  border-inline-start: 4px solid #a78643;
 }
 .en-video {
   position: relative;

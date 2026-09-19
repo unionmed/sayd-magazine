@@ -144,7 +144,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         else:
             assert "A member of the APU team prepares food outdoors during a break" in lead
             assert "Photo from the anti-poaching unit camp at the Middle East Center for Sustainable Hunting and Anti-Poaching (MECSHAP)" in lead
-        assert "kaps-caption" in html.split("site.css?v=", 1)[1][:40]
+        assert "?v=20260919-en-plex-kaps" in html.split("site.css", 1)[1][:64]
         body = lead.split("class=\"body\"", 1)[1].split("class=\"thumb\"", 1)[0]
         assert "kaps-caption" not in body
         assert "anti-poaching unit camp" not in body
@@ -192,6 +192,98 @@ def test_css_keeps_mast_top_visible() -> None:
     assert hidden is None
 
 
+def test_en_ltr_typography_and_ticker() -> None:
+    html = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "IBM+Plex+Sans" in html
+    assert "IBM+Plex+Serif" in html
+    assert "family=Cairo" not in html
+    assert "19 Sep 2026" not in html
+    assert "19 September 2026" in html
+    assert ">Arabic<" not in html.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
+    assert "Interviews &amp; Investigations" in html
+    assert "Eco-Tourism" in html
+    assert "feature-memory" in html
+    assert "feature-adonis" in html
+    assert "feature-lead" in html
+    assert "home-layout" in html
+    assert ">Sayd TV<" in html
+    assert ">Laws &amp; Maps<" in html
+    assert ">Photos<" in html
+    assert ">Hunting &amp; Equestrian<" in html
+    assert ">Gear &amp; Arms<" in html
+    assert ">Shooting<" in html
+    assert ">Miscellany<" in html
+    assert (DOCS / "en" / "team" / "index.html").is_file()
+    assert (DOCS / "en" / "contact" / "index.html").is_file()
+    assert "en/team/index.html" in html
+    assert "en/contact/index.html" in html
+
+    css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert "--font-en:" in css
+    assert "IBM Plex Sans" in css
+    assert 'html[lang="en"],\nhtml[dir="ltr"]' in css or "html[dir=\"ltr\"] {\n  --font:" in css
+    assert '--font: "IBM Plex Sans"' in css
+    assert "border-inline-start: 4px solid #a78643" in css
+    assert "border-left: 4px solid #a78643" not in css
+    assert "sayd-ticker-ltr" in css
+    assert "translateX(-50%)" in css
+    assert "calc(100% - 40px)" in css
+    assert "padding-inline-end: 2rem" in css
+    assert "saudi-hunting-season-2026" in css
+    assert "animation-name: sayd-ticker-ltr !important" in css
+    assert "ticker-track-ltr" in css
+    assert 'html[lang="en"] .card h2' in css
+    assert 'html[dir="ltr"] .section-head h2' in css
+    assert 'html[dir="ltr"] .card h2' in css
+    assert 'font-family: "IBM Plex Sans"' in css
+    # Headings must not fall back to the Arabic Cairo stack
+    en_head = re.search(
+        r'html\[lang="en"\] \.card h2,\s*html\[lang="en"\] \.card h3,\s*'
+        r"html\[lang=\"en\"\] \.main-nav",
+        css,
+    )
+    assert en_head is not None or "font-family: var(--font-en)" in css
+
+
+def test_en_nested_nav_paths() -> None:
+    stories = (DOCS / "en" / "stories" / "index.html").read_text(encoding="utf-8")
+    article = (
+        DOCS / "en" / "posts" / CABS_EN / "index.html"
+    ).read_text(encoding="utf-8")
+    assert 'href="../../category/صيد/index.html"' in stories
+    assert 'href="../../../category/صيد/index.html"' in article
+    assert "IBM+Plex+Sans" in article
+    assert "?v=20260919-en-plex-kaps" in article
+    assert "?v=20260919-en-plex-kaps" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    grid = home.split("September 2026", 1)[1]
+    assert "Awareness and Responsibility… Personalities" not in grid
+    assert "brand-wordmark" in home and ">Sayd<" in home
+    assert "Untranslated" not in home and "Break Barat" not in home
+    assert "saudi-hunting-season-2026-card.jpg" in home
+
+
+def test_every_en_page_is_ltr_plex() -> None:
+    """Single source of truth: every EN page, not homepage only."""
+    css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert "direction: ltr !important" in css
+    pages = sorted((DOCS / "en").rglob("index.html"))
+    assert len(pages) >= 16
+    for path in pages:
+        html = path.read_text(encoding="utf-8")
+        assert 'lang="en"' in html
+        assert 'dir="ltr"' in html
+        assert 'dir="rtl"' not in html
+        assert "IBM+Plex+Sans" in html
+        assert "IBM+Plex+Serif" in html
+        assert "family=Cairo" not in html
+        assert "?v=20260919-en-plex-kaps" in html
+        assert "ticker-track-ltr" in html
+        assert "19 Sep 2026" not in html
+        assert "ticker-track" in html
+
+
 if __name__ == "__main__":
     test_pairs_cover_reviewed_drafts()
     test_homepage_has_visible_language_switch()
@@ -199,4 +291,7 @@ if __name__ == "__main__":
     test_cabs_and_suhail_twins_link_back()
     test_kaps_thumbs_are_fries_and_lead_is_stacked()
     test_css_keeps_mast_top_visible()
+    test_en_ltr_typography_and_ticker()
+    test_en_nested_nav_paths()
+    test_every_en_page_is_ltr_plex()
     print("test_en_edition: ok")
