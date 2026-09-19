@@ -100,6 +100,7 @@ TICKER_LABEL = "من كل وادي خبر"
 TICKER_CONFIG = CONTENT_DIR / "ticker.json"
 HOMEPAGE_CONFIG = CONTENT_DIR / "homepage.json"
 CATEGORY_OVERLAY = CONTENT_DIR / "category-overlay.json"
+EN_PAIRS_PATH = CONTENT_DIR / "en" / "pairs.json"
 # Never put these in ticker or latest-feed (80k long form stays featured-only).
 DEFAULT_HOME_OMIT = {
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
@@ -834,6 +835,39 @@ def notice_band() -> str:
 </div>"""
 
 
+def load_en_pairs() -> dict[str, str]:
+    if not EN_PAIRS_PATH.exists():
+        return {}
+    try:
+        data = json.loads(EN_PAIRS_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    raw = data.get("pairs") if isinstance(data, dict) else {}
+    if not isinstance(raw, dict):
+        return {}
+    return {str(k): str(v) for k, v in raw.items() if str(k).strip() and str(v).strip()}
+
+
+def lang_switch_html(
+    depth: int,
+    current: str = "ar",
+    *,
+    en_href: str | None = None,
+    ar_href: str | None = None,
+) -> str:
+    """Visible mast-top language control: العربية ↔ English."""
+    ar = ar_href or rel_home(depth)
+    en = en_href or ("../" * depth + "en/index.html")
+    ar_cur = ' class="is-current" aria-current="page"' if current == "ar" else ""
+    en_cur = ' class="is-current" aria-current="page"' if current == "en" else ""
+    return (
+        '<nav class="lang-switch" aria-label="Language">\n'
+        f'          <a href="{ar}" lang="ar" hreflang="ar"{ar_cur}>العربية</a>\n'
+        f'          <a href="{en}" lang="en" hreflang="en"{en_cur}>English</a>\n'
+        "        </nav>"
+    )
+
+
 def layout(
     title: str,
     body: str,
@@ -847,6 +881,8 @@ def layout(
     ticker: str = "",
     is_home: bool = False,
     utility_date: str = "",
+    en_href: str | None = None,
+    ar_href: str | None = None,
 ) -> str:
     """Single shared chrome (masthead + ticker + footer) for every page.
 
@@ -907,7 +943,7 @@ def layout(
         <nav class="top-secondary" aria-label="روابط علوية">
           {top_right}
         </nav>
-        <a class="top-en" href="{home}">{SITE_TITLE_EN}</a>
+        {lang_switch_html(depth, "ar", en_href=en_href, ar_href=ar_href or home)}
       </div>
     </div>
     <header class="site-header">
@@ -1154,6 +1190,7 @@ def build_site(data: dict, out: Path) -> None:
     ticker0 = chrome_ticker(0, ticker_items)
     ticker1 = chrome_ticker(1, ticker_items)
     ticker2 = chrome_ticker(2, ticker_items)
+    en_pairs = load_en_pairs()
 
     # --- Homepage: Nayef editorial lists (never latest-N / omitted slugs) ---
     home_lists = load_homepage_lists()
@@ -1603,6 +1640,8 @@ def build_site(data: dict, out: Path) -> None:
             ticker=ticker0,
             is_home=True,
             utility_date=utility_date,
+            en_href="en/index.html",
+            ar_href="index.html",
         ),
         encoding="utf-8",
     )
@@ -1699,6 +1738,12 @@ def build_site(data: dict, out: Path) -> None:
                 footer_links=footer_links_at(2),
                 top_links=top2,
                 ticker=ticker2,
+                en_href=(
+                    f"../../en/posts/{en_pairs[p['slug']]}/index.html"
+                    if p.get("slug") in en_pairs
+                    else "../../en/index.html"
+                ),
+                ar_href="index.html",
             ),
             encoding="utf-8",
         )

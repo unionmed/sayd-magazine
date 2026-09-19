@@ -105,6 +105,10 @@ def test_layout_footer_and_default_ticker() -> None:
         assert title in page
     assert 'src="../../media/brand/sayd-logo.png"' in page
     assert 'src="../../media/brand/sayd-footer-logo.png"' in page
+    assert ">العربية<" in page
+    assert ">English<" in page
+    assert 'class="lang-switch"' in page
+    assert 'class="top-en"' not in page
 
 
 def test_docs_already_share_clean_chrome() -> None:

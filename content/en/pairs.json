@@ -1,0 +1,18 @@
+{
+  "comment": "AR slug → EN slug. Used by docs chrome and scripts/build_en_edition.py.",
+  "pairs": {
+    "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": "memory-of-sayd-awareness-responsibility-2016-2024",
+    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": "suhail-2026-closes-decade-katara-80000-visitors",
+    "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": "qatar-suhail-2026-80000-visitors-teaser",
+    "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا": "suhail-2026-in-photos-falcons-visitors",
+    "السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري": "saudi-hunting-fines-5000-riyal-prohibited-areas",
+    "السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ": "saudi-5000-riyal-hunting-fine-teaser",
+    "السعودية-تطلق-موسم-الصيد-السادس-بضواب": "saudi-sixth-hunting-season-2026-2027-rules",
+    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم": "sayd-returns-what-we-want-to-offer",
+    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": "autumn-migration-how-world-protects-birds-regulates-hunting",
+    "بالفيديو-مقناص-سعود-عبد-العزيز-الباب": "video-saud-al-babtain-maqnas-afghanistan",
+    "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية": "autumn-migration-field-action-protect-flyways-lebanon",
+    "صيد-تعود-بحلة-جديدة-ورؤية-اوسع": "sayd-returns-new-look-wider-vision"
+  }
+}
