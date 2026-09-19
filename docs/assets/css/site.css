@@ -1360,11 +1360,18 @@ html[dir="ltr"] .ticker-viewport {
 }
 
 /* EN wordmark — Latin title instead of Arabic logo glyph */
+html[dir="ltr"] .header-inner {
+  justify-content: flex-start;
+  gap: 1.1rem;
+}
 html[dir="ltr"] .brand {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.7rem;
   min-height: 50px;
+}
+html[dir="ltr"] .main-nav {
+  margin-inline-start: 0.4rem;
 }
 html[dir="ltr"] .brand-wordmark {
   font-family: var(--font-en);
@@ -1377,10 +1384,10 @@ html[dir="ltr"] .brand-wordmark {
 }
 html[dir="ltr"] .brand .tagline {
   font-family: var(--font-en);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 500;
-  max-width: 15.5rem;
-  line-height: 1.3;
+  max-width: 11.75rem;
+  line-height: 1.28;
   align-self: center;
 }
 html[dir="ltr"] .footer-wordmark {
@@ -1440,4 +1447,11 @@ html[dir="ltr"] .card.overlay.feature-lead h2 {
 }
 html[dir="ltr"] .feature-stack .card.card-stack h3 {
   -webkit-line-clamp: 3;
+}
+
+/* Hard guarantee: every LTR document lays out left-to-right, including article pages */
+html[dir="ltr"],
+html[dir="ltr"] body {
+  direction: ltr !important;
+  text-align: start;
 }

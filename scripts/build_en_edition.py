@@ -488,15 +488,15 @@ def en_chrome(
     home_en = rel(depth, "en/index.html")
     home_ar = rel(depth, "index.html")
     stories = rel(depth, "en/stories/index.html")
-    team = rel(depth, "pages/من-نحن/index.html")
-    contact = rel(depth, "pages/إتصل-بنا/index.html")
+    team = rel(depth, "en/team/index.html")
+    contact = rel(depth, "en/contact/index.html")
     nav_items = [
         ("nav-home", "en/index.html", "Home"),
         ("", "category/صيد/index.html", "Hunting &amp; Equestrian"),
         ("", "category/رماية/index.html", "Shooting"),
         ("", "category/عتاد-وسلاح-الصيد/index.html", "Gear &amp; Arms"),
-        ("", "category/رياضات-وسياحة-بيئية/index.html", "Sports &amp; Eco-tourism"),
-        ("", "category/مقابلات-تحقيقات/index.html", "Interviews &amp; Reports"),
+        ("", "category/رياضات-وسياحة-بيئية/index.html", "Sports &amp; Eco-Tourism"),
+        ("", "category/مقابلات-تحقيقات/index.html", "Interviews &amp; Investigations"),
         ("", "category/صور/index.html", "Photos"),
         ("", "category/قوانين-وخرائط/index.html", "Laws &amp; Maps"),
         ("", "category/جعبة-المنوعات/index.html", "Miscellany"),
@@ -529,7 +529,6 @@ def en_chrome(
     <div class="mast-top">
       <div class="container mast-top-inner">
         <nav class="top-secondary" aria-label="Top links">
-          <a href="{home_en}">Home</a>
           <a href="{team}">Team</a>
           <a href="{contact}">Contact</a>
         </nav>

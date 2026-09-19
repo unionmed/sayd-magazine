@@ -101,9 +101,17 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "19 Sep 2026" not in html
     assert "19 September 2026" in html
     assert ">Arabic<" not in html.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
+    assert "Interviews &amp; Investigations" in html
+    assert "Eco-Tourism" in html
     assert "feature-memory" in html
     assert "feature-adonis" in html
     assert "feature-lead" in html
+    assert "home-layout" in html
+    assert ">Sayd TV<" in html
+    assert (DOCS / "en" / "team" / "index.html").is_file()
+    assert (DOCS / "en" / "contact" / "index.html").is_file()
+    assert "en/team/index.html" in html
+    assert "en/contact/index.html" in html
 
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
     assert "--font-en:" in css
