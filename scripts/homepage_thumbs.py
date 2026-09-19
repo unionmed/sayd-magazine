@@ -37,7 +37,7 @@ NAYEF_LOCKED_PRIMARY_IMAGES: dict[str, str] = {
     KAPS_EN_SLUG: KAPS_BAALBEK_REL,
 }
 NAYEF_LOCKED_PRIMARY_ALTS: dict[str, str] = {
-    KAPS_AR_SLUG: "أعضاء من وحدة مكافحة الصيد الجائر (APU) وCABS مع طيور أنقذت خلال دورية مشتركة — مكشب",
+    KAPS_AR_SLUG: "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP",
     KAPS_EN_SLUG: "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
 }
 SUHAIL_KEEP = {

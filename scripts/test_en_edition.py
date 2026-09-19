@@ -116,8 +116,10 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
     assert HOMEPAGE_UNIQUE_THUMBS[CABS_AR].endswith("mecshap-apu-cabs-baalbek-release.jpg")
     assert NAYEF_LOCKED_PRIMARY_IMAGES[CABS_AR].endswith("mecshap-apu-cabs-baalbek-release.jpg")
     assert NAYEF_LOCKED_PRIMARY_IMAGES[CABS_EN].endswith("mecshap-apu-cabs-baalbek-release.jpg")
-    assert "مكشب" in NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR]
-    assert "MECSHAP" in NAYEF_LOCKED_PRIMARY_ALTS[CABS_EN]
+    assert NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR].endswith("MECSHAP")
+    assert "مكشب" not in NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR]
+    assert "كابس" not in NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR]
+    assert NAYEF_LOCKED_PRIMARY_ALTS[CABS_EN].endswith("MECSHAP")
 
     fries = DOCS / "media" / "uploads" / "2026" / "09" / "kaps-makshab-apu-fries-hero.jpg"
     circaetus = (
@@ -149,7 +151,10 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         assert "kaps-makshab-apu-fries-hero.jpg" not in lead
         assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
         if ar:
-            assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) وCABS مع طيور أنقذت خلال دورية مشتركة — مكشب" in lead
+            assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" in lead
+            caption = lead.split('kaps-caption">', 1)[1].split("</p>", 1)[0]
+            assert caption.endswith("MECSHAP")
+            assert "مكشب" not in caption
             assert "<h2>قصص مميزة</h2>" not in html
             assert "CABS و MECSHAP لحماية طيور الخريف" in html
         else:

@@ -502,11 +502,11 @@ def wire_kaps_logos() -> None:
     parts = []
     if mesh:
         parts.append(
-            f'<img src="../../media/{mesh}" alt="شعار مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر — مكشب MECSHAP" width="220" style="display:block;flex:0 1 220px;width:42%;max-width:220px;height:auto;object-fit:contain;">'
+            f'<img src="../../media/{mesh}" alt="شعار مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر — MECSHAP" width="220" style="display:block;flex:0 1 220px;width:42%;max-width:220px;height:auto;object-fit:contain;">'
         )
     if cabs:
         parts.append(
-            f'<img src="../../media/{cabs}" alt="شعار كابس CABS Bird Guard" width="220" style="display:block;flex:0 1 220px;width:42%;max-width:220px;height:auto;object-fit:contain;">'
+            f'<img src="../../media/{cabs}" alt="شعار CABS Bird Guard" width="220" style="display:block;flex:0 1 220px;width:42%;max-width:220px;height:auto;object-fit:contain;">'
         )
     block = (
         '<div id="sayd-cabs-partner-logos" style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px;margin:18px 0 24px;">'
@@ -529,8 +529,8 @@ def wire_kaps_logos() -> None:
         )
         if block not in html:
             html = html.replace(
-                "<p>أعلنت منظمة «كابس»",
-                block + "\n<p>أعلنت منظمة «كابس»",
+                "<p>أعلنت منظمة CABS",
+                block + "\n<p>أعلنت منظمة CABS",
                 1,
             )
     if FORBIDDEN_SRC_RE.search(html):
