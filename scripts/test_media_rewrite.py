@@ -232,7 +232,9 @@ def test_homepage_local_media() -> None:
     html = (root / "docs" / "index.html").read_text(encoding="utf-8")
     assert "wp-content" not in html
     assert "web.archive.org" not in html
-    assert "ad-under-construction" in html
+    assert "ad-under-construction" not in html
+    assert "الموقع قيد التحديث" not in html
+    assert "Under construction" not in html
     assert 'src="media/brand/sayd-logo.png"' in html
     assert 'src="media/brand/sayd-footer-logo.png"' in html
     srcs = re.findall(r"""(?:src|href)=["']([^"']+\.(?:png|jpe?g|gif|webp|svg))["']""", html, re.I)

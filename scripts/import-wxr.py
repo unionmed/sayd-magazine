@@ -1044,27 +1044,13 @@ def top_secondary_html(pages: list[dict], depth: int) -> str:
     return "\n        ".join(parts)
 
 
-def ad_slot(kind: str = "rectangle", label: str = "الموقع قيد التحديث") -> str:
-    """Homepage ad slot currently shows under-construction notice (EN+AR)."""
-    sizes = {
-        "leaderboard": ("728×90", "ad-leaderboard"),
-        "rectangle": ("300×250", "ad-rectangle"),
-        "inline": ("728×90", "ad-inline"),
-    }
-    size, cls = sizes.get(kind, sizes["rectangle"])
-    aria = "الموقع قيد التحديث — Under construction"
-    return f"""
-<aside class="ad-slot {cls} ad-under-construction" aria-label="{esc(aria)}">
-  <span class="ad-copy ad-copy-ar">الموقع قيد التحديث</span>
-  <span class="ad-copy ad-copy-en">Under construction</span>
-</aside>"""
+def ad_slot(kind: str = "rectangle", label: str = "") -> str:
+    """Ad placeholders were retired; keep the hook so templates stay stable."""
+    return ""
 
 
 def notice_band() -> str:
-    return f"""
-<div class="notice-band" aria-label="الموقع قيد التحديث">
-  <div class="container">{ad_slot("leaderboard")}</div>
-</div>"""
+    return ""
 
 
 def load_en_pairs() -> dict[str, str]:
@@ -1795,7 +1781,6 @@ def build_site(data: dict, out: Path) -> None:
       </div>
       <div class="newsletter-cta">
         <a class="more-btn" href="{contact_href}">للتواصل والاشتراك — إتصل بنا</a>
-        <span class="note">الموقع قيد التحديث · Under construction — لا نجمع بيانات من هذه الصفحة بعد.</span>
       </div>
     </div>
   </div>
