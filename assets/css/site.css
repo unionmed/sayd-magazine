@@ -464,10 +464,13 @@ html[dir="ltr"] .ticker-viewport .ticker-track,
 }
 
 html[lang="en"] .ticker-viewport,
-html[dir="ltr"] .ticker-viewport {
-  padding-inline: 0.35rem;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 48px), transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 48px), transparent 100%);
+html[dir="ltr"] .ticker-viewport,
+html[lang="en"] .news-strip .ticker-viewport,
+html[dir="ltr"] .news-strip .ticker-viewport {
+  padding-inline-start: 0.35rem;
+  padding-inline-end: 2rem;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 28px, #000 calc(100% - 40px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 28px, #000 calc(100% - 40px), transparent 100%);
 }
 
 

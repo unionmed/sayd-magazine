@@ -216,7 +216,8 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "border-left: 4px solid #a78643" not in css
     assert "sayd-ticker-ltr" in css
     assert "translateX(-50%)" in css
-    assert "calc(100% - 48px)" in css
+    assert "calc(100% - 40px)" in css
+    assert "padding-inline-end: 2rem" in css
     assert "saudi-hunting-season-2026" in css
     assert "animation-name: sayd-ticker-ltr !important" in css
     assert "ticker-track-ltr" in css
@@ -239,8 +240,8 @@ def test_en_nested_nav_paths() -> None:
     assert 'href="../../category/صيد/index.html"' in stories
     assert 'href="../../../category/صيد/index.html"' in article
     assert "IBM+Plex+Sans" in article
-    assert "?v=20260919-ticker-home" in article
-    assert "?v=20260919-ticker-home" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "?v=20260919-ticker-fade" in article
+    assert "?v=20260919-ticker-fade" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     grid = home.split("September 2026", 1)[1]
@@ -264,7 +265,7 @@ def test_every_en_page_is_ltr_plex() -> None:
         assert "IBM+Plex+Sans" in html
         assert "IBM+Plex+Serif" in html
         assert "family=Cairo" not in html
-        assert "?v=20260919-ticker-home" in html
+        assert "?v=20260919-ticker-fade" in html
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html
         assert "ticker-track" in html
