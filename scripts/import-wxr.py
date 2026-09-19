@@ -96,6 +96,23 @@ TOP_SECONDARY = [
 
 TICKER_LABEL = "من كل وادي خبر"
 TICKER_CONFIG = CONTENT_DIR / "ticker.json"
+HOMEPAGE_CONFIG = CONTENT_DIR / "homepage.json"
+# Never put these in ticker or latest-feed (80k long form stays featured-only).
+DEFAULT_HOME_OMIT = {
+    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
+    "عصفور-الشمس-الفلسطيني",
+    "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
+    "السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري",
+    "السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ",
+}
+DEFAULT_FEATURED_SLUGS = [
+    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+    "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
+    "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
+    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
+]
 # Mars/Nayef editorial list. One shared chrome for every page — never latest-N
 # posts and never a breaking/urgent label. Rebuilds must emit this same strip.
 DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
@@ -337,6 +354,7 @@ def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
         except json.JSONDecodeError:
             data = {}
         pairs = _ticker_pairs(data.get("items") or [])
+        pairs = [p for p in pairs if p[0] not in DEFAULT_HOME_OMIT]
         if pairs:
             return pairs
 
@@ -349,11 +367,36 @@ def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
                 (m.group(1), html.unescape(m.group(2)).strip())
                 for m in _TICKER_LINK_RE.finditer(block.group(1))
             ]
-            pairs = _ticker_pairs(found)
+            pairs = [p for p in _ticker_pairs(found) if p[0] not in DEFAULT_HOME_OMIT]
             if pairs:
                 return pairs
 
-    return list(DEFAULT_TICKER_ITEMS)
+    return [p for p in DEFAULT_TICKER_ITEMS if p[0] not in DEFAULT_HOME_OMIT]
+
+
+def load_homepage_lists() -> dict[str, list[str]]:
+    """Nayef editorial homepage: featured + latest slugs, plus omit set."""
+    featured = list(DEFAULT_FEATURED_SLUGS)
+    latest = [slug for slug, _ in load_ticker_items()]
+    omit = set(DEFAULT_HOME_OMIT)
+    if HOMEPAGE_CONFIG.exists():
+        try:
+            data = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            data = {}
+        if data.get("featured"):
+            featured = [str(s).strip() for s in data["featured"] if str(s).strip()]
+        if data.get("latest"):
+            latest = [str(s).strip() for s in data["latest"] if str(s).strip()]
+        if data.get("omit_from_ticker_and_latest"):
+            omit = {str(s).strip() for s in data["omit_from_ticker_and_latest"] if str(s).strip()}
+    latest = [s for s in latest if s not in omit]
+    return {"featured": featured, "latest": latest, "omit": sorted(omit)}
+
+
+def pick_posts_by_slug(posts: list[dict], slugs: list[str]) -> list[dict]:
+    by_slug = {p.get("slug"): p for p in posts}
+    return [by_slug[s] for s in slugs if s in by_slug]
 
 
 def chrome_ticker(depth: int, items: list[tuple[str, str]] | None = None) -> str:
@@ -927,13 +970,16 @@ def build_site(data: dict, out: Path) -> None:
     ticker1 = chrome_ticker(1, ticker_items)
     ticker2 = chrome_ticker(2, ticker_items)
 
-    # --- Homepage: featured mosaic first, then compact latest feed ---
-    latest_news = posts[:10]
-    featured_pool = [p for p in posts if p.get("featured")][:7]
+    # --- Homepage: Nayef editorial lists (never latest-N / omitted slugs) ---
+    home_lists = load_homepage_lists()
+    latest_news = pick_posts_by_slug(posts, home_lists["latest"])
+    featured_pool = pick_posts_by_slug(posts, home_lists["featured"])
     if len(featured_pool) < 4:
-        featured_pool = posts[:7]
+        featured_pool = [
+            p for p in posts if p.get("slug") not in DEFAULT_HOME_OMIT
+        ][:5]
     featured_lead = featured_pool[:1]
-    featured_side = featured_pool[1:4]  # Stitch: 3-card side stack
+    featured_side = featured_pool[1:5]
     used_slugs: set[str] = {p["slug"] for p in latest_news + featured_pool}
     utility_date = ""
     if posts and posts[0].get("datetime"):
