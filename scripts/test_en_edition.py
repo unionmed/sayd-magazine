@@ -360,6 +360,24 @@ def test_en_nested_nav_paths() -> None:
     assert "saudi-hunting-season-2026-card.jpg" in home
 
 
+def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
+    """Nayef: auto-fit sparse grids; hide empty thumbs; hide empty EN desks."""
+    css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert "repeat(auto-fit, minmax(min(100%, 11rem), 1fr))" in css
+    assert "repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr))" in css
+    assert ".card .thumb:not(:has(img))" in css
+    assert "html[dir=\"ltr\"] .home-section:not(:has(article))" in css
+    home = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "?v=20260919-en-plex-kaps-r" in home
+    assert "?v=20260919-en-plex-kaps-r" in en
+    assert ">Shooting<" not in en
+    assert ">Laws &amp; Maps<" not in en
+    mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
+    assert "ريتا-الشعار6.jpg" in mosaic
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in mosaic
+
+
 def test_every_en_page_is_ltr_plex() -> None:
     """Single source of truth: every EN page, not homepage only."""
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
@@ -392,5 +410,6 @@ if __name__ == "__main__":
     test_css_keeps_mast_top_visible()
     test_en_ltr_typography_and_ticker()
     test_en_nested_nav_paths()
+    test_homepage_sparse_grids_hide_empty_en_desks()
     test_every_en_page_is_ltr_plex()
     print("test_en_edition: ok")
