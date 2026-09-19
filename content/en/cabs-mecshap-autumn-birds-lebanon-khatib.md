@@ -27,7 +27,7 @@ Source: CABS announcement — 8 September 2026, and Adonis Al-Khatib’s stateme
 
 ## Notes
 
-- EN homepage lead + EN article hero (Mars temporary choice, Sep 2026): `docs/media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg` with alt/caption **Short-toed snake eagle (Circaetus gallicus)**. Never AP4I0032.
+- EN homepage lead + EN article hero (Mars temporary choice, Sep 2026): `docs/media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg` with alt/caption **A member of the APU team prepares food outdoors during a break**. Never AP4I0032.
 - AR lead image stays the APU fries photo (`kaps-makshab-apu-fries-hero.jpg`) with caption: “From the daily field life of the APU anti-poaching team: a break to prepare food outdoors.”
 - CABS expanded in EN as Committee Against Bird Slaughter (standard English name of the organization); AR uses «كابس» (CABS).
 - MECSHAP expanded from AR «مكشب» / center name as given in the quote and byline.

@@ -62,7 +62,7 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-13",
         "category": "News",
         "author": "Sayd",
-        "image": "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
+        "image": "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
         "image_alt": "Short-toed snake eagle (Circaetus gallicus)",
     },
     "suhail-2026-closes-decade-katara-80000-visitors": {
@@ -263,7 +263,7 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
     extra = ""
     if slug == "cabs-mecshap-autumn-birds-lebanon-khatib":
         extra = figure(
-            "media/uploads/2026/09/circaetus-gallicus-short-toed-snake-eagle.jpg",
+            "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
             "Short-toed snake eagle (Circaetus gallicus)",
             "Short-toed snake eagle (Circaetus gallicus)",
             media_prefix,

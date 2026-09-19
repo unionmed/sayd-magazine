@@ -58,11 +58,11 @@ def test_en_homepage_featured_2026() -> None:
     assert CABS_EN in html
     assert SUHAIL_EN in html
     assert "80,000" in html or "80,000 Visitors" in html
-    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in html
+    assert "kaps-makshab-apu-fries-hero.jpg" in html
     assert "Short-toed snake eagle (Circaetus gallicus)" in html
     assert "AP4I0032" not in html
     mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
-    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in mosaic
+    assert "kaps-makshab-apu-fries-hero.jpg" in mosaic
     assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic.split("feature-side", 1)[0]
     assert "placeholder-thumb" not in html
     assert "GitHub Pages" not in html
@@ -77,7 +77,7 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     assert f"../../../posts/{SUHAIL_AR}/index.html" in suhail
     assert "اقرأ بالعربية" in cabs
     assert "اقرأ بالعربية" in suhail
-    assert "circaetus-gallicus-short-toed-snake-eagle.jpg" in cabs
+    assert "kaps-makshab-apu-fries-hero.jpg" in cabs
     assert "Short-toed snake eagle (Circaetus gallicus)" in cabs
     assert "AP4I0032" not in cabs
     assert "grus-grus-common-crane.jpg" not in cabs
