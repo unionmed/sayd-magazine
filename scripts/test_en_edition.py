@@ -69,8 +69,8 @@ def test_en_home_has_no_arabic_archive_mix() -> None:
     after_latest = home.split("Latest news", 1)[1]
     assert "Arabic archive" not in home
     assert "en-callout" not in after_latest
-    assert "<h2>Shooting</h2>" not in home
-    assert "<h2>Laws &amp; Maps</h2>" not in home
+    assert ">Shooting<" not in home
+    assert ">Laws &amp; Maps<" not in home
     assert "great-white-pelican-matn-highway-nayef-krayem" in home
     assert "great-white-pelican-matn-highway-nayef-krayem" in stories
     assert "pelecanus-onocrotalus-great-white-pelican.jpg" in home
@@ -301,12 +301,12 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "feature-lead" in html
     assert "home-layout" in html
     assert ">Sayd TV<" in html
-    assert ">Laws &amp; Maps<" in html
     assert ">Photos<" in html
     assert ">Hunting &amp; Equestrian<" in html
     assert ">Gear &amp; Arms<" in html
-    assert ">Shooting<" in html
     assert ">Miscellany<" in html
+    assert ">Shooting<" not in html
+    assert ">Laws &amp; Maps<" not in html
     assert (DOCS / "en" / "team" / "index.html").is_file()
     assert (DOCS / "en" / "contact" / "index.html").is_file()
     assert "en/team/index.html" in html
