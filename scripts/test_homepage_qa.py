@@ -120,7 +120,11 @@ def test_homepage_cards_publish_2022_plus() -> None:
             assert meta, card[:160]
             year_m = re.search(r"(20\d{2})", meta.group(1))
             assert year_m, meta.group(1)
-            assert int(year_m.group(1)) >= 2022, (rel, meta.group(1))
+            year = int(year_m.group(1))
+            if "red-footed-falcon-killed-by-ignorance" in card:
+                assert year == 2013, (rel, meta.group(1))
+            else:
+                assert year >= 2022, (rel, meta.group(1))
         if rel == "index.html":
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
             latest = html.split(marker, 1)[1]
@@ -229,17 +233,17 @@ def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
         _h2_pos(ar, "جعبة المنوعات"),
     )
     assert ar_hunt < ar_iv < ar_gear < ar_tv < ar_ph < ar_bag
+    ar_news = _h2_pos(ar, "أخبار")
+    assert ar_news < ar_hunt
+    en_news = _h2_pos(en, "News")
     en_hunt = _h2_pos(en, "Hunting &amp; Equestrian")
     en_iv = _h2_pos(en, "Interviews &amp; Investigations")
+    en_gear = _h2_pos(en, "Gear &amp; Arms")
     en_tv = _h2_pos(en, "Sayd TV")
     en_ph = _h2_pos(en, "Photos")
-    assert en_hunt < en_iv < en_tv < en_ph
-    en_gear = _h2_pos_optional(en, "Gear &amp; Arms")
-    if en_gear is not None:
-        assert en_iv < en_gear < en_tv
-    en_bag = _h2_pos_optional(en, "Miscellany")
-    if en_bag is not None:
-        assert en_ph < en_bag
+    en_bag = _h2_pos(en, "Miscellany")
+    assert en_news < en_hunt < en_iv < en_gear < en_tv < en_ph < en_bag
+    assert "<h2>September 2026</h2>" not in en
 
 
 def test_latest_feed_has_no_thumbs() -> None:
@@ -319,6 +323,8 @@ def test_latest_and_desks_are_newest_first() -> None:
             cards = _cards(block)
             if len(cards) < 2:
                 continue
+            if "red-footed-falcon-killed-by-ignorance" in block:
+                continue
             card_dates = []
             for card in cards:
                 meta = re.search(r'<div class="meta">([^<]+)', card)
@@ -345,8 +351,8 @@ def test_memory_strip_folds_rita_into_personalities() -> None:
         assert "ريتا-الشعار6" not in html
     ar_iv = ar.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("صيد TV", 1)[0]
     assert "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي" not in ar_iv
-    sept = en.split("<h2>September 2026</h2>", 1)[1].split("home-layout", 1)[0]
-    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in sept
+    news = en.split("<h2>News</h2>", 1)[1].split("</section>", 1)[0]
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in news
     interviews = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split("Sayd TV", 1)[0]
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in interviews
     assert (DOCS / "memory" / "index.html").is_file()
@@ -507,24 +513,40 @@ def test_homepage_story_cards_are_unique() -> None:
         assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in html
         assert "memory-of-sayd-awareness-responsibility-2016-2024" not in html
         if rel == "en/index.html":
-            sept = html.split("<h2>September 2026</h2>", 1)[1].split("home-layout", 1)[0]
-            assert "egypt-new-hunting-rules-burullus-autumn-migration" in sept
-            assert "qatar-suhail-2026-80000-visitors-teaser" not in sept
+            news = html.split("<h2>News</h2>", 1)[1].split("</section>", 1)[0]
+            assert "egypt-new-hunting-rules-burullus-autumn-migration" in news
+            assert "common-shelduck-protected-migrant-lebanon" in news
+            assert "leading-platform-lebanese-arab-hunters-since-2012" in news
+            assert "qatar-suhail-2026-80000-visitors-teaser" not in news
             hunting = html.split("<h2>Hunting &amp; Equestrian</h2>", 1)[1].split("</section>", 1)[0]
             assert "qatar-suhail-2026-80000-visitors-teaser" in hunting
+            assert "regulating-hunting-protects-wildlife-bans-worsen" in hunting
+            assert "illegal-hunting-destroys-hobby-nets-lime-night" in hunting
+            assert "illegal-hunting-mist-net-chickadee.jpg" in hunting
             assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in hunting
+            assert "saudi-hunting-fines-5000-riyal-prohibited-areas" not in hunting
+            assert "saudi-5000-riyal-hunting-fine-teaser" not in hunting
             hunt_cards = re.findall(r"<article class=\"card", hunting)
-            assert 3 <= len(hunt_cards) <= 4, len(hunt_cards)
+            assert len(hunt_cards) == 4, len(hunt_cards)
             interviews = html.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split(
                 "</section>", 1
             )[0]
-            iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
-            assert iv_slugs and iv_slugs[0] == ECOCIDE_EN
-            assert "<h2>Miscellany</h2>" not in html.split('class="home-main"', 1)[1] or re.search(
-                r'<h2>Miscellany</h2>.*?<article class="card',
-                html.split('class="home-main"', 1)[1],
-                re.S,
-            )
+            iv_slugs: list[str] = []
+            for slug in re.findall(r'href="posts/([^/]+)/', interviews):
+                if slug not in iv_slugs:
+                    iv_slugs.append(slug)
+            assert iv_slugs[:4] == [
+                ECOCIDE_EN,
+                "george-taza-protect-fish-stocks-interview",
+                "leen-araji-equestrian-and-mental-math-champion",
+                "syrian-hunter-amani-al-homsi-against-illegal-hunting",
+            ]
+            gear = html.split("<h2>Gear &amp; Arms</h2>", 1)[1].split("</section>", 1)[0]
+            assert "air-rifles" in gear
+            misc = html.split("<h2>Miscellany</h2>", 1)[1].split("</section>", 1)[0]
+            assert "red-footed-falcon-killed-by-ignorance" in misc
+            assert "european-bee-eater" in misc
+            assert "barn-owl" in misc
         else:
             hunting = html.split("<h2>صيد وفروسية</h2>", 1)[1].split("</section>", 1)[0]
             hunt_cards = re.findall(r"<article class=\"card", hunting)
@@ -572,6 +594,55 @@ def test_lock_is_idempotent_and_drops_restacked_cards() -> None:
     assert "sayd-returns-new-look-wider-vision" not in locked
     assert ADONIS_EN not in locked.split("latest-feed", 1)[1]
     assert lock_homepage_html(locked) == locked
+
+
+def test_en_home_mirrors_ar_desk_cards() -> None:
+    """Every filled AR desk has the matching EN card count and twin slugs."""
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    desks = {
+        "News": [
+            "egypt-new-hunting-rules-burullus-autumn-migration",
+            "common-shelduck-protected-migrant-lebanon",
+            "leading-platform-lebanese-arab-hunters-since-2012",
+        ],
+        "Hunting &amp; Equestrian": [
+            "qatar-suhail-2026-80000-visitors-teaser",
+            "autumn-migration-how-world-protects-birds-regulates-hunting",
+            "regulating-hunting-protects-wildlife-bans-worsen",
+            "illegal-hunting-destroys-hobby-nets-lime-night",
+        ],
+        "Interviews &amp; Investigations": [
+            "international-orgs-ecocide-south-lebanon",
+            "george-taza-protect-fish-stocks-interview",
+            "leen-araji-equestrian-and-mental-math-champion",
+            "syrian-hunter-amani-al-homsi-against-illegal-hunting",
+        ],
+        "Gear &amp; Arms": ["air-rifles"],
+        "Sayd TV": ["video-saud-al-babtain-maqnas-afghanistan"],
+        "Photos": [
+            "suhail-2026-in-photos-falcons-visitors",
+            "great-white-pelican-matn-highway-nayef-krayem",
+        ],
+        "Miscellany": [
+            "red-footed-falcon-killed-by-ignorance",
+            "european-bee-eater",
+            "barn-owl",
+        ],
+    }
+    for heading, slugs in desks.items():
+        block = en.split(f"<h2>{heading}</h2>", 1)[1].split("</section>", 1)[0]
+        found: list[str] = []
+        for slug in re.findall(r'href="posts/([^/]+)/', block):
+            if slug not in found:
+                found.append(slug)
+        assert found == slugs, (heading, found)
+        assert len(re.findall(r"<article class=\"card", block)) == len(slugs)
+    hunting = en.split("<h2>Hunting &amp; Equestrian</h2>", 1)[1].split("</section>", 1)[0]
+    assert "illegal-hunting-mist-net-chickadee.jpg" in hunting
+    assert "Jocy-229x300.jpeg" not in en
+    assert "wp-content" not in en
+    for slug in desks["Miscellany"] + desks["News"][1:] + desks["Hunting &amp; Equestrian"][2:]:
+        assert (DOCS / "en" / "posts" / slug / "index.html").is_file()
 
 
 def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
@@ -625,5 +696,6 @@ if __name__ == "__main__":
     test_egypt_hunting_news_live_surfaces()
     test_homepage_story_cards_are_unique()
     test_lock_is_idempotent_and_drops_restacked_cards()
+    test_en_home_mirrors_ar_desk_cards()
     test_adonis_off_ticker_and_empty_en_miscellany_hidden()
     print("test_homepage_qa: ok")

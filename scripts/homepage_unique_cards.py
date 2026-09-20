@@ -49,7 +49,14 @@ CHICKADEE_ALT_AR = "طائر يُستخرج من شبكة ضبابية"
 SHABAK_NAME = "شبك.jpg"
 
 DEFAULT_OMIT_FROM_HOME = frozenset(
-    {NEW_LOOK_EN, NEW_LOOK_AR, MEMORY_EN, MEMORY_AR}
+    {
+        NEW_LOOK_EN,
+        NEW_LOOK_AR,
+        MEMORY_EN,
+        MEMORY_AR,
+        "saudi-hunting-fines-5000-riyal-prohibited-areas",
+        "saudi-5000-riyal-hunting-fine-teaser",
+    }
 )
 DEFAULT_OMIT_FROM_LATEST = frozenset({ADONIS_EN, ADONIS_AR})
 TICKER_OMIT_SLUGS = frozenset(
@@ -58,27 +65,46 @@ TICKER_OMIT_SLUGS = frozenset(
 # Mosaic + Interviews only. Never mosaic + Hunting / Latest card / 7× dumps.
 MOSAIC_AND_INTERVIEWS = frozenset({ECOCIDE_AR, ECOCIDE_EN})
 
-# After the mosaic owns featured slugs, remaining EN twins land once:
-# magazine desks first, then a leftover September grid (News with no desk).
+# EN desk spine = AR. News is the first magazine desk (never “September 2026”).
+# Saudi fine teasers are EN-only fillers — keep them off Hunting.
+EN_NEWS_SLUGS = [
+    "egypt-new-hunting-rules-burullus-autumn-migration",
+    "common-shelduck-protected-migrant-lebanon",
+    "leading-platform-lebanese-arab-hunters-since-2012",
+]
 EN_DESK_SLUGS: dict[str, list[str]] = {
     "Hunting &amp; Equestrian": [
         "qatar-suhail-2026-80000-visitors-teaser",
-        "saudi-hunting-fines-5000-riyal-prohibited-areas",
-        "saudi-5000-riyal-hunting-fine-teaser",
         "autumn-migration-how-world-protects-birds-regulates-hunting",
+        "regulating-hunting-protects-wildlife-bans-worsen",
+        "illegal-hunting-destroys-hobby-nets-lime-night",
     ],
-    "Interviews &amp; Investigations": [ECOCIDE_EN],
-    "Gear &amp; Arms": [],
-    "Eco-Tourism": [],
+    "Interviews &amp; Investigations": [
+        ECOCIDE_EN,
+        "george-taza-protect-fish-stocks-interview",
+        "leen-araji-equestrian-and-mental-math-champion",
+        "syrian-hunter-amani-al-homsi-against-illegal-hunting",
+    ],
+    "Gear &amp; Arms": ["air-rifles"],
     "Sayd TV": ["video-saud-al-babtain-maqnas-afghanistan"],
     "Photos": [
         "suhail-2026-in-photos-falcons-visitors",
         "great-white-pelican-matn-highway-nayef-krayem",
     ],
-    "Miscellany": [],
+    "Miscellany": [
+        "red-footed-falcon-killed-by-ignorance",
+        "european-bee-eater",
+        "barn-owl",
+    ],
 }
-EN_SEPTEMBER_SLUGS = ["egypt-new-hunting-rules-burullus-autumn-migration"]
+EN_SEPTEMBER_SLUGS = EN_NEWS_SLUGS
 COMPACT_DESKS = frozenset({"Sayd TV", "Photos"})
+EN_SAUDI_FILLERS = frozenset(
+    {
+        "saudi-hunting-fines-5000-riyal-prohibited-areas",
+        "saudi-5000-riyal-hunting-fine-teaser",
+    }
+)
 
 AR_NEWS_SLUGS = [
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
@@ -98,6 +124,12 @@ AR_DESK_SLUGS: dict[str, list[str]] = {
         "لين-عراجي-بطلة-فروسية-وحساب",
         "الصيّادة-السورية-أماني-الحمصي",
     ],
+    "عتاد وسلاح": ["البنادق-الهوائية"],
+    "جعبة المنوعات": [
+        "العُوَيْسِق",
+        "طائر-الوروار-الأوروبي",
+        "بومة-المخازن",
+    ],
 }
 
 AR_FALLBACK_CARDS: dict[str, str] = {
@@ -115,6 +147,175 @@ AR_FALLBACK_CARDS: dict[str, str] = {
     <h3><a href="posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان/index.html">منظمات دولية: إسرائيل ترتكب «إبادة بيئية» في جنوب لبنان</a></h3>
   </div>
 </article>""",
+}
+
+
+def _en_card(
+    slug: str,
+    title: str,
+    date: str,
+    category: str,
+    image: str,
+    alt: str,
+) -> str:
+    href = f"posts/{slug}/index.html"
+    src = f"../{image}"
+    return (
+        f'<article class="card overlay">\n'
+        f'  <a class="thumb" href="{href}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
+        f'  <div class="body">\n'
+        f'    <div class="meta">{date}<span class="cat-pill">{category}</span></div>\n'
+        f'    <h3><a href="{href}">{title}</a></h3>\n'
+        f"  </div>\n"
+        f"</article>"
+    )
+
+
+EN_FALLBACK_CARDS: dict[str, str] = {
+    "egypt-new-hunting-rules-burullus-autumn-migration": _en_card(
+        "egypt-new-hunting-rules-burullus-autumn-migration",
+        "Egypt: New Hunting Rules and Field Action as Autumn Migration Begins",
+        "20 September 2026",
+        "News",
+        "media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
+        "A field researcher removes a bird from illegal nets.",
+    ),
+    "common-shelduck-protected-migrant-lebanon": _en_card(
+        "common-shelduck-protected-migrant-lebanon",
+        "Common Shelduck: A Protected Waterbird and Rare Migrant in Lebanon",
+        "11 July 2025",
+        "News",
+        "media/uploads/2025/07/IMG_3009-2-1024x683.jpg",
+        "Common Shelduck (Tadorna tadorna), a protected waterbird and rare migrant in Lebanon",
+    ),
+    "leading-platform-lebanese-arab-hunters-since-2012": _en_card(
+        "leading-platform-lebanese-arab-hunters-since-2012",
+        "The Leading Platform for Lebanon’s and the Arab World’s Elite Hunters — and for Lovers of Hunting and Nature — Since 2012",
+        "1 October 2024",
+        "News",
+        "media/uploads/2024/09/Jocy-card.jpg",
+        "Editor-in-Chief Jocelyne Bourached Al-Boustany — Sayd Magazine",
+    ),
+    "qatar-suhail-2026-80000-visitors-teaser": _en_card(
+        "qatar-suhail-2026-80000-visitors-teaser",
+        "Qatar | More Than 80,000 Visitors at the Close of Suhail 2026",
+        "13 September 2026",
+        "News",
+        "media/uploads/2026/09/gallery-katara-crowd.jpg",
+        "Visitors at the close of Suhail 2026",
+    ),
+    "autumn-migration-how-world-protects-birds-regulates-hunting": _en_card(
+        "autumn-migration-how-world-protects-birds-regulates-hunting",
+        "With Autumn Migration… How Does the World Protect Birds and Regulate Hunting?",
+        "8 September 2026",
+        "News",
+        "media/uploads/2026/09/narta-egret.jpg",
+        "Little Egret over Narta Lagoon, Albania",
+    ),
+    "regulating-hunting-protects-wildlife-bans-worsen": _en_card(
+        "regulating-hunting-protects-wildlife-bans-worsen",
+        "Regulating Hunting Protects Wildlife… Banning It Worsens the Crisis",
+        "30 September 2025",
+        "News",
+        "media/uploads/2025/09/Adonis.jpg",
+        "Regulating hunting protects wildlife… banning it worsens the crisis",
+    ),
+    "illegal-hunting-destroys-hobby-nets-lime-night": _en_card(
+        "illegal-hunting-destroys-hobby-nets-lime-night",
+        "Illegal Hunting Destroys the Hunting Hobby… Beware of Mist Nets, Birdlime, and Night Hunting",
+        "15 February 2023",
+        "Land Hunting",
+        "media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg",
+        "A bird is freed from a mist net — illegal hunting destroys the hunting hobby",
+    ),
+    ECOCIDE_EN: _en_card(
+        ECOCIDE_EN,
+        "International Organizations: Israel Is Committing “Ecocide” in Southern Lebanon",
+        "20 September 2026",
+        "Interviews &amp; Investigations",
+        "media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
+        "Dense white smoke over vegetation in southern Lebanon",
+    ),
+    "george-taza-protect-fish-stocks-interview": _en_card(
+        "george-taza-protect-fish-stocks-interview",
+        "George Taza: We Must All Take Part in Protecting Fish Stocks",
+        "12 November 2022",
+        "Interviews &amp; Investigations",
+        "media/uploads/2022/11/طازة-3.jpg",
+        "George Taza, head of the Lebanese Fishermen page",
+    ),
+    "leen-araji-equestrian-and-mental-math-champion": _en_card(
+        "leen-araji-equestrian-and-mental-math-champion",
+        "Leen Araji: Equestrian Champion and Mental Math Champion",
+        "22 October 2022",
+        "Equestrian",
+        "media/uploads/2022/10/لين-2.jpg",
+        "Leen Araji, equestrian champion and mental math champion",
+    ),
+    "syrian-hunter-amani-al-homsi-against-illegal-hunting": _en_card(
+        "syrian-hunter-amani-al-homsi-against-illegal-hunting",
+        "Syrian Hunter Amani Al-Homsi: I Oppose Illegal Hunting… I Hope Syria Enacts a Hunting Law Fair to Nature and to the Hunter",
+        "20 August 2022",
+        "Interviews &amp; Investigations",
+        "media/uploads/2022/08/اماني-الحمصي-2.jpg",
+        "Syrian hunter Amani Al-Homsi",
+    ),
+    "air-rifles": _en_card(
+        "air-rifles",
+        "Air Rifles",
+        "20 December 2022",
+        "Gear &amp; Arms",
+        "media/uploads/2022/12/بارودة.png",
+        "An air rifle — spring / gas-ram designs",
+    ),
+    "video-saud-al-babtain-maqnas-afghanistan": _en_card(
+        "video-saud-al-babtain-maqnas-afghanistan",
+        "On Video… Saud Abdulaziz Al-Babtain’s Maqnas in Afghanistan",
+        "8 September 2026",
+        "Sayd TV",
+        "media/uploads/2026/09/babtain-maqnas-afghanistan-yt.jpg",
+        "Saud Abdulaziz Al-Babtain’s maqnas in Afghanistan",
+    ),
+    "suhail-2026-in-photos-falcons-visitors": _en_card(
+        "suhail-2026-in-photos-falcons-visitors",
+        "Suhail 2026 in Photos: Falcons, Visitors, and Faces of the Fair",
+        "13 September 2026",
+        "Photos",
+        "media/uploads/2026/09/gallery-alsharq.jpg",
+        "Suhail 2026 in photos: falcons, visitors, and faces of the fair",
+    ),
+    "great-white-pelican-matn-highway-nayef-krayem": _en_card(
+        "great-white-pelican-matn-highway-nayef-krayem",
+        "Great White Pelican | Photo by Nayef Krayem — Matn Highway, Spring 2026",
+        "9 September 2026",
+        "Photos",
+        "media/uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
+        "Great White Pelican (Pelecanus onocrotalus) — photo by Nayef Krayem, Matn Expressway, spring 2026",
+    ),
+    "red-footed-falcon-killed-by-ignorance": _en_card(
+        "red-footed-falcon-killed-by-ignorance",
+        "The Red-footed Falcon… Killed by the Ignorance of Indiscriminate Shooters",
+        "29 October 2013",
+        "Miscellany",
+        "media/uploads/2014/09/MED-136434753561-519-11.jpg",
+        "Red-footed Falcon (Falco vespertinus)",
+    ),
+    "european-bee-eater": _en_card(
+        "european-bee-eater",
+        "The European Bee-eater",
+        "17 September 2025",
+        "Miscellany",
+        "media/uploads/2025/09/AP4I0956-1024x683.jpg",
+        "European Bee-eater (Merops apiaster)",
+    ),
+    "barn-owl": _en_card(
+        "barn-owl",
+        "The Barn Owl",
+        "13 August 2025",
+        "Miscellany",
+        "media/uploads/2025/09/AP4I6377-1024x683.jpg",
+        "Barn Owl (Tyto alba)",
+    ),
 }
 
 
@@ -284,19 +485,88 @@ def _desk_card_html(
     return _as_desk_card(article, compact=compact)
 
 
+def _insert_section_after(html: str, after_heading: str, section: str) -> str:
+    pattern = (
+        rf'(<h2>{re.escape(after_heading)}</h2>.*?</section>)'
+    )
+    new, n = re.subn(pattern, r"\1\n" + section, html, count=1, flags=re.S)
+    if n != 1:
+        raise SystemExit(f"could not insert section after {after_heading!r}")
+    return new
+
+
+def _move_news_inside_home_main(html: str) -> str:
+    """AR spine: News is the first desk inside home-main, after Memory."""
+    parts = html.split('class="home-main"', 1)
+    if len(parts) == 2 and "<h2>News</h2>" in parts[1]:
+        return html
+    news_match = re.search(
+        r'<section class="home-section">\s*'
+        r'<div class="section-head[^"]*">\s*<h2>News</h2>.*?</section>',
+        html,
+        re.S,
+    )
+    if not news_match:
+        return html
+    news = news_match.group(0)
+    html = html[: news_match.start()] + html[news_match.end() :]
+    html = re.sub(r'(<div class="home-main">)', r"\1\n" + news, html, count=1)
+    return html
+
+
+def _ensure_en_desk_heading(html: str) -> str:
+    """News replaces September 2026; Gear / Miscellany exist so they can fill."""
+    html = html.replace("<h2>September 2026</h2>", "<h2>News</h2>")
+    html = re.sub(
+        r'(<div class="section-head accent-olive">\s*<h2>News</h2>)',
+        r'<div class="section-head accent-red">\n        <h2>News</h2>',
+        html,
+        count=1,
+    )
+    html = _move_news_inside_home_main(html)
+    if "<h2>Gear &amp; Arms</h2>" not in html:
+        html = _insert_section_after(
+            html,
+            "Interviews &amp; Investigations",
+            """        <section class="home-section">
+          <div class="section-head accent-red">
+            <h2>Gear &amp; Arms</h2>
+          </div>
+          <div class="grid-4">
+          </div>
+        </section>""",
+        )
+    if "<h2>Miscellany</h2>" not in html:
+        html = _insert_section_after(
+            html,
+            "Photos",
+            """        <section class="home-section">
+          <div class="section-head accent-olive">
+            <h2>Miscellany</h2>
+          </div>
+          <div class="grid-4">
+          </div>
+        </section>""",
+        )
+    return html
+
+
 def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
     """Place each leftover EN twin on one desk; drop empty desks (no blank grid)."""
-    september = "".join(
-        _as_desk_card(cards[slug], compact=False)
-        for slug in EN_SEPTEMBER_SLUGS
-        if slug in cards
+    html = _ensure_en_desk_heading(html)
+    merged = dict(EN_FALLBACK_CARDS)
+    merged.update(cards)
+    news = "".join(
+        _desk_card_html(slug, merged, compact=False, fallbacks=EN_FALLBACK_CARDS)
+        for slug in EN_NEWS_SLUGS
     )
-    html = _replace_section_grid(html, "September 2026", september, "grid-4")
+    html = _replace_section_grid(html, "News", news, "grid-4")
     for heading, slugs in EN_DESK_SLUGS.items():
         compact = heading in COMPACT_DESKS
         grid = "grid-photos" if compact else "grid-4"
         block = "".join(
-            _desk_card_html(slug, cards, compact=compact) for slug in slugs
+            _desk_card_html(slug, merged, compact=compact, fallbacks=EN_FALLBACK_CARDS)
+            for slug in slugs
         )
         if not block.strip():
             html = _drop_empty_section(html, heading)
@@ -306,15 +576,17 @@ def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
 
 
 def rebuild_ar_home_sections(html: str, cards: dict[str, str]) -> str:
-    """Pin News / Hunting / Interviews so mosaic stories are not restacked."""
+    """Pin News / Hunting / Interviews / Gear / Miscellany so mosaic is not restacked."""
     news = "".join(_desk_card_html(slug, cards, compact=False) for slug in AR_NEWS_SLUGS)
     html = _replace_section_grid(html, "أخبار", news, "grid-4")
     for heading, slugs in AR_DESK_SLUGS.items():
+        compact = heading in {"صور"}
+        grid = "grid-photos" if compact else "grid-4"
         block = "".join(
-            _desk_card_html(slug, cards, compact=False, fallbacks=AR_FALLBACK_CARDS)
+            _desk_card_html(slug, cards, compact=compact, fallbacks=AR_FALLBACK_CARDS)
             for slug in slugs
         )
-        html = _replace_section_grid(html, heading, block, grid="grid-4")
+        html = _replace_section_grid(html, heading, block, grid)
     return html
 
 
