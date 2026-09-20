@@ -1766,6 +1766,17 @@ html[dir="ltr"] .home-section .card.overlay h3 a:hover { color: var(--gold-dark)
 .memory-card--rita .memory-card__photo { object-position: 22% 18%; }
 .memory-card--kardahi .memory-card__photo { object-position: 50% 18%; }
 .memory-card--sara .memory-card__photo { object-position: 58% 32%; }
+.memory-card--nicola .memory-card__photo { object-position: 28% 22%; }
+.memory-card--tony .memory-card__photo { object-position: 72% 20%; }
+.memory-card--babtain .memory-card__photo { object-position: 36% 18%; }
+.memory-card--siham .memory-card__photo { object-position: 70% 28%; }
+.memory-card--hani .memory-card__photo { object-position: 50% 18%; }
+.memory-card--fadi .memory-card__photo { object-position: 48% 16%; }
+
+/* Memory archive page: auto-fit all 10 cards. Home teaser keeps the 4-col lock. */
+.memory-strip--page .memory-strip__grid {
+  grid-template-columns: repeat(auto-fit, minmax(12.75rem, 1fr));
+}
 
 .memory-card__body {
   padding: 0.65rem 0.7rem 0.8rem;
@@ -1829,6 +1840,10 @@ html[lang="en"] .memory-card__quote {
   .memory-strip__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .memory-strip--page .memory-strip__grid {
+    grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  }
 }
 
 @media (max-width: 520px) {
@@ -1836,5 +1851,9 @@ html[lang="en"] .memory-card__quote {
     grid-template-columns: minmax(0, 1fr);
     max-width: 18rem;
     margin-inline: auto;
+  }
+
+  .memory-strip--page .memory-strip__grid {
+    max-width: 18rem;
   }
 }
