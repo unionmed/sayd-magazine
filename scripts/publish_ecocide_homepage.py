@@ -140,16 +140,6 @@ AR_LATEST = f"""<ul class="latest-feed">
 </li>
 
 <li>
-  <a href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html">
-    <span class="feed-text">
-      <span class="feed-cat">كلمتنا</span>
-      <span class="feed-title">«صيد» تعود… وهذا ما نريد أن نقدّمه لكم</span>
-      <span class="feed-date">8 أيلول 2026</span>
-    </span>
-  </a>
-</li>
-
-<li>
   <a href="posts/مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية/index.html">
     <span class="feed-text">
       <span class="feed-cat">أخبار</span>
@@ -213,14 +203,6 @@ EN_LATEST = f"""<ul class="latest-feed">
     <span class="feed-text">
       <span class="feed-cat">News</span>
       <span class="feed-title">With Autumn Migration… How Does the World Protect Birds and Regulate Hunting?</span>
-      <span class="feed-date">8 September 2026</span>
-    </span>
-  </a>
-</li><li>
-  <a href="posts/sayd-returns-what-we-want-to-offer/index.html">
-    <span class="feed-text">
-      <span class="feed-cat">Editorial</span>
-      <span class="feed-title">Sayd Returns… And This Is What We Want to Offer You</span>
       <span class="feed-date">8 September 2026</span>
     </span>
   </a>
@@ -531,28 +513,10 @@ def patch_ar_home() -> None:
         count=1,
         flags=re.S,
     )
-    # Interviews desk: Ecocide first, then remaining newest-first.
+    # Interviews desk: mosaic already owns Ecocide. Do not re-inject it.
     html = re.sub(
         r'(<h2>مقابلات وتحقيقات</h2>.*?<div class="grid-4">)\s*.*?(</div>\s*</section>)',
         r"""\1
-
-<article class="card overlay">
-  <a class="thumb" href="posts/"""
-        + AR_SLUG
-        + f"""/index.html"><img src="{SMOKE}" alt="{AR_ALT}" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">20 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
-    <h3><a href="posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h3>
-  </div>
-</article>
-
-<article class="card overlay">
-  <a class="thumb" href="posts/الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي/index.html"><img src="media/uploads/2024/02/ريتا-الشعار6.jpg" alt="الصيادة ريتا حبيب الشعار: مقتنعة بهوايتي، وسأسافر للصيد في رومانيا.. وأدعو وزير البيئة إلى التشدُّد في مكافحة صيد الليل" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">21 شباط 2024<span class="cat-pill">مقابلات وتحقيقات</span></div>
-    <h3><a href="posts/الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي/index.html">الصيادة ريتا حبيب الشعار: مقتنعة بهوايتي، وسأسافر للصيد في رومانيا.. وأدعو وزير البيئة إلى التشدُّد في مكافحة صيد الليل</a></h3>
-  </div>
-</article>
 
 <article class="card overlay">
   <a class="thumb" href="posts/جورج-تازة-علينا-جميعًا-المشاركة-لحماي/index.html"><img src="media/uploads/2022/11/طازة-3.jpg" alt="جورج تازة: علينا جميعًا المشاركة لحماية الثروة السمكية" loading="lazy"></a>
@@ -623,36 +587,15 @@ def patch_en_home() -> None:
         count=1,
         flags=re.S,
     )
-    # Hunting desk: keep 13 Sept stories before 9 Sept.
+    # Hunting desk: unused twins only — mosaic already owns CABS / Suhail / Saudi.
     html = re.sub(
         r'(<h2>Hunting &amp; Equestrian</h2>.*?<div class="grid-4">)\s*.*?(</div>\s*</section>)',
         r"""\1
-<article class="card overlay">
-  <a class="thumb" href="posts/cabs-mecshap-autumn-birds-lebanon-khatib/index.html"><img src="../media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="APU and CABS members with rescued birds during a joint patrol — MECSHAP" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">13 September 2026<span class="cat-pill">News</span></div>
-    <h3><a href="posts/cabs-mecshap-autumn-birds-lebanon-khatib/index.html">CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner</a></h3>
-  </div>
-</article>
-<article class="card overlay">
-  <a class="thumb" href="posts/suhail-2026-closes-decade-katara-80000-visitors/index.html"><img src="../media/uploads/2026/09/hero-closing-80k.jpg" alt="Falcons at Suhail 2026 in Katara, Doha" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">13 September 2026<span class="cat-pill">News</span></div>
-    <h3><a href="posts/suhail-2026-closes-decade-katara-80000-visitors/index.html">80,000 Visitors and 158 Exhibitors from 15 Countries… Suhail 2026 Closes a Decade of Passion for Hunting and Falconry</a></h3>
-  </div>
-</article>
 <article class="card overlay">
   <a class="thumb" href="posts/qatar-suhail-2026-80000-visitors-teaser/index.html"><img src="../media/uploads/2026/09/gallery-katara-crowd.jpg" alt="Visitors at the close of Suhail 2026" loading="lazy"></a>
   <div class="body">
     <div class="meta">13 September 2026<span class="cat-pill">News</span></div>
     <h3><a href="posts/qatar-suhail-2026-80000-visitors-teaser/index.html">Qatar | More Than 80,000 Visitors at the Close of Suhail 2026</a></h3>
-  </div>
-</article>
-<article class="card overlay">
-  <a class="thumb" href="posts/saudi-sixth-hunting-season-2026-2027-rules/index.html"><img src="../media/uploads/2026/09/ncw-wildlife-card.jpg" alt="National Center for Wildlife — Saudi Arabia" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">9 September 2026<span class="cat-pill">News</span></div>
-    <h3><a href="posts/saudi-sixth-hunting-season-2026-2027-rules/index.html">Saudi Arabia Launches the Sixth Hunting Season and Tightens the Rules: 5,000 Riyals Fine for Prohibited Places</a></h3>
   </div>
 </article>
           </div>
@@ -664,29 +607,6 @@ def patch_en_home() -> None:
     html = re.sub(
         r'(<h2>Interviews &amp; Investigations</h2>.*?<div class="grid-4">)\s*.*?(</div>\s*</section>)',
         r"""\1
-<article class="card overlay">
-  <a class="thumb" href="posts/"""
-        + EN_SLUG
-        + f"""/index.html"><img src="../{SMOKE}" alt="{EN_ALT}" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">20 September 2026<span class="cat-pill">Interviews &amp; Investigations</span></div>
-    <h3><a href="posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
-  </div>
-</article>
-<article class="card overlay">
-  <a class="thumb" href="posts/memory-of-sayd-awareness-responsibility-2016-2024/index.html"><img src="../media/uploads/2024/02/ريتا-الشعار6.jpg" alt="Hunter Rita Habib Al-Shaar — from Sayd magazine’s archive" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">19 September 2026<span class="cat-pill">From Sayd’s Memory</span></div>
-    <h3><a href="posts/memory-of-sayd-awareness-responsibility-2016-2024/index.html">From Sayd’s Memory: A Journey of Awareness and Responsibility (2016–2024)</a></h3>
-  </div>
-</article>
-<article class="card overlay">
-  <a class="thumb" href="posts/sayd-returns-what-we-want-to-offer/index.html"><img src="../media/uploads/2026/09/sayd-returns-adonis-editor.jpg" alt="Adonis Al-Khatib — Sayd returns" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">8 September 2026<span class="cat-pill">Editorial</span></div>
-    <h3><a href="posts/sayd-returns-what-we-want-to-offer/index.html">Sayd Returns… And This Is What We Want to Offer You</a></h3>
-  </div>
-</article>
           </div>
         </section>""",
         html,
@@ -763,6 +683,9 @@ def main() -> None:
     patch_ar_home()
     patch_en_home()
     patch_listings()
+    from homepage_unique_cards import apply_docs
+
+    apply_docs()
     n = sync_ar_tickers()
     print(f"published AR article + homepage mosaic/latest/desks; synced {n} AR tickers")
 

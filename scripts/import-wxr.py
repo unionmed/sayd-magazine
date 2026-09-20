@@ -596,8 +596,25 @@ def load_homepage_lists() -> dict[str, list[str]]:
             latest = [str(s).strip() for s in data["latest"] if str(s).strip()]
         if data.get("omit_from_ticker_and_latest"):
             omit = {str(s).strip() for s in data["omit_from_ticker_and_latest"] if str(s).strip()}
-    latest = [s for s in latest if s not in omit]
-    return {"featured": featured, "latest": latest, "omit": sorted(omit)}
+        if data.get("omit_from_home"):
+            omit_home = {str(s).strip() for s in data["omit_from_home"] if str(s).strip()}
+        else:
+            omit_home = set()
+        if data.get("omit_from_latest"):
+            omit_latest = {str(s).strip() for s in data["omit_from_latest"] if str(s).strip()}
+        else:
+            omit_latest = set()
+    else:
+        omit_home = set()
+        omit_latest = set()
+    latest = [s for s in latest if s not in omit and s not in omit_latest]
+    return {
+        "featured": featured,
+        "latest": latest,
+        "omit": sorted(omit),
+        "omit_from_home": sorted(omit_home),
+        "omit_from_latest": sorted(omit_latest),
+    }
 
 
 def sort_latest_newest_first(posts: list[dict]) -> list[dict]:
@@ -1592,7 +1609,11 @@ def build_site(data: dict, out: Path) -> None:
     featured_pool = featured_posts(posts, home_lists["featured"])
     featured_lead = featured_pool[:1]
     featured_side = featured_pool[1:]
-    used_slugs: set[str] = {p["slug"] for p in latest_news + featured_pool}
+    # Card uniqueness: featured mosaic owns those slugs. Latest is text-only,
+    # so a latest row may still have exactly one desk card. Never refill a
+    # desk with a slug that already has a homepage card.
+    used_slugs: set[str] = {p["slug"] for p in featured_pool}
+    used_slugs.update(home_lists.get("omit_from_home") or [])
     utility_date = ""
     if posts and posts[0].get("datetime"):
         utility_date = format_ar_long_date(parse_date(posts[0]["date"]))
@@ -1945,12 +1966,6 @@ def build_site(data: dict, out: Path) -> None:
                 continue
             unused = [p for p in c["posts"] if p["slug"] not in used_slugs]
             fresh = prefer_recent(unused, 4)
-            if len(fresh) < 4:
-                for p in prefer_recent(c["posts"], 8):
-                    if p not in fresh:
-                        fresh.append(p)
-                    if len(fresh) >= 4:
-                        break
             if not fresh:
                 continue
             fresh = sort_posts_newest_first(fresh)
