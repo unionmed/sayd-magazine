@@ -8,7 +8,8 @@ behind a "Sayd Magazine" brand link.
 Nayef EN rule: /en/ mirrors the Arabic desk spine with English twins.
 Do not run write_home() against the hand-extended EN homepage (it would
 wipe Memory / desks). homepage.json desk_slugs + homepage_unique_cards
-lock News → Hunting → Interviews → Gear → TV → Photos → Miscellany.
+lock Ecocide lead → CABS side → Latest thumbs → Interviews → Gear →
+TV → Photos → Miscellany. News + Hunting stay off home.
 """
 
 from __future__ import annotations
@@ -38,7 +39,7 @@ FONTS = (
     "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
     "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
-CSS_CACHE = "20260919-en-plex-kaps-r"
+CSS_CACHE = "20260920-ecocide-lead"
 NO_THUMB_SLUGS = {
     "autumn-migration-field-action-protect-flyways-lebanon",
 }
@@ -51,15 +52,15 @@ TAGLINE_AR = "مجلة أسياد الطبيعة في البر والبحر وا
 
 # Live homepage / ticker 2026 set (Nayef editorial list).
 HOME_FEATURED = [
-    "cabs-mecshap-autumn-birds-lebanon-khatib",
     "international-orgs-ecocide-south-lebanon",
+    "cabs-mecshap-autumn-birds-lebanon-khatib",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
 ]
-# Mosaic side stack: Ecocide first above Suhail. Memory lives in Latest.
+# Mosaic side stack: CABS/MECSHAP first (not lead), then Suhail / Saudi / Adonis.
 HOME_MOSAIC_SIDE = [
-    "international-orgs-ecocide-south-lebanon",
+    "cabs-mecshap-autumn-birds-lebanon-khatib",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
@@ -70,13 +71,12 @@ HOME_OMIT_FROM_HOME = {
 }
 HOME_LATEST = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
-    "international-orgs-ecocide-south-lebanon",
-    "cabs-mecshap-autumn-birds-lebanon-khatib",
     "qatar-suhail-2026-80000-visitors-teaser",
-    "saudi-sixth-hunting-season-2026-2027-rules",
-    "video-saud-al-babtain-maqnas-afghanistan",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
-    "autumn-migration-field-action-protect-flyways-lebanon",
+    "regulating-hunting-protects-wildlife-bans-worsen",
+    "common-shelduck-protected-migrant-lebanon",
+    "leading-platform-lebanese-arab-hunters-since-2012",
+    "illegal-hunting-destroys-hobby-nets-lime-night",
 ]
 TICKER_TITLES_EN = {
     "egypt-new-hunting-rules-burullus-autumn-migration": "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus",
@@ -1129,13 +1129,19 @@ def write_home(articles: dict[str, dict]) -> None:
         reverse=True,
     )
     latest_items = []
+    featured_set = set(HOME_FEATURED)
     for slug in latest_order:
+        if slug in featured_set:
+            continue
         item = articles[slug]
+        img = item.get("image") or ""
+        if not img:
+            continue
         latest_items.append(
             f"""<li>
   <a href="posts/{slug}/index.html">
+    <span class="feed-thumb"><img src="../{img}" alt="{escape(item.get("image_alt") or item["title"], quote=True)}" loading="lazy"></span>
     <span class="feed-text">
-      <span class="feed-cat">{escape(item["category"])}</span>
       <span class="feed-title">{escape(item["title"])}</span>
       <span class="feed-date">{escape(item["date"])}</span>
     </span>
@@ -1170,13 +1176,12 @@ def write_home(articles: dict[str, dict]) -> None:
     <section class="masthead" aria-label="Featured stories and latest news">
       <div class="featured-col">
         <div class="featured-mosaic">
-<article class="card feature-lead kaps-lead">
+<article class="card overlay feature-lead feature-ecocide">
+  <a class="thumb" href="posts/{lead}/index.html"><img src="../{lead_item["image"]}" alt="{escape(lead_item.get("image_alt") or lead_item["title"], quote=True)}" loading="lazy"></a>
   <div class="body">
     <div class="meta">{escape(lead_item["date"])}<span class="cat-pill">{escape(lead_item["category"])}</span></div>
     <h2><a href="posts/{lead}/index.html">{escape(lead_item["title"])}</a></h2>
   </div>
-  <a class="thumb" href="posts/{lead}/index.html"><img src="../{lead_item["image"]}" alt="{escape(lead_item.get("image_alt") or lead_item["title"], quote=True)}" loading="lazy"></a>
-  <p class="kaps-caption">APU and CABS members with rescued birds during a joint patrol — MECSHAP</p>
 </article>
           <div class="feature-side">
           <div class="feature-stack">

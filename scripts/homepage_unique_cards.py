@@ -1,20 +1,14 @@
 #!/usr/bin/env python3
-"""Lock AR/EN homepage story cards to one visible placement each.
+"""Lock AR/EN homepage story cards to Nayef’s Featured + Latest spine.
 
-Root cause: the hand-extended EN home dumped every twin into
-«September 2026» and then injected the same slugs into featured,
-Latest, and every desk. AR desks refilled featured mosaic slugs
-when a category had fewer than four unused posts. Rebuilds that
-regex-patch desks (publish_ecocide_homepage, etc.) repeated it.
+Spine: Ecocide lead + CABS/MECSHAP side box + up to three more side
+boxes (Suhail, Saudi, Adonis) → Memory strip → Latest thumbs →
+Interviews → Gear → TV → Photos → Miscellany.
 
-Rule: each story slug appears at most once as a visible content
-card (article.card). Ticker, nav, footer, Latest text rows, and
-the Memory personalities strip are not cards.
-
-Nayef exception (2026-09-20): south Lebanon ecocide stays in the
-feature mosaic *and* must lead the Interviews desk. No other
-story may dual-place. Adonis may appear only as feature-adonis —
-never in the ticker.
+News / Hunting desks stay off home (archive only). Featured URLs
+never also appear in Latest. Latest items are small thumb + title +
+date. Adonis is one feature-box only and never in the ticker.
+Ecocide may dual-place: mosaic lead *and* Interviews.
 """
 
 from __future__ import annotations
@@ -42,7 +36,43 @@ MEMORY_EN = "memory-of-sayd-awareness-responsibility-2016-2024"
 MEMORY_AR = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024"
 ECOCIDE_AR = "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
 ECOCIDE_EN = "international-orgs-ecocide-south-lebanon"
+CABS_AR = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
+CABS_EN = "cabs-mecshap-autumn-birds-lebanon-khatib"
+CABS_TITLE_AR = "CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي"
+CABS_TITLE_EN = "CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner"
+SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
+SAUDI_AR = "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
+SAUDI_EN = "saudi-sixth-hunting-season-2026-2027-rules"
 POACHING_AR = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
+POACHING_EN = "illegal-hunting-destroys-hobby-nets-lime-night"
+
+FEATURED_AR = [ECOCIDE_AR, CABS_AR, SUHAIL_AR, SAUDI_AR, ADONIS_AR]
+FEATURED_EN = [ECOCIDE_EN, CABS_EN, SUHAIL_EN, SAUDI_EN, ADONIS_EN]
+FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
+
+LATEST_AR = [
+    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
+    "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
+    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
+    "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه",
+    "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر",
+    "المنصة-الرائدة-لنخبة-الصيادين-اللبنا",
+    POACHING_AR,
+]
+LATEST_EN = [
+    "egypt-new-hunting-rules-burullus-autumn-migration",
+    "qatar-suhail-2026-80000-visitors-teaser",
+    "autumn-migration-how-world-protects-birds-regulates-hunting",
+    "regulating-hunting-protects-wildlife-bans-worsen",
+    "common-shelduck-protected-migrant-lebanon",
+    "leading-platform-lebanese-arab-hunters-since-2012",
+    POACHING_EN,
+]
+
+DROPPED_DESKS_AR = ("أخبار", "صيد وفروسية")
+DROPPED_DESKS_EN = ("News", "September 2026", "Hunting &amp; Equestrian")
+CSS_CACHE = "20260920-ecocide-lead"
 
 CHICKADEE_REL = "uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg"
 CHICKADEE_ALT_AR = "طائر يُستخرج من شبكة ضبابية"
@@ -58,27 +88,15 @@ DEFAULT_OMIT_FROM_HOME = frozenset(
         "saudi-5000-riyal-hunting-fine-teaser",
     }
 )
-DEFAULT_OMIT_FROM_LATEST = frozenset({ADONIS_EN, ADONIS_AR})
+DEFAULT_OMIT_FROM_LATEST = frozenset(FEATURED_SLUGS | {MEMORY_EN, MEMORY_AR})
 TICKER_OMIT_SLUGS = frozenset(
     {ADONIS_EN, ADONIS_AR, NEW_LOOK_EN, NEW_LOOK_AR}
 )
-# Mosaic + Interviews only. Never mosaic + Hunting / Latest card / 7× dumps.
+# Mosaic + Interviews only. Never mosaic + Latest / leftover desks.
 MOSAIC_AND_INTERVIEWS = frozenset({ECOCIDE_AR, ECOCIDE_EN})
 
-# EN desk spine = AR. News is the first magazine desk (never “September 2026”).
-# Saudi fine teasers are EN-only fillers — keep them off Hunting.
-EN_NEWS_SLUGS = [
-    "egypt-new-hunting-rules-burullus-autumn-migration",
-    "common-shelduck-protected-migrant-lebanon",
-    "leading-platform-lebanese-arab-hunters-since-2012",
-]
+# EN desk spine = AR. News + Hunting stay off home (covered by Featured + Latest).
 EN_DESK_SLUGS: dict[str, list[str]] = {
-    "Hunting &amp; Equestrian": [
-        "qatar-suhail-2026-80000-visitors-teaser",
-        "autumn-migration-how-world-protects-birds-regulates-hunting",
-        "regulating-hunting-protects-wildlife-bans-worsen",
-        "illegal-hunting-destroys-hobby-nets-lime-night",
-    ],
     "Interviews &amp; Investigations": [
         ECOCIDE_EN,
         "george-taza-protect-fish-stocks-interview",
@@ -97,7 +115,6 @@ EN_DESK_SLUGS: dict[str, list[str]] = {
         "barn-owl",
     ],
 }
-EN_SEPTEMBER_SLUGS = EN_NEWS_SLUGS
 COMPACT_DESKS = frozenset({"Sayd TV", "Photos"})
 EN_SAUDI_FILLERS = frozenset(
     {
@@ -106,18 +123,7 @@ EN_SAUDI_FILLERS = frozenset(
     }
 )
 
-AR_NEWS_SLUGS = [
-    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
-    "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر",
-    "المنصة-الرائدة-لنخبة-الصيادين-اللبنا",
-]
 AR_DESK_SLUGS: dict[str, list[str]] = {
-    "صيد وفروسية": [
-        "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
-        "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
-        "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه",
-        POACHING_AR,
-    ],
     "مقابلات وتحقيقات": [
         ECOCIDE_AR,
         "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
@@ -145,6 +151,84 @@ AR_FALLBACK_CARDS: dict[str, str] = {
   <div class="body">
     <div class="meta">20 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
     <h3><a href="posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان/index.html">منظمات دولية: إسرائيل ترتكب «إبادة بيئية» في جنوب لبنان</a></h3>
+  </div>
+</article>""",
+    CABS_AR: """<article class="card card-stack">
+  <a class="thumb" href="posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html"><img src="media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html">CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي</a></h3>
+  </div>
+</article>""",
+    SUHAIL_AR: """<article class="card card-stack">
+  <a class="thumb" href="posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html"><img src="media/uploads/2026/09/hero-closing-80k.jpg" alt="80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html">80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة</a></h3>
+  </div>
+</article>""",
+    SAUDI_AR: """<article class="card card-stack">
+  <a class="thumb" href="posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html"><img src="media/uploads/2026/09/ncw-wildlife-card.jpg" alt="المركز الوطني لتنمية الحياة الفطرية — السعودية" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">9 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html">السعودية تطلق موسم الصيد السادس وتشدد على الضوابط</a></h3>
+  </div>
+</article>""",
+    ADONIS_AR: """<article class="card card-stack feature-adonis">
+  <a class="thumb" href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html"><img src="media/uploads/2026/09/sayd-returns-adonis-editor.jpg" alt="أدونيس الخطيب — «صيد» تعود… وهذا ما نريد أن نقدّمه لكم" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">8 أيلول 2026<span class="cat-pill">كلمتنا</span></div>
+    <h3><a href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html">«صيد» تعود… وهذا ما نريد أن نقدّمه لكم</a></h3>
+    <p class="byline" style="font-size:0.72rem;color:var(--muted);margin:0.15rem 0 0;line-height:1.35;">رئيس التحرير أدونيس الخطيب</p>
+  </div>
+</article>""",
+    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": """<article class="card overlay">
+  <a class="thumb" href="posts/مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات/index.html"><img src="media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" alt="باحث ميداني يزيل طائراً من شباك مخالفة." loading="lazy"></a>
+  <div class="body">
+    <div class="meta">20 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات/index.html">مصر: قرار جديد لتنظيم الصيد وملاحقة المخالفات في موسم هجرة الخريف</a></h3>
+  </div>
+</article>""",
+    "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": """<article class="card overlay">
+  <a class="thumb" href="posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html"><img src="media/uploads/2026/09/gallery-katara-crowd.jpg" alt="قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">13 أيلول 2026<span class="cat-pill">صيد وفروسية</span></div>
+    <h3><a href="posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html">قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»</a></h3>
+  </div>
+</article>""",
+    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": """<article class="card overlay">
+  <a class="thumb" href="posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html"><img src="media/uploads/2026/09/duck-aswan-960.jpg" alt="مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">8 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a></h3>
+  </div>
+</article>""",
+    "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه": """<article class="card overlay">
+  <a class="thumb" href="posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/index.html"><img src="media/uploads/2025/09/Adonis.jpg" alt="تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">30 أيلول 2025<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/index.html">تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة</a></h3>
+  </div>
+</article>""",
+    "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر": """<article class="card overlay">
+  <a class="thumb" href="posts/الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر/index.html"><img src="media/uploads/2025/07/IMG_3009-2-1024x683.jpg" alt="الشهرمان الشائع: طائر مائي محمي ومهاجر نادر في لبنان" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">11 تموز 2025<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر/index.html">الشهرمان الشائع: طائر مائي محمي ومهاجر نادر في لبنان</a></h3>
+  </div>
+</article>""",
+    "المنصة-الرائدة-لنخبة-الصيادين-اللبنا": """<article class="card overlay">
+  <a class="thumb" href="posts/المنصة-الرائدة-لنخبة-الصيادين-اللبنا/index.html"><img src="media/uploads/2024/09/Jocy-card.jpg" alt="مديرة التحرير جوسلين بو راشد البستاني — مجلة صيد" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">1 تشرين الأول 2024<span class="cat-pill">أخبار</span></div>
+    <h3><a href="posts/المنصة-الرائدة-لنخبة-الصيادين-اللبنا/index.html">المنصة الرائدة لنخبة الصيادين اللبنانيين والعرب ولعشّاق الصيد والطبيعة منذ عام 2012</a></h3>
+  </div>
+</article>""",
+    POACHING_AR: """<article class="card overlay">
+  <a class="thumb" href="posts/الصيد-الجائر-دمار-لهواية-الصيد-إحذروا/index.html"><img src="media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg" alt="طائر يُستخرج من شبكة ضبابية" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">15 شباط 2023<span class="cat-pill">صيد بري</span></div>
+    <h3><a href="posts/الصيد-الجائر-دمار-لهواية-الصيد-إحذروا/index.html">الصيد الجائر دمار لهواية الصيد.. إحذروا الشباك والدّبق وصيد الليل</a></h3>
   </div>
 </article>""",
 }
@@ -316,6 +400,38 @@ EN_FALLBACK_CARDS: dict[str, str] = {
         "media/uploads/2025/09/AP4I6377-1024x683.jpg",
         "Barn Owl (Tyto alba)",
     ),
+    CABS_EN: _en_card(
+        CABS_EN,
+        CABS_TITLE_EN,
+        "13 September 2026",
+        "News",
+        "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+        "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
+    ),
+    SUHAIL_EN: _en_card(
+        SUHAIL_EN,
+        "80,000 Visitors and 158 Exhibitors from 15 Countries… Suhail 2026 Closes a Decade of Passion for Hunting and Falconry",
+        "13 September 2026",
+        "News",
+        "media/uploads/2026/09/hero-closing-80k.jpg",
+        "Falcons at Suhail 2026 in Katara, Doha",
+    ),
+    SAUDI_EN: _en_card(
+        SAUDI_EN,
+        "Saudi Arabia Launches the Sixth Hunting Season and Tightens the Rules: 5,000 Riyals Fine for Prohibited Places",
+        "9 September 2026",
+        "News",
+        "media/uploads/2026/09/ncw-wildlife-card.jpg",
+        "National Center for Wildlife — Saudi Arabia",
+    ),
+    ADONIS_EN: _en_card(
+        ADONIS_EN,
+        "Sayd Returns… And This Is What We Want to Offer You",
+        "8 September 2026",
+        "Editorial",
+        "media/uploads/2026/09/sayd-returns-adonis-editor.jpg",
+        "Adonis Al-Khatib — Sayd returns",
+    ),
 }
 
 
@@ -377,6 +493,190 @@ def extract_cards_by_slug(html: str) -> dict[str, str]:
     return first
 
 
+def _card_img(article: str) -> tuple[str, str]:
+    match = re.search(r'<img src="([^"]+)" alt="([^"]*)"', article)
+    if not match:
+        return "", ""
+    return match.group(1), match.group(2)
+
+
+def _card_title(article: str) -> str:
+    match = re.search(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", article, re.S)
+    return re.sub(r"<[^>]+>", "", match.group(1)).strip() if match else ""
+
+
+def _card_date(article: str) -> str:
+    match = re.search(r'<div class="meta">([^<]+)', article)
+    return match.group(1).strip() if match else ""
+
+
+def _media_prefix(html: str) -> str:
+    return "../" if 'href="../assets/css/site.css' in html or "/en/" in html[:800] else ""
+
+
+def _as_side_card(article: str, slug: str) -> str:
+    extra = " feature-adonis" if slug in {ADONIS_AR, ADONIS_EN} else ""
+    byline = ""
+    if slug == ADONIS_AR:
+        byline = (
+            '\n    <p class="byline" style="font-size:0.72rem;color:var(--muted);'
+            'margin:0.15rem 0 0;line-height:1.35;">رئيس التحرير أدونيس الخطيب</p>'
+        )
+    elif slug == ADONIS_EN:
+        byline = (
+            '\n    <p class="byline" style="font-size:0.72rem;color:var(--muted);'
+            'margin:0.15rem 0 0;line-height:1.35;">Editor-in-Chief Adonis Al-Khatib</p>'
+        )
+    src, alt = _card_img(article)
+    title = _card_title(article)
+    if slug == CABS_AR:
+        title = CABS_TITLE_AR
+    elif slug == CABS_EN:
+        title = CABS_TITLE_EN
+    date = _card_date(article)
+    cat = ""
+    cat_m = re.search(r'<span class="cat-pill">([^<]+)</span>', article)
+    if cat_m:
+        cat = f'<span class="cat-pill">{cat_m.group(1)}</span>'
+    href = re.search(r'href="([^"]*posts/[^"]+/index\.html)"', article)
+    link = href.group(1) if href else f"posts/{slug}/index.html"
+    return (
+        f'<article class="card card-stack{extra}">\n'
+        f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
+        f'  <div class="body">\n'
+        f'    <div class="meta">{date}{cat}</div>\n'
+        f"    <h3><a href=\"{link}\">{title}</a></h3>"
+        f"{byline}\n"
+        f"  </div>\n"
+        f"</article>"
+    )
+
+
+def _as_ecocide_lead(article: str, slug: str) -> str:
+    src, alt = _card_img(article)
+    title = _card_title(article)
+    date = _card_date(article)
+    cat = ""
+    cat_m = re.search(r'<span class="cat-pill">([^<]+)</span>', article)
+    if cat_m:
+        cat = f'<span class="cat-pill">{cat_m.group(1)}</span>'
+    href = re.search(r'href="([^"]*posts/[^"]+/index\.html)"', article)
+    link = href.group(1) if href else f"posts/{slug}/index.html"
+    return (
+        f'<article class="card overlay feature-lead feature-ecocide">\n'
+        f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
+        f'  <div class="body">\n'
+        f'    <div class="meta">{date}{cat}</div>\n'
+        f"    <h2><a href=\"{link}\">{title}</a></h2>\n"
+        f"  </div>\n"
+        f"</article>"
+    )
+
+
+def _latest_item_html(article: str, slug: str) -> str:
+    src, alt = _card_img(article)
+    title = _card_title(article)
+    date = _card_date(article)
+    href = re.search(r'href="([^"]*posts/[^"]+/index\.html)"', article)
+    link = href.group(1) if href else f"posts/{slug}/index.html"
+    if not src or not title:
+        return ""
+    return (
+        "<li>\n"
+        f'  <a href="{link}">\n'
+        f'    <span class="feed-thumb"><img src="{src}" alt="{alt}" loading="lazy"></span>\n'
+        f'    <span class="feed-text">\n'
+        f'      <span class="feed-title">{title}</span>\n'
+        f'      <span class="feed-date">{date}</span>\n'
+        f"    </span>\n"
+        f"  </a>\n"
+        "</li>"
+    )
+
+
+def rebuild_featured_mosaic(html: str, cards: dict[str, str], *, en: bool) -> str:
+    """Ecocide is the large lead; CABS/MECSHAP is a side box (Latin names)."""
+    slugs = FEATURED_EN if en else FEATURED_AR
+    fallbacks = EN_FALLBACK_CARDS if en else AR_FALLBACK_CARDS
+    lead_slug = slugs[0]
+    lead_src = cards.get(lead_slug) or fallbacks.get(lead_slug)
+    if not lead_src:
+        raise SystemExit(f"missing featured lead card for {lead_slug}")
+    lead = _as_ecocide_lead(lead_src, lead_slug)
+    sides: list[str] = []
+    for slug in slugs[1:]:
+        src = cards.get(slug) or fallbacks.get(slug)
+        if not src:
+            raise SystemExit(f"missing featured side card for {slug}")
+        sides.append(_as_side_card(src, slug))
+    mosaic = (
+        f"{lead}\n"
+        f'          <div class="feature-side">\n'
+        f'          <div class="feature-stack">\n'
+        f"{''.join(sides)}\n"
+        f"          </div>\n"
+        f"          </div>"
+    )
+    new, n = re.subn(
+        r'(<div class="featured-mosaic">).*?(</div>\s*</div>\s*</div>\s*</div>\s*<div class="latest-col">)',
+        rf'\1\n{mosaic}\n        </div>\n      </div>\n      <div class="latest-col">',
+        html,
+        count=1,
+        flags=re.S,
+    )
+    if n != 1:
+        raise SystemExit("could not replace featured mosaic")
+    if en is False:
+        mosaic_block = new.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+        titles = re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", mosaic_block, re.S)
+        visible = " ".join(re.sub(r"<[^>]+>", "", t) for t in titles)
+        if "كابس" in visible or "مكشب" in visible:
+            raise SystemExit("CABS/MECSHAP mosaic title must stay Latin")
+    return new
+
+
+def rebuild_latest_feed(html: str, cards: dict[str, str], *, en: bool) -> str:
+    """Latest = thumb + title + date. Featured URLs are never reused."""
+    slugs = LATEST_EN if en else LATEST_AR
+    fallbacks = EN_FALLBACK_CARDS if en else AR_FALLBACK_CARDS
+    featured = FEATURED_SLUGS
+    items: list[str] = []
+    for slug in slugs:
+        if slug in featured:
+            continue
+        src = cards.get(slug) or fallbacks.get(slug)
+        if not src:
+            continue
+        item = _latest_item_html(src, slug)
+        if item:
+            items.append(item)
+    new, n = re.subn(
+        r'(<ul class="latest-feed">).*?(</ul>)',
+        r"\1\n" + "\n".join(items) + "\n        \\2",
+        html,
+        count=1,
+        flags=re.S,
+    )
+    if n != 1:
+        raise SystemExit("could not replace latest feed")
+    return new
+
+
+def drop_home_desks(html: str, headings: tuple[str, ...]) -> str:
+    for heading in headings:
+        html = _drop_empty_section(html, heading)
+    return html
+
+
+def bump_home_css(html: str) -> str:
+    return re.sub(
+        r'(assets/css/site\.css)\?v=[^"]+',
+        rf"\1?v={CSS_CACHE}",
+        html,
+        count=1,
+    )
+
+
 def drop_latest_slugs(html: str, slugs: set[str]) -> str:
     if not slugs:
         return html
@@ -425,7 +725,7 @@ def lock_homepage_html(
         loaded_home, loaded_latest = load_omit_sets()
         omit_home = loaded_home if omit_home is None else omit_home
         omit_latest = loaded_latest if omit_latest is None else omit_latest
-    html = drop_latest_slugs(html, omit_latest)
+    html = drop_latest_slugs(html, set(omit_latest) | set(FEATURED_SLUGS))
     used: dict[str, int] = {}
 
     def _keep(match: re.Match[str]) -> str:
@@ -496,7 +796,7 @@ def _insert_section_after(html: str, after_heading: str, section: str) -> str:
 
 
 def _move_news_inside_home_main(html: str) -> str:
-    """AR spine: News is the first desk inside home-main, after Memory."""
+    """Legacy helper: News no longer lives on home."""
     parts = html.split('class="home-main"', 1)
     if len(parts) == 2 and "<h2>News</h2>" in parts[1]:
         return html
@@ -515,15 +815,8 @@ def _move_news_inside_home_main(html: str) -> str:
 
 
 def _ensure_en_desk_heading(html: str) -> str:
-    """News replaces September 2026; Gear / Miscellany exist so they can fill."""
-    html = html.replace("<h2>September 2026</h2>", "<h2>News</h2>")
-    html = re.sub(
-        r'(<div class="section-head accent-olive">\s*<h2>News</h2>)',
-        r'<div class="section-head accent-red">\n        <h2>News</h2>',
-        html,
-        count=1,
-    )
-    html = _move_news_inside_home_main(html)
+    """Drop News / Hunting leftovers; Gear / Miscellany exist so they can fill."""
+    html = drop_home_desks(html, DROPPED_DESKS_EN)
     if "<h2>Gear &amp; Arms</h2>" not in html:
         html = _insert_section_after(
             html,
@@ -552,15 +845,10 @@ def _ensure_en_desk_heading(html: str) -> str:
 
 
 def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
-    """Place each leftover EN twin on one desk; drop empty desks (no blank grid)."""
+    """Pin Interviews / Gear / TV / Photos / Miscellany; News + Hunting stay off."""
     html = _ensure_en_desk_heading(html)
     merged = dict(EN_FALLBACK_CARDS)
     merged.update(cards)
-    news = "".join(
-        _desk_card_html(slug, merged, compact=False, fallbacks=EN_FALLBACK_CARDS)
-        for slug in EN_NEWS_SLUGS
-    )
-    html = _replace_section_grid(html, "News", news, "grid-4")
     for heading, slugs in EN_DESK_SLUGS.items():
         compact = heading in COMPACT_DESKS
         grid = "grid-photos" if compact else "grid-4"
@@ -576,9 +864,8 @@ def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
 
 
 def rebuild_ar_home_sections(html: str, cards: dict[str, str]) -> str:
-    """Pin News / Hunting / Interviews / Gear / Miscellany so mosaic is not restacked."""
-    news = "".join(_desk_card_html(slug, cards, compact=False) for slug in AR_NEWS_SLUGS)
-    html = _replace_section_grid(html, "أخبار", news, "grid-4")
+    """Pin Interviews / Gear / Miscellany; News + Hunting stay off home."""
+    html = drop_home_desks(html, DROPPED_DESKS_AR)
     for heading, slugs in AR_DESK_SLUGS.items():
         compact = heading in {"صور"}
         grid = "grid-photos" if compact else "grid-4"
@@ -613,8 +900,14 @@ def apply_en_home(path: Path | None = None) -> str:
     html = dest.read_text(encoding="utf-8")
     html = drop_ticker_slugs(html)
     cards = extract_cards_by_slug(html)
-    html = rebuild_en_home_sections(html, cards)
+    merged = dict(EN_FALLBACK_CARDS)
+    merged.update(cards)
+    html = rebuild_featured_mosaic(html, merged, en=True)
+    html = rebuild_latest_feed(html, merged, en=True)
+    html = rebuild_en_home_sections(html, merged)
+    html = drop_home_desks(html, DROPPED_DESKS_EN)
     html = lock_homepage_html(html)
+    html = bump_home_css(html)
     dest.write_text(html, encoding="utf-8")
     return html
 
@@ -625,8 +918,14 @@ def apply_ar_home(path: Path | None = None) -> str:
     html = rewrite_poaching_chickadee(html, depth=0)
     html = drop_ticker_slugs(html)
     cards = extract_cards_by_slug(html)
-    html = rebuild_ar_home_sections(html, cards)
+    merged = dict(AR_FALLBACK_CARDS)
+    merged.update(cards)
+    html = rebuild_featured_mosaic(html, merged, en=False)
+    html = rebuild_latest_feed(html, merged, en=False)
+    html = rebuild_ar_home_sections(html, merged)
+    html = drop_home_desks(html, DROPPED_DESKS_AR)
     html = lock_homepage_html(html)
+    html = bump_home_css(html)
     dest.write_text(html, encoding="utf-8")
     return html
 
@@ -660,4 +959,4 @@ def apply_docs() -> None:
 
 if __name__ == "__main__":
     apply_docs()
-    print("homepage unique cards: locked AR + EN; Adonis off ticker; chickadee on poaching")
+    print("homepage unique cards: Ecocide lead; CABS side; Latest thumbs; News/Hunting off")

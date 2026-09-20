@@ -649,9 +649,9 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 .latest-feed li {
@@ -660,16 +660,33 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 
 .latest-feed li:last-child { border-bottom: none; }
 
-/* Text-forward stacked links — no thumbs, dense type */
+/* Latest / آخر الأخبار: small thumb + title + date */
 .latest-feed a {
-  display: block;
-  padding: 0.28rem 0;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.4rem 0;
   color: var(--ink);
   min-height: 0;
 }
 .latest-feed a:hover { color: var(--gold-dark); }
 
-.feed-thumb { display: none; }
+.feed-thumb,
+.latest-feed .feed-thumb,
+.latest-feed li.latest-lead .feed-thumb {
+  display: block;
+  width: 76px;
+  height: 56px;
+  overflow: hidden;
+  background: #d9d3c2;
+}
+.latest-feed .feed-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 .feed-text {
   min-width: 0;
@@ -705,17 +722,8 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   white-space: nowrap;
 }
 
-/* Latest / آخر الأخبار is text + category + date only. Never show thumbs. */
-.latest-feed .feed-thumb,
-.latest-feed li.latest-lead .feed-thumb {
-  display: none !important;
-}
 .latest-feed li.latest-lead {
-  grid-column: auto;
   margin-bottom: 0;
-}
-.latest-feed li.latest-lead a {
-  display: block;
 }
 
 .featured-mosaic {

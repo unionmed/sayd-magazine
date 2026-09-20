@@ -141,8 +141,10 @@ def test_en_homepage_featured_2026() -> None:
     assert "AP4I0032" not in html
     mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     lead = mosaic.split("feature-side", 1)[0]
-    assert "mecshap-apu-cabs-baalbek-release.jpg" in lead
-    assert "kaps-makshab-apu-fries-hero.jpg" not in lead
+    side = mosaic.split("feature-side", 1)[1]
+    assert "ecocide-south-lebanon-white-phosphorus-smoke" in lead
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in side
+    assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
     assert "placeholder-thumb" not in html
     assert "GitHub Pages" not in html
@@ -204,9 +206,8 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
     assert circaetus.is_file() and circaetus.stat().st_size > 32
 
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
-    assert ".card.feature-lead.kaps-lead" in css
-    assert "flex-direction: column" in css
-    assert ".kaps-caption" in css
+    assert ".card.overlay.feature-lead" in css
+    assert ".latest-feed .feed-thumb" in css
 
     thumb_re = re.compile(
         r'<a\s+class="thumb"[^>]*href="([^"]+)"[^>]*>\s*<img\s+src="([^"]+)"\s+alt="([^"]*)"',
@@ -218,34 +219,31 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         html = path.read_text(encoding="utf-8")
         mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
         lead = mosaic.split("feature-side", 1)[0]
-        assert "kaps-lead" in lead
-        assert "overlay" not in lead
-        assert lead.find("class=\"body\"") < lead.find("class=\"thumb\"")
-        assert lead.find("class=\"thumb\"") < lead.find("kaps-caption")
-        assert "mecshap-apu-cabs-baalbek-release.jpg" in lead
-        assert "kaps-makshab-apu-fries-hero.jpg" not in lead
-        assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
+        side = mosaic.split("feature-side", 1)[1]
+        assert "feature-ecocide" in lead
+        assert "kaps-lead" not in lead
+        assert "ecocide-south-lebanon-white-phosphorus-smoke" in lead
+        assert "mecshap-apu-cabs-baalbek-release.jpg" in side
+        assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
+        assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in mosaic
         if ar:
-            assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" in lead
-            caption = lead.split('kaps-caption">', 1)[1].split("</p>", 1)[0]
-            assert caption.endswith("MECSHAP")
-            assert "مكشب" not in caption
+            assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" in side
+            titles = " ".join(re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", mosaic, re.S))
+            assert "مكشب" not in titles
+            assert "كابس" not in titles
             assert "<h2>قصص مميزة</h2>" not in html
-            assert "CABS و MECSHAP لحماية طيور الخريف" in html
+            assert "CABS و MECSHAP لحماية طيور الخريف" in side
         else:
-            assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in lead
+            assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
             assert "<h2>Featured stories</h2>" not in html
-        css_q = html.split("site.css", 1)[1][:64]
+        css_q = html.split("site.css", 1)[1][:80]
         assert (
             "?v=20260919-en-plex-kaps" in css_q
             or "?v=20260920-memory-strip" in css_q
             or "?v=20260920-memory-ten" in css_q
             or "?v=20260920-latest-text" in css_q
+            or "?v=20260920-ecocide-lead" in css_q
         )
-        body = lead.split("class=\"body\"", 1)[1].split("class=\"thumb\"", 1)[0]
-        assert "kaps-caption" not in body
-        assert "anti-poaching unit camp" not in body
-        assert "صورة من مخيم فريق" not in body
         assert "kaps-makshab-apu-fries-hero.jpg" not in lead
 
     assert_kaps_lead(DOCS / "index.html", ar=True)
@@ -280,18 +278,18 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
 
     src = (ROOT / "scripts" / "build_en_edition.py").read_text(encoding="utf-8")
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src
-    assert "kaps-lead" in src
-    assert "kaps-caption" in src
+    assert "feature-ecocide" in src
     assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in src
     assert "Short-toed snake eagle" not in src
 
 
 def test_en_footer_has_official_mecshap_harvest_label() -> None:
-    """Footer uses Harvest; Kaps homepage caption stays the Nayef/PR #29 line."""
+    """Footer uses Harvest; CABS side-box alt stays the Nayef/PR #29 line."""
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    caption = home.split("kaps-caption", 1)[1].split("</p>", 1)[0]
-    assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in caption
-    assert "Harvest" not in caption
+    mosaic = home.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    side = mosaic.split("feature-side", 1)[1]
+    assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
+    assert "Harvest" not in side
     samples = [
         DOCS / "en" / "index.html",
         DOCS / "en" / "stories" / "index.html",
@@ -340,7 +338,8 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "home-layout" in html
     assert ">Sayd TV<" in html
     assert ">Photos<" in html
-    assert ">Hunting &amp; Equestrian<" in html
+    assert ">Hunting &amp; Equestrian<" in html.split("main-nav", 1)[1].split("</nav>", 1)[0]
+    assert "<h2>Hunting &amp; Equestrian</h2>" not in html
     assert ">Gear &amp; Arms<" in html
     assert ">Miscellany<" in html
     assert ">Shooting<" not in html
@@ -391,12 +390,13 @@ def test_en_nested_nav_paths() -> None:
         "?v=20260919-en-plex-kaps" in en_home
         or "?v=20260920-memory-strip" in en_home
         or "?v=20260920-memory-ten" in en_home
-        or "?v=20260920-latest-text" in en_home
+            or "?v=20260920-latest-text" in en_home
+            or "?v=20260920-ecocide-lead" in en_home
     )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    grid = home.split("<h2>News</h2>", 1)[1]
-    assert "Awareness and Responsibility… Personalities" not in grid
+    assert "<h2>News</h2>" not in home
+    assert "Awareness and Responsibility… Personalities" not in home
     assert "brand-wordmark" in home and ">Sayd<" in home
     assert "Untranslated" not in home and "Break Barat" not in home
     assert "saudi-hunting-fines-5000-riyal-prohibited-areas" not in home
@@ -418,12 +418,14 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260920-memory-strip" in home
         or "?v=20260920-memory-ten" in home
         or "?v=20260920-latest-text" in home
+        or "?v=20260920-ecocide-lead" in home
     )
     assert (
         "?v=20260919-en-plex-kaps-r" in en
         or "?v=20260920-memory-strip" in en
         or "?v=20260920-memory-ten" in en
         or "?v=20260920-latest-text" in en
+        or "?v=20260920-ecocide-lead" in en
     )
     assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
@@ -455,6 +457,7 @@ def test_every_en_page_is_ltr_plex() -> None:
             or "?v=20260920-memory-strip" in html
             or "?v=20260920-memory-ten" in html
             or "?v=20260920-latest-text" in html
+            or "?v=20260920-ecocide-lead" in html
         )
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html

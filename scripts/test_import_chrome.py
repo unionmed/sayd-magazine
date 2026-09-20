@@ -259,18 +259,20 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "قطر-أكثر-من-80-ألف-زائر" in latest
     assert "قطر-أكثر-من-80-ألف-زائر" in ticker
     assert ECOCIDE in featured
-    assert ECOCIDE in latest
+    assert ECOCIDE not in latest
     assert ECOCIDE in ticker
     assert "إبادة بيئية" in ticker
     assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in featured
-    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in latest
-    assert ECOCIDE in featured
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" not in latest
+    assert KAPS in featured
+    assert KAPS not in latest
     assert MEMORY not in featured
     assert MEMORY not in latest
+    assert featured.find(ECOCIDE) < featured.find(KAPS)
     assert featured.find(ECOCIDE) < featured.find(SUHAIL_80K)
     assert lists["featured"] == [
-        "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
         ECOCIDE,
+        "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
         "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
         "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
         ADONIS,
@@ -454,7 +456,8 @@ def test_prefer_recent_skips_ai_bird_promo() -> None:
 
 def test_home_section_order_interviews_before_gear() -> None:
     titles = [title for title, _, _ in home_section_specs()]
-    assert titles.index("صيد وفروسية") < titles.index("مقابلات وتحقيقات")
+    assert "أخبار" not in titles
+    assert "صيد وفروسية" not in titles
     assert titles.index("مقابلات وتحقيقات") < titles.index("عتاد وسلاح")
 
 
@@ -468,9 +471,9 @@ def test_featured_mosaic_matches_homepage_json() -> None:
     assert ECOCIDE in slugs
     assert MEMORY not in slugs
     assert slugs.index(ECOCIDE) < slugs.index(SUHAIL_80K)
-    # Ecocide sits first in the side stack (Kaps is the lead).
-    assert slugs[0] == KAPS
-    assert slugs[1] == ECOCIDE
+    # Ecocide is the large lead; CABS/MECSHAP is the first side box.
+    assert slugs[0] == ECOCIDE
+    assert slugs[1] == KAPS
     assert "<h2>قصص مميزة</h2>" not in html
     assert "mecshap-apu-cabs-baalbek-release.jpg" in html
     mosaic = _section(html, "featured-mosaic", "latest-feed")
@@ -482,11 +485,11 @@ def test_featured_mosaic_matches_homepage_json() -> None:
 def test_featured_pool_never_drops_for_missing_image() -> None:
     """Importer keeps every homepage.json slug even with no thumb / no WXR row."""
     ordered = featured_slugs()
-    assert ordered[0] == KAPS
-    assert ECOCIDE in ordered
+    assert ordered[0] == ECOCIDE
+    assert KAPS in ordered
     assert MEMORY not in ordered
     posts = [
-        _fake_post(ordered[0], "كابس", "2026-09-13", [("أخبار", "أخبار")]),
+        _fake_post(ordered[1], "CABS و MECSHAP", "2026-09-13", [("أخبار", "أخبار")]),
         _fake_post(ordered[2], "سهيل", "2026-09-13", [("أخبار", "أخبار")]),
         _fake_post(ordered[3], "السعودية", "2026-09-09", [("أخبار", "أخبار")]),
         # Ecocide omitted from posts on purpose — stub must still appear.
