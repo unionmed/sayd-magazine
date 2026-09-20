@@ -49,6 +49,7 @@ These scientific and international documentary findings converge on the view tha
 
 ## Notes
 
-- Image is the existing open-license white stork file `ciconia-ciconia-white-stork.jpg` (*Ciconia ciconia*). Caption must stay honest: habitat / migration, not bombardment or war footage.
+- Cover / mosaic: `ecocide-south-lebanon-white-phosphorus-smoke.jpg` (no caption on the homepage card).
+- Body figures only: phosphorus-smoke caption (white smoke / WP munitions, per international reports) then `ecocide-south-lebanon-vegetation-fire.jpg` (fires on a rocky hill near inhabited areas).
 - Homepage: first side-stack card above Suhail. Memory of Sayd moves to Latest; the Memory article stays on the site.
 - Category: Interviews & Investigations.

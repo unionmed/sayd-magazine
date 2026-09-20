@@ -13,17 +13,22 @@ AR_SLUG = "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
 EN_SLUG = "international-orgs-ecocide-south-lebanon"
 AR_TITLE = "منظمات دولية: إسرائيل ترتكب «إبادة بيئية» في جنوب لبنان"
 EN_TITLE = "International Organizations: Israel Is Committing “Ecocide” in Southern Lebanon"
-STORK = "media/uploads/2026/09/ciconia-ciconia-white-stork.jpg"
+SMOKE = "media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg"
+FIRE = "media/uploads/2026/09/ecocide-south-lebanon-vegetation-fire.jpg"
 AR_CAPTION = (
-    "لقلق أبيض (Ciconia ciconia) في موئل الهجرة — صورة للحياة البرية ومسار العبور، "
-    "وليست مشهداً لعمليات عسكرية أو قصف."
+    "دخان أبيض كثيف فوق غطاء نباتي في الجنوب — توثيق مرتبط باستخدام ذخائر "
+    "الفسفور الأبيض بحسب تقارير منظمات دولية"
 )
 EN_CAPTION = (
-    "White stork (Ciconia ciconia) in a migration habitat — a wildlife / flyway "
-    "photograph, not footage of bombardment or military operations."
+    "Dense white smoke over vegetation in the south — documentation linked to "
+    "the use of white-phosphorus munitions, according to reports by international organizations."
 )
-AR_ALT = "لقلق أبيض (Ciconia ciconia) في موئل الهجرة — صورة حياة برية وليست مشهداً حربياً"
-EN_ALT = "White stork (Ciconia ciconia) in a migration habitat — wildlife photograph, not bombardment footage"
+AR_CAPTION_FIRE = "حرائق تلتهم الغطاء النباتي على تلة صخرية قرب مناطق مأهولة في جنوب لبنان"
+EN_CAPTION_FIRE = (
+    "Fires consuming vegetation on a rocky hill near inhabited areas in southern Lebanon."
+)
+AR_ALT = "دخان أبيض كثيف فوق غطاء نباتي في جنوب لبنان"
+EN_ALT = "Dense white smoke over vegetation in southern Lebanon"
 
 AR_TICKER = (
     f'<a href="{{p}}posts/{AR_SLUG}/index.html">منظمات دولية: «إبادة بيئية» في جنوب لبنان</a>'
@@ -47,7 +52,7 @@ EN_TICKER = (
 )
 
 AR_ECOCIDE_CARD = f"""<article class="card card-stack feature-ecocide">
-  <a class="thumb" href="posts/{AR_SLUG}/index.html"><img src="{STORK}" alt="{AR_ALT}" loading="lazy"></a>
+  <a class="thumb" href="posts/{AR_SLUG}/index.html"><img src="{SMOKE}" alt="{AR_ALT}" loading="lazy"></a>
   <div class="body">
     <div class="meta">20 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
     <h3><a href="posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h3>
@@ -56,7 +61,7 @@ AR_ECOCIDE_CARD = f"""<article class="card card-stack feature-ecocide">
 """
 
 EN_ECOCIDE_CARD = f"""<article class="card card-stack feature-ecocide">
-  <a class="thumb" href="posts/{EN_SLUG}/index.html"><img src="../{STORK}" alt="{EN_ALT}" loading="lazy"></a>
+  <a class="thumb" href="posts/{EN_SLUG}/index.html"><img src="../{SMOKE}" alt="{EN_ALT}" loading="lazy"></a>
   <div class="body">
     <div class="meta">20 September 2026<span class="cat-pill">Interviews &amp; Investigations</span></div>
     <h3><a href="posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
@@ -340,8 +345,12 @@ def write_ar_article() -> None:
     
     <article class="article-content">
 <figure style="margin:24px auto;max-width:680px;">
-  <img src="../../{STORK}" alt="{AR_ALT}" width="1280" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;border-radius:6px;">
+  <img src="../../{SMOKE}" alt="{AR_CAPTION}" width="1280" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;border-radius:6px;">
   <figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px;">{AR_CAPTION}</figcaption>
+</figure>
+<figure style="margin:24px auto;max-width:680px;">
+  <img src="../../{FIRE}" alt="{AR_CAPTION_FIRE}" width="1280" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;border-radius:6px;">
+  <figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px;">{AR_CAPTION_FIRE}</figcaption>
 </figure>
 <p>تكشف سلسلة من التقارير والتحقيقات الصادرة عن هيئات الأمم المتحدة والمنظمات الحقوقية الدولية عن حجم الدمار البيئي الذي خلّفته العمليات العسكرية الإسرائيلية في جنوب لبنان، في صورة تتجاوز مفهوم «الأضرار الجانبية» المرافقة للنزاعات المسلحة لتقترب، بحسب هذه الجهات، من التوصيف القانوني لجريمة «الإبادة البيئية». فبين برنامجي الأمم المتحدة الإنمائي والبيئي (UNDP وUNEP)، ومنظمتي العفو الدولية ورصد حقوق الإنسان (Amnesty International وHuman Rights Watch)، ومراكز متخصصة في الأدلة الجنائية والبيئية مثل Forensic Architecture وStop Ecocide International ومعهد CNRS-L، تتقاطع الشهادات والبيانات لترسم صورة واحدة: تربة مسمَّمة، تضاريس مجرَّفة، وموائل طبيعية منهارة، في منطقة تُعدّ من أدق نقاط العبور في خريطة الهجرة العالمية للطيور.</p>
 
@@ -530,7 +539,7 @@ def patch_ar_home() -> None:
 <article class="card overlay">
   <a class="thumb" href="posts/"""
         + AR_SLUG
-        + f"""/index.html"><img src="{STORK}" alt="{AR_ALT}" loading="lazy"></a>
+        + f"""/index.html"><img src="{SMOKE}" alt="{AR_ALT}" loading="lazy"></a>
   <div class="body">
     <div class="meta">20 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
     <h3><a href="posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h3>
@@ -658,7 +667,7 @@ def patch_en_home() -> None:
 <article class="card overlay">
   <a class="thumb" href="posts/"""
         + EN_SLUG
-        + f"""/index.html"><img src="../{STORK}" alt="{EN_ALT}" loading="lazy"></a>
+        + f"""/index.html"><img src="../{SMOKE}" alt="{EN_ALT}" loading="lazy"></a>
   <div class="body">
     <div class="meta">20 September 2026<span class="cat-pill">Interviews &amp; Investigations</span></div>
     <h3><a href="posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
@@ -696,7 +705,7 @@ def patch_listings() -> None:
         1,
     )
     row = f"""<article class="post-row">
-  <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../{STORK}" alt="{AR_ALT}" loading="lazy"></a>
+  <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../{SMOKE}" alt="{AR_ALT}" loading="lazy"></a>
   <div class="body">
     <div class="meta">20 أيلول 2026</div>
     <h2><a href="../../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
@@ -715,7 +724,7 @@ def patch_listings() -> None:
         1,
     )
     row = f"""<article class="post-row">
-  <a class="thumb" href="../posts/{AR_SLUG}/index.html"><img src="../{STORK}" alt="{AR_ALT}" loading="lazy"></a>
+  <a class="thumb" href="../posts/{AR_SLUG}/index.html"><img src="../{SMOKE}" alt="{AR_ALT}" loading="lazy"></a>
   <div class="body">
     <div class="meta">20 أيلول 2026 · مقابلات وتحقيقات</div>
     <h2><a href="../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
