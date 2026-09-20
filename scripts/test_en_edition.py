@@ -68,7 +68,10 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
     """Do not shrink /en/ to September-2026-only; keep every 2022+ EN twin."""
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert len(PAIRS) >= 14
-    skip_home = {"memory-of-sayd-awareness-responsibility-2016-2024"}
+    skip_home = {
+        "memory-of-sayd-awareness-responsibility-2016-2024",
+        "sayd-returns-new-look-wider-vision",
+    }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
             continue

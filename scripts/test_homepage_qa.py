@@ -475,6 +475,102 @@ def test_egypt_hunting_news_live_surfaces() -> None:
     assert "article-featured" not in en_article
 
 
+def test_homepage_story_cards_are_unique() -> None:
+    """Each story slug is one visible content card. Memory strip is not a card."""
+    import sys
+
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from homepage_unique_cards import (  # noqa: E402
+        ADONIS_AR,
+        ADONIS_EN,
+        NEW_LOOK_AR,
+        NEW_LOOK_EN,
+        content_card_slugs,
+    )
+
+    for rel, adonis, twin in (
+        ("index.html", ADONIS_AR, NEW_LOOK_AR),
+        ("en/index.html", ADONIS_EN, NEW_LOOK_EN),
+    ):
+        html = (DOCS / rel).read_text(encoding="utf-8")
+        slugs = content_card_slugs(html)
+        counts: dict[str, int] = {}
+        for slug in slugs:
+            counts[slug] = counts.get(slug, 0) + 1
+        dupes = {slug: n for slug, n in counts.items() if n > 1}
+        assert dupes == {}, (rel, dupes)
+        assert slugs.count(adonis) == 1, (rel, adonis, slugs.count(adonis))
+        assert twin not in slugs
+        assert twin not in html
+        latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+        assert adonis not in latest
+        mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+        assert mosaic.count(adonis) >= 1
+        adonis_cards = [
+            art
+            for art in re.findall(r"<article class=\"card[^\"]*\">(.*?)</article>", html, re.S)
+            if adonis in art
+        ]
+        assert len(adonis_cards) == 1
+        assert "sayd-returns-adonis-editor.jpg" in adonis_cards[0]
+        other_adonis_img = [
+            art
+            for art in re.findall(r"<article class=\"card[^\"]*\">(.*?)</article>", html, re.S)
+            if "sayd-returns-adonis-editor.jpg" in art and adonis not in art
+        ]
+        assert other_adonis_img == []
+        assert 'class="memory-strip"' in html
+        assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in html
+        assert "memory-of-sayd-awareness-responsibility-2016-2024" not in html
+        if rel == "en/index.html":
+            sept = html.split("<h2>September 2026</h2>", 1)[1].split("home-layout", 1)[0]
+            assert "egypt-new-hunting-rules-burullus-autumn-migration" in sept
+            assert "qatar-suhail-2026-80000-visitors-teaser" not in sept
+            hunting = html.split("<h2>Hunting &amp; Equestrian</h2>", 1)[1].split("</section>", 1)[0]
+            assert "qatar-suhail-2026-80000-visitors-teaser" in hunting
+            assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in hunting
+
+
+def test_lock_is_idempotent_and_drops_restacked_cards() -> None:
+    """Rebuilds that re-inject a featured slug get cleaned on the next lock."""
+    import sys
+
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from homepage_unique_cards import ADONIS_EN, lock_homepage_html  # noqa: E402
+
+    fixture = f"""
+<div class="featured-mosaic">
+<article class="card card-stack feature-adonis">
+  <a class="thumb" href="posts/{ADONIS_EN}/index.html"><img src="x.jpg" alt=""></a>
+  <div class="body"><h3><a href="posts/{ADONIS_EN}/index.html">Adonis</a></h3></div>
+</article>
+</div>
+<ul class="latest-feed">
+<li>
+  <a href="posts/{ADONIS_EN}/index.html">
+    <span class="feed-text"><span class="feed-title">Adonis</span></span>
+  </a>
+</li>
+</ul>
+<section class="home-section">
+<article class="card overlay">
+  <a class="thumb" href="posts/{ADONIS_EN}/index.html"><img src="x.jpg" alt=""></a>
+  <div class="body"><h3><a href="posts/{ADONIS_EN}/index.html">Adonis again</a></h3></div>
+</article>
+<article class="card overlay">
+  <a class="thumb" href="posts/sayd-returns-new-look-wider-vision/index.html"><img src="x.jpg" alt=""></a>
+  <div class="body"><h3><a href="posts/sayd-returns-new-look-wider-vision/index.html">Twin</a></h3></div>
+</article>
+</section>
+"""
+    locked = lock_homepage_html(fixture)
+    assert locked.count(f"posts/{ADONIS_EN}/") == 2  # mosaic thumb + title
+    assert "Adonis again" not in locked
+    assert "sayd-returns-new-look-wider-vision" not in locked
+    assert ADONIS_EN not in locked.split("latest-feed", 1)[1]
+    assert lock_homepage_html(locked) == locked
+
+
 if __name__ == "__main__":
     test_no_empty_thumbs_or_missing_files()
     test_en_homepage_has_no_fries_thumbs()
@@ -492,4 +588,6 @@ if __name__ == "__main__":
     test_memory_article_never_on_homepage_surfaces()
     test_ecocide_ticker_and_memory_stay_on_site()
     test_egypt_hunting_news_live_surfaces()
+    test_homepage_story_cards_are_unique()
+    test_lock_is_idempotent_and_drops_restacked_cards()
     print("test_homepage_qa: ok")
