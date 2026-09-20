@@ -181,7 +181,7 @@ HOMEPAGE_FETCH_RELS = [
 ]
 
 # No unique original on disk — do not invent a thumb. NEVER put a
-# homepage.json featured slug here. Memory lives in Latest, not the mosaic.
+# homepage.json featured slug here. Memory article stays off home.
 HOMEPAGE_GAPS = {
     "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
     "autumn-migration-field-action-protect-flyways-lebanon",

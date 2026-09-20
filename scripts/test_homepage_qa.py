@@ -157,14 +157,19 @@ def test_kaps_package_untouched() -> None:
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     for html in (ar, en):
         mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
-        assert "mecshap-apu-cabs-baalbek-release.jpg" in mosaic
+        lead = mosaic.split("feature-side", 1)[0]
+        side = mosaic.split("feature-side", 1)[1]
+        assert "feature-lead feature-ecocide" in lead or "feature-ecocide" in lead
+        assert "ecocide-south-lebanon-white-phosphorus-smoke" in lead
+        assert "mecshap-apu-cabs-baalbek-release.jpg" in side
+        assert "kaps-lead" not in lead
         assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
         assert "<h2>Featured stories</h2>" not in html
         assert "<h2>قصص مميزة</h2>" not in html
-        assert "MECSHAP" in mosaic
-        caption = mosaic.split('kaps-caption">', 1)[1].split("</p>", 1)[0]
-        assert "مكشب" not in caption
-        assert "كابس" not in caption
+        assert "MECSHAP" in side
+        titles = " ".join(re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", mosaic, re.S))
+        assert "مكشب" not in titles
+        assert "كابس" not in titles
     kaps = (DOCS / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html").read_text(
         encoding="utf-8"
     )
@@ -181,12 +186,13 @@ def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
     assert "Bird-02.jpeg" not in ar
     assert "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب" not in en
     assert "Bird-02.jpeg" not in en
-    hunting = ar.split("<h2>صيد وفروسية</h2>", 1)[1].split("</section>", 1)[0]
-    assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in hunting
-    assert "illegal-hunting-mist-net-chickadee.jpg" in hunting
-    assert "شبك.jpg" not in hunting
-    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in hunting
-    assert "ecocide-south-lebanon" not in hunting
+    latest = ar.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+    assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in latest
+    assert "illegal-hunting-mist-net-chickadee.jpg" in latest
+    assert "شبك.jpg" not in ar
+    mosaic = ar.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" not in mosaic
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in mosaic
     chick = (DOCS / "media" / "uploads" / "2026" / "09" / "illegal-hunting-mist-net-chickadee.jpg")
     assert chick.is_file() and chick.stat().st_size > 32
     bird = (DOCS / "media" / "uploads" / "2024" / "06" / "Bird-02.jpeg").read_bytes()
@@ -209,7 +215,7 @@ def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
 
 
 def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
-    """Nayef: Hunting → Interviews → Gear → TV → Photos → جعبة / Miscellany."""
+    """Nayef: Interviews → Gear → TV → Photos → جعبة / Miscellany. News/Hunting off."""
 
     def _h2_pos(html: str, title: str) -> int:
         main = html.split('class="home-main"', 1)[1]
@@ -217,47 +223,63 @@ def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
         assert i >= 0, title
         return i
 
-    def _h2_pos_optional(html: str, title: str) -> int | None:
-        main = html.split('class="home-main"', 1)[1]
-        i = main.find(f"<h2>{title}</h2>")
-        return None if i < 0 else i
-
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    ar_hunt, ar_iv, ar_gear, ar_tv, ar_ph, ar_bag = (
-        _h2_pos(ar, "صيد وفروسية"),
+    ar_iv, ar_gear, ar_tv, ar_ph, ar_bag = (
         _h2_pos(ar, "مقابلات وتحقيقات"),
         _h2_pos(ar, "عتاد وسلاح"),
         _h2_pos(ar, "صيد TV"),
         _h2_pos(ar, "صور"),
         _h2_pos(ar, "جعبة المنوعات"),
     )
-    assert ar_hunt < ar_iv < ar_gear < ar_tv < ar_ph < ar_bag
-    ar_news = _h2_pos(ar, "أخبار")
-    assert ar_news < ar_hunt
-    en_news = _h2_pos(en, "News")
-    en_hunt = _h2_pos(en, "Hunting &amp; Equestrian")
+    assert ar_iv < ar_gear < ar_tv < ar_ph < ar_bag
+    assert "<h2>أخبار</h2>" not in ar
+    assert "<h2>صيد وفروسية</h2>" not in ar
     en_iv = _h2_pos(en, "Interviews &amp; Investigations")
     en_gear = _h2_pos(en, "Gear &amp; Arms")
     en_tv = _h2_pos(en, "Sayd TV")
     en_ph = _h2_pos(en, "Photos")
     en_bag = _h2_pos(en, "Miscellany")
-    assert en_news < en_hunt < en_iv < en_gear < en_tv < en_ph < en_bag
+    assert en_iv < en_gear < en_tv < en_ph < en_bag
+    assert "<h2>News</h2>" not in en
+    assert "<h2>Hunting &amp; Equestrian</h2>" not in en
     assert "<h2>September 2026</h2>" not in en
 
 
-def test_latest_feed_has_no_thumbs() -> None:
-    """Latest / آخر الأخبار is text + category + date only — no feed-thumbs."""
+def test_latest_feed_has_thumbs() -> None:
+    """Latest / آخر الأخبار is small thumb + title + date. Featured URLs stay out."""
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
     assert ".latest-feed .feed-thumb" in css
-    assert "display: none !important" in css
-    for rel in ("index.html", "en/index.html"):
+    assert "display: none !important" not in css
+    for rel, featured in (
+        (
+            "index.html",
+            {
+                "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
+                "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+                "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+                "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
+                "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
+            },
+        ),
+        (
+            "en/index.html",
+            {
+                "international-orgs-ecocide-south-lebanon",
+                "cabs-mecshap-autumn-birds-lebanon-khatib",
+                "suhail-2026-closes-decade-katara-80000-visitors",
+                "saudi-sixth-hunting-season-2026-2027-rules",
+                "sayd-returns-what-we-want-to-offer",
+            },
+        ),
+    ):
         html = (DOCS / rel).read_text(encoding="utf-8")
         latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
-        assert "feed-thumb" not in latest
-        assert "latest-lead" not in latest
-        assert "<img" not in latest
-        assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in latest
+        assert latest.count("feed-thumb") >= 4
+        assert latest.count("<img") >= 4
+        assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" in latest
+        hrefs = set(re.findall(r'href="(?:\.\./)*posts/([^/]+)/', latest))
+        assert hrefs.isdisjoint(featured)
 
 
 def test_platform_card_uses_uncropped_jocy() -> None:
@@ -351,8 +373,9 @@ def test_memory_strip_folds_rita_into_personalities() -> None:
         assert "ريتا-الشعار6" not in html
     ar_iv = ar.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("صيد TV", 1)[0]
     assert "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي" not in ar_iv
-    news = en.split("<h2>News</h2>", 1)[1].split("</section>", 1)[0]
-    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in news
+    assert "<h2>News</h2>" not in en
+    latest_en = en.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in latest_en
     interviews = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split("Sayd TV", 1)[0]
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in interviews
     assert (DOCS / "memory" / "index.html").is_file()
@@ -420,17 +443,15 @@ def test_egypt_hunting_news_live_surfaces() -> None:
     assert "~200 migratory birds released" in ticker_en
     latest_ar = ar.split("latest-col", 1)[1].split("</ul>", 1)[0]
     latest_en = en.split("latest-col", 1)[1].split("</ul>", 1)[0]
-    assert latest_ar.find("مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات") < latest_ar.find(
-        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
-    )
-    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in latest_ar
-    assert "feed-thumb" not in latest_ar
+    assert "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات" in latest_ar
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in latest_ar
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" in latest_ar
+    assert "feed-thumb" in latest_ar
     assert "20 أيلول 2026" in latest_ar
-    assert latest_en.find("egypt-new-hunting-rules-burullus-autumn-migration") < latest_en.find(
-        "international-orgs-ecocide-south-lebanon"
-    )
-    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in latest_en
-    assert "feed-thumb" not in latest_en
+    assert "egypt-new-hunting-rules-burullus-autumn-migration" in latest_en
+    assert "international-orgs-ecocide-south-lebanon" not in latest_en
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" in latest_en
+    assert "feed-thumb" in latest_en
     assert "20 September 2026" in latest_en
     mosaic_ar = ar.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     mosaic_en = en.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
@@ -513,21 +534,18 @@ def test_homepage_story_cards_are_unique() -> None:
         assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in html
         assert "memory-of-sayd-awareness-responsibility-2016-2024" not in html
         if rel == "en/index.html":
-            news = html.split("<h2>News</h2>", 1)[1].split("</section>", 1)[0]
-            assert "egypt-new-hunting-rules-burullus-autumn-migration" in news
-            assert "common-shelduck-protected-migrant-lebanon" in news
-            assert "leading-platform-lebanese-arab-hunters-since-2012" in news
-            assert "qatar-suhail-2026-80000-visitors-teaser" not in news
-            hunting = html.split("<h2>Hunting &amp; Equestrian</h2>", 1)[1].split("</section>", 1)[0]
-            assert "qatar-suhail-2026-80000-visitors-teaser" in hunting
-            assert "regulating-hunting-protects-wildlife-bans-worsen" in hunting
-            assert "illegal-hunting-destroys-hobby-nets-lime-night" in hunting
-            assert "illegal-hunting-mist-net-chickadee.jpg" in hunting
-            assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in hunting
-            assert "saudi-hunting-fines-5000-riyal-prohibited-areas" not in hunting
-            assert "saudi-5000-riyal-hunting-fine-teaser" not in hunting
-            hunt_cards = re.findall(r"<article class=\"card", hunting)
-            assert len(hunt_cards) == 4, len(hunt_cards)
+            latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+            assert "egypt-new-hunting-rules-burullus-autumn-migration" in latest
+            assert "common-shelduck-protected-migrant-lebanon" in latest
+            assert "leading-platform-lebanese-arab-hunters-since-2012" in latest
+            assert "qatar-suhail-2026-80000-visitors-teaser" in latest
+            assert "illegal-hunting-destroys-hobby-nets-lime-night" in latest
+            assert "illegal-hunting-mist-net-chickadee.jpg" in latest
+            assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in latest
+            assert "<h2>News</h2>" not in html
+            assert "<h2>Hunting &amp; Equestrian</h2>" not in html
+            assert "saudi-hunting-fines-5000-riyal-prohibited-areas" not in html
+            assert "saudi-5000-riyal-hunting-fine-teaser" not in html
             interviews = html.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split(
                 "</section>", 1
             )[0]
@@ -548,9 +566,10 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "european-bee-eater" in misc
             assert "barn-owl" in misc
         else:
-            hunting = html.split("<h2>صيد وفروسية</h2>", 1)[1].split("</section>", 1)[0]
-            hunt_cards = re.findall(r"<article class=\"card", hunting)
-            assert 3 <= len(hunt_cards) <= 4, len(hunt_cards)
+            assert "<h2>صيد وفروسية</h2>" not in html
+            assert "<h2>أخبار</h2>" not in html
+            latest_ar = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+            assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in latest_ar
             interviews = html.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
             iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
             assert iv_slugs and iv_slugs[0] == ECOCIDE_AR
@@ -600,17 +619,6 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
     """Every filled AR desk has the matching EN card count and twin slugs."""
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     desks = {
-        "News": [
-            "egypt-new-hunting-rules-burullus-autumn-migration",
-            "common-shelduck-protected-migrant-lebanon",
-            "leading-platform-lebanese-arab-hunters-since-2012",
-        ],
-        "Hunting &amp; Equestrian": [
-            "qatar-suhail-2026-80000-visitors-teaser",
-            "autumn-migration-how-world-protects-birds-regulates-hunting",
-            "regulating-hunting-protects-wildlife-bans-worsen",
-            "illegal-hunting-destroys-hobby-nets-lime-night",
-        ],
         "Interviews &amp; Investigations": [
             "international-orgs-ecocide-south-lebanon",
             "george-taza-protect-fish-stocks-interview",
@@ -637,11 +645,18 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
                 found.append(slug)
         assert found == slugs, (heading, found)
         assert len(re.findall(r"<article class=\"card", block)) == len(slugs)
-    hunting = en.split("<h2>Hunting &amp; Equestrian</h2>", 1)[1].split("</section>", 1)[0]
-    assert "illegal-hunting-mist-net-chickadee.jpg" in hunting
+    assert "<h2>News</h2>" not in en
+    assert "<h2>Hunting &amp; Equestrian</h2>" not in en
+    latest = en.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+    assert "illegal-hunting-mist-net-chickadee.jpg" in latest
     assert "Jocy-229x300.jpeg" not in en
     assert "wp-content" not in en
-    for slug in desks["Miscellany"] + desks["News"][1:] + desks["Hunting &amp; Equestrian"][2:]:
+    for slug in desks["Miscellany"] + [
+        "common-shelduck-protected-migrant-lebanon",
+        "leading-platform-lebanese-arab-hunters-since-2012",
+        "regulating-hunting-protects-wildlife-bans-worsen",
+        "illegal-hunting-destroys-hobby-nets-lime-night",
+    ]:
         assert (DOCS / "en" / "posts" / slug / "index.html").is_file()
 
 
@@ -674,8 +689,8 @@ def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
         misc = main.split("<h2>Miscellany</h2>", 1)[1].split("</section>", 1)[0]
         assert "<article class=\"card" in misc
     latest = en.split("latest-feed", 1)[1].split("</ul>", 1)[0]
-    assert "<img" not in latest
-    assert "feed-thumb" not in latest
+    assert "<img" in latest
+    assert "feed-thumb" in latest
 
 
 if __name__ == "__main__":
@@ -688,7 +703,7 @@ if __name__ == "__main__":
     test_homepage_cards_publish_2022_plus()
     test_ai_bird_off_home_and_poaching_uses_real_net()
     test_home_desk_order_interviews_tv_photos_miscellany()
-    test_latest_feed_has_no_thumbs()
+    test_latest_feed_has_thumbs()
     test_platform_card_uses_uncropped_jocy()
     test_latest_and_desks_are_newest_first()
     test_memory_strip_folds_rita_into_personalities()

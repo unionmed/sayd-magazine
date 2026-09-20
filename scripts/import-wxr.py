@@ -86,15 +86,11 @@ DEFAULT_HOME_DESK_OMIT = {
 }
 
 # Magazine desks before Sayd TV / Photos. Tail is جعبة only (after media strips).
-# Nayef: Hunting → Interviews → Gear → TV → Photos → جعبة. Other desks
-# (رماية / رياضات) stay off that spine so they cannot jump between Gear and TV.
+# Nayef: Interviews → Gear → TV → Photos → جعبة. News + Hunting stay off home
+# (Featured + Latest cover those stories). رماية / رياضات stay off the spine.
 HOME_SECTIONS = [
-    ("أخبار", "accent-red", ["أخبار", "اخبار"]),
-    ("صيد وفروسية", "accent-olive", ["صيد وفروسية", "صيد"]),
     ("مقابلات وتحقيقات", "accent-red", ["مقابلات وتحقيقات"]),
     ("عتاد وسلاح", "accent-red", ["عتاد وسلاح الصيد", "عتاد وسلاح"]),
-    ("رماية", "accent-olive", ["رماية"]),
-    ("رياضات وسياحة بيئية", "accent-olive", ["رياضات وسياحة بيئية"]),
 ]
 HOME_SECTIONS_TAIL = [
     ("جعبة المنوعات", "accent-olive", ["جعبة المنوعات"]),
@@ -125,8 +121,8 @@ DEFAULT_HOME_OMIT = {
 # Nayef-via-Mars order. Image / placeholder / gap-thumb work must not drop
 # a listed card. Source of truth is content/homepage.json, else this list.
 DEFAULT_FEATURED_SLUGS = [
-    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
     "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
+    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -575,18 +571,26 @@ def home_section_specs() -> list[tuple[str, str, list[str]]]:
         except json.JSONDecodeError:
             data = {}
         order = [str(s).strip() for s in (data.get("home_section_order") or []) if str(s).strip()]
+    skip = {"أخبار", "صيد وفروسية", "News", "Hunting & Equestrian", "September 2026"}
+    if HOMEPAGE_CONFIG.exists():
+        try:
+            extra = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            extra = {}
+        for title in extra.get("omit_home_desks") or []:
+            if str(title).strip():
+                skip.add(str(title).strip())
     if not order:
-        return list(HOME_SECTIONS)
+        return [spec for spec in HOME_SECTIONS if spec[0] not in skip]
     out: list[tuple[str, str, list[str]]] = []
     seen: set[str] = set()
     for title in order:
+        if title in skip:
+            continue
         spec = by_title.get(title)
         if spec and title not in seen:
             out.append(spec)
             seen.add(title)
-    for spec in HOME_SECTIONS:
-        if spec[0] not in seen:
-            out.append(spec)
     return out
 
 
@@ -644,7 +648,8 @@ def load_homepage_lists() -> dict[str, list[str]]:
     else:
         omit_home = set()
         omit_latest = set()
-    latest = [s for s in latest if s not in omit and s not in omit_latest]
+    featured_set = set(featured)
+    latest = [s for s in latest if s not in omit and s not in omit_latest and s not in featured_set]
     return {
         "featured": featured,
         "latest": latest,
@@ -1646,10 +1651,11 @@ def build_site(data: dict, out: Path) -> None:
     featured_pool = featured_posts(posts, home_lists["featured"])
     featured_lead = featured_pool[:1]
     featured_side = featured_pool[1:]
-    # Card uniqueness: featured mosaic owns those slugs. Latest is text-only,
-    # so a latest row may still have exactly one desk card. Ecocide is the
-    # Nayef exception: mosaic + Interviews desk. Pinned desk_slugs win.
+    # Card uniqueness: featured mosaic owns those slugs. Latest now has thumbs,
+    # so those URLs stay off desks. Ecocide is the Nayef exception: mosaic +
+    # Interviews desk. Pinned desk_slugs win.
     used_slugs: set[str] = {p["slug"] for p in featured_pool}
+    used_slugs.update(p["slug"] for p in latest_news)
     used_slugs.update(home_lists.get("omit_from_home") or [])
     used_slugs.discard("منظمات-دولية-ابادة-بيئية-جنوب-لبنان")
     utility_date = ""
@@ -1697,22 +1703,22 @@ def build_site(data: dict, out: Path) -> None:
 </article>"""
 
     def news_item(p: dict, depth: int) -> str:
-        # Standing UI rule: Latest / آخر الأخبار is text + category + date only.
-        # Never emit feed-thumb / latest-lead images here.
-        cat = esc(p["categories"][0]["name"]) if p["categories"] else ""
-        cat_html = f'<span class="feed-cat">{cat}</span>' if cat else ""
+        # Latest / آخر الأخبار = small thumb + title + date. Skip if no image.
+        thumb = home_thumb(p, depth)
+        if "<img" not in thumb:
+            return ""
         return f"""
 <li>
   <a href="{post_href(p["slug"], depth)}">
+    <span class="feed-thumb">{thumb}</span>
     <span class="feed-text">
-      {cat_html}
       <span class="feed-title">{esc(p["title"])}</span>
       <span class="feed-date">{esc(p["date_display"])}</span>
     </span>
   </a>
 </li>"""
 
-    latest_items = "\n".join(news_item(p, 0) for p in latest_news)
+    latest_items = "\n".join(item for p in latest_news if (item := news_item(p, 0)))
 
     def hero_lead_html(p: dict) -> str:
         cat = esc(p["categories"][0]["name"]) if p["categories"] else "تحقيقات"
@@ -2021,7 +2027,7 @@ def build_site(data: dict, out: Path) -> None:
         return parts
 
     # Magazine grids: 2022→today only. Hide a desk when the category has none.
-    # Order: Hunting → Interviews → Gear, then TV + Photos, then جعبة.
+    # Order: Interviews → Gear, then TV + Photos, then جعبة. News/Hunting off.
     section_html_parts = _desk_blocks(home_section_specs())
     tail_html_parts = _desk_blocks(home_section_tail_specs())
     wrap = lambda blocks: "\n".join(
