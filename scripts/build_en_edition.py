@@ -91,7 +91,6 @@ HOME_TICKER = [
     "saudi-sixth-hunting-season-2026-2027-rules",
     "video-saud-al-babtain-maqnas-afghanistan",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
-    "sayd-returns-what-we-want-to-offer",
     "autumn-migration-field-action-protect-flyways-lebanon",
 ]
 

@@ -31,7 +31,6 @@ HOME_TICKER_EN = [
     "saudi-sixth-hunting-season-2026-2027-rules",
     "video-saud-al-babtain-maqnas-afghanistan",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
-    "sayd-returns-what-we-want-to-offer",
     "autumn-migration-field-action-protect-flyways-lebanon",
 ]
 
@@ -81,7 +80,7 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
     assert 'class="memory-strip"' in home
     assert ">Shooting<" not in home
     assert ">Laws &amp; Maps<" not in home
-    assert home.count("<section class=\"home-section") >= 7
+    assert home.count("<section class=\"home-section") >= 4
 
 
 def test_en_home_has_no_arabic_archive_mix() -> None:
@@ -144,6 +143,10 @@ def test_en_homepage_featured_2026() -> None:
     assert "GitHub Pages" not in html
     for slug in HOME_TICKER_EN:
         assert slug in html
+    ticker_en = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
+    assert "sayd-returns-what-we-want-to-offer" not in ticker_en
+    assert "feature-adonis" in html
+    assert "sayd-returns-what-we-want-to-offer" in html
 
 
 def test_cabs_and_suhail_twins_link_back() -> None:

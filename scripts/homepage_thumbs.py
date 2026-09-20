@@ -35,17 +35,21 @@ KAPS_FRIES_REL = "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg"
 PELICAN_AR_SLUG = "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"
 PELICAN_EN_SLUG = "great-white-pelican-matn-highway-nayef-krayem"
 PELICAN_REL = "uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg"
+POACHING_AR_SLUG = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
+POACHING_CHICKADEE_REL = "uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg"
 NAYEF_LOCKED_PRIMARY_IMAGES: dict[str, str] = {
     KAPS_AR_SLUG: KAPS_BAALBEK_REL,
     KAPS_EN_SLUG: KAPS_BAALBEK_REL,
     PELICAN_AR_SLUG: PELICAN_REL,
     PELICAN_EN_SLUG: PELICAN_REL,
+    POACHING_AR_SLUG: POACHING_CHICKADEE_REL,
 }
 NAYEF_LOCKED_PRIMARY_ALTS: dict[str, str] = {
     KAPS_AR_SLUG: "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP",
     KAPS_EN_SLUG: "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
     PELICAN_AR_SLUG: "بعدسة نايف كريم · البجع الأبيض الكبير · أوتوستراد المتن · ربيع 2026",
     PELICAN_EN_SLUG: "Great White Pelican (Pelecanus onocrotalus) — photo by Nayef Krayem, Matn Expressway, spring 2026",
+    POACHING_AR_SLUG: "طائر يُستخرج من شبكة ضبابية",
 }
 SUHAIL_KEEP = {
     "uploads/2026/09/hero-closing-80k.jpg",
@@ -101,7 +105,7 @@ HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
     "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي": "uploads/2024/02/ريتا-الشعار6.jpg",
     "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا": "uploads/2026/09/gallery-alsharq.jpg",
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": "uploads/2026/09/gallery-katara-crowd.jpg",
-    "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا": "uploads/2023/02/شبك.jpg",
+    "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا": "uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg",
     "لين-عراجي-بطلة-فروسية-وحساب": "uploads/2022/10/لين-2.jpg",
     "جورج-تازة-علينا-جميعًا-المشاركة-لحماي": "uploads/2022/11/طازة-3.jpg",
     "الصيّادة-السورية-أماني-الحمصي": "uploads/2022/08/اماني-الحمصي-2.jpg",

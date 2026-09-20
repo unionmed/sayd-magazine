@@ -168,7 +168,7 @@ def test_kaps_package_untouched() -> None:
 
 
 def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
-    """Nayef Phase 2: AI-bird story off home; 2023 poaching card is a real mist-net photo."""
+    """Nayef: AI-bird off home; poaching card/article use the chickadee mist-net file."""
     import hashlib
 
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
@@ -177,11 +177,31 @@ def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
     assert "Bird-02.jpeg" not in ar
     assert "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب" not in en
     assert "Bird-02.jpeg" not in en
-    assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in ar
-    assert "media/uploads/2023/02/شبك.jpg" in ar
-    net = (DOCS / "media" / "uploads" / "2023" / "02" / "شبك.jpg").read_bytes()
+    hunting = ar.split("<h2>صيد وفروسية</h2>", 1)[1].split("</section>", 1)[0]
+    assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in hunting
+    assert "illegal-hunting-mist-net-chickadee.jpg" in hunting
+    assert "شبك.jpg" not in hunting
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in hunting
+    assert "ecocide-south-lebanon" not in hunting
+    chick = (DOCS / "media" / "uploads" / "2026" / "09" / "illegal-hunting-mist-net-chickadee.jpg")
+    assert chick.is_file() and chick.stat().st_size > 32
     bird = (DOCS / "media" / "uploads" / "2024" / "06" / "Bird-02.jpeg").read_bytes()
-    assert hashlib.md5(net).hexdigest() != hashlib.md5(bird).hexdigest()
+    egypt = (
+        DOCS / "media" / "uploads" / "2026" / "09" / "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg"
+    ).read_bytes()
+    smoke = (
+        DOCS / "media" / "uploads" / "2026" / "09" / "ecocide-south-lebanon-white-phosphorus-smoke.jpg"
+    ).read_bytes()
+    digest = hashlib.md5(chick.read_bytes()).hexdigest()
+    assert digest != hashlib.md5(bird).hexdigest()
+    assert digest != hashlib.md5(egypt).hexdigest()
+    assert digest != hashlib.md5(smoke).hexdigest()
+    article = (DOCS / "posts" / "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    assert "illegal-hunting-mist-net-chickadee.jpg" in article
+    assert "شبك.jpg" not in article
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in article
 
 
 def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
@@ -192,6 +212,11 @@ def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
         i = main.find(f"<h2>{title}</h2>")
         assert i >= 0, title
         return i
+
+    def _h2_pos_optional(html: str, title: str) -> int | None:
+        main = html.split('class="home-main"', 1)[1]
+        i = main.find(f"<h2>{title}</h2>")
+        return None if i < 0 else i
 
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -204,15 +229,17 @@ def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
         _h2_pos(ar, "جعبة المنوعات"),
     )
     assert ar_hunt < ar_iv < ar_gear < ar_tv < ar_ph < ar_bag
-    en_hunt, en_iv, en_gear, en_tv, en_ph, en_bag = (
-        _h2_pos(en, "Hunting &amp; Equestrian"),
-        _h2_pos(en, "Interviews &amp; Investigations"),
-        _h2_pos(en, "Gear &amp; Arms"),
-        _h2_pos(en, "Sayd TV"),
-        _h2_pos(en, "Photos"),
-        _h2_pos(en, "Miscellany"),
-    )
-    assert en_hunt < en_iv < en_gear < en_tv < en_ph < en_bag
+    en_hunt = _h2_pos(en, "Hunting &amp; Equestrian")
+    en_iv = _h2_pos(en, "Interviews &amp; Investigations")
+    en_tv = _h2_pos(en, "Sayd TV")
+    en_ph = _h2_pos(en, "Photos")
+    assert en_hunt < en_iv < en_tv < en_ph
+    en_gear = _h2_pos_optional(en, "Gear &amp; Arms")
+    if en_gear is not None:
+        assert en_iv < en_gear < en_tv
+    en_bag = _h2_pos_optional(en, "Miscellany")
+    if en_bag is not None:
+        assert en_ph < en_bag
 
 
 def test_latest_feed_has_no_thumbs() -> None:
@@ -433,6 +460,9 @@ def test_homepage_story_cards_are_unique() -> None:
     from homepage_unique_cards import (  # noqa: E402
         ADONIS_AR,
         ADONIS_EN,
+        ECOCIDE_AR,
+        ECOCIDE_EN,
+        MOSAIC_AND_INTERVIEWS,
         NEW_LOOK_AR,
         NEW_LOOK_EN,
         content_card_slugs,
@@ -447,8 +477,12 @@ def test_homepage_story_cards_are_unique() -> None:
         counts: dict[str, int] = {}
         for slug in slugs:
             counts[slug] = counts.get(slug, 0) + 1
-        dupes = {slug: n for slug, n in counts.items() if n > 1}
+        allowed = MOSAIC_AND_INTERVIEWS
+        dupes = {slug: n for slug, n in counts.items() if n > 1 and slug not in allowed}
         assert dupes == {}, (rel, dupes)
+        for extra in allowed:
+            if extra in counts:
+                assert counts[extra] == 2, (rel, extra, counts[extra])
         assert slugs.count(adonis) == 1, (rel, adonis, slugs.count(adonis))
         assert twin not in slugs
         assert twin not in html
@@ -479,6 +513,25 @@ def test_homepage_story_cards_are_unique() -> None:
             hunting = html.split("<h2>Hunting &amp; Equestrian</h2>", 1)[1].split("</section>", 1)[0]
             assert "qatar-suhail-2026-80000-visitors-teaser" in hunting
             assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in hunting
+            hunt_cards = re.findall(r"<article class=\"card", hunting)
+            assert 3 <= len(hunt_cards) <= 4, len(hunt_cards)
+            interviews = html.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split(
+                "</section>", 1
+            )[0]
+            iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
+            assert iv_slugs and iv_slugs[0] == ECOCIDE_EN
+            assert "<h2>Miscellany</h2>" not in html.split('class="home-main"', 1)[1] or re.search(
+                r'<h2>Miscellany</h2>.*?<article class="card',
+                html.split('class="home-main"', 1)[1],
+                re.S,
+            )
+        else:
+            hunting = html.split("<h2>صيد وفروسية</h2>", 1)[1].split("</section>", 1)[0]
+            hunt_cards = re.findall(r"<article class=\"card", hunting)
+            assert 3 <= len(hunt_cards) <= 4, len(hunt_cards)
+            interviews = html.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
+            iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
+            assert iv_slugs and iv_slugs[0] == ECOCIDE_AR
 
 
 def test_lock_is_idempotent_and_drops_restacked_cards() -> None:
@@ -521,6 +574,39 @@ def test_lock_is_idempotent_and_drops_restacked_cards() -> None:
     assert lock_homepage_html(locked) == locked
 
 
+def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
+    """P0: Adonis is mosaic-only; EN Miscellany is filled or omitted, never empty."""
+    import sys
+
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from homepage_unique_cards import ADONIS_AR, ADONIS_EN  # noqa: E402
+
+    for rel in ("index.html", "en/index.html"):
+        html = (DOCS / rel).read_text(encoding="utf-8")
+        for block in re.findall(r'<div class="ticker"[^>]*>(.*?)</div>', html, re.S):
+            assert ADONIS_AR not in block
+            assert ADONIS_EN not in block
+        assert "feature-adonis" in html
+        assert "sayd-returns-new-look-wider-vision" not in html
+        assert "صيد-تعود-بحلة-جديدة" not in html
+        assert 'class="memory-strip"' in html
+        assert "great-white-pelican-nayef-krayem-matn-2026.jpg" in html
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    assert "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" in ar
+    egypt = (
+        DOCS / "posts" / "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات" / "index.html"
+    ).read_text(encoding="utf-8")
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" in egypt
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    main = en.split('class="home-main"', 1)[1]
+    if "<h2>Miscellany</h2>" in main:
+        misc = main.split("<h2>Miscellany</h2>", 1)[1].split("</section>", 1)[0]
+        assert "<article class=\"card" in misc
+    latest = en.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+    assert "<img" not in latest
+    assert "feed-thumb" not in latest
+
+
 if __name__ == "__main__":
     test_no_empty_thumbs_or_missing_files()
     test_en_homepage_has_no_fries_thumbs()
@@ -539,4 +625,5 @@ if __name__ == "__main__":
     test_egypt_hunting_news_live_surfaces()
     test_homepage_story_cards_are_unique()
     test_lock_is_idempotent_and_drops_restacked_cards()
+    test_adonis_off_ticker_and_empty_en_miscellany_hidden()
     print("test_homepage_qa: ok")
