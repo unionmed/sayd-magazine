@@ -68,11 +68,14 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
     """Do not shrink /en/ to September-2026-only; keep every 2022+ EN twin."""
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert len(PAIRS) >= 14
+    skip_home = {"memory-of-sayd-awareness-responsibility-2016-2024"}
     for en_slug in PAIRS.values():
+        if en_slug in skip_home:
+            continue
         assert en_slug in home, en_slug
     assert "great-white-pelican-matn-highway-nayef-krayem" in home
-    assert "memory-of-sayd-awareness-responsibility-2016-2024" in home
     assert "rita-habib-alshaar.jpg" in home
+    assert 'class="memory-strip"' in home
     assert ">Shooting<" not in home
     assert ">Laws &amp; Maps<" not in home
     assert home.count("<section class=\"home-section") >= 7
@@ -222,7 +225,12 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in lead
             assert "<h2>Featured stories</h2>" not in html
         css_q = html.split("site.css", 1)[1][:64]
-        assert "?v=20260919-en-plex-kaps" in css_q or "?v=20260920-memory-strip" in css_q
+        assert (
+            "?v=20260919-en-plex-kaps" in css_q
+            or "?v=20260920-memory-strip" in css_q
+            or "?v=20260920-memory-ten" in css_q
+            or "?v=20260920-latest-text" in css_q
+        )
         body = lead.split("class=\"body\"", 1)[1].split("class=\"thumb\"", 1)[0]
         assert "kaps-caption" not in body
         assert "anti-poaching unit camp" not in body
@@ -311,7 +319,7 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "IBM+Plex+Serif" in html
     assert "family=Cairo" not in html
     assert "19 Sep 2026" not in html
-    assert "19 September 2026" in html
+    assert "20 September 2026" in html
     assert ">Arabic<" not in html.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
     assert "Interviews &amp; Investigations" in html
     assert "Eco-Tourism" in html
@@ -368,7 +376,12 @@ def test_en_nested_nav_paths() -> None:
     assert "IBM+Plex+Sans" in article
     assert "?v=20260919-en-plex-kaps" in article
     en_home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    assert "?v=20260919-en-plex-kaps" in en_home or "?v=20260920-memory-strip" in en_home
+    assert (
+        "?v=20260919-en-plex-kaps" in en_home
+        or "?v=20260920-memory-strip" in en_home
+        or "?v=20260920-memory-ten" in en_home
+        or "?v=20260920-latest-text" in en_home
+    )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     grid = home.split("September 2026", 1)[1]
@@ -387,8 +400,18 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
     assert "html[dir=\"ltr\"] .home-section:not(:has(article))" in css
     home = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    assert "?v=20260919-en-plex-kaps-r" in home or "?v=20260920-memory-strip" in home
-    assert "?v=20260919-en-plex-kaps-r" in en or "?v=20260920-memory-strip" in en
+    assert (
+        "?v=20260919-en-plex-kaps-r" in home
+        or "?v=20260920-memory-strip" in home
+        or "?v=20260920-memory-ten" in home
+        or "?v=20260920-latest-text" in home
+    )
+    assert (
+        "?v=20260919-en-plex-kaps-r" in en
+        or "?v=20260920-memory-strip" in en
+        or "?v=20260920-memory-ten" in en
+        or "?v=20260920-latest-text" in en
+    )
     assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
@@ -397,7 +420,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
     assert "ciconia-ciconia-white-stork.jpg" not in mosaic
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
-    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest.split("</ul>", 1)[0]
 
 
 def test_every_en_page_is_ltr_plex() -> None:
@@ -414,7 +437,12 @@ def test_every_en_page_is_ltr_plex() -> None:
         assert "IBM+Plex+Sans" in html
         assert "IBM+Plex+Serif" in html
         assert "family=Cairo" not in html
-        assert "?v=20260919-en-plex-kaps" in html or "?v=20260920-memory-strip" in html
+        assert (
+            "?v=20260919-en-plex-kaps" in html
+            or "?v=20260920-memory-strip" in html
+            or "?v=20260920-memory-ten" in html
+            or "?v=20260920-latest-text" in html
+        )
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html
         assert "ticker-track" in html

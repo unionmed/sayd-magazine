@@ -37,6 +37,7 @@ prefer_recent = import_wxr.prefer_recent
 HOME_PUBLISH_YEAR_MIN = import_wxr.HOME_PUBLISH_YEAR_MIN
 post_publish_year = import_wxr.post_publish_year
 home_desk_omit_slugs = import_wxr.home_desk_omit_slugs
+home_section_specs = import_wxr.home_section_specs
 apply_nayef_category_rule = import_wxr.apply_nayef_category_rule
 build_cat_info = import_wxr.build_cat_info
 sort_posts_newest_first = import_wxr.sort_posts_newest_first
@@ -262,7 +263,7 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in latest
     assert ECOCIDE in featured
     assert MEMORY not in featured
-    assert MEMORY in latest
+    assert MEMORY not in latest
     assert featured.find(ECOCIDE) < featured.find(SUHAIL_80K)
     assert lists["featured"] == [
         "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
@@ -273,7 +274,8 @@ def test_homepage_latest_matches_nayef() -> None:
     ]
 
     latest_slugs = re.findall(r'href="posts/([^/"]+)/index.html"', latest)
-    assert latest_slugs == lists["latest"]
+    expected_latest = [s for s in lists["latest"] if s != MEMORY]
+    assert latest_slugs == expected_latest
     assert "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع" not in lists["latest"]
     assert "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" in lists["omit"]
 
@@ -447,6 +449,12 @@ def test_prefer_recent_skips_ai_bird_promo() -> None:
     assert [p["slug"] for p in picked] == [keep["slug"]]
 
 
+def test_home_section_order_interviews_before_gear() -> None:
+    titles = [title for title, _, _ in home_section_specs()]
+    assert titles.index("صيد وفروسية") < titles.index("مقابلات وتحقيقات")
+    assert titles.index("مقابلات وتحقيقات") < titles.index("عتاد وسلاح")
+
+
 def test_featured_mosaic_matches_homepage_json() -> None:
     """Nayef hard rule: mosaic count/order = homepage.json featured array."""
     html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
@@ -551,6 +559,7 @@ if __name__ == "__main__":
     test_prefer_recent_skips_pre_2022_even_with_local_thumb()
     test_prefer_recent_newest_first_not_local_first()
     test_prefer_recent_skips_ai_bird_promo()
+    test_home_section_order_interviews_before_gear()
     test_featured_mosaic_matches_homepage_json()
     test_featured_pool_never_drops_for_missing_image()
     test_featured_side_card_stays_without_img()

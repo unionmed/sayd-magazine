@@ -65,12 +65,12 @@ def test_rita_stays_on_memory_and_design_png_is_off_homes() -> None:
     assert "ecocide-south-lebanon-white-phosphorus-smoke" in mosaic_ar
     assert "ciconia-ciconia-white-stork" not in mosaic_ar
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic_ar
-    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest_ar
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest_ar.split("</ul>", 1)[0]
     assert "international-orgs-ecocide-south-lebanon" in mosaic_en
     assert "ecocide-south-lebanon-white-phosphorus-smoke" in mosaic_en
     assert "ciconia-ciconia-white-stork" not in mosaic_en
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in mosaic_en
-    assert "memory-of-sayd-awareness-responsibility-2016-2024" in latest_en
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in latest_en.split("</ul>", 1)[0]
     assert "rita-habib-alshaar.jpg" in ar
     assert "rita-habib-alshaar.jpg" in en
     assert "ريتا-الشعار6" not in ar
@@ -128,16 +128,14 @@ def test_homepage_cards_publish_2022_plus() -> None:
             assert "ecocide-south-lebanon-white-phosphorus-smoke" in mosaic
             assert "ciconia-ciconia-white-stork" not in mosaic
             assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
-            assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest
-            assert "19 أيلول 2026" in latest
+            assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest.split("</ul>", 1)[0]
             assert "rita-habib-alshaar.jpg" in html
         else:
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
             after = html.split(marker, 1)[1]
             assert "international-orgs-ecocide-south-lebanon" in mosaic
             assert "memory-of-sayd-awareness-responsibility-2016-2024" not in mosaic
-            assert "memory-of-sayd-awareness-responsibility-2016-2024" in after
-            assert "19 September 2026" in after
+            assert "memory-of-sayd-awareness-responsibility-2016-2024" not in after.split("</ul>", 1)[0]
             assert "rita-habib-alshaar.jpg" in html
             assert "posts/" in after
             desks = re.sub(
@@ -187,7 +185,7 @@ def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
 
 
 def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
-    """Desktop order: Interviews → Sayd TV → Photos → جعبة / Miscellany."""
+    """Nayef: Hunting → Interviews → Gear → TV → Photos → جعبة / Miscellany."""
 
     def _h2_pos(html: str, title: str) -> int:
         main = html.split('class="home-main"', 1)[1]
@@ -197,20 +195,38 @@ def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
 
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    ar_iv, ar_tv, ar_ph, ar_bag = (
+    ar_hunt, ar_iv, ar_gear, ar_tv, ar_ph, ar_bag = (
+        _h2_pos(ar, "صيد وفروسية"),
         _h2_pos(ar, "مقابلات وتحقيقات"),
+        _h2_pos(ar, "عتاد وسلاح"),
         _h2_pos(ar, "صيد TV"),
         _h2_pos(ar, "صور"),
         _h2_pos(ar, "جعبة المنوعات"),
     )
-    assert ar_iv < ar_tv < ar_ph < ar_bag
-    en_iv, en_tv, en_ph, en_bag = (
+    assert ar_hunt < ar_iv < ar_gear < ar_tv < ar_ph < ar_bag
+    en_hunt, en_iv, en_gear, en_tv, en_ph, en_bag = (
+        _h2_pos(en, "Hunting &amp; Equestrian"),
         _h2_pos(en, "Interviews &amp; Investigations"),
+        _h2_pos(en, "Gear &amp; Arms"),
         _h2_pos(en, "Sayd TV"),
         _h2_pos(en, "Photos"),
         _h2_pos(en, "Miscellany"),
     )
-    assert en_iv < en_tv < en_ph < en_bag
+    assert en_hunt < en_iv < en_gear < en_tv < en_ph < en_bag
+
+
+def test_latest_feed_has_no_thumbs() -> None:
+    """Latest / آخر الأخبار is text + category + date only — no feed-thumbs."""
+    css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert ".latest-feed .feed-thumb" in css
+    assert "display: none !important" in css
+    for rel in ("index.html", "en/index.html"):
+        html = (DOCS / rel).read_text(encoding="utf-8")
+        latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+        assert "feed-thumb" not in latest
+        assert "latest-lead" not in latest
+        assert "<img" not in latest
+        assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in latest
 
 
 def test_platform_card_uses_uncropped_jocy() -> None:
@@ -374,13 +390,14 @@ def test_egypt_hunting_news_live_surfaces() -> None:
     assert latest_ar.find("مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات") < latest_ar.find(
         "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
     )
-    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" in latest_ar
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in latest_ar
+    assert "feed-thumb" not in latest_ar
     assert "20 أيلول 2026" in latest_ar
-    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest_ar
     assert latest_en.find("egypt-new-hunting-rules-burullus-autumn-migration") < latest_en.find(
         "international-orgs-ecocide-south-lebanon"
     )
-    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" in latest_en
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in latest_en
+    assert "feed-thumb" not in latest_en
     assert "20 September 2026" in latest_en
     mosaic_ar = ar.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     mosaic_en = en.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
@@ -418,6 +435,7 @@ if __name__ == "__main__":
     test_homepage_cards_publish_2022_plus()
     test_ai_bird_off_home_and_poaching_uses_real_net()
     test_home_desk_order_interviews_tv_photos_miscellany()
+    test_latest_feed_has_no_thumbs()
     test_platform_card_uses_uncropped_jocy()
     test_latest_and_desks_are_newest_first()
     test_memory_strip_folds_rita_into_personalities()

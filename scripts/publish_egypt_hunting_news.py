@@ -292,9 +292,8 @@ def patch_ar_home() -> None:
     path = DOCS / "index.html"
     html = path.read_text(encoding="utf-8")
     html = replace_ticker(html, ar_ticker(""))
-    lead = f"""<li class="latest-lead">
+    lead = f"""<li>
   <a href="posts/{AR_SLUG}/index.html">
-    <img class="feed-thumb" src="{IMG}" alt="{AR_CAPTION}" loading="lazy">
     <span class="feed-text">
       <span class="feed-cat">أخبار</span>
       <span class="feed-title">{AR_TITLE}</span>
@@ -331,9 +330,8 @@ def patch_en_home() -> None:
         + EN_TICKER_REST.format(p="posts/")
     )
     html = replace_ticker(html, en_inner)
-    lead = f"""<li class="latest-lead">
+    lead = f"""<li>
   <a href="posts/{EN_SLUG}/index.html">
-    <img class="feed-thumb" src="../{IMG}" alt="{EN_CAPTION}" loading="lazy">
     <span class="feed-text">
       <span class="feed-cat">News</span>
       <span class="feed-title">{EN_TITLE}</span>

@@ -86,13 +86,15 @@ DEFAULT_HOME_DESK_OMIT = {
 }
 
 # Magazine desks before Sayd TV / Photos. Tail is جعبة only (after media strips).
+# Nayef: Hunting → Interviews → Gear → TV → Photos → جعبة. Other desks
+# (رماية / رياضات) stay off that spine so they cannot jump between Gear and TV.
 HOME_SECTIONS = [
     ("أخبار", "accent-red", ["أخبار", "اخبار"]),
     ("صيد وفروسية", "accent-olive", ["صيد وفروسية", "صيد"]),
-    ("رماية", "accent-olive", ["رماية"]),
-    ("عتاد وسلاح", "accent-red", ["عتاد وسلاح الصيد", "عتاد وسلاح"]),
-    ("رياضات وسياحة بيئية", "accent-olive", ["رياضات وسياحة بيئية"]),
     ("مقابلات وتحقيقات", "accent-red", ["مقابلات وتحقيقات"]),
+    ("عتاد وسلاح", "accent-red", ["عتاد وسلاح الصيد", "عتاد وسلاح"]),
+    ("رماية", "accent-olive", ["رماية"]),
+    ("رياضات وسياحة بيئية", "accent-olive", ["رياضات وسياحة بيئية"]),
 ]
 HOME_SECTIONS_TAIL = [
     ("جعبة المنوعات", "accent-olive", ["جعبة المنوعات"]),
@@ -524,6 +526,55 @@ def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
                 return pairs
 
     return [p for p in DEFAULT_TICKER_ITEMS if p[0] not in DEFAULT_HOME_OMIT]
+
+
+def home_section_specs() -> list[tuple[str, str, list[str]]]:
+    """Desk order from content/homepage.json, else HOME_SECTIONS."""
+    by_title = {title: spec for title, spec in ((s[0], s) for s in HOME_SECTIONS)}
+    order: list[str] = []
+    if HOMEPAGE_CONFIG.exists():
+        try:
+            data = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            data = {}
+        order = [str(s).strip() for s in (data.get("home_section_order") or []) if str(s).strip()]
+    if not order:
+        return list(HOME_SECTIONS)
+    out: list[tuple[str, str, list[str]]] = []
+    seen: set[str] = set()
+    for title in order:
+        spec = by_title.get(title)
+        if spec and title not in seen:
+            out.append(spec)
+            seen.add(title)
+    for spec in HOME_SECTIONS:
+        if spec[0] not in seen:
+            out.append(spec)
+    return out
+
+
+def home_section_tail_specs() -> list[tuple[str, str, list[str]]]:
+    by_title = {title: spec for title, spec in ((s[0], s) for s in HOME_SECTIONS_TAIL)}
+    order: list[str] = []
+    if HOMEPAGE_CONFIG.exists():
+        try:
+            data = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            data = {}
+        order = [str(s).strip() for s in (data.get("home_section_tail") or []) if str(s).strip()]
+    if not order:
+        return list(HOME_SECTIONS_TAIL)
+    out: list[tuple[str, str, list[str]]] = []
+    seen: set[str] = set()
+    for title in order:
+        spec = by_title.get(title)
+        if spec and title not in seen:
+            out.append(spec)
+            seen.add(title)
+    for spec in HOME_SECTIONS_TAIL:
+        if spec[0] not in seen:
+            out.append(spec)
+    return out
 
 
 def load_homepage_lists() -> dict[str, list[str]]:
@@ -1587,6 +1638,8 @@ def build_site(data: dict, out: Path) -> None:
 </article>"""
 
     def news_item(p: dict, depth: int) -> str:
+        # Standing UI rule: Latest / آخر الأخبار is text + category + date only.
+        # Never emit feed-thumb / latest-lead images here.
         cat = esc(p["categories"][0]["name"]) if p["categories"] else ""
         cat_html = f'<span class="feed-cat">{cat}</span>' if cat else ""
         return f"""
@@ -1907,9 +1960,9 @@ def build_site(data: dict, out: Path) -> None:
         return parts
 
     # Magazine grids: 2022→today only. Hide a desk when the category has none.
-    # Order: desks through Interviews, then TV + Photos, then جعبة.
-    section_html_parts = _desk_blocks(HOME_SECTIONS)
-    tail_html_parts = _desk_blocks(HOME_SECTIONS_TAIL)
+    # Order: Hunting → Interviews → Gear, then TV + Photos, then جعبة.
+    section_html_parts = _desk_blocks(home_section_specs())
+    tail_html_parts = _desk_blocks(home_section_tail_specs())
     wrap = lambda blocks: "\n".join(
         f'<div class="container">{block}</div>' if block.strip() else ""
         for block in blocks
