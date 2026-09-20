@@ -124,15 +124,26 @@ DEFAULT_HOME_OMIT = {
 # a listed card. Source of truth is content/homepage.json, else this list.
 DEFAULT_FEATURED_SLUGS = [
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
-    "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
 ]
 # Hand-crafted editorial extras that may not be in the WXR dump. Featured
 # mosaic still emits these cards (gap / existing thumb) so a rebuild cannot
 # silently drop Memory or any other Nayef-listed slug.
 FEATURED_CARD_STUBS: dict[str, dict] = {
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": {
+        "title": "منظمات دولية: إسرائيل ترتكب «إبادة بيئية» في جنوب لبنان",
+        "date_display": "20 أيلول 2026",
+        "datetime": "2026-09-20 00:00:00",
+        "date": "2026-09-20 00:00:00",
+        "categories": [
+            {"nicename": "مقابلات-تحقيقات", "name": "مقابلات وتحقيقات", "slug": "مقابلات-تحقيقات"}
+        ],
+        "excerpt": "تقارير أممية وحقوقية تتقاطع على توصيف الإبادة البيئية في جنوب لبنان.",
+        "featured": "uploads/2026/09/ciconia-ciconia-white-stork.jpg",
+    },
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": {
         "title": "من ذاكرة «صيد»: مسيرة الوعي والمسؤولية (2016 – 2024)",
         "date_display": "19 أيلول 2026",
@@ -148,6 +159,10 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
 # Mars/Nayef editorial list. One shared chrome for every page — never latest-N
 # posts and never a breaking/urgent label. Rebuilds must emit this same strip.
 DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
+    (
+        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
+        "منظمات دولية: «إبادة بيئية» في جنوب لبنان",
+    ),
     (
         "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
         "CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي",
@@ -195,6 +210,7 @@ KNOWN_CATEGORY_RECORDS = {
 }
 # Mars/Nayef extras for current editorial surfaces (Suheil, Kaps, season…).
 DEFAULT_CATEGORY_EXTRAS: dict[str, list[str]] = {
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": ["مقابلات-تحقيقات"],
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": ["صيد"],
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": ["صيد"],
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": ["صيد", "أخبار"],
@@ -300,12 +316,12 @@ def home_desk_omit_slugs() -> set[str]:
 def prefer_recent(
     items: list[dict], n: int, media_root: Path | None = None
 ) -> list[dict]:
-    """Homepage desks: 2022→today publish dates only. Never pad with older stories.
+    """Homepage desks: 2022→today, newest publish date first.
 
-    Among eligible items, prefer locally mirrored thumbs, then newest first.
-    Skip slugs in omit_from_home_desks (AI-bird promo).
+    Nayef: never reorder by thumb availability, title, or slug. Local
+    media still required to *render* a card, but it must not jump an
+    older story ahead of a newer one. Skip omit_from_home_desks.
     """
-    root = media_root if media_root is not None else MEDIA_ROOT
     blocked = home_desk_omit_slugs()
     fresh = [
         p
@@ -313,15 +329,7 @@ def prefer_recent(
         if post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN
         and str(p.get("slug") or "") not in blocked
     ]
-    fresh.sort(key=lambda p: str(p.get("date") or ""), reverse=True)
-    local, rest = [], []
-    for p in fresh:
-        feat = p.get("featured") or ""
-        if feat and local_media_file(root, feat):
-            local.append(p)
-        else:
-            rest.append(p)
-    return (local + rest)[:n]
+    return sort_posts_newest_first(fresh)[:n]
 
 
 def format_ar_date(dt: datetime | None) -> str:
@@ -519,9 +527,33 @@ def load_homepage_lists() -> dict[str, list[str]]:
     return {"featured": featured, "latest": latest, "omit": sorted(omit)}
 
 
+def sort_latest_newest_first(posts: list[dict]) -> list[dict]:
+    """Nayef: «آخر الأخبار» / Latest is newest publish date first, oldest last."""
+    return sort_posts_newest_first(list(posts))
+
+
 def pick_posts_by_slug(posts: list[dict], slugs: list[str]) -> list[dict]:
     by_slug = {p.get("slug"): p for p in posts}
-    return [by_slug[s] for s in slugs if s in by_slug]
+    out: list[dict] = []
+    for slug in slugs:
+        if slug in by_slug:
+            out.append(by_slug[slug])
+        elif slug in FEATURED_CARD_STUBS:
+            out.append(featured_card_stub(slug))
+    return out
+
+
+def merge_editorial_extra_posts(posts: list[dict]) -> list[dict]:
+    """Keep hand-published extras (Ecocide, Memory) available after a WXR rebuild."""
+    by_slug = {p.get("slug"): p for p in posts}
+    extras = list(FEATURED_CARD_STUBS)
+    extras.extend(s for s in load_homepage_lists().get("latest") or [] if s not in extras)
+    for slug in extras:
+        if slug in by_slug:
+            continue
+        posts.append(featured_card_stub(slug))
+        by_slug[slug] = posts[-1]
+    return posts
 
 
 def featured_slugs() -> list[str]:
@@ -1456,6 +1488,7 @@ def build_site(data: dict, out: Path) -> None:
         (assets_dst / "css").mkdir(parents=True)
 
     apply_nayef_category_rule(data["posts"], catalog=data.get("categories"))
+    data["posts"] = merge_editorial_extra_posts(data["posts"])
     data["posts"] = sort_posts_newest_first(data["posts"])
     posts = data["posts"]
     pages = data["pages"]
@@ -1480,7 +1513,9 @@ def build_site(data: dict, out: Path) -> None:
     # Featured mosaic slugs come only from homepage.json / DEFAULT_FEATURED.
     # Missing / gap images never drop a listed card (Nayef hard rule).
     home_lists = load_homepage_lists()
-    latest_news = pick_posts_by_slug(posts, home_lists["latest"])
+    latest_news = sort_latest_newest_first(
+        pick_posts_by_slug(posts, home_lists["latest"])
+    )
     featured_pool = featured_posts(posts, home_lists["featured"])
     featured_lead = featured_pool[:1]
     featured_side = featured_pool[1:]
@@ -1843,6 +1878,7 @@ def build_site(data: dict, out: Path) -> None:
                         break
             if not fresh:
                 continue
+            fresh = sort_posts_newest_first(fresh)
             for p in fresh:
                 used_slugs.add(p["slug"])
             parts.append(section_block(title, accent, fresh, cat_href(c["slug"], 0)))

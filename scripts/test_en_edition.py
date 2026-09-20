@@ -24,6 +24,7 @@ SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يخ
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 
 HOME_TICKER_EN = [
+    "international-orgs-ecocide-south-lebanon",
     CABS_EN,
     "qatar-suhail-2026-80000-visitors-teaser",
     "saudi-sixth-hunting-season-2026-2027-rules",
@@ -35,7 +36,7 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 14
+    assert len(PAIRS) == 15
     for en_slug in PAIRS.values():
         assert (ROOT / "content" / "en" / f"{en_slug}.md").is_file()
         assert (DOCS / "en" / "posts" / en_slug / "index.html").is_file()
@@ -312,7 +313,7 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert ">Arabic<" not in html.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
     assert "Interviews &amp; Investigations" in html
     assert "Eco-Tourism" in html
-    assert "feature-memory" in html
+    assert "international-orgs-ecocide-south-lebanon" in html
     assert "feature-adonis" in html
     assert "feature-lead" in html
     assert "home-layout" in html
@@ -388,8 +389,11 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
     assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
-    assert "ريتا-الشعار6.jpg" in mosaic
-    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in mosaic
+    latest = home[home.find("latest-col") :]
+    assert "ciconia-ciconia-white-stork.jpg" in mosaic
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest
 
 
 def test_every_en_page_is_ltr_plex() -> None:
