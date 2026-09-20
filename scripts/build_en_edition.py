@@ -66,6 +66,7 @@ HOME_MOSAIC_SIDE = [
     "sayd-returns-what-we-want-to-offer",
 ]
 HOME_LATEST = [
+    "egypt-new-hunting-rules-burullus-autumn-migration",
     "international-orgs-ecocide-south-lebanon",
     "memory-of-sayd-awareness-responsibility-2016-2024",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
@@ -77,9 +78,11 @@ HOME_LATEST = [
     "autumn-migration-field-action-protect-flyways-lebanon",
 ]
 TICKER_TITLES_EN = {
+    "egypt-new-hunting-rules-burullus-autumn-migration": "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus",
     "international-orgs-ecocide-south-lebanon": "International groups: “ecocide” in southern Lebanon",
 }
 HOME_TICKER = [
+    "egypt-new-hunting-rules-burullus-autumn-migration",
     "international-orgs-ecocide-south-lebanon",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
     "qatar-suhail-2026-80000-visitors-teaser",
@@ -91,6 +94,14 @@ HOME_TICKER = [
 ]
 
 META: dict[str, dict] = {
+    "egypt-new-hunting-rules-burullus-autumn-migration": {
+        "date": "20 September 2026",
+        "date_sort": "2026-09-20",
+        "category": "News",
+        "author": "Sayd",
+        "image": "media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
+        "image_alt": "A field researcher removes a bird from illegal nets.",
+    },
     "international-orgs-ecocide-south-lebanon": {
         "date": "20 September 2026",
         "date_sort": "2026-09-20",
@@ -323,6 +334,13 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
     lead_html = md_blocks(draft["lead"]) if draft["lead"] else ""
     body_html = md_blocks(draft["body"]) if draft["body"] else ""
     extra = ""
+    if slug == "egypt-new-hunting-rules-burullus-autumn-migration":
+        extra = figure(
+            "media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
+            "A field researcher removes a bird from illegal nets.",
+            "A field researcher removes a bird from illegal nets.",
+            media_prefix,
+        )
     if slug == "international-orgs-ecocide-south-lebanon":
         smoke = figure(
             "media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
@@ -765,6 +783,7 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
     if image and slug not in {
         "cabs-mecshap-autumn-birds-lebanon-khatib",
         "international-orgs-ecocide-south-lebanon",
+        "egypt-new-hunting-rules-burullus-autumn-migration",
         "suhail-2026-in-photos-falcons-visitors",
         "video-saud-al-babtain-maqnas-afghanistan",
         *NO_THUMB_SLUGS,

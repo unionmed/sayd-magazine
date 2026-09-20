@@ -133,6 +133,23 @@ DEFAULT_FEATURED_SLUGS = [
 # mosaic still emits these cards (gap / existing thumb) so a rebuild cannot
 # silently drop Memory or any other Nayef-listed slug.
 FEATURED_CARD_STUBS: dict[str, dict] = {
+    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": {
+        "title": "مصر: قرار جديد لتنظيم الصيد وملاحقة المخالفات في موسم هجرة الخريف",
+        "date_display": "20 أيلول 2026",
+        "datetime": "2026-09-20 18:00:00",
+        "date": "2026-09-20 18:00:00",
+        "categories": [
+            {"nicename": "أخبار", "name": "أخبار", "slug": "أخبار"}
+        ],
+        "excerpt": "أعلنت وزارة التنمية المحلية والبيئة في مصر قراراً جديداً لتنظيم أعمال الصيد، بالتوازي مع بدء جهاز شؤون البيئة خطة رصد ومتابعة مع انطلاق موسم هجرة الخريف.",
+        "featured": "uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
+        "content": """<figure style="margin:24px auto;max-width:680px;">
+  <img src="../../media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" alt="باحث ميداني يزيل طائراً من شباك مخالفة." width="1280" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;border-radius:6px;">
+  <figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px;">باحث ميداني يزيل طائراً من شباك مخالفة.</figcaption>
+</figure>
+<p>أعلنت وزارة التنمية المحلية والبيئة في مصر قراراً جديداً لتنظيم أعمال الصيد، بالتوازي مع بدء جهاز شؤون البيئة خطة رصد ومتابعة مع انطلاق موسم هجرة الخريف.</p>
+<p>في محمية البرلس، أُطلق سراح نحو 200 طائر مهاجر وأُزيل نحو 750 متراً من الشباك المخالفة. وتجري الوزارة حواراً مجتمعياً مع جمعيات أهلية ومختصين لصياغة قواعد أوضح تخص صيد الطيور المهاجرة تحديداً.</p>""",
+    },
     "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": {
         "title": "منظمات دولية: إسرائيل ترتكب «إبادة بيئية» في جنوب لبنان",
         "date_display": "20 أيلول 2026",
@@ -159,6 +176,10 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
 # Mars/Nayef editorial list. One shared chrome for every page — never latest-N
 # posts and never a breaking/urgent label. Rebuilds must emit this same strip.
 DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
+    (
+        "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
+        "مصر: قرار جديد لتنظيم الصيد وإطلاق نحو 200 طائر مهاجر وإزالة شباك مخالفة في البرلس",
+    ),
     (
         "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
         "منظمات دولية: «إبادة بيئية» في جنوب لبنان",
@@ -210,6 +231,7 @@ KNOWN_CATEGORY_RECORDS = {
 }
 # Mars/Nayef extras for current editorial surfaces (Suheil, Kaps, season…).
 DEFAULT_CATEGORY_EXTRAS: dict[str, list[str]] = {
+    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": ["أخبار"],
     "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": ["مقابلات-تحقيقات"],
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": ["صيد"],
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": ["صيد"],

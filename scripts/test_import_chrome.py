@@ -87,12 +87,14 @@ def test_source_has_no_regression_strings() -> None:
 def test_ticker_source_is_mars_list() -> None:
     items = load_ticker_items()
     assert items == list(DEFAULT_TICKER_ITEMS)
-    assert len(items) == 8
+    assert len(items) == 9
     slugs = [slug for slug, _ in items]
-    assert slugs[0].startswith("منظمات-دولية")
-    assert "إبادة بيئية" in items[0][1]
-    assert slugs[1].startswith("كابس")
-    assert "سهيل" in items[2][1]
+    assert slugs[0].startswith("مصر-قرار-جديد")
+    assert "200 طائر مهاجر" in items[0][1]
+    assert slugs[1].startswith("منظمات-دولية")
+    assert "إبادة بيئية" in items[1][1]
+    assert slugs[2].startswith("كابس")
+    assert "سهيل" in items[3][1]
 
 
 def test_shared_ticker_all_depths() -> None:

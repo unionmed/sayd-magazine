@@ -24,6 +24,7 @@ SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يخ
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 
 HOME_TICKER_EN = [
+    "egypt-new-hunting-rules-burullus-autumn-migration",
     "international-orgs-ecocide-south-lebanon",
     CABS_EN,
     "qatar-suhail-2026-80000-visitors-teaser",
@@ -36,7 +37,7 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 15
+    assert len(PAIRS) == 16
     for en_slug in PAIRS.values():
         assert (ROOT / "content" / "en" / f"{en_slug}.md").is_file()
         assert (DOCS / "en" / "posts" / en_slug / "index.html").is_file()
