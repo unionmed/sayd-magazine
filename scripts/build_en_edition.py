@@ -65,16 +65,18 @@ HOME_MOSAIC_SIDE = [
     "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
 ]
+HOME_OMIT_FROM_HOME = {
+    "sayd-returns-new-look-wider-vision",
+    "memory-of-sayd-awareness-responsibility-2016-2024",
+}
 HOME_LATEST = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "international-orgs-ecocide-south-lebanon",
-    "memory-of-sayd-awareness-responsibility-2016-2024",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
     "qatar-suhail-2026-80000-visitors-teaser",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "video-saud-al-babtain-maqnas-afghanistan",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
-    "sayd-returns-what-we-want-to-offer",
     "autumn-migration-field-action-protect-flyways-lebanon",
 ]
 TICKER_TITLES_EN = {
@@ -906,6 +908,7 @@ def write_home(articles: dict[str, dict]) -> None:
         s
         for s in articles
         if s not in HOME_FEATURED
+        and s not in HOME_OMIT_FROM_HOME
         and s not in NO_THUMB_SLUGS
         and str(articles[s].get("date_sort") or "") >= "2022"
     ]
@@ -1191,6 +1194,10 @@ def main() -> None:
     n = patch_existing_html(pairs)
     # Hand-extended EN homepage (TV / Photos / desks). write_home() would
     # wipe those sections; mosaic + latest stay in docs/en/index.html.
+    # Re-lock one card per slug so desk/September patches cannot restack.
+    from homepage_unique_cards import apply_en_home
+
+    apply_en_home()
     write_stories(articles)
     for slug in articles:
         write_article(slug, articles, pairs_inv)

@@ -437,6 +437,9 @@ def main() -> None:
     patch_ar_home()
     patch_en_home()
     patch_listings()
+    from homepage_unique_cards import apply_docs
+
+    apply_docs()
     n = sync_ar_tickers()
     print(f"published Egypt hunting news; synced {n} AR tickers")
 
