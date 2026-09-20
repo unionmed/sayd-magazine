@@ -263,6 +263,13 @@ def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
         _h2_pos(en, "Miscellany"),
     )
     assert en_hunt < en_iv < en_gear < en_tv < en_ph < en_bag
+    assert en.count('class="home-section home-spine"') == 3
+    hunting = en.split("<h2>Hunting &amp; Equestrian</h2>", 1)[0].rsplit("<section", 1)[1]
+    interviews = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[0].rsplit("<section", 1)[1]
+    gear = en.split("<h2>Gear &amp; Arms</h2>", 1)[0].rsplit("<section", 1)[1]
+    assert "home-spine" in hunting
+    assert "home-spine" in interviews
+    assert "home-spine" in gear
 
 
 def test_latest_feed_has_no_thumbs() -> None:

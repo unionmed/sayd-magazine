@@ -239,6 +239,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             or "?v=20260920-memory-strip" in css_q
             or "?v=20260920-memory-ten" in css_q
             or "?v=20260920-latest-text" in css_q
+            or "?v=20260920-iv-above-gear" in css_q
         )
         body = lead.split("class=\"body\"", 1)[1].split("class=\"thumb\"", 1)[0]
         assert "kaps-caption" not in body
@@ -390,6 +391,7 @@ def test_en_nested_nav_paths() -> None:
         or "?v=20260920-memory-strip" in en_home
         or "?v=20260920-memory-ten" in en_home
         or "?v=20260920-latest-text" in en_home
+        or "?v=20260920-iv-above-gear" in en_home
     )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -406,7 +408,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
     assert "repeat(auto-fit, minmax(min(100%, 11rem), 1fr))" in css
     assert "repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr))" in css
     assert ".card .thumb:not(:has(img))" in css
-    assert "html[dir=\"ltr\"] .home-section:not(:has(article))" in css
+    assert "html[dir=\"ltr\"] .home-section:not(:has(article)):not(.home-spine)" in css
     home = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert (
@@ -414,12 +416,14 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260920-memory-strip" in home
         or "?v=20260920-memory-ten" in home
         or "?v=20260920-latest-text" in home
+        or "?v=20260920-iv-above-gear" in home
     )
     assert (
         "?v=20260919-en-plex-kaps-r" in en
         or "?v=20260920-memory-strip" in en
         or "?v=20260920-memory-ten" in en
         or "?v=20260920-latest-text" in en
+        or "?v=20260920-iv-above-gear" in en
     )
     assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
@@ -453,6 +457,7 @@ def test_every_en_page_is_ltr_plex() -> None:
             or "?v=20260920-memory-strip" in html
             or "?v=20260920-memory-ten" in html
             or "?v=20260920-latest-text" in html
+            or "?v=20260920-iv-above-gear" in html
         )
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html

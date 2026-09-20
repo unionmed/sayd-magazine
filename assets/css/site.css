@@ -613,11 +613,13 @@ html[dir="ltr"] .news-strip .ticker-viewport {
 
 .home-section { margin-bottom: 1.15rem; }
 
-/* EN empty / Arabic-only desks: hide vacant shelves. Keep HTML for Bulbul. */
-html[dir="ltr"] .home-section:not(:has(article)),
-html[lang="en"] .home-section:not(:has(article)),
-html[dir="ltr"] .home-section:has(> .en-callout):not(:has(article)),
-html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
+/* EN empty / Arabic-only desks: hide vacant shelves. Keep HTML for Bulbul.
+   Nayef: Hunting → Interviews → Gear spine stays visible even if a desk
+   has no unique card, so Gear cannot jump above Interviews. */
+html[dir="ltr"] .home-section:not(:has(article)):not(.home-spine),
+html[lang="en"] .home-section:not(:has(article)):not(.home-spine),
+html[dir="ltr"] .home-section:has(> .en-callout):not(:has(article)):not(.home-spine),
+html[lang="en"] .home-section:has(> .en-callout):not(:has(article)):not(.home-spine) {
   display: none;
 }
 
