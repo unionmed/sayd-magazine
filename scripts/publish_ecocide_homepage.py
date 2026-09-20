@@ -37,7 +37,6 @@ AR_TICKER = (
     '<a href="{p}posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html">السعودية تطلق موسم الصيد السادس وتشدد على الضوابط: 5 آلاف ريال غرامة الأماكن المحظورة</a>'
     '<a href="{p}posts/بالفيديو-مقناص-سعود-عبد-العزيز-الباب/index.html">بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان</a>'
     '<a href="{p}posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a>'
-    '<a href="{p}posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html">«صيد» تعود… وهذا ما نريد أن نقدّمه لكم</a>'
     '<a href="{p}posts/مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية/index.html">مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان</a>'
 )
 EN_TICKER = (
@@ -47,7 +46,6 @@ EN_TICKER = (
     '<a href="posts/saudi-sixth-hunting-season-2026-2027-rules/index.html">Saudi Arabia Launches the Sixth Hunting Season and Tightens the Rules: 5,000 Riyals Fine for Prohibited Places</a>'
     '<a href="posts/video-saud-al-babtain-maqnas-afghanistan/index.html">On Video… Saud Abdulaziz Al-Babtain’s Maqnas in Afghanistan</a>'
     '<a href="posts/autumn-migration-how-world-protects-birds-regulates-hunting/index.html">With Autumn Migration… How Does the World Protect Birds and Regulate Hunting?</a>'
-    '<a href="posts/sayd-returns-what-we-want-to-offer/index.html">Sayd Returns… And This Is What We Want to Offer You</a>'
     '<a href="posts/autumn-migration-field-action-protect-flyways-lebanon/index.html">As Autumn Migration Begins… Field Action to Protect Bird Flyways over Lebanon</a>'
 )
 
@@ -513,7 +511,8 @@ def patch_ar_home() -> None:
         count=1,
         flags=re.S,
     )
-    # Interviews desk: mosaic already owns Ecocide. Do not re-inject it.
+    # Interviews desk is pinned in homepage_unique_cards (ecocide first).
+    # Do not empty it here — apply_docs() rebuilds AR/EN desks.
     html = re.sub(
         r'(<h2>مقابلات وتحقيقات</h2>.*?<div class="grid-4">)\s*.*?(</div>\s*</section>)',
         r"""\1

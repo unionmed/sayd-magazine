@@ -207,14 +207,17 @@ DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
         "مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟",
     ),
     (
-        "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
-        "«صيد» تعود… وهذا ما نريد أن نقدّمه لكم",
-    ),
-    (
         "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
         "مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان",
     ),
 ]
+# Adonis / new-look never belong in the ticker (duplicated for animation).
+TICKER_OMIT_SLUGS = {
+    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
+    "sayd-returns-what-we-want-to-offer",
+    "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
+    "sayd-returns-new-look-wider-vision",
+}
 _TICKER_LINK_RE = re.compile(
     r'<a href="(?:(?:\.\./)*)posts/([^/"]+)/index\.html">([^<]+)</a>'
 )
@@ -495,6 +498,21 @@ def _ticker_pairs(raw: list) -> list[tuple[str, str]]:
     return pairs
 
 
+def ticker_omit_slugs() -> set[str]:
+    """Adonis / new-look never go in the ticker. homepage.json can add more."""
+    omit = set(DEFAULT_HOME_OMIT) | set(TICKER_OMIT_SLUGS)
+    if HOMEPAGE_CONFIG.exists():
+        try:
+            data = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            data = {}
+        for key in ("omit_from_ticker", "omit_from_ticker_and_latest"):
+            for s in data.get(key) or []:
+                if str(s).strip():
+                    omit.add(str(s).strip())
+    return omit
+
+
 def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
     """Single editorial ticker list for every page.
 
@@ -508,7 +526,7 @@ def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
         except json.JSONDecodeError:
             data = {}
         pairs = _ticker_pairs(data.get("items") or [])
-        pairs = [p for p in pairs if p[0] not in DEFAULT_HOME_OMIT]
+        pairs = [p for p in pairs if p[0] not in ticker_omit_slugs()]
         if pairs:
             return pairs
 
@@ -521,11 +539,30 @@ def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
                 (m.group(1), html.unescape(m.group(2)).strip())
                 for m in _TICKER_LINK_RE.finditer(block.group(1))
             ]
-            pairs = [p for p in _ticker_pairs(found) if p[0] not in DEFAULT_HOME_OMIT]
+            pairs = [p for p in _ticker_pairs(found) if p[0] not in ticker_omit_slugs()]
             if pairs:
                 return pairs
 
-    return [p for p in DEFAULT_TICKER_ITEMS if p[0] not in DEFAULT_HOME_OMIT]
+    return [p for p in DEFAULT_TICKER_ITEMS if p[0] not in ticker_omit_slugs()]
+
+
+def load_desk_slugs() -> dict[str, list[str]]:
+    """Pinned homepage desk slugs from content/homepage.json."""
+    if not HOMEPAGE_CONFIG.exists():
+        return {}
+    try:
+        data = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    raw = data.get("desk_slugs") or {}
+    out: dict[str, list[str]] = {}
+    if not isinstance(raw, dict):
+        return out
+    for title, slugs in raw.items():
+        names = [str(s).strip() for s in (slugs or []) if str(s).strip()]
+        if names:
+            out[str(title)] = names
+    return out
 
 
 def home_section_specs() -> list[tuple[str, str, list[str]]]:
@@ -1610,10 +1647,11 @@ def build_site(data: dict, out: Path) -> None:
     featured_lead = featured_pool[:1]
     featured_side = featured_pool[1:]
     # Card uniqueness: featured mosaic owns those slugs. Latest is text-only,
-    # so a latest row may still have exactly one desk card. Never refill a
-    # desk with a slug that already has a homepage card.
+    # so a latest row may still have exactly one desk card. Ecocide is the
+    # Nayef exception: mosaic + Interviews desk. Pinned desk_slugs win.
     used_slugs: set[str] = {p["slug"] for p in featured_pool}
     used_slugs.update(home_lists.get("omit_from_home") or [])
+    used_slugs.discard("منظمات-دولية-ابادة-بيئية-جنوب-لبنان")
     utility_date = ""
     if posts and posts[0].get("datetime"):
         utility_date = format_ar_long_date(parse_date(posts[0]["date"]))
@@ -1960,18 +1998,26 @@ def build_site(data: dict, out: Path) -> None:
 
     def _desk_blocks(spec: list[tuple[str, str, list[str]]]) -> list[str]:
         parts: list[str] = []
+        pinned_map = load_desk_slugs()
+        by_slug = {p["slug"]: p for p in posts}
         for title, accent, keys in spec:
             c = resolve_cat(cat_info, list(keys) + [title])
-            if not c:
-                continue
-            unused = [p for p in c["posts"] if p["slug"] not in used_slugs]
-            fresh = prefer_recent(unused, 4)
+            pinned = pinned_map.get(title) or []
+            if pinned:
+                fresh = [by_slug[s] for s in pinned if s in by_slug]
+            else:
+                if not c:
+                    continue
+                unused = [p for p in c["posts"] if p["slug"] not in used_slugs]
+                fresh = prefer_recent(unused, 4)
             if not fresh:
                 continue
-            fresh = sort_posts_newest_first(fresh)
+            if not pinned:
+                fresh = sort_posts_newest_first(fresh)
             for p in fresh:
                 used_slugs.add(p["slug"])
-            parts.append(section_block(title, accent, fresh, cat_href(c["slug"], 0)))
+            more_href = cat_href(c["slug"], 0) if c else "articles/index.html"
+            parts.append(section_block(title, accent, fresh, more_href))
         return parts
 
     # Magazine grids: 2022→today only. Hide a desk when the category has none.

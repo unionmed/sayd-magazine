@@ -50,7 +50,6 @@ AR_TICKER_REST = (
     '<a href="{p}posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html">السعودية تطلق موسم الصيد السادس وتشدد على الضوابط: 5 آلاف ريال غرامة الأماكن المحظورة</a>'
     '<a href="{p}posts/بالفيديو-مقناص-سعود-عبد-العزيز-الباب/index.html">بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان</a>'
     '<a href="{p}posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a>'
-    '<a href="{p}posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html">«صيد» تعود… وهذا ما نريد أن نقدّمه لكم</a>'
     '<a href="{p}posts/مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية/index.html">مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان</a>'
 )
 EN_TICKER_REST = (
@@ -60,7 +59,6 @@ EN_TICKER_REST = (
     '<a href="{p}saudi-sixth-hunting-season-2026-2027-rules/index.html">Saudi Arabia Launches the Sixth Hunting Season and Tightens the Rules: 5,000 Riyals Fine for Prohibited Places</a>'
     '<a href="{p}video-saud-al-babtain-maqnas-afghanistan/index.html">On Video… Saud Abdulaziz Al-Babtain’s Maqnas in Afghanistan</a>'
     '<a href="{p}autumn-migration-how-world-protects-birds-regulates-hunting/index.html">With Autumn Migration… How Does the World Protect Birds and Regulate Hunting?</a>'
-    '<a href="{p}sayd-returns-what-we-want-to-offer/index.html">Sayd Returns… And This Is What We Want to Offer You</a>'
     '<a href="{p}autumn-migration-field-action-protect-flyways-lebanon/index.html">As Autumn Migration Begins… Field Action to Protect Bird Flyways over Lebanon</a>'
 )
 

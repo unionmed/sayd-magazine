@@ -88,7 +88,7 @@ def test_source_has_no_regression_strings() -> None:
 def test_ticker_source_is_mars_list() -> None:
     items = load_ticker_items()
     assert items == list(DEFAULT_TICKER_ITEMS)
-    assert len(items) == 9
+    assert len(items) == 8
     slugs = [slug for slug, _ in items]
     assert slugs[0].startswith("مصر-قرار-جديد")
     assert "200 طائر مهاجر" in items[0][1]
@@ -96,6 +96,8 @@ def test_ticker_source_is_mars_list() -> None:
     assert "إبادة بيئية" in items[1][1]
     assert slugs[2].startswith("كابس")
     assert "سهيل" in items[3][1]
+    assert ADONIS not in slugs
+    assert "sayd-returns-what-we-want-to-offer" not in slugs
 
 
 def test_shared_ticker_all_depths() -> None:
@@ -252,6 +254,7 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "عصفور-الشمس" not in ticker
     assert "عصفور-الشمس" not in featured
     assert "صيد-تعود-بحلة-جديدة" not in html
+    assert ADONIS not in ticker
     assert "السعودية-تشدد-على-ضوابط" not in html
     assert "قطر-أكثر-من-80-ألف-زائر" in latest
     assert "قطر-أكثر-من-80-ألف-زائر" in ticker
