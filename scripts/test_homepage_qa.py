@@ -71,8 +71,10 @@ def test_rita_stays_on_memory_and_design_png_is_off_homes() -> None:
     assert "ciconia-ciconia-white-stork" not in mosaic_en
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in mosaic_en
     assert "memory-of-sayd-awareness-responsibility-2016-2024" in latest_en
-    assert "ريتا-الشعار6" in ar
-    assert "ريتا-الشعار6" in en
+    assert "rita-habib-alshaar.jpg" in ar
+    assert "rita-habib-alshaar.jpg" in en
+    assert "ريتا-الشعار6" not in ar
+    assert "ريتا-الشعار6" not in en
     assert "Design.png" not in ar
     assert "Design.png" not in en
     assert "الصيد-بين-الفوضى-والنظام-تجارب-الصي" not in ar
@@ -128,7 +130,7 @@ def test_homepage_cards_publish_2022_plus() -> None:
             assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
             assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest
             assert "19 أيلول 2026" in latest
-            assert "ريتا-الشعار6" in html
+            assert "rita-habib-alshaar.jpg" in html
         else:
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
             after = html.split(marker, 1)[1]
@@ -136,7 +138,7 @@ def test_homepage_cards_publish_2022_plus() -> None:
             assert "memory-of-sayd-awareness-responsibility-2016-2024" not in mosaic
             assert "memory-of-sayd-awareness-responsibility-2016-2024" in after
             assert "19 September 2026" in after
-            assert "ريتا-الشعار6" in html
+            assert "rita-habib-alshaar.jpg" in html
             assert "posts/" in after
             desks = re.sub(
                 r'<section class="memory-strip".*?</section>',
@@ -283,24 +285,34 @@ def test_latest_and_desks_are_newest_first() -> None:
 
 
 def test_memory_strip_folds_rita_into_personalities() -> None:
-    """Preview: Rita’s photo stays, standalone EN memory cards leave the home grids."""
+    """Preview: Rita lives only in the strip; archive photo file stays on disk."""
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    faces = (
+        "nadine-njeim-portrait-user.jpg",
+        "rita-habib-alshaar.jpg",
+        "george-kardahi.jpg",
+        "sara-akiki.jpg",
+    )
     for html in (ar, en):
         assert 'class="memory-strip"' in html
         assert html.count("memory-card memory-card--") == 4
-        assert "ريتا-الشعار6" in html
-        assert "nadine-njeim-portrait-user.jpg" in html
+        for face in faces:
+            assert f"media/personalities/{face}" in html
+        assert "ريتا-الشعار6" not in html
+    ar_iv = ar.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("صيد TV", 1)[0]
+    assert "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي" not in ar_iv
     sept = en.split("<h2>September 2026</h2>", 1)[1].split("home-layout", 1)[0]
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in sept
     interviews = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split("Sayd TV", 1)[0]
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in interviews
     assert (DOCS / "memory" / "index.html").is_file()
     assert (DOCS / "en" / "memory" / "index.html").is_file()
-    rita = DOCS / "media" / "uploads" / "2024" / "02" / "ريتا-الشعار6.jpg"
-    nadine = DOCS / "media" / "uploads" / "2026" / "09" / "nadine-njeim-portrait-user.jpg"
-    assert rita.is_file() and rita.stat().st_size > 32
-    assert nadine.is_file() and nadine.stat().st_size > 32
+    archive_rita = DOCS / "media" / "uploads" / "2024" / "02" / "ريتا-الشعار6.jpg"
+    assert archive_rita.is_file() and archive_rita.stat().st_size > 32
+    for face in faces:
+        portrait = DOCS / "media" / "personalities" / face
+        assert portrait.is_file() and portrait.stat().st_size > 32
 
 
 def test_ecocide_ticker_and_memory_stay_on_site() -> None:

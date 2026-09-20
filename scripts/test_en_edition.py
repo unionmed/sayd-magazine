@@ -71,7 +71,7 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         assert en_slug in home, en_slug
     assert "great-white-pelican-matn-highway-nayef-krayem" in home
     assert "memory-of-sayd-awareness-responsibility-2016-2024" in home
-    assert "ريتا-الشعار6.jpg" in home
+    assert "rita-habib-alshaar.jpg" in home
     assert ">Shooting<" not in home
     assert ">Laws &amp; Maps<" not in home
     assert home.count("<section class=\"home-section") >= 7

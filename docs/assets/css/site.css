@@ -1764,8 +1764,8 @@ html[dir="ltr"] .home-section .card.overlay h3 a:hover { color: var(--gold-dark)
 
 .memory-card--nadine .memory-card__photo { object-position: 82% 16%; }
 .memory-card--rita .memory-card__photo { object-position: 22% 18%; }
-.memory-card--taza .memory-card__photo { object-position: 28% 12%; }
-.memory-card--lina .memory-card__photo { object-position: 88% 42%; }
+.memory-card--kardahi .memory-card__photo { object-position: 50% 18%; }
+.memory-card--sara .memory-card__photo { object-position: 58% 32%; }
 
 .memory-card__body {
   padding: 0.65rem 0.7rem 0.8rem;
