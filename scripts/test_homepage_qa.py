@@ -360,7 +360,7 @@ def test_memory_strip_folds_rita_into_personalities() -> None:
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     faces = (
-        "nadine-njeim-portrait-user.jpg",
+        "nadine-wilson-njeim-2026-09-20.jpg",
         "rita-habib-alshaar.jpg",
         "george-kardahi.jpg",
         "sara-akiki.jpg",
