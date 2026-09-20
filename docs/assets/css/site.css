@@ -713,6 +713,37 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   white-space: nowrap;
 }
 
+.latest-feed li.latest-lead {
+  grid-column: 1 / -1;
+  border-bottom: 1px solid var(--hair);
+  margin-bottom: 0.2rem;
+}
+.latest-feed li.latest-lead a {
+  display: grid;
+  grid-template-columns: 7.4rem minmax(0, 1fr);
+  gap: 0.65rem;
+  align-items: start;
+}
+.latest-feed li.latest-lead .feed-thumb {
+  display: block;
+  width: 100%;
+  height: 4.85rem;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.latest-feed li.latest-lead .feed-text {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.12rem;
+}
+.latest-feed li.latest-lead .feed-title {
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.latest-feed li.latest-lead .feed-date {
+  margin-inline-start: 0;
+}
+
 .featured-mosaic {
   display: grid;
   grid-template-columns: minmax(0, 1.65fr) minmax(0, 0.92fr);

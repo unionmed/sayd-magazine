@@ -1,6 +1,7 @@
 {
   "comment": "AR slug → EN slug. Used by docs chrome and scripts/build_en_edition.py.",
   "pairs": {
+    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": "egypt-new-hunting-rules-burullus-autumn-migration",
     "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": "international-orgs-ecocide-south-lebanon",
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": "memory-of-sayd-awareness-responsibility-2016-2024",
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "cabs-mecshap-autumn-birds-lebanon-khatib",

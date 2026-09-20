@@ -312,6 +312,62 @@ def test_ecocide_ticker_and_memory_stay_on_site() -> None:
     assert "white-phosphorus munitions" not in mosaic_en_card
 
 
+def test_egypt_hunting_news_live_surfaces() -> None:
+    """Nayef-approved Egypt twin: ticker + latest card + AR/EN articles."""
+    img = DOCS / "media" / "uploads" / "2026" / "09" / "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg"
+    assert img.is_file() and img.stat().st_size > 32
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', ar, re.S).group(1)
+    ticker_en = re.search(r'<div class="ticker">(.*?)</div>', en, re.S).group(1)
+    assert ticker_ar.find("مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات") < ticker_ar.find(
+        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+    )
+    assert "إطلاق نحو 200 طائر مهاجر" in ticker_ar
+    assert "559" not in ticker_ar
+    assert ticker_en.find("egypt-new-hunting-rules-burullus-autumn-migration") < ticker_en.find(
+        "international-orgs-ecocide-south-lebanon"
+    )
+    assert "~200 migratory birds released" in ticker_en
+    latest_ar = ar.split("latest-col", 1)[1].split("</ul>", 1)[0]
+    latest_en = en.split("latest-col", 1)[1].split("</ul>", 1)[0]
+    assert latest_ar.find("مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات") < latest_ar.find(
+        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+    )
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" in latest_ar
+    assert "20 أيلول 2026" in latest_ar
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest_ar
+    assert latest_en.find("egypt-new-hunting-rules-burullus-autumn-migration") < latest_en.find(
+        "international-orgs-ecocide-south-lebanon"
+    )
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" in latest_en
+    assert "20 September 2026" in latest_en
+    mosaic_ar = ar.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    mosaic_en = en.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    assert "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات" not in mosaic_ar
+    assert "egypt-new-hunting-rules-burullus-autumn-migration" not in mosaic_en
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in mosaic_ar
+    assert "ecocide-south-lebanon-white-phosphorus-smoke" in mosaic_ar
+    ar_article = (DOCS / "posts" / "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    en_article = (
+        DOCS / "en" / "posts" / "egypt-new-hunting-rules-burullus-autumn-migration" / "index.html"
+    ).read_text(encoding="utf-8")
+    assert "باحث ميداني يزيل طائراً من شباك مخالفة." in ar_article
+    assert "A field researcher removes a bird from illegal nets." in en_article
+    assert "شبكة ضبابية" not in ar_article
+    assert "mist net" not in en_article.lower()
+    assert "559" not in ar_article
+    assert "559" not in en_article
+    ar_body = ar_article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
+    en_body = en_article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
+    assert ar_body.count("أعلنت وزارة التنمية المحلية والبيئة") == 1
+    assert en_body.count("Ministry of Local Development and Environment") == 1
+    assert "<figure>" in en_body or "<figure " in en_body
+    assert "article-featured" not in en_article
+
+
 if __name__ == "__main__":
     test_no_empty_thumbs_or_missing_files()
     test_en_homepage_has_no_fries_thumbs()
@@ -325,4 +381,5 @@ if __name__ == "__main__":
     test_platform_card_uses_uncropped_jocy()
     test_latest_and_desks_are_newest_first()
     test_ecocide_ticker_and_memory_stay_on_site()
+    test_egypt_hunting_news_live_surfaces()
     print("test_homepage_qa: ok")
