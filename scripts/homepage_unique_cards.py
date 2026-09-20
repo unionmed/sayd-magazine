@@ -58,23 +58,16 @@ TICKER_OMIT_SLUGS = frozenset(
 # Mosaic + Interviews only. Never mosaic + Hunting / Latest card / 7× dumps.
 MOSAIC_AND_INTERVIEWS = frozenset({ECOCIDE_AR, ECOCIDE_EN})
 
-# After the mosaic owns featured slugs, remaining EN twins land once:
-# magazine desks first, then a leftover September grid (News with no desk).
+# EN home mirrors AR desks. Wire existing twins only; Script drafts the rest.
+# Saudi fine teasers are NOT on AR Hunting — do not use them as EN fillers.
 EN_DESK_SLUGS: dict[str, list[str]] = {
+    "News": ["egypt-new-hunting-rules-burullus-autumn-migration"],
     "Hunting &amp; Equestrian": [
         "qatar-suhail-2026-80000-visitors-teaser",
-        "saudi-hunting-fines-5000-riyal-prohibited-areas",
-        "saudi-5000-riyal-hunting-fine-teaser",
         "autumn-migration-how-world-protects-birds-regulates-hunting",
     ],
-    "Interviews &amp; Investigations": [
-        ECOCIDE_EN,
-        "george-taza-protect-fish-stocks",
-        "lynn-araji-equestrian-champion",
-        "amani-al-homsi-against-poaching",
-    ],
+    "Interviews &amp; Investigations": [ECOCIDE_EN],
     "Gear &amp; Arms": [],
-    "Eco-Tourism": [],
     "Sayd TV": ["video-saud-al-babtain-maqnas-afghanistan"],
     "Photos": [
         "suhail-2026-in-photos-falcons-visitors",
@@ -82,7 +75,28 @@ EN_DESK_SLUGS: dict[str, list[str]] = {
     ],
     "Miscellany": [],
 }
-EN_SEPTEMBER_SLUGS = ["egypt-new-hunting-rules-burullus-autumn-migration"]
+# AR slugs still waiting on Script EN twins. Comments only — never invent bodies.
+EN_PENDING_TWINS: dict[str, list[str]] = {
+    "News": [
+        "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر",
+        "المنصة-الرائدة-لنخبة-الصيادين-اللبنا",
+    ],
+    "Hunting &amp; Equestrian": [
+        "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه",
+        "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا",
+    ],
+    "Interviews &amp; Investigations": [
+        "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
+        "لين-عراجي-بطلة-فروسية-وحساب",
+        "الصيّادة-السورية-أماني-الحمصي",
+    ],
+    "Gear &amp; Arms": ["البنادق-الهوائية"],
+    "Miscellany": [
+        "العُوَيْسِق",
+        "طائر-الوروار-الأوروبي",
+        "بومة-المخازن",
+    ],
+}
 COMPACT_DESKS = frozenset({"Sayd TV", "Photos"})
 
 AR_NEWS_SLUGS = [
@@ -103,30 +117,6 @@ AR_DESK_SLUGS: dict[str, list[str]] = {
         "لين-عراجي-بطلة-فروسية-وحساب",
         "الصيّادة-السورية-أماني-الحمصي",
     ],
-}
-
-EN_FALLBACK_CARDS: dict[str, str] = {
-    "george-taza-protect-fish-stocks": """<article class="card overlay">
-  <a class="thumb" href="posts/george-taza-protect-fish-stocks/index.html"><img src="../media/uploads/2022/11/طازة-3.jpg" alt="George Taza, administrator of the Lebanese fishermen page" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">12 November 2022<span class="cat-pill">Interviews &amp; Investigations</span></div>
-    <h3><a href="posts/george-taza-protect-fish-stocks/index.html">George Taza: We Must All Take Part in Protecting Fish Stocks</a></h3>
-  </div>
-</article>""",
-    "lynn-araji-equestrian-champion": """<article class="card overlay">
-  <a class="thumb" href="posts/lynn-araji-equestrian-champion/index.html"><img src="../media/uploads/2022/10/لين-2.jpg" alt="Lynn Araji, equestrian and mental-arithmetic champion" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">22 October 2022<span class="cat-pill">Interviews &amp; Investigations</span></div>
-    <h3><a href="posts/lynn-araji-equestrian-champion/index.html">Lynn Araji: Equestrian Champion and Mental-Arithmetic Champion</a></h3>
-  </div>
-</article>""",
-    "amani-al-homsi-against-poaching": """<article class="card overlay">
-  <a class="thumb" href="posts/amani-al-homsi-against-poaching/index.html"><img src="../media/uploads/2022/08/اماني-الحمصي-2.jpg" alt="Syrian hunter Amani Al-Homsi" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">20 August 2022<span class="cat-pill">Interviews &amp; Investigations</span></div>
-    <h3><a href="posts/amani-al-homsi-against-poaching/index.html">Syrian Hunter Amani Al-Homsi: I Oppose Poaching… and I Hope Syria Passes a Hunting Law Fair to Nature and the Hunter</a></h3>
-  </div>
-</article>""",
 }
 
 AR_FALLBACK_CARDS: dict[str, str] = {
@@ -313,25 +303,64 @@ def _desk_card_html(
     return _as_desk_card(article, compact=compact)
 
 
-def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
-    """Place each leftover EN twin on one desk; drop empty desks (no blank grid)."""
-    september = "".join(
-        _as_desk_card(cards[slug], compact=False)
-        for slug in EN_SEPTEMBER_SLUGS
-        if slug in cards
+def _pending_html(heading: str) -> str:
+    slugs = EN_PENDING_TWINS.get(heading) or []
+    if not slugs:
+        return ""
+    joined = ", ".join(slugs)
+    return f"\n<!-- pending EN twins for {heading} (Script; do not invent bodies): {joined} -->\n"
+
+
+def _move_news_into_home_main(html: str) -> str:
+    """AR spine: News is the first desk inside home-main, not a dump above it."""
+    news_pat = re.compile(
+        r'\s*<section class="home-section">\s*'
+        r'<div class="section-head[^"]*">\s*'
+        r"<h2>News</h2>.*?</section>",
+        re.S,
     )
-    html = _replace_section_grid(html, "September 2026", september, "grid-4")
+    match = news_pat.search(html)
+    if not match:
+        return html
+    home_main_at = html.find('class="home-main"')
+    if home_main_at != -1 and match.start() > home_main_at:
+        return html
+    section = match.group(0).strip().replace("accent-olive", "accent-red", 1)
+    html = html[: match.start()] + "\n    " + html[match.end() :]
+    html, n = re.subn(
+        r'(<div class="home-main">\s*)',
+        r"\1\n        " + section + "\n",
+        html,
+        count=1,
+    )
+    if n != 1:
+        raise SystemExit("could not move News into home-main")
+    return html
+
+
+def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
+    """Mirror AR desk spine with existing EN twins; hide empty Gear/Miscellany."""
+    html = html.replace("<h2>September 2026</h2>", "<h2>News</h2>", 1)
+    html = _move_news_into_home_main(html)
     for heading, slugs in EN_DESK_SLUGS.items():
         compact = heading in COMPACT_DESKS
         grid = "grid-photos" if compact else "grid-4"
-        block = "".join(
-            _desk_card_html(slug, cards, compact=compact, fallbacks=EN_FALLBACK_CARDS)
-            for slug in slugs
-        )
+        block = "".join(_desk_card_html(slug, cards, compact=compact) for slug in slugs)
+        pending = _pending_html(heading)
         if not block.strip():
             html = _drop_empty_section(html, heading)
+            if pending and pending.strip() not in html:
+                needle = '<section class="home-section sayd-tv">'
+                if heading == "Gear &amp; Arms" and needle in html:
+                    html = html.replace(needle, pending + needle, 1)
+                elif heading == "Miscellany":
+                    html = html.replace(
+                        '<div class="more-news">',
+                        pending + '        <div class="more-news">',
+                        1,
+                    )
             continue
-        html = _replace_section_grid(html, heading, block, grid)
+        html = _replace_section_grid(html, heading, block + pending, grid)
     return html
 
 

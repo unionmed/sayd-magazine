@@ -229,11 +229,13 @@ def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
         _h2_pos(ar, "جعبة المنوعات"),
     )
     assert ar_hunt < ar_iv < ar_gear < ar_tv < ar_ph < ar_bag
+    en_news = _h2_pos(en, "News")
     en_hunt = _h2_pos(en, "Hunting &amp; Equestrian")
     en_iv = _h2_pos(en, "Interviews &amp; Investigations")
     en_tv = _h2_pos(en, "Sayd TV")
     en_ph = _h2_pos(en, "Photos")
-    assert en_hunt < en_iv < en_tv < en_ph
+    assert en_news < en_hunt < en_iv < en_tv < en_ph
+    assert "<h2>September 2026</h2>" not in en
     en_gear = _h2_pos_optional(en, "Gear &amp; Arms")
     if en_gear is not None:
         assert en_iv < en_gear < en_tv
@@ -345,13 +347,13 @@ def test_memory_strip_folds_rita_into_personalities() -> None:
         assert "ريتا-الشعار6" not in html
     ar_iv = ar.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("صيد TV", 1)[0]
     assert "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي" not in ar_iv
-    sept = en.split("<h2>September 2026</h2>", 1)[1].split("home-layout", 1)[0]
-    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in sept
+    news = en.split("<h2>News</h2>", 1)[1].split("</section>", 1)[0]
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in news
     interviews = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split("Sayd TV", 1)[0]
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in interviews
-    assert "george-taza-protect-fish-stocks" in interviews
-    assert "lynn-araji-equestrian-champion" in interviews
-    assert "amani-al-homsi-against-poaching" in interviews
+    assert "george-taza-protect-fish-stocks" not in interviews
+    assert "lynn-araji-equestrian-champion" not in interviews
+    assert "amani-al-homsi-against-poaching" not in interviews
     assert (DOCS / "memory" / "index.html").is_file()
     assert (DOCS / "en" / "memory" / "index.html").is_file()
     archive_rita = DOCS / "media" / "uploads" / "2024" / "02" / "ريتا-الشعار6.jpg"
@@ -510,27 +512,32 @@ def test_homepage_story_cards_are_unique() -> None:
         assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in html
         assert "memory-of-sayd-awareness-responsibility-2016-2024" not in html
         if rel == "en/index.html":
-            sept = html.split("<h2>September 2026</h2>", 1)[1].split("home-layout", 1)[0]
-            assert "egypt-new-hunting-rules-burullus-autumn-migration" in sept
-            assert "qatar-suhail-2026-80000-visitors-teaser" not in sept
+            news = html.split("<h2>News</h2>", 1)[1].split("</section>", 1)[0]
+            assert "egypt-new-hunting-rules-burullus-autumn-migration" in news
+            assert "qatar-suhail-2026-80000-visitors-teaser" not in news
             hunting = html.split("<h2>Hunting &amp; Equestrian</h2>", 1)[1].split("</section>", 1)[0]
             assert "qatar-suhail-2026-80000-visitors-teaser" in hunting
+            assert "autumn-migration-how-world-protects-birds-regulates-hunting" in hunting
             assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in hunting
+            assert "saudi-hunting-fines-5000-riyal-prohibited-areas" not in hunting
+            assert "saudi-5000-riyal-hunting-fine-teaser" not in hunting
             hunt_cards = re.findall(r"<article class=\"card", hunting)
-            assert 3 <= len(hunt_cards) <= 4, len(hunt_cards)
+            assert len(hunt_cards) == 2, len(hunt_cards)
             interviews = html.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split(
                 "</section>", 1
             )[0]
             iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
             assert iv_slugs and iv_slugs[0] == ECOCIDE_EN
             iv_cards = re.findall(r"<article class=\"card", interviews)
-            assert 3 <= len(iv_cards) <= 4, len(iv_cards)
-            assert "george-taza-protect-fish-stocks" in interviews
-            assert "lynn-araji-equestrian-champion" in interviews
-            assert "amani-al-homsi-against-poaching" in interviews
-            assert "<h2>Miscellany</h2>" not in html.split('class="home-main"', 1)[1] or re.search(
+            assert len(iv_cards) == 1, len(iv_cards)
+            assert "george-taza-protect-fish-stocks" not in interviews
+            assert "lynn-araji-equestrian-champion" not in interviews
+            assert "amani-al-homsi-against-poaching" not in interviews
+            main = html.split('class="home-main"', 1)[1]
+            assert "<h2>Gear &amp; Arms</h2>" not in main
+            assert "<h2>Miscellany</h2>" not in main or re.search(
                 r'<h2>Miscellany</h2>.*?<article class="card',
-                html.split('class="home-main"', 1)[1],
+                main,
                 re.S,
             )
         else:

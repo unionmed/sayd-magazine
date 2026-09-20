@@ -36,14 +36,11 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 19
+    assert len(PAIRS) == 16
     for en_slug in PAIRS.values():
         assert (ROOT / "content" / "en" / f"{en_slug}.md").is_file()
         assert (DOCS / "en" / "posts" / en_slug / "index.html").is_file()
     assert "great-white-pelican-matn-highway-nayef-krayem" in PAIRS.values()
-    assert "george-taza-protect-fish-stocks" in PAIRS.values()
-    assert "lynn-araji-equestrian-champion" in PAIRS.values()
-    assert "amani-al-homsi-against-poaching" in PAIRS.values()
 
 
 def test_september_2026_ar_stories_have_en_twins() -> None:
@@ -73,6 +70,9 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
     skip_home = {
         "memory-of-sayd-awareness-responsibility-2016-2024",
         "sayd-returns-new-look-wider-vision",
+        # Existing twins, but not on AR Hunting / News desks — not EN fillers.
+        "saudi-hunting-fines-5000-riyal-prohibited-areas",
+        "saudi-5000-riyal-hunting-fine-teaser",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
@@ -393,11 +393,14 @@ def test_en_nested_nav_paths() -> None:
     )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    grid = home.split("September 2026", 1)[1]
+    grid = home.split("<h2>News</h2>", 1)[1]
     assert "Awareness and Responsibility… Personalities" not in grid
     assert "brand-wordmark" in home and ">Sayd<" in home
     assert "Untranslated" not in home and "Break Barat" not in home
-    assert "saudi-hunting-season-2026-card.jpg" in home
+    assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" in home
+    assert "george-taza-protect-fish-stocks" not in home
+    assert "lynn-araji-equestrian-champion" not in home
+    assert "amani-al-homsi-against-poaching" not in home
 
 
 def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
