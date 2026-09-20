@@ -80,16 +80,6 @@ AR_LATEST = f"""<ul class="latest-feed">
 </li>
 
 <li>
-  <a href="posts/من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024/index.html">
-    <span class="feed-text">
-      <span class="feed-cat">من ذاكرة صيد</span>
-      <span class="feed-title">من ذاكرة «صيد»: مسيرة الوعي والمسؤولية (2016 – 2024)</span>
-      <span class="feed-date">19 أيلول 2026</span>
-    </span>
-  </a>
-</li>
-
-<li>
   <a href="posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html">
     <span class="feed-text">
       <span class="feed-cat">أخبار</span>
@@ -166,14 +156,6 @@ EN_LATEST = f"""<ul class="latest-feed">
       <span class="feed-cat">Interviews &amp; Investigations</span>
       <span class="feed-title">{EN_TITLE}</span>
       <span class="feed-date">20 September 2026</span>
-    </span>
-  </a>
-</li><li>
-  <a href="posts/memory-of-sayd-awareness-responsibility-2016-2024/index.html">
-    <span class="feed-text">
-      <span class="feed-cat">From Sayd’s Memory</span>
-      <span class="feed-title">From Sayd’s Memory: A Journey of Awareness and Responsibility (2016–2024)</span>
-      <span class="feed-date">19 September 2026</span>
     </span>
   </a>
 </li><li>
@@ -671,13 +653,6 @@ def patch_en_home() -> None:
   <div class="body">
     <div class="meta">20 September 2026<span class="cat-pill">Interviews &amp; Investigations</span></div>
     <h3><a href="posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
-  </div>
-</article>
-<article class="card overlay">
-  <a class="thumb" href="posts/memory-of-sayd-awareness-responsibility-2016-2024/index.html"><img src="../media/uploads/2024/02/ريتا-الشعار6.jpg" alt="Hunter Rita Habib Al-Shaar — from Sayd magazine’s archive" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">19 September 2026<span class="cat-pill">From Sayd’s Memory</span></div>
-    <h3><a href="posts/memory-of-sayd-awareness-responsibility-2016-2024/index.html">From Sayd’s Memory: A Journey of Awareness and Responsibility (2016–2024)</a></h3>
   </div>
 </article>
 <article class="card overlay">

@@ -168,7 +168,12 @@ def test_kaps_package_untouched() -> None:
 
 
 def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
-    """Nayef Phase 2: AI-bird story off home; 2023 poaching card is a real mist-net photo."""
+    """Nayef Phase 2: AI-bird story off home; 2023 poaching card is a real mist-net photo.
+
+    Do not ship the attached illegal-hunting-mist-net-bird.jpg while it is a
+    byte-for-byte copy of the south-Lebanon fire photo, and never reuse the
+    Egypt Burullus net photo on this story.
+    """
     import hashlib
 
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
@@ -178,10 +183,55 @@ def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
     assert "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب" not in en
     assert "Bird-02.jpeg" not in en
     assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in ar
-    assert "media/uploads/2023/02/شبك.jpg" in ar
-    net = (DOCS / "media" / "uploads" / "2023" / "02" / "شبك.jpg").read_bytes()
+    net_path = DOCS / "media" / "uploads" / "2023" / "02" / "شبك.jpg"
+    net = net_path.read_bytes()
     bird = (DOCS / "media" / "uploads" / "2024" / "06" / "Bird-02.jpeg").read_bytes()
-    assert hashlib.md5(net).hexdigest() != hashlib.md5(bird).hexdigest()
+    fire = (DOCS / "media" / "uploads" / "2026" / "09" / "ecocide-south-lebanon-vegetation-fire.jpg").read_bytes()
+    egypt = (
+        DOCS / "media" / "uploads" / "2026" / "09" / "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg"
+    ).read_bytes()
+    net_md5 = hashlib.md5(net).hexdigest()
+    assert net_md5 != hashlib.md5(bird).hexdigest()
+    assert net_md5 != hashlib.md5(fire).hexdigest()
+    assert net_md5 != hashlib.md5(egypt).hexdigest()
+    mist = DOCS / "media" / "uploads" / "2026" / "09" / "illegal-hunting-mist-net-bird.jpg"
+    if mist.is_file():
+        mist_md5 = hashlib.md5(mist.read_bytes()).hexdigest()
+        assert mist_md5 != hashlib.md5(fire).hexdigest()
+        assert mist_md5 != hashlib.md5(egypt).hexdigest()
+        assert mist_md5 != hashlib.md5(bird).hexdigest()
+        assert "illegal-hunting-mist-net-bird.jpg" in ar
+    else:
+        assert "media/uploads/2023/02/شبك.jpg" in ar
+        assert "illegal-hunting-mist-net-bird" not in ar
+        assert "illegal-hunting-mist-net-bird" not in en
+
+
+def test_memory_article_never_on_homepage_surfaces() -> None:
+    """Design + Nayef: never restore the PR #43 Memory-of-Sayd article card."""
+    import json
+
+    home = json.loads((ROOT / "content" / "homepage.json").read_text(encoding="utf-8"))
+    ticker = json.loads((ROOT / "content" / "ticker.json").read_text(encoding="utf-8"))
+    ar_slug = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024"
+    en_slug = "memory-of-sayd-awareness-responsibility-2016-2024"
+    assert ar_slug not in home["featured"]
+    assert ar_slug not in home["latest"]
+    assert ar_slug in home["omit_from_ticker_and_latest"]
+    assert ar_slug not in [item["slug"] for item in ticker["items"]]
+    for rel, slug in (("index.html", ar_slug), ("en/index.html", en_slug)):
+        html = (DOCS / rel).read_text(encoding="utf-8")
+        mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+        latest = html.split("latest-col", 1)[1].split("</ul>", 1)[0]
+        ticker_html = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
+        assert slug not in mosaic
+        assert slug not in latest
+        assert slug not in ticker_html
+        assert 'class="memory-strip"' in html
+        assert "feed-thumb" not in latest
+        assert "<img" not in latest
+    assert (DOCS / "memory" / "index.html").is_file()
+    assert (DOCS / "en" / "memory" / "index.html").is_file()
 
 
 def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
@@ -439,6 +489,7 @@ if __name__ == "__main__":
     test_platform_card_uses_uncropped_jocy()
     test_latest_and_desks_are_newest_first()
     test_memory_strip_folds_rita_into_personalities()
+    test_memory_article_never_on_homepage_surfaces()
     test_ecocide_ticker_and_memory_stay_on_site()
     test_egypt_hunting_news_live_surfaces()
     print("test_homepage_qa: ok")

@@ -112,8 +112,12 @@ TICKER_CONFIG = CONTENT_DIR / "ticker.json"
 HOMEPAGE_CONFIG = CONTENT_DIR / "homepage.json"
 CATEGORY_OVERLAY = CONTENT_DIR / "category-overlay.json"
 EN_PAIRS_PATH = CONTENT_DIR / "en" / "pairs.json"
+# Design + Nayef: old Memory-of-Sayd article card is banned on mosaic /
+# latest / ticker. Personalities strip + /memory/ pages stay. Never reopen PR #43.
+MEMORY_ARTICLE_SLUG = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024"
 # Never put these in ticker or latest-feed (80k long form stays featured-only).
 DEFAULT_HOME_OMIT = {
+    MEMORY_ARTICLE_SLUG,
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
     "عصفور-الشمس-الفلسطيني",
@@ -131,9 +135,8 @@ DEFAULT_FEATURED_SLUGS = [
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
 ]
-# Hand-crafted editorial extras that may not be in the WXR dump. Featured
-# mosaic still emits these cards (gap / existing thumb) so a rebuild cannot
-# silently drop Memory or any other Nayef-listed slug.
+# Hand-crafted editorial extras that may not be in the WXR dump (article
+# pages / stubs). Memory stays off the homepage card surfaces.
 FEATURED_CARD_STUBS: dict[str, dict] = {
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": {
         "title": "مصر: قرار جديد لتنظيم الصيد وملاحقة المخالفات في موسم هجرة الخريف",
@@ -595,8 +598,10 @@ def load_homepage_lists() -> dict[str, list[str]]:
         if data.get("latest"):
             latest = [str(s).strip() for s in data["latest"] if str(s).strip()]
         if data.get("omit_from_ticker_and_latest"):
-            omit = {str(s).strip() for s in data["omit_from_ticker_and_latest"] if str(s).strip()}
-    latest = [s for s in latest if s not in omit]
+            omit |= {str(s).strip() for s in data["omit_from_ticker_and_latest"] if str(s).strip()}
+    omit.add(MEMORY_ARTICLE_SLUG)
+    featured = [s for s in featured if s != MEMORY_ARTICLE_SLUG]
+    latest = [s for s in latest if s not in omit and s != MEMORY_ARTICLE_SLUG]
     return {"featured": featured, "latest": latest, "omit": sorted(omit)}
 
 

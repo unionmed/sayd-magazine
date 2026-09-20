@@ -58,17 +58,20 @@ HOME_FEATURED = [
     "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
 ]
-# Mosaic side stack: Ecocide first above Suhail. Memory lives in Latest.
+# Mosaic side stack: Ecocide first above Suhail. Memory article card stays
+# off home (personalities strip + /memory/ only — never reopen PR #43).
 HOME_MOSAIC_SIDE = [
     "international-orgs-ecocide-south-lebanon",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
 ]
+HOME_CARD_OMIT = {
+    "memory-of-sayd-awareness-responsibility-2016-2024",
+}
 HOME_LATEST = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "international-orgs-ecocide-south-lebanon",
-    "memory-of-sayd-awareness-responsibility-2016-2024",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
     "qatar-suhail-2026-80000-visitors-teaser",
     "saudi-sixth-hunting-season-2026-2027-rules",
@@ -907,6 +910,7 @@ def write_home(articles: dict[str, dict]) -> None:
         for s in articles
         if s not in HOME_FEATURED
         and s not in NO_THUMB_SLUGS
+        and s not in HOME_CARD_OMIT
         and str(articles[s].get("date_sort") or "") >= "2022"
     ]
     more.sort(key=lambda s: articles[s]["date_sort"], reverse=True)

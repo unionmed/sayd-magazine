@@ -73,6 +73,12 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         if en_slug in skip_home:
             continue
         assert en_slug in home, en_slug
+    ticker = re.search(r'<div class="ticker">(.*?)</div>', home, re.S).group(1)
+    latest = home.split("Latest news", 1)[1].split("</ul>", 1)[0]
+    mosaic = home.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in ticker
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in latest
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in mosaic
     assert "great-white-pelican-matn-highway-nayef-krayem" in home
     assert "rita-habib-alshaar.jpg" in home
     assert 'class="memory-strip"' in home
@@ -416,11 +422,13 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
     assert ">Laws &amp; Maps<" not in en
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
     latest = home[home.find("latest-col") :]
+    ticker = re.search(r'<div class="ticker">(.*?)</div>', home, re.S).group(1)
     assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in mosaic
     assert "ciconia-ciconia-white-stork.jpg" not in mosaic
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest.split("</ul>", 1)[0]
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in ticker
 
 
 def test_every_en_page_is_ltr_plex() -> None:

@@ -264,6 +264,12 @@ def test_homepage_latest_matches_nayef() -> None:
     assert ECOCIDE in featured
     assert MEMORY not in featured
     assert MEMORY not in latest
+    assert MEMORY not in ticker
+    assert MEMORY not in lists["latest"]
+    assert MEMORY not in lists["featured"]
+    assert MEMORY in lists["omit"]
+    assert MEMORY in import_wxr.DEFAULT_HOME_OMIT
+    assert MEMORY not in [slug for slug, _ in load_ticker_items()]
     assert featured.find(ECOCIDE) < featured.find(SUHAIL_80K)
     assert lists["featured"] == [
         "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
@@ -274,8 +280,7 @@ def test_homepage_latest_matches_nayef() -> None:
     ]
 
     latest_slugs = re.findall(r'href="posts/([^/"]+)/index.html"', latest)
-    expected_latest = [s for s in lists["latest"] if s != MEMORY]
-    assert latest_slugs == expected_latest
+    assert latest_slugs == lists["latest"]
     assert "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع" not in lists["latest"]
     assert "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" in lists["omit"]
 
