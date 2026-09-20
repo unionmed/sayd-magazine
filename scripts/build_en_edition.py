@@ -53,18 +53,21 @@ TAGLINE_AR = "مجلة أسياد الطبيعة في البر والبحر وا
 # Live homepage / ticker 2026 set (Nayef editorial list).
 HOME_FEATURED = [
     "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "international-orgs-ecocide-south-lebanon",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
 ]
-# Mosaic side stack (includes Memory; do not drop featured stories).
+# Mosaic side stack: Ecocide first above Suhail. Memory lives in Latest.
 HOME_MOSAIC_SIDE = [
+    "international-orgs-ecocide-south-lebanon",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
-    "memory-of-sayd-awareness-responsibility-2016-2024",
     "sayd-returns-what-we-want-to-offer",
 ]
 HOME_LATEST = [
+    "international-orgs-ecocide-south-lebanon",
+    "memory-of-sayd-awareness-responsibility-2016-2024",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
     "qatar-suhail-2026-80000-visitors-teaser",
     "saudi-sixth-hunting-season-2026-2027-rules",
@@ -73,9 +76,29 @@ HOME_LATEST = [
     "sayd-returns-what-we-want-to-offer",
     "autumn-migration-field-action-protect-flyways-lebanon",
 ]
-HOME_TICKER = list(HOME_LATEST)
+TICKER_TITLES_EN = {
+    "international-orgs-ecocide-south-lebanon": "International groups: “ecocide” in southern Lebanon",
+}
+HOME_TICKER = [
+    "international-orgs-ecocide-south-lebanon",
+    "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "qatar-suhail-2026-80000-visitors-teaser",
+    "saudi-sixth-hunting-season-2026-2027-rules",
+    "video-saud-al-babtain-maqnas-afghanistan",
+    "autumn-migration-how-world-protects-birds-regulates-hunting",
+    "sayd-returns-what-we-want-to-offer",
+    "autumn-migration-field-action-protect-flyways-lebanon",
+]
 
 META: dict[str, dict] = {
+    "international-orgs-ecocide-south-lebanon": {
+        "date": "20 September 2026",
+        "date_sort": "2026-09-20",
+        "category": "Interviews & Investigations",
+        "author": "Sayd",
+        "image": "media/uploads/2026/09/ciconia-ciconia-white-stork.jpg",
+        "image_alt": "White stork (Ciconia ciconia) in a migration habitat — wildlife photograph, not bombardment footage",
+    },
     "memory-of-sayd-awareness-responsibility-2016-2024": {
         "date": "19 September 2026",
         "date_sort": "2026-09-19",
@@ -250,6 +273,10 @@ def md_blocks(text: str) -> str:
             out.append(f"<h2>{md_inline(chunk[3:].strip())}</h2>")
             continue
         lines = chunk.splitlines()
+        if lines and all(line.startswith("- ") for line in lines):
+            items = "".join(f"<li>{md_inline(line[2:].strip())}</li>" for line in lines)
+            out.append(f"<ul>{items}</ul>")
+            continue
         if all(line.startswith("> ") or line == ">" for line in lines):
             quote = " ".join(line[2:] if line.startswith("> ") else "" for line in lines)
             out.append(f"<blockquote><p>{md_inline(quote.strip())}</p></blockquote>")
@@ -296,6 +323,14 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
     lead_html = md_blocks(draft["lead"]) if draft["lead"] else ""
     body_html = md_blocks(draft["body"]) if draft["body"] else ""
     extra = ""
+    if slug == "international-orgs-ecocide-south-lebanon":
+        stork = figure(
+            "media/uploads/2026/09/ciconia-ciconia-white-stork.jpg",
+            "White stork (Ciconia ciconia) in a migration habitat — wildlife photograph, not bombardment footage",
+            "White stork (<em>Ciconia ciconia</em>) in a migration habitat. This is a wildlife / flyway photograph, not footage of bombardment or military operations.",
+            media_prefix,
+        )
+        lead_html = stork + "\n" + lead_html
     if slug == "cabs-mecshap-autumn-birds-lebanon-khatib":
         lead_html = (
             "<p><strong>Beirut — Sayd</strong></p>\n"
@@ -499,7 +534,7 @@ def ticker_html(depth: int, articles: dict[str, dict], lang: str) -> str:
     label = "From every valley, a story"
     links = []
     for slug in HOME_TICKER:
-        title = articles[slug]["title"]
+        title = TICKER_TITLES_EN.get(slug) or articles[slug]["title"]
         href = en_post_href(depth, slug)
         links.append(f'<a href="{href}">{escape(title)}</a>')
     inner = "".join(links)
@@ -723,6 +758,7 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
     image = item.get("image")
     if image and slug not in {
         "cabs-mecshap-autumn-birds-lebanon-khatib",
+        "international-orgs-ecocide-south-lebanon",
         "suhail-2026-in-photos-falcons-visitors",
         "video-saud-al-babtain-maqnas-afghanistan",
         *NO_THUMB_SLUGS,
@@ -800,8 +836,8 @@ def write_home(articles: dict[str, dict]) -> None:
     side_html = []
     for slug in side:
         cls = "card card-stack"
-        if slug == "memory-of-sayd-awareness-responsibility-2016-2024":
-            cls += " feature-memory"
+        if slug == "international-orgs-ecocide-south-lebanon":
+            cls += " feature-ecocide"
         if slug == "sayd-returns-what-we-want-to-offer":
             cls += " feature-adonis"
         item = articles[slug]
@@ -822,8 +858,13 @@ def write_home(articles: dict[str, dict]) -> None:
   </div>
 </article>"""
         )
+    latest_order = sorted(
+        HOME_LATEST,
+        key=lambda s: articles[s].get("date_sort") or "",
+        reverse=True,
+    )
     latest_items = []
-    for slug in HOME_LATEST:
+    for slug in latest_order:
         item = articles[slug]
         latest_items.append(
             f"""<li>

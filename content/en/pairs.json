@@ -1,6 +1,7 @@
 {
   "comment": "AR slug → EN slug. Used by docs chrome and scripts/build_en_edition.py.",
   "pairs": {
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": "international-orgs-ecocide-south-lebanon",
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": "memory-of-sayd-awareness-responsibility-2016-2024",
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "cabs-mecshap-autumn-birds-lebanon-khatib",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": "suhail-2026-closes-decade-katara-80000-visitors",

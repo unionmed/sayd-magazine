@@ -56,6 +56,7 @@ MIGRATE_START = "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحم�
 OLD_HUNT = "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه"
 MEMORY = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024"
 ADONIS = "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
+ECOCIDE = "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
 
 # Mars 62e435c5 editorial prefix on docs/category/صيد — do not regress.
 MARS_HUNTING_TOP = [
@@ -86,10 +87,12 @@ def test_source_has_no_regression_strings() -> None:
 def test_ticker_source_is_mars_list() -> None:
     items = load_ticker_items()
     assert items == list(DEFAULT_TICKER_ITEMS)
-    assert len(items) == 7
+    assert len(items) == 8
     slugs = [slug for slug, _ in items]
-    assert slugs[0].startswith("كابس")
-    assert "سهيل" in items[1][1]
+    assert slugs[0].startswith("منظمات-دولية")
+    assert "إبادة بيئية" in items[0][1]
+    assert slugs[1].startswith("كابس")
+    assert "سهيل" in items[2][1]
 
 
 def test_shared_ticker_all_depths() -> None:
@@ -249,15 +252,21 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "السعودية-تشدد-على-ضوابط" not in html
     assert "قطر-أكثر-من-80-ألف-زائر" in latest
     assert "قطر-أكثر-من-80-ألف-زائر" in ticker
+    assert ECOCIDE in featured
+    assert ECOCIDE in latest
+    assert ECOCIDE in ticker
+    assert "إبادة بيئية" in ticker
     assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in featured
     assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in latest
-    assert MEMORY in featured
-    assert featured.find(MEMORY) < featured.find(ADONIS)
+    assert ECOCIDE in featured
+    assert MEMORY not in featured
+    assert MEMORY in latest
+    assert featured.find(ECOCIDE) < featured.find(SUHAIL_80K)
     assert lists["featured"] == [
         "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+        ECOCIDE,
         "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
         "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
-        MEMORY,
         ADONIS,
     ]
 
@@ -407,6 +416,16 @@ def test_prefer_recent_skips_pre_2022_even_with_local_thumb() -> None:
     assert post_publish_year(old) == 2018
 
 
+def test_prefer_recent_newest_first_not_local_first() -> None:
+    """Nayef: publish date wins; a local thumb must not jump an older card ahead."""
+    newer = _fake_post(ECOCIDE, "إبادة", "2026-09-20 00:00:00", [("مقابلات-تحقيقات", "مقابلات وتحقيقات")])
+    newer["featured"] = ""
+    older = _fake_post(MEMORY, "ذاكرة", "2026-09-19 00:00:00", [("ثقافة-وتراث", "من ذاكرة صيد")])
+    older["featured"] = "uploads/2024/02/ريتا-الشعار6.jpg"
+    picked = prefer_recent([older, newer], 2, media_root=ROOT / "docs" / "media")
+    assert [p["slug"] for p in picked] == [ECOCIDE, MEMORY]
+
+
 def test_prefer_recent_skips_ai_bird_promo() -> None:
     promo = _fake_post(
         "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -433,11 +452,12 @@ def test_featured_mosaic_matches_homepage_json() -> None:
     slugs = _mosaic_featured_slugs(html)
     assert slugs == lists["featured"], slugs
     assert slugs == list(DEFAULT_FEATURED_SLUGS)
-    assert MEMORY in slugs
-    assert slugs.index(MEMORY) < slugs.index(ADONIS)
-    # Memory sits in the side stack (Kaps is the lead).
+    assert ECOCIDE in slugs
+    assert MEMORY not in slugs
+    assert slugs.index(ECOCIDE) < slugs.index(SUHAIL_80K)
+    # Ecocide sits first in the side stack (Kaps is the lead).
     assert slugs[0] == KAPS
-    assert slugs[slugs.index(MEMORY) - 1] == SAUDI
+    assert slugs[1] == ECOCIDE
     assert "<h2>قصص مميزة</h2>" not in html
     assert "mecshap-apu-cabs-baalbek-release.jpg" in html
     mosaic = _section(html, "featured-mosaic", "latest-feed")
@@ -450,12 +470,13 @@ def test_featured_pool_never_drops_for_missing_image() -> None:
     """Importer keeps every homepage.json slug even with no thumb / no WXR row."""
     ordered = featured_slugs()
     assert ordered[0] == KAPS
-    assert MEMORY in ordered
+    assert ECOCIDE in ordered
+    assert MEMORY not in ordered
     posts = [
         _fake_post(ordered[0], "كابس", "2026-09-13", [("أخبار", "أخبار")]),
-        _fake_post(ordered[1], "سهيل", "2026-09-13", [("أخبار", "أخبار")]),
-        _fake_post(ordered[2], "السعودية", "2026-09-09", [("أخبار", "أخبار")]),
-        # Memory omitted from posts on purpose — stub must still appear.
+        _fake_post(ordered[2], "سهيل", "2026-09-13", [("أخبار", "أخبار")]),
+        _fake_post(ordered[3], "السعودية", "2026-09-09", [("أخبار", "أخبار")]),
+        # Ecocide omitted from posts on purpose — stub must still appear.
         _fake_post(ADONIS, "صيد تعود", "2026-09-06", [("كلمتنا", "كلمتنا")]),
         _fake_post("random-latest", "حشو", "2026-09-19", [("أخبار", "أخبار")]),
     ]
@@ -464,10 +485,10 @@ def test_featured_pool_never_drops_for_missing_image() -> None:
     pool = featured_posts(posts, ordered)
     assert [p["slug"] for p in pool] == ordered
     assert "random-latest" not in [p["slug"] for p in pool]
-    memory = next(p for p in pool if p["slug"] == MEMORY)
-    assert memory["title"]
-    html = featured_side_html(memory, thumb="")
-    assert MEMORY in html
+    ecocide = next(p for p in pool if p["slug"] == ECOCIDE)
+    assert ecocide["title"]
+    html = featured_side_html(ecocide, thumb="")
+    assert ECOCIDE in html
     assert html.strip()
 
 
@@ -526,6 +547,7 @@ if __name__ == "__main__":
     test_new_ticker_hunting_story_lands_on_sayd_near_top()
     test_docs_hunting_category_keeps_mars_recency()
     test_prefer_recent_skips_pre_2022_even_with_local_thumb()
+    test_prefer_recent_newest_first_not_local_first()
     test_prefer_recent_skips_ai_bird_promo()
     test_featured_mosaic_matches_homepage_json()
     test_featured_pool_never_drops_for_missing_image()

@@ -59,10 +59,18 @@ def test_rita_stays_on_memory_and_design_png_is_off_homes() -> None:
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     mosaic_ar = ar.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     mosaic_en = en.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
-    assert "feature-memory" in mosaic_ar
-    assert "ريتا-الشعار6" in mosaic_ar
-    assert "feature-memory" in mosaic_en
-    assert "ريتا-الشعار6" in mosaic_en
+    latest_ar = ar.split("latest-col", 1)[1]
+    latest_en = en.split("latest-col", 1)[1]
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic_ar
+    assert "ciconia-ciconia-white-stork" in mosaic_ar
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic_ar
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest_ar
+    assert "international-orgs-ecocide-south-lebanon" in mosaic_en
+    assert "ciconia-ciconia-white-stork" in mosaic_en
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in mosaic_en
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" in latest_en
+    assert "ريتا-الشعار6" in ar
+    assert "ريتا-الشعار6" in en
     assert "Design.png" not in ar
     assert "Design.png" not in en
     assert "الصيد-بين-الفوضى-والنظام-تجارب-الصي" not in ar
@@ -111,15 +119,21 @@ def test_homepage_cards_publish_2022_plus() -> None:
             assert int(year_m.group(1)) >= 2022, (rel, meta.group(1))
         if rel == "index.html":
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
-            assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in mosaic
-            assert "19 أيلول 2026" in mosaic
-            assert "ريتا-الشعار6" in mosaic
+            latest = html.split(marker, 1)[1]
+            assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic
+            assert "ciconia-ciconia-white-stork" in mosaic
+            assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
+            assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest
+            assert "19 أيلول 2026" in latest
+            assert "ريتا-الشعار6" in html
         else:
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
-            assert "memory-of-sayd-awareness-responsibility-2016-2024" in mosaic
-            assert "19 September 2026" in mosaic
-            assert "ريتا-الشعار6" in mosaic
             after = html.split(marker, 1)[1]
+            assert "international-orgs-ecocide-south-lebanon" in mosaic
+            assert "memory-of-sayd-awareness-responsibility-2016-2024" not in mosaic
+            assert "memory-of-sayd-awareness-responsibility-2016-2024" in after
+            assert "19 September 2026" in after
+            assert "ريتا-الشعار6" in html
             assert "posts/" in after
             assert not re.search(r'href="\.\./posts/', after)
 
@@ -197,6 +211,92 @@ def test_platform_card_uses_uncropped_jocy() -> None:
     assert card.is_file() and card.stat().st_size > 32
 
 
+AR_MONTHS = {
+    "كانون الثاني": 1,
+    "شباط": 2,
+    "آذار": 3,
+    "نيسان": 4,
+    "أيار": 5,
+    "حزيران": 6,
+    "تموز": 7,
+    "آب": 8,
+    "أيلول": 9,
+    "تشرين الأول": 10,
+    "تشرين الثاني": 11,
+    "كانون الأول": 12,
+}
+EN_MONTHS = {
+    "January": 1,
+    "February": 2,
+    "March": 3,
+    "April": 4,
+    "May": 5,
+    "June": 6,
+    "July": 7,
+    "August": 8,
+    "September": 9,
+    "October": 10,
+    "November": 11,
+    "December": 12,
+}
+
+
+def _parse_home_date(text: str) -> tuple[int, int, int]:
+    text = text.strip()
+    en = re.search(r"(\d{1,2}) ([A-Za-z]+) (20\d{2})", text)
+    if en:
+        return int(en.group(3)), EN_MONTHS[en.group(2)], int(en.group(1))
+    ar = re.search(r"(\d{1,2}) (.+?) (20\d{2})", text)
+    assert ar, text
+    month = AR_MONTHS[ar.group(2)]
+    return int(ar.group(3)), month, int(ar.group(1))
+
+
+def test_latest_and_desks_are_newest_first() -> None:
+    """Nayef: Latest and every section grid are newest publish date first."""
+    for rel, latest_h2 in (("index.html", "آخر الأخبار"), ("en/index.html", "Latest news")):
+        html = (DOCS / rel).read_text(encoding="utf-8")
+        latest = html.split(latest_h2, 1)[1].split("</ul>", 1)[0]
+        dates = [_parse_home_date(d) for d in re.findall(r'<span class="feed-date">([^<]+)</span>', latest)]
+        assert dates and dates == sorted(dates, reverse=True), (rel, dates)
+        main = html.split('class="home-main"', 1)[1]
+        for block in re.findall(r'<div class="grid-(?:4|photos)">(.*?)</div>', main, re.S):
+            cards = _cards(block)
+            if len(cards) < 2:
+                continue
+            card_dates = []
+            for card in cards:
+                meta = re.search(r'<div class="meta">([^<]+)', card)
+                assert meta, card[:160]
+                card_dates.append(_parse_home_date(meta.group(1)))
+            assert card_dates == sorted(card_dates, reverse=True), (rel, card_dates)
+
+
+def test_ecocide_ticker_and_memory_stay_on_site() -> None:
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', ar, re.S).group(1)
+    ticker_en = re.search(r'<div class="ticker">(.*?)</div>', en, re.S).group(1)
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in ticker_ar
+    assert "إبادة بيئية" in ticker_ar
+    assert "international-orgs-ecocide-south-lebanon" in ticker_en
+    assert "ecocide" in ticker_en.lower()
+    mosaic_ar = ar.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    mosaic_en = en.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    assert mosaic_ar.find("منظمات-دولية-ابادة") < mosaic_ar.find("80-ألف-زائر")
+    assert mosaic_en.find("international-orgs-ecocide") < mosaic_en.find("suhail-2026-closes")
+    assert (DOCS / "posts" / "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" / "index.html").is_file()
+    assert (DOCS / "en" / "posts" / "memory-of-sayd-awareness-responsibility-2016-2024" / "index.html").is_file()
+    assert (DOCS / "posts" / "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" / "index.html").is_file()
+    assert (DOCS / "en" / "posts" / "international-orgs-ecocide-south-lebanon" / "index.html").is_file()
+    stork = DOCS / "media" / "uploads" / "2026" / "09" / "ciconia-ciconia-white-stork.jpg"
+    assert stork.is_file() and stork.stat().st_size > 32
+    ar_article = (DOCS / "posts" / "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" / "index.html").read_text(encoding="utf-8")
+    en_article = (DOCS / "en" / "posts" / "international-orgs-ecocide-south-lebanon" / "index.html").read_text(encoding="utf-8")
+    assert "ليست مشهداً" in ar_article or "وليست مشهداً" in ar_article
+    assert "not footage of bombardment" in en_article
+
+
 if __name__ == "__main__":
     test_no_empty_thumbs_or_missing_files()
     test_en_homepage_has_no_fries_thumbs()
@@ -208,4 +308,6 @@ if __name__ == "__main__":
     test_ai_bird_off_home_and_poaching_uses_real_net()
     test_home_desk_order_interviews_tv_photos_miscellany()
     test_platform_card_uses_uncropped_jocy()
+    test_latest_and_desks_are_newest_first()
+    test_ecocide_ticker_and_memory_stay_on_site()
     print("test_homepage_qa: ok")
