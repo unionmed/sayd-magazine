@@ -143,6 +143,50 @@ def test_kaps_package_untouched() -> None:
     assert "kaps-makshab-apu-fries-hero.jpg" in kaps
 
 
+def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
+    """Nayef Phase 2: AI-bird story off home; 2023 poaching card is a real mist-net photo."""
+    import hashlib
+
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب" not in ar
+    assert "Bird-02.jpeg" not in ar
+    assert "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب" not in en
+    assert "Bird-02.jpeg" not in en
+    assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in ar
+    assert "media/uploads/2023/02/شبك.jpg" in ar
+    net = (DOCS / "media" / "uploads" / "2023" / "02" / "شبك.jpg").read_bytes()
+    bird = (DOCS / "media" / "uploads" / "2024" / "06" / "Bird-02.jpeg").read_bytes()
+    assert hashlib.md5(net).hexdigest() != hashlib.md5(bird).hexdigest()
+
+
+def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
+    """Desktop order: Interviews → Sayd TV → Photos → جعبة / Miscellany."""
+
+    def _h2_pos(html: str, title: str) -> int:
+        main = html.split('class="home-main"', 1)[1]
+        i = main.find(f"<h2>{title}</h2>")
+        assert i >= 0, title
+        return i
+
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    ar_iv, ar_tv, ar_ph, ar_bag = (
+        _h2_pos(ar, "مقابلات وتحقيقات"),
+        _h2_pos(ar, "صيد TV"),
+        _h2_pos(ar, "صور"),
+        _h2_pos(ar, "جعبة المنوعات"),
+    )
+    assert ar_iv < ar_tv < ar_ph < ar_bag
+    en_iv, en_tv, en_ph, en_bag = (
+        _h2_pos(en, "Interviews &amp; Investigations"),
+        _h2_pos(en, "Sayd TV"),
+        _h2_pos(en, "Photos"),
+        _h2_pos(en, "Miscellany"),
+    )
+    assert en_iv < en_tv < en_ph < en_bag
+
+
 def test_platform_card_uses_uncropped_jocy() -> None:
     """Keep the 2024 platform card; do not use the 229×300 WP crop on the home surface."""
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
@@ -161,5 +205,7 @@ if __name__ == "__main__":
     test_babtain_thumb_wraps_image()
     test_kaps_package_untouched()
     test_homepage_cards_publish_2022_plus()
+    test_ai_bird_off_home_and_poaching_uses_real_net()
+    test_home_desk_order_interviews_tv_photos_miscellany()
     test_platform_card_uses_uncropped_jocy()
     print("test_homepage_qa: ok")

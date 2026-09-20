@@ -80,8 +80,12 @@ NAV_CATS = [
 
 # Homepage desks: publish date 2022 → today. Pre-2022 stays in the archive only.
 HOME_PUBLISH_YEAR_MIN = 2022
+# AI-designed-bird promo stays in the archive; never on a home desk.
+DEFAULT_HOME_DESK_OMIT = {
+    "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
+}
 
-# Homepage magazine section blocks after hero: (title, accent_class, match keys)
+# Magazine desks before Sayd TV / Photos. Tail is جعبة only (after media strips).
 HOME_SECTIONS = [
     ("أخبار", "accent-red", ["أخبار", "اخبار"]),
     ("صيد وفروسية", "accent-olive", ["صيد وفروسية", "صيد"]),
@@ -89,6 +93,8 @@ HOME_SECTIONS = [
     ("عتاد وسلاح", "accent-red", ["عتاد وسلاح الصيد", "عتاد وسلاح"]),
     ("رياضات وسياحة بيئية", "accent-olive", ["رياضات وسياحة بيئية"]),
     ("مقابلات وتحقيقات", "accent-red", ["مقابلات وتحقيقات"]),
+]
+HOME_SECTIONS_TAIL = [
     ("جعبة المنوعات", "accent-olive", ["جعبة المنوعات"]),
 ]
 
@@ -278,15 +284,35 @@ def featured_year(p: dict) -> int:
     return int(m.group(1)) if m else 0
 
 
+def home_desk_omit_slugs() -> set[str]:
+    omit = set(DEFAULT_HOME_DESK_OMIT)
+    if HOMEPAGE_CONFIG.exists():
+        try:
+            data = json.loads(HOMEPAGE_CONFIG.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            data = {}
+        for s in data.get("omit_from_home_desks") or []:
+            if str(s).strip():
+                omit.add(str(s).strip())
+    return omit
+
+
 def prefer_recent(
     items: list[dict], n: int, media_root: Path | None = None
 ) -> list[dict]:
     """Homepage desks: 2022→today publish dates only. Never pad with older stories.
 
     Among eligible items, prefer locally mirrored thumbs, then newest first.
+    Skip slugs in omit_from_home_desks (AI-bird promo).
     """
     root = media_root if media_root is not None else MEDIA_ROOT
-    fresh = [p for p in items if post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN]
+    blocked = home_desk_omit_slugs()
+    fresh = [
+        p
+        for p in items
+        if post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN
+        and str(p.get("slug") or "") not in blocked
+    ]
     fresh.sort(key=lambda p: str(p.get("date") or ""), reverse=True)
     local, rest = [], []
     for p in fresh:
@@ -1801,31 +1827,37 @@ def build_site(data: dict, out: Path) -> None:
   </div>
 </section>"""
 
+    def _desk_blocks(spec: list[tuple[str, str, list[str]]]) -> list[str]:
+        parts: list[str] = []
+        for title, accent, keys in spec:
+            c = resolve_cat(cat_info, list(keys) + [title])
+            if not c:
+                continue
+            unused = [p for p in c["posts"] if p["slug"] not in used_slugs]
+            fresh = prefer_recent(unused, 4)
+            if len(fresh) < 4:
+                for p in prefer_recent(c["posts"], 8):
+                    if p not in fresh:
+                        fresh.append(p)
+                    if len(fresh) >= 4:
+                        break
+            if not fresh:
+                continue
+            for p in fresh:
+                used_slugs.add(p["slug"])
+            parts.append(section_block(title, accent, fresh, cat_href(c["slug"], 0)))
+        return parts
+
     # Magazine grids: 2022→today only. Hide a desk when the category has none.
-    section_html_parts = []
-    for title, accent, keys in HOME_SECTIONS:
-        c = resolve_cat(cat_info, list(keys) + [title])
-        if not c:
-            continue
-        unused = [p for p in c["posts"] if p["slug"] not in used_slugs]
-        fresh = prefer_recent(unused, 4)
-        if len(fresh) < 4:
-            for p in prefer_recent(c["posts"], 8):
-                if p not in fresh:
-                    fresh.append(p)
-                if len(fresh) >= 4:
-                    break
-        if not fresh:
-            continue
-        for p in fresh:
-            used_slugs.add(p["slug"])
-        section_html_parts.append(
-            section_block(title, accent, fresh, cat_href(c["slug"], 0))
-        )
-    sections_joined = "\n".join(
+    # Order: desks through Interviews, then TV + Photos, then جعبة.
+    section_html_parts = _desk_blocks(HOME_SECTIONS)
+    tail_html_parts = _desk_blocks(HOME_SECTIONS_TAIL)
+    wrap = lambda blocks: "\n".join(
         f'<div class="container">{block}</div>' if block.strip() else ""
-        for block in section_html_parts
+        for block in blocks
     )
+    sections_joined = wrap(section_html_parts)
+    tail_joined = wrap(tail_html_parts)
 
     home_body = f"""
 <main class="page-main home-page" id="content">
@@ -1836,10 +1868,11 @@ def build_site(data: dict, out: Path) -> None:
       <aside class="hero-stack">{hero_side}</aside>
     </section>
   </div>
-  {tv_html}
-  {photos_html}
   {dossiers_html}
   {sections_joined}
+  {tv_html}
+  {photos_html}
+  {tail_joined}
   <div class="container">
     <div class="more-news">
       <a class="more-btn" href="articles/index.html">المزيد من الأخبار — الأرشيف</a>
