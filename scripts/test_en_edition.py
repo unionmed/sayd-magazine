@@ -36,11 +36,14 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 16
+    assert len(PAIRS) == 19
     for en_slug in PAIRS.values():
         assert (ROOT / "content" / "en" / f"{en_slug}.md").is_file()
         assert (DOCS / "en" / "posts" / en_slug / "index.html").is_file()
     assert "great-white-pelican-matn-highway-nayef-krayem" in PAIRS.values()
+    assert "george-taza-protect-fish-stocks" in PAIRS.values()
+    assert "lynn-araji-equestrian-champion" in PAIRS.values()
+    assert "amani-al-homsi-against-poaching" in PAIRS.values()
 
 
 def test_september_2026_ar_stories_have_en_twins() -> None:

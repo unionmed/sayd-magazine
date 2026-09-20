@@ -349,6 +349,9 @@ def test_memory_strip_folds_rita_into_personalities() -> None:
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in sept
     interviews = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split("Sayd TV", 1)[0]
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in interviews
+    assert "george-taza-protect-fish-stocks" in interviews
+    assert "lynn-araji-equestrian-champion" in interviews
+    assert "amani-al-homsi-against-poaching" in interviews
     assert (DOCS / "memory" / "index.html").is_file()
     assert (DOCS / "en" / "memory" / "index.html").is_file()
     archive_rita = DOCS / "media" / "uploads" / "2024" / "02" / "ريتا-الشعار6.jpg"
@@ -520,6 +523,11 @@ def test_homepage_story_cards_are_unique() -> None:
             )[0]
             iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
             assert iv_slugs and iv_slugs[0] == ECOCIDE_EN
+            iv_cards = re.findall(r"<article class=\"card", interviews)
+            assert 3 <= len(iv_cards) <= 4, len(iv_cards)
+            assert "george-taza-protect-fish-stocks" in interviews
+            assert "lynn-araji-equestrian-champion" in interviews
+            assert "amani-al-homsi-against-poaching" in interviews
             assert "<h2>Miscellany</h2>" not in html.split('class="home-main"', 1)[1] or re.search(
                 r'<h2>Miscellany</h2>.*?<article class="card',
                 html.split('class="home-main"', 1)[1],
@@ -532,6 +540,8 @@ def test_homepage_story_cards_are_unique() -> None:
             interviews = html.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
             iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
             assert iv_slugs and iv_slugs[0] == ECOCIDE_AR
+            iv_cards = re.findall(r"<article class=\"card", interviews)
+            assert len(iv_cards) == 4, len(iv_cards)
 
 
 def test_lock_is_idempotent_and_drops_restacked_cards() -> None:
@@ -602,6 +612,11 @@ def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
     if "<h2>Miscellany</h2>" in main:
         misc = main.split("<h2>Miscellany</h2>", 1)[1].split("</section>", 1)[0]
         assert "<article class=\"card" in misc
+    if "<h2>Gear &amp; Arms</h2>" in main:
+        gear = main.split("<h2>Gear &amp; Arms</h2>", 1)[1].split("</section>", 1)[0]
+        assert "<article class=\"card" in gear
+    else:
+        assert "<h2>Gear &amp; Arms</h2>" not in main
     latest = en.split("latest-feed", 1)[1].split("</ul>", 1)[0]
     assert "<img" not in latest
     assert "feed-thumb" not in latest

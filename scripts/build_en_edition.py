@@ -223,6 +223,30 @@ META: dict[str, dict] = {
         "image": "media/uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
         "image_alt": "Great White Pelican (Pelecanus onocrotalus) — photo by Nayef Krayem, Matn Expressway, spring 2026",
     },
+    "george-taza-protect-fish-stocks": {
+        "date": "12 November 2022",
+        "date_sort": "2022-11-12",
+        "category": "Interviews & Investigations",
+        "author": "Sayd",
+        "image": "media/uploads/2022/11/طازة-3.jpg",
+        "image_alt": "George Taza, administrator of the Lebanese fishermen page",
+    },
+    "lynn-araji-equestrian-champion": {
+        "date": "22 October 2022",
+        "date_sort": "2022-10-22",
+        "category": "Interviews & Investigations",
+        "author": "Sayd",
+        "image": "media/uploads/2022/10/لين-2.jpg",
+        "image_alt": "Lynn Araji, equestrian and mental-arithmetic champion",
+    },
+    "amani-al-homsi-against-poaching": {
+        "date": "20 August 2022",
+        "date_sort": "2022-08-20",
+        "category": "Interviews & Investigations",
+        "author": "Sayd",
+        "image": "media/uploads/2022/08/اماني-الحمصي-2.jpg",
+        "image_alt": "Syrian hunter Amani Al-Homsi",
+    },
 }
 
 

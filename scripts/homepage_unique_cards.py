@@ -67,7 +67,12 @@ EN_DESK_SLUGS: dict[str, list[str]] = {
         "saudi-5000-riyal-hunting-fine-teaser",
         "autumn-migration-how-world-protects-birds-regulates-hunting",
     ],
-    "Interviews &amp; Investigations": [ECOCIDE_EN],
+    "Interviews &amp; Investigations": [
+        ECOCIDE_EN,
+        "george-taza-protect-fish-stocks",
+        "lynn-araji-equestrian-champion",
+        "amani-al-homsi-against-poaching",
+    ],
     "Gear &amp; Arms": [],
     "Eco-Tourism": [],
     "Sayd TV": ["video-saud-al-babtain-maqnas-afghanistan"],
@@ -98,6 +103,30 @@ AR_DESK_SLUGS: dict[str, list[str]] = {
         "لين-عراجي-بطلة-فروسية-وحساب",
         "الصيّادة-السورية-أماني-الحمصي",
     ],
+}
+
+EN_FALLBACK_CARDS: dict[str, str] = {
+    "george-taza-protect-fish-stocks": """<article class="card overlay">
+  <a class="thumb" href="posts/george-taza-protect-fish-stocks/index.html"><img src="../media/uploads/2022/11/طازة-3.jpg" alt="George Taza, administrator of the Lebanese fishermen page" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">12 November 2022<span class="cat-pill">Interviews &amp; Investigations</span></div>
+    <h3><a href="posts/george-taza-protect-fish-stocks/index.html">George Taza: We Must All Take Part in Protecting Fish Stocks</a></h3>
+  </div>
+</article>""",
+    "lynn-araji-equestrian-champion": """<article class="card overlay">
+  <a class="thumb" href="posts/lynn-araji-equestrian-champion/index.html"><img src="../media/uploads/2022/10/لين-2.jpg" alt="Lynn Araji, equestrian and mental-arithmetic champion" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">22 October 2022<span class="cat-pill">Interviews &amp; Investigations</span></div>
+    <h3><a href="posts/lynn-araji-equestrian-champion/index.html">Lynn Araji: Equestrian Champion and Mental-Arithmetic Champion</a></h3>
+  </div>
+</article>""",
+    "amani-al-homsi-against-poaching": """<article class="card overlay">
+  <a class="thumb" href="posts/amani-al-homsi-against-poaching/index.html"><img src="../media/uploads/2022/08/اماني-الحمصي-2.jpg" alt="Syrian hunter Amani Al-Homsi" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">20 August 2022<span class="cat-pill">Interviews &amp; Investigations</span></div>
+    <h3><a href="posts/amani-al-homsi-against-poaching/index.html">Syrian Hunter Amani Al-Homsi: I Oppose Poaching… and I Hope Syria Passes a Hunting Law Fair to Nature and the Hunter</a></h3>
+  </div>
+</article>""",
 }
 
 AR_FALLBACK_CARDS: dict[str, str] = {
@@ -296,7 +325,8 @@ def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
         compact = heading in COMPACT_DESKS
         grid = "grid-photos" if compact else "grid-4"
         block = "".join(
-            _desk_card_html(slug, cards, compact=compact) for slug in slugs
+            _desk_card_html(slug, cards, compact=compact, fallbacks=EN_FALLBACK_CARDS)
+            for slug in slugs
         )
         if not block.strip():
             html = _drop_empty_section(html, heading)
