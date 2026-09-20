@@ -5,11 +5,10 @@ Reads reviewed drafts from content/en/, writes docs/en/, and patches
 existing docs HTML so the mast-top language switch is never hidden
 behind a "Sayd Magazine" brand link.
 
-Nayef EN rule: /en/ shows 2022→today English twins only — never mix
-untranslated Arabic archive cards. Pre-2022 stays Arabic-only.
-September 2026+ stories must have twins on EN home/sections; hide a
-desk when it has no EN cards. Do not run write_home() against the
-hand-extended EN homepage (it would wipe the desks).
+Nayef EN rule: /en/ mirrors the Arabic desk spine with English twins.
+Do not run write_home() against the hand-extended EN homepage (it would
+wipe Memory / desks). homepage.json desk_slugs + homepage_unique_cards
+lock News → Hunting → Interviews → Gear → TV → Photos → Miscellany.
 """
 
 from __future__ import annotations
@@ -223,6 +222,96 @@ META: dict[str, dict] = {
         "image": "media/uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
         "image_alt": "Great White Pelican (Pelecanus onocrotalus) — photo by Nayef Krayem, Matn Expressway, spring 2026",
     },
+    "common-shelduck-protected-migrant-lebanon": {
+        "date": "11 July 2025",
+        "date_sort": "2025-07-11",
+        "category": "News",
+        "author": "Sayd",
+        "image": "media/uploads/2025/07/IMG_3009-2-1024x683.jpg",
+        "image_alt": "Common Shelduck (Tadorna tadorna), a protected waterbird and rare migrant in Lebanon",
+    },
+    "leading-platform-lebanese-arab-hunters-since-2012": {
+        "date": "1 October 2024",
+        "date_sort": "2024-10-01",
+        "category": "News",
+        "author": "Sayd",
+        "image": "media/uploads/2024/09/Jocy-card.jpg",
+        "image_alt": "Editor-in-Chief Jocelyne Bourached Al-Boustany — Sayd Magazine",
+        "card_image": "media/uploads/2024/09/Jocy-card.jpg",
+        "card_image_alt": "Editor-in-Chief Jocelyne Bourached Al-Boustany — Sayd Magazine",
+    },
+    "regulating-hunting-protects-wildlife-bans-worsen": {
+        "date": "30 September 2025",
+        "date_sort": "2025-09-30",
+        "category": "News",
+        "author": "Sayd",
+        "image": "media/uploads/2025/09/Adonis.jpg",
+        "image_alt": "Regulating hunting protects wildlife… banning it worsens the crisis",
+    },
+    "illegal-hunting-destroys-hobby-nets-lime-night": {
+        "date": "15 February 2023",
+        "date_sort": "2023-02-15",
+        "category": "Land Hunting",
+        "author": "Sayd",
+        "image": "media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg",
+        "image_alt": "A bird is freed from a mist net — illegal hunting destroys the hunting hobby",
+    },
+    "george-taza-protect-fish-stocks-interview": {
+        "date": "12 November 2022",
+        "date_sort": "2022-11-12",
+        "category": "Interviews & Investigations",
+        "author": "Sayd",
+        "image": "media/uploads/2022/11/طازة-3.jpg",
+        "image_alt": "George Taza, head of the Lebanese Fishermen page",
+    },
+    "leen-araji-equestrian-and-mental-math-champion": {
+        "date": "22 October 2022",
+        "date_sort": "2022-10-22",
+        "category": "Equestrian",
+        "author": "Sayd",
+        "image": "media/uploads/2022/10/لين-2.jpg",
+        "image_alt": "Leen Araji, equestrian champion and mental math champion",
+    },
+    "syrian-hunter-amani-al-homsi-against-illegal-hunting": {
+        "date": "20 August 2022",
+        "date_sort": "2022-08-20",
+        "category": "Interviews & Investigations",
+        "author": "Sayd",
+        "image": "media/uploads/2022/08/اماني-الحمصي-2.jpg",
+        "image_alt": "Syrian hunter Amani Al-Homsi",
+    },
+    "air-rifles": {
+        "date": "20 December 2022",
+        "date_sort": "2022-12-20",
+        "category": "Gear & Arms",
+        "author": "Sayd",
+        "image": "media/uploads/2022/12/بارودة.png",
+        "image_alt": "An air rifle — spring / gas-ram designs",
+    },
+    "red-footed-falcon-killed-by-ignorance": {
+        "date": "29 October 2013",
+        "date_sort": "2013-10-29",
+        "category": "Miscellany",
+        "author": "Sayd",
+        "image": "media/uploads/2014/09/MED-136434753561-519-11.jpg",
+        "image_alt": "Red-footed Falcon (Falco vespertinus)",
+    },
+    "european-bee-eater": {
+        "date": "17 September 2025",
+        "date_sort": "2025-09-17",
+        "category": "Miscellany",
+        "author": "Sayd",
+        "image": "media/uploads/2025/09/AP4I0956-1024x683.jpg",
+        "image_alt": "European Bee-eater (Merops apiaster)",
+    },
+    "barn-owl": {
+        "date": "13 August 2025",
+        "date_sort": "2025-08-13",
+        "category": "Miscellany",
+        "author": "Sayd",
+        "image": "media/uploads/2025/09/AP4I6377-1024x683.jpg",
+        "image_alt": "Barn Owl (Tyto alba)",
+    },
 }
 
 
@@ -288,6 +377,13 @@ def md_blocks(text: str) -> str:
         if lines and all(line.startswith("- ") for line in lines):
             items = "".join(f"<li>{md_inline(line[2:].strip())}</li>" for line in lines)
             out.append(f"<ul>{items}</ul>")
+            continue
+        if lines and all(re.match(r"\d+\.\s", line) for line in lines):
+            items = "".join(
+                f"<li>{md_inline(re.sub(r'^\d+\.\s+', '', line).strip())}</li>"
+                for line in lines
+            )
+            out.append(f"<ol>{items}</ol>")
             continue
         if all(line.startswith("> ") or line == ">" for line in lines):
             quote = " ".join(line[2:] if line.startswith("> ") else "" for line in lines)
@@ -537,6 +633,138 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
             "Adonis Al-Khatib, editor-in-chief of Sayd.",
             media_prefix,
         )
+    elif slug == "common-shelduck-protected-migrant-lebanon":
+        extra = figure(
+            "media/uploads/2025/07/IMG_3009-2-1024x683.jpg",
+            "Common Shelduck (Tadorna tadorna), a protected waterbird and rare migrant in Lebanon",
+            "Common Shelduck (<em>Tadorna tadorna</em>).",
+            media_prefix,
+        )
+        body_html = body_html.replace(
+            "<p>The Common Shelduck feeds on molluscs",
+            figure(
+                "media/uploads/2025/07/IMG_3003-2-300x200.jpg",
+                "Common Shelduck foraging",
+                "The Common Shelduck probes mud and sand with its flattened bill.",
+                media_prefix,
+            )
+            + "\n<p>The Common Shelduck feeds on molluscs",
+            1,
+        )
+    elif slug == "leading-platform-lebanese-arab-hunters-since-2012":
+        extra = figure(
+            "media/uploads/2024/09/Jocy.jpeg",
+            "Editor-in-Chief Jocelyne Bourached Al-Boustany — Sayd Magazine",
+            "Jocelyne Bourached Al-Boustany, editor-in-chief of Sayd.",
+            media_prefix,
+        )
+    elif slug == "regulating-hunting-protects-wildlife-bans-worsen":
+        extra = figure(
+            "media/uploads/2025/09/Adonis.jpg",
+            "Regulating hunting protects wildlife… banning it worsens the crisis",
+            "Science-based regulation, with sustainable hunters as partners.",
+            media_prefix,
+        )
+    elif slug == "illegal-hunting-destroys-hobby-nets-lime-night":
+        extra = figure(
+            "media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg",
+            "A bird is freed from a mist net — illegal hunting destroys the hunting hobby",
+            "A bird is freed from a mist net. Illegal methods — nets, birdlime, night shooting — destroy the hobby.",
+            media_prefix,
+        )
+    elif slug == "george-taza-protect-fish-stocks-interview":
+        extra = figure(
+            "media/uploads/2022/11/طازة-3.jpg",
+            "George Taza, head of the Lebanese Fishermen page",
+            "George Taza, head of the Lebanese Fishermen page.",
+            media_prefix,
+        )
+    elif slug == "leen-araji-equestrian-and-mental-math-champion":
+        extra = figure(
+            "media/uploads/2022/10/لين-2.jpg",
+            "Leen Araji, equestrian champion and mental math champion",
+            "Leen Araji — jumping champion and mental-math talent.",
+            media_prefix,
+        )
+    elif slug == "syrian-hunter-amani-al-homsi-against-illegal-hunting":
+        extra = figure(
+            "media/uploads/2022/08/اماني-الحمصي-2.jpg",
+            "Syrian hunter Amani Al-Homsi",
+            "Amani Al-Homsi, hunter from Aleppo.",
+            media_prefix,
+        )
+    elif slug == "air-rifles":
+        extra = figure(
+            "media/uploads/2022/12/بارودة.png",
+            "An air rifle — spring / gas-ram designs",
+            "Spring / gas-ram air rifles: cheaper guns, cheaper pellets.",
+            media_prefix,
+        )
+        piston = figure(
+            "media/uploads/2022/12/piston-springer.jpg",
+            "Piston / spring air-rifle action",
+            "When the trigger is pressed, the spring or piston is released.",
+            media_prefix,
+        )
+        if "</ol>" in body_html:
+            body_html = body_html.replace("</ol>", "</ol>\n" + piston, 1)
+        else:
+            extra = extra + "\n" + piston
+    elif slug == "red-footed-falcon-killed-by-ignorance":
+        extra = figure(
+            "media/uploads/2014/09/MED-136434753561-519-11.jpg",
+            "Red-footed Falcon (Falco vespertinus)",
+            "Red-footed Falcon (<em>Falco vespertinus</em>) — not the Common Kestrel.",
+            media_prefix,
+        )
+    elif slug == "european-bee-eater":
+        extra = figure(
+            "media/uploads/2025/09/AP4I0956-1024x683.jpg",
+            "European Bee-eater (Merops apiaster)",
+            "European Bee-eater (<em>Merops apiaster</em>).",
+            media_prefix,
+        )
+        extras = []
+        for src, alt in (
+            (
+                "media/uploads/2025/09/AP4I1115-200x300.jpg",
+                "European Bee-eater at the nest bank",
+            ),
+            (
+                "media/uploads/2025/09/AP4I1061-1024x683.jpg",
+                "European Bee-eater in flight",
+            ),
+            (
+                "media/uploads/2025/09/AP4I1187-Enhanced-NR-1024x683.jpg",
+                "European Bee-eater perched",
+            ),
+        ):
+            extras.append(figure(src, alt, alt, media_prefix))
+        body_html = body_html + "\n" + "\n".join(extras)
+    elif slug == "barn-owl":
+        extra = figure(
+            "media/uploads/2025/09/AP4I6377-1024x683.jpg",
+            "Barn Owl (Tyto alba)",
+            "Barn Owl (<em>Tyto alba</em>).",
+            media_prefix,
+        )
+        extras = []
+        for src, alt in (
+            (
+                "media/uploads/2025/09/AP4I0004-Enhanced-NR-300x200.jpg",
+                "Barn Owl in flight",
+            ),
+            (
+                "media/uploads/2025/09/AP4I6266-Enhanced-NR-1024x683.jpg",
+                "Barn Owl at rest",
+            ),
+            (
+                "media/uploads/2025/09/AP4I6190-Enhanced-NR-1024x683.jpg",
+                "Barn Owl portrait",
+            ),
+        ):
+            extras.append(figure(src, alt, alt, media_prefix))
+        body_html = body_html + "\n" + "\n".join(extras)
 
     parts = [p for p in (lead_html, extra, body_html) if p]
     return "\n".join(parts)
@@ -787,6 +1015,17 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
         "egypt-new-hunting-rules-burullus-autumn-migration",
         "suhail-2026-in-photos-falcons-visitors",
         "video-saud-al-babtain-maqnas-afghanistan",
+        "common-shelduck-protected-migrant-lebanon",
+        "leading-platform-lebanese-arab-hunters-since-2012",
+        "regulating-hunting-protects-wildlife-bans-worsen",
+        "illegal-hunting-destroys-hobby-nets-lime-night",
+        "george-taza-protect-fish-stocks-interview",
+        "leen-araji-equestrian-and-mental-math-champion",
+        "syrian-hunter-amani-al-homsi-against-illegal-hunting",
+        "air-rifles",
+        "red-footed-falcon-killed-by-ignorance",
+        "european-bee-eater",
+        "barn-owl",
         *NO_THUMB_SLUGS,
     }:
         featured = (

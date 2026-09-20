@@ -346,7 +346,7 @@ def patch_en_home() -> None:
   </div>
 </article>"""
     html = re.sub(
-        r'(<h2>September 2026</h2>.*?<div class="grid-4">)\s*',
+        r'(<h2>(?:News|September 2026)</h2>.*?<div class="grid-4">)\s*',
         r"\1\n" + card,
         html,
         count=1,

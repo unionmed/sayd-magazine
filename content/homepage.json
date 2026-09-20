@@ -19,7 +19,9 @@
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
-    "sayd-returns-new-look-wider-vision"
+    "sayd-returns-new-look-wider-vision",
+    "saudi-hunting-fines-5000-riyal-prohibited-areas",
+    "saudi-5000-riyal-hunting-fine-teaser"
   ],
   "omit_from_latest": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -63,6 +65,46 @@
       "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
       "لين-عراجي-بطلة-فروسية-وحساب",
       "الصيّادة-السورية-أماني-الحمصي"
+    ],
+    "عتاد وسلاح": [
+      "البنادق-الهوائية"
+    ],
+    "جعبة المنوعات": [
+      "العُوَيْسِق",
+      "طائر-الوروار-الأوروبي",
+      "بومة-المخازن"
+    ],
+    "News": [
+      "egypt-new-hunting-rules-burullus-autumn-migration",
+      "common-shelduck-protected-migrant-lebanon",
+      "leading-platform-lebanese-arab-hunters-since-2012"
+    ],
+    "Hunting & Equestrian": [
+      "qatar-suhail-2026-80000-visitors-teaser",
+      "autumn-migration-how-world-protects-birds-regulates-hunting",
+      "regulating-hunting-protects-wildlife-bans-worsen",
+      "illegal-hunting-destroys-hobby-nets-lime-night"
+    ],
+    "Interviews & Investigations": [
+      "international-orgs-ecocide-south-lebanon",
+      "george-taza-protect-fish-stocks-interview",
+      "leen-araji-equestrian-and-mental-math-champion",
+      "syrian-hunter-amani-al-homsi-against-illegal-hunting"
+    ],
+    "Gear & Arms": [
+      "air-rifles"
+    ],
+    "Sayd TV": [
+      "video-saud-al-babtain-maqnas-afghanistan"
+    ],
+    "Photos": [
+      "suhail-2026-in-photos-falcons-visitors",
+      "great-white-pelican-matn-highway-nayef-krayem"
+    ],
+    "Miscellany": [
+      "red-footed-falcon-killed-by-ignorance",
+      "european-bee-eater",
+      "barn-owl"
     ]
   },
   "category_extras": {
