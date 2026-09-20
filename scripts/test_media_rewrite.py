@@ -174,24 +174,26 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
     root = Path(__file__).resolve().parents[1]
     lists = json.loads((root / "content" / "homepage.json").read_text(encoding="utf-8"))
     featured = lists["featured"]
-    assert featured[0].startswith("منظمات-دولية-ابادة")
-    assert featured[1].startswith("كابس-ومكشب")
+    assert featured[0].startswith("كابس-ومكشب")
+    assert featured[1].startswith("كيف-يحمي-المزارع")
     assert featured[4].startswith("صيد-تعود")
     home = (root / "docs" / "index.html").read_text(encoding="utf-8")
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
     latest = home[home.find("latest-col") :]
     for slug in featured:
         assert slug in mosaic, slug
-    assert mosaic.find("منظمات-دولية-ابادة") < mosaic.find("80-ألف-زائر")
+    assert mosaic.find("كابس-ومكشب") < mosaic.find("80-ألف-زائر")
+    assert "منظمات-دولية-ابادة" not in mosaic
     assert "من-ذاكرة-صيد" not in mosaic
     assert "من-ذاكرة-صيد" not in latest.split("</ul>", 1)[0]
     en = (root / "docs" / "en" / "index.html").read_text(encoding="utf-8")
     en_mosaic = en[en.find("featured-mosaic") : en.find("latest-col")]
     en_latest = en[en.find("latest-col") :]
-    assert "international-orgs-ecocide-south-lebanon" in en_mosaic
+    assert "international-orgs-ecocide-south-lebanon" not in en_mosaic
+    assert "cabs-mecshap-autumn-birds-lebanon-khatib" in en_mosaic
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en_mosaic
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en_latest.split("</ul>", 1)[0]
-    assert en_mosaic.find("international-orgs-ecocide-south-lebanon") < en_mosaic.find(
+    assert en_mosaic.find("cabs-mecshap-autumn-birds-lebanon-khatib") < en_mosaic.find(
         "suhail-2026-closes-decade-katara-80000-visitors"
     )
 
@@ -279,7 +281,7 @@ def test_visible_2022_articles_local_only() -> None:
         for src in srcs:
             if "media/" not in src:
                 continue
-            rel = src.split("media/", 1)[1]
+            rel = src.split("media/", 1)[1].split("?", 1)[0]
             path = docs / "media" / rel
             assert path.is_file() and path.stat().st_size > 32, (slug, src)
     # Kaps / Suhail / Adonis already-local files stay wired

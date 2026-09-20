@@ -35,10 +35,3 @@ mecshap-apu-cabs-baalbek-release.jpg	مكشب MECSHAP	Transfer and Release of Pr
 great-white-pelican-nayef-krayem-matn-2026.jpg	نايف كريم / Nayef Krayem	Great White Pelican, Matn Expressway, Spring 2026
 	Existing AR photo piece + EN twin. Live src on all pelican surfaces.
 	AR credit: بعدسة نايف كريم · البجع الأبيض الكبير · أوتوستراد المتن · ربيع 2026
-
-ecocide-south-lebanon-white-phosphorus-smoke.jpg	نايف / Nayef	South Lebanon — dense white smoke over vegetation
-	Ecocide cover + homepage mosaic + first in-article figure.
-	Caption lives in the article body only (not under the mosaic card).
-
-ecocide-south-lebanon-vegetation-fire.jpg	نايف / Nayef	South Lebanon — vegetation fire on a rocky hill
-	Second in-article figure on the ecocide twin only. Not the mosaic cover.

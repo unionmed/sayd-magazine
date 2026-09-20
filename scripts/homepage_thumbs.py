@@ -71,10 +71,10 @@ BRAND_KEEP = {
 HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
     "cabs-mecshap-autumn-birds-lebanon-khatib": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+    "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف": "uploads/2026/09/farmers-storks-migrating-palestine.jpg",
+    "how-farmers-protect-migratory-birds-this-autumn": "uploads/2026/09/farmers-storks-migrating-palestine.jpg",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": "uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
     "egypt-new-hunting-rules-burullus-autumn-migration": "uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
-    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": "uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
-    "international-orgs-ecocide-south-lebanon": "uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": "uploads/2026/09/hero-closing-80k.jpg",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب": "uploads/2026/09/ncw-wildlife-card.jpg",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم": "uploads/2026/09/sayd-returns-adonis-editor.jpg",
@@ -199,9 +199,9 @@ def featured_mosaic_slugs() -> list[str]:
 # EN edition slugs for the same five mosaic stories.
 FEATURED_MOSAIC_EN_SLUGS = {
     "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "how-farmers-protect-migratory-birds-this-autumn",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
-    "international-orgs-ecocide-south-lebanon",
     "sayd-returns-what-we-want-to-offer",
 }
 

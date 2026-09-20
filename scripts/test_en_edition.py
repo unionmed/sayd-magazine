@@ -25,7 +25,6 @@ SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 
 HOME_TICKER_EN = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
-    "international-orgs-ecocide-south-lebanon",
     CABS_EN,
     "qatar-suhail-2026-80000-visitors-teaser",
     "saudi-sixth-hunting-season-2026-2027-rules",
@@ -37,9 +36,13 @@ HOME_TICKER_EN = [
 
 def test_pairs_cover_reviewed_drafts() -> None:
     assert len(PAIRS) == 27
+    drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
+    assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():
-        assert (ROOT / "content" / "en" / f"{en_slug}.md").is_file()
         assert (DOCS / "en" / "posts" / en_slug / "index.html").is_file()
+        if en_slug == "how-farmers-protect-migratory-birds-this-autumn":
+            continue
+        assert (ROOT / "content" / "en" / f"{en_slug}.md").is_file()
     assert "great-white-pelican-matn-highway-nayef-krayem" in PAIRS.values()
     assert "common-shelduck-protected-migrant-lebanon" in PAIRS.values()
     assert "air-rifles" in PAIRS.values()
@@ -75,6 +78,7 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "sayd-returns-new-look-wider-vision",
         "saudi-hunting-fines-5000-riyal-prohibited-areas",
         "saudi-5000-riyal-hunting-fine-teaser",
+        "syrian-hunter-amani-al-homsi-against-illegal-hunting",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
@@ -142,8 +146,9 @@ def test_en_homepage_featured_2026() -> None:
     mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     lead = mosaic.split("feature-side", 1)[0]
     side = mosaic.split("feature-side", 1)[1]
-    assert "ecocide-south-lebanon-white-phosphorus-smoke" in lead
-    assert "mecshap-apu-cabs-baalbek-release.jpg" in side
+    assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in lead
+    assert "farmers-storks-migrating-palestine.jpg" in side
     assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
     assert "placeholder-thumb" not in html
@@ -220,21 +225,23 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
         lead = mosaic.split("feature-side", 1)[0]
         side = mosaic.split("feature-side", 1)[1]
-        assert "feature-ecocide" in lead
+        assert "feature-lead" in lead
+        assert "feature-ecocide" not in lead
         assert "kaps-lead" not in lead
-        assert "ecocide-south-lebanon-white-phosphorus-smoke" in lead
-        assert "mecshap-apu-cabs-baalbek-release.jpg" in side
+        assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
+        assert "mecshap-apu-cabs-baalbek-release.jpg" in lead
+        assert "farmers-storks-migrating-palestine.jpg" in side
         assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
         assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in mosaic
         if ar:
-            assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" in side
+            assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" in lead
             titles = " ".join(re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", mosaic, re.S))
             assert "مكشب" not in titles
             assert "كابس" not in titles
             assert "<h2>قصص مميزة</h2>" not in html
-            assert "CABS و MECSHAP لحماية طيور الخريف" in side
+            assert "CABS و MECSHAP لحماية طيور الخريف" in lead
         else:
-            assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
+            assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in lead
             assert "<h2>Featured stories</h2>" not in html
         css_q = html.split("site.css", 1)[1][:80]
         assert (
@@ -243,6 +250,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             or "?v=20260920-memory-ten" in css_q
             or "?v=20260920-latest-text" in css_q
             or "?v=20260920-ecocide-lead" in css_q
+            or "?v=20260920-cabs-lead" in css_q
         )
         assert "kaps-makshab-apu-fries-hero.jpg" not in lead
 
@@ -278,18 +286,19 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
 
     src = (ROOT / "scripts" / "build_en_edition.py").read_text(encoding="utf-8")
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src
-    assert "feature-ecocide" in src
+    assert "feature-ecocide" not in src
+    assert "international-orgs-ecocide-south-lebanon" not in src
     assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in src
     assert "Short-toed snake eagle" not in src
 
 
 def test_en_footer_has_official_mecshap_harvest_label() -> None:
-    """Footer uses Harvest; CABS side-box alt stays the Nayef/PR #29 line."""
+    """Footer uses Harvest; CABS lead alt stays the Nayef/PR #29 line."""
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     mosaic = home.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
-    side = mosaic.split("feature-side", 1)[1]
-    assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
-    assert "Harvest" not in side
+    lead = mosaic.split("feature-side", 1)[0]
+    assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in lead
+    assert "Harvest" not in lead
     samples = [
         DOCS / "en" / "index.html",
         DOCS / "en" / "stories" / "index.html",
@@ -332,7 +341,8 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert ">Arabic<" not in html.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
     assert "Interviews &amp; Investigations" in html
     assert "Eco-Tourism" in html
-    assert "international-orgs-ecocide-south-lebanon" in html
+    assert "international-orgs-ecocide-south-lebanon" not in html
+    assert "how-farmers-protect-migratory-birds-this-autumn" in html
     assert "feature-adonis" in html
     assert "feature-lead" in html
     assert "home-layout" in html
@@ -392,6 +402,7 @@ def test_en_nested_nav_paths() -> None:
         or "?v=20260920-memory-ten" in en_home
             or "?v=20260920-latest-text" in en_home
             or "?v=20260920-ecocide-lead" in en_home
+        or "?v=20260920-cabs-lead" in en_home
     )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -419,6 +430,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260920-memory-ten" in home
         or "?v=20260920-latest-text" in home
         or "?v=20260920-ecocide-lead" in home
+        or "?v=20260920-cabs-lead" in home
     )
     assert (
         "?v=20260919-en-plex-kaps-r" in en
@@ -426,14 +438,16 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260920-memory-ten" in en
         or "?v=20260920-latest-text" in en
         or "?v=20260920-ecocide-lead" in en
+        or "?v=20260920-cabs-lead" in en
     )
     assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
     latest = home[home.find("latest-col") :]
-    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in mosaic
+    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" not in mosaic
     assert "ciconia-ciconia-white-stork.jpg" not in mosaic
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in mosaic
+    assert "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest.split("</ul>", 1)[0]
 
@@ -458,6 +472,7 @@ def test_every_en_page_is_ltr_plex() -> None:
             or "?v=20260920-memory-ten" in html
             or "?v=20260920-latest-text" in html
             or "?v=20260920-ecocide-lead" in html
+            or "?v=20260920-cabs-lead" in html
         )
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html

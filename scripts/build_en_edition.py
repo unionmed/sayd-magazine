@@ -8,7 +8,7 @@ behind a "Sayd Magazine" brand link.
 Nayef EN rule: /en/ mirrors the Arabic desk spine with English twins.
 Do not run write_home() against the hand-extended EN homepage (it would
 wipe Memory / desks). homepage.json desk_slugs + homepage_unique_cards
-lock Ecocide lead → CABS side → Latest thumbs → Interviews → Gear →
+lock CABS lead → farmers side → Latest thumbs → Interviews → Gear →
 TV → Photos → Miscellany. News + Hunting stay off home.
 """
 
@@ -39,7 +39,7 @@ FONTS = (
     "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
     "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
-CSS_CACHE = "20260920-ecocide-lead"
+CSS_CACHE = "20260920-cabs-lead"
 NO_THUMB_SLUGS = {
     "autumn-migration-field-action-protect-flyways-lebanon",
 }
@@ -52,15 +52,15 @@ TAGLINE_AR = "مجلة أسياد الطبيعة في البر والبحر وا
 
 # Live homepage / ticker 2026 set (Nayef editorial list).
 HOME_FEATURED = [
-    "international-orgs-ecocide-south-lebanon",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "how-farmers-protect-migratory-birds-this-autumn",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
 ]
-# Mosaic side stack: CABS/MECSHAP first (not lead), then Suhail / Saudi / Adonis.
+# Mosaic side stack: farmers first, then Suhail / Saudi / Adonis.
 HOME_MOSAIC_SIDE = [
-    "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "how-farmers-protect-migratory-birds-this-autumn",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
@@ -80,11 +80,9 @@ HOME_LATEST = [
 ]
 TICKER_TITLES_EN = {
     "egypt-new-hunting-rules-burullus-autumn-migration": "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus",
-    "international-orgs-ecocide-south-lebanon": "International groups: “ecocide” in southern Lebanon",
 }
 HOME_TICKER = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
-    "international-orgs-ecocide-south-lebanon",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
     "qatar-suhail-2026-80000-visitors-teaser",
     "saudi-sixth-hunting-season-2026-2027-rules",
@@ -101,14 +99,6 @@ META: dict[str, dict] = {
         "author": "Sayd",
         "image": "media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
         "image_alt": "A field researcher removes a bird from illegal nets.",
-    },
-    "international-orgs-ecocide-south-lebanon": {
-        "date": "20 September 2026",
-        "date_sort": "2026-09-20",
-        "category": "Interviews & Investigations",
-        "author": "Sayd",
-        "image": "media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
-        "image_alt": "Dense white smoke over vegetation in southern Lebanon",
     },
     "memory-of-sayd-awareness-responsibility-2016-2024": {
         "date": "19 September 2026",
@@ -438,20 +428,6 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
             "A field researcher removes a bird from illegal nets.",
             media_prefix,
         )
-    if slug == "international-orgs-ecocide-south-lebanon":
-        smoke = figure(
-            "media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
-            "Dense white smoke over vegetation in the south — documentation linked to the use of white-phosphorus munitions, according to reports by international organizations.",
-            "Dense white smoke over vegetation in the south — documentation linked to the use of white-phosphorus munitions, according to reports by international organizations.",
-            media_prefix,
-        )
-        fire = figure(
-            "media/uploads/2026/09/ecocide-south-lebanon-vegetation-fire.jpg",
-            "Fires consuming vegetation on a rocky hill near inhabited areas in southern Lebanon.",
-            "Fires consuming vegetation on a rocky hill near inhabited areas in southern Lebanon.",
-            media_prefix,
-        )
-        lead_html = smoke + "\n" + fire + "\n" + lead_html
     if slug == "cabs-mecshap-autumn-birds-lebanon-khatib":
         lead_html = (
             "<p><strong>Beirut — Sayd</strong></p>\n"
@@ -1011,7 +987,6 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
     image = item.get("image")
     if image and slug not in {
         "cabs-mecshap-autumn-birds-lebanon-khatib",
-        "international-orgs-ecocide-south-lebanon",
         "egypt-new-hunting-rules-burullus-autumn-migration",
         "suhail-2026-in-photos-falcons-visitors",
         "video-saud-al-babtain-maqnas-afghanistan",
@@ -1101,8 +1076,6 @@ def write_home(articles: dict[str, dict]) -> None:
     side_html = []
     for slug in side:
         cls = "card card-stack"
-        if slug == "international-orgs-ecocide-south-lebanon":
-            cls += " feature-ecocide"
         if slug == "sayd-returns-what-we-want-to-offer":
             cls += " feature-adonis"
         item = articles[slug]
@@ -1176,7 +1149,7 @@ def write_home(articles: dict[str, dict]) -> None:
     <section class="masthead" aria-label="Featured stories and latest news">
       <div class="featured-col">
         <div class="featured-mosaic">
-<article class="card overlay feature-lead feature-ecocide">
+<article class="card overlay feature-lead">
   <a class="thumb" href="posts/{lead}/index.html"><img src="../{lead_item["image"]}" alt="{escape(lead_item.get("image_alt") or lead_item["title"], quote=True)}" loading="lazy"></a>
   <div class="body">
     <div class="meta">{escape(lead_item["date"])}<span class="cat-pill">{escape(lead_item["category"])}</span></div>
