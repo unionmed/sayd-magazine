@@ -220,7 +220,8 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         else:
             assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in lead
             assert "<h2>Featured stories</h2>" not in html
-        assert "?v=20260919-en-plex-kaps" in html.split("site.css", 1)[1][:64]
+        css_q = html.split("site.css", 1)[1][:64]
+        assert "?v=20260919-en-plex-kaps" in css_q or "?v=20260920-memory-strip" in css_q
         body = lead.split("class=\"body\"", 1)[1].split("class=\"thumb\"", 1)[0]
         assert "kaps-caption" not in body
         assert "anti-poaching unit camp" not in body
@@ -365,7 +366,8 @@ def test_en_nested_nav_paths() -> None:
     assert 'href="../../../category/صيد/index.html"' in article
     assert "IBM+Plex+Sans" in article
     assert "?v=20260919-en-plex-kaps" in article
-    assert "?v=20260919-en-plex-kaps" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    en_home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "?v=20260919-en-plex-kaps" in en_home or "?v=20260920-memory-strip" in en_home
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     grid = home.split("September 2026", 1)[1]
@@ -384,8 +386,8 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
     assert "html[dir=\"ltr\"] .home-section:not(:has(article))" in css
     home = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    assert "?v=20260919-en-plex-kaps-r" in home
-    assert "?v=20260919-en-plex-kaps-r" in en
+    assert "?v=20260919-en-plex-kaps-r" in home or "?v=20260920-memory-strip" in home
+    assert "?v=20260919-en-plex-kaps-r" in en or "?v=20260920-memory-strip" in en
     assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
@@ -411,7 +413,7 @@ def test_every_en_page_is_ltr_plex() -> None:
         assert "IBM+Plex+Sans" in html
         assert "IBM+Plex+Serif" in html
         assert "family=Cairo" not in html
-        assert "?v=20260919-en-plex-kaps" in html
+        assert "?v=20260919-en-plex-kaps" in html or "?v=20260920-memory-strip" in html
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html
         assert "ticker-track" in html

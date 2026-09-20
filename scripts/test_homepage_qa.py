@@ -138,7 +138,14 @@ def test_homepage_cards_publish_2022_plus() -> None:
             assert "19 September 2026" in after
             assert "ريتا-الشعار6" in html
             assert "posts/" in after
-            assert not re.search(r'href="\.\./posts/', after)
+            desks = re.sub(
+                r'<section class="memory-strip".*?</section>',
+                "",
+                after,
+                count=1,
+                flags=re.S,
+            )
+            assert not re.search(r'href="\.\./posts/', desks)
 
 
 def test_kaps_package_untouched() -> None:
@@ -275,6 +282,27 @@ def test_latest_and_desks_are_newest_first() -> None:
             assert card_dates == sorted(card_dates, reverse=True), (rel, card_dates)
 
 
+def test_memory_strip_folds_rita_into_personalities() -> None:
+    """Preview: Rita’s photo stays, standalone EN memory cards leave the home grids."""
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    for html in (ar, en):
+        assert 'class="memory-strip"' in html
+        assert html.count("memory-card memory-card--") == 4
+        assert "ريتا-الشعار6" in html
+        assert "nadine-njeim-portrait-user.jpg" in html
+    sept = en.split("<h2>September 2026</h2>", 1)[1].split("home-layout", 1)[0]
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in sept
+    interviews = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split("Sayd TV", 1)[0]
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in interviews
+    assert (DOCS / "memory" / "index.html").is_file()
+    assert (DOCS / "en" / "memory" / "index.html").is_file()
+    rita = DOCS / "media" / "uploads" / "2024" / "02" / "ريتا-الشعار6.jpg"
+    nadine = DOCS / "media" / "uploads" / "2026" / "09" / "nadine-njeim-portrait-user.jpg"
+    assert rita.is_file() and rita.stat().st_size > 32
+    assert nadine.is_file() and nadine.stat().st_size > 32
+
+
 def test_ecocide_ticker_and_memory_stay_on_site() -> None:
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -324,5 +352,6 @@ if __name__ == "__main__":
     test_home_desk_order_interviews_tv_photos_miscellany()
     test_platform_card_uses_uncropped_jocy()
     test_latest_and_desks_are_newest_first()
+    test_memory_strip_folds_rita_into_personalities()
     test_ecocide_ticker_and_memory_stay_on_site()
     print("test_homepage_qa: ok")
