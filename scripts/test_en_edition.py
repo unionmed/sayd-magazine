@@ -390,7 +390,8 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
     assert ">Laws &amp; Maps<" not in en
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
     latest = home[home.find("latest-col") :]
-    assert "ciconia-ciconia-white-stork.jpg" in mosaic
+    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in mosaic
+    assert "ciconia-ciconia-white-stork.jpg" not in mosaic
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest

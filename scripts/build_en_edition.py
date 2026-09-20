@@ -96,8 +96,8 @@ META: dict[str, dict] = {
         "date_sort": "2026-09-20",
         "category": "Interviews & Investigations",
         "author": "Sayd",
-        "image": "media/uploads/2026/09/ciconia-ciconia-white-stork.jpg",
-        "image_alt": "White stork (Ciconia ciconia) in a migration habitat — wildlife photograph, not bombardment footage",
+        "image": "media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
+        "image_alt": "Dense white smoke over vegetation in southern Lebanon",
     },
     "memory-of-sayd-awareness-responsibility-2016-2024": {
         "date": "19 September 2026",
@@ -324,13 +324,19 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
     body_html = md_blocks(draft["body"]) if draft["body"] else ""
     extra = ""
     if slug == "international-orgs-ecocide-south-lebanon":
-        stork = figure(
-            "media/uploads/2026/09/ciconia-ciconia-white-stork.jpg",
-            "White stork (Ciconia ciconia) in a migration habitat — wildlife photograph, not bombardment footage",
-            "White stork (<em>Ciconia ciconia</em>) in a migration habitat. This is a wildlife / flyway photograph, not footage of bombardment or military operations.",
+        smoke = figure(
+            "media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
+            "Dense white smoke over vegetation in the south — documentation linked to the use of white-phosphorus munitions, according to reports by international organizations.",
+            "Dense white smoke over vegetation in the south — documentation linked to the use of white-phosphorus munitions, according to reports by international organizations.",
             media_prefix,
         )
-        lead_html = stork + "\n" + lead_html
+        fire = figure(
+            "media/uploads/2026/09/ecocide-south-lebanon-vegetation-fire.jpg",
+            "Fires consuming vegetation on a rocky hill near inhabited areas in southern Lebanon.",
+            "Fires consuming vegetation on a rocky hill near inhabited areas in southern Lebanon.",
+            media_prefix,
+        )
+        lead_html = smoke + "\n" + fire + "\n" + lead_html
     if slug == "cabs-mecshap-autumn-birds-lebanon-khatib":
         lead_html = (
             "<p><strong>Beirut — Sayd</strong></p>\n"

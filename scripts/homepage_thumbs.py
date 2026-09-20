@@ -67,8 +67,8 @@ BRAND_KEEP = {
 HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
     "cabs-mecshap-autumn-birds-lebanon-khatib": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
-    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": "uploads/2026/09/ciconia-ciconia-white-stork.jpg",
-    "international-orgs-ecocide-south-lebanon": "uploads/2026/09/ciconia-ciconia-white-stork.jpg",
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": "uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
+    "international-orgs-ecocide-south-lebanon": "uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": "uploads/2026/09/hero-closing-80k.jpg",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب": "uploads/2026/09/ncw-wildlife-card.jpg",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم": "uploads/2026/09/sayd-returns-adonis-editor.jpg",

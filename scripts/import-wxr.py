@@ -142,7 +142,7 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
             {"nicename": "مقابلات-تحقيقات", "name": "مقابلات وتحقيقات", "slug": "مقابلات-تحقيقات"}
         ],
         "excerpt": "تقارير أممية وحقوقية تتقاطع على توصيف الإبادة البيئية في جنوب لبنان.",
-        "featured": "uploads/2026/09/ciconia-ciconia-white-stork.jpg",
+        "featured": "uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
     },
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": {
         "title": "من ذاكرة «صيد»: مسيرة الوعي والمسؤولية (2016 – 2024)",

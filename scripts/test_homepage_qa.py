@@ -62,11 +62,13 @@ def test_rita_stays_on_memory_and_design_png_is_off_homes() -> None:
     latest_ar = ar.split("latest-col", 1)[1]
     latest_en = en.split("latest-col", 1)[1]
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic_ar
-    assert "ciconia-ciconia-white-stork" in mosaic_ar
+    assert "ecocide-south-lebanon-white-phosphorus-smoke" in mosaic_ar
+    assert "ciconia-ciconia-white-stork" not in mosaic_ar
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic_ar
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest_ar
     assert "international-orgs-ecocide-south-lebanon" in mosaic_en
-    assert "ciconia-ciconia-white-stork" in mosaic_en
+    assert "ecocide-south-lebanon-white-phosphorus-smoke" in mosaic_en
+    assert "ciconia-ciconia-white-stork" not in mosaic_en
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in mosaic_en
     assert "memory-of-sayd-awareness-responsibility-2016-2024" in latest_en
     assert "ريتا-الشعار6" in ar
@@ -121,7 +123,8 @@ def test_homepage_cards_publish_2022_plus() -> None:
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
             latest = html.split(marker, 1)[1]
             assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic
-            assert "ciconia-ciconia-white-stork" in mosaic
+            assert "ecocide-south-lebanon-white-phosphorus-smoke" in mosaic
+            assert "ciconia-ciconia-white-stork" not in mosaic
             assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
             assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" in latest
             assert "19 أيلول 2026" in latest
@@ -289,12 +292,24 @@ def test_ecocide_ticker_and_memory_stay_on_site() -> None:
     assert (DOCS / "en" / "posts" / "memory-of-sayd-awareness-responsibility-2016-2024" / "index.html").is_file()
     assert (DOCS / "posts" / "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" / "index.html").is_file()
     assert (DOCS / "en" / "posts" / "international-orgs-ecocide-south-lebanon" / "index.html").is_file()
-    stork = DOCS / "media" / "uploads" / "2026" / "09" / "ciconia-ciconia-white-stork.jpg"
-    assert stork.is_file() and stork.stat().st_size > 32
+    smoke = DOCS / "media" / "uploads" / "2026" / "09" / "ecocide-south-lebanon-white-phosphorus-smoke.jpg"
+    fire = DOCS / "media" / "uploads" / "2026" / "09" / "ecocide-south-lebanon-vegetation-fire.jpg"
+    assert smoke.is_file() and smoke.stat().st_size > 32
+    assert fire.is_file() and fire.stat().st_size > 32
     ar_article = (DOCS / "posts" / "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" / "index.html").read_text(encoding="utf-8")
     en_article = (DOCS / "en" / "posts" / "international-orgs-ecocide-south-lebanon" / "index.html").read_text(encoding="utf-8")
-    assert "ليست مشهداً" in ar_article or "وليست مشهداً" in ar_article
-    assert "not footage of bombardment" in en_article
+    assert "دخان أبيض كثيف فوق غطاء نباتي في الجنوب" in ar_article
+    assert "حرائق تلتهم الغطاء النباتي على تلة صخرية" in ar_article
+    assert "Dense white smoke over vegetation in the south" in en_article
+    assert "Fires consuming vegetation on a rocky hill" in en_article
+    assert "illegal-hunting-mist-net-bird" not in ar_article
+    assert "illegal-hunting-mist-net-bird" not in en_article
+    mosaic_ar_card = mosaic_ar.split("feature-ecocide", 1)[1].split("</article>", 1)[0]
+    mosaic_en_card = mosaic_en.split("feature-ecocide", 1)[1].split("</article>", 1)[0]
+    assert "figcaption" not in mosaic_ar_card
+    assert "figcaption" not in mosaic_en_card
+    assert "توثيق مرتبط باستخدام ذخائر" not in mosaic_ar_card
+    assert "white-phosphorus munitions" not in mosaic_en_card
 
 
 if __name__ == "__main__":
