@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """Lock AR/EN homepage story cards to Nayef’s Featured + Latest spine.
 
-Spine: Ecocide lead + CABS/MECSHAP side box + up to three more side
-boxes (Suhail, Saudi, Adonis) → Memory strip → Latest thumbs →
-Interviews → Gear → TV → Photos → Miscellany.
+Spine: CABS/MECSHAP large lead (Latin names, no caption) + farmers
+side box (storks thumb) + Suhail, Saudi, Adonis → Memory strip →
+Latest thumbs → Interviews → Gear → TV → Photos → Miscellany.
 
 News / Hunting desks stay off home (archive only). Featured URLs
 never also appear in Latest. Latest items are small thumb + title +
 date. Adonis is one feature-box only and never in the ticker.
-Ecocide may dual-place: mosaic lead *and* Interviews.
+Farmers may dual-place: mosaic side *and* Interviews. Ecocide is
+Interviews (and ticker), never the feature-lead.
 """
 
 from __future__ import annotations
@@ -40,6 +41,10 @@ CABS_AR = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
 CABS_EN = "cabs-mecshap-autumn-birds-lebanon-khatib"
 CABS_TITLE_AR = "CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي"
 CABS_TITLE_EN = "CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner"
+FARMERS_AR = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
+FARMERS_EN = "how-farmers-protect-migratory-birds-this-autumn"
+FARMERS_TITLE_AR = "كيف يحمي المزارع الطيور المهاجرة هذا الخريف؟"
+FARMERS_TITLE_EN = "How Can Farmers Protect Migratory Birds This Autumn?"
 SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 SAUDI_AR = "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
@@ -47,8 +52,8 @@ SAUDI_EN = "saudi-sixth-hunting-season-2026-2027-rules"
 POACHING_AR = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
 POACHING_EN = "illegal-hunting-destroys-hobby-nets-lime-night"
 
-FEATURED_AR = [ECOCIDE_AR, CABS_AR, SUHAIL_AR, SAUDI_AR, ADONIS_AR]
-FEATURED_EN = [ECOCIDE_EN, CABS_EN, SUHAIL_EN, SAUDI_EN, ADONIS_EN]
+FEATURED_AR = [CABS_AR, FARMERS_AR, SUHAIL_AR, SAUDI_AR, ADONIS_AR]
+FEATURED_EN = [CABS_EN, FARMERS_EN, SUHAIL_EN, SAUDI_EN, ADONIS_EN]
 FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 
 LATEST_AR = [
@@ -72,7 +77,7 @@ LATEST_EN = [
 
 DROPPED_DESKS_AR = ("أخبار", "صيد وفروسية")
 DROPPED_DESKS_EN = ("News", "September 2026", "Hunting &amp; Equestrian")
-CSS_CACHE = "20260920-ecocide-lead"
+CSS_CACHE = "20260920-cabs-lead"
 
 CHICKADEE_REL = "uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg"
 CHICKADEE_ALT_AR = "طائر يُستخرج من شبكة ضبابية"
@@ -90,18 +95,18 @@ DEFAULT_OMIT_FROM_HOME = frozenset(
 )
 DEFAULT_OMIT_FROM_LATEST = frozenset(FEATURED_SLUGS | {MEMORY_EN, MEMORY_AR})
 TICKER_OMIT_SLUGS = frozenset(
-    {ADONIS_EN, ADONIS_AR, NEW_LOOK_EN, NEW_LOOK_AR}
+    {ADONIS_EN, ADONIS_AR, NEW_LOOK_EN, NEW_LOOK_AR, FARMERS_AR, FARMERS_EN}
 )
 # Mosaic + Interviews only. Never mosaic + Latest / leftover desks.
-MOSAIC_AND_INTERVIEWS = frozenset({ECOCIDE_AR, ECOCIDE_EN})
+MOSAIC_AND_INTERVIEWS = frozenset({FARMERS_AR, FARMERS_EN})
 
 # EN desk spine = AR. News + Hunting stay off home (covered by Featured + Latest).
 EN_DESK_SLUGS: dict[str, list[str]] = {
     "Interviews &amp; Investigations": [
+        FARMERS_EN,
         ECOCIDE_EN,
         "george-taza-protect-fish-stocks-interview",
         "leen-araji-equestrian-and-mental-math-champion",
-        "syrian-hunter-amani-al-homsi-against-illegal-hunting",
     ],
     "Gear &amp; Arms": ["air-rifles"],
     "Sayd TV": ["video-saud-al-babtain-maqnas-afghanistan"],
@@ -125,10 +130,10 @@ EN_SAUDI_FILLERS = frozenset(
 
 AR_DESK_SLUGS: dict[str, list[str]] = {
     "مقابلات وتحقيقات": [
+        FARMERS_AR,
         ECOCIDE_AR,
         "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
         "لين-عراجي-بطلة-فروسية-وحساب",
-        "الصيّادة-السورية-أماني-الحمصي",
     ],
     "عتاد وسلاح": ["البنادق-الهوائية"],
     "جعبة المنوعات": [
