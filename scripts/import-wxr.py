@@ -1663,13 +1663,15 @@ def build_site(data: dict, out: Path) -> None:
         pick_posts_by_slug(posts, home_lists["latest"])
     )
     featured_pool = featured_posts(posts, home_lists["featured"])
-    featured_lead = featured_pool[:1]
-    # Lead and the first side box stay in editorial order (investigation,
-    # then CABS). Cards demoted further down the side stack sort newest-first.
-    if len(featured_pool) > 2:
-        featured_side = featured_pool[1:2] + sort_posts_newest_first(featured_pool[2:])
-    else:
-        featured_side = featured_pool[1:]
+    # Locked slots: investigation stays the lead, CABS stays the first
+    # small box. Every other side card is newest publish date first.
+    locked_lead = DEFAULT_FEATURED_SLUGS[0]
+    locked_side = DEFAULT_FEATURED_SLUGS[1]
+    by_featured = {p["slug"]: p for p in featured_pool}
+    rest = [p for p in featured_pool if p["slug"] not in {locked_lead, locked_side}]
+    featured_lead = [by_featured[locked_lead]] if locked_lead in by_featured else featured_pool[:1]
+    featured_side = [by_featured[locked_side]] if locked_side in by_featured else []
+    featured_side.extend(sort_posts_newest_first(rest))
     # Card uniqueness: featured mosaic owns those slugs. Latest now has thumbs,
     # so those URLs stay off desks. Farmers may dual-place: mosaic + Interviews.
     used_slugs: set[str] = {p["slug"] for p in featured_pool}

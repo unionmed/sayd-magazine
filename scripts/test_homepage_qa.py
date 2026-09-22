@@ -355,6 +355,49 @@ def test_demoted_cards_sort_newest_first() -> None:
     assert _order_slugs_newest_first(["same-a", "same-b"], cards) == ["same-a", "same-b"]
 
 
+def test_ar_en_dated_lists_share_one_order() -> None:
+    """Lead and the first side box are locked. Other dated lists match across languages."""
+    import json
+
+    pairs = json.loads((ROOT / "content" / "en" / "pairs.json").read_text(encoding="utf-8"))["pairs"]
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+
+    def unique_slugs(block: str) -> list[str]:
+        found: list[str] = []
+        for slug in re.findall(r'href="(?:\.\./)*posts/([^/]+)/', block):
+            if slug not in found:
+                found.append(slug)
+        return found
+
+    ar_lead = unique_slugs(ar.split("feature-lead", 1)[1].split("feature-side", 1)[0])
+    en_lead = unique_slugs(en.split("feature-lead", 1)[1].split("feature-side", 1)[0])
+    assert ar_lead == ["كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"]
+    assert en_lead == [pairs[ar_lead[0]]]
+
+    ar_side = unique_slugs(ar.split("feature-side", 1)[1].split("latest-col", 1)[0])
+    en_side = unique_slugs(en.split("feature-side", 1)[1].split("latest-col", 1)[0])
+    assert ar_side[0] == "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
+    assert [pairs[slug] for slug in ar_side] == en_side
+
+    ar_latest = unique_slugs(ar.split("latest-feed", 1)[1].split("</ul>", 1)[0])
+    en_latest = unique_slugs(en.split("latest-feed", 1)[1].split("</ul>", 1)[0])
+    assert [pairs[slug] for slug in ar_latest] == en_latest
+
+    for ar_h, en_h in (
+        ("مقابلات وتحقيقات", "Interviews &amp; Investigations"),
+        ("عتاد وسلاح", "Gear &amp; Arms"),
+        ("صيد TV", "Sayd TV"),
+        ("صور", "Photos"),
+        ("جعبة المنوعات", "Miscellany"),
+    ):
+        ar_slugs = unique_slugs(ar.split(f"<h2>{ar_h}</h2>", 1)[1].split("</section>", 1)[0])
+        en_slugs = unique_slugs(en.split(f"<h2>{en_h}</h2>", 1)[1].split("</section>", 1)[0])
+        shared = [pairs[slug] for slug in ar_slugs if pairs.get(slug) in en_slugs]
+        en_shared = [slug for slug in en_slugs if slug in shared]
+        assert shared == en_shared, (ar_h, shared, en_shared)
+
+
 def test_latest_and_desks_are_newest_first() -> None:
     """Nayef: Latest and every section grid are newest publish date first."""
     for rel, latest_h2 in (("index.html", "آخر الأخبار"), ("en/index.html", "Latest news")):
@@ -368,7 +411,7 @@ def test_latest_and_desks_are_newest_first() -> None:
             _parse_home_date(d) for d in re.findall(r'<div class="meta">([^<]+)', side)
         ]
         assert len(side_dates) >= 2
-        # First small box may stay pinned (CABS). The rest are newest-first.
+        # First small box stays CABS. Every later side box is newest-first.
         assert side_dates[1:] == sorted(side_dates[1:], reverse=True), (rel, side_dates)
         main = html.split('class="home-main"', 1)[1]
         for block in re.findall(r'<div class="grid-(?:4|photos)">(.*?)</div>', main, re.S):
@@ -730,6 +773,7 @@ if __name__ == "__main__":
     test_latest_feed_has_thumbs()
     test_platform_card_uses_uncropped_jocy()
     test_demoted_cards_sort_newest_first()
+    test_ar_en_dated_lists_share_one_order()
     test_latest_and_desks_are_newest_first()
     test_memory_strip_folds_rita_into_personalities()
     test_ecocide_removed_and_memory_stays_on_site()

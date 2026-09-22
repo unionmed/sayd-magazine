@@ -692,8 +692,10 @@ def rebuild_featured_mosaic(html: str, cards: dict[str, str], *, en: bool) -> st
     """
     slugs = list(FEATURED_EN if en else FEATURED_AR)
     fallbacks = EN_FALLBACK_CARDS if en else AR_FALLBACK_CARDS
-    lead_slug = slugs[0]
-    side_slugs = slugs[1:2] + _order_slugs_newest_first(slugs[2:], cards, fallbacks)
+    lead_slug = CURLEW_EN if en else CURLEW_AR
+    first_side = CABS_EN if en else CABS_AR
+    rest = [slug for slug in slugs if slug not in {lead_slug, first_side}]
+    side_slugs = [first_side] + _order_slugs_newest_first(rest, cards, fallbacks)
     lead_src = cards.get(lead_slug) or fallbacks.get(lead_slug)
     if not lead_src:
         raise SystemExit(f"missing featured lead card for {lead_slug}")

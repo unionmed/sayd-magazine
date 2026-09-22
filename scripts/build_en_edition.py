@@ -1093,13 +1093,12 @@ def card(slug: str, articles: dict[str, dict], href: str, heading: str = "h3") -
 
 
 def write_home(articles: dict[str, dict]) -> None:
-    lead = HOME_FEATURED[0]
-    # First side box stays pinned (CABS). The rest are newest publish date first.
-    side = list(HOME_MOSAIC_SIDE)
-    if len(side) > 1:
-        pinned, rest = side[:1], side[1:]
-        rest.sort(key=lambda s: articles[s].get("date_sort") or "", reverse=True)
-        side = pinned + rest
+    # Locked: investigation is the lead; CABS is the first small box.
+    lead = "how-migration-routes-lost-seven-birds-in-150-years"
+    cabs = "cabs-mecshap-autumn-birds-lebanon-khatib"
+    rest = [slug for slug in HOME_MOSAIC_SIDE if slug != cabs]
+    rest.sort(key=lambda s: articles[s].get("date_sort") or "", reverse=True)
+    side = [cabs, *rest]
     side_html = []
     for slug in side:
         cls = "card card-stack"
