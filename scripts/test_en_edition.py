@@ -514,6 +514,45 @@ def test_extinct_birds_captions_are_single_locale() -> None:
         assert any(c.startswith(start) for c in en_caps[1:]), start
 
 
+def test_en_stories_listing_drops_near_duplicate_cards() -> None:
+    """One Suhail, one Saudi rules card, one Sayd Returns card; unique images.
+
+    Publish year stays 2022 or later, matching the visible-listing filter.
+    """
+    stories = (DOCS / "en" / "stories" / "index.html").read_text(encoding="utf-8")
+    cards = re.findall(r"<article class=\"card[^\"]*\">(.*?)</article>", stories, re.S)
+    hrefs = []
+    images = []
+    for card in cards:
+        href = re.search(r'href="\.\./posts/([^/]+)/', card)
+        img = re.search(r'<img[^>]+src="([^"]+)"', card)
+        assert href and img, card[:160]
+        hrefs.append(href.group(1))
+        images.append(img.group(1).rsplit("/", 1)[-1])
+    assert hrefs.count("suhail-2026-closes-decade-katara-80000-visitors") == 1
+    assert "qatar-suhail-2026-80000-visitors-teaser" not in hrefs
+    assert "suhail-2026-in-photos-falcons-visitors" not in hrefs
+    assert hrefs.count("saudi-sixth-hunting-season-2026-2027-rules") == 1
+    assert "saudi-5000-riyal-hunting-fine-teaser" not in hrefs
+    assert "saudi-hunting-fines-5000-riyal-prohibited-areas" not in hrefs
+    assert hrefs.count("sayd-returns-what-we-want-to-offer") == 1
+    assert "sayd-returns-new-look-wider-vision" not in hrefs
+    assert len(images) == len(set(images))
+    assert "hero-closing-80k.jpg" in images
+    assert "gallery-katara-crowd.jpg" not in images
+    assert "gallery-alsharq.jpg" not in images
+    assert images.count("ncw-wildlife-card.jpg") == 1
+    assert images.count("sayd-returns-adonis-editor.jpg") == 1
+    assert "air-rifles" in hrefs
+    assert "red-footed-falcon-killed-by-ignorance" not in hrefs
+    assert "great-white-pelican-matn-highway-nayef-krayem" in hrefs
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" in hrefs
+    for card in cards:
+        meta = re.search(r'<div class="meta">([^<]+)', card)
+        year = re.search(r"(20\d{2})", meta.group(1) if meta else "")
+        assert year and int(year.group(1)) >= 2022, card[:160]
+
+
 def test_every_en_page_is_ltr_plex() -> None:
     """Single source of truth: every EN page, not homepage only."""
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
@@ -625,4 +664,5 @@ if __name__ == "__main__":
     test_empty_2022_category_chrome_is_css_only()
     test_every_en_page_is_ltr_plex()
     test_extinct_birds_captions_are_single_locale()
+    test_en_stories_listing_drops_near_duplicate_cards()
     print("test_en_edition: ok")

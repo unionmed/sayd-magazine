@@ -626,11 +626,13 @@ def test_homepage_story_cards_are_unique() -> None:
                 if slug not in iv_slugs:
                     iv_slugs.append(slug)
             assert iv_slugs == [
-                "how-migration-routes-lost-seven-birds-in-150-years",
                 FARMERS_EN,
                 "george-taza-protect-fish-stocks-interview",
                 "leen-araji-equestrian-and-mental-math-champion",
             ]
+            assert "how-migration-routes-lost-seven-birds-in-150-years" not in iv_slugs
+            lead = html.split("feature-lead", 1)[1].split("feature-side", 1)[0]
+            assert "how-migration-routes-lost-seven-birds-in-150-years" in lead
             gear = html.split("<h2>Gear &amp; Arms</h2>", 1)[1].split("</section>", 1)[0]
             assert "air-rifles" in gear
             misc = html.split("<h2>Miscellany</h2>", 1)[1].split("</section>", 1)[0]
@@ -644,8 +646,10 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in latest_ar
             interviews = html.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
             iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
-            assert iv_slugs and iv_slugs[0] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
-            assert FARMERS_AR in iv_slugs
+            assert iv_slugs and iv_slugs[0] == FARMERS_AR
+            assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" not in iv_slugs
+            lead = html.split("feature-lead", 1)[1].split("feature-side", 1)[0]
+            assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" in lead
             assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in iv_slugs
 
 
@@ -694,7 +698,6 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     desks = {
         "Interviews &amp; Investigations": [
-            "how-migration-routes-lost-seven-birds-in-150-years",
             "how-farmers-protect-migratory-birds-this-autumn",
             "george-taza-protect-fish-stocks-interview",
             "leen-araji-equestrian-and-mental-math-champion",
