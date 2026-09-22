@@ -2451,7 +2451,7 @@ def main() -> None:
     ap.add_argument(
         "--patch-footer",
         action="store_true",
-        help="Patch shared footer-bottom (MECSHAP + NMC license) and the homepage header line.",
+        help="Patch shared footer-bottom (MECSHAP + NMC license). Header stays free of the license line.",
     )
     args = ap.parse_args()
 
