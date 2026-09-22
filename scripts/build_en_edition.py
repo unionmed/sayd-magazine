@@ -52,17 +52,17 @@ TAGLINE_AR = "مجلة أسياد الطبيعة في البر والبحر وا
 
 # Live homepage / ticker 2026 set (Nayef editorial list).
 HOME_FEATURED = [
+    "how-migration-routes-lost-seven-birds-in-150-years",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "how-farmers-protect-migratory-birds-this-autumn",
-    "suhail-2026-closes-decade-katara-80000-visitors",
     "sayd-returns-what-we-want-to-offer",
 ]
-# Mosaic side stack: Taif first, then farmers / Suhail / Adonis.
+# Mosaic side stack: CABS first, then Taif / farmers / Adonis.
 HOME_MOSAIC_SIDE = [
+    "cabs-mecshap-autumn-birds-lebanon-khatib",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "how-farmers-protect-migratory-birds-this-autumn",
-    "suhail-2026-closes-decade-katara-80000-visitors",
     "sayd-returns-what-we-want-to-offer",
 ]
 HOME_OMIT_FROM_HOME = {
@@ -71,6 +71,7 @@ HOME_OMIT_FROM_HOME = {
 }
 HOME_LATEST = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
+    "suhail-2026-closes-decade-katara-80000-visitors",
     "qatar-suhail-2026-80000-visitors-teaser",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
@@ -80,10 +81,12 @@ HOME_LATEST = [
     "illegal-hunting-destroys-hobby-nets-lime-night",
 ]
 TICKER_TITLES_EN = {
+    "how-migration-routes-lost-seven-birds-in-150-years": "Migration routes lost 7 species in 150 years… the Slender-billed Curlew the latest",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah": "Taif | Saturday evening closes the season with the National Day Cup for Thoroughbreds at Al-Hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration": "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus",
 }
 HOME_TICKER = [
+    "how-migration-routes-lost-seven-birds-in-150-years",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
@@ -95,6 +98,14 @@ HOME_TICKER = [
 ]
 
 META: dict[str, dict] = {
+    "how-migration-routes-lost-seven-birds-in-150-years": {
+        "date": "22 September 2026",
+        "date_sort": "2026-09-22",
+        "category": "Interviews & Investigations",
+        "author": "Investigation — Sayd Magazine",
+        "image": "media/uploads/2026/09/slender-billed-curlew-last-photo.jpg",
+        "image_alt": "Slender-billed Curlew at Merja Zerga, Morocco, 1995",
+    },
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah": {
         "date": "22 September 2026",
         "date_sort": "2026-09-22",

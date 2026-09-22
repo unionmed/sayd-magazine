@@ -1,6 +1,7 @@
 {
   "comment": "AR slug → EN slug. Used by docs chrome and scripts/build_en_edition.py.",
   "pairs": {
+    "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما": "how-migration-routes-lost-seven-birds-in-150-years",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني": "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": "egypt-new-hunting-rules-burullus-autumn-migration",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف": "how-farmers-protect-migratory-birds-this-autumn",

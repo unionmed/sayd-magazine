@@ -121,10 +121,10 @@ DEFAULT_HOME_OMIT = {
 # Nayef-via-Mars order. Image / placeholder / gap-thumb work must not drop
 # a listed card. Source of truth is content/homepage.json, else this list.
 DEFAULT_FEATURED_SLUGS = [
+    "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
-    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
 ]
 # Hand-crafted editorial extras that may not be in the WXR dump. Featured
@@ -184,6 +184,10 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
 # Mars/Nayef editorial list. One shared chrome for every page — never latest-N
 # posts and never a breaking/urgent label. Rebuilds must emit this same strip.
 DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
+    (
+        "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
+        "مسارات الهجرة فقدت 7 أنواع خلال 150 عاماً… والكروان رفيع المنقار آخرها",
+    ),
     (
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
         "الطائف | السبت 26 أيلول: أمسية الختام بـ«كأس اليوم الوطني» للخيول المهجّنة على مضمار الحَوِيّة",
