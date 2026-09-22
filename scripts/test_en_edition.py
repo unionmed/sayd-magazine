@@ -462,6 +462,34 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest.split("</ul>", 1)[0]
 
 
+def test_extinct_birds_captions_are_single_locale() -> None:
+    """Arabic investigation page: Arabic captions only. English page: English only."""
+    ar = (
+        DOCS / "posts" / "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" / "index.html"
+    ).read_text(encoding="utf-8")
+    en = (
+        DOCS / "en" / "posts" / "how-migration-routes-lost-seven-birds-in-150-years" / "index.html"
+    ).read_text(encoding="utf-8")
+    ar_body = ar.split('<article class="article-content">', 1)[1].split("</article>", 1)[0]
+    en_body = en.split('<article class="article-content">', 1)[1].split("</article>", 1)[0]
+    ar_caps = re.findall(r"<figcaption[^>]*>(.*?)</figcaption>", ar_body, re.S)
+    en_caps = re.findall(r"<figcaption[^>]*>(.*?)</figcaption>", en_body, re.S)
+    assert len(ar_caps) == 7 and len(en_caps) == 7
+    assert all("<br>" not in c and 'lang="' not in c for c in ar_caps + en_caps)
+    assert ar_caps[0] == (
+        "آخر صورة للكروان رفيع المنقار التقطها كريس غومرسال في بحيرة المرجة الزرقاء بالمغرب في 2 شباط/فبراير 1995."
+    )
+    assert en_caps[0] == (
+        "The last photo of the Slender-billed Curlew taken by Chris Gomersall at Merja Zerga, Morocco on 2 February 1995."
+    )
+    assert "The last photo of the Slender-billed Curlew" not in ar_body
+    assert "Martha, a passenger pigeon" not in ar_body
+    assert "غومرسال" not in en_body
+    assert "مارثا، حمامة مهاجرة" not in en_body
+    for start in ("Martha, ", "Esquimaux Curlew (", "Pied Duck (", "A male ", "Jamaican Petrel, ", "Oceanodroma "):
+        assert any(c.startswith(start) for c in en_caps[1:]), start
+
+
 def test_every_en_page_is_ltr_plex() -> None:
     """Single source of truth: every EN page, not homepage only."""
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
@@ -504,4 +532,5 @@ if __name__ == "__main__":
     test_en_nested_nav_paths()
     test_homepage_sparse_grids_hide_empty_en_desks()
     test_every_en_page_is_ltr_plex()
+    test_extinct_birds_captions_are_single_locale()
     print("test_en_edition: ok")

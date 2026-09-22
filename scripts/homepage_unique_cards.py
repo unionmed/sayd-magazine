@@ -2,10 +2,11 @@
 """Lock AR/EN homepage story cards to Nayef’s Featured + Latest spine.
 
 Spine: seven-extinct-birds investigation is the large lead (curlew cover,
-no long caption) → CABS/MECSHAP is the first small side box → Taif,
-farmers, Adonis. Suhail exhibition leaves the mosaic for Latest
-(chronological, 13 Sep, below Egypt). Memory strip → Latest thumbs →
-Interviews → Gear → TV → Photos → Miscellany.
+no long caption) → CABS/MECSHAP stays the first small side box. Every
+other side box, Latest, and dated desk grid is newest publish date
+first. Suhail exhibition leaves the mosaic for Latest (13 Sep, below
+Egypt). Memory strip → Latest thumbs → Interviews → Gear → TV →
+Photos → Miscellany.
 
 News / Hunting desks stay off home (archive only). Featured URLs
 never also appear in Latest. Latest items are small thumb + title +
@@ -127,9 +128,9 @@ EN_DESK_SLUGS: dict[str, list[str]] = {
         "great-white-pelican-matn-highway-nayef-krayem",
     ],
     "Miscellany": [
-        "red-footed-falcon-killed-by-ignorance",
         "european-bee-eater",
         "barn-owl",
+        "red-footed-falcon-killed-by-ignorance",
     ],
 }
 COMPACT_DESKS = frozenset({"Sayd TV", "Photos"})
@@ -542,6 +543,63 @@ def _card_date(article: str) -> str:
     return match.group(1).strip() if match else ""
 
 
+_AR_MONTHS = {
+    "كانون الثاني": 1,
+    "شباط": 2,
+    "آذار": 3,
+    "نيسان": 4,
+    "أيار": 5,
+    "حزيران": 6,
+    "تموز": 7,
+    "آب": 8,
+    "أيلول": 9,
+    "تشرين الأول": 10,
+    "تشرين الثاني": 11,
+    "كانون الأول": 12,
+}
+_EN_MONTHS = {
+    "January": 1,
+    "February": 2,
+    "March": 3,
+    "April": 4,
+    "May": 5,
+    "June": 6,
+    "July": 7,
+    "August": 8,
+    "September": 9,
+    "October": 10,
+    "November": 11,
+    "December": 12,
+}
+
+
+def _parse_display_date(text: str) -> tuple[int, int, int]:
+    """Publish date on a homepage card. Undated cards sort oldest."""
+    text = text.strip()
+    en = re.search(r"(\d{1,2}) ([A-Za-z]+) (20\d{2})", text)
+    if en and en.group(2) in _EN_MONTHS:
+        return int(en.group(3)), _EN_MONTHS[en.group(2)], int(en.group(1))
+    ar = re.search(r"(\d{1,2}) (.+?) (20\d{2})", text)
+    if ar and ar.group(2) in _AR_MONTHS:
+        return int(ar.group(3)), _AR_MONTHS[ar.group(2)], int(ar.group(1))
+    return (0, 0, 0)
+
+
+def _order_slugs_newest_first(
+    slugs: list[str],
+    cards: dict[str, str],
+    fallbacks: dict[str, str] | None = None,
+) -> list[str]:
+    """Stable newest-first. Equal dates keep the incoming editorial order."""
+    fallbacks = fallbacks or {}
+
+    def key(slug: str) -> tuple[int, int, int]:
+        src = cards.get(slug) or fallbacks.get(slug) or ""
+        return _parse_display_date(_card_date(src))
+
+    return sorted(slugs, key=key, reverse=True)
+
+
 def _media_prefix(html: str) -> str:
     return "../" if 'href="../assets/css/site.css' in html or "/en/" in html[:800] else ""
 
@@ -627,16 +685,21 @@ def _latest_item_html(article: str, slug: str) -> str:
 
 
 def rebuild_featured_mosaic(html: str, cards: dict[str, str], *, en: bool) -> str:
-    """Extinction investigation is the large lead; CABS is the first side box."""
-    slugs = FEATURED_EN if en else FEATURED_AR
+    """Investigation stays the lead; the first side box stays pinned.
+
+    Every later side box is newest publish date first, so a card demoted
+    out of the lead slot cannot sit ahead of a newer story.
+    """
+    slugs = list(FEATURED_EN if en else FEATURED_AR)
     fallbacks = EN_FALLBACK_CARDS if en else AR_FALLBACK_CARDS
     lead_slug = slugs[0]
+    side_slugs = slugs[1:2] + _order_slugs_newest_first(slugs[2:], cards, fallbacks)
     lead_src = cards.get(lead_slug) or fallbacks.get(lead_slug)
     if not lead_src:
         raise SystemExit(f"missing featured lead card for {lead_slug}")
     lead = _as_lead(lead_src, lead_slug)
     sides: list[str] = []
-    for slug in slugs[1:]:
+    for slug in side_slugs:
         src = cards.get(slug) or fallbacks.get(slug)
         if not src:
             raise SystemExit(f"missing featured side card for {slug}")
@@ -668,14 +731,17 @@ def rebuild_featured_mosaic(html: str, cards: dict[str, str], *, en: bool) -> st
 
 
 def rebuild_latest_feed(html: str, cards: dict[str, str], *, en: bool) -> str:
-    """Latest = thumb + title + date. Featured URLs are never reused."""
+    """Latest = thumb + title + date, newest first. Featured URLs are never reused."""
     slugs = LATEST_EN if en else LATEST_AR
     fallbacks = EN_FALLBACK_CARDS if en else AR_FALLBACK_CARDS
     featured = FEATURED_SLUGS
+    ordered = _order_slugs_newest_first(
+        [slug for slug in slugs if slug not in featured],
+        cards,
+        fallbacks,
+    )
     items: list[str] = []
-    for slug in slugs:
-        if slug in featured:
-            continue
+    for slug in ordered:
         src = cards.get(slug) or fallbacks.get(slug)
         if not src:
             continue
@@ -882,6 +948,7 @@ def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
     merged = dict(EN_FALLBACK_CARDS)
     merged.update(cards)
     for heading, slugs in EN_DESK_SLUGS.items():
+        slugs = _order_slugs_newest_first(list(slugs), merged, EN_FALLBACK_CARDS)
         compact = heading in COMPACT_DESKS
         grid = "grid-photos" if compact else "grid-4"
         block = "".join(
@@ -899,6 +966,7 @@ def rebuild_ar_home_sections(html: str, cards: dict[str, str]) -> str:
     """Pin Interviews / Gear / Miscellany; News + Hunting stay off home."""
     html = drop_home_desks(html, DROPPED_DESKS_AR)
     for heading, slugs in AR_DESK_SLUGS.items():
+        slugs = _order_slugs_newest_first(list(slugs), cards, AR_FALLBACK_CARDS)
         compact = heading in {"صور"}
         grid = "grid-photos" if compact else "grid-4"
         block = "".join(

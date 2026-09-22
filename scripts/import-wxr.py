@@ -1664,7 +1664,12 @@ def build_site(data: dict, out: Path) -> None:
     )
     featured_pool = featured_posts(posts, home_lists["featured"])
     featured_lead = featured_pool[:1]
-    featured_side = featured_pool[1:]
+    # Lead and the first side box stay in editorial order (investigation,
+    # then CABS). Cards demoted further down the side stack sort newest-first.
+    if len(featured_pool) > 2:
+        featured_side = featured_pool[1:2] + sort_posts_newest_first(featured_pool[2:])
+    else:
+        featured_side = featured_pool[1:]
     # Card uniqueness: featured mosaic owns those slugs. Latest now has thumbs,
     # so those URLs stay off desks. Farmers may dual-place: mosaic + Interviews.
     used_slugs: set[str] = {p["slug"] for p in featured_pool}
@@ -2031,8 +2036,7 @@ def build_site(data: dict, out: Path) -> None:
                 fresh = prefer_recent(unused, 4)
             if not fresh:
                 continue
-            if not pinned:
-                fresh = sort_posts_newest_first(fresh)
+            fresh = sort_posts_newest_first(fresh)
             for p in fresh:
                 used_slugs.add(p["slug"])
             more_href = cat_href(c["slug"], 0) if c else "articles/index.html"

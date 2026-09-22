@@ -78,15 +78,17 @@ def replace_ticker(html: str, inner: str) -> str:
     )
 
 
-def fig(src: str, alt: str, ar: str, en: str, prefix: str, *, ltr_page: bool = False) -> str:
-    ar_span = (
-        f'<span lang="ar" style="direction:rtl;unicode-bidi:isolate">{ar}</span>'
-        if ltr_page
-        else f'<span lang="ar" dir="rtl">{ar}</span>'
-    )
+def fig(src: str, alt: str, ar: str, en: str, prefix: str = "", *, locale: str = "ar") -> str:
+    """Arabic pages get the Arabic caption only; English pages get the English caption only."""
+    if locale == "ar":
+        caption = ar
+    elif locale == "en":
+        caption = en
+    else:
+        raise SystemExit(f"unknown caption locale: {locale}")
     return f"""<figure style="margin:24px auto;max-width:680px;">
   <img src="{prefix}{src}" alt="{alt}" width="1280" decoding="async" style="display:block;width:100%;max-width:100%;height:auto;border-radius:6px;">
-  <figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px;">{ar_span}<br><span lang="en" dir="ltr">{en}</span></figcaption>
+  <figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px;">{caption}</figcaption>
 </figure>"""
 
 
@@ -150,7 +152,11 @@ def ar_body() -> str:
 
 def en_body() -> str:
     p = "../../../media/uploads/2026/09/"
-    return f"""{fig(p + "slender-billed-curlew-last-photo.jpg", EN_ALT, "آخر صورة للكروان رفيع المنقار التقطها كريس غومرسال في بحيرة المرجة الزرقاء بالمغرب في 2 شباط/فبراير 1995.", "The last photo of the Slender-billed Curlew taken by Chris Gomersall at Merja Zerga, Morocco on 2 February 1995.", "")}
+
+    def en_fig(src: str, alt: str, ar: str, en: str) -> str:
+        return fig(src, alt, ar, en, locale="en")
+
+    return f"""{en_fig(p + "slender-billed-curlew-last-photo.jpg", EN_ALT, "آخر صورة للكروان رفيع المنقار التقطها كريس غومرسال في بحيرة المرجة الزرقاء بالمغرب في 2 شباط/فبراير 1995.", "The last photo of the Slender-billed Curlew taken by Chris Gomersall at Merja Zerga, Morocco on 2 February 1995.")}
 <p>An environmental investigation mapping the anatomy of loss, drawn from the latest data from BirdLife International.</p>
 <p>On 2 February 1995, Chris Gomersall photographed a Slender-billed Curlew (<em>Numenius tenuirostris</em>) at Merja Zerga, Morocco — the last photo of the species. No one knew then that history would record that sighting as the last confirmed appearance on Earth of the bird.</p>
 <p>Today, with the release of BirdLife’s <em>State of the World’s Birds</em> report, doubt has hardened into a bleak certainty: its extinction has been formally declared, topping a black list of seven migratory bird species whose journeys were cut off for good over the past 150 years.</p>
@@ -161,32 +167,32 @@ def en_body() -> str:
 <p><strong>Date of fall:</strong> Formally declared extinct in the organisation’s latest assessments (after decades of absence since 1995).</p>
 <p><strong>Extinction scenario:</strong> Its extinction is the first of its kind for a bird on the Eurasian–African mainland in modern history. The puzzle of its disappearance exposes weak protection of long-haul flyways; despite exhaustive tracking attempts, its flocks faded as peatlands and wetlands in its likely breeding grounds were drained, tidal flats it used to rest on around the Mediterranean were destroyed, and indiscriminate hunting pressed along its migration line.</p>
 <h3>2. Passenger Pigeon — from billions to zero</h3>
-{fig(p + "passenger-pigeon-martha.jpg", "Martha, the last passenger pigeon", "مارثا، حمامة مهاجرة — آخر فرد من نوعها — ماتت في حديقة حيوان سينسيناتي في 1 أيلول/سبتمبر 1914 عن 29 عاماً. أُهدي جثمانها لمؤسسة سميثسونيان، وعُرضت مع العبارة: «مارثا، آخر نوعها، ماتت الساعة 1 بعد الظهر في 1 أيلول/سبتمبر 1914، عن 29 عاماً، في حديقة حيوان سينسيناتي. منقرضة.»", "Martha, a passenger pigeon — the last of her species — died at the Cincinnati Zoo on 1 September 1914, age 29. Her body was donated to the Smithsonian Institution. Mounted with the notation: “MARTHA, last of her species, died at 1 p.m., 1 September 1914, age 29, in the Cincinnati Zoological Garden. EXTINCT.”", "")}
+{en_fig(p + "passenger-pigeon-martha.jpg", "Martha, the last passenger pigeon", "مارثا، حمامة مهاجرة — آخر فرد من نوعها — ماتت في حديقة حيوان سينسيناتي في 1 أيلول/سبتمبر 1914 عن 29 عاماً. أُهدي جثمانها لمؤسسة سميثسونيان، وعُرضت مع العبارة: «مارثا، آخر نوعها، ماتت الساعة 1 بعد الظهر في 1 أيلول/سبتمبر 1914، عن 29 عاماً، في حديقة حيوان سينسيناتي. منقرضة.»", "Martha, a passenger pigeon — the last of her species — died at the Cincinnati Zoo on 1 September 1914, age 29. Her body was donated to the Smithsonian Institution. Mounted with the notation: “MARTHA, last of her species, died at 1 p.m., 1 September 1914, age 29, in the Cincinnati Zoological Garden. EXTINCT.”")}
 <p><strong>Date of fall:</strong> September 1914 (with the death of the female “Martha” in her cage at Cincinnati Zoo).</p>
 <p><strong>Extinction scenario:</strong> The twentieth century’s most infamous environmental crime. It once filled North American skies with flocks that blocked the sun and were counted in the billions, then faced industrial commercial hunting to sell as cheap meat, alongside the felling of the deciduous forests whose mast it fed on — breaking its mass-breeding system and wiping it out in a few decades.</p>
 <p>(<em>Ectopistes migratorius</em>)</p>
 <h3>3. Eskimo Curlew — sport shooting at stopovers</h3>
-{fig(p + "eskimo-curlew-audubon-plate-208.jpg", "Eskimo Curlew, Audubon Plate 208", "كروان الإسكيمو (Esquimaux Curlew)، اللوحة 208 — من «طيور أمريكا» لجون جيمس أودوبون. بإذن من مركز جون جيمس أودوبون في ميل غروف، مجموعة أودوبون في مقاطعة مونتغومري، وZebra Publishing.", "Esquimaux Curlew (Eskimo Curlew), Plate 208 — John James Audubon’s Birds of America. Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing.", "")}
+{en_fig(p + "eskimo-curlew-audubon-plate-208.jpg", "Eskimo Curlew, Audubon Plate 208", "كروان الإسكيمو (Esquimaux Curlew)، اللوحة 208 — من «طيور أمريكا» لجون جيمس أودوبون. بإذن من مركز جون جيمس أودوبون في ميل غروف، مجموعة أودوبون في مقاطعة مونتغومري، وZebra Publishing.", "Esquimaux Curlew (Eskimo Curlew), Plate 208 — John James Audubon’s Birds of America. Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing.")}
 <p><strong>Date of fall:</strong> Listed as Critically Endangered and Possibly Extinct (last decisive documentation 1963).</p>
 <p><strong>Extinction scenario:</strong> It flew a punishing route from arctic tundra toward South America. The bird was drained during exhausted stopovers on the American Great Plains, where hunters targeted it by the millions for food markets, as prairie steppe was turned into farmland that upended its diet.</p>
 <p>(<em>Numenius borealis</em>)</p>
 <h3>4. Labrador Duck — fatal dietary specialisation</h3>
-{fig(p + "labrador-duck-audubon-plate-332.jpg", "Labrador Duck, Audubon Plate 332", "البط المرقّط / بط لابرادور (Pied Duck)، اللوحة 332 — من «طيور أمريكا» لجون جيمس أودوبون (ذكر بالغ وأنثى). بإذن من مركز جون جيمس أودوبون في ميل غروف، مجموعة أودوبون في مقاطعة مونتغومري، وZebra Publishing.", "Pied Duck (Labrador Duck), Plate 332 — John James Audubon’s Birds of America (male adult and female). Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing.", "")}
+{en_fig(p + "labrador-duck-audubon-plate-332.jpg", "Labrador Duck, Audubon Plate 332", "البط المرقّط / بط لابرادور (Pied Duck)، اللوحة 332 — من «طيور أمريكا» لجون جيمس أودوبون (ذكر بالغ وأنثى). بإذن من مركز جون جيمس أودوبون في ميل غروف، مجموعة أودوبون في مقاطعة مونتغومري، وZebra Publishing.", "Pied Duck (Labrador Duck), Plate 332 — John James Audubon’s Birds of America (male adult and female). Courtesy of the John James Audubon Center at Mill Grove, Montgomery County Audubon Collection, and Zebra Publishing.")}
 <p><strong>Date of fall:</strong> 1878 (the first of the seven to vanish in this era).</p>
 <p><strong>Extinction scenario:</strong> A unique sea duck with a lined bill built for picking small molluscs and crustaceans on North American coasts. The feather and egg trade, pollution of river mouths, and the decline of molluscs under settler activity finished off numbers that were already fragile.</p>
 <p>(<em>Camptorhynchus labradorius</em>)</p>
 <h3>5. Bachman’s Warbler — axe victims in winter and summer</h3>
-{fig(p + "bachmans-warbler-dendroica.jpg", "Male Bachman’s Warbler", "ذكر هازجة باخمان، في واحدة من آخر الصور الملتقطة لهذا النوع. تصوير: جيري أ. باين، دائرة البحوث الزراعية التابعة لوزارة الزراعة الأميركية / Bugwood.org (1958).", "A male Bachman’s Warbler, in one of the last photographs taken of this species. Photo: Jerry A. Payne, USDA Agricultural Research Service, Bugwood.org (1958).", "")}
+{en_fig(p + "bachmans-warbler-dendroica.jpg", "Male Bachman’s Warbler", "ذكر هازجة باخمان، في واحدة من آخر الصور الملتقطة لهذا النوع. تصوير: جيري أ. باين، دائرة البحوث الزراعية التابعة لوزارة الزراعة الأميركية / Bugwood.org (1958).", "A male Bachman’s Warbler, in one of the last photographs taken of this species. Photo: Jerry A. Payne, USDA Agricultural Research Service, Bugwood.org (1958).")}
 <p><strong>Date of fall:</strong> Late 1980s (last documented sighting 1988).</p>
 <p><strong>Extinction scenario:</strong> A small songbird migrating between southern U.S. swamps and Cuban forests. It faced a death sentence from both ends: drainage of swamp forests in its northern home, and conversion of Cuban winter woods into sugarcane estates, leaving it nowhere to shelter on either half of its journey.</p>
 <p>(<em>Vermivora bachmanii</em>)</p>
 <h3>6. Jamaican Petrel — traps of invasive animals</h3>
-{fig(p + "jamaican-petrel.jpg", "Jamaican Petrel, illustration by Joseph Smit", "نوء جامايكا، بالغ — رسم لجوزيف سميت، 1866 (وقائع جمعية علم الحيوان في لندن).", "Jamaican Petrel, adult — illustration by Joseph Smit, 1866 (Proceedings of the Zoological Society of London).", "")}
+{en_fig(p + "jamaican-petrel.jpg", "Jamaican Petrel, illustration by Joseph Smit", "نوء جامايكا، بالغ — رسم لجوزيف سميت، 1866 (وقائع جمعية علم الحيوان في لندن).", "Jamaican Petrel, adult — illustration by Joseph Smit, 1866 (Proceedings of the Zoological Society of London).")}
 <p><strong>Date of fall:</strong> 1879 (listed Critically Endangered and strongly Possibly Extinct).</p>
 <p><strong>Extinction scenario:</strong> A seabird that nested in ground burrows in Jamaica’s highlands. The disaster was not at sea but on its return to land: colonists introduced mongoose and rats to control rodents, and they preyed on this bird’s eggs and helpless chicks in their earth nests.</p>
 <p>(<em>Pterodroma caribbaea</em>)</p>
 <h3>7. Guadalupe Storm-petrel — islands turned into graves</h3>
-{fig(p + "guadalupe-storm-petrel.jpg", "Guadalupe Storm-petrel mount, Field Museum", "نوء العواصف غوادالوبي (<em>Oceanodroma macrodactyla</em>) — ذكر (عيّنة محنّطة، متحف فيلد للتاريخ الطبيعي، شيكاغو، FMNH 33449). تصوير: جيمس سانت جون (CC BY 2.0).", "Oceanodroma macrodactyla — male Guadalupe petrel (mount, FMNH 33449, Field Museum of Natural History, Chicago). Photo: James St. John (CC BY 2.0).", "")}
+{en_fig(p + "guadalupe-storm-petrel.jpg", "Guadalupe Storm-petrel mount, Field Museum", "نوء العواصف غوادالوبي (<em>Oceanodroma macrodactyla</em>) — ذكر (عيّنة محنّطة، متحف فيلد للتاريخ الطبيعي، شيكاغو، FMNH 33449). تصوير: جيمس سانت جون (CC BY 2.0).", "Oceanodroma macrodactyla — male Guadalupe petrel (mount, FMNH 33449, Field Museum of Natural History, Chicago). Photo: James St. John (CC BY 2.0).")}
 <p><strong>Date of fall:</strong> Around 1912.</p>
 <p><strong>Extinction scenario:</strong> It inhabited Guadalupe Island off Mexico. Goats brought by people destroyed the thin plant cover that sheltered its nesting burrows, while feral cats left on the island finished off adults and chicks until total extinction.</p>
 <p>(<em>Hydrobates macrodactylus</em>)</p>
@@ -379,6 +385,9 @@ def write_ar_article() -> None:
 """
     if re.search(r'src="https?://', html):
         raise SystemExit("AR article hotlinks an image")
+    caps = re.findall(r"<figcaption[^>]*>(.*?)</figcaption>", html, re.S)
+    if not caps or any('lang="en"' in c or "<br>" in c for c in caps):
+        raise SystemExit("AR figcaptions must be Arabic only")
     (dest / "index.html").write_text(html, encoding="utf-8")
 
 
@@ -541,6 +550,9 @@ def write_en_article() -> None:
 """
     if re.search(r'src="https?://', html):
         raise SystemExit("EN article hotlinks an image")
+    caps = re.findall(r"<figcaption[^>]*>(.*?)</figcaption>", html, re.S)
+    if not caps or any('lang="ar"' in c or "<br>" in c or "غومرسال" in c for c in caps):
+        raise SystemExit("EN figcaptions must be English only")
     html = html.replace(
         ' lang="ar" dir="rtl"',
         ' lang="ar" style="direction:rtl;unicode-bidi:isolate"',

@@ -337,6 +337,24 @@ def _parse_home_date(text: str) -> tuple[int, int, int]:
     return int(ar.group(3)), month, int(ar.group(1))
 
 
+def test_demoted_cards_sort_newest_first() -> None:
+    """A card leaving the mosaic must not keep an older slot ahead of a newer one."""
+    import sys
+
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from homepage_unique_cards import _order_slugs_newest_first  # noqa: E402
+
+    cards = {
+        "old": '<div class="meta">29 October 2013</div>',
+        "mid": '<div class="meta">13 August 2025</div>',
+        "new": '<div class="meta">17 September 2025</div>',
+        "same-a": '<div class="meta">13 September 2026</div>',
+        "same-b": '<div class="meta">13 أيلول 2026</div>',
+    }
+    assert _order_slugs_newest_first(["old", "new", "mid"], cards) == ["new", "mid", "old"]
+    assert _order_slugs_newest_first(["same-a", "same-b"], cards) == ["same-a", "same-b"]
+
+
 def test_latest_and_desks_are_newest_first() -> None:
     """Nayef: Latest and every section grid are newest publish date first."""
     for rel, latest_h2 in (("index.html", "آخر الأخبار"), ("en/index.html", "Latest news")):
@@ -344,12 +362,18 @@ def test_latest_and_desks_are_newest_first() -> None:
         latest = html.split(latest_h2, 1)[1].split("</ul>", 1)[0]
         dates = [_parse_home_date(d) for d in re.findall(r'<span class="feed-date">([^<]+)</span>', latest)]
         assert dates and dates == sorted(dates, reverse=True), (rel, dates)
+        mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+        side = mosaic.split("feature-side", 1)[1]
+        side_dates = [
+            _parse_home_date(d) for d in re.findall(r'<div class="meta">([^<]+)', side)
+        ]
+        assert len(side_dates) >= 2
+        # First small box may stay pinned (CABS). The rest are newest-first.
+        assert side_dates[1:] == sorted(side_dates[1:], reverse=True), (rel, side_dates)
         main = html.split('class="home-main"', 1)[1]
         for block in re.findall(r'<div class="grid-(?:4|photos)">(.*?)</div>', main, re.S):
             cards = _cards(block)
             if len(cards) < 2:
-                continue
-            if "red-footed-falcon-killed-by-ignorance" in block:
                 continue
             card_dates = []
             for card in cards:
@@ -632,9 +656,9 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
             "great-white-pelican-matn-highway-nayef-krayem",
         ],
         "Miscellany": [
-            "red-footed-falcon-killed-by-ignorance",
             "european-bee-eater",
             "barn-owl",
+            "red-footed-falcon-killed-by-ignorance",
         ],
     }
     for heading, slugs in desks.items():
@@ -705,6 +729,7 @@ if __name__ == "__main__":
     test_home_desk_order_interviews_tv_photos_miscellany()
     test_latest_feed_has_thumbs()
     test_platform_card_uses_uncropped_jocy()
+    test_demoted_cards_sort_newest_first()
     test_latest_and_desks_are_newest_first()
     test_memory_strip_folds_rita_into_personalities()
     test_ecocide_removed_and_memory_stays_on_site()
