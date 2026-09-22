@@ -11,7 +11,8 @@ Photos → Miscellany.
 News / Hunting desks stay off home (archive only). Featured URLs
 never also appear in Latest. Latest items are small thumb + title +
 date. Adonis is one feature-box only and never in the ticker.
-Farmers and the extinction investigation may dual-place: mosaic *and* Interviews.
+Farmers may dual-place: mosaic and Interviews. The feature-lead
+investigation stays on the mosaic only (one surface for the lead).
 """
 
 from __future__ import annotations
@@ -110,13 +111,13 @@ DEFAULT_OMIT_FROM_LATEST = frozenset(FEATURED_SLUGS | {MEMORY_EN, MEMORY_AR})
 TICKER_OMIT_SLUGS = frozenset(
     {ADONIS_EN, ADONIS_AR, NEW_LOOK_EN, NEW_LOOK_AR, FARMERS_AR, FARMERS_EN}
 )
-# Mosaic + Interviews only. Never mosaic + Latest / leftover desks.
-MOSAIC_AND_INTERVIEWS = frozenset({FARMERS_AR, FARMERS_EN, CURLEW_AR, CURLEW_EN})
+# Farmers only: mosaic + Interviews. The feature-lead stays mosaic-only.
+# Never mosaic + Latest / leftover desks.
+MOSAIC_AND_INTERVIEWS = frozenset({FARMERS_AR, FARMERS_EN})
 
 # EN desk spine = AR. News + Hunting stay off home (covered by Featured + Latest).
 EN_DESK_SLUGS: dict[str, list[str]] = {
     "Interviews &amp; Investigations": [
-        CURLEW_EN,
         FARMERS_EN,
         "george-taza-protect-fish-stocks-interview",
         "leen-araji-equestrian-and-mental-math-champion",
@@ -145,7 +146,6 @@ EN_SAUDI_FILLERS = frozenset(
 
 AR_DESK_SLUGS: dict[str, list[str]] = {
     "مقابلات وتحقيقات": [
-        CURLEW_AR,
         FARMERS_AR,
         "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
         "لين-عراجي-بطلة-فروسية-وحساب",
@@ -863,7 +863,7 @@ def lock_homepage_html(
 ) -> str:
     """Drop omitted + duplicate content cards; first remaining card wins.
 
-    Farmers and the extinction investigation may appear twice: mosaic, then Interviews.
+    Farmers may appear twice: mosaic, then Interviews. The feature-lead may not.
     """
     if omit_home is None or omit_latest is None:
         loaded_home, loaded_latest = load_omit_sets()

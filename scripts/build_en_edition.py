@@ -43,6 +43,20 @@ CSS_CACHE = "20260922-empty-cats-b"
 NO_THUMB_SLUGS = {
     "autumn-migration-field-action-protect-flyways-lebanon",
 }
+# /en/stories/ is a curated grid. These articles stay published (ticker,
+# Latest, Photos, and their own URLs) but are near-duplicates of a stronger
+# card already on this listing.
+STORIES_GRID_OMIT = {
+    # Same Suhail 2026 fair as the closer; similar crowd / falcon photos.
+    "qatar-suhail-2026-80000-visitors-teaser",
+    "suhail-2026-in-photos-falcons-visitors",
+    # Same Saudi rules story as the sixth-season piece (shared NCW card
+    # and overlapping 5,000-riyal titles).
+    "saudi-5000-riyal-hunting-fine-teaser",
+    "saudi-hunting-fines-5000-riyal-prohibited-areas",
+    # Same Adonis portrait as the later “what we want to offer” editorial.
+    "sayd-returns-new-look-wider-vision",
+}
 ABOUT_EN = (
     "The magazine of nature’s masters on land, sea, and sky — hunting, "
     "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
@@ -1235,7 +1249,7 @@ _STORY_CARD_RE = re.compile(r'<article class="card[^"]*">.*?</article>', re.S)
 
 
 def filter_saved_stories_index(path: Path | None = None) -> list[str]:
-    """Drop pre-2022 and undated cards from the existing /en/stories/ grid."""
+    """Drop pre-2022, undated, and near-duplicate cards from /en/stories/."""
     dest = path or (DOCS / "en" / "stories" / "index.html")
     html_text = dest.read_text(encoding="utf-8")
     year_min = import_wxr.HOME_PUBLISH_YEAR_MIN
@@ -1249,10 +1263,11 @@ def filter_saved_stories_index(path: Path | None = None) -> list[str]:
             found = re.search(r"(20\d{2})", meta.group(1))
             if found:
                 year = int(found.group(1))
-        if year >= year_min:
+        slug_m = re.search(r"posts/([^/]+)/", block)
+        slug = slug_m.group(1) if slug_m else ""
+        if year >= year_min and slug not in STORIES_GRID_OMIT:
             return block
-        slug = re.search(r"posts/([^/]+)/", block)
-        dropped.append(slug.group(1) if slug else "?")
+        dropped.append(slug or "?")
         return ""
 
     updated = _STORY_CARD_RE.sub(_keep, html_text)
@@ -1267,7 +1282,9 @@ def write_stories(articles: dict[str, dict]) -> None:
     year_min = import_wxr.HOME_PUBLISH_YEAR_MIN
     kept: list[str] = []
     for slug in articles:
-        if slug in NO_THUMB_SLUGS:
+        if slug in NO_THUMB_SLUGS or slug in STORIES_GRID_OMIT:
+            if slug in STORIES_GRID_OMIT:
+                print(f"stories grid omitted (near-duplicate): {slug}")
             continue
         year = _date_sort_year(articles[slug])
         if year >= year_min:
@@ -1277,9 +1294,13 @@ def write_stories(articles: dict[str, dict]) -> None:
             print(f"stories grid omitted ({label}): {slug}")
     slugs = sorted(kept, key=lambda s: articles[s]["date_sort"], reverse=True)
     rows = []
+    seen_images: set[str] = set()
     for slug in slugs:
         item = articles[slug]
         img = item.get("card_image") or item["image"]
+        if img in seen_images:
+            continue
+        seen_images.add(img)
         alt = item.get("card_image_alt") or item.get("image_alt") or item["title"]
         rows.append(
             f"""<article class="card overlay">
