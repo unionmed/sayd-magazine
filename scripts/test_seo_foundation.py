@@ -122,6 +122,28 @@ def test_every_html_page_has_canonical() -> None:
     assert missing == []
 
 
+def test_babtain_aliases_redirect_off_sitemap() -> None:
+    """Google/WP aliases for the Babtain video redirect; sitemap keeps one URL."""
+    long = "بالفيديو-مقناص-سعود-عبد-العزيز-البابطين-في-أفغانستان"
+    canon_slug = "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
+    canon = seo.public_url(Path(f"posts/{canon_slug}/index.html"))
+    assert seo.in_sitemap(Path(f"posts/{canon_slug}/index.html"))
+    for rel in sorted(seo.ALIAS_REDIRECTS):
+        assert not seo.in_sitemap(Path(rel)), rel
+        page = DOCS / rel
+        text = page.read_text(encoding="utf-8")
+        head = text.split("</head>", 1)[0]
+        assert 'http-equiv="refresh"' in head
+        assert "location.replace" in text
+        assert f'href="{canon}"' in head
+        assert canon in text
+        assert seo.apply_html(text, page, DOCS, Path(rel), {}) == text
+    sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
+    assert f"<loc>{canon}</loc>" in sitemap
+    assert long not in sitemap
+    assert "<loc>https://sayd-magazine.com/6775/</loc>" not in sitemap
+
+
 def test_apply_is_idempotent() -> None:
     before = (DOCS / "index.html").read_text(encoding="utf-8")
     seo.apply(DOCS)
@@ -138,5 +160,6 @@ if __name__ == "__main__":
     test_listing_pages_skip_card_thumbs_as_heroes()
     test_home_and_memory_twins()
     test_every_html_page_has_canonical()
+    test_babtain_aliases_redirect_off_sitemap()
     test_apply_is_idempotent()
     print("test_seo_foundation: ok")
