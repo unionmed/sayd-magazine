@@ -34,7 +34,7 @@ license_line_html = import_wxr.license_line_html
 LICENSE_TEXT_AR = import_wxr.LICENSE_TEXT_AR
 LICENSE_TEXT_EN = import_wxr.LICENSE_TEXT_EN
 apply_footer_bottom = import_wxr.apply_footer_bottom
-apply_home_header_license = import_wxr.apply_home_header_license
+strip_header_license = import_wxr.strip_header_license
 load_ticker_items = import_wxr.load_ticker_items
 load_homepage_lists = import_wxr.load_homepage_lists
 prefer_recent = import_wxr.prefer_recent
@@ -193,22 +193,24 @@ def test_shared_footer_helper_is_locale_aware() -> None:
     assert once.count("site-license") == 1
     home = layout("الرئيسية", "<main></main>", is_home=True)
     home_header = home.split("</header>", 1)[0]
-    assert "header-home" in home_header
-    assert "المجلس الوطني للاعلام" in home_header
+    assert "header-home" not in home_header
+    assert "site-license" not in home_header
+    assert "المجلس الوطني للاعلام" in home.split('class="footer-bottom"', 1)[1]
     inner = layout("فريق العمل", "<main></main>", depth=2)
     inner_header = inner.split("</header>", 1)[0]
     assert "site-license" not in inner_header
     assert "المجلس الوطني للاعلام" in inner.split('class="footer-bottom"', 1)[1]
     sample = (
-        '<header class="site-header"><div class="container header-inner">'
+        '<header class="site-header"><div class="container header-inner header-home">'
         '<a class="brand" href="index.html"></a>'
-        '<details class="nav-toggle"><summary>القائمة</summary></details>\n'
-        "      </div></header>"
+        '<p class="site-license">مرخصة من المجلس الوطني للاعلام</p>'
+        "</div></header><footer><p class=\"site-license\">footer</p></footer>"
     )
-    stamped = apply_home_header_license(sample, "ar")
-    assert "header-home" in stamped
-    assert stamped.count("site-license") == 1
-    assert apply_home_header_license(stamped, "ar") == stamped
+    stripped = strip_header_license(sample)
+    assert "header-home" not in stripped
+    assert stripped.count("site-license") == 1
+    assert ">footer</p>" in stripped
+    assert strip_header_license(stripped) == stripped
 
 
 def test_docs_already_share_clean_chrome() -> None:
@@ -269,28 +271,29 @@ def test_every_docs_page_footer_has_mecshap() -> None:
     assert missing == []
 
 
-def test_homepage_header_shows_license() -> None:
-    """Masthead license is on AR and EN home only; memory keeps it in the footer."""
+def test_license_is_footer_only() -> None:
+    """Nayef: no masthead license. Footer keeps the NMC line on AR and EN."""
     ar = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
     en = (ROOT / "docs" / "en" / "index.html").read_text(encoding="utf-8")
-    ar_header = ar.split("</header>", 1)[0]
-    en_header = en.split("</header>", 1)[0]
-    assert "header-home" in ar_header
-    assert "header-home" in en_header
-    assert "المجلس الوطني للاعلام" in ar_header
-    assert 'dir="ltr">157</span>' in ar_header
-    assert 'dir="ltr">2016</span>' in ar_header
-    assert "official notice No. 157" in en_header
+    for html in (ar, en):
+        header = html.split("</header>", 1)[0]
+        assert "site-license" not in header
+        assert "header-home" not in header
+    assert "المجلس الوطني للاعلام" in ar.split('class="footer-bottom"', 1)[1]
+    assert "official notice No. 157" in en.split('class="footer-bottom"', 1)[1]
     assert "Ilm wa Khabar" not in en
-    assert "5 September 2016" in en_header
+    assert LICENSE_TEXT_EN in en
+    for path in (ROOT / "docs").rglob("*.html"):
+        html = path.read_text(encoding="utf-8")
+        if "<header" not in html:
+            continue
+        header = html.split("</header>", 1)[0]
+        assert "site-license" not in header, path
     memory = (ROOT / "docs" / "memory" / "index.html").read_text(encoding="utf-8")
-    memory_header = memory.split("</header>", 1)[0]
-    assert "site-license" not in memory_header
     assert "المجلس الوطني للاعلام" in memory.split('class="footer-bottom"', 1)[1]
     en_memory = (ROOT / "docs" / "en" / "memory" / "index.html").read_text(encoding="utf-8")
     assert "official notice No. 157" in en_memory.split('class="footer-bottom"', 1)[1]
     assert "من ذاكرة صيد" in ar
-    assert "memory-strip" in ar or "من ذاكرة صيد" in ar
 
 
 def _section(html: str, start: str, end: str) -> str:
@@ -629,7 +632,7 @@ if __name__ == "__main__":
     test_shared_footer_helper_is_locale_aware()
     test_docs_already_share_clean_chrome()
     test_every_docs_page_footer_has_mecshap()
-    test_homepage_header_shows_license()
+    test_license_is_footer_only()
     test_homepage_latest_matches_nayef()
     test_category_sort_is_datetime_not_title()
     test_nayef_rule_adds_thematic_sayd_for_home_ticker()

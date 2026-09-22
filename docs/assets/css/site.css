@@ -263,47 +263,6 @@ html[dir="ltr"] .feed-title {
   padding-inline-start: 0.7rem;
 }
 
-/* Homepage masthead: National Media Council license under the brand */
-.header-inner.header-home {
-  flex-wrap: wrap;
-  align-items: center;
-  row-gap: 0.35rem;
-  padding-top: 0.45rem;
-  padding-bottom: 0.55rem;
-}
-
-.site-license {
-  margin: 0;
-  max-width: 44rem;
-  font-size: 0.74rem;
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--olive);
-  overflow-wrap: break-word;
-}
-
-.site-license [dir="ltr"] {
-  unicode-bidi: isolate;
-}
-
-.header-home .site-license {
-  flex: 1 0 100%;
-  min-width: 0;
-  max-width: 44rem;
-  margin-top: 0.05rem;
-  padding-top: 0.4rem;
-  border-top: 1px solid var(--hair);
-}
-
-.header-home .site-license::before {
-  content: "";
-  display: block;
-  width: 2.4rem;
-  height: 2px;
-  margin-bottom: 0.35rem;
-  background: var(--gold);
-}
-
 .main-nav {
   display: flex;
   flex-wrap: nowrap;
@@ -1480,6 +1439,11 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   font-size: 0.74rem;
   font-weight: 500;
   line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.footer-bottom .site-license [dir="ltr"] {
+  unicode-bidi: isolate;
 }
 
 .placeholder-thumb {
@@ -1647,7 +1611,7 @@ html[dir="ltr"] .brand .tagline {
   line-height: 1.28;
   align-self: center;
 }
-html[dir="ltr"] .site-license {
+html[dir="ltr"] .footer-bottom .site-license {
   font-family: var(--font-en);
   font-weight: 500;
   letter-spacing: 0.01em;
