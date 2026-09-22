@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Lock AR/EN homepage story cards to Nayef’s Featured + Latest spine.
 
-Spine: CABS/MECSHAP large lead (Latin names, no caption) + farmers
-side box (storks thumb) + Suhail, Saudi, Adonis → Memory strip →
-Latest thumbs → Interviews → Gear → TV → Photos → Miscellany.
+Spine: CABS/MECSHAP large lead (Latin names, no caption) + Taif
+finale as the first side box + farmers, Suhail, Adonis → Memory strip →
+Latest thumbs (Saudi sixth season sits here, newest-first) →
+Interviews → Gear → TV → Photos → Miscellany.
 
 News / Hunting desks stay off home (archive only). Featured URLs
 never also appear in Latest. Latest items are small thumb + title +
@@ -46,16 +47,19 @@ SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يخ
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 SAUDI_AR = "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
 SAUDI_EN = "saudi-sixth-hunting-season-2026-2027-rules"
+TAIF_AR = "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
+TAIF_EN = "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
 POACHING_AR = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
 POACHING_EN = "illegal-hunting-destroys-hobby-nets-lime-night"
 
-FEATURED_AR = [CABS_AR, FARMERS_AR, SUHAIL_AR, SAUDI_AR, ADONIS_AR]
-FEATURED_EN = [CABS_EN, FARMERS_EN, SUHAIL_EN, SAUDI_EN, ADONIS_EN]
+FEATURED_AR = [CABS_AR, TAIF_AR, FARMERS_AR, SUHAIL_AR, ADONIS_AR]
+FEATURED_EN = [CABS_EN, TAIF_EN, FARMERS_EN, SUHAIL_EN, ADONIS_EN]
 FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 
 LATEST_AR = [
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
+    SAUDI_AR,
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه",
     "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر",
@@ -65,6 +69,7 @@ LATEST_AR = [
 LATEST_EN = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "qatar-suhail-2026-80000-visitors-teaser",
+    SAUDI_EN,
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     "regulating-hunting-protects-wildlife-bans-worsen",
     "common-shelduck-protected-migrant-lebanon",
@@ -158,6 +163,13 @@ AR_FALLBACK_CARDS: dict[str, str] = {
   <div class="body">
     <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
     <h3><a href="posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html">80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة</a></h3>
+  </div>
+</article>""",
+    TAIF_AR: """<article class="card card-stack">
+  <a class="thumb" href="posts/العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني/index.html"><img src="media/uploads/2026/09/taif-racing-hawiyah.jpg" alt="خيّال وجواد أشهب على مضمار الحَوِيّة — ختام موسم سباقات الطائف 2026" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">22 أيلول 2026<span class="cat-pill">صيد وفروسية</span></div>
+    <h3><a href="posts/العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني/index.html">العد التنازلي لختام موسم الطائف.. ترقّب خليجي لكأسي «الملك فيصل» و«اليوم الوطني» في الحَوِيّة</a></h3>
   </div>
 </article>""",
     SAUDI_AR: """<article class="card card-stack">
@@ -401,6 +413,14 @@ EN_FALLBACK_CARDS: dict[str, str] = {
         "media/uploads/2026/09/hero-closing-80k.jpg",
         "Falcons at Suhail 2026 in Katara, Doha",
     ),
+    TAIF_EN: _en_card(
+        TAIF_EN,
+        "Countdown to the Close of the Taif Season… Gulf Eyes on the King Faisal and National Day Cups at Al-Hawiyah",
+        "22 September 2026",
+        "Hunting &amp; Equestrian",
+        "media/uploads/2026/09/taif-racing-hawiyah.jpg",
+        "A jockey and grey horse at Al-Hawiyah during the Taif racing season, 2026",
+    ),
     SAUDI_EN: _en_card(
         SAUDI_EN,
         "Saudi Arabia Launches the Sixth Hunting Season and Tightens the Rules: 5,000 Riyals Fine for Prohibited Places",
@@ -580,7 +600,7 @@ def _latest_item_html(article: str, slug: str) -> str:
 
 
 def rebuild_featured_mosaic(html: str, cards: dict[str, str], *, en: bool) -> str:
-    """CABS/MECSHAP is the large lead; farmers / Suhail / Saudi / Adonis are side boxes."""
+    """CABS/MECSHAP is the large lead; Taif, farmers, Suhail, and Adonis are side boxes."""
     slugs = FEATURED_EN if en else FEATURED_AR
     fallbacks = EN_FALLBACK_CARDS if en else AR_FALLBACK_CARDS
     lead_slug = slugs[0]

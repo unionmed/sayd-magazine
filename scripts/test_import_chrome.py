@@ -59,8 +59,9 @@ MEMORY = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016
 ADONIS = "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
 FARMERS = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
 
-# Mars 62e435c5 editorial prefix on docs/category/صيد — do not regress.
+# Hunting desk: Taif finale leads, then the Mars 62e435c5 prefix.
 MARS_HUNTING_TOP = [
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
     KAPS,
     SUHAIL_80K,
     QATAR_80K,
@@ -88,12 +89,15 @@ def test_source_has_no_regression_strings() -> None:
 def test_ticker_source_is_mars_list() -> None:
     items = load_ticker_items()
     assert items == list(DEFAULT_TICKER_ITEMS)
-    assert len(items) == 7
+    assert len(items) == 8
     slugs = [slug for slug, _ in items]
-    assert slugs[0].startswith("مصر-قرار-جديد")
-    assert "200 طائر مهاجر" in items[0][1]
-    assert slugs[1].startswith("كابس")
-    assert "سهيل" in items[2][1]
+    assert slugs[0].startswith("العد-التنازلي")
+    assert "كأس اليوم الوطني" in items[0][1]
+    assert "26 أيلول" in items[0][1]
+    assert slugs[1].startswith("مصر-قرار-جديد")
+    assert "200 طائر مهاجر" in items[1][1]
+    assert slugs[2].startswith("كابس")
+    assert "سهيل" in items[3][1]
     assert ADONIS not in slugs
     assert "sayd-returns-what-we-want-to-offer" not in slugs
 
@@ -262,8 +266,10 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in latest
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in ticker
     assert "إبادة بيئية" not in ticker
-    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in featured
-    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" not in latest
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" not in featured
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in latest
+    assert "العد-التنازلي-لختام-موسم-الطائف" in featured
+    assert "العد-التنازلي-لختام-موسم-الطائف" not in latest
     assert KAPS in featured
     assert KAPS not in latest
     assert MEMORY not in featured
@@ -272,9 +278,9 @@ def test_homepage_latest_matches_nayef() -> None:
     assert featured.find(KAPS) < featured.find(SUHAIL_80K)
     assert lists["featured"] == [
         "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+        "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
         FARMERS,
         "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
-        "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
         ADONIS,
     ]
 
@@ -383,7 +389,7 @@ def test_docs_hunting_category_keeps_mars_recency() -> None:
     """Live صيد وفروسية list from 62e435c5 — Suhail/Kaps stay above archive."""
     html = (ROOT / "docs" / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
     slugs = _listing_slugs(html)
-    assert slugs[:7] == MARS_HUNTING_TOP, slugs[:10]
+    assert slugs[:8] == MARS_HUNTING_TOP, slugs[:10]
     assert SUHAIL_80K in slugs
     assert QATAR_80K in slugs
     assert OLD_HUNT in slugs
@@ -471,9 +477,10 @@ def test_featured_mosaic_matches_homepage_json() -> None:
     assert FARMERS in slugs
     assert MEMORY not in slugs
     assert slugs.index(KAPS) < slugs.index(SUHAIL_80K)
-    # CABS/MECSHAP is the large lead; farmers is the first side box.
+    # CABS/MECSHAP is the large lead; Taif is the first side box. Farmers stays second.
     assert slugs[0] == KAPS
-    assert slugs[1] == FARMERS
+    assert slugs[1] == "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
+    assert slugs[2] == FARMERS
     assert "<h2>قصص مميزة</h2>" not in html
     assert "mecshap-apu-cabs-baalbek-release.jpg" in html
     mosaic = _section(html, "featured-mosaic", "latest-feed")

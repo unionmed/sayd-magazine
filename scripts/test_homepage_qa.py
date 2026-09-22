@@ -258,9 +258,9 @@ def test_latest_feed_has_thumbs() -> None:
             "index.html",
             {
                 "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+                "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
                 "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
                 "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
-                "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
                 "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
             },
         ),
@@ -268,9 +268,9 @@ def test_latest_feed_has_thumbs() -> None:
             "en/index.html",
             {
                 "cabs-mecshap-autumn-birds-lebanon-khatib",
+                "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
                 "how-farmers-protect-migratory-birds-this-autumn",
                 "suhail-2026-closes-decade-katara-80000-visitors",
-                "saudi-sixth-hunting-season-2026-2027-rules",
                 "sayd-returns-what-we-want-to-offer",
             },
         ),
