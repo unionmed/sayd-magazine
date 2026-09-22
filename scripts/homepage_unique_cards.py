@@ -130,9 +130,11 @@ EN_DESK_SLUGS: dict[str, list[str]] = {
     "Miscellany": [
         "european-bee-eater",
         "barn-owl",
-        "red-footed-falcon-killed-by-ignorance",
     ],
 }
+# Visible homepage lists: publish year 2022 through today. Locked lead and
+# the first side box are exempt. Undated cards stay off the lists.
+LISTING_YEAR_MIN = 2022
 COMPACT_DESKS = frozenset({"Sayd TV", "Photos"})
 EN_SAUDI_FILLERS = frozenset(
     {
@@ -585,6 +587,40 @@ def _parse_display_date(text: str) -> tuple[int, int, int]:
     return (0, 0, 0)
 
 
+def _card_publish_year(article: str) -> int:
+    year, _month, _day = _parse_display_date(_card_date(article))
+    return year
+
+
+def _visible_slugs(
+    slugs: list[str],
+    cards: dict[str, str],
+    fallbacks: dict[str, str] | None = None,
+    *,
+    locked: set[str] | frozenset[str] | None = None,
+) -> tuple[list[str], list[tuple[str, int]]]:
+    """Keep locked slots and cards whose publish year is >= 2022.
+
+    Undated cards (year 0) and pre-2022 cards are dropped. Nothing is
+    pulled in to fill the gap.
+    """
+    fallbacks = fallbacks or {}
+    locked = locked or set()
+    kept: list[str] = []
+    dropped: list[tuple[str, int]] = []
+    for slug in slugs:
+        if slug in locked:
+            kept.append(slug)
+            continue
+        src = cards.get(slug) or fallbacks.get(slug) or ""
+        year = _card_publish_year(src) if src else 0
+        if year >= LISTING_YEAR_MIN:
+            kept.append(slug)
+        else:
+            dropped.append((slug, year))
+    return kept, dropped
+
+
 def _order_slugs_newest_first(
     slugs: list[str],
     cards: dict[str, str],
@@ -695,6 +731,10 @@ def rebuild_featured_mosaic(html: str, cards: dict[str, str], *, en: bool) -> st
     lead_slug = CURLEW_EN if en else CURLEW_AR
     first_side = CABS_EN if en else CABS_AR
     rest = [slug for slug in slugs if slug not in {lead_slug, first_side}]
+    rest, dropped = _visible_slugs(rest, cards, fallbacks)
+    for slug, year in dropped:
+        label = "undated" if year == 0 else str(year)
+        print(f"homepage side box omitted ({label}): {slug}")
     side_slugs = [first_side] + _order_slugs_newest_first(rest, cards, fallbacks)
     lead_src = cards.get(lead_slug) or fallbacks.get(lead_slug)
     if not lead_src:
@@ -737,11 +777,15 @@ def rebuild_latest_feed(html: str, cards: dict[str, str], *, en: bool) -> str:
     slugs = LATEST_EN if en else LATEST_AR
     fallbacks = EN_FALLBACK_CARDS if en else AR_FALLBACK_CARDS
     featured = FEATURED_SLUGS
-    ordered = _order_slugs_newest_first(
+    ordered, dropped = _visible_slugs(
         [slug for slug in slugs if slug not in featured],
         cards,
         fallbacks,
     )
+    for slug, year in dropped:
+        label = "undated" if year == 0 else str(year)
+        print(f"homepage latest omitted ({label}): {slug}")
+    ordered = _order_slugs_newest_first(ordered, cards, fallbacks)
     items: list[str] = []
     for slug in ordered:
         src = cards.get(slug) or fallbacks.get(slug)
@@ -950,7 +994,11 @@ def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
     merged = dict(EN_FALLBACK_CARDS)
     merged.update(cards)
     for heading, slugs in EN_DESK_SLUGS.items():
-        slugs = _order_slugs_newest_first(list(slugs), merged, EN_FALLBACK_CARDS)
+        slugs, dropped = _visible_slugs(list(slugs), merged, EN_FALLBACK_CARDS)
+        for slug, year in dropped:
+            label = "undated" if year == 0 else str(year)
+            print(f"homepage desk {heading} omitted ({label}): {slug}")
+        slugs = _order_slugs_newest_first(slugs, merged, EN_FALLBACK_CARDS)
         compact = heading in COMPACT_DESKS
         grid = "grid-photos" if compact else "grid-4"
         block = "".join(
@@ -958,6 +1006,7 @@ def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
             for slug in slugs
         )
         if not block.strip():
+            print(f"homepage desk empty after 2022+ filter: {heading}")
             html = _drop_empty_section(html, heading)
             continue
         html = _replace_section_grid(html, heading, block, grid)
@@ -968,13 +1017,21 @@ def rebuild_ar_home_sections(html: str, cards: dict[str, str]) -> str:
     """Pin Interviews / Gear / Miscellany; News + Hunting stay off home."""
     html = drop_home_desks(html, DROPPED_DESKS_AR)
     for heading, slugs in AR_DESK_SLUGS.items():
-        slugs = _order_slugs_newest_first(list(slugs), cards, AR_FALLBACK_CARDS)
+        slugs, dropped = _visible_slugs(list(slugs), cards, AR_FALLBACK_CARDS)
+        for slug, year in dropped:
+            label = "undated" if year == 0 else str(year)
+            print(f"homepage desk {heading} omitted ({label}): {slug}")
+        slugs = _order_slugs_newest_first(slugs, cards, AR_FALLBACK_CARDS)
         compact = heading in {"صور"}
         grid = "grid-photos" if compact else "grid-4"
         block = "".join(
             _desk_card_html(slug, cards, compact=compact, fallbacks=AR_FALLBACK_CARDS)
             for slug in slugs
         )
+        if not block.strip():
+            print(f"homepage desk empty after 2022+ filter: {heading}")
+            html = _drop_empty_section(html, heading)
+            continue
         html = _replace_section_grid(html, heading, block, grid)
     return html
 

@@ -78,8 +78,14 @@ NAV_CATS = [
     ("جعبة المنوعات", ["جعبة المنوعات", "جعبة-المنوعات"]),
 ]
 
-# Homepage desks: publish date 2022 → today. Pre-2022 stays in the archive only.
+# Visible lists (homepage desks, category indexes, stories grids): publish
+# year 2022 → today. Undated posts stay off those lists. The deep archive
+# (articles/) keeps every year, including pre-2022.
 HOME_PUBLISH_YEAR_MIN = 2022
+EMPTY_CATEGORY_NOTE = (
+    '<p class="empty-note">لا مواد بتاريخ نشر من 2022 فصاعداً في هذا التصنيف. '
+    'المواد الأقدم تبقى في <a href="../../articles/index.html">الأرشيف</a>.</p>'
+)
 # AI-designed-bird promo stays in the archive; never on a home desk.
 DEFAULT_HOME_DESK_OMIT = {
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -330,6 +336,21 @@ def post_publish_year(p: dict) -> int:
     """Story publish year from WXR/editorial date — not years mentioned in the title."""
     dt = parse_date(str(p.get("date") or p.get("datetime") or ""))
     return dt.year if dt else 0
+
+
+def listing_year_from_meta(meta: str) -> int:
+    """Publish year in a listing date line. 0 when the line has no year."""
+    match = re.search(r"(20\d{2})", meta or "")
+    return int(match.group(1)) if match else 0
+
+
+def visible_listing_posts(posts: list[dict]) -> list[dict]:
+    """Posts allowed on visible lists: publish year >= 2022.
+
+    Undated posts (year 0) are excluded. Do not backfill from older archive
+    rows. Dedicated archive pages keep the unfiltered set.
+    """
+    return [p for p in posts if post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN]
 
 
 def featured_year(p: dict) -> int:
@@ -1743,8 +1764,8 @@ def build_site(data: dict, out: Path) -> None:
     # Featured mosaic slugs come only from homepage.json / DEFAULT_FEATURED.
     # Missing / gap images never drop a listed card (Nayef hard rule).
     home_lists = load_homepage_lists()
-    latest_news = sort_latest_newest_first(
-        pick_posts_by_slug(posts, home_lists["latest"])
+    latest_news = visible_listing_posts(
+        sort_latest_newest_first(pick_posts_by_slug(posts, home_lists["latest"]))
     )
     featured_pool = featured_posts(posts, home_lists["featured"])
     # Locked slots: investigation stays the lead, CABS stays the first
@@ -1752,7 +1773,12 @@ def build_site(data: dict, out: Path) -> None:
     locked_lead = DEFAULT_FEATURED_SLUGS[0]
     locked_side = DEFAULT_FEATURED_SLUGS[1]
     by_featured = {p["slug"]: p for p in featured_pool}
-    rest = [p for p in featured_pool if p["slug"] not in {locked_lead, locked_side}]
+    rest = [
+        p
+        for p in featured_pool
+        if p["slug"] not in {locked_lead, locked_side}
+        and post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN
+    ]
     featured_lead = [by_featured[locked_lead]] if locked_lead in by_featured else featured_pool[:1]
     featured_side = [by_featured[locked_side]] if locked_side in by_featured else []
     featured_side.extend(sort_posts_newest_first(rest))
@@ -2114,7 +2140,15 @@ def build_site(data: dict, out: Path) -> None:
             c = resolve_cat(cat_info, list(keys) + [title])
             pinned = pinned_map.get(title) or []
             if pinned:
-                fresh = [by_slug[s] for s in pinned if s in by_slug]
+                # Editorial pins only. Drop pre-2022 and undated pins.
+                # Do not backfill the gap from older archive rows.
+                fresh = [
+                    by_slug[s]
+                    for s in pinned
+                    if s in by_slug and post_publish_year(by_slug[s]) >= HOME_PUBLISH_YEAR_MIN
+                ]
+                if not fresh:
+                    print(f"homepage desk empty after 2022+ filter: {title}")
             else:
                 if not c:
                     continue
@@ -2317,14 +2351,24 @@ def build_site(data: dict, out: Path) -> None:
         )
 
     # --- Category archives (paginated) ---
+    # Visible index: 2022→today only. articles/ keeps the deep archive.
     cat_per_page = 24
+    empty_categories: list[str] = []
+    undated_category_slugs: list[str] = []
     for c in cat_info.values():
         if c["count"] == 0:
             continue
         d = out / "category" / c["slug"]
         d.mkdir(parents=True, exist_ok=True)
-        cat_posts = sort_posts_newest_first(c["posts"])
-        cat_pages_n = max(1, (len(cat_posts) + cat_per_page - 1) // cat_per_page)
+        ordered = sort_posts_newest_first(c["posts"])
+        for p in ordered:
+            if post_publish_year(p) == 0:
+                undated_category_slugs.append(str(p.get("slug") or ""))
+        cat_posts = visible_listing_posts(ordered)
+        visible_count = len(cat_posts)
+        if visible_count == 0:
+            empty_categories.append(c["name"])
+        cat_pages_n = max(1, (visible_count + cat_per_page - 1) // cat_per_page)
 
         for page_i in range(1, cat_pages_n + 1):
             chunk = cat_posts[(page_i - 1) * cat_per_page : page_i * cat_per_page]
@@ -2350,15 +2394,16 @@ def build_site(data: dict, out: Path) -> None:
             page_note = (
                 f" — صفحة {page_i}" if cat_pages_n > 1 else ""
             )
+            list_html = "".join(rows) if rows else EMPTY_CATEGORY_NOTE
             body = f"""
 <main class="page-main" id="content">
   <div class="container">
     <div class="breadcrumb"><a href="{rel_home(2)}">الرئيسية</a> / تصنيفات / {esc(c["name"])}</div>
-    <div class="section-head"><h2>{esc(c["name"])} <span class="badge">{c["count"]}</span>{page_note}</h2>
+    <div class="section-head"><h2>{esc(c["name"])} <span class="badge">{visible_count}</span>{page_note}</h2>
       <a href="../../articles/index.html">الأرشيف</a>
     </div>
     {ad_slot("leaderboard")}
-    <div class="post-list">{"".join(rows)}</div>
+    <div class="post-list">{list_html}</div>
     {paginate_links(page_i, cat_pages_n)}
   </div>
 </main>
@@ -2377,6 +2422,17 @@ def build_site(data: dict, out: Path) -> None:
                 (d / "index.html").write_text(html_page, encoding="utf-8")
             if cat_pages_n > 1:
                 (d / f"page-{page_i}.html").write_text(html_page, encoding="utf-8")
+
+    if empty_categories:
+        print("category indexes empty after 2022+ filter:")
+        for name in empty_categories:
+            print(f"  - {name}")
+    else:
+        print("category indexes empty after 2022+ filter: none")
+    if undated_category_slugs:
+        print("undated posts excluded from category indexes:")
+        for slug in undated_category_slugs:
+            print(f"  - {slug}")
 
     # --- Paginated articles index ---
     per_page = 24
@@ -2446,6 +2502,154 @@ def build_site(data: dict, out: Path) -> None:
     )
 
 
+_POST_ROW_RE = re.compile(r'<article class="post-row">.*?</article>', re.S)
+_ROW_SLUG_RE = re.compile(r'href="(?:\.\./)*posts/([^/"]+)/')
+_ROW_META_RE = re.compile(r'<div class="meta">([^<]*)</div>')
+_BADGE_RE = re.compile(
+    r'(<span class="badge">)\d+(</span>)(?: — صفحة \d+)?'
+)
+
+
+def _div_end(html_text: str, start: int) -> int:
+    """End offset just after the balanced </div> that opens at start."""
+    open_end = html_text.find(">", start)
+    if open_end < 0:
+        raise ValueError("unclosed div")
+    depth = 1
+    pos = open_end + 1
+    while depth and pos < len(html_text):
+        next_open = html_text.find("<div", pos)
+        next_close = html_text.find("</div>", pos)
+        if next_close < 0:
+            raise ValueError("unbalanced div")
+        if 0 <= next_open < next_close:
+            depth += 1
+            pos = next_open + 4
+        else:
+            depth -= 1
+            pos = next_close + len("</div>")
+    if depth:
+        raise ValueError("unbalanced div")
+    return pos
+
+
+def _category_listing_files(directory: Path) -> list[Path]:
+    """index.html, then page-2, page-3, … Page-1 repeats index and is skipped."""
+    files: list[Path] = []
+    index = directory / "index.html"
+    if index.is_file():
+        files.append(index)
+    numbered: list[tuple[int, Path]] = []
+    for path in directory.glob("page-*.html"):
+        match = re.fullmatch(r"page-(\d+)\.html", path.name)
+        if match and int(match.group(1)) != 1:
+            numbered.append((int(match.group(1)), path))
+    numbered.sort()
+    files.extend(path for _, path in numbered)
+    return files
+
+
+def _splice_category_listing(
+    html_text: str,
+    inner: str,
+    page_i: int,
+    pages_n: int,
+    visible_count: int,
+) -> str:
+    start = html_text.find('<div class="post-list">')
+    if start < 0:
+        raise ValueError("missing post-list")
+    list_end = _div_end(html_text, start)
+    main_end = html_text.find("</main>", list_end)
+    nav_start = html_text.find('<nav class="pagination"', list_end)
+    if nav_start != -1 and (main_end < 0 or nav_start < main_end):
+        nav_end = html_text.find("</nav>", nav_start)
+        tail = nav_end + len("</nav>") if nav_end != -1 else list_end
+    else:
+        tail = list_end
+    pagination = paginate_links(page_i, pages_n)
+    block = f'<div class="post-list">{inner}</div>'
+    if pagination:
+        block += "\n    " + pagination
+    html_text = html_text[:start] + block + html_text[tail:]
+    note = f" — صفحة {page_i}" if pages_n > 1 else ""
+
+    def _badge(match: re.Match[str]) -> str:
+        return f"{match.group(1)}{visible_count}{match.group(2)}{note}"
+
+    return _BADGE_RE.sub(_badge, html_text, count=1)
+
+
+def filter_saved_category_listings(out: Path) -> dict:
+    """Rewrite existing category HTML so indexes list publish year >= 2022.
+
+    Does not rebuild from WXR and does not touch articles/ (the deep archive).
+    Undated rows are dropped from the visible list and reported.
+    """
+    root = out / "category"
+    report: dict = {
+        "empty": [],
+        "undated": [],
+        "dropped": 0,
+        "kept": 0,
+        "removed_pages": [],
+    }
+    if not root.is_dir():
+        return report
+    per_page = 24
+    for directory in sorted(path for path in root.iterdir() if path.is_dir()):
+        index = directory / "index.html"
+        if not index.is_file():
+            continue
+        seen: set[str] = set()
+        visible_rows: list[str] = []
+        for path in _category_listing_files(directory):
+            html_text = path.read_text(encoding="utf-8")
+            for row in _POST_ROW_RE.findall(html_text):
+                slug_m = _ROW_SLUG_RE.search(row)
+                slug = slug_m.group(1) if slug_m else row
+                if slug in seen:
+                    continue
+                seen.add(slug)
+                meta_m = _ROW_META_RE.search(row)
+                year = listing_year_from_meta(meta_m.group(1) if meta_m else "")
+                if year == 0:
+                    report["undated"].append(f"{directory.name}/{slug}")
+                    continue
+                if year < HOME_PUBLISH_YEAR_MIN:
+                    report["dropped"] += 1
+                    continue
+                visible_rows.append(row)
+        report["kept"] += len(visible_rows)
+        pages_n = max(1, (len(visible_rows) + per_page - 1) // per_page) if visible_rows else 1
+        if not visible_rows:
+            report["empty"].append(directory.name)
+        index_html = index.read_text(encoding="utf-8")
+        for page_i in range(1, pages_n + 1):
+            chunk = visible_rows[(page_i - 1) * per_page : page_i * per_page]
+            if chunk:
+                inner = "\n" + "\n".join(chunk) + "\n"
+            else:
+                inner = "\n" + EMPTY_CATEGORY_NOTE + "\n"
+            shell_path = index if page_i == 1 else directory / f"page-{page_i}.html"
+            shell = shell_path.read_text(encoding="utf-8") if shell_path.is_file() else index_html
+            written = _splice_category_listing(shell, inner, page_i, pages_n if visible_rows else 1, len(visible_rows))
+            dest = index if page_i == 1 else directory / f"page-{page_i}.html"
+            dest.write_text(written, encoding="utf-8")
+        if pages_n > 1:
+            (directory / "page-1.html").write_text(index.read_text(encoding="utf-8"), encoding="utf-8")
+        for extra in list(directory.glob("page-*.html")):
+            match = re.fullmatch(r"page-(\d+)\.html", extra.name)
+            if not match:
+                continue
+            number = int(match.group(1))
+            drop = number > pages_n or (number == 1 and pages_n == 1)
+            if drop and extra.is_file():
+                extra.unlink()
+                report["removed_pages"].append(extra.relative_to(out).as_posix())
+    return report
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="WXR → Sayd Magazine static site")
     ap.add_argument("--xml", type=Path, default=DEFAULT_XML)
@@ -2456,7 +2660,32 @@ def main() -> None:
         action="store_true",
         help="Patch shared footer-bottom (MECSHAP + NMC license). Header stays free of the license line.",
     )
+    ap.add_argument(
+        "--filter-category-listings",
+        action="store_true",
+        help="Rewrite existing docs/category indexes to publish year >= 2022. Does not rebuild from WXR.",
+    )
     args = ap.parse_args()
+
+    if args.filter_category_listings:
+        report = filter_saved_category_listings(args.out)
+        print("category indexes empty after 2022+ filter:")
+        if report["empty"]:
+            for name in report["empty"]:
+                print(f"  - {name}")
+        else:
+            print("  none")
+        if report["undated"]:
+            print("undated rows excluded from category indexes:")
+            for slug in report["undated"]:
+                print(f"  - {slug}")
+        else:
+            print("undated category rows: none")
+        print(
+            f"kept {report['kept']} rows, dropped {report['dropped']} pre-2022 rows, "
+            f"removed {len(report['removed_pages'])} extra pages"
+        )
+        return
 
     if args.patch_footer:
         apply_footer_partner_css_files()

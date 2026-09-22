@@ -1154,7 +1154,7 @@ def write_home(articles: dict[str, dict]) -> None:
         if s not in HOME_FEATURED
         and s not in HOME_OMIT_FROM_HOME
         and s not in NO_THUMB_SLUGS
-        and str(articles[s].get("date_sort") or "") >= "2022"
+        and _date_sort_year(articles[s]) >= import_wxr.HOME_PUBLISH_YEAR_MIN
     ]
     more.sort(key=lambda s: articles[s]["date_sort"], reverse=True)
     more_cards = []
@@ -1226,12 +1226,56 @@ def write_home(articles: dict[str, dict]) -> None:
     (dest / "index.html").write_text(html, encoding="utf-8")
 
 
+def _date_sort_year(item: dict) -> int:
+    raw = str(item.get("date_sort") or "")
+    return int(raw[:4]) if len(raw) >= 4 and raw[:4].isdigit() else 0
+
+
+_STORY_CARD_RE = re.compile(r'<article class="card[^"]*">.*?</article>', re.S)
+
+
+def filter_saved_stories_index(path: Path | None = None) -> list[str]:
+    """Drop pre-2022 and undated cards from the existing /en/stories/ grid."""
+    dest = path or (DOCS / "en" / "stories" / "index.html")
+    html_text = dest.read_text(encoding="utf-8")
+    year_min = import_wxr.HOME_PUBLISH_YEAR_MIN
+    dropped: list[str] = []
+
+    def _keep(match: re.Match[str]) -> str:
+        block = match.group(0)
+        meta = re.search(r'<div class="meta">([^<]+)', block)
+        year = 0
+        if meta:
+            found = re.search(r"(20\d{2})", meta.group(1))
+            if found:
+                year = int(found.group(1))
+        if year >= year_min:
+            return block
+        slug = re.search(r"posts/([^/]+)/", block)
+        dropped.append(slug.group(1) if slug else "?")
+        return ""
+
+    updated = _STORY_CARD_RE.sub(_keep, html_text)
+    if updated != html_text:
+        dest.write_text(updated, encoding="utf-8")
+    for slug in dropped:
+        print(f"stories grid omitted: {slug}")
+    return dropped
+
+
 def write_stories(articles: dict[str, dict]) -> None:
-    slugs = sorted(
-        (s for s in articles if s not in NO_THUMB_SLUGS),
-        key=lambda s: articles[s]["date_sort"],
-        reverse=True,
-    )
+    year_min = import_wxr.HOME_PUBLISH_YEAR_MIN
+    kept: list[str] = []
+    for slug in articles:
+        if slug in NO_THUMB_SLUGS:
+            continue
+        year = _date_sort_year(articles[slug])
+        if year >= year_min:
+            kept.append(slug)
+        else:
+            label = "undated" if year == 0 else str(year)
+            print(f"stories grid omitted ({label}): {slug}")
+    slugs = sorted(kept, key=lambda s: articles[s]["date_sort"], reverse=True)
     rows = []
     for slug in slugs:
         item = articles[slug]
