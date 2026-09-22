@@ -659,6 +659,9 @@ def main() -> None:
     lock.apply_ar_home()
     lock.apply_en_home()
     ar_n, en_n = sync_tickers()
+    from seo_foundation import apply as apply_seo
+
+    apply_seo(DOCS)
     print(f"published seven extinct birds; tickers AR={ar_n} EN={en_n}")
 
 

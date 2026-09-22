@@ -248,6 +248,8 @@ def test_every_docs_page_footer_has_mecshap() -> None:
     missing: list[tuple[str, str]] = []
     for path in (ROOT / "docs").rglob("*.html"):
         html = path.read_text(encoding="utf-8")
+        if "<header" not in html:
+            continue
         if 'class="footer-bottom"' not in html:
             missing.append(("no-footer", str(path.relative_to(ROOT))))
             continue

@@ -431,6 +431,9 @@ def main() -> None:
 
     apply_docs()
     n = sync_ar_tickers()
+    from seo_foundation import apply as apply_seo
+
+    apply_seo(DOCS)
     print(f"published Egypt hunting news; synced {n} AR tickers")
 
 
