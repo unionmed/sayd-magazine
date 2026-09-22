@@ -73,6 +73,8 @@ HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
     "cabs-mecshap-autumn-birds-lebanon-khatib": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف": "uploads/2026/09/farmers-storks-migrating-palestine.jpg",
     "how-farmers-protect-migratory-birds-this-autumn": "uploads/2026/09/farmers-storks-migrating-palestine.jpg",
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني": "uploads/2026/09/taif-racing-hawiyah.jpg",
+    "taif-season-finale-king-faisal-national-day-cup": "uploads/2026/09/taif-racing-hawiyah.jpg",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": "uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
     "egypt-new-hunting-rules-burullus-autumn-migration": "uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": "uploads/2026/09/hero-closing-80k.jpg",
@@ -199,9 +201,9 @@ def featured_mosaic_slugs() -> list[str]:
 # EN edition slugs for the same five mosaic stories.
 FEATURED_MOSAIC_EN_SLUGS = {
     "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "taif-season-finale-king-faisal-national-day-cup",
     "how-farmers-protect-migratory-birds-this-autumn",
     "suhail-2026-closes-decade-katara-80000-visitors",
-    "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
 }
 

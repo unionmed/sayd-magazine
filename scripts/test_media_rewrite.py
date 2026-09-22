@@ -175,7 +175,8 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
     lists = json.loads((root / "content" / "homepage.json").read_text(encoding="utf-8"))
     featured = lists["featured"]
     assert featured[0].startswith("كابس-ومكشب")
-    assert featured[1].startswith("كيف-يحمي-المزارع")
+    assert featured[1].startswith("العد-التنازلي-لختام-موسم-الطائف")
+    assert featured[2].startswith("كيف-يحمي-المزارع")
     assert featured[4].startswith("صيد-تعود")
     home = (root / "docs" / "index.html").read_text(encoding="utf-8")
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]

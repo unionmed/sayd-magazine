@@ -53,16 +53,16 @@ TAGLINE_AR = "مجلة أسياد الطبيعة في البر والبحر وا
 # Live homepage / ticker 2026 set (Nayef editorial list).
 HOME_FEATURED = [
     "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "taif-season-finale-king-faisal-national-day-cup",
     "how-farmers-protect-migratory-birds-this-autumn",
     "suhail-2026-closes-decade-katara-80000-visitors",
-    "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
 ]
-# Mosaic side stack: farmers first, then Suhail / Saudi / Adonis.
+# Mosaic side stack: Taif first, then farmers / Suhail / Adonis.
 HOME_MOSAIC_SIDE = [
+    "taif-season-finale-king-faisal-national-day-cup",
     "how-farmers-protect-migratory-birds-this-autumn",
     "suhail-2026-closes-decade-katara-80000-visitors",
-    "saudi-sixth-hunting-season-2026-2027-rules",
     "sayd-returns-what-we-want-to-offer",
 ]
 HOME_OMIT_FROM_HOME = {
@@ -72,6 +72,7 @@ HOME_OMIT_FROM_HOME = {
 HOME_LATEST = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "qatar-suhail-2026-80000-visitors-teaser",
+    "saudi-sixth-hunting-season-2026-2027-rules",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     "regulating-hunting-protects-wildlife-bans-worsen",
     "common-shelduck-protected-migrant-lebanon",
@@ -79,9 +80,11 @@ HOME_LATEST = [
     "illegal-hunting-destroys-hobby-nets-lime-night",
 ]
 TICKER_TITLES_EN = {
+    "taif-season-finale-king-faisal-national-day-cup": "Taif | Saturday 26 September: the evening finale, the National Day Cup for thoroughbreds at Al-Hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration": "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus",
 }
 HOME_TICKER = [
+    "taif-season-finale-king-faisal-national-day-cup",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
     "qatar-suhail-2026-80000-visitors-teaser",
@@ -92,6 +95,14 @@ HOME_TICKER = [
 ]
 
 META: dict[str, dict] = {
+    "taif-season-finale-king-faisal-national-day-cup": {
+        "date": "22 September 2026",
+        "date_sort": "2026-09-22",
+        "category": "Hunting & Equestrian",
+        "author": "Taif – Sayd Magazine",
+        "image": "media/uploads/2026/09/taif-racing-hawiyah.jpg",
+        "image_alt": "A jockey and grey horse at Al-Hawiyah during the Taif racing season, 2026",
+    },
     "egypt-new-hunting-rules-burullus-autumn-migration": {
         "date": "20 September 2026",
         "date_sort": "2026-09-20",

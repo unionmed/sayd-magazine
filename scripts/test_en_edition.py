@@ -24,6 +24,7 @@ SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يخ
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 
 HOME_TICKER_EN = [
+    "taif-season-finale-king-faisal-national-day-cup",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     CABS_EN,
     "qatar-suhail-2026-80000-visitors-teaser",
@@ -35,7 +36,7 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 27
+    assert len(PAIRS) == 28
     drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
     assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():

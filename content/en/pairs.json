@@ -1,6 +1,7 @@
 {
   "comment": "AR slug → EN slug. Used by docs chrome and scripts/build_en_edition.py.",
   "pairs": {
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني": "taif-season-finale-king-faisal-national-day-cup",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": "egypt-new-hunting-rules-burullus-autumn-migration",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف": "how-farmers-protect-migratory-birds-this-autumn",
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": "memory-of-sayd-awareness-responsibility-2016-2024",
