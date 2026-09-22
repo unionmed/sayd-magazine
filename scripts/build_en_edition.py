@@ -32,6 +32,7 @@ import_wxr = importlib.util.module_from_spec(_spec)
 assert _spec.loader is not None
 _spec.loader.exec_module(import_wxr)
 footer_bottom_inner_html = import_wxr.footer_bottom_inner_html
+license_line_html = import_wxr.license_line_html
 apply_footer_bottom_docs = import_wxr.apply_footer_bottom_docs
 apply_footer_partner_css_files = import_wxr.apply_footer_partner_css_files
 
@@ -39,7 +40,7 @@ FONTS = (
     "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
     "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
-CSS_CACHE = "20260920-cabs-lead"
+CSS_CACHE = "20260922-nmc-license"
 NO_THUMB_SLUGS = {
     "autumn-migration-field-action-protect-flyways-lebanon",
 }
@@ -815,6 +816,7 @@ def en_chrome(
     en_href: str,
     articles: dict[str, dict],
     extra_head: str = "",
+    header_license: bool = False,
 ) -> str:
     css = rel(depth, "assets/css/site.css") + f"?v={CSS_CACHE}"
     logo = rel(depth, "media/brand/sayd-logo.png")
@@ -840,6 +842,10 @@ def en_chrome(
         attr = f' class="{cls}"' if cls else ""
         nav_links.append(f'        <a{attr} href="{rel(depth, path)}">{label}</a>')
     nav = "\n".join(nav_links)
+    header_class = (
+        "container header-inner header-home" if header_license else "container header-inner"
+    )
+    header_license_html = ("\n        " + license_line_html("en")) if header_license else ""
     return f"""<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -869,7 +875,7 @@ def en_chrome(
       </div>
     </div>
     <header class="site-header">
-      <div class="container header-inner">
+      <div class="{header_class}">
         <a class="brand" href="{home_en}">
           <span class="brand-wordmark" lang="en">Sayd</span>
           <span class="tagline">{escape(TAGLINE_EN)}</span>
@@ -882,7 +888,7 @@ def en_chrome(
           <nav class="drawer-nav" aria-label="Mobile menu">
 {nav}
           </nav>
-        </details>
+        </details>{header_license_html}
       </div>
     </header>
     {ticker_html(depth, articles, "en")}
@@ -1219,6 +1225,7 @@ def write_home(articles: dict[str, dict]) -> None:
         ar_href="../index.html",
         en_href="index.html",
         articles=articles,
+        header_license=True,
     )
     dest = DOCS / "en"
     dest.mkdir(parents=True, exist_ok=True)

@@ -375,7 +375,10 @@ def write_ar_article() -> None:
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div class="footer-copy">© مجلة صيد · Sayd Magazine</div>
+        <div class="footer-legal">
+          <div class="footer-copy">© مجلة صيد · Sayd Magazine</div>
+          <p class="site-license">مرخصة من المجلس الوطني للاعلام في لبنان بموجب علم وخبر رقم <span dir="ltr">157</span> بتاريخ <span dir="ltr">5</span> ايلول <span dir="ltr">2016</span></p>
+        </div>
         <a class="footer-partner" href="https://www.mecshap.org/" target="_blank" rel="noopener">MECSHAP — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر</a>
       </div>
     </div>
@@ -540,7 +543,10 @@ def write_en_article() -> None:
     </div>
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <div class="footer-copy">© Sayd Magazine</div>
+        <div class="footer-legal">
+          <div class="footer-copy">© Sayd Magazine</div>
+          <p class="site-license">Licensed by the National Media Council in Lebanon under official notice No. 157 dated 5 September 2016</p>
+        </div>
         <a class="footer-partner" href="https://www.mecshap.org/" target="_blank" rel="noopener">MECSHAP — Middle East Center for Sustainable Harvest and Anti-Poaching</a>
       </div>
     </div>

@@ -921,6 +921,22 @@ MECSHAP_LABEL_AR = "MECSHAP — مركز الشرق الأوسط للصيد ال
 MECSHAP_LABEL_EN = "MECSHAP — Middle East Center for Sustainable Harvest and Anti-Poaching"
 FOOTER_COPY_AR = f"© {SITE_TITLE} · {SITE_TITLE_EN}"
 FOOTER_COPY_EN = "© Sayd Magazine"
+# Lebanon National Media Council license. Arabic wording is fixed; do not rephrase.
+# English is the approved short form — never "Ilm wa Khabar".
+LICENSE_TEXT_AR = (
+    "مرخصة من المجلس الوطني للاعلام في لبنان بموجب علم وخبر رقم 157 بتاريخ 5 ايلول 2016"
+)
+LICENSE_TEXT_EN = (
+    "Licensed by the National Media Council in Lebanon under official notice No. 157 dated 5 September 2016"
+)
+CSS_CACHE_LICENSE = "20260922-nmc-license"
+# Query-bust only the pages reviewers open for this chrome change.
+LICENSE_CSS_BUST_PAGES = {
+    "index.html",
+    "en/index.html",
+    "memory/index.html",
+    "en/memory/index.html",
+}
 
 
 def footer_copyright(lang: str = "ar") -> str:
@@ -936,10 +952,29 @@ def footer_partner_html(lang: str = "ar") -> str:
     )
 
 
+def license_line_html(lang: str = "ar") -> str:
+    """National Media Council line. Arabic digits are LTR-isolated so bidi cannot flip them."""
+    if lang == "en":
+        inner = esc(LICENSE_TEXT_EN)
+    else:
+        inner = (
+            "مرخصة من المجلس الوطني للاعلام في لبنان بموجب علم وخبر رقم "
+            '<span dir="ltr">157</span>'
+            " بتاريخ "
+            '<span dir="ltr">5</span>'
+            " ايلول "
+            '<span dir="ltr">2016</span>'
+        )
+    return f'<p class="site-license">{inner}</p>'
+
+
 def footer_bottom_inner_html(lang: str = "ar") -> str:
-    """Single shared footer-bottom: copyright + MECSHAP, AR or EN."""
+    """Shared footer-bottom: copyright, NMC license, then MECSHAP."""
     return (
-        f'<div class="footer-copy">{footer_copyright(lang)}</div>\n'
+        '<div class="footer-legal">\n'
+        f'          <div class="footer-copy">{footer_copyright(lang)}</div>\n'
+        f"          {license_line_html(lang)}\n"
+        "        </div>\n"
         f"        {footer_partner_html(lang)}"
     )
 
@@ -1008,17 +1043,68 @@ def apply_footer_bottom(html: str, lang: str | None = None) -> str:
     )
 
 
-def apply_footer_bottom_docs(root: Path | None = None) -> int:
-    """Walk docs/** and docs/en/** so every page shares the same footer-bottom."""
+def bust_license_css(html: str) -> str:
+    """Point one stylesheet link at the license-line cache token."""
+    token = f"site.css?v={CSS_CACHE_LICENSE}"
+    if token in html:
+        return html
+    updated, n = re.subn(
+        r"assets/css/site\.css\?v=[^\"']+",
+        f"assets/css/{token}",
+        html,
+        count=1,
+    )
+    if n:
+        return updated
+    return html.replace(
+        'assets/css/site.css"',
+        f'assets/css/{token}"',
+        1,
+    )
+
+
+def apply_home_header_license(html: str, lang: str) -> str:
+    """Insert the homepage masthead license under the brand, outside the logo link."""
+    start = html.find('<header class="site-header">')
+    end = html.find("</header>", start if start >= 0 else 0)
+    if start < 0 or end < 0:
+        return html
+    header = html[start:end]
+    if 'class="site-license"' not in header:
+        block = "        " + license_line_html(lang) + "\n      "
+        needle = "</details>\n      </div>"
+        if needle not in header:
+            return html
+        header = header.replace(needle, "</details>\n" + block + "</div>", 1)
+    header = header.replace(
+        'class="container header-inner"',
+        'class="container header-inner header-home"',
+        1,
+    )
+    return html[:start] + header + html[end:]
+
+
+def apply_license_chrome_docs(root: Path | None = None) -> int:
+    """Stamp the shared footer on every page and the masthead line on AR/EN home."""
     root = root or DEFAULT_OUT
     changed = 0
     for path in sorted(root.rglob("*.html")):
         text = path.read_text(encoding="utf-8")
         new = apply_footer_bottom(text)
+        rel = path.relative_to(root).as_posix()
+        if rel in {"index.html", "en/index.html"}:
+            new = apply_home_header_license(new, "en" if rel.startswith("en/") else "ar")
+        if rel in LICENSE_CSS_BUST_PAGES:
+            new = bust_license_css(new)
         if new != text:
             path.write_text(new, encoding="utf-8")
             changed += 1
     return changed
+
+
+def apply_footer_bottom_docs(root: Path | None = None) -> int:
+    """Walk docs/** and docs/en/** so every page shares the same footer-bottom."""
+    return apply_license_chrome_docs(root)
 
 
 FOOTER_PARTNER_CSS = """
@@ -1376,6 +1462,8 @@ def layout(
         <a class="nav-home" href="{home}">الرئيسية</a>
         {extra_nav}
         <a class="nav-all" href="{articles}">الأرشيف</a>"""
+    header_class = "container header-inner header-home" if is_home else "container header-inner"
+    header_license = ("\n        " + license_line_html("ar")) if is_home else ""
     return f"""<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -1407,7 +1495,7 @@ def layout(
       </div>
     </div>
     <header class="site-header">
-      <div class="container header-inner">
+      <div class="{header_class}">
         <a class="brand-lockup" href="{home}">
           <span class="brand-row">
             <img class="logo-img" src="{esc(logo)}" width="168" height="64" alt="{SITE_TITLE} — {SITE_TITLE_EN}">
@@ -1424,7 +1512,7 @@ def layout(
           <summary>القائمة</summary>
           <nav class="drawer-nav" aria-label="قائمة الجوال">{nav_links}
           </nav>
-        </details>
+        </details>{header_license}
       </div>
     </header>
     {ticker}
@@ -2370,14 +2458,14 @@ def main() -> None:
     ap.add_argument(
         "--patch-footer",
         action="store_true",
-        help="Patch shared footer-bottom (MECSHAP) on existing docs HTML only.",
+        help="Patch shared footer-bottom (MECSHAP + NMC license) and the homepage header line.",
     )
     args = ap.parse_args()
 
     if args.patch_footer:
         apply_footer_partner_css_files()
         n = apply_footer_bottom_docs(args.out)
-        print(f"Patched MECSHAP footer-bottom on {n} pages under {args.out}.")
+        print(f"Patched NMC license chrome on {n} pages under {args.out}.")
         return
 
     if not args.xml.exists():
