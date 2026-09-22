@@ -524,6 +524,8 @@ def test_prefer_recent_skips_ai_bird_promo() -> None:
         [("استديو-صيد", "استديو صيد")],
     )
     assert "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب" in home_desk_omit_slugs()
+    assert "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب" in import_wxr.PURGED_SLUGS
+    assert import_wxr.drop_purged_posts([promo, keep]) == [keep]
     picked = prefer_recent([promo, keep], 4, media_root=ROOT / "docs" / "media")
     assert [p["slug"] for p in picked] == [keep["slug"]]
 
