@@ -949,7 +949,7 @@ LICENSE_TEXT_AR = (
 LICENSE_TEXT_EN = (
     "Licensed by the National Media Council in Lebanon under official notice No. 157 dated 5 September 2016"
 )
-CSS_CACHE_LICENSE = "20260922-empty-cats"
+CSS_CACHE_LICENSE = "20260922-empty-cats-b"
 # Query-bust only the pages reviewers open for this chrome change.
 LICENSE_CSS_BUST_PAGES = {
     "index.html",
