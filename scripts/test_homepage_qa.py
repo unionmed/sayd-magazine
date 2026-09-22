@@ -188,15 +188,23 @@ def test_kaps_package_untouched() -> None:
 
 
 def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
-    """Nayef: AI-bird off home; poaching card/article use the chickadee mist-net file."""
+    """Nayef: AI-sparrow story is gone sitewide; poaching uses the chickadee mist-net file."""
     import hashlib
 
+    slug = "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب"
+    encoded = "%D9%84%D8%A7-%D8%AA%D8%B5%D8%AF%D9%82-%D9%88%D8%AC%D9%88%D8%AF-%D9%87%D8%B0%D8%A7-%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D8%B1"
+    assert not (DOCS / "posts" / slug / "index.html").exists()
+    for name in ("Bird-01.jpeg", "Bird-02.jpeg", "Bird-03.jpeg", "Bird-03-300x296.jpeg"):
+        assert not (DOCS / "media" / "uploads" / "2024" / "06" / name).exists()
+    offenders = []
+    for path in DOCS.rglob("*"):
+        if path.suffix not in {".html", ".xml"}:
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if slug in text or "Bird-02.jpeg" in text or encoded in text:
+            offenders.append(str(path.relative_to(DOCS)))
+    assert offenders == []
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
-    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    assert "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب" not in ar
-    assert "Bird-02.jpeg" not in ar
-    assert "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب" not in en
-    assert "Bird-02.jpeg" not in en
     latest = ar.split("latest-feed", 1)[1].split("</ul>", 1)[0]
     assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in latest
     assert "illegal-hunting-mist-net-chickadee.jpg" in latest
@@ -206,7 +214,6 @@ def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
     assert "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" not in mosaic
     chick = (DOCS / "media" / "uploads" / "2026" / "09" / "illegal-hunting-mist-net-chickadee.jpg")
     assert chick.is_file() and chick.stat().st_size > 32
-    bird = (DOCS / "media" / "uploads" / "2024" / "06" / "Bird-02.jpeg").read_bytes()
     egypt = (
         DOCS / "media" / "uploads" / "2026" / "09" / "egypt-burullus-researcher-removes-bird-from-illegal-net.jpg"
     ).read_bytes()
@@ -214,7 +221,6 @@ def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
         DOCS / "media" / "uploads" / "2026" / "09" / "kaps-makshab-apu-fries-hero.jpg"
     ).read_bytes()
     digest = hashlib.md5(chick.read_bytes()).hexdigest()
-    assert digest != hashlib.md5(bird).hexdigest()
     assert digest != hashlib.md5(egypt).hexdigest()
     assert digest != hashlib.md5(fries).hexdigest()
     article = (DOCS / "posts" / "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" / "index.html").read_text(

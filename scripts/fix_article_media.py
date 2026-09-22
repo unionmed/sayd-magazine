@@ -42,9 +42,6 @@ ALIASES: dict[str, str] = {
     "uploads/2026/09/01-1000469327.jpg": "uploads/2026/09/sayd-returns-adonis-editor.jpg",
     "uploads/2026/09/01-1000470565.jpg": "uploads/2026/09/sayd-returns-adonis-editor.jpg",
     "uploads/2024/09/Jocy.jpeg": "uploads/2024/09/Jocy-229x300.jpeg",
-    "uploads/2024/06/Bird-01.jpeg": "uploads/2024/06/Bird-02.jpeg",
-    "uploads/2024/06/Bird-03.jpeg": "uploads/2024/06/Bird-02.jpeg",
-    "uploads/2024/06/Bird-03-300x296.jpeg": "uploads/2024/06/Bird-02.jpeg",
     "uploads/2025/07/IMG_3009-2-scaled.jpg": "uploads/2025/07/IMG_3009-2-1024x683.jpg",
     "uploads/2025/07/IMG_3003-2-scaled.jpg": "uploads/2025/07/IMG_3009-2-1024x683.jpg",
     "uploads/2025/07/IMG_3003-2-300x200.jpg": "uploads/2025/07/IMG_3009-2-1024x683.jpg",
@@ -59,7 +56,8 @@ ALIASES: dict[str, str] = {
 STANDINS: dict[str, str] = {}
 
 RITA_STANDIN = "uploads/2024/02/ريتا-الشعار6.jpg"
-DEFAULT_LISTING = "uploads/2024/06/Bird-02.jpeg"
+# Never fall back to the purged AI-sparrow file (Bird-02.jpeg).
+DEFAULT_LISTING = "uploads/2024/09/Design.png"
 DESIGN = "uploads/2024/09/Design.png"
 
 # Do not copy another story's bytes under these names.
@@ -70,14 +68,14 @@ _PRE2022_STANDINS_DISABLED: dict[str, str] = {
     "uploads/2020/05/فوائد-الرماية.jpg": "uploads/2020/05/سينتيا.jpg",
     "uploads/2020/07/رامية.jpg": "uploads/2020/05/سينتيا.jpg",
     "uploads/2020/06/خرطوش-صيد.jpg": "uploads/2018/02/صورة-لموضوع-الخرطوش-المناسب.jpg",
-    "uploads/2020/10/ماهر-بجع-2.jpg": "uploads/2024/06/Bird-02.jpeg",
+    "uploads/2020/10/ماهر-بجع-2.jpg": "uploads/2024/09/Design.png",
     "uploads/2020/10/ماهر-كرك-1.jpg": "uploads/2024/09/Design.png",
     "uploads/2017/04/خالد-طالب-1.jpg": "uploads/2017/02/كمال-اغا-1.jpg",
     "uploads/2017/06/صورة-جديدة-كمال-قصار.jpg": "uploads/2017/02/كمال-اغا-1.jpg",
     "uploads/2015/06/خالد-1.jpg": "uploads/2015/06/سلهب-3.jpg",
     "uploads/2015/07/سباق-المغاوير-2015.png": "uploads/2015/09/معرض-الصيد-والفروسية.jpg",
     "uploads/2015/07/سباق-مغاوير-صورة.jpg": "uploads/2015/09/معرض-الصيد-والفروسية.jpg",
-    "uploads/2013/07/زرافة.jpg": "uploads/2024/06/Bird-02.jpeg",
+    "uploads/2013/07/زرافة.jpg": "uploads/2024/09/Design.png",
     "uploads/2014/09/Kamil-Chamoun-and-Adel-Osseiran.png": "uploads/2018/01/maher-Copy.jpg",
     "uploads/2015/08/طريق-عام-ابلح-ارشيف-ايدي-معلوف.jpg": "uploads/2015/03/عائلتان-من-بلدة-ابلح-غرقتا-في-حادثة-التايتانيك.jpg",
     "uploads/2021/02/مجلة-الأمن.jpg": "uploads/2024/09/Design.png",

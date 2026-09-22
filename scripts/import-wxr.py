@@ -86,10 +86,15 @@ EMPTY_CATEGORY_NOTE = (
     '<p class="empty-note">لا مواد بتاريخ نشر من 2022 فصاعداً في هذا التصنيف. '
     'المواد الأقدم تبقى في <a href="../../articles/index.html">الأرشيف</a>.</p>'
 )
-# AI-designed-bird promo stays in the archive; never on a home desk.
-DEFAULT_HOME_DESK_OMIT = {
+# AI-designed sparrow («لا تصدق وجود هذا الطائر») is purged sitewide.
+# Nayef: the story must not return on a rebuild — not home, not archive,
+# not «ذات صلة», not category lists.
+PURGED_SLUGS = {
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
 }
+PURGED_WP_IDS = {"6535"}
+# Kept so a desk picker still skips the slug if a stale row is passed in.
+DEFAULT_HOME_DESK_OMIT = set(PURGED_SLUGS)
 
 # Magazine desks before Sayd TV / Photos. Tail is جعبة only (after media strips).
 # Nayef: Interviews → Gear → TV → Photos → جعبة. News + Hunting stay off home
@@ -356,6 +361,18 @@ def visible_listing_posts(posts: list[dict]) -> list[dict]:
 def featured_year(p: dict) -> int:
     m = re.search(r"/uploads/(\d{4})/", p.get("featured") or "")
     return int(m.group(1)) if m else 0
+
+
+def drop_purged_posts(posts: list[dict]) -> list[dict]:
+    """Drop stories Nayef ordered off the magazine so a WXR rebuild cannot republish them."""
+    if not posts:
+        return posts
+    return [
+        p
+        for p in posts
+        if str(p.get("slug") or "") not in PURGED_SLUGS
+        and str(p.get("id") or "") not in PURGED_WP_IDS
+    ]
 
 
 def home_desk_omit_slugs() -> set[str]:
@@ -1304,6 +1321,7 @@ def parse_wxr(xml_path: Path) -> dict:
 
     dedupe(posts)
     dedupe(pages)
+    posts = drop_purged_posts(posts)
 
     return {
         "site": site,
@@ -1740,6 +1758,7 @@ def build_site(data: dict, out: Path) -> None:
 
     apply_nayef_category_rule(data["posts"], catalog=data.get("categories"))
     data["posts"] = merge_editorial_extra_posts(data["posts"])
+    data["posts"] = drop_purged_posts(data["posts"])
     data["posts"] = sort_posts_newest_first(data["posts"])
     posts = data["posts"]
     pages = data["pages"]
