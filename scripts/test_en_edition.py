@@ -81,6 +81,7 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "saudi-hunting-fines-5000-riyal-prohibited-areas",
         "saudi-5000-riyal-hunting-fine-teaser",
         "syrian-hunter-amani-al-homsi-against-illegal-hunting",
+        "red-footed-falcon-killed-by-ignorance",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:

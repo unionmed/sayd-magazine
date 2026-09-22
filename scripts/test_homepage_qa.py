@@ -121,10 +121,8 @@ def test_homepage_cards_publish_2022_plus() -> None:
             year_m = re.search(r"(20\d{2})", meta.group(1))
             assert year_m, meta.group(1)
             year = int(year_m.group(1))
-            if "red-footed-falcon-killed-by-ignorance" in card:
-                assert year == 2013, (rel, meta.group(1))
-            else:
-                assert year >= 2022, (rel, meta.group(1))
+            assert year >= 2022, (rel, meta.group(1))
+        assert "red-footed-falcon-killed-by-ignorance" not in html
         if rel == "index.html":
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
             latest = html.split(marker, 1)[1]
@@ -627,7 +625,7 @@ def test_homepage_story_cards_are_unique() -> None:
             gear = html.split("<h2>Gear &amp; Arms</h2>", 1)[1].split("</section>", 1)[0]
             assert "air-rifles" in gear
             misc = html.split("<h2>Miscellany</h2>", 1)[1].split("</section>", 1)[0]
-            assert "red-footed-falcon-killed-by-ignorance" in misc
+            assert "red-footed-falcon-killed-by-ignorance" not in misc
             assert "european-bee-eater" in misc
             assert "barn-owl" in misc
         else:
@@ -701,7 +699,6 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
         "Miscellany": [
             "european-bee-eater",
             "barn-owl",
-            "red-footed-falcon-killed-by-ignorance",
         ],
     }
     for heading, slugs in desks.items():

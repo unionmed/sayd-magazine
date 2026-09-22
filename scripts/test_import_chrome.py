@@ -626,6 +626,59 @@ def test_thumb_cleanup_cannot_drop_featured_memory() -> None:
     assert "some-other" not in out
 
 
+def test_visible_listing_posts_drop_pre_2022_and_undated() -> None:
+    """Category and other visible lists keep 2022→today. Undated stays out."""
+    assert HOME_PUBLISH_YEAR_MIN == 2022
+    old = _fake_post("قديم", "قديم", "2021-12-31 00:00:00", [])
+    edge = _fake_post("حافة", "حافة", "2022-01-01 00:00:00", [])
+    fresh = _fake_post("جديد", "جديد", "2026-09-22 00:00:00", [])
+    blank = _fake_post("بلا-تاريخ", "بلا تاريخ", "", [])
+    picked = import_wxr.visible_listing_posts([old, blank, fresh, edge])
+    assert [p["slug"] for p in picked] == ["جديد", "حافة"] or [p["slug"] for p in picked] == ["حافة", "جديد"]
+    assert {p["slug"] for p in picked} == {"جديد", "حافة"}
+    assert import_wxr.listing_year_from_meta("22 أيلول 2026") == 2026
+    assert import_wxr.listing_year_from_meta("29 October 2013") == 2013
+    assert import_wxr.listing_year_from_meta("") == 0
+
+
+def test_docs_visible_listings_are_2022_plus() -> None:
+    """Home, category indexes, and /en/stories/ show no publish year before 2022.
+
+    The deep archive (articles/) still lists older stories.
+    """
+    year_re = re.compile(r"(20\d{2})")
+    row_re = re.compile(r'<article class="post-row">(.*?)</article>', re.S)
+    card_re = re.compile(r'<article class="card[^"]*">(.*?)</article>', re.S)
+
+    def years_in(html: str, pattern: re.Pattern[str]) -> list[int]:
+        found: list[int] = []
+        for block in pattern.findall(html):
+            meta = re.search(r'<div class="meta">([^<]+)', block)
+            assert meta, block[:120]
+            match = year_re.search(meta.group(1))
+            assert match, meta.group(1)
+            found.append(int(match.group(1)))
+        return found
+
+    for path in (ROOT / "docs" / "category").rglob("*.html"):
+        html = path.read_text(encoding="utf-8")
+        for year in years_in(html, row_re):
+            assert year >= 2022, (path, year)
+    stories = (ROOT / "docs" / "en" / "stories" / "index.html").read_text(encoding="utf-8")
+    story_years = years_in(stories, card_re)
+    assert story_years and min(story_years) >= 2022
+    assert "red-footed-falcon-killed-by-ignorance" not in stories
+    archive_years: list[int] = []
+    for path in (ROOT / "docs" / "articles").glob("*.html"):
+        archive_years.extend(years_in(path.read_text(encoding="utf-8"), row_re))
+    assert any(year < 2022 for year in archive_years)
+    home = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+    en = (ROOT / "docs" / "en" / "index.html").read_text(encoding="utf-8")
+    for html in (home, en):
+        assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" in html or "how-migration-routes-lost-seven-birds-in-150-years" in html
+        assert "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" in html or "cabs-mecshap-autumn-birds-lebanon-khatib" in html
+
+
 if __name__ == "__main__":
     test_source_has_no_regression_strings()
     test_ticker_source_is_mars_list()
@@ -640,6 +693,8 @@ if __name__ == "__main__":
     test_nayef_rule_adds_thematic_sayd_for_home_ticker()
     test_new_ticker_hunting_story_lands_on_sayd_near_top()
     test_docs_hunting_category_keeps_mars_recency()
+    test_visible_listing_posts_drop_pre_2022_and_undated()
+    test_docs_visible_listings_are_2022_plus()
     test_prefer_recent_skips_pre_2022_even_with_local_thumb()
     test_prefer_recent_newest_first_not_local_first()
     test_prefer_recent_skips_ai_bird_promo()
