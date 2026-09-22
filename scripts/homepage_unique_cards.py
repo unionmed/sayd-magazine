@@ -8,8 +8,7 @@ Latest thumbs → Interviews → Gear → TV → Photos → Miscellany.
 News / Hunting desks stay off home (archive only). Featured URLs
 never also appear in Latest. Latest items are small thumb + title +
 date. Adonis is one feature-box only and never in the ticker.
-Farmers may dual-place: mosaic side *and* Interviews. Ecocide is
-Interviews (and ticker), never the feature-lead.
+Farmers may dual-place: mosaic side *and* Interviews.
 """
 
 from __future__ import annotations
@@ -35,8 +34,6 @@ NEW_LOOK_EN = "sayd-returns-new-look-wider-vision"
 NEW_LOOK_AR = "صيد-تعود-بحلة-جديدة-ورؤية-اوسع"
 MEMORY_EN = "memory-of-sayd-awareness-responsibility-2016-2024"
 MEMORY_AR = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024"
-ECOCIDE_AR = "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
-ECOCIDE_EN = "international-orgs-ecocide-south-lebanon"
 CABS_AR = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
 CABS_EN = "cabs-mecshap-autumn-birds-lebanon-khatib"
 CABS_TITLE_AR = "CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي"
@@ -104,7 +101,6 @@ MOSAIC_AND_INTERVIEWS = frozenset({FARMERS_AR, FARMERS_EN})
 EN_DESK_SLUGS: dict[str, list[str]] = {
     "Interviews &amp; Investigations": [
         FARMERS_EN,
-        ECOCIDE_EN,
         "george-taza-protect-fish-stocks-interview",
         "leen-araji-equestrian-and-mental-math-champion",
     ],
@@ -131,7 +127,6 @@ EN_SAUDI_FILLERS = frozenset(
 AR_DESK_SLUGS: dict[str, list[str]] = {
     "مقابلات وتحقيقات": [
         FARMERS_AR,
-        ECOCIDE_AR,
         "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
         "لين-عراجي-بطلة-فروسية-وحساب",
     ],
@@ -149,13 +144,6 @@ AR_FALLBACK_CARDS: dict[str, str] = {
   <div class="body">
     <div class="meta">20 آب 2022<span class="cat-pill">مقابلات وتحقيقات</span></div>
     <h3><a href="posts/الصيّادة-السورية-أماني-الحمصي/index.html">الصيّادة السورية أماني الحمصي: أنا ضدّ الصيد الجائر.. وأتمنى سَنّ قانون صيد في سوريا يُنصف الطبيعة والصيّاد</a></h3>
-  </div>
-</article>""",
-    ECOCIDE_AR: """<article class="card overlay">
-  <a class="thumb" href="posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان/index.html"><img src="media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg" alt="دخان أبيض كثيف فوق غطاء نباتي في جنوب لبنان" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">20 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
-    <h3><a href="posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان/index.html">منظمات دولية: إسرائيل ترتكب «إبادة بيئية» في جنوب لبنان</a></h3>
   </div>
 </article>""",
     CABS_AR: """<article class="card card-stack">
@@ -316,14 +304,6 @@ EN_FALLBACK_CARDS: dict[str, str] = {
         "Land Hunting",
         "media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg",
         "A bird is freed from a mist net — illegal hunting destroys the hunting hobby",
-    ),
-    ECOCIDE_EN: _en_card(
-        ECOCIDE_EN,
-        "International Organizations: Israel Is Committing “Ecocide” in Southern Lebanon",
-        "20 September 2026",
-        "Interviews &amp; Investigations",
-        "media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
-        "Dense white smoke over vegetation in southern Lebanon",
     ),
     "george-taza-protect-fish-stocks-interview": _en_card(
         "george-taza-protect-fish-stocks-interview",
@@ -557,7 +537,7 @@ def _as_side_card(article: str, slug: str) -> str:
     )
 
 
-def _as_ecocide_lead(article: str, slug: str) -> str:
+def _as_lead(article: str, slug: str) -> str:
     src, alt = _card_img(article)
     title = _card_title(article)
     date = _card_date(article)
@@ -568,7 +548,7 @@ def _as_ecocide_lead(article: str, slug: str) -> str:
     href = re.search(r'href="([^"]*posts/[^"]+/index\.html)"', article)
     link = href.group(1) if href else f"posts/{slug}/index.html"
     return (
-        f'<article class="card overlay feature-lead feature-ecocide">\n'
+        f'<article class="card overlay feature-lead">\n'
         f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
         f'    <div class="meta">{date}{cat}</div>\n'
@@ -600,14 +580,14 @@ def _latest_item_html(article: str, slug: str) -> str:
 
 
 def rebuild_featured_mosaic(html: str, cards: dict[str, str], *, en: bool) -> str:
-    """Ecocide is the large lead; CABS/MECSHAP is a side box (Latin names)."""
+    """CABS/MECSHAP is the large lead; farmers / Suhail / Saudi / Adonis are side boxes."""
     slugs = FEATURED_EN if en else FEATURED_AR
     fallbacks = EN_FALLBACK_CARDS if en else AR_FALLBACK_CARDS
     lead_slug = slugs[0]
     lead_src = cards.get(lead_slug) or fallbacks.get(lead_slug)
     if not lead_src:
         raise SystemExit(f"missing featured lead card for {lead_slug}")
-    lead = _as_ecocide_lead(lead_src, lead_slug)
+    lead = _as_lead(lead_src, lead_slug)
     sides: list[str] = []
     for slug in slugs[1:]:
         src = cards.get(slug) or fallbacks.get(slug)
@@ -724,7 +704,7 @@ def lock_homepage_html(
 ) -> str:
     """Drop omitted + duplicate content cards; first remaining card wins.
 
-    Ecocide may appear twice: mosaic, then Interviews. Nothing else.
+    Farmers may appear twice: mosaic side, then Interviews. Nothing else.
     """
     if omit_home is None or omit_latest is None:
         loaded_home, loaded_latest = load_omit_sets()
@@ -964,4 +944,4 @@ def apply_docs() -> None:
 
 if __name__ == "__main__":
     apply_docs()
-    print("homepage unique cards: Ecocide lead; CABS side; Latest thumbs; News/Hunting off")
+    print("homepage unique cards: CABS lead; farmers side; Latest thumbs; News/Hunting off")

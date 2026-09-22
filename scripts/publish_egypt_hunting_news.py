@@ -44,7 +44,6 @@ EN_P2 = (
 )
 
 AR_TICKER_REST = (
-    '<a href="{p}posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان/index.html">منظمات دولية: «إبادة بيئية» في جنوب لبنان</a>'
     '<a href="{p}posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html">CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي</a>'
     '<a href="{p}posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html">قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»</a>'
     '<a href="{p}posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html">السعودية تطلق موسم الصيد السادس وتشدد على الضوابط: 5 آلاف ريال غرامة الأماكن المحظورة</a>'
@@ -53,7 +52,6 @@ AR_TICKER_REST = (
     '<a href="{p}posts/مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية/index.html">مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان</a>'
 )
 EN_TICKER_REST = (
-    '<a href="{p}international-orgs-ecocide-south-lebanon/index.html">International groups: “ecocide” in southern Lebanon</a>'
     '<a href="{p}cabs-mecshap-autumn-birds-lebanon-khatib/index.html">CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner</a>'
     '<a href="{p}qatar-suhail-2026-80000-visitors-teaser/index.html">Qatar | More Than 80,000 Visitors at the Close of Suhail 2026</a>'
     '<a href="{p}saudi-sixth-hunting-season-2026-2027-rules/index.html">Saudi Arabia Launches the Sixth Hunting Season and Tightens the Rules: 5,000 Riyals Fine for Prohibited Places</a>'
@@ -189,14 +187,6 @@ def write_ar_article() -> None:
       <div class="related-grid">
 
 <article class="card overlay">
-  <a class="thumb" href="../../posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان/index.html"><img src="../../media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg" alt="دخان أبيض كثيف فوق غطاء نباتي في جنوب لبنان" loading="lazy"></a>
-  <div class="body">
-    <div class="meta">20 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
-    <h3><a href="../../posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان/index.html">منظمات دولية: إسرائيل ترتكب «إبادة بيئية» في جنوب لبنان</a></h3>
-  </div>
-</article>
-
-<article class="card overlay">
   <a class="thumb" href="../../posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html"><img src="../../media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" loading="lazy"></a>
   <div class="body">
     <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
@@ -218,7 +208,6 @@ def write_ar_article() -> None:
         <div class="widget">
           <h3>الأحدث</h3>
           <div class="widget-body"><ul class="latest-list"><li><a href="../../posts/{AR_SLUG}/index.html">{AR_TITLE}</a><span class="meta">20 أيلول 2026</span></li>
-<li><a href="../../posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان/index.html">منظمات دولية: إسرائيل ترتكب «إبادة بيئية» في جنوب لبنان</a><span class="meta">20 أيلول 2026</span></li>
 <li><a href="../../posts/من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024/index.html">من ذاكرة «صيد»: مسيرة الوعي والمسؤولية (2016 – 2024)</a><span class="meta">19 أيلول 2026</span></li></ul></div>
         </div>
         

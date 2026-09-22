@@ -121,8 +121,8 @@ DEFAULT_HOME_OMIT = {
 # Nayef-via-Mars order. Image / placeholder / gap-thumb work must not drop
 # a listed card. Source of truth is content/homepage.json, else this list.
 DEFAULT_FEATURED_SLUGS = [
-    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+    "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -148,17 +148,6 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
 <p>أعلنت وزارة التنمية المحلية والبيئة في مصر قراراً جديداً لتنظيم أعمال الصيد، بالتوازي مع بدء جهاز شؤون البيئة خطة رصد ومتابعة مع انطلاق موسم هجرة الخريف.</p>
 <p>في محمية البرلس، أُطلق سراح نحو 200 طائر مهاجر وأُزيل نحو 750 متراً من الشباك المخالفة. وتجري الوزارة حواراً مجتمعياً مع جمعيات أهلية ومختصين لصياغة قواعد أوضح تخص صيد الطيور المهاجرة تحديداً.</p>""",
     },
-    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": {
-        "title": "منظمات دولية: إسرائيل ترتكب «إبادة بيئية» في جنوب لبنان",
-        "date_display": "20 أيلول 2026",
-        "datetime": "2026-09-20 00:00:00",
-        "date": "2026-09-20 00:00:00",
-        "categories": [
-            {"nicename": "مقابلات-تحقيقات", "name": "مقابلات وتحقيقات", "slug": "مقابلات-تحقيقات"}
-        ],
-        "excerpt": "تقارير أممية وحقوقية تتقاطع على توصيف الإبادة البيئية في جنوب لبنان.",
-        "featured": "uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
-    },
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": {
         "title": "من ذاكرة «صيد»: مسيرة الوعي والمسؤولية (2016 – 2024)",
         "date_display": "19 أيلول 2026",
@@ -177,10 +166,6 @@ DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
     (
         "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
         "مصر: قرار جديد لتنظيم الصيد وإطلاق نحو 200 طائر مهاجر وإزالة شباك مخالفة في البرلس",
-    ),
-    (
-        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-        "منظمات دولية: «إبادة بيئية» في جنوب لبنان",
     ),
     (
         "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
@@ -233,7 +218,6 @@ KNOWN_CATEGORY_RECORDS = {
 # Mars/Nayef extras for current editorial surfaces (Suheil, Kaps, season…).
 DEFAULT_CATEGORY_EXTRAS: dict[str, list[str]] = {
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": ["أخبار"],
-    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": ["مقابلات-تحقيقات"],
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": ["صيد"],
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": ["صيد"],
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": ["صيد", "أخبار"],
@@ -676,7 +660,7 @@ def pick_posts_by_slug(posts: list[dict], slugs: list[str]) -> list[dict]:
 
 
 def merge_editorial_extra_posts(posts: list[dict]) -> list[dict]:
-    """Keep hand-published extras (Ecocide, Memory) available after a WXR rebuild."""
+    """Keep hand-published extras (Memory) available after a WXR rebuild."""
     by_slug = {p.get("slug"): p for p in posts}
     extras = list(FEATURED_CARD_STUBS)
     extras.extend(s for s in load_homepage_lists().get("latest") or [] if s not in extras)
@@ -1652,12 +1636,11 @@ def build_site(data: dict, out: Path) -> None:
     featured_lead = featured_pool[:1]
     featured_side = featured_pool[1:]
     # Card uniqueness: featured mosaic owns those slugs. Latest now has thumbs,
-    # so those URLs stay off desks. Ecocide is the Nayef exception: mosaic +
-    # Interviews desk. Pinned desk_slugs win.
+    # so those URLs stay off desks. Farmers may dual-place: mosaic + Interviews.
     used_slugs: set[str] = {p["slug"] for p in featured_pool}
     used_slugs.update(p["slug"] for p in latest_news)
     used_slugs.update(home_lists.get("omit_from_home") or [])
-    used_slugs.discard("منظمات-دولية-ابادة-بيئية-جنوب-لبنان")
+    used_slugs.discard("كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف")
     utility_date = ""
     if posts and posts[0].get("datetime"):
         utility_date = format_ar_long_date(parse_date(posts[0]["date"]))
