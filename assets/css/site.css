@@ -1785,3 +1785,93 @@ html[lang="en"] .memory-card__quote {
     font-size: 0.7rem;
   }
 }
+
+/* Nayef: listing cards put the date, category, and title under the photo.
+   Exception: the homepage feature-lead stays a classic overlay (text on the image).
+   Memory cards are not overlay cards and stay as they are. */
+.card.overlay:not(.feature-lead),
+.card.card-compact.overlay:not(.feature-lead) {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  position: relative;
+}
+
+.card.overlay:not(.feature-lead) .thumb,
+.feature-stack .card.overlay:not(.feature-lead) .thumb {
+  position: relative;
+  inset: auto;
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  max-height: none;
+  min-height: 0;
+}
+
+.card.overlay:not(.feature-lead) .thumb::after,
+html[dir="ltr"] .card.overlay:not(.feature-lead) .thumb::after,
+.home-section .card.overlay:not(.feature-lead) .thumb::after,
+html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) .thumb::after {
+  content: none;
+  background: none;
+}
+
+.card.overlay:not(.feature-lead) .body,
+.feature-stack .card.overlay:not(.feature-lead) .body,
+.home-section .card.overlay:not(.feature-lead) .body {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  flex: 0 0 auto;
+  background: var(--card);
+  color: var(--ink);
+  padding: 0.5rem 0.6rem 0.65rem;
+}
+
+.card.overlay:not(.feature-lead) .meta,
+html[dir="ltr"] .card.overlay:not(.feature-lead) .meta,
+.home-section .card.overlay:not(.feature-lead) .meta,
+html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) .meta {
+  color: var(--muted);
+  text-shadow: none;
+}
+
+.card.overlay:not(.feature-lead) .meta .cat-pill,
+.home-section .card.overlay:not(.feature-lead) .meta .cat-pill {
+  background: var(--olive);
+  color: #fff;
+}
+
+.card.overlay:not(.feature-lead) h2,
+.card.overlay:not(.feature-lead) h3,
+html[dir="ltr"] .card.overlay:not(.feature-lead) h2,
+html[dir="ltr"] .card.overlay:not(.feature-lead) h3,
+.home-section .card.overlay:not(.feature-lead) h2,
+.home-section .card.overlay:not(.feature-lead) h3,
+html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h2,
+html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 {
+  color: var(--ink);
+  text-shadow: none;
+}
+
+.card.overlay:not(.feature-lead) h2 a,
+.card.overlay:not(.feature-lead) h3 a,
+html[dir="ltr"] .card.overlay:not(.feature-lead) h2 a,
+html[dir="ltr"] .card.overlay:not(.feature-lead) h3 a,
+.home-section .card.overlay:not(.feature-lead) h2 a,
+.home-section .card.overlay:not(.feature-lead) h3 a,
+html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h2 a,
+html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 a {
+  color: var(--ink);
+  text-shadow: none;
+}
+
+.card.overlay:not(.feature-lead) h2 a:hover,
+.card.overlay:not(.feature-lead) h3 a:hover,
+.home-section .card.overlay:not(.feature-lead) h2 a:hover,
+.home-section .card.overlay:not(.feature-lead) h3 a:hover,
+html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h2 a:hover,
+html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 a:hover {
+  color: var(--gold-dark);
+}

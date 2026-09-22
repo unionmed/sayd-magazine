@@ -52,6 +52,15 @@ def test_section_titles_sit_under_photos() -> None:
     assert "position: static" in css
     assert ".home-section .grid-4:has(> :last-child:nth-child(1))" in css
     assert "max-width: 17.5rem" in css
+    rule = css.split("Nayef: listing cards put the date", 1)[1]
+    assert ":not(.feature-lead)" in rule
+    assert "content: none" in rule
+    assert "position: static" in rule
+    assert ".featured-mosaic > .card.overlay.feature-lead" not in rule
+    assert ".featured-mosaic > .card.overlay.feature-lead .thumb::after" in css.split(rule, 1)[0]
+    source = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert "Nayef: listing cards put the date" in source
+    assert ".card.overlay:not(.feature-lead)" in source
 
 
 def test_rita_stays_on_memory_and_design_png_is_off_homes() -> None:
