@@ -926,7 +926,7 @@ LICENSE_TEXT_AR = (
     "مرخصة من المجلس الوطني للاعلام في لبنان بموجب علم وخبر رقم 157 بتاريخ 5 ايلول 2016"
 )
 LICENSE_TEXT_EN = (
-    "Licensed by the National Media Council in Lebanon under Ilm wa Khabar No. 157 dated 5 September 2016"
+    "Licensed by the National Media Council in Lebanon under official notice No. 157 dated 5 September 2016"
 )
 CSS_CACHE_LICENSE = "20260922-nmc-license"
 # Query-bust only the pages reviewers open for this chrome change.

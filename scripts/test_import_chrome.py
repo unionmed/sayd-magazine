@@ -177,8 +177,8 @@ def test_shared_footer_helper_is_locale_aware() -> None:
     assert "مكشب" not in ar and "مكشب" not in en
     assert "كابس" not in ar and "كابس" not in en
     assert LICENSE_TEXT_EN in en
-    assert "Ilm wa Khabar No. 157" in en
-    assert "official notice" not in en
+    assert "official notice No. 157" in en
+    assert "Ilm wa Khabar" not in en
     assert re.sub(r"<[^>]+>", "", license_line_html("ar")) == LICENSE_TEXT_AR
     assert 'dir="ltr"' in license_line_html("ar")
     assert "<p class=\"site-license\">" in ar and "<p class=\"site-license\">" in en
@@ -256,10 +256,10 @@ def test_every_docs_page_footer_has_mecshap() -> None:
         if "/en/" in path.as_posix():
             if MECSHAP_LABEL_EN not in footer:
                 missing.append(("no-en-label", str(path.relative_to(ROOT))))
-            if "Ilm wa Khabar No. 157" not in footer:
+            if "official notice No. 157" not in footer:
                 missing.append(("no-en-license", str(path.relative_to(ROOT))))
-            if "official notice" in footer:
-                missing.append(("official-notice", str(path.relative_to(ROOT))))
+            if "Ilm wa Khabar" in footer:
+                missing.append(("ilm-wa-khabar", str(path.relative_to(ROOT))))
         elif "المجلس الوطني للاعلام" not in footer:
             missing.append(("no-ar-license", str(path.relative_to(ROOT))))
         if "/en/" not in path.as_posix() and MECSHAP_LABEL_AR not in footer:
@@ -280,15 +280,15 @@ def test_homepage_header_shows_license() -> None:
     assert "المجلس الوطني للاعلام" in ar_header
     assert 'dir="ltr">157</span>' in ar_header
     assert 'dir="ltr">2016</span>' in ar_header
-    assert "Ilm wa Khabar No. 157" in en_header
-    assert "official notice" not in en
+    assert "official notice No. 157" in en_header
+    assert "Ilm wa Khabar" not in en
     assert "5 September 2016" in en_header
     memory = (ROOT / "docs" / "memory" / "index.html").read_text(encoding="utf-8")
     memory_header = memory.split("</header>", 1)[0]
     assert "site-license" not in memory_header
     assert "المجلس الوطني للاعلام" in memory.split('class="footer-bottom"', 1)[1]
     en_memory = (ROOT / "docs" / "en" / "memory" / "index.html").read_text(encoding="utf-8")
-    assert "Ilm wa Khabar No. 157" in en_memory.split('class="footer-bottom"', 1)[1]
+    assert "official notice No. 157" in en_memory.split('class="footer-bottom"', 1)[1]
     assert "من ذاكرة صيد" in ar
     assert "memory-strip" in ar or "من ذاكرة صيد" in ar
 
