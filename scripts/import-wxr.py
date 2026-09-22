@@ -921,13 +921,12 @@ MECSHAP_LABEL_AR = "MECSHAP — مركز الشرق الأوسط للصيد ال
 MECSHAP_LABEL_EN = "MECSHAP — Middle East Center for Sustainable Harvest and Anti-Poaching"
 FOOTER_COPY_AR = f"© {SITE_TITLE} · {SITE_TITLE_EN}"
 FOOTER_COPY_EN = "© Sayd Magazine"
-# Lebanon National Media Council license. Arabic wording is fixed; do not rephrase.
-# English is the approved short form — never "Ilm wa Khabar".
+# Lebanon National Media Council license. Arabic and English wording are fixed.
 LICENSE_TEXT_AR = (
     "مرخصة من المجلس الوطني للاعلام في لبنان بموجب علم وخبر رقم 157 بتاريخ 5 ايلول 2016"
 )
 LICENSE_TEXT_EN = (
-    "Licensed by the National Media Council in Lebanon under official notice No. 157 dated 5 September 2016"
+    "Licensed by the National Media Council in Lebanon under Ilm wa Khabar No. 157 dated 5 September 2016"
 )
 CSS_CACHE_LICENSE = "20260922-nmc-license"
 # Query-bust only the pages reviewers open for this chrome change.
@@ -1070,8 +1069,19 @@ def apply_home_header_license(html: str, lang: str) -> str:
     if start < 0 or end < 0:
         return html
     header = html[start:end]
-    if 'class="site-license"' not in header:
-        block = "        " + license_line_html(lang) + "\n      "
+    fresh = license_line_html(lang)
+    if 'class="site-license"' in header:
+        header, n = re.subn(
+            r'<p class="site-license">.*?</p>',
+            fresh,
+            header,
+            count=1,
+            flags=re.S,
+        )
+        if n != 1:
+            return html
+    else:
+        block = "        " + fresh + "\n      "
         needle = "</details>\n      </div>"
         if needle not in header:
             return html
