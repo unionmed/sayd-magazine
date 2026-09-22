@@ -52,6 +52,11 @@ If you cannot re-export WP, add a post as Markdown under `content/posts/` follow
 - الصفحة الأولى تعرض آخر الأخبار والقصص المميزة. الأقدم في الأرشيف والتصنيفات.
 - Theme source of truth: `assets/css/site.css` + templates in `scripts/import-wxr.py`. Do not hand-edit `docs/**/*.html`.
 - مصدر التصميم: CSS + سكربت التوليد. لا تعدّل ملفات `docs/` يدوياً.
+- After HTML is written, `scripts/seo_foundation.py` refreshes `docs/sitemap.xml`, `docs/robots.txt`, and the shared head block (canonical, Open Graph, Twitter, absolute hreflang). Importer, English edition, and the one-off publish scripts call it. Run it again if you add a page by hand:
+
+```bash
+python3 scripts/seo_foundation.py
+```
 
 ## Deploy / النشر
 

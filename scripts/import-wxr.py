@@ -1349,6 +1349,9 @@ def layout(
     Home, articles, categories, and static pages (فريقنا, إتصل بنا, …)
     all call this builder. Ticker items come from chrome_ticker(); there
     is no per-page ticker or footer special-case.
+
+    Canonical, Open Graph, Twitter, and absolute hreflang are not inlined
+    here. scripts/seo_foundation.py adds that head block after HTML is written.
     """
     css = rel_css(depth)
     tokens = rel_tokens(depth)
@@ -2410,6 +2413,13 @@ def main() -> None:
     apply_footer_partner_css_files()
     n = apply_footer_bottom_docs(args.out)
     print(f"Shared MECSHAP footer-bottom on {n} pages.")
+    from seo_foundation import apply as apply_seo
+
+    seo_stats = apply_seo(args.out)
+    print(
+        f"SEO head + sitemap: {seo_stats['sitemap']} URLs, "
+        f"{seo_stats['changed']} pages updated."
+    )
     print("Done.")
     print(f"Preview: open {args.out / 'index.html'} or serve docs/ with any static server.")
 
