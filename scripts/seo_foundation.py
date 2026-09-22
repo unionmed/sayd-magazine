@@ -38,6 +38,24 @@ SITEMAP_SKIP = {
     "pages/751-2/index.html",
 }
 
+# Thin HTML redirects for the Babtain Afghanistan video. The live article
+# folder stays the truncated slug; these aliases must not become sitemap URLs
+# or have their canonical rewritten to themselves.
+_BABTAIN = "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
+_BABTAIN_FULL = "بالفيديو-مقناص-سعود-عبد-العزيز-البابطين-في-أفغانستان"
+_BABTAIN_NO_HAMZA = "بالفيديو-مقناص-سعود-عبد-العزيز-البابطين-في-افغانستان"
+_BABTAIN_NAME = "بالفيديو-مقناص-سعود-عبد-العزيز-البابطين"
+ALIAS_REDIRECTS = {
+    "6775/index.html",
+    f"{_BABTAIN}/index.html",
+    f"{_BABTAIN_FULL}/index.html",
+    f"posts/{_BABTAIN_FULL}/index.html",
+    f"{_BABTAIN_NO_HAMZA}/index.html",
+    f"posts/{_BABTAIN_NO_HAMZA}/index.html",
+    f"{_BABTAIN_NAME}/index.html",
+    f"posts/{_BABTAIN_NAME}/index.html",
+}
+
 # Directory pages whose first in-content image is the page hero.
 HERO_LISTING = {
     "index.html",
@@ -171,7 +189,7 @@ def in_sitemap(rel: Path) -> bool:
     posix = rel.as_posix()
     if rel.name != "index.html":
         return False
-    if posix in SITEMAP_SKIP:
+    if posix in SITEMAP_SKIP or posix in ALIAS_REDIRECTS:
         return False
     parts = rel.parts
     if parts[0] == "posts":
@@ -354,6 +372,8 @@ def apply_html(
     rel: Path,
     twins: dict[str, str],
 ) -> str:
+    if rel.as_posix() in ALIAS_REDIRECTS:
+        return html_text
     match = re.search(r"</head>", html_text, re.I)
     if not match:
         return html_text
