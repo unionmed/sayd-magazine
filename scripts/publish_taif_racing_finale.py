@@ -702,6 +702,9 @@ def main() -> None:
     patch_home(DOCS / "en" / "index.html", en=True)
     patch_listings()
     ar_n, en_n = sync_tickers()
+    from seo_foundation import apply as apply_seo
+
+    apply_seo(DOCS)
     print(f"published Taif finale; synced tickers AR={ar_n} EN={en_n}")
 
 

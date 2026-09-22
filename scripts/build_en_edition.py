@@ -816,6 +816,7 @@ def en_chrome(
     articles: dict[str, dict],
     extra_head: str = "",
 ) -> str:
+    """English chrome. Absolute canonical/OG/hreflang are applied afterwards by seo_foundation.py."""
     css = rel(depth, "assets/css/site.css") + f"?v={CSS_CACHE}"
     logo = rel(depth, "media/brand/sayd-logo.png")
     home_en = rel(depth, "en/index.html")
@@ -1449,6 +1450,13 @@ def main() -> None:
     print(f"wrote {len(articles)} English articles + /en/index.html")
     print(f"ensured Related on {related_n} English articles")
     print(f"shared MECSHAP footer-bottom on {footer_n} pages")
+    from seo_foundation import apply as apply_seo
+
+    seo_stats = apply_seo(DOCS)
+    print(
+        f"SEO head + sitemap: {seo_stats['sitemap']} URLs, "
+        f"{seo_stats['changed']} pages updated."
+    )
 
 
 if __name__ == "__main__":
