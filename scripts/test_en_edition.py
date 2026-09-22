@@ -264,7 +264,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             or "?v=20260922-memory-compact-b" in css_q
             or "?v=20260922-nmc-footer" in css_q
             or "?v=20260922-text-under" in css_q
-            or "?v=20260922-empty-cats" in css_q
+            or "?v=20260922-empty-cats-b" in css_q
         )
         assert "kaps-makshab-apu-fries-hero.jpg" not in lead
 
@@ -426,7 +426,7 @@ def test_en_nested_nav_paths() -> None:
         or "?v=20260922-memory-compact-b" in en_home
         or "?v=20260922-nmc-footer" in en_home
         or "?v=20260922-text-under" in en_home
-        or "?v=20260922-empty-cats" in en_home
+        or "?v=20260922-empty-cats-b" in en_home
     )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -459,7 +459,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-memory-compact-b" in home
         or "?v=20260922-nmc-footer" in home
         or "?v=20260922-text-under" in home
-        or "?v=20260922-empty-cats" in home
+        or "?v=20260922-empty-cats-b" in home
     )
     assert (
         "?v=20260919-en-plex-kaps-r" in en
@@ -472,7 +472,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-memory-compact-b" in en
         or "?v=20260922-nmc-footer" in en
         or "?v=20260922-text-under" in en
-        or "?v=20260922-empty-cats" in en
+        or "?v=20260922-empty-cats-b" in en
     )
     assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
@@ -539,7 +539,7 @@ def test_every_en_page_is_ltr_plex() -> None:
             or "?v=20260922-memory-compact-b" in html
             or "?v=20260922-nmc-footer" in html
             or "?v=20260922-text-under" in html
-            or "?v=20260922-empty-cats" in html
+            or "?v=20260922-empty-cats-b" in html
         )
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html
