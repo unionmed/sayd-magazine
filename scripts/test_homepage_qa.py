@@ -52,6 +52,12 @@ def test_section_titles_sit_under_photos() -> None:
     assert "position: static" in css
     assert ".home-section .grid-4:has(> :last-child:nth-child(1))" in css
     assert "max-width: 17.5rem" in css
+    rule = css.split("Nayef: no text on photographs", 1)[1]
+    assert "content: none" in rule
+    assert "position: static" in rule
+    assert ".featured-mosaic > .card.overlay.feature-lead .body" in rule
+    source = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    assert "Nayef: no text on photographs" in source
 
 
 def test_rita_stays_on_memory_and_design_png_is_off_homes() -> None:
