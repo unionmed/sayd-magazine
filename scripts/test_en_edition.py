@@ -264,6 +264,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             or "?v=20260922-memory-compact-b" in css_q
             or "?v=20260922-nmc-footer" in css_q
             or "?v=20260922-text-under" in css_q
+            or "?v=20260922-empty-cats" in css_q
         )
         assert "kaps-makshab-apu-fries-hero.jpg" not in lead
 
@@ -425,6 +426,7 @@ def test_en_nested_nav_paths() -> None:
         or "?v=20260922-memory-compact-b" in en_home
         or "?v=20260922-nmc-footer" in en_home
         or "?v=20260922-text-under" in en_home
+        or "?v=20260922-empty-cats" in en_home
     )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -457,6 +459,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-memory-compact-b" in home
         or "?v=20260922-nmc-footer" in home
         or "?v=20260922-text-under" in home
+        or "?v=20260922-empty-cats" in home
     )
     assert (
         "?v=20260919-en-plex-kaps-r" in en
@@ -469,6 +472,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-memory-compact-b" in en
         or "?v=20260922-nmc-footer" in en
         or "?v=20260922-text-under" in en
+        or "?v=20260922-empty-cats" in en
     )
     assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
@@ -535,10 +539,73 @@ def test_every_en_page_is_ltr_plex() -> None:
             or "?v=20260922-memory-compact-b" in html
             or "?v=20260922-nmc-footer" in html
             or "?v=20260922-text-under" in html
+            or "?v=20260922-empty-cats" in html
         )
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html
         assert "ticker-track" in html
+
+
+def test_empty_2022_category_chrome_is_css_only() -> None:
+    """Hide known empty shells. Keep filled desks and one-card categories."""
+    empty = (
+        "رماية",
+        "رياضات-وسياحة-بيئية",
+        "قوانين-وخرائط",
+        "بعدستكم",
+        "رياضات",
+        "مصيدة",
+        "قوانين",
+        "بعدسة-التاريخ",
+        "بعدستنا",
+        "خرائط",
+        "سياحة-بيئية",
+        "عين-النسر-تختار-لكم",
+        "كلمتكم",
+        "مائدة-الصيد",
+        "مجلة",
+    )
+    keep = (
+        "عتاد-وسلاح-الصيد",
+        "ثقافة-وتراث",
+        "فروسية",
+        "الطبيعلوجيا",
+        "صور",
+    )
+    docs_css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    src_css = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    for css in (docs_css, src_css):
+        start = css.find("Nayef ≥2022 empty category shells")
+        end = css.find("Responsive: density first", start)
+        assert start > 0 and end > start
+        block = css[start:end]
+        assert 'html[dir="ltr"] .home-section:not(:has(article))' in css
+        rules = block.split("*/", 1)[-1]
+        assert ".home-section" not in rules
+        assert ".post-list:not(:has(.post-row)):has(p.empty-note)" in block
+        assert "p.empty-note ~ p.empty-note" in block
+        assert ".page-main:has(.post-list > p.empty-note):not(:has(.post-row))" in block
+        assert ":has(.post-list:not(:has(.post-row))" not in block
+        for slug in empty:
+            assert f'a[href$="category/{slug}/index.html"]' in block
+            assert f'li:has(> a[href$="category/{slug}/index.html"])' in block
+        for slug in keep:
+            assert slug not in block
+    home = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert home.count('class="home-section"') >= 3
+    assert "<article" in home
+    assert 'href="category/رماية/index.html"' in home
+    assert 'href="category/عتاد-وسلاح-الصيد/index.html"' in home
+    assert 'href="category/صور/index.html"' in home
+    assert 'href="../category/رياضات-وسياحة-بيئية/index.html"' in en
+    assert 'href="../category/عتاد-وسلاح-الصيد/index.html"' in en
+    shell = (DOCS / "category" / "رماية" / "index.html").read_text(encoding="utf-8")
+    assert 'class="badge">0' in shell
+    assert 'class="empty-note"' in shell
+    assert 'class="post-row"' not in shell
+    gear = (DOCS / "category" / "عتاد-وسلاح-الصيد" / "index.html").read_text(encoding="utf-8")
+    assert 'class="post-row"' in gear
 
 
 if __name__ == "__main__":
@@ -555,6 +622,7 @@ if __name__ == "__main__":
     test_en_ltr_typography_and_ticker()
     test_en_nested_nav_paths()
     test_homepage_sparse_grids_hide_empty_en_desks()
+    test_empty_2022_category_chrome_is_css_only()
     test_every_en_page_is_ltr_plex()
     test_extinct_birds_captions_are_single_locale()
     print("test_en_edition: ok")

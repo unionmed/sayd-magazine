@@ -90,7 +90,7 @@ LATEST_EN = [
 
 DROPPED_DESKS_AR = ("أخبار", "صيد وفروسية")
 DROPPED_DESKS_EN = ("News", "September 2026", "Hunting &amp; Equestrian")
-CSS_CACHE = "20260922-memory-compact-b"
+CSS_CACHE = "20260922-empty-cats"
 
 CHICKADEE_REL = "uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg"
 CHICKADEE_ALT_AR = "طائر يُستخرج من شبكة ضبابية"

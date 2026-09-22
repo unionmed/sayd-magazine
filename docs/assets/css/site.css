@@ -1472,6 +1472,73 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   color: #5a4a20;
 }
 
+/* Nayef ≥2022 empty category shells (land with PR #64).
+   Hide nav, drawer, sidebar, and footer links to indexes that are
+   badge 0 + p.empty-note and have no .post-row.
+   Homepage .home-section desks are filled and are not matched here.
+   [href$="category/…/index.html"] covers category/… and ../category/…. */
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رماية/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رياضات-وسياحة-بيئية/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/قوانين-وخرائط/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدستكم/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رياضات/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مصيدة/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/قوانين/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدسة-التاريخ/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدستنا/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/خرائط/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/سياحة-بيئية/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/عين-النسر-تختار-لكم/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/كلمتكم/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مائدة-الصيد/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مجلة/index.html"],
+:is(.sidebar, .site-footer) li:has(> a[href$="category/رماية/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/رياضات-وسياحة-بيئية/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/قوانين-وخرائط/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/بعدستكم/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/رياضات/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/مصيدة/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/قوانين/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/بعدسة-التاريخ/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/بعدستنا/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/خرائط/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/سياحة-بيئية/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/عين-النسر-تختار-لكم/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/كلمتكم/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/مائدة-الصيد/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/مجلة/index.html"]) {
+  display: none;
+}
+
+/* Empty category body: one short note, no beige shelf or broken row grid. */
+.post-list:not(:has(.post-row)):has(p.empty-note) {
+  display: block;
+  background: transparent;
+  border: none;
+  min-height: 0;
+}
+
+.post-list:not(:has(.post-row)):has(p.empty-note) > p.empty-note {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0.15rem 0 0.35rem;
+  margin: 0;
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.post-list:not(:has(.post-row)):has(p.empty-note) > p.empty-note ~ p.empty-note {
+  display: none;
+}
+
+.page-main:has(.post-list > p.empty-note):not(:has(.post-row)) .section-head .badge,
+.page-main:has(.post-list > p.empty-note):not(:has(.post-row)) .pagination {
+  display: none;
+}
+
 /* ========== Responsive: density first ========== */
 @media (max-width: 1040px) {
   .home-layout,
