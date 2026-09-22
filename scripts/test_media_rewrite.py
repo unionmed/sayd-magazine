@@ -174,16 +174,19 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
     root = Path(__file__).resolve().parents[1]
     lists = json.loads((root / "content" / "homepage.json").read_text(encoding="utf-8"))
     featured = lists["featured"]
-    assert featured[0].startswith("كابس-ومكشب")
-    assert featured[1].startswith("العد-التنازلي-لختام-موسم-الطائف")
-    assert featured[2].startswith("كيف-يحمي-المزارع")
+    assert featured[0].startswith("كيف-فقدت-مسارات-الهجرة")
+    assert featured[1].startswith("كابس-ومكشب")
+    assert featured[2].startswith("العد-التنازلي-لختام-موسم-الطائف")
+    assert featured[3].startswith("كيف-يحمي-المزارع")
     assert featured[4].startswith("صيد-تعود")
     home = (root / "docs" / "index.html").read_text(encoding="utf-8")
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
     latest = home[home.find("latest-col") :]
     for slug in featured:
         assert slug in mosaic, slug
-    assert mosaic.find("كابس-ومكشب") < mosaic.find("80-ألف-زائر")
+    assert "80-ألف-زائر" not in mosaic
+    assert "80-ألف-زائر" in latest.split("</ul>", 1)[0]
+    assert mosaic.find("كيف-فقدت-مسارات-الهجرة") < mosaic.find("كابس-ومكشب")
     assert "منظمات-دولية-ابادة" not in mosaic
     assert "من-ذاكرة-صيد" not in mosaic
     assert "من-ذاكرة-صيد" not in latest.split("</ul>", 1)[0]
@@ -194,8 +197,10 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
     assert "cabs-mecshap-autumn-birds-lebanon-khatib" in en_mosaic
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en_mosaic
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en_latest.split("</ul>", 1)[0]
-    assert en_mosaic.find("cabs-mecshap-autumn-birds-lebanon-khatib") < en_mosaic.find(
-        "suhail-2026-closes-decade-katara-80000-visitors"
+    assert "suhail-2026-closes-decade-katara-80000-visitors" not in en_mosaic
+    assert "suhail-2026-closes-decade-katara-80000-visitors" in en_latest.split("</ul>", 1)[0]
+    assert en_mosaic.find("how-migration-routes-lost-seven-birds-in-150-years") < en_mosaic.find(
+        "cabs-mecshap-autumn-birds-lebanon-khatib"
     )
 
 

@@ -162,13 +162,15 @@ def test_kaps_package_untouched() -> None:
         assert "feature-lead" in lead
         assert "feature-ecocide" not in lead
         assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
-        assert "mecshap-apu-cabs-baalbek-release.jpg" in lead
+        assert "slender-billed-curlew-last-photo.jpg" in lead
+        assert "mecshap-apu-cabs-baalbek-release.jpg" in side
         assert "farmers-storks-migrating-palestine.jpg" in side
+        assert "hero-closing-80k.jpg" not in mosaic
         assert "kaps-lead" not in lead
         assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
         assert "<h2>Featured stories</h2>" not in html
         assert "<h2>قصص مميزة</h2>" not in html
-        assert "MECSHAP" in lead
+        assert "MECSHAP" in side
         titles = " ".join(re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", mosaic, re.S))
         assert "مكشب" not in titles
         assert "كابس" not in titles
@@ -257,20 +259,20 @@ def test_latest_feed_has_thumbs() -> None:
         (
             "index.html",
             {
+                "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
                 "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
                 "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
                 "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
-                "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
                 "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
             },
         ),
         (
             "en/index.html",
             {
+                "how-migration-routes-lost-seven-birds-in-150-years",
                 "cabs-mecshap-autumn-birds-lebanon-khatib",
                 "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
                 "how-farmers-protect-migratory-birds-this-autumn",
-                "suhail-2026-closes-decade-katara-80000-visitors",
                 "sayd-returns-what-we-want-to-offer",
             },
         ),
@@ -550,6 +552,7 @@ def test_homepage_story_cards_are_unique() -> None:
                 if slug not in iv_slugs:
                     iv_slugs.append(slug)
             assert iv_slugs == [
+                "how-migration-routes-lost-seven-birds-in-150-years",
                 FARMERS_EN,
                 "george-taza-protect-fish-stocks-interview",
                 "leen-araji-equestrian-and-mental-math-champion",
@@ -567,7 +570,8 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in latest_ar
             interviews = html.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
             iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
-            assert iv_slugs and iv_slugs[0] == FARMERS_AR
+            assert iv_slugs and iv_slugs[0] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+            assert FARMERS_AR in iv_slugs
             assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in iv_slugs
 
 
@@ -616,6 +620,7 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     desks = {
         "Interviews &amp; Investigations": [
+            "how-migration-routes-lost-seven-birds-in-150-years",
             "how-farmers-protect-migratory-birds-this-autumn",
             "george-taza-protect-fish-stocks-interview",
             "leen-araji-equestrian-and-mental-math-champion",

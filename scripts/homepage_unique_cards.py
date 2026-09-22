@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """Lock AR/EN homepage story cards to Nayef’s Featured + Latest spine.
 
-Spine: CABS/MECSHAP large lead (Latin names, no caption) + Taif
-finale as the first side box + farmers, Suhail, Adonis → Memory strip →
-Latest thumbs (Saudi sixth season sits here, newest-first) →
+Spine: seven-extinct-birds investigation is the large lead (curlew cover,
+no long caption) → CABS/MECSHAP is the first small side box → Taif,
+farmers, Adonis. Suhail exhibition leaves the mosaic for Latest
+(chronological, 13 Sep, below Egypt). Memory strip → Latest thumbs →
 Interviews → Gear → TV → Photos → Miscellany.
 
 News / Hunting desks stay off home (archive only). Featured URLs
 never also appear in Latest. Latest items are small thumb + title +
 date. Adonis is one feature-box only and never in the ticker.
-Farmers may dual-place: mosaic side *and* Interviews.
+Farmers and the extinction investigation may dual-place: mosaic *and* Interviews.
 """
 
 from __future__ import annotations
@@ -37,6 +38,13 @@ MEMORY_EN = "memory-of-sayd-awareness-responsibility-2016-2024"
 MEMORY_AR = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024"
 CABS_AR = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
 CABS_EN = "cabs-mecshap-autumn-birds-lebanon-khatib"
+CURLEW_AR = "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+CURLEW_EN = "how-migration-routes-lost-seven-birds-in-150-years"
+CURLEW_TITLE_AR = "كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟"
+CURLEW_TITLE_EN = "How Did Migration Routes Lose Seven of Their Birds in 150 Years?"
+CURLEW_ALT_AR = "الكروان رفيع المنقار في بحيرة المرجة الزرقاء بالمغرب، 1995"
+CURLEW_ALT_EN = "Slender-billed Curlew at Merja Zerga, Morocco, 1995"
+CURLEW_IMG = "media/uploads/2026/09/slender-billed-curlew-last-photo.jpg"
 CABS_TITLE_AR = "CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي"
 CABS_TITLE_EN = "CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner"
 FARMERS_AR = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
@@ -52,12 +60,13 @@ TAIF_EN = "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
 POACHING_AR = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
 POACHING_EN = "illegal-hunting-destroys-hobby-nets-lime-night"
 
-FEATURED_AR = [CABS_AR, TAIF_AR, FARMERS_AR, SUHAIL_AR, ADONIS_AR]
-FEATURED_EN = [CABS_EN, TAIF_EN, FARMERS_EN, SUHAIL_EN, ADONIS_EN]
+FEATURED_AR = [CURLEW_AR, CABS_AR, TAIF_AR, FARMERS_AR, ADONIS_AR]
+FEATURED_EN = [CURLEW_EN, CABS_EN, TAIF_EN, FARMERS_EN, ADONIS_EN]
 FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 
 LATEST_AR = [
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
+    SUHAIL_AR,
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
     SAUDI_AR,
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
@@ -68,6 +77,7 @@ LATEST_AR = [
 ]
 LATEST_EN = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
+    SUHAIL_EN,
     "qatar-suhail-2026-80000-visitors-teaser",
     SAUDI_EN,
     "autumn-migration-how-world-protects-birds-regulates-hunting",
@@ -100,11 +110,12 @@ TICKER_OMIT_SLUGS = frozenset(
     {ADONIS_EN, ADONIS_AR, NEW_LOOK_EN, NEW_LOOK_AR, FARMERS_AR, FARMERS_EN}
 )
 # Mosaic + Interviews only. Never mosaic + Latest / leftover desks.
-MOSAIC_AND_INTERVIEWS = frozenset({FARMERS_AR, FARMERS_EN})
+MOSAIC_AND_INTERVIEWS = frozenset({FARMERS_AR, FARMERS_EN, CURLEW_AR, CURLEW_EN})
 
 # EN desk spine = AR. News + Hunting stay off home (covered by Featured + Latest).
 EN_DESK_SLUGS: dict[str, list[str]] = {
     "Interviews &amp; Investigations": [
+        CURLEW_EN,
         FARMERS_EN,
         "george-taza-protect-fish-stocks-interview",
         "leen-araji-equestrian-and-mental-math-champion",
@@ -131,6 +142,7 @@ EN_SAUDI_FILLERS = frozenset(
 
 AR_DESK_SLUGS: dict[str, list[str]] = {
     "مقابلات وتحقيقات": [
+        CURLEW_AR,
         FARMERS_AR,
         "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
         "لين-عراجي-بطلة-فروسية-وحساب",
@@ -144,6 +156,13 @@ AR_DESK_SLUGS: dict[str, list[str]] = {
 }
 
 AR_FALLBACK_CARDS: dict[str, str] = {
+    CURLEW_AR: f"""<article class="card overlay">
+  <a class="thumb" href="posts/{CURLEW_AR}/index.html"><img src="{CURLEW_IMG}" alt="{CURLEW_ALT_AR}" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">22 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
+    <h2><a href="posts/{CURLEW_AR}/index.html">{CURLEW_TITLE_AR}</a></h2>
+  </div>
+</article>""",
     "الصيّادة-السورية-أماني-الحمصي": """<article class="card overlay">
   <a class="thumb" href="posts/الصيّادة-السورية-أماني-الحمصي/index.html"><img src="media/uploads/2022/08/اماني-الحمصي-2.jpg" alt="الصيّادة السورية أماني الحمصي" loading="lazy"></a>
   <div class="body">
@@ -261,6 +280,14 @@ def _en_card(
 
 
 EN_FALLBACK_CARDS: dict[str, str] = {
+    CURLEW_EN: _en_card(
+        CURLEW_EN,
+        CURLEW_TITLE_EN,
+        "22 September 2026",
+        "Interviews &amp; Investigations",
+        CURLEW_IMG,
+        CURLEW_ALT_EN,
+    ),
     "egypt-new-hunting-rules-burullus-autumn-migration": _en_card(
         "egypt-new-hunting-rules-burullus-autumn-migration",
         "Egypt: New Hunting Rules and Field Action as Autumn Migration Begins",
@@ -600,7 +627,7 @@ def _latest_item_html(article: str, slug: str) -> str:
 
 
 def rebuild_featured_mosaic(html: str, cards: dict[str, str], *, en: bool) -> str:
-    """CABS/MECSHAP is the large lead; Taif, farmers, Suhail, and Adonis are side boxes."""
+    """Extinction investigation is the large lead; CABS is the first side box."""
     slugs = FEATURED_EN if en else FEATURED_AR
     fallbacks = EN_FALLBACK_CARDS if en else AR_FALLBACK_CARDS
     lead_slug = slugs[0]
@@ -724,7 +751,7 @@ def lock_homepage_html(
 ) -> str:
     """Drop omitted + duplicate content cards; first remaining card wins.
 
-    Farmers may appear twice: mosaic side, then Interviews. Nothing else.
+    Farmers and the extinction investigation may appear twice: mosaic, then Interviews.
     """
     if omit_home is None or omit_latest is None:
         loaded_home, loaded_latest = load_omit_sets()

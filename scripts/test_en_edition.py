@@ -24,6 +24,7 @@ SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يخ
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 
 HOME_TICKER_EN = [
+    "how-migration-routes-lost-seven-birds-in-150-years",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     CABS_EN,
@@ -36,7 +37,7 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 28
+    assert len(PAIRS) == 29
     drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
     assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():
@@ -148,8 +149,10 @@ def test_en_homepage_featured_2026() -> None:
     lead = mosaic.split("feature-side", 1)[0]
     side = mosaic.split("feature-side", 1)[1]
     assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
-    assert "mecshap-apu-cabs-baalbek-release.jpg" in lead
+    assert "slender-billed-curlew-last-photo.jpg" in lead
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in side
     assert "farmers-storks-migrating-palestine.jpg" in side
+    assert "suhail-2026-closes-decade-katara-80000-visitors" not in lead
     assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
     assert "placeholder-thumb" not in html
@@ -230,19 +233,23 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         assert "feature-ecocide" not in lead
         assert "kaps-lead" not in lead
         assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
-        assert "mecshap-apu-cabs-baalbek-release.jpg" in lead
+        assert "slender-billed-curlew-last-photo.jpg" in lead
+        assert "mecshap-apu-cabs-baalbek-release.jpg" in side
         assert "farmers-storks-migrating-palestine.jpg" in side
+        assert "hero-closing-80k.jpg" not in mosaic
         assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
         assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in mosaic
         if ar:
-            assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" in lead
+            assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" in side
             titles = " ".join(re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", mosaic, re.S))
             assert "مكشب" not in titles
             assert "كابس" not in titles
             assert "<h2>قصص مميزة</h2>" not in html
-            assert "CABS و MECSHAP لحماية طيور الخريف" in lead
+            assert "CABS و MECSHAP لحماية طيور الخريف" in side
+            assert "كيف فقدت مسارات الهجرة" in lead
         else:
-            assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in lead
+            assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
+            assert "How Did Migration Routes Lose Seven" in lead
             assert "<h2>Featured stories</h2>" not in html
         css_q = html.split("site.css", 1)[1][:80]
         assert (
@@ -294,12 +301,14 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
 
 
 def test_en_footer_has_official_mecshap_harvest_label() -> None:
-    """Footer uses Harvest; CABS lead alt stays the Nayef/PR #29 line."""
+    """Footer uses Harvest; CABS side-box alt stays the Nayef/PR #29 line."""
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     mosaic = home.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     lead = mosaic.split("feature-side", 1)[0]
-    assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in lead
+    side = mosaic.split("feature-side", 1)[1]
+    assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
     assert "Harvest" not in lead
+    assert "Harvest" not in side
     samples = [
         DOCS / "en" / "index.html",
         DOCS / "en" / "stories" / "index.html",

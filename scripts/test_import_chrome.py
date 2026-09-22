@@ -89,15 +89,17 @@ def test_source_has_no_regression_strings() -> None:
 def test_ticker_source_is_mars_list() -> None:
     items = load_ticker_items()
     assert items == list(DEFAULT_TICKER_ITEMS)
-    assert len(items) == 8
+    assert len(items) == 9
     slugs = [slug for slug, _ in items]
-    assert slugs[0].startswith("العد-التنازلي")
-    assert "كأس اليوم الوطني" in items[0][1]
-    assert "26 أيلول" in items[0][1]
-    assert slugs[1].startswith("مصر-قرار-جديد")
-    assert "200 طائر مهاجر" in items[1][1]
-    assert slugs[2].startswith("كابس")
-    assert "سهيل" in items[3][1]
+    assert slugs[0].startswith("كيف-فقدت-مسارات-الهجرة")
+    assert "الكروان رفيع المنقار" in items[0][1]
+    assert slugs[1].startswith("العد-التنازلي")
+    assert "كأس اليوم الوطني" in items[1][1]
+    assert "26 أيلول" in items[1][1]
+    assert slugs[2].startswith("مصر-قرار-جديد")
+    assert "200 طائر مهاجر" in items[2][1]
+    assert slugs[3].startswith("كابس")
+    assert "سهيل" in items[4][1]
     assert ADONIS not in slugs
     assert "sayd-returns-what-we-want-to-offer" not in slugs
 
@@ -246,9 +248,11 @@ def test_homepage_latest_matches_nayef() -> None:
     latest = _section(html, "latest-feed", "</ul>")
     ticker = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
 
-    assert "80-ألف-زائر-و158-جهة" in featured
-    assert "80-ألف-زائر-و158-جهة" not in latest
+    assert "80-ألف-زائر-و158-جهة" not in featured
+    assert "80-ألف-زائر-و158-جهة" in latest
     assert "80-ألف-زائر-و158-جهة" not in ticker
+    assert "كيف-فقدت-مسارات-الهجرة" in featured
+    assert "كيف-فقدت-مسارات-الهجرة" in ticker
     assert "البجع-الأبيض" not in latest
     assert "البجع-الأبيض" not in ticker
     assert "البجع-الأبيض" not in featured
@@ -275,19 +279,19 @@ def test_homepage_latest_matches_nayef() -> None:
     assert MEMORY not in featured
     assert MEMORY not in latest
     assert featured.find(KAPS) < featured.find(FARMERS)
-    assert featured.find(KAPS) < featured.find(SUHAIL_80K)
+    assert latest.find(SUHAIL_80K) < latest.find(QATAR_80K)
     assert lists["featured"] == [
+        "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
         "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
         FARMERS,
-        "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
         ADONIS,
     ]
 
     latest_slugs = re.findall(r'href="posts/([^/"]+)/index.html"', latest)
     expected_latest = [s for s in lists["latest"] if s != MEMORY]
     assert latest_slugs == expected_latest
-    assert "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع" not in lists["latest"]
+    assert "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع" in lists["latest"]
     assert "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" in lists["omit"]
 
 
@@ -476,11 +480,12 @@ def test_featured_mosaic_matches_homepage_json() -> None:
     assert slugs == list(DEFAULT_FEATURED_SLUGS)
     assert FARMERS in slugs
     assert MEMORY not in slugs
-    assert slugs.index(KAPS) < slugs.index(SUHAIL_80K)
-    # CABS/MECSHAP is the large lead; Taif is the first side box. Farmers stays second.
-    assert slugs[0] == KAPS
-    assert slugs[1] == "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
-    assert slugs[2] == FARMERS
+    # Extinction investigation is the large lead; CABS is the first side box.
+    assert slugs[0] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+    assert slugs[1] == KAPS
+    assert slugs[2] == "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
+    assert slugs[3] == FARMERS
+    assert SUHAIL_80K not in slugs
     assert "<h2>قصص مميزة</h2>" not in html
     assert "mecshap-apu-cabs-baalbek-release.jpg" in html
     mosaic = _section(html, "featured-mosaic", "latest-feed")
@@ -492,7 +497,8 @@ def test_featured_mosaic_matches_homepage_json() -> None:
 def test_featured_pool_never_drops_for_missing_image() -> None:
     """Importer keeps every homepage.json slug even with no thumb / no WXR row."""
     ordered = featured_slugs()
-    assert ordered[0] == KAPS
+    assert ordered[0] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+    assert KAPS in ordered
     assert FARMERS in ordered
     assert MEMORY not in ordered
     posts = [
