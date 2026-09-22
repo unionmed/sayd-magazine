@@ -48,7 +48,7 @@ SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 SAUDI_AR = "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
 SAUDI_EN = "saudi-sixth-hunting-season-2026-2027-rules"
 TAIF_AR = "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
-TAIF_EN = "taif-season-finale-king-faisal-national-day-cup"
+TAIF_EN = "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
 POACHING_AR = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
 POACHING_EN = "illegal-hunting-destroys-hobby-nets-lime-night"
 
@@ -415,7 +415,7 @@ EN_FALLBACK_CARDS: dict[str, str] = {
     ),
     TAIF_EN: _en_card(
         TAIF_EN,
-        "Countdown to the Taif Season Finale… Gulf Eyes on the King Faisal and National Day Cups at Al-Hawiyah",
+        "Countdown to the Close of the Taif Season… Gulf Eyes on the King Faisal and National Day Cups at Al-Hawiyah",
         "22 September 2026",
         "Hunting &amp; Equestrian",
         "media/uploads/2026/09/taif-racing-hawiyah.jpg",

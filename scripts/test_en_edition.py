@@ -24,7 +24,7 @@ SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يخ
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 
 HOME_TICKER_EN = [
-    "taif-season-finale-king-faisal-national-day-cup",
+    "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     CABS_EN,
     "qatar-suhail-2026-80000-visitors-teaser",

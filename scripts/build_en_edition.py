@@ -53,14 +53,14 @@ TAGLINE_AR = "مجلة أسياد الطبيعة في البر والبحر وا
 # Live homepage / ticker 2026 set (Nayef editorial list).
 HOME_FEATURED = [
     "cabs-mecshap-autumn-birds-lebanon-khatib",
-    "taif-season-finale-king-faisal-national-day-cup",
+    "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "how-farmers-protect-migratory-birds-this-autumn",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "sayd-returns-what-we-want-to-offer",
 ]
 # Mosaic side stack: Taif first, then farmers / Suhail / Adonis.
 HOME_MOSAIC_SIDE = [
-    "taif-season-finale-king-faisal-national-day-cup",
+    "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "how-farmers-protect-migratory-birds-this-autumn",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "sayd-returns-what-we-want-to-offer",
@@ -80,11 +80,11 @@ HOME_LATEST = [
     "illegal-hunting-destroys-hobby-nets-lime-night",
 ]
 TICKER_TITLES_EN = {
-    "taif-season-finale-king-faisal-national-day-cup": "Taif | Saturday 26 September: the evening finale, the National Day Cup for thoroughbreds at Al-Hawiyah",
+    "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah": "Taif | Saturday evening closes the season with the National Day Cup for Thoroughbreds at Al-Hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration": "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus",
 }
 HOME_TICKER = [
-    "taif-season-finale-king-faisal-national-day-cup",
+    "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
     "qatar-suhail-2026-80000-visitors-teaser",
@@ -95,11 +95,11 @@ HOME_TICKER = [
 ]
 
 META: dict[str, dict] = {
-    "taif-season-finale-king-faisal-national-day-cup": {
+    "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah": {
         "date": "22 September 2026",
         "date_sort": "2026-09-22",
         "category": "Hunting & Equestrian",
-        "author": "Taif – Sayd Magazine",
+        "author": "Taif — Sayd Magazine",
         "image": "media/uploads/2026/09/taif-racing-hawiyah.jpg",
         "image_alt": "A jockey and grey horse at Al-Hawiyah during the Taif racing season, 2026",
     },

@@ -20,7 +20,7 @@ IMG_SRC = Path(
 IMG_REL = "media/uploads/2026/09/taif-racing-hawiyah.jpg"
 
 AR_SLUG = "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
-EN_SLUG = "taif-season-finale-king-faisal-national-day-cup"
+EN_SLUG = "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
 SAUDI_AR = "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
 SAUDI_EN = "saudi-sixth-hunting-season-2026-2027-rules"
 FARMERS_AR = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
@@ -33,15 +33,15 @@ AR_TITLE = (
     "العد التنازلي لختام موسم الطائف.. ترقّب خليجي لكأسي «الملك فيصل» و«اليوم الوطني» في الحَوِيّة"
 )
 EN_TITLE = (
-    "Countdown to the Taif Season Finale… Gulf Eyes on the King Faisal "
+    "Countdown to the Close of the Taif Season… Gulf Eyes on the King Faisal "
     "and National Day Cups at Al-Hawiyah"
 )
 AR_TICKER = (
     "الطائف | السبت 26 أيلول: أمسية الختام بـ«كأس اليوم الوطني» للخيول المهجّنة على مضمار الحَوِيّة"
 )
 EN_TICKER = (
-    "Taif | Saturday 26 September: the evening finale, the National Day Cup "
-    "for thoroughbreds at Al-Hawiyah"
+    "Taif | Saturday evening closes the season with the National Day Cup "
+    "for Thoroughbreds at Al-Hawiyah"
 )
 AR_ALT = "خيّال وجواد أشهب على مضمار الحَوِيّة — ختام موسم سباقات الطائف 2026"
 EN_ALT = "A jockey and grey horse at Al-Hawiyah during the Taif racing season, 2026"
@@ -50,8 +50,9 @@ AR_EXCERPT = (
     "لانطلاق الأسبوع العاشر والختامي من موسم سباقات الطائف 2026 على مضمار ميدان الملك خالد في الحَوِيّة."
 )
 EN_EXCERPT = (
-    "Saudi and Gulf racing has entered its decisive stretch, as the countdown begins "
-    "to the tenth and final week of the Taif 2026 season at King Khalid Equestrian Field in Al-Hawiyah."
+    "Saudi and Gulf equestrian circles have entered the decisive stretch as the countdown begins "
+    "to the tenth and final week of the Taif 2026 racing season, which draws the curtain on its "
+    "summer programme at the end of this week on the King Khalid Racecourse in Al-Hawiyah."
 )
 
 AR_TICKER_REST = [
@@ -442,18 +443,18 @@ def write_en_article() -> None:
     <header class="article-header">
       <div><span class="badge">Hunting &amp; Equestrian</span></div>
       <h1>{EN_TITLE}</h1>
-      <div class="article-meta"><span class="meta-item">22 September 2026</span><span class="meta-item">Taif – Sayd Magazine</span></div>
+      <div class="article-meta"><span class="meta-item">22 September 2026</span><span class="meta-item">Taif — Sayd Magazine</span></div>
       <p class="lang-twin"><a href="../../../posts/{AR_SLUG}/index.html" hreflang="ar" lang="ar">اقرأ بالعربية</a></p>
     </header>
     
     <article class="article-content">
       <figure><img src="../../../{IMG_REL}" alt="{EN_ALT}" loading="lazy"><figcaption>{EN_ALT}</figcaption></figure>
-<p>Saudi and Gulf racing has entered its decisive stretch. The countdown is underway to the tenth and final week of the Taif 2026 racing season, which brings the summer campaign to a close this weekend at King Khalid Equestrian Field in Al-Hawiyah.</p>
-<p>The anticipation follows a decisive round at the end of week nine, when the Jockey Club distributed purses of nearly 2.8 million riyals and crowned five champions in the speed races and the club’s honorary contributions — heats that showed the participating stables and riders at the peak of their form.</p>
-<p>Attention now turns to the two richest closing evenings of the summer season:</p>
-<p><strong>Friday evening (25 September 2026):</strong> the night of the major cups, led by the King Faisal Cup for purebred Arabians, classified internationally as a Group 3, alongside the Prince Abdullah Al-Faisal Cup. Large purses bring together the leading speed and middle-distance Arabians.</p>
-<p><strong>Saturday evening (26 September 2026):</strong> the season’s closing note, the National Day Cup for purebred thoroughbreds, with national and heritage celebrations around the crowning of the finale’s champion.</p>
-<p>Al-Hawiyah is drawing a notable turnout of owners and racing followers from across the Gulf this week, for the contest over the final metres that confirms Taif as the summer capital of purebred Arabian racing and speed sports.</p>
+<p>Saudi and Gulf equestrian circles have entered the decisive stretch as the countdown begins to the tenth and final week of the Taif 2026 racing season, which draws the curtain on its summer programme at the end of this week on the King Khalid Racecourse in Al-Hawiyah.</p>
+<p>The anticipation follows a pivotal round at the close of week nine, when the Jockey Club of Saudi Arabia distributed prize money of nearly 2.8 million riyals and crowned five champions across speed titles and the Club’s honorary contributions — races that underlined peak form among the participating stables and riders.</p>
+<p>Eyes now turn to the two richest closing evenings of the summer season:</p>
+<p><strong>Friday evening (25 September 2026):</strong> the night of the major cups, led by the internationally rated Group 3 King Faisal Cup for Purebred Arabian horses, alongside the Prince Abdullah Al-Faisal Cup, with substantial purses drawing the elite of Arabian speed and middle-distance runners.</p>
+<p><strong>Saturday evening (26 September 2026):</strong> the season’s finale with the National Day Cup for Thoroughbreds, framed by national and heritage celebrations as the closing champion is crowned.</p>
+<p>Al-Hawiyah is seeing strong turnout this week from horse owners and racing fans across the Gulf, following the final metres of a contest that cements Taif’s place as the summer capital of purebred Arabian horsemanship and speed sports.</p>
     </article>
     <section class="related-block">
       <div class="section-head"><h2>Related</h2></div>

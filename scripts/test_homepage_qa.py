@@ -268,7 +268,7 @@ def test_latest_feed_has_thumbs() -> None:
             "en/index.html",
             {
                 "cabs-mecshap-autumn-birds-lebanon-khatib",
-                "taif-season-finale-king-faisal-national-day-cup",
+                "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
                 "how-farmers-protect-migratory-birds-this-autumn",
                 "suhail-2026-closes-decade-katara-80000-visitors",
                 "sayd-returns-what-we-want-to-offer",
