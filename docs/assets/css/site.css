@@ -1400,8 +1400,18 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 0.45rem 1.25rem;
+}
+
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.28rem;
+  flex: 1 1 18rem;
+  min-width: min(100%, 16rem);
+  max-width: 42rem;
 }
 
 .footer-copy {
@@ -1417,6 +1427,23 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 
 .footer-partner:hover {
   color: var(--gold-soft);
+}
+
+.footer-bottom .site-license {
+  flex: none;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #e4dcc4;
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.footer-bottom .site-license [dir="ltr"] {
+  unicode-bidi: isolate;
 }
 
 .placeholder-thumb {
@@ -1583,6 +1610,11 @@ html[dir="ltr"] .brand .tagline {
   max-width: 11.75rem;
   line-height: 1.28;
   align-self: center;
+}
+html[dir="ltr"] .footer-bottom .site-license {
+  font-family: var(--font-en);
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 html[dir="ltr"] .footer-wordmark {
   font-family: var(--font-en);

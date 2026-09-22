@@ -30,7 +30,11 @@ MECSHAP_LABEL_EN = import_wxr.MECSHAP_LABEL_EN
 chrome_ticker = import_wxr.chrome_ticker
 layout = import_wxr.layout
 footer_bottom_inner_html = import_wxr.footer_bottom_inner_html
+license_line_html = import_wxr.license_line_html
+LICENSE_TEXT_AR = import_wxr.LICENSE_TEXT_AR
+LICENSE_TEXT_EN = import_wxr.LICENSE_TEXT_EN
 apply_footer_bottom = import_wxr.apply_footer_bottom
+strip_header_license = import_wxr.strip_header_license
 load_ticker_items = import_wxr.load_ticker_items
 load_homepage_lists = import_wxr.load_homepage_lists
 prefer_recent = import_wxr.prefer_recent
@@ -172,6 +176,12 @@ def test_shared_footer_helper_is_locale_aware() -> None:
     assert "Harvest" in en
     assert "مكشب" not in ar and "مكشب" not in en
     assert "كابس" not in ar and "كابس" not in en
+    assert LICENSE_TEXT_EN in en
+    assert "official notice No. 157" in en
+    assert "Ilm wa Khabar" not in en
+    assert re.sub(r"<[^>]+>", "", license_line_html("ar")) == LICENSE_TEXT_AR
+    assert 'dir="ltr"' in license_line_html("ar")
+    assert "<p class=\"site-license\">" in ar and "<p class=\"site-license\">" in en
     once = apply_footer_bottom(
         '<html lang="ar"><div class="container footer-bottom-inner">'
         "<div>© مجلة صيد · Sayd Magazine</div></div>",
@@ -180,6 +190,27 @@ def test_shared_footer_helper_is_locale_aware() -> None:
     twice = apply_footer_bottom(once, "ar")
     assert once == twice
     assert once.count(MECSHAP_URL) == 1
+    assert once.count("site-license") == 1
+    home = layout("الرئيسية", "<main></main>", is_home=True)
+    home_header = home.split("</header>", 1)[0]
+    assert "header-home" not in home_header
+    assert "site-license" not in home_header
+    assert "المجلس الوطني للاعلام" in home.split('class="footer-bottom"', 1)[1]
+    inner = layout("فريق العمل", "<main></main>", depth=2)
+    inner_header = inner.split("</header>", 1)[0]
+    assert "site-license" not in inner_header
+    assert "المجلس الوطني للاعلام" in inner.split('class="footer-bottom"', 1)[1]
+    sample = (
+        '<header class="site-header"><div class="container header-inner header-home">'
+        '<a class="brand" href="index.html"></a>'
+        '<p class="site-license">مرخصة من المجلس الوطني للاعلام</p>'
+        "</div></header><footer><p class=\"site-license\">footer</p></footer>"
+    )
+    stripped = strip_header_license(sample)
+    assert "header-home" not in stripped
+    assert stripped.count("site-license") == 1
+    assert ">footer</p>" in stripped
+    assert strip_header_license(stripped) == stripped
 
 
 def test_docs_already_share_clean_chrome() -> None:
@@ -217,6 +248,8 @@ def test_every_docs_page_footer_has_mecshap() -> None:
     missing: list[tuple[str, str]] = []
     for path in (ROOT / "docs").rglob("*.html"):
         html = path.read_text(encoding="utf-8")
+        if "<header" not in html:
+            continue
         if 'class="footer-bottom"' not in html:
             missing.append(("no-footer", str(path.relative_to(ROOT))))
             continue
@@ -227,11 +260,42 @@ def test_every_docs_page_footer_has_mecshap() -> None:
         if "/en/" in path.as_posix():
             if MECSHAP_LABEL_EN not in footer:
                 missing.append(("no-en-label", str(path.relative_to(ROOT))))
-        elif MECSHAP_LABEL_AR not in footer:
+            if "official notice No. 157" not in footer:
+                missing.append(("no-en-license", str(path.relative_to(ROOT))))
+            if "Ilm wa Khabar" in footer:
+                missing.append(("ilm-wa-khabar", str(path.relative_to(ROOT))))
+        elif "المجلس الوطني للاعلام" not in footer:
+            missing.append(("no-ar-license", str(path.relative_to(ROOT))))
+        if "/en/" not in path.as_posix() and MECSHAP_LABEL_AR not in footer:
             missing.append(("no-ar-label", str(path.relative_to(ROOT))))
         if "مكشب" in footer or "كابس" in footer:
             missing.append(("arabic-org-name", str(path.relative_to(ROOT))))
     assert missing == []
+
+
+def test_license_is_footer_only() -> None:
+    """Nayef: no masthead license. Footer keeps the NMC line on AR and EN."""
+    ar = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+    en = (ROOT / "docs" / "en" / "index.html").read_text(encoding="utf-8")
+    for html in (ar, en):
+        header = html.split("</header>", 1)[0]
+        assert "site-license" not in header
+        assert "header-home" not in header
+    assert "المجلس الوطني للاعلام" in ar.split('class="footer-bottom"', 1)[1]
+    assert "official notice No. 157" in en.split('class="footer-bottom"', 1)[1]
+    assert "Ilm wa Khabar" not in en
+    assert LICENSE_TEXT_EN in en
+    for path in (ROOT / "docs").rglob("*.html"):
+        html = path.read_text(encoding="utf-8")
+        if "<header" not in html:
+            continue
+        header = html.split("</header>", 1)[0]
+        assert "site-license" not in header, path
+    memory = (ROOT / "docs" / "memory" / "index.html").read_text(encoding="utf-8")
+    assert "المجلس الوطني للاعلام" in memory.split('class="footer-bottom"', 1)[1]
+    en_memory = (ROOT / "docs" / "en" / "memory" / "index.html").read_text(encoding="utf-8")
+    assert "official notice No. 157" in en_memory.split('class="footer-bottom"', 1)[1]
+    assert "من ذاكرة صيد" in ar
 
 
 def _section(html: str, start: str, end: str) -> str:
@@ -570,6 +634,7 @@ if __name__ == "__main__":
     test_shared_footer_helper_is_locale_aware()
     test_docs_already_share_clean_chrome()
     test_every_docs_page_footer_has_mecshap()
+    test_license_is_footer_only()
     test_homepage_latest_matches_nayef()
     test_category_sort_is_datetime_not_title()
     test_nayef_rule_adds_thematic_sayd_for_home_ticker()

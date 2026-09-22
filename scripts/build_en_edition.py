@@ -39,7 +39,7 @@ FONTS = (
     "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
     "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
-CSS_CACHE = "20260922-memory-compact-b"
+CSS_CACHE = "20260922-nmc-footer"
 NO_THUMB_SLUGS = {
     "autumn-migration-field-action-protect-flyways-lebanon",
 }
