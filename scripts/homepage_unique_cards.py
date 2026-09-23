@@ -66,10 +66,11 @@ FEATURED_AR = [CURLEW_AR, CABS_AR, TAIF_AR, FARMERS_AR, ADONIS_AR]
 FEATURED_EN = [CURLEW_EN, CABS_EN, TAIF_EN, FARMERS_EN, ADONIS_EN]
 FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 
+# Narrower Suhail teaser («قطر | أكثر من 80 ألف») is the same close as
+# SUHAIL_AR / SUHAIL_EN. Keep the wider listing only. Article pages stay.
 LATEST_AR = [
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
     SUHAIL_AR,
-    "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
     SAUDI_AR,
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه",
@@ -80,7 +81,6 @@ LATEST_AR = [
 LATEST_EN = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     SUHAIL_EN,
-    "qatar-suhail-2026-80000-visitors-teaser",
     SAUDI_EN,
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     "regulating-hunting-protects-wildlife-bans-worsen",

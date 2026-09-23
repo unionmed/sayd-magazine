@@ -326,7 +326,8 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "صيد-تعود-بحلة-جديدة" not in html
     assert ADONIS not in ticker
     assert "السعودية-تشدد-على-ضوابط" not in html
-    assert "قطر-أكثر-من-80-ألف-زائر" in latest
+    assert "قطر-أكثر-من-80-ألف-زائر" not in latest
+    assert latest.count(SUHAIL_80K) == 1
     assert "قطر-أكثر-من-80-ألف-زائر" in ticker
     assert FARMERS in featured
     assert FARMERS not in latest
@@ -343,7 +344,7 @@ def test_homepage_latest_matches_nayef() -> None:
     assert MEMORY not in featured
     assert MEMORY not in latest
     assert featured.find(KAPS) < featured.find(FARMERS)
-    assert latest.find(SUHAIL_80K) < latest.find(QATAR_80K)
+    assert QATAR_80K not in latest
     assert lists["featured"] == [
         "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
         "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",

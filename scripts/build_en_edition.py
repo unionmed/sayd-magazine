@@ -86,7 +86,6 @@ HOME_OMIT_FROM_HOME = {
 HOME_LATEST = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "suhail-2026-closes-decade-katara-80000-visitors",
-    "qatar-suhail-2026-80000-visitors-teaser",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     "regulating-hunting-protects-wildlife-bans-worsen",
