@@ -546,6 +546,86 @@ def test_extinct_birds_captions_are_single_locale() -> None:
         assert any(c.startswith(start) for c in en_caps[1:]), start
 
 
+def _stories_listing_pages() -> list[Path]:
+    """EN stories grid, plus the Arabic twin or the Arabic category lists."""
+    pages = sorted((DOCS / "en" / "stories").rglob("*.html"))
+    ar_root = DOCS / "stories"
+    if ar_root.is_dir():
+        pages.extend(sorted(ar_root.rglob("*.html")))
+    else:
+        pages.extend(sorted((DOCS / "category").rglob("*.html")))
+    return pages
+
+
+def test_stories_listings_keep_dates_without_category_pills() -> None:
+    """Stories listing cards keep the date and drop every category pill.
+
+    The section heading stays. An article page keeps its own category badge.
+    """
+    pages = _stories_listing_pages()
+    en_pages = [p for p in pages if "en/stories" in p.as_posix()]
+    ar_pages = [p for p in pages if "en/stories" not in p.as_posix()]
+    assert en_pages, "English stories listing is missing"
+    assert ar_pages, "Arabic stories listing is missing"
+    for path in pages:
+        html = path.read_text(encoding="utf-8")
+        assert "cat-pill" not in html, path
+    stories = (DOCS / "en" / "stories" / "index.html").read_text(encoding="utf-8")
+    assert "<h2>September 2026 English stories</h2>" in stories
+    cards = re.findall(r'<article class="card[^"]*">(.*?)</article>', stories, re.S)
+    assert len(cards) >= 10
+    for card in cards:
+        meta = re.search(r'<div class="meta">([^<]+)</div>', card)
+        assert meta, card[:200]
+        assert re.search(r"20\d{2}", meta.group(1)), meta.group(0)
+    gear = (DOCS / "category" / "عتاد-وسلاح-الصيد" / "index.html").read_text(encoding="utf-8")
+    assert "<h2>" in gear
+    rows = re.findall(r'<article class="post-row">(.*?)</article>', gear, re.S)
+    assert rows
+    for row in rows:
+        meta = re.search(r'<div class="meta">([^<]+)</div>', row)
+        assert meta and re.search(r"20\d{2}", meta.group(1)), row[:180]
+    article = (
+        DOCS
+        / "en"
+        / "posts"
+        / "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
+        / "index.html"
+    ).read_text(encoding="utf-8")
+    assert 'class="badge"' in article
+
+
+def test_stories_listing_builders_do_not_restamp_category_pills() -> None:
+    """A rebuild of the stories grid, and the publish prepends, stay date-only."""
+    import build_en_edition
+
+    stamped = (
+        '<article class="card overlay"><div class="body">'
+        '<div class="meta">23 September 2026'
+        '<span class="cat-pill">Gear &amp; Arms</span></div>'
+        "<h3>Field balance</h3></div></article>"
+    )
+    clean = build_en_edition.strip_story_cat_pills(stamped)
+    assert "cat-pill" not in clean
+    assert "23 September 2026" in clean
+    assert "<h3>Field balance</h3>" in clean
+    fn_src = Path(build_en_edition.__file__).read_text(encoding="utf-8")
+    start = fn_src.index("def write_stories")
+    end = fn_src.index("\nTOP_EN_RE", start)
+    assert '<span class="cat-pill">' not in fn_src[start:end]
+    for name in (
+        "publish_birdlife_flyways.py",
+        "publish_seven_extinct_birds.py",
+        "publish_taif_racing_finale.py",
+        "publish_beretta_benelli_field.py",
+    ):
+        text = (ROOT / "scripts" / name).read_text(encoding="utf-8")
+        chunk = text.split('DOCS / "en" / "stories"', 1)[1]
+        chunk = chunk.split("stories.write_text", 1)[0]
+        assert '<span class="cat-pill">' not in chunk, name
+        assert 'class="meta">' in chunk, name
+
+
 def test_en_stories_listing_drops_near_duplicate_cards() -> None:
     """One Suhail, one Saudi rules card, one Sayd Returns card; unique images.
 
@@ -699,5 +779,7 @@ if __name__ == "__main__":
     test_empty_2022_category_chrome_is_css_only()
     test_every_en_page_is_ltr_plex()
     test_extinct_birds_captions_are_single_locale()
+    test_stories_listings_keep_dates_without_category_pills()
+    test_stories_listing_builders_do_not_restamp_category_pills()
     test_en_stories_listing_drops_near_duplicate_cards()
     print("test_en_edition: ok")
