@@ -86,9 +86,6 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         # Miscellany desk is off the homepage. Articles stay in /en/posts.
         "european-bee-eater",
         "barn-owl",
-        # Gear comparison stays on the عتاد listing. Pre-#74 homepage
-        # does not include it.
-        "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:

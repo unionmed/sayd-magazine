@@ -716,7 +716,10 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
             "george-taza-protect-fish-stocks-interview",
             "leen-araji-equestrian-and-mental-math-champion",
         ],
-        "Gear &amp; Arms": ["air-rifles"],
+        "Gear &amp; Arms": [
+            "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
+            "air-rifles",
+        ],
         "Sayd TV": ["video-saud-al-babtain-maqnas-afghanistan"],
         "Photos": [
             "suhail-2026-in-photos-falcons-visitors",
