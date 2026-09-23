@@ -833,21 +833,27 @@ def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
     assert "feed-thumb" in latest
 
 
-def test_homepage_footer_does_not_repeat_sidebar_lists() -> None:
-    """Categories and pages appear in the homepage sidebar once, not again in the green footer."""
-    needle = "body:has(.home-layout) .site-footer .footer-col:nth-child(n + 2)"
+def test_homepage_sidebar_hides_when_stacked() -> None:
+    """Footer keeps categories and pages. The homepage sidebar hides once it would stack on top."""
     for path in (
         ROOT / "assets" / "css" / "site.css",
         DOCS / "assets" / "css" / "site.css",
     ):
         css = path.read_text(encoding="utf-8")
-        assert needle in css
-        assert "body:has(.home-layout) .site-footer .footer-grid" in css
-    for rel in ("index.html", "en/index.html"):
+        assert "body:has(.home-layout) .site-footer .footer-col" not in css
+        stacked = css.split("@media (max-width: 1040px)", 1)[1].split("@media", 1)[0]
+        assert ".home-layout > .sidebar" in stacked
+        assert "display: none" in stacked
+    for rel, cat_heading, page_heading in (
+        ("index.html", ">التصنيفات<", ">صفحات<"),
+        ("en/index.html", ">Sections<", ">Pages<"),
+    ):
         html = (DOCS / rel).read_text(encoding="utf-8")
-        assert 'class="home-layout"' in html
-        assert 'class="sidebar"' in html
-        assert 'class="site-footer"' in html
+        sidebar = html.split('class="sidebar"', 1)[1].split("</aside>", 1)[0]
+        footer = html.split('class="site-footer"', 1)[1].split("</footer>", 1)[0]
+        assert cat_heading in sidebar and page_heading in sidebar
+        assert cat_heading in footer or ">In this edition<" in footer
+        assert 'class="footer-col"' in footer
         assert "?v=20260923-footer-once" in html
 
 
@@ -874,5 +880,5 @@ if __name__ == "__main__":
     test_en_home_mirrors_ar_desk_cards()
     test_nayef_unlinked_chrome_and_poetry_rename()
     test_adonis_off_ticker_and_empty_en_miscellany_hidden()
-    test_homepage_footer_does_not_repeat_sidebar_lists()
+    test_homepage_sidebar_hides_when_stacked()
     print("test_homepage_qa: ok")

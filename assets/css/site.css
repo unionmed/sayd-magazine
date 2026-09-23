@@ -1385,15 +1385,6 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   unicode-bidi: isolate;
 }
 
-/* Homepage sidebar is the one التصنيفات / صفحات chrome (EN: Sections / Pages).
-   The green footer repeated the same links underneath it. */
-body:has(.home-layout) .site-footer .footer-grid {
-  grid-template-columns: minmax(0, 40rem);
-}
-body:has(.home-layout) .site-footer .footer-col:nth-child(n + 2) {
-  display: none;
-}
-
 .placeholder-thumb {
   width: 100%;
   height: 100%;
@@ -1513,6 +1504,9 @@ body:has(.home-layout) .site-footer .footer-col:nth-child(n + 2) {
 @media (max-width: 1040px) {
   .home-layout,
   .article-layout { grid-template-columns: 1fr; }
+  /* Homepage sidebar is only التصنيفات / صفحات (EN: Sections / Pages).
+     Once the column stacks, it sits on top of the same lists in the footer. */
+  .home-layout > .sidebar { display: none; }
   .grid-4,
   .grid-4:has(> :nth-child(4)) {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
