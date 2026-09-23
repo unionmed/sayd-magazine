@@ -1,18 +1,21 @@
 #!/usr/bin/env python3
-"""Lock AR/EN homepage story cards to Nayef’s Featured + Latest spine.
+"""Lock AR/EN homepage story cards to the Featured + Latest spine.
 
-Spine: seven-extinct-birds investigation is the large lead (curlew cover,
-no long caption) → CABS/MECSHAP stays the first small side box. Every
-other side box, Latest, and dated desk grid is newest publish date
-first. Suhail exhibition leaves the mosaic for Latest (13 Sep, below
-Egypt). Memory strip → Latest thumbs → Interviews → Gear → TV →
-Photos. Miscellany stays off the homepage.
+Spine: the BirdLife flyways editorial is the large lead (wetland flock
+cover). Side boxes are newest publish date first: the seven-birds
+investigation, Taif, farmers, then CABS. Latest and dated desk grids
+are newest-first too. Adonis leaves the mosaic for Latest (8 Sep, after
+the other 8 Sep story). Memory strip → Latest thumbs → Interviews →
+Gear → TV → Photos. Miscellany stays off the homepage.
 
 News / Hunting desks stay off home (archive only). Featured URLs
 never also appear in Latest. Latest items are small thumb + title +
-date. Adonis is one feature-box only and never in the ticker.
+date. Adonis is in Latest only and never in the ticker.
 Farmers may dual-place: mosaic and Interviews. The feature-lead
-investigation stays on the mosaic only (one surface for the lead).
+stays on the mosaic only (one surface for the lead).
+Awsaj leads the Interviews grid (real door «الصياد في الطبيعة») and
+stays off the mosaic and the ticker. The oldest Interviews filler
+(Leen Araji, October 2022) is dropped so the grid stays at three cards.
 """
 
 from __future__ import annotations
@@ -40,6 +43,13 @@ MEMORY_EN = "memory-of-sayd-awareness-responsibility-2016-2024"
 MEMORY_AR = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024"
 CABS_AR = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
 CABS_EN = "cabs-mecshap-autumn-birds-lebanon-khatib"
+BIRDLIFE_AR = "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
+BIRDLIFE_EN = "skies-losing-balance-birdlife-flyways-report"
+BIRDLIFE_TITLE_AR = "سماء الكوكب تفقد توازنها: تقرير «بيرد لايف» يدق ناقوس الخطر حول مسارات الهجرة العالمية"
+BIRDLIFE_TITLE_EN = "The planet’s skies are losing their balance: BirdLife sounds the alarm on global flyways"
+BIRDLIFE_ALT_AR = "سرب كبير من الطيور المهاجرة يعبر أرضاً رطبة"
+BIRDLIFE_ALT_EN = "A large flock of migratory birds crossing a wetland"
+BIRDLIFE_IMG = "media/uploads/2026/09/birdlife-flyways-photo.jpg"
 CURLEW_AR = "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
 CURLEW_EN = "how-migration-routes-lost-seven-birds-in-150-years"
 CURLEW_TITLE_AR = "كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟"
@@ -53,6 +63,13 @@ FARMERS_AR = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذ�
 FARMERS_EN = "how-farmers-protect-migratory-birds-this-autumn"
 FARMERS_TITLE_AR = "كيف يحمي المزارع الطيور المهاجرة هذا الخريف؟"
 FARMERS_TITLE_EN = "How Can Farmers Protect Migratory Birds This Autumn?"
+AWSAJ_AR = "شجيرة-العوسج-حين-تقرأ-الأرض"
+AWSAJ_EN = "the-awsaj-thornbush-reading-the-land"
+AWSAJ_TITLE_AR = "شجيرة العوسج: حين تقرأ الأرض وتعرف صيدلية البرّ في ظلّ الشوك"
+AWSAJ_TITLE_EN = "The awsaj thornbush: reading the land, and the wild’s old pharmacy under the spines"
+AWSAJ_ALT_AR = "العوسج (Lycium shawii)، شجيرة كثيفة خضراء في النقب"
+AWSAJ_ALT_EN = "Dense green Arabian boxthorn (Lycium shawii) in the Negev"
+AWSAJ_IMG = "media/uploads/2026/09/01-awsaj-dense-shrub-negev.jpg"
 SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 SAUDI_AR = "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
@@ -62,8 +79,8 @@ TAIF_EN = "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
 POACHING_AR = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
 POACHING_EN = "illegal-hunting-destroys-hobby-nets-lime-night"
 
-FEATURED_AR = [CURLEW_AR, CABS_AR, TAIF_AR, FARMERS_AR, ADONIS_AR]
-FEATURED_EN = [CURLEW_EN, CABS_EN, TAIF_EN, FARMERS_EN, ADONIS_EN]
+FEATURED_AR = [BIRDLIFE_AR, CURLEW_AR, TAIF_AR, FARMERS_AR, CABS_AR]
+FEATURED_EN = [BIRDLIFE_EN, CURLEW_EN, TAIF_EN, FARMERS_EN, CABS_EN]
 FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 
 # Narrower Suhail teaser («قطر | أكثر من 80 ألف») is the same close as
@@ -73,25 +90,25 @@ LATEST_AR = [
     SUHAIL_AR,
     SAUDI_AR,
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
+    ADONIS_AR,
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه",
     "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر",
     "المنصة-الرائدة-لنخبة-الصيادين-اللبنا",
-    POACHING_AR,
 ]
 LATEST_EN = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     SUHAIL_EN,
     SAUDI_EN,
     "autumn-migration-how-world-protects-birds-regulates-hunting",
+    ADONIS_EN,
     "regulating-hunting-protects-wildlife-bans-worsen",
     "common-shelduck-protected-migrant-lebanon",
     "leading-platform-lebanese-arab-hunters-since-2012",
-    POACHING_EN,
 ]
 
 DROPPED_DESKS_AR = ("أخبار", "صيد وفروسية", "جعبة المنوعات")
 DROPPED_DESKS_EN = ("News", "September 2026", "Hunting &amp; Equestrian", "Miscellany")
-CSS_CACHE = "20260923-nayef-chrome"
+CSS_CACHE = "20260923-footer-once"
 
 CHICKADEE_REL = "uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg"
 CHICKADEE_ALT_AR = "طائر يُستخرج من شبكة ضبابية"
@@ -109,7 +126,16 @@ DEFAULT_OMIT_FROM_HOME = frozenset(
 )
 DEFAULT_OMIT_FROM_LATEST = frozenset(FEATURED_SLUGS | {MEMORY_EN, MEMORY_AR})
 TICKER_OMIT_SLUGS = frozenset(
-    {ADONIS_EN, ADONIS_AR, NEW_LOOK_EN, NEW_LOOK_AR, FARMERS_AR, FARMERS_EN}
+    {
+        ADONIS_EN,
+        ADONIS_AR,
+        NEW_LOOK_EN,
+        NEW_LOOK_AR,
+        FARMERS_AR,
+        FARMERS_EN,
+        AWSAJ_AR,
+        AWSAJ_EN,
+    }
 )
 # Farmers only: mosaic + Interviews. The feature-lead stays mosaic-only.
 # Never mosaic + Latest / leftover desks.
@@ -118,9 +144,9 @@ MOSAIC_AND_INTERVIEWS = frozenset({FARMERS_AR, FARMERS_EN})
 # EN desk spine = AR. News + Hunting stay off home (covered by Featured + Latest).
 EN_DESK_SLUGS: dict[str, list[str]] = {
     "Interviews &amp; Investigations": [
+        AWSAJ_EN,
         FARMERS_EN,
         "george-taza-protect-fish-stocks-interview",
-        "leen-araji-equestrian-and-mental-math-champion",
     ],
     "Gear &amp; Arms": [
         "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
@@ -145,9 +171,9 @@ EN_SAUDI_FILLERS = frozenset(
 
 AR_DESK_SLUGS: dict[str, list[str]] = {
     "مقابلات وتحقيقات": [
+        AWSAJ_AR,
         FARMERS_AR,
         "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
-        "لين-عراجي-بطلة-فروسية-وحساب",
     ],
     "عتاد وسلاح": [
         "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
@@ -156,6 +182,13 @@ AR_DESK_SLUGS: dict[str, list[str]] = {
 }
 
 AR_FALLBACK_CARDS: dict[str, str] = {
+    BIRDLIFE_AR: f"""<article class="card overlay">
+  <a class="thumb" href="posts/{BIRDLIFE_AR}/index.html"><img src="{BIRDLIFE_IMG}" alt="{BIRDLIFE_ALT_AR}" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">23 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
+    <h2><a href="posts/{BIRDLIFE_AR}/index.html">{BIRDLIFE_TITLE_AR}</a></h2>
+  </div>
+</article>""",
     CURLEW_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{CURLEW_AR}/index.html"><img src="{CURLEW_IMG}" alt="{CURLEW_ALT_AR}" loading="lazy"></a>
   <div class="body">
@@ -255,6 +288,13 @@ AR_FALLBACK_CARDS: dict[str, str] = {
     <h3><a href="posts/الصيد-الجائر-دمار-لهواية-الصيد-إحذروا/index.html">الصيد الجائر دمار لهواية الصيد.. إحذروا الشباك والدّبق وصيد الليل</a></h3>
   </div>
 </article>""",
+    AWSAJ_AR: f"""<article class="card overlay">
+  <a class="thumb" href="posts/{AWSAJ_AR}/index.html"><img src="{AWSAJ_IMG}" alt="{AWSAJ_ALT_AR}" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">23 أيلول 2026<span class="cat-pill">الصياد في الطبيعة</span></div>
+    <h3><a href="posts/{AWSAJ_AR}/index.html">{AWSAJ_TITLE_AR}</a></h3>
+  </div>
+</article>""",
 }
 
 
@@ -280,6 +320,14 @@ def _en_card(
 
 
 EN_FALLBACK_CARDS: dict[str, str] = {
+    BIRDLIFE_EN: _en_card(
+        BIRDLIFE_EN,
+        BIRDLIFE_TITLE_EN,
+        "23 September 2026",
+        "Interviews &amp; Investigations",
+        BIRDLIFE_IMG,
+        BIRDLIFE_ALT_EN,
+    ),
     CURLEW_EN: _en_card(
         CURLEW_EN,
         CURLEW_TITLE_EN,
@@ -343,6 +391,14 @@ EN_FALLBACK_CARDS: dict[str, str] = {
         "Land Hunting",
         "media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg",
         "A bird is freed from a mist net — illegal hunting destroys the hunting hobby",
+    ),
+    AWSAJ_EN: _en_card(
+        AWSAJ_EN,
+        AWSAJ_TITLE_EN,
+        "23 September 2026",
+        "The Hunter in Nature",
+        AWSAJ_IMG,
+        AWSAJ_ALT_EN,
     ),
     "george-taza-protect-fish-stocks-interview": _en_card(
         "george-taza-protect-fish-stocks-interview",
@@ -718,21 +774,20 @@ def _latest_item_html(article: str, slug: str) -> str:
 
 
 def rebuild_featured_mosaic(html: str, cards: dict[str, str], *, en: bool) -> str:
-    """Investigation stays the lead; the first side box stays pinned.
+    """First featured slug is the lead. Every side box is newest-first.
 
-    Every later side box is newest publish date first, so a card demoted
-    out of the lead slot cannot sit ahead of a newer story.
+    Equal dates keep the featured-list order, so the demoted seven-birds
+    investigation stays ahead of Taif on 22 September.
     """
     slugs = list(FEATURED_EN if en else FEATURED_AR)
     fallbacks = EN_FALLBACK_CARDS if en else AR_FALLBACK_CARDS
-    lead_slug = CURLEW_EN if en else CURLEW_AR
-    first_side = CABS_EN if en else CABS_AR
-    rest = [slug for slug in slugs if slug not in {lead_slug, first_side}]
+    lead_slug = slugs[0]
+    rest = [slug for slug in slugs if slug != lead_slug]
     rest, dropped = _visible_slugs(rest, cards, fallbacks)
     for slug, year in dropped:
         label = "undated" if year == 0 else str(year)
         print(f"homepage side box omitted ({label}): {slug}")
-    side_slugs = [first_side] + _order_slugs_newest_first(rest, cards, fallbacks)
+    side_slugs = _order_slugs_newest_first(rest, cards, fallbacks)
     lead_src = cards.get(lead_slug) or fallbacks.get(lead_slug)
     if not lead_src:
         raise SystemExit(f"missing featured lead card for {lead_slug}")
@@ -1103,4 +1158,4 @@ def apply_docs() -> None:
 
 if __name__ == "__main__":
     apply_docs()
-    print("homepage unique cards: CABS lead; farmers side; Latest thumbs; News/Hunting off")
+    print("homepage unique cards: BirdLife lead; side boxes newest-first; Adonis in Latest")
