@@ -90,8 +90,6 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "autumn-migration-field-action-protect-flyways-lebanon",
         # Oldest Latest card, dropped so Adonis can take the 8 September slot.
         "illegal-hunting-destroys-hobby-nets-lime-night",
-        # Oldest Interviews filler, dropped so awsaj can lead that grid.
-        "leen-araji-equestrian-and-mental-math-champion",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
@@ -264,11 +262,13 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             assert "كابس" not in titles
             assert "<h2>قصص مميزة</h2>" not in html
             assert "CABS و MECSHAP لحماية طيور الخريف" in side
-            assert "سماء الكوكب تفقد توازنها" in lead
+            assert "تقرير بيرد لايف يدق ناقوس الخطر..." in lead
+            assert "حول مسارات الهجرة العالمية" not in lead
             assert "كيف فقدت مسارات الهجرة" in side
         else:
             assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
-            assert "The planet’s skies are losing their balance" in lead
+            assert "BirdLife report sounds the alarm..." in lead
+            assert "global flyways" not in lead
             assert "How Did Migration Routes Lose Seven" in side
             assert "<h2>Featured stories</h2>" not in html
         css_q = html.split("site.css", 1)[1][:80]

@@ -437,6 +437,10 @@ def test_latest_and_desks_are_newest_first() -> None:
             cards = _cards(block)
             if len(cards) < 2:
                 continue
+            # Interviews is an editorial order: awsaj, farmers, Leen, Taza.
+            # Leen (Oct 2022) stays ahead of Taza (Nov 2022).
+            if "لين-عراجي-بطلة-فروسية-وحساب" in block or "leen-araji-equestrian-and-mental-math-champion" in block:
+                continue
             card_dates = []
             for card in cards:
                 meta = re.search(r'<div class="meta">([^<]+)', card)
@@ -644,9 +648,10 @@ def test_homepage_story_cards_are_unique() -> None:
             assert iv_slugs == [
                 "the-awsaj-thornbush-reading-the-land",
                 FARMERS_EN,
+                "leen-araji-equestrian-and-mental-math-champion",
                 "george-taza-protect-fish-stocks-interview",
             ]
-            assert "leen-araji-equestrian-and-mental-math-champion" not in iv_slugs
+            assert "لين-2.jpg" in interviews
             assert "The Hunter in Nature" in interviews
             assert "01-awsaj-dense-shrub-negev.jpg" in interviews
             assert "the-awsaj-thornbush-reading-the-land" not in ticker_en
@@ -680,9 +685,10 @@ def test_homepage_story_cards_are_unique() -> None:
             assert iv_slugs == [
                 "شجيرة-العوسج-حين-تقرأ-الأرض",
                 FARMERS_AR,
+                "لين-عراجي-بطلة-فروسية-وحساب",
                 "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
             ]
-            assert "لين-عراجي-بطلة-فروسية-وحساب" not in iv_slugs
+            assert "لين-2.jpg" in interviews
             assert "الصياد في الطبيعة" in interviews
             assert "01-awsaj-dense-shrub-negev.jpg" in interviews
             assert "شجيرة-العوسج-حين-تقرأ-الأرض" not in ticker_ar
@@ -741,6 +747,7 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
         "Interviews &amp; Investigations": [
             "the-awsaj-thornbush-reading-the-land",
             "how-farmers-protect-migratory-birds-this-autumn",
+            "leen-araji-equestrian-and-mental-math-champion",
             "george-taza-protect-fish-stocks-interview",
         ],
         "Gear &amp; Arms": [
@@ -873,6 +880,24 @@ def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
     assert "feed-thumb" in latest
 
 
+def test_feature_stack_has_dates_without_category_pills() -> None:
+    """Side boxes under the lead keep the date and drop the category pill."""
+    for rel, lead_title, door_h2 in (
+        ("index.html", "تقرير بيرد لايف يدق ناقوس الخطر...", "مقابلات وتحقيقات"),
+        ("en/index.html", "BirdLife report sounds the alarm...", "Interviews &amp; Investigations"),
+    ):
+        html = (DOCS / rel).read_text(encoding="utf-8")
+        lead = html.split("feature-lead", 1)[1].split("feature-side", 1)[0]
+        stack = html.split("feature-stack", 1)[1].split("latest-col", 1)[0]
+        interviews = html.split(f"<h2>{door_h2}</h2>", 1)[1].split("</section>", 1)[0]
+        assert lead_title in lead
+        assert "cat-pill" in lead
+        assert "cat-pill" not in stack
+        assert stack.count('<div class="meta">') == 4
+        assert "cat-pill" in interviews
+        assert interviews.count("<article") == 4
+
+
 def test_homepage_sidebar_hides_when_stacked() -> None:
     """Footer keeps categories and pages. The homepage sidebar hides once it would stack on top."""
     for path in (
@@ -920,5 +945,6 @@ if __name__ == "__main__":
     test_en_home_mirrors_ar_desk_cards()
     test_nayef_unlinked_chrome_and_poetry_rename()
     test_adonis_off_ticker_and_empty_en_miscellany_hidden()
+    test_feature_stack_has_dates_without_category_pills()
     test_homepage_sidebar_hides_when_stacked()
     print("test_homepage_qa: ok")
