@@ -53,9 +53,9 @@ CANCELLED_SHELLS = {
     "pages/أرشيف-الموقع/index.html",
 }
 
-# Thin HTML redirects for the Babtain Afghanistan video. The live article
-# folder stays the truncated slug; these aliases must not become sitemap URLs
-# or have their canonical rewritten to themselves.
+# Thin HTML redirects. The live article stays canonical; these aliases must
+# not become sitemap URLs or have their canonical rewritten to themselves.
+# Babtain Afghanistan video aliases, plus 2026 WordPress numeric permalinks.
 _BABTAIN = "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
 _BABTAIN_FULL = "بالفيديو-مقناص-سعود-عبد-العزيز-البابطين-في-أفغانستان"
 _BABTAIN_NO_HAMZA = "بالفيديو-مقناص-سعود-عبد-العزيز-البابطين-في-افغانستان"
@@ -69,6 +69,19 @@ ALIAS_REDIRECTS = {
     f"posts/{_BABTAIN_NO_HAMZA}/index.html",
     f"{_BABTAIN_NAME}/index.html",
     f"posts/{_BABTAIN_NAME}/index.html",
+    # 2026 WordPress numeric permalinks → live Arabic posts.
+    "6719/index.html",
+    "6745/index.html",
+    "6754/index.html",
+    "6762/index.html",
+    "6784/index.html",
+    "6788/index.html",
+    "6794/index.html",
+    "6796/index.html",
+    "6798/index.html",
+    "6800/index.html",
+    "6819/index.html",
+    "6836/index.html",
 }
 
 # Directory pages whose first in-content image is the page hero.
