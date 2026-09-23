@@ -47,8 +47,9 @@ CABS_AR = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
 CABS_EN = "cabs-mecshap-autumn-birds-lebanon-khatib"
 BIRDLIFE_AR = "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
 BIRDLIFE_EN = "skies-losing-balance-birdlife-flyways-report"
-BIRDLIFE_TITLE_AR = "سماء الكوكب تفقد توازنها: تقرير «بيرد لايف» يدق ناقوس الخطر حول مسارات الهجرة العالمية"
-BIRDLIFE_TITLE_EN = "The planet’s skies are losing their balance: BirdLife sounds the alarm on global flyways"
+# Homepage feature-lead teasers only. Article H1 / slug stay the full editorial titles.
+BIRDLIFE_HOME_TITLE_AR = "تقرير بيرد لايف يدق ناقوس الخطر..."
+BIRDLIFE_HOME_TITLE_EN = "BirdLife report sounds the alarm..."
 BIRDLIFE_ALT_AR = "سرب كبير من الطيور المهاجرة يعبر أرضاً رطبة"
 BIRDLIFE_ALT_EN = "A large flock of migratory birds crossing a wetland"
 BIRDLIFE_IMG = "media/uploads/2026/09/birdlife-flyways-photo.jpg"
@@ -147,6 +148,7 @@ EN_DESK_SLUGS: dict[str, list[str]] = {
     "Interviews &amp; Investigations": [
         AWSAJ_EN,
         FARMERS_EN,
+        "leen-araji-equestrian-and-mental-math-champion",
         "george-taza-protect-fish-stocks-interview",
     ],
     "Gear &amp; Arms": [
@@ -174,6 +176,7 @@ AR_DESK_SLUGS: dict[str, list[str]] = {
     "مقابلات وتحقيقات": [
         AWSAJ_AR,
         FARMERS_AR,
+        "لين-عراجي-بطلة-فروسية-وحساب",
         "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
     ],
     "عتاد وسلاح": [
@@ -187,7 +190,7 @@ AR_FALLBACK_CARDS: dict[str, str] = {
   <a class="thumb" href="posts/{BIRDLIFE_AR}/index.html"><img src="{BIRDLIFE_IMG}" alt="{BIRDLIFE_ALT_AR}" loading="lazy"></a>
   <div class="body">
     <div class="meta">23 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
-    <h2><a href="posts/{BIRDLIFE_AR}/index.html">{BIRDLIFE_TITLE_AR}</a></h2>
+    <h2><a href="posts/{BIRDLIFE_AR}/index.html">{BIRDLIFE_HOME_TITLE_AR}</a></h2>
   </div>
 </article>""",
     CURLEW_AR: f"""<article class="card overlay">
@@ -296,6 +299,13 @@ AR_FALLBACK_CARDS: dict[str, str] = {
     <h3><a href="posts/{AWSAJ_AR}/index.html">{AWSAJ_TITLE_AR}</a></h3>
   </div>
 </article>""",
+    "لين-عراجي-بطلة-فروسية-وحساب": """<article class="card overlay">
+  <a class="thumb" href="posts/لين-عراجي-بطلة-فروسية-وحساب/index.html"><img src="media/uploads/2022/10/لين-2.jpg" alt="لين عراجي بطلة فروسية وحساب" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">22 تشرين الأول 2022<span class="cat-pill">فروسية</span></div>
+    <h3><a href="posts/لين-عراجي-بطلة-فروسية-وحساب/index.html">لين عراجي بطلة فروسية وحساب</a></h3>
+  </div>
+</article>""",
 }
 
 
@@ -323,7 +333,7 @@ def _en_card(
 EN_FALLBACK_CARDS: dict[str, str] = {
     BIRDLIFE_EN: _en_card(
         BIRDLIFE_EN,
-        BIRDLIFE_TITLE_EN,
+        BIRDLIFE_HOME_TITLE_EN,
         "23 September 2026",
         "Interviews &amp; Investigations",
         BIRDLIFE_IMG,
@@ -714,17 +724,15 @@ def _as_side_card(article: str, slug: str) -> str:
     elif slug == CABS_EN:
         title = CABS_TITLE_EN
     date = _card_date(article)
-    cat = ""
-    cat_m = re.search(r'<span class="cat-pill">([^<]+)</span>', article)
-    if cat_m:
-        cat = f'<span class="cat-pill">{cat_m.group(1)}</span>'
+    # Stack boxes under the lead keep the date only. Category pills stay
+    # on the feature-lead and on the lower home doors.
     href = re.search(r'href="([^"]*posts/[^"]+/index\.html)"', article)
     link = href.group(1) if href else f"posts/{slug}/index.html"
     return (
         f'<article class="card card-stack{extra}">\n'
         f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
-        f'    <div class="meta">{date}{cat}</div>\n'
+        f'    <div class="meta">{date}</div>\n'
         f"    <h3><a href=\"{link}\">{title}</a></h3>"
         f"{byline}\n"
         f"  </div>\n"
@@ -735,6 +743,10 @@ def _as_side_card(article: str, slug: str) -> str:
 def _as_lead(article: str, slug: str) -> str:
     src, alt = _card_img(article)
     title = _card_title(article)
+    if slug == BIRDLIFE_AR:
+        title = BIRDLIFE_HOME_TITLE_AR
+    elif slug == BIRDLIFE_EN:
+        title = BIRDLIFE_HOME_TITLE_EN
     date = _card_date(article)
     cat = ""
     cat_m = re.search(r'<span class="cat-pill">([^<]+)</span>', article)
@@ -1039,7 +1051,10 @@ def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
         for slug, year in dropped:
             label = "undated" if year == 0 else str(year)
             print(f"homepage desk {heading} omitted ({label}): {slug}")
-        slugs = _order_slugs_newest_first(slugs, merged, EN_FALLBACK_CARDS)
+        # Interviews order is editorial (awsaj, farmers, Leen, Taza).
+        # Newest-first would place Taza (Nov 2022) ahead of Leen (Oct 2022).
+        if heading != "Interviews &amp; Investigations":
+            slugs = _order_slugs_newest_first(slugs, merged, EN_FALLBACK_CARDS)
         compact = heading in COMPACT_DESKS
         grid = "grid-photos" if compact else "grid-4"
         block = "".join(
@@ -1062,7 +1077,9 @@ def rebuild_ar_home_sections(html: str, cards: dict[str, str]) -> str:
         for slug, year in dropped:
             label = "undated" if year == 0 else str(year)
             print(f"homepage desk {heading} omitted ({label}): {slug}")
-        slugs = _order_slugs_newest_first(slugs, cards, AR_FALLBACK_CARDS)
+        # Interviews order is editorial (awsaj, farmers, Leen, Taza).
+        if heading != "مقابلات وتحقيقات":
+            slugs = _order_slugs_newest_first(slugs, cards, AR_FALLBACK_CARDS)
         compact = heading in {"صور"}
         grid = "grid-photos" if compact else "grid-4"
         block = "".join(
