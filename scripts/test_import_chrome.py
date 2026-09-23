@@ -336,7 +336,9 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "عصفور-الشمس" not in html
     assert "صيد-تعود-بحلة-جديدة" not in html
     assert ADONIS not in ticker
-    assert ADONIS in cascade
+    assert ADONIS in sayd
+    assert ADONIS not in cascade
+    assert "سهيل-2026-بالصور" not in html
     assert "السعودية-تشدد-على-ضوابط" not in html
     assert "قطر-أكثر-من-80-ألف-زائر" not in html
     assert FARMERS in nature
@@ -344,7 +346,8 @@ def test_homepage_latest_matches_nayef() -> None:
     assert FARMERS not in cascade
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in html
     assert "إبادة بيئية" not in ticker
-    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in sayd
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in cascade
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" not in sayd
     assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" not in cover
     assert "العد-التنازلي-لختام-موسم-الطائف" in fur
     assert "العد-التنازلي-لختام-موسم-الطائف" not in cover

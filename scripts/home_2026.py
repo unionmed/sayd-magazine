@@ -10,8 +10,14 @@ Cap is 8. On update the oldest publish date drops. The strip is not a cover.
 
 Homepage: one optional feature cover (text may sit on that image only),
 then the مستجدات / What's new waterfall. No highlight row above it.
-One story URL occupies one homepage slot. Door boxes hide when that door
-has nothing fresh enough to show.
+One story URL occupies one homepage slot. A story shown in a higher
+section is never repeated in a door or section below it. When that
+blocks a slot, the next-oldest unused story fills it. Door boxes hide
+when that door has nothing fresh enough to show.
+
+كلمتنا editorials sit in the صيد / Hunting box when they are on the
+homepage. «سهيل 2026 بالصور» is the same exhibition as the Suhail closer,
+so it does not get a second card and it is not a بعدستكم / Your Lens card.
 """
 
 from __future__ import annotations
@@ -88,12 +94,18 @@ DOORS_EN = [
 ]
 
 COVER = "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
-# صيد = 4. Taif is the equestrian lead (old combined desk) and is not repeated here.
+SUHAIL_CLOSER = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+# Same exhibition as the closer. One homepage slot, so the gallery is omitted.
+# It is Hunting coverage, not a بعدستكم / Your Lens card.
+SUHAIL_GALLERY = "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
+EDITORIAL = "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
+# صيد = 4. The كلمتنا editorial takes the fourth seat. Taif stays equestrian.
+# The Saudi season story is newer than the waterfall, so it leads مستجدات.
 SAYD = [
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
-    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
-    "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
+    SUHAIL_CLOSER,
+    EDITORIAL,
 ]
 # Fresh 2026 racing story, plus the 2022 equestrian profile (cap 2).
 FURUSIYYA = [
@@ -107,17 +119,18 @@ NATURE = [
 ]
 # One card this cycle. Species profile already published; not the miscellany desk.
 ENCYCLOPEDIA = ["الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر"]
+# The Suhail gallery was the other still. It shares the closer's slot, and
+# صور has no older 2022+ still to backfill, so Your Lens is the pelican only.
 LENS = [
-    "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
 ]
 CHANNEL = ["بالفيديو-مقناص-سعود-عبد-العزيز-الباب"]
-# General waterfall. No second copy of the cover or of a door card.
+# General waterfall. Nothing here is also a door card.
 # Gear has no 2026 story, so its door box stays hidden and the 2022 rifle
 # note sits in the cascade instead of an empty heading.
 CASCADE = [
+    "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
-    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه",
     "المنصة-الرائدة-لنخبة-الصيادين-اللبنا",
     "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا",
@@ -432,18 +445,26 @@ def build_home(lang: str, pool: dict[str, dict], pairs: dict[str, str], memory: 
             cat = card["cat"]
         return card_html(from_file, key, card, lang=lang, cat=cat, **kwargs)
 
+    placed = [COVER, *CASCADE, *SAYD, *FURUSIYYA, *NATURE, *ENCYCLOPEDIA, *LENS, *CHANNEL]
+    if len(placed) != len(set(placed)) or SUHAIL_GALLERY in placed:
+        raise SystemExit("homepage slot repeated or Suhail gallery duplicated")
+
     cover = one(COVER, ("تحقيق", "Investigation"), overlay=True)
-    sayd = "\n".join(one(slug, DOOR_CATS["صيد"]) for slug in SAYD)
+    sayd_bits = []
+    for slug in SAYD:
+        if slug == EDITORIAL:
+            sayd_bits.append(
+                one(slug, ("كلمتنا", "Editorial"), extra_class="feature-adonis")
+            )
+        else:
+            sayd_bits.append(one(slug, DOOR_CATS["صيد"]))
+    sayd = "\n".join(sayd_bits)
     fur = "\n".join(one(slug, DOOR_CATS["فروسية"]) for slug in FURUSIYYA)
     nature = "\n".join(one(slug, DOOR_CATS["الصياد في الطبيعة"]) for slug in NATURE)
     enc = one(ENCYCLOPEDIA[0], DOOR_CATS["موسوعة الطيور"])
     lens = "\n".join(one(slug, DOOR_CATS["بعدستكم"]) for slug in LENS)
     channel_card = one(CHANNEL[0], DOOR_CATS["قناة صيد"])
-    cascade_bits = []
-    for slug in CASCADE:
-        extra = "feature-adonis" if slug.startswith("صيد-تعود-وهذا") else ""
-        cascade_bits.append(one(slug, extra_class=extra))
-    cascade = "\n".join(cascade_bits)
+    cascade = "\n".join(one(slug) for slug in CASCADE)
 
     cascade_title = "What's new" if en else "مستجدات"
     sayd_title = "Hunting" if en else "صيد"

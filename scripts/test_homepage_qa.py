@@ -582,7 +582,9 @@ def test_homepage_story_cards_are_unique() -> None:
         assert twin not in slugs
         assert twin not in html
         cascade = _slice(html, 'id="home-cascade"', "door-row-primary")
-        assert adonis in cascade
+        sayd = _slice(html, "door-sayd", "door-furusiyya")
+        assert adonis in sayd
+        assert adonis not in cascade
         assert farmers not in cascade
         adonis_cards = [
             art
@@ -605,6 +607,7 @@ def test_homepage_story_cards_are_unique() -> None:
             sayd = _slice(html, "door-sayd", "door-furusiyya")
             nature = _slice(html, "door-nature", "Bird Encyclopedia")
             assert "egypt-new-hunting-rules-burullus-autumn-migration" in sayd
+            assert "suhail-2026-in-photos-falcons-visitors" not in html
             assert "common-shelduck-protected-migrant-lebanon" in html
             assert "leading-platform-lebanese-arab-hunters-since-2012" in cascade
             assert sayd.count("suhail-2026-closes-decade-katara-80000-visitors") == 2
@@ -637,6 +640,7 @@ def test_homepage_story_cards_are_unique() -> None:
             sayd = _slice(html, "door-sayd", "door-furusiyya")
             nature = _slice(html, "door-nature", "موسوعة الطيور")
             assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in cascade
+            assert "سهيل-2026-بالصور" not in html
             assert sayd.count("80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع") == 2
             assert "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026" not in html
             ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
@@ -693,8 +697,8 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     desks = {
         "What's new": [
+            "saudi-sixth-hunting-season-2026-2027-rules",
             "autumn-migration-how-world-protects-birds-regulates-hunting",
-            "sayd-returns-what-we-want-to-offer",
             "regulating-hunting-protects-wildlife-bans-worsen",
             "leading-platform-lebanese-arab-hunters-since-2012",
             "illegal-hunting-destroys-hobby-nets-lime-night",
@@ -704,7 +708,7 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
             "egypt-new-hunting-rules-burullus-autumn-migration",
             "cabs-mecshap-autumn-birds-lebanon-khatib",
             "suhail-2026-closes-decade-katara-80000-visitors",
-            "saudi-sixth-hunting-season-2026-2027-rules",
+            "sayd-returns-what-we-want-to-offer",
         ],
         "Equestrian": [
             "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
@@ -716,7 +720,6 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
         ],
         "Bird Encyclopedia": ["common-shelduck-protected-migrant-lebanon"],
         "Your Lens": [
-            "suhail-2026-in-photos-falcons-visitors",
             "great-white-pelican-matn-highway-nayef-krayem",
         ],
         "Sayd Channel": ["video-saud-al-babtain-maqnas-afghanistan"],
@@ -835,8 +838,10 @@ def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
     main = en.split('id="home-2026"', 1)[1]
     assert "<h2>Miscellany</h2>" not in main
     cascade = _slice(en, 'id="home-cascade"', "door-row-primary")
+    sayd = _slice(en, "door-sayd", "door-furusiyya")
     assert "<img" in cascade
-    assert "feature-adonis" in cascade
+    assert "feature-adonis" in sayd
+    assert "feature-adonis" not in cascade
 
 
 def test_homepage_sidebar_hides_when_stacked() -> None:

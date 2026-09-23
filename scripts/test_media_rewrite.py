@@ -208,7 +208,9 @@ def test_apply_does_not_drop_homepage_or_en_heroes() -> None:
     en = (root / "docs" / "en" / "index.html").read_text(encoding="utf-8")
     assert "qatar-suhail-2026-80000-visitors-teaser" not in en
     assert "suhail-2026-closes-decade-katara-80000-visitors" in en
-    assert "suhail-2026-in-photos-falcons-visitors" in en
+    assert "suhail-2026-in-photos-falcons-visitors" not in en
+    gallery = root / "docs" / "en" / "posts" / "suhail-2026-in-photos-falcons-visitors" / "index.html"
+    assert gallery.is_file()
     adonis_en = (
         root / "docs" / "en" / "posts" / "sayd-returns-what-we-want-to-offer" / "index.html"
     ).read_text(encoding="utf-8")

@@ -87,6 +87,8 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "barn-owl",
         # No approved homepage photograph. Dropped from the 8-item ticker.
         "autumn-migration-field-action-protect-flyways-lebanon",
+        # Same Suhail exhibition as the closer. One homepage slot.
+        "suhail-2026-in-photos-falcons-visitors",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
