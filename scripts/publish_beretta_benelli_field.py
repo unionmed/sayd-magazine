@@ -251,7 +251,7 @@ def patch_listings() -> None:
     card = f"""<article class="card card-story">
   <a class="thumb" href="../posts/{EN_SLUG}/index.html"><img src="../../{MEDIA}/{FIELD}" alt="{EN_FIELD_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 September 2026<span class="cat-pill">Gear &amp; Arms</span></div>
+    <div class="meta">23 September 2026</div>
     <h3><a href="../posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
   </div>
 </article>"""

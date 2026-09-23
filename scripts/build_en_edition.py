@@ -1245,6 +1245,27 @@ def _date_sort_year(item: dict) -> int:
 
 
 _STORY_CARD_RE = re.compile(r'<article class="card[^"]*">.*?</article>', re.S)
+_CAT_PILL_RE = re.compile(r'<span class="cat-pill">.*?</span>', re.S)
+
+
+def strip_story_cat_pills(html: str) -> str:
+    """Stories listing cards keep the date. The section heading classifies."""
+    return _CAT_PILL_RE.sub("", html)
+
+
+def strip_saved_stories_listings() -> list[Path]:
+    """Drop category pills from EN and AR stories listing HTML, including pages."""
+    changed: list[Path] = []
+    for root in (DOCS / "en" / "stories", DOCS / "stories"):
+        if not root.is_dir():
+            continue
+        for path in sorted(root.rglob("*.html")):
+            html = path.read_text(encoding="utf-8")
+            cleaned = strip_story_cat_pills(html)
+            if cleaned != html:
+                path.write_text(cleaned, encoding="utf-8")
+                changed.append(path)
+    return changed
 
 
 def filter_saved_stories_index(path: Path | None = None) -> list[str]:
@@ -1265,13 +1286,14 @@ def filter_saved_stories_index(path: Path | None = None) -> list[str]:
         slug_m = re.search(r"posts/([^/]+)/", block)
         slug = slug_m.group(1) if slug_m else ""
         if year >= year_min and slug not in STORIES_GRID_OMIT:
-            return block
+            return strip_story_cat_pills(block)
         dropped.append(slug or "?")
         return ""
 
-    updated = _STORY_CARD_RE.sub(_keep, html_text)
+    updated = strip_story_cat_pills(_STORY_CARD_RE.sub(_keep, html_text))
     if updated != html_text:
         dest.write_text(updated, encoding="utf-8")
+    strip_saved_stories_listings()
     for slug in dropped:
         print(f"stories grid omitted: {slug}")
     return dropped
@@ -1305,7 +1327,7 @@ def write_stories(articles: dict[str, dict]) -> None:
             f"""<article class="card overlay">
   <a class="thumb" href="../posts/{slug}/index.html"><img src="../../{img}" alt="{escape(alt, quote=True)}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">{escape(item["date"])}<span class="cat-pill">{escape(item["category"])}</span></div>
+    <div class="meta">{escape(item["date"])}</div>
     <h3><a href="../posts/{slug}/index.html">{escape(item["title"])}</a></h3>
   </div>
 </article>"""
@@ -1333,7 +1355,8 @@ def write_stories(articles: dict[str, dict]) -> None:
     )
     dest = DOCS / "en" / "stories"
     dest.mkdir(parents=True, exist_ok=True)
-    (dest / "index.html").write_text(html, encoding="utf-8")
+    (dest / "index.html").write_text(strip_story_cat_pills(html), encoding="utf-8")
+    strip_saved_stories_listings()
 
 
 TOP_EN_RE = re.compile(
