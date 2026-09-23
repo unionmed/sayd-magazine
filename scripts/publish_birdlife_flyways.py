@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Publish the BirdLife flyways editorial (AR + EN) and reshuffle the home spine.
 
-Lead cover and the article hero are bee-eaters-dragonflies.jpg only.
-The second in-article photo is not locked; the body leaves SECOND IMAGE SLOT.
+Lead cover and the article hero are birdlife-flyways-photo.jpg.
+The second figure, inside the article only, is bee-eater-pair-branch.jpg.
+bee-eaters-dragonflies.jpg is cancelled.
 """
 
 from __future__ import annotations
@@ -29,12 +30,16 @@ AR_EXCERPT = "قراءة افتتاحية في تقرير «حالة طيور ا
 EN_EXCERPT = "An editorial reading of the State of the World's Birds: 45% of migratory species are in continuous decline, and one in nine is threatened with extinction."
 AR_TICKER = "بيرد لايف: 45٪ من الطيور المهاجرة في العالم في انحدار مستمر"
 EN_TICKER = "BirdLife: 45% of the world’s migratory birds are in continuous decline"
-HERO = "bee-eaters-dragonflies.jpg"
-HERO_ALT_AR = "الوروار الأوروبي يصطاد اليعاسيب"
-HERO_ALT_EN = "European bee-eaters hunting dragonflies"
-HERO_CAP_AR = "الوروار الأوروبي (Merops apiaster) يصطاد اليعاسيب — طيور مهاجرة ملوّنة تعبر مسارات المتوسط. Wikimedia Commons — CC BY-SA 4.0."
-HERO_CAP_EN = "European bee-eaters (Merops apiaster) hunting dragonflies — colourful migrants of the Mediterranean flyways. Wikimedia Commons — CC BY-SA 4.0."
-SECOND_SLOT = "<!-- SECOND IMAGE SLOT: not locked. Nayef will send the chosen second photo in a follow-up. Do not insert an image here until that file arrives. -->"
+HERO = "birdlife-flyways-photo.jpg"
+BEES = "bee-eater-pair-branch.jpg"
+HERO_ALT_AR = "سرب كبير من الطيور المهاجرة يعبر أرضاً رطبة"
+HERO_ALT_EN = "A large flock of migratory birds crossing a wetland"
+BEES_ALT_AR = "الوروار الأوروبي المهاجر على غصن شائك"
+BEES_ALT_EN = "Migratory European bee-eaters on a thorny branch"
+HERO_CAP_AR = "سرب كبير من الطيور المهاجرة يعبر أرضاً رطبة. BirdLife International — مواد تقرير «حالة طيور العالم» (State of the World's Birds)."
+HERO_CAP_EN = "A large flock of migratory birds crossing a wetland. BirdLife International — State of the World's Birds."
+BEES_CAP_AR = "الوروار الأوروبي المهاجر (Merops apiaster) على غصن شائك، وأحد الأفراد في طيرانه — طائر ملوّن من مسارات المتوسط. Wikimedia Commons — CC BY-SA."
+BEES_CAP_EN = "Migratory European bee-eaters (Merops apiaster) on a thorny branch, one bird in flight — a colourful species of the Mediterranean flyways. Wikimedia Commons — CC BY-SA."
 
 AR_TICKER_REST = [
     (CURLEW_AR, "مسارات الهجرة فقدت 7 أنواع خلال 150 عاماً… والكروان رفيع المنقار آخرها"),
@@ -68,6 +73,7 @@ def fig(src: str, alt: str, caption: str) -> str:
 def ar_body() -> str:
     p = "../../media/uploads/2026/09/"
     hero = fig(p + HERO, HERO_ALT_AR, HERO_CAP_AR)
+    bees = fig(p + BEES, BEES_ALT_AR, BEES_CAP_AR)
     return f"""<p><strong>{AR_DEK}</strong></p>
 {hero}
 <p>لم تعد رحلات الهجرة الموسمية مجرد مشهد بديع لأسراب تعبر الأفق مع تبدل الفصول، بل تحولت إلى مؤشر حيوي بالغ الدقة لقياس نبض كوكب الأرض وصحة أنظمته البيئية. في نسخته الأحدث المخصصة بالكامل لشبكات الهجرة العابرة للقارات، أطلق الاتحاد العالمي للحفاظ على الطيور «بيرد لايف إنترناشونال» (BirdLife International) تقريره الرائد، كاشفاً عن صورة قاتمة ومعقدة لما تعانيه الطيور المهاجرة؛ حيث تواجه أسرابها ضغوطاً متصاعدة تعيد رسم خريطة التنوع الحيوي في العالم.</p>
@@ -77,7 +83,7 @@ def ar_body() -> str:
 <h2>الفئات الأكثر هشاشة: طيور الشواطئ والمحيطات في الصدارة</h2>
 <p>تُظهر مخرجات التقرير أن البيئات الرطبة والبحرية تشهد التأثير الأشد وطأة؛ إذ تعاني 54% من طيور الشواطئ والخوّاضة المهاجرة من تراجع حاد، نتيجة تجفيف السبخات وردم السواحل ومناطق المد والجزر التي تشكل «محطات وقود» حيوية لإعادة التزود بالطاقة قبل عبور الصحارى والبحار.</p>
 <p>كما يواجه 49% من أنواع الطيور البحرية انخفاضاً مشابهاً بسبب الصيد العرضي في شباك وخيوط الصيد في أعالي البحار، بالإضافة إلى التلوث البلاستيكي وتدهور المخزون السمكي. وحتى الطيور التي كانت تعد شائعة في مواسم الصيد والهجرة، مثل القمري الأوروبي (European Turtle-dove) وبعض أنواع البط والغِرّ، باتت تعاني من انخفاضات متتالية دفعت إلى فرض قيود دولية مشددة لحمايتها.</p>
-{SECOND_SLOT}
+{bees}
 <h2>فخاخ المسار: حين تصطدم الأجنحة بالبنية التحتية والأنشطة البشرية</h2>
 <p>يركز التقرير على أن حماية الطائر المهاجر في دولة التكاثر وحدها لا تضمن نجاته ما لم تكن محطات التوقف ومناطق التشتية آمنة بالقدر ذاته. وتتداخل التهديدات الرئيسية عبر المسارات الدولية لتشمل:</p>
 <ul>
@@ -95,6 +101,7 @@ def ar_body() -> str:
 def en_body() -> str:
     p = "../../../media/uploads/2026/09/"
     hero = fig(p + HERO, HERO_ALT_EN, HERO_CAP_EN)
+    bees = fig(p + BEES, BEES_ALT_EN, BEES_CAP_EN)
     return f"""<p><strong>{EN_DEK}</strong></p>
 {hero}
 <p>Seasonal migration is no longer only a beautiful sight of flocks crossing the horizon as the seasons turn. It has become a precise vital sign of the planet’s pulse and the health of its ecosystems. In its latest edition, devoted entirely to intercontinental flyway networks, BirdLife International released its flagship report, revealing a dark and complex picture of what migratory birds are enduring. Their flocks face rising pressures that are redrawing the map of the world’s biodiversity.</p>
@@ -104,7 +111,7 @@ def en_body() -> str:
 <h2>The most fragile groups: shorebirds and seabirds in the lead</h2>
 <p>The report’s findings show that wetlands and marine environments are taking the hardest hit. Fifty-four percent of migratory shorebirds and waders are in sharp decline, as sabkhas are drained and coasts and tidal zones — vital refuelling stations before desert and sea crossings — are filled in.</p>
 <p>Forty-nine percent of seabird species face a similar drop because of bycatch in nets and fishing lines on the high seas, plus plastic pollution and the decline of fish stocks. Even birds once considered common in hunting and migration seasons, such as the European Turtle-dove and some ducks and coots, have suffered successive declines that have led to tighter international protections.</p>
-{SECOND_SLOT}
+{bees}
 <h2>Traps along the route: when wings meet infrastructure and human activity</h2>
 <p>The report stresses that protecting a migratory bird in its breeding country alone does not guarantee its survival unless stopover sites and wintering grounds are equally safe. The main threats overlap along international routes:</p>
 <ul>
@@ -123,8 +130,12 @@ def copy_images() -> None:
     dest_dir = DOCS / "media" / "uploads" / "2026" / "09"
     dest_dir.mkdir(parents=True, exist_ok=True)
     mapping = {
-        "bee-eaters-dragonflies_90ae.jpg": HERO,
+        "birdlife-flyways-photo_5768.jpg": HERO,
+        "bee-eater-pair-branch_5b67.jpg": BEES,
     }
+    retired = dest_dir / "bee-eaters-dragonflies.jpg"
+    if retired.exists():
+        retired.unlink()
     for src_name, dest_name in mapping.items():
         src = UPLOADS / src_name
         if not src.is_file():
@@ -180,11 +191,11 @@ def write_articles() -> None:
         + '</a><span class="meta">23 أيلول 2026</span></li><li>',
         1,
     )
-    if "عاجل" in ar or "merops-apiaster-1" in ar or "birdlife-european-bee-eater-pair-branch" in ar:
+    if "عاجل" in ar or "merops-apiaster-1" in ar or "bee-eaters-dragonflies" in ar:
         raise SystemExit("AR article picked up a banned string")
     caps = re.findall(r"<figcaption[^>]*>(.*?)</figcaption>", ar.split('class="article-content"', 1)[1].split("</article>", 1)[0], re.S)
-    if len(caps) != 1 or any("<br>" in c for c in caps) or "SECOND IMAGE SLOT" not in ar:
-        raise SystemExit("AR article needs the hero caption only, plus the second-image slot")
+    if len(caps) != 2 or any("<br>" in c for c in caps) or BEES not in ar:
+        raise SystemExit("AR article needs the flock hero and the bee-eater pair under captions")
     dest = DOCS / "posts" / AR_SLUG
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "index.html").write_text(ar, encoding="utf-8")
@@ -211,12 +222,12 @@ def write_articles() -> None:
         1,
     )
     en = en.replace(CURLEW_AR, AR_SLUG)
-    if 'dir="rtl"' in en or "merops-apiaster-1" in en or "birdlife-european-bee-eater-pair-branch" in en:
+    if 'dir="rtl"' in en or "merops-apiaster-1" in en or "bee-eaters-dragonflies" in en:
         raise SystemExit("EN article direction or image lock failed")
     body = en.split('class="article-content"', 1)[1].split("</article>", 1)[0]
     caps = re.findall(r"<figcaption[^>]*>(.*?)</figcaption>", body, re.S)
-    if len(caps) != 1 or any("<br>" in c or re.search(r"[\u0600-\u06FF]", c) for c in caps) or "SECOND IMAGE SLOT" not in en:
-        raise SystemExit("EN article needs one English hero caption and the second-image slot")
+    if len(caps) != 2 or any("<br>" in c or re.search(r"[\u0600-\u06FF]", c) for c in caps) or BEES not in en:
+        raise SystemExit("EN article needs two English captions, flock then bee-eater pair")
     dest = DOCS / "en" / "posts" / EN_SLUG
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "index.html").write_text(en, encoding="utf-8")
@@ -239,8 +250,8 @@ def write_markdown() -> None:
                 f"**{AR_DEK}**",
                 "",
                 "النص المنشور في `docs/posts/" + AR_SLUG + "/index.html`.",
-                "الغلاف: الوروار الأوروبي يصطاد اليعاسيب (Wikimedia Commons — CC BY-SA 4.0).",
-                "الصورة الثانية داخل المادة غير مقفلة؛ التعليق في HTML: SECOND IMAGE SLOT.",
+                "الغلاف: سرب مهاجر فوق أرض رطبة (BirdLife International — State of the World's Birds).",
+                "داخل المادة فقط: الوروار الأوروبي على غصن شائك (Wikimedia Commons — CC BY-SA).",
                 "",
             ]
         ),
@@ -265,7 +276,7 @@ def write_markdown() -> None:
                 "## Body",
                 "",
                 f"See `docs/en/posts/{EN_SLUG}/index.html` for the published English text.",
-                "The cover is European bee-eaters hunting dragonflies. The second in-article photo is not locked.",
+                "Cover credit sits under the wetland flock. The European bee-eater pair is the in-article photograph only.",
                 "",
             ]
         ),
@@ -292,8 +303,8 @@ def patch_listings() -> None:
         'مقابلات وتحقيقات <span class="badge">14</span>',
         1,
     )
-    if "birdlife-european-bee-eater-pair-branch" in html or "birdlife-flyways-photo" in html:
-        raise SystemExit("retired covers must stay off the category row")
+    if "bee-eaters-dragonflies" in html or BEES in html:
+        raise SystemExit("dragonflies and the in-article pair must stay off the category row")
     cat.write_text(html, encoding="utf-8")
 
     archive = DOCS / "articles" / "index.html"
@@ -380,13 +391,13 @@ def verify() -> None:
     side = ar.split("feature-side", 1)[1].split("latest-col", 1)[0]
     latest = ar.split("latest-feed", 1)[1].split("</ul>", 1)[0]
     if HERO not in lead or AR_SLUG not in lead:
-        raise SystemExit("BirdLife dragonfly bee-eaters are not the Arabic feature lead")
-    if "birdlife-flyways-photo" in ar or "birdlife-european-bee-eater-pair-branch" in ar or "merops-apiaster-1" in ar:
-        raise SystemExit("retired covers leaked onto the Arabic homepage")
-    if "birdlife-flyways-photo" in en or "birdlife-european-bee-eater-pair-branch" in en:
-        raise SystemExit("retired covers leaked onto the English homepage")
+        raise SystemExit("BirdLife flock is not the Arabic feature lead")
+    if BEES in ar or "bee-eaters-dragonflies" in ar or "merops-apiaster-1" in ar:
+        raise SystemExit("in-article or cancelled frames leaked onto the Arabic homepage")
+    if BEES in en or "bee-eaters-dragonflies" in en:
+        raise SystemExit("in-article or cancelled frames leaked onto the English homepage")
     if HERO not in en.split("feature-lead", 1)[1].split("feature-side", 1)[0]:
-        raise SystemExit("English lead is missing the dragonfly bee-eater cover")
+        raise SystemExit("English lead is missing the flock cover")
     side_slugs = []
     for slug in re.findall(r'href="posts/([^/]+)/', side):
         if slug not in side_slugs:
@@ -419,10 +430,10 @@ def verify() -> None:
         raise SystemExit("ticker must hold 8 items and never say عاجل")
     article = (DOCS / "posts" / AR_SLUG / "index.html").read_text(encoding="utf-8")
     body = article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
-    if body.count(HERO) != 1 or "SECOND IMAGE SLOT" not in body:
-        raise SystemExit("article must keep the hero only and the open second-image slot")
-    if "birdlife-european-bee-eater-pair-branch" in article or "قوانين" in article.split("breadcrumb", 1)[1][:400]:
-        raise SystemExit("article category or image lock failed")
+    if body.count(HERO) != 1 or body.count(BEES) != 1 or "bee-eaters-dragonflies" in article:
+        raise SystemExit("article image lock failed")
+    if "قوانين" in article.split("breadcrumb", 1)[1][:400]:
+        raise SystemExit("article category lock failed")
     if "1,843" not in body or "45%" not in body or "54%" not in body or "1,099" not in body:
         raise SystemExit("article dropped a source figure")
 

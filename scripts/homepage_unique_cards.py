@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Lock AR/EN homepage story cards to the Featured + Latest spine.
 
-Spine: the BirdLife flyways editorial is the large lead (European
-bee-eaters hunting dragonflies). Side boxes are newest publish date first: the seven-birds
+Spine: the BirdLife flyways editorial is the large lead (wetland flock
+cover). Side boxes are newest publish date first: the seven-birds
 investigation, Taif, farmers, then CABS. Latest and dated desk grids
 are newest-first too. Adonis leaves the mosaic for Latest (8 Sep, after
 the other 8 Sep story). Memory strip → Latest thumbs → Interviews →
@@ -47,9 +47,9 @@ BIRDLIFE_AR = "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد
 BIRDLIFE_EN = "skies-losing-balance-birdlife-flyways-report"
 BIRDLIFE_TITLE_AR = "سماء الكوكب تفقد توازنها: تقرير «بيرد لايف» يدق ناقوس الخطر حول مسارات الهجرة العالمية"
 BIRDLIFE_TITLE_EN = "The planet’s skies are losing their balance: BirdLife sounds the alarm on global flyways"
-BIRDLIFE_ALT_AR = "الوروار الأوروبي يصطاد اليعاسيب"
-BIRDLIFE_ALT_EN = "European bee-eaters hunting dragonflies"
-BIRDLIFE_IMG = "media/uploads/2026/09/bee-eaters-dragonflies.jpg"
+BIRDLIFE_ALT_AR = "سرب كبير من الطيور المهاجرة يعبر أرضاً رطبة"
+BIRDLIFE_ALT_EN = "A large flock of migratory birds crossing a wetland"
+BIRDLIFE_IMG = "media/uploads/2026/09/birdlife-flyways-photo.jpg"
 CURLEW_AR = "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
 CURLEW_EN = "how-migration-routes-lost-seven-birds-in-150-years"
 CURLEW_TITLE_AR = "كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟"
