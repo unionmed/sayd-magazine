@@ -1565,6 +1565,9 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 @media (max-width: 1040px) {
   .home-layout,
   .article-layout { grid-template-columns: 1fr; }
+  /* Homepage sidebar is only التصنيفات / صفحات (EN: Sections / Pages).
+     Once the column stacks, it sits on top of the same lists in the footer. */
+  .home-layout > .sidebar { display: none; }
   .grid-4,
   .grid-4:has(> :nth-child(4)) {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
