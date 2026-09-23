@@ -566,13 +566,12 @@ def patch_home(path: Path, *, en: bool) -> None:
         title = EN_TITLE if en else AR_TITLE
         alt = EN_ALT if en else AR_ALT
         date = "22 September 2026" if en else "22 أيلول 2026"
-        cat = "Hunting &amp; Equestrian" if en else "صيد وفروسية"
         card = (
             f'<article class="card card-stack">\n'
             f'  <a class="thumb" href="posts/{taif}/index.html">'
             f'<img src="{media}" alt="{alt}" loading="lazy"></a>\n'
             f'  <div class="body">\n'
-            f'    <div class="meta">{date}<span class="cat-pill">{cat}</span></div>\n'
+            f'    <div class="meta">{date}</div>\n'
             f'    <h3><a href="posts/{taif}/index.html">{title}</a></h3>\n'
             f'  </div>\n'
             f'</article>'
