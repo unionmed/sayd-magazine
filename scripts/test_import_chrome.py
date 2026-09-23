@@ -314,7 +314,7 @@ def test_homepage_latest_matches_nayef() -> None:
 
     assert "80-ألف-زائر-و158-جهة" not in featured
     assert "80-ألف-زائر-و158-جهة" in latest
-    assert "80-ألف-زائر-و158-جهة" not in ticker
+    assert ticker.count(SUHAIL_80K) == 1
     assert "كيف-فقدت-مسارات-الهجرة" in featured
     assert "كيف-فقدت-مسارات-الهجرة" in ticker
     assert "البجع-الأبيض" not in latest
@@ -328,7 +328,7 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "السعودية-تشدد-على-ضوابط" not in html
     assert "قطر-أكثر-من-80-ألف-زائر" not in latest
     assert latest.count(SUHAIL_80K) == 1
-    assert "قطر-أكثر-من-80-ألف-زائر" in ticker
+    assert "قطر-أكثر-من-80-ألف-زائر" not in ticker
     assert FARMERS in featured
     assert FARMERS not in latest
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in featured
