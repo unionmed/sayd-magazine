@@ -122,7 +122,10 @@ EN_DESK_SLUGS: dict[str, list[str]] = {
         "george-taza-protect-fish-stocks-interview",
         "leen-araji-equestrian-and-mental-math-champion",
     ],
-    "Gear &amp; Arms": ["air-rifles"],
+    "Gear &amp; Arms": [
+        "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
+        "air-rifles",
+    ],
     "Sayd TV": ["video-saud-al-babtain-maqnas-afghanistan"],
     "Photos": [
         "suhail-2026-in-photos-falcons-visitors",
@@ -146,7 +149,10 @@ AR_DESK_SLUGS: dict[str, list[str]] = {
         "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
         "لين-عراجي-بطلة-فروسية-وحساب",
     ],
-    "عتاد وسلاح": ["البنادق-الهوائية"],
+    "عتاد وسلاح": [
+        "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
+        "البنادق-الهوائية",
+    ],
 }
 
 AR_FALLBACK_CARDS: dict[str, str] = {
