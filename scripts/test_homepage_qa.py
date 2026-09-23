@@ -4,9 +4,13 @@
 from __future__ import annotations
 
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from site_cache import CSS_CACHE  # noqa: E402
+
 DOCS = ROOT / "docs"
 
 
@@ -890,7 +894,7 @@ def test_homepage_sidebar_hides_when_stacked() -> None:
         assert cat_heading in sidebar and page_heading in sidebar
         assert cat_heading in footer or ">In this edition<" in footer
         assert 'class="footer-col"' in footer
-        assert "?v=20260923-footer-once" in html
+        assert f"?v={CSS_CACHE}" in html
 
 
 if __name__ == "__main__":

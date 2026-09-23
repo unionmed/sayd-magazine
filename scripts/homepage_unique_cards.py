@@ -24,6 +24,8 @@ import json
 import re
 from pathlib import Path
 
+from site_cache import CSS_CACHE
+
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 HOMEPAGE_CONFIG = ROOT / "content" / "homepage.json"
@@ -108,7 +110,6 @@ LATEST_EN = [
 
 DROPPED_DESKS_AR = ("أخبار", "صيد وفروسية", "جعبة المنوعات")
 DROPPED_DESKS_EN = ("News", "September 2026", "Hunting &amp; Equestrian", "Miscellany")
-CSS_CACHE = "20260923-footer-once"
 
 CHICKADEE_REL = "uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg"
 CHICKADEE_ALT_AR = "طائر يُستخرج من شبكة ضبابية"

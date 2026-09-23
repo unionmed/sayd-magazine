@@ -39,7 +39,7 @@ FONTS = (
     "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
     "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
-CSS_CACHE = "20260923-nayef-chrome"
+CSS_CACHE = import_wxr.CSS_CACHE
 NO_THUMB_SLUGS = {
     "autumn-migration-field-action-protect-flyways-lebanon",
 }
@@ -1371,7 +1371,7 @@ def patch_existing_html(pairs: dict[str, str]) -> int:
         if path.name == "index.html" and path.parent == DOCS:
             new = new.replace(
                 "assets/css/site.css?v=20260919-mosaic3",
-                "assets/css/site.css?v=20260919-lang",
+                f"assets/css/site.css?v={CSS_CACHE}",
             )
         if new != text:
             path.write_text(new, encoding="utf-8")

@@ -13,6 +13,8 @@ import shutil
 import sys
 from pathlib import Path
 
+from site_cache import CSS_CACHE
+
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 UPLOADS = Path("/home/ubuntu/.cursor/projects/workspace/uploads")
@@ -214,7 +216,7 @@ def write_ar_article() -> None:
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="../../assets/css/site.css?v=20260922-text-under">
+  <link rel="stylesheet" href="../../assets/css/site.css?v={CSS_CACHE}">
   <link rel="icon" href="../../media/brand/sayd-logo.png">
   <link rel="alternate" hreflang="en" href="../../en/posts/{EN_SLUG}/index.html">
   <link rel="alternate" hreflang="ar" href="index.html">
@@ -409,7 +411,7 @@ def write_en_article() -> None:
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap">
-  <link rel="stylesheet" href="../../../assets/css/site.css?v=20260922-text-under">
+  <link rel="stylesheet" href="../../../assets/css/site.css?v={CSS_CACHE}">
   <link rel="icon" href="../../../media/brand/sayd-logo.png">
   <link rel="alternate" hreflang="ar" href="../../../posts/{AR_SLUG}/index.html">
   <link rel="alternate" hreflang="en" href="index.html">
