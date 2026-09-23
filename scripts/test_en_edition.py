@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from site_cache import CSS_CACHE  # noqa: E402
 from homepage_thumbs import (  # noqa: E402
     HOMEPAGE_UNIQUE_THUMBS,
     NAYEF_LOCKED_PRIMARY_ALTS,
@@ -285,6 +286,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             or "?v=20260922-empty-cats-b" in css_q
             or "?v=20260923-nayef-chrome" in css_q
             or "?v=20260923-footer-once" in css_q
+            or f"?v={CSS_CACHE}" in css_q
         )
         assert "kaps-makshab-apu-fries-hero.jpg" not in lead
 
@@ -433,6 +435,7 @@ def test_en_nested_nav_paths() -> None:
     assert (
         "?v=20260919-en-plex-kaps" in article
         or "?v=20260922-text-under" in article
+        or f"?v={CSS_CACHE}" in article
     )
     en_home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert (
@@ -449,6 +452,7 @@ def test_en_nested_nav_paths() -> None:
         or "?v=20260922-empty-cats-b" in en_home
         or "?v=20260923-nayef-chrome" in en_home
         or "?v=20260923-footer-once" in en_home
+        or f"?v={CSS_CACHE}" in en_home
     )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -484,6 +488,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-empty-cats-b" in home
         or "?v=20260923-nayef-chrome" in home
         or "?v=20260923-footer-once" in home
+        or f"?v={CSS_CACHE}" in home
     )
     assert (
         "?v=20260919-en-plex-kaps-r" in en
@@ -499,6 +504,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-empty-cats-b" in en
         or "?v=20260923-nayef-chrome" in en
         or "?v=20260923-footer-once" in en
+        or f"?v={CSS_CACHE}" in en
     )
     assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
@@ -607,6 +613,7 @@ def test_every_en_page_is_ltr_plex() -> None:
             or "?v=20260922-empty-cats-b" in html
             or "?v=20260923-nayef-chrome" in html
             or "?v=20260923-footer-once" in html
+            or f"?v={CSS_CACHE}" in html
         )
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html

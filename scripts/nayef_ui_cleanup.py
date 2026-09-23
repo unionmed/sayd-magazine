@@ -11,10 +11,11 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
+from site_cache import CSS_CACHE
+
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 ARCHIVE = "https://sayd-magazine.com/articles/"
-CSS_CACHE = "20260923-nayef-chrome"
 
 # Removed from nav / drawer only. Badges and breadcrumbs stay (deep URLs).
 NAV_ONLY = ("category/جعبة-المنوعات/index.html",)

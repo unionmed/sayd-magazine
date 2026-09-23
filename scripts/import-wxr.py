@@ -26,6 +26,7 @@ from urllib.parse import unquote, urlparse
 from xml.etree import ElementTree as ET
 
 from homepage_thumbs import NAYEF_LOCKED_PRIMARY_ALTS, resolve_home_thumb
+from site_cache import CSS_CACHE
 from media_rewrite import (
     FORBIDDEN_SRC_RE,
     FOOTER_LOGO_ORIGINAL,
@@ -518,7 +519,7 @@ def esc(s: str) -> str:
 
 
 def rel_css(depth: int) -> str:
-    return "../" * depth + "assets/css/site.css"
+    return "../" * depth + f"assets/css/site.css?v={CSS_CACHE}"
 
 
 def rel_tokens(depth: int) -> str:
@@ -1037,14 +1038,9 @@ LICENSE_TEXT_AR = (
 LICENSE_TEXT_EN = (
     "Licensed by the National Media Council in Lebanon under official notice No. 157 dated 5 September 2016"
 )
-CSS_CACHE_LICENSE = "20260923-nayef-chrome"
-# Query-bust only the pages reviewers open for this chrome change.
-LICENSE_CSS_BUST_PAGES = {
-    "index.html",
-    "en/index.html",
-    "memory/index.html",
-    "en/memory/index.html",
-}
+# Alias kept for callers that still say “license chrome”. One token for every page.
+CSS_CACHE_LICENSE = CSS_CACHE
+SITE_CSS_HREF_RE = re.compile(r"assets/css/site\.css(?:\?v=[^\"']*)?")
 
 
 def footer_copyright(lang: str = "ar") -> str:
@@ -1134,41 +1130,32 @@ def apply_footer_bottom(html: str, lang: str | None = None) -> str:
         '<div class="container footer-bottom-inner">',
         footer_bottom_inner_html(lang),
     )
+    current = f'assets/css/site.css?v={CSS_CACHE}"'
     return (
         patched.replace(
-            "assets/css/site.css?v=20260919-en-plex-kaps-q\"",
-            "assets/css/site.css?v=20260922-text-under\"",
+            'assets/css/site.css?v=20260919-en-plex-kaps-q"',
+            current,
             1,
         ).replace(
-            "assets/css/site.css?v=20260919-en-plex-kaps-p\"",
-            "assets/css/site.css?v=20260922-text-under\"",
+            'assets/css/site.css?v=20260919-en-plex-kaps-p"',
+            current,
             1,
         ).replace(
-            "assets/css/site.css?v=20260919-kaps-caption\"",
-            "assets/css/site.css?v=20260919-kaps-caption-p\"",
+            'assets/css/site.css?v=20260919-kaps-caption"',
+            current,
             1,
         )
     )
 
 
+def stamp_site_css(html: str) -> str:
+    """Point every site.css link at the shared cache-bust token."""
+    return SITE_CSS_HREF_RE.sub(f"assets/css/site.css?v={CSS_CACHE}", html)
+
+
 def bust_license_css(html: str) -> str:
-    """Point one stylesheet link at the license-line cache token."""
-    token = f"site.css?v={CSS_CACHE_LICENSE}"
-    if token in html:
-        return html
-    updated, n = re.subn(
-        r"assets/css/site\.css\?v=[^\"']+",
-        f"assets/css/{token}",
-        html,
-        count=1,
-    )
-    if n:
-        return updated
-    return html.replace(
-        'assets/css/site.css"',
-        f'assets/css/{token}"',
-        1,
-    )
+    """Point stylesheet links at the shared cache token."""
+    return stamp_site_css(html)
 
 
 def strip_header_license(html: str) -> str:
@@ -1195,10 +1182,7 @@ def apply_license_chrome_docs(root: Path | None = None) -> int:
     changed = 0
     for path in sorted(root.rglob("*.html")):
         text = path.read_text(encoding="utf-8")
-        new = strip_header_license(apply_footer_bottom(text))
-        rel = path.relative_to(root).as_posix()
-        if rel in LICENSE_CSS_BUST_PAGES:
-            new = bust_license_css(new)
+        new = stamp_site_css(strip_header_license(apply_footer_bottom(text)))
         if new != text:
             path.write_text(new, encoding="utf-8")
             changed += 1
