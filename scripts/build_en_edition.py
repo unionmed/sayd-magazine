@@ -1099,7 +1099,7 @@ def card(slug: str, articles: dict[str, dict], href: str, heading: str = "h3") -
     return f"""<article class="card overlay">
   <a class="thumb" href="{href}"><img src="{img}" alt="{escape(item.get("image_alt") or item["title"], quote=True)}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">{escape(item["date"])}<span class="cat-pill">{escape(item["category"])}</span></div>
+    <div class="meta">{escape(item["date"])}</div>
     <{heading}><a href="{href}">{escape(item["title"])}</a></{heading}>
     {byline}
   </div>
@@ -1130,7 +1130,7 @@ def write_home(articles: dict[str, dict]) -> None:
             f"""<article class="{cls}">
   <a class="thumb" href="posts/{slug}/index.html"><img src="../{img}" alt="{escape(item.get("image_alt") or item["title"], quote=True)}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">{escape(item["date"])}<span class="cat-pill">{escape(item["category"])}</span></div>
+    <div class="meta">{escape(item["date"])}</div>
     <h3><a href="posts/{slug}/index.html">{escape(item["title"])}</a></h3>
     {byline}
   </div>
@@ -1177,7 +1177,7 @@ def write_home(articles: dict[str, dict]) -> None:
             f"""<article class="card overlay">
   <a class="thumb" href="posts/{slug}/index.html"><img src="../{item["image"]}" alt="{escape(item.get("image_alt") or item["title"], quote=True)}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">{escape(item["date"])}<span class="cat-pill">{escape(item["category"])}</span></div>
+    <div class="meta">{escape(item["date"])}</div>
     <h3><a href="posts/{slug}/index.html">{escape(item["title"])}</a></h3>
   </div>
 </article>"""
@@ -1192,7 +1192,7 @@ def write_home(articles: dict[str, dict]) -> None:
 <article class="card overlay feature-lead">
   <a class="thumb" href="posts/{lead}/index.html"><img src="../{lead_item["image"]}" alt="{escape(lead_item.get("image_alt") or lead_item["title"], quote=True)}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">{escape(lead_item["date"])}<span class="cat-pill">{escape(lead_item["category"])}</span></div>
+    <div class="meta">{escape(lead_item["date"])}</div>
     <h2><a href="posts/{lead}/index.html">{escape(lead_item["title"])}</a></h2>
   </div>
 </article>

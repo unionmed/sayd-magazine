@@ -32,6 +32,12 @@ HOMEPAGE_CONFIG = ROOT / "content" / "homepage.json"
 
 ARTICLE_RE = re.compile(r"<article\b[^>]*>.*?</article>", re.S)
 POST_HREF_RE = re.compile(r'href="(?:\.\./)*posts/([^/]+)/')
+CAT_PILL_RE = re.compile(r'<span class="cat-pill">.*?</span>', re.S)
+
+
+def strip_home_cat_pills(html: str) -> str:
+    """Homepage cards keep the date. Door headings classify; no category stamp."""
+    return CAT_PILL_RE.sub("", html)
 LATEST_ITEM_RE = re.compile(
     r'<li>\s*<a href="(?:\.\./)*posts/([^/]+)/index\.html">.*?</li>\s*',
     re.S,
@@ -189,56 +195,56 @@ AR_FALLBACK_CARDS: dict[str, str] = {
     BIRDLIFE_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{BIRDLIFE_AR}/index.html"><img src="{BIRDLIFE_IMG}" alt="{BIRDLIFE_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
+    <div class="meta">23 أيلول 2026</div>
     <h2><a href="posts/{BIRDLIFE_AR}/index.html">{BIRDLIFE_HOME_TITLE_AR}</a></h2>
   </div>
 </article>""",
     CURLEW_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{CURLEW_AR}/index.html"><img src="{CURLEW_IMG}" alt="{CURLEW_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
+    <div class="meta">22 أيلول 2026</div>
     <h2><a href="posts/{CURLEW_AR}/index.html">{CURLEW_TITLE_AR}</a></h2>
   </div>
 </article>""",
     "الصيّادة-السورية-أماني-الحمصي": """<article class="card overlay">
   <a class="thumb" href="posts/الصيّادة-السورية-أماني-الحمصي/index.html"><img src="media/uploads/2022/08/اماني-الحمصي-2.jpg" alt="الصيّادة السورية أماني الحمصي" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 آب 2022<span class="cat-pill">مقابلات وتحقيقات</span></div>
+    <div class="meta">20 آب 2022</div>
     <h3><a href="posts/الصيّادة-السورية-أماني-الحمصي/index.html">الصيّادة السورية أماني الحمصي: أنا ضدّ الصيد الجائر.. وأتمنى سَنّ قانون صيد في سوريا يُنصف الطبيعة والصيّاد</a></h3>
   </div>
 </article>""",
     CABS_AR: """<article class="card card-stack">
   <a class="thumb" href="posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html"><img src="media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" loading="lazy"></a>
   <div class="body">
-    <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <div class="meta">13 أيلول 2026</div>
     <h3><a href="posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html">CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي</a></h3>
   </div>
 </article>""",
     SUHAIL_AR: """<article class="card card-stack">
   <a class="thumb" href="posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html"><img src="media/uploads/2026/09/hero-closing-80k.jpg" alt="80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة" loading="lazy"></a>
   <div class="body">
-    <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <div class="meta">13 أيلول 2026</div>
     <h3><a href="posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html">80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة</a></h3>
   </div>
 </article>""",
     TAIF_AR: """<article class="card card-stack">
   <a class="thumb" href="posts/العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني/index.html"><img src="media/uploads/2026/09/taif-racing-hawiyah.jpg" alt="خيّال وجواد أشهب على مضمار الحَوِيّة — ختام موسم سباقات الطائف 2026" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 أيلول 2026<span class="cat-pill">صيد وفروسية</span></div>
+    <div class="meta">22 أيلول 2026</div>
     <h3><a href="posts/العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني/index.html">العد التنازلي لختام موسم الطائف.. ترقّب خليجي لكأسي «الملك فيصل» و«اليوم الوطني» في الحَوِيّة</a></h3>
   </div>
 </article>""",
     SAUDI_AR: """<article class="card card-stack">
   <a class="thumb" href="posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html"><img src="media/uploads/2026/09/ncw-wildlife-card.jpg" alt="المركز الوطني لتنمية الحياة الفطرية — السعودية" loading="lazy"></a>
   <div class="body">
-    <div class="meta">9 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <div class="meta">9 أيلول 2026</div>
     <h3><a href="posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html">السعودية تطلق موسم الصيد السادس وتشدد على الضوابط</a></h3>
   </div>
 </article>""",
     ADONIS_AR: """<article class="card card-stack feature-adonis">
   <a class="thumb" href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html"><img src="media/uploads/2026/09/sayd-returns-adonis-editor.jpg" alt="أدونيس الخطيب — «صيد» تعود… وهذا ما نريد أن نقدّمه لكم" loading="lazy"></a>
   <div class="body">
-    <div class="meta">8 أيلول 2026<span class="cat-pill">كلمتنا</span></div>
+    <div class="meta">8 أيلول 2026</div>
     <h3><a href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html">«صيد» تعود… وهذا ما نريد أن نقدّمه لكم</a></h3>
     <p class="byline" style="font-size:0.72rem;color:var(--muted);margin:0.15rem 0 0;line-height:1.35;">رئيس التحرير أدونيس الخطيب</p>
   </div>
@@ -246,63 +252,63 @@ AR_FALLBACK_CARDS: dict[str, str] = {
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": """<article class="card overlay">
   <a class="thumb" href="posts/مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات/index.html"><img src="media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" alt="باحث ميداني يزيل طائراً من شباك مخالفة." loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <div class="meta">20 أيلول 2026</div>
     <h3><a href="posts/مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات/index.html">مصر: قرار جديد لتنظيم الصيد وملاحقة المخالفات في موسم هجرة الخريف</a></h3>
   </div>
 </article>""",
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": """<article class="card overlay">
   <a class="thumb" href="posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html"><img src="media/uploads/2026/09/gallery-katara-crowd.jpg" alt="قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»" loading="lazy"></a>
   <div class="body">
-    <div class="meta">13 أيلول 2026<span class="cat-pill">صيد وفروسية</span></div>
+    <div class="meta">13 أيلول 2026</div>
     <h3><a href="posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html">قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»</a></h3>
   </div>
 </article>""",
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": """<article class="card overlay">
   <a class="thumb" href="posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html"><img src="media/uploads/2026/09/duck-aswan-960.jpg" alt="مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟" loading="lazy"></a>
   <div class="body">
-    <div class="meta">8 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <div class="meta">8 أيلول 2026</div>
     <h3><a href="posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a></h3>
   </div>
 </article>""",
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه": """<article class="card overlay">
   <a class="thumb" href="posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/index.html"><img src="media/uploads/2025/09/Adonis.jpg" alt="تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة" loading="lazy"></a>
   <div class="body">
-    <div class="meta">30 أيلول 2025<span class="cat-pill">أخبار</span></div>
+    <div class="meta">30 أيلول 2025</div>
     <h3><a href="posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/index.html">تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة</a></h3>
   </div>
 </article>""",
     "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر": """<article class="card overlay">
   <a class="thumb" href="posts/الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر/index.html"><img src="media/uploads/2025/07/IMG_3009-2-1024x683.jpg" alt="الشهرمان الشائع: طائر مائي محمي ومهاجر نادر في لبنان" loading="lazy"></a>
   <div class="body">
-    <div class="meta">11 تموز 2025<span class="cat-pill">أخبار</span></div>
+    <div class="meta">11 تموز 2025</div>
     <h3><a href="posts/الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر/index.html">الشهرمان الشائع: طائر مائي محمي ومهاجر نادر في لبنان</a></h3>
   </div>
 </article>""",
     "المنصة-الرائدة-لنخبة-الصيادين-اللبنا": """<article class="card overlay">
   <a class="thumb" href="posts/المنصة-الرائدة-لنخبة-الصيادين-اللبنا/index.html"><img src="media/uploads/2024/09/Jocy-card.jpg" alt="مديرة التحرير جوسلين بو راشد البستاني — مجلة صيد" loading="lazy"></a>
   <div class="body">
-    <div class="meta">1 تشرين الأول 2024<span class="cat-pill">أخبار</span></div>
+    <div class="meta">1 تشرين الأول 2024</div>
     <h3><a href="posts/المنصة-الرائدة-لنخبة-الصيادين-اللبنا/index.html">المنصة الرائدة لنخبة الصيادين اللبنانيين والعرب ولعشّاق الصيد والطبيعة منذ عام 2012</a></h3>
   </div>
 </article>""",
     POACHING_AR: """<article class="card overlay">
   <a class="thumb" href="posts/الصيد-الجائر-دمار-لهواية-الصيد-إحذروا/index.html"><img src="media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg" alt="طائر يُستخرج من شبكة ضبابية" loading="lazy"></a>
   <div class="body">
-    <div class="meta">15 شباط 2023<span class="cat-pill">صيد بري</span></div>
+    <div class="meta">15 شباط 2023</div>
     <h3><a href="posts/الصيد-الجائر-دمار-لهواية-الصيد-إحذروا/index.html">الصيد الجائر دمار لهواية الصيد.. إحذروا الشباك والدّبق وصيد الليل</a></h3>
   </div>
 </article>""",
     AWSAJ_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{AWSAJ_AR}/index.html"><img src="{AWSAJ_IMG}" alt="{AWSAJ_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 أيلول 2026<span class="cat-pill">الصياد في الطبيعة</span></div>
+    <div class="meta">23 أيلول 2026</div>
     <h3><a href="posts/{AWSAJ_AR}/index.html">{AWSAJ_TITLE_AR}</a></h3>
   </div>
 </article>""",
     "لين-عراجي-بطلة-فروسية-وحساب": """<article class="card overlay">
   <a class="thumb" href="posts/لين-عراجي-بطلة-فروسية-وحساب/index.html"><img src="media/uploads/2022/10/لين-2.jpg" alt="لين عراجي بطلة فروسية وحساب" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 تشرين الأول 2022<span class="cat-pill">فروسية</span></div>
+    <div class="meta">22 تشرين الأول 2022</div>
     <h3><a href="posts/لين-عراجي-بطلة-فروسية-وحساب/index.html">لين عراجي بطلة فروسية وحساب</a></h3>
   </div>
 </article>""",
@@ -319,11 +325,13 @@ def _en_card(
 ) -> str:
     href = f"posts/{slug}/index.html"
     src = f"../{image}"
+    # `category` is kept so callers stay stable. Homepage cards do not stamp it.
+    del category
     return (
         f'<article class="card overlay">\n'
         f'  <a class="thumb" href="{href}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
-        f'    <div class="meta">{date}<span class="cat-pill">{category}</span></div>\n'
+        f'    <div class="meta">{date}</div>\n'
         f'    <h3><a href="{href}">{title}</a></h3>\n'
         f"  </div>\n"
         f"</article>"
@@ -724,8 +732,7 @@ def _as_side_card(article: str, slug: str) -> str:
     elif slug == CABS_EN:
         title = CABS_TITLE_EN
     date = _card_date(article)
-    # Stack boxes under the lead keep the date only. Category pills stay
-    # on the feature-lead and on the lower home doors.
+    # Homepage cards keep the date only. Door headings classify.
     href = re.search(r'href="([^"]*posts/[^"]+/index\.html)"', article)
     link = href.group(1) if href else f"posts/{slug}/index.html"
     return (
@@ -748,17 +755,13 @@ def _as_lead(article: str, slug: str) -> str:
     elif slug == BIRDLIFE_EN:
         title = BIRDLIFE_HOME_TITLE_EN
     date = _card_date(article)
-    cat = ""
-    cat_m = re.search(r'<span class="cat-pill">([^<]+)</span>', article)
-    if cat_m:
-        cat = f'<span class="cat-pill">{cat_m.group(1)}</span>'
     href = re.search(r'href="([^"]*posts/[^"]+/index\.html)"', article)
     link = href.group(1) if href else f"posts/{slug}/index.html"
     return (
         f'<article class="card overlay feature-lead">\n'
         f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
-        f'    <div class="meta">{date}{cat}</div>\n'
+        f'    <div class="meta">{date}</div>\n'
         f"    <h2><a href=\"{link}\">{title}</a></h2>\n"
         f"  </div>\n"
         f"</article>"
@@ -958,6 +961,7 @@ def lock_homepage_html(
 
 def _as_desk_card(article: str, *, compact: bool) -> str:
     cls = "card card-compact overlay" if compact else "card overlay"
+    article = strip_home_cat_pills(article)
     return re.sub(r"<article class=\"card[^\"]*\"", f'<article class="{cls}"', article, count=1)
 
 
@@ -1124,6 +1128,7 @@ def apply_en_home(path: Path | None = None) -> str:
     html = rebuild_en_home_sections(html, merged)
     html = drop_home_desks(html, DROPPED_DESKS_EN)
     html = lock_homepage_html(html)
+    html = strip_home_cat_pills(html)
     html = bump_home_css(html)
     dest.write_text(html, encoding="utf-8")
     return html
@@ -1142,6 +1147,7 @@ def apply_ar_home(path: Path | None = None) -> str:
     html = rebuild_ar_home_sections(html, merged)
     html = drop_home_desks(html, DROPPED_DESKS_AR)
     html = lock_homepage_html(html)
+    html = strip_home_cat_pills(html)
     html = bump_home_css(html)
     dest.write_text(html, encoding="utf-8")
     return html

@@ -97,7 +97,7 @@ def restore_autumn_how_card(mapping: dict[str, str]) -> None:
 <article class="card overlay">
   <a class="thumb" href="posts/{slug}/index.html"><img src="media/{rel}" alt="مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟" loading="lazy"></a>
   <div class="body">
-    <div class="meta">8 أيلول 2026<span class="cat-pill">أخبار</span></div>
+    <div class="meta">8 أيلول 2026</div>
     <h3><a href="posts/{slug}/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a></h3>
   </div>
 </article>

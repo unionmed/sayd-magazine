@@ -652,7 +652,8 @@ def test_homepage_story_cards_are_unique() -> None:
                 "george-taza-protect-fish-stocks-interview",
             ]
             assert "لين-2.jpg" in interviews
-            assert "The Hunter in Nature" in interviews
+            assert "awsaj thornbush" in interviews
+            assert "The Hunter in Nature" not in interviews
             assert "01-awsaj-dense-shrub-negev.jpg" in interviews
             assert "the-awsaj-thornbush-reading-the-land" not in ticker_en
             assert "how-migration-routes-lost-seven-birds-in-150-years" not in iv_slugs
@@ -689,7 +690,8 @@ def test_homepage_story_cards_are_unique() -> None:
                 "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
             ]
             assert "لين-2.jpg" in interviews
-            assert "الصياد في الطبيعة" in interviews
+            assert "شجيرة العوسج" in interviews
+            assert "الصياد في الطبيعة" not in interviews
             assert "01-awsaj-dense-shrub-negev.jpg" in interviews
             assert "شجيرة-العوسج-حين-تقرأ-الأرض" not in ticker_ar
             assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" not in iv_slugs
@@ -880,22 +882,91 @@ def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
     assert "feed-thumb" in latest
 
 
-def test_feature_stack_has_dates_without_category_pills() -> None:
-    """Side boxes under the lead keep the date and drop the category pill."""
-    for rel, lead_title, door_h2 in (
-        ("index.html", "تقرير بيرد لايف يدق ناقوس الخطر...", "مقابلات وتحقيقات"),
-        ("en/index.html", "BirdLife report sounds the alarm...", "Interviews &amp; Investigations"),
-    ):
+def test_homepage_cards_keep_dates_without_category_pills() -> None:
+    """No category stamp on any homepage card. Door headings and dates stay."""
+    doors = {
+        "index.html": (
+            "تقرير بيرد لايف يدق ناقوس الخطر...",
+            (
+                "مقابلات وتحقيقات",
+                "عتاد وسلاح",
+                "صيد TV",
+                "صور",
+                "آخر الأخبار",
+            ),
+        ),
+        "en/index.html": (
+            "BirdLife report sounds the alarm...",
+            (
+                "Interviews &amp; Investigations",
+                "Gear &amp; Arms",
+                "Sayd TV",
+                "Photos",
+                "Latest news",
+            ),
+        ),
+    }
+    for rel, (lead_title, headings) in doors.items():
         html = (DOCS / rel).read_text(encoding="utf-8")
+        assert "cat-pill" not in html
         lead = html.split("feature-lead", 1)[1].split("feature-side", 1)[0]
         stack = html.split("feature-stack", 1)[1].split("latest-col", 1)[0]
-        interviews = html.split(f"<h2>{door_h2}</h2>", 1)[1].split("</section>", 1)[0]
+        interviews = html.split(f"<h2>{headings[0]}</h2>", 1)[1].split("</section>", 1)[0]
+        gear = html.split(f"<h2>{headings[1]}</h2>", 1)[1].split("</section>", 1)[0]
         assert lead_title in lead
-        assert "cat-pill" in lead
+        assert "cat-pill" not in lead
+        assert re.search(r'<div class="meta">[^<]+</div>', lead)
         assert "cat-pill" not in stack
         assert stack.count('<div class="meta">') == 4
-        assert "cat-pill" in interviews
+        assert "cat-pill" not in interviews
         assert interviews.count("<article") == 4
+        assert interviews.count('<div class="meta">') == 4
+        assert "cat-pill" not in gear
+        assert gear.count("<article") >= 1
+        assert gear.count('<div class="meta">') == gear.count("<article")
+        for heading in headings:
+            assert f"<h2>{heading}</h2>" in html
+    ar_article = (
+        DOCS / "posts" / "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف" / "index.html"
+    ).read_text(encoding="utf-8")
+    en_article = (
+        DOCS / "en" / "posts" / "skies-losing-balance-birdlife-flyways-report" / "index.html"
+    ).read_text(encoding="utf-8")
+    assert 'class="badge"' in ar_article and "cat-pill" in ar_article
+    assert 'class="badge"' in en_article and "cat-pill" in en_article
+
+
+def test_homepage_builders_do_not_restamp_category_pills() -> None:
+    """A rebuild of the lead, stack, and door cards stays date-only."""
+    from homepage_unique_cards import (  # noqa: E402
+        _as_desk_card,
+        _as_lead,
+        _as_side_card,
+        _en_card,
+        strip_home_cat_pills,
+    )
+
+    stamped = (
+        '<article class="card overlay">'
+        '<a class="thumb" href="posts/example/index.html">'
+        '<img src="media/x.jpg" alt="alt" loading="lazy"></a>'
+        '<div class="body">'
+        '<div class="meta">23 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>'
+        '<h2><a href="posts/example/index.html">عنوان</a></h2>'
+        "</div></article>"
+    )
+    rendered = [
+        _as_lead(stamped, "example"),
+        _as_side_card(stamped, "example"),
+        _as_desk_card(stamped, compact=False),
+        _as_desk_card(stamped, compact=True),
+        _en_card("example", "Title", "23 September 2026", "News", "media/x.jpg", "alt"),
+        strip_home_cat_pills(stamped),
+    ]
+    for html in rendered:
+        assert "cat-pill" not in html
+        assert "meta" in html
+        assert "23" in html
 
 
 def test_homepage_sidebar_hides_when_stacked() -> None:
@@ -945,6 +1016,7 @@ if __name__ == "__main__":
     test_en_home_mirrors_ar_desk_cards()
     test_nayef_unlinked_chrome_and_poetry_rename()
     test_adonis_off_ticker_and_empty_en_miscellany_hidden()
-    test_feature_stack_has_dates_without_category_pills()
+    test_homepage_cards_keep_dates_without_category_pills()
+    test_homepage_builders_do_not_restamp_category_pills()
     test_homepage_sidebar_hides_when_stacked()
     print("test_homepage_qa: ok")

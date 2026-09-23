@@ -796,14 +796,14 @@ def featured_posts(posts: list[dict], slugs: list[str] | None = None) -> list[di
 
 
 def featured_side_html(p: dict, thumb: str = "") -> str:
-    """Always emit a featured side card. Missing image keeps the card."""
-    cats = p.get("categories") or []
-    cat = esc(cats[0]["name"]) if cats else ""
+    """Always emit a featured side card. Missing image keeps the card.
+
+    Homepage cards keep the date only. Door headings classify.
+    """
     excerpt = esc(strip_html(p.get("excerpt") or "", 140))
-    cat_html = f'<span class="cat-pill">{cat}</span>' if cat else ""
     return f"""
 <article class="hero-side">
-  <a class="thumb" href="{post_href(p["slug"], 0)}">{thumb}{cat_html}</a>
+  <a class="thumb" href="{post_href(p["slug"], 0)}">{thumb}</a>
   <div class="meta">{esc(p.get("date_display") or "")}</div>
   <h3><a href="{post_href(p["slug"], 0)}">{esc(p.get("title") or "")}</a></h3>
   <p class="excerpt">{excerpt}</p>
@@ -1883,14 +1883,11 @@ def build_site(data: dict, out: Path) -> None:
         thumb = home_thumb(p, depth)
         if "<img" not in thumb:
             return ""
-        cat = ""
-        if p["categories"]:
-            cat = f'<span class="cat-pill">{esc(p["categories"][0]["name"])}</span>'
         return f"""
 <article class="card {cls}">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}{cat}</div>
+    <div class="meta">{esc(p["date_display"])}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
   </div>
 </article>"""
@@ -1927,13 +1924,12 @@ def build_site(data: dict, out: Path) -> None:
     latest_items = "\n".join(item for p in latest_news if (item := news_item(p, 0)))
 
     def hero_lead_html(p: dict) -> str:
-        cat = esc(p["categories"][0]["name"]) if p["categories"] else "تحقيقات"
         excerpt = esc(strip_html(p.get("excerpt") or p.get("content") or "", 220))
         return f"""
 <article class="hero-lead">
   <a class="hero-media thumb" href="{post_href(p["slug"], 0)}">{home_thumb(p, 0)}</a>
   <div class="hero-overlay">
-    <div class="hero-kicker"><span>{esc(p["date_display"])}</span><span class="cat-pill">{cat}</span></div>
+    <div class="hero-kicker"><span>{esc(p["date_display"])}</span></div>
     <h1><a href="{post_href(p["slug"], 0)}">{esc(p["title"])}</a></h1>
     <p class="hero-excerpt">{excerpt}</p>
     <a class="hero-more" href="{post_href(p["slug"], 0)}">قراءة التحقيق الكامل</a>

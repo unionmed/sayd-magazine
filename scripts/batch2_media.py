@@ -574,14 +574,14 @@ def restore_homepage_cards(mapping: dict[str, str]) -> int:
     added = 0
 
     def card_html(slug: str, title: str, date: str, cat: str, section_cls: str) -> str:
+        del cat  # Homepage cards keep the date. Door headings classify.
         rel = mapping[slug]
-        pill = f'<span class="cat-pill">{cat}</span>' if cat else ""
         return (
             f'\n<article class="card {section_cls}">\n'
             f'  <a class="thumb" href="posts/{slug}/index.html">'
             f'<img src="media/{rel}" alt="{title}" loading="lazy"></a>\n'
             f'  <div class="body">\n'
-            f'    <div class="meta">{date}{pill}</div>\n'
+            f'    <div class="meta">{date}</div>\n'
             f'    <h3><a href="posts/{slug}/index.html">{title}</a></h3>\n'
             f"  </div>\n"
             f"</article>\n"

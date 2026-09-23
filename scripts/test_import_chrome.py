@@ -590,6 +590,7 @@ def test_featured_pool_never_drops_for_missing_image() -> None:
     assert cabs["title"]
     html = featured_side_html(cabs, thumb="")
     assert KAPS in html
+    assert "cat-pill" not in html
     assert html.strip()
 
 
@@ -607,6 +608,8 @@ def test_featured_side_card_stays_without_img() -> None:
     assert MEMORY in html
     assert "hero-side" in html
     assert "<img" not in html
+    assert "cat-pill" not in html
+    assert "19 أيلول 2026" in html
 
 
 def test_thumb_cleanup_cannot_drop_featured_memory() -> None:
