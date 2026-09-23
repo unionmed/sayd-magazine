@@ -234,7 +234,7 @@ def write_ar_article() -> None:
       <div class="container footer-grid">
         <div class="footer-col">
           <img class="footer-logo" src="../../media/brand/sayd-footer-logo.png" width="195" height="61" alt="مجلة صيد">
-          <p>مجلة صيد — أسياد الطبيعة في البر والبحر والجو. صيد، حياة برّية، طيور، فروسية وتراث من لبنان والعالم العربي.</p>
+          <p>مجلة أسياد الطبيعة في البر والبحر والجو — صيد، حياة برّية، طيور، فروسية وتراث من لبنان والعالم العربي.</p>
         </div>
         <div class="footer-col">
           <h3>التصنيفات</h3>

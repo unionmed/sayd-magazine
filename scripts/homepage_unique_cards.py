@@ -1036,8 +1036,6 @@ def rewrite_poaching_chickadee(html: str, *, depth: int = 0) -> str:
 def apply_en_home(path: Path | None = None) -> str:
     dest = path or (DOCS / "en" / "index.html")
     html = dest.read_text(encoding="utf-8")
-    if 'id="home-2026"' in html:
-        return html
     html = drop_ticker_slugs(html)
     cards = extract_cards_by_slug(html)
     merged = dict(EN_FALLBACK_CARDS)
@@ -1055,8 +1053,6 @@ def apply_en_home(path: Path | None = None) -> str:
 def apply_ar_home(path: Path | None = None) -> str:
     dest = path or (DOCS / "index.html")
     html = dest.read_text(encoding="utf-8")
-    if 'id="home-2026"' in html:
-        return html
     html = rewrite_poaching_chickadee(html, depth=0)
     html = drop_ticker_slugs(html)
     cards = extract_cards_by_slug(html)

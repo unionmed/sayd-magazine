@@ -32,6 +32,7 @@ HOME_TICKER_EN = [
     "saudi-sixth-hunting-season-2026-2027-rules",
     "video-saud-al-babtain-maqnas-afghanistan",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
+    "autumn-migration-field-action-protect-flyways-lebanon",
 ]
 
 
@@ -85,12 +86,8 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         # Miscellany desk is off the homepage. Articles stay in /en/posts.
         "european-bee-eater",
         "barn-owl",
-        # No approved homepage photograph. Dropped from the 8-item ticker.
-        "autumn-migration-field-action-protect-flyways-lebanon",
-        # Same Suhail exhibition as the closer. One homepage slot.
-        "suhail-2026-in-photos-falcons-visitors",
-        # Gear comparison is on the عتاد category door. Homepage cascade
-        # placement is left to the homepage pass; do not push it into مستجدات.
+        # Gear comparison stays on the عتاد listing. Pre-#74 homepage
+        # does not include it.
         "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
     }
     for en_slug in PAIRS.values():
@@ -100,11 +97,8 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
     assert "great-white-pelican-matn-highway-nayef-krayem" in home
     assert "rita-habib-alshaar.jpg" in home
     assert 'class="memory-strip"' in home
-    assert ">Shooting<" in home
-    assert "<h2>Shooting</h2>" not in home
+    assert ">Shooting<" not in home
     assert ">Laws &amp; Maps<" not in home
-    assert ">Arab Hunting Laws<" in home
-    assert "<h2>Arab Hunting Laws</h2>" not in home
     assert home.count("<section class=\"home-section") >= 4
 
 
@@ -112,10 +106,10 @@ def test_en_home_has_no_arabic_archive_mix() -> None:
     """EN home/grids: English twins only; hide empty desks; no AR archive cards."""
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     stories = (DOCS / "en" / "stories" / "index.html").read_text(encoding="utf-8")
-    after_latest = home.split("What's new", 1)[1]
+    after_latest = home.split("Latest news", 1)[1]
     assert "Arabic archive" not in home
     assert "en-callout" not in after_latest
-    assert "<h2>Shooting</h2>" not in home
+    assert ">Shooting<" not in home
     assert ">Laws &amp; Maps<" not in home
     assert "great-white-pelican-matn-highway-nayef-krayem" in home
     assert "great-white-pelican-matn-highway-nayef-krayem" in stories
@@ -159,16 +153,15 @@ def test_en_homepage_featured_2026() -> None:
     assert "mecshap-apu-cabs-baalbek-release.jpg" in html
     assert "<h2>Featured stories</h2>" not in html
     assert "AP4I0032" not in html
-    mosaic = html.split('class="feature-cover"', 1)[1].split('id="home-cascade"', 1)[0]
-    lead = mosaic
-    side = html.split("door-sayd", 1)[1].split("door-furusiyya", 1)[0]
-    nature = html.split("door-nature", 1)[1].split("Bird Encyclopedia", 1)[0]
+    mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    lead = mosaic.split("feature-side", 1)[0]
+    side = mosaic.split("feature-side", 1)[1]
     assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
     assert "slender-billed-curlew-last-photo.jpg" in lead
     assert "mecshap-apu-cabs-baalbek-release.jpg" in side
-    assert "farmers-storks-migrating-palestine.jpg" in nature
+    assert "farmers-storks-migrating-palestine.jpg" in side
     assert "suhail-2026-closes-decade-katara-80000-visitors" not in lead
-    assert "kaps-makshab-apu-fries-hero.jpg" not in html
+    assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
     assert "placeholder-thumb" not in html
     assert "GitHub Pages" not in html
@@ -243,22 +236,22 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
 
     def assert_kaps_lead(path: Path, *, ar: bool) -> None:
         html = path.read_text(encoding="utf-8")
-        lead = html.split('class="feature-cover"', 1)[1].split('id="home-cascade"', 1)[0]
-        side = html.split("door-sayd", 1)[1].split("door-furusiyya", 1)[0]
-        nature = html.split("door-nature", 1)[1]
+        mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+        lead = mosaic.split("feature-side", 1)[0]
+        side = mosaic.split("feature-side", 1)[1]
         assert "feature-lead" in lead
         assert "feature-ecocide" not in lead
         assert "kaps-lead" not in lead
         assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
         assert "slender-billed-curlew-last-photo.jpg" in lead
         assert "mecshap-apu-cabs-baalbek-release.jpg" in side
-        assert "farmers-storks-migrating-palestine.jpg" in nature
-        assert "hero-closing-80k.jpg" not in lead
-        assert "kaps-makshab-apu-fries-hero.jpg" not in html
-        assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in lead
+        assert "farmers-storks-migrating-palestine.jpg" in side
+        assert "hero-closing-80k.jpg" not in mosaic
+        assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
+        assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in mosaic
         if ar:
             assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" in side
-            titles = " ".join(re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", side, re.S))
+            titles = " ".join(re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", mosaic, re.S))
             assert "مكشب" not in titles
             assert "كابس" not in titles
             assert "<h2>قصص مميزة</h2>" not in html
@@ -283,7 +276,6 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             or "?v=20260922-empty-cats-b" in css_q
             or "?v=20260923-nayef-chrome" in css_q
             or "?v=20260923-footer-once" in css_q
-            or "?v=20260923-polish" in css_q
         )
         assert "kaps-makshab-apu-fries-hero.jpg" not in lead
 
@@ -314,7 +306,8 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
 
     en_home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert "kaps-makshab-apu-fries-hero.jpg" not in en_home
-    assert "autumn-migration-field-action-protect-flyways-lebanon" not in en_home
+    after_latest = en_home.split("Latest news", 1)[1]
+    assert 'class="thumb" href="posts/autumn-migration-field-action-protect-flyways-lebanon' not in after_latest
 
     src = (ROOT / "scripts" / "build_en_edition.py").read_text(encoding="utf-8")
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src
@@ -327,8 +320,9 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
 def test_en_footer_has_official_mecshap_harvest_label() -> None:
     """Footer uses Harvest; CABS side-box alt stays the Nayef/PR #29 line."""
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    lead = home.split('class="feature-cover"', 1)[1].split('id="home-cascade"', 1)[0]
-    side = home.split("door-sayd", 1)[1].split("door-furusiyya", 1)[0]
+    mosaic = home.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    lead = mosaic.split("feature-side", 1)[0]
+    side = mosaic.split("feature-side", 1)[1]
     assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
     assert "Harvest" not in lead
     assert "Harvest" not in side
@@ -372,22 +366,20 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "19 Sep 2026" not in html
     assert "20 September 2026" in html
     assert ">Arabic<" not in html.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
-    assert "The Hunter in Nature" in html
+    assert "Interviews &amp; Investigations" in html
+    assert "Eco-Tourism" in html
     assert "international-orgs-ecocide-south-lebanon" not in html
     assert "how-farmers-protect-migratory-birds-this-autumn" in html
     assert "feature-adonis" in html
     assert "feature-lead" in html
-    assert 'id="home-2026"' in html
-    assert ">Sayd Channel<" in html
-    assert ">Your Lens<" in html
-    assert ">Hunting<" in html.split("main-nav", 1)[1].split("</nav>", 1)[0]
+    assert "home-layout" in html
+    assert ">Sayd TV<" in html
+    assert ">Photos<" in html
+    assert ">Hunting &amp; Equestrian<" in html.split("main-nav", 1)[1].split("</nav>", 1)[0]
     assert "<h2>Hunting &amp; Equestrian</h2>" not in html
     assert ">Gear &amp; Arms<" in html
-    assert "<h2>Gear &amp; Arms</h2>" not in html
     assert ">Miscellany<" not in html
-    assert ">Shooting<" in html.split("main-nav", 1)[1].split("</nav>", 1)[0]
-    assert "<h2>Shooting</h2>" not in html
-    assert ">Arab Hunting Laws<" in html
+    assert ">Shooting<" not in html
     assert ">Laws &amp; Maps<" not in html
     assert (DOCS / "en" / "team" / "index.html").is_file()
     assert (DOCS / "en" / "contact" / "index.html").is_file()
@@ -432,7 +424,6 @@ def test_en_nested_nav_paths() -> None:
     assert (
         "?v=20260919-en-plex-kaps" in article
         or "?v=20260922-text-under" in article
-        or "?v=20260923-polish" in article
     )
     en_home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert (
@@ -449,13 +440,12 @@ def test_en_nested_nav_paths() -> None:
         or "?v=20260922-empty-cats-b" in en_home
         or "?v=20260923-nayef-chrome" in en_home
         or "?v=20260923-footer-once" in en_home
-        or "?v=20260923-polish" in en_home
     )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert "<h2>News</h2>" not in home
     assert "Awareness and Responsibility… Personalities" not in home
-    assert "brand-lockup" in home and ">Sayd Magazine<" in home
+    assert "brand-wordmark" in home and ">Sayd<" in home
     assert "Untranslated" not in home and "Break Barat" not in home
     assert "saudi-hunting-fines-5000-riyal-prohibited-areas" not in home
     assert "saudi-5000-riyal-hunting-fine-teaser" not in home
@@ -485,7 +475,6 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-empty-cats-b" in home
         or "?v=20260923-nayef-chrome" in home
         or "?v=20260923-footer-once" in home
-        or "?v=20260923-polish" in home
     )
     assert (
         "?v=20260919-en-plex-kaps-r" in en
@@ -501,16 +490,17 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-empty-cats-b" in en
         or "?v=20260923-nayef-chrome" in en
         or "?v=20260923-footer-once" in en
-        or "?v=20260923-polish" in en
     )
-    assert "<h2>Shooting</h2>" not in en
+    assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
-    cover = home[home.find("feature-cover") : home.find("home-cascade")]
-    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" not in cover
-    assert "ciconia-ciconia-white-stork.jpg" not in cover
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in home
-    assert "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" in home
-    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in home
+    mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
+    latest = home[home.find("latest-col") :]
+    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" not in mosaic
+    assert "ciconia-ciconia-white-stork.jpg" not in mosaic
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in mosaic
+    assert "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" in mosaic
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
+    assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest.split("</ul>", 1)[0]
 
 
 def test_extinct_birds_captions_are_single_locale() -> None:
@@ -608,7 +598,6 @@ def test_every_en_page_is_ltr_plex() -> None:
             or "?v=20260922-empty-cats-b" in html
             or "?v=20260923-nayef-chrome" in html
             or "?v=20260923-footer-once" in html
-            or "?v=20260923-polish" in html
         )
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html
@@ -618,17 +607,20 @@ def test_every_en_page_is_ltr_plex() -> None:
 def test_empty_2022_category_chrome_is_css_only() -> None:
     """Hide known empty shells. Keep filled desks and one-card categories."""
     empty = (
+        "رماية",
         "رياضات-وسياحة-بيئية",
         "قوانين-وخرائط",
         "بعدستكم",
         "رياضات",
         "مصيدة",
+        "قوانين",
         "بعدسة-التاريخ",
         "بعدستنا",
         "خرائط",
         "سياحة-بيئية",
         "عين-النسر-تختار-لكم",
         "كلمتكم",
+        "مائدة-الصيد",
         "مجلة",
     )
     keep = (
@@ -641,7 +633,7 @@ def test_empty_2022_category_chrome_is_css_only() -> None:
     docs_css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
     src_css = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
     for css in (docs_css, src_css):
-        start = css.find("Empty shells that are not 2026 nav doors.")
+        start = css.find("Nayef ≥2022 empty category shells")
         end = css.find("Responsive: density first", start)
         assert start > 0 and end > start
         block = css[start:end]
@@ -657,20 +649,14 @@ def test_empty_2022_category_chrome_is_css_only() -> None:
             assert f'li:has(> a[href$="category/{slug}/index.html"])' in block
         for slug in keep:
             assert slug not in block
-        for slug in ("رماية", "قوانين", "مائدة-الصيد"):
-            assert f'a[href$="category/{slug}/index.html"]' not in block
     home = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert home.count('class="home-section') >= 4
     assert "<article" in home
     assert 'href="category/رماية/index.html"' in home
-    assert 'href="category/قوانين/index.html"' in home
-    assert 'href="category/مائدة-الصيد/index.html"' in home
     assert 'href="category/عتاد-وسلاح-الصيد/index.html"' in home
     assert 'href="category/صور/index.html"' in home
-    assert "رياضات-وسياحة-بيئية" not in en
-    assert 'href="../category/صيد-بري/index.html"' in en
-    assert 'href="../category/رماية/index.html"' in en
+    assert 'href="../category/رياضات-وسياحة-بيئية/index.html"' in en
     assert 'href="../category/عتاد-وسلاح-الصيد/index.html"' in en
     shell = (DOCS / "category" / "رماية" / "index.html").read_text(encoding="utf-8")
     assert 'class="badge">0' in shell

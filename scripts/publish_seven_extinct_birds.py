@@ -345,7 +345,7 @@ def write_ar_article() -> None:
       <div class="container footer-grid">
         <div class="footer-col">
           <img class="footer-logo" src="../../media/brand/sayd-footer-logo.png" width="195" height="61" alt="مجلة صيد">
-          <p>مجلة صيد — أسياد الطبيعة في البر والبحر والجو. صيد، حياة برّية، طيور، فروسية وتراث من لبنان والعالم العربي.</p>
+          <p>مجلة أسياد الطبيعة في البر والبحر والجو — صيد، حياة برّية، طيور، فروسية وتراث من لبنان والعالم العربي.</p>
         </div>
         <div class="footer-col">
           <h3>التصنيفات</h3>
@@ -519,8 +519,8 @@ def write_en_article() -> None:
     <div class="footer-main">
       <div class="container footer-grid">
         <div class="footer-col">
-          <p class="footer-wordmark" lang="en">Sayd Magazine</p>
-          <p>Sayd Magazine — Masters of nature on land, sea, and sky. Hunting, wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world.</p>
+          <p class="footer-wordmark" lang="en">Sayd</p>
+          <p>The magazine of nature’s masters on land, sea, and sky — hunting, wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world.</p>
         </div>
         <div class="footer-col">
           <h3>In this edition</h3>
