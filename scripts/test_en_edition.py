@@ -82,6 +82,9 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "saudi-5000-riyal-hunting-fine-teaser",
         "syrian-hunter-amani-al-homsi-against-illegal-hunting",
         "red-footed-falcon-killed-by-ignorance",
+        # Miscellany desk is off the homepage. Articles stay in /en/posts.
+        "european-bee-eater",
+        "barn-owl",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
@@ -265,6 +268,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             or "?v=20260922-nmc-footer" in css_q
             or "?v=20260922-text-under" in css_q
             or "?v=20260922-empty-cats-b" in css_q
+            or "?v=20260923-nayef-chrome" in css_q
         )
         assert "kaps-makshab-apu-fries-hero.jpg" not in lead
 
@@ -367,7 +371,7 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert ">Hunting &amp; Equestrian<" in html.split("main-nav", 1)[1].split("</nav>", 1)[0]
     assert "<h2>Hunting &amp; Equestrian</h2>" not in html
     assert ">Gear &amp; Arms<" in html
-    assert ">Miscellany<" in html
+    assert ">Miscellany<" not in html
     assert ">Shooting<" not in html
     assert ">Laws &amp; Maps<" not in html
     assert (DOCS / "en" / "team" / "index.html").is_file()
@@ -427,6 +431,7 @@ def test_en_nested_nav_paths() -> None:
         or "?v=20260922-nmc-footer" in en_home
         or "?v=20260922-text-under" in en_home
         or "?v=20260922-empty-cats-b" in en_home
+        or "?v=20260923-nayef-chrome" in en_home
     )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -460,6 +465,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-nmc-footer" in home
         or "?v=20260922-text-under" in home
         or "?v=20260922-empty-cats-b" in home
+        or "?v=20260923-nayef-chrome" in home
     )
     assert (
         "?v=20260919-en-plex-kaps-r" in en
@@ -473,6 +479,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-nmc-footer" in en
         or "?v=20260922-text-under" in en
         or "?v=20260922-empty-cats-b" in en
+        or "?v=20260923-nayef-chrome" in en
     )
     assert ">Shooting<" not in en
     assert ">Laws &amp; Maps<" not in en
@@ -579,6 +586,7 @@ def test_every_en_page_is_ltr_plex() -> None:
             or "?v=20260922-nmc-footer" in html
             or "?v=20260922-text-under" in html
             or "?v=20260922-empty-cats-b" in html
+            or "?v=20260923-nayef-chrome" in html
         )
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html
@@ -632,7 +640,7 @@ def test_empty_2022_category_chrome_is_css_only() -> None:
             assert slug not in block
     home = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    assert home.count('class="home-section"') >= 3
+    assert home.count('class="home-section') >= 4
     assert "<article" in home
     assert 'href="category/رماية/index.html"' in home
     assert 'href="category/عتاد-وسلاح-الصيد/index.html"' in home

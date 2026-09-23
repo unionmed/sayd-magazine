@@ -1449,6 +1449,28 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   display: none;
 }
 
+/* Nayef: Partners, Miscellany, the ticker category, the hunter game, and
+   other empty pages stay out of nav, drawer, sidebar, and footer.
+   Miscellany and Partners pages stay on disk for archive / deep URLs. */
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/جعبة-المنوعات/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/شريط/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="pages/شركاؤنا/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="pages/751-2/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="pages/تصفح-صيد/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="pages/الأحوال-الجوية/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="pages/الدخول/index.html"],
+:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="pages/أرشيف-الموقع/index.html"],
+:is(.sidebar, .site-footer) li:has(> a[href$="category/جعبة-المنوعات/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="category/شريط/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="pages/شركاؤنا/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="pages/751-2/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="pages/تصفح-صيد/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="pages/الأحوال-الجوية/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="pages/الدخول/index.html"]),
+:is(.sidebar, .site-footer) li:has(> a[href$="pages/أرشيف-الموقع/index.html"]) {
+  display: none;
+}
+
 /* Empty category body: one short note, no beige shelf or broken row grid. */
 .post-list:not(:has(.post-row)):has(p.empty-note) {
   display: block;

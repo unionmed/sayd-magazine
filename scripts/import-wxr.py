@@ -75,8 +75,33 @@ NAV_CATS = [
     ("مقابلات وتحقيقات", ["مقابلات وتحقيقات", "مقابلات-تحقيقات"]),
     ("بعدستكم", ["بعدستكم"]),
     ("قوانين وخرائط", ["قوانين وخرائط", "قوانين-وخرائط"]),
-    ("جعبة المنوعات", ["جعبة المنوعات", "جعبة-المنوعات"]),
 ]
+
+# Off nav, drawer, sidebar, footer, and homepage desks. The category index
+# and its articles stay on disk for archive / deep URLs.
+CHROME_UNLINKED_CATS = {"جعبة-المنوعات", "شريط"}
+# Partners stays as a page. The other slugs are empty shells.
+CHROME_UNLINKED_PAGES = {
+    "شركاؤنا",
+    "751-2",
+    "تصفح-صيد",
+    "الأحوال-الجوية",
+    "الدخول",
+    "أرشيف-الموقع",
+}
+CANCELLED_PAGE_SLUGS = {
+    "751-2",
+    "تصفح-صيد",
+    "الأحوال-الجوية",
+    "الدخول",
+    "أرشيف-الموقع",
+}
+CANCELLED_CATEGORY_SLUGS = {"شريط"}
+DISPLAY_CATEGORY_NAMES = {
+    "ثقافة-وتراث": "شعر وفن",
+    "ثقافة وتراث": "شعر وفن",
+}
+ARCHIVE_REDIRECT_URL = "https://sayd-magazine.com/articles/"
 
 # Visible lists (homepage desks, category indexes, stories grids): publish
 # year 2022 → today. Undated posts stay off those lists. The deep archive
@@ -96,16 +121,14 @@ PURGED_WP_IDS = {"6535"}
 # Kept so a desk picker still skips the slug if a stale row is passed in.
 DEFAULT_HOME_DESK_OMIT = set(PURGED_SLUGS)
 
-# Magazine desks before Sayd TV / Photos. Tail is جعبة only (after media strips).
-# Nayef: Interviews → Gear → TV → Photos → جعبة. News + Hunting stay off home
+# Magazine desks before Sayd TV / Photos. جعبة is unlinked from the homepage.
+# Nayef: Interviews → Gear → TV → Photos. News + Hunting stay off home
 # (Featured + Latest cover those stories). رماية / رياضات stay off the spine.
 HOME_SECTIONS = [
     ("مقابلات وتحقيقات", "accent-red", ["مقابلات وتحقيقات"]),
     ("عتاد وسلاح", "accent-red", ["عتاد وسلاح الصيد", "عتاد وسلاح"]),
 ]
-HOME_SECTIONS_TAIL = [
-    ("جعبة المنوعات", "accent-olive", ["جعبة المنوعات"]),
-]
+HOME_SECTIONS_TAIL: list[tuple[str, str, list[str]]] = []
 
 # Top-bar secondary links: (label, page_slug or None for home)
 TOP_SECONDARY = [
@@ -929,6 +952,57 @@ def build_cat_info(categories: dict, posts: list[dict]) -> dict[str, dict]:
     return cat_info
 
 
+def display_category_name(name: str, slug: str = "") -> str:
+    return DISPLAY_CATEGORY_NAMES.get(slug) or DISPLAY_CATEGORY_NAMES.get(name) or name
+
+
+def apply_display_category_names(posts: list[dict], cat_info: dict[str, dict]) -> None:
+    """Visible label only. Slug ثقافة-وتراث stays so existing links keep working."""
+    for c in cat_info.values():
+        c["name"] = display_category_name(c.get("name") or "", c.get("slug") or "")
+    for p in posts:
+        for c in p.get("categories") or []:
+            c["name"] = display_category_name(c.get("name") or "", c.get("slug") or "")
+
+
+def category_visible_count(c: dict) -> int:
+    return sum(
+        1
+        for p in c.get("posts") or []
+        if post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN
+    )
+
+
+def chrome_category(c: dict | None) -> bool:
+    """Sidebar/footer categories: 2022+ cards, and not an unlinked desk."""
+    if not c or c.get("name") in {"", "Uncategorized"}:
+        return False
+    if (c.get("slug") or "") in CHROME_UNLINKED_CATS:
+        return False
+    return category_visible_count(c) > 0
+
+
+def archive_redirect_html() -> str:
+    url = ARCHIVE_REDIRECT_URL
+    return f"""<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الأرشيف — مجلة صيد</title>
+  <link rel="canonical" href="{url}">
+  <meta http-equiv="refresh" content="0; url={url}">
+  <meta property="og:title" content="الأرشيف — مجلة صيد">
+  <meta property="og:url" content="{url}">
+  <script>location.replace("{url}");</script>
+</head>
+<body>
+  <p><a href="{url}">الأرشيف</a></p>
+</body>
+</html>
+"""
+
+
 def chrome_ticker(depth: int, items: list[tuple[str, str]] | None = None) -> str:
     """Shared news strip. Same items on home, posts, and static pages."""
     pairs = items if items is not None else load_ticker_items()
@@ -966,7 +1040,7 @@ LICENSE_TEXT_AR = (
 LICENSE_TEXT_EN = (
     "Licensed by the National Media Council in Lebanon under official notice No. 157 dated 5 September 2016"
 )
-CSS_CACHE_LICENSE = "20260922-empty-cats-b"
+CSS_CACHE_LICENSE = "20260923-nayef-chrome"
 # Query-bust only the pages reviewers open for this chrome change.
 LICENSE_CSS_BUST_PAGES = {
     "index.html",
@@ -1765,6 +1839,7 @@ def build_site(data: dict, out: Path) -> None:
 
     # Category counts — Nayef extras included, datetime descending
     cat_info = build_cat_info(data.get("categories") or {}, posts)
+    apply_display_category_names(posts, cat_info)
 
     nav0 = cat_nav_html(cat_info, 0)
     nav1 = cat_nav_html(cat_info, 1)
@@ -1892,7 +1967,7 @@ def build_site(data: dict, out: Path) -> None:
 
     # Sidebar categories
     top_cats = sorted(
-        [c for c in cat_info.values() if c["count"] > 0 and c["name"] != "Uncategorized"],
+        [c for c in cat_info.values() if chrome_category(c)],
         key=lambda c: (-c["count"], c["name"]),
     )[:18]
     cat_lis = "\n".join(
@@ -1903,7 +1978,11 @@ def build_site(data: dict, out: Path) -> None:
     page_lis = "\n".join(
         f'<li><a href="{page_href(p["slug"], 0)}">{esc(p["title"] or p["slug"])}</a></li>'
         for p in pages
-        if p["title"].strip() and p["slug"] not in ("home-page", "under-construction", "118-2")
+        if (
+            p["title"].strip()
+            and p["slug"] not in ("home-page", "under-construction", "118-2")
+            and p["slug"] not in CHROME_UNLINKED_PAGES
+        )
     )
 
     def footer_cats_at(depth: int) -> str:
@@ -1915,13 +1994,14 @@ def build_site(data: dict, out: Path) -> None:
     def footer_links_at(depth: int) -> str:
         picks = [
             p for p in pages
-            if p["slug"] in ("من-نحن", "إتصل-بنا", "شركاؤنا", "تصفح-صيد")
-            or p["title"] in ("فريق العمل", "إتصل بنا", "شركاؤنا")
+            if p["slug"] in ("من-نحن", "إتصل-بنا")
+            or p["title"] in ("فريق العمل", "إتصل بنا")
         ]
-        if len(picks) < 3:
+        if len(picks) < 2:
             picks = [
                 p for p in pages
                 if p["title"].strip()
+                and p["slug"] not in CHROME_UNLINKED_PAGES
                 and p["slug"] not in ("home-page", "under-construction", "118-2", "الدخول")
             ][:5]
         return "\n".join(
@@ -2183,7 +2263,7 @@ def build_site(data: dict, out: Path) -> None:
         return parts
 
     # Magazine grids: 2022→today only. Hide a desk when the category has none.
-    # Order: Interviews → Gear, then TV + Photos, then جعبة. News/Hunting off.
+    # Order: Interviews → Gear, then TV + Photos. جعبة stays off home. News/Hunting off.
     section_html_parts = _desk_blocks(home_section_specs())
     tail_html_parts = _desk_blocks(home_section_tail_specs())
     wrap = lambda blocks: "\n".join(
@@ -2340,6 +2420,9 @@ def build_site(data: dict, out: Path) -> None:
     for p in pages:
         d = out / "pages" / p["slug"]
         d.mkdir(parents=True, exist_ok=True)
+        if p["slug"] in CANCELLED_PAGE_SLUGS:
+            (d / "index.html").write_text(archive_redirect_html(), encoding="utf-8")
+            continue
         body = f"""
 <main class="page-main" id="content">
   <div class="container">
@@ -2379,6 +2462,9 @@ def build_site(data: dict, out: Path) -> None:
             continue
         d = out / "category" / c["slug"]
         d.mkdir(parents=True, exist_ok=True)
+        if c["slug"] in CANCELLED_CATEGORY_SLUGS:
+            (d / "index.html").write_text(archive_redirect_html(), encoding="utf-8")
+            continue
         ordered = sort_posts_newest_first(c["posts"])
         for p in ordered:
             if post_publish_year(p) == 0:
