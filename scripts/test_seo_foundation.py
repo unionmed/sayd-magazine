@@ -135,13 +135,52 @@ def test_babtain_aliases_redirect_off_sitemap() -> None:
         head = text.split("</head>", 1)[0]
         assert 'http-equiv="refresh"' in head
         assert "location.replace" in text
+        assert seo.apply_html(text, page, DOCS, Path(rel), {}) == text
+        post_id = rel.split("/", 1)[0]
+        if post_id.isdigit() and post_id != "6775":
+            continue
         assert f'href="{canon}"' in head
         assert canon in text
-        assert seo.apply_html(text, page, DOCS, Path(rel), {}) == text
     sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
     assert f"<loc>{canon}</loc>" in sitemap
     assert long not in sitemap
     assert "<loc>https://sayd-magazine.com/6775/</loc>" not in sitemap
+
+
+# 2026 WordPress ids → live Arabic URLs (percent-encoded as published).
+WP_2026_AR = {
+    "6719": "https://sayd-magazine.com/posts/%D8%B5%D9%8A%D8%AF-%D8%AA%D8%B9%D9%88%D8%AF-%D8%A8%D8%AD%D9%84%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%88%D8%B1%D8%A4%D9%8A%D8%A9-%D8%A7%D9%88%D8%B3%D8%B9/",
+    "6745": "https://sayd-magazine.com/posts/%D9%85%D8%B9-%D8%A8%D8%AF%D8%A1-%D9%87%D8%AC%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%B1%D9%8A%D9%81-%D8%AA%D8%AD%D8%B1%D9%83-%D9%85%D9%8A%D8%AF%D8%A7%D9%86%D9%8A-%D9%84%D8%AD%D9%85%D8%A7%D9%8A%D8%A9/",
+    "6754": "https://sayd-magazine.com/posts/%D8%B5%D9%8A%D8%AF-%D8%AA%D8%B9%D9%88%D8%AF-%D9%88%D9%87%D8%B0%D8%A7-%D9%85%D8%A7-%D9%86%D8%B1%D9%8A%D8%AF-%D8%A3%D9%86-%D9%86%D9%82%D8%AF%D9%91%D9%85%D9%87-%D9%84%D9%83%D9%85/",
+    "6762": "https://sayd-magazine.com/posts/%D9%85%D8%B9-%D9%87%D8%AC%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%B1%D9%8A%D9%81-%D9%83%D9%8A%D9%81-%D9%8A%D8%AD%D9%85%D9%8A-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%B7%D9%8A%D9%88/",
+    "6775": "https://sayd-magazine.com/posts/%D8%A8%D8%A7%D9%84%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D9%85%D9%82%D9%86%D8%A7%D8%B5-%D8%B3%D8%B9%D9%88%D8%AF-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2-%D8%A7%D9%84%D8%A8%D8%A7%D8%A8/",
+    "6784": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%A8%D8%AC%D8%B9-%D8%A7%D9%84%D8%A3%D8%A8%D9%8A%D8%B6-%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1-great-white-pelican-%D8%A8%D8%B9%D8%AF%D8%B3%D8%A9-%D9%86%D8%A7%D9%8A%D9%81-%D9%83/",
+    "6788": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D8%AA%D8%B7%D9%84%D9%82-%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%B3%D8%A7%D8%AF%D8%B3-%D8%A8%D8%B6%D9%88%D8%A7%D8%A8/",
+    "6794": "https://sayd-magazine.com/posts/80-%D8%A3%D9%84%D9%81-%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88158-%D8%AC%D9%87%D8%A9-%D9%85%D9%86-15-%D8%AF%D9%88%D9%84%D8%A9-%D8%B3%D9%87%D9%8A%D9%84-2026-%D9%8A%D8%AE%D8%AA%D8%AA%D9%85-%D8%B9/",
+    "6796": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D8%AA%D8%B4%D8%AF%D8%AF-%D8%B9%D9%84%D9%89-%D8%B6%D9%88%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-5-%D8%A2%D9%84%D8%A7%D9%81-%D8%B1%D9%8A/",
+    "6798": "https://sayd-magazine.com/posts/%D9%82%D8%B7%D8%B1-%D8%A3%D9%83%D8%AB%D8%B1-%D9%85%D9%86-80-%D8%A3%D9%84%D9%81-%D8%B2%D8%A7%D8%A6%D8%B1-%D9%81%D9%8A-%D8%AE%D8%AA%D8%A7%D9%85-%D8%B3%D9%87%D9%8A%D9%84-2026/",
+    "6800": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-5-%D8%A2%D9%84%D8%A7%D9%81-%D8%B1%D9%8A%D8%A7%D9%84-%D8%BA%D8%B1%D8%A7%D9%85%D8%A9-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D9%81%D9%8A-%D8%A7%D9%84%D8%A3/",
+    "6819": "https://sayd-magazine.com/posts/%D8%B3%D9%87%D9%8A%D9%84-2026-%D8%A8%D8%A7%D9%84%D8%B5%D9%88%D8%B1-%D8%A7%D9%84%D8%B5%D9%82%D9%88%D8%B1-%D9%88%D8%A7%D9%84%D8%B2%D9%88%D8%A7%D8%B1-%D9%88%D9%88%D8%AC%D9%88%D9%87-%D8%A7/",
+    "6836": "https://sayd-magazine.com/posts/%D9%83%D8%A7%D8%A8%D8%B3-%D9%88%D9%85%D9%83%D8%B4%D8%A8-%D9%84%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%B7%D9%8A%D9%88%D8%B1-%D8%A7%D9%84%D8%AE%D8%B1%D9%8A%D9%81-%D9%81%D9%8A-%D9%84/",
+}
+
+
+def test_wp_2026_id_stubs() -> None:
+    """Numeric 2026 permalinks are thin redirects to the live Arabic posts."""
+    sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
+    for post_id, ar in WP_2026_AR.items():
+        rel = f"{post_id}/index.html"
+        assert rel in seo.ALIAS_REDIRECTS, rel
+        assert not seo.in_sitemap(Path(rel))
+        text = (DOCS / rel).read_text(encoding="utf-8")
+        assert text.startswith("<!DOCTYPE html>\n<html lang=\"ar\" dir=\"rtl\">\n")
+        assert f'<link rel="canonical" href="{ar}">' in text
+        assert f'<meta http-equiv="refresh" content="0; url={ar}">' in text
+        assert f'location.replace("{ar}");' in text
+        assert f'<a href="{ar}">' in text
+        assert text.count(ar) == 4
+        assert f"<loc>https://sayd-magazine.com/{post_id}/</loc>" not in sitemap
+        assert seo.apply_html(text, DOCS / rel, DOCS, Path(rel), {}) == text
 
 
 def test_apply_is_idempotent() -> None:
@@ -161,5 +200,6 @@ if __name__ == "__main__":
     test_home_and_memory_twins()
     test_every_html_page_has_canonical()
     test_babtain_aliases_redirect_off_sitemap()
+    test_wp_2026_id_stubs()
     test_apply_is_idempotent()
     print("test_seo_foundation: ok")
