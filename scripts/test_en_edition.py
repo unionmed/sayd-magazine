@@ -36,7 +36,7 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 29
+    assert len(PAIRS) == 30
     drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
     assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():
@@ -89,6 +89,9 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "autumn-migration-field-action-protect-flyways-lebanon",
         # Same Suhail exhibition as the closer. One homepage slot.
         "suhail-2026-in-photos-falcons-visitors",
+        # Gear comparison is on the عتاد category door. Homepage cascade
+        # placement is left to the homepage pass; do not push it into مستجدات.
+        "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
