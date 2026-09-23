@@ -28,7 +28,7 @@ HOME_TICKER_EN = [
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     CABS_EN,
-    "qatar-suhail-2026-80000-visitors-teaser",
+    SUHAIL_EN,
     "saudi-sixth-hunting-season-2026-2027-rules",
     "video-saud-al-babtain-maqnas-afghanistan",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
@@ -80,6 +80,7 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "sayd-returns-new-look-wider-vision",
         "saudi-hunting-fines-5000-riyal-prohibited-areas",
         "saudi-5000-riyal-hunting-fine-teaser",
+        "qatar-suhail-2026-80000-visitors-teaser",
         "syrian-hunter-amani-al-homsi-against-illegal-hunting",
         "red-footed-falcon-killed-by-ignorance",
         # Miscellany desk is off the homepage. Articles stay in /en/posts.
@@ -165,6 +166,8 @@ def test_en_homepage_featured_2026() -> None:
         assert slug in html
     ticker_en = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
     assert "sayd-returns-what-we-want-to-offer" not in ticker_en
+    assert ticker_en.count(SUHAIL_EN) == 1
+    assert "qatar-suhail-2026-80000-visitors-teaser" not in ticker_en
     assert "feature-adonis" in html
     assert "sayd-returns-what-we-want-to-offer" in html
 

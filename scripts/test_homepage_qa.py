@@ -615,7 +615,11 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "egypt-new-hunting-rules-burullus-autumn-migration" in latest
             assert "common-shelduck-protected-migrant-lebanon" in latest
             assert "leading-platform-lebanese-arab-hunters-since-2012" in latest
-            assert "qatar-suhail-2026-80000-visitors-teaser" in latest
+            assert latest.count("suhail-2026-closes-decade-katara-80000-visitors") == 1
+            assert "qatar-suhail-2026-80000-visitors-teaser" not in latest
+            ticker_en = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
+            assert ticker_en.count("suhail-2026-closes-decade-katara-80000-visitors") == 1
+            assert "qatar-suhail-2026-80000-visitors-teaser" not in ticker_en
             assert "illegal-hunting-destroys-hobby-nets-lime-night" in latest
             assert "illegal-hunting-mist-net-chickadee.jpg" in latest
             assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in latest
@@ -649,6 +653,11 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "<h2>أخبار</h2>" not in html
             latest_ar = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
             assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in latest_ar
+            assert latest_ar.count("80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع") == 1
+            assert "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026" not in latest_ar
+            ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
+            assert ticker_ar.count("80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع") == 1
+            assert "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026" not in ticker_ar
             interviews = html.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
             iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
             assert iv_slugs and iv_slugs[0] == FARMERS_AR

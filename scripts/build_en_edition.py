@@ -86,7 +86,6 @@ HOME_OMIT_FROM_HOME = {
 HOME_LATEST = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "suhail-2026-closes-decade-katara-80000-visitors",
-    "qatar-suhail-2026-80000-visitors-teaser",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     "regulating-hunting-protects-wildlife-bans-worsen",
@@ -98,13 +97,14 @@ TICKER_TITLES_EN = {
     "how-migration-routes-lost-seven-birds-in-150-years": "Migration routes lost 7 species in 150 years… the Slender-billed Curlew the latest",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah": "Taif | Saturday evening closes the season with the National Day Cup for Thoroughbreds at Al-Hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration": "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus",
+    "suhail-2026-closes-decade-katara-80000-visitors": "80,000 Visitors and 158 Exhibitors from 15 Countries… Suhail 2026 Closes a Decade of Passion for Hunting and Falconry",
 }
 HOME_TICKER = [
     "how-migration-routes-lost-seven-birds-in-150-years",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "cabs-mecshap-autumn-birds-lebanon-khatib",
-    "qatar-suhail-2026-80000-visitors-teaser",
+    "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "video-saud-al-babtain-maqnas-afghanistan",
     "autumn-migration-how-world-protects-birds-regulates-hunting",

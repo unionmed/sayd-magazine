@@ -142,9 +142,10 @@ TICKER_CONFIG = CONTENT_DIR / "ticker.json"
 HOMEPAGE_CONFIG = CONTENT_DIR / "homepage.json"
 CATEGORY_OVERLAY = CONTENT_DIR / "category-overlay.json"
 EN_PAIRS_PATH = CONTENT_DIR / "en" / "pairs.json"
-# Never put these in ticker or latest-feed (80k long form stays featured-only).
+# Pelican, the AI-bird promo, and the Saudi-fine teasers stay out of the ticker.
+# The wide Suhail closer is the ticker item; the narrow Qatar teaser is omitted.
 DEFAULT_HOME_OMIT = {
-    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+    "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
     "عصفور-الشمس-الفلسطيني",
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -235,8 +236,8 @@ DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
         "CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي",
     ),
     (
-        "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
-        "قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»",
+        "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+        "80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة",
     ),
     (
         "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
