@@ -58,7 +58,7 @@ STORIES_GRID_OMIT = {
     "sayd-returns-new-look-wider-vision",
 }
 ABOUT_EN = (
-    "The magazine of nature’s masters on land, sea, and sky — hunting, "
+    "Sayd Magazine — Masters of nature on land, sea, and sky. Hunting, "
     "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
 )
 TAGLINE_EN = "The magazine of nature’s masters on land, sea, and sky"
@@ -172,7 +172,7 @@ META: dict[str, dict] = {
     "suhail-2026-in-photos-falcons-visitors": {
         "date": "13 September 2026",
         "date_sort": "2026-09-13",
-        "category": "Photos",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/gallery-alsharq.jpg",
         "image_alt": "Suhail 2026 in photos: falcons, visitors, and faces of the fair",
@@ -911,7 +911,7 @@ def en_chrome(
     <div class="footer-main">
       <div class="container footer-grid">
         <div class="footer-col">
-          <p class="footer-wordmark" lang="en">Sayd</p>
+          <p class="footer-wordmark" lang="en">Sayd Magazine</p>
           <p>{escape(ABOUT_EN)}</p>
         </div>
         <div class="footer-col">

@@ -55,6 +55,7 @@ def test_section_titles_sit_under_photos() -> None:
     css = (DOCS / "assets" / "css" / "site.css").read_text(encoding="utf-8")
     assert ".home-section .card.overlay:not(.feature-lead) .body" in css
     assert ".card.card-story .body { position: static" in css
+    assert ".home-2026 .card.card-story .body" in css
     assert "position: static" in css
     rule = css.split("Nayef: listing cards put the date", 1)[1]
     assert ":not(.feature-lead)" in rule
@@ -864,7 +865,7 @@ def test_homepage_sidebar_hides_when_stacked() -> None:
         footer = html.split('class="site-footer"', 1)[1].split("</footer>", 1)[0]
         assert cat_heading in footer
         assert 'class="footer-col"' in footer
-        assert "?v=20260923-home-2026" in html
+        assert "?v=20260923-polish" in html
 
 
 if __name__ == "__main__":

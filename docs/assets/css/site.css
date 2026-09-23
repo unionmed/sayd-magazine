@@ -2087,6 +2087,52 @@ html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 a:hover {
 .card.card-story .body { position: static; background: var(--card); color: var(--ink); }
 .card.card-story h3 a,
 .card.card-story h2 a { color: var(--ink); }
+/* Door and cascade cards: date, category, and title sit under the photo.
+   The feature cover is the only card that may paint text on the image. */
+.home-2026 .card.card-story {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  position: relative;
+}
+.home-2026 .card.card-story .thumb,
+html[dir="ltr"] .home-2026 .card.card-story .thumb {
+  position: relative;
+  inset: auto;
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+}
+.home-2026 .card.card-story .thumb::after,
+html[dir="ltr"] .home-2026 .card.card-story .thumb::after {
+  content: none;
+  background: none;
+}
+.home-2026 .card.card-story .body {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  flex: 0 0 auto;
+  background: var(--card);
+  color: var(--ink);
+}
+.home-2026 .card.card-story .meta,
+html[dir="ltr"] .home-2026 .card.card-story .meta {
+  color: var(--muted);
+  text-shadow: none;
+}
+.home-2026 .card.card-story h2,
+.home-2026 .card.card-story h3,
+.home-2026 .card.card-story h2 a,
+.home-2026 .card.card-story h3 a,
+html[dir="ltr"] .home-2026 .card.card-story h2,
+html[dir="ltr"] .home-2026 .card.card-story h3,
+html[dir="ltr"] .home-2026 .card.card-story h2 a,
+html[dir="ltr"] .home-2026 .card.card-story h3 a {
+  color: var(--ink);
+  text-shadow: none;
+}
 .channel-layout {
   display: grid;
   grid-template-columns: 1.4fr minmax(0, 22rem);

@@ -60,7 +60,7 @@ LOGO_URL = LOGO_ORIGINAL
 FOOTER_LOGO_URL = FOOTER_LOGO_ORIGINAL
 MEDIA_ROOT = DEFAULT_OUT / "media"
 ABOUT_BLURB = (
-    "مجلة أسياد الطبيعة في البر والبحر والجو — صيد، حياة برّية، طيور، "
+    "مجلة صيد — أسياد الطبيعة في البر والبحر والجو. صيد، حياة برّية، طيور، "
     "فروسية وتراث من لبنان والعالم العربي."
 )
 
@@ -306,12 +306,21 @@ DEFAULT_CATEGORY_EXTRAS: dict[str, list[str]] = {
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": ["أخبار"],
     "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": ["صيد"],
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": ["صيد"],
+    # Photo album of the same exhibition. Filed under صيد, not صور.
+    "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا": ["صيد"],
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": ["صيد", "أخبار"],
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب": ["صيد"],
     "بالفيديو-مقناص-سعود-عبد-العزيز-الباب": ["صيد"],
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": ["صيد"],
     "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية": ["صيد"],
 }
+# The Suhail photo album is exhibition coverage. Its badge and breadcrumb
+# say صيد. The narrow Qatar teaser is the same closer and stays off the
+# صيد index (the wide closer is the one listing).
+SUHAIL_ALBUM_SLUG = "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
+NARROW_SUHAIL_TEASER = "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026"
+SUHAIL_ALBUM_CAT = {"nicename": "صيد", "name": "صيد", "slug": "صيد"}
+
 # Title/slug hints so a future homepage hunting item gets صيد without a map edit.
 # Do not match the magazine name «صيد» alone (editorials like «صيد تعود»).
 HUNTING_SURFACE_HINTS = (
@@ -934,6 +943,9 @@ def apply_nayef_category_rule(
     surface = surface if surface is not None else editorial_surface_slugs()
     for p in posts:
         slug = p.get("slug") or ""
+        if slug == SUHAIL_ALBUM_SLUG:
+            p["categories"] = [dict(SUHAIL_ALBUM_CAT)]
+            continue
         add = list(extras.get(slug, []))
         if slug in surface and looks_like_hunting_story(p) and "صيد" not in add:
             add.append("صيد")
@@ -2502,6 +2514,8 @@ def build_site(data: dict, out: Path) -> None:
             if post_publish_year(p) == 0:
                 undated_category_slugs.append(str(p.get("slug") or ""))
         cat_posts = visible_listing_posts(ordered)
+        if c["slug"] == "صيد":
+            cat_posts = [p for p in cat_posts if p.get("slug") != NARROW_SUHAIL_TEASER]
         visible_count = len(cat_posts)
         if visible_count == 0:
             empty_categories.append(c["name"])

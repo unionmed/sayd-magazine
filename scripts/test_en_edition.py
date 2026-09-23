@@ -280,7 +280,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             or "?v=20260922-empty-cats-b" in css_q
             or "?v=20260923-nayef-chrome" in css_q
             or "?v=20260923-footer-once" in css_q
-            or "?v=20260923-home-2026" in css_q
+            or "?v=20260923-polish" in css_q
         )
         assert "kaps-makshab-apu-fries-hero.jpg" not in lead
 
@@ -429,7 +429,7 @@ def test_en_nested_nav_paths() -> None:
     assert (
         "?v=20260919-en-plex-kaps" in article
         or "?v=20260922-text-under" in article
-        or "?v=20260923-home-2026" in article
+        or "?v=20260923-polish" in article
     )
     en_home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert (
@@ -446,7 +446,7 @@ def test_en_nested_nav_paths() -> None:
         or "?v=20260922-empty-cats-b" in en_home
         or "?v=20260923-nayef-chrome" in en_home
         or "?v=20260923-footer-once" in en_home
-        or "?v=20260923-home-2026" in en_home
+        or "?v=20260923-polish" in en_home
     )
     assert "ticker-track-ltr" in (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
@@ -482,7 +482,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-empty-cats-b" in home
         or "?v=20260923-nayef-chrome" in home
         or "?v=20260923-footer-once" in home
-        or "?v=20260923-home-2026" in home
+        or "?v=20260923-polish" in home
     )
     assert (
         "?v=20260919-en-plex-kaps-r" in en
@@ -498,7 +498,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
         or "?v=20260922-empty-cats-b" in en
         or "?v=20260923-nayef-chrome" in en
         or "?v=20260923-footer-once" in en
-        or "?v=20260923-home-2026" in en
+        or "?v=20260923-polish" in en
     )
     assert "<h2>Shooting</h2>" not in en
     assert ">Laws &amp; Maps<" not in en
@@ -605,7 +605,7 @@ def test_every_en_page_is_ltr_plex() -> None:
             or "?v=20260922-empty-cats-b" in html
             or "?v=20260923-nayef-chrome" in html
             or "?v=20260923-footer-once" in html
-            or "?v=20260923-home-2026" in html
+            or "?v=20260923-polish" in html
         )
         assert "ticker-track-ltr" in html
         assert "19 Sep 2026" not in html

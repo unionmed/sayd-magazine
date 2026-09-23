@@ -31,7 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 PAIRS_PATH = ROOT / "content" / "en" / "pairs.json"
-CSS_VERSION = "20260923-home-2026"
+CSS_VERSION = "20260923-polish"
 TICKER_MAX = 8
 
 # Oldest ticker item when the cap was applied (7 Sep 2026 field note).
@@ -374,7 +374,39 @@ def patch_chrome(
         path == DOCS / "index.html" or path == DOCS / "en" / "index.html"
     ):
         text = CAT_LIST_RE.sub(lambda m: m.group(1) + "\n" + doors + m.group(3), text)
+    text = patch_footer_brand(text, lang)
     return bump_css(text)
+
+
+ABOUT_AR = (
+    "مجلة صيد — أسياد الطبيعة في البر والبحر والجو. صيد، حياة برّية، طيور، "
+    "فروسية وتراث من لبنان والعالم العربي."
+)
+ABOUT_EN = (
+    "Sayd Magazine — Masters of nature on land, sea, and sky. Hunting, "
+    "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
+)
+OLD_ABOUT_AR = (
+    "مجلة أسياد الطبيعة في البر والبحر والجو — صيد، حياة برّية، طيور، "
+    "فروسية وتراث من لبنان والعالم العربي."
+)
+OLD_ABOUT_EN = (
+    "The magazine of nature’s masters on land, sea, and sky — hunting, "
+    "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
+)
+
+
+def patch_footer_brand(text: str, lang: str) -> str:
+    """Name lock: مجلة صيد / Sayd Magazine plus the locked tagline."""
+    if lang == "en":
+        text = text.replace(OLD_ABOUT_EN, ABOUT_EN)
+        text = text.replace(
+            '<p class="footer-wordmark" lang="en">Sayd</p>',
+            '<p class="footer-wordmark" lang="en">Sayd Magazine</p>',
+        )
+    else:
+        text = text.replace(OLD_ABOUT_AR, ABOUT_AR)
+    return text
 
 
 def card_html(
@@ -657,6 +689,113 @@ def memory_block(page_html: str) -> str:
     return match.group(0)
 
 
+GALLERY_SLUG = "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
+NARROW_TEASER = "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026"
+POST_ROW_RE = re.compile(r"<article class=\"post-row\">.*?</article>", re.S)
+
+
+def _drop_rows(html_text: str, slug: str) -> str:
+    def keep(row: re.Match[str]) -> str:
+        return "" if slug in row.group(0) else row.group(0)
+
+    return POST_ROW_RE.sub(keep, html_text)
+
+
+def _recount_badge(html_text: str) -> str:
+    listing = html_text.split('<div class="post-list">', 1)
+    if len(listing) < 2:
+        return html_text
+    body = listing[1].split("</main>", 1)[0]
+    count = len(POST_ROW_RE.findall(body))
+    return re.sub(
+        r'(<h2>[^<]*<span class="badge">)\d+(</span>)',
+        rf"\g<1>{count}\g<2>",
+        html_text,
+        count=1,
+    )
+
+
+def place_suhail_album(root: Path) -> None:
+    """Album belongs on صيد. The narrow closer teaser is not a second listing."""
+    hunt = root / "category" / "صيد" / "index.html"
+    photos = root / "category" / "صور" / "index.html"
+    hunt_html = hunt.read_text(encoding="utf-8")
+    photos_html = photos.read_text(encoding="utf-8")
+    gallery_row = ""
+    for row in POST_ROW_RE.findall(photos_html):
+        if GALLERY_SLUG in row:
+            gallery_row = row
+            break
+    if not gallery_row:
+        for row in POST_ROW_RE.findall(hunt_html):
+            if GALLERY_SLUG in row:
+                gallery_row = row
+                break
+    photos_html = _recount_badge(_drop_rows(photos_html, GALLERY_SLUG))
+    hunt_html = _drop_rows(hunt_html, NARROW_TEASER)
+    hunt_html = _drop_rows(hunt_html, GALLERY_SLUG)
+    if gallery_row:
+        closer = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+        inserted = False
+
+        def _insert(match: re.Match[str]) -> str:
+            nonlocal inserted
+            row = match.group(0)
+            if not inserted and closer in row:
+                inserted = True
+                return row + "\n" + gallery_row
+            return row
+
+        hunt_html = POST_ROW_RE.sub(_insert, hunt_html)
+        if not inserted:
+            hunt_html = hunt_html.replace(
+                '<div class="post-list">',
+                '<div class="post-list">\n' + gallery_row,
+                1,
+            )
+    hunt_html = _recount_badge(hunt_html)
+    hunt.write_text(hunt_html, encoding="utf-8")
+    photos.write_text(photos_html, encoding="utf-8")
+
+    album = root / "posts" / GALLERY_SLUG / "index.html"
+    album_html = album.read_text(encoding="utf-8")
+    album_html = album_html.replace(
+        '<div class="breadcrumb"><a href="../../index.html">الرئيسية</a> / <a href="../../category/صور/index.html">صور</a> / مقال</div>',
+        '<div class="breadcrumb"><a href="../../index.html">الرئيسية</a> / <a href="../../category/صيد/index.html">صيد</a> / مقال</div>',
+    )
+    album_html = album_html.replace(
+        '<a class="badge" href="../../category/صور/index.html">صور</a>',
+        '<a class="badge" href="../../category/صيد/index.html">صيد</a>',
+    )
+    album.write_text(album_html, encoding="utf-8")
+
+    en_album = root / "en" / "posts" / "suhail-2026-in-photos-falcons-visitors" / "index.html"
+    en_html = en_album.read_text(encoding="utf-8")
+    en_html = en_html.replace(
+        '<div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../../stories/index.html">Stories</a> / Article</div>',
+        '<div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../../../category/صيد/index.html">Hunting</a> / Article</div>',
+    )
+    en_html = en_html.replace(
+        '<span class="badge">Photos</span>',
+        '<a class="badge" href="../../../category/صيد/index.html">Hunting</a>',
+    )
+    en_album.write_text(en_html, encoding="utf-8")
+
+    for rel in ("articles/index.html", "articles/page-1.html"):
+        path = root / rel
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+
+        def _meta(match: re.Match[str]) -> str:
+            row = match.group(0)
+            if GALLERY_SLUG not in row:
+                return row
+            return row.replace("· صور", "· صيد")
+
+        path.write_text(POST_ROW_RE.sub(_meta, text), encoding="utf-8")
+
+
 def apply(root: Path | None = None) -> None:
     root = root or DOCS
     ar_path = root / "index.html"
@@ -694,6 +833,7 @@ def apply(root: Path | None = None) -> None:
     ar_path.write_text(MAIN_RE.sub(lambda m: m.group(1) + "\n" + ar_main + "\n" + m.group(3), ar_html, count=1), encoding="utf-8")
     en_path.write_text(MAIN_RE.sub(lambda m: m.group(1) + "\n" + en_main + "\n" + m.group(3), en_html, count=1), encoding="utf-8")
     write_bird_pages(ticker_ar, ticker_en)
+    place_suhail_album(root)
     print(f"home 2026: patched chrome on {changed} pages; rewrote AR+EN homepages")
 
 

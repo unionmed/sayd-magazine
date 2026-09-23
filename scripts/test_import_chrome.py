@@ -64,11 +64,12 @@ ADONIS = "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
 FARMERS = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
 
 # Hunting desk: Taif finale leads, then the Mars 62e435c5 prefix.
+SUHAIL_ALBUM = "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
 MARS_HUNTING_TOP = [
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
     KAPS,
     SUHAIL_80K,
-    QATAR_80K,
+    SUHAIL_ALBUM,
     SAUDI,
     BABTAIN,
     MIGRATE_HOW,
@@ -130,6 +131,8 @@ def test_shared_ticker_all_depths() -> None:
 def test_layout_footer_and_default_ticker() -> None:
     page = layout("فريق العمل", "<main>body</main>", depth=2)
     assert ABOUT_BLURB in page
+    assert ABOUT_BLURB.startswith("مجلة صيد — أسياد الطبيعة في البر والبحر والجو")
+    assert "مجلة أسياد الطبيعة" not in ABOUT_BLURB
     assert "نسخة ثابتة على GitHub Pages" not in page
     assert "تصدير ووردبريس" not in page
     assert "GitHub Pages" not in page
@@ -242,12 +245,18 @@ def test_docs_already_share_clean_chrome() -> None:
         found = re.findall(r">([^<]+)</a>", m.group(1))
         assert found == titles, (path.name, found)
         footer = html.split('class="footer-bottom"', 1)[1]
+        assert ABOUT_BLURB in html.split('class="footer-logo"', 1)[1].split("</p>", 1)[0]
         assert MECSHAP_URL in footer
         assert MECSHAP_LABEL_AR in footer
         assert 'target="_blank"' in footer
         assert 'rel="noopener"' in footer
         assert "مكشب" not in footer
         assert "كابس" not in footer
+    en_home = (ROOT / "docs" / "en" / "index.html").read_text(encoding="utf-8")
+    en_blurb = en_home.split('class="footer-wordmark"', 1)[1].split("</p>", 2)[1]
+    assert "Sayd Magazine — Masters of nature on land, sea, and sky." in en_blurb
+    assert "The magazine of nature" not in en_blurb
+    assert 'class="footer-wordmark" lang="en">Sayd Magazine</p>' in en_home
 
 
 def test_every_docs_page_footer_has_mecshap() -> None:
@@ -467,12 +476,23 @@ def test_docs_hunting_category_keeps_mars_recency() -> None:
     html = (ROOT / "docs" / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
     slugs = _listing_slugs(html)
     assert slugs[:8] == MARS_HUNTING_TOP, slugs[:10]
-    assert SUHAIL_80K in slugs
-    assert QATAR_80K in slugs
+    assert slugs.count(SUHAIL_80K) == 1
+    assert QATAR_80K not in slugs
+    assert SUHAIL_ALBUM in slugs
     assert OLD_HUNT in slugs
     assert slugs.index(SUHAIL_80K) < slugs.index(OLD_HUNT)
-    assert slugs.index(QATAR_80K) < slugs.index(OLD_HUNT)
+    assert slugs.index(SUHAIL_ALBUM) < slugs.index(OLD_HUNT)
     assert slugs.index(KAPS) < slugs.index(OLD_HUNT)
+    photos = (ROOT / "docs" / "category" / "صور" / "index.html").read_text(encoding="utf-8")
+    assert SUHAIL_ALBUM not in _listing_slugs(photos)
+    album = (ROOT / "docs" / "posts" / SUHAIL_ALBUM / "index.html").read_text(encoding="utf-8")
+    assert 'href="../../category/صيد/index.html">صيد</a> / مقال' in album
+    assert 'href="../../category/صور/index.html">صور</a>' not in album.split("<main", 1)[1].split("</header>", 1)[0]
+    en_album = (
+        ROOT / "docs" / "en" / "posts" / "suhail-2026-in-photos-falcons-visitors" / "index.html"
+    ).read_text(encoding="utf-8")
+    assert ">Hunting</a> / Article" in en_album
+    assert ">Photos<" not in en_album.split("<h1", 1)[0]
 
 
 def _mosaic_featured_slugs(html: str) -> list[str]:
