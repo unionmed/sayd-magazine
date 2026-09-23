@@ -126,16 +126,13 @@ def test_uwaisiq_is_lesser_kestrel_not_sparrowhawk() -> None:
     article = (root / "docs" / "posts" / "العُوَيْسِق" / "index.html").read_text(
         encoding="utf-8"
     )
-    mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
-    after_latest = home[home.find("آخر الأخبار") :]
-    assert "AP4I0032-1024x683.jpg" in after_latest
-    assert "accipiter-nisus-eurasian-sparrowhawk.jpg" not in after_latest
+    assert "accipiter-nisus-eurasian-sparrowhawk.jpg" not in home
     assert "accipiter-nisus-eurasian-sparrowhawk.jpg" not in article
     assert "AP4I0032-1024x683.jpg" in article
     assert "Lesser Kestrel" in article
     kestrel = root / "docs" / "media" / "uploads/2025/09/AP4I0032-1024x683.jpg"
     assert kestrel.is_file() and kestrel.stat().st_size > 32
-    assert "accipiter-nisus" not in mosaic
+    assert "accipiter-nisus" not in home
 
 
 def test_homepage_unique_card_srcs() -> None:
@@ -180,26 +177,25 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
     assert featured[3].startswith("كيف-يحمي-المزارع")
     assert featured[4].startswith("صيد-تعود")
     home = (root / "docs" / "index.html").read_text(encoding="utf-8")
-    mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
-    latest = home[home.find("latest-col") :]
+    cover = home[home.find("feature-cover") : home.find("home-cascade")]
+    main = home.split('id="home-2026"', 1)[1]
     for slug in featured:
-        assert slug in mosaic, slug
-    assert "80-ألف-زائر" not in mosaic
-    assert "80-ألف-زائر" in latest.split("</ul>", 1)[0]
-    assert mosaic.find("كيف-فقدت-مسارات-الهجرة") < mosaic.find("كابس-ومكشب")
-    assert "منظمات-دولية-ابادة" not in mosaic
-    assert "من-ذاكرة-صيد" not in mosaic
-    assert "من-ذاكرة-صيد" not in latest.split("</ul>", 1)[0]
+        assert main.count(f"posts/{slug}/") == 2, slug
+    assert "80-ألف-زائر" not in cover
+    assert "80-ألف-زائر" in main
+    assert "منظمات-دولية-ابادة" not in home
+    assert "من-ذاكرة-صيد-مسيرة" not in home
     en = (root / "docs" / "en" / "index.html").read_text(encoding="utf-8")
-    en_mosaic = en[en.find("featured-mosaic") : en.find("latest-col")]
-    en_latest = en[en.find("latest-col") :]
-    assert "international-orgs-ecocide-south-lebanon" not in en_mosaic
-    assert "cabs-mecshap-autumn-birds-lebanon-khatib" in en_mosaic
-    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en_mosaic
-    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en_latest.split("</ul>", 1)[0]
-    assert "suhail-2026-closes-decade-katara-80000-visitors" not in en_mosaic
-    assert "suhail-2026-closes-decade-katara-80000-visitors" in en_latest.split("</ul>", 1)[0]
-    assert en_mosaic.find("how-migration-routes-lost-seven-birds-in-150-years") < en_mosaic.find(
+    en_cover = en[en.find("feature-cover") : en.find("home-cascade")]
+    en_main = en.split('id="home-2026"', 1)[1]
+    assert "international-orgs-ecocide-south-lebanon" not in en
+    assert "cabs-mecshap-autumn-birds-lebanon-khatib" in en_main
+    assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in en_cover
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en
+    assert "suhail-2026-closes-decade-katara-80000-visitors" not in en_cover
+    assert "suhail-2026-closes-decade-katara-80000-visitors" in en_main
+    assert en_cover.find("how-migration-routes-lost-seven-birds-in-150-years") >= 0
+    assert en_cover.find("how-migration-routes-lost-seven-birds-in-150-years") < en_main.find(
         "cabs-mecshap-autumn-birds-lebanon-khatib"
     )
 
@@ -258,7 +254,8 @@ def test_homepage_local_media() -> None:
     assert "ad-under-construction" not in html
     assert "الموقع قيد التحديث" not in html
     assert "Under construction" not in html
-    assert 'src="media/brand/sayd-logo.png"' in html
+    assert 'href="media/brand/sayd-logo.png"' in html
+    assert 'class="logo-img"' not in html
     assert 'src="media/brand/sayd-footer-logo.png"' in html
     srcs = re.findall(r"""(?:src|href)=["']([^"']+\.(?:png|jpe?g|gif|webp|svg))["']""", html, re.I)
     assert srcs

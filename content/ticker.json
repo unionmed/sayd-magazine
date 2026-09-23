@@ -1,5 +1,8 @@
 {
-  "label": "من كل وادي خبر",
+  "label": "من البر والبحر والجو",
+  "label_en": "From land, sea, and sky",
+  "max_items": 8,
+  "drop_policy": "On update, keep at most 8 items. The oldest publish date drops. The strip is not a second cover.",
   "items": [
     {
       "slug": "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
@@ -31,11 +34,13 @@
     },
     {
       "slug": "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
-      "title": "مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟"
-    },
-    {
-      "slug": "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
-      "title": "مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان"
+      "title": "مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟",
+      "published": "2026-09-08"
     }
-  ]
+  ],
+  "dropped_on_cap": {
+    "slug": "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
+    "published": "2026-09-07",
+    "note": "Oldest item when the strip was capped at 8. The article remains at its own URL."
+  }
 }

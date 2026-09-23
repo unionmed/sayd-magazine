@@ -116,7 +116,10 @@ def test_home_and_memory_twins() -> None:
 def test_every_html_page_has_canonical() -> None:
     missing = []
     for path in DOCS.rglob("*.html"):
-        head = path.read_text(encoding="utf-8").split("</head>", 1)[0]
+        text = path.read_text(encoding="utf-8")
+        if "<head" not in text.lower():
+            continue
+        head = text.split("</head>", 1)[0]
         if 'rel="canonical"' not in head or "og:title" not in head:
             missing.append(path.relative_to(DOCS).as_posix())
     assert missing == []

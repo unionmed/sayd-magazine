@@ -93,7 +93,7 @@ def test_source_has_no_regression_strings() -> None:
 def test_ticker_source_is_mars_list() -> None:
     items = load_ticker_items()
     assert items == list(DEFAULT_TICKER_ITEMS)
-    assert len(items) == 9
+    assert len(items) == 8
     slugs = [slug for slug, _ in items]
     assert slugs[0].startswith("كيف-فقدت-مسارات-الهجرة")
     assert "الكروان رفيع المنقار" in items[0][1]
@@ -104,6 +104,8 @@ def test_ticker_source_is_mars_list() -> None:
     assert "200 طائر مهاجر" in items[2][1]
     assert slugs[3].startswith("كابس")
     assert "سهيل" in items[4][1]
+    assert slugs[-1].startswith("مع-هجرة-الخريف-كيف-يحمي-العالم")
+    assert "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية" not in slugs
     assert ADONIS not in slugs
     assert "sayd-returns-what-we-want-to-offer" not in slugs
 
@@ -136,7 +138,12 @@ def test_layout_footer_and_default_ticker() -> None:
     assert TICKER_LABEL in page
     for _, title in DEFAULT_TICKER_ITEMS:
         assert title in page
-    assert 'src="../../media/brand/sayd-logo.png"' in page
+    assert 'href="../../media/brand/sayd-logo.png"' in page
+    assert 'class="logo-img"' not in page
+    assert "مجلة صيد" in page
+    assert "Sayd Magazine" in page
+    assert "أسياد الطبيعة في البر والبحر والجو" in page
+    assert "Masters of nature on land, sea, and sky" in page
     assert 'src="../../media/brand/sayd-footer-logo.png"' in page
     assert ">العربية<" in page
     assert ">English<" in page
@@ -306,45 +313,47 @@ def _section(html: str, start: str, end: str) -> str:
 
 
 def test_homepage_latest_matches_nayef() -> None:
+    """2026 home: one cover, then مستجدات, then door boxes. One URL, one slot."""
     html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
     lists = load_homepage_lists()
-    featured = _section(html, "featured-mosaic", "latest-feed")
-    latest = _section(html, "latest-feed", "</ul>")
+    cover = _section(html, 'class="feature-cover"', 'id="home-cascade"')
+    cascade = _section(html, 'id="home-cascade"', "door-row-primary")
+    sayd = _section(html, "door-sayd", "door-furusiyya")
+    fur = _section(html, "door-furusiyya", "door-nature")
+    nature = _section(html, "door-nature", "موسوعة الطيور")
     ticker = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
 
-    assert "80-ألف-زائر-و158-جهة" not in featured
-    assert "80-ألف-زائر-و158-جهة" in latest
-    assert ticker.count(SUHAIL_80K) == 1
-    assert "كيف-فقدت-مسارات-الهجرة" in featured
+    assert "كيف-فقدت-مسارات-الهجرة" in cover
+    assert "كيف-فقدت-مسارات-الهجرة" not in cascade
     assert "كيف-فقدت-مسارات-الهجرة" in ticker
-    assert "البجع-الأبيض" not in latest
+    assert sayd.count(SUHAIL_80K) == 2  # thumb + title
+    assert SUHAIL_80K not in cover
+    assert ticker.count(SUHAIL_80K) == 1
+    assert cascade.count(SUHAIL_80K) == 0
     assert "البجع-الأبيض" not in ticker
-    assert "البجع-الأبيض" not in featured
-    assert "عصفور-الشمس" not in latest
-    assert "عصفور-الشمس" not in ticker
-    assert "عصفور-الشمس" not in featured
+    assert "البجع-الأبيض" not in cover
+    assert "البجع-الأبيض" not in cascade
+    assert "عصفور-الشمس" not in html
     assert "صيد-تعود-بحلة-جديدة" not in html
     assert ADONIS not in ticker
+    assert ADONIS in cascade
     assert "السعودية-تشدد-على-ضوابط" not in html
-    assert "قطر-أكثر-من-80-ألف-زائر" not in latest
-    assert latest.count(SUHAIL_80K) == 1
-    assert "قطر-أكثر-من-80-ألف-زائر" not in ticker
-    assert FARMERS in featured
-    assert FARMERS not in latest
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in featured
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in latest
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in ticker
+    assert "قطر-أكثر-من-80-ألف-زائر" not in html
+    assert FARMERS in nature
+    assert FARMERS not in cover
+    assert FARMERS not in cascade
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in html
     assert "إبادة بيئية" not in ticker
-    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" not in featured
-    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in latest
-    assert "العد-التنازلي-لختام-موسم-الطائف" in featured
-    assert "العد-التنازلي-لختام-موسم-الطائف" not in latest
-    assert KAPS in featured
-    assert KAPS not in latest
-    assert MEMORY not in featured
-    assert MEMORY not in latest
-    assert featured.find(KAPS) < featured.find(FARMERS)
-    assert QATAR_80K not in latest
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in sayd
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" not in cover
+    assert "العد-التنازلي-لختام-موسم-الطائف" in fur
+    assert "العد-التنازلي-لختام-موسم-الطائف" not in cover
+    assert KAPS in sayd
+    assert KAPS not in cover
+    assert MEMORY not in html
+    assert "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية" not in html
+    assert "<h2>مواضيع مميزة</h2>" not in html
+    assert "<h2>قصص مميزة</h2>" not in html
     assert lists["featured"] == [
         "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
         "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
@@ -352,10 +361,6 @@ def test_homepage_latest_matches_nayef() -> None:
         FARMERS,
         ADONIS,
     ]
-
-    latest_slugs = re.findall(r'href="posts/([^/"]+)/index.html"', latest)
-    expected_latest = [s for s in lists["latest"] if s != MEMORY]
-    assert latest_slugs == expected_latest
     assert "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع" in lists["latest"]
     assert "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" in lists["omit"]
 
@@ -539,26 +544,25 @@ def test_home_section_order_interviews_before_gear() -> None:
 
 
 def test_featured_mosaic_matches_homepage_json() -> None:
-    """Nayef hard rule: mosaic count/order = homepage.json featured array."""
+    """Cover is the curlew investigation. Former featured slugs each keep one slot."""
     html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
     lists = load_homepage_lists()
-    slugs = _mosaic_featured_slugs(html)
-    assert slugs == lists["featured"], slugs
-    assert slugs == list(DEFAULT_FEATURED_SLUGS)
-    assert FARMERS in slugs
-    assert MEMORY not in slugs
-    # Extinction investigation is the large lead; CABS is the first side box.
-    assert slugs[0] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
-    assert slugs[1] == KAPS
-    assert slugs[2] == "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
-    assert slugs[3] == FARMERS
-    assert SUHAIL_80K not in slugs
+    assert lists["featured"] == list(DEFAULT_FEATURED_SLUGS)
+    cover = _section(html, 'class="feature-cover"', 'id="home-cascade"')
+    sayd = _section(html, "door-sayd", "door-furusiyya")
+    main = html.split('id="home-2026"', 1)[1]
+    assert cover.count("كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما") >= 1
+    assert KAPS in sayd
+    assert "العد-التنازلي-لختام-موسم-الطائف" in main
+    assert FARMERS in main
+    assert ADONIS in main
+    for slug in lists["featured"]:
+        assert main.count(f"posts/{slug}/") == 2, slug  # thumb + title
+    assert SUHAIL_80K not in cover
     assert "<h2>قصص مميزة</h2>" not in html
-    assert "mecshap-apu-cabs-baalbek-release.jpg" in html
-    mosaic = _section(html, "featured-mosaic", "latest-feed")
-    assert "mecshap-apu-cabs-baalbek-release.jpg" in mosaic
-    assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
-    assert "CABS و MECSHAP لحماية طيور الخريف" in html
+    assert "mecshap-apu-cabs-baalbek-release.jpg" in sayd
+    assert "kaps-makshab-apu-fries-hero.jpg" not in html
+    assert "CABS و MECSHAP لحماية طيور الخريف" in sayd
 
 
 def test_featured_pool_never_drops_for_missing_image() -> None:

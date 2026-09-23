@@ -613,8 +613,7 @@ html[dir="ltr"] .news-strip .ticker-viewport {
 
 .home-section { margin-bottom: 1.15rem; }
 
-/* EN empty / Arabic-only desks: hide vacant shelves. Keep HTML for Bulbul.
-   Do not hide sections that already have EN cards. */
+/* EN empty / Arabic-only desks: hide vacant shelves. Keep HTML for Bulbul. */
 html[dir="ltr"] .home-section:not(:has(article)),
 html[lang="en"] .home-section:not(:has(article)),
 html[dir="ltr"] .home-section:has(> .en-callout):not(:has(article)),
@@ -653,14 +652,9 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   display: flex;
   flex-direction: column;
   gap: 0;
-  align-items: stretch;
-  isolation: isolate;
 }
 
 .latest-feed li {
-  min-width: 0;
-  max-width: 100%;
-  overflow: hidden;
   border-bottom: 1px solid var(--hair);
 }
 
@@ -675,7 +669,6 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   padding: 0.4rem 0;
   color: var(--ink);
   min-height: 0;
-  min-width: 0;
 }
 .latest-feed a:hover { color: var(--gold-dark); }
 
@@ -687,7 +680,6 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   height: 56px;
   overflow: hidden;
   background: #d9d3c2;
-  flex-shrink: 0;
 }
 .latest-feed .feed-thumb img {
   width: 100%;
@@ -699,13 +691,13 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 .feed-text {
   min-width: 0;
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0.08rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.45rem;
 }
 
 .feed-cat {
-  display: block;
+  display: inline-block;
   font-size: 0.62rem;
   font-weight: 800;
   color: var(--gold-dark);
@@ -713,20 +705,20 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 }
 
 .feed-title {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  display: inline;
   font-size: 0.8rem;
   font-weight: 700;
   line-height: 1.4;
+  -webkit-line-clamp: unset;
+  overflow: visible;
 }
 
 .feed-date {
-  display: block;
+  display: inline;
   font-size: 0.68rem;
   color: var(--muted);
   margin-top: 0;
+  margin-inline-start: auto;
   white-space: nowrap;
 }
 
@@ -736,18 +728,18 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 
 .featured-mosaic {
   display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(0, 0.92fr);
+  grid-template-columns: 1.55fr 1fr;
   gap: 0.55rem;
   align-items: stretch;
-  min-height: 0;
+  min-height: 460px;
 }
 
 .feature-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.55rem;
   min-height: 0;
-  height: 100%;
 }
 
 .card.overlay {
@@ -755,28 +747,18 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   overflow: hidden;
 }
 
-.featured-mosaic > .card.overlay.feature-lead {
-  height: 480px;
-  max-height: 480px;
-  align-self: start;
-  overflow: hidden;
+.featured-mosaic > .card.overlay.feature-lead,
+.feature-stack .card.overlay {
+  height: 100%;
+  min-height: 0;
 }
 
-.featured-mosaic > .card.overlay.feature-lead .thumb {
+.featured-mosaic > .card.overlay.feature-lead .thumb,
+.feature-stack .card.overlay .thumb {
   position: absolute;
   inset: 0;
-  display: block;
   aspect-ratio: auto;
   height: 100%;
-  max-height: none;
-}
-
-.featured-mosaic > .card.overlay.feature-lead .thumb img {
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  object-position: center 28%;
 }
 
 /* Overlay cards — titles sit on the image, density over whitespace */
@@ -795,7 +777,6 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   position: relative;
 }
 
-/* Empty thumbs must not reserve a beige 16/10 box */
 .card .thumb:not(:has(img)),
 .card-compact .thumb:not(:has(img)),
 .post-row .thumb:not(:has(img)) {
@@ -867,12 +848,6 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   height: 100%;
 }
 
-.featured-mosaic > .card.overlay.feature-lead {
-  height: 480px;
-  max-height: 480px;
-  overflow: hidden;
-}
-
 .card.overlay .thumb {
   aspect-ratio: 16 / 11;
 }
@@ -881,11 +856,7 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(22, 23, 15, 0.78) 0%, rgba(22, 23, 15, 0.18) 32%, transparent 48%);
-}
-
-.featured-mosaic > .card.overlay.feature-lead .thumb::after {
-  background: linear-gradient(to top, rgba(22, 23, 15, 0.62) 0%, rgba(22, 23, 15, 0.10) 24%, transparent 40%);
+  background: linear-gradient(to top, rgba(22, 23, 15, 0.72) 0%, rgba(22, 23, 15, 0.12) 42%, transparent 70%);
 }
 
 .card.overlay .body {
@@ -894,7 +865,7 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   bottom: 0;
   z-index: 1;
   background: transparent;
-  padding: 0.35rem 0.55rem 0.45rem;
+  padding: 0.55rem 0.65rem 0.7rem;
   color: #fff;
 }
 
@@ -918,107 +889,71 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 .card.overlay h2 a:hover,
 .card.overlay h3 a:hover { color: var(--gold-soft); }
 .card.overlay.feature-lead h2 {
-  font-size: clamp(1rem, 1.7vw, 1.28rem);
-  -webkit-line-clamp: 2;
-  font-weight: 800;
+  font-size: clamp(1.25rem, 2.4vw, 1.85rem);
+  -webkit-line-clamp: 4;
+  font-weight: 900;
 }
 
-/* Nayef: Kaps/CABS homepage lead only — title above the photo, not bottom overlay. */
-.featured-mosaic > .card.feature-lead.kaps-lead {
-  display: flex;
-  flex-direction: column;
-  height: 480px;
-  max-height: 480px;
-  overflow: hidden;
-  align-self: start;
+.card.overlay .body {
+  padding: 0.45rem 0.65rem 0.55rem;
 }
-.featured-mosaic > .card.feature-lead.kaps-lead .body {
-  position: static;
-  inset: auto;
-  flex: 0 0 auto;
-  z-index: auto;
-  background: var(--card);
-  color: var(--ink);
-  padding: 0.55rem 0.7rem 0.5rem;
-}
-.featured-mosaic > .card.feature-lead.kaps-lead .meta { color: var(--muted); }
-.featured-mosaic > .card.feature-lead.kaps-lead .meta .cat-pill {
-  background: var(--olive);
-  color: #fff;
-}
-.featured-mosaic > .card.feature-lead.kaps-lead h2 {
-  font-size: clamp(1rem, 1.7vw, 1.28rem);
-  font-weight: 800;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.featured-mosaic > .card.feature-lead.kaps-lead h2 a { color: var(--ink); }
-.featured-mosaic > .card.feature-lead.kaps-lead h2 a:hover { color: var(--gold-dark); }
-.featured-mosaic > .card.feature-lead.kaps-lead .thumb {
-  position: relative;
-  inset: auto;
-  flex: 1 1 auto;
-  min-height: 0;
-  height: auto;
-  aspect-ratio: auto;
-  max-height: none;
-}
-.featured-mosaic > .card.feature-lead.kaps-lead .thumb::after { content: none; }
-.featured-mosaic > .card.feature-lead.kaps-lead .thumb img {
-  width: 100%;
-  height: 100%;
-  max-height: none;
-  object-fit: cover;
-  object-position: center 28%;
-}
-.featured-mosaic > .card.feature-lead.kaps-lead .kaps-caption {
-  flex: 0 0 auto;
-  margin: 0;
-  padding: 0.35rem 0.7rem 0.5rem;
-  font-size: 0.75rem;
-  line-height: 1.45;
-  color: var(--muted);
+.feature-stack .card.overlay .body {
+  padding: 0.4rem 0.55rem 0.5rem;
 }
 
 .featured-col .section-head h2 {
   font-size: 1.15rem;
 }
 
+@media (min-width: 821px) {
+  .featured-mosaic > .card.feature-lead .thumb {
+    height: 100%;
+    min-height: 400px;
+    aspect-ratio: auto;
+  }
+  .feature-stack .card.overlay .thumb {
+    min-height: 250px;
+    aspect-ratio: auto;
+    height: 100%;
+  }
+}
+
+
+
 .feature-side {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  min-height: 480px;
-  height: 480px;
-  align-self: stretch;
+  gap: 0.55rem;
+  min-height: 0;
 }
 .feature-side .feature-stack {
   flex: 1 1 auto;
   min-height: 0;
-  height: 100%;
+}
+.feature-side .feature-adonis {
+  flex: 0 0 auto;
+}
+.feature-side .feature-adonis .thumb {
+  aspect-ratio: 16 / 9;
+  min-height: 140px;
 }
 
-/* Side column: one packed stack of small boxes — never a 2-col grid */
+/* Feature-stack cards: image on top, title below — no text over photo */
 .feature-stack .card.card-stack {
-  display: grid;
-  grid-template-columns: minmax(92px, 36%) minmax(0, 1fr);
-  align-items: stretch;
-  flex: 1 1 0;
-  height: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   min-height: 0;
   background: var(--card);
 }
 .feature-stack .card.card-stack .thumb {
   position: relative;
   inset: auto;
-  flex: none;
+  flex: 0 0 auto;
   width: 100%;
-  aspect-ratio: auto;
-  min-height: 0;
-  max-height: none;
-  height: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 170px;
+  height: auto;
 }
 .feature-stack .card.card-stack .thumb::after {
   display: none;
@@ -1027,23 +962,19 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   position: static;
   inset: auto;
   z-index: auto;
-  flex: none;
+  flex: 1 1 auto;
   background: var(--card);
   color: var(--ink);
-  padding: 0.35rem 0.5rem 0.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 0.55rem 0.65rem 0.7rem;
 }
 .feature-stack .card.card-stack .meta {
   color: var(--muted);
-  margin-bottom: 0.1rem;
 }
 .feature-stack .card.card-stack h3 {
-  font-size: 0.8rem;
-  line-height: 1.3;
+  font-size: 0.88rem;
+  line-height: 1.35;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1052,6 +983,14 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 }
 .feature-stack .card.card-stack h3 a:hover {
   color: var(--gold-dark);
+}
+@media (min-width: 821px) {
+  .featured-mosaic {
+    min-height: 480px;
+  }
+  .feature-stack .card.card-stack .thumb {
+    min-height: 200px;
+  }
 }
 
 .home-layout {
@@ -1472,40 +1411,34 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   color: #5a4a20;
 }
 
-/* Nayef ≥2022 empty category shells (land with PR #64).
-   Hide nav, drawer, sidebar, and footer links to indexes that are
-   badge 0 + p.empty-note and have no .post-row.
-   Homepage .home-section desks are filled and are not matched here.
+/* Empty shells that are not 2026 nav doors.
+   رماية, قوانين الصيد العربية, and مائدة الصياد stay in the nav
+   even when the category index is an empty 2022+ note.
+   Homepage boxes for those doors are omitted by the homepage composer.
    [href$="category/…/index.html"] covers category/… and ../category/…. */
-:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رماية/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رياضات-وسياحة-بيئية/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/قوانين-وخرائط/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدستكم/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رياضات/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مصيدة/index.html"],
-:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/قوانين/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدسة-التاريخ/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدستنا/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/خرائط/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/سياحة-بيئية/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/عين-النسر-تختار-لكم/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/كلمتكم/index.html"],
-:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مائدة-الصيد/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مجلة/index.html"],
-:is(.sidebar, .site-footer) li:has(> a[href$="category/رماية/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/رياضات-وسياحة-بيئية/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/قوانين-وخرائط/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/بعدستكم/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/رياضات/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/مصيدة/index.html"]),
-:is(.sidebar, .site-footer) li:has(> a[href$="category/قوانين/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/بعدسة-التاريخ/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/بعدستنا/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/خرائط/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/سياحة-بيئية/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/عين-النسر-تختار-لكم/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/كلمتكم/index.html"]),
-:is(.sidebar, .site-footer) li:has(> a[href$="category/مائدة-الصيد/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/مجلة/index.html"]) {
   display: none;
 }
@@ -1575,48 +1508,23 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   .grid-4:has(> :nth-child(3)) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .featured-mosaic { min-height: 0; }
+  .featured-mosaic { min-height: 320px; }
 }
 
 @media (max-width: 820px) {
   .featured-mosaic {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     min-height: 0;
   }
   .featured-mosaic > .card.overlay.feature-lead {
     grid-column: 1 / -1;
-    height: 240px;
-    max-height: 240px;
-    min-height: 0;
-  }
-  .featured-mosaic > .card.feature-lead.kaps-lead {
-    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
     height: auto;
-    max-height: none;
-  }
-  .featured-mosaic > .card.feature-lead.kaps-lead .thumb {
-    aspect-ratio: 16 / 10;
     min-height: 160px;
   }
-  .featured-mosaic > .card.overlay.feature-lead .thumb {
-    position: absolute;
-    inset: 0;
-    aspect-ratio: auto;
-    height: 100%;
-    max-height: none;
-  }
-  .feature-side,
   .feature-stack {
     grid-column: 1 / -1;
-    min-height: 0;
-    height: auto;
-  }
-  .feature-stack .card.card-stack {
-    flex: 0 0 auto;
-  }
-  .feature-stack .card.card-stack .thumb {
-    aspect-ratio: 16 / 11;
-    max-height: 92px;
+    min-height: 200px;
   }
   .grid-4,
   .grid-4:has(> :nth-child(3)),
@@ -1638,19 +1546,13 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 
 @media (max-width: 640px) {
   .page-main { padding: 0.55rem 0 1.6rem; }
-  .latest-feed { display: flex; flex-direction: column; }
+  .latest-feed { grid-template-columns: 1fr 1fr; }
   .feed-title { font-size: 0.76rem; }
-  .latest-feed a { grid-template-columns: 64px minmax(0, 1fr); }
-  .feed-thumb,
-  .latest-feed .feed-thumb { width: 64px; height: 48px; }
+  .feed-date { display: none; }
   .card.overlay h2,
   .card.overlay h3 { font-size: 0.82rem; }
-  .card.overlay.feature-lead h2 { font-size: 1rem; }
-  .card.overlay .body { padding: 0.3rem 0.45rem 0.4rem; }
-  .feature-stack .card.card-stack {
-    grid-template-columns: minmax(80px, 34%) minmax(0, 1fr);
-  }
-  .feature-stack .card.card-stack .thumb { max-height: 78px; }
+  .card.overlay.feature-lead h2 { font-size: 1.1rem; }
+  .card.overlay .body { padding: 0.4rem 0.5rem 0.55rem; }
   .post-row {
     grid-template-columns: 88px 1fr;
   }
@@ -1665,11 +1567,7 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 }
 
 @media (max-width: 400px) {
-  .feature-stack {
-    display: flex;
-    flex-direction: column;
-  }
-  .latest-feed { display: flex; flex-direction: column; }
+  .feature-stack { grid-template-columns: 1fr 1fr; }
 }
 
 /* EN wordmark — Latin title instead of Arabic logo glyph */
@@ -1800,80 +1698,6 @@ html[dir="ltr"] .main-nav a {
 }
 @media (max-width: 1100px) {
   html[dir="ltr"] .main-nav a { font-size: 0.72rem; padding-inline: 0.35rem; }
-}
-
-/* Homepage sections below Latest: title under the photo, not a disappearing overlay. */
-.home-section .card.overlay {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-}
-.home-section .card.overlay .thumb::after {
-  content: none;
-}
-.home-section .card.overlay .body {
-  position: static;
-  inset: auto;
-  z-index: auto;
-  background: var(--card);
-  color: var(--ink);
-  padding: 0.5rem 0.6rem 0.65rem;
-}
-.home-section .card.overlay .meta { color: var(--muted); }
-.home-section .card.overlay .meta .cat-pill {
-  background: var(--olive);
-  color: #fff;
-}
-.home-section .card.overlay h2,
-.home-section .card.overlay h3 {
-  -webkit-line-clamp: 3;
-}
-.home-section .card.overlay h2 a,
-.home-section .card.overlay h3 a { color: var(--ink); }
-.home-section .card.overlay h2 a:hover,
-.home-section .card.overlay h3 a:hover { color: var(--gold-dark); }
-html[dir="ltr"] .home-section .card.overlay .thumb::after {
-  content: none;
-  background: none;
-}
-html[dir="ltr"] .home-section .card.overlay .meta {
-  color: var(--muted);
-  text-shadow: none;
-}
-html[dir="ltr"] .home-section .card.overlay h2,
-html[dir="ltr"] .home-section .card.overlay h3 {
-  text-shadow: none;
-}
-html[dir="ltr"] .home-section .card.overlay h2 a,
-html[dir="ltr"] .home-section .card.overlay h3 a { color: var(--ink); }
-html[dir="ltr"] .home-section .card.overlay h2 a:hover,
-html[dir="ltr"] .home-section .card.overlay h3 a:hover { color: var(--gold-dark); }
-
-/* Short rows must not leave empty 4-column white fields. */
-.home-section .grid-4:has(> :last-child:nth-child(1)),
-.home-section .grid-photos:has(> :last-child:nth-child(1)) {
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 17.5rem;
-}
-.home-section .grid-4:has(> :last-child:nth-child(2)),
-.home-section .grid-photos:has(> :last-child:nth-child(2)) {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 36rem;
-}
-.home-section .grid-4:has(> :last-child:nth-child(3)) {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-@media (max-width: 820px) {
-  .home-section .grid-4:has(> :last-child:nth-child(3)) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: none;
-  }
-  .home-section .grid-4:has(> :last-child:nth-child(1)),
-  .home-section .grid-photos:has(> :last-child:nth-child(1)),
-  .home-section .grid-4:has(> :last-child:nth-child(2)),
-  .home-section .grid-photos:has(> :last-child:nth-child(2)) {
-    max-width: none;
-  }
 }
 
 /* ========== Memory personalities strip (preview) ========== */
@@ -2136,4 +1960,165 @@ html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 a {
 html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h2 a:hover,
 html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 a:hover {
   color: var(--gold-dark);
+}
+
+/* ========== 2026 masthead + homepage cascade ========== */
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.social-links a { white-space: nowrap; }
+
+.header-inner { flex-wrap: wrap; justify-content: center; }
+.brand-lockup {
+  flex: 1 1 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.1rem;
+  padding: 0.55rem 0 0.35rem;
+}
+.brand-ar {
+  font-family: "Noto Naskh Arabic", "Cairo", serif;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--olive-deep);
+}
+.brand-en {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gold-dark);
+}
+.brand-lockup .tagline,
+.brand-lockup .tagline-en {
+  display: block;
+  border: 0;
+  padding: 0;
+  max-width: none;
+}
+.brand-lockup .tagline {
+  margin-top: 0.28rem;
+  font-size: 0.92rem;
+  color: var(--olive);
+}
+.brand-lockup .tagline-en {
+  font-size: 0.78rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--muted);
+}
+.site-header .main-nav {
+  flex: 1 1 100%;
+  order: 3;
+  flex-wrap: wrap;
+  overflow: visible;
+  margin: 0;
+  justify-content: center;
+  background: var(--olive-deep);
+  padding: 0.2rem 0.35rem 0.35rem;
+  gap: 0.1rem 0.15rem;
+}
+.site-header .main-nav a {
+  color: #f4efe0;
+  font-size: 0.78rem;
+  padding: 0.38rem 0.48rem;
+}
+.site-header .main-nav a:hover,
+.site-header .main-nav a:focus {
+  background: var(--olive-hover);
+  color: var(--gold-soft);
+}
+.nav-toggle { order: 2; }
+
+@media (max-width: 1100px) {
+  .brand-lockup .tagline,
+  .brand-lockup .tagline-en { display: block; }
+}
+@media (max-width: 900px) {
+  .brand-lockup .tagline,
+  .brand-lockup .tagline-en { display: block; }
+  .site-header .main-nav { display: none; }
+}
+
+.feature-cover { margin: 0.85rem 0 0.2rem; }
+.feature-cover .card.overlay.feature-lead {
+  position: relative;
+  min-height: clamp(240px, 42vw, 460px);
+}
+.feature-cover .card.overlay.feature-lead .thumb {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  aspect-ratio: auto;
+}
+.feature-cover .card.overlay.feature-lead .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.feature-cover .card.overlay.feature-lead h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+}
+
+.home-2026 { padding-bottom: 2rem; }
+.cards-cascade,
+.mini-cards,
+.cards-lens {
+  display: grid;
+  gap: 0.8rem;
+}
+.cards-cascade { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.mini-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mini-cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mini-cards-1 { grid-template-columns: minmax(0, 22rem); }
+.cards-lens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.door-row {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.door-row-primary { grid-template-columns: 1.45fr 1fr; }
+.door-row-live { grid-template-columns: minmax(0, 1fr); }
+.door-box .section-head { margin-bottom: 0.55rem; }
+.card.card-story .body { position: static; background: var(--card); color: var(--ink); }
+.card.card-story h3 a,
+.card.card-story h2 a { color: var(--ink); }
+.channel-layout {
+  display: grid;
+  grid-template-columns: 1.4fr minmax(0, 22rem);
+  gap: 0.8rem;
+  align-items: start;
+}
+.channel-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: #1c1f14;
+}
+.channel-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .cards-cascade,
+  .door-row-primary,
+  .cards-lens,
+  .channel-layout { grid-template-columns: 1fr 1fr; }
+  .channel-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .cards-cascade,
+  .mini-cards,
+  .mini-cards-4,
+  .cards-lens,
+  .door-row-primary,
+  .mini-cards-1 { grid-template-columns: 1fr; }
+  .feature-cover .card.overlay.feature-lead { min-height: 220px; }
 }

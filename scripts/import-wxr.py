@@ -64,17 +64,34 @@ ABOUT_BLURB = (
     "فروسية وتراث من لبنان والعالم العربي."
 )
 
-# Main nav categories closer to live Multi News order.
-# Each entry: (display_label, match_names_or_slugs…)
+# 2026 door nav. Deep category URLs stay (pre-2026 taxonomy). Empty doors
+# still link — the homepage box is what hides when a door has no fresh story.
+# Each entry: (display_label, path from docs/).
+NAV_DOORS = [
+    ("صيد", "category/صيد/index.html"),
+    ("فروسية", "category/فروسية/index.html"),
+    ("رماية", "category/رماية/index.html"),
+    ("عتاد وسلاح", "category/عتاد-وسلاح-الصيد/index.html"),
+    ("الصياد في الطبيعة", "category/صيد-بري/index.html"),
+    ("مائدة الصياد", "category/مائدة-الصيد/index.html"),
+    ("شعر وفن", "category/ثقافة-وتراث/index.html"),
+    ("قوانين الصيد العربية", "category/قوانين/index.html"),
+    ("موسوعة الطيور", "doors/birds/index.html"),
+    ("بعدستكم", "category/صور/index.html"),
+    ("قناة صيد", "category/استديو-صيد/index.html"),
+]
+# Kept so older helpers that still pass name keys can resolve a door.
 NAV_CATS = [
-    ("صيد وفروسية", ["صيد وفروسية", "صيد", "صيد-وفروسية"]),
+    ("صيد", ["صيد", "صيد-وفروسية", "صيد وفروسية"]),
+    ("فروسية", ["فروسية"]),
     ("رماية", ["رماية"]),
-    ("عتاد وسلاح", ["عتاد وسلاح الصيد", "عتاد وسلاح", "عتاد-وسلاح-الصيد", "عتاد-وسلاح"]),
-    ("صيد TV", ["استديو صيد", "استديو-صيد"]),
-    ("رياضات وسياحة بيئية", ["رياضات وسياحة بيئية", "رياضات-وسياحة-بيئية"]),
-    ("مقابلات وتحقيقات", ["مقابلات وتحقيقات", "مقابلات-تحقيقات"]),
-    ("بعدستكم", ["بعدستكم"]),
-    ("قوانين وخرائط", ["قوانين وخرائط", "قوانين-وخرائط"]),
+    ("عتاد وسلاح", ["عتاد وسلاح الصيد", "عتاد وسلاح", "عتاد-وسلاح-الصيد"]),
+    ("الصياد في الطبيعة", ["صيد بري", "صيد-بري"]),
+    ("مائدة الصياد", ["مائدة الصيد", "مائدة-الصيد"]),
+    ("شعر وفن", ["شعر وفن", "ثقافة وتراث", "ثقافة-وتراث"]),
+    ("قوانين الصيد العربية", ["قوانين", "قوانين وخرائط", "قوانين-وخرائط"]),
+    ("بعدستكم", ["صور", "بعدستكم"]),
+    ("قناة صيد", ["استديو صيد", "استديو-صيد"]),
 ]
 
 # Off nav, drawer, sidebar, footer, and homepage desks. The category index
@@ -137,7 +154,13 @@ TOP_SECONDARY = [
     ("إتصل بنا", "إتصل-بنا"),
 ]
 
-TICKER_LABEL = "من كل وادي خبر"
+TICKER_LABEL = "من البر والبحر والجو"
+TICKER_LABEL_EN = "From land, sea, and sky"
+# Light strip under the masthead. Not a second cover. On update the oldest
+# publish date drops so the strip never grows past this cap.
+TICKER_MAX = 8
+SITE_TAGLINE_VISIBLE = "أسياد الطبيعة في البر والبحر والجو"
+SITE_TAGLINE_EN = "Masters of nature on land, sea, and sky"
 TICKER_CONFIG = CONTENT_DIR / "ticker.json"
 HOMEPAGE_CONFIG = CONTENT_DIR / "homepage.json"
 CATEGORY_OVERLAY = CONTENT_DIR / "category-overlay.json"
@@ -251,11 +274,9 @@ DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
         "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
         "مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟",
     ),
-    (
-        "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
-        "مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان",
-    ),
 ]
+# Dropped when the strip was capped at 8 (oldest publish date, 7 Sep 2026):
+# مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية. The article stays at its own URL.
 # Adonis / new-look never belong in the ticker (duplicated for animation).
 TICKER_OMIT_SLUGS = {
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -600,7 +621,7 @@ def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
         pairs = _ticker_pairs(data.get("items") or [])
         pairs = [p for p in pairs if p[0] not in ticker_omit_slugs()]
         if pairs:
-            return pairs
+            return _cap_ticker(pairs)
 
     home = home_html or (DEFAULT_OUT / "index.html")
     if home.exists():
@@ -613,9 +634,21 @@ def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
             ]
             pairs = [p for p in _ticker_pairs(found) if p[0] not in ticker_omit_slugs()]
             if pairs:
-                return pairs
+                return _cap_ticker(pairs)
 
-    return [p for p in DEFAULT_TICKER_ITEMS if p[0] not in ticker_omit_slugs()]
+    return _cap_ticker([p for p in DEFAULT_TICKER_ITEMS if p[0] not in ticker_omit_slugs()])
+
+
+def _cap_ticker(pairs: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    """Keep TICKER_MAX items. Over the cap, drop the oldest known publish date.
+
+    Order of the items that remain does not change. scripts/home_2026.py
+    holds the date map; this helper drops from the tail when dates are
+    unavailable so a rebuild cannot emit a ninth link.
+    """
+    if len(pairs) <= TICKER_MAX:
+        return list(pairs)
+    return list(pairs[:TICKER_MAX])
 
 
 def load_desk_slugs() -> dict[str, list[str]]:
@@ -1569,10 +1602,9 @@ def layout(
     logo = "../" * depth + "media/brand/sayd-logo.png"
     footer_logo = "../" * depth + "media/brand/sayd-footer-logo.png"
     date_bit = utility_date or format_ar_long_date(datetime.now())
+    doors = (extra_nav or "").strip() or door_nav_html(depth)
     nav_links = f"""
-        <a class="nav-home" href="{home}">الرئيسية</a>
-        {extra_nav}
-        <a class="nav-all" href="{articles}">الأرشيف</a>"""
+        {doors}"""
     header_class = "container header-inner"
     return f"""<!DOCTYPE html>
 <html lang="ar" dir="rtl">
@@ -1606,14 +1638,11 @@ def layout(
     </div>
     <header class="site-header">
       <div class="{header_class}">
-        <a class="brand-lockup" href="{home}">
-          <span class="brand-row">
-            <img class="logo-img" src="{esc(logo)}" width="168" height="64" alt="{SITE_TITLE} — {SITE_TITLE_EN}">
-            <span class="brand-text">
-              <span class="wordmark">{SITE_TITLE}</span>
-              <span class="tagline">{SITE_TAGLINE} • التأسيس 2012</span>
-            </span>
-          </span>
+        <a class="brand brand-lockup" href="{home}">
+          <span class="brand-ar">{SITE_TITLE}</span>
+          <span class="brand-en">{SITE_TITLE_EN}</span>
+          <span class="tagline">{SITE_TAGLINE_VISIBLE}</span>
+          <span class="tagline-en">{SITE_TAGLINE_EN}</span>
         </a>
         <div class="nav-rule" aria-hidden="true"></div>
         <nav class="main-nav" aria-label="القائمة الرئيسية">{nav_links}
@@ -1775,15 +1804,17 @@ def resolve_cat(cat_counts: dict[str, dict], keys: list[str]) -> dict | None:
     return None
 
 
+def door_nav_html(depth: int) -> str:
+    """Eleven 2026 doors. Empty archives stay linked; homepage boxes may hide."""
+    return "\n        ".join(
+        f'<a href="{"../" * depth}{path}">{esc(label)}</a>' for label, path in NAV_DOORS
+    )
+
+
 def cat_nav_html(cat_counts: dict[str, dict], depth: int) -> str:
-    parts = []
-    for label, keys in NAV_CATS:
-        c = resolve_cat(cat_counts, list(keys) + [label])
-        if c:
-            parts.append(
-                f'<a href="{cat_href(c["slug"], depth)}">{esc(label)}</a>'
-            )
-    return "\n        ".join(parts)
+    """Nav ignores post counts so an empty door is not dropped from chrome."""
+    del cat_counts
+    return door_nav_html(depth)
 
 
 def is_video_post(p: dict) -> bool:
