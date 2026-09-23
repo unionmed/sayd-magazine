@@ -93,17 +93,19 @@ def test_source_has_no_regression_strings() -> None:
 def test_ticker_source_is_mars_list() -> None:
     items = load_ticker_items()
     assert items == list(DEFAULT_TICKER_ITEMS)
-    assert len(items) == 9
+    assert len(items) == 8
     slugs = [slug for slug, _ in items]
-    assert slugs[0].startswith("كيف-فقدت-مسارات-الهجرة")
-    assert "الكروان رفيع المنقار" in items[0][1]
-    assert slugs[1].startswith("العد-التنازلي")
-    assert "كأس اليوم الوطني" in items[1][1]
-    assert "26 أيلول" in items[1][1]
-    assert slugs[2].startswith("مصر-قرار-جديد")
-    assert "200 طائر مهاجر" in items[2][1]
-    assert slugs[3].startswith("كابس")
-    assert "سهيل" in items[4][1]
+    assert slugs[0] == "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
+    assert items[0][1] == "بيرد لايف: 45٪ من الطيور المهاجرة في العالم في انحدار مستمر"
+    assert slugs[1].startswith("كيف-فقدت-مسارات-الهجرة")
+    assert "الكروان رفيع المنقار" in items[1][1]
+    assert slugs[2].startswith("العد-التنازلي")
+    assert "كأس اليوم الوطني" in items[2][1]
+    assert "26 أيلول" in items[2][1]
+    assert slugs[3].startswith("مصر-قرار-جديد")
+    assert "200 طائر مهاجر" in items[3][1]
+    assert slugs[4].startswith("كابس")
+    assert "سهيل" in items[5][1]
     assert ADONIS not in slugs
     assert "sayd-returns-what-we-want-to-offer" not in slugs
 
@@ -343,14 +345,16 @@ def test_homepage_latest_matches_nayef() -> None:
     assert KAPS not in latest
     assert MEMORY not in featured
     assert MEMORY not in latest
-    assert featured.find(KAPS) < featured.find(FARMERS)
+    assert featured.find(FARMERS) < featured.find(KAPS)
+    assert ADONIS in latest
+    assert ADONIS not in featured
     assert QATAR_80K not in latest
     assert lists["featured"] == [
+        "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
         "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-        "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
         FARMERS,
-        ADONIS,
+        KAPS,
     ]
 
     latest_slugs = re.findall(r'href="posts/([^/"]+)/index.html"', latest)
@@ -547,11 +551,12 @@ def test_featured_mosaic_matches_homepage_json() -> None:
     assert slugs == list(DEFAULT_FEATURED_SLUGS)
     assert FARMERS in slugs
     assert MEMORY not in slugs
-    # Extinction investigation is the large lead; CABS is the first side box.
-    assert slugs[0] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
-    assert slugs[1] == KAPS
+    # BirdLife editorial is the large lead; the seven-birds investigation is the first side box.
+    assert slugs[0] == "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
+    assert slugs[1] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
     assert slugs[2] == "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
     assert slugs[3] == FARMERS
+    assert slugs[4] == KAPS
     assert SUHAIL_80K not in slugs
     assert "<h2>قصص مميزة</h2>" not in html
     assert "mecshap-apu-cabs-baalbek-release.jpg" in html
@@ -564,7 +569,7 @@ def test_featured_mosaic_matches_homepage_json() -> None:
 def test_featured_pool_never_drops_for_missing_image() -> None:
     """Importer keeps every homepage.json slug even with no thumb / no WXR row."""
     ordered = featured_slugs()
-    assert ordered[0] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+    assert ordered[0] == "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
     assert KAPS in ordered
     assert FARMERS in ordered
     assert MEMORY not in ordered

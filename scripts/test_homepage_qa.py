@@ -40,7 +40,8 @@ def test_en_homepage_has_no_fries_thumbs() -> None:
     assert "kaps-makshab-apu-fries-hero.jpg" not in stories
     assert "article-featured" not in field
     assert "kaps-makshab-apu-fries-hero.jpg" not in field
-    assert "autumn-migration-field-action-protect-flyways-lebanon" in home
+    # Oldest ticker line (max 8). The story page stays published.
+    assert "autumn-migration-field-action-protect-flyways-lebanon" not in home
     after_latest = home.split("Latest news", 1)[1]
     assert "kaps-makshab-apu-fries-hero.jpg" not in after_latest
     assert 'class="thumb" href="posts/autumn-migration-field-action' not in after_latest
@@ -169,7 +170,10 @@ def test_kaps_package_untouched() -> None:
         assert "feature-lead" in lead
         assert "feature-ecocide" not in lead
         assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
-        assert "slender-billed-curlew-last-photo.jpg" in lead
+        assert "birdlife-flyways-photo.jpg" in lead
+        assert "bee-eaters-dragonflies" not in html
+        assert "bee-eater-pair-branch.jpg" not in html
+        assert "slender-billed-curlew-last-photo.jpg" in side
         assert "mecshap-apu-cabs-baalbek-release.jpg" in side
         assert "farmers-storks-migrating-palestine.jpg" in side
         assert "hero-closing-80k.jpg" not in mosaic
@@ -206,8 +210,8 @@ def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
     assert offenders == []
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     latest = ar.split("latest-feed", 1)[1].split("</ul>", 1)[0]
-    assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in latest
-    assert "illegal-hunting-mist-net-chickadee.jpg" in latest
+    assert "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم" in latest
+    assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" not in latest
     assert "شبك.jpg" not in ar
     mosaic = ar.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" not in mosaic
@@ -272,21 +276,21 @@ def test_latest_feed_has_thumbs() -> None:
         (
             "index.html",
             {
+                "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
                 "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
                 "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
                 "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
                 "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
-                "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
             },
         ),
         (
             "en/index.html",
             {
+                "skies-losing-balance-birdlife-flyways-report",
                 "how-migration-routes-lost-seven-birds-in-150-years",
                 "cabs-mecshap-autumn-birds-lebanon-khatib",
                 "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
                 "how-farmers-protect-migratory-birds-this-autumn",
-                "sayd-returns-what-we-want-to-offer",
             },
         ),
     ):
@@ -385,12 +389,12 @@ def test_ar_en_dated_lists_share_one_order() -> None:
 
     ar_lead = unique_slugs(ar.split("feature-lead", 1)[1].split("feature-side", 1)[0])
     en_lead = unique_slugs(en.split("feature-lead", 1)[1].split("feature-side", 1)[0])
-    assert ar_lead == ["كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"]
+    assert ar_lead == ["سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"]
     assert en_lead == [pairs[ar_lead[0]]]
 
     ar_side = unique_slugs(ar.split("feature-side", 1)[1].split("latest-col", 1)[0])
     en_side = unique_slugs(en.split("feature-side", 1)[1].split("latest-col", 1)[0])
-    assert ar_side[0] == "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
+    assert ar_side[0] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
     assert [pairs[slug] for slug in ar_side] == en_side
 
     ar_latest = unique_slugs(ar.split("latest-feed", 1)[1].split("</ul>", 1)[0])
@@ -423,8 +427,7 @@ def test_latest_and_desks_are_newest_first() -> None:
             _parse_home_date(d) for d in re.findall(r'<div class="meta">([^<]+)', side)
         ]
         assert len(side_dates) >= 2
-        # First small box stays CABS. Every later side box is newest-first.
-        assert side_dates[1:] == sorted(side_dates[1:], reverse=True), (rel, side_dates)
+        assert side_dates == sorted(side_dates, reverse=True), (rel, side_dates)
         main = html.split('class="home-main"', 1)[1]
         for block in re.findall(r'<div class="grid-(?:4|photos)">(.*?)</div>', main, re.S):
             cards = _cards(block)
@@ -587,20 +590,20 @@ def test_homepage_story_cards_are_unique() -> None:
         for extra in allowed:
             if extra in counts:
                 assert counts[extra] == 2, (rel, extra, counts[extra])
-        assert slugs.count(adonis) == 1, (rel, adonis, slugs.count(adonis))
+        assert slugs.count(adonis) == 0, (rel, adonis, slugs.count(adonis))
         assert twin not in slugs
         assert twin not in html
         latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
-        assert adonis not in latest
+        assert latest.count(adonis) == 1
         mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
-        assert mosaic.count(adonis) >= 1
+        assert adonis not in mosaic
         adonis_cards = [
             art
             for art in re.findall(r"<article class=\"card[^\"]*\">(.*?)</article>", html, re.S)
             if adonis in art
         ]
-        assert len(adonis_cards) == 1
-        assert "sayd-returns-adonis-editor.jpg" in adonis_cards[0]
+        assert adonis_cards == []
+        assert "sayd-returns-adonis-editor.jpg" in latest
         other_adonis_img = [
             art
             for art in re.findall(r"<article class=\"card[^\"]*\">(.*?)</article>", html, re.S)
@@ -620,8 +623,8 @@ def test_homepage_story_cards_are_unique() -> None:
             ticker_en = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
             assert ticker_en.count("suhail-2026-closes-decade-katara-80000-visitors") == 1
             assert "qatar-suhail-2026-80000-visitors-teaser" not in ticker_en
-            assert "illegal-hunting-destroys-hobby-nets-lime-night" in latest
-            assert "illegal-hunting-mist-net-chickadee.jpg" in latest
+            assert "sayd-returns-what-we-want-to-offer" in latest
+            assert "sayd-returns-adonis-editor.jpg" in latest
             assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in latest
             assert "<h2>News</h2>" not in html
             assert "<h2>Hunting &amp; Equestrian</h2>" not in html
@@ -635,13 +638,19 @@ def test_homepage_story_cards_are_unique() -> None:
                 if slug not in iv_slugs:
                     iv_slugs.append(slug)
             assert iv_slugs == [
+                "the-awsaj-thornbush-reading-the-land",
                 FARMERS_EN,
                 "george-taza-protect-fish-stocks-interview",
-                "leen-araji-equestrian-and-mental-math-champion",
             ]
+            assert "leen-araji-equestrian-and-mental-math-champion" not in iv_slugs
+            assert "The Hunter in Nature" in interviews
+            assert "01-awsaj-dense-shrub-negev.jpg" in interviews
+            assert "the-awsaj-thornbush-reading-the-land" not in ticker_en
             assert "how-migration-routes-lost-seven-birds-in-150-years" not in iv_slugs
             lead = html.split("feature-lead", 1)[1].split("feature-side", 1)[0]
-            assert "how-migration-routes-lost-seven-birds-in-150-years" in lead
+            assert "skies-losing-balance-birdlife-flyways-report" in lead
+            assert "the-awsaj-thornbush-reading-the-land" not in lead
+            assert "how-migration-routes-lost-seven-birds-in-150-years" not in lead
             gear = html.split("<h2>Gear &amp; Arms</h2>", 1)[1].split("</section>", 1)[0]
             assert "air-rifles" in gear
             assert "<h2>Miscellany</h2>" not in html
@@ -652,18 +661,32 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "<h2>صيد وفروسية</h2>" not in html
             assert "<h2>أخبار</h2>" not in html
             latest_ar = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
-            assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" in latest_ar
+            assert "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم" in latest_ar
+            assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" not in latest_ar
             assert latest_ar.count("80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع") == 1
             assert "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026" not in latest_ar
             ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
             assert ticker_ar.count("80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع") == 1
             assert "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026" not in ticker_ar
             interviews = html.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
-            iv_slugs = re.findall(r'href="posts/([^/]+)/', interviews)
-            assert iv_slugs and iv_slugs[0] == FARMERS_AR
+            iv_slugs = []
+            for slug in re.findall(r'href="posts/([^/]+)/', interviews):
+                if slug not in iv_slugs:
+                    iv_slugs.append(slug)
+            assert iv_slugs == [
+                "شجيرة-العوسج-حين-تقرأ-الأرض",
+                FARMERS_AR,
+                "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
+            ]
+            assert "لين-عراجي-بطلة-فروسية-وحساب" not in iv_slugs
+            assert "الصياد في الطبيعة" in interviews
+            assert "01-awsaj-dense-shrub-negev.jpg" in interviews
+            assert "شجيرة-العوسج-حين-تقرأ-الأرض" not in ticker_ar
             assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" not in iv_slugs
             lead = html.split("feature-lead", 1)[1].split("feature-side", 1)[0]
-            assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" in lead
+            assert "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف" in lead
+            assert "شجيرة-العوسج-حين-تقرأ-الأرض" not in lead
+            assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" not in lead
             assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in iv_slugs
 
 
@@ -672,26 +695,26 @@ def test_lock_is_idempotent_and_drops_restacked_cards() -> None:
     import sys
 
     sys.path.insert(0, str(ROOT / "scripts"))
-    from homepage_unique_cards import ADONIS_EN, lock_homepage_html  # noqa: E402
+    from homepage_unique_cards import CURLEW_EN, lock_homepage_html  # noqa: E402
 
     fixture = f"""
 <div class="featured-mosaic">
-<article class="card card-stack feature-adonis">
-  <a class="thumb" href="posts/{ADONIS_EN}/index.html"><img src="x.jpg" alt=""></a>
-  <div class="body"><h3><a href="posts/{ADONIS_EN}/index.html">Adonis</a></h3></div>
+<article class="card card-stack">
+  <a class="thumb" href="posts/{CURLEW_EN}/index.html"><img src="x.jpg" alt=""></a>
+  <div class="body"><h3><a href="posts/{CURLEW_EN}/index.html">Curlew</a></h3></div>
 </article>
 </div>
 <ul class="latest-feed">
 <li>
-  <a href="posts/{ADONIS_EN}/index.html">
-    <span class="feed-text"><span class="feed-title">Adonis</span></span>
+  <a href="posts/{CURLEW_EN}/index.html">
+    <span class="feed-text"><span class="feed-title">Curlew</span></span>
   </a>
 </li>
 </ul>
 <section class="home-section">
 <article class="card overlay">
-  <a class="thumb" href="posts/{ADONIS_EN}/index.html"><img src="x.jpg" alt=""></a>
-  <div class="body"><h3><a href="posts/{ADONIS_EN}/index.html">Adonis again</a></h3></div>
+  <a class="thumb" href="posts/{CURLEW_EN}/index.html"><img src="x.jpg" alt=""></a>
+  <div class="body"><h3><a href="posts/{CURLEW_EN}/index.html">Curlew again</a></h3></div>
 </article>
 <article class="card overlay">
   <a class="thumb" href="posts/sayd-returns-new-look-wider-vision/index.html"><img src="x.jpg" alt=""></a>
@@ -700,10 +723,10 @@ def test_lock_is_idempotent_and_drops_restacked_cards() -> None:
 </section>
 """
     locked = lock_homepage_html(fixture)
-    assert locked.count(f"posts/{ADONIS_EN}/") == 2  # mosaic thumb + title
-    assert "Adonis again" not in locked
+    assert locked.count(f"posts/{CURLEW_EN}/") == 2  # mosaic thumb + title
+    assert "Curlew again" not in locked
     assert "sayd-returns-new-look-wider-vision" not in locked
-    assert ADONIS_EN not in locked.split("latest-feed", 1)[1]
+    assert CURLEW_EN not in locked.split("latest-feed", 1)[1]
     assert lock_homepage_html(locked) == locked
 
 
@@ -712,9 +735,9 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     desks = {
         "Interviews &amp; Investigations": [
+            "the-awsaj-thornbush-reading-the-land",
             "how-farmers-protect-migratory-birds-this-autumn",
             "george-taza-protect-fish-stocks-interview",
-            "leen-araji-equestrian-and-mental-math-champion",
         ],
         "Gear &amp; Arms": [
             "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
@@ -737,7 +760,7 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
     assert "<h2>News</h2>" not in en
     assert "<h2>Hunting &amp; Equestrian</h2>" not in en
     latest = en.split("latest-feed", 1)[1].split("</ul>", 1)[0]
-    assert "illegal-hunting-mist-net-chickadee.jpg" in latest
+    assert "sayd-returns-adonis-editor.jpg" in latest
     assert "Jocy-229x300.jpeg" not in en
     assert "wp-content" not in en
     for slug in [
@@ -813,7 +836,7 @@ def test_nayef_unlinked_chrome_and_poetry_rename() -> None:
 
 
 def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
-    """P0: Adonis is mosaic-only; EN Miscellany is filled or omitted, never empty."""
+    """Adonis stays off the ticker and in Latest; EN Miscellany is filled or omitted."""
     import sys
 
     sys.path.insert(0, str(ROOT / "scripts"))
@@ -824,7 +847,8 @@ def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
         for block in re.findall(r'<div class="ticker"[^>]*>(.*?)</div>', html, re.S):
             assert ADONIS_AR not in block
             assert ADONIS_EN not in block
-        assert "feature-adonis" in html
+        assert "feature-adonis" not in html
+        assert "sayd-returns-adonis-editor.jpg" in html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
         assert "sayd-returns-new-look-wider-vision" not in html
         assert "صيد-تعود-بحلة-جديدة" not in html
         assert 'class="memory-strip"' in html

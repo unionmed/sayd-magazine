@@ -24,6 +24,7 @@ SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يخ
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 
 HOME_TICKER_EN = [
+    "skies-losing-balance-birdlife-flyways-report",
     "how-migration-routes-lost-seven-birds-in-150-years",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration",
@@ -31,13 +32,11 @@ HOME_TICKER_EN = [
     SUHAIL_EN,
     "saudi-sixth-hunting-season-2026-2027-rules",
     "video-saud-al-babtain-maqnas-afghanistan",
-    "autumn-migration-how-world-protects-birds-regulates-hunting",
-    "autumn-migration-field-action-protect-flyways-lebanon",
 ]
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 30
+    assert len(PAIRS) == 31
     drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
     assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():
@@ -86,6 +85,12 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         # Miscellany desk is off the homepage. Articles stay in /en/posts.
         "european-bee-eater",
         "barn-owl",
+        # Oldest ticker line, dropped to keep the strip at 8. Article stays published.
+        "autumn-migration-field-action-protect-flyways-lebanon",
+        # Oldest Latest card, dropped so Adonis can take the 8 September slot.
+        "illegal-hunting-destroys-hobby-nets-lime-night",
+        # Oldest Interviews filler, dropped so awsaj can lead that grid.
+        "leen-araji-equestrian-and-mental-math-champion",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
@@ -154,7 +159,10 @@ def test_en_homepage_featured_2026() -> None:
     lead = mosaic.split("feature-side", 1)[0]
     side = mosaic.split("feature-side", 1)[1]
     assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
-    assert "slender-billed-curlew-last-photo.jpg" in lead
+    assert "birdlife-flyways-photo.jpg" in lead
+    assert "slender-billed-curlew-last-photo.jpg" in side
+    assert "bee-eaters-dragonflies" not in html
+    assert "bee-eater-pair-branch.jpg" not in html
     assert "mecshap-apu-cabs-baalbek-release.jpg" in side
     assert "farmers-storks-migrating-palestine.jpg" in side
     assert "suhail-2026-closes-decade-katara-80000-visitors" not in lead
@@ -168,8 +176,9 @@ def test_en_homepage_featured_2026() -> None:
     assert "sayd-returns-what-we-want-to-offer" not in ticker_en
     assert ticker_en.count(SUHAIL_EN) == 1
     assert "qatar-suhail-2026-80000-visitors-teaser" not in ticker_en
-    assert "feature-adonis" in html
-    assert "sayd-returns-what-we-want-to-offer" in html
+    assert "feature-adonis" not in html
+    latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+    assert "sayd-returns-what-we-want-to-offer" in latest
 
 
 def test_cabs_and_suhail_twins_link_back() -> None:
@@ -240,7 +249,8 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         assert "feature-ecocide" not in lead
         assert "kaps-lead" not in lead
         assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
-        assert "slender-billed-curlew-last-photo.jpg" in lead
+        assert "birdlife-flyways-photo.jpg" in lead
+        assert "slender-billed-curlew-last-photo.jpg" in side
         assert "mecshap-apu-cabs-baalbek-release.jpg" in side
         assert "farmers-storks-migrating-palestine.jpg" in side
         assert "hero-closing-80k.jpg" not in mosaic
@@ -253,10 +263,12 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
             assert "كابس" not in titles
             assert "<h2>قصص مميزة</h2>" not in html
             assert "CABS و MECSHAP لحماية طيور الخريف" in side
-            assert "كيف فقدت مسارات الهجرة" in lead
+            assert "سماء الكوكب تفقد توازنها" in lead
+            assert "كيف فقدت مسارات الهجرة" in side
         else:
             assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
-            assert "How Did Migration Routes Lose Seven" in lead
+            assert "The planet’s skies are losing their balance" in lead
+            assert "How Did Migration Routes Lose Seven" in side
             assert "<h2>Featured stories</h2>" not in html
         css_q = html.split("site.css", 1)[1][:80]
         assert (
@@ -367,8 +379,8 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "Eco-Tourism" in html
     assert "international-orgs-ecocide-south-lebanon" not in html
     assert "how-farmers-protect-migratory-birds-this-autumn" in html
-    assert "feature-adonis" in html
     assert "feature-lead" in html
+    assert "sayd-returns-what-we-want-to-offer" in html.split("latest-feed", 1)[1]
     assert "home-layout" in html
     assert ">Sayd TV<" in html
     assert ">Photos<" in html

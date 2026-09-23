@@ -199,11 +199,11 @@ def featured_mosaic_slugs() -> list[str]:
 
 # EN edition slugs for the same five mosaic stories.
 FEATURED_MOSAIC_EN_SLUGS = {
-    "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "skies-losing-balance-birdlife-flyways-report",
+    "how-migration-routes-lost-seven-birds-in-150-years",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "how-farmers-protect-migratory-birds-this-autumn",
-    "suhail-2026-closes-decade-katara-80000-visitors",
-    "sayd-returns-what-we-want-to-offer",
+    "cabs-mecshap-autumn-birds-lebanon-khatib",
 }
 
 

@@ -156,11 +156,11 @@ DEFAULT_HOME_OMIT = {
 # Nayef-via-Mars order. Image / placeholder / gap-thumb work must not drop
 # a listed card. Source of truth is content/homepage.json, else this list.
 DEFAULT_FEATURED_SLUGS = [
+    "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
-    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
+    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
 ]
 # Hand-crafted editorial extras that may not be in the WXR dump. Featured
 # mosaic still emits these cards (gap / existing thumb) so a rebuild cannot
@@ -220,6 +220,10 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
 # posts and never a breaking/urgent label. Rebuilds must emit this same strip.
 DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
     (
+        "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+        "بيرد لايف: 45٪ من الطيور المهاجرة في العالم في انحدار مستمر",
+    ),
+    (
         "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
         "مسارات الهجرة فقدت 7 أنواع خلال 150 عاماً… والكروان رفيع المنقار آخرها",
     ),
@@ -246,14 +250,6 @@ DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
     (
         "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
         "بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان",
-    ),
-    (
-        "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
-        "مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟",
-    ),
-    (
-        "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
-        "مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان",
     ),
 ]
 # Adonis / new-look never belong in the ticker (duplicated for animation).
@@ -1863,8 +1859,9 @@ def build_site(data: dict, out: Path) -> None:
         sort_latest_newest_first(pick_posts_by_slug(posts, home_lists["latest"]))
     )
     featured_pool = featured_posts(posts, home_lists["featured"])
-    # Locked slots: investigation stays the lead, CABS stays the first
-    # small box. Every other side card is newest publish date first.
+    # Locked slots: BirdLife editorial is the lead. The seven-birds
+    # investigation is the first side box (same date as Taif, listed first).
+    # Every other side card is newest publish date first.
     locked_lead = DEFAULT_FEATURED_SLUGS[0]
     locked_side = DEFAULT_FEATURED_SLUGS[1]
     by_featured = {p["slug"]: p for p in featured_pool}

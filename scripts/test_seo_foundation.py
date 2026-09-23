@@ -104,7 +104,7 @@ def test_home_and_memory_twins() -> None:
     home = (DOCS / "index.html").read_text(encoding="utf-8").split("</head>", 1)[0]
     assert 'rel="canonical" href="https://sayd-magazine.com/"' in home
     assert 'hreflang="en" href="https://sayd-magazine.com/en/"' in home
-    assert "slender-billed-curlew-last-photo.jpg" in home
+    assert "birdlife-flyways-photo.jpg" in home
     assert "<title>مجلة صيد · Sayd Magazine</title>" in (DOCS / "index.html").read_text(
         encoding="utf-8"
     )
