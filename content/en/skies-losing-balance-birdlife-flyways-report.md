@@ -4,7 +4,7 @@
 **Type:** Editorial
 **Suggested slug:** skies-losing-balance-birdlife-flyways-report
 **Category:** Interviews & Investigations
-**Cover:** media/uploads/2026/09/birdlife-flyways-photo.jpg
+**Cover:** media/uploads/2026/09/bee-eaters-dragonflies.jpg
 
 ## Lead
 
@@ -13,4 +13,4 @@ Exclusive to Sayd Magazine | An editorial reading of the State of the World's Bi
 ## Body
 
 See `docs/en/posts/skies-losing-balance-birdlife-flyways-report/index.html` for the published English text.
-Cover credit sits under the wetland flock. The European bee-eater pair is the in-article photograph only.
+The cover is European bee-eaters hunting dragonflies (Wikimedia Commons — CC BY-SA 4.0). The second in-article photo is not locked; the HTML marks SECOND IMAGE SLOT.

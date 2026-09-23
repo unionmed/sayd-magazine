@@ -159,8 +159,9 @@ def test_en_homepage_featured_2026() -> None:
     lead = mosaic.split("feature-side", 1)[0]
     side = mosaic.split("feature-side", 1)[1]
     assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
-    assert "birdlife-flyways-photo.jpg" in lead
+    assert "bee-eaters-dragonflies.jpg" in lead
     assert "slender-billed-curlew-last-photo.jpg" in side
+    assert "birdlife-flyways-photo.jpg" not in html
     assert "birdlife-european-bee-eater-pair-branch.jpg" not in html
     assert "mecshap-apu-cabs-baalbek-release.jpg" in side
     assert "farmers-storks-migrating-palestine.jpg" in side
@@ -248,7 +249,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         assert "feature-ecocide" not in lead
         assert "kaps-lead" not in lead
         assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
-        assert "birdlife-flyways-photo.jpg" in lead
+        assert "bee-eaters-dragonflies.jpg" in lead
         assert "slender-billed-curlew-last-photo.jpg" in side
         assert "mecshap-apu-cabs-baalbek-release.jpg" in side
         assert "farmers-storks-migrating-palestine.jpg" in side

@@ -170,9 +170,9 @@ def test_kaps_package_untouched() -> None:
         assert "feature-lead" in lead
         assert "feature-ecocide" not in lead
         assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
-        assert "birdlife-flyways-photo.jpg" in lead
+        assert "bee-eaters-dragonflies.jpg" in lead
+        assert "birdlife-flyways-photo.jpg" not in html
         assert "birdlife-european-bee-eater-pair-branch.jpg" not in html
-        assert "bee-eaters-dragonflies" not in html
         assert "slender-billed-curlew-last-photo.jpg" in side
         assert "mecshap-apu-cabs-baalbek-release.jpg" in side
         assert "farmers-storks-migrating-palestine.jpg" in side
