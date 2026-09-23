@@ -72,7 +72,9 @@
     "Hunting & Equestrian",
     "September 2026",
     "رماية",
-    "رياضات وسياحة بيئية"
+    "رياضات وسياحة بيئية",
+    "جعبة المنوعات",
+    "Miscellany"
   ],
   "desk_slugs": {
     "مقابلات وتحقيقات": [
@@ -82,11 +84,6 @@
     ],
     "عتاد وسلاح": [
       "البنادق-الهوائية"
-    ],
-    "جعبة المنوعات": [
-      "العُوَيْسِق",
-      "طائر-الوروار-الأوروبي",
-      "بومة-المخازن"
     ],
     "Interviews & Investigations": [
       "how-farmers-protect-migratory-birds-this-autumn",
@@ -102,10 +99,6 @@
     "Photos": [
       "suhail-2026-in-photos-falcons-visitors",
       "great-white-pelican-matn-highway-nayef-krayem"
-    ],
-    "Miscellany": [
-      "european-bee-eater",
-      "barn-owl"
     ]
   },
   "category_extras": {
@@ -148,7 +141,5 @@
     "مقابلات وتحقيقات",
     "عتاد وسلاح"
   ],
-  "home_section_tail": [
-    "جعبة المنوعات"
-  ]
+  "home_section_tail": []
 }

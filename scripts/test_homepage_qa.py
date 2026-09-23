@@ -232,7 +232,7 @@ def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
 
 
 def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
-    """Nayef: Interviews → Gear → TV → Photos → جعبة / Miscellany. News/Hunting off."""
+    """Nayef: Interviews → Gear → TV → Photos. جعبة / Miscellany stay off home."""
 
     def _h2_pos(html: str, title: str) -> int:
         main = html.split('class="home-main"', 1)[1]
@@ -242,22 +242,22 @@ def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
 
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    ar_iv, ar_gear, ar_tv, ar_ph, ar_bag = (
+    ar_iv, ar_gear, ar_tv, ar_ph = (
         _h2_pos(ar, "مقابلات وتحقيقات"),
         _h2_pos(ar, "عتاد وسلاح"),
         _h2_pos(ar, "صيد TV"),
         _h2_pos(ar, "صور"),
-        _h2_pos(ar, "جعبة المنوعات"),
     )
-    assert ar_iv < ar_gear < ar_tv < ar_ph < ar_bag
+    assert ar_iv < ar_gear < ar_tv < ar_ph
+    assert "<h2>جعبة المنوعات</h2>" not in ar
     assert "<h2>أخبار</h2>" not in ar
     assert "<h2>صيد وفروسية</h2>" not in ar
     en_iv = _h2_pos(en, "Interviews &amp; Investigations")
     en_gear = _h2_pos(en, "Gear &amp; Arms")
     en_tv = _h2_pos(en, "Sayd TV")
     en_ph = _h2_pos(en, "Photos")
-    en_bag = _h2_pos(en, "Miscellany")
-    assert en_iv < en_gear < en_tv < en_ph < en_bag
+    assert en_iv < en_gear < en_tv < en_ph
+    assert "<h2>Miscellany</h2>" not in en
     assert "<h2>News</h2>" not in en
     assert "<h2>Hunting &amp; Equestrian</h2>" not in en
     assert "<h2>September 2026</h2>" not in en
@@ -402,7 +402,6 @@ def test_ar_en_dated_lists_share_one_order() -> None:
         ("عتاد وسلاح", "Gear &amp; Arms"),
         ("صيد TV", "Sayd TV"),
         ("صور", "Photos"),
-        ("جعبة المنوعات", "Miscellany"),
     ):
         ar_slugs = unique_slugs(ar.split(f"<h2>{ar_h}</h2>", 1)[1].split("</section>", 1)[0])
         en_slugs = unique_slugs(en.split(f"<h2>{en_h}</h2>", 1)[1].split("</section>", 1)[0])
@@ -641,10 +640,10 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "how-migration-routes-lost-seven-birds-in-150-years" in lead
             gear = html.split("<h2>Gear &amp; Arms</h2>", 1)[1].split("</section>", 1)[0]
             assert "air-rifles" in gear
-            misc = html.split("<h2>Miscellany</h2>", 1)[1].split("</section>", 1)[0]
-            assert "red-footed-falcon-killed-by-ignorance" not in misc
-            assert "european-bee-eater" in misc
-            assert "barn-owl" in misc
+            assert "<h2>Miscellany</h2>" not in html
+            assert "red-footed-falcon-killed-by-ignorance" not in html
+            assert "european-bee-eater" not in html
+            assert "barn-owl" not in html
         else:
             assert "<h2>صيد وفروسية</h2>" not in html
             assert "<h2>أخبار</h2>" not in html
@@ -714,10 +713,6 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
             "suhail-2026-in-photos-falcons-visitors",
             "great-white-pelican-matn-highway-nayef-krayem",
         ],
-        "Miscellany": [
-            "european-bee-eater",
-            "barn-owl",
-        ],
     }
     for heading, slugs in desks.items():
         block = en.split(f"<h2>{heading}</h2>", 1)[1].split("</section>", 1)[0]
@@ -733,13 +728,76 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
     assert "illegal-hunting-mist-net-chickadee.jpg" in latest
     assert "Jocy-229x300.jpeg" not in en
     assert "wp-content" not in en
-    for slug in desks["Miscellany"] + [
+    for slug in [
+        "european-bee-eater",
+        "barn-owl",
         "common-shelduck-protected-migrant-lebanon",
         "leading-platform-lebanese-arab-hunters-since-2012",
         "regulating-hunting-protects-wildlife-bans-worsen",
         "illegal-hunting-destroys-hobby-nets-lime-night",
     ]:
         assert (DOCS / "en" / "posts" / slug / "index.html").is_file()
+
+
+def test_nayef_unlinked_chrome_and_poetry_rename() -> None:
+    """Partners, Miscellany, ticker, and hunter game leave chrome. شعر وفن keeps its slug."""
+    import re
+
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+
+    def chrome(html: str) -> str:
+        parts = []
+        for cls in ("main-nav", "drawer-nav", "sidebar", "site-footer"):
+            for block in re.findall(rf'class="{cls}"[\s\S]*?</(?:nav|aside|footer)>', html):
+                parts.append(block)
+        return "\n".join(parts)
+
+    for html in (ar, en):
+        block = chrome(html)
+        for needle in (
+            "category/جعبة-المنوعات/index.html",
+            "category/شريط/index.html",
+            "pages/شركاؤنا/index.html",
+            "pages/751-2/index.html",
+            "pages/تصفح-صيد/index.html",
+            "pages/الأحوال-الجوية/index.html",
+            "pages/الدخول/index.html",
+            "pages/أرشيف-الموقع/index.html",
+        ):
+            assert needle not in block, needle
+    assert "<h2>جعبة المنوعات</h2>" not in ar
+    assert "<h2>Miscellany</h2>" not in en
+    assert ">Miscellany<" not in en.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
+    assert (DOCS / "pages" / "شركاؤنا" / "index.html").is_file()
+    assert "شركاء" in (DOCS / "pages" / "شركاؤنا" / "index.html").read_text(encoding="utf-8")
+    misc = (DOCS / "category" / "جعبة-المنوعات" / "index.html").read_text(encoding="utf-8")
+    assert 'class="post-row"' in misc
+    assert (DOCS / "posts" / "طائر-الوروار-الأوروبي" / "index.html").is_file()
+    assert (DOCS / "en" / "posts" / "european-bee-eater" / "index.html").is_file()
+    culture = (DOCS / "category" / "ثقافة-وتراث" / "index.html").read_text(encoding="utf-8")
+    assert "<title>شعر وفن — مجلة صيد</title>" in culture
+    assert "تصنيفات / شعر وفن" in culture
+    assert "<h2>شعر وفن " in culture
+    assert "ثقافة وتراث" not in culture
+    assert "category/ثقافة-وتراث/index.html" in culture
+    assert (DOCS / "category" / "ثقافة-وتراث").is_dir()
+    team = (DOCS / "en" / "team" / "index.html").read_text(encoding="utf-8")
+    assert "Poetry &amp; Art" in team
+    assert "Culture and heritage" not in team
+    for rel in (
+        "category/شريط/index.html",
+        "pages/751-2/index.html",
+        "pages/تصفح-صيد/index.html",
+    ):
+        page = (DOCS / rel).read_text(encoding="utf-8")
+        assert 'http-equiv="refresh"' in page
+        assert "https://sayd-magazine.com/articles/" in page
+        assert 'class="post-row"' not in page
+    assert "category/%D8%B4%D8%B1%D9%8A%D8%B7/" not in (DOCS / "sitemap.xml").read_text(encoding="utf-8")
+    # Deep badge on a miscellany story still points at the kept index.
+    bee = (DOCS / "posts" / "طائر-الوروار-الأوروبي" / "index.html").read_text(encoding="utf-8")
+    assert "category/جعبة-المنوعات/index.html" in bee
 
 
 def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
@@ -796,5 +854,6 @@ if __name__ == "__main__":
     test_homepage_story_cards_are_unique()
     test_lock_is_idempotent_and_drops_restacked_cards()
     test_en_home_mirrors_ar_desk_cards()
+    test_nayef_unlinked_chrome_and_poetry_rename()
     test_adonis_off_ticker_and_empty_en_miscellany_hidden()
     print("test_homepage_qa: ok")

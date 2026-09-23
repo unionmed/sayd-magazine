@@ -36,6 +36,21 @@ SITEMAP_SKIP = {
     "pages/تصفح-صيد/index.html",
     "pages/الأحوال-الجوية/index.html",
     "pages/751-2/index.html",
+    "pages/تصفح-صيد/index.html",
+    "pages/الأحوال-الجوية/index.html",
+    "pages/الدخول/index.html",
+    "pages/أرشيف-الموقع/index.html",
+    "category/شريط/index.html",
+}
+
+# Empty shells replaced by an archive redirect. SEO rewrite must not expand them.
+CANCELLED_SHELLS = {
+    "category/شريط/index.html",
+    "pages/751-2/index.html",
+    "pages/تصفح-صيد/index.html",
+    "pages/الأحوال-الجوية/index.html",
+    "pages/الدخول/index.html",
+    "pages/أرشيف-الموقع/index.html",
 }
 
 # Thin HTML redirects for the Babtain Afghanistan video. The live article
@@ -189,7 +204,7 @@ def in_sitemap(rel: Path) -> bool:
     posix = rel.as_posix()
     if rel.name != "index.html":
         return False
-    if posix in SITEMAP_SKIP or posix in ALIAS_REDIRECTS:
+    if posix in SITEMAP_SKIP or posix in ALIAS_REDIRECTS or posix in CANCELLED_SHELLS:
         return False
     parts = rel.parts
     if parts[0] == "posts":
@@ -372,7 +387,7 @@ def apply_html(
     rel: Path,
     twins: dict[str, str],
 ) -> str:
-    if rel.as_posix() in ALIAS_REDIRECTS:
+    if rel.as_posix() in ALIAS_REDIRECTS or rel.as_posix() in CANCELLED_SHELLS:
         return html_text
     match = re.search(r"</head>", html_text, re.I)
     if not match:

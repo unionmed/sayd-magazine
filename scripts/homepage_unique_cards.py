@@ -6,7 +6,7 @@ no long caption) → CABS/MECSHAP stays the first small side box. Every
 other side box, Latest, and dated desk grid is newest publish date
 first. Suhail exhibition leaves the mosaic for Latest (13 Sep, below
 Egypt). Memory strip → Latest thumbs → Interviews → Gear → TV →
-Photos → Miscellany.
+Photos. Miscellany stays off the homepage.
 
 News / Hunting desks stay off home (archive only). Featured URLs
 never also appear in Latest. Latest items are small thumb + title +
@@ -89,9 +89,9 @@ LATEST_EN = [
     POACHING_EN,
 ]
 
-DROPPED_DESKS_AR = ("أخبار", "صيد وفروسية")
-DROPPED_DESKS_EN = ("News", "September 2026", "Hunting &amp; Equestrian")
-CSS_CACHE = "20260922-empty-cats-b"
+DROPPED_DESKS_AR = ("أخبار", "صيد وفروسية", "جعبة المنوعات")
+DROPPED_DESKS_EN = ("News", "September 2026", "Hunting &amp; Equestrian", "Miscellany")
+CSS_CACHE = "20260923-nayef-chrome"
 
 CHICKADEE_REL = "uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg"
 CHICKADEE_ALT_AR = "طائر يُستخرج من شبكة ضبابية"
@@ -128,10 +128,6 @@ EN_DESK_SLUGS: dict[str, list[str]] = {
         "suhail-2026-in-photos-falcons-visitors",
         "great-white-pelican-matn-highway-nayef-krayem",
     ],
-    "Miscellany": [
-        "european-bee-eater",
-        "barn-owl",
-    ],
 }
 # Visible homepage lists: publish year 2022 through today. Locked lead and
 # the first side box are exempt. Undated cards stay off the lists.
@@ -151,11 +147,6 @@ AR_DESK_SLUGS: dict[str, list[str]] = {
         "لين-عراجي-بطلة-فروسية-وحساب",
     ],
     "عتاد وسلاح": ["البنادق-الهوائية"],
-    "جعبة المنوعات": [
-        "العُوَيْسِق",
-        "طائر-الوروار-الأوروبي",
-        "بومة-المخازن",
-    ],
 }
 
 AR_FALLBACK_CARDS: dict[str, str] = {
@@ -959,7 +950,7 @@ def _move_news_inside_home_main(html: str) -> str:
 
 
 def _ensure_en_desk_heading(html: str) -> str:
-    """Drop News / Hunting leftovers; Gear / Miscellany exist so they can fill."""
+    """Drop News / Hunting / Miscellany leftovers; Gear stays so it can fill."""
     html = drop_home_desks(html, DROPPED_DESKS_EN)
     if "<h2>Gear &amp; Arms</h2>" not in html:
         html = _insert_section_after(
@@ -973,23 +964,11 @@ def _ensure_en_desk_heading(html: str) -> str:
           </div>
         </section>""",
         )
-    if "<h2>Miscellany</h2>" not in html:
-        html = _insert_section_after(
-            html,
-            "Photos",
-            """        <section class="home-section">
-          <div class="section-head accent-olive">
-            <h2>Miscellany</h2>
-          </div>
-          <div class="grid-4">
-          </div>
-        </section>""",
-        )
     return html
 
 
 def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
-    """Pin Interviews / Gear / TV / Photos / Miscellany; News + Hunting stay off."""
+    """Pin Interviews / Gear / TV / Photos; News, Hunting, and Miscellany stay off."""
     html = _ensure_en_desk_heading(html)
     merged = dict(EN_FALLBACK_CARDS)
     merged.update(cards)
@@ -1014,7 +993,7 @@ def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
 
 
 def rebuild_ar_home_sections(html: str, cards: dict[str, str]) -> str:
-    """Pin Interviews / Gear / Miscellany; News + Hunting stay off home."""
+    """Pin Interviews / Gear; News, Hunting, and جعبة stay off home."""
     html = drop_home_desks(html, DROPPED_DESKS_AR)
     for heading, slugs in AR_DESK_SLUGS.items():
         slugs, dropped = _visible_slugs(list(slugs), cards, AR_FALLBACK_CARDS)

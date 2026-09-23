@@ -9,7 +9,7 @@ Nayef EN rule: /en/ mirrors the Arabic desk spine with English twins.
 Do not run write_home() against the hand-extended EN homepage (it would
 wipe Memory / desks). homepage.json desk_slugs + homepage_unique_cards
 lock CABS lead → farmers side → Latest thumbs → Interviews → Gear →
-TV → Photos → Miscellany. News + Hunting stay off home.
+TV → Photos. Miscellany stays off the homepage and the nav. News + Hunting stay off home.
 """
 
 from __future__ import annotations
@@ -39,7 +39,7 @@ FONTS = (
     "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800"
     "&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap"
 )
-CSS_CACHE = "20260922-empty-cats-b"
+CSS_CACHE = "20260923-nayef-chrome"
 NO_THUMB_SLUGS = {
     "autumn-migration-field-action-protect-flyways-lebanon",
 }
@@ -847,7 +847,6 @@ def en_chrome(
         ("", "category/مقابلات-تحقيقات/index.html", "Interviews &amp; Investigations"),
         ("", "category/صور/index.html", "Photos"),
         ("", "category/قوانين-وخرائط/index.html", "Laws &amp; Maps"),
-        ("", "category/جعبة-المنوعات/index.html", "Miscellany"),
         ("nav-all", "articles/index.html", "Archive"),
     ]
     nav_links = []
