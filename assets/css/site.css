@@ -1411,40 +1411,34 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   color: #5a4a20;
 }
 
-/* Nayef ≥2022 empty category shells (land with PR #64).
-   Hide nav, drawer, sidebar, and footer links to indexes that are
-   badge 0 + p.empty-note and have no .post-row.
-   Homepage .home-section desks are filled and are not matched here.
+/* Empty shells that are not 2026 nav doors.
+   رماية, قوانين الصيد العربية, and مائدة الصياد stay in the nav
+   even when the category index is an empty 2022+ note.
+   Homepage boxes for those doors are omitted by the homepage composer.
    [href$="category/…/index.html"] covers category/… and ../category/…. */
-:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رماية/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رياضات-وسياحة-بيئية/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/قوانين-وخرائط/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدستكم/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رياضات/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مصيدة/index.html"],
-:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/قوانين/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدسة-التاريخ/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدستنا/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/خرائط/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/سياحة-بيئية/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/عين-النسر-تختار-لكم/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/كلمتكم/index.html"],
-:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مائدة-الصيد/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مجلة/index.html"],
-:is(.sidebar, .site-footer) li:has(> a[href$="category/رماية/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/رياضات-وسياحة-بيئية/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/قوانين-وخرائط/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/بعدستكم/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/رياضات/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/مصيدة/index.html"]),
-:is(.sidebar, .site-footer) li:has(> a[href$="category/قوانين/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/بعدسة-التاريخ/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/بعدستنا/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/خرائط/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/سياحة-بيئية/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/عين-النسر-تختار-لكم/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/كلمتكم/index.html"]),
-:is(.sidebar, .site-footer) li:has(> a[href$="category/مائدة-الصيد/index.html"]),
 :is(.sidebar, .site-footer) li:has(> a[href$="category/مجلة/index.html"]) {
   display: none;
 }
@@ -1966,4 +1960,212 @@ html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 a {
 html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h2 a:hover,
 html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 a:hover {
   color: var(--gold-dark);
+}
+
+/* ========== 2026 masthead + homepage cascade ========== */
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.social-links a { white-space: nowrap; }
+
+.header-inner { flex-wrap: wrap; justify-content: center; }
+.brand-lockup {
+  flex: 1 1 100%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.1rem;
+  padding: 0.55rem 0 0.35rem;
+}
+.brand-ar {
+  font-family: "Noto Naskh Arabic", "Cairo", serif;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--olive-deep);
+}
+.brand-en {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gold-dark);
+}
+.brand-lockup .tagline,
+.brand-lockup .tagline-en {
+  display: block;
+  border: 0;
+  padding: 0;
+  max-width: none;
+}
+.brand-lockup .tagline {
+  margin-top: 0.28rem;
+  font-size: 0.92rem;
+  color: var(--olive);
+}
+.brand-lockup .tagline-en {
+  font-size: 0.78rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--muted);
+}
+.site-header .main-nav {
+  flex: 1 1 100%;
+  order: 3;
+  flex-wrap: wrap;
+  overflow: visible;
+  margin: 0;
+  justify-content: center;
+  background: var(--olive-deep);
+  padding: 0.2rem 0.35rem 0.35rem;
+  gap: 0.1rem 0.15rem;
+}
+.site-header .main-nav a {
+  color: #f4efe0;
+  font-size: 0.78rem;
+  padding: 0.38rem 0.48rem;
+}
+.site-header .main-nav a:hover,
+.site-header .main-nav a:focus {
+  background: var(--olive-hover);
+  color: var(--gold-soft);
+}
+.nav-toggle { order: 2; }
+
+@media (max-width: 1100px) {
+  .brand-lockup .tagline,
+  .brand-lockup .tagline-en { display: block; }
+}
+@media (max-width: 900px) {
+  .brand-lockup .tagline,
+  .brand-lockup .tagline-en { display: block; }
+  .site-header .main-nav { display: none; }
+}
+
+.feature-cover { margin: 0.85rem 0 0.2rem; }
+.feature-cover .card.overlay.feature-lead {
+  position: relative;
+  min-height: clamp(240px, 42vw, 460px);
+}
+.feature-cover .card.overlay.feature-lead .thumb {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  aspect-ratio: auto;
+}
+.feature-cover .card.overlay.feature-lead .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.feature-cover .card.overlay.feature-lead h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+}
+
+.home-2026 { padding-bottom: 2rem; }
+.cards-cascade,
+.mini-cards,
+.cards-lens {
+  display: grid;
+  gap: 0.8rem;
+}
+.cards-cascade { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.mini-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mini-cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mini-cards-1 { grid-template-columns: minmax(0, 22rem); }
+.cards-lens { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cards-lens:has(> :only-child) { grid-template-columns: minmax(0, 22rem); }
+.door-row {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.door-row-primary { grid-template-columns: 1.45fr 1fr; }
+.door-row-live { grid-template-columns: minmax(0, 1fr); }
+.door-box .section-head { margin-bottom: 0.55rem; }
+.card.card-story .body { position: static; background: var(--card); color: var(--ink); }
+.card.card-story h3 a,
+.card.card-story h2 a { color: var(--ink); }
+/* Door and cascade cards: date, category, and title sit under the photo.
+   The feature cover is the only card that may paint text on the image. */
+.home-2026 .card.card-story {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  position: relative;
+}
+.home-2026 .card.card-story .thumb,
+html[dir="ltr"] .home-2026 .card.card-story .thumb {
+  position: relative;
+  inset: auto;
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+}
+.home-2026 .card.card-story .thumb::after,
+html[dir="ltr"] .home-2026 .card.card-story .thumb::after {
+  content: none;
+  background: none;
+}
+.home-2026 .card.card-story .body {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  flex: 0 0 auto;
+  background: var(--card);
+  color: var(--ink);
+}
+.home-2026 .card.card-story .meta,
+html[dir="ltr"] .home-2026 .card.card-story .meta {
+  color: var(--muted);
+  text-shadow: none;
+}
+.home-2026 .card.card-story h2,
+.home-2026 .card.card-story h3,
+.home-2026 .card.card-story h2 a,
+.home-2026 .card.card-story h3 a,
+html[dir="ltr"] .home-2026 .card.card-story h2,
+html[dir="ltr"] .home-2026 .card.card-story h3,
+html[dir="ltr"] .home-2026 .card.card-story h2 a,
+html[dir="ltr"] .home-2026 .card.card-story h3 a {
+  color: var(--ink);
+  text-shadow: none;
+}
+.channel-layout {
+  display: grid;
+  grid-template-columns: 1.4fr minmax(0, 22rem);
+  gap: 0.8rem;
+  align-items: start;
+}
+.channel-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  background: #1c1f14;
+}
+.channel-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .cards-cascade,
+  .door-row-primary,
+  .cards-lens,
+  .channel-layout { grid-template-columns: 1fr 1fr; }
+  .channel-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .cards-cascade,
+  .mini-cards,
+  .mini-cards-4,
+  .cards-lens,
+  .door-row-primary,
+  .mini-cards-1 { grid-template-columns: 1fr; }
+  .feature-cover .card.overlay.feature-lead { min-height: 220px; }
 }

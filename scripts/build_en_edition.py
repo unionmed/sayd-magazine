@@ -58,7 +58,7 @@ STORIES_GRID_OMIT = {
     "sayd-returns-new-look-wider-vision",
 }
 ABOUT_EN = (
-    "The magazine of nature’s masters on land, sea, and sky — hunting, "
+    "Sayd Magazine — Masters of nature on land, sea, and sky. Hunting, "
     "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
 )
 TAGLINE_EN = "The magazine of nature’s masters on land, sea, and sky"
@@ -108,8 +108,9 @@ HOME_TICKER = [
     "saudi-sixth-hunting-season-2026-2027-rules",
     "video-saud-al-babtain-maqnas-afghanistan",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
-    "autumn-migration-field-action-protect-flyways-lebanon",
 ]
+# Oldest item dropped when the strip was capped at 8:
+# autumn-migration-field-action-protect-flyways-lebanon (7 Sep 2026).
 
 META: dict[str, dict] = {
     "how-migration-routes-lost-seven-birds-in-150-years": {
@@ -171,7 +172,7 @@ META: dict[str, dict] = {
     "suhail-2026-in-photos-falcons-visitors": {
         "date": "13 September 2026",
         "date_sort": "2026-09-13",
-        "category": "Photos",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/gallery-alsharq.jpg",
         "image_alt": "Suhail 2026 in photos: falcons, visitors, and faces of the fair",
@@ -796,7 +797,7 @@ def en_post_href(depth: int, slug: str) -> str:
 def ticker_html(depth: int, articles: dict[str, dict], lang: str) -> str:
     if lang != "en":
         raise ValueError("AR ticker is already in docs/")
-    label = "From every valley, a story"
+    label = "From land, sea, and sky" if lang == "en" else "من البر والبحر والجو"
     links = []
     for slug in HOME_TICKER:
         title = TICKER_TITLES_EN.get(slug) or articles[slug]["title"]
@@ -839,15 +840,17 @@ def en_chrome(
     team = rel(depth, "en/team/index.html")
     contact = rel(depth, "en/contact/index.html")
     nav_items = [
-        ("nav-home", "en/index.html", "Home"),
-        ("", "category/صيد/index.html", "Hunting &amp; Equestrian"),
+        ("", "category/صيد/index.html", "Hunting"),
+        ("", "category/فروسية/index.html", "Equestrian"),
         ("", "category/رماية/index.html", "Shooting"),
         ("", "category/عتاد-وسلاح-الصيد/index.html", "Gear &amp; Arms"),
-        ("", "category/رياضات-وسياحة-بيئية/index.html", "Eco-Tourism"),
-        ("", "category/مقابلات-تحقيقات/index.html", "Interviews &amp; Investigations"),
-        ("", "category/صور/index.html", "Photos"),
-        ("", "category/قوانين-وخرائط/index.html", "Laws &amp; Maps"),
-        ("nav-all", "articles/index.html", "Archive"),
+        ("", "category/صيد-بري/index.html", "The Hunter in Nature"),
+        ("", "category/مائدة-الصيد/index.html", "The Hunter&#39;s Table"),
+        ("", "category/ثقافة-وتراث/index.html", "Poetry &amp; Art"),
+        ("", "category/قوانين/index.html", "Arab Hunting Laws"),
+        ("", "en/doors/birds/index.html", "Bird Encyclopedia"),
+        ("", "category/صور/index.html", "Your Lens"),
+        ("", "category/استديو-صيد/index.html", "Sayd Channel"),
     ]
     nav_links = []
     for cls, path, label in nav_items:
@@ -884,9 +887,11 @@ def en_chrome(
     </div>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="{home_en}">
-          <span class="brand-wordmark" lang="en">Sayd</span>
-          <span class="tagline">{escape(TAGLINE_EN)}</span>
+        <a class="brand brand-lockup" href="{home_en}">
+          <span class="brand-ar">مجلة صيد</span>
+          <span class="brand-en">Sayd Magazine</span>
+          <span class="tagline">أسياد الطبيعة في البر والبحر والجو</span>
+          <span class="tagline-en">Masters of nature on land, sea, and sky</span>
         </a>
         <nav class="main-nav" aria-label="Main menu">
 {nav}
@@ -906,7 +911,7 @@ def en_chrome(
     <div class="footer-main">
       <div class="container footer-grid">
         <div class="footer-col">
-          <p class="footer-wordmark" lang="en">Sayd</p>
+          <p class="footer-wordmark" lang="en">Sayd Magazine</p>
           <p>{escape(ABOUT_EN)}</p>
         </div>
         <div class="footer-col">
