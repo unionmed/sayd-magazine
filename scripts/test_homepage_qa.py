@@ -833,6 +833,24 @@ def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
     assert "feed-thumb" in latest
 
 
+def test_homepage_footer_does_not_repeat_sidebar_lists() -> None:
+    """Categories and pages appear in the homepage sidebar once, not again in the green footer."""
+    needle = "body:has(.home-layout) .site-footer .footer-col:nth-child(n + 2)"
+    for path in (
+        ROOT / "assets" / "css" / "site.css",
+        DOCS / "assets" / "css" / "site.css",
+    ):
+        css = path.read_text(encoding="utf-8")
+        assert needle in css
+        assert "body:has(.home-layout) .site-footer .footer-grid" in css
+    for rel in ("index.html", "en/index.html"):
+        html = (DOCS / rel).read_text(encoding="utf-8")
+        assert 'class="home-layout"' in html
+        assert 'class="sidebar"' in html
+        assert 'class="site-footer"' in html
+        assert "?v=20260923-footer-once" in html
+
+
 if __name__ == "__main__":
     test_no_empty_thumbs_or_missing_files()
     test_en_homepage_has_no_fries_thumbs()
@@ -856,4 +874,5 @@ if __name__ == "__main__":
     test_en_home_mirrors_ar_desk_cards()
     test_nayef_unlinked_chrome_and_poetry_rename()
     test_adonis_off_ticker_and_empty_en_miscellany_hidden()
+    test_homepage_footer_does_not_repeat_sidebar_lists()
     print("test_homepage_qa: ok")
