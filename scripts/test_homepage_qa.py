@@ -372,7 +372,7 @@ def test_demoted_cards_sort_newest_first() -> None:
 
 
 def test_ar_en_dated_lists_share_one_order() -> None:
-    """Lead and the first side box are locked. Other dated lists match across languages."""
+    """Lead stays BirdLife. Side boxes are newest-first. Dated lists match across languages."""
     import json
 
     pairs = json.loads((ROOT / "content" / "en" / "pairs.json").read_text(encoding="utf-8"))["pairs"]
@@ -393,7 +393,8 @@ def test_ar_en_dated_lists_share_one_order() -> None:
 
     ar_side = unique_slugs(ar.split("feature-side", 1)[1].split("latest-col", 1)[0])
     en_side = unique_slugs(en.split("feature-side", 1)[1].split("latest-col", 1)[0])
-    assert ar_side[0] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+    assert ar_side[0] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+    assert ar_side[2] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
     assert [pairs[slug] for slug in ar_side] == en_side
 
     ar_latest = unique_slugs(ar.split("latest-feed", 1)[1].split("</ul>", 1)[0])
@@ -477,7 +478,7 @@ def test_memory_strip_folds_rita_into_personalities() -> None:
 
 
 def test_south_lebanon_investigation_republished() -> None:
-    """Nayef v2, 24 Sep 2026. New Arabic body and the same two photos. Not the removed draft."""
+    """Nayef v2 keeps the original 20 Sep 2026 date. New Arabic body and the same two photos."""
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', ar, re.S).group(1)
@@ -499,7 +500,9 @@ def test_south_lebanon_investigation_republished() -> None:
     assert "birdlife-flyways-photo.jpg" in lead_ar
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in lead_ar
     assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in side_ar
-    assert "24 أيلول 2026" in side_ar
+    assert "20 أيلول 2026" in side_ar
+    assert "24 أيلول 2026" not in side_ar
+    assert side_ar.find("كيف-فقدت-مسارات-الهجرة") < side_ar.find("منظمات-دولية-ابادة-بيئية-جنوب-لبنان")
     interviews_ar = ar.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
     interviews_en = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split("</section>", 1)[0]
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in interviews_ar
@@ -510,7 +513,8 @@ def test_south_lebanon_investigation_republished() -> None:
     assert (DOCS / "en" / "posts" / "memory-of-sayd-awareness-responsibility-2016-2024" / "index.html").is_file()
     article = (DOCS / "posts" / "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" / "index.html").read_text(encoding="utf-8")
     body = article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
-    assert "24 أيلول 2026" in article
+    assert "20 أيلول 2026" in article
+    assert "24 أيلول 2026" not in article
     assert "918" in body and "حرج الراهب" in body
     assert "دخان أبيض كثيف فوق غطاء نباتي في الجنوب" in body
     assert "حرائق تلتهم الغطاء النباتي على تلة صخرية" in body
@@ -523,7 +527,9 @@ def test_south_lebanon_investigation_republished() -> None:
     assert "feature-ecocide" not in en
     cat = (DOCS / "category" / "مقابلات-تحقيقات" / "index.html").read_text(encoding="utf-8")
     listing = cat.split('class="post-list"', 1)[1]
-    assert 0 <= listing.find("منظمات-دولية-ابادة-بيئية-جنوب-لبنان") < listing.find("سماء-الكوكب-تفقد-توازنها")
+    assert 0 <= listing.find("سماء-الكوكب-تفقد-توازنها") < listing.find(
+        "كيف-فقدت-مسارات-الهجرة"
+    ) < listing.find("منظمات-دولية-ابادة-بيئية-جنوب-لبنان")
 
 
 def test_egypt_hunting_news_live_surfaces() -> None:
@@ -660,8 +666,8 @@ def test_homepage_story_cards_are_unique() -> None:
                 if slug not in iv_slugs:
                     iv_slugs.append(slug)
             assert iv_slugs == [
-                "south-lebanon-environmental-destruction-bird-flyway",
                 "the-awsaj-thornbush-reading-the-land",
+                "south-lebanon-environmental-destruction-bird-flyway",
                 FARMERS_EN,
                 "george-taza-protect-fish-stocks-interview",
             ]
@@ -698,8 +704,8 @@ def test_homepage_story_cards_are_unique() -> None:
                 if slug not in iv_slugs:
                     iv_slugs.append(slug)
             assert iv_slugs == [
-                "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
                 "شجيرة-العوسج-حين-تقرأ-الأرض",
+                "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
                 FARMERS_AR,
                 "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
             ]
@@ -713,7 +719,7 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف" in lead
             assert "شجيرة-العوسج-حين-تقرأ-الأرض" not in lead
             assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" not in lead
-            assert iv_slugs[0] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+            assert iv_slugs[1] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
 
 
 def test_lock_is_idempotent_and_drops_restacked_cards() -> None:
@@ -761,8 +767,8 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     desks = {
         "Interviews &amp; Investigations": [
-            "south-lebanon-environmental-destruction-bird-flyway",
             "the-awsaj-thornbush-reading-the-land",
+            "south-lebanon-environmental-destruction-bird-flyway",
             "how-farmers-protect-migratory-birds-this-autumn",
             "george-taza-protect-fish-stocks-interview",
         ],

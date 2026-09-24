@@ -98,8 +98,8 @@ TAIF_EN = "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
 POACHING_AR = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
 POACHING_EN = "illegal-hunting-destroys-hobby-nets-lime-night"
 
-FEATURED_AR = [BIRDLIFE_AR, SOUTH_AR, CURLEW_AR, TAIF_AR, FARMERS_AR]
-FEATURED_EN = [BIRDLIFE_EN, SOUTH_EN, CURLEW_EN, TAIF_EN, FARMERS_EN]
+FEATURED_AR = [BIRDLIFE_AR, CURLEW_AR, TAIF_AR, SOUTH_AR, FARMERS_AR]
+FEATURED_EN = [BIRDLIFE_EN, CURLEW_EN, TAIF_EN, SOUTH_EN, FARMERS_EN]
 FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 
 # Narrower Suhail teaser («قطر | أكثر من 80 ألف») is the same close as
@@ -162,8 +162,8 @@ MOSAIC_AND_INTERVIEWS = frozenset({FARMERS_AR, FARMERS_EN, SOUTH_AR, SOUTH_EN})
 # EN desk spine = AR. News + Hunting stay off home (covered by Featured + Latest).
 EN_DESK_SLUGS: dict[str, list[str]] = {
     "Interviews &amp; Investigations": [
-        SOUTH_EN,
         AWSAJ_EN,
+        SOUTH_EN,
         FARMERS_EN,
         "george-taza-protect-fish-stocks-interview",
     ],
@@ -190,8 +190,8 @@ EN_SAUDI_FILLERS = frozenset(
 
 AR_DESK_SLUGS: dict[str, list[str]] = {
     "مقابلات وتحقيقات": [
-        SOUTH_AR,
         AWSAJ_AR,
+        SOUTH_AR,
         FARMERS_AR,
         "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
     ],
@@ -205,7 +205,7 @@ AR_FALLBACK_CARDS: dict[str, str] = {
     SOUTH_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{SOUTH_AR}/index.html"><img src="{SOUTH_IMG}" alt="{SOUTH_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">24 أيلول 2026</div>
+    <div class="meta">20 أيلول 2026</div>
     <h3><a href="posts/{SOUTH_AR}/index.html">{SOUTH_TITLE_AR}</a></h3>
   </div>
 </article>""",
@@ -359,7 +359,7 @@ EN_FALLBACK_CARDS: dict[str, str] = {
     SOUTH_EN: _en_card(
         SOUTH_EN,
         SOUTH_TITLE_EN,
-        "24 September 2026",
+        "20 September 2026",
         "Interviews &amp; Investigations",
         SOUTH_IMG,
         SOUTH_ALT_EN,
@@ -1080,7 +1080,7 @@ def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
         for slug, year in dropped:
             label = "undated" if year == 0 else str(year)
             print(f"homepage desk {heading} omitted ({label}): {slug}")
-        # Interviews order is pinned (southern Lebanon, awsaj, farmers, Taza).
+        # Interviews stay pinned newest-first: awsaj, southern Lebanon, farmers, Taza.
         if heading != "Interviews &amp; Investigations":
             slugs = _order_slugs_newest_first(slugs, merged, EN_FALLBACK_CARDS)
         compact = heading in COMPACT_DESKS
@@ -1105,7 +1105,7 @@ def rebuild_ar_home_sections(html: str, cards: dict[str, str]) -> str:
         for slug, year in dropped:
             label = "undated" if year == 0 else str(year)
             print(f"homepage desk {heading} omitted ({label}): {slug}")
-        # Interviews order is pinned (southern Lebanon, awsaj, farmers, Taza).
+        # Interviews stay pinned newest-first: awsaj, southern Lebanon, farmers, Taza.
         if heading != "مقابلات وتحقيقات":
             slugs = _order_slugs_newest_first(slugs, cards, AR_FALLBACK_CARDS)
         compact = heading in {"صور"}
