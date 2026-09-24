@@ -175,10 +175,10 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
     lists = json.loads((root / "content" / "homepage.json").read_text(encoding="utf-8"))
     featured = lists["featured"]
     assert featured[0].startswith("سماء-الكوكب-تفقد-توازنها")
-    assert featured[1].startswith("كيف-فقدت-مسارات-الهجرة")
-    assert featured[2].startswith("العد-التنازلي-لختام-موسم-الطائف")
-    assert featured[3].startswith("كيف-يحمي-المزارع")
-    assert featured[4].startswith("كابس-ومكشب")
+    assert featured[1].startswith("منظمات-دولية-ابادة-بيئية")
+    assert featured[2].startswith("كيف-فقدت-مسارات-الهجرة")
+    assert featured[3].startswith("العد-التنازلي-لختام-موسم-الطائف")
+    assert featured[4].startswith("كيف-يحمي-المزارع")
     home = (root / "docs" / "index.html").read_text(encoding="utf-8")
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
     latest = home[home.find("latest-col") :]
@@ -186,16 +186,16 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
         assert slug in mosaic, slug
     assert "80-ألف-زائر" not in mosaic
     assert "80-ألف-زائر" in latest.split("</ul>", 1)[0]
-    assert mosaic.find("سماء-الكوكب-تفقد-توازنها") < mosaic.find("كيف-فقدت-مسارات-الهجرة")
-    assert mosaic.find("كيف-فقدت-مسارات-الهجرة") < mosaic.find("كابس-ومكشب")
-    assert "منظمات-دولية-ابادة" not in mosaic
+    assert mosaic.find("سماء-الكوكب-تفقد-توازنها") < mosaic.find("منظمات-دولية-ابادة")
+    assert mosaic.find("منظمات-دولية-ابادة") < mosaic.find("كيف-فقدت-مسارات-الهجرة")
+    assert "منظمات-دولية-ابادة" in mosaic
     assert "من-ذاكرة-صيد" not in mosaic
     assert "من-ذاكرة-صيد" not in latest.split("</ul>", 1)[0]
     en = (root / "docs" / "en" / "index.html").read_text(encoding="utf-8")
     en_mosaic = en[en.find("featured-mosaic") : en.find("latest-col")]
     en_latest = en[en.find("latest-col") :]
-    assert "international-orgs-ecocide-south-lebanon" not in en_mosaic
-    assert "cabs-mecshap-autumn-birds-lebanon-khatib" in en_mosaic
+    assert "south-lebanon-environmental-destruction-bird-flyway" in en_mosaic
+    assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in en_mosaic
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en_mosaic
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en_latest.split("</ul>", 1)[0]
     assert "suhail-2026-closes-decade-katara-80000-visitors" not in en_mosaic
@@ -203,8 +203,8 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
     assert en_mosaic.find("skies-losing-balance-birdlife-flyways-report") < en_mosaic.find(
         "how-migration-routes-lost-seven-birds-in-150-years"
     )
-    assert en_mosaic.find("how-migration-routes-lost-seven-birds-in-150-years") < en_mosaic.find(
-        "cabs-mecshap-autumn-birds-lebanon-khatib"
+    assert en_mosaic.find("south-lebanon-environmental-destruction-bird-flyway") < en_mosaic.find(
+        "how-migration-routes-lost-seven-birds-in-150-years"
     )
 
 

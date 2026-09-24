@@ -25,6 +25,7 @@ SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يخ
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 
 HOME_TICKER_EN = [
+    "south-lebanon-environmental-destruction-bird-flyway",
     "skies-losing-balance-birdlife-flyways-report",
     "how-migration-routes-lost-seven-birds-in-150-years",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
@@ -32,12 +33,11 @@ HOME_TICKER_EN = [
     CABS_EN,
     SUHAIL_EN,
     "saudi-sixth-hunting-season-2026-2027-rules",
-    "video-saud-al-babtain-maqnas-afghanistan",
 ]
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 31
+    assert len(PAIRS) == 32
     drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
     assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():
@@ -88,6 +88,8 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "barn-owl",
         # Oldest ticker line, dropped to keep the strip at 8. Article stays published.
         "autumn-migration-field-action-protect-flyways-lebanon",
+        # Left the four-card Interviews row when the 24 Sep investigation was added.
+        "leen-araji-equestrian-and-mental-math-champion",
         # Oldest Latest card, dropped so Adonis can take the 8 September slot.
         "illegal-hunting-destroys-hobby-nets-lime-night",
     }
@@ -151,7 +153,7 @@ def test_en_homepage_featured_2026() -> None:
     assert CABS_EN in html
     assert SUHAIL_EN in html
     assert "80,000" in html or "80,000 Visitors" in html
-    assert "mecshap-apu-cabs-baalbek-release.jpg" in html
+    assert CABS_EN in html
     assert "<h2>Featured stories</h2>" not in html
     assert "AP4I0032" not in html
     mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
@@ -159,10 +161,10 @@ def test_en_homepage_featured_2026() -> None:
     side = mosaic.split("feature-side", 1)[1]
     assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
     assert "birdlife-flyways-photo.jpg" in lead
+    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in side
     assert "slender-billed-curlew-last-photo.jpg" in side
     assert "bee-eaters-dragonflies" not in html
     assert "bee-eater-pair-branch.jpg" not in html
-    assert "mecshap-apu-cabs-baalbek-release.jpg" in side
     assert "farmers-storks-migrating-palestine.jpg" in side
     assert "suhail-2026-closes-decade-katara-80000-visitors" not in lead
     assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
@@ -249,24 +251,23 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
         assert "kaps-lead" not in lead
         assert "ecocide-south-lebanon-white-phosphorus-smoke" not in lead
         assert "birdlife-flyways-photo.jpg" in lead
+        assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in side
         assert "slender-billed-curlew-last-photo.jpg" in side
-        assert "mecshap-apu-cabs-baalbek-release.jpg" in side
         assert "farmers-storks-migrating-palestine.jpg" in side
         assert "hero-closing-80k.jpg" not in mosaic
         assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
         assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in mosaic
         if ar:
-            assert "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" in side
             titles = " ".join(re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", mosaic, re.S))
             assert "مكشب" not in titles
             assert "كابس" not in titles
             assert "<h2>قصص مميزة</h2>" not in html
-            assert "CABS و MECSHAP لحماية طيور الخريف" in side
+            assert "دمار بيئي واسع في جنوب لبنان" in side
             assert "تقرير بيرد لايف يدق ناقوس الخطر..." in lead
             assert "حول مسارات الهجرة العالمية" not in lead
             assert "كيف فقدت مسارات الهجرة" in side
         else:
-            assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
+            assert "Widespread environmental destruction in southern Lebanon" in side
             assert "BirdLife report sounds the alarm..." in lead
             assert "global flyways" not in lead
             assert "How Did Migration Routes Lose Seven" in side
@@ -334,7 +335,6 @@ def test_en_footer_has_official_mecshap_harvest_label() -> None:
     mosaic = home.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     lead = mosaic.split("feature-side", 1)[0]
     side = mosaic.split("feature-side", 1)[1]
-    assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in side
     assert "Harvest" not in lead
     assert "Harvest" not in side
     samples = [
@@ -379,7 +379,7 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert ">Arabic<" not in html.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
     assert "Interviews &amp; Investigations" in html
     assert "Eco-Tourism" in html
-    assert "international-orgs-ecocide-south-lebanon" not in html
+    assert "south-lebanon-environmental-destruction-bird-flyway" in html
     assert "how-farmers-protect-migratory-birds-this-autumn" in html
     assert "feature-lead" in html
     assert "sayd-returns-what-we-want-to-offer" in html.split("latest-feed", 1)[1]
@@ -510,10 +510,10 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
     assert ">Laws &amp; Maps<" not in en
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
     latest = home[home.find("latest-col") :]
-    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" not in mosaic
+    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in mosaic
     assert "ciconia-ciconia-white-stork.jpg" not in mosaic
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in mosaic
-    assert "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" in mosaic
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic
+    assert "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" not in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest.split("</ul>", 1)[0]
 

@@ -75,13 +75,9 @@ def test_rita_stays_on_memory_and_design_png_is_off_homes() -> None:
     mosaic_en = en.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     latest_ar = ar.split("latest-col", 1)[1]
     latest_en = en.split("latest-col", 1)[1]
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in mosaic_ar
-    assert "ecocide-south-lebanon-white-phosphorus-smoke" not in mosaic_ar
     assert "ciconia-ciconia-white-stork" not in mosaic_ar
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic_ar
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest_ar.split("</ul>", 1)[0]
-    assert "international-orgs-ecocide-south-lebanon" not in mosaic_en
-    assert "ecocide-south-lebanon-white-phosphorus-smoke" not in mosaic_en
     assert "ciconia-ciconia-white-stork" not in mosaic_en
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in mosaic_en
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in latest_en.split("</ul>", 1)[0]
@@ -140,8 +136,6 @@ def test_homepage_cards_publish_2022_plus() -> None:
         if rel == "index.html":
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
             latest = html.split(marker, 1)[1]
-            assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in mosaic
-            assert "ecocide-south-lebanon-white-phosphorus-smoke" not in mosaic
             assert "ciconia-ciconia-white-stork" not in mosaic
             assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
             assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest.split("</ul>", 1)[0]
@@ -149,7 +143,6 @@ def test_homepage_cards_publish_2022_plus() -> None:
         else:
             mosaic = html.split("featured-mosaic", 1)[1].split(marker, 1)[0]
             after = html.split(marker, 1)[1]
-            assert "international-orgs-ecocide-south-lebanon" not in mosaic
             assert "memory-of-sayd-awareness-responsibility-2016-2024" not in mosaic
             assert "memory-of-sayd-awareness-responsibility-2016-2024" not in after.split("</ul>", 1)[0]
             assert "rita-habib-alshaar.jpg" in html
@@ -177,15 +170,14 @@ def test_kaps_package_untouched() -> None:
         assert "birdlife-flyways-photo.jpg" in lead
         assert "bee-eaters-dragonflies" not in html
         assert "bee-eater-pair-branch.jpg" not in html
+        assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in side
         assert "slender-billed-curlew-last-photo.jpg" in side
-        assert "mecshap-apu-cabs-baalbek-release.jpg" in side
         assert "farmers-storks-migrating-palestine.jpg" in side
         assert "hero-closing-80k.jpg" not in mosaic
         assert "kaps-lead" not in lead
         assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
         assert "<h2>Featured stories</h2>" not in html
         assert "<h2>قصص مميزة</h2>" not in html
-        assert "MECSHAP" in side
         titles = " ".join(re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", mosaic, re.S))
         assert "مكشب" not in titles
         assert "كابس" not in titles
@@ -193,6 +185,7 @@ def test_kaps_package_untouched() -> None:
         encoding="utf-8"
     )
     assert "kaps-makshab-apu-fries-hero.jpg" in kaps
+    assert "MECSHAP" in kaps
 
 
 def test_ai_bird_off_home_and_poaching_uses_real_net() -> None:
@@ -282,6 +275,7 @@ def test_latest_feed_has_thumbs() -> None:
             {
                 "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
                 "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
+                "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
                 "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
                 "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
                 "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
@@ -292,6 +286,7 @@ def test_latest_feed_has_thumbs() -> None:
             {
                 "skies-losing-balance-birdlife-flyways-report",
                 "how-migration-routes-lost-seven-birds-in-150-years",
+                "south-lebanon-environmental-destruction-bird-flyway",
                 "cabs-mecshap-autumn-birds-lebanon-khatib",
                 "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
                 "how-farmers-protect-migratory-birds-this-autumn",
@@ -398,7 +393,7 @@ def test_ar_en_dated_lists_share_one_order() -> None:
 
     ar_side = unique_slugs(ar.split("feature-side", 1)[1].split("latest-col", 1)[0])
     en_side = unique_slugs(en.split("feature-side", 1)[1].split("latest-col", 1)[0])
-    assert ar_side[0] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+    assert ar_side[0] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
     assert [pairs[slug] for slug in ar_side] == en_side
 
     ar_latest = unique_slugs(ar.split("latest-feed", 1)[1].split("</ul>", 1)[0])
@@ -481,35 +476,54 @@ def test_memory_strip_folds_rita_into_personalities() -> None:
         assert portrait.is_file() and portrait.stat().st_size > 32
 
 
-def test_ecocide_removed_and_memory_stays_on_site() -> None:
+def test_south_lebanon_investigation_republished() -> None:
+    """Nayef v2, 24 Sep 2026. New Arabic body and the same two photos. Not the removed draft."""
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', ar, re.S).group(1)
     ticker_en = re.search(r'<div class="ticker">(.*?)</div>', en, re.S).group(1)
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in ticker_ar
+    assert ticker_ar.startswith(
+        '<a href="posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان/index.html">'
+        "جنوب لبنان: دمار بيئي موثّق يهدد أحد أهم ممرات هجرة الطيور في العالم</a>"
+    )
     assert "إبادة بيئية" not in ticker_ar
-    assert "international-orgs-ecocide-south-lebanon" not in ticker_en
+    assert ticker_ar.count("<a ") == 8
+    assert "بالفيديو-مقناص" not in ticker_ar
+    assert ticker_en.startswith(
+        '<a href="posts/south-lebanon-environmental-destruction-bird-flyway/index.html">'
+    )
     assert "ecocide" not in ticker_en.lower()
-    mosaic_ar = ar.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
-    mosaic_en = en.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    assert ticker_en.count("<a ") == 8
+    lead_ar = ar.split("feature-lead", 1)[1].split("feature-side", 1)[0]
+    side_ar = ar.split("feature-side", 1)[1].split("latest-col", 1)[0]
+    assert "birdlife-flyways-photo.jpg" in lead_ar
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in lead_ar
+    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in side_ar
+    assert "24 أيلول 2026" in side_ar
     interviews_ar = ar.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
     interviews_en = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split("</section>", 1)[0]
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in mosaic_ar
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in interviews_ar
-    assert "international-orgs-ecocide-south-lebanon" not in mosaic_en
-    assert "international-orgs-ecocide-south-lebanon" not in interviews_en
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in interviews_ar
+    assert "south-lebanon-environmental-destruction-bird-flyway" in interviews_en
     assert "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف" in interviews_ar
     assert "how-farmers-protect-migratory-birds-this-autumn" in interviews_en
     assert (DOCS / "posts" / "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" / "index.html").is_file()
     assert (DOCS / "en" / "posts" / "memory-of-sayd-awareness-responsibility-2016-2024" / "index.html").is_file()
-    assert not (DOCS / "posts" / "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" / "index.html").is_file()
-    assert not (DOCS / "en" / "posts" / "international-orgs-ecocide-south-lebanon" / "index.html").is_file()
+    article = (DOCS / "posts" / "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" / "index.html").read_text(encoding="utf-8")
+    body = article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
+    assert "24 أيلول 2026" in article
+    assert "918" in body and "حرج الراهب" in body
+    assert "دخان أبيض كثيف فوق غطاء نباتي في الجنوب" in body
+    assert "حرائق تلتهم الغطاء النباتي على تلة صخرية" in body
+    assert "التعقيم البيولوجي" not in body
     smoke = DOCS / "media" / "uploads" / "2026" / "09" / "ecocide-south-lebanon-white-phosphorus-smoke.jpg"
     fire = DOCS / "media" / "uploads" / "2026" / "09" / "ecocide-south-lebanon-vegetation-fire.jpg"
-    assert not smoke.exists()
-    assert not fire.exists()
+    assert smoke.is_file() and smoke.stat().st_size > 20_000
+    assert fire.is_file() and fire.stat().st_size > 20_000
     assert "feature-ecocide" not in ar
     assert "feature-ecocide" not in en
+    cat = (DOCS / "category" / "مقابلات-تحقيقات" / "index.html").read_text(encoding="utf-8")
+    listing = cat.split('class="post-list"', 1)[1]
+    assert 0 <= listing.find("منظمات-دولية-ابادة-بيئية-جنوب-لبنان") < listing.find("سماء-الكوكب-تفقد-توازنها")
 
 
 def test_egypt_hunting_news_live_surfaces() -> None:
@@ -545,8 +559,8 @@ def test_egypt_hunting_news_live_surfaces() -> None:
     mosaic_en = en.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
     assert "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات" not in mosaic_ar
     assert "egypt-new-hunting-rules-burullus-autumn-migration" not in mosaic_en
-    assert "mecshap-apu-cabs-baalbek-release.jpg" in mosaic_ar
-    assert "ecocide-south-lebanon-white-phosphorus-smoke" not in mosaic_ar
+    assert "farmers-storks-migrating-palestine.jpg" in mosaic_ar
+    assert "ecocide-south-lebanon-white-phosphorus-smoke" in mosaic_ar
     ar_article = (DOCS / "posts" / "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات" / "index.html").read_text(
         encoding="utf-8"
     )
@@ -646,12 +660,12 @@ def test_homepage_story_cards_are_unique() -> None:
                 if slug not in iv_slugs:
                     iv_slugs.append(slug)
             assert iv_slugs == [
+                "south-lebanon-environmental-destruction-bird-flyway",
                 "the-awsaj-thornbush-reading-the-land",
                 FARMERS_EN,
-                "leen-araji-equestrian-and-mental-math-champion",
                 "george-taza-protect-fish-stocks-interview",
             ]
-            assert "لين-2.jpg" in interviews
+            assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in interviews
             assert "awsaj thornbush" in interviews
             assert "The Hunter in Nature" not in interviews
             assert "01-awsaj-dense-shrub-negev.jpg" in interviews
@@ -684,12 +698,12 @@ def test_homepage_story_cards_are_unique() -> None:
                 if slug not in iv_slugs:
                     iv_slugs.append(slug)
             assert iv_slugs == [
+                "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
                 "شجيرة-العوسج-حين-تقرأ-الأرض",
                 FARMERS_AR,
-                "لين-عراجي-بطلة-فروسية-وحساب",
                 "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
             ]
-            assert "لين-2.jpg" in interviews
+            assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in interviews
             assert "شجيرة العوسج" in interviews
             assert "الصياد في الطبيعة" not in interviews
             assert "01-awsaj-dense-shrub-negev.jpg" in interviews
@@ -699,7 +713,7 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف" in lead
             assert "شجيرة-العوسج-حين-تقرأ-الأرض" not in lead
             assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" not in lead
-            assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in iv_slugs
+            assert iv_slugs[0] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
 
 
 def test_lock_is_idempotent_and_drops_restacked_cards() -> None:
@@ -747,9 +761,9 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     desks = {
         "Interviews &amp; Investigations": [
+            "south-lebanon-environmental-destruction-bird-flyway",
             "the-awsaj-thornbush-reading-the-land",
             "how-farmers-protect-migratory-birds-this-autumn",
-            "leen-araji-equestrian-and-mental-math-champion",
             "george-taza-protect-fish-stocks-interview",
         ],
         "Gear &amp; Arms": [
@@ -1009,7 +1023,7 @@ if __name__ == "__main__":
     test_ar_en_dated_lists_share_one_order()
     test_latest_and_desks_are_newest_first()
     test_memory_strip_folds_rita_into_personalities()
-    test_ecocide_removed_and_memory_stays_on_site()
+    test_south_lebanon_investigation_republished()
     test_egypt_hunting_news_live_surfaces()
     test_homepage_story_cards_are_unique()
     test_lock_is_idempotent_and_drops_restacked_cards()
