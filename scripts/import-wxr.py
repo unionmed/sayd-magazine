@@ -158,9 +158,9 @@ DEFAULT_HOME_OMIT = {
 # a listed card. Source of truth is content/homepage.json, else this list.
 DEFAULT_FEATURED_SLUGS = [
     "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
-    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
 ]
 # Hand-crafted editorial extras that may not be in the WXR dump. Featured

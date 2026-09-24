@@ -355,9 +355,9 @@ def test_homepage_latest_matches_nayef() -> None:
     assert QATAR_80K not in latest
     assert lists["featured"] == [
         "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
-        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
         "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
+        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
         FARMERS,
     ]
 
@@ -555,11 +555,11 @@ def test_featured_mosaic_matches_homepage_json() -> None:
     assert slugs == list(DEFAULT_FEATURED_SLUGS)
     assert FARMERS in slugs
     assert MEMORY not in slugs
-    # BirdLife editorial is the large lead; southern Lebanon is the first side box.
+    # BirdLife stays the lead. Side boxes follow real dates: 22 Sep, then 20 Sep.
     assert slugs[0] == "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
-    assert slugs[1] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
-    assert slugs[2] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
-    assert slugs[3] == "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
+    assert slugs[1] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+    assert slugs[2] == "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
+    assert slugs[3] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
     assert slugs[4] == FARMERS
     assert SUHAIL_80K not in slugs
     assert "<h2>قصص مميزة</h2>" not in html
@@ -579,7 +579,7 @@ def test_featured_pool_never_drops_for_missing_image() -> None:
     assert KAPS not in ordered
     assert MEMORY not in ordered
     posts = [
-        _fake_post(ordered[1], "جنوب لبنان", "2026-09-24", [("مقابلات-تحقيقات", "مقابلات وتحقيقات")]),
+        _fake_post(ordered[1], "مسارات الهجرة", "2026-09-22", [("مقابلات-تحقيقات", "مقابلات وتحقيقات")]),
         _fake_post(ordered[2], "مسارات", "2026-09-22", [("مقابلات-تحقيقات", "مقابلات وتحقيقات")]),
         _fake_post(ordered[3], "الطائف", "2026-09-22", [("صيد", "صيد وفروسية")]),
         # Farmers omitted from posts on purpose — stub must still appear.

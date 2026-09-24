@@ -1,6 +1,6 @@
 # Widespread environmental destruction in southern Lebanon threatens one of the world’s key bird-migration flyways
 
-**Status:** Published 24 September 2026
+**Status:** Published 20 September 2026
 **Type:** Investigation
 **Suggested slug:** south-lebanon-environmental-destruction-bird-flyway
 **AR twin slug:** منظمات-دولية-ابادة-بيئية-جنوب-لبنان
@@ -14,4 +14,4 @@ International documentation of environmental destruction in southern Lebanon sin
 ## Body
 
 See `docs/en/posts/south-lebanon-environmental-destruction-bird-flyway/index.html` for the published English text.
-This is a translation of Nayef’s 24 September 2026 Arabic, not the removed ecocide draft.
+This is a translation of Nayef’s 20 September 2026 Arabic, not the removed ecocide draft.

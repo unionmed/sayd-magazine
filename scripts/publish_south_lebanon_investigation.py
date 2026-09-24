@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Republish the southern Lebanon investigation from Nayef's 24 Sep 2026 text.
+"""Republish the southern Lebanon investigation. Original date is 20 Sep 2026.
 
 The removed PR #56 body is not restored. The Arabic slug is the previous
 URL so old links can resolve again. English uses a title-derived slug.
-BirdLife stays the feature lead. This story is the first 2×2 side box
-and an Interviews card. The ticker label stays «من كل وادي خبر».
+BirdLife stays the feature lead. Side boxes stay newest-first, so this
+20 Sep story sits after the 22 Sep cards. The ticker label stays «من كل وادي خبر».
 """
 
 from __future__ import annotations
@@ -202,17 +202,19 @@ def write_articles() -> None:
     )
     ar = ar.replace(
         '<div class="article-meta"><span class="meta-item">22 أيلول 2026</span><span class="meta-item">تحقيق — مجلة صيد</span></div>',
-        '<div class="article-meta"><span class="meta-item">24 أيلول 2026</span><span class="meta-item">تحقيق — مجلة صيد</span></div>',
+        '<div class="article-meta"><span class="meta-item">20 أيلول 2026</span><span class="meta-item">تحقيق — مجلة صيد</span></div>',
         1,
     )
     ar = ar.replace(CURLEW_EN, EN_SLUG)
+    egypt = '<li><a href="../../posts/مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات/index.html">'
     ar = ar.replace(
-        '<ul class="latest-list"><li>',
-        '<ul class="latest-list"><li><a href="../../posts/'
+        egypt,
+        '<li><a href="../../posts/'
         + AR_SLUG
         + '/index.html">'
         + AR_TITLE
-        + '</a><span class="meta">24 أيلول 2026</span></li><li>',
+        + '</a><span class="meta">20 أيلول 2026</span></li>\n'
+        + egypt,
         1,
     )
     if "التعقيم البيولوجي" in ar or "18 مليون" in ar or "feature-ecocide" in ar:
@@ -245,7 +247,7 @@ def write_articles() -> None:
     )
     en = en.replace(
         '<div class="article-meta"><span class="meta-item">22 September 2026</span><span class="meta-item">Investigation — Sayd Magazine</span></div>',
-        '<div class="article-meta"><span class="meta-item">24 September 2026</span><span class="meta-item">Investigation — Sayd Magazine</span></div>',
+        '<div class="article-meta"><span class="meta-item">20 September 2026</span><span class="meta-item">Investigation — Sayd Magazine</span></div>',
         1,
     )
     en = en.replace(CURLEW_AR, AR_SLUG)
@@ -270,13 +272,13 @@ def write_markdown() -> None:
                 "---",
                 f'title: "{AR_TITLE}"',
                 f"slug: {AR_SLUG}",
-                "date: 2026-09-24 12:00:00",
+                "date: 2026-09-20 12:00:00",
                 "author: sayd",
                 "categories: [مقابلات وتحقيقات]",
                 f"featured: media/uploads/2026/09/{SMOKE}",
                 "---",
                 "",
-                "النص المنشور في `docs/posts/" + AR_SLUG + "/index.html` (صيغة نايف 24 أيلول 2026).",
+                "النص المنشور في `docs/posts/" + AR_SLUG + "/index.html` (صيغة نايف 20 أيلول 2026).",
                 "الغلاف: دخان الفسفور الأبيض. داخل المادة أيضًا: حرائق الغطاء النباتي.",
                 "لا يُعاد نص الإزالة السابق.",
                 "",
@@ -290,7 +292,7 @@ def write_markdown() -> None:
             [
                 f"# {EN_TITLE}",
                 "",
-                "**Status:** Published 24 September 2026",
+                "**Status:** Published 20 September 2026",
                 "**Type:** Investigation",
                 f"**Suggested slug:** {EN_SLUG}",
                 f"**AR twin slug:** {AR_SLUG}",
@@ -304,7 +306,7 @@ def write_markdown() -> None:
                 "## Body",
                 "",
                 f"See `docs/en/posts/{EN_SLUG}/index.html` for the published English text.",
-                "This is a translation of Nayef’s 24 September 2026 Arabic, not the removed ecocide draft.",
+                "This is a translation of Nayef’s 20 September 2026 Arabic, not the removed ecocide draft.",
                 "",
             ]
         ),
@@ -318,7 +320,7 @@ def patch_listings() -> None:
     row = f"""<article class="post-row">
   <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../media/uploads/2026/09/{SMOKE}" alt="{SMOKE_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">24 أيلول 2026</div>
+    <div class="meta">20 أيلول 2026</div>
     <h2><a href="../../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>
@@ -341,7 +343,7 @@ def patch_listings() -> None:
     archive_row = f"""<article class="post-row">
   <a class="thumb" href="../posts/{AR_SLUG}/index.html"><img src="../media/uploads/2026/09/{SMOKE}" alt="{SMOKE_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">24 أيلول 2026 · مقابلات وتحقيقات</div>
+    <div class="meta">20 أيلول 2026 · مقابلات وتحقيقات</div>
     <h2><a href="../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>
@@ -361,7 +363,7 @@ def patch_listings() -> None:
         card = f"""<article class="card overlay">
   <a class="thumb" href="../posts/{EN_SLUG}/index.html"><img src="../../media/uploads/2026/09/{SMOKE}" alt="{SMOKE_ALT_EN}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">24 September 2026</div>
+    <div class="meta">20 September 2026</div>
     <h3><a href="../posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
   </div>
 </article>
@@ -431,9 +433,9 @@ def verify() -> None:
         if slug not in side_slugs:
             side_slugs.append(slug)
     expect = [
-        AR_SLUG,
         CURLEW_AR,
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
+        AR_SLUG,
         "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
     ]
     if side_slugs != expect:
@@ -445,7 +447,12 @@ def verify() -> None:
     for slug in re.findall(r'href="posts/([^/]+)/', interviews):
         if slug not in iv:
             iv.append(slug)
-    if iv[0] != AR_SLUG or len(iv) != 4:
+    if iv != [
+        "شجيرة-العوسج-حين-تقرأ-الأرض",
+        AR_SLUG,
+        "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
+        "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
+    ]:
         raise SystemExit(f"interviews desk: {iv}")
     if "لين-عراجي" in interviews:
         raise SystemExit("Leen should leave the four-card interviews row")
@@ -466,14 +473,19 @@ def verify() -> None:
     if en_ticker[0].count("<a ") != 8 or "ecocide" in en_ticker[0].lower():
         raise SystemExit("English ticker length or wording failed")
     article = (DOCS / "posts" / AR_SLUG / "index.html").read_text(encoding="utf-8")
-    if "24 أيلول 2026" not in article or "التعقيم البيولوجي" in article:
+    if "20 أيلول 2026" not in article or "24 أيلول 2026" in article or "التعقيم البيولوجي" in article:
         raise SystemExit("article date or old body lock failed")
     data = json.loads((ROOT / "content" / "ticker.json").read_text(encoding="utf-8"))
     if data["items"][0]["slug"] != AR_SLUG or len(data["items"]) != 8:
         raise SystemExit("ticker.json is not the live 8")
     cat = (DOCS / "category" / "مقابلات-تحقيقات" / "index.html").read_text(encoding="utf-8")
     listing = cat.split('class="post-list"', 1)[1]
-    if listing.find(AR_SLUG) > listing.find("سماء-الكوكب-تفقد-توازنها") or listing.find(AR_SLUG) < 0:
+    if not (
+        0
+        <= listing.find("سماء-الكوكب-تفقد-توازنها")
+        < listing.find("كيف-فقدت-مسارات-الهجرة")
+        < listing.find(AR_SLUG)
+    ):
         raise SystemExit("category listing is not newest-first")
 
 
