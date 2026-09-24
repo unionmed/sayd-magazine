@@ -55,12 +55,14 @@ CANCELLED_SHELLS = {
 
 # Thin HTML redirects. The live article stays canonical; these aliases must
 # not become sitemap URLs or have their canonical rewritten to themselves.
+# GitHub Pages (with .nojekyll) cannot emit an HTTP 301. The PR #84 stub —
+# canonical + meta refresh + location.replace — is this site's redirect.
 # Babtain Afghanistan video aliases, plus 2026 WordPress numeric permalinks.
 _BABTAIN = "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
 _BABTAIN_FULL = "بالفيديو-مقناص-سعود-عبد-العزيز-البابطين-في-أفغانستان"
 _BABTAIN_NO_HAMZA = "بالفيديو-مقناص-سعود-عبد-العزيز-البابطين-في-افغانستان"
 _BABTAIN_NAME = "بالفيديو-مقناص-سعود-عبد-العزيز-البابطين"
-ALIAS_REDIRECTS = {
+BABTAIN_ALIASES = {
     "6775/index.html",
     f"{_BABTAIN}/index.html",
     f"{_BABTAIN_FULL}/index.html",
@@ -69,7 +71,9 @@ ALIAS_REDIRECTS = {
     f"posts/{_BABTAIN_NO_HAMZA}/index.html",
     f"{_BABTAIN_NAME}/index.html",
     f"posts/{_BABTAIN_NAME}/index.html",
-    # 2026 WordPress numeric permalinks → live Arabic posts.
+}
+# 2026 WordPress numeric permalinks → live Arabic posts.
+WP_ID_STUBS = {
     "6719/index.html",
     "6745/index.html",
     "6754/index.html",
@@ -83,6 +87,28 @@ ALIAS_REDIRECTS = {
     "6819/index.html",
     "6836/index.html",
 }
+HOMEPAGE_PATH = ROOT / "content" / "homepage.json"
+# Duplicate / misspelled permalinks → one canonical story.
+# Suhail teaser → full Suhail. Saudi fines (full + teaser) → season story
+# (live slug keeps the بضواب typo). Correct spelling بضوابط aliases that slug.
+# Numeric stubs that used to land on the duplicates now skip the chain.
+_SUHAIL_FULL = "posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html"
+_SEASON = "posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html"
+_SUHAIL_EN = "en/posts/suhail-2026-closes-decade-katara-80000-visitors/index.html"
+_SEASON_EN = "en/posts/saudi-sixth-hunting-season-2026-2027-rules/index.html"
+CONSOLIDATION_TARGETS = {
+    "posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html": _SUHAIL_FULL,
+    "en/posts/qatar-suhail-2026-80000-visitors-teaser/index.html": _SUHAIL_EN,
+    "posts/السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري/index.html": _SEASON,
+    "posts/السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ/index.html": _SEASON,
+    "en/posts/saudi-hunting-fines-5000-riyal-prohibited-areas/index.html": _SEASON_EN,
+    "en/posts/saudi-5000-riyal-hunting-fine-teaser/index.html": _SEASON_EN,
+    "posts/السعودية-تطلق-موسم-الصيد-السادس-بضوابط/index.html": _SEASON,
+    "6796/index.html": _SEASON,
+    "6798/index.html": _SUHAIL_FULL,
+    "6800/index.html": _SEASON,
+}
+ALIAS_REDIRECTS = BABTAIN_ALIASES | WP_ID_STUBS | set(CONSOLIDATION_TARGETS)
 
 # Directory pages whose first in-content image is the page hero.
 HERO_LISTING = {
@@ -213,13 +239,172 @@ def canonical_rel(rel: Path) -> Path:
     return rel
 
 
+def gallery_rels() -> set[str]:
+    """Photo/video cards listed in homepage.json. Not article sitemap URLs."""
+    if not HOMEPAGE_PATH.is_file():
+        return set()
+    try:
+        data = json.loads(HOMEPAGE_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return set()
+    rels: set[str] = set()
+    for slug in data.get("gallery") or []:
+        slug = str(slug).strip()
+        if not slug:
+            continue
+        rels.add(f"posts/{slug}/index.html")
+        rels.add(f"en/posts/{slug}/index.html")
+    return rels
+
+
+def category_landing_empty(rel: Path, docs: Path | None = None) -> bool:
+    """True when the category index is the 2022+ empty-note shell."""
+    docs = docs or DOCS
+    if len(rel.parts) != 3 or rel.parts[0] != "category" or rel.name != "index.html":
+        return False
+    page = docs / rel
+    if not page.is_file():
+        return False
+    text = page.read_text(encoding="utf-8")
+    return 'class="empty-note"' in text and 'class="post-row"' not in text
+
+
+def empty_category_slugs(docs: Path | None = None) -> list[str]:
+    docs = docs or DOCS
+    root = docs / "category"
+    if not root.is_dir():
+        return []
+    slugs = []
+    for index in sorted(root.glob("*/index.html")):
+        rel = index.relative_to(docs)
+        if category_landing_empty(rel, docs):
+            slugs.append(index.parent.name)
+    return slugs
+
+
+def _title_of(page: Path) -> str:
+    if not page.is_file():
+        return "مجلة صيد · Sayd Magazine"
+    head = page.read_text(encoding="utf-8").split("</head>", 1)[0]
+    match = TITLE_RE.search(head)
+    if not match:
+        return "مجلة صيد · Sayd Magazine"
+    return " ".join(html.unescape(match.group(1)).split())
+
+
+def redirect_stub_html(title: str, url: str, lang: str) -> str:
+    """PR #84 stub. Canonical URL is the destination; this file is not a sitemap URL."""
+    if lang.startswith("en"):
+        root = '<html lang="en" dir="ltr">'
+    else:
+        root = '<html lang="ar" dir="rtl">'
+    safe_title = html.escape(title, quote=True)
+    return f"""<!DOCTYPE html>
+{root}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{safe_title}</title>
+  <link rel="canonical" href="{url}">
+  <meta property="og:title" content="{safe_title}">
+  <meta http-equiv="refresh" content="0; url={url}">
+  <script>location.replace("{url}");</script>
+</head>
+<body>
+  <p><a href="{url}">{safe_title}</a></p>
+</body>
+</html>
+"""
+
+
+def write_consolidation_stubs(docs: Path | None = None) -> int:
+    docs = docs or DOCS
+    written = 0
+    for src, dest in CONSOLIDATION_TARGETS.items():
+        url = public_url(Path(dest))
+        lang = "en" if dest.startswith("en/") else "ar"
+        text = redirect_stub_html(_title_of(docs / dest), url, lang)
+        path = docs / src
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if not path.is_file() or path.read_text(encoding="utf-8") != text:
+            path.write_text(text, encoding="utf-8")
+            written += 1
+    return written
+
+
+_NAV_RE = re.compile(
+    r'(<nav class="(?:main-nav|drawer-nav)"[^>]*>)(.*?)(</nav>)',
+    re.S,
+)
+_CHROME_REGION_RE = re.compile(
+    r'(<(?:aside class="sidebar[^"]*"|footer class="site-footer")[^>]*>)(.*?)(</(?:aside|footer)>)',
+    re.S,
+)
+_SECTION_HEAD_RE = re.compile(
+    r'(<div class="section-head[^"]*">)(.*?)(</div>)',
+    re.S,
+)
+
+
+def _strip_door_markup(block: str, slugs: list[str]) -> str:
+    for slug in slugs:
+        esc = re.escape(slug)
+        block = re.sub(
+            rf"[ \t]*<li>\s*<a\b[^>]*href=\"[^\"]*category/{esc}/index\.html\"[^>]*>.*?</a>\s*</li>\n?",
+            "",
+            block,
+            flags=re.S,
+        )
+        block = re.sub(
+            rf"[ \t]*<a\b[^>]*href=\"[^\"]*category/{esc}/index\.html\"[^>]*>.*?</a>[ \t]*\n?",
+            "",
+            block,
+            flags=re.S,
+        )
+    return block
+
+
+def strip_empty_door_links(html_text: str, slugs: list[str]) -> str:
+    """Drop empty category doors from nav, drawer, sidebar, footer, section heads."""
+    if not slugs:
+        return html_text
+
+    def repl(match: re.Match[str]) -> str:
+        return match.group(1) + _strip_door_markup(match.group(2), slugs) + match.group(3)
+
+    html_text = _NAV_RE.sub(repl, html_text)
+    html_text = _CHROME_REGION_RE.sub(repl, html_text)
+    html_text = _SECTION_HEAD_RE.sub(repl, html_text)
+    return html_text
+
+
+def strip_empty_doors(docs: Path | None = None) -> int:
+    docs = docs or DOCS
+    slugs = empty_category_slugs(docs)
+    changed = 0
+    for path in docs.rglob("*.html"):
+        rel = path.relative_to(docs).as_posix()
+        if rel in ALIAS_REDIRECTS:
+            continue
+        original = path.read_text(encoding="utf-8")
+        updated = strip_empty_door_links(original, slugs)
+        if updated != original:
+            path.write_text(updated, encoding="utf-8")
+            changed += 1
+    return changed
+
+
 def in_sitemap(rel: Path) -> bool:
     posix = rel.as_posix()
     if rel.name != "index.html":
         return False
     if posix in SITEMAP_SKIP or posix in ALIAS_REDIRECTS or posix in CANCELLED_SHELLS:
         return False
+    if posix in gallery_rels():
+        return False
     parts = rel.parts
+    if parts[0] == "category" and category_landing_empty(rel):
+        return False
     if parts[0] == "posts":
         return True
     if len(parts) >= 3 and parts[0] == "en" and parts[1] == "posts":
@@ -366,20 +551,25 @@ def seo_block(
     lang_m = LANG_RE.search(head)
     lang = (lang_m.group(1) if lang_m else "ar").lower()
     canonical = public_url(canonical_rel(rel))
-    is_post = "posts" in rel.parts
+    is_gallery = rel.as_posix() in gallery_rels()
+    is_post = "posts" in rel.parts and not is_gallery
     locale = "en_US" if lang.startswith("en") else "ar_AR"
     site_name = "Sayd Magazine" if lang.startswith("en") else "مجلة صيد"
     image = hero_image(html_text, page, docs, rel)
     lines = [
         "  <!-- seo:start -->",
         f'  <link rel="canonical" href="{attr(canonical)}">',
+    ]
+    if is_gallery or category_landing_empty(rel, docs):
+        lines.append('  <meta name="robots" content="noindex,follow">')
+    lines.extend([
         f'  <meta property="og:locale" content="{locale}">',
         f'  <meta property="og:type" content="{"article" if is_post else "website"}">',
         f'  <meta property="og:site_name" content="{attr(site_name)}">',
         f'  <meta property="og:title" content="{attr(title)}">',
         f'  <meta property="og:description" content="{attr(description)}">',
         f'  <meta property="og:url" content="{attr(canonical)}">',
-    ]
+    ])
     if image:
         lines.append(f'  <meta property="og:image" content="{attr(image)}">')
         lines.append('  <meta name="twitter:card" content="summary_large_image">')
@@ -441,6 +631,8 @@ def render_robots() -> str:
 
 def apply(docs: Path | None = None) -> dict[str, int]:
     docs = docs or DOCS
+    write_consolidation_stubs(docs)
+    doors = strip_empty_doors(docs)
     twins = load_twins(docs)
     pages = 0
     changed = 0
@@ -460,9 +652,10 @@ def apply(docs: Path | None = None) -> dict[str, int]:
     (docs / "robots.txt").write_text(render_robots(), encoding="utf-8")
     return {
         "pages": pages,
-        "changed": changed,
+        "changed": changed + doors,
         "sitemap": len(sitemap_rows),
         "hreflang_pairs": len(twins) // 2,
+        "empty_doors_rewritten": doors,
     }
 
 
