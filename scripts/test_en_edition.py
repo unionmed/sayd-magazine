@@ -755,10 +755,13 @@ def test_empty_2022_category_chrome_is_css_only() -> None:
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     assert home.count('class="home-section') >= 4
     assert "<article" in home
-    assert 'href="category/رماية/index.html"' in home
+    assert 'href="category/رماية/index.html"' not in home
+    assert 'href="category/قوانين-وخرائط/index.html"' not in home
+    assert 'href="category/بعدستكم/index.html"' not in home
+    assert 'href="category/قوانين/index.html"' not in home
     assert 'href="category/عتاد-وسلاح-الصيد/index.html"' in home
     assert 'href="category/صور/index.html"' in home
-    assert 'href="../category/رياضات-وسياحة-بيئية/index.html"' in en
+    assert 'href="../category/رياضات-وسياحة-بيئية/index.html"' not in en
     assert 'href="../category/عتاد-وسلاح-الصيد/index.html"' in en
     shell = (DOCS / "category" / "رماية" / "index.html").read_text(encoding="utf-8")
     assert 'class="badge">0' in shell

@@ -116,19 +116,22 @@ def test_home_and_memory_twins() -> None:
 def test_every_html_page_has_canonical() -> None:
     missing = []
     for path in DOCS.rglob("*.html"):
-        head = path.read_text(encoding="utf-8").split("</head>", 1)[0]
+        text = path.read_text(encoding="utf-8")
+        if "<html" not in text.lower():
+            continue
+        head = text.split("</head>", 1)[0]
         if 'rel="canonical"' not in head or "og:title" not in head:
             missing.append(path.relative_to(DOCS).as_posix())
     assert missing == []
 
 
 def test_babtain_aliases_redirect_off_sitemap() -> None:
-    """Google/WP aliases for the Babtain video redirect; sitemap keeps one URL."""
+    """Google/WP aliases for the Babtain video redirect; the card is a gallery."""
     long = "بالفيديو-مقناص-سعود-عبد-العزيز-البابطين-في-أفغانستان"
     canon_slug = "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
     canon = seo.public_url(Path(f"posts/{canon_slug}/index.html"))
-    assert seo.in_sitemap(Path(f"posts/{canon_slug}/index.html"))
-    for rel in sorted(seo.ALIAS_REDIRECTS):
+    assert not seo.in_sitemap(Path(f"posts/{canon_slug}/index.html"))
+    for rel in sorted(seo.BABTAIN_ALIASES):
         assert not seo.in_sitemap(Path(rel)), rel
         page = DOCS / rel
         text = page.read_text(encoding="utf-8")
@@ -145,7 +148,7 @@ def test_babtain_aliases_redirect_off_sitemap() -> None:
         assert f'href="{canon}"' in head
         assert canon in text
     sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
-    assert f"<loc>{canon}</loc>" in sitemap
+    assert f"<loc>{canon}</loc>" not in sitemap
     assert long not in sitemap
     assert "<loc>https://sayd-magazine.com/6775/</loc>" not in sitemap
 
@@ -160,9 +163,9 @@ WP_2026_AR = {
     "6784": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%A8%D8%AC%D8%B9-%D8%A7%D9%84%D8%A3%D8%A8%D9%8A%D8%B6-%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1-great-white-pelican-%D8%A8%D8%B9%D8%AF%D8%B3%D8%A9-%D9%86%D8%A7%D9%8A%D9%81-%D9%83/",
     "6788": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D8%AA%D8%B7%D9%84%D9%82-%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%B3%D8%A7%D8%AF%D8%B3-%D8%A8%D8%B6%D9%88%D8%A7%D8%A8/",
     "6794": "https://sayd-magazine.com/posts/80-%D8%A3%D9%84%D9%81-%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88158-%D8%AC%D9%87%D8%A9-%D9%85%D9%86-15-%D8%AF%D9%88%D9%84%D8%A9-%D8%B3%D9%87%D9%8A%D9%84-2026-%D9%8A%D8%AE%D8%AA%D8%AA%D9%85-%D8%B9/",
-    "6796": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D8%AA%D8%B4%D8%AF%D8%AF-%D8%B9%D9%84%D9%89-%D8%B6%D9%88%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-5-%D8%A2%D9%84%D8%A7%D9%81-%D8%B1%D9%8A/",
-    "6798": "https://sayd-magazine.com/posts/%D9%82%D8%B7%D8%B1-%D8%A3%D9%83%D8%AB%D8%B1-%D9%85%D9%86-80-%D8%A3%D9%84%D9%81-%D8%B2%D8%A7%D8%A6%D8%B1-%D9%81%D9%8A-%D8%AE%D8%AA%D8%A7%D9%85-%D8%B3%D9%87%D9%8A%D9%84-2026/",
-    "6800": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-5-%D8%A2%D9%84%D8%A7%D9%81-%D8%B1%D9%8A%D8%A7%D9%84-%D8%BA%D8%B1%D8%A7%D9%85%D8%A9-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D9%81%D9%8A-%D8%A7%D9%84%D8%A3/",
+    "6796": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D8%AA%D8%B7%D9%84%D9%82-%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%B3%D8%A7%D8%AF%D8%B3-%D8%A8%D8%B6%D9%88%D8%A7%D8%A8/",
+    "6798": "https://sayd-magazine.com/posts/80-%D8%A3%D9%84%D9%81-%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88158-%D8%AC%D9%87%D8%A9-%D9%85%D9%86-15-%D8%AF%D9%88%D9%84%D8%A9-%D8%B3%D9%87%D9%8A%D9%84-2026-%D9%8A%D8%AE%D8%AA%D8%AA%D9%85-%D8%B9/",
+    "6800": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D8%AA%D8%B7%D9%84%D9%82-%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%B3%D8%A7%D8%AF%D8%B3-%D8%A8%D8%B6%D9%88%D8%A7%D8%A8/",
     "6819": "https://sayd-magazine.com/posts/%D8%B3%D9%87%D9%8A%D9%84-2026-%D8%A8%D8%A7%D9%84%D8%B5%D9%88%D8%B1-%D8%A7%D9%84%D8%B5%D9%82%D9%88%D8%B1-%D9%88%D8%A7%D9%84%D8%B2%D9%88%D8%A7%D8%B1-%D9%88%D9%88%D8%AC%D9%88%D9%87-%D8%A7/",
     "6836": "https://sayd-magazine.com/posts/%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%B7%D9%8A%D9%88%D8%B1-%D9%87%D8%AC%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%B1%D9%8A%D9%81-%D9%84%D8%A8%D9%86%D8%A7%D9%86-%D8%B4%D8%B1%D8%A7%D9%83%D8%A9-%D9%85%D9%86%D8%B0-2017/",
 }
@@ -186,6 +189,92 @@ def test_wp_2026_id_stubs() -> None:
         assert seo.apply_html(text, DOCS / rel, DOCS, Path(rel), {}) == text
 
 
+def test_consolidation_redirects_off_sitemap() -> None:
+    """Suhail teaser, Saudi fines, and the بضوابط spelling alias leave the sitemap."""
+    sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
+    season = seo.public_url(Path(seo._SEASON))
+    suhail = seo.public_url(Path(seo._SUHAIL_FULL))
+    season_en = seo.public_url(Path(seo._SEASON_EN))
+    suhail_en = seo.public_url(Path(seo._SUHAIL_EN))
+    assert f"<loc>{season}</loc>" in sitemap
+    assert f"<loc>{suhail}</loc>" in sitemap
+    assert f"<loc>{season_en}</loc>" in sitemap
+    assert f"<loc>{suhail_en}</loc>" in sitemap
+    for src, dest in seo.CONSOLIDATION_TARGETS.items():
+        assert not seo.in_sitemap(Path(src)), src
+        text = (DOCS / src).read_text(encoding="utf-8")
+        url = seo.public_url(Path(dest))
+        assert f'<link rel="canonical" href="{url}">' in text
+        assert f'<meta http-equiv="refresh" content="0; url={url}">' in text
+        assert f'location.replace("{url}");' in text
+        assert text.count(url) == 4
+        assert seo.apply_html(text, DOCS / src, DOCS, Path(src), {}) == text
+        assert f"<loc>{seo.public_url(Path(src))}</loc>" not in sitemap
+    alias = DOCS / "posts" / "السعودية-تطلق-موسم-الصيد-السادس-بضوابط" / "index.html"
+    assert alias.is_file()
+    assert season in alias.read_text(encoding="utf-8")
+
+
+def test_gallery_cards_are_not_indexed_articles() -> None:
+    """Photo/video cards stay on the desks and out of the sitemap."""
+    sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
+    home = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    for rel in sorted(seo.gallery_rels()):
+        page = DOCS / rel
+        if not page.is_file():
+            continue
+        assert not seo.in_sitemap(Path(rel)), rel
+        head = page.read_text(encoding="utf-8").split("</head>", 1)[0]
+        assert 'name="robots" content="noindex,follow"' in head
+        assert 'property="og:type" content="website"' in head
+        assert f"<loc>{seo.public_url(Path(rel))}</loc>" not in sitemap
+    assert "بالفيديو-مقناص-سعود-عبد-العزيز-الباب" in home
+    assert "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا" in home
+    assert "البجع-الأبيض-الكبير-great-white-pelican" in home
+    assert "video-saud-al-babtain-maqnas-afghanistan" in en
+    assert "suhail-2026-in-photos-falcons-visitors" in en
+    assert "great-white-pelican-matn-highway-nayef-krayem" in en
+
+
+def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
+    """Empty 2022+ landings stay on disk, unlinked, and out of the sitemap."""
+    import re
+
+    sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
+    home = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+
+    def chrome(html: str) -> str:
+        parts = []
+        for cls in ("main-nav", "drawer-nav", "sidebar", "site-footer"):
+            for block in re.findall(rf'class="{cls}"[\s\S]*?</(?:nav|aside|footer)>', html):
+                parts.append(block)
+        return "\n".join(parts)
+
+    slugs = seo.empty_category_slugs(DOCS)
+    assert "قوانين" in slugs
+    assert "قوانين-وخرائط" in slugs
+    assert "رماية" in slugs
+    assert "بعدستكم" in slugs
+    assert "رياضات-وسياحة-بيئية" in slugs
+    for slug in slugs:
+        rel = Path("category") / slug / "index.html"
+        assert not seo.in_sitemap(rel), slug
+        page = (DOCS / rel).read_text(encoding="utf-8")
+        assert 'class="empty-note"' in page
+        assert 'name="robots" content="noindex,follow"' in page
+        assert f"category/{slug}/index.html" not in chrome(home)
+        assert f"<loc>{seo.public_url(rel)}</loc>" not in sitemap
+    assert "category/صور/index.html" in chrome(home)
+    assert "category/صيد/index.html" in chrome(home)
+    assert "category/مقابلات-تحقيقات/index.html" in chrome(home)
+    assert "category/رماية/index.html" not in chrome(en)
+    assert "category/قوانين-وخرائط/index.html" not in chrome(en)
+    assert "category/رياضات-وسياحة-بيئية/index.html" not in chrome(en)
+    assert (DOCS / "category" / "قوانين" / "index.html").is_file()
+
+
 def test_apply_is_idempotent() -> None:
     before = (DOCS / "index.html").read_text(encoding="utf-8")
     seo.apply(DOCS)
@@ -204,5 +293,8 @@ if __name__ == "__main__":
     test_every_html_page_has_canonical()
     test_babtain_aliases_redirect_off_sitemap()
     test_wp_2026_id_stubs()
+    test_consolidation_redirects_off_sitemap()
+    test_gallery_cards_are_not_indexed_articles()
+    test_empty_category_doors_leave_chrome_and_sitemap()
     test_apply_is_idempotent()
     print("test_seo_foundation: ok")

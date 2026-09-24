@@ -67,6 +67,11 @@ ABOUT_BLURB = (
 
 # Main nav categories closer to live Multi News order.
 # Each entry: (display_label, match_names_or_slugs…)
+# cat_nav_html drops a door whose 2022+ listing is empty. The route stays
+# on disk. قوانين is legislative hunting-law texts only — it returns here
+# when those texts exist. Season open/close decisions stay under صيد;
+# do not recategorize them into قوانين.
+# Photos door is صور (populated). بعدستكم is a separate empty legacy landing.
 NAV_CATS = [
     ("صيد وفروسية", ["صيد وفروسية", "صيد", "صيد-وفروسية"]),
     ("رماية", ["رماية"]),
@@ -74,7 +79,7 @@ NAV_CATS = [
     ("صيد TV", ["استديو صيد", "استديو-صيد"]),
     ("رياضات وسياحة بيئية", ["رياضات وسياحة بيئية", "رياضات-وسياحة-بيئية"]),
     ("مقابلات وتحقيقات", ["مقابلات وتحقيقات", "مقابلات-تحقيقات"]),
-    ("بعدستكم", ["بعدستكم"]),
+    ("صور", ["صور", "بعدستكم"]),
     ("قوانين وخرائط", ["قوانين وخرائط", "قوانين-وخرائط"]),
 ]
 
@@ -1756,13 +1761,17 @@ def resolve_cat(cat_counts: dict[str, dict], keys: list[str]) -> dict | None:
 
 
 def cat_nav_html(cat_counts: dict[str, dict], depth: int) -> str:
+    """Primary nav. Empty 2022+ landings are not links (the route stays)."""
     parts = []
     for label, keys in NAV_CATS:
         c = resolve_cat(cat_counts, list(keys) + [label])
-        if c:
-            parts.append(
-                f'<a href="{cat_href(c["slug"], depth)}">{esc(label)}</a>'
-            )
+        if not c or category_visible_count(c) <= 0:
+            continue
+        if (c.get("slug") or "") in CHROME_UNLINKED_CATS:
+            continue
+        parts.append(
+            f'<a href="{cat_href(c["slug"], depth)}">{esc(label)}</a>'
+        )
     return "\n        ".join(parts)
 
 
