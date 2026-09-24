@@ -849,6 +849,17 @@ def en_chrome(
         ("", "category/قوانين-وخرائط/index.html", "Laws &amp; Maps"),
         ("nav-all", "articles/index.html", "Archive"),
     ]
+    # Same rule as Arabic cat_nav_html: an empty 2022+ landing is not a door.
+    import seo_foundation as seo
+
+    nav_items = [
+        item
+        for item in nav_items
+        if not (
+            item[1].startswith("category/")
+            and seo.category_landing_empty(Path(item[1]))
+        )
+    ]
     nav_links = []
     for cls, path, label in nav_items:
         attr = f' class="{cls}"' if cls else ""
