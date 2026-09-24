@@ -19,8 +19,8 @@ from homepage_thumbs import (  # noqa: E402
 DOCS = ROOT / "docs"
 PAIRS = json.loads((ROOT / "content" / "en" / "pairs.json").read_text(encoding="utf-8"))["pairs"]
 
-CABS_AR = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
-CABS_EN = "cabs-mecshap-autumn-birds-lebanon-khatib"
+CABS_AR = "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
+CABS_EN = "protecting-autumn-migratory-birds-lebanon-khatib-2017"
 SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 
@@ -221,10 +221,10 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
     assert HOMEPAGE_UNIQUE_THUMBS[CABS_AR].endswith("mecshap-apu-cabs-baalbek-release.jpg")
     assert NAYEF_LOCKED_PRIMARY_IMAGES[CABS_AR].endswith("mecshap-apu-cabs-baalbek-release.jpg")
     assert NAYEF_LOCKED_PRIMARY_IMAGES[CABS_EN].endswith("mecshap-apu-cabs-baalbek-release.jpg")
-    assert NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR].endswith("MECSHAP")
+    assert NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR].endswith("ومكافحة الصيد الجائر")
     assert "مكشب" not in NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR]
     assert "كابس" not in NAYEF_LOCKED_PRIMARY_ALTS[CABS_AR]
-    assert NAYEF_LOCKED_PRIMARY_ALTS[CABS_EN].endswith("MECSHAP")
+    assert NAYEF_LOCKED_PRIMARY_ALTS[CABS_EN].endswith("Anti-Poaching")
 
     fries = DOCS / "media" / "uploads" / "2026" / "09" / "kaps-makshab-apu-fries-hero.jpg"
     circaetus = (
@@ -327,7 +327,7 @@ def test_kaps_thumbs_are_fries_and_lead_is_stacked() -> None:
     assert "circaetus-gallicus-short-toed-snake-eagle.jpg" not in src
     assert "feature-ecocide" not in src
     assert "international-orgs-ecocide-south-lebanon" not in src
-    assert "APU and CABS members with rescued birds during a joint patrol — MECSHAP" in src
+    assert "Members of the Anti-Poaching Unit with birds rescued during a joint patrol — Middle East Center for Sustainable Hunting and Anti-Poaching" in src
     assert "Short-toed snake eagle" not in src
 
 
@@ -515,7 +515,7 @@ def test_homepage_sparse_grids_hide_empty_en_desks() -> None:
     assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in mosaic
     assert "ciconia-ciconia-white-stork.jpg" not in mosaic
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in mosaic
-    assert "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" not in mosaic
+    assert "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017" not in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in mosaic
     assert "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" not in latest.split("</ul>", 1)[0]
 
@@ -675,6 +675,10 @@ def test_every_en_page_is_ltr_plex() -> None:
     assert len(pages) >= 16
     for path in pages:
         html = path.read_text(encoding="utf-8")
+        # Old-slug stubs are thin redirects, not edition pages.
+        if 'http-equiv="refresh"' in html:
+            assert 'lang="en"' in html and 'dir="ltr"' in html
+            continue
         assert 'lang="en"' in html
         assert 'dir="ltr"' in html
         assert 'dir="rtl"' not in html

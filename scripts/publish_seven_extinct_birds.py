@@ -45,7 +45,7 @@ FILES = {
 AR_TICKER_REST = [
     ("العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني", "الطائف | السبت 26 أيلول: أمسية الختام بـ«كأس اليوم الوطني» للخيول المهجّنة على مضمار الحَوِيّة"),
     ("مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات", "مصر: قرار جديد لتنظيم الصيد وإطلاق نحو 200 طائر مهاجر وإزالة شباك مخالفة في البرلس"),
-    ("كابس-ومكشب-لحماية-طيور-الخريف-في-ل", "CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي"),
+    ("حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017", "حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام"),
     ("قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026", "قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»"),
     ("السعودية-تطلق-موسم-الصيد-السادس-بضواب", "السعودية تطلق موسم الصيد السادس وتشدد على الضوابط: 5 آلاف ريال غرامة الأماكن المحظورة"),
     ("بالفيديو-مقناص-سعود-عبد-العزيز-الباب", "بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان"),
@@ -55,7 +55,7 @@ AR_TICKER_REST = [
 EN_TICKER_REST = [
     ("taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah", "Taif | Saturday evening closes the season with the National Day Cup for Thoroughbreds at Al-Hawiyah"),
     ("egypt-new-hunting-rules-burullus-autumn-migration", "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus"),
-    ("cabs-mecshap-autumn-birds-lebanon-khatib", "CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner"),
+    ("protecting-autumn-migratory-birds-lebanon-khatib-2017", "Protecting Autumn Migratory Birds in Lebanon: A Field Partnership Since 2017, Al-Khatib Affirms the Sustainable Hunter’s Role"),
     ("qatar-suhail-2026-80000-visitors-teaser", "Qatar | More Than 80,000 Visitors at the Close of Suhail 2026"),
     ("saudi-sixth-hunting-season-2026-2027-rules", "Saudi Arabia Launches the Sixth Hunting Season and Tightens the Rules: 5,000 Riyals Fine for Prohibited Places"),
     ("video-saud-al-babtain-maqnas-afghanistan", "On Video… Saud Abdulaziz Al-Babtain’s Maqnas in Afghanistan"),
@@ -309,10 +309,10 @@ def write_ar_article() -> None:
   </div>
 </article>
 <article class="card overlay">
-  <a class="thumb" href="../../posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html"><img src="../../media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" loading="lazy"></a>
+  <a class="thumb" href="../../posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html"><img src="../../media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="أعضاء من وحدة مكافحة الصيد الجائر مع طيور أُنقذت خلال دورية مشتركة — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر" loading="lazy"></a>
   <div class="body">
     <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
-    <h3><a href="../../posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html">CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي</a></h3>
+    <h3><a href="../../posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html">حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام</a></h3>
   </div>
 </article>
 </div>
@@ -505,10 +505,10 @@ def write_en_article() -> None:
   </div>
 </article>
 <article class="card overlay">
-  <a class="thumb" href="../cabs-mecshap-autumn-birds-lebanon-khatib/index.html"><img src="../../../media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="APU and CABS members with rescued birds during a joint patrol — MECSHAP" loading="lazy"></a>
+  <a class="thumb" href="../protecting-autumn-migratory-birds-lebanon-khatib-2017/index.html"><img src="../../../media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="Members of the Anti-Poaching Unit with birds rescued during a joint patrol — Middle East Center for Sustainable Hunting and Anti-Poaching" loading="lazy"></a>
   <div class="body">
     <div class="meta">13 September 2026<span class="cat-pill">News</span></div>
-    <h3><a href="../cabs-mecshap-autumn-birds-lebanon-khatib/index.html">CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner</a></h3>
+    <h3><a href="../protecting-autumn-migratory-birds-lebanon-khatib-2017/index.html">Protecting Autumn Migratory Birds in Lebanon: A Field Partnership Since 2017, Al-Khatib Affirms the Sustainable Hunter’s Role</a></h3>
   </div>
 </article>
       </div>

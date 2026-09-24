@@ -476,7 +476,7 @@ def fetch_one(rel: str) -> dict:
 
 def wire_kaps_logos() -> None:
     """Restore partner logos on the Kaps/Makshab article using local files only."""
-    page = DOCS / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html"
+    page = DOCS / "posts" / "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017" / "index.html"
     if not page.is_file():
         return
     html = page.read_text(encoding="utf-8")

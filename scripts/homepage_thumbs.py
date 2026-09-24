@@ -28,8 +28,8 @@ MARS_OWNED = {
 }
 
 # Nayef: homepage/thumbs = Baalbek rescue; fries stays in-article only.
-KAPS_AR_SLUG = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
-KAPS_EN_SLUG = "cabs-mecshap-autumn-birds-lebanon-khatib"
+KAPS_AR_SLUG = "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
+KAPS_EN_SLUG = "protecting-autumn-migratory-birds-lebanon-khatib-2017"
 KAPS_BAALBEK_REL = "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg"
 KAPS_FRIES_REL = "uploads/2026/09/kaps-makshab-apu-fries-hero.jpg"
 PELICAN_AR_SLUG = "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"
@@ -45,8 +45,8 @@ NAYEF_LOCKED_PRIMARY_IMAGES: dict[str, str] = {
     POACHING_AR_SLUG: POACHING_CHICKADEE_REL,
 }
 NAYEF_LOCKED_PRIMARY_ALTS: dict[str, str] = {
-    KAPS_AR_SLUG: "أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP",
-    KAPS_EN_SLUG: "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
+    KAPS_AR_SLUG: "أعضاء من وحدة مكافحة الصيد الجائر مع طيور أُنقذت خلال دورية مشتركة — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر",
+    KAPS_EN_SLUG: "Members of the Anti-Poaching Unit with birds rescued during a joint patrol — Middle East Center for Sustainable Hunting and Anti-Poaching",
     PELICAN_AR_SLUG: "بعدسة نايف كريم · البجع الأبيض الكبير · أوتوستراد المتن · ربيع 2026",
     PELICAN_EN_SLUG: "Great White Pelican (Pelecanus onocrotalus) — photo by Nayef Krayem, Matn Expressway, spring 2026",
     POACHING_AR_SLUG: "طائر يُستخرج من شبكة ضبابية",
@@ -69,8 +69,8 @@ BRAND_KEEP = {
 
 # Homepage mosaic + section cards: unique local file per slug.
 HOMEPAGE_UNIQUE_THUMBS: dict[str, str] = {
-    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
-    "cabs-mecshap-autumn-birds-lebanon-khatib": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+    "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+    "protecting-autumn-migratory-birds-lebanon-khatib-2017": "uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف": "uploads/2026/09/farmers-storks-migrating-palestine.jpg",
     "how-farmers-protect-migratory-birds-this-autumn": "uploads/2026/09/farmers-storks-migrating-palestine.jpg",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني": "uploads/2026/09/taif-racing-hawiyah.jpg",

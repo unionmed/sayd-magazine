@@ -45,7 +45,7 @@ AR_TICKER_REST = [
     (CURLEW_AR, "مسارات الهجرة فقدت 7 أنواع خلال 150 عاماً… والكروان رفيع المنقار آخرها"),
     ("العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني", "الطائف | السبت 26 أيلول: أمسية الختام بـ«كأس اليوم الوطني» للخيول المهجّنة على مضمار الحَوِيّة"),
     ("مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات", "مصر: قرار جديد لتنظيم الصيد وإطلاق نحو 200 طائر مهاجر وإزالة شباك مخالفة في البرلس"),
-    ("كابس-ومكشب-لحماية-طيور-الخريف-في-ل", "CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي"),
+    ("حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017", "حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام"),
     ("80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع", "80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة"),
     ("السعودية-تطلق-موسم-الصيد-السادس-بضواب", "السعودية تطلق موسم الصيد السادس وتشدد على الضوابط: 5 آلاف ريال غرامة الأماكن المحظورة"),
     ("بالفيديو-مقناص-سعود-عبد-العزيز-الباب", "بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان"),
@@ -54,7 +54,7 @@ EN_TICKER_REST = [
     (CURLEW_EN, "Migration routes lost 7 species in 150 years… the Slender-billed Curlew the latest"),
     ("taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah", "Taif | Saturday evening closes the season with the National Day Cup for Thoroughbreds at Al-Hawiyah"),
     ("egypt-new-hunting-rules-burullus-autumn-migration", "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus"),
-    ("cabs-mecshap-autumn-birds-lebanon-khatib", "CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner"),
+    ("protecting-autumn-migratory-birds-lebanon-khatib-2017", "Protecting Autumn Migratory Birds in Lebanon: A Field Partnership Since 2017, Al-Khatib Affirms the Sustainable Hunter’s Role"),
     ("suhail-2026-closes-decade-katara-80000-visitors", "80,000 Visitors and 158 Exhibitors from 15 Countries… Suhail 2026 Closes a Decade of Passion for Hunting and Falconry"),
     ("saudi-sixth-hunting-season-2026-2027-rules", "Saudi Arabia Launches the Sixth Hunting Season and Tightens the Rules: 5,000 Riyals Fine for Prohibited Places"),
     ("video-saud-al-babtain-maqnas-afghanistan", "On Video… Saud Abdulaziz Al-Babtain’s Maqnas in Afghanistan"),
@@ -406,7 +406,7 @@ def verify() -> None:
         CURLEW_AR,
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
         "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
-        "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
+        "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
     ]
     if side_slugs != expect:
         raise SystemExit(f"side stack order: {side_slugs}")

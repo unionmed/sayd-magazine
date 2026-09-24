@@ -19,7 +19,7 @@ MEDIA = DOCS / "media"
 
 
 def wire_kaps_logos() -> None:
-    page = DOCS / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html"
+    page = DOCS / "posts" / "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017" / "index.html"
     html = page.read_text(encoding="utf-8")
     mesh = "uploads/2026/09/mecshap-official-logo.png"
     cabs = "uploads/2026/09/cabs-official-logo.png"

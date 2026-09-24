@@ -53,7 +53,7 @@ DEFAULT_FEATURED_SLUGS = import_wxr.DEFAULT_FEATURED_SLUGS
 
 SUHAIL_80K = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
 QATAR_80K = "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026"
-KAPS = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
+KAPS = "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
 SAUDI = "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
 BABTAIN = "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
 MIGRATE_HOW = "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو"
@@ -106,7 +106,7 @@ def test_ticker_source_is_mars_list() -> None:
     assert "26 أيلول" in items[3][1]
     assert slugs[4].startswith("مصر-قرار-جديد")
     assert "200 طائر مهاجر" in items[4][1]
-    assert slugs[5].startswith("كابس")
+    assert slugs[5] == KAPS
     assert "سهيل" in items[6][1]
     assert "بالفيديو-مقناص" not in slugs
     assert ADONIS not in slugs
@@ -223,7 +223,7 @@ def test_docs_already_share_clean_chrome() -> None:
     samples = [
         ROOT / "docs" / "index.html",
         ROOT / "docs" / "pages" / "من-نحن" / "index.html",
-        ROOT / "docs" / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html",
+        ROOT / "docs" / "posts" / "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017" / "index.html",
     ]
     titles = [title for _, title in DEFAULT_TICKER_ITEMS]
     for path in samples:
@@ -567,7 +567,7 @@ def test_featured_mosaic_matches_homepage_json() -> None:
     mosaic = _section(html, "featured-mosaic", "latest-feed")
     assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in mosaic
     assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
-    assert "CABS و MECSHAP لحماية طيور الخريف" in html
+    assert "حماية طيور هجرة الخريف في لبنان" in html
 
 
 def test_featured_pool_never_drops_for_missing_image() -> None:
@@ -692,7 +692,7 @@ def test_docs_visible_listings_are_2022_plus() -> None:
     en = (ROOT / "docs" / "en" / "index.html").read_text(encoding="utf-8")
     for html in (home, en):
         assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" in html or "how-migration-routes-lost-seven-birds-in-150-years" in html
-        assert "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" in html or "cabs-mecshap-autumn-birds-lebanon-khatib" in html
+        assert "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017" in html or "protecting-autumn-migratory-birds-lebanon-khatib-2017" in html
 
 
 if __name__ == "__main__":

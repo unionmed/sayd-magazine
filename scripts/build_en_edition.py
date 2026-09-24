@@ -86,7 +86,7 @@ HOME_OMIT_FROM_HOME = {
 HOME_LATEST = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "suhail-2026-closes-decade-katara-80000-visitors",
-    "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "protecting-autumn-migratory-birds-lebanon-khatib-2017",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     "regulating-hunting-protects-wildlife-bans-worsen",
@@ -103,7 +103,7 @@ HOME_TICKER = [
     "how-migration-routes-lost-seven-birds-in-150-years",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration",
-    "cabs-mecshap-autumn-birds-lebanon-khatib",
+    "protecting-autumn-migratory-birds-lebanon-khatib-2017",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "video-saud-al-babtain-maqnas-afghanistan",
@@ -144,13 +144,13 @@ META: dict[str, dict] = {
         "image": "media/uploads/2024/02/ريتا-الشعار6.jpg",
         "image_alt": "Hunter Rita Habib Al-Shaar — from Sayd magazine’s archive",
     },
-    "cabs-mecshap-autumn-birds-lebanon-khatib": {
+    "protecting-autumn-migratory-birds-lebanon-khatib-2017": {
         "date": "13 September 2026",
         "date_sort": "2026-09-13",
         "category": "News",
         "author": "Sayd",
         "image": "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
-        "image_alt": "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
+        "image_alt": "Members of the Anti-Poaching Unit with birds rescued during a joint patrol — Middle East Center for Sustainable Hunting and Anti-Poaching",
     },
     "suhail-2026-closes-decade-katara-80000-visitors": {
         "date": "13 September 2026",
@@ -464,20 +464,20 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
             "A field researcher removes a bird from illegal nets.",
             media_prefix,
         )
-    if slug == "cabs-mecshap-autumn-birds-lebanon-khatib":
+    if slug == "protecting-autumn-migratory-birds-lebanon-khatib-2017":
         lead_html = (
             "<p><strong>Beirut — Sayd</strong></p>\n"
             + figure(
                 "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
-                "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
-                "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
+                "Members of the Anti-Poaching Unit with birds rescued during a joint patrol — Middle East Center for Sustainable Hunting and Anti-Poaching",
+                "Members of the Anti-Poaching Unit with birds rescued during a joint patrol — Middle East Center for Sustainable Hunting and Anti-Poaching",
                 media_prefix,
             ).replace("<figcaption>", '<figcaption class="kaps-caption">')
         )
         fries = figure(
             "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
-            "A member of the APU team prepares food outdoors during a break",
-            "From the daily field life of the Anti-Poaching Unit (APU) team: a break to prepare food outdoors.",
+            "From the daily field life of the Anti-Poaching Unit team: a break to prepare food outdoors.",
+            "From the daily field life of the Anti-Poaching Unit team: a break to prepare food outdoors.",
             media_prefix,
         )
         extra = ""
@@ -1022,7 +1022,7 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
     featured = ""
     image = item.get("image")
     if image and slug not in {
-        "cabs-mecshap-autumn-birds-lebanon-khatib",
+        "protecting-autumn-migratory-birds-lebanon-khatib-2017",
         "egypt-new-hunting-rules-burullus-autumn-migration",
         "suhail-2026-in-photos-falcons-visitors",
         "video-saud-al-babtain-maqnas-afghanistan",
@@ -1078,7 +1078,11 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
     html = en_chrome(
         depth=3,
         title=f"{item['title']} — Sayd Magazine",
-        description=re.sub("<[^>]+>", "", body_inner)[:160],
+        description=(
+            'An autumn campaign to protect migratory birds in Lebanon, and Adonis Al-Khatib tells Sayd: a field partnership since 2017 affirms the sustainable hunter’s role against illegal killing.'
+            if slug == "protecting-autumn-migratory-birds-lebanon-khatib-2017"
+            else re.sub("<[^>]+>", "", body_inner)[:160]
+        ),
         body=main,
         ar_href=ar_href,
         en_href=en_href,

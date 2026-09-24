@@ -82,6 +82,9 @@ ALIAS_REDIRECTS = {
     "6800/index.html",
     "6819/index.html",
     "6836/index.html",
+    # CABS title B: old Arabic and English slugs redirect to the locked titles.
+    "posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html",
+    "en/posts/cabs-mecshap-autumn-birds-lebanon-khatib/index.html",
 }
 
 # Directory pages whose first in-content image is the page hero.
@@ -346,6 +349,21 @@ def hreflang_tags(rel_posix: str, twins: dict[str, str]) -> list[str]:
     ]
 
 
+# Nayef-locked CABS title B: Arabic Twitter title is the H1, without the magazine suffix.
+TWITTER_H1_ONLY = {
+    "posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html",
+}
+
+
+def display_twitter_title(title: str, rel: Path) -> str:
+    if rel.as_posix() not in TWITTER_H1_ONLY:
+        return title
+    suffix = " — مجلة صيد"
+    if title.endswith(suffix):
+        return title[: -len(suffix)]
+    return title
+
+
 def seo_block(
     html_text: str,
     page: Path,
@@ -386,7 +404,7 @@ def seo_block(
         lines.append(f'  <meta name="twitter:image" content="{attr(image)}">')
     else:
         lines.append('  <meta name="twitter:card" content="summary">')
-    lines.append(f'  <meta name="twitter:title" content="{attr(title)}">')
+    lines.append(f'  <meta name="twitter:title" content="{attr(display_twitter_title(title, rel))}">')
     lines.append(f'  <meta name="twitter:description" content="{attr(description)}">')
     lines.extend(hreflang_tags(rel.as_posix(), twins))
     lines.append("  <!-- seo:end -->")
