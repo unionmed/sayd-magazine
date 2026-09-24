@@ -346,7 +346,7 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "العد-التنازلي-لختام-موسم-الطائف" not in latest
     assert KAPS not in featured
     assert KAPS in ticker
-    assert KAPS not in latest
+    assert KAPS in latest
     assert MEMORY not in featured
     assert MEMORY not in latest
     assert featured.find("منظمات-دولية-ابادة-بيئية-جنوب-لبنان") < featured.find(FARMERS)

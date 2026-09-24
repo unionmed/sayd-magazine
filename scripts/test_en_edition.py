@@ -92,6 +92,8 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "leen-araji-equestrian-and-mental-math-champion",
         # Oldest Latest card, dropped so Adonis can take the 8 September slot.
         "illegal-hunting-destroys-hobby-nets-lime-night",
+        # Oldest Latest card (1 Oct 2024), dropped when CABS joined the capped feed.
+        "leading-platform-lebanese-arab-hunters-since-2012",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
