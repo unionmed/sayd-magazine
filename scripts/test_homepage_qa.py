@@ -276,7 +276,6 @@ def test_latest_feed_has_thumbs() -> None:
                 "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
                 "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
                 "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-                "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
                 "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
                 "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
             },
@@ -287,7 +286,6 @@ def test_latest_feed_has_thumbs() -> None:
                 "skies-losing-balance-birdlife-flyways-report",
                 "how-migration-routes-lost-seven-birds-in-150-years",
                 "south-lebanon-environmental-destruction-bird-flyway",
-                "cabs-mecshap-autumn-birds-lebanon-khatib",
                 "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
                 "how-farmers-protect-migratory-birds-this-autumn",
             },
@@ -303,10 +301,14 @@ def test_latest_feed_has_thumbs() -> None:
 
 
 def test_platform_card_uses_uncropped_jocy() -> None:
-    """Keep the 2024 platform card; do not use the 229×300 WP crop on the home surface."""
+    """The 229×300 crop stays off the homepage. The uncropped card file remains on disk.
+
+    The 1 Oct 2024 platform story was the oldest Latest item and left when
+    CABS entered the capped eight-item feed.
+    """
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
-    assert "المنصة-الرائدة-لنخبة-الصيادين-اللبنا" in ar
-    assert "media/uploads/2024/09/Jocy-card.jpg" in ar
+    latest = ar.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+    assert "المنصة-الرائدة-لنخبة-الصيادين-اللبنا" not in latest
     assert "Jocy-229x300.jpeg" not in ar
     card = (DOCS / "media" / "uploads" / "2024" / "09" / "Jocy-card.jpg")
     assert card.is_file() and card.stat().st_size > 32
@@ -639,7 +641,8 @@ def test_homepage_story_cards_are_unique() -> None:
             latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
             assert "egypt-new-hunting-rules-burullus-autumn-migration" in latest
             assert "common-shelduck-protected-migrant-lebanon" in latest
-            assert "leading-platform-lebanese-arab-hunters-since-2012" in latest
+            assert "cabs-mecshap-autumn-birds-lebanon-khatib" in latest
+            assert "leading-platform-lebanese-arab-hunters-since-2012" not in latest
             assert latest.count("suhail-2026-closes-decade-katara-80000-visitors") == 1
             assert "qatar-suhail-2026-80000-visitors-teaser" not in latest
             ticker_en = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
@@ -647,7 +650,11 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "qatar-suhail-2026-80000-visitors-teaser" not in ticker_en
             assert "sayd-returns-what-we-want-to-offer" in latest
             assert "sayd-returns-adonis-editor.jpg" in latest
-            assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in latest
+            assert latest.find("suhail-2026-closes-decade-katara-80000-visitors") < latest.find(
+                "cabs-mecshap-autumn-birds-lebanon-khatib"
+            ) < latest.find("saudi-sixth-hunting-season-2026-2027-rules")
+            assert "13 September 2026" in latest
+            assert "mecshap-apu-cabs-baalbek-release.jpg" in latest
             assert "<h2>News</h2>" not in html
             assert "<h2>Hunting &amp; Equestrian</h2>" not in html
             assert "saudi-hunting-fines-5000-riyal-prohibited-areas" not in html
@@ -687,6 +694,12 @@ def test_homepage_story_cards_are_unique() -> None:
             latest_ar = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
             assert "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم" in latest_ar
             assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" not in latest_ar
+            assert latest_ar.find("80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع") < latest_ar.find(
+                "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
+            ) < latest_ar.find("السعودية-تطلق-موسم-الصيد-السادس-بضواب")
+            assert "13 أيلول 2026" in latest_ar
+            assert "mecshap-apu-cabs-baalbek-release.jpg" in latest_ar
+            assert "المنصة-الرائدة-لنخبة-الصيادين-اللبنا" not in latest_ar
             assert latest_ar.count("80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع") == 1
             assert "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026" not in latest_ar
             ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)

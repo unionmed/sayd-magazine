@@ -8,8 +8,9 @@ behind a "Sayd Magazine" brand link.
 Nayef EN rule: /en/ mirrors the Arabic desk spine with English twins.
 Do not run write_home() against the hand-extended EN homepage (it would
 wipe Memory / desks). homepage.json desk_slugs + homepage_unique_cards
-lock CABS lead → farmers side → Latest thumbs → Interviews → Gear →
-TV → Photos. Miscellany stays off the homepage and the nav. News + Hunting stay off home.
+lock BirdLife lead, the four-card stack, and Latest (CABS by its
+13 Sep date, not the mosaic) → Interviews → Gear → TV → Photos.
+Miscellany stays off the homepage and the nav. News + Hunting stay off home.
 """
 
 from __future__ import annotations
@@ -67,14 +68,13 @@ TAGLINE_AR = "مجلة أسياد الطبيعة في البر والبحر وا
 # Live homepage / ticker 2026 set (Nayef editorial list).
 HOME_FEATURED = [
     "how-migration-routes-lost-seven-birds-in-150-years",
-    "cabs-mecshap-autumn-birds-lebanon-khatib",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "how-farmers-protect-migratory-birds-this-autumn",
     "sayd-returns-what-we-want-to-offer",
 ]
-# Mosaic side stack: CABS first, then Taif / farmers / Adonis.
+# Stale mosaic helper for write_home() only. Live stack is homepage_unique_cards.
+# CABS is not a side box.
 HOME_MOSAIC_SIDE = [
-    "cabs-mecshap-autumn-birds-lebanon-khatib",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "how-farmers-protect-migratory-birds-this-autumn",
     "sayd-returns-what-we-want-to-offer",
@@ -86,11 +86,11 @@ HOME_OMIT_FROM_HOME = {
 HOME_LATEST = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "suhail-2026-closes-decade-katara-80000-visitors",
+    "cabs-mecshap-autumn-birds-lebanon-khatib",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     "regulating-hunting-protects-wildlife-bans-worsen",
     "common-shelduck-protected-migrant-lebanon",
-    "leading-platform-lebanese-arab-hunters-since-2012",
     "illegal-hunting-destroys-hobby-nets-lime-night",
 ]
 TICKER_TITLES_EN = {
@@ -1107,12 +1107,12 @@ def card(slug: str, articles: dict[str, dict], href: str, heading: str = "h3") -
 
 
 def write_home(articles: dict[str, dict]) -> None:
-    # Locked: investigation is the lead; CABS is the first small box.
+    # Stale full-page writer (main() does not call this). CABS stays off
+    # the mosaic; Latest order comes from HOME_LATEST.
     lead = "how-migration-routes-lost-seven-birds-in-150-years"
-    cabs = "cabs-mecshap-autumn-birds-lebanon-khatib"
-    rest = [slug for slug in HOME_MOSAIC_SIDE if slug != cabs]
+    rest = list(HOME_MOSAIC_SIDE)
     rest.sort(key=lambda s: articles[s].get("date_sort") or "", reverse=True)
-    side = [cabs, *rest]
+    side = rest
     side_html = []
     for slug in side:
         cls = "card card-stack"

@@ -4,8 +4,10 @@
 Spine: the BirdLife flyways editorial is the large lead (wetland flock
 cover). Side boxes are newest publish date first, four cards in the
 existing 2×2 stack: the southern Lebanon investigation (24 Sep 2026),
-the seven-birds investigation, Taif, then farmers. CABS leaves the
-mosaic and stays on the ticker. Latest and dated desk grids are
+the seven-birds investigation, Taif, then farmers. CABS stays off the
+mosaic and on the ticker, and sits in Latest by its 13 Sep 2026 date
+beside Suhail. The capped Latest list drops the oldest card (the 2012
+platform story) so the feed stays eight items. Latest and dated desk grids are
 newest-first too. Adonis leaves the mosaic for Latest (8 Sep, after
 the other 8 Sep story). Memory strip → Latest thumbs → Interviews →
 Gear → TV → Photos. Miscellany stays off the homepage.
@@ -104,25 +106,27 @@ FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 
 # Narrower Suhail teaser («قطر | أكثر من 80 ألف») is the same close as
 # SUHAIL_AR / SUHAIL_EN. Keep the wider listing only. Article pages stay.
+# Eight items. Same-day stories keep this order (CABS after Suhail, both
+# 13 Sep 2026). The 1 Oct 2024 platform card is the one dropped for CABS.
 LATEST_AR = [
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
     SUHAIL_AR,
+    CABS_AR,
     SAUDI_AR,
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
     ADONIS_AR,
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه",
     "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر",
-    "المنصة-الرائدة-لنخبة-الصيادين-اللبنا",
 ]
 LATEST_EN = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     SUHAIL_EN,
+    CABS_EN,
     SAUDI_EN,
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     ADONIS_EN,
     "regulating-hunting-protects-wildlife-bans-worsen",
     "common-shelduck-protected-migrant-lebanon",
-    "leading-platform-lebanese-arab-hunters-since-2012",
 ]
 
 DROPPED_DESKS_AR = ("أخبار", "صيد وفروسية", "جعبة المنوعات")
