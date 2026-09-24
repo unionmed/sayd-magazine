@@ -95,17 +95,20 @@ def test_ticker_source_is_mars_list() -> None:
     assert items == list(DEFAULT_TICKER_ITEMS)
     assert len(items) == 8
     slugs = [slug for slug, _ in items]
-    assert slugs[0] == "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
-    assert items[0][1] == "بيرد لايف: 45٪ من الطيور المهاجرة في العالم في انحدار مستمر"
-    assert slugs[1].startswith("كيف-فقدت-مسارات-الهجرة")
-    assert "الكروان رفيع المنقار" in items[1][1]
-    assert slugs[2].startswith("العد-التنازلي")
-    assert "كأس اليوم الوطني" in items[2][1]
-    assert "26 أيلول" in items[2][1]
-    assert slugs[3].startswith("مصر-قرار-جديد")
-    assert "200 طائر مهاجر" in items[3][1]
-    assert slugs[4].startswith("كابس")
-    assert "سهيل" in items[5][1]
+    assert slugs[0] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+    assert items[0][1] == "جنوب لبنان: دمار بيئي موثّق يهدد أحد أهم ممرات هجرة الطيور في العالم"
+    assert slugs[1] == "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
+    assert items[1][1] == "بيرد لايف: 45٪ من الطيور المهاجرة في العالم في انحدار مستمر"
+    assert slugs[2].startswith("كيف-فقدت-مسارات-الهجرة")
+    assert "الكروان رفيع المنقار" in items[2][1]
+    assert slugs[3].startswith("العد-التنازلي")
+    assert "كأس اليوم الوطني" in items[3][1]
+    assert "26 أيلول" in items[3][1]
+    assert slugs[4].startswith("مصر-قرار-جديد")
+    assert "200 طائر مهاجر" in items[4][1]
+    assert slugs[5].startswith("كابس")
+    assert "سهيل" in items[6][1]
+    assert "بالفيديو-مقناص" not in slugs
     assert ADONIS not in slugs
     assert "sayd-returns-what-we-want-to-offer" not in slugs
 
@@ -333,28 +336,29 @@ def test_homepage_latest_matches_nayef() -> None:
     assert "قطر-أكثر-من-80-ألف-زائر" not in ticker
     assert FARMERS in featured
     assert FARMERS not in latest
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in featured
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in featured
     assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in latest
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in ticker
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in ticker
     assert "إبادة بيئية" not in ticker
     assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" not in featured
     assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" in latest
     assert "العد-التنازلي-لختام-موسم-الطائف" in featured
     assert "العد-التنازلي-لختام-موسم-الطائف" not in latest
-    assert KAPS in featured
+    assert KAPS not in featured
+    assert KAPS in ticker
     assert KAPS not in latest
     assert MEMORY not in featured
     assert MEMORY not in latest
-    assert featured.find(FARMERS) < featured.find(KAPS)
+    assert featured.find("منظمات-دولية-ابادة-بيئية-جنوب-لبنان") < featured.find(FARMERS)
     assert ADONIS in latest
     assert ADONIS not in featured
     assert QATAR_80K not in latest
     assert lists["featured"] == [
         "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
         "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
         FARMERS,
-        KAPS,
     ]
 
     latest_slugs = re.findall(r'href="posts/([^/"]+)/index.html"', latest)
@@ -551,17 +555,17 @@ def test_featured_mosaic_matches_homepage_json() -> None:
     assert slugs == list(DEFAULT_FEATURED_SLUGS)
     assert FARMERS in slugs
     assert MEMORY not in slugs
-    # BirdLife editorial is the large lead; the seven-birds investigation is the first side box.
+    # BirdLife editorial is the large lead; southern Lebanon is the first side box.
     assert slugs[0] == "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
-    assert slugs[1] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
-    assert slugs[2] == "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
-    assert slugs[3] == FARMERS
-    assert slugs[4] == KAPS
+    assert slugs[1] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+    assert slugs[2] == "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+    assert slugs[3] == "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
+    assert slugs[4] == FARMERS
     assert SUHAIL_80K not in slugs
     assert "<h2>قصص مميزة</h2>" not in html
-    assert "mecshap-apu-cabs-baalbek-release.jpg" in html
+    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in html
     mosaic = _section(html, "featured-mosaic", "latest-feed")
-    assert "mecshap-apu-cabs-baalbek-release.jpg" in mosaic
+    assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in mosaic
     assert "kaps-makshab-apu-fries-hero.jpg" not in mosaic
     assert "CABS و MECSHAP لحماية طيور الخريف" in html
 
@@ -570,14 +574,15 @@ def test_featured_pool_never_drops_for_missing_image() -> None:
     """Importer keeps every homepage.json slug even with no thumb / no WXR row."""
     ordered = featured_slugs()
     assert ordered[0] == "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
-    assert KAPS in ordered
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in ordered
     assert FARMERS in ordered
+    assert KAPS not in ordered
     assert MEMORY not in ordered
     posts = [
-        _fake_post(ordered[1], "مزارعون", "2026-09-20", [("مقابلات-تحقيقات", "مقابلات وتحقيقات")]),
-        _fake_post(ordered[2], "سهيل", "2026-09-13", [("أخبار", "أخبار")]),
-        _fake_post(ordered[3], "السعودية", "2026-09-09", [("أخبار", "أخبار")]),
-        # CABS omitted from posts on purpose — stub must still appear.
+        _fake_post(ordered[1], "جنوب لبنان", "2026-09-24", [("مقابلات-تحقيقات", "مقابلات وتحقيقات")]),
+        _fake_post(ordered[2], "مسارات", "2026-09-22", [("مقابلات-تحقيقات", "مقابلات وتحقيقات")]),
+        _fake_post(ordered[3], "الطائف", "2026-09-22", [("صيد", "صيد وفروسية")]),
+        # Farmers omitted from posts on purpose — stub must still appear.
         _fake_post(ADONIS, "صيد تعود", "2026-09-06", [("كلمتنا", "كلمتنا")]),
         _fake_post("random-latest", "حشو", "2026-09-19", [("أخبار", "أخبار")]),
     ]
@@ -586,10 +591,10 @@ def test_featured_pool_never_drops_for_missing_image() -> None:
     pool = featured_posts(posts, ordered)
     assert [p["slug"] for p in pool] == ordered
     assert "random-latest" not in [p["slug"] for p in pool]
-    cabs = next(p for p in pool if p["slug"] == KAPS)
-    assert cabs["title"]
-    html = featured_side_html(cabs, thumb="")
-    assert KAPS in html
+    farmers = next(p for p in pool if p["slug"] == FARMERS)
+    assert farmers["title"]
+    html = featured_side_html(farmers, thumb="")
+    assert FARMERS in html
     assert "cat-pill" not in html
     assert html.strip()
 

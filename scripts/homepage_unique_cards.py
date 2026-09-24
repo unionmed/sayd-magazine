@@ -2,20 +2,23 @@
 """Lock AR/EN homepage story cards to the Featured + Latest spine.
 
 Spine: the BirdLife flyways editorial is the large lead (wetland flock
-cover). Side boxes are newest publish date first: the seven-birds
-investigation, Taif, farmers, then CABS. Latest and dated desk grids
-are newest-first too. Adonis leaves the mosaic for Latest (8 Sep, after
+cover). Side boxes are newest publish date first, four cards in the
+existing 2×2 stack: the southern Lebanon investigation (24 Sep 2026),
+the seven-birds investigation, Taif, then farmers. CABS leaves the
+mosaic and stays on the ticker. Latest and dated desk grids are
+newest-first too. Adonis leaves the mosaic for Latest (8 Sep, after
 the other 8 Sep story). Memory strip → Latest thumbs → Interviews →
 Gear → TV → Photos. Miscellany stays off the homepage.
 
 News / Hunting desks stay off home (archive only). Featured URLs
 never also appear in Latest. Latest items are small thumb + title +
 date. Adonis is in Latest only and never in the ticker.
-Farmers may dual-place: mosaic and Interviews. The feature-lead
-stays on the mosaic only (one surface for the lead).
-Awsaj leads the Interviews grid (real door «الصياد في الطبيعة») and
-stays off the mosaic and the ticker. The oldest Interviews filler
-(Leen Araji, October 2022) is dropped so the grid stays at three cards.
+Farmers and the southern Lebanon investigation may dual-place: mosaic
+and Interviews. The feature-lead stays on the mosaic only (one surface
+for the lead). Awsaj stays off the mosaic and the ticker. Interviews
+stays four cards: southern Lebanon, awsaj, farmers, Taza. Leen Araji
+(October 2022) leaves the desk so the row does not open a one-card hole.
+Her article stays published.
 """
 
 from __future__ import annotations
@@ -72,6 +75,13 @@ FARMERS_AR = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذ�
 FARMERS_EN = "how-farmers-protect-migratory-birds-this-autumn"
 FARMERS_TITLE_AR = "كيف يحمي المزارع الطيور المهاجرة هذا الخريف؟"
 FARMERS_TITLE_EN = "How Can Farmers Protect Migratory Birds This Autumn?"
+SOUTH_AR = "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+SOUTH_EN = "south-lebanon-environmental-destruction-bird-flyway"
+SOUTH_TITLE_AR = "دمار بيئي واسع في جنوب لبنان يهدد أحد أهم ممرات هجرة الطيور في العالم"
+SOUTH_TITLE_EN = "Widespread environmental destruction in southern Lebanon threatens one of the world’s key bird-migration flyways"
+SOUTH_ALT_AR = "دخان أبيض كثيف فوق غطاء نباتي في الجنوب"
+SOUTH_ALT_EN = "Thick white smoke over vegetation in southern Lebanon"
+SOUTH_IMG = "media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg"
 AWSAJ_AR = "شجيرة-العوسج-حين-تقرأ-الأرض"
 AWSAJ_EN = "the-awsaj-thornbush-reading-the-land"
 AWSAJ_TITLE_AR = "شجيرة العوسج: حين تقرأ الأرض وتعرف صيدلية البرّ في ظلّ الشوك"
@@ -88,8 +98,8 @@ TAIF_EN = "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
 POACHING_AR = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
 POACHING_EN = "illegal-hunting-destroys-hobby-nets-lime-night"
 
-FEATURED_AR = [BIRDLIFE_AR, CURLEW_AR, TAIF_AR, FARMERS_AR, CABS_AR]
-FEATURED_EN = [BIRDLIFE_EN, CURLEW_EN, TAIF_EN, FARMERS_EN, CABS_EN]
+FEATURED_AR = [BIRDLIFE_AR, SOUTH_AR, CURLEW_AR, TAIF_AR, FARMERS_AR]
+FEATURED_EN = [BIRDLIFE_EN, SOUTH_EN, CURLEW_EN, TAIF_EN, FARMERS_EN]
 FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 
 # Narrower Suhail teaser («قطر | أكثر من 80 ألف») is the same close as
@@ -145,16 +155,16 @@ TICKER_OMIT_SLUGS = frozenset(
         AWSAJ_EN,
     }
 )
-# Farmers only: mosaic + Interviews. The feature-lead stays mosaic-only.
-# Never mosaic + Latest / leftover desks.
-MOSAIC_AND_INTERVIEWS = frozenset({FARMERS_AR, FARMERS_EN})
+# Farmers and southern Lebanon: mosaic + Interviews. The feature-lead
+# stays mosaic-only. Never mosaic + Latest / leftover desks.
+MOSAIC_AND_INTERVIEWS = frozenset({FARMERS_AR, FARMERS_EN, SOUTH_AR, SOUTH_EN})
 
 # EN desk spine = AR. News + Hunting stay off home (covered by Featured + Latest).
 EN_DESK_SLUGS: dict[str, list[str]] = {
     "Interviews &amp; Investigations": [
+        SOUTH_EN,
         AWSAJ_EN,
         FARMERS_EN,
-        "leen-araji-equestrian-and-mental-math-champion",
         "george-taza-protect-fish-stocks-interview",
     ],
     "Gear &amp; Arms": [
@@ -180,9 +190,9 @@ EN_SAUDI_FILLERS = frozenset(
 
 AR_DESK_SLUGS: dict[str, list[str]] = {
     "مقابلات وتحقيقات": [
+        SOUTH_AR,
         AWSAJ_AR,
         FARMERS_AR,
-        "لين-عراجي-بطلة-فروسية-وحساب",
         "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
     ],
     "عتاد وسلاح": [
@@ -192,6 +202,13 @@ AR_DESK_SLUGS: dict[str, list[str]] = {
 }
 
 AR_FALLBACK_CARDS: dict[str, str] = {
+    SOUTH_AR: f"""<article class="card overlay">
+  <a class="thumb" href="posts/{SOUTH_AR}/index.html"><img src="{SOUTH_IMG}" alt="{SOUTH_ALT_AR}" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">24 أيلول 2026</div>
+    <h3><a href="posts/{SOUTH_AR}/index.html">{SOUTH_TITLE_AR}</a></h3>
+  </div>
+</article>""",
     BIRDLIFE_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{BIRDLIFE_AR}/index.html"><img src="{BIRDLIFE_IMG}" alt="{BIRDLIFE_ALT_AR}" loading="lazy"></a>
   <div class="body">
@@ -339,6 +356,14 @@ def _en_card(
 
 
 EN_FALLBACK_CARDS: dict[str, str] = {
+    SOUTH_EN: _en_card(
+        SOUTH_EN,
+        SOUTH_TITLE_EN,
+        "24 September 2026",
+        "Interviews &amp; Investigations",
+        SOUTH_IMG,
+        SOUTH_ALT_EN,
+    ),
     BIRDLIFE_EN: _en_card(
         BIRDLIFE_EN,
         BIRDLIFE_HOME_TITLE_EN,
@@ -1055,8 +1080,7 @@ def rebuild_en_home_sections(html: str, cards: dict[str, str]) -> str:
         for slug, year in dropped:
             label = "undated" if year == 0 else str(year)
             print(f"homepage desk {heading} omitted ({label}): {slug}")
-        # Interviews order is editorial (awsaj, farmers, Leen, Taza).
-        # Newest-first would place Taza (Nov 2022) ahead of Leen (Oct 2022).
+        # Interviews order is pinned (southern Lebanon, awsaj, farmers, Taza).
         if heading != "Interviews &amp; Investigations":
             slugs = _order_slugs_newest_first(slugs, merged, EN_FALLBACK_CARDS)
         compact = heading in COMPACT_DESKS
@@ -1081,7 +1105,7 @@ def rebuild_ar_home_sections(html: str, cards: dict[str, str]) -> str:
         for slug, year in dropped:
             label = "undated" if year == 0 else str(year)
             print(f"homepage desk {heading} omitted ({label}): {slug}")
-        # Interviews order is editorial (awsaj, farmers, Leen, Taza).
+        # Interviews order is pinned (southern Lebanon, awsaj, farmers, Taza).
         if heading != "مقابلات وتحقيقات":
             slugs = _order_slugs_newest_first(slugs, cards, AR_FALLBACK_CARDS)
         compact = heading in {"صور"}

@@ -158,10 +158,10 @@ DEFAULT_HOME_OMIT = {
 # a listed card. Source of truth is content/homepage.json, else this list.
 DEFAULT_FEATURED_SLUGS = [
     "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
-    "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
 ]
 # Hand-crafted editorial extras that may not be in the WXR dump. Featured
 # mosaic still emits these cards (gap / existing thumb) so a rebuild cannot
@@ -221,6 +221,10 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
 # posts and never a breaking/urgent label. Rebuilds must emit this same strip.
 DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
     (
+        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
+        "جنوب لبنان: دمار بيئي موثّق يهدد أحد أهم ممرات هجرة الطيور في العالم",
+    ),
+    (
         "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
         "بيرد لايف: 45٪ من الطيور المهاجرة في العالم في انحدار مستمر",
     ),
@@ -247,10 +251,6 @@ DEFAULT_TICKER_ITEMS: list[tuple[str, str]] = [
     (
         "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
         "السعودية تطلق موسم الصيد السادس وتشدد على الضوابط: 5 آلاف ريال غرامة الأماكن المحظورة",
-    ),
-    (
-        "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
-        "بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان",
     ),
 ]
 # Adonis / new-look never belong in the ticker (duplicated for animation).
