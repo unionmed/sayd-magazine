@@ -54,8 +54,8 @@ NEW_LOOK_EN = "sayd-returns-new-look-wider-vision"
 NEW_LOOK_AR = "صيد-تعود-بحلة-جديدة-ورؤية-اوسع"
 MEMORY_EN = "memory-of-sayd-awareness-responsibility-2016-2024"
 MEMORY_AR = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024"
-CABS_AR = "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
-CABS_EN = "cabs-mecshap-autumn-birds-lebanon-khatib"
+CABS_AR = "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
+CABS_EN = "protecting-autumn-migratory-birds-lebanon-khatib-2017"
 BIRDLIFE_AR = "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
 BIRDLIFE_EN = "skies-losing-balance-birdlife-flyways-report"
 # Homepage feature-lead teasers only. Article H1 / slug stay the full editorial titles.
@@ -71,8 +71,8 @@ CURLEW_TITLE_EN = "How Did Migration Routes Lose Seven of Their Birds in 150 Yea
 CURLEW_ALT_AR = "الكروان رفيع المنقار في بحيرة المرجة الزرقاء بالمغرب، 1995"
 CURLEW_ALT_EN = "Slender-billed Curlew at Merja Zerga, Morocco, 1995"
 CURLEW_IMG = "media/uploads/2026/09/slender-billed-curlew-last-photo.jpg"
-CABS_TITLE_AR = "CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي"
-CABS_TITLE_EN = "CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner"
+CABS_TITLE_AR = "حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام"
+CABS_TITLE_EN = "Protecting Autumn Migratory Birds in Lebanon: A Field Partnership Since 2017, Al-Khatib Affirms the Sustainable Hunter’s Role"
 FARMERS_AR = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
 FARMERS_EN = "how-farmers-protect-migratory-birds-this-autumn"
 FARMERS_TITLE_AR = "كيف يحمي المزارع الطيور المهاجرة هذا الخريف؟"
@@ -235,10 +235,10 @@ AR_FALLBACK_CARDS: dict[str, str] = {
   </div>
 </article>""",
     CABS_AR: """<article class="card card-stack">
-  <a class="thumb" href="posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html"><img src="media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="أعضاء من وحدة مكافحة الصيد الجائر (APU) و CABS مع طيور أنقذت خلال دورية مشتركة — MECSHAP" loading="lazy"></a>
+  <a class="thumb" href="posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html"><img src="media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="أعضاء من وحدة مكافحة الصيد الجائر مع طيور أُنقذت خلال دورية مشتركة — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر" loading="lazy"></a>
   <div class="body">
     <div class="meta">13 أيلول 2026</div>
-    <h3><a href="posts/كابس-ومكشب-لحماية-طيور-الخريف-في-ل/index.html">CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي</a></h3>
+    <h3><a href="posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html">حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام</a></h3>
   </div>
 </article>""",
     SUHAIL_AR: """<article class="card card-stack">
@@ -534,7 +534,7 @@ EN_FALLBACK_CARDS: dict[str, str] = {
         "13 September 2026",
         "News",
         "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
-        "APU and CABS members with rescued birds during a joint patrol — MECSHAP",
+        "Members of the Anti-Poaching Unit with birds rescued during a joint patrol — Middle East Center for Sustainable Hunting and Anti-Poaching",
     ),
     SUHAIL_EN: _en_card(
         SUHAIL_EN,

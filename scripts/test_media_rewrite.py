@@ -107,7 +107,7 @@ def test_batch2_species_fills_are_unique() -> None:
     assert "بعدسة نايف كريم" in text
     home = (root / "docs" / "index.html").read_text(encoding="utf-8")
     assert "duck-aswan-960.jpg" in home
-    kaps = (root / "docs" / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html").read_text(
+    kaps = (root / "docs" / "posts" / "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017" / "index.html").read_text(
         encoding="utf-8"
     )
     assert "mecshap-official-logo.png" in kaps
@@ -195,7 +195,7 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
     en_mosaic = en[en.find("featured-mosaic") : en.find("latest-col")]
     en_latest = en[en.find("latest-col") :]
     assert "south-lebanon-environmental-destruction-bird-flyway" in en_mosaic
-    assert "cabs-mecshap-autumn-birds-lebanon-khatib" not in en_mosaic
+    assert "protecting-autumn-migratory-birds-lebanon-khatib-2017" not in en_mosaic
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en_mosaic
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en_latest.split("</ul>", 1)[0]
     assert "suhail-2026-closes-decade-katara-80000-visitors" not in en_mosaic
@@ -296,7 +296,7 @@ def test_visible_2022_articles_local_only() -> None:
             path = docs / "media" / rel
             assert path.is_file() and path.stat().st_size > 32, (slug, src)
     # Kaps / Suhail / Adonis already-local files stay wired
-    kaps = (docs / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html").read_text(
+    kaps = (docs / "posts" / "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017" / "index.html").read_text(
         encoding="utf-8"
     )
     assert "mecshap-apu-cabs-baalbek-release.jpg" in kaps

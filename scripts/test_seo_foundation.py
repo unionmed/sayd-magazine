@@ -139,6 +139,12 @@ def test_babtain_aliases_redirect_off_sitemap() -> None:
         assert 'http-equiv="refresh"' in head
         assert "location.replace" in text
         assert seo.apply_html(text, page, DOCS, Path(rel), {}) == text
+        post_id = rel.split("/", 1)[0]
+        if post_id.isdigit() and post_id != "6775":
+            continue
+        # Slug renames (CABS title B and later) are thin redirects, but not Babtain aliases.
+        if "الباب" not in rel and rel != "6775/index.html":
+            continue
         assert f'href="{canon}"' in head
         assert canon in text
     sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
@@ -161,7 +167,7 @@ WP_2026_AR = {
     "6798": "https://sayd-magazine.com/posts/80-%D8%A3%D9%84%D9%81-%D8%B2%D8%A7%D8%A6%D8%B1-%D9%88158-%D8%AC%D9%87%D8%A9-%D9%85%D9%86-15-%D8%AF%D9%88%D9%84%D8%A9-%D8%B3%D9%87%D9%8A%D9%84-2026-%D9%8A%D8%AE%D8%AA%D8%AA%D9%85-%D8%B9/",
     "6800": "https://sayd-magazine.com/posts/%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D8%AA%D8%B7%D9%84%D9%82-%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%B3%D8%A7%D8%AF%D8%B3-%D8%A8%D8%B6%D9%88%D8%A7%D8%A8/",
     "6819": "https://sayd-magazine.com/posts/%D8%B3%D9%87%D9%8A%D9%84-2026-%D8%A8%D8%A7%D9%84%D8%B5%D9%88%D8%B1-%D8%A7%D9%84%D8%B5%D9%82%D9%88%D8%B1-%D9%88%D8%A7%D9%84%D8%B2%D9%88%D8%A7%D8%B1-%D9%88%D9%88%D8%AC%D9%88%D9%87-%D8%A7/",
-    "6836": "https://sayd-magazine.com/posts/%D9%83%D8%A7%D8%A8%D8%B3-%D9%88%D9%85%D9%83%D8%B4%D8%A8-%D9%84%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%B7%D9%8A%D9%88%D8%B1-%D8%A7%D9%84%D8%AE%D8%B1%D9%8A%D9%81-%D9%81%D9%8A-%D9%84/",
+    "6836": "https://sayd-magazine.com/posts/%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%B7%D9%8A%D9%88%D8%B1-%D9%87%D8%AC%D8%B1%D8%A9-%D8%A7%D9%84%D8%AE%D8%B1%D9%8A%D9%81-%D9%84%D8%A8%D9%86%D8%A7%D9%86-%D8%B4%D8%B1%D8%A7%D9%83%D8%A9-%D9%85%D9%86%D8%B0-2017/",
 }
 
 

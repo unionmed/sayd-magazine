@@ -181,7 +181,7 @@ def test_kaps_package_untouched() -> None:
         titles = " ".join(re.findall(r"<h[23][^>]*>\s*<a[^>]*>(.*?)</a>", mosaic, re.S))
         assert "مكشب" not in titles
         assert "كابس" not in titles
-    kaps = (DOCS / "posts" / "كابس-ومكشب-لحماية-طيور-الخريف-في-ل" / "index.html").read_text(
+    kaps = (DOCS / "posts" / "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017" / "index.html").read_text(
         encoding="utf-8"
     )
     assert "kaps-makshab-apu-fries-hero.jpg" in kaps
@@ -543,12 +543,12 @@ def test_egypt_hunting_news_live_surfaces() -> None:
     ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', ar, re.S).group(1)
     ticker_en = re.search(r'<div class="ticker">(.*?)</div>', en, re.S).group(1)
     assert ticker_ar.find("مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات") < ticker_ar.find(
-        "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
+        "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
     )
     assert "إطلاق نحو 200 طائر مهاجر" in ticker_ar
     assert "559" not in ticker_ar
     assert ticker_en.find("egypt-new-hunting-rules-burullus-autumn-migration") < ticker_en.find(
-        "cabs-mecshap-autumn-birds-lebanon-khatib"
+        "protecting-autumn-migratory-birds-lebanon-khatib-2017"
     )
     assert "~200 migratory birds released" in ticker_en
     latest_ar = ar.split("latest-col", 1)[1].split("</ul>", 1)[0]
@@ -647,7 +647,7 @@ def test_homepage_story_cards_are_unique() -> None:
             latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
             assert "egypt-new-hunting-rules-burullus-autumn-migration" in latest
             assert "common-shelduck-protected-migrant-lebanon" in latest
-            assert "cabs-mecshap-autumn-birds-lebanon-khatib" in latest
+            assert "protecting-autumn-migratory-birds-lebanon-khatib-2017" in latest
             assert "leading-platform-lebanese-arab-hunters-since-2012" not in latest
             assert latest.count("suhail-2026-closes-decade-katara-80000-visitors") == 1
             assert "qatar-suhail-2026-80000-visitors-teaser" not in latest
@@ -657,7 +657,7 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "sayd-returns-what-we-want-to-offer" in latest
             assert "sayd-returns-adonis-editor.jpg" in latest
             assert latest.find("suhail-2026-closes-decade-katara-80000-visitors") < latest.find(
-                "cabs-mecshap-autumn-birds-lebanon-khatib"
+                "protecting-autumn-migratory-birds-lebanon-khatib-2017"
             ) < latest.find("saudi-sixth-hunting-season-2026-2027-rules")
             assert "13 September 2026" in latest
             assert "mecshap-apu-cabs-baalbek-release.jpg" in latest
@@ -701,7 +701,7 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم" in latest_ar
             assert "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا" not in latest_ar
             assert latest_ar.find("80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع") < latest_ar.find(
-                "كابس-ومكشب-لحماية-طيور-الخريف-في-ل"
+                "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
             ) < latest_ar.find("السعودية-تطلق-موسم-الصيد-السادس-بضواب")
             assert "13 أيلول 2026" in latest_ar
             assert "mecshap-apu-cabs-baalbek-release.jpg" in latest_ar

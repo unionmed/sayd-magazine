@@ -63,8 +63,8 @@ AR_TICKER_REST = [
         "مصر: قرار جديد لتنظيم الصيد وإطلاق نحو 200 طائر مهاجر وإزالة شباك مخالفة في البرلس",
     ),
     (
-        "كابس-ومكشب-لحماية-طيور-الخريف-في-ل",
-        "CABS و MECSHAP لحماية طيور الخريف في لبنان… الخطيب: الصياد المستدام شريك حقيقي",
+        "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
+        "حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام",
     ),
     (
         "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
@@ -93,8 +93,8 @@ EN_TICKER_REST = [
         "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus",
     ),
     (
-        "cabs-mecshap-autumn-birds-lebanon-khatib",
-        "CABS and MECSHAP to Protect Autumn Birds in Lebanon… Al-Khatib: The Sustainable Hunter Is a True Partner",
+        "protecting-autumn-migratory-birds-lebanon-khatib-2017",
+        "Protecting Autumn Migratory Birds in Lebanon: A Field Partnership Since 2017, Al-Khatib Affirms the Sustainable Hunter’s Role",
     ),
     (
         "qatar-suhail-2026-80000-visitors-teaser",
