@@ -127,14 +127,14 @@ def latest_li(card: str) -> str:
 
 def leen_card(lang: str) -> str:
     if lang == "en":
-        return """<article class="card overlay">
+        return """<article class="card">
   <a class="thumb" href="posts/leen-araji-equestrian-and-mental-math-champion/index.html"><img src="../media/uploads/2022/10/لين-2.jpg" alt="Leen Araji" loading="lazy"></a>
   <div class="body">
     <div class="meta">22 October 2022</div>
     <h3><a href="posts/leen-araji-equestrian-and-mental-math-champion/index.html">Leen Araji: Equestrian Champion and Mental Math Champion</a></h3>
   </div>
 </article>"""
-    return """<article class="card overlay">
+    return """<article class="card">
   <a class="thumb" href="posts/لين-عراجي-بطلة-فروسية-وحساب/index.html"><img src="media/uploads/2022/10/لين-2.jpg" alt="لين عراجي" loading="lazy"></a>
   <div class="body">
     <div class="meta">22 تشرين الأول 2022</div>
@@ -153,6 +153,10 @@ def section(lang: str, door_id: str, cards: str, accent: str) -> str:
     href = f"{'../' * depth}category/{door['folder']}/index.html"
     extra = " sayd-tv" if door_id == "tv" else ""
     grid = "grid-photos" if door_id in {"tv", "photos"} else "grid-4"
+    # Overlay is only the homepage feature lead. Door cards keep text under the photo.
+    cards = cards.replace(" card-compact overlay", " card-compact").replace(
+        'class="card overlay"', 'class="card"'
+    )
     return f"""    <section class="home-section{extra}">
       <div class="section-head {accent}">
         <h2>{title}</h2>

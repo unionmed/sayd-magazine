@@ -948,6 +948,9 @@ def test_homepage_cards_keep_dates_without_category_pills() -> None:
         assert gear.count('<div class="meta">') == gear.count("<article")
         latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
         assert latest.count("<li>") == 10
+        doors_html = html.split('class="home-main"', 1)[1].split('class="sidebar"', 1)[0]
+        assert "overlay" not in doors_html
+        assert 'class="card overlay feature-lead"' in html
         for heading in headings:
             assert f"<h2>{heading}</h2>" in html
     ar_article = (

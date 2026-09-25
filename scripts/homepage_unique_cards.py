@@ -1012,7 +1012,7 @@ def lock_homepage_html(
 
 
 def _as_desk_card(article: str, *, compact: bool) -> str:
-    cls = "card card-compact overlay" if compact else "card overlay"
+    cls = "card card-compact" if compact else "card"
     article = strip_home_cat_pills(article)
     return re.sub(r"<article class=\"card[^\"]*\"", f'<article class="{cls}"', article, count=1)
 

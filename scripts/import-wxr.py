@@ -1906,7 +1906,7 @@ def build_site(data: dict, out: Path) -> None:
         if "<img" not in thumb:
             return ""
         return f"""
-<article class="card card-compact overlay">
+<article class="card card-compact">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb}</a>
   <div class="body">
     <div class="meta">{esc(p["date_display"])}</div>
@@ -2013,7 +2013,7 @@ def build_site(data: dict, out: Path) -> None:
     def section_block(title: str, accent: str, items: list[dict], more_href: str) -> str:
         if not items:
             return ""
-        cards = "\n".join(card(p, 0, "h3", "overlay") for p in items)
+        cards = "\n".join(card(p, 0, "h3", "") for p in items)
         more = f'<a href="{more_href}">المزيد</a>' if more_href else ""
         return f"""
     <section class="home-section">
