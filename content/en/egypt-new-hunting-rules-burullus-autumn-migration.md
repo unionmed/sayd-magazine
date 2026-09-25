@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات/
 **Source AR title:** مصر: قرار جديد لتنظيم الصيد وملاحقة المخالفات في موسم هجرة الخريف
 **Suggested slug:** egypt-new-hunting-rules-burullus-autumn-migration
-**Category:** News
+**Category:** Hunting
 
 ## Lead
 

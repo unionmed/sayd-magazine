@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/
 **Source AR title:** «صيد» تعود… وهذا ما نريد أن نقدّمه لكم
 **Suggested slug:** sayd-returns-what-we-want-to-offer
-**Category:** Editorial / Our Word (كلمتنا)
+**Category:** Hunting
 
 ## Lead
 

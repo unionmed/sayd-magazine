@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/
 **Source AR title:** السعودية تطلق موسم الصيد السادس وتشدد على الضوابط: 5 آلاف ريال غرامة الأماكن المحظورة
 **Suggested slug:** saudi-sixth-hunting-season-2026-2027-rules
-**Category:** News
+**Category:** Hunting
 
 ## Lead
 

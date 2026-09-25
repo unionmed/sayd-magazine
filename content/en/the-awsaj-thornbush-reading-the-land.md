@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/شجيرة-العوسج-حين-تقرأ-الأرض/`
 **Source AR title:** شجيرة العوسج: حين تقرأ الأرض وتعرف صيدلية البرّ في ظلّ الشوك
 **Suggested slug:** `the-awsaj-thornbush-reading-the-land`
-**Category:** Wildlife & Camping (الحياة البرية والتخييم)
+**Category:** Wildlife & Camping
 
 ## Lead
 

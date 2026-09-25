@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/الصيد-الجائر-دمار-لهواية-الصيد-إحذروا/`
 **Source AR title:** الصيد الجائر دمار لهواية الصيد.. إحذروا الشباك والدّبق وصيد الليل
 **Suggested slug:** `illegal-hunting-destroys-hobby-nets-lime-night`
-**Category:** Land Hunting
+**Category:** Bird Hunting
 
 ## Lead
 

@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري/
 **Source AR title:** السعودية تشدد على ضوابط الصيد: 5 آلاف ريال غرامة الصيد في الأماكن المحظورة
 **Suggested slug:** saudi-hunting-fines-5000-riyal-prohibited-areas
-**Category:** News
+**Category:** Hunting
 
 ## Lead
 

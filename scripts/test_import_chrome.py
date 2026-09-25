@@ -63,16 +63,17 @@ MEMORY = "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016
 ADONIS = "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
 FARMERS = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
 
-# Hunting desk: Taif finale leads, then the Mars 62e435c5 prefix.
+# Hunting landing after the farmers piece moved to wildlife. Order otherwise
+# stays the editorial prefix (BirdLife, seven species, south Lebanon, then Suhail).
 MARS_HUNTING_TOP = [
     "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
     "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-    "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
     "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
+    "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي",
 ]
 
 FORBIDDEN = (
@@ -409,7 +410,7 @@ def test_category_sort_is_datetime_not_title() -> None:
 
 
 def test_nayef_rule_adds_thematic_sayd_for_home_ticker() -> None:
-    """WXR-only أخبار/شريط must still land on صيد after the importer rule."""
+    """Remapped stories keep one door. An unmapped editorial is not auto-tagged."""
     posts = [
         _fake_post(OLD_HUNT, "تنظيم الصيد", "2025-09-30 00:00:00", [("صيد", "صيد وفروسية")]),
         _fake_post(SUHAIL_80K, "80 ألف… سهيل 2026", "2026-09-13 15:22:10", [("أخبار", "أخبار")]),
@@ -420,7 +421,13 @@ def test_nayef_rule_adds_thematic_sayd_for_home_ticker() -> None:
             BABTAIN,
             "بالفيديو… مقناص البابطين",
             "2026-09-08 22:06:01",
-            [("استديو-صيد", "استديو صيد")],
+            [("استديو-صيد", "استديو صيد"), ("أخبار", "أخبار")],
+        ),
+        _fake_post(
+            FARMERS,
+            "كيف يحمي المزارع",
+            "2026-09-20 00:00:00",
+            [("مقابلات-تحقيقات", "مقابلات وتحقيقات")],
         ),
         _fake_post(
             "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -428,24 +435,32 @@ def test_nayef_rule_adds_thematic_sayd_for_home_ticker() -> None:
             "2026-09-06 00:00:00",
             [("كلمتنا", "كلمتنا")],
         ),
+        _fake_post(
+            "كلمة-غير-مصنفة",
+            "كلمة بلا باب",
+            "2026-09-01 00:00:00",
+            [("كلمتنا", "كلمتنا")],
+        ),
     ]
     apply_nayef_category_rule(posts)
     by_slug = {p["slug"]: p for p in posts}
-    for slug in (SUHAIL_80K, QATAR_80K, KAPS, SAUDI, BABTAIN):
-        slugs = {c["slug"] for c in by_slug[slug]["categories"]}
-        assert "صيد" in slugs, slug
-    # Overlay adds; WordPress categories stay.
-    assert {c["slug"] for c in by_slug[BABTAIN]["categories"]} >= {"استديو-صيد", "صيد"}
-    assert {c["slug"] for c in by_slug[SUHAIL_80K]["categories"]} >= {"أخبار", "صيد"}
-    # Magazine editorial is not auto-tagged hunting just because the title has صيد.
-    assert "صيد" not in {c["slug"] for c in by_slug["صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"]["categories"]}
+    for slug in (SUHAIL_80K, QATAR_80K, KAPS, SAUDI, "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"):
+        assert {c["slug"] for c in by_slug[slug]["categories"]} == {"صيد"}, slug
+        assert by_slug[slug]["categories"][0]["name"] == "صيد"
+    assert {c["slug"] for c in by_slug[BABTAIN]["categories"]} == {"استديو-صيد"}
+    assert by_slug[BABTAIN]["categories"][0]["name"] == "صيد TV"
+    assert {c["slug"] for c in by_slug[FARMERS]["categories"]} == {"حياة-برية-وتخييم"}
+    assert by_slug[FARMERS]["categories"][0]["name"] == "الحياة البرية والتخييم"
+    # A title that merely contains «صيد» is not a hunting story.
+    assert {c["slug"] for c in by_slug["كلمة-غير-مصنفة"]["categories"]} == {"كلمتنا"}
 
     hunt = [p["slug"] for p in build_cat_info({}, posts)["صيد"]["posts"]]
     assert hunt[0] == KAPS
     assert QATAR_80K in hunt and SUHAIL_80K in hunt
-    assert hunt.index(QATAR_80K) < hunt.index(OLD_HUNT)
-    assert hunt.index(SUHAIL_80K) < hunt.index(OLD_HUNT)
-    assert "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم" not in hunt
+    assert BABTAIN not in hunt
+    assert FARMERS not in hunt
+    wildlife = [p["slug"] for p in build_cat_info({}, posts)["حياة-برية-وتخييم"]["posts"]]
+    assert wildlife == [FARMERS]
 
 
 def test_new_ticker_hunting_story_lands_on_sayd_near_top() -> None:
@@ -470,6 +485,13 @@ def test_docs_hunting_category_keeps_mars_recency() -> None:
     html = (ROOT / "docs" / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
     slugs = _listing_slugs(html)
     assert slugs[:8] == MARS_HUNTING_TOP, slugs[:10]
+    assert FARMERS not in slugs
+    wildlife = (
+        ROOT / "docs" / "category" / "حياة-برية-وتخييم" / "index.html"
+    ).read_text(encoding="utf-8")
+    wildlife_slugs = _listing_slugs(wildlife)
+    assert wildlife_slugs[0] == "شجيرة-العوسج-حين-تقرأ-الأرض"
+    assert FARMERS in wildlife_slugs
     assert "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان" not in slugs
     assert "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني" not in slugs
     assert SUHAIL_80K in slugs
@@ -548,7 +570,11 @@ def test_home_section_order_interviews_before_gear() -> None:
     titles = [title for title, _, _ in home_section_specs()]
     assert "أخبار" not in titles
     assert "صيد وفروسية" not in titles
-    assert titles.index("مقابلات وتحقيقات") < titles.index("عتاد وسلاح")
+    assert "مقابلات وتحقيقات" not in titles
+    assert titles.index("صيد") < titles.index("الرماية والعتاد")
+    assert "الفروسية" in titles
+    assert "صيد TV" in titles
+    assert "صور" in titles
 
 
 def test_featured_mosaic_matches_homepage_json() -> None:

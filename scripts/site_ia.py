@@ -175,9 +175,9 @@ PRIMARY: dict[str, dict] = {
         "remove_from": ["مقابلات-تحقيقات"],
     },
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف": {
-        "door": "hunting",
+        "door": "wildlife",
         "en": "how-farmers-protect-migratory-birds-this-autumn",
-        "remove_from": ["مقابلات-تحقيقات"],
+        "remove_from": ["مقابلات-تحقيقات", "صيد"],
     },
     "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان": {
         "door": "bird-hunting",

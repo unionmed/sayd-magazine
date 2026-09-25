@@ -243,30 +243,24 @@ def write_ar_article() -> None:
           <span class="tagline">مجلة أسياد الطبيعة في البر والبحر والجو</span>
         </a>
         <nav class="main-nav" aria-label="القائمة الرئيسية">
-        <a class="nav-home" href="../../index.html">الرئيسية</a>
-        <a href="../../category/صيد/index.html">صيد وفروسية</a>
-        <a href="../../category/رماية/index.html">رماية</a>
-        <a href="../../category/عتاد-وسلاح-الصيد/index.html">عتاد وسلاح</a>
-        <a href="../../category/رياضات-وسياحة-بيئية/index.html">رياضات وسياحة بيئية</a>
-        <a href="../../category/مقابلات-تحقيقات/index.html">مقابلات وتحقيقات</a>
+        <a href="../../category/صيد/index.html">صيد</a>
+        <a href="../../category/صيد-الطيور/index.html">صيد الطيور</a>
+        <a href="../../category/عتاد-وسلاح-الصيد/index.html">الرماية والعتاد</a>
+        <a href="../../category/فروسية/index.html">الفروسية</a>
+        <a href="../../category/حياة-برية-وتخييم/index.html">الحياة البرية والتخييم</a>
+        <a href="../../category/استديو-صيد/index.html">صيد TV</a>
         <a href="../../category/صور/index.html">صور</a>
-        <a href="../../category/قوانين-وخرائط/index.html">قوانين وخرائط</a>
-        <a href="../../category/جعبة-المنوعات/index.html">جعبة المنوعات</a>
-        <a class="nav-all" href="../../articles/index.html">الأرشيف</a>
         </nav>
         <details class="nav-toggle">
           <summary>القائمة</summary>
           <nav class="drawer-nav" aria-label="قائمة الجوال">
-        <a class="nav-home" href="../../index.html">الرئيسية</a>
-        <a href="../../category/صيد/index.html">صيد وفروسية</a>
-        <a href="../../category/رماية/index.html">رماية</a>
-        <a href="../../category/عتاد-وسلاح-الصيد/index.html">عتاد وسلاح</a>
-        <a href="../../category/رياضات-وسياحة-بيئية/index.html">رياضات وسياحة بيئية</a>
-        <a href="../../category/مقابلات-تحقيقات/index.html">مقابلات وتحقيقات</a>
+        <a href="../../category/صيد/index.html">صيد</a>
+        <a href="../../category/صيد-الطيور/index.html">صيد الطيور</a>
+        <a href="../../category/عتاد-وسلاح-الصيد/index.html">الرماية والعتاد</a>
+        <a href="../../category/فروسية/index.html">الفروسية</a>
+        <a href="../../category/حياة-برية-وتخييم/index.html">الحياة البرية والتخييم</a>
+        <a href="../../category/استديو-صيد/index.html">صيد TV</a>
         <a href="../../category/صور/index.html">صور</a>
-        <a href="../../category/قوانين-وخرائط/index.html">قوانين وخرائط</a>
-        <a href="../../category/جعبة-المنوعات/index.html">جعبة المنوعات</a>
-        <a class="nav-all" href="../../articles/index.html">الأرشيف</a>
           </nav>
         </details>
       </div>
@@ -289,9 +283,9 @@ def write_ar_article() -> None:
   <div class="container">
     <div class="article-layout">
     <div class="article-shell">
-    <div class="breadcrumb"><a href="../../index.html">الرئيسية</a> / <a href="../../category/مقابلات-تحقيقات/index.html">مقابلات وتحقيقات</a> / مقال</div>
+    <div class="breadcrumb"><a href="../../index.html">الرئيسية</a> / <a href="../../category/صيد/index.html">صيد</a> / مقال</div>
     <header class="article-header">
-      <div><a class="badge" href="../../category/مقابلات-تحقيقات/index.html">مقابلات وتحقيقات</a></div>
+      <div><a class="badge" href="../../category/صيد/index.html">صيد</a></div>
       <h1>{AR_TITLE}</h1>
       <div class="article-meta"><span class="meta-item">22 أيلول 2026</span><span class="meta-item">تحقيق — مجلة صيد</span></div>
     </header>
@@ -304,7 +298,7 @@ def write_ar_article() -> None:
 <article class="card overlay">
   <a class="thumb" href="../../posts/كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف/index.html"><img src="../../media/uploads/2026/09/farmers-storks-migrating-palestine.jpg" alt="أسراب اللقلق الأبيض تعبر سماء المشرق في موسم الهجرة الخريفية" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
+    <div class="meta">20 أيلول 2026</div>
     <h3><a href="../../posts/كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف/index.html">كيف يحمي المزارع الطيور المهاجرة هذا الخريف؟</a></h3>
   </div>
 </article>
@@ -327,16 +321,12 @@ def write_ar_article() -> None:
         </div>
 <div class="widget">
           <h3>التصنيفات</h3>
-          <div class="widget-body"><ul class="cat-list"><li><a href="../../category/أخبار/index.html"><span>أخبار</span><span class="count">286</span></a></li>
-<li><a href="../../category/جعبة-المنوعات/index.html"><span>جعبة المنوعات</span><span class="count">113</span></a></li>
-<li><a href="../../category/صيد-بري/index.html"><span>صيد بري</span><span class="count">105</span></a></li>
-<li><a href="../../category/مقابلات-تحقيقات/index.html"><span>مقابلات وتحقيقات</span><span class="count">74</span></a></li>
-<li><a href="../../category/كلمتنا/index.html"><span>كلمتنا</span><span class="count">50</span></a></li>
-<li><a href="../../category/ثقافة-وتراث/index.html"><span>ثقافة وتراث</span><span class="count">48</span></a></li>
-<li><a href="../../category/صيد/index.html"><span>صيد وفروسية</span><span class="count">51</span></a></li>
-<li><a href="../../category/بعدستكم/index.html"><span>بعدستكم</span><span class="count">42</span></a></li>
-<li><a href="../../category/فروسية/index.html"><span>فروسية</span><span class="count">36</span></a></li>
-<li><a href="../../category/رماية/index.html"><span>رماية</span><span class="count">30</span></a></li></ul></div>
+          <div class="widget-body"><ul class="cat-list"><li><a href="../../category/صيد/index.html">صيد</a></li>
+<li><a href="../../category/عتاد-وسلاح-الصيد/index.html">الرماية والعتاد</a></li>
+<li><a href="../../category/فروسية/index.html">الفروسية</a></li>
+<li><a href="../../category/حياة-برية-وتخييم/index.html">الحياة البرية والتخييم</a></li>
+<li><a href="../../category/استديو-صيد/index.html">صيد TV</a></li>
+<li><a href="../../category/صور/index.html">صور</a></li></ul></div>
         </div>
       </aside>
     </div>
@@ -351,16 +341,12 @@ def write_ar_article() -> None:
         </div>
         <div class="footer-col">
           <h3>التصنيفات</h3>
-          <ul><li><a href="../../category/أخبار/index.html">أخبار</a></li>
-<li><a href="../../category/جعبة-المنوعات/index.html">جعبة المنوعات</a></li>
-<li><a href="../../category/صيد-بري/index.html">صيد بري</a></li>
-<li><a href="../../category/مقابلات-تحقيقات/index.html">مقابلات وتحقيقات</a></li>
-<li><a href="../../category/كلمتنا/index.html">كلمتنا</a></li>
-<li><a href="../../category/ثقافة-وتراث/index.html">ثقافة وتراث</a></li>
-<li><a href="../../category/صيد/index.html">صيد وفروسية</a></li>
-<li><a href="../../category/بعدستكم/index.html">بعدستكم</a></li>
-<li><a href="../../category/فروسية/index.html">فروسية</a></li>
-<li><a href="../../category/رماية/index.html">رماية</a></li></ul>
+          <ul><li><a href="../../category/صيد/index.html">صيد</a></li>
+<li><a href="../../category/عتاد-وسلاح-الصيد/index.html">الرماية والعتاد</a></li>
+<li><a href="../../category/فروسية/index.html">الفروسية</a></li>
+<li><a href="../../category/حياة-برية-وتخييم/index.html">الحياة البرية والتخييم</a></li>
+<li><a href="../../category/استديو-صيد/index.html">صيد TV</a></li>
+<li><a href="../../category/صور/index.html">صور</a></li></ul>
         </div>
         <div class="footer-col">
           <h3>روابط</h3>
@@ -439,28 +425,26 @@ def write_en_article() -> None:
         </a>
         <nav class="main-nav" aria-label="Main menu">
         <a class="nav-home" href="../../../en/index.html">Home</a>
-        <a href="../../../category/صيد/index.html">Hunting &amp; Equestrian</a>
-        <a href="../../../category/رماية/index.html">Shooting</a>
-        <a href="../../../category/عتاد-وسلاح-الصيد/index.html">Gear &amp; Arms</a>
-        <a href="../../../category/رياضات-وسياحة-بيئية/index.html">Eco-Tourism</a>
-        <a href="../../../category/مقابلات-تحقيقات/index.html">Interviews &amp; Investigations</a>
+        <a href="../../../category/صيد/index.html">Hunting</a>
+        <a href="../../../category/صيد-الطيور/index.html">Bird Hunting</a>
+        <a href="../../../category/عتاد-وسلاح-الصيد/index.html">Shooting &amp; Gear</a>
+        <a href="../../../category/فروسية/index.html">Equestrian</a>
+        <a href="../../../category/حياة-برية-وتخييم/index.html">Wildlife &amp; Camping</a>
+        <a href="../../../category/استديو-صيد/index.html">Sayd TV</a>
         <a href="../../../category/صور/index.html">Photos</a>
-        <a href="../../../category/قوانين-وخرائط/index.html">Laws &amp; Maps</a>
-        <a href="../../../category/جعبة-المنوعات/index.html">Miscellany</a>
         <a class="nav-all" href="../../../articles/index.html">Archive</a>
         </nav>
         <details class="nav-toggle">
           <summary>Menu</summary>
           <nav class="drawer-nav" aria-label="Mobile menu">
         <a class="nav-home" href="../../../en/index.html">Home</a>
-        <a href="../../../category/صيد/index.html">Hunting &amp; Equestrian</a>
-        <a href="../../../category/رماية/index.html">Shooting</a>
-        <a href="../../../category/عتاد-وسلاح-الصيد/index.html">Gear &amp; Arms</a>
-        <a href="../../../category/رياضات-وسياحة-بيئية/index.html">Eco-Tourism</a>
-        <a href="../../../category/مقابلات-تحقيقات/index.html">Interviews &amp; Investigations</a>
+        <a href="../../../category/صيد/index.html">Hunting</a>
+        <a href="../../../category/صيد-الطيور/index.html">Bird Hunting</a>
+        <a href="../../../category/عتاد-وسلاح-الصيد/index.html">Shooting &amp; Gear</a>
+        <a href="../../../category/فروسية/index.html">Equestrian</a>
+        <a href="../../../category/حياة-برية-وتخييم/index.html">Wildlife &amp; Camping</a>
+        <a href="../../../category/استديو-صيد/index.html">Sayd TV</a>
         <a href="../../../category/صور/index.html">Photos</a>
-        <a href="../../../category/قوانين-وخرائط/index.html">Laws &amp; Maps</a>
-        <a href="../../../category/جعبة-المنوعات/index.html">Miscellany</a>
         <a class="nav-all" href="../../../articles/index.html">Archive</a>
           </nav>
         </details>
@@ -486,7 +470,7 @@ def write_en_article() -> None:
     <div class="article-shell">
     <div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../../stories/index.html">Stories</a> / Article</div>
     <header class="article-header">
-      <div><span class="badge">Interviews &amp; Investigations</span></div>
+      <div><a class="badge" href="../../../category/صيد/index.html">Hunting</a></div>
       <h1>{EN_TITLE}</h1>
       <div class="article-meta"><span class="meta-item">22 September 2026</span><span class="meta-item">Investigation — Sayd Magazine</span></div>
       <p class="lang-twin"><a href="../../../posts/{AR_SLUG}/index.html" hreflang="ar" lang="ar">اقرأ بالعربية</a></p>
@@ -500,7 +484,7 @@ def write_en_article() -> None:
 <article class="card overlay">
   <a class="thumb" href="../how-farmers-protect-migratory-birds-this-autumn/index.html"><img src="../../../media/uploads/2026/09/farmers-storks-migrating-palestine.jpg" alt="White storks migrating over the Levant this autumn" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 September 2026<span class="cat-pill">Interviews &amp; Investigations</span></div>
+    <div class="meta">20 September 2026</div>
     <h3><a href="../how-farmers-protect-migratory-birds-this-autumn/index.html">How Can Farmers Protect Migratory Birds This Autumn?</a></h3>
   </div>
 </article>
@@ -571,7 +555,7 @@ def write_en_article() -> None:
 
 
 def patch_listings() -> None:
-    cat = DOCS / "category" / "مقابلات-تحقيقات" / "index.html"
+    cat = DOCS / "category" / "صيد" / "index.html"
     html = cat.read_text(encoding="utf-8")
     row = f"""<article class="post-row">
   <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../{IMG}" alt="{AR_ALT}" loading="lazy"></a>
@@ -582,13 +566,14 @@ def patch_listings() -> None:
   </div>
 </article>
 """
-    if AR_SLUG not in html.split('class="post-list"', 1)[-1].split("pagination", 1)[0]:
+    listing = html.split('class="post-list"', 1)[-1].split("pagination", 1)[0]
+    if AR_SLUG not in listing:
         html = html.replace('<div class="post-list">\n', '<div class="post-list">\n' + row, 1)
-    html = html.replace(
-        'مقابلات وتحقيقات <span class="badge">73</span>',
-        'مقابلات وتحقيقات <span class="badge">74</span>',
-        1,
-    )
+        html = html.replace(
+            'صيد <span class="badge">15</span>',
+            'صيد <span class="badge">16</span>',
+            1,
+        )
     cat.write_text(html, encoding="utf-8")
 
     archive = DOCS / "articles" / "index.html"
@@ -596,7 +581,7 @@ def patch_listings() -> None:
     archive_row = f"""<article class="post-row">
   <a class="thumb" href="../posts/{AR_SLUG}/index.html"><img src="../{IMG}" alt="{AR_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 أيلول 2026 · مقابلات وتحقيقات</div>
+    <div class="meta">22 أيلول 2026 · صيد</div>
     <h2><a href="../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>

@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/البنادق-الهوائية/`
 **Source AR title:** البنادق الهوائية
 **Suggested slug:** `air-rifles`
-**Category:** Gear & Hunting Arms
+**Category:** Shooting & Gear
 
 ## Lead
 

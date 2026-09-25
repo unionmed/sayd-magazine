@@ -86,6 +86,8 @@ def test_primary_door_is_singular() -> None:
     assert ia.PRIMARY["الصيّادة-السورية-أماني-الحمصي"]["door"] == "bird-hunting"
     assert ia.PRIMARY["ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان"]["door"] == "bird-hunting"
     assert ia.PRIMARY["سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"]["door"] == "hunting"
+    assert ia.PRIMARY["كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"]["door"] == "wildlife"
+    assert ia.PRIMARY["شجيرة-العوسج-حين-تقرأ-الأرض"]["door"] == "wildlife"
     assert ia.PRIMARY["البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"]["door"] == "photos"
     assert ia.PRIMARY["بومة-المخازن"]["door"] == "birds"
     assert ia.PRIMARY["السعودية-تطلق-موسم-الصيد-السادس-بضواب"]["door"] == "hunting"

@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/الصقر-العويسق-الأحمر-يقتله-جهل-القواص/`
 **Source AR title:** الصقر العويسق الأحمر ..يقتله جهل القواصين
 **Suggested slug:** `red-footed-falcon-killed-by-ignorance`
-**Category:** Miscellany / Trap (مصيدة)
+**Category:** Bird Encyclopedia
 
 ## Lead
 
