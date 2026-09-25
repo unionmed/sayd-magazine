@@ -24,6 +24,9 @@ def test_uploads_rel() -> None:
     assert uploads_rel(jet) == "uploads/2024/09/Design.png"
     old = "http://i0.wp.com/sayd.alfalivehost.com/wp-content/uploads/2015/02/foo.jpg?resize=600%2C424"
     assert uploads_rel(old) == "uploads/2015/02/foo.jpg"
+    assert uploads_rel("/wp-content/uploads/2020/05/photo.jpg") == "uploads/2020/05/photo.jpg"
+    assert uploads_rel("wp-content/uploads/2021/01/b.png") == "uploads/2021/01/b.png"
+    assert uploads_rel("https://example.com/wp-content/uploads/2020/05/nope.jpg") is None
 
 
 def test_scope() -> None:
@@ -48,6 +51,10 @@ def test_public_src_local_only() -> None:
         url = "https://sayd-magazine.com/wp-content/uploads/2024/09/Design.png"
         assert public_src(url, 0, root) == "media/uploads/2024/09/Design.png"
         assert public_src(url, 2, root) == "../../media/uploads/2024/09/Design.png"
+        assert (
+            public_src("/wp-content/uploads/2024/09/Design.png", 2, root)
+            == "../../media/uploads/2024/09/Design.png"
+        )
         missing = "https://sayd-magazine.com/wp-content/uploads/2026/09/nope.jpg"
         assert public_src(missing, 0, root) == ""
         wb = "https://web.archive.org/web/0im_/https://sayd-magazine.com/wp-content/uploads/2024/09/Design.png"
