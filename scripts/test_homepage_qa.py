@@ -951,6 +951,10 @@ def test_homepage_cards_keep_dates_without_category_pills() -> None:
         doors_html = html.split('class="home-main"', 1)[1].split('class="sidebar"', 1)[0]
         assert "overlay" not in doors_html
         assert 'class="card overlay feature-lead"' in html
+        mosaic = html.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+        for block in (mosaic, doors_html):
+            for article in re.findall(r"<article class=\"card[^\"]*\">.*?</article>", block, re.S):
+                assert re.search(r"<h[23]>.*?</h[23]>\s*<div class=\"meta\">", article, re.S), article[:120]
         for heading in headings:
             assert f"<h2>{heading}</h2>" in html
     ar_article = (

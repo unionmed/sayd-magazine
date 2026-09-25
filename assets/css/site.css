@@ -933,6 +933,12 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   font-weight: 600;
 }
 
+.featured-mosaic .card .meta,
+.home-section .card .meta {
+  margin-top: 0.22rem;
+  margin-bottom: 0;
+}
+
 .card .meta .cat-pill {
   display: inline-block;
   background: var(--olive);
@@ -1133,7 +1139,8 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 }
 .feature-stack .card.card-stack .meta {
   color: var(--muted);
-  margin-bottom: 0.1rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0;
 }
 .feature-stack .card.card-stack h3 {
   font-size: 0.8rem;

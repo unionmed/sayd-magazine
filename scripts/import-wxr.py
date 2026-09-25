@@ -809,8 +809,8 @@ def featured_side_html(p: dict, thumb: str = "") -> str:
     return f"""
 <article class="hero-side">
   <a class="thumb" href="{post_href(p["slug"], 0)}">{thumb}</a>
-  <div class="meta">{esc(p.get("date_display") or "")}</div>
   <h3><a href="{post_href(p["slug"], 0)}">{esc(p.get("title") or "")}</a></h3>
+  <div class="meta">{esc(p.get("date_display") or "")}</div>
   <p class="excerpt">{excerpt}</p>
 </article>"""
 
@@ -1896,8 +1896,8 @@ def build_site(data: dict, out: Path) -> None:
 <article class="card {cls}">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
+    <div class="meta">{esc(p["date_display"])}</div>
   </div>
 </article>"""
 
@@ -1909,8 +1909,8 @@ def build_site(data: dict, out: Path) -> None:
 <article class="card card-compact">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
     <h3><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></h3>
+    <div class="meta">{esc(p["date_display"])}</div>
   </div>
 </article>"""
 

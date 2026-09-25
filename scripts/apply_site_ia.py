@@ -130,15 +130,15 @@ def leen_card(lang: str) -> str:
         return """<article class="card">
   <a class="thumb" href="posts/leen-araji-equestrian-and-mental-math-champion/index.html"><img src="../media/uploads/2022/10/لين-2.jpg" alt="Leen Araji" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 October 2022</div>
     <h3><a href="posts/leen-araji-equestrian-and-mental-math-champion/index.html">Leen Araji: Equestrian Champion and Mental Math Champion</a></h3>
+    <div class="meta">22 October 2022</div>
   </div>
 </article>"""
     return """<article class="card">
   <a class="thumb" href="posts/لين-عراجي-بطلة-فروسية-وحساب/index.html"><img src="media/uploads/2022/10/لين-2.jpg" alt="لين عراجي" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 تشرين الأول 2022</div>
     <h3><a href="posts/لين-عراجي-بطلة-فروسية-وحساب/index.html">لين عراجي بطلة فروسية وحساب</a></h3>
+    <div class="meta">22 تشرين الأول 2022</div>
   </div>
 </article>"""
 
@@ -156,6 +156,12 @@ def section(lang: str, door_id: str, cards: str, accent: str) -> str:
     # Overlay is only the homepage feature lead. Door cards keep text under the photo.
     cards = cards.replace(" card-compact overlay", " card-compact").replace(
         'class="card overlay"', 'class="card"'
+    )
+    cards = re.sub(
+        r'(<div class="body">\s*)(<div class="meta">.*?</div>\s*)(<h[23]>.*?</h[23]>)',
+        r"\1\3\n    \2",
+        cards,
+        flags=re.S,
     )
     return f"""    <section class="home-section{extra}">
       <div class="section-head {accent}">
