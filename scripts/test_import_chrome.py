@@ -65,6 +65,7 @@ FARMERS = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-�
 
 # Hunting desk: Taif finale leads, then the Mars 62e435c5 prefix.
 MARS_HUNTING_TOP = [
+    "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
     KAPS,
     SUHAIL_80K,
@@ -72,7 +73,6 @@ MARS_HUNTING_TOP = [
     SAUDI,
     BABTAIN,
     MIGRATE_HOW,
-    MIGRATE_START,
 ]
 
 FORBIDDEN = (
@@ -95,19 +95,22 @@ def test_ticker_source_is_mars_list() -> None:
     assert items == list(DEFAULT_TICKER_ITEMS)
     assert len(items) == 8
     slugs = [slug for slug, _ in items]
-    assert slugs[0] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
-    assert items[0][1] == "جنوب لبنان: دمار بيئي موثّق يهدد أحد أهم ممرات هجرة الطيور في العالم"
-    assert slugs[1] == "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
-    assert items[1][1] == "بيرد لايف: 45٪ من الطيور المهاجرة في العالم في انحدار مستمر"
-    assert slugs[2].startswith("كيف-فقدت-مسارات-الهجرة")
-    assert "الكروان رفيع المنقار" in items[2][1]
-    assert slugs[3].startswith("العد-التنازلي")
-    assert "كأس اليوم الوطني" in items[3][1]
-    assert "26 أيلول" in items[3][1]
-    assert slugs[4].startswith("مصر-قرار-جديد")
-    assert "200 طائر مهاجر" in items[4][1]
-    assert slugs[5] == KAPS
-    assert "سهيل" in items[6][1]
+    assert slugs[0] == "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان"
+    assert items[0][1] == "قوى الأمن تضبط 20,640 م² شباك صيد غير قانونية في البقاع"
+    assert slugs[1] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+    assert items[1][1] == "جنوب لبنان: دمار بيئي موثّق يهدد أحد أهم ممرات هجرة الطيور في العالم"
+    assert slugs[2] == "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
+    assert items[2][1] == "بيرد لايف: 45٪ من الطيور المهاجرة في العالم في انحدار مستمر"
+    assert slugs[3].startswith("كيف-فقدت-مسارات-الهجرة")
+    assert "الكروان رفيع المنقار" in items[3][1]
+    assert slugs[4].startswith("العد-التنازلي")
+    assert "كأس اليوم الوطني" in items[4][1]
+    assert "26 أيلول" in items[4][1]
+    assert slugs[5].startswith("مصر-قرار-جديد")
+    assert "200 طائر مهاجر" in items[5][1]
+    assert slugs[6] == KAPS
+    assert "سهيل" in items[7][1]
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" not in slugs
     assert "بالفيديو-مقناص" not in slugs
     assert ADONIS not in slugs
     assert "sayd-returns-what-we-want-to-offer" not in slugs

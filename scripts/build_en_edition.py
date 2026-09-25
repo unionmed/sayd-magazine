@@ -84,31 +84,35 @@ HOME_OMIT_FROM_HOME = {
     "memory-of-sayd-awareness-responsibility-2016-2024",
 }
 HOME_LATEST = [
+    "over-20000-m2-bird-nets-seized-lebanon",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "suhail-2026-closes-decade-katara-80000-visitors",
     "protecting-autumn-migratory-birds-lebanon-khatib-2017",
     "saudi-sixth-hunting-season-2026-2027-rules",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     "regulating-hunting-protects-wildlife-bans-worsen",
-    "common-shelduck-protected-migrant-lebanon",
     "illegal-hunting-destroys-hobby-nets-lime-night",
 ]
 TICKER_TITLES_EN = {
+    "over-20000-m2-bird-nets-seized-lebanon": "Internal Security Forces seize 20,640 m² of illegal bird nets in the Bekaa",
+    "south-lebanon-environmental-destruction-bird-flyway": "Southern Lebanon: documented environmental destruction threatens one of the world’s key bird-migration flyways",
+    "skies-losing-balance-birdlife-flyways-report": "BirdLife: 45% of the world’s migratory birds are in continuous decline",
     "how-migration-routes-lost-seven-birds-in-150-years": "Migration routes lost 7 species in 150 years… the Slender-billed Curlew the latest",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah": "Taif | Saturday evening closes the season with the National Day Cup for Thoroughbreds at Al-Hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration": "Egypt: New hunting rules; ~200 migratory birds released and illegal nets removed at Burullus",
+    "protecting-autumn-migratory-birds-lebanon-khatib-2017": "Protecting Autumn Migratory Birds in Lebanon: A Field Partnership Since 2017, Al-Khatib Affirms the Sustainable Hunter’s Role",
     "suhail-2026-closes-decade-katara-80000-visitors": "80,000 Visitors and 158 Exhibitors from 15 Countries… Suhail 2026 Closes a Decade of Passion for Hunting and Falconry",
 }
+# Live eight. Prepend only the Bekaa nets line; the Saudi season line is the one that leaves.
 HOME_TICKER = [
+    "over-20000-m2-bird-nets-seized-lebanon",
+    "south-lebanon-environmental-destruction-bird-flyway",
+    "skies-losing-balance-birdlife-flyways-report",
     "how-migration-routes-lost-seven-birds-in-150-years",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "protecting-autumn-migratory-birds-lebanon-khatib-2017",
     "suhail-2026-closes-decade-katara-80000-visitors",
-    "saudi-sixth-hunting-season-2026-2027-rules",
-    "video-saud-al-babtain-maqnas-afghanistan",
-    "autumn-migration-how-world-protects-birds-regulates-hunting",
-    "autumn-migration-field-action-protect-flyways-lebanon",
 ]
 
 META: dict[str, dict] = {
@@ -135,6 +139,14 @@ META: dict[str, dict] = {
         "author": "Sayd",
         "image": "media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
         "image_alt": "A field researcher removes a bird from illegal nets.",
+    },
+    "over-20000-m2-bird-nets-seized-lebanon": {
+        "date": "25 September 2026",
+        "date_sort": "2026-09-25",
+        "category": "Hunting & Equestrian",
+        "author": "Sayd",
+        "image": "media/uploads/2026/09/bekaa-nets-isf-pickup-2026-09-25.jpg",
+        "image_alt": "A pickup loaded with seized nets and poles during the field campaign in the Bekaa.",
     },
     "memory-of-sayd-awareness-responsibility-2016-2024": {
         "date": "19 September 2026",

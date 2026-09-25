@@ -486,15 +486,22 @@ def test_south_lebanon_investigation_republished() -> None:
     ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', ar, re.S).group(1)
     ticker_en = re.search(r'<div class="ticker">(.*?)</div>', en, re.S).group(1)
     assert ticker_ar.startswith(
+        '<a href="posts/ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان/index.html">'
+        "قوى الأمن تضبط 20,640 م² شباك صيد غير قانونية في البقاع</a>"
+    )
+    assert (
         '<a href="posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان/index.html">'
         "جنوب لبنان: دمار بيئي موثّق يهدد أحد أهم ممرات هجرة الطيور في العالم</a>"
+        in ticker_ar
     )
     assert "إبادة بيئية" not in ticker_ar
     assert ticker_ar.count("<a ") == 8
     assert "بالفيديو-مقناص" not in ticker_ar
     assert ticker_en.startswith(
-        '<a href="posts/south-lebanon-environmental-destruction-bird-flyway/index.html">'
+        '<a href="posts/over-20000-m2-bird-nets-seized-lebanon/index.html">'
+        "Internal Security Forces seize 20,640 m² of illegal bird nets in the Bekaa</a>"
     )
+    assert "south-lebanon-environmental-destruction-bird-flyway" in ticker_en
     assert "ecocide" not in ticker_en.lower()
     assert ticker_en.count("<a ") == 8
     lead_ar = ar.split("feature-lead", 1)[1].split("feature-side", 1)[0]
@@ -646,7 +653,8 @@ def test_homepage_story_cards_are_unique() -> None:
         if rel == "en/index.html":
             latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
             assert "egypt-new-hunting-rules-burullus-autumn-migration" in latest
-            assert "common-shelduck-protected-migrant-lebanon" in latest
+            assert "over-20000-m2-bird-nets-seized-lebanon" in latest
+            assert "common-shelduck-protected-migrant-lebanon" not in latest
             assert "protecting-autumn-migratory-birds-lebanon-khatib-2017" in latest
             assert "leading-platform-lebanese-arab-hunters-since-2012" not in latest
             assert latest.count("suhail-2026-closes-decade-katara-80000-visitors") == 1
@@ -1002,6 +1010,61 @@ def test_homepage_builders_do_not_restamp_category_pills() -> None:
         assert "23" in html
 
 
+def test_bekaa_nets_latest_and_ticker() -> None:
+    """Nayef إنشر: Bekaa nets lead Latest and the ticker. Mosaic and CSS stay."""
+    ar_slug = "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان"
+    en_slug = "over-20000-m2-bird-nets-seized-lebanon"
+    ticker_ar_line = "قوى الأمن تضبط 20,640 م² شباك صيد غير قانونية في البقاع"
+    img = DOCS / "media" / "uploads" / "2026" / "09" / "bekaa-nets-isf-pickup-2026-09-25.jpg"
+    assert img.is_file() and img.stat().st_size > 32
+    ar = (DOCS / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', ar, re.S).group(1)
+    ticker_en = re.search(r'<div class="ticker">(.*?)</div>', en, re.S).group(1)
+    assert ticker_ar.startswith(f'<a href="posts/{ar_slug}/index.html">{ticker_ar_line}</a>')
+    assert ticker_ar.count("<a ") == 8
+    assert "السعودية-تطلق-موسم-الصيد-السادس-بضواب" not in ticker_ar
+    assert "من كل وادي خبر" in ar
+    assert ticker_en.startswith(
+        f'<a href="posts/{en_slug}/index.html">'
+        "Internal Security Forces seize 20,640 m² of illegal bird nets in the Bekaa</a>"
+    )
+    assert ticker_en.count("<a ") == 8
+    assert "saudi-sixth-hunting-season-2026-2027-rules" not in ticker_en
+    latest_ar = ar.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+    latest_en = en.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+    assert latest_ar.find(ar_slug) < latest_ar.find("مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات")
+    assert "bekaa-nets-isf-pickup-2026-09-25.jpg" in latest_ar
+    assert "feed-thumb" in latest_ar
+    assert "25 أيلول 2026" in latest_ar
+    assert latest_en.find(en_slug) < latest_en.find("egypt-new-hunting-rules-burullus-autumn-migration")
+    assert "25 September 2026" in latest_en
+    assert "الشهرمان-الشائع" not in latest_ar
+    mosaic = ar.split("featured-mosaic", 1)[1].split("latest-col", 1)[0]
+    assert ar_slug not in mosaic
+    assert "feature-lead" in ar
+    assert "birdlife-flyways-photo.jpg" in mosaic
+    article = (DOCS / "posts" / ar_slug / "index.html").read_text(encoding="utf-8")
+    twin = (DOCS / "en" / "posts" / en_slug / "index.html").read_text(encoding="utf-8")
+    assert "ضبط أكثر من 20 ألف م² شباك صيد في لبنان" in article
+    assert "Over 20,000 m² of bird nets seized in Lebanon" in twin
+    assert "20,640" in article and "20,640" in twin
+    assert "جديدة الفاكهة" in article and "Jadidat al-Fakiha" in twin
+    assert "مشاريع القاع" in article and "Mashari" in twin
+    assert "المديرية العامة لقوى الأمن الداخلي" in article
+    assert "المصدر:" not in article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
+    body = article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
+    assert "أعلنت المديرية" not in body and "صدر عن" not in body
+    assert 'href="../../category/صيد/index.html"' in article
+    assert "قوانين" not in article.split("article-header", 1)[1].split("article-content", 1)[0]
+    cat = (DOCS / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
+    listing = cat.split('class="post-list"', 1)[1]
+    assert listing.find(ar_slug) < listing.find("العد-التنازلي-لختام-موسم-الطائف")
+    assert f"<loc>https://sayd-magazine.com/en/posts/{en_slug}/</loc>" in (
+        DOCS / "sitemap.xml"
+    ).read_text(encoding="utf-8")
+
+
 def test_homepage_sidebar_hides_when_stacked() -> None:
     """Footer keeps categories and pages. The homepage sidebar hides once it would stack on top."""
     for path in (
@@ -1044,6 +1107,7 @@ if __name__ == "__main__":
     test_memory_strip_folds_rita_into_personalities()
     test_south_lebanon_investigation_republished()
     test_egypt_hunting_news_live_surfaces()
+    test_bekaa_nets_latest_and_ticker()
     test_homepage_story_cards_are_unique()
     test_lock_is_idempotent_and_drops_restacked_cards()
     test_en_home_mirrors_ar_desk_cards()

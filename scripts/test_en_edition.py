@@ -25,6 +25,7 @@ SUHAIL_AR = "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يخ
 SUHAIL_EN = "suhail-2026-closes-decade-katara-80000-visitors"
 
 HOME_TICKER_EN = [
+    "over-20000-m2-bird-nets-seized-lebanon",
     "south-lebanon-environmental-destruction-bird-flyway",
     "skies-losing-balance-birdlife-flyways-report",
     "how-migration-routes-lost-seven-birds-in-150-years",
@@ -32,12 +33,11 @@ HOME_TICKER_EN = [
     "egypt-new-hunting-rules-burullus-autumn-migration",
     CABS_EN,
     SUHAIL_EN,
-    "saudi-sixth-hunting-season-2026-2027-rules",
 ]
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 32
+    assert len(PAIRS) == 33
     drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
     assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():
@@ -94,6 +94,8 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "illegal-hunting-destroys-hobby-nets-lime-night",
         # Oldest Latest card (1 Oct 2024), dropped when CABS joined the capped feed.
         "leading-platform-lebanese-arab-hunters-since-2012",
+        # Oldest Latest card (11 July 2025), dropped when the 25 Sep 2026 nets story joined.
+        "common-shelduck-protected-migrant-lebanon",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
