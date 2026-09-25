@@ -94,21 +94,37 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     assert "الفروسية" not in mobile
     assert "الحياة البرية والتخييم" not in mobile
     assert "حياة برية وتخييم" not in mobile
+    sayd_children = ["صيد طيور", "صقارة", "صيد بر", "صيد بحري"]
+    sayd_at = [mobile.index(f">{label}<") for label in sayd_children]
+    assert sayd_at == sorted(sayd_at)
+    assert mobile.index(">صيد<") < sayd_at[0]
+    assert sayd_at[-1] < mobile.index(">المزيد<")
+    assert 'class="mobile-more mobile-sub"' in mobile
     more_ar = ["شعر وفن", "قوانين الصيد", "موسوعة الطيور", "صيد TV", "صور"]
     more_at = [mobile.index(f">{label}<") for label in more_ar]
     assert more_at == sorted(more_at)
     assert mobile.index(">المزيد<") < mobile.index(">شعر وفن<")
-    for hidden in ("صقارة", "صيد بر", "صيد بحري", "الصقارة", "صيد البر", "الصيد البحري", "الرئيسية"):
+    more_slice = mobile[mobile.index(">المزيد<"):]
+    for child in sayd_children:
+        assert f">{child}<" not in more_slice
+    for hidden in ("الصقارة", "صيد البر", "الصيد البحري", "الرئيسية"):
         assert f">{hidden}<" not in mobile
     en_mobile = ia.mobile_nav_html("en", 1)
     assert ">Wildlife<" in en_mobile
     assert "More" in en_mobile
+    en_children = ["Bird Hunting", "Falconry", "Land Hunting", "Marine Hunting"]
+    en_child_at = [en_mobile.index(label) for label in en_children]
+    assert en_child_at == sorted(en_child_at)
+    assert en_mobile.index(">Hunting<") < en_child_at[0]
+    assert en_child_at[-1] < en_mobile.index(">More<")
     more_en = ["Poetry &amp; Art", "Hunting Laws", "Bird Encyclopedia", "Sayd TV", "Photos"]
     more_en_at = [en_mobile.index(label) for label in more_en]
     assert more_en_at == sorted(more_en_at)
     assert en_mobile.index("More") < en_mobile.index("Poetry &amp; Art")
-    for hidden in ("Falconry", "Land Hunting", "Marine Hunting", ">Home<"):
-        assert hidden not in en_mobile
+    en_more = en_mobile[en_mobile.index(">More<"):]
+    for child in en_children:
+        assert child not in en_more
+    assert ">Home<" not in en_mobile
     footer = ia.footer_doors_html("ar", 0)
     drawer = ia.drawer_nav_inner("ar", 0)
     for surface in (footer, drawer):

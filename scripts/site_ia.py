@@ -552,17 +552,41 @@ def desktop_nav_inner(lang: str, depth: int) -> str:
     return "\n".join(parts)
 
 
+def _mobile_details(summary: str, links: list[str], extra_class: str = "") -> str:
+    klass = "mobile-more" if not extra_class else f"mobile-more {extra_class}"
+    body = "\n".join(links)
+    return (
+        f'          <details class="{klass}">\n'
+        f"            <summary>{summary}</summary>\n"
+        "            <div class=\"mobile-more-panel\">\n"
+        f"{body}\n"
+        "            </div>\n"
+        "          </details>"
+    )
+
+
 def mobile_nav_html(lang: str, depth: int) -> str:
-    """First four doors, then المزيد / More with the other five, empty or not."""
+    """First four doors, then المزيد / More with the other five, empty or not.
+
+    Hunting's children expand under the bar label (صيد / Hunting), the same
+    four doors as the desktop dropdown. They are not listed inside المزيد / More.
+    """
     more_label = "More" if lang == "en" else "المزيد"
     aria = "Mobile menu" if lang == "en" else "قائمة الجوال"
     by_id = {door["id"]: door for door in DOORS}
     bar = []
     for door_id in MOBILE_BAR:
         door = by_id[door_id]
-        bar.append(
-            f'          {_link(_href(depth, door["folder"]), chrome_label(door, lang, short=True))}'
-        )
+        label = chrome_label(door, lang, short=True)
+        children = door["children"]
+        if children:
+            child_links = [
+                f'            {_link(_href(depth, child["folder"]), chrome_label(child, lang))}'
+                for child in children
+            ]
+            bar.append(_mobile_details(html.escape(label, quote=False), child_links, "mobile-sub"))
+            continue
+        bar.append(f'          {_link(_href(depth, door["folder"]), label)}')
     more = []
     for door in DOORS:
         if door["id"] in MOBILE_BAR:

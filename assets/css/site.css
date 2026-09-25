@@ -436,6 +436,11 @@ html[dir="ltr"] .feed-title {
     overflow: visible;
     z-index: 80;
   }
+  /* Hunting sits at the start of the bar; المزيد / More stays end-aligned. */
+  .mobile-sub > .mobile-more-panel {
+    inset-inline-end: auto;
+    inset-inline-start: 0;
+  }
   .mobile-nav > a {
     color: var(--olive);
     white-space: nowrap;
