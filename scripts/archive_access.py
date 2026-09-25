@@ -475,7 +475,347 @@ def rewrite_post_legacy_links(docs: Path, mapping: dict[str, str]) -> int:
     return changed
 
 
+_ARTICLE_RE = re.compile(
+    r'(<article class="article-content">)(.*?)(</article>)',
+    re.DOTALL,
+)
+_IMG_BLOCK_RE = re.compile(
+    r"<a\b[^>]*>\s*<img\b[^>]*>\s*</a>|<img\b[^>]*>",
+    re.IGNORECASE,
+)
+_P_IMAGES_ONLY_RE = re.compile(
+    r"<p\b[^>]*>\s*(?:(?:<a\b[^>]*>\s*)?<img\b[^>]*>\s*(?:</a>\s*)?)+\s*</p>",
+    re.IGNORECASE,
+)
+_SRC_ATTR_RE = re.compile(r"""src=(['"])(.*?)\1""", re.IGNORECASE | re.DOTALL)
+_UPLOAD_YEAR_RE = re.compile(r"media/uploads/(\d{4})/")
+REWIRE_MIN_YEAR = 2020
+
+
+def _src_of(block: str) -> str:
+    match = _SRC_ATTR_RE.search(block)
+    return match.group(2) if match else ""
+
+
+def _upload_year(src: str) -> int | None:
+    match = _UPLOAD_YEAR_RE.search(src or "")
+    return int(match.group(1)) if match else None
+
+
+def _file_on_page(html: str, name: str) -> bool:
+    """True when ``name`` is a path segment, not merely a word in the prose."""
+    return bool(name) and f"/{name}" in html
+
+
+def _visible_chars(html: str) -> str:
+    chars: list[str] = []
+    index = 0
+    while index < len(html):
+        if html[index] == "<":
+            close = html.find(">", index)
+            if close < 0:
+                break
+            index = close + 1
+            continue
+        chars.append(html[index])
+        index += 1
+    return "".join(chars)
+
+
+def _visible_index(html: str, raw_pos: int) -> int:
+    index = visible = 0
+    while index < raw_pos and index < len(html):
+        if html[index] == "<":
+            close = html.find(">", index)
+            index = close + 1 if close >= 0 else raw_pos
+            continue
+        visible += 1
+        index += 1
+    return visible
+
+
+def _first_visible_text(visible: str, index: int) -> int:
+    while index < len(visible) and visible[index].isspace():
+        index += 1
+    return index
+
+
+def _local_image_units(html: str, min_year: int = REWIRE_MIN_YEAR) -> list[tuple[int, int, str]]:
+    """Image blocks (or image-only paragraphs) whose src is a local 2020+ upload."""
+    spans: list[tuple[int, int, str]] = []
+    occupied: list[tuple[int, int]] = []
+    for match in _P_IMAGES_ONLY_RE.finditer(html):
+        blocks = _IMG_BLOCK_RE.findall(match.group(0))
+        years = [_upload_year(_src_of(block)) for block in blocks]
+        if years and all(year is not None and year >= min_year for year in years):
+            spans.append((match.start(), match.end(), match.group(0)))
+            occupied.append((match.start(), match.end()))
+
+    def covered(start: int, end: int) -> bool:
+        return any(start >= left and end <= right for left, right in occupied)
+
+    for match in _IMG_BLOCK_RE.finditer(html):
+        if covered(match.start(), match.end()):
+            continue
+        year = _upload_year(_src_of(match.group(0)))
+        if year is not None and year >= min_year:
+            spans.append((match.start(), match.end(), match.group(0)))
+    spans.sort()
+    return spans
+
+
+def _insert_at_visible(html: str, index_map: list[int], vis_index: int, unit: str, block: bool) -> str:
+    if vis_index >= len(index_map):
+        return html + unit
+    idx = index_map[vis_index]
+    if block:
+        cursor = idx
+        while True:
+            probe = cursor
+            while probe > 0 and html[probe - 1].isspace():
+                probe -= 1
+            opener = re.search(r"<[^>/][^>]*>$", html[:probe])
+            if not opener:
+                break
+            cursor = opener.start()
+        idx = cursor
+    return html[:idx] + unit + html[idx:]
+
+
+def restore_stripped_upload_images(
+    published: str,
+    fresh: str,
+    *,
+    min_year: int = REWIRE_MIN_YEAR,
+) -> tuple[str, list[str]]:
+    """Insert local 2020+ ``<img>`` tags that ``fresh`` has and ``published`` lost.
+
+    ``fresh`` is ``rewrite_html`` of the original article body (local src only
+    when the file exists). Existing images — including pre-2020 Wayback
+    variants — stay put. Alignment uses visible text, so a mismatch returns
+    the published HTML unchanged.
+    """
+    published_visible = _visible_chars(published)
+    fresh_visible = _visible_chars(fresh)
+    index_map: list[int] = []
+    cursor = 0
+    while cursor < len(published):
+        if published[cursor] == "<":
+            close = published.find(">", cursor)
+            if close < 0:
+                break
+            cursor = close + 1
+            continue
+        index_map.append(cursor)
+        cursor += 1
+
+    events: list[tuple[int, str, bool, list[str]]] = []
+    for _start, end, raw in _local_image_units(fresh, min_year):
+        names = [Path(_src_of(block)).name for block in _IMG_BLOCK_RE.findall(raw)]
+        names = [name for name in names if name]
+        if names and all(_file_on_page(published, name) for name in names):
+            continue
+        block = raw.lstrip().lower().startswith("<p")
+        if any(_file_on_page(published, name) for name in names):
+            missing = [
+                block_html
+                for block_html in _IMG_BLOCK_RE.findall(raw)
+                if not _file_on_page(published, Path(_src_of(block_html)).name)
+            ]
+            raw = "".join(missing)
+            block = False
+            names = [Path(_src_of(block_html)).name for block_html in _IMG_BLOCK_RE.findall(raw)]
+        at = _first_visible_text(fresh_visible, _visible_index(fresh, end))
+        events.append((at, raw, block, names))
+
+    fresh_i = published_i = 0
+    event_i = 0
+    inserts: list[tuple[int, str, bool, list[str]]] = []
+    while True:
+        while event_i < len(events) and events[event_i][0] == fresh_i:
+            inserts.append((published_i, events[event_i][1], events[event_i][2], events[event_i][3]))
+            event_i += 1
+        if fresh_i >= len(fresh_visible) and published_i >= len(published_visible):
+            break
+        fresh_space = fresh_i < len(fresh_visible) and fresh_visible[fresh_i].isspace()
+        published_space = published_i < len(published_visible) and published_visible[published_i].isspace()
+        if fresh_space and not published_space:
+            fresh_i += 1
+            continue
+        if published_space and not fresh_space:
+            published_i += 1
+            continue
+        if fresh_space and published_space:
+            fresh_i += 1
+            published_i += 1
+            continue
+        if (
+            fresh_i >= len(fresh_visible)
+            or published_i >= len(published_visible)
+            or fresh_visible[fresh_i] != published_visible[published_i]
+        ):
+            return published, []
+        fresh_i += 1
+        published_i += 1
+    if event_i < len(events):
+        return published, []
+
+    grouped: list[tuple[int, str, bool, list[str]]] = []
+    for vis_index, raw, block, names in inserts:
+        if grouped and grouped[-1][0] == vis_index:
+            prev_i, prev_raw, prev_block, prev_names = grouped[-1]
+            grouped[-1] = (prev_i, prev_raw + raw, prev_block and block, prev_names + names)
+        else:
+            grouped.append((vis_index, raw, block, names))
+
+    result = published
+    restored: list[str] = []
+    for vis_index, raw, block, names in sorted(grouped, key=lambda item: -item[0]):
+        result = _insert_at_visible(result, index_map, vis_index, raw, block)
+        restored.extend(names)
+    return result, restored
+
+
+def _norm_visible(html: str) -> str:
+    return re.sub(r"\s+", " ", _visible_chars(html)).strip()
+
+
+def _markdown_body(path: Path) -> tuple[str, str]:
+    text = path.read_text(encoding="utf-8", errors="replace")
+    if not text.startswith("---"):
+        return path.stem, text
+    end = text.find("\n---", 3)
+    if end == -1:
+        return path.stem, text
+    front = text[3:end]
+    slug_m = re.search(r"^slug:\s*[\"']?(.+?)[\"']?\s*$", front, re.M)
+    slug = slug_m.group(1).strip() if slug_m else path.stem
+    return slug, text[end + 4 :].lstrip("\n")
+
+
+def _rewrite_live_upload_urls(html: str, depth: int, media: Path, min_year: int) -> tuple[str, int]:
+    """Point 2020+ upload URLs at local files. Leave a URL alone when the file is missing."""
+    from media_rewrite import UPLOAD_URL_RE, public_src, year_of
+
+    rewritten = 0
+
+    def repl(match: re.Match[str]) -> str:
+        nonlocal rewritten
+        url = match.group("url")
+        year = year_of(url)
+        if year is None or year < min_year:
+            return match.group(0)
+        local = public_src(url, depth, media)
+        if not local:
+            return match.group(0)
+        rewritten += 1
+        return local
+
+    return UPLOAD_URL_RE.sub(repl, html), rewritten
+
+
+def rewire_recovered_article_images(
+    docs: Path | None = None,
+    content_posts: Path | None = None,
+    *,
+    min_year: int = REWIRE_MIN_YEAR,
+) -> dict[str, int]:
+    """Restore 2020+ article images from markdown using files already on disk.
+
+    Published HTML is the source of truth. This only rewrites ``<article>``
+    bodies under ``docs/posts/``. Nav, homepage, categories, and media
+    binaries are left untouched. An image is restored only when
+    ``docs/media/uploads/...`` exists.
+    """
+    from media_rewrite import local_media_file, rewrite_html, uploads_rel, year_of
+
+    docs = docs or DOCS
+    content_posts = content_posts or CONTENT_POSTS
+    media = docs / "media"
+    articles = imgs_restored = imgs_rewritten = skipped_missing = skipped_align = 0
+    skipped_names: set[str] = set()
+
+    for md in sorted(content_posts.glob("*.md")):
+        slug, body = _markdown_body(md)
+        page = docs / "posts" / slug / "index.html"
+        if not page.is_file():
+            page = docs / "posts" / md.stem / "index.html"
+        if not page.is_file():
+            continue
+        original = page.read_text(encoding="utf-8", errors="replace")
+        match = _ARTICLE_RE.search(original)
+        if not match:
+            continue
+        inner = match.group(2)
+        inner, rewritten = _rewrite_live_upload_urls(inner, 2, media, min_year)
+        fresh = rewrite_html(body, 2, media)
+        updated, restored = restore_stripped_upload_images(inner, fresh, min_year=min_year)
+        if not restored and any(
+            (_upload_year(_src_of(block)) or 0) >= min_year
+            and not _file_on_page(inner, Path(_src_of(block)).name)
+            for block in _IMG_BLOCK_RE.findall(fresh)
+        ):
+            skipped_align += 1
+        for img in _IMG_BLOCK_RE.findall(body):
+            src = _src_of(img)
+            rel = uploads_rel(src)
+            if not rel:
+                continue
+            year = year_of(src)
+            if year is None or year < min_year:
+                continue
+            if local_media_file(media, src):
+                continue
+            key = f"{slug}/{Path(rel).name}"
+            if key not in skipped_names:
+                skipped_names.add(key)
+                skipped_missing += 1
+        if updated == match.group(2) and rewritten == 0:
+            continue
+        if _norm_visible(updated) != _norm_visible(match.group(2)):
+            skipped_align += 1
+            continue
+        for name in restored:
+            src_m = re.search(rf"""src=(['"])([^'"]*/{re.escape(name)})\1""", updated)
+            if not src_m:
+                raise RuntimeError(f"{slug}: restored {name} has no src")
+            src = src_m.group(2)
+            if "wp-content" in src or src.startswith(("http://", "https://", "//")):
+                raise RuntimeError(f"{slug}: restored src still remote {src}")
+            path = (page.parent / src.split("?", 1)[0]).resolve()
+            try:
+                path.relative_to(media.resolve())
+            except ValueError as exc:
+                raise RuntimeError(f"{slug}: src escapes media {src}") from exc
+            if not path.is_file() or path.stat().st_size <= 32:
+                raise RuntimeError(f"{slug}: missing local file for {src}")
+        page.write_text(
+            original[: match.start(2)] + updated + original[match.end(2) :],
+            encoding="utf-8",
+        )
+        articles += 1
+        imgs_restored += len(restored)
+        imgs_rewritten += rewritten
+
+    stats = {
+        "articles_touched": articles,
+        "img_src_rewritten": imgs_rewritten,
+        "tags_restored": imgs_restored,
+        "skipped_no_local_file": skipped_missing,
+        "skipped_align": skipped_align,
+    }
+    print(
+        "rewire 2020+: "
+        f"articles={articles} restored={imgs_restored} rewritten={imgs_rewritten} "
+        f"skipped_missing={skipped_missing} skipped_align={skipped_align}"
+    )
+    return stats
+
+
 def main() -> None:
+    if "--rewire-2020" in sys.argv:
+        rewire_recovered_article_images(DOCS)
+        return
     mapping = load_id_slug_map(DOCS)
     posts = [{"id": post_id, "slug": slug} for post_id, slug in sorted(mapping.items(), key=lambda item: int(item[0]))]
     stubs = write_legacy_permalink_stubs(DOCS, posts)
