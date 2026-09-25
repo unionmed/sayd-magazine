@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان/
 **Source AR title:** ضبط أكثر من 20 ألف م² شباك صيد في لبنان
 **Suggested slug:** over-20000-m2-bird-nets-seized-lebanon
-**Category:** Hunting
+**Category:** Bird Hunting
 
 ## Lead
 

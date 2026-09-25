@@ -3,7 +3,7 @@
 **Source:** Taif — Sayd Magazine
 **Date:** 22 September 2026
 **Suggested slug:** taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah
-**Category:** Hunting & Equestrian
+**Category:** Equestrian
 **Image:** taif-racing-hawiyah.jpg
 **Place name:** Al-Hawiyah (الحَوِيّة)
 

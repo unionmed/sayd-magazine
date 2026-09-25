@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/صيد-تعود-بحلة-جديدة-ورؤية-اوسع/
 **Source AR title:** صيد تعود... بحلة جديدة ورؤية اوسع
 **Suggested slug:** sayd-returns-new-look-wider-vision
-**Category:** Editorial / Our Word (كلمتنا)
+**Category:** Hunting
 
 ## Lead
 

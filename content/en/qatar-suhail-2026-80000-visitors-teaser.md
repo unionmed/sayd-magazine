@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/
 **Source AR title:** قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»
 **Suggested slug:** qatar-suhail-2026-80000-visitors-teaser
-**Category:** News
+**Category:** Hunting
 
 ## Lead
 

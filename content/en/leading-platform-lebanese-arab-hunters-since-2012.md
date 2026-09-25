@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/المنصة-الرائدة-لنخبة-الصيادين-اللبنا/`
 **Source AR title:** المنصة الرائدة لنخبة الصيادين اللبنانيين والعرب ولعشّاق الصيد والطبيعة منذ عام 2012
 **Suggested slug:** `leading-platform-lebanese-arab-hunters-since-2012`
-**Category:** Editorial / Our Word (كلمتنا)
+**Category:** Hunting
 
 ## Lead
 

@@ -304,7 +304,7 @@ def write_ar_article() -> None:
 <article class="card overlay">
   <a class="thumb" href="../../posts/كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف/index.html"><img src="../../media/uploads/2026/09/farmers-storks-migrating-palestine.jpg" alt="أسراب اللقلق الأبيض تعبر سماء المشرق في موسم الهجرة الخريفية" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
+    <div class="meta">20 أيلول 2026<span class="cat-pill">الحياة البرية والتخييم</span></div>
     <h3><a href="../../posts/كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف/index.html">كيف يحمي المزارع الطيور المهاجرة هذا الخريف؟</a></h3>
   </div>
 </article>
@@ -500,7 +500,7 @@ def write_en_article() -> None:
 <article class="card overlay">
   <a class="thumb" href="../how-farmers-protect-migratory-birds-this-autumn/index.html"><img src="../../../media/uploads/2026/09/farmers-storks-migrating-palestine.jpg" alt="White storks migrating over the Levant this autumn" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 September 2026<span class="cat-pill">Interviews &amp; Investigations</span></div>
+    <div class="meta">20 September 2026<span class="cat-pill">Wildlife &amp; Camping</span></div>
     <h3><a href="../how-farmers-protect-migratory-birds-this-autumn/index.html">How Can Farmers Protect Migratory Birds This Autumn?</a></h3>
   </div>
 </article>

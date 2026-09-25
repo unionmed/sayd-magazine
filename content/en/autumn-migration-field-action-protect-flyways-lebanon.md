@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية/
 **Source AR title:** مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان
 **Suggested slug:** autumn-migration-field-action-protect-flyways-lebanon
-**Category:** News / Wild Hunting
+**Category:** Hunting
 
 ## Lead
 

@@ -3,7 +3,7 @@
 **Status:** Published — Nayef approved 22 September 2026
 **Type:** Investigation
 **Suggested slug:** how-migration-routes-lost-seven-birds-in-150-years
-**Category:** Interviews & Investigations
+**Category:** Hunting
 **Cover:** media/uploads/2026/09/slender-billed-curlew-last-photo.jpg
 
 ## Lead

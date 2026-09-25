@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/
 **Source AR title:** حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام
 **Suggested slug:** protecting-autumn-migratory-birds-lebanon-khatib-2017
-**Category:** News
+**Category:** Hunting
 
 ## Lead
 

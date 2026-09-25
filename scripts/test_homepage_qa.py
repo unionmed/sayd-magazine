@@ -534,11 +534,15 @@ def test_south_lebanon_investigation_republished() -> None:
     assert fire.is_file() and fire.stat().st_size > 20_000
     assert "feature-ecocide" not in ar
     assert "feature-ecocide" not in en
-    cat = (DOCS / "category" / "مقابلات-تحقيقات" / "index.html").read_text(encoding="utf-8")
+    cat = (DOCS / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
     listing = cat.split('class="post-list"', 1)[1]
     assert 0 <= listing.find("سماء-الكوكب-تفقد-توازنها") < listing.find(
         "كيف-فقدت-مسارات-الهجرة"
     ) < listing.find("منظمات-دولية-ابادة-بيئية-جنوب-لبنان")
+    interviews = (DOCS / "category" / "مقابلات-تحقيقات" / "index.html").read_text(encoding="utf-8")
+    interviews_list = interviews.split('class="post-list"', 1)[1].split("</main>", 1)[0]
+    assert "سماء-الكوكب-تفقد-توازنها" not in interviews_list
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in interviews_list
 
 
 def test_egypt_hunting_news_live_surfaces() -> None:
@@ -884,9 +888,10 @@ def test_nayef_unlinked_chrome_and_poetry_rename() -> None:
         assert "https://sayd-magazine.com/articles/" in page
         assert 'class="post-row"' not in page
     assert "category/%D8%B4%D8%B1%D9%8A%D8%B7/" not in (DOCS / "sitemap.xml").read_text(encoding="utf-8")
-    # Deep badge on a miscellany story still points at the kept index.
+    # Bee-eater is a species card: one door, موسوعة الطيور.
     bee = (DOCS / "posts" / "طائر-الوروار-الأوروبي" / "index.html").read_text(encoding="utf-8")
-    assert "category/جعبة-المنوعات/index.html" in bee
+    assert "category/موسوعة-الطيور/index.html" in bee
+    assert "category/جعبة-المنوعات/index.html" not in bee.split("article-header", 1)[1].split("article-content", 1)[0]
 
 
 def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
@@ -1055,11 +1060,13 @@ def test_bekaa_nets_latest_and_ticker() -> None:
     assert "المصدر:" not in article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
     body = article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
     assert "أعلنت المديرية" not in body and "صدر عن" not in body
-    assert 'href="../../category/صيد/index.html"' in article
+    assert 'href="../../category/صيد-الطيور/index.html"' in article
+    assert "صيد الطيور" in article.split("article-header", 1)[1].split("article-content", 1)[0]
     assert "قوانين" not in article.split("article-header", 1)[1].split("article-content", 1)[0]
-    cat = (DOCS / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
+    cat = (DOCS / "category" / "صيد-الطيور" / "index.html").read_text(encoding="utf-8")
     listing = cat.split('class="post-list"', 1)[1]
-    assert listing.find(ar_slug) < listing.find("العد-التنازلي-لختام-موسم-الطائف")
+    assert listing.find(ar_slug) >= 0
+    assert "العد-التنازلي-لختام-موسم-الطائف" not in listing
     assert f"<loc>https://sayd-magazine.com/en/posts/{en_slug}/</loc>" in (
         DOCS / "sitemap.xml"
     ).read_text(encoding="utf-8")
