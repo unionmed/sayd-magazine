@@ -100,6 +100,7 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     assert mobile.index(">صيد<") < sayd_at[0]
     assert sayd_at[-1] < mobile.index(">المزيد<")
     assert 'class="mobile-more mobile-sub"' in mobile
+    assert mobile.count('name="mobile-nav"') == 2
     more_ar = ["شعر وفن", "قوانين الصيد", "موسوعة الطيور", "صيد TV", "صور"]
     more_at = [mobile.index(f">{label}<") for label in more_ar]
     assert more_at == sorted(more_at)

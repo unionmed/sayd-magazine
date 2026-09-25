@@ -556,7 +556,7 @@ def _mobile_details(summary: str, links: list[str], extra_class: str = "") -> st
     klass = "mobile-more" if not extra_class else f"mobile-more {extra_class}"
     body = "\n".join(links)
     return (
-        f'          <details class="{klass}">\n'
+        f'          <details class="{klass}" name="mobile-nav">\n'
         f"            <summary>{summary}</summary>\n"
         "            <div class=\"mobile-more-panel\">\n"
         f"{body}\n"
@@ -596,7 +596,7 @@ def mobile_nav_html(lang: str, depth: int) -> str:
     more_html = ""
     if more:
         more_html = (
-            "          <details class=\"mobile-more\">\n"
+            "          <details class=\"mobile-more\" name=\"mobile-nav\">\n"
             f"            <summary>{more_label}</summary>\n"
             "            <div class=\"mobile-more-panel\">\n"
             + "\n".join(more)
