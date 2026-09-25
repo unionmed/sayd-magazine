@@ -230,7 +230,7 @@ html[dir="ltr"] .feed-title {
 
 .header-inner {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
   min-height: var(--header-h);
@@ -265,14 +265,17 @@ html[dir="ltr"] .feed-title {
 
 .main-nav {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
   gap: 0;
+  row-gap: 0.05rem;
   margin-inline-start: auto;
   font-size: 0.8rem;
   font-weight: 700;
   overflow-x: auto;
   min-width: 0;
+  flex: 1 1 auto;
 }
 
 .main-nav a {
@@ -1586,7 +1589,7 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدستكم/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رياضات/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مصيدة/index.html"],
-:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/قوانين/index.html"],
+:is(.drawer-nav, .sidebar, .site-footer) a[href$="category/قوانين/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدسة-التاريخ/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدستنا/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/خرائط/index.html"],

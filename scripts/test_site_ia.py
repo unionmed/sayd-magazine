@@ -42,30 +42,60 @@ def test_demotion_drops_a_slug_already_in_latest() -> None:
     assert len(set(out["latest"])) == 10
 
 
-def test_empty_doors_stay_off_the_first_screen() -> None:
+def test_desktop_nav_shows_all_nine_doors() -> None:
+    """Desktop lists every door. Mobile stays the first four plus More."""
     visible = {door["id"] for door in ia.visible_doors()}
     assert visible == {"hunting", "gear", "equestrian", "wildlife", "tv", "photos"}
-    assert "poetry" not in visible
-    assert "laws" not in visible
-    assert "birds" not in visible
     hunting = next(door for door in ia.visible_doors() if door["id"] == "hunting")
     assert [child["id"] for child in hunting["children"]] == ["bird-hunting"]
     nav = ia.desktop_nav_inner("ar", 0)
-    assert "صيد الطيور" in nav
-    assert "الصقارة" not in nav
-    assert "قوانين الصيد" not in nav
-    assert "موسوعة الطيور" not in nav
-    assert "شعر وفن" not in nav
+    ar_labels = [
+        "صيد",
+        "الرماية والعتاد",
+        "الفروسية",
+        "الحياة البرية والتخييم",
+        "شعر وفن",
+        "قوانين الصيد",
+        "موسوعة الطيور",
+        "صيد TV",
+        "صور",
+    ]
+    ar_at = [nav.index(label) for label in ar_labels]
+    assert ar_at == sorted(ar_at)
+    for child in ("صيد الطيور", "الصقارة", "صيد البر", "الصيد البحري"):
+        assert child in nav
+    assert nav.index("الصيد البحري") < nav.index("الرماية والعتاد")
+    en = ia.desktop_nav_inner("en", 2)
+    en_labels = [
+        "Hunting",
+        "Shooting &amp; Gear",
+        "Equestrian",
+        "Wildlife &amp; Camping",
+        "Poetry &amp; Art",
+        "Hunting Laws",
+        "Bird Encyclopedia",
+        "Sayd TV",
+        "Photos",
+    ]
+    en_at = [en.index(label) for label in en_labels]
+    assert en_at == sorted(en_at)
+    for child in ("Bird Hunting", "Falconry", "Land Hunting", "Marine Hunting"):
+        assert child in en
     mobile = ia.mobile_nav_html("ar", 1)
     assert "برية وتخييم" in mobile
     assert "الحياة البرية والتخييم" not in mobile
     assert "المزيد" in mobile
     assert "صيد TV" in mobile
-    en = ia.desktop_nav_inner("en", 2)
-    assert "Shooting &amp; Gear" in en
-    assert "Wildlife &amp; Camping" in en
-    assert "Bird Hunting" in en
-    assert "Hunting Laws" not in en
+    assert "صور" in mobile
+    for hidden in ("شعر وفن", "قوانين الصيد", "موسوعة الطيور", "الصقارة", "صيد البر"):
+        assert hidden not in mobile
+    en_mobile = ia.mobile_nav_html("en", 1)
+    assert ">Wildlife<" in en_mobile
+    assert "More" in en_mobile
+    assert "Sayd TV" in en_mobile
+    assert "Photos" in en_mobile
+    for hidden in ("Poetry &amp; Art", "Hunting Laws", "Bird Encyclopedia", "Falconry"):
+        assert hidden not in en_mobile
     assert ia.TICKER_LABEL_AR == "من كل وادي خبر"
 
 
@@ -100,7 +130,7 @@ def test_primary_door_is_singular() -> None:
 if __name__ == "__main__":
     test_demotion_ladder_and_unique_urls()
     test_demotion_drops_a_slug_already_in_latest()
-    test_empty_doors_stay_off_the_first_screen()
+    test_desktop_nav_shows_all_nine_doors()
     test_disclosure_only_for_a_real_commercial_link()
     test_primary_door_is_singular()
     print("test_site_ia: ok")

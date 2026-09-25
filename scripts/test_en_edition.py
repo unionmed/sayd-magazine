@@ -763,7 +763,7 @@ def test_empty_2022_category_chrome_is_css_only() -> None:
     assert 'href="category/رماية/index.html"' not in home
     assert 'href="category/قوانين-وخرائط/index.html"' not in home
     assert 'href="category/بعدستكم/index.html"' not in home
-    assert 'href="category/قوانين/index.html"' not in home
+    assert 'href="category/قوانين/index.html"' in home.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
     assert 'href="category/عتاد-وسلاح-الصيد/index.html"' in home
     assert 'href="category/صور/index.html"' in home
     assert 'href="../category/رياضات-وسياحة-بيئية/index.html"' not in en

@@ -853,7 +853,7 @@ def test_nayef_unlinked_chrome_and_poetry_rename() -> None:
     assert "%D8%AB%D9%82%D8%A7%D9%81%D8%A9-%D9%88%D8%AA%D8%B1%D8%A7%D8%AB" in culture
     assert (DOCS / "category" / "ثقافة-وتراث").is_dir()
     team = (DOCS / "en" / "team" / "index.html").read_text(encoding="utf-8")
-    assert "Poetry &amp; Art" not in team.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
+    assert "Poetry &amp; Art" in team.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
     assert "Culture and heritage" not in team
     assert ">Hunting<" in team
     for rel in (

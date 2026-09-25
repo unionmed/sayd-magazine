@@ -448,9 +448,28 @@ def _link(href: str, label: str) -> str:
     return f'<a href="{href}">{html.escape(label, quote=False)}</a>'
 
 
+def desktop_nav_folders() -> set[str]:
+    folders: set[str] = set()
+    for door in DOORS:
+        folders.add(door["folder"])
+        for child in door["children"]:
+            folders.add(child["folder"])
+    return folders
+
+
+def desktop_nav_doors() -> list[dict]:
+    """All nine doors and every صيد child, including landings with no 2026+ material."""
+    out = []
+    for door in DOORS:
+        copy = dict(door)
+        copy["children"] = list(door["children"])
+        out.append(copy)
+    return out
+
+
 def desktop_nav_inner(lang: str, depth: int) -> str:
     parts: list[str] = []
-    for door in visible_doors():
+    for door in desktop_nav_doors():
         label = door["en"] if lang == "en" else door["ar"]
         href = _href(depth, door["folder"])
         children = door["children"]
