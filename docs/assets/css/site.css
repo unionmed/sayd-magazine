@@ -389,7 +389,7 @@ html[dir="ltr"] .feed-title {
   background: var(--card);
   border: 1px solid var(--hair);
   box-shadow: 0 8px 20px rgba(22, 23, 15, 0.12);
-  z-index: 50;
+  z-index: 80;
   min-width: 11rem;
   display: flex;
   flex-direction: column;
@@ -400,6 +400,7 @@ html[dir="ltr"] .feed-title {
   font-weight: 700;
   padding: 0.55rem 0.8rem;
   border-bottom: 1px solid var(--hair);
+  white-space: nowrap;
 }
 
 .mobile-more-panel a:last-child { border-bottom: none; }
@@ -429,6 +430,11 @@ html[dir="ltr"] .feed-title {
     font-size: 0.78rem;
     font-weight: 800;
     padding-bottom: 0.15rem;
+  }
+  /* overflow-x:auto also clips overflow-y, which hides the absolute panel. */
+  .mobile-nav:has(.mobile-more[open]) {
+    overflow: visible;
+    z-index: 80;
   }
   .mobile-nav > a {
     color: var(--olive);
