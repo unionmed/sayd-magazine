@@ -217,135 +217,135 @@ AR_FALLBACK_CARDS: dict[str, str] = {
     SOUTH_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{SOUTH_AR}/index.html"><img src="{SOUTH_IMG}" alt="{SOUTH_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 أيلول 2026</div>
     <h3><a href="posts/{SOUTH_AR}/index.html">{SOUTH_TITLE_AR}</a></h3>
+    <div class="meta">20 أيلول 2026</div>
   </div>
 </article>""",
     BIRDLIFE_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{BIRDLIFE_AR}/index.html"><img src="{BIRDLIFE_IMG}" alt="{BIRDLIFE_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 أيلول 2026</div>
     <h2><a href="posts/{BIRDLIFE_AR}/index.html">{BIRDLIFE_HOME_TITLE_AR}</a></h2>
+    <div class="meta">23 أيلول 2026</div>
   </div>
 </article>""",
     CURLEW_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{CURLEW_AR}/index.html"><img src="{CURLEW_IMG}" alt="{CURLEW_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 أيلول 2026</div>
     <h2><a href="posts/{CURLEW_AR}/index.html">{CURLEW_TITLE_AR}</a></h2>
+    <div class="meta">22 أيلول 2026</div>
   </div>
 </article>""",
     "الصيّادة-السورية-أماني-الحمصي": """<article class="card overlay">
   <a class="thumb" href="posts/الصيّادة-السورية-أماني-الحمصي/index.html"><img src="media/uploads/2022/08/اماني-الحمصي-2.jpg" alt="الصيّادة السورية أماني الحمصي" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 آب 2022</div>
     <h3><a href="posts/الصيّادة-السورية-أماني-الحمصي/index.html">الصيّادة السورية أماني الحمصي: أنا ضدّ الصيد الجائر.. وأتمنى سَنّ قانون صيد في سوريا يُنصف الطبيعة والصيّاد</a></h3>
+    <div class="meta">20 آب 2022</div>
   </div>
 </article>""",
     CABS_AR: """<article class="card card-stack">
   <a class="thumb" href="posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html"><img src="media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="أعضاء من وحدة مكافحة الصيد الجائر مع طيور أُنقذت خلال دورية مشتركة — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر" loading="lazy"></a>
   <div class="body">
-    <div class="meta">13 أيلول 2026</div>
     <h3><a href="posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html">حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام</a></h3>
+    <div class="meta">13 أيلول 2026</div>
   </div>
 </article>""",
     SUHAIL_AR: """<article class="card card-stack">
   <a class="thumb" href="posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html"><img src="media/uploads/2026/09/hero-closing-80k.jpg" alt="80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة" loading="lazy"></a>
   <div class="body">
-    <div class="meta">13 أيلول 2026</div>
     <h3><a href="posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/index.html">80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة</a></h3>
+    <div class="meta">13 أيلول 2026</div>
   </div>
 </article>""",
     TAIF_AR: """<article class="card card-stack">
   <a class="thumb" href="posts/العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني/index.html"><img src="media/uploads/2026/09/taif-racing-hawiyah.jpg" alt="خيّال وجواد أشهب على مضمار الحَوِيّة — ختام موسم سباقات الطائف 2026" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 أيلول 2026</div>
     <h3><a href="posts/العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني/index.html">العد التنازلي لختام موسم الطائف.. ترقّب خليجي لكأسي «الملك فيصل» و«اليوم الوطني» في الحَوِيّة</a></h3>
+    <div class="meta">22 أيلول 2026</div>
   </div>
 </article>""",
     SAUDI_AR: """<article class="card card-stack">
   <a class="thumb" href="posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html"><img src="media/uploads/2026/09/ncw-wildlife-card.jpg" alt="المركز الوطني لتنمية الحياة الفطرية — السعودية" loading="lazy"></a>
   <div class="body">
-    <div class="meta">9 أيلول 2026</div>
     <h3><a href="posts/السعودية-تطلق-موسم-الصيد-السادس-بضواب/index.html">السعودية تطلق موسم الصيد السادس وتشدد على الضوابط</a></h3>
+    <div class="meta">9 أيلول 2026</div>
   </div>
 </article>""",
     ADONIS_AR: """<article class="card card-stack feature-adonis">
   <a class="thumb" href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html"><img src="media/uploads/2026/09/sayd-returns-adonis-editor.jpg" alt="أدونيس الخطيب — «صيد» تعود… وهذا ما نريد أن نقدّمه لكم" loading="lazy"></a>
   <div class="body">
-    <div class="meta">8 أيلول 2026</div>
     <h3><a href="posts/صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم/index.html">«صيد» تعود… وهذا ما نريد أن نقدّمه لكم</a></h3>
+    <div class="meta">8 أيلول 2026</div>
     <p class="byline" style="font-size:0.72rem;color:var(--muted);margin:0.15rem 0 0;line-height:1.35;">رئيس التحرير أدونيس الخطيب</p>
   </div>
 </article>""",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": """<article class="card overlay">
   <a class="thumb" href="posts/مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات/index.html"><img src="media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg" alt="باحث ميداني يزيل طائراً من شباك مخالفة." loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 أيلول 2026</div>
     <h3><a href="posts/مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات/index.html">مصر: قرار جديد لتنظيم الصيد وملاحقة المخالفات في موسم هجرة الخريف</a></h3>
+    <div class="meta">20 أيلول 2026</div>
   </div>
 </article>""",
     NETS_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{NETS_AR}/index.html"><img src="{NETS_IMG}" alt="{NETS_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">25 أيلول 2026</div>
     <h3><a href="posts/{NETS_AR}/index.html">{NETS_TITLE_AR}</a></h3>
+    <div class="meta">25 أيلول 2026</div>
   </div>
 </article>""",
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": """<article class="card overlay">
   <a class="thumb" href="posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html"><img src="media/uploads/2026/09/gallery-katara-crowd.jpg" alt="قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»" loading="lazy"></a>
   <div class="body">
-    <div class="meta">13 أيلول 2026</div>
     <h3><a href="posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html">قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»</a></h3>
+    <div class="meta">13 أيلول 2026</div>
   </div>
 </article>""",
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": """<article class="card overlay">
   <a class="thumb" href="posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html"><img src="media/uploads/2026/09/duck-aswan-960.jpg" alt="مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟" loading="lazy"></a>
   <div class="body">
-    <div class="meta">8 أيلول 2026</div>
     <h3><a href="posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a></h3>
+    <div class="meta">8 أيلول 2026</div>
   </div>
 </article>""",
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه": """<article class="card overlay">
   <a class="thumb" href="posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/index.html"><img src="media/uploads/2025/09/Adonis.jpg" alt="تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة" loading="lazy"></a>
   <div class="body">
-    <div class="meta">30 أيلول 2025</div>
     <h3><a href="posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/index.html">تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة</a></h3>
+    <div class="meta">30 أيلول 2025</div>
   </div>
 </article>""",
     "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر": """<article class="card overlay">
   <a class="thumb" href="posts/الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر/index.html"><img src="media/uploads/2025/07/IMG_3009-2-1024x683.jpg" alt="الشهرمان الشائع: طائر مائي محمي ومهاجر نادر في لبنان" loading="lazy"></a>
   <div class="body">
-    <div class="meta">11 تموز 2025</div>
     <h3><a href="posts/الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر/index.html">الشهرمان الشائع: طائر مائي محمي ومهاجر نادر في لبنان</a></h3>
+    <div class="meta">11 تموز 2025</div>
   </div>
 </article>""",
     "المنصة-الرائدة-لنخبة-الصيادين-اللبنا": """<article class="card overlay">
   <a class="thumb" href="posts/المنصة-الرائدة-لنخبة-الصيادين-اللبنا/index.html"><img src="media/uploads/2024/09/Jocy-card.jpg" alt="مديرة التحرير جوسلين بو راشد البستاني — مجلة صيد" loading="lazy"></a>
   <div class="body">
-    <div class="meta">1 تشرين الأول 2024</div>
     <h3><a href="posts/المنصة-الرائدة-لنخبة-الصيادين-اللبنا/index.html">المنصة الرائدة لنخبة الصيادين اللبنانيين والعرب ولعشّاق الصيد والطبيعة منذ عام 2012</a></h3>
+    <div class="meta">1 تشرين الأول 2024</div>
   </div>
 </article>""",
     POACHING_AR: """<article class="card overlay">
   <a class="thumb" href="posts/الصيد-الجائر-دمار-لهواية-الصيد-إحذروا/index.html"><img src="media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg" alt="طائر يُستخرج من شبكة ضبابية" loading="lazy"></a>
   <div class="body">
-    <div class="meta">15 شباط 2023</div>
     <h3><a href="posts/الصيد-الجائر-دمار-لهواية-الصيد-إحذروا/index.html">الصيد الجائر دمار لهواية الصيد.. إحذروا الشباك والدّبق وصيد الليل</a></h3>
+    <div class="meta">15 شباط 2023</div>
   </div>
 </article>""",
     AWSAJ_AR: f"""<article class="card overlay">
   <a class="thumb" href="posts/{AWSAJ_AR}/index.html"><img src="{AWSAJ_IMG}" alt="{AWSAJ_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 أيلول 2026</div>
     <h3><a href="posts/{AWSAJ_AR}/index.html">{AWSAJ_TITLE_AR}</a></h3>
+    <div class="meta">23 أيلول 2026</div>
   </div>
 </article>""",
     "لين-عراجي-بطلة-فروسية-وحساب": """<article class="card overlay">
   <a class="thumb" href="posts/لين-عراجي-بطلة-فروسية-وحساب/index.html"><img src="media/uploads/2022/10/لين-2.jpg" alt="لين عراجي بطلة فروسية وحساب" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 تشرين الأول 2022</div>
     <h3><a href="posts/لين-عراجي-بطلة-فروسية-وحساب/index.html">لين عراجي بطلة فروسية وحساب</a></h3>
+    <div class="meta">22 تشرين الأول 2022</div>
   </div>
 </article>""",
 }
@@ -367,8 +367,8 @@ def _en_card(
         f'<article class="card overlay">\n'
         f'  <a class="thumb" href="{href}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
-        f'    <div class="meta">{date}</div>\n'
         f'    <h3><a href="{href}">{title}</a></h3>\n'
+        f'    <div class="meta">{date}</div>\n'
         f"  </div>\n"
         f"</article>"
     )
@@ -791,8 +791,8 @@ def _as_side_card(article: str, slug: str) -> str:
         f'<article class="card card-stack{extra}">\n'
         f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
-        f'    <div class="meta">{date}</div>\n'
-        f"    <h3><a href=\"{link}\">{title}</a></h3>"
+        f"    <h3><a href=\"{link}\">{title}</a></h3>\n"
+        f'    <div class="meta">{date}</div>'
         f"{byline}\n"
         f"  </div>\n"
         f"</article>"
@@ -813,8 +813,8 @@ def _as_lead(article: str, slug: str) -> str:
         f'<article class="card overlay feature-lead">\n'
         f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
-        f'    <div class="meta">{date}</div>\n'
         f"    <h2><a href=\"{link}\">{title}</a></h2>\n"
+        f'    <div class="meta">{date}</div>\n'
         f"  </div>\n"
         f"</article>"
     )

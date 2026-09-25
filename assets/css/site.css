@@ -811,10 +811,12 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 
 .card .body { padding: 0.5rem 0.6rem 0.65rem; }
 
+/* Date follows the title (same order as آخر الأخبار). Keep the old gap above the date. */
 .card .meta {
   color: var(--muted);
   font-size: 0.72rem;
-  margin-bottom: 0.15rem;
+  margin-top: 0.15rem;
+  margin-bottom: 0;
   font-weight: 600;
 }
 
@@ -969,6 +971,8 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 }
 .feature-stack .card.card-stack .meta {
   color: var(--muted);
+  margin-top: 0.1rem;
+  margin-bottom: 0;
 }
 .feature-stack .card.card-stack h3 {
   font-size: 0.88rem;

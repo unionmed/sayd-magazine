@@ -191,16 +191,16 @@ def write_ar_article() -> None:
 <article class="card overlay">
   <a class="thumb" href="../../posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html"><img src="../../media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="أعضاء من وحدة مكافحة الصيد الجائر مع طيور أُنقذت خلال دورية مشتركة — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر" loading="lazy"></a>
   <div class="body">
-    <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
     <h3><a href="../../posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html">حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام</a></h3>
+    <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
   </div>
 </article>
 
 <article class="card overlay">
   <a class="thumb" href="../../posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html"><img src="../../media/uploads/2026/09/duck-aswan-960.jpg" alt="مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟" loading="lazy"></a>
   <div class="body">
-    <div class="meta">8 أيلول 2026<span class="cat-pill">أخبار</span></div>
     <h3><a href="../../posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/index.html">مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟</a></h3>
+    <div class="meta">8 أيلول 2026<span class="cat-pill">أخبار</span></div>
   </div>
 </article></div>
     </section>
@@ -298,8 +298,8 @@ def patch_ar_home() -> None:
     card = f"""<article class="card overlay">
   <a class="thumb" href="posts/{AR_SLUG}/index.html"><img src="{IMG}" alt="{AR_CAPTION}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 أيلول 2026<span class="cat-pill">أخبار</span></div>
     <h3><a href="posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h3>
+    <div class="meta">20 أيلول 2026<span class="cat-pill">أخبار</span></div>
   </div>
 </article>
 
@@ -335,8 +335,8 @@ def patch_en_home() -> None:
     card = f"""<article class="card overlay">
   <a class="thumb" href="posts/{EN_SLUG}/index.html"><img src="../{IMG}" alt="{EN_CAPTION}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 September 2026<span class="cat-pill">News</span></div>
     <h3><a href="posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
+    <div class="meta">20 September 2026<span class="cat-pill">News</span></div>
   </div>
 </article>"""
     html = re.sub(
@@ -360,8 +360,8 @@ def patch_listings() -> None:
     row = f"""<article class="post-row">
   <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../{IMG}" alt="{AR_CAPTION}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 أيلول 2026</div>
     <h2><a href="../../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">20 أيلول 2026</div>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>
 </article>
@@ -390,8 +390,8 @@ def patch_listings() -> None:
     row = f"""<article class="post-row">
   <a class="thumb" href="../posts/{AR_SLUG}/index.html"><img src="../{IMG}" alt="{AR_CAPTION}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 أيلول 2026 · أخبار</div>
     <h2><a href="../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">20 أيلول 2026 · أخبار</div>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>
 </article>

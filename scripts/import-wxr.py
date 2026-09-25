@@ -809,8 +809,8 @@ def featured_side_html(p: dict, thumb: str = "") -> str:
     return f"""
 <article class="hero-side">
   <a class="thumb" href="{post_href(p["slug"], 0)}">{thumb}</a>
-  <div class="meta">{esc(p.get("date_display") or "")}</div>
   <h3><a href="{post_href(p["slug"], 0)}">{esc(p.get("title") or "")}</a></h3>
+  <div class="meta">{esc(p.get("date_display") or "")}</div>
   <p class="excerpt">{excerpt}</p>
 </article>"""
 
@@ -1896,8 +1896,8 @@ def build_site(data: dict, out: Path) -> None:
 <article class="card {cls}">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
+    <div class="meta">{esc(p["date_display"])}</div>
   </div>
 </article>"""
 
@@ -1909,8 +1909,8 @@ def build_site(data: dict, out: Path) -> None:
 <article class="card card-compact overlay">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
     <h3><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></h3>
+    <div class="meta">{esc(p["date_display"])}</div>
   </div>
 </article>"""
 
@@ -2080,8 +2080,8 @@ def build_site(data: dict, out: Path) -> None:
           <span class="play" aria-hidden="true"></span>
         </a>
         <div class="body">
-          <div class="meta">{esc(lead["date_display"])} · صيد TV</div>
           <h3><a href="{post_href(lead["slug"], 0)}">{esc(lead["title"])}</a></h3>
+          <div class="meta">{esc(lead["date_display"])} · صيد TV</div>
           <p class="excerpt">{esc(strip_html(lead.get("excerpt") or "", 180))}</p>
         </div>
       </article>
@@ -2139,8 +2139,8 @@ def build_site(data: dict, out: Path) -> None:
   </div>
   <article class="dossier-lead">
     <a class="thumb" href="{post_href(lead["slug"], 0)}">{home_thumb(lead, 0)}</a>
-    <div class="meta">{esc(lead["date_display"])}</div>
     <h4><a href="{post_href(lead["slug"], 0)}">{esc(lead["title"])}</a></h4>
+    <div class="meta">{esc(lead["date_display"])}</div>
     <p>{esc(strip_html(lead.get("excerpt") or "", 140))}</p>
   </article>
   <div class="dossier-links">{"".join(links)}</div>
@@ -2477,8 +2477,8 @@ def build_site(data: dict, out: Path) -> None:
 <article class="post-row">
   {thumb_a}
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
     <h2><a href="{post_href(p["slug"], 2)}">{esc(p["title"])}</a></h2>
+    <div class="meta">{esc(p["date_display"])}</div>
     <p class="excerpt">{esc(p["excerpt"])}</p>
   </div>
 </article>"""
@@ -2548,8 +2548,8 @@ def build_site(data: dict, out: Path) -> None:
 <article class="post-row">
   {thumb_a}
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}{" · " + esc(p["categories"][0]["name"]) if p["categories"] else ""}</div>
     <h2><a href="{post_href(p["slug"], 1)}">{esc(p["title"])}</a></h2>
+    <div class="meta">{esc(p["date_display"])}{" · " + esc(p["categories"][0]["name"]) if p["categories"] else ""}</div>
     <p class="excerpt">{esc(p["excerpt"])}</p>
   </div>
 </article>"""
