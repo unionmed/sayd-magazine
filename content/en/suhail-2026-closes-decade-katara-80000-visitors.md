@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع/
 **Source AR title:** 80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة
 **Suggested slug:** suhail-2026-closes-decade-katara-80000-visitors
-**Category:** News
+**Category:** Hunting
 
 ## Lead
 

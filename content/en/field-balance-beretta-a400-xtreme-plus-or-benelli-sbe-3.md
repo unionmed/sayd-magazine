@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3/
 **Source AR title:** في الميزان الميداني: Beretta A400 Xtreme Plus أم Benelli SBE 3؟ حكاية الغاز والقصور الذاتي
 **Suggested slug:** field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3
-**Category:** Gear & Arms
+**Category:** Shooting & Gear
 
 ## Lead
 

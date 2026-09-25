@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا/
 **Source AR title:** «سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض
 **Suggested slug:** suhail-2026-in-photos-falcons-visitors
-**Category:** Photos
+**Category:** Hunting
 
 ## Lead
 

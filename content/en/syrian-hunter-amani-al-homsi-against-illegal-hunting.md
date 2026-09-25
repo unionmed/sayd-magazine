@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/الصيّادة-السورية-أماني-الحمصي/`
 **Source AR title:** الصيّادة السورية أماني الحمصي: أنا ضدّ الصيد الجائر.. وأتمنى سَنّ قانون صيد في سوريا يُنصف الطبيعة والصيّاد
 **Suggested slug:** `syrian-hunter-amani-al-homsi-against-illegal-hunting`
-**Category:** Land Hunting / Interviews & Investigations
+**Category:** Bird Hunting
 
 ## Lead
 

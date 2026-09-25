@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/طائر-الوروار-الأوروبي/`
 **Source AR title:** طائر الوروار الأوروبي
 **Suggested slug:** `european-bee-eater`
-**Category:** Miscellany (جعبة المنوعات)
+**Category:** Bird Encyclopedia
 
 ## Lead
 

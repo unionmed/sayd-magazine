@@ -230,7 +230,7 @@ html[dir="ltr"] .feed-title {
 
 .header-inner {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
   min-height: var(--header-h);
@@ -265,14 +265,17 @@ html[dir="ltr"] .feed-title {
 
 .main-nav {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: flex-end;
   gap: 0;
+  row-gap: 0.05rem;
   margin-inline-start: auto;
   font-size: 0.8rem;
   font-weight: 700;
   overflow-x: auto;
   min-width: 0;
+  flex: 1 1 auto;
 }
 
 .main-nav a {
@@ -333,16 +336,112 @@ html[dir="ltr"] .feed-title {
 .drawer-nav a:last-child { border-bottom: none; }
 .drawer-nav a:hover { background: var(--paper); }
 
+.main-nav { overflow: visible; }
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-sub {
+  display: none;
+  position: absolute;
+  top: 100%;
+  inset-inline-start: 0;
+  min-width: 11.5rem;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  box-shadow: 0 8px 20px rgba(22, 23, 15, 0.12);
+  z-index: 40;
+  flex-direction: column;
+  padding: 0.25rem 0;
+}
+
+.nav-item:hover .nav-sub,
+.nav-item:focus-within .nav-sub { display: flex; }
+
+.nav-sub a {
+  display: block;
+  padding: 0.5rem 0.85rem;
+  white-space: nowrap;
+}
+
+.mobile-nav { display: none; }
+
+.mobile-more { position: relative; }
+
+.mobile-more > summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--olive);
+  white-space: nowrap;
+  padding: 0.25rem 0.35rem;
+}
+
+.mobile-more > summary::-webkit-details-marker { display: none; }
+
+.mobile-more-panel {
+  position: absolute;
+  inset-inline-end: 0;
+  top: calc(100% + 0.2rem);
+  background: var(--card);
+  border: 1px solid var(--hair);
+  box-shadow: 0 8px 20px rgba(22, 23, 15, 0.12);
+  z-index: 50;
+  min-width: 11rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-more-panel a {
+  color: var(--olive);
+  font-weight: 700;
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid var(--hair);
+}
+
+.mobile-more-panel a:last-child { border-bottom: none; }
+
+.commercial-disclosure {
+  background: #f7f3e9;
+  border-inline-start: 4px solid var(--gold);
+  padding: 0.75rem 1rem;
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
 @media (max-width: 1100px) {
   .brand .tagline { display: none; }
 }
 
 @media (max-width: 900px) {
   .main-nav { display: none; }
-  .nav-toggle { display: block; }
+  .nav-toggle { display: none; }
+  .mobile-nav {
+    display: flex;
+    flex: 1 0 100%;
+    align-items: center;
+    gap: 0.1rem;
+    overflow-x: auto;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding-bottom: 0.15rem;
+  }
+  .mobile-nav > a {
+    color: var(--olive);
+    white-space: nowrap;
+    padding: 0.25rem 0.32rem;
+  }
   .brand .tagline { display: none; }
   .brand .logo-img { width: 118px; height: 42px; }
-  .header-inner { min-height: 52px; }
+  .header-inner {
+    flex-wrap: wrap;
+    min-height: 52px;
+  }
+  .news-strip .label-feed { display: none; }
 }
 
 @media (max-width: 560px) {
@@ -837,6 +936,12 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
   font-weight: 600;
 }
 
+.featured-mosaic .card .meta,
+.home-section .card .meta {
+  margin-top: 0.22rem;
+  margin-bottom: 0;
+}
+
 .card .meta .cat-pill {
   display: inline-block;
   background: var(--olive);
@@ -1037,7 +1142,8 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 }
 .feature-stack .card.card-stack .meta {
   color: var(--muted);
-  margin-bottom: 0.1rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0;
 }
 .feature-stack .card.card-stack h3 {
   font-size: 0.8rem;
@@ -1483,7 +1589,7 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدستكم/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/رياضات/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/مصيدة/index.html"],
-:is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/قوانين/index.html"],
+:is(.drawer-nav, .sidebar, .site-footer) a[href$="category/قوانين/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدسة-التاريخ/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/بعدستنا/index.html"],
 :is(.main-nav, .drawer-nav, .sidebar, .site-footer) a[href$="category/خرائط/index.html"],

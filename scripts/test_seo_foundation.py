@@ -254,21 +254,32 @@ def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
 
     slugs = seo.empty_category_slugs(DOCS)
     assert "قوانين" in slugs
+    assert "الصقارة" in slugs
     assert "قوانين-وخرائط" in slugs
     assert "رماية" in slugs
     assert "بعدستكم" in slugs
     assert "رياضات-وسياحة-بيئية" in slugs
+    # Desktop nav links these empty landings. They stay out of the sitemap.
+    desktop_empty = {"قوانين", "الصقارة"}
     for slug in slugs:
         rel = Path("category") / slug / "index.html"
         assert not seo.in_sitemap(rel), slug
         page = (DOCS / rel).read_text(encoding="utf-8")
         assert 'class="empty-note"' in page
         assert 'name="robots" content="noindex,follow"' in page
-        assert f"category/{slug}/index.html" not in chrome(home)
         assert f"<loc>{seo.public_url(rel)}</loc>" not in sitemap
+        linked = f"category/{slug}/index.html" in chrome(home)
+        if slug in desktop_empty:
+            assert linked
+            assert f"category/{slug}/index.html" in home.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
+        else:
+            assert not linked
     assert "category/صور/index.html" in chrome(home)
     assert "category/صيد/index.html" in chrome(home)
-    assert "category/مقابلات-تحقيقات/index.html" in chrome(home)
+    assert "category/صيد-الطيور/index.html" in chrome(home)
+    assert "category/عتاد-وسلاح-الصيد/index.html" in chrome(home)
+    assert "category/حياة-برية-وتخييم/index.html" in chrome(home)
+    assert "category/مقابلات-تحقيقات/index.html" not in chrome(home)
     assert "category/رماية/index.html" not in chrome(en)
     assert "category/قوانين-وخرائط/index.html" not in chrome(en)
     assert "category/رياضات-وسياحة-بيئية/index.html" not in chrome(en)

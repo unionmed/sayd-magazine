@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ/
 **Source AR title:** السعودية | 5 آلاف ريال غرامة الصيد في الأماكن المحظورة
 **Suggested slug:** saudi-5000-riyal-hunting-fine-teaser
-**Category:** News
+**Category:** Hunting
 
 ## Lead
 

@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/بومة-المخازن/`
 **Source AR title:** بومة المخازن
 **Suggested slug:** `barn-owl`
-**Category:** Miscellany (جعبة المنوعات)
+**Category:** Bird Encyclopedia
 
 ## Lead
 

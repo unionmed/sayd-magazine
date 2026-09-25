@@ -37,7 +37,7 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 33
+    assert len(PAIRS) == 34
     drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
     assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():
@@ -96,6 +96,8 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "leading-platform-lebanese-arab-hunters-since-2012",
         # Oldest Latest card (11 July 2025), dropped when the 25 Sep 2026 nets story joined.
         "common-shelduck-protected-migrant-lebanon",
+        # Marine door has no 2026 material, so it stays off the first screen.
+        "george-taza-protect-fish-stocks-interview",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
@@ -381,8 +383,8 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "19 Sep 2026" not in html
     assert "20 September 2026" in html
     assert ">Arabic<" not in html.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
-    assert "Interviews &amp; Investigations" in html
-    assert "Eco-Tourism" in html
+    assert "Interviews &amp; Investigations" not in html
+    assert "Eco-Tourism" not in html.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
     assert "south-lebanon-environmental-destruction-bird-flyway" in html
     assert "how-farmers-protect-migratory-birds-this-autumn" in html
     assert "feature-lead" in html
@@ -390,9 +392,10 @@ def test_en_ltr_typography_and_ticker() -> None:
     assert "home-layout" in html
     assert ">Sayd TV<" in html
     assert ">Photos<" in html
-    assert ">Hunting &amp; Equestrian<" in html.split("main-nav", 1)[1].split("</nav>", 1)[0]
+    assert ">Hunting<" in html.split("main-nav", 1)[1].split("</nav>", 1)[0]
     assert "<h2>Hunting &amp; Equestrian</h2>" not in html
-    assert ">Gear &amp; Arms<" in html
+    assert ">Shooting &amp; Gear<" in html
+    assert ">Wildlife &amp; Camping<" in html
     assert ">Miscellany<" not in html
     assert ">Shooting<" not in html
     assert ">Laws &amp; Maps<" not in html
@@ -760,7 +763,7 @@ def test_empty_2022_category_chrome_is_css_only() -> None:
     assert 'href="category/رماية/index.html"' not in home
     assert 'href="category/قوانين-وخرائط/index.html"' not in home
     assert 'href="category/بعدستكم/index.html"' not in home
-    assert 'href="category/قوانين/index.html"' not in home
+    assert 'href="category/قوانين/index.html"' in home.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
     assert 'href="category/عتاد-وسلاح-الصيد/index.html"' in home
     assert 'href="category/صور/index.html"' in home
     assert 'href="../category/رياضات-وسياحة-بيئية/index.html"' not in en

@@ -383,7 +383,11 @@ def strip_empty_door_links(html_text: str, slugs: list[str]) -> str:
 
 def strip_empty_doors(docs: Path | None = None) -> int:
     docs = docs or DOCS
-    slugs = empty_category_slugs(docs)
+    import site_ia
+
+    # Desktop nav keeps every door, including empty landings such as قوانين and الصقارة.
+    keep = site_ia.desktop_nav_folders()
+    slugs = [slug for slug in empty_category_slugs(docs) if slug not in keep]
     changed = 0
     for path in docs.rglob("*.html"):
         rel = path.relative_to(docs).as_posix()

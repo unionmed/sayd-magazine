@@ -127,9 +127,9 @@ def test_uwaisiq_is_lesser_kestrel_not_sparrowhawk() -> None:
         encoding="utf-8"
     )
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
-    after_latest = home[home.find("آخر الأخبار") :]
-    assert "AP4I0032-1024x683.jpg" in after_latest
-    assert "accipiter-nisus-eurasian-sparrowhawk.jpg" not in after_latest
+    # Encyclopedia has no 2026 material, so the 2013 kestrel stays off the homepage.
+    assert "AP4I0032-1024x683.jpg" not in home
+    assert "accipiter-nisus-eurasian-sparrowhawk.jpg" not in home
     assert "accipiter-nisus-eurasian-sparrowhawk.jpg" not in article
     assert "AP4I0032-1024x683.jpg" in article
     assert "Lesser Kestrel" in article
@@ -175,9 +175,9 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
     lists = json.loads((root / "content" / "homepage.json").read_text(encoding="utf-8"))
     featured = lists["featured"]
     assert featured[0].startswith("سماء-الكوكب-تفقد-توازنها")
-    assert featured[1].startswith("منظمات-دولية-ابادة-بيئية")
-    assert featured[2].startswith("كيف-فقدت-مسارات-الهجرة")
-    assert featured[3].startswith("العد-التنازلي-لختام-موسم-الطائف")
+    assert featured[1].startswith("كيف-فقدت-مسارات-الهجرة")
+    assert featured[2].startswith("العد-التنازلي-لختام-موسم-الطائف")
+    assert featured[3].startswith("منظمات-دولية-ابادة-بيئية")
     assert featured[4].startswith("كيف-يحمي-المزارع")
     home = (root / "docs" / "index.html").read_text(encoding="utf-8")
     mosaic = home[home.find("featured-mosaic") : home.find("latest-col")]
@@ -186,8 +186,8 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
         assert slug in mosaic, slug
     assert "80-ألف-زائر" not in mosaic
     assert "80-ألف-زائر" in latest.split("</ul>", 1)[0]
-    assert mosaic.find("سماء-الكوكب-تفقد-توازنها") < mosaic.find("منظمات-دولية-ابادة")
-    assert mosaic.find("منظمات-دولية-ابادة") < mosaic.find("كيف-فقدت-مسارات-الهجرة")
+    assert mosaic.find("سماء-الكوكب-تفقد-توازنها") < mosaic.find("كيف-فقدت-مسارات-الهجرة")
+    assert mosaic.find("كيف-فقدت-مسارات-الهجرة") < mosaic.find("منظمات-دولية-ابادة")
     assert "منظمات-دولية-ابادة" in mosaic
     assert "من-ذاكرة-صيد" not in mosaic
     assert "من-ذاكرة-صيد" not in latest.split("</ul>", 1)[0]
@@ -203,8 +203,8 @@ def test_featured_mosaic_keeps_homepage_json() -> None:
     assert en_mosaic.find("skies-losing-balance-birdlife-flyways-report") < en_mosaic.find(
         "how-migration-routes-lost-seven-birds-in-150-years"
     )
-    assert en_mosaic.find("south-lebanon-environmental-destruction-bird-flyway") < en_mosaic.find(
-        "how-migration-routes-lost-seven-birds-in-150-years"
+    assert en_mosaic.find("how-migration-routes-lost-seven-birds-in-150-years") < en_mosaic.find(
+        "south-lebanon-environmental-destruction-bird-flyway"
     )
 
 

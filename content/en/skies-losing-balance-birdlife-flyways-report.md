@@ -3,7 +3,7 @@
 **Status:** Published 23 September 2026
 **Type:** Editorial
 **Suggested slug:** skies-losing-balance-birdlife-flyways-report
-**Category:** Interviews & Investigations
+**Category:** Hunting
 **Cover:** media/uploads/2026/09/birdlife-flyways-photo.jpg
 
 ## Lead

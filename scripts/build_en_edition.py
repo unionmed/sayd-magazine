@@ -119,7 +119,7 @@ META: dict[str, dict] = {
     "how-migration-routes-lost-seven-birds-in-150-years": {
         "date": "22 September 2026",
         "date_sort": "2026-09-22",
-        "category": "Interviews & Investigations",
+        "category": "Hunting",
         "author": "Investigation — Sayd Magazine",
         "image": "media/uploads/2026/09/slender-billed-curlew-last-photo.jpg",
         "image_alt": "Slender-billed Curlew at Merja Zerga, Morocco, 1995",
@@ -127,7 +127,7 @@ META: dict[str, dict] = {
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah": {
         "date": "22 September 2026",
         "date_sort": "2026-09-22",
-        "category": "Hunting & Equestrian",
+        "category": "Equestrian",
         "author": "Taif — Sayd Magazine",
         "image": "media/uploads/2026/09/taif-racing-hawiyah.jpg",
         "image_alt": "A jockey and grey horse at Al-Hawiyah during the Taif racing season, 2026",
@@ -135,7 +135,7 @@ META: dict[str, dict] = {
     "egypt-new-hunting-rules-burullus-autumn-migration": {
         "date": "20 September 2026",
         "date_sort": "2026-09-20",
-        "category": "News",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
         "image_alt": "A field researcher removes a bird from illegal nets.",
@@ -143,7 +143,7 @@ META: dict[str, dict] = {
     "over-20000-m2-bird-nets-seized-lebanon": {
         "date": "25 September 2026",
         "date_sort": "2026-09-25",
-        "category": "Hunting & Equestrian",
+        "category": "Bird Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/bekaa-nets-isf-pickup-2026-09-25.jpg",
         "image_alt": "A pickup loaded with seized nets and poles during the field campaign in the Bekaa.",
@@ -151,7 +151,7 @@ META: dict[str, dict] = {
     "memory-of-sayd-awareness-responsibility-2016-2024": {
         "date": "19 September 2026",
         "date_sort": "2026-09-19",
-        "category": "From Sayd’s Memory",
+        "category": "Hunting",
         "author": "Editorial Board",
         "image": "media/uploads/2024/02/ريتا-الشعار6.jpg",
         "image_alt": "Hunter Rita Habib Al-Shaar — from Sayd magazine’s archive",
@@ -159,7 +159,7 @@ META: dict[str, dict] = {
     "protecting-autumn-migratory-birds-lebanon-khatib-2017": {
         "date": "13 September 2026",
         "date_sort": "2026-09-13",
-        "category": "News",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
         "image_alt": "Members of the Anti-Poaching Unit with birds rescued during a joint patrol — Middle East Center for Sustainable Hunting and Anti-Poaching",
@@ -167,7 +167,7 @@ META: dict[str, dict] = {
     "suhail-2026-closes-decade-katara-80000-visitors": {
         "date": "13 September 2026",
         "date_sort": "2026-09-13",
-        "category": "News",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/hero-closing-80k.jpg",
         "image_alt": "Falcons at Suhail 2026 in Katara, Doha",
@@ -175,7 +175,7 @@ META: dict[str, dict] = {
     "qatar-suhail-2026-80000-visitors-teaser": {
         "date": "13 September 2026",
         "date_sort": "2026-09-13",
-        "category": "News",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/gallery-katara-crowd.jpg",
         "image_alt": "Visitors at the close of Suhail 2026",
@@ -183,7 +183,7 @@ META: dict[str, dict] = {
     "suhail-2026-in-photos-falcons-visitors": {
         "date": "13 September 2026",
         "date_sort": "2026-09-13",
-        "category": "Photos",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/gallery-alsharq.jpg",
         "image_alt": "Suhail 2026 in photos: falcons, visitors, and faces of the fair",
@@ -191,7 +191,7 @@ META: dict[str, dict] = {
     "saudi-hunting-fines-5000-riyal-prohibited-areas": {
         "date": "13 September 2026",
         "date_sort": "2026-09-13",
-        "category": "News",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/saudi-hunting-season-2026-card.jpg",
         "image_alt": "Saudi Arabia tightens hunting rules",
@@ -199,7 +199,7 @@ META: dict[str, dict] = {
     "saudi-5000-riyal-hunting-fine-teaser": {
         "date": "13 September 2026",
         "date_sort": "2026-09-13",
-        "category": "News",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/ncw-wildlife-card.jpg",
         "image_alt": "National Center for Wildlife — Saudi Arabia",
@@ -207,7 +207,7 @@ META: dict[str, dict] = {
     "saudi-sixth-hunting-season-2026-2027-rules": {
         "date": "9 September 2026",
         "date_sort": "2026-09-09",
-        "category": "News",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/ncw-wildlife-card.jpg",
         "image_alt": "National Center for Wildlife — Saudi Arabia",
@@ -215,7 +215,7 @@ META: dict[str, dict] = {
     "sayd-returns-what-we-want-to-offer": {
         "date": "8 September 2026",
         "date_sort": "2026-09-08",
-        "category": "Editorial",
+        "category": "Hunting",
         "author": "Adonis Al-Khatib, Editor-in-Chief",
         "image": "media/uploads/2026/09/sayd-returns-adonis-editor.jpg",
         "image_alt": "Adonis Al-Khatib — Sayd returns",
@@ -223,7 +223,7 @@ META: dict[str, dict] = {
     "autumn-migration-how-world-protects-birds-regulates-hunting": {
         "date": "8 September 2026",
         "date_sort": "2026-09-08",
-        "category": "News",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/narta-egret.jpg",
         "image_alt": "Little Egret over Narta Lagoon, Albania",
@@ -239,7 +239,7 @@ META: dict[str, dict] = {
     "autumn-migration-field-action-protect-flyways-lebanon": {
         "date": "7 September 2026",
         "date_sort": "2026-09-07",
-        "category": "News",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "",
         "image_alt": "",
@@ -263,7 +263,7 @@ META: dict[str, dict] = {
     "common-shelduck-protected-migrant-lebanon": {
         "date": "11 July 2025",
         "date_sort": "2025-07-11",
-        "category": "News",
+        "category": "Bird Encyclopedia",
         "author": "Sayd",
         "image": "media/uploads/2025/07/IMG_3009-2-1024x683.jpg",
         "image_alt": "Common Shelduck (Tadorna tadorna), a protected waterbird and rare migrant in Lebanon",
@@ -281,7 +281,7 @@ META: dict[str, dict] = {
     "regulating-hunting-protects-wildlife-bans-worsen": {
         "date": "30 September 2025",
         "date_sort": "2025-09-30",
-        "category": "News",
+        "category": "Hunting",
         "author": "Sayd",
         "image": "media/uploads/2025/09/Adonis.jpg",
         "image_alt": "Regulating hunting protects wildlife… banning it worsens the crisis",
@@ -289,7 +289,7 @@ META: dict[str, dict] = {
     "illegal-hunting-destroys-hobby-nets-lime-night": {
         "date": "15 February 2023",
         "date_sort": "2023-02-15",
-        "category": "Land Hunting",
+        "category": "Bird Hunting",
         "author": "Sayd",
         "image": "media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg",
         "image_alt": "A bird is freed from a mist net — illegal hunting destroys the hunting hobby",
@@ -297,7 +297,7 @@ META: dict[str, dict] = {
     "george-taza-protect-fish-stocks-interview": {
         "date": "12 November 2022",
         "date_sort": "2022-11-12",
-        "category": "Interviews & Investigations",
+        "category": "Marine Hunting",
         "author": "Sayd",
         "image": "media/uploads/2022/11/طازة-3.jpg",
         "image_alt": "George Taza, head of the Lebanese Fishermen page",
@@ -313,7 +313,7 @@ META: dict[str, dict] = {
     "syrian-hunter-amani-al-homsi-against-illegal-hunting": {
         "date": "20 August 2022",
         "date_sort": "2022-08-20",
-        "category": "Interviews & Investigations",
+        "category": "Bird Hunting",
         "author": "Sayd",
         "image": "media/uploads/2022/08/اماني-الحمصي-2.jpg",
         "image_alt": "Syrian hunter Amani Al-Homsi",
@@ -321,7 +321,7 @@ META: dict[str, dict] = {
     "air-rifles": {
         "date": "20 December 2022",
         "date_sort": "2022-12-20",
-        "category": "Gear & Arms",
+        "category": "Shooting & Gear",
         "author": "Sayd",
         "image": "media/uploads/2022/12/بارودة.png",
         "image_alt": "An air rifle — spring / gas-ram designs",
@@ -329,7 +329,7 @@ META: dict[str, dict] = {
     "red-footed-falcon-killed-by-ignorance": {
         "date": "29 October 2013",
         "date_sort": "2013-10-29",
-        "category": "Miscellany",
+        "category": "Bird Encyclopedia",
         "author": "Sayd",
         "image": "media/uploads/2014/09/MED-136434753561-519-11.jpg",
         "image_alt": "Red-footed Falcon (Falco vespertinus)",
@@ -337,7 +337,7 @@ META: dict[str, dict] = {
     "european-bee-eater": {
         "date": "17 September 2025",
         "date_sort": "2025-09-17",
-        "category": "Miscellany",
+        "category": "Bird Encyclopedia",
         "author": "Sayd",
         "image": "media/uploads/2025/09/AP4I0956-1024x683.jpg",
         "image_alt": "European Bee-eater (Merops apiaster)",
@@ -345,7 +345,7 @@ META: dict[str, dict] = {
     "barn-owl": {
         "date": "13 August 2025",
         "date_sort": "2025-08-13",
-        "category": "Miscellany",
+        "category": "Bird Encyclopedia",
         "author": "Sayd",
         "image": "media/uploads/2025/09/AP4I6377-1024x683.jpg",
         "image_alt": "Barn Owl (Tyto alba)",
@@ -850,33 +850,11 @@ def en_chrome(
     stories = rel(depth, "en/stories/index.html")
     team = rel(depth, "en/team/index.html")
     contact = rel(depth, "en/contact/index.html")
-    nav_items = [
-        ("nav-home", "en/index.html", "Home"),
-        ("", "category/صيد/index.html", "Hunting &amp; Equestrian"),
-        ("", "category/رماية/index.html", "Shooting"),
-        ("", "category/عتاد-وسلاح-الصيد/index.html", "Gear &amp; Arms"),
-        ("", "category/رياضات-وسياحة-بيئية/index.html", "Eco-Tourism"),
-        ("", "category/مقابلات-تحقيقات/index.html", "Interviews &amp; Investigations"),
-        ("", "category/صور/index.html", "Photos"),
-        ("", "category/قوانين-وخرائط/index.html", "Laws &amp; Maps"),
-        ("nav-all", "articles/index.html", "Archive"),
-    ]
-    # Same rule as Arabic cat_nav_html: an empty 2022+ landing is not a door.
-    import seo_foundation as seo
+    import site_ia
 
-    nav_items = [
-        item
-        for item in nav_items
-        if not (
-            item[1].startswith("category/")
-            and seo.category_landing_empty(Path(item[1]))
-        )
-    ]
-    nav_links = []
-    for cls, path, label in nav_items:
-        attr = f' class="{cls}"' if cls else ""
-        nav_links.append(f'        <a{attr} href="{rel(depth, path)}">{label}</a>')
-    nav = "\n".join(nav_links)
+    nav = site_ia.desktop_nav_inner("en", depth)
+    drawer = site_ia.drawer_nav_inner("en", depth)
+    mobile = site_ia.mobile_nav_html("en", depth)
     return f"""<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -914,10 +892,11 @@ def en_chrome(
         <nav class="main-nav" aria-label="Main menu">
 {nav}
         </nav>
+{mobile}
         <details class="nav-toggle">
           <summary>Menu</summary>
           <nav class="drawer-nav" aria-label="Mobile menu">
-{nav}
+{drawer}
           </nav>
         </details>
       </div>

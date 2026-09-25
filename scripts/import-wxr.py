@@ -27,6 +27,7 @@ from xml.etree import ElementTree as ET
 
 from homepage_thumbs import NAYEF_LOCKED_PRIMARY_ALTS, resolve_home_thumb
 from site_cache import CSS_CACHE
+import site_ia
 from media_rewrite import (
     FORBIDDEN_SRC_RE,
     FOOTER_LOGO_ORIGINAL,
@@ -127,12 +128,16 @@ PURGED_WP_IDS = {"6535"}
 # Kept so a desk picker still skips the slug if a stale row is passed in.
 DEFAULT_HOME_DESK_OMIT = set(PURGED_SLUGS)
 
-# Magazine desks before Sayd TV / Photos. جعبة is unlinked from the homepage.
-# Nayef: Interviews → Gear → TV → Photos. News + Hunting stay off home
-# (Featured + Latest cover those stories). رماية / رياضات stay off the spine.
+# Homepage door rows follow the 2026 IA. Stories already in the feature or
+# latest are not repeated here. Interviews and «صيد وفروسية» stay off home.
+# Wildlife has 2026 material, but those pieces are already in the mosaic
+# or latest, so it has no extra row. Empty doors stay off this list.
 HOME_SECTIONS = [
-    ("مقابلات وتحقيقات", "accent-red", ["مقابلات وتحقيقات"]),
-    ("عتاد وسلاح", "accent-red", ["عتاد وسلاح الصيد", "عتاد وسلاح"]),
+    ("صيد", "accent-red", ["صيد"]),
+    ("الرماية والعتاد", "accent-red", ["الرماية والعتاد", "عتاد وسلاح الصيد", "عتاد وسلاح", "عتاد-وسلاح-الصيد"]),
+    ("الفروسية", "accent-red", ["الفروسية", "فروسية"]),
+    ("صيد TV", "accent-tv", ["صيد TV", "استديو صيد", "استديو-صيد"]),
+    ("صور", "accent-olive", ["صور"]),
 ]
 HOME_SECTIONS_TAIL: list[tuple[str, str, list[str]]] = []
 
@@ -178,7 +183,7 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
         "datetime": "2026-09-22 10:00:00",
         "date": "2026-09-22 10:00:00",
         "categories": [
-            {"nicename": "صيد", "name": "صيد وفروسية", "slug": "صيد"}
+            {"nicename": "فروسية", "name": "الفروسية", "slug": "فروسية"}
         ],
         "excerpt": "دخلت أروقة الفروسية السعودية والخليجية مرحلة الحسم، مع بدء العد التنازلي لانطلاق الأسبوع العاشر والختامي من موسم سباقات الطائف 2026 على مضمار ميدان الملك خالد في الحَوِيّة.",
         "featured": "uploads/2026/09/taif-racing-hawiyah.jpg",
@@ -199,7 +204,7 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
         "datetime": "2026-09-20 18:00:00",
         "date": "2026-09-20 18:00:00",
         "categories": [
-            {"nicename": "أخبار", "name": "أخبار", "slug": "أخبار"}
+            {"nicename": "صيد", "name": "صيد", "slug": "صيد"}
         ],
         "excerpt": "أعلنت وزارة التنمية المحلية والبيئة في مصر قراراً جديداً لتنظيم أعمال الصيد، بالتوازي مع بدء جهاز شؤون البيئة خطة رصد ومتابعة مع انطلاق موسم هجرة الخريف.",
         "featured": "uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
@@ -216,7 +221,7 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
         "datetime": "2026-09-19 00:00:00",
         "date": "2026-09-19 00:00:00",
         "categories": [
-            {"nicename": "ثقافة-وتراث", "name": "من ذاكرة صيد", "slug": "ثقافة-وتراث"}
+            {"nicename": "صيد", "name": "صيد", "slug": "صيد"}
         ],
         "excerpt": "شخصيات وأصوات في محراب الطبيعة (2016 – 2024)",
         "featured": "",
@@ -269,9 +274,10 @@ _TICKER_LINK_RE = re.compile(
     r'<a href="(?:(?:\.\./)*)posts/([^/"]+)/index\.html">([^<]+)</a>'
 )
 
-# Nayef rule: homepage / ticker stories must also land on their magazine
-# section pages (e.g. سهيل → صيد وفروسية). Overlay adds categories and
-# never drops WordPress ones. Rebuilds must emit newest-first listings.
+# Nayef rule: homepage / ticker stories land on one magazine door.
+# Slugs in site_ia.PRIMARY keep exactly that door. Unmapped surface
+# stories may still gain صيد on top of their WordPress categories.
+# Rebuilds must emit newest-first listings. The صيد landing is titled «صيد».
 HUNTING_CAT = {"nicename": "صيد", "name": "صيد وفروسية", "slug": "صيد"}
 NEWS_CAT = {"nicename": "أخبار", "name": "أخبار", "slug": "أخبار"}
 KNOWN_CATEGORY_RECORDS = {
@@ -809,8 +815,8 @@ def featured_side_html(p: dict, thumb: str = "") -> str:
     return f"""
 <article class="hero-side">
   <a class="thumb" href="{post_href(p["slug"], 0)}">{thumb}</a>
-  <div class="meta">{esc(p.get("date_display") or "")}</div>
   <h3><a href="{post_href(p["slug"], 0)}">{esc(p.get("title") or "")}</a></h3>
+  <div class="meta">{esc(p.get("date_display") or "")}</div>
   <p class="excerpt">{excerpt}</p>
 </article>"""
 
@@ -887,22 +893,37 @@ def category_record(key: str, catalog: dict | None = None) -> dict[str, str]:
     return {"nicename": key, "name": key, "slug": slug}
 
 
+def editorial_primary_record(slug: str) -> dict[str, str] | None:
+    """One door for a remapped story. Folder slug matches the IA landing."""
+    spec = site_ia.PRIMARY.get(slug)
+    if not spec:
+        return None
+    door = site_ia.door_by_id(spec["door"])
+    folder = door["folder"]
+    return {"nicename": folder, "name": door["ar"], "slug": folder}
+
+
 def apply_nayef_category_rule(
     posts: list[dict],
     extras: dict[str, list[str]] | None = None,
     catalog: dict | None = None,
     surface: set[str] | None = None,
 ) -> list[dict]:
-    """Add magazine-section categories for homepage/ticker stories.
+    """Give remapped stories one door. Unmapped surface stories may gain صيد.
 
-    WordPress categories are kept. Hunting-hint items on those surfaces
-    also get صيد (صيد وفروسية) so سهيل / Kaps / season news stay on top
-    of that listing after a rebuild.
+    WordPress categories stay for slugs that are not in site_ia.PRIMARY.
+    Hunting-hint items on the homepage or ticker also get صيد so a future
+    hunting story still lands on that listing. Primary slugs replace the
+    stack (no أخبار / مقابلات beside the door).
     """
     extras = extras if extras is not None else load_category_extras()
     surface = surface if surface is not None else editorial_surface_slugs()
     for p in posts:
         slug = p.get("slug") or ""
+        primary = editorial_primary_record(slug)
+        if primary:
+            p["categories"] = [dict(primary)]
+            continue
         add = list(extras.get(slug, []))
         if slug in surface and looks_like_hunting_story(p) and "صيد" not in add:
             add.append("صيد")
@@ -1896,8 +1917,8 @@ def build_site(data: dict, out: Path) -> None:
 <article class="card {cls}">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
     <{heading}><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></{heading}>
+    <div class="meta">{esc(p["date_display"])}</div>
   </div>
 </article>"""
 
@@ -1906,11 +1927,11 @@ def build_site(data: dict, out: Path) -> None:
         if "<img" not in thumb:
             return ""
         return f"""
-<article class="card card-compact overlay">
+<article class="card card-compact">
   <a class="thumb" href="{post_href(p["slug"], depth)}">{thumb}</a>
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
     <h3><a href="{post_href(p["slug"], depth)}">{esc(p["title"])}</a></h3>
+    <div class="meta">{esc(p["date_display"])}</div>
   </div>
 </article>"""
 
@@ -2013,7 +2034,7 @@ def build_site(data: dict, out: Path) -> None:
     def section_block(title: str, accent: str, items: list[dict], more_href: str) -> str:
         if not items:
             return ""
-        cards = "\n".join(card(p, 0, "h3", "overlay") for p in items)
+        cards = "\n".join(card(p, 0, "h3", "") for p in items)
         more = f'<a href="{more_href}">المزيد</a>' if more_href else ""
         return f"""
     <section class="home-section">
@@ -2835,6 +2856,9 @@ def main() -> None:
         f"SEO head + sitemap: {seo_stats['sitemap']} URLs, "
         f"{seo_stats['changed']} pages updated."
     )
+    from apply_site_ia import main as apply_ia
+
+    apply_ia()
     print("Done.")
     print(f"Preview: open {args.out / 'index.html'} or serve docs/ with any static server.")
 

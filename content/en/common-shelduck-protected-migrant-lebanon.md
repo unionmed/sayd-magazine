@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر/`
 **Source AR title:** الشهرمان الشائع: طائر مائي محمي ومهاجر نادر في لبنان
 **Suggested slug:** `common-shelduck-protected-migrant-lebanon`
-**Category:** News / Wildlife
+**Category:** Bird Encyclopedia
 
 ## Lead
 

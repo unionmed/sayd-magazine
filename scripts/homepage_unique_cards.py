@@ -367,8 +367,8 @@ def _en_card(
         f'<article class="card overlay">\n'
         f'  <a class="thumb" href="{href}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
-        f'    <div class="meta">{date}</div>\n'
         f'    <h3><a href="{href}">{title}</a></h3>\n'
+        f'    <div class="meta">{date}</div>\n'
         f"  </div>\n"
         f"</article>"
     )
@@ -791,8 +791,8 @@ def _as_side_card(article: str, slug: str) -> str:
         f'<article class="card card-stack{extra}">\n'
         f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
-        f'    <div class="meta">{date}</div>\n'
-        f"    <h3><a href=\"{link}\">{title}</a></h3>"
+        f"    <h3><a href=\"{link}\">{title}</a></h3>\n"
+        f'    <div class="meta">{date}</div>'
         f"{byline}\n"
         f"  </div>\n"
         f"</article>"
@@ -813,8 +813,8 @@ def _as_lead(article: str, slug: str) -> str:
         f'<article class="card overlay feature-lead">\n'
         f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
-        f'    <div class="meta">{date}</div>\n'
         f"    <h2><a href=\"{link}\">{title}</a></h2>\n"
+        f'    <div class="meta">{date}</div>\n'
         f"  </div>\n"
         f"</article>"
     )
@@ -1011,9 +1011,21 @@ def lock_homepage_html(
     return ARTICLE_RE.sub(_keep, html)
 
 
+def _date_under_title(article: str) -> str:
+    """Homepage cards match Latest: headline, then the date."""
+    return re.sub(
+        r'(<div class="body">\s*)(<div class="meta">.*?</div>\s*)(<h[23]>.*?</h[23]>)',
+        r"\1\3\n    \2",
+        article,
+        count=1,
+        flags=re.S,
+    )
+
+
 def _as_desk_card(article: str, *, compact: bool) -> str:
-    cls = "card card-compact overlay" if compact else "card overlay"
+    cls = "card card-compact" if compact else "card"
     article = strip_home_cat_pills(article)
+    article = _date_under_title(article)
     return re.sub(r"<article class=\"card[^\"]*\"", f'<article class="{cls}"', article, count=1)
 
 
