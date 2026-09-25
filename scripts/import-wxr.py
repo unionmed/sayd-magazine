@@ -2308,6 +2308,14 @@ def build_site(data: dict, out: Path) -> None:
         for _c in _p["categories"]:
             by_cat.setdefault(_c["slug"], []).append(_p)
 
+    from archive_access import rewrite_legacy_permalinks
+
+    legacy_hrefs = {
+        str(p.get("id") or "").strip(): f"../{p['slug']}/index.html"
+        for p in posts
+        if str(p.get("id") or "").strip().isdigit() and p.get("slug")
+    }
+
     for p in posts:
         d = out / "posts" / p["slug"]
         d.mkdir(parents=True, exist_ok=True)
@@ -2372,7 +2380,7 @@ def build_site(data: dict, out: Path) -> None:
     </header>
     {featured_block}
     <article class="article-content">
-      {rewrite_html(p["content"] or "", 2, MEDIA_ROOT) or "<p class='empty-note'>لا يوجد محتوى نصي لهذا المقال في التصدير.</p>"}
+      {rewrite_html(rewrite_legacy_permalinks(p["content"] or "", legacy_hrefs), 2, MEDIA_ROOT) or "<p class='empty-note'>لا يوجد محتوى نصي لهذا المقال في التصدير.</p>"}
     </article>
     {ad_slot("inline")}
     {related_html}
@@ -2588,6 +2596,11 @@ def build_site(data: dict, out: Path) -> None:
         "views_stats": data.get("views_stats", {}),
         "output": str(out),
     }
+    from archive_access import write_legacy_permalink_stubs
+
+    n_stubs = write_legacy_permalink_stubs(out, posts)
+    print(f"Legacy /{{post_id}}/ redirects: {n_stubs} new, kept existing stubs.")
+
     (out / ".nojekyll").write_text("", encoding="utf-8")
     (out / "build-manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
