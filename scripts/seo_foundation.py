@@ -397,11 +397,18 @@ def strip_empty_doors(docs: Path | None = None) -> int:
     return changed
 
 
+def is_numeric_permalink_stub(rel: Path) -> bool:
+    """WordPress lived at /{post_id}/. Those files are thin redirects, not articles."""
+    return len(rel.parts) == 2 and rel.name == "index.html" and rel.parts[0].isdigit()
+
+
 def in_sitemap(rel: Path) -> bool:
     posix = rel.as_posix()
     if rel.name != "index.html":
         return False
     if posix in SITEMAP_SKIP or posix in ALIAS_REDIRECTS or posix in CANCELLED_SHELLS:
+        return False
+    if is_numeric_permalink_stub(rel):
         return False
     if posix in gallery_rels():
         return False
@@ -609,6 +616,9 @@ def apply_html(
     twins: dict[str, str],
 ) -> str:
     if rel.as_posix() in ALIAS_REDIRECTS or rel.as_posix() in CANCELLED_SHELLS:
+        return html_text
+    # Old /{post_id}/ stubs must keep their canonical on the real article.
+    if is_numeric_permalink_stub(rel) and "location.replace" in html_text:
         return html_text
     match = re.search(r"</head>", html_text, re.I)
     if not match:
