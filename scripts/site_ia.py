@@ -32,6 +32,8 @@ SOCIAL = (("فيسبوك", "Facebook", "https://www.facebook.com/SaydMagazine/")
 MAILTO = "mailto:editor@sayd-magazine.com?subject=%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%A8%D9%86%D8%B4%D8%B1%D8%A9%20%D8%B5%D9%8A%D8%AF"
 
 # Mobile bar shows these ids, in order. Wildlife uses the short bar label.
+# Arabic chrome reads nav_ar (definite article «ال» stripped). `ar` stays the
+# content title for homepage desks, badges, and category pages. English is untouched.
 MOBILE_BAR = ("hunting", "gear", "equestrian", "wildlife")
 
 DOORS: list[dict] = [
@@ -47,6 +49,7 @@ DOORS: list[dict] = [
             {
                 "id": "bird-hunting",
                 "ar": "صيد الطيور",
+                "nav_ar": "صيد طيور",
                 "en": "Bird Hunting",
                 "folder": "صيد-الطيور",
                 "has_2026": True,
@@ -54,6 +57,7 @@ DOORS: list[dict] = [
             {
                 "id": "falconry",
                 "ar": "الصقارة",
+                "nav_ar": "صقارة",
                 "en": "Falconry",
                 "folder": "الصقارة",
                 "has_2026": False,
@@ -61,6 +65,7 @@ DOORS: list[dict] = [
             {
                 "id": "land-hunting",
                 "ar": "صيد البر",
+                "nav_ar": "صيد بر",
                 "en": "Land Hunting",
                 "folder": "صيد-بري",
                 "has_2026": False,
@@ -68,6 +73,7 @@ DOORS: list[dict] = [
             {
                 "id": "marine-hunting",
                 "ar": "الصيد البحري",
+                "nav_ar": "صيد بحري",
                 "en": "Marine Hunting",
                 "folder": "صيد-بحري",
                 "has_2026": False,
@@ -77,8 +83,9 @@ DOORS: list[dict] = [
     {
         "id": "gear",
         "ar": "الرماية والعتاد",
+        "nav_ar": "رماية وعتاد",
         "en": "Shooting & Gear",
-        "short_ar": "الرماية والعتاد",
+        "short_ar": "رماية وعتاد",
         "short_en": "Shooting & Gear",
         "folder": "عتاد-وسلاح-الصيد",
         "has_2026": True,
@@ -87,8 +94,9 @@ DOORS: list[dict] = [
     {
         "id": "equestrian",
         "ar": "الفروسية",
+        "nav_ar": "فروسية",
         "en": "Equestrian",
-        "short_ar": "الفروسية",
+        "short_ar": "فروسية",
         "short_en": "Equestrian",
         "folder": "فروسية",
         "has_2026": True,
@@ -97,6 +105,7 @@ DOORS: list[dict] = [
     {
         "id": "wildlife",
         "ar": "الحياة البرية والتخييم",
+        "nav_ar": "برية وتخييم",
         "en": "Wildlife & Camping",
         "short_ar": "برية وتخييم",
         "short_en": "Wildlife",
@@ -117,8 +126,9 @@ DOORS: list[dict] = [
     {
         "id": "laws",
         "ar": "قوانين الصيد",
+        "nav_ar": "قوانين صيد",
         "en": "Hunting Laws",
-        "short_ar": "قوانين الصيد",
+        "short_ar": "قوانين صيد",
         "short_en": "Hunting Laws",
         "folder": "قوانين",
         "has_2026": False,
@@ -127,8 +137,9 @@ DOORS: list[dict] = [
     {
         "id": "birds",
         "ar": "موسوعة الطيور",
+        "nav_ar": "موسوعة طيور",
         "en": "Bird Encyclopedia",
-        "short_ar": "موسوعة الطيور",
+        "short_ar": "موسوعة طيور",
         "short_en": "Bird Encyclopedia",
         "folder": "موسوعة-الطيور",
         "has_2026": False,
@@ -436,8 +447,22 @@ def keeps_pre_2022_landing(slug: str) -> bool:
 
 
 def door_label(door_id: str, lang: str) -> str:
+    """Content title (homepage desks, badges, category pages). Not the nav label."""
     door = door_by_id(door_id)
     return door["en"] if lang == "en" else door["ar"]
+
+
+def chrome_label(item: dict, lang: str, *, short: bool = False) -> str:
+    """Visible nav/chrome label. Arabic uses nav_ar; English labels stay."""
+    if lang == "en":
+        if short and "short_en" in item:
+            return item["short_en"]
+        return item["en"]
+    if "nav_ar" in item:
+        return item["nav_ar"]
+    if short and "short_ar" in item:
+        return item["short_ar"]
+    return item["ar"]
 
 
 def visible_doors() -> list[dict]:
@@ -503,7 +528,7 @@ def desktop_nav_doors() -> list[dict]:
 def desktop_nav_inner(lang: str, depth: int) -> str:
     parts: list[str] = []
     for door in desktop_nav_doors():
-        label = door["en"] if lang == "en" else door["ar"]
+        label = chrome_label(door, lang)
         href = _href(depth, door["folder"])
         children = door["children"]
         if not children:
@@ -511,7 +536,7 @@ def desktop_nav_inner(lang: str, depth: int) -> str:
             continue
         child_links = []
         for child in children:
-            child_label = child["en"] if lang == "en" else child["ar"]
+            child_label = chrome_label(child, lang)
             child_links.append(
                 f'          {_link(_href(depth, child["folder"]), child_label)}'
             )
@@ -529,19 +554,20 @@ def desktop_nav_inner(lang: str, depth: int) -> str:
 
 def mobile_nav_html(lang: str, depth: int) -> str:
     """First four doors, then المزيد / More with the other five, empty or not."""
-    label_key = "short_en" if lang == "en" else "short_ar"
     more_label = "More" if lang == "en" else "المزيد"
     aria = "Mobile menu" if lang == "en" else "قائمة الجوال"
     by_id = {door["id"]: door for door in DOORS}
     bar = []
     for door_id in MOBILE_BAR:
         door = by_id[door_id]
-        bar.append(f'          {_link(_href(depth, door["folder"]), door[label_key])}')
+        bar.append(
+            f'          {_link(_href(depth, door["folder"]), chrome_label(door, lang, short=True))}'
+        )
     more = []
     for door in DOORS:
         if door["id"] in MOBILE_BAR:
             continue
-        label = door["en"] if lang == "en" else door["ar"]
+        label = chrome_label(door, lang)
         more.append(f'            {_link(_href(depth, door["folder"]), label)}')
     more_html = ""
     if more:
@@ -565,10 +591,10 @@ def drawer_nav_inner(lang: str, depth: int) -> str:
     """Full visible list, including 2026 children, for the no-CSS drawer."""
     parts = []
     for door in visible_doors():
-        label = door["en"] if lang == "en" else door["ar"]
+        label = chrome_label(door, lang)
         parts.append(f"        {_link(_href(depth, door['folder']), label)}")
         for child in door["children"]:
-            child_label = child["en"] if lang == "en" else child["ar"]
+            child_label = chrome_label(child, lang)
             parts.append(f"        {_link(_href(depth, child['folder']), child_label)}")
     return "\n".join(parts)
 
@@ -604,7 +630,7 @@ def footer_magazine_items(lang: str, depth: int) -> list[tuple[str, str]]:
 def footer_doors_html(lang: str, depth: int) -> str:
     items = []
     for door in visible_doors():
-        label = door["en"] if lang == "en" else door["ar"]
+        label = chrome_label(door, lang)
         items.append(f"<li>{_link(_href(depth, door['folder']), label)}</li>")
     return "\n".join(items)
 
