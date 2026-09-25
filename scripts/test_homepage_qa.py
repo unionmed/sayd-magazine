@@ -243,21 +243,24 @@ def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
 
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    ar_iv, ar_gear, ar_tv, ar_ph = (
-        _h2_pos(ar, "مقابلات وتحقيقات"),
-        _h2_pos(ar, "عتاد وسلاح"),
+    ar_hunt, ar_gear, ar_eq, ar_tv, ar_ph = (
+        _h2_pos(ar, "صيد"),
+        _h2_pos(ar, "الرماية والعتاد"),
+        _h2_pos(ar, "الفروسية"),
         _h2_pos(ar, "صيد TV"),
         _h2_pos(ar, "صور"),
     )
-    assert ar_iv < ar_gear < ar_tv < ar_ph
+    assert ar_hunt < ar_gear < ar_eq < ar_tv < ar_ph
     assert "<h2>جعبة المنوعات</h2>" not in ar
     assert "<h2>أخبار</h2>" not in ar
+    assert "<h2>مقابلات وتحقيقات</h2>" not in ar
     assert "<h2>صيد وفروسية</h2>" not in ar
-    en_iv = _h2_pos(en, "Interviews &amp; Investigations")
-    en_gear = _h2_pos(en, "Gear &amp; Arms")
+    en_hunt = _h2_pos(en, "Hunting")
+    en_gear = _h2_pos(en, "Shooting &amp; Gear")
+    en_eq = _h2_pos(en, "Equestrian")
     en_tv = _h2_pos(en, "Sayd TV")
     en_ph = _h2_pos(en, "Photos")
-    assert en_iv < en_gear < en_tv < en_ph
+    assert en_hunt < en_gear < en_eq < en_tv < en_ph
     assert "<h2>Miscellany</h2>" not in en
     assert "<h2>News</h2>" not in en
     assert "<h2>Hunting &amp; Equestrian</h2>" not in en
@@ -404,8 +407,9 @@ def test_ar_en_dated_lists_share_one_order() -> None:
     assert [pairs[slug] for slug in ar_latest] == en_latest
 
     for ar_h, en_h in (
-        ("مقابلات وتحقيقات", "Interviews &amp; Investigations"),
-        ("عتاد وسلاح", "Gear &amp; Arms"),
+        ("صيد", "Hunting"),
+        ("الرماية والعتاد", "Shooting &amp; Gear"),
+        ("الفروسية", "Equestrian"),
         ("صيد TV", "Sayd TV"),
         ("صور", "Photos"),
     ):
@@ -452,10 +456,10 @@ def test_memory_strip_folds_rita_into_personalities() -> None:
     ar = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     faces = (
-        "nadine-wilson-njeim-2026-09-20.jpg",
+        "abdulaziz-babtain.jpg",
+        "siham-tueni.jpg",
         "rita-habib-alshaar.jpg",
         "george-kardahi.jpg",
-        "sara-akiki.jpg",
     )
     for html in (ar, en):
         assert 'class="memory-strip"' in html
@@ -463,13 +467,12 @@ def test_memory_strip_folds_rita_into_personalities() -> None:
         for face in faces:
             assert f"media/personalities/{face}" in html
         assert "ريتا-الشعار6" not in html
-    ar_iv = ar.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("صيد TV", 1)[0]
-    assert "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي" not in ar_iv
+    assert "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي" not in ar.split('class="home-main"', 1)[1]
     assert "<h2>News</h2>" not in en
+    assert "<h2>مقابلات وتحقيقات</h2>" not in ar
     latest_en = en.split("latest-feed", 1)[1].split("</ul>", 1)[0]
     assert "memory-of-sayd-awareness-responsibility-2016-2024" not in latest_en
-    interviews = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split("Sayd TV", 1)[0]
-    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in interviews
+    assert "memory-of-sayd-awareness-responsibility-2016-2024" not in en.split('class="home-main"', 1)[1]
     assert (DOCS / "memory" / "index.html").is_file()
     assert (DOCS / "en" / "memory" / "index.html").is_file()
     archive_rita = DOCS / "media" / "uploads" / "2024" / "02" / "ريتا-الشعار6.jpg"
@@ -512,12 +515,13 @@ def test_south_lebanon_investigation_republished() -> None:
     assert "20 أيلول 2026" in side_ar
     assert "24 أيلول 2026" not in side_ar
     assert side_ar.find("كيف-فقدت-مسارات-الهجرة") < side_ar.find("منظمات-دولية-ابادة-بيئية-جنوب-لبنان")
-    interviews_ar = ar.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
-    interviews_en = en.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split("</section>", 1)[0]
-    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in interviews_ar
-    assert "south-lebanon-environmental-destruction-bird-flyway" in interviews_en
-    assert "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف" in interviews_ar
-    assert "how-farmers-protect-migratory-birds-this-autumn" in interviews_en
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in side_ar
+    side_en = en.split("feature-side", 1)[1].split("latest-col", 1)[0]
+    assert "south-lebanon-environmental-destruction-bird-flyway" in side_en
+    assert "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف" in side_ar
+    assert "how-farmers-protect-migratory-birds-this-autumn" in side_en
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in ar.split('class="home-main"', 1)[1]
+    assert "<h2>مقابلات وتحقيقات</h2>" not in ar
     assert (DOCS / "posts" / "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024" / "index.html").is_file()
     assert (DOCS / "en" / "posts" / "memory-of-sayd-awareness-responsibility-2016-2024" / "index.html").is_file()
     article = (DOCS / "posts" / "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" / "index.html").read_text(encoding="utf-8")
@@ -534,11 +538,15 @@ def test_south_lebanon_investigation_republished() -> None:
     assert fire.is_file() and fire.stat().st_size > 20_000
     assert "feature-ecocide" not in ar
     assert "feature-ecocide" not in en
-    cat = (DOCS / "category" / "مقابلات-تحقيقات" / "index.html").read_text(encoding="utf-8")
+    cat = (DOCS / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
     listing = cat.split('class="post-list"', 1)[1]
     assert 0 <= listing.find("سماء-الكوكب-تفقد-توازنها") < listing.find(
         "كيف-فقدت-مسارات-الهجرة"
     ) < listing.find("منظمات-دولية-ابادة-بيئية-جنوب-لبنان")
+    old = (DOCS / "category" / "مقابلات-تحقيقات" / "index.html").read_text(encoding="utf-8")
+    old_list = old.split('class="post-list"', 1)[1]
+    assert "سماء-الكوكب-تفقد-توازنها" not in old_list
+    assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" not in old_list
 
 
 def test_egypt_hunting_news_live_surfaces() -> None:
@@ -626,7 +634,7 @@ def test_homepage_story_cards_are_unique() -> None:
         assert dupes == {}, (rel, dupes)
         for extra in allowed:
             if extra in counts:
-                assert counts[extra] == 2, (rel, extra, counts[extra])
+                assert counts[extra] == 1, (rel, extra, counts[extra])
         assert slugs.count(adonis) == 0, (rel, adonis, slugs.count(adonis))
         assert twin not in slugs
         assert twin not in html
@@ -673,30 +681,21 @@ def test_homepage_story_cards_are_unique() -> None:
             assert "<h2>Hunting &amp; Equestrian</h2>" not in html
             assert "saudi-hunting-fines-5000-riyal-prohibited-areas" not in html
             assert "saudi-5000-riyal-hunting-fine-teaser" not in html
-            interviews = html.split("<h2>Interviews &amp; Investigations</h2>", 1)[1].split(
-                "</section>", 1
-            )[0]
-            iv_slugs: list[str] = []
-            for slug in re.findall(r'href="posts/([^/]+)/', interviews):
-                if slug not in iv_slugs:
-                    iv_slugs.append(slug)
-            assert iv_slugs == [
-                "the-awsaj-thornbush-reading-the-land",
-                "south-lebanon-environmental-destruction-bird-flyway",
-                FARMERS_EN,
-                "george-taza-protect-fish-stocks-interview",
-            ]
-            assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in interviews
-            assert "awsaj thornbush" in interviews
-            assert "The Hunter in Nature" not in interviews
-            assert "01-awsaj-dense-shrub-negev.jpg" in interviews
+            assert "the-awsaj-thornbush-reading-the-land" in latest
+            assert "01-awsaj-dense-shrub-negev.jpg" in latest
+            assert "awsaj thornbush" in latest
+            assert "The Hunter in Nature" not in latest
+            assert "george-taza-protect-fish-stocks-interview" not in html
             assert "the-awsaj-thornbush-reading-the-land" not in ticker_en
-            assert "how-migration-routes-lost-seven-birds-in-150-years" not in iv_slugs
+            side = html.split("feature-side", 1)[1].split("latest-col", 1)[0]
+            assert "south-lebanon-environmental-destruction-bird-flyway" in side
+            assert FARMERS_EN in side
+            assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in side
             lead = html.split("feature-lead", 1)[1].split("feature-side", 1)[0]
             assert "skies-losing-balance-birdlife-flyways-report" in lead
             assert "the-awsaj-thornbush-reading-the-land" not in lead
             assert "how-migration-routes-lost-seven-birds-in-150-years" not in lead
-            gear = html.split("<h2>Gear &amp; Arms</h2>", 1)[1].split("</section>", 1)[0]
+            gear = html.split("<h2>Shooting &amp; Gear</h2>", 1)[1].split("</section>", 1)[0]
             assert "air-rifles" in gear
             assert "<h2>Miscellany</h2>" not in html
             assert "red-footed-falcon-killed-by-ignorance" not in html
@@ -719,28 +718,20 @@ def test_homepage_story_cards_are_unique() -> None:
             ticker_ar = re.search(r'<div class="ticker">(.*?)</div>', html, re.S).group(1)
             assert ticker_ar.count("80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع") == 1
             assert "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026" not in ticker_ar
-            interviews = html.split("<h2>مقابلات وتحقيقات</h2>", 1)[1].split("</section>", 1)[0]
-            iv_slugs = []
-            for slug in re.findall(r'href="posts/([^/]+)/', interviews):
-                if slug not in iv_slugs:
-                    iv_slugs.append(slug)
-            assert iv_slugs == [
-                "شجيرة-العوسج-حين-تقرأ-الأرض",
-                "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-                FARMERS_AR,
-                "جورج-تازة-علينا-جميعًا-المشاركة-لحماي",
-            ]
-            assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in interviews
-            assert "شجيرة العوسج" in interviews
-            assert "الصياد في الطبيعة" not in interviews
-            assert "01-awsaj-dense-shrub-negev.jpg" in interviews
+            assert "شجيرة-العوسج-حين-تقرأ-الأرض" in latest_ar
+            assert "01-awsaj-dense-shrub-negev.jpg" in latest_ar
+            assert "شجيرة العوسج" in latest_ar
+            assert "الصياد في الطبيعة" not in latest_ar
+            assert "جورج-تازة-علينا-جميعًا-المشاركة-لحماي" not in html
             assert "شجيرة-العوسج-حين-تقرأ-الأرض" not in ticker_ar
-            assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" not in iv_slugs
+            side = html.split("feature-side", 1)[1].split("latest-col", 1)[0]
+            assert "منظمات-دولية-ابادة-بيئية-جنوب-لبنان" in side
+            assert FARMERS_AR in side
+            assert "ecocide-south-lebanon-white-phosphorus-smoke.jpg" in side
             lead = html.split("feature-lead", 1)[1].split("feature-side", 1)[0]
             assert "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف" in lead
             assert "شجيرة-العوسج-حين-تقرأ-الأرض" not in lead
             assert "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما" not in lead
-            assert iv_slugs[1] == "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
 
 
 def test_lock_is_idempotent_and_drops_restacked_cards() -> None:
@@ -787,21 +778,11 @@ def test_en_home_mirrors_ar_desk_cards() -> None:
     """Every filled AR desk has the matching EN card count and twin slugs."""
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     desks = {
-        "Interviews &amp; Investigations": [
-            "the-awsaj-thornbush-reading-the-land",
-            "south-lebanon-environmental-destruction-bird-flyway",
-            "how-farmers-protect-migratory-birds-this-autumn",
-            "george-taza-protect-fish-stocks-interview",
-        ],
-        "Gear &amp; Arms": [
-            "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
-            "air-rifles",
-        ],
+        "Hunting": ["suhail-2026-in-photos-falcons-visitors"],
+        "Shooting &amp; Gear": ["air-rifles"],
+        "Equestrian": ["leen-araji-equestrian-and-mental-math-champion"],
         "Sayd TV": ["video-saud-al-babtain-maqnas-afghanistan"],
-        "Photos": [
-            "suhail-2026-in-photos-falcons-visitors",
-            "great-white-pelican-matn-highway-nayef-krayem",
-        ],
+        "Photos": ["great-white-pelican-matn-highway-nayef-krayem"],
     }
     for heading, slugs in desks.items():
         block = en.split(f"<h2>{heading}</h2>", 1)[1].split("</section>", 1)[0]
@@ -869,11 +850,12 @@ def test_nayef_unlinked_chrome_and_poetry_rename() -> None:
     assert "تصنيفات / شعر وفن" in culture
     assert "<h2>شعر وفن " in culture
     assert "ثقافة وتراث" not in culture
-    assert "category/ثقافة-وتراث/index.html" in culture
+    assert "%D8%AB%D9%82%D8%A7%D9%81%D8%A9-%D9%88%D8%AA%D8%B1%D8%A7%D8%AB" in culture
     assert (DOCS / "category" / "ثقافة-وتراث").is_dir()
     team = (DOCS / "en" / "team" / "index.html").read_text(encoding="utf-8")
-    assert "Poetry &amp; Art" in team
+    assert "Poetry &amp; Art" not in team.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
     assert "Culture and heritage" not in team
+    assert ">Hunting<" in team
     for rel in (
         "category/شريط/index.html",
         "pages/751-2/index.html",
@@ -884,9 +866,10 @@ def test_nayef_unlinked_chrome_and_poetry_rename() -> None:
         assert "https://sayd-magazine.com/articles/" in page
         assert 'class="post-row"' not in page
     assert "category/%D8%B4%D8%B1%D9%8A%D8%B7/" not in (DOCS / "sitemap.xml").read_text(encoding="utf-8")
-    # Deep badge on a miscellany story still points at the kept index.
+    # Bee-eater is filed under the bird encyclopedia, not miscellany.
     bee = (DOCS / "posts" / "طائر-الوروار-الأوروبي" / "index.html").read_text(encoding="utf-8")
-    assert "category/جعبة-المنوعات/index.html" in bee
+    assert "category/موسوعة-الطيور/index.html" in bee
+    assert 'class="badge"' in bee
 
 
 def test_adonis_off_ticker_and_empty_en_miscellany_hidden() -> None:
@@ -929,8 +912,9 @@ def test_homepage_cards_keep_dates_without_category_pills() -> None:
         "index.html": (
             "تقرير بيرد لايف يدق ناقوس الخطر...",
             (
-                "مقابلات وتحقيقات",
-                "عتاد وسلاح",
+                "صيد",
+                "الرماية والعتاد",
+                "الفروسية",
                 "صيد TV",
                 "صور",
                 "آخر الأخبار",
@@ -939,8 +923,9 @@ def test_homepage_cards_keep_dates_without_category_pills() -> None:
         "en/index.html": (
             "BirdLife report sounds the alarm...",
             (
-                "Interviews &amp; Investigations",
-                "Gear &amp; Arms",
+                "Hunting",
+                "Shooting &amp; Gear",
+                "Equestrian",
                 "Sayd TV",
                 "Photos",
                 "Latest news",
@@ -952,19 +937,17 @@ def test_homepage_cards_keep_dates_without_category_pills() -> None:
         assert "cat-pill" not in html
         lead = html.split("feature-lead", 1)[1].split("feature-side", 1)[0]
         stack = html.split("feature-stack", 1)[1].split("latest-col", 1)[0]
-        interviews = html.split(f"<h2>{headings[0]}</h2>", 1)[1].split("</section>", 1)[0]
         gear = html.split(f"<h2>{headings[1]}</h2>", 1)[1].split("</section>", 1)[0]
         assert lead_title in lead
         assert "cat-pill" not in lead
         assert re.search(r'<div class="meta">[^<]+</div>', lead)
         assert "cat-pill" not in stack
         assert stack.count('<div class="meta">') == 4
-        assert "cat-pill" not in interviews
-        assert interviews.count("<article") == 4
-        assert interviews.count('<div class="meta">') == 4
         assert "cat-pill" not in gear
         assert gear.count("<article") >= 1
         assert gear.count('<div class="meta">') == gear.count("<article")
+        latest = html.split("latest-feed", 1)[1].split("</ul>", 1)[0]
+        assert latest.count("<li>") == 10
         for heading in headings:
             assert f"<h2>{heading}</h2>" in html
     ar_article = (
@@ -1055,11 +1038,14 @@ def test_bekaa_nets_latest_and_ticker() -> None:
     assert "المصدر:" not in article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
     body = article.split('class="article-content"', 1)[1].split("</article>", 1)[0]
     assert "أعلنت المديرية" not in body and "صدر عن" not in body
-    assert 'href="../../category/صيد/index.html"' in article
+    assert 'href="../../category/صيد-الطيور/index.html"' in article
     assert "قوانين" not in article.split("article-header", 1)[1].split("article-content", 1)[0]
-    cat = (DOCS / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
-    listing = cat.split('class="post-list"', 1)[1]
-    assert listing.find(ar_slug) < listing.find("العد-التنازلي-لختام-موسم-الطائف")
+    bird = (DOCS / "category" / "صيد-الطيور" / "index.html").read_text(encoding="utf-8")
+    assert ar_slug in bird.split('class="post-list"', 1)[1]
+    hunting = (DOCS / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
+    assert ar_slug not in hunting.split('class="post-list"', 1)[1]
+    equine = (DOCS / "category" / "فروسية" / "index.html").read_text(encoding="utf-8")
+    assert "العد-التنازلي-لختام-موسم-الطائف" in equine
     assert f"<loc>https://sayd-magazine.com/en/posts/{en_slug}/</loc>" in (
         DOCS / "sitemap.xml"
     ).read_text(encoding="utf-8")
@@ -1084,7 +1070,7 @@ def test_homepage_sidebar_hides_when_stacked() -> None:
         sidebar = html.split('class="sidebar"', 1)[1].split("</aside>", 1)[0]
         footer = html.split('class="site-footer"', 1)[1].split("</footer>", 1)[0]
         assert cat_heading in sidebar and page_heading in sidebar
-        assert cat_heading in footer or ">In this edition<" in footer
+        assert ">المجلة<" in footer or ">Magazine<" in footer
         assert 'class="footer-col"' in footer
         assert f"?v={CSS_CACHE}" in html
 

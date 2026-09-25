@@ -268,7 +268,10 @@ def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
         assert f"<loc>{seo.public_url(rel)}</loc>" not in sitemap
     assert "category/صور/index.html" in chrome(home)
     assert "category/صيد/index.html" in chrome(home)
-    assert "category/مقابلات-تحقيقات/index.html" in chrome(home)
+    assert "category/صيد-الطيور/index.html" in chrome(home)
+    assert "category/عتاد-وسلاح-الصيد/index.html" in chrome(home)
+    assert "category/حياة-برية-وتخييم/index.html" in chrome(home)
+    assert "category/مقابلات-تحقيقات/index.html" not in chrome(home)
     assert "category/رماية/index.html" not in chrome(en)
     assert "category/قوانين-وخرائط/index.html" not in chrome(en)
     assert "category/رياضات-وسياحة-بيئية/index.html" not in chrome(en)

@@ -65,14 +65,14 @@ FARMERS = "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-�
 
 # Hunting desk: Taif finale leads, then the Mars 62e435c5 prefix.
 MARS_HUNTING_TOP = [
-    "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
-    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-    KAPS,
-    SUHAIL_80K,
-    QATAR_80K,
-    SAUDI,
-    BABTAIN,
-    MIGRATE_HOW,
+    "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+    "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
+    "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
+    "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
+    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
+    "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
+    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
 ]
 
 FORBIDDEN = (
@@ -466,10 +466,12 @@ def test_new_ticker_hunting_story_lands_on_sayd_near_top() -> None:
 
 
 def test_docs_hunting_category_keeps_mars_recency() -> None:
-    """Live صيد وفروسية list from 62e435c5 — Suhail/Kaps stay above archive."""
+    """صيد landing leads with the remapped 2026 stories. Suhail/Kaps stay above the archive."""
     html = (ROOT / "docs" / "category" / "صيد" / "index.html").read_text(encoding="utf-8")
     slugs = _listing_slugs(html)
     assert slugs[:8] == MARS_HUNTING_TOP, slugs[:10]
+    assert "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان" not in slugs
+    assert "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني" not in slugs
     assert SUHAIL_80K in slugs
     assert QATAR_80K in slugs
     assert OLD_HUNT in slugs

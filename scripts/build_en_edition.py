@@ -850,33 +850,11 @@ def en_chrome(
     stories = rel(depth, "en/stories/index.html")
     team = rel(depth, "en/team/index.html")
     contact = rel(depth, "en/contact/index.html")
-    nav_items = [
-        ("nav-home", "en/index.html", "Home"),
-        ("", "category/صيد/index.html", "Hunting &amp; Equestrian"),
-        ("", "category/رماية/index.html", "Shooting"),
-        ("", "category/عتاد-وسلاح-الصيد/index.html", "Gear &amp; Arms"),
-        ("", "category/رياضات-وسياحة-بيئية/index.html", "Eco-Tourism"),
-        ("", "category/مقابلات-تحقيقات/index.html", "Interviews &amp; Investigations"),
-        ("", "category/صور/index.html", "Photos"),
-        ("", "category/قوانين-وخرائط/index.html", "Laws &amp; Maps"),
-        ("nav-all", "articles/index.html", "Archive"),
-    ]
-    # Same rule as Arabic cat_nav_html: an empty 2022+ landing is not a door.
-    import seo_foundation as seo
+    import site_ia
 
-    nav_items = [
-        item
-        for item in nav_items
-        if not (
-            item[1].startswith("category/")
-            and seo.category_landing_empty(Path(item[1]))
-        )
-    ]
-    nav_links = []
-    for cls, path, label in nav_items:
-        attr = f' class="{cls}"' if cls else ""
-        nav_links.append(f'        <a{attr} href="{rel(depth, path)}">{label}</a>')
-    nav = "\n".join(nav_links)
+    nav = site_ia.desktop_nav_inner("en", depth)
+    drawer = site_ia.drawer_nav_inner("en", depth)
+    mobile = site_ia.mobile_nav_html("en", depth)
     return f"""<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -914,10 +892,11 @@ def en_chrome(
         <nav class="main-nav" aria-label="Main menu">
 {nav}
         </nav>
+{mobile}
         <details class="nav-toggle">
           <summary>Menu</summary>
           <nav class="drawer-nav" aria-label="Mobile menu">
-{nav}
+{drawer}
           </nav>
         </details>
       </div>

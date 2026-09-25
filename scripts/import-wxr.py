@@ -2822,6 +2822,9 @@ def main() -> None:
         f"SEO head + sitemap: {seo_stats['sitemap']} URLs, "
         f"{seo_stats['changed']} pages updated."
     )
+    from apply_site_ia import main as apply_ia
+
+    apply_ia()
     print("Done.")
     print(f"Preview: open {args.out / 'index.html'} or serve docs/ with any static server.")
 
