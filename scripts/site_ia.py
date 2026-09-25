@@ -32,8 +32,10 @@ SOCIAL = (("فيسبوك", "Facebook", "https://www.facebook.com/SaydMagazine/")
 MAILTO = "mailto:editor@sayd-magazine.com?subject=%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83%20%D8%A8%D9%86%D8%B4%D8%B1%D8%A9%20%D8%B5%D9%8A%D8%AF"
 
 # Mobile bar shows these ids, in order. Wildlife uses the short bar label.
-# Arabic chrome reads nav_ar (definite article «ال» stripped). `ar` stays the
-# content title for homepage desks, badges, and category pages. English is untouched.
+# Arabic desktop/drawer/footer chrome reads nav_ar. The mobile bar reads short_ar
+# when it differs (حياة برية وتخييم vs برية وتخييم). `ar` stays the content title
+# for homepage desks, badges, and category pages. English is untouched.
+# قوانين الصيد and موسوعة الطيور keep «ال».
 MOBILE_BAR = ("hunting", "gear", "equestrian", "wildlife")
 
 DOORS: list[dict] = [
@@ -105,7 +107,7 @@ DOORS: list[dict] = [
     {
         "id": "wildlife",
         "ar": "الحياة البرية والتخييم",
-        "nav_ar": "برية وتخييم",
+        "nav_ar": "حياة برية وتخييم",
         "en": "Wildlife & Camping",
         "short_ar": "برية وتخييم",
         "short_en": "Wildlife",
@@ -126,9 +128,8 @@ DOORS: list[dict] = [
     {
         "id": "laws",
         "ar": "قوانين الصيد",
-        "nav_ar": "قوانين صيد",
         "en": "Hunting Laws",
-        "short_ar": "قوانين صيد",
+        "short_ar": "قوانين الصيد",
         "short_en": "Hunting Laws",
         "folder": "قوانين",
         "has_2026": False,
@@ -137,9 +138,8 @@ DOORS: list[dict] = [
     {
         "id": "birds",
         "ar": "موسوعة الطيور",
-        "nav_ar": "موسوعة طيور",
         "en": "Bird Encyclopedia",
-        "short_ar": "موسوعة طيور",
+        "short_ar": "موسوعة الطيور",
         "short_en": "Bird Encyclopedia",
         "folder": "موسوعة-الطيور",
         "has_2026": False,
@@ -453,15 +453,15 @@ def door_label(door_id: str, lang: str) -> str:
 
 
 def chrome_label(item: dict, lang: str, *, short: bool = False) -> str:
-    """Visible nav/chrome label. Arabic uses nav_ar; English labels stay."""
+    """Visible nav/chrome label. Mobile bar uses short_ar; other chrome uses nav_ar."""
     if lang == "en":
         if short and "short_en" in item:
             return item["short_en"]
         return item["en"]
-    if "nav_ar" in item:
-        return item["nav_ar"]
     if short and "short_ar" in item:
         return item["short_ar"]
+    if "nav_ar" in item:
+        return item["nav_ar"]
     return item["ar"]
 
 

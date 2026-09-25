@@ -247,7 +247,7 @@ def write_ar_article() -> None:
         <a href="../../category/صيد-الطيور/index.html">صيد طيور</a>
         <a href="../../category/عتاد-وسلاح-الصيد/index.html">رماية وعتاد</a>
         <a href="../../category/فروسية/index.html">فروسية</a>
-        <a href="../../category/حياة-برية-وتخييم/index.html">برية وتخييم</a>
+        <a href="../../category/حياة-برية-وتخييم/index.html">حياة برية وتخييم</a>
         <a href="../../category/استديو-صيد/index.html">صيد TV</a>
         <a href="../../category/صور/index.html">صور</a>
         </nav>
@@ -258,7 +258,7 @@ def write_ar_article() -> None:
         <a href="../../category/صيد-الطيور/index.html">صيد طيور</a>
         <a href="../../category/عتاد-وسلاح-الصيد/index.html">رماية وعتاد</a>
         <a href="../../category/فروسية/index.html">فروسية</a>
-        <a href="../../category/حياة-برية-وتخييم/index.html">برية وتخييم</a>
+        <a href="../../category/حياة-برية-وتخييم/index.html">حياة برية وتخييم</a>
         <a href="../../category/استديو-صيد/index.html">صيد TV</a>
         <a href="../../category/صور/index.html">صور</a>
           </nav>
@@ -324,7 +324,7 @@ def write_ar_article() -> None:
           <div class="widget-body"><ul class="cat-list"><li><a href="../../category/صيد/index.html">صيد</a></li>
 <li><a href="../../category/عتاد-وسلاح-الصيد/index.html">رماية وعتاد</a></li>
 <li><a href="../../category/فروسية/index.html">فروسية</a></li>
-<li><a href="../../category/حياة-برية-وتخييم/index.html">برية وتخييم</a></li>
+<li><a href="../../category/حياة-برية-وتخييم/index.html">حياة برية وتخييم</a></li>
 <li><a href="../../category/استديو-صيد/index.html">صيد TV</a></li>
 <li><a href="../../category/صور/index.html">صور</a></li></ul></div>
         </div>
@@ -344,7 +344,7 @@ def write_ar_article() -> None:
           <ul><li><a href="../../category/صيد/index.html">صيد</a></li>
 <li><a href="../../category/عتاد-وسلاح-الصيد/index.html">رماية وعتاد</a></li>
 <li><a href="../../category/فروسية/index.html">فروسية</a></li>
-<li><a href="../../category/حياة-برية-وتخييم/index.html">برية وتخييم</a></li>
+<li><a href="../../category/حياة-برية-وتخييم/index.html">حياة برية وتخييم</a></li>
 <li><a href="../../category/استديو-صيد/index.html">صيد TV</a></li>
 <li><a href="../../category/صور/index.html">صور</a></li></ul>
         </div>
