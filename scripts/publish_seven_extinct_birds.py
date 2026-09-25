@@ -304,15 +304,15 @@ def write_ar_article() -> None:
 <article class="card overlay">
   <a class="thumb" href="../../posts/كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف/index.html"><img src="../../media/uploads/2026/09/farmers-storks-migrating-palestine.jpg" alt="أسراب اللقلق الأبيض تعبر سماء المشرق في موسم الهجرة الخريفية" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
     <h3><a href="../../posts/كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف/index.html">كيف يحمي المزارع الطيور المهاجرة هذا الخريف؟</a></h3>
+    <div class="meta">20 أيلول 2026<span class="cat-pill">مقابلات وتحقيقات</span></div>
   </div>
 </article>
 <article class="card overlay">
   <a class="thumb" href="../../posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html"><img src="../../media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="أعضاء من وحدة مكافحة الصيد الجائر مع طيور أُنقذت خلال دورية مشتركة — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر" loading="lazy"></a>
   <div class="body">
-    <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
     <h3><a href="../../posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017/index.html">حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام</a></h3>
+    <div class="meta">13 أيلول 2026<span class="cat-pill">أخبار</span></div>
   </div>
 </article>
 </div>
@@ -500,15 +500,15 @@ def write_en_article() -> None:
 <article class="card overlay">
   <a class="thumb" href="../how-farmers-protect-migratory-birds-this-autumn/index.html"><img src="../../../media/uploads/2026/09/farmers-storks-migrating-palestine.jpg" alt="White storks migrating over the Levant this autumn" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 September 2026<span class="cat-pill">Interviews &amp; Investigations</span></div>
     <h3><a href="../how-farmers-protect-migratory-birds-this-autumn/index.html">How Can Farmers Protect Migratory Birds This Autumn?</a></h3>
+    <div class="meta">20 September 2026<span class="cat-pill">Interviews &amp; Investigations</span></div>
   </div>
 </article>
 <article class="card overlay">
   <a class="thumb" href="../protecting-autumn-migratory-birds-lebanon-khatib-2017/index.html"><img src="../../../media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg" alt="Members of the Anti-Poaching Unit with birds rescued during a joint patrol — Middle East Center for Sustainable Hunting and Anti-Poaching" loading="lazy"></a>
   <div class="body">
-    <div class="meta">13 September 2026<span class="cat-pill">News</span></div>
     <h3><a href="../protecting-autumn-migratory-birds-lebanon-khatib-2017/index.html">Protecting Autumn Migratory Birds in Lebanon: A Field Partnership Since 2017, Al-Khatib Affirms the Sustainable Hunter’s Role</a></h3>
+    <div class="meta">13 September 2026<span class="cat-pill">News</span></div>
   </div>
 </article>
       </div>
@@ -576,8 +576,8 @@ def patch_listings() -> None:
     row = f"""<article class="post-row">
   <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../{IMG}" alt="{AR_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 أيلول 2026</div>
     <h2><a href="../../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">22 أيلول 2026</div>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>
 </article>
@@ -596,8 +596,8 @@ def patch_listings() -> None:
     archive_row = f"""<article class="post-row">
   <a class="thumb" href="../posts/{AR_SLUG}/index.html"><img src="../{IMG}" alt="{AR_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 أيلول 2026 · مقابلات وتحقيقات</div>
     <h2><a href="../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">22 أيلول 2026 · مقابلات وتحقيقات</div>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>
 </article>
@@ -613,8 +613,8 @@ def patch_listings() -> None:
         card = f"""<article class="card overlay">
   <a class="thumb" href="../posts/{EN_SLUG}/index.html"><img src="../../{IMG}" alt="{EN_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 September 2026</div>
     <h3><a href="../posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
+    <div class="meta">22 September 2026</div>
   </div>
 </article>"""
         html = html.replace('<div class="grid-4">\n', '<div class="grid-4">\n' + card, 1)

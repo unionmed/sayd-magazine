@@ -83,8 +83,8 @@ def ar_body() -> str:
 <article class="card card-story">
   <a class="thumb" href="../../posts/البنادق-الهوائية/index.html"><img src="../../media/uploads/2022/12/بارودة.png" alt="البنادق الهوائية" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 كانون الأول 2022<span class="cat-pill">عتاد وسلاح</span></div>
     <h3><a href="../../posts/البنادق-الهوائية/index.html">البنادق الهوائية</a></h3>
+    <div class="meta">20 كانون الأول 2022<span class="cat-pill">عتاد وسلاح</span></div>
   </div>
 </article>
 </div>
@@ -153,8 +153,8 @@ def en_body() -> str:
 <article class="card card-story">
   <a class="thumb" href="../air-rifles/index.html"><img src="../../../media/uploads/2022/12/بارودة.png" alt="An air rifle — spring / gas-ram designs" loading="lazy"></a>
   <div class="body">
-    <div class="meta">20 December 2022<span class="cat-pill">Gear &amp; Arms</span></div>
     <h3><a href="../air-rifles/index.html">Air Rifles</a></h3>
+    <div class="meta">20 December 2022<span class="cat-pill">Gear &amp; Arms</span></div>
   </div>
 </article>
       </div>
@@ -219,8 +219,8 @@ def patch_listings() -> None:
     row = f"""<article class="post-row">
   <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../{MEDIA}/{FIELD}" alt="{AR_FIELD_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 أيلول 2026</div>
     <h2><a href="../../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">23 أيلول 2026</div>
     <p class="excerpt">{AR_META}</p>
   </div>
 </article>
@@ -235,8 +235,8 @@ def patch_listings() -> None:
     arow = f"""<article class="post-row">
   <a class="thumb" href="../posts/{AR_SLUG}/index.html"><img src="../{MEDIA}/{FIELD}" alt="{AR_FIELD_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 أيلول 2026 · عتاد وسلاح</div>
     <h2><a href="../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">23 أيلول 2026 · عتاد وسلاح</div>
     <p class="excerpt">{AR_META}</p>
   </div>
 </article>
@@ -251,8 +251,8 @@ def patch_listings() -> None:
     card = f"""<article class="card card-story">
   <a class="thumb" href="../posts/{EN_SLUG}/index.html"><img src="../../{MEDIA}/{FIELD}" alt="{EN_FIELD_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 September 2026</div>
     <h3><a href="../posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
+    <div class="meta">23 September 2026</div>
   </div>
 </article>"""
     if EN_SLUG not in st:

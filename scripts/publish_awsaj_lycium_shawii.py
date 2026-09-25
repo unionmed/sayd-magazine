@@ -240,8 +240,8 @@ def related_card(href: str, img: str, alt: str, date: str, cat: str, title: str)
     return f"""<article class="card card-story">
   <a class="thumb" href="{e(href)}"><img src="{e(img)}" alt="{e(alt)}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">{e(date)}<span class="cat-pill">{e(cat)}</span></div>
     <h3><a href="{e(href)}">{e(title)}</a></h3>
+    <div class="meta">{e(date)}<span class="cat-pill">{e(cat)}</span></div>
   </div>
 </article>"""
 
@@ -390,8 +390,8 @@ def wire_door() -> None:
     row = f"""<article class="post-row">
   <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../media/uploads/2026/09/{IMG1}" alt="العوسج (Lycium shawii)، شجيرة كثيفة خضراء في النقب." loading="lazy"></a>
   <div class="body">
-    <div class="meta">{AR_DATE}</div>
     <h2><a href="../../posts/{AR_SLUG}/index.html">{html.escape(AR_TITLE)}</a></h2>
+    <div class="meta">{AR_DATE}</div>
     <p class="excerpt">{html.escape(AR_DESC)}</p>
   </div>
 </article>

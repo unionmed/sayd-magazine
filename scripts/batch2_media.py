@@ -581,8 +581,8 @@ def restore_homepage_cards(mapping: dict[str, str]) -> int:
             f'  <a class="thumb" href="posts/{slug}/index.html">'
             f'<img src="media/{rel}" alt="{title}" loading="lazy"></a>\n'
             f'  <div class="body">\n'
-            f'    <div class="meta">{date}</div>\n'
             f'    <h3><a href="posts/{slug}/index.html">{title}</a></h3>\n'
+            f'    <div class="meta">{date}</div>\n'
             f"  </div>\n"
             f"</article>\n"
         )

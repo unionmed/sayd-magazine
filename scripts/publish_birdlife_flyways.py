@@ -290,8 +290,8 @@ def patch_listings() -> None:
     row = f"""<article class="post-row">
   <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../media/uploads/2026/09/{HERO}" alt="{HERO_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 أيلول 2026</div>
     <h2><a href="../../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">23 أيلول 2026</div>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>
 </article>
@@ -312,8 +312,8 @@ def patch_listings() -> None:
     archive_row = f"""<article class="post-row">
   <a class="thumb" href="../posts/{AR_SLUG}/index.html"><img src="../media/uploads/2026/09/{HERO}" alt="{HERO_ALT_AR}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 أيلول 2026 · مقابلات وتحقيقات</div>
     <h2><a href="../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">23 أيلول 2026 · مقابلات وتحقيقات</div>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>
 </article>
@@ -331,8 +331,8 @@ def patch_listings() -> None:
         card = f"""<article class="card overlay">
   <a class="thumb" href="../posts/{EN_SLUG}/index.html"><img src="../../media/uploads/2026/09/{HERO}" alt="{HERO_ALT_EN}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">23 September 2026</div>
     <h3><a href="../posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
+    <div class="meta">23 September 2026</div>
   </div>
 </article>
 """

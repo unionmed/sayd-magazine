@@ -262,16 +262,16 @@ def write_ar_article() -> None:
 <article class="card overlay">
   <a class="thumb" href="../../posts/لين-عراجي-بطلة-فروسية-وحساب/index.html"><img src="../../media/uploads/2022/10/لين-2.jpg" alt="لين عراجي بطلة فروسية وحساب" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 تشرين الأول 2022<span class="cat-pill">فروسية</span></div>
     <h3><a href="../../posts/لين-عراجي-بطلة-فروسية-وحساب/index.html">لين عراجي بطلة فروسية وحساب</a></h3>
+    <div class="meta">22 تشرين الأول 2022<span class="cat-pill">فروسية</span></div>
   </div>
 </article>
 
 <article class="card overlay">
   <a class="thumb" href="../../posts/{SAUDI_AR}/index.html"><img src="../../media/uploads/2026/09/ncw-wildlife-card.jpg" alt="المركز الوطني لتنمية الحياة الفطرية — السعودية" loading="lazy"></a>
   <div class="body">
-    <div class="meta">9 أيلول 2026<span class="cat-pill">أخبار</span></div>
     <h3><a href="../../posts/{SAUDI_AR}/index.html">السعودية تطلق موسم الصيد السادس وتشدد على الضوابط</a></h3>
+    <div class="meta">9 أيلول 2026<span class="cat-pill">أخبار</span></div>
   </div>
 </article></div>
     </section>
@@ -467,15 +467,15 @@ def write_en_article() -> None:
 <article class="card overlay">
   <a class="thumb" href="../leen-araji-equestrian-and-mental-math-champion/index.html"><img src="../../../media/uploads/2022/10/لين-2.jpg" alt="Leen Araji, equestrian champion and mental math champion" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 October 2022<span class="cat-pill">Equestrian</span></div>
     <h3><a href="../leen-araji-equestrian-and-mental-math-champion/index.html">Leen Araji: Equestrian Champion and Mental Math Champion</a></h3>
+    <div class="meta">22 October 2022<span class="cat-pill">Equestrian</span></div>
   </div>
 </article>
 <article class="card overlay">
   <a class="thumb" href="../{SAUDI_EN}/index.html"><img src="../../../media/uploads/2026/09/ncw-wildlife-card.jpg" alt="National Center for Wildlife — Saudi Arabia" loading="lazy"></a>
   <div class="body">
-    <div class="meta">9 September 2026<span class="cat-pill">News</span></div>
     <h3><a href="../{SAUDI_EN}/index.html">Saudi Arabia Launches the Sixth Hunting Season and Tightens the Rules: 5,000 Riyals Fine for Prohibited Places</a></h3>
+    <div class="meta">9 September 2026<span class="cat-pill">News</span></div>
   </div>
 </article>
       </div>
@@ -571,8 +571,8 @@ def patch_home(path: Path, *, en: bool) -> None:
             f'  <a class="thumb" href="posts/{taif}/index.html">'
             f'<img src="{media}" alt="{alt}" loading="lazy"></a>\n'
             f'  <div class="body">\n'
-            f'    <div class="meta">{date}</div>\n'
             f'    <h3><a href="posts/{taif}/index.html">{title}</a></h3>\n'
+            f'    <div class="meta">{date}</div>\n'
             f'  </div>\n'
             f'</article>'
         )
@@ -629,8 +629,8 @@ def patch_listings() -> None:
     ar_row = f"""<article class="post-row">
   <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../{IMG_REL}" alt="{AR_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 أيلول 2026</div>
     <h2><a href="../../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">22 أيلول 2026</div>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>
 </article>
@@ -644,8 +644,8 @@ def patch_listings() -> None:
     archive_row = f"""<article class="post-row">
   <a class="thumb" href="../posts/{AR_SLUG}/index.html"><img src="../{IMG_REL}" alt="{AR_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 أيلول 2026 · صيد وفروسية</div>
     <h2><a href="../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">22 أيلول 2026 · صيد وفروسية</div>
     <p class="excerpt">{AR_EXCERPT}</p>
   </div>
 </article>
@@ -663,8 +663,8 @@ def patch_listings() -> None:
         card = f"""<article class="card overlay">
   <a class="thumb" href="../posts/{EN_SLUG}/index.html"><img src="../../{IMG_REL}" alt="{EN_ALT}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">22 September 2026</div>
     <h3><a href="../posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
+    <div class="meta">22 September 2026</div>
   </div>
 </article>"""
         html = html.replace('<div class="grid-4">\n', '<div class="grid-4">\n' + card, 1)

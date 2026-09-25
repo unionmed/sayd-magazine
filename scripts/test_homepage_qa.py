@@ -1065,6 +1065,46 @@ def test_bekaa_nets_latest_and_ticker() -> None:
     ).read_text(encoding="utf-8")
 
 
+def _assert_date_follows_title(block: str, label: str) -> None:
+    """Story cards put the headline, then the date — same order as Latest news."""
+    cards = re.findall(r"<article\b.*?</article>", block, re.S)
+    assert cards, label
+    for card in cards:
+        body = re.search(r'<div class="body">(.*?)</div>\s*</article>', card, re.S)
+        if not body:
+            body = re.search(r'<div class="body">(.*?)</div>', card, re.S)
+        assert body, label
+        inner = body.group(1)
+        heading = re.search(r"<h[23]\b", inner)
+        meta = re.search(r'<div class="meta">', inner)
+        assert heading and meta, label
+        assert heading.start() < meta.start(), label
+
+
+def test_story_dates_follow_titles() -> None:
+    """Feature, stack, door cards, listings, and Latest all show the date under the title."""
+    for rel in ("index.html", "en/index.html"):
+        html = (DOCS / rel).read_text(encoding="utf-8")
+        lead = html.split('<article class="card overlay feature-lead">', 1)[1].split(
+            "feature-side", 1
+        )[0]
+        lead = '<article class="card overlay feature-lead">' + lead
+        stack = html.split("feature-stack", 1)[1].split("latest-col", 1)[0]
+        latest = html.split('<ul class="latest-feed">', 1)[1].split("</ul>", 1)[0]
+        doors = html.split('class="home-main"', 1)[1].split('class="sidebar"', 1)[0]
+        memory = html.split('class="memory-strip"', 1)[1].split("</section>", 1)[0]
+        _assert_date_follows_title(lead, f"{rel} feature")
+        _assert_date_follows_title(stack, f"{rel} stack")
+        _assert_date_follows_title(doors, f"{rel} doors")
+        assert "feed-title" in latest and "feed-date" in latest
+        assert latest.find("feed-title") < latest.find("feed-date"), rel
+        assert '<div class="meta">' not in memory, rel
+    news = (DOCS / "category" / "أخبار" / "index.html").read_text(encoding="utf-8")
+    _assert_date_follows_title(news.split('class="post-list"', 1)[1], "ar news listing")
+    stories = (DOCS / "en" / "stories" / "index.html").read_text(encoding="utf-8")
+    _assert_date_follows_title(stories.split('class="grid-4"', 1)[1], "en stories")
+
+
 def test_homepage_sidebar_hides_when_stacked() -> None:
     """Footer keeps categories and pages. The homepage sidebar hides once it would stack on top."""
     for path in (
@@ -1115,5 +1155,6 @@ if __name__ == "__main__":
     test_adonis_off_ticker_and_empty_en_miscellany_hidden()
     test_homepage_cards_keep_dates_without_category_pills()
     test_homepage_builders_do_not_restamp_category_pills()
+    test_story_dates_follow_titles()
     test_homepage_sidebar_hides_when_stacked()
     print("test_homepage_qa: ok")

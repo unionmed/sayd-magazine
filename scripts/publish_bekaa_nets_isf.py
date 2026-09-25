@@ -306,8 +306,8 @@ def patch_listings() -> None:
     row = f"""<article class="post-row">
   <a class="thumb" href="../../posts/{AR_SLUG}/index.html"><img src="../../{IMG}" alt="{html.escape(AR_ALT, quote=True)}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">{AR_DATE}</div>
     <h2><a href="../../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">{AR_DATE}</div>
     <p class="excerpt">{AR_DESC}</p>
   </div>
 </article>
@@ -328,8 +328,8 @@ def patch_listings() -> None:
     archive_row = f"""<article class="post-row">
   <a class="thumb" href="../posts/{AR_SLUG}/index.html"><img src="../{IMG}" alt="{html.escape(AR_ALT, quote=True)}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">{AR_DATE} · صيد وفروسية</div>
     <h2><a href="../posts/{AR_SLUG}/index.html">{AR_TITLE}</a></h2>
+    <div class="meta">{AR_DATE} · صيد وفروسية</div>
     <p class="excerpt">{AR_DESC}</p>
   </div>
 </article>
@@ -348,8 +348,8 @@ def patch_listings() -> None:
         card = f"""<article class="card overlay">
   <a class="thumb" href="../posts/{EN_SLUG}/index.html"><img src="../../{IMG}" alt="{html.escape(EN_ALT, quote=True)}" loading="lazy"></a>
   <div class="body">
-    <div class="meta">{EN_DATE}</div>
     <h3><a href="../posts/{EN_SLUG}/index.html">{EN_TITLE}</a></h3>
+    <div class="meta">{EN_DATE}</div>
   </div>
 </article>
 """
