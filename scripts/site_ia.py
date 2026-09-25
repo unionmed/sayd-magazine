@@ -495,18 +495,17 @@ def desktop_nav_inner(lang: str, depth: int) -> str:
 
 
 def mobile_nav_html(lang: str, depth: int) -> str:
+    """First four doors, then المزيد / More with the other five, empty or not."""
     label_key = "short_en" if lang == "en" else "short_ar"
     more_label = "More" if lang == "en" else "المزيد"
     aria = "Mobile menu" if lang == "en" else "قائمة الجوال"
-    by_id = {door["id"]: door for door in visible_doors()}
+    by_id = {door["id"]: door for door in DOORS}
     bar = []
     for door_id in MOBILE_BAR:
-        door = by_id.get(door_id)
-        if not door:
-            continue
+        door = by_id[door_id]
         bar.append(f'          {_link(_href(depth, door["folder"]), door[label_key])}')
     more = []
-    for door in visible_doors():
+    for door in DOORS:
         if door["id"] in MOBILE_BAR:
             continue
         label = door["en"] if lang == "en" else door["ar"]
