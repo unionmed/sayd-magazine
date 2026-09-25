@@ -126,6 +126,13 @@ def test_primary_door_is_singular() -> None:
     assert ia.PRIMARY["شجيرة-العوسج-حين-تقرأ-الأرض"]["door"] == "wildlife"
     assert ia.PRIMARY["البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"]["door"] == "photos"
     assert ia.PRIMARY["بومة-المخازن"]["door"] == "birds"
+    assert ia.PRIMARY["طائر-الوروار-الأوروبي"]["door"] == "birds"
+    assert ia.PRIMARY["الطبيعة-أم-الشعراء-الشاعر-حسين-شعيب-ش"]["door"] == "poetry"
+    assert ia.keeps_pre_2022_landing("الطبيعة-أم-الشعراء-الشاعر-حسين-شعيب-ش")
+    assert ia.PRIMARY["بالمختصر-المفيد-معايير-شركات-التأمين"]["door"] == "laws"
+    assert ia.PRIMARY["تنفيذ-قانون-الصيد-لا-يكون-استنسابياً-و"]["door"] == "laws"
+    assert ia.PRIMARY["ما-هو-المتغير-الوحيد-السنوي-في-قانون-ال"]["door"] == "laws"
+    assert not ia.keeps_pre_2022_landing("الصقر-العويسق-الأحمر-يقتله-جهل-القواص")
     assert ia.PRIMARY["السعودية-تطلق-موسم-الصيد-السادس-بضواب"]["door"] == "hunting"
     assert ia.PRIMARY["العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"]["door"] == "equestrian"
     assert ia.PRIMARY["من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024"]["door"] == "hunting"

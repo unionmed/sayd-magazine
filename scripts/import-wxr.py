@@ -390,6 +390,21 @@ def visible_listing_posts(posts: list[dict]) -> list[dict]:
     return [p for p in posts if post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN]
 
 
+def category_listing_posts(posts: list[dict]) -> list[dict]:
+    """Category doors: 2022→today, plus Nayef-approved archive_landing slugs."""
+    kept: list[dict] = []
+    for post in posts:
+        slug = post.get("slug") or ""
+        year = post_publish_year(post)
+        if site_ia.keeps_pre_2022_landing(slug):
+            if year:
+                kept.append(post)
+            continue
+        if year >= HOME_PUBLISH_YEAR_MIN:
+            kept.append(post)
+    return kept
+
+
 def featured_year(p: dict) -> int:
     m = re.search(r"/uploads/(\d{4})/", p.get("featured") or "")
     return int(m.group(1)) if m else 0
@@ -990,11 +1005,7 @@ def apply_display_category_names(posts: list[dict], cat_info: dict[str, dict]) -
 
 
 def category_visible_count(c: dict) -> int:
-    return sum(
-        1
-        for p in c.get("posts") or []
-        if post_publish_year(p) >= HOME_PUBLISH_YEAR_MIN
-    )
+    return len(category_listing_posts(c.get("posts") or []))
 
 
 def chrome_category(c: dict | None) -> bool:
@@ -2485,7 +2496,7 @@ def build_site(data: dict, out: Path) -> None:
         for p in ordered:
             if post_publish_year(p) == 0:
                 undated_category_slugs.append(str(p.get("slug") or ""))
-        cat_posts = visible_listing_posts(ordered)
+        cat_posts = category_listing_posts(ordered)
         visible_count = len(cat_posts)
         if visible_count == 0:
             empty_categories.append(c["name"])
@@ -2742,7 +2753,9 @@ def filter_saved_category_listings(out: Path) -> dict:
                 if year == 0:
                     report["undated"].append(f"{directory.name}/{slug}")
                     continue
-                if year < HOME_PUBLISH_YEAR_MIN:
+                if year < HOME_PUBLISH_YEAR_MIN and not site_ia.keeps_pre_2022_landing(
+                    slug if isinstance(slug, str) else ""
+                ):
                     report["dropped"] += 1
                     continue
                 visible_rows.append(row)

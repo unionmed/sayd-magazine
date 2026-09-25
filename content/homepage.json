@@ -224,7 +224,11 @@
     "الصياد-الشاعر-عبد-العزيز-البابطين-أفض": "hunting",
     "سهام-تويني-ندمت-على-دعم-الإتحاد-والأم": "hunting",
     "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي": "hunting",
-    "الاعلامي-الصياد-جورج-قرداحي-أنا-من-سلا": "hunting"
+    "الاعلامي-الصياد-جورج-قرداحي-أنا-من-سلا": "hunting",
+    "الطبيعة-أم-الشعراء-الشاعر-حسين-شعيب-ش": "poetry",
+    "بالمختصر-المفيد-معايير-شركات-التأمين": "laws",
+    "ما-هو-المتغير-الوحيد-السنوي-في-قانون-ال": "laws",
+    "تنفيذ-قانون-الصيد-لا-يكون-استنسابياً-و": "laws"
   },
   "demotion": "promote_main_slot() moves the previous main feature to the front of the important four, the oldest important slot to the front of the latest ten, and the oldest of those ten off the homepage. Nayef reviews the slots before any go-live. No URL is listed twice."
 }

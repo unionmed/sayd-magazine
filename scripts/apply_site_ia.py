@@ -6,6 +6,7 @@ Does not rebuild from the WordPress export and does not publish.
 
 from __future__ import annotations
 
+import html
 import json
 import re
 import shutil
@@ -31,7 +32,7 @@ FOOTER_COLS_RE = re.compile(
 POST_ROW_RE = re.compile(r'<article class="post-row">.*?</article>', re.S)
 ARTICLE_CARD_RE = re.compile(r'<article class="card\b.*?</article>', re.S)
 BADGE_RE = re.compile(
-    r'<div>\s*(?:<a class="badge"[^>]*>.*?</a>|<span class="badge">.*?</span>)\s*</div>',
+    r'<div>\s*(?:(?:<a class="badge"[^>]*>.*?</a>|<span class="badge">.*?</span>)\s*)+</div>',
     re.S,
 )
 BREADCRUMB_RE = re.compile(r'(<div class="breadcrumb">)(.*?)(</div>)', re.S)
@@ -289,9 +290,16 @@ def row_year(row: str) -> int:
     return int(match.group(1)) if match else 0
 
 
+def _archive_landing_row(row: str) -> bool:
+    return any(
+        spec.get("archive_landing") and f"posts/{slug}/" in row
+        for slug, spec in ia.PRIMARY.items()
+    )
+
+
 def visible_rows(rows: list[str]) -> list[str]:
-    """Category landings stay 2022+. Older stories stay on their pages and in the archive."""
-    return [row for row in rows if row_year(row) >= 2022]
+    """Category landings stay 2022+, plus Nayef-approved archive_landing cards."""
+    return [row for row in rows if row_year(row) >= 2022 or _archive_landing_row(row)]
 
 
 def splice_rows(html_text: str, rows: list[str]) -> str:
@@ -454,9 +462,110 @@ def badge_for(path: Path, door_id: str) -> str:
     return f'<div><a class="badge" href="{href}">{label}</a></div>'
 
 
-def rewrite_badges() -> None:
+def archive_listing_row(slug: str) -> str | None:
+    """Door card from the article's own title, date, photo, and archive excerpt."""
+    page = DOCS / "posts" / slug / "index.html"
+    if not page.is_file():
+        return None
+    text = page.read_text(encoding="utf-8")
+    title_m = re.search(r"<h1[^>]*>(.*?)</h1>", text, re.S)
+    date_m = re.search(
+        r'class="article-meta".*?<span class="meta-item">([^<]+)</span>',
+        text,
+        re.S,
+    )
+    if not title_m or not date_m:
+        return None
+    title = re.sub(r"<[^>]+>", "", title_m.group(1)).strip()
+    title = " ".join(title.split())
+    date = date_m.group(1).strip()
+    excerpt = _archive_excerpt(slug)
+    thumb = _article_thumb(text, slug, title)
+    excerpt_html = f"\n    <p class=\"excerpt\">{excerpt}</p>" if excerpt else ""
+    thumb_html = f"\n  {thumb}" if thumb else ""
+    return (
+        "<article class=\"post-row\">"
+        f"{thumb_html}\n"
+        "  <div class=\"body\">\n"
+        f"    <div class=\"meta\">{date}</div>\n"
+        f"    <h2><a href=\"../../posts/{slug}/index.html\">{html.escape(title)}</a></h2>"
+        f"{excerpt_html}\n"
+        "  </div>\n"
+        "</article>"
+    )
+
+
+def _archive_excerpt(slug: str) -> str:
+    needle = f"posts/{slug}/"
+    articles = DOCS / "articles"
+    if not articles.is_dir():
+        return ""
+    for path in sorted(articles.glob("*.html")):
+        text = path.read_text(encoding="utf-8")
+        if needle not in text:
+            continue
+        for row in POST_ROW_RE.findall(text):
+            if needle not in row:
+                continue
+            match = re.search(r'<p class="excerpt">(.*?)</p>', row, re.S)
+            if match:
+                return match.group(1).strip()
+    return ""
+
+
+def _article_thumb(text: str, slug: str, title: str) -> str:
+    content = re.search(r'<article class="article-content">(.*?)</article>', text, re.S)
+    blob = content.group(1) if content else ""
+    for src in re.findall(r'<img\b[^>]*\bsrc="([^"]+)"', blob):
+        if "/media/" not in src:
+            continue
+        rel = src.split("/media/", 1)[1]
+        if not (DOCS / "media" / rel).is_file():
+            continue
+        use = src if src.startswith("../../media/") else f"../../media/{rel}"
+        alt = html.escape(title, quote=True)
+        return (
+            f'<a class="thumb" href="../../posts/{slug}/index.html">'
+            f'<img src="{use}" alt="{alt}" loading="lazy"></a>'
+        )
+    return ""
+
+
+def place_archive_landings() -> list[str]:
+    """Append approved pre-2022 cards onto their one door. Other doors stay put."""
+    by_folder: dict[str, list[str]] = {}
+    for slug, spec in ia.PRIMARY.items():
+        if not spec.get("archive_landing"):
+            continue
+        by_folder.setdefault(ia.door_folder(spec["door"]), []).append(slug)
+    changed: list[str] = []
+    for folder, slugs in by_folder.items():
+        path = DOCS / "category" / folder / "index.html"
+        if not path.is_file():
+            continue
+        html_text = path.read_text(encoding="utf-8")
+        existing = POST_ROW_RE.findall(html_text)
+        fresh: list[str] = []
+        for slug in slugs:
+            if any(f"posts/{slug}/" in row for row in existing):
+                continue
+            row = archive_listing_row(slug)
+            if row:
+                fresh.append(row)
+        fresh.sort(key=row_year, reverse=True)
+        rows = existing + fresh
+        updated = splice_rows(html_text, rows)
+        if updated != html_text:
+            path.write_text(updated, encoding="utf-8")
+            changed.append(folder)
+    return changed
+
+
+def rewrite_badges(only: set[str] | None = None) -> None:
     jobs: list[tuple[Path, str]] = []
     for slug, spec in ia.PRIMARY.items():
+        if only is not None and slug not in only:
+            continue
         ar = DOCS / "posts" / slug / "index.html"
         if ar.is_file():
             jobs.append((ar, spec["door"]))

@@ -339,6 +339,33 @@ PRIMARY: dict[str, dict] = {
         "en": "",
         "remove_from": ["ثقافة-وتراث"],
     },
+    # Nayef-approved archive landings. Pre-2022, one door each.
+    # archive_landing keeps the card on that door; the 2022+ filter stays
+    # for every other story.
+    "الطبيعة-أم-الشعراء-الشاعر-حسين-شعيب-ش": {
+        "door": "poetry",
+        "en": "",
+        "remove_from": [],
+        "archive_landing": True,
+    },
+    "بالمختصر-المفيد-معايير-شركات-التأمين": {
+        "door": "laws",
+        "en": "",
+        "remove_from": [],
+        "archive_landing": True,
+    },
+    "ما-هو-المتغير-الوحيد-السنوي-في-قانون-ال": {
+        "door": "laws",
+        "en": "",
+        "remove_from": ["جعبة-المنوعات", "صيد-بري"],
+        "archive_landing": True,
+    },
+    "تنفيذ-قانون-الصيد-لا-يكون-استنسابياً-و": {
+        "door": "laws",
+        "en": "",
+        "remove_from": ["كلمتنا"],
+        "archive_landing": True,
+    },
 }
 
 # Provisional homepage slots. Editable. Demotion rewrites this shape.
@@ -400,6 +427,12 @@ def door_by_id(door_id: str) -> dict:
 
 def door_folder(door_id: str) -> str:
     return door_by_id(door_id)["folder"]
+
+
+def keeps_pre_2022_landing(slug: str) -> bool:
+    """Nayef-approved archive posts that stay on one door despite the 2022 cut."""
+    spec = PRIMARY.get(slug)
+    return bool(spec and spec.get("archive_landing"))
 
 
 def door_label(door_id: str, lang: str) -> str:

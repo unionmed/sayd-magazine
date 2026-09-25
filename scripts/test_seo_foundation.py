@@ -253,14 +253,14 @@ def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
         return "\n".join(parts)
 
     slugs = seo.empty_category_slugs(DOCS)
-    assert "قوانين" in slugs
+    assert "قوانين" not in slugs
     assert "الصقارة" in slugs
     assert "قوانين-وخرائط" in slugs
     assert "رماية" in slugs
     assert "بعدستكم" in slugs
     assert "رياضات-وسياحة-بيئية" in slugs
     # Desktop nav links these empty landings. They stay out of the sitemap.
-    desktop_empty = {"قوانين", "الصقارة"}
+    desktop_empty = {"الصقارة"}
     for slug in slugs:
         rel = Path("category") / slug / "index.html"
         assert not seo.in_sitemap(rel), slug
@@ -283,7 +283,21 @@ def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
     assert "category/رماية/index.html" not in chrome(en)
     assert "category/قوانين-وخرائط/index.html" not in chrome(en)
     assert "category/رياضات-وسياحة-بيئية/index.html" not in chrome(en)
-    assert (DOCS / "category" / "قوانين" / "index.html").is_file()
+    laws = (DOCS / "category" / "قوانين" / "index.html").read_text(encoding="utf-8")
+    assert 'class="empty-note"' not in laws
+    assert 'name="robots" content="noindex,follow"' not in laws
+    for slug in (
+        "بالمختصر-المفيد-معايير-شركات-التأمين",
+        "تنفيذ-قانون-الصيد-لا-يكون-استنسابياً-و",
+        "ما-هو-المتغير-الوحيد-السنوي-في-قانون-ال",
+    ):
+        assert f"posts/{slug}/" in laws
+    assert f"<loc>{seo.public_url(Path('category') / 'قوانين' / 'index.html')}</loc>" in sitemap
+    poetry = (DOCS / "category" / "ثقافة-وتراث" / "index.html").read_text(encoding="utf-8")
+    assert "posts/الطبيعة-أم-الشعراء-الشاعر-حسين-شعيب-ش/" in poetry
+    birds = (DOCS / "category" / "موسوعة-الطيور" / "index.html").read_text(encoding="utf-8")
+    assert "posts/بومة-المخازن/" in birds
+    assert "posts/طائر-الوروار-الأوروبي/" in birds
 
 
 def test_apply_is_idempotent() -> None:

@@ -689,8 +689,9 @@ def test_visible_listing_posts_drop_pre_2022_and_undated() -> None:
 
 
 def test_docs_visible_listings_are_2022_plus() -> None:
-    """Home, category indexes, and /en/stories/ show no publish year before 2022.
+    """Home and /en/stories/ show no publish year before 2022.
 
+    Category doors stay 2022+ except Nayef-approved archive_landing cards.
     The deep archive (articles/) still lists older stories.
     """
     year_re = re.compile(r"(20\d{2})")
@@ -707,10 +708,20 @@ def test_docs_visible_listings_are_2022_plus() -> None:
             found.append(int(match.group(1)))
         return found
 
+    import site_ia
+
     for path in (ROOT / "docs" / "category").rglob("*.html"):
         html = path.read_text(encoding="utf-8")
-        for year in years_in(html, row_re):
-            assert year >= 2022, (path, year)
+        for block in row_re.findall(html):
+            meta = re.search(r'<div class="meta">([^<]+)', block)
+            assert meta, block[:120]
+            match = year_re.search(meta.group(1))
+            assert match, meta.group(1)
+            year = int(match.group(1))
+            slug_m = re.search(r'href="(?:\.\./)*posts/([^/"]+)/', block)
+            slug = slug_m.group(1) if slug_m else ""
+            if year < 2022:
+                assert site_ia.keeps_pre_2022_landing(slug), (path, slug, year)
     stories = (ROOT / "docs" / "en" / "stories" / "index.html").read_text(encoding="utf-8")
     story_years = years_in(stories, card_re)
     assert story_years and min(story_years) >= 2022
