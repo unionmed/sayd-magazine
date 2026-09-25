@@ -107,8 +107,17 @@ FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 # Narrower Suhail teaser («قطر | أكثر من 80 ألف») is the same close as
 # SUHAIL_AR / SUHAIL_EN. Keep the wider listing only. Article pages stay.
 # Eight items. Same-day stories keep this order (CABS after Suhail, both
-# 13 Sep 2026). The 1 Oct 2024 platform card is the one dropped for CABS.
+# 13 Sep 2026). The 11 July 2025 shelduck card leaves so the 25 Sep 2026
+# Bekaa nets seizure can lead Latest.
+NETS_AR = "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان"
+NETS_EN = "over-20000-m2-bird-nets-seized-lebanon"
+NETS_TITLE_AR = "ضبط أكثر من 20 ألف م² شباك صيد في لبنان"
+NETS_TITLE_EN = "Over 20,000 m² of bird nets seized in Lebanon"
+NETS_ALT_AR = "بيك أب محمّل بشباك وأعمدة مضبوطة خلال الحملة الميدانية في البقاع."
+NETS_ALT_EN = "A pickup loaded with seized nets and poles during the field campaign in the Bekaa."
+NETS_IMG = "media/uploads/2026/09/bekaa-nets-isf-pickup-2026-09-25.jpg"
 LATEST_AR = [
+    NETS_AR,
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
     SUHAIL_AR,
     CABS_AR,
@@ -116,9 +125,9 @@ LATEST_AR = [
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
     ADONIS_AR,
     "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه",
-    "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر",
 ]
 LATEST_EN = [
+    NETS_EN,
     "egypt-new-hunting-rules-burullus-autumn-migration",
     SUHAIL_EN,
     CABS_EN,
@@ -126,7 +135,6 @@ LATEST_EN = [
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     ADONIS_EN,
     "regulating-hunting-protects-wildlife-bans-worsen",
-    "common-shelduck-protected-migrant-lebanon",
 ]
 
 DROPPED_DESKS_AR = ("أخبار", "صيد وفروسية", "جعبة المنوعات")
@@ -277,6 +285,13 @@ AR_FALLBACK_CARDS: dict[str, str] = {
     <h3><a href="posts/مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات/index.html">مصر: قرار جديد لتنظيم الصيد وملاحقة المخالفات في موسم هجرة الخريف</a></h3>
   </div>
 </article>""",
+    NETS_AR: f"""<article class="card overlay">
+  <a class="thumb" href="posts/{NETS_AR}/index.html"><img src="{NETS_IMG}" alt="{NETS_ALT_AR}" loading="lazy"></a>
+  <div class="body">
+    <div class="meta">25 أيلول 2026</div>
+    <h3><a href="posts/{NETS_AR}/index.html">{NETS_TITLE_AR}</a></h3>
+  </div>
+</article>""",
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": """<article class="card overlay">
   <a class="thumb" href="posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026/index.html"><img src="media/uploads/2026/09/gallery-katara-crowd.jpg" alt="قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»" loading="lazy"></a>
   <div class="body">
@@ -391,6 +406,14 @@ EN_FALLBACK_CARDS: dict[str, str] = {
         "News",
         "media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
         "A field researcher removes a bird from illegal nets.",
+    ),
+    NETS_EN: _en_card(
+        NETS_EN,
+        NETS_TITLE_EN,
+        "25 September 2026",
+        "Hunting &amp; Equestrian",
+        NETS_IMG,
+        NETS_ALT_EN,
     ),
     "common-shelduck-protected-migrant-lebanon": _en_card(
         "common-shelduck-protected-migrant-lebanon",
