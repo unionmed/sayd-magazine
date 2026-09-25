@@ -51,20 +51,24 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     nav = ia.desktop_nav_inner("ar", 0)
     ar_labels = [
         "صيد",
-        "الرماية والعتاد",
-        "الفروسية",
-        "الحياة البرية والتخييم",
+        "رماية وعتاد",
+        "فروسية",
+        "حياة برية وتخييم",
         "شعر وفن",
         "قوانين الصيد",
         "موسوعة الطيور",
         "صيد TV",
         "صور",
     ]
-    ar_at = [nav.index(label) for label in ar_labels]
+    ar_at = [nav.index(f">{label}<") for label in ar_labels]
     assert ar_at == sorted(ar_at)
-    for child in ("صيد الطيور", "الصقارة", "صيد البر", "الصيد البحري"):
-        assert child in nav
-    assert nav.index("الصيد البحري") < nav.index("الرماية والعتاد")
+    for child in ("صيد طيور", "صقارة", "صيد بر", "صيد بحري"):
+        assert f">{child}<" in nav
+    assert nav.index(">صيد بحري<") < nav.index(">رماية وعتاد<")
+    assert "الرماية والعتاد" not in nav
+    assert "الفروسية" not in nav
+    assert "الحياة البرية والتخييم" not in nav
+    assert ">برية وتخييم<" not in nav
     en = ia.desktop_nav_inner("en", 2)
     en_labels = [
         "Hunting",
@@ -84,15 +88,18 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     assert "الرئيسية" not in nav
     assert ">Home<" not in en
     mobile = ia.mobile_nav_html("ar", 1)
-    assert "برية وتخييم" in mobile
+    for bar_label in ("صيد", "رماية وعتاد", "فروسية", "برية وتخييم", "المزيد"):
+        assert f">{bar_label}<" in mobile
+    assert "الرماية والعتاد" not in mobile
+    assert "الفروسية" not in mobile
     assert "الحياة البرية والتخييم" not in mobile
-    assert "المزيد" in mobile
+    assert "حياة برية وتخييم" not in mobile
     more_ar = ["شعر وفن", "قوانين الصيد", "موسوعة الطيور", "صيد TV", "صور"]
-    more_at = [mobile.index(label) for label in more_ar]
+    more_at = [mobile.index(f">{label}<") for label in more_ar]
     assert more_at == sorted(more_at)
-    assert mobile.index("المزيد") < mobile.index("شعر وفن")
-    for hidden in ("الصقارة", "صيد البر", "الصيد البحري", "الرئيسية"):
-        assert hidden not in mobile
+    assert mobile.index(">المزيد<") < mobile.index(">شعر وفن<")
+    for hidden in ("صقارة", "صيد بر", "صيد بحري", "الصقارة", "صيد البر", "الصيد البحري", "الرئيسية"):
+        assert f">{hidden}<" not in mobile
     en_mobile = ia.mobile_nav_html("en", 1)
     assert ">Wildlife<" in en_mobile
     assert "More" in en_mobile
@@ -102,6 +109,13 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     assert en_mobile.index("More") < en_mobile.index("Poetry &amp; Art")
     for hidden in ("Falconry", "Land Hunting", "Marine Hunting", ">Home<"):
         assert hidden not in en_mobile
+    footer = ia.footer_doors_html("ar", 0)
+    drawer = ia.drawer_nav_inner("ar", 0)
+    for surface in (footer, drawer):
+        assert ">حياة برية وتخييم<" in surface
+        assert ">برية وتخييم<" not in surface
+        assert ">رماية وعتاد<" in surface
+        assert "الحياة البرية والتخييم" not in surface
     assert ia.TICKER_LABEL_AR == "من كل وادي خبر"
 
 

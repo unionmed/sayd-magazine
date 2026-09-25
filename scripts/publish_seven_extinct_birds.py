@@ -244,10 +244,10 @@ def write_ar_article() -> None:
         </a>
         <nav class="main-nav" aria-label="القائمة الرئيسية">
         <a href="../../category/صيد/index.html">صيد</a>
-        <a href="../../category/صيد-الطيور/index.html">صيد الطيور</a>
-        <a href="../../category/عتاد-وسلاح-الصيد/index.html">الرماية والعتاد</a>
-        <a href="../../category/فروسية/index.html">الفروسية</a>
-        <a href="../../category/حياة-برية-وتخييم/index.html">الحياة البرية والتخييم</a>
+        <a href="../../category/صيد-الطيور/index.html">صيد طيور</a>
+        <a href="../../category/عتاد-وسلاح-الصيد/index.html">رماية وعتاد</a>
+        <a href="../../category/فروسية/index.html">فروسية</a>
+        <a href="../../category/حياة-برية-وتخييم/index.html">حياة برية وتخييم</a>
         <a href="../../category/استديو-صيد/index.html">صيد TV</a>
         <a href="../../category/صور/index.html">صور</a>
         </nav>
@@ -255,10 +255,10 @@ def write_ar_article() -> None:
           <summary>القائمة</summary>
           <nav class="drawer-nav" aria-label="قائمة الجوال">
         <a href="../../category/صيد/index.html">صيد</a>
-        <a href="../../category/صيد-الطيور/index.html">صيد الطيور</a>
-        <a href="../../category/عتاد-وسلاح-الصيد/index.html">الرماية والعتاد</a>
-        <a href="../../category/فروسية/index.html">الفروسية</a>
-        <a href="../../category/حياة-برية-وتخييم/index.html">الحياة البرية والتخييم</a>
+        <a href="../../category/صيد-الطيور/index.html">صيد طيور</a>
+        <a href="../../category/عتاد-وسلاح-الصيد/index.html">رماية وعتاد</a>
+        <a href="../../category/فروسية/index.html">فروسية</a>
+        <a href="../../category/حياة-برية-وتخييم/index.html">حياة برية وتخييم</a>
         <a href="../../category/استديو-صيد/index.html">صيد TV</a>
         <a href="../../category/صور/index.html">صور</a>
           </nav>
@@ -322,9 +322,9 @@ def write_ar_article() -> None:
 <div class="widget">
           <h3>التصنيفات</h3>
           <div class="widget-body"><ul class="cat-list"><li><a href="../../category/صيد/index.html">صيد</a></li>
-<li><a href="../../category/عتاد-وسلاح-الصيد/index.html">الرماية والعتاد</a></li>
-<li><a href="../../category/فروسية/index.html">الفروسية</a></li>
-<li><a href="../../category/حياة-برية-وتخييم/index.html">الحياة البرية والتخييم</a></li>
+<li><a href="../../category/عتاد-وسلاح-الصيد/index.html">رماية وعتاد</a></li>
+<li><a href="../../category/فروسية/index.html">فروسية</a></li>
+<li><a href="../../category/حياة-برية-وتخييم/index.html">حياة برية وتخييم</a></li>
 <li><a href="../../category/استديو-صيد/index.html">صيد TV</a></li>
 <li><a href="../../category/صور/index.html">صور</a></li></ul></div>
         </div>
@@ -342,9 +342,9 @@ def write_ar_article() -> None:
         <div class="footer-col">
           <h3>التصنيفات</h3>
           <ul><li><a href="../../category/صيد/index.html">صيد</a></li>
-<li><a href="../../category/عتاد-وسلاح-الصيد/index.html">الرماية والعتاد</a></li>
-<li><a href="../../category/فروسية/index.html">الفروسية</a></li>
-<li><a href="../../category/حياة-برية-وتخييم/index.html">الحياة البرية والتخييم</a></li>
+<li><a href="../../category/عتاد-وسلاح-الصيد/index.html">رماية وعتاد</a></li>
+<li><a href="../../category/فروسية/index.html">فروسية</a></li>
+<li><a href="../../category/حياة-برية-وتخييم/index.html">حياة برية وتخييم</a></li>
 <li><a href="../../category/استديو-صيد/index.html">صيد TV</a></li>
 <li><a href="../../category/صور/index.html">صور</a></li></ul>
         </div>
