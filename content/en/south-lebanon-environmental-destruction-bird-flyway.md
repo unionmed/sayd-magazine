@@ -4,7 +4,7 @@
 **Type:** Investigation
 **Suggested slug:** south-lebanon-environmental-destruction-bird-flyway
 **AR twin slug:** منظمات-دولية-ابادة-بيئية-جنوب-لبنان
-**Category:** Interviews & Investigations
+**Category:** Hunting
 **Cover:** media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg
 
 ## Lead

@@ -3,7 +3,7 @@ title: "البجع الأبيض الكبير — Great White Pelican | بعدس�
 slug: البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك
 date: 2026-09-09 00:33:07
 author: nkrayem
-categories: [صور]
+categories: [بعدستكم]
 featured: media/uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg
 wp_id: 6784
 views: 5

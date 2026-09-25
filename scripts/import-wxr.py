@@ -178,7 +178,7 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
         "datetime": "2026-09-22 10:00:00",
         "date": "2026-09-22 10:00:00",
         "categories": [
-            {"nicename": "صيد", "name": "صيد وفروسية", "slug": "صيد"}
+            {"nicename": "فروسية", "name": "فروسية", "slug": "فروسية"}
         ],
         "excerpt": "دخلت أروقة الفروسية السعودية والخليجية مرحلة الحسم، مع بدء العد التنازلي لانطلاق الأسبوع العاشر والختامي من موسم سباقات الطائف 2026 على مضمار ميدان الملك خالد في الحَوِيّة.",
         "featured": "uploads/2026/09/taif-racing-hawiyah.jpg",
@@ -199,7 +199,7 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
         "datetime": "2026-09-20 18:00:00",
         "date": "2026-09-20 18:00:00",
         "categories": [
-            {"nicename": "أخبار", "name": "أخبار", "slug": "أخبار"}
+            {"nicename": "صيد", "name": "صيد", "slug": "صيد"}
         ],
         "excerpt": "أعلنت وزارة التنمية المحلية والبيئة في مصر قراراً جديداً لتنظيم أعمال الصيد، بالتوازي مع بدء جهاز شؤون البيئة خطة رصد ومتابعة مع انطلاق موسم هجرة الخريف.",
         "featured": "uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
@@ -216,7 +216,7 @@ FEATURED_CARD_STUBS: dict[str, dict] = {
         "datetime": "2026-09-19 00:00:00",
         "date": "2026-09-19 00:00:00",
         "categories": [
-            {"nicename": "ثقافة-وتراث", "name": "من ذاكرة صيد", "slug": "ثقافة-وتراث"}
+            {"nicename": "صيد", "name": "صيد", "slug": "صيد"}
         ],
         "excerpt": "شخصيات وأصوات في محراب الطبيعة (2016 – 2024)",
         "featured": "",
@@ -270,29 +270,92 @@ _TICKER_LINK_RE = re.compile(
 )
 
 # Nayef rule: homepage / ticker stories must also land on their magazine
-# section pages (e.g. سهيل → صيد وفروسية). Overlay adds categories and
-# never drops WordPress ones. Rebuilds must emit newest-first listings.
+# section pages. Overlay adds categories and never drops WordPress ones,
+# except slugs in EDITORIAL_PRIMARY_CATEGORY — those keep exactly one door.
+# Rebuilds must emit newest-first listings.
+# The صيد landing is still titled «صيد وفروسية» in the branch nav. Remapped
+# hunting pieces use the door name «صيد» on the same slug.
 HUNTING_CAT = {"nicename": "صيد", "name": "صيد وفروسية", "slug": "صيد"}
+HUNTING_DOOR = {"nicename": "صيد", "name": "صيد", "slug": "صيد"}
 NEWS_CAT = {"nicename": "أخبار", "name": "أخبار", "slug": "أخبار"}
+MARINE_CAT = {"nicename": "صيد-بحري", "name": "صيد بحري", "slug": "صيد-بحري"}
+BIRD_HUNT_CAT = {"nicename": "صيد-الطيور", "name": "صيد الطيور", "slug": "صيد-الطيور"}
+GEAR_CAT = {"nicename": "عتاد-وسلاح-الصيد", "name": "عتاد وسلاح", "slug": "عتاد-وسلاح-الصيد"}
+EQUESTRIAN_CAT = {"nicename": "فروسية", "name": "فروسية", "slug": "فروسية"}
+LENS_CAT = {"nicename": "بعدستكم", "name": "بعدستكم", "slug": "بعدستكم"}
+CHANNEL_CAT = {"nicename": "قناة-صيد", "name": "قناة صيد", "slug": "قناة-صيد"}
+ENCYCLOPEDIA_CAT = {"nicename": "موسوعة-الطيور", "name": "موسوعة الطيور", "slug": "موسوعة-الطيور"}
 KNOWN_CATEGORY_RECORDS = {
     "صيد": HUNTING_CAT,
     "صيد-وفروسية": HUNTING_CAT,
     "صيد وفروسية": HUNTING_CAT,
     "أخبار": NEWS_CAT,
     "اخبار": NEWS_CAT,
+    "صيد بحري": MARINE_CAT,
+    "الصيد البحري": MARINE_CAT,
+    "صيد-بحري": MARINE_CAT,
+    "صيد الطيور": BIRD_HUNT_CAT,
+    "صيد-الطيور": BIRD_HUNT_CAT,
+    "عتاد وسلاح": GEAR_CAT,
+    "عتاد وسلاح الصيد": GEAR_CAT,
+    "عتاد-وسلاح-الصيد": GEAR_CAT,
+    "فروسية": EQUESTRIAN_CAT,
+    "بعدستكم": LENS_CAT,
+    "قناة صيد": CHANNEL_CAT,
+    "قناة-صيد": CHANNEL_CAT,
+    "موسوعة الطيور": ENCYCLOPEDIA_CAT,
+    "موسوعة-الطيور": ENCYCLOPEDIA_CAT,
 }
-# Mars/Nayef extras for current editorial surfaces (Suheil, Kaps, season…).
-DEFAULT_CATEGORY_EXTRAS: dict[str, list[str]] = {
-    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني": ["صيد"],
-    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": ["أخبار"],
-    "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017": ["صيد"],
-    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": ["صيد"],
-    "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": ["صيد", "أخبار"],
-    "السعودية-تطلق-موسم-الصيد-السادس-بضواب": ["صيد"],
-    "بالفيديو-مقناص-سعود-عبد-العزيز-الباب": ["صيد"],
-    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": ["صيد"],
-    "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية": ["صيد"],
+# One primary door for the 2026 editorial remap (APPLY-ON-BRANCH). A rebuild
+# replaces stacked WordPress categories for these slugs.
+EDITORIAL_PRIMARY_CATEGORY: dict[str, dict[str, str]] = {
+    "جورج-تازة-علينا-جميعًا-المشاركة-لحماي": MARINE_CAT,
+    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": LENS_CAT,
+    "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف": HUNTING_DOOR,
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": HUNTING_DOOR,
+    "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما": HUNTING_DOOR,
+    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": HUNTING_DOOR,
+    "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف": HUNTING_DOOR,
+    "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": HUNTING_DOOR,
+    "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017": HUNTING_DOOR,
+    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": HUNTING_DOOR,
+    "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026": HUNTING_DOOR,
+    "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا": HUNTING_DOOR,
+    "السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري": HUNTING_DOOR,
+    "السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ": HUNTING_DOOR,
+    "السعودية-تطلق-موسم-الصيد-السادس-بضواب": HUNTING_DOOR,
+    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم": HUNTING_DOOR,
+    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": HUNTING_DOOR,
+    "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية": HUNTING_DOOR,
+    "صيد-تعود-بحلة-جديدة-ورؤية-اوسع": HUNTING_DOOR,
+    "المنصة-الرائدة-لنخبة-الصيادين-اللبنا": HUNTING_DOOR,
+    "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه": HUNTING_DOOR,
+    "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان": BIRD_HUNT_CAT,
+    "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا": BIRD_HUNT_CAT,
+    "الصيّادة-السورية-أماني-الحمصي": BIRD_HUNT_CAT,
+    "البنادق-الهوائية": GEAR_CAT,
+    "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3": GEAR_CAT,
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني": EQUESTRIAN_CAT,
+    "لين-عراجي-بطلة-فروسية-وحساب": EQUESTRIAN_CAT,
+    "بالفيديو-مقناص-سعود-عبد-العزيز-الباب": CHANNEL_CAT,
+    "الشهرمان-الشائع-طائر-مائي-محمي-ومهاجر": ENCYCLOPEDIA_CAT,
+    "الصقر-العويسق-الأحمر-يقتله-جهل-القواص": ENCYCLOPEDIA_CAT,
+    "طائر-الوروار-الأوروبي": ENCYCLOPEDIA_CAT,
+    "بومة-المخازن": ENCYCLOPEDIA_CAT,
 }
+EDITORIAL_DOOR_EN = {
+    "صيد": "Hunting",
+    "صيد بحري": "Marine Hunting",
+    "صيد الطيور": "Bird Hunting",
+    "عتاد وسلاح": "Gear & Arms",
+    "فروسية": "Equestrian",
+    "بعدستكم": "Through Your Lens",
+    "قناة صيد": "Sayd Channel",
+    "موسوعة الطيور": "Bird Encyclopedia",
+}
+# Unmapped surfaces can still gain a section. Mapped slugs are not listed
+# here — EDITORIAL_PRIMARY_CATEGORY is their only door.
+DEFAULT_CATEGORY_EXTRAS: dict[str, list[str]] = {}
 # Title/slug hints so a future homepage hunting item gets صيد without a map edit.
 # Do not match the magazine name «صيد» alone (editorials like «صيد تعود»).
 HUNTING_SURFACE_HINTS = (
@@ -887,6 +950,13 @@ def category_record(key: str, catalog: dict | None = None) -> dict[str, str]:
     return {"nicename": key, "name": key, "slug": slug}
 
 
+def editorial_primary_record(slug: str) -> dict[str, str] | None:
+    rec = EDITORIAL_PRIMARY_CATEGORY.get(slug)
+    if not rec:
+        return None
+    return {k: rec[k] for k in ("nicename", "name", "slug")}
+
+
 def apply_nayef_category_rule(
     posts: list[dict],
     extras: dict[str, list[str]] | None = None,
@@ -895,14 +965,19 @@ def apply_nayef_category_rule(
 ) -> list[dict]:
     """Add magazine-section categories for homepage/ticker stories.
 
-    WordPress categories are kept. Hunting-hint items on those surfaces
-    also get صيد (صيد وفروسية) so سهيل / Kaps / season news stay on top
-    of that listing after a rebuild.
+    WordPress categories are kept for unmapped posts. Hunting-hint items on
+    those surfaces also get صيد so سهيل / Kaps / season news stay on that
+    listing after a rebuild. Slugs in EDITORIAL_PRIMARY_CATEGORY are replaced
+    with that single door (no أخبار / مقابلات stack).
     """
     extras = extras if extras is not None else load_category_extras()
     surface = surface if surface is not None else editorial_surface_slugs()
     for p in posts:
         slug = p.get("slug") or ""
+        primary = editorial_primary_record(slug)
+        if primary:
+            p["categories"] = [primary]
+            continue
         add = list(extras.get(slug, []))
         if slug in surface and looks_like_hunting_story(p) and "صيد" not in add:
             add.append("صيد")

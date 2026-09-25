@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو/
 **Source AR title:** مع هجرة الخريف… كيف يحمي العالم الطيور وينظّم الصيد؟
 **Suggested slug:** autumn-migration-how-world-protects-birds-regulates-hunting
-**Category:** News
+**Category:** Hunting
 
 ## Lead
 

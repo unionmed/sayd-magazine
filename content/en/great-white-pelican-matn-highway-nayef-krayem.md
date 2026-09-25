@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك/
 **Source AR title:** البجع الأبيض الكبير — Great White Pelican | بعدسة نايف كريم — أوتوستراد المتن السريع، ربيع 2026
 **Suggested slug:** great-white-pelican-matn-highway-nayef-krayem
-**Category:** Photos
+**Category:** Through Your Lens
 
 ## Lead
 

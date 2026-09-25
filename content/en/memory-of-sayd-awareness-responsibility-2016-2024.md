@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024/
 **Source AR title:** من ذاكرة «صيد»: مسيرة الوعي والمسؤولية.. شخصيات وأصوات في محراب الطبيعة (2016 – 2024)
 **Suggested slug:** memory-of-sayd-awareness-responsibility-2016-2024
-**Category:** From Sayd’s Memory
+**Category:** Hunting
 
 ## Lead
 

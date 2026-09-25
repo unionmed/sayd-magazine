@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/جورج-تازة-علينا-جميعًا-المشاركة-لحماي/`
 **Source AR title:** جورج تازة: علينا جميعًا المشاركة لحماية الثروة السمكية
 **Suggested slug:** `george-taza-protect-fish-stocks-interview`
-**Category:** Sea Hunting / Interviews & Investigations
+**Category:** Marine Hunting
 
 ## Lead
 

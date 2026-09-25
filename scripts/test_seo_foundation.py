@@ -256,8 +256,11 @@ def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
     assert "قوانين" in slugs
     assert "قوانين-وخرائط" in slugs
     assert "رماية" in slugs
-    assert "بعدستكم" in slugs
     assert "رياضات-وسياحة-بيئية" in slugs
+    assert "بعدستكم" not in slugs
+    lens = (DOCS / "category" / "بعدستكم" / "index.html").read_text(encoding="utf-8")
+    assert "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك" in lens
+    assert 'class="empty-note"' not in lens
     for slug in slugs:
         rel = Path("category") / slug / "index.html"
         assert not seo.in_sitemap(rel), slug

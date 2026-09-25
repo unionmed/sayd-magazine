@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه/`
 **Source AR title:** تنظيم الصيد يحمي الحياة البرية… ومنعه يفاقم الأزمة
 **Suggested slug:** `regulating-hunting-protects-wildlife-bans-worsen`
-**Category:** News / Land Hunting / Hunting & Equestrian
+**Category:** Hunting
 
 ## Lead
 

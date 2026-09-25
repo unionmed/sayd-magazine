@@ -3,7 +3,7 @@
 **Source AR URL path:** `/posts/لين-عراجي-بطلة-فروسية-وحساب/`
 **Source AR title:** لين عراجي بطلة فروسية وحساب
 **Suggested slug:** `leen-araji-equestrian-and-mental-math-champion`
-**Category:** Equestrian / Interviews & Investigations
+**Category:** Equestrian
 
 ## Lead
 

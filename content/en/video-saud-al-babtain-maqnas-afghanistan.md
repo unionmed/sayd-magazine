@@ -3,7 +3,7 @@
 **Source AR URL:** https://sayd-magazine.com/posts/بالفيديو-مقناص-سعود-عبد-العزيز-الباب/
 **Source AR title:** بالفيديو… مقناص سعود عبد العزيز البابطين في أفغانستان
 **Suggested slug:** video-saud-al-babtain-maqnas-afghanistan
-**Category:** Sayd Studio / From Sayd’s Memory
+**Category:** Sayd Channel
 
 ## Lead
 
