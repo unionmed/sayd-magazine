@@ -69,10 +69,10 @@ MARS_HUNTING_TOP = [
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
     "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-    FARMERS,
     MEMORY,
     KAPS,
     "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
+    QATAR_80K,
 ]
 
 FORBIDDEN = (
@@ -434,6 +434,16 @@ def test_nayef_rule_adds_thematic_sayd_for_home_ticker() -> None:
     for slug in (SUHAIL_80K, QATAR_80K, KAPS, SAUDI, "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"):
         assert {c["slug"] for c in by_slug[slug]["categories"]} == {"صيد"}, slug
     assert {c["slug"] for c in by_slug[BABTAIN]["categories"]} == {"قناة-صيد"}
+    farmers = _fake_post(
+        FARMERS,
+        "كيف يحمي المزارع الطيور المهاجرة هذا الخريف؟",
+        "2026-09-20 00:00:00",
+        [("مقابلات-تحقيقات", "مقابلات وتحقيقات")],
+    )
+    apply_nayef_category_rule([farmers])
+    assert {c["slug"] for c in farmers["categories"]} == {"الحياة-البرية-والتخييم"}
+    assert farmers["categories"][0]["name"] == "الحياة البرية والتخييم"
+    assert import_wxr.EDITORIAL_DOOR_EN["الحياة البرية والتخييم"] == "Wildlife & Camping"
 
     hunt = [p["slug"] for p in build_cat_info({}, posts)["صيد"]["posts"]]
     assert hunt[0] == KAPS
@@ -475,6 +485,20 @@ def test_docs_hunting_category_keeps_mars_recency() -> None:
     assert "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان" not in slugs
     assert "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني" not in slugs
     assert BABTAIN not in slugs
+    assert FARMERS not in slugs
+    wildlife = (
+        ROOT / "docs" / "category" / "الحياة-البرية-والتخييم" / "index.html"
+    ).read_text(encoding="utf-8")
+    assert FARMERS in _listing_slugs(wildlife)
+    assert _listing_slugs(wildlife) == [FARMERS]
+    assert "الحياة البرية والتخييم" in wildlife
+    article = (ROOT / "docs" / "posts" / FARMERS / "index.html").read_text(encoding="utf-8")
+    assert 'href="../../category/الحياة-البرية-والتخييم/index.html">الحياة البرية والتخييم</a>' in article
+    assert 'class="badge" href="../../category/الحياة-البرية-والتخييم/index.html"' in article
+    en = (
+        ROOT / "docs" / "en" / "posts" / "how-farmers-protect-migratory-birds-this-autumn" / "index.html"
+    ).read_text(encoding="utf-8")
+    assert 'href="../../../category/الحياة-البرية-والتخييم/index.html">Wildlife &amp; Camping</a>' in en
 
 
 def _mosaic_featured_slugs(html: str) -> list[str]:

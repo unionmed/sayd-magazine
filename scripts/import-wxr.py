@@ -285,6 +285,11 @@ EQUESTRIAN_CAT = {"nicename": "فروسية", "name": "فروسية", "slug": "�
 LENS_CAT = {"nicename": "بعدستكم", "name": "بعدستكم", "slug": "بعدستكم"}
 CHANNEL_CAT = {"nicename": "قناة-صيد", "name": "قناة صيد", "slug": "قناة-صيد"}
 ENCYCLOPEDIA_CAT = {"nicename": "موسوعة-الطيور", "name": "موسوعة الطيور", "slug": "موسوعة-الطيور"}
+WILDLIFE_CAMPING_CAT = {
+    "nicename": "الحياة-البرية-والتخييم",
+    "name": "الحياة البرية والتخييم",
+    "slug": "الحياة-البرية-والتخييم",
+}
 KNOWN_CATEGORY_RECORDS = {
     "صيد": HUNTING_CAT,
     "صيد-وفروسية": HUNTING_CAT,
@@ -305,6 +310,8 @@ KNOWN_CATEGORY_RECORDS = {
     "قناة-صيد": CHANNEL_CAT,
     "موسوعة الطيور": ENCYCLOPEDIA_CAT,
     "موسوعة-الطيور": ENCYCLOPEDIA_CAT,
+    "الحياة البرية والتخييم": WILDLIFE_CAMPING_CAT,
+    "الحياة-البرية-والتخييم": WILDLIFE_CAMPING_CAT,
 }
 # One primary door for the 2026 editorial remap (APPLY-ON-BRANCH). A rebuild
 # replaces stacked WordPress categories for these slugs.
@@ -315,7 +322,7 @@ EDITORIAL_PRIMARY_CATEGORY: dict[str, dict[str, str]] = {
     "منظمات-دولية-ابادة-بيئية-جنوب-لبنان": HUNTING_DOOR,
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما": HUNTING_DOOR,
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات": HUNTING_DOOR,
-    "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف": HUNTING_DOOR,
+    "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف": WILDLIFE_CAMPING_CAT,
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024": HUNTING_DOOR,
     "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017": HUNTING_DOOR,
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع": HUNTING_DOOR,
@@ -352,6 +359,7 @@ EDITORIAL_DOOR_EN = {
     "بعدستكم": "Through Your Lens",
     "قناة صيد": "Sayd Channel",
     "موسوعة الطيور": "Bird Encyclopedia",
+    "الحياة البرية والتخييم": "Wildlife & Camping",
 }
 # Unmapped surfaces can still gain a section. Mapped slugs are not listed
 # here — EDITORIAL_PRIMARY_CATEGORY is their only door.
