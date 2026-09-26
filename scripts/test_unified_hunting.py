@@ -3,7 +3,7 @@ import re
 from urllib.parse import unquote
 import unify_hunting as u
 
-for lang, expected in [('ar', 20), ('en', 17)]:
+for lang, expected in [('ar', 19), ('en', 16)]:
     root = u.DOCS / ('en' if lang == 'en' else '')
     page = root / 'category/صيد/index.html'
     text = page.read_text(encoding='utf-8')

@@ -14,7 +14,10 @@ DOCS = build.DOCS
 MANIFEST = build.ROOT / 'content/unified-hunting.json'
 FOLDERS = ['صيد'] + [d['folder'] for d in ia.HUNTING_LEGACY_DOORS]
 ARCHIVE_ROUNDUP = 'من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024'
-EXCLUDED = {ARCHIVE_ROUNDUP, ia.PRIMARY[ARCHIVE_ROUNDUP]['en']}
+EXCLUDED = {
+    ARCHIVE_ROUNDUP, ia.PRIMARY[ARCHIVE_ROUNDUP]['en'],
+    'شجيرة-العوسج-حين-تقرأ-الأرض', 'the-awsaj-thornbush-reading-the-land',
+}
 MONTHS = dict(build._MONTHS)
 MONTHS.update({m: i + 1 for i, m in enumerate(['كانون الثاني', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'])})
 
