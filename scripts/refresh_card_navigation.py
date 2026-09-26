@@ -9,6 +9,8 @@ LABELS = {"فريقنا": "فريق العمل", "الفريق": "فريق ال�
 
 
 def refresh(text, lang='ar', depth=0):
+    text = re.sub(r'<nav class="top-secondary"[^>]*>.*?</nav>',
+                  lambda m: re.sub(r'^[ \t]*<a\b[^>]*>\s*(?:إتصل بنا|اتصل بنا|Contact)\s*</a>\s*\n?', '', m[0], flags=re.M), text, flags=re.S)
     # Exact UI labels only: preserve article prose, URLs and section order.
     text = re.sub(r'(<(?:a|h[1-6])\b[^>]*>)(\s*)(فريقنا|الفريق|الرماية والعتاد)(\s*)(</(?:a|h[1-6])>)',
                   lambda m: m[1] + m[2] + LABELS[m[3]] + m[4] + m[5], text)

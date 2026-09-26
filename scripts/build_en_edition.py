@@ -875,7 +875,6 @@ def en_chrome(
       <div class="container mast-top-inner">
         <nav class="top-secondary" aria-label="Top links">
           <a href="{team}">Team</a>
-          <a href="{contact}">Contact</a>
         </nav>
         {lang_switch_html(ar_href if ar_href else home_ar, en_href, "en")}
       </div>

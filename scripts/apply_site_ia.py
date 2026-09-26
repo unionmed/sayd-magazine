@@ -852,7 +852,6 @@ def _en_door_page(door: dict, stories: list[dict]) -> str:
       <div class="container mast-top-inner">
         <nav class="top-secondary" aria-label="Top links">
           <a href="{team}">Team</a>
-          <a href="{contact}">Contact</a>
         </nav>
         <nav class="lang-switch" aria-label="Language">
           <a href="{ar_href}" lang="ar" hreflang="ar">العربية</a>

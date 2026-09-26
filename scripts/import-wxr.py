@@ -142,7 +142,6 @@ HOME_SECTIONS_TAIL: list[tuple[str, str, list[str]]] = []
 TOP_SECONDARY = [
     ("الرئيسية", None),
     ("فريق العمل", "من-نحن"),
-    ("إتصل بنا", "إتصل-بنا"),
 ]
 
 TICKER_LABEL = "من كل وادي خبر"
