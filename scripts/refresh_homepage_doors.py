@@ -40,6 +40,8 @@ def refresh(path, lang):
         cards = sorted((render_card(slug, lang) for slug in slugs), key=lambda item: item[0], reverse=True)
         accent = "accent-tv" if door == "tv" else "accent-olive" if door == "photos" else "accent-red"
         block = build.section(lang, door, "\n".join(card for _, card in cards), accent)
+        if door == 'wildlife' and lang == 'ar':
+            block = block.replace('<h2>الحياة البرية والتخييم</h2>', '<h2>برية وتخييم</h2>')
         block = block.replace('class="grid-4"', 'class="home-door-grid"').replace('class="grid-photos"', 'class="home-door-grid"')
         sections.append(block)
     pattern = r'(<div class="home-main">).*?(<div class="more-news">)'

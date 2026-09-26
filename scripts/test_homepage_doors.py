@@ -11,8 +11,10 @@ def test_doors():
     for lang, path in [('ar', DOCS / 'index.html'), ('en', DOCS / 'en/index.html')]:
         text = path.read_text(encoding='utf-8')
         blocks = re.findall(r'<section class="home-section[^\"]*">.*?</section>', text, re.S)
-        assert len(blocks) == 5
-        assert [len(re.findall('<article ', block)) for block in blocks] == [4, 2, 2, 1, 2]
+        assert len(blocks) == 6
+        assert [len(re.findall('<article ', block)) for block in blocks] == [4, 2, 2, 2, 1, 2]
+        headings = [re.search(r'<h2>(.*?)</h2>', block)[1] for block in blocks]
+        assert headings == (['صيد', 'رماية وعتاد', 'فروسية', 'برية وتخييم', 'صيد TV', 'صور'] if lang == 'ar' else ['Hunting', 'Shooting &amp; Gear', 'Equestrian', 'Wildlife &amp; Camping', 'Sayd TV', 'Photos'])
         for (door, ar_slugs), block in zip(ia.DOOR_SECTIONS, blocks):
             slugs = [ia.PRIMARY[s]['en'] if lang == 'en' else s for s in ar_slugs]
             links = re.findall(r'<a class="thumb" href="posts/([^/]+)/index.html">', block)
