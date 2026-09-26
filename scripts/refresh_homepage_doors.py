@@ -46,8 +46,10 @@ def refresh(path, lang):
     updated, count = re.subn(pattern, lambda m: m[1] + "\n" + "\n".join(sections) + "\n" + m[2], original, count=1, flags=re.S)
     if count != 1:
         raise ValueError(f"Homepage doors boundary missing: {path}")
-    css = ('../' if lang == 'en' else '') + 'assets/css/home-doors.css?v=20260926-cards'
-    if 'assets/css/home-doors.css' not in updated:
+    css = ('../' if lang == 'en' else '') + 'assets/css/home-doors.css?v=20260926-two-columns'
+    if 'assets/css/home-doors.css' in updated:
+        updated = re.sub(r'href="[^"]*assets/css/home-doors\.css[^\"]*"', f'href="{css}"', updated)
+    else:
         updated = updated.replace('</head>', f'  <link rel="stylesheet" href="{css}">\n</head>', 1)
     path.write_text(updated, encoding="utf-8")
 

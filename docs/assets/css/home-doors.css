@@ -24,7 +24,17 @@
   align-items: center;
 }
 @media (max-width: 600px) {
-  .home-section .home-door-grid,
+  .home-section .home-door-grid {
+    gap: 0.55rem;
+  }
+  .home-section .home-door-grid .card .body {
+    padding: 0.55rem;
+  }
+  .home-section .home-door-grid .card h3 {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
   .home-section .home-door-grid:has(> :only-child) .card {
     grid-template-columns: minmax(0, 1fr);
   }
