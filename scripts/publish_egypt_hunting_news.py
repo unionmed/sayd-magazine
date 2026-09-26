@@ -236,7 +236,7 @@ def write_ar_article() -> None:
       <div class="container footer-grid">
         <div class="footer-col">
           <img class="footer-logo" src="../../media/brand/sayd-footer-logo.png" width="195" height="61" alt="مجلة صيد">
-          <p>مجلة أسياد الطبيعة في البر والبحر والجو — صيد، حياة برّية، طيور، فروسية وتراث من لبنان والعالم العربي.</p>
+          <p>مجلة أسياد الطبيعة في البر والبحر والجو</p>
         </div>
         <div class="footer-col">
           <h3>التصنيفات</h3>
@@ -270,7 +270,6 @@ def write_ar_article() -> None:
           <div class="footer-copy">© مجلة صيد · Sayd Magazine</div>
           <p class="site-license">مرخصة من المجلس الوطني للاعلام في لبنان بموجب علم وخبر رقم <span dir="ltr">157</span> بتاريخ <span dir="ltr">5</span> ايلول <span dir="ltr">2016</span></p>
         </div>
-        <a class="footer-partner" href="https://www.mecshap.org/" target="_blank" rel="noopener">MECSHAP — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر</a>
       </div>
     </div>
   </footer>

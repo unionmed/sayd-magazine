@@ -61,10 +61,7 @@ SITE_BASE = ""  # relative paths for GitHub Pages (docs/ on main)
 LOGO_URL = LOGO_ORIGINAL
 FOOTER_LOGO_URL = FOOTER_LOGO_ORIGINAL
 MEDIA_ROOT = DEFAULT_OUT / "media"
-ABOUT_BLURB = (
-    "مجلة أسياد الطبيعة في البر والبحر والجو — صيد، حياة برّية، طيور، "
-    "فروسية وتراث من لبنان والعالم العربي."
-)
+ABOUT_BLURB = SITE_TAGLINE
 
 # Main nav categories closer to live Multi News order.
 # Each entry: (display_label, match_names_or_slugs…)
@@ -1085,12 +1082,8 @@ def footer_copyright(lang: str = "ar") -> str:
 
 
 def footer_partner_html(lang: str = "ar") -> str:
-    """MECSHAP partner link for footer-bottom. Official site labels only."""
-    label = MECSHAP_LABEL_EN if lang == "en" else MECSHAP_LABEL_AR
-    return (
-        f'<a class="footer-partner" href="{MECSHAP_URL}" '
-        f'target="_blank" rel="noopener">{esc(label)}</a>'
-    )
+    """No partner endorsement in the footer, as requested by Nayef."""
+    return ""
 
 
 def license_line_html(lang: str = "ar") -> str:

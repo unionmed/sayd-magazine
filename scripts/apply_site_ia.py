@@ -898,7 +898,7 @@ def _en_door_page(door: dict, stories: list[dict]) -> str:
       <div class="container footer-grid">
         <div class="footer-col">
           <p class="footer-wordmark" lang="en">Sayd</p>
-          <p>The magazine of nature’s masters on land, sea, and sky — hunting, wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world.</p>
+          <p>The magazine of nature’s masters on land, sea, and sky</p>
         </div>
         <div class="footer-col">
           <h3>Doors</h3>
@@ -916,7 +916,6 @@ def _en_door_page(door: dict, stories: list[dict]) -> str:
           <div class="footer-copy">© Sayd Magazine</div>
           <p class="site-license">Licensed by the National Media Council in Lebanon under official notice No. 157 dated 5 September 2016</p>
         </div>
-        <a class="footer-partner" href="https://www.mecshap.org/" target="_blank" rel="noopener">MECSHAP — Middle East Center for Sustainable Harvest and Anti-Poaching</a>
       </div>
     </div>
   </footer>

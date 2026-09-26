@@ -337,7 +337,7 @@ def write_ar_article() -> None:
       <div class="container footer-grid">
         <div class="footer-col">
           <img class="footer-logo" src="../../media/brand/sayd-footer-logo.png" width="195" height="61" alt="مجلة صيد">
-          <p>مجلة أسياد الطبيعة في البر والبحر والجو — صيد، حياة برّية، طيور، فروسية وتراث من لبنان والعالم العربي.</p>
+          <p>مجلة أسياد الطبيعة في البر والبحر والجو</p>
         </div>
         <div class="footer-col">
           <h3>التصنيفات</h3>
@@ -367,7 +367,6 @@ def write_ar_article() -> None:
           <div class="footer-copy">© مجلة صيد · Sayd Magazine</div>
           <p class="site-license">مرخصة من المجلس الوطني للاعلام في لبنان بموجب علم وخبر رقم <span dir="ltr">157</span> بتاريخ <span dir="ltr">5</span> ايلول <span dir="ltr">2016</span></p>
         </div>
-        <a class="footer-partner" href="https://www.mecshap.org/" target="_blank" rel="noopener">MECSHAP — مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر</a>
       </div>
     </div>
   </footer>
@@ -506,7 +505,7 @@ def write_en_article() -> None:
       <div class="container footer-grid">
         <div class="footer-col">
           <p class="footer-wordmark" lang="en">Sayd</p>
-          <p>The magazine of nature’s masters on land, sea, and sky — hunting, wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world.</p>
+          <p>The magazine of nature’s masters on land, sea, and sky</p>
         </div>
         <div class="footer-col">
           <h3>In this edition</h3>
@@ -533,7 +532,6 @@ def write_en_article() -> None:
           <div class="footer-copy">© Sayd Magazine</div>
           <p class="site-license">Licensed by the National Media Council in Lebanon under official notice No. 157 dated 5 September 2016</p>
         </div>
-        <a class="footer-partner" href="https://www.mecshap.org/" target="_blank" rel="noopener">MECSHAP — Middle East Center for Sustainable Harvest and Anti-Poaching</a>
       </div>
     </div>
   </footer>

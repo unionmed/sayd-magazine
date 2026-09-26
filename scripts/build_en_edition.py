@@ -58,10 +58,7 @@ STORIES_GRID_OMIT = {
     # Same Adonis portrait as the later “what we want to offer” editorial.
     "sayd-returns-new-look-wider-vision",
 }
-ABOUT_EN = (
-    "The magazine of nature’s masters on land, sea, and sky — hunting, "
-    "wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world."
-)
+ABOUT_EN = "The magazine of nature’s masters on land, sea, and sky"
 TAGLINE_EN = "The magazine of nature’s masters on land, sea, and sky"
 TAGLINE_AR = "مجلة أسياد الطبيعة في البر والبحر والجو"
 

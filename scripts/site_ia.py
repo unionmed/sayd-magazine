@@ -645,12 +645,10 @@ def footer_magazine_items(lang: str, depth: int) -> list[tuple[str, str]]:
     if lang == "en":
         team = f"{'../' * max(depth - 1, 0)}team/index.html"
         license_href = f"{'../' * max(depth - 1, 0)}license/index.html"
-        contact = f"{'../' * max(depth - 1, 0)}contact/index.html"
         archive = f"{'../' * max(depth - 1, 0)}stories/index.html"
         return [
             ("Team", team),
             ("License", license_href),
-            ("Contact", contact),
             ("Subscribe by email", MAILTO),
             ("Archive", archive),
             (SOCIAL[0][1], SOCIAL[0][2]),
@@ -658,7 +656,6 @@ def footer_magazine_items(lang: str, depth: int) -> list[tuple[str, str]]:
     return [
         ("فريق العمل", f"{prefix}pages/من-نحن/index.html"),
         ("الترخيص", f"{prefix}pages/الترخيص/index.html"),
-        ("التواصل", f"{prefix}pages/إتصل-بنا/index.html"),
         ("الاشتراك بالبريد", MAILTO),
         ("الأرشيف", f"{prefix}articles/index.html"),
         (SOCIAL[0][0], SOCIAL[0][2]),
@@ -667,7 +664,7 @@ def footer_magazine_items(lang: str, depth: int) -> list[tuple[str, str]]:
 
 def footer_doors_html(lang: str, depth: int) -> str:
     items = []
-    for door in visible_doors():
+    for door in desktop_nav_doors():
         label = chrome_label(door, lang)
         items.append(f"<li>{_link(_href(depth, door['folder'], lang), label)}</li>")
     return "\n".join(items)
@@ -680,7 +677,10 @@ def footer_magazine_html(lang: str, depth: int) -> str:
 
 
 def sidebar_doors_html(lang: str, depth: int) -> str:
-    return footer_doors_html(lang, depth)
+    return "\n".join(
+        f"<li>{_link(_href(depth, door['folder'], lang), chrome_label(door, lang))}</li>"
+        for door in visible_doors()
+    )
 
 
 def homepage_urls() -> list[str]:
