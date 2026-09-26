@@ -8,7 +8,7 @@ def main():
     path = DOCS / "en/stories/index.html"
     text = path.read_text(encoding="utf-8")
     stories = [_en_story(p.parent.name) for p in (DOCS / "en/posts").glob("*/index.html") if 'class="article-content"' in p.read_text(encoding="utf-8")]
-    stories = sorted((s for s in stories if s), key=lambda s: s["stamp"], reverse=True)
+    stories = sorted((s for s in stories if s and s["slug"] != "red-footed-falcon-killed-by-ignorance"), key=lambda s: s["stamp"], reverse=True)
     cards = []
     for story in stories:
         title = html.escape(story["title"])
