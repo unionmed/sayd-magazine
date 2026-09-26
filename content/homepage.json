@@ -87,33 +87,45 @@
   ],
   "desk_slugs": {
     "صيد": [
-      "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
+      "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
+      "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+      "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
+      "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
     ],
     "الرماية والعتاد": [
+      "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
       "البنادق-الهوائية"
     ],
     "الفروسية": [
+      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
       "لين-عراجي-بطلة-فروسية-وحساب"
     ],
     "صيد TV": [
       "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
     ],
     "صور": [
+      "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
       "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"
     ],
     "Hunting": [
-      "suhail-2026-in-photos-falcons-visitors"
+      "over-20000-m2-bird-nets-seized-lebanon",
+      "skies-losing-balance-birdlife-flyways-report",
+      "how-migration-routes-lost-seven-birds-in-150-years",
+      "protecting-autumn-migratory-birds-lebanon-khatib-2017"
     ],
     "Shooting & Gear": [
+      "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
       "air-rifles"
     ],
     "Equestrian": [
+      "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
       "leen-araji-equestrian-and-mental-math-champion"
     ],
     "Sayd TV": [
       "video-saud-al-babtain-maqnas-afghanistan"
     ],
     "Photos": [
+      "suhail-2026-in-photos-falcons-visitors",
       "great-white-pelican-matn-highway-nayef-krayem"
     ]
   },
@@ -160,18 +172,23 @@
     {
       "door": "hunting",
       "slugs": [
-        "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
+        "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
+        "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+        "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
+        "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
       ]
     },
     {
       "door": "gear",
       "slugs": [
+        "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
         "البنادق-الهوائية"
       ]
     },
     {
       "door": "equestrian",
       "slugs": [
+        "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
         "لين-عراجي-بطلة-فروسية-وحساب"
       ]
     },
@@ -184,6 +201,7 @@
     {
       "door": "photos",
       "slugs": [
+        "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
         "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"
       ]
     }
@@ -230,5 +248,13 @@
     "ما-هو-المتغير-الوحيد-السنوي-في-قانون-ال": "laws",
     "تنفيذ-قانون-الصيد-لا-يكون-استنسابياً-و": "laws"
   },
-  "demotion": "promote_main_slot() moves the previous main feature to the front of the important four, the oldest important slot to the front of the latest ten, and the oldest of those ten off the homepage. Nayef reviews the slots before any go-live. No URL is listed twice."
+  "demotion": "Lead/latest remain unique; only approved_home_repeats may also appear in door sections, temporarily approved by Nayef on 2026-09-26.",
+  "approved_home_repeats": [
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
+    "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
+    "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+    "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
+    "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
+    "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+  ]
 }

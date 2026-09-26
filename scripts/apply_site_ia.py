@@ -178,75 +178,8 @@ def section(lang: str, door_id: str, cards: str, accent: str) -> str:
 
 
 def rewrite_homepage(path: Path, lang: str) -> None:
-    text = path.read_text(encoding="utf-8")
-    pairs = {
-        "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا": "suhail-2026-in-photos-falcons-visitors",
-        "البنادق-الهوائية": "air-rifles",
-        "بالفيديو-مقناص-سعود-عبد-العزيز-الباب": "video-saud-al-babtain-maqnas-afghanistan",
-        "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": "great-white-pelican-matn-highway-nayef-krayem",
-        "شجيرة-العوسج-حين-تقرأ-الأرض": "the-awsaj-thornbush-reading-the-land",
-        "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3": "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
-    }
-    want = {
-        "hunting": "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
-        "gear": "البنادق-الهوائية",
-        "tv": "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
-        "photos": "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
-    }
-    cards = {}
-    for door_id, ar_slug in want.items():
-        slug = pairs[ar_slug] if lang == "en" else ar_slug
-        cards[door_id] = extract_card(text, slug)
-    awsaj = extract_card(text, pairs["شجيرة-العوسج-حين-تقرأ-الأرض"] if lang == "en" else "شجيرة-العوسج-حين-تقرأ-الأرض")
-    beretta = extract_card(
-        text,
-        pairs["في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"]
-        if lang == "en"
-        else "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
-    )
-    accents = {
-        "hunting": "accent-red",
-        "gear": "accent-red",
-        "equestrian": "accent-red",
-        "tv": "accent-tv",
-        "photos": "accent-olive",
-    }
-    blocks = [
-        section(lang, "hunting", cards["hunting"], accents["hunting"]),
-        section(lang, "gear", cards["gear"], accents["gear"]),
-        section(lang, "equestrian", leen_card(lang), accents["equestrian"]),
-        section(lang, "tv", cards["tv"], accents["tv"]),
-        section(lang, "photos", cards["photos"], accents["photos"]),
-    ]
-    more = (
-        '<div class="more-news">\n          <a class="more-btn" href="stories/index.html">All stories</a>\n        </div>'
-        if lang == "en"
-        else '<div class="more-news">\n          <a class="more-btn" href="articles/index.html">المزيد من الأخبار — الأرشيف</a>\n        </div>'
-    )
-    replacement = "\n".join(blocks) + "\n" + more + "\n      "
-    start = text.find('<div class="home-main">')
-    aside = text.find('<aside class="sidebar">', start)
-    close = text.rfind("</div>", start, aside)
-    if start < 0 or aside < 0 or close < 0:
-        raise SystemExit(f"homepage door block not replaced in {path}")
-    text2 = (
-        text[:start]
-        + '<div class="home-main">\n'
-        + replacement
-        + "</div>\n      "
-        + text[aside:]
-    )
-    ul = re.search(r'(<ul class="latest-feed">)(.*?)(</ul>)', text2, re.S)
-    if not ul:
-        raise SystemExit(f"latest feed missing in {path}")
-    lis = re.findall(r"<li>.*?</li>", ul.group(2), re.S)
-    if len(lis) < 2:
-        raise SystemExit("latest feed too short to insert")
-    inserted = [lis[0], latest_li(awsaj), latest_li(beretta), *lis[1:]]
-    if len(inserted) != 10:
-        raise SystemExit(f"expected 10 latest items, got {len(inserted)}")
-    text2 = text2[: ul.start(2)] + "\n" + "\n".join(inserted) + "\n" + text2[ul.end(2) :]
-    path.write_text(text2, encoding="utf-8")
+    from refresh_homepage_doors import refresh
+    refresh(path, lang)
 
 
 def row_for(slug: str, source_html: str) -> str | None:
@@ -690,7 +623,7 @@ def write_homepage_json() -> None:
         "promote_main_slot() moves the previous main feature to the front of "
         "the important four, the oldest important slot to the front of the "
         "latest ten, and the oldest of those ten off the homepage. "
-        "Nayef reviews the slots before any go-live. No URL is listed twice."
+        "Nayef reviews the slots before any go-live. Approved temporary repeats may also appear in door sections."
     )
     HOME_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 

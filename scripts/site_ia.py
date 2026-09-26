@@ -402,14 +402,23 @@ IA_SLOTS = {
     ],
 }
 
-# Door sections only for stories not already in main / important / latest.
+# Nayef approved temporary repetition across the lead/latest and door sections.
 DOOR_SECTIONS = [
-    ("hunting", ["سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"]),
-    ("gear", ["البنادق-الهوائية"]),
-    ("equestrian", ["لين-عراجي-بطلة-فروسية-وحساب"]),
+    ("hunting", ["ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان", "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف", "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما", "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"]),
+    ("gear", ["في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3", "البنادق-الهوائية"]),
+    ("equestrian", ["العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني", "لين-عراجي-بطلة-فروسية-وحساب"]),
     ("tv", ["بالفيديو-مقناص-سعود-عبد-العزيز-الباب"]),
-    ("photos", ["البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"]),
+    ("photos", ["سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا", "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"]),
 ]
+
+APPROVED_HOME_REPEATS = {
+    "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
+    "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+    "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
+    "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
+    "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
+}
 
 AFFILIATE_HOSTS = {
     "amazon.com",
@@ -692,10 +701,12 @@ def assert_homepage_unique(slots: dict | None = None, sections: list | None = No
         if slug in seen:
             raise ValueError(f"duplicate homepage URL: {slug}")
         seen.append(slug)
+    door_seen: set[str] = set()
     for _door, slugs in sections:
         for slug in slugs:
-            if slug in seen:
+            if slug in door_seen or (slug in seen and slug not in APPROVED_HOME_REPEATS):
                 raise ValueError(f"duplicate homepage URL: {slug}")
+            door_seen.add(slug)
             seen.append(slug)
 
 

@@ -27,7 +27,8 @@ def test_demotion_ladder_and_unique_urls() -> None:
     assert len(out["latest"]) == 10
     ia.assert_homepage_unique()
     flat = ia.homepage_urls()
-    assert len(flat) == len(set(flat))
+    assert {slug for slug in flat if flat.count(slug) > 1} == ia.APPROVED_HOME_REPEATS
+    assert all(flat.count(slug) == 2 for slug in ia.APPROVED_HOME_REPEATS)
 
 
 def test_demotion_drops_a_slug_already_in_latest() -> None:

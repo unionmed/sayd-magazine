@@ -1,0 +1,31 @@
+/* Approved homepage doors: two columns, newest first in the language direction. */
+.home-section .home-door-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: none;
+  width: 100%;
+}
+.home-section .home-door-grid .card .thumb {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+.home-section .home-door-grid .card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-section .home-door-grid:has(> :only-child) {
+  grid-template-columns: minmax(0, 1fr);
+}
+.home-section .home-door-grid:has(> :only-child) .card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .home-section .home-door-grid,
+  .home-section .home-door-grid:has(> :only-child) .card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
