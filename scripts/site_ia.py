@@ -84,7 +84,7 @@ DOORS: list[dict] = [
     },
     {
         "id": "gear",
-        "ar": "الرماية والعتاد",
+        "ar": "رماية وعتاد",
         "nav_ar": "رماية وعتاد",
         "en": "Shooting & Gear",
         "short_ar": "رماية وعتاد",
@@ -643,13 +643,11 @@ def drawer_nav_inner(lang: str, depth: int) -> str:
 def footer_magazine_items(lang: str, depth: int) -> list[tuple[str, str]]:
     prefix = _prefix(depth)
     if lang == "en":
-        about = f"{'../' * max(depth - 1, 0)}about/index.html"
         team = f"{'../' * max(depth - 1, 0)}team/index.html"
         license_href = f"{'../' * max(depth - 1, 0)}license/index.html"
         contact = f"{'../' * max(depth - 1, 0)}contact/index.html"
         archive = f"{'../' * max(depth - 1, 0)}stories/index.html"
         return [
-            ("About us", about),
             ("Team", team),
             ("License", license_href),
             ("Contact", contact),
@@ -658,8 +656,7 @@ def footer_magazine_items(lang: str, depth: int) -> list[tuple[str, str]]:
             (SOCIAL[0][1], SOCIAL[0][2]),
         ]
     return [
-        ("من نحن", f"{prefix}pages/عن-صيد/index.html"),
-        ("الفريق", f"{prefix}pages/من-نحن/index.html"),
+        ("فريق العمل", f"{prefix}pages/من-نحن/index.html"),
         ("الترخيص", f"{prefix}pages/الترخيص/index.html"),
         ("التواصل", f"{prefix}pages/إتصل-بنا/index.html"),
         ("الاشتراك بالبريد", MAILTO),

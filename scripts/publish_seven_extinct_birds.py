@@ -228,7 +228,7 @@ def write_ar_article() -> None:
       <div class="container mast-top-inner">
         <nav class="top-secondary" aria-label="روابط علوية">
           <a href="../../index.html">الرئيسية</a>
-        <a href="../../pages/من-نحن/index.html">فريقنا</a>
+        <a href="../../pages/من-نحن/index.html">فريق العمل</a>
         <a href="../../pages/إتصل-بنا/index.html">إتصل بنا</a>
         </nav>
 <nav class="lang-switch" aria-label="Language">

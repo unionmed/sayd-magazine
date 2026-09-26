@@ -245,7 +245,7 @@ def test_home_desk_order_interviews_tv_photos_miscellany() -> None:
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
     ar_hunt, ar_gear, ar_eq, ar_tv, ar_ph = (
         _h2_pos(ar, "صيد"),
-        _h2_pos(ar, "الرماية والعتاد"),
+        _h2_pos(ar, "رماية وعتاد"),
         _h2_pos(ar, "الفروسية"),
         _h2_pos(ar, "صيد TV"),
         _h2_pos(ar, "صور"),
@@ -408,7 +408,7 @@ def test_ar_en_dated_lists_share_one_order() -> None:
 
     for ar_h, en_h in (
         ("صيد", "Hunting"),
-        ("الرماية والعتاد", "Shooting &amp; Gear"),
+        ("رماية وعتاد", "Shooting &amp; Gear"),
         ("الفروسية", "Equestrian"),
         ("صيد TV", "Sayd TV"),
         ("صور", "Photos"),
@@ -913,7 +913,7 @@ def test_homepage_cards_keep_dates_without_category_pills() -> None:
             "تقرير بيرد لايف يدق ناقوس الخطر...",
             (
                 "صيد",
-                "الرماية والعتاد",
+                "رماية وعتاد",
                 "الفروسية",
                 "صيد TV",
                 "صور",

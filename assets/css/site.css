@@ -2005,6 +2005,7 @@ html[dir="ltr"] .home-section .card.overlay h3 a:hover { color: var(--gold-dark)
 }
 
 .memory-card {
+  position: relative;
   background: var(--card);
   border: 1px solid var(--hair);
   box-shadow: var(--shadow);
@@ -2090,6 +2091,18 @@ html[lang="en"] .memory-card__quote {
 }
 
 .memory-card__link:hover { color: var(--olive); }
+
+/* Extend the existing interview link over its card, including touch targets. */
+.memory-card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.memory-card:focus-within {
+  outline: 3px solid var(--olive);
+  outline-offset: 3px;
+}
 
 .memory-page-intro {
   margin: 0 0 1.15rem;

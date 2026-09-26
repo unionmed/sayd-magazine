@@ -571,7 +571,7 @@ def test_home_section_order_interviews_before_gear() -> None:
     assert "أخبار" not in titles
     assert "صيد وفروسية" not in titles
     assert "مقابلات وتحقيقات" not in titles
-    assert titles.index("صيد") < titles.index("الرماية والعتاد")
+    assert titles.index("صيد") < titles.index("رماية وعتاد")
     assert "الفروسية" in titles
     assert "صيد TV" in titles
     assert "صور" in titles

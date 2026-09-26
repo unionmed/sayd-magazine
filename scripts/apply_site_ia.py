@@ -379,7 +379,7 @@ def move_listing_rows() -> None:
             path.write_text(html_text, encoding="utf-8")
 
     retitle_category("صيد", "صيد")
-    retitle_category("عتاد-وسلاح-الصيد", "الرماية والعتاد")
+    retitle_category("عتاد-وسلاح-الصيد", "رماية وعتاد")
     retitle_category("استديو-صيد", "صيد TV")
     retitle_category("فروسية", "الفروسية")
     retitle_category("صور", "صور")
@@ -970,6 +970,8 @@ def main() -> None:
     disclosures = apply_disclosure()
     write_info_pages()
     write_homepage_json()
+    from refresh_card_navigation import main as refresh_card_navigation
+    refresh_card_navigation()
     print(f"chrome pages touched: {changed}; commercial disclosures: {disclosures}")
 
 

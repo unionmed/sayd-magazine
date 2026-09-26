@@ -134,7 +134,7 @@ DEFAULT_HOME_DESK_OMIT = set(PURGED_SLUGS)
 # or latest, so it has no extra row. Empty doors stay off this list.
 HOME_SECTIONS = [
     ("صيد", "accent-red", ["صيد"]),
-    ("الرماية والعتاد", "accent-red", ["الرماية والعتاد", "عتاد وسلاح الصيد", "عتاد وسلاح", "عتاد-وسلاح-الصيد"]),
+    ("رماية وعتاد", "accent-red", ["الرماية والعتاد", "عتاد وسلاح الصيد", "عتاد وسلاح", "عتاد-وسلاح-الصيد"]),
     ("الفروسية", "accent-red", ["الفروسية", "فروسية"]),
     ("صيد TV", "accent-tv", ["صيد TV", "استديو صيد", "استديو-صيد"]),
     ("صور", "accent-olive", ["صور"]),
@@ -144,7 +144,7 @@ HOME_SECTIONS_TAIL: list[tuple[str, str, list[str]]] = []
 # Top-bar secondary links: (label, page_slug or None for home)
 TOP_SECONDARY = [
     ("الرئيسية", None),
-    ("فريقنا", "من-نحن"),
+    ("فريق العمل", "من-نحن"),
     ("إتصل بنا", "إتصل-بنا"),
 ]
 
