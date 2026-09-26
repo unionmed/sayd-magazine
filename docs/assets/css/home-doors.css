@@ -1,4 +1,4 @@
-/* Approved homepage doors: two columns, newest first in the language direction. */
+/* Phone: two columns. Desktop: four when available, two for a two-card door. */
 .home-section .home-door-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -22,6 +22,11 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
+}
+@media (min-width: 1000px) {
+  .home-section .home-door-grid:has(> :nth-child(4)) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 @media (max-width: 600px) {
   .home-section .home-door-grid {
