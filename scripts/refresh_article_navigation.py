@@ -121,6 +121,8 @@ def main():
             if updated != original:
                 path.write_text(updated, encoding='utf-8')
             stats[(lang, len(candidates))] += 1
+    from refresh_english_archive import main as refresh_archive
+    refresh_archive()
     refresh_chrome()
     print('Articles by language and related-card count:', dict(stats))
 

@@ -879,7 +879,7 @@ def en_chrome(
           <h3>In this edition</h3>
           <ul>
             <li><a href="{home_en}">English homepage</a></li>
-            <li><a href="{stories}">September 2026 stories</a></li>
+            <li><a href="{stories}">Archive</a></li>
             <li><a href="{home_ar}">Arabic homepage</a></li>
           </ul>
         </div>
@@ -1306,8 +1306,9 @@ def write_stories(articles: dict[str, dict]) -> None:
 <main class="page-main" id="content">
   <div class="container">
     <div class="section-head">
-      <h2>September 2026 English stories</h2>
+      <h2>Archive</h2>
     </div>
+    <p class="en-callout">Articles available in English, from newest to oldest.</p>
     <div class="grid-4">
 {"".join(rows)}
     </div>
@@ -1316,8 +1317,8 @@ def write_stories(articles: dict[str, dict]) -> None:
 """
     html = en_chrome(
         depth=2,
-        title="September 2026 stories — Sayd Magazine",
-        description="English twins of Sayd Magazine’s September 2026 edition.",
+        title="Archive — Sayd Magazine",
+        description="Browse articles available in English, from newest to oldest.",
         body=main,
         ar_href="../../index.html",
         en_href="../index.html",
