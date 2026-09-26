@@ -10,7 +10,9 @@ import html
 import json
 import re
 import shutil
+from datetime import datetime
 from pathlib import Path
+from urllib.parse import quote
 
 import site_ia as ia
 from site_cache import CSS_CACHE
@@ -151,7 +153,7 @@ def section(lang: str, door_id: str, cards: str, accent: str) -> str:
     title = html_lib.escape(door["en"] if lang == "en" else door["ar"])
     more = "More" if lang == "en" else "المزيد"
     depth = 1 if lang == "en" else 0
-    href = f"{'../' * depth}category/{door['folder']}/index.html"
+    href = ia._href(depth, door["folder"], lang)
     extra = " sayd-tv" if door_id == "tv" else ""
     grid = "grid-photos" if door_id in {"tv", "photos"} else "grid-4"
     # Overlay is only the homepage feature lead. Door cards keep text under the photo.
@@ -458,7 +460,7 @@ def badge_for(path: Path, door_id: str) -> str:
     lang = "en" if path.relative_to(DOCS).parts[0] == "en" else "ar"
     depth = depth_of(path)
     label = ia.door_label(door_id, lang)
-    href = f"{'../' * depth}category/{ia.door_folder(door_id)}/index.html"
+    href = ia._href(depth, ia.door_folder(door_id), lang)
     return f'<div><a class="badge" href="{href}">{label}</a></div>'
 
 
@@ -691,6 +693,283 @@ def write_homepage_json() -> None:
         "Nayef reviews the slots before any go-live. No URL is listed twice."
     )
     HOME_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+_DOOR_HREF_RE = re.compile(
+    r'href="((?:\.\./)*)category/([^"/]+)/index\.html"([^>]*)>'
+)
+_EN_DATE_RE = re.compile(r"(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})")
+_MONTHS = {
+    "january": 1,
+    "february": 2,
+    "march": 3,
+    "april": 4,
+    "may": 5,
+    "june": 6,
+    "july": 7,
+    "august": 8,
+    "september": 9,
+    "october": 10,
+    "november": 11,
+    "december": 12,
+}
+
+
+def retarget_en_door_hrefs() -> int:
+    """Point English door links at docs/en/category/… Leave Arabic pages alone."""
+    folders = ia.desktop_nav_folders()
+    changed = 0
+    en_root = DOCS / "en"
+    if not en_root.is_dir():
+        return 0
+    for path in en_root.rglob("*.html"):
+        text = path.read_text(encoding="utf-8")
+        depth = depth_of(path)
+
+        def repl(match: re.Match[str], depth: int = depth) -> str:
+            folder = match.group(2)
+            tail = match.group(3)
+            # العربية in the language switch stays on the Arabic category.
+            if folder not in folders or "hreflang=\"ar\"" in tail or "hreflang='ar'" in tail:
+                return match.group(0)
+            return f'href="{ia._href(depth, folder, "en")}"{tail}>'
+
+        updated = _DOOR_HREF_RE.sub(repl, text)
+        if updated != text:
+            path.write_text(updated, encoding="utf-8")
+            changed += 1
+    return changed
+
+
+def _en_story(slug: str) -> dict | None:
+    """Published English title and date. Redirect stubs are not stories."""
+    path = DOCS / "en" / "posts" / slug / "index.html"
+    if not path.is_file():
+        return None
+    text = path.read_text(encoding="utf-8")
+    if 'http-equiv="refresh"' in text:
+        return None
+    title_m = re.search(r"<h1[^>]*>(.*?)</h1>", text, re.S)
+    if not title_m:
+        return None
+    title = " ".join(re.sub(r"<[^>]+>", "", title_m.group(1)).split())
+    title = html.unescape(title)
+    date = ""
+    date_m = re.search(
+        r'class="article-meta".*?<span class="meta-item">([^<]+)</span>',
+        text,
+        re.S,
+    )
+    if date_m:
+        date = date_m.group(1).strip()
+    stamp = datetime.min
+    parsed = _EN_DATE_RE.search(date)
+    if parsed:
+        month = _MONTHS.get(parsed.group(2).lower())
+        if month:
+            stamp = datetime(int(parsed.group(3)), month, int(parsed.group(1)))
+    return {"slug": slug, "title": title, "date": date, "stamp": stamp}
+
+
+def _stories_for_door(door_id: str) -> list[dict]:
+    seen: set[str] = set()
+    stories: list[dict] = []
+    for spec in ia.PRIMARY.values():
+        if spec.get("door") != door_id:
+            continue
+        slug = (spec.get("en") or "").strip()
+        if not slug or slug in seen:
+            continue
+        seen.add(slug)
+        story = _en_story(slug)
+        if story:
+            stories.append(story)
+    stories.sort(key=lambda item: item["stamp"], reverse=True)
+    return stories
+
+
+def _ticker_at_depth(depth: int) -> str:
+    home = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    start = home.index('<div class="news-strip">')
+    end = home.index("<main", start)
+    chunk = home[start:end].rstrip()
+    closer = chunk.rfind("</div>")
+    chunk = chunk[:closer].rstrip()
+    prefix = "../" * max(depth - 1, 0)
+    return chunk.replace('href="posts/', f'href="{prefix}posts/')
+
+
+def _en_door_page(door: dict, stories: list[dict]) -> str:
+    """Thin English landing. Titles are the published story titles."""
+    folder = door["folder"]
+    label = html.escape(door["en"], quote=False)
+    label_attr = html.escape(door["en"], quote=True)
+    depth = 3
+    encoded = quote(folder, safe="")
+    canon = f"https://sayd-magazine.com/en/category/{encoded}/"
+    ar_url = f"https://sayd-magazine.com/category/{encoded}/"
+    nav = ia.desktop_nav_inner("en", depth)
+    mobile = ia.mobile_nav_html("en", depth)
+    drawer = ia.drawer_nav_inner("en", depth)
+    doors = ia.footer_doors_html("en", depth)
+    magazine = ia.footer_magazine_html("en", depth)
+    css = f"{'../' * depth}assets/css/site.css?v={CSS_CACHE}"
+    logo = f"{'../' * depth}media/brand/sayd-logo.png"
+    home = f"{'../' * max(depth - 1, 0)}index.html"
+    team = f"{'../' * max(depth - 1, 0)}team/index.html"
+    contact = f"{'../' * max(depth - 1, 0)}contact/index.html"
+    archive = f"{'../' * max(depth - 1, 0)}stories/index.html"
+    ar_href = f"{'../' * depth}category/{folder}/index.html"
+    if stories:
+        rows = []
+        for story in stories:
+            href = f"../../posts/{story['slug']}/index.html"
+            title = html.escape(story["title"])
+            date = html.escape(story["date"])
+            rows.append(
+                "<article class=\"post-row\">\n"
+                "  <div class=\"body\">\n"
+                f"    <div class=\"meta\">{date}</div>\n"
+                f"    <h2><a href=\"{href}\">{title}</a></h2>\n"
+                "  </div>\n"
+                "</article>"
+            )
+        listing = "\n".join(rows)
+    else:
+        listing = (
+            '<p class="empty-note">No English stories are published in this section yet.</p>'
+        )
+    count = len(stories)
+    ticker = _ticker_at_depth(depth)
+    return f"""<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{label} — Sayd Magazine</title>
+  <meta name="description" content="{label_attr}">
+  <meta name="theme-color" content="#3e421d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700&display=swap">
+  <link rel="stylesheet" href="{css}">
+  <link rel="icon" href="{logo}">
+  <!-- seo:start -->
+  <link rel="canonical" href="{canon}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sayd Magazine">
+  <meta property="og:title" content="{label_attr} — Sayd Magazine">
+  <meta property="og:description" content="{label_attr}">
+  <meta property="og:url" content="{canon}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{label_attr} — Sayd Magazine">
+  <meta name="twitter:description" content="{label_attr}">
+  <link rel="alternate" hreflang="ar" href="{ar_url}">
+  <link rel="alternate" hreflang="en" href="{canon}">
+  <link rel="alternate" hreflang="x-default" href="{ar_url}">
+  <!-- seo:end -->
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="site-sticky">
+    <div class="mast-top">
+      <div class="container mast-top-inner">
+        <nav class="top-secondary" aria-label="Top links">
+          <a href="{team}">Team</a>
+          <a href="{contact}">Contact</a>
+        </nav>
+        <nav class="lang-switch" aria-label="Language">
+          <a href="{ar_href}" lang="ar" hreflang="ar">العربية</a>
+          <a href="index.html" lang="en" hreflang="en" class="is-current" aria-current="page">English</a>
+        </nav>
+      </div>
+    </div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="{home}">
+          <span class="brand-wordmark" lang="en">Sayd</span>
+          <span class="tagline">The magazine of nature’s masters on land, sea, and sky</span>
+        </a>
+        <nav class="main-nav" aria-label="Main menu">
+{nav}
+        </nav>
+{mobile}
+        <details class="nav-toggle">
+          <summary>Menu</summary>
+          <nav class="drawer-nav" aria-label="Mobile menu">
+{drawer}
+          </nav>
+        </details>
+      </div>
+    </header>
+    {ticker}
+  </div>
+
+<main class="page-main" id="content">
+  <div class="container">
+    <div class="breadcrumb"><a href="{home}">Home</a> / {label}</div>
+    <div class="section-head"><h2>{label} <span class="badge">{count}</span></h2>
+      <a href="{archive}">Archive</a>
+    </div>
+<div class="post-list">
+{listing}
+</div>
+  </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <p class="footer-wordmark" lang="en">Sayd</p>
+          <p>The magazine of nature’s masters on land, sea, and sky — hunting, wildlife, birds, equestrianism, and heritage from Lebanon and the Arab world.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Doors</h3>
+          <ul>{doors}</ul>
+        </div>
+        <div class="footer-col">
+          <h3>Magazine</h3>
+          <ul>{magazine}</ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div class="footer-legal">
+          <div class="footer-copy">© Sayd Magazine</div>
+          <p class="site-license">Licensed by the National Media Council in Lebanon under official notice No. 157 dated 5 September 2016</p>
+        </div>
+        <a class="footer-partner" href="https://www.mecshap.org/" target="_blank" rel="noopener">MECSHAP — Middle East Center for Sustainable Harvest and Anti-Poaching</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+"""
+
+
+def write_en_door_landings() -> list[str]:
+    """Create docs/en/category/{{folder}}/ when the English edition has no door page."""
+    written: list[str] = []
+    doors = []
+    for door in ia.desktop_nav_doors():
+        doors.append(door)
+        doors.extend(door["children"])
+    for door in doors:
+        dest = DOCS / "en" / "category" / door["folder"] / "index.html"
+        stories = _stories_for_door(door["id"])
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(_en_door_page(door, stories), encoding="utf-8")
+        written.append(door["id"])
+    return written
+
+
+def apply_en_door_hrefs() -> None:
+    landings = write_en_door_landings()
+    pages = retarget_en_door_hrefs()
+    print(f"en door landings: {', '.join(landings)}; href pages rewritten: {pages}")
 
 
 def main() -> None:
