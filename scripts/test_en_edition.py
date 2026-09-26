@@ -436,8 +436,10 @@ def test_en_nested_nav_paths() -> None:
     article = (
         DOCS / "en" / "posts" / CABS_EN / "index.html"
     ).read_text(encoding="utf-8")
-    assert 'href="../../category/صيد/index.html"' in stories
-    assert 'href="../../../category/صيد/index.html"' in article
+    assert 'href="../category/صيد/index.html"' in stories
+    assert 'href="../../category/صيد/index.html"' in article
+    assert 'href="../../../category/' not in stories
+    assert 'href="../../../category/' not in article
     assert "IBM+Plex+Sans" in article
     assert (
         "?v=20260919-en-plex-kaps" in article
@@ -767,7 +769,9 @@ def test_empty_2022_category_chrome_is_css_only() -> None:
     assert 'href="category/عتاد-وسلاح-الصيد/index.html"' in home
     assert 'href="category/صور/index.html"' in home
     assert 'href="../category/رياضات-وسياحة-بيئية/index.html"' not in en
-    assert 'href="../category/عتاد-وسلاح-الصيد/index.html"' in en
+    assert 'href="../category/' not in en
+    assert 'href="category/عتاد-وسلاح-الصيد/index.html"' in en
+    assert 'href="category/صيد/index.html"' in en.split('class="main-nav"', 1)[1].split("</nav>", 1)[0]
     shell = (DOCS / "category" / "رماية" / "index.html").read_text(encoding="utf-8")
     assert 'class="badge">0' in shell
     assert 'class="empty-note"' in shell

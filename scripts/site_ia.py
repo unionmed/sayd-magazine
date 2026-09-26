@@ -492,7 +492,15 @@ def _prefix(depth: int) -> str:
     return "../" * depth
 
 
-def _href(depth: int, folder: str) -> str:
+def _href(depth: int, folder: str, lang: str = "ar") -> str:
+    """Category landing for a door.
+
+    Arabic stays at docs/category/{folder}/. English stays inside the
+    edition, at docs/en/category/{folder}/. Depth is counted from docs/,
+    so an English page is one directory deeper than the edition root.
+    """
+    if lang == "en":
+        return f"{'../' * max(depth - 1, 0)}category/{folder}/index.html"
     return f"{_prefix(depth)}category/{folder}/index.html"
 
 
@@ -529,7 +537,7 @@ def desktop_nav_inner(lang: str, depth: int) -> str:
     parts: list[str] = []
     for door in desktop_nav_doors():
         label = chrome_label(door, lang)
-        href = _href(depth, door["folder"])
+        href = _href(depth, door["folder"], lang)
         children = door["children"]
         if not children:
             parts.append(f"        {_link(href, label)}")
@@ -538,7 +546,7 @@ def desktop_nav_inner(lang: str, depth: int) -> str:
         for child in children:
             child_label = chrome_label(child, lang)
             child_links.append(
-                f'          {_link(_href(depth, child["folder"]), child_label)}'
+                f'          {_link(_href(depth, child["folder"], lang), child_label)}'
             )
         kids = "\n".join(child_links)
         parts.append(
@@ -581,18 +589,18 @@ def mobile_nav_html(lang: str, depth: int) -> str:
         children = door["children"]
         if children:
             child_links = [
-                f'            {_link(_href(depth, child["folder"]), chrome_label(child, lang))}'
+                f'            {_link(_href(depth, child["folder"], lang), chrome_label(child, lang))}'
                 for child in children
             ]
             bar.append(_mobile_details(html.escape(label, quote=False), child_links, "mobile-sub"))
             continue
-        bar.append(f'          {_link(_href(depth, door["folder"]), label)}')
+        bar.append(f'          {_link(_href(depth, door["folder"], lang), label)}')
     more = []
     for door in DOORS:
         if door["id"] in MOBILE_BAR:
             continue
         label = chrome_label(door, lang)
-        more.append(f'            {_link(_href(depth, door["folder"]), label)}')
+        more.append(f'            {_link(_href(depth, door["folder"], lang), label)}')
     more_html = ""
     if more:
         more_html = (
@@ -616,10 +624,10 @@ def drawer_nav_inner(lang: str, depth: int) -> str:
     parts = []
     for door in visible_doors():
         label = chrome_label(door, lang)
-        parts.append(f"        {_link(_href(depth, door['folder']), label)}")
+        parts.append(f"        {_link(_href(depth, door['folder'], lang), label)}")
         for child in door["children"]:
             child_label = chrome_label(child, lang)
-            parts.append(f"        {_link(_href(depth, child['folder']), child_label)}")
+            parts.append(f"        {_link(_href(depth, child['folder'], lang), child_label)}")
     return "\n".join(parts)
 
 
@@ -655,7 +663,7 @@ def footer_doors_html(lang: str, depth: int) -> str:
     items = []
     for door in visible_doors():
         label = chrome_label(door, lang)
-        items.append(f"<li>{_link(_href(depth, door['folder']), label)}</li>")
+        items.append(f"<li>{_link(_href(depth, door['folder'], lang), label)}</li>")
     return "\n".join(items)
 
 

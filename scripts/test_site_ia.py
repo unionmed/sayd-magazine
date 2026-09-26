@@ -134,6 +134,22 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
         assert ">رماية وعتاد<" in surface
         assert "الحياة البرية والتخييم" not in surface
     assert ia.TICKER_LABEL_AR == "من كل وادي خبر"
+    en_home = ia.desktop_nav_inner("en", 1)
+    assert 'href="../category/' not in en_home
+    assert 'href="category/صيد/index.html"' in en_home
+    assert 'href="category/الصقارة/index.html"' in en_home
+    assert 'href="category/ثقافة-وتراث/index.html"' in en_home
+    en_story = ia.desktop_nav_inner("en", 2)
+    assert 'href="../category/صيد/index.html"' in en_story
+    assert 'href="../../category/' not in en_story
+    en_article = ia.desktop_nav_inner("en", 3)
+    assert 'href="../../category/صيد/index.html"' in en_article
+    assert 'href="../../../category/' not in en_article
+    ar_home = ia.desktop_nav_inner("ar", 0)
+    assert 'href="category/صيد/index.html"' in ar_home
+    assert "en/category" not in ar_home
+    ar_article = ia.desktop_nav_inner("ar", 2)
+    assert 'href="../../category/صيد/index.html"' in ar_article
 
 
 def test_disclosure_only_for_a_real_commercial_link() -> None:
