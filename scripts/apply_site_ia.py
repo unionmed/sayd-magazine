@@ -12,7 +12,7 @@ import re
 import shutil
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, unquote, urlsplit
 
 import site_ia as ia
 from site_cache import CSS_CACHE
@@ -741,6 +741,45 @@ def retarget_en_door_hrefs() -> int:
     return changed
 
 
+def _en_story_thumb(slug: str, title: str, article_text: str) -> str:
+    """Reuse a published card image, then the story's own local image.
+
+    Category pages and English posts are both three levels below docs/.
+    Never borrow a related-story image or emit a missing media URL.
+    """
+    candidates: list[tuple[Path, str]] = []
+    for listing in (DOCS / "en/index.html", DOCS / "en/stories/index.html"):
+        if not listing.is_file():
+            continue
+        text = listing.read_text(encoding="utf-8")
+        for match in re.finditer(r'<(article|li)\b[^>]*>(.*?)</\1>', text, re.S):
+            block = match.group(2)
+            if re.search(r'href="[^"]*posts/' + re.escape(slug) + r'/index\.html"', block):
+                candidates.append((listing.parent, block))
+    body = re.search(r'<article class="article-content">(.*?)</article>', article_text, re.S)
+    if body:
+        candidates.append((DOCS / "en/posts" / slug, body.group(1)))
+    media_root = (DOCS / "media").resolve()
+    for base, block in candidates:
+        for src in re.findall(r'<img\b[^>]*\bsrc="([^"]+)"', block):
+            url = urlsplit(html.unescape(src))
+            if url.scheme or url.netloc:
+                continue
+            decoded = unquote(url.path)
+            image = ((DOCS / decoded.lstrip("/")) if decoded.startswith("/") else (base / decoded)).resolve()
+            if not image.is_relative_to(media_root) or not image.is_file():
+                continue
+            relative = image.relative_to(DOCS.resolve()).as_posix()
+            if relative.startswith("media/brand/"):
+                continue
+            return (
+                f'<a class="thumb" href="../../posts/{html.escape(slug, quote=True)}/index.html">'
+                f'<img src="../../../{html.escape(relative, quote=True)}" '
+                f'alt="{html.escape(title, quote=True)}" loading="lazy"></a>'
+            )
+    return ""
+
+
 def _en_story(slug: str) -> dict | None:
     """Published English title and date. Redirect stubs are not stories."""
     path = DOCS / "en" / "posts" / slug / "index.html"
@@ -768,7 +807,8 @@ def _en_story(slug: str) -> dict | None:
         month = _MONTHS.get(parsed.group(2).lower())
         if month:
             stamp = datetime(int(parsed.group(3)), month, int(parsed.group(1)))
-    return {"slug": slug, "title": title, "date": date, "stamp": stamp}
+    return {"slug": slug, "title": title, "date": date, "stamp": stamp,
+            "thumb": _en_story_thumb(slug, title, text)}
 
 
 def _stories_for_door(door_id: str) -> list[dict]:
@@ -826,8 +866,10 @@ def _en_door_page(door: dict, stories: list[dict]) -> str:
             href = f"../../posts/{story['slug']}/index.html"
             title = html.escape(story["title"])
             date = html.escape(story["date"])
+            thumb = f"  {story['thumb']}\n" if story.get("thumb") else ""
             rows.append(
                 "<article class=\"post-row\">\n"
+                f"{thumb}"
                 "  <div class=\"body\">\n"
                 f"    <div class=\"meta\">{date}</div>\n"
                 f"    <h2><a href=\"{href}\">{title}</a></h2>\n"
