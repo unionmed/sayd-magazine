@@ -167,6 +167,10 @@ DOORS: list[dict] = [
     },
 ]
 
+HUNTING_LEGACY_DOORS = DOORS[0]["children"]
+HUNTING_LEGACY_IDS = {door["id"] for door in HUNTING_LEGACY_DOORS}
+DOORS[0]["children"] = []
+
 # slug → door id. One primary door. EN twins share the door.
 # Old category folders lose the listing row when the story moves.
 PRIMARY: dict[str, dict] = {
@@ -436,6 +440,8 @@ AFFILIATE_HOSTS = {
 
 
 def door_by_id(door_id: str) -> dict:
+    if door_id in HUNTING_LEGACY_IDS:
+        door_id = "hunting"
     for door in DOORS:
         if door["id"] == door_id:
             return door
@@ -533,7 +539,7 @@ def desktop_nav_folders() -> set[str]:
 
 
 def desktop_nav_doors() -> list[dict]:
-    """All nine doors and every صيد child, including landings with no 2026+ material."""
+    """All nine doors, including landings with no 2026+ material."""
     out = []
     for door in DOORS:
         copy = dict(door)
@@ -585,8 +591,7 @@ def _mobile_details(summary: str, links: list[str], extra_class: str = "") -> st
 def mobile_nav_html(lang: str, depth: int) -> str:
     """First four doors, then المزيد / More with the other five, empty or not.
 
-    Hunting's children expand under the bar label (صيد / Hunting), the same
-    four doors as the desktop dropdown. They are not listed inside المزيد / More.
+    Hunting is a direct link to its unified chronological listing.
     """
     more_label = "More" if lang == "en" else "المزيد"
     aria = "Mobile menu" if lang == "en" else "قائمة الجوال"

@@ -48,7 +48,7 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     visible = {door["id"] for door in ia.visible_doors()}
     assert visible == {"hunting", "gear", "equestrian", "wildlife", "tv", "photos"}
     hunting = next(door for door in ia.visible_doors() if door["id"] == "hunting")
-    assert [child["id"] for child in hunting["children"]] == ["bird-hunting"]
+    assert hunting["children"] == []
     nav = ia.desktop_nav_inner("ar", 0)
     ar_labels = [
         "صيد",
@@ -64,8 +64,7 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     ar_at = [nav.index(f">{label}<") for label in ar_labels]
     assert ar_at == sorted(ar_at)
     for child in ("صيد طيور", "صقارة", "صيد بر", "صيد بحري"):
-        assert f">{child}<" in nav
-    assert nav.index(">صيد بحري<") < nav.index(">رماية وعتاد<")
+        assert f">{child}<" not in nav
     assert "الرماية والعتاد" not in nav
     assert "الفروسية" not in nav
     assert "الحياة البرية والتخييم" not in nav
@@ -85,7 +84,7 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     en_at = [en.index(label) for label in en_labels]
     assert en_at == sorted(en_at)
     for child in ("Bird Hunting", "Falconry", "Land Hunting", "Marine Hunting"):
-        assert child in en
+        assert child not in en
     assert "الرئيسية" not in nav
     assert ">Home<" not in en
     mobile = ia.mobile_nav_html("ar", 1)
@@ -96,12 +95,10 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     assert "الحياة البرية والتخييم" not in mobile
     assert "حياة برية وتخييم" not in mobile
     sayd_children = ["صيد طيور", "صقارة", "صيد بر", "صيد بحري"]
-    sayd_at = [mobile.index(f">{label}<") for label in sayd_children]
-    assert sayd_at == sorted(sayd_at)
-    assert mobile.index(">صيد<") < sayd_at[0]
-    assert sayd_at[-1] < mobile.index(">المزيد<")
-    assert 'class="mobile-more mobile-sub"' in mobile
-    assert mobile.count('name="mobile-nav"') == 2
+    assert all(f">{label}<" not in mobile for label in sayd_children)
+    assert 'href="../category/صيد/index.html">صيد</a>' in mobile
+    assert 'class="mobile-more mobile-sub"' not in mobile
+    assert mobile.count('name="mobile-nav"') == 1
     more_ar = ["شعر وفن", "قوانين الصيد", "موسوعة الطيور", "صيد TV", "صور"]
     more_at = [mobile.index(f">{label}<") for label in more_ar]
     assert more_at == sorted(more_at)
@@ -115,10 +112,7 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     assert ">Wildlife<" in en_mobile
     assert "More" in en_mobile
     en_children = ["Bird Hunting", "Falconry", "Land Hunting", "Marine Hunting"]
-    en_child_at = [en_mobile.index(label) for label in en_children]
-    assert en_child_at == sorted(en_child_at)
-    assert en_mobile.index(">Hunting<") < en_child_at[0]
-    assert en_child_at[-1] < en_mobile.index(">More<")
+    assert all(label not in en_mobile for label in en_children)
     more_en = ["Poetry &amp; Art", "Hunting Laws", "Bird Encyclopedia", "Sayd TV", "Photos"]
     more_en_at = [en_mobile.index(label) for label in more_en]
     assert more_en_at == sorted(more_en_at)
@@ -138,7 +132,7 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     en_home = ia.desktop_nav_inner("en", 1)
     assert 'href="../category/' not in en_home
     assert 'href="category/صيد/index.html"' in en_home
-    assert 'href="category/الصقارة/index.html"' in en_home
+    assert 'href="category/الصقارة/index.html"' not in en_home
     assert 'href="category/ثقافة-وتراث/index.html"' in en_home
     en_story = ia.desktop_nav_inner("en", 2)
     assert 'href="../category/صيد/index.html"' in en_story

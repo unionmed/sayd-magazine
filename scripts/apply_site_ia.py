@@ -748,7 +748,7 @@ def _stories_for_door(door_id: str) -> list[dict]:
     seen: set[str] = set()
     stories: list[dict] = []
     for spec in ia.PRIMARY.values():
-        if spec.get("door") != door_id:
+        if ia.door_by_id(spec["door"])["id"] != door_id:
             continue
         slug = (spec.get("en") or "").strip()
         if not slug or slug in seen:
@@ -971,6 +971,8 @@ def main() -> None:
     write_homepage_json()
     from refresh_card_navigation import main as refresh_card_navigation
     refresh_card_navigation()
+    from unify_hunting import main as unify_hunting
+    unify_hunting()
     print(f"chrome pages touched: {changed}; commercial disclosures: {disclosures}")
 
 
