@@ -225,9 +225,9 @@ PRIMARY: dict[str, dict] = {
         "remove_from": ["صيد", "أخبار"],
     },
     "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا": {
-        "door": "hunting",
+        "door": "photos",
         "en": "suhail-2026-in-photos-falcons-visitors",
-        "remove_from": ["صور", "بعدستكم"],
+        "remove_from": ["صيد", "بعدستكم"],
     },
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك": {
         "door": "photos",

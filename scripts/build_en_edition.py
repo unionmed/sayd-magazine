@@ -577,21 +577,6 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
                 f"<figcaption><strong>{escape(title)}</strong><br>{escape(caption)}"
                 "<br><span>Source: QNA</span></figcaption></figure>"
             )
-        gallery.append("<h2>Faces in organizing Suhail</h2>")
-        gallery.append(
-            "<p><strong>Dr. Khalid bin Ibrahim Al-Sulaiti</strong><br>"
-            "Director General of the Cultural Village Foundation “Katara,” and chair of the "
-            "organizing supreme committee of the Suhail exhibition.</p>"
-        )
-        gallery.append(
-            "<p><strong>Abdulaziz Al-Bu Hashem Al-Sayed</strong><br>"
-            "Director of the Suhail exhibition and member of the organizing supreme committee.</p>"
-        )
-        gallery.append(
-            "<p><strong>Malaka Mohammed Al-Shreem</strong><br>"
-            "Member and secretary of the organizing supreme committee of the Suhail exhibition, "
-            "and director of the Marketing Department at Katara.</p>"
-        )
         gallery.append(
             '<p class="en-callout"><a href="../suhail-2026-closes-decade-katara-80000-visitors/index.html">'
             "<strong>Read the full Suhail 2026 wrap-up →</strong></a></p>"
@@ -943,7 +928,7 @@ def related_for(slug: str, articles: dict[str, dict]) -> list[str]:
     for s in others:
         if s not in seen:
             seen.append(s)
-    return seen[:3]
+    return seen[:2]
 
 
 def related_card_html(other: str, articles: dict[str, dict], media_prefix: str) -> str:
@@ -1535,6 +1520,8 @@ def main() -> None:
         write_article(slug, articles, pairs_inv)
     related_n = ensure_en_related_blocks(articles)
     footer_n = apply_footer_bottom_docs(DOCS)
+    from refresh_article_navigation import main as refresh_articles
+    refresh_articles()
     print(f"patched {n} Arabic HTML files")
     print(f"wrote {len(articles)} English articles + /en/index.html")
     print(f"ensured Related on {related_n} English articles")

@@ -17,6 +17,7 @@ ARCHIVE_ROUNDUP = 'من-ذاكرة-صيد-مسيرة-الوعي-والمسؤول
 EXCLUDED = {
     ARCHIVE_ROUNDUP, ia.PRIMARY[ARCHIVE_ROUNDUP]['en'],
     'شجيرة-العوسج-حين-تقرأ-الأرض', 'the-awsaj-thornbush-reading-the-land',
+    'سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا', 'suhail-2026-in-photos-falcons-visitors',
 }
 MONTHS = dict(build._MONTHS)
 MONTHS.update({m: i + 1 for i, m in enumerate(['كانون الثاني', 'شباط', 'آذار', 'نيسان', 'أيار', 'حزيران', 'تموز', 'آب', 'أيلول', 'تشرين الأول', 'تشرين الثاني', 'كانون الأول'])})

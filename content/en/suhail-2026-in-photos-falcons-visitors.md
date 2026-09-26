@@ -9,7 +9,7 @@
 
 Doha — Sayd | Photo album
 
-A visual tour of the tenth edition of the Katara International Hunting and Falcons Exhibition “Suhail 2026,” held in Doha from 8 to 12 September. From a falcon on its owner’s hand to halls filled with visitors, we selected six frames, with a window on the fair’s leading organizers.
+A visual tour of the tenth edition of the Katara International Hunting and Falcons Exhibition “Suhail 2026,” held in Doha from 8 to 12 September. From a falcon on its owner’s hand to halls filled with visitors, we selected six frames.
 
 ## Body
 
@@ -41,25 +41,9 @@ Source: QNA
 A wide view of corridors, stands, and visitor movement inside the fair.  
 Source: QNA
 
-### Faces in organizing Suhail
-
-Archival introductory photo; source: Katara International Arabian Horse Festival.
-
-**Dr. Khalid bin Ibrahim Al-Sulaiti**  
-Director General of the Cultural Village Foundation “Katara,” and chair of the organizing supreme committee of the Suhail exhibition.  
-Watch his interview via Katara’s official account →
-
-**Abdulaziz Al-Bu Hashem Al-Sayed**  
-Director of the Suhail exhibition and member of the organizing supreme committee.  
-Watch his interview via Qatar Television →
-
-**Malaka Mohammed Al-Shreem**  
-Member and secretary of the organizing supreme committee of the Suhail exhibition, and director of the Marketing Department at Katara.  
-Watch her interview via Al-Rayyan channel →
-
 Read the full Suhail 2026 wrap-up →
 
 ## Notes
 
 - Photo captions translated faithfully; external video links referenced as on the AR page without inventing URLs.
-- Six photo slots + three organizer bios as in source.
+- Gallery only; organizer biographies removed at Nayef’s request because the original portraits are unavailable.

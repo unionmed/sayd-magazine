@@ -1295,6 +1295,11 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 
 .article-shell { min-width: 0; }
 
+/* Article recommendations sit below the text; no empty sidebar column. */
+.article-layout:not(:has(> aside)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .latest-list li {
   padding: 0.4rem 0;
   border-bottom: 1px solid var(--hair);
@@ -1376,7 +1381,7 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.5rem;
 }
 

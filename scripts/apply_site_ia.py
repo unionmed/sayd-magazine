@@ -970,8 +970,8 @@ def main() -> None:
     write_homepage_json()
     from refresh_card_navigation import main as refresh_card_navigation
     refresh_card_navigation()
-    from unify_hunting import main as unify_hunting
-    unify_hunting()
+    from refresh_article_navigation import main as refresh_articles
+    refresh_articles()
     print(f"chrome pages touched: {changed}; commercial disclosures: {disclosures}")
 
 

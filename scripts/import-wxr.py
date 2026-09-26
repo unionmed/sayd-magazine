@@ -2367,7 +2367,7 @@ def build_site(data: dict, out: Path) -> None:
             for cand in by_cat.get(p["categories"][0]["slug"], []):
                 if cand["slug"] != p["slug"]:
                     related.append(cand)
-                if len(related) >= 3:
+                if len(related) >= 2:
                     break
         if related:
             related_cards = "\n".join(
@@ -2379,18 +2379,7 @@ def build_site(data: dict, out: Path) -> None:
       <div class="section-head"><h2>ذات صلة</h2></div>
       <div class="related-grid">{related_cards}</div>
     </section>"""
-        aside_html = f"""
-      <aside class="sidebar article-aside">
-        <div class="widget">
-          <h3>الأحدث</h3>
-          <div class="widget-body"><ul class="latest-list">{latest_lis_at(2)}</ul></div>
-        </div>
-        {ad_slot("rectangle")}
-        <div class="widget">
-          <h3>التصنيفات</h3>
-          <div class="widget-body"><ul class="cat-list">{cat_lis_at(2)}</ul></div>
-        </div>
-      </aside>"""
+        aside_html = ""
         body = f"""
 <main class="page-main" id="content">
   <div class="container">
