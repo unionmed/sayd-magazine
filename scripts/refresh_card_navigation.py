@@ -14,7 +14,7 @@ def refresh(text, lang='ar', depth=0):
                   lambda m: m[1] + m[2] + LABELS[m[3]] + m[4] + m[5], text)
     text = text.replace('الرماية والعتاد — مجلة صيد', 'رماية وعتاد — مجلة صيد')
     def footer(match):
-        section = re.sub(r'<li>\s*<a\b[^>]*>\s*(?:من نحن|About us|التواصل|Contact)\s*</a>\s*</li>\s*', '', match[0])
+        section = re.sub(r'<li>\s*<a\b[^>]*>\s*(?:من نحن|About us|التواصل|Contact|الترخيص|License)\s*</a>\s*</li>\s*', '', match[0])
         section = re.sub(r'<a\b[^>]*class="footer-partner"[^>]*>.*?</a>', '', section, flags=re.S)
         section = re.sub(r'(<h3>\s*(?:الأبواب|Doors)\s*</h3>\s*<ul>).*?(</ul>)',
                          lambda m: m[1] + site_ia.footer_doors_html(lang, depth) + m[2], section, flags=re.S)

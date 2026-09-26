@@ -644,18 +644,15 @@ def footer_magazine_items(lang: str, depth: int) -> list[tuple[str, str]]:
     prefix = _prefix(depth)
     if lang == "en":
         team = f"{'../' * max(depth - 1, 0)}team/index.html"
-        license_href = f"{'../' * max(depth - 1, 0)}license/index.html"
         archive = f"{'../' * max(depth - 1, 0)}stories/index.html"
         return [
             ("Team", team),
-            ("License", license_href),
             ("Subscribe by email", MAILTO),
             ("Archive", archive),
             (SOCIAL[0][1], SOCIAL[0][2]),
         ]
     return [
         ("فريق العمل", f"{prefix}pages/من-نحن/index.html"),
-        ("الترخيص", f"{prefix}pages/الترخيص/index.html"),
         ("الاشتراك بالبريد", MAILTO),
         ("الأرشيف", f"{prefix}articles/index.html"),
         (SOCIAL[0][0], SOCIAL[0][2]),
