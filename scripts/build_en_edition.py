@@ -730,23 +730,6 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
             "European Bee-eater (<em>Merops apiaster</em>).",
             media_prefix,
         )
-        extras = []
-        for src, alt in (
-            (
-                "media/uploads/2025/09/AP4I1115-200x300.jpg",
-                "European Bee-eater at the nest bank",
-            ),
-            (
-                "media/uploads/2025/09/AP4I1061-1024x683.jpg",
-                "European Bee-eater in flight",
-            ),
-            (
-                "media/uploads/2025/09/AP4I1187-Enhanced-NR-1024x683.jpg",
-                "European Bee-eater perched",
-            ),
-        ):
-            extras.append(figure(src, alt, alt, media_prefix))
-        body_html = body_html + "\n" + "\n".join(extras)
     elif slug == "barn-owl":
         extra = figure(
             "media/uploads/2025/09/AP4I6377-1024x683.jpg",

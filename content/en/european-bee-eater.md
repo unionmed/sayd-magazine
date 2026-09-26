@@ -26,4 +26,4 @@ The European Bee-eater is a valuable addition to biodiversity and draws bird lov
 ## Notes
 
 - Scientific name *Merops apiaster* (European Bee-eater) — accurate.
-- Images: `AP4I0956`, `AP4I1115`, `AP4I1061`, `AP4I1187-Enhanced-NR` under `media/uploads/2025/09/` (no captions).
+- Image: retain only `AP4I0956` under `media/uploads/2025/09/`. The three other images were removed at the editor’s request.
