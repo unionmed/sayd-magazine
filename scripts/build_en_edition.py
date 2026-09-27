@@ -123,12 +123,12 @@ META: dict[str, dict] = {
         "image_alt": "Slender-billed Curlew at Merja Zerga, Morocco, 1995",
     },
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah": {
-        "date": "22 September 2026",
-        "date_sort": "2026-09-22",
+        "date": "27 September 2026",
+        "date_sort": "2026-09-27",
         "category": "Equestrian",
         "author": "Taif — Sayd Magazine",
-        "image": "media/uploads/2026/09/taif-racing-hawiyah.jpg",
-        "image_alt": "A jockey and grey horse at Al-Hawiyah during the Taif racing season, 2026",
+        "image": "media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg",
+        "image_alt": "On the track at King Khalid Racecourse in Taif",
     },
     "egypt-new-hunting-rules-burullus-autumn-migration": {
         "date": "20 September 2026",

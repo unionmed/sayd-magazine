@@ -1,10 +1,9 @@
 ---
 title: "Mashhoor Wins the Saudi National Day Cup as Taif Closes Its Racing Season"
 slug: taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah
-date: 2026-09-22 10:00:00
+date: 2026-09-27 12:15:00
 author: Sayd
 featured: ../../../media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg
-modified: 2026-09-27 11:32:00
 ---
 
 <figure><img src="../../../media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg" alt="On the track at King Khalid Racecourse in Taif" width="1004" height="669" style="width:100%;height:auto"><figcaption>On the track at King Khalid Racecourse in Taif</figcaption></figure>
