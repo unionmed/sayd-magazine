@@ -37,7 +37,7 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 34
+    assert len(PAIRS) == 36
     drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
     assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():
@@ -98,6 +98,8 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "common-shelduck-protected-migrant-lebanon",
         # Marine door has no 2026 material, so it stays off the first screen.
         "george-taza-protect-fish-stocks-interview",
+        # Poetry & Art only: Nayef asked for the door listing, not a homepage card.
+        "from-the-poem-to-the-maqnas",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
