@@ -8,8 +8,6 @@
   ],
   "latest": [
     "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
-    "شجيرة-العوسج-حين-تقرأ-الأرض",
-    "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
     "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
@@ -44,7 +42,11 @@
     "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
     "video-saud-al-babtain-maqnas-afghanistan",
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
-    "qatar-suhail-2026-80000-visitors-teaser"
+    "qatar-suhail-2026-80000-visitors-teaser",
+    "شجيرة-العوسج-حين-تقرأ-الأرض",
+    "the-awsaj-thornbush-reading-the-land",
+    "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
+    "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -87,14 +89,10 @@
   ],
   "desk_slugs": {
     "صيد": [
-      "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
-      "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
-      "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-      "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
+      "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية"
     ],
     "رماية وعتاد": [
-      "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
-      "البنادق-الهوائية"
+      "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
     ],
     "الفروسية": [
       "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
@@ -108,18 +106,13 @@
       "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"
     ],
     "Hunting": [
-      "over-20000-m2-bird-nets-seized-lebanon",
-      "skies-losing-balance-birdlife-flyways-report",
-      "how-migration-routes-lost-seven-birds-in-150-years",
-      "protecting-autumn-migratory-birds-lebanon-khatib-2017"
+      "autumn-migration-field-action-protect-flyways-lebanon"
     ],
     "Shooting & Gear": [
-      "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
-      "air-rifles"
+      "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
     ],
     "Equestrian": [
-      "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
-      "leen-araji-equestrian-and-mental-math-champion"
+      "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
     ],
     "Sayd TV": [
       "video-saud-al-babtain-maqnas-afghanistan"
@@ -129,23 +122,28 @@
       "great-white-pelican-matn-highway-nayef-krayem"
     ],
     "فروسية": [
-      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-      "لين-عراجي-بطلة-فروسية-وحساب"
+      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
     ],
     "الحياة البرية والتخييم": [
-      "شجيرة-العوسج-حين-تقرأ-الأرض",
-      "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
+      "شجيرة-العوسج-حين-تقرأ-الأرض"
     ],
     "Wildlife & Camping": [
-      "the-awsaj-thornbush-reading-the-land",
-      "how-farmers-protect-migratory-birds-this-autumn"
+      "the-awsaj-thornbush-reading-the-land"
+    ],
+    "شعر وفن": [
+      "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب"
+    ],
+    "Poetry & Art": [
+      "from-the-poem-to-the-maqnas"
     ]
   },
   "category_extras": {},
   "home_section_order": [
     "صيد",
     "رماية وعتاد",
-    "الفروسية",
+    "فروسية",
+    "الحياة البرية والتخييم",
+    "شعر وفن",
     "صيد TV",
     "صور"
   ],
@@ -169,8 +167,6 @@
     ],
     "latest": [
       "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
-      "شجيرة-العوسج-حين-تقرأ-الأرض",
-      "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
       "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
       "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
       "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
@@ -197,6 +193,18 @@
       "door": "equestrian",
       "slugs": [
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
+      ]
+    },
+    {
+      "door": "wildlife",
+      "slugs": [
+        "شجيرة-العوسج-حين-تقرأ-الأرض"
+      ]
+    },
+    {
+      "door": "poetry",
+      "slugs": [
+        "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب"
       ]
     },
     {
@@ -254,11 +262,11 @@
     "بالمختصر-المفيد-معايير-شركات-التأمين": "laws",
     "ما-هو-المتغير-الوحيد-السنوي-في-قانون-ال": "laws",
     "تنفيذ-قانون-الصيد-لا-يكون-استنسابياً-و": "laws",
-    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة": "hunting"
+    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة": "hunting",
+    "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب": "poetry"
   },
   "demotion": "Main and supporting cards stay separate from latest news. Approved repeats may also appear under their homepage section.",
   "approved_home_repeats": [
-    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-    "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
   ]
 }
