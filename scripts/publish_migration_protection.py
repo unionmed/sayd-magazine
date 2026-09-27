@@ -48,11 +48,13 @@ def write_articles():
     for lang,slug,old in [('ar',AR,OLD_AR),('en',EN,OLD_EN)]:
         base=DOCS/('en/posts' if lang=='en' else 'posts')
         text=(base/old/'index.html').read_text()
+        tickers=iter(re.findall(r'<div class="ticker"[^>]*>.*?</div>',text))
         # Replace the source story identity, including encoded SEO URLs.
         old_title=re.search(r'<h1>(.*?)</h1>',text,re.S)[1]
         text=text.replace(old_title,html.escape(DATA[lang+'_title'],quote=False))
         for original,new in [(OLD_AR,AR),(OLD_EN,EN)]:
             text=text.replace(original,new).replace(quote(original),quote(new))
+        text=re.sub(r'<div class="ticker"[^>]*>.*?</div>',lambda m:next(tickers),text)
         date='27 September 2026' if lang=='en' else '27 أيلول 2026'
         text=re.sub(r'(<div class="article-meta"><span class="meta-item">)[^<]+',lambda m:m[1]+date,text,count=1)
         text=re.sub(r'<meta name="description" content="[^"]*">',lambda m:'<meta name="description" content="'+html.escape(DATA[lang+'_description'],quote=True)+'">',text,count=1)
