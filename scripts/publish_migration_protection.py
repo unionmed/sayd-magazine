@@ -34,7 +34,8 @@ def body(lang):
     result=fig(prefix+HERO,caps[0])
     for i,(title,paras) in enumerate(DATA[lang+'_sections']):
         if i==5: result+=fig(prefix+FLOCK,caps[2])
-        if title: result+=f'<h2 style="font-weight:800;font-size:1.45em;line-height:1.65;margin:32px 0 12px;color:#304b36">{html.escape(title)}</h2>'
+        anchor=' id="libya"' if title and (title.startswith('ليبيا:') or title.startswith('Libya:')) else ''
+        if title: result+=f'<h2{anchor} style="font-weight:800;font-size:1.45em;line-height:1.65;margin:32px 0 12px;color:#304b36">{html.escape(title)}</h2>'
         result+=''.join('<p>'+html.escape(p)+'</p>' for p in paras)
         if i==2: result+=fig(prefix+NETS,caps[1])
     label='Photo credits' if lang=='en' else 'اعتمادات الصور'

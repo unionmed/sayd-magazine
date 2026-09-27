@@ -91,6 +91,7 @@ HOME_LATEST = [
     "illegal-hunting-destroys-hobby-nets-lime-night",
 ]
 TICKER_TITLES_EN = {
+    'sicily-lebanon-protecting-migratory-birds': 'Libya: Al-Barari warns of large hunting hauls of European Turtle Doves',
     "over-20000-m2-bird-nets-seized-lebanon": "Internal Security Forces seize 20,640 m² of illegal bird nets in the Bekaa",
     "south-lebanon-environmental-destruction-bird-flyway": "Southern Lebanon: documented environmental destruction threatens one of the world’s key bird-migration flyways",
     "skies-losing-balance-birdlife-flyways-report": "BirdLife: 45% of the world’s migratory birds are in continuous decline",
@@ -102,6 +103,7 @@ TICKER_TITLES_EN = {
 }
 # Live eight. Prepend only the Bekaa nets line; the Saudi season line is the one that leaves.
 HOME_TICKER = [
+    'sicily-lebanon-protecting-migratory-birds',
     "over-20000-m2-bird-nets-seized-lebanon",
     "south-lebanon-environmental-destruction-bird-flyway",
     "skies-losing-balance-birdlife-flyways-report",
@@ -109,7 +111,6 @@ HOME_TICKER = [
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
     "egypt-new-hunting-rules-burullus-autumn-migration",
     "protecting-autumn-migratory-birds-lebanon-khatib-2017",
-    "suhail-2026-closes-decade-katara-80000-visitors",
 ]
 
 META: dict[str, dict] = {
