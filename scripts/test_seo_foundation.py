@@ -300,6 +300,104 @@ def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
     assert "posts/طائر-الوروار-الأوروبي/" in birds
 
 
+def test_breadcrumb_list_names_every_item() -> None:
+    """Google requires name or item.name on every BreadcrumbList element."""
+    import json
+    import re
+
+    ar_html = """
+    <html lang="ar"><head><title>عنوان — مجلة صيد</title></head><body><main>
+    <div class="breadcrumb"><a href="../../index.html"></a> / <a href="../../category/أخبار/index.html">أخبار</a> / مقال</div>
+    <h1>عنوان المقال</h1>
+    </main></body></html>
+    """
+    ar_rel = Path("posts/مثال/index.html")
+    ar_items = seo.breadcrumb_entries(ar_html, DOCS / ar_rel, DOCS, ar_rel, "عنوان — مجلة صيد")
+    assert [item["name"] for item in ar_items] == ["أخبار", "عنوان المقال"]
+    assert ar_items[0]["item"].endswith("/category/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/")
+    assert ar_items[1]["item"].startswith("https://sayd-magazine.com/posts/")
+    assert all(item["name"].strip() for item in ar_items)
+
+    en_html = """
+    <html lang="en"><head><title>Story — Sayd Magazine</title></head><body><main>
+    <div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../../stories/index.html">Stories</a> / Article</div>
+    <h1>A Hunting Story</h1>
+    </main></body></html>
+    """
+    en_rel = Path("en/posts/a-hunting-story/index.html")
+    en_items = seo.breadcrumb_entries(en_html, DOCS / en_rel, DOCS, en_rel, "Story — Sayd Magazine")
+    assert [item["name"] for item in en_items] == ["Home", "Stories", "A Hunting Story"]
+    assert en_items[0]["item"] == "https://sayd-magazine.com/en/"
+    assert en_items[1]["item"] == "https://sayd-magazine.com/en/stories/"
+
+    cat_html = """
+    <html lang="ar"><head><title>صيد — مجلة صيد</title></head><body><main>
+    <div class="breadcrumb"><a href="../../index.html">الرئيسية</a> / تصنيفات / صيد</div>
+    </main></body></html>
+    """
+    cat_rel = Path("category/صيد/index.html")
+    cat_items = seo.breadcrumb_entries(cat_html, DOCS / cat_rel, DOCS, cat_rel, "صيد — مجلة صيد")
+    assert [item["name"] for item in cat_items] == ["الرئيسية", "صيد"]
+    assert cat_items[0]["item"] == "https://sayd-magazine.com/"
+    assert "تصنيفات" not in [item["name"] for item in cat_items]
+
+    script = seo.breadcrumb_jsonld(en_items)
+    data = json.loads(re.search(r"(\{.*\})", script).group(1))
+    assert data["@type"] == "BreadcrumbList"
+    for element in data["itemListElement"]:
+        assert element["name"].strip()
+        assert element["@type"] == "ListItem"
+
+
+def test_published_breadcrumbs_have_names() -> None:
+    import json
+    import re
+
+    script_re = re.compile(
+        r'<script type="application/ld\+json">(.*?)</script>',
+        re.S,
+    )
+    checked = {"ar": 0, "en": 0}
+    for path in DOCS.rglob("*.html"):
+        rel = path.relative_to(DOCS)
+        text = path.read_text(encoding="utf-8")
+        for raw in script_re.findall(text):
+            data = json.loads(raw)
+            if data.get("@type") != "BreadcrumbList":
+                continue
+            elements = data.get("itemListElement") or []
+            assert len(elements) >= 2, rel
+            for element in elements:
+                name = element.get("name") or ""
+                item = element.get("item")
+                item_name = item.get("name") if isinstance(item, dict) else ""
+                assert (name.strip() or str(item_name).strip()), rel
+            if rel.as_posix().startswith("en/"):
+                checked["en"] += 1
+            else:
+                checked["ar"] += 1
+    assert checked["ar"] > 100
+    assert checked["en"] > 10
+    ar = (DOCS / "posts" / EXTINCT_AR / "index.html").read_text(encoding="utf-8")
+    en = (DOCS / "en" / "posts" / EXTINCT_EN / "index.html").read_text(encoding="utf-8")
+    assert '"name":"الرئيسية"' in ar
+    assert '"name":"Home"' in en
+    assert "BreadcrumbList" in ar and "BreadcrumbList" in en
+
+
+def test_category_refresh_redirects_are_not_rewritten() -> None:
+    """Alias landings keep the destination canonical. No self-URL, no JSON-LD."""
+    for rel in (
+        Path("category/الصقارة/index.html"),
+        Path("en/category/الصقارة/index.html"),
+    ):
+        text = (DOCS / rel).read_text(encoding="utf-8")
+        assert 'http-equiv="refresh"' in text
+        assert seo.apply_html(text, DOCS / rel, DOCS, rel, {}) == text
+        assert "BreadcrumbList" not in text
+        assert "seo:start" not in text
+
+
 def test_apply_is_idempotent() -> None:
     before = (DOCS / "index.html").read_text(encoding="utf-8")
     seo.apply(DOCS)
@@ -321,5 +419,8 @@ if __name__ == "__main__":
     test_consolidation_redirects_off_sitemap()
     test_gallery_cards_are_not_indexed_articles()
     test_empty_category_doors_leave_chrome_and_sitemap()
+    test_breadcrumb_list_names_every_item()
+    test_published_breadcrumbs_have_names()
+    test_category_refresh_redirects_are_not_rewritten()
     test_apply_is_idempotent()
     print("test_seo_foundation: ok")

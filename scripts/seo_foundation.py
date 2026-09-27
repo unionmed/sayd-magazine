@@ -2,7 +2,8 @@
 """Sitemap, robots.txt, and shared head tags for the GitHub Pages site.
 
 Rewrites only the <head> SEO block (canonical, Open Graph, Twitter, absolute
-hreflang). Article titles, meta descriptions, and body copy are left as published.
+hreflang, BreadcrumbList JSON-LD). Article titles, meta descriptions, and
+body copy are left as published.
 
 Run after any HTML rebuild so new pages inherit the same tags:
 
@@ -151,6 +152,22 @@ FEATURED_RE = re.compile(
     r'<div class="article-featured">(.*?)</div>',
     re.S | re.I,
 )
+BREADCRUMB_DIV_RE = re.compile(
+    r'<div class="breadcrumb">(.*?)</div>',
+    re.S | re.I,
+)
+# Anchors first so href slashes are not treated as crumb separators.
+_CRUMB_TOKEN_RE = re.compile(
+    r'<a\b[^>]*\bhref="([^"]*)"[^>]*>(.*?)</a>'
+    r"|<span\b[^>]*>(.*?)</span>"
+    r"|([^<]+)",
+    re.S | re.I,
+)
+H1_RE = re.compile(r"<h1\b[^>]*>(.*?)</h1>", re.S | re.I)
+_TAG_RE = re.compile(r"<[^>]+>")
+# Visible placeholder for the current page. Structured data uses the H1 instead.
+GENERIC_CRUMB_NAMES = frozenset({"مقال", "صفحة", "Article", "Page"})
+_TITLE_SUFFIXES = (" — مجلة صيد", " — Sayd Magazine", " · Sayd Magazine")
 
 # Longer names first. Keys are alef-normalized.
 AR_MONTHS = (
@@ -560,6 +577,133 @@ def display_twitter_title(title: str, rel: Path) -> str:
     return title
 
 
+def _crumb_text(fragment: str) -> str:
+    return " ".join(html.unescape(_TAG_RE.sub("", fragment)).split())
+
+
+def _visible_page_name(html_text: str, title: str) -> str:
+    h1 = H1_RE.search(html_text)
+    if h1:
+        name = _crumb_text(h1.group(1))
+        if name:
+            return name
+    name = title.strip()
+    for suffix in _TITLE_SUFFIXES:
+        if name.endswith(suffix):
+            name = name[: -len(suffix)].strip()
+    return name
+
+
+def _resolve_crumb_href(href: str, page: Path, docs: Path) -> str | None:
+    href = html.unescape(href).strip()
+    if not href or href.startswith(("#", "mailto:", "tel:", "javascript:")):
+        return None
+    if href.startswith("//"):
+        href = "https:" + href
+    href = href.split("#", 1)[0].split("?", 1)[0]
+    if href.startswith(("http://", "https://")):
+        return href or None
+    if not href:
+        return None
+    local = (page.parent / href).resolve()
+    try:
+        rel = local.relative_to(docs.resolve())
+    except ValueError:
+        return None
+    return public_url(canonical_rel(rel))
+
+
+def breadcrumb_entries(
+    html_text: str,
+    page: Path,
+    docs: Path,
+    rel: Path,
+    title: str,
+) -> list[dict[str, str]]:
+    """BreadcrumbList items derived from the visible trail.
+
+    Every returned item has a non-empty name. A link with no text is dropped
+    so a URL is never published without name or item.name. A non-link label
+    that is not the current page (no URL) is dropped so Google is not given
+    a middle item missing `item`.
+    """
+    main_at = html_text.lower().find("<main")
+    region = html_text[main_at:] if main_at >= 0 else html_text
+    match = BREADCRUMB_DIV_RE.search(region)
+    if not match:
+        return []
+    raw: list[tuple[str, str | None]] = []
+    for token in _CRUMB_TOKEN_RE.finditer(match.group(1)):
+        href, anchor, span, text = token.groups()
+        if href is not None:
+            name = _crumb_text(anchor or "")
+            url = _resolve_crumb_href(href, page, docs)
+            if name:
+                raw.append((name, url))
+            continue
+        if span is not None:
+            name = _crumb_text(span)
+            if name:
+                raw.append((name, None))
+            continue
+        for piece in re.split(r"\s*/\s*", text or ""):
+            name = _crumb_text(piece)
+            if name:
+                raw.append((name, None))
+    if not raw:
+        return []
+    current = public_url(canonical_rel(rel))
+    last_name, last_url = raw[-1]
+    if last_url is None:
+        last_url = current
+    if last_name in GENERIC_CRUMB_NAMES:
+        visible = _visible_page_name(html_text, title)
+        if visible:
+            last_name = visible
+    raw[-1] = (last_name, last_url)
+    entries: list[dict[str, str]] = []
+    for index, (name, url) in enumerate(raw):
+        if not name.strip():
+            continue
+        is_last = index == len(raw) - 1
+        if url is None and not is_last:
+            continue
+        item: dict[str, str] = {"name": name.strip()}
+        if url:
+            item["item"] = url
+        entries.append(item)
+    if len(entries) < 2 or not entries[-1]["name"].strip():
+        return []
+    return entries
+
+
+def breadcrumb_jsonld(entries: list[dict[str, str]]) -> str:
+    if len(entries) < 2:
+        return ""
+    elements = []
+    for position, entry in enumerate(entries, start=1):
+        name = entry.get("name", "").strip()
+        if not name:
+            return ""
+        element: dict[str, object] = {
+            "@type": "ListItem",
+            "position": position,
+            "name": name,
+        }
+        url = entry.get("item", "").strip()
+        if url:
+            element["item"] = url
+        elements.append(element)
+    payload = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": elements,
+    }
+    encoded = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
+    encoded = encoded.replace("<", "\\u003c")
+    return f'  <script type="application/ld+json">{encoded}</script>'
+
+
 def seo_block(
     html_text: str,
     page: Path,
@@ -608,6 +752,9 @@ def seo_block(
     lines.append(f'  <meta name="twitter:title" content="{attr(display_twitter_title(title, rel))}">')
     lines.append(f'  <meta name="twitter:description" content="{attr(description)}">')
     lines.extend(hreflang_tags(rel.as_posix(), twins))
+    crumbs = breadcrumb_jsonld(breadcrumb_entries(html_text, page, docs, rel, title))
+    if crumbs:
+        lines.append(crumbs)
     lines.append("  <!-- seo:end -->")
     return "\n".join(lines) + "\n"
 
@@ -623,6 +770,10 @@ def apply_html(
         return html_text
     # Old /{post_id}/ stubs must keep their canonical on the real article.
     if is_numeric_permalink_stub(rel) and "location.replace" in html_text:
+        return html_text
+    # Category aliases are a one-line meta refresh. Their canonical is the
+    # destination, so the shared head rewrite must not point it at itself.
+    if 'http-equiv="refresh"' in html_text:
         return html_text
     match = re.search(r"</head>", html_text, re.I)
     if not match:
