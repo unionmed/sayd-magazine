@@ -23,11 +23,21 @@ def render_card(ar_slug, lang):
     title = re.search(r'<h1[^>]*>(.*?)</h1>', text, re.S).group(1)
     title = html.escape(html.unescape(re.sub(r'<[^>]+>', '', title)))
     date = re.search(r'class="article-meta".*?<span class="meta-item">([^<]+)</span>', text, re.S).group(1)
-    if not story["thumb"]:
+    # Explicit published images for these homepage cards.
+    card_image = {
+        "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية": "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+        "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب": "media/uploads/2026/09/min-al-qasida-ila-al-miqnas-cover.jpg",
+    }.get(ar_slug)
+    if card_image and not (DOCS / card_image).is_file():
+        raise ValueError(f"Missing homepage card image: {card_image}")
+    if not story["thumb"] and not card_image:
         href = f"posts/{slug}/index.html"
         return story['stamp'], f'<article class="card card-text-only"><div class="body"><h3><a href="{href}">{title}</a></h3><div class="meta">{date}</div></div></article>'
-    src = re.search(r'src="([^"]+)"', story["thumb"]).group(1)
-    src = src.replace("../../../", "../" if lang == "en" else "", 1)
+    if card_image:
+        src = ("../" if lang == "en" else "") + card_image
+    else:
+        src = re.search(r'src="([^"]+)"', story["thumb"]).group(1)
+        src = src.replace("../../../", "../" if lang == "en" else "", 1)
     href = f"posts/{slug}/index.html"
     card = f'''<article class="card">
   <a class="thumb" href="{href}"><img src="{src}" alt="{title}" loading="lazy"></a>
