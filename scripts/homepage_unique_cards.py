@@ -100,8 +100,8 @@ TAIF_EN = "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
 POACHING_AR = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
 POACHING_EN = "illegal-hunting-destroys-hobby-nets-lime-night"
 
-FEATURED_AR = [BIRDLIFE_AR, CURLEW_AR, TAIF_AR, SOUTH_AR, FARMERS_AR]
-FEATURED_EN = [BIRDLIFE_EN, CURLEW_EN, TAIF_EN, SOUTH_EN, FARMERS_EN]
+FEATURED_AR = ['من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة', 'سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف', 'كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما', 'العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني', 'منظمات-دولية-ابادة-بيئية-جنوب-لبنان']
+FEATURED_EN = ['sicily-lebanon-protecting-migratory-birds', 'skies-losing-balance-birdlife-flyways-report', 'how-migration-routes-lost-seven-birds-in-150-years', 'taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah', 'south-lebanon-environmental-destruction-bird-flyway']
 FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 
 # Narrower Suhail teaser («قطر | أكثر من 80 ألف») is the same close as
@@ -116,26 +116,8 @@ NETS_TITLE_EN = "Over 20,000 m² of bird nets seized in Lebanon"
 NETS_ALT_AR = "بيك أب محمّل بشباك وأعمدة مضبوطة خلال الحملة الميدانية في البقاع."
 NETS_ALT_EN = "A pickup loaded with seized nets and poles during the field campaign in the Bekaa."
 NETS_IMG = "media/uploads/2026/09/bekaa-nets-isf-pickup-2026-09-25.jpg"
-LATEST_AR = [
-    NETS_AR,
-    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
-    SUHAIL_AR,
-    CABS_AR,
-    SAUDI_AR,
-    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
-    ADONIS_AR,
-    "تنظيم-الصيد-يحمي-الحياة-البرية-ومنعه",
-]
-LATEST_EN = [
-    NETS_EN,
-    "egypt-new-hunting-rules-burullus-autumn-migration",
-    SUHAIL_EN,
-    CABS_EN,
-    SAUDI_EN,
-    "autumn-migration-how-world-protects-birds-regulates-hunting",
-    ADONIS_EN,
-    "regulating-hunting-protects-wildlife-bans-worsen",
-]
+LATEST_AR = ['ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان', 'شجيرة-العوسج-حين-تقرأ-الأرض', 'في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3', 'كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف', 'مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات', '80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع', 'حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017', 'السعودية-تطلق-موسم-الصيد-السادس-بضواب', 'مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو', 'صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم']
+LATEST_EN = ['over-20000-m2-bird-nets-seized-lebanon', 'the-awsaj-thornbush-reading-the-land', 'field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3', 'how-farmers-protect-migratory-birds-this-autumn', 'egypt-new-hunting-rules-burullus-autumn-migration', 'suhail-2026-closes-decade-katara-80000-visitors', 'protecting-autumn-migratory-birds-lebanon-khatib-2017', 'saudi-sixth-hunting-season-2026-2027-rules', 'autumn-migration-how-world-protects-birds-regulates-hunting', 'sayd-returns-what-we-want-to-offer']
 
 DROPPED_DESKS_AR = ("أخبار", "صيد وفروسية", "جعبة المنوعات")
 DROPPED_DESKS_EN = ("News", "September 2026", "Hunting &amp; Equestrian", "Miscellany")
@@ -1246,3 +1228,8 @@ def apply_docs() -> None:
 if __name__ == "__main__":
     apply_docs()
     print("homepage unique cards: BirdLife lead; side boxes newest-first; Adonis in Latest")
+
+
+# Mediterranean protection story fallback
+AR_FALLBACK_CARDS['من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة'] = '<article class="card"><a class="thumb" href="posts/من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة/index.html"><img src="media/uploads/2026/09/european-turtle-doves-douz-skander-zarrad.jpg" alt="من صقلية إلى لبنان: معركة إنقاذ الطيور المهاجرة من الصيد الجائر" loading="lazy"></a><div class="body"><h3><a href="posts/من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة/index.html">من صقلية إلى لبنان: معركة إنقاذ الطيور المهاجرة من الصيد الجائر</a></h3><div class="meta">27 أيلول 2026</div></div></article>'
+EN_FALLBACK_CARDS['sicily-lebanon-protecting-migratory-birds'] = '<article class="card"><a class="thumb" href="posts/sicily-lebanon-protecting-migratory-birds/index.html"><img src="../media/uploads/2026/09/european-turtle-doves-douz-skander-zarrad.jpg" alt="From Sicily to Lebanon: The Battle to Save Migratory Birds from Illegal Hunting" loading="lazy"></a><div class="body"><h3><a href="posts/sicily-lebanon-protecting-migratory-birds/index.html">From Sicily to Lebanon: The Battle to Save Migratory Birds from Illegal Hunting</a></h3><div class="meta">27 September 2026</div></div></article>'
