@@ -53,3 +53,18 @@
 .home-section .home-door-grid:has(> :only-child) .card.card-text-only {
   grid-template-columns: minmax(0, 1fr);
 }
+
+/* Mobile lead: remove the nested frame that narrows the news mosaic. */
+@media (max-width: 820px) {
+  .page-main:has(> .container > .masthead) { padding-top: 0; }
+  .page-main > .container > .masthead > .featured-col {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  .page-main > .container > .masthead {
+    margin-inline: calc(-100% / 48);
+  }
+  .masthead .feature-side { padding-inline: 8px; }
+  .masthead .feature-lead { border: 0; }
+}
