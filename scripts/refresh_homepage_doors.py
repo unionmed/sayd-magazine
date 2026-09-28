@@ -45,7 +45,7 @@ def rows(folder, lang):
         if not (img or override):
             continue
         source = override or img.group(1)
-        if source.startswith(("https://upload.wikimedia.org/", "https://thumb.wikimedia.org/", "https://s1.wklcdn.com/", "https://i.ytimg.com/")):
+        if source.startswith(("https://upload.wikimedia.org/", "https://thumb.wikimedia.org/", "https://s1.wklcdn.com/")):
             image = source
         else:
             path = (DOCS / override if override else
