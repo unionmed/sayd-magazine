@@ -98,7 +98,8 @@ def rewrite_chrome(text: str, path: Path) -> str:
             count=1,
         )
     text = CACHE_RE.sub(f"assets/css/site.css?v={CSS_CACHE}", text)
-    return text
+    from header_social import apply as apply_header_social
+    return apply_header_social(text, lang) if path in (DOCS / "index.html", DOCS / "en" / "index.html") else text
 
 
 def extract_card(html_text: str, slug: str) -> str:
