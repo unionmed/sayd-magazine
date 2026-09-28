@@ -2272,3 +2272,20 @@ html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h2 a:hover,
 html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 a:hover {
   color: var(--gold-dark);
 }
+
+/* Social destinations share the logo box, including at phone widths. */
+.header-brand-row { display:flex; flex:1 0 100%; min-width:0; align-items:center; justify-content:space-between; gap:12px; }
+.header-social { display:flex; flex-wrap:nowrap; align-items:center; gap:14px; flex-shrink:0; }
+.header-social a { display:flex; align-items:center; gap:6px; color:var(--olive); text-decoration:none; font-size:12px; font-weight:700; white-space:nowrap; min-height:44px; }
+.header-social svg { width:23px; height:23px; flex:none; }
+.header-social .social-instagram { color:#a62c69; }
+.header-social .social-facebook { color:#1877f2; }
+.header-social .social-youtube { color:#c52020; }
+.header-social a:hover { text-decoration:underline; }
+.header-social a:focus-visible { outline:2px solid currentColor; outline-offset:3px; border-radius:4px; }
+@media(max-width:600px) {
+  .header-brand-row { gap:6px; }
+  .header-social { gap:7px; }
+  .header-social a { flex-direction:column; justify-content:center; gap:2px; font-size:10px; line-height:1.2; min-width:43px; padding:3px 0; }
+  .header-social svg { width:22px; height:22px; }
+}
