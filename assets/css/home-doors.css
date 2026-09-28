@@ -6,6 +6,8 @@
   max-width: none;
   width: 100%;
 }
+/* A desk waits for a 2026 story to leave the upper slots; no duplicate filler. */
+.home-section:has(> .home-door-grid:not(:has(article))) { display: none; }
 .home-section .home-door-grid .card .thumb {
   aspect-ratio: 16 / 9;
   height: auto;
@@ -42,6 +44,28 @@
   }
   .home-section .home-door-grid:has(> :only-child) .card {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* On phones/tablets, desks scroll sideways like the four memory cards. */
+@media (max-width: 820px) {
+  .home-section .home-door-grid {
+    grid-auto-flow: column;
+    grid-auto-columns: min(11.5rem, 46%);
+    grid-template-columns: none;
+    gap: 0.5rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 0.15rem;
+    padding-bottom: 0.35rem;
+    scrollbar-width: thin;
+  }
+  .home-section .home-door-grid .card { scroll-snap-align: start; }
+  .home-section .home-door-grid:has(> :only-child) {
+    grid-auto-flow: row;
+    grid-template-columns: minmax(0, 1fr);
+    overflow-x: visible;
+    scroll-snap-type: none;
   }
 }
 /* Fill the desktop row for any available count; no empty image column. */

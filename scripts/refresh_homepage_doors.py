@@ -1,90 +1,117 @@
-"""Refresh only approved AR/EN homepage doors, leaving lead/latest/memory intact."""
+#!/usr/bin/env python3
+"""Fill AR/EN homepage desks from paired 2026 category listings without repeats."""
 import html
 import json
 import re
-import shutil
 from pathlib import Path
-
-import site_ia as ia
-import apply_site_ia as build
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
+PAIRS = json.loads((ROOT / "content/en/pairs.json").read_text())["pairs"]
+DOORS = [
+    ("صيد", "Hunting", "صيد"),
+    ("رماية وعتاد", "Shooting &amp; Gear", "عتاد-وسلاح-الصيد"),
+    ("فروسية", "Equestrian", "فروسية"),
+    ("برية وتخييم", "Wildlife &amp; Camping", "حياة-برية-وتخييم"),
+    ("شعر وفن", "Poetry &amp; Art", "ثقافة-وتراث"),
+    ("صيد TV", "Sayd TV", "استديو-صيد"),
+    ("صور", "Photos", "صور"),
+]
+IMAGE_OVERRIDES = {
+    "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية": "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+    "autumn-migration-field-action-protect-flyways-lebanon": "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+    "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": "media/uploads/2026/09/narta-egret.jpg",
+}
 
 
-def render_card(ar_slug, lang):
-    en_slug = ia.PRIMARY[ar_slug]["en"]
-    story = build._en_story(en_slug)
-    if not story:
-        raise ValueError(f"Missing published English story: {en_slug}")
-    slug = en_slug if lang == "en" else ar_slug
-    path = DOCS / ("en/posts" if lang == "en" else "posts") / slug / "index.html"
-    text = path.read_text(encoding="utf-8")
-    title = re.search(r'<h1[^>]*>(.*?)</h1>', text, re.S).group(1)
-    title = html.escape(html.unescape(re.sub(r'<[^>]+>', '', title)))
-    date = re.search(r'class="article-meta".*?<span class="meta-item">([^<]+)</span>', text, re.S).group(1)
-    # Explicit published images for these homepage cards.
-    card_image = {
-        "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية": "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
-        "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب": "media/uploads/2026/09/min-al-qasida-ila-al-miqnas-cover.jpg",
-    }.get(ar_slug)
-    if card_image and not (DOCS / card_image).is_file():
-        raise ValueError(f"Missing homepage card image: {card_image}")
-    if not story["thumb"] and not card_image:
-        href = f"posts/{slug}/index.html"
-        return story['stamp'], f'<article class="card card-text-only"><div class="body"><h3><a href="{href}">{title}</a></h3><div class="meta">{date}</div></div></article>'
-    if card_image:
-        src = ("../" if lang == "en" else "") + card_image
-    else:
-        src = re.search(r'src="([^"]+)"', story["thumb"]).group(1)
-        src = src.replace("../../../", "../" if lang == "en" else "", 1)
+def occupied(page):
+    top = page.split('<section class="masthead"', 1)[1].split('</section>', 1)[0]
+    return set(re.findall(r'href="posts/([^/]+)/index\.html"', top))
+
+
+def rows(folder, lang):
+    prefix = "en/" if lang == "en" else ""
+    page = (DOCS / prefix / "category" / folder / "index.html").read_text()
+    result = {}
+    for row in re.findall(r'<article class="post-row".*?</article>', page, re.S):
+        slug = re.search(r'href="[^"]*posts/([^/]+)/index\.html"', row)
+        title = re.search(r'<h2[^>]*>\s*<a[^>]*>(.*?)</a>', row, re.S)
+        date = re.search(r'class="meta"[^>]*>([^<]+)', row)
+        img = re.search(r'<img[^>]+src="([^"]+)"', row)
+        if not (slug and title and date and "2026" in date.group(1)):
+            continue
+        override = IMAGE_OVERRIDES.get(slug.group(1))
+        if not (img or override):
+            continue
+        path = (DOCS / override if override else
+                DOCS / prefix / "category" / folder / img.group(1)).resolve()
+        if not path.is_file():
+            continue
+        image = ("../" if lang == "en" else "") + path.relative_to(DOCS).as_posix()
+        result[slug.group(1)] = (html.unescape(re.sub(r'<[^>]+>', '', title.group(1))), date.group(1), image)
+    return result
+
+
+def card(slug, details):
+    title, date, image = details
     href = f"posts/{slug}/index.html"
-    card = f'''<article class="card">
-  <a class="thumb" href="{href}"><img src="{src}" alt="{title}" loading="lazy"></a>
-  <div class="body"><h3><a href="{href}">{title}</a></h3><div class="meta">{date}</div></div>
-</article>'''
-    return story["stamp"], card
+    return (f'<article class="card"><a class="thumb" href="{href}">'
+            f'<img src="{image}" alt="{html.escape(title, quote=True)}" loading="lazy"></a>'
+            f'<div class="body"><h3><a href="{href}">{html.escape(title)}</a></h3>'
+            f'<div class="meta">{date}</div></div></article>')
 
 
-def refresh(path, lang):
-    original = path.read_text(encoding="utf-8")
-    sections = []
-    for door, slugs in ia.DOOR_SECTIONS:
-        cards = sorted((render_card(slug, lang) for slug in slugs), key=lambda item: item[0], reverse=True)
-        accent = "accent-tv" if door == "tv" else "accent-olive" if door == "photos" else "accent-red"
-        block = build.section(lang, door, "\n".join(card for _, card in cards), accent)
-        if door == 'wildlife' and lang == 'ar':
-            block = block.replace('<h2>الحياة البرية والتخييم</h2>', '<h2>برية وتخييم</h2>')
-        block = block.replace('class="grid-4"', 'class="home-door-grid"').replace('class="grid-photos"', 'class="home-door-grid"')
-        sections.append(block)
-    pattern = r'(<div class="home-main">).*?(<div class="more-news">)'
-    updated, count = re.subn(pattern, lambda m: m[1] + "\n" + "\n".join(sections) + "\n" + m[2], original, count=1, flags=re.S)
+def replace_door(page, heading, cards):
+    pattern = (r'(<section class="home-section(?: sayd-tv)?">\s*<div class="section-head[^>]*">'
+               r'\s*<h2>' + re.escape(heading) + r'</h2>.*?<div class="home-door-grid">)'
+               r'.*?(</div>\s*</section>)')
+    updated, count = re.subn(pattern, lambda m: m[1] + "\n" + "\n".join(cards) + "\n" + m[2],
+                             page, count=1, flags=re.S)
     if count != 1:
-        raise ValueError(f"Homepage doors boundary missing: {path}")
-    css = ('../' if lang == 'en' else '') + 'assets/css/home-doors.css?v=20260926-responsive-cards'
-    if 'assets/css/home-doors.css' in updated:
-        updated = re.sub(r'href="[^"]*assets/css/home-doors\.css[^\"]*"', f'href="{css}"', updated)
-    else:
-        updated = updated.replace('</head>', f'  <link rel="stylesheet" href="{css}">\n</head>', 1)
-    path.write_text(updated, encoding="utf-8")
+        raise ValueError(f"Missing homepage door: {heading}")
+    return updated
 
 
 def main():
-    ia.assert_homepage_unique()
+    pages = {lang: (DOCS / ("en/" if lang == "en" else "") / "index.html").read_text()
+             for lang in ("ar", "en")}
+    upper = {lang: occupied(page) for lang, page in pages.items()}
+    used = set()
+    selection = {}
+    for ar_name, en_name, folder in DOORS:
+        ar_rows, en_rows = rows(folder, "ar"), rows(folder, "en")
+        choices = []
+        for ar_slug in ar_rows:  # Published category is newest first.
+            en_slug = PAIRS.get(ar_slug)
+            if not en_slug or en_slug not in en_rows or ar_slug in used:
+                continue
+            if ar_slug in upper["ar"] or en_slug in upper["en"]:
+                continue
+            choices.append((ar_slug, en_slug))
+            used.add(ar_slug)
+            if len(choices) == 4:
+                break
+        selection[ar_name] = [ar for ar, _ in choices]
+        pages["ar"] = replace_door(pages["ar"], ar_name,
+                                   [card(ar, ar_rows[ar]) for ar, _ in choices])
+        pages["en"] = replace_door(pages["en"], en_name,
+                                   [card(en, en_rows[en]) for _, en in choices])
+    for lang, page in pages.items():
+        (DOCS / ("en/" if lang == "en" else "") / "index.html").write_text(page)
     config_path = ROOT / "content/homepage.json"
-    config = json.loads(config_path.read_text(encoding="utf-8"))
-    config['ia_door_sections'] = [{'door': door, 'slugs': slugs} for door, slugs in ia.DOOR_SECTIONS]
-    config['approved_home_repeats'] = sorted(ia.APPROVED_HOME_REPEATS)
-    config['demotion'] = 'Lead/latest remain unique; only approved_home_repeats may also appear in door sections, temporarily approved by Nayef on 2026-09-26.'
-    for door, slugs in ia.DOOR_SECTIONS:
-        spec = ia.door_by_id(door)
-        config['desk_slugs'][spec['ar']] = slugs
-        config['desk_slugs'][spec['en']] = [ia.PRIMARY[slug]['en'] for slug in slugs]
-    config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    shutil.copyfile(ROOT / 'assets/css/home-doors.css', DOCS / 'assets/css/home-doors.css')
-    refresh(DOCS / 'index.html', 'ar')
-    refresh(DOCS / 'en/index.html', 'en')
+    config = json.loads(config_path.read_text())
+    ids = ["hunting", "gear", "equestrian", "wildlife", "poetry", "tv", "photos"]
+    config["ia_door_sections"] = [{"door": door_id, "slugs": selection[ar_name]}
+                                  for door_id, (ar_name, _, _) in zip(ids, DOORS)]
+    for door_id, (ar_name, en_name, _) in zip(ids, DOORS):
+        ar_key = "الحياة البرية والتخييم" if door_id == "wildlife" else ar_name
+        config.setdefault("desk_slugs", {})[ar_key] = selection[ar_name]
+        config["desk_slugs"][html.unescape(en_name)] = [PAIRS[slug] for slug in selection[ar_name]]
+    config["demotion"] = "Desks show up to four paired 2026 stories outside feature and Latest, without repeats."
+    config["approved_home_repeats"] = []
+    config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n")
+    print(selection)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -41,6 +41,16 @@ def main(ar: str, en: str, category: str) -> None:
     for home in homes:
         latest = block(home, 'class="latest-feed"', "</ul>")
         assert len(re.findall(r"<li\b", latest)) <= 10, "Latest exceeds ten cards"
+    desks = []
+    for home in homes:
+        upper = block(home, '<section class="masthead"', '</section>')
+        upper_slugs = set(re.findall(r'href="posts/([^/]+)/index\.html"', upper))
+        rows = [list(dict.fromkeys(re.findall(r'href="posts/([^/]+)/index\.html"', section)))
+                for section in re.findall(r'<div class="home-door-grid">(.*?)</div>\s*</section>', home, re.S)]
+        assert len(rows) == 7 and all(len(row) <= 4 for row in rows), "Desk count must be 0–4"
+        assert not upper_slugs.intersection(slug for row in rows for slug in row), "Repeated homepage story"
+        desks.append(rows)
+    assert [[pairs[slug] for slug in row] for row in desks[0]] == desks[1], "Desks differ by language"
     for prefix, slug in (("", ar), ("en/", en)):
         article = DOCS / prefix / "posts" / slug / "index.html"
         category_page = DOCS / prefix / "category" / category / "index.html"
