@@ -48,6 +48,8 @@ If you cannot re-export WP, add a post as Markdown under `content/posts/` follow
 
 ### After rebuild / بعد التوليد
 
+- Every new editorial story is an Arabic/English pair. Publish both article pages, add both to the matching category and archive, and apply the **same placement decision** to both homepages: lead, side card, Latest, and ticker. If the editor excludes a story from the ticker or Latest, exclude it in both languages. A displaced side card goes into Latest by date; Latest holds at most ten cards and drops the oldest when full. Before pushing, run `python3 scripts/check_bilingual_publication.py AR_SLUG EN_SLUG CATEGORY` and fix any mismatch. This is the standing rule for future publications.
+- كل مادة جديدة تُنشر بالعربية والإنجليزية في المواضع المتناظرة: صفحة المقال والتصنيف والأرشيف والواجهة والشريط وآخر الأخبار بحسب قرار التحرير نفسه. البوكس المزاح ينتقل إلى آخر الأخبار وفق تاريخه، وبحد أقصى عشرة بوكسات. افحص التناظر بالسكربت أعلاه قبل الدفع إلى الموقع؛ لا حاجة لتكرار هذا التوجيه مع كل مادة.
 - Homepage always shows **آخر الأخبار** + **قصص مميزة**; older posts live under **الأرشيف** (`docs/articles/`, paginated) and category folders.
 - الصفحة الأولى تعرض آخر الأخبار والقصص المميزة. الأقدم في الأرشيف والتصنيفات.
 - Theme source of truth: `assets/css/site.css` + templates in `scripts/import-wxr.py`. Do not hand-edit `docs/**/*.html`.
