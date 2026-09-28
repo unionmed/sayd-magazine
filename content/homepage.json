@@ -114,6 +114,7 @@
       "لين-عراجي-بطلة-فروسية-وحساب"
     ],
     "صيد TV": [
+      "بالفيديو-وحدة-مكافحة-الصيد-الجائر-عمليات-ميدانية",
       "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
       "بالفيديو-النمر-العربي-في-السعودية"
     ],
@@ -130,6 +131,7 @@
     ],
     "Equestrian": [],
     "Sayd TV": [
+      "video-apu-ground-operations-mecshap",
       "video-saud-al-babtain-maqnas-afghanistan",
       "video-arabian-leopard-in-saudi-arabia"
     ],
@@ -226,6 +228,7 @@
     {
       "door": "tv",
       "slugs": [
+        "بالفيديو-وحدة-مكافحة-الصيد-الجائر-عمليات-ميدانية",
         "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
         "بالفيديو-النمر-العربي-في-السعودية"
       ]
@@ -287,6 +290,8 @@
   "approved_home_repeats": [],
   "undated_stories": {
     "بالفيديو-النمر-العربي-في-السعودية": "المصدر: الهيئة الملكية لمحافظة العلا",
-    "video-arabian-leopard-in-saudi-arabia": "Source: Royal Commission for AlUla"
+    "video-arabian-leopard-in-saudi-arabia": "Source: Royal Commission for AlUla",
+    "بالفيديو-وحدة-مكافحة-الصيد-الجائر-عمليات-ميدانية": "المصدر: MECSHAP — وحدة مكافحة الصيد الجائر APU",
+    "video-apu-ground-operations-mecshap": "Source: MECSHAP — Anti-Poaching Unit (APU)"
   }
 }

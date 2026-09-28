@@ -150,3 +150,20 @@
   .masthead .latest-feed .feed-text { padding: .5rem; }
   .masthead .latest-feed .feed-title { font-size: .9rem; }
 }
+
+/* Strong green desk bars, with readable labels in both editions. */
+.page-main:has(.masthead) :is(.latest-col, .memory-strip, .home-section) > .section-head {
+  background: #2c421d;
+  border: 0;
+  min-height: 44px;
+  padding: .55rem .8rem;
+  align-items: center;
+  margin-top: .65rem;
+}
+.page-main:has(.masthead) :is(.latest-col, .memory-strip, .home-section) > .section-head :is(h2, a) { color: #fff; }
+.page-main:has(.masthead) :is(.latest-col, .memory-strip, .home-section) > .section-head h2::before { display: none; }
+.page-main:has(.masthead) :is(.latest-col, .memory-strip, .home-section) > .section-head a:hover { text-decoration: underline; }
+
+@media (min-width: 821px) {
+  .page-main:has(.masthead) :is(.latest-col, .memory-strip, .home-section) > .section-head h2 { color: #c4a86a; }
+}
