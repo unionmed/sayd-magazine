@@ -4,9 +4,10 @@
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
     "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+    "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى"
   ],
   "latest": [
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
     "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
@@ -33,8 +34,6 @@
     "how-migration-routes-lost-seven-birds-in-150-years",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
     "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
-    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-    "south-lebanon-environmental-destruction-bird-flyway",
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
     "memory-of-sayd-awareness-responsibility-2016-2024",
     "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
@@ -46,7 +45,9 @@
     "شجيرة-العوسج-حين-تقرأ-الأرض",
     "the-awsaj-thornbush-reading-the-land",
     "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3",
-    "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
+    "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3",
+    "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
+    "turtle-doves-cross-hunting-borders-european-flyways"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -63,14 +64,18 @@
     "شجيرة-العوسج-حين-تقرأ-الأرض",
     "the-awsaj-thornbush-reading-the-land",
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
-    "qatar-suhail-2026-80000-visitors-teaser"
+    "qatar-suhail-2026-80000-visitors-teaser",
+    "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
+    "turtle-doves-cross-hunting-borders-european-flyways"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
     "عصفور-الشمس-الفلسطيني",
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
     "السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري",
-    "السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ"
+    "السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ",
+    "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
+    "turtle-doves-cross-hunting-borders-european-flyways"
   ],
   "omit_home_desks": [
     "أخبار",
@@ -263,7 +268,8 @@
     "ما-هو-المتغير-الوحيد-السنوي-في-قانون-ال": "laws",
     "تنفيذ-قانون-الصيد-لا-يكون-استنسابياً-و": "laws",
     "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة": "hunting",
-    "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب": "poetry"
+    "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب": "poetry",
+    "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى": "hunting"
   },
   "demotion": "Main and supporting cards stay separate from latest news. Approved repeats may also appear under their homepage section.",
   "approved_home_repeats": [
