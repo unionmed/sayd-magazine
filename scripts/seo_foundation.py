@@ -492,6 +492,8 @@ def _resolve_image(src: str, page: Path, docs: Path) -> str | None:
         return None
     clean = src.split("?", 1)[0].split("#", 1)[0]
     if clean.startswith(("http://", "https://")):
+        if clean.startswith(("https://upload.wikimedia.org/", "https://thumb.wikimedia.org/", "https://s1.wklcdn.com/")):
+            return src
         if not clean.startswith(ORIGIN + "/"):
             return None
         rel_url = clean[len(ORIGIN) + 1 :]

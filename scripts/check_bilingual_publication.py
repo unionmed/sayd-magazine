@@ -37,7 +37,6 @@ def main(ar: str, en: str, category: str) -> None:
     homes = [(DOCS / "index.html").read_text(), (DOCS / "en/index.html").read_text()]
     positions = [placement(homes[0], ar), placement(homes[1], en)]
     assert positions[0] == positions[1], f"Homepage placement differs: {positions}"
-    assert any(positions[0].values()), "Article has no homepage placement"
     for home in homes:
         latest = block(home, 'class="latest-feed"', "</ul>")
         assert len(re.findall(r"<li\b", latest)) <= 10, "Latest exceeds ten cards"
@@ -51,6 +50,7 @@ def main(ar: str, en: str, category: str) -> None:
         assert not upper_slugs.intersection(slug for row in rows for slug in row), "Repeated homepage story"
         desks.append(rows)
     assert [[pairs[slug] for slug in row] for row in desks[0]] == desks[1], "Desks differ by language"
+    assert any(positions[0].values()) or any(ar in row for row in desks[0]), "Article has no homepage placement"
     for prefix, slug in (("", ar), ("en/", en)):
         article = DOCS / prefix / "posts" / slug / "index.html"
         category_page = DOCS / prefix / "category" / category / "index.html"

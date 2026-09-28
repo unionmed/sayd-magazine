@@ -43,11 +43,15 @@ def rows(folder, lang):
         override = IMAGE_OVERRIDES.get(slug.group(1))
         if not (img or override):
             continue
-        path = (DOCS / override if override else
-                DOCS / prefix / "category" / folder / img.group(1)).resolve()
-        if not path.is_file():
-            continue
-        image = ("../" if lang == "en" else "") + path.relative_to(DOCS).as_posix()
+        source = override or img.group(1)
+        if source.startswith(("https://upload.wikimedia.org/", "https://thumb.wikimedia.org/", "https://s1.wklcdn.com/")):
+            image = source
+        else:
+            path = (DOCS / override if override else
+                    DOCS / prefix / "category" / folder / source).resolve()
+            if not path.is_file():
+                continue
+            image = ("../" if lang == "en" else "") + path.relative_to(DOCS).as_posix()
         result[slug.group(1)] = (html.unescape(re.sub(r'<[^>]+>', '', title.group(1))), date.group(1), image)
     return result
 

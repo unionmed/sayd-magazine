@@ -48,7 +48,9 @@
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
     "turtle-doves-cross-hunting-borders-european-flyways",
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
-    "autumn-migration-how-world-protects-birds-regulates-hunting"
+    "autumn-migration-how-world-protects-birds-regulates-hunting",
+    "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
+    "lebanon-hiking-and-camping-among-cedars-and-valleys"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -67,7 +69,9 @@
     "قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026",
     "qatar-suhail-2026-80000-visitors-teaser",
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-    "turtle-doves-cross-hunting-borders-european-flyways"
+    "turtle-doves-cross-hunting-borders-european-flyways",
+    "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
+    "lebanon-hiking-and-camping-among-cedars-and-valleys"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -129,9 +133,11 @@
     ],
     "فروسية": [],
     "الحياة البرية والتخييم": [
+      "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
       "شجيرة-العوسج-حين-تقرأ-الأرض"
     ],
     "Wildlife & Camping": [
+      "lebanon-hiking-and-camping-among-cedars-and-valleys",
       "the-awsaj-thornbush-reading-the-land"
     ],
     "شعر وفن": [
@@ -201,6 +207,7 @@
     {
       "door": "wildlife",
       "slugs": [
+        "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
         "شجيرة-العوسج-حين-تقرأ-الأرض"
       ]
     },
