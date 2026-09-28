@@ -4,4 +4,4 @@ Chrome templates, publish scripts, and committed docs HTML all read this
 value so AR and EN pages stay on one query string.
 """
 
-CSS_CACHE = "20260928-header-social"
+CSS_CACHE = "20260928-topbar-social"

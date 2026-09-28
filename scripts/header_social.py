@@ -1,4 +1,4 @@
-"""Place Sayd's social links opposite its logo, including on narrow screens."""
+"""Place compact social links in the green bar opposite the language switch."""
 import re
 
 LINKS = (
@@ -8,10 +8,10 @@ LINKS = (
 )
 
 def apply(text, lang='ar'):
-    if 'class="header-social"' in text:
-        return text
+    text = re.sub(r'<div class="header-brand-row">(.*?)<nav class="header-social".*?</nav></div>', r'\1', text, flags=re.S)
+    text = re.sub(r'<nav class="header-social".*?</nav>', '', text, flags=re.S)
     label = 'Follow Sayd' if lang == 'en' else 'تابعوا صيد'
     links = ''.join(f'<a class="social-{key}" href="{url}" target="_blank" rel="noopener noreferrer" aria-label="{en} — Sayd Magazine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">{icon}</svg><span>{en if lang == "en" else ar}</span></a>' for key,ar,en,url,icon in LINKS)
     nav = f'<nav class="header-social" aria-label="{label}">{links}</nav>'
-    pattern = r'(<a class="brand(?:-lockup)?"[^>]*>.*?</a>)'
-    return re.sub(pattern, lambda m: '<div class="header-brand-row">'+m[0]+nav+'</div>', text, count=1, flags=re.S)
+    pattern = r'(<div class="container mast-top-inner">)'
+    return re.sub(pattern, lambda m: m[0]+nav, text, count=1)
