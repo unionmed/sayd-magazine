@@ -92,3 +92,61 @@
   .masthead .feature-side { padding-inline: 8px; }
   .masthead .feature-lead { border: 0; }
 }
+
+/* Homepage Updates: four cards per row, two visible per row on phones. */
+.page-main:has(> .container > .masthead) > .container {
+  width: calc(100% - 32px);
+  max-width: none;
+}
+.masthead > .featured-col,
+.masthead > .latest-col { padding: 0; border: 0; background: transparent; }
+.masthead .latest-feed {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.masthead .latest-feed li { border: 1px solid var(--hair); background: var(--card); }
+.masthead .latest-feed a {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  padding: 0;
+  gap: 0;
+}
+.masthead .latest-feed .feed-thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+.masthead .latest-feed .feed-text { padding: .65rem; flex: 1; gap: .5rem; }
+.masthead .latest-feed .feed-title {
+  display: block;
+  overflow: visible;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.masthead .latest-feed .feed-date { margin-top: auto; font-size: .75rem; }
+/* One green rule at each desk heading, spanning the full image row. */
+.page-main:has(.masthead) :is(.latest-col, .memory-strip, .home-section) > .section-head {
+  border-bottom: 3px solid #4c6b36;
+  padding-bottom: .45rem;
+  margin-bottom: .8rem;
+}
+@media (max-width: 820px) {
+  .page-main:has(> .container > .masthead) > .container { width: calc(100% - 16px); }
+  .page-main > .container > .masthead { margin-inline: 0; }
+  .masthead .feature-side { padding-inline: 0; }
+  .masthead .latest-feed {
+    grid-template-columns: repeat(4, calc((100% - .5rem) / 2));
+    gap: .75rem .5rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    padding-bottom: .4rem;
+  }
+  .masthead .latest-feed li { scroll-snap-align: start; }
+  .masthead .latest-feed .feed-text { padding: .5rem; }
+  .masthead .latest-feed .feed-title { font-size: .9rem; }
+}

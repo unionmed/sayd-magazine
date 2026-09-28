@@ -1176,7 +1176,7 @@ def write_home(articles: dict[str, dict]) -> None:
       </div>
       <div class="latest-col">
         <div class="section-head">
-          <h2>Latest</h2>
+          <h2>Updates</h2>
           <a href="stories/index.html">All stories</a>
         </div>
         <ul class="latest-feed">
