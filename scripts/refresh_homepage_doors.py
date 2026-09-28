@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 PAIRS = json.loads((ROOT / "content/en/pairs.json").read_text())["pairs"]
+UNDATED = json.loads((ROOT / "content/homepage.json").read_text()).get("undated_stories", {})
 DOORS = [
     ("صيد", "Hunting", "صيد"),
     ("رماية وعتاد", "Shooting &amp; Gear", "عتاد-وسلاح-الصيد"),
@@ -36,7 +37,7 @@ def rows(folder, lang):
     for row in re.findall(r'<article class="post-row".*?</article>', page, re.S):
         slug = re.search(r'href="[^"]*posts/([^/]+)/index\.html"', row)
         title = re.search(r'<h2[^>]*>\s*<a[^>]*>(.*?)</a>', row, re.S)
-        date = re.search(r'class="meta"[^>]*>([^<]+)', row)
+        date = re.search(r'class="meta"[^>]*>([^<]+)', row) or re.search(r'data-published="([^"]+)"', row)
         img = re.search(r'<img[^>]+src="([^"]+)"', row)
         if not (slug and title and date and "2026" in date.group(1)):
             continue
@@ -58,6 +59,7 @@ def rows(folder, lang):
 
 def card(slug, details):
     title, date, image = details
+    date = UNDATED.get(slug, date)
     href = f"posts/{slug}/index.html"
     return (f'<article class="card"><a class="thumb" href="{href}">'
             f'<img src="{image}" alt="{html.escape(title, quote=True)}" loading="lazy"></a>'

@@ -50,7 +50,9 @@
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
     "autumn-migration-how-world-protects-birds-regulates-hunting",
     "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
-    "lebanon-hiking-and-camping-among-cedars-and-valleys"
+    "lebanon-hiking-and-camping-among-cedars-and-valleys",
+    "بالفيديو-النمر-العربي-في-السعودية",
+    "video-arabian-leopard-in-saudi-arabia"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -71,7 +73,9 @@
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
     "turtle-doves-cross-hunting-borders-european-flyways",
     "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
-    "lebanon-hiking-and-camping-among-cedars-and-valleys"
+    "lebanon-hiking-and-camping-among-cedars-and-valleys",
+    "بالفيديو-النمر-العربي-في-السعودية",
+    "video-arabian-leopard-in-saudi-arabia"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -110,7 +114,8 @@
       "لين-عراجي-بطلة-فروسية-وحساب"
     ],
     "صيد TV": [
-      "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
+      "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
+      "بالفيديو-النمر-العربي-في-السعودية"
     ],
     "صور": [
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
@@ -125,7 +130,8 @@
     ],
     "Equestrian": [],
     "Sayd TV": [
-      "video-saud-al-babtain-maqnas-afghanistan"
+      "video-saud-al-babtain-maqnas-afghanistan",
+      "video-arabian-leopard-in-saudi-arabia"
     ],
     "Photos": [
       "suhail-2026-in-photos-falcons-visitors",
@@ -220,7 +226,8 @@
     {
       "door": "tv",
       "slugs": [
-        "بالفيديو-مقناص-سعود-عبد-العزيز-الباب"
+        "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
+        "بالفيديو-النمر-العربي-في-السعودية"
       ]
     },
     {
@@ -277,5 +284,9 @@
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى": "hunting"
   },
   "demotion": "Desks show up to four paired 2026 stories outside feature and Latest, without repeats.",
-  "approved_home_repeats": []
+  "approved_home_repeats": [],
+  "undated_stories": {
+    "بالفيديو-النمر-العربي-في-السعودية": "المصدر: الهيئة الملكية لمحافظة العلا",
+    "video-arabian-leopard-in-saudi-arabia": "Source: Royal Commission for AlUla"
+  }
 }
