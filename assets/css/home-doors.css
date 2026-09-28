@@ -7,7 +7,7 @@
   width: 100%;
 }
 /* A desk waits for a 2026 story to leave the upper slots; no duplicate filler. */
-.home-section:has(> .home-door-grid:not(:has(article))) { display: none; }
+.home-section:has(> .home-door-grid):not(:has(article)) { display: none; }
 .home-section .home-door-grid .card .thumb {
   aspect-ratio: 16 / 9;
   height: auto;
