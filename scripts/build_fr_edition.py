@@ -229,6 +229,79 @@ def category_slug(item):
     m=re.search(r'category/([^/]+)/',badge[0]); return m.group(1) if m else None
 
 
+LANG_NAV_RE = re.compile(r'(<nav class="lang-switch"[^>]*>)(.*?)(</nav>)', re.S)
+TICKER_RE = re.compile(r'<div class="ticker"(?: aria-hidden="true")?>.*?</div>', re.S)
+CSS_TOKEN = '20260929-door-date'
+
+
+def category_public(prefix: str, slug: str) -> str:
+    return f'{prefix}category/{quote(slug, safe="")}/'
+
+
+def listing_switch(rel: str) -> tuple[str, str, str] | None:
+    """Root-absolute AR / EN / FR twins for a French listing page."""
+    if rel == 'fr/stories/index.html':
+        # Arabic /stories/ is not a page; the archive lives at /articles/.
+        return ('/articles/', '/en/stories/', '/fr/stories/')
+    match = re.fullmatch(r'fr/category/([^/]+)/index\.html', rel)
+    if not match:
+        return None
+    return (
+        category_public('/', match.group(1)),
+        category_public('/en/', match.group(1)),
+        category_public('/fr/', match.group(1)),
+    )
+
+
+def french_ticker_blocks() -> list[str] | None:
+    """Homepage ticker, with post links rooted at /fr/ so category pages cannot escape."""
+    home = DOCS / 'fr' / 'index.html'
+    if not home.is_file():
+        return None
+    blocks = TICKER_RE.findall(home.read_text(encoding='utf-8'))
+    if len(blocks) < 2:
+        return None
+
+    def absolutize(block: str) -> str:
+        def repl(match: re.Match[str]) -> str:
+            href = match.group(1)
+            path, _, frag = href.partition('#')
+            post = re.search(r'(?:^|/)posts/(.+)$', path)
+            if not post:
+                return match.group(0)
+            suffix = '#' + frag if frag else ''
+            return f'href="/fr/posts/{post.group(1)}{suffix}"'
+        return re.sub(r'href="([^"]*)"', repl, block)
+
+    visible, hidden = absolutize(blocks[0]), absolutize(blocks[1])
+    if 'aria-hidden' not in hidden:
+        hidden = hidden.replace('<div class="ticker">', '<div class="ticker" aria-hidden="true">', 1)
+    return [visible, hidden]
+
+
+def patch_listing_html(text: str, switch: tuple[str, str, str]) -> str:
+    ar, en, fr = switch
+    nav = (
+        f'<a href="{ar}" lang="ar" hreflang="ar">العربية</a> '
+        f'<a href="{en}" lang="en" hreflang="en">English</a> '
+        f'<a href="{fr}" lang="fr" hreflang="fr" class="is-current" aria-current="page">Français</a>'
+    )
+    text, count = LANG_NAV_RE.subn(lambda match: match.group(1) + nav + match.group(3), text, count=1)
+    if not count:
+        return text
+    blocks = french_ticker_blocks()
+    if blocks:
+        index = {'n': 0}
+
+        def repl(match: re.Match[str]) -> str:
+            block = blocks[min(index['n'], len(blocks) - 1)]
+            index['n'] += 1
+            return block
+
+        text = TICKER_RE.sub(repl, text)
+    return text
+
+
 def listing_page(title, entries, translations, path, depth):
     tree=html.parse(str(DOCS/'en/index.html'))
     main=tree.xpath('//main')[0]
@@ -244,7 +317,34 @@ def listing_page(title, entries, translations, path, depth):
                 e.set(attr, '../'*depth+val)
     tree.xpath('//title')[0].text=title+' | Sayd Magazine'
     dest=DOCS/path;dest.parent.mkdir(parents=True,exist_ok=True)
-    dest.write_bytes(html.tostring(tree,encoding='utf-8',method='html',doctype='<!DOCTYPE html>'))
+    raw=html.tostring(tree,encoding='unicode',method='html',doctype='<!DOCTYPE html>')
+    switch=listing_switch(Path(path).as_posix())
+    if switch:
+        raw=patch_listing_html(raw, switch)
+    raw=re.sub(r'(assets/css/site\.css\?v=)[^"\']+', r'\g<1>'+CSS_TOKEN, raw)
+    dest.write_text(raw, encoding='utf-8')
+
+
+def refresh_published_listings() -> int:
+    """Rewrite listing switchers and tickers without rebuilding story grids.
+
+    A full listing_page() rebuild would drop cards published outside the
+    French manifest (equestrian essay, autumn hunting). Chrome-only refresh
+    keeps that placement.
+    """
+    changed = 0
+    for path in [DOCS/'fr'/'stories'/'index.html', *sorted((DOCS/'fr'/'category').glob('*/index.html'))]:
+        rel = path.relative_to(DOCS).as_posix()
+        switch = listing_switch(rel)
+        if not switch:
+            continue
+        text = path.read_text(encoding='utf-8')
+        updated = patch_listing_html(text, switch)
+        updated = re.sub(r'(assets/css/site\.css\?v=)[^"\']+', r'\g<1>'+CSS_TOKEN, updated)
+        if updated != text:
+            path.write_text(updated, encoding='utf-8')
+            changed += 1
+    return changed
 
 
 def render_home(translations):
@@ -310,6 +410,59 @@ def wire_original_switches():
         page=source.read_text()
         updated=re.sub(r'(assets/css/site\.css\?v=)[^"\']+',r'\g<1>20260929-fr-nav',page)
         if updated!=page:source.write_text(updated)
+    wire_listing_switches()
+
+
+def upsert_fr_link(page: str, href: str) -> str:
+    match = LANG_NAV_RE.search(page)
+    if not match or 'http-equiv="refresh"' in page:
+        return page
+    inside = re.sub(r'\s*<a\b[^>]*hreflang="fr"[^>]*>.*?</a>', '', match.group(2), flags=re.S)
+    link = f'<a href="{escape(href, quote=True)}" lang="fr" hreflang="fr">Français</a>'
+    if '\n' in inside:
+        inside = inside.rstrip() + '\n          ' + link + '\n        '
+    else:
+        inside = inside.rstrip() + ' ' + link
+    updated = page[:match.start()] + match.group(1) + inside + match.group(3) + page[match.end():]
+    return re.sub(r'(assets/css/site\.css\?v=)[^"\']+', r'\g<1>' + CSS_TOKEN, updated)
+
+
+def wire_listing_switches() -> int:
+    """Français on every AR/EN door listing and archive that has a French twin."""
+    changed = 0
+    french_categories = {path.parent.name for path in (DOCS / 'fr' / 'category').glob('*/index.html')}
+    targets: list[tuple[Path, str]] = []
+    for base in (DOCS / 'category', DOCS / 'en' / 'category'):
+        for page in base.glob('*/*.html'):
+            if page.parent.name not in french_categories:
+                continue
+            targets.append((page, category_public('/fr/', page.parent.name)))
+    if (DOCS / 'fr' / 'stories' / 'index.html').is_file():
+        targets.append((DOCS / 'en' / 'stories' / 'index.html', '/fr/stories/'))
+        targets.extend((page, '/fr/stories/') for page in (DOCS / 'articles').glob('*.html'))
+    seen: set[Path] = set()
+    for page, href in targets:
+        if page in seen or not page.is_file():
+            continue
+        seen.add(page)
+        text = page.read_text(encoding='utf-8')
+        updated = upsert_fr_link(text, href)
+        if updated != text:
+            page.write_text(updated, encoding='utf-8')
+            changed += 1
+    # Legacy AR doors have no French edition. Still bust the stylesheet so the
+    # date-under-title rule reaches every .post-row listing.
+    for page in (DOCS / 'category').glob('*/*.html'):
+        if page in seen or not page.is_file():
+            continue
+        text = page.read_text(encoding='utf-8')
+        if 'class="post-row"' not in text:
+            continue
+        updated = re.sub(r'(assets/css/site\.css\?v=)[^"\']+', r'\g<1>' + CSS_TOKEN, text)
+        if updated != text:
+            page.write_text(updated, encoding='utf-8')
+            changed += 1
+    return changed
 
 
 def render_article(slug, data, translations):

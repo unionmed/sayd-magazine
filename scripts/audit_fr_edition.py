@@ -15,7 +15,8 @@ def tree(path): return html.parse(str(path))
 def words(el): return len(' '.join(el.itertext()).split())
 
 pages=list((DOCS/'fr').rglob('index.html'))
-if len(pages)!=48: issues.append(f'Expected 48 French pages, found {len(pages)}')
+# 2026 edition plus later publishes (autumn hunting, equestrian essay).
+if len(pages)<48: issues.append(f'Expected at least 48 French pages, found {len(pages)}')
 for item in items:
     slug=item['slug']
     src=tree(DOCS/'en/posts'/slug/'index.html')
@@ -44,7 +45,14 @@ for page in pages:
         for attr in ('href','src'):
             url=element.get(attr)
             if not url or url.startswith(('http:','https:','mailto:','tel:','#','data:','javascript:')):continue
-            target=(page.parent/unquote(urlsplit(url).path)).resolve()
+            path=unquote(urlsplit(url).path)
+            if path.startswith('/'):
+                rel=path.lstrip('/')
+                target=(DOCS/rel/'index.html').resolve() if rel.endswith('/') or rel=='' else (DOCS/rel).resolve()
+                if rel.endswith('/') and not target.exists():
+                    target=(DOCS/rel).resolve()
+            else:
+                target=(page.parent/path).resolve()
             if not target.exists():issues.append(f'{page.relative_to(DOCS)}: broken {url}')
 
 home=tree(DOCS/'fr/index.html')
