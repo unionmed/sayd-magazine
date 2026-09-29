@@ -15,7 +15,7 @@ def tree(path): return html.parse(str(path))
 def words(el): return len(' '.join(el.itertext()).split())
 
 pages=list((DOCS/'fr').rglob('index.html'))
-if len(pages)!=47: issues.append(f'Expected 47 French pages, found {len(pages)}')
+if len(pages)!=48: issues.append(f'Expected 48 French pages, found {len(pages)}')
 for item in items:
     slug=item['slug']
     src=tree(DOCS/'en/posts'/slug/'index.html')

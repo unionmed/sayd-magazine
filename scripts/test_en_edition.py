@@ -37,7 +37,7 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 44
+    assert len(PAIRS) == 45
     drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
     assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():
@@ -105,6 +105,7 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "common-quail",
         "white-stork",
         "asian-houbara",
+        "common-kestrel",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:
