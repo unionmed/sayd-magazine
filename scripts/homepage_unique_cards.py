@@ -100,8 +100,8 @@ TAIF_EN = "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
 POACHING_AR = "الصيد-الجائر-دمار-لهواية-الصيد-إحذروا"
 POACHING_EN = "illegal-hunting-destroys-hobby-nets-lime-night"
 
-FEATURED_AR = ['من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة', 'اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى', 'العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني', 'سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف', 'كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما']
-FEATURED_EN = ['sicily-lebanon-protecting-migratory-birds', 'turtle-doves-cross-hunting-borders-european-flyways', 'taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah', 'skies-losing-balance-birdlife-flyways-report', 'how-migration-routes-lost-seven-birds-in-150-years']
+FEATURED_AR = ['خريف-الصيد-العربي-2026', 'من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة', 'اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى', 'العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني', 'سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف', 'كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما']
+FEATURED_EN = ['arab-hunting-autumn-2026', 'sicily-lebanon-protecting-migratory-birds', 'turtle-doves-cross-hunting-borders-european-flyways', 'taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah', 'skies-losing-balance-birdlife-flyways-report', 'how-migration-routes-lost-seven-birds-in-150-years']
 FEATURED_SLUGS = frozenset(FEATURED_AR + FEATURED_EN)
 
 # Narrower Suhail teaser («قطر | أكثر من 80 ألف») is the same close as

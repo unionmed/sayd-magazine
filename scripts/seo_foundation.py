@@ -550,9 +550,40 @@ def hero_image(html_text: str, page: Path, docs: Path, rel: Path) -> str | None:
     return None
 
 
+# French public slug differs from the English slug for this investigation only.
+FR_SLUG_BY_EN = {
+    "arab-hunting-autumn-2026": "automne-chasse-arabe-2026",
+}
+EN_SLUG_BY_FR = {fr: en for en, fr in FR_SLUG_BY_EN.items()}
+
+# Page metadata. og:title / og:description stay distinct from <title> and meta description.
+OG_OVERRIDES = {
+    "posts/خريف-الصيد-العربي-2026/index.html": {
+        "title": "من الأطلس إلى البحر الأحمر… خريف الصيد العربي 2026",
+        "description": "تسع دول، تسع خرائط صيد تحت سماء هجرة واحدة — من 4 أكتوبر في المغرب وتونس إلى موسم السعودية وحصص الأردن ولبنان بلا فتح.",
+    },
+    "en/posts/arab-hunting-autumn-2026/index.html": {
+        "title": "Atlas to Red Sea… Arab Hunting Autumn 2026",
+        "description": "Nine countries, nine hunting maps under one migration sky — 4 October in Morocco and Tunisia, Saudi’s sixth season, Jordan’s bags, Lebanon still closed.",
+    },
+    "fr/posts/automne-chasse-arabe-2026/index.html": {
+        "title": "De l’Atlas à la mer Rouge… Automne de la chasse arabe 2026",
+        "description": "Neuf pays, neuf cartes de chasse sous un même ciel de migration — 4 octobre au Maroc et en Tunisie, sixième saison saoudienne, quotas jordaniens, Liban encore fermé.",
+    },
+}
+
+
+def _swap_post_slug(rel_posix: str, slug_map: dict[str, str]) -> str:
+    parts = rel_posix.split("/")
+    if len(parts) >= 3 and parts[-3] == "posts" and parts[-2] in slug_map:
+        parts[-2] = slug_map[parts[-2]]
+        return "/".join(parts)
+    return rel_posix
+
+
 def hreflang_tags(rel_posix: str, twins: dict[str, str]) -> list[str]:
     if rel_posix.startswith("fr/"):
-        en_rel = "en/" + rel_posix[3:]
+        en_rel = _swap_post_slug("en/" + rel_posix[3:], EN_SLUG_BY_FR)
         if not (DOCS / en_rel).is_file():
             return []
         ar_rel = twins.get(en_rel)
@@ -564,7 +595,7 @@ def hreflang_tags(rel_posix: str, twins: dict[str, str]) -> list[str]:
             en_rel, ar_rel = rel_posix, other
         else:
             ar_rel, en_rel = rel_posix, other
-    fr_rel = "fr/" + en_rel[3:]
+    fr_rel = _swap_post_slug("fr/" + en_rel[3:], FR_SLUG_BY_EN)
     fr_exists = (DOCS / fr_rel).is_file()
     if not ar_rel and not fr_exists:
         return []
@@ -749,6 +780,9 @@ def seo_block(
     locale = "fr_FR" if lang.startswith("fr") else ("en_US" if lang.startswith("en") else "ar_AR")
     site_name = "Sayd Magazine" if lang.startswith(("en", "fr")) else "مجلة صيد"
     image = hero_image(html_text, page, docs, rel)
+    og = OG_OVERRIDES.get(rel.as_posix(), {})
+    og_title = og.get("title", title)
+    og_description = og.get("description", description)
     lines = [
         "  <!-- seo:start -->",
         f'  <link rel="canonical" href="{attr(canonical)}">',
@@ -759,8 +793,8 @@ def seo_block(
         f'  <meta property="og:locale" content="{locale}">',
         f'  <meta property="og:type" content="{"article" if is_post else "website"}">',
         f'  <meta property="og:site_name" content="{attr(site_name)}">',
-        f'  <meta property="og:title" content="{attr(title)}">',
-        f'  <meta property="og:description" content="{attr(description)}">',
+        f'  <meta property="og:title" content="{attr(og_title)}">',
+        f'  <meta property="og:description" content="{attr(og_description)}">',
         f'  <meta property="og:url" content="{attr(canonical)}">',
     ])
     if image:
