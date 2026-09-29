@@ -37,7 +37,7 @@ HOME_TICKER_EN = [
 
 
 def test_pairs_cover_reviewed_drafts() -> None:
-    assert len(PAIRS) == 41
+    assert len(PAIRS) == 42
     drafts = {p.stem for p in (ROOT / "content" / "en").glob("*.md")}
     assert drafts <= set(PAIRS.values())
     for en_slug in PAIRS.values():
@@ -102,6 +102,7 @@ def test_en_home_keeps_all_2022_plus_twins() -> None:
         "from-the-poem-to-the-maqnas",
         # Bird Encyclopedia door only. No homepage card.
         "peregrine-falcon",
+        "common-quail",
     }
     for en_slug in PAIRS.values():
         if en_slug in skip_home:

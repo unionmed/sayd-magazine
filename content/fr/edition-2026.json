@@ -201,6 +201,14 @@
       "category": "Bird Encyclopedia",
       "home_position": null,
       "english_url": "/en/posts/peregrine-falcon/"
+    },
+    {
+      "slug": "common-quail",
+      "english_title": "Common Quail — Coturnix coturnix",
+      "date": "29 September 2026",
+      "category": "Bird Encyclopedia",
+      "home_position": null,
+      "english_url": "/en/posts/common-quail/"
     }
   ]
 }
