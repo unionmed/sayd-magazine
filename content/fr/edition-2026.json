@@ -209,6 +209,14 @@
       "category": "Bird Encyclopedia",
       "home_position": null,
       "english_url": "/en/posts/common-quail/"
+    },
+    {
+      "slug": "white-stork",
+      "english_title": "White Stork — Ciconia ciconia",
+      "date": "29 September 2026",
+      "category": "Bird Encyclopedia",
+      "home_position": null,
+      "english_url": "/en/posts/white-stork/"
     }
   ]
 }
