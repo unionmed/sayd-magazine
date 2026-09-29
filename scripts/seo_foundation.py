@@ -550,9 +550,10 @@ def hero_image(html_text: str, page: Path, docs: Path, rel: Path) -> str | None:
     return None
 
 
-# French public slug differs from the English slug for this investigation only.
+# French public slug differs from the English slug for these stories.
 FR_SLUG_BY_EN = {
     "arab-hunting-autumn-2026": "automne-chasse-arabe-2026",
+    "the-silence-horses-speak": "le-silence-que-parlent-les-chevaux",
 }
 EN_SLUG_BY_FR = {fr: en for en, fr in FR_SLUG_BY_EN.items()}
 
