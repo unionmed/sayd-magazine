@@ -108,9 +108,9 @@ IMAGES = {
             "fr": "Chasseur au fusil sur une crête libanaise",
         },
         "caption": {
-            "ar": "صياد لبناني ببندقية على مرتفع — إطار ميداني من عمل الحماية/الرصد (Bird Guard). للاستخدام الداخلي فقط، ليس غلافًا.",
-            "en": "Lebanese hunter with shotgun on a ridge — documentary frame from Bird Guard fieldwork. Interior only, not cover.",
-            "fr": "Chasseur libanais au fusil sur une crête — cadre documentaire Bird Guard. Intérieur seulement, pas de couverture.",
+            "ar": "صياد لبناني يحمل بندقية على مرتفع جبلي تحت سماء الخريف.",
+            "en": "A Lebanese hunter with a shotgun on a mountain ridge under the autumn sky.",
+            "fr": "Un chasseur libanais au fusil sur une crête montagneuse sous le ciel d’automne.",
         },
     },
 }
