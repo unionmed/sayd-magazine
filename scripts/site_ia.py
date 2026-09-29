@@ -415,13 +415,11 @@ def footer_magazine_items(lang: str, depth: int) -> list[tuple[str, str]]:
             ("Team", team),
             ("Subscribe by email", MAILTO),
             ("Archive", archive),
-            (SOCIAL[0][1], SOCIAL[0][2]),
         ]
     return [
         ("فريق العمل", f"{prefix}pages/من-نحن/index.html"),
         ("الاشتراك بالبريد", MAILTO),
         ("الأرشيف", f"{prefix}articles/index.html"),
-        (SOCIAL[0][0], SOCIAL[0][2]),
     ]
 
 
