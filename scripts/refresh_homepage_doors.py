@@ -71,8 +71,9 @@ def collect(page, source_path, home_path):
 def render_card(slug, item, stack=False):
     esc=lambda s:html.escape(s,quote=True)
     href=item.get('href',f'posts/{slug}/index.html')
+    position=f' style="object-position:{esc(item["position"])}"' if item.get('position') else ''
     return (f'<article class="card{" card-stack" if stack else ""}"><a class="thumb" href="{href}">'
-            f'<img src="{esc(item["image"])}" alt="{esc(item["alt"] or item["title"])}" loading="lazy"></a>'
+            f'<img src="{esc(item["image"])}" alt="{esc(item["alt"] or item["title"])}" loading="lazy"{position}></a>'
             f'<div class="body"><h3><a href="{href}">{esc(item["title"])}</a></h3>'
             f'<div class="meta">{esc(item["date"])}</div></div></article>')
 
@@ -112,6 +113,9 @@ def refresh(path,lang):
         if slug not in catalog:raise ValueError(f'{lang}: missing published card {slug}')
         item=dict(catalog[slug]);item['date']=item['date'] if lang=='fr' else c.get('undated_stories',{}).get(slug,item['date'])
         if lang != 'ar' and ar in original:item['image']=original[ar]['image']
+        override=c.get('card_image_overrides',{}).get(ar)
+        if override:
+            item.update(image=os.path.relpath(DOCS/override['image'],path.parent),position=override['position'],alt=override['alt'][lang])
         item.pop('href',None)
         return slug,item
     stack='\n'.join(render_card(*data(s),stack=True) for s in c['ia_slots']['important'])

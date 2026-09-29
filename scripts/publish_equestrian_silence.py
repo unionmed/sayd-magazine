@@ -514,11 +514,11 @@ def media_prefix(lang: str) -> str:
 
 def stack_card(lang: str) -> str:
     slug = HOME_SLUG[lang]
-    alt = html.escape(CAPTION["n01"][lang], quote=True)
+    alt = html.escape(CAPTION["n02"][lang], quote=True)
     title = html.escape(parse_copy(COPY[lang])[0])
     return (
         '<article class="card card-stack">\n'
-        f'  <a class="thumb" href="posts/{slug}/index.html"><img src="{media_prefix(lang)}media/uploads/2026/09/{STACK}" alt="{alt}" loading="lazy"></a>\n'
+        f'  <a class="thumb" href="posts/{slug}/index.html"><img src="{media_prefix(lang)}media/uploads/2026/09/{INTERIOR}" alt="{alt}" loading="lazy" style="object-position:65% 0%"></a>\n'
         f'  <div class="body"><h3><a href="posts/{slug}/index.html">{title}</a></h3>'
         f'<div class="meta">{SEO[lang]["date"]}</div></div>\n'
         "</article>"
@@ -544,11 +544,11 @@ def latest_item(lang: str) -> str:
 
 def door_card(lang: str) -> str:
     slug = HOME_SLUG[lang]
-    alt = html.escape(CAPTION["n01"][lang], quote=True)
+    alt = html.escape(CAPTION["n02"][lang], quote=True)
     title = html.escape(parse_copy(COPY[lang])[0])
     return (
         f'<article class="card"><a class="thumb" href="posts/{slug}/index.html">'
-        f'<img src="{media_prefix(lang)}media/uploads/2026/09/{CARD}" alt="{alt}" loading="lazy"></a>'
+        f'<img src="{media_prefix(lang)}media/uploads/2026/09/{INTERIOR}" alt="{alt}" loading="lazy" style="object-position:65% 0%"></a>'
         f'<div class="body"><h3><a href="posts/{slug}/index.html">{title}</a></h3>'
         f'<div class="meta">{SEO[lang]["date"]}</div></div></article>'
     )
@@ -607,7 +607,7 @@ def place_homepages(parsed: dict) -> None:
         door = text.split(f"<h2>{DOOR_H2[lang]}</h2>", 1)[1].split("</section>", 1)[0]
         if slug not in stack or slug in latest or slug not in door:
             raise SystemExit(f"placement incomplete: {lang}")
-        if STACK not in stack or CARD not in door:
+        if INTERIOR not in stack or INTERIOR not in door:
             raise SystemExit(f"crop slot mismatch: {lang}")
         if latest.count("<li>") != 8:
             raise SystemExit(f"Latest must stay eight items: {lang}")

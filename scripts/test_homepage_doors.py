@@ -17,7 +17,7 @@ def test_homepages():
     # A French-only missing image must fail; restore the fixture even on failure.
     p=DOCS/'fr/index.html';original=p.read_text()
     try:
-        p.write_text(original.replace('EQ-N01-stack.jpg','missing-test-image.jpg',1))
+        p.write_text(original.replace('EQ-N02-interior-3x2.jpg','missing-test-image.jpg',1))
         try:check()
         except AssertionError:pass
         else:raise AssertionError('Broken mirrored image accepted')

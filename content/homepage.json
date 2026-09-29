@@ -336,5 +336,25 @@
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
     "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات"
-  ]
+  ],
+  "card_image_overrides": {
+    "الصمت-الذي-يتكلمه-الخيل": {
+      "image": "media/uploads/2026/09/EQ-N02-interior-3x2.jpg",
+      "position": "65% 0%",
+      "alt": {
+        "ar": "حصان أبيض في مرعى أخضر.",
+        "en": "A white horse in a green pasture.",
+        "fr": "Un cheval blanc dans un pré verdoyant."
+      }
+    },
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني": {
+      "image": "media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg",
+      "position": "50% 0%",
+      "alt": {
+        "ar": "فارس على حصان في مضمار الطائف.",
+        "en": "A jockey on a horse at the Taif racecourse.",
+        "fr": "Un jockey à cheval sur l’hippodrome de Taïf."
+      }
+    }
+  }
 }
