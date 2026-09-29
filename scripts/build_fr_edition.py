@@ -11,9 +11,11 @@ import os
 import re
 from copy import deepcopy
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 from lxml import html
-from html import escape
+from html import escape, unescape
+
+import seo_foundation as seo
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
@@ -95,6 +97,8 @@ MONTHS = {'January':'janvier','February':'février','March':'mars',
           'April':'avril','May':'mai','June':'juin','July':'juillet',
           'August':'août','September':'septembre','October':'octobre',
           'November':'novembre','December':'décembre'}
+MONTH_INDEX = {name: index for index, name in enumerate(MONTHS)}
+MONTH_INDEX.update({french: index for index, french in enumerate(MONTHS.values())})
 
 
 def source_blocks(body):
@@ -238,6 +242,185 @@ def category_public(prefix: str, slug: str) -> str:
     return f'{prefix}category/{quote(slug, safe="")}/'
 
 
+def fr_public_slug(slug: str) -> str:
+    """French public post slug. Twins such as automne-chasse-arabe-2026 win over the English slug."""
+    return seo.FR_SLUG_BY_EN.get(slug, slug)
+
+
+def _url_parts(url: str) -> tuple[str, str, str]:
+    path, _, frag = url.partition('#')
+    path, _, query = path.partition('?')
+    return path, query, frag
+
+
+def _join_url(path: str, query: str, frag: str) -> str:
+    url = path
+    if query:
+        url += '?' + query
+    if frag:
+        url += '#' + frag
+    return url
+
+
+def absolutize_fr_href(url: str) -> str:
+    """Root-absolute French edition path. External, mail, and hash links stay put."""
+    if not url or url.startswith(('http://', 'https://', 'mailto:', 'tel:', '#', 'data:', 'javascript:')):
+        return url
+    path, query, frag = _url_parts(url)
+    if path in ('/fr/', '/fr/index.html') or re.fullmatch(r'(?:\.\./)*fr/index\.html', path):
+        return '/fr/'
+    post = re.search(r'(?:^|/)posts/([^/?#]+?)(?:/index\.html|/)?$', path)
+    if post:
+        slug = fr_public_slug(unquote(post.group(1)))
+        return _join_url(f'/fr/posts/{slug}/', '', frag)
+    category = re.search(r'(?:^|/)category/([^/?#]+?)(?:/index\.html|/)?$', path)
+    if category:
+        slug = quote(unquote(category.group(1)), safe='')
+        return _join_url(f'/fr/category/{slug}/', '', frag)
+    page = re.search(r'(?:^|/)(team|contact|about|license|stories)(?:/index\.html)?/?$', path)
+    if page:
+        return f'/fr/{page.group(1)}/'
+    asset = re.search(r'(?:^|/)((?:assets|media)/.+)$', path)
+    if asset:
+        return _join_url('/' + asset.group(1), query, frag)
+    return url
+
+
+def absolutize_fr_tree(tree) -> None:
+    for element in tree.xpath('//*[@href or @src]'):
+        if any('lang-switch' in (parent.get('class') or '') for parent in element.iterancestors()):
+            continue
+        for attr in ('href', 'src'):
+            value = element.get(attr)
+            if value:
+                element.set(attr, absolutize_fr_href(value))
+
+
+FR_TAGLINE = (
+    'Le magazine des passionnés de nature, sur terre, en mer et dans le ciel'
+)
+EN_CHROME_MARKERS = (
+    '>Hunting<', '>Shooting &amp; Gear<', '>Shooting & Gear<', '>Equestrian<',
+    '>Wildlife &amp; Camping<', '>Wildlife & Camping<', '>Poetry &amp; Art<',
+    '>Poetry & Art<', '>Hunting Laws<', '>Bird Encyclopedia<',
+    'aria-label="Main menu"', 'aria-label="Mobile menu"', 'aria-label="Language"',
+    'aria-label="Top links"', '>Skip to content<', '>Home<', '>Stories<', '>Team<',
+)
+
+
+def listing_card(entry: dict) -> str:
+    href = f"/fr/posts/{fr_public_slug(entry['slug'])}/"
+    title = escape(entry['title'])
+    alt = escape(entry.get('alt') or entry['title'])
+    image = entry.get('image') or ''
+    if image.startswith(('http://', 'https://')):
+        src = escape(image, quote=True)
+    else:
+        src = escape(absolutize_fr_href(image), quote=True)
+    date = escape(date_fr(entry.get('date') or ''))
+    return (
+        '<article class="card">'
+        f'<a class="thumb" href="{href}"><img src="{src}" alt="{alt}" loading="lazy"></a>'
+        f'<div class="body"><h2><a href="{href}">{title}</a></h2>'
+        f'<div class="meta">{date}</div></div></article>'
+    )
+
+
+def _month_index(date: str) -> int:
+    names = sorted(MONTH_INDEX.items(), key=lambda item: -len(item[0]))
+    for name, index in names:
+        if name in date:
+            return index
+    return 0
+
+
+def listing_sort_key(record: dict) -> tuple[int, int, int]:
+    date = record.get('date') or ''
+    year_match = re.search(r'\d{4}', date)
+    day_match = re.search(r'\d+', date)
+    year = int(year_match.group()) if year_match else 0
+    day = int(day_match.group()) if day_match else 0
+    return (year, _month_index(date), day)
+
+
+def post_category_slug(slug: str) -> str | None:
+    page = DOCS / 'fr' / 'posts' / slug / 'index.html'
+    if not page.is_file():
+        return None
+    badge = html.parse(str(page)).xpath('//a[contains(@class,"badge")]/@href')
+    if not badge:
+        return None
+    match = re.search(r'category/([^/]+)/', badge[0])
+    return unquote(match.group(1)) if match else None
+
+
+def harvest_extra_listing_cards(known: set[str]) -> list[dict]:
+    """Cards published onto French listings outside the 2026 manifest.
+
+    Autumn hunting and the equestrian essay use their own French slugs.
+    Rebuilding the grid from the manifest alone would drop them.
+    """
+    extras: dict[str, dict] = {}
+    pages: list[tuple[Path, str | None]] = [
+        (path, path.parent.name) for path in sorted((DOCS / 'fr' / 'category').glob('*/index.html'))
+    ]
+    stories = DOCS / 'fr' / 'stories' / 'index.html'
+    if stories.is_file():
+        pages.append((stories, None))
+    for path, category in pages:
+        if not path.is_file():
+            continue
+        tree = html.parse(str(path))
+        for card in tree.xpath('//main//article[contains(@class,"card")]'):
+            links = card.xpath('.//a[@href]')
+            if not links:
+                continue
+            href = links[0].get('href') or ''
+            match = re.search(r'(?:^|/)posts/([^/"#]+)/', unquote(href))
+            if not match:
+                continue
+            slug = fr_public_slug(match.group(1))
+            if slug in known or slug in extras:
+                continue
+            images = card.xpath('.//img')
+            titles = card.xpath('.//h2//a|.//h3//a')
+            meta = card.xpath('.//*[contains(@class,"meta")]')
+            title = unescape(titles[0].text_content()).strip() if titles else slug
+            extras[slug] = {
+                'slug': slug,
+                'title': title,
+                'alt': unescape(images[0].get('alt') or title) if images else title,
+                'date': unescape(meta[0].text_content()).strip() if meta else '',
+                'image': images[0].get('src') or '' if images else '',
+                'category_slug': category or post_category_slug(slug),
+            }
+    return list(extras.values())
+
+
+def collect_listing_records(translations: dict) -> list[dict]:
+    records = []
+    for item in MANIFEST['articles']:
+        src = html.parse(str(DOCS / 'en' / 'posts' / item['slug'] / 'index.html'))
+        img = src.xpath('//meta[@property="og:image"]/@content') or src.xpath('//article[contains(@class,"article-content")]//img/@src')
+        image = ''
+        if img:
+            image = img[0]
+            if image.startswith(BASE):
+                image = image[len(BASE):]
+            image = image.replace('../../../', '').replace('../../', '')
+        records.append({
+            **item,
+            'slug': fr_public_slug(item['slug']),
+            'title': translations[item['slug']]['title'],
+            'image': image or 'media/brand/sayd-logo.png',
+            'category_slug': category_slug(item),
+        })
+    known = {record['slug'] for record in records}
+    records.extend(harvest_extra_listing_cards(known))
+    records.sort(key=listing_sort_key, reverse=True)
+    return records
+
+
 def listing_switch(rel: str) -> tuple[str, str, str] | None:
     """Root-absolute AR / EN / FR twins for a French listing page."""
     if rel == 'fr/stories/index.html':
@@ -269,8 +452,10 @@ def french_ticker_blocks() -> list[str] | None:
             post = re.search(r'(?:^|/)posts/(.+)$', path)
             if not post:
                 return match.group(0)
+            slug = re.sub(r'(?:/index\.html|/)+$', '', post.group(1)).strip('/')
+            slug = fr_public_slug(unquote(slug))
             suffix = '#' + frag if frag else ''
-            return f'href="/fr/posts/{post.group(1)}{suffix}"'
+            return f'href="/fr/posts/{slug}/{suffix}"'
         return re.sub(r'href="([^"]*)"', repl, block)
 
     visible, hidden = absolutize(blocks[0]), absolutize(blocks[1])
@@ -302,27 +487,92 @@ def patch_listing_html(text: str, switch: tuple[str, str, str]) -> str:
     return text
 
 
-def listing_page(title, entries, translations, path, depth):
-    tree=html.parse(str(DOCS/'en/index.html'))
-    main=tree.xpath('//main')[0]
-    empty_note='<p>Aucun article de 2026 dans cette rubrique pour le moment.</p>' if not entries else ''
-    content(main, '<div class="container"><div class="section-head accent-olive"><h1>'+escape(title)+'</h1></div><div class="home-door-grid">'
-            + ''.join('<article class="card"><a class="thumb" href="posts/'+x['slug']+'/index.html"><img src="'+('' if x['image'].startswith('https://') else '../')+escape(x['image'])+'" alt="'+escape(translations[x['slug']]['title'])+'" loading="lazy"></a><div class="body"><h2><a href="posts/'+x['slug']+'/index.html">'+escape(translations[x['slug']]['title'])+'</a></h2><div class="meta">'+escape(date_fr(x['date']))+'</div></div></article>' for x in entries)
-            + '</div>'+empty_note+'</div>')
-    chrome(tree,None,translations)
-    for e in tree.xpath('//*[@href or @src]'):
-        for attr in ('href','src'):
-            val=e.get(attr)
-            if val and not val.startswith(('http:','https:','mailto:','tel:','#','data:')):
-                e.set(attr, '../'*depth+val)
-    tree.xpath('//title')[0].text=title+' | Sayd Magazine'
-    dest=DOCS/path;dest.parent.mkdir(parents=True,exist_ok=True)
-    raw=html.tostring(tree,encoding='unicode',method='html',doctype='<!DOCTYPE html>')
-    switch=listing_switch(Path(path).as_posix())
+def order_like_existing(entries: list[dict], path: Path) -> list[dict]:
+    """Keep the published card order when a listing is regenerated.
+
+    Same-day stories were prepended by later publishes. A fresh date sort
+    would bury those leads under other cards from the same day.
+    """
+    page = DOCS / path
+    by_slug: dict[str, dict] = {}
+    for entry in entries:
+        by_slug.setdefault(fr_public_slug(entry['slug']), entry)
+    if not page.is_file():
+        return entries
+    ordered: list[dict] = []
+    seen: set[str] = set()
+    tree = html.parse(str(page))
+    for card in tree.xpath('//main//article[contains(@class,"card")]'):
+        links = card.xpath('.//a[@href]')
+        if not links:
+            continue
+        match = re.search(r'(?:^|/)posts/([^/"#]+)/', unquote(links[0].get('href') or ''))
+        if not match:
+            continue
+        slug = fr_public_slug(match.group(1))
+        if slug in seen or slug not in by_slug:
+            continue
+        ordered.append(by_slug[slug])
+        seen.add(slug)
+    for entry in entries:
+        slug = fr_public_slug(entry['slug'])
+        if slug not in seen:
+            ordered.append(entry)
+            seen.add(slug)
+    return ordered
+
+
+def listing_page(title, entries, translations, path, depth=0):
+    """French listing chrome is the French homepage, never the English one.
+
+    Card, door, and brand links are root-absolute so `/fr/category/<slug>/`
+    (no index.html) cannot resolve `../../posts` out of the French edition.
+    `depth` is unused; listings no longer depend on relative path depth.
+    """
+    del translations, depth
+    entries = order_like_existing(entries, Path(path))
+    tree = html.parse(str(DOCS / 'fr' / 'index.html'))
+    main = tree.xpath('//main')[0]
+    empty_note = '<p>Aucun article de 2026 dans cette rubrique pour le moment.</p>' if not entries else ''
+    content(
+        main,
+        '<div class="container"><div class="section-head accent-olive"><h1>' + escape(title) + '</h1></div>'
+        '<div class="home-door-grid">' + ''.join(listing_card(entry) for entry in entries) + '</div>'
+        + empty_note + '</div>',
+    )
+    tree.xpath('//title')[0].text = title + ' | Sayd Magazine'
+    description = tree.xpath('//meta[@name="description"]')
+    if description:
+        description[0].set('content', FR_TAGLINE)
+    absolutize_fr_tree(tree)
+    dest = DOCS / path
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    raw = html.tostring(tree, encoding='unicode', method='html', doctype='<!DOCTYPE html>')
+    switch = listing_switch(Path(path).as_posix())
     if switch:
-        raw=patch_listing_html(raw, switch)
-    raw=re.sub(r'(assets/css/site\.css\?v=)[^"\']+', r'\g<1>'+CSS_TOKEN, raw)
+        raw = patch_listing_html(raw, switch)
+    raw = re.sub(r'(assets/css/site\.css\?v=)[^"\']+', r'\g<1>' + CSS_TOKEN, raw)
+    rel = Path(path)
+    raw = seo.apply_html(raw, dest, DOCS, rel, seo.load_twins(DOCS))
+    for marker in EN_CHROME_MARKERS:
+        if marker in raw:
+            raise SystemExit(f'English chrome leaked into {path}: {marker}')
+    relative = [
+        url for url in re.findall(r'\b(?:href|src)="([^"]*)"', raw)
+        if url and not url.startswith(('http://', 'https://', 'mailto:', 'tel:', '#', '/', 'data:'))
+    ]
+    if relative:
+        raise SystemExit(f'Relative links left on {path}: {relative[:8]}')
     dest.write_text(raw, encoding='utf-8')
+
+
+def rebuild_french_listings(translations: dict) -> int:
+    records = collect_listing_records(translations)
+    listing_page('Articles de 2026', records, translations, Path('fr/stories/index.html'))
+    for cat, label in CATS.items():
+        entries = [record for record in records if record['category_slug'] == cat]
+        listing_page(label, entries, translations, Path('fr/category') / cat / 'index.html')
+    return len(records)
 
 
 def refresh_published_listings() -> int:
@@ -413,45 +663,81 @@ def wire_original_switches():
     wire_listing_switches()
 
 
-def upsert_fr_link(page: str, href: str) -> str:
+def _lang_link(href: str, lang: str, label: str, current: bool) -> str:
+    attrs = ' class="is-current" aria-current="page"' if current else ''
+    return f'<a href="{escape(href, quote=True)}" lang="{lang}" hreflang="{lang}"{attrs}>{label}</a>'
+
+
+def listing_lang_inner(ar: str, en: str | None, fr: str | None, current: str) -> str:
+    parts = [_lang_link(ar, 'ar', 'العربية', current == 'ar')]
+    if en:
+        parts.append(_lang_link(en, 'en', 'English', current == 'en'))
+    if fr:
+        if '/en/' in fr:
+            raise SystemExit(f'Français door must stay on /fr/, got {fr}')
+        parts.append(_lang_link(fr, 'fr', 'Français', current == 'fr'))
+    return '\n          ' + '\n          '.join(parts) + '\n        '
+
+
+def replace_lang_nav(page: str, inner: str) -> str:
     match = LANG_NAV_RE.search(page)
     if not match or 'http-equiv="refresh"' in page:
         return page
-    inside = re.sub(r'\s*<a\b[^>]*hreflang="fr"[^>]*>.*?</a>', '', match.group(2), flags=re.S)
-    link = f'<a href="{escape(href, quote=True)}" lang="fr" hreflang="fr">Français</a>'
-    if '\n' in inside:
-        inside = inside.rstrip() + '\n          ' + link + '\n        '
-    else:
-        inside = inside.rstrip() + ' ' + link
-    updated = page[:match.start()] + match.group(1) + inside + match.group(3) + page[match.end():]
+    updated = page[:match.start()] + match.group(1) + inner + match.group(3) + page[match.end():]
     return re.sub(r'(assets/css/site\.css\?v=)[^"\']+', r'\g<1>' + CSS_TOKEN, updated)
 
 
+def _listing_self(prefix: str, folder: str, filename: str) -> str:
+    if filename == 'index.html':
+        return f'{prefix}{folder}/' if folder else prefix
+    return f'{prefix}{folder}/{filename}'
+
+
 def wire_listing_switches() -> int:
-    """Français on every AR/EN door listing and archive that has a French twin."""
+    """Root-absolute العربية / English / Français on AR, EN, and archive listings.
+
+    English on an Arabic door is the twin `/en/category/<arabic-slug>/` when that
+    door exists. It is not the English homepage. Français is `/fr/category/<slug>/`.
+    """
     changed = 0
-    french_categories = {path.parent.name for path in (DOCS / 'fr' / 'category').glob('*/index.html')}
-    targets: list[tuple[Path, str]] = []
-    for base in (DOCS / 'category', DOCS / 'en' / 'category'):
-        for page in base.glob('*/*.html'):
-            if page.parent.name not in french_categories:
-                continue
-            targets.append((page, category_public('/fr/', page.parent.name)))
-    if (DOCS / 'fr' / 'stories' / 'index.html').is_file():
-        targets.append((DOCS / 'en' / 'stories' / 'index.html', '/fr/stories/'))
-        targets.extend((page, '/fr/stories/') for page in (DOCS / 'articles').glob('*.html'))
     seen: set[Path] = set()
-    for page, href in targets:
+    targets: list[tuple[Path, str]] = []
+
+    def queue(page: Path, inner: str) -> None:
+        targets.append((page, inner))
+
+    for page in (DOCS / 'category').glob('*/*.html'):
+        slug = page.parent.name
+        en_door = (DOCS / 'en' / 'category' / slug / 'index.html').is_file()
+        fr_door = (DOCS / 'fr' / 'category' / slug / 'index.html').is_file()
+        ar = _listing_self('/', f'category/{quote(slug, safe="")}', page.name)
+        en = category_public('/en/', slug) if en_door else '/en/'
+        fr = category_public('/fr/', slug) if fr_door else None
+        queue(page, listing_lang_inner(ar, en, fr, 'ar'))
+    for page in (DOCS / 'en' / 'category').glob('*/*.html'):
+        slug = page.parent.name
+        fr_door = (DOCS / 'fr' / 'category' / slug / 'index.html').is_file()
+        ar = category_public('/', slug)
+        en = _listing_self('/en/', f'category/{quote(slug, safe="")}', page.name)
+        fr = category_public('/fr/', slug) if fr_door else None
+        queue(page, listing_lang_inner(ar, en, fr, 'en'))
+    if (DOCS / 'fr' / 'stories' / 'index.html').is_file():
+        stories = DOCS / 'en' / 'stories' / 'index.html'
+        if stories.is_file():
+            queue(stories, listing_lang_inner('/articles/', '/en/stories/', '/fr/stories/', 'en'))
+        for page in (DOCS / 'articles').glob('*.html'):
+            ar = '/articles/' if page.name == 'index.html' else f'/articles/{page.name}'
+            queue(page, listing_lang_inner(ar, '/en/stories/', '/fr/stories/', 'ar'))
+    for page, inner in targets:
         if page in seen or not page.is_file():
             continue
         seen.add(page)
         text = page.read_text(encoding='utf-8')
-        updated = upsert_fr_link(text, href)
+        updated = replace_lang_nav(text, inner)
         if updated != text:
             page.write_text(updated, encoding='utf-8')
             changed += 1
-    # Legacy AR doors have no French edition. Still bust the stylesheet so the
-    # date-under-title rule reaches every .post-row listing.
+    # Legacy AR doors with no language twin still need the door-date stylesheet.
     for page in (DOCS / 'category').glob('*/*.html'):
         if page in seen or not page.is_file():
             continue
@@ -517,22 +803,9 @@ def main():
     for slug,data in translations.items(): render_article(slug,data,translations)
     render_home(translations)
     for name in STATIC_COPY: render_static(name,translations)
-    records=[]
-    for item in MANIFEST['articles']:
-        src=html.parse(str(DOCS/'en/posts'/item['slug']/'index.html'))
-        img=src.xpath('//meta[@property="og:image"]/@content') or src.xpath('//article[contains(@class,"article-content")]//img/@src')
-        image=(img[0] if img[0].startswith('https://') and not img[0].startswith(BASE)
-               else img[0].replace(BASE+'/','').replace('../../../','')) if img else 'media/brand/sayd-logo.png'
-        records.append({**item,'image':image,'category_slug':category_slug(item)})
-    records.sort(key=lambda x: (int(re.search(r'\d{4}',x['date']).group()) if re.search(r'\d{4}',x['date']) else 0,
-                                list(MONTHS).index(next((m for m in MONTHS if m in x['date']),'January')),
-                                int(re.search(r'^\d+',x['date']).group())),reverse=True)
-    listing_page('Articles de 2026',records,translations,Path('fr/stories/index.html'),1)
-    for cat, label in CATS.items():
-        entries=[x for x in records if x['category_slug']==cat]
-        listing_page(label,entries,translations,Path('fr/category')/cat/'index.html',2)
+    count = rebuild_french_listings(translations)
     wire_original_switches()
-    print(f'Rendered {len(translations)} articles, homepage, archive and {len(CATS)} categories')
+    print(f'Rendered {len(translations)} articles, homepage, archive and {len(CATS)} categories ({count} French listing cards)')
 
 
 if __name__ == '__main__':

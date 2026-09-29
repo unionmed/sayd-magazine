@@ -625,10 +625,16 @@ def listing_card(lang: str, href_prefix: str, media_prefix: str, heading: str) -
     slug = HOME_SLUG[lang]
     title = html.escape(parse_copy(COPY[lang])[0])
     alt = html.escape(CAPTION["n01"][lang], quote=True)
+    if lang == "fr":
+        post_href = f"/fr/posts/{slug}/"
+        img_src = f"/media/uploads/2026/09/{CARD}"
+    else:
+        post_href = f"{href_prefix}posts/{slug}/index.html"
+        img_src = f"{media_prefix}media/uploads/2026/09/{CARD}"
     return (
-        f'<article class="card"><a class="thumb" href="{href_prefix}posts/{slug}/index.html">'
-        f'<img src="{media_prefix}media/uploads/2026/09/{CARD}" alt="{alt}" loading="lazy"></a>'
-        f'<div class="body"><{heading}><a href="{href_prefix}posts/{slug}/index.html">{title}</a></{heading}>'
+        f'<article class="card"><a class="thumb" href="{post_href}">'
+        f'<img src="{img_src}" alt="{alt}" loading="lazy"></a>'
+        f'<div class="body"><{heading}><a href="{post_href}">{title}</a></{heading}>'
         f'<div class="meta">{SEO[lang]["date"]}</div></div></article>'
     )
 

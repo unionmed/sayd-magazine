@@ -611,10 +611,16 @@ def insert_listings(parsed: dict) -> None:
     def card(lang: str, href_prefix: str, media_prefix: str, slug: str, heading: str) -> str:
         h1 = html.escape(parsed[lang][0])
         alt = html.escape(IMAGES["cover"]["alt"][lang], quote=True)
+        if lang == "fr":
+            post_href = f"/fr/posts/{slug}/"
+            img_src = f"/media/uploads/2026/09/{cover}"
+        else:
+            post_href = f"{href_prefix}posts/{slug}/index.html"
+            img_src = f"{media_prefix}media/uploads/2026/09/{cover}"
         return (
-            f'<article class="card"><a class="thumb" href="{href_prefix}posts/{slug}/index.html">'
-            f'<img src="{media_prefix}media/uploads/2026/09/{cover}" alt="{alt}" loading="lazy"></a>'
-            f'<div class="body"><{heading}><a href="{href_prefix}posts/{slug}/index.html">{h1}</a></{heading}>'
+            f'<article class="card"><a class="thumb" href="{post_href}">'
+            f'<img src="{img_src}" alt="{alt}" loading="lazy"></a>'
+            f'<div class="body"><{heading}><a href="{post_href}">{h1}</a></{heading}>'
             f'<div class="meta">{SEO[lang]["date"]}</div></div></article>'
         )
 
