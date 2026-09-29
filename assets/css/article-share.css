@@ -1,0 +1,9 @@
+
+.article-share { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; font-family:var(--font-body); font-size:.88rem; }
+.article-share-title { color:var(--muted); font-weight:700; margin-inline-end:.3rem; }
+.article-share a,.article-share button { display:inline-flex; align-items:center; min-height:2.5rem; padding:.45rem .8rem; border:1px solid var(--hair); border-radius:.35rem; background:var(--card); color:var(--text); font:inherit; font-weight:600; text-decoration:none; cursor:pointer; }
+.article-share .article-share-whatsapp { background:#1f7747; color:#fff; border-color:#1f7747; }
+.article-share a:hover,.article-share button:hover { border-color:var(--earth-mid); }
+.article-share a:focus-visible,.article-share button:focus-visible { outline:3px solid var(--earth-mid); outline-offset:2px; }
+.article-share [hidden] { display:none; }
+.article-share-status { color:var(--earth-mid); }
