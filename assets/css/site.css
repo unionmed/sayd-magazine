@@ -1433,6 +1433,12 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 }
 .post-row .meta { color: var(--muted); font-size: 0.72rem; margin-bottom: 0.15rem; }
 
+/* door/category: date under title — .post-row only */
+.post-row .body { display: flex; flex-direction: column; }
+.post-row .body > h2 { order: 1; margin: 0 0 0.2rem; }
+.post-row .body > .meta { order: 2; margin-top: 0; margin-bottom: 0; }
+.post-row .body > .excerpt { order: 3; }
+
 .pagination {
   display: flex;
   flex-wrap: wrap;
