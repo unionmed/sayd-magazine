@@ -45,6 +45,8 @@ UI = {
     'From every valley, a story':'De chaque vallée, une histoire',
     'Follow Sayd':'Suivre Sayd', 'Share this story':'Partager cet article',
     'Share':'Partager', 'Link copied':'Lien copié', 'Doors':'Rubriques',
+    'Language':'Langues', 'Featured stories and latest news':'À la une et dernières nouvelles',
+    'September 2026 stories':'Articles de septembre 2026', 'Related':'À lire aussi',
     'Magazine':'Magazine', 'Read the interview':'Lire l’entretien',
     'The magazine of nature’s masters on land, sea, and sky':
         'Le magazine des passionnés de nature, sur terre, en mer et dans le ciel',
@@ -346,8 +348,10 @@ def render_article(slug, data, translations):
     chrome(tree,slug,translations)
     prune_and_translate_cards(tree,translations)
     for e in tree.xpath('//p[contains(@class,"lang-twin")]'):
+        for link in e.xpath('.//a[@hreflang="ar"]'):
+            link.text='Lire en arabe'
         en=html.Element('a', href='../../../en/posts/'+slug+'/index.html', hreflang='en', lang='en')
-        en.text='Read in English'
+        en.text='Lire en anglais'
         e.append(en)
     ar=tree.xpath('//p[contains(@class,"lang-twin")]//a[@hreflang="ar"]/@href')
     if ar:
