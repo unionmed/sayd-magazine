@@ -1,9 +1,43 @@
-
-.article-share { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin:.8rem 0 1rem; font-family:var(--font-body); font-size:.88rem; }
-.article-share-title { color:var(--muted); font-weight:700; margin-inline-end:.3rem; }
-.article-share a,.article-share button { display:inline-flex; align-items:center; min-height:2.5rem; padding:.45rem .8rem; border:1px solid var(--hair); border-radius:.35rem; background:var(--card); color:var(--text); font:inherit; font-weight:600; text-decoration:none; cursor:pointer; }
-.article-share .article-share-whatsapp { background:#1f7747; color:#fff; border-color:#1f7747; }
-.article-share a:hover,.article-share button:hover { border-color:var(--earth-mid); }
-.article-share a:focus-visible,.article-share button:focus-visible { outline:3px solid var(--earth-mid); outline-offset:2px; }
-.article-share [hidden] { display:none; }
-.article-share-status { color:var(--earth-mid); }
+/* Compact sharing row. Brand pictograms: Bootstrap Icons (MIT). */
+.article-share {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: .28rem;
+  margin: .45rem 0 .7rem;
+  white-space: nowrap;
+  font-family: var(--font-body);
+}
+.article-share-title {
+  color: var(--muted);
+  font-size: .78rem;
+  font-weight: 700;
+  margin-inline-end: .22rem;
+}
+.article-share a, .article-share button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border: 1px solid var(--hair);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+}
+.article-share img { display: block; width: 17px; height: 17px; }
+.article-share .article-share-whatsapp { background: #e9f7ee; border-color: #b8dfc6; }
+.article-share a:hover, .article-share button:hover { border-color: var(--earth-mid); }
+.article-share a:focus-visible, .article-share button:focus-visible { outline: 2px solid var(--earth-mid); outline-offset: 2px; }
+.article-share [hidden] { display: none; }
+.article-share-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 360px) {
+  .article-share { gap: .18rem; }
+  .article-share a, .article-share button { flex-basis: 29px; width: 29px; height: 29px; }
+  .article-share-title { font-size: .72rem; margin-inline-end: 0; }
+}
