@@ -789,6 +789,9 @@ def apply_html(
     result = head + block + tail
     if "posts" in rel.parts:
         result = promote_article_image(result)
+        meta = re.search(r'<div class="article-meta">(.*?)</div>', result, re.S)
+        if meta and re.search(r'20(?:2[6-9]|[3-9][0-9])', meta.group(1)):
+            result = format_photo_credits(result)
     result = add_article_sharing(result, rel)
     return add_team_linkedin(result, rel)
 
@@ -873,6 +876,27 @@ def promote_article_image(text: str) -> str:
     moved = body[:figure.start()] + body[figure.end():]
     new_body = '\n' + figure.group(0) + '\n' + moved.lstrip()
     return text[:match.start(2)] + new_body + text[match.end(2):]
+
+
+def format_photo_credits(text: str) -> str:
+    """Keep the caption as written; show photographer/source/license below it."""
+    marker = re.compile(r'تصوير:|Photo:|المصدر:|Source:|Credit:|حقوق الصورة:')
+    def format_caption(match: re.Match[str]) -> str:
+        content = match.group(2)
+        if 'class="photo-credit"' in content:
+            return match.group(0)
+        credit = marker.search(content)
+        if not credit:
+            return match.group(0)
+        lead = content[:credit.start()]
+        # Existing small source spans already have their own presentation.
+        if lead.rfind('<span') > lead.rfind('</span>'):
+            return match.group(0)
+        before = re.sub(r'(?:<br\s*/?>|\s)+$', '', lead, flags=re.I)
+        after = content[credit.start():]
+        small = '<small class="photo-credit" style="display:block;font-size:.72em;line-height:1.4;color:#68705f;">' + after + '</small>'
+        return match.group(1) + before + small + match.group(3)
+    return re.sub(r'(<figcaption\b[^>]*>)(.*?)(</figcaption>)', format_caption, text, flags=re.S | re.I)
 
 
 def render_sitemap(entries: list[tuple[str, str | None]]) -> str:
