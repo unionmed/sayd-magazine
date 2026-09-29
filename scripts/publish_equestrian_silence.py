@@ -2,9 +2,10 @@
 """Publish «الصمتُ الذي يتكلّمه الخيل» (AR, EN, FR).
 
 Design crops only. Feature-lead stays the Arab hunting autumn cover.
-The essay is added to the equestrian door, Latest / المستجدات, and the
-feature stack as one extra card. No existing stack card is removed,
-including Taif. The news ticker is not touched.
+The essay stays in the feature stack and on the equestrian door. It is
+not a Latest / المستجدات item: lead, stack, and Latest do not share a
+story. No existing stack card is removed, including Taif. The news
+ticker is not touched.
 """
 
 from __future__ import annotations
@@ -579,10 +580,16 @@ def place_homepages(parsed: dict) -> None:
             marker = '<div class="feature-stack">'
             at = text.index(marker) + len(marker)
             text = text[:at] + "\n" + stack_card(lang) + text[at:]
-        if slug not in text.split('<ul class="latest-feed">', 1)[1].split("</ul>", 1)[0]:
-            marker = '<ul class="latest-feed">'
-            at = text.index(marker) + len(marker)
-            text = text[:at] + "\n" + latest_item(lang) + text[at:]
+        pre, rest = text.split('<ul class="latest-feed">', 1)
+        feed, post = rest.split("</ul>", 1)
+        feed = re.sub(
+            rf'\n?<li>\s*<a href="posts/{re.escape(slug)}/index\.html">.*?</li>\s*',
+            "\n",
+            feed,
+            count=1,
+            flags=re.S,
+        )
+        text = pre + '<ul class="latest-feed">' + feed + "</ul>" + post
         h2_at = text.index(f"<h2>{DOOR_H2[lang]}</h2>")
         grid_at = text.index('<div class="home-door-grid">', h2_at)
         grid_end = text.index("</div>", grid_at)
@@ -598,10 +605,12 @@ def place_homepages(parsed: dict) -> None:
         stack = text.split('<div class="feature-stack">', 1)[1].split('<div class="latest-col">', 1)[0]
         latest = text.split('<ul class="latest-feed">', 1)[1].split("</ul>", 1)[0]
         door = text.split(f"<h2>{DOOR_H2[lang]}</h2>", 1)[1].split("</section>", 1)[0]
-        if slug not in stack or slug not in latest or slug not in door:
+        if slug not in stack or slug in latest or slug not in door:
             raise SystemExit(f"placement incomplete: {lang}")
-        if STACK not in stack or CARD not in latest or CARD not in door:
+        if STACK not in stack or CARD not in door:
             raise SystemExit(f"crop slot mismatch: {lang}")
+        if latest.count("<li>") != 8:
+            raise SystemExit(f"Latest must stay eight items: {lang}")
         if slug in "".join(tickers(text)):
             raise SystemExit(f"essay entered ticker: {lang}")
         path.write_text(text, encoding="utf-8")
@@ -688,7 +697,10 @@ def update_records() -> None:
     for key in (data["latest"], data["ia_slots"]["latest"]):
         if AR_SLUG in key:
             key.remove(AR_SLUG)
-        key.insert(0, AR_SLUG)
+    omit = data.setdefault("omit_from_latest", [])
+    for slug in (AR_SLUG, EN_SLUG):
+        if slug not in omit:
+            omit.append(slug)
     for door in data["ia_door_sections"]:
         if door["door"] == "equestrian" and AR_SLUG not in door["slugs"]:
             door["slugs"].insert(0, AR_SLUG)
