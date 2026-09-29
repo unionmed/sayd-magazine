@@ -686,7 +686,8 @@ html[dir="ltr"] .news-strip .ticker-viewport {
   padding-bottom: 0.2rem;
 }
 
-.section-head h2 {
+.section-head h2,
+.section-head h1 {
   margin: 0;
   font-size: 1.02rem;
   font-weight: 800;
@@ -695,7 +696,8 @@ html[dir="ltr"] .news-strip .ticker-viewport {
   padding-inline-end: 0.65rem;
 }
 
-.section-head h2::before {
+.section-head h2::before,
+.section-head h1::before {
   content: "";
   display: inline-block;
   width: 0.45rem;
@@ -2284,3 +2286,11 @@ html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 a:hover {
 
 /* Social channels belong in the masthead; hide the legacy footer link. */
 .site-footer li:has(> a[href="https://www.facebook.com/SaydMagazine/"]) { display: none; }
+
+@media (max-width: 400px) {
+  .mast-top-inner { gap: .3rem; }
+  .mast-top .header-social { gap: 0; }
+  .mast-top .header-social a { width: 24px; height: 26px; }
+  .lang-switch { gap: .2rem; font-size: .68rem; }
+  .lang-switch a { padding: 0 .3rem; }
+}
