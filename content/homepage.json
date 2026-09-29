@@ -9,7 +9,6 @@
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
   ],
   "latest": [
-    "الصمت-الذي-يتكلمه-الخيل",
     "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
     "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
@@ -55,7 +54,9 @@
     "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
     "lebanon-hiking-and-camping-among-cedars-and-valleys",
     "بالفيديو-النمر-العربي-في-السعودية",
-    "video-arabian-leopard-in-saudi-arabia"
+    "video-arabian-leopard-in-saudi-arabia",
+    "الصمت-الذي-يتكلمه-الخيل",
+    "the-silence-horses-speak"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -106,6 +107,8 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
+      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
       "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
       "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية"
     ],
@@ -114,8 +117,7 @@
     ],
     "الفروسية": [
       "الصمت-الذي-يتكلمه-الخيل",
-      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-      "لين-عراجي-بطلة-فروسية-وحساب"
+      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
     ],
     "صيد TV": [
       "بالفيديو-وحدة-مكافحة-الصيد-الجائر-عمليات-ميدانية",
@@ -127,6 +129,8 @@
       "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"
     ],
     "Hunting": [
+      "turtle-doves-cross-hunting-borders-european-flyways",
+      "sicily-lebanon-protecting-migratory-birds",
       "autumn-migration-how-world-protects-birds-regulates-hunting",
       "autumn-migration-field-action-protect-flyways-lebanon"
     ],
@@ -134,7 +138,8 @@
       "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
     ],
     "Equestrian": [
-      "the-silence-horses-speak"
+      "the-silence-horses-speak",
+      "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
     ],
     "Sayd TV": [
       "video-apu-ground-operations-mecshap",
@@ -146,15 +151,18 @@
       "great-white-pelican-matn-highway-nayef-krayem"
     ],
     "فروسية": [
-      "الصمت-الذي-يتكلمه-الخيل"
+      "الصمت-الذي-يتكلمه-الخيل",
+      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
     ],
     "الحياة البرية والتخييم": [
       "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
-      "شجيرة-العوسج-حين-تقرأ-الأرض"
+      "شجيرة-العوسج-حين-تقرأ-الأرض",
+      "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
     ],
     "Wildlife & Camping": [
       "lebanon-hiking-and-camping-among-cedars-and-valleys",
-      "the-awsaj-thornbush-reading-the-land"
+      "the-awsaj-thornbush-reading-the-land",
+      "how-farmers-protect-migratory-birds-this-autumn"
     ],
     "شعر وفن": [
       "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب"
@@ -192,7 +200,6 @@
       "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
     ],
     "latest": [
-      "الصمت-الذي-يتكلمه-الخيل",
       "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
       "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
       "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
@@ -207,6 +214,8 @@
     {
       "door": "hunting",
       "slugs": [
+        "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
+        "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
         "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
         "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية"
       ]
@@ -220,14 +229,16 @@
     {
       "door": "equestrian",
       "slugs": [
-        "الصمت-الذي-يتكلمه-الخيل"
+        "الصمت-الذي-يتكلمه-الخيل",
+        "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
       ]
     },
     {
       "door": "wildlife",
       "slugs": [
         "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
-        "شجيرة-العوسج-حين-تقرأ-الأرض"
+        "شجيرة-العوسج-حين-تقرأ-الأرض",
+        "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
       ]
     },
     {
@@ -299,8 +310,14 @@
     "خريف-الصيد-العربي-2026": "hunting",
     "الصمت-الذي-يتكلمه-الخيل": "equestrian"
   },
-  "demotion": "Desks show up to four paired 2026 stories outside feature and Latest, without repeats.",
-  "approved_home_repeats": [],
+  "demotion": "Desks prefer paired 2026 stories outside the feature-lead, feature-stack, and Latest. A door repeats a stack or Latest story only to reach its target, never the feature-lead, and never a pre-2026 story.",
+  "approved_home_repeats": [
+    "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
+    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
+    "الصمت-الذي-يتكلمه-الخيل",
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
+    "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
+  ],
   "undated_stories": {
     "بالفيديو-النمر-العربي-في-السعودية": "المصدر: الهيئة الملكية لمحافظة العلا",
     "video-arabian-leopard-in-saudi-arabia": "Source: Royal Commission for AlUla",

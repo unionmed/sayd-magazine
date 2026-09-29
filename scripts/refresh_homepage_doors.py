@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Fill AR/EN homepage desks from paired 2026 category listings without repeats."""
+"""Fill homepage desks from paired 2026 listings.
+
+A door uses stories that are not already the feature-lead, feature-stack,
+or Latest. If that still falls short of the door target, it may repeat
+stack or Latest stories. It never repeats the feature-lead and never
+uses a pre-2026 story. Equestrian stops at two cards; every other door
+stops at four.
+"""
 import html
 import json
 import re
@@ -9,62 +16,115 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 PAIRS = json.loads((ROOT / "content/en/pairs.json").read_text())["pairs"]
 UNDATED = json.loads((ROOT / "content/homepage.json").read_text()).get("undated_stories", {})
+SILENCE = {
+    "ar": "الصمت-الذي-يتكلمه-الخيل",
+    "en": "the-silence-horses-speak",
+    "fr": "le-silence-que-parlent-les-chevaux",
+}
 DOORS = [
-    ("صيد", "Hunting", "صيد"),
-    ("رماية وعتاد", "Shooting &amp; Gear", "عتاد-وسلاح-الصيد"),
-    ("فروسية", "Equestrian", "فروسية"),
-    ("برية وتخييم", "Wildlife &amp; Camping", "حياة-برية-وتخييم"),
-    ("شعر وفن", "Poetry &amp; Art", "ثقافة-وتراث"),
-    ("صيد TV", "Sayd TV", "استديو-صيد"),
-    ("صور", "Photos", "صور"),
+    ("صيد", "Hunting", "Chasse", "صيد", 4),
+    ("رماية وعتاد", "Shooting &amp; Gear", "Tir et équipement", "عتاد-وسلاح-الصيد", 4),
+    ("فروسية", "Equestrian", "Équitation", "فروسية", 2),
+    ("برية وتخييم", "Wildlife &amp; Camping", "Faune et camping", "حياة-برية-وتخييم", 4),
+    ("شعر وفن", "Poetry &amp; Art", "Poésie et arts", "ثقافة-وتراث", 4),
+    ("صيد TV", "Sayd TV", "Sayd TV", "استديو-صيد", 4),
+    ("صور", "Photos", "Photos", "صور", 4),
 ]
 IMAGE_OVERRIDES = {
     "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية": "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
     "autumn-migration-field-action-protect-flyways-lebanon": "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
     "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو": "media/uploads/2026/09/narta-egret.jpg",
+    "بالفيديو-مقناص-سعود-عبد-العزيز-الباب": "media/uploads/2026/09/babtain-maqnas-afghanistan-yt.jpg",
+    "video-saud-al-babtain-maqnas-afghanistan": "media/uploads/2026/09/babtain-maqnas-afghanistan-yt.jpg",
+    "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا": "media/uploads/2026/09/gallery-alsharq.jpg",
+    "suhail-2026-in-photos-falcons-visitors": "media/uploads/2026/09/gallery-alsharq.jpg",
 }
 
 
-def occupied(page):
-    top = page.split('<section class="masthead"', 1)[1].split('</section>', 1)[0]
-    return set(re.findall(r'href="posts/([^/]+)/index\.html"', top))
+def zone_slugs(page, start, end):
+    chunk = page.split(start, 1)[1].split(end, 1)[0]
+    return set(re.findall(r'href="posts/([^/]+)/index\.html"', chunk))
+
+
+def strip_latest(page, slug):
+    """Silence stays in the feature stack. It is not a Latest item."""
+    pre, rest = page.split('<ul class="latest-feed">', 1)
+    feed, post = rest.split("</ul>", 1)
+    updated = re.sub(
+        rf'\n?<li>\s*<a href="posts/{re.escape(slug)}/index\.html">.*?</li>\s*',
+        "\n",
+        feed,
+        count=1,
+        flags=re.S,
+    )
+    return pre + '<ul class="latest-feed">' + updated + "</ul>" + post
 
 
 def rows(folder, lang):
-    prefix = "en/" if lang == "en" else ""
-    page = (DOCS / prefix / "category" / folder / "index.html").read_text()
+    prefix = {"en": "en/", "fr": "fr/"}.get(lang, "")
+    page_path = DOCS / prefix / "category" / folder / "index.html"
+    page = page_path.read_text()
+    blocks = re.findall(r'<article class="post-row".*?</article>', page, re.S)
+    if not blocks:
+        blocks = re.findall(r'<article class="card".*?</article>', page, re.S)
     result = {}
-    for row in re.findall(r'<article class="post-row".*?</article>', page, re.S):
+    for row in blocks:
         slug = re.search(r'href="[^"]*posts/([^/]+)/index\.html"', row)
-        title = re.search(r'<h2[^>]*>\s*<a[^>]*>(.*?)</a>', row, re.S)
+        title = re.search(r'<h[23][^>]*>\s*<a[^>]*>(.*?)</a>', row, re.S)
         date = re.search(r'class="meta"[^>]*>([^<]+)', row) or re.search(r'data-published="([^"]+)"', row)
-        img = re.search(r'<img[^>]+src="([^"]+)"', row)
+        thumb = re.search(r'<a class="thumb"[^>]*>.*?</a>', row, re.S)
+        img_scope = thumb.group(0) if thumb else row
+        img = re.search(r'<img[^>]+src="([^"]+)"[^>]*>|<img[^>]+>', img_scope)
+        src = re.search(r'src="([^"]+)"', img.group(0)) if img else None
+        alt = re.search(r'alt="([^"]*)"', img.group(0)) if img else None
         if not (slug and title and date and "2026" in date.group(1)):
             continue
         override = IMAGE_OVERRIDES.get(slug.group(1))
-        if not (img or override):
+        if not (src or override):
             continue
-        source = override or img.group(1)
+        source = override or src.group(1)
+        caption = html.unescape(alt.group(1)).strip() if alt and alt.group(1).strip() else ""
         if source.startswith(("https://upload.wikimedia.org/", "https://thumb.wikimedia.org/", "https://s1.wklcdn.com/")):
             image = source
         else:
-            path = (DOCS / override if override else
-                    DOCS / prefix / "category" / folder / source).resolve()
+            path = (DOCS / override if override else page_path.parent / source).resolve()
             if not path.is_file():
                 continue
-            image = ("../" if lang == "en" else "") + path.relative_to(DOCS).as_posix()
-        result[slug.group(1)] = (html.unescape(re.sub(r'<[^>]+>', '', title.group(1))), date.group(1), image)
+            home = DOCS / prefix / "index.html"
+            image = Path(os_relpath(path, home.parent)).as_posix()
+        shown = UNDATED.get(slug.group(1), date.group(1))
+        label = html.unescape(re.sub(r'<[^>]+>', '', title.group(1)))
+        result[slug.group(1)] = (label, shown, image, caption or label)
     return result
 
 
+def os_relpath(path, start):
+    import os
+    return os.path.relpath(path, start)
+
+
 def card(slug, details):
-    title, date, image = details
+    title, date, image, alt = details
     date = UNDATED.get(slug, date)
     href = f"posts/{slug}/index.html"
     return (f'<article class="card"><a class="thumb" href="{href}">'
-            f'<img src="{image}" alt="{html.escape(title, quote=True)}" loading="lazy"></a>'
+            f'<img src="{image}" alt="{html.escape(alt or title, quote=True)}" loading="lazy"></a>'
             f'<div class="body"><h3><a href="{href}">{html.escape(title)}</a></h3>'
             f'<div class="meta">{date}</div></div></article>')
+
+
+def existing_cards(page, heading):
+    pattern = (r'<h2>' + re.escape(heading) + r'</h2>.*?<div class="home-door-grid">'
+               r'(.*?)</div>\s*</section>')
+    match = re.search(pattern, page, re.S)
+    found = {}
+    if not match:
+        return found
+    for article in re.findall(r'<article class="card">.*?</article>', match.group(1), re.S):
+        slug = re.search(r'href="posts/([^/]+)/index\.html"', article)
+        if slug:
+            found[slug.group(1)] = article
+    return found
 
 
 def replace_door(page, heading, cards):
@@ -78,45 +138,100 @@ def replace_door(page, heading, cards):
     return updated
 
 
+def placement(page):
+    lead = zone_slugs(page, "feature-lead", "feature-side")
+    above = zone_slugs(page, 'class="feature-stack"', "latest-col")
+    latest = zone_slugs(page, 'class="latest-feed"', "</ul>")
+    return lead, above | latest
+
+
 def main():
-    pages = {lang: (DOCS / ("en/" if lang == "en" else "") / "index.html").read_text()
-             for lang in ("ar", "en")}
-    upper = {lang: occupied(page) for lang, page in pages.items()}
+    pages = {
+        "ar": (DOCS / "index.html").read_text(),
+        "en": (DOCS / "en" / "index.html").read_text(),
+        "fr": (DOCS / "fr" / "index.html").read_text(),
+    }
+    for lang in pages:
+        pages[lang] = strip_latest(pages[lang], SILENCE[lang])
+    lead, blocked = {}, {}
+    for lang in ("ar", "en"):
+        lead[lang], blocked[lang] = placement(pages[lang])
+    catalogs = {}
+    for _ar_name, _en_name, _fr_name, folder, _target in DOORS:
+        catalogs[folder] = {lang: rows(folder, lang) for lang in ("ar", "en", "fr")}
     used = set()
     selection = {}
-    for ar_name, en_name, folder in DOORS:
-        ar_rows, en_rows = rows(folder, "ar"), rows(folder, "en")
-        choices = []
-        for ar_slug in ar_rows:  # Published category is newest first.
+    repeated = []
+    fr_override = {SILENCE["en"]: SILENCE["fr"]}
+    for ar_name, en_name, fr_name, folder, target in DOORS:
+        ar_rows, en_rows = catalogs[folder]["ar"], catalogs[folder]["en"]
+        order = {slug: index for index, slug in enumerate(ar_rows)}
+        fresh, repeats = [], []
+        for ar_slug in ar_rows:  # Category listing is newest first.
             en_slug = PAIRS.get(ar_slug)
             if not en_slug or en_slug not in en_rows or ar_slug in used:
                 continue
-            if ar_slug in upper["ar"] or en_slug in upper["en"]:
+            if ar_slug in lead["ar"] or en_slug in lead["en"]:
                 continue
-            choices.append((ar_slug, en_slug))
-            used.add(ar_slug)
-            if len(choices) == 4:
+            pair = (ar_slug, en_slug)
+            if ar_slug in blocked["ar"] or en_slug in blocked["en"]:
+                repeats.append(pair)
+            else:
+                fresh.append(pair)
+        choices = fresh[:target]
+        for pair in repeats:
+            if len(choices) >= target:
                 break
+            choices.append(pair)
+            repeated.append(pair[0])
+        choices.sort(key=lambda pair: order[pair[0]])
+        for ar_slug, _en_slug in choices:
+            used.add(ar_slug)
         selection[ar_name] = [ar for ar, _ in choices]
-        pages["ar"] = replace_door(pages["ar"], ar_name,
-                                   [card(ar, ar_rows[ar]) for ar, _ in choices])
-        pages["en"] = replace_door(pages["en"], en_name,
-                                   [card(en, en_rows[en]) for _, en in choices])
-    for lang, page in pages.items():
-        (DOCS / ("en/" if lang == "en" else "") / "index.html").write_text(page)
+        prior = {lang: existing_cards(pages[lang], heading)
+                 for lang, heading in (("ar", ar_name), ("en", en_name), ("fr", fr_name))}
+        pages["ar"] = replace_door(pages["ar"], ar_name, [
+            prior["ar"].get(ar) or card(ar, ar_rows[ar]) for ar, _ in choices])
+        pages["en"] = replace_door(pages["en"], en_name, [
+            prior["en"].get(en) or card(en, en_rows[en]) for _, en in choices])
+        fr_rows = catalogs[folder]["fr"]
+        fr_cards = []
+        for _ar_slug, en_slug in choices:
+            fr_slug = fr_override.get(en_slug, en_slug)
+            if fr_slug in prior["fr"]:
+                fr_cards.append(prior["fr"][fr_slug])
+            elif fr_slug in fr_rows:
+                fr_cards.append(card(fr_slug, fr_rows[fr_slug]))
+        if fr_cards:
+            pages["fr"] = replace_door(pages["fr"], fr_name, fr_cards)
+    for lang, prefix in (("ar", ""), ("en", "en/"), ("fr", "fr/")):
+        (DOCS / prefix / "index.html").write_text(pages[lang])
     config_path = ROOT / "content/homepage.json"
     config = json.loads(config_path.read_text())
     ids = ["hunting", "gear", "equestrian", "wildlife", "poetry", "tv", "photos"]
-    config["ia_door_sections"] = [{"door": door_id, "slugs": selection[ar_name]}
-                                  for door_id, (ar_name, _, _) in zip(ids, DOORS)]
-    for door_id, (ar_name, en_name, _) in zip(ids, DOORS):
+    config["ia_door_sections"] = [
+        {"door": door_id, "slugs": selection[ar_name]}
+        for door_id, (ar_name, *_) in zip(ids, DOORS)
+    ]
+    desks = config.setdefault("desk_slugs", {})
+    for door_id, (ar_name, en_name, _fr_name, _folder, _target) in zip(ids, DOORS):
         ar_key = "الحياة البرية والتخييم" if door_id == "wildlife" else ar_name
-        config.setdefault("desk_slugs", {})[ar_key] = selection[ar_name]
-        config["desk_slugs"][html.unescape(en_name)] = [PAIRS[slug] for slug in selection[ar_name]]
-    config["demotion"] = "Desks show up to four paired 2026 stories outside feature and Latest, without repeats."
-    config["approved_home_repeats"] = []
+        desks[ar_key] = selection[ar_name]
+        desks[html.unescape(en_name)] = [PAIRS[slug] for slug in selection[ar_name]]
+    desks["الفروسية"] = selection["فروسية"]
+    config["latest"] = [slug for slug in config.get("latest", []) if slug != SILENCE["ar"]]
+    config["ia_slots"]["latest"] = [slug for slug in config["ia_slots"]["latest"] if slug != SILENCE["ar"]]
+    omit = config.setdefault("omit_from_latest", [])
+    for slug in (SILENCE["ar"], SILENCE["en"]):
+        if slug not in omit:
+            omit.append(slug)
+    config["demotion"] = (
+        "Desks prefer paired 2026 stories outside the feature-lead, feature-stack, and Latest. "
+        "A door repeats a stack or Latest story only to reach its target, never the feature-lead, and never a pre-2026 story."
+    )
+    config["approved_home_repeats"] = repeated
     config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n")
-    print(selection)
+    print(json.dumps(selection, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
