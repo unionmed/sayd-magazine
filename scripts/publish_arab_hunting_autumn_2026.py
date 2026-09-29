@@ -157,25 +157,27 @@ DESTS = {
     "en": DOCS / "en" / "posts" / EN_SLUG / "index.html",
     "fr": DOCS / "fr" / "posts" / FR_SLUG / "index.html",
 }
+# Four Hunting-door twins only. The 2014 Lebanese hunting-law archive and the
+# extra "how the world protects birds" card are out so every locale shows the
+# same four stories in the compact related-grid (no fifth cell).
 RELATED = {
     "ar": [
         SICILY_AR,
-        "قانون-الصيد-البري-اللبناني",
         "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية",
         "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
-        "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
+        "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
     ],
     "en": [
         SICILY_EN,
         "autumn-migration-field-action-protect-flyways-lebanon",
         "protecting-autumn-migratory-birds-lebanon-khatib-2017",
-        "autumn-migration-how-world-protects-birds-regulates-hunting",
+        "turtle-doves-cross-hunting-borders-european-flyways",
     ],
     "fr": [
         SICILY_EN,
         "autumn-migration-field-action-protect-flyways-lebanon",
         "protecting-autumn-migratory-birds-lebanon-khatib-2017",
-        "autumn-migration-how-world-protects-birds-regulates-hunting",
+        "turtle-doves-cross-hunting-borders-european-flyways",
     ],
 }
 ANCHOR_RE = re.compile(r"<a\b[^>]*>.*?</a>", re.S)
