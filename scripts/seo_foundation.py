@@ -787,7 +787,24 @@ def apply_html(
     head = head.rstrip() + "\n"
     block = seo_block(head + tail, page, docs, rel, twins)
     result = head + block + tail
-    return add_article_sharing(result, rel)
+    result = add_article_sharing(result, rel)
+    return add_team_linkedin(result, rel)
+
+
+def add_team_linkedin(text: str, rel: Path) -> str:
+    """Keep Nayef's public profile beside his name after page regeneration."""
+    profile = "https://www.linkedin.com/in/nayef-krayem-855ba75/"
+    if rel.as_posix() == "pages/من-نحن/index.html":
+        name = "نايف كريم</strong>"
+        link = f' <small>(<a href="{profile}" target="_blank" rel="noopener noreferrer" aria-label="صفحة نايف كريم على LinkedIn">LinkedIn</a>)</small>'
+    elif rel.as_posix() == "en/team/index.html":
+        name = "<strong>Nayef Krayem</strong>"
+        link = f' <small>(<a href="{profile}" target="_blank" rel="noopener noreferrer" aria-label="Nayef Krayem on LinkedIn">LinkedIn</a>)</small>'
+    else:
+        return text
+    if profile in text or name not in text:
+        return text
+    return text.replace(name, name + link, 1)
 
 
 def add_article_sharing(text: str, rel: Path) -> str:
