@@ -787,6 +787,8 @@ def apply_html(
     head = head.rstrip() + "\n"
     block = seo_block(head + tail, page, docs, rel, twins)
     result = head + block + tail
+    if "posts" in rel.parts:
+        result = promote_article_image(result)
     result = add_article_sharing(result, rel)
     return add_team_linkedin(result, rel)
 
@@ -828,7 +830,6 @@ def add_article_sharing(text: str, rel: Path) -> str:
     encoded = quote(canonical, safe="")
     english = rel.parts[0] == "en"
     label = "Share this story" if english else "شارك هذا الموضوع"
-    copy_label = "Copy link" if english else "نسخ الرابط"
     native_label = "Share" if english else "مشاركة"
     copied = "Link copied" if english else "نُسخ الرابط"
     prefix = '../../../' if english else '../../'
@@ -841,8 +842,7 @@ def add_article_sharing(text: str, rel: Path) -> str:
       <a href="https://www.facebook.com/sharer/sharer.php?u={encoded}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">{icon("facebook")}</a>
       <a href="https://twitter.com/intent/tweet?url={encoded}" target="_blank" rel="noopener noreferrer" aria-label="X">{icon("twitter-x")}</a>
       <a href="https://www.linkedin.com/sharing/share-offsite/?url={encoded}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">{icon("linkedin")}</a>
-      <button type="button" class="article-share-copy" data-share-copy data-default-label="{copy_label}" aria-label="{copy_label}" title="{copy_label}">{icon("link-45deg")}</button>
-      <button type="button" class="article-share-native" data-share-native hidden aria-label="{native_label}" title="{native_label}">{icon("share")}</button>
+      <button type="button" class="article-share-native" data-share-native aria-label="{native_label}" title="{native_label}">{icon("share")}</button>
       <span class="article-share-status" role="status" aria-live="polite"></span>
     </nav>
     <!-- article-share:end -->'''
@@ -851,6 +851,28 @@ def add_article_sharing(text: str, rel: Path) -> str:
     script = '<script defer src="' + prefix + 'assets/js/article-share.js"></script>'
     text = text.replace('</head>', '  ' + stylesheet + '\n</head>', 1)
     return text.replace('</body>', '  ' + script + '\n</body>', 1)
+
+
+def promote_article_image(text: str) -> str:
+    """Put the first top-level captioned image ahead of an article's opening text."""
+    match = re.search(r'(<article class="article-content">)(.*?)(</article>)', text, re.S)
+    if not match:
+        return text
+    body = match.group(2)
+    if re.match(r'\s*<figure\b', body) or re.search(r'<div class="article-featured">', text[:match.start()]):
+        return text
+    figure = re.search(r'<figure\b[^>]*>.*?<img\b[^>]*>.*?</figure>', body, re.S | re.I)
+    if not figure:
+        return text
+    # Only move a standalone figure. Figures nested in galleries or layout
+    # containers keep their original order.
+    prefix = body[:figure.start()]
+    for tag in ("div", "figure", "p", "section", "blockquote", "ul", "ol"):
+        if len(re.findall(rf'<{tag}\b', prefix)) != len(re.findall(rf'</{tag}>', prefix)):
+            return text
+    moved = body[:figure.start()] + body[figure.end():]
+    new_body = '\n' + figure.group(0) + '\n' + moved.lstrip()
+    return text[:match.start(2)] + new_body + text[match.end(2):]
 
 
 def render_sitemap(entries: list[tuple[str, str | None]]) -> str:
