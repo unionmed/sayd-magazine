@@ -11,4 +11,4 @@ A sleek desert bird of the bustard family. Its range runs from east of Sinai acr
 
 ## Body
 
-The published English page is `docs/en/posts/asian-houbara/`. Door: Bird Encyclopedia only. This entry is *Chlamydotis macqueenii* only. The African houbara *Chlamydotis undulata* is a separate species and is named in the range section. Lead photo: Kudaibergen Amirekul / Wikimedia Commons — CC BY-SA 4.0. Interior photo: Habib M'henni / Wikimedia Commons — CC BY-SA 3.0.
+The published English page is `docs/en/posts/asian-houbara/`. Door: Bird Encyclopedia only. This entry is *Chlamydotis macqueenii* only. The African houbara *Chlamydotis undulata* is a separate species and is named in the range section. Lead photo: Kudaibergen Amirekul / Wikimedia Commons — CC BY-SA 4.0. Interior photo: Harsha Jayaramaiah / Wikimedia Commons — CC BY-SA 4.0.
