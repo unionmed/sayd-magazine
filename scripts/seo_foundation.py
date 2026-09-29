@@ -817,15 +817,15 @@ def add_article_sharing(text: str, rel: Path) -> str:
     # A future Sayd-owned video can opt in with data-sayd-owned-video.
     if "<iframe" in text and "data-sayd-owned-video" not in text:
         text = re.sub(r'\s*<!-- article-share:start -->.*?<!-- article-share:end -->', '', text, flags=re.S)
-        text = re.sub(r'\s*<link rel="stylesheet" href="[^"]*assets/css/article-share\.css">', '', text)
-        text = re.sub(r'\s*<script defer src="[^"]*assets/js/article-share\.js"></script>', '', text)
+        text = re.sub(r'\s*<link rel="stylesheet" href="[^"]*assets/css/article-share\.css(?:\?[^"]*)?">', '', text)
+        text = re.sub(r'\s*<script defer src="[^"]*assets/js/article-share\.js(?:\?[^"]*)?"></script>', '', text)
         return text
     meta = re.search(r'<div class="article-meta">(.*?)</div>', text, re.S)
     if not meta or not re.search(r'20(?:2[6-9]|[3-9][0-9])', meta.group(1)):
         return text
     text = re.sub(r'\s*<!-- article-share:start -->.*?<!-- article-share:end -->', '', text, flags=re.S)
-    text = re.sub(r'\s*<link rel="stylesheet" href="[^"]*assets/css/article-share\.css">', '', text)
-    text = re.sub(r'\s*<script defer src="[^"]*assets/js/article-share\.js"></script>', '', text)
+    text = re.sub(r'\s*<link rel="stylesheet" href="[^"]*assets/css/article-share\.css(?:\?[^"]*)?">', '', text)
+    text = re.sub(r'\s*<script defer src="[^"]*assets/js/article-share\.js(?:\?[^"]*)?"></script>', '', text)
     canonical = public_url(canonical_rel(rel))
     encoded = quote(canonical, safe="")
     english = rel.parts[0] == "en"
@@ -847,8 +847,8 @@ def add_article_sharing(text: str, rel: Path) -> str:
     </nav>
     <!-- article-share:end -->'''
     text = text.replace('<article class="article-content">', markup + '\n    <article class="article-content">', 1)
-    stylesheet = '<link rel="stylesheet" href="' + prefix + 'assets/css/article-share.css">'
-    script = '<script defer src="' + prefix + 'assets/js/article-share.js"></script>'
+    stylesheet = '<link rel="stylesheet" href="' + prefix + 'assets/css/article-share.css?v=20260929-mobile-share">'
+    script = '<script defer src="' + prefix + 'assets/js/article-share.js?v=20260929-mobile-share"></script>'
     text = text.replace('</head>', '  ' + stylesheet + '\n</head>', 1)
     return text.replace('</body>', '  ' + script + '\n</body>', 1)
 
