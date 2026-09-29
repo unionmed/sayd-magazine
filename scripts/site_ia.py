@@ -23,7 +23,7 @@ TICKER_LABEL_EN = "From every valley, a story"
 DISCLOSURE_AR = "هذه المادة تتضمن رابطًا تجاريًا أو شراكة معلنة."
 DISCLOSURE_EN = "This article includes a disclosed commercial or partnership link."
 
-LATEST_CAP = 10
+LATEST_CAP = 8
 IMPORTANT_CAP = 4
 
 # Confirmed magazine social. Do not invent extra networks.
@@ -184,7 +184,13 @@ IA_SLOTS = {'main': 'من-صقلية-إلى-لبنان-إنقاذ-الطيور-�
 DOOR_SECTIONS = [('hunting', ['مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية']), ('gear', ['في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3']), ('equestrian', ['الصمت-الذي-يتكلمه-الخيل']), ('wildlife', ['شجيرة-العوسج-حين-تقرأ-الأرض']), ('poetry', ['من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب']), ('tv', ['بالفيديو-مقناص-سعود-عبد-العزيز-الباب', 'بالفيديو-النمر-العربي-في-السعودية']), ('photos', ['سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا', 'البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك'])]
 
 # Nayef approved these stories in their homepage doors on 27 September 2026.
-APPROVED_HOME_REPEATS = set()
+# Read the approved live placement; never overwrite it with historical defaults.
+import json as _json
+from pathlib import Path as _Path
+_home = _json.loads((_Path(__file__).resolve().parents[1] / 'content/homepage.json').read_text())
+IA_SLOTS = _home['ia_slots']
+DOOR_SECTIONS = [(d['door'], d['slugs']) for d in _home['ia_door_sections']]
+APPROVED_HOME_REPEATS = set(_home.get('approved_home_repeats', []))
 
 AFFILIATE_HOSTS = {
     "amazon.com",

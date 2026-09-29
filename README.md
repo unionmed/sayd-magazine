@@ -46,27 +46,23 @@ If you cannot re-export WP, add a post as Markdown under `content/posts/` follow
 
 إذا تعذّر التصدير من ووردبريس: فضّل إضافة المقال في ووردبريس ثم صدّر WXR. ملفات `content/posts/*.md` وسيطة؛ المصدر الحالي للتوليد هو XML.
 
-### After rebuild / بعد التوليد
+### Mandatory publication contract — three mirrors
 
-- Every new editorial story is an Arabic/English pair. Publish both article pages, add both to the matching category and archive, and apply the **same placement decision** to both homepages: lead, side card, Latest, and ticker. If the editor excludes a story from the ticker or Latest, exclude it in both languages. A displaced side card goes into Latest by date; Latest holds at most ten cards and drops the oldest when full. Before pushing, run `python3 scripts/check_bilingual_publication.py AR_SLUG EN_SLUG CATEGORY` and fix any mismatch. This is the standing rule for future publications.
-- كل مادة جديدة تُنشر بالعربية والإنجليزية في المواضع المتناظرة: صفحة المقال والتصنيف والأرشيف والواجهة والشريط وآخر الأخبار بحسب قرار التحرير نفسه. البوكس المزاح ينتقل إلى آخر الأخبار وفق تاريخه، وبحد أقصى عشرة بوكسات. افحص التناظر بالسكربت أعلاه قبل الدفع إلى الموقع؛ لا حاجة لتكرار هذا التوجيه مع كل مادة.
-- Homepage desks below the four memory cards draw only paired 2026 articles that have left the featured mosaic and Latest. Render one to four cards per desk, never fill with a duplicate; hide a desk temporarily when no eligible article remains. Refresh both languages with `python3 scripts/refresh_homepage_doors.py` after editing the upper slots. On mobile the desk cards use a horizontal snap row like Memory.
-- أقسام الصفحة أسفل «من ذاكرة صيد» تعرض من مادة إلى أربع مواد مزدوجة اللغة من سنة 2026 خرجت من القصص الرئيسية وآخر الأخبار؛ لا تكررها لملء الفراغ. القسم بلا مادة مؤهلة يختفي مؤقتًا، وعلى الهاتف تتحرك البطاقات أفقيًا مثل بطاقات الذاكرة.
-- Homepage always shows **آخر الأخبار** + **قصص مميزة**; older posts live under **الأرشيف** (`docs/articles/`, paginated) and category folders.
-- الصفحة الأولى تعرض آخر الأخبار والقصص المميزة. الأقدم في الأرشيف والتصنيفات.
-- Theme source of truth: `assets/css/site.css` + templates in `scripts/import-wxr.py`. Do not hand-edit `docs/**/*.html`.
-- مصدر التصميم: CSS + سكربت التوليد. لا تعدّل ملفات `docs/` يدوياً.
-- After HTML is written, `scripts/seo_foundation.py` refreshes `docs/sitemap.xml`, `docs/robots.txt`, and the shared head block (canonical, Open Graph, Twitter, absolute hreflang, BreadcrumbList JSON-LD). Importer, English edition, and the one-off publish scripts call it. Run it again if you add a page by hand:
+Read [AGENTS.md](AGENTS.md) before any edit. Arabic, English and French are three mirrors: complete article text, same images/video, doors, dates and placement. Only Nayef may authorize changes to design, rules, colors, social channels or distribution.
+
+The homepage is **one lead + four side cards + eight Updates + four memory cards**, followed by the seven approved doors. `content/homepage.json` is the placement source; `content/publication-contract.json` freezes approved theme and header links. Old bilingual/ten-card instructions are superseded.
 
 ```bash
-python3 scripts/seo_foundation.py
+python scripts/refresh_homepage_doors.py
+python scripts/check_publication_contract.py --base <base-commit>
+python scripts/test_homepage_doors.py
 ```
 
-## Deploy / النشر
+The CI check runs on pull requests and main pushes. **Repository administration must require `Three-mirror publication check`, CODEOWNER review and PRs, with direct-push/bypass restrictions, before it is a hard publishing lock.** The existing Pages branch deployment does not wait for an optional CI check. Do not describe this repository as bypass-proof until those settings are enabled. Contract or validator changes require Nayef's explicit approval, not merely a new baseline hash.
 
-- **GitHub Pages only:** `docs/` folder on `main` → `https://unionmed.github.io/sayd-magazine/`
-- Live WordPress (`sayd-magazine.com`) and DNS are untouched.
-- ووردبريس الحي والـ DNS لا يُمسان.
+## Deploy
+
+Current live site: https://sayd-magazine.com — GitHub Pages, `docs/` on `main`.
 
 ## Media / الوسائط
 

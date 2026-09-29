@@ -1162,40 +1162,13 @@ def rewrite_poaching_chickadee(html: str, *, depth: int = 0) -> str:
 
 
 def apply_en_home(path: Path | None = None) -> str:
-    dest = path or (DOCS / "en" / "index.html")
-    html = dest.read_text(encoding="utf-8")
-    html = drop_ticker_slugs(html)
-    cards = extract_cards_by_slug(html)
-    merged = dict(EN_FALLBACK_CARDS)
-    merged.update(cards)
-    html = rebuild_featured_mosaic(html, merged, en=True)
-    html = rebuild_latest_feed(html, merged, en=True)
-    html = rebuild_en_home_sections(html, merged)
-    html = drop_home_desks(html, DROPPED_DESKS_EN)
-    html = lock_homepage_html(html)
-    html = strip_home_cat_pills(html)
-    html = bump_home_css(html)
-    dest.write_text(html, encoding="utf-8")
-    return html
+    from refresh_homepage_doors import refresh
+    return refresh(path or (DOCS / "en/index.html"), "en")
 
 
 def apply_ar_home(path: Path | None = None) -> str:
-    dest = path or (DOCS / "index.html")
-    html = dest.read_text(encoding="utf-8")
-    html = rewrite_poaching_chickadee(html, depth=0)
-    html = drop_ticker_slugs(html)
-    cards = extract_cards_by_slug(html)
-    merged = dict(AR_FALLBACK_CARDS)
-    merged.update(cards)
-    html = rebuild_featured_mosaic(html, merged, en=False)
-    html = rebuild_latest_feed(html, merged, en=False)
-    html = rebuild_ar_home_sections(html, merged)
-    html = drop_home_desks(html, DROPPED_DESKS_AR)
-    html = lock_homepage_html(html)
-    html = strip_home_cat_pills(html)
-    html = bump_home_css(html)
-    dest.write_text(html, encoding="utf-8")
-    return html
+    from refresh_homepage_doors import refresh
+    return refresh(path or (DOCS / "index.html"), "ar")
 
 
 def apply_poaching_article(path: Path | None = None) -> str:

@@ -1,0 +1,12 @@
+# Sayd — Nayef's publication contract
+
+These rules were explicitly requested by Nayef Krayem on 30 September 2026 (Asia/Beirut). They supersede stale bilingual or ten-card instructions in historical scripts and notes.
+
+- Only Nayef's explicit instruction authorizes changing doors, rules, design, layout, languages, colors, social channels, or this contract. An instruction to publish a story is not permission to redesign.
+- Three mirrors: Arabic, English, French. Do not publish a new story before all three complete versions exist, with the same photographs/video, category, publication date and placement decisions (lead, side, Updates, ticker, lower door and archive). Never substitute an English page for a missing French translation. Historical archive translations are a separate task; do not delete old material.
+- Home: one lead, four side cards, eight Updates (desktop 4+4; mobile two visible per row with horizontal scrolling), four illustrated memory cards. Sort news newest first in every language.
+- Lower doors, in order: Hunting; Shooting & Gear; Equestrian; Wildlife & Camping; Poetry & Art; Sayd TV; Photos. At most four cards per door, no duplicate filler. Equestrian repeats only as explicitly recorded in homepage.json. TV has exactly three approved films: APU, Babtain, Arabian leopard. Use the original APU thumbnail with the eagle.
+- Preserve the approved full-width green section bands, gold desktop headings, mobile styling, shared theme, navigation and social icons/URLs. Do not hide or remove these to make a check pass.
+- content/homepage.json controls story placement. content/publication-contract.json records protected design and chrome. A routine publication may update the story slots, not loosen counts or overwrite approved design fingerprints.
+- Before publication: python scripts/check_publication_contract.py --base <base-commit>, then python scripts/test_homepage_doors.py. A failing check means fix the publication; never skip or weaken the check. Translation completeness still requires editorial review; automated checks cannot judge translation quality.
+- Hard enforcement requires the GitHub owner to require the Three-mirror publication check, PRs and CODEOWNER approval on main, disallow direct pushes and bypass, and protect the check/contract itself. A workflow alone is not a GitHub Pages deployment gate. Do not claim bypass prevention until repository protections are actually enabled.

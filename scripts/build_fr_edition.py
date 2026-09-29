@@ -598,17 +598,10 @@ def refresh_published_listings() -> int:
 
 
 def render_home(translations):
-    tree=html.parse(str(DOCS/'en/index.html'))
-    # The English memory strip points to old Arabic interviews. Its 2026 retrospective is the French entry.
-    for section in tree.xpath('//section[contains(@class,"memory-strip")]'):
-        title=translations['memory-of-sayd-awareness-responsibility-2016-2024']['title']
-        content(section, '<div class="section-head accent-olive"><h2>Dans les archives de Sayd</h2></div><div class="home-door-grid"><article class="card"><div class="body"><h3><a href="posts/memory-of-sayd-awareness-responsibility-2016-2024/index.html">'+escape(title)+'</a></h3><div class="meta">19 septembre 2026</div></div></article></div>')
-    prune_and_translate_cards(tree,translations)
-    chrome(tree,None,translations)
-    tree.xpath('//title')[0].text='Sayd Magazine · Français'
-    head(tree,None,'Sayd Magazine · Français',BASE+'/')
-    dest=DOCS/'fr/index.html';dest.parent.mkdir(parents=True,exist_ok=True)
-    dest.write_bytes(html.tostring(tree,encoding='utf-8',method='html',doctype='<!DOCTYPE html>'))
+    # Placement comes from the shared contract; never prune untranslated cards.
+    # Missing translations must fail the publication guard instead.
+    from refresh_homepage_doors import refresh
+    refresh(DOCS / 'fr/index.html', 'fr')
 
 
 def render_static(name,translations):

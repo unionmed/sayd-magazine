@@ -233,6 +233,20 @@
       "category": "Bird Encyclopedia",
       "home_position": null,
       "english_url": "/en/posts/common-kestrel/"
+    },
+    {
+      "slug": "video-apu-ground-operations-mecshap",
+      "english_title": "En vidéo… l’unité anti-braconnage sur le terrain",
+      "date": "",
+      "category": "Sayd TV",
+      "english_url": "/en/posts/video-apu-ground-operations-mecshap/"
+    },
+    {
+      "slug": "video-arabian-leopard-in-saudi-arabia",
+      "english_title": "En vidéo… le léopard d’Arabie en Arabie saoudite",
+      "date": "",
+      "category": "Sayd TV",
+      "english_url": "/en/posts/video-arabian-leopard-in-saudi-arabia/"
     }
   ]
 }
