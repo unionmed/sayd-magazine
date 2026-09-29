@@ -131,7 +131,6 @@ def en_body() -> str:
       <div><a class="badge" href="../../../category/عتاد-وسلاح-الصيد/index.html">Gear &amp; Arms</a></div>
       <h1>{EN_TITLE}</h1>
       <div class="article-meta"><span class="meta-item">23 September 2026</span><span class="meta-item">Gear &amp; Arms</span></div>
-      <p class="lang-twin"><a href="../../../posts/{AR_SLUG}/index.html" hreflang="ar" lang="ar">اقرأ بالعربية</a></p>
     </header>
     <article class="article-content">
 {figure(f"{img}/{FIELD}", EN_FIELD_ALT, EN_FIELD_CAP)}

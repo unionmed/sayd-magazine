@@ -472,7 +472,6 @@ def write_en_article() -> None:
       <div><a class="badge" href="../../../category/صيد/index.html">Hunting</a></div>
       <h1>{EN_TITLE}</h1>
       <div class="article-meta"><span class="meta-item">22 September 2026</span><span class="meta-item">Investigation — Sayd Magazine</span></div>
-      <p class="lang-twin"><a href="../../../posts/{AR_SLUG}/index.html" hreflang="ar" lang="ar">اقرأ بالعربية</a></p>
     </header>
     <article class="article-content">
 {en_body()}

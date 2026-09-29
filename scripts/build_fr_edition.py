@@ -347,13 +347,9 @@ def render_article(slug, data, translations):
     tree.xpath('//h1')[0].text = data['title']
     chrome(tree,slug,translations)
     prune_and_translate_cards(tree,translations)
-    for e in tree.xpath('//p[contains(@class,"lang-twin")]'):
-        for link in e.xpath('.//a[@hreflang="ar"]'):
-            link.text='Lire en arabe'
-        en=html.Element('a', href='../../../en/posts/'+slug+'/index.html', hreflang='en', lang='en')
-        en.text='Lire en anglais'
-        e.append(en)
-    ar=tree.xpath('//p[contains(@class,"lang-twin")]//a[@hreflang="ar"]/@href')
+    pairs=json.loads((ROOT/'content/en/pairs.json').read_text())['pairs']
+    ar_slug=next((key for key,value in pairs.items() if value==slug),None)
+    ar=['../../../posts/'+ar_slug+'/index.html'] if ar_slug else []
     if ar:
         switch_ar=tree.xpath('//nav[contains(@class,"lang-switch")]//a[@hreflang="ar"]')
         if switch_ar: switch_ar[0].set('href',ar[0])
