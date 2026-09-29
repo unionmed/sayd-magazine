@@ -1387,6 +1387,20 @@ html[lang="en"] .home-section:has(> .en-callout):not(:has(article)) {
 
 .related-grid .card h3 { font-size: 0.86rem; }
 
+/* Exactly four related cards: one compact row, not two half-page columns. */
+@media (min-width: 900px) {
+  .related-grid:has(> .card:nth-child(4)):not(:has(> .card:nth-child(5))) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .related-grid:has(> .card:nth-child(4)):not(:has(> .card:nth-child(5))) .card .body {
+    padding: 0.4rem 0.45rem 0.5rem;
+  }
+  .related-grid:has(> .card:nth-child(4)):not(:has(> .card:nth-child(5))) .card h3 {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+}
+
 .breadcrumb {
   font-size: 0.8rem;
   color: var(--muted);
