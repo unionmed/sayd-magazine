@@ -33,11 +33,9 @@ def local_slug(slug, lang):
     if lang == 'ar': return slug
     pairs = json.loads((ROOT/'content/en/pairs.json').read_text())['pairs']
     translated = pairs[slug]
-    if lang == 'fr' and translated == 'the-silence-horses-speak':
-        return 'le-silence-que-parlent-les-chevaux'
-    if lang == 'fr' and translated == 'arab-autumn-hunting-season-2026':
-        # The lead itself is retained verbatim; this is only a slug lookup.
-        return translated
+    if lang == 'fr':
+        from seo_foundation import FR_SLUG_BY_EN
+        return FR_SLUG_BY_EN.get(translated,translated)
     return translated
 
 def collect(page, source_path, home_path):
@@ -130,6 +128,8 @@ def refresh(path,lang):
         cards='\n'.join(render_card(*data(s)) for s in sections[door])
         page,n=re.subn(pattern,lambda m:m[1]+'\n'+cards+'\n'+m[2],page,count=1,flags=re.S)
         if n!=1:raise ValueError(f'{lang}: missing desk {heading}')
+    ticker=''.join(f'<a href="posts/{data(ar)[0]}/index.html">{html.escape(data(ar)[1]["title"])}</a>' for ar in c['ticker_slugs'])
+    page=re.sub(r'(<div class="ticker"(?: aria-hidden="true")?>).*?(</div>)',lambda m:m[1]+ticker+m[2],page,flags=re.S)
     # Normalize wrapper whitespace for a stable second refresh.
     page=re.sub(r'(</article>)\s*(</div>\s*</div>\s*</div>\s*</div>\s*<div class="latest-col">)',r'\1\n          </div>\n          </div>\n        </div>\n      </div>\n      <div class="latest-col">',page)
     path.write_text(page)

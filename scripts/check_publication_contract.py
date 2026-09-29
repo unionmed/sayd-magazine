@@ -73,6 +73,10 @@ def check(base=None):
         assert [s for s,_ in slots[9]]==contract['tv_slugs'],f'{lang}: protected TV order changed'
         if reference is None:reference=slots
         else:assert slots==reference,f'{lang}: mirrored story placement or photograph differs'
+        tickers=nodes(t,'ticker')
+        assert len(tickers)==2,f'{lang}: missing ticker loop'
+        for ticker in tickers:
+            assert [canonical(slug(h),lang,pairs) for h in ticker.xpath('.//a/@href')]==c['ticker_slugs'],f'{lang}: ticker placement differs'
         social=t.xpath('//*['+css_class('header-social')+']//a/@href')
         # Header class names are part of the approved per-language chrome signature.
         chrome=t.xpath('//header')[0]
