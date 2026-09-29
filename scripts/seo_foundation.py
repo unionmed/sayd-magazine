@@ -792,9 +792,16 @@ def apply_html(
 
 def add_article_sharing(text: str, rel: Path) -> str:
     """Add bilingual reader sharing to current and future editorial articles."""
-    if "<!-- article-share:start -->" in text:
-        return text
     if "posts" not in rel.parts or 'class="article-content"' not in text:
+        return text
+    # Embedded third-party videos belong to their original publisher.
+    # A future Sayd-owned video can opt in with data-sayd-owned-video.
+    if "<iframe" in text and "data-sayd-owned-video" not in text:
+        text = re.sub(r'\s*<!-- article-share:start -->.*?<!-- article-share:end -->', '', text, flags=re.S)
+        text = re.sub(r'\s*<link rel="stylesheet" href="[^"]*assets/css/article-share\.css">', '', text)
+        text = re.sub(r'\s*<script defer src="[^"]*assets/js/article-share\.js"></script>', '', text)
+        return text
+    if "<!-- article-share:start -->" in text:
         return text
     meta = re.search(r'<div class="article-meta">(.*?)</div>', text, re.S)
     if not meta or not re.search(r'20(?:2[6-9]|[3-9][0-9])', meta.group(1)):
