@@ -801,12 +801,11 @@ def add_article_sharing(text: str, rel: Path) -> str:
         text = re.sub(r'\s*<link rel="stylesheet" href="[^"]*assets/css/article-share\.css">', '', text)
         text = re.sub(r'\s*<script defer src="[^"]*assets/js/article-share\.js"></script>', '', text)
         return text
-    if "<!-- article-share:start -->" in text:
-        return text
     meta = re.search(r'<div class="article-meta">(.*?)</div>', text, re.S)
     if not meta or not re.search(r'20(?:2[6-9]|[3-9][0-9])', meta.group(1)):
         return text
     text = re.sub(r'\s*<!-- article-share:start -->.*?<!-- article-share:end -->', '', text, flags=re.S)
+    text = re.sub(r'\s*<link rel="stylesheet" href="[^"]*assets/css/article-share\.css">', '', text)
     text = re.sub(r'\s*<script defer src="[^"]*assets/js/article-share\.js"></script>', '', text)
     canonical = public_url(canonical_rel(rel))
     encoded = quote(canonical, safe="")
@@ -815,21 +814,22 @@ def add_article_sharing(text: str, rel: Path) -> str:
     copy_label = "Copy link" if english else "نسخ الرابط"
     native_label = "Share" if english else "مشاركة"
     copied = "Link copied" if english else "نُسخ الرابط"
+    prefix = '../../../' if english else '../../'
+    def icon(name: str) -> str:
+        return f'<img src="{prefix}assets/icons/{name}.svg" alt="" width="17" height="17">'
     markup = f'''<!-- article-share:start -->
     <nav class="article-share" aria-label="{label}" data-copied="{copied}">
       <span class="article-share-title">{label}</span>
-      <a class="article-share-whatsapp" href="https://wa.me/?text={encoded}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WhatsApp</a>
-      <button type="button" class="article-share-copy" data-share-copy data-default-label="{copy_label}">{copy_label}</button>
-      <button type="button" class="article-share-native" data-share-native hidden>{native_label}</button>
-      <a href="https://www.facebook.com/sharer/sharer.php?u={encoded}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-      <a href="https://twitter.com/intent/tweet?url={encoded}" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url={encoded}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+      <a class="article-share-whatsapp" href="https://wa.me/?text={encoded}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">{icon("whatsapp")}</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={encoded}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">{icon("facebook")}</a>
+      <a href="https://twitter.com/intent/tweet?url={encoded}" target="_blank" rel="noopener noreferrer" aria-label="X">{icon("twitter-x")}</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={encoded}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">{icon("linkedin")}</a>
+      <button type="button" class="article-share-copy" data-share-copy data-default-label="{copy_label}" aria-label="{copy_label}" title="{copy_label}">{icon("link-45deg")}</button>
+      <button type="button" class="article-share-native" data-share-native hidden aria-label="{native_label}" title="{native_label}">{icon("share")}</button>
       <span class="article-share-status" role="status" aria-live="polite"></span>
     </nav>
     <!-- article-share:end -->'''
     text = text.replace('<article class="article-content">', markup + '\n    <article class="article-content">', 1)
-    text = text.replace('</article>', '</article>\n    ' + markup, 1)
-    prefix = '../../../' if english else '../../'
     stylesheet = '<link rel="stylesheet" href="' + prefix + 'assets/css/article-share.css">'
     script = '<script defer src="' + prefix + 'assets/js/article-share.js"></script>'
     text = text.replace('</head>', '  ' + stylesheet + '\n</head>', 1)
