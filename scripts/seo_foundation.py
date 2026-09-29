@@ -118,6 +118,7 @@ ALIAS_REDIRECTS = BABTAIN_ALIASES | WP_ID_STUBS | set(CONSOLIDATION_TARGETS)
 HERO_LISTING = {
     "index.html",
     "en/index.html",
+    "fr/index.html",
     "memory/index.html",
     "en/memory/index.html",
 }
@@ -434,6 +435,8 @@ def in_sitemap(rel: Path) -> bool:
     if posix in gallery_rels():
         return False
     parts = rel.parts
+    if parts[0] == "fr":
+        return True
     if parts[0] == "category" and category_landing_empty(rel):
         return False
     if parts[0] == "posts":
@@ -548,20 +551,35 @@ def hero_image(html_text: str, page: Path, docs: Path, rel: Path) -> str | None:
 
 
 def hreflang_tags(rel_posix: str, twins: dict[str, str]) -> list[str]:
-    other = twins.get(rel_posix)
-    if not other:
-        return []
-    if rel_posix.startswith("en/"):
-        en_rel, ar_rel = rel_posix, other
+    if rel_posix.startswith("fr/"):
+        en_rel = "en/" + rel_posix[3:]
+        if not (DOCS / en_rel).is_file():
+            return []
+        ar_rel = twins.get(en_rel)
     else:
-        ar_rel, en_rel = rel_posix, other
-    ar_url = public_url(Path(ar_rel))
+        other = twins.get(rel_posix)
+        if not other:
+            return []
+        if rel_posix.startswith("en/"):
+            en_rel, ar_rel = rel_posix, other
+        else:
+            ar_rel, en_rel = rel_posix, other
+    fr_rel = "fr/" + en_rel[3:]
+    fr_exists = (DOCS / fr_rel).is_file()
+    if not ar_rel and not fr_exists:
+        return []
     en_url = public_url(Path(en_rel))
-    return [
-        f'  <link rel="alternate" hreflang="ar" href="{attr(ar_url)}">',
-        f'  <link rel="alternate" hreflang="en" href="{attr(en_url)}">',
-        f'  <link rel="alternate" hreflang="x-default" href="{attr(ar_url)}">',
-    ]
+    tags = []
+    if ar_rel:
+        ar_url = public_url(Path(ar_rel))
+        tags.append(f'  <link rel="alternate" hreflang="ar" href="{attr(ar_url)}">')
+    tags.append(f'  <link rel="alternate" hreflang="en" href="{attr(en_url)}">')
+    if fr_exists:
+        fr_url = public_url(Path(fr_rel))
+        tags.append(f'  <link rel="alternate" hreflang="fr" href="{attr(fr_url)}">')
+    if ar_rel:
+        tags.append(f'  <link rel="alternate" hreflang="x-default" href="{attr(ar_url)}">')
+    return tags
 
 
 # Nayef-locked CABS title B: Arabic Twitter title is the H1, without the magazine suffix.
@@ -728,8 +746,8 @@ def seo_block(
     canonical = public_url(canonical_rel(rel))
     is_gallery = rel.as_posix() in gallery_rels()
     is_post = "posts" in rel.parts and not is_gallery
-    locale = "en_US" if lang.startswith("en") else "ar_AR"
-    site_name = "Sayd Magazine" if lang.startswith("en") else "مجلة صيد"
+    locale = "fr_FR" if lang.startswith("fr") else ("en_US" if lang.startswith("en") else "ar_AR")
+    site_name = "Sayd Magazine" if lang.startswith(("en", "fr")) else "مجلة صيد"
     image = hero_image(html_text, page, docs, rel)
     lines = [
         "  <!-- seo:start -->",
@@ -832,10 +850,11 @@ def add_article_sharing(text: str, rel: Path) -> str:
     canonical = public_url(canonical_rel(rel))
     encoded = quote(canonical, safe="")
     english = rel.parts[0] == "en"
-    label = "Share this story" if english else "شارك هذا الموضوع"
-    native_label = "Share" if english else "مشاركة"
-    copied = "Link copied" if english else "نُسخ الرابط"
-    prefix = '../../../' if english else '../../'
+    french = rel.parts[0] == "fr"
+    label = "Partager cet article" if french else ("Share this story" if english else "شارك هذا الموضوع")
+    native_label = "Partager" if french else ("Share" if english else "مشاركة")
+    copied = "Lien copié" if french else ("Link copied" if english else "نُسخ الرابط")
+    prefix = '../../../' if english or french else '../../'
     def icon(name: str) -> str:
         return f'<img src="{prefix}assets/icons/{name}.svg" alt="" width="17" height="17">'
     markup = f'''<!-- article-share:start -->
