@@ -1025,7 +1025,6 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
       <div><span class="badge">{escape(item["category"])}</span></div>
       <h1>{escape(item["title"])}</h1>
       <div class="article-meta"><span class="meta-item">{escape(item["date"])}</span><span class="meta-item">{escape(item["author"])}</span></div>
-      <p class="lang-twin"><a href="{ar_href}" hreflang="ar" lang="ar">اقرأ بالعربية</a></p>
     </header>
     {featured}
     <article class="article-content">

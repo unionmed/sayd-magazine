@@ -195,8 +195,8 @@ def test_cabs_and_suhail_twins_link_back() -> None:
     suhail = (DOCS / "en" / "posts" / SUHAIL_EN / "index.html").read_text(encoding="utf-8")
     assert f"../../../posts/{CABS_AR}/index.html" in cabs
     assert f"../../../posts/{SUHAIL_AR}/index.html" in suhail
-    assert "اقرأ بالعربية" in cabs
-    assert "اقرأ بالعربية" in suhail
+    assert "اقرأ بالعربية" not in cabs
+    assert "اقرأ بالعربية" not in suhail
     assert "mecshap-apu-cabs-baalbek-release.jpg" in cabs
     assert "kaps-makshab-apu-fries-hero.jpg" in cabs
     assert cabs.index("mecshap-apu-cabs-baalbek-release.jpg") < cabs.index(
