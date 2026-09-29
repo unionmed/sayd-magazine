@@ -54,7 +54,7 @@ featured: media/uploads/2026/09/hajal-group-dogs-walk-atlas.jpg
 <p>Egypt especially shows how hard that balance is. Its position makes it a vast geographic bridge for migrants—from the Mediterranean coast and Lake Bardawil to the Delta, Fayoum, and beyond.</p>
 <p>Here the line between the lawful hunter and random shooting is more than wording; it is the difference between a season that can return and a resource that can vanish.</p>
 <h2 style="font-weight:800;font-size:1.45em;line-height:1.65;margin:32px 0 12px;color:#304b36">Lebanon: the birds arrived… but the season did not open</h2>
-<figure style="margin:28px auto;max-width:850px"><img src="../../../media/uploads/2026/09/lebanon-hunter-shotgun-ridge.jpg" alt="Hunter with shotgun on a Lebanese ridge" decoding="async" style="display:block;width:100%;height:auto"><figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px">Lebanese hunter with shotgun on a ridge — documentary frame from Bird Guard fieldwork. Interior only, not cover.</figcaption></figure>
+<figure style="margin:28px auto;max-width:850px"><img src="../../../media/uploads/2026/09/lebanon-hunter-shotgun-ridge.jpg" alt="Hunter with shotgun on a Lebanese ridge" decoding="async" style="display:block;width:100%;height:auto"><figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px">A Lebanese hunter with a shotgun on a mountain ridge under the autumn sky.</figcaption></figure>
 <p>From Egypt to the eastern Mediterranean, we reach the most sensitive case.</p>
 <p>Lebanon sits on one of the region’s major bird-migration corridors. In autumn large numbers of migrants cross its skies.</p>
 <p>But as of 29 September 2026, no official decision has opened the 2026–2027 wild-hunting season.</p>
