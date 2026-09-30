@@ -1,5 +1,5 @@
 ---
-title: "Radar arabe de Sayd | Septembre 2026"
+title: "Radar arabe de Sayd | Septembre 2026 : 50 chasseurs interpellés et des milliers d’oiseaux sauvés"
 slug: radar-arabe-sayd-septembre-2026
 date: 2026-09-30 12:00:00
 author: Sayd
@@ -7,8 +7,7 @@ categories: [صيد]
 featured: media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg
 ---
 
-<figure style="margin:28px auto;max-width:850px"><img src="../../../media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg" alt="Un chasseur portant un fusil sur le toit d’un immeuble à Beyrouth." decoding="async" style="display:block;width:100%;height:auto"><figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px">Un chasseur portant un fusil sur un toit de Beyrouth pendant la saison de passage des oiseaux migrateurs.</figcaption></figure>
-<p><strong>50 chasseurs interpellés et des milliers d’oiseaux sauvés</strong></p>
+<figure style="margin:0 calc(-1 * clamp(.85rem,2vw,1.25rem)) 24px;max-width:none;width:calc(100% + 2 * clamp(.85rem,2vw,1.25rem))"><img src="../../../media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg" alt="Un chasseur portant un fusil sur le toit d’un immeuble à Beyrouth." decoding="async" style="display:block;width:100%;height:auto"><figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px">Un chasseur portant un fusil sur un toit de Beyrouth pendant la saison de passage des oiseaux migrateurs.</figcaption></figure>
 <p>Le mois de septembre 2026 a été marqué par de nombreuses opérations de lutte contre les infractions de chasse et de protection de la faune dans plusieurs pays arabes. Il a également vu l’ouverture de saisons de chasse réglementées ainsi que des actions de sauvetage, de remise en liberté et d’élevage conservatoire.</p>
 <p>Les chiffres rassemblés par le <strong>Radar arabe de Sayd</strong> indiquent que 50 chasseurs ont été interpellés dans les affaires recensées. En Arabie saoudite, 294 animaux sauvages piégés ont été saisis. Des milliers d’oiseaux ont par ailleurs été sauvés ou relâchés, tandis que des armes, des munitions et de vastes installations illégales de capture ont été saisies ou démantelées.</p>
 <p>Le Radar arabe de Sayd documente chaque mois les chiffres et annonces concernant la chasse terrestre et maritime, les infractions et saisies, le sauvetage, la remise en liberté et l’élevage de la faune, ainsi que les mesures réglementaires et de conservation dans le monde arabe.</p>

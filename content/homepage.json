@@ -1,10 +1,10 @@
 {
   "featured": [
     "رادار-صيد-العربي-سبتمبر-2026",
-    "الصمت-الذي-يتكلمه-الخيل",
     "خريف-الصيد-العربي-2026",
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة"
+    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
+    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
   ],
   "latest": [
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
@@ -111,8 +111,8 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
       "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
-      "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
       "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
       "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية"
     ],
@@ -133,8 +133,8 @@
       "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"
     ],
     "Hunting": [
+      "protecting-autumn-migratory-birds-lebanon-khatib-2017",
       "saudi-sixth-hunting-season-2026-2027-rules",
-      "sayd-returns-what-we-want-to-offer",
       "autumn-migration-how-world-protects-birds-regulates-hunting",
       "autumn-migration-field-action-protect-flyways-lebanon"
     ],
@@ -196,10 +196,10 @@
   "ia_slots": {
     "main": "رادار-صيد-العربي-سبتمبر-2026",
     "important": [
-      "الصمت-الذي-يتكلمه-الخيل",
       "خريف-الصيد-العربي-2026",
       "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة"
+      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
+      "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
     ],
     "latest": [
       "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
@@ -216,8 +216,8 @@
     {
       "door": "hunting",
       "slugs": [
+        "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
         "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
-        "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
         "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
         "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية"
       ]
@@ -312,7 +312,7 @@
     "الصمت-الذي-يتكلمه-الخيل": "equestrian",
     "رادار-صيد-العربي-سبتمبر-2026": "hunting"
   },
-  "demotion": "One lead, four side cards, eight Updates in date order. Desk-only gear, wildlife, poetry, TV and photos stay out of Updates. Only the two equestrian cards may repeat the side stack. TV order: APU, Maqnas, Arabian leopard. No article deletion.",
+  "demotion": "One lead, four side cards, eight Updates in date order. Desk-only gear, wildlife, poetry, TV and photos stay out of Updates. Only the two equestrian cards may repeat the side stack. The temporary editorial placement of Sayd returns is upper-only and must not repeat in the Hunting door. TV order: APU, Maqnas, Arabian leopard. No article deletion.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
