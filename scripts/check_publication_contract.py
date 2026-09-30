@@ -35,6 +35,61 @@ def day(text):
     month=next((v for k,v in sorted(months.items(),key=lambda kv:-len(kv[0])) if k in text.lower()),None)
     return (int(nums[-1]),month,int(nums[0])) if len(nums)>1 and month else None
 
+def changed_docs(base):
+    # NUL-separated paths keep Arabic filenames literal under Git's default quotePath.
+    changed=subprocess.check_output(['git','diff','--name-only','-z','--diff-filter=AM',base,'--','docs'],cwd=ROOT).decode().split('\0')
+    changed += subprocess.check_output(['git','ls-files','--others','--exclude-standard','-z','docs'],cwd=ROOT).decode().split('\0')
+    return sorted(set(p for p in changed if p))
+
+def archive_image_repair(file, base):
+    """Only existing pre-2026 pages with additive local body images are exempt from translation expansion."""
+    if not base or not file.startswith('docs/posts/'):
+        return False
+    old=subprocess.run(['git','show',f'{base}:{file}'],cwd=ROOT,capture_output=True)
+    if old.returncode:
+        return False
+    before=old.stdout.decode();after=(ROOT/file).read_text()
+    pattern=r'(<article class="article-content">)(.*?)(</article>)'
+    a=re.split(pattern,before,maxsplit=1,flags=re.S);b=re.split(pattern,after,maxsplit=1,flags=re.S)
+    if len(a)!=5 or len(b)!=5 or a[:2]!=b[:2] or a[3:]!=b[3:]:
+        return False
+    t=html.fromstring(before)
+    dates=t.xpath('//header['+css_class('article-header')+']//*['+css_class('meta-item')+' or '+css_class('meta')+']/text()')
+    date=day(' '.join(dates))
+    if not date or date[0]>=2026:
+        return False
+    from collections import Counter
+    from archive_access import _IMG_BLOCK_RE, _P_IMAGES_ONLY_RE, _norm_visible, _visible_chars
+    original=Counter(re.findall(r'<img\b[^>]*>',a[2]))
+    current=Counter(re.findall(r'<img\b[^>]*>',b[2]))
+    if original-current or not current-original:
+        return False
+    cursor=0
+    for image in re.finditer(r'<img\b[^>]*>',a[2]):
+        index=b[2].find(image.group(),cursor)
+        if index<0 or re.sub(r'\s+','',_visible_chars(a[2][:image.start()]))!=re.sub(r'\s+','',_visible_chars(b[2][:index])):
+            return False
+        cursor=index+len(image.group())
+    def without_images(body):
+        body=_P_IMAGES_ONLY_RE.sub('',body)
+        body=_IMG_BLOCK_RE.sub('',body)
+        return re.sub(r'\s+','',body)
+    if _norm_visible(a[2])!=_norm_visible(b[2]) or without_images(a[2])!=without_images(b[2]):
+        return False
+    page=ROOT/file
+    for tag in (current-original).elements():
+        im=html.fromstring(tag)
+        src=im.get('src','')
+        if not im.get('alt','').strip() or urlsplit(src).scheme or src.startswith('//'):
+            return False
+        try:
+            target=resolved(page,src)
+        except ValueError:
+            return False
+        if not target.startswith('media/uploads/') or not (DOCS/target).is_file() or (DOCS/target).stat().st_size<=32:
+            return False
+    return True
+
 def check(base=None):
     c=config();validate_config(c)
     contract=json.loads(CONTRACT.read_text());pairs=json.loads((ROOT/'content/en/pairs.json').read_text())['pairs']
@@ -83,16 +138,16 @@ def check(base=None):
         sig=[(a.get('class',''),a.get('href')) for a in chrome.xpath('.//a[@href]') if 'lang-switch' not in ' '.join(q.get('class','') for q in a.iterancestors())]
         assert sig==[tuple(x) for x in contract['header_links'][lang]],f'{lang}: navigation/social changed'
     if base:
-        changed=subprocess.check_output(['git','diff','--name-only','--diff-filter=AM',base,'--','docs'],cwd=ROOT,text=True).splitlines()
-        changed += subprocess.check_output(['git','ls-files','--others','--exclude-standard','docs'],cwd=ROOT,text=True).splitlines()
-        check_new_stories(changed,pairs)
+        check_new_stories(changed_docs(base),pairs,base)
     print('PASS: three mirrored homepages, 1+4+8+4 cards, seven doors, shared images, dates, protected design and social links')
 
-def check_new_stories(paths,pairs):
+def check_new_stories(paths,pairs,base=None):
     checked=set()
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if archive_image_repair(file,base):
+            continue
         lang=m[1] or 'ar';ar=canonical(m[2],lang,pairs)
         # Existing historic archive is preserved; every newly added or edited story is checked.
         assert ar in pairs,f'Article has no three-language mapping: {file}'

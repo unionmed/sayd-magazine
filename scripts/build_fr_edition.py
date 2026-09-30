@@ -776,6 +776,10 @@ def render_article(slug, data, translations):
                 span.set('style','display:block;font-size:.72em;line-height:1.4;color:#68705f')
         image = figure.find('.//img')
         if image is not None: image.set('alt', re.sub(r'<[^>]+>','',fr).split('Source :')[0][:180])
+    for image in body.xpath('.//img'):
+        name = image.get('src', '').rsplit('/', 1)[-1]
+        if name in data.get('image_alt', {}):
+            image.set('alt', data['image_alt'][name])
     tree.xpath('//h1')[0].text = data['title']
     chrome(tree,slug,translations)
     prune_and_translate_cards(tree,translations)

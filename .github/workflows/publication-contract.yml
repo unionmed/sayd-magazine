@@ -29,3 +29,5 @@ jobs:
             python scripts/check_publication_contract.py
           fi
       - run: python scripts/test_homepage_doors.py
+      - run: python scripts/test_archive_media_contract.py
+      - run: python scripts/test_archive_access.py
