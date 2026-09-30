@@ -75,8 +75,60 @@ def test_recovered_archive_image_is_local() -> None:
     assert path.read_bytes().startswith(b"\xff\xd8\xff")
 
 
+def test_restore_puts_local_2020_image_back() -> None:
+    published = "<p>قبل</p>\n<p>بعد النص</p>"
+    fresh = (
+        "<p>قبل</p>\n"
+        '<p><a href="../../media/uploads/2020/06/لوحة.jpg">'
+        '<img src="../../media/uploads/2020/06/لوحة.jpg" alt=""></a></p>\n'
+        "<p>بعد النص</p>"
+    )
+    out, names = archive.restore_stripped_upload_images(published, fresh)
+    assert names == ["لوحة.jpg"]
+    assert 'src="../../media/uploads/2020/06/لوحة.jpg"' in out
+    assert out.index("لوحة.jpg") < out.index("بعد النص")
+    assert "wp-content" not in out
+
+
+def test_restore_leaves_missing_and_older_images_alone() -> None:
+    published = "<p>نص ثابت</p>"
+    fresh = (
+        '<img src="../../media/uploads/2015/02/old.jpg">'
+        "<p>نص ثابت</p>"
+        '<img src="https://sayd-magazine.com/wp-content/uploads/2024/01/gone.jpg">'
+    )
+    out, names = archive.restore_stripped_upload_images(published, fresh)
+    assert names == []
+    assert out == published
+
+
+def test_restore_keeps_trailing_images_in_source_order() -> None:
+    published = "<p>المتن</p>"
+    fresh = (
+        "<p>المتن</p>"
+        '<a href="../../media/uploads/2020/06/a.jpg"><img src="../../media/uploads/2020/06/a.jpg"></a>'
+        '<a href="../../media/uploads/2020/06/b.jpg"><img src="../../media/uploads/2020/06/b.jpg"></a>'
+    )
+    out, names = archive.restore_stripped_upload_images(published, fresh)
+    assert names == ["a.jpg", "b.jpg"]
+    assert out.index("a.jpg") < out.index("b.jpg")
+    assert out.index("المتن") < out.index("a.jpg")
+
+
+def test_restore_skips_file_already_on_the_page() -> None:
+    published = '<p><img src="../../media/uploads/2022/10/لين-2.jpg"></p><p>متن</p>'
+    fresh = published
+    out, names = archive.restore_stripped_upload_images(published, fresh)
+    assert names == []
+    assert out == published
+
+
 if __name__ == "__main__":
     test_legacy_permalink_rewrite_skips_upload_paths()
+    test_restore_puts_local_2020_image_back()
+    test_restore_keeps_trailing_images_in_source_order()
+    test_restore_leaves_missing_and_older_images_alone()
+    test_restore_skips_file_already_on_the_page()
     test_numeric_stub_is_not_rewritten_or_sitemapped()
     test_recovered_archive_image_is_local()
     print("ok")

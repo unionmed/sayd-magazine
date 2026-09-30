@@ -757,7 +757,8 @@ def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
         body_html = body_html + "\n" + "\n".join(extras)
 
     parts = [p for p in (lead_html, extra, body_html) if p]
-    return "\n".join(parts)
+    from article_media_repairs import repair_body
+    return repair_body(slug, "\n".join(parts), "en", media_prefix)
 
 
 def en_post_href(depth: int, slug: str) -> str:

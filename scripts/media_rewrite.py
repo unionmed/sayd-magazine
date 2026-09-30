@@ -29,10 +29,14 @@ _WAYBACK = r"(?:https?://web\.archive\.org/web/[^/\s\"']+/)"
 UPLOAD_URL_RE = re.compile(
     rf"""(?P<url>
         (?:{_WAYBACK})?
-        https?://
-        (?:{_JETPACK})?
-        {_HOST}
-        /wp-content/uploads/
+        (?:
+            https?://
+            (?:{_JETPACK})?
+            {_HOST}
+            |
+            (?<![\w./])
+        )
+        /?wp-content/uploads/
         (?P<rel>[^\s"'\\<>?#]+)
     )""",
     re.IGNORECASE | re.VERBOSE,
@@ -91,7 +95,11 @@ def _strip_query(url: str) -> str:
 
 
 def uploads_rel(url: str) -> str | None:
-    """Return 'uploads/YYYY/MM/filename' or None if not a WP/Wayback upload URL."""
+    """Return 'uploads/YYYY/MM/filename' or None if not a WP/Wayback upload URL.
+
+    Accepts absolute hosts (sayd-magazine.com, sayd.alfalivehost.com, Jetpack,
+    Wayback) and site-relative ``/wp-content/uploads/...`` paths.
+    """
     if not url:
         return None
     cleaned = _strip_query(url)
