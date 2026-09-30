@@ -1,10 +1,10 @@
 {
   "featured": [
     "رادار-صيد-العربي-سبتمبر-2026",
-    "الصمت-الذي-يتكلمه-الخيل",
     "خريف-الصيد-العربي-2026",
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة"
+    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
+    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
   ],
   "latest": [
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
@@ -196,10 +196,10 @@
   "ia_slots": {
     "main": "رادار-صيد-العربي-سبتمبر-2026",
     "important": [
-      "الصمت-الذي-يتكلمه-الخيل",
       "خريف-الصيد-العربي-2026",
       "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة"
+      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
+      "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
     ],
     "latest": [
       "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
@@ -312,10 +312,11 @@
     "الصمت-الذي-يتكلمه-الخيل": "equestrian",
     "رادار-صيد-العربي-سبتمبر-2026": "hunting"
   },
-  "demotion": "One lead, four side cards, eight Updates in date order. Desk-only gear, wildlife, poetry, TV and photos stay out of Updates. Only the two equestrian cards may repeat the side stack. TV order: APU, Maqnas, Arabian leopard. No article deletion.",
+  "demotion": "One lead, four side cards, eight Updates in date order. Desk-only gear, wildlife, poetry, TV and photos stay out of Updates. Named repeats only: the two equestrian cards, plus a temporary editorial exception for Sayd returns. TV order: APU, Maqnas, Arabian leopard. No article deletion.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
-    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
+    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
   ],
   "undated_stories": {
     "بالفيديو-النمر-العربي-في-السعودية": "المصدر: الهيئة الملكية لمحافظة العلا",

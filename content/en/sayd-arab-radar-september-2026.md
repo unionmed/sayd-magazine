@@ -1,5 +1,5 @@
 ---
-title: "Sayd Arab Radar | September 2026"
+title: "Sayd Arab Radar | September 2026: 50 hunters detained and thousands of birds rescued"
 slug: sayd-arab-radar-september-2026
 date: 2026-09-30 12:00:00
 author: Sayd
@@ -7,8 +7,7 @@ categories: [صيد]
 featured: media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg
 ---
 
-<figure style="margin:28px auto;max-width:850px"><img src="../../../media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg" alt="A hunter carrying a shotgun on a rooftop in Beirut." decoding="async" style="display:block;width:100%;height:auto"><figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px">A hunter carrying a shotgun on a Beirut rooftop during the migratory-bird passage season.</figcaption></figure>
-<p><strong>50 hunters detained and thousands of birds rescued</strong></p>
+<figure style="margin:0 calc(-1 * clamp(.85rem,2vw,1.25rem)) 24px;max-width:none;width:calc(100% + 2 * clamp(.85rem,2vw,1.25rem))"><img src="../../../media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg" alt="A hunter carrying a shotgun on a rooftop in Beirut." decoding="async" style="display:block;width:100%;height:auto"><figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px">A hunter carrying a shotgun on a Beirut rooftop during the migratory-bird passage season.</figcaption></figure>
 <p>September 2026 saw a broad series of hunting-enforcement operations and wildlife-protection initiatives across several Arab countries, alongside the opening of regulated hunting seasons and programmes to rescue, release and breed wild species.</p>
 <p>Figures compiled by the monthly <strong>Sayd Arab Radar</strong> show that 50 hunters were detained or apprehended in the cases covered by the report. Saudi authorities reported the seizure of 294 trapped wild animals, while thousands of birds were rescued or released. Firearms and ammunition were also confiscated, and extensive illegal bird-catching nets were removed.</p>
 <p>Sayd Arab Radar is a monthly record of announced figures and developments involving terrestrial and marine hunting, violations and seizures, wildlife rescue, release and breeding, and regulatory or conservation measures across the Arab world.</p>

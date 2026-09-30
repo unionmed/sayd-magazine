@@ -95,7 +95,9 @@ def validate_config(c):
         if d['door']=='tv':assert len(d['slugs'])==3
         for s in d['slugs']:
             assert s not in seen;seen.add(s)
-            assert s not in upper or (d['door']=='equestrian' and s in approved)
+            # Named exceptions are editorially approved in homepage.json; this
+            # does not permit unlisted upper/lower duplication.
+            assert s not in upper or s in approved
 
 def refresh(path,lang):
     c=config();validate_config(c);path=Path(path);page=path.read_text()

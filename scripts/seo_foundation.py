@@ -561,15 +561,15 @@ EN_SLUG_BY_FR = {fr: en for en, fr in FR_SLUG_BY_EN.items()}
 # Page metadata. og:title / og:description stay distinct from <title> and meta description.
 OG_OVERRIDES = {
     "posts/رادار-صيد-العربي-سبتمبر-2026/index.html": {
-        "title": "رادار صيد العربي | سبتمبر 2026",
+        "title": "رادار صيد العربي | سبتمبر 2026: توقيف 50 صيادًا وإنقاذ آلاف الطيور",
         "description": "توقيف 50 صيادًا وإنقاذ آلاف الطيور في حصيلة عربية شهرية للمخالفات والمضبوطات والإنقاذ وتنظيم الصيد.",
     },
     "en/posts/sayd-arab-radar-september-2026/index.html": {
-        "title": "Sayd Arab Radar | September 2026",
+        "title": "Sayd Arab Radar | September 2026: 50 hunters detained and thousands of birds rescued",
         "description": "Fifty hunters detained and thousands of birds rescued in a monthly Arab record of enforcement, rescue and hunting regulation.",
     },
     "fr/posts/radar-arabe-sayd-septembre-2026/index.html": {
-        "title": "Radar arabe de Sayd | Septembre 2026",
+        "title": "Radar arabe de Sayd | Septembre 2026 : 50 chasseurs interpellés et des milliers d’oiseaux sauvés",
         "description": "Cinquante chasseurs interpellés et des milliers d’oiseaux sauvés dans un relevé mensuel arabe des infractions, sauvetages et mesures de chasse.",
     },
     "posts/خريف-الصيد-العربي-2026/index.html": {
