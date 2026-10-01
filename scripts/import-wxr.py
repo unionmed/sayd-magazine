@@ -2103,8 +2103,8 @@ def build_site(data: dict, out: Path) -> None:
           <span class="play" aria-hidden="true"></span>
         </a>
         <div class="body">
-          <div class="meta">{esc(lead["date_display"])} · صيد TV</div>
           <h3><a href="{post_href(lead["slug"], 0)}">{esc(lead["title"])}</a></h3>
+          <div class="meta">{esc(lead["date_display"])} · صيد TV</div>
           <p class="excerpt">{esc(strip_html(lead.get("excerpt") or "", 180))}</p>
         </div>
       </article>
@@ -2497,8 +2497,8 @@ def build_site(data: dict, out: Path) -> None:
 <article class="post-row">
   {thumb_a}
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}</div>
     <h2><a href="{post_href(p["slug"], 2)}">{esc(p["title"])}</a></h2>
+    <div class="meta">{esc(p["date_display"])}</div>
     <p class="excerpt">{esc(p["excerpt"])}</p>
   </div>
 </article>"""
@@ -2568,8 +2568,8 @@ def build_site(data: dict, out: Path) -> None:
 <article class="post-row">
   {thumb_a}
   <div class="body">
-    <div class="meta">{esc(p["date_display"])}{" · " + esc(p["categories"][0]["name"]) if p["categories"] else ""}</div>
     <h2><a href="{post_href(p["slug"], 1)}">{esc(p["title"])}</a></h2>
+    <div class="meta">{esc(p["date_display"])}{" · " + esc(p["categories"][0]["name"]) if p["categories"] else ""}</div>
     <p class="excerpt">{esc(p["excerpt"])}</p>
   </div>
 </article>"""
