@@ -90,6 +90,26 @@ def test_restore_puts_local_2020_image_back() -> None:
     assert "wp-content" not in out
 
 
+def test_restore_2019_only_when_year_is_bounded() -> None:
+    published = "<p>نص 2019</p>"
+    fresh = (
+        '<a href="../../media/uploads/2019/05/طير.jpg">'
+        '<img src="../../media/uploads/2019/05/طير.jpg" alt="طير"></a>'
+        "<p>نص 2019</p>"
+        '<img src="../../media/uploads/2020/06/لاحق.jpg">'
+    )
+    default_out, default_names = archive.restore_stripped_upload_images(published, fresh)
+    assert default_names == ["لاحق.jpg"]
+    assert "طير.jpg" not in default_out
+    out, names = archive.restore_stripped_upload_images(
+        published, fresh, min_year=2019, max_year=2019
+    )
+    assert names == ["طير.jpg"]
+    assert "uploads/2019/05/طير.jpg" in out
+    assert "لاحق.jpg" not in out
+    assert out.index("طير.jpg") < out.index("نص 2019")
+
+
 def test_restore_leaves_missing_and_older_images_alone() -> None:
     published = "<p>نص ثابت</p>"
     fresh = (
@@ -127,6 +147,7 @@ if __name__ == "__main__":
     test_legacy_permalink_rewrite_skips_upload_paths()
     test_restore_puts_local_2020_image_back()
     test_restore_keeps_trailing_images_in_source_order()
+    test_restore_2019_only_when_year_is_bounded()
     test_restore_leaves_missing_and_older_images_alone()
     test_restore_skips_file_already_on_the_page()
     test_numeric_stub_is_not_rewritten_or_sitemapped()
