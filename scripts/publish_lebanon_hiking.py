@@ -13,7 +13,7 @@ AR_TITLE = 'بين قمم الأرز وظلال الوديان: دليل اله�
 EN_TITLE = 'Among Cedar Peaks and Valley Shadows: Hiking and Camping in Lebanon'
 AR_DESC = 'من درب الجبل اللبناني إلى قاديشا وأرز الشوف وبالوع بلعا: مسارات وصور وإرشادات عملية للمشي والتخييم المسؤول في لبنان.'
 EN_DESC = 'From the Lebanon Mountain Trail to Qadisha, the cedars and Baatara: scenic hikes and practical guidance for responsible camping in Lebanon.'
-HERO = 'https://s1.wklcdn.com/image_253/7607894/173365487/108207649Master.jpg'
+HERO = 'media/uploads/2026/09/lebanon-hiking-camping-wikiloc.jpg'
 HIKING = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Trekking_in_the_Lebanon_Mountains.jpg/1280px-Trekking_in_the_Lebanon_Mountains.jpg'
 CANYON = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/A_mystical_canyon_of_Qadisha_%28Holy%29_Valley_in_northern_Lebanon.jpg/1280px-A_mystical_canyon_of_Qadisha_%28Holy%29_Valley_in_northern_Lebanon.jpg'
 CEDAR = 'https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Lebanon_cedar_forest.jpg/1280px-Lebanon_cedar_forest.jpg'
@@ -82,6 +82,8 @@ def article(lang, slug, twin, title, desc, body):
     template = re.sub(r'(<meta name="description" content=")[^"]*', lambda m:m[1] + html.escape(desc, quote=True), template, count=1)
     if lang == 'en':
         body = body.replace('— المصدر:', '— Source:')
+    media_prefix = "../../../" if lang == "en" else "../../"
+    body = body.replace(f'src="{HERO}"', f'src="{media_prefix}{HERO}"')
     template = re.sub(r'(<article class="article-content">).*?(</article>)', lambda m:m[1]+'\n'+body+'\n    '+m[2], template, flags=re.S, count=1)
     template = re.sub(r'<section class="related-block">.*?</section>', '', template, count=1, flags=re.S)
     out = DOCS / prefix / 'posts' / slug / 'index.html'
@@ -91,7 +93,7 @@ def article(lang, slug, twin, title, desc, body):
 def row(lang, slug, title, date, excerpt='', archive=False):
     depth = '../' if archive and lang == 'ar' else ('../../' if archive else ('../../../' if lang == 'en' else '../../'))
     link = '../posts/' if archive else '../../posts/'
-    image = f'<img src="{HERO}" alt="{html.escape(title, quote=True)}" loading="lazy">'
+    image = f'<img src="{depth}{HERO}" alt="{html.escape(title, quote=True)}" loading="lazy">'
     if archive and lang == 'en':
         return f'<article class="card overlay"><a class="thumb" href="{link}{slug}/index.html">{image}</a><div class="body"><div class="meta">{date}</div><h3><a href="{link}{slug}/index.html">{title}</a></h3></div></article>\n'
     extra = f'<p class="excerpt">{excerpt}</p>' if archive else ''
