@@ -541,14 +541,22 @@ def _first_visible_text(visible: str, index: int) -> int:
     return index
 
 
-def _local_image_units(html: str, min_year: int = REWIRE_MIN_YEAR) -> list[tuple[int, int, str]]:
-    """Image blocks (or image-only paragraphs) whose src is a local 2020+ upload."""
+def _year_in_scope(year: int | None, min_year: int, max_year: int | None) -> bool:
+    return year is not None and year >= min_year and (max_year is None or year <= max_year)
+
+
+def _local_image_units(
+    html: str,
+    min_year: int = REWIRE_MIN_YEAR,
+    max_year: int | None = None,
+) -> list[tuple[int, int, str]]:
+    """Image blocks (or image-only paragraphs) whose src is a local in-scope upload."""
     spans: list[tuple[int, int, str]] = []
     occupied: list[tuple[int, int]] = []
     for match in _P_IMAGES_ONLY_RE.finditer(html):
         blocks = _IMG_BLOCK_RE.findall(match.group(0))
         years = [_upload_year(_src_of(block)) for block in blocks]
-        if years and all(year is not None and year >= min_year for year in years):
+        if years and all(_year_in_scope(year, min_year, max_year) for year in years):
             spans.append((match.start(), match.end(), match.group(0)))
             occupied.append((match.start(), match.end()))
 
@@ -559,7 +567,7 @@ def _local_image_units(html: str, min_year: int = REWIRE_MIN_YEAR) -> list[tuple
         if covered(match.start(), match.end()):
             continue
         year = _upload_year(_src_of(match.group(0)))
-        if year is not None and year >= min_year:
+        if _year_in_scope(year, min_year, max_year):
             spans.append((match.start(), match.end(), match.group(0)))
     spans.sort()
     return spans
@@ -588,8 +596,9 @@ def restore_stripped_upload_images(
     fresh: str,
     *,
     min_year: int = REWIRE_MIN_YEAR,
+    max_year: int | None = None,
 ) -> tuple[str, list[str]]:
-    """Insert local 2020+ ``<img>`` tags that ``fresh`` has and ``published`` lost.
+    """Insert local in-scope ``<img>`` tags that ``fresh`` has and ``published`` lost.
 
     ``fresh`` is ``rewrite_html`` of the original article body (local src only
     when the file exists). Existing images — including pre-2020 Wayback
@@ -611,7 +620,7 @@ def restore_stripped_upload_images(
         cursor += 1
 
     events: list[tuple[int, str, bool, list[str]]] = []
-    for _start, end, raw in _local_image_units(fresh, min_year):
+    for _start, end, raw in _local_image_units(fresh, min_year, max_year):
         names = [Path(_src_of(block)).name for block in _IMG_BLOCK_RE.findall(raw)]
         names = [name for name in names if name]
         if names and all(_file_on_page(published, name) for name in names):
@@ -694,8 +703,14 @@ def _markdown_body(path: Path) -> tuple[str, str]:
     return slug, text[end + 4 :].lstrip("\n")
 
 
-def _rewrite_live_upload_urls(html: str, depth: int, media: Path, min_year: int) -> tuple[str, int]:
-    """Point 2020+ upload URLs at local files. Leave a URL alone when the file is missing."""
+def _rewrite_live_upload_urls(
+    html: str,
+    depth: int,
+    media: Path,
+    min_year: int,
+    max_year: int | None = None,
+) -> tuple[str, int]:
+    """Point in-scope upload URLs at local files. Leave a URL alone when the file is missing."""
     from media_rewrite import UPLOAD_URL_RE, public_src, year_of
 
     rewritten = 0
@@ -704,7 +719,7 @@ def _rewrite_live_upload_urls(html: str, depth: int, media: Path, min_year: int)
         nonlocal rewritten
         url = match.group("url")
         year = year_of(url)
-        if year is None or year < min_year:
+        if not _year_in_scope(year, min_year, max_year):
             return match.group(0)
         local = public_src(url, depth, media)
         if not local:
@@ -720,13 +735,16 @@ def rewire_recovered_article_images(
     content_posts: Path | None = None,
     *,
     min_year: int = REWIRE_MIN_YEAR,
+    max_year: int | None = None,
+    post_year: int | None = None,
 ) -> dict[str, int]:
-    """Restore 2020+ uploads in pre-2026 archive articles from files already on disk.
+    """Restore local uploads in pre-2026 archive articles from files already on disk.
 
     Published HTML is the source of truth. This only rewrites ``<article>``
     bodies under ``docs/posts/``. Nav, homepage, categories, and media
     binaries are left untouched. An image is restored only when
-    ``docs/media/uploads/...`` exists.
+    ``docs/media/uploads/...`` exists. ``post_year`` limits which articles
+    are opened; ``min_year`` / ``max_year`` limit which upload paths move.
     """
     from media_rewrite import local_media_file, rewrite_html, uploads_rel, year_of
 
@@ -742,6 +760,8 @@ def rewire_recovered_article_images(
         date = re.search(r"^date:\s*[\"\']?(\d{4})", md.read_text(encoding="utf-8"), re.M)
         if not date or int(date.group(1)) >= 2026:
             continue
+        if post_year is not None and int(date.group(1)) != post_year:
+            continue
         page = docs / "posts" / slug / "index.html"
         if not page.is_file():
             page = docs / "posts" / md.stem / "index.html"
@@ -752,11 +772,13 @@ def rewire_recovered_article_images(
         if not match:
             continue
         inner = match.group(2)
-        inner, rewritten = _rewrite_live_upload_urls(inner, 2, media, min_year)
+        inner, rewritten = _rewrite_live_upload_urls(inner, 2, media, min_year, max_year)
         fresh = rewrite_html(body, 2, media)
-        updated, restored = restore_stripped_upload_images(inner, fresh, min_year=min_year)
+        updated, restored = restore_stripped_upload_images(
+            inner, fresh, min_year=min_year, max_year=max_year
+        )
         if not restored and any(
-            (_upload_year(_src_of(block)) or 0) >= min_year
+            _year_in_scope(_upload_year(_src_of(block)), min_year, max_year)
             and not _file_on_page(inner, Path(_src_of(block)).name)
             for block in _IMG_BLOCK_RE.findall(fresh)
         ):
@@ -767,7 +789,7 @@ def rewire_recovered_article_images(
             if not rel:
                 continue
             year = year_of(src)
-            if year is None or year < min_year:
+            if not _year_in_scope(year, min_year, max_year):
                 continue
             if local_media_file(media, src):
                 continue
@@ -821,8 +843,9 @@ def rewire_recovered_article_images(
         "skipped_no_local_file": skipped_missing,
         "skipped_align": skipped_align,
     }
+    label = f"{min_year}" if max_year == min_year else f"{min_year}+"
     print(
-        "rewire 2020+: "
+        f"rewire {label}: "
         f"articles={articles} restored={imgs_restored} rewritten={imgs_rewritten} "
         f"skipped_missing={skipped_missing} skipped_align={skipped_align}"
     )
@@ -830,6 +853,9 @@ def rewire_recovered_article_images(
 
 
 def main() -> None:
+    if "--rewire-2019" in sys.argv:
+        rewire_recovered_article_images(DOCS, min_year=2019, max_year=2019, post_year=2019)
+        return
     if "--rewire-2020" in sys.argv:
         rewire_recovered_article_images(DOCS)
         return
