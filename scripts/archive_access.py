@@ -844,6 +844,8 @@ def rewire_recovered_article_images(
         "skipped_align": skipped_align,
     }
     label = f"{min_year}" if max_year == min_year else f"{min_year}+"
+    if post_year is not None:
+        label = f"{label} posts={post_year}"
     print(
         f"rewire {label}: "
         f"articles={articles} restored={imgs_restored} rewritten={imgs_rewritten} "
@@ -853,6 +855,12 @@ def rewire_recovered_article_images(
 
 
 def main() -> None:
+    if "--rewire-2018" in sys.argv:
+        rewire_recovered_article_images(DOCS, min_year=2018, max_year=2018, post_year=2018)
+        # 2019 left uploads/2018/02/فؤاد-عيتاني-1.jpg unwired. The file is a 2018
+        # original; this only moves 2018 upload paths inside 2019 article bodies.
+        rewire_recovered_article_images(DOCS, min_year=2018, max_year=2018, post_year=2019)
+        return
     if "--rewire-2019" in sys.argv:
         rewire_recovered_article_images(DOCS, min_year=2019, max_year=2019, post_year=2019)
         return
