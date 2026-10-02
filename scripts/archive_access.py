@@ -753,6 +753,9 @@ def rewire_recovered_article_images(
     media = docs / "media"
     articles = imgs_restored = imgs_rewritten = skipped_missing = skipped_align = 0
     skipped_names: set[str] = set()
+    # Published bodies already point ``?p=id`` at the static article. Markdown
+    # still has the old URL, which would otherwise break visible-text alignment.
+    legacy_hrefs = id_hrefs(load_id_slug_map(docs))
 
     for md in sorted(content_posts.glob("*.md")):
         slug, body = _markdown_body(md)
@@ -773,7 +776,7 @@ def rewire_recovered_article_images(
             continue
         inner = match.group(2)
         inner, rewritten = _rewrite_live_upload_urls(inner, 2, media, min_year, max_year)
-        fresh = rewrite_html(body, 2, media)
+        fresh = rewrite_legacy_permalinks(rewrite_html(body, 2, media), legacy_hrefs)
         updated, restored = restore_stripped_upload_images(
             inner, fresh, min_year=min_year, max_year=max_year
         )
@@ -855,6 +858,14 @@ def rewire_recovered_article_images(
 
 
 def main() -> None:
+    if "--rewire-2017" in sys.argv:
+        rewire_recovered_article_images(DOCS, min_year=2017, max_year=2017, post_year=2017)
+        # Later articles may still name a 2017 upload. Only those paths move.
+        for year in range(2018, 2026):
+            rewire_recovered_article_images(
+                DOCS, min_year=2017, max_year=2017, post_year=year
+            )
+        return
     if "--rewire-2018" in sys.argv:
         rewire_recovered_article_images(DOCS, min_year=2018, max_year=2018, post_year=2018)
         # 2019 left uploads/2018/02/فؤاد-عيتاني-1.jpg unwired. The file is a 2018
