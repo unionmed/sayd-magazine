@@ -858,6 +858,15 @@ def rewire_recovered_article_images(
 
 
 def main() -> None:
+    if "--rewire-2015" in sys.argv:
+        rewire_recovered_article_images(DOCS, min_year=2015, max_year=2015, post_year=2015)
+        # 2013 and 2014 stories name uploads/2015/ files. Later articles may
+        # still name a 2015 upload. Only those paths move.
+        for year in (2013, 2014, *range(2016, 2026)):
+            rewire_recovered_article_images(
+                DOCS, min_year=2015, max_year=2015, post_year=year
+            )
+        return
     if "--rewire-2016" in sys.argv:
         rewire_recovered_article_images(DOCS, min_year=2016, max_year=2016, post_year=2016)
         # Later articles may still name a 2016 upload. Only those paths move.
