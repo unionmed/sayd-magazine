@@ -250,6 +250,12 @@ META: dict[str, dict] = {
         "image": "media/uploads/2026/09/sayd-returns-adonis-editor.jpg",
         "image_alt": "Sayd returns in a new look and a wider vision",
     },
+    "birds-three-countries-nayef-krayem": {
+        "date": "2 October 2026", "date_sort": "2026-10-02",
+        "category": "Photos", "author": "Nayef Krayem",
+        "image": "media/uploads/2026/10/01-2026-10-02_Acridotheres_obs-405158452_photo-744152176.jpg",
+        "image_alt": "Two mynas on grass near Beirut International Airport road — 2 October 2026.",
+    },
     "great-white-pelican-matn-highway-nayef-krayem": {
         "date": "9 September 2026",
         "date_sort": "2026-09-09",
@@ -464,6 +470,14 @@ def figure(src: str, alt: str, caption: str, media_prefix: str) -> str:
 
 
 def article_body_html(slug: str, draft: dict, media_prefix: str) -> str:
+    if slug == "birds-three-countries-nayef-krayem":
+        gallery = json.loads((ROOT / "content/galleries/nayef-birds-20261002.json").read_text())
+        photos = []
+        for im in gallery["images"]:
+            caption = im["captions"]["en"]
+            photos.append(figure("media/uploads/2026/10/" + im["package_file"], caption,
+                                 escape(caption) + " <em>" + escape(im["scientific_name"]) + "</em>", media_prefix))
+        return photos[0] + "<p>" + escape(gallery["titles"]["en"][1]) + "</p>" + "".join(photos[1:])
     lead_html = md_blocks(draft["lead"]) if draft["lead"] else ""
     body_html = md_blocks(draft["body"]) if draft["body"] else ""
     extra = ""
@@ -990,6 +1004,7 @@ def write_article(slug: str, articles: dict[str, dict], pairs_inv: dict[str, str
     featured = ""
     image = item.get("image")
     if image and slug not in {
+        "birds-three-countries-nayef-krayem",
         "protecting-autumn-migratory-birds-lebanon-khatib-2017",
         "egypt-new-hunting-rules-burullus-autumn-migration",
         "suhail-2026-in-photos-falcons-visitors",

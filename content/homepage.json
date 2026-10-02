@@ -60,7 +60,9 @@
     "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
     "suhail-2026-in-photos-falcons-visitors",
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
-    "great-white-pelican-matn-highway-nayef-krayem"
+    "great-white-pelican-matn-highway-nayef-krayem",
+    "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
+    "birds-three-countries-nayef-krayem"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -83,7 +85,9 @@
     "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
     "lebanon-hiking-and-camping-among-cedars-and-valleys",
     "بالفيديو-النمر-العربي-في-السعودية",
-    "video-arabian-leopard-in-saudi-arabia"
+    "video-arabian-leopard-in-saudi-arabia",
+    "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
+    "birds-three-countries-nayef-krayem"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -92,7 +96,9 @@
     "السعودية-تشدد-على-ضوابط-الصيد-5-آلاف-ري",
     "السعودية-5-آلاف-ريال-غرامة-الصيد-في-الأ",
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-    "turtle-doves-cross-hunting-borders-european-flyways"
+    "turtle-doves-cross-hunting-borders-european-flyways",
+    "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
+    "birds-three-countries-nayef-krayem"
   ],
   "omit_home_desks": [
     "أخبار",
@@ -129,8 +135,8 @@
       "بالفيديو-النمر-العربي-في-السعودية"
     ],
     "صور": [
-      "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
-      "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"
+      "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
+      "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
       "protecting-autumn-migratory-birds-lebanon-khatib-2017",
@@ -151,8 +157,8 @@
       "video-arabian-leopard-in-saudi-arabia"
     ],
     "Photos": [
-      "suhail-2026-in-photos-falcons-visitors",
-      "great-white-pelican-matn-highway-nayef-krayem"
+      "birds-three-countries-nayef-krayem",
+      "suhail-2026-in-photos-falcons-visitors"
     ],
     "فروسية": [
       "الصمت-الذي-يتكلمه-الخيل",
@@ -185,8 +191,8 @@
   ],
   "home_section_tail": [],
   "gallery": [
-    "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
-    "great-white-pelican-matn-highway-nayef-krayem",
+    "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
+    "birds-three-countries-nayef-krayem",
     "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
     "suhail-2026-in-photos-falcons-visitors",
     "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
@@ -259,8 +265,8 @@
     {
       "door": "photos",
       "slugs": [
-        "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
-        "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك"
+        "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
+        "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
       ]
     }
   ],
@@ -310,7 +316,8 @@
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى": "hunting",
     "خريف-الصيد-العربي-2026": "hunting",
     "الصمت-الذي-يتكلمه-الخيل": "equestrian",
-    "رادار-صيد-العربي-سبتمبر-2026": "hunting"
+    "رادار-صيد-العربي-سبتمبر-2026": "hunting",
+    "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم": "photos"
   },
   "demotion": "One lead, four side cards, eight Updates in date order. Desk-only gear, wildlife, poetry, TV and photos stay out of Updates. Only the two equestrian cards may repeat the side stack. The temporary editorial placement of Sayd returns is upper-only and must not repeat in the Hunting door. TV order: APU, Maqnas, Arabian leopard. No article deletion.",
   "approved_home_repeats": [

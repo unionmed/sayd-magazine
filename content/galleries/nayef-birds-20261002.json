@@ -1,0 +1,355 @@
+{
+  "status": "DRAFT — NOT PUBLISHED",
+  "titles": {
+    "ar": [
+      "طيور من ثلاث بلاد… بعدسة نايف كريم، مدير عام «موقع صيد»",
+      "من لبنان إلى مصر وفرنسا، تسع صور تلتقط حضور الطيور في مشاهد الحياة اليومية، على العشب والأغصان وضفاف الماء."
+    ],
+    "en": [
+      "Birds across three countries, through the lens of Nayef Krayem, Director General of Sayd website",
+      "From Lebanon to Egypt and France, nine photographs capture birds in everyday settings: on grass, branches and water."
+    ],
+    "fr": [
+      "Des oiseaux dans trois pays, sous l’objectif de Nayef Krayem, directeur général du site Sayd",
+      "Du Liban à l’Égypte et à la France, neuf photographies montrent des oiseaux dans leur cadre quotidien, sur l’herbe, les branches et l’eau."
+    ]
+  },
+  "images": [
+    {
+      "filename": "2026-10-02_Acridotheres_obs-405158452_photo-744152176.jpg",
+      "observation_id": 405158452,
+      "photo_id": 744152176,
+      "date": "2026-10-02",
+      "time": "2026-10-02T08:57:53+03:00",
+      "place": "RFHW+F7X, Tahouitet El Ghadir, Lebanon",
+      "location": "33.829017956,35.4941084236",
+      "geoprivacy": null,
+      "scientific_name": "Acridotheres",
+      "common_name": "Typical Mynas",
+      "taxon_rank": "genus",
+      "quality_grade": "needs_id",
+      "photographer": "Nayef Krayem",
+      "account": "nayef-k",
+      "source": "https://www.inaturalist.org/observations/405158452",
+      "original_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/744152176/original.jpg",
+      "license": "cc-by-nc",
+      "status": "saved",
+      "bytes": 1798485,
+      "package_file": "01-2026-10-02_Acridotheres_obs-405158452_photo-744152176.jpg",
+      "captions": {
+        "ar": "طائرا مينا على العشب قرب طريق مطار بيروت الدولي — 2 تشرين الأول 2026.",
+        "en": "Two mynas on grass near Beirut International Airport road — 2 October 2026.",
+        "fr": "Deux mainates sur l’herbe près de la route de l’aéroport international de Beyrouth — 2 octobre 2026."
+      },
+      "display_species": {
+        "ar": "المينا",
+        "en": "Mynas",
+        "fr": "Mainates"
+      },
+      "country": "لبنان"
+    },
+    {
+      "filename": "2026-02-15_Spilopelia-senegalensis_obs-338718379_photo-616051351.jpg",
+      "observation_id": 338718379,
+      "photo_id": 616051351,
+      "date": "2026-02-15",
+      "time": "2026-02-15T16:11:48+02:00",
+      "place": "Khansa Street Main Road، Jnah, Lebanon",
+      "location": "33.8651715491,35.4908274114",
+      "geoprivacy": null,
+      "scientific_name": "Spilopelia senegalensis",
+      "common_name": "Laughing Dove",
+      "taxon_rank": "species",
+      "quality_grade": "research",
+      "photographer": "Nayef Krayem",
+      "account": "nayef-k",
+      "source": "https://www.inaturalist.org/observations/338718379",
+      "original_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/616051351/original.jpg",
+      "license": "cc-by-nc",
+      "status": "saved",
+      "bytes": 2011723,
+      "package_file": "02-2026-02-15_Spilopelia-senegalensis_obs-338718379_photo-616051351.jpg",
+      "captions": {
+        "ar": "يمامة ضاحكة في الجناح، لبنان — 15 شباط 2026.",
+        "en": "A Laughing Dove in Jnah, Lebanon — 15 February 2026.",
+        "fr": "Une tourterelle maillée à Jnah, au Liban — 15 février 2026."
+      },
+      "display_species": {
+        "ar": "اليمام الضاحك",
+        "en": "Laughing Dove",
+        "fr": "Tourterelle maillée"
+      },
+      "country": "لبنان"
+    },
+    {
+      "filename": "2025-10-25_Cinnyris-osea_obs-322943904_photo-584297686.jpg",
+      "observation_id": 322943904,
+      "photo_id": 584297686,
+      "date": "2025-10-25",
+      "time": "2025-10-25T15:41:26+03:00",
+      "place": "6CJG+36M, Kherbet Selem, Lebanon",
+      "location": "33.2302085249,35.425485447",
+      "geoprivacy": null,
+      "scientific_name": "Cinnyris osea",
+      "common_name": "Palestine Sunbird",
+      "taxon_rank": "species",
+      "quality_grade": "research",
+      "photographer": "Nayef Krayem",
+      "account": "nayef-k",
+      "source": "https://www.inaturalist.org/observations/322943904",
+      "original_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/584297686/original.jpg",
+      "license": "cc-by-nc",
+      "status": "saved",
+      "bytes": 791808,
+      "package_file": "03-2025-10-25_Cinnyris-osea_obs-322943904_photo-584297686.jpg",
+      "captions": {
+        "ar": "طائر الشمس الفلسطيني على غصن في خربة سلم، لبنان — 25 تشرين الأول 2025.",
+        "en": "A Palestine Sunbird on a branch in Kherbet Selem, Lebanon — 25 October 2025.",
+        "fr": "Un souimanga de Palestine sur une branche à Kherbet Selem, au Liban — 25 octobre 2025."
+      },
+      "display_species": {
+        "ar": "طائر الشمس الفلسطيني",
+        "en": "Palestine Sunbird",
+        "fr": "Souimanga de Palestine"
+      },
+      "country": "لبنان"
+    },
+    {
+      "filename": "2026-04-28_Corvus-cornix_obs-356061180_photo-649494538.jpg",
+      "observation_id": 356061180,
+      "photo_id": 649494538,
+      "date": "2026-04-28",
+      "time": "2026-04-28T15:33:00+03:00",
+      "place": "106 شارع النيل الدقي أ قسم الدقي، Ad Doqi A, Dokki, Giza Governorate 3753452, Egypt",
+      "location": "30.0452943091,31.2188479677",
+      "geoprivacy": null,
+      "scientific_name": "Corvus cornix",
+      "common_name": "Hooded Crow",
+      "taxon_rank": "species",
+      "quality_grade": "research",
+      "photographer": "Nayef Krayem",
+      "account": "nayef-k",
+      "source": "https://www.inaturalist.org/observations/356061180",
+      "original_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/649494538/original.jpg",
+      "license": "cc-by-nc",
+      "status": "saved",
+      "bytes": 1069404,
+      "package_file": "04-2026-04-28_Corvus-cornix_obs-356061180_photo-649494538.jpg",
+      "captions": {
+        "ar": "غربان مقنّعة عند مياه النيل في الدقي، الجيزة — 28 نيسان 2026.",
+        "en": "Hooded Crows by the Nile in Dokki, Giza — 28 April 2026.",
+        "fr": "Des corneilles mantelées au bord du Nil à Dokki, Gizeh — 28 avril 2026."
+      },
+      "display_species": {
+        "ar": "الغراب المقنّع",
+        "en": "Hooded Crow",
+        "fr": "Corneille mantelée"
+      },
+      "country": "مصر"
+    },
+    {
+      "filename": "2026-04-27_Spilopelia-senegalensis_obs-355298608_photo-648374153.jpg",
+      "observation_id": 355298608,
+      "photo_id": 648374153,
+      "date": "2026-04-27",
+      "time": "2026-04-27T16:08:04+03:00",
+      "place": "State Council (Dokki), Ad Doqi A, Dokki, Giza Governorate 3750351, Egypt",
+      "location": "30.0378488867,31.2181093544",
+      "geoprivacy": null,
+      "scientific_name": "Spilopelia senegalensis",
+      "common_name": "Laughing Dove",
+      "taxon_rank": "species",
+      "quality_grade": "research",
+      "photographer": "Nayef Krayem",
+      "account": "nayef-k",
+      "source": "https://www.inaturalist.org/observations/355298608",
+      "original_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/648374153/original.jpg",
+      "license": "cc-by-nc",
+      "status": "saved",
+      "bytes": 1243594,
+      "package_file": "05-2026-04-27_Spilopelia-senegalensis_obs-355298608_photo-648374153.jpg",
+      "captions": {
+        "ar": "يمامة ضاحكة على حافة جدار في الدقي، الجيزة — 27 نيسان 2026.",
+        "en": "A Laughing Dove on a wall ledge in Dokki, Giza — 27 April 2026.",
+        "fr": "Une tourterelle maillée sur le rebord d’un mur à Dokki, Gizeh — 27 avril 2026."
+      },
+      "display_species": {
+        "ar": "اليمام الضاحك",
+        "en": "Laughing Dove",
+        "fr": "Tourterelle maillée"
+      },
+      "country": "مصر"
+    },
+    {
+      "filename": "2025-10-11_Anas-platyrhynchos_obs-320222094_photo-578939657.jpg",
+      "observation_id": 320222094,
+      "photo_id": 578939657,
+      "date": "2025-10-11",
+      "time": "2025-10-11T19:09:30+02:00",
+      "place": "Enghien-les-Bains",
+      "location": "48.9708750603,2.30348479",
+      "geoprivacy": null,
+      "scientific_name": "Anas platyrhynchos",
+      "common_name": "Mallard",
+      "taxon_rank": "species",
+      "quality_grade": "research",
+      "photographer": "Nayef Krayem",
+      "account": "nayef-k",
+      "source": "https://www.inaturalist.org/observations/320222094",
+      "original_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/578939657/original.jpg",
+      "license": "cc-by-nc",
+      "status": "saved",
+      "bytes": 1346100,
+      "package_file": "06-2025-10-11_Anas-platyrhynchos_obs-320222094_photo-578939657.jpg",
+      "captions": {
+        "ar": "ذكر بط خضاري على الماء في أنغيان لي بان، فرنسا — 11 تشرين الأول 2025.",
+        "en": "A male Mallard on the water in Enghien-les-Bains, France — 11 October 2025.",
+        "fr": "Un canard colvert mâle sur l’eau à Enghien-les-Bains, en France — 11 octobre 2025."
+      },
+      "display_species": {
+        "ar": "البط الخضاري",
+        "en": "Mallard",
+        "fr": "Canard colvert"
+      },
+      "country": "فرنسا"
+    },
+    {
+      "filename": "2025-10-11_Fulica-atra_obs-320222129_photo-578939863.jpg",
+      "observation_id": 320222129,
+      "photo_id": 578939863,
+      "date": "2025-10-11",
+      "time": "2025-10-11T19:09:18+02:00",
+      "place": "95880 Enghien-les-Bains, France",
+      "location": "48.9708750603,2.30348479",
+      "geoprivacy": null,
+      "scientific_name": "Fulica atra",
+      "common_name": "Eurasian Coot",
+      "taxon_rank": "species",
+      "quality_grade": "research",
+      "photographer": "Nayef Krayem",
+      "account": "nayef-k",
+      "source": "https://www.inaturalist.org/observations/320222129",
+      "original_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/578939863/original.jpg",
+      "license": "cc-by-nc",
+      "status": "saved",
+      "bytes": 1201962,
+      "package_file": "07-2025-10-11_Fulica-atra_obs-320222129_photo-578939863.jpg",
+      "captions": {
+        "ar": "غُرّة أوراسية تسبح في أنغيان لي بان، فرنسا — 11 تشرين الأول 2025.",
+        "en": "A Eurasian Coot swimming in Enghien-les-Bains, France — 11 October 2025.",
+        "fr": "Une foulque macroule nageant à Enghien-les-Bains, en France — 11 octobre 2025."
+      },
+      "display_species": {
+        "ar": "الغُرّة الأوراسية",
+        "en": "Eurasian Coot",
+        "fr": "Foulque macroule"
+      },
+      "country": "فرنسا"
+    },
+    {
+      "filename": "2025-10-11_Anser-anser_obs-320222058_photo-578939622.jpg",
+      "observation_id": 320222058,
+      "photo_id": 578939622,
+      "date": "2025-10-11",
+      "time": "2025-10-11T19:09:49+02:00",
+      "place": "Enghien-les-Bains",
+      "location": "48.9708750603,2.30348479",
+      "geoprivacy": null,
+      "scientific_name": "Anser anser",
+      "common_name": "Greylag Goose",
+      "taxon_rank": "species",
+      "quality_grade": "research",
+      "photographer": "Nayef Krayem",
+      "account": "nayef-k",
+      "source": "https://www.inaturalist.org/observations/320222058",
+      "original_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/578939622/original.jpg",
+      "license": "cc-by-nc",
+      "status": "saved",
+      "bytes": 1597535,
+      "package_file": "08-2025-10-11_Anser-anser_obs-320222058_photo-578939622.jpg",
+      "captions": {
+        "ar": "أوز رمادي على الماء في أنغيان لي بان، فرنسا — 11 تشرين الأول 2025.",
+        "en": "Greylag Geese on the water in Enghien-les-Bains, France — 11 October 2025.",
+        "fr": "Des oies cendrées sur l’eau à Enghien-les-Bains, en France — 11 octobre 2025."
+      },
+      "display_species": {
+        "ar": "الأوز الرمادي",
+        "en": "Greylag Goose",
+        "fr": "Oie cendrée"
+      },
+      "country": "فرنسا"
+    },
+    {
+      "package_file": "09-great-white-pelican-nayef-krayem-matn-2026.jpg",
+      "country": "لبنان",
+      "scientific_name": "Pelecanus onocrotalus",
+      "photographer": "Nayef Krayem",
+      "place": "أوتوستراد المتن السريع، لبنان",
+      "date_label": "ربيع 2026، وفق تعليق صيد المنشور",
+      "captions": {
+        "ar": "البجع الأبيض الكبير فوق أوتوستراد المتن السريع، لبنان — ربيع 2026.",
+        "en": "A Great White Pelican above the Matn expressway, Lebanon — spring 2026.",
+        "fr": "Un pélican blanc au-dessus de la voie rapide du Metn, au Liban — printemps 2026."
+      },
+      "publication_status": "Previously published on Sayd; explicitly requested inclusion",
+      "source": "https://sayd-magazine.com/posts/البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك/index.html"
+    }
+  ],
+  "publication_check": {
+    "commit": "d492e292f",
+    "images_checked": 9447,
+    "results": [
+      {
+        "photo_id": 744152176,
+        "nearest_distance": 99,
+        "nearest_file": "docs/media/uploads/2020/06/تسليق-8-150x150.jpg"
+      },
+      {
+        "photo_id": 616051351,
+        "nearest_distance": 90,
+        "nearest_file": "docs/media/uploads/2020/05/هيلين-2-80x54.jpg"
+      },
+      {
+        "photo_id": 584297686,
+        "nearest_distance": 60,
+        "nearest_file": "docs/media/uploads/2017/04/رامي-خشاب-5.jpg"
+      },
+      {
+        "photo_id": 649494538,
+        "nearest_distance": 100,
+        "nearest_file": "docs/media/uploads/2020/06/تسليق-عون-ابي-عون-364x245.jpg"
+      },
+      {
+        "photo_id": 648374153,
+        "nearest_distance": 92,
+        "nearest_file": "docs/media/uploads/2020/05/هيلين-2-36x36.jpg"
+      },
+      {
+        "photo_id": 578939657,
+        "nearest_distance": 102,
+        "nearest_file": "docs/media/uploads/2020/05/clown-beetle-e1588767976234-150x150.jpg"
+      },
+      {
+        "photo_id": 578939863,
+        "nearest_distance": 96,
+        "nearest_file": "docs/media/uploads/2020/06/رندا-حجازي1-80x54.jpg"
+      },
+      {
+        "photo_id": 578939622,
+        "nearest_distance": 95,
+        "nearest_file": "docs/media/uploads/2020/12/اغبة-4-546x300.jpg"
+      }
+    ]
+  },
+  "notes": [
+    "Myna identification in current iNaturalist record is genus Acridotheres; do not silently upgrade to species.",
+    "2025 photographs are archival photographs in a new 2026 gallery; preserve capture dates.",
+    "Place and dates are observation metadata, not inferred EXIF capture timestamps.",
+    "No matches found in current repository assets using visual hashes; cannot guarantee against deleted or unindexed historical publication.",
+    "Same image sequence and metadata in AR/EN/FR.",
+    "Use local website media files only after publication approval.",
+    "User requested adding the previously published pelican photo and the photographer’s role as Director General of Sayd website to the title. Gallery now contains 8 selected photos plus 1 previously published photo.",
+    "Display photographer name and role in title only; omit repeated bylines under images. Preserve photographer in internal archival metadata.",
+    "Public captions contain only species, place and capture date. AR/EN/FR are separate complete mirrors, never mixed below one photo."
+  ]
+}
