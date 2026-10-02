@@ -55,6 +55,8 @@ When a task has already been executed (for example: an email sent, article publi
 
 ## 5. Photo archive
 
+- Detailed archive structure, naming, provenance and retrieval rules are defined in `notes/SAYD-PHOTO-ARCHIVE-PROTOCOL.md`.
+
 - Use `/Sayd picture for use` as the persistent Sayd image archive.
 - For every story, update, carousel, Reel, Short, or other editorial asset, search the internal photo archive first for suitable images before searching the public web.
 - Nayef does not need to ask explicitly for an archive image; image selection is part of the normal editorial workflow.
