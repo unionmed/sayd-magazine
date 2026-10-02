@@ -352,5 +352,30 @@
     "channel_order": "Nayef-approved editorial order in tv-channel.json: Bekaa, Radar, From Sayd Memory; newest-first unless explicitly overridden.",
     "selection_order": "tv_slugs",
     "unavailable_external_video": "Keep editorial record and show unavailable status; do not silently substitute or download without rights."
+  },
+  "editorial_policy": {
+    "approved_by": "Nayef Krayem",
+    "approved_on": "2026-10-03",
+    "timezone": "Asia/Beirut",
+    "rule": "النص المنشور لازم يكون بصياغة صحافية، وملاحظات نقاشنا تبقى خارج المقال.",
+    "scope": [
+      "writing",
+      "translation",
+      "publication",
+      "updates",
+      "headlines",
+      "decks",
+      "article_body",
+      "callouts",
+      "captions",
+      "ticker",
+      "SEO",
+      "social_assets"
+    ],
+    "internal_notes": "Keep conversations, instructions, approval discussions, fact-checking notes and execution reports in separate editorial records. Never copy or translate them into public copy.",
+    "clarifications": "Editorial confirmations guide factual editing; they do not automatically become published callouts. Reader-facing context and explicitly requested public corrections must have an independent journalistic purpose and wording.",
+    "translation": "Translate only the final edited journalistic copy into English and French. Preserve facts and media; exclude internal conversation and translator workflow notes.",
+    "prepublication_review": "Mandatory human/editorial review of every public-facing element in AR/EN/FR for internal discussion leakage. Automated checks alone cannot certify compliance.",
+    "authority": "Applies to all Sayd editors, translators and agents; only Nayef can explicitly amend it."
   }
 }
