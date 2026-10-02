@@ -6,3 +6,5 @@
 - Existing archived local photo: migrating storks over Istanbul, Turkey, 20 August 2010; Tema, Wikimedia Commons, CC BY-SA 3.0. Location stated in all captions; never labelled Lebanon.
 - Same image, date, Hunting door, author/role, first side slot and ticker in all three languages. The callout quotes the author’s conclusion; editorial record and internal discussion excluded from public copy.
 - Displaced Sicily feature moves to Updates; oldest Sayd returns stays available in category/archive. Protected lower doors and TV retained. No social posting authorized.
+
+- Image replaced at Nayef’s request with his selected bank photo: storks resting on pine trees in Mount Lebanon. Source file Screenshot_20260929_235120_com_instagram_android_InstagramMainActivity.jpg; no invented photographer or Creative Commons licence.

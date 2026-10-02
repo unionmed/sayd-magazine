@@ -11,14 +11,14 @@ sys.path.insert(0,str(ROOT/'scripts'))
 from refresh_homepage_doors import main as refresh
 AR='حين-يصبح-الخريف-موسما-لاصطياد-الصورة'; EN='when-autumn-becomes-a-season-for-hunting-images'
 OLDAR='ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان'; OLDEN='over-20000-m2-bird-nets-seized-lebanon'
-IMAGE='media/uploads/2026/09/migrating-white-storks-istanbul-tema.jpg'
-SOURCE='https://commons.wikimedia.org/wiki/File:Flock_of_storks_migrating_over_Istanbul,_Turkey.JPG'
+IMAGE='media/uploads/2026/10/storks-resting-pines-mount-lebanon.jpg'
+SOURCE='https://sayd-magazine.com/'
 STUDY='https://doi.org/10.1017/S0030605324000814'
 DATE='2026-10-03'; TIMES='2026-10-03T00:12:31+03:00'
 T=json.loads((ROOT/'content/features/autumn-photography-hala-khatib-20261003.json').read_text())
 paragraphs=[p.text.strip() for p in Document(sys.argv[1]).paragraphs if p.text.strip()]
 heading=paragraphs.index('من التوعية إلى المتابعة'); assert heading==6
-T['ar']={'title':paragraphs[0],'author':'د. هلا الخطيب','role':'محاضرة في كلية الإعلام، الجامعة اللبنانية','deck':'من البندقية إلى العدسة: كيف يسهم الإعلام في حماية الطيور المهاجرة وتغيير ثقافة التباهي بالقتل.','heading':paragraphs[heading],'caption':'سرب من اللقالق المهاجرة فوق إسطنبول، تركيا، في 20 آب 2010.','paragraphs':[p.replace('إقتصادية','اقتصادية') for p in paragraphs[1:] if p!=paragraphs[heading]]}
+T['ar']={'title':paragraphs[0],'author':'د. هلا الخطيب','role':'محاضرة في كلية الإعلام، الجامعة اللبنانية','deck':'من البندقية إلى العدسة: كيف يسهم الإعلام في حماية الطيور المهاجرة وتغيير ثقافة التباهي بالقتل.','heading':paragraphs[heading],'caption':'لقالق تستريح على أشجار الصنوبر في جبل لبنان.','paragraphs':[p.replace('إقتصادية','اقتصادية') for p in paragraphs[1:] if p!=paragraphs[heading]]}
 assert all(len(T[l]['paragraphs'])==12 for l in ['ar','en','fr'])
 DATES={'ar':'3 تشرين الأول 2026','en':'3 October 2026','fr':'3 octobre 2026'}
 DOOR={'ar':'صيد','en':'Hunting','fr':'Chasse'}
@@ -32,7 +32,7 @@ def url(lang):return 'https://sayd-magazine.com/'+('' if lang=='ar' else lang+'/
 def body(lang):
  d=T[lang];prefix='../../' if lang=='ar' else '../../../'
  credit={'ar':'الصورة','en':'Photo','fr':'Photo'}[lang]
- out=f'<figure><img src="{prefix+IMAGE}" alt="{esc.escape(d["caption"],quote=True)}" decoding="async" style="display:block;width:100%;height:auto"><figcaption>{esc.escape(d["caption"])}<br><span style="font-size:11px;color:#777">{credit}: <a href="{SOURCE}">Tema / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></span></figcaption></figure>'
+ out=f'<figure><img src="{prefix+IMAGE}" alt="{esc.escape(d["caption"],quote=True)}" decoding="async" style="display:block;width:100%;height:auto"><figcaption>{esc.escape(d["caption"])}<br><span style="font-size:11px;color:#777">{credit}: { {'ar':'بنك صور صيد','en':'Sayd photo bank','fr':'Banque de photos de Sayd'}[lang] }</span></figcaption></figure>'
  out+=f'<p class="article-deck"><em>{esc.escape(d["deck"])}</em></p>'
  for i,p in enumerate(d['paragraphs']):
   if i==5:out+=f'<blockquote style="border-inline-start:4px solid #3e421d;padding:12px 18px;background:#f5f1e5"><p>{esc.escape(PULL[lang])}</p></blockquote><h2>{esc.escape(d["heading"])}</h2>'
