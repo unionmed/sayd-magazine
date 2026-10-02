@@ -52,3 +52,14 @@ After the website story is published or approved for publication, prepare social
 ## 4. Continuity rule
 
 When a task has already been executed (for example: an email sent, article published, card set approved), follow-up requests should continue from that completed state. Verify status silently from the relevant tool or repository when needed; do not restart the workflow or ask Nayef to repeat information unless there is a real contradiction or missing dependency.
+
+## 5. Photo archive
+
+- Use `/Sayd picture for use` as the persistent Sayd image archive.
+- For every story, update, carousel, Reel, Short, or other editorial asset, search the internal photo archive first for suitable images before searching the public web.
+- Nayef does not need to ask explicitly for an archive image; image selection is part of the normal editorial workflow.
+- Prefer the strongest relevant archived image with suitable subject, date/location, provenance, and rights/source status.
+- If no suitable archived image exists, search externally and archive verified reusable material when appropriate.
+- File new unsorted material under `00_INBOX - To Sort`; keep screenshots under `09_Social & Screenshots`; keep anti-poaching and enforcement material under `01_Anti-Poaching & Violations`.
+- Avoid duplicates and do not assign an image to an event unless the provenance matches.
+- If a developing figure or claim is not yet confirmed for publication, archive the image but keep the figure or claim marked pending.
