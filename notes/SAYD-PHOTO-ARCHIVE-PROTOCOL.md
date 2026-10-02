@@ -49,3 +49,10 @@ When preparing a story, search by subject + country + event + source + date. Pro
 ## Periodic harvesting
 
 Periodically scan official Arab sources for useful new imagery. Avoid duplicates. Put uncertain or unclassified material in `00_INBOX - To Sort` until reviewed.
+## Local-copy / no-hotlink rule
+
+- Every image selected for the Sayd archive or for publication must be stored as a LOCAL COPY in the Sayd archive or website media before use.
+- Never rely on an external image hotlink in a published Sayd article, card, Reel asset, or internal archive record. External URLs are source/provenance references only.
+- If the exact event image cannot be downloaded, keep the event folder and source record with status `PENDING LOCAL COPY`; do not substitute an older, generic, or lookalike image as if it depicts the event.
+- When the local copy becomes available, update the event folder and use that internal asset for publication.
+
