@@ -35,7 +35,7 @@ def channel_config():
     ids=[v['id'] for v in c['videos']]
     assert len(ids)==len(set(ids)), 'Duplicate channel video'
     dates=[v['published_at'] for v in c['videos']]
-    assert dates==sorted(dates,reverse=True), 'Channel videos must be newest first'
+    assert ids==c.get('approved_order',ids) and (dates==sorted(dates,reverse=True) or bool(c.get('order_approval'))), 'Channel order requires explicit editorial approval'
     for v in c['videos']:
         assert set(v['titles'])=={'ar','en','fr'} and all(v['titles'].values())
         assert v['image'].startswith('data:image/jpeg;base64,')

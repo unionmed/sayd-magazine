@@ -349,7 +349,7 @@
       "sayd-selections"
     ],
     "channel_config": "content/tv-channel.json",
-    "channel_order": "newest first",
+    "channel_order": "Nayef-approved editorial order in tv-channel.json: Bekaa, Radar, From Sayd Memory; newest-first unless explicitly overridden.",
     "selection_order": "tv_slugs",
     "unavailable_external_video": "Keep editorial record and show unavailable status; do not silently substitute or download without rights."
   }
