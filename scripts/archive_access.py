@@ -858,6 +858,19 @@ def rewire_recovered_article_images(
 
 
 def main() -> None:
+    if "--rewire-2014" in sys.argv:
+        rewire_recovered_article_images(DOCS, min_year=2014, max_year=2014, post_year=2014)
+        # 2013 stories name uploads/2014/ files. Later articles may still name a
+        # 2014 upload. Only those paths move.
+        for year in (2013, *range(2015, 2026)):
+            rewire_recovered_article_images(
+                DOCS, min_year=2014, max_year=2014, post_year=year
+            )
+        # Two 2014 stories name one 2013 upload. That file is recovered because
+        # those posts need it. Other years that name the same file wait for the
+        # 2013 pass. This call only moves 2013 upload paths inside 2014 articles.
+        rewire_recovered_article_images(DOCS, min_year=2013, max_year=2013, post_year=2014)
+        return
     if "--rewire-2015" in sys.argv:
         rewire_recovered_article_images(DOCS, min_year=2015, max_year=2015, post_year=2015)
         # 2013 and 2014 stories name uploads/2015/ files. Later articles may
