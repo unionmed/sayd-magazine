@@ -1,20 +1,20 @@
 {
   "featured": [
     "رادار-صيد-العربي-سبتمبر-2026",
+    "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
     "خريف-الصيد-العربي-2026",
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
-    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
+    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة"
   ],
   "latest": [
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-    "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
     "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
     "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -202,20 +202,20 @@
   "ia_slots": {
     "main": "رادار-صيد-العربي-سبتمبر-2026",
     "important": [
+      "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
       "خريف-الصيد-العربي-2026",
       "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
-      "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
+      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة"
     ],
     "latest": [
       "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-      "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان",
       "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
       "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
       "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
       "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
       "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-      "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+      "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+      "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
     ]
   },
   "ia_door_sections": [
@@ -319,7 +319,7 @@
     "رادار-صيد-العربي-سبتمبر-2026": "hunting",
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم": "photos"
   },
-  "demotion": "One lead, four side cards, eight Updates in date order. Desk-only gear, wildlife, poetry, TV and photos stay out of Updates. Only the two equestrian cards may repeat the side stack. The temporary editorial placement of Sayd returns is upper-only and must not repeat in the Hunting door. TV: three recent channel videos in Nayef-approved order: Bekaa, Radar, From Sayd Memory, then three selections in order: APU, Maqnas, Arabian leopard. No article deletion.",
+  "demotion": "One lead, four side cards, eight Updates in date order. Desk-only gear, wildlife, poetry, TV and photos stay out of Updates. Only the two equestrian cards may repeat the side stack. Sayd returns now occupies the oldest Updates slot, after the updated Bekaa report moved to the first side card. It must not repeat in the Hunting door. TV: three recent channel videos in Nayef-approved order: Bekaa, Radar, From Sayd Memory, then three selections in order: APU, Maqnas, Arabian leopard. No article deletion.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
@@ -368,5 +368,12 @@
       }
     }
   },
-  "tv_channel_config": "content/tv-channel.json"
+  "tv_channel_config": "content/tv-channel.json",
+  "video_cards": {
+    "ضبط-اكثر-من-20-الف-م2-شباك-صيد-لبنان": {
+      "ar": "▶ فيديو",
+      "en": "▶ Video",
+      "fr": "▶ Vidéo"
+    }
+  }
 }
