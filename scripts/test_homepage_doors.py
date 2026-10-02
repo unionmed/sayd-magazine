@@ -22,5 +22,13 @@ def test_homepages():
         except AssertionError:pass
         else:raise AssertionError('Broken mirrored image accepted')
     finally:p.write_text(original)
+    p=DOCS/'en/index.html';original=p.read_text()
+    for wrong in [original.replace('data-tv-group="sayd-channel"','data-tv-group="wrong"',1),original.replace('data-video-id="CgmNLoWWPGo"','data-video-id="missing"',1)]:
+        try:
+            p.write_text(wrong)
+            try:check()
+            except AssertionError:pass
+            else:raise AssertionError('Invalid channel structure accepted')
+        finally:p.write_text(original)
     print('PASS: stable renderer; excess cards and a missing mirror image rejected')
 if __name__=='__main__':test_homepages()

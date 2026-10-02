@@ -319,7 +319,7 @@
     "رادار-صيد-العربي-سبتمبر-2026": "hunting",
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم": "photos"
   },
-  "demotion": "One lead, four side cards, eight Updates in date order. Desk-only gear, wildlife, poetry, TV and photos stay out of Updates. Only the two equestrian cards may repeat the side stack. The temporary editorial placement of Sayd returns is upper-only and must not repeat in the Hunting door. TV order: APU, Maqnas, Arabian leopard. No article deletion.",
+  "demotion": "One lead, four side cards, eight Updates in date order. Desk-only gear, wildlife, poetry, TV and photos stay out of Updates. Only the two equestrian cards may repeat the side stack. The temporary editorial placement of Sayd returns is upper-only and must not repeat in the Hunting door. TV: three newest channel videos, then three selections in order: APU, Maqnas, Arabian leopard. No article deletion.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
@@ -334,7 +334,9 @@
     "important": 4,
     "latest": 8,
     "memory": 4,
-    "tv": 3
+    "tv": 6,
+    "tv_channel": 3,
+    "tv_selections": 3
   },
   "ticker_slugs": [
     "رادار-صيد-العربي-سبتمبر-2026",
@@ -365,5 +367,6 @@
         "fr": "Un jockey à cheval sur l’hippodrome de Taïf."
       }
     }
-  }
+  },
+  "tv_channel_config": "content/tv-channel.json"
 }

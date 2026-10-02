@@ -11,7 +11,9 @@
     "side": 4,
     "updates": 8,
     "memory": 4,
-    "tv": 3
+    "tv": 6,
+    "tv_channel": 3,
+    "tv_selections": 3
   },
   "protected_files": {
     "assets/css/site.css": "04f082958b30b54fdc52ae3003d51ccaa1cf7042a5b5dbbf1d80037f7d72847e",
@@ -339,5 +341,16 @@
     "بالفيديو-وحدة-مكافحة-الصيد-الجائر-عمليات-ميدانية",
     "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
     "بالفيديو-النمر-العربي-في-السعودية"
-  ]
+  ],
+  "tv_structure": {
+    "approved_on": "2026-10-02",
+    "groups": [
+      "sayd-channel",
+      "sayd-selections"
+    ],
+    "channel_config": "content/tv-channel.json",
+    "channel_order": "newest first",
+    "selection_order": "tv_slugs",
+    "unavailable_external_video": "Keep editorial record and show unavailable status; do not silently substitute or download without rights."
+  }
 }

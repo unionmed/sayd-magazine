@@ -4,7 +4,7 @@ import argparse, hashlib, json, re, subprocess
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from lxml import html
-from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, local_slug
+from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, local_slug, channel_config
 import seo_foundation as seo
 
 CONTRACT=ROOT/'content/publication-contract.json'
@@ -91,7 +91,7 @@ def archive_image_repair(file, base):
     return True
 
 def check(base=None):
-    c=config();validate_config(c)
+    c=config();validate_config(c);channel=channel_config();channel_videos=channel['videos'][:3]
     contract=json.loads(CONTRACT.read_text());pairs=json.loads((ROOT/'content/en/pairs.json').read_text())['pairs']
     for name,digest in contract['protected_files'].items():
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest, f'Protected design changed without contract approval: {name}'
@@ -99,14 +99,30 @@ def check(base=None):
     for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
         p=DOCS/prefix/'index.html';t=tree(p)
         groups=[nodes(t,'feature-lead'),nodes(t,'feature-stack')[0].xpath('./article'),nodes(t,'latest-feed')[0].xpath('./li'),nodes(t,'memory-strip')[0].xpath('.//article')]
-        doors=nodes(t,'home-section');groups += [nodes(x,'home-door-grid')[0].xpath('./article') for x in doors]
+        doors=nodes(t,'home-section');groups += [sum((g.xpath('./article') for g in nodes(x,'home-door-grid')),[]) for x in doors]
         assert [len(g) for g in groups[:4]]==[1,4,8,4],f'{lang}: lead/side/updates/memory counts'
-        assert len(doors)==7 and [len(g) for g in groups[4:]]==[len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
+        assert len(doors)==7 and [len(g) for g in groups[4:]]==[6 if d['door']=='tv' else len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
         assert t.xpath('//section['+css_class('home-section')+']//h2/text()')==[d[{'ar':1,'en':2,'fr':3}[lang]] for d in DOORS], f'{lang}: door order'
+        tv=doors[5]
+        assert tv.xpath('./div[@data-tv-group]/@data-tv-group')==contract['tv_structure']['groups'],f'{lang}: TV groups missing or reordered'
+        assert [len(nodes(g,'home-door-grid')[0].xpath('./article')) for g in tv.xpath('./div[@data-tv-group]')]==[3,3]
+        assert contract['counts']['tv']==c['layout_limits']['tv']==6
+        assert contract['counts']['tv_channel']==contract['counts']['tv_selections']==3
         slots=[]
         for group_index,group in enumerate(groups):
             row=[]
             for card in group:
+                if card.get('data-video-id'):
+                    video=next((v for v in channel_videos if v['id']==card.get('data-video-id')),None)
+                    assert video is not None,f'{lang}: unapproved channel card'
+                    assert card.xpath('.//a/@href')==[f"https://www.youtube.com/watch?v={video['id']}"]*2
+                    assert card.xpath('.//h3/a/text()')==[video['titles'][lang]]
+                    assert card.xpath('.//div[@class="meta"]/text()')==[video['date']]
+                    assert card.xpath('.//img/@src')==[video['image']]
+                    import base64
+                    assert base64.b64decode(video['image'].split(',',1)[1],validate=True).startswith(b'\xff\xd8')
+                    row.append(('youtube:'+video['id'],[video['image']]))
+                    continue
                 href=card.xpath('.//a[contains(@href,"posts/")]/@href')[0]
                 target=resolved(p,href);assert (DOCS/target).is_file(),target
                 if group_index!=3:
@@ -123,9 +139,9 @@ def check(base=None):
         for group in groups[1:3]:
             dates=[day(' '.join(n.xpath('.//*['+css_class('meta')+' or '+css_class('feed-date')+']/text()'))) for n in group]
             assert all(dates) and dates==sorted(dates,reverse=True),f'{lang}: dates out of order {dates}'
-        for d,row in zip(c['ia_door_sections'],slots[4:]):assert [s for s,_ in row]==d['slugs'],(lang,d['door'])
+        for d,row in zip(c['ia_door_sections'],slots[4:]):assert [s for s,_ in row]==(['youtube:'+v['id'] for v in channel_videos] if d['door']=='tv' else [])+d['slugs'],(lang,d['door'])
         assert [s for s,_ in slots[3]]==contract['memory_slugs'],f'{lang}: protected memory selection changed'
-        assert [s for s,_ in slots[9]]==contract['tv_slugs'],f'{lang}: protected TV order changed'
+        assert [s for s,_ in slots[9]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
         if reference is None:reference=slots
         else:assert slots==reference,f'{lang}: mirrored story placement or photograph differs'
         tickers=nodes(t,'ticker')

@@ -29,6 +29,19 @@ DOORS = [
 def config():
     return json.loads(CONFIG.read_text())
 
+def channel_config():
+    c=json.loads((ROOT/'content/tv-channel.json').read_text())
+    assert c['home_limit']==3 and len(c['videos'])>=3
+    ids=[v['id'] for v in c['videos']]
+    assert len(ids)==len(set(ids)), 'Duplicate channel video'
+    dates=[v['published_at'] for v in c['videos']]
+    assert dates==sorted(dates,reverse=True), 'Channel videos must be newest first'
+    for v in c['videos']:
+        assert set(v['titles'])=={'ar','en','fr'} and all(v['titles'].values())
+        assert v['image'].startswith('data:image/jpeg;base64,')
+    return c
+
+
 def local_slug(slug, lang):
     if lang == 'ar': return slug
     pairs = json.loads((ROOT/'content/en/pairs.json').read_text())['pairs']
@@ -98,7 +111,7 @@ def validate_config(c):
             assert s not in upper or (d['door']=='equestrian' and s in approved)
 
 def refresh(path,lang):
-    c=config();validate_config(c);path=Path(path);page=path.read_text()
+    c=config();validate_config(c);channel=channel_config();path=Path(path);page=path.read_text()
     catalog=collect(page,path,path)
     for *_,folder in DOORS:
         category=path.parent/'category'/folder/'index.html'
@@ -128,6 +141,23 @@ def refresh(path,lang):
     sections={d['door']:d['slugs'] for d in c['ia_door_sections']}
     for door,ar,en,fr,_ in DOORS:
         heading={'ar':ar,'en':en,'fr':fr}[lang]
+        if door=='tv':
+            labels={'ar':('قناة صيد','مختارات صيد','المزيد'), 'en':('Sayd Channel','Sayd Selections','More'), 'fr':('Chaîne Sayd','Sélection Sayd','Voir plus')}[lang]
+            base='category/استديو-صيد/index.html'
+            parts=[f'<section class="home-section sayd-tv" id="sayd-tv"><div class="section-head accent-tv"><h2>{heading}</h2><a href="{base}">{labels[2]}</a></div>']
+            for group,label in zip(('sayd-channel','sayd-selections'),labels[:2]):
+                parts.append(f'<div class="sayd-tv-group" data-tv-group="{group}"><div style="display:flex;justify-content:space-between;align-items:center;margin:18px 0 12px"><h3>{label}</h3><a href="{base}#{group}">{labels[2]}</a></div><div class="home-door-grid">')
+                if group=='sayd-channel':
+                    for v in channel['videos'][:channel['home_limit']]:
+                        item=dict(title=v['titles'][lang],date=v['date'],image=v['image'],alt=v['titles'][lang],href=f"https://www.youtube.com/watch?v={v['id']}")
+                        card=render_card(v['id'],item).replace('<article class="card">',f'<article class="card" data-video-id="{v["id"]}">',1)
+                        parts.append(card)
+                else:parts.extend(render_card(*data(s)) for s in sections[door])
+                parts.append('</div></div>')
+            parts.append('</section>')
+            page,n=re.subn(r'<section class="home-section sayd-tv"[^>]*>.*?</section>',lambda m:'\n'.join(parts),page,count=1,flags=re.S)
+            if n!=1:raise ValueError(f'{lang}: missing TV section')
+            continue
         pattern=r'(<section class="home-section(?: sayd-tv)?">\s*<div class="section-head[^>]*">\s*<h2>'+re.escape(html.escape(heading))+r'</h2>.*?<div class="home-door-grid">).*?(</div>\s*</section>)'
         cards='\n'.join(render_card(*data(s)) for s in sections[door])
         page,n=re.subn(pattern,lambda m:m[1]+'\n'+cards+'\n'+m[2],page,count=1,flags=re.S)
@@ -141,6 +171,6 @@ def refresh(path,lang):
 
 def main():
     for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:refresh(DOCS/prefix/'index.html',lang)
-    print('Restored one lead + four side cards, eight Updates, approved desks and three TV cards in AR/EN/FR.')
+    print('Restored one lead + four side cards, eight Updates, approved desks and 3 channel + 3 selection TV cards in AR/EN/FR.')
 
 if __name__=='__main__':main()
