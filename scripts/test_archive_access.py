@@ -110,6 +110,26 @@ def test_restore_2019_only_when_year_is_bounded() -> None:
     assert out.index("طير.jpg") < out.index("نص 2019")
 
 
+def test_restore_2014_only_when_year_is_bounded() -> None:
+    published = "<p>نص 2014</p>"
+    fresh = (
+        '<a href="../../media/uploads/2014/09/رماية.jpg">'
+        '<img src="../../media/uploads/2014/09/رماية.jpg" alt="رماية"></a>'
+        "<p>نص 2014</p>"
+        '<img src="../../media/uploads/2015/02/لاحق.jpg">'
+    )
+    default_out, default_names = archive.restore_stripped_upload_images(published, fresh)
+    assert default_names == []
+    assert "رماية.jpg" not in default_out
+    out, names = archive.restore_stripped_upload_images(
+        published, fresh, min_year=2014, max_year=2014
+    )
+    assert names == ["رماية.jpg"]
+    assert "uploads/2014/09/رماية.jpg" in out
+    assert "لاحق.jpg" not in out
+    assert out.index("رماية.jpg") < out.index("نص 2014")
+
+
 def test_restore_2015_only_when_year_is_bounded() -> None:
     published = "<p>نص 2015</p>"
     fresh = (
@@ -232,6 +252,7 @@ if __name__ == "__main__":
     test_restore_2017_only_when_year_is_bounded()
     test_restore_2016_only_when_year_is_bounded()
     test_restore_2015_only_when_year_is_bounded()
+    test_restore_2014_only_when_year_is_bounded()
     test_restore_leaves_missing_and_older_images_alone()
     test_restore_skips_file_already_on_the_page()
     test_numeric_stub_is_not_rewritten_or_sitemapped()
