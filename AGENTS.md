@@ -11,3 +11,15 @@ These rules were explicitly requested by Nayef Krayem on 30 September 2026 (Asia
 - Before publication: python scripts/check_publication_contract.py --base <base-commit>, then python scripts/test_homepage_doors.py. A failing check means fix the publication; never skip or weaken the check. Translation completeness still requires editorial review; automated checks cannot judge translation quality.
 - Hard enforcement requires the GitHub owner to require the Three-mirror publication check, PRs and CODEOWNER approval on main, disallow direct pushes and bypass, and protect the check/contract itself. A workflow alone is not a GitHub Pages deployment gate. Do not claim bypass prevention until repository protections are actually enabled.
 - Full-package and social distribution operations follow `notes/SAYD-FULL-PACKAGE-WORKFLOW.md`; that workflow complements this contract and never overrides the three-mirror publication rules or Nayef's approval authority.
+
+## قاعدة ملزمة للكتابة والترجمة والنشر — اعتمدها نايف في 3 تشرين الأول 2026
+
+**النص المنشور لازم يكون بصياغة صحافية، وملاحظات نقاشنا تبقى خارج المقال.**
+
+- تُكتب كل مادة للقارئ بصوت صحافي مستقل. يُمنع إدخال الحوار مع نايف، تعليماته، أسئلة المساعد وأجوبته، إجراءات العمل والموافقة، أو ملاحظات التدقيق والتحرير الداخلية في النص المنشور.
+- تأكيد معلومة أو تصحيحها أثناء النقاش هو توجيه لتحرير الوقائع، وليس نصًا يُنسخ إلى المقال أو يُحوّل تلقائيًا إلى بوكس أو تنبيه أو شرح للقرار. لا يُنشر توضيح مستمد من نقاش داخلي إلا إذا كانت له ضرورة صحافية للقارئ وصياغة مستقلة؛ والتصحيح العلني أو التوضيح الذي يطلبه نايف صراحة يُصاغ صحافيًا.
+- البوكسات والاقتباسات البارزة مخصصة لمعلومة موثقة أو اقتباس أو سياق مفيد للقارئ؛ لا تُستخدم لتبرير اختيار المساعد أو شرح ما اتُّفق عليه في المحادثة.
+- تُحفظ ملاحظات المصادر والتحقق والشكوك والاعتماد في السجل التحريري المنفصل. لا يُعامل سجل العمل أو تقرير التنفيذ كنص صالح للنشر.
+- تُترجم النسخة الصحافية النهائية المحررة فقط إلى الإنجليزية والفرنسية، مع تطابق الوقائع والصور والتوزيع. لا تُترجم المحادثة أو التعليمات الداخلية ولا تُضاف ملاحظات من المترجم إلى المادة المنشورة.
+- قبل كل نشر أو تحديث، تُراجع النسخ الثلاث وكل عناصرها الموجهة للجمهور: العنوان والمقدمة والمتن والبوكسات والتعليقات المصورة والشريط وSEO ومواد السوشيال. سؤال الفحص: «هل تخاطب هذه العبارة القارئ وتضيف قيمة صحافية، أم تنقل نقاشًا داخليًا أو تشرح عملي للمستخدم؟». تُحذف أو تُحرر أي عبارة من النوع الثاني قبل النشر. هذه مراجعة تحريرية إلزامية؛ الفحص الآلي وحده لا يثبت استيفاءها.
+- تسري القاعدة على جميع المحررين والمترجمين والوكلاء العاملين على صيد. لا يعدلها إلا نايف بتوجيه صريح.
