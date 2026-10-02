@@ -31,8 +31,8 @@ def cls(t,c):return t.xpath('//*[contains(concat(" ",normalize-space(@class)," "
 def url(lang):return 'https://sayd-magazine.com/'+('' if lang=='ar' else lang+'/')+'posts/'+quote(AR if lang=='ar' else EN)+'/'
 def body(lang):
  d=T[lang];prefix='../../' if lang=='ar' else '../../../'
- credit={'ar':'الصورة','en':'Photo','fr':'Photo'}[lang]
- out=f'<figure><img src="{prefix+IMAGE}" alt="{esc.escape(d["caption"],quote=True)}" decoding="async" style="display:block;width:100%;height:auto"><figcaption>{esc.escape(d["caption"])}<br><span style="font-size:11px;color:#777">{credit}: { {'ar':'بنك صور صيد','en':'Sayd photo bank','fr':'Banque de photos de Sayd'}[lang] }</span></figcaption></figure>'
+ credit={'ar':'المصدر','en':'Source','fr':'Source'}[lang]
+ out=f'<figure><img src="{prefix+IMAGE}" alt="{esc.escape(d["caption"],quote=True)}" decoding="async" style="display:block;width:100%;height:auto"><figcaption style="font-size:11px;color:#777">{credit}: Mecshap</figcaption></figure>'
  out+=f'<p class="article-deck"><em>{esc.escape(d["deck"])}</em></p>'
  for i,p in enumerate(d['paragraphs']):
   if i==5:out+=f'<blockquote style="border-inline-start:4px solid #3e421d;padding:12px 18px;background:#f5f1e5"><p>{esc.escape(PULL[lang])}</p></blockquote><h2>{esc.escape(d["heading"])}</h2>'
