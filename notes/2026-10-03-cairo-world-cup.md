@@ -1,0 +1,1 @@
+Approved by Nayef: Shooting & Gear only, AR/EN/FR, supplied Oman News Agency archive image (2025). No Updates, lead, side card or ticker addition. Remove registration-list date and provisional caveat from public copy. Verified with ISSF competition 3289 schedule, entry list and news 5188/5192. Image supplied by Nayef after origin download failed.
