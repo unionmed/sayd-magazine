@@ -1,0 +1,14 @@
+# Combating illegal hunting in Lebanon
+
+**Source AR URL:** https://sayd-magazine.com/posts/مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور/
+**Source AR title:** مكافحة الصيد غير القانوني في لبنان
+**Suggested slug:** combating-illegal-hunting-lebanon-in-photos
+**Category:** Photos
+
+## Lead
+
+These photographs document the field activities of the Anti-Poaching Unit (APU) of MECSHAP, working with the German association CABS and Lebanon’s Internal Security Forces to combat illegal hunting in the Bekaa and northern Lebanon. The photographs show Sayd Magazine’s editor-in-chief, Adonis Alkhateeb, taking part in field operations in his capacity as director of the Middle East Center for Sustainable Hunting (MECSHAP).
+
+## Body
+
+<figure><img src="media/uploads/2026/10/apu-mecshap-cabs-lebanon-01.jpg" alt="A field encounter during activities to combat illegal hunting." loading="lazy" decoding="async" style="display:block;width:100%;height:auto;"><figcaption>A field encounter during activities to combat illegal hunting.</figcaption></figure><p>These photographs document the field activities of the Anti-Poaching Unit (APU) of MECSHAP, working with the German association CABS and Lebanon’s Internal Security Forces to combat illegal hunting in the Bekaa and northern Lebanon. The photographs show Sayd Magazine’s editor-in-chief, Adonis Alkhateeb, taking part in field operations in his capacity as director of the Middle East Center for Sustainable Hunting (MECSHAP).</p><figure><img src="media/uploads/2026/10/apu-mecshap-cabs-lebanon-02.jpg" alt="Field documentation from inside the vehicle." loading="lazy" decoding="async" style="display:block;width:100%;height:auto;"><figcaption>Field documentation from inside the vehicle.</figcaption></figure><figure><img src="media/uploads/2026/10/apu-mecshap-cabs-lebanon-03.jpg" alt="Field work in a densely wooded area." loading="lazy" decoding="async" style="display:block;width:100%;height:auto;"><figcaption>Field work in a densely wooded area.</figcaption></figure><figure><img src="media/uploads/2026/10/apu-mecshap-cabs-lebanon-04.jpg" alt="Field activities of the Anti-Poaching Unit." loading="lazy" decoding="async" style="display:block;width:100%;height:auto;"><figcaption>Field activities of the Anti-Poaching Unit.</figcaption></figure><figure><img src="media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg" alt="Documenting dead birds during field work." loading="lazy" decoding="async" style="display:block;width:100%;height:auto;"><figcaption>Documenting dead birds during field work.</figcaption></figure><figure><img src="media/uploads/2026/10/apu-mecshap-cabs-lebanon-06.jpg" alt="The Internal Security Forces and the Anti-Poaching Unit during field activities." loading="lazy" decoding="async" style="display:block;width:100%;height:auto;"><figcaption>The Internal Security Forces and the Anti-Poaching Unit during field activities.</figcaption></figure>

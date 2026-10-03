@@ -1,0 +1,72 @@
+{
+  "titles": {
+    "ar": [
+      "مكافحة الصيد غير القانوني في لبنان",
+      "توثق الصور نشاطات وحدة مكافحة الصيد الجائر APU التابعة لـ MECSHAP، بالتعاون مع جمعية CABS الألمانية وقوى الأمن الداخلي، في البقاع وفي شمال لبنان، في مكافحة أعمال الصيد غير القانونية. ويبدو في الصور رئيس تحرير مجلة صيد، أدونيس الخطيب، الذي يشارك ميدانياً بصفته مدير مركز الشرق الأوسط للصيد المستدام MECSHAP."
+    ],
+    "en": [
+      "Combating illegal hunting in Lebanon",
+      "These photographs document the field activities of the Anti-Poaching Unit (APU) of MECSHAP, working with the German association CABS and Lebanon’s Internal Security Forces to combat illegal hunting in the Bekaa and northern Lebanon. The photographs show Sayd Magazine’s editor-in-chief, Adonis Alkhateeb, taking part in field operations in his capacity as director of the Middle East Center for Sustainable Hunting (MECSHAP)."
+    ],
+    "fr": [
+      "La lutte contre la chasse illégale au Liban",
+      "Ces photographies documentent les activités de terrain de l’unité de lutte contre le braconnage (APU) de MECSHAP, en coopération avec l’association allemande CABS et les Forces de sécurité intérieure libanaises, pour lutter contre la chasse illégale dans la Bekaa et le nord du Liban. Elles montrent le rédacteur en chef de Sayd Magazine, Adonis Alkhateeb, participant aux opérations de terrain en sa qualité de directeur du Centre du Moyen-Orient pour la chasse durable (MECSHAP)."
+    ]
+  },
+  "images": [
+    {
+      "package_file": "apu-mecshap-cabs-lebanon-01.jpg",
+      "original_file": "04-IMG-20261003-WA0003.jpg",
+      "captions": {
+        "ar": "لقاء ميداني خلال نشاطات مكافحة الصيد غير القانوني.",
+        "en": "A field encounter during activities to combat illegal hunting.",
+        "fr": "Une rencontre sur le terrain dans le cadre de la lutte contre la chasse illégale."
+      }
+    },
+    {
+      "package_file": "apu-mecshap-cabs-lebanon-02.jpg",
+      "original_file": "01-1000497974.jpg",
+      "captions": {
+        "ar": "التوثيق الميداني من داخل المركبة.",
+        "en": "Field documentation from inside the vehicle.",
+        "fr": "Documentation de terrain depuis le véhicule."
+      }
+    },
+    {
+      "package_file": "apu-mecshap-cabs-lebanon-03.jpg",
+      "original_file": "02-Screenshot_20261003_074355_com_facebook_katana_ImmersiveActivity.jpg",
+      "captions": {
+        "ar": "متابعة ميدانية في منطقة كثيفة الأشجار.",
+        "en": "Field work in a densely wooded area.",
+        "fr": "Intervention de terrain dans une zone densément boisée."
+      }
+    },
+    {
+      "package_file": "apu-mecshap-cabs-lebanon-04.jpg",
+      "original_file": "03-Screenshot_20261003_074312_com_facebook_katana_ImmersiveActivity_edit_312067317217517.jpg",
+      "captions": {
+        "ar": "من النشاطات الميدانية لوحدة مكافحة الصيد الجائر.",
+        "en": "Field activities of the Anti-Poaching Unit.",
+        "fr": "Activités de terrain de l’unité de lutte contre le braconnage."
+      }
+    },
+    {
+      "package_file": "apu-mecshap-cabs-lebanon-05.jpg",
+      "original_file": "01-Screenshot_20261003_074514_com_facebook_katana_ImmersiveActivity_edit_312007903451290.jpg",
+      "captions": {
+        "ar": "توثيق طيور نافقة خلال العمل الميداني.",
+        "en": "Documenting dead birds during field work.",
+        "fr": "Documentation d’oiseaux morts lors du travail de terrain."
+      }
+    },
+    {
+      "package_file": "apu-mecshap-cabs-lebanon-06.jpg",
+      "original_file": "05-FB_IMG_1791001261055.jpg",
+      "captions": {
+        "ar": "قوى الأمن الداخلي ووحدة مكافحة الصيد الجائر خلال نشاط ميداني.",
+        "en": "The Internal Security Forces and the Anti-Poaching Unit during field activities.",
+        "fr": "Les Forces de sécurité intérieure et l’unité de lutte contre le braconnage lors d’une intervention de terrain."
+      }
+    }
+  ]
+}

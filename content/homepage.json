@@ -62,7 +62,9 @@
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
     "great-white-pelican-matn-highway-nayef-krayem",
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
-    "birds-three-countries-nayef-krayem"
+    "birds-three-countries-nayef-krayem",
+    "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
+    "combating-illegal-hunting-lebanon-in-photos"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -87,7 +89,9 @@
     "بالفيديو-النمر-العربي-في-السعودية",
     "video-arabian-leopard-in-saudi-arabia",
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
-    "birds-three-countries-nayef-krayem"
+    "birds-three-countries-nayef-krayem",
+    "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
+    "combating-illegal-hunting-lebanon-in-photos"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -98,7 +102,9 @@
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
     "turtle-doves-cross-hunting-borders-european-flyways",
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
-    "birds-three-countries-nayef-krayem"
+    "birds-three-countries-nayef-krayem",
+    "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
+    "combating-illegal-hunting-lebanon-in-photos"
   ],
   "omit_home_desks": [
     "أخبار",
@@ -135,6 +141,7 @@
       "بالفيديو-النمر-العربي-في-السعودية"
     ],
     "صور": [
+      "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
       "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
@@ -157,6 +164,7 @@
       "video-arabian-leopard-in-saudi-arabia"
     ],
     "Photos": [
+      "combating-illegal-hunting-lebanon-in-photos",
       "birds-three-countries-nayef-krayem",
       "suhail-2026-in-photos-falcons-visitors"
     ],
@@ -191,6 +199,8 @@
   ],
   "home_section_tail": [],
   "gallery": [
+    "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
+    "combating-illegal-hunting-lebanon-in-photos",
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
     "birds-three-countries-nayef-krayem",
     "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا",
@@ -265,6 +275,7 @@
     {
       "door": "photos",
       "slugs": [
+        "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
         "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
         "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
       ]
@@ -318,7 +329,8 @@
     "رادار-صيد-العربي-سبتمبر-2026": "hunting",
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم": "photos",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة": "hunting",
-    "معرض-الصقور-والصيد-السعودي-الدولي-2026": "hunting"
+    "معرض-الصقور-والصيد-السعودي-الدولي-2026": "hunting",
+    "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور": "photos"
   },
   "demotion": "Nayef approved the Saudi falcons exhibition story in the first side card on 3 October 2026. Preserve Adonis return editorial in fourth side card; Hala second and autumn third. Turtle-dove feature moves to newest Updates; displaced oldest Suhail news remains in category/archive. All lower doors and protected design retained.",
   "approved_home_repeats": [
