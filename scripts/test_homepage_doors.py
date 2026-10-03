@@ -1,7 +1,7 @@
 """Regression checks for the three mirrored homepages and fail-closed rules."""
 from copy import deepcopy
 from check_publication_contract import check
-from refresh_homepage_doors import refresh, DOCS, config, validate_config
+from refresh_homepage_doors import refresh, DOCS, config, validate_config, channel_config
 
 def test_homepages():
     check()
@@ -23,7 +23,9 @@ def test_homepages():
         else:raise AssertionError('Broken mirrored image accepted')
     finally:p.write_text(original)
     p=DOCS/'en/index.html';original=p.read_text()
-    for wrong in [original.replace('data-tv-group="sayd-channel"','data-tv-group="wrong"',1),original.replace('data-video-id="CgmNLoWWPGo"','data-video-id="missing"',1)]:
+    video_id=channel_config()["videos"][0]["id"]
+    assert f'data-video-id="{video_id}"' in original, "Channel fixture must exist"
+    for wrong in [original.replace('data-tv-group="sayd-channel"','data-tv-group="wrong"',1),original.replace(f'data-video-id="{video_id}"','data-video-id="missing"',1)]:
         try:
             p.write_text(wrong)
             try:check()
