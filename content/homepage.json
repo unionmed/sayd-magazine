@@ -1,20 +1,20 @@
 {
   "featured": [
     "رادار-صيد-العربي-سبتمبر-2026",
+    "معرض-الصقور-والصيد-السعودي-الدولي-2026",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
     "خريف-الصيد-العربي-2026",
-    "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
   ],
   "latest": [
+    "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
     "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
     "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
     "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
     "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
-    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+    "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -202,20 +202,20 @@
   "ia_slots": {
     "main": "رادار-صيد-العربي-سبتمبر-2026",
     "important": [
+      "معرض-الصقور-والصيد-السعودي-الدولي-2026",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
       "خريف-الصيد-العربي-2026",
-      "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
       "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
     ],
     "latest": [
+      "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
       "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
       "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
       "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
       "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
       "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف",
       "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
-      "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-      "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+      "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
     ]
   },
   "ia_door_sections": [
@@ -317,9 +317,10 @@
     "الصمت-الذي-يتكلمه-الخيل": "equestrian",
     "رادار-صيد-العربي-سبتمبر-2026": "hunting",
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم": "photos",
-    "حين-يصبح-الخريف-موسما-لاصطياد-الصورة": "hunting"
+    "حين-يصبح-الخريف-موسما-لاصطياد-الصورة": "hunting",
+    "معرض-الصقور-والصيد-السعودي-الدولي-2026": "hunting"
   },
-  "demotion": "One lead, four side cards, eight Updates in date order. Hala El-Khatib’s autumn photography essay occupies the first side card by Nayef’s instruction on 3 October 2026. Bekaa moves to second; the displaced Sicily-to-Lebanon feature moves to newest Updates. Sayd returns leaves Updates but remains in the Hunting category and archive. Preserve all lower doors and TV selections; no article deletion.",
+  "demotion": "Nayef approved the Saudi falcons exhibition story in the first side card on 3 October 2026. Preserve Adonis return editorial in fourth side card; Hala second and autumn third. Turtle-dove feature moves to newest Updates; displaced oldest Suhail news remains in category/archive. All lower doors and protected design retained.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
@@ -339,6 +340,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "معرض-الصقور-والصيد-السعودي-الدولي-2026",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
     "رادار-صيد-العربي-سبتمبر-2026",
     "خريف-الصيد-العربي-2026",
@@ -374,6 +376,15 @@
         "fr": "Adonis Alkhateeb"
       },
       "position": "50% 25%"
+    },
+    "معرض-الصقور-والصيد-السعودي-الدولي-2026": {
+      "image": "media/uploads/2026/10/saudi-falcons-exhibition-2026-close-spa.jpg",
+      "position": "62% 30%",
+      "alt": {
+        "ar": "صقر على يد صقّار خلال أولى ليالي المزاد المقام في المعرض.",
+        "en": "A falcon on a falconer’s hand during the opening night of the auction held at the exhibition.",
+        "fr": "Un faucon sur la main d’un fauconnier pendant la première soirée des enchères organisées au salon."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
