@@ -174,10 +174,12 @@
       "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
     ],
     "الحياة البرية والتخييم": [
+      "قطر-حماية-المناطق-البرية-والبحرية-2030",
       "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
       "شجيرة-العوسج-حين-تقرأ-الأرض"
     ],
     "Wildlife & Camping": [
+      "qatar-protected-land-marine-areas-2030",
       "lebanon-hiking-and-camping-among-cedars-and-valleys",
       "the-awsaj-thornbush-reading-the-land"
     ],
@@ -256,6 +258,7 @@
     {
       "door": "wildlife",
       "slugs": [
+        "قطر-حماية-المناطق-البرية-والبحرية-2030",
         "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
         "شجيرة-العوسج-حين-تقرأ-الأرض"
       ]
@@ -335,9 +338,10 @@
     "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور": "photos",
     "القاهرة-تستعد-لكأس-العالم-للبندقية-والمسدس": "gear",
     "أسلحة-الصيد-في-معرض-الرياض-2026": "gear",
-    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي": "hunting"
+    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي": "hunting",
+    "قطر-حماية-المناطق-البرية-والبحرية-2030": "wildlife"
   },
-  "demotion": "Nayef authorized Saudi exhibition highlights as the main lead on 5 October 2026. The previous radar lead moves to the side cards in date order; the earlier Saudi opening story stays in its category and archive. Two exhibition ticker items only: Al-Melwah and AI. Preserve all other slots and protected design.",
+  "demotion": "Nayef approved Qatar protected areas news on 5 October 2026: lower Wildlife & Camping cards only, ticker and internal category. No upper homepage placement.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
@@ -357,6 +361,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "قطر-حماية-المناطق-البرية-والبحرية-2030",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
@@ -412,11 +417,28 @@
         "en": "A falconer holds a falcon during Al-Melwah race activities at the Saudi Falcons and Hunting Exhibition 2026.",
         "fr": "Un fauconnier tient un faucon pendant les activités de la course Al-Melwah au Salon saoudien des faucons et de la chasse 2026."
       }
+    },
+    "قطر-حماية-المناطق-البرية-والبحرية-2030": {
+      "image": "media/uploads/2026/10/qatar-protected-areas-qna.jpg",
+      "position": "50% 60%",
+      "alt": {
+        "ar": "المها العربي ضمن جهود حماية الحياة الفطرية في قطر.",
+        "en": "Arabian oryx as part of wildlife conservation efforts in Qatar.",
+        "fr": "Des oryx d’Arabie dans le cadre des efforts de conservation de la faune au Qatar."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "قطر-حماية-المناطق-البرية-والبحرية-2030",
+      "titles": {
+        "ar": "قطر تستهدف حماية 30% من مناطقها البرية والبحرية بحلول 2030",
+        "en": "Qatar aims to protect 30% of its land and marine areas by 2030",
+        "fr": "Le Qatar vise à protéger 30 % de ses zones terrestres et marines d’ici 2030"
+      }
+    },
     {
       "slug": "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
       "anchor": "section-0",
