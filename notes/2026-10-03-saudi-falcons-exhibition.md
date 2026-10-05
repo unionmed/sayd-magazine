@@ -19,3 +19,9 @@ Arabic caption: معرض الصقور والصيد السعودي الدولي �
 English caption: The International Saudi Falcons and Hunting Exhibition welcomes visitors in Malham until 10 October. Falcons, falconers, auctions and outdoor experiences bring a living heritage into focus. Read the story on Sayd.
 
 Proposed short: 15–20 seconds using approved photo 1, then photo 3; opening headline, exhibition end date, auction result SAR 101,000, daily hours 14:00–23:00, closing CTA to article. Motion should preserve the falcon’s full head/body and SPA logo. No video or social post has been created/published by this record; creative approval is a separate stage.
+
+## Photo-credit correction — 5 October 2026
+
+- Visually rechecked both locally hosted approved images: the white واس / SPA logo is clearly visible at the upper left in each photograph. AGENTS.md’s 5 October rule applies to both.
+- Removed only repeated photo-source lines from the AR/EN/FR article pages and Markdown sources; descriptive captions, alt text, images, editorial copy, publication dates and distribution remain unchanged.
+- Updated publish_saudi_falcons_2026.py to regenerate descriptive captions without repeated credits. Original SPA image IDs, URLs and source links above remain the internal provenance record.
