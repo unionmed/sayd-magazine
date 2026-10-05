@@ -93,6 +93,10 @@ def archive_image_repair(file, base):
 
 def check(base=None):
     c=config();validate_config(c);channel=channel_config();channel_videos=channel['videos'][:3]
+    if c.get('hunting_rotation'):
+        from homepage_hunting_rotation import expected
+        actual=next(d['slugs'] for d in c['ia_door_sections'] if d['door']=='hunting')
+        assert actual==expected(c), 'Hunting cards did not rotate after the upper slots changed'
     contract=json.loads(CONTRACT.read_text());pairs=json.loads((ROOT/'content/en/pairs.json').read_text())['pairs']
     for name,digest in contract['protected_files'].items():
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest, f'Protected design changed without contract approval: {name}'
