@@ -2,35 +2,52 @@ name: Apply GA4 tracking
 
 on:
   push:
-    branches: [main]
+    branches: [main, fix/ga4-verified-measurement-id]
     paths:
       - "scripts/seo_foundation.py"
+      - "scripts/repair_ga4_tracking.py"
       - ".github/workflows/apply-ga4.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: ga4-repair-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   apply:
     runs-on: ubuntu-latest
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 2
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
-      - name: Apply shared SEO and analytics tags
-        run: python3 scripts/seo_foundation.py
-      - name: Commit generated HTML
+          python-version: "3.12"
+      - name: Repair only GA4 blocks and the generator
         run: |
-          if git diff --quiet; then
-            echo "No generated changes."
+          python3 scripts/repair_ga4_tracking.py
+          python3 scripts/repair_ga4_tracking.py --check
+      - name: Preserve the publication contract and homepage
+        env:
+          BASE_SHA: ${{ github.sha }}
+        run: |
+          python3 scripts/check_publication_contract.py --base "$BASE_SHA"
+          python3 scripts/test_homepage_doors.py
+          python3 scripts/test_seo_foundation.py
+      - name: Commit verified analytics-only changes
+        run: |
+          git add scripts/seo_foundation.py
+          git add -- ':(glob)docs/**/*.html'
+          if git diff --cached --quiet; then
+            echo "GA4 is already correct; no changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs
-          git commit -m "Apply GA4 tracking to published pages"
+          git diff --cached --stat | tail -5
+          git commit -m "Fix verified GA4 measurement ID and deduplicate tracking blocks"
           git push
