@@ -164,7 +164,15 @@ def refresh(path,lang):
         cards='\n'.join(render_card(*data(s)) for s in sections[door])
         page,n=re.subn(pattern,lambda m:m[1]+'\n'+cards+'\n'+m[2],page,count=1,flags=re.S)
         if n!=1:raise ValueError(f'{lang}: missing desk {heading}')
-    ticker=''.join(f'<a href="posts/{data(ar)[0]}/index.html">{html.escape(data(ar)[1]["title"])}</a>' for ar in c['ticker_slugs'])
+    entries=c.get('ticker_entries',[{'slug':ar} for ar in c['ticker_slugs']])
+    assert [e['slug'] for e in entries]==c['ticker_slugs'], 'Ticker entry placement differs'
+    ticker=''
+    for entry in entries:
+        translated,item=data(entry['slug'])
+        title=entry.get('titles',{}).get(lang,item['title'])
+        anchor='#'+entry['anchor'] if entry.get('anchor') else ''
+        ticker+=f'<a href="posts/{translated}/index.html{anchor}">{html.escape(title)}</a>'
+
     page=re.sub(r'(<div class="ticker"(?: aria-hidden="true")?>).*?(</div>)',lambda m:m[1]+ticker+m[2],page,flags=re.S)
     # Normalize wrapper whitespace for a stable second refresh.
     page=re.sub(r'(</article>)\s*(</div>\s*</div>\s*</div>\s*</div>\s*<div class="latest-col">)',r'\1\n          </div>\n          </div>\n        </div>\n      </div>\n      <div class="latest-col">',page)
