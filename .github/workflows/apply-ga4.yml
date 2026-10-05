@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install publication-test dependency
+        run: pip install lxml==5.3.2
       - name: Repair only GA4 blocks and the generator
         run: |
           python3 scripts/repair_ga4_tracking.py
