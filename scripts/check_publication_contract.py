@@ -6,6 +6,7 @@ from urllib.parse import unquote, urlsplit
 from lxml import html
 from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, local_slug, channel_config
 import seo_foundation as seo
+from analytics_only_change import analytics_only_repair
 
 CONTRACT=ROOT/'content/publication-contract.json'
 LANGS=('ar','en','fr')
@@ -162,6 +163,8 @@ def check_new_stories(paths,pairs,base=None):
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if analytics_only_repair(file,base):
+            continue
         if archive_image_repair(file,base):
             continue
         lang=m[1] or 'ar';ar=canonical(m[2],lang,pairs)
