@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 PAIRS_PATH = ROOT / "content" / "en" / "pairs.json"
 ORIGIN = "https://sayd-magazine.com"
+GA4_MEASUREMENT_ID = "G-C3COCEYX8Q"
 
 # Published pages that are stubs, duplicates, or non-content. They still
 # receive a canonical URL; they are omitted from the sitemap.
@@ -859,7 +860,31 @@ def apply_html(
         if meta and re.search(r'20(?:2[6-9]|[3-9][0-9])', meta.group(1)):
             result = format_photo_credits(result)
     result = add_article_sharing(result, rel)
-    return add_team_linkedin(result, rel)
+    result = add_team_linkedin(result, rel)
+    return add_ga4(result)
+
+
+def add_ga4(text: str) -> str:
+    """Install the Sayd GA4 tag once on every canonical HTML page."""
+    text = re.sub(
+        r'\\s*<!-- analytics:start -->.*?<!-- analytics:end -->',
+        '',
+        text,
+        flags=re.S,
+    )
+    if '</head>' not in text:
+        return text
+    block = f'''  <!-- analytics:start -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){{dataLayer.push(arguments);}}
+    gtag('js', new Date());
+    gtag('config', '{GA4_MEASUREMENT_ID}');
+  </script>
+  <!-- analytics:end -->
+'''
+    return text.replace('</head>', block + '</head>', 1)
 
 
 def add_team_linkedin(text: str, rel: Path) -> str:
