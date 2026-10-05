@@ -21,7 +21,8 @@ def url(lang):return 'https://sayd-magazine.com/'+('' if lang=='ar' else lang+'/
 def save(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s)
 def figure(lang,i):
  d=T[lang];prefix='../../' if lang=='ar' else '../../../'
- return f'<figure><img src="{prefix+IMAGES[i]}" alt="{esc.escape(d["captions"][i],quote=True)}" decoding="async" style="display:block;width:100%;height:auto"><figcaption><span>{esc.escape(d["captions"][i])}</span><br><small style="font-size:11px;color:#777"><a href="https://www.spa.gov.sa/{SOURCES[i]}">'+('المصدر: وكالة الأنباء السعودية (واس)' if lang=='ar' else 'Source: Saudi Press Agency (SPA)' if lang=='en' else 'Source : Agence de presse saoudienne (SPA)')+'</a></small></figcaption></figure>'
+ # SPA's visible watermark identifies the source; do not duplicate it beneath each photograph.
+ return f'<figure><img src="{prefix+IMAGES[i]}" alt="{esc.escape(d["captions"][i],quote=True)}" decoding="async" style="display:block;width:100%;height:auto"><figcaption><span>{esc.escape(d["captions"][i])}</span></figcaption></figure>'
 def body(lang):
  d=T[lang];out=figure(lang,0)
  for para in d['intro']:out+='<p>'+esc.escape(para)+'</p>'
