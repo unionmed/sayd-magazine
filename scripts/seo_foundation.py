@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 PAIRS_PATH = ROOT / "content" / "en" / "pairs.json"
 ORIGIN = "https://sayd-magazine.com"
-GA4_MEASUREMENT_ID = "G-C3COCEYX8Q"
+GA4_MEASUREMENT_ID = "G-C3C0CEYX8Q"
 
 # Published pages that are stubs, duplicates, or non-content. They still
 # receive a canonical URL; they are omitted from the sitemap.
@@ -865,15 +865,18 @@ def apply_html(
 
 
 def add_ga4(text: str) -> str:
-    """Install the Sayd GA4 tag once on every canonical HTML page."""
-    text = re.sub(
-        r'\\s*<!-- analytics:start -->.*?<!-- analytics:end -->',
-        '',
-        text,
-        flags=re.S,
-    )
-    if '</head>' not in text:
+    """Keep one GA4 block, preserving every byte outside the managed block."""
+    match = re.search(r"</head\s*>", text, re.I)
+    if not match:
         return text
+    text = re.sub(
+        r'[ \t]*<!-- analytics:start -->.*?<!-- analytics:end -->[ \t]*(?:\r?\n)?',
+        '', text, flags=re.S,
+    )
+    if 'googletagmanager.com/gtag/js' in text:
+        raise ValueError("Unmanaged Google tag: review before adding another")
+    match = re.search(r"</head\s*>", text, re.I)
+    assert match is not None
     block = f'''  <!-- analytics:start -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={GA4_MEASUREMENT_ID}"></script>
   <script>
@@ -884,7 +887,7 @@ def add_ga4(text: str) -> str:
   </script>
   <!-- analytics:end -->
 '''
-    return text.replace('</head>', block + '</head>', 1)
+    return text[:match.start()] + block + text[match.start():]
 
 
 def add_team_linkedin(text: str, rel: Path) -> str:

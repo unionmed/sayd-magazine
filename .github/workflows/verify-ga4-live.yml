@@ -1,0 +1,36 @@
+name: Verify live GA4
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/verify_ga4_live.py"
+      - ".github/workflows/verify-ga4-live.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ga4-live-verification
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated browser test tools
+        run: |
+          pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Check generated GA4 once per canonical page
+        run: python scripts/repair_ga4_tracking.py --check
+      - name: Verify live AR EN FR HTML and debug pageviews
+        run: python scripts/verify_ga4_live.py
