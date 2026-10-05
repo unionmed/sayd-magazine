@@ -2,8 +2,24 @@
   "label": "من كل وادي خبر",
   "items": [
     {
-      "slug": "معرض-الصقور-والصيد-السعودي-الدولي-2026",
-      "title": "معرض الصقور والصيد السعودي الدولي يفتح أبوابه حتى 10 أكتوبر"
+      "slug": "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
+      "title": "سباق الملواح ينطلق في معرض الصقور والصيد السعودي بـ12 شوطًا وجوائز تبلغ 723 ألف ريال",
+      "anchor": "section-0",
+      "titles": {
+        "ar": "سباق الملواح ينطلق في معرض الصقور والصيد السعودي بـ12 شوطًا وجوائز تبلغ 723 ألف ريال",
+        "en": "Al-Melwah racing begins at the Saudi Falcons and Hunting Exhibition with 12 heats and SAR 723,000 in prizes",
+        "fr": "Les courses Al-Melwah débutent au Salon saoudien des faucons et de la chasse avec 12 manches et 723 000 riyals de prix"
+      }
+    },
+    {
+      "slug": "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
+      "title": "تقنيات معززة بالذكاء الاصطناعي للرصد والحماية ضمن معرض الصقور والصيد السعودي 2026",
+      "anchor": "section-2",
+      "titles": {
+        "ar": "تقنيات معززة بالذكاء الاصطناعي للرصد والحماية ضمن معرض الصقور والصيد السعودي 2026",
+        "en": "AI-enhanced monitoring and protection technologies feature at the Saudi Falcons and Hunting Exhibition 2026",
+        "fr": "Des technologies de surveillance et de protection renforcées par l’IA au Salon saoudien des faucons et de la chasse 2026"
+      }
     },
     {
       "slug": "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
