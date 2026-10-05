@@ -6,6 +6,7 @@ on:
     paths:
       - "scripts/seo_foundation.py"
       - "scripts/repair_ga4_tracking.py"
+      - "scripts/analytics_only_change.py"
       - ".github/workflows/apply-ga4.yml"
   workflow_dispatch:
 
@@ -29,6 +30,8 @@ jobs:
           python-version: "3.12"
       - name: Install publication-test dependency
         run: pip install lxml==5.3.2
+      - name: Verify exact instrumentation-only change recognition
+        run: python3 scripts/analytics_only_change.py --install
       - name: Repair only GA4 blocks and the generator
         run: |
           python3 scripts/repair_ga4_tracking.py
@@ -40,9 +43,11 @@ jobs:
           python3 scripts/check_publication_contract.py --base "$BASE_SHA"
           python3 scripts/test_homepage_doors.py
           python3 scripts/test_seo_foundation.py
+          python3 scripts/test_archive_media_contract.py
+          python3 scripts/test_archive_access.py
       - name: Commit verified analytics-only changes
         run: |
-          git add scripts/seo_foundation.py
+          git add scripts/seo_foundation.py scripts/check_publication_contract.py
           git add -- ':(glob)docs/**/*.html'
           if git diff --cached --quiet; then
             echo "GA4 is already correct; no changes."
