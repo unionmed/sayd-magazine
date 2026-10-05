@@ -32,5 +32,26 @@ def test_homepages():
             except AssertionError:pass
             else:raise AssertionError('Invalid channel structure accepted')
         finally:p.write_text(original)
-    print('PASS: stable renderer; excess cards and a missing mirror image rejected')
+    # A displaced recent hunting story enters its door, replacing the oldest card.
+    from homepage_hunting_rotation import select, candidates, expected
+    c=config();current=expected(c);recent='سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف'
+    moved=deepcopy(c);moved['latest'].remove(recent)
+    after=select(moved,candidates())
+    assert after[0]==recent and len(after)==4 and current[-1] not in after
+    assert not set(after).intersection(moved['featured']+moved['latest'])
+    # A story promoted out of the lower door cannot remain there as a duplicate.
+    promoted=deepcopy(c);promoted['latest'].append(current[0])
+    assert current[0] not in select(promoted,candidates())
+    # An outdated fixed list must fail the publication gate, not silently persist.
+    config_path=DOCS.parent/'content/homepage.json';original=config_path.read_text()
+    try:
+        bad=deepcopy(c)
+        next(d for d in bad['ia_door_sections'] if d['door']=='hunting')['slugs']=list(reversed(current))
+        import json
+        config_path.write_text(json.dumps(bad,ensure_ascii=False))
+        try:check()
+        except AssertionError as error:assert 'did not rotate' in str(error)
+        else:raise AssertionError('Stale hunting card list accepted')
+    finally:config_path.write_text(original)
+    print('PASS: stable renderer, displaced-story rotation, duplicate exclusion and stale-card gate')
 if __name__=='__main__':test_homepages()

@@ -180,6 +180,8 @@ def refresh(path,lang):
     return page
 
 def main():
+    from homepage_hunting_rotation import sync
+    sync()
     for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:refresh(DOCS/prefix/'index.html',lang)
     print('Restored one lead + four side cards, eight Updates, approved desks and 3 channel + 3 selection TV cards in AR/EN/FR.')
 

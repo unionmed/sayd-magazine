@@ -22,7 +22,8 @@
     "saudi-hunting-fines-5000-riyal-prohibited-areas",
     "saudi-5000-riyal-hunting-fine-teaser",
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
-    "memory-of-sayd-awareness-responsibility-2016-2024"
+    "memory-of-sayd-awareness-responsibility-2016-2024",
+    "معرض-الصقور-والصيد-السعودي-الدولي-2026"
   ],
   "omit_from_latest": [
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
@@ -123,10 +124,10 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
       "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
-      "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
-      "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
-      "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية"
+      "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+      "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
     ],
     "رماية وعتاد": [
       "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
@@ -146,10 +147,10 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "south-lebanon-environmental-destruction-bird-flyway",
       "protecting-autumn-migratory-birds-lebanon-khatib-2017",
-      "saudi-sixth-hunting-season-2026-2027-rules",
-      "autumn-migration-how-world-protects-birds-regulates-hunting",
-      "autumn-migration-field-action-protect-flyways-lebanon"
+      "suhail-2026-closes-decade-katara-80000-visitors",
+      "saudi-sixth-hunting-season-2026-2027-rules"
     ],
     "Shooting & Gear": [
       "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
@@ -232,10 +233,10 @@
     {
       "door": "hunting",
       "slugs": [
+        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
         "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
-        "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
-        "مع-هجرة-الخريف-كيف-يحمي-العالم-الطيو",
-        "مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية"
+        "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
+        "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
       ]
     },
     {
@@ -455,5 +456,10 @@
     {
       "slug": "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
     }
-  ]
+  ],
+  "hunting_rotation": {
+    "policy": "Newest four eligible 2026+ hunting stories outside lead, side cards and Updates; refresh on every publication. Explicitly superseded news remains in category/archive.",
+    "approved_at": "2026-10-05",
+    "limit": 4
+  }
 }
