@@ -1,10 +1,10 @@
 {
   "featured": [
+    "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
     "رادار-صيد-العربي-سبتمبر-2026",
-    "خريف-الصيد-العربي-2026",
-    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
+    "خريف-الصيد-العربي-2026"
   ],
   "latest": [
     "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -52,8 +52,6 @@
     "the-silence-horses-speak",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
     "saudi-sixth-hunting-season-2026-2027-rules",
-    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
-    "sayd-returns-what-we-want-to-offer",
     "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب",
     "from-the-poem-to-the-maqnas",
     "بالفيديو-وحدة-مكافحة-الصيد-الجائر-عمليات-ميدانية",
@@ -213,12 +211,12 @@
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
-    "main": "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
+    "main": "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "important": [
+      "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
       "رادار-صيد-العربي-سبتمبر-2026",
-      "خريف-الصيد-العربي-2026",
-      "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم"
+      "خريف-الصيد-العربي-2026"
     ],
     "latest": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -339,9 +337,10 @@
     "القاهرة-تستعد-لكأس-العالم-للبندقية-والمسدس": "gear",
     "أسلحة-الصيد-في-معرض-الرياض-2026": "gear",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي": "hunting",
-    "قطر-حماية-المناطق-البرية-والبحرية-2030": "wildlife"
+    "قطر-حماية-المناطق-البرية-والبحرية-2030": "wildlife",
+    "حين-يتغير-الساحل-أين-تستريح-الطيور": "wildlife"
   },
-  "demotion": "Nayef approved Qatar protected areas news on 5 October 2026: lower Wildlife & Camping cards only, ticker and internal category. No upper homepage placement.",
+  "demotion": "Nayef approved coastal bird lead on 6 October 2026. Previous lead is first side card; Updates retain their existing order. Oldest side card leaves the upper homepage and stays in its category and archive.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
@@ -361,8 +360,8 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "قطر-حماية-المناطق-البرية-والبحرية-2030",
-    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
     "رادار-صيد-العربي-سبتمبر-2026",
@@ -426,11 +425,28 @@
         "en": "Arabian oryx as part of wildlife conservation efforts in Qatar.",
         "fr": "Des oryx d’Arabie dans le cadre des efforts de conservation de la faune au Qatar."
       }
+    },
+    "حين-يتغير-الساحل-أين-تستريح-الطيور": {
+      "image": "media/uploads/2026/10/batroun-pelican-2026.jpg",
+      "position": "50% 60%",
+      "alt": {
+        "ar": "بجعة البترون عند حافة المتوسط.",
+        "en": "Batroun’s pelican at the edge of the Mediterranean.",
+        "fr": "Le pélican de Batroun au bord de la Méditerranée."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "حين-يتغير-الساحل-أين-تستريح-الطيور",
+      "titles": {
+        "ar": "حين يتغيّر الساحل… أين تستريح الطيور؟",
+        "en": "When the coast changes… where do birds rest?",
+        "fr": "Quand le littoral change… où les oiseaux se reposent-ils ?"
+      }
+    },
     {
       "slug": "قطر-حماية-المناطق-البرية-والبحرية-2030",
       "titles": {
@@ -446,15 +462,6 @@
         "ar": "سباق الملواح ينطلق في معرض الصقور والصيد السعودي بـ12 شوطًا وجوائز تبلغ 723 ألف ريال",
         "en": "Al-Melwah racing begins at the Saudi Falcons and Hunting Exhibition with 12 heats and SAR 723,000 in prizes",
         "fr": "Les courses Al-Melwah débutent au Salon saoudien des faucons et de la chasse avec 12 manches et 723 000 riyals de prix"
-      }
-    },
-    {
-      "slug": "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
-      "anchor": "section-2",
-      "titles": {
-        "ar": "تقنيات معززة بالذكاء الاصطناعي للرصد والحماية ضمن معرض الصقور والصيد السعودي 2026",
-        "en": "AI-enhanced monitoring and protection technologies feature at the Saudi Falcons and Hunting Exhibition 2026",
-        "fr": "Des technologies de surveillance et de protection renforcées par l’IA au Salon saoudien des faucons et de la chasse 2026"
       }
     },
     {
@@ -483,5 +490,6 @@
     "policy": "Newest four eligible 2026+ hunting stories outside lead, side cards and Updates; refresh on every publication. Explicitly superseded news remains in category/archive.",
     "approved_at": "2026-10-05",
     "limit": 4
-  }
+  },
+  "chronological_placement_note": "Nayef cancelled the special placement of Adonis’s Sayd Returns editorial on 6 October 2026. Keep its original 8 September 2026 publication date and ordinary chronological position in its category and archive; no homepage pin or special exclusion from Updates."
 }
