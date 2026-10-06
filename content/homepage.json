@@ -52,8 +52,6 @@
     "the-silence-horses-speak",
     "السعودية-تطلق-موسم-الصيد-السادس-بضواب",
     "saudi-sixth-hunting-season-2026-2027-rules",
-    "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
-    "sayd-returns-what-we-want-to-offer",
     "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب",
     "from-the-poem-to-the-maqnas",
     "بالفيديو-وحدة-مكافحة-الصيد-الجائر-عمليات-ميدانية",
@@ -492,5 +490,6 @@
     "policy": "Newest four eligible 2026+ hunting stories outside lead, side cards and Updates; refresh on every publication. Explicitly superseded news remains in category/archive.",
     "approved_at": "2026-10-05",
     "limit": 4
-  }
+  },
+  "chronological_placement_note": "Nayef cancelled the special placement of Adonis’s Sayd Returns editorial on 6 October 2026. Keep its original 8 September 2026 publication date and ordinary chronological position in its category and archive; no homepage pin or special exclusion from Updates."
 }
