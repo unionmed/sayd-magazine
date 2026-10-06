@@ -25,7 +25,7 @@ def figure(lang,i):
  # SPA's visible watermark identifies the source; do not duplicate it beneath each photograph.
  return f'<figure><img src="{prefix+IMAGES[i]}" alt="{esc.escape(d["captions"][i],quote=True)}" decoding="async" style="display:block;width:100%;height:auto"><figcaption><span>{esc.escape(d["captions"][i])}</span><br><small style="font-size:11px"><a href="{esc.escape(SOURCES[i],quote=True)}">{esc.escape(CREDITS[i])}</a></small></figcaption></figure>'
 def body(lang):
- d=T[lang];out=figure(lang,0)
+ d=T[lang];out=figure(lang,0)+'<p class="article-deck">'+esc.escape(d['deck'])+'</p>'
  for para in d['intro']:out+='<p>'+esc.escape(para)+'</p>'
  for i,(heading,paragraphs) in enumerate(d['sections']):
   out+=f'<h2 id="section-{i}">{esc.escape(heading)}</h2>'
@@ -49,6 +49,8 @@ for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
  metas=cls(header,'meta-item');metas[0].text=DATES[lang];metas[1].text=AUTHOR[lang]
  for n in cls(t,'author-role'):n.getparent().remove(n)
  for a in header.xpath('.//a[contains(@href,"category/")]'):a.set('href','../../category/'+quote('حياة-برية-وتخييم')+'/index.html');a.text=DOOR[lang]
+ for a in cls(t,'breadcrumb')[0].xpath('.//a[contains(@href,"category/")]'):
+  a.set('href','../../category/حياة-برية-وتخييم/index.html');a.text=DOOR[lang]
  content=cls(t,'article-content')[0]
  for n in list(content):content.remove(n)
  content.text=None
@@ -75,12 +77,12 @@ c['ia_slots']['main']=AR
 c['ia_slots']['important']=[OLD]+[x for x in c['ia_slots']['important'] if x!=OLD and x!=AR][:3]
 c['featured']=[AR]+c['ia_slots']['important']
 c['primary_door'][AR]='wildlife'
-c['ticker_slugs']=[AR]+c['ticker_slugs']
-c['ticker_entries']=[{'slug':AR,'titles':{l:T[l]['title'] for l in T}}]+c['ticker_entries']
+c['ticker_slugs']=[AR]+[x for x in c['ticker_slugs'] if x!=AR]
+c['ticker_entries']=[{'slug':AR,'titles':{l:T[l]['title'] for l in T}}]+[x for x in c['ticker_entries'] if x['slug']!=AR]
 c['card_image_overrides'][AR]={'image':IMAGES[0],'position':'50% 60%','alt':{l:T[l]['captions'][0] for l in T}}
 c['demotion']='Nayef approved coastal bird lead on 6 October 2026. Previous lead is first side card; Updates retain their existing order. Oldest side card leaves the upper homepage and stays in its category and archive.'
 save(p,json.dumps(c,ensure_ascii=False,indent=2)+'\n')
-p=ROOT/'content/ticker.json';c=json.loads(p.read_text());c['items']=[{'slug':AR,'title':T['ar']['title'],'titles':{l:T[l]['title'] for l in T}}]+c['items'];save(p,json.dumps(c,ensure_ascii=False,indent=2)+'\n')
+p=ROOT/'content/ticker.json';c=json.loads(p.read_text());c['items']=[{'slug':AR,'title':T['ar']['title'],'titles':{l:T[l]['title'] for l in T}}]+[x for x in c['items'] if x['slug']!=AR];save(p,json.dumps(c,ensure_ascii=False,indent=2)+'\n')
 
 for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
  path=DOCS/prefix/'index.html';t=html.parse(str(path)).getroot();lead=cls(t,'feature-lead')[0]
