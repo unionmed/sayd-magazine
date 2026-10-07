@@ -43,6 +43,11 @@ SITEMAP_SKIP = {
     "pages/الدخول/index.html",
     "pages/أرشيف-الموقع/index.html",
     "category/شريط/index.html",
+    # Existing category redirects to the consolidated hunting door.
+    "category/صيد-بري/index.html",
+    "category/صيد-بحري/index.html",
+    "category/صيد-الطيور/index.html",
+    "category/الصقارة/index.html",
 }
 
 # Empty shells replaced by an archive redirect. SEO rewrite must not expand them.
@@ -199,6 +204,9 @@ AR_MONTHS = (
     ("ديسمبر", 12),
 )
 
+FR_MONTHS = ("janvier", "février", "mars", "avril", "mai", "juin",
+             "juillet", "août", "septembre", "octobre", "novembre", "décembre")
+
 EN_FORMATS = ("%d %B %Y", "%d %b %Y", "%B %d, %Y", "%b %d, %Y")
 
 
@@ -230,6 +238,8 @@ def parse_date(text: str) -> str | None:
     year = int(match.group(3))
     month = next((num for name, num in AR_MONTHS if name in month_name), None)
     if month is None:
+        month = next((i for i, name in enumerate(FR_MONTHS, 1) if name == month_name.lower()), None)
+    if month is None:
         return None
     try:
         return datetime(year, month, day).date().isoformat()
@@ -237,11 +247,29 @@ def parse_date(text: str) -> str | None:
         return None
 
 
-def lastmod_from_html(html_text: str) -> str | None:
+def load_article_updates() -> dict[str, str]:
+    """Recorded editorial updates, shared by all three article mirrors."""
+    registry = ROOT / "content" / "article-updates.json"
+    if not registry.exists():
+        return {}
+    updates = {}
+    for item in json.loads(registry.read_text(encoding="utf-8"))["articles"]:
+        modified = datetime.strptime(item["updated"], "%Y-%m-%d").date().isoformat()
+        for lang, slug in item["slugs"].items():
+            prefix = "" if lang == "ar" else lang + "/"
+            key = f"{prefix}posts/{slug}/index.html"
+            updates[key] = max(updates.get(key, modified), modified)
+    return updates
+
+
+def lastmod_from_html(
+    html_text: str, rel: Path | None = None, updates: dict[str, str] | None = None
+) -> str | None:
     match = ARTICLE_DATE_RE.search(html_text)
-    if not match:
-        return None
-    return parse_date(html.unescape(match.group(1)))
+    published = parse_date(html.unescape(match.group(1))) if match else None
+    modified = (updates or {}).get(rel.as_posix()) if rel is not None else None
+    # Keep publication metadata untouched; never regress below publication.
+    return max(filter(None, (published, modified)), default=None)
 
 
 def public_url(rel: Path) -> str:
@@ -1027,6 +1055,7 @@ def apply(docs: Path | None = None) -> dict[str, int]:
     pages = 0
     changed = 0
     sitemap_rows: list[tuple[str, str | None]] = []
+    updates = load_article_updates()
     for path in sorted(docs.rglob("*.html")):
         rel = path.relative_to(docs)
         text = path.read_text(encoding="utf-8")
@@ -1036,7 +1065,7 @@ def apply(docs: Path | None = None) -> dict[str, int]:
             path.write_text(new, encoding="utf-8")
             changed += 1
         if in_sitemap(rel):
-            sitemap_rows.append((public_url(rel), lastmod_from_html(new)))
+            sitemap_rows.append((public_url(rel), lastmod_from_html(new, rel, updates)))
     sitemap_rows.sort(key=lambda row: (row[0] != ORIGIN + "/", row[0]))
     (docs / "sitemap.xml").write_text(render_sitemap(sitemap_rows), encoding="utf-8")
     (docs / "robots.txt").write_text(render_robots(), encoding="utf-8")
