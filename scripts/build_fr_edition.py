@@ -804,6 +804,9 @@ def main():
     wire_original_switches()
     print(f'Rendered {len(translations)} articles, homepage, archive and {len(CATS)} categories ({count} French listing cards)')
 
+    from article_dates import apply as apply_article_dates
+    apply_article_dates(DOCS)
+
 
 if __name__ == '__main__':
     main()

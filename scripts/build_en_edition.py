@@ -1534,6 +1534,9 @@ def main() -> None:
         f"{seo_stats['changed']} pages updated."
     )
 
+    from article_dates import apply as apply_article_dates
+    apply_article_dates(DOCS)
+
 
 if __name__ == "__main__":
     main()

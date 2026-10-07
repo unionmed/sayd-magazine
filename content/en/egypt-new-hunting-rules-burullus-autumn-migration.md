@@ -14,7 +14,7 @@ Egypt’s Ministry of Local Development and Environment announced a new decision
 At Burullus Protected Area, about 200 migratory birds were released and roughly 750 metres of illegal nets were removed. The ministry is also holding a community dialogue with NGOs and specialists to shape clearer rules specifically for hunting migratory birds.
 
 
-### Update, 7 October 2026: a team to tackle illegal bird hunting
+### A team to tackle illegal bird hunting
 
 The Egyptian team to combat excessive and illegal bird hunting was launched at the Journalists’ Syndicate on 30 September 2026, on the initiative of Nature Conservation Egypt, in cooperation with the Association of Environmental and Development Writers. [Al-Ahram](https://gate.ahram.org.eg/News/5936661.aspx) reported Mahmoud Bakr’s description of it as a voluntary coordination platform involving government and parliamentary representatives, researchers, civil society and the media.
 
