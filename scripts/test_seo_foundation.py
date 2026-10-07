@@ -22,6 +22,30 @@ def test_dates() -> None:
     assert seo.parse_date("8 حزيران 2013") == "2013-06-08"
     assert seo.parse_date("13 August 2025") == "2025-08-13"
     assert seo.parse_date("not a date") is None
+    assert seo.parse_date("20 septembre 2026") == "2026-09-20"
+    assert seo.parse_date("7 octobre 2026") == "2026-10-07"
+
+
+def test_recorded_lastmod() -> None:
+    source = '<div class="article-meta"><span class="meta-item">20 September 2026</span></div>'
+    rel = Path("en/posts/example/index.html")
+    assert seo.lastmod_from_html(source) == "2026-09-20"
+    assert seo.lastmod_from_html(source, rel, {rel.as_posix(): "2026-10-07"}) == "2026-10-07"
+    assert seo.lastmod_from_html(source, rel, {rel.as_posix(): "2026-09-01"}) == "2026-09-20"
+    assert seo.lastmod_from_html("", rel, {rel.as_posix(): "2026-10-07"}) == "2026-10-07"
+    assert seo.lastmod_from_html("", rel, {}) is None
+    updates = seo.load_article_updates()
+    import json
+    import xml.etree.ElementTree as ET
+    ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    entries = {node.findtext("s:loc", namespaces=ns): node.findtext("s:lastmod", namespaces=ns)
+               for node in ET.parse(DOCS / "sitemap.xml").getroot()}
+    for item in json.loads((ROOT / "content/article-updates.json").read_text())["articles"]:
+        for lang, slug in item["slugs"].items():
+            prefix = "" if lang == "ar" else lang + "/"
+            path = Path(f"{prefix}posts/{slug}/index.html")
+            assert updates[path.as_posix()] == item["updated"]
+            assert entries[seo.public_url(path)] == item["updated"]
 
 
 def test_public_urls() -> None:
@@ -33,6 +57,8 @@ def test_public_urls() -> None:
     assert " " not in url
     assert "%" in url
     assert seo.canonical_rel(Path("articles/page-1.html")) == Path("articles/index.html")
+    for slug in ("صيد-بري", "صيد-بحري", "صيد-الطيور", "الصقارة"):
+        assert not seo.in_sitemap(Path(f"category/{slug}/index.html"))
     assert not seo.in_sitemap(Path("articles/page-2.html"))
     assert not seo.in_sitemap(Path("pages/under-construction/index.html"))
     assert seo.in_sitemap(Path("memory/index.html"))
@@ -407,6 +433,7 @@ def test_apply_is_idempotent() -> None:
 
 if __name__ == "__main__":
     test_dates()
+    test_recorded_lastmod()
     test_public_urls()
     test_robots_allows_crawling()
     test_sitemap_covers_published_pages()
