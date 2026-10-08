@@ -13,26 +13,26 @@ featured: media/uploads/2026/09/hajal-group-dogs-walk-atlas.jpg
 <p>From the Atlas foothills in Morocco and Algeria, through Tunisia’s woodlands, Libya’s coasts, and Egypt’s marshes, then along the great eastern flyway through Lebanon, Syria, and Jordan, out to the deserts of Saudi Arabia and the Red Sea shore, birds move south—and with them moves the memory of a whole season of waiting.</p>
 <p>This is migration autumn.</p>
 <p>It is not, necessarily, hunting autumn everywhere.</p>
-<p>At the end of September 2026, the Arab hunting map looks like a mosaic of systems, dates, and limits: Saudi Arabia entered its season at the start of September; Jordan opened defined seasons for named species; Morocco and Tunisia prepare for an opening on 4 October; in Lebanon, wild hunting remains closed because no official open-season decision has been issued. And in Libya, autumn itself brought the opposite kind of decree in parts of the southeast: protect migrants and ban hunting them.</p>
+<p>As October 2026 begins, the Arab hunting map looks like a mosaic of systems, dates, and limits: Saudi Arabia entered its season at the start of September; Jordan opened defined seasons for named species; Morocco and Tunisia opened their seasons on 4 October, while Algeria set 10 October as the official opening date under each wilaya’s approved hunting plan; in Lebanon, wild hunting remains closed because no official open-season decision has been issued. And in Libya, autumn itself brought the opposite kind of decree in parts of the southeast: protect migrants and ban hunting them.</p>
 <p>So the journey from the Atlas to the Red Sea is not only a journey between countries. It is a journey between wholly different ways of handling hunting, migration, and wildlife.</p>
 <h2 style="font-weight:800;font-size:1.45em;line-height:1.65;margin:32px 0 12px;color:#304b36">Morocco: the first Sunday in October returns hunters to the field</h2>
-<p>On the Atlas slopes, among forests and plains that shaped one of North Africa’s deepest hunting cultures, the date is set.</p>
-<p>The Higher Council for Hunting fixed Sunday, 4 October 2026, as the official opening of the 2026–2027 hunting season across Morocco. The decision followed an assessment of the 2025–2026 season and the state of the national game stock, within a policy that ties continued hunting to managing species and habitats.</p>
+<p>On the Atlas slopes, among forests and plains that shaped one of North Africa’s deepest hunting cultures, the season has begun.</p>
+<p>Morocco’s 2026–2027 hunting season opened nationwide on Sunday, 4 October 2026, the date set by the Higher Council for Hunting. The decision followed an assessment of the 2025–2026 season and the state of the national game stock, within a policy that ties continued hunting to managing species and habitats.</p>
+<p>According to the National Agency for Water and Forests (ANEF) report published on 6 October, the first day’s national average bag was 1.91 partridges per hunter, with reinforced monitoring, awareness and guidance across hunting areas.</p>
 <p>Morocco is not a small hunting market. Last season, more than 65,000 hunters practised in open and leased domains, plus about five thousand in tourist hunting.</p>
 <p>That figure explains part of the scene that returns with every opening: hunting associations, hounds, partridge, leased and prepared land, and a standing tourist-hunting sector that receives shooters from abroad.</p>
 <p>But 4 October does not make every bird fair game. The annual decision sets species, periods, and bags; turtle dove stays outside the general opening and keeps its own seasonal calendar.</p>
 <p>From here the journey turns east.</p>
 <figure style="margin:28px auto;max-width:850px"><img src="../../../media/uploads/2026/09/hajal-hunter-dog-shotgun-scrub.jpg" alt="Hunter with dog and shotgun in Moroccan mountain scrub" decoding="async" style="display:block;width:100%;height:auto"><figcaption style="font-size:13px;line-height:1.7;color:#68705f;margin-top:8px">Hunter and pointing dog in Atlas scrub — shotgun on the shoulder, cartridge belt, mountain woodland.<small class="photo-credit" style="display:block;font-size:.72em;line-height:1.4;color:#68705f;">حجل أطلس / Hajal Atlas</small></figcaption></figure>
-<h2 style="font-weight:800;font-size:1.45em;line-height:1.65;margin:32px 0 12px;color:#304b36">Algeria: no single opening day for a country the size of a continent</h2>
-<p>Cross the Moroccan border and the rule changes.</p>
-<p>In Algeria one should not look for a single “national opening day” in the Moroccan style. The law ties hunting schedules to quarry species and wilaya; decisions come from wilaya authorities, with biological rest periods taken into account. The Prime Minister’s office confirmed that principle officially in its clarification on the 2025–2026 season.</p>
-<p>As of late September 2026, no unified national opening announcement comparable to Morocco’s—fixing a single national opening date for 2026–2027—has been published.</p>
-<p>That is not an administrative quibble. For the hunter it means the right question in Algeria is not “When does the season start?” but: In which wilaya? For which quarry? Under which decision?</p>
+<h2 style="font-weight:800;font-size:1.45em;line-height:1.65;margin:32px 0 12px;color:#304b36">Algeria: a national opening on 10 October, implementation under each wilaya’s plan</h2>
+<p>The Directorate General of Forests announced the official opening of the 2026–2027 hunting season from Saturday, 10 October 2026, under each wilaya’s approved hunting plan, in a statement reported by the Algerian Press Service (APS) on 30 September.</p>
+<p>The statement requires compliance with the hunting areas defined in the plan, excluding fire-affected areas, and with the permitted species, hunting periods and quotas.</p>
+<p>For the hunter, knowing the national opening date is not enough; the questions remain: In which wilaya? For which quarry? Within which areas, periods and quotas?</p>
 <p>From northern forests to the high plateaus, the local decision becomes part of the hunter’s kit—alongside gun and dog. That a species may be hunted in one place does not make it lawful somewhere else.</p>
 <h2 style="font-weight:800;font-size:1.45em;line-height:1.65;margin:32px 0 12px;color:#304b36">Tunisia: also 4 October… but on a densely detailed calendar</h2>
 <p>Across the Algerian border, the picture is clearer.</p>
 <p>Tunisia’s Ministry of Agriculture, Water Resources and Fisheries issued its decision regulating the 2026–2027 season, published in the Official Gazette.</p>
-<p>On 4 October 2026, hunting of wild rabbit, partridge, resident quail, rock dove, and sandgrouse (“kudra”) opens and runs to 6 December, limited to Sundays, public holidays, and official leave days.</p>
+<p>On 4 October 2026, hunting of hare, partridge, resident quail, rock dove, and sandgrouse (“kudra”) opened and runs to 6 December, limited to Sundays, public holidays, and official leave days.</p>
 <p>Waterbirds keep another clock.</p>
 <p>Woodpigeon and a wide set of waterfowl do not open until 22 November 2026, running to 28 March 2027. The list includes ducks, teal, geese, coot and others, with special rules for waterbird hunting on “the pass.”</p>
 <p>This detail states a principle that repeats across the Arab map: migration does not open the season; the legal decision does.</p>
@@ -44,7 +44,7 @@ featured: media/uploads/2026/09/hajal-group-dogs-walk-atlas.jpg
 <p>In Libya—where desert, wetlands, and coastal corridors form parts of the Europe–Africa flyways—September 2026 brought news unlike the usual season openings.</p>
 <p>On 20 September, the Libyan Authority for Heritage and Wildlife announced a ban on hunting migratory birds in several southeastern areas after declines in numbers and hunting practices described as wrongful and abusive.</p>
 <p>The measure covered Jalu, Awjila and Jikhra (Ijkhira) and other zones out to Tazirbu and Kufra, protecting the natural corridors linked to them, for two consecutive migration seasons (passage and return).</p>
-<p>So while Moroccan and Tunisian hunters prepare for 4 October, a hunter in parts of Libya faces a different sign: birds pass here, but passage is not permission.</p>
+<p>So while Moroccan and Tunisian hunters returned to the field on 4 October, a hunter in parts of Libya faces a different sign: birds pass here, but passage is not permission.</p>
 <p>It is one of the sharpest paradoxes of the Arab 2026 season.</p>
 <h2 style="font-weight:800;font-size:1.45em;line-height:1.65;margin:32px 0 12px;color:#304b36">Egypt: when quail reach the coast</h2>
 <p>Then the road reaches Egypt.</p>
@@ -93,11 +93,11 @@ featured: media/uploads/2026/09/hajal-group-dogs-walk-atlas.jpg
 <p>The quail leaving the northern Mediterranean carries no passport. Pigeons, ducks, and passage birds do not know whether the sky below is Moroccan, Tunisian, Egyptian, or Jordanian.</p>
 <p>But the hunter knows—or must.</p>
 <p>Autumn 2026 shows a clear shift in what an “Arab season” means. The question is no longer only “Has hunting started?” but what may be taken, where, when, by what means, and in what number.</p>
-<p>Morocco and Tunisia wait for 4 October.</p>
+<p>Morocco and Tunisia opened their seasons on 4 October.</p>
 <p>Saudi Arabia entered on 1 September under a system of licences, bags, and species.</p>
 <p>Jordan opened some species and closed others.</p>
 <p>Egypt met migration season within legally regulated hunting.</p>
-<p>Algeria left a core part of the calendar to wilaya decisions.</p>
+<p>Algeria set Saturday, 10 October as the official opening date, with implementation governed by each wilaya’s approved hunting plan.</p>
 <p>In parts of Libya, the season arrived as protection and prohibition.</p>
 <p>In Lebanon, through the end of September, the season had not opened at all.</p>
 <p>As for Syria, the published regulatory picture remains less clear as of late September, with no confirmed national calendar in the available official sources.</p>
