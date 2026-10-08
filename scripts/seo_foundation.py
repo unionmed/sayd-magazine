@@ -18,7 +18,7 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 from xml.sax.saxutils import escape as xml_escape
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -134,6 +134,9 @@ STATIC_TWINS = (
     ("memory/index.html", "en/memory/index.html"),
     ("pages/من-نحن/index.html", "en/team/index.html"),
     ("pages/إتصل-بنا/index.html", "en/contact/index.html"),
+    ("articles/index.html", "en/stories/index.html"),
+    ("pages/عن-صيد/index.html", "en/about/index.html"),
+    ("pages/الترخيص/index.html", "en/license/index.html"),
 )
 
 SEO_BLOCK_RE = re.compile(
@@ -492,6 +495,20 @@ def in_sitemap(rel: Path) -> bool:
     return False
 
 
+def is_alternate_page(rel_posix: str, docs: Path) -> bool:
+    """Only real, indexable, self-canonical pages can be language alternates."""
+    path = docs / rel_posix
+    if not path.is_file():
+        return False
+    head = path.read_text(encoding="utf-8").split("</head>", 1)[0]
+    if re.search(r'http-equiv=["\']refresh["\']', head, re.I):
+        return False
+    if re.search(r'<meta\b[^>]*name=["\']robots["\'][^>]*content=["\'][^"\']*noindex', head, re.I):
+        return False
+    canonical = re.search(r'<link\b[^>]*rel=["\']canonical["\'][^>]*href=["\']([^"\']+)', head, re.I)
+    return bool(canonical and unquote(html.unescape(canonical[1])) == unquote(public_url(Path(rel_posix))))
+
+
 def load_twins(docs: Path) -> dict[str, str]:
     mapping: dict[str, str] = {}
 
@@ -502,6 +519,11 @@ def load_twins(docs: Path) -> dict[str, str]:
 
     for left, right in STATIC_TWINS:
         add(left, right)
+    for path in sorted((docs / "category").glob("*/index.html")):
+        left = path.relative_to(docs).as_posix()
+        right = "en/" + left
+        if is_alternate_page(left, docs) and is_alternate_page(right, docs):
+            add(left, right)
     if PAIRS_PATH.is_file():
         data = json.loads(PAIRS_PATH.read_text(encoding="utf-8"))
         pairs = data.get("pairs") if isinstance(data, dict) else {}
@@ -624,10 +646,11 @@ def _swap_post_slug(rel_posix: str, slug_map: dict[str, str]) -> str:
     return rel_posix
 
 
-def hreflang_tags(rel_posix: str, twins: dict[str, str]) -> list[str]:
+def hreflang_tags(rel_posix: str, twins: dict[str, str], docs: Path | None = None) -> list[str]:
+    docs = docs or DOCS
     if rel_posix.startswith("fr/"):
         en_rel = _swap_post_slug("en/" + rel_posix[3:], EN_SLUG_BY_FR)
-        if not (DOCS / en_rel).is_file():
+        if not (docs / en_rel).is_file():
             return []
         ar_rel = twins.get(en_rel)
     else:
@@ -639,7 +662,9 @@ def hreflang_tags(rel_posix: str, twins: dict[str, str]) -> list[str]:
         else:
             ar_rel, en_rel = rel_posix, other
     fr_rel = _swap_post_slug("fr/" + en_rel[3:], FR_SLUG_BY_EN)
-    fr_exists = (DOCS / fr_rel).is_file()
+    if "posts" not in Path(en_rel).parts and (not ar_rel or not is_alternate_page(ar_rel, docs) or not is_alternate_page(en_rel, docs)):
+        return []
+    fr_exists = (docs / fr_rel).is_file() if "posts" in Path(en_rel).parts else is_alternate_page(fr_rel, docs)
     if not ar_rel and not fr_exists:
         return []
     en_url = public_url(Path(en_rel))
@@ -848,7 +873,7 @@ def seo_block(
         lines.append('  <meta name="twitter:card" content="summary">')
     lines.append(f'  <meta name="twitter:title" content="{attr(display_twitter_title(title, rel))}">')
     lines.append(f'  <meta name="twitter:description" content="{attr(description)}">')
-    lines.extend(hreflang_tags(rel.as_posix(), twins))
+    lines.extend(hreflang_tags(rel.as_posix(), twins, docs))
     crumbs = breadcrumb_jsonld(breadcrumb_entries(html_text, page, docs, rel, title))
     if crumbs:
         lines.append(crumbs)
