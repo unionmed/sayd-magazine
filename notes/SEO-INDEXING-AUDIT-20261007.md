@@ -6,7 +6,7 @@
 ## ما ثبت
 
 - التنبيه العام يذكر Duplicate, Google chose different canonical than user. تنبيه الصفحات في sitemap يضيف noindex والتحويل. لا تورد الرسالتان أمثلة URLs أو أعدادًا؛ لا يمكن نسبة السبب لصفحة بعينها من البريد.
-- اتصال Search Console المتاح أعاد قائمة خصائص فارغة؛ تعذر الحصول على Google-selected canonical أو أمثلة تقرير الاستبعاد.
+- في الفحص الأول أعاد اتصال Search Console قائمة خصائص فارغة. تم تجاوز هذا الحد لاحقًا بقراءة الخاصية في المتصفح بإذن نايف؛ النتائج أدناه.
 - محاولة استرجاع الرئيسية ومصر في AR/EN/FR وصفحة تحويل وصفحة noindex عبر HTTP أعادت 403 من بيئة الوصول. هذا حد للتحقق الحي، وليس دليلًا أن Googlebot يتلقى 403.
 - خريطة main تحتوي 871 رابطًا فريدًا. أربعة منها تحويلات أقسام عربية إلى قسم صيد: صيد-بري، صيد-بحري، صيد-الطيور، الصقارة. التحويل وcanonical الوجهة صحيحان؛ الخطأ هو إدراج روابط التحويل في sitemap.
 - المستودع يحتوي 734 صفحة meta refresh و22 صفحة noindex؛ هذه أعداد ملفات محلية وليست أعداد Search Console. صفحات الأرقام والأسماء البديلة والصفحات الملغاة تحويلات مقصودة؛ بطاقات الصور وبعض الأقسام الفارغة مستبعدة عمدًا. لم يثبت وجود noindex في رابط من الخريطة.
@@ -33,7 +33,7 @@ https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitem
 
 ## ما يبقى غير محسوم
 
-لا يمكن تحديد صفحات Duplicate أو canonical الذي اختارته Google دون أمثلة من تقرير Search Console وفحص URL Inspection. تصحيح lastmod ليس إثباتًا لحل الاستبعادات أو ضمانًا للفهرسة. يلزم الوصول إلى الخاصية أو تصدير أمثلة الاستبعاد، ثم مقارنة declared canonical مع Google-selected canonical وتاريخ آخر زحف. لا تزال مطابقة الموقع الحي مع المستودع غير محسومة بسبب حد الاسترجاع المذكور.
+تصحيح lastmod ليس إثباتًا لحل الاستبعادات أو ضمانًا للفهرسة. توفرت لاحقًا أمثلة فعلية وفحص مباشر كما يوضح القسم الأخير. لم تُفحص جميع الصفحات المستبعدة فرديًا، ولا يمكن تعميم نتيجة عينة على كامل التقرير.
 
 
 ## استكمال 8 تشرين الأول 2026
@@ -48,4 +48,25 @@ https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitem
 - استرجاع الويب العام في 8 أكتوبر أتاح قراءة الرئيسية EN/FR ويعرض موضوع الساحل الرئيسي؛ أمكن قراءة مادة مصر FR، بينما EN للمقال أخفقت. هذه قراءة نصية عبر خدمة استرجاع وليست URL Inspection أو فحص وسوم الرأس أو إثباتًا لخلو النسخ الحية من مشاكل الفهرسة.
 - المرجع الرسمي لعودة روابط hreflang: https://developers.google.com/search/docs/specialty/international/localized-versions
 
-لا تزال أمثلة تقرير الاستبعاد وGoogle-selected canonical غير متاحة. الاستكمال يصحح إشارات المصدر المثبتة ولا يدعي أن Google أعاد فهرسة الصفحات. PR #166 يبقى مسودة بلا دمج أو نشر.
+كان الوصول إلى أمثلة التقرير متعذرًا عبر الموصل. سمح نايف باستكمال القراءة في المتصفح؛ الأدلة التالية تحل محل هذا القيد. PR #166 يبقى مسودة بلا دمج أو نشر.
+
+
+## أدلة Search Console الفعلية — 8 تشرين الأول 2026
+
+قُرئت الخاصية https://sayd-magazine.com/ من جلسة Union Media بإذن نايف، دون تغيير إعدادات أو إرسال طلب فهرسة أو Validate Fix.
+
+- تقرير All known pages يعرض 48 حالة Duplicate, Google chose different canonical than user، و113 noindex، و32 Page with redirect. خانة Last update تعرض 10/3/26. هذه أعداد لقطة التقرير العام، وليست أعداد رسالتي البريد ولا دليلًا أن كل حالة خطأ. يعرض التقرير أيضًا 230 alternate proper canonical و33 حالة 404 و3 duplicate without user-selected canonical وحالة 4xx واحدة و94 discovered not indexed و57 crawled not indexed.
+- مثال Duplicate: /posts/أسرار-الأرض-عشبة-الزوفا/. آخر زحف 4 أكتوبر 2026 5:35:43 مساءً، Googlebot smartphone، جلب ناجح، والزحف والفهرسة مسموحان. canonical المعلن رابط المقال، لكن Google-selected canonical هو https://sayd-magazine.com/6700/.
+- فحص /6700/ في الفهرس يقول Page indexed، وآخر زحف 3 أكتوبر 9:20:42 مساءً. يعلن canonical المقال الحديث أيضًا، لكن Google تختار Inspected URL. الاكتشاف التاريخي يذكر /sitemap_index.xml وhttp://www.sayd-magazine.com/feed/؛ هذان ليسا ملفين في المستودع الحالي ولا يعني ظهورهما أنهما ما زالا خريطة مقدمة.
+- Live Test لـ/6700/ في 8 أكتوبر 1:06:17 مساءً نجح: URL is available to Google، crawl/index allowed Yes، canonical المعلن رابط المقال الحديث. HTML المعروض بعد الجلب هو مادة الزوفا مع canonical الصحيح. الاختبار المباشر لا يحدد Google-selected canonical ولا يثبت إزالة التكرار من الفهرس. الملف المحلي /6700/index.html يحوّل فورًا إلى المقال نفسه. النتيجة متسقة مع بقاء اختيار الرابط القديم أثناء انتقال الإشارات، لكنها لا تثبت سبب جميع الحالات الـ48 ولا تستدعي تغيير وجهة التحويل الصحيحة.
+- أمثلة noindex التي ظهرت: نسختا AR/EN من «مكافحة الصيد غير القانوني في لبنان بالصور» ومن «طيور من ثلاث بلاد بعدسة نايف كريم»، وكذلك category/قوانين-وخرائط، مصيدة، رماية، مجلة، وبعض صيغ index.html للرابط نفسه. مطابقة رؤوس الملفات تؤكد noindex,follow وcanonical في هذه الصفحات المستبعدة عمدًا. لا تزال الخريطة المقترحة خالية من noindex. لا تعادل 113 حالة في Google عدد ملفات noindex المحلية بسبب اختلاف صيغ الروابط والسجل الزمني؛ لم تُفحص الحالات الـ113 كلها.
+- أمثلة Page with redirect: /99/ و/6469/ و/1766/ تحويلات رقمية إلى المقالات الحديثة، و/en/posts/saudi-hunting-fines-5000-riyal-prohibited-areas/index.html إلى /en/posts/saudi-sixth-hunting-season-2026-2027-rules/، و/en/posts/cabs-mecshap-autumn-birds-lebanon-khatib/index.html إلى /en/posts/protecting-autumn-migratory-birds-lebanon-khatib-2017/، وعنوان السعودية العربي القديم إلى مادة الموسم السادس. تطابق canonical وmeta refresh في المصدر الوجهة المقصودة؛ حُفظت هذه التحويلات ولم تُزل بسبب التنبيه.
+- صفحة Submitted sitemaps تعرض صفًا واحدًا فقط: /sitemap.xml، مقدمة 22 سبتمبر، آخر قراءة 6 أكتوبر 2026، Success، و871 صفحة مكتشفة. لا تظهر /sitemap_index.xml ضمن الخرائط المقدمة الحالية. لا يوجد دليل هنا على فشل جلب الخريطة.
+
+المصادر المقروءة في الواجهة:
+- Duplicate: https://search.google.com/search-console/index/drilldown?resource_id=https%3A%2F%2Fsayd-magazine.com%2F&item_key=CAMYECAC
+- noindex: https://search.google.com/search-console/index/drilldown?resource_id=https%3A%2F%2Fsayd-magazine.com%2F&item_key=CAMYCCAC
+- Redirect: https://search.google.com/search-console/index/drilldown?resource_id=https%3A%2F%2Fsayd-magazine.com%2F&item_key=CAMYCyAC
+- Sitemaps: https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fsayd-magazine.com%2F
+
+الخلاصة العملية: ثبت اختلاف canonical الذي اختارته Google في عينة الزوفا؛ إعداد المصدر والوجهة الحالية متوافقان. تبقى متابعة اختيار Google بعد الزحف ضرورية. تصحيحات هذا PR تعالج أخطاء المصدر المثبتة فقط، ولا تدعي حل جميع الاستبعادات. لم تتغير تواريخ النشر الأصلية أو ترتيب المواد أو noindex أو التحويلات الصحيحة. لا دمج ولا نشر قبل اعتماد نايف.
