@@ -32,7 +32,7 @@ featured: media/uploads/2026/09/hajal-group-dogs-walk-atlas.jpg
 <h2 style="font-weight:800;font-size:1.45em;line-height:1.65;margin:32px 0 12px;color:#304b36">Tunisia: also 4 October… but on a densely detailed calendar</h2>
 <p>Across the Algerian border, the picture is clearer.</p>
 <p>Tunisia’s Ministry of Agriculture, Water Resources and Fisheries issued its decision regulating the 2026–2027 season, published in the Official Gazette.</p>
-<p>On 4 October 2026, hunting of wild rabbit, partridge, resident quail, rock dove, and sandgrouse (“kudra”) opened and runs to 6 December, limited to Sundays, public holidays, and official leave days.</p>
+<p>On 4 October 2026, hunting of hare, partridge, resident quail, rock dove, and sandgrouse (“kudra”) opened and runs to 6 December, limited to Sundays, public holidays, and official leave days.</p>
 <p>Waterbirds keep another clock.</p>
 <p>Woodpigeon and a wide set of waterfowl do not open until 22 November 2026, running to 28 March 2027. The list includes ducks, teal, geese, coot and others, with special rules for waterbird hunting on “the pass.”</p>
 <p>This detail states a principle that repeats across the Arab map: migration does not open the season; the legal decision does.</p>
