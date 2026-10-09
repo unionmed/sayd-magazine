@@ -4,6 +4,16 @@ from check_publication_contract import check
 from refresh_homepage_doors import refresh, DOCS, config, validate_config, channel_config
 
 def test_homepages():
+    # Side-card overflow must enter Updates before becoming eligible for a door.
+    from homepage_demotion import demote_side_cards
+    from datetime import date
+    fixture={'featured':['new','previous','side1','side2','side3'],
+             'latest':[f'update{i}' for i in range(8)],'ia_slots':{}}
+    days={f'update{i}':date(2026,9,28-i) for i in range(8)}
+    days['displaced']=date(2026,9,29)
+    assert demote_side_cards(fixture,['side1','side2','side3','displaced'],days.__getitem__)==['displaced']
+    assert fixture['latest']==['displaced']+[f'update{i}' for i in range(7)]
+    assert fixture['ia_slots']['latest']==fixture['latest']
     check()
     for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
         path=DOCS/prefix/'index.html';before=path.read_bytes()

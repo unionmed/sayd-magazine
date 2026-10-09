@@ -69,14 +69,17 @@ for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
   save(path,s[:m.start()]+row+'\n'+s[m.start():])
 p=ROOT/'content/en/pairs.json';c=json.loads(p.read_text());c['pairs'][AR]=EN;save(p,json.dumps(c,ensure_ascii=False,indent=2)+'\n')
 p=ROOT/'content/homepage.json';c=json.loads(p.read_text())
+previous_side=c['ia_slots']['important'].copy()
 c['ia_slots']['main']=AR
 c['ia_slots']['important']=[OLD]+[x for x in c['ia_slots']['important'] if x!=OLD and x!=AR][:3]
 c['featured']=[AR]+c['ia_slots']['important']
+from homepage_demotion import demote_side_cards
+demote_side_cards(c,previous_side)
 c['primary_door'][AR]='hunting'
 c['ticker_slugs']=[AR]+[x for x in c['ticker_slugs'] if x!=AR]
 c['ticker_entries']=[{'slug':AR,'titles':{l:T[l]['ticker'] for l in T}}]+[x for x in c['ticker_entries'] if x['slug']!=AR]
 c['card_image_overrides'][AR]={'image':IMAGES[0],'position':'50% 65%','alt':{l:T[l]['captions'][0] for l in T}}
-c['demotion']='Nayef approved the supplied Bekaa statement verbatim with a separate official-tally clarification as lead on 9 October 2026. Previous lead is first side card; Updates retain their existing order. Oldest side card leaves the upper homepage and stays in its category and archive.'
+c['demotion']='Previous lead becomes first side card. Displaced side cards enter the eight Updates in publication-date order; cards leaving Updates enter their appropriate lower door and remain in category/archive.'
 save(p,json.dumps(c,ensure_ascii=False,indent=2)+'\n')
 p=ROOT/'content/ticker.json';c=json.loads(p.read_text());c['items']=[{'slug':AR,'title':T['ar']['ticker'],'titles':{l:T[l]['ticker'] for l in T}}]+[x for x in c['items'] if x['slug']!=AR];save(p,json.dumps(c,ensure_ascii=False,indent=2)+'\n')
 
