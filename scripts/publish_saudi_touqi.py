@@ -198,6 +198,12 @@ def main():
  sys.path.insert(0,str(ROOT/'scripts'))
  from refresh_homepage_doors import main as refresh
  refresh()
+ # Normalize GA4 on the three new mirrors using the existing approved generator.
+ from seo_foundation import add_ga4
+ for lang in DATA:
+  prefix='' if lang=='ar' else lang+'/'
+  page=DOCS/prefix/'posts'/(AR if lang=='ar' else EN)/'index.html'
+  put(page,add_ga4(page.read_text(encoding='utf-8')))
  # Add all three article URLs to sitemap, without touching other routes.
  p=DOCS/'sitemap.xml';s=p.read_text()
  for lang in DATA:
