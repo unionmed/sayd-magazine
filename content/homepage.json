@@ -1,9 +1,9 @@
 {
   "featured": [
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
+    "ختام-الملواح-2026-60-فائزا",
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
     "حين-يتغير-الساحل-أين-تستريح-الطيور",
-    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة"
   ],
   "latest": [
@@ -23,7 +23,8 @@
     "saudi-5000-riyal-hunting-fine-teaser",
     "من-ذاكرة-صيد-مسيرة-الوعي-والمسؤولية-2016-2024",
     "memory-of-sayd-awareness-responsibility-2016-2024",
-    "معرض-الصقور-والصيد-السعودي-الدولي-2026"
+    "معرض-الصقور-والصيد-السعودي-الدولي-2026",
+    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي"
   ],
   "omit_from_latest": [
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
@@ -63,12 +64,14 @@
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
     "birds-three-countries-nayef-krayem",
     "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
-    "combating-illegal-hunting-lebanon-in-photos"
+    "combating-illegal-hunting-lebanon-in-photos",
+    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
-    "sayd-returns-new-look-wider-vision"
+    "sayd-returns-new-look-wider-vision",
+    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -90,7 +93,8 @@
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
     "birds-three-countries-nayef-krayem",
     "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
-    "combating-illegal-hunting-lebanon-in-photos"
+    "combating-illegal-hunting-lebanon-in-photos",
+    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -215,9 +219,9 @@
   "ia_slots": {
     "main": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
     "important": [
+      "ختام-الملواح-2026-60-فائزا",
       "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
       "حين-يتغير-الساحل-أين-تستريح-الطيور",
-      "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة"
     ],
     "latest": [
@@ -344,9 +348,10 @@
     "حين-يتغير-الساحل-أين-تستريح-الطيور": "hunting",
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs": "hunting",
     "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026": "wildlife",
-    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية": "hunting"
+    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية": "hunting",
+    "ختام-الملواح-2026-60-فائزا": "hunting"
   },
-  "demotion": "Nayef approved migration-refuges lead on 9 October 2026. Previous lead moves to the first side card; displaced side cards enter chronological Updates before lower doors.",
+  "demotion": "Nayef authorized the Al-Melwah finale on 10 October 2026 with the existing photograph, replacing the prior Saudi exhibition report in the side-card block and ticker. Prior article stays in category/archive and is excluded from homepage recycling. Current main lead and other stories remain; side cards keep publication-date order.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
@@ -371,7 +376,7 @@
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
     "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "قطر-حماية-المناطق-البرية-والبحرية-2030",
-    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
+    "ختام-الملواح-2026-60-فائزا",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
     "رادار-صيد-العربي-سبتمبر-2026",
     "خريف-الصيد-العربي-2026",
@@ -470,6 +475,15 @@
         "en": "Flamingos at Ras Al Khor against Dubai’s skyline: a bird refuge beside the city.",
         "fr": "Flamants à Ras Al Khor devant Dubaï : un refuge aux portes de la ville."
       }
+    },
+    "ختام-الملواح-2026-60-فائزا": {
+      "image": "media/uploads/2026/10/saudi-2026-melwah-spa.jpg",
+      "position": "62% 35%",
+      "alt": {
+        "ar": "صقّار يحمل صقرًا خلال منافسات الملواح في نسخة 2026 من المعرض، في صورة سابقة لليوم الختامي.",
+        "en": "A falconer holds a falcon during the exhibition’s 2026 Al-Melwah activities, photographed before the final day.",
+        "fr": "Un fauconnier tient un faucon lors des activités Al-Melwah du salon 2026, avant la dernière journée."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
@@ -516,12 +530,11 @@
       }
     },
     {
-      "slug": "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
-      "anchor": "section-0",
+      "slug": "ختام-الملواح-2026-60-فائزا",
       "titles": {
-        "ar": "سباق الملواح ينطلق في معرض الصقور والصيد السعودي بـ12 شوطًا وجوائز تبلغ 723 ألف ريال",
-        "en": "Al-Melwah racing begins at the Saudi Falcons and Hunting Exhibition with 12 heats and SAR 723,000 in prizes",
-        "fr": "Les courses Al-Melwah débutent au Salon saoudien des faucons et de la chasse avec 12 manches et 723 000 riyals de prix"
+        "ar": "الملواح يختتم منافساته بتتويج 60 فائزًا",
+        "en": "Al-Melwah concludes with 60 winners",
+        "fr": "Al-Melwah s’achève avec 60 lauréats"
       }
     },
     {
