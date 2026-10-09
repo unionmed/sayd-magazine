@@ -97,7 +97,7 @@ def body(lang):
  def fig(i):
   return '<figure><img src="'+imagepath(lang,i)+'" alt="'+html.escape(d['captions'][i],quote=True)+'" decoding="async" style="display:block;width:100%;height:auto"><figcaption><span>'+html.escape(d['captions'][i])+'</span></figcaption></figure>'
  source='<p class="photo-source" style="font-size:.76em;line-height:1.5;color:#6b6b6b"><small>'+html.escape(d['source'])+'</small></p>'
- content=fig(0)+''.join(p(x) for x in d['paragraphs'][:2])+'<h2>'+html.escape(d['section'])+'</h2>'+''.join(p(x) for x in d['paragraphs'][2:5])+fig(1)+''.join(p(x) for x in d['paragraphs'][5:])+source
+ content=fig(0)+''.join(p(x) for x in d['paragraphs'][:2])+'<h2>'+html.escape(d['section'])+'</h2>'+''.join(p(x) for x in d['paragraphs'][2:5])+fig(1)+source+''.join(p(x) for x in d['paragraphs'][5:])
  content+='<p>'+ ' · '.join('<a href="'+html.escape(link,quote=True)+'" rel="noopener">'+html.escape(label)+'</a>' for link,label in zip((NEWS,BIRDS,STUDY),d['links']))+'</p>'
  return content
 def choose(nodes):
@@ -183,9 +183,12 @@ def main():
  p=ROOT/'content/en/pairs.json';pairs=json.loads(p.read_text());pairs['pairs'][AR]=EN;put(p,json.dumps(pairs,ensure_ascii=False,indent=2)+'\n')
  p=ROOT/'content/homepage.json';c=json.loads(p.read_text())
  assert c['ia_slots']['main']=='البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs'
- last=c['latest'][-1];c['latest']=[AR]+[s for s in c['latest'] if s!=AR][:7];c['ia_slots']['latest']=c['latest'].copy()
- wildlife=next(x for x in c['ia_door_sections'] if x['door']=='wildlife')
- if last not in wildlife['slugs']: wildlife['slugs']=[last]+wildlife['slugs'][:3]
+ if AR not in c['latest']:
+  last=c['latest'][-1]
+  c['latest']=[AR]+c['latest'][:7]
+  wildlife=next(x for x in c['ia_door_sections'] if x['door']=='wildlife')
+  if last not in wildlife['slugs']: wildlife['slugs']=[last]+wildlife['slugs'][:3]
+ c['ia_slots']['latest']=c['latest'].copy()
  c['primary_door'][AR]='wildlife'
  c['ticker_slugs']=[AR]+[s for s in c['ticker_slugs'] if s!=AR]
  c['ticker_entries']=[{'slug':AR,'titles':{l:DATA[l]['ticker'] for l in DATA}}]+[x for x in c['ticker_entries'] if x['slug']!=AR]
