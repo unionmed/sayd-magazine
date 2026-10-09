@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: ga4-repair-${{ github.ref }}
@@ -62,16 +62,25 @@ jobs:
             diff -u "$RUNNER_TEMP/seo-before.log" "$RUNNER_TEMP/seo-after.log"
             echo "::warning::Legacy SEO fixture already failed identically before the GA4 repair; no new SEO failure. All required publication gates passed."
           fi
-      - name: Commit verified analytics-only changes
+      - name: Prepare verified analytics-only patch for PR review
+        id: patch
         run: |
           git add scripts/seo_foundation.py scripts/check_publication_contract.py
           git add -- ':(glob)docs/**/*.html'
           if git diff --cached --quiet; then
             echo "GA4 is already correct; no changes."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git diff --cached --stat | tail -5
-          git commit -m "Fix verified GA4 measurement ID and deduplicate tracking blocks"
-          git push
+          git diff --cached --binary > "$RUNNER_TEMP/ga4-tracking.patch"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "Verified GA4 changes require a reviewed PR; main is never pushed directly." >> "$GITHUB_STEP_SUMMARY"
+          git diff --cached --stat >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload verified patch for a reviewed PR
+        if: steps.patch.outputs.changed == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ga4-tracking-patch
+          path: ${{ runner.temp }}/ga4-tracking.patch
+          if-no-files-found: error
+          retention-days: 14
