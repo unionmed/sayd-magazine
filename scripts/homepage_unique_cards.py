@@ -788,12 +788,16 @@ def _as_lead(article: str, slug: str) -> str:
         title = BIRDLIFE_HOME_TITLE_AR
     elif slug == BIRDLIFE_EN:
         title = BIRDLIFE_HOME_TITLE_EN
+    if slug == "أين-تستريح-الطيور-المشرق-والجزيرة-العربية":
+        title = "محطات في دول المشرق العربي على طريق الهجرة"
+    elif slug == "where-migratory-birds-rest-mashreq-arabian-peninsula":
+        title = "Des haltes migratoires dans les pays du Machrek arabe" if "Où" in title or "Machrek" in title else "Migration Stops Across the Arab Mashreq"
     date = _card_date(article)
     href = re.search(r'href="([^"]*posts/[^"]+/index\.html)"', article)
     link = href.group(1) if href else f"posts/{slug}/index.html"
     kicker = ""
     if slug in {"أين-تستريح-الطيور-المشرق-والجزيرة-العربية", "where-migratory-birds-rest-mashreq-arabian-peninsula"}:
-        label = "اليوم العالمي لهجرة الطيور" if slug.startswith("أين") else "Journée mondiale des oiseaux migrateurs" if "Où" in title else "World Migratory Bird Day"
+        label = "اليوم العالمي لهجرة الطيور" if slug.startswith("أين") else "Journée mondiale des oiseaux migrateurs" if "Où" in title or "Machrek" in title else "World Migratory Bird Day"
         kicker = f'<div class="migration-kicker" style="font-size:14px;line-height:1.5;color:#f6d77b;background:rgba(24,38,18,.94);display:inline-block;padding:3px 8px;border-radius:3px;margin-bottom:6px">{label}</div>'
     return (
         f'<article class="card overlay feature-lead">\n'
