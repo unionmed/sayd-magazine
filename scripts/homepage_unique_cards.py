@@ -791,11 +791,15 @@ def _as_lead(article: str, slug: str) -> str:
     date = _card_date(article)
     href = re.search(r'href="([^"]*posts/[^"]+/index\.html)"', article)
     link = href.group(1) if href else f"posts/{slug}/index.html"
+    kicker = ""
+    if slug in {"أين-تستريح-الطيور-المشرق-والجزيرة-العربية", "where-migratory-birds-rest-mashreq-arabian-peninsula"}:
+        label = "اليوم العالمي لهجرة الطيور" if slug.startswith("أين") else "Journée mondiale des oiseaux migrateurs" if "Où" in title else "World Migratory Bird Day"
+        kicker = f'<div class="migration-kicker" style="font-size:13px;line-height:1.5">{label}</div>'
     return (
         f'<article class="card overlay feature-lead">\n'
         f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
         f'  <div class="body">\n'
-        f"    <h2><a href=\"{link}\">{title}</a></h2>\n"
+        f"    {kicker}<h2><a href=\"{link}\">{title}</a></h2>\n"
         f'    <div class="meta">{date}</div>\n'
         f"  </div>\n"
         f"</article>"
