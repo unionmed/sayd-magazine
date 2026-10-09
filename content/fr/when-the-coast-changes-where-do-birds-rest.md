@@ -3,7 +3,7 @@ title: "Quand le littoral change… où les oiseaux se reposent-ils ?"
 slug: when-the-coast-changes-where-do-birds-rest
 date: 2026-10-06
 author: "Sayd"
-categories: [الحياة البرية والتخييم]
+categories: [صيد]
 featured: media/uploads/2026/10/batroun-pelican-2026.jpg
 subtitle: "Le triangle Liban–Chypre–Égypte : estuaires, salines, lacs et ports dans la protection des habitats des oiseaux."
 ---

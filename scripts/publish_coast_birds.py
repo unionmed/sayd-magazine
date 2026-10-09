@@ -14,7 +14,7 @@ IMAGES=['media/uploads/2026/10/batroun-pelican-2026.jpg','media/uploads/2026/10/
 CREDITS=['Amira Rajab / dpa','EPA / The National','اليوم السابع','BirdLife Cyprus']
 SOURCES=['https://www.n-tv.de/panorama/Pelikan-Dame-verzueckt-libanesischen-Kuestenort-id31204510.html','https://www.thenationalnews.com/news/2025/08/23/best-photos-of-august-23-salt-evaporation-ponds-in-lebanon-to-opening-of-singapore-night-festival-2/','https://www.youm7.com/story/2026/4/11/7372338','https://birdlifecyprus.org/latchi-port-reaction/']
 DATES={'ar':'6 تشرين الأول 2026','en':'6 October 2026','fr':'6 octobre 2026'}
-DOOR={'ar':'الحياة البرية والتخييم','en':'Wildlife & Camping','fr':'Faune et camping'}
+DOOR={'ar':'صيد','en':'Hunting','fr':'Chasse'}
 AUTHOR={'ar':'صيد','en':'Sayd','fr':'Sayd'}
 DATE='2026-10-06';TIME='2026-10-06T23:33:35+03:00'
 def cls(t,c):return t.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," '+c+' ")]')
@@ -48,9 +48,9 @@ for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
  header=cls(t,'article-header')[0];header.xpath('.//h1')[0].text=d['title']
  metas=cls(header,'meta-item');metas[0].text=DATES[lang];metas[1].text=AUTHOR[lang]
  for n in cls(t,'author-role'):n.getparent().remove(n)
- for a in header.xpath('.//a[contains(@href,"category/")]'):a.set('href','../../category/'+quote('حياة-برية-وتخييم')+'/index.html');a.text=DOOR[lang]
+ for a in header.xpath('.//a[contains(@href,"category/")]'):a.set('href','../../category/'+quote('صيد')+'/index.html');a.text=DOOR[lang]
  for a in cls(t,'breadcrumb')[0].xpath('.//a[contains(@href,"category/")]'):
-  a.set('href','../../category/حياة-برية-وتخييم/index.html');a.text=DOOR[lang]
+  a.set('href','../../category/صيد/index.html');a.text=DOOR[lang]
  content=cls(t,'article-content')[0]
  for n in list(content):content.remove(n)
  content.text=None
@@ -63,8 +63,8 @@ for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
  for container in cls(t,'article-share')+cls(t,'share-bar'):
   for a in container.xpath('.//a[@href]'):a.set('href',re.sub(r'(?:https%3A%2F%2Fsayd-magazine.com%2F)[^&]+',quote(url(lang),safe=''),a.get('href')))
  save(DOCS/prefix/'posts'/slug/'index.html','<!DOCTYPE html>\n'+html.tostring(t,encoding='unicode',method='html'))
- save(ROOT/'content'/('posts' if lang=='ar' else lang)/(slug+'.md'),'---\n'+f'title: {json.dumps(d["title"],ensure_ascii=False)}\nslug: {slug}\ndate: {DATE}\nauthor: {json.dumps(AUTHOR[lang],ensure_ascii=False)}\ncategories: [الحياة البرية والتخييم]\nfeatured: {IMAGES[0]}\nsubtitle: {json.dumps(d["deck"],ensure_ascii=False)}\n---\n\n'+body(lang)+'\n')
- for path in [DOCS/prefix/'category/حياة-برية-وتخييم/index.html',DOCS/prefix/('articles' if lang=='ar' else 'stories')/'index.html']:
+ save(ROOT/'content'/('posts' if lang=='ar' else lang)/(slug+'.md'),'---\n'+f'title: {json.dumps(d["title"],ensure_ascii=False)}\nslug: {slug}\ndate: {DATE}\nauthor: {json.dumps(AUTHOR[lang],ensure_ascii=False)}\ncategories: [صيد]\nfeatured: {IMAGES[0]}\nsubtitle: {json.dumps(d["deck"],ensure_ascii=False)}\n---\n\n'+body(lang)+'\n')
+ for path in [DOCS/prefix/'category/صيد/index.html',DOCS/prefix/('articles' if lang=='ar' else 'stories')/'index.html']:
   s=path.read_text();s=re.sub(r'<article\b[^>]*>.*?</article>',lambda m:'' if quote(slug) in m[0] or '/posts/'+slug+'/' in m[0] else m[0],s,flags=re.S)
   m=re.search(r'<article\b[^>]*class="(?:post-row|card)"',s);assert m,path
   href=os.path.relpath(DOCS/prefix/'posts'/slug/'index.html',path.parent);image=os.path.relpath(DOCS/IMAGES[0],path.parent)
@@ -76,7 +76,7 @@ p=ROOT/'content/homepage.json';c=json.loads(p.read_text())
 c['ia_slots']['main']=AR
 c['ia_slots']['important']=[OLD]+[x for x in c['ia_slots']['important'] if x!=OLD and x!=AR][:3]
 c['featured']=[AR]+c['ia_slots']['important']
-c['primary_door'][AR]='wildlife'
+c['primary_door'][AR]='hunting'
 c['ticker_slugs']=[AR]+[x for x in c['ticker_slugs'] if x!=AR]
 c['ticker_entries']=[{'slug':AR,'titles':{l:T[l]['title'] for l in T}}]+[x for x in c['ticker_entries'] if x['slug']!=AR]
 c['card_image_overrides'][AR]={'image':IMAGES[0],'position':'50% 60%','alt':{l:T[l]['captions'][0] for l in T}}
