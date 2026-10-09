@@ -14,7 +14,7 @@ IMAGES=['media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg', 'media/uploads/2
 OFFICIAL='https://isf.gov.lb/ar/news/حملة-تفكيك-شباك-الصيد-القاتلة-مستمرّة/'
 DATES={'ar':'9 تشرين الأول 2026','en':'9 October 2026','fr':'9 octobre 2026'}
 DOOR={'ar':'صيد','en':'Hunting','fr':'Chasse'}
-AUTHOR={'ar':'بيان','en':'Statement','fr':'Communiqué'}
+AUTHOR={'ar':'مجلة صيد','en':'Sayd Magazine','fr':'Sayd Magazine'}
 DATE='2026-10-09';TIME='2026-10-09T11:50:00+03:00'
 def cls(t,c):return t.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," '+c+' ")]')
 def url(lang):return 'https://sayd-magazine.com/'+('' if lang=='ar' else lang+'/')+'posts/'+quote(AR if lang=='ar' else EN)+'/'
@@ -23,7 +23,7 @@ def figure(lang,i):
  d=T[lang];prefix='../../' if lang=='ar' else '../../../'
  return f'<figure><img src="{prefix+IMAGES[i]}" alt="{esc.escape(d["captions"][i],quote=True)}" decoding="async" style="display:block;width:100%;height:auto"><figcaption>{esc.escape(d["captions"][i])}</figcaption></figure>'
 def body(lang):
- d=T[lang];out=figure(lang,0)+'<h2>'+esc.escape(d['statement_label'])+'</h2><div class="statement-text">'
+ d=T[lang];out=figure(lang,0)+'<div class="statement-text">'
  for para in d['paragraphs']:out+='<p>'+esc.escape(para)+'</p>'
  out+='</div><section class="official-tally"><h2>'+esc.escape(d['clarification_title'])+'</h2><p>'+esc.escape(d['clarification'])+'</p><p><a href="'+esc.escape(OFFICIAL,quote=True)+'">'+esc.escape(d['official_link_label'])+'</a></p></section>'
  for i in range(1,len(IMAGES)):out+=figure(lang,i)

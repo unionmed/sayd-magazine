@@ -1,5 +1,5 @@
 ---
-title: "Opération de terrain exceptionnelle et record du détachement d’investigation de la Bekaa et de l’équipe conjointe APU–CABS : 38 280 m² de filets meurtriers pour les oiseaux retirés dans le nord de la Bekaa"
+title: "Nord de la Bekaa : le retrait des filets atteint 38 280 m²"
 slug: northern-bekaa-38280-square-metres-bird-nets-apu-cabs
 date: 2026-10-09
 author: "Communiqué"
