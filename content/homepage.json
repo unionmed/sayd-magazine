@@ -1,20 +1,20 @@
 {
   "featured": [
+    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
     "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
-    "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-    "رادار-صيد-العربي-سبتمبر-2026"
+    "حين-يصبح-الخريف-موسما-لاصطياد-الصورة"
   ],
   "latest": [
     "أسلحة-الصيد-في-معرض-الرياض-2026",
+    "رادار-صيد-العربي-سبتمبر-2026",
     "خريف-الصيد-العربي-2026",
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
     "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
     "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
-    "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-    "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
+    "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -213,22 +213,22 @@
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
-    "main": "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
+    "main": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
     "important": [
+      "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
       "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
-      "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-      "رادار-صيد-العربي-سبتمبر-2026"
+      "حين-يصبح-الخريف-موسما-لاصطياد-الصورة"
     ],
     "latest": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
+      "رادار-صيد-العربي-سبتمبر-2026",
       "خريف-الصيد-العربي-2026",
       "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
       "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
       "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
       "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
-      "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-      "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
+      "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
     ]
   },
   "ia_door_sections": [
@@ -343,9 +343,10 @@
     "قطر-حماية-المناطق-البرية-والبحرية-2030": "wildlife",
     "حين-يتغير-الساحل-أين-تستريح-الطيور": "hunting",
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs": "hunting",
-    "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026": "wildlife"
+    "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026": "wildlife",
+    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية": "hunting"
   },
-  "demotion": "Previous lead becomes first side card. Displaced side cards enter the eight Updates in publication-date order; cards leaving Updates enter their appropriate lower door and remain in category/archive.",
+  "demotion": "Nayef approved migration-refuges lead on 9 October 2026. Previous lead moves to the first side card; displaced side cards enter chronological Updates before lower doors.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
@@ -365,6 +366,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
     "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
     "حين-يتغير-الساحل-أين-تستريح-الطيور",
@@ -459,11 +461,28 @@
         "en": "Gazelles at King Abdulaziz Royal Reserve, in an archival image.",
         "fr": "Des gazelles dans la réserve royale du roi Abdelaziz, sur une photographie d’archives."
       }
+    },
+    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية": {
+      "image": "media/uploads/2026/10/migration-cover-ras-al-khor.jpg",
+      "position": "50% 80%",
+      "alt": {
+        "ar": "فلامنغو في رأس الخور أمام أفق دبي… ملاذ للطيور على مقربة من المدينة.",
+        "en": "Flamingos at Ras Al Khor against Dubai’s skyline: a bird refuge beside the city.",
+        "fr": "Flamants à Ras Al Khor devant Dubaï : un refuge aux portes de la ville."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
+      "titles": {
+        "ar": "أين تستريح الطيور؟ «صيد» تستعرض أبرز ملاذات الهجرة في المشرق والجزيرة العربية.",
+        "en": "Where do birds rest? Sayd explores major migration refuges in the Mashreq and Arabian Peninsula.",
+        "fr": "Où les oiseaux se reposent-ils ? Sayd explore les refuges migratoires du Machrek et de la péninsule Arabique."
+      }
+    },
     {
       "slug": "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
       "titles": {

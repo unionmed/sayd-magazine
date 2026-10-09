@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
+      "title": "أين تستريح الطيور؟",
+      "titles": {
+        "ar": "أين تستريح الطيور؟ «صيد» تستعرض أبرز ملاذات الهجرة في المشرق والجزيرة العربية.",
+        "en": "Where do birds rest? Sayd explores major migration refuges in the Mashreq and Arabian Peninsula.",
+        "fr": "Où les oiseaux se reposent-ils ? Sayd explore les refuges migratoires du Machrek et de la péninsule Arabique."
+      }
+    },
+    {
       "slug": "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
       "title": "موسم الطوقي 2026–2027 يسلّط الضوء على حياة محمية الملك عبدالعزيز البرية",
       "titles": {

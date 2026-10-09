@@ -1,0 +1,121 @@
+{
+  "approval": "Nayef: انشر صفحة اولى رئيسية وفق بروتوكول النشر, 2026-10-09 23:39:52 Asia/Beirut",
+  "research_sources": [
+    "https://www.cms.int/news/2026017-world-migratory-bird-day-2026-10-october-2026",
+    "https://www.alanba.com.kw/1379569/",
+    "https://www.spnl.org/aammiq-wetlands/",
+    "https://www.rscn.org.jo/press-releases-veiw/428",
+    "https://icarda.org/publications/10441/sabkhat-al-jabbul-threatened-ramsar-wetland-syria",
+    "https://rsis.ramsar.org/RISapp/files/RISrep/IQ2241RIS_1509_en.pdf",
+    "https://www.ncw.gov.sa/news/NCW-Launches-the-Winter-Census-Program-for-Waterbirds-in-Farasan-Islands-Protected-Area",
+    "https://rsis.ramsar.org/RISapp/files/RISrep/OM2529RIS_2311_en.pdf",
+    "https://www.dm.gov.ae/discover-dubai/ras-al-khor/star-fauna/"
+  ],
+  "photos": [
+    {
+      "file": "cover-ras-al-khor.jpg",
+      "section": 0,
+      "credit": "WWF",
+      "caption": [
+        "فلامنغو في رأس الخور أمام أفق دبي… ملاذ للطيور على مقربة من المدينة.",
+        "Flamingos at Ras Al Khor against Dubai’s skyline: a bird refuge beside the city.",
+        "Flamants à Ras Al Khor devant Dubaï : un refuge aux portes de la ville."
+      ],
+      "alt": [
+        "فلامنغو في الأراضي الرطبة في رأس الخور وخلفها مباني دبي",
+        "Flamingos in Ras Al Khor wetlands with Dubai buildings behind them",
+        "Flamants dans les zones humides de Ras Al Khor devant les immeubles de Dubaï"
+      ],
+      "source": "https://wwf.panda.org/wwf_news/?20230/Ras-Al-Khor-Wildlife-Sanctuary",
+      "local_copy": true,
+      "usage_status": "SOURCE_VERIFIED_PERMISSION_NOT_DOCUMENTED",
+      "event_date": "صورة سياقية؛ تاريخ الالتقاط غير مثبت",
+      "sha256": "97f64a59343c3e88c1e242de84641ec5604740dc54f184e0f7c64a51681c7b9f"
+    },
+    {
+      "file": "aammiq-ibis.jpg",
+      "section": 2,
+      "credit": "رويترز — علي حشيشو",
+      "caption": [
+        "أبو منجل اللماع يبحث عن الغذاء في المياه الضحلة بمستنقعات عمّيق.",
+        "A glossy ibis forages in shallow water at Aammiq wetlands.",
+        "Un ibis falcinelle cherche sa nourriture dans les eaux peu profondes d’Aammiq."
+      ],
+      "alt": [
+        "أبو منجل اللماع بمنقار مقوس في مياه مستنقعات عمّيق وسط الأعشاب",
+        "Glossy ibis with a curved bill in grassy shallow water at Aammiq",
+        "Ibis falcinelle au bec courbé dans les eaux herbeuses d’Aammiq"
+      ],
+      "source": "https://www.weforum.org/stories/2022/03/wetlands-climate-change/",
+      "photographer": "Ali Hashisho",
+      "local_copy": true,
+      "usage_status": "SOURCE_VERIFIED_PERMISSION_NOT_DOCUMENTED",
+      "event_date": "صورة سياقية؛ تاريخ الالتقاط غير مثبت",
+      "sha256": "0a947c6fe0682d5c828472d374ae3936acc7866f4d8dcf0c3efe16f4669cdad4"
+    },
+    {
+      "file": "azraq.jpg",
+      "section": 3,
+      "credit": "Birdingplaces",
+      "caption": [
+        "طائر أزرق الحلق في الأزرق… من تنوع الطيور التي ترتبط بالواحة ومحيطها.",
+        "A bluethroat at Azraq: part of the bird diversity associated with the oasis and its surroundings.",
+        "Une gorgebleue à Azraq, parmi les oiseaux liés à l’oasis et à ses environs."
+      ],
+      "alt": [
+        "طائر أزرق الحلق واقف على الأرض في صورة من الأزرق",
+        "Bluethroat standing on the ground in an image from Azraq",
+        "Gorgebleue posée au sol sur une photographie d’Azraq"
+      ],
+      "source": "https://www.birdingplaces.eu/en/birdingplaces/jordan/azraq-wetland-reserve",
+      "local_copy": true,
+      "usage_status": "SOURCE_VERIFIED_PERMISSION_NOT_DOCUMENTED",
+      "event_date": "صورة سياقية؛ تاريخ الالتقاط غير مثبت",
+      "sha256": "ec8596578913461d8fd92dfbff0c33e540b4adf22a860e42cede7b9014281a07"
+    },
+    {
+      "file": "farasan.jpg",
+      "section": 6,
+      "credit": "واس",
+      "caption": [
+        "بجع فوق مياه جزر فرسان، حيث تتجاور الشواطئ وغابات القرم.",
+        "Pelicans over the waters of Farasan, where shores meet mangroves.",
+        "Pélicans au-dessus des eaux de Farasan, où rivages et mangroves se côtoient."
+      ],
+      "alt": [
+        "بجع يحلق فوق مياه ساحلية زرقاء قرب القرم في جزر فرسان",
+        "Pelicans flying over blue coastal water beside mangroves at Farasan",
+        "Pélicans en vol au-dessus des eaux bleues près des mangroves de Farasan"
+      ],
+      "source": "https://www.arabnews.com/saudi-arabia/saudi-arabias-farasan-islands-the-place-to-beat-the-winter-blues-1801616",
+      "local_copy": true,
+      "usage_status": "SOURCE_VERIFIED_PERMISSION_NOT_DOCUMENTED",
+      "event_date": "صورة سياقية؛ تاريخ الالتقاط غير مثبت",
+      "sha256": "fdf889a4038541a3e32f9db68e0a759f730cf30629a85ff2778839cdfe4c90e9"
+    },
+    {
+      "file": "barr-al-hikman.jpg",
+      "section": 7,
+      "credit": "Times of Oman",
+      "caption": [
+        "طيور ساحلية في برّ الحكمان؛ المياه الضحلة وانحسار المد يفتحان مناطق التغذية.",
+        "Shorebirds at Barr al Hikman, where shallow water and falling tides reveal feeding areas.",
+        "Oiseaux de rivage à Barr al Hikman, où les eaux peu profondes et la marée découvrent les aires d’alimentation."
+      ],
+      "alt": [
+        "طائران ساحليان في مياه ضحلة في برّ الحكمان",
+        "Two shorebirds in shallow water at Barr al Hikman",
+        "Deux oiseaux de rivage dans les eaux peu profondes de Barr al Hikman"
+      ],
+      "source": "https://timesofoman.com/article/106403-we-love-oman-barr-al-hikmans-pure-proximity-to-nature",
+      "local_copy": true,
+      "usage_status": "SOURCE_VERIFIED_PERMISSION_NOT_DOCUMENTED",
+      "event_date": "صورة سياقية؛ تاريخ الالتقاط غير مثبت",
+      "sha256": "992e60912a8dcdf1dd6b117ebec8f84b3d8481d09de3aa46480101d197705a4b"
+    }
+  ],
+  "classification": "صيد / Hunting / Chasse",
+  "homepage": "New lead; previous Bekaa lead first side card; displaced side card goes through Updates.",
+  "publication_time": "2026-10-09T23:39:52+03:00",
+  "social": "Not authorized to publish; later reel text only."
+}
