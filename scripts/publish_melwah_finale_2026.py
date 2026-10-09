@@ -7,6 +7,7 @@ from lxml import html
 ROOT=Path(__file__).resolve().parents[1]; DOCS=ROOT/'docs'
 sys.path.insert(0,str(ROOT/'scripts'))
 from refresh_homepage_doors import main as refresh
+from seo_foundation import add_ga4
 AR='ختام-الملواح-2026-60-فائزا';EN='melwah-finale-2026-60-winners'
 OLD='معرض-الصقور-والصيد-السعودي-الدولي-2026'
 T=json.loads((ROOT/'content/features/melwah-finale-2026.json').read_text())
@@ -18,7 +19,10 @@ AUTHOR={'ar':'صيد — واس','en':'Sayd — SPA','fr':'Sayd — SPA'}
 DATE='2026-10-10';TIME='2026-10-10T00:14:52+03:00'
 def cls(t,c):return t.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," '+c+' ")]')
 def url(lang):return 'https://sayd-magazine.com/'+('' if lang=='ar' else lang+'/')+'posts/'+quote(AR if lang=='ar' else EN)+'/'
-def save(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s)
+def save(p,s):
+ p.parent.mkdir(parents=True,exist_ok=True)
+ if p.suffix=='.html':s=add_ga4(s)
+ p.write_text(s)
 def figure(lang,i):
  d=T[lang];prefix='../../' if lang=='ar' else '../../../'
  # SPA's visible watermark identifies the source; do not duplicate it beneath each photograph.
