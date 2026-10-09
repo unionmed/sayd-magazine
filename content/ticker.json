@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
+      "title": "البقاع الشمالي: إزالة شباك الصيد غير القانونية ترفع حصيلة الحملة إلى 38,280 م²",
+      "titles": {
+        "ar": "البقاع الشمالي: إزالة شباك الصيد غير القانونية ترفع حصيلة الحملة إلى 38,280 م²",
+        "en": "Northern Bekaa: illegal bird-net removals bring the campaign total to 38,280 m²",
+        "fr": "Nord de la Bekaa : le retrait des filets illégaux porte le bilan de la campagne à 38 280 m²"
+      }
+    },
+    {
       "slug": "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "title": "حين يتغيّر الساحل… أين تستريح الطيور؟",
       "titles": {

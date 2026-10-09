@@ -1,10 +1,10 @@
 {
   "featured": [
+    "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
     "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-    "رادار-صيد-العربي-سبتمبر-2026",
-    "خريف-الصيد-العربي-2026"
+    "رادار-صيد-العربي-سبتمبر-2026"
   ],
   "latest": [
     "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -122,10 +122,10 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "خريف-الصيد-العربي-2026",
       "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
       "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
-      "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
-      "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
+      "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
     ],
     "رماية وعتاد": [
       "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
@@ -145,10 +145,10 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "arab-hunting-autumn-2026",
       "south-lebanon-environmental-destruction-bird-flyway",
       "protecting-autumn-migratory-birds-lebanon-khatib-2017",
-      "suhail-2026-closes-decade-katara-80000-visitors",
-      "saudi-sixth-hunting-season-2026-2027-rules"
+      "suhail-2026-closes-decade-katara-80000-visitors"
     ],
     "Shooting & Gear": [
       "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
@@ -211,12 +211,12 @@
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
-    "main": "حين-يتغير-الساحل-أين-تستريح-الطيور",
+    "main": "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
     "important": [
+      "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-      "رادار-صيد-العربي-سبتمبر-2026",
-      "خريف-الصيد-العربي-2026"
+      "رادار-صيد-العربي-سبتمبر-2026"
     ],
     "latest": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -233,10 +233,10 @@
     {
       "door": "hunting",
       "slugs": [
+        "خريف-الصيد-العربي-2026",
         "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
         "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
-        "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع",
-        "السعودية-تطلق-موسم-الصيد-السادس-بضواب"
+        "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
       ]
     },
     {
@@ -338,9 +338,10 @@
     "أسلحة-الصيد-في-معرض-الرياض-2026": "gear",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي": "hunting",
     "قطر-حماية-المناطق-البرية-والبحرية-2030": "wildlife",
-    "حين-يتغير-الساحل-أين-تستريح-الطيور": "wildlife"
+    "حين-يتغير-الساحل-أين-تستريح-الطيور": "wildlife",
+    "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs": "hunting"
   },
-  "demotion": "Nayef approved coastal bird lead on 6 October 2026. Previous lead is first side card; Updates retain their existing order. Oldest side card leaves the upper homepage and stays in its category and archive.",
+  "demotion": "Nayef approved the supplied Bekaa statement verbatim with a separate official-tally clarification as lead on 9 October 2026. Previous lead is first side card; Updates retain their existing order. Oldest side card leaves the upper homepage and stays in its category and archive.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
@@ -360,6 +361,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
     "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "قطر-حماية-المناطق-البرية-والبحرية-2030",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
@@ -434,11 +436,28 @@
         "en": "Batroun’s pelican at the edge of the Mediterranean.",
         "fr": "Le pélican de Batroun au bord de la Méditerranée."
       }
+    },
+    "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs": {
+      "image": "media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "position": "50% 65%",
+      "alt": {
+        "ar": "تحميل الشباك المضبوطة خلال العملية الميدانية في البقاع الشمالي.",
+        "en": "Loading seized nets during the field operation in northern Bekaa.",
+        "fr": "Chargement des filets saisis pendant l’opération dans le nord de la Bekaa."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
+      "titles": {
+        "ar": "البقاع الشمالي: إزالة شباك الصيد غير القانونية ترفع حصيلة الحملة إلى 38,280 م²",
+        "en": "Northern Bekaa: illegal bird-net removals bring the campaign total to 38,280 m²",
+        "fr": "Nord de la Bekaa : le retrait des filets illégaux porte le bilan de la campagne à 38 280 m²"
+      }
+    },
     {
       "slug": "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "titles": {
