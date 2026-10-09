@@ -904,6 +904,13 @@ def apply_html(
     tail = html_text[match.start() :]
     head = SEO_BLOCK_RE.sub("", head)
     head = HEAD_HREFLANG_RE.sub("", head)
+    # Remove the managed analytics block before normalizing the head boundary.
+    # Removing it after appending SEO can join a preceding JSON-LD script to
+    # seo:start and make the next generation change the same page again.
+    head = re.sub(
+        r'[ \t]*<!-- analytics:start -->.*?<!-- analytics:end -->[ \t]*(?:\r?\n)?',
+        '', head, flags=re.S,
+    )
     head = head.rstrip() + "\n"
     block = seo_block(head + tail, page, docs, rel, twins)
     result = head + block + tail

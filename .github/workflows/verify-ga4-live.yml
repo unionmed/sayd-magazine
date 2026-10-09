@@ -1,11 +1,10 @@
 name: Verify live GA4
 
 on:
-  push:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
     branches: [main]
-    paths:
-      - "scripts/verify_ga4_live.py"
-      - ".github/workflows/verify-ga4-live.yml"
   workflow_dispatch:
 
 permissions:
@@ -17,12 +16,14 @@ concurrency:
 
 jobs:
   verify:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -30,6 +31,11 @@ jobs:
         run: |
           pip install playwright==1.55.0
           python -m playwright install --with-deps chromium
+      - name: Validate SEO regressions and language alternates
+        run: |
+          pip install lxml==5.3.2
+          python scripts/test_seo_foundation.py
+          python scripts/test_hreflang_contract.py
       - name: Check generated GA4 once per canonical page
         run: python scripts/repair_ga4_tracking.py --check
       - name: Verify live AR EN FR HTML and debug pageviews
