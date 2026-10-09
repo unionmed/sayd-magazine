@@ -146,8 +146,18 @@ def cards(lang):
   if ('/posts/'+slug+'/') in s:continue
   a=os.path.relpath(DOCS/prefix/'posts'/slug/'index.html',path.parent);img=os.path.relpath(DOCS/IMAGE1,path.parent)
   row='<article class="post-row"><a class="thumb" href="'+a+'"><img src="'+img+'" alt="'+html.escape(d['captions'][0],quote=True)+'" loading="lazy"></a><div class="body"><h2><a href="'+a+'">'+html.escape(d['title'])+'</a></h2><div class="meta">'+d['date']+'</div><p class="excerpt">'+html.escape(d['deck'])+'</p></div></article>'
-  s,n=re.subn(r'(<div class="post-list">)',lambda m:m[1]+'\n'+row,s,count=1)
-  if n!=1:raise RuntimeError('Missing post-list '+str(path))
+  # The Arabic archive/category use post-list; EN/FR archives use grids.
+  if 'class="post-list"' in s:
+   pattern=r'(<div class="post-list">)'
+  elif 'class="grid-4"' in s:
+   pattern=r'(<div class="grid-4">)'
+   row=row.replace('class="post-row"','class="card"')
+  elif 'class="home-door-grid"' in s:
+   pattern=r'(<div class="home-door-grid">)'
+   row=row.replace('class="post-row"','class="card"')
+  else:raise RuntimeError('Missing known archive/card container '+str(path))
+  s,n=re.subn(pattern,lambda m:m[1]+'\n'+row,s,count=1)
+  if n!=1:raise RuntimeError('Archive insertion failed '+str(path))
   put(path,s)
 def homepage_seed(lang):
  slug=AR if lang=='ar' else EN;d=DATA[lang];path=DOCS/('' if lang=='ar' else lang+'/')/'index.html'
