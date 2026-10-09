@@ -118,7 +118,7 @@ def update_publication_check():
         # Coast-birds is a Hunting-category feature, not Wildlife & Camping.
         coastal=DOCS/prefix/'posts'/('حين-يتغير-الساحل-أين-تستريح-الطيور' if lang=='ar' else 'when-the-coast-changes-where-do-birds-rest')/'index.html'
         badge=tree(coastal).xpath('//header['+css_class('article-header')+']//a['+css_class('badge')+']')
-        assert len(badge)==1 and 'صيد' in badge[0].get('href',''), f'{lang}: coastal-birds category drift'
+        assert len(badge)==1 and 'صيد' in __import__('urllib.parse',fromlist=['unquote']).unquote(badge[0].get('href','')), f'{lang}: coastal-birds category drift'
         wildlife_listing=tree(DOCS/prefix/'category/حياة-برية-وتخييم/index.html')
         hunting_listing=tree(DOCS/prefix/'category/صيد/index.html')
         co_slug='حين-يتغير-الساحل-أين-تستريح-الطيور' if lang=='ar' else 'when-the-coast-changes-where-do-birds-rest'
