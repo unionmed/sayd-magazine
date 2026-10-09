@@ -183,7 +183,7 @@ def main():
  p=ROOT/'content/en/pairs.json';pairs=json.loads(p.read_text());pairs['pairs'][AR]=EN;put(p,json.dumps(pairs,ensure_ascii=False,indent=2)+'\n')
  p=ROOT/'content/homepage.json';c=json.loads(p.read_text())
  assert c['ia_slots']['main']=='البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs'
- if AR not in c['latest']:
+ if AR not in c['latest'] and AR not in next(d['slugs'] for d in c['ia_door_sections'] if d['door']=='wildlife'):
   last=c['latest'][-1]
   c['latest']=[AR]+c['latest'][:7]
   wildlife=next(x for x in c['ia_door_sections'] if x['door']=='wildlife')

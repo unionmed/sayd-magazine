@@ -145,6 +145,24 @@ def check(base=None):
             dates=[day(' '.join(n.xpath('.//*['+css_class('meta')+' or '+css_class('feed-date')+']/text()'))) for n in group]
             assert all(dates) and dates==sorted(dates,reverse=True),f'{lang}: dates out of order {dates}'
         for d,row in zip(c['ia_door_sections'],slots[4:]):assert [s for s,_ in row]==(['youtube:'+v['id'] for v in channel_videos] if d['door']=='tv' else [])+d['slugs'],(lang,d['door'])
+        # Publication dates must descend within every lower homepage door.
+        # Previously Wildlife placed a 20 September item ahead of 5 October.
+        for idx,door in enumerate(c['ia_door_sections']):
+            if door['door']=='tv':
+                continue
+            desk_dates=[day(' '.join(card.xpath('.//*['+css_class('meta')+']/text()')))
+                        for card in groups[4+idx]]
+            assert all(desk_dates) and desk_dates==sorted(desk_dates,reverse=True), (
+                f'{lang}: {door["door"]} dates out of order: {desk_dates}')
+        # Coast-birds is a Hunting-category feature, not Wildlife & Camping.
+        coastal=DOCS/prefix/'posts'/('حين-يتغير-الساحل-أين-تستريح-الطيور' if lang=='ar' else 'when-the-coast-changes-where-do-birds-rest')/'index.html'
+        badge=tree(coastal).xpath('//header['+css_class('article-header')+']//a['+css_class('badge')+']')
+        assert len(badge)==1 and 'صيد' in __import__('urllib.parse',fromlist=['unquote']).unquote(badge[0].get('href','')), f'{lang}: coastal-birds category drift'
+        wildlife_listing=tree(DOCS/prefix/'category/حياة-برية-وتخييم/index.html')
+        hunting_listing=tree(DOCS/prefix/'category/صيد/index.html')
+        co_slug='حين-يتغير-الساحل-أين-تستريح-الطيور' if lang=='ar' else 'when-the-coast-changes-where-do-birds-rest'
+        assert co_slug not in {slug(h) for h in wildlife_listing.xpath('//article//a/@href')}, f'{lang}: coastal story still in wildlife listing'
+        assert co_slug in {slug(h) for h in hunting_listing.xpath('//article//a/@href')}, f'{lang}: coastal story missing from hunting listing'
         assert [s for s,_ in slots[3]]==contract['memory_slugs'],f'{lang}: protected memory selection changed'
         assert [s for s,_ in slots[9]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
         if reference is None:reference=slots
