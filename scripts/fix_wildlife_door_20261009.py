@@ -94,7 +94,8 @@ def update_sources():
  # restore the obsolete Wildlife taxonomy.
  p=ROOT/'scripts/publish_coast_birds.py'
  s=p.read_text()
- assert "DOOR={'ar':'الحياة البرية والتخييم'" in s
+ assert ("DOOR={'ar':'الحياة البرية والتخييم'" in s or
+         "DOOR={'ar':'صيد','en':'Hunting','fr':'Chasse'}" in s), 'Coastal one-time publisher missing'
  s=s.replace("DOOR={'ar':'الحياة البرية والتخييم','en':'Wildlife & Camping','fr':'Faune et camping'}",
              "DOOR={'ar':'صيد','en':'Hunting','fr':'Chasse'}")
  s=s.replace("quote('حياة-برية-وتخييم')","quote('صيد')")
