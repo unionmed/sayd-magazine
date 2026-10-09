@@ -1,0 +1,33 @@
+name: Link existing Bekaa video in Sayd TV
+on:
+  push:
+    branches:
+      - publish/bekaa-nets-field-video-20261009
+permissions:
+  contents: write
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[bekaa-reel-generated]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Link original field video in AR EN FR without altering protected homepage
+        run: |
+          python scripts/attach_bekaa_field_video.py
+          python -m pip install lxml
+          python scripts/check_publication_contract.py --base origin/main
+          python scripts/test_homepage_doors.py
+      - name: Commit updated pages and source markdown
+        run: |
+          git config user.name "sayd-publication-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs content
+          if ! git diff --cached --quiet; then
+            git commit -m "[bekaa-reel-generated] Add original field video to Sayd TV and report"
+            git push origin HEAD:publish/bekaa-nets-field-video-20261009
+          fi
