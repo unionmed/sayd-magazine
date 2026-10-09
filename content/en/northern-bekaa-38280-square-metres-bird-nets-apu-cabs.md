@@ -1,5 +1,5 @@
 ---
-title: "Exceptional record field operation by the Bekaa Investigation Detachment and the joint APU–CABS team: 38,280 m² of bird-killing nets removed in northern Bekaa"
+title: "Northern Bekaa: bird-net removals reach 38,280 m²"
 slug: northern-bekaa-38280-square-metres-bird-nets-apu-cabs
 date: 2026-10-09
 author: "Statement"
