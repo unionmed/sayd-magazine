@@ -36,7 +36,12 @@ def test_homepages():
     from homepage_hunting_rotation import select, candidates, expected
     c=config();current=expected(c);recent='سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف'
     moved=deepcopy(c);moved['latest'].remove(recent)
-    after=select(moved,candidates())
+    # The displaced story must be the newest in this fixture. New publications
+    # can legitimately be newer than the historical BirdLife article.
+    from datetime import timedelta
+    pool=candidates();newest=max(day for _,day in pool)+timedelta(days=1)
+    pool=[(slug,newest if slug==recent else day) for slug,day in pool]
+    after=select(moved,pool)
     assert after[0]==recent and len(after)==4 and current[-1] not in after
     assert not set(after).intersection(moved['featured']+moved['latest'])
     # A story promoted out of the lower door cannot remain there as a duplicate.
