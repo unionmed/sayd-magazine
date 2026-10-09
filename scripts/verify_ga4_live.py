@@ -1,4 +1,4 @@
-"""Read-only live GA4 smoke test. Only six debug-marked pageviews are sent."""
+"""Verify published GA4, including the nine repaired article pages, with QA pageviews."""
 import json
 import time
 from pathlib import Path
@@ -10,16 +10,26 @@ ORIGIN = 'https://sayd-magazine.com'
 ID = 'G-C3C0CEYX8Q'
 OLD_ID = 'G-C3COCEYX8Q'
 DOCS = Path('docs')
+# Regression coverage: all nine pages repaired in PR #167, plus the three homepages.
+ARTICLE_SLUGS = {
+    '': ('حين-يتغير-الساحل-أين-تستريح-الطيور',
+         'قطر-حماية-المناطق-البرية-والبحرية-2030',
+         'معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي'),
+    'en/': ('when-the-coast-changes-where-do-birds-rest',
+            'qatar-protected-land-marine-areas-2030',
+            'saudi-falcons-hunting-exhibition-2026-highlights'),
+    'fr/': ('when-the-coast-changes-where-do-birds-rest',
+            'qatar-protected-land-marine-areas-2030',
+            'saudi-falcons-hunting-exhibition-2026-highlights'),
+}
 paths = []
-for prefix in ('', 'en/', 'fr/'):
+for prefix, slugs in ARTICLE_SLUGS.items():
     paths.append('/' + prefix)
-    root = DOCS / prefix / 'posts'
-    candidates = sorted(p for p in root.glob('*/index.html')
-                        if ID in p.read_text(encoding='utf-8')
-                        and 'http-equiv="refresh"' not in p.read_text(encoding='utf-8'))
-    if not candidates:
-        raise RuntimeError('No tagged article in ' + prefix)
-    paths.append('/' + quote(candidates[0].relative_to(DOCS).as_posix(), safe='/'))
+    for slug in slugs:
+        rel = prefix + 'posts/' + slug + '/index.html'
+        if not (DOCS / rel).is_file():
+            raise RuntimeError('Required regression page missing: ' + rel)
+        paths.append('/' + quote(rel, safe='/'))
     categories = sorted((DOCS / prefix / 'category').glob('*/index.html'))
     candidates = [p for p in categories if ID in p.read_text(encoding='utf-8')
                   and 'http-equiv="refresh"' not in p.read_text(encoding='utf-8')]
@@ -80,7 +90,7 @@ with sync_playwright() as pw:
             fields = parse_qs(u.query)
             fields.update(parse_qs(request.post_data or ''))
             return {'event': fields.get('en', [''])[0], 'measurement_id': fields.get('tid', [''])[0],
-                    'debug': fields.get('_dbg', [''])[0]}
+                    'debug': fields.get('_dbg', fields.get('ep.debug_mode', ['']))[0]}
         def on_request(req):
             event = event_info(req)
             if event:
@@ -108,4 +118,4 @@ with sync_playwright() as pw:
     browser.close()
 if not all(r['correct_single_page_view'] for r in results):
     raise RuntimeError('Browser telemetry not fully confirmed; inspect results, do not claim success')
-print('GA4 LIVE VERIFICATION PASSED. Transport receipt is verified; processed GA4 reporting is a separate check.')
+print('GA4 LIVE VERIFICATION PASSED. All nine repaired articles and AR/EN/FR homepages send one accepted pageview each. Processed reporting is a separate check.')

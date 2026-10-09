@@ -123,14 +123,27 @@ def test_listing_pages_skip_card_thumbs_as_heroes() -> None:
     assert "og:title" in head
     assert 'property="og:image"' not in head
     assert 'name="twitter:card" content="summary"' in head
-    assert "hreflang" not in head
+    from lxml import html
+    links = html.fromstring(cat).xpath('//head/link[@rel="alternate"][@hreflang]')
+    assert {n.get('hreflang') for n in links} == {'ar', 'en', 'fr', 'x-default'}
+    for link in links:
+        lang = link.get('hreflang')
+        prefix = '' if lang in ('ar', 'x-default') else lang + '/'
+        expected = seo.public_url(Path(prefix + 'category/صيد/index.html'))
+        assert link.get('href') == expected
 
 
 def test_home_and_memory_twins() -> None:
     home = (DOCS / "index.html").read_text(encoding="utf-8").split("</head>", 1)[0]
     assert 'rel="canonical" href="https://sayd-magazine.com/"' in home
     assert 'hreflang="en" href="https://sayd-magazine.com/en/"' in home
-    assert "birdlife-flyways-photo.jpg" in home
+    from lxml import html
+    import json
+    featured = json.loads((ROOT / 'content/homepage.json').read_text())['featured'][0]
+    article = html.fromstring((DOCS / 'posts' / featured / 'index.html').read_text())
+    image = article.xpath('//head/meta[@property="og:image"]/@content')
+    assert len(image) == 1
+    assert html.fromstring(home + '</head>').xpath('//meta[@property="og:image"]/@content') == image
     assert "<title>مجلة صيد · Sayd Magazine</title>" in (DOCS / "index.html").read_text(
         encoding="utf-8"
     )
@@ -140,15 +153,19 @@ def test_home_and_memory_twins() -> None:
 
 
 def test_every_html_page_has_canonical() -> None:
-    missing = []
-    for path in DOCS.rglob("*.html"):
-        text = path.read_text(encoding="utf-8")
-        if "<html" not in text.lower():
+    from lxml import html
+    for path in DOCS.rglob('*.html'):
+        text = path.read_text(encoding='utf-8')
+        if '<html' not in text.lower():
             continue
-        head = text.split("</head>", 1)[0]
-        if 'rel="canonical"' not in head or "og:title" not in head:
-            missing.append(path.relative_to(DOCS).as_posix())
-    assert missing == []
+        tree = html.fromstring(text)
+        rel = path.relative_to(DOCS)
+        canonical = tree.xpath('//head/link[@rel="canonical"]/@href')
+        assert len(canonical) == 1, str(rel)
+        if tree.xpath('//head/meta[translate(@http-equiv, "REFSH", "refsh")="refresh"]'):
+            assert not seo.in_sitemap(rel), str(rel)
+            continue
+        assert len(tree.xpath('//head/meta[@property="og:title"]')) == 1, str(rel)
 
 
 def test_babtain_aliases_redirect_off_sitemap() -> None:
@@ -257,10 +274,13 @@ def test_gallery_cards_are_not_indexed_articles() -> None:
         assert f"<loc>{seo.public_url(Path(rel))}</loc>" not in sitemap
     assert "بالفيديو-مقناص-سعود-عبد-العزيز-الباب" in home
     assert "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا" in home
-    assert "البجع-الأبيض-الكبير-great-white-pelican" in home
+    from urllib.parse import unquote
+    photos = unquote((DOCS / 'category/صور/index.html').read_text())
+    assert "البجع-الأبيض-الكبير-great-white-pelican" in photos
     assert "video-saud-al-babtain-maqnas-afghanistan" in en
     assert "suhail-2026-in-photos-falcons-visitors" in en
-    assert "great-white-pelican-matn-highway-nayef-krayem" in en
+    en_photos = (DOCS / 'en/category/صور/index.html').read_text()
+    assert "great-white-pelican-matn-highway-nayef-krayem" in en_photos
 
 
 def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
@@ -280,13 +300,19 @@ def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
 
     slugs = seo.empty_category_slugs(DOCS)
     assert "قوانين" not in slugs
-    assert "الصقارة" in slugs
+    assert "الصقارة" not in slugs
+    for slug in ('الصقارة', 'صيد-بري', 'صيد-بحري', 'صيد-الطيور'):
+        rel = Path('category') / slug / 'index.html'
+        redirect = (DOCS / rel).read_text()
+        assert 'http-equiv="refresh"' in redirect
+        assert not seo.in_sitemap(rel)
+        assert 'category/' + slug + '/index.html' not in chrome(home)
     assert "قوانين-وخرائط" in slugs
     assert "رماية" in slugs
     assert "بعدستكم" in slugs
     assert "رياضات-وسياحة-بيئية" in slugs
     # Desktop nav links these empty landings. They stay out of the sitemap.
-    desktop_empty = {"الصقارة"}
+    desktop_empty = set()
     for slug in slugs:
         rel = Path("category") / slug / "index.html"
         assert not seo.in_sitemap(rel), slug
@@ -302,7 +328,7 @@ def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
             assert not linked
     assert "category/صور/index.html" in chrome(home)
     assert "category/صيد/index.html" in chrome(home)
-    assert "category/صيد-الطيور/index.html" in chrome(home)
+    assert "category/موسوعة-الطيور/index.html" in chrome(home)
     assert "category/عتاد-وسلاح-الصيد/index.html" in chrome(home)
     assert "category/حياة-برية-وتخييم/index.html" in chrome(home)
     assert "category/مقابلات-تحقيقات/index.html" not in chrome(home)
@@ -425,10 +451,29 @@ def test_category_refresh_redirects_are_not_rewritten() -> None:
 
 
 def test_apply_is_idempotent() -> None:
-    before = (DOCS / "index.html").read_text(encoding="utf-8")
-    seo.apply(DOCS)
-    after = (DOCS / "index.html").read_text(encoding="utf-8")
-    assert before == after
+    # Exercise the generator in an isolated copy; tests must never rewrite publication files.
+    import hashlib
+    import os
+    import shutil
+    import tempfile
+    def hashes(root):
+        return {p.relative_to(root).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                for p in root.rglob('*') if p.is_file()}
+    with tempfile.TemporaryDirectory() as tmp:
+        docs = Path(tmp) / 'docs'
+        # HTML/metadata are private copies; immutable media can be hard-linked.
+        def copy_file(src, dst):
+            if Path(src).suffix.lower() in ('.html', '.xml', '.txt'):
+                return shutil.copy2(src, dst)
+            os.link(src, dst)
+            return dst
+        shutil.copytree(DOCS, docs, copy_function=copy_file)
+        seo.apply(docs)
+        before = hashes(docs)
+        stats = seo.apply(docs)
+        after = hashes(docs)
+        assert stats['changed'] == 0, (stats, [p for p in after if after[p] != before.get(p)])
+        assert after == before
 
 
 if __name__ == "__main__":
