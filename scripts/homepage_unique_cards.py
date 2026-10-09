@@ -799,10 +799,11 @@ def _as_lead(article: str, slug: str) -> str:
     if slug in {"أين-تستريح-الطيور-المشرق-والجزيرة-العربية", "where-migratory-birds-rest-mashreq-arabian-peninsula"}:
         label = "اليوم العالمي لهجرة الطيور" if slug.startswith("أين") else "Journée mondiale des oiseaux migrateurs" if "Où" in title or "Machrek" in title else "World Migratory Bird Day"
         kicker = f'<div class="migration-kicker" style="font-size:14px;line-height:1.5;color:#f6d77b;background:rgba(24,38,18,.94);display:inline-block;padding:3px 8px;border-radius:3px;margin-bottom:6px">{label}</div>'
+    body_style = 'top:0;bottom:auto;padding:16px 18px 22px;background:linear-gradient(180deg,rgba(14,27,24,.92) 0%,rgba(14,27,24,.78) 75%,rgba(14,27,24,0) 100%)' if kicker else ""
     return (
         f'<article class="card overlay feature-lead">\n'
         f'  <a class="thumb" href="{link}"><img src="{src}" alt="{alt}" loading="lazy"></a>\n'
-        f'  <div class="body">\n'
+        f'  <div class="body" style="{body_style}">\n'
         f"    {kicker}<h2><a href=\"{link}\">{title}</a></h2>\n"
         f'    <div class="meta">{date}</div>\n'
         f"  </div>\n"
