@@ -1,0 +1,53 @@
+name: Sayd archival image index validation
+on:
+  push:
+    branches: [archive-image-catalog-pilot-20261010]
+    paths:
+      - 'audit/image-catalog/**'
+      - '.github/workflows/archive-catalog.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive-image-catalog-pilot-20261010
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check archive tests
+        run: python -m unittest discover -s audit/image-catalog -p 'test_*.py' -v
+      - name: Audit all 10184 originals (no writes)
+        run: python audit/image-catalog/search_all.py --audit --check-files
+      - name: Generate full 10184-image taxonomy
+        run: python audit/image-catalog/build_preliminary_taxonomy.py
+      - name: Link GitHub-local image references to GitHub article files
+        run: python audit/image-catalog/link_historical_articles.py
+      - name: Verify coverage and write report
+        run: python audit/image-catalog/verify_catalog.py
+      - name: Publish audit files to this draft branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audit/image-catalog/preliminary-taxonomy.json audit/image-catalog/article-image-links.json audit/image-catalog/coverage-report.json audit/image-catalog/coverage-report.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Generate verified archive indexes and article-image coverage'
+            git push origin HEAD:archive-image-catalog-pilot-20261010
+          fi
+      - name: Attach readable report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sayd-archive-results
+          path: |
+            audit/image-catalog/coverage-report.json
+            audit/image-catalog/coverage-report.md
+            audit/image-catalog/article-image-links.json
+            audit/image-catalog/preliminary-taxonomy.json
+          if-no-files-found: warn
+          retention-days: 30
