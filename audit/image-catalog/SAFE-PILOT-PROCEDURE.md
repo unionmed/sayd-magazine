@@ -1,29 +1,18 @@
-# Sayd historical image catalog — safe pilot procedure
+# إجراءات سلامة أرشيف صور صيد
 
-Status: INTERNAL DRAFT. Not a publishing instruction.
+الحالة: جرى التحقق التقني من الفهرس الكامل بتاريخ 10 تشرين الأول 2026. هذا الملف هو سجل أمان، وليس تعليمات لنشر مادة.
 
-## Verified scope
-- Existing pilot: `audit/image-catalog/pilot-2026-10-10.json` contains 180 filename/path-selected images.
-- Its `section_candidate` is a **suggestion**, not an identified species, verified event, or verified photograph.
-- Original files remain in `docs/media/uploads/`; keep exact paths and filenames.
+1. المصدر الوحيد للصور التاريخية وملفات المقالات هو مستودع GitHub `unionmed/sayd-magazine`.
+2. لا تُستخدم أي قواعد بيانات أو روابط وسائط خارج GitHub للبحث أو الربط.
+3. الجرد يغطي 10,184 صورة محفوظة، مع مطابقة بصمات SHA والمسارات مع شجرة Git، دون نقص أو زيادة.
+4. يبقى الأصل دون حذف أو نقل أو تغيير اسم أو ضغط أو استبدال.
+5. تبقى ملفات الفهارس داخل `audit/image-catalog/` وخارج جذر الموقع المنشور `docs/`.
+6. لا تمسّ العملية المحتوى التحريري أو التواريخ أو التصميم أو السيو أو القنوات الاجتماعية.
+7. التصنيف بواسطة أسماء الملفات `UNVERIFIED` حتى يجري الفحص البصري عند الاستعمال.
+8. لا يُستنتج المصور أو المصدر أو حقوق الاستعمال أو صحة الحدث من اسم الصورة.
+9. لا تُنقل صور الأرشيف إلى مكتبة ChatGPT تلقائيًا، ولا يُدّعى وجود نسخة فيها.
+10. ملفات الصور المرتبطة مباشرة بمقالاتها هي فقط `EXACT_PATH`. بقية الروابط تُعامل كمرشحات تحتاج مراجعة.
+11. يمكن إعادة الفحص عبر `.github/workflows/archive-catalog.yml` أو بالاختبارات المحلية.
+12. لا يُستخدم أرشيف تاريخي لتصوير حدث جديد على أنه توثيق آني.
 
-## Non-negotiable protections
-1. Never rename, move, delete, recompress, or overwrite historical media during cataloging.
-2. Never modify `docs/`, `content/`, templates, article dates, homepage slots, redirects, canonical URLs, hreflang, robots.txt, or sitemaps for cataloging.
-3. Keep indexes in `audit/image-catalog/`, outside the published GitHub Pages `docs/` root.
-4. No automatic claim of photographer, species, location, capture date, license, or event from filenames.
-5. Record uncertain values as null / `UNVERIFIED`; Nayef manages publication permissions.
-6. Link to the original repository path; do not copy 10,000 files to ChatGPT Library.
-7. A new published image must have a site-local file and a documented copy in `/Sayd picture for use`; do not claim the latter exists until confirmed.
-8. Do not merge this pilot without review. Run existing SEO and publication-contract workflows before any merge.
-
-## Catalog record fields for later versions
-`path`, `git_blob_sha`, `size_bytes`, `section_candidates`, `subject_keywords_ar`, `subject_keywords_en`, `species_scientific_name`, `country`, `region`, `event_date`, `capture_date`, `source`, `photographer`, `related_article_urls`, `visual_review_status`, `rights_note`, `library_copy_status`.
-
-## Verification steps
-- Confirm candidate file path exists on the same commit as the index.
-- Verify image visually before using it to illustrate an article.
-- Use historical photos only as illustrative images with accurate captions, never as documentary evidence of a new event.
-- Check image duplicates by hashes and visual similarity separately; identical names or sizes alone do not establish duplicates.
-- Before expanding, compare the PR diff with `main` and verify only internal `audit/image-catalog/` files changed.
-- Keep the draft PR open until an explicit review of search quality and safeguards.
+فهرس البحث الكامل وتقرير سلامة الملفات: `SEARCH-README.md` و`coverage-report.md`.

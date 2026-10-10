@@ -1,49 +1,50 @@
-name: Sayd archival image index validation
+name: Sayd archive catalog verification
 on:
-  push:
-    branches: [archive-image-catalog-pilot-20261010]
+  pull_request:
     paths:
       - 'audit/image-catalog/**'
       - '.github/workflows/archive-catalog.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'audit/image-catalog/**'
+      - 'docs/media/**'
+      - '.github/workflows/archive-catalog.yml'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 jobs:
   catalog:
+    name: Verify all historical images and links
     runs-on: ubuntu-latest
     timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: archive-image-catalog-pilot-20261010
-          persist-credentials: true
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Check archive tests
+      - name: Unit tests
         run: python -m unittest discover -s audit/image-catalog -p 'test_*.py' -v
-      - name: Audit all 10184 originals (no writes)
+      - name: Audit archive paths and files
         run: python audit/image-catalog/search_all.py --audit --check-files
-      - name: Generate full 10184-image taxonomy
+      - name: Generate filename-only taxonomy
         run: python audit/image-catalog/build_preliminary_taxonomy.py
-      - name: Link GitHub-local image references to GitHub article files
+      - name: Cross-reference Github-local image paths in article files
         run: python audit/image-catalog/link_historical_articles.py
-      - name: Verify coverage and write report
+      - name: Verify every blob SHA and write coverage report
         run: python audit/image-catalog/verify_catalog.py
-      - name: Publish audit files to this draft branch only
+      - name: Smoke-test editorial search
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add audit/image-catalog/preliminary-taxonomy.json audit/image-catalog/article-image-links.json audit/image-catalog/coverage-report.json audit/image-catalog/coverage-report.md
-          if ! git diff --cached --quiet; then
-            git commit -m 'Generate verified archive indexes and article-image coverage'
-            git push origin HEAD:archive-image-catalog-pilot-20261010
-          fi
-      - name: Attach readable report
-        if: always()
+          python audit/image-catalog/search_editorial.py 'صقر' --limit 5 > /tmp/sayd-falcon-results.json
+          python audit/image-catalog/search_editorial.py 'سهيل' --limit 5 > /tmp/sayd-suhail-results.json
+          python -c 'import json; a=json.load(open("/tmp/sayd-falcon-results.json")); b=json.load(open("/tmp/sayd-suhail-results.json")); assert a["returned"] > 0; assert b["returned"] > 0; print("Search smoke test",a["returned"],b["returned"])'
+      - name: Archive searchable results as downloadable artifacts
         uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: sayd-archive-results
+          name: sayd-github-image-catalog
           path: |
             audit/image-catalog/coverage-report.json
             audit/image-catalog/coverage-report.md
