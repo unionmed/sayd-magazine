@@ -67,7 +67,9 @@
     "combating-illegal-hunting-lebanon-in-photos",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
     "طيور-خربة-سلم-بعدسة-جمانة-ماجد",
-    "khirbet-selm-birds-joumana-majed"
+    "khirbet-selm-birds-joumana-majed",
+    "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا",
+    "wings-reclaim-sky-tamara-el-zein-zgharta"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -98,7 +100,9 @@
     "combating-illegal-hunting-lebanon-in-photos",
     "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
     "طيور-خربة-سلم-بعدسة-جمانة-ماجد",
-    "khirbet-selm-birds-joumana-majed"
+    "khirbet-selm-birds-joumana-majed",
+    "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا",
+    "wings-reclaim-sky-tamara-el-zein-zgharta"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -274,10 +278,10 @@
     {
       "door": "wildlife",
       "slugs": [
+        "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا",
         "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
         "قطر-حماية-المناطق-البرية-والبحرية-2030",
-        "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان",
-        "شجيرة-العوسج-حين-تقرأ-الأرض"
+        "بين-قمم-الأرز-دليل-الهايكينغ-والتخييم-في-لبنان"
       ]
     },
     {
@@ -363,7 +367,8 @@
     "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026": "wildlife",
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية": "hunting",
     "ختام-الملواح-2026-60-فائزا": "hunting",
-    "طيور-خربة-سلم-بعدسة-جمانة-ماجد": "photos"
+    "طيور-خربة-سلم-بعدسة-جمانة-ماجد": "photos",
+    "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا": "wildlife"
   },
   "demotion": "Nayef authorized the Al-Melwah finale on 10 October 2026 with the existing photograph, replacing the prior Saudi exhibition report in the side-card block and ticker. Prior article stays in category/archive and is excluded from homepage recycling. Current main lead and other stories remain; side cards keep publication-date order.",
   "approved_home_repeats": [
@@ -497,6 +502,15 @@
         "ar": "صقّار يحمل صقرًا خلال منافسات الملواح في نسخة 2026 من المعرض، في صورة سابقة لليوم الختامي.",
         "en": "A falconer holds a falcon during the exhibition’s 2026 Al-Melwah activities, photographed before the final day.",
         "fr": "Un fauconnier tient un faucon lors des activités Al-Melwah du salon 2026, avant la dernière journée."
+      }
+    },
+    "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا": {
+      "image": "media/uploads/2026/10/lamb-zgharta-white-storks.jpg",
+      "position": "50% 45%",
+      "alt": {
+        "ar": "لقالق بيضاء في موقع الجمعية اللبنانية للطيور المهاجرة، حيث تتلقى الطيور المصابة الرعاية والتأهيل قبل إعادتها إلى الطبيعة متى سمحت حالتها بذلك.",
+        "en": "White storks at the Lebanese Association for Migratory Birds’ site, where injured birds receive care and rehabilitation before returning to the wild when their condition allows.",
+        "fr": "Des cigognes blanches sur le site de l’Association libanaise pour les oiseaux migrateurs, où les oiseaux blessés reçoivent des soins et une réhabilitation avant leur retour à la nature, lorsque leur état le permet."
       }
     }
   },

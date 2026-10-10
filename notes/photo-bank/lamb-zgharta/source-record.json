@@ -1,0 +1,62 @@
+{
+  "article": "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا",
+  "publication_date": "2026-10-10",
+  "approval": "Explicit publication approval, wildlife category and homepage door; delete requested source-workflow phrase.",
+  "sources": [
+    "https://www.facebook.com/share/1CAJacY1MP/",
+    "https://www.salamwakalam.com/videos/684/lamb-association-in-zgharta-a-remarkable-role-in-rescuing-injured-wild/en",
+    "https://www.gov.pl/web/liban/powrot-bocianow-z-libanu-do-polski",
+    "https://almarkazia.com/ar/إطلاق-طائر-حوام-العسل-في-الكورة-1",
+    "https://flightforsurvival.org/feliks-is-free-again/",
+    "https://www.agriculture.gov.lb/Media/News/2025/وزارة-الزراعة-تنظم-ندوة-علمية-في-الضنية-حول-دور-ال"
+  ],
+  "images": [
+    {
+      "original_filename": "1000505582.jpg",
+      "local_copy": "notes/photo-bank/lamb-zgharta/source-text-1000505582.jpg",
+      "sha256": "bacbf39dfd2641108af853e71c86c5c9f8194ac16d4b073572427820c3ecee12",
+      "description": "Screenshot of source news text; evidence only",
+      "source": "Lebanon Heaven Facebook video; supplied stills",
+      "photographer": null,
+      "country": "Lebanon",
+      "location": "Jerjour, Zgharta / Horsh Ehden, per supplied news text",
+      "event_date": null,
+      "date_note": "Exact capture/visit date unconfirmed; do not derive from relative screenshot date.",
+      "rights": "Nayef approved supplied stills for this article; no open licence established. Review rights for other reuse.",
+      "reuse_status": "LOCAL ORIGINAL PRESERVED; RIGHTS REVIEW FOR OTHER USE"
+    },
+    {
+      "original_filename": "1000505584.jpg",
+      "local_copy": "docs/media/uploads/2026/10/lamb-zgharta-white-storks.jpg",
+      "sha256": "6209b74b291fdbb4aee6606af20a090eaf0b61a222e714ec2b7abce14d3e53b3",
+      "description": "White storks in association care enclosure",
+      "source": "Lebanon Heaven Facebook video; supplied stills",
+      "photographer": null,
+      "country": "Lebanon",
+      "location": "Jerjour, Zgharta / Horsh Ehden, per supplied news text",
+      "event_date": null,
+      "date_note": "Exact capture/visit date unconfirmed; do not derive from relative screenshot date.",
+      "rights": "Nayef approved supplied stills for this article; no open licence established. Review rights for other reuse.",
+      "reuse_status": "LOCAL ORIGINAL PRESERVED; RIGHTS REVIEW FOR OTHER USE"
+    },
+    {
+      "original_filename": "1000505591.jpg",
+      "local_copy": "docs/media/uploads/2026/10/lamb-zgharta-tamara-el-zein-release.jpg",
+      "sha256": "7b72fe7349567a8848c9c112b53d5c085641e75c568c40a881033fff6c925d82",
+      "description": "Minister participating in bird release",
+      "source": "Lebanon Heaven Facebook video; supplied stills",
+      "photographer": null,
+      "country": "Lebanon",
+      "location": "Jerjour, Zgharta / Horsh Ehden, per supplied news text",
+      "event_date": null,
+      "date_note": "Exact capture/visit date unconfirmed; do not derive from relative screenshot date.",
+      "rights": "Nayef approved supplied stills for this article; no open licence established. Review rights for other reuse.",
+      "reuse_status": "LOCAL ORIGINAL PRESERVED; RIGHTS REVIEW FOR OTHER USE"
+    }
+  ],
+  "checks": [
+    "No inferred species of bird held by minister or release count.",
+    "2025–2026 only.",
+    "Single source credit at end, three translations; internal notes outside public copy."
+  ]
+}
