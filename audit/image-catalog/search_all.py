@@ -26,6 +26,8 @@ SECTIONS = {
     "الحياة البرية": ["غزال", "ذئب", "ثعلب", "wildlife", "gazelle"],
     "التخييم والبر": ["تخييم", "مخيم", "camp", "outdoor"],
     "البحر": ["سمك", "بحر", "صيد-سمك", "fishing", "sea"],
+    "القوانين والأنظمة": ["رخصة", "قانون", "مرسوم", "permit", "regulation"],
+    "شعر وفن": ["لوحة", "رسم", "قصيدة", "فن", "painting", "artwork"],
 }
 def normalize(s):
     s = unicodedata.normalize("NFKD", str(s or "")).casefold()
