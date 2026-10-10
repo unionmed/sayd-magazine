@@ -1,0 +1,93 @@
+{
+  "titles": {
+    "ar": [
+      "طيور خربة سلم بعدسة جمانة ماجد",
+      "أربع صور لطيور في خربة سلم، جنوب لبنان، التقطتها في 7 تشرين الأول 2026 القارئة جمانة ماجد وشاركتها مع «صيد». تتنقل اللقطات بين طيور على الأسلاك وأخرى تحلّق في السماء، ولقطات أقرب وسط النباتات."
+    ],
+    "en": [
+      "Birds of Khirbet Selm through Joumana Majed’s lens",
+      "Four photographs of birds in Khirbet Selm, southern Lebanon, taken on 7 October 2026 by reader Joumana Majed and shared with Sayd. The images move from birds perched on wires and flying across the sky to closer views among plants."
+    ],
+    "fr": [
+      "Les oiseaux de Khirbet Selm sous l’objectif de Joumana Majed",
+      "Quatre photographies d’oiseaux à Khirbet Selm, dans le sud du Liban, prises le 7 octobre 2026 par la lectrice Joumana Majed et partagées avec Sayd. Les images passent des oiseaux posés sur des fils ou volant dans le ciel à des vues plus rapprochées parmi les plantes."
+    ]
+  },
+  "credits": {
+    "ar": "الصور: جمانة ماجد — خربة سلم، جنوب لبنان، 7 تشرين الأول 2026.",
+    "en": "Photos: Joumana Majed — Khirbet Selm, southern Lebanon, 7 October 2026.",
+    "fr": "Photographies : Joumana Majed — Khirbet Selm, sud du Liban, 7 octobre 2026."
+  },
+  "capture_date": "2026-10-07",
+  "published_date": "2026-10-10",
+  "images": [
+    {
+      "package_file": "khirbet-selm-joumana-majed-20261007-01.jpg",
+      "original_file": "1000498467.jpg",
+      "original_sha256": "7bb1e8ea2d63789708966f441dd3828bb84558e53d921d422c373b7c2a114cb7",
+      "captions": {
+        "ar": "طيور تستقر على الأسلاك في خربة سلم.",
+        "en": "Birds resting on wires in Khirbet Selm.",
+        "fr": "Des oiseaux se posent sur les fils à Khirbet Selm."
+      },
+      "alt": {
+        "ar": "طيور صغيرة مصطفة على أسلاك، مع عمود إنارة عند طرف الصورة.",
+        "en": "Small birds lined up on wires, with a streetlight pole at the edge of the image.",
+        "fr": "De petits oiseaux alignés sur des fils, avec un lampadaire au bord de l’image."
+      },
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "package_file": "khirbet-selm-joumana-majed-20261007-02.jpg",
+      "original_file": "1000498461.jpg",
+      "original_sha256": "796110320007320000958f227883ee75641a987ab0848d69256dc5f9e5967fd1",
+      "captions": {
+        "ar": "طيور تحلّق قرب الأسلاك في سماء خربة سلم.",
+        "en": "Birds flying near wires above Khirbet Selm.",
+        "fr": "Des oiseaux volent près des fils au-dessus de Khirbet Selm."
+      },
+      "alt": {
+        "ar": "طيور صغيرة تحلّق حول أسلاك ممتدة أمام سماء زرقاء وغيوم بيضاء.",
+        "en": "Small birds flying around overhead wires against a blue sky with white clouds.",
+        "fr": "De petits oiseaux volent autour de fils aériens devant un ciel bleu avec des nuages blancs."
+      },
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "package_file": "khirbet-selm-joumana-majed-20261007-03.jpg",
+      "original_file": "1000502641.jpg",
+      "original_sha256": "e278b06772bc88e2487a86c690b3e38ab1b2b3dcfab5b8c938563e666a8dd8d6",
+      "captions": {
+        "ar": "عصفور الدوري المنزلي على سطح خشن بين النباتات.",
+        "en": "A house sparrow on a rough surface among plants.",
+        "fr": "Un moineau domestique sur une surface rugueuse parmi les plantes."
+      },
+      "alt": {
+        "ar": "طائر بني مصوَّر من الخلف على سطح خشن بجوار نباتات خضراء.",
+        "en": "A brown bird seen from behind on a rough surface beside green plants.",
+        "fr": "Un oiseau brun vu de dos sur une surface rugueuse, près de plantes vertes."
+      },
+      "width": 1350,
+      "height": 1800
+    },
+    {
+      "package_file": "khirbet-selm-joumana-majed-20261007-04.jpg",
+      "original_file": "1000502647.jpg",
+      "original_sha256": "35be3106adb697bfeba2df8934d126e67978933ff55e90e55253b6ca0c9695a8",
+      "captions": {
+        "ar": "عصفور الدوري المنزلي بين أغصان الزيتون.",
+        "en": "A house sparrow among olive branches.",
+        "fr": "Un moineau domestique parmi les branches d’olivier."
+      },
+      "alt": {
+        "ar": "طائر بني يتجه نحو اليسار تحت أوراق زيتون خضراء.",
+        "en": "A brown bird facing left beneath green olive leaves.",
+        "fr": "Un oiseau brun tourné vers la gauche sous des feuilles vertes d’olivier."
+      },
+      "width": 1350,
+      "height": 1800
+    }
+  ]
+}
