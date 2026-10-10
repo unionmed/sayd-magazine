@@ -1,41 +1,66 @@
 #!/usr/bin/env python3
-"""Read-only cross-reference: archived image manifests vs historical post Markdown.
+"""Read-only cross-reference of GitHub articles and GitHub archive images.
 
-Indexes featured image metadata, HTML image attributes, linked originals, and
-relative upload references. No site files or images are changed.
+Accepted references are repository-local docs/media/uploads/ paths and URLs
+pointing directly to the unionmed/sayd-magazine GitHub repository. External
+image services and legacy content hosts are deliberately ignored.
 """
 import collections
 import html
 import json
 import pathlib
 import re
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote, urlsplit
 from search_all import ROOT, records
 
 POSTS = ROOT / "content/posts"
 OUT = ROOT / "audit/image-catalog/article-image-links.json"
-# Sources include old WordPress URLs and newer relative ../../media/uploads/.
-# Scan all upload references, then discard tokens not ending in an image suffix.
 CANDIDATE = re.compile(
-    r"""(?:https?:)?//[^\s"'<>]+|(?:\.\./)*(?:docs/)?media/uploads/[^\s"'<>]+|"""
-    r"""(?:/)?(?:wp-content/)?uploads/[^\s"'<>]+""", re.I
+    r"""https?://[^\s"'<>]+|(?<![\w/])(?:\.\./)*(?:docs/)?media/uploads/[^\s"'<>]+""",
+    re.I,
 )
 SUFFIX = re.compile(r"\.(?:jpe?g|png|webp|gif|avif)$", re.I)
+LOCAL = re.compile(
+    r"(?:\.\./)*(?:docs/)?media/uploads/(\d{4}/\d{2}/[^/]+)$", re.I
+)
+GITHUB = re.compile(
+    r"/unionmed/sayd-magazine/(?:blob|raw)/[^/]+/docs/media/uploads/(\d{4}/\d{2}/[^/]+)$",
+    re.I,
+)
+GITHUB_RAW = re.compile(
+    r"/unionmed/sayd-magazine/[^/]+/docs/media/uploads/(\d{4}/\d{2}/[^/]+)$",
+    re.I,
+)
 
 def extract_media_path(reference):
+    """Canonicalize only locally stored GitHub media references."""
     reference = html.unescape(reference).strip().rstrip(",;)")
-    u = urlparse(reference)
-    p = unquote(u.path).replace("\\", "/")
-    m = re.search(r"(?:^|/)(?:(?:wp-content|media)/)?uploads/(\d{4}/\d{2}/[^/]+)$", p, re.I)
-    if not m or not SUFFIX.search(m.group(1)):
+    u = urlsplit(reference)
+    m = None
+    if u.scheme or u.netloc:
+        if u.scheme not in ("http", "https"):
+            return None
+        if u.netloc.lower() == "github.com":
+            m = GITHUB.fullmatch(u.path)
+        elif u.netloc.lower() == "raw.githubusercontent.com":
+            m = GITHUB_RAW.fullmatch(u.path)
+        else:
+            return None
+    else:
+        m = LOCAL.fullmatch(u.path)
+    if not m:
         return None
-    return "docs/media/uploads/" + m.group(1)
+    relative = unquote(m.group(1))
+    if not SUFFIX.search(relative):
+        return None
+    if relative in (".", "..") or "/../" in relative or "/./" in relative:
+        return None
+    return "docs/media/uploads/" + relative
 
 def image_references(body):
     found = {}
     for match in CANDIDATE.finditer(body):
         raw = match.group(0).rstrip(",;)")
-        # URL fragments or query strings should not alter the local lookup path.
         local = extract_media_path(raw)
         if local:
             found.setdefault(local, raw)
@@ -75,16 +100,17 @@ def build_links():
     exact = [r for r in results if r["status"] == "EXACT_PATH"]
     nonexact = [r for r in results if r["status"] != "EXACT_PATH"]
     return {
-        "schema": "sayd-article-media-crossref-v2",
+        "schema": "sayd-github-article-media-crossref-v3",
+        "source": "unionmed/sayd-magazine repository only",
         "articles_scanned": articles_scanned,
-        "articles_with_image_references": articles_with_images,
+        "articles_with_github_image_references": articles_with_images,
         "image_references_unique_per_article": len(results),
         "exact_links": len(exact),
         "unique_basename_not_verified": counts["UNIQUE_BASENAME"],
         "ambiguous_basename": counts["AMBIGUOUS_BASENAME"],
         "not_found": counts["NOT_FOUND"],
         "catalog_images_with_exact_article_link": len({r["expected_local_path"] for r in exact}),
-        "warning": "Historical source references only. Non-exact matches require checking; NOT_FOUND is not proof of a broken live image. No website changes.",
+        "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
         "exact": exact,
         "nonexact": nonexact
     }
