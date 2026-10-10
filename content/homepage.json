@@ -65,7 +65,9 @@
     "birds-three-countries-nayef-krayem",
     "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
     "combating-illegal-hunting-lebanon-in-photos",
-    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي"
+    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
+    "طيور-خربة-سلم-بعدسة-جمانة-ماجد",
+    "khirbet-selm-birds-joumana-majed"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
@@ -94,7 +96,9 @@
     "birds-three-countries-nayef-krayem",
     "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
     "combating-illegal-hunting-lebanon-in-photos",
-    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي"
+    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
+    "طيور-خربة-سلم-بعدسة-جمانة-ماجد",
+    "khirbet-selm-birds-joumana-majed"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -107,7 +111,9 @@
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
     "birds-three-countries-nayef-krayem",
     "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
-    "combating-illegal-hunting-lebanon-in-photos"
+    "combating-illegal-hunting-lebanon-in-photos",
+    "طيور-خربة-سلم-بعدسة-جمانة-ماجد",
+    "khirbet-selm-birds-joumana-majed"
   ],
   "omit_home_desks": [
     "أخبار",
@@ -144,6 +150,7 @@
       "بالفيديو-النمر-العربي-في-السعودية"
     ],
     "صور": [
+      "طيور-خربة-سلم-بعدسة-جمانة-ماجد",
       "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
       "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
@@ -167,6 +174,7 @@
       "video-arabian-leopard-in-saudi-arabia"
     ],
     "Photos": [
+      "khirbet-selm-birds-joumana-majed",
       "combating-illegal-hunting-lebanon-in-photos",
       "birds-three-countries-nayef-krayem",
       "suhail-2026-in-photos-falcons-visitors"
@@ -206,6 +214,8 @@
   ],
   "home_section_tail": [],
   "gallery": [
+    "طيور-خربة-سلم-بعدسة-جمانة-ماجد",
+    "khirbet-selm-birds-joumana-majed",
     "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
     "combating-illegal-hunting-lebanon-in-photos",
     "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
@@ -285,6 +295,7 @@
     {
       "door": "photos",
       "slugs": [
+        "طيور-خربة-سلم-بعدسة-جمانة-ماجد",
         "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
         "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
         "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
@@ -349,7 +360,8 @@
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs": "hunting",
     "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026": "wildlife",
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية": "hunting",
-    "ختام-الملواح-2026-60-فائزا": "hunting"
+    "ختام-الملواح-2026-60-فائزا": "hunting",
+    "طيور-خربة-سلم-بعدسة-جمانة-ماجد": "photos"
   },
   "demotion": "Nayef authorized the Al-Melwah finale on 10 October 2026 with the existing photograph, replacing the prior Saudi exhibition report in the side-card block and ticker. Prior article stays in category/archive and is excluded from homepage recycling. Current main lead and other stories remain; side cards keep publication-date order.",
   "approved_home_repeats": [
