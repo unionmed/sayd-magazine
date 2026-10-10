@@ -94,10 +94,5 @@ for prefix,slug in [('',AR),('en',EN),('fr',EN)]:
  p.write_text(seo.apply_html(p.read_text(),p,DOCS,p.relative_to(DOCS),seo.load_twins(DOCS)))
 from refresh_homepage_doors import main
 main()
-# Add the three published article URLs without rebuilding unrelated SEO.
-f=DOCS/'sitemap.xml';s=f.read_text()
-for prefix,slug in [('',AR),('en/',EN),('fr/',EN)]:
- u='https://sayd-magazine.com/'+prefix+'posts/'+quote(slug)+'/'
- if u not in s:s=s.replace('</urlset>',f'<url><loc>{u}</loc><lastmod>2026-10-10</lastmod></url>\n</urlset>')
-f.write_text(s)
+# Photo albums follow the existing noindex/ sitemap exclusion policy.
 print('Published four approved photos in three mirrors, newest Photos card first.')
