@@ -293,7 +293,11 @@ def canonical_rel(rel: Path) -> Path:
 
 
 def gallery_rels() -> set[str]:
-    """Photo/video cards listed in homepage.json. Not article sitemap URLs."""
+    """Persistent photo/video classification, including galleries off the homepage.
+
+    homepage.json gallery is cumulative; desk_slugs/ia_door_sections control
+    current card placement and must not remove archived gallery classification.
+    """
     if not HOMEPAGE_PATH.is_file():
         return set()
     try:

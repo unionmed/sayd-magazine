@@ -263,7 +263,12 @@ def test_gallery_cards_are_not_indexed_articles() -> None:
     sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
     home = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
-    assert "fr/posts/khirbet-selm-birds-joumana-majed/index.html" in seo.gallery_rels()
+    # Leaving the homepage must never turn an archived gallery into an article.
+    for rel in ("posts/البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك/index.html",
+                "en/posts/great-white-pelican-matn-highway-nayef-krayem/index.html",
+                "fr/posts/great-white-pelican-matn-highway-nayef-krayem/index.html",
+                "fr/posts/khirbet-selm-birds-joumana-majed/index.html"):
+        assert rel in seo.gallery_rels(), rel
     for rel in sorted(seo.gallery_rels()):
         page = DOCS / rel
         if not page.is_file():
