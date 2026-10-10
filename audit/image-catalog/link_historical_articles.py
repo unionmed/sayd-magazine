@@ -25,7 +25,7 @@ def main():
     for post in sorted(POSTS.glob("*.md")):
         body = post.read_text(encoding="utf-8")
         title = re.search(r'^title:\s*(.*)$', body, re.M)
-        title = title.group(1).strip(' "\'') if title else post.stem
+        title = title.group(1).strip().strip(chr(34)).strip(chr(39)) if title else post.stem
         articles += 1
         for url in sorted(set(IMAGE.findall(body))):
             expected = extract_media_path(url)
