@@ -1,0 +1,1629 @@
+{
+  "generated_at": "2026-10-10",
+  "source_repo": "unionmed/sayd-magazine",
+  "source_branch": "main",
+  "total_images_in_tree": 10184,
+  "method": "Filename/path heuristic only; not visual identification",
+  "images": [
+    {
+      "path": "docs/media/uploads/2013/03/انيس-وصيد-البط-في-الفرات.jpg",
+      "sha": "3b2aee8d3eb625c5962c0e8262857df80eb40bc7",
+      "size_bytes": 99982,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/03/ثلاث-طيور-حبارى-بثلاث-طلقات.jpg",
+      "sha": "8784c3b944db1318c2eca1a41e1d2c8083b99b8d",
+      "size_bytes": 80512,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/03/رماية.jpg",
+      "sha": "94f94206093d266063159f3e968984d371b2b784",
+      "size_bytes": 52959,
+      "section_candidate": "الرماية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/03/عبد-العزيز-البابطين-مع-رفاقه-في-جلسة-صحراوية.jpg",
+      "sha": "fb3943695fe6265745a43d3e1d3f42c718db6e68",
+      "size_bytes": 65025,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/03/عبد-العزيز-البابطين-ورفاقة.jpg",
+      "sha": "20c831c9caf4684fc33bfdfbf77a5a904012c833",
+      "size_bytes": 64120,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/03/عبد-العزيز-البابطين.jpg",
+      "sha": "f253baf5793b9adc4c2e70fafdccbd9375361db7",
+      "size_bytes": 63369,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/04/وزير-البيئة-ناظم-الخوري-مع-رئيس-تحرير-مجلة-صيد-ادونيس-الخطيب.jpg",
+      "sha": "aa5cf682d117ebe546a81aa5a87c04612bcee01a",
+      "size_bytes": 48332,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/06/كميل-دوري-شمعون-في-رحلة-صيد.jpg",
+      "sha": "73e968cfe9e2793d92bc6b96729bd33c6d7ae6ff",
+      "size_bytes": 75353,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/06/كميل-شمعون-الحفيد-فر-رحلة-صيد-مع-كلبه.jpg",
+      "sha": "48eb910edc32cae7cece7b4f9d7960c6ff14a317",
+      "size_bytes": 98251,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/06/كميل-شمعون-في-رحلة-صيد-في-البقاع.jpg",
+      "sha": "b285bf191de3339491f23d1d5c2e40864f155af0",
+      "size_bytes": 86973,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/06/كميل-شمعون-والصيد-في-الخارج.jpg",
+      "sha": "0868830c6e2f001dc5716408909b5181a591df08",
+      "size_bytes": 75682,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2013/09/من-ارشيف-الاميرة-بسمة-رحلة-صيد-سمك-قبل-توقفها-عن-الصيد-البحري.jpg",
+      "sha": "f24bdd1c574509537051bd4988c7771caaa89145",
+      "size_bytes": 53510,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2014/09/Hafez-Al-Assad-Hunting.jpg",
+      "sha": "d2bfd282b3402a617d3001abd804b11ca0a01261",
+      "size_bytes": 60030,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2014/09/الرئيس-شمعون-والمير-مجيد-ارسلان-بثياب-الصيد.jpg",
+      "sha": "791e605eebe58361dfaa5b1df197ec18365d1c15",
+      "size_bytes": 63454,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2014/09/مركز-الشرق-الاوسط-للصيد-المستدام.jpg",
+      "sha": "c2f860514e68e915406e20caed1ac20812a82e5a",
+      "size_bytes": 40067,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2014/10/خريطة-المناطق-المهمة-للطيور-في-لبنان.jpg",
+      "sha": "68d7e5723482b9388c02b1794efe5d46dd228af5",
+      "size_bytes": 90618,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2014/10/خريطة-هجرة-الطيور-المحلقة-في-لبنان.jpg",
+      "sha": "cb20e97a52ea511be6e2c3ba000c14bd93615aa9",
+      "size_bytes": 107215,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/01/بيض-فري-مائدة-الصيد-300x200.jpg",
+      "sha": "ffbf2d0d49a73976d3d57b8f5e18c8613e9924a2",
+      "size_bytes": 24927,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/01/رخصة-نادي-الصيد-اللبلناني.jpg",
+      "sha": "cfa0a43632bbe2cad649b9871dc7f4ba54527fbf",
+      "size_bytes": 62154,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/01/شعار-نادي-الصيد-البلناني.jpg",
+      "sha": "5d54abd06c8b166f7e7f690e0b208e6a855c89dd",
+      "size_bytes": 51945,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/01/في-رحلة-صيد.jpg",
+      "sha": "60af0473235a4bdf601382d2c389f0bd152e2059",
+      "size_bytes": 101645,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/01/لوغو-مجلة-صيد.jpg",
+      "sha": "9563ee0df751629bdbfdc141da511ff13d0722be",
+      "size_bytes": 42866,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/اخبار-الصيد-البري-في-لبنان.jpg",
+      "sha": "a0294b2149702977b1d6719f6fd51d4f89b7af70",
+      "size_bytes": 55581,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/البطاطا-الاغلى-1.jpg",
+      "sha": "27d6f51bbe0f9b4974f9147bb25cb88c5dc2290c",
+      "size_bytes": 57388,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/البطاطا-الاغلى-2.jpg",
+      "sha": "c9863debe6419974c49ab7b8ba9872340e6cbbac",
+      "size_bytes": 45342,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/البطاطا-الاغلى-3.jpg",
+      "sha": "cf4ef36d2e2a94f1b7b632275104096003671524",
+      "size_bytes": 70491,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/البطل-القطري-ناصر-العطية.jpg",
+      "sha": "a3f6f8c381508f46585b26f69d26b0295d14ce89",
+      "size_bytes": 52926,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/الصقر-يصرع-الحبارى.jpg",
+      "sha": "a2431380818acf344dde7489e91dc257a25b3cd2",
+      "size_bytes": 88940,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/الصيد-البحري-في-تنزانيا.jpg",
+      "sha": "b43b0d7ff8b32dc50eb6f95645b4303f8f62e534",
+      "size_bytes": 64860,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/بطل-لبنان-السابق-الرامي-وسام-خليل.jpg",
+      "sha": "58b428c236a5806b682bc0859645e614b2581ac7",
+      "size_bytes": 61914,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/بطلب-من-الشيخ-زايد-اصطاد-الفهدة.jpg",
+      "sha": "68286f35f2a834f71ad0b5f4d69427dc5c86d917",
+      "size_bytes": 48321,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/خبير-الطيور-البريطاني-ريتشارد-بوتر.jpg",
+      "sha": "6438f2c717297f793c2d7ac0bfabe12990a6c453",
+      "size_bytes": 61973,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/رئيس-الاتحاد-القطري-للرماية-محمد-الغانم.jpg",
+      "sha": "ff1a9b208b0f1f80c01c6533b374751ace07191c",
+      "size_bytes": 45508,
+      "section_candidate": "الرماية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/رخصة-صيد-بري.jpg",
+      "sha": "9a220d08e6709dd57aebeff0e40787e69715d6ba",
+      "size_bytes": 54018,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/رخصة-صيد-حيوانات.jpg",
+      "sha": "75ca927051bcbde6678e2aad8620157598630ef0",
+      "size_bytes": 50976,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/رقص-الحبارى.jpg",
+      "sha": "326ed5c4d27fa31efaa6248d8027a3c25ea460d4",
+      "size_bytes": 70984,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/زرواق-صيد-1.jpg",
+      "sha": "e7216c094daec8e3f87a8bf93201b73cce39849f",
+      "size_bytes": 84208,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/زوراق-صيد-2.jpg",
+      "sha": "321bd12024853eabeed3be69994b8d70db7fc8d6",
+      "size_bytes": 39316,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/زوراق-صيد-3.jpg",
+      "sha": "8c1b9317a469512dd2327153f2a20c0bbaea8e86",
+      "size_bytes": 57082,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/زوراق-صيد-4.jpg",
+      "sha": "710325d69a5f5bdaa6e2bb2658cdc6ea2d0c24e0",
+      "size_bytes": 67614,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/شوربة-اعشاش-الطيور.jpg",
+      "sha": "ca317390a40af8e5a766fb17f5670de694aa187d",
+      "size_bytes": 78539,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/صحة-الصقر.jpg",
+      "sha": "43643d883938b03884e5d7e2893c7b7fc4557d7c",
+      "size_bytes": 65448,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/صقر-يهاجم-حبارى.jpg",
+      "sha": "fd28b12e7b25cb873ff109d4a47c9bd8bfa82262",
+      "size_bytes": 43231,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/صقر.jpg",
+      "sha": "bb0184d24110545fc803a600dbc190969e0bfc23",
+      "size_bytes": 11392,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/صورة-لعاصي-ومنصور-وفيروز-ووالدتها-في-رحلة-صيد.jpg",
+      "sha": "e74d7e157e5439387a3ef7fec06ead4f78323ccf",
+      "size_bytes": 57771,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/طار-ق-الزرعوني-يحمل-الصقر-على-يده.jpg",
+      "sha": "2578ff782ba557cdbad4088e6ad45051387bde80",
+      "size_bytes": 62023,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/طارق-الزرعوني-يتحضر-لتصوير-رحلة-صيد.jpg",
+      "sha": "9fd3d409f8ae327767b8e5e40b93cc912a873fb0",
+      "size_bytes": 63270,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/طلب-رخصة-الصيد.jpg",
+      "sha": "917e6a6a6cb1567039c1e9e046bbc91e8bc40881",
+      "size_bytes": 53881,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/طيور-الغاق-اعدام.jpg",
+      "sha": "b7f3e8b52eef0b8c2c404a02da354de95450f18c",
+      "size_bytes": 70187,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/مستشفى-أبو-ظبي-للصقور-.jpg",
+      "sha": "24db17f24600baf4bd9a11ccc5aec55e5f06f228",
+      "size_bytes": 72354,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/ميليشيا-الرحابنة-للصيد-البري.jpg",
+      "sha": "6a732b4451d28a8647c82d2a8982953930a3864b",
+      "size_bytes": 44246,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/نادين-نجيم-في-حقل-الصيد-مع-الاصدقاء.jpg",
+      "sha": "b8e251e6d2666f28fd103c6e8d2f950991e57c5d",
+      "size_bytes": 106093,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/02/وقفة-الحبارى.jpg",
+      "sha": "3f8cbd7999aa24cfa121229351285011a1da57b5",
+      "size_bytes": 39919,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/03/خردق-خرطوش-صيد.jpg",
+      "sha": "7fd1a5d544d22828d84436f1161bdf3c535439d3",
+      "size_bytes": 25561,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/03/خرطوش-صيد-خردق-مربع.jpg",
+      "sha": "e7bec12675ec1488380fd002f65683c4d22837e3",
+      "size_bytes": 19181,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/03/خرطوش-صيد-من-الداخل.jpg",
+      "sha": "ae228373cf8b071afa2d7abce82865446b0dee98",
+      "size_bytes": 19777,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/03/خرطوش-صيد.jpg",
+      "sha": "951255f2378683411247aa25042e781967e0422f",
+      "size_bytes": 101525,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/03/رجل-براس-حصان.jpg",
+      "sha": "ccf5d0b6391683476a48e1073ecfa1526e1422a4",
+      "size_bytes": 90972,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/03/صيد-اكبر-سمكة-في-العالم.jpg",
+      "sha": "bc26311ef87cccd825e2cf2e4d33dbf158131adf",
+      "size_bytes": 70126,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/04/توعية-للهانت-على-صيد-الربيع.jpg",
+      "sha": "f2cdd432f19b2c09f72e7b418d1eae889ff3ca36",
+      "size_bytes": 67079,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/05/large-ممرات-مخصصة-للبط-في-بريطانيا-فهل-ستلتزم-بها؟-d4fed.jpg",
+      "sha": "b8db8487ab8bce87ff09dd3ea5beff38606d7978",
+      "size_bytes": 84077,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/05/ترغل-صيد-.jpg",
+      "sha": "a62b4f910c058f93bda5c389bcc1b8c25c30d86e",
+      "size_bytes": 156357,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/07/رماية-1-عاصي.jpg",
+      "sha": "5a0e574a04ddf954d9f3741ded6545cfaf687d31",
+      "size_bytes": 92189,
+      "section_candidate": "الرماية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/07/رماية-2-عاصي.jpg",
+      "sha": "42843814747ccff40ebe1e9be12be2c9e84627f7",
+      "size_bytes": 76818,
+      "section_candidate": "الرماية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/07/رماية-4-عاصي.jpg",
+      "sha": "858089432f0f622983841d3e7922837c4160bccc",
+      "size_bytes": 94667,
+      "section_candidate": "الرماية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/07/رماية-5-عاصي.jpg",
+      "sha": "3f81ff354320f89f125309c360e0e0004f68364f",
+      "size_bytes": 101617,
+      "section_candidate": "الرماية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/07/رماية-6-عاصي.jpg",
+      "sha": "1742ab0cd08d6d007cdcf7ede7fc03c6254f5132",
+      "size_bytes": 79196,
+      "section_candidate": "الرماية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/07/صقر-الجراد-1.jpg",
+      "sha": "da7f0366db75c58e56d6f7935279b6fb38527bc8",
+      "size_bytes": 48769,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/07/صقر-الجراد-2.jpg",
+      "sha": "b7e398bac403a853621ea4e4b9c35ecd5bb12b59",
+      "size_bytes": 35654,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/07/صقر-الجراد-3.jpg",
+      "sha": "d50702989b32e73951b97f8029de8151a85c4568",
+      "size_bytes": 45166,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/08/كلاب-صيد-مع-نظارات-صور-غريبة.jpg",
+      "sha": "a5b16cdeeaf9a1a21d68dfca9f1190205148d83a",
+      "size_bytes": 76704,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/09/بط-خضاري.jpg",
+      "sha": "536377eab95b147dd4594cb3c23a9e403b7e7a3d",
+      "size_bytes": 169282,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/09/سيدة-تحمل-الصقر.jpg",
+      "sha": "951595b1711a51a2401298bba1d3c8205e072683",
+      "size_bytes": 98316,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2015/09/معرض-الصيد-والفروسية.jpg",
+      "sha": "0a7e3bdd6fed921daa6a5fae41709a6b2da99fe0",
+      "size_bytes": 62383,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/01/اساطير-الصيد-170x113.jpg",
+      "sha": "5ef503f4d72be19e36911a44b5684dc13e214e2c",
+      "size_bytes": 41704,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/01/اساطير-الصيد.jpg",
+      "sha": "8a77f67d3b2f6cc6effbf7f01e86e3f38dd9008d",
+      "size_bytes": 77869,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/01/سبطانات.jpg",
+      "sha": "12f596930a7552374ef9cc7ad0fc47b377ba026b",
+      "size_bytes": 49212,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/03/الجمعية-الاردنية-لرياضة-الصيد.jpg",
+      "sha": "e132ed6fb85a042304a6c3db1da9a26acf9456b2",
+      "size_bytes": 105966,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-1.jpg",
+      "sha": "10501251c3e7a65d44bc72d63f1d470b5007d8b0",
+      "size_bytes": 100840,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-10.jpg",
+      "sha": "7383eb7a561b3f31c9d4341a01d4c8b29dfe072f",
+      "size_bytes": 86862,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-11.jpg",
+      "sha": "9db7def40a47f0b1813b6a4538448943d91c5f1a",
+      "size_bytes": 124469,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-12.jpg",
+      "sha": "b9936cb4841c9cbe0867246120898a86905ec4fd",
+      "size_bytes": 109885,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-13.jpg",
+      "sha": "08da49c8881d7f09d7ef4b4cd61f943a98879c94",
+      "size_bytes": 72271,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-14.jpg",
+      "sha": "f122f626b7e2f22b220c1334063e34eec554691f",
+      "size_bytes": 118430,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-15.jpg",
+      "sha": "35c789efd48f1d9385bb2d602e56fb9f35167d15",
+      "size_bytes": 100428,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-16-170x113.jpg",
+      "sha": "dd35a309f8afa988d3721343511be752bbe72d9a",
+      "size_bytes": 29361,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-16.jpg",
+      "sha": "e05b5fd293ae1640d7f410afd7e293fd4cd88233",
+      "size_bytes": 102564,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-2.jpg",
+      "sha": "4ba9d761ffb7646fe7f2ad25cf4fb0ad5d7722a9",
+      "size_bytes": 103488,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-3.jpg",
+      "sha": "cf1e2915619859c433ba57f5f207d596e1bd07c7",
+      "size_bytes": 74065,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-4.jpg",
+      "sha": "22cb48d811e23c6a36dd3346edaa8931fc458aea",
+      "size_bytes": 83730,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-5.jpg",
+      "sha": "5852b42fa7e79c30747801191bc967fb43580481",
+      "size_bytes": 94117,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-6.jpg",
+      "sha": "d434431808307ae3de63877f642fb2bcd14f0451",
+      "size_bytes": 116302,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-7.jpg",
+      "sha": "08ad812065eac2e111152db08d32dce131fcdd8f",
+      "size_bytes": 123212,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-8.jpg",
+      "sha": "14e3899ae65d01ae15a4bd72a8f6ebebdd9c273e",
+      "size_bytes": 113042,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/08/جمال-خيل-عربي-9.jpg",
+      "sha": "d9a05ea9fd128f74dfafb9a4045a29031a78af6d",
+      "size_bytes": 125542,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/09/معرض-الصيد.jpg",
+      "sha": "17909fa04c561fc6b8bd572273651f42307e547c",
+      "size_bytes": 96374,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/11/اساطير-ورايد-1.jpg",
+      "sha": "d6d7104d3562a5a4a6999e003baa9816988459f5",
+      "size_bytes": 75125,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/11/اساطير-ورايد-10.jpg",
+      "sha": "43db68e09a12d0d76449ed3451b3f22bf6cb7b9e",
+      "size_bytes": 132099,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/11/اساطير-ورايد-2.jpg",
+      "sha": "5320723e390b6b6423fa7977561b6335591a200a",
+      "size_bytes": 134062,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/11/اساطير-ورايد-3.jpg",
+      "sha": "0423b439e3743400d7fc589fa6ef5507d53f0963",
+      "size_bytes": 102652,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/11/اساطير-ورايد-4.jpg",
+      "sha": "806dda2a7ff9323ea1872a2e38aa0c42fcbcc516",
+      "size_bytes": 66545,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/11/اساطير-ورايد-5.jpg",
+      "sha": "4a5f6525bfdb46affaa68fdfe080eae7d13fdb64",
+      "size_bytes": 107815,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/11/اساطير-ورايد-6.jpg",
+      "sha": "bffaea81c0dde045ee003199a12f63e020ef8dd5",
+      "size_bytes": 109863,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/11/اساطير-ورايد-7.jpg",
+      "sha": "df203b887950f173b25427644e9758cf942a9e2b",
+      "size_bytes": 93039,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/11/اساطير-ورايد-8.jpg",
+      "sha": "a321609655eab5485fc233fe5795b64712cbe793",
+      "size_bytes": 100079,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2016/11/اساطير-ورايد-9.jpg",
+      "sha": "b9e978dddce497362f6362b353997f0dcdca3c7b",
+      "size_bytes": 71480,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/04/اخيرا-موسم-الصيد.jpg",
+      "sha": "2478b771cef7507ffb6e9beaa81db2f296325e3c",
+      "size_bytes": 75337,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/04/صيد-جائر.jpg",
+      "sha": "6c57ad0af072b10cc6b44b432c80b427ff5fe603",
+      "size_bytes": 98032,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/04/مسابقة-الربيع-صيد-العدسة.jpg",
+      "sha": "53320fc6b0dd8ccddfc1c6c7e365f0c0bf968d14",
+      "size_bytes": 87596,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/08/صيد-الربيع-2.jpg",
+      "sha": "53027742bc68ecce6bed5066a63944f1c80e3652",
+      "size_bytes": 99751,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/08/معرض-صيد-الربيع-قرية-بدر-حسون.jpg",
+      "sha": "87e1d08b54e7162a319b9c4892dcb299516c1545",
+      "size_bytes": 86586,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-الصيد-والفروسية-2017.jpg",
+      "sha": "46d1d4921d5942663d2c3df20ed6cd33348a7916",
+      "size_bytes": 110308,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-الصيد-والفروسية-20172.jpg",
+      "sha": "134d272e9ae687b73773c5e5ffbe79751005d403",
+      "size_bytes": 100251,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-الصيد-والفروسية-20173.jpg",
+      "sha": "7e015984ecc43c404c9464a0050af7eafc740115",
+      "size_bytes": 120689,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-1-1.jpg",
+      "sha": "30165b29838c428008d08b0071506bec6407d599",
+      "size_bytes": 92127,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-1.jpg",
+      "sha": "30c2ac30e9d5d5e84c5ff5db6fdc9c806ef84bac",
+      "size_bytes": 82001,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-10.jpg",
+      "sha": "8c87379866e2ea034523a1c3333116678ab87465",
+      "size_bytes": 86057,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-11.jpg",
+      "sha": "ae9a7a58e87296867fc5c789b9c316c610b8c746",
+      "size_bytes": 96861,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-2-1.jpg",
+      "sha": "67e210896266aacbccac41cb10d645201ee49299",
+      "size_bytes": 90024,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-2.jpg",
+      "sha": "83f2f213441dc949960787be4c6623ea64edee78",
+      "size_bytes": 99220,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-3-1.jpg",
+      "sha": "47982b48a455064c34499ebdf4702db77e843151",
+      "size_bytes": 83840,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-3.jpg",
+      "sha": "93dd56e2a5aa60d91fbfdb00d0358454cd2ffc79",
+      "size_bytes": 70370,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-4-1.jpg",
+      "sha": "c4c5c7fae379a2c84c6f74ee974cd34528f19100",
+      "size_bytes": 100292,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-4.jpg",
+      "sha": "e5395f3fe786bc5a865e9006a674f9c98e748244",
+      "size_bytes": 108865,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-5-1.jpg",
+      "sha": "d10fdc1b61bd20ebb80c53c4cfdfa066bce78122",
+      "size_bytes": 90131,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-5.jpg",
+      "sha": "8e90e2398ca019b23af92b9a8f149c20f234ad15",
+      "size_bytes": 97050,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-6-1.jpg",
+      "sha": "16d031a3151317841cbcf7a84b3c145689bf1bad",
+      "size_bytes": 84053,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-6.jpg",
+      "sha": "5ec4bf1337cc43ab2082a6d90f42332650b33142",
+      "size_bytes": 100751,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-7.jpg",
+      "sha": "9eed08e99801bae5bb6bd3b56a24f8c85b4e7295",
+      "size_bytes": 91481,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-8.jpg",
+      "sha": "9dfa4c9e7acd889e03e41016f4fc6fa54d764b2d",
+      "size_bytes": 108691,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-9.jpg",
+      "sha": "374265b11bd33bb1062cb4d7b7c1a340aba50c37",
+      "size_bytes": 107650,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة7.jpg",
+      "sha": "0fbf05f4e0bbacb31670a3f12a493bf0f0e60979",
+      "size_bytes": 96805,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2017/10/فساد-بعض-اندية-الرماية.jpg",
+      "sha": "67add783ed06e416e1dd241e575adfc3e4d47876",
+      "size_bytes": 72679,
+      "section_candidate": "الرماية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/01/انتهاء-موسم-الصيد.jpg",
+      "sha": "b3b167279c20927fa1229b310d3bd6f92108a52b",
+      "size_bytes": 863839,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-1.jpg",
+      "sha": "ed7a1a0e327864b7cf8f03fe3526a5d26cdc1e59",
+      "size_bytes": 125542,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-10.jpg",
+      "sha": "02a2ff432101cc9a63a44a14a02487db52a64d88",
+      "size_bytes": 122790,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-11.jpg",
+      "sha": "4ec2e97e0b1fe5863e1192f6f69a629fdabbefd7",
+      "size_bytes": 136761,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-12.jpg",
+      "sha": "a3bfe36d69b00ba06b6f6f52b90cf9cb66885f66",
+      "size_bytes": 96685,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-13.jpg",
+      "sha": "2bb9c42c021685484102f334369dc56d244b5135",
+      "size_bytes": 104500,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-15.jpg",
+      "sha": "e528bff2e260bb77ba414905040955719db7a75e",
+      "size_bytes": 80537,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-16.jpg",
+      "sha": "fa1c5694ae55bbf458c6392a750e067627c5ff9a",
+      "size_bytes": 76627,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-2.jpg",
+      "sha": "968ab4f437c09a90bcbfeadc155844fa31e68696",
+      "size_bytes": 98740,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-3.jpg",
+      "sha": "55a4eb21b1a796dbdbf7d2ebb62d8824b1a04f4f",
+      "size_bytes": 92426,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-4.jpg",
+      "sha": "2fe3e6744062398e2b257840dc401d5678bb9187",
+      "size_bytes": 106771,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-5.jpg",
+      "sha": "45905848a0a96744eebe429c793229eb8bca72a6",
+      "size_bytes": 74145,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-6.jpg",
+      "sha": "193d0c885faed68b1cd6e2c92b7943a526027069",
+      "size_bytes": 74719,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-7.jpg",
+      "sha": "9cb6bb95c7e2dd9e88a93ae3ae5b3d1f03819cde",
+      "size_bytes": 72487,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-8.jpg",
+      "sha": "fe700ad11e7c005ecc8429e382e070b1c776cdd2",
+      "size_bytes": 64645,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-9.jpg",
+      "sha": "9ca75e90758847229b9580667596611a7e3706fb",
+      "size_bytes": 93480,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/خرطوش-الصيد-المناسب-للطرائد.jpg",
+      "sha": "ebb3321609ad3a8df0aa36343241ee88ecf921e4",
+      "size_bytes": 94448,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/03/رئيسة-وحدة-مكافحة-الصيد-الجائر-170x113.jpg",
+      "sha": "ea28e80b434b6e28ff90c450932c23136494eb00",
+      "size_bytes": 38242,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/03/رئيسة-وحدة-مكافحة-الصيد-الجائر.jpg",
+      "sha": "e82c3eb70fbf89779024900afbf5290396147d02",
+      "size_bytes": 106678,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/03/صقر-الجراد-1.jpg",
+      "sha": "eeed11dd648a42f73e9cbb80882b3e1b3d6ba337",
+      "size_bytes": 61615,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/03/صقر-الجراد-2.jpg",
+      "sha": "1d65ec80aa637925f61f74b4fa59d8b67428e6af",
+      "size_bytes": 55257,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/03/صقر-الجراد-3.jpg",
+      "sha": "6bc4d271a63c7e65610ecf7c1c0aa2f6c7e19e11",
+      "size_bytes": 69047,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/03/صقر-الجراد-4.jpg",
+      "sha": "4875bc62f5571d3758bc151c2bc9ec9a751e1c5e",
+      "size_bytes": 43830,
+      "section_candidate": "الصقارة",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/03/وحدة-مكافحة-الصيد-الجائر-للنشر-170x113.jpg",
+      "sha": "1683814c81c2d9b9c5f2963bc29bf105d0ef3b06",
+      "size_bytes": 30805,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/03/وحدة-مكافحة-الصيد-الجائر-للنشر.jpg",
+      "sha": "20b8a29dac2a21b0bb0e01e56fb681e5923aad1f",
+      "size_bytes": 70087,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/05/1-طيور-مهاجرة.jpg",
+      "sha": "eec142d607fe32588a282f6a4880f6546b2ba7f6",
+      "size_bytes": 87393,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/05/2-طيور-مهاجرة.jpg",
+      "sha": "562ca0a484c95c9b45cead55740edad7f878dd64",
+      "size_bytes": 55247,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/05/3-طيور-مهاجرة.jpg",
+      "sha": "011828de805eba2a1e768ab60e46b536e7a58c70",
+      "size_bytes": 78033,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/05/4-طيور-مهاجرة.jpg",
+      "sha": "4ac3b978a72ec0de3d0b7e447b6558b1c5ea4577",
+      "size_bytes": 63057,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/05/5-طيور-مهاجرة.jpg",
+      "sha": "4d1b7b51c78197042565c87980fbad5d7fca17e1",
+      "size_bytes": 55915,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/05/6-طيور-مهاجرة.jpg",
+      "sha": "d9f11aca876087bd4c2b5e32fba2b6188d4baf8d",
+      "size_bytes": 61042,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/05/اليوم-العالمي-لهجرة-الطيور.jpg",
+      "sha": "2bb4d381cf2e99d33e4909fb25795b866dcebdb4",
+      "size_bytes": 59123,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/07/بطولة-رياق-2.jpg",
+      "sha": "20f7d903b6a46e11284d5e7e2505f9c12af04b13",
+      "size_bytes": 120258,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/07/بطولة-رياق-3.jpg",
+      "sha": "ec80d1f6a83fe52f4e06c92cb97a01c3fce30c13",
+      "size_bytes": 109708,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/07/بطولة-رياق-4.jpg",
+      "sha": "fb066692d9b1fe12766feb453142529de3eafa38",
+      "size_bytes": 132769,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2018/07/بطولةرياق1.jpg",
+      "sha": "6a82b40b9185f634db3c25e21c93ee374b0d6a79",
+      "size_bytes": 124371,
+      "section_candidate": "الطيور",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/انواع-ركوب-الخيل-1.jpg",
+      "sha": "d023453df55318db2dd226dd208279ec897960ae",
+      "size_bytes": 81000,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/انواع-ركوب-الخيل-2.jpg",
+      "sha": "8571f7a5b150f1f8e829c05d3fa54af968203fe5",
+      "size_bytes": 94754,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/انواع-ركوب-الخيل-4.jpg",
+      "sha": "688c016008c73b84c1f94a9f9135e531793aa8ca",
+      "size_bytes": 78665,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/حيوانات-صيد-الجوائز-1.jpg",
+      "sha": "eba7904961285b04f3727844914b38b962e9db7c",
+      "size_bytes": 117587,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/حيوانات-صيد-الجوائز-2.jpg",
+      "sha": "b1aee83302810717e0f416e575bf8ef770ea584e",
+      "size_bytes": 78102,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/حيوانات-صيد-الجوائز-3.jpg",
+      "sha": "2031625b21ef1efdaa8cb527e31c4bc64a9ec0ca",
+      "size_bytes": 71805,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/حيوانات-صيد-الجوائز-4.jpg",
+      "sha": "ea04ec0e978b7d3fdf5f471e3a9eef96cec7ea47",
+      "size_bytes": 75247,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/حيوانات-صيد-الجوائز-5.jpg",
+      "sha": "e53aaeb17c6fb17dc59026f15a537663c1355679",
+      "size_bytes": 104627,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/عين-الحصان-اليسرى.jpg",
+      "sha": "bf6657396193964cc5c32a30474448d5037f2081",
+      "size_bytes": 71832,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/ينام-الحصان-واقفا.jpg",
+      "sha": "afb3e6a12016d9f2c0833275e786a8c223484471",
+      "size_bytes": 85113,
+      "section_candidate": "الفروسية",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    },
+    {
+      "path": "docs/media/uploads/2019/06/مكافحة-الصيد-الجائر-غينة-1.jpg",
+      "sha": "9ca8c07c6e5d81abbcd97bfae58e7e8a28bd5b1f",
+      "size_bytes": 97492,
+      "section_candidate": "الصيد",
+      "review_status": "UNVERIFIED_VISUAL",
+      "capture_date": null,
+      "rights": "Managed by Nayef"
+    }
+  ]
+}
