@@ -42,6 +42,31 @@ def changed_docs(base):
     changed += subprocess.check_output(['git','ls-files','--others','--exclude-standard','-z','docs'],cwd=ROOT).decode().split('\0')
     return sorted(set(p for p in changed if p))
 
+def gallery_indexing_only_repair(file, base):
+    """Allow only the exact robots/OG correction on an existing gallery.
+
+    No content, images, language links, canonical, analytics or layout can change.
+    """
+    if not base or not file.startswith('docs/') or file[5:] not in seo.gallery_rels():
+        return False
+    old = subprocess.run(['git', 'show', f'{base}:{file}'], cwd=ROOT, capture_output=True)
+    if old.returncode:
+        return False
+    return gallery_indexing_only_text(old.stdout.decode(), (ROOT/file).read_text())
+
+
+def gallery_indexing_only_text(before, after):
+    head, separator, body = before.partition('</head>')
+    if not separator:
+        return False
+    marker = '<meta property="og:locale"'
+    if 'name="robots"' not in head:
+        head = head.replace(marker, '<meta name="robots" content="noindex,follow">\n  ' + marker, 1)
+    head = head.replace('<meta property="og:type" content="article">',
+                        '<meta property="og:type" content="website">')
+    return head + separator + body == after and before != after
+
+
 def archive_image_repair(file, base):
     """Only existing pre-2026 pages with additive local body images are exempt from translation expansion."""
     if not base or not file.startswith('docs/posts/'):
@@ -185,6 +210,8 @@ def check_new_stories(paths,pairs,base=None):
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if gallery_indexing_only_repair(file,base):
+            continue
         if analytics_only_repair(file,base):
             continue
         if archive_image_repair(file,base):
