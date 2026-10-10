@@ -3,8 +3,9 @@
 import collections
 import json
 import os
+import subprocess
 from pathlib import PurePosixPath
-from search_all import ROOT, records, audit, query
+from search_all import ROOT, EXTENSIONS, records, audit, query
 
 HERE = ROOT / "audit/image-catalog"
 
@@ -18,6 +19,32 @@ def main():
         problems["wrong_manifest_count"] = integrity["records"]
     if problems:
         raise SystemExit(json.dumps(problems, ensure_ascii=False)[:4000])
+    # Compare the manifest SHA to the actual Git blob at the checked-out commit.
+    # Looking at files alone is not enough to prove inventory identity.
+    process = subprocess.run(
+        ["git", "ls-tree", "-r", "-z", "HEAD", "--", "docs/media/uploads"],
+        cwd=ROOT, capture_output=True, check=True
+    )
+    git_images = {}
+    for entry in process.stdout.split(b"\0"):
+        if not entry:
+            continue
+        meta, raw_path = entry.split(b"\t", 1)
+        mode, object_type, sha = meta.decode("ascii").split()
+        name = raw_path.decode("utf-8")
+        if object_type == "blob" and PurePosixPath(name).suffix.lower() in EXTENSIONS:
+            git_images[name] = sha
+    manifest_images = {r["path"]: r["sha"] for r in rows}
+    unindexed = sorted(set(git_images) - set(manifest_images))
+    missing_in_git = sorted(set(manifest_images) - set(git_images))
+    mismatched_sha = sorted(p for p in manifest_images if p in git_images and
+                            manifest_images[p] != git_images[p])
+    if unindexed or missing_in_git or mismatched_sha:
+        raise SystemExit(json.dumps({
+            "unindexed_images": unindexed[:20], "unindexed_count": len(unindexed),
+            "not_in_git_tree": missing_in_git[:20], "missing_count": len(missing_in_git),
+            "sha_mismatch": mismatched_sha[:20], "mismatched_count": len(mismatched_sha),
+        }, ensure_ascii=False))
     taxonomy = json.loads((HERE / "preliminary-taxonomy.json").read_text(encoding="utf-8"))
     linking = json.loads((HERE / "article-image-links.json").read_text(encoding="utf-8"))
     taxrows = taxonomy["records"]
@@ -49,6 +76,8 @@ def main():
         "unique_image_paths": integrity["unique_paths"],
         "files_present_on_checkout": integrity["records"] - len(integrity["missing_local_files"]),
         "unique_blob_shas": integrity["unique_blob_shas"],
+        "git_tree_image_count": len(git_images),
+        "manifest_sha_verified_against_git_tree": True,
         "duplicate_image_content_extra_paths": integrity["duplicate_content_extra_paths"],
         "duplicate_content_groups": integrity["duplicate_content_groups"],
         "filename_classification_candidates": classified,
