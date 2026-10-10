@@ -183,6 +183,9 @@ def main():
     from homepage_hunting_rotation import sync
     sync()
     for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:refresh(DOCS/prefix/'index.html',lang)
+    # Publishing a gallery changes indexing in every mirror and the sitemap.
+    from seo_foundation import sync_gallery_seo
+    sync_gallery_seo(DOCS)
     print('Restored one lead + four side cards, eight Updates, approved desks and 3 channel + 3 selection TV cards in AR/EN/FR.')
 
 if __name__=='__main__':main()

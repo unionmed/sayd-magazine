@@ -307,6 +307,7 @@ def gallery_rels() -> set[str]:
             continue
         rels.add(f"posts/{slug}/index.html")
         rels.add(f"en/posts/{slug}/index.html")
+        rels.add(f"fr/posts/{FR_SLUG_BY_EN.get(slug, slug)}/index.html")
     return rels
 
 
@@ -1108,6 +1109,33 @@ def apply(docs: Path | None = None) -> dict[str, int]:
         "hreflang_pairs": len(twins) // 2,
         "empty_doors_rewritten": doors,
     }
+
+
+def sync_gallery_seo(docs: Path | None = None) -> None:
+    """Refresh gallery heads and remove excluded URLs after incremental publishing.
+
+    Keep other sitemap entries and their recorded lastmod values unchanged.
+    Full HTML builds continue to use apply().
+    """
+    import xml.etree.ElementTree as ET
+    docs = docs or DOCS
+    twins = load_twins(docs)
+    for rel_text in sorted(gallery_rels()):
+        rel = Path(rel_text)
+        page = docs / rel
+        if page.is_file():
+            old = page.read_text(encoding="utf-8")
+            new = apply_html(old, page, docs, rel, twins)
+            if new != old:
+                page.write_text(new, encoding="utf-8")
+    sitemap = docs / "sitemap.xml"
+    ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    excluded = {public_url(Path(rel)) for rel in gallery_rels()}
+    rows = [(node.findtext("s:loc", namespaces=ns),
+             node.findtext("s:lastmod", namespaces=ns))
+            for node in ET.parse(sitemap).getroot()
+            if node.findtext("s:loc", namespaces=ns) not in excluded]
+    sitemap.write_text(render_sitemap(rows), encoding="utf-8")
 
 
 def main() -> None:

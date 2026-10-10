@@ -263,6 +263,7 @@ def test_gallery_cards_are_not_indexed_articles() -> None:
     sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
     home = (DOCS / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "index.html").read_text(encoding="utf-8")
+    assert "fr/posts/khirbet-selm-birds-joumana-majed/index.html" in seo.gallery_rels()
     for rel in sorted(seo.gallery_rels()):
         page = DOCS / rel
         if not page.is_file():
@@ -271,7 +272,7 @@ def test_gallery_cards_are_not_indexed_articles() -> None:
         head = page.read_text(encoding="utf-8").split("</head>", 1)[0]
         assert 'name="robots" content="noindex,follow"' in head
         assert 'property="og:type" content="website"' in head
-        assert f"<loc>{seo.public_url(Path(rel))}</loc>" not in sitemap
+        assert f"<loc>{seo.public_url(Path(rel))}</loc>" not in sitemap, rel
     assert "بالفيديو-مقناص-سعود-عبد-العزيز-الباب" in home
     assert "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا" in home
     from urllib.parse import unquote
@@ -281,6 +282,42 @@ def test_gallery_cards_are_not_indexed_articles() -> None:
     assert "suhail-2026-in-photos-falcons-visitors" in en
     en_photos = (DOCS / 'en/category/صور/index.html').read_text()
     assert "great-white-pelican-matn-highway-nayef-krayem" in en_photos
+
+
+def test_gallery_indexing_only_contract() -> None:
+    from check_publication_contract import gallery_indexing_only_text as allowed
+    before = '<head><meta property="og:locale" content="fr_FR"><meta property="og:type" content="article"></head><body>Original</body>'
+    after = before.replace('<meta property="og:locale"', '<meta name="robots" content="noindex,follow">\n  <meta property="og:locale"').replace('content="article"', 'content="website"')
+    assert allowed(before, after)
+    assert not allowed(before, after.replace('Original', 'Changed'))
+    assert not allowed(before, after.replace('noindex,follow', 'index,follow'))
+    assert not allowed(before, after.replace('fr_FR', 'en_US'))
+    assert not allowed(before, before)
+
+
+def test_incremental_gallery_sync() -> None:
+    """A stale gallery URL is removed without changing content or other lastmods."""
+    import tempfile
+    from unittest.mock import patch
+    gallery = Path("fr/posts/khirbet-selm-birds-joumana-majed/index.html")
+    keep = seo.ORIGIN + "/en/posts/keep/"
+    with tempfile.TemporaryDirectory() as tmp:
+        docs = Path(tmp)
+        page = docs / gallery
+        page.parent.mkdir(parents=True)
+        body = "<body><main>Gallery images and captions stay intact.</main></body>"
+        page.write_text('<html lang="fr"><head><title>Gallery</title></head>' + body + '</html>')
+        (docs / "sitemap.xml").write_text(seo.render_sitemap([
+            (seo.public_url(gallery), "2026-10-10"), (keep, "2026-09-01")]))
+        with patch.object(seo, "gallery_rels", return_value={gallery.as_posix()}):
+            seo.sync_gallery_seo(docs)
+            first = page.read_text(), (docs / "sitemap.xml").read_text()
+            assert body in first[0]
+            assert 'content="noindex,follow"' in first[0]
+            assert seo.public_url(gallery) not in first[1]
+            assert keep in first[1] and "2026-09-01" in first[1]
+            seo.sync_gallery_seo(docs)
+            assert first == (page.read_text(), (docs / "sitemap.xml").read_text())
 
 
 def test_empty_category_doors_leave_chrome_and_sitemap() -> None:
@@ -490,6 +527,8 @@ if __name__ == "__main__":
     test_wp_2026_id_stubs()
     test_consolidation_redirects_off_sitemap()
     test_gallery_cards_are_not_indexed_articles()
+    test_incremental_gallery_sync()
+    test_gallery_indexing_only_contract()
     test_empty_category_doors_leave_chrome_and_sitemap()
     test_breadcrumb_list_names_every_item()
     test_published_breadcrumbs_have_names()
