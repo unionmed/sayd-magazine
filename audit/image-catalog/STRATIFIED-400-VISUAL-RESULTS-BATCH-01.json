@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-10",
+  "source": "unionmed/sayd-magazine",
+  "sampling_frame": "STRATIFIED-400-REVIEW-QUEUE.json",
+  "inspected": 6,
+  "method": "Direct visual inspection of original GitHub image bytes",
+  "records": [
+    {
+      "path": "docs/media/uploads/2015/11/101.jpg",
+      "description": "Woman drawing a bow outdoors; people in background",
+      "section": "الرماية والعتاد",
+      "media_type": "photograph",
+      "visual_review_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "NOT_VERIFIED",
+      "approved_for_publication": false
+    },
+    {
+      "path": "docs/media/uploads/2017/02/مؤتمر-الروح-القدس-4.jpg",
+      "description": "Group of people on conference stage holding plaques",
+      "section": "فعاليات وشخصيات",
+      "media_type": "photograph",
+      "visual_review_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "NOT_VERIFIED",
+      "approved_for_publication": false
+    },
+    {
+      "path": "docs/media/uploads/2020/04/HIMA-150x150.jpg",
+      "description": "HIMA logo on white background",
+      "section": "شعارات وهوية",
+      "media_type": "logo",
+      "visual_review_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "NOT_VERIFIED",
+      "approved_for_publication": false
+    },
+    {
+      "path": "docs/media/uploads/2020/05/clown-beetle-768x512.jpg",
+      "description": "Close-up photograph of dark beetle",
+      "section": "الحياة البرية",
+      "media_type": "photograph",
+      "visual_review_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "NOT_VERIFIED",
+      "approved_for_publication": false
+    },
+    {
+      "path": "docs/media/uploads/2020/06/رندا-حجازي10-364x245.jpg",
+      "description": "Painting or illustration of small bird among flowers",
+      "section": "شعر وفن",
+      "media_type": "artwork",
+      "visual_review_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "NOT_VERIFIED",
+      "approved_for_publication": false
+    },
+    {
+      "path": "docs/media/uploads/2020/10/ماهر-كرك-2-546x300.jpg",
+      "description": "Person holding large long-billed bird, partial frame",
+      "section": "الطيور وحماية الطبيعة",
+      "media_type": "photograph",
+      "visual_review_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "NOT_VERIFIED",
+      "approved_for_publication": false
+    }
+  ],
+  "notes": "Six of the 400 queued images directly inspected. Do not count earlier reviews toward this sample unless paths match. Visual media type is important: logo and painting are not field photographs."
+}

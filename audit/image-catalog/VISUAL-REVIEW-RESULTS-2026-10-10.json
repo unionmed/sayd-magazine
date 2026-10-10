@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-10",
+  "method": "Direct inspection of original image bytes fetched from GitHub; visual subject only, not identity or provenance verification",
+  "sample_size": 8,
+  "records": [
+    {
+      "path": "docs/media/uploads/2013/03/رماية.jpg",
+      "observed": "Person aiming a shotgun outdoors",
+      "verified_visual_tags": [
+        "الرماية والعتاد"
+      ],
+      "identity_verified": false
+    },
+    {
+      "path": "docs/media/uploads/2013/03/انيس-وصيد-البط-في-الفرات.jpg",
+      "observed": "Three people in small boat among reeds; long gun and waterfowl visible",
+      "verified_visual_tags": [
+        "الصيد",
+        "الطيور",
+        "البحر"
+      ],
+      "identity_verified": false,
+      "location_verified": false
+    },
+    {
+      "path": "docs/media/uploads/2013/03/ثلاث-طيور-حبارى-بثلاث-طلقات.jpg",
+      "observed": "Two adults and child with several large dead game birds; species not independently confirmed",
+      "verified_visual_tags": [
+        "الصيد",
+        "الطيور"
+      ],
+      "species_verified": false
+    },
+    {
+      "path": "docs/media/uploads/2013/03/عبد-العزيز-البابطين.jpg",
+      "observed": "Man wearing traditional clothing holding a falcon-like raptor",
+      "verified_visual_tags": [
+        "الصقارة",
+        "شخصيات"
+      ],
+      "identity_verified": false
+    },
+    {
+      "path": "docs/media/uploads/2013/06/كميل-دوري-شمعون-في-رحلة-صيد.jpg",
+      "observed": "Four people outdoors by off-road vehicle, some carrying long guns",
+      "verified_visual_tags": [
+        "الصيد",
+        "شخصيات"
+      ],
+      "identity_verified": false
+    },
+    {
+      "path": "docs/media/uploads/2013/03/عبد-العزيز-البابطين-مع-رفاقه-في-جلسة-صحراوية.jpg",
+      "observed": "Group of men sitting on rugs outdoors in desert-like landscape",
+      "verified_visual_tags": [
+        "شخصيات",
+        "تراث"
+      ],
+      "identity_verified": false
+    },
+    {
+      "path": "docs/media/uploads/2013/04/وزير-البيئة-ناظم-الخوري-مع-رئيس-تحرير-مجلة-صيد-ادونيس-الخطيب.jpg",
+      "observed": "Two men posing indoors, office setting",
+      "verified_visual_tags": [
+        "شخصيات",
+        "من ذاكرة صيد"
+      ],
+      "identity_verified": false
+    },
+    {
+      "path": "docs/media/uploads/2013/09/الاميرة-بسمة-تحت-الماء.jpg",
+      "observed": "Scuba diver underwater interacting with seabed",
+      "verified_visual_tags": [
+        "البحر"
+      ],
+      "identity_verified": false
+    }
+  ],
+  "editorial_summary": "Visual inspection confirms that filenames alone can miss secondary subjects or imply unverified identities/locations. These records are visual observations, not publication approval."
+}

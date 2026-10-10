@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-10",
+  "additional_visual_reviews": 7,
+  "total_visual_reviews_to_date": 15,
+  "verification": "Actual original image bytes inspected",
+  "records": [
+    {
+      "path": "docs/media/uploads/2015/02/طلب-رخصة-الصيد.jpg",
+      "description": "نموذج طلب رخصة صيد",
+      "media_type": "وثيقة",
+      "section": "القوانين والأنظمة",
+      "visual_status": "VISUALLY_REVIEWED",
+      "event_identity_status": "UNVERIFIED",
+      "reuse_status": "EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "path": "docs/media/uploads/2017/09/معرض-صيد-العدسة-2.jpg",
+      "description": "صورة جماعية داخل معرض فني",
+      "media_type": "صورة حدث",
+      "section": "شخصيات ومعارض",
+      "visual_status": "VISUALLY_REVIEWED",
+      "event_identity_status": "UNVERIFIED",
+      "reuse_status": "EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "path": "docs/media/uploads/2018/02/حفل-اختتام-موسم-الصيد-6.jpg",
+      "description": "لوحة مرسومة لصياد وكلب",
+      "media_type": "عمل فني",
+      "section": "شعر وفن",
+      "visual_status": "VISUALLY_REVIEWED",
+      "event_identity_status": "UNVERIFIED",
+      "reuse_status": "EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "path": "docs/media/uploads/2019/03/حيوانات-صيد-الجوائز-5.jpg",
+      "description": "زرافة حية في بيئة عشبية",
+      "media_type": "حياة برية",
+      "section": "الحياة البرية",
+      "visual_status": "VISUALLY_REVIEWED",
+      "event_identity_status": "UNVERIFIED",
+      "reuse_status": "EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "path": "docs/media/uploads/2020/06/خرطوش-صيد-130x87.jpg",
+      "description": "صورة مصغرة لمعدات صيد يحملها شخص",
+      "media_type": "صورة معدات",
+      "section": "الرماية والعتاد",
+      "visual_status": "VISUALLY_REVIEWED",
+      "event_identity_status": "UNVERIFIED",
+      "reuse_status": "EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "path": "docs/media/uploads/2025/07/اب-يعلم-ابنه-الصيد.jpg",
+      "description": "رجل يوجّه فتى يمسك بندقية في حقل؛ مظهر مولّد رقميًا غير محسوم",
+      "media_type": "صورة توضيحية غير موثقة",
+      "section": "الصيد",
+      "visual_status": "VISUALLY_REVIEWED",
+      "event_identity_status": "UNVERIFIED",
+      "reuse_status": "EDITORIAL_REVIEW_REQUIRED"
+    },
+    {
+      "path": "docs/media/uploads/2026/09/saudi-hunting-season-2026.jpg",
+      "description": "رسم مقارن لنوعين من البنادق مع تسميات إنجليزية",
+      "media_type": "رسم توضيحي",
+      "section": "الرماية والعتاد",
+      "visual_status": "VISUALLY_REVIEWED",
+      "event_identity_status": "UNVERIFIED",
+      "reuse_status": "EDITORIAL_REVIEW_REQUIRED"
+    }
+  ],
+  "findings": [
+    "A file named after an event may be a painting rather than an event photograph.",
+    "A filename with hunting season may refer to a technical diagram rather than an event.",
+    "Distinguish documents, illustrations, photos and artwork before editorial recommendation."
+  ]
+}
