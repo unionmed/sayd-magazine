@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-10",
+  "method": "Stratified systematic selection by upload-year folder; visually inspected 16 of 38 selected across 2014-2026; previous 15 images separate",
+  "selection": "Two per year, except 2020 eight and 2021 four; systematic positions within sorted paths. Not a statistically random sample; do not extrapolate accuracy.",
+  "visually_reviewed": [
+    {
+      "path": "docs/media/uploads/2016/03/ابو-منجل-الاصلع-1.jpg",
+      "observed": "two long-billed dark ibises on rock",
+      "category": "الطيور",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2018/10/سلحفاة-يونانية-2.jpg",
+      "observed": "land tortoise in grass",
+      "category": "الحياة البرية",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2020/04/Spur-winged-Lapwing-179x116.jpg",
+      "observed": "bird in flight; lapwing species unverified",
+      "category": "الطيور",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2021/03/اعلان-الجائزة-546x300.jpg",
+      "observed": "wildlife photography prize advertisement poster",
+      "category": "إعلانات ومسابقات",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2023/02/حيوانات-وزالالزل2.jpg",
+      "observed": "woman with domestic cat",
+      "category": "الحيوانات الأليفة",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2025/07/القرقف-الفحمي-01-1024x683.jpg",
+      "observed": "small passerine on branch",
+      "category": "الطيور",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-04.jpg",
+      "observed": "field team member working on rocky slope; specific activity unverified",
+      "category": "مكافحة الصيد غير القانوني",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2026/09/gallery-katara-crowd.jpg",
+      "observed": "crowd at Katara hunting and falcons exhibition entrance",
+      "category": "معارض الصيد والصقارة",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2014/09/Ghassan-Khatib-5.jpg",
+      "observed": "person outdoors in camouflage clothing beside dog",
+      "category": "الصيد والشخصيات",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2015/09/161.jpg",
+      "observed": "woman seated at conference table",
+      "category": "شخصيات",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2017/02/قوس-وسهم-3.jpg",
+      "observed": "two people with compound bow outdoors",
+      "category": "الرماية والعتاد",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2020/05/الان-موسى-3-364x245.jpg",
+      "observed": "shooting sport medal ceremony on podium",
+      "category": "الرماية الرياضية",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2021/07/1jpg-85x57.jpg",
+      "observed": "very small image of people rafting on river",
+      "category": "رياضات البر والمغامرة",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2022/11/طازة-3.jpg",
+      "observed": "man holding radio microphone near sea",
+      "category": "شخصيات والبحر",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/uploads/2024/02/سارة-11.jpg",
+      "observed": "person aiming shotgun outdoors with rainbow behind",
+      "category": "الصيد",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    },
+    {
+      "path": "docs/media/video/apu-ground-operations-mecshap.jpg",
+      "observed": "field responder holding bird of prey",
+      "category": "حماية الطيور",
+      "visual_status": "VISUALLY_REVIEWED",
+      "identity_species_event": "UNVERIFIED",
+      "publication_approval": false
+    }
+  ],
+  "pending_selected": 22,
+  "total_visually_reviewed_to_date": 31,
+  "limitations": "Not representative of image content categories; systematic filename positions may bias results; no measured classification accuracy yet."
+}
