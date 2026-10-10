@@ -35,7 +35,13 @@ def normalize(s):
 
 def candidate_sections(path):
     name = normalize(pathlib.PurePosixPath(path).name)
-    found = [section for section, words in SECTIONS.items() if any(normalize(w) in name for w in words)]
+    tokens = set(name.split())
+    # Exact tokens prevent false positives such as بط in البابطين.
+    # Arabic definite article is accepted only as a full-token prefix.
+    def matched(word):
+        w = normalize(word).strip()
+        return w in tokens or (("ال" + w) in tokens if re.search(r"[ء-ي]", w) else False)
+    found = [section for section, words in SECTIONS.items() if any(matched(w) for w in words)]
     return found or ["غير مصنف"]
 
 def records():
