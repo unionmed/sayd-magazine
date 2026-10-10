@@ -33,7 +33,7 @@ def normalize(s):
     s = unicodedata.normalize("NFKD", str(s or "")).casefold()
     s = "".join(c for c in s if not unicodedata.combining(c))
     s = re.sub("[إأآٱ]", "ا", s).replace("ى", "ي").replace("ـ", "")
-    return re.sub(r"[_\\/\\-.]+", " ", s)
+    return re.sub(r"[-_/\\.]+", " ", s)
 
 def candidate_sections(path):
     name = normalize(pathlib.PurePosixPath(path).name)
