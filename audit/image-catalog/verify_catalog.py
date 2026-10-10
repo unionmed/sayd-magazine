@@ -22,7 +22,7 @@ def main():
     # Compare the manifest SHA to the actual Git blob at the checked-out commit.
     # Looking at files alone is not enough to prove inventory identity.
     process = subprocess.run(
-        ["git", "ls-tree", "-r", "-z", "HEAD", "--", "docs/media/uploads"],
+        ["git", "ls-tree", "-r", "-z", "HEAD"],
         cwd=ROOT, capture_output=True, check=True
     )
     git_images = {}
@@ -35,7 +35,7 @@ def main():
         if object_type == "blob" and PurePosixPath(name).suffix.lower() in EXTENSIONS:
             git_images[name] = sha
     manifest_images = {r["path"]: r["sha"] for r in rows}
-    unindexed = sorted(set(git_images) - set(manifest_images))
+    unindexed = sorted(p for p in set(git_images) - set(manifest_images) if p.startswith("docs/media/uploads/"))
     missing_in_git = sorted(set(manifest_images) - set(git_images))
     mismatched_sha = sorted(p for p in manifest_images if p in git_images and
                             manifest_images[p] != git_images[p])
@@ -76,7 +76,8 @@ def main():
         "unique_image_paths": integrity["unique_paths"],
         "files_present_on_checkout": integrity["records"] - len(integrity["missing_local_files"]),
         "unique_blob_shas": integrity["unique_blob_shas"],
-        "git_tree_image_count": len(git_images),
+        "git_tree_images_all_repo": len(git_images),
+        "unindexed_upload_images": len(unindexed),
         "manifest_sha_verified_against_git_tree": True,
         "duplicate_image_content_extra_paths": integrity["duplicate_content_extra_paths"],
         "duplicate_content_groups": integrity["duplicate_content_groups"],
