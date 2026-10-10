@@ -26,6 +26,12 @@ class CatalogTests(unittest.TestCase):
         self.assertTrue(all(x["visual_status"] == "UNVERIFIED" for x in found))
     def test_normalize_arabic(self):
         self.assertEqual(catalog.normalize("إلى"), catalog.normalize("الى"))
+    def test_false_positive_person_name(self):
+        self.assertNotIn("الطيور", catalog.candidate_sections("docs/media/uploads/2013/03/عبد-العزيز-البابطين.jpg"))
+    def test_actual_duck_keyword(self):
+        self.assertIn("الطيور", catalog.candidate_sections("docs/media/uploads/2013/03/انيس-وصيد-البط-في-الفرات.jpg"))
+    def test_unknown_not_forced(self):
+        self.assertEqual(catalog.candidate_sections("docs/media/uploads/2013/03/MED-136164168818-519-9.jpg"), ["غير مصنف"])
     def test_no_writes_in_search(self):
         self.assertEqual(catalog.query([], "صقر"), [])
 
