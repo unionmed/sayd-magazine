@@ -1,0 +1,907 @@
+{
+  "schema": "sayd-github-article-media-crossref-v3",
+  "source": "unionmed/sayd-magazine repository only",
+  "articles_scanned": 729,
+  "articles_with_github_image_references": 29,
+  "image_references_unique_per_article": 81,
+  "exact_links": 81,
+  "unique_basename_not_verified": 0,
+  "ambiguous_basename": 0,
+  "not_found": 0,
+  "catalog_images_with_exact_article_link": 77,
+  "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
+  "exact": [
+    {
+      "article_file": "content/posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع.md",
+      "article_title": "80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة",
+      "source_reference": "../../media/uploads/2026/09/gallery-shil-day2.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/gallery-shil-day2.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/gallery-shil-day2.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع.md",
+      "article_title": "80 ألف زائر و158 جهة من 15 دولة... «سهيل 2026» يختتم عقدًا من الشغف بالصيد والصقارة",
+      "source_reference": "../../media/uploads/2026/09/hero-closing-80k.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/hero-closing-80k.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/hero-closing-80k.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا.md",
+      "article_title": "أجنحة تستعيد السماء… تمارا الزين تزور مركز إنقاذ الطيور في زغرتا",
+      "source_reference": "../../media/uploads/2026/10/lamb-zgharta-tamara-el-zein-release.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/lamb-zgharta-tamara-el-zein-release.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/lamb-zgharta-tamara-el-zein-release.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا.md",
+      "article_title": "أجنحة تستعيد السماء… تمارا الزين تزور مركز إنقاذ الطيور في زغرتا",
+      "source_reference": "media/uploads/2026/10/lamb-zgharta-white-storks.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/lamb-zgharta-white-storks.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/lamb-zgharta-white-storks.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أين-تستريح-الطيور-المشرق-والجزيرة-العربية.md",
+      "article_title": "أين تستريح الطيور؟",
+      "source_reference": "../../media/uploads/2026/10/migration-aammiq-ibis.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/migration-aammiq-ibis.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/migration-aammiq-ibis.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أين-تستريح-الطيور-المشرق-والجزيرة-العربية.md",
+      "article_title": "أين تستريح الطيور؟",
+      "source_reference": "../../media/uploads/2026/10/migration-azraq.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/migration-azraq.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/migration-azraq.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أين-تستريح-الطيور-المشرق-والجزيرة-العربية.md",
+      "article_title": "أين تستريح الطيور؟",
+      "source_reference": "../../media/uploads/2026/10/migration-barr-al-hikman.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/migration-barr-al-hikman.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/migration-barr-al-hikman.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أين-تستريح-الطيور-المشرق-والجزيرة-العربية.md",
+      "article_title": "أين تستريح الطيور؟",
+      "source_reference": "media/uploads/2026/10/migration-cover-ras-al-khor.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/migration-cover-ras-al-khor.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/migration-cover-ras-al-khor.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أين-تستريح-الطيور-المشرق-والجزيرة-العربية.md",
+      "article_title": "أين تستريح الطيور؟",
+      "source_reference": "../../media/uploads/2026/10/migration-farasan.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/migration-farasan.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/migration-farasan.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك.md",
+      "article_title": "البجع الأبيض الكبير — Great White Pelican | بعدسة نايف كريم — أوتوستراد المتن السريع، ربيع 2026",
+      "source_reference": "media/uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
+      "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
+      "source_reference": "media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
+      "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
+      "source_reference": "../../media/uploads/2026/10/bekaa-apu-cabs-20261009-02.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-02.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-02.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
+      "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
+      "source_reference": "../../media/uploads/2026/10/bekaa-apu-cabs-20261009-03.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-03.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-03.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
+      "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
+      "source_reference": "../../media/uploads/2026/10/bekaa-apu-cabs-20261009-04.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-04.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-04.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
+      "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
+      "source_reference": "../../media/uploads/2026/10/bekaa-apu-cabs-20261009-05.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-05.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-05.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
+      "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
+      "source_reference": "../../media/uploads/2026/10/bekaa-apu-cabs-20261009-06.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-06.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-06.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
+      "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
+      "source_reference": "../../media/uploads/2026/10/bekaa-apu-cabs-20261009-07.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-07.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-07.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصمت-الذي-يتكلمه-الخيل.md",
+      "article_title": "الصمتُ الذي يتكلّمه الخيل",
+      "source_reference": "media/uploads/2026/09/EQ-N01-cover-1800x1000.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/EQ-N01-cover-1800x1000.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/EQ-N01-cover-1800x1000.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-الجائر-دمار-لهواية-الصيد-إحذروا.md",
+      "article_title": "الصيد الجائر دمار لهواية الصيد.. إحذروا الشباك والدّبق وصيد الليل",
+      "source_reference": "../../media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني.md",
+      "article_title": "«مشهور» يحسم كأس اليوم الوطني السعودي… والطائف تختتم موسم السباقات",
+      "source_reference": "../../media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى.md",
+      "article_title": "اليمام يعبر حدود الصيد: مسار أوروبي يتعافى وآخر لا يزال تحت الضغط",
+      "source_reference": "../../media/uploads/2026/09/european-turtle-dove-algeria-mourad-harzallah.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/european-turtle-dove-algeria-mourad-harzallah.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/european-turtle-dove-algeria-mourad-harzallah.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017.md",
+      "article_title": "حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام",
+      "source_reference": "media/uploads/2026/09/cabs-bird-guard-logo.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/cabs-bird-guard-logo.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/cabs-bird-guard-logo.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017.md",
+      "article_title": "حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام",
+      "source_reference": "media/uploads/2026/09/cabs-official-logo.png",
+      "expected_local_path": "docs/media/uploads/2026/09/cabs-official-logo.png",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/cabs-official-logo.png"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017.md",
+      "article_title": "حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام",
+      "source_reference": "media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/kaps-makshab-apu-fries-hero.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017.md",
+      "article_title": "حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام",
+      "source_reference": "media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/mecshap-apu-cabs-baalbek-release.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017.md",
+      "article_title": "حماية طيور هجرة الخريف في لبنان: شراكة ميدانية منذ ٢٠١٧ والخطيب يؤكد دور الصياد المستدام",
+      "source_reference": "media/uploads/2026/09/mecshap-official-logo.png",
+      "expected_local_path": "docs/media/uploads/2026/09/mecshap-official-logo.png",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/mecshap-official-logo.png"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حين-يتغير-الساحل-أين-تستريح-الطيور.md",
+      "article_title": "حين يتغيّر الساحل… أين تستريح الطيور؟",
+      "source_reference": "../../media/uploads/2026/10/anfeh-saltpans-epa.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/anfeh-saltpans-epa.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/anfeh-saltpans-epa.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حين-يتغير-الساحل-أين-تستريح-الطيور.md",
+      "article_title": "حين يتغيّر الساحل… أين تستريح الطيور؟",
+      "source_reference": "media/uploads/2026/10/batroun-pelican-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/batroun-pelican-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/batroun-pelican-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حين-يتغير-الساحل-أين-تستريح-الطيور.md",
+      "article_title": "حين يتغيّر الساحل… أين تستريح الطيور؟",
+      "source_reference": "../../media/uploads/2026/10/cyprus-latchi-port.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cyprus-latchi-port.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cyprus-latchi-port.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حين-يتغير-الساحل-أين-تستريح-الطيور.md",
+      "article_title": "حين يتغيّر الساحل… أين تستريح الطيور؟",
+      "source_reference": "../../media/uploads/2026/10/egypt-coastal-bird-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/egypt-coastal-bird-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/egypt-coastal-bird-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حين-يصبح-الخريف-موسما-لاصطياد-الصورة.md",
+      "article_title": "حين يصبح الخريف موسماً لاصطياد الصورة",
+      "source_reference": "media/uploads/2026/10/storks-resting-pines-mount-lebanon.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/storks-resting-pines-mount-lebanon.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/storks-resting-pines-mount-lebanon.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/ختام-الملواح-2026-60-فائزا.md",
+      "article_title": "الملواح يختتم منافساته: 60 فائزًا وصقارة تتسع",
+      "source_reference": "media/uploads/2026/10/saudi-2026-melwah-spa.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-2026-melwah-spa.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-2026-melwah-spa.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/خريف-الصيد-العربي-2026.md",
+      "article_title": "من سفوح الأطلس إلى سواحل البحر الأحمر... موسم الصيد العربي يدخل خريف 2026",
+      "source_reference": "media/uploads/2026/09/hajal-group-dogs-walk-atlas.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/hajal-group-dogs-walk-atlas.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/hajal-group-dogs-walk-atlas.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/خريف-الصيد-العربي-2026.md",
+      "article_title": "من سفوح الأطلس إلى سواحل البحر الأحمر... موسم الصيد العربي يدخل خريف 2026",
+      "source_reference": "../../media/uploads/2026/09/hajal-hunter-dog-shotgun-scrub.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/hajal-hunter-dog-shotgun-scrub.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/hajal-hunter-dog-shotgun-scrub.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/خريف-الصيد-العربي-2026.md",
+      "article_title": "من سفوح الأطلس إلى سواحل البحر الأحمر... موسم الصيد العربي يدخل خريف 2026",
+      "source_reference": "../../media/uploads/2026/09/hajal-hunters-aiming-atlas-slope.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/hajal-hunters-aiming-atlas-slope.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/hajal-hunters-aiming-atlas-slope.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/خريف-الصيد-العربي-2026.md",
+      "article_title": "من سفوح الأطلس إلى سواحل البحر الأحمر... موسم الصيد العربي يدخل خريف 2026",
+      "source_reference": "../../media/uploads/2026/09/lebanon-hunter-shotgun-ridge.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/lebanon-hunter-shotgun-ridge.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/lebanon-hunter-shotgun-ridge.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/رادار-صيد-العربي-سبتمبر-2026.md",
+      "article_title": "رادار صيد العربي | سبتمبر 2026: توقيف 50 صيادًا وإنقاذ آلاف الطيور",
+      "source_reference": "../../media/uploads/2026/09/sayd-radar-libya-turtle-doves.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/sayd-radar-libya-turtle-doves.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/sayd-radar-libya-turtle-doves.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/رادار-صيد-العربي-سبتمبر-2026.md",
+      "article_title": "رادار صيد العربي | سبتمبر 2026: توقيف 50 صيادًا وإنقاذ آلاف الطيور",
+      "source_reference": "../../media/uploads/2026/09/sayd-radar-migratory-birds-beirut.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/sayd-radar-migratory-birds-beirut.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/sayd-radar-migratory-birds-beirut.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/رادار-صيد-العربي-سبتمبر-2026.md",
+      "article_title": "رادار صيد العربي | سبتمبر 2026: توقيف 50 صيادًا وإنقاذ آلاف الطيور",
+      "source_reference": "media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف.md",
+      "article_title": "سماء الكوكب تفقد توازنها: تقرير «بيرد لايف» يدق ناقوس الخطر حول مسارات الهجرة العالمية",
+      "source_reference": "media/uploads/2026/09/birdlife-flyways-photo.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/birdlife-flyways-photo.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/birdlife-flyways-photo.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا.md",
+      "article_title": "«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض",
+      "source_reference": "../../media/uploads/2026/09/gallery-alsharq.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/gallery-alsharq.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/gallery-alsharq.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا.md",
+      "article_title": "«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض",
+      "source_reference": "../../media/uploads/2026/09/gallery-katara-crowd.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/gallery-katara-crowd.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/gallery-katara-crowd.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا.md",
+      "article_title": "«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض",
+      "source_reference": "../../media/uploads/2026/09/gallery-qna-extra-1.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/gallery-qna-extra-1.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/gallery-qna-extra-1.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا.md",
+      "article_title": "«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض",
+      "source_reference": "../../media/uploads/2026/09/gallery-qna-extra-3.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/gallery-qna-extra-3.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/gallery-qna-extra-3.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا.md",
+      "article_title": "«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض",
+      "source_reference": "../../media/uploads/2026/09/gallery-shil-day2.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/gallery-shil-day2.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/gallery-shil-day2.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا.md",
+      "article_title": "«سهيل 2026» بالصور: الصقور والزوار ووجوه المعرض",
+      "source_reference": "../../media/uploads/2026/09/hero-closing-80k.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/hero-closing-80k.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/hero-closing-80k.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-خربة-سلم-بعدسة-جمانة-ماجد.md",
+      "article_title": "طيور خربة سلم بعدسة جمانة ماجد",
+      "source_reference": "media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-خربة-سلم-بعدسة-جمانة-ماجد.md",
+      "article_title": "طيور خربة سلم بعدسة جمانة ماجد",
+      "source_reference": "media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-02.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-02.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-02.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-خربة-سلم-بعدسة-جمانة-ماجد.md",
+      "article_title": "طيور خربة سلم بعدسة جمانة ماجد",
+      "source_reference": "media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-03.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-03.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-03.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-خربة-سلم-بعدسة-جمانة-ماجد.md",
+      "article_title": "طيور خربة سلم بعدسة جمانة ماجد",
+      "source_reference": "media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-04.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-04.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-04.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم.md",
+      "article_title": "طيور من ثلاث بلاد… بعدسة نايف كريم، مدير عام «موقع صيد»",
+      "source_reference": "media/uploads/2026/10/01-2026-10-02_Acridotheres_obs-405158452_photo-744152176.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/01-2026-10-02_Acridotheres_obs-405158452_photo-744152176.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/01-2026-10-02_Acridotheres_obs-405158452_photo-744152176.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم.md",
+      "article_title": "طيور من ثلاث بلاد… بعدسة نايف كريم، مدير عام «موقع صيد»",
+      "source_reference": "media/uploads/2026/10/02-2026-02-15_Spilopelia-senegalensis_obs-338718379_photo-616051351.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/02-2026-02-15_Spilopelia-senegalensis_obs-338718379_photo-616051351.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/02-2026-02-15_Spilopelia-senegalensis_obs-338718379_photo-616051351.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم.md",
+      "article_title": "طيور من ثلاث بلاد… بعدسة نايف كريم، مدير عام «موقع صيد»",
+      "source_reference": "media/uploads/2026/10/03-2025-10-25_Cinnyris-osea_obs-322943904_photo-584297686.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/03-2025-10-25_Cinnyris-osea_obs-322943904_photo-584297686.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/03-2025-10-25_Cinnyris-osea_obs-322943904_photo-584297686.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم.md",
+      "article_title": "طيور من ثلاث بلاد… بعدسة نايف كريم، مدير عام «موقع صيد»",
+      "source_reference": "media/uploads/2026/10/04-2026-04-28_Corvus-cornix_obs-356061180_photo-649494538.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/04-2026-04-28_Corvus-cornix_obs-356061180_photo-649494538.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/04-2026-04-28_Corvus-cornix_obs-356061180_photo-649494538.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم.md",
+      "article_title": "طيور من ثلاث بلاد… بعدسة نايف كريم، مدير عام «موقع صيد»",
+      "source_reference": "media/uploads/2026/10/05-2026-04-27_Spilopelia-senegalensis_obs-355298608_photo-648374153.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/05-2026-04-27_Spilopelia-senegalensis_obs-355298608_photo-648374153.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/05-2026-04-27_Spilopelia-senegalensis_obs-355298608_photo-648374153.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم.md",
+      "article_title": "طيور من ثلاث بلاد… بعدسة نايف كريم، مدير عام «موقع صيد»",
+      "source_reference": "media/uploads/2026/10/06-2025-10-11_Anas-platyrhynchos_obs-320222094_photo-578939657.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/06-2025-10-11_Anas-platyrhynchos_obs-320222094_photo-578939657.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/06-2025-10-11_Anas-platyrhynchos_obs-320222094_photo-578939657.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم.md",
+      "article_title": "طيور من ثلاث بلاد… بعدسة نايف كريم، مدير عام «موقع صيد»",
+      "source_reference": "media/uploads/2026/10/07-2025-10-11_Fulica-atra_obs-320222129_photo-578939863.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/07-2025-10-11_Fulica-atra_obs-320222129_photo-578939863.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/07-2025-10-11_Fulica-atra_obs-320222129_photo-578939863.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم.md",
+      "article_title": "طيور من ثلاث بلاد… بعدسة نايف كريم، مدير عام «موقع صيد»",
+      "source_reference": "media/uploads/2026/10/08-2025-10-11_Anser-anser_obs-320222058_photo-578939622.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/08-2025-10-11_Anser-anser_obs-320222058_photo-578939622.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/08-2025-10-11_Anser-anser_obs-320222058_photo-578939622.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم.md",
+      "article_title": "طيور من ثلاث بلاد… بعدسة نايف كريم، مدير عام «موقع صيد»",
+      "source_reference": "media/uploads/2026/10/09-great-white-pelican-nayef-krayem-matn-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/09-great-white-pelican-nayef-krayem-matn-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/09-great-white-pelican-nayef-krayem-matn-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026.md",
+      "article_title": "قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»",
+      "source_reference": "../../media/uploads/2026/09/hero-closing-80k.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/hero-closing-80k.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/hero-closing-80k.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/قطر-حماية-المناطق-البرية-والبحرية-2030.md",
+      "article_title": "قطر تستهدف حماية 30% من مناطقها البرية والبحرية بحلول 2030",
+      "source_reference": "media/uploads/2026/10/qatar-protected-areas-qna.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات.md",
+      "article_title": "مصر: قرار جديد لتنظيم الصيد وملاحقة المخالفات في موسم هجرة الخريف",
+      "source_reference": "../../media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/egypt-burullus-researcher-removes-bird-from-illegal-net.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/مع-بدء-هجرة-الخريف-تحرك-ميداني-لحماية.md",
+      "article_title": "مع بدء هجرة الخريف.. تحرك ميداني لحماية ممرات الطيور فوق لبنان",
+      "source_reference": "media/uploads/2026/09/ChatGPT-Image-Sep-7-2026-01_33_30-AM-853x1024.png",
+      "expected_local_path": "docs/media/uploads/2026/09/ChatGPT-Image-Sep-7-2026-01_33_30-AM-853x1024.png",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/ChatGPT-Image-Sep-7-2026-01_33_30-AM-853x1024.png"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي.md",
+      "article_title": "معرض الصقور والصيد السعودي 2026: الملواح والمزاد والذكاء الاصطناعي",
+      "source_reference": "../../media/uploads/2026/10/saudi-2026-interior-ai-spa.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-2026-interior-ai-spa.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-2026-interior-ai-spa.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي.md",
+      "article_title": "معرض الصقور والصيد السعودي 2026: الملواح والمزاد والذكاء الاصطناعي",
+      "source_reference": "../../media/uploads/2026/10/saudi-2026-marine-spa.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-2026-marine-spa.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-2026-marine-spa.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي.md",
+      "article_title": "معرض الصقور والصيد السعودي 2026: الملواح والمزاد والذكاء الاصطناعي",
+      "source_reference": "media/uploads/2026/10/saudi-2026-melwah-spa.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-2026-melwah-spa.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-2026-melwah-spa.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي.md",
+      "article_title": "معرض الصقور والصيد السعودي 2026: الملواح والمزاد والذكاء الاصطناعي",
+      "source_reference": "../../media/uploads/2026/10/saudi-2026-mongolian-auction-spa.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-2026-mongolian-auction-spa.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-2026-mongolian-auction-spa.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/معرض-الصقور-والصيد-السعودي-الدولي-2026.md",
+      "article_title": "معرض الصقور والصيد السعودي الدولي يفتح أبوابه حتى 10 أكتوبر",
+      "source_reference": "../../media/uploads/2026/10/saudi-falcons-exhibition-2026-auction-spa.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-falcons-exhibition-2026-auction-spa.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-falcons-exhibition-2026-auction-spa.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/معرض-الصقور-والصيد-السعودي-الدولي-2026.md",
+      "article_title": "معرض الصقور والصيد السعودي الدولي يفتح أبوابه حتى 10 أكتوبر",
+      "source_reference": "media/uploads/2026/10/saudi-falcons-exhibition-2026-close-spa.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-falcons-exhibition-2026-close-spa.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-falcons-exhibition-2026-close-spa.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور.md",
+      "article_title": "مكافحة الصيد غير القانوني في لبنان",
+      "source_reference": "media/uploads/2026/10/apu-mecshap-cabs-lebanon-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور.md",
+      "article_title": "مكافحة الصيد غير القانوني في لبنان",
+      "source_reference": "media/uploads/2026/10/apu-mecshap-cabs-lebanon-02.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-02.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-02.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور.md",
+      "article_title": "مكافحة الصيد غير القانوني في لبنان",
+      "source_reference": "media/uploads/2026/10/apu-mecshap-cabs-lebanon-03.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-03.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-03.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور.md",
+      "article_title": "مكافحة الصيد غير القانوني في لبنان",
+      "source_reference": "media/uploads/2026/10/apu-mecshap-cabs-lebanon-04.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-04.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-04.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور.md",
+      "article_title": "مكافحة الصيد غير القانوني في لبنان",
+      "source_reference": "media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور.md",
+      "article_title": "مكافحة الصيد غير القانوني في لبنان",
+      "source_reference": "media/uploads/2026/10/apu-mecshap-cabs-lebanon-06.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-06.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-06.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة.md",
+      "article_title": "من صقلية إلى لبنان: معركة إنقاذ الطيور المهاجرة من الصيد الجائر",
+      "source_reference": "../../media/uploads/2026/09/bekaa-nets-isf-pickup-2026-09-25.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/bekaa-nets-isf-pickup-2026-09-25.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/bekaa-nets-isf-pickup-2026-09-25.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة.md",
+      "article_title": "من صقلية إلى لبنان: معركة إنقاذ الطيور المهاجرة من الصيد الجائر",
+      "source_reference": "media/uploads/2026/09/european-turtle-doves-douz-skander-zarrad.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/european-turtle-doves-douz-skander-zarrad.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/european-turtle-doves-douz-skander-zarrad.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة.md",
+      "article_title": "من صقلية إلى لبنان: معركة إنقاذ الطيور المهاجرة من الصيد الجائر",
+      "source_reference": "../../media/uploads/2026/09/migrating-white-storks-istanbul-tema.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/migrating-white-storks-istanbul-tema.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/migrating-white-storks-istanbul-tema.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/منظمات-دولية-ابادة-بيئية-جنوب-لبنان.md",
+      "article_title": "دمار بيئي واسع في جنوب لبنان يهدد أحد أهم ممرات هجرة الطيور في العالم",
+      "source_reference": "media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/ecocide-south-lebanon-white-phosphorus-smoke.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/موسم-الطوقي-محمية-الملك-عبدالعزيز-2026.md",
+      "article_title": "موسم الطوقي يبرز ثراء محمية الملك عبدالعزيز بالحياة البرية والطيور",
+      "source_reference": "media/uploads/2026/10/saudi-king-abdulaziz-gazelles-20261009.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-king-abdulaziz-gazelles-20261009.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-king-abdulaziz-gazelles-20261009.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/موسم-الطوقي-محمية-الملك-عبدالعزيز-2026.md",
+      "article_title": "موسم الطوقي يبرز ثراء محمية الملك عبدالعزيز بالحياة البرية والطيور",
+      "source_reference": "../../media/uploads/2026/10/saudi-king-abdulaziz-wadi-20261009.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-king-abdulaziz-wadi-20261009.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-king-abdulaziz-wadi-20261009.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    }
+  ],
+  "nonexact": []
+}
