@@ -210,6 +210,8 @@ def check_new_stories(paths,pairs,base=None):
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if shared_ticker_only_repair(file,base):
+            continue
         if gallery_indexing_only_repair(file,base):
             continue
         if analytics_only_repair(file,base):
@@ -235,6 +237,30 @@ def check_new_stories(paths,pairs,base=None):
                 assert listing.exists() and any(slug(h)==s for h in tree(listing).xpath('//a/@href')),f'Missing {s} in {listing}'
         assert media[0]==media[1]==media[2],f'Article photographs/video differ: {ar}'
         assert categories[0]==categories[1]==categories[2],f'Article doors differ: {ar}'
+
+def shared_ticker_only_repair(file,base):
+    """An existing article's shared chrome update is not an editorial republication.
+
+    Require the exact current language ticker and byte-identical content outside
+    both ticker loops. New articles and any other edits still use the full gate.
+    """
+    if not base:
+        return False
+    old=subprocess.run(['git','show',f'{base}:{file}'],cwd=ROOT,capture_output=True)
+    if old.returncode:
+        return False
+    return shared_ticker_only_text(old.stdout.decode(),(ROOT/file).read_text(),ROOT/file)
+
+def shared_ticker_only_text(before,after,path):
+    from sync_tickers import TICKER, sources, language, ticker_for
+    a=TICKER.findall(before);b=TICKER.findall(after)
+    if before==after or len(a)!=2 or len(b)!=2:
+        return False
+    expected=ticker_for(path,sources(DOCS)[language(path,DOCS)])
+    if any(loop[1]!=expected for loop in b):
+        return False
+    outside=lambda page:TICKER.sub(lambda m:m[1]+m[3],page)
+    return outside(before)==outside(after)
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--base');args=p.parse_args();check(args.base)
