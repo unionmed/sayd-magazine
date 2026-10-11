@@ -45,6 +45,14 @@ for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
  for n in list(content):content.remove(n)
  content.text=None
  for n in html.fragments_fromstring(body(lang)):content.append(n)
+ home=html.parse(str(DOCS/prefix/'index.html')).getroot()
+ for dst,src in zip(cls(t,'ticker'),cls(home,'ticker')):
+  for child in list(dst):dst.remove(child)
+  dst.text=src.text
+  for child in src:
+   node=copy.deepcopy(child)
+   if node.get('href'):node.set('href','../../'+node.get('href'))
+   dst.append(node)
  for name in ['article-featured','related-block']:
   for n in cls(t,name):n.getparent().remove(n)
  for n in t.xpath('//script[@type="application/ld+json"]'):n.getparent().remove(n)
