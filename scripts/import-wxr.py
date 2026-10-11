@@ -2852,6 +2852,8 @@ def main() -> None:
     from apply_site_ia import main as apply_ia
 
     apply_ia()
+    from short_links import generate as generate_short_links
+    generate_short_links(args.out)
     print("Done.")
     print(f"Preview: open {args.out / 'index.html'} or serve docs/ with any static server.")
 
