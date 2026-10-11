@@ -136,10 +136,10 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "ألكسندرا-cabs-الصيد-غير-القانوني",
       "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
       "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
-      "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
-      "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+      "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
     ],
     "رماية وعتاد": [
       "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
@@ -160,10 +160,10 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "alexandra-cabs-illegal-hunting-interview",
       "south-lebanon-environmental-destruction-bird-flyway",
       "egypt-new-hunting-rules-burullus-autumn-migration",
-      "protecting-autumn-migratory-birds-lebanon-khatib-2017",
-      "suhail-2026-closes-decade-katara-80000-visitors"
+      "protecting-autumn-migratory-birds-lebanon-khatib-2017"
     ],
     "Shooting & Gear": [
       "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
@@ -255,10 +255,10 @@
     {
       "door": "hunting",
       "slugs": [
+        "ألكسندرا-cabs-الصيد-غير-القانوني",
         "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
         "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
-        "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
-        "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+        "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
       ]
     },
     {
@@ -368,7 +368,8 @@
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية": "hunting",
     "ختام-الملواح-2026-60-فائزا": "hunting",
     "طيور-خربة-سلم-بعدسة-جمانة-ماجد": "photos",
-    "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا": "wildlife"
+    "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا": "wildlife",
+    "ألكسندرا-cabs-الصيد-غير-القانوني": "hunting"
   },
   "demotion": "Nayef authorized the Al-Melwah finale on 10 October 2026 with the existing photograph, replacing the prior Saudi exhibition report in the side-card block and ticker. Prior article stays in category/archive and is excluded from homepage recycling. Current main lead and other stories remain; side cards keep publication-date order.",
   "approved_home_repeats": [
@@ -511,6 +512,15 @@
         "ar": "لقالق بيضاء في موقع الجمعية اللبنانية للطيور المهاجرة، حيث تتلقى الطيور المصابة الرعاية والتأهيل قبل إعادتها إلى الطبيعة متى سمحت حالتها بذلك.",
         "en": "White storks at the Lebanese Association for Migratory Birds’ site, where injured birds receive care and rehabilitation before returning to the wild when their condition allows.",
         "fr": "Des cigognes blanches sur le site de l’Association libanaise pour les oiseaux migrateurs, où les oiseaux blessés reçoivent des soins et une réhabilitation avant leur retour à la nature, lorsque leur état le permet."
+      }
+    },
+    "ألكسندرا-cabs-الصيد-غير-القانوني": {
+      "image": "media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "position": "75% 45%",
+      "alt": {
+        "ar": "ألكسندرا تستخدم منظارًا ثنائيًا أمام مشهد جبلي في لبنان.",
+        "en": "Alexandra using binoculars against a mountainous landscape in Lebanon.",
+        "fr": "Alexandra utilise des jumelles devant un paysage montagneux au Liban."
       }
     }
   },

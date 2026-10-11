@@ -2,6 +2,7 @@
 """Offline tests for the read-only historical image catalog."""
 import importlib.util
 import pathlib
+import subprocess
 import unittest
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -12,7 +13,10 @@ spec.loader.exec_module(catalog)
 class CatalogTests(unittest.TestCase):
     def test_manifest_count(self):
         rows = list(catalog.records())
-        self.assertEqual(len(rows), 10184)
+        tracked = subprocess.check_output(["git", "ls-tree", "-r", "--name-only", "-z", "HEAD"], cwd=catalog.ROOT).decode().split("\0")
+        expected = {p for p in tracked if pathlib.PurePosixPath(p).suffix.lower() in catalog.EXTENSIONS}
+        self.assertGreaterEqual(len(rows), 10184)
+        self.assertEqual({r["path"] for r in rows}, expected)
         self.assertEqual(len({r["path"] for r in rows}), len(rows))
     def test_sha_integrity(self):
         result = catalog.audit(list(catalog.records()))
