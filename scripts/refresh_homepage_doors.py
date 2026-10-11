@@ -186,6 +186,8 @@ def main():
     # Publishing a gallery changes indexing in every mirror and the sitemap.
     from seo_foundation import sync_gallery_seo
     sync_gallery_seo(DOCS)
+    from short_links import generate as generate_short_links
+    generate_short_links(DOCS)
     print('Restored one lead + four side cards, eight Updates, approved desks and 3 channel + 3 selection TV cards in AR/EN/FR.')
 
 if __name__=='__main__':main()
