@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
+      "title": "تحذير أوروبي: 11 إلى 36 مليون طائر سنويًا في المتوسط",
+      "titles": {
+        "ar": "تحذير أوروبي: 11–36 مليون طائر يُقتل أو يُؤسر سنويًا في المتوسط",
+        "en": "European warning: 11–36 million birds illegally killed or captured in the Mediterranean each year",
+        "fr": "Alerte européenne : 11 à 36 millions d'oiseaux victimes de captures illégales chaque année en Méditerranée"
+      }
+    },
+    {
       "slug": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
       "title": "أين تستريح الطيور؟",
       "titles": {
