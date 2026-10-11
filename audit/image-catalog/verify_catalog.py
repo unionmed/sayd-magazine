@@ -15,8 +15,9 @@ def main():
     problems = {field: integrity[field] for field in
                 ("invalid_records", "duplicate_path_entries", "missing_local_files")
                 if integrity[field]}
-    if integrity["records"] != 10184:
-        problems["wrong_manifest_count"] = integrity["records"]
+    # The inventory grows with authorized photographs; it is not an image cap.
+    if integrity["records"] < 10184:
+        problems["historical_inventory_shrank"] = integrity["records"]
     if problems:
         raise SystemExit(json.dumps(problems, ensure_ascii=False)[:4000])
     # Compare the manifest SHA to the actual Git blob at the checked-out commit.
@@ -35,6 +36,8 @@ def main():
         if object_type == "blob" and PurePosixPath(name).suffix.lower() in EXTENSIONS:
             git_images[name] = sha
     manifest_images = {r["path"]: r["sha"] for r in rows}
+    if integrity["records"] != len(git_images):
+        raise SystemExit(json.dumps({"manifest_count": integrity["records"], "git_tree_image_count": len(git_images)}, ensure_ascii=False))
     unindexed = sorted(p for p in set(git_images) - set(manifest_images) if p.startswith("docs/media/uploads/"))
     missing_in_git = sorted(set(manifest_images) - set(git_images))
     mismatched_sha = sorted(p for p in manifest_images if p in git_images and
