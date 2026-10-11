@@ -973,6 +973,8 @@ def main() -> None:
     refresh_card_navigation()
     from refresh_article_navigation import main as refresh_articles
     refresh_articles()
+    from sync_tickers import sync as sync_tickers
+    sync_tickers(DOCS)
     print(f"chrome pages touched: {changed}; commercial disclosures: {disclosures}")
 
 

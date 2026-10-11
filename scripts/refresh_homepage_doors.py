@@ -183,6 +183,8 @@ def main():
     from homepage_hunting_rotation import sync
     sync()
     for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:refresh(DOCS/prefix/'index.html',lang)
+    from sync_tickers import sync as sync_tickers
+    sync_tickers(DOCS)
     # Publishing a gallery changes indexing in every mirror and the sitemap.
     from seo_foundation import sync_gallery_seo
     sync_gallery_seo(DOCS)
