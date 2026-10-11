@@ -15,7 +15,7 @@ def main():
     problems = {field: integrity[field] for field in
                 ("invalid_records", "duplicate_path_entries", "missing_local_files")
                 if integrity[field]}
-    if integrity["records"] != 10184:
+    if integrity["records"] != 10187:
         problems["wrong_manifest_count"] = integrity["records"]
     if problems:
         raise SystemExit(json.dumps(problems, ensure_ascii=False)[:4000])

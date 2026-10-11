@@ -12,7 +12,7 @@ spec.loader.exec_module(catalog)
 class CatalogTests(unittest.TestCase):
     def test_manifest_count(self):
         rows = list(catalog.records())
-        self.assertEqual(len(rows), 10184)
+        self.assertEqual(len(rows), 10187)
         self.assertEqual(len({r["path"] for r in rows}), len(rows))
     def test_sha_integrity(self):
         result = catalog.audit(list(catalog.records()))
