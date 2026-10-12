@@ -1,5 +1,6 @@
 """Offline regression tests. The browser's only network route is a local trap proxy."""
 import os
+import faulthandler
 import threading
 import time
 import unittest
@@ -89,6 +90,8 @@ class ParserTests(unittest.TestCase):
 class OfflineBrowserTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        faulthandler.dump_traceback_later(30, repeat=True)
+        print('GA4 fixture: starting local trap proxy', flush=True)
         cls.network = []
         network = cls.network
         class Trap(BaseHTTPRequestHandler):
@@ -103,11 +106,14 @@ class OfflineBrowserTests(unittest.TestCase):
         cls.server = ThreadingHTTPServer(('127.0.0.1', 0), Trap)
         cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
         cls.thread.start()
+        print('GA4 fixture: starting Playwright', flush=True)
         cls.pw = sync_playwright().start()
-        options = {'proxy': {'server': f'http://127.0.0.1:{cls.server.server_port}', 'bypass': '<-loopback>'}}
+        print('GA4 fixture: launching Chromium through local trap', flush=True)
+        options = {'timeout': 30000, 'proxy': {'server': f'http://127.0.0.1:{cls.server.server_port}', 'bypass': '<-loopback>'}}
         if os.environ.get('GA4_TEST_CHROMIUM'):
             options['executable_path'] = os.environ['GA4_TEST_CHROMIUM']
         cls.browser = cls.pw.chromium.launch(**options)
+        print('GA4 fixture: Chromium ready', flush=True)
 
     @classmethod
     def tearDownClass(cls):
@@ -115,7 +121,8 @@ class OfflineBrowserTests(unittest.TestCase):
         cls.pw.stop()
         cls.server.shutdown()
         cls.server.server_close()
-        cls.thread.join()
+        cls.thread.join(timeout=5)
+        faulthandler.cancel_dump_traceback_later()
 
     def check_fixture(self, measurement_id, count, mobile=False):
         self.network.clear()
