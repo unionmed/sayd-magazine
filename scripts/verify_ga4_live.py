@@ -69,14 +69,27 @@ def event_info(request):
     return events
 
 
-def isolate_runtime(ctx, page_url, html, events, blocked, loader_body=None):
+def fetch_gtag_loader(opener):
+    """Fetch only fixed loader bytes before starting the offline browser."""
+    with opener.open(Request(GTAG_URL, headers={'User-Agent': 'Sayd-GA4-Verification/1.0'}), timeout=25) as response:
+        if response.status != 200:
+            raise RuntimeError('GA4 loader did not return HTTP 200')
+        body = response.read().decode('utf-8')
+    if not body:
+        raise RuntimeError('Empty GA4 loader')
+    return body
+
+
+def isolate_runtime(ctx, page_url, html, events, blocked, loader_body):
     """Fail closed: offline browser + cached document + exact gtag loader.
 
-    loader_body is an offline test fixture. No browser request is continued.
-    Only route.fetch of the fixed loader is permitted, with redirects disabled.
+    HTML and loader_body are prefetched bytes (fixtures in tests).
+    No browser request is continued or fetched.
     """
+    if not isinstance(loader_body, str) or not loader_body:
+        raise ValueError('Prefetched GA4 loader is required')
     # Routing alone can miss keepalive/beacon traffic during context teardown.
-    # Disable browser transport too; route.fetch uses the separate API client.
+    # Disable browser transport too; all required input bytes are already cached.
     ctx.set_offline(True)
 
     def route_request(route):
@@ -91,14 +104,7 @@ def isolate_runtime(ctx, page_url, html, events, blocked, loader_body=None):
             route.fulfill(status=200, content_type='text/html', body=html)
         elif (req.url == GTAG_URL and req.method == 'GET'
               and req.resource_type == 'script'):
-            if loader_body is not None:
-                route.fulfill(status=200, content_type='application/javascript', body=loader_body)
-            else:
-                response = route.fetch(max_redirects=0)
-                if response.status != 200:
-                    route.abort()
-                    raise RuntimeError('GA4 loader did not return HTTP 200; no redirects permitted')
-                route.fulfill(response=response)
+            route.fulfill(status=200, content_type='application/javascript', body=loader_body)
         else:
             blocked.append(req.url)
             route.abort()
@@ -144,6 +150,7 @@ def main():
         raw_results.append({'path': path, 'http_status': status, 'correct_single_tag': True})
     print('RAW_HTML_RESULTS=' + json.dumps(raw_results, ensure_ascii=False))
 
+    loader_body = fetch_gtag_loader(opener)
     runtime_paths = [p for p in paths if '/category/' not in p]
     results = []
     with sync_playwright() as pw:
@@ -153,7 +160,7 @@ def main():
             options = dict(pw.devices['Pixel 7']) if mobile else {'viewport': {'width': 1365, 'height': 900}}
             ctx = browser.new_context(**options, service_workers='block')
             events, blocked = [], []
-            isolate_runtime(ctx, ORIGIN + path, live_html[path], events, blocked)
+            isolate_runtime(ctx, ORIGIN + path, live_html[path], events, blocked, loader_body)
             page = ctx.new_page()
             page.goto(ORIGIN + path, wait_until='domcontentloaded', timeout=45000)
             for _ in range(20):

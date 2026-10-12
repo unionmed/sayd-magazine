@@ -6,7 +6,7 @@ import time
 import unittest
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from types import SimpleNamespace
-from unittest.mock import Mock
+from unittest.mock import Mock, MagicMock, call
 from playwright.sync_api import sync_playwright
 import verify_ga4_live as verifier
 
@@ -32,9 +32,10 @@ class ParserTests(unittest.TestCase):
     def test_html_redirects_refused_before_following(self):
         from urllib.error import HTTPError
         from urllib.request import Request
-        with self.assertRaises(HTTPError):
-            verifier.NoRedirects().redirect_request(Request('https://sayd-magazine.com/'), None, 302,
-                'Found', {}, 'https://www.google-analytics.com/g/collect?en=page_view')
+        for status in [301, 302, 303, 307, 308]:
+            with self.subTest(status=status), self.assertRaises(HTTPError):
+                verifier.NoRedirects().redirect_request(Request('https://sayd-magazine.com/'), None, status,
+                    'Found', {}, 'https://www.google-analytics.com/g/collect?en=page_view')
 
     def test_all_telemetry_and_unrecognized_requests_abort(self):
         for url, method, resource in [
@@ -49,8 +50,9 @@ class ParserTests(unittest.TestCase):
             with self.subTest(url=url, method=method):
                 ctx = Mock()
                 events, blocked = [], []
-                verifier.isolate_runtime(ctx, 'https://fixture.invalid/', '', events, blocked)
+                verifier.isolate_runtime(ctx, 'https://fixture.invalid/', '', events, blocked, 'fixture')
                 ctx.set_offline.assert_called_once_with(True)
+                self.assertEqual(ctx.mock_calls[0], call.set_offline(True))
                 route = Mock()
                 route.request = SimpleNamespace(url=url, method=method, resource_type=resource, post_data=None)
                 ctx.route.call_args.args[1](route)
@@ -78,18 +80,33 @@ class ParserTests(unittest.TestCase):
             route.fetch.assert_not_called()
             route.continue_.assert_not_called()
 
-    def test_fixed_loader_cannot_redirect(self):
-        ctx = Mock()
-        verifier.isolate_runtime(ctx, 'https://fixture.invalid/', '', [], [])
-        route = Mock()
-        route.request = SimpleNamespace(url=verifier.GTAG_URL, method='GET', resource_type='script', post_data=None)
-        route.fetch.return_value.status = 302
-        with self.assertRaisesRegex(RuntimeError, 'no redirects'):
-            ctx.route.call_args.args[1](route)
-        route.fetch.assert_called_once_with(max_redirects=0)
-        route.abort.assert_called_once()
-        route.fulfill.assert_not_called()
-        route.continue_.assert_not_called()
+    def test_missing_loader_rejected_before_browser_setup(self):
+        for body in [None, '']:
+            ctx = Mock()
+            with self.assertRaisesRegex(ValueError, 'loader is required'):
+                verifier.isolate_runtime(ctx, 'https://fixture.invalid/', '', [], [], body)
+            self.assertEqual(ctx.mock_calls, [])
+
+    def test_fixed_loader_prefetch_fails_closed(self):
+        opener = Mock()
+        response = MagicMock()
+        response.__enter__.return_value = response
+        opener.open.return_value = response
+        response.status = 200
+        response.read.return_value = b'loader-fixture'
+        self.assertEqual(verifier.fetch_gtag_loader(opener), 'loader-fixture')
+        opener.open.assert_called_once()
+        request = opener.open.call_args.args[0]
+        self.assertEqual(request.full_url, verifier.GTAG_URL)
+        self.assertEqual(request.get_method(), 'GET')
+        self.assertEqual(opener.open.call_args.kwargs, {'timeout': 25})
+        response.status = 302
+        with self.assertRaisesRegex(RuntimeError, 'HTTP 200'):
+            verifier.fetch_gtag_loader(opener)
+        response.status = 200
+        response.read.return_value = b''
+        with self.assertRaisesRegex(RuntimeError, 'Empty'):
+            verifier.fetch_gtag_loader(opener)
 
 
 class OfflineBrowserTests(unittest.TestCase):
@@ -193,16 +210,6 @@ class OfflineBrowserTests(unittest.TestCase):
             ctx.close()
         self.assertEqual(self.network, [], 'A browser request escaped interception into the trap proxy')
         return actual
-
-    def test_offline_browser_still_allows_separate_api_fetch(self):
-        self.network.clear()
-        ctx = self.browser.new_context(service_workers='block', offline=True)
-        try:
-            response = ctx.request.get('http://proxy-control.invalid/')
-            self.assertEqual(response.status, 200)
-            self.assertIn(('GET', 'http://proxy-control.invalid/'), self.network)
-        finally:
-            ctx.close()
 
     def test_trap_proxy_positive_control(self):
         self.network.clear()
