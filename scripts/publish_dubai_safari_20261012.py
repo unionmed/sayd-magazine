@@ -24,6 +24,11 @@ DATA=json.loads((ROOT/"content/features/dubai-safari-20261012.json").read_text(e
 AR=DATA["slug_ar"]; INTL=DATA["slug_intl"]
 IMAGES=["media/uploads/2026/10/dubai-safari-archive-"+n+".jpg" for n in ("lions","macaw","giraffes")]
 IMAGE=IMAGES[0]
+MEDIA_VERSION="20261012"
+
+def media_url(path):
+    return path+"?v="+MEDIA_VERSION
+
 DATE=DATA["date"]; TIME=DATA["published_at"]
 DATES={"ar":"12 تشرين الأول 2026","en":"12 October 2026","fr":"12 octobre 2026"}
 NAMES={"ar":"برية وتخييم","en":"Wildlife & Camping","fr":"Faune et camping"}
@@ -49,7 +54,7 @@ def body(lang):
     prefix="../../" if lang=="ar" else "../../../"
     def figure(i):
         width,height=(2000,1333) if i==1 else (2000,1125)
-        return ('<figure><img src="'+prefix+IMAGES[i]+'" width="'+str(width)+'" height="'+str(height)+'" alt="'+esc.escape(d["alts"][i],quote=True)+'" decoding="async" style="display:block;width:100%;height:auto">'
+        return ('<figure><img src="'+prefix+media_url(IMAGES[i])+'" width="'+str(width)+'" height="'+str(height)+'" alt="'+esc.escape(d["alts"][i],quote=True)+'" decoding="async" style="display:block;width:100%;height:auto">'
                 '<figcaption>'+esc.escape(d["captions"][i])+'</figcaption></figure>')
     b=[figure(0),'<p class="article-deck"><strong>'+esc.escape(d["deck"])+'</strong></p>']
     for i,paragraph in enumerate(d["paragraphs"]):
@@ -75,7 +80,7 @@ def render_article(lang):
         tag.set("content",d["title"]+title_suffix)
     for tag in root.xpath('//meta[@property="og:url"]'):tag.set("content",new_url)
     for tag in root.xpath('//meta[@property="og:image" or @name="twitter:image"]'):
-        tag.set("content","https://sayd-magazine.com/"+IMAGE)
+        tag.set("content","https://sayd-magazine.com/"+media_url(IMAGE))
     for tag in root.xpath('//link[@rel="canonical"]'):tag.set("href",new_url)
     for tag in root.xpath('//link[@rel="alternate"]'):
         l=tag.get("hreflang","ar")
@@ -114,7 +119,7 @@ def render_article(lang):
         "headline":d["title"],"description":d["deck"],"inLanguage":lang,
         "datePublished":TIME,"dateModified":TIME,
         "author":{"@type":"Organization","name":"Sayd Magazine"},
-        "image":["https://sayd-magazine.com/"+img for img in IMAGES],
+        "image":["https://sayd-magazine.com/"+media_url(img) for img in IMAGES],
         "articleSection":NAMES[lang],
         "mainEntityOfPage":new_url,
         "publisher":{"@type":"Organization","name":"Sayd Magazine","url":"https://sayd-magazine.com/"}
@@ -137,7 +142,7 @@ def render_article(lang):
     front=("---\ntitle: "+json.dumps(d["title"],ensure_ascii=False)+
            "\nslug: "+SLUG_BY_LANG[lang]+"\ndate: "+DATE+
            "\nauthor: "+json.dumps(AUTHORS[lang],ensure_ascii=False)+
-           "\ncategories: [الحياة البرية والتخييم]\nfeatured: "+IMAGE+
+           "\ncategories: [الحياة البرية والتخييم]\nfeatured: "+media_url(IMAGE)+
            "\nsubtitle: "+json.dumps(d["deck"],ensure_ascii=False)+"\n---\n\n")
     save(src,front+body(lang)+"\n")
     return page
@@ -153,7 +158,7 @@ def insert_listing(lang,page):
     m=re.search(r'<article\b[^>]*class="(?:post-row|card)"',text)
     if not m:raise RuntimeError("Missing archive listing anchor "+str(path))
     href=os.path.relpath(DOCS/("" if lang=="ar" else lang)/"posts"/slug/"index.html",path.parent)
-    image=os.path.relpath(DOCS/IMAGE,path.parent)
+    image=media_url(os.path.relpath(DOCS/IMAGE,path.parent))
     row=(
         '<article class="post-row"><a class="thumb" href="'+esc.escape(href,quote=True)+'">'
         '<img src="'+esc.escape(image,quote=True)+'" alt="'+esc.escape(d["alts"][0],quote=True)+'" loading="lazy"></a>'
@@ -197,7 +202,7 @@ def update_home():
         c["desk_slugs"][label]=[local_slug(s,"en") if label=="Wildlife & Camping" else s for s in door["slugs"]]
     for key in ("omit_from_latest","omit_from_ticker"):
         c[key]=list(dict.fromkeys(c[key]+[AR,INTL]))
-    c.setdefault("card_image_overrides",{})[AR]={"image":IMAGE,"position":"50% 50%","alt":{lang:DATA[lang]["alts"][0] for lang in ("ar","en","fr")}}
+    c.setdefault("card_image_overrides",{})[AR]={"image":IMAGE,"cache_version":MEDIA_VERSION,"position":"50% 50%","alt":{lang:DATA[lang]["alts"][0] for lang in ("ar","en","fr")}}
     assert (c["ticker_entries"],c["ticker_slugs"])==ticker_before
     save(config,json.dumps(c,ensure_ascii=False,indent=2)+"\n")
 

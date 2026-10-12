@@ -10,7 +10,7 @@ import json
 import os
 import re
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import unquote, urlsplit
 from lxml import html as dom
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,9 +74,11 @@ def collect(page, source_path, home_path):
         elif images:image=images[0].get('src')
         else:continue
         if not image.startswith(('https://','http://')):
-            target=(DOCS/image.lstrip('/') if image.startswith('/') else source_path.parent/unquote(image)).resolve()
+            url=urlsplit(image)
+            clean=unquote(url.path)
+            target=(DOCS/clean.lstrip('/') if clean.startswith('/') else source_path.parent/clean).resolve()
             if not target.is_file(): continue
-            image=os.path.relpath(target,home_path.parent)
+            image=os.path.relpath(target,home_path.parent)+('?'+url.query if url.query else '')
         shown=date[0].text_content().strip() if date else node.get('data-published','')
         found.setdefault(slug,dict(title=title[0].text_content().strip(),date=shown,image=image,alt=images[0].get('alt','') if images else ''))
     return found
@@ -130,6 +132,7 @@ def refresh(path,lang):
         override=c.get('card_image_overrides',{}).get(ar)
         if override:
             item.update(image=os.path.relpath(DOCS/override['image'],path.parent),position=override['position'],alt=override['alt'][lang])
+            if override.get('cache_version'):item['image']+='?v='+override['cache_version']
         if ar in c.get('video_cards',{}):item['video_badge']=c['video_cards'][ar][lang]
         item.pop('href',None)
         return slug,item
