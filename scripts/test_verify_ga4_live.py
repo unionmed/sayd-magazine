@@ -1,0 +1,240 @@
+"""Offline regression tests. The browser's only network route is a local trap proxy."""
+import os
+import faulthandler
+import threading
+import time
+import unittest
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from types import SimpleNamespace
+from unittest.mock import Mock, MagicMock, call
+from playwright.sync_api import sync_playwright
+import verify_ga4_live as verifier
+
+
+class ParserTests(unittest.TestCase):
+    def test_get_and_batched_post(self):
+        request = SimpleNamespace(url='https://region1.google-analytics.com/g/collect?tid=' + verifier.ID,
+                                  post_data='en=page_view\nen=user_engagement')
+        events = verifier.event_info(request)
+        self.assertEqual([x['event'] for x in events], ['page_view', 'user_engagement'])
+        self.assertTrue(verifier.correct_single_page_view(events))
+        self.assertFalse(verifier.correct_single_page_view(events + events))
+        self.assertFalse(verifier.correct_single_page_view([]))
+        self.assertFalse(verifier.correct_single_page_view([{'event': 'page_view', 'measurement_id': verifier.OLD_ID}]))
+
+    def test_only_real_ga4_endpoint_validates(self):
+        for url in ['https://evilgoogle-analytics.com/g/collect',
+                    'https://fixture.invalid/g/collect',
+                    'http://www.google-analytics.com/g/collect',
+                    'https://www.google-analytics.com/collect']:
+            self.assertEqual(verifier.event_info(SimpleNamespace(url=url + '?en=page_view', post_data=None)), [])
+
+    def test_html_redirects_refused_before_following(self):
+        from urllib.error import HTTPError
+        from urllib.request import Request
+        for status in [301, 302, 303, 307, 308]:
+            with self.subTest(status=status), self.assertRaises(HTTPError):
+                verifier.NoRedirects().redirect_request(Request('https://sayd-magazine.com/'), None, status,
+                    'Found', {}, 'https://www.google-analytics.com/g/collect?en=page_view')
+
+    def test_all_telemetry_and_unrecognized_requests_abort(self):
+        for url, method, resource in [
+            ('https://www.google-analytics.com/g/collect?en=page_view&tid=' + verifier.ID, 'GET', 'image'),
+            ('https://region1.google-analytics.com/g/collect?en=page_view&tid=' + verifier.ID, 'POST', 'fetch'),
+            ('https://fixture.invalid/g/collect?en=page_view&tid=' + verifier.ID, 'POST', 'ping'),
+            ('https://unknown.invalid/telemetry', 'GET', 'fetch'),
+            (verifier.GTAG_URL + '&unexpected=1', 'GET', 'script'),
+            (verifier.GTAG_URL, 'POST', 'script'),
+            ('https://www.googletagmanager.com/gtm.js', 'GET', 'script'),
+        ]:
+            with self.subTest(url=url, method=method):
+                ctx = Mock()
+                events, blocked = [], []
+                verifier.isolate_runtime(ctx, 'https://fixture.invalid/', '', events, blocked, 'fixture')
+                ctx.set_offline.assert_called_once_with(True)
+                self.assertEqual(ctx.mock_calls[0], call.set_offline(True))
+                route = Mock()
+                route.request = SimpleNamespace(url=url, method=method, resource_type=resource, post_data=None)
+                ctx.route.call_args.args[1](route)
+                route.abort.assert_called_once()
+                route.fetch.assert_not_called()
+                route.fulfill.assert_not_called()
+                route.continue_.assert_not_called()
+                self.assertEqual(blocked, [url])
+                socket = Mock(url='wss://fixture.invalid/socket')
+                ctx.route_web_socket.call_args.args[1](socket)
+                socket.on_message.assert_called_once()
+                socket.on_message.call_args.args[0]('discarded fixture message')
+                socket.connect_to_server.assert_not_called()
+                socket.send.assert_not_called()
+                self.assertIn(socket.url + '#message-blocked', blocked)
+
+    def test_only_cached_document_and_exact_loader_allowed(self):
+        for url, resource in [('https://fixture.invalid/', 'document'), (verifier.GTAG_URL, 'script')]:
+            ctx = Mock()
+            verifier.isolate_runtime(ctx, 'https://fixture.invalid/', '<html></html>', [], [], loader_body='fixture')
+            route = Mock()
+            route.request = SimpleNamespace(url=url, method='GET', resource_type=resource, post_data=None)
+            ctx.route.call_args.args[1](route)
+            route.fulfill.assert_called_once()
+            route.fetch.assert_not_called()
+            route.continue_.assert_not_called()
+
+    def test_missing_loader_rejected_before_browser_setup(self):
+        for body in [None, '']:
+            ctx = Mock()
+            with self.assertRaisesRegex(ValueError, 'loader is required'):
+                verifier.isolate_runtime(ctx, 'https://fixture.invalid/', '', [], [], body)
+            self.assertEqual(ctx.mock_calls, [])
+
+    def test_fixed_loader_prefetch_fails_closed(self):
+        opener = Mock()
+        response = MagicMock()
+        response.__enter__.return_value = response
+        opener.open.return_value = response
+        response.status = 200
+        response.read.return_value = b'loader-fixture'
+        self.assertEqual(verifier.fetch_gtag_loader(opener), 'loader-fixture')
+        opener.open.assert_called_once()
+        request = opener.open.call_args.args[0]
+        self.assertEqual(request.full_url, verifier.GTAG_URL)
+        self.assertEqual(request.get_method(), 'GET')
+        self.assertEqual(opener.open.call_args.kwargs, {'timeout': 25})
+        response.status = 302
+        with self.assertRaisesRegex(RuntimeError, 'HTTP 200'):
+            verifier.fetch_gtag_loader(opener)
+        response.status = 200
+        response.read.return_value = b''
+        with self.assertRaisesRegex(RuntimeError, 'Empty'):
+            verifier.fetch_gtag_loader(opener)
+
+
+class OfflineBrowserTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        faulthandler.dump_traceback_later(30, repeat=True)
+        print('GA4 fixture: starting local trap proxy', flush=True)
+        cls.network = []
+        network = cls.network
+        class Trap(BaseHTTPRequestHandler):
+            def do_GET(self):
+                network.append((self.command, self.path))
+                self.send_response(200)
+                self.end_headers()
+            do_POST = do_GET
+            do_CONNECT = do_GET
+            def log_message(self, *args):
+                pass
+        cls.server = ThreadingHTTPServer(('127.0.0.1', 0), Trap)
+        cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
+        cls.thread.start()
+        print('GA4 fixture: starting Playwright', flush=True)
+        cls.pw = sync_playwright().start()
+        print('GA4 fixture: launching Chromium through local trap', flush=True)
+        options = {'timeout': 30000, 'proxy': {'server': f'http://127.0.0.1:{cls.server.server_port}', 'bypass': '<-loopback>'}}
+        if os.environ.get('GA4_TEST_CHROMIUM'):
+            options['executable_path'] = os.environ['GA4_TEST_CHROMIUM']
+        cls.browser = cls.pw.chromium.launch(**options)
+        print('GA4 fixture: Chromium ready', flush=True)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.browser.close()
+        cls.pw.stop()
+        cls.server.shutdown()
+        cls.server.server_close()
+        cls.thread.join(timeout=5)
+        faulthandler.cancel_dump_traceback_later()
+
+    def check_fixture(self, measurement_id, count, mobile=False):
+        self.network.clear()
+        options = dict(self.pw.devices['Pixel 7']) if mobile else {}
+        ctx = self.browser.new_context(**options, service_workers='block')
+        events, blocked = [], []
+        html = '<script async src="' + verifier.GTAG_URL + '"></script>'
+        # Exercise actual browser GET, fetch POST, beacon, image, unknown endpoint,
+        # WebSocket and unload traffic, without contacting a production endpoint.
+        loader = '''
+          const base = 'https://region1.google-analytics.com';
+          for (let i=0; i<COUNT; i++) {
+            fetch(base + '/g/collect?tid=MEASUREMENT&en=page_view').catch(()=>{});
+          }
+          fetch(base + '/g/collect?tid=MEASUREMENT', {method:'POST',body:'en=user_engagement\\nen=batch_event'}).catch(()=>{});
+          navigator.sendBeacon(base + '/g/collect?tid=MEASUREMENT', 'en=scroll');
+          new Image().src = base + '/g/collect?tid=MEASUREMENT&en=image_event';
+          fetch(base + '/unknown-telemetry').catch(()=>{});
+          window.socketOpened = false;
+          const socket = new WebSocket('wss://analytics.fixture.invalid/socket');
+          socket.onopen = () => { window.socketOpened = true; socket.send('fixture'); };
+          window.workerAttempted = true;
+          window.workerFinished = false;
+          window.workerRegistered = false;
+          navigator.serviceWorker.register('/worker.js').then(registration => {
+            window.workerRegistered = !!registration; window.workerFinished = true;
+          }).catch(() => { window.workerFinished = true; });
+          addEventListener('pagehide',()=>navigator.sendBeacon(base + '/g/collect?tid=MEASUREMENT&en=unload',''));
+        '''.replace('COUNT', str(count)).replace('MEASUREMENT', measurement_id)
+        verifier.isolate_runtime(ctx, 'https://fixture.invalid/', html, events, blocked, loader_body=loader)
+        page = ctx.new_page()
+        try:
+            page.goto('https://fixture.invalid/', wait_until='load')
+            page.wait_for_function('window.socketOpened && window.workerFinished', timeout=5000)
+            deadline = time.monotonic() + 5
+            while (not {'scroll', 'user_engagement', 'batch_event', 'image_event'}.issubset({e['event'] for e in events}) or
+                   'wss://analytics.fixture.invalid/socket#message-blocked' not in blocked) and time.monotonic() < deadline:
+                page.wait_for_timeout(50)
+            actual = verifier.correct_single_page_view(events)
+            self.assertEqual(len([e for e in events if e['event']=='page_view']), count)
+            self.assertIn('scroll', [e['event'] for e in events])
+            self.assertIn('user_engagement', [e['event'] for e in events])
+            self.assertIn('batch_event', [e['event'] for e in events])
+            self.assertTrue(page.evaluate('window.socketOpened'))
+            self.assertIn('wss://analytics.fixture.invalid/socket', blocked)
+            self.assertIn('wss://analytics.fixture.invalid/socket#message-blocked', blocked)
+            self.assertTrue(page.evaluate('window.workerAttempted'))
+            self.assertFalse(page.evaluate('window.workerRegistered'))
+            self.assertEqual(ctx.service_workers, [])
+            self.assertFalse(any('/worker.js' in url for url in blocked))
+            self.assertIn('image_event', [e['event'] for e in events])
+            self.assertTrue(any('/unknown-telemetry' in url for url in blocked))
+            # Deterministically exercise the lifecycle beacon before teardown;
+            # Chromium can discard a real navigation beacon before routing it.
+            page.evaluate("window.dispatchEvent(new PageTransitionEvent('pagehide'))")
+            deadline = time.monotonic() + 5
+            while not any(e['event'] == 'unload' for e in events) and time.monotonic() < deadline:
+                page.wait_for_timeout(50)
+            self.assertIn('unload', [e['event'] for e in events])
+            # Keep isolation active across actual navigation and context closure.
+            page.goto('about:blank')
+        finally:
+            ctx.close()
+        self.assertEqual(self.network, [], 'A browser request escaped interception into the trap proxy')
+        return actual
+
+    def test_trap_proxy_positive_control(self):
+        self.network.clear()
+        ctx = self.browser.new_context(service_workers='block')
+        try:
+            page = ctx.new_page()
+            page.goto('http://proxy-control.invalid/', wait_until='domcontentloaded')
+            self.assertIn(('GET', 'http://proxy-control.invalid/'), self.network)
+        finally:
+            ctx.close()
+
+    def test_single_correct_desktop_and_mobile(self):
+        for mobile in [False, True]:
+            with self.subTest(mobile=mobile):
+                self.assertTrue(self.check_fixture(verifier.ID, 1, mobile))
+
+    def test_duplicate_rejected(self):
+        self.assertFalse(self.check_fixture(verifier.ID, 2))
+
+    def test_missing_rejected(self):
+        self.assertFalse(self.check_fixture(verifier.ID, 0))
+
+    def test_wrong_id_rejected(self):
+        self.assertFalse(self.check_fixture(verifier.OLD_ID, 1))
+
+
+if __name__ == '__main__':
+    unittest.main()

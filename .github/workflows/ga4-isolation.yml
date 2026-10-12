@@ -1,0 +1,31 @@
+name: Test GA4 network isolation
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/verify_ga4_live.py'
+      - 'scripts/test_verify_ga4_live.py'
+      - '.github/workflows/ga4-isolation.yml'
+      - '.github/workflows/verify-ga4-live.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-isolation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated browser test tools
+        run: |
+          pip install playwright==1.55.0
+          python -m playwright install --with-deps chromium
+      - name: Verify browser isolation using fixtures and a non-forwarding local proxy
+        run: python -m unittest discover -s scripts -p 'test_verify_ga4_live.py' -v
