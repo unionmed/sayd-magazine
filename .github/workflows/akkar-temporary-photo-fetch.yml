@@ -1,83 +1,55 @@
-name: Temporary Akkar source image retrieval
+name: Temporary Akkar editorial build and validation
 on:
   push:
     branches: [publish/akkar-sparrowhawk-20261012]
 permissions:
   contents: write
 jobs:
-  fetch-approved-cabs-image:
+  generate:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 22
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install requests beautifulsoup4 pillow
-      - name: Retrieve event-specific original CABS photo; refuse unrelated images
+      - name: Install editorial renderer dependencies
+        run: pip install lxml==5.3.2
+      - name: Generate Akkar and all three language listings from approved sources
+        run: python scripts/publish_akkar_sparrowhawk_20261012.py
+      - name: Build archive catalog cross-references
         run: |
-          python - <<'PY'
-          import hashlib, io, json, re
-          from pathlib import Path
-          from urllib.parse import urljoin
-          import requests
-          from bs4 import BeautifulSoup
-          from PIL import Image
-          url="https://www.komitee.de/en/"
-          response=requests.get(url,timeout=35,headers={"User-Agent":"Mozilla/5.0 (compatible; SaydMagazineEditorial/1.0)"})
-          response.raise_for_status()
-          soup=BeautifulSoup(response.text,"html.parser")
-          phrase="Security Forces Arrest Bird of Prey Poachers in Lebanon"
-          elements=[i for i in soup.find_all('img') if phrase.lower() in str(i.get('alt','')).lower()]
-          if not elements:
-              print("available alt samples:",[i.get('alt','')[:80] for i in soup.find_all('img')[:35]])
-              raise SystemExit("STOP: event-specific CABS photograph not found by original alt text")
-          assert len(elements)==1,("STOP: ambiguous event images",len(elements))
-          el=elements[0]
-          sources=[]
-          for field in ("data-srcset","srcset"):
-              for entry in el.get(field,"").split(","):
-                  entry=entry.strip()
-                  if not entry:continue
-                  pieces=entry.split()
-                  width=int(pieces[1][:-1]) if len(pieces)>1 and pieces[1].endswith('w') and pieces[1][:-1].isdigit() else 0
-                  sources.append((width,urljoin(url,pieces[0])))
-          for field in ("data-src","src"):
-              if el.get(field):sources.append((0,urljoin(url,el[field])))
-          sources.sort(reverse=True)
-          if not sources:raise SystemExit("STOP: matched image lacks source URL")
-          errors=[]
-          for w,source in sources:
-              try:
-                  out=requests.get(source,timeout=35,headers={"User-Agent":"Mozilla/5.0"})
-                  out.raise_for_status()
-                  raw=out.content
-                  im=Image.open(io.BytesIO(raw));im.verify()
-                  im=Image.open(io.BytesIO(raw))
-                  if im.width < 300 or im.height < 200 or len(raw)<8000:
-                      errors.append((source,"too small",im.size));continue
-                  ext={"JPEG":"jpg","PNG":"png","WEBP":"webp"}.get(im.format)
-                  if not ext:errors.append((source,"unsupported image",im.format));continue
-                  path=Path("docs/media/uploads/2026/10/akkar-cabs-raptor-operation."+ext)
-                  path.parent.mkdir(parents=True,exist_ok=True)
-                  path.write_bytes(raw)
-                  note={"source_site":url,"source_image_url":source,"source_heading":phrase,"original_alt":el.get("alt"),"publisher":"CABS","sha256":hashlib.sha256(raw).hexdigest(),"bytes":len(raw),"width":im.width,"height":im.height,"format":im.format,"rights_basis":"Nayef's authorized Sayd/CABS-MECSHAP editorial cooperation; preserve CABS credit","local_path":str(path),"event":"Akkar bird-of-prey enforcement operation described by CABS"}
-                  target=Path("notes/akkar-cabs-original-photo-20261012.json")
-                  target.write_text(json.dumps(note,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-                  print(json.dumps(note,ensure_ascii=False))
-                  break
-              except Exception as err:errors.append((source,str(err)))
-          else:raise SystemExit("STOP: no usable original image; errors "+str(errors))
-          PY
-      - name: Commit image and provenance to publishing branch only
+          python audit/image-catalog/search_all.py --audit --check-files
+          python audit/image-catalog/build_preliminary_taxonomy.py
+          python audit/image-catalog/link_historical_articles.py
+          python audit/image-catalog/verify_catalog.py
+      - name: Verify protected publication contract and multilingual cards
+        run: |
+          base="$(git merge-base HEAD origin/main)"
+          python scripts/check_publication_contract.py --base "$base"
+          python scripts/test_homepage_doors.py
+      - name: Verify shared tickers and head/analytics/SEO
+        run: |
+          python scripts/test_shared_ticker.py
+          python scripts/test_seo_foundation.py
+          python scripts/test_hreflang_contract.py
+          python scripts/repair_ga4_tracking.py --check
+      - name: Verify media and archive
+        run: |
+          python scripts/test_archive_media_contract.py
+          python scripts/test_archive_access.py
+      - name: Save tested publication result in branch (no main publication yet)
         run: |
           git config user.name "sayd-editorial-bot"
           git config user.email "sayd-editorial-bot@users.noreply.github.com"
-          git add docs/media/uploads/2026/10/akkar-cabs-raptor-operation.* notes/akkar-cabs-original-photo-20261012.json
-          if git diff --staged --quiet; then echo "No changes"; else
-            git commit -m "Archive original CABS Akkar operation photograph with provenance"
-            git push origin HEAD:publish/akkar-sparrowhawk-20261012
+          git add -A
+          git diff --cached --stat | tail -20
+          if git diff --cached --quiet; then
+            echo "No generated changes"; exit 1
           fi
+          git commit -m "Render approved Akkar story to three pages, Updates, hunting and shared ticker"
+          git push origin HEAD:publish/akkar-sparrowhawk-20261012
