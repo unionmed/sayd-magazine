@@ -518,6 +518,25 @@ def test_apply_is_idempotent() -> None:
         assert after == before
 
 
+
+
+def test_breadcrumb_percent_encoded_arabic_urls() -> None:
+    """Encoded category crumbs must resolve to a singly encoded canonical URL."""
+    from tempfile import TemporaryDirectory
+    from urllib.parse import quote
+
+    with TemporaryDirectory() as tmp:
+        docs = Path(tmp)
+        page = docs / "posts" / "example" / "index.html"
+        page.parent.mkdir(parents=True)
+        encoded = quote("صور", safe="")
+        expected = f"https://sayd-magazine.com/category/{encoded}/"
+        for slug in (encoded, "صور"):
+            href = f"../../category/{slug}/index.html"
+            assert seo._resolve_crumb_href(href, page, docs) == expected
+        assert seo._resolve_crumb_href("../../../../elsewhere/index.html", page, docs) is None
+
+
 if __name__ == "__main__":
     test_dates()
     test_recorded_lastmod()
@@ -539,21 +558,5 @@ if __name__ == "__main__":
     test_published_breadcrumbs_have_names()
     test_category_refresh_redirects_are_not_rewritten()
     test_apply_is_idempotent()
+    test_breadcrumb_percent_encoded_arabic_urls()
     print("test_seo_foundation: ok")
-
-
-def test_breadcrumb_percent_encoded_arabic_urls() -> None:
-    """Encoded category crumbs must resolve to a singly encoded canonical URL."""
-    from tempfile import TemporaryDirectory
-    from urllib.parse import quote
-
-    with TemporaryDirectory() as tmp:
-        docs = Path(tmp)
-        page = docs / "posts" / "example" / "index.html"
-        page.parent.mkdir(parents=True)
-        encoded = quote("صور", safe="")
-        expected = f"https://sayd-magazine.com/category/{encoded}/"
-        for slug in (encoded, "صور"):
-            href = f"../../category/{slug}/index.html"
-            assert seo._resolve_crumb_href(href, page, docs) == expected
-        assert seo._resolve_crumb_href("../../../../elsewhere/index.html", page, docs) is None
