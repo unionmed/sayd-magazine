@@ -57,7 +57,7 @@ jobs:
                   raw=out.content
                   im=Image.open(io.BytesIO(raw));im.verify()
                   im=Image.open(io.BytesIO(raw))
-                  if im.width < 400 or im.height < 250 or len(raw)<15000:
+                  if im.width < 300 or im.height < 200 or len(raw)<8000:
                       errors.append((source,"too small",im.size));continue
                   ext={"JPEG":"jpg","PNG":"png","WEBP":"webp"}.get(im.format)
                   if not ext:errors.append((source,"unsupported image",im.format));continue
