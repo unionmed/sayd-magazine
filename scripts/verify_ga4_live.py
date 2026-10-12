@@ -99,8 +99,12 @@ def isolate_runtime(ctx, page_url, html, events, blocked, loader_body=None):
             blocked.append(req.url)
             route.abort()
     ctx.route('**/*', route_request)
-    # WebSocket traffic is also denied; service workers are blocked at creation.
-    ctx.route_web_socket('**/*', lambda websocket: websocket.close())
+    # Routed sockets stay local unless connect_to_server() is called. Never call
+    # it: discard messages locally. Closing synchronously here deadlocks in 1.55.
+    def block_websocket(websocket):
+        blocked.append(websocket.url)
+        websocket.on_message(lambda message: blocked.append(websocket.url + '#message-blocked'))
+    ctx.route_web_socket('**/*', block_websocket)
 
 
 def correct_single_page_view(events):

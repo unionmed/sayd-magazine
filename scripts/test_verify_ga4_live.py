@@ -58,9 +58,13 @@ class ParserTests(unittest.TestCase):
                 route.fulfill.assert_not_called()
                 route.continue_.assert_not_called()
                 self.assertEqual(blocked, [url])
-                socket = Mock()
+                socket = Mock(url='wss://fixture.invalid/socket')
                 ctx.route_web_socket.call_args.args[1](socket)
-                socket.close.assert_called_once()
+                socket.on_message.assert_called_once()
+                socket.on_message.call_args.args[0]('discarded fixture message')
+                socket.connect_to_server.assert_not_called()
+                socket.send.assert_not_called()
+                self.assertIn(socket.url + '#message-blocked', blocked)
 
     def test_only_cached_document_and_exact_loader_allowed(self):
         for url, resource in [('https://fixture.invalid/', 'document'), (verifier.GTAG_URL, 'script')]:
@@ -141,9 +145,9 @@ class OfflineBrowserTests(unittest.TestCase):
           navigator.sendBeacon(base + '/g/collect?tid=MEASUREMENT', 'en=scroll');
           new Image().src = base + '/g/collect?tid=MEASUREMENT&en=image_event';
           fetch(base + '/unknown-telemetry').catch(()=>{});
-          window.socketClosed = false;
+          window.socketOpened = false;
           const socket = new WebSocket('wss://analytics.fixture.invalid/socket');
-          socket.onclose = () => { window.socketClosed = true; };
+          socket.onopen = () => { window.socketOpened = true; socket.send('fixture'); };
           window.workerAttempted = true;
           window.workerFinished = false;
           window.workerRegistered = false;
@@ -156,16 +160,19 @@ class OfflineBrowserTests(unittest.TestCase):
         page = ctx.new_page()
         try:
             page.goto('https://fixture.invalid/', wait_until='load')
-            page.wait_for_function('window.socketClosed && window.workerFinished', timeout=5000)
+            page.wait_for_function('window.socketOpened && window.workerFinished', timeout=5000)
             deadline = time.monotonic() + 5
-            while not {'scroll', 'user_engagement', 'batch_event', 'image_event'}.issubset({e['event'] for e in events}) and time.monotonic() < deadline:
+            while (not {'scroll', 'user_engagement', 'batch_event', 'image_event'}.issubset({e['event'] for e in events}) or
+                   'wss://analytics.fixture.invalid/socket#message-blocked' not in blocked) and time.monotonic() < deadline:
                 page.wait_for_timeout(50)
             actual = verifier.correct_single_page_view(events)
             self.assertEqual(len([e for e in events if e['event']=='page_view']), count)
             self.assertIn('scroll', [e['event'] for e in events])
             self.assertIn('user_engagement', [e['event'] for e in events])
             self.assertIn('batch_event', [e['event'] for e in events])
-            self.assertTrue(page.evaluate('window.socketClosed'))
+            self.assertTrue(page.evaluate('window.socketOpened'))
+            self.assertIn('wss://analytics.fixture.invalid/socket', blocked)
+            self.assertIn('wss://analytics.fixture.invalid/socket#message-blocked', blocked)
             self.assertTrue(page.evaluate('window.workerAttempted'))
             self.assertFalse(page.evaluate('window.workerRegistered'))
             self.assertEqual(ctx.service_workers, [])
