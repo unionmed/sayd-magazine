@@ -1,0 +1,85 @@
+name: Live publication and social release gate
+on:
+  pull_request:
+    paths:
+      - 'scripts/publication_gate.py'
+      - 'scripts/test_publication_gate.py'
+      - '.github/workflows/live-publication-gate.yml'
+      - 'social/queue/**'
+  workflow_dispatch:
+    inputs:
+      article_url:
+        description: Arabic canonical live article URL
+        required: true
+        type: string
+      candidate_commit:
+        description: Full approved site commit SHA (must be merged into main)
+        required: true
+        type: string
+      payload_path:
+        description: Optional approved social/queue JSON path; empty means verify only
+        required: false
+        type: string
+permissions:
+  contents: read
+jobs:
+  test:
+    name: Live publication gate tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - run: python -m unittest discover -s scripts -p test_publication_gate.py -v
+      - name: Verify current published example without distributing
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch origin main
+          python scripts/publication_gate.py --article-url 'https://sayd-magazine.com/posts/تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط/' --candidate-commit "$(git rev-parse origin/main)" --output audit/publication-gate/ci-positive
+      - name: Reject this unmerged PR even if the article already exists
+        if: github.event_name == 'pull_request'
+        env:
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          if python scripts/publication_gate.py --article-url 'https://sayd-magazine.com/posts/تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط/' --candidate-commit "$PR_HEAD" --output audit/publication-gate/ci-negative; then
+            echo 'Unmerged PR incorrectly accepted'; exit 1
+          fi
+          python -c "import json; r=json.load(open('audit/publication-gate/ci-negative/receipt.json')); assert r['article_status']=='BLOCKED' and 'social-before-site' in r['reason']"
+      - name: Validate queued social payloads without sending
+        if: github.event_name == 'pull_request'
+        run: |
+          python - <<'PY'
+          import json, pathlib, subprocess
+          for path in sorted(pathlib.Path('social/queue').glob('*.json')):
+              payload=json.loads(path.read_text())
+              subprocess.run(['python','scripts/publication_gate.py','--article-url',payload['canonical_article_url'],'--candidate-commit',payload['candidate_commit'],'--payload',str(path),'--output','audit/publication-gate/queue/'+path.stem],check=True)
+          PY
+      - name: Verify or release the requested payload
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          ARTICLE_URL: ${{ inputs.article_url }}
+          CANDIDATE: ${{ inputs.candidate_commit }}
+          PAYLOAD: ${{ inputs.payload_path }}
+        run: |
+          git fetch origin main
+          python - <<'PY'
+          import os,pathlib,subprocess
+          args=['python','scripts/publication_gate.py','--article-url',os.environ['ARTICLE_URL'],'--candidate-commit',os.environ['CANDIDATE'],'--output','audit/publication-gate/dispatch']
+          payload=os.environ['PAYLOAD']
+          if payload:
+              p=pathlib.PurePosixPath(payload)
+              if p.parts[:2] != ('social','queue') or '..' in p.parts or p.suffix != '.json':raise ValueError('Use a social/queue/*.json file')
+              args.extend(['--payload',payload])
+          subprocess.run(args,check=True)
+          PY
+      - name: Retain publication proof, including blocked attempts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-proof-${{ github.run_id }}
+          path: audit/publication-gate/
+          retention-days: 90
