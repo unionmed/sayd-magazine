@@ -172970,6 +172970,91 @@
       "library_copy_status": "NOT_CHECKED"
     },
     {
+      "path": "docs/media/uploads/2026/10/cairo-air-rifle-20261012-issf-andrea-caroppo.jpg",
+      "sha": "164785fbcff1116c5ad698666036ba109ce469a2",
+      "size_bytes": 243943,
+      "section_candidates": [
+        "الرماية والعتاد"
+      ],
+      "filename": "cairo-air-rifle-20261012-issf-andrea-caroppo.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/dubai-safari-archive-lions.jpg",
+      "sha": "c477dc1789012f9095c9e8ee35026dab144e7c66",
+      "size_bytes": 782558,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "dubai-safari-archive-lions.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/dubai-safari-archive-macaw.jpg",
+      "sha": "3b34937c76f0a35446b415ac30e3aa66f63672ae",
+      "size_bytes": 532811,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "dubai-safari-archive-macaw.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/dubai-safari-archive-giraffes.jpg",
+      "sha": "cef27955c775cddb49abc4fd5c7eddf62d29ca73",
+      "size_bytes": 541060,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "dubai-safari-archive-giraffes.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg",
+      "sha": "de19e4ea6af441a30e15a325170b8bb50f74d63d",
+      "size_bytes": 422855,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "akkar-injured-sparrowhawk-backpack-apu.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
       "path": "docs/media/brand/sayd-footer-logo.png",
       "sha": "67a202df95fefeaae03fb9641c38f86d1803e810",
       "size_bytes": 5943,
@@ -173243,11 +173328,11 @@
     }
   ],
   "summary": {
-    "total": 10190,
+    "total": 10195,
     "categories_multi_label": {
-      "غير مصنف": 9612,
+      "غير مصنف": 9616,
       "الطيور": 85,
-      "الرماية والعتاد": 137,
+      "الرماية والعتاد": 138,
       "الصيد": 280,
       "البحر": 10,
       "القوانين والأنظمة": 5,
@@ -173256,6 +173341,6 @@
       "شعر وفن": 1,
       "الحياة البرية": 2
     },
-    "unclassified": 9612
+    "unclassified": 9616
   }
 }
