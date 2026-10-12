@@ -50,7 +50,7 @@ jobs:
                 img='../../media/uploads/2026/10/'+image
                 klass='card'
               else:
-                sep='<div class="post-list">'
+                sep=('<div class="home-door-grid">' if lang=='fr' else '<div class="post-list">')
                 href='../../posts/'+article_uri
                 img='../../../media/uploads/2026/10/'+image
                 klass='post-row' if lang=='en' else 'card'
