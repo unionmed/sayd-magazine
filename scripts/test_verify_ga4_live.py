@@ -179,11 +179,15 @@ class OfflineBrowserTests(unittest.TestCase):
             self.assertFalse(any('/worker.js' in url for url in blocked))
             self.assertIn('image_event', [e['event'] for e in events])
             self.assertTrue(any('/unknown-telemetry' in url for url in blocked))
-            page.goto('about:blank')
+            # Deterministically exercise the lifecycle beacon before teardown;
+            # Chromium can discard a real navigation beacon before routing it.
+            page.evaluate("window.dispatchEvent(new PageTransitionEvent('pagehide'))")
             deadline = time.monotonic() + 5
             while not any(e['event'] == 'unload' for e in events) and time.monotonic() < deadline:
                 page.wait_for_timeout(50)
             self.assertIn('unload', [e['event'] for e in events])
+            # Keep isolation active across actual navigation and context closure.
+            page.goto('about:blank')
         finally:
             ctx.close()
         self.assertEqual(self.network, [], 'A browser request escaped interception into the trap proxy')
