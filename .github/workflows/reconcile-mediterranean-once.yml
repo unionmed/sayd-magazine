@@ -1,0 +1,45 @@
+name: Reconcile Mediterranean warning with current main
+on:
+  push:
+    branches: [publish/mediterranean-european-warning-20261012]
+    paths: [.github/workflows/reconcile-mediterranean-once.yml]
+permissions:
+  contents: write
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - name: Merge up-to-date main, preserving latest fixes on overlaps
+        run: |
+          git config user.name "Sayd editorial automation"
+          git config user.email "unionmedia.sarl@gmail.com"
+          git fetch origin main
+          git merge -X theirs --no-commit --no-ff origin/main
+      - name: Regenerate sitewide shared ticker and search metadata
+        run: |
+          python scripts/refresh_homepage_doors.py
+          python scripts/seo_foundation.py
+          python scripts/sync_tickers.py
+          python scripts/short_links.py
+      - name: Publication safeguards
+        run: |
+          python scripts/check_publication_contract.py --base origin/main
+          python scripts/test_homepage_doors.py
+          python scripts/test_shared_ticker.py
+          python scripts/test_seo_foundation.py
+          python scripts/test_hreflang_contract.py
+      - name: Commit reconciled package and remove temporary workflow
+        run: |
+          git rm .github/workflows/reconcile-mediterranean-once.yml
+          git add -A
+          git commit -m "Synchronize European warning with latest main and pass all publication gates"
+          git push origin HEAD:publish/mediterranean-european-warning-20261012
