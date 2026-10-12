@@ -246,7 +246,7 @@ def main():
         h=html.parse(str(p))
         assert h.xpath('//head/link[@rel="canonical"]/@href')==[public(lang)]
         assert len(h.xpath('//head/link[@hreflang]'))==4,(lang,h.xpath('//head/link[@hreflang]/@hreflang'))
-        assert "sparrowhawk" in h.text_content().lower() if lang=="en" else True
+        assert "sparrowhawk" in h.getroot().text_content().lower() if lang=="en" else True
     print("AKKAR APPROVED ARTICLE GENERATED: 3 mirrors, category/archives, 8 Updates, all-page tickers, SEO, sitemap, media manifest.")
 
 if __name__=="__main__":
