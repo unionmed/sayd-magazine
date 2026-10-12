@@ -38,5 +38,7 @@ jobs:
           python scripts/test_hreflang_contract.py
       - name: Check generated GA4 once per canonical page
         run: python scripts/repair_ga4_tracking.py --check
-      - name: Verify live AR EN FR HTML and debug pageviews
+      - name: Test fail-closed analytics isolation offline
+        run: python -m unittest discover -s scripts -p "test_verify_ga4_live.py"
+      - name: Verify live AR EN FR HTML and intercepted pageviews (no analytics sent)
         run: python scripts/verify_ga4_live.py
