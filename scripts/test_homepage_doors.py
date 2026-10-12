@@ -44,7 +44,12 @@ def test_homepages():
         finally:p.write_text(original)
     # A displaced recent hunting story enters its door, replacing the oldest card.
     from homepage_hunting_rotation import select, candidates, expected
-    c=config();current=expected(c);recent='سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف'
+    c=config();current=expected(c)
+    # Pick a published hunting story currently in Updates. A hard-coded 2026
+    # fixture falls out of the rolling eight slots after legitimate publication.
+    eligible={slug for slug,_ in candidates()}
+    recent=next((slug for slug in c['latest'] if slug in eligible and c['primary_door'].get(slug)=='hunting'),None)
+    assert recent is not None,'No hunting story in Updates for demotion regression'
     moved=deepcopy(c);moved['latest'].remove(recent)
     # The displaced story must be the newest in this fixture. New publications
     # can legitimately be newer than the historical BirdLife article.
