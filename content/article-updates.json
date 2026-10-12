@@ -15,6 +15,30 @@
         "en": "egypt-new-hunting-rules-burullus-autumn-migration",
         "fr": "egypt-new-hunting-rules-burullus-autumn-migration"
       }
+    },
+    {
+      "updated": "2026-10-12",
+      "slugs": {
+        "ar": "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
+        "en": "northern-bekaa-38280-square-metres-bird-nets-apu-cabs",
+        "fr": "northern-bekaa-38280-square-metres-bird-nets-apu-cabs"
+      }
+    },
+    {
+      "updated": "2026-10-12",
+      "slugs": {
+        "ar": "طائر-الوروار-الأوروبي",
+        "en": "european-bee-eater",
+        "fr": "european-bee-eater"
+      }
+    },
+    {
+      "updated": "2026-10-12",
+      "slugs": {
+        "ar": "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+        "en": "skies-losing-balance-birdlife-flyways-report",
+        "fr": "skies-losing-balance-birdlife-flyways-report"
+      }
     }
   ]
 }
