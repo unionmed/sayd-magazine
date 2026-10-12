@@ -3,12 +3,12 @@
   "source": "unionmed/sayd-magazine repository only",
   "articles_scanned": 733,
   "articles_with_github_image_references": 33,
-  "image_references_unique_per_article": 90,
-  "exact_links": 90,
+  "image_references_unique_per_article": 91,
+  "exact_links": 91,
   "unique_basename_not_verified": 0,
   "ambiguous_basename": 0,
   "not_found": 0,
-  "catalog_images_with_exact_article_link": 86,
+  "catalog_images_with_exact_article_link": 87,
   "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
   "exact": [
     {
@@ -282,6 +282,17 @@
       "expected_local_path": "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح.md",
+      "article_title": "باشق مخبّأ في حقيبة ظهر… توقيف شخصين في عملية لمكافحة صيد الجوارح بعكار",
+      "source_reference": "../../media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"

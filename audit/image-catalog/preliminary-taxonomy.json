@@ -173038,6 +173038,23 @@
       "library_copy_status": "NOT_CHECKED"
     },
     {
+      "path": "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg",
+      "sha": "de19e4ea6af441a30e15a325170b8bb50f74d63d",
+      "size_bytes": 422855,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "akkar-injured-sparrowhawk-backpack-apu.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
       "path": "docs/media/brand/sayd-footer-logo.png",
       "sha": "67a202df95fefeaae03fb9641c38f86d1803e810",
       "size_bytes": 5943,
@@ -173311,9 +173328,9 @@
     }
   ],
   "summary": {
-    "total": 10194,
+    "total": 10195,
     "categories_multi_label": {
-      "غير مصنف": 9615,
+      "غير مصنف": 9616,
       "الطيور": 85,
       "الرماية والعتاد": 138,
       "الصيد": 280,
@@ -173324,6 +173341,6 @@
       "شعر وفن": 1,
       "الحياة البرية": 2
     },
-    "unclassified": 9615
+    "unclassified": 9616
   }
 }
