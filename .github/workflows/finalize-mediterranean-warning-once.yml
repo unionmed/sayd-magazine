@@ -1,0 +1,38 @@
+name: Finalize one authorized Mediterranean warning
+on:
+  push:
+    branches:
+      - publish/mediterranean-european-warning-20261012
+    paths:
+      - .github/workflows/finalize-mediterranean-warning-once.yml
+permissions:
+  contents: write
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - name: Download approved media, complete three mirrors, synchronize ticker
+        run: python scripts/finalize_mediterranean_warning_20261012.py
+      - name: Check shared ticker and published metadata
+        run: |
+          python scripts/test_shared_ticker.py
+          python scripts/test_seo_foundation.py
+          python scripts/test_homepage_doors.py
+      - name: Commit generated publication package to this PR only
+        run: |
+          git config user.name "Sayd editorial automation"
+          git config user.email "unionmedia.sarl@gmail.com"
+          git add docs content scripts
+          git rm .github/workflows/finalize-mediterranean-warning-once.yml
+          git diff --cached --quiet && exit 0
+          git commit -m "Complete Mediterranean warning with local photos, AR EN FR and shared tickers"
+          git push origin HEAD:publish/mediterranean-european-warning-20261012
