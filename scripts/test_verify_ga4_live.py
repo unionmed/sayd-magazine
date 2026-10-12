@@ -50,6 +50,7 @@ class ParserTests(unittest.TestCase):
                 ctx = Mock()
                 events, blocked = [], []
                 verifier.isolate_runtime(ctx, 'https://fixture.invalid/', '', events, blocked)
+                ctx.set_offline.assert_called_once_with(True)
                 route = Mock()
                 route.request = SimpleNamespace(url=url, method=method, resource_type=resource, post_data=None)
                 ctx.route.call_args.args[1](route)
@@ -192,6 +193,16 @@ class OfflineBrowserTests(unittest.TestCase):
             ctx.close()
         self.assertEqual(self.network, [], 'A browser request escaped interception into the trap proxy')
         return actual
+
+    def test_offline_browser_still_allows_separate_api_fetch(self):
+        self.network.clear()
+        ctx = self.browser.new_context(service_workers='block', offline=True)
+        try:
+            response = ctx.request.get('http://proxy-control.invalid/')
+            self.assertEqual(response.status, 200)
+            self.assertIn(('GET', 'http://proxy-control.invalid/'), self.network)
+        finally:
+            ctx.close()
 
     def test_trap_proxy_positive_control(self):
         self.network.clear()

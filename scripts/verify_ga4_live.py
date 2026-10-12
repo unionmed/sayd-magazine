@@ -70,11 +70,15 @@ def event_info(request):
 
 
 def isolate_runtime(ctx, page_url, html, events, blocked, loader_body=None):
-    """Fail closed: cached document + exact gtag loader; everything else aborts.
+    """Fail closed: offline browser + cached document + exact gtag loader.
 
     loader_body is an offline test fixture. No browser request is continued.
     Only route.fetch of the fixed loader is permitted, with redirects disabled.
     """
+    # Routing alone can miss keepalive/beacon traffic during context teardown.
+    # Disable browser transport too; route.fetch uses the separate API client.
+    ctx.set_offline(True)
+
     def route_request(route):
         req = route.request
         parsed_events = event_info(req)
