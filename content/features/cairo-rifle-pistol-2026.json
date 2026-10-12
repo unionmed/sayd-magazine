@@ -1,44 +1,176 @@
 {
   "ar": {
-    "title": "القاهرة تستعد لكأس العالم للبندقية والمسدس",
-    "deck": "مشاركة عربية في محطة استعداد مهمة قبل بطولة العالم في الدوحة وانطلاق التأهل لأولمبياد لوس أنجلوس.",
+    "title": "كأس العالم للرماية في القاهرة: ذهب لبريفراتسكي وتيه شيو يي",
+    "deck": "نتائج 12 تشرين الأول: التشيكي يتصدر بندقية الهواء للرجال، والسنغافورية تفوز بمسدس 25 مترًا للسيدات، والمنافسات تتواصل حتى 15 تشرين الأول.",
     "date": "3 تشرين الأول 2026",
     "door": "رماية وعتاد",
-    "caption": "منافسات المسدس الهوائي في عُمان — صورة أرشيفية من 2025.",
-    "credit": "المصدر: وكالة الأنباء العُمانية",
+    "caption": "منافسات بندقية الهواء للرجال في كأس العالم للرماية بالقاهرة، 12 تشرين الأول 2026.",
+    "credit": "المصدر: ISSF",
     "p": [
-      "تستضيف المدينة الأولمبية الدولية في القاهرة كأس العالم للرماية بالبندقية والمسدس من 8 إلى 16 تشرين الأول 2026، وتُقام المنافسات من 10 إلى 15 منه.",
-      "وتشهد البطولة مشاركة عربية تضم 21 راميًا ورامية من مصر، و11 من سلطنة عُمان، وستة من كلٍّ من السعودية وقطر، وراميتين من اليمن. ويتنافس المشاركون في مسابقات بندقية ومسدس الهواء، والبندقية بثلاث وضعيات، والمسدس الرياضي وسريع الرمي، إلى جانب الفرق المختلطة.",
-      "وتتيح محطة القاهرة للرماة اختبار جاهزيتهم قبل بطولة العالم في الدوحة، من 1 إلى 14 تشرين الثاني، حيث يبدأ توزيع مقاعد التأهل لأولمبياد لوس أنجلوس 2028. ولا تُمنح مقاعد أولمبية في بطولة القاهرة.",
-      "وتستضيف المدينة نفسها بطولة العالم لبندقية 300 متر من 15 إلى 20 تشرين الأول."
-    ]
+      "أحرز التشيكي ييري بريفراتسكي والسنغافورية تيه شيو يي ذهبيتي منافسات الاثنين 12 تشرين الأول 2026 في كأس العالم للرماية بالبندقية والمسدس، المقامة في المدينة الأولمبية الدولية بمصر، في القاهرة، ضمن برنامج يمتد من 8 إلى 16 تشرين الأول.",
+      "في نهائي بندقية الهواء لمسافة 10 أمتار للرجال، جمع بريفراتسكي 251.3 نقطة، متقدمًا بفارق 1.1 نقطة على السويدي ماركوس مادسن، صاحب الفضية برصيد 250.2 نقطة. ونال الفرنسي ديميتري دوتيندا البرونزية بـ229.9 نقطة، وفق نتائج الاتحاد الدولي للرماية.",
+      "وفي نهائي المسدس لمسافة 25 مترًا للسيدات، حسمت تيه شيو يي اللقب بـ38 إصابة، أمام الفرنسية إيلويز فوريه التي سجلت 37 إصابة، فيما أحرزت البلغارية ميروسلافا مينتشيفا البرونزية بـ32 إصابة.",
+      "وتجمع البطولة، بحسب الاتحاد الدولي، 385 راميًا ورامية من 51 دولة. وتضم قائمة المشاركين النهائية أسماء من مصر وسلطنة عُمان والسعودية وقطر وليبيا واليمن، ضمن برنامج يشمل مسابقات بندقية ومسدس الهواء، والبندقية بثلاث وضعيات، والمسدس الرياضي وسريع الرمي، والفرق المختلطة.",
+      "بدأت المنافسات في 10 تشرين الأول وتستمر حتى 15 منه. ويتضمن برنامج الثلاثاء 13 تشرين الأول نهائي البندقية لمسافة 50 مترًا بثلاث وضعيات للسيدات، قبل استكمال بقية النهائيات في اليومين التاليين.",
+      "وتبقى القاهرة محطة استعداد قبل بطولة العالم في الدوحة، من 1 إلى 14 تشرين الثاني، حيث يبدأ توزيع مقاعد التأهل لأولمبياد لوس أنجلوس 2028. ولا تُمنح مقاعد أولمبية في كأس العالم بالقاهرة. وتستضيف المدينة نفسها بطولة العالم لبندقية 300 متر من 15 إلى 20 تشرين الأول."
+    ],
+    "headings": {
+      "1": "ذهبية بندقية الهواء للتشيك",
+      "2": "سنغافورة تحسم مسدس السيدات",
+      "3": "مشاركة عربية ومحطة قبل الدوحة"
+    },
+    "sources_label": "المصادر",
+    "sources": [
+      {
+        "label": "نتائج بندقية الهواء للرجال",
+        "url": "https://www.issf-sports.org/news/5264"
+      },
+      {
+        "label": "نتائج مسدس السيدات",
+        "url": "https://www.issf-sports.org/news/5263"
+      },
+      {
+        "label": "البرنامج الرسمي",
+        "url": "https://www.issf-sports.org/competitions/3289/schedule"
+      },
+      {
+        "label": "قائمة المشاركين",
+        "url": "https://www.issf-sports.org/competitions/3289/information"
+      },
+      {
+        "label": "القاهرة والاستعداد للدوحة",
+        "url": "https://www.issf-sports.org/news/5188"
+      }
+    ],
+    "image": "media/uploads/2026/10/cairo-air-rifle-20261012-issf-andrea-caroppo.jpg",
+    "image_source": "https://www.issf-sports.org/news/5264",
+    "previous_titles": [
+      "القاهرة تستعد لكأس العالم للبندقية والمسدس"
+    ],
+    "previous_decks": [
+      "مشاركة عربية في محطة استعداد مهمة قبل بطولة العالم في الدوحة وانطلاق التأهل لأولمبياد لوس أنجلوس."
+    ],
+    "previous_images": [
+      "oman-air-pistol-2025-ona.jpg",
+      "chateauroux-air-rifle-2024-kulani-lakanaria-dvids.jpg"
+    ],
+    "image_width": 1200,
+    "image_height": 800
   },
   "en": {
-    "title": "Cairo prepares for the Rifle and Pistol World Cup",
-    "deck": "Arab athletes prepare for the Doha World Championships and the start of qualification for the Los Angeles Olympics.",
+    "title": "Cairo Shooting World Cup: gold for Privratsky and Teh Xiu Yi",
+    "deck": "12 October results: the Czech wins men’s air rifle and the Singaporean takes women’s 25m pistol gold, with competition continuing until 15 October.",
     "date": "3 October 2026",
     "door": "Shooting & Gear",
-    "caption": "Air pistol competition in Oman — archive photograph from 2025.",
-    "credit": "Source: Oman News Agency",
+    "caption": "Men’s air-rifle competition at the Cairo Shooting World Cup, 12 October 2026.",
+    "credit": "Source: ISSF",
     "p": [
-      "Egypt International Olympic City in Cairo will host the ISSF Rifle and Pistol World Cup from 8 to 16 October 2026, with competition running from 10 to 15 October.",
-      "The Arab contingent includes 21 athletes from Egypt, 11 from Oman, six each from Saudi Arabia and Qatar, and two women from Yemen. The programme features air rifle and air pistol, three-position rifle, sport pistol and rapid-fire pistol, as well as mixed-team events.",
-      "Cairo offers athletes a chance to test their readiness ahead of the World Championships in Doha, from 1 to 14 November, where the first shooting quota places for the Los Angeles 2028 Olympics will be awarded. No Olympic quota places will be awarded in Cairo.",
-      "The city will also host the 300m Rifle World Championship from 15 to 20 October."
-    ]
+      "Czechia’s Jiri Privratsky and Singapore’s Teh Xiu Yi won Monday’s two titles on 12 October 2026 at the ISSF Rifle and Pistol World Cup at Egypt International Olympic City in Cairo. The event runs from 8 to 16 October.",
+      "In the men’s 10m air rifle final, Privratsky scored 251.3 points to finish 1.1 ahead of Sweden’s Marcus Madsen, who took silver with 250.2. France’s Dimitri Dutendas earned bronze with 229.9, according to the International Shooting Sport Federation.",
+      "In the women’s 25m pistol final, Teh Xiu Yi secured gold with 38 hits, ahead of France’s Heloise Fourre on 37. Bulgaria’s Miroslava Mincheva claimed bronze with 32 hits.",
+      "The competition brings together 385 athletes from 51 countries, according to the ISSF. The final entry list includes athletes from Egypt, Oman, Saudi Arabia, Qatar, Libya and Yemen. The programme covers air rifle and air pistol, three-position rifle, sport pistol, rapid-fire pistol and mixed-team events.",
+      "Competition began on 10 October and continues until 15 October. Tuesday’s programme, on 13 October, includes the women’s 50m rifle three positions final, with the remaining finals taking place over the following two days.",
+      "Cairo remains a preparation stop before the World Championships in Doha, from 1 to 14 November, where the first shooting quota places for the Los Angeles 2028 Olympics will be awarded. No Olympic quota places are awarded at the Cairo World Cup. The city will also host the 300m Rifle World Championship from 15 to 20 October."
+    ],
+    "headings": {
+      "1": "Men’s air rifle gold for Czechia",
+      "2": "Singapore wins the women’s pistol title",
+      "3": "Arab participation ahead of Doha"
+    },
+    "sources_label": "Sources",
+    "sources": [
+      {
+        "label": "Men’s air rifle results",
+        "url": "https://www.issf-sports.org/news/5264"
+      },
+      {
+        "label": "Women’s pistol results",
+        "url": "https://www.issf-sports.org/news/5263"
+      },
+      {
+        "label": "Official schedule",
+        "url": "https://www.issf-sports.org/competitions/3289/schedule"
+      },
+      {
+        "label": "Entry list",
+        "url": "https://www.issf-sports.org/competitions/3289/information"
+      },
+      {
+        "label": "Cairo and the build-up to Doha",
+        "url": "https://www.issf-sports.org/news/5188"
+      }
+    ],
+    "image": "media/uploads/2026/10/cairo-air-rifle-20261012-issf-andrea-caroppo.jpg",
+    "image_source": "https://www.issf-sports.org/news/5264",
+    "previous_titles": [
+      "Cairo prepares for the Rifle and Pistol World Cup"
+    ],
+    "previous_decks": [
+      "Arab athletes prepare for the Doha World Championships and the start of qualification for the Los Angeles Olympics."
+    ],
+    "previous_images": [
+      "oman-air-pistol-2025-ona.jpg",
+      "chateauroux-air-rifle-2024-kulani-lakanaria-dvids.jpg"
+    ],
+    "image_width": 1200,
+    "image_height": 800
   },
   "fr": {
-    "title": "Le Caire se prépare à la Coupe du monde de carabine et de pistolet",
-    "deck": "Les tireurs arabes préparent les Championnats du monde de Doha et le début des qualifications pour les Jeux de Los Angeles.",
+    "title": "Coupe du monde de tir au Caire : l’or pour Privratsky et Teh Xiu Yi",
+    "deck": "Résultats du 12 octobre : le Tchèque remporte la carabine à air comprimé, la Singapourienne le pistolet à 25 m. Les épreuves se poursuivent jusqu’au 15 octobre.",
     "date": "3 octobre 2026",
     "door": "Tir et équipement",
-    "caption": "Compétition de pistolet à air comprimé à Oman — photographie d’archives de 2025.",
-    "credit": "Source : Agence de presse omanaise",
+    "caption": "Épreuve masculine de carabine à air comprimé à la Coupe du monde de tir au Caire, le 12 octobre 2026.",
+    "credit": "Source : ISSF",
     "p": [
-      "La Cité olympique internationale d’Égypte, au Caire, accueillera la Coupe du monde ISSF de carabine et de pistolet du 8 au 16 octobre 2026. Les compétitions se dérouleront du 10 au 15 octobre.",
-      "La participation arabe comprend 21 athlètes d’Égypte, 11 d’Oman, six d’Arabie saoudite et six du Qatar, ainsi que deux tireuses du Yémen. Le programme réunit la carabine et le pistolet à air comprimé, la carabine trois positions, le pistolet sportif et le pistolet vitesse, ainsi que les épreuves par équipes mixtes.",
-      "Cette étape permettra aux tireurs d’évaluer leur préparation avant les Championnats du monde de Doha, du 1er au 14 novembre, où seront attribués les premiers quotas olympiques de tir pour Los Angeles 2028. Aucun quota olympique ne sera attribué au Caire.",
-      "La ville accueillera également les Championnats du monde de carabine à 300 mètres du 15 au 20 octobre."
-    ]
+      "Le Tchèque Jiri Privratsky et la Singapourienne Teh Xiu Yi ont remporté les deux titres en jeu lundi 12 octobre 2026 à la Coupe du monde ISSF de carabine et de pistolet, organisée à la Cité olympique internationale d’Égypte, au Caire. La manifestation se déroule du 8 au 16 octobre.",
+      "En finale de la carabine à air comprimé à 10 m hommes, Privratsky a totalisé 251,3 points, soit 1,1 point de plus que le Suédois Marcus Madsen, médaillé d’argent avec 250,2 points. Le Français Dimitri Dutendas a décroché le bronze avec 229,9 points, selon la Fédération internationale de tir sportif.",
+      "En finale du pistolet à 25 m femmes, Teh Xiu Yi s’est imposée avec 38 touches, devant la Française Heloise Fourre, qui en a inscrit 37. La Bulgare Miroslava Mincheva a remporté le bronze avec 32 touches.",
+      "La compétition rassemble 385 athlètes de 51 pays, selon l’ISSF. La liste définitive des engagés comprend des tireurs d’Égypte, d’Oman, d’Arabie saoudite, du Qatar, de Libye et du Yémen. Le programme réunit la carabine et le pistolet à air comprimé, la carabine trois positions, le pistolet sportif, le pistolet vitesse et les épreuves par équipes mixtes.",
+      "Les épreuves ont commencé le 10 octobre et se poursuivent jusqu’au 15 octobre. Le programme du mardi 13 octobre comprend la finale de la carabine à 50 m trois positions femmes, avant les dernières finales prévues au cours des deux jours suivants.",
+      "Le Caire reste une étape de préparation avant les Championnats du monde de Doha, du 1er au 14 novembre, où seront attribués les premiers quotas de tir pour les Jeux olympiques de Los Angeles 2028. Aucun quota olympique n’est attribué lors de la Coupe du monde du Caire. La ville accueillera également les Championnats du monde de carabine à 300 m du 15 au 20 octobre."
+    ],
+    "headings": {
+      "1": "L’or à la carabine pour la Tchéquie",
+      "2": "Singapour remporte le pistolet féminin",
+      "3": "Une participation arabe avant Doha"
+    },
+    "sources_label": "Sources",
+    "sources": [
+      {
+        "label": "Résultats de la carabine hommes",
+        "url": "https://www.issf-sports.org/news/5264"
+      },
+      {
+        "label": "Résultats du pistolet femmes",
+        "url": "https://www.issf-sports.org/news/5263"
+      },
+      {
+        "label": "Programme officiel",
+        "url": "https://www.issf-sports.org/competitions/3289/schedule"
+      },
+      {
+        "label": "Liste des engagés",
+        "url": "https://www.issf-sports.org/competitions/3289/information"
+      },
+      {
+        "label": "Le Caire avant Doha",
+        "url": "https://www.issf-sports.org/news/5188"
+      }
+    ],
+    "image": "media/uploads/2026/10/cairo-air-rifle-20261012-issf-andrea-caroppo.jpg",
+    "image_source": "https://www.issf-sports.org/news/5264",
+    "previous_titles": [
+      "Le Caire se prépare à la Coupe du monde de carabine et de pistolet"
+    ],
+    "previous_decks": [
+      "Les tireurs arabes préparent les Championnats du monde de Doha et le début des qualifications pour les Jeux de Los Angeles."
+    ],
+    "previous_images": [
+      "oman-air-pistol-2025-ona.jpg",
+      "chateauroux-air-rifle-2024-kulani-lakanaria-dvids.jpg"
+    ],
+    "image_width": 1200,
+    "image_height": 800
   }
 }
