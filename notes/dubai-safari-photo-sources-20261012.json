@@ -1,0 +1,66 @@
+{
+  "verified_on": "2026-10-12",
+  "location": "Dubai Safari Park, Al Warqa 5, Dubai, UAE",
+  "rights_source": "https://dubaisafari.ae/media-center/",
+  "rights_statement": "Download high-resolution images and videos of our park zones and wildlife for editorial use.",
+  "rights_scope": "Official media assets permitted for editorial coverage of Dubai Safari Park; not public domain, resale or general commercial use.",
+  "rights_receipt_library_file_id": "libfile_85edd89c91b08191b6143c46b6122d87",
+  "editorial_notes": [
+    "Archive-first search and original download documented in the Library rights receipt.",
+    "All three photographs were visually inspected before implementation.",
+    "These archive photos do not document the 12 October 2026 opening day.",
+    "One source credit appears at the end of each language; captions describe the image."
+  ],
+  "article_slugs": {
+    "ar": "دبي-سفاري-الموسم-الثامن-2026",
+    "en": "dubai-safari-park-eighth-season-2026",
+    "fr": "dubai-safari-park-eighth-season-2026"
+  },
+  "images": [
+    {
+      "local_path": "docs/media/uploads/2026/10/dubai-safari-archive-lions.jpg",
+      "bytes": 782558,
+      "sha256": "41c2fad832c0a01bf740b6aef5e683294fc4c487026a491bfa26347c33a6bbca",
+      "dimensions": [
+        2000,
+        1125
+      ],
+      "source_archive": "https://dubaisafari.ae/wp-content/uploads/2026/03/Explorer-Village.zip",
+      "archive_member": "Explorer Village/Explorer Safari Tour/1.jpg",
+      "original_library_file_id": "libfile_66bdfcaa5bfc8191a3637c10b54f30bd",
+      "web_derivative_library_file_id": "libfile_cc8a5ac2f1ec81919fb94589285b7e24",
+      "capture_time": null,
+      "capture_note": "Capture date is not established; XMP creation/modification values are not capture dates."
+    },
+    {
+      "local_path": "docs/media/uploads/2026/10/dubai-safari-archive-macaw.jpg",
+      "bytes": 532811,
+      "sha256": "aeaa3a001ea7f20ada32b52fde87dc5f8bf0af5bdb4936f9f7962444ca958588",
+      "dimensions": [
+        2000,
+        1333
+      ],
+      "source_archive": "https://dubaisafari.ae/wp-content/uploads/2026/03/African-Village.zip",
+      "archive_member": "African Village/3.jpg",
+      "original_library_file_id": "libfile_0af608b6e8e48191913ef37468402a02",
+      "web_derivative_library_file_id": "libfile_f7c64248d2188191a2daf13e68984d34",
+      "capture_time": "2024-06-20T07:03:34+05:00",
+      "capture_note": "EXIF time retained as recorded; not evidence of opening day."
+    },
+    {
+      "local_path": "docs/media/uploads/2026/10/dubai-safari-archive-giraffes.jpg",
+      "bytes": 541060,
+      "sha256": "32409f6a8fb5dcc84200a84d481b5307d96126c10197abad04f117cd1a90a92e",
+      "dimensions": [
+        2000,
+        1125
+      ],
+      "source_archive": "https://dubaisafari.ae/wp-content/uploads/2026/03/Explorer-Village.zip",
+      "archive_member": "Explorer Village/Explorer Safari Tour/2.jpg",
+      "original_library_file_id": "libfile_29e57b2442988191bf89dbf45c93f0b9",
+      "web_derivative_library_file_id": "libfile_7a8026472ff081918c4d576f6385d06d",
+      "capture_time": null,
+      "capture_note": "Capture date is not established; XMP creation/modification values are not capture dates."
+    }
+  ]
+}

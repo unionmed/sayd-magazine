@@ -1,14 +1,14 @@
 {
   "schema": "sayd-github-article-media-crossref-v3",
   "source": "unionmed/sayd-magazine repository only",
-  "articles_scanned": 732,
-  "articles_with_github_image_references": 32,
-  "image_references_unique_per_article": 87,
-  "exact_links": 87,
+  "articles_scanned": 733,
+  "articles_with_github_image_references": 33,
+  "image_references_unique_per_article": 90,
+  "exact_links": 90,
   "unique_basename_not_verified": 0,
   "ambiguous_basename": 0,
   "not_found": 0,
-  "catalog_images_with_exact_article_link": 83,
+  "catalog_images_with_exact_article_link": 86,
   "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
   "exact": [
     {
@@ -469,6 +469,39 @@
       "expected_local_path": "docs/media/uploads/2026/09/lebanon-hunter-shotgun-ridge.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/09/lebanon-hunter-shotgun-ridge.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/دبي-سفاري-الموسم-الثامن-2026.md",
+      "article_title": "دبي سفاري تفتح موسمها الثامن بين رحلات البرية وعروض الطيور",
+      "source_reference": "../../media/uploads/2026/10/dubai-safari-archive-giraffes.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/dubai-safari-archive-giraffes.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/dubai-safari-archive-giraffes.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/دبي-سفاري-الموسم-الثامن-2026.md",
+      "article_title": "دبي سفاري تفتح موسمها الثامن بين رحلات البرية وعروض الطيور",
+      "source_reference": "media/uploads/2026/10/dubai-safari-archive-lions.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/dubai-safari-archive-lions.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/dubai-safari-archive-lions.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/دبي-سفاري-الموسم-الثامن-2026.md",
+      "article_title": "دبي سفاري تفتح موسمها الثامن بين رحلات البرية وعروض الطيور",
+      "source_reference": "../../media/uploads/2026/10/dubai-safari-archive-macaw.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/dubai-safari-archive-macaw.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/dubai-safari-archive-macaw.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
