@@ -48,6 +48,10 @@ class GateTests(unittest.TestCase):
         self.assertEqual(r['social']['status'],'READY_NOT_SENT')
         self.assertEqual(r['independent_review']['status'],'NOT_AVAILABLE')
         self.assertEqual(set(r['mirrors']),{'ar','en','fr'})
+    def test_production_side_slot_name(self):
+        for key,value in list(self.source.data.items()):self.source.data[key]=value.replace(b'hero-side',b'feature-side')
+        for key,value in list(self.live.items()):self.live[key]=value.replace(b'hero-side',b'feature-side')
+        self.assertEqual(self.run_gate()['mirrors']['ar']['placement'][0]['slot'],'side')
     def test_draft_not_in_published_inventory(self):
         del self.source.data[g.source_path(self.mirrors['ar'])]
         with self.assertRaisesRegex(g.Blocked,'Missing published'): self.run_gate()

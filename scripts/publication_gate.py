@@ -114,14 +114,16 @@ def placements(doc, base, target):
             continue
         ancestors = list(a.iterancestors())
         slot = 'other'
-        for cls, label in [('latest-col','latest'),('hero-side','side'),('hero-main','lead'),
+        for cls, label in [('latest-col','latest'),('feature-side','side'),('feature-lead','lead'),('hero-side','side'),('hero-main','lead'),
                            ('home-section','door'),('memory-strip','memory')]:
             if any(cls in e.get('class','').split() for e in ancestors):
                 slot = label
                 break
         section = next((e for e in ancestors if e.tag == 'section'), None)
-        headings = section.xpath('.//h2') if section is not None else []
-        result.append({'slot':slot, 'section':text(headings[0]) if headings else '', 'label':text(a)})
+        headings = section.xpath('.//h2') if section is not None and slot in ('door','memory') else []
+        card = next((e for e in ancestors if e.tag == 'article' or e.tag == 'li'), None)
+        position = len(card.xpath('preceding-sibling::'+card.tag))+1 if card is not None else None
+        result.append({'slot':slot, 'position':position,'section':text(headings[0]) if headings else '', 'label':text(a)})
     return result
 
 def verify(source, article_url, payload=None, review=None, get=fetch):
