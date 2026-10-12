@@ -568,7 +568,7 @@ def _resolve_image(src: str, page: Path, docs: Path) -> str | None:
         return None
     if not local.is_file():
         return None
-    return ORIGIN + "/" + quote(posix, safe="/")
+    return ORIGIN + "/" + quote(posix, safe="/") + ("?" + src.split("?", 1)[1].split("#", 1)[0] if "?" in src else "")
 
 
 def _first_local_image(blob: str, page: Path, docs: Path) -> str | None:

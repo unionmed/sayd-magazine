@@ -487,7 +487,7 @@
     {
       "article_file": "content/posts/دبي-سفاري-الموسم-الثامن-2026.md",
       "article_title": "دبي سفاري تفتح موسمها الثامن بين رحلات البرية وعروض الطيور",
-      "source_reference": "../../media/uploads/2026/10/dubai-safari-archive-giraffes.jpg",
+      "source_reference": "../../media/uploads/2026/10/dubai-safari-archive-giraffes.jpg?v=20261012",
       "expected_local_path": "docs/media/uploads/2026/10/dubai-safari-archive-giraffes.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/dubai-safari-archive-giraffes.jpg"
@@ -498,7 +498,7 @@
     {
       "article_file": "content/posts/دبي-سفاري-الموسم-الثامن-2026.md",
       "article_title": "دبي سفاري تفتح موسمها الثامن بين رحلات البرية وعروض الطيور",
-      "source_reference": "media/uploads/2026/10/dubai-safari-archive-lions.jpg",
+      "source_reference": "media/uploads/2026/10/dubai-safari-archive-lions.jpg?v=20261012",
       "expected_local_path": "docs/media/uploads/2026/10/dubai-safari-archive-lions.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/dubai-safari-archive-lions.jpg"
@@ -509,7 +509,7 @@
     {
       "article_file": "content/posts/دبي-سفاري-الموسم-الثامن-2026.md",
       "article_title": "دبي سفاري تفتح موسمها الثامن بين رحلات البرية وعروض الطيور",
-      "source_reference": "../../media/uploads/2026/10/dubai-safari-archive-macaw.jpg",
+      "source_reference": "../../media/uploads/2026/10/dubai-safari-archive-macaw.jpg?v=20261012",
       "expected_local_path": "docs/media/uploads/2026/10/dubai-safari-archive-macaw.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/dubai-safari-archive-macaw.jpg"

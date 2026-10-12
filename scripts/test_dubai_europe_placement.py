@@ -5,9 +5,9 @@ import hashlib
 import json
 import subprocess
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import unquote, urlsplit
 from lxml import html
-from publish_dubai_safari_20261012 import ROOT, DOCS, DATA, AR, INTL, EU, IMAGES, public, main as generate
+from publish_dubai_safari_20261012 import ROOT, DOCS, DATA, AR, INTL, EU, IMAGES, media_url, public, main as generate
 from refresh_homepage_doors import local_slug
 
 
@@ -45,8 +45,8 @@ def main():
         images=body.xpath('.//img')
         assert len(images)==3
         for image,expected in zip(images,IMAGES):
-            assert image.get('src').endswith(expected) and not image.get('src').startswith('http')
-            assert (p.parent/image.get('src')).resolve().is_file()
+            assert image.get('src').endswith(media_url(expected)) and not image.get('src').startswith('http')
+            assert (p.parent/urlsplit(image.get('src')).path).resolve().is_file()
             assert image.get('alt')
         assert body.text_content().count(DATA[lang]['photo_credit'])==1
         assert t.xpath('//link[@rel="canonical"]/@href')==[public(lang)]
