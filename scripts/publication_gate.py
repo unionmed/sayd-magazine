@@ -157,6 +157,8 @@ def verify(source, article_url, payload=None, review=None, get=fetch):
         images = expected.xpath('//meta[@property="og:image"]/@content')
         require(len(images) == 1, 'Missing article image: ' + lang)
         image = normal(images[0]); all_images.add(image)
+        live_images = actual.xpath('//meta[@property="og:image"]/@content')
+        require(len(live_images) == 1 and normal(live_images[0]) == image, 'Live social-preview image mismatch: '+lang)
         for i in actual.xpath('//main//img[@src]'):
             all_images.add(absolute(target,i.get('src')))
         for l in ('ar','en','fr'):
@@ -217,7 +219,8 @@ def verify(source, article_url, payload=None, review=None, get=fetch):
                     'Live short URL redirect missing/wrong')
         else:
             require(link_target == url, 'Social URL not in published article inventory')
-        require(link in payload.get('text',''), 'Social payload lacks the article reading link')
+        urls = [token.rstrip('.,;!?)،؛]') for token in re.findall(r'https://[^\s<>"\x27]+',payload.get('text',''))]
+        require(link in urls, 'Social payload lacks the exact article reading link')
         require(payload.get('article_title') == result['ar']['title'], 'Social article-title mismatch')
         require(normal(payload.get('article_image','')) == result['ar']['image'], 'Social article-image mismatch')
         social = {'status':'READY_NOT_SENT','url':None,'platform':payload['platform'],

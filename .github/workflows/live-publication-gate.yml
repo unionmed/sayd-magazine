@@ -1,5 +1,11 @@
 name: Live publication and social release gate
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/posts/**'
+      - 'scripts/publication_gate.py'
+      - '.github/workflows/live-publication-gate.yml'
   pull_request:
     paths:
       - 'scripts/publication_gate.py'
@@ -49,6 +55,24 @@ jobs:
             echo 'Unmerged PR incorrectly accepted'; exit 1
           fi
           python -c "import json; r=json.load(open('audit/publication-gate/ci-negative/receipt.json')); assert r['article_status']=='BLOCKED' and 'social-before-site' in r['reason']"
+      - name: Generate live receipts for changed Arabic articles after main publication
+        if: github.event_name == 'push'
+        env:
+          BEFORE: ${{ github.event.before }}
+          PUBLISHED_SHA: ${{ github.sha }}
+        run: |
+          git fetch origin main
+          python - <<'PY'
+          import os,pathlib,subprocess,hashlib
+          before=os.environ['BEFORE']; sha=os.environ['PUBLISHED_SHA']
+          files=subprocess.check_output(['git','diff','--name-only','--diff-filter=AM',before,sha,'--','content/posts'],text=True).splitlines()
+          for filename in files:
+              path=pathlib.PurePosixPath(filename)
+              if path.suffix != '.md':continue
+              url='https://sayd-magazine.com/posts/'+path.stem+'/'
+              output='audit/publication-gate/auto/'+hashlib.sha256(url.encode()).hexdigest()[:12]
+              subprocess.run(['python','scripts/publication_gate.py','--article-url',url,'--candidate-commit',sha,'--output',output],check=True)
+          PY
       - name: Validate queued social payloads without sending
         if: github.event_name == 'pull_request'
         run: |
@@ -83,3 +107,11 @@ jobs:
           name: publication-proof-${{ github.run_id }}
           path: audit/publication-gate/
           retention-days: 90
+      - name: Print machine-readable receipt previews
+        if: always()
+        run: |
+          python - <<'PY'
+          import pathlib,json
+          for path in sorted(pathlib.Path('audit/publication-gate').rglob('receipt.json')):
+              print('PUBLICATION_RECEIPT '+json.dumps(json.loads(path.read_text()),ensure_ascii=False))
+          PY

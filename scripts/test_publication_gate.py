@@ -77,6 +77,12 @@ class GateTests(unittest.TestCase):
     def test_image_changed(self):
         self.live[g.ORIGIN+'/media/story.jpg']=b'wrong'
         with self.assertRaisesRegex(g.Blocked,'image'): self.run_gate()
+    def test_live_og_image_changed(self):
+        u=self.mirrors['ar']; self.live[u]=self.live[u].replace(b'content="https://sayd-magazine.com/media/story.jpg"',b'content="https://sayd-magazine.com/media/wrong.jpg"')
+        with self.assertRaisesRegex(g.Blocked,'preview image'):self.run_gate()
+    def test_reading_link_prefix_is_not_a_link(self):
+        self.payload['text']='Read '+self.payload['article_url']+'unpublished-draft/'
+        with self.assertRaisesRegex(g.Blocked,'exact article reading link'):self.run_gate()
     def test_payload_missing_link(self):
         self.payload['text']='News published'
         with self.assertRaisesRegex(g.Blocked,'lacks'): self.run_gate()
