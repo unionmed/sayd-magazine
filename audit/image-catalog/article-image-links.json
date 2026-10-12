@@ -1,14 +1,14 @@
 {
   "schema": "sayd-github-article-media-crossref-v3",
   "source": "unionmed/sayd-magazine repository only",
-  "articles_scanned": 729,
-  "articles_with_github_image_references": 29,
-  "image_references_unique_per_article": 81,
-  "exact_links": 81,
+  "articles_scanned": 732,
+  "articles_with_github_image_references": 32,
+  "image_references_unique_per_article": 87,
+  "exact_links": 87,
   "unique_basename_not_verified": 0,
   "ambiguous_basename": 0,
   "not_found": 0,
-  "catalog_images_with_exact_article_link": 77,
+  "catalog_images_with_exact_article_link": 83,
   "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
   "exact": [
     {
@@ -51,6 +51,39 @@
       "expected_local_path": "docs/media/uploads/2026/10/lamb-zgharta-white-storks.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/lamb-zgharta-white-storks.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/ألكسندرا-cabs-الصيد-غير-القانوني.md",
+      "article_title": "ألكسندرا من CABS: معركتنا ضد الصيد غير القانوني",
+      "source_reference": "../../media/uploads/2026/10/cabs-alexandra-austria-portrait-03.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-austria-portrait-03.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cabs-alexandra-austria-portrait-03.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/ألكسندرا-cabs-الصيد-غير-القانوني.md",
+      "article_title": "ألكسندرا من CABS: معركتنا ضد الصيد غير القانوني",
+      "source_reference": "media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/ألكسندرا-cabs-الصيد-غير-القانوني.md",
+      "article_title": "ألكسندرا من CABS: معركتنا ضد الصيد غير القانوني",
+      "source_reference": "../../media/uploads/2026/10/cabs-alexandra-lebanon-camera-02.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-camera-02.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cabs-alexandra-lebanon-camera-02.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -238,6 +271,39 @@
       "expected_local_path": "docs/media/uploads/2026/09/european-turtle-dove-algeria-mourad-harzallah.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/09/european-turtle-dove-algeria-mourad-harzallah.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح.md",
+      "article_title": "باشق مخبّأ في حقيبة ظهر… توقيف شخصين في عملية لمكافحة صيد الجوارح بعكار",
+      "source_reference": "media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط.md",
+      "article_title": "تحذير أوروبي: 11 إلى 36 مليون طائر يُقتل أو يُؤسر سنويًا في المتوسط",
+      "source_reference": "media/uploads/2026/10/bekaa-illegal-nets-adonis-20261001-archive.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-illegal-nets-adonis-20261001-archive.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-illegal-nets-adonis-20261001-archive.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط.md",
+      "article_title": "تحذير أوروبي: 11 إلى 36 مليون طائر يُقتل أو يُؤسر سنويًا في المتوسط",
+      "source_reference": "../../media/uploads/2026/10/egyptian-vulture-charles-j-sharp-wikimedia.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/egyptian-vulture-charles-j-sharp-wikimedia.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/egyptian-vulture-charles-j-sharp-wikimedia.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"

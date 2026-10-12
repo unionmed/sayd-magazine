@@ -172868,6 +172868,108 @@
       "library_copy_status": "NOT_CHECKED"
     },
     {
+      "path": "docs/media/uploads/2026/10/cabs-alexandra-austria-portrait-03.jpg",
+      "sha": "7639e9d3f41893cd185e7e9c34b631c0d5c2a845",
+      "size_bytes": 175374,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "cabs-alexandra-austria-portrait-03.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "sha": "bf6c0b8182c314dfe28772b7f7d617414499a195",
+      "size_bytes": 141373,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "cabs-alexandra-lebanon-binoculars-01.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-camera-02.jpg",
+      "sha": "565723696bfee37656199e709b87846a797d65fc",
+      "size_bytes": 395126,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "cabs-alexandra-lebanon-camera-02.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/bekaa-illegal-nets-adonis-20261001-archive.jpg",
+      "sha": "051c23b820742e29e0b3b7b04e64ef17f70454ff",
+      "size_bytes": 495149,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "bekaa-illegal-nets-adonis-20261001-archive.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/egyptian-vulture-charles-j-sharp-wikimedia.jpg",
+      "sha": "aaee30a407c7d0863a4301251a35320230c7932e",
+      "size_bytes": 20345,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "egyptian-vulture-charles-j-sharp-wikimedia.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "sha": "15512c95371b59ab3ff3bb33586ed54803222760",
+      "size_bytes": 24949,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "akkar-cabs-raptor-operation.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
       "path": "docs/media/brand/sayd-footer-logo.png",
       "sha": "67a202df95fefeaae03fb9641c38f86d1803e810",
       "size_bytes": 5943,
@@ -173141,9 +173243,9 @@
     }
   ],
   "summary": {
-    "total": 10184,
+    "total": 10190,
     "categories_multi_label": {
-      "غير مصنف": 9606,
+      "غير مصنف": 9612,
       "الطيور": 85,
       "الرماية والعتاد": 137,
       "الصيد": 280,
@@ -173154,6 +173256,6 @@
       "شعر وفن": 1,
       "الحياة البرية": 2
     },
-    "unclassified": 9606
+    "unclassified": 9612
   }
 }

@@ -7,14 +7,14 @@
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة"
   ],
   "latest": [
+    "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
     "أسلحة-الصيد-في-معرض-الرياض-2026",
     "رادار-صيد-العربي-سبتمبر-2026",
     "خريف-الصيد-العربي-2026",
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
     "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
-    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-    "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
+    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -137,9 +137,9 @@
   "desk_slugs": {
     "صيد": [
       "ألكسندرا-cabs-الصيد-غير-القانوني",
+      "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
       "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-      "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-      "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات"
+      "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
     ],
     "رماية وعتاد": [
       "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
@@ -161,9 +161,9 @@
     ],
     "Hunting": [
       "alexandra-cabs-illegal-hunting-interview",
+      "skies-losing-balance-birdlife-flyways-report",
       "how-migration-routes-lost-seven-birds-in-150-years",
-      "south-lebanon-environmental-destruction-bird-flyway",
-      "egypt-new-hunting-rules-burullus-autumn-migration"
+      "south-lebanon-environmental-destruction-bird-flyway"
     ],
     "Shooting & Gear": [
       "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
@@ -241,14 +241,14 @@
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة"
     ],
     "latest": [
+      "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
       "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
       "أسلحة-الصيد-في-معرض-الرياض-2026",
       "رادار-صيد-العربي-سبتمبر-2026",
       "خريف-الصيد-العربي-2026",
       "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
       "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
-      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-      "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
+      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
     ]
   },
   "ia_door_sections": [
@@ -256,9 +256,9 @@
       "door": "hunting",
       "slugs": [
         "ألكسندرا-cabs-الصيد-غير-القانوني",
+        "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
         "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-        "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات"
+        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
       ]
     },
     {
@@ -369,7 +369,8 @@
     "ختام-الملواح-2026-60-فائزا": "hunting",
     "طيور-خربة-سلم-بعدسة-جمانة-ماجد": "photos",
     "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا": "wildlife",
-    "ألكسندرا-cabs-الصيد-غير-القانوني": "hunting"
+    "ألكسندرا-cabs-الصيد-غير-القانوني": "hunting",
+    "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح": "hunting"
   },
   "demotion": "Nayef authorized the Al-Melwah finale on 10 October 2026 with the existing photograph, replacing the prior Saudi exhibition report in the side-card block and ticker. Prior article stays in category/archive and is excluded from homepage recycling. Current main lead and other stories remain; side cards keep publication-date order.",
   "approved_home_repeats": [
@@ -391,6 +392,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
     "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
@@ -523,11 +525,28 @@
         "en": "Alexandra using binoculars against a mountainous landscape in Lebanon.",
         "fr": "Alexandra utilise des jumelles devant un paysage montagneux au Liban."
       }
+    },
+    "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح": {
+      "image": "media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "position": "center center",
+      "alt": {
+        "ar": "صورة من تقرير CABS عن عملية مكافحة صيد الطيور الجارحة في عكار",
+        "en": "Image published by CABS alongside its report on the Akkar anti-poaching operation",
+        "fr": "Image publiée par CABS avec son compte rendu de l’opération dans l’Akkar"
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
+      "titles": {
+        "ar": "عكار: باشق داخل حقيبة ظهر خلال عملية لمكافحة صيد الجوارح",
+        "en": "Akkar: Sparrowhawk found inside backpack during raptor anti-poaching operation",
+        "fr": "Akkar : un épervier découvert dans un sac à dos lors d’une opération anti-braconnage"
+      }
+    },
     {
       "slug": "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
       "titles": {
