@@ -108,6 +108,14 @@ class GateTests(unittest.TestCase):
                 self.assertEqual(g.main(),1)
             self.assertFalse((out/'released-payload.json').exists())
             self.assertEqual(json.loads((out/'receipt.json').read_text())['article_status'],'BLOCKED')
+    def test_probe_validates_without_release(self):
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'payload.json';p.write_text(json.dumps(self.payload))
+            with patch.object(g,'GitSource',return_value=self.source),patch.object(g,'verify',return_value=self.run_gate()),patch('sys.argv',[
+                'gate','--article-url',self.mirrors['ar'],'--candidate-commit','b'*40,'--payload',str(p),'--probe','--output',d]):
+                self.assertEqual(g.main(),0)
+            self.assertFalse((Path(d)/'released-payload.json').exists())
+            self.assertEqual(json.loads((Path(d)/'receipt.json').read_text())['social']['status'],'VALIDATION_ONLY_NOT_SENT')
     def test_real_git_draft_ancestry(self):
         with tempfile.TemporaryDirectory() as d:
             def git(*args): return subprocess.check_output(['git','-C',d,*args],stderr=subprocess.DEVNULL)

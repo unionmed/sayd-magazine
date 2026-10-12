@@ -177,10 +177,12 @@ def verify(source, article_url, payload=None, review=None, get=fetch):
         ticker = tickers(home_source,home)
         require(ticker == tickers(home_live,home) == tickers(actual,target), 'Stale internal ticker: '+lang)
         # Internal category and Updates listing are independently checked against main.
-        cats = expected.xpath('//div[@class="breadcrumb"]//a/@href')
+        cats = expected.xpath('//div[@class="breadcrumb"]//a/@href | //header[contains(@class,"article-header")]//a[contains(@class,"badge")]/@href')
         category = [absolute(target,c) for c in cats if '/category/' in absolute(target,c)]
         require(category, 'Article category missing: ' + lang)
-        for listing in [category[0], home+'articles/']:
+        latest_links = home_source.xpath('//div[contains(@class,"latest-col")]//div[contains(@class,"section-head")]/a/@href')
+        latest_url = absolute(home,latest_links[0]) if latest_links else home+'articles/'
+        for listing in [category[0], latest_url]:
             ls = document(source.read(source_path(listing)))
             la = document(live(listing))
             require(main_signature(ls,listing) == main_signature(la,listing), 'Live category/Updates mismatch: '+listing)
@@ -241,6 +243,7 @@ def main():
     parser.add_argument('--article-url',required=True)
     parser.add_argument('--candidate-commit',required=True)
     parser.add_argument('--payload',type=Path)
+    parser.add_argument('--probe',action='store_true',help='Validate payload only; never create a release')
     parser.add_argument('--review',type=Path)
     parser.add_argument('--output',type=Path,required=True)
     args = parser.parse_args()
@@ -254,8 +257,10 @@ def main():
         payload = json.loads(args.payload.read_text()) if args.payload else None
         review = json.loads(args.review.read_text()) if args.review else None
         proof = verify(source,args.article_url,payload,review)
+        if args.probe and payload is not None:
+            proof['social']['status'] = 'VALIDATION_ONLY_NOT_SENT'
         receipt.write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')
-        if payload is not None:
+        if payload is not None and not args.probe:
             release.write_text(json.dumps({'receipt':proof,'payload':payload},ensure_ascii=False,indent=2)+'\n')
         print('PUBLISHED verified; '+proof['social']['status'])
         return 0

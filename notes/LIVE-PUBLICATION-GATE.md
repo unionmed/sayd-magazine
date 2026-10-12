@@ -64,6 +64,12 @@ European article without releasing any social payload, and rejects the PR
 head as an unmerged candidate. Queue changes are validated using the same
 code. Verification and blocked receipts are retained as Actions artifacts.
 Manual workflow execution supports verify-only and explicit payload release.
+Pushes to main also generate receipts for changed Arabic article sources. A
+push can precede Pages deployment: a BLOCKED receipt must be rerun after the
+live site updates; it never grants release while awaiting deployment.
+`--probe` validates a payload and records `VALIDATION_ONLY_NOT_SENT` without
+creating a release. CI uses this mode for the existing European article and
+short link; it never hands that probe to any provider.
 The existing European post and repaired links are never modified or resent.
 
 The current distribution service is a ChatGPT merge-event automation using

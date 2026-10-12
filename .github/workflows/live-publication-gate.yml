@@ -45,7 +45,19 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           git fetch origin main
-          python scripts/publication_gate.py --article-url 'https://sayd-magazine.com/posts/تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط/' --candidate-commit "$(git rev-parse origin/main)" --output audit/publication-gate/ci-positive
+          python - <<'PY'
+          import sys,json,pathlib,subprocess
+          sys.path.insert(0,'scripts')
+          import publication_gate as g
+          source=g.GitSource(subprocess.check_output(['git','rev-parse','origin/main'],text=True).strip())
+          url='https://sayd-magazine.com/posts/تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط/'
+          doc=g.document(source.read(g.source_path(url)))
+          short=json.loads(source.read('docs/s/links.json'))[url[len(g.ORIGIN):]]
+          payload={'platform':'facebook','article_url':g.ORIGIN+short,'text':'Validation probe '+g.ORIGIN+short,'article_title':g.text(doc.xpath('//main//h1')[0]),'article_image':doc.xpath('//meta[@property="og:image"]/@content')[0]}
+          pathlib.Path('/tmp/sayd-gate-probe.json').write_text(json.dumps(payload,ensure_ascii=False))
+          subprocess.run(['python','scripts/publication_gate.py','--article-url',url,'--candidate-commit',source.sha,'--payload','/tmp/sayd-gate-probe.json','--probe','--output','audit/publication-gate/ci-positive'],check=True)
+          assert not pathlib.Path('audit/publication-gate/ci-positive/released-payload.json').exists()
+          PY
       - name: Reject this unmerged PR even if the article already exists
         if: github.event_name == 'pull_request'
         env:
