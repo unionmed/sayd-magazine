@@ -729,7 +729,9 @@ def _resolve_crumb_href(href: str, page: Path, docs: Path) -> str | None:
         return href or None
     if not href:
         return None
-    local = (page.parent / href).resolve()
+    # The HTML may use percent-encoded Arabic slugs. Decode before Path
+    # resolution so public_url() does not encode '%' again as '%25'.
+    local = (page.parent / unquote(href)).resolve()
     try:
         rel = local.relative_to(docs.resolve())
     except ValueError:
