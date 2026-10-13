@@ -1,4 +1,13 @@
 /* Phone: two columns. Desktop: four when available, two for a two-card door. */
+/* Memory retains its full-width cards after moving below Wildlife & Camping. */
+@media (width > 1040px) {
+  .home-layout > .home-main > .memory-strip {
+    width: calc(100% + 280px + 0.85rem);
+    position: relative;
+    z-index: 1; /* Keep links above the sidebar's empty stretched grid area. */
+  }
+}
+
 .home-section .home-door-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
