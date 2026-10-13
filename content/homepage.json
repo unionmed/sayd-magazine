@@ -2,20 +2,20 @@
   "memory_after_door": "wildlife",
   "featured": [
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
+    "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
     "ختام-الملواح-2026-60-فائزا",
-    "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
-    "حين-يتغير-الساحل-أين-تستريح-الطيور"
+    "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs"
   ],
   "latest": [
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
+    "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "أسلحة-الصيد-في-معرض-الرياض-2026",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
     "رادار-صيد-العربي-سبتمبر-2026",
     "خريف-الصيد-العربي-2026",
     "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
-    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
+    "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -107,7 +107,9 @@
     "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا",
     "wings-reclaim-sky-tamara-el-zein-zgharta",
     "دبي-سفاري-الموسم-الثامن-2026",
-    "dubai-safari-park-eighth-season-2026"
+    "dubai-safari-park-eighth-season-2026",
+    "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
+    "hunting-masculinity-dead-birds"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -240,20 +242,20 @@
   "ia_slots": {
     "main": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
     "important": [
+      "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
       "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
       "ختام-الملواح-2026-60-فائزا",
-      "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
-      "حين-يتغير-الساحل-أين-تستريح-الطيور"
+      "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs"
     ],
     "latest": [
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
+      "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "أسلحة-الصيد-في-معرض-الرياض-2026",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
       "رادار-صيد-العربي-سبتمبر-2026",
       "خريف-الصيد-العربي-2026",
       "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
-      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
+      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة"
     ]
   },
   "ia_door_sections": [
@@ -376,7 +378,8 @@
     "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا": "wildlife",
     "ألكسندرا-cabs-الصيد-غير-القانوني": "hunting",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح": "hunting",
-    "دبي-سفاري-الموسم-الثامن-2026": "wildlife"
+    "دبي-سفاري-الموسم-الثامن-2026": "wildlife",
+    "الصيد-الذكوري-الرجولة-بين-جثث-الطيور": "hunting"
   },
   "demotion": "Nayef authorized the Al-Melwah finale on 10 October 2026 with the existing photograph, replacing the prior Saudi exhibition report in the side-card block and ticker. Prior article stays in category/archive and is excluded from homepage recycling. Current main lead and other stories remain; side cards keep publication-date order.",
   "approved_home_repeats": [
@@ -549,6 +552,16 @@
         "ar": "ثلاثة أسود قرب مسار جولة سفاري المستكشف في دبي سفاري بارك، في صورة أرشيفية.",
         "en": "Three lions beside the Explorer Safari route at Dubai Safari Park, in an archive photograph.",
         "fr": "Trois lions près du parcours Explorer Safari à Dubai Safari Park, sur une photographie d’archives."
+      }
+    },
+    "الصيد-الذكوري-الرجولة-بين-جثث-الطيور": {
+      "image": "media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg",
+      "position": "center center",
+      "fit": "contain",
+      "alt": {
+        "ar": "أدونيس الخطيب، رئيس التحرير، خلال نشاط ميداني لمكافحة الصيد الجائر في لبنان.",
+        "en": "Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon.",
+        "fr": "Adonis Alkhateeb, rédacteur en chef, lors d’une activité de terrain de lutte contre le braconnage au Liban."
       }
     }
   },

@@ -87,7 +87,11 @@ def render_card(slug, item, stack=False):
     esc=lambda s:html.escape(s,quote=True)
     href=item.get('href',f'posts/{slug}/index.html')
     badge=f'<span class="video-badge" style="font-size:12px;color:#3e421d">{esc(item["video_badge"])}</span>' if item.get('video_badge') else ''
-    position=f' style="object-position:{esc(item["position"])}"' if item.get('position') else ''
+    style = (["object-position:" + item["position"]] if item.get("position") else [])
+    if item.get("fit"):
+        assert item["fit"] in {"contain", "cover"}
+        style.append("object-fit:" + item["fit"])
+    position = f' style="{esc(";".join(style))}"' if style else ""
     return (f'<article class="card{" card-stack" if stack else ""}"><a class="thumb" href="{href}">'
             f'<img src="{esc(item["image"])}" alt="{esc(item["alt"] or item["title"])}" loading="lazy"{position}></a>'
             f'<div class="body">{badge}<h3><a href="{href}">{esc(item["title"])}</a></h3>'
@@ -148,6 +152,7 @@ def refresh(path,lang):
         override=c.get('card_image_overrides',{}).get(ar)
         if override:
             item.update(image=os.path.relpath(DOCS/override['image'],path.parent),position=override['position'],alt=override['alt'][lang])
+            if override.get('fit'):item['fit']=override['fit']
             if override.get('cache_version'):item['image']+='?v='+override['cache_version']
         if ar in c.get('video_cards',{}):item['video_badge']=c['video_cards'][ar][lang]
         item.pop('href',None)
