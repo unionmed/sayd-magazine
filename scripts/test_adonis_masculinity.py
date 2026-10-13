@@ -25,6 +25,8 @@ for lang in ('ar','en','fr'):
  assert 'رئيس التحرير' in cls(t,'article-header')[0].text_content() if lang=='ar' else 'Adonis Alkhateeb' in cls(t,'article-header')[0].text_content()
  photo=body.xpath('./figure/img')[0];assert (page.parent/photo.get('src')).resolve()==(D/IMAGE).resolve()
  assert photo.get('width')=='1241' and photo.get('height')=='1536' and 'height:auto' in photo.get('style')
+ assert body.xpath('./figure')[0].get('style')=='width:100%;margin:18px 0 24px;'
+ assert photo.get('style')=='display:block;width:100%;height:auto;'
  assert ''.join(body.xpath('./figure/figcaption')[0].text_content().split())==''.join(DATA[lang]['photo_caption'].split())
  assert not any(x in body.text_content() for x in ['Worked for','J الآخرين','معاينة للمراجعة'])
  schemas=[json.loads(s.text) for s in t.xpath('//script[@type="application/ld+json"]')]
@@ -39,7 +41,11 @@ for lang in ('ar','en','fr'):
  home=D/pref/'index.html';ht=html.parse(str(home));old=html.fromstring(subprocess.check_output(['git','show','30cd24d:'+home.relative_to(R).as_posix()],cwd=R,text=True))
  assert [html.tostring(n) for n in cls(ht,'ticker')]==[html.tostring(n) for n in cls(old,'ticker')]
  card=cls(ht,'feature-stack')[0].xpath('./article')[0]
- assert slug in unquote(card.xpath('.//a/@href')[0]) and 'object-fit:contain' in card.xpath('.//img/@style')[0]
+ assert slug in unquote(card.xpath('.//a/@href')[0])
+ assert 'object-fit:cover' in card.xpath('.//img/@style')[0]
+ assert 'object-position:center 10%' in card.xpath('.//img/@style')[0]
+ assert c['card_image_overrides'][AR]['fit']=='cover'
+ assert c['card_image_overrides'][AR]['position']=='center 10%'
  key='/'+page.relative_to(D).parent.as_posix()+'/'
  assert key in links and (D/links[key].strip('/')/'index.html').is_file()
  assert 'G-C3C0CEYX8Q' in page.read_text()

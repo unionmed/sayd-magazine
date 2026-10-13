@@ -61,8 +61,8 @@ def related(lang):
 def body(lang):
     d=DATA[lang]
     prefix="../../" if lang=="ar" else "../../../"
-    b=['<figure style="max-width:460px;margin:18px auto 24px;">',
-       '<img src="'+prefix+IMAGE+'" width="1241" height="1536" alt="'+esc.escape(d["hero_alt"],quote=True)+'" decoding="async" style="display:block;width:100%;height:auto;object-fit:contain">',
+    b=['<figure style="width:100%;margin:18px 0 24px;">',
+       '<img src="'+prefix+IMAGE+'" width="1241" height="1536" alt="'+esc.escape(d["hero_alt"],quote=True)+'" decoding="async" style="display:block;width:100%;height:auto;">',
        '<figcaption>'+esc.escape(d["photo_caption"])+ '</figcaption></figure>']
     b.extend('<p>'+esc.escape(paragraph)+'</p>' for paragraph in d["paragraphs"])
     return "\n".join(b)
@@ -199,7 +199,7 @@ def update_home():
     c["primary_door"][AR]="hunting"
     for slug in (AR,INTL):
         if slug not in c["omit_from_ticker"]:c["omit_from_ticker"].append(slug)
-    c.setdefault("card_image_overrides",{})[AR]={"image":IMAGE,"position":"center center","fit":"contain","alt":{lang:DATA[lang]["hero_alt"] for lang in ("ar","en","fr")}}
+    c.setdefault("card_image_overrides",{})[AR]={"image":IMAGE,"position":"center 10%","fit":"cover","alt":{lang:DATA[lang]["hero_alt"] for lang in ("ar","en","fr")}}
     assert before_ticker=={k:c[k] for k in before_ticker}
     assert c["ia_slots"]["main"]==old[0]
     save(config,json.dumps(c,ensure_ascii=False,indent=2)+"\n")

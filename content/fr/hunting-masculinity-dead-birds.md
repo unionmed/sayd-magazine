@@ -8,8 +8,8 @@ featured: media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg
 subtitle: "Le chasseur professionnel se reconnaît à son expérience, à sa conduite et à son respect de la nature. Il connaît bien sa valeur et n’a pas besoin d’exhiber des cadavres d’oiseaux pour convaincre les autres de son habileté."
 ---
 
-<figure style="max-width:460px;margin:18px auto 24px;">
-<img src="../../../media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg" width="1241" height="1536" alt="Adonis Alkhateeb, rédacteur en chef, lors d’une activité de terrain de lutte contre le braconnage au Liban." decoding="async" style="display:block;width:100%;height:auto;object-fit:contain">
+<figure style="width:100%;margin:18px 0 24px;">
+<img src="../../../media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg" width="1241" height="1536" alt="Adonis Alkhateeb, rédacteur en chef, lors d’une activité de terrain de lutte contre le braconnage au Liban." decoding="async" style="display:block;width:100%;height:auto;">
 <figcaption>Adonis Alkhateeb, rédacteur en chef, lors d’une activité de terrain de lutte contre le braconnage au Liban, en octobre 2026.</figcaption></figure>
 <p>Parmi les scènes les plus étranges que l’on voit sur les réseaux sociaux figurent ces photos de personnes posant fièrement devant des dizaines d’oiseaux morts, alignés sur des voitures ou étalés à même le sol, fusil en main et mine triomphante, comme si elles revenaient d’une bataille historique où elles avaient remporté une grande victoire !</p>
 <p>Plus cocasse encore, certains utilisent le gibier de leurs compagnons, ou rassemblent les prises de plusieurs chasseurs, et vont parfois jusqu’à emprunter des oiseaux dans les réfrigérateurs des autres pour parfaire l’image héroïque tant recherchée !</p>
