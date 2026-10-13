@@ -17,7 +17,7 @@ Reuses the unchanged local file `docs/media/uploads/2026/10/apu-mecshap-cabs-leb
 
 Source context: https://sayd-magazine.com/posts/مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور/
 
-Credit: Sayd archive. No photographer, exact capture date or specific village is asserted. No new image copy, hotlink or generated substitute is added.
+Provenance: Sayd’s own image archive. Nayef confirmed on 13 October 2026 that this photograph was taken during October 2026. The public captions in Arabic, English and French describe the anti-poaching activity and give that month, without an archive-credit label. No exact day, photographer or specific village is asserted. No new image copy, hotlink or generated substitute is added.
 
 ## Distribution
 
