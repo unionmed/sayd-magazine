@@ -10,7 +10,7 @@ subtitle: "A professional hunter is known for his experience, conduct and respec
 
 <figure style="max-width:460px;margin:18px auto 24px;">
 <img src="../../../media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg" width="1241" height="1536" alt="Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon." decoding="async" style="display:block;width:100%;height:auto;object-fit:contain">
-<figcaption>Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon. Photo: Sayd archive.</figcaption></figure>
+<figcaption>Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon, October 2026.</figcaption></figure>
 <p>Among the strangest sights we see on social media are photographs of people standing proudly in front of dozens of dead birds, lining them up on cars or spreading them across the ground, holding their shotguns with triumphant expressions, as though they had returned from a historic battle in which they had achieved a great victory!</p>
 <p>More amusing still, some of them use their companions’ game, or pool the take of several hunters, and sometimes even borrow birds from other people’s refrigerators to complete the picture of heroism they seek!</p>
 <p>It seems that, for some, heroism can now be borrowed, and even stored in refrigerators!</p>
