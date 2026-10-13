@@ -26,9 +26,11 @@
       "أما من يبحث عن رجولته بين جثث الطيور، فالأجدر به أن يبحث عنها في مكان آخر!"
     ],
     "excerpt": "الصياد المحترف معروف بخبرته وسلوكه واحترامه للطبيعة. يعرف قيمته جيدًا، ولا يحتاج إلى استعراض جثث الطيور ليقنع الآخرين بمهارته.",
-    "hero_alt": "أدونيس الخطيب، رئيس التحرير، خلال نشاط ميداني لمكافحة الصيد الجائر في لبنان.",
-    "photo_caption": "أدونيس الخطيب، رئيس التحرير، خلال نشاط ميداني لمكافحة الصيد الجائر في لبنان، تشرين الأول/أكتوبر 2026.",
-    "related_heading": "اقرأ أيضًا"
+    "hero_alt": "صور مجمعة من أربع لقطات لطيور نافقة على طاولات وسيارات وعلى الأرض، مع وجوه مطموسة.",
+    "photo_caption": "صور وصلت إلى فريق وحدة مكافحة الصيد الجائر، تشرين الأول/أكتوبر 2026.",
+    "related_heading": "اقرأ أيضًا",
+    "inset_alt": "أدونيس الخطيب، رئيس التحرير، خلال نشاط ميداني لمكافحة الصيد الجائر في لبنان.",
+    "inset_caption": "أدونيس الخطيب، رئيس التحرير، خلال نشاط ميداني لمكافحة الصيد الجائر في لبنان، تشرين الأول/أكتوبر 2026."
   },
   "en": {
     "title": "Macho hunting… when some look for their manhood among bird carcasses!",
@@ -53,9 +55,11 @@
       "As for anyone searching for his manhood among bird carcasses, he would do better to look for it somewhere else!"
     ],
     "excerpt": "A professional hunter is known for his experience, conduct and respect for nature. He knows his worth well and does not need to display bird carcasses to convince others of his skill.",
-    "hero_alt": "Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon.",
-    "photo_caption": "Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon, October 2026.",
-    "related_heading": "Read also"
+    "hero_alt": "A four-photo collage showing dead birds on tables, cars and the ground, with faces blurred.",
+    "photo_caption": "Photos received by the Anti-Poaching Unit team, October 2026.",
+    "related_heading": "Read also",
+    "inset_alt": "Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon.",
+    "inset_caption": "Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon, October 2026."
   },
   "fr": {
     "title": "La chasse viriliste… quand certains cherchent leur virilité parmi les cadavres d’oiseaux !",
@@ -80,8 +84,10 @@
       "Quant à celui qui cherche sa virilité parmi les cadavres d’oiseaux, il ferait mieux d’aller la chercher ailleurs !"
     ],
     "excerpt": "Le chasseur professionnel se reconnaît à son expérience, à sa conduite et à son respect de la nature. Il connaît bien sa valeur et n’a pas besoin d’exhiber des cadavres d’oiseaux pour convaincre les autres de son habileté.",
-    "hero_alt": "Adonis Alkhateeb, rédacteur en chef, lors d’une activité de terrain de lutte contre le braconnage au Liban.",
-    "photo_caption": "Adonis Alkhateeb, rédacteur en chef, lors d’une activité de terrain de lutte contre le braconnage au Liban, en octobre 2026.",
-    "related_heading": "À lire aussi"
+    "hero_alt": "Un montage de quatre photos montrant des oiseaux morts sur des tables, des voitures et au sol, avec les visages floutés.",
+    "photo_caption": "Photos reçues par l’équipe de l’Unité de lutte contre le braconnage, octobre 2026.",
+    "related_heading": "À lire aussi",
+    "inset_alt": "Adonis Alkhateeb, rédacteur en chef, lors d’une activité de terrain de lutte contre le braconnage au Liban.",
+    "inset_caption": "Adonis Alkhateeb, rédacteur en chef, lors d’une activité de terrain de lutte contre le braconnage au Liban, en octobre 2026."
   }
 }

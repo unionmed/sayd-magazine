@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Publish Nayef-approved Adonis opinion, three mirrors, first side card, no ticker.
-Use only from the dedicated publishing branch. Image is an existing, full-frame Sayd archive photograph.
+Use only from the dedicated publishing branch. Article cover and inset are local, full-frame photographs.
 """
 from __future__ import annotations
 import copy
@@ -22,7 +22,8 @@ from seo_foundation import apply_html, load_twins, add_ga4
 
 DATA=json.loads((ROOT/"content/features/adonis-masculinity-20261013.json").read_text(encoding="utf-8"))
 AR=DATA["slug_ar"]; INTL=DATA["slug_intl"]
-IMAGE="media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg"
+IMAGE="media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg"
+INSET_IMAGE="media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg"
 assert (DOCS/IMAGE).is_file()
 DATE=DATA["date"]
 DATES={"ar":"13 تشرين الأول 2026","en":"13 October 2026","fr":"13 octobre 2026"}
@@ -61,10 +62,15 @@ def related(lang):
 def body(lang):
     d=DATA[lang]
     prefix="../../" if lang=="ar" else "../../../"
-    b=['<figure style="width:100%;margin:18px 0 24px;">',
-       '<img src="'+prefix+IMAGE+'" width="1241" height="1536" alt="'+esc.escape(d["hero_alt"],quote=True)+'" decoding="async" style="display:block;width:100%;height:auto;">',
-       '<figcaption>'+esc.escape(d["photo_caption"])+ '</figcaption></figure>']
-    b.extend('<p>'+esc.escape(paragraph)+'</p>' for paragraph in d["paragraphs"])
+    def figure(image, width, height, alt, caption, lazy=False):
+        return ('<figure style="width:100%;margin:18px 0 24px;">\n'
+                '<img src="'+prefix+image+'" width="'+str(width)+'" height="'+str(height)+'" alt="'+esc.escape(alt,quote=True)+'" decoding="async"'+(' loading="lazy"' if lazy else '')+' style="display:block;width:100%;height:auto;">\n'
+                '<figcaption>'+esc.escape(caption)+'</figcaption></figure>')
+    b=[figure(IMAGE,1024,1280,d["hero_alt"],d["photo_caption"])]
+    for index,paragraph in enumerate(d["paragraphs"],1):
+        b.append('<p>'+esc.escape(paragraph)+'</p>')
+        if index==6:
+            b.append(figure(INSET_IMAGE,1241,1536,d["inset_alt"],d["inset_caption"],lazy=True))
     return "\n".join(b)
 
 def render_article(lang):
@@ -161,10 +167,10 @@ def insert_listing(lang,page):
     m=re.search(r'<article\b[^>]*class="(?:post-row|card)"',text)
     if not m:raise RuntimeError("Missing archive listing anchor "+str(path))
     href=os.path.relpath(DOCS/("" if lang=="ar" else lang)/"posts"/slug/"index.html",path.parent)
-    image=os.path.relpath(DOCS/IMAGE,path.parent)
+    image=os.path.relpath(DOCS/INSET_IMAGE,path.parent)
     row=(
         '<article class="post-row"><a class="thumb" href="'+esc.escape(href,quote=True)+'">'
-        '<img src="'+esc.escape(image,quote=True)+'" alt="'+esc.escape(d["hero_alt"],quote=True)+'" loading="lazy" style="object-fit:contain"></a>'
+        '<img src="'+esc.escape(image,quote=True)+'" alt="'+esc.escape(d["inset_alt"],quote=True)+'" loading="lazy" style="object-fit:contain"></a>'
         '<div class="body"><h2><a href="'+esc.escape(href,quote=True)+'">'+esc.escape(d["title"])+'</a></h2>'
         '<div class="meta">'+DATES[lang]+'</div><p class="excerpt">'+esc.escape(d["excerpt"])+'</p></div></article>\n'
     )
@@ -199,7 +205,7 @@ def update_home():
     c["primary_door"][AR]="hunting"
     for slug in (AR,INTL):
         if slug not in c["omit_from_ticker"]:c["omit_from_ticker"].append(slug)
-    c.setdefault("card_image_overrides",{})[AR]={"image":IMAGE,"position":"center 10%","fit":"cover","alt":{lang:DATA[lang]["hero_alt"] for lang in ("ar","en","fr")}}
+    c.setdefault("card_image_overrides",{})[AR]={"image":INSET_IMAGE,"position":"center 10%","fit":"cover","alt":{lang:DATA[lang]["inset_alt"] for lang in ("ar","en","fr")}}
     assert before_ticker=={k:c[k] for k in before_ticker}
     assert c["ia_slots"]["main"]==old[0]
     save(config,json.dumps(c,ensure_ascii=False,indent=2)+"\n")
