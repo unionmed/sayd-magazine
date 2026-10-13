@@ -1,9 +1,38 @@
 """Regression checks for the three mirrored homepages and fail-closed rules."""
 from copy import deepcopy
 from check_publication_contract import check
-from refresh_homepage_doors import refresh, DOCS, config, validate_config, channel_config
+from refresh_homepage_doors import refresh, DOCS, DOORS, config, validate_config, channel_config, place_memory
+
+def test_memory_placement():
+    """Relocation must preserve every byte outside its position, in all mirrors."""
+    import re
+    from html import escape
+    from lxml import html
+    pattern = r'^[ \t]*<section class="memory-strip".*?</section>\n?'
+    for lang, prefix in [('ar', ''), ('en', 'en'), ('fr', 'fr')]:
+        page = (DOCS / prefix / 'index.html').read_text()
+        tree = html.fromstring(page)
+        memory = tree.xpath('//section[@class="memory-strip"]')
+        assert len(memory) == 1
+        assert memory[0].getparent().get('class') == 'home-main'
+        heading = DOORS[3][{'ar': 1, 'en': 2, 'fr': 3}[lang]]
+        assert memory[0].getprevious().xpath('./div/h2/text()') == [heading], f'{lang}: memory must immediately follow Wildlife'
+        block = re.search(pattern, page, re.S | re.M)[0]
+        remainder = re.sub(pattern, '', page, flags=re.S | re.M)
+        # Simulate the old generator position above the lower doors.
+        legacy = remainder.replace('    <div class="home-layout">', block + '    <div class="home-layout">', 1)
+        moved = place_memory(legacy, lang, config()['memory_after_door'])
+        assert moved == page, f'{lang}: relocation changed section/card content or unrelated markup'
+        assert re.search(pattern, moved, re.S | re.M)[0] == block
+        assert re.sub(pattern, '', moved, flags=re.S | re.M) == remainder
+        assert place_memory(moved, lang, 'wildlife') == moved
+        for broken in (remainder, legacy + block, legacy.replace('<h2>' + escape(heading) + '</h2>', '<h2>missing</h2>')):
+            try: place_memory(broken, lang, 'wildlife')
+            except ValueError: pass
+            else: raise AssertionError(f'{lang}: invalid relocation fixture accepted')
 
 def test_homepages():
+    test_memory_placement()
     # Side-card overflow must enter Updates before becoming eligible for a door.
     from homepage_demotion import demote_side_cards
     from datetime import date

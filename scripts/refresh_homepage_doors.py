@@ -101,6 +101,7 @@ def render_li(slug,item):
             f'<span class="feed-date">{esc(item["date"])}</span></span></a></li>')
 
 def validate_config(c):
+    assert c['memory_after_door'] == 'wildlife', 'Memory follows Wildlife & Camping'
     assert len(c['featured'])==5 and len(c['latest'])==8, 'Require one lead, four side cards and eight Updates'
     assert c['featured']==[c['ia_slots']['main']]+c['ia_slots']['important']
     assert c['latest']==c['ia_slots']['latest']
@@ -112,6 +113,21 @@ def validate_config(c):
         for s in d['slugs']:
             assert s not in seen;seen.add(s)
             assert s not in upper or (d['door']=='equestrian' and s in approved)
+
+def place_memory(page, lang, after_door):
+    """Move the whole existing strip, without re-rendering its cards or chrome."""
+    memories = list(re.finditer(r'^[ \t]*<section class="memory-strip".*?</section>\n?', page, re.S | re.M))
+    if len(memories) != 1 or page.count('<section class="memory-strip"') != 1:
+        raise ValueError(f'{lang}: expected exactly one memory section')
+    memory = memories[0]
+    block = memory[0]
+    page = page[:memory.start()] + page[memory.end():]
+    door = next(d for d in DOORS if d[0] == after_door)
+    heading = html.escape(door[{'ar': 1, 'en': 2, 'fr': 3}[lang]])
+    target = re.search(r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(heading) + r'</h2>.*?</section>\n?', page, re.S)
+    if not target:
+        raise ValueError(f'{lang}: missing memory placement target {after_door}')
+    return page[:target.end()] + block + page[target.end():]
 
 def refresh(path,lang):
     c=config();validate_config(c);channel=channel_config();path=Path(path);page=path.read_text()
@@ -179,6 +195,8 @@ def refresh(path,lang):
     page=re.sub(r'(<div class="ticker"(?: aria-hidden="true")?>).*?(</div>)',lambda m:m[1]+ticker+m[2],page,flags=re.S)
     # Normalize wrapper whitespace for a stable second refresh.
     page=re.sub(r'(</article>)\s*(</div>\s*</div>\s*</div>\s*</div>\s*<div class="latest-col">)',r'\1\n          </div>\n          </div>\n        </div>\n      </div>\n      <div class="latest-col">',page)
+    page=place_memory(page,lang,c['memory_after_door'])
+    page=re.sub(r'(assets/css/home-doors\.css)\?[^"\s]+', r'\1?v=20261012-memory-order', page)
     path.write_text(page)
     return page
 
