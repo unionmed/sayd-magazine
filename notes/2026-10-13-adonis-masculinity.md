@@ -13,7 +13,7 @@ The article does not claim that this clause generally prohibits photographs on s
 
 ## Photograph
 
-Reuses the unchanged local file `docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg`, already indexed in the image archive and previously published in Sayd's anti-poaching album. The original is 1241 × 1536 pixels. The photograph remains full-frame in the article and its cards. Caption and alt text explicitly identify Adonis in an anti-poaching field activity, not as the person who killed the birds.
+Reuses the unchanged local file `docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg`, already indexed in the image archive and previously published in Sayd's anti-poaching album. The original is 1241 × 1536 pixels. The photograph remains full-frame inside the article and the archive/category listing cards. The homepage thumbnail uses a filling crop with an upper focal point, corrected on 13 October 2026 to remove the empty sidebars created by contain. Caption and alt text explicitly identify Adonis in an anti-poaching field activity, not as the person who killed the birds.
 
 Source context: https://sayd-magazine.com/posts/مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور/
 
@@ -26,3 +26,9 @@ First side card under the existing lead in Arabic, English and French. The forme
 ## Verification
 
 Independent editorial and technical review completed. Required publication, homepage, archive-media and archive-access tests passed. Focused article, short-link and SEO tests passed. Static image, metadata and link checks passed. Rendered browser QA could not be completed because Chromium could not create its process socket and the separate cloud browser could not access the isolated local preview. Test requests did not send analytics events.
+
+## Homepage image correction — 13 October 2026
+
+The original portrait has no embedded blank borders. A homepage-only `object-fit:contain` override created empty sidebars inside the shared card frame. The override is now `cover`, with `object-position:center 10%` to retain Adonis’s face and field vest in the narrower mobile thumbnail. A landscape thumbnail cannot show both his face near the top and the birds at the bottom of this portrait; the complete photograph and its anti-poaching caption remain unchanged in all three article pages. The three article figures also remove their 460px width cap and fill the article content column at the original aspect ratio with automatic height. No image asset, article text, caption, date, position, ticker, shared theme, or unrelated card is changed.
+
+Required publication/homepage/archive checks and the focused Adonis regression check are run for this correction. Local rendered-browser QA is blocked by the browser process socket restriction and the cloud browser’s inability to reach the local preview; source and geometry checks are not represented as rendered visual verification.

@@ -8,8 +8,8 @@ featured: media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg
 subtitle: "A professional hunter is known for his experience, conduct and respect for nature. He knows his worth well and does not need to display bird carcasses to convince others of his skill."
 ---
 
-<figure style="max-width:460px;margin:18px auto 24px;">
-<img src="../../../media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg" width="1241" height="1536" alt="Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon." decoding="async" style="display:block;width:100%;height:auto;object-fit:contain">
+<figure style="width:100%;margin:18px 0 24px;">
+<img src="../../../media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg" width="1241" height="1536" alt="Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon." decoding="async" style="display:block;width:100%;height:auto;">
 <figcaption>Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon, October 2026.</figcaption></figure>
 <p>Among the strangest sights we see on social media are photographs of people standing proudly in front of dozens of dead birds, lining them up on cars or spreading them across the ground, holding their shotguns with triumphant expressions, as though they had returned from a historic battle in which they had achieved a great victory!</p>
 <p>More amusing still, some of them use their companions’ game, or pool the take of several hunters, and sometimes even borrow birds from other people’s refrigerators to complete the picture of heroism they seek!</p>

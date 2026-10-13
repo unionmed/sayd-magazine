@@ -556,8 +556,8 @@
     },
     "الصيد-الذكوري-الرجولة-بين-جثث-الطيور": {
       "image": "media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg",
-      "position": "center center",
-      "fit": "contain",
+      "position": "center 10%",
+      "fit": "cover",
       "alt": {
         "ar": "أدونيس الخطيب، رئيس التحرير، خلال نشاط ميداني لمكافحة الصيد الجائر في لبنان.",
         "en": "Adonis Alkhateeb, Editor-in-Chief, during an anti-poaching field activity in Lebanon.",
