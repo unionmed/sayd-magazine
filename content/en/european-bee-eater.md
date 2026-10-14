@@ -1,28 +1,31 @@
-# The European Bee-eater
+---
+title: "The European Bee-eater"
+slug: european-bee-eater
+date: 2025-09-17
+author: Sayd
+categories: [موسوعة الطيور]
+featured: media/uploads/2025/09/AP4I0956-1024x683.jpg
+---
 
-**Source AR URL path:** `/posts/طائر-الوروار-الأوروبي/`
-**Source AR title:** طائر الوروار الأوروبي
-**Suggested slug:** `european-bee-eater`
-**Category:** Bird Encyclopedia
-
-## Lead
-
-Discover the European bee-eater’s colourful plumage, flying-insect diet and tunnel nests, and what field studies show about its relationship with honey bees.
-
-## Body
-
-The European Bee-eater (<em>Merops apiaster</em>) is a common migrant in Lebanon. Its presence has been recorded in several Lebanese areas in summer, raising the possibility that it may also breed in the country.
-
-This bird is distinguished by its bright plumage: its back and wings wear shades of brown, yellow, black and green; its throat is yellow; and its underparts are turquoise blue.
-
-The bee-eater is known for its distinctive nesting: it excavates tunnels in sandy or soft soil banks, ending in a nesting chamber.
-
-Its diet consists mainly of flying insects, especially bees, wasps, dragonflies and butterflies. It catches them in flight, often with dazzling aerobatics.
-
-Feeding on honey bees can bring bee-eaters into conflict with beekeepers, but the share of honey bees in their diet and their impact on apiaries vary with location, season and prey availability. A <a href="https://doi.org/10.1080/00218839.2016.1195630">field study in southeastern Spain</a> found differences in honey-bee consumption between sites and stages of the breeding season. These findings do not justify a general claim that predation strengthens bee colonies.
-
-The European Bee-eater is a valuable part of biodiversity and draws bird lovers, nature enthusiasts and wildlife photographers alike.
-
-## Notes
-
-- Reviewed publication source and image alt: content/features/bee-eater-reader-paths.json.
+<figure><img src="../../../media/uploads/2025/09/AP4I0956-1024x683.jpg" alt="Two European bee-eaters on a thorny branch, one with its wings spread" decoding="async" style="display:block;width:100%;height:auto"><figcaption>European Bee-eater</figcaption></figure>
+<p>With its chestnut back, yellow throat and turquoise breast, the European Bee-eater is a striking sight in the skies across much of the Arab world. Its flocks may pass through one country on migration, while other populations remain to breed in another. Seeing the bird, or simply describing it as “migratory”, is therefore not enough to understand the nature of its presence in a particular place.</p>
+<h2>Species profile</h2>
+<ul><li>Arabic name: الوروار الأوروبي</li><li>English name: European Bee-eater</li><li>French name: Guêpier d’Europe</li><li>Scientific name: Merops apiaster</li><li>Family: bee-eaters, Meropidae</li><li>Order: Coraciiformes</li><li>Seasonal status in the Arab world: a passage migrant across wide areas and a summer breeder in parts of North Africa, the Mashriq and the Arabian Peninsula; its status varies locally</li><li>Global conservation status: Least Concern, LC, according to BirdLife’s 2024 assessment</li><li>Legal hunting status: determined by each country’s laws and the regulations in force; global conservation status does not establish whether hunting is permitted</li></ul>
+<h2>How to distinguish it from other bee-eaters</h2>
+<p>The adult combines a chestnut head and back with a yellow throat, separated by a black line from the blue-green underparts. Other features include its long, slightly curved bill, the dark stripe through the eye and the two elongated central tail feathers. Juveniles look greener and lack the same tail extensions, so identification should draw on more than one feature.</p>
+<p>The general name “bee-eater” covers several species in the region. The Blue-cheeked Bee-eater Merops persicus is predominantly green, with a blue tinge on the face. The region also has smaller, mainly green species, including the African Green Bee-eater Merops viridissimus and the Arabian Green Bee-eater Merops cyanophrys. Modern checklists recognise these as separate species following the split of the former Green Bee-eater group. Scientific names remain an important reference when Arabic names differ between guides and countries.</p>
+<h2>Where it occurs in the Arab world</h2>
+<p>In Morocco, the European Bee-eater occurs both on passage and as a seasonal breeder, with occasional winter records noted in the national checklist. A field study published in 2023 documented breeding colonies near Meknes. In Tunisia, too, it is a migratory breeder and passage migrant, although its colonies are not evenly distributed among sites.</p>
+<p>In Egypt, ringing studies confirm its passage in spring and autumn. In Lebanon, it is a common passage migrant, and there are summer observations, but local breeding remains unconfirmed. The situation differs in Iraq, where it is listed as a summer breeding visitor and passage migrant.</p>
+<p>Its connection with the Arabian Peninsula extends beyond flying over it: Oman’s official checklist lists it as a summer breeding visitor and passage migrant, describing it as uncommon.</p>
+<h2>Migration and wintering follow different regional calendars</h2>
+<p>This species links breeding areas in North Africa, Europe and Asia with wintering areas in Africa. Tracking and ringing data show that European populations take different routes to western, eastern and southern Africa. Passage dates in one country cannot be applied to all Arab countries.</p>
+<p>In Lebanon, for example, the scientific checklist places spring passage between early April and early June, and autumn passage between mid-August and early November, with September and October particularly prominent in autumn. The occasional winter records from Morocco do not make the species a regular winter visitor throughout the Arab world. Recording the location, date and behaviour helps distinguish a passing flock from a feeding stopover or a sustained presence that warrants further observation.</p>
+<h2>The diet of an aerial hunter</h2>
+<p>The European Bee-eater catches flying insects, including bees, wasps and other prey. It may return to a perch to handle its prey before swallowing it. Despite its name, its diet is not limited to honey bees, and the proportion of bees in its diet varies between sites and seasons.</p>
+<p>A field study near apiaries in Murcia, Spain, found that honey bee consumption differed between sites and stages of the breeding season. It is therefore inappropriate to assume that every flock causes the same losses, or that predation on bees automatically strengthens the colony. A more accurate understanding starts with establishing when the birds are present, what food is available and the conditions at the apiary, rather than turning an ecological relationship into a single, fixed judgement.</p>
+<h2>Nesting in the soil</h2>
+<p>The bee-eater excavates a tunnel in suitable soil, often in an earth cliff or bank, ending in a nest chamber. Nests may be close together in a colony. This explains the importance of undisturbed earthen slopes in breeding areas, alongside open habitats rich in insects.</p>
+<p>Observers do not need to approach the tunnel entrance to confirm the bird’s presence. Watching from a distance allows adults to continue entering and leaving normally, while avoiding disturbance to nests or leaving them exposed. Preserving natural earth cliffs is just as important as protecting the birds themselves.</p>
+<h2>Conservation begins with accurate knowledge</h2>
+<p>The species’ global classification as Least Concern does not necessarily reflect the condition of every local population, nor does it grant permission to hunt it. Hunting and protected-area rules must be checked for the country and date concerned. Understanding the bird in the field begins with identifying the species correctly, understanding why it is present in that season and place, and allowing it to feed and breed without pursuit or disturbance.</p>

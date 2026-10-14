@@ -7,6 +7,11 @@ from urllib.parse import unquote, urlparse
 from lxml import html
 import update_bee_eater_reader_paths as update
 
+if (update.ROOT / "content/features/arab-bird-encyclopedia-20261014.json").exists():
+    from test_arab_bird_encyclopedia_20261014 import check
+    check()
+    raise SystemExit(0)
+
 D = update.DATA
 for lang, item in D.items():
     prefix = '' if lang == 'ar' else lang

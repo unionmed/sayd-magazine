@@ -173055,6 +173055,74 @@
       "library_copy_status": "NOT_CHECKED"
     },
     {
+      "path": "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
+      "sha": "661d6299c931c74cf39b03a91356ab6f8c00855b",
+      "size_bytes": 524278,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "anti-poaching-four-photo-collage-october-2026.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/black-redstart-greg-schechter.jpg",
+      "sha": "f687cf654d950f6ce899f03bca7984ffc18266bd",
+      "size_bytes": 3940424,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "black-redstart-greg-schechter.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/common-chiffchaff-hans-hillewaert.jpg",
+      "sha": "fdad56091727cd1e4e4288499ccc90cfc685480a",
+      "size_bytes": 419727,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "common-chiffchaff-hans-hillewaert.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/white-wagtail-charles-j-sharp.jpg",
+      "sha": "b09a8e0dcb6c7c76d4b44f3dbb41862ffbc0efb2",
+      "size_bytes": 2895197,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "white-wagtail-charles-j-sharp.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
       "path": "docs/media/brand/sayd-footer-logo.png",
       "sha": "67a202df95fefeaae03fb9641c38f86d1803e810",
       "size_bytes": 5943,
@@ -173328,9 +173396,9 @@
     }
   ],
   "summary": {
-    "total": 10195,
+    "total": 10199,
     "categories_multi_label": {
-      "غير مصنف": 9616,
+      "غير مصنف": 9620,
       "الطيور": 85,
       "الرماية والعتاد": 138,
       "الصيد": 280,
@@ -173341,6 +173409,6 @@
       "شعر وفن": 1,
       "الحياة البرية": 2
     },
-    "unclassified": 9616
+    "unclassified": 9620
   }
 }
