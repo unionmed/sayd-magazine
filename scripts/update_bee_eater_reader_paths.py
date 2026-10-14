@@ -28,6 +28,10 @@ def switch(lang):
     return '\n'.join(f'<a href="/{"" if code == "ar" else code + "/"}posts/{d["slug"]}/index.html" lang="{code}" hreflang="{code}"' + (' class="is-current" aria-current="page"' if code == lang else '') + f'>{label}</a>' for (code,d),label in zip(DATA.items(), ['العربية','English','Français']))
 
 def apply():
+    if (ROOT / "content/features/arab-bird-encyclopedia-20261014.json").exists():
+        from publish_arab_bird_encyclopedia_20261014 import apply as current_update
+        current_update(only_bee=True)
+        return
     paths = []
     for lang, d in DATA.items():
         prefix = '' if lang == 'ar' else lang

@@ -1,14 +1,14 @@
 {
   "schema": "sayd-github-article-media-crossref-v3",
   "source": "unionmed/sayd-magazine repository only",
-  "articles_scanned": 733,
-  "articles_with_github_image_references": 33,
-  "image_references_unique_per_article": 91,
-  "exact_links": 91,
+  "articles_scanned": 737,
+  "articles_with_github_image_references": 38,
+  "image_references_unique_per_article": 97,
+  "exact_links": 97,
   "unique_basename_not_verified": 0,
   "ambiguous_basename": 0,
   "not_found": 0,
-  "catalog_images_with_exact_article_link": 87,
+  "catalog_images_with_exact_article_link": 92,
   "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
   "exact": [
     {
@@ -232,6 +232,39 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/الحميراء-السوداء-في-العالم-العربي.md",
+      "article_title": "الحميراء السوداء في العالم العربي بين الإقامة وهجرة الخريف",
+      "source_reference": "media/uploads/2026/10/black-redstart-greg-schechter.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/black-redstart-greg-schechter.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/black-redstart-greg-schechter.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الذعرة-البيضاء-في-العالم-العربي.md",
+      "article_title": "الذعرة البيضاء في العالم العربي بين الهجرة والاشتاء",
+      "source_reference": "media/uploads/2026/10/white-wagtail-charles-j-sharp.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/white-wagtail-charles-j-sharp.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/white-wagtail-charles-j-sharp.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الشفشافة-الشائعة-في-العالم-العربي.md",
+      "article_title": "الشفشافة الشائعة في العالم العربي",
+      "source_reference": "media/uploads/2026/10/common-chiffchaff-hans-hillewaert.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/common-chiffchaff-hans-hillewaert.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/common-chiffchaff-hans-hillewaert.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/الصمت-الذي-يتكلمه-الخيل.md",
       "article_title": "الصمتُ الذي يتكلّمه الخيل",
       "source_reference": "media/uploads/2026/09/EQ-N01-cover-1800x1000.jpg",
@@ -249,6 +282,28 @@
       "expected_local_path": "docs/media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/09/illegal-hunting-mist-net-chickadee.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-الذكوري-الرجولة-بين-جثث-الطيور.md",
+      "article_title": "الصيد الذكوري… عندما يبحث البعض عن رجولتهم بين جثث الطيور!",
+      "source_reference": "media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-الذكوري-الرجولة-بين-جثث-الطيور.md",
+      "article_title": "الصيد الذكوري… عندما يبحث البعض عن رجولتهم بين جثث الطيور!",
+      "source_reference": "../../media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -623,6 +678,17 @@
       "expected_local_path": "docs/media/uploads/2026/09/hero-closing-80k.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/09/hero-closing-80k.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طائر-الوروار-الأوروبي.md",
+      "article_title": "طائر الوروار الأوروبي",
+      "source_reference": "media/uploads/2025/09/AP4I0956-1024x683.jpg",
+      "expected_local_path": "docs/media/uploads/2025/09/AP4I0956-1024x683.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2025/09/AP4I0956-1024x683.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
