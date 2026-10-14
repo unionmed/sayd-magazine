@@ -55,10 +55,13 @@ for lang in ('ar','en','fr'):
  card=cls(ht,'feature-stack')[0].xpath('./article')[0]
  assert slug in unquote(card.xpath('.//a/@href')[0])
  assert 'object-fit:cover' in card.xpath('.//img/@style')[0]
- assert 'object-position:center 10%' in card.xpath('.//img/@style')[0]
- assert c['card_image_overrides'][AR]['image']==INSET_IMAGE
+ assert 'object-position:center center' in card.xpath('.//img/@style')[0]
+ assert (home.parent/card.xpath('.//img/@src')[0]).resolve()==(D/IMAGE).resolve()
+ assert card.xpath('.//img/@alt')==[DATA[lang]['hero_alt']]
+ assert c['card_image_overrides'][AR]['image']==IMAGE
+ assert c['card_image_overrides'][AR]['alt'][lang]==DATA[lang]['hero_alt']
  assert c['card_image_overrides'][AR]['fit']=='cover'
- assert c['card_image_overrides'][AR]['position']=='center 10%'
+ assert c['card_image_overrides'][AR]['position']=='center center'
  key='/'+page.relative_to(D).parent.as_posix()+'/'
  assert key in links and (D/links[key].strip('/')/'index.html').is_file()
  assert 'G-C3C0CEYX8Q' in page.read_text()

@@ -205,7 +205,7 @@ def update_home():
     c["primary_door"][AR]="hunting"
     for slug in (AR,INTL):
         if slug not in c["omit_from_ticker"]:c["omit_from_ticker"].append(slug)
-    c.setdefault("card_image_overrides",{})[AR]={"image":INSET_IMAGE,"position":"center 10%","fit":"cover","alt":{lang:DATA[lang]["inset_alt"] for lang in ("ar","en","fr")}}
+    c.setdefault("card_image_overrides",{})[AR]={"image":IMAGE,"position":"center center","fit":"cover","alt":{lang:DATA[lang]["hero_alt"] for lang in ("ar","en","fr")}}
     assert before_ticker=={k:c[k] for k in before_ticker}
     assert c["ia_slots"]["main"]==old[0]
     save(config,json.dumps(c,ensure_ascii=False,indent=2)+"\n")
