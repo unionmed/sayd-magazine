@@ -2,7 +2,7 @@
 title: "The European Bee-eater"
 slug: european-bee-eater
 date: 2025-09-17
-author: Sayd
+author: jabourached
 categories: [موسوعة الطيور]
 featured: media/uploads/2025/09/AP4I0956-1024x683.jpg
 ---

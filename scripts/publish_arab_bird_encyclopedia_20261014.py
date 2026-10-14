@@ -60,7 +60,10 @@ def render_article(a,l,articles):
  header=replace_one(r'<h1>.*?</h1>','<h1>'+esc.escape(d['title'])+'</h1>',header)
  if a['new']:
   header=replace_one(r'<div class="article-meta">.*?</div>','<div class="article-meta"><span class="meta-item">'+DATES[l]+'</span><span class="meta-item">'+('صيد' if l=='ar' else 'Sayd')+'</span></div>',header)
- else:header=article_dates.patch(header,a['updated'],l)
+ else:
+  header=article_dates.patch(header,a['updated'],l)
+  if a.get('author'):
+   header=replace_one(r'<span class="meta-item">[^<]*</span></div>','<span class="meta-item">'+esc.escape(a['author'])+'</span></div>',header)
  text=replace_one(r'<header class="article-header">.*?</header>',header,text)
  text=re.sub(r'<figure class="article-featured".*?</figure>','',text,flags=re.S)
  text=replace_one(r'<article class="article-content">.*?</article>','<article class="article-content">\n'+article_body(a,l)+'\n</article>',text)
@@ -77,7 +80,7 @@ def render_article(a,l,articles):
  text=re.sub(r'<script type="application/ld\+json">.*?</script>','',text,flags=re.S)
  # Avoid double encoding inherited Arabic category breadcrumb paths.
  text=text.replace('category/'+quote(CATEGORY)+'/','category/'+CATEGORY+'/')
- schema={'@context':'https://schema.org','@type':'Article','headline':d['title'],'description':d['description'],'inLanguage':l,'datePublished':a['published_at'],'dateModified':a.get('updated',a['date']),'author':{'@type':'Person','name':'jabourached'} if not a['new'] and l=='ar' else {'@type':'Organization','name':'Sayd Magazine'},'image':['https://sayd-magazine.com/'+a['image']],'articleSection':CATS[l],'mainEntityOfPage':url(a,l),'publisher':{'@type':'Organization','name':'Sayd Magazine','url':'https://sayd-magazine.com/'}}
+ schema={'@context':'https://schema.org','@type':'Article','headline':d['title'],'description':d['description'],'inLanguage':l,'datePublished':a['published_at'],'dateModified':a.get('updated',a['date']),'author':{'@type':'Person','name':a['author']} if a.get('author') else {'@type':'Organization','name':'Sayd Magazine'},'image':['https://sayd-magazine.com/'+a['image']],'articleSection':CATS[l],'mainEntityOfPage':url(a,l),'publisher':{'@type':'Organization','name':'Sayd Magazine','url':'https://sayd-magazine.com/'}}
  text=text.replace('</head>','<script type="application/ld+json">'+json.dumps(schema,ensure_ascii=False)+'</script>\n</head>')
  # Keep the existing analytics block exactly as inherited, without any live hit.
  save(target,text)
@@ -88,6 +91,7 @@ def source_file(a,l):
  if not a['new'] and p.exists() and p.read_text().startswith('---'):
   old=p.read_text();front=old.split('---',2)[1];front=re.sub(r'(?m)^featured:.*$', 'featured: '+a['image'],front)
  else:front='\n'+f'title: {json.dumps(a["languages"][l]["title"],ensure_ascii=False)}\nslug: {slug}\ndate: {a["date"]}\nauthor: {"صيد" if l=="ar" else "Sayd"}\ncategories: [موسوعة الطيور]\nfeatured: {a["image"]}\n'
+ if a.get('author'):front=re.sub(r'(?m)^author:.*$', 'author: '+a['author'],front)
  save(p,'---'+front+'---\n\n'+article_body(a,l)+'\n')
 
 def listings(articles):

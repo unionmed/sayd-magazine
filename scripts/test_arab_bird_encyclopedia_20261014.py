@@ -38,14 +38,22 @@ def check():
    if not a['new']:
     assert t.xpath('//time/@datetime')==['2026-10-14']
     assert '2025' in t.xpath('//div[@class="article-meta"]/span[1]/text()')[0]
-    if l=='ar':assert t.xpath('//div[@class="article-meta"]/span[last()]/text()')==['jabourached']
+    assert t.xpath('//div[@class="article-meta"]/span[last()]/text()')==['jabourached']
+    source_path=pub.ROOT/'content'/('posts' if l=='ar' else l)/(a['slugs'][l]+'.md')
+    assert re.search(r'(?m)^author: jabourached$',source_path.read_text())
    data=[json.loads(x) for x in t.xpath('//script[@type="application/ld+json"]/text()')]
    article=next(x for x in data if x.get('@type')=='Article')
+   if not a['new']:assert article['author']=={'@type':'Person','name':'jabourached'}
+   if a['key']=='common-chiffchaff-arab-world':assert '© Hans Hillewaert' in credits[0].text_content()
    assert article['datePublished'].startswith(a['date']) and article['dateModified']=='2026-10-14'
    assert t.getroot().get('lang')==l
    source=p.read_text();assert source.count('analytics:start')==1 and source.count('googletagmanager.com/gtag/js')==1
    assert "gtag('config', 'G-C3C0CEYX8Q');" in source
  # Factual regression guards retained from the preceding bee-eater update.
+ by_key={a['key']:a for a in articles}
+ assert 'أطلس الهجرة الأوراسي الإفريقي' in by_key['common-chiffchaff-arab-world']['languages']['ar']['body_html']
+ assert 'and as a relatively scarce migrant breeder' in by_key['white-wagtail-arab-world']['languages']['en']['body_html']
+ assert 'le noir descendant jusqu’au bas de la poitrine' in by_key['black-redstart-arab-world']['languages']['fr']['body_html']
  for l in pub.LANGS:
   text=(pub.DOCS/pub.relpage(articles[-1],l)).read_text()
   assert all(x not in text for x in ['غالبًا ما يستهدف الأفراد الضعيفة','targets weaker individuals','another for waste','أخرى للنفايات'])
