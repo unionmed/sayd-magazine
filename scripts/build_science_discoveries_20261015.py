@@ -137,6 +137,7 @@ def change_article(article, lang, image):
     target.parent.mkdir(parents=True, exist_ok=True)
     d = article["translations"][lang]
     top = "../" * (2 if lang == "ar" else 3)
+    nav_top = "../../"  # article-to-language-root, not site-root
     source = article["source"]["url"]
     credit = ("Min Wang / Chinese Academy of Sciences"
               if article["key"].startswith("jurassic")
@@ -151,10 +152,10 @@ def change_article(article, lang, image):
             '</a></p>')
     text = once(text, r"<title>.*?</title>", "<title>" + html.escape(d["title"]) + " | " + ("صيد" if lang == "ar" else "Sayd Magazine") + "</title>", "title")
     text = once(text, r'<meta name="description" content="[^"]*"', '<meta name="description" content="' + html.escape(d["deck"], quote=True) + '"', "description")
-    banner = '<header class="article-header"><div><a class="badge" href="' + top + 'category/' + CATEGORY + '/index.html">' + html.escape(LABEL[lang]) + '</a></div>' + '<h1>' + html.escape(d["title"]) + '</h1><div class="article-meta"><span class="meta-item">' + DATE[lang] + '</span><span class="meta-item">صيد / Sayd</span></div></header>'
+    banner = '<header class="article-header"><div><a class="badge" href="' + nav_top + 'category/' + CATEGORY + '/index.html">' + html.escape(LABEL[lang]) + '</a></div>' + '<h1>' + html.escape(d["title"]) + '</h1><div class="article-meta"><span class="meta-item">' + DATE[lang] + '</span><span class="meta-item">صيد / Sayd</span></div></header>'
     text = once(text, r'<header class="article-header">.*?</header>', banner, "article header")
     text = once(text, r'<article class="article-content">.*?</article>', '<article class="article-content">\n' + body + '\n</article>', "article body")
-    crumb = '<div class="breadcrumb"><a href="' + top + 'index.html">' + ("الرئيسية" if lang == "ar" else "Home" if lang == "en" else "Accueil") + '</a> / <a href="' + top + 'category/' + CATEGORY + '/index.html">' + html.escape(LABEL[lang]) + '</a> / ' + ("مقال" if lang == "ar" else "Article") + '</div>'
+    crumb = '<div class="breadcrumb"><a href="' + top + 'index.html">' + ("الرئيسية" if lang == "ar" else "Home" if lang == "en" else "Accueil") + '</a> / <a href="' + nav_top + 'category/' + CATEGORY + '/index.html">' + html.escape(LABEL[lang]) + '</a> / ' + ("مقال" if lang == "ar" else "Article") + '</div>'
     text = once(text, r'<div class="breadcrumb">.*?</div>', crumb, "breadcrumb")
     urls = {x: url_for(x, article) for x in LANGS}
     lang_nav = '<nav class="lang-switch" aria-label="Language">' + "\n".join(
@@ -166,6 +167,17 @@ def change_article(article, lang, image):
     # Do not inherit template's related items or image/SEO metadata.
     text = re.sub(r'<section class="related-block".*?</section>', '', text, flags=re.S)
     text = re.sub(r'<div class="article-featured">.*?</div>', '', text, flags=re.S)
+    # Remove template schema, which otherwise still names the bee-eater article.
+    text = re.sub(r'<script type="application/ld\+json">.*?</script>', '', text, flags=re.S)
+    schema = {'@context': 'https://schema.org', '@type': 'Article',
+              'headline': d['title'], 'description': d['deck'], 'inLanguage': lang,
+              'datePublished': '2026-10-15T10:00:00+03:00',
+              'dateModified': '2026-10-15',
+              'mainEntityOfPage': url_for(lang, article),
+              'image': [PUBLIC + '/' + image],
+              'articleSection': LABEL[lang],
+              'publisher': {'@type': 'Organization', 'name': 'Sayd Magazine'}}
+    text = text.replace('</head>', '<script type="application/ld+json">' + json.dumps(schema, ensure_ascii=False) + '</script>\n</head>')
     target.write_text(text)
     md = ROOT / "content" / ("posts" if lang == "ar" else lang) / (article["slugs"][lang] + ".md")
     md.parent.mkdir(parents=True, exist_ok=True)
