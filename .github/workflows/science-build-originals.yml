@@ -68,6 +68,8 @@ jobs:
           python scripts/test_homepage_doors.py
           python -c 'import sys;sys.path.insert(0,"scripts");from test_site_ia import test_desktop_nav_shows_all_ten_doors;test_desktop_nav_shows_all_ten_doors()'
           python scripts/check_publication_contract.py --base origin/main
+          python scripts/repair_ga4_tracking.py --check
+          python scripts/test_hreflang_contract.py
       - name: Commit verified assets and static pages on review branch only
         run: |
           git config user.name "Sayd editorial build"
