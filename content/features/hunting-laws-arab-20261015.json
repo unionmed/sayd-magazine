@@ -1,0 +1,121 @@
+{
+  "type": "editorial_prepublication_package",
+  "date": "2026-10-15",
+  "status": "DRAFT_AWAITING_LEGAL_CURRENTNESS_CHECK_IMAGES_AND_FINAL_EDITORIAL_APPROVAL",
+  "door": "قوانين",
+  "important_note": "Three new 2026 analytical articles about historic statutes; the laws were enacted in 2004, 2002 and 2003, not in 2026. Must verify latest amendments and produce licensed local graphics before any publication.",
+  "articles": [
+    {
+      "id": "lb-580-2004-hunting-law",
+      "country": "Lebanon",
+      "law_number": "580/2004",
+      "enacted": "2004-02-25",
+      "gazette": "2004-03-04",
+      "original_language": "ar",
+      "official_primary": "https://www.moe.gov.lb/الوزارة/القوانين-والانظمة/القوانين/قانون-رقم-580-نظام-الصيد-البري-في-لبنان.aspx",
+      "slugs": {
+        "ar": "قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع",
+        "en": "lebanon-hunting-law-580-2004-what-is-prohibited",
+        "fr": "liban-loi-chasse-580-2004-regles-et-interdictions"
+      },
+      "text": {
+        "ar": {
+          "title": "قانون الصيد اللبناني 580/2004: لماذا لا يكفي إعلان افتتاح الموسم لإباحة الصيد؟",
+          "summary": "قراءة تشريعية في الترخيص وحماية الطيور وحظر الشباك والدبق والمناداة، استنادًا إلى نص قانون 2004 الأصلي كما تعرضه وزارة البيئة.",
+          "body": "يربط النقاش العام حول الصيد في لبنان غالبًا بين شرعية الصيد وموعد فتح الموسم. لكن الإطار القانوني أوسع بكثير من رزنامة افتتاحه وإقفاله. فقانون تنظيم الصيد البري رقم 580، الصادر في 25 شباط 2004 والمنشور في الجريدة الرسمية بتاريخ 4 آذار من السنة نفسها، يضع قواعد دائمة تتصل بالأنواع المسموح صيدها والرخص والوسائل المحظورة ومناطق الحظر.\n\nتقرّر المادة الرابعة، وفق النص الذي تنشره وزارة البيئة اللبنانية، أن الطيور والحيوانات البرية المقيمة والمهاجرة محمية طوال السنة، باستثناء الأنواع التي تُحدَّد كطرائد يجوز صيدها وفق شروط محددة. أما تحديد بداية الموسم ونهايته فيُترك لإجراء تنفيذي، ولا يعني هذا الإجراء أن كل طائر أصبح مباحًا.\n\nوتربط المادة السادسة ممارسة الصيد برخصة صيد صادرة عن وزارة البيئة، وبترخيص السلاح والتأمين ضد الأضرار التي قد تلحق بالغير. كما تمنع المادة الثامنة الصيد في المدن والقرى والمحميات الطبيعية ومواقع أخرى محددة، ومنها نطاق مسافة لا تقل عن 500 متر من أماكن السكن ودور العبادة والمنشآت العامة والخاصة.\n\nوتذهب المادة التاسعة أبعد من حظر نوع بعينه، إذ تمنع الشباك والدبق والمصايد والوسائل غير الانتقائية والأنوار الكاشفة وآلات استدعاء الطيور بأصوات مسجلة، إلى جانب قيود أخرى. وتحمي المادة العاشرة الأعشاش والبيض والفراخ في جميع فصول السنة.\n\nالمغزى أن الصيد المسؤول ليس مجرد التزام بتاريخ الموسم، بل امتثال لشروط القانون الأساسي والقرارات الصادرة تطبيقًا له. وهذه قراءة في مواد القانون الأصلية، وليست إعلانًا عن قانون صدر سنة 2026؛ وينبغي الرجوع إلى آخر النصوص والتعديلات النافذة عند تطبيق حكم على واقعة محددة.\n\nالمصدر: وزارة البيئة اللبنانية، قانون رقم 580/2004، المواد 3 و4 و6 و8 و9 و10."
+        },
+        "en": {
+          "title": "Lebanon's Hunting Law 580/2004: Why an open season does not authorize every hunt",
+          "summary": "A statutory guide to permits, protected birds, prohibited methods and no-hunting areas.",
+          "body": "An announcement opening a hunting season does not override the underlying legislation. Lebanon's Hunting Law 580, dated 25 February 2004 and published in the Official Gazette on 4 March 2004, establishes lasting rules on eligible species, licensing, prohibited methods and protected places.\n\nArticle 4 treats wild resident and migratory birds and mammals as protected unless they are designated as permissible quarry under applicable conditions. The season dates are determined through a separate implementing measure; they are not a general permission to shoot any bird.\n\nArticle 6 requires a hunting licence issued by the Ministry of Environment, supported by the relevant firearms authorization and third-party liability insurance. Article 8 prohibits hunting in cities, villages and nature reserves, and includes a buffer of at least 500 metres from dwellings, places of worship and public or private facilities.\n\nArticle 9 prohibits trapping nets, birdlime, other indiscriminate devices, spotlights and recorded bird calls used to attract quarry, alongside additional restrictions. Article 10 protects wild nests, eggs and young throughout the year.\n\nResponsible hunting therefore involves more than observing a calendar. This article explains the original 2004 law, not a newly enacted 2026 law. For any specific legal action, consult subsequent amendments, regulations and current official decisions.\n\nSource: Lebanon's Ministry of Environment, Hunting Law 580/2004, Articles 3, 4, 6, 8, 9 and 10."
+        },
+        "fr": {
+          "title": "Liban : la loi 580/2004 encadre la chasse bien au-delà des dates d'ouverture",
+          "summary": "Permis, espèces protégées, méthodes prohibées et zones d'interdiction dans le texte législatif libanais.",
+          "body": "L'ouverture administrative de la saison de chasse ne remplace pas la loi qui en fixe les conditions générales. La loi libanaise no 580, datée du 25 février 2004 et publiée au Journal officiel le 4 mars 2004, encadre les espèces pouvant être chassées, les autorisations, les méthodes et les zones protégées.\n\nSelon l'article 4, les oiseaux et mammifères sauvages, résidents ou migrateurs, restent protégés tout au long de l'année sauf lorsque certaines espèces sont explicitement désignées comme gibier, sous conditions. Les dates de saison relèvent d'une mesure d'application distincte : elles ne rendent pas toutes les espèces chassables.\n\nL'article 6 associe le permis de chasse du ministère de l'Environnement à l'autorisation de l'arme et à une assurance de responsabilité civile. L'article 8 interdit notamment la chasse dans les villes, villages et réserves, ainsi qu'à moins de 500 mètres de certains bâtiments et lieux de culte.\n\nL'article 9 proscrit les filets, la glu, divers pièges non sélectifs, les projecteurs et les appels d'oiseaux enregistrés. L'article 10 protège les nids, œufs et jeunes animaux sauvages en toute saison.\n\nIl s'agit d'une lecture de la loi originelle de 2004, et non de l'annonce d'une nouvelle loi en 2026. Toute application concrète exige la vérification des textes modificatifs et des décisions en vigueur.\n\nSource : ministère libanais de l'Environnement, loi 580/2004, articles 3, 4, 6, 8, 9 et 10."
+        }
+      }
+    },
+    {
+      "id": "qa-4-2002-wildlife-hunting-law",
+      "country": "Qatar",
+      "law_number": "4/2002",
+      "enacted": "2002-05-11",
+      "gazette": "2002-05-20",
+      "original_language": "ar",
+      "official_primary": "https://www.almeezan.qa/LawView.aspx?LawID=325&language=ar&opt=",
+      "official_english": "https://www.almeezan.qa/LawArticles.aspx?LawID=325&LawTreeSectionID=2578&language=en",
+      "slugs": {
+        "ar": "قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات",
+        "en": "qatar-law-4-2002-wildlife-hunting-rules",
+        "fr": "qatar-loi-4-2002-chasse-faune-sanctions"
+      },
+      "text": {
+        "ar": {
+          "title": "القانون القطري 4/2002: حدود الصيد البري لا تبدأ ولا تنتهي بمواعيد الموسم",
+          "summary": "ست مواد قانونية تنظّم مناطق الصيد ووقته وتحمي الأعشاش والسلاحف وتحدّد العقوبات والمصادرة.",
+          "body": "في قطر، يختلف قانون تنظيم الصيد عن القرارات السنوية التي تحدد مواسمه وأنواعه. فالأساس التشريعي هو القانون رقم 4 لسنة 2002، الصادر في 11 أيار 2002 والمنشور في الجريدة الرسمية في 20 أيار، وهو مدرج في بوابة الميزان القانونية القطرية بوصفه قيد التطبيق.\n\nتنص المادة الأولى على مناطق يُحظر فيها صيد الحيوانات والطيور والزواحف البرية، منها المحميات والجزر وداخل المدن والقرى وعلى بعد يقل عن 500 متر من الطرق العامة. ولا يجوز الصيد داخل الممتلكات الخاصة دون موافقة أصحابها أو أصحاب الحقوق فيها.\n\nأما المادة الثانية فتسمح بالصيد في غير الأماكن المحظورة، خلال المواسم التي تُحدّد بقرار تنفيذي، ومن شروق الشمس حتى غروبها. وتُحدد القرارات التنفيذية أيضًا الأنواع والأدوات الجائز استخدامها. بذلك يحدد القانون الحدود الأساسية، وتأتي القرارات لتفصيل الموسم، وليس لتغييره إلى إباحة مطلقة.\n\nتضيف المادة الثالثة ثلاثة واجبات واضحة: عدم التعرض للسلاحف البحرية وبيضها، وعدم الإضرار ببيض الطيور وأعشاشها، وعدم الإضرار بالروض والنباتات البرية. وتمنح المادة الرابعة بعض الموظفين المخوّلين صفة الضبط القضائي لإثبات المخالفات.\n\nوتحدد المادة الخامسة، ما لم يرد نص أشد في قانون آخر، الحبس لمدة لا تتجاوز سنة وغرامة لا تزيد على عشرة آلاف ريال قطري، أو إحدى العقوبتين، مع مصادرة الأدوات والأسلحة المستخدمة، ومضاعفة العقوبة عند العود وفق الضوابط المحددة بالنص.\n\nهذه قراءة للقانون الأصلي الصادر عام 2002 من مصدره الرسمي في 2026، وليست خبرًا عن تشريع جديد أو عن فتح موسم جديد.\n\nالمصدر: بوابة الميزان القانونية القطرية، القانون 4/2002، المواد 1–6."
+        },
+        "en": {
+          "title": "Qatar's Law 4/2002: The statutory limits that apply beyond hunting seasons",
+          "summary": "Six provisions address prohibited locations, times, nests, marine turtles, enforcement and penalties.",
+          "body": "Qatar's seasonal hunting notices are implementing decisions, not the hunting law itself. The legal framework includes Law No. 4 of 2002, issued on 11 May and published on 20 May 2002, listed as in force by Qatar's official Al Meezan legal portal.\n\nArticle 1 forbids hunting wild mammals, birds and reptiles in natural reserves, on islands, within cities and villages, within 500 metres of public roads and on private land without the relevant owners' consent.\n\nArticle 2 permits hunting elsewhere only during specified seasons, between sunrise and sunset. Separate implementing decisions determine eligible quarry species and permitted hunting tools.\n\nArticle 3 protects marine turtles and their eggs, bird eggs and nests, and wild flora. Article 4 provides for authorized enforcement officers to investigate offences.\n\nArticle 5 provides, unless another law prescribes a more severe penalty, for imprisonment not exceeding one year or a fine up to QAR 10,000, or both. Equipment and weapons used in the offence are confiscated, and repeat offences attract the statutory increased punishment.\n\nThese are provisions of a law enacted in 2002 and explained in 2026; they should not be confused with any new seasonal notice.\n\nOriginal source: Al Meezan Qatar Legal Portal, Law No. 4 of 2002, Articles 1–6."
+        },
+        "fr": {
+          "title": "Qatar : la loi 4/2002 fixe des limites permanentes à la chasse",
+          "summary": "Zones interdites, horaires, protection des nids et des tortues, saisies et sanctions.",
+          "body": "Les annonces saisonnières de chasse au Qatar sont des décisions d'application, distinctes du cadre fixé par la loi no 4 de 2002. Promulguée le 11 mai et publiée le 20 mai 2002, cette loi est présentée comme en vigueur par le portail juridique officiel Al Meezan.\n\nL'article 1 interdit la chasse des mammifères, oiseaux et reptiles sauvages dans les réserves naturelles, sur les îles, à l'intérieur des villes et villages, à moins de 500 mètres des routes publiques, ainsi que sur les terrains privés sans l'accord des ayants droit.\n\nL'article 2 n'autorise la chasse ailleurs que durant les saisons établies et entre le lever et le coucher du soleil. Les décisions d'application précisent les espèces et moyens de chasse admis.\n\nL'article 3 protège les tortues marines et leurs œufs, les nids et œufs d'oiseaux, ainsi que la végétation sauvage. L'article 4 définit les prérogatives des agents habilités.\n\nL'article 5 prévoit, sauf sanction plus sévère, jusqu'à un an d'emprisonnement ou une amende maximale de 10 000 riyals qatariens, ou les deux, ainsi que la confiscation des outils et armes utilisés. Des règles aggravent les sanctions en cas de récidive.\n\nCette analyse publiée en 2026 porte sur une loi de 2002 et ne doit pas être présentée comme une nouvelle loi.\n\nSource : portail juridique officiel Al Meezan, loi 4/2002, articles 1 à 6."
+        }
+      }
+    },
+    {
+      "id": "om-6-2003-nature-wildlife-law",
+      "country": "Oman",
+      "law_number": "Royal Decree 6/2003",
+      "enacted": "2003-01-08",
+      "gazette": "2003-01-15",
+      "original_language": "ar",
+      "official_primary": "https://mjla.gov.om/laws/ar/1/show/63",
+      "official_secondary": "https://ea.gov.om/ar/the-authority/legislations-conventions/legislation-laws/",
+      "official_pdf": "https://www.opp.gov.om/doc/Laws/Law52.pdf",
+      "slugs": {
+        "ar": "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد",
+        "en": "oman-wildlife-law-royal-decree-6-2003-hunting",
+        "fr": "oman-loi-reserves-faune-decret-6-2003-chasse"
+      },
+      "text": {
+        "ar": {
+          "title": "عُمان: قانون 6/2003 يحمي الحبارى والجوارح ويضع الصيد ضمن نظام صون الأحياء الفطرية",
+          "summary": "قراءة في التشريع العُماني المنظم للمحميات والتصاريح والمصادرة، مع تمييز القانون عن قرارات مواسم الصيد.",
+          "body": "لا يقوم تنظيم الحياة الفطرية في سلطنة عُمان على تحديد مواسم الصيد فقط. فقانون المحميات الطبيعية وصون الأحياء الفطرية، الصادر بالمرسوم السلطاني رقم 6/2003 في 8 كانون الثاني 2003 والمنشور في الجريدة الرسمية يوم 15 كانون الثاني، يتناول حماية الأنواع والموائل والتصاريح والرقابة والعقوبات.\n\nويُعرّف القانون الصيد تعريفًا واسعًا يشمل الوسائل المتعمدة للإمساك بالحيوان أو شل حركته أو قتله أو الشروع في ذلك، فلا تنحصر أحكامه بفعل إطلاق النار. وتنص المادة الرابعة عشرة على ضرورة تصريح من الجهة المختصة لصيد أو احتجاز أو تربية أو نقل حيازة أي حيوان محمي أو نتاجه داخل المحمية أو خارجها، وتشمل قيود التصاريح جمع عينات من الأحياء الفطرية وحيازة بعض مشتقاتها.\n\nويولي القانون عناية خاصة لبعض الأنواع: ترد الحبارى في الملحق الأول، فيما يتضمن الملحق الثاني مجموعات من الطيور الجارحة، منها جميع أنواع الصقور والبوم والعقبان والنسور. ويُنظم الفصل الرابع عقوبات مختلفة تبعًا للأنواع والأفعال المحظورة، بما في ذلك أحكام مصادرة الأحياء الفطرية والأدوات ووسائل النقل المستخدمة في المخالفات.\n\nوتشير المادة الثالثة عشرة إلى اختلاف مناطق المحمية بحسب درجة الحماية؛ فبعضها مفتوح للأنشطة المتوافقة مع طبيعتها، وبعضها الآخر يتطلب تصريحًا خاصًا للدخول.\n\nالقانون صادر عام 2003 وليس تشريعًا مستحدثًا في 2026. وتُعرض أحكامه هنا لفهم الأساس التشريعي، مع ضرورة مراجعة آخر التعديلات واللوائح والقرارات لدى الجهات العمانية المختصة قبل تحديد الوضع القانوني لأي نشاط محدد.\n\nالمصدر: وزارة العدل والشؤون القانونية العُمانية، المرسوم السلطاني 6/2003، ولا سيما المواد 1 و13–17 والملحقان."
+        },
+        "en": {
+          "title": "Oman's 2003 wildlife law: Protected birds, permits and conservation beyond hunting seasons",
+          "summary": "Royal Decree 6/2003 addresses reserves, protected species, permits, enforcement and confiscation.",
+          "body": "Oman's legal safeguards for wildlife go beyond opening and closing hunting seasons. The Nature Reserves and Wildlife Conservation Law issued by Royal Decree 6/2003 on 8 January 2003 provides a framework for protected species, nature reserves, permits and enforcement.\n\nThe law defines hunting broadly to include deliberate capture, immobilisation, killing or attempted capture of wildlife. Under Article 14, a permit is required for hunting, keeping, breeding or transferring protected animals or their offspring inside or outside a nature reserve. Further permission requirements govern collecting specimens and possession of protected wildlife material.\n\nThe first statutory schedule lists the houbara bustard among specially protected animals and birds. The second includes groups such as falcons, owls, eagles and vultures. Penalty provisions distinguish offences involving the protected schedules and provide for confiscation of wildlife, gear and vehicles used in violations.\n\nArticle 13 also distinguishes zones within reserves: certain compatible recreational activities may be allowed in designated public areas, while access to stricter protection zones requires permission.\n\nThe underlying law dates to 2003. This is a 2026 editorial explanation of that instrument, not a claim of new legislation. Readers should consult the responsible authorities for subsequent amendments and current implementing measures.\n\nOriginal official texts: Oman's Ministry of Justice and Legal Affairs, Royal Decree 6/2003, particularly Articles 1, 13–17 and the appendices."
+        },
+        "fr": {
+          "title": "Oman : la loi de 2003 protège l'outarde houbara et les rapaces",
+          "summary": "Le décret royal 6/2003 définit un cadre de protection des réserves, des espèces et des autorisations.",
+          "body": "Le droit omanais de conservation de la faune dépasse la seule fixation de périodes de chasse. La loi sur les réserves naturelles et la protection de la faune, issue du décret royal 6/2003 du 8 janvier 2003, encadre les espèces protégées, les réserves, les autorisations et les sanctions.\n\nLe texte définit largement la chasse : capture volontaire, immobilisation, mise à mort ou tentative de capture. L'article 14 exige une autorisation pour chasser, détenir, élever ou transférer des animaux protégés et leurs produits, à l'intérieur comme à l'extérieur des réserves. D'autres activités de collecte et de détention de matériel biologique sont également réglementées.\n\nL'outarde houbara figure dans la première annexe législative. La seconde comprend notamment les faucons, chouettes, aigles et vautours. Les dispositions pénales distinguent les infractions selon les espèces et prévoient aussi la confiscation des animaux, des instruments et des véhicules utilisés.\n\nL'article 13 établit plusieurs degrés de protection à l'intérieur des réserves, avec des zones publiques à usage compatible et des secteurs soumis à autorisation.\n\nCette présentation de 2026 analyse la loi originelle de 2003 : il ne s'agit pas d'une nouveauté législative. Les modifications et règlements les plus récents doivent être vérifiés avant toute application à une situation concrète.\n\nSources officielles : ministère omanais de la Justice et des Affaires juridiques, décret royal 6/2003, notamment articles 1, 13 à 17 et annexes."
+        }
+      }
+    }
+  ],
+  "plan": {
+    "image_strategy": "create clearly labeled editorial graphics referring to each law; not official photographs",
+    "do_not_publish": true,
+    "channels": [
+      "AR",
+      "EN",
+      "FR"
+    ],
+    "required_checks": [
+      "original legal source",
+      "current amendments",
+      "photo / licensing",
+      "three-language SEO and listing",
+      "publication contract"
+    ]
+  }
+}
