@@ -1,0 +1,79 @@
+name: Reference-only sections news placement gate
+on:
+  push:
+    branches: [fix/reference-sections-not-news-20261015]
+  pull_request:
+    paths:
+      - 'content/homepage.json'
+      - 'scripts/editorial_distribution_policy.py'
+      - 'scripts/refresh_homepage_doors.py'
+      - 'scripts/homepage_demotion.py'
+      - 'docs/index.html'
+      - 'docs/en/index.html'
+      - 'docs/fr/index.html'
+permissions:
+  contents: write
+jobs:
+  protect-reference-sections:
+    if: "!contains(github.event.head_commit.message, '[reference-layout-build]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - name: Validate scientific and reference-only policy
+        run: |
+          python -m py_compile scripts/editorial_distribution_policy.py scripts/refresh_homepage_doors.py scripts/check_publication_contract.py
+          python scripts/editorial_distribution_policy.py
+          python - <<'PY'
+          import sys,json
+          sys.path.insert(0,'scripts')
+          from editorial_distribution_policy import eligible,memberships,validate_config
+          cfg=json.load(open('content/homepage.json'))
+          kinds=memberships(cfg)
+          assert not eligible("قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع",'latest',cfg,kinds)
+          assert not eligible("قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع",'ticker',cfg,kinds)
+          assert not eligible("بومة-المخازن",'ticker',cfg,kinds)
+          science='طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور'
+          assert not eligible(science,'latest',cfg,kinds)
+          assert not eligible(science,'ticker',cfg,kinds)
+          for surface in ('latest','ticker'):
+              modified=json.loads(json.dumps(cfg))
+              modified['editorial_distribution_policy']['approved_science_news'][surface]=[science]
+              assert eligible(science,surface,modified,kinds)
+              modified= json.loads(json.dumps(cfg))
+              modified['editorial_distribution_policy']['approved_science_news'][surface]=[science]
+              modified[surface if surface!='ticker' else 'ticker_slugs'].append(science)
+              if surface=='latest':modified['ia_slots']['latest'].append(science)
+              else:modified['ticker_entries'].append({'slug':science})
+              validate_config(modified)
+          print('PASS: laws/bird encyclopedia never news; science only through explicit approved list')
+          PY
+      - name: Regenerate three localized homepages with actual news in Updates
+        run: |
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+          sys.path.insert(0,'scripts')
+          from refresh_homepage_doors import refresh
+          for lang,p in [('ar','docs/index.html'),('en','docs/en/index.html'),('fr','docs/fr/index.html')]:
+              refresh(Path(p),lang)
+          PY
+          python scripts/test_homepage_doors.py
+          python scripts/check_publication_contract.py
+          python scripts/test_shared_ticker.py
+      - name: Commit verified home pages to feature branch only
+        if: github.event_name == 'push'
+        run: |
+          git config user.name "Sayd editorial QA"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/index.html docs/en/index.html docs/fr/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Exclude reference explainers from Updates and render news cards [reference-layout-build]"
+            git push origin HEAD:fix/reference-sections-not-news-20261015
+          fi
