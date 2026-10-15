@@ -218,6 +218,33 @@ def new_category(items, lang):
     target.write_text(t)
     return target
 
+def update_article_archive(items, lang):
+    """Prepend only newly published science articles to each language's archive."""
+    target = root_for(lang) / ("articles" if lang=="ar" else "stories") / "index.html"
+    text = target.read_text()
+    # Re-running a build must not duplicate these rows.
+    for a, _ in items:
+        slug = re.escape(a["slugs"][lang])
+        text = re.sub(r'<article\b[^>]*>.*?posts/' + slug + r'/index\.html.*?</article>', '', text, flags=re.S)
+    match = re.search(r'<article class="(?:post-row|card)[^"]*"', text)
+    if not match:
+        raise RuntimeError(f"{target}: archive card scaffold missing")
+    style = "post-row" if "post-row" in match.group() else "card"
+    rows = []
+    for article, image in items:
+        d = article["translations"][lang]
+        image_url = ("../" if lang=="ar" else "../../") + image
+        href = "../posts/" + quote(article["slugs"][lang]) + "/index.html"
+        rows.append('<article class="' + style + '"><a class="thumb" href="' + href +
+                    '"><img src="' + image_url + '" alt="' + html.escape(d["title"], quote=True) +
+                    '" loading="lazy"></a><div class="body"><div class="meta">' + DATE[lang] +
+                    '</div><h2><a href="' + href + '">' + html.escape(d["title"]) +
+                    '</a></h2><p class="excerpt">' + html.escape(d["deck"]) +
+                    '</p></div></article>')
+    text = text[:match.start()] + "\n".join(rows) + "\n" + text[match.start():]
+    target.write_text(text)
+
+
 def global_navigation():
     changes = 0
     for p in DOCS.rglob("*.html"):
@@ -289,6 +316,7 @@ def run():
     for lang in LANGS:
         pages += [change_article(a, lang, assets[a["key"]][0]) for a in articles]
         pages.append(new_category(items, lang))
+        update_article_archive(items, lang)
     # Before homepage rendering, new science category now provides genuine image cards.
     nav_count = global_navigation()
     sys.path.insert(0, str(ROOT / "scripts"))
