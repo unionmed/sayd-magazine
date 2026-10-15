@@ -171,7 +171,15 @@ def update_home(articles):
     from homepage_hunting_rotation import sync
     sync()
     from refresh_homepage_doors import refresh
-    for lang in LANGS:refresh(locale_root(lang)/'index.html',lang)
+    for lang in LANGS:
+        home=locale_root(lang)/'index.html'
+        refresh(home,lang)
+        # With Updates demotions, ticker card labels can initially be read
+        # from the displaced card rather than the canonical category card.
+        # A second pass stabilizes that source without altering placements.
+        refresh(home,lang)
+    from sync_tickers import sync as sync_tickers
+    sync_tickers(DOCS)
 
 def register_pairs(articles):
     p=ROOT/'content/en/pairs.json';d=json.loads(p.read_text())
