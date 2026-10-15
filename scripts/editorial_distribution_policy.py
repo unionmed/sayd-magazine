@@ -27,7 +27,7 @@ def memberships(config=None, docs=DOCS):
         # MAIN archive listing defines taxonomy membership; never classify a
         # ticker headline as an Encyclopaedia/Laws/Science article.
         page_html=page.read_text(encoding='utf-8')
-        main=re.search(r'<main\\b[^>]*>(.*?)</main>',page_html,re.S|re.I)
+        main=re.search(r'<main\b[^>]*>(.*?)</main>',page_html,re.S|re.I)
         if not main:
             raise ValueError('No category main content: '+str(page))
         for slug in LINK.findall(main.group(1)):
