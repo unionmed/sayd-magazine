@@ -1,0 +1,48 @@
+name: Reference-only sections news placement repair
+on:
+  push:
+    branches: [fix/reference-only-no-news-20261015]
+permissions:
+  contents: write
+jobs:
+  repair-home:
+    if: "!contains(github.event.head_commit.message, '[reference-news-built]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install lxml==5.3.2
+      - name: Render approved news slots, fail if any law/encyclopedia leaks
+        run: |
+          python - <<'PY'
+          import sys
+          sys.path.insert(0,'scripts')
+          from refresh_homepage_doors import config, validate_config, DOCS, refresh
+          c=config()
+          validate_config(c)
+          for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
+              refresh(DOCS/prefix/'index.html',lang)
+          from check_publication_contract import check
+          check()
+          print('PASS: three-language category-only home + news exclusion')
+          PY
+      - name: Regress news, core slots, ticker, category and SEO integrity
+        run: |
+          python scripts/test_homepage_doors.py
+          python scripts/test_shared_ticker.py
+          python scripts/test_hreflang_contract.py
+          python scripts/check_publication_contract.py
+      - name: Commit verified homepages in feature branch only
+        run: |
+          git config user.name "Sayd editorial QA"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/index.html docs/en/index.html docs/fr/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Keep Hunting Laws and Bird Encyclopedia off Updates [reference-news-built]"
+            git push origin HEAD:fix/reference-only-no-news-20261015
+          fi
