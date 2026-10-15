@@ -131,9 +131,9 @@ def check(base=None):
         groups=[nodes(t,'feature-lead'),nodes(t,'feature-stack')[0].xpath('./article'),nodes(t,'latest-feed')[0].xpath('./li'),nodes(t,'memory-strip')[0].xpath('.//article')]
         doors=nodes(t,'home-section');groups += [sum((g.xpath('./article') for g in nodes(x,'home-door-grid')),[]) for x in doors]
         assert [len(g) for g in groups[:4]]==[1,4,8,4],f'{lang}: lead/side/updates/memory counts'
-        assert len(doors)==7 and [len(g) for g in groups[4:]]==[6 if d['door']=='tv' else len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
+        assert len(doors)==8 and [len(g) for g in groups[4:]]==[6 if d['door']=='tv' else len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
         assert t.xpath('//section['+css_class('home-section')+']//h2/text()')==[d[{'ar':1,'en':2,'fr':3}[lang]] for d in DOORS], f'{lang}: door order'
-        tv=doors[5]
+        tv=doors[6]
         assert tv.xpath('./div[@data-tv-group]/@data-tv-group')==contract['tv_structure']['groups'],f'{lang}: TV groups missing or reordered'
         assert [len(nodes(g,'home-door-grid')[0].xpath('./article')) for g in tv.xpath('./div[@data-tv-group]')]==[3,3]
         assert contract['counts']['tv']==c['layout_limits']['tv']==6
@@ -203,7 +203,7 @@ def check(base=None):
         assert sig==[tuple(x) for x in contract['header_links'][lang]],f'{lang}: navigation/social changed'
     if base:
         check_new_stories(changed_docs(base),pairs,base)
-    print('PASS: three mirrored homepages, 1+4+8+4 cards, seven doors, shared images, dates, protected design and social links')
+    print('PASS: three mirrored homepages, 1+4+8+4 cards, eight doors, shared images, dates, protected design and social links')
 
 def check_new_stories(paths,pairs,base=None):
     checked=set()
