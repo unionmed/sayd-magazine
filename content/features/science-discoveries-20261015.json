@@ -21,7 +21,7 @@
       "slugs": {
         "ar": "طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور",
         "en": "jurassic-flightless-bird-yuezhuornis-evolution",
-        "fr": "oiseau-jurassique-incapable-voler-evolution"
+        "fr": "jurassic-flightless-bird-yuezhuornis-evolution"
       },
       "source": {
         "publication": "Nature",
@@ -41,7 +41,8 @@
           "url": "https://www.eurekalert.org/multimedia/1156633",
           "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
           "status": "LICENSE VERIFIED FOR NEWS COVERAGE; PENDING LOCAL COPY",
-          "use_on_site": false
+          "use_on_site": false,
+          "local_path": "media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg"
         },
         {
           "role": "secondary",
@@ -93,7 +94,7 @@
       "slugs": {
         "ar": "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل",
         "en": "turtle-dove-gps-eastern-flyway-nile-red-sea",
-        "fr": "tourterelle-bois-gps-route-migratoire-nil-mer-rouge"
+        "fr": "turtle-dove-gps-eastern-flyway-nile-red-sea"
       },
       "source": {
         "publication": "Bird Conservation International",
@@ -114,7 +115,8 @@
           "url": "https://www.cambridge.org/core/journals/bird-conservation-international/article/gps-tracking-of-the-european-turtledove-along-the-eastern-flyway-reveals-challenging-flights-over-ecological-barriers-and-anthropogenic-risks/82F052E252691542D9D648D85DAB381A",
           "license": "Article CC BY 4.0; check individual figure for third-party restrictions",
           "status": "PENDING LOCAL COPY",
-          "use_on_site": false
+          "use_on_site": false,
+          "local_path": "media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png"
         }
       ],
       "translations": {
@@ -144,5 +146,6 @@
       "tests and responsive review"
     ],
     "do_not_displace_existing_cards": true
-  }
+  },
+  "build_status": "PENDING_TWO_REQUIRED_LOCAL_IMAGE_FILES"
 }
