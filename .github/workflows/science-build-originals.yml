@@ -1,0 +1,81 @@
+name: Science original images and site build (feature branch)
+on:
+  push:
+    branches: [feature/science-discoveries-20261015]
+permissions:
+  contents: write
+jobs:
+  build-feature:
+    if: "!contains(github.event.head_commit.message, '[science-generated]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install lxml==5.3.2 pillow==11.3.0 requests==2.34.2
+      - name: Fetch and verify two study-specific original images
+        run: |
+          python - <<'PY'
+          import hashlib, json, requests
+          from io import BytesIO
+          from pathlib import Path
+          from PIL import Image
+          assets = [
+            ("jurassic-flightless-yuezhuornis",
+             "https://english.cas.cn/newsroom/research-news/202610/W020261013560664863468.jpg",
+             "image/jpeg", "Min Wang / Chinese Academy of Sciences; press coverage only"),
+            ("turtle-dove-eastern-flyway-gps",
+             "https://static.cambridge.org/binary/version/id/urn:cambridge.org:id:binary:20261011233704532-0557:S0959270926100860:S0959270926100860_fig1.png?pub-status=live",
+             "image/png", "Perlman et al. / Bird Conservation International, Cambridge University Press, CC BY 4.0"),
+          ]
+          p = Path('content/features/science-discoveries-20261015.json')
+          d=json.loads(p.read_text())
+          receipt=[]
+          for key,url,expected,credit in assets:
+              a=next(a for a in d['articles'] if a['key']==key)
+              photo=next(x for x in a['photos'] if x['role']=='lead')
+              r=requests.get(url,timeout=30,headers={"User-Agent":"Mozilla/5.0 (Sayd Magazine news editorial)"})
+              r.raise_for_status()
+              content=r.content
+              assert len(content)>5000 and r.headers.get("content-type","").startswith(expected), (key,r.status_code,r.headers.get("content-type"))
+              with Image.open(BytesIO(content)) as im:
+                  im.verify()
+              with Image.open(BytesIO(content)) as im:
+                  width,height=im.size
+              assert width >= 500 and height >= 300, (key,width,height)
+              target=Path('docs')/photo['local_path']
+              target.parent.mkdir(parents=True,exist_ok=True)
+              target.write_bytes(content)
+              digest=hashlib.sha256(content).hexdigest()
+              photo.update(use_on_site=True,status="LOCAL COPY VERIFIED",downloaded_source=url,credit=credit,
+                           sha256=digest,image_dimensions=[width,height])
+              receipt.append({"article":key,"site_path":str(target),"sha256":digest,"bytes":len(content),
+                              "width":width,"height":height,"credit":credit,"source_url":url})
+          p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+          out=Path('notes/science-photo-receipt-20261015.json')
+          out.write_text(json.dumps({"date":"2026-10-15","status":"LOCAL COPIES VERIFIED","images":receipt},ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps(receipt,ensure_ascii=False))
+          PY
+      - name: Generate science pages and preserve old card placement
+        run: python scripts/build_science_discoveries_20261015.py
+      - name: Assert section mirrors, same-image sources, and existing publishing standards
+        run: |
+          python scripts/test_homepage_doors.py
+          python scripts/test_site_ia.py
+          python scripts/check_publication_contract.py --base origin/main
+      - name: Commit verified assets and static pages on review branch only
+        run: |
+          git config user.name "Sayd editorial build"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs content notes
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Build Science & Discoveries in three languages with original images [science-generated]"
+            git push origin HEAD:feature/science-discoveries-20261015
+          fi
