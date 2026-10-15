@@ -150,8 +150,8 @@ def metadata_update():
     p=ROOT/'scripts/refresh_homepage_doors.py';s=p.read_text()
     old="('poetry','شعر وفن','Poetry & Art','Poésie et arts','ثقافة-وتراث')"
     new="('poetry','تراث','Heritage','Patrimoine','ثقافة-وتراث')"
-    assert old in s
-    p.write_text(s.replace(old,new))
+    assert old in s or new in s
+    if old in s:p.write_text(s.replace(old,new))
     # The French edition generator must not revert the approved title.
     p=ROOT/'scripts/build_fr_edition.py';s=p.read_text()
     s=s.replace("'ثقافة-وتراث': 'Poésie et arts'","'ثقافة-وتراث': 'Patrimoine'")
