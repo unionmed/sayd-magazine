@@ -205,11 +205,33 @@ def check(base=None):
         check_new_stories(changed_docs(base),pairs,base)
     print('PASS: three mirrored homepages, 1+4+8+4 cards, eight doors, shared images, dates, protected design and social links')
 
+def science_navigation_only_repair(file, base):
+    """Exact, auditable exception for adding the Nayef-approved Science menu link.
+
+    Unchanged original body/head/layout/ticker is mandatory. This cannot exempt
+    a changed article or any other edit, and requires an existing page at base.
+    """
+    if not base or not file.startswith("docs/") or not file.endswith(".html"):
+        return False
+    old = subprocess.run(["git", "show", f"{base}:{file}"], cwd=ROOT,
+                         capture_output=True)
+    if old.returncode:
+        return False
+    before = old.stdout.decode()
+    after = (ROOT / file).read_text()
+    from build_science_discoveries_20261015 import navigation_block
+    relative = Path(file).relative_to("docs")
+    lang = relative.parts[0] if relative.parts[0] in ("en", "fr") else "ar"
+    return before != after and navigation_block(before, lang, relative) == after
+
+
 def check_new_stories(paths,pairs,base=None):
     checked=set()
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if science_navigation_only_repair(file,base):
+            continue
         if shared_ticker_only_repair(file,base):
             continue
         if gallery_indexing_only_repair(file,base):
