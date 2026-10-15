@@ -43,10 +43,10 @@ def test_demotion_drops_a_slug_already_in_latest() -> None:
     assert len(set(out["latest"])) == 10
 
 
-def test_desktop_nav_shows_all_nine_doors() -> None:
+def test_desktop_nav_shows_all_ten_doors() -> None:
     """Desktop lists every door. Mobile stays the first four plus More."""
     visible = {door["id"] for door in ia.visible_doors()}
-    assert visible == {"hunting", "gear", "equestrian", "wildlife", "tv", "photos"}
+    assert visible == {"hunting", "gear", "equestrian", "wildlife", "science", "tv", "photos"}
     hunting = next(door for door in ia.visible_doors() if door["id"] == "hunting")
     assert hunting["children"] == []
     nav = ia.desktop_nav_inner("ar", 0)
@@ -55,6 +55,7 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
         "رماية وعتاد",
         "فروسية",
         "حياة برية وتخييم",
+        "علوم واكتشافات",
         "شعر وفن",
         "قوانين الصيد",
         "موسوعة الطيور",
@@ -75,6 +76,7 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
         "Shooting &amp; Gear",
         "Equestrian",
         "Wildlife &amp; Camping",
+        "Science &amp; Discoveries",
         "Poetry &amp; Art",
         "Hunting Laws",
         "Bird Encyclopedia",
@@ -99,7 +101,7 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     assert 'href="../category/صيد/index.html">صيد</a>' in mobile
     assert 'class="mobile-more mobile-sub"' not in mobile
     assert mobile.count('name="mobile-nav"') == 1
-    more_ar = ["شعر وفن", "قوانين الصيد", "موسوعة الطيور", "صيد TV", "صور"]
+    more_ar = ["علوم واكتشافات", "شعر وفن", "قوانين الصيد", "موسوعة الطيور", "صيد TV", "صور"]
     more_at = [mobile.index(f">{label}<") for label in more_ar]
     assert more_at == sorted(more_at)
     assert mobile.index(">المزيد<") < mobile.index(">شعر وفن<")
@@ -113,7 +115,7 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     assert "More" in en_mobile
     en_children = ["Bird Hunting", "Falconry", "Land Hunting", "Marine Hunting"]
     assert all(label not in en_mobile for label in en_children)
-    more_en = ["Poetry &amp; Art", "Hunting Laws", "Bird Encyclopedia", "Sayd TV", "Photos"]
+    more_en = ["Science &amp; Discoveries", "Poetry &amp; Art", "Hunting Laws", "Bird Encyclopedia", "Sayd TV", "Photos"]
     more_en_at = [en_mobile.index(label) for label in more_en]
     assert more_en_at == sorted(more_en_at)
     assert en_mobile.index("More") < en_mobile.index("Poetry &amp; Art")
