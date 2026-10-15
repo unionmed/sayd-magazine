@@ -22,6 +22,20 @@ jobs:
         run: |
           python -m py_compile scripts/publish_three_hunting_laws_20261015.py
           python scripts/publish_three_hunting_laws_20261015.py
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+          from difflib import unified_diff
+          sys.path.insert(0,'scripts')
+          from refresh_homepage_doors import refresh
+          for lang in ('ar','en','fr'):
+              p=Path('docs')/('' if lang=='ar' else lang)/'index.html'
+              before=p.read_text()
+              after=refresh(p,lang)
+              if before!=after:
+                  print('HOMEPAGE SECOND-REFRESH DIFF',lang)
+                  print('\n'.join(list(unified_diff(before.splitlines(),after.splitlines(),n=2))[:50]))
+          PY
           python scripts/test_homepage_doors.py
           python scripts/test_shared_ticker.py
           python scripts/test_hreflang_contract.py
