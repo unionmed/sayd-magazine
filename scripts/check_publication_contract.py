@@ -117,6 +117,8 @@ def archive_image_repair(file, base):
     return True
 
 def check(base=None):
+    from editorial_distribution_policy import validate_config as check_distribution
+    check_distribution(config())
     c=config();validate_config(c);channel=channel_config();channel_videos=channel['videos'][:3]
     if c.get('hunting_rotation'):
         from homepage_hunting_rotation import expected
