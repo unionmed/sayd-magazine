@@ -54,7 +54,8 @@ def main():
         after = BLOCK.sub(lambda m: render(m[0],page), before)
         css = os.path.relpath(ROOT / 'docs/assets/css/related-reading.css',page.parent)
         if 'href="'+css+'"' not in after:
-            after = after.replace('</head>', '  <link rel="stylesheet" href="'+css+'">\n</head>',1)
+            anchor = '  <!-- analytics:start -->' if '  <!-- analytics:start -->' in after else '</head>'
+            after = after.replace(anchor, '  <link rel="stylesheet" href="'+css+'">\n'+anchor,1)
         # Source bodies mirror the exact rendered block; no editorial text/date edits.
         old = BLOCK.search(before)[0]
         new = BLOCK.search(after)[0]
