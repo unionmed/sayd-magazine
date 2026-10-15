@@ -56,4 +56,18 @@ jobs:
           print('Synthetic images generated only inside CI runner; this step does not publish or commit files.')
           PY
           python scripts/build_science_discoveries_20261015.py
+          python - <<'PY'
+          from pathlib import Path
+          from difflib import unified_diff
+          import sys
+          sys.path.insert(0, 'scripts')
+          from refresh_homepage_doors import refresh
+          for lang in ('ar','en','fr'):
+              p=Path('docs') / ('' if lang=='ar' else lang) / 'index.html'
+              before=p.read_text()
+              after=refresh(p,lang)
+              if before != after:
+                  diff=list(unified_diff(before.splitlines(),after.splitlines(),n=2))
+                  print('NON-IDEMPOTENT',lang,'\n'.join(diff[:40]))
+          PY
           python scripts/test_homepage_doors.py
