@@ -105,11 +105,56 @@ def render_li(slug,item):
             f'<span class="feed-text"><span class="feed-title">{esc(item["title"])}</span>'
             f'<span class="feed-date">{esc(item["date"])}</span></span></a></li>')
 
+def source_article_category(ar_slug):
+    """Read the actual Arabic article badge; never classify by headline words.
+
+    This prevents news workflows accidentally pushing encyclopedic or statutory
+    reference articles into the lead, Updates, or shared ticker.
+    """
+    page=DOCS/'posts'/ar_slug/'index.html'
+    if not page.is_file():
+        raise ValueError(f'Unknown news candidate: {ar_slug}')
+    tree=dom.fromstring(page.read_text())
+    hrefs=tree.xpath('//header[contains(concat(" ",normalize-space(@class)," ")," article-header ")]//a[contains(concat(" ",normalize-space(@class)," ")," badge ")]/@href')
+    if len(hrefs)!=1:
+        raise ValueError(f'Article category badge missing/ambiguous: {ar_slug}')
+    hit=re.search(r'category/([^/]+)/',unquote(hrefs[0]))
+    if not hit:
+        raise ValueError(f'Article category link invalid: {ar_slug}')
+    return hit.group(1)
+
+
+def validate_news_selection(c):
+    """Fail closed: category-only laws/encyclopedia; science needs approval."""
+    excluded=set(c.get('reference_only_categories',[]))
+    if excluded!={'قوانين','موسوعة-الطيور'}:
+        raise ValueError('Protected reference categories must remain Laws and Bird Encyclopedia')
+    science='علوم-واكتشافات'
+    if c.get('science_news_requires_explicit_approval') is not True:
+        raise ValueError('Science-to-news editorial approval protection disabled')
+    approvals=set(c.get('approved_science_news',[]))
+    all_upper=c['featured']+c['latest']
+    ticker=c['ticker_slugs']
+    assert [e['slug'] for e in c.get('ticker_entries',[])]==ticker, 'Ticker list differs'
+    for slug in set(all_upper+ticker):
+        category=source_article_category(slug)
+        if category in excluded:
+            raise ValueError(f'Reference-only article cannot enter homepage news: {slug} ({category})')
+        if category==science and slug not in approvals:
+            raise ValueError(f'Science in lead/Updates/ticker requires Nayef approval: {slug}')
+    # Editorial approval is limited to exact article slugs and never inferred from
+    # having appeared in the archive or a dedicated science door.
+    for slug in approvals:
+        if source_article_category(slug)!=science:
+            raise ValueError(f'Non-science slug in scientific news allowlist: {slug}')
+
+
 def validate_config(c):
     assert c['memory_after_door'] == 'science', 'Memory follows Science & Discoveries'
     assert len(c['featured'])==5 and len(c['latest'])==8, 'Require one lead, four side cards and eight Updates'
     assert c['featured']==[c['ia_slots']['main']]+c['ia_slots']['important']
     assert c['latest']==c['ia_slots']['latest']
+    validate_news_selection(c)
     upper=c['featured']+c['latest'];assert len(set(upper))==len(upper)
     approved=set(c.get('approved_home_repeats',[]));seen=set()
     for d in c['ia_door_sections']:
