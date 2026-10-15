@@ -186,13 +186,13 @@ def change_article(article, lang, image):
                   "categories: [" + LABEL["ar"] + "]\nfeatured: " + image + "\n---\n\n" + d["body"] + "\n")
     return target
 
-def listing_rows(items, lang, target):
+def listing_rows(items, lang, target, style="post-row"):
     rows = []
     for article, image in items:
         d = article["translations"][lang]
         href = ("../../posts/" + quote(article["slugs"][lang]) + "/index.html")
         photo = ("../../../" if lang != "ar" else "../../") + image
-        rows.append('<article class="post-row"><a class="thumb" href="' + href +
+        rows.append('<article class="' + style + '"><a class="thumb" href="' + href +
                     '"><img src="' + photo + '" alt="' + html.escape(d["title"], quote=True) +
                     '" loading="lazy"></a><div class="body"><div class="meta">' + DATE[lang] +
                     '</div><h2><a href="' + href + '">' + html.escape(d["title"]) +
@@ -205,11 +205,12 @@ def new_category(items, lang):
     target = category_for(lang)
     target.parent.mkdir(parents=True, exist_ok=True)
     t = src.read_text()
-    existing = re.search(r'<article class="post-row".*?</article>', t, flags=re.S)
+    existing = re.search(r'<article class="(?:post-row|card)[^"]*".*?</article>', t, flags=re.S)
     if not existing:
         raise RuntimeError(f"{src}: category card template missing")
-    t = re.sub(r'<article class="post-row".*?</article>', '', t, flags=re.S)
-    t = t[:existing.start()] + listing_rows(items, lang, target) + t[existing.start():]
+    style = 'post-row' if 'post-row' in existing.group()[:50] else 'card'
+    t = re.sub(r'<article class="(?:post-row|card)[^"]*".*?</article>', '', t, flags=re.S)
+    t = t[:existing.start()] + listing_rows(items, lang, target, style) + t[existing.start():]
     t = t.replace("موسوعة-الطيور", CATEGORY).replace(
         {"ar": "موسوعة الطيور", "en": "Bird Encyclopedia", "fr": "Encyclopédie des oiseaux"}[lang],
         LABEL[lang])
