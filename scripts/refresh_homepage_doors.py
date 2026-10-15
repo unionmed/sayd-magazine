@@ -128,13 +128,13 @@ def ensure_science_section(page, lang):
     headings = {'ar': 'علوم واكتشافات', 'en': 'Science & Discoveries',
                 'fr': 'Sciences et découvertes'}
     heading = headings[lang]
-    existing = re.findall(r'<section class="home-section">\\s*<div class="section-head[^>]*">\\s*<h2>' + re.escape(heading) + r'</h2>', page)
+    existing = re.findall(r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(heading) + r'</h2>', page)
     if len(existing) > 1:
         raise ValueError(f'{lang}: duplicate science desks')
     if existing:
         return page
     wildlife = html.escape(next(d[{'ar': 1, 'en': 2, 'fr': 3}[lang] for d in DOORS if d[0] == 'wildlife'))
-    pattern = r'<section class="home-section">\\s*<div class="section-head[^>]*">\\s*<h2>' + re.escape(wildlife) + r'</h2>.*?</section>\\n?'
+    pattern = r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(wildlife) + r'</h2>.*?</section>\n?'
     targets = list(re.finditer(pattern, page, flags=re.S))
     if len(targets) != 1:
         raise ValueError(f'{lang}: cannot uniquely locate Wildlife desk for insertion')
