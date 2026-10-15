@@ -1,0 +1,38 @@
+name: Science section preflight (draft only)
+on:
+  push:
+    branches:
+      - feature/science-discoveries-20261015
+permissions:
+  contents: read
+jobs:
+  validate-draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check builder Python syntax
+        run: python -m py_compile scripts/build_science_discoveries_20261015.py scripts/refresh_homepage_doors.py scripts/site_ia.py scripts/check_publication_contract.py
+      - name: Confirm untouched historical homepage placement and complete drafts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('content/features/science-discoveries-20261015.json')
+          d=json.loads(p.read_text())
+          home=json.loads(Path('content/homepage.json').read_text())
+          assert len(d['articles'])==2
+          assert home['home_section_order'][4]=='علوم واكتشافات'
+          assert home['memory_after_door']=='science'
+          assert [v['door'] for v in home['ia_door_sections']][4]=='science'
+          assert len(home['ia_slots']['important'])==4 and len(home['ia_slots']['latest'])==8
+          assert len(home['featured'])==5 and len(home['latest'])==8
+          for a in d['articles']:
+              assert set(a['translations'])=={'ar','en','fr'}
+              assert all(len(a['translations'][lang]['body'])>500 for lang in ('ar','en','fr'))
+              assert a['slugs']['fr']==a['slugs']['en']
+              assert any(im.get('role')=='lead' and im.get('local_path') for im in a['photos'])
+          print('PASS: science draft structure and original homepage placement; images and publication remain gated.')
+          PY
