@@ -38,4 +38,6 @@ subtitle: "From watching migration routes to documenting offences, CABS voluntee
 <h2 style="font-size:1em">After your experience in Lebanon, what message would you like to give hunters, young people and everyone interested in protecting birds and nature?</h2>
 <p>Bird migration is one of nature’s greatest wonders, and Lebanon lies at the heart of that route. I would ask hunters to see these birds not as targets, but as precious living beings crossing their skies. To young people, I say: go outside, look up at the sky and help protect nature. The more people know and love these birds, the better their chances of surviving and completing their journey.</p>
 
-<section class="related-reading"><h2>Read next</h2><p><a href="/en/posts/northern-bekaa-38280-square-metres-bird-nets-apu-cabs/">Northern Bekaa: bird-net removals reach 38,280 m²</a></p></section>
+<section class="editorial-background"><h2>Related reporting</h2><p><a href="/en/posts/northern-bekaa-38280-square-metres-bird-nets-apu-cabs/">Northern Bekaa: bird-net removals reach 38,280 m²</a></p></section>
+
+<!-- growth-latest:start --><section class="article-more"><h2>Read also</h2><ul><li><a href="/en/posts/hunting-masculinity-dead-birds/">Macho hunting… when some look for their manhood among bird carcasses!</a></li><li><a href="/en/posts/akkar-sparrowhawk-backpack-raptor-poaching/">Sparrowhawk Hidden in a Backpack: Two Detained in Akkar Raptor-Poaching Operation</a></li></ul></section><!-- growth-latest:end -->
