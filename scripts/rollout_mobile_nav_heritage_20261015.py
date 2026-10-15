@@ -125,21 +125,18 @@ def site_source_update():
     s=s[:a]+mobile+s[b:]
     p.write_text(s)
 
-String_mobile_function="""def mobile_nav_html(lang: str, depth: int) -> str:
-    \\"\\"\\"All ten doors, identical order to desktop, no More panel.
-
-    CSS wraps into two or three rows at actual viewport width.
-    \\"\\"\\"
+String_mobile_function = '''
+def mobile_nav_html(lang: str, depth: int) -> str:
+    """All ten doors in desktop order; let CSS wrap at the device width."""
     aria = "Mobile menu" if lang == "en" else "قائمة الجوال"
     ordered = [
         f'          {_link(_href(depth, door["folder"], lang), chrome_label(door, lang, short=True))}'
         for door in DOORS
     ]
-    return ('        <nav class="mobile-nav" aria-label="' + aria + '">\\n' +
-            '\\n'.join(ordered) + '\\n        </nav>')
+    return ('        <nav class="mobile-nav" aria-label="' + aria + '">\n' +
+            '\n'.join(ordered) + '\n        </nav>')
 
-
-""".replace('\\n','\n')
+'''.lstrip()
 
 def metadata_update():
     p=ROOT/'content/homepage.json';home=json.loads(p.read_text())
