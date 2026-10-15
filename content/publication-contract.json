@@ -448,6 +448,40 @@
     "clarifications": "Editorial confirmations guide factual editing; they do not automatically become published callouts. Reader-facing context and explicitly requested public corrections must have an independent journalistic purpose and wording.",
     "translation": "Translate only the final edited journalistic copy into English and French. Preserve facts and media; exclude internal conversation and translator workflow notes.",
     "prepublication_review": "Mandatory human/editorial review of every public-facing element in AR/EN/FR for internal discussion leakage. Automated checks alone cannot certify compliance.",
-    "authority": "Applies to all Sayd editors, translators and agents; only Nayef can explicitly amend it."
+    "authority": "Applies to all Sayd editors, translators and agents; only Nayef can explicitly amend it.",
+    "category_only_placement": {
+      "approved_by": "Nayef Krayem",
+      "approved_on": "2026-10-15",
+      "default_categories": [
+        "موسوعة-الطيور",
+        "قوانين"
+      ],
+      "protected_placements": [
+        "ia_slots.latest",
+        "ticker_slugs",
+        "ticker_entries"
+      ],
+      "rule_ar": "مداخل موسوعة الطيور والشروح المرجعية لقوانين الصيد تعرض في أبوابها فقط، ولا توزع تلقائيًا على المستجدات أو شريط الأخبار. الاستثناء لاكتشاف علمي حديث أو خبر مهم بعد طلب نايف أو موافقته الصريحة.",
+      "requires_explicit_authorization_for_news_or_discovery": true,
+      "note": "A newly written explanation of an old hunting statute remains a legal reference, not breaking news or a newly enacted 2026 law."
+    },
+    "navigation": {
+      "approved_on": "2026-10-15",
+      "door_order": [
+        "صيد",
+        "رماية وعتاد",
+        "فروسية",
+        "حياة برية وتخييم",
+        "علوم واكتشافات",
+        "موسوعة الطيور",
+        "تراث",
+        "قوانين الصيد",
+        "صيد TV",
+        "صور"
+      ],
+      "desktop_mobile_same_order": true,
+      "mobile_all_visible_no_more": true,
+      "mobile_wrap_without_horizontal_scroll": true
+    }
   }
 }
