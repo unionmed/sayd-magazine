@@ -50,7 +50,7 @@ def related(lang):
     labels={
         "ar":["باشق داخل حقيبة ظهر في عكار: صيد الجوارح","ألكسندرا من CABS تتحدث عن العمل الميداني في لبنان"],
         "en":["A sparrowhawk in a backpack in Akkar: raptor poaching","Alexandra of CABS on her fieldwork in Lebanon"],
-        "fr":["Un épervier dans un sac à dos au Akkar : le braconnage des rapaces","Alexandra de CABS raconte son travail de terrain au Liban"]
+        "fr":["Un épervier dans un sac à dos dans la région d’Akkar : le braconnage des rapaces","Alexandra de CABS raconte son travail de terrain au Liban"]
     }
     list_items=[]
     for original,title in zip(related_ar,labels[lang]):
