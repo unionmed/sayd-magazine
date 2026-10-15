@@ -10,7 +10,8 @@
     "location": "After Wildlife & Camping; before Memory and Poetry & Art",
     "category_slug": "علوم-واكتشافات",
     "publication_limit": 4,
-    "editorial_limit": "Only verified studies and substantive breakthroughs"
+    "editorial_limit": "Only verified studies and substantive breakthroughs",
+    "status": "DRAFT_UNPUBLISHED"
   },
   "created": "2026-10-15",
   "articles": [
@@ -34,16 +35,6 @@
       "photos": [
         {
           "role": "lead",
-          "subject": "Life reconstruction of Late Jurassic bird Yuezhuornis yangyuanensis",
-          "agency": "Chinese Academy of Sciences Headquarters / EurekAlert",
-          "creator": "Min Wang",
-          "url": "https://www.eurekalert.org/multimedia/1156632",
-          "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
-          "status": "LICENSE VERIFIED FOR NEWS COVERAGE; PENDING LOCAL COPY",
-          "use_on_site": false
-        },
-        {
-          "role": "secondary",
           "subject": "Photograph of holotype fossil IVPP V34427, Yuezhuornis yangyuanensis",
           "agency": "Chinese Academy of Sciences Headquarters / EurekAlert",
           "creator": "Min Wang",
@@ -51,6 +42,21 @@
           "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
           "status": "LICENSE VERIFIED FOR NEWS COVERAGE; PENDING LOCAL COPY",
           "use_on_site": false
+        },
+        {
+          "role": "secondary",
+          "subject": "Life reconstruction of Late Jurassic bird Yuezhuornis yangyuanensis",
+          "agency": "Chinese Academy of Sciences Headquarters / EurekAlert",
+          "creator": "Min Wang",
+          "url": "https://www.eurekalert.org/multimedia/1156632",
+          "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
+          "status": "ATTRIBUTION CONFLICT: CAS official page credits Chung-Tat Cheung while EurekAlert credits Min Wang; PENDING LOCAL COPY AND CREDIT RESOLUTION",
+          "use_on_site": false,
+          "credit_conflict": {
+            "cas": "Chung-Tat Cheung",
+            "eurekalert": "Min Wang",
+            "cas_url": "https://english.cas.cn/newsroom/research-news/202610/t20261010_1202178.shtml"
+          }
         },
         {
           "role": "secondary",
