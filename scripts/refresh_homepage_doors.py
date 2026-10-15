@@ -21,6 +21,7 @@ DOORS = [
  ('gear','رماية وعتاد','Shooting & Gear','Tir et équipement','عتاد-وسلاح-الصيد'),
  ('equestrian','فروسية','Equestrian','Équitation','فروسية'),
  ('wildlife','برية وتخييم','Wildlife & Camping','Faune et camping','حياة-برية-وتخييم'),
+ ('science','علوم واكتشافات','Science & Discoveries','Sciences et découvertes','علوم-واكتشافات'),
  ('poetry','شعر وفن','Poetry & Art','Poésie et arts','ثقافة-وتراث'),
  ('tv','صيد TV','Sayd TV','Sayd TV','استديو-صيد'),
  ('photos','صور','Photos','Photos','صور'),
@@ -105,7 +106,7 @@ def render_li(slug,item):
             f'<span class="feed-date">{esc(item["date"])}</span></span></a></li>')
 
 def validate_config(c):
-    assert c['memory_after_door'] == 'wildlife', 'Memory follows Wildlife & Camping'
+    assert c['memory_after_door'] == 'science', 'Memory follows Science & Discoveries'
     assert len(c['featured'])==5 and len(c['latest'])==8, 'Require one lead, four side cards and eight Updates'
     assert c['featured']==[c['ia_slots']['main']]+c['ia_slots']['important']
     assert c['latest']==c['ia_slots']['latest']
@@ -117,6 +118,34 @@ def validate_config(c):
         for s in d['slugs']:
             assert s not in seen;seen.add(s)
             assert s not in upper or (d['door']=='equestrian' and s in approved)
+
+def ensure_science_section(page, lang):
+    """Insert exactly one new desk after Wildlife without reordering other desks.
+
+    A missing feature image is handled by data()'s existing fail-closed check,
+    never replaced with a generic placeholder or remote hotlink.
+    """
+    headings = {'ar': 'علوم واكتشافات', 'en': 'Science & Discoveries',
+                'fr': 'Sciences et découvertes'}
+    heading = headings[lang]
+    existing = re.findall(r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(html.escape(heading)) + r'</h2>', page)
+    if len(existing) > 1:
+        raise ValueError(f'{lang}: duplicate science desks')
+    if existing:
+        return page
+    wildlife = html.escape(next(d[{'ar': 1, 'en': 2, 'fr': 3}[lang]] for d in DOORS if d[0] == 'wildlife'))
+    pattern = r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(wildlife) + r'</h2>.*?</section>\n?'
+    targets = list(re.finditer(pattern, page, flags=re.S))
+    if len(targets) != 1:
+        raise ValueError(f'{lang}: cannot uniquely locate Wildlife desk for insertion')
+    more = {'ar': 'المزيد', 'en': 'More', 'fr': 'Voir plus'}[lang]
+    block = ('<section class="home-section">\\n'
+             '<div class="section-head"><h2>' + html.escape(heading) +
+             '</h2><a href="category/علوم-واكتشافات/index.html">' + more +
+             '</a></div>\\n<div class="home-door-grid"></div>\\n</section>\\n')
+    cut = targets[0].end()
+    return page[:cut] + block.replace('\\n', '\n') + page[cut:]
+
 
 def place_memory(page, lang, after_door):
     """Move the whole existing strip, without re-rendering its cards or chrome."""
@@ -164,6 +193,7 @@ def refresh(path,lang):
     wrappers=re.sub(r'<article\b.*?</article>','',old,flags=re.S)
     page=pre+'<div class="feature-stack">\n'+stack+wrappers+'<div class="latest-col">'+post
     page=re.sub(r'(<ul class="latest-feed">).*?(</ul>)',lambda m:m[1]+'\n'+'\n'.join(render_li(*data(s)) for s in c['latest'])+'\n'+m[2],page,count=1,flags=re.S)
+    page=ensure_science_section(page,lang)
     sections={d['door']:d['slugs'] for d in c['ia_door_sections']}
     for door,ar,en,fr,_ in DOORS:
         heading={'ar':ar,'en':en,'fr':fr}[lang]

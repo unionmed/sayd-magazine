@@ -1,0 +1,165 @@
+{
+  "status": "EDITORIAL_DRAFT_AWAITING_LOCAL_IMAGES_AND_SITE_BUILD",
+  "section": {
+    "id": "science",
+    "labels": {
+      "ar": "علوم واكتشافات",
+      "en": "Science & Discoveries",
+      "fr": "Sciences et découvertes"
+    },
+    "location": "After Wildlife & Camping; before Memory and Poetry & Art",
+    "category_slug": "علوم-واكتشافات",
+    "publication_limit": 4,
+    "editorial_limit": "Only verified studies and substantive breakthroughs",
+    "status": "DRAFT_UNPUBLISHED"
+  },
+  "created": "2026-10-15",
+  "articles": [
+    {
+      "key": "jurassic-flightless-yuezhuornis",
+      "published": "2026-10-14",
+      "slugs": {
+        "ar": "طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور",
+        "en": "jurassic-flightless-bird-yuezhuornis-evolution",
+        "fr": "jurassic-flightless-bird-yuezhuornis-evolution"
+      },
+      "source": {
+        "publication": "Nature",
+        "doi": "10.1038/s41586-026-10972-z",
+        "url": "https://www.nature.com/articles/s41586-026-10972-z",
+        "published": "2026-10-14",
+        "type": "peer_reviewed_article",
+        "institution": "Chinese Academy of Sciences",
+        "press_release": "https://english.cas.cn/newsroom/research-news/202610/t20261010_1202178.shtml"
+      },
+      "photos": [
+        {
+          "role": "lead",
+          "subject": "Photograph of holotype fossil IVPP V34427, Yuezhuornis yangyuanensis",
+          "agency": "Chinese Academy of Sciences Headquarters / EurekAlert",
+          "creator": "Min Wang",
+          "url": "https://www.eurekalert.org/multimedia/1156633",
+          "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
+          "status": "LOCAL COPY VERIFIED",
+          "use_on_site": true,
+          "local_path": "media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+          "downloaded_source": "https://english.cas.cn/newsroom/research-news/202610/W020261013560664863468.jpg",
+          "credit": "Min Wang / Chinese Academy of Sciences; press coverage only",
+          "sha256": "1f3559e2df7112e233ca18a49d839c8e0a15596e6a8efde5ed82688bc18d5da8",
+          "image_dimensions": [
+            4252,
+            4976
+          ]
+        },
+        {
+          "role": "secondary",
+          "subject": "Life reconstruction of Late Jurassic bird Yuezhuornis yangyuanensis",
+          "agency": "Chinese Academy of Sciences Headquarters / EurekAlert",
+          "creator": "Min Wang",
+          "url": "https://www.eurekalert.org/multimedia/1156632",
+          "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
+          "status": "ATTRIBUTION CONFLICT: CAS official page credits Chung-Tat Cheung while EurekAlert credits Min Wang; PENDING LOCAL COPY AND CREDIT RESOLUTION",
+          "use_on_site": false,
+          "credit_conflict": {
+            "cas": "Chung-Tat Cheung",
+            "eurekalert": "Min Wang",
+            "cas_url": "https://english.cas.cn/newsroom/research-news/202610/t20261010_1202178.shtml"
+          }
+        },
+        {
+          "role": "secondary",
+          "subject": "Avian evolutionary tree and forelimb comparison for Yuezhuornis",
+          "agency": "Chinese Academy of Sciences Headquarters / EurekAlert",
+          "creator": "Min Wang",
+          "url": "https://www.eurekalert.org/multimedia/1156635",
+          "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
+          "status": "LICENSE VERIFIED FOR NEWS COVERAGE; PENDING LOCAL COPY",
+          "use_on_site": false
+        }
+      ],
+      "translations": {
+        "ar": {
+          "title": "طائر جوراسي لم يكن يطير... أحفورة تكشف أن تطور الطيور لم يتجه نحو السماء وحدها",
+          "deck": "دراسة محكّمة في Nature تصف طائرًا عاش قبل نحو 150 مليون سنة بأجنحة قصيرة وتكيفات أرضية غير متوقعة.",
+          "body": "لم تكن جميع مسارات تطور الطيور الأولى طريقًا مستقيمًا نحو طيران أكثر كفاءة. هذا هو السؤال الذي أعاد اكتشاف أحفوري من جنوب شرقي الصين طرحه بعد أن وصف فريق بحثي نوعًا جديدًا عاش في أواخر العصر الجوراسي، قبل نحو 150 إلى 148 مليون سنة.\n\nالنوع الجديد، الذي حمل الاسم العلمي Yuezhuornis yangyuanensis، عُثر عليه ضمن أحافير منطقة تشنغخه في مقاطعة فوجيان. ونُشرت نتائجه في مجلة Nature بتاريخ 14 تشرين الأول 2026. وبحسب الدراسة، يجمع الهيكل خصائص تشريحية تربط الطيور الأولى بأقاربها من الديناصورات اللاحمة الصغيرة، لكنها تظهر هنا في تركيب مختلف عما اعتاده العلماء.\n\nأبرز ما يلفت النظر هو قصر الطرفين الأماميين بصورة لافتة. وعند مقارنة نسب الأطراف ببنية طيور وديناصورات أخرى، استنتج الباحثون أن الطائر كان أرضيّ المعيشة وغير قادر على الطيران. كما رصدوا ملامح في الجمجمة والأسنان وإصبع القدم الثاني توضح أن تطور الطيور لم يكن تغييرًا تشريحيًا واحدًا، بل مزيجًا من صفات تطورت بسرعات ومسارات متباينة.\n\nالأهمية العلمية لا تكمن في اكتشاف طائر قديم فقط، بل في اتساع الاحتمالات البيئية خلال المرحلة المبكرة من تاريخ الطيور. ففرضية أن القدرة على الطيران كانت القوة الرئيسية الموجهة لجميع التحولات المبكرة تواجه الآن دليلًا أحفوريًا على مسار أرضي مختلف.\n\nلكن هذا لا يعني أن الدراسة حسمت أصل الطيران أو أثبتت أن جميع الطيور الأولى فقدت قدرتها على التحليق. التفسير يخص هذا النوع استنادًا إلى العينة والعلاقات التطورية المقترحة؛ ويبقى سؤال ما إذا كان أسلافه قد طاروا ثم فقدوا هذه القدرة موضع بحث.\n\nبالنسبة إلى القارئ المعاصر، يوضح هذا الاكتشاف لماذا لا يكفي النظر إلى جناح الطائر وحده لفهم تاريخه. فالطيور الحالية نتاج شجرة تطورية متشعبة، كان لبعض فروعها الأولى نمط حياة على الأرض لا في الهواء.\n\n**المصدر العلمي:** Xu, Wang et al., Nature، 14 تشرين الأول 2026، DOI: 10.1038/s41586-026-10972-z."
+        },
+        "en": {
+          "title": "A Jurassic bird that could not fly broadens the story of avian evolution",
+          "deck": "A peer-reviewed Nature fossil study identifies a striking early terrestrial branch of bird evolution.",
+          "body": "The early history of birds was not necessarily a straight path towards more powerful flight. A newly described Late Jurassic species from southeastern China provides evidence for a different ecological experiment around 150–148 million years ago.\n\nThe fossil, Yuezhuornis yangyuanensis, comes from the Zhenghe Fauna of Fujian Province. In research published in Nature on 14 October 2026, scientists describe a mosaic of bird-like and dinosaur-like anatomical features. Most notably, the forelimbs were markedly short relative to the rest of the skeleton.\n\nComparative analyses led the authors to infer that this bird lived on the ground and was flightless. Skull, dental and foot characteristics offer further evidence that the earliest avialans followed several anatomical and ecological pathways rather than one universal trajectory.\n\nThe finding does not settle when flight first evolved, nor does it show that every early bird was flightless. Whether this particular lineage inherited or subsequently lost flight capabilities is part of the larger evolutionary discussion.\n\nThe discovery matters because it expands the known diversity of Jurassic birds at a time when fossils remain exceptionally rare.\n\n**Original research:** Xu, Wang et al., Nature, 14 October 2026. DOI: 10.1038/s41586-026-10972-z."
+        },
+        "fr": {
+          "title": "Un oiseau du Jurassique incapable de voler élargit notre vision de l’évolution aviaire",
+          "deck": "Une étude évaluée par les pairs dans Nature documente une voie terrestre inattendue chez les premiers oiseaux.",
+          "body": "L’évolution des premiers oiseaux n’a pas nécessairement suivi une trajectoire unique vers un vol toujours plus performant. Une espèce du Jurassique supérieur découverte dans le sud-est de la Chine illustre une autre possibilité écologique, il y a environ 150 à 148 millions d’années.\n\nLe fossile de Yuezhuornis yangyuanensis provient de la faune de Zhenghe, dans la province du Fujian. Dans une étude publiée par Nature le 14 octobre 2026, les chercheurs décrivent une combinaison de caractères anatomiques aviens et proches de ceux de certains dinosaures. Les membres antérieurs étaient particulièrement courts.\n\nDes analyses comparatives conduisent les auteurs à considérer cet animal comme terrestre et incapable de voler. Plusieurs caractères du crâne, des dents et du pied révèlent également des voies évolutives diverses aux débuts de l’histoire aviaire.\n\nCette découverte ne tranche pas l’origine du vol et ne signifie pas que tous les premiers oiseaux étaient inaptes à voler. La possibilité d’une perte secondaire du vol dans cette lignée reste à étudier.\n\nSa portée principale est d’élargir la diversité écologique attestée des oiseaux jurassiques, dont le registre fossile demeure limité.\n\n**Étude originale :** Xu, Wang et coll., Nature, 14 octobre 2026. DOI : 10.1038/s41586-026-10972-z."
+        }
+      }
+    },
+    {
+      "key": "turtle-dove-eastern-flyway-gps",
+      "published": "2026-10-08",
+      "slugs": {
+        "ar": "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل",
+        "en": "turtle-dove-gps-eastern-flyway-nile-red-sea",
+        "fr": "turtle-dove-gps-eastern-flyway-nile-red-sea"
+      },
+      "source": {
+        "publication": "Bird Conservation International",
+        "doi": "10.1017/S0959270926100860",
+        "url": "https://doi.org/10.1017/S0959270926100860",
+        "published": "2026-10-08",
+        "type": "peer_reviewed_open_access",
+        "license": "CC BY 4.0",
+        "figure_caption": "Figure 1: Tracks of 8 tagged birds; background coastlines and locations not a global flyway model.",
+        "data_caveat": "752 km is maximum active migratory-day distance; 719 km is maximum documented continuous flight. GPS failures must not be interpreted as mortality."
+      },
+      "photos": [
+        {
+          "role": "lead",
+          "subject": "Figure 1: GPS migration routes across the Middle East, Red Sea and Nile",
+          "agency": "Cambridge University Press / Bird Conservation International",
+          "creator": "Yoav Perlman et al.",
+          "url": "https://www.cambridge.org/core/journals/bird-conservation-international/article/gps-tracking-of-the-european-turtledove-along-the-eastern-flyway-reveals-challenging-flights-over-ecological-barriers-and-anthropogenic-risks/82F052E252691542D9D648D85DAB381A",
+          "license": "Article CC BY 4.0; check individual figure for third-party restrictions",
+          "status": "LOCAL COPY VERIFIED",
+          "use_on_site": true,
+          "local_path": "media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+          "downloaded_source": "https://static.cambridge.org/binary/version/id/urn:cambridge.org:id:binary:20261011233704532-0557:S0959270926100860:S0959270926100860_fig1.png?pub-status=live",
+          "credit": "Perlman et al. / Bird Conservation International, Cambridge University Press, CC BY 4.0",
+          "sha256": "dde8bed516fe4588b4e03795b50960eba7cefe3126fcd395c452b60dca6f9efb",
+          "image_dimensions": [
+            1754,
+            1860
+          ]
+        }
+      ],
+      "translations": {
+        "ar": {
+          "title": "من أذربيجان إلى النيل: أجهزة GPS تكشف الطرق الصعبة لهجرة اليمام القمري",
+          "deck": "دراسة محكّمة تتبع طيورًا عبر البحر الأحمر والصحراء، وتبرز أهمية الأراضي الزراعية على ضفاف النيل كمحطات توقف.",
+          "body": "لا تتوقف أهمية هجرة اليمام القمري عند معرفة موعد مروره في سماء بلد ما؛ فالمسار الكامل يحدد أين يحتاج الطائر إلى الراحة والغذاء، وأين يصبح أكثر عرضة لفقدان الموائل والصيد.\n\nدراسة جديدة نُشرت إلكترونيًا في مجلة Bird Conservation International في 8 تشرين الأول 2026 تتبعت اليمام القمري الأوروبي، Streptopelia turtur، باستخدام أجهزة GPS خلال موسم الهجرة الخريفية. وضع الفريق أجهزة على 26 طائرًا في أذربيجان وشرق المتوسط، وسجل بدء الهجرة جنوبًا لدى 16 طائرًا، بينما أتاحت بيانات طائرين تتبع رحلتيهما لمسافات بعيدة وصولًا إلى مناطق في السودان وجنوب السودان.\n\nأظهرت البيانات عبور مساحات مفتوحة من البحر الأحمر والصحراء، ومسافات حركة خلال يوم هجرة بلغت 752 كيلومترًا، بينما امتد أطول طيران متواصل موثّق لمسافة 719 كيلومترًا. كما ظهرت مناطق الاستراحة في الأراضي الزراعية على امتداد نهر النيل، لا سيما في مصر والسودان، بوصفها أجزاء مهمة من شبكة الهجرة. بالنسبة إلى بعض الطيور، لم يكن النيل مجرد معلم جغرافي، بل سلسلة مواقع يمكنها توفير الغذاء والتوقف أثناء رحلة محفوفة بالمخاطر.\n\nتدل النتائج على أن حماية الطيور المهاجرة لا تتحقق في منطقة التكاثر وحدها. فإزالة موائل التوقف أو تكثيف الضغوط على أحد المقاطع قد يؤثر في فرص إكمال الرحلة، ولو توفرت الحماية في مناطق أخرى.\n\nأما حدود الدراسة فهي أساسية لفهمها: ليس لدى العلماء مسارات كاملة لكل الطيور الستة والعشرين، ولا يجوز رسم خريطة نهائية لجميع جماعات اليمام في شرق المتوسط انطلاقًا من هذه العينة. كذلك، فإن الدراسة وثقت بعض المخاطر البشرية والبيئية لكنها لا تسمح بنسب كل توقف أو فقد للإشارة إلى الصيد.\n\nفي منطقة عربية تمر فوقها خطوط هجرة كبرى، تتيح هذه النتائج مدخلًا عمليًا إلى نقاش الصيد المسؤول، وحماية محطات التوقف، وأهمية البحث المشترك بين البلدان.\n\n**المصدر العلمي:** Perlman et al., Bird Conservation International، 8 تشرين الأول 2026، DOI: 10.1017/S0959270926100860. المقال مفتوح الوصول برخصة CC BY 4.0."
+        },
+        "en": {
+          "title": "Tracking turtle-doves from Azerbaijan to the Nile exposes a difficult migration route",
+          "deck": "GPS data reveal sea and desert crossings, critical stopovers and substantial gaps in knowledge.",
+          "body": "A migratory route is more than a line across a map. For the European Turtle-dove (Streptopelia turtur), it is a chain of habitats where birds must find food and rest while crossing seas, deserts and human-altered landscapes.\n\nA peer-reviewed study published online in Bird Conservation International on 8 October 2026 describes GPS tracking of 26 turtle-doves tagged in Azerbaijan and the eastern Mediterranean. Sixteen were recorded beginning southward migration; two provided particularly extensive tracks reaching Sudan and South Sudan.\n\nThe recorded journeys included non-stop movements of daily migration movements of up to 752 kilometres, while the longest documented continuous flight covered 719 kilometres and crossings of the Red Sea and desert. Farmland along the Nile emerged as an important stopover environment, particularly in Egypt and Sudan.\n\nThe conservation implication is regional: protecting breeding grounds cannot substitute for maintaining stopover habitats along an entire flyway. Hunting pressure and habitat change must be considered across borders.\n\nThese tracks are not a definitive map for the species. The sample is limited and most tagged birds did not yield complete migration records. The researchers therefore identify promising areas for further study rather than claiming comprehensive coverage.\n\n**Original research:** Perlman et al., Bird Conservation International, 8 October 2026. DOI: 10.1017/S0959270926100860. Open access under CC BY 4.0."
+        },
+        "fr": {
+          "title": "De l’Azerbaïdjan au Nil : le suivi GPS révèle les obstacles de la migration des tourterelles des bois",
+          "deck": "Une étude décrit les traversées de la mer et du désert ainsi que le rôle des haltes agricoles le long du Nil.",
+          "body": "La migration de la Tourterelle des bois (Streptopelia turtur) dépend d’une succession d’habitats, et non d’une simple trajectoire tracée sur une carte. Chaque halte peut compter pour les oiseaux qui traversent la mer, le désert et des paysages profondément modifiés par l’homme.\n\nUne étude évaluée par les pairs, publiée en ligne dans Bird Conservation International le 8 octobre 2026, présente le suivi GPS de 26 tourterelles équipées en Azerbaïdjan et dans l’est de la Méditerranée. Seize individus ont entamé leur migration vers le sud et deux ont fourni des données détaillées jusqu’au Soudan et au Soudan du Sud.\n\nLes trajectoires documentent des vols sans escale parcourant jusqu’à 752 kilomètres sur une journée migratoire, tandis que le plus long vol continu documenté atteignait 719 kilomètres et des traversées de la mer Rouge et du désert. Les terres cultivées bordant le Nil constituent des zones de halte importantes, notamment en Égypte et au Soudan.\n\nL’enjeu de conservation dépasse les frontières : la protection des sites de reproduction ne suffit pas si les lieux de repos sont dégradés le long de la voie migratoire.\n\nLa portée des résultats reste limitée par l’échantillon et l’absence de trajets complets pour la plupart des oiseaux équipés. Il ne s’agit donc pas d’une carte exhaustive des populations orientales.\n\n**Étude originale :** Perlman et coll., Bird Conservation International, 8 octobre 2026. DOI : 10.1017/S0959270926100860. Article en libre accès sous licence CC BY 4.0."
+        }
+      }
+    }
+  ],
+  "policy": {
+    "no_publish_until": [
+      "locally stored usable images",
+      "AR/EN/FR matching pages",
+      "homepage/nav and category templates built",
+      "tests and responsive review"
+    ],
+    "do_not_displace_existing_cards": true
+  },
+  "build_status": "PENDING_TWO_REQUIRED_LOCAL_IMAGE_FILES"
+}

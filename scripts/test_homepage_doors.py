@@ -15,8 +15,8 @@ def test_memory_placement():
         memory = tree.xpath('//section[@class="memory-strip"]')
         assert len(memory) == 1
         assert memory[0].getparent().get('class') == 'home-main'
-        heading = DOORS[3][{'ar': 1, 'en': 2, 'fr': 3}[lang]]
-        assert memory[0].getprevious().xpath('./div/h2/text()') == [heading], f'{lang}: memory must immediately follow Wildlife'
+        heading = DOORS[4][{'ar': 1, 'en': 2, 'fr': 3}[lang]]
+        assert memory[0].getprevious().xpath('./div/h2/text()') == [heading], f'{lang}: memory must immediately follow Science'
         block = re.search(pattern, page, re.S | re.M)[0]
         remainder = re.sub(pattern, '', page, flags=re.S | re.M)
         # Simulate the old generator position above the lower doors.
@@ -25,9 +25,9 @@ def test_memory_placement():
         assert moved == page, f'{lang}: relocation changed section/card content or unrelated markup'
         assert re.search(pattern, moved, re.S | re.M)[0] == block
         assert re.sub(pattern, '', moved, flags=re.S | re.M) == remainder
-        assert place_memory(moved, lang, 'wildlife') == moved
+        assert place_memory(moved, lang, 'science') == moved
         for broken in (remainder, legacy + block, legacy.replace('<h2>' + escape(heading) + '</h2>', '<h2>missing</h2>')):
-            try: place_memory(broken, lang, 'wildlife')
+            try: place_memory(broken, lang, 'science')
             except ValueError: pass
             else: raise AssertionError(f'{lang}: invalid relocation fixture accepted')
 

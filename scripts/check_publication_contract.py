@@ -131,9 +131,9 @@ def check(base=None):
         groups=[nodes(t,'feature-lead'),nodes(t,'feature-stack')[0].xpath('./article'),nodes(t,'latest-feed')[0].xpath('./li'),nodes(t,'memory-strip')[0].xpath('.//article')]
         doors=nodes(t,'home-section');groups += [sum((g.xpath('./article') for g in nodes(x,'home-door-grid')),[]) for x in doors]
         assert [len(g) for g in groups[:4]]==[1,4,8,4],f'{lang}: lead/side/updates/memory counts'
-        assert len(doors)==7 and [len(g) for g in groups[4:]]==[6 if d['door']=='tv' else len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
+        assert len(doors)==8 and [len(g) for g in groups[4:]]==[6 if d['door']=='tv' else len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
         assert t.xpath('//section['+css_class('home-section')+']//h2/text()')==[d[{'ar':1,'en':2,'fr':3}[lang]] for d in DOORS], f'{lang}: door order'
-        tv=doors[5]
+        tv=doors[6]
         assert tv.xpath('./div[@data-tv-group]/@data-tv-group')==contract['tv_structure']['groups'],f'{lang}: TV groups missing or reordered'
         assert [len(nodes(g,'home-door-grid')[0].xpath('./article')) for g in tv.xpath('./div[@data-tv-group]')]==[3,3]
         assert contract['counts']['tv']==c['layout_limits']['tv']==6
@@ -189,7 +189,7 @@ def check(base=None):
         assert co_slug not in {slug(h) for h in wildlife_listing.xpath('//article//a/@href')}, f'{lang}: coastal story still in wildlife listing'
         assert co_slug in {slug(h) for h in hunting_listing.xpath('//article//a/@href')}, f'{lang}: coastal story missing from hunting listing'
         assert [s for s,_ in slots[3]]==contract['memory_slugs'],f'{lang}: protected memory selection changed'
-        assert [s for s,_ in slots[9]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
+        assert [s for s,_ in slots[10]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
         if reference is None:reference=slots
         else:assert slots==reference,f'{lang}: mirrored story placement or photograph differs'
         tickers=nodes(t,'ticker')
@@ -203,13 +203,35 @@ def check(base=None):
         assert sig==[tuple(x) for x in contract['header_links'][lang]],f'{lang}: navigation/social changed'
     if base:
         check_new_stories(changed_docs(base),pairs,base)
-    print('PASS: three mirrored homepages, 1+4+8+4 cards, seven doors, shared images, dates, protected design and social links')
+    print('PASS: three mirrored homepages, 1+4+8+4 cards, eight doors, shared images, dates, protected design and social links')
+
+def science_navigation_only_repair(file, base):
+    """Exact, auditable exception for adding the Nayef-approved Science menu link.
+
+    Unchanged original body/head/layout/ticker is mandatory. This cannot exempt
+    a changed article or any other edit, and requires an existing page at base.
+    """
+    if not base or not file.startswith("docs/") or not file.endswith(".html"):
+        return False
+    old = subprocess.run(["git", "show", f"{base}:{file}"], cwd=ROOT,
+                         capture_output=True)
+    if old.returncode:
+        return False
+    before = old.stdout.decode()
+    after = (ROOT / file).read_text()
+    from build_science_discoveries_20261015 import navigation_block
+    relative = Path(file).relative_to("docs")
+    lang = relative.parts[0] if relative.parts[0] in ("en", "fr") else "ar"
+    return before != after and navigation_block(before, lang, relative) == after
+
 
 def check_new_stories(paths,pairs,base=None):
     checked=set()
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if science_navigation_only_repair(file,base):
+            continue
         if shared_ticker_only_repair(file,base):
             continue
         if gallery_indexing_only_repair(file,base):

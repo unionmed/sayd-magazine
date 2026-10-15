@@ -1,5 +1,5 @@
 {
-  "memory_after_door": "wildlife",
+  "memory_after_door": "science",
   "featured": [
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
     "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
@@ -211,6 +211,14 @@
     ],
     "Poetry & Art": [
       "from-the-poem-to-the-maqnas"
+    ],
+    "علوم واكتشافات": [
+      "طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور",
+      "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل"
+    ],
+    "Science & Discoveries": [
+      "jurassic-flightless-bird-yuezhuornis-evolution",
+      "turtle-dove-gps-eastern-flyway-nile-red-sea"
     ]
   },
   "category_extras": {},
@@ -219,6 +227,7 @@
     "رماية وعتاد",
     "فروسية",
     "الحياة البرية والتخييم",
+    "علوم واكتشافات",
     "شعر وفن",
     "صيد TV",
     "صور"
@@ -289,6 +298,13 @@
         "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا",
         "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
         "قطر-حماية-المناطق-البرية-والبحرية-2030"
+      ]
+    },
+    {
+      "door": "science",
+      "slugs": [
+        "طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور",
+        "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل"
       ]
     },
     {
@@ -379,7 +395,9 @@
     "ألكسندرا-cabs-الصيد-غير-القانوني": "hunting",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح": "hunting",
     "دبي-سفاري-الموسم-الثامن-2026": "wildlife",
-    "الصيد-الذكوري-الرجولة-بين-جثث-الطيور": "hunting"
+    "الصيد-الذكوري-الرجولة-بين-جثث-الطيور": "hunting",
+    "طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور": "science",
+    "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل": "science"
   },
   "demotion": "Nayef authorized the Al-Melwah finale on 10 October 2026 with the existing photograph, replacing the prior Saudi exhibition report in the side-card block and ticker. Prior article stays in category/archive and is excluded from homepage recycling. Current main lead and other stories remain; side cards keep publication-date order.",
   "approved_home_repeats": [
@@ -659,5 +677,13 @@
     "approved_at": "2026-10-05",
     "limit": 4
   },
-  "chronological_placement_note": "Nayef cancelled the special placement of Adonis’s Sayd Returns editorial on 6 October 2026. Keep its original 8 September 2026 publication date and ordinary chronological position in its category and archive; no homepage pin or special exclusion from Updates."
+  "chronological_placement_note": "Nayef cancelled the special placement of Adonis’s Sayd Returns editorial on 6 October 2026. Keep its original 8 September 2026 publication date and ordinary chronological position in its category and archive; no homepage pin or special exclusion from Updates.",
+  "science_image_gate": {
+    "status": "BLOCKED_PENDING_LOCAL_COPIES",
+    "explanation": "Science section may be rendered only once each featured image has a local verified copy and attribution metadata",
+    "slugs": [
+      "طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور",
+      "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل"
+    ]
+  }
 }

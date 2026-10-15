@@ -1,0 +1,19 @@
+{
+  "generated": "2026-10-15",
+  "language_count": 3,
+  "articles": 2,
+  "modified_navigation_pages": 0,
+  "images": [
+    {
+      "article": "jurassic-flightless-yuezhuornis",
+      "path": "media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+      "sha256": "1f3559e2df7112e233ca18a49d839c8e0a15596e6a8efde5ed82688bc18d5da8"
+    },
+    {
+      "article": "turtle-dove-eastern-flyway-gps",
+      "path": "media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+      "sha256": "dde8bed516fe4588b4e03795b50960eba7cefe3126fcd395c452b60dca6f9efb"
+    }
+  ],
+  "validation": "check_publication_contract passed"
+}

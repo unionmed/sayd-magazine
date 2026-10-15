@@ -116,6 +116,17 @@ DOORS: list[dict] = [
         "children": [],
     },
     {
+        "id": "science",
+        "ar": "علوم واكتشافات",
+        "nav_ar": "علوم واكتشافات",
+        "en": "Science & Discoveries",
+        "short_ar": "علوم واكتشافات",
+        "short_en": "Science",
+        "folder": "علوم-واكتشافات",
+        "has_2026": True,
+        "children": [],
+    },
+    {
         "id": "poetry",
         "ar": "شعر وفن",
         "en": "Poetry & Art",
@@ -357,7 +368,7 @@ def _mobile_details(summary: str, links: list[str], extra_class: str = "") -> st
 
 
 def mobile_nav_html(lang: str, depth: int) -> str:
-    """First four doors, then المزيد / More with the other five, empty or not.
+    """First four doors, then المزيد / More with the remaining doors, empty or not.
 
     Hunting is a direct link to its unified chronological listing.
     """

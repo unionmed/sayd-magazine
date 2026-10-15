@@ -1,0 +1,98 @@
+name: Science section preflight (draft only)
+on:
+  push:
+    branches:
+      - feature/science-discoveries-20261015
+permissions:
+  contents: read
+jobs:
+  validate-draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check builder Python syntax
+        run: python -m py_compile scripts/build_science_discoveries_20261015.py scripts/refresh_homepage_doors.py scripts/site_ia.py scripts/check_publication_contract.py
+      - name: Confirm untouched historical homepage placement and complete drafts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('content/features/science-discoveries-20261015.json')
+          d=json.loads(p.read_text())
+          home=json.loads(Path('content/homepage.json').read_text())
+          assert len(d['articles'])==2
+          assert home['home_section_order'][4]=='علوم واكتشافات'
+          assert home['memory_after_door']=='science'
+          assert [v['door'] for v in home['ia_door_sections']][4]=='science'
+          assert len(home['ia_slots']['important'])==4 and len(home['ia_slots']['latest'])==8
+          assert len(home['featured'])==5 and len(home['latest'])==8
+          for a in d['articles']:
+              assert set(a['translations'])=={'ar','en','fr'}
+              assert all(len(a['translations'][lang]['body'])>500 for lang in ('ar','en','fr'))
+              assert a['slugs']['fr']==a['slugs']['en']
+              assert any(im.get('role')=='lead' and im.get('local_path') for im in a['photos'])
+          print('PASS: science draft structure and original homepage placement; images and publication remain gated.')
+          PY
+      - name: Verify the full site builder in a disposable checkout
+        run: |
+          python -m pip install lxml==5.3.2 pillow==11.3.0
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from PIL import Image
+          p = Path('content/features/science-discoveries-20261015.json')
+          d = json.loads(p.read_text())
+          for a in d['articles']:
+              lead = next(x for x in a['photos'] if x['role']=='lead')
+              lead['use_on_site'] = True   # EPHEMERAL TEST ONLY; NEVER COMMIT TEST RIGHTS.
+              image = Path('docs') / lead['local_path']
+              image.parent.mkdir(parents=True, exist_ok=True)
+              im=Image.effect_noise((850,650), 95).convert('RGB')
+              im.save(image, quality=92) if image.suffix=='.jpg' else im.save(image)
+          p.write_text(json.dumps(d,ensure_ascii=False,indent=2))
+          print('Synthetic images generated only inside CI runner; this step does not publish or commit files.')
+          PY
+          python scripts/build_science_discoveries_20261015.py
+          python - <<'PY'
+          from pathlib import Path
+          from difflib import unified_diff
+          import sys
+          sys.path.insert(0, 'scripts')
+          from refresh_homepage_doors import refresh
+          for lang in ('ar','en','fr'):
+              p=Path('docs') / ('' if lang=='ar' else lang) / 'index.html'
+              before=p.read_text()
+              after=refresh(p,lang)
+              if before != after:
+                  diff=list(unified_diff(before.splitlines(),after.splitlines(),n=2))
+                  print('NON-IDEMPOTENT',lang,'\n'.join(diff[:40]))
+          PY
+          python scripts/test_homepage_doors.py
+      - name: Probe publisher originals (read only; do not publish)
+        continue-on-error: true
+        run: |
+          python -m pip install requests beautifulsoup4
+          python - <<'PY'
+          import requests
+          from bs4 import BeautifulSoup
+          urls={
+            "CAS original fossil": "https://english.cas.cn/newsroom/research-news/202610/W020261013560664863468.jpg",
+            "Cambridge research article": "https://www.cambridge.org/core/journals/bird-conservation-international/article/gps-tracking-of-the-european-turtledove-along-the-eastern-flyway-reveals-challenging-flights-over-ecological-barriers-and-anthropogenic-risks/82F052E252691542D9D648D85DAB381A",
+          }
+          for label,url in urls.items():
+              try:
+                  r=requests.get(url,headers={"User-Agent":"Mozilla/5.0 (compatible; SaydMagEditorial/1.0)"},timeout=14)
+                  print(label, "status:",r.status_code,"mime:",r.headers.get('content-type'),"bytes:",len(r.content),"url:",r.url)
+                  if "Cambridge" in label and r.status_code==200:
+                      soup=BeautifulSoup(r.text,"html.parser")
+                      found=[]
+                      for tag in soup.find_all("img"):
+                          alt=tag.get("alt","")
+                          if any(w in alt.lower() for w in ("geographical map","migration tracks","figure 1","turtle-dove")):
+                              found.append((alt[:120],tag.get("src"),tag.get("data-src")))
+                      print("CAMBRIDGE FIGURE CANDIDATES:",found[:8])
+              except Exception as e:print(label,"ERROR:",repr(e)[:300])
+          PY
