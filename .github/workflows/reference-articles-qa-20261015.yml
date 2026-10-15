@@ -63,9 +63,9 @@ jobs:
                       for lang in ['ar','en','fr']:
                           url='http://127.0.0.1:8791/'+('' if lang=='ar' else lang+'/')+'posts/'+quote(article['slugs'][lang])+'/'
                           page.goto(url,wait_until='networkidle')
-                          page.locator('article.article-content img').evaluate_all('(images)=>Promise.all(images.map(i=>i.decode().catch(()=>{})))')
+                          page.locator('img').evaluate_all('(images)=>{ images.forEach(i=>i.loading=\"eager\"); return Promise.all(images.map(i=>i.decode().catch(()=>{}))); }')
                           overflow=page.evaluate('document.documentElement.scrollWidth > innerWidth')
-                          broken=page.locator('article.article-content img').evaluate_all('(images)=>images.filter(i=>!i.complete||i.naturalWidth===0).length')
+                          broken=page.locator('article.article-content img, section.related-block img').evaluate_all('(images)=>images.filter(i=>!i.complete||i.naturalWidth===0).length')
                           assert not overflow,(article['key'],lang,mode,'horizontal overflow')
                           assert broken==0,(article['key'],lang,mode,'broken image')
                           filename=article['key']+'-'+lang+'-'+mode+'.png'
