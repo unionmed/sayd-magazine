@@ -96,7 +96,7 @@ def card(a,lang,image,page):
     d=a['text'][lang];depth=len(page.relative_to(locale_root(lang)).parts)-1
     relative='../'*depth
     href=relative+'posts/'+quote(a['slugs'][lang])+'/index.html'
-    img='../'*depth+image
+    img='../'*(depth+(1 if lang!='ar' else 0))+image
     style='post-row' if lang=='ar' else 'card'
     return '<article class="'+style+'"><a class="thumb" href="'+href+'"><img src="'+img+'" alt="'+html.escape(d['title'],quote=True)+'" loading="lazy"></a><div class="body"><div class="meta">'+DATES[lang]+'</div><h2><a href="'+href+'">'+html.escape(d['title'])+'</a></h2><p class="excerpt">'+html.escape(d['summary'])+'</p></div></article>'
 
