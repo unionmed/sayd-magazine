@@ -225,11 +225,31 @@ def science_navigation_only_repair(file, base):
     return before != after and navigation_block(before, lang, relative) == after
 
 
+def ten_door_navigation_only_repair(file, base):
+    """Allow precisely the approved nav and Heritage badge relabel in old posts.
+
+    Requires that no article body, image, date, ticker or SEO metadata changed.
+    Compares byte-for-byte to a deterministic transformation of the base page.
+    """
+    if not base or not file.startswith("docs/") or "/posts/" not in file or not file.endswith("/index.html"):
+        return False
+    before = subprocess.run(["git","show",f"{base}:{file}"],cwd=ROOT,capture_output=True)
+    if before.returncode:
+        return False
+    original=before.stdout.decode()
+    from rollout_mobile_nav_heritage_20261015 import nav_replace
+    expected,_=nav_replace(original,ROOT/file)
+    current=(ROOT/file).read_text()
+    return expected==current and original!=current
+
+
 def check_new_stories(paths,pairs,base=None):
     checked=set()
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if ten_door_navigation_only_repair(file,base):
+            continue
         if science_navigation_only_repair(file,base):
             continue
         if shared_ticker_only_repair(file,base):
