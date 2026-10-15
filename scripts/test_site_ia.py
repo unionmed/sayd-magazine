@@ -44,109 +44,44 @@ def test_demotion_drops_a_slug_already_in_latest() -> None:
 
 
 def test_desktop_nav_shows_all_ten_doors() -> None:
-    """Desktop lists every door. Mobile stays the first four plus More."""
-    visible = {door["id"] for door in ia.visible_doors()}
-    assert visible == {"hunting", "gear", "equestrian", "wildlife", "science", "poetry", "tv", "photos"}
-    hunting = next(door for door in ia.visible_doors() if door["id"] == "hunting")
-    assert hunting["children"] == []
-    nav = ia.desktop_nav_inner("ar", 0)
-    ar_labels = [
-        "صيد",
-        "رماية وعتاد",
-        "فروسية",
-        "حياة برية وتخييم",
-        "علوم واكتشافات",
-        "شعر وفن",
-        "قوانين الصيد",
-        "موسوعة الطيور",
-        "صيد TV",
-        "صور",
-    ]
-    ar_at = [nav.index(f">{label}<") for label in ar_labels]
-    assert ar_at == sorted(ar_at)
+    """Desktop, mobile and footer use the same 10-door sequence, no More."""
+    from urllib.parse import unquote
+    import re
+    expected = ["صيد","عتاد-وسلاح-الصيد","فروسية",
+                "حياة-برية-وتخييم","علوم-واكتشافات","موسوعة-الطيور",
+                "ثقافة-وتراث","قوانين","استديو-صيد","صور"]
+    assert len(ia.DOORS) == 10
+    assert [door["folder"] for door in ia.DOORS] == expected
+    assert ia.door_by_id("poetry")["ar"] == "تراث"
+    assert ia.door_by_id("poetry")["en"] == "Heritage"
+    assert ia.DOORS[0]["children"] == []
+    def href_order(value):
+        return [unquote(x) for x in re.findall(r'href="[^"]*/?category/([^/]+)/index\.html"',value)]
+    for lang in ("ar","en"):
+        for kind,markup in (
+            ("desktop",ia.desktop_nav_inner(lang,0)),
+            ("mobile",ia.mobile_nav_html(lang,0)),
+            ("footer",ia.footer_doors_html(lang,0)),
+        ):
+            assert href_order(markup) == expected, (lang,kind,href_order(markup))
+            assert markup.count("موسوعة-الطيور/index.html") == 1
+            assert markup.count("علوم-واكتشافات/index.html") == 1
+            if kind == "mobile":
+                assert "<details" not in markup and "المزيد" not in markup and ">More<" not in markup
+                assert '<nav class="mobile-nav"' in markup
+    ar=ia.desktop_nav_inner("ar",0)
+    en=ia.desktop_nav_inner("en",0)
+    assert '>تراث</a>' in ar and '>شعر وفن</a>' not in ar
+    assert '>Heritage</a>' in en and '>Poetry &amp; Art</a>' not in en
+    assert '>برية وتخييم</a>' in ia.mobile_nav_html("ar",0)
+    assert '>حياة برية وتخييم</a>' in ar
+    assert '>Wildlife</a>' in ia.mobile_nav_html("en",0)
     for child in ("صيد طيور", "صقارة", "صيد بر", "صيد بحري"):
-        assert f">{child}<" not in nav
-    assert "الرماية والعتاد" not in nav
-    assert "الفروسية" not in nav
-    assert "الحياة البرية والتخييم" not in nav
-    assert ">برية وتخييم<" not in nav
-    en = ia.desktop_nav_inner("en", 2)
-    en_labels = [
-        "Hunting",
-        "Shooting &amp; Gear",
-        "Equestrian",
-        "Wildlife &amp; Camping",
-        "Science &amp; Discoveries",
-        "Poetry &amp; Art",
-        "Hunting Laws",
-        "Bird Encyclopedia",
-        "Sayd TV",
-        "Photos",
-    ]
-    en_at = [en.index(label) for label in en_labels]
-    assert en_at == sorted(en_at)
-    for child in ("Bird Hunting", "Falconry", "Land Hunting", "Marine Hunting"):
-        assert child not in en
-    assert "الرئيسية" not in nav
-    assert ">Home<" not in en
-    mobile = ia.mobile_nav_html("ar", 1)
-    for bar_label in ("صيد", "رماية وعتاد", "فروسية", "برية وتخييم", "المزيد"):
-        assert f">{bar_label}<" in mobile
-    assert "الرماية والعتاد" not in mobile
-    assert "الفروسية" not in mobile
-    assert "الحياة البرية والتخييم" not in mobile
-    assert "حياة برية وتخييم" not in mobile
-    sayd_children = ["صيد طيور", "صقارة", "صيد بر", "صيد بحري"]
-    assert all(f">{label}<" not in mobile for label in sayd_children)
-    assert 'href="../category/صيد/index.html">صيد</a>' in mobile
-    assert 'class="mobile-more mobile-sub"' not in mobile
-    assert mobile.count('name="mobile-nav"') == 1
-    more_ar = ["علوم واكتشافات", "شعر وفن", "قوانين الصيد", "موسوعة الطيور", "صيد TV", "صور"]
-    more_at = [mobile.index(f">{label}<") for label in more_ar]
-    assert more_at == sorted(more_at)
-    assert mobile.index(">المزيد<") < mobile.index(">شعر وفن<")
-    more_slice = mobile[mobile.index(">المزيد<"):]
-    for child in sayd_children:
-        assert f">{child}<" not in more_slice
-    for hidden in ("الصقارة", "صيد البر", "الصيد البحري", "الرئيسية"):
-        assert f">{hidden}<" not in mobile
-    en_mobile = ia.mobile_nav_html("en", 1)
-    assert ">Wildlife<" in en_mobile
-    assert "More" in en_mobile
-    en_children = ["Bird Hunting", "Falconry", "Land Hunting", "Marine Hunting"]
-    assert all(label not in en_mobile for label in en_children)
-    more_en = ["Science &amp; Discoveries", "Poetry &amp; Art", "Hunting Laws", "Bird Encyclopedia", "Sayd TV", "Photos"]
-    more_en_at = [en_mobile.index(label) for label in more_en]
-    assert more_en_at == sorted(more_en_at)
-    assert en_mobile.index("More") < en_mobile.index("Poetry &amp; Art")
-    en_more = en_mobile[en_mobile.index(">More<"):]
-    for child in en_children:
-        assert child not in en_more
-    assert ">Home<" not in en_mobile
-    footer = ia.footer_doors_html("ar", 0)
-    drawer = ia.drawer_nav_inner("ar", 0)
-    for surface in (footer, drawer):
-        assert ">حياة برية وتخييم<" in surface
-        assert ">برية وتخييم<" not in surface
-        assert ">رماية وعتاد<" in surface
-        assert "الحياة البرية والتخييم" not in surface
+        assert child not in ar
     assert ia.TICKER_LABEL_AR == "من كل وادي خبر"
-    en_home = ia.desktop_nav_inner("en", 1)
-    assert 'href="../category/' not in en_home
-    assert 'href="category/صيد/index.html"' in en_home
-    assert 'href="category/الصقارة/index.html"' not in en_home
-    assert 'href="category/ثقافة-وتراث/index.html"' in en_home
-    en_story = ia.desktop_nav_inner("en", 2)
-    assert 'href="../category/صيد/index.html"' in en_story
-    assert 'href="../../category/' not in en_story
-    en_article = ia.desktop_nav_inner("en", 3)
-    assert 'href="../../category/صيد/index.html"' in en_article
-    assert 'href="../../../category/' not in en_article
-    ar_home = ia.desktop_nav_inner("ar", 0)
-    assert 'href="category/صيد/index.html"' in ar_home
-    assert "en/category" not in ar_home
-    ar_article = ia.desktop_nav_inner("ar", 2)
-    assert 'href="../../category/صيد/index.html"' in ar_article
+    # Nested articles keep their link depth; no cross-language category paths.
+    assert 'href="../../category/صيد/index.html"' in ia.desktop_nav_inner("en",2)
+    assert 'href="../category/صيد/index.html"' in ia.desktop_nav_inner("ar",1)
 
 
 def test_disclosure_only_for_a_real_commercial_link() -> None:
