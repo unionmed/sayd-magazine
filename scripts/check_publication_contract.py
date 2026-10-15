@@ -189,7 +189,7 @@ def check(base=None):
         assert co_slug not in {slug(h) for h in wildlife_listing.xpath('//article//a/@href')}, f'{lang}: coastal story still in wildlife listing'
         assert co_slug in {slug(h) for h in hunting_listing.xpath('//article//a/@href')}, f'{lang}: coastal story missing from hunting listing'
         assert [s for s,_ in slots[3]]==contract['memory_slugs'],f'{lang}: protected memory selection changed'
-        assert [s for s,_ in slots[9]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
+        assert [s for s,_ in slots[10]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
         if reference is None:reference=slots
         else:assert slots==reference,f'{lang}: mirrored story placement or photograph differs'
         tickers=nodes(t,'ticker')
