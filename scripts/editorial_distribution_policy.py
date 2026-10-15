@@ -23,7 +23,14 @@ def memberships(config=None, docs=DOCS):
         page=docs/'category'/folder/'index.html'
         if not page.is_file():
             raise ValueError('Missing editorial category listing: '+str(page))
-        for slug in LINK.findall(page.read_text(encoding='utf-8')):
+        # Category pages repeat the global news ticker in the header. Only the
+        # MAIN archive listing defines taxonomy membership; never classify a
+        # ticker headline as an Encyclopaedia/Laws/Science article.
+        page_html=page.read_text(encoding='utf-8')
+        main=re.search(r'<main\\b[^>]*>(.*?)</main>',page_html,re.S|re.I)
+        if not main:
+            raise ValueError('No category main content: '+str(page))
+        for slug in LINK.findall(main.group(1)):
             lookup.setdefault(unquote(slug),set()).add(genre)
     for slug,door in config.get('primary_door',{}).items():
         if door in PRIMARY:
