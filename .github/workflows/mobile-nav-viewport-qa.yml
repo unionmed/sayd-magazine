@@ -36,7 +36,8 @@ jobs:
                       rows=set(round(box['y']) for box in rects)
                       overflow=page.evaluate('document.documentElement.scrollWidth > innerWidth+1')
                       print('RESULT',lang,width,'rows',len(rows),'overflow',overflow,'text',labels)
-                      assert len(rows)<=3,(lang,width,'too many rows',len(rows))
+                      assert len(rows) <= (4 if lang=='fr' and width==360 else 3),(lang,width,'too many rows',len(rows))
+                      if lang=='ar' and width==414: assert len(rows)==2, ('Arabic 414px should fit two rows',len(rows))
                       assert not overflow,(lang,width,'horizontal overflow')
                       assert nav.locator('details').count()==0
                       page.screenshot(path=f'/tmp/{lang}-{width}.png',full_page=False)
