@@ -125,7 +125,7 @@ def site_source_update():
     s=s[:a]+mobile+s[b:]
     p.write_text(s)
 
-String_mobile_function = '''
+String_mobile_function = r'''
 def mobile_nav_html(lang: str, depth: int) -> str:
     """All ten doors in desktop order; let CSS wrap at the device width."""
     aria = "Mobile menu" if lang == "en" else "قائمة الجوال"
