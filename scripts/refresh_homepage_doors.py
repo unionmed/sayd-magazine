@@ -296,6 +296,8 @@ def main():
     sync_gallery_seo(DOCS)
     from short_links import generate as generate_short_links
     generate_short_links(DOCS)
+    from refresh_related_reading import main as refresh_reading
+    refresh_reading()
     print('Restored one lead + four side cards, eight Updates, approved desks and 3 channel + 3 selection TV cards in AR/EN/FR.')
 
 if __name__=='__main__':main()
