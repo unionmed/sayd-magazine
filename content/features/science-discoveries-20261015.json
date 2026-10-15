@@ -40,9 +40,16 @@
           "creator": "Min Wang",
           "url": "https://www.eurekalert.org/multimedia/1156633",
           "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
-          "status": "LICENSE VERIFIED FOR NEWS COVERAGE; PENDING LOCAL COPY",
-          "use_on_site": false,
-          "local_path": "media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg"
+          "status": "LOCAL COPY VERIFIED",
+          "use_on_site": true,
+          "local_path": "media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+          "downloaded_source": "https://english.cas.cn/newsroom/research-news/202610/W020261013560664863468.jpg",
+          "credit": "Min Wang / Chinese Academy of Sciences; press coverage only",
+          "sha256": "1f3559e2df7112e233ca18a49d839c8e0a15596e6a8efde5ed82688bc18d5da8",
+          "image_dimensions": [
+            4252,
+            4976
+          ]
         },
         {
           "role": "secondary",
@@ -114,9 +121,16 @@
           "creator": "Yoav Perlman et al.",
           "url": "https://www.cambridge.org/core/journals/bird-conservation-international/article/gps-tracking-of-the-european-turtledove-along-the-eastern-flyway-reveals-challenging-flights-over-ecological-barriers-and-anthropogenic-risks/82F052E252691542D9D648D85DAB381A",
           "license": "Article CC BY 4.0; check individual figure for third-party restrictions",
-          "status": "PENDING LOCAL COPY",
-          "use_on_site": false,
-          "local_path": "media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png"
+          "status": "LOCAL COPY VERIFIED",
+          "use_on_site": true,
+          "local_path": "media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+          "downloaded_source": "https://static.cambridge.org/binary/version/id/urn:cambridge.org:id:binary:20261011233704532-0557:S0959270926100860:S0959270926100860_fig1.png?pub-status=live",
+          "credit": "Perlman et al. / Bird Conservation International, Cambridge University Press, CC BY 4.0",
+          "sha256": "dde8bed516fe4588b4e03795b50960eba7cefe3126fcd395c452b60dca6f9efb",
+          "image_dimensions": [
+            1754,
+            1860
+          ]
         }
       ],
       "translations": {

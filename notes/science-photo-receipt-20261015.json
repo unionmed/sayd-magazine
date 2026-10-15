@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-15",
+  "status": "LOCAL COPIES VERIFIED",
+  "images": [
+    {
+      "article": "jurassic-flightless-yuezhuornis",
+      "site_path": "docs/media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+      "sha256": "1f3559e2df7112e233ca18a49d839c8e0a15596e6a8efde5ed82688bc18d5da8",
+      "bytes": 1457491,
+      "width": 4252,
+      "height": 4976,
+      "credit": "Min Wang / Chinese Academy of Sciences; press coverage only",
+      "source_url": "https://english.cas.cn/newsroom/research-news/202610/W020261013560664863468.jpg"
+    },
+    {
+      "article": "turtle-dove-eastern-flyway-gps",
+      "site_path": "docs/media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+      "sha256": "dde8bed516fe4588b4e03795b50960eba7cefe3126fcd395c452b60dca6f9efb",
+      "bytes": 2675039,
+      "width": 1754,
+      "height": 1860,
+      "credit": "Perlman et al. / Bird Conservation International, Cambridge University Press, CC BY 4.0",
+      "source_url": "https://static.cambridge.org/binary/version/id/urn:cambridge.org:id:binary:20261011233704532-0557:S0959270926100860:S0959270926100860_fig1.png?pub-status=live"
+    }
+  ]
+}
