@@ -3,8 +3,8 @@
   "source": "unionmed/sayd-magazine repository only",
   "articles_scanned": 748,
   "articles_with_github_image_references": 49,
-  "image_references_unique_per_article": 108,
-  "exact_links": 108,
+  "image_references_unique_per_article": 114,
+  "exact_links": 114,
   "unique_basename_not_verified": 0,
   "ambiguous_basename": 0,
   "not_found": 0,
@@ -344,6 +344,17 @@
     {
       "article_file": "content/posts/الصيد-الذكوري-الرجولة-بين-جثث-الطيور.md",
       "article_title": "الصيد الذكوري… عندما يبحث البعض عن رجولتهم بين جثث الطيور!",
+      "source_reference": "../../media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-الذكوري-الرجولة-بين-جثث-الطيور.md",
+      "article_title": "الصيد الذكوري… عندما يبحث البعض عن رجولتهم بين جثث الطيور!",
       "source_reference": "media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
       "expected_local_path": "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
       "matching_paths": [
@@ -359,6 +370,17 @@
       "expected_local_path": "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-الذكوري-الرجولة-بين-جثث-الطيور.md",
+      "article_title": "الصيد الذكوري… عندما يبحث البعض عن رجولتهم بين جثث الطيور!",
+      "source_reference": "../../media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -414,6 +436,28 @@
       "expected_local_path": "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح.md",
+      "article_title": "باشق مخبّأ في حقيبة ظهر… توقيف شخصين في عملية لمكافحة صيد الجوارح بعكار",
+      "source_reference": "../../media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح.md",
+      "article_title": "باشق مخبّأ في حقيبة ظهر… توقيف شخصين في عملية لمكافحة صيد الجوارح بعكار",
+      "source_reference": "../../media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -546,6 +590,28 @@
       "expected_local_path": "docs/media/uploads/2026/10/egypt-coastal-bird-2026.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/egypt-coastal-bird-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حين-يصبح-الخريف-موسما-لاصطياد-الصورة.md",
+      "article_title": "حين يصبح الخريف موسماً لاصطياد الصورة",
+      "source_reference": "../../media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حين-يصبح-الخريف-موسما-لاصطياد-الصورة.md",
+      "article_title": "حين يصبح الخريف موسماً لاصطياد الصورة",
+      "source_reference": "../../media/uploads/2026/10/migration-cover-ras-al-khor.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/migration-cover-ras-al-khor.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/migration-cover-ras-al-khor.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
