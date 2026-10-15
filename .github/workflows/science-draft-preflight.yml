@@ -36,3 +36,24 @@ jobs:
               assert any(im.get('role')=='lead' and im.get('local_path') for im in a['photos'])
           print('PASS: science draft structure and original homepage placement; images and publication remain gated.')
           PY
+      - name: Verify the full site builder in a disposable checkout
+        run: |
+          python -m pip install lxml==5.3.2 pillow==11.3.0
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from PIL import Image
+          p = Path('content/features/science-discoveries-20261015.json')
+          d = json.loads(p.read_text())
+          for a in d['articles']:
+              lead = next(x for x in a['photos'] if x['role']=='lead')
+              lead['use_on_site'] = True   # EPHEMERAL TEST ONLY; NEVER COMMIT TEST RIGHTS.
+              image = Path('docs') / lead['local_path']
+              image.parent.mkdir(parents=True, exist_ok=True)
+              im=Image.effect_noise((850,650), 95).convert('RGB')
+              im.save(image, quality=92) if image.suffix=='.jpg' else im.save(image)
+          p.write_text(json.dumps(d,ensure_ascii=False,indent=2))
+          print('Synthetic images generated only inside CI runner; this step does not publish or commit files.')
+          PY
+          python scripts/build_science_discoveries_20261015.py
+          python scripts/test_homepage_doors.py
