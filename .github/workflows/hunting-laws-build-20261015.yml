@@ -1,0 +1,54 @@
+name: Build source-verified hunting-law articles (review branch)
+on:
+  push:
+    branches: [feature/publish-three-arab-hunting-laws-20261015]
+permissions:
+  contents: write
+jobs:
+  build-law-editorial:
+    if: "!contains(github.event.head_commit.message, '[laws-built]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare media and page dependencies
+        run: pip install lxml==5.3.2 Pillow==11.3.0
+      - name: Generate three laws in all languages and verify protected home placements
+        run: |
+          python -m py_compile scripts/publish_three_hunting_laws_20261015.py
+          python scripts/publish_three_hunting_laws_20261015.py
+          python - <<'PY'
+          import sys
+          from pathlib import Path
+          from difflib import unified_diff
+          sys.path.insert(0,'scripts')
+          from refresh_homepage_doors import refresh
+          for lang in ('ar','en','fr'):
+              p=Path('docs')/('' if lang=='ar' else lang)/'index.html'
+              before=p.read_text()
+              after=refresh(p,lang)
+              if before!=after:
+                  print('HOMEPAGE SECOND-REFRESH DIFF',lang)
+                  print('\n'.join(list(unified_diff(before.splitlines(),after.splitlines(),n=2))[:50]))
+          PY
+          python scripts/test_homepage_doors.py
+          python scripts/test_shared_ticker.py
+          python scripts/test_hreflang_contract.py
+          python scripts/repair_ga4_tracking.py --check
+      - name: Build full media catalog including three local graphics
+        run: |
+          python audit/image-catalog/build_preliminary_taxonomy.py
+          python audit/image-catalog/link_historical_articles.py
+          python audit/image-catalog/search_all.py --audit --check-files
+      - name: Commit only to feature review branch
+        run: |
+          git config user.name "Sayd editorial gate"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs content scripts/refresh_homepage_doors.py notes/hunting-laws-publication-receipt-20261015.json audit/image-catalog
+          git commit -m "Three trilingual explainers of Lebanon Qatar and Oman hunting laws [laws-built]"
+          git push origin HEAD:feature/publish-three-arab-hunting-laws-20261015

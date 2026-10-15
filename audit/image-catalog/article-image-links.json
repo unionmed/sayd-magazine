@@ -1,14 +1,14 @@
 {
   "schema": "sayd-github-article-media-crossref-v3",
   "source": "unionmed/sayd-magazine repository only",
-  "articles_scanned": 737,
-  "articles_with_github_image_references": 38,
-  "image_references_unique_per_article": 97,
-  "exact_links": 97,
+  "articles_scanned": 742,
+  "articles_with_github_image_references": 43,
+  "image_references_unique_per_article": 102,
+  "exact_links": 102,
   "unique_basename_not_verified": 0,
   "ambiguous_basename": 0,
   "not_found": 0,
-  "catalog_images_with_exact_article_link": 92,
+  "catalog_images_with_exact_article_link": 97,
   "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
   "exact": [
     {
@@ -348,6 +348,17 @@
       "expected_local_path": "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل.md",
+      "article_title": "من أذربيجان إلى النيل: أجهزة GPS تكشف الطرق الصعبة لهجرة اليمام القمري",
+      "source_reference": "media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+      "expected_local_path": "docs/media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -694,6 +705,17 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور.md",
+      "article_title": "طائر جوراسي لم يكن يطير... أحفورة تكشف أن تطور الطيور لم يتجه نحو السماء وحدها",
+      "source_reference": "media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/طيور-خربة-سلم-بعدسة-جمانة-ماجد.md",
       "article_title": "طيور خربة سلم بعدسة جمانة ماجد",
       "source_reference": "media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-01.jpg",
@@ -837,6 +859,28 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد.md",
+      "article_title": "عُمان: قانون 6/2003 يحمي الحبارى والجوارح ويضع الصيد ضمن نظام صون الأحياء الفطرية",
+      "source_reference": "media/uploads/2026/10/sayd-legal-explainer-oman-royal-decree-6-2003.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/sayd-legal-explainer-oman-royal-decree-6-2003.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/sayd-legal-explainer-oman-royal-decree-6-2003.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع.md",
+      "article_title": "قانون الصيد اللبناني 580/2004: لماذا لا يكفي إعلان افتتاح الموسم لإباحة الصيد؟",
+      "source_reference": "media/uploads/2026/10/sayd-legal-explainer-lebanon-580-2004.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/sayd-legal-explainer-lebanon-580-2004.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/sayd-legal-explainer-lebanon-580-2004.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026.md",
       "article_title": "قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»",
       "source_reference": "../../media/uploads/2026/09/hero-closing-80k.jpg",
@@ -854,6 +898,17 @@
       "expected_local_path": "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات.md",
+      "article_title": "القانون القطري 4/2002: حدود الصيد البري لا تبدأ ولا تنتهي بمواعيد الموسم",
+      "source_reference": "media/uploads/2026/10/sayd-legal-explainer-qatar-4-2002.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/sayd-legal-explainer-qatar-4-2002.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/sayd-legal-explainer-qatar-4-2002.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"

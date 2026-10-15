@@ -169,6 +169,11 @@ def refresh(path,lang):
         category=path.parent/'category'/folder/'index.html'
         if category.is_file():
             for slug,item in collect(category.read_text(),category,path).items():catalog.setdefault(slug,item)
+    # Resolve new law explainers into Updates without adding another homepage desk.
+    law_category=path.parent/'category'/'قوانين'/'index.html'
+    if law_category.is_file():
+        for slug,item in collect(law_category.read_text(),law_category,path).items():
+            catalog.setdefault(slug,item)
     # An explicit local override survives publishing from older category cards.
     for slug in ['بالفيديو-وحدة-مكافحة-الصيد-الجائر-عمليات-ميدانية','video-apu-ground-operations-mecshap']:
         if slug in catalog:catalog[slug]['image']=os.path.relpath(DOCS/'media/video/apu-ground-operations-mecshap.jpg',path.parent)
