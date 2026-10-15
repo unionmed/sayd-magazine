@@ -239,6 +239,8 @@ def main():
     for lang,p in paths.items():
         out=apply_html(p.read_text(encoding="utf-8"),p,DOCS,p.relative_to(DOCS),twins)
         save(p,out)
+    from refresh_related_reading import main as refresh_reading
+    refresh_reading()
     # New pages contain BOTH ticker loops matching the language home.
     from sync_tickers import sync
     assert sync(DOCS,check=True)[1]==0
