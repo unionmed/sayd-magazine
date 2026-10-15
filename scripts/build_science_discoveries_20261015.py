@@ -225,7 +225,7 @@ def update_article_archive(items, lang):
     # Re-running a build must not duplicate these rows.
     for a, _ in items:
         slug = re.escape(a["slugs"][lang])
-        text = re.sub(r'<article\b[^>]*>.*?posts/' + slug + r'/index\.html.*?</article>', '', text, flags=re.S)
+        text = re.sub(r'<article\b[^>]*>(?:(?!</article>).)*?posts/' + slug + r'/index\.html(?:(?!</article>).)*?</article>', '', text, flags=re.S)
     match = re.search(r'<article class="(?:post-row|card)[^"]*"', text)
     if not match:
         raise RuntimeError(f"{target}: archive card scaffold missing")
@@ -289,6 +289,7 @@ def seo_and_sitemap(articles, new_pages):
         t = t.replace("</head>", seo.seo_block(t, p, DOCS, rel, twins) + "</head>")
         if "/posts/" in p.as_posix():
             t = seo.add_article_sharing(t, rel)
+        t = seo.add_ga4(t)
         p.write_text(t)
     sitemap = DOCS / "sitemap.xml"
     xml = sitemap.read_text()
