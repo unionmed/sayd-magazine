@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-15",
+  "law_original_enactment_dates": [
+    "2004-02-25",
+    "2002-05-11",
+    "2003-01-08"
+  ],
+  "editorial_publication_date": "2026-10-15",
+  "news_top4_unchanged": true,
+  "graphics": [
+    {
+      "article": "lb-580-2004-hunting-law",
+      "source": "Sayd-original typographic design, not official document",
+      "site_media_path": "media/uploads/2026/10/sayd-legal-explainer-lebanon-580-2004.jpg",
+      "sha256": "7b61eadd7c6e21070a71625b44fbe0ab9ceb42273753d4500bf3ff470d4d3286"
+    },
+    {
+      "article": "qa-4-2002-wildlife-hunting-law",
+      "source": "Sayd-original typographic design, not official document",
+      "site_media_path": "media/uploads/2026/10/sayd-legal-explainer-qatar-4-2002.jpg",
+      "sha256": "2b2fc58ed0b3649f36722637a9ffdba25b136ac0210ac7b68c3b539eb844d9df"
+    },
+    {
+      "article": "om-6-2003-nature-wildlife-law",
+      "source": "Sayd-original typographic design, not official document",
+      "site_media_path": "media/uploads/2026/10/sayd-legal-explainer-oman-royal-decree-6-2003.jpg",
+      "sha256": "63f6b9773c179fc3f4b64e50e68454d526e442e82fc8cfd0922a76749819522a"
+    }
+  ],
+  "articles_trilingual": 3,
+  "contract": "pass"
+}
