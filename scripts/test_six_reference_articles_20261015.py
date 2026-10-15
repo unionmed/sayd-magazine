@@ -50,6 +50,11 @@ def check():
   prefix='docs/'+('' if l=='ar' else l+'/')
   permitted.update({prefix+'category/'+c+'/index.html' for c in ['قوانين','موسوعة-الطيور']})
   permitted.add(prefix+('articles' if l=='ar' else 'stories')+'/index.html')
+ for a in articles:
+  for l in p.LANGS:
+   permitted.add('docs/'+p.relpage(a,l).as_posix())
+   permitted.add('content/'+('posts' if l=='ar' else l)+'/'+a['slugs'][l]+'.md')
+  permitted.add('content/fr/segments/'+a['slugs']['fr']+'.json')
  old_source='content/features/hunting-laws-arab-20261015.json'
  old_data=json.loads(subprocess.check_output(['git','show','a7e23c80616e9848a2c01ebb5a5a3e658a647616:'+old_source],cwd=p.ROOT,text=True))
  current=json.loads((p.ROOT/old_source).read_text())
