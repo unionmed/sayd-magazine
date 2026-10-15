@@ -46,7 +46,7 @@ def test_demotion_drops_a_slug_already_in_latest() -> None:
 def test_desktop_nav_shows_all_ten_doors() -> None:
     """Desktop lists every door. Mobile stays the first four plus More."""
     visible = {door["id"] for door in ia.visible_doors()}
-    assert visible == {"hunting", "gear", "equestrian", "wildlife", "science", "tv", "photos"}
+    assert visible == {"hunting", "gear", "equestrian", "wildlife", "science", "poetry", "tv", "photos"}
     hunting = next(door for door in ia.visible_doors() if door["id"] == "hunting")
     assert hunting["children"] == []
     nav = ia.desktop_nav_inner("ar", 0)
