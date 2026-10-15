@@ -106,6 +106,8 @@ def render_li(slug,item):
             f'<span class="feed-date">{esc(item["date"])}</span></span></a></li>')
 
 def validate_config(c):
+    from editorial_distribution_policy import validate_config as check_distribution
+    check_distribution(c)
     assert c['memory_after_door'] == 'science', 'Memory follows Science & Discoveries'
     assert len(c['featured'])==5 and len(c['latest'])==8, 'Require one lead, four side cards and eight Updates'
     assert c['featured']==[c['ia_slots']['main']]+c['ia_slots']['important']
