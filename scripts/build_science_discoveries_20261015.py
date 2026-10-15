@@ -200,11 +200,56 @@ def listing_rows(items, lang, target, style="post-row"):
                     '</p></div></article>')
     return "\n".join(rows)
 
+def add_french_science_link(block):
+    """Insert one Science link in the French encoded menu without touching Bird Encyclopedia."""
+    from urllib.parse import quote, unquote
+    if CATEGORY in unquote(block):
+        return block
+    match = re.search(r'<a href="([^"]+)">(?:Faune et camping|Faune)</a>', block)
+    if not match or "حياة-برية-وتخييم" not in unquote(match.group(1)):
+        raise RuntimeError("French category navigation lacks Wildlife anchor")
+    url = match.group(1)
+    if quote("حياة-برية-وتخييم") in url:
+        new_url = url.replace(quote("حياة-برية-وتخييم"), quote(CATEGORY))
+    else:
+        new_url = url.replace("حياة-برية-وتخييم", CATEGORY)
+    if new_url == url:
+        raise RuntimeError("French Science link unresolved")
+    link = '<a href="' + new_url + '">Sciences et découvertes</a>'
+    if 'class="mobile-nav"' in block:
+        panel = block.find('<div class="mobile-more-panel">')
+        position = block.find("<a ", panel)
+        if panel < 0 or position < 0:
+            raise RuntimeError("Missing French mobile dropdown")
+        return block[:position] + link + "\n" + block[position:]
+    if block.startswith("<footer"):
+        ending = block.find("</li>", match.end()) + 5
+        if ending < 5:
+            raise RuntimeError("Missing French footer wildlife row")
+        return block[:ending] + "<li>" + link + "</li>" + block[ending:]
+    return block[:match.end()] + "\n" + link + block[match.end():]
+
+
 def new_category(items, lang):
     src = root_for(lang) / "category" / "موسوعة-الطيور" / "index.html"
     target = category_for(lang)
     target.parent.mkdir(parents=True, exist_ok=True)
     t = src.read_text()
+    # The category template is Bird Encyclopedia. Shield navigation and footer
+    # before changing taxonomy strings: otherwise the encyclopedia's OWN menu
+    # entries become duplicate Science links (and the encyclopedia disappears).
+    protected_chrome = []
+    def protect(match):
+        key = "SAYD_SCIENCE_CHROME_PLACEHOLDER_" + str(len(protected_chrome))
+        protected_chrome.append((key, match.group(0)))
+        return key
+    for pat in (
+        r'<nav class="main-nav"[^>]*>.*?</nav>',
+        r'<nav class="mobile-nav"[^>]*>.*?</nav>',
+        r'<nav class="drawer-nav"[^>]*>.*?</nav>',
+        r'<footer class="site-footer"[^>]*>.*?</footer>',
+    ):
+        t = re.sub(pat, protect, t, flags=re.S)
     existing = re.search(r'<article class="(?:post-row|card)[^"]*".*?</article>', t, flags=re.S)
     if not existing:
         raise RuntimeError(f"{src}: category card template missing")
@@ -215,6 +260,12 @@ def new_category(items, lang):
         {"ar": "موسوعة الطيور", "en": "Bird Encyclopedia", "fr": "Encyclopédie des oiseaux"}[lang],
         LABEL[lang])
     t = once(t, r'<title>.*?</title>', '<title>' + LABEL[lang] + ' — Sayd Magazine</title>', "category title")
+    for key, original in protected_chrome:
+        # Existing source navigation already has the approved Science link in
+        # Arabic/English. French templates use percent-encoded category URLs.
+        chrome = add_french_science_link(original) if lang == "fr" else original
+        assert t.count(key) == 1, "Navigation restoration anchor missing"
+        t = t.replace(key, chrome)
     target.write_text(t)
     return target
 

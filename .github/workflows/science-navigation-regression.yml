@@ -1,0 +1,22 @@
+name: Science navigation duplicate regression
+on:
+  push:
+    branches: [fix/science-navigation-duplicate-20261015]
+  pull_request:
+    paths:
+      - 'docs/**/category/علوم-واكتشافات/index.html'
+      - 'docs/category/علوم-واكتشافات/index.html'
+      - 'scripts/build_science_discoveries_20261015.py'
+      - 'scripts/test_science_navigation_20261015.py'
+permissions:
+  contents: read
+jobs:
+  science-menu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - run: python scripts/test_science_navigation_20261015.py
