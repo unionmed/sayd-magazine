@@ -172358,6 +172358,23 @@
       "library_copy_status": "NOT_CHECKED"
     },
     {
+      "path": "docs/media/uploads/2026/10/barn-swallow-singing.jpg",
+      "sha": "d5aa16f95696d9c0dd735f3f165273d9a5436790",
+      "size_bytes": 238854,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "barn-swallow-singing.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
       "path": "docs/media/uploads/2026/10/batroun-pelican-2026.jpg",
       "sha": "7ce57e4db1998c84bbca0aace209d2be7f1c1c2d",
       "size_bytes": 158261,
@@ -172603,6 +172620,23 @@
         "غير مصنف"
       ],
       "filename": "common-chiffchaff-hans-hillewaert.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/common-sandpiper.jpg",
+      "sha": "1ba52ac9842ee03e8a64846e4ba87412ff90906d",
+      "size_bytes": 249291,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "common-sandpiper.jpg",
       "visual_status": "UNVERIFIED",
       "editorial_status": "REVIEW_ON_REUSE",
       "media_kind": "UNVERIFIED",
@@ -172902,6 +172936,23 @@
       "library_copy_status": "NOT_CHECKED"
     },
     {
+      "path": "docs/media/uploads/2026/10/northern-wheatear.jpg",
+      "sha": "957085fb1e30674b4fe482b99921e49a8a509886",
+      "size_bytes": 375923,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "northern-wheatear.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
       "path": "docs/media/uploads/2026/10/oman-air-pistol-2025-ona.jpg",
       "sha": "d5805662e2064df09d2c075970aa004ed677589c",
       "size_bytes": 166024,
@@ -173089,6 +173140,23 @@
       "library_copy_status": "NOT_CHECKED"
     },
     {
+      "path": "docs/media/uploads/2026/10/sayd-legal-explainer-jordan-13-2015.jpg",
+      "sha": "53ee28180d6e0714b2dd729da42fea4da17dbfa0",
+      "size_bytes": 73530,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "sayd-legal-explainer-jordan-13-2015.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
       "path": "docs/media/uploads/2026/10/sayd-legal-explainer-lebanon-580-2004.jpg",
       "sha": "b883d4bf23d01e52d817bcdb701575dd306a058f",
       "size_bytes": 83022,
@@ -173130,6 +173198,40 @@
         "غير مصنف"
       ],
       "filename": "sayd-legal-explainer-qatar-4-2002.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/sayd-legal-explainer-saudi-arabia-m165-2020.jpg",
+      "sha": "6c1c4a6b6abd2dc0f288f9e119c70f252f357776",
+      "size_bytes": 75535,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "sayd-legal-explainer-saudi-arabia-m165-2020.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/sayd-legal-explainer-united-arab-emirates-9-1983-24-1999.jpg",
+      "sha": "95ed55465501e4beb168aa8ce6a9cfd47ad4d9bd",
+      "size_bytes": 88300,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "sayd-legal-explainer-united-arab-emirates-9-1983-24-1999.jpg",
       "visual_status": "UNVERIFIED",
       "editorial_status": "REVIEW_ON_REUSE",
       "media_kind": "UNVERIFIED",
@@ -173481,9 +173583,9 @@
     }
   ],
   "summary": {
-    "total": 10204,
+    "total": 10210,
     "categories_multi_label": {
-      "غير مصنف": 9625,
+      "غير مصنف": 9631,
       "الطيور": 85,
       "الرماية والعتاد": 138,
       "الصيد": 280,
@@ -173494,6 +173596,6 @@
       "شعر وفن": 1,
       "الحياة البرية": 2
     },
-    "unclassified": 9625
+    "unclassified": 9631
   }
 }

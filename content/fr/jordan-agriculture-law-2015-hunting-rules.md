@@ -1,0 +1,19 @@
+---
+title: "Chasse en Jordanie : comprendre les permis, les saisons et les espèces protégées"
+slug: jordan-agriculture-law-2015-hunting-rules
+date: 2026-10-15
+author: Sayd
+categories: [قوانين]
+featured: media/uploads/2026/10/sayd-legal-explainer-jordan-13-2015.jpg
+---
+
+<p class="excerpt">L’article 56 de la loi agricole : permis, espèces protégées et méthodes interdites, à distinguer des décisions saisonnières.</p>
+<figure><img src="../../../media/uploads/2026/10/sayd-legal-explainer-jordan-13-2015.jpg" alt="Jordanie : loi agricole 13/2015, article 56" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Jordanie : loi agricole 13/2015, article 56</figcaption></figure>
+<p>La chasse terrestre en Jordanie relève d’un dispositif associant permis, protection des espèces et restrictions de lieux et de périodes. La loi agricole n° 13 de 2015, telle que modifiée, constitue une référence centrale. Son article 56 concerne les oiseaux et les animaux sauvages. Cet éclairage présente un cadre existant ; il n’annonce ni nouvelle loi ni ouverture de saison. Le ministère de l’Agriculture répertorie la loi et ses modifications dans son <a href="https://www.moa.gov.jo/AR/List/القوانين" rel="noopener noreferrer">catalogue officiel</a>.</p>
+<p>La loi habilite le ministre à préciser les conditions des permis, les zones, les dates et les espèces protégées. La Société royale pour la conservation de la nature (RSCN) indique que le comité de protection de la faune fixe chaque année les zones, les saisons et les quantités autorisées, publiées sur ses sites. Il faut donc vérifier l’espèce, le jour, le lieu et le quota applicables, en complément du permis. Le calendrier d’une année précédente ne suffit pas. <a href="https://www.rscn.org.jo/page/LawEnforcement" rel="noopener noreferrer">Réglementation de la chasse, RSCN</a>.</p>
+<p>La RSCN propose un <a href="https://lawenforcement.rscn.org.jo/Login.aspx" rel="noopener noreferrer">service de demande de permis en ligne</a>. Le guide ministériel des services de 2015 mentionne aussi des justificatifs relatifs à l’arme de chasse et l’accord du ministère de l’Intérieur. Les exigences concernant l’arme appellent donc une vérification distincte. Ce guide étant ancien, les documents et frais actuels doivent être confirmés auprès de l’autorité compétente. <a href="https://moa.gov.jo/EBV4.0/Root_Storage/AR/EB_List_Page/دليل_الخدمات_الزراعية_لعام__2015_1.pdf" rel="noopener noreferrer">Guide historique des services agricoles de 2015</a>.</p>
+<p>L’article 56 prévoit également des interdictions : chasse dans les réserves naturelles ou pastorales et dans certaines zones habitées ; utilisation de véhicules, projecteurs ou armes automatiques pour chasser ; recours aux poisons, substances adhésives et à certains procédés de capture. Il protège les nids, les œufs et les jeunes. La chasse des rapaces et des animaux sauvages prédateurs nécessite l’accord du ministre. Les espèces dont la chasse est interdite sont réparties en trois listes selon leur degré de protection. <a href="https://faolex.fao.org/docs/pdf/jor149617.pdf" rel="noopener noreferrer">Loi agricole, article 56</a>.</p>
+<p>Selon l’infraction, les sanctions comprennent amendes, emprisonnement et confiscation des animaux, équipements et armes. Des amendes aggravées sont prévues en cas de récidive dans le délai fixé.</p>
+<p>Avant toute sortie, il convient de vérifier permis, annonce saisonnière officielle, espèce, lieu et situation de l’arme. Cet article ne confirme aucune ouverture de saison à sa date de publication. Il fournit une information générale, sans constituer un conseil juridique personnalisé.</p>
+<h2>Lire les textes juridiques intégraux</h2>
+<ul><li><a href="https://faolex.fao.org/docs/pdf/jor149617.pdf" rel="noopener noreferrer">Texte original intégral de la loi agricole jordanienne 13/2015 — FAOLEX (PDF arabe ; consulter aussi les modifications ultérieures)</a></li></ul>

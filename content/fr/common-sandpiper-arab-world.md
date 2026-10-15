@@ -1,0 +1,53 @@
+---
+title: "Le Chevalier guignette dans le monde arabe : un voyageur au bord de l’eau"
+slug: common-sandpiper-arab-world
+date: 2026-10-15
+author: Sayd
+categories: [موسوعة الطيور]
+featured: media/uploads/2026/10/common-sandpiper.jpg
+---
+
+<figure><img src="../../../media/uploads/2026/10/common-sandpiper.jpg" alt="Chevalier guignette" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Chevalier guignette</figcaption></figure>
+<p>Sur une pierre au bord d’une rivière ou à la lisière d’un étang, un oiseau brun et blanc avance à petits pas, se balance puis reprend sa recherche de nourriture. Il semble parfois solitaire, loin des grands groupes de limicoles. Le Chevalier guignette appartient pourtant à un vaste réseau de cours d’eau et de haltes migratoires traversant le monde arabe.</p>
+<h4>Fiche d’identité</h4>
+<ul>
+<li>Noms arabes : الطيطوي الشائع ; الطيطوي الاعتيادي</li>
+<li>Nom anglais : Common Sandpiper</li>
+<li>Nom français : Chevalier guignette</li>
+<li>Nom scientifique : Actitis hypoleucos</li>
+<li>Famille : Scolopacidae</li>
+<li>Longueur : environ 19–21 cm</li>
+<li>Habitat : marges d’eau douce ou salée, berges vaseuses et rocheuses, rives de lacs et canaux</li>
+<li>Présence dans le monde arabe : migrateur de passage et visiteur hivernal en effectifs variables ; une observation estivale ne prouve pas à elle seule la reproduction</li>
+<li>Statut mondial de conservation : Préoccupation mineure (LC)</li>
+</ul>
+<h4>Où le rencontrer dans le monde arabe ?</h4>
+<p>Au Maroc, les études nationales documentent des hivernants sur les côtes atlantique et méditerranéenne ainsi que dans les eaux intérieures. Le suivi de certains nicheurs écossais a également révélé des haltes marocaines sur leurs trajets vers l’Afrique de l’Ouest ou au retour. Le pays peut donc remplir deux fonctions : étape pour certains individus et quartier d’hiver pour d’autres.</p>
+<p>Au Liban, une étude des limicoles publiée dans le Lebanese Science Journal décrit un migrateur de passage commun et un hivernant peu nombreux, observé toute l’année sur les eaux intérieures, le littoral et les îles. Des données réparties sur douze mois ne prouvent pas la nidification sur tous ces sites : des oiseaux non reproducteurs peuvent rester éloignés des régions de reproduction.</p>
+<p>En Arabie saoudite, l’espèce est observée au passage et en hiver, y compris à l’intérieur des terres. Les observations montrent aussi des différences au sein du pays : le passage est marqué dans la province orientale, où les effectifs hivernaux sont plus faibles sur le littoral et les plans d’eau. Un oiseau d’eau n’est donc pas nécessairement limité à la mer ou aux grands marais.</p>
+<h4>Une migration qui commence avant l’automne</h4>
+<p>Chez les populations européennes, les déplacements après la reproduction commencent en juillet, les adultes précédant généralement les jeunes. Beaucoup d’oiseaux atteignent leurs quartiers d’hiver africains vers octobre. Dans la région de Riyad, le passage automnal principal s’étend de juillet à fin octobre, contre mars à mai au printemps. Dates et effectifs varient selon le site, la population et l’année.</p>
+<p>Les premiers oiseaux peuvent ainsi apparaître en fin d’été, bien avant que le temps évoque l’automne. Des observations répétées d’un chevalier ne prouvent pas qu’il s’agit toujours du même individu : plusieurs oiseaux peuvent se succéder sur une zone favorable. Dates, nombres et comportements rendent les suivis saisonniers plus comparables.</p>
+<h4>Une pointe blanche devant l’aile</h4>
+<p>Le dessus gris-brun contraste avec le ventre blanc et une avancée blanche remontant entre le côté de la poitrine et l’aile repliée. Ce caractère aide particulièrement à le distinguer des Chevaliers culblanc et sylvain, dépourvus de la même pointe blanche à l’épaule. La queue dépasse les ailes repliées et les pattes paraissent courtes par rapport à celles de nombreux autres limicoles.</p>
+<p>En vol, une barre alaire blanche devient visible ; l’oiseau vole souvent bas au-dessus de l’eau, avec des battements particuliers. Il n’est pas nécessaire de le faire décoller pour les observer. Les mouvements de tête et le balancement du corps sont fréquents pendant la marche et peuvent s’accentuer à l’approche d’une personne. S’il cesse de manger pour vous surveiller continuellement, reculez.</p>
+<p>Les sexes se ressemblent. Les détails des bordures des plumes diffèrent entre jeunes et adultes, mais déterminer l’âge exige une vue nette et un plumage évaluable. L’intensité du brun ou la taille apparente sur une photographie sans échelle ne suffisent pas à attribuer sûrement un âge ou un sexe.</p>
+<h4>Les ressources de la berge</h4>
+<p>Il consomme des insectes aquatiques et terrestres, leurs larves, des vers, de petits crustacés et des mollusques, prélevés au sol ou au bord de l’eau. Une berge de canal ou une petite mare peu remarquée peut lui convenir. Ce sont la nourriture, l’eau et l’accessibilité des marges qui comptent, plutôt que la superficie ou la célébrité du paysage.</p>
+<p>Il niche principalement en Europe et en Asie, près de l’eau, dans une végétation qui dissimule le nid. Les données du BTO indiquent généralement quatre œufs, couvés par les deux sexes. Ces éléments décrivent la biologie de l’espèce ; ils ne prouvent pas sa reproduction sur un site arabe sans nid documenté ou comportement reproducteur confirmé.</p>
+<h4>Préserver des rives tranquilles</h4>
+<p>L’espèce reste classée mondialement en « Préoccupation mineure », mais les sites d’alimentation et de repos sont essentiels à sa migration. La disparition ou la pollution des berges naturelles, ainsi que les dérangements répétés, peuvent réduire l’intérêt d’un lieu pourtant minuscule sur une carte.</p>
+<p>Observez à distance. Évitez de marcher directement vers l’oiseau sur une rive étroite ou de le coincer entre vous et l’eau. Ne le capturez pas pour l’identifier. Son statut juridique se vérifie auprès de l’autorité compétente de chaque pays : ni son nom ni sa catégorie de conservation n’autorisent la chasse. Une photo de profil accompagnée d’une date et d’un lieu vaut mieux qu’une image de vol obtenue en le dérangeant.</p>
+<h4>Références</h4>
+<ul>
+<li><a href="https://migrationatlas.org/node/1653">EURING/CMS — Common Sandpiper migration atlas</a></li>
+<li><a href="https://ebird.org/species/comsan">Cornell Lab — Common Sandpiper identification</a></li>
+<li><a href="https://australian.museum/learn/animals/birds/common-sandpiper/">Australian Museum — Common Sandpiper</a></li>
+<li><a href="https://www.bto.org/learn/about-birds/birdfacts/common-sandpiper">BTO — Common Sandpiper biology and status</a></li>
+<li><a href="https://www.nzbirdsonline.org.nz/species/common-sandpiper">New Zealand Birds Online — Common Sandpiper</a></li>
+<li><a href="https://applications.emro.who.int/imemrf/322/Lebanese-Sci-J-2020-21-1-37-53-eng.pdf">Lebanese Science Journal — waders of Lebanon (2020)</a></li>
+<li><a href="https://www.researchgate.net/publication/236031258_Les_Limicoles_Aves_Charadrii_du_Maroc_synthese_sur_l%27hivernage_a_l%27echelle_nationale_et_etude_phenologique_dans_le_site_Ramsar_de_Merja_Zerga">Les Limicoles du Maroc — national wintering synthesis</a></li>
+<li><a href="https://www.birdsofsaudiarabia.com/2016/05/common-sandpipers-passing-through.html">Birds of Saudi Arabia — Common Sandpiper passage and winter records</a></li>
+<li><a href="https://www.nzbirdsonline.org.nz/assets/95597/1691911828-214_common-20sandpiper.pdf">HANZAB — Common Sandpiper plumages</a></li>
+</ul>
+<p class="photo-credits"><small>Crédit photo: JJ Harrison — <a href="https://commons.wikimedia.org/wiki/File:Common_Sandpiper_0A2A4945.jpg">Wikimedia Commons</a> — <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a>.</small></p>
