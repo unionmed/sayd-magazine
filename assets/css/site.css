@@ -2416,3 +2416,38 @@ html[dir="ltr"] .home-section .card.overlay:not(.feature-lead) h3 a:hover {
     padding-inline: 0;
   }
 }
+
+/* SAYD: responsive all-visible navigation -- 2026-10-15 */
+
+@media (max-width: 900px) {
+  .mobile-nav {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 0 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    gap: .20rem .40rem;
+    overflow: visible;
+    font-size: clamp(12px, 3.18vw, 14px);
+    line-height: 1.25;
+    padding: .32rem 0 .42rem;
+  }
+  .mobile-nav > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.15rem;
+    color: var(--olive);
+    font-weight: 800;
+    white-space: nowrap;
+    padding: .12rem .12rem;
+    flex: 0 0 auto;
+  }
+  .mobile-nav > a:focus-visible {
+    outline: 2px solid var(--olive);
+    outline-offset: 2px;
+  }
+  .mobile-more { display: none; }
+}
+

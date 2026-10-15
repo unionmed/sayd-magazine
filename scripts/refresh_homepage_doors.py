@@ -22,7 +22,7 @@ DOORS = [
  ('equestrian','فروسية','Equestrian','Équitation','فروسية'),
  ('wildlife','برية وتخييم','Wildlife & Camping','Faune et camping','حياة-برية-وتخييم'),
  ('science','علوم واكتشافات','Science & Discoveries','Sciences et découvertes','علوم-واكتشافات'),
- ('poetry','شعر وفن','Poetry & Art','Poésie et arts','ثقافة-وتراث'),
+ ('poetry','تراث','Heritage','Patrimoine','ثقافة-وتراث'),
  ('tv','صيد TV','Sayd TV','Sayd TV','استديو-صيد'),
  ('photos','صور','Photos','Photos','صور'),
 ]
