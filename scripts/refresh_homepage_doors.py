@@ -128,7 +128,7 @@ def ensure_science_section(page, lang):
     headings = {'ar': 'علوم واكتشافات', 'en': 'Science & Discoveries',
                 'fr': 'Sciences et découvertes'}
     heading = headings[lang]
-    existing = re.findall(r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(heading) + r'</h2>', page)
+    existing = re.findall(r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(html.escape(heading)) + r'</h2>', page)
     if len(existing) > 1:
         raise ValueError(f'{lang}: duplicate science desks')
     if existing:
