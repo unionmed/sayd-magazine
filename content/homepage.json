@@ -206,12 +206,6 @@
       "touqi-season-king-abdulaziz-royal-reserve-2026",
       "qatar-protected-land-marine-areas-2030"
     ],
-    "شعر وفن": [
-      "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب"
-    ],
-    "Poetry & Art": [
-      "from-the-poem-to-the-maqnas"
-    ],
     "علوم واكتشافات": [
       "طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور",
       "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل"
@@ -219,6 +213,12 @@
     "Science & Discoveries": [
       "jurassic-flightless-bird-yuezhuornis-evolution",
       "turtle-dove-gps-eastern-flyway-nile-red-sea"
+    ],
+    "تراث": [
+      "من-القصيدة-إلى-المقناص-رحلة-هجرة-في-ذاكرة-العرب"
+    ],
+    "Heritage": [
+      "from-the-poem-to-the-maqnas"
     ]
   },
   "category_extras": {},
@@ -228,7 +228,7 @@
     "فروسية",
     "الحياة البرية والتخييم",
     "علوم واكتشافات",
-    "شعر وفن",
+    "تراث",
     "صيد TV",
     "صور"
   ],

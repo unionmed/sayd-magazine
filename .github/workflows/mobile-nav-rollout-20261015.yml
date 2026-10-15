@@ -1,0 +1,40 @@
+name: Build all-visible phone and desktop navigation (feature only)
+on:
+  push:
+    branches: [feature/all-visible-mobile-nav-and-heritage-20261015]
+permissions:
+  contents: write
+jobs:
+  preview-and-verify:
+    if: "!contains(github.event.head_commit.message, '[nav-build-result]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - name: Verify script compiles, then build responsive navigation in all mirrors
+        run: |
+          python -m py_compile scripts/rollout_mobile_nav_heritage_20261015.py
+          python scripts/rollout_mobile_nav_heritage_20261015.py
+          python -m py_compile scripts/site_ia.py scripts/refresh_homepage_doors.py
+      - name: Verify protected placement, images, shared ticker and SEO language links
+        run: |
+          python scripts/check_publication_contract.py
+          python scripts/test_homepage_doors.py
+          python scripts/test_shared_ticker.py
+          python scripts/test_hreflang_contract.py
+      - name: Commit the vetted site change to review branch only
+        run: |
+          git config user.name "Sayd website quality checks"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs content/homepage.json content/publication-contract.json scripts/site_ia.py scripts/refresh_homepage_doors.py scripts/build_fr_edition.py assets/css/site.css notes/mobile-nav-heritage-rollout-20261015.json
+          git diff --cached --stat | tail -20
+          if ! git diff --cached --quiet; then
+            git commit -m "Responsive all-door navigation in one order and Heritage title [nav-build-result]"
+            git push origin HEAD:feature/all-visible-mobile-nav-and-heritage-20261015
+          fi
