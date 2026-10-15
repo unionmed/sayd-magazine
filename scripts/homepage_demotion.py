@@ -16,6 +16,10 @@ def demote_side_cards(config, previous_side, date_of=publication_date):
     displaced = [s for s in previous_side if s not in config['featured']]
     pool = list(dict.fromkeys(config['latest'] + displaced))
     pool = [s for s in pool if s not in config['featured']]
+    # Reference entries and scientific studies may not flow into Updates automatically.
+    from editorial_distribution_policy import eligible, memberships
+    approved_lookup = memberships(config)
+    pool = [s for s in pool if eligible(s, 'latest', config, approved_lookup)]
     config['latest'] = sorted(pool, key=date_of, reverse=True)[:8]
     config['ia_slots']['latest'] = config['latest'].copy()
     return displaced
