@@ -34,22 +34,32 @@
       "photos": [
         {
           "role": "lead",
-          "subject": "Photograph of holotype fossil IVPP V34427",
-          "agency": "Chinese Academy of Sciences / EurekAlert",
+          "subject": "Life reconstruction of Late Jurassic bird Yuezhuornis yangyuanensis",
+          "agency": "Chinese Academy of Sciences Headquarters / EurekAlert",
           "creator": "Min Wang",
-          "url": "https://www.eurekalert.org/news-releases/1147488",
-          "license": "not confirmed",
-          "status": "PENDING RIGHTS AND LOCAL COPY",
+          "url": "https://www.eurekalert.org/multimedia/1156632",
+          "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
+          "status": "LICENSE VERIFIED FOR NEWS COVERAGE; PENDING LOCAL COPY",
           "use_on_site": false
         },
         {
           "role": "secondary",
-          "subject": "Reconstruction of the Late Jurassic species",
-          "agency": "Chinese Academy of Sciences",
-          "creator": "Min Wang (credit on Phys.org; verify particular visual attribution)",
-          "url": "https://phys.org/news/2026-10-early-birds-evolved-flight-jurassic.html",
-          "license": "not confirmed",
-          "status": "PENDING RIGHTS AND LOCAL COPY",
+          "subject": "Photograph of holotype fossil IVPP V34427, Yuezhuornis yangyuanensis",
+          "agency": "Chinese Academy of Sciences Headquarters / EurekAlert",
+          "creator": "Min Wang",
+          "url": "https://www.eurekalert.org/multimedia/1156633",
+          "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
+          "status": "LICENSE VERIFIED FOR NEWS COVERAGE; PENDING LOCAL COPY",
+          "use_on_site": false
+        },
+        {
+          "role": "secondary",
+          "subject": "Avian evolutionary tree and forelimb comparison for Yuezhuornis",
+          "agency": "Chinese Academy of Sciences Headquarters / EurekAlert",
+          "creator": "Min Wang",
+          "url": "https://www.eurekalert.org/multimedia/1156635",
+          "license": "News organizations may use or redistribute with attribution as part of news coverage of this paper only",
+          "status": "LICENSE VERIFIED FOR NEWS COVERAGE; PENDING LOCAL COPY",
           "use_on_site": false
         }
       ],
