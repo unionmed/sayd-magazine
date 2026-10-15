@@ -71,3 +71,28 @@ jobs:
                   print('NON-IDEMPOTENT',lang,'\n'.join(diff[:40]))
           PY
           python scripts/test_homepage_doors.py
+      - name: Probe publisher originals (read only; do not publish)
+        continue-on-error: true
+        run: |
+          python -m pip install requests beautifulsoup4
+          python - <<'PY'
+          import requests
+          from bs4 import BeautifulSoup
+          urls={
+            "CAS original fossil": "https://english.cas.cn/newsroom/research-news/202610/W020261013560664863468.jpg",
+            "Cambridge research article": "https://www.cambridge.org/core/journals/bird-conservation-international/article/gps-tracking-of-the-european-turtledove-along-the-eastern-flyway-reveals-challenging-flights-over-ecological-barriers-and-anthropogenic-risks/82F052E252691542D9D648D85DAB381A",
+          }
+          for label,url in urls.items():
+              try:
+                  r=requests.get(url,headers={"User-Agent":"Mozilla/5.0 (compatible; SaydMagEditorial/1.0)"},timeout=14)
+                  print(label, "status:",r.status_code,"mime:",r.headers.get('content-type'),"bytes:",len(r.content),"url:",r.url)
+                  if "Cambridge" in label and r.status_code==200:
+                      soup=BeautifulSoup(r.text,"html.parser")
+                      found=[]
+                      for tag in soup.find_all("img"):
+                          alt=tag.get("alt","")
+                          if any(w in alt.lower() for w in ("geographical map","migration tracks","figure 1","turtle-dove")):
+                              found.append((alt[:120],tag.get("src"),tag.get("data-src")))
+                      print("CAMBRIDGE FIGURE CANDIDATES:",found[:8])
+              except Exception as e:print(label,"ERROR:",repr(e)[:300])
+          PY
