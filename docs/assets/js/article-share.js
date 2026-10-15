@@ -41,3 +41,29 @@ document.querySelectorAll(".article-share").forEach((bar) => {
     }
   });
 });
+
+
+// Record clicks on existing related-reading links without intercepting navigation.
+// GA4 is already configured by each article. No cookies, URLs with query strings,
+// or visitor identifiers are collected by this additional event.
+document.addEventListener("click", (event) => {
+  const target = event.target;
+  if (!(target instanceof Element)) return;
+  const link = target.closest("a[href]");
+  if (!link) return;
+  const section = link.closest(".article-more, .editorial-background");
+  if (!section || typeof window.gtag !== "function") return;
+  let destination;
+  try {
+    destination = new URL(link.href, location.href);
+  } catch {
+    return;
+  }
+  if (destination.origin !== location.origin) return;
+  if (!/^\/(?:en\/|fr\/)?posts\//.test(destination.pathname)) return;
+  window.gtag("event", "sayd_read_next_click", {
+    link_type: section.classList.contains("article-more") ? "reading_card" : "editorial_context",
+    source_path: location.pathname,
+    destination_path: destination.pathname
+  });
+});
