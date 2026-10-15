@@ -13,10 +13,6 @@
     "tv",
     "photos"
   ],
-  "updated_pages_by_language": {
-    "ar": 824,
-    "en": 86,
-    "fr": 79
-  },
+  "updated_pages_by_language": {},
   "preserve": "lead, four side cards, eight updates, archive, dates, ticker, images"
 }
