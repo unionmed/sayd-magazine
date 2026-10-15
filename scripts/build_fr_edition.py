@@ -26,7 +26,7 @@ BASE = 'https://sayd-magazine.com'
 CATS = {
     'صيد': 'Chasse', 'عتاد-وسلاح-الصيد': 'Tir et équipement',
     'فروسية': 'Équitation', 'حياة-برية-وتخييم': 'Faune et camping',
-    'ثقافة-وتراث': 'Poésie et arts', 'قوانين': 'Réglementation de la chasse',
+    'ثقافة-وتراث': 'Patrimoine', 'قوانين': 'Réglementation de la chasse',
     'موسوعة-الطيور': 'Encyclopédie des oiseaux', 'استديو-صيد': 'Sayd TV',
     'صور': 'Photos', 'الصقارة': 'Fauconnerie', 'صيد-الطيور': 'Chasse aux oiseaux',
     'صيد-بري': 'Chasse terrestre', 'صيد-بحري': 'Pêche en mer',
@@ -35,7 +35,7 @@ UI = {
     'Home':'Accueil', 'Stories':'Articles', 'Article':'Article', 'Team':'Équipe', 'Contact':'Contact',
     'Hunting':'Chasse', 'Shooting & Gear':'Tir et équipement',
     'Equestrian':'Équitation', 'Wildlife & Camping':'Faune et camping',
-    'Wildlife':'Faune', 'Poetry & Art':'Poésie et arts',
+    'Wildlife':'Faune', 'Heritage':'Patrimoine', 'Poetry & Art':'Patrimoine',
     'Hunting Laws':'Réglementation de la chasse',
     'Bird Encyclopedia':'Encyclopédie des oiseaux', 'Sayd TV':'Sayd TV',
     'Photos':'Photos', 'More':'Plus', 'Menu':'Menu', 'Updates':'Actualités',

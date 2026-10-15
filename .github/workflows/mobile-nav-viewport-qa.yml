@@ -1,0 +1,46 @@
+name: Verify real mobile nav wraps
+on:
+  push:
+    branches: [feature/all-visible-mobile-nav-and-heritage-20261015]
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          pip install playwright==1.55.0
+          python -m playwright install chromium
+      - name: Check 414 and 360 mobile rows, labels and overflow
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          from pathlib import Path
+          with sync_playwright() as p:
+              browser=p.chromium.launch(headless=True)
+              for lang in ('ar','en','fr'):
+                  for width in (414,360):
+                      page=browser.new_page(viewport={"width":width,"height":900}, device_scale_factor=1)
+                      root=Path('docs')/('' if lang=='ar' else lang)/'index.html'
+                      page.goto(root.resolve().as_uri(),wait_until='domcontentloaded')
+                      nav=page.locator('nav.mobile-nav')
+                      links=nav.locator(':scope > a')
+                      assert links.count()==10,(lang,width,'link count',links.count())
+                      labels=links.all_text_contents()
+                      rects=[x.bounding_box() for x in links.all()]
+                      rows=set(round(box['y']) for box in rects)
+                      overflow=page.evaluate('document.documentElement.scrollWidth > innerWidth+1')
+                      print('RESULT',lang,width,'rows',len(rows),'overflow',overflow,'text',labels)
+                      assert len(rows) <= (4 if lang=='fr' and width==360 else 3),(lang,width,'too many rows',len(rows))
+                      if lang=='ar' and width==414: assert len(rows)==2, ('Arabic 414px should fit two rows',len(rows))
+                      assert not overflow,(lang,width,'horizontal overflow')
+                      assert nav.locator('details').count()==0
+                      page.screenshot(path=f'/tmp/{lang}-{width}.png',full_page=False)
+                      page.close()
+              browser.close()
+          PY

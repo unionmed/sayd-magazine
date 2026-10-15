@@ -1,0 +1,82 @@
+name: Reference article package QA
+on:
+  push:
+    branches: [feature/six-reference-articles-20261015]
+  pull_request:
+    paths:
+      - content/features/six-reference-articles-20261015.json
+      - scripts/publish_six_reference_articles_20261015.py
+      - scripts/test_six_reference_articles_20261015.py
+permissions:
+  contents: write
+jobs:
+  validate-and-render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2 Pillow==11.3.0 playwright==1.55.0
+      - name: Build source package on review branch only
+        if: github.event_name == 'push' && !contains(github.event.head_commit.message, '[references-built]')
+        run: |
+          python scripts/publish_six_reference_articles_20261015.py
+          python audit/image-catalog/build_preliminary_taxonomy.py
+          python audit/image-catalog/link_historical_articles.py
+          python scripts/test_six_reference_articles_20261015.py
+          python scripts/check_publication_contract.py --base HEAD
+          python scripts/test_homepage_doors.py
+          python scripts/test_shared_ticker.py
+          python scripts/test_hreflang_contract.py
+          python scripts/repair_ga4_tracking.py --check
+          git config user.name "Sayd editorial gate"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs content audit/image-catalog scripts/publish_three_hunting_laws_20261015.py
+          if ! git diff --cached --quiet; then
+            git commit -m "Build eighteen trilingual reference pages [references-built]"
+            git push origin HEAD:feature/six-reference-articles-20261015
+          fi
+      - run: python scripts/test_six_reference_articles_20261015.py
+      - run: python -m playwright install --with-deps chromium
+      - name: Render all eighteen pages without analytics traffic
+        run: |
+          python -m http.server 8791 --directory docs >/tmp/reference-preview.log 2>&1 &
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from urllib.parse import quote
+          from playwright.sync_api import sync_playwright
+          articles=json.loads(Path('content/features/six-reference-articles-20261015.json').read_text())['articles']
+          out=Path('reference-page-screenshots');out.mkdir()
+          report=[]
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for mode,width in [('desktop',1366),('mobile',390)]:
+                  context=browser.new_context(viewport={'width':width,'height':1000})
+                  context.route('**/*',lambda route: route.continue_() if route.request.url.startswith('http://127.0.0.1:8791/') or route.request.url.startswith('data:') else route.abort())
+                  page=context.new_page()
+                  for article in articles:
+                      for lang in ['ar','en','fr']:
+                          url='http://127.0.0.1:8791/'+('' if lang=='ar' else lang+'/')+'posts/'+quote(article['slugs'][lang])+'/'
+                          page.goto(url,wait_until='networkidle')
+                          page.locator('img').evaluate_all('(images)=>{ images.forEach(i=>i.loading=\"eager\"); return Promise.all(images.map(i=>i.decode().catch(()=>{}))); }')
+                          overflow=page.evaluate('document.documentElement.scrollWidth > innerWidth')
+                          broken=page.locator('article.article-content img, section.related-block img').evaluate_all('(images)=>images.filter(i=>!i.complete||i.naturalWidth===0).length')
+                          assert not overflow,(article['key'],lang,mode,'horizontal overflow')
+                          assert broken==0,(article['key'],lang,mode,'broken image')
+                          filename=article['key']+'-'+lang+'-'+mode+'.png'
+                          page.screenshot(path=str(out/filename),full_page=True)
+                          report.append({'article':article['key'],'language':lang,'viewport':mode,'screenshot':filename,'overflow':overflow,'broken_images':broken})
+                  context.close()
+              browser.close()
+          (out/'report.json').write_text(json.dumps(report,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reference-pages-18-desktop-mobile
+          path: reference-page-screenshots/

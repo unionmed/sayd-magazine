@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-15",
+  "scope": "navigation on desktop and phone; title Heritage",
+  "ordered_doors": [
+    "hunting",
+    "gear",
+    "equestrian",
+    "wildlife",
+    "science",
+    "birds",
+    "poetry",
+    "laws",
+    "tv",
+    "photos"
+  ],
+  "updated_pages_by_language": {},
+  "preserve": "lead, four side cards, eight updates, archive, dates, ticker, images"
+}

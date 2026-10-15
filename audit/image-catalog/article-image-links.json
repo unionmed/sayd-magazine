@@ -1,14 +1,14 @@
 {
   "schema": "sayd-github-article-media-crossref-v3",
   "source": "unionmed/sayd-magazine repository only",
-  "articles_scanned": 737,
-  "articles_with_github_image_references": 38,
-  "image_references_unique_per_article": 97,
-  "exact_links": 97,
+  "articles_scanned": 748,
+  "articles_with_github_image_references": 49,
+  "image_references_unique_per_article": 114,
+  "exact_links": 114,
   "unique_basename_not_verified": 0,
   "ambiguous_basename": 0,
   "not_found": 0,
-  "catalog_images_with_exact_article_link": 92,
+  "catalog_images_with_exact_article_link": 103,
   "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
   "exact": [
     {
@@ -144,6 +144,39 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/الأبلق-الشمالي-في-العالم-العربي.md",
+      "article_title": "الأبلق الشمالي في العالم العربي: مسافر الخريف فوق الأرض المفتوحة",
+      "source_reference": "media/uploads/2026/10/northern-wheatear.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/northern-wheatear.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/northern-wheatear.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الأردن-قانون-الزراعة-13-2015-الصيد-البري.md",
+      "article_title": "الصيد البري في الأردن: كيف تعمل الرخص والمواسم وحماية الأنواع؟",
+      "source_reference": "media/uploads/2026/10/sayd-legal-explainer-jordan-13-2015.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/sayd-legal-explainer-jordan-13-2015.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/sayd-legal-explainer-jordan-13-2015.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الإمارات-قوانين-الصيد-الحماية-الاتحادية-والصقارة.md",
+      "article_title": "قوانين الصيد في الإمارات: حماية اتحادية وضوابط محلية للصقارة",
+      "source_reference": "media/uploads/2026/10/sayd-legal-explainer-united-arab-emirates-9-1983-24-1999.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/sayd-legal-explainer-united-arab-emirates-9-1983-24-1999.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/sayd-legal-explainer-united-arab-emirates-9-1983-24-1999.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك.md",
       "article_title": "البجع الأبيض الكبير — Great White Pelican | بعدسة نايف كريم — أوتوستراد المتن السريع، ربيع 2026",
       "source_reference": "media/uploads/2026/09/great-white-pelican-nayef-krayem-matn-2026.jpg",
@@ -254,6 +287,28 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/السعودية-نظام-البيئة-ولائحة-الصيد-البري.md",
+      "article_title": "السعودية: نظام البيئة ولائحة الصيد بين الترخيص وحماية الحياة الفطرية",
+      "source_reference": "media/uploads/2026/10/sayd-legal-explainer-saudi-arabia-m165-2020.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/sayd-legal-explainer-saudi-arabia-m165-2020.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/sayd-legal-explainer-saudi-arabia-m165-2020.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/السنونو-الشائع-في-العالم-العربي.md",
+      "article_title": "السنونو الشائع في العالم العربي: أجنحة الخريف بين العبور والإقامة",
+      "source_reference": "media/uploads/2026/10/barn-swallow-singing.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/barn-swallow-singing.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/barn-swallow-singing.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/الشفشافة-الشائعة-في-العالم-العربي.md",
       "article_title": "الشفشافة الشائعة في العالم العربي",
       "source_reference": "media/uploads/2026/10/common-chiffchaff-hans-hillewaert.jpg",
@@ -289,6 +344,17 @@
     {
       "article_file": "content/posts/الصيد-الذكوري-الرجولة-بين-جثث-الطيور.md",
       "article_title": "الصيد الذكوري… عندما يبحث البعض عن رجولتهم بين جثث الطيور!",
+      "source_reference": "../../media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-الذكوري-الرجولة-بين-جثث-الطيور.md",
+      "article_title": "الصيد الذكوري… عندما يبحث البعض عن رجولتهم بين جثث الطيور!",
       "source_reference": "media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
       "expected_local_path": "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
       "matching_paths": [
@@ -304,6 +370,28 @@
       "expected_local_path": "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/apu-mecshap-cabs-lebanon-05.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-الذكوري-الرجولة-بين-جثث-الطيور.md",
+      "article_title": "الصيد الذكوري… عندما يبحث البعض عن رجولتهم بين جثث الطيور!",
+      "source_reference": "../../media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الطيطوي-الشائع-في-العالم-العربي.md",
+      "article_title": "الطيطوي الشائع في العالم العربي: مسافر على حافة الماء",
+      "source_reference": "media/uploads/2026/10/common-sandpiper.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/common-sandpiper.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/common-sandpiper.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -348,6 +436,39 @@
       "expected_local_path": "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح.md",
+      "article_title": "باشق مخبّأ في حقيبة ظهر… توقيف شخصين في عملية لمكافحة صيد الجوارح بعكار",
+      "source_reference": "../../media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح.md",
+      "article_title": "باشق مخبّأ في حقيبة ظهر… توقيف شخصين في عملية لمكافحة صيد الجوارح بعكار",
+      "source_reference": "../../media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل.md",
+      "article_title": "من أذربيجان إلى النيل: أجهزة GPS تكشف الطرق الصعبة لهجرة اليمام القمري",
+      "source_reference": "media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+      "expected_local_path": "docs/media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -469,6 +590,28 @@
       "expected_local_path": "docs/media/uploads/2026/10/egypt-coastal-bird-2026.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/egypt-coastal-bird-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حين-يصبح-الخريف-موسما-لاصطياد-الصورة.md",
+      "article_title": "حين يصبح الخريف موسماً لاصطياد الصورة",
+      "source_reference": "../../media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حين-يصبح-الخريف-موسما-لاصطياد-الصورة.md",
+      "article_title": "حين يصبح الخريف موسماً لاصطياد الصورة",
+      "source_reference": "../../media/uploads/2026/10/migration-cover-ras-al-khor.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/migration-cover-ras-al-khor.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/migration-cover-ras-al-khor.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -694,6 +837,17 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور.md",
+      "article_title": "طائر جوراسي لم يكن يطير... أحفورة تكشف أن تطور الطيور لم يتجه نحو السماء وحدها",
+      "source_reference": "media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/طيور-خربة-سلم-بعدسة-جمانة-ماجد.md",
       "article_title": "طيور خربة سلم بعدسة جمانة ماجد",
       "source_reference": "media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-01.jpg",
@@ -837,6 +991,28 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد.md",
+      "article_title": "عُمان: قانون 6/2003 يحمي الحبارى والجوارح ويضع الصيد ضمن نظام صون الأحياء الفطرية",
+      "source_reference": "media/uploads/2026/10/sayd-legal-explainer-oman-royal-decree-6-2003.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/sayd-legal-explainer-oman-royal-decree-6-2003.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/sayd-legal-explainer-oman-royal-decree-6-2003.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع.md",
+      "article_title": "قانون الصيد اللبناني 580/2004: لماذا لا يكفي إعلان افتتاح الموسم لإباحة الصيد؟",
+      "source_reference": "media/uploads/2026/10/sayd-legal-explainer-lebanon-580-2004.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/sayd-legal-explainer-lebanon-580-2004.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/sayd-legal-explainer-lebanon-580-2004.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/قطر-أكثر-من-80-ألف-زائر-في-ختام-سهيل-2026.md",
       "article_title": "قطر | أكثر من 80 ألف زائر في ختام «سهيل 2026»",
       "source_reference": "../../media/uploads/2026/09/hero-closing-80k.jpg",
@@ -854,6 +1030,17 @@
       "expected_local_path": "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات.md",
+      "article_title": "القانون القطري 4/2002: حدود الصيد البري لا تبدأ ولا تنتهي بمواعيد الموسم",
+      "source_reference": "media/uploads/2026/10/sayd-legal-explainer-qatar-4-2002.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/sayd-legal-explainer-qatar-4-2002.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/sayd-legal-explainer-qatar-4-2002.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"

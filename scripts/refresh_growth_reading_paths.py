@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh the three growth-pilot stories only; run after editorial generators.
+"""Refresh the remaining Bekaa/Alexandra growth paths after editorial generators.
 
 Keep curated reporting links separate from the latest-two same-category list.
 Does not regenerate pages, rewrite author prose, or touch navigation/analytics.
@@ -8,6 +8,8 @@ from pathlib import Path
 import re
 from html import escape, unescape
 from urllib.parse import unquote
+import os
+from refresh_related_reading import render
 
 ROOT = Path(__file__).resolve().parents[1]
 LANGS = ('ar', 'en', 'fr')
@@ -43,7 +45,7 @@ def candidates(root, lang, current):
     raise ValueError('Need two other same-language Hunting articles')
 
 
-def patch(text, lang, rows, is_html):
+def patch(text, lang, rows, is_html, page):
     text = LATEST.sub('', text)
     blocks = CURATED.findall(text)
     assert len(blocks) == 1, 'Expected one existing curated-reading block'
@@ -51,11 +53,14 @@ def patch(text, lang, rows, is_html):
     background = re.sub(r'^<section class="[^"]+">', '<section class="editorial-background">', original)
     background = re.sub(r'<h2>.*?</h2>', '<h2>' + LABELS[lang][0] + '</h2>', background, count=1, flags=re.S)
     text = text.replace(original, background, 1)
-    prefix = '' if lang == 'ar' else lang + '/'
-    links = ''.join('<li><a href="/' + prefix + 'posts/' + slug + '/">' + escape(title) + '</a></li>' for slug, title in rows)
-    block = '\n<!-- growth-latest:start --><section class="article-more"><h2>' + LABELS[lang][1] + '</h2><ul>' + links + '</ul></section><!-- growth-latest:end -->'
+    links = ''.join('<li><a href="../' + slug + '/index.html">' + escape(title) + '</a></li>' for slug, title in rows)
+    cards = render('<section class="article-more"><h2>' + LABELS[lang][1] + '</h2><ul>' + links + '</ul></section>', page)
+    block = '\n<!-- growth-latest:start -->' + cards + '<!-- growth-latest:end -->'
     if is_html:
-        # Adonis's curated section is outside the article; the others are inside.
+        css = os.path.relpath(ROOT / 'docs/assets/css/related-reading.css', page.parent)
+        if 'href="' + css + '"' not in text:
+            anchor = '  <!-- analytics:start -->' if '  <!-- analytics:start -->' in text else '</head>'
+            text = text.replace(anchor, '  <link rel="stylesheet" href="' + css + '">\n' + anchor, 1)
         end = text.index(background) + len(background)
         article_end = text.find('</article>', end)
         main_end = text.index('</main>')
@@ -71,15 +76,15 @@ def apply(root=ROOT):
     changed = []
     for lang in LANGS:
         prefix = '' if lang == 'ar' else lang + '/'
-        for number, pair in enumerate(STORIES):
+        for pair in STORIES[1:]:  # PR237 already completed Adonis; preserve its cards verbatim.
             slug = pair[lang != 'ar']
             rows = candidates(root, lang, slug)
             paths = [(root / ('docs/' + prefix + 'posts/' + slug + '/index.html'), True)]
-            if number:  # The Adonis author-source contains no editorial reading block.
-                paths.append((root / 'content' / ('posts' if lang == 'ar' else lang) / (slug + '.md'), False))
+            page = paths[0][0]
+            paths.append((root / 'content' / ('posts' if lang == 'ar' else lang) / (slug + '.md'), False))
             for path, is_html in paths:
                 before = path.read_text()
-                after = patch(before, lang, rows, is_html)
+                after = patch(before, lang, rows, is_html, page)
                 if before != after:
                     path.write_text(after)
                     changed.append(str(path.relative_to(root)))

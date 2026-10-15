@@ -36,7 +36,7 @@ MAILTO = "mailto:editor@sayd-magazine.com?subject=%D8%A7%D9%84%D8%A7%D8%B4%D8%AA
 # when it differs (حياة برية وتخييم vs برية وتخييم). `ar` stays the content title
 # for homepage desks, badges, and category pages. English is untouched.
 # قوانين الصيد and موسوعة الطيور keep «ال».
-MOBILE_BAR = ("hunting", "gear", "equestrian", "wildlife")
+MOBILE_BAR = tuple(item[0] for item in [("hunting",), ("gear",), ("equestrian",), ("wildlife",), ("science",), ("birds",), ("poetry",), ("laws",), ("tv",), ("photos",)])
 
 DOORS: list[dict] = [
     {
@@ -127,11 +127,21 @@ DOORS: list[dict] = [
         "children": [],
     },
     {
+        "id": "birds",
+        "ar": "موسوعة الطيور",
+        "en": "Bird Encyclopedia",
+        "short_ar": "موسوعة الطيور",
+        "short_en": "Bird Encyclopedia",
+        "folder": "موسوعة-الطيور",
+        "has_2026": False,
+        "children": [],
+    },
+    {
         "id": "poetry",
-        "ar": "شعر وفن",
-        "en": "Poetry & Art",
-        "short_ar": "شعر وفن",
-        "short_en": "Poetry & Art",
+        "ar": "تراث",
+        "en": "Heritage",
+        "short_ar": "تراث",
+        "short_en": "Heritage",
         "folder": "ثقافة-وتراث",
         "has_2026": True,
         "children": [],
@@ -143,16 +153,6 @@ DOORS: list[dict] = [
         "short_ar": "قوانين الصيد",
         "short_en": "Hunting Laws",
         "folder": "قوانين",
-        "has_2026": False,
-        "children": [],
-    },
-    {
-        "id": "birds",
-        "ar": "موسوعة الطيور",
-        "en": "Bird Encyclopedia",
-        "short_ar": "موسوعة الطيور",
-        "short_en": "Bird Encyclopedia",
-        "folder": "موسوعة-الطيور",
         "has_2026": False,
         "children": [],
     },
@@ -368,48 +368,14 @@ def _mobile_details(summary: str, links: list[str], extra_class: str = "") -> st
 
 
 def mobile_nav_html(lang: str, depth: int) -> str:
-    """First four doors, then المزيد / More with the remaining doors, empty or not.
-
-    Hunting is a direct link to its unified chronological listing.
-    """
-    more_label = "More" if lang == "en" else "المزيد"
+    """All ten doors in desktop order; let CSS wrap at the device width."""
     aria = "Mobile menu" if lang == "en" else "قائمة الجوال"
-    by_id = {door["id"]: door for door in DOORS}
-    bar = []
-    for door_id in MOBILE_BAR:
-        door = by_id[door_id]
-        label = chrome_label(door, lang, short=True)
-        children = door["children"]
-        if children:
-            child_links = [
-                f'            {_link(_href(depth, child["folder"], lang), chrome_label(child, lang))}'
-                for child in children
-            ]
-            bar.append(_mobile_details(html.escape(label, quote=False), child_links, "mobile-sub"))
-            continue
-        bar.append(f'          {_link(_href(depth, door["folder"], lang), label)}')
-    more = []
-    for door in DOORS:
-        if door["id"] in MOBILE_BAR:
-            continue
-        label = chrome_label(door, lang)
-        more.append(f'            {_link(_href(depth, door["folder"], lang), label)}')
-    more_html = ""
-    if more:
-        more_html = (
-            "          <details class=\"mobile-more\" name=\"mobile-nav\">\n"
-            f"            <summary>{more_label}</summary>\n"
-            "            <div class=\"mobile-more-panel\">\n"
-            + "\n".join(more)
-            + "\n            </div>\n"
-            "          </details>"
-        )
-    inner = "\n".join(bar + ([more_html] if more_html else []))
-    return (
-        f'        <nav class="mobile-nav" aria-label="{aria}">\n'
-        f"{inner}\n"
-        "        </nav>"
-    )
+    ordered = [
+        f'          {_link(_href(depth, door["folder"], lang), chrome_label(door, lang, short=True))}'
+        for door in DOORS
+    ]
+    return ('        <nav class="mobile-nav" aria-label="' + aria + '">\n' +
+            '\n'.join(ordered) + '\n        </nav>')
 
 
 def drawer_nav_inner(lang: str, depth: int) -> str:

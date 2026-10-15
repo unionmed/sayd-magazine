@@ -1,0 +1,20 @@
+---
+title: "Arabie saoudite : permis de chasse et protection de la faune dans la loi sur l'environnement"
+slug: saudi-environment-law-wildlife-hunting-regulations
+date: 2026-10-15
+author: Sayd
+categories: [قوانين]
+featured: media/uploads/2026/10/sayd-legal-explainer-saudi-arabia-m165-2020.jpg
+---
+
+<p class="excerpt">Une fiche sur la loi environnementale, les permis, la faune protégée et les décisions saisonnières.</p>
+<figure><img src="../../../media/uploads/2026/10/sayd-legal-explainer-saudi-arabia-m165-2020.jpg" alt="Arabie saoudite : loi sur l’environnement" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Arabie saoudite : loi sur l’environnement</figcaption></figure>
+<p>L&#x27;annonce d&#x27;une saison de chasse ne suffit pas à déterminer les espèces, les lieux et les moyens autorisés en Arabie saoudite. Le cadre législatif repose sur la loi sur l&#x27;environnement, promulguée par le décret royal M/165 du 10 juillet 2020, et son règlement relatif à la chasse de la faune terrestre. Elle a remplacé l&#x27;ancienne loi sur la chasse des animaux et oiseaux sauvages de 1420 H. <a href="https://laws.boe.gov.sa/BoeLaws/Laws/SearchDetails/?Id=63831ff6-63d9-4212-8b54-abf800e146bd&amp;Query=%D8%A7%D9%84%D8%A8%D9%8A%D8%A6%D8%A9" rel="noopener noreferrer">Bureau des experts : loi sur l&#x27;environnement</a>.</p>
+<p>Le règlement exige un permis et confie au Centre national pour la faune sauvage la définition des espèces, quotas, lieux, dates et moyens autorisés. Il protège les espèces menacées, les femelles gestantes, les jeunes, les nids, les œufs et les habitats. Les espaces protégés obéissent à des règles particulières : l&#x27;annonce d&#x27;une saison ne les ouvre pas automatiquement. <a href="https://www.uqn.gov.sa/details?p=17883" rel="noopener noreferrer">Règlement, articles 3 à 8</a>.</p>
+<p>Une autorisation d&#x27;arme ne remplace pas le permis de chasse et n&#x27;autorise pas son utilisation pour toute espèce. Les indications du Centre imposent un permis via Fitri et le respect des moyens et espèces approuvés, en interdisant les équipements de capture collective et les procédés d&#x27;attraction non autorisés. Il faut vérifier la décision applicable et les conditions du permis. <a href="https://www.ncw.gov.sa/news/Launch_of_the_hunting_season_in_the_Kingdom_2025_2026" rel="noopener noreferrer">Informations officielles du Centre</a>.</p>
+<p>L’article 7(2) interdit la chasse avec toute arme à feu, sauf dans les enclos de chasse privés spécialement agréés par le Centre et selon les conditions qu’il fixe. <a href="https://www.uqn.gov.sa/details?p=17883" rel="noopener noreferrer">Règlement, article 7</a>.</p>
+<p>Le barème publié officiellement en septembre 2024 prévoit, pour une première infraction, notamment 10 000 riyals pour la chasse sans permis et 5 000 riyals pour la chasse dans un lieu ou à une période interdits. Ces exemples n&#x27;épuisent pas les sanctions ou indemnisations possibles. <a href="https://www.uqn.gov.sa/details?p=25427" rel="noopener noreferrer">Barème officiel</a>.</p>
+<p>La FAQ du Centre rappelle aussi que l&#x27;exposition du gibier hors des véhicules, sur les routes ou sur Internet constitue une infraction. Une photographie souvenir publiée n&#x27;échappe donc pas au cadre réglementaire. <a href="https://www.ncw.gov.sa/en/faq" rel="noopener noreferrer">FAQ du Centre</a>.</p>
+<p>Cette fiche préparée le 15 octobre 2026 n&#x27;annonce ni une nouvelle loi ni l&#x27;ouverture d&#x27;une saison et ne constitue pas un conseil juridique. Consulter les textes actualisés, les décisions saisonnières et les conditions du permis avant tout déplacement.</p>
+<h2>Lire les textes juridiques intégraux</h2>
+<ul><li><a href="https://faolex.fao.org/docs/pdf/sau201014.pdf" rel="noopener noreferrer">Texte original intégral de la loi saoudienne sur l’environnement — copie du Bureau des experts conservée par FAOLEX (PDF arabe)</a></li><li><a href="https://www.uqn.gov.sa/details?p=17883" rel="noopener noreferrer">Règlement intégral sur la chasse à la faune terrestre — Umm Al-Qura (arabe)</a></li></ul>
