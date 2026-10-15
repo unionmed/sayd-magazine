@@ -1,0 +1,20 @@
+---
+title: "Hunting law in the UAE: federal protection and local falconry rules"
+slug: uae-hunting-law-federal-protection-local-falconry
+date: 2026-10-15
+author: Sayd
+categories: [قوانين]
+featured: media/uploads/2026/10/sayd-legal-explainer-united-arab-emirates-9-1983-24-1999.jpg
+---
+
+<p class="excerpt">Federal wildlife protection and Abu Dhabi’s local falconry rules, with the limits of local permits explained.</p>
+<figure><img src="../../../media/uploads/2026/10/sayd-legal-explainer-united-arab-emirates-9-1983-24-1999.jpg" alt="UAE: Federal wildlife legislation" decoding="async" style="display:block;width:100%;height:auto"><figcaption>UAE: Federal wildlife legislation</figcaption></figure>
+<p>Terrestrial hunting in the United Arab Emirates sits within federal wildlife legislation and emirate-level rules. Understanding whether an activity is permitted requires checking the species, location, method, season and licence together. Abu Dhabi’s falconry arrangements should never be presented as permission to hunt throughout the country.</p>
+<p>A foundational instrument is Federal Decree-Law No. 9 of 1983 regulating the hunting of birds and animals. It prohibits hunting specified animals, including gazelles, hares and spiny-tailed lizards. The protection attached to a species therefore matters before any hunting trip is considered. <a href="https://www.uaelegislation.gov.ae/en/legislations/1157/download" rel="noopener noreferrer">Federal legislation</a>.</p>
+<p>Federal Law No. 24 of 1999 on environmental protection and development, amended by Law No. 11 of 2006, provides further safeguards. Article 12 prohibits hunting, killing or capturing listed birds and animals, protects nests and eggs, and requires authorisation for their possession, transport or sale as specified in the legislation. <a href="https://rakpp.rak.ae/%D8%A8%D9%8A%D8%A6%D8%A9/" rel="noopener noreferrer">Environmental law and amendment</a>.</p>
+<p>Within Abu Dhabi, Local Law No. 22 of 2005 regulates wild hunting. Its implementing regulations were issued under Resolution No. 69 of 2015 and amended by Resolution No. 5 of 2021. Environment Agency – Abu Dhabi licences specify the relevant seasons, areas and authorised species. <a href="https://www.mediaoffice.abudhabi/en/environment/executive-regulations-of-the-abu-dhabi-wild-hunting-law-are-amended/" rel="noopener noreferrer">Local regulatory amendment</a>.</p>
+<p>Official open-area falconry rules restrict the quarry to captive-bred houbara bustards. Eligible licence applicants are UAE citizens aged at least 18, using registered falcons. Protected and restricted areas and prescribed separation distances must be respected. Damaging vegetation and transferring a licence to another person are prohibited. <a href="https://www.ead.gov.ae/ar-AE/Media-Centre/News/Falconry-Hunting-Season-2024" rel="noopener noreferrer">Agency falconry guidance</a>.</p>
+<p>Weapons are separately regulated. Federal Decree-Law No. 17 of 2019 requires licences or permits for activities involving weapons. The legality of the proposed hunting activity and its method must therefore each be established. <a href="https://u.ae/en/information-and-services/justice-safety-and-the-law/maintaining-safety-and-security" rel="noopener noreferrer">Official UAE government guidance</a>.</p>
+<p>This is an explainer of established legislation, not a hunting-season announcement or legal advice. Before travelling, consult the relevant emirate authority, the latest seasonal decision and the actual licence conditions. A local permit has a defined scope; it does not create a nationwide hunting entitlement.</p>
+<h2>Read the full legal texts</h2>
+<ul><li><a href="https://www.uaelegislation.gov.ae/en/legislations/1157/download" rel="noopener noreferrer">Full Federal Law 9/1983 — UAE Legislation platform (English PDF)</a></li><li><a href="https://rakpp.rak.ae/%D8%A8%D9%8A%D8%A6%D8%A9/" rel="noopener noreferrer">Full Federal Law 24/1999 incorporating the 11/2006 amendments — Ras Al Khaimah Public Prosecution (Arabic)</a></li></ul>

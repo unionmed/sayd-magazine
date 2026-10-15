@@ -58,7 +58,7 @@ def body_html(a,lang,image):
     blocks=[]
     for para in d['body'].strip().split('\n\n'):
         blocks.append('<p>'+html.escape(para.strip())+'</p>')
-    caption=EDITORIAL_GRAPHIC[lang]
+    caption=a.get('caption',EDITORIAL_GRAPHIC)[lang]
     return '<p class="excerpt">'+html.escape(d['summary'])+'</p>\n<figure><img src="'+media+'" alt="'+html.escape(caption,quote=True)+'" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>'+html.escape(caption)+'</figcaption></figure>\n' + '\n'.join(blocks)+'\n<p><a href="'+html.escape(source,quote=True)+'" rel="noopener noreferrer">'+{'ar':'نص القانون من الجهة الرسمية','en':'Original statute at the official source','fr':'Texte de loi sur le site officiel'}[lang]+'</a></p>'
 
 def write_article(a,lang,image):
