@@ -6,7 +6,7 @@ permissions:
   contents: write
 jobs:
   build-feature:
-    if: "!contains(github.event.head_commit.message, '[science-generated]')"
+    if: "!contains(github.event.head_commit.message, '[science-generated]') && !contains(github.event.head_commit.message, '[science-checkpoint]')"
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
