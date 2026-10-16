@@ -430,6 +430,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "طيور-في-الحقائب-تهريب-الطيور-2026",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
@@ -615,6 +616,14 @@
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "طيور-في-الحقائب-تهريب-الطيور-2026",
+      "titles": {
+        "ar": "تزوير أوراق الجوارح أمام القضاء في إسبانيا… وتونس تستضيف لقاءً لمكافحة الاتجار غير المشروع بالطيور",
+        "en": "Raptor-document forgery under investigation in Spain; Tunis hosts talks on tackling illegal bird trade",
+        "fr": "Faux papiers de rapaces : enquête en Espagne ; Tunis accueille une rencontre contre le trafic d’oiseaux"
+      }
+    },
     {
       "slug": "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
       "titles": {
