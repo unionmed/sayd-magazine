@@ -1,0 +1,159 @@
+{
+  "video_count": 4,
+  "video_text_language": "ar",
+  "ui_languages": [
+    "ar",
+    "en",
+    "fr"
+  ],
+  "sources": [
+    {
+      "country": "saudi",
+      "label": "Official NCW guide",
+      "url": "https://assets.ncw.gov.sa/QR/Media/Hunting-Guide-2.pdf"
+    },
+    {
+      "country": "saudi",
+      "label": "Umm Al-Qura hunting regulation",
+      "url": "https://www.uqn.gov.sa/details?p=17883"
+    },
+    {
+      "country": "qatar",
+      "label": "Al Meezan: 2026 season decision",
+      "url": "https://almeezan.qa/LawView.aspx?LawID=10375&TYPE=PRINT&language=ar&opt="
+    },
+    {
+      "country": "qatar",
+      "label": "Al Meezan: current species annex",
+      "url": "https://www.almeezan.qa/ClarificationsNoteDetails.aspx?id=21278&language=ar"
+    },
+    {
+      "country": "morocco",
+      "label": "2026–27 decision scan",
+      "url": "https://magornitho.org/files/2021/09/arrete-chasse-ar.pdf"
+    },
+    {
+      "country": "tunisia",
+      "label": "2026–27 JORT decision scan",
+      "url": "https://magornitho.org/files/2025/09/arrete-chasse-tunisie-ar.pdf"
+    },
+    {
+      "country": "jordan",
+      "label": "RSCN announcement as reported by Khaberni",
+      "url": "https://www.khaberni.com/news/849170-فتح-موسم-صيد-الحمام-في-الاردن"
+    },
+    {
+      "country": "egypt",
+      "label": "EEAA: Decision 559/2026",
+      "url": "https://www.eeaa.gov.eg/News/24046/Details"
+    },
+    {
+      "country": "egypt",
+      "label": "North Sinai statement reported by MENA/Sada El Balad",
+      "url": "https://www.elbalad.news/7099316"
+    },
+    {
+      "country": "oman",
+      "label": "Environment Authority",
+      "url": "https://www.ea.gov.om/ar/authority-services/service-catalogue/service-catalogue/permit-to-possess-certain-species-of-oman-wild-animals-bred-in-captivity/"
+    },
+    {
+      "country": "abudhabi",
+      "label": "Abu Dhabi Media Office",
+      "url": "https://www.mediaoffice.abudhabi/ar/arts-culture/environment-agency-abu-dhabi-announces-2026-2027-falconry-season/"
+    },
+    {
+      "country": "libya",
+      "label": "Decision 17/2026 scan page 1",
+      "url": "https://alkhabaralfawriu.com/wp-content/uploads/2026/09/FB_IMG_1789913529111.jpg"
+    },
+    {
+      "country": "libya",
+      "label": "Decision 17/2026 scan page 2",
+      "url": "https://alkhabaralfawriu.com/wp-content/uploads/2026/09/FB_IMG_1789913532054.jpg"
+    },
+    {
+      "country": "syria",
+      "label": "Nasiriyah circular scan reproduced by SIRAJ",
+      "url": "https://sirajsy.net/wp-content/uploads/2026/10/56856Artboard-1-724x1024.png"
+    }
+  ],
+  "regions": [
+    {
+      "id": "saudi",
+      "youtube_id": "-Id9SK67khA",
+      "text": {
+        "ar": {
+          "title": "السعودية",
+          "summary": "٢٦ نوعًا ضمن تقويم الخريف، مع وسائل الصيد المحددة وضوابط التصاريح والأماكن والتوقيت."
+        },
+        "en": {
+          "title": "Saudi Arabia",
+          "summary": "26 species in the autumn calendar, with specified hunting methods and permit, location and time restrictions."
+        },
+        "fr": {
+          "title": "Arabie saoudite",
+          "summary": "26 espèces du calendrier automnal, avec les méthodes de chasse et les conditions de permis, de lieu et d’horaire."
+        }
+      },
+      "card_count": 14
+    },
+    {
+      "id": "gulf",
+      "youtube_id": "ZSsRE2RGKps",
+      "text": {
+        "ar": {
+          "title": "قطر وأبوظبي وعُمان",
+          "summary": "أنواع الموسم في قطر، والصقارة في أبوظبي بموعد افتتاحها المحدد، وحظر صيد الطيور البرية في عُمان."
+        },
+        "en": {
+          "title": "Qatar, Abu Dhabi and Oman",
+          "summary": "Qatar’s seasonal species, Abu Dhabi’s falconry season and its specified opening date, and Oman’s ban on hunting wild birds."
+        },
+        "fr": {
+          "title": "Qatar, Abou Dhabi et Oman",
+          "summary": "Les espèces de la saison au Qatar, la fauconnerie à Abou Dhabi et sa date d’ouverture, et l’interdiction de chasser les oiseaux sauvages à Oman."
+        }
+      },
+      "card_count": 8
+    },
+    {
+      "id": "maghreb",
+      "youtube_id": "Tg9SqzPX8K8",
+      "text": {
+        "ar": {
+          "title": "المغرب العربي: المغرب وتونس وجنوب شرق ليبيا",
+          "summary": "تقويم الصيد في المغرب وتونس، بما فيه الصقارة في نابل، والحظر المحلي في جنوب شرق ليبيا."
+        },
+        "en": {
+          "title": "Maghreb: Morocco, Tunisia and south-eastern Libya",
+          "summary": "Hunting calendars in Morocco and Tunisia, including falconry in Nabeul, and the local ban in south-eastern Libya."
+        },
+        "fr": {
+          "title": "Maghreb : Maroc, Tunisie et sud-est de la Libye",
+          "summary": "Les calendriers de chasse au Maroc et en Tunisie, dont la fauconnerie à Nabeul, et l’interdiction locale dans le sud-est libyen."
+        }
+      },
+      "card_count": 9
+    },
+    {
+      "id": "mashreq-egypt",
+      "youtube_id": "F3Wy0CJc_3w",
+      "text": {
+        "ar": {
+          "title": "المشرق ومصر: الأردن ولبنان والناصرية وشمال سيناء",
+          "summary": "موسم الحمام في الأردن، وعدم فتح الموسم في لبنان، وإزالة الشباك في الناصرية بريف دمشق، وضوابط شمال سيناء."
+        },
+        "en": {
+          "title": "Mashreq and Egypt: Jordan, Lebanon, Nasiriyah and North Sinai",
+          "summary": "Jordan’s pigeon season, the absence of a season-opening decision in Lebanon, net removal in Nasiriyah in rural Damascus, and North Sinai’s rules."
+        },
+        "fr": {
+          "title": "Machrek et Égypte : Jordanie, Liban, Nassiriyé et Sinaï du Nord",
+          "summary": "La saison des pigeons en Jordanie, l’absence de décision d’ouverture au Liban, le retrait des filets à Nassiriyé dans la campagne de Damas, et les règles du Sinaï du Nord."
+        }
+      },
+      "card_count": 7
+    }
+  ]
+}

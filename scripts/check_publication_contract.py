@@ -117,7 +117,7 @@ def archive_image_repair(file, base):
     return True
 
 def check(base=None):
-    c=config();validate_config(c);channel=channel_config();channel_videos=channel['videos'][:3]
+    c=config();validate_config(c);channel=channel_config();channel_videos=channel['videos'][:7]
     if c.get('hunting_rotation'):
         from homepage_hunting_rotation import expected
         actual=next(d['slugs'] for d in c['ia_door_sections'] if d['door']=='hunting')
@@ -131,13 +131,13 @@ def check(base=None):
         groups=[nodes(t,'feature-lead'),nodes(t,'feature-stack')[0].xpath('./article'),nodes(t,'latest-feed')[0].xpath('./li'),nodes(t,'memory-strip')[0].xpath('.//article')]
         doors=nodes(t,'home-section');groups += [sum((g.xpath('./article') for g in nodes(x,'home-door-grid')),[]) for x in doors]
         assert [len(g) for g in groups[:4]]==[1,4,8,4],f'{lang}: lead/side/updates/memory counts'
-        assert len(doors)==8 and [len(g) for g in groups[4:]]==[6 if d['door']=='tv' else len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
+        assert len(doors)==8 and [len(g) for g in groups[4:]]==[10 if d['door']=='tv' else len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
         assert t.xpath('//section['+css_class('home-section')+']//h2/text()')==[d[{'ar':1,'en':2,'fr':3}[lang]] for d in DOORS], f'{lang}: door order'
         tv=doors[6]
         assert tv.xpath('./div[@data-tv-group]/@data-tv-group')==contract['tv_structure']['groups'],f'{lang}: TV groups missing or reordered'
-        assert [len(nodes(g,'home-door-grid')[0].xpath('./article')) for g in tv.xpath('./div[@data-tv-group]')]==[3,3]
-        assert contract['counts']['tv']==c['layout_limits']['tv']==6
-        assert contract['counts']['tv_channel']==contract['counts']['tv_selections']==3
+        assert [len(nodes(g,'home-door-grid')[0].xpath('./article')) for g in tv.xpath('./div[@data-tv-group]')]==[7,3]
+        assert contract['counts']['tv']==c['layout_limits']['tv']==10
+        assert contract['counts']['tv_channel']==7 and contract['counts']['tv_selections']==3
         slots=[]
         for group_index,group in enumerate(groups):
             row=[]

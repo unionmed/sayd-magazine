@@ -11,8 +11,8 @@
     "side": 4,
     "updates": 8,
     "memory": 4,
-    "tv": 6,
-    "tv_channel": 3,
+    "tv": 10,
+    "tv_channel": 7,
     "tv_selections": 3
   },
   "protected_files": {
@@ -421,7 +421,15 @@
       "sayd-selections"
     ],
     "channel_config": "content/tv-channel.json",
-    "channel_order": "Nayef-approved editorial order in tv-channel.json: Bekaa, Radar, From Sayd Memory; newest-first unless explicitly overridden.",
+    "channel_order": [
+      "-Id9SK67khA",
+      "ZSsRE2RGKps",
+      "Tg9SqzPX8K8",
+      "F3Wy0CJc_3w",
+      "IJ73ib8gULw",
+      "MmOLLjHzakw",
+      "fuv6vglsx2k"
+    ],
     "selection_order": "tv_slugs",
     "unavailable_external_video": "Keep editorial record and show unavailable status; do not silently substitute or download without rights."
   },

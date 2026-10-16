@@ -32,7 +32,7 @@ def config():
 
 def channel_config():
     c=json.loads((ROOT/'content/tv-channel.json').read_text())
-    assert c['home_limit']==3 and len(c['videos'])>=3
+    assert c['home_limit']==7 and len(c['videos'])>=7
     ids=[v['id'] for v in c['videos']]
     assert len(ids)==len(set(ids)), 'Duplicate channel video'
     dates=[v['published_at'] for v in c['videos']]

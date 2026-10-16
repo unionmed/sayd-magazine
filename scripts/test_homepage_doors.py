@@ -33,6 +33,8 @@ def test_memory_placement():
 
 def test_homepages():
     test_memory_placement()
+    from test_hunting_reels import check_reels
+    check_reels()
     # Side-card overflow must enter Updates before becoming eligible for a door.
     from homepage_demotion import demote_side_cards
     from datetime import date
