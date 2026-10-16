@@ -1,21 +1,21 @@
 {
   "memory_after_door": "science",
   "featured": [
-    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
+    "طيور-في-الحقائب-تهريب-الطيور-2026",
     "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
     "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-    "ختام-الملواح-2026-60-فائزا"
+    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
   ],
   "latest": [
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
+    "ختام-الملواح-2026-60-فائزا",
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
     "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "أسلحة-الصيد-في-معرض-الرياض-2026",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
     "رادار-صيد-العربي-سبتمبر-2026",
-    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
-    "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
+    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -255,22 +255,22 @@
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
-    "main": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
+    "main": "طيور-في-الحقائب-تهريب-الطيور-2026",
     "important": [
       "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
       "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
       "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-      "ختام-الملواح-2026-60-فائزا"
+      "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
     ],
     "latest": [
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
+      "ختام-الملواح-2026-60-فائزا",
       "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
       "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "أسلحة-الصيد-في-معرض-الرياض-2026",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
       "رادار-صيد-العربي-سبتمبر-2026",
-      "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
-      "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
+      "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات"
     ]
   },
   "ia_door_sections": [
@@ -407,9 +407,10 @@
     "قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع": "laws",
     "قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات": "laws",
     "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد": "laws",
-    "الرياض-تستعيد-صهيلها-موسم-السباقات-2026": "equestrian"
+    "الرياض-تستعيد-صهيلها-موسم-السباقات-2026": "equestrian",
+    "طيور-في-الحقائب-تهريب-الطيور-2026": "hunting"
   },
-  "demotion": "Nayef approved Riyadh racing season under the main lead, in the equestrian category, website only. Main lead preserved; fourth displaced side card moves through chronological Updates.",
+  "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
@@ -599,6 +600,15 @@
         "ar": "من منافسات سباقات الخيل السعودية — صورة أرشيفية.",
         "en": "Saudi horse racing in action — archive photograph.",
         "fr": "Une course hippique en Arabie saoudite — photo d’archives."
+      }
+    },
+    "طيور-في-الحقائب-تهريب-الطيور-2026": {
+      "image": "media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "باشق داخل حقيبة ظهر خلال عملية لمكافحة صيد الجوارح في عكار، تشرين الأول/أكتوبر 2026.",
+        "en": "A sparrowhawk inside a backpack during an anti-poaching operation in Akkar, October 2026.",
+        "fr": "Un épervier dans un sac à dos lors d’une opération de lutte contre le braconnage à Akkar, en octobre 2026."
       }
     }
   },
