@@ -1,0 +1,27 @@
+name: Related reading event regression
+on:
+  pull_request:
+    paths:
+      - 'assets/js/article-share.js'
+      - 'docs/assets/js/article-share.js'
+      - 'scripts/test_related_reading.cjs'
+      - '.github/workflows/related-reading-events.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'assets/js/article-share.js'
+      - 'docs/assets/js/article-share.js'
+      - 'scripts/test_related_reading.cjs'
+permissions:
+  contents: read
+jobs:
+  reading-events:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: cmp assets/js/article-share.js docs/assets/js/article-share.js
+      - run: node scripts/test_related_reading.cjs assets/js/article-share.js
+      - run: node scripts/test_related_reading.cjs docs/assets/js/article-share.js
