@@ -51,7 +51,7 @@ document.addEventListener("click", (event) => {
   if (!(target instanceof Element)) return;
   const link = target.closest("a[href]");
   if (!link) return;
-  const section = link.closest(".article-more, .editorial-background");
+  const section = link.closest(".article-more, .related-block, .editorial-background");
   if (!section || typeof window.gtag !== "function") return;
   let destination;
   try {
@@ -62,7 +62,7 @@ document.addEventListener("click", (event) => {
   if (destination.origin !== location.origin) return;
   if (!/^\/(?:en\/|fr\/)?posts\//.test(destination.pathname)) return;
   window.gtag("event", "sayd_read_next_click", {
-    link_type: section.classList.contains("article-more") ? "reading_card" : "editorial_context",
+    link_type: section.classList.contains("editorial-background") ? "editorial_context" : "reading_card",
     source_path: location.pathname,
     destination_path: destination.pathname
   });
