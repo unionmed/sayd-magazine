@@ -29,3 +29,9 @@ The connected Metricool capability is a ChatGPT tool, not an importable transpor
 Completion requires a deployed sender whose sole provider-write path invokes `send`, a trusted fixed-brand/page adapter mapping the validated payload, durable shared ledger with reconciliation of actual provider statuses, and routing the existing task to that sender while removing its direct-send bypass. Preserve its complete original event subscriptions, exclusions and no-duplicate history. The current automation peek omits subscriptions, so they must be obtained through a capability exposing them before any prompt/trigger update. Do not guess/recreate them or create a competing automation.
 
 Do not merge or re-enable as a claim of full production protection: this PR makes the independent code seam concrete and testable, but issue 36 remains open until the actual deployment and provider binding have been verified without public test posts.
+
+## Containment completed during this inspection
+
+To honor the instruction not to continue unprotected sending, the still-PENDING growth post above was converted to a draft with autoPublish=false. Metricool confirmed new ID 397531056, same UUID -1391934454986880935, same caption, reading link, media and alt text. It remains PENDING as a draft, not PUBLISHED. Initial update was rejected because the read response included twitter/instagram default data absent from providers; the corrected request omitted only those unrelated defaults and succeeded. No published post was changed. Planner: https://app.metricool.com/planner/calendar?blogId=7119579&openWithPostUuid=-1391934454986880935
+
+GitHub guarded sender integration CI passed on 7af57842434de1584efbbbc40103f05f40642e1b: https://github.com/unionmed/sayd-magazine/actions/runs/38874693865 . This validates fake-transport tests, not external provider binding. Draft PR: https://github.com/unionmed/sayd-magazine/pull/241 .
