@@ -2,20 +2,20 @@
   "memory_after_door": "science",
   "featured": [
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
+    "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
     "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-    "ختام-الملواح-2026-60-فائزا",
-    "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs"
+    "ختام-الملواح-2026-60-فائزا"
   ],
   "latest": [
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
+    "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
     "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "أسلحة-الصيد-في-معرض-الرياض-2026",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
     "رادار-صيد-العربي-سبتمبر-2026",
     "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
-    "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
-    "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+    "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -257,20 +257,20 @@
   "ia_slots": {
     "main": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
     "important": [
+      "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
       "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
       "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-      "ختام-الملواح-2026-60-فائزا",
-      "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs"
+      "ختام-الملواح-2026-60-فائزا"
     ],
     "latest": [
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
+      "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
       "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "أسلحة-الصيد-في-معرض-الرياض-2026",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
       "رادار-صيد-العربي-سبتمبر-2026",
       "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات",
-      "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017",
-      "80-ألف-زائر-و158-جهة-من-15-دولة-سهيل-2026-يختتم-ع"
+      "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017"
     ]
   },
   "ia_door_sections": [
@@ -406,9 +406,10 @@
     "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل": "science",
     "قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع": "laws",
     "قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات": "laws",
-    "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد": "laws"
+    "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد": "laws",
+    "الرياض-تستعيد-صهيلها-موسم-السباقات-2026": "equestrian"
   },
-  "demotion": "Nayef authorized the Al-Melwah finale on 10 October 2026 with the existing photograph, replacing the prior Saudi exhibition report in the side-card block and ticker. Prior article stays in category/archive and is excluded from homepage recycling. Current main lead and other stories remain; side cards keep publication-date order.",
+  "demotion": "Nayef approved Riyadh racing season under the main lead, in the ticker and equestrian category, website only. Main lead preserved; fourth displaced side card moves through chronological Updates.",
   "approved_home_repeats": [
     "الصمت-الذي-يتكلمه-الخيل",
     "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
@@ -428,6 +429,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
@@ -590,11 +592,28 @@
         "en": "A four-photo collage showing dead birds on tables, cars and the ground, with faces blurred.",
         "fr": "Un montage de quatre photos montrant des oiseaux morts sur des tables, des voitures et au sol, avec les visages floutés."
       }
+    },
+    "الرياض-تستعيد-صهيلها-موسم-السباقات-2026": {
+      "image": "media/uploads/2026/10/riyadh-season-2026-jcsa.jpeg",
+      "position": "50% 45%",
+      "alt": {
+        "ar": "من منافسات سباقات الخيل السعودية — صورة أرشيفية.",
+        "en": "Saudi horse racing in action — archive photograph.",
+        "fr": "Une course hippique en Arabie saoudite — photo d’archives."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
+      "titles": {
+        "ar": "موسم سباقات الرياض ينطلق اليوم بجوائز إجمالية تبلغ 236.3 مليون ريال",
+        "en": "Riyadh racing season opens today with SAR 236.3 million in total prize money",
+        "fr": "La saison hippique de Riyad commence aujourd’hui : 236,3 millions de riyals de dotation totale"
+      }
+    },
     {
       "slug": "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
       "titles": {

@@ -1,0 +1,11 @@
+---
+title: "Riyadh hears the horses again… the racing season begins"
+slug: riyadh-racing-season-2026-2027-begins
+date: 2026-10-16
+author: "Sayd"
+categories: [فروسية]
+featured: media/uploads/2026/10/riyadh-season-2026-jcsa.jpeg
+subtitle: "King Abdulaziz Racecourse welcomes the 2026–2027 season with SAR 236.3 million in total prize money and two new racing series."
+---
+
+<figure><img src="../../../media/uploads/2026/10/riyadh-season-2026-jcsa.jpeg" alt="Saudi horse racing in action — archive photograph." decoding="async" style="display:block;width:100%;height:auto"><figcaption><span>Saudi horse racing in action — archive photograph.</span></figcaption></figure><p>King Abdulaziz Racecourse in Riyadh welcomes the opening of the 2026–2027 Riyadh racing season today, Friday 16 October. Running until 17 April next year, the season brings together leading stables, trainers and jockeys.</p><p>According to the latest announcement from the Jockey Club of Saudi Arabia, the season offers a record SAR 236.3 million in total prize money and includes the Saudi Cup meeting.</p><p>The programme brings more than higher purses. The club is introducing the Riyadh Crown series for locally bred horses and the Riyadh Sword series for imported mares. The first comprises three rounds with total prize money of SAR 6 million, while the second offers approximately SAR 1.54 million.</p><p>The Saudi Derby has also been upgraded to Group 2 (G2). Several cups receive prize increases, including the open Custodian of the Two Holy Mosques Cup, a Saudi Cup qualifier, whose purse rises from SAR 1.5 million to SAR 2 million.</p><p>Purebred Arabian horses also feature in the programme. The Listed race for Arabian mares has been renamed in honour of Princess Nourah bint Abdulrahman, with a SAR 300,000 purse, as part of the King Abdulaziz Founder&#x27;s Cups meeting scheduled for 12 March 2027.</p><p>As competition begins, the racecourse once again combines racing with visitor and hospitality experiences, in a season stretching from Riyadh&#x27;s autumn into its spring.</p><p><small style="font-size:11px"><a href="https://jcsa.sa/globalassets/jcsa/images/news/2026/20260813_riyadh_previewrelease.jpeg">Photo source: Jockey Club of Saudi Arabia</a></small></p>

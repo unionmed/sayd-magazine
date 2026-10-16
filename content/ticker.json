@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
+      "title": "موسم سباقات الرياض ينطلق اليوم بجوائز إجمالية تبلغ 236.3 مليون ريال",
+      "titles": {
+        "ar": "موسم سباقات الرياض ينطلق اليوم بجوائز إجمالية تبلغ 236.3 مليون ريال",
+        "en": "Riyadh racing season opens today with SAR 236.3 million in total prize money",
+        "fr": "La saison hippique de Riyad commence aujourd’hui : 236,3 millions de riyals de dotation totale"
+      }
+    },
+    {
       "slug": "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
       "title": "تحذير أوروبي: 11–36 مليون طائر سنويًا في المتوسط و83% من الدول لم تعتمد التدابير الكافية",
       "titles": {
