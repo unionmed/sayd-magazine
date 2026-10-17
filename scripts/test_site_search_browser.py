@@ -62,7 +62,7 @@ def run():
                     page.locator('#search-category').select_option(label=interview)
                     expect(page.locator('.search-result').first).to_be_visible()
                     assert page.locator('#search-status').inner_text().startswith(('70 ' if lang=='ar' else '2 '))
-                    assert page.locator('.search-result h2 a').first.get_attribute('href').find('cabs')>=0
+                    assert __import__('urllib.parse',fromlist=['unquote']).unquote(page.locator('.search-result h2 a').first.get_attribute('href')).find('شيرين' if lang=='ar' else 'shireen-bou-rafoul')>=0
                     assert all(' · ' not in text for text in page.locator('#search-category option').all_text_contents())
                     page.locator('#search-category').select_option('')
                     query.fill('Phoenicurus phoenicurus');query.press('Enter')

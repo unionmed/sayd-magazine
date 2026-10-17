@@ -33,7 +33,7 @@ for (const [lang,label,total] of [['ar','مقابلات',70],['en','Interviews',
  const rows=data.articles.map(prepare);
  assert.equal(data.version,2);
  assert.equal(search(rows,'',{category:label}).length,total);
- assert.equal(search(rows,'CABS',{category:label,year:'2026'}).length,1);
+ assert.equal(search(rows,'CABS',{category:label,year:'2026'}).length,2);
  assert.equal(data.categories.length,11);
  assert(data.categories.every(value=>!value.includes(' · ')));
 }

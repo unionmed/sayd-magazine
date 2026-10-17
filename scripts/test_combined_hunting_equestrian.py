@@ -52,13 +52,14 @@ def test_preserved(base):
     else:
         for key in ('featured','latest','ia_slots','ticker_slugs','ticker_entries','card_image_overrides','primary_door','memory_after_door'):
             assert old_config[key]==current[key],key
+    assert current['memory_after_door']==old_config['memory_after_door']
     assert current['memory_visible'] is False
     # Interviews is an independently reviewed chronological collection; its
     # owner-approved selection may change without changing unrelated doors.
     from interview_collection import homepage_slugs
     assert next(s['slugs'] for s in current['ia_door_sections'] if s['door']=='interviews') == homepage_slugs('ar', current)
     for old in old_config['ia_door_sections']:
-        if not approved_interview and old['door'] not in ('hunting','equestrian','interviews'):
+        if old['door'] not in ('hunting','equestrian','interviews'):
             assert old in current['ia_door_sections'],old['door']
     for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
         rel='docs/'+prefix+'index.html'

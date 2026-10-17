@@ -278,6 +278,7 @@ def run(base,out):
             (out/'geometry.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
             (out/'errors.json').write_text(json.dumps(errors,ensure_ascii=False,indent=2))
             budget=3_000_000
+            screens.sort(key=lambda p:(0 if p.name.startswith('shireen-home-ar') else 1 if p.name.startswith('shireen-home-en') else 2 if p.name.startswith('shireen-article-ar') else 3 if p.name.startswith('shireen-article-en') else 4,p.name))
             for path in screens:
                 data=base64.b64encode(path.read_bytes()).decode()
                 if len(data)<=budget:
