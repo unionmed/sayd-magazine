@@ -174,7 +174,12 @@ def sync_archives(languages=('ar', 'en', 'fr')):
 
         target = root / 'category' / FOLDER / 'index.html'
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(add_ga4(text))
+        from interview_sharing import add_sharing, friendly_view
+        text = add_ga4(add_sharing(text, lang, DOCS, target))
+        target.write_text(text)
+        friendly = root / 'interviews/index.html'
+        friendly.parent.mkdir(parents=True, exist_ok=True)
+        friendly.write_text(friendly_view(text, target, friendly))
         counts[lang] = len(rows)
     return counts
 

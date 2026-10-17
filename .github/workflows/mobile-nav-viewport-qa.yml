@@ -39,6 +39,8 @@ jobs:
           python scripts/test_merged_links.py
           python scripts/test_site_ia.py
           python scripts/test_interview_collection.py
+          python scripts/test_interview_sharing.py
+          node scripts/test_interview_share_button.cjs
           python scripts/test_taxonomy_publication_contract.py
           python scripts/test_header_social.py
           python scripts/test_search_index.py
@@ -53,6 +55,9 @@ jobs:
       - name: Test private search in browser independently
         if: ${{ !cancelled() }}
         run: python scripts/test_site_search_browser.py
+      - name: Test friendly interview sharing and clipboard fallback
+        if: ${{ !cancelled() }}
+        run: python scripts/test_interview_sharing_browser.py
       - name: Retain screenshots and measured geometry even on failure
         if: always()
         uses: actions/upload-artifact@v4
