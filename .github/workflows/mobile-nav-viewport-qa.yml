@@ -5,6 +5,7 @@ on:
       - 'docs/**'
       - 'assets/**'
       - 'scripts/test_merged_section_browser.py'
+      - 'scripts/test_combined_hunting_equestrian.py'
       - 'scripts/*search*'
       - '.github/workflows/mobile-nav-viewport-qa.yml'
   push:
