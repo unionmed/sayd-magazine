@@ -1,0 +1,38 @@
+.archive-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  margin-block: 1rem .5rem;
+}
+.archive-filters button {
+  border: 1px solid var(--olive, #3e421d);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--olive, #3e421d);
+  padding: .5rem 1rem;
+  min-height: 44px;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.archive-filters button[aria-pressed="true"] {
+  background: var(--olive, #3e421d);
+  color: #fff;
+}
+.archive-filters button:focus-visible {
+  outline: 2px solid var(--gold, #b79b54);
+  outline-offset: 3px;
+}
+.archive-result-count {
+  font-size: .9rem;
+  color: var(--muted, #62665c);
+  margin-block: .5rem 1rem;
+}
+/* Existing card display rules must not override the native hidden attribute. */
+.archive-filters[hidden], .archive-result-count[hidden],
+.post-list > article[hidden], .home-door-grid > article[hidden] {
+  display: none !important;
+}

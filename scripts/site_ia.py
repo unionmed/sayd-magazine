@@ -36,15 +36,16 @@ MAILTO = "mailto:editor@sayd-magazine.com?subject=%D8%A7%D9%84%D8%A7%D8%B4%D8%AA
 # when it differs (حياة برية وتخييم vs برية وتخييم). `ar` stays the content title
 # for homepage desks, badges, and category pages. English is untouched.
 # قوانين الصيد and موسوعة الطيور keep «ال».
-MOBILE_BAR = tuple(item[0] for item in [("hunting",), ("gear",), ("equestrian",), ("wildlife",), ("science",), ("birds",), ("poetry",), ("laws",), ("tv",), ("photos",)])
+MOBILE_BAR = ("hunting", "gear", "wildlife", "science", "birds", "poetry", "laws", "tv", "photos")
 
 DOORS: list[dict] = [
     {
         "id": "hunting",
-        "ar": "صيد",
-        "en": "Hunting",
-        "short_ar": "صيد",
-        "short_en": "Hunting",
+        "ar": "صيد وفروسية",
+        "en": "Hunting & Equestrian",
+        "fr": "Chasse et équitation",
+        "short_ar": "صيد وفروسية",
+        "short_en": "Hunting & Equestrian",
         "folder": "صيد",
         "has_2026": True,
         "children": [
@@ -181,6 +182,20 @@ DOORS: list[dict] = [
 HUNTING_LEGACY_DOORS = DOORS[0]["children"]
 HUNTING_LEGACY_IDS = {door["id"] for door in HUNTING_LEGACY_DOORS}
 DOORS[0]["children"] = []
+# Preserve the original classification and category URL for archive compatibility.
+# It is no longer a separate navigation or homepage door.
+EQUESTRIAN_LEGACY_DOOR = next(door for door in DOORS if door["id"] == "equestrian")
+DOORS = [door for door in DOORS if door["id"] != "equestrian"]
+_FRENCH_LABELS = {
+    "gear": "Tir et équipement", "wildlife": "Faune et camping",
+    "science": "Sciences et découvertes", "birds": "Encyclopédie des oiseaux",
+    "poetry": "Patrimoine", "laws": "Réglementation de la chasse",
+    "tv": "Sayd TV", "photos": "Photos",
+}
+for _door in DOORS:
+    if _door["id"] in _FRENCH_LABELS:
+        _door["fr"] = _FRENCH_LABELS[_door["id"]]
+    _door["short_fr"] = "Faune" if _door["id"] == "wildlife" else _door["fr"]
 
 # slug → door id. One primary door. EN twins share the door.
 # Old category folders lose the listing row when the story moves.
@@ -219,7 +234,7 @@ AFFILIATE_HOSTS = {
 
 
 def door_by_id(door_id: str) -> dict:
-    if door_id in HUNTING_LEGACY_IDS:
+    if door_id in HUNTING_LEGACY_IDS or door_id == "equestrian":
         door_id = "hunting"
     for door in DOORS:
         if door["id"] == door_id:
@@ -243,11 +258,13 @@ def keeps_pre_2022_landing(slug: str) -> bool:
 def door_label(door_id: str, lang: str) -> str:
     """Content title (homepage desks, badges, category pages). Not the nav label."""
     door = door_by_id(door_id)
-    return door["en"] if lang == "en" else door["ar"]
+    return door[lang if lang in {"en", "fr"} else "ar"]
 
 
 def chrome_label(item: dict, lang: str, *, short: bool = False) -> str:
     """Visible nav/chrome label. Mobile bar uses short_ar; other chrome uses nav_ar."""
+    if lang == "fr":
+        return item.get("short_fr", item["fr"]) if short else item["fr"]
     if lang == "en":
         if short and "short_en" in item:
             return item["short_en"]
@@ -293,13 +310,13 @@ def _href(depth: int, folder: str, lang: str = "ar") -> str:
     edition, at docs/en/category/{folder}/. Depth is counted from docs/,
     so an English page is one directory deeper than the edition root.
     """
-    if lang == "en":
+    if lang in {"en", "fr"}:
         return f"{'../' * max(depth - 1, 0)}category/{folder}/index.html"
     return f"{_prefix(depth)}category/{folder}/index.html"
 
 
 def _home_href(lang: str, depth: int) -> str:
-    if lang == "en":
+    if lang in {"en", "fr"}:
         return f"{'../' * max(depth - 1, 0)}index.html"
     return f"{_prefix(depth)}index.html" if depth else "index.html"
 
@@ -368,8 +385,8 @@ def _mobile_details(summary: str, links: list[str], extra_class: str = "") -> st
 
 
 def mobile_nav_html(lang: str, depth: int) -> str:
-    """All ten doors in desktop order; let CSS wrap at the device width."""
-    aria = "Mobile menu" if lang == "en" else "قائمة الجوال"
+    """All nine doors in desktop order; whole labels wrap between links only."""
+    aria = {"en": "Mobile menu", "fr": "Menu mobile"}.get(lang, "قائمة الجوال")
     ordered = [
         f'          {_link(_href(depth, door["folder"], lang), chrome_label(door, lang, short=True))}'
         for door in DOORS
@@ -379,9 +396,9 @@ def mobile_nav_html(lang: str, depth: int) -> str:
 
 
 def drawer_nav_inner(lang: str, depth: int) -> str:
-    """Full visible list, including 2026 children, for the no-CSS drawer."""
+    """The same complete ordering as desktop and mobile, without hidden doors."""
     parts = []
-    for door in visible_doors():
+    for door in desktop_nav_doors():
         label = chrome_label(door, lang)
         parts.append(f"        {_link(_href(depth, door['folder'], lang), label)}")
         for child in door["children"]:
@@ -392,13 +409,13 @@ def drawer_nav_inner(lang: str, depth: int) -> str:
 
 def footer_magazine_items(lang: str, depth: int) -> list[tuple[str, str]]:
     prefix = _prefix(depth)
-    if lang == "en":
+    if lang in {"en", "fr"}:
         team = f"{'../' * max(depth - 1, 0)}team/index.html"
         archive = f"{'../' * max(depth - 1, 0)}stories/index.html"
         return [
-            ("Team", team),
-            ("Subscribe by email", MAILTO),
-            ("Archive", archive),
+            ("Équipe" if lang == "fr" else "Team", team),
+            ("S’abonner par courriel" if lang == "fr" else "Subscribe by email", MAILTO),
+            ("Archives" if lang == "fr" else "Archive", archive),
         ]
     return [
         ("فريق العمل", f"{prefix}pages/من-نحن/index.html"),

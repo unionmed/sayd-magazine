@@ -17,9 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
 CONFIG = ROOT / 'content/homepage.json'
 DOORS = [
- ('hunting','صيد','Hunting','Chasse','صيد'),
+ ('hunting','صيد وفروسية','Hunting & Equestrian','Chasse et équitation','صيد'),
  ('gear','رماية وعتاد','Shooting & Gear','Tir et équipement','عتاد-وسلاح-الصيد'),
- ('equestrian','فروسية','Equestrian','Équitation','فروسية'),
  ('wildlife','برية وتخييم','Wildlife & Camping','Faune et camping','حياة-برية-وتخييم'),
  ('science','علوم واكتشافات','Science & Discoveries','Sciences et découvertes','علوم-واكتشافات'),
  ('poetry','تراث','Heritage','Patrimoine','ثقافة-وتراث'),
@@ -80,7 +79,7 @@ def collect(page, source_path, home_path):
             target=(DOCS/clean.lstrip('/') if clean.startswith('/') else source_path.parent/clean).resolve()
             if not target.is_file(): continue
             image=os.path.relpath(target,home_path.parent)+('?'+url.query if url.query else '')
-        shown=date[0].text_content().strip() if date else node.get('data-published','')
+        shown=(date[0].text or '').strip() if date and date[0].xpath('.//*[@class="card-topic"]') else date[0].text_content().strip() if date else node.get('data-published','')
         found.setdefault(slug,dict(title=title[0].text_content().strip(),date=shown,image=image,alt=images[0].get('alt','') if images else ''))
     return found
 
@@ -88,6 +87,7 @@ def render_card(slug, item, stack=False):
     esc=lambda s:html.escape(s,quote=True)
     href=item.get('href',f'posts/{slug}/index.html')
     badge=f'<span class="video-badge" style="font-size:12px;color:#3e421d">{esc(item["video_badge"])}</span>' if item.get('video_badge') else ''
+    topic=f'<span class="card-topic"> · {esc(item["topic_label"])}</span>' if item.get('topic_label') else ''
     style = (["object-position:" + item["position"]] if item.get("position") else [])
     if item.get("fit"):
         assert item["fit"] in {"contain", "cover"}
@@ -96,7 +96,7 @@ def render_card(slug, item, stack=False):
     return (f'<article class="card{" card-stack" if stack else ""}"><a class="thumb" href="{href}">'
             f'<img src="{esc(item["image"])}" alt="{esc(item["alt"] or item["title"])}" loading="lazy"{position}></a>'
             f'<div class="body">{badge}<h3><a href="{href}">{esc(item["title"])}</a></h3>'
-            f'<div class="meta">{esc(item["date"])}</div></div></article>')
+            f'<div class="meta">{esc(item["date"])}{topic}</div></div></article>')
 
 def render_li(slug,item):
     esc=lambda s:html.escape(s,quote=True)
@@ -156,13 +156,17 @@ def validate_config(c):
     assert c['latest']==c['ia_slots']['latest']
     validate_news_selection(c)
     upper=c['featured']+c['latest'];assert len(set(upper))==len(upper)
-    approved=set(c.get('approved_home_repeats',[]));seen=set()
+    assert [d['door'] for d in c['ia_door_sections']] == [d[0] for d in DOORS], 'Homepage door order differs'
+    seen=set()
     for d in c['ia_door_sections']:
-        assert len(d['slugs'])<=4
+        if d['door']=='hunting':
+            assert len(d['slugs'])==8, 'Combined door requires eight cards'
+        else:
+            assert len(d['slugs'])<=4
         if d['door']=='tv':assert len(d['slugs'])==3
         for s in d['slugs']:
             assert s not in seen;seen.add(s)
-            assert s not in upper or (d['door']=='equestrian' and s in approved)
+            assert s not in upper
 
 def ensure_science_section(page, lang):
     """Insert exactly one new desk after Wildlife without reordering other desks.
@@ -207,10 +211,23 @@ def place_memory(page, lang, after_door):
         raise ValueError(f'{lang}: missing memory placement target {after_door}')
     return page[:target.end()] + block + page[target.end():]
 
+def merge_hunting_section(page, lang):
+    """Retain the existing hunting section style and remove only its sibling desk."""
+    old, equestrian, title = {
+        'ar': ('صيد', 'فروسية', 'صيد وفروسية'),
+        'en': ('Hunting', 'Equestrian', 'Hunting & Equestrian'),
+        'fr': ('Chasse', 'Équitation', 'Chasse et équitation'),
+    }[lang]
+    pattern = r'[ \t]*<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(html.escape(equestrian)) + r'</h2>.*?</section>'
+    page = re.sub(pattern, '', page, flags=re.S)
+    pattern = r'(<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>)' + re.escape(html.escape(old)) + r'(</h2>)'
+    return re.sub(pattern, lambda m: m[1]+html.escape(title)+m[2], page, flags=re.S)
+
+
 def refresh(path,lang):
     c=config();validate_config(c);channel=channel_config();path=Path(path);page=path.read_text()
     catalog=collect(page,path,path)
-    for *_,folder in DOORS:
+    for folder in dict.fromkeys([d[-1] for d in DOORS] + ['فروسية']):
         category=path.parent/'category'/folder/'index.html'
         if category.is_file():
             for slug,item in collect(category.read_text(),category,path).items():catalog.setdefault(slug,item)
@@ -243,6 +260,7 @@ def refresh(path,lang):
     wrappers=re.sub(r'<article\b.*?</article>','',old,flags=re.S)
     page=pre+'<div class="feature-stack">\n'+stack+wrappers+'<div class="latest-col">'+post
     page=re.sub(r'(<ul class="latest-feed">).*?(</ul>)',lambda m:m[1]+'\n'+'\n'.join(render_li(*data(s)) for s in c['latest'])+'\n'+m[2],page,count=1,flags=re.S)
+    page=merge_hunting_section(page,lang)
     page=ensure_science_section(page,lang)
     sections={d['door']:d['slugs'] for d in c['ia_door_sections']}
     for door,ar,en,fr,_ in DOORS:
@@ -265,9 +283,20 @@ def refresh(path,lang):
             if n!=1:raise ValueError(f'{lang}: missing TV section')
             continue
         pattern=r'(<section class="home-section(?: sayd-tv)?">\s*<div class="section-head[^>]*">\s*<h2>'+re.escape(html.escape(heading))+r'</h2>.*?<div class="home-door-grid">).*?(</div>\s*</section>)'
-        cards='\n'.join(render_card(*data(s)) for s in sections[door])
+        rendered=[]
+        for s in sections[door]:
+            slug,item=data(s)
+            if door=='hunting':
+                topic='equestrian' if c['primary_door'].get(s)=='equestrian' else 'hunting'
+                item['topic_label']={'ar':{'hunting':'صيد','equestrian':'فروسية'},'en':{'hunting':'Hunting','equestrian':'Equestrian'},'fr':{'hunting':'Chasse','equestrian':'Équitation'}}[lang][topic]
+            rendered.append(render_card(slug,item))
+        cards='\n'.join(rendered)
         page,n=re.subn(pattern,lambda m:m[1]+'\n'+cards+'\n'+m[2],page,count=1,flags=re.S)
         if n!=1:raise ValueError(f'{lang}: missing desk {heading}')
+        if door=='hunting':
+            more={'ar':'المزيد','en':'More','fr':'Voir plus'}[lang]
+            head=r'(<h2>'+re.escape(html.escape(heading))+r'</h2>\s*<a\b[^>]*>)[^<]*(</a>)'
+            page=re.sub(head,lambda m:m[1]+more+m[2],page,count=1)
     entries=c.get('ticker_entries',[{'slug':ar} for ar in c['ticker_slugs']])
     assert [e['slug'] for e in entries]==c['ticker_slugs'], 'Ticker entry placement differs'
     ticker=''
@@ -286,6 +315,8 @@ def refresh(path,lang):
     return page
 
 def main():
+    from merge_hunting_equestrian import sync_archive
+    sync_archive()
     from homepage_hunting_rotation import sync
     sync()
     for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:refresh(DOCS/prefix/'index.html',lang)

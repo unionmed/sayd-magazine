@@ -15,7 +15,7 @@ def test_memory_placement():
         memory = tree.xpath('//section[@class="memory-strip"]')
         assert len(memory) == 1
         assert memory[0].getparent().get('class') == 'home-main'
-        heading = DOORS[4][{'ar': 1, 'en': 2, 'fr': 3}[lang]]
+        heading = next(d for d in DOORS if d[0]=='science')[{'ar': 1, 'en': 2, 'fr': 3}[lang]]
         assert memory[0].getprevious().xpath('./div/h2/text()') == [heading], f'{lang}: memory must immediately follow Science'
         block = re.search(pattern, page, re.S | re.M)[0]
         remainder = re.sub(pattern, '', page, flags=re.S | re.M)
@@ -88,7 +88,7 @@ def test_homepages():
     pool=candidates();newest=max(day for _,day in pool)+timedelta(days=1)
     pool=[(slug,newest if slug==recent else day) for slug,day in pool]
     after=select(moved,pool)
-    assert after[0]==recent and len(after)==4 and current[-1] not in after
+    assert after[0]==recent and len(after)==8 and current[-1] not in after
     assert not set(after).intersection(moved['featured']+moved['latest'])
     # A story promoted out of the lower door cannot remain there as a duplicate.
     promoted=deepcopy(c);promoted['latest'].append(current[0])

@@ -125,15 +125,18 @@ def check(base=None):
     contract=json.loads(CONTRACT.read_text());pairs=json.loads((ROOT/'content/en/pairs.json').read_text())['pairs']
     for name,digest in contract['protected_files'].items():
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest, f'Protected design changed without contract approval: {name}'
+    assert [d[0] for d in DOORS]==contract['homepage_door_order']==['hunting','gear','wildlife','science','poetry','tv','photos']
+    assert contract['counts']['hunting_equestrian']==c['hunting_rotation']['limit']==8
+    assert contract['combined_door']['labels']=={'ar':'صيد وفروسية','en':'Hunting & Equestrian','fr':'Chasse et équitation'}
     reference=None
     for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
         p=DOCS/prefix/'index.html';t=tree(p)
         groups=[nodes(t,'feature-lead'),nodes(t,'feature-stack')[0].xpath('./article'),nodes(t,'latest-feed')[0].xpath('./li'),nodes(t,'memory-strip')[0].xpath('.//article')]
         doors=nodes(t,'home-section');groups += [sum((g.xpath('./article') for g in nodes(x,'home-door-grid')),[]) for x in doors]
         assert [len(g) for g in groups[:4]]==[1,4,8,4],f'{lang}: lead/side/updates/memory counts'
-        assert len(doors)==8 and [len(g) for g in groups[4:]]==[10 if d['door']=='tv' else len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
+        assert len(doors)==len(DOORS) and [len(g) for g in groups[4:]]==[10 if d['door']=='tv' else len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
         assert t.xpath('//section['+css_class('home-section')+']//h2/text()')==[d[{'ar':1,'en':2,'fr':3}[lang]] for d in DOORS], f'{lang}: door order'
-        tv=doors[6]
+        tv=doors[next(i for i,d in enumerate(DOORS) if d[0]=='tv')]
         assert tv.xpath('./div[@data-tv-group]/@data-tv-group')==contract['tv_structure']['groups'],f'{lang}: TV groups missing or reordered'
         assert [len(nodes(g,'home-door-grid')[0].xpath('./article')) for g in tv.xpath('./div[@data-tv-group]')]==[7,3]
         assert contract['counts']['tv']==c['layout_limits']['tv']==10
@@ -189,7 +192,7 @@ def check(base=None):
         assert co_slug not in {slug(h) for h in wildlife_listing.xpath('//article//a/@href')}, f'{lang}: coastal story still in wildlife listing'
         assert co_slug in {slug(h) for h in hunting_listing.xpath('//article//a/@href')}, f'{lang}: coastal story missing from hunting listing'
         assert [s for s,_ in slots[3]]==contract['memory_slugs'],f'{lang}: protected memory selection changed'
-        assert [s for s,_ in slots[10]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
+        assert [s for s,_ in slots[4+next(i for i,d in enumerate(DOORS) if d[0]=='tv')]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
         if reference is None:reference=slots
         else:assert slots==reference,f'{lang}: mirrored story placement or photograph differs'
         tickers=nodes(t,'ticker')
@@ -203,7 +206,7 @@ def check(base=None):
         assert sig==[tuple(x) for x in contract['header_links'][lang]],f'{lang}: navigation/social changed'
     if base:
         check_new_stories(changed_docs(base),pairs,base)
-    print('PASS: three mirrored homepages, 1+4+8+4 cards, eight doors, shared images, dates, protected design and social links')
+    print('PASS: three mirrored homepages, 1+4+8+4 cards, seven doors, shared images, dates, protected design and social links')
 
 def science_navigation_only_repair(file, base):
     """Exact, auditable exception for adding the Nayef-approved Science menu link.

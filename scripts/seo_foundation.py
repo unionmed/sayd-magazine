@@ -132,6 +132,8 @@ HERO_LISTING = {
 STATIC_TWINS = (
     ("index.html", "en/index.html"),
     ("memory/index.html", "en/memory/index.html"),
+    # French is resolved by hreflang_tags via the shared /fr/ prefix mapping.
+    ("market/index.html", "en/market/index.html"),
     ("pages/من-نحن/index.html", "en/team/index.html"),
     ("pages/إتصل-بنا/index.html", "en/contact/index.html"),
     ("articles/index.html", "en/stories/index.html"),
@@ -485,6 +487,9 @@ def in_sitemap(rel: Path) -> bool:
     if posix in {
         "index.html",
         "en/index.html",
+        "market/index.html",
+        "en/market/index.html",
+        "fr/market/index.html",
         "memory/index.html",
         "en/memory/index.html",
         "en/stories/index.html",

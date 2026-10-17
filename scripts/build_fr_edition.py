@@ -24,7 +24,7 @@ FR = ROOT / 'content/fr/segments'
 ITEMS = {x['slug']: x for x in MANIFEST['articles']}
 BASE = 'https://sayd-magazine.com'
 CATS = {
-    'صيد': 'Chasse', 'عتاد-وسلاح-الصيد': 'Tir et équipement',
+    'صيد': 'Chasse et équitation', 'عتاد-وسلاح-الصيد': 'Tir et équipement',
     'فروسية': 'Équitation', 'حياة-برية-وتخييم': 'Faune et camping',
     'ثقافة-وتراث': 'Patrimoine', 'قوانين': 'Réglementation de la chasse',
     'موسوعة-الطيور': 'Encyclopédie des oiseaux', 'استديو-صيد': 'Sayd TV',
@@ -33,7 +33,7 @@ CATS = {
 }
 UI = {
     'Home':'Accueil', 'Stories':'Articles', 'Article':'Article', 'Team':'Équipe', 'Contact':'Contact',
-    'Hunting':'Chasse', 'Shooting & Gear':'Tir et équipement',
+    'Hunting':'Chasse', 'Hunting & Equestrian':'Chasse et équitation', 'Shooting & Gear':'Tir et équipement',
     'Equestrian':'Équitation', 'Wildlife & Camping':'Faune et camping',
     'Wildlife':'Faune', 'Heritage':'Patrimoine', 'Poetry & Art':'Patrimoine',
     'Hunting Laws':'Réglementation de la chasse',
@@ -361,6 +361,12 @@ def harvest_extra_listing_cards(known: set[str]) -> list[dict]:
     Rebuilding the grid from the manifest alone would drop them.
     """
     extras: dict[str, dict] = {}
+    # Combined navigation changes presentation, never the legacy topic.
+    from merge_hunting_equestrian import cards, slug_of, equestrian_primary_slugs
+    equestrian = equestrian_primary_slugs('fr')
+    old_equestrian = DOCS / 'fr/category/فروسية/index.html'
+    if old_equestrian.is_file():
+        equestrian.update(slug_of(card) for card in cards(old_equestrian.read_text()))
     pages: list[tuple[Path, str | None]] = [
         (path, path.parent.name) for path in sorted((DOCS / 'fr' / 'category').glob('*/index.html'))
     ]
@@ -392,7 +398,7 @@ def harvest_extra_listing_cards(known: set[str]) -> list[dict]:
                 'alt': unescape(images[0].get('alt') or title) if images else title,
                 'date': unescape(meta[0].text_content()).strip() if meta else '',
                 'image': images[0].get('src') or '' if images else '',
-                'category_slug': category or post_category_slug(slug),
+                'category_slug': 'فروسية' if slug in equestrian else category or post_category_slug(slug),
             }
     return list(extras.values())
 
@@ -572,6 +578,8 @@ def rebuild_french_listings(translations: dict) -> int:
     for cat, label in CATS.items():
         entries = [record for record in records if record['category_slug'] == cat]
         listing_page(label, entries, translations, Path('fr/category') / cat / 'index.html')
+    from merge_hunting_equestrian import sync_archive
+    sync_archive(('fr',))
     return len(records)
 
 

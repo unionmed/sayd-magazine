@@ -1,46 +1,53 @@
-name: Verify real mobile nav wraps
+name: Verify combined section responsive layout
 on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'assets/**'
+      - 'scripts/test_merged_section_browser.py'
+      - '.github/workflows/mobile-nav-viewport-qa.yml'
   push:
-    branches: [feature/all-visible-mobile-nav-and-heritage-20261015]
+    branches: [feat/combined-hunting-equestrian-market-20261017]
 permissions:
   contents: read
 jobs:
   browser:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: |
-          pip install playwright==1.55.0
-          python -m playwright install chromium
-      - name: Check 414 and 360 mobile rows, labels and overflow
+      - name: Install official browser testing dependencies
         run: |
-          python - <<'PY'
-          from playwright.sync_api import sync_playwright
-          from pathlib import Path
-          with sync_playwright() as p:
-              browser=p.chromium.launch(headless=True)
-              for lang in ('ar','en','fr'):
-                  for width in (414,360):
-                      page=browser.new_page(viewport={"width":width,"height":900}, device_scale_factor=1)
-                      root=Path('docs')/('' if lang=='ar' else lang)/'index.html'
-                      page.goto(root.resolve().as_uri(),wait_until='domcontentloaded')
-                      nav=page.locator('nav.mobile-nav')
-                      links=nav.locator(':scope > a')
-                      assert links.count()==10,(lang,width,'link count',links.count())
-                      labels=links.all_text_contents()
-                      rects=[x.bounding_box() for x in links.all()]
-                      rows=set(round(box['y']) for box in rects)
-                      overflow=page.evaluate('document.documentElement.scrollWidth > innerWidth+1')
-                      print('RESULT',lang,width,'rows',len(rows),'overflow',overflow,'text',labels)
-                      assert len(rows) <= (4 if lang=='fr' and width==360 else 3),(lang,width,'too many rows',len(rows))
-                      if lang=='ar' and width==414: assert len(rows)==2, ('Arabic 414px should fit two rows',len(rows))
-                      assert not overflow,(lang,width,'horizontal overflow')
-                      assert nav.locator('details').count()==0
-                      page.screenshot(path=f'/tmp/{lang}-{width}.png',full_page=False)
-                      page.close()
-              browser.close()
-          PY
+          pip install playwright==1.55.0 Pillow==11.3.0 lxml==5.3.2
+          python -m playwright install --with-deps chromium
+      - name: Check merged archive, unchanged content, links and durable SEO
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          export SAYD_BASE_COMMIT="${PR_BASE:-5e243074df106b1cae76703d5309689c81e3a51f}"
+          python scripts/test_combined_hunting_equestrian.py --base "$SAYD_BASE_COMMIT"
+          python scripts/test_combined_archive_navigation.py
+          node scripts/test_combined_archive_filters.cjs
+          python scripts/test_market_coming_soon.py
+          python scripts/test_market_seo.py
+          python scripts/test_merged_links.py
+          python scripts/test_site_ia.py
+      - name: Compare baseline and candidate on local HTTP with external requests blocked
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          base="${PR_BASE:-5e243074df106b1cae76703d5309689c81e3a51f}"
+          python scripts/test_merged_section_browser.py --base "$base" --output sayd-visual-qa
+      - name: Retain screenshots and measured geometry even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sayd-combined-section-visual-qa
+          path: sayd-visual-qa/
+          if-no-files-found: warn
+          retention-days: 14
