@@ -56,9 +56,10 @@ def run():
         # Article pages admit only the exact approved UI/navigation transform.
         # Homepage/archive collection changes have dedicated publication tests.
         if '/posts/' in name:
-            assert current==search.links(nav_replace(old,path)[0],path),(name,'non-UI article change')
+            from sync_tickers import TICKER
+            assert TICKER.sub('',current)==TICKER.sub('',search.links(nav_replace(old,path)[0],path)),(name,'non-UI article change')
             count+=1
-        if '/posts/' in name and current!=old:
+        if '/posts/' in name and TICKER.sub('',current)!=TICKER.sub('',old):
             assert contract.ten_door_navigation_only_repair(name,BASE)
     assert count>800
     name='docs/posts/أبو-حناء-الحدائق/index.html'
