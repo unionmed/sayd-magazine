@@ -24,12 +24,12 @@ class InterviewCollectionTests(unittest.TestCase):
 
     def test_reviewed_original_dates_and_real_sources(self):
         rows = interviews.entries()
-        self.assertEqual(len(rows), 69)
+        self.assertEqual(len(rows), 70)
         self.assertEqual([x['published_at'] for x in rows[:4]],
-                         ['2026-10-11', '2024-02-21', '2024-02-06', '2022-11-20'])
+                         ['2026-10-17', '2026-10-11', '2024-02-21', '2024-02-06'])
         self.assertEqual(len(self.sources['ar']), len(rows))
-        self.assertEqual(len(self.sources['en']), 1)
-        self.assertEqual(len(self.sources['fr']), 1)
+        self.assertEqual(len(self.sources['en']), 2)
+        self.assertEqual(len(self.sources['fr']), 2)
         self.assertNotIn('مُنقذكم-في-الكوارث-حيواناتكم-إحترموا', [x['slug'] for x in rows])
 
     def test_homepage_reserves_four_before_hunting(self):
@@ -105,7 +105,7 @@ class InterviewCollectionTests(unittest.TestCase):
                 target.parent.mkdir(parents=True)
                 target.write_text(source.read_text())
             with patch.object(interviews, 'DOCS', docs), patch.object(interviews, 'source_cards', side_effect=lambda lang:self.sources[lang]):
-                self.assertEqual(interviews.sync_archives(), {'ar':69,'en':1,'fr':1})
+                self.assertEqual(interviews.sync_archives(), {'ar':70,'en':2,'fr':2})
                 before = {p:p.read_bytes() for p in docs.rglob('مقابلات/index.html')}
                 interviews.sync_archives()
                 self.assertTrue(before)
