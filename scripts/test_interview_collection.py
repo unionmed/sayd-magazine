@@ -87,6 +87,9 @@ class InterviewCollectionTests(unittest.TestCase):
                     text = p.read_text()
                     self.assertEqual([slug_of(x) for x in cards(text)], [r['languages'][lang] for r in interviews.entries(lang)])
                     self.assertNotIn('combined-archive',text)
+                    from seo_foundation import add_ga4
+                    self.assertEqual(text, add_ga4(text))
+                    self.assertEqual(text.count('analytics:start'), 1)
                     tree = html.fromstring(text)
                     canonical = tree.xpath('//link[@rel="canonical"]/@href')[0]
                     self.assertIn('/category/مقابلات/',unquote(canonical))

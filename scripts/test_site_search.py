@@ -18,6 +18,8 @@ def run():
         assert not tree.xpath('//script[contains(@src,"googletag") or contains(@src,"analytics")]')
         assert 'gtag(' not in text
         assert tree.xpath('//meta[@name="robots"]/@content')==['noindex,follow']
+        assert not tree.xpath('//head/link[@hreflang]')
+        assert len(tree.xpath('//nav[@class="lang-switch"]/a')) == 3
         assert tree.xpath('//meta[@name="referrer"]/@content')==['no-referrer']
         assert len(tree.xpath('//form[@role="search"]'))==1
         assert not tree.xpath('//form/@action | //input/@name')

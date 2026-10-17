@@ -117,6 +117,7 @@ def source_cards(lang):
 def sync_archives(languages=('ar', 'en', 'fr')):
     """Reuse language-local archive chrome and card markup at the same path depth."""
     from merge_hunting_equestrian import replace_listing, FILTER_RE
+    from seo_foundation import add_ga4
     counts = {}
     for lang in languages:
         root = DOCS / (lang if lang != 'ar' else '')
@@ -153,7 +154,7 @@ def sync_archives(languages=('ar', 'en', 'fr')):
 
         target = root / 'category' / FOLDER / 'index.html'
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(text)
+        target.write_text(add_ga4(text))
         counts[lang] = len(rows)
     return counts
 
