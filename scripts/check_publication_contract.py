@@ -285,11 +285,23 @@ def search_navigation_only_repair(file, base):
     return original != current and links(original, ROOT / file) == current
 
 
+def header_asset_version_only_repair(file, base):
+    if not base or not file.startswith('docs/') or not file.endswith('.html'):
+        return False
+    before = subprocess.run(['git','show',f'{base}:{file}'],cwd=ROOT,capture_output=True)
+    if before.returncode:return False
+    from refresh_header_asset_versions import refresh
+    original=before.stdout.decode()
+    return original != (ROOT/file).read_text() and refresh(original)==(ROOT/file).read_text()
+
+
 def check_new_stories(paths,pairs,base=None):
     checked=set()
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if header_asset_version_only_repair(file,base):
+            continue
         if search_navigation_only_repair(file,base):
             continue
         if ten_door_navigation_only_repair(file,base):
