@@ -1,4 +1,4 @@
-"""Select the four newest eligible hunting stories outside the upper homepage slots."""
+"""Select the eight newest eligible hunting and equestrian stories outside the upper homepage slots."""
 import json,re
 from datetime import date
 from pathlib import Path
@@ -6,7 +6,7 @@ from urllib.parse import unquote
 from lxml import html
 ROOT=Path(__file__).resolve().parents[1]
 DOCS=ROOT/'docs'
-HUNTING={'hunting','bird-hunting','land-hunting','marine-hunting','falconry'}
+HUNTING={'hunting','bird-hunting','land-hunting','marine-hunting','falconry','equestrian'}
 MONTHS=['كانون الثاني','شباط','آذار','نيسان','أيار','حزيران','تموز','آب','أيلول','تشرين الأول','تشرين الثاني','كانون الأول']
 
 def published_day(text):
@@ -25,17 +25,19 @@ def select(c,candidates):
         if day.year<2026 or slug in blocked or slug in pool:continue
         if c['primary_door'].get(slug) not in HUNTING:continue
         pool.append(slug)
-    assert len(pool)>=4, 'Hunting rotation requires four eligible non-repeated 2026+ stories'
-    return pool[:4]
+    assert len(pool)>=8, 'Combined rotation requires eight eligible non-repeated 2026+ stories'
+    return pool[:8]
 
 def candidates():
-    t=html.parse(str(DOCS/'category/صيد/index.html'));found=[]
-    for n in t.xpath('//article'):
-        a=n.xpath('.//h2/a|.//h3/a');dates=n.xpath('.//*[@class="meta"]/text()')
-        if not a:continue
-        match=re.search(r'posts/([^/]+)',unquote(a[0].get('href','')))
-        day=published_day(' '.join(dates))
-        if match and day:found.append((match[1],day))
+    found=[]
+    for folder in ('صيد', 'فروسية'):
+        t=html.parse(str(DOCS/'category'/folder/'index.html'))
+        for n in t.xpath('//article'):
+            a=n.xpath('.//h2/a|.//h3/a');dates=n.xpath('.//*[@class="meta"]/text()')
+            if not a:continue
+            match=re.search(r'posts/([^/]+)',unquote(a[0].get('href','')))
+            day=published_day(' '.join(dates))
+            if match and day:found.append((match[1],day))
     return found
 
 def expected(c):

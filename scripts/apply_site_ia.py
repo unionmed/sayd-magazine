@@ -47,10 +47,12 @@ def depth_of(path: Path) -> int:
 
 
 def lang_of(path: Path, text: str) -> str:
-    if path.relative_to(DOCS).parts[0] == "en":
-        return "en"
-    if re.search(r'<html[^>]*\blang=["\']en', text, re.I):
-        return "en"
+    edition = path.relative_to(DOCS).parts[0]
+    if edition in {"en", "fr"}:
+        return edition
+    match = re.search(r'<html[^>]*\blang=["\'](en|fr)', text, re.I)
+    if match:
+        return match[1].lower()
     return "ar"
 
 
@@ -78,8 +80,8 @@ def rewrite_chrome(text: str, path: Path) -> str:
     if 'class="mobile-nav"' not in text and 'class="main-nav"' in text:
         text = NAV_RE.sub(lambda m: m.group(0) + "\n" + mobile, text, count=1)
 
-    doors_heading = "Doors" if lang == "en" else "الأبواب"
-    magazine_heading = "Magazine" if lang == "en" else "المجلة"
+    doors_heading = {"en": "Doors", "fr": "Rubriques"}.get(lang, "الأبواب")
+    magazine_heading = "Magazine" if lang in {"en", "fr"} else "المجلة"
     doors = ia.footer_doors_html(lang, depth)
     magazine = ia.footer_magazine_html(lang, depth)
     if FOOTER_COLS_RE.search(text):
@@ -99,7 +101,10 @@ def rewrite_chrome(text: str, path: Path) -> str:
         )
     text = CACHE_RE.sub(f"assets/css/site.css?v={CSS_CACHE}", text)
     from header_social import apply as apply_header_social
-    return apply_header_social(text, lang) if path in (DOCS / "index.html", DOCS / "en" / "index.html") else text
+    if path in (DOCS / "index.html", DOCS / "en" / "index.html"):
+        text = apply_header_social(text, lang)
+    from rollout_mobile_nav_heritage_20261015 import nav_replace
+    return nav_replace(text, path)[0]
 
 
 def extract_card(html_text: str, slug: str) -> str:
@@ -379,7 +384,7 @@ def move_listing_rows() -> None:
         if path.is_file():
             path.write_text(html_text, encoding="utf-8")
 
-    retitle_category("صيد", "صيد")
+    retitle_category("صيد", ia.door_label("hunting", "ar"))
     retitle_category("عتاد-وسلاح-الصيد", "رماية وعتاد")
     retitle_category("استديو-صيد", "صيد TV")
     retitle_category("فروسية", "الفروسية")
@@ -387,7 +392,7 @@ def move_listing_rows() -> None:
     retitle_category("صيد-بحري", "الصيد البحري")
     retitle_category("صيد-بري", "صيد البر")
     retitle_category("قوانين", "قوانين الصيد")
-    retitle_category("ثقافة-وتراث", "شعر وفن")
+    retitle_category("ثقافة-وتراث", ia.door_label("poetry", "ar"))
 
 
 def badge_for(path: Path, door_id: str) -> str:

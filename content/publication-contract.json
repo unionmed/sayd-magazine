@@ -13,7 +13,8 @@
     "memory": 4,
     "tv": 10,
     "tv_channel": 7,
-    "tv_selections": 3
+    "tv_selections": 3,
+    "hunting_equestrian": 8
   },
   "protected_files": {
     "assets/css/site.css": "c06a819b9bccc0bf60177b5b3fa5d107bc3428e21e3e9fa31fdd939f666c76e4",
@@ -21,7 +22,13 @@
     "assets/css/home-doors.css": "5c750d432ca529c5ffabb440e56b85f9d3d0309f97b4d35c47d15f72b2090222",
     "docs/assets/css/site.css": "654430d593e66cb91889701a9f7cc4e07012e035d3720f67fdceef76bfa855cc",
     "docs/assets/css/article-share.css": "06cc6decf31c577a4de194426ab0893124b875babf7359b127284d98a57e9240",
-    "docs/assets/css/home-doors.css": "5c750d432ca529c5ffabb440e56b85f9d3d0309f97b4d35c47d15f72b2090222"
+    "docs/assets/css/home-doors.css": "5c750d432ca529c5ffabb440e56b85f9d3d0309f97b4d35c47d15f72b2090222",
+    "assets/css/section-navigation.css": "c8fbe4186d79ec5ae3a4d342b6bd9089e562275dd64eed61cd913ca15e44b564",
+    "docs/assets/css/section-navigation.css": "c8fbe4186d79ec5ae3a4d342b6bd9089e562275dd64eed61cd913ca15e44b564",
+    "assets/css/combined-archive.css": "3f15bbaf1b4b96ddcd1369985928e34aa214634396566ff79d92732415016556",
+    "docs/assets/css/combined-archive.css": "3f15bbaf1b4b96ddcd1369985928e34aa214634396566ff79d92732415016556",
+    "assets/js/combined-archive.js": "01cf2d58cc0d95da888f3fcb0320c98206b572ef5da90a75d1ec9c04ad72f7e3",
+    "docs/assets/js/combined-archive.js": "01cf2d58cc0d95da888f3fcb0320c98206b572ef5da90a75d1ec9c04ad72f7e3"
   },
   "header_links": {
     "ar": [
@@ -30,16 +37,16 @@
         "index.html"
       ],
       [
+        "market-cta",
+        "/market/"
+      ],
+      [
         "",
         "category/صيد/index.html"
       ],
       [
         "",
         "category/عتاد-وسلاح-الصيد/index.html"
-      ],
-      [
-        "",
-        "category/فروسية/index.html"
       ],
       [
         "",
@@ -79,10 +86,6 @@
       ],
       [
         "",
-        "category/فروسية/index.html"
-      ],
-      [
-        "",
         "category/حياة-برية-وتخييم/index.html"
       ],
       [
@@ -116,10 +119,6 @@
       [
         "",
         "category/عتاد-وسلاح-الصيد/index.html"
-      ],
-      [
-        "",
-        "category/فروسية/index.html"
       ],
       [
         "",
@@ -156,16 +155,16 @@
         "../en/index.html"
       ],
       [
+        "market-cta",
+        "/en/market/"
+      ],
+      [
         "",
         "category/صيد/index.html"
       ],
       [
         "",
         "category/عتاد-وسلاح-الصيد/index.html"
-      ],
-      [
-        "",
-        "category/فروسية/index.html"
       ],
       [
         "",
@@ -205,10 +204,6 @@
       ],
       [
         "",
-        "category/فروسية/index.html"
-      ],
-      [
-        "",
         "category/حياة-برية-وتخييم/index.html"
       ],
       [
@@ -242,10 +237,6 @@
       [
         "",
         "category/عتاد-وسلاح-الصيد/index.html"
-      ],
-      [
-        "",
-        "category/فروسية/index.html"
       ],
       [
         "",
@@ -282,16 +273,16 @@
         "../fr/index.html"
       ],
       [
+        "market-cta",
+        "/fr/market/"
+      ],
+      [
         "",
         "category/صيد/index.html"
       ],
       [
         "",
         "category/عتاد-وسلاح-الصيد/index.html"
-      ],
-      [
-        "",
-        "category/فروسية/index.html"
       ],
       [
         "",
@@ -331,10 +322,6 @@
       ],
       [
         "",
-        "category/فروسية/index.html"
-      ],
-      [
-        "",
         "category/حياة-برية-وتخييم/index.html"
       ],
       [
@@ -368,10 +355,6 @@
       [
         "",
         "category/عتاد-وسلاح-الصيد/index.html"
-      ],
-      [
-        "",
-        "category/فروسية/index.html"
       ],
       [
         "",
@@ -491,5 +474,27 @@
       "mobile_all_visible_no_more": true,
       "mobile_wrap_without_horizontal_scroll": true
     }
-  }
+  },
+  "combined_door": {
+    "approved_on": "2026-10-17",
+    "id": "hunting",
+    "labels": {
+      "ar": "صيد وفروسية",
+      "en": "Hunting & Equestrian",
+      "fr": "Chasse et équitation"
+    },
+    "card_order": "original_publication_date_descending",
+    "topic_quota": null,
+    "exclude_upper_slots": true,
+    "legacy_category_urls_retained": true
+  },
+  "homepage_door_order": [
+    "hunting",
+    "gear",
+    "wildlife",
+    "science",
+    "poetry",
+    "tv",
+    "photos"
+  ]
 }

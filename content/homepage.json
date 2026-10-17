@@ -150,9 +150,13 @@
   "desk_slugs": {
     "صيد": [
       "ألكسندرا-cabs-الصيد-غير-القانوني",
+      "الصمت-الذي-يتكلمه-الخيل",
       "خريف-الصيد-العربي-2026",
       "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة"
+      "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
+      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
+      "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+      "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
     ],
     "رماية وعتاد": [
       "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
@@ -174,9 +178,13 @@
     ],
     "Hunting": [
       "alexandra-cabs-illegal-hunting-interview",
+      "the-silence-horses-speak",
       "arab-hunting-autumn-2026",
       "turtle-doves-cross-hunting-borders-european-flyways",
-      "sicily-lebanon-protecting-migratory-birds"
+      "sicily-lebanon-protecting-migratory-birds",
+      "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
+      "skies-losing-balance-birdlife-flyways-report",
+      "how-migration-routes-lost-seven-birds-in-150-years"
     ],
     "Shooting & Gear": [
       "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
@@ -278,9 +286,13 @@
       "door": "hunting",
       "slugs": [
         "ألكسندرا-cabs-الصيد-غير-القانوني",
+        "الصمت-الذي-يتكلمه-الخيل",
         "خريف-الصيد-العربي-2026",
         "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
-        "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة"
+        "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
+        "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
+        "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
+        "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
       ]
     },
     {
@@ -288,13 +300,6 @@
       "slugs": [
         "القاهرة-تستعد-لكأس-العالم-للبندقية-والمسدس",
         "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
-      ]
-    },
-    {
-      "door": "equestrian",
-      "slugs": [
-        "الصمت-الذي-يتكلمه-الخيل",
-        "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
       ]
     },
     {
@@ -411,10 +416,7 @@
     "طيور-في-الحقائب-تهريب-الطيور-2026": "hunting"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
-  "approved_home_repeats": [
-    "الصمت-الذي-يتكلمه-الخيل",
-    "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
-  ],
+  "approved_home_repeats": [],
   "undated_stories": {
     "بالفيديو-النمر-العربي-في-السعودية": "المصدر: الهيئة الملكية لمحافظة العلا",
     "video-arabian-leopard-in-saudi-arabia": "Source: Royal Commission for AlUla",
@@ -711,9 +713,9 @@
     }
   ],
   "hunting_rotation": {
-    "policy": "Newest four eligible 2026+ hunting stories outside lead, side cards and Updates; refresh on every publication. Explicitly superseded news remains in category/archive.",
-    "approved_at": "2026-10-05",
-    "limit": 4
+    "policy": "Newest eight eligible 2026+ hunting and equestrian stories outside lead, side cards and Updates, ordered by original publication date without a per-topic quota; refresh on every publication. Superseded news stays in the archive.",
+    "approved_at": "2026-10-17",
+    "limit": 8
   },
   "chronological_placement_note": "Nayef cancelled the special placement of Adonis’s Sayd Returns editorial on 6 October 2026. Keep its original 8 September 2026 publication date and ordinary chronological position in its category and archive; no homepage pin or special exclusion from Updates.",
   "science_image_gate": {

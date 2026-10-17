@@ -1,0 +1,49 @@
+/* Approved combined navigation and Sayd Market header entry, 17 October 2026.
+   The shared article, homepage and news-strip styling remains untouched. */
+.site-header .header-inner > .brand { order: 0; }
+.site-header .market-cta {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin-inline-start: auto;
+  min-height: 2.5rem;
+  padding: .42rem .9rem;
+  border: 1px solid #b79b54;
+  border-radius: 4px;
+  background: #e9dfc2;
+  color: #3e421d;
+  font: inherit;
+  font-weight: 800;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.site-header .market-cta:hover {
+  background: #ded0a6;
+  color: #303416;
+}
+.site-header .market-cta:focus-visible {
+  outline: 2px solid #3e421d;
+  outline-offset: 3px;
+}
+.site-header .header-inner > .main-nav,
+.site-header .header-inner > .mobile-nav {
+  order: 2;
+  flex-basis: 100%;
+  margin-inline-start: 0;
+}
+.site-header .header-inner > .nav-toggle { order: 3; }
+/* Wrap between complete labels, never inside an Arabic or translated label. */
+.site-header :is(.main-nav, .mobile-nav, .drawer-nav) > a {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+@media (max-width: 900px) {
+  .site-header .market-cta {
+    padding: .38rem .7rem;
+    min-height: 2.5rem;
+  }
+}

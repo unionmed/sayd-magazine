@@ -12,22 +12,15 @@ import json
 import re
 from collections import Counter
 from pathlib import Path
+from urllib.parse import quote, unquote
+import site_ia as ia
 
 ROOT=Path(__file__).resolve().parents[1]
 DOCS=ROOT/"docs"
-ORDER=[
-    ("hunting","صيد","Hunting","Chasse","صيد"),
-    ("gear","رماية وعتاد","Shooting & Gear","Tir et équipement","عتاد-وسلاح-الصيد"),
-    ("equestrian","فروسية","Equestrian","Équitation","فروسية"),
-    ("wildlife","برية وتخييم","Wildlife & Camping","Faune et camping","حياة-برية-وتخييم"),
-    ("science","علوم واكتشافات","Science & Discoveries","Sciences et découvertes","علوم-واكتشافات"),
-    ("birds","موسوعة الطيور","Bird Encyclopedia","Encyclopédie des oiseaux","موسوعة-الطيور"),
-    ("poetry","تراث","Heritage","Patrimoine","ثقافة-وتراث"),
-    ("laws","قوانين الصيد","Hunting Laws","Réglementation de la chasse","قوانين"),
-    ("tv","صيد TV","Sayd TV","Sayd TV","استديو-صيد"),
-    ("photos","صور","Photos","Photos","صور")
-]
-assert len(ORDER)==len(set(x[0] for x in ORDER))==len(set(x[-1] for x in ORDER))==10
+# Current authority is site_ia; rerunning this rollout must never restore the
+# separate Equestrian navigation item or older Heritage wording.
+ORDER=[(d['id'],d['ar'],d['en'],d['fr'],d['folder']) for d in ia.DOORS]
+assert len(ORDER)==len(set(x[0] for x in ORDER))==len(set(x[-1] for x in ORDER))==9
 
 def lang_for(path):
     rel=path.relative_to(DOCS)
@@ -41,13 +34,31 @@ def href_for(path,folder):
     return '../'*depth+'category/'+folder+'/index.html'
 
 def label(item,lang,drawer=False):
-    value={'ar':item[1],'en':item[2],'fr':item[3]}[lang]
-    if item[0]=='wildlife':
-        # Existing mobile uses the shorter title; desktop and footer retain full.
-        return {'ar':('حياة برية وتخييم' if drawer else 'برية وتخييم'),
-                'en':('Wildlife & Camping' if drawer else 'Wildlife'),
-                'fr':('Faune et camping' if drawer else 'Faune')}[lang]
-    return value
+    return ia.chrome_label(ia.door_by_id(item[0]), lang, short=not drawer)
+
+
+def market_cta(text, path):
+    """Add the approved market entry inside the white header, once only."""
+    from html import escape
+    lang=lang_for(path)
+    href={'ar':'/market/','en':'/en/market/','fr':'/fr/market/'}[lang]
+    name={'ar':'سوق صيد','en':'Sayd Market','fr':'Marché Sayd'}[lang]
+    link='<a class="market-cta" href="'+href+'">'+escape(name)+'</a>'
+    def header(m):
+        inner=m[0]
+        # A stylesheet link is body-allowed HTML. Keeping it in the header
+        # avoids rewriting historic article head metadata/cache signatures.
+        stylesheet='<link rel="stylesheet" href="/assets/css/section-navigation.css?v=20261017">'
+        if '/assets/css/section-navigation.css?' not in inner:
+            inner=re.sub(r'^(<header\b[^>]*>)',lambda h:h[1]+'\n      '+stylesheet,inner,count=1)
+        existing=r'<a\b[^>]*class="market-cta"[^>]*>.*?</a>'
+        if re.search(existing,inner,re.S):
+            return re.sub(existing,lambda _:link,inner,count=1,flags=re.S)
+        # Brand is a single anchor even when its content is image + tagline.
+        return re.sub(r'(<a\b[^>]*class="brand"[^>]*>.*?</a>)',
+                      lambda b:b[1]+'\n        '+link,inner,count=1,flags=re.S)
+    return re.sub(r'<header\b[^>]*class="site-header"[^>]*>.*?</header>',
+                  header,text,count=1,flags=re.S)
 
 def section_links(path,which):
     lang=lang_for(path)
@@ -57,6 +68,34 @@ def section_links(path,which):
         from html import escape
         links.append('<a href="'+href_for(path,entry[4])+'">'+escape(value,quote=False)+'</a>')
     return links
+
+
+def combined_category_links(text, path):
+    """Relabel UI links only; the complete editorial article body is immutable."""
+    from html import escape
+    title=escape(ia.door_label('hunting',lang_for(path)))
+    folders={'صيد','فروسية'}
+    def anchor(m):
+        markup=m[0]
+        if re.search(r'\bhreflang=',markup):
+            return markup
+        href=re.search(r'href="([^"]+)"',markup)
+        if not href:
+            return markup
+        category=re.search(r'(category/)([^/?#]+)(/(?:index\.html)?)(?:#[^"]*)?$',href[1])
+        if not category or unquote(category[2]) not in folders:
+            return markup
+        folder=unquote(category[2])
+        dest=quote('صيد',safe='') if '%' in category[2] else 'صيد'
+        fragment='#equestrian' if folder=='فروسية' or href[1].endswith('#equestrian') else ''
+        target=href[1][:category.start(2)]+dest+category[3]+fragment
+        markup=markup[:href.start(1)]+target+markup[href.end(1):]
+        # Only a textual category label, never an image, card, or editorial title.
+        return re.sub(r'(?<=>)[^<]*(?=</a>$)',lambda _:title,markup)
+    pieces=re.split(r'(<article\b[^>]*class="article-content"[^>]*>.*?</article>)',text,flags=re.S)
+    for index in range(0,len(pieces),2):
+        pieces[index]=re.sub(r'<a\b[^>]*>[^<]*</a>',anchor,pieces[index])
+    return ''.join(pieces)
 
 def nav_replace(text,path):
     replacements=0
@@ -72,6 +111,13 @@ def nav_replace(text,path):
             return m[1]+'\n        '+'\n        '.join(links)+'\n'+m[2]
         text,n=re.subn(pattern,render,text,count=1,flags=re.S)
         assert n==1
+        replacements+=1
+    # Sidebar category navigation follows the same direct combined entry.
+    pattern=r'(<ul class="cat-list">).*?(</ul>)'
+    if re.search(pattern,text,re.S):
+        text=re.sub(pattern,lambda m:m[1]+'\n'+'\n'.join(
+            '<li>'+x+'</li>' for x in section_links(path,'desktop'))+'\n'+m[2],
+            text,count=1,flags=re.S)
         replacements+=1
     # Footer has its own visual chrome and headings: modify link list only.
     pattern=r'(<h3>\s*(?:الأبواب|Doors|Rubriques)\s*</h3>\s*<ul>).*?(</ul>)'
@@ -101,42 +147,11 @@ def nav_replace(text,path):
     if lang_for(path)=='fr':
         text=re.sub(r'(<a\b[^>]*href="[^"]*category/%D8%AB%D9%82%D8%A7%D9%81%D8%A9-%D9%88%D8%AA%D8%B1%D8%A7%D8%AB/(?:index\.html)?"[^>]*>)Poésie et arts(</a>)',
                     lambda m:m[1]+'Patrimoine'+m[2],text)
-    return text,replacements
+    return market_cta(combined_category_links(text,path),path),replacements
 
 def site_source_update():
-    p=ROOT/'scripts/site_ia.py'
-    s=p.read_text()
-    s=s.replace('MOBILE_BAR = ("hunting", "gear", "equestrian", "wildlife")',
-                'MOBILE_BAR = tuple(item[0] for item in [("hunting",), ("gear",), ("equestrian",), ("wildlife",), ("science",), ("birds",), ("poetry",), ("laws",), ("tv",), ("photos",)])')
-    a=s.index('DOORS: list[dict] = [')
-    b=s.index('\nHUNTING_LEGACY_DOORS',a)
-    middle=s[a:b]
-    sections={}
-    for m in re.finditer(r'^    \{\n        "id": "([^"]+)",.*?^    \},',middle,re.S|re.M):
-        sections[m[1]]=m[0]
-    assert set(sections)==set(x[0] for x in ORDER)
-    poetry=sections['poetry'].replace('"ar": "شعر وفن"','"ar": "تراث"').replace('"en": "Poetry & Art"','"en": "Heritage"').replace('"short_ar": "شعر وفن"','"short_ar": "تراث"').replace('"short_en": "Poetry & Art"','"short_en": "Heritage"')
-    sections['poetry']=poetry
-    # Article metadata and archived slugs remain unchanged.
-    s=s[:a]+'DOORS: list[dict] = [\n'+'\n'.join(sections[x[0]] for x in ORDER)+'\n]\n'+s[b:]
-    a=s.index('def mobile_nav_html(')
-    b=s.index('\ndef drawer_nav_inner(',a)
-    mobile=String_mobile_function
-    s=s[:a]+mobile+s[b:]
-    p.write_text(s)
-
-String_mobile_function = r'''
-def mobile_nav_html(lang: str, depth: int) -> str:
-    """All ten doors in desktop order; let CSS wrap at the device width."""
-    aria = "Mobile menu" if lang == "en" else "قائمة الجوال"
-    ordered = [
-        f'          {_link(_href(depth, door["folder"], lang), chrome_label(door, lang, short=True))}'
-        for door in DOORS
-    ]
-    return ('        <nav class="mobile-nav" aria-label="' + aria + '">\n' +
-            '\n'.join(ordered) + '\n        </nav>')
-
-'''.lstrip()
+    """The live shared source already owns ordering; do not patch Python text."""
+    assert [door['id'] for door in ia.DOORS] == list(ia.MOBILE_BAR)
 
 def metadata_update():
     p=ROOT/'content/homepage.json';home=json.loads(p.read_text())
@@ -250,7 +265,7 @@ def assert_basic():
             actual=[re.search(r'category/([^/]+)/',href).group(1) for href in hrefs]
             assert actual==[x[-1] for x in ORDER],(lang,surface,actual)
         assert not tree.xpath('//nav[contains(@class,"mobile-nav")]//details'),lang
-    print("PASS: identical ten-door order in desktop and mobile, no More, all 3 languages")
+    print("PASS: identical nine-door order in desktop and mobile, no More, all 3 languages")
 
 def main():
     site_source_update()
