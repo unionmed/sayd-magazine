@@ -16,10 +16,13 @@ def check_reels():
     for prefix in ('','en','fr'):
         home=html.parse(str(ROOT/'docs'/prefix/'index.html'))
         assert home.xpath('//*[@data-tv-group="sayd-channel"]//article/@data-video-id')==ids+OLD_VISIBLE
-        for door in ('استديو-صيد','قوانين'):
+        for door in ('استديو-صيد',):
             page=html.parse(str(ROOT/'docs'/prefix/'category'/door/'index.html'))
             entries=page.xpath('//*[@data-hunting-reel]')
             assert [r.get('data-hunting-reel') for r in entries]==REGIONS
             assert [r.xpath('.//iframe/@src')[0] for r in entries]==['https://www.youtube-nocookie.com/embed/'+x for x in ids]
+        laws=html.parse(str(ROOT/'docs'/prefix/'category/قوانين/index.html'))
+        assert not laws.xpath('//*[@data-hunting-reel]'), 'Seasonal reels must stay outside Laws'
+    assert meta['placements']=={'sayd_tv':True,'homepage_tv':True,'laws_category':False}
     print('PASS: exact four regional players and seven channel cards in all three languages')
 if __name__=='__main__':check_reels()
