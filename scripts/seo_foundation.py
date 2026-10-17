@@ -900,6 +900,10 @@ def apply_html(
     rel: Path,
     twins: dict[str, str],
 ) -> str:
+    # Search has its own localized metadata and deliberately no analytics.
+    # Preserve that privacy boundary during shared SEO regeneration.
+    if rel.as_posix() in ('search/index.html', 'en/search/index.html', 'fr/search/index.html'):
+        return html_text
     if rel.as_posix() in ALIAS_REDIRECTS or rel.as_posix() in CANCELLED_SHELLS:
         return html_text
     # Old /{post_id}/ stubs must keep their canonical on the real article.

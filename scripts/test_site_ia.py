@@ -43,14 +43,14 @@ def test_demotion_drops_a_slug_already_in_latest() -> None:
     assert len(set(out["latest"])) == 8
 
 
-def test_desktop_nav_shows_all_nine_doors() -> None:
-    """Desktop, mobile and footer use the same merged nine-door sequence."""
+def test_desktop_nav_shows_all_ten_doors() -> None:
+    """Desktop, mobile and footer use the same approved ten-door sequence."""
     from urllib.parse import unquote
     import re
-    expected = ["صيد","عتاد-وسلاح-الصيد",
+    expected = ["صيد","مقابلات","عتاد-وسلاح-الصيد",
                 "حياة-برية-وتخييم","علوم-واكتشافات","موسوعة-الطيور",
                 "ثقافة-وتراث","قوانين","استديو-صيد","صور"]
-    assert len(ia.DOORS) == 9
+    assert len(ia.DOORS) == 10
     assert [door["folder"] for door in ia.DOORS] == expected
     assert ia.door_by_id("poetry")["ar"] == "تراث"
     assert ia.door_by_id("poetry")["en"] == "Heritage"
@@ -77,9 +77,9 @@ def test_desktop_nav_shows_all_nine_doors() -> None:
     assert 'category/فروسية/' not in ar + en
     assert '>تراث</a>' in ar and '>شعر وفن</a>' not in ar
     assert '>Heritage</a>' in en and '>Poetry &amp; Art</a>' not in en
-    assert '>برية وتخييم</a>' in ia.mobile_nav_html("ar",0)
-    assert '>حياة برية وتخييم</a>' in ar
-    assert '>Wildlife</a>' in ia.mobile_nav_html("en",0)
+    assert '>بر وبحر</a>' in ia.mobile_nav_html("ar",0)
+    assert '>بر وبحر</a>' in ar
+    assert '>Land &amp; Sea</a>' in ia.mobile_nav_html("en",0)
     for child in ("صيد طيور", "صقارة", "صيد بر", "صيد بحري"):
         assert child not in ar
     assert ia.TICKER_LABEL_AR == "من كل وادي خبر"
@@ -126,7 +126,7 @@ def test_primary_door_is_singular() -> None:
 if __name__ == "__main__":
     test_demotion_ladder_and_unique_urls()
     test_demotion_drops_a_slug_already_in_latest()
-    test_desktop_nav_shows_all_nine_doors()
+    test_desktop_nav_shows_all_ten_doors()
     test_disclosure_only_for_a_real_commercial_link()
     test_primary_door_is_singular()
     print("test_site_ia: ok")

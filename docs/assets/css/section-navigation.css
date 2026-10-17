@@ -47,3 +47,63 @@
     min-height: 2.5rem;
   }
 }
+/* Owner-approved balanced mobile/tablet navigation: two rows of five,
+   unchanged order and type size. Long translated labels wrap inside cells. */
+@media (max-width: 900px) {
+  .site-header .header-inner > .mobile-nav {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+    gap: .25rem .35rem;
+  }
+  .site-header .header-inner > .mobile-nav > a {
+    min-width: 0;
+    min-height: 3rem;
+    padding: .18rem .1rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+    text-align: center;
+  }
+}
+/* Latin editions keep complete words: allocate columns by their longest word.
+   On narrow phones, three balanced rows are clearer than splitting words. */
+@media (max-width: 900px) {
+  html:is([lang="en"], [lang="fr"]) .site-header .header-inner > .mobile-nav {
+    grid-template-columns: repeat(5, minmax(min-content, 1fr));
+  }
+  html:is([lang="en"], [lang="fr"]) .site-header .header-inner > .mobile-nav > a {
+    min-width: min-content;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+}
+@media (max-width: 360px) {
+  html:is([lang="en"], [lang="fr"]) .site-header .header-inner > .mobile-nav {
+    grid-template-columns: repeat(12, minmax(min-content, 1fr));
+    column-gap: .2rem;
+  }
+  html:is([lang="en"], [lang="fr"]) .site-header .header-inner > .mobile-nav > a {
+    grid-column: span 4;
+  }
+  html:is([lang="en"], [lang="fr"]) .site-header .header-inner > .mobile-nav > a:nth-child(-n+4) {
+    grid-column: span 3;
+  }
+}
+
+/* French labels require the three-row phone layout through 500px. */
+@media (max-width: 500px) {
+  html[lang="fr"] .site-header .header-inner > .mobile-nav {
+    grid-template-columns: repeat(12, minmax(min-content, 1fr));
+    column-gap: .2rem;
+  }
+  html[lang="fr"] .site-header .header-inner > .mobile-nav > a {
+    grid-column: span 4;
+  }
+  html[lang="fr"] .site-header .header-inner > .mobile-nav > a:nth-child(-n+4) {
+    grid-column: span 3;
+  }
+}

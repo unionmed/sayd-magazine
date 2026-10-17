@@ -1,0 +1,5 @@
+/* Additive utility control, outside the nine editorial section links. */
+.site-header .site-search-link { order:1; display:inline-flex; flex:0 0 44px; width:44px; height:44px; align-items:center; justify-content:center; color:var(--olive,#3e421d); border:1px solid var(--gold,#b79b54); border-radius:4px; }
+.site-search-link:hover { background:#e9dfc2; }
+.site-search-link:focus-visible,.footer-search-link:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+.footer-search-link { display:inline-flex; align-items:center; min-height:44px; margin-inline-end:1rem; }

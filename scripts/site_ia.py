@@ -36,7 +36,7 @@ MAILTO = "mailto:editor@sayd-magazine.com?subject=%D8%A7%D9%84%D8%A7%D8%B4%D8%AA
 # when it differs (حياة برية وتخييم vs برية وتخييم). `ar` stays the content title
 # for homepage desks, badges, and category pages. English is untouched.
 # قوانين الصيد and موسوعة الطيور keep «ال».
-MOBILE_BAR = ("hunting", "gear", "wildlife", "science", "birds", "poetry", "laws", "tv", "photos")
+MOBILE_BAR = ("hunting", "interviews", "gear", "wildlife", "science", "birds", "poetry", "laws", "tv", "photos")
 
 DOORS: list[dict] = [
     {
@@ -84,6 +84,11 @@ DOORS: list[dict] = [
         ],
     },
     {
+        "id": "interviews", "ar": "مقابلات", "en": "Interviews", "fr": "Entretiens",
+        "short_ar": "مقابلات", "short_en": "Interviews", "folder": "مقابلات",
+        "has_2026": True, "children": [], "format_collection": True,
+    },
+    {
         "id": "gear",
         "ar": "رماية وعتاد",
         "nav_ar": "رماية وعتاد",
@@ -107,21 +112,21 @@ DOORS: list[dict] = [
     },
     {
         "id": "wildlife",
-        "ar": "الحياة البرية والتخييم",
-        "nav_ar": "حياة برية وتخييم",
-        "en": "Wildlife & Camping",
-        "short_ar": "برية وتخييم",
-        "short_en": "Wildlife",
+        "ar": "بر وبحر",
+        "nav_ar": "بر وبحر",
+        "en": "Land & Sea",
+        "short_ar": "بر وبحر",
+        "short_en": "Land & Sea",
         "folder": "حياة-برية-وتخييم",
         "has_2026": True,
         "children": [],
     },
     {
         "id": "science",
-        "ar": "علوم واكتشافات",
-        "nav_ar": "علوم واكتشافات",
-        "en": "Science & Discoveries",
-        "short_ar": "علوم واكتشافات",
+        "ar": "علوم",
+        "nav_ar": "علوم",
+        "en": "Science",
+        "short_ar": "علوم",
         "short_en": "Science",
         "folder": "علوم-واكتشافات",
         "has_2026": True,
@@ -149,10 +154,10 @@ DOORS: list[dict] = [
     },
     {
         "id": "laws",
-        "ar": "قوانين الصيد",
-        "en": "Hunting Laws",
-        "short_ar": "قوانين الصيد",
-        "short_en": "Hunting Laws",
+        "ar": "قوانين",
+        "en": "Laws",
+        "short_ar": "قوانين",
+        "short_en": "Laws",
         "folder": "قوانين",
         "has_2026": False,
         "children": [],
@@ -187,15 +192,15 @@ DOORS[0]["children"] = []
 EQUESTRIAN_LEGACY_DOOR = next(door for door in DOORS if door["id"] == "equestrian")
 DOORS = [door for door in DOORS if door["id"] != "equestrian"]
 _FRENCH_LABELS = {
-    "gear": "Tir et équipement", "wildlife": "Faune et camping",
-    "science": "Sciences et découvertes", "birds": "Encyclopédie des oiseaux",
-    "poetry": "Patrimoine", "laws": "Réglementation de la chasse",
+    "gear": "Tir et équipement", "wildlife": "Terre et mer",
+    "science": "Sciences", "birds": "Encyclopédie des oiseaux",
+    "poetry": "Patrimoine", "laws": "Lois",
     "tv": "Sayd TV", "photos": "Photos",
 }
 for _door in DOORS:
     if _door["id"] in _FRENCH_LABELS:
         _door["fr"] = _FRENCH_LABELS[_door["id"]]
-    _door["short_fr"] = "Faune" if _door["id"] == "wildlife" else _door["fr"]
+    _door["short_fr"] = _door["fr"]
 
 # slug → door id. One primary door. EN twins share the door.
 # Old category folders lose the listing row when the story moves.

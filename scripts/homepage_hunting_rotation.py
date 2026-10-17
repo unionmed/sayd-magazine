@@ -18,7 +18,10 @@ def published_day(text):
 
 def select(c,candidates):
     """Candidates are already publication-date ordered; never duplicate upper cards."""
+    from interview_collection import homepage_slugs
+    reserved=set(homepage_slugs('ar',c))
     blocked=set(c['featured']+c['latest']+c.get('omit_from_home',[])+c.get('omit_from_home_desks',[]))
+    blocked.update(reserved)
     blocked.update(s for d in c['ia_door_sections'] if d['door']!='hunting' for s in d['slugs'])
     pool=[]
     for slug,day in sorted(candidates,key=lambda x:x[1],reverse=True):

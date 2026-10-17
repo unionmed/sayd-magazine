@@ -36,6 +36,7 @@ def test_preserved(base):
     current=config()
     for key in ('featured','latest','ia_slots','ticker_slugs','ticker_entries','card_image_overrides','primary_door','memory_after_door'):
         assert old_config[key]==current[key],key
+    assert current['memory_visible'] is False
     for old in old_config['ia_door_sections']:
         if old['door'] not in ('hunting','equestrian'):
             assert old in current['ia_door_sections'],old['door']
@@ -44,6 +45,7 @@ def test_preserved(base):
         old=subprocess.check_output(['git','show',base+':'+rel],cwd=ROOT).decode()
         new=(ROOT/rel).read_text()
         before=html.fromstring(old);after=html.fromstring(new)
+        assert not after.xpath('//section[@class="memory-strip"]')
         section=after.xpath('//section[@class="home-section"]')[0]
         assert section.xpath('.//div[contains(@class,"section-head")]/a/text()')==[{'ar':'المزيد','en':'More','fr':'Voir plus'}[lang]]
         selected=next(d['slugs'] for d in current['ia_door_sections'] if d['door']=='hunting')
@@ -54,7 +56,7 @@ def test_preserved(base):
             label={'ar':{'hunting':'صيد','equestrian':'فروسية'},'en':{'hunting':'Hunting','equestrian':'Equestrian'},'fr':{'hunting':'Chasse','equestrian':'Équitation'}}[lang][topic]
             assert row.xpath('.//*[@class="card-topic"]/text()')==[' · '+label]
             assert local_slug(slug,lang) in row.xpath('.//h3/a/@href')[0]
-        for cls in ('feature-lead','feature-stack','latest-col','memory-strip','sayd-tv','ticker'):
+        for cls in ('feature-lead','feature-stack','latest-col','sayd-tv','ticker'):
             xp='//*[contains(concat(" ",normalize-space(@class)," ")," '+cls+' ")]'
             def canonical(n):return html.tostring(n,encoding='unicode',with_tail=False)
             assert [canonical(n) for n in before.xpath(xp)]==[canonical(n) for n in after.xpath(xp)],(lang,cls)
@@ -66,7 +68,8 @@ def test_preserved(base):
         if '/posts/' not in rel or not rel.endswith('.html'):continue
         prior=subprocess.check_output(['git','show',base+':'+rel],cwd=ROOT).decode()
         transformed,_=nav_replace(prior,ROOT/rel)
-        assert transformed==(ROOT/rel).read_text(),rel
+        from build_site_search import links as search_links
+        assert search_links(transformed,ROOT/rel)==(ROOT/rel).read_text(),rel
     print('PASS: eight chronological mixed cards, no quota, preserved upper slots, other doors, TV, article content and legacy URLs')
 
 if __name__=='__main__':

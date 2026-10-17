@@ -5,6 +5,7 @@ on:
       - 'docs/**'
       - 'assets/**'
       - 'scripts/test_merged_section_browser.py'
+      - 'scripts/*search*'
       - '.github/workflows/mobile-nav-viewport-qa.yml'
   push:
     branches: [feat/combined-hunting-equestrian-market-20261017]
@@ -37,12 +38,21 @@ jobs:
           python scripts/test_market_seo.py
           python scripts/test_merged_links.py
           python scripts/test_site_ia.py
+          python scripts/test_interview_collection.py
+          python scripts/test_taxonomy_publication_contract.py
+          python scripts/test_header_social.py
+          python scripts/test_search_index.py
+          python scripts/test_site_search.py
+          node scripts/test_site_search.cjs
       - name: Compare baseline and candidate on local HTTP with external requests blocked
         env:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
         run: |
           base="${PR_BASE:-5e243074df106b1cae76703d5309689c81e3a51f}"
           python scripts/test_merged_section_browser.py --base "$base" --output sayd-visual-qa
+      - name: Test private search in browser independently
+        if: ${{ !cancelled() }}
+        run: python scripts/test_site_search_browser.py
       - name: Retain screenshots and measured geometry even on failure
         if: always()
         uses: actions/upload-artifact@v4

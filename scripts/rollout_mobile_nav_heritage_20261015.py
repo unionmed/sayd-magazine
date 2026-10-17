@@ -20,7 +20,7 @@ DOCS=ROOT/"docs"
 # Current authority is site_ia; rerunning this rollout must never restore the
 # separate Equestrian navigation item or older Heritage wording.
 ORDER=[(d['id'],d['ar'],d['en'],d['fr'],d['folder']) for d in ia.DOORS]
-assert len(ORDER)==len(set(x[0] for x in ORDER))==len(set(x[-1] for x in ORDER))==9
+assert len(ORDER)==len(set(x[0] for x in ORDER))==len(set(x[-1] for x in ORDER))==10
 
 def lang_for(path):
     rel=path.relative_to(DOCS)
@@ -48,7 +48,8 @@ def market_cta(text, path):
         inner=m[0]
         # A stylesheet link is body-allowed HTML. Keeping it in the header
         # avoids rewriting historic article head metadata/cache signatures.
-        stylesheet='<link rel="stylesheet" href="/assets/css/section-navigation.css?v=20261017">'
+        stylesheet='<link rel="stylesheet" href="/assets/css/section-navigation.css?v=20261017-balanced-nav">'
+        inner=re.sub(r'(/assets/css/section-navigation\.css)\?[^"\s]+',r'\1?v=20261017-balanced-nav',inner)
         if '/assets/css/section-navigation.css?' not in inner:
             inner=re.sub(r'^(<header\b[^>]*>)',lambda h:h[1]+'\n      '+stylesheet,inner,count=1)
         existing=r'<a\b[^>]*class="market-cta"[^>]*>.*?</a>'
@@ -150,6 +151,10 @@ def nav_replace(text,path):
     if lang_for(path)=='fr':
         text=re.sub(r'(<a\b[^>]*href="[^"]*category/%D8%AB%D9%82%D8%A7%D9%81%D8%A9-%D9%88%D8%AA%D8%B1%D8%A7%D8%AB/(?:index\.html)?"[^>]*>)Poésie et arts(</a>)',
                     lambda m:m[1]+'Patrimoine'+m[2],text)
+    from apply_approved_taxonomy import relabel_ui
+    text = relabel_ui(text, path)
+    from header_social import add_approved_tiktok
+    text = add_approved_tiktok(text, lang_for(path))
     return market_cta(combined_category_links(text,path),path),replacements
 
 def site_source_update():

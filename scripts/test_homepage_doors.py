@@ -1,38 +1,29 @@
 """Regression checks for the three mirrored homepages and fail-closed rules."""
 from copy import deepcopy
 from check_publication_contract import check
-from refresh_homepage_doors import refresh, DOCS, DOORS, config, validate_config, channel_config, place_memory
+from refresh_homepage_doors import refresh, DOCS, DOORS, config, validate_config, channel_config
 
-def test_memory_placement():
-    """Relocation must preserve every byte outside its position, in all mirrors."""
-    import re
-    from html import escape
+def test_memory_removal():
+    """Only the Memory display is removed; every legacy article survives."""
+    import json
     from lxml import html
-    pattern = r'^[ \t]*<section class="memory-strip".*?</section>\n?'
-    for lang, prefix in [('ar', ''), ('en', 'en'), ('fr', 'fr')]:
-        page = (DOCS / prefix / 'index.html').read_text()
-        tree = html.fromstring(page)
-        memory = tree.xpath('//section[@class="memory-strip"]')
-        assert len(memory) == 1
-        assert memory[0].getparent().get('class') == 'home-main'
-        heading = next(d for d in DOORS if d[0]=='science')[{'ar': 1, 'en': 2, 'fr': 3}[lang]]
-        assert memory[0].getprevious().xpath('./div/h2/text()') == [heading], f'{lang}: memory must immediately follow Science'
-        block = re.search(pattern, page, re.S | re.M)[0]
-        remainder = re.sub(pattern, '', page, flags=re.S | re.M)
-        # Simulate the old generator position above the lower doors.
-        legacy = remainder.replace('    <div class="home-layout">', block + '    <div class="home-layout">', 1)
-        moved = place_memory(legacy, lang, config()['memory_after_door'])
-        assert moved == page, f'{lang}: relocation changed section/card content or unrelated markup'
-        assert re.search(pattern, moved, re.S | re.M)[0] == block
-        assert re.sub(pattern, '', moved, flags=re.S | re.M) == remainder
-        assert place_memory(moved, lang, 'science') == moved
-        for broken in (remainder, legacy + block, legacy.replace('<h2>' + escape(heading) + '</h2>', '<h2>missing</h2>')):
-            try: place_memory(broken, lang, 'science')
-            except ValueError: pass
-            else: raise AssertionError(f'{lang}: invalid relocation fixture accepted')
+    from check_publication_contract import CONTRACT
+    contract=json.loads(CONTRACT.read_text())
+    assert config()['memory_visible'] is False
+    from refresh_homepage_doors import remove_memory
+    fixture='<main>before\n<section class="memory-strip"><article>old card</article></section>\nafter</main>'
+    assert remove_memory(fixture)=='<main>before\nafter</main>'
+    assert remove_memory(remove_memory(fixture))==remove_memory(fixture)
+
+    for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
+        page=(DOCS/prefix/'index.html').read_text()
+        assert not html.fromstring(page).xpath('//section[@class="memory-strip"]')
+    for slug in contract['memory_slugs']:
+        assert (DOCS/'posts'/slug/'index.html').is_file(), slug
+
 
 def test_homepages():
-    test_memory_placement()
+    test_memory_removal()
     from test_hunting_reels import check_reels
     check_reels()
     # Side-card overflow must enter Updates before becoming eligible for a door.
