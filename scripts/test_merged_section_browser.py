@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Read-only rendered QA: local baseline/current HTTP previews, no analytics."""
 import argparse, base64, functools, hashlib, io, json, os, shutil, subprocess, tempfile, threading
 from collections import Counter
@@ -203,7 +202,9 @@ def run(base,out):
                             for key in ('لين-عراجي','جورج-قرداحي','نادين-نجيم'):
                                 row=rows.filter(has=page.locator('h2 a[href*="'+key+'"]'))
                                 require(row.count()==1,'Missing reviewed interview '+key)
+                                row.scroll_into_view_if_needed()
                                 image=row.locator('a.thumb img')
+                                image.evaluate('(img)=>img.decode()')
                                 require(image.count()==1,'Exactly one thumbnail '+key)
                                 require(image.evaluate('(img)=>img.complete && img.naturalWidth>0'),'Portrait failed to load '+key)
                                 path=out/f'collection-{key}-{collection_width}.png';capture(page,row,path);screens.insert(0,path)
