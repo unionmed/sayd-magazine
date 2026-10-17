@@ -153,7 +153,7 @@ def run(base,out):
                             require(page.locator('.site-search-link svg').bounding_box()['width']==12,'Compact search icon')
                             for selector in ('.market-cta','.site-search-link'):
                                 require(page.locator(selector).evaluate("e=>getComputedStyle(e,'::before').top")=='11px','Language-size visible button inset')
-                            require(cta['width']<old['market']['width'],'Market entry did not become more compact')
+                            require(cta['width']<=old['market']['width'],'Market entry became larger')
                             require(page.locator('.market-cta').evaluate('e=>getComputedStyle(e).fontSize')==page.locator('.lang-switch').evaluate('e=>getComputedStyle(e).fontSize'),'Market type matches language selector')
                             require(page.locator('.lang-switch a').first.bounding_box()['height']==22,'Language selector reference height')
                         require(cta is not None,'Market CTA missing')

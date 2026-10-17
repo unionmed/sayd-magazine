@@ -48,8 +48,8 @@ def market_cta(text, path):
         inner=m[0]
         # A stylesheet link is body-allowed HTML. Keeping it in the header
         # avoids rewriting historic article head metadata/cache signatures.
-        stylesheet='<link rel="stylesheet" href="/assets/css/section-navigation.css?v=20261017-balanced-nav">'
-        inner=re.sub(r'(/assets/css/section-navigation\.css)\?[^"\s]+',r'\1?v=20261017-balanced-nav',inner)
+        stylesheet='<link rel="stylesheet" href="/assets/css/section-navigation.css?v=20261017-controls22">'
+        inner=re.sub(r'(/assets/css/section-navigation\.css)\?[^"\s]+',r'\1?v=20261017-controls22',inner)
         if '/assets/css/section-navigation.css?' not in inner:
             inner=re.sub(r'^(<header\b[^>]*>)',lambda h:h[1]+'\n      '+stylesheet,inner,count=1)
         existing=r'<a\b[^>]*class="market-cta"[^>]*>.*?</a>'

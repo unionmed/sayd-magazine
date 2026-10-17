@@ -39,9 +39,10 @@ def links(text, path):
     text = re.sub(r'(<div class="container footer-bottom-inner">)', lambda m: m[1] + f'<!-- search-link:start --><a class="footer-search-link" href="{href}">{COPY[lang]["title"]}</a><!-- search-link:end -->', text, count=1)
     text = re.sub(r'<link rel="stylesheet" href="[^"]*search-entry\.css[^"]*">\n', '', text)
     css = relative(path, 'assets/css/search-entry.css')
-    style = f'<link rel="stylesheet" href="{css}?v=20261017">\n'
+    style = f'<link rel="stylesheet" href="{css}?v=20261017-controls22">\n'
     marker = '  <!-- analytics:start -->' if '  <!-- analytics:start -->' in text else '</head>'
     text = text.replace(marker, style + marker, 1)
+    text = re.sub(r'(section-navigation\.css)\?[^\"\s]+', r'\1?v=20261017-controls22', text)
     return text
 
 def build_page(lang):
