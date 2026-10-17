@@ -23,7 +23,7 @@ jobs:
           import subprocess
           from pathlib import Path
           from scripts.refresh_header_asset_versions import refresh
-          for f in subprocess.check_output(['git','diff','--name-only']).decode().splitlines():
+          for f in filter(None,subprocess.check_output(['git','diff','--name-only','-z']).decode().split('\0')):
               assert f.startswith('docs/') and f.endswith('.html'), f
               old=subprocess.check_output(['git','show','HEAD:'+f]).decode()
               assert refresh(old)==Path(f).read_text(), f
@@ -39,3 +39,4 @@ jobs:
             git commit -m 'Refresh header asset URLs without content changes [header-version-built]'
             git push origin HEAD:fix/header-css-cache-version-20261017
           fi
+
