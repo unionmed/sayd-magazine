@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Read-only rendered QA: local baseline/current HTTP previews, no analytics."""
 import argparse, base64, functools, hashlib, io, json, os, shutil, subprocess, tempfile, threading
 from collections import Counter
@@ -192,7 +193,7 @@ def run(base,out):
                     for collection_width in (390,1440):
                         page.set_viewport_size({'width':collection_width,'height':1000})
                         page.goto(collection,wait_until='networkidle')
-                        rows=page.locator('main .post-list > article')
+                        rows=page.locator('main .post-list > article, main .home-door-grid > article')
                         require(rows.count()==(69 if lang=='ar' else 1),'Collection count after exclusions')
                         for row in rows.all():
                             require(row.locator(':scope > img').count()==0,'Bare thumbnail outside anchor')
