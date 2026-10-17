@@ -120,6 +120,7 @@ def run(base,out):
                             require(sorted(Counter(round(r['y']) for r in rects).values())==[4,4],'Desktop combined grid must be two rows of four')
                         if width in (1440,390):
                             path=out/f'header-{lang}-{width}.png';capture(page,page.locator('.site-sticky'),path);screens.append(path)
+                            path=out/f'interviews-{lang}-{width}.png';capture(page,page.locator('section.home-section').nth(1),path);screens.append(path)
                             if lang=='ar' and width==1440:
                                 path=out/'combined-ar-1440.png';capture(page,page.locator('section.home-section').first,path);screens.append(path)
                     # Real rendered filters: all, repeated topic clicks, history and keyboard.
@@ -129,30 +130,30 @@ def run(base,out):
                     rows=page.locator('main .post-list > article,main .home-door-grid > article')
                     total=rows.count();topic_data=json.loads(page.locator('#combined-archive-data').text_content())
                     marine=set(topic_data['marine']);mixed=set(topic_data['landMarine']);equestrian=set(topic_data['equestrian'])
-                    assert len(marine)=={'ar':4,'en':1,'fr':0}[lang]
-                    assert len(mixed)=={'ar':3,'en':0,'fr':0}[lang]
-                    assert mixed<=marine and not marine.intersection(equestrian)
+                    assert len(marine)=={'ar':4,'en':1,'fr':0}[lang], (lang,'marine registry count',len(marine))
+                    assert len(mixed)=={'ar':3,'en':0,'fr':0}[lang], (lang,'mixed registry count',len(mixed))
+                    assert mixed<=marine and not marine.intersection(equestrian), (lang,'invalid archive topic overlap')
                     hunting_count=total-len(equestrian)-len(marine-mixed)
                     trials=[('equestrian',len(equestrian)),('equestrian',len(equestrian)),('hunting',hunting_count)]
                     if marine:
                         trials.extend([('marine',len(marine)),('marine',len(marine))])
                     else:
-                        assert page.locator('[data-archive-filter="marine"]').count()==0
+                        expect(page.locator('[data-archive-filter="marine"]')).to_have_count(0)
                     trials.append(('all',total))
                     for topic,count in trials:
                         button=page.locator(f'[data-archive-filter="{topic}"]');button.click()
                         expect(page.locator('main .post-list > article:visible,main .home-door-grid > article:visible')).to_have_count(count)
-                        assert button.get_attribute('aria-pressed')=='true'
+                        expect(button).to_have_attribute('aria-pressed','true')
                     button=page.locator('[data-archive-filter="equestrian"]');button.focus();page.keyboard.press('Enter')
-                    assert button.get_attribute('aria-pressed')=='true'
+                    expect(button).to_have_attribute('aria-pressed','true')
                     page.goto(archive+'#hunting');expect(page.locator('main .post-list > article:visible,main .home-door-grid > article:visible')).to_have_count(hunting_count)
                     page.goto(archive+'#equestrian');page.go_back();expect(page.locator('main .post-list > article:visible,main .home-door-grid > article:visible')).to_have_count(hunting_count)
                     # Market click and reciprocal language switches stay within the right route.
-                    page.locator('.market-cta').click();assert urlsplit(page.url).path=='/'+prefix+'market/'
+                    page.locator('.market-cta').click();expect(page).to_have_url(new_url+'/'+prefix+'market/')
                     for code,route in [('ar','/market/index.html'),('en','/en/market/index.html'),('fr','/fr/market/index.html')]:
                         page.locator(f'.lang-switch a[lang="{code}"]').click()
-                        assert unquote(urlsplit(page.url).path)==route
-                        assert page.locator('h1').count()==1
+                        expect(page).to_have_url(new_url+route)
+                        expect(page.locator('h1')).to_have_count(1)
                 browser.close()
         except Exception as error:
             errors.append({'fatal':repr(error),'traceback':__import__('traceback').format_exc(),'url':page.url if 'page' in locals() else ''})
