@@ -1,7 +1,7 @@
 name: Build approved interview sharing links
 on:
   push:
-    branches: [feature/article-short-links-20261017]
+    branches: [fix/interview-language-switch]
 permissions:
   contents: write
 jobs:
@@ -31,5 +31,5 @@ jobs:
           git add docs
           if ! git diff --cached --quiet; then
             git commit -m 'Build approved interview sharing views [interview-sharing-built]'
-            git push origin HEAD:feature/article-short-links-20261017
+            git push origin HEAD:fix/interview-language-switch
           fi

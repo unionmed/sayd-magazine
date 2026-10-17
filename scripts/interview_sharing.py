@@ -13,6 +13,7 @@ LABELS = {
 
 
 def add_sharing(text, lang, docs, target):
+    text = collection_language_links(text)
     text = re.sub(r'\s*<!-- interview-share:start -->.*?<!-- interview-share:end -->', '', text, flags=re.S)
     url = ORIGIN + ('/' if lang == 'ar' else '/' + lang + '/') + 'interviews/'
     label, button, copied, fallback = LABELS[lang]
@@ -59,3 +60,18 @@ def friendly_navigation(text, lang):
         return match[1] + html.escape(value, quote=True) + match[3]
     return re.sub(r'<section\b[^>]*class="[^"]*home-section[^"]*"[^>]*>.*?</section>',
                   lambda m: re.sub(r'(<a\b[^>]*href=")([^"]+)(")', rewrite, m[0]), text, flags=re.S)
+
+
+def collection_language_links(text):
+    """Repair only collection language-switch hrefs; preserve all other chrome."""
+    def nav(match):
+        def anchor(a):
+            tag = a[0]
+            lang = re.search(r'\blang="(ar|en|fr)"', tag)
+            assert lang, 'Missing collection switch language'
+            prefix = '/' if lang[1] == 'ar' else '/' + lang[1] + '/'
+            return re.sub(r'href="[^"]*"', 'href="' + prefix + 'interviews/"', tag, count=1)
+        return re.sub(r'<a\b[^>]*>', anchor, match[0])
+    text, count = re.subn(r'<nav\b[^>]*class="lang-switch"[^>]*>.*?</nav>', nav, text, flags=re.S)
+    assert count == 1, 'Missing or duplicate collection language switch'
+    return text

@@ -39,6 +39,14 @@ try:
                 page.goto(origin+'/'+prefix+'category/%D9%85%D9%82%D8%A7%D8%A8%D9%84%D8%A7%D8%AA/')
                 assert page.locator('[data-copy-interviews]').get_attribute('data-copy-interviews') == expected
                 assert page.locator('.interview-share a').get_attribute('href') == expected
+        # Every language button on both URL forms stays within this collection.
+        for source in ('interviews/', 'en/interviews/', 'fr/interviews/',
+                       'category/مقابلات/', 'en/category/مقابلات/', 'fr/category/مقابلات/'):
+            for lang, target in (('ar','interviews/'),('en','en/interviews/'),('fr','fr/interviews/')):
+                page.goto(origin+'/'+source)
+                page.locator('nav.lang-switch a[lang="'+lang+'"]').click()
+                assert page.url == origin+'/'+target
+                assert page.locator('[data-copy-interviews]').get_attribute('data-copy-interviews') == 'https://sayd-magazine.com/'+target
         browser.close()
 finally:
     server.shutdown()

@@ -6,7 +6,7 @@ from pathlib import Path
 from urllib.parse import urljoin, unquote, urlsplit
 from lxml import html
 from interview_collection import DOCS, FOLDER, entries
-from interview_sharing import friendly_view, ORIGIN
+from interview_sharing import friendly_view, ORIGIN, collection_language_links
 from seo_foundation import canonical_rel, in_sitemap
 
 
@@ -46,6 +46,24 @@ class InterviewSharingTests(unittest.TestCase):
                     path = Path(unquote(parsed.path))
                     if path.is_dir(): path /= 'index.html'
                     self.assertTrue(path.is_file(), str(path))
+
+    def test_language_switch_destinations_and_preservation(self):
+        import subprocess
+        for lang in ('ar', 'en', 'fr'):
+            prefix = '' if lang == 'ar' else lang
+            for rel in ('category/' + FOLDER + '/index.html', 'interviews/index.html'):
+                page = DOCS / prefix / rel
+                current = page.read_text()
+                tree = html.fromstring(current)
+                anchors = tree.xpath('//nav[@class="lang-switch"]/a')
+                self.assertEqual([(a.get('lang'), a.get('href')) for a in anchors],
+                                 [('ar','/interviews/'),('en','/en/interviews/'),('fr','/fr/interviews/')])
+                self.assertEqual(collection_language_links(current), current)
+                before = subprocess.check_output(['git','show','3e381df7e94f2455a031837805cca7e89ed32341:' + str(page.relative_to(DOCS.parent))], cwd=DOCS.parent).decode()
+                approved = html.fromstring(collection_language_links(before))
+                # Protect all navigation without freezing future interview publications.
+                self.assertEqual([html.tostring(n) for n in approved.xpath('//nav')],
+                                 [html.tostring(n) for n in tree.xpath('//nav')])
 
     def test_homepages_link_friendly_collection(self):
         for lang in ('ar','en','fr'):
