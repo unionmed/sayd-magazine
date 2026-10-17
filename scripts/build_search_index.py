@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Build public-only full-text indexes. No content registries or private files are read.
+"""Build public-only full-text indexes with approved public taxonomy facets.
+Article text comes only from published HTML; only public classification registries are read.
 
 Run after publishing HTML: python scripts/build_search_index.py
 Use --check in CI to reject missing/stale generated assets.
@@ -13,6 +14,7 @@ import re
 from urllib.parse import quote, unquote, urljoin, urlsplit
 
 from lxml import html
+import site_ia as ia
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = 'https://sayd-magazine.com'
@@ -162,7 +164,74 @@ def article_body(node):
     return clean(node.text_content()), node
 
 
-def extract_article(path, docs, lang):
+def taxonomy(docs=None):
+    """Explicit editorial mappings only; never infer a topic from article words."""
+    home = json.loads((ROOT / 'content/homepage.json').read_text())
+    primary = {slug: spec['door'] for slug, spec in ia.PRIMARY.items()}
+    primary.update(home['primary_door'])
+    interviews = json.loads((ROOT / 'content/interviews.json').read_text())['entries']
+    marine = json.loads((ROOT / 'content/marine-fishing.json').read_text())['entries']
+    memberships = {}
+    if docs is not None:
+        for lang in FOLDERS:
+            root = docs / (lang if lang != 'ar' else '')
+            for door in ia.DOORS:
+                if door['id'] == 'interviews':
+                    continue  # Format membership comes only from the reviewed registry.
+                listing = root / 'category' / door['folder'] / 'index.html'
+                if not listing.is_file():
+                    continue
+                tree = html.parse(str(listing))
+                for href in tree.xpath('//article//h2/a/@href | //article//h3/a/@href'):
+                    resolved = local_path(href, '/' + listing.relative_to(docs).as_posix())
+                    match = re.fullmatch('/' + FOLDERS[lang] + r'/([^/]+)/(?:index.html)?', unquote(resolved))
+                    if match:
+                        memberships.setdefault((lang, match[1]), set()).add(door['id'])
+    return primary, interviews, marine, memberships
+
+
+def category_facets(tree, slug, lang, mappings):
+    primary, interviews, marine, memberships = mappings
+    canonical_id = lambda value: ia.door_by_id(value)['id']
+    folders = {door['folder']: door['id'] for door in ia.DOORS}
+    folders.update({door['folder']: 'hunting' for door in ia.HUNTING_LEGACY_DOORS})
+    folders[ia.EQUESTRIAN_LEGACY_DOOR['folder']] = 'hunting'
+    # Known archive aliases have exact editorial meaning. Broad news/miscellaneous
+    # or the old interviews-and-investigations category get no invented topic.
+    folders.update({'رماية': 'gear', 'قوانين-وخرائط': 'laws', 'بعدستكم': 'photos',
+                    'بعدستنا': 'photos', 'بعدسة-التاريخ': 'photos'})
+    ar_slug = slug
+    if lang != 'ar':
+        ar_links = tree.xpath('//link[@hreflang="ar"]/@href')
+        if ar_links:
+            parts = unquote(urlsplit(ar_links[0]).path).strip('/').split('/')
+            if len(parts) == 2 and parts[0] == 'posts':
+                ar_slug = parts[1]
+        else:
+            ar_slug = next((key for key, spec in ia.PRIMARY.items() if spec.get('en') == slug), slug)
+    facets = set()
+    if ar_slug in primary:
+        facets.add(canonical_id(primary[ar_slug]))
+    else:
+        facets.update(memberships.get((lang, slug), set()))
+        for header in by_class(tree, 'article-header'):
+            for badge in by_class(header, 'badge'):
+                parts = unquote(urlsplit(badge.get('href', '')).path).split('/')
+                if 'category' in parts and len(parts) > parts.index('category') + 1:
+                    folder = parts[parts.index('category') + 1]
+                    if folder in folders and folders[folder] != 'interviews':
+                        facets.add(folders[folder])
+    # Marine fishing remains in Hunting & Equestrian, irrespective of old labels.
+    if any(row.get(lang) == slug for row in marine):
+        facets.add('hunting')
+    if any(row['reviewed_as'] == 'interview' and row['languages'].get(lang) == slug
+           and (lang == 'ar' or row['published_at'] >= '2026-01-01') for row in interviews):
+        facets.add('interviews')
+    labels = [ia.chrome_label(door, lang) for door in ia.DOORS if door['id'] in facets]
+    return labels or [{'ar': 'الأرشيف', 'en': 'Archives', 'fr': 'Archives'}[lang]]
+
+
+def extract_article(path, docs, lang, mappings=None):
     tree = html.fromstring(path.read_bytes())
     if tree.xpath('//meta[translate(@http-equiv,"REFSH","refsh")="refresh"]'):
         return None
@@ -192,11 +261,8 @@ def extract_article(path, docs, lang):
     if not title:
         return None
     schema = next(structured(tree), {})
-    categories = [clean(e.text_content()) for h in by_class(tree, 'article-header') for e in by_class(h, 'badge')]
-    category = ' · '.join(dict.fromkeys(filter(None, categories)))
-    if not category:
-        value = schema.get('articleSection', '')
-        category = clean(' · '.join(value) if isinstance(value, list) else str(value))
+    categories = category_facets(tree, path.parent.name, lang, mappings or taxonomy(docs))
+    category = ' · '.join(categories)
     keywords = schema.get('keywords', '')
     if isinstance(keywords, list):
         keywords = ', '.join(str(k) for k in keywords)
@@ -215,20 +281,23 @@ def extract_article(path, docs, lang):
     if len(excerpt) > 240:
         excerpt = excerpt[:237].rsplit(' ', 1)[0] + '…'
     return {'url': url, 'title': title, 'body': body, 'keywords': keywords,
-            'date': publication_date(tree, schema, lang), 'category': category,
+            'date': publication_date(tree, schema, lang), 'category': category, 'categories': categories,
             'image': image, 'excerpt': excerpt}
 
 
 def build_index(docs, lang):
     entries = {}
+    mappings = taxonomy(docs)
     for path in sorted((docs / FOLDERS[lang]).glob('*/index.html')):
-        item = extract_article(path, docs, lang)
+        item = extract_article(path, docs, lang, mappings)
         if item:
             # Prefer the actual canonical file over an alias with article content.
             own = quote('/' + path.parent.relative_to(docs).as_posix() + '/', safe='/@-._~')
             if item['url'] not in entries or item['url'] == own:
                 entries[item['url']] = item
-    return {'version': 1, 'lang': lang, 'articles': [entries[url] for url in sorted(entries)]}
+    return {'version': 2, 'lang': lang,
+            'categories': [ia.chrome_label(door, lang) for door in ia.DOORS] + [{'ar': 'الأرشيف', 'en': 'Archives', 'fr': 'Archives'}[lang]],
+            'articles': [entries[url] for url in sorted(entries)]}
 
 
 def serialize(index):

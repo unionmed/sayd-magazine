@@ -52,11 +52,20 @@ def run():
                     query.fill('Phoenicurus phoenicurus');query.press('Enter');expect(page.locator('.search-result').first).to_be_visible()
                     page.locator('#search-year').select_option('2026');expect(page.locator('.search-result').first).to_be_visible()
                     page.locator('#search-year').select_option('')
-                    selected=page.locator('.search-result-meta').first.inner_text().split(' · ',1)[-1]
+                    selected=page.locator('.search-result-meta').first.inner_text().split(' · ')[1]
                     page.locator('#search-category').select_option(label=selected)
                     expect(page.locator('.search-result').first).to_be_visible()
                     assert all(selected in text for text in page.locator('.search-result-meta').all_text_contents())
                     page.locator('#search-category').select_option('')
+                    query.fill('');query.press('Enter')
+                    interview={'ar':'مقابلات','en':'Interviews','fr':'Entretiens'}[lang]
+                    page.locator('#search-category').select_option(label=interview)
+                    expect(page.locator('.search-result').first).to_be_visible()
+                    assert page.locator('#search-status').inner_text().startswith(('72 ' if lang=='ar' else '1 '))
+                    assert page.locator('.search-result h2 a').first.get_attribute('href').find('cabs')>=0
+                    assert all(' · ' not in text for text in page.locator('#search-category option').all_text_contents())
+                    page.locator('#search-category').select_option('')
+                    query.fill('Phoenicurus phoenicurus');query.press('Enter')
                     page.locator('#search-language').select_option('en');page.locator('#search-language').select_option('fr');page.locator('#search-language').select_option('ar')
                     page.wait_for_function('!document.querySelector("form").hasAttribute("aria-busy")');expect(page.locator('.search-result').first).to_be_visible()
                     assert not external,external
@@ -64,10 +73,10 @@ def run():
                 page.locator('.search-result h2 a').first.click();page.go_back();expect(page.locator('#search-query')).to_be_visible()
             # A failed index fetch is recoverable by the same Search button.
             page2=context.new_page()
-            page2.route('**/index-ar.json',lambda r:r.abort())
+            page2.route('**/index-ar.json*',lambda r:r.abort())
             page2.goto(url+'/search/');page2.wait_for_function('!document.querySelector("form").hasAttribute("aria-busy")')
             assert 'تعذّر' in page2.locator('#search-status').inner_text()
-            page2.unroute('**/index-ar.json');page2.locator('#search-query').fill('طائر');page2.locator('#search-query').press('Enter');expect(page2.locator('.search-result').first).to_be_visible()
+            page2.unroute('**/index-ar.json*');page2.locator('#search-query').fill('طائر');page2.locator('#search-query').press('Enter');expect(page2.locator('.search-result').first).to_be_visible()
             browser.close()
         assert not failures,failures
         for lang in ('ar','en','fr'):

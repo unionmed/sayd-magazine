@@ -57,9 +57,9 @@ def run():
         # Homepage/archive collection changes have dedicated publication tests.
         if '/posts/' in name:
             assert current==search.links(nav_replace(old,path)[0],path),(name,'non-UI article change')
+            count+=1
         if '/posts/' in name and current!=old:
             assert contract.ten_door_navigation_only_repair(name,BASE)
-            count+=1
     assert count>800
     name='docs/posts/أبو-حناء-الحدائق/index.html'
     if not (ROOT/name).exists():name=next(p for p in paths if '/posts/' in p and 'article-content' in (ROOT/p).read_text())
@@ -75,5 +75,5 @@ def run():
     assert all(hashlib.sha256(Path(p).read_bytes()).hexdigest()==digest for p,digest in before.items()),'non-idempotent generation'
     for name in ('css/search-entry.css','css/search.css','js/site-search.js'):
         assert (ROOT/'assets'/name).read_bytes()==(search.DOCS/'assets'/name).read_bytes()
-    print(f'PASS: trilingual search, privacy, SEO regeneration, {count} untouched article bodies, URL preservation, strict chrome gate and deterministic build')
+    print(f'PASS: trilingual search, privacy, SEO regeneration, {count} preserved article pages, URL preservation, strict chrome gate and deterministic build')
 if __name__=='__main__':run()

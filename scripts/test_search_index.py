@@ -43,7 +43,8 @@ class FixtureTests(unittest.TestCase):
         record = self.read(self.page(body=body))
         self.assertEqual(record['body'], 'First Merops apiaster sighting. Last sentinel. Cell one Cell two End sentinel.')
         self.assertEqual(record['date'], '2022-12-20')
-        self.assertEqual(record['category'], 'Birds')
+        self.assertEqual(record['category'], 'Archives')
+        self.assertEqual(record['categories'], ['Archives'])
 
     def test_excluded_article_roots_and_ancestors(self):
         for attributes in ['class="article-content private"', 'class="article-content draft"',
@@ -192,6 +193,35 @@ class PublishedCorpusTests(unittest.TestCase):
             search.build_index(self.docs, lang)
         after = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
         self.assertEqual(before, after)
+
+    def test_canonical_topic_and_interview_facets(self):
+        expected = {'ar': 72, 'en': 1, 'fr': 1}
+        for lang, index in self.indexes.items():
+            allowed = [search.ia.chrome_label(door, lang) for door in search.ia.DOORS]
+            self.assertEqual(index['categories'][:10], allowed)
+            interview = search.ia.chrome_label(search.ia.door_by_id('interviews'), lang)
+            records = [r for r in index['articles'] if interview in r['categories']]
+            self.assertEqual(len(records), expected[lang])
+            self.assertTrue(any('cabs' in r['url'] for r in records))
+            for record in index['articles']:
+                self.assertTrue(record['categories'])
+                self.assertEqual(record['category'], ' · '.join(record['categories']))
+                self.assertTrue(set(record['categories']) <= set(index['categories']))
+                self.assertFalse(any(' · ' in value for value in record['categories']))
+            if lang == 'ar':
+                xdc = next(r for r in index['articles'] if 'XDC' in r['title'])
+                self.assertIn('بر وبحر', xdc['categories'])
+                self.assertIn('مقابلات', xdc['categories'])
+            if lang == 'en':
+                george = next(r for r in index['articles'] if 'george-taza' in r['url'])
+                self.assertNotIn('Interviews', george['categories'])
+                self.assertIn('Hunting & Equestrian', george['categories'])
+            marine = {row.get(lang) for row in search.taxonomy()[2]}
+            hunting = search.ia.chrome_label(search.ia.door_by_id('hunting'), lang)
+            for record in index['articles']:
+                slug = unquote(record['url']).strip('/').split('/')[-1]
+                if slug in marine:
+                    self.assertIn(hunting, record['categories'])
 
     def test_historical_and_scientific_body_coverage(self):
         records = [r for index in self.indexes.values() for r in index['articles']]
