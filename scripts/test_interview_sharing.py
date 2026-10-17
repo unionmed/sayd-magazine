@@ -48,7 +48,6 @@ class InterviewSharingTests(unittest.TestCase):
                     self.assertTrue(path.is_file(), str(path))
 
     def test_language_switch_destinations_and_preservation(self):
-        import re
         import subprocess
         for lang in ('ar', 'en', 'fr'):
             prefix = '' if lang == 'ar' else lang
@@ -61,7 +60,10 @@ class InterviewSharingTests(unittest.TestCase):
                                  [('ar','/interviews/'),('en','/en/interviews/'),('fr','/fr/interviews/')])
                 self.assertEqual(collection_language_links(current), current)
                 before = subprocess.check_output(['git','show','3e381df7e94f2455a031837805cca7e89ed32341:' + str(page.relative_to(DOCS.parent))], cwd=DOCS.parent).decode()
-                self.assertEqual(collection_language_links(before), current)
+                approved = html.fromstring(collection_language_links(before))
+                # Protect all navigation without freezing future interview publications.
+                self.assertEqual([html.tostring(n) for n in approved.xpath('//nav')],
+                                 [html.tostring(n) for n in tree.xpath('//nav')])
 
     def test_homepages_link_friendly_collection(self):
         for lang in ('ar','en','fr'):
