@@ -46,6 +46,7 @@ def friendly_view(text, source, target):
         if url.fragment:
             relative += '#' + url.fragment
         return match[1] + html.escape(relative, quote=True) + match[3]
+    text = re.sub(r'\s*<link\b[^>]*rel="alternate"[^>]*>', '', text)
     return re.sub(r'((?:href|src)=")([^"]+)(")', relocate, text)
 
 

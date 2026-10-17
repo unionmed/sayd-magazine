@@ -18,6 +18,9 @@ class InterviewSharingTests(unittest.TestCase):
             new = DOCS / prefix / 'interviews/index.html'
             self.assertEqual(new.read_text(), friendly_view(old.read_text(), old, new))
             a, b = html.fromstring(old.read_text()), html.fromstring(new.read_text())
+            self.assertFalse(b.xpath('//link[@rel="alternate"]'))
+            for alternate in a.xpath('//link[@rel="alternate"]'):
+                alternate.getparent().remove(alternate)
             self.assertEqual(a.xpath('//article//text()'), b.xpath('//article//text()'))
             self.assertEqual(len(b.xpath('//article')), len(entries(lang)))
             canonical = a.xpath('//link[@rel="canonical"]/@href')
