@@ -30,7 +30,7 @@ def run():
                     assert max(a['y']+a['height']/2 for a in boxes)-min(a['y']+a['height']/2 for a in boxes)<4
                     assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
                     external.clear()
-                    search.click();page.wait_for_function('!document.querySelector("form").hasAttribute("aria-busy")')
+                    search.click();expect(page.locator("#site-search-form")).to_be_visible();page.wait_for_function('document.querySelector("#site-search-form") && !document.querySelector("#site-search-form").hasAttribute("aria-busy")')
                     assert not external,external
                     query=page.locator('#search-query');query.fill(word);query.press('Enter')
                     if width<=500:
