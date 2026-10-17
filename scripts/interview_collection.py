@@ -176,6 +176,12 @@ def sync_archives(languages=('ar', 'en', 'fr')):
         target.parent.mkdir(parents=True, exist_ok=True)
         from interview_sharing import add_sharing, friendly_view
         text = add_ga4(add_sharing(text, lang, DOCS, target))
+        # Keep the search stylesheet immediately before analytics, matching the
+        # shared search rebuild's stable ordering.
+        search_style = re.search(r'<link rel="stylesheet" href="[^" ]*search-entry\.css[^" ]*">\n', text)
+        if search_style:
+            text = text.replace(search_style[0], '', 1)
+            text = text.replace('  <!-- analytics:start -->', search_style[0] + '  <!-- analytics:start -->', 1)
         target.write_text(text)
         friendly = root / 'interviews/index.html'
         friendly.parent.mkdir(parents=True, exist_ok=True)
