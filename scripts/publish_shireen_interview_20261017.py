@@ -134,6 +134,9 @@ save(p,s)
 
 from seo_foundation import apply_html,load_twins
 for lang in ('ar','en','fr'):
+ homepath=DOCS/('' if lang=='ar' else lang)/'index.html'
+ save(homepath,apply_html(homepath.read_text(),homepath,DOCS,homepath.relative_to(DOCS),load_twins(DOCS)))
+for lang in ('ar','en','fr'):
  path=DOCS/('' if lang=='ar' else lang)/'posts'/(AR if lang=='ar' else EN)/'index.html'
  save(path,apply_html(path.read_text(),path,DOCS,path.relative_to(DOCS),load_twins(DOCS)))
 import hashlib
