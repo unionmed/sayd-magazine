@@ -19,12 +19,26 @@ def server(root):
     return srv,f'http://127.0.0.1:{srv.server_port}'
 
 def geometry(page):
-    return page.evaluate('''() => {
+    return page.evaluate(r'''() => {
       const nav = [...document.querySelectorAll('nav.main-nav,nav.mobile-nav')].find(n=>n.getBoundingClientRect().height>0);
       const rect = e => {const r=e.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}};
+      const words = a => {
+        const walker=document.createTreeWalker(a,NodeFilter.SHOW_TEXT), result=[];
+        let node;
+        while(node=walker.nextNode()) {
+          for(const match of node.textContent.matchAll(/\S+/gu)) {
+            const range=document.createRange();range.setStart(node,match.index);range.setEnd(node,match.index+match[0].length);
+            const rects=[...range.getClientRects()].filter(r=>r.width>0&&r.height>0);
+            result.push({text:match[0],lines:new Set(rects.map(r=>Math.round(r.y))).size,width:Math.max(0,...rects.map(r=>r.width))});
+          }
+        }
+        const style=getComputedStyle(a);
+        return {tokens:result,available:a.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight),overflowWrap:style.overflowWrap,wordBreak:style.wordBreak,hyphens:style.hyphens};
+      };
+
       return {overflow:document.documentElement.scrollWidth>innerWidth+1,
         navClass:nav.className,rows:[...new Set([...nav.querySelectorAll(':scope > a')].map(a=>Math.round(a.getBoundingClientRect().y)))].length,
-        links:[...nav.querySelectorAll(':scope > a')].map(a=>({text:a.textContent,rect:rect(a),font:getComputedStyle(a).fontSize,nowrap:getComputedStyle(a).whiteSpace,contentFits:a.scrollWidth<=a.clientWidth+1&&a.scrollHeight<=a.clientHeight+1})),
+        links:[...nav.querySelectorAll(':scope > a')].map(a=>({text:a.textContent,rect:rect(a),font:getComputedStyle(a).fontSize,nowrap:getComputedStyle(a).whiteSpace,contentFits:a.scrollWidth<=a.clientWidth+1&&a.scrollHeight<=a.clientHeight+1,words:words(a)})),
         controls:[...document.querySelectorAll('.site-sticky .header-social a,.site-sticky .lang-switch a,.site-sticky .market-cta,.site-sticky .site-search-link')].filter(e=>e.getBoundingClientRect().width>0&&e.getBoundingClientRect().height>0).map(e=>({label:e.getAttribute('aria-label')||e.textContent,rect:rect(e)})),
         header:rect(document.querySelector('header.site-header')),
         brand:rect(document.querySelector('.brand')),market:document.querySelector('.market-cta')?rect(document.querySelector('.market-cta')):null};
@@ -112,11 +126,17 @@ def run(base,out):
                             require(new['rows']<=old['rows'],'Extra desktop section row')
                         else:
                             row_sizes=sorted(Counter(round(link['rect']['y']) for link in new['links']).values())
-                            require(new['rows']==2 and row_sizes==[5,5],'Mobile/tablet navigation must be two balanced rows of five')
+                            expected_rows=[3,3,4] if lang in ('en','fr') and width<=360 else [5,5]
+                            require(new['rows']==len(expected_rows) and row_sizes==expected_rows,'Mobile/tablet navigation must use the approved balanced rows')
                             for i,link in enumerate(new['links']):
                                 r=link['rect']
                                 require(32<=r['height']<=96,'Mobile navigation cell height outside readable bounds')
                                 require(link['contentFits'],'Mobile navigation label overflows its cell')
+                                if lang in ('en','fr'):
+                                    words=link['words']
+                                    require(words['overflowWrap']=='normal' and words['wordBreak']=='normal' and words['hyphens']=='none','Latin labels must wrap only at natural word boundaries')
+                                    require(all(token['lines']==1 for token in words['tokens']),'Latin navigation word split across lines')
+                                    require(all(token['width']<=words['available']+1 for token in words['tokens']),'Latin navigation cell smaller than a complete word')
                                 require(r['x']>=-1 and r['x']+r['width']<=width+1,'Mobile navigation cell outside viewport')
                                 for other in new['links'][i+1:]:
                                     q=other['rect']

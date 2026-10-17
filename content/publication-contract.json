@@ -28,8 +28,8 @@
     "docs/assets/css/site.css": "654430d593e66cb91889701a9f7cc4e07012e035d3720f67fdceef76bfa855cc",
     "docs/assets/css/article-share.css": "06cc6decf31c577a4de194426ab0893124b875babf7359b127284d98a57e9240",
     "docs/assets/css/home-doors.css": "5c750d432ca529c5ffabb440e56b85f9d3d0309f97b4d35c47d15f72b2090222",
-    "assets/css/section-navigation.css": "32a2cc3687aab0b01360cb6f970818c7ae8a93104d2f2ccfa87a07174d4b5c3a",
-    "docs/assets/css/section-navigation.css": "32a2cc3687aab0b01360cb6f970818c7ae8a93104d2f2ccfa87a07174d4b5c3a",
+    "assets/css/section-navigation.css": "0ecb7c649a7769016ac3a7c18de6c47bfd13c929a73a5c85a1117b969fc45284",
+    "docs/assets/css/section-navigation.css": "0ecb7c649a7769016ac3a7c18de6c47bfd13c929a73a5c85a1117b969fc45284",
     "assets/css/combined-archive.css": "3f15bbaf1b4b96ddcd1369985928e34aa214634396566ff79d92732415016556",
     "docs/assets/css/combined-archive.css": "3f15bbaf1b4b96ddcd1369985928e34aa214634396566ff79d92732415016556",
     "assets/js/combined-archive.js": "945c301b14a4c6929ddc4326ce30d315ee6f449d9c221c62bc7c6b17cf84ffa8",
@@ -533,7 +533,25 @@
         "preserve_order": true,
         "preserve_font_size": true,
         "labels_wrap_inside_cells": true,
-        "breakpoint_max_px": 900
+        "breakpoint_max_px": 900,
+        "latin_word_boundaries": {
+          "preserve_whole_words": true,
+          "hyphenation": false,
+          "column_sizing": "min-content",
+          "at_or_below_360px_rows": [
+            4,
+            3,
+            3
+          ],
+          "above_360px_rows": [
+            5,
+            5
+          ],
+          "arabic_rows_unchanged": [
+            5,
+            5
+          ]
+        }
       }
     }
   },

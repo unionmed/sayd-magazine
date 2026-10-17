@@ -33,6 +33,9 @@ def run():
                     search.click();page.wait_for_function('!document.querySelector("form").hasAttribute("aria-busy")')
                     assert not external,external
                     query=page.locator('#search-query');query.fill(word);query.press('Enter')
+                    if width<=500:
+                        padding=page.locator('main.search-page > .container').evaluate('(e)=>[parseFloat(getComputedStyle(e).paddingLeft),parseFloat(getComputedStyle(e).paddingRight)]')
+                        assert min(padding)>=12, padding
                     expect(page.locator('.search-result').first).to_be_visible()
                     assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
                     assert '?' not in page.url and '#' not in page.url
