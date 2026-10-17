@@ -28,7 +28,7 @@ jobs:
               old=subprocess.check_output(['git','show','HEAD:'+f]).decode()
               assert refresh(old)==Path(f).read_text(), f
           PY
-          SAYD_BASE_COMMIT=b03809725d80f06b51522a5f41d3e57bcb172e86 python scripts/check_publication_contract.py
+          python scripts/check_publication_contract.py --base b03809725d80f06b51522a5f41d3e57bcb172e86
           python scripts/test_homepage_doors.py
       - name: Commit exact cache version refresh to review branch
         run: |
