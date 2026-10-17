@@ -87,7 +87,7 @@ p=ROOT/'content/homepage.json';c=json.loads(p.read_text())
 previous_side=c['ia_slots']['important'].copy()
 previous_main=c['ia_slots']['main']
 c['ia_slots']['main']=AR
-c['ia_slots']['important']=[previous_main]+[x for x in previous_side if x not in (AR,previous_main)][:3]
+if previous_main!=AR:c['ia_slots']['important']=[previous_main]+[x for x in previous_side if x not in (AR,previous_main)][:3]
 c['featured']=[AR]+c['ia_slots']['important']
 from homepage_demotion import demote_side_cards
 demote_side_cards(c,previous_side)
