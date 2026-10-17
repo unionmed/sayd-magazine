@@ -195,7 +195,7 @@ class PublishedCorpusTests(unittest.TestCase):
         self.assertEqual(before, after)
 
     def test_canonical_topic_and_interview_facets(self):
-        expected = {'ar': 72, 'en': 1, 'fr': 1}
+        expected = {'ar': 69, 'en': 1, 'fr': 1}
         for lang, index in self.indexes.items():
             allowed = [search.ia.chrome_label(door, lang) for door in search.ia.DOORS]
             self.assertEqual(index['categories'][:10], allowed)

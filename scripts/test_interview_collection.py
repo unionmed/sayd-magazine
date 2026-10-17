@@ -24,9 +24,9 @@ class InterviewCollectionTests(unittest.TestCase):
 
     def test_reviewed_original_dates_and_real_sources(self):
         rows = interviews.entries()
-        self.assertEqual(len(rows), 72)
+        self.assertEqual(len(rows), 69)
         self.assertEqual([x['published_at'] for x in rows[:4]],
-                         ['2026-10-11', '2024-12-10', '2024-10-14', '2024-09-10'])
+                         ['2026-10-11', '2024-02-21', '2024-02-06', '2022-11-20'])
         self.assertEqual(len(self.sources['ar']), len(rows))
         self.assertEqual(len(self.sources['en']), 1)
         self.assertEqual(len(self.sources['fr']), 1)
@@ -54,25 +54,33 @@ class InterviewCollectionTests(unittest.TestCase):
             for slug in interviews.homepage_slugs(lang, self.config):
                 self.assertIn(homepage.local_slug(slug, lang), catalog)
 
-    def test_card_identifiers_preserve_order_and_article_headings(self):
-        base = 'الصيد-بين-الفوضى-والنظام-تجارب-الصي'
-        expected = [
-            (base+'-3', 'غسان نصّور في كندا: الصيد بين الفوضى والنظام'),
-            (base+'-2', 'غي محاسب في أميركا: الصيد بين الفوضى والنظام'),
-            (base, 'أمير دمج في السعودية: الصيد بين الفوضى والنظام'),
-        ]
+    def test_excluded_series_preserves_articles_but_not_interview_cards(self):
+        excluded = json.loads(interviews.REGISTRY.read_text())['excluded_from_collection']
+        registry = {r['slug'] for r in interviews.entries()}
+        self.assertEqual(len(excluded), 3)
         page = html.parse(str(interviews.DOCS/'index.html'))
         section = page.xpath('//section[contains(@class,"home-section")][.//h2[text()="مقابلات"]]')[0]
         shown = section.xpath('.//article')
         self.assertEqual([slug_of(html.tostring(n,encoding='unicode')) for n in shown],
                          interviews.homepage_slugs('ar', self.config))
-        for card, (slug, title) in zip(shown[1:], expected):
-            self.assertEqual(card.xpath('.//h3/a')[0].text_content(), title)
-            self.assertEqual(self.config['card_title_overrides'][slug], {'ar':title})
-            self.assertIn('/Design.png', card.xpath('.//img/@src')[0])
-            article = html.parse(str(interviews.DOCS/'posts'/slug/'index.html'))
-            heading = article.xpath('//h1')[0].text_content()
-            self.assertEqual(heading, 'الصيد بين الفوضى والنظام – تجارب الصيادين اللبنانيين المغتربين')
+        for row in excluded:
+            self.assertNotIn(row['slug'], registry)
+            article = html.parse(str(interviews.DOCS/'posts'/row['slug']/'index.html'))
+            self.assertEqual(article.xpath('//h1')[0].text_content(),
+                             'الصيد بين الفوضى والنظام – تجارب الصيادين اللبنانيين المغتربين')
+
+    def test_every_collection_card_has_one_thumbnail_in_stable_layout(self):
+        for lang, rows in self.sources.items():
+            for card in rows:
+                node = html.fromstring(card)
+                missing = slug_of(card) == '153'
+                self.assertEqual(len(node.xpath('./a[@class="thumb"]/img')), 0 if missing else 1, slug_of(card))
+                self.assertEqual(len(node.xpath('.//img')), 0 if missing else 1, slug_of(card))
+                if missing:
+                    self.assertEqual(len(node.xpath('./a[@class="thumb"]')), 0)
+                    self.assertEqual(next(r for r in interviews.entries() if r['slug']=='153')['image_status'], 'original_missing')
+                self.assertEqual(len(node.xpath('./div[@class="body"]/h2/a')), 1)
+                self.assertEqual(len(node.xpath('./div[@class="body"]/div[@class="meta"]')), 1)
 
     def test_rebased_card_links_exist(self):
         for lang, rows in self.sources.items():
@@ -97,7 +105,7 @@ class InterviewCollectionTests(unittest.TestCase):
                 target.parent.mkdir(parents=True)
                 target.write_text(source.read_text())
             with patch.object(interviews, 'DOCS', docs), patch.object(interviews, 'source_cards', side_effect=lambda lang:self.sources[lang]):
-                self.assertEqual(interviews.sync_archives(), {'ar':72,'en':1,'fr':1})
+                self.assertEqual(interviews.sync_archives(), {'ar':69,'en':1,'fr':1})
                 before = {p:p.read_bytes() for p in docs.rglob('مقابلات/index.html')}
                 interviews.sync_archives()
                 self.assertTrue(before)

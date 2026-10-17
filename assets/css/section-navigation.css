@@ -8,13 +8,15 @@
   justify-content: center;
   flex: 0 0 auto;
   margin-inline-start: auto;
-  min-height: 2.5rem;
-  padding: .42rem .9rem;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: .32rem .75rem;
   border: 1px solid #b79b54;
   border-radius: 4px;
   background: #e9dfc2;
   color: #3e421d;
   font: inherit;
+  font-size: .92em;
   font-weight: 800;
   line-height: 1.3;
   white-space: nowrap;
@@ -43,8 +45,8 @@
 }
 @media (max-width: 900px) {
   .site-header .market-cta {
-    padding: .38rem .7rem;
-    min-height: 2.5rem;
+    padding: .3rem .6rem;
+    min-height: 44px;
   }
 }
 /* Owner-approved balanced mobile/tablet navigation: two rows of five,

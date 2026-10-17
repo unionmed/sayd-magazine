@@ -143,6 +143,10 @@ def run(base,out):
                                     overlap=min(r['x']+r['width'],q['x']+q['width'])-max(r['x'],q['x'])>1 and min(r['y']+r['height'],q['y']+q['height'])-max(r['y'],q['y'])>1
                                     require(not overlap,'Mobile navigation cells overlap')
                         brand,cta=new['brand'],new['market']
+                        if cta:
+                            require(cta['height']>=44,'Market touch target below 44 pixels')
+                            require(cta['width']<old['market']['width'],'Market entry did not become more compact')
+                            require(cta['width']>=old['market']['width']*.75,'Market entry shrunk excessively')
                         require(cta is not None,'Market CTA missing')
                         if cta:
                             require(abs(brand['y']+brand['height']/2-cta['y']-cta['height']/2)<=3,'Brand/market not aligned on one row')
@@ -179,9 +183,35 @@ def run(base,out):
                             require(sorted(Counter(round(r['y']) for r in rects).values())==[4,4],'Desktop combined grid must be two rows of four')
                         if width in (1440,390,320):
                             path=out/f'header-{lang}-{width}.png';capture(page,page.locator('.site-sticky'),path);screens.append(path)
+                            path=out/f'header-before-{lang}-{width}.png';capture(before,before.locator('.site-sticky'),path);screens.append(path)
                             path=out/f'interviews-{lang}-{width}.png';capture(page,page.locator('section.home-section').nth(1),path);screens.append(path)
                             if lang=='ar' and width==1440:
                                 path=out/'combined-ar-1440.png';capture(page,page.locator('section.home-section').first,path);screens.append(path)
+                    # Collection cards must retain the same thumbnail/title layout,
+                    # including legacy cards that previously emitted stray images.
+                    collection=new_url+'/'+prefix+'category/'+__import__('urllib.parse',fromlist=['quote']).quote('مقابلات')+'/index.html'
+                    for collection_width in (390,1440):
+                        page.set_viewport_size({'width':collection_width,'height':1000})
+                        page.goto(collection,wait_until='networkidle')
+                        rows=page.locator('main .post-list > article, main .home-door-grid > article')
+                        require(rows.count()==(69 if lang=='ar' else 1),'Collection count after exclusions')
+                        for row in rows.all():
+                            require(row.locator(':scope > img').count()==0,'Bare thumbnail outside anchor')
+                            require(row.locator(':scope > a.thumb').count()<=1,'Duplicate thumb anchor')
+                            require(row.locator(':scope > div.body > h2 > a').count()==1,'Stable title layout')
+                        if lang=='ar':
+                            for key in ('لين-عراجي','جورج-قرداحي','نادين-نجيم'):
+                                row=rows.filter(has=page.locator('h2 a[href*="'+key+'"]'))
+                                require(row.count()==1,'Missing reviewed interview '+key)
+                                row.scroll_into_view_if_needed()
+                                image=row.locator('a.thumb img')
+                                image.evaluate('(img)=>img.decode()')
+                                require(image.count()==1,'Exactly one thumbnail '+key)
+                                require(image.evaluate('(img)=>img.complete && img.naturalWidth>0'),'Portrait failed to load '+key)
+                                path=out/f'collection-{key}-{collection_width}.png';capture(page,row,path);screens.insert(0,path)
+                                image_box=image.bounding_box();title_box=row.locator('h2').bounding_box()
+                                require(image_box['width']<collection_width*.6,'Oversized portrait '+key)
+                                require(abs(image_box['y']-title_box['y'])<90,'Thumbnail not alongside title '+key)
                     # Real rendered filters: all, repeated topic clicks, history and keyboard.
                     page.set_viewport_size({'width':390,'height':1000})
                     archive=new_url+'/'+prefix+'category/'+__import__('urllib.parse',fromlist=['quote']).quote('صيد')+'/index.html'
