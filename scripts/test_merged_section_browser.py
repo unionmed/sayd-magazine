@@ -203,7 +203,7 @@ def run(base,out):
                         page.set_viewport_size({'width':collection_width,'height':1000})
                         page.goto(collection,wait_until='networkidle')
                         rows=page.locator('main .post-list > article, main .home-door-grid > article')
-                        require(rows.count()==(69 if lang=='ar' else 1),'Collection count after exclusions')
+                        require(rows.count()==(70 if lang=='ar' else 2),'Collection count after exclusions')
                         for row in rows.all():
                             require(row.locator(':scope > img').count()==0,'Bare thumbnail outside anchor')
                             require(row.locator(':scope > a.thumb').count()<=1,'Duplicate thumb anchor')
