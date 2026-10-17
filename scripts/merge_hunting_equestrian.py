@@ -15,6 +15,7 @@ from pathlib import Path
 from urllib.parse import unquote
 
 import site_ia as ia
+from seo_foundation import add_ga4
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
@@ -152,6 +153,8 @@ def sync_archive(languages=('ar', 'en', 'fr')) -> dict[str, dict[str, int]]:
             text = text.replace('</head>', '  ' + style + '\n</head>', 1)
         if '/assets/js/combined-archive.js?' not in text:
             text = text.replace('</body>', '  ' + script + '\n</body>', 1)
+        # Keep the existing analytics block canonical and last in the head.
+        text = add_ga4(text)
         if text != original:
             target.write_text(text, encoding='utf-8')
         result[lang] = {'all': len(rows), 'hunting': len(rows) - len(equestrian), 'equestrian': len(equestrian)}

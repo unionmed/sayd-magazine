@@ -83,7 +83,8 @@ def run(base,out):
                         require(new['links'][0]['text']=={'ar':'صيد وفروسية','en':'Hunting & Equestrian','fr':'Chasse et équitation'}[lang],'Combined title mismatch')
                         require(all(n['font']==o['font'] for n,o in zip(new['links'],old['links'])),'Navigation font size changed')
                         if width>900:
-                            require(new['rows']==1,'Desktop sections must fit one row')
+                            # Preserve existing row count: AR/EN one, French two.
+                            require(new['rows']<=old['rows'],'Extra desktop section row')
                         else:
                             require(new['rows']<=old['rows'],'Extra mobile section row')
                         brand,cta=new['brand'],new['market']

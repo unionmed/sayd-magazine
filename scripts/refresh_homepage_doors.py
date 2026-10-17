@@ -79,7 +79,7 @@ def collect(page, source_path, home_path):
             target=(DOCS/clean.lstrip('/') if clean.startswith('/') else source_path.parent/clean).resolve()
             if not target.is_file(): continue
             image=os.path.relpath(target,home_path.parent)+('?'+url.query if url.query else '')
-        shown=date[0].text_content().strip() if date else node.get('data-published','')
+        shown=(date[0].text or '').strip() if date and date[0].xpath('.//*[@class="card-topic"]') else date[0].text_content().strip() if date else node.get('data-published','')
         found.setdefault(slug,dict(title=title[0].text_content().strip(),date=shown,image=image,alt=images[0].get('alt','') if images else ''))
     return found
 
@@ -87,6 +87,7 @@ def render_card(slug, item, stack=False):
     esc=lambda s:html.escape(s,quote=True)
     href=item.get('href',f'posts/{slug}/index.html')
     badge=f'<span class="video-badge" style="font-size:12px;color:#3e421d">{esc(item["video_badge"])}</span>' if item.get('video_badge') else ''
+    topic=f'<span class="card-topic"> · {esc(item["topic_label"])}</span>' if item.get('topic_label') else ''
     style = (["object-position:" + item["position"]] if item.get("position") else [])
     if item.get("fit"):
         assert item["fit"] in {"contain", "cover"}
@@ -95,7 +96,7 @@ def render_card(slug, item, stack=False):
     return (f'<article class="card{" card-stack" if stack else ""}"><a class="thumb" href="{href}">'
             f'<img src="{esc(item["image"])}" alt="{esc(item["alt"] or item["title"])}" loading="lazy"{position}></a>'
             f'<div class="body">{badge}<h3><a href="{href}">{esc(item["title"])}</a></h3>'
-            f'<div class="meta">{esc(item["date"])}</div></div></article>')
+            f'<div class="meta">{esc(item["date"])}{topic}</div></div></article>')
 
 def render_li(slug,item):
     esc=lambda s:html.escape(s,quote=True)
@@ -282,9 +283,20 @@ def refresh(path,lang):
             if n!=1:raise ValueError(f'{lang}: missing TV section')
             continue
         pattern=r'(<section class="home-section(?: sayd-tv)?">\s*<div class="section-head[^>]*">\s*<h2>'+re.escape(html.escape(heading))+r'</h2>.*?<div class="home-door-grid">).*?(</div>\s*</section>)'
-        cards='\n'.join(render_card(*data(s)) for s in sections[door])
+        rendered=[]
+        for s in sections[door]:
+            slug,item=data(s)
+            if door=='hunting':
+                topic='equestrian' if c['primary_door'].get(s)=='equestrian' else 'hunting'
+                item['topic_label']={'ar':{'hunting':'صيد','equestrian':'فروسية'},'en':{'hunting':'Hunting','equestrian':'Equestrian'},'fr':{'hunting':'Chasse','equestrian':'Équitation'}}[lang][topic]
+            rendered.append(render_card(slug,item))
+        cards='\n'.join(rendered)
         page,n=re.subn(pattern,lambda m:m[1]+'\n'+cards+'\n'+m[2],page,count=1,flags=re.S)
         if n!=1:raise ValueError(f'{lang}: missing desk {heading}')
+        if door=='hunting':
+            more={'ar':'المزيد','en':'More','fr':'Voir plus'}[lang]
+            head=r'(<h2>'+re.escape(html.escape(heading))+r'</h2>\s*<a\b[^>]*>)[^<]*(</a>)'
+            page=re.sub(head,lambda m:m[1]+more+m[2],page,count=1)
     entries=c.get('ticker_entries',[{'slug':ar} for ar in c['ticker_slugs']])
     assert [e['slug'] for e in entries]==c['ticker_slugs'], 'Ticker entry placement differs'
     ticker=''

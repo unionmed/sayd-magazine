@@ -3,7 +3,7 @@ from copy import deepcopy
 from datetime import date, timedelta
 import json, subprocess
 from lxml import html
-from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, merge_hunting_section
+from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, merge_hunting_section, local_slug
 from homepage_hunting_rotation import select, expected
 
 
@@ -44,6 +44,16 @@ def test_preserved(base):
         old=subprocess.check_output(['git','show',base+':'+rel],cwd=ROOT).decode()
         new=(ROOT/rel).read_text()
         before=html.fromstring(old);after=html.fromstring(new)
+        section=after.xpath('//section[@class="home-section"]')[0]
+        assert section.xpath('.//div[contains(@class,"section-head")]/a/text()')==[{'ar':'المزيد','en':'More','fr':'Voir plus'}[lang]]
+        selected=next(d['slugs'] for d in current['ia_door_sections'] if d['door']=='hunting')
+        rows=section.xpath('.//article')
+        assert len(rows)==8 and len(after.xpath('//*[@class="card-topic"]'))==8
+        for slug,row in zip(selected,rows):
+            topic='equestrian' if current['primary_door'].get(slug)=='equestrian' else 'hunting'
+            label={'ar':{'hunting':'صيد','equestrian':'فروسية'},'en':{'hunting':'Hunting','equestrian':'Equestrian'},'fr':{'hunting':'Chasse','equestrian':'Équitation'}}[lang][topic]
+            assert row.xpath('.//*[@class="card-topic"]/text()')==[' · '+label]
+            assert local_slug(slug,lang) in row.xpath('.//h3/a/@href')[0]
         for cls in ('feature-lead','feature-stack','latest-col','memory-strip','sayd-tv','ticker'):
             xp='//*[contains(concat(" ",normalize-space(@class)," ")," '+cls+' ")]'
             def canonical(n):return html.tostring(n,encoding='unicode',with_tail=False)

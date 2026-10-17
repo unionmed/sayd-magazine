@@ -35,6 +35,7 @@ def test_archives_keep_every_published_card():
         page = root / 'category/صيد/index.html'
         legacy = root / 'category/فروسية/index.html'
         text = page.read_text()
+        assert archive.add_ga4(text) == text, (lang, 'GA4 block must remain canonical')
         rows = archive.cards(text)
         by_slug = {archive.slug_of(row): row for row in rows}
         assert len(rows) == len(by_slug), (lang, 'duplicate story')
