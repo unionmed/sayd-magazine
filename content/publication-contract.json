@@ -28,8 +28,8 @@
     "docs/assets/css/site.css": "654430d593e66cb91889701a9f7cc4e07012e035d3720f67fdceef76bfa855cc",
     "docs/assets/css/article-share.css": "06cc6decf31c577a4de194426ab0893124b875babf7359b127284d98a57e9240",
     "docs/assets/css/home-doors.css": "5c750d432ca529c5ffabb440e56b85f9d3d0309f97b4d35c47d15f72b2090222",
-    "assets/css/section-navigation.css": "c8fbe4186d79ec5ae3a4d342b6bd9089e562275dd64eed61cd913ca15e44b564",
-    "docs/assets/css/section-navigation.css": "c8fbe4186d79ec5ae3a4d342b6bd9089e562275dd64eed61cd913ca15e44b564",
+    "assets/css/section-navigation.css": "32a2cc3687aab0b01360cb6f970818c7ae8a93104d2f2ccfa87a07174d4b5c3a",
+    "docs/assets/css/section-navigation.css": "32a2cc3687aab0b01360cb6f970818c7ae8a93104d2f2ccfa87a07174d4b5c3a",
     "assets/css/combined-archive.css": "3f15bbaf1b4b96ddcd1369985928e34aa214634396566ff79d92732415016556",
     "docs/assets/css/combined-archive.css": "3f15bbaf1b4b96ddcd1369985928e34aa214634396566ff79d92732415016556",
     "assets/js/combined-archive.js": "945c301b14a4c6929ddc4326ce30d315ee6f449d9c221c62bc7c6b17cf84ffa8",
@@ -525,7 +525,16 @@
       ],
       "desktop_mobile_same_order": true,
       "mobile_all_visible_no_more": true,
-      "mobile_wrap_without_horizontal_scroll": true
+      "mobile_wrap_without_horizontal_scroll": true,
+      "mobile_layout": {
+        "approved_on": "2026-10-17",
+        "rows": 2,
+        "columns": 5,
+        "preserve_order": true,
+        "preserve_font_size": true,
+        "labels_wrap_inside_cells": true,
+        "breakpoint_max_px": 900
+      }
     }
   },
   "combined_door": {

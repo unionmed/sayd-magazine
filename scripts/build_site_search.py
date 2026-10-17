@@ -73,6 +73,9 @@ def build_page(lang):
     # Noindex utilities are not search-engine language alternates; the visible
     # language switch remains in the shared header.
     page = re.sub(r'[ \t]*<link\b[^>]*\bhreflang=[^>]*>[ \t]*(?:\r?\n)?', '', page, flags=re.M)
+    # The shared font stacks already include local/system fallbacks. Search must
+    # not contact Google Fonts (including its preconnect hosts) before a query.
+    page = re.sub(r'[ \t]*<link\b[^>]*href="https://fonts\.(?:googleapis|gstatic)\.com[^"]*"[^>]*>[ \t]*(?:\r?\n)?', '', page)
     # No query in history, no analytics or form tracking, no search-engine results index.
     page = page.replace('</head>', '<meta name="robots" content="noindex,follow">\n<meta name="referrer" content="no-referrer">\n<link rel="stylesheet" href="'+relative(path,'assets/css/search.css')+'?v=20261017">\n</head>')
     page = page.replace('</body>', '<script id="search-copy" type="application/json">'+json.dumps(c,ensure_ascii=False).replace('<','\\u003c')+'</script>\n<script src="'+relative(path,'assets/js/site-search.js')+'?v=20261017" defer></script>\n</body>')

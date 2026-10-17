@@ -752,5 +752,16 @@
   "science_news_requires_explicit_approval": true,
   "approved_science_news": [],
   "editorial_reference_policy": "Hunting Laws and Bird Encyclopedia articles appear in their own category only, never headline cards, Updates or news ticker. Science & Discoveries appears only in its own desk by default; any placement in headlines, Updates or ticker must have a slug in approved_science_news, added following explicit Nayef approval.",
-  "memory_visible": false
+  "memory_visible": false,
+  "card_title_overrides": {
+    "الصيد-بين-الفوضى-والنظام-تجارب-الصي-3": {
+      "ar": "غسان نصّور في كندا: الصيد بين الفوضى والنظام"
+    },
+    "الصيد-بين-الفوضى-والنظام-تجارب-الصي-2": {
+      "ar": "غي محاسب في أميركا: الصيد بين الفوضى والنظام"
+    },
+    "الصيد-بين-الفوضى-والنظام-تجارب-الصي": {
+      "ar": "أمير دمج في السعودية: الصيد بين الفوضى والنظام"
+    }
+  }
 }

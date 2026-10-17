@@ -270,6 +270,9 @@ def refresh(path,lang):
             if override.get('fit'):item['fit']=override['fit']
             if override.get('cache_version'):item['image']+='?v='+override['cache_version']
         if ar in c.get('video_cards',{}):item['video_badge']=c['video_cards'][ar][lang]
+        # Explicit homepage identifiers do not rename published articles or archives.
+        title_override=c.get('card_title_overrides',{}).get(ar,{}).get(lang)
+        if title_override:item['title']=title_override
         item.pop('href',None)
         return slug,item
     stack='\n'.join(render_card(*data(s),stack=True) for s in c['ia_slots']['important'])

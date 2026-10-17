@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Search page, regeneration, exact chrome-only gate and archive invariants."""
-import hashlib, json, os, subprocess
+import hashlib, json, os, re, subprocess
 from pathlib import Path
 from unittest.mock import patch
 from lxml import html
@@ -20,6 +20,23 @@ def run():
         assert tree.xpath('//meta[@name="robots"]/@content')==['noindex,follow']
         assert not tree.xpath('//head/link[@hreflang]')
         assert len(tree.xpath('//nav[@class="lang-switch"]/a')) == 3
+        # Search resource hints and stylesheets must remain same-origin. Follow
+        # local CSS imports so an inherited font import cannot bypass this check.
+        assert not tree.xpath('//link[starts-with(@href,"http") and (@rel="stylesheet" or @rel="preconnect" or @rel="dns-prefetch" or @rel="preload")]')
+        pending = [((search.DOCS / href.lstrip('/')) if href.startswith('/') else (path.parent / href)).resolve()
+                   for href in (h.split('?', 1)[0] for h in tree.xpath('//link[@rel="stylesheet"]/@href'))]
+        checked = set()
+        while pending:
+            css_path = pending.pop()
+            if css_path in checked: continue
+            checked.add(css_path)
+            css = css_path.read_text()
+            refs = re.findall(r'url\(\s*[\"\']?([^\"\')\s]+)', css, re.I)
+            imports = re.findall(r'@import\s+[\"\']([^\"\']+)', css, re.I)
+            for ref in refs + imports:
+                assert not ref.startswith(('http:', 'https:', '//')), (css_path, ref)
+                if not ref.startswith(('data:', '#')) and (ref in imports or ref.split('?',1)[0].endswith('.css')):
+                    pending.append(((search.DOCS / ref.lstrip('/')) if ref.startswith('/') else (css_path.parent / ref)).resolve())
         assert tree.xpath('//meta[@name="referrer"]/@content')==['no-referrer']
         assert len(tree.xpath('//form[@role="search"]'))==1
         assert not tree.xpath('//form/@action | //input/@name')

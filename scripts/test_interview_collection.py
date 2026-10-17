@@ -54,6 +54,26 @@ class InterviewCollectionTests(unittest.TestCase):
             for slug in interviews.homepage_slugs(lang, self.config):
                 self.assertIn(homepage.local_slug(slug, lang), catalog)
 
+    def test_card_identifiers_preserve_order_and_article_headings(self):
+        base = 'الصيد-بين-الفوضى-والنظام-تجارب-الصي'
+        expected = [
+            (base+'-3', 'غسان نصّور في كندا: الصيد بين الفوضى والنظام'),
+            (base+'-2', 'غي محاسب في أميركا: الصيد بين الفوضى والنظام'),
+            (base, 'أمير دمج في السعودية: الصيد بين الفوضى والنظام'),
+        ]
+        page = html.parse(str(interviews.DOCS/'index.html'))
+        section = page.xpath('//section[contains(@class,"home-section")][.//h2[text()="مقابلات"]]')[0]
+        shown = section.xpath('.//article')
+        self.assertEqual([slug_of(html.tostring(n,encoding='unicode')) for n in shown],
+                         interviews.homepage_slugs('ar', self.config))
+        for card, (slug, title) in zip(shown[1:], expected):
+            self.assertEqual(card.xpath('.//h3/a')[0].text_content(), title)
+            self.assertEqual(self.config['card_title_overrides'][slug], {'ar':title})
+            self.assertIn('/Design.png', card.xpath('.//img/@src')[0])
+            article = html.parse(str(interviews.DOCS/'posts'/slug/'index.html'))
+            heading = article.xpath('//h1')[0].text_content()
+            self.assertEqual(heading, 'الصيد بين الفوضى والنظام – تجارب الصيادين اللبنانيين المغتربين')
+
     def test_rebased_card_links_exist(self):
         for lang, rows in self.sources.items():
             root = interviews.DOCS / (lang if lang != 'ar' else '')

@@ -3,7 +3,7 @@
 import base64,json
 from pathlib import Path
 from playwright.sync_api import sync_playwright,expect
-from test_merged_section_browser import server,capture
+from test_merged_section_browser import server
 ROOT=Path(__file__).resolve().parents[1]
 
 def run():
@@ -37,7 +37,10 @@ def run():
                     assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1')
                     assert '?' not in page.url and '#' not in page.url
                     assert page.locator('.search-result h2 a').first.get_attribute('href').startswith(url+'/')
-                    capture(page,page.locator('main'),out/f'search-{lang}-{width}.png')
+                    # Native-size viewport keeps controls and first results readable;
+                    # do not shrink the full twenty-result page into a thumbnail.
+                    page.locator('main').evaluate('(el) => window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY)')
+                    page.screenshot(path=str(out/f'search-{lang}-{width}.png'), full_page=False, animations='disabled', caret='hide')
                     query.fill('<img src=x onerror=alert(1)>');query.press('Enter');expect(page.locator('.search-result')).to_have_count(0)
                     assert not page.locator('#search-results img').count()
                     assert page.locator('#search-status').inner_text()==page.locator('#search-copy').evaluate('(e)=>JSON.parse(e.textContent).none')
@@ -65,8 +68,9 @@ def run():
             browser.close()
         assert not failures,failures
         for lang in ('ar','en','fr'):
-            path=out/f'search-{lang}-390.png'
-            print('SAYD_PNG_BEGIN '+path.name);print(base64.b64encode(path.read_bytes()).decode());print('SAYD_PNG_END '+path.name)
+            for width in (1440,390):
+                path=out/f'search-{lang}-{width}.png'
+                print('SAYD_PNG_BEGIN '+path.name);print(base64.b64encode(path.read_bytes()).decode());print('SAYD_PNG_END '+path.name)
         print('PASS: browser search at 1440/390/320, header geometry, scientific names, filters, hostile/empty query, rapid language switches, Back, privacy and retry')
     finally:srv.shutdown()
 if __name__=='__main__':run()

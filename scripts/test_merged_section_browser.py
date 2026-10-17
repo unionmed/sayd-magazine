@@ -24,7 +24,7 @@ def geometry(page):
       const rect = e => {const r=e.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}};
       return {overflow:document.documentElement.scrollWidth>innerWidth+1,
         navClass:nav.className,rows:[...new Set([...nav.querySelectorAll(':scope > a')].map(a=>Math.round(a.getBoundingClientRect().y)))].length,
-        links:[...nav.querySelectorAll(':scope > a')].map(a=>({text:a.textContent,rect:rect(a),font:getComputedStyle(a).fontSize,nowrap:getComputedStyle(a).whiteSpace})),
+        links:[...nav.querySelectorAll(':scope > a')].map(a=>({text:a.textContent,rect:rect(a),font:getComputedStyle(a).fontSize,nowrap:getComputedStyle(a).whiteSpace,contentFits:a.scrollWidth<=a.clientWidth+1&&a.scrollHeight<=a.clientHeight+1})),
         controls:[...document.querySelectorAll('.site-sticky .header-social a,.site-sticky .lang-switch a,.site-sticky .market-cta,.site-sticky .site-search-link')].filter(e=>e.getBoundingClientRect().width>0&&e.getBoundingClientRect().height>0).map(e=>({label:e.getAttribute('aria-label')||e.textContent,rect:rect(e)})),
         header:rect(document.querySelector('header.site-header')),
         brand:rect(document.querySelector('.brand')),market:document.querySelector('.market-cta')?rect(document.querySelector('.market-cta')):null};
@@ -46,9 +46,9 @@ def run(base,out):
     old_contract=json.loads(subprocess.check_output(['git','show',base+':content/publication-contract.json'],cwd=ROOT))
     current_contract=json.loads((ROOT/'content/publication-contract.json').read_text())
     for name,digest in old_contract['protected_files'].items():
-        # Only the explicitly approved marine archive filter script may differ.
-        # Baseline homepages do not load this category-only behavior.
-        expected=current_contract['protected_files'][name] if name in ('assets/js/combined-archive.js','docs/assets/js/combined-archive.js') else digest
+        # Only the approved marine filter and balanced mobile navigation may differ.
+        # The baseline request handler serves the original navigation stylesheet.
+        expected=current_contract['protected_files'][name] if name in ('assets/js/combined-archive.js','docs/assets/js/combined-archive.js','assets/css/section-navigation.css','docs/assets/css/section-navigation.css') else digest
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==expected,('Protected baseline asset changed',name)
     with tempfile.TemporaryDirectory() as temp:
         baseline=Path(temp)
@@ -66,7 +66,16 @@ def run(base,out):
             with sync_playwright() as p:
                 browser=p.chromium.launch(headless=True, executable_path=os.environ.get('PLAYWRIGHT_CHROMIUM_EXECUTABLE') or shutil.which('chromium') or None)
                 context=browser.new_context(device_scale_factor=1)
-                context.route('**/*',lambda route:route.continue_() if route.request.url.startswith((old_url+'/',new_url+'/')) else route.abort())
+                original_navigation_css=subprocess.check_output(['git','show',base+':docs/assets/css/section-navigation.css'],cwd=ROOT)
+                def route_local(request):
+                    url=request.request.url
+                    if url.startswith(old_url+'/') and urlsplit(url).path=='/assets/css/section-navigation.css':
+                        request.fulfill(status=200,content_type='text/css',body=original_navigation_css)
+                    elif url.startswith((old_url+'/',new_url+'/')):
+                        request.continue_()
+                    else:
+                        request.abort()
+                context.route('**/*',route_local)
                 page=context.new_page();before=context.new_page()
                 for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
                     for width in WIDTHS:
@@ -78,7 +87,7 @@ def run(base,out):
                         heritage={'ar':('تراث','فن وتراث'),'en':('Heritage','Art & Heritage'),'fr':('Patrimoine','Art et patrimoine')}[lang]
                         page.evaluate("([oldLabel,newLabel])=>document.querySelectorAll('nav a').forEach(a=>{if(a.textContent===oldLabel)a.textContent=newLabel})",heritage)
                         candidate=geometry(page)
-                        result['heritageCandidate']={'rows':candidate['rows'],'overflow':candidate['overflow'],'fits':not candidate['overflow'] and (width<=900 or candidate['rows']<=new['rows']) and all(x['nowrap']=='nowrap' for x in candidate['links'])}
+                        result['heritageCandidate']={'rows':candidate['rows'],'overflow':candidate['overflow'],'fits':not candidate['overflow'] and (width<=900 or candidate['rows']<=new['rows']) and (width<=900 or all(x['nowrap']=='nowrap' for x in candidate['links']))}
                         page.evaluate("([oldLabel,newLabel])=>document.querySelectorAll('nav a').forEach(a=>{if(a.textContent===newLabel)a.textContent=oldLabel})",heritage)
                         def require(condition,message):
                             if not condition:errors.append({'language':lang,'width':width,'error':message})
@@ -94,14 +103,25 @@ def run(base,out):
                                 require(not overlap,'Overlapping header controls: '+control['label']+' / '+other['label'])
 
                         require(len(new['links'])==10,'Exactly ten direct section links required')
-                        require(all(x['nowrap']=='nowrap' for x in new['links']),'A label can break inside words')
+                        if width>900:
+                            require(all(x['nowrap']=='nowrap' for x in new['links']),'Desktop label can break inside words')
                         require(new['links'][0]['text']=={'ar':'صيد وفروسية','en':'Hunting & Equestrian','fr':'Chasse et équitation'}[lang],'Combined title mismatch')
                         require(all(n['font']==o['font'] for n,o in zip(new['links'],old['links'])),'Navigation font size changed')
                         if width>900:
                             # Preserve existing row count: AR/EN one, French two.
                             require(new['rows']<=old['rows'],'Extra desktop section row')
                         else:
-                            require(new['rows']<=old['rows'],'Extra mobile section row')
+                            row_sizes=sorted(Counter(round(link['rect']['y']) for link in new['links']).values())
+                            require(new['rows']==2 and row_sizes==[5,5],'Mobile/tablet navigation must be two balanced rows of five')
+                            for i,link in enumerate(new['links']):
+                                r=link['rect']
+                                require(32<=r['height']<=96,'Mobile navigation cell height outside readable bounds')
+                                require(link['contentFits'],'Mobile navigation label overflows its cell')
+                                require(r['x']>=-1 and r['x']+r['width']<=width+1,'Mobile navigation cell outside viewport')
+                                for other in new['links'][i+1:]:
+                                    q=other['rect']
+                                    overlap=min(r['x']+r['width'],q['x']+q['width'])-max(r['x'],q['x'])>1 and min(r['y']+r['height'],q['y']+q['height'])-max(r['y'],q['y'])>1
+                                    require(not overlap,'Mobile navigation cells overlap')
                         brand,cta=new['brand'],new['market']
                         require(cta is not None,'Market CTA missing')
                         if cta:
@@ -112,13 +132,32 @@ def run(base,out):
                         require(page.locator('.memory-strip').count()==0,'Memory display remains')
                         interview_cards=page.locator('section.home-section').nth(1).locator('.home-door-grid > article')
                         require(interview_cards.count()==(4 if lang=='ar' else 1),'Interview collection count')
+                        interview_geometry=page.locator('section.home-section').nth(1).locator('.home-door-grid').evaluate("""grid => {
+                            const rect=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}};
+                            return {rail:rect(grid),scrollLeft:grid.scrollLeft,cards:[...grid.querySelectorAll(':scope > article')].map(card=>({rect:rect(card),href:card.querySelector('h3 a').getAttribute('href')}))};
+                        }""")
+                        result['interviews']=interview_geometry
+                        visual_cards=interview_geometry['cards']
+                        visual_order=sorted(range(len(visual_cards)),key=lambda i:(round(visual_cards[i]['rect']['y']),-visual_cards[i]['rect']['x'] if lang=='ar' else visual_cards[i]['rect']['x']))
+                        require(visual_order==list(range(len(visual_cards))),'Interview visual order differs from chronological card order')
+                        expected_interviews=current_contract['interviews']['homepage_slugs'][lang]
+                        from refresh_homepage_doors import local_slug
+                        actual_interviews=[unquote(urlsplit(card['href']).path).split('posts/')[-1].split('/')[0] for card in visual_cards]
+                        require(actual_interviews==[local_slug(slug,lang) for slug in expected_interviews],'Interview chronology/identity mismatch')
+                        if visual_cards:
+                            first=visual_cards[0]['rect'];rail=interview_geometry['rail']
+                            require(first['x']>=max(0,rail['x'])-1 and first['x']+first['width']<=min(width,rail['x']+rail['width'])+1,'Newest interview is not fully visible at the initial horizontal position')
+                            if lang=='ar':
+                                first_row=[card['rect']['x'] for card in visual_cards if abs(card['rect']['y']-first['y'])<2]
+                                require(first['x']==max(first_row),'Newest Arabic interview must be the rightmost card in its row')
+
                         # Eight cards use the unchanged grid: 2 x 4 on desktop.
                         cards=page.locator('section.home-section').first.locator('.home-door-grid > article')
                         require(cards.count()==8,'Combined homepage card count')
                         if width>=1000:
                             rects=[card.bounding_box() for card in cards.all()]
                             require(sorted(Counter(round(r['y']) for r in rects).values())==[4,4],'Desktop combined grid must be two rows of four')
-                        if width in (1440,390):
+                        if width in (1440,390,320):
                             path=out/f'header-{lang}-{width}.png';capture(page,page.locator('.site-sticky'),path);screens.append(path)
                             path=out/f'interviews-{lang}-{width}.png';capture(page,page.locator('section.home-section').nth(1),path);screens.append(path)
                             if lang=='ar' and width==1440:
@@ -161,7 +200,7 @@ def run(base,out):
             old_srv.shutdown();new_srv.shutdown()
             (out/'geometry.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
             (out/'errors.json').write_text(json.dumps(errors,ensure_ascii=False,indent=2))
-            budget=750_000
+            budget=3_000_000
             for path in screens:
                 data=base64.b64encode(path.read_bytes()).decode()
                 if len(data)<=budget:

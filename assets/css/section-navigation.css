@@ -47,3 +47,24 @@
     min-height: 2.5rem;
   }
 }
+/* Owner-approved balanced mobile/tablet navigation: two rows of five,
+   unchanged order and type size. Long translated labels wrap inside cells. */
+@media (max-width: 900px) {
+  .site-header .header-inner > .mobile-nav {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+    gap: .25rem .35rem;
+  }
+  .site-header .header-inner > .mobile-nav > a {
+    min-width: 0;
+    min-height: 3rem;
+    padding: .18rem .1rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+    text-align: center;
+  }
+}
