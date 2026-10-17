@@ -1,4 +1,0 @@
-.interview-share { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin: .75rem 0 1rem; }
-.interview-share a { overflow-wrap: anywhere; }
-.interview-share button { font: inherit; cursor: pointer; padding: .4rem .75rem; border: 1px solid currentColor; border-radius: .3rem; color: inherit; background: transparent; }
-.interview-share button:focus-visible, .interview-share a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }

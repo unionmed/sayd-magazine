@@ -196,6 +196,24 @@ def run(base,out):
                             path=out/f'interviews-{lang}-{width}.png';capture(page,page.locator('section.home-section').nth(1),path);screens.append(path)
                             if lang=='ar' and width==1440:
                                 path=out/'combined-ar-1440.png';capture(page,page.locator('section.home-section').first,path);screens.append(path)
+                    # Approved interview lead and body, in each language and viewport.
+                    for article_width in (390,1440):
+                        page.set_viewport_size({'width':article_width,'height':1000})
+                        page.goto(new_url+'/'+prefix+'index.html',wait_until='networkidle')
+                        lead=page.locator('.feature-lead[data-hero="shireen"]')
+                        require(lead.count()==1,'Approved Shireen main lead missing')
+                        require('shireen-monitoring-new.jpg' in lead.locator('img').get_attribute('src'),'Approved cover mismatch')
+                        path=out/f'shireen-home-{lang}-{article_width}.png';capture(page,lead,path);screens.insert(0,path)
+                        article=lead.locator('h2 a').get_attribute('href')
+                        page.goto(new_url+'/'+prefix+article,wait_until='networkidle')
+                        require(page.locator('article.article-content figure').count()==8,'Eight approved article photographs required')
+                        require(page.locator('.article-updated').count()==0,'New article must not inherit old update date')
+                        require(page.locator('.article-more').count()==1,'One related-reading section required')
+                        require(not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),'Interview horizontal overflow')
+                        for image in page.locator('article.article-content figure img').all():
+                            image.evaluate('(img)=>img.decode()')
+                            require(image.evaluate('(img)=>img.complete&&img.naturalWidth>0'),'Interview image failed')
+                        path=out/f'shireen-article-{lang}-{article_width}.png';page.screenshot(path=str(path));screens.insert(0,path)
                     # Collection cards must retain the same thumbnail/title layout,
                     # including legacy cards that previously emitted stray images.
                     collection=new_url+'/'+prefix+'category/'+__import__('urllib.parse',fromlist=['quote']).quote('مقابلات')+'/index.html'
@@ -203,7 +221,7 @@ def run(base,out):
                         page.set_viewport_size({'width':collection_width,'height':1000})
                         page.goto(collection,wait_until='networkidle')
                         rows=page.locator('main .post-list > article, main .home-door-grid > article')
-                        require(rows.count()==(69 if lang=='ar' else 1),'Collection count after exclusions')
+                        require(rows.count()==(70 if lang=='ar' else 2),'Collection count after exclusions')
                         for row in rows.all():
                             require(row.locator(':scope > img').count()==0,'Bare thumbnail outside anchor')
                             require(row.locator(':scope > a.thumb').count()<=1,'Duplicate thumb anchor')
@@ -260,6 +278,7 @@ def run(base,out):
             (out/'geometry.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
             (out/'errors.json').write_text(json.dumps(errors,ensure_ascii=False,indent=2))
             budget=3_000_000
+            screens.sort(key=lambda p:(0 if p.name.startswith('shireen-home-ar') else 1 if p.name.startswith('shireen-home-en') else 2 if p.name.startswith('shireen-article-ar') else 3 if p.name.startswith('shireen-article-en') else 4,p.name))
             for path in screens:
                 data=base64.b64encode(path.read_bytes()).decode()
                 if len(data)<=budget:

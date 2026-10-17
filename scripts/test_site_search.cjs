@@ -28,12 +28,12 @@ assert.equal(search(facets,'bird',{category:'Interviews'}).length,2);
 assert.equal(search(facets,'',{category:'Hunting & Equestrian'}).length,3);
 assert.equal(search(facets,'',{category:'Hunting & Equestrian · Interviews'}).length,0);
 const fs = require('node:fs');
-for (const [lang,label,total] of [['ar','مقابلات',69],['en','Interviews',1],['fr','Entretiens',1]]) {
+for (const [lang,label,total] of [['ar','مقابلات',70],['en','Interviews',2],['fr','Entretiens',2]]) {
  const data=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../docs/assets/search/index-'+lang+'.json')));
  const rows=data.articles.map(prepare);
  assert.equal(data.version,2);
  assert.equal(search(rows,'',{category:label}).length,total);
- assert.equal(search(rows,'CABS',{category:label,year:'2026'}).length,1);
+ assert.equal(search(rows,'CABS',{category:label,year:'2026'}).length,2);
  assert.equal(data.categories.length,11);
  assert(data.categories.every(value=>!value.includes(' · ')));
 }

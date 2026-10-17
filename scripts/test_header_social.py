@@ -53,7 +53,9 @@ def run(base=None):
         approved=add_approved_tiktok(before,lang)
         assert social.findall(approved)==social.findall(current),f'Non-approved social edit: {name}'
         if '/posts/' in name:
-            assert links(nav_replace(before,path)[0],path)==current,f'Non-approved article edit: {name}'
+            from sync_tickers import TICKER
+            # Shared ticker changes are validated separately by sync_tickers and the publication contract.
+            assert TICKER.sub('',links(nav_replace(before,path)[0],path))==TICKER.sub('',current),f'Non-approved article edit: {name}'
     # The additive helper cannot alter article/head bytes, even when creating a
     # previously absent group. Keep these fixtures independent of Git history.
     for lang in ('ar','en','fr'):
@@ -77,7 +79,7 @@ def run(base=None):
     generated=html.fromstring(apply('<div class="container mast-top-inner"></div>','fr'))
     assert generated.xpath('.//nav/@aria-label')==['Suivez Sayd']
     assert generated.xpath('.//nav/a/span/text()')==['Instagram','Facebook','YouTube','TikTok']
-    assert groups==1034 and headerless==820,(groups,headerless)
+    assert groups==1037 and headerless==823,(groups,headerless)
     print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact chrome-only changes, Alexandra shown once under Interviews with original URLs')
 
 if __name__=='__main__':run()

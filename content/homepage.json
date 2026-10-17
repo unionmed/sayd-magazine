@@ -1,21 +1,21 @@
 {
   "memory_after_door": "science",
   "featured": [
+    "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
     "طيور-في-الحقائب-تهريب-الطيور-2026",
     "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
     "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
-    "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
+    "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
   ],
   "latest": [
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "ختام-الملواح-2026-60-فائزا",
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
+    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
     "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "أسلحة-الصيد-في-معرض-الرياض-2026",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-    "رادار-صيد-العربي-سبتمبر-2026",
-    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات"
+    "رادار-صيد-العربي-سبتمبر-2026"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -273,22 +273,22 @@
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
-    "main": "طيور-في-الحقائب-تهريب-الطيور-2026",
+    "main": "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
     "important": [
+      "طيور-في-الحقائب-تهريب-الطيور-2026",
       "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
       "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
-      "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-      "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
+      "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
     ],
     "latest": [
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
       "ختام-الملواح-2026-60-فائزا",
       "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
+      "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
       "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "أسلحة-الصيد-في-معرض-الرياض-2026",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-      "رادار-صيد-العربي-سبتمبر-2026",
-      "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات"
+      "رادار-صيد-العربي-سبتمبر-2026"
     ]
   },
   "ia_door_sections": [
@@ -432,7 +432,8 @@
     "قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات": "laws",
     "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد": "laws",
     "الرياض-تستعيد-صهيلها-موسم-السباقات-2026": "equestrian",
-    "طيور-في-الحقائب-تهريب-الطيور-2026": "hunting"
+    "طيور-في-الحقائب-تهريب-الطيور-2026": "hunting",
+    "شيرين-بو-رفول-مكافحة-الصيد-الجائر": "interviews"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -451,6 +452,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
     "طيور-في-الحقائب-تهريب-الطيور-2026",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
@@ -632,11 +634,28 @@
         "en": "A sparrowhawk inside a backpack during an anti-poaching operation in Akkar, October 2026.",
         "fr": "Un épervier dans un sac à dos lors d’une opération de lutte contre le braconnage à Akkar, en octobre 2026."
       }
+    },
+    "شيرين-بو-رفول-مكافحة-الصيد-الجائر": {
+      "image": "media/uploads/2026/10/shireen-monitoring-new.jpg",
+      "position": "50% 30%",
+      "alt": {
+        "ar": "شيرين بو رفول خلال رصد مخالفات الصيد.",
+        "en": "Shireen Bou Rafoul monitoring hunting violations.",
+        "fr": "Shireen Bou Rafoul lors du repérage d’infractions à la chasse."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
+      "titles": {
+        "ar": "شيرين بو رفول لـ«صيد»: أحبّ الصيد، لكنني أختار مكافحة المخالفات وإنقاذ الطيور.",
+        "en": "Shireen Bou Rafoul tells Sayd: I love hunting, but I choose to fight violations and rescue birds.",
+        "fr": "Shireen Bou Rafoul à Sayd : j’aime la chasse, mais je choisis de lutter contre les infractions et de sauver les oiseaux."
+      }
+    },
     {
       "slug": "طيور-في-الحقائب-تهريب-الطيور-2026",
       "titles": {

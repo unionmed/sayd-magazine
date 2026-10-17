@@ -34,8 +34,25 @@ def test_rotation():
 def test_preserved(base):
     old_config=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT))
     current=config()
-    for key in ('featured','latest','ia_slots','ticker_slugs','ticker_entries','card_image_overrides','primary_door','memory_after_door'):
-        assert old_config[key]==current[key],key
+    approved_interview = current['ia_slots']['main']=='شيرين-بو-رفول-مكافحة-الصيد-الجائر' and old_config['ia_slots']['main']!=current['ia_slots']['main']
+    if approved_interview:
+        from homepage_demotion import demote_side_cards
+        expected_config=deepcopy(old_config)
+        lead=current['ia_slots']['main']
+        expected_config['ia_slots']['main']=lead
+        expected_config['ia_slots']['important']=[old_config['ia_slots']['main']]+old_config['ia_slots']['important'][:3]
+        expected_config['featured']=[lead]+expected_config['ia_slots']['important']
+        demote_side_cards(expected_config,old_config['ia_slots']['important'])
+        for key in ('featured','latest','ia_slots'):assert current[key]==expected_config[key],key
+        assert current['ticker_slugs']==[lead]+old_config['ticker_slugs']
+        assert current['ticker_entries'][1:]==old_config['ticker_entries']
+        assert {k:v for k,v in current['primary_door'].items() if k!=lead}==old_config['primary_door']
+        assert current['primary_door'][lead]=='interviews'
+        assert {k:v for k,v in current['card_image_overrides'].items() if k!=lead}==old_config['card_image_overrides']
+    else:
+        for key in ('featured','latest','ia_slots','ticker_slugs','ticker_entries','card_image_overrides','primary_door','memory_after_door'):
+            assert old_config[key]==current[key],key
+    assert current['memory_after_door']==old_config['memory_after_door']
     assert current['memory_visible'] is False
     # Interviews is an independently reviewed chronological collection; its
     # owner-approved selection may change without changing unrelated doors.
@@ -60,7 +77,7 @@ def test_preserved(base):
             label={'ar':{'hunting':'صيد','equestrian':'فروسية'},'en':{'hunting':'Hunting','equestrian':'Equestrian'},'fr':{'hunting':'Chasse','equestrian':'Équitation'}}[lang][topic]
             assert row.xpath('.//*[@class="card-topic"]/text()')==[' · '+label]
             assert local_slug(slug,lang) in row.xpath('.//h3/a/@href')[0]
-        for cls in ('feature-lead','feature-stack','latest-col','sayd-tv','ticker'):
+        for cls in (('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
             xp='//*[contains(concat(" ",normalize-space(@class)," ")," '+cls+' ")]'
             def canonical(n):return html.tostring(n,encoding='unicode',with_tail=False)
             assert [canonical(n) for n in before.xpath(xp)]==[canonical(n) for n in after.xpath(xp)],(lang,cls)
@@ -70,10 +87,15 @@ def test_preserved(base):
     from rollout_mobile_nav_heritage_20261015 import nav_replace
     for rel in changed:
         if '/posts/' not in rel or not rel.endswith('.html'):continue
+        if approved_interview and any('/posts/'+slug+'/' in rel for slug in ('شيرين-بو-رفول-مكافحة-الصيد-الجائر','shireen-bou-rafoul-anti-poaching-interview')):continue
         prior=subprocess.check_output(['git','show',base+':'+rel],cwd=ROOT).decode()
         transformed,_=nav_replace(prior,ROOT/rel)
         from build_site_search import links as search_links
-        assert search_links(transformed,ROOT/rel)==(ROOT/rel).read_text(),rel
+        current_article=(ROOT/rel).read_text()
+        if approved_interview:
+            from sync_tickers import TICKER
+            assert TICKER.sub('',search_links(transformed,ROOT/rel))==TICKER.sub('',current_article),rel
+        else:assert search_links(transformed,ROOT/rel)==current_article,rel
     print('PASS: eight chronological mixed cards, no quota, preserved upper slots, other doors, TV, article content and legacy URLs')
 
 if __name__=='__main__':
