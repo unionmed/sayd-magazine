@@ -139,6 +139,10 @@ for lang in ('ar','en','fr'):
 for lang in ('ar','en','fr'):
  path=DOCS/('' if lang=='ar' else lang)/'posts'/(AR if lang=='ar' else EN)/'index.html'
  save(path,apply_html(path.read_text(),path,DOCS,path.relative_to(DOCS),load_twins(DOCS)))
+from rollout_mobile_nav_heritage_20261015 import nav_replace
+for lang in ('ar','en','fr'):
+ page=DOCS/('' if lang=='ar' else lang)/'posts'/(AR if lang=='ar' else EN)/'index.html'
+ save(page,nav_replace(page.read_text(),page)[0])
 import hashlib
 p=ROOT/'audit/image-catalog/manifest/2026-01.tsv';rows=p.read_text().splitlines()
 for image in IMAGES:
