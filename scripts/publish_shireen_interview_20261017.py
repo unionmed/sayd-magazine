@@ -150,4 +150,6 @@ for image in IMAGES:
  row=key+'\t'+hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()+'\t'+str(len(data))
  rows=[x for x in rows if not x.startswith(key+'\t')]+[row]
 save(p,'\n'.join(rows[:1]+sorted(rows[1:],key=lambda x:x.split('\t')[0]))+'\n')
+from build_site_search import main as normalize_search_chrome
+normalize_search_chrome()
 print('Prepared approved Shireen interview in three mirrors and main lead; previous lead demoted.')
