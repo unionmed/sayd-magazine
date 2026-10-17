@@ -150,11 +150,12 @@ def run(base,out):
                             require(cta['height']>=44,'Market touch target below 44 pixels')
                             search_box=page.locator('.site-search-link').bounding_box()
                             require(search_box['width']>=44 and search_box['height']>=44,'Search touch target below 44 pixels')
-                            require(page.locator('.site-search-link svg').bounding_box()['width']==16,'Compact search icon')
+                            require(page.locator('.site-search-link svg').bounding_box()['width']==12,'Compact search icon')
                             for selector in ('.market-cta','.site-search-link'):
-                                require(page.locator(selector).evaluate("e=>getComputedStyle(e,'::before').top")=='6px','Compact visible button inset')
+                                require(page.locator(selector).evaluate("e=>getComputedStyle(e,'::before').top")=='11px','Language-size visible button inset')
                             require(cta['width']<old['market']['width'],'Market entry did not become more compact')
-                            require(cta['width']>=old['market']['width']*.75,'Market entry shrunk excessively')
+                            require(page.locator('.market-cta').evaluate('e=>getComputedStyle(e).fontSize')==page.locator('.lang-switch').evaluate('e=>getComputedStyle(e).fontSize'),'Market type matches language selector')
+                            require(page.locator('.lang-switch a').first.bounding_box()['height']==22,'Language selector reference height')
                         require(cta is not None,'Market CTA missing')
                         if cta:
                             require(abs(brand['y']+brand['height']/2-cta['y']-cta['height']/2)<=3,'Brand/market not aligned on one row')
