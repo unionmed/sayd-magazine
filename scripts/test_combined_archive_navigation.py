@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import tempfile
 from pathlib import Path
+from unittest.mock import patch
 from urllib.parse import unquote, urlsplit
 
 from lxml import html
@@ -40,7 +41,7 @@ def test_archives_keep_every_published_card():
         by_slug = {archive.slug_of(row): row for row in rows}
         assert len(rows) == len(by_slug), (lang, 'duplicate story')
         original = archive.cards(source_file(page)) + archive.cards(source_file(legacy))
-        assert set(by_slug) == {archive.slug_of(row) for row in original}, lang
+        assert set(by_slug) == {archive.slug_of(row) for row in original} | set(archive.marine_registry(lang)), lang
         for row in original:
             # Card text, original publication date and selected photo are exact.
             assert by_slug[archive.slug_of(row)] == row, (lang, archive.slug_of(row))
@@ -52,8 +53,10 @@ def test_archives_keep_every_published_card():
         assert old_equestrian <= set(data['equestrian']) <= set(by_slug)
         controls = tree.xpath('//div[@class="archive-filters"]')[0]
         assert controls.get('hidden') is not None
-        assert controls.xpath('./button/@data-archive-filter') == ['all', 'hunting', 'equestrian']
-        assert controls.xpath('./button/@aria-pressed') == ['true', 'false', 'false']
+        assert controls.xpath('./button/@data-archive-filter') == ['all', 'hunting'] + (['marine'] if data['marine'] else []) + ['equestrian']
+        assert set(data['marine']) == set(archive.marine_registry(lang))
+        assert set(data['landMarine']) == {s for s,r in archive.marine_registry(lang).items() if r['land_also']}
+        assert controls.xpath('./button/@aria-pressed') == ['true'] + ['false'] * (len(controls)-1)
         assert not tree.xpath('//main//article[@hidden]'), 'No-JS archive must show every story'
         for row in tree.xpath('//main//article'):
             for href in row.xpath('.//a/@href'):
@@ -65,6 +68,9 @@ def test_archives_keep_every_published_card():
 
 def test_sync_idempotence_and_new_legacy_publication():
     saved_docs = archive.DOCS
+    actual_marine = {lang:archive.marine_cards(lang) for lang in ('ar','en','fr')}
+    saved_marine_cards = archive.marine_cards
+    archive.marine_cards = lambda lang: actual_marine[lang]
     try:
         with tempfile.TemporaryDirectory() as temp:
             archive.DOCS = Path(temp)
@@ -93,6 +99,7 @@ def test_sync_idempotence_and_new_legacy_publication():
             assert archive.slug_of(archive.cards(combined.read_text())[0]) == 'future-equestrian-test'
     finally:
         archive.DOCS = saved_docs
+        archive.marine_cards = saved_marine_cards
 
 
 def test_navigation_and_market_across_all_pages():
@@ -147,4 +154,4 @@ if __name__ == '__main__':
     test_sync_idempotence_and_new_legacy_publication()
     test_navigation_and_market_across_all_pages()
     test_transform_preserves_article_body_head_and_legacy_children()
-    print('PASS: combined archives retain content, regenerate durably, and use scoped nine-door navigation.')
+    print('PASS: combined archives retain content, regenerate durably, and use scoped ten-door navigation.')

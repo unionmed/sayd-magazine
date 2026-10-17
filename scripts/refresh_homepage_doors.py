@@ -2,7 +2,7 @@
 """Render approved homepage slots without rewriting article pages.
 
 content/homepage.json is the single placement source. Preserve current lead,
-translations, chrome, memory and imagery; fail instead of silently dropping a
+translations, chrome and imagery; fail instead of silently dropping a
 missing story. Historical publisher scripts must not repin these slots.
 """
 import html
@@ -18,9 +18,10 @@ DOCS = ROOT / 'docs'
 CONFIG = ROOT / 'content/homepage.json'
 DOORS = [
  ('hunting','صيد وفروسية','Hunting & Equestrian','Chasse et équitation','صيد'),
+ ('interviews','مقابلات','Interviews','Entretiens','مقابلات'),
  ('gear','رماية وعتاد','Shooting & Gear','Tir et équipement','عتاد-وسلاح-الصيد'),
- ('wildlife','برية وتخييم','Wildlife & Camping','Faune et camping','حياة-برية-وتخييم'),
- ('science','علوم واكتشافات','Science & Discoveries','Sciences et découvertes','علوم-واكتشافات'),
+ ('wildlife','بر وبحر','Land & Sea','Terre et mer','حياة-برية-وتخييم'),
+ ('science','علوم','Science','Sciences','علوم-واكتشافات'),
  ('poetry','تراث','Heritage','Patrimoine','ثقافة-وتراث'),
  ('tv','صيد TV','Sayd TV','Sayd TV','استديو-صيد'),
  ('photos','صور','Photos','Photos','صور'),
@@ -150,7 +151,9 @@ def validate_news_selection(c):
 
 
 def validate_config(c):
-    assert c['memory_after_door'] == 'science', 'Memory follows Science & Discoveries'
+    assert c.get('memory_visible') is False, 'Memory display must remain retired'
+    from interview_collection import homepage_slugs
+    assert next(d['slugs'] for d in c['ia_door_sections'] if d['door']=='interviews') == homepage_slugs('ar',c)
     assert len(c['featured'])==5 and len(c['latest'])==8, 'Require one lead, four side cards and eight Updates'
     assert c['featured']==[c['ia_slots']['main']]+c['ia_slots']['important']
     assert c['latest']==c['ia_slots']['latest']
@@ -174,8 +177,7 @@ def ensure_science_section(page, lang):
     A missing feature image is handled by data()'s existing fail-closed check,
     never replaced with a generic placeholder or remote hotlink.
     """
-    headings = {'ar': 'علوم واكتشافات', 'en': 'Science & Discoveries',
-                'fr': 'Sciences et découvertes'}
+    headings = {'ar': 'علوم', 'en': 'Science', 'fr': 'Sciences'}
     heading = headings[lang]
     existing = re.findall(r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(html.escape(heading)) + r'</h2>', page)
     if len(existing) > 1:
@@ -196,20 +198,37 @@ def ensure_science_section(page, lang):
     return page[:cut] + block.replace('\\n', '\n') + page[cut:]
 
 
-def place_memory(page, lang, after_door):
-    """Move the whole existing strip, without re-rendering its cards or chrome."""
-    memories = list(re.finditer(r'^[ \t]*<section class="memory-strip".*?</section>\n?', page, re.S | re.M))
-    if len(memories) != 1 or page.count('<section class="memory-strip"') != 1:
-        raise ValueError(f'{lang}: expected exactly one memory section')
-    memory = memories[0]
-    block = memory[0]
-    page = page[:memory.start()] + page[memory.end():]
-    door = next(d for d in DOORS if d[0] == after_door)
-    heading = html.escape(door[{'ar': 1, 'en': 2, 'fr': 3}[lang]])
-    target = re.search(r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(heading) + r'</h2>.*?</section>\n?', page, re.S)
+def remove_memory(page):
+    """Retire the homepage strip only; its articles and archive routes survive."""
+    return re.sub(r'^[ \t]*<section class="memory-strip".*?</section>\n?', '', page, flags=re.S | re.M)
+
+
+def ensure_interviews_section(page, lang):
+    heading = {'ar':'مقابلات','en':'Interviews','fr':'Entretiens'}[lang]
+    pattern = r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(heading) + r'</h2>.*?</section>\n?'
+    # Reinsert after hunting to enforce ordering and make repeat refreshes stable.
+    page = re.sub(pattern, '', page, flags=re.S)
+    hunting = html.escape(DOORS[0][{'ar':1,'en':2,'fr':3}[lang]])
+    target = re.search(r'<section class="home-section">\s*<div class="section-head[^>]*">\s*<h2>' + re.escape(hunting) + r'</h2>.*?</section>\n?', page, re.S)
     if not target:
-        raise ValueError(f'{lang}: missing memory placement target {after_door}')
+        raise ValueError(f'{lang}: missing hunting section for interview placement')
+    more = {'ar':'المزيد','en':'More','fr':'Voir plus'}[lang]
+    block = ('<section class="home-section">\n<div class="section-head"><h2>'+heading+
+             '</h2><a href="category/مقابلات/index.html">'+more+
+             '</a></div>\n<div class="home-door-grid"></div>\n</section>\n')
     return page[:target.end()] + block + page[target.end():]
+
+
+def rename_sections(page, lang):
+    names = {
+        'ar': {'برية وتخييم':'بر وبحر','الحياة البرية والتخييم':'بر وبحر','علوم واكتشافات':'علوم'},
+        'en': {'Wildlife & Camping':'Land & Sea','Science & Discoveries':'Science'},
+        'fr': {'Faune et camping':'Terre et mer','Sciences et découvertes':'Sciences'},
+    }[lang]
+    for old, new in names.items():
+        page = page.replace('<h2>'+html.escape(old)+'</h2>', '<h2>'+html.escape(new)+'</h2>')
+    return page
+
 
 def merge_hunting_section(page, lang):
     """Retain the existing hunting section style and remove only its sibling desk."""
@@ -261,7 +280,9 @@ def refresh(path,lang):
     page=pre+'<div class="feature-stack">\n'+stack+wrappers+'<div class="latest-col">'+post
     page=re.sub(r'(<ul class="latest-feed">).*?(</ul>)',lambda m:m[1]+'\n'+'\n'.join(render_li(*data(s)) for s in c['latest'])+'\n'+m[2],page,count=1,flags=re.S)
     page=merge_hunting_section(page,lang)
+    page=rename_sections(page,lang)
     page=ensure_science_section(page,lang)
+    page=ensure_interviews_section(page,lang)
     sections={d['door']:d['slugs'] for d in c['ia_door_sections']}
     for door,ar,en,fr,_ in DOORS:
         heading={'ar':ar,'en':en,'fr':fr}[lang]
@@ -284,7 +305,11 @@ def refresh(path,lang):
             continue
         pattern=r'(<section class="home-section(?: sayd-tv)?">\s*<div class="section-head[^>]*">\s*<h2>'+re.escape(html.escape(heading))+r'</h2>.*?<div class="home-door-grid">).*?(</div>\s*</section>)'
         rendered=[]
-        for s in sections[door]:
+        selected=sections[door]
+        if door=='interviews':
+            from interview_collection import homepage_slugs
+            selected=homepage_slugs(lang,c)
+        for s in selected:
             slug,item=data(s)
             if door=='hunting':
                 topic='equestrian' if c['primary_door'].get(s)=='equestrian' else 'hunting'
@@ -309,7 +334,7 @@ def refresh(path,lang):
     page=re.sub(r'(<div class="ticker"(?: aria-hidden="true")?>).*?(</div>)',lambda m:m[1]+ticker+m[2],page,flags=re.S)
     # Normalize wrapper whitespace for a stable second refresh.
     page=re.sub(r'(</article>)\s*(</div>\s*</div>\s*</div>\s*</div>\s*<div class="latest-col">)',r'\1\n          </div>\n          </div>\n        </div>\n      </div>\n      <div class="latest-col">',page)
-    page=place_memory(page,lang,c['memory_after_door'])
+    page=remove_memory(page)
     page=re.sub(r'(assets/css/home-doors\.css)\?[^"\s]+', r'\1?v=20261012-memory-order', page)
     path.write_text(page)
     return page
@@ -317,8 +342,13 @@ def refresh(path,lang):
 def main():
     from merge_hunting_equestrian import sync_archive
     sync_archive()
+    from interview_collection import sync_selection, sync_archives
+    sync_selection()
     from homepage_hunting_rotation import sync
     sync()
+    sync_archives()
+    from apply_approved_taxonomy import sync_land_sea_archive
+    sync_land_sea_archive()
     for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:refresh(DOCS/prefix/'index.html',lang)
     from sync_tickers import sync as sync_tickers
     sync_tickers(DOCS)
@@ -329,6 +359,8 @@ def main():
     generate_short_links(DOCS)
     from refresh_related_reading import main as refresh_reading
     refresh_reading()
+    from build_site_search import main as refresh_search
+    refresh_search()
     print('Restored one lead + four side cards, eight Updates, approved desks and 3 channel + 3 selection TV cards in AR/EN/FR.')
 
 if __name__=='__main__':main()
