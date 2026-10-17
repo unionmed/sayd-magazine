@@ -289,6 +289,8 @@ def public_url(rel: Path) -> str:
 
 def canonical_rel(rel: Path) -> Path:
     """page-1.html repeats index.html; one canonical URL for that listing."""
+    if rel.as_posix() in {"interviews/index.html", "en/interviews/index.html", "fr/interviews/index.html"}:
+        return rel.parent.parent / "category/مقابلات/index.html"
     if rel.name == "page-1.html":
         return rel.with_name("index.html")
     return rel
@@ -465,6 +467,8 @@ def is_numeric_permalink_stub(rel: Path) -> bool:
 
 def in_sitemap(rel: Path) -> bool:
     posix = rel.as_posix()
+    if canonical_rel(rel) != rel:
+        return False
     if rel.name != "index.html":
         return False
     if posix in SITEMAP_SKIP or posix in ALIAS_REDIRECTS or posix in CANCELLED_SHELLS:

@@ -79,7 +79,7 @@ def run(base=None):
     generated=html.fromstring(apply('<div class="container mast-top-inner"></div>','fr'))
     assert generated.xpath('.//nav/@aria-label')==['Suivez Sayd']
     assert generated.xpath('.//nav/a/span/text()')==['Instagram','Facebook','YouTube','TikTok']
-    assert groups==1034 and headerless==823,(groups,headerless)
+    assert groups==1037 and headerless==823,(groups,headerless)
     print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact chrome-only changes, Alexandra shown once under Interviews with original URLs')
 
 if __name__=='__main__':run()

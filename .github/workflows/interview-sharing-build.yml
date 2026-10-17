@@ -1,0 +1,35 @@
+name: Build approved interview sharing links
+on:
+  push:
+    branches: [feature/article-short-links-20261017]
+permissions:
+  contents: write
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[interview-sharing-built]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - name: Generate only approved friendly collection outputs
+        run: |
+          python scripts/build_interview_sharing.py
+          python scripts/test_interview_sharing.py
+          node scripts/test_interview_share_button.cjs
+          python scripts/check_publication_contract.py --base origin/main
+          python scripts/test_homepage_doors.py
+          python scripts/test_interview_collection.py
+      - name: Commit verified outputs to review branch
+        run: |
+          git config user.name 'Sayd website quality checks'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build approved interview sharing views [interview-sharing-built]'
+            git push origin HEAD:feature/article-short-links-20261017
+          fi

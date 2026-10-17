@@ -339,6 +339,8 @@ def refresh(path,lang):
     page=re.sub(r'(</article>)\s*(</div>\s*</div>\s*</div>\s*</div>\s*<div class="latest-col">)',r'\1\n          </div>\n          </div>\n        </div>\n      </div>\n      <div class="latest-col">',page)
     page=remove_memory(page)
     page=re.sub(r'(assets/css/home-doors\.css)\?[^"\s]+', r'\1?v=20261012-memory-order', page)
+    from interview_sharing import friendly_navigation
+    page = friendly_navigation(page, lang)
     path.write_text(page)
     return page
 
