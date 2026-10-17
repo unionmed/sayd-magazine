@@ -90,6 +90,9 @@ def combined_category_links(text, path):
         fragment='#equestrian' if folder=='فروسية' or href[1].endswith('#equestrian') else ''
         target=href[1][:category.start(2)]+dest+category[3]+fragment
         markup=markup[:href.start(1)]+target+markup[href.end(1):]
+        # Archive-entry actions are not category-name labels.
+        if re.search(r'>(?:المزيد|More|Voir plus)</a>$',markup):
+            return markup
         # Only a textual category label, never an image, card, or editorial title.
         return re.sub(r'(?<=>)[^<]*(?=</a>$)',lambda _:title,markup)
     pieces=re.split(r'(<article\b[^>]*class="article-content"[^>]*>.*?</article>)',text,flags=re.S)
