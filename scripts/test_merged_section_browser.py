@@ -126,7 +126,7 @@ def run(base,out):
                             require(new['rows']<=old['rows'],'Extra desktop section row')
                         else:
                             row_sizes=sorted(Counter(round(link['rect']['y']) for link in new['links']).values())
-                            expected_rows=[3,3,4] if lang in ('en','fr') and width<=360 else [5,5]
+                            expected_rows=[3,3,4] if (lang=='en' and width<=360) or (lang=='fr' and width<=500) else [5,5]
                             require(new['rows']==len(expected_rows) and row_sizes==expected_rows,'Mobile/tablet navigation must use the approved balanced rows')
                             for i,link in enumerate(new['links']):
                                 r=link['rect']

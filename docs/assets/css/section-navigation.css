@@ -93,3 +93,17 @@
     grid-column: span 3;
   }
 }
+
+/* French labels require the three-row phone layout through 500px. */
+@media (max-width: 500px) {
+  html[lang="fr"] .site-header .header-inner > .mobile-nav {
+    grid-template-columns: repeat(12, minmax(min-content, 1fr));
+    column-gap: .2rem;
+  }
+  html[lang="fr"] .site-header .header-inner > .mobile-nav > a {
+    grid-column: span 4;
+  }
+  html[lang="fr"] .site-header .header-inner > .mobile-nav > a:nth-child(-n+4) {
+    grid-column: span 3;
+  }
+}
