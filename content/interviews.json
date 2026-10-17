@@ -14,30 +14,6 @@
       }
     },
     {
-      "slug": "الصيد-بين-الفوضى-والنظام-تجارب-الصي-3",
-      "published_at": "2024-12-10",
-      "reviewed_as": "interview",
-      "languages": {
-        "ar": "الصيد-بين-الفوضى-والنظام-تجارب-الصي-3"
-      }
-    },
-    {
-      "slug": "الصيد-بين-الفوضى-والنظام-تجارب-الصي-2",
-      "published_at": "2024-10-14",
-      "reviewed_as": "interview",
-      "languages": {
-        "ar": "الصيد-بين-الفوضى-والنظام-تجارب-الصي-2"
-      }
-    },
-    {
-      "slug": "الصيد-بين-الفوضى-والنظام-تجارب-الصي",
-      "published_at": "2024-09-10",
-      "reviewed_as": "interview",
-      "languages": {
-        "ar": "الصيد-بين-الفوضى-والنظام-تجارب-الصي"
-      }
-    },
-    {
       "slug": "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي",
       "published_at": "2024-02-21",
       "reviewed_as": "interview",
@@ -491,7 +467,9 @@
       "reviewed_as": "interview",
       "languages": {
         "ar": "153"
-      }
+      },
+      "image_status": "original_missing",
+      "original_image": "media/uploads/2014/09/MED-136809848235-759-17.jpg"
     },
     {
       "slug": "الصيادة-الأميركية-لاريسا-سويتلك-لـصي",
@@ -580,6 +558,20 @@
       "languages": {
         "ar": "المصور-الخالدي-دوّنت-تاريخ-الشيخ-زايد"
       }
+    }
+  ],
+  "excluded_from_collection": [
+    {
+      "slug": "الصيد-بين-الفوضى-والنظام-تجارب-الصي-3",
+      "reason": "Owner excluded expatriate-hunter series from interview collection on 2026-10-17; article and archive retained."
+    },
+    {
+      "slug": "الصيد-بين-الفوضى-والنظام-تجارب-الصي-2",
+      "reason": "Owner excluded expatriate-hunter series from interview collection on 2026-10-17; article and archive retained."
+    },
+    {
+      "slug": "الصيد-بين-الفوضى-والنظام-تجارب-الصي",
+      "reason": "Owner excluded expatriate-hunter series from interview collection on 2026-10-17; article and archive retained."
     }
   ]
 }

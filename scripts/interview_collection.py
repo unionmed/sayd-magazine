@@ -96,19 +96,39 @@ def source_cards(lang):
                 if url.fragment: relative += '#' + url.fragment
                 return match[1] + html.escape(relative, quote=True) + match[3]
             relocated = re.sub(r'((?:href|src)=")([^"]+)(")', relocate, card)
-            if not dom.fromstring(relocated).xpath('.//img[@src]'):
-                # Old listings omitted thumbnails even when the article retained
-                # its own featured image. Reuse only that verified local image.
-                featured = article_tree.xpath('//meta[@property="og:image"]/@content')
-                if featured:
-                    image_url = urlsplit(featured[0])
-                    image_file = DOCS / unquote(image_url.path).lstrip('/')
-                    if image_url.netloc in ('', 'sayd-magazine.com', 'www.sayd-magazine.com') and image_file.is_file() and '/media/uploads/' in image_url.path:
-                        node = dom.fromstring(relocated)
-                        title_node = node.xpath('.//h2/a | .//h3/a')[0]
-                        image = os.path.relpath(image_file, target_parent)
-                        thumb = '<a class="thumb" href="'+html.escape(title_node.get('href'),quote=True)+'"><img src="'+html.escape(image,quote=True)+'" alt="'+html.escape(title_node.text_content(),quote=True)+'" loading="lazy"></a>'
-                        relocated = re.sub(r'(<article\b[^>]*>)', lambda m:m[1]+thumb, relocated, count=1)
+            node = dom.fromstring(relocated)
+            title_node = node.xpath('.//h2/a | .//h3/a')[0]
+            title = title_node.text_content().strip()
+            href = title_node.get('href')
+            # Rebuild the small archive card, never copy malformed legacy markup.
+            # Explicit approved portraits win; then the source thumbnail, then
+            # the article's own locally archived featured image.
+            candidates = ([row['image']] if row.get('image') else [])
+            candidates += node.xpath('.//img/@src')
+            candidates += article_tree.xpath('//meta[@property="og:image"]/@content')
+            image_file = None
+            for value in candidates:
+                url = urlsplit(value)
+                if url.netloc not in ('', 'sayd-magazine.com', 'www.sayd-magazine.com'):
+                    continue
+                clean = unquote(url.path)
+                candidate = (DOCS / clean.lstrip('/') if clean.startswith('/') else target_parent / clean).resolve()
+                media_root = (DOCS / 'media').resolve()
+                if candidate.is_relative_to(media_root) and candidate.is_file():
+                    image_file = candidate
+                    break
+            thumb = ''
+            if image_file:
+                image = os.path.relpath(image_file, target_parent)
+                thumb = '<a class="thumb" href="'+html.escape(href,quote=True)+'"><img src="'+html.escape(image,quote=True)+'" alt="'+html.escape(title,quote=True)+'" loading="lazy"></a>'
+            meta_nodes = node.xpath('.//div[@class="meta"]')
+            excerpt_nodes = node.xpath('.//p[@class="excerpt"]')
+            meta = meta_nodes[0].text_content().strip() if meta_nodes else ''
+            excerpt = excerpt_nodes[0].text_content().strip() if excerpt_nodes else ''
+            relocated = ('<article class="post-row">'+thumb+'<div class="body">'
+                         '<h2><a href="'+html.escape(href,quote=True)+'">'+html.escape(title)+'</a></h2>'
+                         '<div class="meta">'+html.escape(meta)+'</div>'
+                         '<p class="excerpt">'+html.escape(excerpt)+'</p></div></article>')
             found[slug] = relocated
     assert wanted.keys() <= found.keys(), f'Missing published interview cards: {wanted.keys() - found.keys()}'
     return [found[r['languages'][lang]] for r in selected]
