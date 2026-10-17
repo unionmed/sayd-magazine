@@ -80,11 +80,14 @@ def run(base,out):
             with sync_playwright() as p:
                 browser=p.chromium.launch(headless=True, executable_path=os.environ.get('PLAYWRIGHT_CHROMIUM_EXECUTABLE') or shutil.which('chromium') or None)
                 context=browser.new_context(device_scale_factor=1)
+                original_search_css=subprocess.check_output(['git','show',base+':docs/assets/css/search-entry.css'],cwd=ROOT)
                 original_navigation_css=subprocess.check_output(['git','show',base+':docs/assets/css/section-navigation.css'],cwd=ROOT)
                 def route_local(request):
                     url=request.request.url
                     if url.startswith(old_url+'/') and urlsplit(url).path=='/assets/css/section-navigation.css':
                         request.fulfill(status=200,content_type='text/css',body=original_navigation_css)
+                    elif url.startswith(old_url+'/') and urlsplit(url).path=='/assets/css/search-entry.css':
+                        request.fulfill(status=200,content_type='text/css',body=original_search_css)
                     elif url.startswith((old_url+'/',new_url+'/')):
                         request.continue_()
                     else:
@@ -145,6 +148,11 @@ def run(base,out):
                         brand,cta=new['brand'],new['market']
                         if cta:
                             require(cta['height']>=44,'Market touch target below 44 pixels')
+                            search_box=page.locator('.site-search-link').bounding_box()
+                            require(search_box['width']>=44 and search_box['height']>=44,'Search touch target below 44 pixels')
+                            require(page.locator('.site-search-link svg').bounding_box()['width']==16,'Compact search icon')
+                            for selector in ('.market-cta','.site-search-link'):
+                                require(page.locator(selector).evaluate("e=>getComputedStyle(e,'::before').top")=='6px','Compact visible button inset')
                             require(cta['width']<old['market']['width'],'Market entry did not become more compact')
                             require(cta['width']>=old['market']['width']*.75,'Market entry shrunk excessively')
                         require(cta is not None,'Market CTA missing')

@@ -155,5 +155,10 @@
       },
       "card_count": 7
     }
-  ]
+  ],
+  "placements": {
+    "sayd_tv": true,
+    "homepage_tv": true,
+    "laws_category": false
+  }
 }
