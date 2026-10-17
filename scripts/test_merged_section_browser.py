@@ -155,7 +155,7 @@ def run(base,out):
                         assert page.locator('h1').count()==1
                 browser.close()
         except Exception as error:
-            errors.append({'fatal':repr(error)})
+            errors.append({'fatal':repr(error),'traceback':__import__('traceback').format_exc(),'url':page.url if 'page' in locals() else ''})
         finally:
             old_srv.shutdown();new_srv.shutdown()
             (out/'geometry.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))

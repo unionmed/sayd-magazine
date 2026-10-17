@@ -50,7 +50,9 @@ jobs:
         run: |
           base="${PR_BASE:-5e243074df106b1cae76703d5309689c81e3a51f}"
           python scripts/test_merged_section_browser.py --base "$base" --output sayd-visual-qa
-          python scripts/test_site_search_browser.py
+      - name: Test private search in browser independently
+        if: ${{ !cancelled() }}
+        run: python scripts/test_site_search_browser.py
       - name: Retain screenshots and measured geometry even on failure
         if: always()
         uses: actions/upload-artifact@v4
