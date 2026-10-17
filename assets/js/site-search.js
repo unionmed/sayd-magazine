@@ -13,10 +13,10 @@
   function search(rows, query, filters) {
     const phrase = normalize(String(query).slice(0, 200));
     const words = [...new Set(phrase.split(' ').filter(Boolean))].slice(0, 20);
-    if (!words.length) return [];
+    if (!words.length && !filters.year && !filters.category) return [];
     return rows.map(row => {
       const a = row.article;
-      if ((filters.year && !a.date.startsWith(filters.year + '-')) || (filters.category && a.category !== filters.category)) return null;
+      if ((filters.year && !a.date.startsWith(filters.year + '-')) || (filters.category && !(a.categories || [a.category]).includes(filters.category))) return null;
       let score = row.title === phrase ? 100 : (row.title.includes(phrase) ? 35 : 0);
       for (const word of words) {
         if (row.title.includes(word)) score += 12;
@@ -83,7 +83,7 @@
   }
   function render() {
     results.replaceChildren(); shown = 0; more.hidden = true;
-    if (!normalize(query.value)) { status.textContent = copy.empty; return; }
+    if (!normalize(query.value) && !year.value && !category.value) { status.textContent = copy.empty; return; }
     matches = search(rows, query.value, {year:year.value, category:category.value});
     status.textContent = matches.length ? matches.length + ' ' + copy.results : copy.none;
     appendPage();
@@ -98,18 +98,18 @@
     form.setAttribute('aria-busy', 'true');
     try {
       if (!cache.has(lang)) {
-        const promise = fetch(new URL('index-' + lang + '.json', assetRoot), {credentials:'omit', referrerPolicy:'no-referrer'})
+        const promise = fetch(new URL('index-' + lang + '.json?v=2', assetRoot), {credentials:'omit', referrerPolicy:'no-referrer'})
           .then(response => { if (!response.ok) throw new Error('index'); return response.json(); })
-          .then(data => { if (data.version !== 1 || data.lang !== lang || !Array.isArray(data.articles)) throw new Error('format'); return data.articles.map(prepare); });
+          .then(data => { if (data.version !== 2 || data.lang !== lang || !Array.isArray(data.articles) || !Array.isArray(data.categories)) throw new Error('format'); return {rows:data.articles.map(prepare), categories:data.categories}; });
         cache.set(lang, promise);
         promise.catch(() => cache.delete(lang));
       }
       const loaded = await cache.get(lang);
       if (revision !== active) return;
-      rows = loaded;
+      rows = loaded.rows;
       if (loadedLanguage !== lang) {
         fill(year, [...new Set(rows.map(row => row.article.date.slice(0,4)).filter(Boolean))].sort().reverse());
-        fill(category, [...new Set(rows.map(row => row.article.category).filter(Boolean))].sort((a,b)=>a.localeCompare(b,lang)));
+        fill(category, loaded.categories);
         loadedLanguage = lang;
       }
       render();
