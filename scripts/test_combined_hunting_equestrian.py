@@ -82,6 +82,58 @@ def test_four_news_negative_guards(base):
         else:raise AssertionError('Unauthorized four-news mutation accepted')
 
 
+def omayed_expected(old, current):
+    """Exact approved Omayed addition; preserve every other configuration field."""
+    source=ROOT/'content/features/egypt-uae-omayed-20261018.json'
+    slug='تعاون-مصري-إماراتي-الحبارى-محمية-العميد'
+    if not source.exists() or slug in old['primary_door']: return None
+    articles=json.loads(source.read_text())['articles']
+    assert len(articles)==1
+    a=articles[0];photo=a['photos'][0]
+    assert a['key']=='omayed' and a['slugs']['ar']==slug
+    assert a['date']=='2026-10-18' and a['publication_ready']
+    assert a['door']=='wildlife' and a['placement']=='news'
+    assert a['category']=='حياة-برية-وتخييم'
+    assert photo['path']=='media/uploads/2026/10/african-houbara-mourad-harzallah-algeria-2020.jpg'
+    wanted=deepcopy(old)
+    latest=([slug]+old['ia_slots']['latest'])[:8]
+    wanted['latest']=latest;wanted['ia_slots']['latest']=latest
+    wanted['primary_door'][slug]='wildlife'
+    wanted['card_image_overrides'][slug]={'image':photo['path'],'position':'50% 50%','alt':photo['alt']}
+    from ticker_policy import select as select_ticker
+    wanted['ticker_entries']=select_ticker([{'slug':slug,'titles':{lang:a['translations'][lang]['ticker'] for lang in ('ar','en','fr')}}]+old['ticker_entries'])
+    wanted['ticker_slugs']=[entry['slug'] for entry in wanted['ticker_entries']]
+    # Only the existing chronological hunting rotation absorbs the displaced
+    # Updates story; every other door and the Shireen upper slots stay exact.
+    selected=expected(wanted)
+    next(d for d in wanted['ia_door_sections'] if d['door']=='hunting')['slugs']=selected
+    pairs=json.loads((ROOT/'content/en/pairs.json').read_text())['pairs']
+    wanted['desk_slugs']['صيد']=selected
+    wanted['desk_slugs']['Hunting']=[pairs[s] for s in selected]
+    assert current==wanted, ('omayed', [key for key in set(current)|set(wanted) if current.get(key)!=wanted.get(key)])
+    return wanted
+
+
+def test_omayed_negative_guards(base):
+    old=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT));current=config()
+    if omayed_expected(old,current) is None:return
+    broken=[]
+    c=deepcopy(current);c['latest'].reverse();broken.append(c)
+    c=deepcopy(current);c['ia_slots']['main']='unauthorized';broken.append(c)
+    c=deepcopy(current);c['ia_slots']['important'].reverse();broken.append(c)
+    c=deepcopy(current);c['ticker_entries'].reverse();broken.append(c)
+    c=deepcopy(current);c['ticker_entries'][0]['titles']['en']='unauthorized';broken.append(c)
+    c=deepcopy(current);c['primary_door'][c['latest'][0]]='science';broken.append(c)
+    c=deepcopy(current);c['card_image_overrides'][c['latest'][0]]['image']='unapproved.jpg';broken.append(c)
+    c=deepcopy(current);c['memory_visible']=True;broken.append(c)
+    for door in current['ia_door_sections']:
+        c=deepcopy(current);next(d for d in c['ia_door_sections'] if d['door']==door['door'])['slugs']=[];broken.append(c)
+    for candidate in broken:
+        try:omayed_expected(old,candidate)
+        except AssertionError:pass
+        else:raise AssertionError('Unauthorized Omayed mutation accepted')
+
+
 def test_preserved(base):
     old_config=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT))
     current=config()
@@ -90,7 +142,8 @@ def test_preserved(base):
     approved_ticker_rotation = current['ticker_entries'] == select_ticker(old_config['ticker_entries'])
     approved_interview = current['ia_slots']['main']=='شيرين-بو-رفول-مكافحة-الصيد-الجائر' and old_config['ia_slots']['main']!=current['ia_slots']['main']
     approved_four_news=four_news_expected(old_config,current) is not None
-    if approved_four_news:
+    approved_omayed=omayed_expected(old_config,current) is not None
+    if approved_four_news or approved_omayed:
         pass  # All changed placement fields independently validated above.
     elif approved_interview:
         from homepage_demotion import demote_side_cards
@@ -137,7 +190,7 @@ def test_preserved(base):
             label={'ar':{'hunting':'صيد','equestrian':'فروسية'},'en':{'hunting':'Hunting','equestrian':'Equestrian'},'fr':{'hunting':'Chasse','equestrian':'Équitation'}}[lang][topic]
             assert row.xpath('.//*[@class="card-topic"]/text()')==[' · '+label]
             assert local_slug(slug,lang) in row.xpath('.//h3/a/@href')[0]
-        for cls in (('feature-lead','feature-stack','sayd-tv') if approved_four_news else ('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
+        for cls in (('feature-lead','feature-stack','sayd-tv') if approved_four_news or approved_omayed else ('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
             if cls == 'ticker' and approved_ticker_rotation:
                 from sync_tickers import TICKER, sources, ticker_for
                 expected_ticker = ticker_for(ROOT/rel, sources(DOCS)[lang])
@@ -161,4 +214,4 @@ def test_preserved(base):
 if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser();parser.add_argument('--base',default='HEAD');args=parser.parse_args()
-    test_rotation();test_preserved(args.base);test_four_news_negative_guards(args.base)
+    test_rotation();test_preserved(args.base);test_four_news_negative_guards(args.base);test_omayed_negative_guards(args.base)
