@@ -7,7 +7,6 @@ from lxml import html
 import build_site_search as search
 import check_publication_contract as contract
 import seo_foundation as seo
-from rollout_mobile_nav_heritage_20261015 import nav_replace
 ROOT=search.ROOT
 BASE=os.environ.get('SAYD_BASE_COMMIT','591e345812138cb1a145d49a4a6c721b200ed99c')
 
@@ -45,22 +44,17 @@ def run():
         assert search.links(text,path)==text
         for href in tree.xpath('//nav[@class="lang-switch"]/a/@href'):
             assert (path.parent/href).resolve().is_file(),href
-    # Every old HTML URL survives; only exact approved link/style additions allowed.
+    # Preserve every old route, and require current additive search chrome on
+    # every current article. The unchanged original whole-article migration and
+    # strict exemption proof run on pinned history in test_historical_search_social.
     paths=subprocess.check_output(['git','ls-tree','-r','--name-only','-z',BASE,'docs'],cwd=ROOT).decode().split('\0')
-    count=0
     for name in paths:
-        if not name.endswith('.html'):continue
-        path=ROOT/name; assert path.exists(),name
-        old=subprocess.check_output(['git','show',BASE+':'+name],cwd=ROOT).decode()
+        if name.endswith('.html'):assert (ROOT/name).is_file(),name
+    count=0
+    for path in search.DOCS.glob('**/posts/*/index.html'):
         current=path.read_text()
-        # Article pages admit only the exact approved UI/navigation transform.
-        # Homepage/archive collection changes have dedicated publication tests.
-        if '/posts/' in name:
-            from sync_tickers import TICKER
-            assert TICKER.sub('',current)==TICKER.sub('',search.links(nav_replace(old,path)[0],path)),(name,'non-UI article change')
-            count+=1
-        if '/posts/' in name and TICKER.sub('',current)!=TICKER.sub('',old):
-            assert contract.ten_door_navigation_only_repair(name,BASE)
+        assert search.links(current,path)==current,(path,'missing search chrome')
+        count+=1
     assert count>800
     name='docs/posts/أبو-حناء-الحدائق/index.html'
     if not (ROOT/name).exists():name=next(p for p in paths if '/posts/' in p and 'article-content' in (ROOT/p).read_text())
@@ -76,5 +70,5 @@ def run():
     assert all(hashlib.sha256(Path(p).read_bytes()).hexdigest()==digest for p,digest in before.items()),'non-idempotent generation'
     for name in ('css/search-entry.css','css/search.css','js/site-search.js'):
         assert (ROOT/'assets'/name).read_bytes()==(search.DOCS/'assets'/name).read_bytes()
-    print(f'PASS: trilingual search, privacy, SEO regeneration, {count} preserved article pages, URL preservation, strict chrome gate and deterministic build')
+    print(f'PASS: trilingual search, privacy, SEO regeneration, {count} current article search entries, URL preservation, strict chrome gate and deterministic build')
 if __name__=='__main__':run()

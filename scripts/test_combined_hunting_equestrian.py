@@ -82,21 +82,14 @@ def test_preserved(base):
             def canonical(n):return html.tostring(n,encoding='unicode',with_tail=False)
             assert [canonical(n) for n in before.xpath(xp)]==[canonical(n) for n in after.xpath(xp)],(lang,cls)
         assert merge_hunting_section(new,lang)==new
-    # No article body, dates, media, or SEO changes are licensed by this merger.
-    changed=subprocess.check_output(['git','diff','--name-only','-z',base,'--','docs'],cwd=ROOT).decode().split('\0')
-    from rollout_mobile_nav_heritage_20261015 import nav_replace
-    for rel in changed:
-        if '/posts/' not in rel or not rel.endswith('.html'):continue
-        if approved_interview and any('/posts/'+slug+'/' in rel for slug in ('شيرين-بو-رفول-مكافحة-الصيد-الجائر','shireen-bou-rafoul-anti-poaching-interview')):continue
-        prior=subprocess.check_output(['git','show',base+':'+rel],cwd=ROOT).decode()
-        transformed,_=nav_replace(prior,ROOT/rel)
-        from build_site_search import links as search_links
-        current_article=(ROOT/rel).read_text()
-        if approved_interview:
-            from sync_tickers import TICKER
-            assert TICKER.sub('',search_links(transformed,ROOT/rel))==TICKER.sub('',current_article),rel
-        else:assert search_links(transformed,ROOT/rel)==current_article,rel
-    print('PASS: eight chronological mixed cards, no quota, preserved upper slots, other doors, TV, article content and legacy URLs')
+    # The original merger's whole-article byte proof is still executed, against
+    # its immutable original base/head, by test_historical_hunting_merger.py.
+    # Applying that one-off migration transform to every future editorial PR
+    # incorrectly freezes article bodies. Check its enduring navigation contract
+    # on the actual current tree instead; publication/SEO/archive gates remain.
+    from test_combined_archive_navigation import test_navigation_and_market_across_all_pages
+    test_navigation_and_market_across_all_pages()
+    print('PASS: eight chronological mixed cards, no quota, preserved upper slots, other doors, TV and current navigation/legacy URLs')
 
 if __name__=='__main__':
     import argparse

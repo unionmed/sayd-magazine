@@ -5,6 +5,10 @@ on:
       - 'docs/**'
       - 'assets/**'
       - 'scripts/test_merged_section_browser.py'
+      - 'scripts/test_combined_hunting_equestrian.py'
+      - 'scripts/test_historical_hunting_merger.py'
+      - 'scripts/test_historical_search_social.py'
+      - 'scripts/test_header_social.py'
       - 'scripts/*search*'
       - '.github/workflows/mobile-nav-viewport-qa.yml'
   push:
@@ -31,6 +35,8 @@ jobs:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
         run: |
           export SAYD_BASE_COMMIT="${PR_BASE:-5e243074df106b1cae76703d5309689c81e3a51f}"
+          python scripts/test_historical_hunting_merger.py
+          python scripts/test_historical_search_social.py
           python scripts/test_combined_hunting_equestrian.py --base "$SAYD_BASE_COMMIT"
           python scripts/test_combined_archive_navigation.py
           node scripts/test_combined_archive_filters.cjs
