@@ -1,0 +1,33 @@
+name: Build approved Shireen interview
+on:
+  push:
+    branches: [publish/shireen-interview-20261017]
+permissions:
+  contents: write
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[shireen-built]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - name: Generate approved three-language publication
+        run: |
+          python scripts/publish_shireen_interview_20261017.py
+          python scripts/check_publication_contract.py --base 3b926e2a508be9dbf1fd7e6b462f50459a63995e
+          python scripts/test_homepage_doors.py
+          python scripts/test_interview_collection.py
+      - name: Commit generated publication for review
+        run: |
+          git config user.name 'Sayd publication checks'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs content audit/image-catalog/manifest/2026-01.tsv
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build approved Shireen interview in three languages [shireen-built]'
+            git push origin HEAD:publish/shireen-interview-20261017
+          fi

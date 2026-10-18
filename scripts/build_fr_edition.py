@@ -25,18 +25,19 @@ ITEMS = {x['slug']: x for x in MANIFEST['articles']}
 BASE = 'https://sayd-magazine.com'
 CATS = {
     'صيد': 'Chasse et équitation', 'عتاد-وسلاح-الصيد': 'Tir et équipement',
-    'فروسية': 'Équitation', 'حياة-برية-وتخييم': 'Faune et camping',
-    'ثقافة-وتراث': 'Patrimoine', 'قوانين': 'Réglementation de la chasse',
+    'فروسية': 'Équitation', 'حياة-برية-وتخييم': 'Terre et mer',
+    'ثقافة-وتراث': 'Patrimoine', 'قوانين': 'Lois',
     'موسوعة-الطيور': 'Encyclopédie des oiseaux', 'استديو-صيد': 'Sayd TV',
+    'مقابلات': 'Entretiens', 'علوم-واكتشافات': 'Sciences',
     'صور': 'Photos', 'الصقارة': 'Fauconnerie', 'صيد-الطيور': 'Chasse aux oiseaux',
     'صيد-بري': 'Chasse terrestre', 'صيد-بحري': 'Pêche en mer',
 }
 UI = {
     'Home':'Accueil', 'Stories':'Articles', 'Article':'Article', 'Team':'Équipe', 'Contact':'Contact',
     'Hunting':'Chasse', 'Hunting & Equestrian':'Chasse et équitation', 'Shooting & Gear':'Tir et équipement',
-    'Equestrian':'Équitation', 'Wildlife & Camping':'Faune et camping',
-    'Wildlife':'Faune', 'Heritage':'Patrimoine', 'Poetry & Art':'Patrimoine',
-    'Hunting Laws':'Réglementation de la chasse',
+    'Equestrian':'Équitation', 'Wildlife & Camping':'Terre et mer', 'Land & Sea':'Terre et mer',
+    'Wildlife':'Terre et mer', 'Science':'Sciences', 'Science & Discoveries':'Sciences', 'Heritage':'Patrimoine', 'Poetry & Art':'Patrimoine',
+    'Hunting Laws':'Lois', 'Laws':'Lois', 'Interviews':'Entretiens',
     'Bird Encyclopedia':'Encyclopédie des oiseaux', 'Sayd TV':'Sayd TV',
     'Photos':'Photos', 'More':'Plus', 'Menu':'Menu', 'Updates':'Actualités',
     'From Sayd’s Memory':'Dans les archives de Sayd', 'See all':'Voir tout',
@@ -814,6 +815,9 @@ def main():
 
     from article_dates import apply as apply_article_dates
     apply_article_dates(DOCS)
+    from refresh_related_reading import main as refresh_reading_images
+    refresh_reading_images()
+
 
 
 if __name__ == '__main__':

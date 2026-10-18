@@ -5,6 +5,14 @@ on:
       - 'docs/**'
       - 'assets/**'
       - 'scripts/test_merged_section_browser.py'
+      - 'scripts/test_combined_hunting_equestrian.py'
+      - 'scripts/test_historical_hunting_merger.py'
+      - 'scripts/test_historical_search_social.py'
+      - 'scripts/related_images_only_change.py'
+      - 'scripts/refresh_related_reading.py'
+      - 'scripts/test_related_reading_images.py'
+      - 'scripts/test_related_reading_images_browser.py'
+      - 'scripts/*search*'
       - '.github/workflows/mobile-nav-viewport-qa.yml'
   push:
     branches: [feat/combined-hunting-equestrian-market-20261017]
@@ -28,8 +36,11 @@ jobs:
       - name: Check merged archive, unchanged content, links and durable SEO
         env:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
           export SAYD_BASE_COMMIT="${PR_BASE:-5e243074df106b1cae76703d5309689c81e3a51f}"
+          python scripts/test_historical_hunting_merger.py
+          python scripts/test_historical_search_social.py
           python scripts/test_combined_hunting_equestrian.py --base "$SAYD_BASE_COMMIT"
           python scripts/test_combined_archive_navigation.py
           node scripts/test_combined_archive_filters.cjs
@@ -37,12 +48,38 @@ jobs:
           python scripts/test_market_seo.py
           python scripts/test_merged_links.py
           python scripts/test_site_ia.py
+          python scripts/test_interview_collection.py
+          python scripts/test_interview_sharing.py
+          node scripts/test_interview_share_button.cjs
+          python scripts/test_taxonomy_publication_contract.py
+          python scripts/test_header_social.py
+          python scripts/test_search_index.py
+          python scripts/test_site_search.py
+          node scripts/test_site_search.cjs
+          python scripts/test_related_reading_images.py
+          # This repair's byte-preservation proof must not freeze future articles.
+          if [ "$PR_NUMBER" = "250" ]; then
+            python scripts/test_related_reading_images.py --acceptance-base "$SAYD_BASE_COMMIT"
+          fi
+          node scripts/test_related_reading.cjs assets/js/article-share.js
+          node scripts/test_related_reading.cjs docs/assets/js/article-share.js
       - name: Compare baseline and candidate on local HTTP with external requests blocked
         env:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
         run: |
           base="${PR_BASE:-5e243074df106b1cae76703d5309689c81e3a51f}"
           python scripts/test_merged_section_browser.py --base "$base" --output sayd-visual-qa
+      - name: Test private search in browser independently
+        if: ${{ !cancelled() }}
+        run: python scripts/test_site_search_browser.py
+      - name: Test friendly interview sharing and clipboard fallback
+        if: ${{ !cancelled() }}
+        run: python scripts/test_interview_sharing_browser.py
+      - name: Test all related-reading image variants and preserve before/after previews
+        if: ${{ !cancelled() }}
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+        run: python scripts/test_related_reading_images_browser.py --base "${PR_BASE:-a24861848120fe4f8678b7a1b0ba92de6396567a}"
       - name: Retain screenshots and measured geometry even on failure
         if: always()
         uses: actions/upload-artifact@v4

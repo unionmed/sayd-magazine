@@ -8,8 +8,8 @@ const path = require('node:path');
 const vm = require('node:vm');
 const code = fs.readFileSync(path.join(__dirname, '../assets/js/combined-archive.js'), 'utf8');
 
-function fixture(hash = '', invalidData = false) {
-  const buttons = ['all', 'hunting', 'equestrian'].map(topic => ({
+function fixture(hash = '', invalidData = false, withMarine = false) {
+  const buttons = (withMarine ? ['all', 'hunting', 'marine', 'equestrian'] : ['all', 'hunting', 'equestrian']).map(topic => ({
     dataset: {archiveFilter: topic},
     attributes: {'aria-pressed': String(topic === 'all')},
     setAttribute(name, value) { this.attributes[name] = value; },
@@ -21,6 +21,7 @@ function fixture(hash = '', invalidData = false) {
     querySelector() { return {getAttribute() { return '../../posts/' + encodeURIComponent(slug) + '/index.html'; }}; }
   });
   const rows = [makeRow('hunting-one'), makeRow('فروسية-اختبار'), makeRow('hunting-two')];
+  if (withMarine) rows.push(makeRow('marine-only'), makeRow('land-and-marine'));
   const events = {}, windowEvents = {};
   const controls = {
     hidden: true,
@@ -33,7 +34,7 @@ function fixture(hash = '', invalidData = false) {
     return selector === '.archive-filters' ? controls : selector === '.archive-result-count' ? status : {children: rows};
   }};
   const dataNode = {
-    textContent: invalidData ? '{broken' : JSON.stringify({equestrian:['فروسية-اختبار'], countLabel:'stories'}),
+    textContent: invalidData ? '{broken' : JSON.stringify({equestrian:['فروسية-اختبار'], marine:withMarine ? ['marine-only','land-and-marine'] : [], landMarine:withMarine ? ['land-and-marine'] : [], countLabel:'stories'}),
     closest() { return main; }
   };
   const window = {
@@ -94,3 +95,12 @@ assert.equal(view.controls.hidden, true);
 assert.equal(view.status.hidden, true);
 assert.deepEqual(view.rows.filter(row => !row.hidden).map(row => row.slug), all);
 console.log('PASS: real filter JS covers default All, topic selection, repeat clicks, URL init/hash restoration, aria state and graceful no-data fallback.');
+
+view = fixture('', false, true);
+state(view, [...all,'marine-only','land-and-marine'], 'all');
+view.click('marine'); state(view,['marine-only','land-and-marine'],'marine');
+view.click('marine'); state(view,['marine-only','land-and-marine'],'marine');
+view.click('hunting'); state(view,[...hunting,'land-and-marine'],'hunting');
+view.changeHash('#marine'); state(view,['marine-only','land-and-marine'],'marine');
+view = fixture('#marine'); state(view,all,'all');
+console.log('PASS: marine facet, mixed land/sea overlap, single All card, no empty-language facet.');

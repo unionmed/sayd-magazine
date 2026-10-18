@@ -1,21 +1,21 @@
 {
   "memory_after_door": "science",
   "featured": [
+    "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
     "طيور-في-الحقائب-تهريب-الطيور-2026",
     "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
     "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
-    "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
+    "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
   ],
   "latest": [
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "ختام-الملواح-2026-60-فائزا",
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
+    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
     "حين-يتغير-الساحل-أين-تستريح-الطيور",
     "أسلحة-الصيد-في-معرض-الرياض-2026",
     "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-    "رادار-صيد-العربي-سبتمبر-2026",
-    "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات"
+    "رادار-صيد-العربي-سبتمبر-2026"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -149,14 +149,14 @@
   ],
   "desk_slugs": {
     "صيد": [
-      "ألكسندرا-cabs-الصيد-غير-القانوني",
       "الصمت-الذي-يتكلمه-الخيل",
       "خريف-الصيد-العربي-2026",
       "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
       "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
       "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
       "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
-      "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+      "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
+      "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
     ],
     "رماية وعتاد": [
       "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
@@ -177,14 +177,14 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
-      "alexandra-cabs-illegal-hunting-interview",
       "the-silence-horses-speak",
       "arab-hunting-autumn-2026",
       "turtle-doves-cross-hunting-borders-european-flyways",
       "sicily-lebanon-protecting-migratory-birds",
       "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
       "skies-losing-balance-birdlife-flyways-report",
-      "how-migration-routes-lost-seven-birds-in-150-years"
+      "how-migration-routes-lost-seven-birds-in-150-years",
+      "south-lebanon-environmental-destruction-bird-flyway"
     ],
     "Shooting & Gear": [
       "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
@@ -233,11 +233,21 @@
     ],
     "Heritage": [
       "from-the-poem-to-the-maqnas"
+    ],
+    "مقابلات": [
+      "ألكسندرا-cabs-الصيد-غير-القانوني",
+      "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي",
+      "الصيادة-اللبنانية-سارة-عقيقي-الصيد-هو",
+      "صيّاد-بس-هيك-قالت-مرتو"
+    ],
+    "Interviews": [
+      "alexandra-cabs-illegal-hunting-interview"
     ]
   },
   "category_extras": {},
   "home_section_order": [
     "صيد",
+    "مقابلات",
     "رماية وعتاد",
     "فروسية",
     "الحياة البرية والتخييم",
@@ -263,36 +273,45 @@
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
-    "main": "طيور-في-الحقائب-تهريب-الطيور-2026",
+    "main": "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
     "important": [
+      "طيور-في-الحقائب-تهريب-الطيور-2026",
       "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
       "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
-      "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-      "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
+      "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
     ],
     "latest": [
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
       "ختام-الملواح-2026-60-فائزا",
       "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
+      "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
       "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "أسلحة-الصيد-في-معرض-الرياض-2026",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-      "رادار-صيد-العربي-سبتمبر-2026",
-      "مصر-قرار-جديد-لتنظيم-الصيد-وملاحقة-المخالفات"
+      "رادار-صيد-العربي-سبتمبر-2026"
     ]
   },
   "ia_door_sections": [
     {
       "door": "hunting",
       "slugs": [
-        "ألكسندرا-cabs-الصيد-غير-القانوني",
         "الصمت-الذي-يتكلمه-الخيل",
         "خريف-الصيد-العربي-2026",
         "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
         "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
         "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
-        "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
+        "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
+        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+      ]
+    },
+    {
+      "door": "interviews",
+      "slugs": [
+        "ألكسندرا-cabs-الصيد-غير-القانوني",
+        "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي",
+        "الصيادة-اللبنانية-سارة-عقيقي-الصيد-هو",
+        "صيّاد-بس-هيك-قالت-مرتو"
       ]
     },
     {
@@ -413,7 +432,8 @@
     "قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات": "laws",
     "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد": "laws",
     "الرياض-تستعيد-صهيلها-موسم-السباقات-2026": "equestrian",
-    "طيور-في-الحقائب-تهريب-الطيور-2026": "hunting"
+    "طيور-في-الحقائب-تهريب-الطيور-2026": "hunting",
+    "شيرين-بو-رفول-مكافحة-الصيد-الجائر": "interviews"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -432,6 +452,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
     "طيور-في-الحقائب-تهريب-الطيور-2026",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
@@ -613,11 +634,28 @@
         "en": "A sparrowhawk inside a backpack during an anti-poaching operation in Akkar, October 2026.",
         "fr": "Un épervier dans un sac à dos lors d’une opération de lutte contre le braconnage à Akkar, en octobre 2026."
       }
+    },
+    "شيرين-بو-رفول-مكافحة-الصيد-الجائر": {
+      "image": "media/uploads/2026/10/shireen-monitoring-new.jpg",
+      "position": "50% 30%",
+      "alt": {
+        "ar": "شيرين بو رفول خلال رصد مخالفات الصيد.",
+        "en": "Shireen Bou Rafoul monitoring hunting violations.",
+        "fr": "Shireen Bou Rafoul lors du repérage d’infractions à la chasse."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
+      "titles": {
+        "ar": "شيرين بو رفول لـ«صيد»: أحبّ الصيد، لكنني أختار مكافحة المخالفات وإنقاذ الطيور.",
+        "en": "Shireen Bou Rafoul tells Sayd: I love hunting, but I choose to fight violations and rescue birds.",
+        "fr": "Shireen Bou Rafoul à Sayd : j’aime la chasse, mais je choisis de lutter contre les infractions et de sauver les oiseaux."
+      }
+    },
     {
       "slug": "طيور-في-الحقائب-تهريب-الطيور-2026",
       "titles": {
@@ -732,5 +770,17 @@
   ],
   "science_news_requires_explicit_approval": true,
   "approved_science_news": [],
-  "editorial_reference_policy": "Hunting Laws and Bird Encyclopedia articles appear in their own category only, never headline cards, Updates or news ticker. Science & Discoveries appears only in its own desk by default; any placement in headlines, Updates or ticker must have a slug in approved_science_news, added following explicit Nayef approval."
+  "editorial_reference_policy": "Hunting Laws and Bird Encyclopedia articles appear in their own category only, never headline cards, Updates or news ticker. Science & Discoveries appears only in its own desk by default; any placement in headlines, Updates or ticker must have a slug in approved_science_news, added following explicit Nayef approval.",
+  "memory_visible": false,
+  "card_title_overrides": {
+    "الصيد-بين-الفوضى-والنظام-تجارب-الصي-3": {
+      "ar": "غسان نصّور في كندا: الصيد بين الفوضى والنظام"
+    },
+    "الصيد-بين-الفوضى-والنظام-تجارب-الصي-2": {
+      "ar": "غي محاسب في أميركا: الصيد بين الفوضى والنظام"
+    },
+    "الصيد-بين-الفوضى-والنظام-تجارب-الصي": {
+      "ar": "أمير دمج في السعودية: الصيد بين الفوضى والنظام"
+    }
+  }
 }

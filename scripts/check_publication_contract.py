@@ -7,6 +7,7 @@ from lxml import html
 from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, local_slug, channel_config
 import seo_foundation as seo
 from analytics_only_change import analytics_only_repair
+from related_images_only_change import related_images_only_repair
 
 CONTRACT=ROOT/'content/publication-contract.json'
 LANGS=('ar','en','fr')
@@ -125,16 +126,20 @@ def check(base=None):
     contract=json.loads(CONTRACT.read_text());pairs=json.loads((ROOT/'content/en/pairs.json').read_text())['pairs']
     for name,digest in contract['protected_files'].items():
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest, f'Protected design changed without contract approval: {name}'
-    assert [d[0] for d in DOORS]==contract['homepage_door_order']==['hunting','gear','wildlife','science','poetry','tv','photos']
+    assert [d[0] for d in DOORS]==contract['homepage_door_order']==['hunting','interviews','gear','wildlife','science','poetry','tv','photos']
     assert contract['counts']['hunting_equestrian']==c['hunting_rotation']['limit']==8
     assert contract['combined_door']['labels']=={'ar':'صيد وفروسية','en':'Hunting & Equestrian','fr':'Chasse et équitation'}
     reference=None
     for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
         p=DOCS/prefix/'index.html';t=tree(p)
-        groups=[nodes(t,'feature-lead'),nodes(t,'feature-stack')[0].xpath('./article'),nodes(t,'latest-feed')[0].xpath('./li'),nodes(t,'memory-strip')[0].xpath('.//article')]
+        groups=[nodes(t,'feature-lead'),nodes(t,'feature-stack')[0].xpath('./article'),nodes(t,'latest-feed')[0].xpath('./li')]
         doors=nodes(t,'home-section');groups += [sum((g.xpath('./article') for g in nodes(x,'home-door-grid')),[]) for x in doors]
-        assert [len(g) for g in groups[:4]]==[1,4,8,4],f'{lang}: lead/side/updates/memory counts'
-        assert len(doors)==len(DOORS) and [len(g) for g in groups[4:]]==[10 if d['door']=='tv' else len(d['slugs']) for d in c['ia_door_sections']],f'{lang}: door counts'
+        assert [len(g) for g in groups[:3]]==[1,4,8],f'{lang}: lead/side/updates counts'
+        assert not nodes(t,'memory-strip') and contract['counts']['memory']==0 and c['memory_visible'] is False, f'{lang}: Memory display must be removed'
+        from interview_collection import homepage_slugs
+        def selected(d):
+            return homepage_slugs(lang,c) if d['door']=='interviews' else d['slugs']
+        assert len(doors)==len(DOORS) and [len(g) for g in groups[3:]]==[10 if d['door']=='tv' else len(selected(d)) for d in c['ia_door_sections']],f'{lang}: door counts'
         assert t.xpath('//section['+css_class('home-section')+']//h2/text()')==[d[{'ar':1,'en':2,'fr':3}[lang]] for d in DOORS], f'{lang}: door order'
         tv=doors[next(i for i,d in enumerate(DOORS) if d[0]=='tv')]
         assert tv.xpath('./div[@data-tv-group]/@data-tv-group')==contract['tv_structure']['groups'],f'{lang}: TV groups missing or reordered'
@@ -158,9 +163,8 @@ def check(base=None):
                     continue
                 href=card.xpath('.//a[contains(@href,"posts/")]/@href')[0]
                 target=resolved(p,href);assert (DOCS/target).is_file(),target
-                if group_index!=3:
-                    expected_prefix=(prefix+'/' if prefix else '')+'posts/'
-                    assert target.startswith(expected_prefix),f'{lang}: cross-language article fallback {target}'
+                expected_prefix=(prefix+'/' if prefix else '')+'posts/'
+                assert target.startswith(expected_prefix),f'{lang}: cross-language article fallback {target}'
                 card_images=images(card,p);assert len(card_images)==1,f'{lang}: every card needs one photograph'
                 for src in card_images:
                     assert src.startswith('http') or (DOCS/src).is_file(),src
@@ -172,14 +176,14 @@ def check(base=None):
         for group in groups[1:3]:
             dates=[day(' '.join(n.xpath('.//*['+css_class('meta')+' or '+css_class('feed-date')+']/text()'))) for n in group]
             assert all(dates) and dates==sorted(dates,reverse=True),f'{lang}: dates out of order {dates}'
-        for d,row in zip(c['ia_door_sections'],slots[4:]):assert [s for s,_ in row]==(['youtube:'+v['id'] for v in channel_videos] if d['door']=='tv' else [])+d['slugs'],(lang,d['door'])
+        for d,row in zip(c['ia_door_sections'],slots[3:]):assert [s for s,_ in row]==(['youtube:'+v['id'] for v in channel_videos] if d['door']=='tv' else [])+selected(d),(lang,d['door'])
         # Publication dates must descend within every lower homepage door.
         # Previously Wildlife placed a 20 September item ahead of 5 October.
         for idx,door in enumerate(c['ia_door_sections']):
             if door['door']=='tv':
                 continue
             desk_dates=[day(' '.join(card.xpath('.//*['+css_class('meta')+']/text()')))
-                        for card in groups[4+idx]]
+                        for card in groups[3+idx]]
             assert all(desk_dates) and desk_dates==sorted(desk_dates,reverse=True), (
                 f'{lang}: {door["door"]} dates out of order: {desk_dates}')
         # Coast-birds is a Hunting-category feature, not Wildlife & Camping.
@@ -191,22 +195,43 @@ def check(base=None):
         co_slug='حين-يتغير-الساحل-أين-تستريح-الطيور' if lang=='ar' else 'when-the-coast-changes-where-do-birds-rest'
         assert co_slug not in {slug(h) for h in wildlife_listing.xpath('//article//a/@href')}, f'{lang}: coastal story still in wildlife listing'
         assert co_slug in {slug(h) for h in hunting_listing.xpath('//article//a/@href')}, f'{lang}: coastal story missing from hunting listing'
-        assert [s for s,_ in slots[3]]==contract['memory_slugs'],f'{lang}: protected memory selection changed'
-        assert [s for s,_ in slots[4+next(i for i,d in enumerate(DOORS) if d[0]=='tv')]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
-        if reference is None:reference=slots
-        else:assert slots==reference,f'{lang}: mirrored story placement or photograph differs'
+        assert [s for s,_ in slots[3+next(i for i,d in enumerate(DOORS) if d[0]=='tv')]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
+        interview_index=3+next(i for i,d in enumerate(DOORS) if d[0]=='interviews')
+        interview_slots=slots[interview_index]
+        assert len(interview_slots)==contract['counts']['interviews'][lang], f'{lang}: approved interview count changed'
+        assert [s for s,_ in interview_slots]==contract['interviews']['homepage_slugs'][lang], f'{lang}: unapproved interview selection'
+        mirrored=slots[:interview_index]+slots[interview_index+1:]
+        if reference is None:
+            reference=mirrored; interview_reference=dict(interview_slots)
+        else:
+            assert mirrored==reference,f'{lang}: mirrored story placement or photograph differs'
+            assert all(interview_reference.get(s)==media for s,media in interview_slots), f'{lang}: interview photograph differs'
         tickers=nodes(t,'ticker')
         assert len(tickers)==2,f'{lang}: missing ticker loop'
         for ticker in tickers:
             assert [canonical(slug(h),lang,pairs) for h in ticker.xpath('.//a/@href')]==c['ticker_slugs'],f'{lang}: ticker placement differs'
         social=t.xpath('//*['+css_class('header-social')+']//a/@href')
+        assert social==[url for key,url in contract['header_social']['links']], f'{lang}: approved social links changed'
+        for anchor in t.xpath('//*['+css_class('header-social')+']//a'):
+            assert anchor.get('target')=='_blank' and set(anchor.get('rel','').split())=={'noopener','noreferrer'}
+            assert anchor.get('aria-label','').strip() and anchor.xpath('./svg[@aria-hidden="true"]')
+
         # Header class names are part of the approved per-language chrome signature.
         chrome=t.xpath('//header')[0]
         sig=[(a.get('class',''),a.get('href')) for a in chrome.xpath('.//a[@href]') if 'lang-switch' not in ' '.join(q.get('class','') for q in a.iterancestors())]
         assert sig==[tuple(x) for x in contract['header_links'][lang]],f'{lang}: navigation/social changed'
+        for nav in chrome.xpath('.//nav['+css_class('main-nav')+' or '+css_class('mobile-nav')+']'):
+            anchors=nav.xpath('./a')
+            assert len(anchors)==10, f'{lang}: exactly ten visible navigation entries required'
+            assert [unquote(a.get('href','')).split('category/')[-1].split('/')[0] for a in anchors]==[
+                'صيد','مقابلات','عتاد-وسلاح-الصيد','حياة-برية-وتخييم','علوم-واكتشافات',
+                'موسوعة-الطيور','ثقافة-وتراث','قوانين','استديو-صيد','صور'], f'{lang}: navigation order changed'
+            for position,key in [(3,'wildlife'),(4,'science'),(7,'laws')]:
+                assert anchors[position].text_content().strip()==contract['display_labels'][key][lang], f'{lang}: approved UI label drift'
+
     if base:
         check_new_stories(changed_docs(base),pairs,base)
-    print('PASS: three mirrored homepages, 1+4+8+4 cards, seven doors, shared images, dates, protected design and social links')
+    print('PASS: three homepages, 1+4+8 upper cards, eight doors, approved interview-only archive selection, shared images, dates, protected design and social links')
 
 def science_navigation_only_repair(file, base):
     """Exact, auditable exception for adding the Nayef-approved Science menu link.
@@ -229,7 +254,7 @@ def science_navigation_only_repair(file, base):
 
 
 def ten_door_navigation_only_repair(file, base):
-    """Allow precisely the approved nav and Heritage badge relabel in old posts.
+    """Allow precisely approved taxonomy chrome and existing search links in old posts.
 
     Requires that no article body, image, date, ticker or SEO metadata changed.
     Compares byte-for-byte to a deterministic transformation of the base page.
@@ -242,8 +267,33 @@ def ten_door_navigation_only_repair(file, base):
     original=before.stdout.decode()
     from rollout_mobile_nav_heritage_20261015 import nav_replace
     expected,_=nav_replace(original,ROOT/file)
+    from build_site_search import links
+    expected=links(expected,ROOT/file)
     current=(ROOT/file).read_text()
     return expected==current and original!=current
+
+
+def search_navigation_only_repair(file, base):
+    """Only the exact approved additive search chrome; never editorial changes."""
+    if not base or not re.fullmatch(r'docs/(?:(?:en|fr)/)?posts/[^/]+/index.html', file):
+        return False
+    before = subprocess.run(['git', 'show', f'{base}:{file}'], cwd=ROOT, capture_output=True)
+    if before.returncode:
+        return False
+    from build_site_search import links
+    original = before.stdout.decode()
+    current = (ROOT / file).read_text()
+    return original != current and links(original, ROOT / file) == current
+
+
+def header_asset_version_only_repair(file, base):
+    if not base or not file.startswith('docs/') or not file.endswith('.html'):
+        return False
+    before = subprocess.run(['git','show',f'{base}:{file}'],cwd=ROOT,capture_output=True)
+    if before.returncode:return False
+    from refresh_header_asset_versions import refresh
+    original=before.stdout.decode()
+    return original != (ROOT/file).read_text() and refresh(original)==(ROOT/file).read_text()
 
 
 def check_new_stories(paths,pairs,base=None):
@@ -251,6 +301,10 @@ def check_new_stories(paths,pairs,base=None):
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if header_asset_version_only_repair(file,base):
+            continue
+        if search_navigation_only_repair(file,base):
+            continue
         if ten_door_navigation_only_repair(file,base):
             continue
         if science_navigation_only_repair(file,base):
@@ -262,6 +316,8 @@ def check_new_stories(paths,pairs,base=None):
         if analytics_only_repair(file,base):
             continue
         if archive_image_repair(file,base):
+            continue
+        if related_images_only_repair(file,base):
             continue
         lang=m[1] or 'ar';ar=canonical(m[2],lang,pairs)
         # Existing historic archive is preserved; every newly added or edited story is checked.

@@ -50,7 +50,7 @@ If you cannot re-export WP, add a post as Markdown under `content/posts/` follow
 
 Read [AGENTS.md](AGENTS.md) before any edit. Arabic, English and French are three mirrors: complete article text, same images/video, doors, dates and placement. Only Nayef may authorize changes to design, rules, colors, social channels or distribution.
 
-The homepage is **one lead + four side cards + eight Updates + four memory cards**, followed by the seven approved doors. `content/homepage.json` is the placement source; `content/publication-contract.json` freezes approved theme and header links. Old bilingual/ten-card instructions are superseded.
+The homepage is **one lead + four side cards + eight Updates**, followed by the approved doors. Interviews follows Hunting & Equestrian; the Memory strip is hidden while its articles and routes remain available. `content/homepage.json` is the placement source; `content/publication-contract.json` freezes approved theme and header links. Old bilingual/ten-card instructions are superseded.
 
 ```bash
 python scripts/refresh_homepage_doors.py
@@ -86,3 +86,50 @@ content/          Markdown intermediate (posts & pages)
 assets/css/       Shared theme (copied into docs/assets/)
 docs/             GitHub Pages output
 ```
+
+## Local archive search
+
+Search lives at `/search/`, `/en/search/`, and `/fr/search/`. The utility icon
+beside Sayd Market and the footer link are separate from the editorial navigation.
+Only these pages load search code and the selected language's JSON index. Search
+terms remain in memory: no URL parameters, cookies, storage or analytics events.
+Search pages intentionally omit analytics and use `noindex,follow`.
+
+After publishing or changing an article, rebuild from its final public HTML:
+
+```bash
+python scripts/build_site_search.py
+python scripts/build_search_index.py --check
+python scripts/test_search_index.py
+python scripts/test_site_search.py
+node scripts/test_site_search.cjs
+```
+
+The homepage refresh also runs this rebuild. The index includes only canonical,
+indexable public article pages, using original publication dates where present.
+Redirects, unpublished/hidden content and chrome are excluded. Full article text
+and keywords are searchable; titles rank first. Arabic diacritics/tatweel and
+alef variants, Arabic ya/alif-maqsura, and Latin accents are normalized. All query
+terms must match. Language/year/category filters are optional; changing language
+searches that edition's real articles without inventing archive translations.
+Results render 20 at a time with a Show more button. A missing publication date
+is left blank. No hosted search service or additional paid dependency is used.
+
+The existing responsive CI workflow tests real search at 320, 390 and 1440 px,
+including keyboard search, filters, scientific names, empty/hostile input, rapid
+language changes, Back navigation, failed-index retry and external-request privacy.
+
+### Interview collection and topic filters
+
+`content/interviews.json` is a reviewed format registry, separate from primary
+topics. Arabic shows the newest four eligible interviews; EN/FR show only real
+2026+ translations currently available. Old interviews are not translated to
+fill cards. `content/marine-fishing.json` records reviewed marine facets; mixed
+land/sea stories may match both filters, while All stays deduplicated. Existing
+English George Taza remains in the archive. The verified XDC diving interview
+is also listed in Land & Sea; unrelated legacy Sports content is not migrated.
+
+UI names preserve existing category URLs. `scripts/apply_approved_taxonomy.py`
+changes category/navigation labels outside editorial bodies only. Run the
+homepage refresh and search rebuild after approved registry changes; then run
+`python scripts/test_interview_collection.py` and the publication contract tests.

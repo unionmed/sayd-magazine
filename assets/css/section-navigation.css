@@ -8,20 +8,35 @@
   justify-content: center;
   flex: 0 0 auto;
   margin-inline-start: auto;
-  min-height: 2.5rem;
-  padding: .42rem .9rem;
-  border: 1px solid #b79b54;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0 .55rem;
+  position: relative;
+  isolation: isolate;
+  min-width: 44px;
+  border: 0;
   border-radius: 4px;
-  background: #e9dfc2;
+  background: transparent;
   color: #3e421d;
   font: inherit;
+  font-size: .75rem;
   font-weight: 800;
-  line-height: 1.3;
+  line-height: 1;
   white-space: nowrap;
   text-decoration: none;
 }
+.site-header .market-cta::before {
+  content: "";
+  position: absolute;
+  inset: 11px 0;
+  z-index: -1;
+  border: 1px solid #b79b54;
+  border-radius: 4px;
+  background: #e9dfc2;
+  pointer-events: none;
+}
+.site-header .market-cta:hover::before { background: #ded0a6; }
 .site-header .market-cta:hover {
-  background: #ded0a6;
   color: #303416;
 }
 .site-header .market-cta:focus-visible {
@@ -43,7 +58,72 @@
 }
 @media (max-width: 900px) {
   .site-header .market-cta {
-    padding: .38rem .7rem;
-    min-height: 2.5rem;
+    padding: 0 .55rem;
+    min-height: 44px;
   }
+}
+/* Owner-approved balanced mobile/tablet navigation: two rows of five,
+   unchanged order and type size. Long translated labels wrap inside cells. */
+@media (max-width: 900px) {
+  .site-header .header-inner > .mobile-nav {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+    gap: .25rem .35rem;
+  }
+  .site-header .header-inner > .mobile-nav > a {
+    min-width: 0;
+    min-height: 3rem;
+    padding: .18rem .1rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+    text-align: center;
+  }
+}
+/* Latin editions keep complete words: allocate columns by their longest word.
+   On narrow phones, three balanced rows are clearer than splitting words. */
+@media (max-width: 900px) {
+  html:is([lang="en"], [lang="fr"]) .site-header .header-inner > .mobile-nav {
+    grid-template-columns: repeat(5, minmax(min-content, 1fr));
+  }
+  html:is([lang="en"], [lang="fr"]) .site-header .header-inner > .mobile-nav > a {
+    min-width: min-content;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+}
+@media (max-width: 360px) {
+  html:is([lang="en"], [lang="fr"]) .site-header .header-inner > .mobile-nav {
+    grid-template-columns: repeat(12, minmax(min-content, 1fr));
+    column-gap: .2rem;
+  }
+  html:is([lang="en"], [lang="fr"]) .site-header .header-inner > .mobile-nav > a {
+    grid-column: span 4;
+  }
+  html:is([lang="en"], [lang="fr"]) .site-header .header-inner > .mobile-nav > a:nth-child(-n+4) {
+    grid-column: span 3;
+  }
+}
+
+/* French labels require the three-row phone layout through 500px. */
+@media (max-width: 500px) {
+  html[lang="fr"] .site-header .header-inner > .mobile-nav {
+    grid-template-columns: repeat(12, minmax(min-content, 1fr));
+    column-gap: .2rem;
+  }
+  html[lang="fr"] .site-header .header-inner > .mobile-nav > a {
+    grid-column: span 4;
+  }
+  html[lang="fr"] .site-header .header-inner > .mobile-nav > a:nth-child(-n+4) {
+    grid-column: span 3;
+  }
+}
+
+/* Match the compact language selector at the narrow-phone breakpoint. */
+@media (max-width: 400px) {
+  .site-header .market-cta { font-size: .68rem; padding: 0 .3rem; }
 }

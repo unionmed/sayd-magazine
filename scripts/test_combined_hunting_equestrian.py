@@ -34,16 +34,39 @@ def test_rotation():
 def test_preserved(base):
     old_config=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT))
     current=config()
-    for key in ('featured','latest','ia_slots','ticker_slugs','ticker_entries','card_image_overrides','primary_door','memory_after_door'):
-        assert old_config[key]==current[key],key
+    approved_interview = current['ia_slots']['main']=='شيرين-بو-رفول-مكافحة-الصيد-الجائر' and old_config['ia_slots']['main']!=current['ia_slots']['main']
+    if approved_interview:
+        from homepage_demotion import demote_side_cards
+        expected_config=deepcopy(old_config)
+        lead=current['ia_slots']['main']
+        expected_config['ia_slots']['main']=lead
+        expected_config['ia_slots']['important']=[old_config['ia_slots']['main']]+old_config['ia_slots']['important'][:3]
+        expected_config['featured']=[lead]+expected_config['ia_slots']['important']
+        demote_side_cards(expected_config,old_config['ia_slots']['important'])
+        for key in ('featured','latest','ia_slots'):assert current[key]==expected_config[key],key
+        assert current['ticker_slugs']==[lead]+old_config['ticker_slugs']
+        assert current['ticker_entries'][1:]==old_config['ticker_entries']
+        assert {k:v for k,v in current['primary_door'].items() if k!=lead}==old_config['primary_door']
+        assert current['primary_door'][lead]=='interviews'
+        assert {k:v for k,v in current['card_image_overrides'].items() if k!=lead}==old_config['card_image_overrides']
+    else:
+        for key in ('featured','latest','ia_slots','ticker_slugs','ticker_entries','card_image_overrides','primary_door','memory_after_door'):
+            assert old_config[key]==current[key],key
+    assert current['memory_after_door']==old_config['memory_after_door']
+    assert current['memory_visible'] is False
+    # Interviews is an independently reviewed chronological collection; its
+    # owner-approved selection may change without changing unrelated doors.
+    from interview_collection import homepage_slugs
+    assert next(s['slugs'] for s in current['ia_door_sections'] if s['door']=='interviews') == homepage_slugs('ar', current)
     for old in old_config['ia_door_sections']:
-        if old['door'] not in ('hunting','equestrian'):
+        if old['door'] not in ('hunting','equestrian','interviews'):
             assert old in current['ia_door_sections'],old['door']
     for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
         rel='docs/'+prefix+'index.html'
         old=subprocess.check_output(['git','show',base+':'+rel],cwd=ROOT).decode()
         new=(ROOT/rel).read_text()
         before=html.fromstring(old);after=html.fromstring(new)
+        assert not after.xpath('//section[@class="memory-strip"]')
         section=after.xpath('//section[@class="home-section"]')[0]
         assert section.xpath('.//div[contains(@class,"section-head")]/a/text()')==[{'ar':'المزيد','en':'More','fr':'Voir plus'}[lang]]
         selected=next(d['slugs'] for d in current['ia_door_sections'] if d['door']=='hunting')
@@ -54,20 +77,19 @@ def test_preserved(base):
             label={'ar':{'hunting':'صيد','equestrian':'فروسية'},'en':{'hunting':'Hunting','equestrian':'Equestrian'},'fr':{'hunting':'Chasse','equestrian':'Équitation'}}[lang][topic]
             assert row.xpath('.//*[@class="card-topic"]/text()')==[' · '+label]
             assert local_slug(slug,lang) in row.xpath('.//h3/a/@href')[0]
-        for cls in ('feature-lead','feature-stack','latest-col','memory-strip','sayd-tv','ticker'):
+        for cls in (('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
             xp='//*[contains(concat(" ",normalize-space(@class)," ")," '+cls+' ")]'
             def canonical(n):return html.tostring(n,encoding='unicode',with_tail=False)
             assert [canonical(n) for n in before.xpath(xp)]==[canonical(n) for n in after.xpath(xp)],(lang,cls)
         assert merge_hunting_section(new,lang)==new
-    # No article body, dates, media, or SEO changes are licensed by this merger.
-    changed=subprocess.check_output(['git','diff','--name-only','-z',base,'--','docs'],cwd=ROOT).decode().split('\0')
-    from rollout_mobile_nav_heritage_20261015 import nav_replace
-    for rel in changed:
-        if '/posts/' not in rel or not rel.endswith('.html'):continue
-        prior=subprocess.check_output(['git','show',base+':'+rel],cwd=ROOT).decode()
-        transformed,_=nav_replace(prior,ROOT/rel)
-        assert transformed==(ROOT/rel).read_text(),rel
-    print('PASS: eight chronological mixed cards, no quota, preserved upper slots, other doors, TV, article content and legacy URLs')
+    # The original merger's whole-article byte proof is still executed, against
+    # its immutable original base/head, by test_historical_hunting_merger.py.
+    # Applying that one-off migration transform to every future editorial PR
+    # incorrectly freezes article bodies. Check its enduring navigation contract
+    # on the actual current tree instead; publication/SEO/archive gates remain.
+    from test_combined_archive_navigation import test_navigation_and_market_across_all_pages
+    test_navigation_and_market_across_all_pages()
+    print('PASS: eight chronological mixed cards, no quota, preserved upper slots, other doors, TV and current navigation/legacy URLs')
 
 if __name__=='__main__':
     import argparse

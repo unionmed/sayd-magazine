@@ -9,10 +9,11 @@ from __future__ import annotations
 
 import html
 import json
+import os
 import re
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import unquote, urlsplit
 
 import site_ia as ia
 from seo_foundation import add_ga4
@@ -23,9 +24,9 @@ CARD_RE = re.compile(r'<article\b[^>]*class="(?:post-row|card)(?:\s[^"]*)?"[^>]*
 LIST_RE = re.compile(r'<div class="(?:post-list|home-door-grid)">')
 FILTER_RE = re.compile(r'\s*<!-- combined-archive:filters -->.*?<!-- /combined-archive:filters -->\s*', re.S)
 LABELS = {
-    "ar": ("الكل", "صيد", "فروسية", "تصفية الموضوعات", "موضوعًا"),
-    "en": ("All", "Hunting", "Equestrian", "Filter stories", "stories"),
-    "fr": ("Tous", "Chasse", "Équitation", "Filtrer les articles", "articles"),
+    "ar": ("الكل", "صيد بري", "فروسية", "تصفية الموضوعات", "موضوعًا"),
+    "en": ("All", "Land hunting", "Equestrian", "Filter stories", "stories"),
+    "fr": ("Tous", "Chasse terrestre", "Équitation", "Filtrer les articles", "articles"),
 }
 MONTHS = {}
 for names in (
@@ -45,7 +46,7 @@ def slug_of(card: str) -> str:
 
 def stamp(card: str) -> datetime:
     hit = re.search(r'<div class="meta">(.*?)</div>', card, re.S)
-    date = html.unescape(re.sub(r'<[^>]+>', '', hit[1])).strip() if hit else ''
+    date = html.unescape(re.sub(r'<[^>]+>', '', hit[1])).strip().split(' · ')[0] if hit else ''
     parsed = re.fullmatch(r'(\d{1,2})\s+(.+?)\s+(\d{4})', date)
     if not parsed or parsed[2].casefold() not in MONTHS:
         raise ValueError(f"Unrecognized publication date for {slug_of(card)}: {date}")
@@ -104,13 +105,57 @@ def retitle(text: str, lang: str, count: int) -> str:
     return text
 
 
-def filter_html(lang: str, equestrian: set[str], count: int) -> str:
+def marine_registry(lang):
+    registry = json.loads((ROOT / 'content/marine-fishing.json').read_text())['entries']
+    return {row[lang]: row for row in registry if row.get(lang)}
+
+
+def marine_cards(lang):
+    """Only reviewed fishing articles; existing translations keep original dates."""
+    root = DOCS / (lang if lang != 'ar' else '')
+    wanted = marine_registry(lang)
+    if not wanted:
+        return []
+    found = {}
+    sources = sorted((root / 'category').glob('*/index.html'))
+    sources += sorted((root / 'articles').glob('*.html')) + sorted((root / 'stories').glob('*.html'))
+    target = root / 'category/صيد'
+    for path in sources:
+        for card in cards(path.read_text()):
+            slug = slug_of(card)
+            if slug not in wanted or slug in found:
+                continue
+            article = root / 'posts' / slug / 'index.html'
+            if not article.is_file():
+                raise ValueError(f'Missing published marine article: {article}')
+            def relocate(match):
+                url = urlsplit(html.unescape(match[2]))
+                if url.scheme or url.netloc or not url.path or url.path.startswith('/'):
+                    return match[0]
+                value = os.path.relpath((path.parent / unquote(url.path)).resolve(), target)
+                if url.query: value += '?' + url.query
+                if url.fragment: value += '#' + url.fragment
+                return match[1] + html.escape(value, quote=True) + match[3]
+            found[slug] = re.sub(r'((?:href|src)=")([^"]+)(")', relocate, card)
+            found[slug] = re.sub(r'[ \t]+\n', '\n', found[slug])
+    if wanted.keys() - found.keys():
+        raise ValueError(f'Missing published marine cards: {lang}/{wanted.keys() - found.keys()}')
+    return [found[slug] for slug in wanted]
+
+
+def filter_html(lang: str, equestrian: set[str], count: int, marine=None, land_marine=None) -> str:
     labels = LABELS[lang]
+    marine = marine or set()
+    land_marine = land_marine or set()
+    choices = list(zip(('all', 'hunting'), labels[:2]))
+    if marine:
+        choices.append(('marine', {'ar':'صيد بحري','en':'Sea fishing','fr':'Pêche en mer'}[lang]))
+    choices.append(('equestrian', labels[2]))
     controls = '\n'.join(
         f'<button type="button" data-archive-filter="{topic}" aria-pressed="{"true" if topic == "all" else "false"}">{html.escape(label)}</button>'
-        for topic, label in zip(('all', 'hunting', 'equestrian'), labels[:3])
+        for topic, label in choices
     )
-    data = json.dumps({'equestrian': sorted(equestrian), 'countLabel': labels[4]}, ensure_ascii=False).replace('<', '\\u003c')
+    data = json.dumps({'equestrian': sorted(equestrian), 'marine': sorted(marine), 'landMarine': sorted(land_marine), 'countLabel': labels[4]}, ensure_ascii=False).replace('<', '\\u003c')
     return (
         '<!-- combined-archive:filters -->\n'
         f'<div class="archive-filters" role="group" aria-label="{labels[3]}" hidden>\n{controls}\n</div>\n'
@@ -138,15 +183,19 @@ def sync_archive(languages=('ar', 'en', 'fr')) -> dict[str, dict[str, int]]:
         equestrian.update(slug_of(row) for row in equestrian_rows)
         equestrian.update(equestrian_primary_slugs(lang))
         unique = {}
-        for row in old_rows + equestrian_rows:
+        for row in old_rows + equestrian_rows + marine_cards(lang):
             unique.setdefault(slug_of(row), row)
         rows = sorted(unique.values(), key=stamp, reverse=True)
         equestrian.intersection_update(unique)
+        reviewed = marine_registry(lang)
+        marine = set(reviewed) & set(unique)
+        land_marine = {slug for slug in marine if reviewed[slug]['land_also']}
+        assert not marine & equestrian
         text = FILTER_RE.sub('\n', original)
         text = replace_listing(text, rows)
         text = retitle(text, lang, len(rows))
         text = re.sub(r'\s*(<div class="(?:post-list|home-door-grid)">)',
-                      lambda m: '\n' + filter_html(lang, equestrian, len(rows)) + m[1], text, count=1)
+                      lambda m: '\n' + filter_html(lang, equestrian, len(rows), marine, land_marine) + m[1], text, count=1)
         style = '<link rel="stylesheet" href="/assets/css/combined-archive.css?v=20261017">'
         script = '<script src="/assets/js/combined-archive.js?v=20261017" defer></script>'
         if '/assets/css/combined-archive.css?' not in text:
@@ -157,7 +206,7 @@ def sync_archive(languages=('ar', 'en', 'fr')) -> dict[str, dict[str, int]]:
         text = add_ga4(text)
         if text != original:
             target.write_text(text, encoding='utf-8')
-        result[lang] = {'all': len(rows), 'hunting': len(rows) - len(equestrian), 'equestrian': len(equestrian)}
+        result[lang] = {'all': len(rows), 'hunting': len(rows) - len(equestrian) - len(marine) + len(land_marine), 'marine': len(marine), 'equestrian': len(equestrian)}
     return result
 
 

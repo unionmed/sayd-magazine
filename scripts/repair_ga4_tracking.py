@@ -101,6 +101,14 @@ def main() -> None:
     for page in sorted((ROOT / 'docs').rglob('*.html')):
         raw = page.read_text(encoding='utf-8')
         rel = page.relative_to(ROOT / 'docs')
+        # Search terms must stay private: these three utilities intentionally have
+        # no analytics. Assert the exclusion rather than repairing tags onto them.
+        if rel.as_posix() in {'search/index.html', 'en/search/index.html', 'fr/search/index.html'}:
+            assert 'data-search-language=' in raw, f'Missing search page marker: {rel}'
+            assert 'analytics:start' not in raw, f'Analytics on private search: {rel}'
+            assert 'googletagmanager.com' not in raw and 'gtag(' not in raw, f'Tracking on private search: {rel}'
+            stats['search_privacy_checked'] = stats.get('search_privacy_checked', 0) + 1
+            continue
         if (rel.as_posix() in module.ALIAS_REDIRECTS | module.CANCELLED_SHELLS
             or 'http-equiv="refresh"' in raw
             or (module.is_numeric_permalink_stub(rel) and 'location.replace' in raw)):

@@ -1,0 +1,7 @@
+/* Compact visible utility, with the full 44px accessible hit target retained. */
+.site-header .site-search-link { order:1; display:inline-flex; flex:0 0 44px; width:44px; height:44px; box-sizing:border-box; align-items:center; justify-content:center; position:relative; isolation:isolate; color:var(--olive,#3e421d); border:0; border-radius:4px; }
+.site-header .site-search-link::before { content:""; position:absolute; inset:11px; z-index:-1; border:1px solid var(--gold,#b79b54); border-radius:4px; pointer-events:none; }
+.site-header .site-search-link svg { width:12px; height:12px; }
+.site-search-link:hover::before { background:#e9dfc2; }
+.site-search-link:focus-visible,.footer-search-link:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+.footer-search-link { display:inline-flex; align-items:center; min-height:44px; margin-inline-end:1rem; }
