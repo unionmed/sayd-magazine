@@ -24,9 +24,15 @@ def origin_html(page):
     """
     page = re.sub(r'href="/cdn-cgi/l/email-protection#([0-9a-fA-F]+)"',
                   lambda m: 'href="mailto:' + html.escape(cloudflare_email(m[1]), quote=True) + '"', page)
-    page = re.sub(r'<span class="__cf_email__" data-cfemail="([0-9a-fA-F]+)">.*?</span>',
+    page = re.sub(r'<span class="__cf_email__" data-cfemail="([0-9a-fA-F]+)">\[email&#160;protected\]</span>',
                   lambda m: html.escape(cloudflare_email(m[1])), page)
-    return re.sub(r'<script\b[^>]*\bsrc="(?:/cdn-cgi/scripts/[a-zA-Z0-9]+/cloudflare-static/email-decode\.min\.js|https://static\.cloudflareinsights\.com/beacon\.min\.js(?:/[a-zA-Z0-9]+)?)"[^>]*>\s*</script>\n?', '', page)
+    # These exact attribute shapes were observed in all nine public responses.
+    # Do not treat data-src as src or erase unknown/event-bearing attributes.
+    email_script = r'<script data-cfasync="false" src="/cdn-cgi/scripts/[a-f0-9]+/cloudflare-static/email-decode\.min\.js"></script>\n?'
+    beacon_script = (r'<script type="module" src="https://static\.cloudflareinsights\.com/beacon\.min\.js/v[a-f0-9]+" '
+                     r'integrity="sha512-[A-Za-z0-9+/=]+" data-cf-beacon=\'[^\'<]*\' crossorigin="anonymous"></script>\n?')
+    page = re.sub(email_script, '', page)
+    return re.sub(beacon_script, '', page)
 
 
 def matches_release(actual, expected, count):
