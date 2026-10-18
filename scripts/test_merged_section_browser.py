@@ -60,9 +60,9 @@ def run(base,out):
     old_contract=json.loads(subprocess.check_output(['git','show',base+':content/publication-contract.json'],cwd=ROOT))
     current_contract=json.loads((ROOT/'content/publication-contract.json').read_text())
     for name,digest in old_contract['protected_files'].items():
-        # Only the approved marine filter and balanced mobile navigation may differ.
+        # Only explicitly approved archive, navigation and homepage layout assets may differ.
         # The baseline request handler serves the original navigation stylesheet.
-        expected=current_contract['protected_files'][name] if name in ('assets/js/combined-archive.js','docs/assets/js/combined-archive.js','assets/css/section-navigation.css','docs/assets/css/section-navigation.css') else digest
+        expected=current_contract['protected_files'][name] if name in ('assets/js/combined-archive.js','docs/assets/js/combined-archive.js','assets/css/section-navigation.css','docs/assets/css/section-navigation.css','assets/css/home-doors.css','docs/assets/css/home-doors.css') else digest
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==expected,('Protected baseline asset changed',name)
     with tempfile.TemporaryDirectory() as temp:
         baseline=Path(temp)
@@ -80,11 +80,14 @@ def run(base,out):
             with sync_playwright() as p:
                 browser=p.chromium.launch(headless=True, executable_path=os.environ.get('PLAYWRIGHT_CHROMIUM_EXECUTABLE') or shutil.which('chromium') or None)
                 context=browser.new_context(device_scale_factor=1)
+                original_home_css=subprocess.check_output(['git','show',base+':docs/assets/css/home-doors.css'],cwd=ROOT)
                 original_search_css=subprocess.check_output(['git','show',base+':docs/assets/css/search-entry.css'],cwd=ROOT)
                 original_navigation_css=subprocess.check_output(['git','show',base+':docs/assets/css/section-navigation.css'],cwd=ROOT)
                 def route_local(request):
                     url=request.request.url
-                    if url.startswith(old_url+'/') and urlsplit(url).path=='/assets/css/section-navigation.css':
+                    if url.startswith(old_url+'/') and urlsplit(url).path=='/assets/css/home-doors.css':
+                        request.fulfill(status=200,content_type='text/css',body=original_home_css)
+                    elif url.startswith(old_url+'/') and urlsplit(url).path=='/assets/css/section-navigation.css':
                         request.fulfill(status=200,content_type='text/css',body=original_navigation_css)
                     elif url.startswith(old_url+'/') and urlsplit(url).path=='/assets/css/search-entry.css':
                         request.fulfill(status=200,content_type='text/css',body=original_search_css)
@@ -187,15 +190,15 @@ def run(base,out):
                         # Eight cards use the unchanged grid: 2 x 4 on desktop.
                         cards=page.locator('section.home-section').first.locator('.home-door-grid > article')
                         require(cards.count()==8,'Combined homepage card count')
-                        if width>=1000:
+                        if width<=820 or width>=1000:
                             rects=[card.bounding_box() for card in cards.all()]
-                            require(sorted(Counter(round(r['y']) for r in rects).values())==[4,4],'Desktop combined grid must be two rows of four')
+                            require(sorted(Counter(round(r['y']) for r in rects).values())==[4,4],'Combined grid must be two rows of four on mobile and desktop')
                         if width in (1440,390,320):
                             path=out/f'header-{lang}-{width}.png';capture(page,page.locator('.site-sticky'),path);screens.append(path)
                             path=out/f'header-before-{lang}-{width}.png';capture(before,before.locator('.site-sticky'),path);screens.append(path)
                             path=out/f'interviews-{lang}-{width}.png';capture(page,page.locator('section.home-section').nth(1),path);screens.append(path)
-                            if lang=='ar' and width==1440:
-                                path=out/'combined-ar-1440.png';capture(page,page.locator('section.home-section').first,path);screens.append(path)
+                            if width in (1440,390,320):
+                                path=out/f'combined-{lang}-{width}.png';capture(page,page.locator('section.home-section').first,path);screens.append(path)
                     # Approved interview lead and body, in each language and viewport.
                     for article_width in (390,1440):
                         page.set_viewport_size({'width':article_width,'height':1000})
