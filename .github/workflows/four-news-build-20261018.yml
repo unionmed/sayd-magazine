@@ -1,12 +1,14 @@
 name: Build and review four approved articles
 on:
+  pull_request:
+    paths: ['content/features/four-news-20261018.json', 'scripts/*four_news*', 'scripts/test_combined_hunting_equestrian.py', '.github/workflows/four-news-build-20261018.yml']
   push:
     branches: [publish/four-news-20261018]
 permissions:
   contents: write
 jobs:
   build:
-    if: "!contains(github.event.head_commit.message, '[four-news-built]')"
+    if: "github.event_name == 'push' && !contains(github.event.head_commit.message, '[four-news-built]')"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,5 +42,28 @@ jobs:
         if: always()
         with:
           name: four-news-rendered-review-${{ github.run_id }}
+          path: sayd-visual-qa/four-news-20261018/
+          retention-days: 30
+  review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2 playwright==1.55.0
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/test_four_news_20261018.py
+      - run: python scripts/test_combined_hunting_equestrian.py --base '${{ github.event.pull_request.base.sha }}'
+      - run: python scripts/test_four_news_browser_20261018.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: four-news-final-review-${{ github.run_id }}
           path: sayd-visual-qa/four-news-20261018/
           retention-days: 30

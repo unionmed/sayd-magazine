@@ -62,7 +62,7 @@ def render(a,l):
  front={'title':d['title'],'slug':a['slugs'][l],'date':DATE,'author':'صيد' if l=='ar' else 'Sayd','categories':[LABELS[a['door']][l]],'featured':p['path'],'subtitle':d['deck']}
  save(ROOT/'content'/('posts' if l=='ar' else l)/(a['slugs'][l]+'.md'),'---\n'+''.join(k+': '+json.dumps(v,ensure_ascii=False)+'\n' for k,v in front.items())+'---\n\n'+body(a,l)+'\n')
 def listing(a,l,path):
- text=path.read_text();slug=a['slugs'][l];text=re.sub(r'<article\b[^>]*>.*?</article>',lambda m:'' if '/posts/'+slug+'/' in unquote(m[0]) else m[0],text,flags=re.S);m=re.search(r'<article\b[^>]*class="(?:post-row|card)[^"]*"',text);assert m,path
+ text=path.read_text();slug=a['slugs'][l];text=re.sub(r'<article\b[^>]*>.*?</article>\n?',lambda m:'' if '/posts/'+slug+'/' in unquote(m[0]) else m[0],text,flags=re.S);m=re.search(r'<article\b[^>]*class="(?:post-row|card)[^"]*"',text);assert m,path
  style='post-row' if 'post-row' in m[0] else 'card overlay' if 'overlay' in m[0] else 'card';d=a['translations'][l];p=a['photos'][0];href=quote(os.path.relpath(page(a,l),path.parent),safe='/');im=os.path.relpath(DOCS/p['path'],path.parent)
  row='<article class="'+style+'"><a class="thumb" href="'+href+'"><img src="'+im+'" alt="'+esc.escape(p['alt'][l],quote=True)+'" loading="lazy"></a><div class="body"><h2><a href="'+href+'">'+esc.escape(d['title'])+'</a></h2><div class="meta">'+DATES[l]+'</div><p class="excerpt">'+esc.escape(d['deck'])+'</p></div></article>\n'
  save(path,text[:m.start()]+row+text[m.start():])
@@ -106,6 +106,10 @@ def run():
   for l in LANGS:
    if '<loc>'+url(a,l)+'</loc>' not in sitemap:sitemap=sitemap.replace('</urlset>','<url><loc>'+url(a,l)+'</loc><lastmod>'+DATE+'</lastmod></url>\n</urlset>')
  save(DOCS/'sitemap.xml',sitemap)
+ from rollout_mobile_nav_heritage_20261015 import nav_replace
+ for a in A:
+  for l in LANGS:
+   target=page(a,l);save(target,nav_replace(target.read_text(),target)[0])
  p=ROOT/'audit/image-catalog/manifest/2026-01.tsv';rows=p.read_text().splitlines()
  for a in A:
   key='docs/'+a['photos'][0]['path'];data=(ROOT/key).read_bytes();row=key+'\t'+hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()+'\t'+str(len(data));rows=[x for x in rows if not x.startswith(key+'\t')]+[row]
