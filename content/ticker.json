@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
+      "titles": {
+        "ar": "تعاون مصري إماراتي لحماية الحبارى وتطوير إدارة محمية العميد",
+        "en": "Egypt–UAE cooperation focuses on houbara and Omayed Reserve management",
+        "fr": "Coopération Égypte–Émirats pour l’outarde houbara et la gestion d’Omayed"
+      },
+      "title": "تعاون مصري إماراتي لحماية الحبارى وتطوير إدارة محمية العميد"
+    },
+    {
       "slug": "تمبتد-غودولفين-إيفرست-2026",
       "titles": {
         "ar": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست»",
@@ -81,15 +90,6 @@
         "fr": "Où les oiseaux se reposent-ils ? Sayd explore les refuges migratoires du Machrek et de la péninsule Arabique."
       },
       "title": "أين تستريح الطيور؟ «صيد» تستعرض أبرز ملاذات الهجرة في المشرق والجزيرة العربية."
-    },
-    {
-      "slug": "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
-      "titles": {
-        "ar": "موسم الطوقي 2026–2027 يسلّط الضوء على حياة محمية الملك عبدالعزيز البرية",
-        "en": "Touqi Season 2026–2027 spotlights wildlife at King Abdulaziz Royal Reserve",
-        "fr": "Touqi 2026–2027 révèle la biodiversité de la réserve royale du roi Abdelaziz"
-      },
-      "title": "موسم الطوقي 2026–2027 يسلّط الضوء على حياة محمية الملك عبدالعزيز البرية"
     }
   ]
 }
