@@ -53,6 +53,16 @@ def capture(page, section, path):
     page.screenshot(path=str(path), full_page=True, clip={'x': max(0, box['x']), 'y': top, 'width': box['width'], 'height': box['height'] + box['y'] + page.evaluate('scrollY') - top})
 
 
+def wait_image(page, image):
+    # Visibility does not imply that a native lazy image request has completed.
+    # Keep the real lazy-loading behavior; require a successful load before decode.
+    image.scroll_into_view_if_needed()
+    image.wait_for(state='visible')
+    page.wait_for_function('(img) => img.complete && img.naturalWidth > 0',
+                           arg=image.element_handle(), timeout=15000)
+    image.evaluate('(img) => img.decode()')
+
+
 def main(base=None):
     server, origin = serve(QuietHandler)
     old_server = None
@@ -70,6 +80,7 @@ def main(base=None):
             for width in (320, 390, 768, 1440):
                 page.set_viewport_size({'width': width, 'height': 1000})
                 for name, lang, rel, selector, count in CASES:
+                    print(f'Checking {name} at {width}px', flush=True)
                     url = origin+'/'+quote(rel)
                     page.goto(url, wait_until='networkidle')
                     section = page.locator(selector)
@@ -78,9 +89,12 @@ def main(base=None):
                     assert cards.count() == count
                     for i in range(count):
                         image = cards.nth(i).locator('img')
-                        image.scroll_into_view_if_needed()
-                        image.wait_for(state='visible')
-                        image.evaluate('(img) => img.decode()')
+                        try:
+                            wait_image(page, image)
+                        except Exception:
+                            print('Image load failed:', name, width, image.evaluate('(img) => ({src:img.src,currentSrc:img.currentSrc,complete:img.complete,naturalWidth:img.naturalWidth})'), flush=True)
+                            page.screenshot(path=str(output/f'failed-{name}-{width}.png'), full_page=False)
+                            raise
                         assert image.evaluate('(img) => img.complete && img.naturalWidth > 0')
                     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth+1'), (name, width, 'horizontal overflow')
                     boxes = [cards.nth(i).bounding_box() for i in range(count)]
@@ -121,7 +135,7 @@ def main(base=None):
                         page.goto(old_origin+'/'+quote(rel), wait_until='networkidle')
                         section = page.locator(selector)
                         for image in section.locator('img').all():
-                            image.scroll_into_view_if_needed();image.evaluate('(img) => img.decode()')
+                            wait_image(page, image)
                         capture(page, section, output/f'before-{name}-{width}.png')
             browser.close()
     finally:
