@@ -12,6 +12,7 @@ on:
       - 'scripts/refresh_related_reading.py'
       - 'scripts/test_related_reading_images.py'
       - 'scripts/test_related_reading_images_browser.py'
+      - 'scripts/test_header_social.py'
       - 'scripts/*search*'
       - '.github/workflows/mobile-nav-viewport-qa.yml'
   push:
