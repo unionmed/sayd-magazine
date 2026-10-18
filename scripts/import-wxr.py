@@ -2856,6 +2856,8 @@ def main() -> None:
     sync_tickers(args.out)
     from short_links import generate as generate_short_links
     generate_short_links(args.out)
+    from refresh_related_reading import main as refresh_reading_images
+    refresh_reading_images(docs=args.out)
     print("Done.")
     print(f"Preview: open {args.out / 'index.html'} or serve docs/ with any static server.")
 

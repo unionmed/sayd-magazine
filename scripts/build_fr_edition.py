@@ -815,6 +815,9 @@ def main():
 
     from article_dates import apply as apply_article_dates
     apply_article_dates(DOCS)
+    from refresh_related_reading import main as refresh_reading_images
+    refresh_reading_images()
+
 
 
 if __name__ == '__main__':

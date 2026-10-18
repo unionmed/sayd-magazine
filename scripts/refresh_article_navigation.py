@@ -93,7 +93,9 @@ def render_related(candidates, path, lang):
     if not cards:
         return ''
     title = 'Related' if lang == 'en' else 'ذات صلة'
-    return f'<section class="related-block"><div class="section-head"><h2>{title}</h2></div><div class="related-grid">' + '\n'.join(cards) + '</div></section>'
+    from refresh_related_reading import render
+    block = f'<section class="related-block"><div class="section-head"><h2>{title}</h2></div><div class="related-grid">' + '\n'.join(cards) + '</div></section>'
+    return render(block, path, 'related-block')
 
 
 def main():

@@ -31,7 +31,9 @@ def body(lang):
   out+=f'<h2 id="section-{i}">{esc.escape(heading)}</h2>'
   if i<3:out+=figure(lang,i+1)
   for para in paragraphs:out+='<p>'+esc.escape(para)+'</p>'
- return out
+ from refresh_related_reading import preserve_source_reading
+ page=DOCS/('' if lang=='ar' else lang)/'posts'/(AR if lang=='ar' else EN)/'index.html'
+ return preserve_source_reading(out,page)
 for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
  d=T[lang];slug=AR if lang=='ar' else EN;depth=2 if lang=='ar' else 3
  old='حين-يصبح-الخريف-موسما-لاصطياد-الصورة' if lang=='ar' else 'when-autumn-becomes-a-season-for-hunting-images'

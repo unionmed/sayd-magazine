@@ -32,7 +32,9 @@ def body(lang):
   photo_for_section={1:1,2:2,5:3,6:4}
   if i in photo_for_section:out+=figure(lang,photo_for_section[i])
   for para in paragraphs:out+='<p>'+esc.escape(para)+'</p>'
- return out
+ from refresh_related_reading import preserve_source_reading
+ page=DOCS/('' if lang=='ar' else lang)/'posts'/(AR if lang=='ar' else EN)/'index.html'
+ return preserve_source_reading(out,page)
 for lang,prefix in [('ar',''),('en','en'),('fr','fr')]:
  d=T[lang];slug=AR if lang=='ar' else EN;depth=2 if lang=='ar' else 3
  old='حين-يصبح-الخريف-موسما-لاصطياد-الصورة' if lang=='ar' else 'when-autumn-becomes-a-season-for-hunting-images'
