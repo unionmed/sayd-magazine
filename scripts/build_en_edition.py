@@ -791,9 +791,12 @@ def ticker_html(depth: int, articles: dict[str, dict], lang: str) -> str:
         raise ValueError("AR ticker is already in docs/")
     label = "From every valley, a story"
     links = []
-    for slug in HOME_TICKER:
-        title = TICKER_TITLES_EN.get(slug) or articles[slug]["title"]
-        href = en_post_href(depth, slug)
+    from ticker_policy import entries, local_slug, title as ticker_title
+    for entry in entries():
+        title = ticker_title(entry, 'en')
+        href = en_post_href(depth, local_slug(entry['slug'], 'en'))
+        if entry.get('anchor'):
+            href += '#' + entry['anchor']
         links.append(f'<a href="{href}">{escape(title)}</a>')
     inner = "".join(links)
     return f"""
@@ -1538,6 +1541,8 @@ def main() -> None:
     apply_article_dates(DOCS)
     from refresh_related_reading import main as refresh_reading_images
     refresh_reading_images()
+    from sync_tickers import sync as sync_shared_tickers
+    sync_shared_tickers(DOCS)
 
 
 

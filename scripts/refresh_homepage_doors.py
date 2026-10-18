@@ -151,6 +151,8 @@ def validate_news_selection(c):
 
 
 def validate_config(c):
+    from ticker_policy import validate
+    validate(c)
     assert c.get('memory_visible') is False, 'Memory display must remain retired'
     from interview_collection import homepage_slugs
     assert next(d['slugs'] for d in c['ia_door_sections'] if d['door']=='interviews') == homepage_slugs('ar',c)
@@ -244,6 +246,8 @@ def merge_hunting_section(page, lang):
 
 
 def refresh(path,lang):
+    from ticker_policy import sync_config
+    sync_config()
     c=config();validate_config(c);channel=channel_config();path=Path(path);page=path.read_text()
     catalog=collect(page,path,path)
     for folder in dict.fromkeys([d[-1] for d in DOORS] + ['فروسية']):
@@ -325,14 +329,8 @@ def refresh(path,lang):
             more={'ar':'المزيد','en':'More','fr':'Voir plus'}[lang]
             head=r'(<h2>'+re.escape(html.escape(heading))+r'</h2>\s*<a\b[^>]*>)[^<]*(</a>)'
             page=re.sub(head,lambda m:m[1]+more+m[2],page,count=1)
-    entries=c.get('ticker_entries',[{'slug':ar} for ar in c['ticker_slugs']])
-    assert [e['slug'] for e in entries]==c['ticker_slugs'], 'Ticker entry placement differs'
-    ticker=''
-    for entry in entries:
-        translated,item=data(entry['slug'])
-        title=entry.get('titles',{}).get(lang,item['title'])
-        anchor='#'+entry['anchor'] if entry.get('anchor') else ''
-        ticker+=f'<a href="posts/{translated}/index.html{anchor}">{html.escape(title)}</a>'
+    from ticker_policy import render as render_ticker
+    ticker=render_ticker(lang)
 
     page=re.sub(r'(<div class="ticker"(?: aria-hidden="true")?>).*?(</div>)',lambda m:m[1]+ticker+m[2],page,flags=re.S)
     # Normalize wrapper whitespace for a stable second refresh.

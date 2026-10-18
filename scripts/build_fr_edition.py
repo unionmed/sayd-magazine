@@ -205,6 +205,9 @@ def chrome(tree, slug: str | None, translations):
 
 def prune_and_translate_cards(tree, translations):
     for a in list(tree.xpath('//a[@href]')):
+        # News is selected/translated centrally, not by the older article manifest.
+        if any('ticker' in (p.get('class') or '').split() for p in a.iterancestors()):
+            continue
         if any('lang-switch' in (p.get('class') or '') or 'lang-twin' in (p.get('class') or '') or 'article-content' in (p.get('class') or '') for p in a.iterancestors()):
             continue
         href=a.get('href') or ''
@@ -444,13 +447,11 @@ def listing_switch(rel: str) -> tuple[str, str, str] | None:
 
 
 def french_ticker_blocks() -> list[str] | None:
-    """Homepage ticker, with post links rooted at /fr/ so category pages cannot escape."""
-    home = DOCS / 'fr' / 'index.html'
-    if not home.is_file():
-        return None
-    blocks = TICKER_RE.findall(home.read_text(encoding='utf-8'))
-    if len(blocks) < 2:
-        return None
+    """Canonical ticker, with post links rooted at /fr/ for listing pages."""
+    from ticker_policy import render
+    inner = render('fr')
+    blocks = ['<div class="ticker">' + inner + '</div>',
+              '<div class="ticker" aria-hidden="true">' + inner + '</div>']
 
     def absolutize(block: str) -> str:
         def repl(match: re.Match[str]) -> str:
@@ -817,6 +818,8 @@ def main():
     apply_article_dates(DOCS)
     from refresh_related_reading import main as refresh_reading_images
     refresh_reading_images()
+    from sync_tickers import sync as sync_shared_tickers
+    sync_shared_tickers(DOCS)
 
 
 

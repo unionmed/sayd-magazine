@@ -2,95 +2,94 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
+      "titles": {
+        "ar": "شيرين بو رفول لـ«صيد»: أحبّ الصيد، لكنني أختار مكافحة المخالفات وإنقاذ الطيور.",
+        "en": "Shireen Bou Rafoul tells Sayd: I love hunting, but I choose to fight violations and rescue birds.",
+        "fr": "Shireen Bou Rafoul à Sayd : j’aime la chasse, mais je choisis de lutter contre les infractions et de sauver les oiseaux."
+      },
+      "title": "شيرين بو رفول لـ«صيد»: أحبّ الصيد، لكنني أختار مكافحة المخالفات وإنقاذ الطيور."
+    },
+    {
+      "slug": "طيور-في-الحقائب-تهريب-الطيور-2026",
+      "titles": {
+        "ar": "تزوير أوراق الجوارح أمام القضاء في إسبانيا… وتونس تستضيف لقاءً لمكافحة الاتجار غير المشروع بالطيور",
+        "en": "Raptor-document forgery under investigation in Spain; Tunis hosts talks on tackling illegal bird trade",
+        "fr": "Faux papiers de rapaces : enquête en Espagne ; Tunis accueille une rencontre contre le trafic d’oiseaux"
+      },
+      "title": "تزوير أوراق الجوارح أمام القضاء في إسبانيا… وتونس تستضيف لقاءً لمكافحة الاتجار غير المشروع بالطيور"
+    },
+    {
+      "slug": "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
+      "titles": {
+        "ar": "عكار: باشق داخل حقيبة ظهر خلال عملية لمكافحة صيد الجوارح",
+        "en": "Akkar: Sparrowhawk found inside backpack during raptor anti-poaching operation",
+        "fr": "Akkar : un épervier découvert dans un sac à dos lors d’une opération anti-braconnage"
+      },
+      "title": "عكار: باشق داخل حقيبة ظهر خلال عملية لمكافحة صيد الجوارح"
+    },
+    {
       "slug": "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-      "title": "تحذير أوروبي: 11–36 مليون طائر سنويًا في المتوسط و83% من الدول لم تعتمد التدابير الكافية",
       "titles": {
         "ar": "تحذير أوروبي: 11–36 مليون طائر سنويًا في المتوسط و83% من الدول لم تعتمد التدابير الكافية",
         "en": "European warning: 11–36 million birds annually; 83% of countries lack sufficient measures",
         "fr": "Alerte européenne : 11 à 36 millions d'oiseaux par an ; 83 % des pays sans mesures suffisantes"
-      }
-    },
-    {
-      "slug": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-      "title": "أين تستريح الطيور؟",
-      "titles": {
-        "ar": "أين تستريح الطيور؟ «صيد» تستعرض أبرز ملاذات الهجرة في المشرق والجزيرة العربية.",
-        "en": "Where do birds rest? Sayd explores major migration refuges in the Mashreq and Arabian Peninsula.",
-        "fr": "Où les oiseaux se reposent-ils ? Sayd explore les refuges migratoires du Machrek et de la péninsule Arabique."
-      }
-    },
-    {
-      "slug": "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
-      "title": "موسم الطوقي 2026–2027 يسلّط الضوء على حياة محمية الملك عبدالعزيز البرية",
-      "titles": {
-        "ar": "موسم الطوقي 2026–2027 يسلّط الضوء على حياة محمية الملك عبدالعزيز البرية",
-        "en": "Touqi Season 2026–2027 spotlights wildlife at King Abdulaziz Royal Reserve",
-        "fr": "Touqi 2026–2027 révèle la biodiversité de la réserve royale du roi Abdelaziz"
-      }
-    },
-    {
-      "slug": "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
-      "title": "البقاع الشمالي: إزالة شباك الصيد غير القانونية ترفع حصيلة الحملة إلى 38,280 م²",
-      "titles": {
-        "ar": "البقاع الشمالي: إزالة شباك الصيد غير القانونية ترفع حصيلة الحملة إلى 38,280 م²",
-        "en": "Northern Bekaa: illegal bird-net removals bring the campaign total to 38,280 m²",
-        "fr": "Nord de la Bekaa : le retrait des filets illégaux porte le bilan de la campagne à 38 280 m²"
-      }
-    },
-    {
-      "slug": "حين-يتغير-الساحل-أين-تستريح-الطيور",
-      "title": "حين يتغيّر الساحل… أين تستريح الطيور؟",
-      "titles": {
-        "ar": "حين يتغيّر الساحل… أين تستريح الطيور؟",
-        "en": "When the coast changes… where do birds rest?",
-        "fr": "Quand le littoral change… où les oiseaux se reposent-ils ?"
-      }
-    },
-    {
-      "slug": "قطر-حماية-المناطق-البرية-والبحرية-2030",
-      "title": "قطر تستهدف حماية 30% من مناطقها البرية والبحرية بحلول 2030",
-      "titles": {
-        "ar": "قطر تستهدف حماية 30% من مناطقها البرية والبحرية بحلول 2030",
-        "en": "Qatar aims to protect 30% of its land and marine areas by 2030",
-        "fr": "Le Qatar vise à protéger 30 % de ses zones terrestres et marines d’ici 2030"
-      }
+      },
+      "title": "تحذير أوروبي: 11–36 مليون طائر سنويًا في المتوسط و83% من الدول لم تعتمد التدابير الكافية"
     },
     {
       "slug": "ختام-الملواح-2026-60-فائزا",
-      "title": "الملواح يختتم منافساته بتتويج 60 فائزًا",
       "titles": {
         "ar": "الملواح يختتم منافساته بتتويج 60 فائزًا",
         "en": "Al-Melwah concludes with 60 winners",
         "fr": "Al-Melwah s’achève avec 60 lauréats"
-      }
+      },
+      "title": "الملواح يختتم منافساته بتتويج 60 فائزًا"
     },
     {
-      "slug": "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-      "title": "حين يصبح الخريف موسماً لاصطياد الصورة"
+      "slug": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
+      "titles": {
+        "ar": "أين تستريح الطيور؟ «صيد» تستعرض أبرز ملاذات الهجرة في المشرق والجزيرة العربية.",
+        "en": "Where do birds rest? Sayd explores major migration refuges in the Mashreq and Arabian Peninsula.",
+        "fr": "Où les oiseaux se reposent-ils ? Sayd explore les refuges migratoires du Machrek et de la péninsule Arabique."
+      },
+      "title": "أين تستريح الطيور؟ «صيد» تستعرض أبرز ملاذات الهجرة في المشرق والجزيرة العربية."
     },
     {
-      "slug": "رادار-صيد-العربي-سبتمبر-2026",
-      "title": "رادار صيد العربي | سبتمبر 2026: توقيف 50 صيادًا وإنقاذ آلاف الطيور"
+      "slug": "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
+      "titles": {
+        "ar": "موسم الطوقي 2026–2027 يسلّط الضوء على حياة محمية الملك عبدالعزيز البرية",
+        "en": "Touqi Season 2026–2027 spotlights wildlife at King Abdulaziz Royal Reserve",
+        "fr": "Touqi 2026–2027 révèle la biodiversité de la réserve royale du roi Abdelaziz"
+      },
+      "title": "موسم الطوقي 2026–2027 يسلّط الضوء على حياة محمية الملك عبدالعزيز البرية"
     },
     {
-      "slug": "خريف-الصيد-العربي-2026",
-      "title": "تسع دول عربية وتسع خرائط صيد مختلفة تحت سماء خريف واحد."
+      "slug": "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
+      "titles": {
+        "ar": "البقاع الشمالي: إزالة شباك الصيد غير القانونية ترفع حصيلة الحملة إلى 38,280 م²",
+        "en": "Northern Bekaa: illegal bird-net removals bring the campaign total to 38,280 m²",
+        "fr": "Nord de la Bekaa : le retrait des filets illégaux porte le bilan de la campagne à 38 280 m²"
+      },
+      "title": "البقاع الشمالي: إزالة شباك الصيد غير القانونية ترفع حصيلة الحملة إلى 38,280 م²"
     },
     {
-      "slug": "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
-      "title": "ليبيا: «البراري» تحذّر من حصائل صيد ضخمة للقمري الأوروبي"
+      "slug": "حين-يتغير-الساحل-أين-تستريح-الطيور",
+      "titles": {
+        "ar": "حين يتغيّر الساحل… أين تستريح الطيور؟",
+        "en": "When the coast changes… where do birds rest?",
+        "fr": "Quand le littoral change… où les oiseaux se reposent-ils ?"
+      },
+      "title": "حين يتغيّر الساحل… أين تستريح الطيور؟"
     },
     {
-      "slug": "منظمات-دولية-ابادة-بيئية-جنوب-لبنان",
-      "title": "جنوب لبنان: دمار بيئي موثّق يهدد أحد أهم ممرات هجرة الطيور في العالم"
-    },
-    {
-      "slug": "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
-      "title": "بيرد لايف: 45٪ من الطيور المهاجرة في العالم في انحدار مستمر"
-    },
-    {
-      "slug": "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-      "title": "مسارات الهجرة فقدت 7 أنواع خلال 150 عاماً… والكروان رفيع المنقار آخرها"
+      "slug": "قطر-حماية-المناطق-البرية-والبحرية-2030",
+      "titles": {
+        "ar": "قطر تستهدف حماية 30% من مناطقها البرية والبحرية بحلول 2030",
+        "en": "Qatar aims to protect 30% of its land and marine areas by 2030",
+        "fr": "Le Qatar vise à protéger 30 % de ses zones terrestres et marines d’ici 2030"
+      },
+      "title": "قطر تستهدف حماية 30% من مناطقها البرية والبحرية بحلول 2030"
     }
   ]
 }
