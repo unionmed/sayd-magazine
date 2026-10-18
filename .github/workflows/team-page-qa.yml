@@ -1,0 +1,31 @@
+name: Team page responsive verification
+on:
+  pull_request:
+    paths:
+      - 'content/team/**'
+      - 'content/pages/من-نحن.md'
+      - 'docs/pages/من-نحن/index.html'
+      - 'docs/en/team/index.html'
+      - 'docs/fr/team/index.html'
+      - 'scripts/test_team_page*'
+      - '.github/workflows/team-page-qa.yml'
+permissions:
+  contents: read
+jobs:
+  team:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2 playwright==1.55.0
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/test_team_page.py
+      - run: python scripts/test_team_page_browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: team-page-review-${{ github.run_id }}
+          path: sayd-visual-qa/team/
+          retention-days: 30

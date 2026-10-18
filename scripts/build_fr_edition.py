@@ -58,23 +58,18 @@ UI = {
 }
 STATIC_COPY = {
  'team': {
-  'Team':'Équipe', 'Page':'Page', 'Publisher and editor-in-chief':'Éditeur et rédacteur en chef',
-  'General manager':'Directeur général', 'Managing editor':'Rédactrice en chef adjointe',
-  'Website manager':'Responsable du site', 'Legal counsel':'Conseil juridique',
-  'Lawyer Ziad Al-Khazen':'Me Ziad Al-Khazen', 'Public relations':'Relations publiques',
-  'Office director: Rona Abi Assi':'Directrice du bureau : Rona Abi Assi',
-  'External relations and translation':'Relations extérieures et traduction',
-  'Desks':'Rubriques', 'Hunting and field photography: Fouad Itani':'Chasse et photographie de terrain : Fouad Itani',
-  'Equestrian: Donna Kazzi':'Équitation : Donna Kazzi', 'Shooting: Joelle Akiki':'Tir : Joelle Akiki',
-  'Gear and arms: Hani Al-Ahmad':'Équipement et armes : Hani Al-Ahmad',
-  'Eco-tourism: Aoun Abi Aoun':'Écotourisme : Aoun Abi Aoun',
-  'Sports: Tony Bajani':'Sports : Tony Bajani', 'Your health in nature: Rita Haddad':'Votre santé dans la nature : Rita Haddad',
-  'Miscellany: Abdel Hadi Saab':'Divers : Abdel Hadi Saab',
-  'Poetry & Art: visual artist Saad Shaiban':'Poésie et arts : Saad Shaiban, artiste plasticien',
-  'Photography: Hussein Idriss':'Photographie : Hussein Idriss',
-  'This is an English stub of the masthead. The Arabic team page remains the full reference.':
-    'Cette présentation résume l’équipe. La page arabe reste la référence complète.',
-  'Team:':'Équipe :'
+  'Team': 'Équipe',
+  'Page': 'Page',
+  'Publisher and editor-in-chief': 'Éditeur et rédacteur en chef',
+  'General manager': 'Directeur général',
+  'Managing editor': 'Directrice de la rédaction',
+  'Technical director': 'Directeur technique',
+  'Legal counsel': 'Conseiller juridique',
+  'Director of external relations': 'Directrice des relations extérieures',
+  'Supporting team': 'Équipe de soutien',
+  'Main office': 'Bureau principal',
+  'Lebanon, Fanar, Mouawad Raslan Abou Jaoude Street, Abou Jaoude Building, first floor.': 'Liban, Fanar, rue Mouawad Raslan Abou Jaoude, immeuble Abou Jaoude, premier étage.',
+  'Lawyer Ziad Al-Khazen': 'Me Ziad Al-Khazen',
  },
  'contact': {
   'Contact':'Contact', 'Page':'Page',

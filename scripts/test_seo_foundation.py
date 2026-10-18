@@ -538,6 +538,8 @@ def test_breadcrumb_percent_encoded_arabic_urls() -> None:
 
 
 if __name__ == "__main__":
+    from test_team_page import test_team_pages
+    test_team_pages()
     test_dates()
     test_recorded_lastmod()
     test_public_urls()
