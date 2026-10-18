@@ -1,12 +1,53 @@
 #!/usr/bin/env python3
 """Wait for the exact ticker-bearing release to reach the public Pages site."""
 import argparse
+import html
 import json
 from pathlib import Path
+import re
 import time
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 from sync_tickers import ROOT, TICKER
+
+
+def cloudflare_email(value):
+    payload = bytes.fromhex(value)
+    return bytes(byte ^ payload[0] for byte in payload[1:]).decode('utf-8')
+
+
+def origin_html(page):
+    """Undo only the email protection and scripts observed on the live CDN.
+
+    Do not strip arbitrary scripts, normalize whitespace, or change ticker HTML.
+    Every other byte must still equal the approved repository output.
+    """
+    page = re.sub(r'href="/cdn-cgi/l/email-protection#([0-9a-fA-F]+)"',
+                  lambda m: 'href="mailto:' + html.escape(cloudflare_email(m[1]), quote=True) + '"', page)
+    page = re.sub(r'<span class="__cf_email__" data-cfemail="([0-9a-fA-F]+)">\[email&#160;protected\]</span>',
+                  lambda m: html.escape(cloudflare_email(m[1])), page)
+    # These exact attribute shapes were observed in all nine public responses.
+    # Do not treat data-src as src or erase unknown/event-bearing attributes.
+    email_script = r'<script data-cfasync="false" src="/cdn-cgi/scripts/[a-f0-9]+/cloudflare-static/email-decode\.min\.js"></script>\n?'
+    beacon_script = (r'<script type="module" src="https://static\.cloudflareinsights\.com/beacon\.min\.js/v[a-f0-9]+" '
+                     r'integrity="sha512-[A-Za-z0-9+/=]+" data-cf-beacon=\'[^\'<]*\' crossorigin="anonymous"></script>\n?')
+    page = re.sub(email_script, '', page)
+    return re.sub(beacon_script, '', page)
+
+
+def matches_release(actual, expected, count):
+    try:
+        page, source = actual.decode('utf-8'), expected.decode('utf-8')
+        loops, approved = TICKER.findall(page), TICKER.findall(source)
+        if not (0 < count <= 10 and len(loops) == len(approved) == 2):
+            return False
+        if loops != approved or loops[0][1] != loops[1][1]:
+            return False
+        if loops[0][1].count('<a ') != count:
+            return False
+        return page == source or origin_html(page) == source
+    except (ValueError, UnicodeError, IndexError):
+        return False
 
 
 def verify(revision, timeout=900):
@@ -26,13 +67,10 @@ def verify(revision, timeout=900):
                 request = Request(url, headers={'Cache-Control':'no-cache', 'User-Agent':'Sayd-Publication-Verification/1.0'})
                 with urlopen(request, timeout=30) as response:
                     actual = response.read()
-                if actual != expected:
+                if not matches_release(actual, expected, len(slugs)):
                     print('Waiting for current release:', path, flush=True)
                     continue
-                loops = TICKER.findall(actual.decode())
-                assert len(loops) == 2 and loops[0][1] == loops[1][1]
-                assert loops[0][1].count('<a ') == len(slugs) <= 10
-                print('LIVE PASS:', path, 'news:', len(slugs), 'exact release bytes', flush=True)
+                print('LIVE PASS:', path, 'news:', len(slugs), 'exact ticker and origin content (known Cloudflare additions normalized)', flush=True)
                 del pending[path]
             except (OSError, ValueError) as error:
                 print('Waiting for live page:', path, str(error), flush=True)
@@ -40,7 +78,7 @@ def verify(revision, timeout=900):
             if time.monotonic() >= deadline:
                 raise SystemExit('Live ticker release not verified: ' + ', '.join(pending))
             time.sleep(15)
-    print('PASS: exact deployed release verified on all three homepages, article pages and category pages.')
+    print('PASS: exact ticker and deployed origin content verified on all three homepages, article pages and category pages.')
 
 
 if __name__ == '__main__':
