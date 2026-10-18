@@ -8,14 +8,14 @@
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
   ],
   "latest": [
+    "تمبتد-غودولفين-إيفرست-2026",
+    "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
+    "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "ختام-الملواح-2026-60-فائزا",
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-    "حين-يتغير-الساحل-أين-تستريح-الطيور",
-    "أسلحة-الصيد-في-معرض-الرياض-2026",
-    "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-    "رادار-صيد-العربي-سبتمبر-2026"
+    "حين-يتغير-الساحل-أين-تستريح-الطيور"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -149,16 +149,18 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
+      "رادار-صيد-العربي-سبتمبر-2026",
       "الصمت-الذي-يتكلمه-الخيل",
       "خريف-الصيد-العربي-2026",
       "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
       "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
       "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-      "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
-      "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-      "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+      "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
     ],
     "رماية وعتاد": [
+      "أسلحة-الصيد-في-معرض-الرياض-2026",
+      "القاهرة-تستعد-لكأس-العالم-للبندقية-والمسدس",
       "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
     ],
     "الفروسية": [
@@ -177,16 +179,18 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "when-autumn-becomes-a-season-for-hunting-images",
+      "sayd-arab-radar-september-2026",
       "the-silence-horses-speak",
       "arab-hunting-autumn-2026",
       "turtle-doves-cross-hunting-borders-european-flyways",
       "sicily-lebanon-protecting-migratory-birds",
       "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
-      "skies-losing-balance-birdlife-flyways-report",
-      "how-migration-routes-lost-seven-birds-in-150-years",
-      "south-lebanon-environmental-destruction-bird-flyway"
+      "skies-losing-balance-birdlife-flyways-report"
     ],
     "Shooting & Gear": [
+      "riyadh-hunting-firearms-exhibition-2026",
+      "cairo-rifle-pistol-world-cup-2026",
       "field-balance-beretta-a400-xtreme-plus-or-benelli-sbe-3"
     ],
     "Equestrian": [
@@ -221,10 +225,12 @@
       "qatar-protected-land-marine-areas-2030"
     ],
     "علوم واكتشافات": [
+      "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026",
       "طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور",
       "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل"
     ],
     "Science & Discoveries": [
+      "common-loon-natal-lakes-shoreline-development-2026",
       "jurassic-flightless-bird-yuezhuornis-evolution",
       "turtle-dove-gps-eastern-flyway-nile-red-sea"
     ],
@@ -281,28 +287,28 @@
       "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
     ],
     "latest": [
+      "تمبتد-غودولفين-إيفرست-2026",
+      "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
+      "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
       "ختام-الملواح-2026-60-فائزا",
       "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
       "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-      "حين-يتغير-الساحل-أين-تستريح-الطيور",
-      "أسلحة-الصيد-في-معرض-الرياض-2026",
-      "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
-      "رادار-صيد-العربي-سبتمبر-2026"
+      "حين-يتغير-الساحل-أين-تستريح-الطيور"
     ]
   },
   "ia_door_sections": [
     {
       "door": "hunting",
       "slugs": [
+        "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
+        "رادار-صيد-العربي-سبتمبر-2026",
         "الصمت-الذي-يتكلمه-الخيل",
         "خريف-الصيد-العربي-2026",
         "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
         "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-        "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف",
-        "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما",
-        "منظمات-دولية-ابادة-بيئية-جنوب-لبنان"
+        "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
       ]
     },
     {
@@ -317,6 +323,7 @@
     {
       "door": "gear",
       "slugs": [
+        "أسلحة-الصيد-في-معرض-الرياض-2026",
         "القاهرة-تستعد-لكأس-العالم-للبندقية-والمسدس",
         "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
       ]
@@ -333,6 +340,7 @@
     {
       "door": "science",
       "slugs": [
+        "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026",
         "طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور",
         "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل"
       ]
@@ -433,7 +441,11 @@
     "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد": "laws",
     "الرياض-تستعيد-صهيلها-موسم-السباقات-2026": "equestrian",
     "طيور-في-الحقائب-تهريب-الطيور-2026": "hunting",
-    "شيرين-بو-رفول-مكافحة-الصيد-الجائر": "interviews"
+    "شيرين-بو-رفول-مكافحة-الصيد-الجائر": "interviews",
+    "تمبتد-غودولفين-إيفرست-2026": "equestrian",
+    "بطولة-العالم-بندقية-300-متر-القاهرة-2026": "gear",
+    "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026": "wildlife",
+    "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026": "science"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -452,16 +464,16 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "تمبتد-غودولفين-إيفرست-2026",
+    "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
+    "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
     "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
     "طيور-في-الحقائب-تهريب-الطيور-2026",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
     "ختام-الملواح-2026-60-فائزا",
     "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-    "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
-    "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
-    "حين-يتغير-الساحل-أين-تستريح-الطيور",
-    "قطر-حماية-المناطق-البرية-والبحرية-2030"
+    "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -636,11 +648,71 @@
         "en": "Shireen Bou Rafoul monitoring hunting violations.",
         "fr": "Shireen Bou Rafoul lors du repérage d’infractions à la chasse."
       }
+    },
+    "تمبتد-غودولفين-إيفرست-2026": {
+      "image": "media/uploads/2026/10/tempted-everest-godolphin-owner-approved-20261018.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "تمبتد في مقدمة مجموعة من الخيول خلال سباق إيفرست في راندويك.",
+        "en": "Tempted leads a group of horses during The Everest at Randwick.",
+        "fr": "Tempted en tête d’un groupe de chevaux pendant The Everest à Randwick."
+      }
+    },
+    "بطولة-العالم-بندقية-300-متر-القاهرة-2026": {
+      "image": "media/uploads/2026/10/cairo-300m-issf-owner-approved-20261018.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ثلاثة رماة يصوّبون ببنادقهم من وضع الوقوف في ميدان الرماية.",
+        "en": "Three rifle shooters take aim from the standing position on a shooting range.",
+        "fr": "Trois tireurs à la carabine visent en position debout sur un pas de tir."
+      }
+    },
+    "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026": {
+      "image": "media/uploads/2026/10/abu-dhabi-wildlife-turtle-wam-owner-approved-20261018.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "سلحفاة بحرية في المياه الضحلة؛ صورة مرافقة لإعلان شبكة أبوظبي لإنقاذ الحياة الفطرية.",
+        "en": "A sea turtle in shallow water; a photograph accompanying the announcement of the Abu Dhabi Wildlife Response Network.",
+        "fr": "Une tortue marine en eau peu profonde ; photographie accompagnant l’annonce du réseau de sauvetage de la faune d’Abou Dhabi."
+      }
+    },
+    "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026": {
+      "image": "media/uploads/2026/10/common-loon-john-picken-wisconsin-2011.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "غواص شائع بعين حمراء ورأس أسود وريش أبيض وأسود يسبح في مياه مينوكوا بولاية ويسكونسن.",
+        "en": "A common loon with a red eye, black head and black-and-white plumage swimming in Minocqua, Wisconsin.",
+        "fr": "Un plongeon imbrin à l’œil rouge, à la tête noire et au plumage noir et blanc nage à Minocqua, dans le Wisconsin."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "تمبتد-غودولفين-إيفرست-2026",
+      "titles": {
+        "ar": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست»",
+        "en": "Tempted delivers Godolphin’s first Everest victory",
+        "fr": "Tempted offre à Godolphin sa première victoire dans l’Everest"
+      }
+    },
+    {
+      "slug": "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
+      "titles": {
+        "ar": "النمسا تحصد ذهبية فرق بندقية 300 متر بالقاهرة",
+        "en": "Austria wins 300m rifle team gold in Cairo",
+        "fr": "L’Autriche remporte l’or par équipes à 300 m au Caire"
+      }
+    },
+    {
+      "slug": "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
+      "titles": {
+        "ar": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية",
+        "en": "Abu Dhabi launches a wildlife rescue network",
+        "fr": "Abou Dhabi lance un réseau de sauvetage de la faune"
+      }
+    },
     {
       "slug": "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
       "titles": {
@@ -695,30 +767,6 @@
         "ar": "موسم الطوقي 2026–2027 يسلّط الضوء على حياة محمية الملك عبدالعزيز البرية",
         "en": "Touqi Season 2026–2027 spotlights wildlife at King Abdulaziz Royal Reserve",
         "fr": "Touqi 2026–2027 révèle la biodiversité de la réserve royale du roi Abdelaziz"
-      }
-    },
-    {
-      "slug": "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
-      "titles": {
-        "ar": "البقاع الشمالي: إزالة شباك الصيد غير القانونية ترفع حصيلة الحملة إلى 38,280 م²",
-        "en": "Northern Bekaa: illegal bird-net removals bring the campaign total to 38,280 m²",
-        "fr": "Nord de la Bekaa : le retrait des filets illégaux porte le bilan de la campagne à 38 280 m²"
-      }
-    },
-    {
-      "slug": "حين-يتغير-الساحل-أين-تستريح-الطيور",
-      "titles": {
-        "ar": "حين يتغيّر الساحل… أين تستريح الطيور؟",
-        "en": "When the coast changes… where do birds rest?",
-        "fr": "Quand le littoral change… où les oiseaux se reposent-ils ?"
-      }
-    },
-    {
-      "slug": "قطر-حماية-المناطق-البرية-والبحرية-2030",
-      "titles": {
-        "ar": "قطر تستهدف حماية 30% من مناطقها البرية والبحرية بحلول 2030",
-        "en": "Qatar aims to protect 30% of its land and marine areas by 2030",
-        "fr": "Le Qatar vise à protéger 30 % de ses zones terrestres et marines d’ici 2030"
       }
     }
   ],

@@ -2,6 +2,33 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "تمبتد-غودولفين-إيفرست-2026",
+      "titles": {
+        "ar": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست»",
+        "en": "Tempted delivers Godolphin’s first Everest victory",
+        "fr": "Tempted offre à Godolphin sa première victoire dans l’Everest"
+      },
+      "title": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست»"
+    },
+    {
+      "slug": "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
+      "titles": {
+        "ar": "النمسا تحصد ذهبية فرق بندقية 300 متر بالقاهرة",
+        "en": "Austria wins 300m rifle team gold in Cairo",
+        "fr": "L’Autriche remporte l’or par équipes à 300 m au Caire"
+      },
+      "title": "النمسا تحصد ذهبية فرق بندقية 300 متر بالقاهرة"
+    },
+    {
+      "slug": "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
+      "titles": {
+        "ar": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية",
+        "en": "Abu Dhabi launches a wildlife rescue network",
+        "fr": "Abou Dhabi lance un réseau de sauvetage de la faune"
+      },
+      "title": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية"
+    },
+    {
       "slug": "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
       "titles": {
         "ar": "شيرين بو رفول لـ«صيد»: أحبّ الصيد، لكنني أختار مكافحة المخالفات وإنقاذ الطيور.",
@@ -63,33 +90,6 @@
         "fr": "Touqi 2026–2027 révèle la biodiversité de la réserve royale du roi Abdelaziz"
       },
       "title": "موسم الطوقي 2026–2027 يسلّط الضوء على حياة محمية الملك عبدالعزيز البرية"
-    },
-    {
-      "slug": "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
-      "titles": {
-        "ar": "البقاع الشمالي: إزالة شباك الصيد غير القانونية ترفع حصيلة الحملة إلى 38,280 م²",
-        "en": "Northern Bekaa: illegal bird-net removals bring the campaign total to 38,280 m²",
-        "fr": "Nord de la Bekaa : le retrait des filets illégaux porte le bilan de la campagne à 38 280 m²"
-      },
-      "title": "البقاع الشمالي: إزالة شباك الصيد غير القانونية ترفع حصيلة الحملة إلى 38,280 م²"
-    },
-    {
-      "slug": "حين-يتغير-الساحل-أين-تستريح-الطيور",
-      "titles": {
-        "ar": "حين يتغيّر الساحل… أين تستريح الطيور؟",
-        "en": "When the coast changes… where do birds rest?",
-        "fr": "Quand le littoral change… où les oiseaux se reposent-ils ?"
-      },
-      "title": "حين يتغيّر الساحل… أين تستريح الطيور؟"
-    },
-    {
-      "slug": "قطر-حماية-المناطق-البرية-والبحرية-2030",
-      "titles": {
-        "ar": "قطر تستهدف حماية 30% من مناطقها البرية والبحرية بحلول 2030",
-        "en": "Qatar aims to protect 30% of its land and marine areas by 2030",
-        "fr": "Le Qatar vise à protéger 30 % de ses zones terrestres et marines d’ici 2030"
-      },
-      "title": "قطر تستهدف حماية 30% من مناطقها البرية والبحرية بحلول 2030"
     }
   ]
 }
