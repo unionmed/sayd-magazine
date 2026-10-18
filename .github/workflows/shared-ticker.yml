@@ -12,6 +12,7 @@ jobs:
           python-version: '3.12'
       - run: pip install lxml
       - run: python scripts/test_shared_ticker.py
+      - run: python -m unittest discover -s scripts -p test_live_ticker_verifier.py -v
   browser:
     runs-on: ubuntu-latest
     steps:
