@@ -52,5 +52,10 @@ p=ROOT/'audit/image-catalog/manifest/2026-01.tsv';rows=p.read_text().splitlines(
 row=image+'\t'+hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()+'\t'+str(len(data))
 rows=[x for x in rows if not x.startswith(image+'\t')]+[row]
 p.write_text('\n'.join(rows[:1]+sorted(rows[1:],key=lambda x:x.split('\t')[0]))+'\n')
+from urllib.parse import quote
+p=ROOT/'docs/sitemap.xml';s=p.read_text()
+for slug in (AR,EN):
+ s=re.sub(r'<url>.*?</url>',lambda m: re.sub(r'<lastmod>.*?</lastmod>','<lastmod>2026-10-18</lastmod>',m[0]) if '/posts/'+quote(slug)+'/' in m[0] else m[0],s,flags=re.S)
+p.write_text(s)
 rebuild_search()
 print('Revised three mirrors, source, update metadata and search; all other placements unchanged.')
