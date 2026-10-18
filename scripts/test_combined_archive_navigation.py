@@ -30,6 +30,16 @@ def local_path(page, href):
     return target / 'index.html' if str(target).endswith('/') or target.is_dir() else target
 
 
+def approved_four_news_archive_additions(lang):
+    source=ROOT/'content/features/four-news-20261018.json'
+    if not source.exists():return {}
+    from test_combined_hunting_equestrian import four_news_expected
+    old=json.loads(subprocess.check_output(['git','show',os.environ.get('SAYD_BASE_COMMIT','HEAD')+':content/homepage.json'],cwd=ROOT))
+    current=json.loads((ROOT/'content/homepage.json').read_text())
+    if four_news_expected(old,current) is None:return {}
+    return {a['slugs'][lang]:a for a in json.loads(source.read_text())['articles'] if a['door'] in ('hunting','equestrian')}
+
+
 def test_archives_keep_every_published_card():
     for lang in ('ar', 'en', 'fr'):
         root = DOCS / (lang if lang != 'ar' else '')
@@ -41,7 +51,14 @@ def test_archives_keep_every_published_card():
         by_slug = {archive.slug_of(row): row for row in rows}
         assert len(rows) == len(by_slug), (lang, 'duplicate story')
         original = archive.cards(source_file(page)) + archive.cards(source_file(legacy))
-        assert set(by_slug) == {archive.slug_of(row) for row in original} | set(archive.marine_registry(lang)), lang
+        additions=approved_four_news_archive_additions(lang)
+        assert set(by_slug) == {archive.slug_of(row) for row in original} | set(archive.marine_registry(lang)) | set(additions), lang
+        for slug,a in additions.items():
+            card=html.fromstring(by_slug[slug]);d=a['translations'][lang]
+            assert card.xpath('.//h2/a')[0].text_content()==d['title']
+            assert card.xpath('.//p[@class="excerpt"]')[0].text_content()==d['deck']
+            assert unquote(card.xpath('.//img/@src')[0]).endswith(a['photos'][0]['path'])
+            assert str(archive.stamp(by_slug[slug]))[:10]=='2026-10-18'
         for row in original:
             # Card text, original publication date and selected photo are exact.
             assert by_slug[archive.slug_of(row)] == row, (lang, archive.slug_of(row))
@@ -63,7 +80,10 @@ def test_archives_keep_every_published_card():
                 assert local_path(page, href).is_file(), (lang, href)
             for src in row.xpath('.//img/@src'):
                 assert local_path(page, src).is_file(), (lang, src)
-        assert archive.cards(legacy.read_text()) == archive.cards(source_file(legacy)), 'Retained old category cards changed'
+        legacy_before={archive.slug_of(row):row for row in archive.cards(source_file(legacy))}
+        legacy_after={archive.slug_of(row):row for row in archive.cards(legacy.read_text())}
+        assert set(legacy_after)==set(legacy_before)|set(additions), 'Unapproved legacy archive addition/removal'
+        assert all(legacy_after[k]==v for k,v in legacy_before.items()), 'Retained old category cards changed'
 
 
 def test_sync_idempotence_and_new_legacy_publication():
