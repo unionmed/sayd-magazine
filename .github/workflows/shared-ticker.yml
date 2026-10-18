@@ -28,3 +28,15 @@ jobs:
           name: shared-ticker-responsive-${{ github.run_id }}
           path: sayd-visual-qa/ticker/
           retention-days: 30
+  live:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - name: Verify exact public release in all three languages
+        run: python scripts/verify_live_ticker.py --revision '${{ github.sha }}'
