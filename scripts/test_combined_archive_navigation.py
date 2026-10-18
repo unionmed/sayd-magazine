@@ -6,6 +6,7 @@ import re
 import shutil
 import subprocess
 import tempfile
+from datetime import timedelta
 from pathlib import Path
 from unittest.mock import patch
 from urllib.parse import unquote, urlsplit
@@ -108,7 +109,13 @@ def test_sync_idempotence_and_new_legacy_publication():
             assert all(p.read_bytes() == data for p, data in before.items())
             legacy = archive.DOCS / 'en/category/فروسية/index.html'
             sample = archive.cards(legacy.read_text())[0]
-            new = sample.replace(archive.slug_of(sample), 'future-equestrian-test').replace('16 October 2026', '17 October 2026')
+            combined = archive.DOCS / 'en/category/صيد/index.html'
+            latest = max(archive.stamp(row) for row in archive.cards(combined.read_text()))
+            future = latest + timedelta(days=1)
+            sample_date = archive.stamp(sample)
+            new = sample.replace(archive.slug_of(sample), 'future-equestrian-test').replace(
+                f'{sample_date.day} {sample_date:%B %Y}', f'{future.day} {future:%B %Y}', 1)
+            assert archive.stamp(new) == future > latest
             legacy.write_text(legacy.read_text().replace('<div class="post-list">', '<div class="post-list">' + new, 1))
             # Calling after a normal legacy publisher adds the story only once.
             result = archive.sync_archive()

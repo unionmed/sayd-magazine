@@ -1380,6 +1380,7 @@ def parse_wxr(xml_path: Path) -> dict:
 
     dedupe(posts)
     dedupe(pages)
+    apply_team_page_override(pages)
     posts = drop_purged_posts(posts)
 
     return {
@@ -1389,6 +1390,16 @@ def parse_wxr(xml_path: Path) -> dict:
         "posts": posts,
         "pages": pages,
     }
+
+
+def apply_team_page_override(pages: list[dict]) -> None:
+    """Preserve the current approved masthead when rebuilding the historical WXR."""
+    source = CONTENT_DIR / "team" / "roster-ar.html"
+    if not source.is_file():
+        return
+    for page in pages:
+        if page.get("slug") == "من-نحن":
+            page["content"] = source.read_text(encoding="utf-8")
 
 
 def write_markdown(data: dict) -> None:

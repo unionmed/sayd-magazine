@@ -974,11 +974,14 @@ def add_team_linkedin(text: str, rel: Path) -> str:
     """Keep Nayef's public profile beside his name after page regeneration."""
     profile = "https://www.linkedin.com/in/nayef-krayem-855ba75/"
     if rel.as_posix() == "pages/من-نحن/index.html":
-        name = "نايف كريم</strong>"
-        link = f' <small>(<a href="{profile}" target="_blank" rel="noopener noreferrer" aria-label="صفحة نايف كريم على LinkedIn">LinkedIn</a>)</small>'
+        name = "نايف كريّم</strong>" if "نايف كريّم</strong>" in text else "نايف كريم</strong>"
+        link = f' <small>(<a href="{profile}" target="_blank" rel="noopener noreferrer" aria-label="صفحة نايف كريّم على LinkedIn">LinkedIn</a>)</small>'
     elif rel.as_posix() == "en/team/index.html":
         name = "<strong>Nayef Krayem</strong>"
         link = f' <small>(<a href="{profile}" target="_blank" rel="noopener noreferrer" aria-label="Nayef Krayem on LinkedIn">LinkedIn</a>)</small>'
+    elif rel.as_posix() == "fr/team/index.html":
+        name = "<strong>Nayef Krayem</strong>"
+        link = f' <small>(<a href="{profile}" target="_blank" rel="noopener noreferrer" aria-label="Nayef Krayem sur LinkedIn">LinkedIn</a>)</small>'
     else:
         return text
     if profile in text or name not in text:
