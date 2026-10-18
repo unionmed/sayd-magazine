@@ -604,36 +604,9 @@ def ticker_omit_slugs() -> set[str]:
 
 
 def load_ticker_items(home_html: Path | None = None) -> list[tuple[str, str]]:
-    """Single editorial ticker list for every page.
-
-    Prefer content/ticker.json, then the current homepage strip, then the
-    Mars/Nayef default. Never invent items from latest posts (that undoes
-    the cleaned list) and never attach an urgent label.
-    """
-    if TICKER_CONFIG.exists():
-        try:
-            data = json.loads(TICKER_CONFIG.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            data = {}
-        pairs = _ticker_pairs(data.get("items") or [])
-        pairs = [p for p in pairs if p[0] not in ticker_omit_slugs()]
-        if pairs:
-            return pairs
-
-    home = home_html or (DEFAULT_OUT / "index.html")
-    if home.exists():
-        text_html = home.read_text(encoding="utf-8", errors="ignore")
-        block = re.search(r'<div class="ticker">(.*?)</div>', text_html, re.S)
-        if block:
-            found = [
-                (m.group(1), html.unescape(m.group(2)).strip())
-                for m in _TICKER_LINK_RE.finditer(block.group(1))
-            ]
-            pairs = [p for p in _ticker_pairs(found) if p[0] not in ticker_omit_slugs()]
-            if pairs:
-                return pairs
-
-    return [p for p in DEFAULT_TICKER_ITEMS if p[0] not in ticker_omit_slugs()]
+    """Use the canonical chronological source, never stale rendered HTML."""
+    from ticker_policy import entries, title
+    return [(entry['slug'], title(entry, 'ar')) for entry in entries()]
 
 
 def load_desk_slugs() -> dict[str, list[str]]:
@@ -1036,6 +1009,9 @@ def archive_redirect_html() -> str:
 def chrome_ticker(depth: int, items: list[tuple[str, str]] | None = None) -> str:
     """Shared news strip. Same items on home, posts, and static pages."""
     pairs = items if items is not None else load_ticker_items()
+    from ticker_policy import select
+    selected = select([{'slug': slug, 'title': title} for slug, title in pairs])
+    pairs = [(entry['slug'], entry['title']) for entry in selected]
     links = "".join(
         f'<a href="{post_href(slug, depth)}">{esc(title)}</a>' for slug, title in pairs
     )

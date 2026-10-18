@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Synchronize shared news tickers from each rendered language homepage."""
+"""Synchronize every news ticker from the shared chronological source."""
 import argparse
 import html
 import posixpath
@@ -17,15 +17,10 @@ def language(path, docs):
     return first if first in ('en', 'fr') else 'ar'
 
 
-def sources(docs):
-    result = {}
-    for lang, prefix in (('ar', ''), ('en', 'en'), ('fr', 'fr')):
-        home = docs / prefix / 'index.html'
-        loops = TICKER.findall(home.read_text())
-        if len(loops) != 2 or loops[0][1] != loops[1][1] or not HREF.search(loops[0][1]):
-            raise ValueError(f'{home}: expected two identical nonempty ticker loops')
-        result[lang] = (home.parent, loops[0][1])
-    return result
+def sources(docs, root=ROOT):
+    from ticker_policy import render
+    return {lang: (docs / prefix, render(lang, root))
+            for lang, prefix in (('ar', ''), ('en', 'en'), ('fr', 'fr'))}
 
 
 def ticker_for(path, source):
@@ -44,9 +39,15 @@ def ticker_for(path, source):
     return HREF.sub(relative, content)
 
 
-def sync(docs=ROOT / 'docs', check=False):
+def sync(docs=ROOT / 'docs', check=False, root=ROOT):
     docs = Path(docs).resolve()
-    source = sources(docs)
+    if not check:
+        from ticker_policy import sync_config
+        sync_config(root)
+    else:
+        from ticker_policy import load, validate
+        validate(load(root), root)
+    source = sources(docs, root)
     scanned = changed = 0
     for path in sorted(docs.rglob('*.html')):
         page = path.read_text()

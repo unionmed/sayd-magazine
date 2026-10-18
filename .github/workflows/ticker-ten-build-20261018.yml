@@ -1,0 +1,34 @@
+name: Build approved ten-story ticker
+on:
+  push:
+    branches: [fix/ticker-ten-chronological-20261018]
+permissions:
+  contents: write
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[ticker-ten-built]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2
+      - name: Generate and verify only the shared ticker correction
+        run: |
+          python scripts/sync_tickers.py
+          python scripts/test_shared_ticker.py --base f5e001fd170dc72ed33f19e016edb91c94d1f394
+          python scripts/check_publication_contract.py --base f5e001fd170dc72ed33f19e016edb91c94d1f394
+          python scripts/test_homepage_doors.py
+          python scripts/test_combined_hunting_equestrian.py --base f5e001fd170dc72ed33f19e016edb91c94d1f394
+      - name: Commit verified ticker output on review branch
+        run: |
+          git config user.name 'Sayd publication checks'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs content/homepage.json content/ticker.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Apply ten chronological news items to all 1037 ticker pages [ticker-ten-built]'
+            git push origin HEAD:fix/ticker-ten-chronological-20261018
+          fi

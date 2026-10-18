@@ -34,6 +34,9 @@ def test_rotation():
 def test_preserved(base):
     old_config=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT))
     current=config()
+    from ticker_policy import select as select_ticker, validate as validate_ticker
+    validate_ticker(current)
+    approved_ticker_rotation = current['ticker_entries'] == select_ticker(old_config['ticker_entries'])
     approved_interview = current['ia_slots']['main']=='شيرين-بو-رفول-مكافحة-الصيد-الجائر' and old_config['ia_slots']['main']!=current['ia_slots']['main']
     if approved_interview:
         from homepage_demotion import demote_side_cards
@@ -44,13 +47,16 @@ def test_preserved(base):
         expected_config['featured']=[lead]+expected_config['ia_slots']['important']
         demote_side_cards(expected_config,old_config['ia_slots']['important'])
         for key in ('featured','latest','ia_slots'):assert current[key]==expected_config[key],key
-        assert current['ticker_slugs']==[lead]+old_config['ticker_slugs']
-        assert current['ticker_entries'][1:]==old_config['ticker_entries']
+        assert current['ticker_entries'][0]['slug'] == lead
+        assert current['ticker_entries'] == select_ticker([current['ticker_entries'][0]] + old_config['ticker_entries'])
+        assert current['ticker_slugs'] == [entry['slug'] for entry in current['ticker_entries']]
         assert {k:v for k,v in current['primary_door'].items() if k!=lead}==old_config['primary_door']
         assert current['primary_door'][lead]=='interviews'
         assert {k:v for k,v in current['card_image_overrides'].items() if k!=lead}==old_config['card_image_overrides']
     else:
         for key in ('featured','latest','ia_slots','ticker_slugs','ticker_entries','card_image_overrides','primary_door','memory_after_door'):
+            if key in ('ticker_slugs', 'ticker_entries') and approved_ticker_rotation:
+                continue
             assert old_config[key]==current[key],key
     assert current['memory_after_door']==old_config['memory_after_door']
     assert current['memory_visible'] is False
@@ -78,6 +84,13 @@ def test_preserved(base):
             assert row.xpath('.//*[@class="card-topic"]/text()')==[' · '+label]
             assert local_slug(slug,lang) in row.xpath('.//h3/a/@href')[0]
         for cls in (('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
+            if cls == 'ticker' and approved_ticker_rotation:
+                from sync_tickers import TICKER, sources, ticker_for
+                expected_ticker = ticker_for(ROOT/rel, sources(DOCS)[lang])
+                loops = TICKER.findall(new)
+                assert len(loops) == 2
+                assert all(loop[1] == expected_ticker for loop in loops)
+                continue
             xp='//*[contains(concat(" ",normalize-space(@class)," ")," '+cls+' ")]'
             def canonical(n):return html.tostring(n,encoding='unicode',with_tail=False)
             assert [canonical(n) for n in before.xpath(xp)]==[canonical(n) for n in after.xpath(xp)],(lang,cls)
