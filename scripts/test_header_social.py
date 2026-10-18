@@ -35,12 +35,9 @@ def run(base=None):
                 assert anchor.get('target')=='_blank',path
                 assert set(anchor.get('rel','').split())=={'noopener','noreferrer'},path
                 assert anchor.get('aria-label','').strip() and anchor.xpath('./svg[@aria-hidden="true"]'),path
-    # Public baseline only: connector commits may squash local development history.
-    # Compare social markup exactly on every original page, and the complete
-    # deterministic approved chrome transform on articles. Homepage/collection
-    # changes remain subject to their separate full publication/preservation gate.
-    from rollout_mobile_nav_heritage_20261015 import nav_replace
-    from build_site_search import links
+    # Current social markup and original routes remain exact. The complete
+    # original whole-article migration proof runs on pinned history in
+    # test_historical_search_social.py, rather than freezing later articles.
     social=re.compile(r'<nav class="header-social"[^>]*>.*?</nav>',re.S)
     names=subprocess.check_output(['git','ls-tree','-r','--name-only','-z',base,'--','docs'],cwd=ROOT).decode().split('\0')
     for name in filter(None,names):
@@ -52,10 +49,6 @@ def run(base=None):
         lang=path.relative_to(DOCS).parts[0];lang=lang if lang in ('en','fr') else 'ar'
         approved=add_approved_tiktok(before,lang)
         assert social.findall(approved)==social.findall(current),f'Non-approved social edit: {name}'
-        if '/posts/' in name:
-            from sync_tickers import TICKER
-            # Shared ticker changes are validated separately by sync_tickers and the publication contract.
-            assert TICKER.sub('',links(nav_replace(before,path)[0],path))==TICKER.sub('',current),f'Non-approved article edit: {name}'
     # The additive helper cannot alter article/head bytes, even when creating a
     # previously absent group. Keep these fixtures independent of Git history.
     for lang in ('ar','en','fr'):
@@ -80,6 +73,6 @@ def run(base=None):
     assert generated.xpath('.//nav/@aria-label')==['Suivez Sayd']
     assert generated.xpath('.//nav/a/span/text()')==['Instagram','Facebook','YouTube','TikTok']
     assert groups==1037 and headerless==823,(groups,headerless)
-    print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact chrome-only changes, Alexandra shown once under Interviews with original URLs')
+    print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact social markup, Alexandra shown once under Interviews with original URLs')
 
 if __name__=='__main__':run()
