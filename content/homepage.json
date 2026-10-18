@@ -8,14 +8,14 @@
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
   ],
   "latest": [
+    "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
     "تمبتد-غودولفين-إيفرست-2026",
     "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
     "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "ختام-الملواح-2026-60-فائزا",
     "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
-    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-    "حين-يتغير-الساحل-أين-تستريح-الطيور"
+    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -149,14 +149,14 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
       "رادار-صيد-العربي-سبتمبر-2026",
       "الصمت-الذي-يتكلمه-الخيل",
       "خريف-الصيد-العربي-2026",
       "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
       "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
-      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-      "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
+      "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -179,14 +179,14 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "when-the-coast-changes-where-do-birds-rest",
       "when-autumn-becomes-a-season-for-hunting-images",
       "sayd-arab-radar-september-2026",
       "the-silence-horses-speak",
       "arab-hunting-autumn-2026",
       "turtle-doves-cross-hunting-borders-european-flyways",
       "sicily-lebanon-protecting-migratory-birds",
-      "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
-      "skies-losing-balance-birdlife-flyways-report"
+      "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -287,28 +287,28 @@
       "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
     ],
     "latest": [
+      "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
       "تمبتد-غودولفين-إيفرست-2026",
       "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
       "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
       "ختام-الملواح-2026-60-فائزا",
       "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
-      "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-      "حين-يتغير-الساحل-أين-تستريح-الطيور"
+      "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
     ]
   },
   "ia_door_sections": [
     {
       "door": "hunting",
       "slugs": [
+        "حين-يتغير-الساحل-أين-تستريح-الطيور",
         "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
         "رادار-صيد-العربي-سبتمبر-2026",
         "الصمت-الذي-يتكلمه-الخيل",
         "خريف-الصيد-العربي-2026",
         "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى",
         "من-صقلية-إلى-لبنان-إنقاذ-الطيور-المهاجرة",
-        "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
-        "سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف"
+        "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني"
       ]
     },
     {
@@ -445,7 +445,8 @@
     "تمبتد-غودولفين-إيفرست-2026": "equestrian",
     "بطولة-العالم-بندقية-300-متر-القاهرة-2026": "gear",
     "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026": "wildlife",
-    "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026": "science"
+    "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026": "science",
+    "تعاون-مصري-إماراتي-الحبارى-محمية-العميد": "wildlife"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -464,6 +465,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
     "تمبتد-غودولفين-إيفرست-2026",
     "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
     "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
@@ -472,8 +474,7 @@
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
     "ختام-الملواح-2026-60-فائزا",
-    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-    "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026"
+    "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -684,11 +685,28 @@
         "en": "A common loon with a red eye, black head and black-and-white plumage swimming in Minocqua, Wisconsin.",
         "fr": "Un plongeon imbrin à l’œil rouge, à la tête noire et au plumage noir et blanc nage à Minocqua, dans le Wisconsin."
       }
+    },
+    "تعاون-مصري-إماراتي-الحبارى-محمية-العميد": {
+      "image": "media/uploads/2026/10/african-houbara-mourad-harzallah-algeria-2020.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "حبارى أفريقية بريش رملي وعنق رمادي تقف على أرض صحراوية في الجزائر.",
+        "en": "African houbara with sandy plumage and a grey neck standing on desert ground in Algeria.",
+        "fr": "Outarde houbara d’Afrique au plumage sable et au cou gris sur un sol désertique en Algérie."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
+      "titles": {
+        "ar": "تعاون مصري إماراتي لحماية الحبارى وتطوير إدارة محمية العميد",
+        "en": "Egypt–UAE cooperation focuses on houbara and Omayed Reserve management",
+        "fr": "Coopération Égypte–Émirats pour l’outarde houbara et la gestion d’Omayed"
+      }
+    },
     {
       "slug": "تمبتد-غودولفين-إيفرست-2026",
       "titles": {
@@ -759,14 +777,6 @@
         "ar": "أين تستريح الطيور؟ «صيد» تستعرض أبرز ملاذات الهجرة في المشرق والجزيرة العربية.",
         "en": "Where do birds rest? Sayd explores major migration refuges in the Mashreq and Arabian Peninsula.",
         "fr": "Où les oiseaux se reposent-ils ? Sayd explore les refuges migratoires du Machrek et de la péninsule Arabique."
-      }
-    },
-    {
-      "slug": "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
-      "titles": {
-        "ar": "موسم الطوقي 2026–2027 يسلّط الضوء على حياة محمية الملك عبدالعزيز البرية",
-        "en": "Touqi Season 2026–2027 spotlights wildlife at King Abdulaziz Royal Reserve",
-        "fr": "Touqi 2026–2027 révèle la biodiversité de la réserve royale du roi Abdelaziz"
       }
     }
   ],
