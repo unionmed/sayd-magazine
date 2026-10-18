@@ -22,7 +22,7 @@ try:
      stats=page.locator('article.article-content > figure img').evaluate('(i)=>({loaded:i.complete&&i.naturalWidth>0,nw:i.naturalWidth,nh:i.naturalHeight,w:i.getBoundingClientRect().width,h:i.getBoundingClientRect().height})');assert stats['loaded'];assert abs(stats['w']/stats['h']-stats['nw']/stats['nh'])<.03
      assert page.evaluate('document.documentElement.scrollWidth<=innerWidth+1'),(a['key'],l,width,'overflow')
      for image in page.locator('.article-more .reading-card img').all():assert image.evaluate('(i)=>i.complete&&i.naturalWidth>0')
-     page.evaluate('window.scrollTo(0,0)');page.wait_for_timeout(200);page.screenshot(path=str(OUT/f'{a["key"]}-{l}-{label}-top.png'));page.screenshot(path=str(OUT/f'{a["key"]}-{l}-{label}.png'),full_page=True);results.append({'article':a['key'],'language':l,'width':width,'image':stats})
+     page.evaluate('window.scrollTo({top:0,left:0,behavior:"instant"})');page.wait_for_timeout(200);page.screenshot(path=str(OUT/f'{a["key"]}-{l}-{label}-top.png'));page.screenshot(path=str(OUT/f'{a["key"]}-{l}-{label}.png'),full_page=True);results.append({'article':a['key'],'language':l,'width':width,'image':stats})
    for l in ['ar','en','fr']:
     page.goto(base+'/'+('' if l=='ar' else l+'/')+'index.html',wait_until='networkidle')
     section=page.locator('.home-main > .home-section').first;cards=section.locator('.home-door-grid > article');assert cards.count()==8
