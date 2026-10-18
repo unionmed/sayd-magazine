@@ -93,6 +93,29 @@ def run(base=None):
                 aliases.extend(matching)
         assert len(aliases)==len(set(aliases))==12
         added=12
+    # Exact authorized Omayed publication: three language mirrors and their
+    # three stable redirect shells, not an open-ended allowance for new pages.
+    omayed=ROOT/'content/features/egypt-uae-omayed-20261018.json'
+    if omayed.exists():
+        articles=json.loads(omayed.read_text())['articles']
+        assert len(articles)==1 and articles[0]['key']=='omayed'
+        a=articles[0]
+        assert a['date']=='2026-10-18' and a['door']=='wildlife' and a['placement']=='news'
+        assert a['slugs']=={'ar':'تعاون-مصري-إماراتي-الحبارى-محمية-العميد','en':'egypt-uae-houbara-omayed-cooperation-2026','fr':'egypt-uae-houbara-omayed-cooperation-2026'}
+        from urllib.parse import unquote
+        links=json.loads((DOCS/'s/links.json').read_text());omayed_aliases=[]
+        for lang in ('ar','en','fr'):
+            route='/'+('' if lang=='ar' else lang+'/')+'posts/'+a['slugs'][lang]+'/'
+            page=html.parse(str(DOCS/route.lstrip('/')/'index.html'))
+            assert len(page.xpath('//nav[@class="header-social"]'))==1
+            matching=[v for k,v in links.items() if unquote(k)==route]
+            assert len(matching)==1
+            shell=html.parse(str(DOCS/matching[0].strip('/')/'index.html'))
+            assert not shell.xpath('//nav[@class="header-social"]')
+            assert [unquote(url) for url in shell.xpath('//link[@rel="canonical"]/@href')]==['https://sayd-magazine.com'+route]
+            omayed_aliases.extend(matching)
+        assert len(omayed_aliases)==len(set(omayed_aliases))==3
+        added+=3
     assert groups==1037+added and headerless==823+added,(groups,headerless)
     print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact social markup, Alexandra shown once under Interviews with original URLs')
 
