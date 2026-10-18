@@ -207,13 +207,21 @@ def run(base,out):
                         article=lead.locator('h2 a').get_attribute('href')
                         page.goto(new_url+'/'+prefix+article,wait_until='networkidle')
                         require(page.locator('article.article-content figure').count()==8,'Eight approved article photographs required')
-                        require(page.locator('.article-updated').count()==0,'New article must not inherit old update date')
+                        updates=json.loads((ROOT/'content/article-updates.json').read_text())['articles']
+                        recorded=[x['updated'] for x in updates if x['slugs'].get('ar')=='شيرين-بو-رفول-مكافحة-الصيد-الجائر']
+                        require(page.locator('.article-updated').count()==len(recorded),'Article update label must match registry')
+                        if recorded:
+                            require(page.locator('.article-updated time').get_attribute('datetime')==recorded[0],'Incorrect recorded article update date')
                         require(page.locator('.article-more').count()==1,'One related-reading section required')
                         require(not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),'Interview horizontal overflow')
                         for image in page.locator('article.article-content figure img').all():
                             image.evaluate('(img)=>img.decode()')
                             require(image.evaluate('(img)=>img.complete&&img.naturalWidth>0'),'Interview image failed')
                         path=out/f'shireen-article-{lang}-{article_width}.png';page.screenshot(path=str(path));screens.insert(0,path)
+                        replacement=page.locator('article.article-content figure').filter(has=page.locator('img[src*="shireen-cabs-fieldwalk-20261018"]'))
+                        if replacement.count():
+                            replacement.scroll_into_view_if_needed()
+                            path=out/f'shireen-cabs-{lang}-{article_width}.png';capture(page,replacement,path);screens.insert(0,path)
                     # Collection cards must retain the same thumbnail/title layout,
                     # including legacy cards that previously emitted stray images.
                     collection=new_url+'/'+prefix+'category/'+__import__('urllib.parse',fromlist=['quote']).quote('مقابلات')+'/index.html'
@@ -278,7 +286,7 @@ def run(base,out):
             (out/'geometry.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
             (out/'errors.json').write_text(json.dumps(errors,ensure_ascii=False,indent=2))
             budget=3_000_000
-            screens.sort(key=lambda p:(0 if p.name.startswith('shireen-home-ar') else 1 if p.name.startswith('shireen-home-en') else 2 if p.name.startswith('shireen-article-ar') else 3 if p.name.startswith('shireen-article-en') else 4,p.name))
+            screens.sort(key=lambda p:(0 if p.name.startswith('shireen-cabs') else 1 if p.name.startswith('shireen-home-ar') else 1 if p.name.startswith('shireen-home-en') else 2 if p.name.startswith('shireen-article-ar') else 3 if p.name.startswith('shireen-article-en') else 4,p.name))
             for path in screens:
                 data=base64.b64encode(path.read_bytes()).decode()
                 if len(data)<=budget:
