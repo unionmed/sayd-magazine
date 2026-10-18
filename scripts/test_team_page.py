@@ -29,6 +29,10 @@ def test_team_pages():
   assert body.xpath('.//a[starts-with(@href,"mailto:")]/text()')==['editor@sayd-magazine.com','editor@sayd-magazine.com','Jocelyne@sayd-magazine.com']
   assert body.xpath('.//a[starts-with(@href,"tel:")]/@href')==['tel:+9613897443','tel:+9613004693']
   assert body.xpath('.//a[starts-with(@href,"tel:")]/text()')==['00961-3-897443','00961-3-004693']
+  for phone in body.xpath('.//a[starts-with(@href,"tel:")]'):
+   assert phone.getprevious().tag=='br'
+   assert phone.get('dir')=='ltr'
+   assert phone.get('style')=='display:inline-block;white-space:nowrap;unicode-bidi:isolate'
   links=body.xpath('.//a[@href=$url]',url=PROFILE);assert len(links)==1
   assert links[0].getparent().getparent().xpath('./strong/text()')==[NAMES[lang][1]]
   assert len(body.xpath('.//a'))==6
