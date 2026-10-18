@@ -289,3 +289,14 @@
     padding-inline: 0;
   }
 }
+
+/* Approved 2026-10-18: eight Hunting & Equestrian cards match Latest's two-row rail. */
+@media (max-width: 820px) {
+  .home-main > .home-section:first-child > .home-door-grid {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: repeat(4, calc((100% - .5rem) / 2));
+    gap: .75rem .5rem;
+    scroll-snap-type: x proximity;
+  }
+}

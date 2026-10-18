@@ -31,6 +31,57 @@ def test_rotation():
         else: raise AssertionError('Invalid combined door capacity accepted')
 
 
+def four_news_expected(old, current):
+    """Bounded owner-approved 18 October publication, not a generic bypass."""
+    source=ROOT/'content/features/four-news-20261018.json'
+    if not source.exists(): return None
+    articles=json.loads(source.read_text())['articles']
+    assert [a['key'] for a in articles]==['godolphin','cairo','abudhabi','loon']
+    slugs=[a['slugs']['ar'] for a in articles]
+    if any(s in old['primary_door'] for s in slugs): return None
+    assert all(a['date']=='2026-10-18' and a['publication_ready'] for a in articles)
+    assert [a['door'] for a in articles]==['equestrian','gear','wildlife','science']
+    assert [a['placement'] for a in articles]==['news','news','news','category']
+    expected=deepcopy(old); news=articles[:3]
+    latest=(slugs[:3]+[s for s in old['ia_slots']['latest'] if s not in slugs[:3]])[:8]
+    expected['latest']=latest;expected['ia_slots']['latest']=latest
+    for a in articles:
+        s=a['slugs']['ar'];p=a['photos'][0]
+        expected['primary_door'][s]=a['door']
+        expected['card_image_overrides'][s]={'image':p['path'],'position':'50% 50%','alt':p['alt']}
+    from ticker_policy import select as select_ticker
+    expected['ticker_entries']=select_ticker([{'slug':a['slugs']['ar'],'titles':{l:a['translations'][l]['ticker'] for l in ('ar','en','fr')}} for a in news]+old['ticker_entries'])
+    expected['ticker_slugs']=[e['slug'] for e in expected['ticker_entries']]
+    for k in ('featured','latest','ia_slots','ticker_entries','ticker_slugs','primary_door','card_image_overrides','memory_after_door'):
+        assert current[k]==expected[k],('four-news',k)
+    assert slugs[3] not in current['latest']+current['ticker_slugs']
+    top=set(expected['featured']+latest)
+    for door in ('gear','wildlife','science'):
+        before=next(d['slugs'] for d in old['ia_door_sections'] if d['door']==door)
+        added=[slugs[3]] if door=='science' else []
+        added += [s for s in old['latest'] if s not in latest and old['primary_door'].get(s)==door]
+        wanted=list(dict.fromkeys(s for s in added+before if s not in top))[:4]
+        assert next(d['slugs'] for d in current['ia_door_sections'] if d['door']==door)==wanted,('four-news-door',door)
+    return expected
+
+
+def test_four_news_negative_guards(base):
+    old=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT));current=config()
+    if four_news_expected(old,current) is None:return
+    loon=json.loads((ROOT/'content/features/four-news-20261018.json').read_text())['articles'][3]['slugs']['ar']
+    broken=[]
+    c=deepcopy(current);c['latest'][0]=loon;broken.append(c)
+    c=deepcopy(current);c['ticker_entries'][0]['slug']=loon;broken.append(c)
+    c=deepcopy(current);c['ia_slots']['main']='unauthorized';broken.append(c)
+    c=deepcopy(current);c['ia_slots']['important'].reverse();broken.append(c)
+    c=deepcopy(current);c['ticker_entries'].reverse();broken.append(c)
+    c=deepcopy(current);next(d['slugs'] for d in c['ia_door_sections'] if d['door']=='science').clear();broken.append(c)
+    for candidate in broken:
+        try:four_news_expected(old,candidate)
+        except AssertionError:pass
+        else:raise AssertionError('Unauthorized four-news mutation accepted')
+
+
 def test_preserved(base):
     old_config=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT))
     current=config()
@@ -38,7 +89,10 @@ def test_preserved(base):
     validate_ticker(current)
     approved_ticker_rotation = current['ticker_entries'] == select_ticker(old_config['ticker_entries'])
     approved_interview = current['ia_slots']['main']=='شيرين-بو-رفول-مكافحة-الصيد-الجائر' and old_config['ia_slots']['main']!=current['ia_slots']['main']
-    if approved_interview:
+    approved_four_news=four_news_expected(old_config,current) is not None
+    if approved_four_news:
+        pass  # All changed placement fields independently validated above.
+    elif approved_interview:
         from homepage_demotion import demote_side_cards
         expected_config=deepcopy(old_config)
         lead=current['ia_slots']['main']
@@ -65,7 +119,7 @@ def test_preserved(base):
     from interview_collection import homepage_slugs
     assert next(s['slugs'] for s in current['ia_door_sections'] if s['door']=='interviews') == homepage_slugs('ar', current)
     for old in old_config['ia_door_sections']:
-        if old['door'] not in ('hunting','equestrian','interviews'):
+        if old['door'] not in (('hunting','equestrian','interviews','gear','wildlife','science') if approved_four_news else ('hunting','equestrian','interviews')):
             assert old in current['ia_door_sections'],old['door']
     for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
         rel='docs/'+prefix+'index.html'
@@ -83,7 +137,7 @@ def test_preserved(base):
             label={'ar':{'hunting':'صيد','equestrian':'فروسية'},'en':{'hunting':'Hunting','equestrian':'Equestrian'},'fr':{'hunting':'Chasse','equestrian':'Équitation'}}[lang][topic]
             assert row.xpath('.//*[@class="card-topic"]/text()')==[' · '+label]
             assert local_slug(slug,lang) in row.xpath('.//h3/a/@href')[0]
-        for cls in (('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
+        for cls in (('feature-lead','feature-stack','sayd-tv') if approved_four_news else ('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
             if cls == 'ticker' and approved_ticker_rotation:
                 from sync_tickers import TICKER, sources, ticker_for
                 expected_ticker = ticker_for(ROOT/rel, sources(DOCS)[lang])
@@ -107,4 +161,4 @@ def test_preserved(base):
 if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser();parser.add_argument('--base',default='HEAD');args=parser.parse_args()
-    test_rotation();test_preserved(args.base)
+    test_rotation();test_preserved(args.base);test_four_news_negative_guards(args.base)

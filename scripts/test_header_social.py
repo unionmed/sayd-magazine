@@ -72,7 +72,28 @@ def run(base=None):
     generated=html.fromstring(apply('<div class="container mast-top-inner"></div>','fr'))
     assert generated.xpath('.//nav/@aria-label')==['Suivez Sayd']
     assert generated.xpath('.//nav/a/span/text()')==['Instagram','Facebook','YouTube','TikTok']
-    assert groups==1037 and headerless==823,(groups,headerless)
+    # This approved batch adds twelve article headers and twelve short-link
+    # shells; retain exact totals and every per-page/social preservation check.
+    added=0
+    package=ROOT/'content/features/four-news-20261018.json'
+    if package.exists():
+        articles=json.loads(package.read_text())['articles']
+        assert [a['key'] for a in articles]==['godolphin','cairo','abudhabi','loon']
+        assert all(a['date']=='2026-10-18' and set(a['slugs'])=={'ar','en','fr'} for a in articles)
+        from urllib.parse import unquote
+        links=json.loads((DOCS/'s/links.json').read_text())
+        aliases=[]
+        for a in articles:
+            for lang in ('ar','en','fr'):
+                route='/'+('' if lang=='ar' else lang+'/')+'posts/'+a['slugs'][lang]+'/'
+                assert (DOCS/route.lstrip('/')/'index.html').is_file()
+                matching=[v for k,v in links.items() if unquote(k)==route]
+                assert len(matching)==1
+                assert (DOCS/matching[0].strip('/')/'index.html').is_file()
+                aliases.extend(matching)
+        assert len(aliases)==len(set(aliases))==12
+        added=12
+    assert groups==1037+added and headerless==823+added,(groups,headerless)
     print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact social markup, Alexandra shown once under Interviews with original URLs')
 
 if __name__=='__main__':run()

@@ -1,0 +1,69 @@
+name: Build and review four approved articles
+on:
+  pull_request:
+    paths: ['content/features/four-news-20261018.json', 'scripts/*four_news*', 'scripts/test_combined_hunting_equestrian.py', '.github/workflows/four-news-build-20261018.yml']
+  push:
+    branches: [publish/four-news-20261018]
+permissions:
+  contents: write
+jobs:
+  build:
+    if: "github.event_name == 'push' && !contains(github.event.head_commit.message, '[four-news-built]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2 playwright==1.55.0
+      - run: python -m playwright install --with-deps chromium
+      - name: Build and validate authorized publication
+        run: |
+          python scripts/publish_four_news_20261018.py
+          python scripts/test_four_news_20261018.py
+          python scripts/check_publication_contract.py --base 15d82a6f1868c8d612ab5acc2e500bce19bb7dc8
+          python scripts/test_homepage_doors.py
+          python scripts/test_shared_ticker.py
+          python scripts/test_hreflang_contract.py
+          python scripts/test_archive_access.py
+          python scripts/test_four_news_browser_20261018.py
+      - name: Commit verified generated pages to review branch
+        run: |
+          git config user.name 'Sayd publication checks'
+          git config user.email 'actions@users.noreply.github.com'
+          git add docs content audit/image-catalog/manifest/2026-01.tsv
+          if ! git diff --cached --quiet; then
+            git commit -m 'Render four approved articles in AR/EN/FR and refresh news placement [four-news-built]'
+            git push origin HEAD:publish/four-news-20261018
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: four-news-rendered-review-${{ github.run_id }}
+          path: sayd-visual-qa/four-news-20261018/
+          retention-days: 30
+  review:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2 playwright==1.55.0
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/test_four_news_20261018.py
+      - run: python scripts/test_combined_hunting_equestrian.py --base '${{ github.event.pull_request.base.sha }}'
+      - run: python scripts/test_four_news_browser_20261018.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: four-news-final-review-${{ github.run_id }}
+          path: sayd-visual-qa/four-news-20261018/
+          retention-days: 30
