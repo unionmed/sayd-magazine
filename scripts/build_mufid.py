@@ -51,5 +51,23 @@ def build():
         shutil.copyfile(ROOT/f'assets/{kind}/mufid.{kind}',ROOT/f'docs/assets/{kind}/mufid.{kind}')
     target=ROOT/'services/mufid/data/public-index.json';target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(json.dumps({'version':1,'articles':rows},ensure_ascii=False,separators=(',',':'))+'\n')
+    preview={}
+    css=(ROOT/'assets/css/mufid.css').read_text()
+    js=(ROOT/'assets/js/mufid.js').read_text()
+    # Worker preview links point to published Sayd articles, never Worker paths.
+    js=js.replace('new URL(value,location.origin)', "new URL(value,'https://sayd-magazine.com')").replace('u.origin!==location.origin', "u.origin!=='https://sayd-magazine.com'")
+    js=js.replace('img.src=a.image', "img.src='https://sayd-magazine.com'+a.image")
+    js=js.replace("let mode='search',endpoint='',token=''", "let mode='search',endpoint=location.origin,token=''")
+    preview['/pilot.js']=js
+    preview['/pilot.css']='*{box-sizing:border-box}body{margin:0;background:#fafbf7;color:#20362a;font:17px/1.7 system-ui,sans-serif}.container{margin:auto;padding-inline:20px}nav{padding:12px 20px;background:#244b35;color:white}nav a{color:white;margin-inline:10px}'+css
+    for lang,c in COPY.items():
+        page=(ROOT/'docs'/('' if lang=='ar' else lang)/'mufid/index.html').read_text()
+        main=re.search(r'<main\b[^>]*>.*?</main>',page,re.S)[0]
+        main=main.replace('<details class="mufid-settings">','<details class="mufid-settings" open>')
+        main=main.replace('id="mufid-endpoint" type="url"', 'id="mufid-endpoint" value="https://sayd-mufid-internal.unionmedia-sarl.workers.dev" type="url"')
+        copy=json.dumps(c,ensure_ascii=False).replace('<','\\u003c')
+        nav='<nav><a href="/">العربية</a><a href="/en/">English</a><a href="/fr/">Français</a></nav>'
+        preview['/' if lang=='ar' else '/'+lang+'/']=f'<!doctype html><html lang="{lang}" dir="{"rtl" if lang=="ar" else "ltr"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{html.escape(c["title"])}</title><link rel="stylesheet" href="/pilot.css"></head><body>{nav}{main}<script type="application/json" id="mufid-copy">{copy}</script><script src="/pilot.js" defer></script></body></html>'
+    (ROOT/'services/mufid/data/preview.json').write_text(json.dumps(preview,ensure_ascii=False))
     print(f'Mufid pilot: 3 pages, {len(rows)} public language records. No live entry points changed.')
 if __name__=='__main__':build()

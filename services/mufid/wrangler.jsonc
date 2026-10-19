@@ -5,10 +5,10 @@
   "workers_dev": true,
   "observability": {"enabled": false},
   "vars": {
-    "ENABLED": "false",
-    "ALLOWED_ORIGINS": "http://localhost:8080,http://127.0.0.1:8080",
-    "OPENAI_MODEL": "",
-    "WEB_ENABLED": "false",
+    "ENABLED": "true",
+    "ALLOWED_ORIGINS": "https://sayd-mufid-internal.unionmedia-sarl.workers.dev,https://sayd-magazine.com",
+    "OPENAI_MODEL": "gpt-5.4-mini",
+    "WEB_ENABLED": "true",
     "DAILY_REQUEST_LIMIT": "50",
     "PER_CLIENT_DAILY_LIMIT": "10",
     "PER_CLIENT_MINUTE_LIMIT": "3"

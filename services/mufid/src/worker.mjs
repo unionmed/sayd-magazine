@@ -1,3 +1,4 @@
+import preview from '../data/preview.json' with {type:'json'};
 import corpus from '../data/public-index.json' with {type:'json'};
 import {retrieve, publicCard, providerPayload, extractResponse, needsFresh} from './core.mjs';
 const MODES = new Set(['search','understand','plan','verify','suggest']);
@@ -22,6 +23,10 @@ async function digest(value,secret) {
 export function createHandler(network=fetch) {
   return async function(request,env) {
     const url=new URL(request.url),origin=request.headers.get('Origin');
+    if(request.method==='GET' && Object.hasOwn(preview,url.pathname)) {
+      const type=url.pathname.endsWith('.js')?'text/javascript':url.pathname.endsWith('.css')?'text/css':'text/html';
+      return new Response(preview[url.pathname],{headers:{'Content-Type':type+'; charset=utf-8','Cache-Control':'no-store','X-Robots-Tag':'noindex, nofollow','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'}});
+    }
     const allowed=(env.ALLOWED_ORIGINS || '').split(',').map(s=>s.trim()).filter(Boolean);
     if(!origin || !allowed.includes(origin)) return json({error:'origin'},403);
     const cors={'Access-Control-Allow-Origin':origin,'Vary':'Origin','Access-Control-Allow-Headers':'Content-Type, Authorization','Access-Control-Allow-Methods':'POST, OPTIONS'};
