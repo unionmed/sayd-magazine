@@ -1,0 +1,1 @@
+{"name":"sayd-mufid","private":true,"type":"module","scripts":{"test":"node --test test/*.test.mjs","dev":"wrangler dev","deploy":"wrangler deploy"},"devDependencies":{"playwright":"1.64.1","wrangler":"^4.0.0"}}

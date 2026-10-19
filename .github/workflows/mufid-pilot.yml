@@ -1,0 +1,29 @@
+name: Mufid internal pilot
+on:
+  pull_request:
+    paths: ['services/mufid/**', 'scripts/build_mufid.py', 'assets/**/mufid.*', 'docs/**/mufid/**', 'docs/assets/search/**', '.github/workflows/mufid-pilot.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/build_mufid.py
+      - run: npm ci --ignore-scripts
+        working-directory: services/mufid
+      - run: npm test
+        working-directory: services/mufid
+      - run: npx wrangler deploy --dry-run --outdir /tmp/mufid-bundle
+        working-directory: services/mufid
+      - run: npx playwright install --with-deps chromium
+        working-directory: services/mufid
+      - run: node services/mufid/test/browser.cjs
+      - run: git diff --exit-code -- docs/mufid docs/en/mufid docs/fr/mufid docs/assets/css/mufid.css docs/assets/js/mufid.js
