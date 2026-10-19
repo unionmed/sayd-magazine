@@ -17,6 +17,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/build_mufid.py
+      - run: python scripts/test_mufid_privacy.py
       - run: npm ci --ignore-scripts
         working-directory: services/mufid
       - run: npm test

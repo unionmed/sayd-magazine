@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build isolated Mufid pilot pages and a public-only Worker corpus; no homepage rollout."""
 from pathlib import Path
-import json, re, shutil
+import json, re, shutil, html
 ROOT=Path(__file__).resolve().parents[1]
 COPY={
 'ar':dict(title='اسأل مفيد',intro='اكتشف صيد، افهم وقارن، وجهّز نشاطك.',pilot='نسخة تجريبية للاختبار الداخلي',search='ابحث في صيد',understand='افهم وقارن',plan='جهّز نشاطك',verify='تحقّق من معلومة حديثة',suggest='اقترح موضوعًا',query='سؤالك أو موضوعك',submit='اسأل مفيد',fresh='أحتاج معلومات حديثة موثّقة',consent='أوافق على حفظ هذا الاقتراح للتحرير لمدة سبعة أيام. لا أضمّن معلومات شخصية. الإرسال لا يضمن النشر.',privacy='يُرسل السؤال والمواد المنشورة ذات الصلة إلى خدمة الذكاء الاصطناعي عند طلب إجابة. لا نحفظ المحادثات ولا نرسل نصوصها إلى أدوات الإحصاء. البحث في صيد يستخدم مواد المجلة المنشورة فقط.',settings='إعدادات الاختبار',endpoint='عنوان خدمة الاختبار',token='رمز الدخول التجريبي',save='اتصال',ready='اختر بداية واكتب سؤالك.',loading='جارٍ البحث…',error='تعذّر إكمال الطلب. حاول مجددًا.',unavailable='الخدمة غير مفعّلة. يمكن اختبار الواجهة بعد توصيل خدمة الاختبار.',none='لم أجد مواد مناسبة. جرّب اسم طائر أو موضوعًا أكثر تحديدًا.',received='وصل اقتراحك إلى قائمة المراجعة التحريرية. لا يضمن ذلك نشره.',sources='مصادر التحقق',articles='من صيد',checked='تاريخ التحقق',clear='مسح الجلسة',nojs='يتطلب مفيد تفعيل JavaScript.',consent_required='يرجى الموافقة على حفظ الاقتراح أولًا.',limit='وصلت إلى حد الاستخدام التجريبي. حاول لاحقًا.',verification_unavailable='التحقق الحديث غير متاح الآن. لا يمكن اعتماد الأرشيف لإثبات معلومة راهنة.',ai_unavailable='خدمة الإجابة غير متصلة بعد. يمكنك تجربة البحث في صيد.',verification_failed='تعذّر إتمام تحقق حديث موثّق. لم تُعرض إجابة غير متحققة.',no_sources='لم أجد مادة كافية في صيد لهذا الطلب. أعد صياغته أو اطلب تحققًا حديثًا.'),
@@ -33,7 +33,9 @@ def build():
 <details class="mufid-settings"><summary>{c['settings']}</summary><label for="mufid-endpoint">{c['endpoint']}</label><input id="mufid-endpoint" type="url" placeholder="https://…workers.dev" autocomplete="off" dir="ltr"><label for="mufid-token">{c['token']}</label><input id="mufid-token" type="password" autocomplete="off"><button type="button" id="mufid-connect">{c['save']}</button></details>
 <noscript>{c['nojs']}</noscript></div></main>'''
         page=re.sub(r'<main\b[^>]*>.*?</main>',lambda _:main,page,count=1,flags=re.S)
-        page=page.replace('</head>','<link rel="stylesheet" href="'+('../../' if lang!='ar' else '../')+'assets/css/mufid.css?v=1">\n</head>')
+        canonical='https://sayd-magazine.com/'+('' if lang=='ar' else lang+'/')+'mufid/'
+        metadata=f'<link rel="canonical" href="{canonical}"><meta property="og:title" content="{html.escape(c["title"],quote=True)}"><meta name="description" content="{html.escape(c["intro"],quote=True)}">'
+        page=page.replace('</head>',metadata+'<link rel="stylesheet" href="'+('../../' if lang!='ar' else '../')+'assets/css/mufid.css?v=1">\n</head>')
         page=page.replace('</body>','<script type="application/json" id="mufid-copy">'+json.dumps(c,ensure_ascii=False).replace('<','\\u003c')+'</script><script src="'+('../../' if lang!='ar' else '../')+'assets/js/mufid.js?v=1" defer></script></body>')
         # Utility language links lead to the corresponding Mufid page.
         page=re.sub(r'<nav class="lang-switch".*?</nav>',lambda m:m[0].replace('/search/','/mufid/'),page,flags=re.S)
