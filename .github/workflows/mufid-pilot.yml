@@ -27,4 +27,10 @@ jobs:
       - run: npx playwright install --with-deps chromium
         working-directory: services/mufid
       - run: node services/mufid/test/browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mufid-interface-preview
+          path: /tmp/mufid-*.png
+          retention-days: 7
       - run: git diff --exit-code -- docs/mufid docs/en/mufid docs/fr/mufid docs/assets/css/mufid.css docs/assets/js/mufid.js
