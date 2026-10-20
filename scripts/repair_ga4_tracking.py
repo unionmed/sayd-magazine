@@ -109,6 +109,14 @@ def main() -> None:
             assert 'googletagmanager.com' not in raw and 'gtag(' not in raw, f'Tracking on private search: {rel}'
             stats['search_privacy_checked'] = stats.get('search_privacy_checked', 0) + 1
             continue
+        # The authorized internal assistant has the same strict privacy boundary.
+        # Exact routes and a required marker prevent an arbitrary page opting out.
+        if rel.as_posix() in {'mufid/index.html', 'en/mufid/index.html', 'fr/mufid/index.html'}:
+            assert 'data-mufid-language=' in raw, f'Missing Mufid page marker: {rel}'
+            assert 'analytics:start' not in raw, f'Analytics on private Mufid: {rel}'
+            assert 'googletagmanager.com' not in raw and 'gtag(' not in raw, f'Tracking on private Mufid: {rel}'
+            stats['mufid_privacy_checked'] = stats.get('mufid_privacy_checked', 0) + 1
+            continue
         if (rel.as_posix() in module.ALIAS_REDIRECTS | module.CANCELLED_SHELLS
             or 'http-equiv="refresh"' in raw
             or (module.is_numeric_permalink_stub(rel) and 'location.replace' in raw)):

@@ -904,9 +904,10 @@ def apply_html(
     rel: Path,
     twins: dict[str, str],
 ) -> str:
-    # Search has its own localized metadata and deliberately no analytics.
+    # Search and Mufid have localized metadata and deliberately no analytics.
     # Preserve that privacy boundary during shared SEO regeneration.
-    if rel.as_posix() in ('search/index.html', 'en/search/index.html', 'fr/search/index.html'):
+    if rel.as_posix() in ('search/index.html', 'en/search/index.html', 'fr/search/index.html',
+                          'mufid/index.html', 'en/mufid/index.html', 'fr/mufid/index.html'):
         return html_text
     if rel.as_posix() in ALIAS_REDIRECTS or rel.as_posix() in CANCELLED_SHELLS:
         return html_text
