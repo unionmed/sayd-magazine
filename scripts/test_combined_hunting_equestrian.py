@@ -279,6 +279,63 @@ def assert_approved_three_home(old_page, after, rel, lang, current):
         assert [(post.parent/unquote(urlsplit(image.get('src')).path)).resolve() for image in images]==[(DOCS/p['path']).resolve() for p in a['photos']],(lang,a['slugs']['ar'],'article images')
 
 
+
+def localized_tv_dates_only(before, after, old_source, current_source, lang):
+    """Allow only display-date localization from the identical channel source."""
+    if old_source != current_source:
+        return False
+    from refresh_homepage_doors import channel_date
+    old, new = deepcopy(before), deepcopy(after)
+    videos = {v['id']: v for v in json.loads(current_source)['videos']}
+    old_cards = old.xpath('.//*[@data-tv-group="sayd-channel"]//article[@data-video-id]')
+    new_cards = new.xpath('.//*[@data-tv-group="sayd-channel"]//article[@data-video-id]')
+    if not old_cards or [n.get('data-video-id') for n in old_cards] != [n.get('data-video-id') for n in new_cards]:
+        return False
+    for previous, candidate in zip(old_cards, new_cards):
+        record = videos.get(previous.get('data-video-id'))
+        if record is None:
+            return False
+        expected = channel_date(record['published_at'], lang)
+        old_dates, new_dates = previous.xpath('.//*[@class="meta"]'), candidate.xpath('.//*[@class="meta"]')
+        if len(old_dates) != 1 or len(new_dates) != 1:
+            return False
+        old_date, new_date = old_dates[0], new_dates[0]
+        if len(old_date) or len(new_date) or old_date.text not in (record['date'], expected) or new_date.text != expected:
+            return False
+        # Normalize only the previously validated text node, never its attributes,
+        # siblings, media, player, title, link, order or other video groups.
+        old_date.text = expected
+    return html.tostring(old, with_tail=False) == html.tostring(new, with_tail=False)
+
+
+def test_localized_tv_date_guards():
+    source = json.dumps({'videos':[{'id':'one','date':'16 أكتوبر 2026','published_at':'2026-10-16'}]})
+    old = html.fromstring('<section><div data-tv-group="sayd-channel"><article data-video-id="one"><a href="same"><img src="same.jpg"/></a><h3>Same title</h3><div class="meta">16 أكتوبر 2026</div></article></div><div data-tv-group="reels"><video src="same.mp4"/></div></section>')
+    new = deepcopy(old); new.xpath('.//*[@class="meta"]')[0].text = '16 October 2026'
+    assert localized_tv_dates_only(old, new, source, source, 'en')
+    for xpath, attribute, value in [('.//img','src','other.jpg'),('.//video','src','other.mp4'),('.//a','href','other'),('.//h3',None,'Other title'),('.//*[@class="meta"]',None,'17 October 2026'),('.//article','data-video-id','other'),('.//section','style','display:none')]:
+        bad = deepcopy(new)
+        target = bad if xpath == './/section' else bad.xpath(xpath)[0]
+        if attribute: target.set(attribute, value)
+        else: target.text = value
+        assert not localized_tv_dates_only(old, bad, source, source, 'en'), (xpath, attribute)
+    bad = deepcopy(new); bad.xpath('.//*[@class="meta"]')[0].append(html.Element('span'))
+    assert not localized_tv_dates_only(old, bad, source, source, 'en')
+    bad = deepcopy(new); bad.xpath('.//article')[0].getparent().append(deepcopy(bad.xpath('.//article')[0]))
+    assert not localized_tv_dates_only(old, bad, source, source, 'en')
+    assert not localized_tv_dates_only(old, new, source, source.replace('2026-10-16','2026-10-17'), 'en')
+    two_source = json.dumps({'videos':[{'id':i,'date':'16 أكتوبر 2026','published_at':'2026-10-16'} for i in ('one','two')]})
+    two_old, two_new = deepcopy(old), deepcopy(new)
+    for node in (two_old,two_new):
+        second = deepcopy(node.xpath('.//article')[0]); second.set('data-video-id','two')
+        node.xpath('.//article')[0].getparent().append(second)
+    assert localized_tv_dates_only(two_old,two_new,two_source,two_source,'en')
+    cards = two_new.xpath('.//article'); cards[0].getparent().insert(0,cards[1])
+    assert not localized_tv_dates_only(two_old,two_new,two_source,two_source,'en')
+    bad_old = deepcopy(old); bad_old.xpath('.//*[@class="meta"]')[0].text = 'arbitrary old text'
+    assert not localized_tv_dates_only(bad_old, new, source, source, 'en')
+
+
 def test_preserved(base):
     old_config=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT))
     current=config()
@@ -348,6 +405,12 @@ def test_preserved(base):
                 assert all(loop[1] == expected_ticker for loop in loops)
                 continue
             xp='//*[contains(concat(" ",normalize-space(@class)," ")," '+cls+' ")]'
+            if cls == 'sayd-tv':
+                old_nodes, new_nodes = before.xpath(xp), after.xpath(xp)
+                old_source = subprocess.check_output(['git','show',base+':content/tv-channel.json'],cwd=ROOT)
+                current_source = (ROOT/'content/tv-channel.json').read_bytes()
+                if len(old_nodes) == len(new_nodes) == 1 and localized_tv_dates_only(old_nodes[0], new_nodes[0], old_source, current_source, lang):
+                    continue
             def canonical(n):return html.tostring(n,encoding='unicode',with_tail=False)
             assert [canonical(n) for n in before.xpath(xp)]==[canonical(n) for n in after.xpath(xp)],(lang,cls)
         assert merge_hunting_section(new,lang)==new
@@ -363,4 +426,4 @@ def test_preserved(base):
 if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser();parser.add_argument('--base',default='HEAD');args=parser.parse_args()
-    test_rotation();test_preserved(args.base);test_four_news_negative_guards(args.base);test_omayed_negative_guards(args.base);test_approved_three_negative_guards(args.base)
+    test_localized_tv_date_guards();test_rotation();test_preserved(args.base);test_four_news_negative_guards(args.base);test_omayed_negative_guards(args.base);test_approved_three_negative_guards(args.base)
