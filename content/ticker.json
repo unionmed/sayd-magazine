@@ -2,6 +2,24 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
+      "titles": {
+        "ar": "بعد البقاع… إزالة 24,750 مترًا مربعًا من شباك الصيد الجائر في الشمال خلال أربع ساعات",
+        "en": "After the Bekaa: 24,750 square metres of illegal hunting nets removed in northern Lebanon in four hours",
+        "fr": "Après la Bekaa, 24 750 m² de filets de braconnage retirés dans le nord du Liban en quatre heures"
+      },
+      "title": "بعد البقاع… إزالة 24,750 مترًا مربعًا من شباك الصيد الجائر في الشمال خلال أربع ساعات"
+    },
+    {
+      "slug": "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
+      "titles": {
+        "ar": "بطولة السلوقي العربي تنطلق في نوفمبر بثلاث مسافات وخمسة ألقاب موسمية",
+        "en": "Arabian Saluki Championship starts in November with three distances and five season titles",
+        "fr": "Le championnat du saluki arabe débute en novembre : trois distances et cinq titres saisonniers"
+      },
+      "title": "بطولة السلوقي العربي تنطلق في نوفمبر بثلاث مسافات وخمسة ألقاب موسمية"
+    },
+    {
       "slug": "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
       "titles": {
         "ar": "تعاون مصري إماراتي لحماية الحبارى وتطوير إدارة محمية العميد",
@@ -72,24 +90,6 @@
         "fr": "Alerte européenne : 11 à 36 millions d'oiseaux par an ; 83 % des pays sans mesures suffisantes"
       },
       "title": "تحذير أوروبي: 11–36 مليون طائر سنويًا في المتوسط و83% من الدول لم تعتمد التدابير الكافية"
-    },
-    {
-      "slug": "ختام-الملواح-2026-60-فائزا",
-      "titles": {
-        "ar": "الملواح يختتم منافساته بتتويج 60 فائزًا",
-        "en": "Al-Melwah concludes with 60 winners",
-        "fr": "Al-Melwah s’achève avec 60 lauréats"
-      },
-      "title": "الملواح يختتم منافساته بتتويج 60 فائزًا"
-    },
-    {
-      "slug": "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-      "titles": {
-        "ar": "أين تستريح الطيور؟ «صيد» تستعرض أبرز ملاذات الهجرة في المشرق والجزيرة العربية.",
-        "en": "Where do birds rest? Sayd explores major migration refuges in the Mashreq and Arabian Peninsula.",
-        "fr": "Où les oiseaux se reposent-ils ? Sayd explore les refuges migratoires du Machrek et de la péninsule Arabique."
-      },
-      "title": "أين تستريح الطيور؟ «صيد» تستعرض أبرز ملاذات الهجرة في المشرق والجزيرة العربية."
     }
   ]
 }

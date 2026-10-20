@@ -134,6 +134,151 @@ def test_omayed_negative_guards(base):
         else:raise AssertionError('Unauthorized Omayed mutation accepted')
 
 
+APPROVED_THREE_SLUGS = (
+    'الشمال-إزالة-24750-متر-شباك-الصيد-الجائر',
+    'المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق',
+    'بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027',
+)
+
+
+def approved_three_articles():
+    """The exact 20 October package, never permission for arbitrary additions."""
+    articles=json.loads((ROOT/'content/features/approved-three-20261020.json').read_text())['articles']
+    assert [a['slugs']['ar'] for a in articles]==list(APPROVED_THREE_SLUGS)
+    translated=['north-lebanon-24750-square-metres-illegal-nets-2026',
+                'cities-bird-diversity-winter-nature-cities-2026',
+                'arabian-saluki-championship-november-2026-april-2027']
+    for lang in ('en','fr'):
+        assert [a['slugs'][lang] for a in articles]==translated
+    assert all(a['date']=='2026-10-20' and a['publication_ready'] is True for a in articles)
+    assert [a['door'] for a in articles]==['hunting','science','hunting']
+    assert [a['category'] for a in articles]==['صيد','علوم-واكتشافات','صيد']
+    assert [a['placement'] for a in articles]==['main','category','category']
+    assert [[p['path'] for p in a['photos']] for a in articles]==[
+        ['assets/images/2026/10/north-lebanon-nets-team-20261020.jpg',
+         'assets/images/2026/10/north-lebanon-nets-orchard-20261020.jpg',
+         'assets/images/2026/10/north-lebanon-nets-fieldwork-20261020.jpg',
+         'assets/images/2026/10/north-lebanon-nets-collected-20261020.jpg'],
+        ['assets/images/2026/10/istanbul-galata-seagulls-mehmetburakcoban-20150317.jpg',
+         'assets/images/2026/10/beirut-aub-pelicans-bassem-20180917-frame60.jpg'],
+        ['assets/images/2026/10/arabian-saluki-efc-asd22.png',
+         'assets/images/2026/10/arabian-saluki-efc-asd26.jpg']]
+    return articles
+
+
+def approved_three_expected(old, current):
+    source=ROOT/'content/features/approved-three-20261020.json'
+    if not source.exists() or any(s in old['primary_door'] for s in APPROVED_THREE_SLUGS): return None
+    articles=approved_three_articles()
+    north,science,saluki=APPROVED_THREE_SLUGS
+    assert old['ia_slots']['main']=='شيرين-بو-رفول-مكافحة-الصيد-الجائر'
+    from homepage_demotion import demote_side_cards
+    from ticker_policy import select as select_ticker
+    wanted=deepcopy(old)
+    wanted['ia_slots']['main']=north
+    wanted['ia_slots']['important']=[old['ia_slots']['main']]+old['ia_slots']['important'][:3]
+    wanted['featured']=[north]+wanted['ia_slots']['important']
+    demote_side_cards(wanted,old['ia_slots']['important'])
+    wanted['omit_from_latest']+=list(APPROVED_THREE_SLUGS[1:])
+    for a in articles:
+        slug=a['slugs']['ar'];photo=a['photos'][0]
+        wanted['primary_door'][slug]=a['door']
+        wanted['card_image_overrides'][slug]={'image':photo['path'],'position':'50% 50%','alt':photo['alt']}
+    wanted['ticker_entries']=select_ticker([
+        {'slug':a['slugs']['ar'],'titles':{lang:a['translations'][lang]['ticker'] for lang in ('ar','en','fr')}}
+        for a in (articles[0],articles[2])]+old['ticker_entries'])
+    wanted['ticker_slugs']=[e['slug'] for e in wanted['ticker_entries']]
+    assert wanted['ticker_slugs'][:2]==[north,saluki] and len(wanted['ticker_slugs'])==10
+    science_cards=([science]+next(d['slugs'] for d in old['ia_door_sections'] if d['door']=='science'))[:4]
+    next(d for d in wanted['ia_door_sections'] if d['door']=='science')['slugs']=science_cards
+    hunting_cards=expected(wanted)
+    assert hunting_cards[0]==saluki
+    next(d for d in wanted['ia_door_sections'] if d['door']=='hunting')['slugs']=hunting_cards
+    pairs=json.loads((ROOT/'content/en/pairs.json').read_text())['pairs']
+    for cards,ar,en in ((hunting_cards,'صيد','Hunting'),(science_cards,'علوم واكتشافات','Science & Discoveries')):
+        wanted['desk_slugs'][ar]=cards
+        wanted['desk_slugs'][en]=[pairs[s] for s in cards]
+    assert not set((science,saluki)).intersection(wanted['featured']+wanted['latest'])
+    assert science not in wanted['ticker_slugs']
+    assert current==wanted, ('approved-three', [k for k in set(current)|set(wanted) if current.get(k)!=wanted.get(k)])
+    return wanted
+
+
+def test_approved_three_negative_guards(base):
+    old=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT));current=config()
+    if approved_three_expected(old,current) is None:return
+    north,science,saluki=APPROVED_THREE_SLUGS
+    broken=[]
+    for slug in ('unauthorized',science,saluki):
+        c=deepcopy(current);c['ia_slots']['main']=slug;c['featured'][0]=slug;broken.append(c)
+    for slug in (science,saluki):
+        c=deepcopy(current);c['latest'][0]=slug;c['ia_slots']['latest'][0]=slug;broken.append(c)
+    c=deepcopy(current);c['ia_slots']['important'].reverse();c['featured']=[north]+c['ia_slots']['important'];broken.append(c)
+    c=deepcopy(current);c['latest']=old['latest'];c['ia_slots']['latest']=old['ia_slots']['latest'];broken.append(c)
+    c=deepcopy(current);c['ticker_entries'][1]['slug']=science;broken.append(c)
+    c=deepcopy(current);c['ticker_entries'].reverse();c['ticker_slugs'].reverse();broken.append(c)
+    c=deepcopy(current);c['ticker_entries'][0]['titles']['fr']='unauthorized';broken.append(c)
+    c=deepcopy(current);c['ticker_entries'].append(deepcopy(c['ticker_entries'][0]));broken.append(c)
+    c=deepcopy(current);c['primary_door'][saluki]='science';broken.append(c)
+    c=deepcopy(current);c['primary_door']['unauthorized']='hunting';broken.append(c)
+    c=deepcopy(current);c['card_image_overrides'][north]['image']='unapproved.jpg';broken.append(c)
+    c=deepcopy(current);c['omit_from_latest'].remove(science);broken.append(c)
+    c=deepcopy(current);c['memory_visible']=True;broken.append(c)
+    c=deepcopy(current);c['desk_slugs']['Science & Discoveries'].reverse();broken.append(c)
+    for door in current['ia_door_sections']:
+        c=deepcopy(current);next(d for d in c['ia_door_sections'] if d['door']==door['door'])['slugs']=[];broken.append(c)
+    for candidate in broken:
+        try:approved_three_expected(old,candidate)
+        except AssertionError:pass
+        else:raise AssertionError('Unauthorized approved-three mutation accepted')
+
+
+def assert_approved_three_home(old_page, after, rel, lang, current):
+    """Check exact rendered cards and all nine article mirrors, not just counts."""
+    from urllib.parse import unquote, urlsplit
+    from refresh_homepage_doors import collect
+    articles=approved_three_articles()
+    additions={a['slugs']['ar']:a for a in articles}
+    page_path=ROOT/rel
+    baseline=collect(old_page,page_path,page_path)
+    def nodes(cls):
+        return after.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," '+cls+' ")]')
+    def check_cards(rows,slugs):
+        assert len(rows)==len(slugs),(lang,'card count',slugs)
+        for row,slug in zip(rows,slugs):
+            local=local_slug(slug,lang)
+            links=row.xpath('.//a[contains(@href,"posts/")]')
+            assert links and all(unquote(urlsplit(a.get('href')).path)==f'posts/{local}/index.html' for a in links),(lang,slug,'links')
+            titles=row.xpath('.//h2/a | .//h3/a | .//*[@class="feed-title"]')
+            title=additions[slug]['translations'][lang]['title'] if slug in additions else baseline[local]['title']
+            assert len(titles)==1 and titles[0].text_content().strip()==title,(lang,slug,'title')
+            images=row.xpath('.//img')
+            assert len(images)==1,(lang,slug,'image count')
+            override=current['card_image_overrides'].get(slug)
+            image=(DOCS/override['image']).resolve() if override else (page_path.parent/baseline[local]['image']).resolve()
+            assert (page_path.parent/unquote(urlsplit(images[0].get('src')).path)).resolve()==image,(lang,slug,'image')
+            if override:assert images[0].get('alt')==override['alt'][lang],(lang,slug,'alt')
+    check_cards(nodes('feature-lead'),[current['ia_slots']['main']])
+    assert len(nodes('feature-stack'))==1
+    check_cards(nodes('feature-stack')[0].xpath('./article'),current['ia_slots']['important'])
+    check_cards(after.xpath('//ul[@class="latest-feed"]/li'),current['latest'])
+    for door in ('hunting','science'):
+        heading=next(d[{'ar':1,'en':2,'fr':3}[lang]] for d in DOORS if d[0]==door)
+        section=after.xpath('//section[contains(concat(" ",normalize-space(@class)," ")," home-section ")][div/h2=$heading]',heading=heading)
+        assert len(section)==1,(lang,door)
+        check_cards(section[0].xpath('.//article'),next(d['slugs'] for d in current['ia_door_sections'] if d['door']==door))
+    from sync_tickers import TICKER, sources, ticker_for
+    loops=TICKER.findall(page_path.read_text())
+    assert len(loops)==2 and all(loop[1]==ticker_for(page_path,sources(DOCS)[lang]) for loop in loops)
+    for a in articles:
+        assert local_slug(a['slugs']['ar'],lang)==a['slugs'][lang]
+        post=page_path.parent/'posts'/a['slugs'][lang]/'index.html'
+        tree=html.parse(str(post))
+        assert tree.xpath('//h1/text()')==[a['translations'][lang]['title']]
+        images=tree.xpath('//article[@class="article-content"]//figure/img')
+        assert [(post.parent/unquote(urlsplit(image.get('src')).path)).resolve() for image in images]==[(DOCS/p['path']).resolve() for p in a['photos']],(lang,a['slugs']['ar'],'article images')
+
+
 def test_preserved(base):
     old_config=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT))
     current=config()
@@ -143,7 +288,8 @@ def test_preserved(base):
     approved_interview = current['ia_slots']['main']=='شيرين-بو-رفول-مكافحة-الصيد-الجائر' and old_config['ia_slots']['main']!=current['ia_slots']['main']
     approved_four_news=four_news_expected(old_config,current) is not None
     approved_omayed=omayed_expected(old_config,current) is not None
-    if approved_four_news or approved_omayed:
+    approved_three=approved_three_expected(old_config,current) is not None
+    if approved_four_news or approved_omayed or approved_three:
         pass  # All changed placement fields independently validated above.
     elif approved_interview:
         from homepage_demotion import demote_side_cards
@@ -171,8 +317,9 @@ def test_preserved(base):
     # owner-approved selection may change without changing unrelated doors.
     from interview_collection import homepage_slugs
     assert next(s['slugs'] for s in current['ia_door_sections'] if s['door']=='interviews') == homepage_slugs('ar', current)
+    changed_doors=('hunting','equestrian','interviews','gear','wildlife','science') if approved_four_news else ('hunting','equestrian','interviews','science') if approved_three else ('hunting','equestrian','interviews')
     for old in old_config['ia_door_sections']:
-        if old['door'] not in (('hunting','equestrian','interviews','gear','wildlife','science') if approved_four_news else ('hunting','equestrian','interviews')):
+        if old['door'] not in changed_doors:
             assert old in current['ia_door_sections'],old['door']
     for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
         rel='docs/'+prefix+'index.html'
@@ -190,7 +337,9 @@ def test_preserved(base):
             label={'ar':{'hunting':'صيد','equestrian':'فروسية'},'en':{'hunting':'Hunting','equestrian':'Equestrian'},'fr':{'hunting':'Chasse','equestrian':'Équitation'}}[lang][topic]
             assert row.xpath('.//*[@class="card-topic"]/text()')==[' · '+label]
             assert local_slug(slug,lang) in row.xpath('.//h3/a/@href')[0]
-        for cls in (('feature-lead','feature-stack','sayd-tv') if approved_four_news or approved_omayed else ('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
+        if approved_three:
+            assert_approved_three_home(old,after,rel,lang,current)
+        for cls in (('sayd-tv',) if approved_three else ('feature-lead','feature-stack','sayd-tv') if approved_four_news or approved_omayed else ('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
             if cls == 'ticker' and approved_ticker_rotation:
                 from sync_tickers import TICKER, sources, ticker_for
                 expected_ticker = ticker_for(ROOT/rel, sources(DOCS)[lang])
@@ -214,4 +363,4 @@ def test_preserved(base):
 if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser();parser.add_argument('--base',default='HEAD');args=parser.parse_args()
-    test_rotation();test_preserved(args.base);test_four_news_negative_guards(args.base);test_omayed_negative_guards(args.base)
+    test_rotation();test_preserved(args.base);test_four_news_negative_guards(args.base);test_omayed_negative_guards(args.base);test_approved_three_negative_guards(args.base)

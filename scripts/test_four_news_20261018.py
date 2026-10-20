@@ -4,7 +4,16 @@ from pathlib import Path
 from lxml import html
 from urllib.parse import unquote
 ROOT=Path(__file__).resolve().parents[1];DOCS=ROOT/'docs';A=json.loads((ROOT/'content/features/four-news-20261018.json').read_text())['articles'];BASE='15d82a6f1868c8d612ab5acc2e500bce19bb7dc8'
-old=json.loads(subprocess.check_output(['git','show',BASE+':content/homepage.json'],cwd=ROOT));new=json.loads((ROOT/'content/homepage.json').read_text());assert new['featured']==old['featured'];assert new['ia_slots']['main']==old['ia_slots']['main'];assert new['ia_slots']['important']==old['ia_slots']['important'];assert len(new['ia_slots']['latest'])==8;assert len(new['ticker_entries'])==10
+old=json.loads(subprocess.check_output(['git','show',BASE+':content/homepage.json'],cwd=ROOT));new=json.loads((ROOT/'content/homepage.json').read_text())
+upper=new
+if new['ia_slots']['main']=='الشمال-إزالة-24750-متر-شباك-الصيد-الجائر':
+ # Preserve the original upper-slot proof on the immutable pre-North tree.
+ # The current tree must additionally match the entire exact approved package.
+ from test_combined_hunting_equestrian import approved_three_expected
+ prior=json.loads(subprocess.check_output(['git','show','c16e9f474b74efb48fdc01eab4f418f53beaa82e:content/homepage.json'],cwd=ROOT))
+ assert approved_three_expected(prior,new) is not None
+ upper=prior
+assert upper['featured']==old['featured'];assert upper['ia_slots']['main']==old['ia_slots']['main'];assert upper['ia_slots']['important']==old['ia_slots']['important'];assert len(new['ia_slots']['latest'])==8;assert len(new['ticker_entries'])==10
 for a in A:
  ar=a['slugs']['ar'];assert new['primary_door'][ar]==a['door'];assert (ar in new['ia_slots']['latest'])==(a['placement']=='news');assert (ar in [x['slug'] for x in new['ticker_entries']])==(a['placement']=='news')
  p=a['photos'][0];assert hashlib.sha256((DOCS/p['path']).read_bytes()).hexdigest()==p['sha256']
