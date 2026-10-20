@@ -272,6 +272,16 @@ def callout_html(lang: str, title: str, body: str) -> str:
     )
 
 
+
+# Verified species correction: RSCN taxonomy and Jordanian reporting dated 17 September 2026.
+JORDAN_COPY_CORRECTIONS = {'excluding the European turtle dove (Streptopelia turtur), known locally as al-hamam al-raqti, according to Jordanian reporting of the RSCN announcement on 17 September': 'excluding the European turtle dove (Streptopelia turtur), known locally as al-hamam al-raqti, according to <a href="https://factjo.com/news/149077">Jordanian reporting of the RSCN announcement on 17 September</a>', '(European turtle dove excluded)': '(European turtle dove excluded)', 'en excluant la tourterelle des bois (Streptopelia turtur), appelée localement al-hamam al-raqti, selon la presse jordanienne citant l’annonce de la RSCN du 17 septembre': 'en excluant la tourterelle des bois (Streptopelia turtur), appelée localement al-hamam al-raqti, selon <a href="https://factjo.com/news/149077">la presse jordanienne citant l’annonce de la RSCN du 17 septembre</a>', '(tourterelle des bois exclue)': '(tourterelle des bois exclue)', 'مع استثناء الحمام الرقطي (اليمام القمري)، بحسب إعلان الجمعية كما نقلته وسائل الإعلام الأردنية في 17 سبتمبر': 'مع استثناء الحمام الرقطي (اليمام القمري)، بحسب <a href="https://factjo.com/news/149077">إعلان الجمعية كما نقلته وسائل الإعلام الأردنية في 17 سبتمبر</a>'}
+
+def correct_jordan_copy(text: str) -> str:
+    for old, new in JORDAN_COPY_CORRECTIONS.items():
+        text = text.replace(old, new)
+    return text
+
+
 def body_html(lang: str, dek: str, blocks: list[tuple], prefix: str) -> str:
     parts = [figure(lang, "cover", prefix), f"<p>{inline(dek)}</p>"]
     seen = {"hunter": 0, "aim": 0, "lebanon": 0}
@@ -293,7 +303,7 @@ def body_html(lang: str, dek: str, blocks: list[tuple], prefix: str) -> str:
             parts.append(f"<p>{inline(rest[0])}</p>")
     if seen != {"hunter": 1, "aim": 1, "lebanon": 1}:
         raise SystemExit(f"image placement for {lang}: {seen}")
-    return "\n".join(parts)
+    return correct_jordan_copy("\n".join(parts))
 
 
 def copy_images() -> None:

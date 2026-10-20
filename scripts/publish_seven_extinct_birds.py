@@ -22,12 +22,12 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 AR_SLUG = "كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما"
 EN_SLUG = "how-migration-routes-lost-seven-birds-in-150-years"
-AR_TITLE = "كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟"
-EN_TITLE = "How Did Migration Routes Lose Seven of Their Birds in 150 Years?"
-AR_TICKER = "مسارات الهجرة فقدت 7 أنواع خلال 150 عاماً… والكروان رفيع المنقار آخرها"
-EN_TICKER = "Migration routes lost 7 species in 150 years… the Slender-billed Curlew the latest"
-AR_EXCERPT = "تحقيق بيئي يرصد تشريح الفقد استناداً إلى أحدث بيانات منظمة بيردلايف إنترناشونال."
-EN_EXCERPT = "An environmental investigation mapping the anatomy of loss, drawn from the latest data from BirdLife International."
+AR_TITLE = "7 طيور مهاجرة انقرضت أو يُرجَّح انقراضها خلال 150 عاماً"
+EN_TITLE = "Seven Migratory Birds Extinct or Presumed Extinct in 150 Years"
+AR_TICKER = "7 أنواع من الطيور المهاجرة انقرضت أو يُرجَّح انقراضها خلال 150 عاماً"
+EN_TICKER = "Seven migratory bird species extinct or presumed extinct in 150 years"
+AR_EXCERPT = "تحقيق بيئي في مصير 7 أنواع من الطيور المهاجرة انقرضت أو يُرجَّح انقراضها، استناداً إلى بيانات منظمة بيردلايف إنترناشونال."
+EN_EXCERPT = "An environmental investigation into seven migratory bird species that are extinct or presumed extinct, drawing on BirdLife International data."
 AR_ALT = "الكروان رفيع المنقار في بحيرة المرجة الزرقاء بالمغرب، 1995"
 EN_ALT = "Slender-billed Curlew at Merja Zerga, Morocco, 1995"
 IMG = "media/uploads/2026/09/slender-billed-curlew-last-photo.jpg"
@@ -110,11 +110,11 @@ def copy_images() -> None:
 def ar_body() -> str:
     p = "../../media/uploads/2026/09/"
     return f"""{fig(p + "slender-billed-curlew-last-photo.jpg", AR_ALT, "آخر صورة للكروان رفيع المنقار التقطها كريس غومرسال في بحيرة المرجة الزرقاء بالمغرب في 2 شباط/فبراير 1995.", "The last photo of the Slender-billed Curlew taken by Chris Gomersall at Merja Zerga, Morocco on 2 February 1995.", "")}
-<p>تحقيق بيئي يرصد تشريح الفقد استناداً إلى أحدث بيانات منظمة بيردلايف إنترناشونال (BirdLife International).</p>
+<p>تحقيق بيئي في مصير 7 أنواع من الطيور المهاجرة انقرضت أو يُرجَّح انقراضها، استناداً إلى بيانات منظمة بيردلايف إنترناشونال (BirdLife International).</p>
 <p>في 2 شباط/فبراير 1995، التقط كريس غومرسال في بحيرة «المرجة الزرقاء» بالمغرب صورة لطائر ذي منقار مقوّس ودقيق، يبحث بهدوء في الطمي الساحلي. لم يكن أحد يعلم حينها أن هذا المشهد سيسجله التاريخ كآخر ظهور مؤكد على وجه الأرض لطائر الكروان رفيع المنقار (<em>Numenius tenuirostris</em>) — وهي الصورة المعتمدة كآخر لقطة للنوع.</p>
-<p>واليوم، ومع صدور تقرير «حالة طيور العالم» (State of the World's Birds) عن منظمة بيردلايف، تحول الشك إلى يقين كئيب؛ حيث أُعلن رسمياً عن انقراضه، ليتصدر قائمة سوداء تضم 7 أنواع من الطيور المهاجرة قُطعت رحلتها إلى الأبد خلال الـ150 عاماً الماضية.</p>
+<p>واليوم، ومع صدور تقرير «حالة طيور العالم» (State of the World's Birds) عن منظمة بيردلايف، تحول الشك إلى يقين كئيب؛ حيث أُعلن رسمياً عن انقراضه، ليتصدر قائمة تضم 7 أنواع من الطيور المهاجرة انقرضت أو يُرجَّح انقراضها خلال الـ150 عاماً الماضية؛ وليست الأنواع السبعة جميعها مصنَّفة منقرضة بشكل مؤكد.</p>
 <p>يكشف التقرير أن مسار الهجرة ليس مجرد خط وهمي على خريطة، بل هو «سلسلة محكمة الحلقات»؛ ما إن تنكسر حلقة واحدة فيها — سواء كانت مستنقعاً للتكاثر في سيبيريا أو خليجاً للتغذية في المتوسط — حتى تنهار الدورة الحياتية للنوع كاملاً.</p>
-<h2>ملفات القضية: 7 أنواع دفعها البشر خارج الوجود</h2>
+<h2>ملفات القضية: 7 أنواع منقرضة أو يُرجَّح انقراضها</h2>
 <p>تكشف مراجعة السجلات التاريخية لتقرير المنظمة أن 6 من هذه الطيور فُقدت في القارتين الأمريكيتين، بينما جاء الفقد الأخير والأكثر صدمة في البر الرئيسي لمنطقة أوراسيا وإفريقيا:</p>
 <h3>1. الكروان رفيع المنقار (Slender-billed Curlew) — آخر الضحايا</h3>
 <p><strong>تاريخ السقوط:</strong> أُعلن انقراضه رسمياً في أحدث تقييمات المنظمة (بعد عقود من اختفائه منذ 1995).</p>
@@ -159,11 +159,11 @@ def en_body() -> str:
         return fig(src, alt, ar, en, locale="en")
 
     return f"""{en_fig(p + "slender-billed-curlew-last-photo.jpg", EN_ALT, "آخر صورة للكروان رفيع المنقار التقطها كريس غومرسال في بحيرة المرجة الزرقاء بالمغرب في 2 شباط/فبراير 1995.", "The last photo of the Slender-billed Curlew taken by Chris Gomersall at Merja Zerga, Morocco on 2 February 1995.")}
-<p>An environmental investigation mapping the anatomy of loss, drawn from the latest data from BirdLife International.</p>
+<p>An environmental investigation into seven migratory bird species that are extinct or presumed extinct, drawing on BirdLife International data.</p>
 <p>On 2 February 1995, Chris Gomersall photographed a Slender-billed Curlew (<em>Numenius tenuirostris</em>) at Merja Zerga, Morocco — the last photo of the species. No one knew then that history would record that sighting as the last confirmed appearance on Earth of the bird.</p>
-<p>Today, with the release of BirdLife’s <em>State of the World’s Birds</em> report, doubt has hardened into a bleak certainty: its extinction has been formally declared, topping a black list of seven migratory bird species whose journeys were cut off for good over the past 150 years.</p>
+<p>Today, with the release of BirdLife’s <em>State of the World’s Birds</em> report, doubt has hardened into a bleak certainty: its extinction has been formally declared, placing it among seven migratory bird species that have become extinct or are presumed extinct over the past 150 years. Not all seven are classified as confirmed extinctions.</p>
 <p>The report shows that a migration route is not an imaginary line on a map but a “tightly linked chain”: break one link — whether a breeding bog in Siberia or a feeding bay in the Mediterranean — and the whole life cycle of the species collapses.</p>
-<h2>Case files: seven species humans pushed out of existence</h2>
+<h2>Case files: seven extinct or presumed extinct species</h2>
 <p>A review of the organisation’s historical records shows that six of these birds were lost in the Americas, while the latest and most shocking loss fell on the Eurasian–African mainland:</p>
 <h3>1. Slender-billed Curlew — the latest casualty</h3>
 <p><strong>Date of fall:</strong> Formally declared extinct in the organisation’s latest assessments (after decades of absence since 1995).</p>

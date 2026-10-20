@@ -92,12 +92,12 @@ def test_sitemap_covers_published_pages() -> None:
 def test_head_tags_do_not_rewrite_titles() -> None:
     ar = (DOCS / "posts" / EXTINCT_AR / "index.html").read_text(encoding="utf-8")
     en = (DOCS / "en" / "posts" / EXTINCT_EN / "index.html").read_text(encoding="utf-8")
-    assert "<title>كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟ — مجلة صيد</title>" in ar
+    assert "<title>7 طيور مهاجرة انقرضت أو يُرجَّح انقراضها خلال 150 عاماً — مجلة صيد</title>" in ar
     assert (
-        "<title>How Did Migration Routes Lose Seven of Their Birds in 150 Years? — Sayd Magazine</title>"
+        "<title>Seven Migratory Birds Extinct or Presumed Extinct in 150 Years — Sayd Magazine</title>"
         in en
     )
-    assert "تحقيق بيئي يرصد تشريح الفقد" in ar
+    assert "تحقيق بيئي في مصير 7 أنواع من الطيور المهاجرة انقرضت أو يُرجَّح انقراضها" in ar
     head, body = ar.split("</head>", 1)
     assert 'rel="canonical" href="https://sayd-magazine.com/posts/' in head
     assert "og:title" in head

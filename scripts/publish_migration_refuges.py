@@ -23,7 +23,7 @@ def save(p,s):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(s)
 def figure(lang,i):
  d=T[lang];prefix='../../' if lang=='ar' else '../../../'
  # SPA's visible watermark identifies the source; do not duplicate it beneath each photograph.
- return f'<figure><img src="{prefix+IMAGES[i]}" alt="{esc.escape(d["alt"][i],quote=True)}" decoding="async" style="display:block;width:100%;height:auto"><figcaption><span>{esc.escape(d["captions"][i])}</span><br><small style="font-size:11px"><a href="{esc.escape(SOURCES[i],quote=True)}">{esc.escape((CREDITS[i] if lang=='ar' or i!=1 else 'Reuters — Ali Hashisho'))}</a></small></figcaption></figure>'
+ return f'<figure><img src="{prefix+IMAGES[i]}" alt="{esc.escape(d["alt"][i],quote=True)}" decoding="async" style="display:block;width:100%;height:auto"><figcaption><span>{esc.escape(d["captions"][i])}</span><br><small style="font-size:11px"><a href="{esc.escape(SOURCES[i],quote=True)}">{esc.escape((CREDITS[i] if lang=='ar' else ('Reuters — Ali Hashisho' if i==1 else 'Saudi Press Agency (SPA)' if i==3 else CREDITS[i])))}</a></small></figcaption></figure>'
 def body(lang):
  d=T[lang];out=figure(lang,0)+'<p class="article-deck">'+esc.escape(d['deck'])+'</p>'
  for para in d['intro']:out+='<p>'+esc.escape(para)+'</p>'

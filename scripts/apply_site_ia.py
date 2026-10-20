@@ -80,7 +80,7 @@ def rewrite_chrome(text: str, path: Path) -> str:
     if 'class="mobile-nav"' not in text and 'class="main-nav"' in text:
         text = NAV_RE.sub(lambda m: m.group(0) + "\n" + mobile, text, count=1)
 
-    doors_heading = {"en": "Doors", "fr": "Rubriques"}.get(lang, "الأبواب")
+    doors_heading = {"en": "Sections", "fr": "Rubriques"}.get(lang, "الأبواب")
     magazine_heading = "Magazine" if lang in {"en", "fr"} else "المجلة"
     doors = ia.footer_doors_html(lang, depth)
     magazine = ia.footer_magazine_html(lang, depth)
@@ -906,7 +906,7 @@ def _en_door_page(door: dict, stories: list[dict]) -> str:
           <p>The magazine of nature’s masters on land, sea, and sky</p>
         </div>
         <div class="footer-col">
-          <h3>Doors</h3>
+          <h3>Sections</h3>
           <ul>{doors}</ul>
         </div>
         <div class="footer-col">
