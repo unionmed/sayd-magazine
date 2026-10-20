@@ -157,7 +157,7 @@ def test_navigation_and_market_across_all_pages():
             assert not found[0].xpath('.//details | .//*[contains(@class,"nav-sub")]'), page
             for href in found[0].xpath('.//a/@href'):
                 assert local_path(page, href).is_file(), (page, href)
-        for listing in tree.xpath('//ul[@class="cat-list"] | //footer//h3[text()="الأبواب" or text()="Sections" or text()="Rubriques"]/following-sibling::ul[1]'):
+        for listing in tree.xpath('//ul[@class="cat-list"] | //footer//h3[text()="الأبواب" or text()="Doors" or text()="Sections" or text()="Rubriques"]/following-sibling::ul[1]'):
             folders = [unquote(re.search(r'category/([^/]+)/', href)[1]) for href in listing.xpath('.//a/@href')]
             assert folders == expected, (page, 'sidebar/footer')
         market = tree.xpath('//header[@class="site-header"]//a[@class="market-cta"]')
