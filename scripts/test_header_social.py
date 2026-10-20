@@ -127,7 +127,7 @@ def run(base=None):
         inventory_base='c16e9f474b74efb48fdc01eab4f418f53beaa82e'
         baseline=set(filter(None,subprocess.check_output(
             ['git','ls-tree','-r','--name-only','-z',inventory_base,'--','docs'],
-            cwd=ROOT).decode().split('\\0')))
+            cwd=ROOT).decode().split('\0')))
         baseline={name for name in baseline if name.endswith('.html')}
         actual={path.relative_to(ROOT).as_posix() for path in DOCS.rglob('*.html')}
         assert not baseline.intersection(pilot_routes),'Pilot route already in baseline'
