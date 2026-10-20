@@ -94,7 +94,7 @@ def ar_body() -> str:
         <div class="widget">
           <h3>الأحدث</h3>
           <div class="widget-body"><ul class="latest-list"><li><a href="index.html">{AR_TITLE}</a><span class="meta">23 أيلول 2026</span></li>
-<li><a href="../../posts/كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما/index.html">كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟</a><span class="meta">22 أيلول 2026</span></li>
+<li><a href="../../posts/كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما/index.html">7 طيور مهاجرة انقرضت أو يُرجَّح انقراضها خلال 150 عاماً</a><span class="meta">22 أيلول 2026</span></li>
 <li><a href="../../posts/العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني/index.html">العد التنازلي لختام موسم الطائف.. ترقّب خليجي لكأسي «الملك فيصل» و«اليوم الوطني» في الحَوِيّة</a><span class="meta">22 أيلول 2026</span></li></ul></div>
         </div>
 <div class="widget">
@@ -174,11 +174,11 @@ def write_articles() -> None:
     en_tpl = (DOCS / "en" / "posts" / "how-migration-routes-lost-seven-birds-in-150-years" / "index.html").read_text(encoding="utf-8")
     ar = splice_main(ar_tpl, ar_body())
     ar = ar.replace(
-        "كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟ — مجلة صيد",
+        "7 طيور مهاجرة انقرضت أو يُرجَّح انقراضها خلال 150 عاماً — مجلة صيد",
         f"{AR_TITLE} — مجلة صيد",
     )
     ar = ar.replace(
-        "تحقيق بيئي يرصد تشريح الفقد استناداً إلى أحدث بيانات منظمة بيردلايف إنترناشونال.",
+        "تحقيق بيئي في مصير 7 أنواع من الطيور المهاجرة انقرضت أو يُرجَّح انقراضها، استناداً إلى بيانات منظمة بيردلايف إنترناشونال.",
         AR_META,
     )
     ar = ar.replace(
@@ -187,11 +187,11 @@ def write_articles() -> None:
     )
     en = splice_main(en_tpl, en_body())
     en = en.replace(
-        "How Did Migration Routes Lose Seven of Their Birds in 150 Years? — Sayd Magazine",
+        "Seven Migratory Birds Extinct or Presumed Extinct in 150 Years — Sayd Magazine",
         f"{EN_TITLE} — Sayd Magazine",
     )
     en = en.replace(
-        "An environmental investigation mapping the anatomy of loss, drawn from the latest data from BirdLife International.",
+        "An environmental investigation into seven migratory bird species that are extinct or presumed extinct, drawing on BirdLife International data.",
         EN_META,
     )
     en = en.replace(

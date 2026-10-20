@@ -1,4 +1,4 @@
-# How Did Migration Routes Lose Seven of Their Birds in 150 Years?
+# Seven Migratory Birds Extinct or Presumed Extinct in 150 Years
 
 **Status:** Published — Nayef approved 22 September 2026
 **Type:** Investigation
@@ -8,7 +8,7 @@
 
 ## Lead
 
-An environmental investigation mapping the anatomy of loss, drawn from the latest data from BirdLife International.
+An environmental investigation into seven migratory bird species that are extinct or presumed extinct, drawing on BirdLife International data.
 
 ## Body
 

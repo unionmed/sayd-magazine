@@ -278,7 +278,7 @@ def write_ar(body: str) -> None:
         1,
     )
     page = page.replace(
-        "<h1>كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟</h1>",
+        "<h1>7 طيور مهاجرة انقرضت أو يُرجَّح انقراضها خلال 150 عاماً</h1>",
         f"<h1>{html.escape(AR_TITLE)}</h1>",
         1,
     )
@@ -350,7 +350,7 @@ def write_en(body: str) -> None:
         1,
     )
     page = page.replace(
-        "<h1>How Did Migration Routes Lose Seven of Their Birds in 150 Years?</h1>",
+        "<h1>Seven Migratory Birds Extinct or Presumed Extinct in 150 Years</h1>",
         f"<h1>{html.escape(EN_TITLE)}</h1>",
         1,
     )

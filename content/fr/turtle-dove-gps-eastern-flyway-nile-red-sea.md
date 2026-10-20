@@ -10,7 +10,7 @@ La migration de la Tourterelle des bois (Streptopelia turtur) dépend d’une su
 
 Une étude évaluée par les pairs, publiée en ligne dans Bird Conservation International le 8 octobre 2026, présente le suivi GPS de 26 tourterelles équipées en Azerbaïdjan et dans l’est de la Méditerranée. Seize individus ont entamé leur migration vers le sud et deux ont fourni des données détaillées jusqu’au Soudan et au Soudan du Sud.
 
-Les trajectoires documentent des vols sans escale parcourant jusqu’à 752 kilomètres sur une journée migratoire, tandis que le plus long vol continu documenté atteignait 719 kilomètres et des traversées de la mer Rouge et du désert. Les terres cultivées bordant le Nil constituent des zones de halte importantes, notamment en Égypte et au Soudan.
+Pendant la migration active, les tourterelles suivies ont parcouru jusqu’à 752 kilomètres en une journée. Parmi les oiseaux dont les données étaient suffisamment détaillées, le plus long vol continu mesuré atteignait 719 kilomètres en 13 heures. Leurs trajets comprenaient des traversées de la mer Rouge et du désert. Les terres cultivées bordant le Nil constituent des zones de halte importantes, notamment en Égypte et au Soudan.
 
 L’enjeu de conservation dépasse les frontières : la protection des sites de reproduction ne suffit pas si les lieux de repos sont dégradés le long de la voie migratoire.
 

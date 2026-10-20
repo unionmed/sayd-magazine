@@ -51,6 +51,73 @@ def approved_three_archive_additions(lang):
     return {a['slugs'][lang]:a for a in approved_three_articles() if a['door']=='hunting'}
 
 
+
+# Exact, reviewed 20 October corrections only. These do not authorize other
+# edits to an archive card; its links, date, media and every other byte remain.
+APPROVED_CARD_TEXT_CORRECTIONS = {'رادار-صيد-العربي-سبتمبر-2026': [('>رادار صيد العربي | سبتمبر 2026: توقيف 50 صيادًا وإنقاذ آلاف الطيور<',
+                                   '>رادار صيد العربي | سبتمبر 2026: مخالفات صيد بري وبحري وإنقاذ طيور '
+                                   'وقضايا اتجار<'),
+                                  ('>حصيلة رادار صيد العربي لشهر سبتمبر 2026: توقيف 50 صيادًا، وضبط 294 '
+                                   'كائنًا فطريًا، وإنقاذ آلاف الطيور، ومصادرة أسلحة وشباك صيد مخالفة.<',
+                                   '>حصيلة رادار صيد العربي لشهر سبتمبر 2026: وقائع شملت 50 شخصًا، وضبط 294 '
+                                   'كائنًا فطريًا، وإنقاذ آلاف الطيور، ومصادرة أسلحة وشباك صيد مخالفة.<')],
+ 'كيف-فقدت-مسارات-الهجرة-7-من-طيورها-خلال-150-عاما': [('>كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟<',
+                                                       '>7 طيور مهاجرة انقرضت أو يُرجَّح انقراضها خلال 150 '
+                                                       'عاماً<'),
+                                                      ('>تحقيق بيئي يرصد تشريح الفقد استناداً إلى أحدث '
+                                                       'بيانات منظمة بيردلايف إنترناشونال.<',
+                                                       '>تحقيق بيئي في مصير 7 أنواع من الطيور المهاجرة '
+                                                       'انقرضت أو يُرجَّح انقراضها، استناداً إلى بيانات '
+                                                       'منظمة بيردلايف إنترناشونال.<')],
+ 'sayd-arab-radar-september-2026': [('>Sayd Arab Radar | September 2026: 50 hunters detained and thousands '
+                                     'of birds rescued<',
+                                     '>Sayd Arab Radar | September 2026: Hunting and Fishing Violations, '
+                                     'Bird Rescues and Trafficking Cases<'),
+                                    ('>Sayd Arab Radar for September 2026: 50 hunters detained, 294 trapped '
+                                     'wild animals seized, thousands of birds rescued, and illegal weapons '
+                                     'and nets confiscated.<',
+                                     '>Sayd Arab Radar for September 2026: 50 people reported in the listed '
+                                     'cases, 294 trapped wild animals seized, thousands of birds rescued, '
+                                     'and illegal weapons and nets confiscated.<')],
+ 'how-migration-routes-lost-seven-birds-in-150-years': [('>How Did Migration Routes Lose Seven of Their '
+                                                         'Birds in 150 Years?<',
+                                                         '>Seven Migratory Birds Extinct or Presumed Extinct '
+                                                         'in 150 Years<'),
+                                                        ('alt="How Did Migration Routes Lose Seven of Their '
+                                                         'Birds in 150 Years?"',
+                                                         'alt="Seven Migratory Birds Extinct or Presumed '
+                                                         'Extinct in 150 Years"')],
+ 'radar-arabe-sayd-septembre-2026': [('>Radar arabe de Sayd | Septembre 2026 : 50 chasseurs interpellés et '
+                                      'des milliers d’oiseaux sauvés<',
+                                      '>Radar arabe de Sayd | Septembre 2026 : infractions à la chasse et à '
+                                      'la pêche, sauvetages d’oiseaux et affaires de trafic<')]}
+
+
+def approved_card_text_only(before, after, slug):
+    pairs = APPROVED_CARD_TEXT_CORRECTIONS.get(slug)
+    if not pairs:
+        return False
+    expected = before
+    for old, new in pairs:
+        if expected.count(old) != 1:
+            return False
+        expected = expected.replace(old, new, 1)
+    return expected == after
+
+
+def test_approved_card_text_guards():
+    for slug, pairs in APPROVED_CARD_TEXT_CORRECTIONS.items():
+        old = '<article><a href="same"><img src="same.jpg"></a><time>same date</time>' + ''.join('<p>'+a+'</p>' for a,b in pairs) + '</article>'
+        new = old
+        for a,b in pairs: new = new.replace(a,b,1)
+        assert approved_card_text_only(old,new,slug)
+        for target,replacement in [('same.jpg','other.jpg'),('same date','other date'),('href="same"','href="other"'),(pairs[0][1],'Different title')]:
+            assert not approved_card_text_only(old,new.replace(target,replacement),slug)
+        assert not approved_card_text_only(old,new,'unknown-story')
+        assert not approved_card_text_only(old+old,new+new,slug)
+        assert not approved_card_text_only(old,new+'<span>extra</span>',slug)
+
+
 def test_archives_keep_every_published_card():
     for lang in ('ar', 'en', 'fr'):
         root = DOCS / (lang if lang != 'ar' else '')
@@ -72,7 +139,7 @@ def test_archives_keep_every_published_card():
             assert str(archive.stamp(by_slug[slug]))[:10]==a['date']
         for row in original:
             # Card text, original publication date and selected photo are exact.
-            assert by_slug[archive.slug_of(row)] == row, (lang, archive.slug_of(row))
+            assert by_slug[archive.slug_of(row)] == row or approved_card_text_only(row, by_slug[archive.slug_of(row)], archive.slug_of(row)), (lang, archive.slug_of(row))
         assert [archive.stamp(row) for row in rows] == sorted((archive.stamp(row) for row in rows), reverse=True)
         tree = html.fromstring(text)
         assert tree.xpath('//main//div[contains(@class,"section-head")]/h1/text() | //main//div[contains(@class,"section-head")]/h2/text()')[0].strip() == ia.door_label('hunting', lang)
@@ -157,7 +224,7 @@ def test_navigation_and_market_across_all_pages():
             assert not found[0].xpath('.//details | .//*[contains(@class,"nav-sub")]'), page
             for href in found[0].xpath('.//a/@href'):
                 assert local_path(page, href).is_file(), (page, href)
-        for listing in tree.xpath('//ul[@class="cat-list"] | //footer//h3[text()="الأبواب" or text()="Doors" or text()="Rubriques"]/following-sibling::ul[1]'):
+        for listing in tree.xpath('//ul[@class="cat-list"] | //footer//h3[text()="الأبواب" or text()="Doors" or text()="Sections" or text()="Rubriques"]/following-sibling::ul[1]'):
             folders = [unquote(re.search(r'category/([^/]+)/', href)[1]) for href in listing.xpath('.//a/@href')]
             assert folders == expected, (page, 'sidebar/footer')
         market = tree.xpath('//header[@class="site-header"]//a[@class="market-cta"]')
@@ -187,6 +254,7 @@ def test_transform_preserves_article_body_head_and_legacy_children():
 
 
 if __name__ == '__main__':
+    test_approved_card_text_guards()
     test_archives_keep_every_published_card()
     test_sync_idempotence_and_new_legacy_publication()
     test_navigation_and_market_across_all_pages()

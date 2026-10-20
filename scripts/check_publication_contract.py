@@ -4,10 +4,11 @@ import argparse, hashlib, json, re, subprocess
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from lxml import html
-from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, local_slug, channel_config
+from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, local_slug, channel_config, channel_date
 import seo_foundation as seo
 from analytics_only_change import analytics_only_repair
 from related_images_only_change import related_images_only_repair
+from footer_label_only_change import footer_label_only_repair
 
 CONTRACT=ROOT/'content/publication-contract.json'
 LANGS=('ar','en','fr')
@@ -155,7 +156,7 @@ def check(base=None):
                     assert video is not None,f'{lang}: unapproved channel card'
                     assert card.xpath('.//a/@href')==[f"https://www.youtube.com/watch?v={video['id']}"]*2
                     assert card.xpath('.//h3/a/text()')==[video['titles'][lang]]
-                    assert card.xpath('.//div[@class="meta"]/text()')==[video['date']]
+                    assert card.xpath('.//div[@class="meta"]/text()')==[channel_date(video['published_at'],lang)],f'{lang}: channel publication date must be localized'
                     assert card.xpath('.//img/@src')==[video['image']]
                     import base64
                     assert base64.b64decode(video['image'].split(',',1)[1],validate=True).startswith(b'\xff\xd8')
@@ -301,6 +302,8 @@ def check_new_stories(paths,pairs,base=None):
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if footer_label_only_repair(file,base):
+            continue
         if header_asset_version_only_repair(file,base):
             continue
         if search_navigation_only_repair(file,base):
