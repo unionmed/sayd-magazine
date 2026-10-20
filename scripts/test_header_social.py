@@ -116,7 +116,35 @@ def run(base=None):
             omayed_aliases.extend(matching)
         assert len(omayed_aliases)==len(set(omayed_aliases))==3
         added+=3
-    assert groups==1037+added and headerless==823+added,(groups,headerless)
+    # PR #267 authorizes exactly these three pilot mirrors, not arbitrary
+    # extra pages or social groups. Pin the pre-pilot route inventory so a
+    # missing route cannot hide an unauthorized replacement with the same count.
+    pilot_routes={'docs/mufid/index.html':'ar',
+                  'docs/en/mufid/index.html':'en',
+                  'docs/fr/mufid/index.html':'fr'}
+    pilot_added=0
+    if (ROOT/'scripts/build_mufid.py').exists():
+        inventory_base='c16e9f474b74efb48fdc01eab4f418f53beaa82e'
+        baseline=set(filter(None,subprocess.check_output(
+            ['git','ls-tree','-r','--name-only','-z',inventory_base,'--','docs'],
+            cwd=ROOT).decode().split('\\0')))
+        baseline={name for name in baseline if name.endswith('.html')}
+        actual={path.relative_to(ROOT).as_posix() for path in DOCS.rglob('*.html')}
+        assert not baseline.intersection(pilot_routes),'Pilot route already in baseline'
+        assert actual==baseline|set(pilot_routes),(
+            'Unauthorized route changes',sorted(actual-baseline-set(pilot_routes)),
+            sorted((baseline|set(pilot_routes))-actual))
+        for name,lang in pilot_routes.items():
+            page=html.parse(str(ROOT/name))
+            assert page.getroot().get('lang')==lang,name
+            assert page.getroot().get('dir')==('rtl' if lang=='ar' else 'ltr'),name
+            assert page.xpath('//main/@data-mufid-language')==[lang],name
+            current=(ROOT/name).read_text()
+            search=DOCS/('' if lang=='ar' else lang)/'search/index.html'
+            assert len(social.findall(current))==1,name
+            assert social.findall(current)==social.findall(search.read_text()),name
+        pilot_added=len(pilot_routes)
+    assert groups==1037+added+pilot_added and headerless==823+added,(groups,headerless)
     print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact social markup, Alexandra shown once under Interviews with original URLs')
 
 if __name__=='__main__':run()
