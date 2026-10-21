@@ -1,158 +1,135 @@
-# One-time native Gulf release — 22 October 2026
+# One-time Gulf release — fixed midnight repair and native held execution
 
-Owner authorized the narrow native workflow, protected merge, publication and a
-redeployment of today's unchanged site on 21 October. This PR changes **only four
-operational files**. It does not add an article, alter a publication validator,
-change branch/environment protection, create secrets or publish social content.
+## Authority and exact scope
 
-## Reviewed documentation reconciliation — 21 October, after initial installation
+The owner authorized the fixed Gulf release at **22 October 2026, 05:00
+Asia/Beirut (02:00 UTC)**, its limited native execution, normal protected merge,
+and unchanged-current-site deployment testing. Midnight recovery remains within
+that one-time scope (fixed repair PR **276**): **four existing operational files plus the exact archive
+regression test**. No public article/source/image bytes, publication-date guard,
+protection rule, permission grant, secret, credential or Facebook post changes.
 
-The original installation PR273 passed its real native token/merge/Pages/live
-test and merged as `c40f9bd4bcb4e48f17749f02f5c0110f367c9bee`. Subsequently PR268
-merged at 13:19:27 UTC as `d7715185d7ba8268baed3c044846e21e0dbea11d`, changing only
-`notes/SAYD-FULL-PACKAGE-WORKFLOW.md` to blob
-`9b5f92d143871e0f7e14e01879a0f76ea2365fcb`. Its administrative guidance must be
-preserved, not reverted. The original hard main pin correctly blocked release.
+The original operations are PR273 (merge `c40f9bd4bcb4e48f17749f02f5c0110f367c9bee`).
+PR268 added the approved administrative note as `d7715185d7ba8268baed3c044846e21e0dbea11d`.
+PR275 reconciled it as `cc6e3ae1877e3e73004370c68116854da3186ed9` (reviewed head
+`e711cf13126a185363a8f0ef03c9446106023165`) and passed a real protected bot merge,
+new Pages build and unchanged-live-site proof in run39611548219. The exact PR268
+note blob `9b5f92d143871e0f7e14e01879a0f76ea2365fcb` remains preserved.
 
-This narrowly reviewed repair modifies only the same four operational files.
-It admits exactly the pinned original installation, the immutable PR268 merge
-with its exact parents/path/blob, and the fixed repair PR's normal merge with
-first parent `d7715185…`, second parent its reviewed head, and precisely four
-modified operational files. No arbitrary descendant, documentation directory,
-new content, security change or additional permission is admitted.
+## Why this bounded repair is needed
 
-Today's ready-event installer is now restricted to
-`ops/gulf-docs-reconcile-20261021` and fixed repair PR **#275**. Before any
-write it verifies content PR274 is still exactly `91f0ea5043bbf22e1397782abd3ba3cd28974e5f`
-and has the original full approved payload against the original installation.
-It reruns real CI, normally merges only this repair, requests a distinct
-unchanged-site Pages rebuild, and verifies the live three-language site again.
-Only then is the exact new main merged into the content branch, preserving the
-PR268 note byte-for-byte and the original 1,100-path payload manifest. Every
-future preflight/release must use this exact repaired main; a further main
-change still blocks. All original date, early-merge, protection and live gates
-remain intact. The historical installation description below records the first
-test; this section supersedes its fixed branch/base for today's repair only.
+Both 00:03/00:23 Beirut cron preflights remained unadmitted through their22:00 UTC
+cutoff. The workflow was independently verified active; this is not proof that
+future cron triggers will run. After cutoff, explicitly authorized connector
+CI-only reruns on held candidate `f12766f0da48a32508b6c81ffe8cf4c218fa1289` cleared
+the future-date guards. Eight workflows passed; combined-layout run39612689653
+then exposed a previously masked archive-test expectation: it recognized the
+older article packages but not the approved Gulf addition.
 
-## Three isolated paths
+Exact archive comparisons show no lost card: AR43→44, EN37→38, FR33→34, with
+only the approved Gulf slug added. The repaired regression admits only that
+exact source/hash/home transition and exact rendered Gulf card. Set equality,
+old-card byte preservation and negative mutations remain enforced. This test
+change is installed on main, **outside** the approved article payload. Merging
+only the exact repaired main into PR274 therefore preserves the original
+1,100-path raw payload manifest, rather than expanding its content authorization.
 
-1. **Installation today:** after independent review, marking this same-repository
-   `ops/gulf-native-release-20261022` PR **#273** ready triggers the token-permission test.
-   The installer requires its exact event head SHA, `main` base `06294d819…`, an
-   exact four-file added-only allowlist and all normal PR checks green. It first
-   reruns these exact-head checks with its own token and waits for success,
-   proving Actions rerun permission and automatic admission today. It uses
-   the ordinary GitHub merge API with `sha`, never a direct main push or bypass.
-   It then proves `docs/` unchanged from the approved base, requests a Pages
-   rebuild, waits for that merged SHA and verifies the current live lead in
-   Arabic, English and French including home placement, ticker and image bytes.
-2. **Midnight preflight only:** 00:03/00:23 Beirut on 22 October
-   (21:03/21:23 UTC on 21 October), pinned date/year/head. It has only contents
-   and PR read plus Actions write; it cannot merge or request Pages. Rerun the
-   exact-head ordinary checks after real Beirut midnight and verify GitHub
-   reports the post-install content PR clean/mergeable. Write a readiness
-   receipt, exposing strict-up-to-date/review/check blockers hours early.
-3. **Publication tomorrow:** only `schedule` on `main`, fixed content PR and exact approved payload manifest,
-   fixed year/date. The final candidate SHA is frozen only after exhaustive payload
-   validation, then held unchanged through CI and the merge request. Start checks at 04:17, 04:37 or 04:57 Beirut (UTC+03); further
-   cron entries at 05:07 and 05:17 recover a delayed/dropped trigger. A single
-   concurrency group never cancels an active release. Completed checks older
-   than actual Beirut midnight are rerun for this PR/head only; every discovered
-   normal PR workflow must pass, including the protected Three-mirror check.
-   It waits for **05:00 Beirut = 02:00 UTC** before normal protected merge.
-   A late start may recover through **05:30 Beirut**, never later or on another
-   day. No content commit is rewritten, and any other intervening main change
-   blocks for reconciliation rather than overwriting a new publication.
+The fixed midnight repair PR is pinned in `MIDNIGHT_REPAIR_PR` before readiness.
+Its branch is `ops/gulf-midnight-ci-repair-20261021`; base is exactly `cc6e3ae…`.
+The installer requires the reviewed ready-event/API head match and precisely
+five modified files: this note, the workflow, release script, release tests and
+`scripts/test_combined_archive_navigation.py`. The last file's immutable blob
+is pinned in `ARCHIVE_TEST_BLOB`. No wildcard test/directory or arbitrary main
+descendant is admitted. Both parents and the final merged tree are verified.
 
-## Superseding the earlier operational handoff
+## Installation and dispatch without a new chat gate
 
-The frozen content package's `notes/gulf-tourism-scheduled-release-20261022.md`
-records the earlier assistant release/preflight automations
-`6ad8935746d08191baeb28af6995325b` and `6ad89358970c8191b6e8cfecdb03bdbd`.
-Once this native route has actually passed installation and the unchanged-site
-test, the parent changes those automations to observers/fallback coordination,
-not competing merge/rebase/publish executors. This operational clarification
-supersedes their earlier launch role without editing the frozen content payload.
-The native workflow itself never publishes or schedules Facebook.
+1. Before any write, validate held PR274 remains non-draft and exactly `f12766f…`
+   with the original complete payload against `cc6e3ae…`. Validate the exact
+   historical installation/documentation chain and unchanged `docs/` tree.
+2. Rerun ordinary repair-head CI with the job's existing Actions-write token,
+   require green, and normally merge this fixed five-file repair with expected
+   SHA. Never direct-push main, bypass protection or mark a failed check green.
+3. Request a **distinct** exact-new-main Pages build and verify the unchanged
+   live AR/EN/FR site. Record `INSTALL_AND_UNCHANGED_SITE_DRY_RUN_PASS`.
+4. Wait read-only, at most30minutes, for the content preparer to integrate only
+   the exact installed main into the held content branch. A changed candidate
+   must immediately pass the original exhaustive manifest/source/ancestry proof;
+   any unexpected byte fails closed. Wait for all ordinary actual-date CI, then
+   freeze/recheck this candidate and main. Installer timeout90minutes includes
+   this preparation, CI and deployment proof; no early article merge occurs.
+5. Using only the existing repository-scoped `GITHUB_TOKEN` Actions-write grant,
+   POST **once** to this exact workflow's dispatch endpoint with `{ref: main}`
+   and **no inputs**. Confirm a unique newly created bot-dispatch run on the
+   exact repaired main. Exit the installer after queued admission: waiting for
+   the held job to start here would deadlock the shared concurrency lock.
+6. Independently observe the held job actually running. Its read-only arming
+   step validates bot/event/repository/ref/run metadata/immutable checkout SHA,
+   current main, payload and real-date CI, and uploads a90-day arming artifact.
+   The long hold rereads that same local snapshot and revalidates it. An accepted
+   dispatch or queued run alone is **not** proof that unattended release works.
 
-## Exact payload pin and strict up-to-date protection
+Dispatch is allowed only in the fixed21October22:00 UTC–22October02:30 UTC window;
+installer launch itself must occur before01:00 UTC. Other dates/years, refs,
+actors, repository identities, workflow IDs, supplied inputs, stale/failed CI,
+changed head/base or missing exact arming receipt fail closed. The held job uses
+an immutable `${{ github.sha }}` checkout and a300-minute maximum, below GitHub's
+six-hour hosted-job limit. Native hold heartbeats only read main/PR identity.
+At01:00 UTC it revalidates the original frozen snapshot and enters normal release.
+The actual merge still cannot occur before02:00 UTC or after02:30 UTC.
 
-Strict branch protection can require the latest `main` in a content PR. Putting
-that updated content SHA literally into a new main workflow commit creates an
-endless base-update loop. Instead this workflow pins:
+## Frozen article approval (unchanged)
 
-- content PR **#274**, original immutable commit
-  `3f675e6596614caa1eefbedaf79009e1afa51e36` (tree
-  `fefb9517693d6496ef9e9fbbc152155901b978c8`) and base `06294d819…`;
-- SHA256 `7a8ab705288cf79b39ed666bc4700c5e1cbce581b65e884406466401e6431472`
-  of its **complete raw Git diff**: 1,100 paths, 192,829 bytes, with full old/new
-  blob IDs, old/new modes, status and NUL-delimited exact paths;
-- source JSON SHA256 `4952d644…a7a40` independently reviewed for all three languages.
+- Fixed content PR274 and branch `publish/gulf-tourism-scheduled-20261022`.
+- Original approved commit `3f675e6596614caa1eefbedaf79009e1afa51e36`, original base
+  `06294d8192bc22b11dd2317261140fbbee8ae8f5`, approved tree
+  `fefb9517693d6496ef9e9fbbc152155901b978c8`.
+- Complete NUL-delimited raw Git diff:1,100paths/192,829bytes, SHA256
+  `7a8ab705288cf79b39ed666bc4700c5e1cbce581b65e884406466401e6431472`.
+  It pins full old/new blob IDs, modes, statuses, paths and deletions without
+  renames, truncation, text conversion or external diff programs.
+- Article source SHA256
+  `4952d6446c828a4541e5b07d2a34c8cc1b2d3992bd95f8d161c6e188909a7a40`.
 
-After installation, the content preparer merges **only** the exact installation
-main into the content branch today through the approved connector. This does
-not publish the content. No rebasing away the original approved ancestor, no
-new content bytes, no new secret and no protection change are allowed.
+Current main must be the exact fixed midnight repair merge, a candidate ancestor.
+The original approved content must also remain an ancestor. Current main→candidate
+must byte-equal the original raw manifest, including all operational/test files
+remaining unchanged from main. Freeze the resulting SHA before CI and recheck
+it afterward and immediately before normal merge using that same expected SHA.
+Merged parents must be exactly `[reviewed main, frozen candidate]`, and merged
+tree must equal candidate. Duplicate runs repeat these checks, including current
+main equality, before requesting Pages. Any later main merge, even docs, requires
+explicit reviewed reconciliation; do not make competing changes tonight.
 
-Every preflight/release proves current main equals the immutable merge commit
-of installation PR273, and is an ancestor of the candidate. All four operational
-files in candidate must equal main exactly. The exhaustive `main → candidate`
-raw diff must byte-equal `reviewed base → original approved content` and its
-embedded hash; REST file-list truncation and rename heuristics are not used.
-Missing/extra paths, deletions, mode changes, changed blobs, operational edits,
-a different source hash or an unreviewed main commit block. The resulting
-candidate SHA is frozen before CI, and candidate/main/manifest are rechecked
-before normal merge with the same expected SHA. The resulting merge must have
-exactly the installation and candidate parents, and its tree must equal the
-candidate tree. Duplicate runs repeat these proofs rather than trusting a
-merged flag. The raw manifest is retained in run artifacts.
+## Release, evidence and failure boundaries
 
-## Permissions and evidence
+The original scheduled prestarts04:17/04:37/04:57 Beirut and recovery05:07/05:17
+remain bounded backups. One concurrency group has `cancel-in-progress: false`.
+Cron jobs retain100-minute timeout; the held dispatch has300minutes. Neither
+can cancel an active release. Every ordinary PR workflow must be successful
+on the real publication date, including Three-mirror publication check.
 
-The job token has only `contents: write`, `pull-requests: write`, `pages: write`
-and `actions: write`. Actions write is used only to rerun this fixed content
-candidate head's normal CI and disable this exact workflow after verified success. Reads
-of runs/jobs do not need an additional checks permission. No new token, secret,
-admin privilege, bypass or environment approval change is introduced.
+The job permissions remain only contents/write, pull-requests/write, pages/write,
+actions/write. The midnight-only preflight retains contents/PR read and Actions
+write, with no merge/Pages grant. No arbitrary repo/ref/PR/SHA/time/mode inputs,
+`pull_request_target`, new tokens or administrator access are introduced.
 
-GitHub writes made with `GITHUB_TOKEN` do not automatically trigger Pages.
-Therefore both paths explicitly request `POST /pages/builds`. The installer
-proves actual Actions-rerun, normal-merge and Pages-request permissions today. The live verifier
-requires the exact merged revision to remain `main` and checks the article,
-AR/EN/FR canonical/hreflang/navigation, complete homepage placement, ten-item
-shared ticker, category/Updates pages, internal links and exact image hashes.
-It emits `release-receipt.json` plus `live-publication-receipt.json` as 90-day
-run artifacts and a step summary. Success is not claimed at merge alone. The normal merge API
-atomically pins the PR head, not its base; the Pages build API has no revision
-parameter. Immediate base/main reads and post-merge parent checks bound these
-races but cannot make them atomic. Do not make competing main changes during
-the release. A new publication tonight requires reviewed reconciliation/repinning.
+GitHub token writes do not automatically trigger Pages, so request Pages explicitly,
+verify the exact revision/build, then verify live article/home/hero/ticker/category,
+AR/EN/FR mirrors and image bytes. Record actual merge/build/live timestamps, not
+an exact-time promise. After `RELEASE_SUCCESS`, disable only this workflow; the
+fixed date/year gates remain defense if disabling fails. Artifacts last90days.
+An ambiguous dispatch/merge is read back, never blindly repeated. Permission
+errors, failed CI or an unverified deployment stop publication; no bypass.
 
-Duplicate cron runs prove the same approved payload, exact installation parent
-and candidate tree again before reconciling an already merged head; require its merge
-time not to predate authorization, reuse a successful exact-SHA Pages build,
-and independently verify live content. No second merge occurs. After proof the
-workflow disables **itself only**; a failed disable cannot undo publication and
-the fixed date/year guard still prevents future publication. A denied or
-ambiguous write is not blindly retried; ambiguous merge results are read back.
+The ordinary merge API atomically pins head, not base, and Pages build requests
+cannot atomically pin source. Immediate checks plus merged-parent/tree proof bound
+these races but do not erase them. GitHub/CDN delays can still make release late.
+The parent owns notification, observer coordination and the authorized Facebook
+stop guard. This workflow never posts or reschedules social content. The older
+assistant automations recorded in the frozen content note remain observers,
+not competing merge/deploy executors.
 
-## Boundaries and failure handling
-
-GitHub schedules can be delayed or dropped; redundant prestarts are mitigation,
-not an exact-time guarantee. Deployment/CDN propagation starts **after** the
-05:00 merge and may take minutes. Actual merge, build and live verification times
-are recorded. A real CI failure, draft PR, moved frozen head/base, merge protection,
-changed site, permission denial, build error or unverified CDN result fails
-closed and needs diagnosis; never relax a gate or publish a different SHA.
-The parent observer owns timely alerts, an authorized fallback and Facebook.
-This workflow never posts, queues or reschedules Facebook or any other social.
-
-A marker of `RELEASE_SUCCESS` and the live receipt establish publication even if
-subsequent self-disable/artifact upload fails. Investigate the receipt before
-retrying. If the final cron starts after 05:30, it refuses to merge: an explicitly
-reviewed rescheduling decision is required. Keep no recurring assistant merge
-job competing with this route.
-
-Official references: [schedule delays](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule),
-[Pages build request](https://docs.github.com/en/rest/pages/pages#request-a-github-pages-build),
-[workflow token triggers](https://docs.github.com/en/actions/how-tos/writing-workflows/choosing-when-your-workflow-runs/triggering-a-workflow).
+Official references: [token dispatch exception and hosted lifetime](https://docs.github.com/en/actions/concepts/security/github_token),
+[schedule limitations](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule),
+[Pages build request](https://docs.github.com/en/rest/pages/pages#request-a-github-pages-build).

@@ -6,10 +6,11 @@ import re
 import shutil
 import subprocess
 import tempfile
+import html as escaped_html
 from datetime import timedelta
 from pathlib import Path
 from unittest.mock import patch
-from urllib.parse import unquote, urlsplit
+from urllib.parse import quote, unquote, urlsplit
 
 from lxml import html
 
@@ -49,6 +50,37 @@ def approved_three_archive_additions(lang):
     current=json.loads((ROOT/'content/homepage.json').read_text())
     if approved_three_expected(old,current) is None:return {}
     return {a['slugs'][lang]:a for a in approved_three_articles() if a['door']=='hunting'}
+
+
+def approved_gulf_archive_additions(lang):
+    source = ROOT/'content/features/gulf-tourism-20261022.json'
+    if not source.exists():
+        return {}
+    from test_gulf_tourism_20261022 import gulf_expected, package
+    base = os.environ.get('SAYD_BASE_COMMIT', 'HEAD')
+    old = json.loads(subprocess.check_output(['git', 'show', base+':content/homepage.json'], cwd=ROOT))
+    current = json.loads((ROOT/'content/homepage.json').read_text())
+    # Exact reviewed source/hash, complete homepage delta, original article
+    # preservation and eight image hashes; not a generic new-story allowance.
+    if gulf_expected(old, current, base) is None:
+        return {}
+    a = package()
+    return {a['slugs'][lang]: a}
+
+
+def exact_gulf_archive_card(a, lang):
+    from test_gulf_tourism_20261022 import DATES
+    root = DOCS/(lang if lang != 'ar' else '')
+    directory = root/'category/صيد'
+    href = quote(os.path.relpath(root/'posts'/a['slugs'][lang]/'index.html', directory), safe='/')
+    image = os.path.relpath(DOCS/a['photos'][0]['path'], directory)
+    d = a['translations'][lang]
+    esc = escaped_html.escape
+    card_class = 'card' if lang == 'fr' else 'post-row'
+    return ('<article class="'+card_class+'"><a class="thumb" href="'+href+'"><img src="'+image+
+            '" alt="'+esc(a['photos'][0]['alt'][lang], quote=True)+'" loading="lazy"></a>'+
+            '<div class="body"><h2><a href="'+href+'">'+esc(d['title'])+'</a></h2>'+
+            '<div class="meta">'+DATES[lang]+'</div><p class="excerpt">'+esc(d['deck'])+'</p></div></article>')
 
 
 
@@ -118,6 +150,25 @@ def test_approved_card_text_guards():
         assert not approved_card_text_only(old,new+'<span>extra</span>',slug)
 
 
+def assert_archive_card_rows(rows, original, additions, gulf_additions, lang):
+    by_slug = {archive.slug_of(row): row for row in rows}
+    assert len(rows) == len(by_slug), (lang, 'duplicate story')
+    assert set(by_slug) == {archive.slug_of(row) for row in original} | set(archive.marine_registry(lang)) | set(additions), lang
+    for slug,a in additions.items():
+        card=html.fromstring(by_slug[slug]);d=a['translations'][lang]
+        assert card.xpath('.//h2/a')[0].text_content()==d['title']
+        assert card.xpath('.//p[@class="excerpt"]')[0].text_content()==d['deck']
+        assert unquote(card.xpath('.//img/@src')[0]).endswith(a['photos'][0]['path'])
+        assert str(archive.stamp(by_slug[slug]))[:10]==a['date']
+    for slug,a in gulf_additions.items():
+        assert by_slug[slug] == exact_gulf_archive_card(a, lang), (lang, 'exact approved Gulf archive card')
+    for row in original:
+        # Card text, original publication date and selected photo are exact.
+        assert by_slug[archive.slug_of(row)] == row or approved_card_text_only(row, by_slug[archive.slug_of(row)], archive.slug_of(row)), (lang, archive.slug_of(row))
+    assert [archive.stamp(row) for row in rows] == sorted((archive.stamp(row) for row in rows), reverse=True)
+    return by_slug
+
+
 def test_archives_keep_every_published_card():
     for lang in ('ar', 'en', 'fr'):
         root = DOCS / (lang if lang != 'ar' else '')
@@ -126,21 +177,10 @@ def test_archives_keep_every_published_card():
         text = page.read_text()
         assert archive.add_ga4(text) == text, (lang, 'GA4 block must remain canonical')
         rows = archive.cards(text)
-        by_slug = {archive.slug_of(row): row for row in rows}
-        assert len(rows) == len(by_slug), (lang, 'duplicate story')
         original = archive.cards(source_file(page)) + archive.cards(source_file(legacy))
-        additions={**approved_four_news_archive_additions(lang),**approved_three_archive_additions(lang)}
-        assert set(by_slug) == {archive.slug_of(row) for row in original} | set(archive.marine_registry(lang)) | set(additions), lang
-        for slug,a in additions.items():
-            card=html.fromstring(by_slug[slug]);d=a['translations'][lang]
-            assert card.xpath('.//h2/a')[0].text_content()==d['title']
-            assert card.xpath('.//p[@class="excerpt"]')[0].text_content()==d['deck']
-            assert unquote(card.xpath('.//img/@src')[0]).endswith(a['photos'][0]['path'])
-            assert str(archive.stamp(by_slug[slug]))[:10]==a['date']
-        for row in original:
-            # Card text, original publication date and selected photo are exact.
-            assert by_slug[archive.slug_of(row)] == row or approved_card_text_only(row, by_slug[archive.slug_of(row)], archive.slug_of(row)), (lang, archive.slug_of(row))
-        assert [archive.stamp(row) for row in rows] == sorted((archive.stamp(row) for row in rows), reverse=True)
+        gulf = approved_gulf_archive_additions(lang)
+        additions={**approved_four_news_archive_additions(lang),**approved_three_archive_additions(lang),**gulf}
+        by_slug = assert_archive_card_rows(rows, original, additions, gulf, lang)
         tree = html.fromstring(text)
         assert tree.xpath('//main//div[contains(@class,"section-head")]/h1/text() | //main//div[contains(@class,"section-head")]/h2/text()')[0].strip() == ia.door_label('hunting', lang)
         data = json.loads(tree.xpath('string(//script[@id="combined-archive-data"])'))
@@ -162,6 +202,50 @@ def test_archives_keep_every_published_card():
         legacy_after={archive.slug_of(row):row for row in archive.cards(legacy.read_text())}
         assert set(legacy_after)==set(legacy_before)|{slug for slug,a in additions.items() if a['door']=='equestrian'}, 'Unapproved legacy archive addition/removal'
         assert all(legacy_after[k]==v for k,v in legacy_before.items()), 'Retained old category cards changed'
+
+
+def test_gulf_archive_negative_guards():
+    for lang in ('ar', 'en', 'fr'):
+        gulf = approved_gulf_archive_additions(lang)
+        if not gulf:
+            continue
+        root = DOCS/(lang if lang != 'ar' else '')
+        page = root/'category/صيد/index.html'; legacy = root/'category/فروسية/index.html'
+        rows = archive.cards(page.read_text())
+        original = archive.cards(source_file(page)) + archive.cards(source_file(legacy))
+        additions = {**approved_four_news_archive_additions(lang), **approved_three_archive_additions(lang), **gulf}
+        assert_archive_card_rows(rows, original, additions, gulf, lang)
+        slug, a = next(iter(gulf.items())); card = next(r for r in rows if archive.slug_of(r) == slug)
+        retained = original[0]
+        cases = [rows+[card], rows+[card.replace(quote(slug), 'unapproved-extra-story')],
+                 [r for r in rows if archive.slug_of(r) != slug],
+                 [r for r in rows if archive.slug_of(r) != archive.slug_of(retained)],
+                 [r+'<span>unapproved</span>' if r == retained else r for r in rows],
+                 list(reversed(rows))]
+        for old, new in [(escaped_html.escape(a['translations'][lang]['title']), 'Wrong title'),
+                         (escaped_html.escape(a['translations'][lang]['deck']), 'Wrong deck'),
+                         (a['photos'][0]['path'], 'media/wrong.jpg'),
+                         (escaped_html.escape(a['photos'][0]['alt'][lang], quote=True), 'Wrong alt'),
+                         ('22 ', '21 '), ('class="thumb" href="', 'class="thumb" href="wrong/'),
+                         ('</article>', '<span>extra</span></article>')]:
+            assert old in card
+            cases.append([card.replace(old, new, 1) if r == card else r for r in rows])
+        for candidate in cases:
+            try:
+                assert_archive_card_rows(candidate, original, additions, gulf, lang)
+            except AssertionError:
+                pass
+            else:
+                raise AssertionError((lang, 'Unapproved archive mutation accepted'))
+        source = ROOT/'content/features/gulf-tourism-20261022.json'; read_bytes = Path.read_bytes
+        with patch.object(Path, 'read_bytes', lambda p: read_bytes(p)+b' ' if p == source else read_bytes(p)):
+            try:
+                approved_gulf_archive_additions(lang)
+            except AssertionError:
+                pass
+            else:
+                raise AssertionError('Unreviewed Gulf source accepted')
+        print(f'PASS: {lang} exact Gulf archive addition; {len(cases)} card mutations and changed source rejected')
 
 
 def test_sync_idempotence_and_new_legacy_publication():
@@ -256,6 +340,7 @@ def test_transform_preserves_article_body_head_and_legacy_children():
 if __name__ == '__main__':
     test_approved_card_text_guards()
     test_archives_keep_every_published_card()
+    test_gulf_archive_negative_guards()
     test_sync_idempotence_and_new_legacy_publication()
     test_navigation_and_market_across_all_pages()
     test_transform_preserves_article_body_head_and_legacy_children()
