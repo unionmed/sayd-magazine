@@ -129,6 +129,14 @@ def assert_honey_home(old_page, after, rel, lang, current):
     assert '/category/علوم-واكتشافات/' in unquote(badge[0].get('href'))
     images = tree.xpath('//article[@class="article-content"]/figure/img')
     assert [(post.parent/unquote(n.get('src'))).resolve() for n in images] == [(DOCS/p).resolve() for p in PHOTO_PATHS]
+    assert [n.get('alt') for n in images] == [p['alt'][lang] for p in a['photos']]
+    captions = tree.xpath('//article[@class="article-content"]/figure/figcaption')
+    assert [n.text_content() for n in captions] == [p['credit'][lang] for p in a['photos']], (lang, 'source-only captions')
+    assert [n.xpath('./a/@href') for n in captions] == [[p['source_url']] for p in a['photos']]
+    schema = next(json.loads(n.text) for n in tree.xpath('//script[@type="application/ld+json"]')
+                  if json.loads(n.text).get('@type') in ('NewsArticle', 'Article'))
+    assert schema['image'][0]['license'] == a['photos'][0]['license_url']
+    assert all('license' not in n for n in schema['image'][1:]), 'Unverified map license asserted'
     paragraphs = tree.xpath('//article[@class="article-content"]/p')
     text = [n.text_content() for n in paragraphs]
     expected = a['translations'][lang]['intro'] + [p for _, paragraphs in a['translations'][lang]['sections'] for p in paragraphs]
@@ -226,3 +234,51 @@ def test_rendered_negative_guards(base, old, current):
         except AssertionError: pass
         else: raise AssertionError('Missing rendered French translation accepted')
     print('PASS: 9 rendered-DOM, changed-image-byte and missing-rendered-translation mutations rejected')
+
+
+def test_honey_browser(context, origin, output):
+    """Render the exact approved article/card; never permit external requests."""
+    if not SOURCE.exists():
+        return
+    from playwright.sync_api import expect
+    from urllib.parse import urljoin, urlsplit
+    a = package()
+    page = context.new_page()
+    try:
+        for lang in ('ar', 'en', 'fr'):
+            prefix = '' if lang == 'ar' else lang + '/'
+            route = '/' + prefix + 'posts/' + a['slugs'][lang] + '/index.html'
+            for width in (390, 1440):
+                page.set_viewport_size({'width': width, 'height': 1000})
+                page.goto(origin + '/' + prefix, wait_until='networkidle')
+                section = page.locator('section.home-section').filter(
+                    has=page.locator('h2', has_text=LABELS[lang]))
+                expect(section).to_have_count(1)
+                cards = section.locator('.home-door-grid > article')
+                expect(cards).to_have_count(4)
+                first = cards.first
+                expect(first.locator('h3 a')).to_have_text(a['translations'][lang]['title'])
+                href = first.locator('h3 a').get_attribute('href')
+                assert unquote(urlsplit(urljoin(page.url, href)).path) == route
+                first.locator('img').scroll_into_view_if_needed()
+                first.locator('img').evaluate('(img) => img.decode()')
+                assert first.locator('img').evaluate('(img) => img.complete && img.naturalWidth > 0')
+                section.screenshot(path=str(output / f'honey-science-{lang}-{width}.png'))
+                first.locator('h3 a').click()
+                page.wait_for_url(lambda url: unquote(urlsplit(url).path) == route)
+                expect(page.locator('h1')).to_have_text(a['translations'][lang]['title'])
+                expect(page.locator('header.article-header a.badge')).to_have_text(LABELS[lang])
+                figures = page.locator('article.article-content > figure')
+                expect(figures).to_have_count(3)
+                for index, photo in enumerate(a['photos']):
+                    expect(figures.nth(index).locator('figcaption')).to_have_text(photo['credit'][lang])
+                    img = figures.nth(index).locator('img')
+                    assert unquote(urlsplit(urljoin(page.url, img.get_attribute('src'))).path) == '/' + photo['path']
+                    img.scroll_into_view_if_needed()
+                    img.evaluate('(img) => img.decode()')
+                    assert img.evaluate('(img) => img.complete && img.naturalWidth > 0')
+                assert not page.evaluate('document.documentElement.scrollWidth > innerWidth + 1'), (lang, width, 'article overflow')
+                page.screenshot(path=str(output / f'honey-article-{lang}-{width}.png'), full_page=True)
+    finally:
+        page.close()
+    print('PASS: honey-buzzard Science cards and complete AR/EN/FR articles at 390/1440px; all three local images decode')

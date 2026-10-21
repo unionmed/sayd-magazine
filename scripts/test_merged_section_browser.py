@@ -100,6 +100,8 @@ def run(base,out):
                     else:
                         request.abort()
                 context.route('**/*',route_local)
+                from test_honey_buzzard_science_20261021 import test_honey_browser
+                test_honey_browser(context, new_url, out)
                 page=context.new_page();before=context.new_page()
                 for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
                     for width in WIDTHS:

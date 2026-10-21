@@ -7,6 +7,7 @@ import os
 from lxml import html as dom
 import publish_four_news_20261018 as w
 from rollout_mobile_nav_heritage_20261015 import nav_replace
+from build_site_search import links as search_links
 
 w.DATE = '2026-10-21'
 w.DATES = {'ar': '21 تشرين الأول 2026', 'en': '21 October 2026', 'fr': '21 octobre 2026'}
@@ -17,7 +18,9 @@ def figure(a, lang, photo, cover=False):
     target = w.DOCS / photo['path']
     width, height = w.image_size(target)
     credit = '<a href="' + html.escape(photo['source_url'], quote=True) + '">' + html.escape(photo['credit'][lang]) + '</a>'
-    caption = html.escape(photo['caption'][lang]) + ' ' + credit if cover else credit
+    # Nayef's approved visible caption is the source only; descriptive context
+    # remains in alt text and the internal source package, not the figcaption.
+    caption = credit
     return ('<figure><img src="' + os.path.relpath(target, w.page(a, lang).parent) + '" alt="' + html.escape(photo['alt'][lang], quote=True) +
             '" width="' + str(width) + '" height="' + str(height) + '" decoding="async"' + ('' if cover else ' loading="lazy"') +
             ' style="display:block;width:100%;height:auto"><figcaption>' + caption + '</figcaption></figure>')
@@ -71,7 +74,9 @@ def run():
                                    **({'license': photo['license_url']} if photo.get('license_url') else {})) for photo in a['photos']]
             node.text = json.dumps(schema, ensure_ascii=False)
             serialized = '<!DOCTYPE html>\n' + dom.tostring(tree, encoding='unicode', method='html')
-            w.save(p, nav_replace(serialized, p)[0])
+            # HTML serialization lowercases SVG viewBox; restore the existing
+            # canonical search-link block after all DOM serialization is done.
+            w.save(p, search_links(nav_replace(serialized, p)[0], p))
     manifest = w.ROOT / 'audit/image-catalog/manifest/2026-01.tsv'
     rows = manifest.read_text().splitlines()
     for a in w.A:

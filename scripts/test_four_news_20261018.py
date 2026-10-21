@@ -11,7 +11,18 @@ if new['ia_slots']['main']=='الشمال-إزالة-24750-متر-شباك-ال�
  # The current tree must additionally match the entire exact approved package.
  from test_combined_hunting_equestrian import approved_three_expected
  prior=json.loads(subprocess.check_output(['git','show','c16e9f474b74efb48fdc01eab4f418f53beaa82e:content/homepage.json'],cwd=ROOT))
- assert approved_three_expected(prior,new) is not None
+ if (ROOT/'content/features/honey-buzzard-science-20261021.json').exists():
+  # Keep the complete original approved-three proof against its immutable
+  # successor, then prove only the exact approved Science-card addition.
+  # Neither an arbitrary current baseline nor a broad placement exemption.
+  from test_honey_buzzard_science_20261021 import honey_expected, test_honey_negative_guards
+  honey_base='06e0de6dc976c5526e1d6630977b60e4fd83e9ca'
+  before_honey=json.loads(subprocess.check_output(['git','show',honey_base+':content/homepage.json'],cwd=ROOT))
+  assert approved_three_expected(prior,before_honey) is not None
+  assert honey_expected(before_honey,new,honey_base) is not None
+  test_honey_negative_guards(honey_base)
+ else:
+  assert approved_three_expected(prior,new) is not None
  upper=prior
 assert upper['featured']==old['featured'];assert upper['ia_slots']['main']==old['ia_slots']['main'];assert upper['ia_slots']['important']==old['ia_slots']['important'];assert len(new['ia_slots']['latest'])==8;assert len(new['ticker_entries'])==10
 for a in A:
