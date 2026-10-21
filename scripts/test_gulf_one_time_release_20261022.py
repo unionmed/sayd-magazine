@@ -27,6 +27,33 @@ def run(path='.github/workflows/publication-contract.yml', ident=1):
 
 
 class ReleaseGuards(unittest.TestCase):
+    def test_explicit_check_status_reads_are_installer_release_only_and_never_write(self):
+        workflow=(Path(__file__).resolve().parents[1]/r.WORKFLOW).read_text()
+        install=workflow.split('  install-and-test-current-site:\n',1)[1].split('  midnight-preflight:',1)[0]
+        release=workflow.split('  release:\n',1)[1]
+        preflight=workflow.split('  midnight-preflight:\n',1)[1].split('  release:',1)[0]
+        for job in (install,release):
+            permissions=job.split('    permissions:\n',1)[1].split('    steps:',1)[0]
+            self.assertEqual(permissions, '      contents: write\n      pull-requests: write\n      pages: write\n      actions: write\n      checks: read\n      statuses: read\n')
+        self.assertNotIn('checks:',preflight);self.assertNotIn('statuses:',preflight)
+        self.assertEqual(workflow.count('      checks: read'),2)
+        self.assertEqual(workflow.count('      statuses: read'),2)
+
+    def test_installer_new_readiness_probe_fails_before_any_external_write(self):
+        candidate=pull();candidate['number']=r.CONTENT_PR;candidate['head']['sha']=r.REPAIR_CONTENT_SHA
+        candidate['base']['sha']=SHA
+        with patch.dict(os.environ,{'GITHUB_EVENT_NAME':'pull_request'}),patch.object(r,'now',return_value=r.DISPATCH_AFTER),\
+             patch.object(r,'archive_installation_base',return_value=SHA),patch.object(r,'git'),\
+             patch.object(r,'verify_payload') as payload,patch.object(r,'api',return_value=candidate) as api,\
+             patch.object(r,'readonly_merge_readiness',side_effect=r.Blocked('native read denied')) as probe,\
+             patch.object(r,'wait_ci') as ci,patch.object(r,'protected_merge') as merge,\
+             self.assertRaisesRegex(r.Blocked,'native read denied'):
+            r.install({'action':'ready_for_review'})
+        payload.assert_called_once_with(SHA,r.REPAIR_CONTENT_SHA)
+        probe.assert_called_once_with({'head':r.REPAIR_CONTENT_SHA,'base':SHA})
+        self.assertTrue(all(len(c.args)==1 for c in api.call_args_list))
+        ci.assert_not_called();merge.assert_not_called()
+
     def test_fixed_boundaries(self):
         for when in [r.PREFLIGHT, r.START, r.DEADLINE]:
             r.release_window(when)

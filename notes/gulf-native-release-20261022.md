@@ -24,7 +24,12 @@ on the ops276 head that GitHub normally protected-merged successfully.
 
 This repair modifies **only the same four operational files**; it does not change
 the approved archive helper, article/source/images/site files, Cloudflare,
-protection rules, credentials or permissions. Fixed branch:
+protection rules, credentials or write permissions. Only installer and release jobs declare `checks: read` and `statuses: read`
+for exhaustive public CI-metadata verification; these cannot write check results.
+Preflight grants remain unchanged. Before any CI rerun, merge, Pages or dispatch
+write, the installer exercises this exact readiness guard on the already-green
+held candidate, proving native token read admission and classification. A denial
+stops before main can change. Fixed branch:
 `ops/gulf-arming-readiness-20261021`; numeric PR is pinned in `ARMING_REPAIR_PR`
 before readiness. Exact historical276 merge/head/parents/tree are additionally
 pinned. The new repair must have exactly four modified ops paths and preserve
@@ -163,7 +168,8 @@ can cancel an active release. Every ordinary PR workflow must be successful
 on the real publication date, including Three-mirror publication check.
 
 The job permissions remain only contents/write, pull-requests/write, pages/write,
-actions/write. The midnight-only preflight retains contents/PR read and Actions
+actions/write, plus installer/release-only checks/read and statuses/read. The midnight-only
+preflight retains contents/PR read and Actions
 write, with no merge/Pages grant. No arbitrary repo/ref/PR/SHA/time/mode inputs,
 `pull_request_target`, new tokens or administrator access are introduced.
 

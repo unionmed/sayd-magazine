@@ -539,6 +539,10 @@ def install(event):
     candidate = api('/pulls/' + str(CONTENT_PR))
     valid_pr(candidate, CONTENT_PR, REPAIR_CONTENT_SHA, CONTENT_BRANCH)
     verify_payload(base, REPAIR_CONTENT_SHA)
+    # Prove actual token read admission and the exact optional-check guard before
+    # any CI rerun, merge, Pages or dispatch write in this installation.
+    readonly_merge_readiness({'head':REPAIR_CONTENT_SHA, 'base':base})
+    record('NATIVE_READINESS_PROBE_PASSED_BEFORE_ANY_WRITE', head_sha=REPAIR_CONTENT_SHA, base_sha=base)
     record('CONTENT_PIN_CONFIRMED_BEFORE_INSTALL', pr=CONTENT_PR, head_sha=REPAIR_CONTENT_SHA, draft=False)
     original = event['pull_request']
     number, sha = original['number'], original['head']['sha']

@@ -50,6 +50,8 @@ jobs:
       pull-requests: write
       pages: write
       actions: write
+      checks: read
+      statuses: read
     steps:
       - uses: actions/checkout@v4
         timeout-minutes: 5
@@ -141,6 +143,8 @@ jobs:
       pull-requests: write
       pages: write
       actions: write
+      checks: read
+      statuses: read
     steps:
       - name: Inert outside the single authorized date
         id: date
