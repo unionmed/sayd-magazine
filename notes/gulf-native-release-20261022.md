@@ -5,6 +5,35 @@ redeployment of today's unchanged site on 21 October. This PR changes **only fou
 operational files**. It does not add an article, alter a publication validator,
 change branch/environment protection, create secrets or publish social content.
 
+## Reviewed documentation reconciliation — 21 October, after initial installation
+
+The original installation PR273 passed its real native token/merge/Pages/live
+test and merged as `c40f9bd4bcb4e48f17749f02f5c0110f367c9bee`. Subsequently PR268
+merged at 13:19:27 UTC as `d7715185d7ba8268baed3c044846e21e0dbea11d`, changing only
+`notes/SAYD-FULL-PACKAGE-WORKFLOW.md` to blob
+`9b5f92d143871e0f7e14e01879a0f76ea2365fcb`. Its administrative guidance must be
+preserved, not reverted. The original hard main pin correctly blocked release.
+
+This narrowly reviewed repair modifies only the same four operational files.
+It admits exactly the pinned original installation, the immutable PR268 merge
+with its exact parents/path/blob, and the fixed repair PR's normal merge with
+first parent `d7715185…`, second parent its reviewed head, and precisely four
+modified operational files. No arbitrary descendant, documentation directory,
+new content, security change or additional permission is admitted.
+
+Today's ready-event installer is now restricted to
+`ops/gulf-docs-reconcile-20261021` and the fixed numeric repair PR. Before any
+write it verifies content PR274 is still exactly `91f0ea5043bbf22e1397782abd3ba3cd28974e5f`
+and has the original full approved payload against the original installation.
+It reruns real CI, normally merges only this repair, requests a distinct
+unchanged-site Pages rebuild, and verifies the live three-language site again.
+Only then is the exact new main merged into the content branch, preserving the
+PR268 note byte-for-byte and the original 1,100-path payload manifest. Every
+future preflight/release must use this exact repaired main; a further main
+change still blocks. All original date, early-merge, protection and live gates
+remain intact. The historical installation description below records the first
+test; this section supersedes its fixed branch/base for today's repair only.
+
 ## Three isolated paths
 
 1. **Installation today:** after independent review, marking this same-repository

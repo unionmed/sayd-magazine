@@ -314,6 +314,7 @@ class RealGitManifestGuards(unittest.TestCase):
         self.git('config','user.email','offline@example.invalid')
         self.git('config','commit.gpgsign','false')
         self.write('docs/index.html', 'old home')
+        self.write(r.DOCS_PATH, 'original administrative note')
         self.write('delete-me.txt', 'old approved removal')
         self.write('content/features/gulf-tourism-20261022.json', '{}')
         self.base = self.commit('base')
@@ -407,6 +408,89 @@ class RealGitManifestGuards(unittest.TestCase):
         for value in ['main','HEAD~1','-'+'a'*39,'a'*39,'A'*40,'a'*40+';id']:
             with self.assertRaisesRegex(r.Blocked,'immutable commit SHA'):
                 r.raw_manifest(value,self.candidate)
+
+
+class DocumentationReconciliationGuards(unittest.TestCase):
+    """Real Git objects prove that the one-note exception cannot widen payload."""
+    git = RealGitManifestGuards.git
+    write = RealGitManifestGuards.write
+    commit = RealGitManifestGuards.commit
+    tearDown = RealGitManifestGuards.tearDown
+
+    def setUp(self):
+        RealGitManifestGuards.setUp(self)
+        self.git('checkout','--detach',self.main)
+        self.write(r.DOCS_PATH,'exact approved documentation addition')
+        self.docs_head=self.commit('reviewed docs only')
+        self.git('checkout','--detach',self.main)
+        self.git('merge','--no-ff','--no-edit',self.docs_head)
+        self.docs_base=self.git('rev-parse','HEAD')
+        self.docs_blob=self.git('rev-parse',self.docs_base+':'+r.DOCS_PATH)
+        for path in r.ALLOWED_INSTALL:
+            self.write(path,'exact reviewed repair '+path)
+        self.repair_head=self.commit('four operational repairs')
+        self.git('checkout','--detach',self.docs_base)
+        self.git('merge','--no-ff','--no-edit',self.repair_head)
+        self.repair_main=self.git('rev-parse','HEAD')
+        self.pr={'number':987,'merged':True,'merge_commit_sha':self.repair_main,
+                 'base':{'ref':'main','repo':{'full_name':r.REPO}},
+                 'head':{'ref':r.INSTALL_BRANCH,'sha':self.repair_head,'repo':{'full_name':r.REPO}}}
+        original_git=r.git
+        patches=[patch.object(r,'DOCS_BASE',self.docs_base),patch.object(r,'DOCS_PR_HEAD',self.docs_head),
+                 patch.object(r,'DOCS_BLOB',self.docs_blob),patch.object(r,'REPAIR_PR',987),
+                 patch.object(r,'ORIGINAL_INSTALL_SHA',self.main),
+                 patch.object(r,'original_installation_base',return_value=self.main),
+                 patch.object(r,'api',side_effect=lambda path:self.pr),
+                 patch.object(r,'git',side_effect=lambda *a:'' if a[0]=='fetch' else original_git(*a))]
+        for item in patches:item.start();self.patches.append(item)
+
+    def test_exact_fixed_repair_main_is_accepted(self):
+        self.assertEqual(r.installation_base(),self.repair_main)
+
+    def test_docs_blob_change_rejected(self):
+        with patch.object(r,'DOCS_BLOB','0'*40):
+            with self.assertRaisesRegex(r.Blocked,'documentation blob'):
+                r.installation_base()
+
+    def test_docs_parent_change_rejected(self):
+        with patch.object(r,'DOCS_PR_HEAD',self.approved):
+            with self.assertRaisesRegex(r.Blocked,'documentation merge parents'):
+                r.installation_base()
+
+    def test_wrong_repair_pr_branch_repo_or_head_rejected(self):
+        original=deepcopy(self.pr)
+        mutations=[lambda p:p.update(number=988),lambda p:p.update(merged=False),
+                   lambda p:p['head'].update(ref='other'),lambda p:p['base']['repo'].update(full_name='fork/repo'),
+                   lambda p:p['head'].update(sha=self.approved)]
+        for mutate in mutations:
+            self.pr=deepcopy(original);mutate(self.pr)
+            with self.assertRaises(r.Blocked):r.installation_base()
+
+    def test_unreviewed_main_descendant_rejected(self):
+        with patch.object(r,'api',side_effect=lambda path:{'commit':{'sha':self.docs_base}} if path=='/branches/main' else self.pr):
+            with self.assertRaisesRegex(r.Blocked,'not the exact reviewed installation'):
+                r.candidate_snapshot()
+
+    def test_fifth_repair_file_or_doc_edit_rejected(self):
+        for path in ['notes/other.md','docs/index.html',r.DOCS_PATH]:
+            self.git('checkout','--detach',self.repair_head)
+            self.write(path,'unreviewed change')
+            head=self.commit('invalid extra repair change')
+            self.git('checkout','--detach',self.docs_base)
+            self.git('merge','--no-ff','--no-edit',head)
+            self.pr['head']['sha']=head;self.pr['merge_commit_sha']=self.git('rev-parse','HEAD')
+            with self.assertRaisesRegex(r.Blocked,'exactly the four operational'):
+                r.installation_base()
+
+    def test_reviewed_docs_are_preserved_in_exact_payload_candidate(self):
+        self.git('checkout','--detach',self.candidate)
+        self.git('merge','--no-ff','--no-edit',self.repair_main)
+        candidate=self.git('rev-parse','HEAD')
+        r.verify_payload(self.repair_main,candidate)
+        self.assertEqual(self.git('rev-parse',candidate+':'+r.DOCS_PATH),self.docs_blob)
+        self.write(r.DOCS_PATH,'reverted or changed administrative guidance')
+        with self.assertRaisesRegex(r.Blocked,'payload differs'):
+            r.verify_payload(self.repair_main,self.commit('unauthorized note change'))
 
 
 if __name__ == '__main__':

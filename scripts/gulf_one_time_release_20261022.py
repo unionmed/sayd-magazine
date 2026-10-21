@@ -28,8 +28,16 @@ CONTENT_PR = 274
 APPROVED_CONTENT_SHA = '3f675e6596614caa1eefbedaf79009e1afa51e36'
 PAYLOAD_MANIFEST_SHA256 = '7a8ab705288cf79b39ed666bc4700c5e1cbce581b65e884406466401e6431472'
 CONTENT_BRANCH = 'publish/gulf-tourism-scheduled-20261022'
-INSTALL_BRANCH = 'ops/gulf-native-release-20261022'
+INSTALL_BRANCH = 'ops/gulf-docs-reconcile-20261021'
 INSTALL_PR = 273
+ORIGINAL_INSTALL_SHA = 'c40f9bd4bcb4e48f17749f02f5c0110f367c9bee'
+ORIGINAL_INSTALL_HEAD = 'b38d4d77fb7775c4fa5b7bd791ff03475b5d2a3a'
+DOCS_BASE = 'd7715185d7ba8268baed3c044846e21e0dbea11d'
+DOCS_PR_HEAD = '54697be5c2548733ae82deb41c7a85111ec0e275'
+DOCS_PATH = 'notes/SAYD-FULL-PACKAGE-WORKFLOW.md'
+DOCS_BLOB = '9b5f92d143871e0f7e14e01879a0f76ea2365fcb'
+REPAIR_PR = 0  # Filled from the draft repair PR before independent ready review.
+REPAIR_CONTENT_SHA = '91f0ea5043bbf22e1397782abd3ba3cd28974e5f'
 WORKFLOW = '.github/workflows/gulf-one-time-release-20261022.yml'
 ALLOWED_INSTALL = {WORKFLOW, 'scripts/gulf_one_time_release_20261022.py',
                    'scripts/test_gulf_one_time_release_20261022.py',
@@ -147,18 +155,56 @@ def verify_payload(base, head):
            manifest_sha256=PAYLOAD_MANIFEST_SHA256, changed_paths=len(manifest_entries(expected)))
 
 
-def installation_base():
+def original_installation_base():
     installed = api('/pulls/' + str(INSTALL_PR))
     require(installed.get('merged') and installed['base']['ref'] == 'main'
             and installed['base']['repo']['full_name'] == REPO, 'Reviewed installation PR is not merged into this main')
     sha = full_sha(installed['merge_commit_sha'])
+    require(sha == ORIGINAL_INSTALL_SHA, 'Original installation merge SHA changed')
     git('fetch', 'origin', sha)
     parents = git('rev-list','--parents','-n','1',sha).split()[1:]
-    require(len(parents) == 2 and parents[0] == BASE, 'Installation merge has unexpected parents')
+    require(parents == [BASE, ORIGINAL_INSTALL_HEAD], 'Installation merge has unexpected parents')
     entries = manifest_entries(raw_manifest(BASE, sha))
     require({p.decode('utf-8') for _,p in entries} == ALLOWED_INSTALL
             and all(h.endswith(b' A') for h,_ in entries), 'Installation is not exactly the four added operational files')
     unchanged_site_base(sha)
+    return sha
+
+
+def reviewed_docs_base():
+    original = original_installation_base()
+    git('fetch', 'origin', DOCS_BASE)
+    require(git('rev-list', '--parents', '-n', '1', DOCS_BASE).split()[1:] == [original, DOCS_PR_HEAD],
+            'Reviewed documentation merge parents changed')
+    entries = manifest_entries(raw_manifest(original, DOCS_BASE))
+    require(len(entries) == 1 and entries[0][1] == DOCS_PATH.encode() and entries[0][0].endswith(b' M'),
+            'Documentation reconciliation is not the exact one-file modification')
+    require(git('ls-tree', DOCS_BASE, '--', DOCS_PATH) == '100644 blob ' + DOCS_BLOB + '\t' + DOCS_PATH,
+            'Reviewed documentation blob/mode changed')
+    unchanged_site_base(DOCS_BASE, include_reviewed_note=True)
+    return DOCS_BASE
+
+
+def installation_base():
+    # Only the specifically reviewed PR268 docs commit and fixed repair merge
+    # are admitted. This is not an arbitrary-main-descendant exception.
+    base = reviewed_docs_base()
+    require(REPAIR_PR > 0, 'Documentation repair PR is not pinned')
+    repaired = api('/pulls/' + str(REPAIR_PR))
+    require(repaired['number'] == REPAIR_PR and repaired.get('merged')
+            and repaired['base']['ref'] == 'main' and repaired['head']['ref'] == INSTALL_BRANCH
+            and repaired['base']['repo']['full_name'] == repaired['head']['repo']['full_name'] == REPO,
+            'Fixed documentation repair PR is not merged into this main')
+    sha, head = full_sha(repaired['merge_commit_sha']), full_sha(repaired['head']['sha'])
+    git('fetch', 'origin', sha)
+    require(git('rev-list', '--parents', '-n', '1', sha).split()[1:] == [base, head],
+            'Documentation repair merge parents differ from reviewed base/head')
+    entries = manifest_entries(raw_manifest(base, sha))
+    require({p.decode('utf-8') for _,p in entries} == ALLOWED_INSTALL
+            and all(h.endswith(b' M') for h,_ in entries), 'Repair must modify exactly the four operational files')
+    unchanged_site_base(sha, include_reviewed_note=True)
+    record('EXACT_DOCUMENTATION_RECONCILIATION_VERIFIED', original_install_sha=ORIGINAL_INSTALL_SHA,
+           documentation_sha=DOCS_BASE, repair_pr=REPAIR_PR, repair_merge_sha=sha)
     return sha
 
 
@@ -199,12 +245,16 @@ def release_window(when, for_merge=False):
         require(when >= START, 'Early publication prohibited')
 
 
-def unchanged_site_base(main):
+def unchanged_site_base(main, include_reviewed_note=False):
     # This package was reviewed against BASE. New publications need reconciliation,
     # not a silent overwrite or an automatic rebase with a different approval SHA.
     require(git('merge-base', BASE, main) == BASE, 'Reviewed base is not an ancestor of main')
     changed = set(filter(None, git('diff', '--name-only', BASE, main).splitlines()))
-    require(changed <= ALLOWED_INSTALL, 'Intervening main changes need fresh content review: ' + ', '.join(sorted(changed - ALLOWED_INSTALL)[:10]))
+    allowed = ALLOWED_INSTALL | ({DOCS_PATH} if include_reviewed_note else set())
+    require(changed <= allowed, 'Intervening main changes need fresh content review: ' + ', '.join(sorted(changed - allowed)[:10]))
+    if include_reviewed_note:
+        require(git('ls-tree', main, '--', DOCS_PATH) == '100644 blob ' + DOCS_BLOB + '\t' + DOCS_PATH,
+                'Reviewed documentation must be preserved byte-for-byte')
     docs_tree = git('rev-parse', main + ':docs')
     require(git('rev-parse', BASE + ':docs') == docs_tree, 'Public site changed before release preparation')
     record('PUBLIC_CONTENT_UNCHANGED_FROM_REVIEWED_BASE', base_sha=BASE, candidate_sha=main, docs_tree_sha=docs_tree)
@@ -372,29 +422,32 @@ def install(event):
     require(now().date().isoformat() == '2026-10-21', 'Installation authorized only on 21 October 2026')
     require(os.environ['GITHUB_EVENT_NAME'] == 'pull_request' and event['action'] == 'ready_for_review', 'Installation requires the reviewed ready event')
     require(CONTENT_PR > 0 and re.fullmatch('[0-9a-f]{40}', APPROVED_CONTENT_SHA), 'Content approval is not pinned')
-    git('fetch', 'origin', full_sha(APPROVED_CONTENT_SHA))
-    approved_manifest()
+    require(REPAIR_PR > 0, 'Documentation repair PR is not pinned')
+    base = reviewed_docs_base()
+    for revision in (APPROVED_CONTENT_SHA, REPAIR_CONTENT_SHA):
+        git('fetch', 'origin', full_sha(revision))
     candidate = api('/pulls/' + str(CONTENT_PR))
-    valid_pr(candidate, CONTENT_PR, APPROVED_CONTENT_SHA, CONTENT_BRANCH)
-    record('CONTENT_PIN_CONFIRMED_BEFORE_INSTALL', pr=CONTENT_PR, head_sha=APPROVED_CONTENT_SHA, draft=False)
+    valid_pr(candidate, CONTENT_PR, REPAIR_CONTENT_SHA, CONTENT_BRANCH)
+    verify_payload(ORIGINAL_INSTALL_SHA, REPAIR_CONTENT_SHA)
+    record('CONTENT_PIN_CONFIRMED_BEFORE_INSTALL', pr=CONTENT_PR, head_sha=REPAIR_CONTENT_SHA, draft=False)
     original = event['pull_request']
     number, sha = original['number'], original['head']['sha']
-    require(number == INSTALL_PR, 'Only reviewed installation PR 273 is authorized')
+    require(number == REPAIR_PR, 'Only the fixed reviewed documentation repair PR is authorized')
     valid_pr(original, number, sha, INSTALL_BRANCH)
     pr = api('/pulls/' + str(number))
     valid_pr(pr, number, sha, INSTALL_BRANCH)
     files = api('/pulls/' + str(number) + '/files?per_page=100')
     require(len(files) == 4 and {f['filename'] for f in files} == ALLOWED_INSTALL, 'Installation PR must have exactly the four reviewed non-content files')
-    require(all(f['status'] == 'added' for f in files), 'Installation may only add its four new files')
+    require(all(f['status'] == 'modified' for f in files), 'Repair may only modify its four operational files')
     git('fetch', 'origin', 'main')
     main = git('rev-parse', 'origin/main')
-    require(main == BASE and pr['base']['sha'] == BASE, 'Installation base changed; needs review')
-    unchanged_site_base(main)
+    require(main == base and pr['base']['sha'] == base, 'Installation base changed; needs review')
+    unchanged_site_base(main, include_reviewed_note=True)
     # Exercise the same token's Actions rerun permission/admission today too.
     wait_ci(number, sha, CORE_CI, fresh_after=now().replace(microsecond=0))
-    merged = protected_merge(number, sha, INSTALL_BRANCH, BASE)
+    merged = protected_merge(number, sha, INSTALL_BRANCH, base)
     git('fetch', 'origin', 'main')
-    unchanged_site_base(merged)
+    require(installation_base() == merged, 'Installed repair differs from reviewed merge')
     pages_build(merged, force_request=True)
     live_proof(merged, content=False)
     record('INSTALL_AND_UNCHANGED_SITE_DRY_RUN_PASS', merge_sha=merged, content_pr=CONTENT_PR, approved_payload_head=APPROVED_CONTENT_SHA, requires_today_base_merge=True)
