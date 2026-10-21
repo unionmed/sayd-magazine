@@ -6,6 +6,7 @@ import json
 import os
 from lxml import html as dom
 import publish_four_news_20261018 as w
+from rollout_mobile_nav_heritage_20261015 import nav_replace
 
 w.DATE = '2026-10-21'
 w.DATES = {'ar': '21 تشرين الأول 2026', 'en': '21 October 2026', 'fr': '21 octobre 2026'}
@@ -69,7 +70,8 @@ def run():
                                     'creditText': photo['credit'][lang], 'acquireLicensePage': photo['source_url']},
                                    **({'license': photo['license_url']} if photo.get('license_url') else {})) for photo in a['photos']]
             node.text = json.dumps(schema, ensure_ascii=False)
-            w.save(p, '<!DOCTYPE html>\n' + dom.tostring(tree, encoding='unicode', method='html'))
+            serialized = '<!DOCTYPE html>\n' + dom.tostring(tree, encoding='unicode', method='html')
+            w.save(p, nav_replace(serialized, p)[0])
     manifest = w.ROOT / 'audit/image-catalog/manifest/2026-01.tsv'
     rows = manifest.read_text().splitlines()
     for a in w.A:
