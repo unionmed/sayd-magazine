@@ -296,7 +296,11 @@ class ReleaseGuards(unittest.TestCase):
 
     def test_workflow_has_no_external_inputs_or_cancel(self):
         raw = (Path(__file__).resolve().parents[1] / r.WORKFLOW).read_text()
-        self.assertNotIn('workflow_dispatch', raw)
+        self.assertIn('workflow_dispatch: {}', raw)
+        self.assertNotIn('inputs:', raw)
+        self.assertNotIn('repository_dispatch', raw)
+        self.assertIn('ref: ${{ github.sha }}', raw)
+        self.assertIn("workflow_dispatch' && 300 || 100", raw)
         self.assertNotIn('pull_request_target', raw)
         self.assertNotIn('id-token:', raw)
         self.assertIn('cancel-in-progress: false', raw)
@@ -316,6 +320,7 @@ class RealGitManifestGuards(unittest.TestCase):
         self.write('docs/index.html', 'old home')
         self.write(r.DOCS_PATH, 'original administrative note')
         self.write('delete-me.txt', 'old approved removal')
+        self.write(r.ARCHIVE_TEST_PATH, 'original exact archive test')
         self.write('content/features/gulf-tourism-20261022.json', '{}')
         self.base = self.commit('base')
         self.write('docs/index.html','approved home')
@@ -434,10 +439,11 @@ class DocumentationReconciliationGuards(unittest.TestCase):
         self.repair_main=self.git('rev-parse','HEAD')
         self.pr={'number':987,'merged':True,'merge_commit_sha':self.repair_main,
                  'base':{'ref':'main','repo':{'full_name':r.REPO}},
-                 'head':{'ref':r.INSTALL_BRANCH,'sha':self.repair_head,'repo':{'full_name':r.REPO}}}
+                 'head':{'ref':r.DOCS_REPAIR_BRANCH,'sha':self.repair_head,'repo':{'full_name':r.REPO}}}
         original_git=r.git
         patches=[patch.object(r,'DOCS_BASE',self.docs_base),patch.object(r,'DOCS_PR_HEAD',self.docs_head),
                  patch.object(r,'DOCS_BLOB',self.docs_blob),patch.object(r,'REPAIR_PR',987),
+                 patch.object(r,'DOCS_REPAIR_SHA',self.repair_main),patch.object(r,'DOCS_REPAIR_HEAD',self.repair_head),
                  patch.object(r,'ORIGINAL_INSTALL_SHA',self.main),
                  patch.object(r,'original_installation_base',return_value=self.main),
                  patch.object(r,'api',side_effect=lambda path:self.pr),
@@ -445,17 +451,17 @@ class DocumentationReconciliationGuards(unittest.TestCase):
         for item in patches:item.start();self.patches.append(item)
 
     def test_exact_fixed_repair_main_is_accepted(self):
-        self.assertEqual(r.installation_base(),self.repair_main)
+        self.assertEqual(r.documentation_installation_base(),self.repair_main)
 
     def test_docs_blob_change_rejected(self):
         with patch.object(r,'DOCS_BLOB','0'*40):
             with self.assertRaisesRegex(r.Blocked,'documentation blob'):
-                r.installation_base()
+                r.documentation_installation_base()
 
     def test_docs_parent_change_rejected(self):
         with patch.object(r,'DOCS_PR_HEAD',self.approved):
             with self.assertRaisesRegex(r.Blocked,'documentation merge parents'):
-                r.installation_base()
+                r.documentation_installation_base()
 
     def test_wrong_repair_pr_branch_repo_or_head_rejected(self):
         original=deepcopy(self.pr)
@@ -464,10 +470,10 @@ class DocumentationReconciliationGuards(unittest.TestCase):
                    lambda p:p['head'].update(sha=self.approved)]
         for mutate in mutations:
             self.pr=deepcopy(original);mutate(self.pr)
-            with self.assertRaises(r.Blocked):r.installation_base()
+            with self.assertRaises(r.Blocked):r.documentation_installation_base()
 
     def test_unreviewed_main_descendant_rejected(self):
-        with patch.object(r,'api',side_effect=lambda path:{'commit':{'sha':self.docs_base}} if path=='/branches/main' else self.pr):
+        with patch.object(r,'installation_base',return_value=self.repair_main), patch.object(r,'api',side_effect=lambda path:{'commit':{'sha':self.docs_base}} if path=='/branches/main' else self.pr):
             with self.assertRaisesRegex(r.Blocked,'not the exact reviewed installation'):
                 r.candidate_snapshot()
 
@@ -479,8 +485,8 @@ class DocumentationReconciliationGuards(unittest.TestCase):
             self.git('checkout','--detach',self.docs_base)
             self.git('merge','--no-ff','--no-edit',head)
             self.pr['head']['sha']=head;self.pr['merge_commit_sha']=self.git('rev-parse','HEAD')
-            with self.assertRaisesRegex(r.Blocked,'exactly the four operational'):
-                r.installation_base()
+            with self.assertRaises(r.Blocked):
+                r.documentation_installation_base()
 
     def test_reviewed_docs_are_preserved_in_exact_payload_candidate(self):
         self.git('checkout','--detach',self.candidate)
@@ -491,6 +497,338 @@ class DocumentationReconciliationGuards(unittest.TestCase):
         self.write(r.DOCS_PATH,'reverted or changed administrative guidance')
         with self.assertRaisesRegex(r.Blocked,'payload differs'):
             r.verify_payload(self.repair_main,self.commit('unauthorized note change'))
+
+
+class MidnightReconciliationGuards(unittest.TestCase):
+    git = RealGitManifestGuards.git
+    write = RealGitManifestGuards.write
+    commit = RealGitManifestGuards.commit
+    tearDown = RealGitManifestGuards.tearDown
+
+    def setUp(self):
+        DocumentationReconciliationGuards.setUp(self)
+        self.previous_main = self.repair_main
+        for path in r.MIDNIGHT_FILES:
+            self.write(path, 'exact reviewed midnight repair ' + path)
+        self.midnight_head = self.commit('five fixed reviewed files')
+        self.git('checkout', '--detach', self.previous_main)
+        self.git('merge', '--no-ff', '--no-edit', self.midnight_head)
+        self.midnight_main = self.git('rev-parse', 'HEAD')
+        self.test_blob = self.git('rev-parse', self.midnight_main + ':' + r.ARCHIVE_TEST_PATH)
+        self.pr = {'number':986, 'merged':True, 'merge_commit_sha':self.midnight_main,
+                   'base':{'ref':'main','repo':{'full_name':r.REPO}},
+                   'head':{'ref':r.INSTALL_BRANCH,'sha':self.midnight_head,'repo':{'full_name':r.REPO}}}
+        for item in [patch.object(r, 'documentation_installation_base', return_value=self.previous_main),
+                     patch.object(r, 'MIDNIGHT_REPAIR_PR', 986), patch.object(r, 'ARCHIVE_TEST_BLOB', self.test_blob)]:
+            item.start(); self.patches.append(item)
+
+    def test_exact_five_file_chain_passes(self):
+        self.assertEqual(r.installation_base(), self.midnight_main)
+
+    def test_unpinned_repair_or_test_fails_closed(self):
+        for name, value in [('MIDNIGHT_REPAIR_PR',0), ('ARCHIVE_TEST_BLOB','PENDING')]:
+            with patch.object(r,name,value), self.assertRaises(r.Blocked): r.installation_base()
+
+    def test_wrong_reviewed_archive_blob_rejected(self):
+        with patch.object(r,'ARCHIVE_TEST_BLOB','0'*40), self.assertRaisesRegex(r.Blocked,'archive test blob'):
+            r.installation_base()
+
+    def test_wrong_pr_branch_fork_parent_head_rejected(self):
+        original=deepcopy(self.pr)
+        for mutate in [lambda p:p.update(number=985),lambda p:p.update(merged=False),
+                       lambda p:p['head'].update(ref='other'),lambda p:p['base']['repo'].update(full_name='attacker/repo'),
+                       lambda p:p['head'].update(sha=self.approved)]:
+            self.pr=deepcopy(original); mutate(self.pr)
+            with self.assertRaises(r.Blocked): r.installation_base()
+
+    def test_extra_path_public_content_and_note_changes_rejected(self):
+        for path in ['scripts/extra-test.py','docs/index.html',r.DOCS_PATH]:
+            self.git('checkout','--detach',self.midnight_head)
+            self.write(path,'unauthorized extra change')
+            head=self.commit('invalid extra file')
+            self.git('checkout','--detach',self.previous_main)
+            self.git('merge','--no-ff','--no-edit',head)
+            self.pr['head']['sha']=head;self.pr['merge_commit_sha']=self.git('rev-parse','HEAD')
+            with self.assertRaisesRegex(r.Blocked,'exactly four operational'):
+                r.installation_base()
+
+    def test_archive_mode_change_rejected(self):
+        self.git('checkout','--detach',self.midnight_head)
+        Path(r.ARCHIVE_TEST_PATH).chmod(0o755)
+        self.pr['head']['sha']=self.commit('wrong archive mode')
+        self.git('checkout','--detach',self.previous_main)
+        self.git('merge','--no-ff','--no-edit',self.pr['head']['sha'])
+        self.pr['merge_commit_sha']=self.git('rev-parse','HEAD')
+        with self.assertRaisesRegex(r.Blocked,'archive test blob/mode'): r.installation_base()
+
+    def test_original_complete_payload_digest_survives_repair(self):
+        self.git('checkout','--detach',self.candidate)
+        self.git('merge','--no-ff','--no-edit',self.midnight_main)
+        candidate=self.git('rev-parse','HEAD')
+        r.verify_payload(self.midnight_main,candidate)
+        self.assertEqual(r.raw_manifest(self.midnight_main,candidate),self.manifest)
+        self.assertEqual(self.git('rev-parse',candidate+':'+r.ARCHIVE_TEST_PATH),self.test_blob)
+        self.write(r.ARCHIVE_TEST_PATH,'unreviewed followup')
+        with self.assertRaisesRegex(r.Blocked,'payload differs'):
+            r.verify_payload(self.midnight_main,self.commit('changed test after approval'))
+
+
+class HeldDispatchGuards(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory(); self.old=os.getcwd(); os.chdir(self.temp.name)
+        self.instant=r.DISPATCH_AFTER+timedelta(minutes=30)
+        self.snapshot={'base':SHA,'head':'b'*40}
+        self.event={'ref':'main','inputs':{},'repository':{'full_name':r.REPO},'sender':{'login':r.BOT}}
+        self.run={'id':123,'workflow_id':r.WORKFLOW_ID,'path':r.WORKFLOW,'event':'workflow_dispatch',
+                  'head_sha':SHA,'head_branch':'main','actor':{'login':r.BOT},'triggering_actor':{'login':r.BOT},
+                  'created_at':self.instant.isoformat(),'status':'queued'}
+        self.env={'GITHUB_REPOSITORY':r.REPO,'GITHUB_EVENT_NAME':'workflow_dispatch','GITHUB_REF':'refs/heads/main',
+                  'GITHUB_ACTOR':r.BOT,'GITHUB_RUN_ID':'123','GITHUB_SHA':SHA}
+        self.patches=[patch.dict(os.environ,self.env),patch.object(r,'now',return_value=self.instant),
+                      patch.object(r,'installation_base',return_value=SHA),patch.object(r,'record')]
+        for p in self.patches:p.start()
+
+    def tearDown(self):
+        for p in reversed(self.patches):p.stop()
+        os.chdir(self.old);self.temp.cleanup()
+
+    def dispatch_api(self,path,*args):
+        self.assertFalse(args,'context and arming must not write')
+        if path=='/actions/runs/123':return self.run
+        if path=='/branches/main':return {'commit':{'sha':SHA}}
+        if path=='/actions/runs/1/jobs?filter=latest&per_page=100':return {'jobs':[{'name':'Three-mirror publication check','conclusion':'success'}]}
+        p=pull();p['number']=r.CONTENT_PR;p['head']['sha']=self.snapshot['head'];p['base']['sha']=SHA
+        if path=='/pulls/'+str(r.CONTENT_PR):return p
+        raise AssertionError(path)
+
+    def test_exact_context_accepts_immutable_dispatch(self):
+        with patch.object(r,'api',side_effect=self.dispatch_api):
+            self.assertEqual(r.validate_dispatch_context(self.event),SHA)
+
+    def test_context_rejects_wrong_actor_repo_ref_event(self):
+        for name,value in [('GITHUB_ACTOR','unionmed'),('GITHUB_REPOSITORY','attacker/repo'),
+                           ('GITHUB_REF','refs/heads/other'),('GITHUB_EVENT_NAME','pull_request')]:
+            with patch.dict(os.environ,{name:value}),patch.object(r,'api') as api,self.assertRaises(r.Blocked):
+                r.validate_dispatch_context(self.event)
+            api.assert_not_called()
+
+    def test_event_rejects_any_inputs_and_wrong_sender(self):
+        for key,value in [('ref','other'),('inputs',{'sha':SHA}),('sender',{'login':'unionmed'}),
+                          ('repository',{'full_name':'attacker/repo'})]:
+            e=deepcopy(self.event);e[key]=value
+            with patch.object(r,'api') as api,self.assertRaises(r.Blocked):r.validate_dispatch_context(e)
+            api.assert_not_called()
+
+    def test_date_year_and_deadline_rejected_before_api(self):
+        for when in [r.DISPATCH_AFTER-timedelta(seconds=1),r.DEADLINE+timedelta(seconds=1),self.instant.replace(year=2027)]:
+            with patch.object(r,'now',return_value=when),patch.object(r,'api') as api,self.assertRaises(r.Blocked):
+                r.validate_dispatch_context(self.event)
+            api.assert_not_called()
+
+    def test_run_id_and_sha_are_not_arbitrary_revisions(self):
+        for env in [{'GITHUB_RUN_ID':'../../other'},{'GITHUB_SHA':'b'*40}]:
+            with patch.dict(os.environ,env),patch.object(r,'api') as api,self.assertRaises(r.Blocked):
+                r.validate_dispatch_context(self.event)
+            api.assert_not_called()
+
+    def test_live_run_metadata_rejects_wrong_origin_and_head(self):
+        original=deepcopy(self.run)
+        for key,value in [('id',124),('workflow_id',1),('path','other.yml'),('event','schedule'),
+                          ('head_sha','b'*40),('head_branch','other'),('actor',{'login':'unionmed'}),
+                          ('triggering_actor',{'login':'unionmed'})]:
+            self.run=deepcopy(original);self.run[key]=value
+            with patch.object(r,'api',side_effect=self.dispatch_api),self.assertRaises(r.Blocked):
+                r.validate_dispatch_context(self.event)
+
+    def test_arm_has_no_publication_or_write_and_freezes_snapshot(self):
+        check=run();check['head_sha']=self.snapshot['head']
+        with patch.object(r,'api',side_effect=self.dispatch_api),patch.object(r,'candidate_snapshot',return_value=self.snapshot),\
+             patch.object(r,'normal_runs',return_value={check['path']:check}),patch.object(r,'protected_merge') as merge,\
+             patch.object(r,'pages_build') as pages:
+            self.assertEqual(r.arm_held_release(self.event),self.snapshot)
+        self.assertEqual(__import__('json').loads(Path('armed-release.json').read_text()),{'run_id':'123','snapshot':self.snapshot})
+        merge.assert_not_called();pages.assert_not_called()
+
+    def test_arm_rejects_stale_or_failed_ci(self):
+        for key,value in [('conclusion','failure'),('run_started_at','2026-10-21T20:59:59Z')]:
+            check=run();check[key]=value
+            with patch.object(r,'api',side_effect=self.dispatch_api),patch.object(r,'candidate_snapshot',return_value=self.snapshot),\
+                 patch.object(r,'normal_runs',return_value={check['path']:check}),self.assertRaises(r.Blocked):r.arm_held_release(self.event)
+            self.assertFalse(Path('armed-release.json').exists())
+
+    def test_hold_only_reads_then_revalidates_same_frozen_snapshot(self):
+        Path('armed-release.json').write_text(__import__('json').dumps({'run_id':'123','snapshot':self.snapshot}))
+        current=[self.instant]
+        def sleep(seconds):
+            self.assertGreater(seconds,0);self.assertLessEqual(seconds,300);current[0]=r.PREFLIGHT
+        with patch.object(r,'now',side_effect=lambda:current[0]),patch.object(r,'api',side_effect=self.dispatch_api),\
+             patch.object(r,'recheck_snapshot') as check,patch.object(r,'normal_runs',return_value={'check':run()}),\
+             patch.object(r.time,'sleep',side_effect=sleep),patch.object(r,'release') as release,\
+             patch.object(r,'protected_merge') as merge,patch.object(r,'pages_build') as pages:
+            r.held_release(self.event)
+        self.assertEqual(check.call_count,2)
+        release.assert_called_once_with(expected_snapshot=self.snapshot,from_dispatch=True)
+        merge.assert_not_called();pages.assert_not_called()
+
+    def test_hold_wrong_arming_run_or_changed_snapshot_blocks(self):
+        for ident in ['other','123']:
+            Path('armed-release.json').write_text(__import__('json').dumps({'run_id':ident,'snapshot':self.snapshot}))
+            with patch.object(r,'api',side_effect=self.dispatch_api),patch.object(r,'recheck_snapshot',side_effect=r.Blocked('changed snapshot')),\
+                 patch.object(r,'release') as release,self.assertRaises(r.Blocked):r.held_release(self.event)
+            release.assert_not_called()
+
+    def launch_patches(self):
+        return [patch.object(r,'RECEIPT',{'events':[{'event':'INSTALL_AND_UNCHANGED_SITE_DRY_RUN_PASS','merge_sha':SHA}]}),
+                patch.object(r,'recheck_snapshot')]
+
+    def test_installer_posts_once_then_returns_queued_without_concurrency_deadlock(self):
+        patches=self.launch_patches()
+        for p in patches:p.start()
+        try:
+            with patch.object(r,'dispatch_runs',side_effect=[[],[self.run]]),\
+                 patch.object(r,'api',side_effect=[{'commit':{'sha':SHA}},{}]) as api,patch.object(r.time,'sleep') as sleep:
+                self.assertEqual(r.launch_held_release(SHA,self.snapshot),123)
+            self.assertEqual(api.call_args_list[1].args,('/actions/workflows/gulf-one-time-release-20261022.yml/dispatches','POST',{'ref':'main'}))
+            sleep.assert_not_called()
+        finally:
+            for p in reversed(patches):p.stop()
+
+    def test_missing_actual_dry_run_never_dispatches(self):
+        with patch.object(r,'RECEIPT',{'events':[]}),patch.object(r,'api') as api,self.assertRaises(r.Blocked):
+            r.launch_held_release(SHA,self.snapshot)
+        api.assert_not_called()
+
+    def test_existing_or_multiple_dispatches_are_not_retried(self):
+        patches=self.launch_patches()
+        for p in patches:p.start()
+        try:
+            for values in [[[self.run]], [[],[self.run,self.run]]]:
+                with patch.object(r,'dispatch_runs',side_effect=values),patch.object(r,'api',return_value={'commit':{'sha':SHA}}) as api,\
+                     self.assertRaises(r.Blocked):r.launch_held_release(SHA,self.snapshot)
+                self.assertLessEqual(sum(len(c.args)>1 and c.args[1]=='POST' for c in api.call_args_list),1)
+        finally:
+            for p in reversed(patches):p.stop()
+
+    def test_ambiguous_dispatch_reads_back_without_second_post(self):
+        patches=self.launch_patches()
+        for p in patches:p.start()
+        try:
+            with patch.object(r,'dispatch_runs',side_effect=[[],[self.run]]),\
+                 patch.object(r,'api',side_effect=[{'commit':{'sha':SHA}},OSError('response lost')]) as api:
+                self.assertEqual(r.launch_held_release(SHA,self.snapshot),123)
+            self.assertEqual(api.call_count,2)
+        finally:
+            for p in reversed(patches):p.stop()
+
+    def test_denied_dispatch_is_not_retried(self):
+        patches=self.launch_patches()
+        for p in patches:p.start()
+        try:
+            with patch.object(r,'dispatch_runs',return_value=[]),\
+                 patch.object(r,'api',side_effect=[{'commit':{'sha':SHA}},r.Blocked('HTTP 403')]) as api,\
+                 self.assertRaisesRegex(r.Blocked,'403'):r.launch_held_release(SHA,self.snapshot)
+            self.assertEqual(api.call_count,2)
+        finally:
+            for p in reversed(patches):p.stop()
+
+    def test_base_update_wait_never_writes_or_accepts_changed_payload(self):
+        p=pull();p['number']=r.CONTENT_PR;p['head']['sha']=r.REPAIR_CONTENT_SHA
+        responses=[{'commit':{'sha':SHA}},p,{'commit':{'sha':SHA}},
+                   {**p,'head':{**p['head'],'sha':'b'*40}}]
+        with patch.object(r,'api',side_effect=responses) as api,patch.object(r.time,'sleep'),\
+             patch.object(r,'candidate_snapshot',side_effect=r.Blocked('payload differs')),\
+             patch.object(r,'protected_merge') as merge,self.assertRaisesRegex(r.Blocked,'payload differs'):
+            r.wait_for_prepared_candidate(SHA)
+        self.assertTrue(all(len(c.args)==1 for c in api.call_args_list));merge.assert_not_called()
+
+    def test_base_update_wait_is_bounded(self):
+        p=pull();p['number']=r.CONTENT_PR;p['head']['sha']=r.REPAIR_CONTENT_SHA
+        with patch.object(r,'api',side_effect=[{'commit':{'sha':SHA}},p]),\
+             patch.object(r.time,'monotonic',side_effect=[0,1801]),self.assertRaisesRegex(r.Blocked,'30 minutes'):
+            r.wait_for_prepared_candidate(SHA)
+
+    def test_all_nine_normal_workflows_are_required(self):
+        self.assertEqual(len(r.CONTENT_CI),9)
+        self.assertTrue({'.github/workflows/science-navigation-regression.yml',
+                         '.github/workflows/team-page-qa.yml',
+                         '.github/workflows/four-news-build-20261018.yml'} <= r.CONTENT_CI)
+
+    def test_arming_rejects_missing_required_job_or_blocked_mergeability(self):
+        for broken in ('required_job','mergeability'):
+            def api(path,*args):
+                value=self.dispatch_api(path,*args)
+                if broken=='required_job' and '/jobs?' in path:value={'jobs':[]}
+                if broken=='mergeability' and path.startswith('/pulls/'):
+                    value['mergeable_state']='blocked'
+                return value
+            with patch.object(r,'api',side_effect=api),patch.object(r,'normal_runs',return_value={run()['path']:run()}),\
+                 patch.object(r,'candidate_snapshot',return_value=self.snapshot),\
+                 patch.object(r.time,'monotonic',side_effect=[0,121]),self.assertRaises(r.Blocked):
+                r.arm_held_release(self.event)
+            self.assertFalse(Path('armed-release.json').exists())
+
+    def test_ci_admission_wait_freezes_first_exact_candidate(self):
+        p=pull();p['number']=r.CONTENT_PR;p['head']['sha']=self.snapshot['head']
+        with patch.object(r,'api',side_effect=[{'commit':{'sha':SHA}},p]*2) as api,\
+             patch.object(r,'candidate_snapshot',return_value=self.snapshot),\
+             patch.object(r,'normal_runs',side_effect=[r.Blocked('Missing normal CI workflows: test'),{}]),\
+             patch.object(r,'wait_ci') as ci,patch.object(r,'recheck_snapshot') as recheck,patch.object(r.time,'sleep'):
+            self.assertEqual(r.wait_for_prepared_candidate(SHA),self.snapshot)
+        self.assertTrue(all(len(c.args)==1 for c in api.call_args_list))
+        ci.assert_called_once();recheck.assert_called_once_with(self.snapshot)
+
+    def test_ci_admission_wait_rejects_moved_candidate(self):
+        p=pull();p['number']=r.CONTENT_PR;p['head']['sha']=self.snapshot['head']
+        with patch.object(r,'api',side_effect=[{'commit':{'sha':SHA}},p]*2),\
+             patch.object(r,'candidate_snapshot',side_effect=[self.snapshot,{**self.snapshot,'head':'c'*40}]),\
+             patch.object(r,'normal_runs',side_effect=r.Blocked('Missing normal CI workflows: test')),\
+             patch.object(r,'wait_ci') as ci,patch.object(r.time,'sleep'),\
+             self.assertRaisesRegex(r.Blocked,'changed while awaiting CI'):
+            r.wait_for_prepared_candidate(SHA)
+        ci.assert_not_called()
+
+    def installer_event(self):
+        p=pull();p['number']=r.MIDNIGHT_REPAIR_PR;p['head']['ref']=r.INSTALL_BRANCH
+        return {'action':'ready_for_review','pull_request':p}
+
+    def test_split_installer_loads_actual_proof_before_wait_and_dispatch(self):
+        saved={'repository':r.REPO,'target_time':r.START.isoformat(),
+               'events':[{'event':'INSTALL_AND_UNCHANGED_SITE_DRY_RUN_PASS','merge_sha':SHA}]}
+        Path('release-receipt.json').write_text(__import__('json').dumps(saved))
+        with patch.dict(os.environ,{'GITHUB_EVENT_NAME':'pull_request'}),patch.object(r,'RECEIPT',{}),\
+             patch.object(r,'api',return_value=self.installer_event()['pull_request']),\
+             patch.object(r,'wait_for_prepared_candidate',return_value=self.snapshot) as wait,\
+             patch.object(r,'launch_held_release') as launch:
+            r.complete_installation(self.installer_event())
+        wait.assert_called_once_with(SHA);launch.assert_called_once_with(SHA,self.snapshot)
+
+    def test_split_installer_without_actual_proof_never_waits_or_dispatches(self):
+        for proof in [[],[{'event':'INSTALL_AND_UNCHANGED_SITE_DRY_RUN_PASS','merge_sha':'b'*40}]]:
+            Path('release-receipt.json').write_text(__import__('json').dumps(
+                {'repository':r.REPO,'target_time':r.START.isoformat(),'events':proof}))
+            with patch.dict(os.environ,{'GITHUB_EVENT_NAME':'pull_request'}),patch.object(r,'RECEIPT',{}),\
+                 patch.object(r,'api',return_value=self.installer_event()['pull_request']),\
+                 patch.object(r,'wait_for_prepared_candidate') as wait,patch.object(r,'launch_held_release') as launch,\
+                 self.assertRaisesRegex(r.Blocked,'dry-run proof'):
+                r.complete_installation(self.installer_event())
+            wait.assert_not_called();launch.assert_not_called()
+
+    def test_split_installer_rejects_changed_event_head(self):
+        Path('release-receipt.json').write_text(__import__('json').dumps(
+            {'repository':r.REPO,'target_time':r.START.isoformat(),'events':[]}))
+        p=self.installer_event()['pull_request'];p['head']['sha']='c'*40
+        with patch.dict(os.environ,{'GITHUB_EVENT_NAME':'pull_request'}),patch.object(r,'RECEIPT',{}),\
+             patch.object(r,'api',return_value=p),patch.object(r,'wait_for_prepared_candidate') as wait,\
+             self.assertRaisesRegex(r.Blocked,'event head changed'):
+            r.complete_installation(self.installer_event())
+        wait.assert_not_called()
+
+    def test_held_release_changed_head_is_rejected_before_merge(self):
+        p=pull();p['number']=r.CONTENT_PR;p['head']['sha']=SHA
+        with patch.object(r,'now',return_value=r.START),patch.object(r,'api',return_value=p),\
+             patch.object(r,'protected_merge') as merge,self.assertRaisesRegex(r.Blocked,'Held candidate head'):
+            r.release(expected_snapshot=self.snapshot,from_dispatch=True)
+        merge.assert_not_called()
 
 
 if __name__ == '__main__':
