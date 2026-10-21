@@ -5,7 +5,7 @@
 The owner authorized the fixed Gulf release at **22 October 2026, 05:00
 Asia/Beirut (02:00 UTC)**, its limited native execution, normal protected merge,
 and unchanged-current-site deployment testing. Midnight recovery remains within
-that one-time scope: **four existing operational files plus the exact archive
+that one-time scope (fixed repair PR **276**): **four existing operational files plus the exact archive
 regression test**. No public article/source/image bytes, publication-date guard,
 protection rule, permission grant, secret, credential or Facebook post changes.
 
