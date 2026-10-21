@@ -41,7 +41,7 @@ jobs:
     if: >-
       github.event_name == 'pull_request' && github.event.action == 'ready_for_review' &&
       github.event.pull_request.head.repo.full_name == 'unionmed/sayd-magazine' &&
-      github.event.pull_request.head.ref == 'ops/gulf-midnight-ci-repair-20261021' &&
+      github.event.pull_request.head.ref == 'ops/gulf-arming-readiness-20261021' &&
       github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     timeout-minutes: 90
@@ -63,7 +63,7 @@ jobs:
           python-version: '3.12'
       - run: pip install --timeout 20 --retries 2 lxml==5.3.2
         timeout-minutes: 3
-      - name: Install exact archive-test repair, prove unchanged site, then arm fixed held release
+      - name: Install exact arming repair, prove unchanged site, then arm fixed held release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/gulf_one_time_release_20261022.py install

@@ -517,21 +517,23 @@ class MidnightReconciliationGuards(unittest.TestCase):
         self.test_blob = self.git('rev-parse', self.midnight_main + ':' + r.ARCHIVE_TEST_PATH)
         self.pr = {'number':986, 'merged':True, 'merge_commit_sha':self.midnight_main,
                    'base':{'ref':'main','repo':{'full_name':r.REPO}},
-                   'head':{'ref':r.INSTALL_BRANCH,'sha':self.midnight_head,'repo':{'full_name':r.REPO}}}
+                   'head':{'ref':r.MIDNIGHT_BRANCH,'sha':self.midnight_head,'repo':{'full_name':r.REPO}}}
         for item in [patch.object(r, 'documentation_installation_base', return_value=self.previous_main),
-                     patch.object(r, 'MIDNIGHT_REPAIR_PR', 986), patch.object(r, 'ARCHIVE_TEST_BLOB', self.test_blob)]:
+                     patch.object(r, 'MIDNIGHT_REPAIR_PR', 986),
+                     patch.object(r, 'MIDNIGHT_MERGE_SHA', self.midnight_main),
+                     patch.object(r, 'MIDNIGHT_HEAD_SHA', self.midnight_head), patch.object(r, 'ARCHIVE_TEST_BLOB', self.test_blob)]:
             item.start(); self.patches.append(item)
 
     def test_exact_five_file_chain_passes(self):
-        self.assertEqual(r.installation_base(), self.midnight_main)
+        self.assertEqual(r.archive_installation_base(), self.midnight_main)
 
     def test_unpinned_repair_or_test_fails_closed(self):
         for name, value in [('MIDNIGHT_REPAIR_PR',0), ('ARCHIVE_TEST_BLOB','PENDING')]:
-            with patch.object(r,name,value), self.assertRaises(r.Blocked): r.installation_base()
+            with patch.object(r,name,value), self.assertRaises(r.Blocked): r.archive_installation_base()
 
     def test_wrong_reviewed_archive_blob_rejected(self):
         with patch.object(r,'ARCHIVE_TEST_BLOB','0'*40), self.assertRaisesRegex(r.Blocked,'archive test blob'):
-            r.installation_base()
+            r.archive_installation_base()
 
     def test_wrong_pr_branch_fork_parent_head_rejected(self):
         original=deepcopy(self.pr)
@@ -539,7 +541,7 @@ class MidnightReconciliationGuards(unittest.TestCase):
                        lambda p:p['head'].update(ref='other'),lambda p:p['base']['repo'].update(full_name='attacker/repo'),
                        lambda p:p['head'].update(sha=self.approved)]:
             self.pr=deepcopy(original); mutate(self.pr)
-            with self.assertRaises(r.Blocked): r.installation_base()
+            with self.assertRaises(r.Blocked): r.archive_installation_base()
 
     def test_extra_path_public_content_and_note_changes_rejected(self):
         for path in ['scripts/extra-test.py','docs/index.html',r.DOCS_PATH]:
@@ -549,8 +551,8 @@ class MidnightReconciliationGuards(unittest.TestCase):
             self.git('checkout','--detach',self.previous_main)
             self.git('merge','--no-ff','--no-edit',head)
             self.pr['head']['sha']=head;self.pr['merge_commit_sha']=self.git('rev-parse','HEAD')
-            with self.assertRaisesRegex(r.Blocked,'exactly four operational'):
-                r.installation_base()
+            with self.assertRaises(r.Blocked):
+                r.archive_installation_base()
 
     def test_archive_mode_change_rejected(self):
         self.git('checkout','--detach',self.midnight_head)
@@ -559,7 +561,7 @@ class MidnightReconciliationGuards(unittest.TestCase):
         self.git('checkout','--detach',self.previous_main)
         self.git('merge','--no-ff','--no-edit',self.pr['head']['sha'])
         self.pr['merge_commit_sha']=self.git('rev-parse','HEAD')
-        with self.assertRaisesRegex(r.Blocked,'archive test blob/mode'): r.installation_base()
+        with self.assertRaises(r.Blocked): r.archive_installation_base()
 
     def test_original_complete_payload_digest_survives_repair(self):
         self.git('checkout','--detach',self.candidate)
@@ -571,6 +573,61 @@ class MidnightReconciliationGuards(unittest.TestCase):
         self.write(r.ARCHIVE_TEST_PATH,'unreviewed followup')
         with self.assertRaisesRegex(r.Blocked,'payload differs'):
             r.verify_payload(self.midnight_main,self.commit('changed test after approval'))
+
+
+class ArmingReconciliationGuards(unittest.TestCase):
+    git = RealGitManifestGuards.git
+    write = RealGitManifestGuards.write
+    commit = RealGitManifestGuards.commit
+    tearDown = RealGitManifestGuards.tearDown
+
+    def setUp(self):
+        MidnightReconciliationGuards.setUp(self)
+        self.previous_main=self.midnight_main
+        for path in r.ALLOWED_INSTALL:self.write(path,'reviewed arming repair '+path)
+        self.arming_head=self.commit('four fixed arming files')
+        self.git('checkout','--detach',self.previous_main)
+        self.git('merge','--no-ff','--no-edit',self.arming_head)
+        self.arming_main=self.git('rev-parse','HEAD')
+        self.pr={'number':987,'merged':True,'merge_commit_sha':self.arming_main,
+                 'base':{'ref':'main','repo':{'full_name':r.REPO}},
+                 'head':{'ref':r.INSTALL_BRANCH,'sha':self.arming_head,'repo':{'full_name':r.REPO}}}
+        for item in [patch.object(r,'archive_installation_base',return_value=self.previous_main),
+                     patch.object(r,'ARMING_REPAIR_PR',987)]:
+            item.start();self.patches.append(item)
+
+    def test_exact_four_ops_chain_passes_and_archive_blob_unchanged(self):
+        self.assertEqual(r.installation_base(),self.arming_main)
+        self.assertEqual(self.git('rev-parse',self.arming_main+':'+r.ARCHIVE_TEST_PATH),self.test_blob)
+
+    def test_unpinned_arming_repair_fails_closed(self):
+        with patch.object(r,'ARMING_REPAIR_PR',0),self.assertRaises(r.Blocked):r.installation_base()
+
+    def test_wrong_pr_branch_fork_parent_head_rejected(self):
+        original=deepcopy(self.pr)
+        for mutate in [lambda p:p.update(number=986),lambda p:p.update(merged=False),
+                       lambda p:p['head'].update(ref=r.MIDNIGHT_BRANCH),
+                       lambda p:p['head']['repo'].update(full_name='attacker/repo'),
+                       lambda p:p['head'].update(sha=self.approved)]:
+            self.pr=deepcopy(original);mutate(self.pr)
+            with self.assertRaises(r.Blocked):r.installation_base()
+
+    def test_fifth_path_including_archive_or_public_note_rejected(self):
+        for path in [r.ARCHIVE_TEST_PATH,'docs/index.html',r.DOCS_PATH,'scripts/extra.py']:
+            self.git('checkout','--detach',self.arming_head)
+            self.write(path,'unreviewed change')
+            head=self.commit('unexpected fifth change')
+            self.git('checkout','--detach',self.previous_main)
+            self.git('merge','--no-ff','--no-edit',head)
+            self.pr['head']['sha']=head;self.pr['merge_commit_sha']=self.git('rev-parse','HEAD')
+            with self.assertRaisesRegex(r.Blocked,'exactly the four'):r.installation_base()
+
+    def test_original_payload_survives_arming_base_integration(self):
+        self.git('checkout','--detach',self.candidate)
+        self.git('merge','--no-ff','--no-edit',self.arming_main)
+        candidate=self.git('rev-parse','HEAD')
+        r.verify_payload(self.arming_main,candidate)
+        self.assertEqual(r.raw_manifest(self.arming_main,candidate),self.manifest)
 
 
 class HeldDispatchGuards(unittest.TestCase):
@@ -788,7 +845,7 @@ class HeldDispatchGuards(unittest.TestCase):
         ci.assert_not_called()
 
     def installer_event(self):
-        p=pull();p['number']=r.MIDNIGHT_REPAIR_PR;p['head']['ref']=r.INSTALL_BRANCH
+        p=pull();p['number']=r.ARMING_REPAIR_PR;p['head']['ref']=r.INSTALL_BRANCH
         return {'action':'ready_for_review','pull_request':p}
 
     def test_split_installer_loads_actual_proof_before_wait_and_dispatch(self):
@@ -822,6 +879,97 @@ class HeldDispatchGuards(unittest.TestCase):
              self.assertRaisesRegex(r.Blocked,'event head changed'):
             r.complete_installation(self.installer_event())
         wait.assert_not_called()
+
+    def optional_check_fixture(self):
+        base={'head_sha':self.snapshot['head'],'status':'completed','conclusion':'success'}
+        return {'total_count':2,'check_runs':[
+            {**base,'id':1,'name':'Three-mirror publication check','app':{'id':15368,'slug':'github-actions'}},
+            {**base,'id':2,'name':'Workers Builds: sayd-mufid-internal','conclusion':'failure',
+             'app':{'id':85455,'slug':'cloudflare-workers-and-pages'}}]}
+
+    def protection_fixture(self):
+        return {'commit':{'sha':SHA},'protected':True,'protection':{'enabled':True,'required_status_checks':{
+            'enforcement_level':'everyone','contexts':['Three-mirror publication check'],
+            'checks':[{'context':'Three-mirror publication check','app_id':15368}]}}}
+
+    def test_exact_optional_workers_failure_is_read_only(self):
+        with patch.object(r,'api',side_effect=[self.protection_fixture(),self.optional_check_fixture()]) as api:
+            r.exact_optional_workers_failure(self.snapshot)
+        self.assertTrue(all(len(c.args)==1 for c in api.call_args_list))
+
+    def test_optional_allowance_rejects_changed_required_protection(self):
+        for mutate in [lambda b:b.update(protected=False),lambda b:b['commit'].update(sha='c'*40),
+                       lambda b:b['protection'].update(enabled=False),
+                       lambda b:b['protection']['required_status_checks'].update(enforcement_level='non_admins'),
+                       lambda b:b['protection']['required_status_checks'].update(contexts=['other']),
+                       lambda b:b['protection']['required_status_checks'].update(checks=[{'context':'Three-mirror publication check','app_id':None}])]:
+            branch=self.protection_fixture();mutate(branch)
+            with patch.object(r,'api',return_value=branch) as api,self.assertRaises(r.Blocked):
+                r.exact_optional_workers_failure(self.snapshot)
+            self.assertEqual(api.call_count,1)
+
+    def test_optional_allowance_rejects_other_apps_names_or_nonterminal_states(self):
+        for key,value in [('name','Workers Builds: another-worker'),('app',{'id':1,'slug':'cloudflare-workers-and-pages'}),
+                          ('app',{'id':85455,'slug':'imposter'}),('status','in_progress'),('conclusion','cancelled'),
+                          ('head_sha','c'*40)]:
+            checks=self.optional_check_fixture();checks['check_runs'][1][key]=value
+            with patch.object(r,'api',side_effect=[self.protection_fixture(),checks]),self.assertRaises(r.Blocked):
+                r.exact_optional_workers_failure(self.snapshot)
+
+    def test_optional_allowance_rejects_other_failed_or_pending_checks(self):
+        for status,conclusion in [('completed','failure'),('queued',None),('completed','neutral')]:
+            checks=self.optional_check_fixture();checks['check_runs'].append({
+                'id':3,'head_sha':self.snapshot['head'],'name':'Another check','status':status,
+                'conclusion':conclusion,'app':{'id':15368}});checks['total_count']=3
+            with patch.object(r,'api',side_effect=[self.protection_fixture(),checks]),self.assertRaises(r.Blocked):
+                r.exact_optional_workers_failure(self.snapshot)
+
+    def test_optional_allowance_requires_exact_current_publication_check(self):
+        for key,value in [('app',{'id':85455}),('conclusion','skipped'),('head_sha','c'*40),('name','Other')]:
+            checks=self.optional_check_fixture();checks['check_runs'][0][key]=value
+            with patch.object(r,'api',side_effect=[self.protection_fixture(),checks]),self.assertRaises(r.Blocked):
+                r.exact_optional_workers_failure(self.snapshot)
+
+    def test_optional_allowance_rejects_pagination_and_ambiguous_optional_duplicates(self):
+        for kind in ['truncated','limit','duplicate','none']:
+            checks=self.optional_check_fixture()
+            if kind=='truncated':checks['total_count']=3
+            elif kind=='limit':checks['check_runs']*=50;checks['total_count']=100
+            elif kind=='duplicate':checks['check_runs'].append(deepcopy(checks['check_runs'][1]));checks['total_count']=3
+            else:checks['check_runs'].pop();checks['total_count']=1
+            with patch.object(r,'api',side_effect=[self.protection_fixture(),checks]),self.assertRaises(r.Blocked):
+                r.exact_optional_workers_failure(self.snapshot)
+
+    def test_unstable_arming_still_requires_all_ci_and_named_job_before_exception(self):
+        p=pull();p['number']=r.CONTENT_PR;p['head']['sha']=self.snapshot['head'];p['base']['sha']=SHA;p['mergeable_state']='unstable'
+        with patch.object(r,'normal_runs',return_value={run()['path']:run()}),\
+             patch.object(r,'api',side_effect=[{'jobs':[{'name':'Three-mirror publication check','conclusion':'success'}]},p]),\
+             patch.object(r,'exact_optional_workers_failure') as exception:
+            r.readonly_merge_readiness(self.snapshot)
+        exception.assert_called_once_with(self.snapshot)
+        failed=run();failed['conclusion']='failure'
+        with patch.object(r,'normal_runs',return_value={failed['path']:failed}),\
+             patch.object(r,'exact_optional_workers_failure') as exception,self.assertRaises(r.Blocked):
+            r.readonly_merge_readiness(self.snapshot)
+        exception.assert_not_called()
+
+    def test_optional_classification_rechecked_immediately_before_protected_release_merge(self):
+        p=pull();p['number']=r.CONTENT_PR;p['head']['sha']=self.snapshot['head'];p['base']['sha']=SHA;p['mergeable_state']='unstable'
+        merged='d'*40
+        with patch.object(r,'now',return_value=r.START),patch.object(r,'api',side_effect=[p,
+                {'merged':True,'sha':merged},{'parents':[{'sha':SHA},{'sha':self.snapshot['head']}]}]) as api,\
+             patch.object(r,'exact_optional_workers_failure') as exception:
+            self.assertEqual(r.protected_merge(r.CONTENT_PR,self.snapshot['head'],r.CONTENT_BRANCH,SHA,release=True),merged)
+        exception.assert_called_once_with(self.snapshot)
+        self.assertEqual(api.call_args_list[1].args[1:],('PUT', {'sha':self.snapshot['head'],'merge_method':'merge'}))
+
+    def test_new_unknown_failed_check_before_release_blocks_without_put(self):
+        p=pull();p['number']=r.CONTENT_PR;p['head']['sha']=self.snapshot['head'];p['base']['sha']=SHA;p['mergeable_state']='unstable'
+        with patch.object(r,'now',return_value=r.START),patch.object(r,'api',return_value=p) as api,\
+             patch.object(r,'exact_optional_workers_failure',side_effect=r.Blocked('Unrecognized failed check')),\
+             self.assertRaisesRegex(r.Blocked,'Unrecognized failed'):
+            r.protected_merge(r.CONTENT_PR,self.snapshot['head'],r.CONTENT_BRANCH,SHA,release=True)
+        self.assertEqual(api.call_count,1)
 
     def test_held_release_changed_head_is_rejected_before_merge(self):
         p=pull();p['number']=r.CONTENT_PR;p['head']['sha']=SHA
