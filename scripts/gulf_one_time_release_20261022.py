@@ -2,7 +2,9 @@
 """Fixed, fail-closed one-time release. No user-supplied repo, PR, SHA or time.
 
 Installation can merge only its own reviewed four-file PR, on 21 October.
-Release can merge only the pinned Gulf PR, on 22 October, never before 02:00Z.
+Release can merge only the pinned Gulf PR and exact payload manifest, on
+22 October, never before 02:00Z. A reviewed operations-only base merge is allowed;
+the resulting candidate SHA is frozen, checked, rechecked and atomically merged.
 GitHub protection is always enforced by its ordinary merge endpoint.
 """
 import argparse
@@ -20,11 +22,14 @@ from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 REPO = 'unionmed/sayd-magazine'
+API = 'https://api.github.com/repos/' + REPO
 BASE = '06294d8192bc22b11dd2317261140fbbee8ae8f5'
-CONTENT_PR = 0  # Replaced with final reviewed content PR before installation.
-CONTENT_SHA = 'PIN_FINAL_CONTENT_HEAD_BEFORE_INSTALLATION'
+CONTENT_PR = 274
+APPROVED_CONTENT_SHA = '30b68b49168d59d9d66f7735fe74e12d337c1b52'
+PAYLOAD_MANIFEST_SHA256 = '2a5b51e37f5c4def88116683d24c116ed8c27bc837fec6836c96054733a5eb6a'
 CONTENT_BRANCH = 'publish/gulf-tourism-scheduled-20261022'
 INSTALL_BRANCH = 'ops/gulf-native-release-20261022'
+INSTALL_PR = 273
 WORKFLOW = '.github/workflows/gulf-one-time-release-20261022.yml'
 ALLOWED_INSTALL = {WORKFLOW, 'scripts/gulf_one_time_release_20261022.py',
                    'scripts/test_gulf_one_time_release_20261022.py',
@@ -41,6 +46,8 @@ START = datetime(2026, 10, 22, 2, 0, tzinfo=timezone.utc)
 PREFLIGHT = datetime(2026, 10, 22, 1, 0, tzinfo=timezone.utc)
 DEADLINE = datetime(2026, 10, 22, 2, 30, tzinfo=timezone.utc)
 CI_AFTER = datetime(2026, 10, 21, 21, 0, tzinfo=timezone.utc)
+PREFLIGHT_END = datetime(2026, 10, 21, 22, 0, tzinfo=timezone.utc)
+PREFLIGHT_CRON = '3,23 21 21 10 *'
 RECEIPT = {'repository': REPO, 'target_time': START.isoformat(), 'events': []}
 
 
@@ -71,7 +78,7 @@ def record(event, **details):
 def api(path, method='GET', data=None):
     # Writes are intentionally NOT automatically retried after ambiguous errors.
     require(path.startswith('/') and not path.startswith('//'), 'Unsafe API path')
-    request = Request('https://api.github.com/repos/' + REPO + path,
+    request = Request(API + path,
                       data=json.dumps(data).encode() if data is not None else (b'' if method == 'POST' else None),
                       method=method, headers={'Authorization': 'Bearer ' + os.environ['GITHUB_TOKEN'],
                       'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28',
@@ -85,10 +92,94 @@ def api(path, method='GET', data=None):
 
 
 def git(*args):
-    return subprocess.check_output(['git', *args], text=True).strip()
+    return subprocess.check_output(['git', *args], text=True,
+                                   timeout=120 if args and args[0] == 'fetch' else 60).strip()
+
+
+def full_sha(sha):
+    require(isinstance(sha, str) and re.fullmatch('[0-9a-f]{40}', sha) is not None, 'Expected full immutable commit SHA')
+    return sha
+
+
+def raw_manifest(base, head):
+    full_sha(base); full_sha(head)
+    # Exhaustive Git object comparison, not REST's capped/truncated file list.
+    # Raw NUL-delimited bytes pin old/new modes + blob IDs + status + exact paths.
+    return subprocess.check_output(['git', '-c', 'diff.renames=false', 'diff',
+        '--raw', '-z', '--no-abbrev', '--no-renames', '--no-ext-diff', '--no-textconv',
+        '--no-color', '--no-relative', '--ignore-submodules=none', '-O/dev/null', base, head, '--'], timeout=60)
+
+
+def manifest_entries(raw):
+    parts = raw.split(b'\0')
+    require(parts[-1] == b'' and len(parts) % 2 == 1, 'Invalid complete NUL-delimited manifest')
+    entries = []
+    for index in range(0, len(parts)-1, 2):
+        header, path = parts[index:index+2]
+        require(re.fullmatch(rb':[0-7]{6} [0-7]{6} [0-9a-f]{40} [0-9a-f]{40} [AMDT]', header), 'Unexpected manifest record')
+        require(path and not path.startswith(b'/'), 'Invalid manifest path')
+        entries.append((header, path))
+    require(len({path for _, path in entries}) == len(entries), 'Duplicate manifest path')
+    return entries
+
+
+def approved_manifest():
+    raw = raw_manifest(BASE, APPROVED_CONTENT_SHA)
+    require(hashlib.sha256(raw).hexdigest() == PAYLOAD_MANIFEST_SHA256, 'Approved payload manifest hash mismatch')
+    entries = manifest_entries(raw)
+    require(entries and not ({p for _, p in entries} & {p.encode() for p in ALLOWED_INSTALL}), 'Approved payload overlaps operational files')
+    return raw
+
+
+def verify_payload(base, head):
+    full_sha(base); full_sha(head)
+    require(git('merge-base', base, head) == base, 'Candidate is behind the exact installed main')
+    require(git('merge-base', APPROVED_CONTENT_SHA, head) == APPROVED_CONTENT_SHA, 'Approved original payload is not an ancestor of candidate')
+    expected = approved_manifest()
+    actual = raw_manifest(base, head)
+    require(actual == expected, 'Candidate payload differs: extra/missing path, blob, mode or deletion')
+    for path in sorted(ALLOWED_INSTALL):
+        require(git('ls-tree', base, '--', path) == git('ls-tree', head, '--', path), 'Candidate operational file differs from installed main: ' + path)
+    source = subprocess.check_output(['git','show',head+':content/features/gulf-tourism-20261022.json'], timeout=60)
+    require(hashlib.sha256(source).hexdigest() == SOURCE_SHA256, 'Candidate approved article source hash changed')
+    Path('payload-manifest.raw').write_bytes(expected)
+    record('EXACT_APPROVED_PAYLOAD_VERIFIED', head_sha=head, base_sha=base,
+           manifest_sha256=PAYLOAD_MANIFEST_SHA256, changed_paths=len(manifest_entries(expected)))
+
+
+def installation_base():
+    installed = api('/pulls/' + str(INSTALL_PR))
+    require(installed.get('merged') and installed['base']['ref'] == 'main'
+            and installed['base']['repo']['full_name'] == REPO, 'Reviewed installation PR is not merged into this main')
+    sha = full_sha(installed['merge_commit_sha'])
+    git('fetch', 'origin', sha)
+    parents = git('rev-list','--parents','-n','1',sha).split()[1:]
+    require(len(parents) == 2 and parents[0] == BASE, 'Installation merge has unexpected parents')
+    entries = manifest_entries(raw_manifest(BASE, sha))
+    require({p.decode('utf-8') for _,p in entries} == ALLOWED_INSTALL
+            and all(h.endswith(b' A') for h,_ in entries), 'Installation is not exactly the four added operational files')
+    unchanged_site_base(sha)
+    return sha
+
+
+def candidate_snapshot():
+    base = installation_base()
+    require(api('/branches/main')['commit']['sha'] == base, 'Main is not the exact reviewed installation revision')
+    pr = api('/pulls/' + str(CONTENT_PR))
+    head = full_sha(pr['head']['sha'])
+    valid_pr(pr, CONTENT_PR, head, CONTENT_BRANCH)
+    for sha in (APPROVED_CONTENT_SHA, head):
+        git('fetch', 'origin', full_sha(sha))
+    verify_payload(base, head)
+    return {'head':head, 'base':base}
+
+
+def recheck_snapshot(snapshot):
+    require(candidate_snapshot() == snapshot, 'Candidate head/base changed after its exact-payload approval or CI')
 
 
 def valid_pr(pr, number, sha, branch, allow_merged=False):
+    full_sha(sha)
     require(pr['number'] == number, 'Wrong PR number')
     require(pr['head']['sha'] == sha, 'Pinned head changed; requires fresh review')
     require(pr['head']['ref'] == branch, 'Wrong head branch')
@@ -114,7 +205,9 @@ def unchanged_site_base(main):
     require(git('merge-base', BASE, main) == BASE, 'Reviewed base is not an ancestor of main')
     changed = set(filter(None, git('diff', '--name-only', BASE, main).splitlines()))
     require(changed <= ALLOWED_INSTALL, 'Intervening main changes need fresh content review: ' + ', '.join(sorted(changed - ALLOWED_INSTALL)[:10]))
-    require(git('rev-parse', BASE + ':docs') == git('rev-parse', main + ':docs'), 'Public site changed before release preparation')
+    docs_tree = git('rev-parse', main + ':docs')
+    require(git('rev-parse', BASE + ':docs') == docs_tree, 'Public site changed before release preparation')
+    record('PUBLIC_CONTENT_UNCHANGED_FROM_REVIEWED_BASE', base_sha=BASE, candidate_sha=main, docs_tree_sha=docs_tree)
 
 
 def normal_runs(number, sha, required):
@@ -195,34 +288,50 @@ def protected_merge(number, sha, branch, expected_base, release=False):
     return result['sha']
 
 
-def verify_content_merge(sha):
-    # Applied to first and duplicate runs alike: a detected merge race must not
-    # become publishable merely because another cron sees an already merged PR.
+def verify_content_merge(sha, head):
+    # First and duplicate runs both prove the same approved bytes and parents.
+    full_sha(sha); full_sha(head)
+    base = installation_base()
     commit = api('/git/commits/' + sha)
-    parents = [p['sha'] for p in commit['parents']]
-    require(len(parents) == 2 and parents[1] == CONTENT_SHA, 'Merged content does not have the pinned head parent')
-    git('fetch', 'origin', 'main')
-    require(git('rev-parse', 'origin/main') == sha, 'Main moved before Pages request')
-    unchanged_site_base(parents[0])
-    record('MERGED_CONTENT_PARENTS_VERIFIED', merge_sha=sha, base_sha=parents[0], head_sha=CONTENT_SHA)
+    require([p['sha'] for p in commit['parents']] == [base, head], 'Merged content parents differ from installation/candidate')
+    for revision in (APPROVED_CONTENT_SHA, head, sha):
+        git('fetch', 'origin', full_sha(revision))
+    verify_payload(base, head)
+    require(git('rev-parse', sha+':') == git('rev-parse',head+':'), 'Merged tree is not exactly the approved candidate tree')
+    require(api('/branches/main')['commit']['sha'] == sha, 'Main moved before Pages request')
+    record('MERGED_CONTENT_PARENTS_AND_TREE_VERIFIED', merge_sha=sha, base_sha=base, head_sha=head)
 
 
-def pages_build(sha):
+def pages_build(sha, force_request=False):
     latest = api('/pages/builds/latest')
-    if latest.get('commit') == sha and latest['status'] == 'built':
+    previous_url = latest.get('url')
+    build_url_pattern = re.escape(API + '/pages/builds/') + r'[0-9]+'
+    if force_request:
+        require(isinstance(previous_url, str) and re.fullmatch(build_url_pattern, previous_url),
+                'Previous Pages build identity is unavailable for the forced dry run')
+    if not force_request and latest.get('commit') == sha and latest['status'] == 'built':
         record('PAGES_ALREADY_BUILT', sha=sha, build=latest)
         return
-    start = now().replace(microsecond=0)
-    try:
-        result = api('/pages/builds', 'POST')
-        record('PAGES_BUILD_REQUEST_ACCEPTED', sha=sha, response=result)
-    except OSError as error:
-        # No second write: see whether the initial request was accepted.
-        record('PAGES_REQUEST_RESPONSE_UNCERTAIN', reason=str(error))
+    require(api('/branches/main')['commit']['sha'] == sha, 'Main moved immediately before Pages request')
+    if not force_request and latest.get('commit') == sha and latest['status'] in ('queued', 'building'):
+        start = stamp(latest['created_at'])
+        record('PAGES_EXISTING_EXACT_BUILD_PENDING', sha=sha, build=latest)
+    else:
+        start = now().replace(microsecond=0)
+        try:
+            result = api('/pages/builds', 'POST')
+            record('PAGES_BUILD_REQUEST_ACCEPTED', sha=sha, response=result)
+        except OSError as error:
+            # No second write: see whether the initial request was accepted.
+            record('PAGES_REQUEST_RESPONSE_UNCERTAIN', reason=str(error))
     end = time.monotonic() + 900
     while time.monotonic() < end:
         build = api('/pages/builds/latest')
-        if build.get('commit') == sha:
+        new_identity = (not force_request or
+                        (isinstance(build.get('url'), str) and
+                         re.fullmatch(build_url_pattern, build['url']) and
+                         build['url'] != previous_url))
+        if build.get('commit') == sha and new_identity:
             require(build['status'] != 'errored', 'Pages build failed: ' + str(build.get('error')))
             if build['status'] == 'built' and stamp(build['created_at']) >= start:
                 record('PAGES_BUILD_SUCCEEDED', sha=sha, build=build)
@@ -262,9 +371,15 @@ def live_proof(sha, content):
 def install(event):
     require(now().date().isoformat() == '2026-10-21', 'Installation authorized only on 21 October 2026')
     require(os.environ['GITHUB_EVENT_NAME'] == 'pull_request' and event['action'] == 'ready_for_review', 'Installation requires the reviewed ready event')
-    require(CONTENT_PR > 0 and re.fullmatch('[0-9a-f]{40}', CONTENT_SHA), 'Content approval is not pinned')
+    require(CONTENT_PR > 0 and re.fullmatch('[0-9a-f]{40}', APPROVED_CONTENT_SHA), 'Content approval is not pinned')
+    git('fetch', 'origin', full_sha(APPROVED_CONTENT_SHA))
+    approved_manifest()
+    candidate = api('/pulls/' + str(CONTENT_PR))
+    valid_pr(candidate, CONTENT_PR, APPROVED_CONTENT_SHA, CONTENT_BRANCH)
+    record('CONTENT_PIN_CONFIRMED_BEFORE_INSTALL', pr=CONTENT_PR, head_sha=APPROVED_CONTENT_SHA, draft=False)
     original = event['pull_request']
     number, sha = original['number'], original['head']['sha']
+    require(number == INSTALL_PR, 'Only reviewed installation PR 273 is authorized')
     valid_pr(original, number, sha, INSTALL_BRANCH)
     pr = api('/pulls/' + str(number))
     valid_pr(pr, number, sha, INSTALL_BRANCH)
@@ -280,48 +395,77 @@ def install(event):
     merged = protected_merge(number, sha, INSTALL_BRANCH, BASE)
     git('fetch', 'origin', 'main')
     unchanged_site_base(merged)
-    pages_build(merged)
+    pages_build(merged, force_request=True)
     live_proof(merged, content=False)
-    record('INSTALL_AND_UNCHANGED_SITE_DRY_RUN_PASS', merge_sha=merged, content_pr=CONTENT_PR, content_sha=CONTENT_SHA)
+    record('INSTALL_AND_UNCHANGED_SITE_DRY_RUN_PASS', merge_sha=merged, content_pr=CONTENT_PR, approved_payload_head=APPROVED_CONTENT_SHA, requires_today_base_merge=True)
+
+
+def preflight(event):
+    # This job has contents/PR read + Actions write only: no merge or Pages grant.
+    require(os.environ['GITHUB_EVENT_NAME'] == 'schedule' and os.environ['GITHUB_REF'] == 'refs/heads/main', 'Preflight only runs from the native main schedule')
+    require(event.get('schedule') == PREFLIGHT_CRON, 'Wrong preflight schedule')
+    require(CI_AFTER <= now() <= PREFLIGHT_END, 'Outside fixed 21 October UTC / 22 October Beirut preflight window')
+    snapshot = candidate_snapshot()
+    head, base = snapshot['head'], snapshot['base']
+    wait_ci(CONTENT_PR, head, CONTENT_CI, fresh_after=CI_AFTER)
+    recheck_snapshot(snapshot)
+    # Allow GitHub a short read-only interval to recompute mergeability after CI.
+    end = time.monotonic() + 120
+    while True:
+        pr = api('/pulls/' + str(CONTENT_PR))
+        valid_pr(pr, CONTENT_PR, head, CONTENT_BRANCH)
+        require(pr['base']['sha'] == base, 'Base changed during midnight preflight')
+        if pr.get('mergeable') is True and pr.get('mergeable_state') == 'clean':
+            break
+        require(time.monotonic() < end, 'Post-install content PR is not merge-ready: ' + str(pr.get('mergeable_state')))
+        time.sleep(15)
+    record('MIDNIGHT_PREFLIGHT_PASS_NO_PUBLICATION', pr=CONTENT_PR, head_sha=head,
+           base_sha=base, mergeable_state=pr['mergeable_state'], content_merged=False,
+           pages_requested=False, target_time=START.isoformat())
 
 
 def release():
     require(os.environ['GITHUB_EVENT_NAME'] == 'schedule' and os.environ['GITHUB_REF'] == 'refs/heads/main', 'Release only runs from the native main schedule')
     release_window(now())
     pr = api('/pulls/' + str(CONTENT_PR))
-    valid_pr(pr, CONTENT_PR, CONTENT_SHA, CONTENT_BRANCH, allow_merged=True)
+    head = full_sha(pr['head']['sha'])
+    valid_pr(pr, CONTENT_PR, head, CONTENT_BRANCH, allow_merged=True)
     if pr.get('merged'):
         merged = pr['merge_commit_sha']
         record('DUPLICATE_RUN_RECONCILES_EXISTING_MERGE', merge_sha=merged)
     else:
-        git('fetch', 'origin', 'main')
-        main = git('rev-parse', 'origin/main')
-        unchanged_site_base(main)
-        wait_ci(CONTENT_PR, CONTENT_SHA, CONTENT_CI, fresh_after=CI_AFTER, enforce_release_window=True)
+        snapshot = candidate_snapshot()
+        head, base = snapshot['head'], snapshot['base']
+        wait_ci(CONTENT_PR, head, CONTENT_CI, fresh_after=CI_AFTER, enforce_release_window=True)
         while now() < START:
             time.sleep(min(15, (START - now()).total_seconds()))
-        # Run membership is re-read at the last moment, catching canceled/new runs.
-        validate_completed_runs(normal_runs(CONTENT_PR, CONTENT_SHA, CONTENT_CI), CI_AFTER)
-        require(api('/branches/main')['commit']['sha'] == main, 'Main changed after preflight')
-        merged = protected_merge(CONTENT_PR, CONTENT_SHA, CONTENT_BRANCH, main, release=True)
-    verify_content_merge(merged)
+        # Freeze the exact candidate commit after payload proof, then recheck
+        # identity, every byte/mode/path and all CI at the last possible moment.
+        recheck_snapshot(snapshot)
+        validate_completed_runs(normal_runs(CONTENT_PR, head, CONTENT_CI), CI_AFTER)
+        merged = protected_merge(CONTENT_PR, head, CONTENT_BRANCH, base, release=True)
+    verify_content_merge(merged, head)
     pages_build(merged)
     live_proof(merged, content=True)
-    record('RELEASE_SUCCESS', merge_sha=merged, late_seconds=max(0, int((now() - START).total_seconds())), social_posted=False)
-    # Guarded yearly cron entries are already inert outside this date. Disabling
-    # only this exact one-time workflow avoids even subsequent no-op runs.
+    record('RELEASE_SUCCESS', merge_sha=merged, head_sha=head,
+           late_seconds=max(0, int((now() - START).total_seconds())), social_posted=False)
     api('/actions/workflows/' + quote(WORKFLOW.rsplit('/', 1)[-1]) + '/disable', 'PUT')
     record('ONE_TIME_WORKFLOW_DISABLED')
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('mode', choices=['install', 'release'])
+    parser.add_argument('mode', choices=['install', 'preflight', 'release'])
     args = parser.parse_args()
     require(os.environ.get('GITHUB_REPOSITORY') == REPO, 'Wrong execution repository')
     event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
     try:
-        install(event) if args.mode == 'install' else release()
+        if args.mode == 'install':
+            install(event)
+        elif args.mode == 'preflight':
+            preflight(event)
+        else:
+            release()
     except Exception as error:
         record('BLOCKED_NO_BYPASS', reason=str(error), mode=args.mode)
         raise

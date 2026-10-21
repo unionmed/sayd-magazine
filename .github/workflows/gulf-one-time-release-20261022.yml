@@ -8,6 +8,8 @@ on:
       - 'scripts/test_gulf_one_time_release_20261022.py'
       - 'notes/gulf-native-release-20261022.md'
   schedule:
+    # Preflight only: 00:03/00:23 Beirut on 22 October; never merges/deploys.
+    - cron: '3,23 21 21 10 *'
     # UTC: prestart 04:17/04:37/04:57 Beirut, recovery 05:07/05:17.
     # Python additionally pins the YEAR/date and forbids merging before 05:00.
     - cron: '17,37,57 1 22 10 *'
@@ -24,9 +26,11 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        timeout-minutes: 5
         with:
           persist-credentials: false
       - uses: actions/setup-python@v5
+        timeout-minutes: 3
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s scripts -p test_gulf_one_time_release_20261022.py -v
@@ -46,14 +50,17 @@ jobs:
       actions: write
     steps:
       - uses: actions/checkout@v4
+        timeout-minutes: 5
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@v5
+        timeout-minutes: 3
         with:
           python-version: '3.12'
-      - run: pip install lxml==5.3.2
+      - run: pip install --timeout 20 --retries 2 lxml==5.3.2
+        timeout-minutes: 3
       - name: Merge only reviewed workflow PR, then redeploy unchanged public content
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -65,9 +72,52 @@ jobs:
           path: |
             release-receipt.json
             live-publication-receipt.json
+            payload-manifest.raw
+          retention-days: 90
+  midnight-preflight:
+    if: github.event_name == 'schedule' && github.event.schedule == '3,23 21 21 10 *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+      pull-requests: read
+      actions: write
+    steps:
+      - name: Restrict preflight to its fixed UTC date and year
+        id: date
+        run: |
+          if [ "$(date -u +%F)" = '2026-10-21' ]; then
+            echo 'eligible=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'eligible=false' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        timeout-minutes: 5
+        if: steps.date.outputs.eligible == 'true'
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        timeout-minutes: 3
+        if: steps.date.outputs.eligible == 'true'
+        with:
+          python-version: '3.12'
+      - name: Rerun pinned real-date CI and report readiness without publication permissions
+        if: steps.date.outputs.eligible == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/gulf_one_time_release_20261022.py preflight
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.date.outputs.eligible == 'true'
+        with:
+          name: gulf-midnight-preflight-${{ github.run_id }}
+          path: |
+            release-receipt.json
+            payload-manifest.raw
           retention-days: 90
   release:
-    if: github.event_name == 'schedule'
+    if: github.event_name == 'schedule' && github.event.schedule != '3,23 21 21 10 *'
     runs-on: ubuntu-latest
     timeout-minutes: 100
     permissions:
@@ -87,16 +137,19 @@ jobs:
             echo 'eligible=false' >> "$GITHUB_OUTPUT"
           fi
       - uses: actions/checkout@v4
+        timeout-minutes: 5
         if: steps.date.outputs.eligible == 'true'
         with:
           ref: main
           fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@v5
+        timeout-minutes: 3
         if: steps.date.outputs.eligible == 'true'
         with:
           python-version: '3.12'
-      - run: pip install lxml==5.3.2
+      - run: pip install --timeout 20 --retries 2 lxml==5.3.2
+        timeout-minutes: 3
         if: steps.date.outputs.eligible == 'true'
       - name: Fresh real-date checks, wait until 05:00 Beirut, normal merge and verified Pages release
         if: steps.date.outputs.eligible == 'true'
@@ -110,4 +163,5 @@ jobs:
           path: |
             release-receipt.json
             live-publication-receipt.json
+            payload-manifest.raw
           retention-days: 90
