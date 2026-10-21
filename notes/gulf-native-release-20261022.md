@@ -53,10 +53,10 @@ that updated content SHA literally into a new main workflow commit creates an
 endless base-update loop. Instead this workflow pins:
 
 - content PR **#274**, original immutable commit
-  `30b68b49168d59d9d66f7735fe74e12d337c1b52` (tree
-  `7a1026658558ad5133d3bec11ada11c56363a8a9`) and base `06294d819…`;
-- SHA256 `2a5b51e37f5c4def88116683d24c116ed8c27bc837fec6836c96054733a5eb6a`
-  of its **complete raw Git diff**: 1,099 paths, 192,695 bytes, with full old/new
+  `3f675e6596614caa1eefbedaf79009e1afa51e36` (tree
+  `fefb9517693d6496ef9e9fbbc152155901b978c8`) and base `06294d819…`;
+- SHA256 `7a8ab705288cf79b39ed666bc4700c5e1cbce581b65e884406466401e6431472`
+  of its **complete raw Git diff**: 1,100 paths, 192,829 bytes, with full old/new
   blob IDs, old/new modes, status and NUL-delimited exact paths;
 - source JSON SHA256 `4952d644…a7a40` independently reviewed for all three languages.
 
