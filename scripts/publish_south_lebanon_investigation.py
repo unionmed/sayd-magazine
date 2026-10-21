@@ -60,7 +60,7 @@ FIRE_CAP_EN = "Fires consuming vegetation on a rocky hill near inhabited areas i
 
 AR_TICKER_REST = [
     ("سماء-الكوكب-تفقد-توازنها-تقرير-بيرد-لايف", "بيرد لايف: 45٪ من الطيور المهاجرة في العالم في انحدار مستمر"),
-    (CURLEW_AR, "مسارات الهجرة فقدت 7 أنواع خلال 150 عاماً… والكروان رفيع المنقار آخرها"),
+    (CURLEW_AR, "7 أنواع من الطيور المهاجرة انقرضت أو يُرجَّح انقراضها خلال 150 عاماً"),
     (
         "العد-التنازلي-لختام-موسم-الطائف-كأس-الملك-فيصل-واليوم-الوطني",
         "الطائف | السبت 26 أيلول: أمسية الختام بـ«كأس اليوم الوطني» للخيول المهجّنة على مضمار الحَوِيّة",
@@ -84,7 +84,7 @@ AR_TICKER_REST = [
 ]
 EN_TICKER_REST = [
     ("skies-losing-balance-birdlife-flyways-report", "BirdLife: 45% of the world’s migratory birds are in continuous decline"),
-    (CURLEW_EN, "Migration routes lost 7 species in 150 years… the Slender-billed Curlew the latest"),
+    (CURLEW_EN, "Seven migratory bird species extinct or presumed extinct in 150 years"),
     (
         "taif-season-finale-countdown-king-faisal-national-day-cups-hawiyah",
         "Taif | Saturday evening closes the season with the National Day Cup for Thoroughbreds at Al-Hawiyah",
@@ -187,16 +187,16 @@ def write_articles() -> None:
     ar_src = (DOCS / "posts" / CURLEW_AR / "index.html").read_text(encoding="utf-8")
     ar = replace_body(ar_src, ar_body())
     ar = ar.replace(
-        "<title>كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟ — مجلة صيد</title>",
+        "<title>7 طيور مهاجرة انقرضت أو يُرجَّح انقراضها خلال 150 عاماً — مجلة صيد</title>",
         f"<title>{AR_TITLE} — مجلة صيد</title>",
         1,
     )
     ar = ar.replace(
-        'content="تحقيق بيئي يرصد تشريح الفقد استناداً إلى أحدث بيانات منظمة بيردلايف إنترناشونال."',
+        'content="تحقيق بيئي في مصير 7 أنواع من الطيور المهاجرة انقرضت أو يُرجَّح انقراضها، استناداً إلى بيانات منظمة بيردلايف إنترناشونال."',
         f'content="{AR_EXCERPT}"',
     )
     ar = ar.replace(
-        "<h1>كيف فقدت مسارات الهجرة 7 من طيورها خلال 150 عاماً؟</h1>",
+        "<h1>7 طيور مهاجرة انقرضت أو يُرجَّح انقراضها خلال 150 عاماً</h1>",
         f"<h1>{AR_TITLE}</h1>",
         1,
     )
@@ -232,16 +232,16 @@ def write_articles() -> None:
     en_src = (DOCS / "en" / "posts" / CURLEW_EN / "index.html").read_text(encoding="utf-8")
     en = replace_body(en_src, en_body())
     en = en.replace(
-        "<title>How Did Migration Routes Lose Seven of Their Birds in 150 Years? — Sayd Magazine</title>",
+        "<title>Seven Migratory Birds Extinct or Presumed Extinct in 150 Years — Sayd Magazine</title>",
         f"<title>{EN_TITLE} — Sayd Magazine</title>",
         1,
     )
     en = en.replace(
-        'content="An environmental investigation mapping the anatomy of loss, drawn from the latest data from BirdLife International."',
+        'content="An environmental investigation into seven migratory bird species that are extinct or presumed extinct, drawing on BirdLife International data."',
         f'content="{EN_EXCERPT}"',
     )
     en = en.replace(
-        "<h1>How Did Migration Routes Lose Seven of Their Birds in 150 Years?</h1>",
+        "<h1>Seven Migratory Birds Extinct or Presumed Extinct in 150 Years</h1>",
         f"<h1>{EN_TITLE}</h1>",
         1,
     )

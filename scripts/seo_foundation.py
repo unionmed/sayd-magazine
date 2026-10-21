@@ -626,16 +626,16 @@ EN_SLUG_BY_FR = {fr: en for en, fr in FR_SLUG_BY_EN.items()}
 # Page metadata. og:title / og:description stay distinct from <title> and meta description.
 OG_OVERRIDES = {
     "posts/رادار-صيد-العربي-سبتمبر-2026/index.html": {
-        "title": "رادار صيد العربي | سبتمبر 2026: توقيف 50 صيادًا وإنقاذ آلاف الطيور",
-        "description": "توقيف 50 صيادًا وإنقاذ آلاف الطيور في حصيلة عربية شهرية للمخالفات والمضبوطات والإنقاذ وتنظيم الصيد.",
+        "title": "رادار صيد العربي | سبتمبر 2026: مخالفات صيد بري وبحري وإنقاذ طيور وقضايا اتجار",
+        "description": "مخالفات صيد بري وبحري وإنقاذ طيور وقضايا اتجار في حصيلة عربية شهرية للمخالفات والمضبوطات والإنقاذ وتنظيم الصيد.",
     },
     "en/posts/sayd-arab-radar-september-2026/index.html": {
-        "title": "Sayd Arab Radar | September 2026: 50 hunters detained and thousands of birds rescued",
-        "description": "Fifty hunters detained and thousands of birds rescued in a monthly Arab record of enforcement, rescue and hunting regulation.",
+        "title": "Sayd Arab Radar | September 2026: Hunting and Fishing Violations, Bird Rescues and Trafficking Cases",
+        "description": "Hunting and fishing violations, bird rescues and wildlife trafficking cases in a monthly Arab record of enforcement and regulation.",
     },
     "fr/posts/radar-arabe-sayd-septembre-2026/index.html": {
-        "title": "Radar arabe de Sayd | Septembre 2026 : 50 chasseurs interpellés et des milliers d’oiseaux sauvés",
-        "description": "Cinquante chasseurs interpellés et des milliers d’oiseaux sauvés dans un relevé mensuel arabe des infractions, sauvetages et mesures de chasse.",
+        "title": "Radar arabe de Sayd | Septembre 2026 : infractions à la chasse et à la pêche, sauvetages d’oiseaux et affaires de trafic",
+        "description": "Infractions à la chasse et à la pêche, sauvetages d’oiseaux et trafic d’animaux sauvages dans un relevé mensuel arabe.",
     },
     "posts/خريف-الصيد-العربي-2026/index.html": {
         "title": "من الأطلس إلى البحر الأحمر… خريف الصيد العربي 2026",

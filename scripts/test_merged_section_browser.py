@@ -55,6 +55,10 @@ def capture(page,locator,dest):
 def run(base,out):
     out.mkdir(parents=True,exist_ok=True)
     errors=[];report=[];screens=[]
+    from test_combined_hunting_equestrian import APPROVED_THREE_SLUGS, approved_three_articles
+    current_config=json.loads((ROOT/'content/homepage.json').read_text())
+    approved_three=current_config['ia_slots']['main']==APPROVED_THREE_SLUGS[0]
+    publication=approved_three_articles() if approved_three else None
     # Baseline uses exact original homepage bytes. Shared historical CSS/JS/media
     # must be unchanged; separate newly-added styles are never linked by baseline.
     old_contract=json.loads(subprocess.check_output(['git','show',base+':content/publication-contract.json'],cwd=ROOT))
@@ -96,6 +100,8 @@ def run(base,out):
                     else:
                         request.abort()
                 context.route('**/*',route_local)
+                from test_honey_buzzard_science_20261021 import test_honey_browser
+                test_honey_browser(context, new_url, out)
                 page=context.new_page();before=context.new_page()
                 for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
                     for width in WIDTHS:
@@ -199,15 +205,29 @@ def run(base,out):
                             path=out/f'interviews-{lang}-{width}.png';capture(page,page.locator('section.home-section').nth(1),path);screens.append(path)
                             if width in (1440,390,320):
                                 path=out/f'combined-{lang}-{width}.png';capture(page,page.locator('section.home-section').first,path);screens.append(path)
-                    # Approved interview lead and body, in each language and viewport.
+                    # The approved North lead moves Shireen to first side card;
+                    # retain all original Shireen body/photo/update checks below.
                     for article_width in (390,1440):
                         page.set_viewport_size({'width':article_width,'height':1000})
                         page.goto(new_url+'/'+prefix+'index.html',wait_until='networkidle')
                         lead=page.locator('.feature-lead[data-hero="shireen"]')
-                        require(lead.count()==1,'Approved Shireen main lead missing')
-                        require('shireen-monitoring-new.jpg' in lead.locator('img').get_attribute('src'),'Approved cover mismatch')
+                        require(lead.count()==1,'Approved lead layout missing')
+                        if approved_three:
+                            north=publication[0]
+                            require(unquote(urlsplit(lead.locator('h2 a').get_attribute('href')).path)==f"posts/{north['slugs'][lang]}/index.html",'Approved North main lead missing')
+                            require(lead.locator('h2 a').inner_text()==north['translations'][lang]['title'],'Approved North headline mismatch')
+                            require(lead.locator('img').get_attribute('src').endswith(north['photos'][0]['path']),'Approved North cover mismatch')
+                            lead.locator('img').evaluate('(img)=>img.decode()')
+                            require(lead.locator('img').evaluate('(img)=>img.complete&&img.naturalWidth>0'),'North cover failed to load')
+                            path=out/f'north-home-{lang}-{article_width}.png';capture(page,lead,path);screens.insert(0,path)
+                            require(page.locator('.feature-stack > article').count()==4,'Four side cards required')
+                            lead=page.locator('.feature-stack > article').first
+                            article=lead.locator('h3 a').get_attribute('href')
+                        else:
+                            article=lead.locator('h2 a').get_attribute('href')
+                        require(unquote(urlsplit(article).path)==f"posts/{local_slug('شيرين-بو-رفول-مكافحة-الصيد-الجائر',lang)}/index.html",'Shireen must remain in its exact approved slot')
+                        require('shireen-monitoring-new.jpg' in lead.locator('img').get_attribute('src'),'Approved Shireen cover mismatch')
                         path=out/f'shireen-home-{lang}-{article_width}.png';capture(page,lead,path);screens.insert(0,path)
-                        article=lead.locator('h2 a').get_attribute('href')
                         page.goto(new_url+'/'+prefix+article,wait_until='networkidle')
                         require(page.locator('article.article-content figure').count()==8,'Eight approved article photographs required')
                         updates=json.loads((ROOT/'content/article-updates.json').read_text())['articles']

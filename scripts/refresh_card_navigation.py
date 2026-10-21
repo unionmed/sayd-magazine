@@ -18,7 +18,7 @@ def refresh(text, lang='ar', depth=0):
     def footer(match):
         section = re.sub(r'<li>\s*<a\b[^>]*>\s*(?:من نحن|About us|التواصل|Contact|الترخيص|License)\s*</a>\s*</li>\s*', '', match[0])
         section = re.sub(r'<a\b[^>]*class="footer-partner"[^>]*>.*?</a>', '', section, flags=re.S)
-        section = re.sub(r'(<h3>\s*(?:الأبواب|Doors)\s*</h3>\s*<ul>).*?(</ul>)',
+        section = re.sub(r'(<h3>\s*(?:الأبواب|Doors|Sections)\s*</h3>\s*<ul>).*?(</ul>)',
                          lambda m: m[1] + site_ia.footer_doors_html(lang, depth) + m[2], section, flags=re.S)
         section = re.sub(r'<p>مجلة أسياد الطبيعة في البر والبحر والجو[^<]*</p>',
                          '<p>مجلة أسياد الطبيعة في البر والبحر والجو</p>', section)

@@ -116,6 +116,47 @@ def run(base=None):
             omayed_aliases.extend(matching)
         assert len(omayed_aliases)==len(set(omayed_aliases))==3
         added+=3
+    # Exact approved North/Science/Saluki package: nine article headers and
+    # nine unique canonical short-link shells, not arbitrary new-page capacity.
+    package=ROOT/'content/features/approved-three-20261020.json'
+    if package.exists():
+        from test_combined_hunting_equestrian import approved_three_articles
+        from urllib.parse import unquote
+        links=json.loads((DOCS/'s/links.json').read_text());three_aliases=[]
+        for a in approved_three_articles():
+            for lang in ('ar','en','fr'):
+                route='/'+('' if lang=='ar' else lang+'/')+'posts/'+a['slugs'][lang]+'/'
+                page=html.parse(str(DOCS/route.lstrip('/')/'index.html'))
+                assert len(page.xpath('//nav[@class="header-social"]'))==1
+                matching=[v for k,v in links.items() if unquote(k)==route]
+                assert len(matching)==1
+                shell=html.parse(str(DOCS/matching[0].strip('/')/'index.html'))
+                assert not shell.xpath('//nav[@class="header-social"]')
+                assert [unquote(url) for url in shell.xpath('//link[@rel="canonical"]/@href')]==['https://sayd-magazine.com'+route]
+                three_aliases.extend(matching)
+        assert len(three_aliases)==len(set(three_aliases))==9
+        added+=9
+    # The approved Science-only article adds exactly three mirrored headers
+    # and three unique canonical redirect shells. Keep the existing totals,
+    # per-page markup, and historical-route preservation assertions intact.
+    honey=ROOT/'content/features/honey-buzzard-science-20261021.json'
+    if honey.exists():
+        from test_honey_buzzard_science_20261021 import package as honey_package
+        from urllib.parse import unquote
+        a=honey_package()
+        links=json.loads((DOCS/'s/links.json').read_text());honey_aliases=[]
+        for lang in ('ar','en','fr'):
+            route='/'+('' if lang=='ar' else lang+'/')+'posts/'+a['slugs'][lang]+'/'
+            page=html.parse(str(DOCS/route.lstrip('/')/'index.html'))
+            assert len(page.xpath('//nav[@class="header-social"]'))==1
+            matching=[v for k,v in links.items() if unquote(k)==route]
+            assert len(matching)==1
+            shell=html.parse(str(DOCS/matching[0].strip('/')/'index.html'))
+            assert not shell.xpath('//nav[@class="header-social"]')
+            assert [unquote(url) for url in shell.xpath('//link[@rel="canonical"]/@href')]==['https://sayd-magazine.com'+route]
+            honey_aliases.extend(matching)
+        assert len(honey_aliases)==len(set(honey_aliases))==3
+        added+=3
     assert groups==1037+added and headerless==823+added,(groups,headerless)
     print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact social markup, Alexandra shown once under Interviews with original URLs')
 

@@ -9,6 +9,7 @@ import html
 import json
 import os
 import re
+from datetime import date
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from lxml import html as dom
@@ -41,6 +42,13 @@ def channel_config():
         assert set(v['titles'])=={'ar','en','fr'} and all(v['titles'].values())
         assert v['image'].startswith('data:image/jpeg;base64,')
     return c
+
+
+def channel_date(published_at, lang):
+    """Localize the original publication day without changing date or order."""
+    from article_dates import MONTHS
+    published = date.fromisoformat(published_at[:10])
+    return f'{published.day} {MONTHS[lang][published.month-1]} {published.year}'
 
 
 def local_slug(slug, lang):
@@ -301,7 +309,7 @@ def refresh(path,lang):
                 parts.append(f'<div class="sayd-tv-group" data-tv-group="{group}"><div style="display:flex;justify-content:space-between;align-items:center;margin:18px 0 12px"><h3>{label}</h3><a href="{base}#{group}">{labels[2]}</a></div><div class="home-door-grid">')
                 if group=='sayd-channel':
                     for v in channel['videos'][:channel['home_limit']]:
-                        item=dict(title=v['titles'][lang],date=v['date'],image=v['image'],alt=v['titles'][lang],href=f"https://www.youtube.com/watch?v={v['id']}")
+                        item=dict(title=v['titles'][lang],date=channel_date(v['published_at'],lang),image=v['image'],alt=v['titles'][lang],href=f"https://www.youtube.com/watch?v={v['id']}")
                         card=render_card(v['id'],item).replace('<article class="card">',f'<article class="card" data-video-id="{v["id"]}">',1)
                         parts.append(card)
                 else:parts.extend(render_card(*data(s)) for s in sections[door])

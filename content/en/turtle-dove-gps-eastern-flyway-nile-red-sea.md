@@ -10,7 +10,7 @@ A migratory route is more than a line across a map. For the European Turtle-dove
 
 A peer-reviewed study published online in Bird Conservation International on 8 October 2026 describes GPS tracking of 26 turtle-doves tagged in Azerbaijan and the eastern Mediterranean. Sixteen were recorded beginning southward migration; two provided particularly extensive tracks reaching Sudan and South Sudan.
 
-The recorded journeys included non-stop movements of daily migration movements of up to 752 kilometres, while the longest documented continuous flight covered 719 kilometres and crossings of the Red Sea and desert. Farmland along the Nile emerged as an important stopover environment, particularly in Egypt and Sudan.
+During active migration, the tracked turtle-doves covered up to 752 kilometres in a day. Among birds with sufficiently detailed tracking data, the longest measured continuous flight covered 719 kilometres in 13 hours. Their routes included crossings of the Red Sea and desert. Farmland along the Nile emerged as an important stopover environment, particularly in Egypt and Sudan.
 
 The conservation implication is regional: protecting breeding grounds cannot substitute for maintaining stopover habitats along an entire flyway. Hunting pressure and habitat change must be considered across borders.
 

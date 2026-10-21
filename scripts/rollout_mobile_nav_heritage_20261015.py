@@ -124,7 +124,7 @@ def nav_replace(text,path):
             text,count=1,flags=re.S)
         replacements+=1
     # Footer has its own visual chrome and headings: modify link list only.
-    pattern=r'(<h3>\s*(?:الأبواب|Doors|Rubriques)\s*</h3>\s*<ul>).*?(</ul>)'
+    pattern=r'(<h3>\s*(?:الأبواب|Doors|Sections|Rubriques)\s*</h3>\s*<ul>).*?(</ul>)'
     if re.search(pattern,text,re.S):
         from html import escape
         links=['<li>'+x+'</li>' for x in section_links(path,'desktop')]

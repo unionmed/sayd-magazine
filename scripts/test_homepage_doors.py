@@ -1,7 +1,7 @@
 """Regression checks for the three mirrored homepages and fail-closed rules."""
 from copy import deepcopy
 from check_publication_contract import check
-from refresh_homepage_doors import refresh, DOCS, DOORS, config, validate_config, channel_config
+from refresh_homepage_doors import refresh, ROOT, DOCS, DOORS, config, validate_config, channel_config, channel_date
 
 def test_memory_removal():
     """Only the Memory display is removed; every legacy article survives."""
@@ -22,8 +22,52 @@ def test_memory_removal():
         assert (DOCS/'posts'/slug/'index.html').is_file(), slug
 
 
+def test_localized_channel_dates_and_footer():
+    """Translate shared UI only; source publication days remain authoritative."""
+    from lxml import html
+    cases = {
+        '2026-10-16': ('16 تشرين الأول 2026', '16 October 2026', '16 octobre 2026'),
+        '2026-10-02T17:37:10+00:00': ('2 تشرين الأول 2026', '2 October 2026', '2 octobre 2026'),
+        '2026-09-18T22:33:24+00:00': ('18 أيلول 2026', '18 September 2026', '18 septembre 2026'),
+        '2024-02-29': ('29 شباط 2024', '29 February 2024', '29 février 2024'),
+    }
+    for published_at, expected in cases.items():
+        assert tuple(channel_date(published_at, lang) for lang in ('ar','en','fr')) == expected
+    # Do not use the legacy display string or convert the source day to another zone.
+    for invalid in ('', '2026-02-29', '16 October 2026'):
+        try:channel_date(invalid, 'en')
+        except ValueError:pass
+        else:raise AssertionError('Invalid publication date accepted')
+
+    footer_pages = 0
+    for path in (DOCS/'en').rglob('*.html'):
+        tree = html.fromstring(path.read_text())
+        footer = tree.xpath('//footer[@class="site-footer"]')
+        if not footer:continue
+        # One legacy page lacks both canonical drafts. Permit its old label
+        # only while those sources remain absent; a corrected label always passes.
+        deferred = DOCS/'en/posts/how-farmers-protect-migratory-birds-this-autumn/index.html'
+        old_label = footer[0].xpath('.//h3[text()="Doors"]')
+        if old_label:
+            assert path == deferred, path
+            assert not (ROOT/'content/en/how-farmers-protect-migratory-birds-this-autumn.md').exists()
+            assert not (ROOT/'content/posts/كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف.md').exists()
+            assert not footer[0].xpath('.//h3[text()="Sections"]'), path
+        else:
+            assert footer[0].xpath('.//h3[text()="Sections"]'), path
+        footer_pages += 1
+    assert footer_pages > 0
+    from apply_site_ia import rewrite_chrome, _en_door_page
+    import site_ia
+    fixture = ('<footer class="site-footer"><div class="footer-col"><h3>Doors</h3><ul></ul></div>'
+               '<div class="footer-col"><h3>Magazine</h3><ul></ul></div></footer>')
+    assert '<h3>Sections</h3>' in rewrite_chrome(fixture, DOCS/'en/posts/example/index.html')
+    assert '<h3>Sections</h3>' in _en_door_page(site_ia.DOORS[0], [])
+
+
 def test_homepages():
     test_memory_removal()
+    test_localized_channel_dates_and_footer()
     from test_hunting_reels import check_reels
     check_reels()
     # Side-card overflow must enter Updates before becoming eligible for a door.
@@ -57,12 +101,18 @@ def test_homepages():
     p=DOCS/'en/index.html';original=p.read_text()
     video_id=channel_config()["videos"][0]["id"]
     assert f'data-video-id="{video_id}"' in original, "Channel fixture must exist"
-    for wrong in [original.replace('data-tv-group="sayd-channel"','data-tv-group="wrong"',1),original.replace(f'data-video-id="{video_id}"','data-video-id="missing"',1)]:
+    first_video=channel_config()['videos'][0]
+    localized_date=channel_date(first_video['published_at'],'en')
+    import re
+    video_pattern=r'(<article class="card" data-video-id="'+re.escape(video_id)+r'">.*?<div class="meta">)'+re.escape(localized_date)+r'(</div>)'
+    wrong_date=re.sub(video_pattern,lambda m:m[1]+first_video['published_at'][:10]+m[2],original,count=1,flags=re.S)
+    assert wrong_date!=original, 'Localized channel date fixture must exist'
+    for wrong in [original.replace('data-tv-group="sayd-channel"','data-tv-group="wrong"',1),original.replace(f'data-video-id="{video_id}"','data-video-id="missing"',1),wrong_date]:
         try:
             p.write_text(wrong)
             try:check()
             except AssertionError:pass
-            else:raise AssertionError('Invalid channel structure accepted')
+            else:raise AssertionError('Invalid channel structure or unlocalized date accepted')
         finally:p.write_text(original)
     # A displaced recent hunting story enters its door, replacing the oldest card.
     from homepage_hunting_rotation import select, candidates, expected
