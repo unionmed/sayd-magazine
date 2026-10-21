@@ -1,6 +1,6 @@
 # One-time Gulf release — exact optional-check arming reconciliation
 
-## Current narrowly scoped repair
+## Current narrowly scoped repair — PR277
 
 PR276's reviewed five-file midnight repair is installed at exact main
 `6704030d143263124d099a567cb6c3f51acbf62e`, reviewed head
@@ -35,7 +35,9 @@ the named required job succeed, PR is mergeable, required protection exactly
 matches the reviewed context/app/enforcement, and exhaustive bounded current-head
 check inspection finds exactly that one terminal optional Workers failure.
 Other failed, pending, canceled, neutral, missing, foreign-head, spoofed-app or
-truncated checks fail closed. The same classification runs again immediately
+truncated checks fail closed. Legacy commit statuses must likewise be exhaustive,
+current-head and either absent or all successful (an empty aggregate pending is
+not itself a failing status). The same classification runs again immediately
 before a content merge if state is unstable. Normal GitHub protected expected-SHA
 merge, exact payload/base proofs,02:00 no-earlier gate and02:30 cutoff are unchanged.
 No external check is rerun, hidden or overwritten.

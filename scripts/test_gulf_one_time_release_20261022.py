@@ -893,9 +893,26 @@ class HeldDispatchGuards(unittest.TestCase):
             'checks':[{'context':'Three-mirror publication check','app_id':15368}]}}}
 
     def test_exact_optional_workers_failure_is_read_only(self):
-        with patch.object(r,'api',side_effect=[self.protection_fixture(),self.optional_check_fixture()]) as api:
+        with patch.object(r,'api',side_effect=[self.protection_fixture(),self.optional_check_fixture(),
+                {'sha':self.snapshot['head'],'total_count':0,'statuses':[],'state':'pending'}]) as api:
             r.exact_optional_workers_failure(self.snapshot)
         self.assertTrue(all(len(c.args)==1 for c in api.call_args_list))
+
+    def test_optional_allowance_checks_legacy_statuses_without_trusting_empty_aggregate(self):
+        for state in ['failure','pending','error']:
+            status={'sha':self.snapshot['head'],'total_count':1,'statuses':[{'state':state}]}
+            with patch.object(r,'api',side_effect=[self.protection_fixture(),self.optional_check_fixture(),status]),\
+                 self.assertRaisesRegex(r.Blocked,'legacy commit status'):
+                r.exact_optional_workers_failure(self.snapshot)
+        for status in [{'sha':'c'*40,'total_count':0,'statuses':[]},
+                       {'sha':self.snapshot['head'],'total_count':1,'statuses':[]},
+                       {'sha':self.snapshot['head'],'total_count':100,'statuses':[{'state':'success'}]*100}]:
+            with patch.object(r,'api',side_effect=[self.protection_fixture(),self.optional_check_fixture(),status]),\
+                 self.assertRaisesRegex(r.Blocked,'Legacy status inspection'):
+                r.exact_optional_workers_failure(self.snapshot)
+        status={'sha':self.snapshot['head'],'total_count':1,'statuses':[{'state':'success'}]}
+        with patch.object(r,'api',side_effect=[self.protection_fixture(),self.optional_check_fixture(),status]):
+            r.exact_optional_workers_failure(self.snapshot)
 
     def test_optional_allowance_rejects_changed_required_protection(self):
         for mutate in [lambda b:b.update(protected=False),lambda b:b['commit'].update(sha='c'*40),

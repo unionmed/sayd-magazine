@@ -46,7 +46,7 @@ ARCHIVE_TEST_PATH = 'scripts/test_combined_archive_navigation.py'
 ARCHIVE_TEST_BLOB = '6c2b527032a953a927d8c8bf89eba6d92f421f81'
 MIDNIGHT_MERGE_SHA = '6704030d143263124d099a567cb6c3f51acbf62e'
 MIDNIGHT_HEAD_SHA = 'd1fc98ee84283a21ed8e2892de8929b93ae15b31'
-ARMING_REPAIR_PR = 0  # Pinned after creation of the exact draft repair.
+ARMING_REPAIR_PR = 277  # Exact reviewed arming repair; no arbitrary PR input.
 REPAIR_CONTENT_SHA = '6f5785485453e064c2296b58eaa0928783049a07'
 WORKFLOW = '.github/workflows/gulf-one-time-release-20261022.yml'
 ALLOWED_INSTALL = {WORKFLOW, 'scripts/gulf_one_time_release_20261022.py',
@@ -393,6 +393,11 @@ def exact_optional_workers_failure(snapshot):
             and publication[0]['status'] == 'completed' and publication[0]['conclusion'] == 'success',
             'Required current-head publication check missing or not successful')
     require(len(optional) == 1, 'Expected exactly one known optional Workers failure')
+    statuses = api('/commits/' + snapshot['head'] + '/status?per_page=100')
+    require(statuses['sha'] == snapshot['head'] and statuses['total_count'] == len(statuses['statuses'])
+            and statuses['total_count'] < 100, 'Legacy status inspection is incomplete or wrong-head')
+    require(all(status['state'] == 'success' for status in statuses['statuses']),
+            'Failed or pending legacy commit status; arming remains blocked')
     record('EXACT_OPTIONAL_WORKERS_FAILURE_NOT_A_REQUIRED_PUBLICATION_CHECK',
            head_sha=snapshot['head'], check_id=optional[0], protection_unchanged=True)
 
