@@ -1,4 +1,62 @@
-# One-time Gulf release — fixed midnight repair and native held execution
+# One-time Gulf release — exact optional-check arming reconciliation
+
+## Current narrowly scoped repair — PR277
+
+PR276's reviewed five-file midnight repair is installed at exact main
+`6704030d143263124d099a567cb6c3f51acbf62e`, reviewed head
+`d1fc98ee84283a21ed8e2892de8929b93ae15b31`. Native installer39688915695
+passed its actual token CI reruns, ordinary protected merge, distinct Pages build
+1303832812 and unchanged live AR/EN/FR proof at22:51:48 UTC. Immutable dry-run
+artifact12388400886 SHA25653b3f828cf9e89038dbe5ce4674e4fa82b3223806b99b01ea5cfa36c5bc841c6.
+
+Prepared content PR274 head `6f5785485453e064c2296b58eaa0928783049a07`
+has **all nine actual-date ordinary workflows successful**, including the full
+combined browser chain. The native bot successfully self-dispatched held run
+39690798939, but its read-only arming step stopped before publication: it demanded
+`mergeable_state=clean`, while an unrelated optional Cloudflare check made the
+state `unstable`. No early content merge or Pages request occurred in that run.
+
+Read-only evidence: protected main requires exactly `Three-mirror publication
+check` from app15368, enforcement everyone. That current-head job passed. The
+single failed external check is exactly `Workers Builds: sayd-mufid-internal`,
+app85455 / `cloudflare-workers-and-pages`; the same optional failure also existed
+on the ops276 head that GitHub normally protected-merged successfully.
+
+This repair modifies **only the same four operational files**; it does not change
+the approved archive helper, article/source/images/site files, Cloudflare,
+protection rules, credentials or write permissions. Only installer and release jobs declare `checks: read` and `statuses: read`
+for exhaustive public CI-metadata verification; these cannot write check results.
+Preflight grants remain unchanged. Before any CI rerun, merge, Pages or dispatch
+write, the installer exercises this exact readiness guard on the already-green
+held candidate, proving native token read admission and classification. A denial
+stops before main can change. Fixed branch:
+`ops/gulf-arming-readiness-20261021`; numeric PR is pinned in `ARMING_REPAIR_PR`
+before readiness. Exact historical276 merge/head/parents/tree are additionally
+pinned. The new repair must have exactly four modified ops paths and preserve
+archive helper blob `6c2b527032a953a927d8c8bf89eba6d92f421f81` and PR268 note.
+
+The arming guard permits `unstable` only after all nine actual-date workflows and
+the named required job succeed, PR is mergeable, required protection exactly
+matches the reviewed context/app/enforcement, and exhaustive bounded current-head
+check inspection finds exactly that one terminal optional Workers failure.
+Other failed, pending, canceled, neutral, missing, foreign-head, spoofed-app or
+truncated checks fail closed. Legacy commit statuses must likewise be exhaustive,
+current-head and either absent or all successful (an empty aggregate pending is
+not itself a failing status). The same classification runs again immediately
+before a content merge if state is unstable. Normal GitHub protected expected-SHA
+merge, exact payload/base proofs,02:00 no-earlier gate and02:30 cutoff are unchanged.
+No external check is rerun, hidden or overwritten.
+
+The installer repeats the real unchanged-site deployment test, uploads immutable
+proof, waits for an exact operations-only base integration into held PR274,
+requires all nine normal workflows green, and self-dispatches one fixed held job
+using the already tested token route. Actual held arming artifact and running
+wait step must be independently observed; queued/admitted alone is not readiness.
+
+---
+
+## Earlier midnight repair and invariant release contract
+
 
 ## Authority and exact scope
 
@@ -110,7 +168,8 @@ can cancel an active release. Every ordinary PR workflow must be successful
 on the real publication date, including Three-mirror publication check.
 
 The job permissions remain only contents/write, pull-requests/write, pages/write,
-actions/write. The midnight-only preflight retains contents/PR read and Actions
+actions/write, plus installer/release-only checks/read and statuses/read. The midnight-only
+preflight retains contents/PR read and Actions
 write, with no merge/Pages grant. No arbitrary repo/ref/PR/SHA/time/mode inputs,
 `pull_request_target`, new tokens or administrator access are introduced.
 

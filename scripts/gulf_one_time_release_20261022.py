@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fixed, fail-closed one-time release. No user-supplied repo, PR, SHA or time.
 
-Installation can merge only its own reviewed five-file PR, on 21 October.
+Installation can merge only its own reviewed four-file arming repair PR, on 21 October.
 Release can merge only the pinned Gulf PR and exact payload manifest, on
 22 October, never before 02:00Z. A reviewed operations-only base merge is allowed;
 the resulting candidate SHA is frozen, checked, rechecked and atomically merged.
@@ -28,7 +28,8 @@ CONTENT_PR = 274
 APPROVED_CONTENT_SHA = '3f675e6596614caa1eefbedaf79009e1afa51e36'
 PAYLOAD_MANIFEST_SHA256 = '7a8ab705288cf79b39ed666bc4700c5e1cbce581b65e884406466401e6431472'
 CONTENT_BRANCH = 'publish/gulf-tourism-scheduled-20261022'
-INSTALL_BRANCH = 'ops/gulf-midnight-ci-repair-20261021'
+INSTALL_BRANCH = 'ops/gulf-arming-readiness-20261021'
+MIDNIGHT_BRANCH = 'ops/gulf-midnight-ci-repair-20261021'
 DOCS_REPAIR_BRANCH = 'ops/gulf-docs-reconcile-20261021'
 INSTALL_PR = 273
 ORIGINAL_INSTALL_SHA = 'c40f9bd4bcb4e48f17749f02f5c0110f367c9bee'
@@ -43,7 +44,10 @@ DOCS_REPAIR_HEAD = 'e711cf13126a185363a8f0ef03c9446106023165'
 MIDNIGHT_REPAIR_PR = 276  # Exact reviewed midnight repair; never arbitrary input.
 ARCHIVE_TEST_PATH = 'scripts/test_combined_archive_navigation.py'
 ARCHIVE_TEST_BLOB = '6c2b527032a953a927d8c8bf89eba6d92f421f81'
-REPAIR_CONTENT_SHA = 'f12766f0da48a32508b6c81ffe8cf4c218fa1289'
+MIDNIGHT_MERGE_SHA = '6704030d143263124d099a567cb6c3f51acbf62e'
+MIDNIGHT_HEAD_SHA = 'd1fc98ee84283a21ed8e2892de8929b93ae15b31'
+ARMING_REPAIR_PR = 277  # Exact reviewed arming repair; no arbitrary PR input.
+REPAIR_CONTENT_SHA = '6f5785485453e064c2296b58eaa0928783049a07'
 WORKFLOW = '.github/workflows/gulf-one-time-release-20261022.yml'
 ALLOWED_INSTALL = {WORKFLOW, 'scripts/gulf_one_time_release_20261022.py',
                    'scripts/test_gulf_one_time_release_20261022.py',
@@ -208,16 +212,17 @@ def documentation_installation_base():
     return sha
 
 
-def installation_base():
+def archive_installation_base():
     base = documentation_installation_base()
     require(MIDNIGHT_REPAIR_PR > 0, 'Midnight repair PR is not pinned')
     full_sha(ARCHIVE_TEST_BLOB)
     repaired = api('/pulls/' + str(MIDNIGHT_REPAIR_PR))
     require(repaired['number'] == MIDNIGHT_REPAIR_PR and repaired.get('merged')
-            and repaired['base']['ref'] == 'main' and repaired['head']['ref'] == INSTALL_BRANCH
+            and repaired['base']['ref'] == 'main' and repaired['head']['ref'] == MIDNIGHT_BRANCH
             and repaired['base']['repo']['full_name'] == repaired['head']['repo']['full_name'] == REPO,
             'Fixed midnight repair PR is not merged into this main')
     sha, head = full_sha(repaired['merge_commit_sha']), full_sha(repaired['head']['sha'])
+    require(sha == MIDNIGHT_MERGE_SHA and head == MIDNIGHT_HEAD_SHA, 'Historical midnight repair identity changed')
     git('fetch', 'origin', sha)
     require(git('rev-list', '--parents', '-n', '1', sha).split()[1:] == [base, head],
             'Midnight repair merge parents differ from reviewed base/head')
@@ -230,6 +235,29 @@ def installation_base():
     unchanged_site_base(sha, include_reviewed_note=True, include_archive_test=True)
     record('EXACT_MIDNIGHT_REPAIR_VERIFIED', repair_pr=MIDNIGHT_REPAIR_PR,
            previous_main=base, repair_merge_sha=sha, archive_test_blob=ARCHIVE_TEST_BLOB)
+    return sha
+
+def installation_base():
+    base = archive_installation_base()
+    require(ARMING_REPAIR_PR > 0, 'Arming repair PR is not pinned')
+    repaired = api('/pulls/' + str(ARMING_REPAIR_PR))
+    require(repaired['number'] == ARMING_REPAIR_PR and repaired.get('merged')
+            and repaired['base']['ref'] == 'main' and repaired['head']['ref'] == INSTALL_BRANCH
+            and repaired['base']['repo']['full_name'] == repaired['head']['repo']['full_name'] == REPO,
+            'Fixed arming repair PR is not merged into this main')
+    sha, head = full_sha(repaired['merge_commit_sha']), full_sha(repaired['head']['sha'])
+    git('fetch', 'origin', sha)
+    require(git('rev-list', '--parents', '-n', '1', sha).split()[1:] == [base, head],
+            'Arming repair merge parents differ from reviewed base/head')
+    entries = manifest_entries(raw_manifest(base, sha))
+    require({p.decode('utf-8') for _, p in entries} == ALLOWED_INSTALL
+            and all(h.endswith(b' M') for h, _ in entries),
+            'Arming repair must modify exactly the four operational files')
+    require(git('rev-parse', sha + '^{tree}') == git('rev-parse', head + '^{tree}'),
+            'Arming repair merge tree differs from reviewed head')
+    unchanged_site_base(sha, include_reviewed_note=True, include_archive_test=True)
+    record('EXACT_ARMING_REPAIR_VERIFIED', repair_pr=ARMING_REPAIR_PR,
+           previous_main=base, repair_merge_sha=sha)
     return sha
 
 def candidate_snapshot():
@@ -335,6 +363,45 @@ def required_publication_job(runs):
     require(any(j['name'] == 'Three-mirror publication check' and j['conclusion'] == 'success' for j in jobs),
             'Required Three-mirror publication check did not pass')
 
+def exact_optional_workers_failure(snapshot):
+    branch = api('/branches/main')
+    require(branch['commit']['sha'] == snapshot['base'] and branch.get('protected') is True,
+            'Protection/base changed while assessing optional check')
+    protection = branch.get('protection', {})
+    required = protection.get('required_status_checks', {})
+    require(protection.get('enabled') is True and required.get('enforcement_level') == 'everyone'
+            and required.get('contexts') == ['Three-mirror publication check']
+            and required.get('checks') == [{'context':'Three-mirror publication check','app_id':15368}],
+            'Required protection differs from reviewed publication check')
+    checks = api('/commits/' + full_sha(snapshot['head']) + '/check-runs?per_page=100')
+    require(checks['total_count'] == len(checks['check_runs']) and checks['total_count'] < 100,
+            'Check-run inspection is incomplete or exceeds bounded page')
+    optional = []
+    publication = []
+    for check in checks['check_runs']:
+        require(check['head_sha'] == snapshot['head'], 'Check run belongs to another head')
+        if check['name'] == 'Three-mirror publication check':
+            publication.append(check)
+        if check['status'] == 'completed' and check['conclusion'] in ('success','skipped'):
+            continue
+        require(check['status'] == 'completed' and check['conclusion'] == 'failure'
+                and check['name'] == 'Workers Builds: sayd-mufid-internal'
+                and check['app']['id'] == 85455 and check['app']['slug'] == 'cloudflare-workers-and-pages',
+                'Unrecognized failed/pending check; arming remains blocked: ' + check['name'])
+        optional.append(check['id'])
+    require(len(publication) == 1 and publication[0]['app']['id'] == 15368
+            and publication[0]['status'] == 'completed' and publication[0]['conclusion'] == 'success',
+            'Required current-head publication check missing or not successful')
+    require(len(optional) == 1, 'Expected exactly one known optional Workers failure')
+    statuses = api('/commits/' + snapshot['head'] + '/status?per_page=100')
+    require(statuses['sha'] == snapshot['head'] and statuses['total_count'] == len(statuses['statuses'])
+            and statuses['total_count'] < 100, 'Legacy status inspection is incomplete or wrong-head')
+    require(all(status['state'] == 'success' for status in statuses['statuses']),
+            'Failed or pending legacy commit status; arming remains blocked')
+    record('EXACT_OPTIONAL_WORKERS_FAILURE_NOT_A_REQUIRED_PUBLICATION_CHECK',
+           head_sha=snapshot['head'], check_id=optional[0], protection_unchanged=True)
+
+
 def readonly_merge_readiness(snapshot):
     runs = normal_runs(CONTENT_PR, snapshot['head'], CONTENT_CI)
     validate_completed_runs(runs, CI_AFTER)
@@ -344,8 +411,12 @@ def readonly_merge_readiness(snapshot):
         pr = api('/pulls/' + str(CONTENT_PR))
         valid_pr(pr, CONTENT_PR, snapshot['head'], CONTENT_BRANCH)
         require(pr['base']['sha'] == snapshot['base'], 'Arming candidate base changed')
-        if pr.get('mergeable') is True and pr.get('mergeable_state') == 'clean':
-            return
+        if pr.get('mergeable') is True:
+            if pr.get('mergeable_state') == 'clean':
+                return
+            if pr.get('mergeable_state') == 'unstable':
+                exact_optional_workers_failure(snapshot)
+                return
         require(time.monotonic() < end, 'Candidate not merge-ready while arming: ' + str(pr.get('mergeable_state')))
         time.sleep(15)
 
@@ -357,6 +428,10 @@ def protected_merge(number, sha, branch, expected_base, release=False):
     require(pr.get('mergeable') is True, 'PR is not currently mergeable')
     require(pr.get('mergeable_state') not in ('blocked', 'behind', 'dirty', 'draft', 'unknown'), 'GitHub reports a merge blocker: ' + str(pr.get('mergeable_state')))
     if release:
+        if pr.get('mergeable_state') == 'unstable':
+            exact_optional_workers_failure({'head':sha, 'base':expected_base})
+        else:
+            require(pr.get('mergeable_state') == 'clean', 'Unexpected release mergeability state')
         release_window(now(), for_merge=True)
     try:
         result = api('/pulls/' + str(number) + '/merge', 'PUT', {'sha': sha, 'merge_method': 'merge'})
@@ -456,30 +531,34 @@ def install(event):
     require(now().date().isoformat() == '2026-10-21', 'Installation authorized only on 21 October 2026')
     require(os.environ['GITHUB_EVENT_NAME'] == 'pull_request' and event['action'] == 'ready_for_review', 'Installation requires the reviewed ready event')
     require(CONTENT_PR > 0 and re.fullmatch('[0-9a-f]{40}', APPROVED_CONTENT_SHA), 'Content approval is not pinned')
-    require(MIDNIGHT_REPAIR_PR > 0, 'Midnight repair PR is not pinned')
+    require(ARMING_REPAIR_PR > 0, 'Arming repair PR is not pinned')
     full_sha(ARCHIVE_TEST_BLOB)
-    base = documentation_installation_base()
+    base = archive_installation_base()
     for revision in (APPROVED_CONTENT_SHA, REPAIR_CONTENT_SHA):
         git('fetch', 'origin', full_sha(revision))
     candidate = api('/pulls/' + str(CONTENT_PR))
     valid_pr(candidate, CONTENT_PR, REPAIR_CONTENT_SHA, CONTENT_BRANCH)
     verify_payload(base, REPAIR_CONTENT_SHA)
+    # Prove actual token read admission and the exact optional-check guard before
+    # any CI rerun, merge, Pages or dispatch write in this installation.
+    readonly_merge_readiness({'head':REPAIR_CONTENT_SHA, 'base':base})
+    record('NATIVE_READINESS_PROBE_PASSED_BEFORE_ANY_WRITE', head_sha=REPAIR_CONTENT_SHA, base_sha=base)
     record('CONTENT_PIN_CONFIRMED_BEFORE_INSTALL', pr=CONTENT_PR, head_sha=REPAIR_CONTENT_SHA, draft=False)
     original = event['pull_request']
     number, sha = original['number'], original['head']['sha']
-    require(number == MIDNIGHT_REPAIR_PR, 'Only the fixed reviewed midnight repair PR is authorized')
+    require(number == ARMING_REPAIR_PR, 'Only the fixed reviewed arming repair PR is authorized')
     valid_pr(original, number, sha, INSTALL_BRANCH)
     pr = api('/pulls/' + str(number))
     valid_pr(pr, number, sha, INSTALL_BRANCH)
     files = api('/pulls/' + str(number) + '/files?per_page=100')
-    require(len(files) == 5 and {f['filename'] for f in files} == MIDNIGHT_FILES, 'Installation PR must have exactly the five reviewed non-content files')
-    require(all(f['status'] == 'modified' for f in files), 'Repair may only modify its five reviewed files')
+    require(len(files) == 4 and {f['filename'] for f in files} == ALLOWED_INSTALL, 'Installation PR must have exactly the four reviewed non-content files')
+    require(all(f['status'] == 'modified' for f in files), 'Repair may only modify its four reviewed files')
     git('fetch', 'origin', full_sha(sha))
     unchanged_site_base(sha, include_reviewed_note=True, include_archive_test=True)
     git('fetch', 'origin', 'main')
     main = git('rev-parse', 'origin/main')
     require(main == base and pr['base']['sha'] == base, 'Installation base changed; needs review')
-    unchanged_site_base(main, include_reviewed_note=True)
+    unchanged_site_base(main, include_reviewed_note=True, include_archive_test=True)
     # Exercise the same token's Actions rerun permission/admission today too.
     wait_ci(number, sha, CORE_CI, fresh_after=now().replace(microsecond=0))
     merged = protected_merge(number, sha, INSTALL_BRANCH, base)
@@ -496,7 +575,7 @@ def complete_installation(event):
     require(os.environ.get('GITHUB_EVENT_NAME') == 'pull_request' and event.get('action') == 'ready_for_review',
             'Dispatch preparation requires the reviewed installer event')
     original = event['pull_request']
-    require(original['number'] == MIDNIGHT_REPAIR_PR and original['head']['ref'] == INSTALL_BRANCH
+    require(original['number'] == ARMING_REPAIR_PR and original['head']['ref'] == INSTALL_BRANCH
             and original['head']['repo']['full_name'] == original['base']['repo']['full_name'] == REPO,
             'Wrong fixed repair event for dispatch preparation')
     saved = json.loads(Path('release-receipt.json').read_text())
@@ -504,7 +583,7 @@ def complete_installation(event):
             'Wrong installation receipt')
     RECEIPT.update(saved)
     merged = installation_base()
-    repaired = api('/pulls/' + str(MIDNIGHT_REPAIR_PR))
+    repaired = api('/pulls/' + str(ARMING_REPAIR_PR))
     require(repaired['head']['sha'] == original['head']['sha'], 'Repair event head changed before dispatch preparation')
     require(any(e['event'] == 'INSTALL_AND_UNCHANGED_SITE_DRY_RUN_PASS' and e['merge_sha'] == merged
                 for e in RECEIPT['events']), 'Actual installation dry-run proof is missing')
