@@ -237,6 +237,15 @@ def assert_gulf_home(old_page, after, rel, lang, current):
             if tree is after: assert [canonical(n) for n in node] == [canonical(n) for n in expected_ticker]
             for n in list(node): node.remove(n)
     oldlead[0].getparent().remove(oldlead[0]); newlead[0].getparent().remove(newlead[0])
+    # Only the approved lead image may change in homepage social metadata.
+    # Normalize the expected baseline nodes, not arbitrary candidate metadata.
+    cover_url='https://sayd-magazine.com/'+a['photos'][0]['path']
+    for attribute,key in [('property','og:image'),('name','twitter:image')]:
+        xp='//head/meta[@'+attribute+'="'+key+'"]'
+        original=before.xpath(xp); candidate=after.xpath(xp)
+        assert len(original)==len(candidate)==1
+        assert candidate[0].get('content')==cover_url,(lang,key,'approved Gulf cover')
+        original[0].set('content',cover_url)
     assert canonical(before) == canonical(after), (lang,'unrelated homepage DOM changed')
     assert_gulf_article(lang, a)
 
@@ -300,6 +309,9 @@ def test_rendered_negative_guards(base, old, current, a):
         lambda t:setattr(t.xpath('//header')[0],'tail','Unapproved visible tail'),
         lambda t:cls(t,'ticker')[0][0].set('href','wrong/'),
         lambda t:t.xpath('//section[@class="home-section"]')[0].set('style','display:none'),
+        lambda t:t.xpath('//head/meta[@property="og:image"]')[0].set('content','wrong.jpg'),
+        lambda t:t.xpath('//head/meta[@name="twitter:image"]')[0].set('content','wrong.jpg'),
+        lambda t:t.xpath('//head/meta[@property="og:title"]')[0].set('content','Unapproved title'),
     ]
     for mutate in mutations:
         candidate=deepcopy(actual);mutate(candidate)
@@ -327,7 +339,7 @@ def test_rendered_negative_guards(base, old, current, a):
         try:gulf_expected(old,current,base)
         except AssertionError:pass
         else:raise AssertionError('Changed approved image accepted')
-    print('PASS:8 rendered-home,5 article and changed-image-byte negative fixtures rejected')
+    print('PASS:11 rendered-home,5 article and changed-image-byte negative fixtures rejected')
 
 
 def test_gulf_browser(context, origin, output):
@@ -345,6 +357,8 @@ def test_gulf_browser(context, origin, output):
                 expect(lead.locator('.migration-kicker')).to_have_text(a['translations'][lang]['kicker'])
                 lead.locator('img').evaluate('(img)=>img.decode()')
                 lead.screenshot(path=str(output/f'gulf-home-{lang}-{width}.png'))
+                assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),(lang,width,'Gulf homepage overflow')
+                page.locator('.featured-mosaic').screenshot(path=str(output/f'gulf-home-mosaic-{lang}-{width}.png'))
                 lead.locator('h2 a').click()
                 page.wait_for_url(lambda url:unquote(urlsplit(url).path)=='/'+prefix+'posts/'+a['slugs'][lang]+'/index.html')
                 expect(page.locator('h1')).to_have_text(a['translations'][lang]['title'])
@@ -359,7 +373,12 @@ def test_gulf_browser(context, origin, output):
                     figure.locator('img').scroll_into_view_if_needed()
                     figure.locator('img').evaluate('(img)=>img.decode()')
                     assert figure.locator('img').evaluate('(img)=>img.complete&&img.naturalWidth>0')
+                for related_image in page.locator('.article-more .reading-card img').all():
+                    related_image.scroll_into_view_if_needed()
+                    related_image.evaluate('(img)=>img.decode()')
+                    assert related_image.evaluate('(img)=>img.complete&&img.naturalWidth>0')
                 assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),(lang,width,'Gulf article overflow')
+                page.evaluate('window.scrollTo(0,0)')
                 page.screenshot(path=str(output/f'gulf-article-{lang}-{width}.png'),full_page=True)
     finally:page.close()
     print('PASS: Gulf lead and complete AR/EN/FR8-image4-box articles at390/1440px; forthcoming links absent')

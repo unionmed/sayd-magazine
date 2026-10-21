@@ -76,6 +76,13 @@ def run():
         w.cls(lead,'meta')[0].text=w.DATES[lang]
         for n in w.cls(lead,'migration-kicker'):n.text=a['translations'][lang]['kicker']
         w.save(home,re.sub(r'<article class="card overlay feature-lead"[^>]*>.*?</article>',dom.tostring(lead,encoding='unicode',method='html',with_tail=False),original,count=1,flags=re.S))
+        # The lead changes after the shared homepage refresh. Update only the
+        # two managed social image URLs; preserve every other head/body node.
+        home_text=home.read_text();cover_url='https://sayd-magazine.com/'+a['photos'][0]['path']
+        for attribute,key in [('property','og:image'),('name','twitter:image')]:
+            home_text,count=re.subn(r'(<meta '+attribute+'="'+key+r'" content=")[^"]*(")',lambda match:match[1]+cover_url+match[2],home_text)
+            assert count==1,(lang,key,'expected exactly one managed social image')
+        w.save(home,home_text)
     manifest=w.ROOT/'audit/image-catalog/manifest/2026-01.tsv';rows=manifest.read_text().splitlines()
     for p in a['photos']:
         key='docs/'+p['path'];data=(w.ROOT/key).read_bytes();row=key+'\t'+hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()+'\t'+str(len(data));rows=[r for r in rows if not r.startswith(key+'\t')]+[row]
