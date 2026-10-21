@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "الصيد-السياحي-في-بلدان-الخليج-العربية",
+      "titles": {
+        "ar": "الصيد السياحي في بلدان الخليج العربية: تحقيق «صيد» في رحلات المقناص والضيافة وعمل أهل المنطقة",
+        "en": "Hunting tourism in the Arab Gulf: a Sayd investigation into hunting trips, hospitality and local livelihoods",
+        "fr": "Le tourisme de chasse dans le Golfe arabe : Sayd enquête sur les séjours de chasse, l’accueil et le travail local"
+      },
+      "title": "الصيد السياحي في بلدان الخليج العربية: تحقيق «صيد» في رحلات المقناص والضيافة وعمل أهل المنطقة"
+    },
+    {
       "slug": "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
       "titles": {
         "ar": "بعد البقاع… إزالة 24,750 مترًا مربعًا من شباك الصيد الجائر في الشمال خلال أربع ساعات",
@@ -81,15 +90,6 @@
         "fr": "Akkar : un épervier découvert dans un sac à dos lors d’une opération anti-braconnage"
       },
       "title": "عكار: باشق داخل حقيبة ظهر خلال عملية لمكافحة صيد الجوارح"
-    },
-    {
-      "slug": "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-      "titles": {
-        "ar": "تحذير أوروبي: 11–36 مليون طائر سنويًا في المتوسط و83% من الدول لم تعتمد التدابير الكافية",
-        "en": "European warning: 11–36 million birds annually; 83% of countries lack sufficient measures",
-        "fr": "Alerte européenne : 11 à 36 millions d'oiseaux par an ; 83 % des pays sans mesures suffisantes"
-      },
-      "title": "تحذير أوروبي: 11–36 مليون طائر سنويًا في المتوسط و83% من الدول لم تعتمد التدابير الكافية"
     }
   ]
 }

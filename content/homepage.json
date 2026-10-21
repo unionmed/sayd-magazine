@@ -1,21 +1,21 @@
 {
   "memory_after_door": "science",
   "featured": [
+    "الصيد-السياحي-في-بلدان-الخليج-العربية",
     "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
     "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
     "طيور-في-الحقائب-تهريب-الطيور-2026",
-    "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
-    "الصيد-الذكوري-الرجولة-بين-جثث-الطيور"
+    "الرياض-تستعيد-صهيلها-موسم-السباقات-2026"
   ],
   "latest": [
     "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
     "تمبتد-غودولفين-إيفرست-2026",
     "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
     "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
+    "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
     "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-    "ختام-الملواح-2026-60-فائزا",
-    "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs"
+    "ختام-الملواح-2026-60-فائزا"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -154,12 +154,12 @@
     "صيد": [
       "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
       "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
+      "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
       "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
       "رادار-صيد-العربي-سبتمبر-2026",
       "الصمت-الذي-يتكلمه-الخيل",
-      "خريف-الصيد-العربي-2026",
-      "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى"
+      "خريف-الصيد-العربي-2026"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -184,12 +184,12 @@
     "Hunting": [
       "arabian-saluki-championship-november-2026-april-2027",
       "where-migratory-birds-rest-mashreq-arabian-peninsula",
+      "northern-bekaa-38280-square-metres-bird-nets-apu-cabs",
       "when-the-coast-changes-where-do-birds-rest",
       "when-autumn-becomes-a-season-for-hunting-images",
       "sayd-arab-radar-september-2026",
       "the-silence-horses-speak",
-      "arab-hunting-autumn-2026",
-      "turtle-doves-cross-hunting-borders-european-flyways"
+      "arab-hunting-autumn-2026"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -284,22 +284,22 @@
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
-    "main": "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
+    "main": "الصيد-السياحي-في-بلدان-الخليج-العربية",
     "important": [
+      "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
       "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
       "طيور-في-الحقائب-تهريب-الطيور-2026",
-      "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
-      "الصيد-الذكوري-الرجولة-بين-جثث-الطيور"
+      "الرياض-تستعيد-صهيلها-موسم-السباقات-2026"
     ],
     "latest": [
       "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
       "تمبتد-غودولفين-إيفرست-2026",
       "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
       "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
+      "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
       "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-      "ختام-الملواح-2026-60-فائزا",
-      "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs"
+      "ختام-الملواح-2026-60-فائزا"
     ]
   },
   "ia_door_sections": [
@@ -308,12 +308,12 @@
       "slugs": [
         "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
         "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
+        "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
         "حين-يتغير-الساحل-أين-تستريح-الطيور",
         "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
         "رادار-صيد-العربي-سبتمبر-2026",
         "الصمت-الذي-يتكلمه-الخيل",
-        "خريف-الصيد-العربي-2026",
-        "اليمام-يعبر-حدود-الصيد-مسار-أوروبي-يتعافى"
+        "خريف-الصيد-العربي-2026"
       ]
     },
     {
@@ -456,7 +456,8 @@
     "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر": "hunting",
     "المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق": "science",
     "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027": "hunting",
-    "حوام-العسل-هجرة-بولندا-3750-كيلومترا": "science"
+    "حوام-العسل-هجرة-بولندا-3750-كيلومترا": "science",
+    "الصيد-السياحي-في-بلدان-الخليج-العربية": "hunting"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -475,6 +476,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "الصيد-السياحي-في-بلدان-الخليج-العربية",
     "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
     "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
     "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
@@ -483,8 +485,7 @@
     "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
     "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
     "طيور-في-الحقائب-تهريب-الطيور-2026",
-    "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
-    "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
+    "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -740,11 +741,28 @@
         "en": "A juvenile European honey-buzzard in flight. Illustrative photograph, not one of the birds tracked in the study.",
         "fr": "Une bondrée apivore juvénile en vol. Photographie d’illustration, et non l’un des oiseaux suivis dans l’étude."
       }
+    },
+    "الصيد-السياحي-في-بلدان-الخليج-العربية": {
+      "image": "media/uploads/2026/10/gulf-tourism-gulf-original-cover.webp",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "صقّار يحمل صقرًا أمام الكثبان الرملية في محمية المرزوم بأبوظبي. صورة منشورة ضمن تغطية موسم 2023–2024.",
+        "en": "A falconer holds a falcon in front of sand dunes at Al Marzoom Reserve in Abu Dhabi. Photograph published as part of coverage of the 2023–2024 season.",
+        "fr": "Un fauconnier tient un faucon devant les dunes de la réserve d’Al Marzoom, à Abou Dhabi. Photo publiée dans le cadre de la couverture de la saison 2023–2024."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "الصيد-السياحي-في-بلدان-الخليج-العربية",
+      "titles": {
+        "ar": "الصيد السياحي في بلدان الخليج العربية: تحقيق «صيد» في رحلات المقناص والضيافة وعمل أهل المنطقة",
+        "en": "Hunting tourism in the Arab Gulf: a Sayd investigation into hunting trips, hospitality and local livelihoods",
+        "fr": "Le tourisme de chasse dans le Golfe arabe : Sayd enquête sur les séjours de chasse, l’accueil et le travail local"
+      }
+    },
     {
       "slug": "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
       "titles": {
@@ -815,14 +833,6 @@
         "ar": "عكار: باشق داخل حقيبة ظهر خلال عملية لمكافحة صيد الجوارح",
         "en": "Akkar: Sparrowhawk found inside backpack during raptor anti-poaching operation",
         "fr": "Akkar : un épervier découvert dans un sac à dos lors d’une opération anti-braconnage"
-      }
-    },
-    {
-      "slug": "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-      "titles": {
-        "ar": "تحذير أوروبي: 11–36 مليون طائر سنويًا في المتوسط و83% من الدول لم تعتمد التدابير الكافية",
-        "en": "European warning: 11–36 million birds annually; 83% of countries lack sufficient measures",
-        "fr": "Alerte européenne : 11 à 36 millions d'oiseaux par an ; 83 % des pays sans mesures suffisantes"
       }
     }
   ],

@@ -157,6 +157,24 @@ def run(base=None):
             honey_aliases.extend(matching)
         assert len(honey_aliases)==len(set(honey_aliases))==3
         added+=3
+    # Exactly the approved Gulf article and its three canonical short-link shells.
+    gulf=ROOT/'content/features/gulf-tourism-20261022.json'
+    if gulf.exists():
+        from test_gulf_tourism_20261022 import package as gulf_package
+        from urllib.parse import unquote
+        a=gulf_package();links=json.loads((DOCS/'s/links.json').read_text());gulf_aliases=[]
+        for lang in ('ar','en','fr'):
+            route='/'+('' if lang=='ar' else lang+'/')+'posts/'+a['slugs'][lang]+'/'
+            page=html.parse(str(DOCS/route.lstrip('/')/'index.html'))
+            assert len(page.xpath('//nav[@class="header-social"]'))==1
+            matching=[v for k,v in links.items() if unquote(k)==route]
+            assert len(matching)==1
+            shell=html.parse(str(DOCS/matching[0].strip('/')/'index.html'))
+            assert not shell.xpath('//nav[@class="header-social"]')
+            assert [unquote(url) for url in shell.xpath('//link[@rel="canonical"]/@href')]==['https://sayd-magazine.com'+route]
+            gulf_aliases.extend(matching)
+        assert len(gulf_aliases)==len(set(gulf_aliases))==3
+        added+=3
     assert groups==1037+added and headerless==823+added,(groups,headerless)
     print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact social markup, Alexandra shown once under Interviews with original URLs')
 
