@@ -70,7 +70,16 @@ def run():
                     page.wait_for_function('!document.querySelector("form").hasAttribute("aria-busy")');expect(page.locator('.search-result').first).to_be_visible()
                     assert not external,external
                     assert page.evaluate('localStorage.length')==0
-                page.locator('.search-result h2 a').first.click();page.go_back();expect(page.locator('#search-query')).to_be_visible()
+                # Establish the result navigation before exercising Back; the
+                # click alone does not prove its history entry has committed.
+                search_url=page.url
+                result=page.locator('.search-result h2 a').first
+                result_url=result.get_attribute('href');result_title=result.inner_text()
+                result.click();page.wait_for_url(result_url,wait_until='domcontentloaded')
+                expect(page.locator('main h1')).to_have_text(result_title)
+                page.go_back(wait_until='domcontentloaded')
+                expect(page).to_have_url(search_url)
+                expect(page.locator('#search-query')).to_be_visible()
             # A failed index fetch is recoverable by the same Search button.
             page2=context.new_page()
             page2.route('**/index-ar.json*',lambda r:r.abort())

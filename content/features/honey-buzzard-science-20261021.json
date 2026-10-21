@@ -1,0 +1,232 @@
+{
+  "articles": [
+    {
+      "date": "2026-10-21",
+      "slugs": {
+        "ar": "حوام-العسل-هجرة-بولندا-3750-كيلومترا",
+        "en": "honey-buzzards-poland-migration-routes-3750-km",
+        "fr": "honey-buzzards-poland-migration-routes-3750-km"
+      },
+      "door": "science",
+      "category": "علوم-واكتشافات",
+      "placement": "category",
+      "publication_ready": true,
+      "translations": {
+        "ar": {
+          "title": "جيران في بولندا… تفصل مسارات هجرتهم 3750 كيلومترًا",
+          "deck": "خمسة ذكور من حوّام العسل الأوروبي تنطلق من مواقع متقاربة في بولندا، ثم تسلك أربعة ممرات للهجرة إلى أفريقيا.",
+          "intro": [
+            "تنطلق من منطقة واحدة تقريبًا، وتتجه إلى أفريقيا، لكن طرقها لا تتشابه كما قد نتوقّع. خمسة ذكور من حوّام العسل الأوروبي تتكاثر في مواقع لا يزيد التباعد بينها على 60 كيلومترًا، ثم تتفرّق مسارات هجرتها حتى تفصل بينها 3750 كيلومترًا.",
+            "هذه المفارقة كشفتها دراسة نشرتها مجلة Journal of Ornithology، بعدما تتبّع الباحثون الطيور في شمال شرقي بولندا بين عامَي 2018 و2024. فقد استخدمت أربعة ممرات للهجرة: جبل طارق، والأبنين في إيطاليا، والبلقان، والبوسفور.",
+            "والأكثر إثارة أنّ مناطق قضاء الشتاء كانت أقرب بكثير من مسارات الرحلة؛ إذ لم يتجاوز التباعد بينها 575 كيلومترًا. جيران عند الانطلاق، وطرق متباعدة عبر القارات، ثم تقارب نسبي في الوجهة."
+          ],
+          "sections": [
+            [
+              "الطائر نفسه يبدّل الطريق",
+              [
+                "لم تقتصر الفروق على الاختلاف بين طائر وآخر. فقد عدّل بعض الأفراد مساره بين السنوات، مع الالتفاف حول عوائق كالجبال والبحار والصحارى.",
+                "وبرز التفاوت في توقيت الهجرة خلال العودة الربيعية، مع اختلاف واضح في مواعيد الوصول إلى مناطق التكاثر. ويرى الباحثون في النتائج دليلًا على مرونة وفردية في اختيار المسارات. وتوثّق العينة الصغيرة، المؤلفة من خمسة ذكور، هذه المرونة لدى الطيور المتتبّعة، وتفتح المجال لدراستها على نطاق أوسع."
+              ]
+            ],
+            [
+              "لماذا لا يكون الأقصر هو الأفضل؟",
+              [
+                "تساعد أبحاث سابقة على فهم بعض دوافع الالتفاف في رحلات هذا النوع. ففي دراسة مستقلة تتبّعت 62 رحلة لـ12 طائرًا بالغًا، وجد الباحثون أن الالتفافات الموسمية عبر غرب أفريقيا تتيح الاستفادة من رياح مساعدة، فتقلّ كلفة عبور الصحراء من حيث الطاقة. فالمسافة الأقصر على الخريطة ليست بالضرورة الأقل كلفة في الجو.",
+                "وحوّام العسل الأوروبي، واسمه العلمي Pernis apivorus، جارح عريض الجناحين وطويل الذيل، يقضي الشتاء في أفريقيا المدارية. يبحث في أعشاش النحل والدبابير عن اليرقات، وقد تتجمع أعداد كبيرة منه خلال هجرة الخريف قبل عبور المتوسط.",
+                "لكن خلف مشهد السرب الذي يبدو متّجهًا إلى وجهة واحدة، تكشف أجهزة التتبّع حكايات مختلفة: لكل طائر طريقه، وقد تتغيّر الطريق من رحلة إلى أخرى."
+              ]
+            ]
+          ],
+          "sources": [
+            {
+              "label": "دراسة Mirski وKomar وTumiel في Journal of Ornithology",
+              "url": "https://link.springer.com/article/10.1007/s10336-026-02370-z"
+            },
+            {
+              "label": "بحث مستقل عن أثر الرياح منشور في Journal of Animal Ecology",
+              "url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2656.12593"
+            },
+            {
+              "label": "الجمعية الملكية لحماية الطيور RSPB",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/honey-buzzard"
+            }
+          ],
+          "seo_title": "جيران في بولندا… تفصل مسارات هجرتهم 3750 كيلومترًا",
+          "meta_description": "خمسة ذكور من حوّام العسل الأوروبي تنطلق من مواقع متقاربة في بولندا، ثم تسلك أربعة ممرات للهجرة إلى أفريقيا.",
+          "ticker": "جيران في بولندا… تفصل مسارات هجرتهم 3750 كيلومترًا",
+          "keywords": [
+            "Pernis apivorus"
+          ]
+        },
+        "en": {
+          "title": "Neighbours in Poland, migration routes 3,750 kilometres apart",
+          "deck": "Five male European honey-buzzards breed close together in Poland, then take four migration corridors to Africa.",
+          "intro": [
+            "They leave from almost the same area and head for Africa, but their routes are less alike than we might expect. Five male European honey-buzzards breed at sites no more than 60 kilometres apart, yet their migration routes diverge until they are separated by 3,750 kilometres.",
+            "The contrast emerged from a study published in the Journal of Ornithology, after researchers tracked the birds in northeastern Poland between 2018 and 2024. They used four migration corridors: Gibraltar, the Apennines in Italy, the Balkans and the Bosporus.",
+            "More strikingly, their wintering areas were much closer together than their routes, with no more than 575 kilometres between them. Neighbours at departure, widely separated paths across continents, then relatively close destinations."
+          ],
+          "sections": [
+            [
+              "The same bird can change its route",
+              [
+                "The differences were not only between birds. Some individuals changed their routes from year to year, taking detours around obstacles such as mountains, seas and deserts.",
+                "Variation in migration timing was most apparent during the spring return, with clear differences in arrival dates at the breeding grounds. The researchers see the results as evidence of flexibility and individuality in route choice. The small sample of five males documents this flexibility among the tracked birds and opens the way to studying it on a larger scale."
+              ]
+            ],
+            [
+              "Why is the shortest route not always the best?",
+              [
+                "Earlier research helps explain some of the reasons for detours in this species. In an independent study tracking 62 journeys by 12 adult birds, researchers found that seasonal detours through West Africa allow the birds to take advantage of favourable winds, reducing the energy cost of crossing the Sahara. The shortest distance on a map is not necessarily the least costly in the air.",
+                "The European honey-buzzard, whose scientific name is Pernis apivorus, is a broad-winged, long-tailed raptor that spends the winter in tropical Africa. It searches bees’ and wasps’ nests for larvae, and large numbers may gather during autumn migration before crossing the Mediterranean.",
+                "Yet behind a flock that seems to be heading in one direction, tracking devices reveal different stories: each bird has its own route, and that route may change from one journey to the next."
+              ]
+            ]
+          ],
+          "sources": [
+            {
+              "label": "Mirski, Komar and Tumiel study in the Journal of Ornithology",
+              "url": "https://link.springer.com/article/10.1007/s10336-026-02370-z"
+            },
+            {
+              "label": "Independent research on wind effects in the Journal of Animal Ecology",
+              "url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2656.12593"
+            },
+            {
+              "label": "Royal Society for the Protection of Birds (RSPB)",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/honey-buzzard"
+            }
+          ],
+          "seo_title": "Neighbours in Poland, migration routes 3,750 kilometres apart",
+          "meta_description": "Five male European honey-buzzards breed close together in Poland, then take four migration corridors to Africa.",
+          "ticker": "Neighbours in Poland, migration routes 3,750 kilometres apart",
+          "keywords": [
+            "Pernis apivorus"
+          ]
+        },
+        "fr": {
+          "title": "Voisins en Pologne, des routes migratoires distantes de 3 750 kilomètres",
+          "deck": "Cinq bondrées apivores mâles nichent à proximité les unes des autres en Pologne, puis empruntent quatre couloirs migratoires vers l’Afrique.",
+          "intro": [
+            "Ils partent presque du même endroit et se dirigent vers l’Afrique, mais leurs itinéraires se ressemblent moins qu’on pourrait le croire. Cinq mâles de bondrée apivore se reproduisent sur des sites distants de 60 kilomètres au maximum, puis leurs routes migratoires divergent jusqu’à être séparées de 3 750 kilomètres.",
+            "Ce contraste ressort d’une étude publiée dans le Journal of Ornithology, après que des chercheurs ont suivi les oiseaux dans le nord-est de la Pologne entre 2018 et 2024. Ils ont emprunté quatre couloirs migratoires : Gibraltar, les Apennins en Italie, les Balkans et le Bosphore.",
+            "Plus étonnant encore, leurs zones d’hivernage étaient bien plus proches les unes des autres que leurs itinéraires, avec un écart maximal de 575 kilomètres. Voisins au départ, des chemins éloignés à travers les continents, puis des destinations relativement proches."
+          ],
+          "sections": [
+            [
+              "Un même oiseau peut changer de route",
+              [
+                "Les différences ne concernaient pas seulement les oiseaux entre eux. Certains individus ont modifié leur itinéraire d’une année à l’autre, en contournant des obstacles comme les montagnes, les mers et les déserts.",
+                "Les écarts de calendrier migratoire étaient surtout marqués lors du retour printanier, avec des différences nettes dans les dates d’arrivée sur les sites de reproduction. Les chercheurs y voient un signe de souplesse et d’individualité dans le choix des itinéraires. Ce petit échantillon de cinq mâles documente cette souplesse chez les oiseaux suivis et ouvre la voie à des recherches à plus grande échelle."
+              ]
+            ],
+            [
+              "Pourquoi le chemin le plus court n’est-il pas toujours le meilleur ?",
+              [
+                "Des recherches antérieures aident à comprendre certaines raisons de ces détours chez l’espèce. Dans une étude indépendante portant sur 62 voyages de 12 oiseaux adultes, des chercheurs ont constaté que les détours saisonniers par l’Afrique de l’Ouest permettent de profiter de vents favorables, réduisant ainsi le coût énergétique de la traversée du Sahara. La distance la plus courte sur une carte n’est donc pas nécessairement la moins coûteuse dans les airs.",
+                "La bondrée apivore, dont le nom scientifique est Pernis apivorus, est un rapace aux ailes larges et à la longue queue, qui hiverne en Afrique tropicale. Elle recherche des larves dans les nids d’abeilles et de guêpes, et peut se rassembler en grand nombre pendant la migration automnale avant de traverser la Méditerranée.",
+                "Mais derrière l’image d’un groupe qui semble se diriger vers une seule destination, les balises révèlent des histoires différentes : chaque oiseau a son itinéraire, et celui-ci peut changer d’un voyage à l’autre."
+              ]
+            ]
+          ],
+          "sources": [
+            {
+              "label": "Étude de Mirski, Komar et Tumiel dans le Journal of Ornithology",
+              "url": "https://link.springer.com/article/10.1007/s10336-026-02370-z"
+            },
+            {
+              "label": "Recherche indépendante sur l’effet des vents dans le Journal of Animal Ecology",
+              "url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2656.12593"
+            },
+            {
+              "label": "Royal Society for the Protection of Birds (RSPB)",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/honey-buzzard"
+            }
+          ],
+          "seo_title": "Voisins en Pologne, des routes migratoires distantes de 3 750 kilomètres",
+          "meta_description": "Cinq bondrées apivores mâles nichent à proximité les unes des autres en Pologne, puis empruntent quatre couloirs migratoires vers l’Afrique.",
+          "ticker": "Voisins en Pologne, des routes migratoires distantes de 3 750 kilomètres",
+          "keywords": [
+            "Pernis apivorus"
+          ]
+        }
+      },
+      "related": [
+        "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026",
+        "تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل"
+      ],
+      "photos": [
+        {
+          "path": "media/uploads/2026/10/honey-buzzard-juvenile-andrey-gulivanov.jpg",
+          "sha256": "3563a443cf061e0d69365fedbad52ab07f153dd1465218cb125c42ef4a4aa4b1",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "حوّام العسل الأوروبي اليافع أثناء التحليق. صورة توضيحية، وليست لأحد الطيور المتتبّعة في الدراسة.",
+            "en": "A juvenile European honey-buzzard in flight. Illustrative photograph, not one of the birds tracked in the study.",
+            "fr": "Une bondrée apivore juvénile en vol. Photographie d’illustration, et non l’un des oiseaux suivis dans l’étude."
+          },
+          "caption": {
+            "ar": "حوّام العسل الأوروبي اليافع أثناء التحليق. صورة توضيحية، وليست لأحد الطيور المتتبّعة في الدراسة.",
+            "en": "A juvenile European honey-buzzard in flight. Illustrative photograph, not one of the birds tracked in the study.",
+            "fr": "Une bondrée apivore juvénile en vol. Photographie d’illustration, et non l’un des oiseaux suivis dans l’étude."
+          },
+          "source_url": "https://commons.wikimedia.org/wiki/File:Juvenile_honey_buzzard_(52499563661).jpg",
+          "credit": {
+            "ar": "Andrey Gulivanov / Wikimedia Commons",
+            "en": "Andrey Gulivanov / Wikimedia Commons",
+            "fr": "Andrey Gulivanov / Wikimedia Commons"
+          },
+          "modifications": "None; original bytes retained.",
+          "license": "CC BY 2.0",
+          "license_url": "https://creativecommons.org/licenses/by/2.0/"
+        },
+        {
+          "path": "media/uploads/2026/10/honey-buzzard-mirski-2026-figure-1.png",
+          "sha256": "b818889b72268297b53c1520d083867381461d6e1fc7aed81546c52e7f66bf8d",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "مسارات هجرة حوّام العسل الأوروبي بين أوروبا وأفريقيا.",
+            "en": "European honey-buzzard migration routes between Europe and Africa.",
+            "fr": "Itinéraires migratoires des bondrées apivores entre l’Europe et l’Afrique."
+          },
+          "caption": {
+            "ar": "مسارات هجرة حوّام العسل الأوروبي بين أوروبا وأفريقيا.",
+            "en": "European honey-buzzard migration routes between Europe and Africa.",
+            "fr": "Itinéraires migratoires des bondrées apivores entre l’Europe et l’Afrique."
+          },
+          "source_url": "https://link.springer.com/article/10.1007/s10336-026-02370-z/figures/1",
+          "credit": {
+            "ar": "Mirski وآخرون / Journal of Ornithology، 2026",
+            "en": "Mirski et al. / Journal of Ornithology, 2026",
+            "fr": "Mirski et al. / Journal of Ornithology, 2026"
+          },
+          "modifications": "None; original bytes retained.",
+          "rights_status": "Publisher copyright; no open licence recorded. Publisher permission not independently verified."
+        },
+        {
+          "path": "media/uploads/2026/10/honey-buzzard-mirski-2026-figure-2.png",
+          "sha256": "a260edb2d274a30cb58c78fc77e49b0b750f97c11a4f92c68759db98def7bd92",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "اختلاف مسارات الرحلات لدى أفراد من حوّام العسل الأوروبي.",
+            "en": "Variation in journey routes among individual European honey-buzzards.",
+            "fr": "Variations des itinéraires de voyage chez des bondrées apivores suivies individuellement."
+          },
+          "caption": {
+            "ar": "اختلاف مسارات الرحلات لدى أفراد من حوّام العسل الأوروبي.",
+            "en": "Variation in journey routes among individual European honey-buzzards.",
+            "fr": "Variations des itinéraires de voyage chez des bondrées apivores suivies individuellement."
+          },
+          "source_url": "https://link.springer.com/article/10.1007/s10336-026-02370-z/figures/2",
+          "credit": {
+            "ar": "Mirski وآخرون / Journal of Ornithology، 2026",
+            "en": "Mirski et al. / Journal of Ornithology, 2026",
+            "fr": "Mirski et al. / Journal of Ornithology, 2026"
+          },
+          "modifications": "None; original bytes retained.",
+          "rights_status": "Publisher copyright; no open licence recorded. Publisher permission not independently verified."
+        }
+      ]
+    }
+  ]
+}
