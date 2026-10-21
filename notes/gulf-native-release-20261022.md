@@ -22,7 +22,7 @@ modified operational files. No arbitrary descendant, documentation directory,
 new content, security change or additional permission is admitted.
 
 Today's ready-event installer is now restricted to
-`ops/gulf-docs-reconcile-20261021` and the fixed numeric repair PR. Before any
+`ops/gulf-docs-reconcile-20261021` and fixed repair PR **#275**. Before any
 write it verifies content PR274 is still exactly `91f0ea5043bbf22e1397782abd3ba3cd28974e5f`
 and has the original full approved payload against the original installation.
 It reruns real CI, normally merges only this repair, requests a distinct
