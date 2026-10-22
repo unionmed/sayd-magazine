@@ -1,0 +1,45 @@
+name: Laws landmark card visual QA
+on:
+  pull_request:
+    paths:
+      - 'content/laws-card-landmarks.json'
+      - 'docs/category/قوانين/**'
+      - 'docs/en/category/قوانين/**'
+      - 'docs/fr/category/قوانين/**'
+      - 'docs/media/uploads/2026/10/laws-landmark-*.jpg'
+      - 'scripts/*laws_card_landmarks*'
+      - '.github/workflows/laws-landmark-review.yml'
+permissions:
+  contents: read
+jobs:
+  preview:
+    name: Laws AR EN FR desktop and mobile preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated browser test tools
+        run: |
+          pip install playwright==1.55.0 Pillow==11.3.0 lxml==5.3.2
+          python -m playwright install --with-deps chromium
+      - name: Verify exact laws-only scope and private responsive preview
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          python scripts/sync_laws_card_landmarks.py --check
+          python scripts/test_laws_card_landmarks.py --base "$PR_BASE"
+          python scripts/test_laws_card_landmarks_browser.py --base "$PR_BASE"
+      - name: Retain before-after screenshots and measured checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: laws-landmark-visual-qa
+          path: laws-landmark-visual-qa/
+          if-no-files-found: warn
+          retention-days: 14

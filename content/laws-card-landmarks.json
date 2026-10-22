@@ -1,0 +1,296 @@
+{
+  "schema": "sayd-laws-card-landmarks-v1",
+  "scope": "Only category/قوانين/index.html and its English/French mirrors; never article bodies, article metadata, general archive, homepage or ticker.",
+  "credit_note": {
+    "ar": "صور معالم البلدان. نُسخ مصغّرة مع قصّ العرض؛ ترخيص كل صورة موضح أدناه ويشمل نسختها المعروضة.",
+    "en": "Country landmarks. Resized previews with display cropping; each photo and its displayed version use the license linked below.",
+    "fr": "Monuments des pays. Aperçus redimensionnés et recadrés à l’affichage ; chaque photo et sa version affichée restent sous la licence indiquée ci-dessous."
+  },
+  "unchanged_cards": [
+    {
+      "lang": "ar",
+      "slug": "بالمختصر-المفيد-معايير-شركات-التأمين",
+      "reason": "Generic insurance article does not explicitly identify a country; retain its existing editorial image rather than invent a jurisdiction."
+    }
+  ],
+  "images": [
+    {
+      "id": "united-arab-emirates-al-jahili-fort",
+      "country": "United Arab Emirates",
+      "slugs": {
+        "ar": "الإمارات-قوانين-الصيد-الحماية-الاتحادية-والصقارة",
+        "en": "uae-hunting-law-federal-protection-local-falconry",
+        "fr": "uae-hunting-law-federal-protection-local-falconry"
+      },
+      "alt": {
+        "ar": "قلعة الجاهلي في العين، الإمارات العربية المتحدة",
+        "en": "Al Jahili Fort in Al Ain, United Arab Emirates",
+        "fr": "Fort Al Jahili à Al Ain, Émirats arabes unis"
+      },
+      "object_position": "50% 45%",
+      "source_title": "Al Ain (Abu Dhabi)- Fort Al Jahili.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Al_Ain_%28Abu_Dhabi%29-_Fort_Al_Jahili.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Al_Ain_%28Abu_Dhabi%29-_Fort_Al_Jahili.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Al_Ain_%28Abu_Dhabi%29-_Fort_Al_Jahili.jpg/960px-Al_Ain_%28Abu_Dhabi%29-_Fort_Al_Jahili.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20180401114716",
+      "author": "Dr. Norbert Heidenbluth",
+      "attribution": "Dr. Norbert Heidenbluth",
+      "date_taken": "2014-06-05",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "verified_utc": "2026-10-22T02:10:00Z",
+      "source_snapshot_sha256": "df3c04e2adc20c8199f074ff32e5a21fbef08285808c002aec99c1e19ddb3af9",
+      "image": "media/uploads/2026/10/laws-landmark-united-arab-emirates-al-jahili-fort-960.jpg",
+      "width": 960,
+      "height": 640,
+      "bytes": 123128,
+      "sha256": "537b72e0e8b97f7590d69676aec08a9c5b0e81f1edc341ed645821db1109b450",
+      "git_blob_sha": "0821e0d98286d55a471e5bf3b3e4ed5c5c40c09e",
+      "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
+    },
+    {
+      "id": "jordan-petra-al-khazneh",
+      "country": "Jordan",
+      "slugs": {
+        "ar": "الأردن-قانون-الزراعة-13-2015-الصيد-البري",
+        "en": "jordan-agriculture-law-2015-hunting-rules",
+        "fr": "jordan-agriculture-law-2015-hunting-rules"
+      },
+      "alt": {
+        "ar": "الخزنة في البتراء، الأردن",
+        "en": "Al Khazneh in Petra, Jordan",
+        "fr": "Al-Khazneh à Pétra, Jordanie"
+      },
+      "object_position": "50% 45%",
+      "source_title": "Petra, Al Khazneh - panoramio.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Petra%2C_Al_Khazneh_-_panoramio.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Petra%2C_Al_Khazneh_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Petra%2C_Al_Khazneh_-_panoramio.jpg/960px-Petra%2C_Al_Khazneh_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20170324002655",
+      "author": "Banja-Frans Mulder",
+      "attribution": "Banja-Frans Mulder",
+      "date_taken": "2013-03-25",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "verified_utc": "2026-10-22T02:10:00Z",
+      "source_snapshot_sha256": "9d662ccc62e7ac40286f8eff38377d5893170204480d433b449a2d4ffa997e0a",
+      "image": "media/uploads/2026/10/laws-landmark-jordan-petra-al-khazneh-960.jpg",
+      "width": 960,
+      "height": 640,
+      "bytes": 215164,
+      "sha256": "084c84b0d93b89f35cc105a481a0825b3c355fc1beb0cda33fb5596422d5f27a",
+      "git_blob_sha": "6424f37120662043df81af2908d4b5ddda692b8f",
+      "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
+    },
+    {
+      "id": "saudi-arabia-hegra-qasr-al-farid",
+      "country": "Saudi Arabia",
+      "slugs": {
+        "ar": "السعودية-نظام-البيئة-ولائحة-الصيد-البري",
+        "en": "saudi-environment-law-wildlife-hunting-regulations",
+        "fr": "saudi-environment-law-wildlife-hunting-regulations"
+      },
+      "alt": {
+        "ar": "قصر الفريد في الحِجر، السعودية",
+        "en": "Qasr al-Farid in Hegra, Saudi Arabia",
+        "fr": "Qasr al-Farid à Hégra, Arabie saoudite"
+      },
+      "object_position": "50% 40%",
+      "source_title": "Qasr al-Farid.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Qasr_al-Farid.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Qasr_al-Farid.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Qasr_al-Farid.jpg/960px-Qasr_al-Farid.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20240809152239",
+      "author": "Radosław Botev",
+      "attribution": "Radosław Botev / © Fundacja Nomos",
+      "date_taken": "2024-07-29",
+      "license": "CC BY 3.0 PL",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/pl/",
+      "verified_utc": "2026-10-22T02:10:00Z",
+      "source_snapshot_sha256": "a9cf7fc543768a7416ef96aab4f48729eb9696f8123f419ec153658fd175349f",
+      "image": "media/uploads/2026/10/laws-landmark-saudi-arabia-hegra-qasr-al-farid-960.jpg",
+      "width": 960,
+      "height": 720,
+      "bytes": 191626,
+      "sha256": "5a695460f1657f237b093715ce668bcb5027a3efde4cdf4ed3af2bcf49cab3c0",
+      "git_blob_sha": "6c46d07b10d26faf60146ce42d2af2f9be0d46c1",
+      "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
+    },
+    {
+      "id": "lebanon-beirut-raouche",
+      "country": "Lebanon",
+      "slugs": {
+        "ar": "قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع",
+        "en": "lebanon-hunting-law-580-2004-what-is-prohibited",
+        "fr": "lebanon-hunting-law-580-2004-what-is-prohibited"
+      },
+      "alt": {
+        "ar": "صخرتا الروشة في بيروت، لبنان",
+        "en": "Raouche Rocks in Beirut, Lebanon",
+        "fr": "Rochers de Raouché à Beyrouth, Liban"
+      },
+      "object_position": "50% 50%",
+      "source_title": "Raouche sunset.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Raouche_sunset.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Raouche_sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Raouche_sunset.jpg/960px-Raouche_sunset.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20180926114213",
+      "author": "Rabih omeiri",
+      "attribution": "Rabih omeiri",
+      "date_taken": "2015-05-27",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "verified_utc": "2026-10-22T02:10:00Z",
+      "source_snapshot_sha256": "d6295f7a3debca4f9687949d000bd3d251b45320d29b4e8437df36e9da5c5285",
+      "image": "media/uploads/2026/10/laws-landmark-lebanon-beirut-raouche-960.jpg",
+      "width": 960,
+      "height": 637,
+      "bytes": 145058,
+      "sha256": "941082302482f814e9ac59e13b4532010667f14d3f4ff88de8f82113db51a101",
+      "git_blob_sha": "4a1df1a8c5c76066aafb11792066835a114393b6",
+      "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
+    },
+    {
+      "id": "qatar-al-zubarah-fort",
+      "country": "Qatar",
+      "slugs": {
+        "ar": "قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات",
+        "en": "qatar-law-4-2002-wildlife-hunting-rules",
+        "fr": "qatar-law-4-2002-wildlife-hunting-rules"
+      },
+      "alt": {
+        "ar": "قلعة الزبارة، قطر",
+        "en": "Al Zubarah Fort, Qatar",
+        "fr": "Fort d’Al-Zubarah, Qatar"
+      },
+      "object_position": "50% 40%",
+      "source_title": "View of the Al Zubarah Fort at Zubarah.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:View_of_the_Al_Zubarah_Fort_at_Zubarah.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/View_of_the_Al_Zubarah_Fort_at_Zubarah.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/View_of_the_Al_Zubarah_Fort_at_Zubarah.jpg/960px-View_of_the_Al_Zubarah_Fort_at_Zubarah.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20211017081641",
+      "author": "Munnarboy",
+      "attribution": "Munnarboy",
+      "date_taken": "2019-03-15",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "verified_utc": "2026-10-22T02:10:00Z",
+      "source_snapshot_sha256": "b1b05b7e3068ad265d7beb667e3dca91dec309c392a7f2f26c6f292230dbfacf",
+      "image": "media/uploads/2026/10/laws-landmark-qatar-al-zubarah-fort-960.jpg",
+      "width": 960,
+      "height": 615,
+      "bytes": 117063,
+      "sha256": "cbbb0c3cdd33506b4fd868791b9e9e0bc6a99db21b31befcf11dd2cb564084b9",
+      "git_blob_sha": "b7fb5341fb397e347a3aae04e03b632f1649ebc1",
+      "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
+    },
+    {
+      "id": "oman-nizwa-fort",
+      "country": "Oman",
+      "slugs": {
+        "ar": "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد",
+        "en": "oman-wildlife-law-royal-decree-6-2003-hunting",
+        "fr": "oman-wildlife-law-royal-decree-6-2003-hunting"
+      },
+      "alt": {
+        "ar": "قلعة نزوى، عُمان",
+        "en": "Nizwa Fort, Oman",
+        "fr": "Fort de Nizwa, Oman"
+      },
+      "object_position": "50% 40%",
+      "source_title": "Nizwa Fort Oman.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Nizwa_Fort_Oman.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Nizwa_Fort_Oman.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Nizwa_Fort_Oman.jpg/960px-Nizwa_Fort_Oman.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20250706112617",
+      "author": "Adhilaslam",
+      "attribution": "Adhilaslam",
+      "date_taken": "2024-04-11",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "verified_utc": "2026-10-22T02:10:00Z",
+      "source_snapshot_sha256": "eaa66f9d95ccb199035598c23d3346cc6ad55813ff5cd9c5d0b3332714177cad",
+      "image": "media/uploads/2026/10/laws-landmark-oman-nizwa-fort-960.jpg",
+      "width": 960,
+      "height": 720,
+      "bytes": 199565,
+      "sha256": "c82ed9b95a603f8c6811c63a9c6c578ac4963cad162ca59496209fc0813dc8c5",
+      "git_blob_sha": "5068f381facd2c8358f58dee8cce96dec4d23d52",
+      "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
+    },
+    {
+      "id": "lebanon-baalbek-bacchus",
+      "country": "Lebanon",
+      "slugs": {
+        "ar": "ما-هو-المتغير-الوحيد-السنوي-في-قانون-ال"
+      },
+      "alt": {
+        "ar": "معبد باخوس في بعلبك، لبنان",
+        "en": "Temple of Bacchus in Baalbek, Lebanon",
+        "fr": "Temple de Bacchus à Baalbek, Liban"
+      },
+      "object_position": "50% 40%",
+      "source_title": "Lebanon, Baalbek, Temple of Bacchus 2.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Lebanon%2C_Baalbek%2C_Temple_of_Bacchus_2.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Lebanon%2C_Baalbek%2C_Temple_of_Bacchus_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Lebanon%2C_Baalbek%2C_Temple_of_Bacchus_2.jpg/960px-Lebanon%2C_Baalbek%2C_Temple_of_Bacchus_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20200820141558",
+      "author": "Vyacheslav Argenberg",
+      "attribution": "© Vyacheslav Argenberg / http://www.vascoplanet.com/",
+      "date_taken": "2008-09-16",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "verified_utc": "2026-10-22T02:10:00Z",
+      "source_snapshot_sha256": "b4a9fc44b85deb5f7cfaf7ffc1cf412db2c7549d3922ed1fdea56933a29d3780",
+      "image": "media/uploads/2026/10/laws-landmark-lebanon-baalbek-bacchus-960.jpg",
+      "width": 960,
+      "height": 720,
+      "bytes": 204268,
+      "sha256": "67d22b51a7e0490f7e5b6cf798d299e225ab0806b32d474a33a59a243d4b9e52",
+      "git_blob_sha": "490c252d22660c7614931e692373cecdb2b318b2",
+      "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "author_url": "http://www.vascoplanet.com/",
+      "card_aspect_ratio": "170 / 113"
+    },
+    {
+      "id": "lebanon-byblos-castle",
+      "country": "Lebanon",
+      "slugs": {
+        "ar": "تنفيذ-قانون-الصيد-لا-يكون-استنسابياً-و"
+      },
+      "alt": {
+        "ar": "قلعة جبيل، لبنان",
+        "en": "Byblos Castle, Lebanon",
+        "fr": "Château de Byblos, Liban"
+      },
+      "object_position": "50% 40%",
+      "source_title": "Byblos Castle 2009.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Byblos_Castle_2009.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Byblos_Castle_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Byblos_Castle_2009.jpg/960px-Byblos_Castle_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20091103084635",
+      "author": "Peripitus",
+      "attribution": "Peripitus, Wikimedia Commons",
+      "date_taken": "2009-08",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "verified_utc": "2026-10-22T02:10:00Z",
+      "source_snapshot_sha256": "59da1b57516e306fb27d17ecfb7c9a07ffd73b764df4ac9bd47828f348dcfafa",
+      "image": "media/uploads/2026/10/laws-landmark-lebanon-byblos-castle-960.jpg",
+      "width": 960,
+      "height": 692,
+      "bytes": 260189,
+      "sha256": "4ffe5a5dd01bc9202d1f93016b1007941802b73734d1e1e4d362da5d4706068d",
+      "git_blob_sha": "6055e4e114086971eb09792201d21ef49758a65f",
+      "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "author_url": "http://commons.wikimedia.org/wiki/User:Peripitus",
+      "card_aspect_ratio": "600 / 400"
+    }
+  ]
+}
