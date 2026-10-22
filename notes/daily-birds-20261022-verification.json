@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-22",
+  "scope": "Three new seasonal bird encyclopedia species; AR/EN/FR; category and normal archive/search only; no homepage placement, ticker selection or social distribution.",
+  "baseline_commit": "1461fcd008c26726daf1f5bb3730ea31e58cf1b3",
+  "authorization": "Nayef explicitly requested three seasonally relevant bird additions every day on 21 October 2026, with rigorous scientific, naming, photographic, life-cycle, Arab-distribution and importance review; the 22 October scheduled instruction explicitly requests adding and publishing three new species.",
+  "novelty_review": {
+    "status": "PASS",
+    "reviewer": "independent_publication_review",
+    "scope": "1,003 content Markdown/JSON files, current category inventories, scientific names/current and old genera, English/French variants and normalized Arabic aliases",
+    "finding": "The only exact prior occurrences are three one-line names in the historical Egyptian hunting-law species list (lines 70–72), not species profiles. Eurasian Spoonbill (Platalea leucorodia) is a different species and not Northern Shoveler. None of the three candidates has an existing standalone profile."
+  },
+  "current_taxonomy": {
+    "source": "https://www.avilist.org/checklist/v2026/",
+    "release": "2026-10-20",
+    "workbook_url": "https://www.avilist.org/wp-content/uploads/2026/10/AviList-v2026-20Oct2026-short.xlsx",
+    "workbook_sha256": "bfe6323c93e89cff47d5275aa9b232a757c764589b5a0663131929d4b464f23a",
+    "sheet": "AviList v2026",
+    "verified_rows": {
+      "515": "Spatula clypeata — Northern Shoveler",
+      "525": "Mareca penelope — Eurasian Wigeon",
+      "564": "Anas acuta — Northern Pintail"
+    },
+    "order": "Anseriformes",
+    "family": "Anatidae",
+    "global_category": "LC",
+    "verification": "Actual XLSX rows inspected by researcher and independently reopened by reviewer; not inferred from the release page."
+  },
+  "photographs": {
+    "bank_first": "All 52 current files in Sayd Birds & Wildlife and anonymous-photo records checked; no identified, licensed match for these species.",
+    "source": "Three own-work Wikimedia Commons real photographs, CC BY-SA 4.0. Originals and rights records retained in the Sayd picture bank.",
+    "verification": "Originals and 1600px proportional JPEG derivatives independently inspected; correct male species and diagnostic features. No crop, retouching, compositing or AI generation.",
+    "attribution": "Bird name only in figure captions; creator, source link, license link, capture country/date and resizing/compression disclosure in a separate localized credit paragraph. Foreign capture locations are not represented as Arab sightings."
+  },
+  "editorial_review": {
+    "status": "PASS",
+    "reviewer": "independent_publication_review",
+    "review_type": "Independent agent science, naming, language parity, photography, rights and rendered-DOM review; not a GitHub human-owner approval",
+    "feature_sha256": "a0897ead2c70ed555287cf6f24216f6c8038948d10e8d05a249ed42ce0022b57",
+    "finding": "All three new taxa and all nine language bodies passed. The final additional Arabic Pintail wording clarifies winter presence rather than meteorological winter and was independently approved. Regional months are not generalized across Arab countries. Rare Shoveler breeding evidence in Saudi Arabia and Algeria is preserved. LC is the category carried in the current checklist, not a claim of a newly dated 2026 IUCN assessment."
+  },
+  "validation": {
+    "static_status": "PASS",
+    "tests": [
+      "test_daily_birds_20261022.py: exact nine bodies/media/credits, language links/SEO, category/archive/search, precise diff allowlist and repeatability",
+      "check_publication_contract.py --base 1461fcd008c26726daf1f5bb3730ea31e58cf1b3",
+      "test_homepage_doors.py",
+      "test_archive_media_contract.py",
+      "test_archive_access.py",
+      "test_shared_ticker.py",
+      "test_search_index.py: 14 tests"
+    ],
+    "visual_status": "PENDING_PR_CI",
+    "local_visual_blocker": "Chromium failed before opening pages because the execution environment denied socket creation. A supported escalation also failed before execution in environment setup. No denied session path was read and no security setting was changed. Read-only ordinary PR browser QA will test the exact nine pages at 1440, 390 and 320 pixels and retain screenshots.",
+    "image_catalog_git_blob_verification": {
+      "status": "PASS",
+      "images_indexed": 10259,
+      "unindexed_upload_images": 0,
+      "manifest_sha_verified_against_git_tree": true
+    },
+    "required_remote_checks": "PENDING_DRAFT_PR",
+    "protected_surfaces": "Homepage sources and three homepages, ticker source, Gulf and laws source/rendered files are unchanged."
+  },
+  "catalog_reconciliation": {
+    "method": "Unmodified existing deterministic catalog generators; no manual editing of generated records",
+    "taxonomy_records_added": 49,
+    "today_new_images": 3,
+    "preexisting_manifest_images_previously_missing_from_generated_taxonomy": 46,
+    "existing_taxonomy_record_edits": 0,
+    "article_references_net_added": 60,
+    "today_new_references": 3,
+    "preexisting_source_references_previously_missing_from_generated_catalog": 57,
+    "existing_reference_title_refreshes": 3,
+    "finding": "All 46 inherited image entries already exist with identical hashes and sizes in baseline manifests. All 57 inherited references already exist in baseline source articles. Three September Radar reference titles only refresh to their already-committed baseline source title; paths and images are unchanged. No historical source article was edited."
+  }
+}
