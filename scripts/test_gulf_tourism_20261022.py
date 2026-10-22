@@ -14,7 +14,11 @@ AR = 'الصيد-السياحي-في-بلدان-الخليج-العربية'
 EN = 'hunting-tourism-arab-gulf-countries'
 SOURCE = ROOT / 'content/features/gulf-tourism-20261022.json'
 # Set only after independent review of the final complete AR/EN/FR source.
-PACKAGE_SHA256 = '4952d6446c828a4541e5b07d2a34c8cc1b2d3992bd95f8d161c6e188909a7a40'
+ORIGINAL_PACKAGE_SHA256 = '4952d6446c828a4541e5b07d2a34c8cc1b2d3992bd95f8d161c6e188909a7a40'
+# Owner-requested formal-Arabic copy edit, 22 October; every other source byte remains pinned.
+PACKAGE_SHA256 = '618d37e5142efb0d79463b41b29c20049f9800338cafb13c30b464262011ac6b'
+FORMAL_BOX_TITLE = 'ليس كلّ ضيوف الرحلة صيّادين!'
+ORIGINAL_BOX_TITLE = 'مش كل ضيوف الرحلة صيادين!'
 DATES = {'ar': '22 تشرين الأول 2026', 'en': '22 October 2026', 'fr': '22 octobre 2026'}
 PHOTO_SHA256 = {
     'gulf-original-cover': 'f185a6e90aeb71975814fd9d3c55a3f9ac04821e1181481eaa16688f083656a6',
@@ -62,6 +66,9 @@ def validate_package(data):
 def package():
     raw = SOURCE.read_bytes()
     assert PACKAGE_SHA256 and hashlib.sha256(raw).hexdigest() == PACKAGE_SHA256, 'Unreviewed Gulf package change'
+    assert raw.count(FORMAL_BOX_TITLE.encode()) == 1, 'Formal Arabic box title missing or duplicated'
+    original = raw.replace(FORMAL_BOX_TITLE.encode(), ORIGINAL_BOX_TITLE.encode(), 1)
+    assert hashlib.sha256(original).hexdigest() == ORIGINAL_PACKAGE_SHA256, 'Changes beyond the approved Arabic copy edit'
     return validate_package(json.loads(raw))
 
 
