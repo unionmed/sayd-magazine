@@ -1,0 +1,840 @@
+{
+  "articles": [
+    {
+      "key": "gulf-tourism",
+      "slugs": {
+        "ar": "الصيد-السياحي-في-بلدان-الخليج-العربية",
+        "en": "hunting-tourism-arab-gulf-countries",
+        "fr": "hunting-tourism-arab-gulf-countries"
+      },
+      "date": "2026-10-22",
+      "publication_ready": true,
+      "door": "hunting",
+      "category": "صيد",
+      "placement": "lead",
+      "scheduled_release_at": "2026-10-22T05:00:00+03:00",
+      "related": [
+        "قطر-حماية-المناطق-البرية-والبحرية-2030",
+        "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026"
+      ],
+      "photos": [
+        {
+          "id": "gulf-original-cover",
+          "path": "media/uploads/2026/10/gulf-tourism-gulf-original-cover.webp",
+          "sha256": "f185a6e90aeb71975814fd9d3c55a3f9ac04821e1181481eaa16688f083656a6",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "صقّار يحمل صقرًا أمام الكثبان الرملية في محمية المرزوم بأبوظبي. صورة منشورة ضمن تغطية موسم 2023–2024.",
+            "en": "A falconer holds a falcon in front of sand dunes at Al Marzoom Reserve in Abu Dhabi. Photograph published as part of coverage of the 2023–2024 season.",
+            "fr": "Un fauconnier tient un faucon devant les dunes de la réserve d’Al Marzoom, à Abou Dhabi. Photo publiée dans le cadre de la couverture de la saison 2023–2024."
+          },
+          "credit": {
+            "ar": "المصدر: مكتب أبوظبي الإعلامي",
+            "en": "Source: Abu Dhabi Media Office",
+            "fr": "Source : Bureau des médias d’Abou Dhabi"
+          },
+          "caption": {
+            "ar": "المصدر: مكتب أبوظبي الإعلامي",
+            "en": "Source: Abu Dhabi Media Office",
+            "fr": "Source : Bureau des médias d’Abou Dhabi"
+          },
+          "source_url": "https://www.mediaoffice.abudhabi/en/arts-culture/cultural-programs-and-heritage-festivals-committee-abu-dhabi-opens-traditional-hunting-season/",
+          "source_image_url": "https://www.mediaoffice.abudhabi/assets/resized/sm/upload/o2/yi/wb/xz/20231101_CPHFC_Al%20Marzoom%20Festival_Web-0-1380-0-0.webp?k=e642bf4700",
+          "provenance": {
+            "library_file_id": "libfile_7c9e7bb8e1cc81918213fa37aa7a497c",
+            "source_publication_date": "2023-11-02",
+            "capture_date": "Not independently established; publication is not capture date.",
+            "provenance_evidence": "Byte-identical SHA256 match to the 1380px srcset asset on the official Abu Dhabi Media Office article dated 2023-11-02."
+          }
+        },
+        {
+          "id": "gulf-hospitality-photo-01",
+          "path": "media/uploads/2026/10/gulf-tourism-gulf-hospitality-photo-01.jpg",
+          "sha256": "c3ac17ca42aba9b00e597f8137d5a11253aebc8c26a68c2f9019ce5ce9a4d9ef",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "مجلس مخيم في محمية الشمال للصيد المستدام، بمقاعد تراثية ومصابيح معلقة وواجهة مفتوحة على الصحراء.",
+            "en": "A camp majlis at Al Shamal Sustainable Hunting Reserve, with traditional seating, hanging lamps and an open frontage facing the desert.",
+            "fr": "Un majlis de campement dans la réserve de chasse durable d’Al Shamal, avec des sièges traditionnels, des lampes suspendues et une façade ouverte sur le désert."
+          },
+          "credit": {
+            "ar": "المصدر: محمية الشمال للصيد المستدام",
+            "en": "Source: Al Shamal Sustainable Hunting Reserve",
+            "fr": "Source : Réserve de chasse durable d’Al Shamal"
+          },
+          "caption": {
+            "ar": "المصدر: محمية الشمال للصيد المستدام",
+            "en": "Source: Al Shamal Sustainable Hunting Reserve",
+            "fr": "Source : Réserve de chasse durable d’Al Shamal"
+          },
+          "source_url": "https://srfsh.com/sites/north-reserve",
+          "source_image_url": "https://cms.itba.gov.sa/dA/af6b397f29/fileAsset/31_large.jpg?language_id=1",
+          "provenance": {
+            "library_file_id": "libfile_a25df9d4a52c8191b8b927992ede3df5",
+            "source_publication_date": null,
+            "capture_date": "Not independently established; not shown in visible caption.",
+            "scope_limit": "Official image for Camp 31 hospitality; does not depict a hunting event."
+          }
+        },
+        {
+          "id": "gulf-original-north-houbara",
+          "path": "media/uploads/2026/10/gulf-tourism-gulf-original-north-houbara.jpg",
+          "sha256": "f96d1f425e435ee7c3119ae2e167c754b4debc4a980b39904ab4614399794da9",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "طائر حبارى يرفع جناحيه في أرض صحراوية، وتظهر حلقة ترقيم على ساقه؛ صورة محمية الشمال على موقع الهيئة الرسمي.",
+            "en": "A houbara bustard raises its wings on desert ground, with a numbered ring visible on its leg; an Al Shamal Reserve photograph on the authority’s official website.",
+            "fr": "Une outarde houbara déploie ses ailes sur un terrain désertique ; une bague numérotée est visible à sa patte. Photo de la réserve d’Al Shamal publiée sur le site officiel de l’autorité."
+          },
+          "credit": {
+            "ar": "المصدر: هيئة تطوير محمية الإمام تركي بن عبدالله الملكية",
+            "en": "Source: Imam Turki bin Abdullah Royal Reserve Development Authority",
+            "fr": "Source : Autorité de développement de la réserve royale de l’imam Turki ben Abdallah"
+          },
+          "caption": {
+            "ar": "المصدر: هيئة تطوير محمية الإمام تركي بن عبدالله الملكية",
+            "en": "Source: Imam Turki bin Abdullah Royal Reserve Development Authority",
+            "fr": "Source : Autorité de développement de la réserve royale de l’imam Turki ben Abdallah"
+          },
+          "source_url": "https://www.itba.gov.sa/",
+          "source_image_url": "https://www.itba.gov.sa/dA/7092fa117b415770bf0366b7d37594e6/asset/3.jpg?language_id=4831411",
+          "provenance": {
+            "library_file_id": "libfile_115f01d52d788191bc9a8d02dc642e00",
+            "source_publication_date": null,
+            "capture_date": "Not independently established; publication is not capture date.",
+            "provenance_evidence": "Official ITBA homepage image explicitly labelled محمية الشمال للصيد المستدام; matching image dimensions and pixel comparison; SHA256 checked."
+          }
+        },
+        {
+          "id": "gulf-community-photo-01",
+          "path": "media/uploads/2026/10/gulf-tourism-gulf-community-photo-01.jpg",
+          "sha256": "38de5cc4eea6ff3c445f30b29bc47604eb1f354debb4347d0ffc360919ca172a",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "جناح للأسر المنتجة في شتاء درب زبيدة بلينة، تعرض فيه منتجات محلية ومنسوجات وحرف يدوية، مع سيدة تُعد القهوة. صورة أرشيفية منشورة في يناير 2022.",
+            "en": "A stand for home-based producers at Darb Zubaydah Winter in Linah displays local products, textiles and handicrafts, with a woman preparing coffee. Archive photograph published in January 2022.",
+            "fr": "Un stand de familles productrices au festival d’hiver de Darb Zubaydah à Linah présente des produits locaux, des textiles et des objets artisanaux, tandis qu’une femme prépare le café. Photo d’archives publiée en janvier 2022."
+          },
+          "credit": {
+            "ar": "المصدر: واس",
+            "en": "Source: Saudi Press Agency",
+            "fr": "Source : Agence de presse saoudienne"
+          },
+          "caption": {
+            "ar": "المصدر: واس",
+            "en": "Source: Saudi Press Agency",
+            "fr": "Source : Agence de presse saoudienne"
+          },
+          "source_url": "https://www.hiamag.com/منوعات/أخبار/1470021-محمية-إتبا-وجهة-سعودية-ساحرة-وتجسيد-لتاريخ-درب-زبيدة-العريق",
+          "source_image_url": "https://static.hiamag.com/styles/autox754/public/article/14/01/2022/FI_MAN5WQAQmIHa.jpg",
+          "provenance": {
+            "library_file_id": "libfile_41a8da6b66dc81919f42879a6e10656c",
+            "source_publication_date": "2022-01-17",
+            "capture_date": "Not independently established; publication date is not asserted as capture date.",
+            "scope_limit": "NOT evidence of a display physically inside North Sustainable Hunting Reserve or a hunting-season camp. Images concern the authority-organized community/heritage festival at Lina."
+          }
+        },
+        {
+          "id": "gulf-community-photo-02",
+          "path": "media/uploads/2026/10/gulf-tourism-gulf-community-photo-02.jpg",
+          "sha256": "f953cfd80d7f3807fa90472ed0971895c40d3340f487b8d7427066913ef7b46d",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "حرفية خلف طاولة مشغولات يدوية، تحيط بها منسوجات وزينة ملونة في شتاء درب زبيدة بمدينة لينة التاريخية. صورة أرشيفية منشورة في ديسمبر 2022.",
+            "en": "A craftswoman behind a table of handmade items, surrounded by textiles and colourful decorations at Darb Zubaydah Winter in the historic town of Linah. Archive photograph published in December 2022.",
+            "fr": "Une artisane derrière une table d’objets faits main, entourée de textiles et de décorations colorées au festival d’hiver de Darb Zubaydah, dans la ville historique de Linah. Photo d’archives publiée en décembre 2022."
+          },
+          "credit": {
+            "ar": "المصدر: واس",
+            "en": "Source: Saudi Press Agency",
+            "fr": "Source : Agence de presse saoudienne"
+          },
+          "caption": {
+            "ar": "المصدر: واس",
+            "en": "Source: Saudi Press Agency",
+            "fr": "Source : Agence de presse saoudienne"
+          },
+          "source_url": "https://awsdev.sayidaty.net/node/1530361",
+          "source_image_url": "https://static.sayidaty.net/styles/1375_scale/public/2022-12/203135.jpeg",
+          "provenance": {
+            "library_file_id": "libfile_e171fe2cd9848191b355700ac950a35d",
+            "source_publication_date": "2022-12-26",
+            "capture_date": "Not independently established; publication date is not asserted as capture date.",
+            "scope_limit": "NOT evidence of a display physically inside North Sustainable Hunting Reserve or a hunting-season camp. Images concern the authority-organized community/heritage festival at Lina."
+          }
+        },
+        {
+          "id": "gulf-hospitality-photo-02",
+          "path": "media/uploads/2026/10/gulf-tourism-gulf-hospitality-photo-02.jpg",
+          "sha256": "aba08f2d86ac04d7ea5981e537d2326fca5e0da28e2d63f52c1111e9ca721761",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "قرية زمان لوّل التراثية في منتجع تلال العين، بمبانٍ عند سفح كثبان رملية وجملين على مسار صحراوي.",
+            "en": "Zaman Lawal Heritage Village at Telal Resort Al Ain, with buildings at the foot of sand dunes and two camels on a desert track.",
+            "fr": "Le village patrimonial de Zaman Lawal au Telal Resort Al Ain, avec des bâtiments au pied de dunes et deux chameaux sur une piste désertique."
+          },
+          "credit": {
+            "ar": "المصدر: منتجع تلال العين",
+            "en": "Source: Telal Resort Al Ain",
+            "fr": "Source : Telal Resort Al Ain"
+          },
+          "caption": {
+            "ar": "المصدر: منتجع تلال العين",
+            "en": "Source: Telal Resort Al Ain",
+            "fr": "Source : Telal Resort Al Ain"
+          },
+          "source_url": "https://www.telalresort.ae/zaman-lawal-heritage-village.html",
+          "source_image_url": "https://www.telalresort.ae/cmsImages/zaman_lawal_heritage_village_1.jpg",
+          "provenance": {
+            "library_file_id": "libfile_790276da95e48191a17ec3ab427e8176",
+            "source_publication_date": null,
+            "capture_date": "Not independently established; not shown in visible caption.",
+            "scope_limit": "Official Telal cultural/leisure setting; not a photograph of an actual Barari hunting trip."
+          }
+        },
+        {
+          "id": "gulf-original-qatar-camp",
+          "path": "media/uploads/2026/10/gulf-tourism-gulf-original-qatar-camp.jpg",
+          "sha256": "af631546bd6b1895485fb97a654da90cbe97684e5c3e95c60642504f68055df9",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "خيام إقامة ومجلس خارجي ومرافق خدمية في مخيم بمحمية الجنوب في قطر.",
+            "en": "Sleeping tents, an outdoor majlis and service facilities at a camp in Al Jnoub Reserve in Qatar.",
+            "fr": "Des tentes d’hébergement, un majlis extérieur et des installations de service dans un campement de la réserve d’Al Jnoub, au Qatar."
+          },
+          "credit": {
+            "ar": "المصدر: وزارة البيئة والتغير المناخي القطرية",
+            "en": "Source: Qatar’s Ministry of Environment and Climate Change",
+            "fr": "Source : Ministère de l’Environnement et du Changement climatique du Qatar"
+          },
+          "caption": {
+            "ar": "المصدر: وزارة البيئة والتغير المناخي القطرية",
+            "en": "Source: Qatar’s Ministry of Environment and Climate Change",
+            "fr": "Source : Ministère de l’Environnement et du Changement climatique du Qatar"
+          },
+          "source_url": "https://www.mecc.gov.qa/Arabic/AwarenessandMedia/pages/al-jnoub-natural-reserve.aspx",
+          "source_image_url": "https://www.mecc.gov.qa/PublishingImages/Al-Jnoub-Natural-Reserve/5.jpg",
+          "provenance": {
+            "library_file_id": "libfile_4c60e08acc288191a26184fd7a45d9a2",
+            "source_publication_date": null,
+            "capture_date": "Not independently established; publication is not capture date.",
+            "provenance_evidence": "Byte-identical SHA256 match to Photo5 on the official MECC Al Jnoub gallery."
+          }
+        },
+        {
+          "id": "gulf-original-qatar-vehicle",
+          "path": "media/uploads/2026/10/gulf-tourism-gulf-original-qatar-vehicle.jpg",
+          "sha256": "0f51631af8df5b3942d1537f29366eff7b20767addda2c136ca46d14742b85d9",
+          "approved_for_article": true,
+          "alt": {
+            "ar": "مركبة مكشوفة تحمل زوارًا وتسير في الصحراء، وتظهر على خلفيتها عبارة محمية الجنوب.",
+            "en": "An open vehicle carrying visitors travels through the desert, with the words Al Jnoub Reserve visible on its rear.",
+            "fr": "Un véhicule ouvert transportant des visiteurs roule dans le désert ; l’inscription « Réserve d’Al Jnoub » apparaît à l’arrière."
+          },
+          "credit": {
+            "ar": "المصدر: وزارة البيئة والتغير المناخي القطرية",
+            "en": "Source: Qatar’s Ministry of Environment and Climate Change",
+            "fr": "Source : Ministère de l’Environnement et du Changement climatique du Qatar"
+          },
+          "caption": {
+            "ar": "المصدر: وزارة البيئة والتغير المناخي القطرية",
+            "en": "Source: Qatar’s Ministry of Environment and Climate Change",
+            "fr": "Source : Ministère de l’Environnement et du Changement climatique du Qatar"
+          },
+          "source_url": "https://www.mecc.gov.qa/Arabic/AwarenessandMedia/pages/al-jnoub-natural-reserve.aspx",
+          "source_image_url": "https://www.mecc.gov.qa/PublishingImages/Al-Jnoub-Natural-Reserve/10.jpg",
+          "provenance": {
+            "library_file_id": "libfile_5695adbdcd248191a8b1780df9a507c6",
+            "source_publication_date": null,
+            "capture_date": "Not independently established; publication is not capture date.",
+            "provenance_evidence": "Byte-identical SHA256 match to Photo10 on the official MECC Al Jnoub gallery."
+          }
+        }
+      ],
+      "translations": {
+        "ar": {
+          "title": "الصيد السياحي في بلدان الخليج العربية",
+          "kicker": "الصيد كسياحة ومورد تنمية ١من ٣",
+          "series_intro": "في تحقيق من ثلاث حلقات، تتتبّع «صيد» برامج الصيد السياحي في العالم العربي، من رحلات المقناص إلى خدمات الإقامة والإرشاد والمنتجات المحلية. نبدأ بالخليج، ثم ننتقل إلى المغرب العربي، ونختتم بمصر والعراق والأردن، لاستكشاف صلة هذه التجارب بالسياحة والتنمية المحلية.",
+          "episodes_heading": "في الحلقتين المقبلتين",
+          "episodes": [
+            "الصيد السياحي في دول المغرب العربي",
+            "الصيد السياحي في مصر والعراق والأردن"
+          ],
+          "deck": "مخيمات في الشمال السعودي، وصقور وسلق في الظفرة، وصيد يرتبط بمنتجع في العين، وطرائد من مزارع قطرية. خلف هذه الرحلات تعمل خدمات للإقامة والإرشاد والنقل والإكثار، وتدخل خبرة أهل البر وحرفهم في عرض سياحي له زواره وحجوزاته.",
+          "meta_description": "تحقيق «صيد» في الصيد السياحي بدول الخليج: مخيمات الشمال السعودي، والمرزوم وبراري في الإمارات، ومحمية الجنوب القطرية، وخدمات الضيافة والإرشاد والمنتجات المحلية.",
+          "ticker": "الصيد السياحي في بلدان الخليج العربية: تحقيق «صيد» في رحلات المقناص والضيافة وعمل أهل المنطقة",
+          "blocks": [
+            {
+              "type": "image",
+              "id": "gulf-original-cover"
+            },
+            {
+              "type": "paragraph",
+              "text": "مخيمات في الشمال السعودي، وصقور وسلق في الظفرة، وصيد يرتبط بمنتجع في العين، وطرائد من مزارع قطرية. خلف هذه الرحلات تعمل خدمات للإقامة والإرشاد والنقل والإكثار، وتدخل خبرة أهل البر وحرفهم في عرض سياحي له زواره وحجوزاته."
+            },
+            {
+              "type": "paragraph",
+              "text": "في محمية الشمال السعودية، يستطيع فريق من هواة الصيد اختيار مخيم يتسع لاثني عشر شخصًا، فيه ست خيام للمبيت وبيت شعر وخيمة طعام. وللمجموعات الأكبر مخيم يستقبل واحدًا وثلاثين ضيفًا، بخمس عشرة خيمة مبيت وجناح رئيس ومطبخ ومجالس خارجية. ويرافق الضيوف مرشد متخصص في البيئة والصيد."
+            },
+            {
+              "type": "paragraph",
+              "text": "هذه تفاصيل رحلة تُبنى حول المقناص: أين يقيم الزائر، ومن يرافقه، وكيف يمضي وقته في البر؟ وتكشف التجربة السعودية، إلى جانب المرزوم وبراري في الإمارات ومحمية الجنوب في قطر، وجوهًا مختلفة لسوق تجمع الصيد بالضيافة، وتمنح الموروث الصحراوي مكانًا في برامج السياحة."
+            },
+            {
+              "type": "heading",
+              "text": "الشمال السعودي: مخيمٌ ومرشدٌ ومنتجات من أهل المنطقة"
+            },
+            {
+              "type": "paragraph",
+              "text": "تأسست محمية الشمال للصيد المستدام عام 2022، وتمتد على نحو ألفي كيلومتر مربع ضمن نطاق محمية الإمام تركي بن عبدالله الملكية. وتتنوع تجربتها بين صيد الحبارى بالصقور، والغزلان بالسلق أو بالأسلحة النارية المخصصة، والمها الوضيحي بالأسلحة النارية، وفق تنظيم المحمية ونوع البرنامج."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-03",
+              "title": "الصياد ضيف… وزبون للحرفي",
+              "body": "في محمية الشمال السعودية، تعرض الأسر المنتجة حرفها ومنتجاتها لزوار المقناص."
+            },
+            {
+              "type": "paragraph",
+              "text": "وتتدرج الإقامة من المخيمات إلى النزل البيئي، الذي يقدم غرف نوم ومجلسًا ومطبخًا ومساحات جلوس خارجية. يتيح هذا التنوع تنظيم رحلة لمجموعة أصدقاء، أو اختيار إقامة أكثر خصوصية، مع بقاء يوم الصيد وخدمات الضيافة في الوجهة نفسها."
+            },
+            {
+              "type": "image",
+              "id": "gulf-hospitality-photo-01"
+            },
+            {
+              "type": "paragraph",
+              "text": "وخلف الطرائد مسار يبدأ قبل وصول الزائر. فقد شرحت الهيئة أن البرنامج يعتمد على إكثار طرائد الصيد وتهيئتها للتأقلم مع البيئة الطبيعية قبل إطلاقها، مع تنظيم الصيد بأعداد محددة. بهذه الآلية يصبح الإكثار والإدارة الميدانية جزءًا من تشغيل الوجهة، إلى جانب المخيمات ومرافقة الضيوف."
+            },
+            {
+              "type": "image",
+              "id": "gulf-original-north-houbara"
+            },
+            {
+              "type": "paragraph",
+              "text": "وللمجتمع المحلي موقع مباشر في التجربة. خصصت المحمية مكانًا تعرض فيه الأسر المنتجة منتجاتها الشعبية وحرفها اليدوية. وتفتح هذه المساحة صلة بين الزائر وأهل المنطقة، فيتعرف إلى إنتاجهم ويستطيع الشراء منه."
+            },
+            {
+              "type": "paragraph",
+              "text": "وتعمل الهيئة، على نطاق المحمية الملكية الأوسع، على تدريب أبناء المنطقة في الإرشاد السياحي البيئي والتعامل مع الصقور وإنتاج العسل، ودعم الحرفيين وأصحاب المشاريع الصغيرة. كما يتيح مهرجان شتاء درب زبيدة فرص عمل مؤقتة ومشاركة للأسر المنتجة. ويضع هذا السياق رحلة الصيد ضمن نشاط سياحي أوسع يربط البر بالتراث والأسواق المحلية."
+            },
+            {
+              "type": "image",
+              "id": "gulf-community-photo-01"
+            },
+            {
+              "type": "image",
+              "id": "gulf-community-photo-02"
+            },
+            {
+              "type": "heading",
+              "text": "المرزوم: الصقر يقود الرحلة في الظفرة"
+            },
+            {
+              "type": "paragraph",
+              "text": "في منطقة الظفرة بأبوظبي، تحتفظ محمية المرزوم بإيقاع المقناص التقليدي. يتوزع الزوار على فرق ترافقها خبرات ميدانية، ويكون الصيد بالصقور وكلاب السلق، من دون أسلحة نارية. تشمل الطرائد الحبارى والأرانب والظباء، وتُستكمل التجربة بالتنقل داخل المحمية والمبيت في مخيماتها."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-01",
+              "title": "صيد… بلا رصاصة!",
+              "body": "في المرزوم بأبوظبي، المقناص بالصقور والسلق، لا بالبنادق."
+            },
+            {
+              "type": "paragraph",
+              "text": "هنا يشكل المرشد جزءًا من قيمة الرحلة: معرفة المكان ومرافقة المجموعة وتوجيهها في تجربة تختلف عن جولة مشاهدة الحياة البرية. وتتنوع خيارات المبيت بين المخيم الملكي ومخيم النخبة ومخيم الأفراد، فيما تتيح البيئة الصحراوية للزائر التعرف إلى نباتاتها وكائناتها. وقد استقبلت المحمية، منذ افتتاحها عام 2015، هواة صقارة وسياحًا عربًا وأجانب."
+            },
+            {
+              "type": "paragraph",
+              "text": "وتضيف تفاصيل الضيافة إلى المقناص طابعًا اجتماعيًا؛ فبإمكان الصقارين أخذ طرائدهم أو طهوها في موقع التخييم، وتشمل أنشطة الوجهة ركوب الجمال والجولات الإرشادية والطهو التقليدي. بذلك تمتد التجربة من ساعات الصيد إلى وقت يقضيه الزوار في المخيم ومع مرافقيهم."
+            },
+            {
+              "type": "paragraph",
+              "text": "وللمرزوم حضور مبكر في أرشيف «صيد»: غطت المجلة افتتاحها في نوفمبر 2015، ثم وثقت استقبالها صقارين من السعودية وقطر في فبراير 2017 ضمن برنامج لتبادل الخبرات. يضيء هذا المسار على دور الوجهة في جمع هواة المقناص من دول المنطقة حول تجربة مشتركة."
+            },
+            {
+              "type": "heading",
+              "text": "براري في العين: الصيد يدخل عالم المنتجعات"
+            },
+            {
+              "type": "paragraph",
+              "text": "في رماح بالعين، تقدم «براري للصيد» المرتبطة بمنتجع تلال نموذجًا يجمع تجربة الصيد بمرافق الإقامة الصحراوية. وتعرض الجهة المنظمة ثلاثة أنواع من الطرائد: المها العربية، وغزال الريم، والغزال الجبلي المعروف بالدماني. وللحجوزات والاستفسارات الدولية، تدرج وكلاء في إسبانيا ورومانيا، إلى جانب التواصل المباشر مع فريقها في الإمارات."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-04",
+              "title": "مش كل ضيوف الرحلة صيادين!",
+              "body": "في تلال بالعين، للمرافقين ركوب الخيل والجمال والسفاري، إلى جانب برنامج الصيد."
+            },
+            {
+              "type": "paragraph",
+              "text": "وأوضح سيف الصالح، مدير الصيد في براري، في حديث إلى «خليج تايمز» نُشر في سبتمبر 2026، أن الجهة توفر الأسلحة والمركبات والإشراف المهني، وأن المشاركين لا يحضرون أسلحتهم الخاصة. وبيّن أن الطرائد المخصصة لهذه التجربة مكاثرة في الأسر، وأن صيدها يجري تحت إشراف هيئة البيئة بأبوظبي. تصبح المعدات والمرافقة، في هذا النموذج، من الخدمات التي يتولاها المشغّل نفسه."
+            },
+            {
+              "type": "paragraph",
+              "text": "أما منتجع تلال، فيوفر الإقامة وأنشطة تشمل ركوب الجمال والخيل ورحلات السفاري الصحراوية. وتمنح هذه الخيارات المرافقين برنامجًا خاصًا بهم، فيمكن أن تجمع الزيارة أشخاصًا جاؤوا للصيد وآخرين اختاروا الإقامة واستكشاف الصحراء."
+            },
+            {
+              "type": "image",
+              "id": "gulf-hospitality-photo-02"
+            },
+            {
+              "type": "paragraph",
+              "text": "وتظهر الصلة بين الصيد والضيافة أيضًا في البنية الاستثمارية للمشروع. تدرج البيانات المالية لمجموعة «ألفا ظبي» لعام 2025 شركة منتجع تلال ضمن شركات «موارد القابضة للاستثمار»، وتجمع أنشطتها المعلنة بين إدارة الفنادق والمنتجعات وتشغيل محميات الصيد الرياضي. إنها صورة واضحة لدخول تجربة الصيد في أعمال السياحة والإقامة."
+            },
+            {
+              "type": "heading",
+              "text": "قطر: رحلة تصل المخيم بالمزرعة"
+            },
+            {
+              "type": "paragraph",
+              "text": "في جنوب قطر، تجمع محمية الجنوب المقناص بالتخييم في أرض تتنوع بين الرمال والصخور والغطاء النباتي. وتبدأ خصوصية النموذج من مصدر الطرائد: تنتجها مزارع قطرية، وتُرقّم وتُطلق تحت معاينة إدارة المحمية. وتوضح وزارة البيئة والتغير المناخي أن هذا التوجه يهدف إلى تخفيف الضغط على الطرائد الطبيعية وإتاحة المجال لتزايدها."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-02",
+              "title": "الطريدة تبدأ رحلتها في المزرعة",
+              "body": "في محمية الجنوب بقطر، مزارع محلية تنتج طرائد تُرقّم وتُطلق بإشراف المحمية."
+            },
+            {
+              "type": "paragraph",
+              "text": "وتعرض المحمية مخيمًا كبيرًا فيه مجلس وأربع خيام للمبيت ومطبخ، وآخر أصغر يضم مجلسًا وخيمتي مبيت ومطبخًا. وتشمل خدماتها سيارات مجهزة لأغراض الصيد، فيما تضم قائمة الطرائد الأرانب والحبارى والكروان والظباء."
+            },
+            {
+              "type": "image",
+              "id": "gulf-original-qatar-camp"
+            },
+            {
+              "type": "paragraph",
+              "text": "ويُحجز البرنامج عبر تطبيق المحمية، وتقتصر وسائل الصيد فيه على الصقور وكلاب الصيد. ومن تفاصيل التشغيل توفير المياه والوقود وخدمات النظافة اليومية ونقل أغراض الزوار إلى المخيمات، مع محلات تجارية في المقر الرئيسي. أما السيارات الخاصة فلا تدخل المحمية، ويخضع التنقل وتنظيم الصيد لتعليمات إدارتها."
+            },
+            {
+              "type": "image",
+              "id": "gulf-original-qatar-vehicle"
+            },
+            {
+              "type": "paragraph",
+              "text": "تكشف هذه التفاصيل كيف يتوزع العمل حول رحلة واحدة: مزرعة تُنتج الطرائد، وطاقم يجهز المخيم، وخدمة تنقل المتاع، وعاملون يتولون النظافة والإمداد. في هذه الحلقة المحلية تلتقي هواية المقناص بخدمات يحتاجها الزائر طوال إقامته."
+            },
+            {
+              "type": "heading",
+              "text": "أين تصل قيمة الرحلة؟"
+            },
+            {
+              "type": "paragraph",
+              "text": "من الشمال إلى الظفرة والعين وجنوب قطر، تتشابه بعض عناصر التشغيل وتختلف شخصية التجربة. للصقور وكلاب الصيد حضور أساسي في المرزوم والجنوب، وتتعدد الوسائل في الشمال، فيما يضيف نموذج براري خدمات الصيد المجهز إلى الإقامة في المنتجع. وتتيح هذه الفروق للصياد أن يختار بين رحلة ترتكز على الموروث، وإقامة جماعية في المخيم، وتجربة تجمع الصيد بخدمات فندقية."
+            },
+            {
+              "type": "paragraph",
+              "text": "وتتوزع قيمة الرحلة بين الإقامة والنقل والإرشاد المتخصص والوجبات وتجهيزات المخيم، إلى جانب أعمال إكثار الطرائد وإدارة إطلاقها. وتضيف مشاركة الأسر المنتجة في الشمال مسارًا يصل إنفاق الزائر بالحرفة والمنتج المحلي."
+            },
+            {
+              "type": "paragraph",
+              "text": "وتتسع فرصة الوجهة حين يجد المرافقون ما يفعلونه أيضًا. فرحلات الجمال والخيل واستكشاف الطبيعة والإقامة الصحراوية تمنح الرحلة أنشطة أخرى، وتتيح مشاركة الأسرة أو الأصدقاء باهتمامات مختلفة. هنا تبرز أهمية تنظيم البرنامج كاملًا: الصيد يجذب الهواة، والضيافة تجعل المكان صالحًا لإقامة يقضيها معهم آخرون."
+            },
+            {
+              "type": "paragraph",
+              "text": "تقدم هذه التجارب الخليجية ملامح عملية لسياحة الصيد: مكان معلوم، ومشغّل يتولى الخدمات، وطرائد ووسائل محددة، وإقامة مرتبطة بالبرنامج. وفي قلبها يبقى أهل الخبرة، من المرشد والصقار إلى العامل في الإكثار والضيافة والحرفي. عندهم تتحول تفاصيل الرحلة إلى عمل، ويجد الموروث طريقًا إلى اقتصاد المكان."
+            },
+            {
+              "type": "sources",
+              "text": "المصادر: وكالة الأنباء السعودية، هيئة تطوير محمية الإمام تركي بن عبدالله الملكية، مكتب أبوظبي الإعلامي، وزارة التغير المناخي والبيئة الإماراتية، وزارة البيئة والتغير المناخي القطرية، الجهات المشغّلة، وأرشيف صيد."
+            }
+          ],
+          "intro": [],
+          "sections": [],
+          "sources": []
+        },
+        "en": {
+          "title": "Hunting Tourism in the Arab Gulf Countries",
+          "kicker": "Hunting as Tourism and a Driver of Development | 1 of 3",
+          "series_intro": "In a three-part investigation, Sayd explores hunting tourism programmes across the Arab world, from traditional hunting trips to accommodation, guiding services and local products. We begin in the Gulf, then move to the Maghreb, and conclude with Egypt, Iraq and Jordan, exploring how these experiences connect with tourism and local development.",
+          "episodes_heading": "In the next two parts",
+          "episodes": [
+            "Hunting Tourism in the Maghreb Countries",
+            "Hunting Tourism in Egypt, Iraq and Jordan"
+          ],
+          "meta_description": "Sayd investigates hunting tourism in the Arab Gulf: Saudi camps, Al Marzoom and Barari in the UAE, Qatar’s Al Jnoub Reserve, hospitality, guiding and local products.",
+          "ticker": "Hunting tourism in the Arab Gulf: a Sayd investigation into hunting trips, hospitality and local livelihoods",
+          "deck": "Camps in northern Saudi Arabia, falcons and Saluki hounds in Al Dhafra, hunting linked to a resort in Al Ain, and game from Qatari farms. Behind these trips are accommodation, guiding, transport and breeding services, while the knowledge and crafts of desert communities become part of a tourism offering with its own visitors and bookings.",
+          "blocks": [
+            {
+              "type": "image",
+              "id": "gulf-original-cover"
+            },
+            {
+              "type": "paragraph",
+              "text": "Camps in northern Saudi Arabia, falcons and Saluki hounds in Al Dhafra, hunting linked to a resort in Al Ain, and game from Qatari farms. Behind these trips are accommodation, guiding, transport and breeding services, while the knowledge and crafts of desert communities become part of a tourism offering with its own visitors and bookings."
+            },
+            {
+              "type": "paragraph",
+              "text": "At Saudi Arabia’s Al Shamal Reserve, a group of hunting enthusiasts can choose a camp for twelve people, with six sleeping tents, a traditional woven tent and a dining tent. Larger groups can book a camp for thirty-one guests, with fifteen sleeping tents, a main suite, a kitchen and outdoor seating areas. A guide specialising in the environment and hunting accompanies the guests."
+            },
+            {
+              "type": "paragraph",
+              "text": "These are the details of a trip built around traditional hunting: where does the visitor stay, who accompanies them, and how do they spend their time in the desert? The Saudi experience, alongside Al Marzoom and Barari in the UAE and Al Jnoub Reserve in Qatar, reveals different sides of a market that combines hunting with hospitality and gives desert heritage a place in tourism programmes."
+            },
+            {
+              "type": "heading",
+              "text": "Northern Saudi Arabia: a camp, a guide and products from the local community"
+            },
+            {
+              "type": "paragraph",
+              "text": "Established in 2022, Al Shamal Sustainable Hunting Reserve covers around two thousand square kilometres within the Imam Turki bin Abdullah Royal Reserve. Its experiences range from hunting houbara bustards with falcons to hunting gazelles with Saluki hounds or designated firearms, and Arabian oryx with firearms, according to the reserve’s rules and the type of programme."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-03",
+              "title": "The hunter is a guest… and a customer for the artisan",
+              "body": "At Saudi Arabia’s Al Shamal Reserve, home-based producers display their crafts and products for hunting visitors."
+            },
+            {
+              "type": "paragraph",
+              "text": "Accommodation ranges from camps to an eco-lodge offering bedrooms, a majlis reception room, a kitchen and outdoor seating areas. This variety makes it possible to arrange a trip for a group of friends or choose a more private stay, while keeping the day’s hunting and hospitality services at the same destination."
+            },
+            {
+              "type": "image",
+              "id": "gulf-hospitality-photo-01"
+            },
+            {
+              "type": "paragraph",
+              "text": "Behind the game is a process that begins before the visitor arrives. The authority has explained that the programme relies on breeding game and preparing it to adapt to the natural environment before release, with hunting limited to specified numbers. Through this approach, breeding and field management become part of running the destination, alongside the camps and guest accompaniment."
+            },
+            {
+              "type": "image",
+              "id": "gulf-original-north-houbara"
+            },
+            {
+              "type": "paragraph",
+              "text": "The local community has a direct place in the experience. The reserve has set aside an area where home-based producers display traditional products and handicrafts. This space connects visitors with local people, allowing them to discover and buy what they make."
+            },
+            {
+              "type": "paragraph",
+              "text": "Across the wider royal reserve, the authority also trains local residents in ecotourism guiding, falcon handling and honey production, and supports artisans and small-business owners. The Darb Zubaydah Winter Festival provides temporary jobs and opportunities for home-based producers to take part. This setting places the hunting trip within a broader tourism activity connecting the desert with heritage and local markets."
+            },
+            {
+              "type": "image",
+              "id": "gulf-community-photo-01"
+            },
+            {
+              "type": "image",
+              "id": "gulf-community-photo-02"
+            },
+            {
+              "type": "heading",
+              "text": "Al Marzoom: the falcon leads the journey in Al Dhafra"
+            },
+            {
+              "type": "paragraph",
+              "text": "In Abu Dhabi’s Al Dhafra region, Al Marzoom Reserve retains the rhythm of traditional hunting. Visitors are divided into groups accompanied by experienced field guides, and hunt with falcons and Saluki hounds, without firearms. The game includes houbara bustards, hares and antelopes, while travel within the reserve and overnight stays in its camps complete the experience."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-01",
+              "title": "Hunting… without a bullet!",
+              "body": "At Al Marzoom in Abu Dhabi, hunting is with falcons and Saluki hounds, not guns."
+            },
+            {
+              "type": "paragraph",
+              "text": "Here, the guide is part of the trip’s value: knowing the place, accompanying the group and guiding it through an experience different from a wildlife-watching tour. Overnight options range from the Royal Camp and Elite Camp to the Individuals Camp, while the desert setting allows visitors to discover its plants and wildlife. Since opening in 2015, the reserve has welcomed falconry enthusiasts and tourists from Arab countries and beyond."
+            },
+            {
+              "type": "paragraph",
+              "text": "The details of hospitality add a social dimension to the hunt. Falconers can take their game away or cook it at the campsite, and activities at the destination include camel riding, guided tours and traditional cooking. The experience thus extends beyond the hunting hours to time spent in camp and with companions."
+            },
+            {
+              "type": "paragraph",
+              "text": "Al Marzoom also features in Sayd’s early archives: the magazine covered its opening in November 2015, then documented its reception of falconers from Saudi Arabia and Qatar in February 2017 as part of an experience-exchange programme. This history highlights the destination’s role in bringing hunting enthusiasts from the region’s countries together around a shared experience."
+            },
+            {
+              "type": "heading",
+              "text": "Barari in Al Ain: hunting enters the resort world"
+            },
+            {
+              "type": "paragraph",
+              "text": "In Remah, Al Ain, Barari Hunting, associated with Telal Resort, offers a model combining hunting experiences with desert accommodation facilities. The operator offers three types of game: Arabian oryx, sand gazelle and the mountain gazelle known as damani. For international bookings and enquiries, it lists agents in Spain and Romania, alongside direct contact with its team in the UAE."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-04",
+              "title": "Not everyone on the trip is a hunter!",
+              "body": "At Telal in Al Ain, companions can enjoy horse riding, camel riding and safaris alongside the hunting programme."
+            },
+            {
+              "type": "paragraph",
+              "text": "In an interview with Khaleej Times published in September 2026, Barari’s hunting manager, Saif Al Saleh, explained that the operator provides firearms, vehicles and professional supervision, and that participants do not bring their own weapons. He said the game intended for this experience is captive-bred and hunted under the supervision of the Environment Agency – Abu Dhabi. In this model, equipment and accompaniment are services supplied by the operator itself."
+            },
+            {
+              "type": "paragraph",
+              "text": "Telal Resort, meanwhile, offers accommodation and activities including camel and horse riding and desert safaris. These options give companions a programme of their own, allowing one visit to bring together people who have come to hunt and others who have chosen to stay and explore the desert."
+            },
+            {
+              "type": "image",
+              "id": "gulf-hospitality-photo-02"
+            },
+            {
+              "type": "paragraph",
+              "text": "The link between hunting and hospitality also appears in the project’s investment structure. Alpha Dhabi Group’s 2025 financial statements list Telal Resort among the companies of Mawarid Holding Investment, with its stated activities combining hotel and resort management with the operation of sport-hunting reserves. It is a clear illustration of hunting experiences becoming part of the tourism and accommodation business."
+            },
+            {
+              "type": "heading",
+              "text": "Qatar: a journey connecting camp and farm"
+            },
+            {
+              "type": "paragraph",
+              "text": "In southern Qatar, Al Jnoub Reserve combines traditional hunting with camping across terrain ranging from sand to rock and vegetation. The model’s distinctive feature begins with the source of its game: it is bred on Qatari farms, numbered and released under the reserve management’s inspection. The Ministry of Environment and Climate Change explains that this approach aims to ease pressure on wild game and allow its numbers to increase."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-02",
+              "title": "The game’s journey begins on the farm",
+              "body": "At Qatar’s Al Jnoub Reserve, local farms breed game that is numbered and released under the reserve’s supervision."
+            },
+            {
+              "type": "paragraph",
+              "text": "The reserve offers a large camp with a majlis, four sleeping tents and a kitchen, and a smaller one with a majlis, two sleeping tents and a kitchen. Its services include vehicles equipped for hunting, while the game list includes hares, houbara bustards, stone-curlews and antelopes."
+            },
+            {
+              "type": "image",
+              "id": "gulf-original-qatar-camp"
+            },
+            {
+              "type": "paragraph",
+              "text": "The programme is booked through the reserve’s app, and hunting methods are limited to falcons and hunting dogs. Operational details include the provision of water, fuel, daily cleaning services and transport of visitors’ belongings to the camps, with shops at the main headquarters. Private cars are not allowed into the reserve, and movement and hunting arrangements are subject to its management’s instructions."
+            },
+            {
+              "type": "image",
+              "id": "gulf-original-qatar-vehicle"
+            },
+            {
+              "type": "paragraph",
+              "text": "These details show how work is distributed around a single trip: a farm breeds the game, a team prepares the camp, a service transports belongings, and workers handle cleaning and supplies. In this local network, the pursuit of traditional hunting meets services that visitors need throughout their stay."
+            },
+            {
+              "type": "heading",
+              "text": "Where does the value of the trip go?"
+            },
+            {
+              "type": "paragraph",
+              "text": "From Al Shamal to Al Dhafra, Al Ain and southern Qatar, some operational elements are similar, while the character of each experience differs. Falcons and hunting dogs are central to Al Marzoom and Al Jnoub; hunting methods are more varied at Al Shamal; and the Barari model adds outfitted hunting services to a resort stay. These differences allow hunters to choose between a heritage-centred trip, a group stay in camp and an experience combining hunting with hotel services."
+            },
+            {
+              "type": "paragraph",
+              "text": "The value of the trip is spread across accommodation, transport, specialist guiding, meals and camp equipment, alongside game breeding and the management of releases. The involvement of home-based producers at Al Shamal adds a channel linking visitor spending with local crafts and products."
+            },
+            {
+              "type": "paragraph",
+              "text": "A destination’s opportunities grow when companions also find things to do. Camel and horse rides, nature exploration and desert stays add other activities to the trip, allowing family members or friends with different interests to take part. This is where organising the whole programme matters: hunting attracts enthusiasts, while hospitality makes the destination suitable for a stay that others can share with them."
+            },
+            {
+              "type": "paragraph",
+              "text": "These Gulf experiences show the practical elements of hunting tourism: an identified location, an operator responsible for services, specified game and hunting methods, and accommodation linked to the programme. At their heart remain people with expertise, from guides and falconers to breeding and hospitality workers and artisans. Through them, the details of the trip become work, and heritage finds a place in the local economy."
+            },
+            {
+              "type": "sources",
+              "text": "Sources: Saudi Press Agency, Imam Turki bin Abdullah Royal Reserve Development Authority, Abu Dhabi Media Office, UAE Ministry of Climate Change and Environment, Qatar’s Ministry of Environment and Climate Change, the operators, and Sayd’s archives."
+            }
+          ],
+          "intro": [],
+          "sections": [],
+          "sources": []
+        },
+        "fr": {
+          "title": "Le tourisme de chasse dans les pays arabes du Golfe",
+          "kicker": "La chasse, activité touristique et moteur de développement | 1 sur 3",
+          "series_intro": "Dans une enquête en trois volets, Sayd explore les programmes de tourisme de chasse dans le monde arabe, des séjours de chasse traditionnelle aux services d’hébergement et d’accompagnement, en passant par les produits locaux. Nous commençons par le Golfe, poursuivons au Maghreb et terminons par l’Égypte, l’Irak et la Jordanie, pour examiner les liens entre ces expériences, le tourisme et le développement local.",
+          "episodes_heading": "Dans les deux prochains volets",
+          "episodes": [
+            "Le tourisme de chasse dans les pays du Maghreb",
+            "Le tourisme de chasse en Égypte, en Irak et en Jordanie"
+          ],
+          "meta_description": "Sayd enquête sur le tourisme de chasse dans le Golfe arabe : camps saoudiens, Al Marzoom et Barari aux Émirats, réserve d’Al Jnoub au Qatar, accueil et produits locaux.",
+          "ticker": "Le tourisme de chasse dans le Golfe arabe : Sayd enquête sur les séjours de chasse, l’accueil et le travail local",
+          "deck": "Des campements dans le nord de l’Arabie saoudite, des faucons et des lévriers salukis à Al Dhafra, une chasse liée à un complexe hôtelier à Al Ain, du gibier provenant d’élevages qataris. Derrière ces séjours se déploient des services d’hébergement, d’accompagnement, de transport et d’élevage. Les connaissances et les métiers des habitants du désert trouvent ainsi leur place dans une offre touristique, avec ses visiteurs et ses réservations.",
+          "blocks": [
+            {
+              "type": "image",
+              "id": "gulf-original-cover"
+            },
+            {
+              "type": "paragraph",
+              "text": "Des campements dans le nord de l’Arabie saoudite, des faucons et des lévriers salukis à Al Dhafra, une chasse liée à un complexe hôtelier à Al Ain, du gibier provenant d’élevages qataris. Derrière ces séjours se déploient des services d’hébergement, d’accompagnement, de transport et d’élevage. Les connaissances et les métiers des habitants du désert trouvent ainsi leur place dans une offre touristique, avec ses visiteurs et ses réservations."
+            },
+            {
+              "type": "paragraph",
+              "text": "Dans la réserve saoudienne d’Al Shamal, un groupe d’amateurs de chasse peut choisir un campement de douze personnes, comprenant six tentes pour la nuit, une tente traditionnelle en toile tissée et une tente destinée aux repas. Pour les groupes plus nombreux, un autre campement accueille trente et un hôtes, avec quinze tentes pour la nuit, une suite principale, une cuisine et des espaces de détente extérieurs. Un guide spécialisé dans l’environnement et la chasse accompagne les visiteurs."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ce sont les détails d’un séjour organisé autour de la chasse traditionnelle : où le visiteur loge-t-il, qui l’accompagne et comment passe-t-il son temps dans le désert ? L’expérience saoudienne, aux côtés d’Al Marzoom et de Barari aux Émirats arabes unis et de la réserve d’Al Jnoub au Qatar, révèle différentes facettes d’un marché qui associe chasse et hospitalité, tout en donnant au patrimoine du désert une place dans les programmes touristiques."
+            },
+            {
+              "type": "heading",
+              "text": "Le nord saoudien : un campement, un guide et des produits locaux"
+            },
+            {
+              "type": "paragraph",
+              "text": "Créée en 2022, la réserve de chasse durable d’Al Shamal s’étend sur environ deux mille kilomètres carrés au sein de la réserve royale de l’imam Turki ben Abdallah. Elle propose différentes pratiques : la chasse à l’outarde houbara au faucon, aux gazelles avec des salukis ou des armes à feu prévues à cet effet, et à l’oryx d’Arabie avec des armes à feu, selon les règles de la réserve et le programme choisi."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-03",
+              "title": "Le chasseur, un hôte… et un client pour l’artisan",
+              "body": "Dans la réserve saoudienne d’Al Shamal, des familles productrices présentent leurs créations artisanales et leurs produits aux visiteurs venus chasser."
+            },
+            {
+              "type": "paragraph",
+              "text": "L’hébergement va des campements à un écogîte comprenant des chambres, un majlis — salon de réception —, une cuisine et des espaces de détente extérieurs. Cette diversité permet d’organiser un voyage entre amis ou de choisir un séjour plus intime, tout en réunissant la journée de chasse et les services d’accueil sur une même destination."
+            },
+            {
+              "type": "image",
+              "id": "gulf-hospitality-photo-01"
+            },
+            {
+              "type": "paragraph",
+              "text": "Derrière le gibier se trouve un processus qui commence avant l’arrivée du visiteur. L’autorité a expliqué que le programme repose sur l’élevage du gibier et sa préparation à l’adaptation au milieu naturel avant le lâcher, la chasse étant limitée à des nombres définis. L’élevage et la gestion de terrain deviennent ainsi des composantes de l’exploitation de la destination, au même titre que les campements et l’accompagnement des hôtes."
+            },
+            {
+              "type": "image",
+              "id": "gulf-original-north-houbara"
+            },
+            {
+              "type": "paragraph",
+              "text": "La population locale participe directement à l’expérience. La réserve a réservé un espace où des familles productrices exposent leurs produits traditionnels et leurs objets artisanaux. Ce lieu crée un lien entre les visiteurs et les habitants, permettant de découvrir leur production et de l’acheter."
+            },
+            {
+              "type": "paragraph",
+              "text": "À l’échelle plus large de la réserve royale, l’autorité forme aussi des habitants à l’accompagnement écotouristique, au maniement des faucons et à la production de miel, tout en soutenant les artisans et les petits entrepreneurs. Le festival d’hiver de Darb Zubaydah offre également des emplois temporaires et des possibilités de participation aux familles productrices. Ce contexte inscrit le séjour de chasse dans une activité touristique plus vaste, reliant le désert au patrimoine et aux marchés locaux."
+            },
+            {
+              "type": "image",
+              "id": "gulf-community-photo-01"
+            },
+            {
+              "type": "image",
+              "id": "gulf-community-photo-02"
+            },
+            {
+              "type": "heading",
+              "text": "Al Marzoom : le faucon mène le voyage à Al Dhafra"
+            },
+            {
+              "type": "paragraph",
+              "text": "Dans la région d’Al Dhafra, à Abou Dhabi, la réserve d’Al Marzoom conserve le rythme de la chasse traditionnelle. Les visiteurs se répartissent en groupes accompagnés de personnes expérimentées sur le terrain, et chassent au faucon et avec des lévriers salukis, sans armes à feu. Le gibier comprend des outardes houbaras, des lièvres et des antilopes. Les déplacements dans la réserve et les nuits dans ses campements complètent l’expérience."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-01",
+              "title": "Chasser… sans tirer une balle !",
+              "body": "À Al Marzoom, à Abou Dhabi, on chasse au faucon et avec des salukis, pas au fusil."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ici, le guide fait partie de la valeur du séjour : il connaît les lieux, accompagne le groupe et l’oriente dans une expérience différente d’une excursion d’observation de la faune. Les possibilités d’hébergement vont du campement royal au campement Élite, en passant par celui destiné aux particuliers. Le milieu désertique permet aussi aux visiteurs de découvrir ses plantes et ses animaux. Depuis son ouverture en 2015, la réserve accueille des amateurs de fauconnerie et des touristes des pays arabes et d’ailleurs."
+            },
+            {
+              "type": "paragraph",
+              "text": "Les détails de l’accueil donnent à la chasse une dimension sociale : les fauconniers peuvent emporter leur gibier ou le cuisiner au campement. Les activités proposées comprennent les promenades à dos de chameau, les visites guidées et la cuisine traditionnelle. L’expérience se prolonge ainsi au-delà des heures de chasse, dans le temps passé au campement et avec ses compagnons de voyage."
+            },
+            {
+              "type": "paragraph",
+              "text": "Al Marzoom apparaît aussi très tôt dans les archives de Sayd : le magazine a couvert son ouverture en novembre 2015, puis documenté l’accueil de fauconniers saoudiens et qataris en février 2017 dans le cadre d’un programme d’échange d’expériences. Ce parcours éclaire le rôle de la destination dans le rassemblement d’amateurs de chasse des pays de la région autour d’une expérience commune."
+            },
+            {
+              "type": "heading",
+              "text": "Barari à Al Ain : la chasse entre dans l’univers des complexes hôteliers"
+            },
+            {
+              "type": "paragraph",
+              "text": "À Remah, dans la région d’Al Ain, Barari Hunting, associé au Telal Resort, propose un modèle réunissant une expérience de chasse et des installations d’hébergement dans le désert. L’opérateur propose trois types de gibier : l’oryx d’Arabie, la gazelle des sables et la gazelle de montagne appelée damani. Pour les réservations et les demandes internationales, il indique des agents en Espagne et en Roumanie, en complément du contact direct avec son équipe aux Émirats."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-04",
+              "title": "Tous les voyageurs ne sont pas chasseurs !",
+              "body": "À Telal, à Al Ain, les accompagnants peuvent profiter de promenades à cheval et à dos de chameau ainsi que de safaris, parallèlement au programme de chasse."
+            },
+            {
+              "type": "paragraph",
+              "text": "Dans un entretien à Khaleej Times publié en septembre 2026, Saif Al Saleh, responsable de la chasse chez Barari, a expliqué que l’opérateur fournit les armes, les véhicules et l’encadrement professionnel, et que les participants n’apportent pas leurs propres armes. Il a précisé que le gibier destiné à cette expérience est élevé en captivité et que sa chasse se déroule sous la supervision de l’Agence pour l’environnement d’Abou Dhabi. Dans ce modèle, l’équipement et l’accompagnement font donc partie des services assurés par l’opérateur lui-même."
+            },
+            {
+              "type": "paragraph",
+              "text": "Le Telal Resort propose, pour sa part, un hébergement et des activités comprenant les promenades à dos de chameau, l’équitation et les safaris dans le désert. Ces possibilités offrent aux accompagnants leur propre programme : un même séjour peut réunir des personnes venues chasser et d’autres ayant choisi de séjourner sur place et d’explorer le désert."
+            },
+            {
+              "type": "image",
+              "id": "gulf-hospitality-photo-02"
+            },
+            {
+              "type": "paragraph",
+              "text": "Le lien entre chasse et hospitalité apparaît également dans la structure d’investissement du projet. Les états financiers du groupe Alpha Dhabi pour 2025 mentionnent la société Telal Resort parmi celles de Mawarid Holding Investment. Ses activités déclarées réunissent la gestion d’hôtels et de complexes touristiques et l’exploitation de réserves de chasse sportive. C’est une illustration claire de l’intégration de l’expérience de chasse aux métiers du tourisme et de l’hébergement."
+            },
+            {
+              "type": "heading",
+              "text": "Qatar : un voyage reliant le campement à l’élevage"
+            },
+            {
+              "type": "paragraph",
+              "text": "Dans le sud du Qatar, la réserve d’Al Jnoub associe chasse traditionnelle et camping sur des terrains mêlant sable, roches et végétation. La particularité du modèle commence par l’origine du gibier : il provient d’élevages qataris, est numéroté puis relâché sous le contrôle de la direction de la réserve. Le ministère de l’Environnement et du Changement climatique explique que cette approche vise à réduire la pression sur le gibier sauvage et à permettre l’augmentation de ses effectifs."
+            },
+            {
+              "type": "box",
+              "id": "gulf-box-02",
+              "title": "Le parcours du gibier commence à la ferme",
+              "body": "Dans la réserve d’Al Jnoub, au Qatar, des fermes locales élèvent du gibier qui est numéroté puis relâché sous la supervision de la réserve."
+            },
+            {
+              "type": "paragraph",
+              "text": "La réserve propose un grand campement comprenant un majlis, quatre tentes pour la nuit et une cuisine, et un autre, plus petit, doté d’un majlis, de deux tentes pour la nuit et d’une cuisine. Ses services incluent des véhicules équipés pour la chasse ; la liste du gibier comprend des lièvres, des outardes houbaras, des œdicnèmes et des antilopes."
+            },
+            {
+              "type": "image",
+              "id": "gulf-original-qatar-camp"
+            },
+            {
+              "type": "paragraph",
+              "text": "Le programme se réserve au moyen de l’application de la réserve, et seules la chasse au faucon et la chasse avec des chiens y sont pratiquées. L’organisation comprend la fourniture d’eau et de carburant, le nettoyage quotidien et le transport des affaires des visiteurs jusqu’aux campements, ainsi que des commerces au siège principal. Les voitures particulières ne sont pas admises dans la réserve ; les déplacements et l’organisation de la chasse sont soumis aux instructions de sa direction."
+            },
+            {
+              "type": "image",
+              "id": "gulf-original-qatar-vehicle"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ces détails montrent comment le travail se répartit autour d’un seul séjour : une ferme élève le gibier, une équipe prépare le campement, un service transporte les bagages et des employés assurent le nettoyage et l’approvisionnement. Dans ce réseau local, la pratique de la chasse traditionnelle rencontre les services dont le visiteur a besoin tout au long de son séjour."
+            },
+            {
+              "type": "heading",
+              "text": "Où va la valeur du séjour ?"
+            },
+            {
+              "type": "paragraph",
+              "text": "D’Al Shamal à Al Dhafra, Al Ain et au sud du Qatar, certains éléments d’exploitation se ressemblent, mais chaque expérience conserve son caractère. Les faucons et les chiens de chasse occupent une place centrale à Al Marzoom et à Al Jnoub ; les moyens de chasse sont plus variés à Al Shamal ; le modèle de Barari ajoute, quant à lui, des prestations de chasse équipée au séjour hôtelier. Ces différences permettent au chasseur de choisir entre un voyage centré sur le patrimoine, un séjour collectif en campement et une expérience associant chasse et services hôteliers."
+            },
+            {
+              "type": "paragraph",
+              "text": "La valeur du séjour se répartit entre l’hébergement, le transport, l’accompagnement spécialisé, les repas et l’équipement du campement, auxquels s’ajoutent l’élevage du gibier et la gestion des lâchers. La participation des familles productrices à Al Shamal crée un lien supplémentaire entre les dépenses du visiteur, l’artisanat et les produits locaux."
+            },
+            {
+              "type": "paragraph",
+              "text": "Les possibilités d’une destination s’élargissent lorsque les accompagnants trouvent eux aussi des activités. Les promenades à dos de chameau et à cheval, la découverte de la nature et les séjours dans le désert enrichissent le voyage et permettent à des proches ou à des amis aux intérêts différents d’y prendre part. C’est là que l’organisation du programme dans son ensemble prend tout son sens : la chasse attire les amateurs, tandis que l’hospitalité rend le lieu propice à un séjour que d’autres peuvent partager avec eux."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ces expériences du Golfe dessinent les contours concrets du tourisme de chasse : un lieu identifié, un opérateur chargé des services, du gibier et des moyens de chasse définis, et un hébergement lié au programme. Au cœur du dispositif restent les détenteurs d’un savoir-faire, du guide au fauconnier, en passant par les employés de l’élevage et de l’hôtellerie et les artisans. Grâce à eux, les détails du séjour deviennent du travail et le patrimoine trouve sa place dans l’économie locale."
+            },
+            {
+              "type": "sources",
+              "text": "Sources : Agence de presse saoudienne, Autorité de développement de la réserve royale de l’imam Turki ben Abdallah, Bureau des médias d’Abou Dhabi, ministère du Changement climatique et de l’Environnement des Émirats arabes unis, ministère de l’Environnement et du Changement climatique du Qatar, les opérateurs et les archives de Sayd."
+            }
+          ],
+          "intro": [],
+          "sections": [],
+          "sources": []
+        }
+      }
+    }
+  ]
+}

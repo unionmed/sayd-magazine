@@ -1,12 +1,38 @@
 #!/usr/bin/env python3
-import hashlib,json,subprocess
+import hashlib,json,subprocess,sys,tempfile
 from pathlib import Path
 from lxml import html
 from urllib.parse import unquote
 ROOT=Path(__file__).resolve().parents[1];DOCS=ROOT/'docs';A=json.loads((ROOT/'content/features/four-news-20261018.json').read_text())['articles'];BASE='15d82a6f1868c8d612ab5acc2e500bce19bb7dc8'
 old=json.loads(subprocess.check_output(['git','show',BASE+':content/homepage.json'],cwd=ROOT));new=json.loads((ROOT/'content/homepage.json').read_text())
 upper=new
-if new['ia_slots']['main']=='الشمال-إزالة-24750-متر-شباك-الصيد-الجائر':
+if new['ia_slots']['main']=='الصيد-السياحي-في-بلدان-الخليج-العربية':
+ # Keep every original four-news/approved-three/honey proof on its immutable
+ # last pre-Gulf tree. The original script and its own dependencies run there;
+ # no current HEAD substitution and no honey media/content exemptions.
+ gulf_base='06294d8192bc22b11dd2317261140fbbee8ae8f5'
+ with tempfile.TemporaryDirectory(prefix='sayd-original-four-news-honey-') as temp:
+  checkout=Path(temp)/'checkout'
+  subprocess.run(['git','worktree','add','--quiet','--detach',str(checkout),gulf_base],cwd=ROOT,check=True)
+  try:
+   assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=checkout).decode().strip()==gulf_base
+   subprocess.run([sys.executable,'scripts/test_four_news_20261018.py'],cwd=checkout,check=True)
+  finally:
+   subprocess.run(['git','worktree','remove','--force',str(checkout)],cwd=ROOT,check=True)
+ # Independently prove the entire bounded current Gulf delta, existing article
+ # ticker-only preservation, complete home DOM, and rejection fixtures.
+ from test_gulf_tourism_20261022 import gulf_expected, assert_gulf_home, test_gulf_negative_guards
+ before_gulf=json.loads(subprocess.check_output(['git','show',gulf_base+':content/homepage.json'],cwd=ROOT))
+ assert gulf_expected(before_gulf,new,gulf_base) is not None
+ for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
+  rel='docs/'+prefix+'index.html'
+  baseline=subprocess.check_output(['git','show',gulf_base+':'+rel],cwd=ROOT).decode()
+  assert_gulf_home(baseline,html.fromstring((ROOT/rel).read_text()),rel,lang,new)
+ test_gulf_negative_guards(gulf_base)
+ # The original upper-slot equality still refers to its immutable pre-North
+ # successor; current twelve-article/photo/related/SEO checks continue below.
+ upper=json.loads(subprocess.check_output(['git','show','c16e9f474b74efb48fdc01eab4f418f53beaa82e:content/homepage.json'],cwd=ROOT))
+elif new['ia_slots']['main']=='الشمال-إزالة-24750-متر-شباك-الصيد-الجائر':
  # Preserve the original upper-slot proof on the immutable pre-North tree.
  # The current tree must additionally match the entire exact approved package.
  from test_combined_hunting_equestrian import approved_three_expected

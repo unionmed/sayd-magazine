@@ -6,6 +6,7 @@ from lxml import html
 from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, merge_hunting_section, local_slug
 from homepage_hunting_rotation import select, expected
 from test_honey_buzzard_science_20261021 import honey_expected, assert_honey_home, test_honey_negative_guards
+from test_gulf_tourism_20261022 import gulf_expected, assert_gulf_home, test_gulf_negative_guards
 
 
 def test_rotation():
@@ -348,7 +349,8 @@ def test_preserved(base):
     approved_omayed=omayed_expected(old_config,current) is not None
     approved_three=approved_three_expected(old_config,current) is not None
     approved_honey=honey_expected(old_config,current,base) is not None
-    if approved_four_news or approved_omayed or approved_three or approved_honey:
+    approved_gulf=gulf_expected(old_config,current,base) is not None
+    if approved_four_news or approved_omayed or approved_three or approved_honey or approved_gulf:
         pass  # All changed placement fields independently validated above.
     elif approved_interview:
         from homepage_demotion import demote_side_cards
@@ -376,7 +378,7 @@ def test_preserved(base):
     # owner-approved selection may change without changing unrelated doors.
     from interview_collection import homepage_slugs
     assert next(s['slugs'] for s in current['ia_door_sections'] if s['door']=='interviews') == homepage_slugs('ar', current)
-    changed_doors=('science',) if approved_honey else ('hunting','equestrian','interviews','gear','wildlife','science') if approved_four_news else ('hunting','equestrian','interviews','science') if approved_three else ('hunting','equestrian','interviews')
+    changed_doors=('hunting',) if approved_gulf else ('science',) if approved_honey else ('hunting','equestrian','interviews','gear','wildlife','science') if approved_four_news else ('hunting','equestrian','interviews','science') if approved_three else ('hunting','equestrian','interviews')
     for old in old_config['ia_door_sections']:
         if old['door'] not in changed_doors:
             assert old in current['ia_door_sections'],old['door']
@@ -396,11 +398,13 @@ def test_preserved(base):
             label={'ar':{'hunting':'صيد','equestrian':'فروسية'},'en':{'hunting':'Hunting','equestrian':'Equestrian'},'fr':{'hunting':'Chasse','equestrian':'Équitation'}}[lang][topic]
             assert row.xpath('.//*[@class="card-topic"]/text()')==[' · '+label]
             assert local_slug(slug,lang) in row.xpath('.//h3/a/@href')[0]
+        if approved_gulf:
+            assert_gulf_home(old,after,rel,lang,current)
         if approved_honey:
             assert_honey_home(old,after,rel,lang,current)
         if approved_three:
             assert_approved_three_home(old,after,rel,lang,current)
-        for cls in (('sayd-tv',) if approved_three else ('feature-lead','feature-stack','sayd-tv') if approved_four_news or approved_omayed else ('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
+        for cls in (('sayd-tv',) if approved_three or approved_gulf else ('feature-lead','feature-stack','sayd-tv') if approved_four_news or approved_omayed else ('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
             if cls == 'ticker' and approved_ticker_rotation:
                 from sync_tickers import TICKER, sources, ticker_for
                 expected_ticker = ticker_for(ROOT/rel, sources(DOCS)[lang])
@@ -430,4 +434,4 @@ def test_preserved(base):
 if __name__=='__main__':
     import argparse
     parser=argparse.ArgumentParser();parser.add_argument('--base',default='HEAD');args=parser.parse_args()
-    test_localized_tv_date_guards();test_rotation();test_preserved(args.base);test_four_news_negative_guards(args.base);test_omayed_negative_guards(args.base);test_approved_three_negative_guards(args.base);test_honey_negative_guards(args.base)
+    test_localized_tv_date_guards();test_rotation();test_preserved(args.base);test_four_news_negative_guards(args.base);test_omayed_negative_guards(args.base);test_approved_three_negative_guards(args.base);test_honey_negative_guards(args.base);test_gulf_negative_guards(args.base)

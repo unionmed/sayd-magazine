@@ -1,0 +1,36 @@
+name: Gulf feature preview and visual QA
+on:
+  pull_request:
+    paths:
+      - 'content/features/gulf-tourism-20261022.json'
+      - 'docs/**'
+      - 'scripts/test_gulf_tourism*.py'
+      - '.github/workflows/gulf-tourism-review-20261022.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preview:
+    name: Gulf article AR EN FR preview (not a publication gate)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated browser test tools
+        run: |
+          pip install playwright==1.55.0 Pillow==11.3.0 lxml==5.3.2
+          python -m playwright install --with-deps chromium
+      - name: Verify exact complete article and local responsive preview
+        run: python scripts/test_gulf_tourism_browser_20261022.py
+      - name: Retain Arabic English French desktop and mobile article previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gulf-tourism-visual-qa
+          path: gulf-tourism-visual-qa
+          if-no-files-found: warn

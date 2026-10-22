@@ -59,6 +59,9 @@ def run(base,out):
     current_config=json.loads((ROOT/'content/homepage.json').read_text())
     approved_three=current_config['ia_slots']['main']==APPROVED_THREE_SLUGS[0]
     publication=approved_three_articles() if approved_three else None
+    from test_gulf_tourism_20261022 import AR as GULF_AR, package as gulf_package
+    approved_gulf=current_config['ia_slots']['main']==GULF_AR
+    gulf=gulf_package() if approved_gulf else None
     # Baseline uses exact original homepage bytes. Shared historical CSS/JS/media
     # must be unchanged; separate newly-added styles are never linked by baseline.
     old_contract=json.loads(subprocess.check_output(['git','show',base+':content/publication-contract.json'],cwd=ROOT))
@@ -102,6 +105,8 @@ def run(base,out):
                 context.route('**/*',route_local)
                 from test_honey_buzzard_science_20261021 import test_honey_browser
                 test_honey_browser(context, new_url, out)
+                from test_gulf_tourism_20261022 import test_gulf_browser
+                test_gulf_browser(context, new_url, out)
                 page=context.new_page();before=context.new_page()
                 for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
                     for width in WIDTHS:
@@ -222,6 +227,19 @@ def run(base,out):
                             path=out/f'north-home-{lang}-{article_width}.png';capture(page,lead,path);screens.insert(0,path)
                             require(page.locator('.feature-stack > article').count()==4,'Four side cards required')
                             lead=page.locator('.feature-stack > article').first
+                            article=lead.locator('h3 a').get_attribute('href')
+                        elif approved_gulf:
+                            require(unquote(urlsplit(lead.locator('h2 a').get_attribute('href')).path)==f"posts/{gulf['slugs'][lang]}/index.html",'Approved Gulf main lead missing')
+                            require(lead.locator('h2 a').inner_text()==gulf['translations'][lang]['title'],'Approved Gulf headline mismatch')
+                            require(page.locator('.feature-stack > article').count()==4,'Four side cards required')
+                            north=approved_three_articles()[0]
+                            previous=page.locator('.feature-stack > article').first
+                            require(unquote(urlsplit(previous.locator('h3 a').get_attribute('href')).path)==f"posts/{north['slugs'][lang]}/index.html",'Former North lead must be first side card')
+                            require(previous.locator('h3 a').inner_text()==north['translations'][lang]['title'],'Former North title changed')
+                            require(previous.locator('img').get_attribute('src').endswith(north['photos'][0]['path']),'Former North cover changed')
+                            previous.locator('img').evaluate('(img)=>img.decode()')
+                            require(previous.locator('img').evaluate('(img)=>img.complete&&img.naturalWidth>0'),'Former North cover failed')
+                            lead=page.locator('.feature-stack > article').nth(1)
                             article=lead.locator('h3 a').get_attribute('href')
                         else:
                             article=lead.locator('h2 a').get_attribute('href')
