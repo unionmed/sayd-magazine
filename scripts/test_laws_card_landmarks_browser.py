@@ -103,6 +103,10 @@ def run(base, output):
                     ready(page)
                     no_overflow(page, label + '-after')
                     after = metrics(page)
+                    # Retain both views and measurements even if an assertion
+                    # catches a layout defect before this case completes.
+                    page.screenshot(path=str(output / f'{label}-after.png'), full_page=True)
+                    report['current_case'] = {'label': label, 'before': before, 'after': after}
                     assert len(after) == len(before)
                     for old, new in zip(before, after):
                         assert old['text'] == new['text'] and old['href'] == new['href'], (label, 'card content changed')
@@ -114,7 +118,6 @@ def run(base, output):
                     panel = page.locator('#laws-photo-credits')
                     summary = panel.locator('summary')
                     assert not panel.evaluate('(e) => e.open')
-                    page.screenshot(path=str(output / f'{label}-after.png'), full_page=True)
 
                     # Accessible disclosure, repeated keyboard/click flows, no history entry.
                     history = page.evaluate('history.length')
@@ -156,6 +159,7 @@ def run(base, output):
                         'before': before, 'after': after, 'no_overflow': True,
                         'card_geometry_and_text_unchanged': True, 'credits_keyboard_and_repeated_clicks': True,
                         'article_links_and_back_forward': True})
+                    report.pop('current_case', None)
                     (output / 'report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
                 context.close()
             browser.close()

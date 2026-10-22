@@ -68,6 +68,8 @@ def main(base=None):
             image = cards[0].xpath('.//img')[0]
             assert (path.parent / unquote(image.get('src'))).resolve() == (DOCS / item['image']).resolve()
             assert image.get('alt') == item['alt'][lang]
+            assert image.get('style') == ('object-position: ' + item['object_position']
+                                         + '; aspect-ratio: ' + item['card_aspect_ratio'])
             assert image.get('loading') == 'lazy'
             title = cards[0].xpath('.//h2/a')[0].text_content()
             assert cards[0].xpath('.//a[@class="thumb"]')[0].get('aria-label') == title

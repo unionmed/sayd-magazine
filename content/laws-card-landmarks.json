@@ -46,7 +46,8 @@
       "sha256": "537b72e0e8b97f7590d69676aec08a9c5b0e81f1edc341ed645821db1109b450",
       "git_blob_sha": "0821e0d98286d55a471e5bf3b3e4ed5c5c40c09e",
       "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
-      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified."
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
     },
     {
       "id": "jordan-petra-al-khazneh",
@@ -80,7 +81,8 @@
       "sha256": "084c84b0d93b89f35cc105a481a0825b3c355fc1beb0cda33fb5596422d5f27a",
       "git_blob_sha": "6424f37120662043df81af2908d4b5ddda692b8f",
       "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
-      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified."
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
     },
     {
       "id": "saudi-arabia-hegra-qasr-al-farid",
@@ -114,7 +116,8 @@
       "sha256": "5a695460f1657f237b093715ce668bcb5027a3efde4cdf4ed3af2bcf49cab3c0",
       "git_blob_sha": "6c46d07b10d26faf60146ce42d2af2f9be0d46c1",
       "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
-      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified."
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
     },
     {
       "id": "lebanon-beirut-raouche",
@@ -148,7 +151,8 @@
       "sha256": "941082302482f814e9ac59e13b4532010667f14d3f4ff88de8f82113db51a101",
       "git_blob_sha": "4a1df1a8c5c76066aafb11792066835a114393b6",
       "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
-      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified."
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
     },
     {
       "id": "qatar-al-zubarah-fort",
@@ -182,7 +186,8 @@
       "sha256": "cbbb0c3cdd33506b4fd868791b9e9e0bc6a99db21b31befcf11dd2cb564084b9",
       "git_blob_sha": "b7fb5341fb397e347a3aae04e03b632f1649ebc1",
       "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
-      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified."
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
     },
     {
       "id": "oman-nizwa-fort",
@@ -216,7 +221,8 @@
       "sha256": "c82ed9b95a603f8c6811c63a9c6c578ac4963cad162ca59496209fc0813dc8c5",
       "git_blob_sha": "5068f381facd2c8358f58dee8cce96dec4d23d52",
       "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
-      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified."
+      "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
+      "card_aspect_ratio": "1600 / 900"
     },
     {
       "id": "lebanon-baalbek-bacchus",
@@ -249,7 +255,8 @@
       "git_blob_sha": "490c252d22660c7614931e692373cecdb2b318b2",
       "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
       "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
-      "author_url": "http://www.vascoplanet.com/"
+      "author_url": "http://www.vascoplanet.com/",
+      "card_aspect_ratio": "170 / 113"
     },
     {
       "id": "lebanon-byblos-castle",
@@ -282,7 +289,8 @@
       "git_blob_sha": "6055e4e114086971eb09792201d21ef49758a65f",
       "modifications": "Wikimedia-generated 960px thumbnail; CSS framing/crop for display. No retouching or generative edits.",
       "reuse_terms": "Commercial reuse permitted under the linked Creative Commons license; retain attribution, license and modification notice. ShareAlike applies to adapted photos where specified.",
-      "author_url": "http://commons.wikimedia.org/wiki/User:Peripitus"
+      "author_url": "http://commons.wikimedia.org/wiki/User:Peripitus",
+      "card_aspect_ratio": "600 / 400"
     }
   ]
 }

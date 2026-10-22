@@ -89,7 +89,10 @@ def render(page, lang, data):
         assert image, f'Missing thumbnail: {slug}'
         tag = set_attr(image.group(), 'src', os.path.relpath(target, category_path(lang).parent))
         tag = set_attr(tag, 'alt', item['alt'][lang])
-        tag = set_attr(tag, 'style', 'object-position: ' + item['object_position'])
+        # Preserve the former thumbnail's intrinsic sizing contribution to the
+        # grid; a differently proportioned photo must not stretch the card.
+        tag = set_attr(tag, 'style', 'object-position: ' + item['object_position']
+                       + '; aspect-ratio: ' + item['card_aspect_ratio'])
         return card[:image.start()] + tag + card[image.end():]
 
     page = CREDITS.sub('', page)
