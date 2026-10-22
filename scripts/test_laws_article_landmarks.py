@@ -13,7 +13,7 @@ from sync_laws_article_landmarks import article_items, article_path, source_path
 
 def invariant(page):
     tree = html.fromstring(page)
-    for node in tree.xpath('//figure[contains(@class,"laws-landmark-hero")] | //figure[.//img[contains(@src,"sayd-legal-explainer-")]] | //p[@class="photo-credit"][preceding-sibling::comment()[contains(.,"laws-article-photo-credit:start")]]'):
+    for node in tree.xpath('//figure[contains(@class,"laws-landmark-hero")] | //figure[.//img[contains(@src,"sayd-legal-explainer-")]] | //p[@class="photo-credit"][@data-laws-landmark-credit="true"]'):
         node.drop_tree()
     for node in tree.xpath('//comment()[contains(.,"laws-article-photo-credit:")]'):
         node.getparent().remove(node)
@@ -37,7 +37,8 @@ def main(base=None, scope_check=False):
     count = 0
     expected = {'content/laws-card-landmarks.json', 'scripts/sync_laws_article_landmarks.py',
                 'scripts/test_laws_article_landmarks.py', 'scripts/test_laws_article_landmarks_browser.py',
-                '.github/workflows/laws-landmark-review.yml'}
+                '.github/workflows/laws-landmark-review.yml',
+                'docs/assets/search/index-ar.json', 'docs/assets/search/index-en.json', 'docs/assets/search/index-fr.json'}
     for item in article_items():
         for lang, slug in item['slugs'].items():
             path = article_path(item, lang)

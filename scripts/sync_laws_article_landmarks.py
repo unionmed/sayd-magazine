@@ -15,7 +15,7 @@ from sync_laws_card_landmarks import ROOT, DOCS, LANGUAGES, config
 FIGURE = re.compile(r'<figure\b[^>]*>.*?</figure>', re.S)
 MARKED = re.compile(r'<figure class="laws-landmark-hero"[^>]*>.*?</figure>', re.S)
 ARTICLE = re.compile(r'(<article class="article-content">)(.*?)(</article>)', re.S)
-CREDITS = re.compile(r'<!-- laws-article-photo-credit:start -->.*?<!-- laws-article-photo-credit:end -->\n?', re.S)
+CREDITS = re.compile(r'(?:<!-- laws-article-photo-credit:start -->.*?<!-- laws-article-photo-credit:end -->|<p class="photo-credit" data-laws-landmark-credit="true"[^>]*>.*?</p>)\n?', re.S)
 
 
 def article_items():
@@ -47,11 +47,11 @@ def credit(item, lang):
     author = '<bdi>' + esc(item['attribution']) + '</bdi>'
     if item.get('author_url'):
         author = '<a href="' + esc(item['author_url'], quote=True) + '" rel="external">' + author + '</a>'
-    return ('<!-- laws-article-photo-credit:start --><p class="photo-credit">' + label + ': '
+    return ('<p class="photo-credit" data-laws-landmark-credit="true" data-search-exclude="true">' + label + ': '
             + '<a href="' + esc(item['source_page'], quote=True) + '" rel="external">'
             + '<bdi>' + esc(item['source_title']) + '</bdi></a> — ' + author + ' — '
             + '<a href="' + esc(item['license_url'], quote=True) + '" rel="license external">'
-            + '<bdi>' + esc(item['license']) + '</bdi></a>. ' + {'ar': 'نسخة مصغّرة دون تعديل تحريري.', 'en': 'Resized copy; no editorial alteration.', 'fr': 'Copie redimensionnée, sans modification éditoriale.'}[lang] + '</p><!-- laws-article-photo-credit:end -->\n')
+            + '<bdi>' + esc(item['license']) + '</bdi></a>. ' + {'ar': 'نسخة مصغّرة دون تعديل تحريري.', 'en': 'Resized copy; no editorial alteration.', 'fr': 'Copie redimensionnée, sans modification éditoriale.'}[lang] + '</p>\n')
 
 
 def render(page, item, lang):
