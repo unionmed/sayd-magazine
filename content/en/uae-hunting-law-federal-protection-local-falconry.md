@@ -4,7 +4,7 @@ slug: uae-hunting-law-federal-protection-local-falconry
 date: 2026-10-15
 author: Sayd
 categories: [قوانين]
-featured: media/uploads/2026/10/sayd-legal-explainer-united-arab-emirates-9-1983-24-1999.jpg
+featured: media/uploads/2026/10/laws-landmark-united-arab-emirates-al-jahili-fort-960.jpg
 ---
 
 <p class="excerpt">Federal wildlife protection and Abu Dhabi’s local falconry rules, with the limits of local permits explained.</p>

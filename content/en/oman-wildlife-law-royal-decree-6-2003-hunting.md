@@ -3,7 +3,7 @@ title: "Oman's 2003 wildlife law: Protected birds, permits and conservation beyo
 slug: oman-wildlife-law-royal-decree-6-2003-hunting
 date: 2026-10-15
 categories: [قوانين]
-featured: media/uploads/2026/10/sayd-legal-explainer-oman-royal-decree-6-2003.jpg
+featured: media/uploads/2026/10/laws-landmark-oman-nizwa-fort-960.jpg
 ---
 
 Oman's legal safeguards for wildlife go beyond opening and closing hunting seasons. The Nature Reserves and Wildlife Conservation Law issued by Royal Decree 6/2003 on 8 January 2003 provides a framework for protected species, nature reserves, permits and enforcement.

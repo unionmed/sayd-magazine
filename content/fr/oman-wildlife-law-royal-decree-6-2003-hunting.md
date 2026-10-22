@@ -3,7 +3,7 @@ title: "Oman : la loi de 2003 protège l'outarde houbara et les rapaces"
 slug: oman-wildlife-law-royal-decree-6-2003-hunting
 date: 2026-10-15
 categories: [قوانين]
-featured: media/uploads/2026/10/sayd-legal-explainer-oman-royal-decree-6-2003.jpg
+featured: media/uploads/2026/10/laws-landmark-oman-nizwa-fort-960.jpg
 ---
 
 Le droit omanais de conservation de la faune dépasse la seule fixation de périodes de chasse. La loi sur les réserves naturelles et la protection de la faune, issue du décret royal 6/2003 du 8 janvier 2003, encadre les espèces protégées, les réserves, les autorisations et les sanctions.

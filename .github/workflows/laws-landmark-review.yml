@@ -1,4 +1,4 @@
-name: Laws landmark card visual QA
+name: Laws landmark visual QA
 on:
   pull_request:
     paths:
@@ -8,6 +8,43 @@ on:
       - 'docs/fr/category/قوانين/**'
       - 'docs/media/uploads/2026/10/laws-landmark-*.jpg'
       - 'scripts/*laws_card_landmarks*'
+      - 'scripts/*laws_article_landmarks*'
+      - 'docs/posts/الإمارات-قوانين-الصيد-الحماية-الاتحادية-والصقارة/index.html'
+      - 'content/posts/الإمارات-قوانين-الصيد-الحماية-الاتحادية-والصقارة.md'
+      - 'docs/en/posts/uae-hunting-law-federal-protection-local-falconry/index.html'
+      - 'content/en/uae-hunting-law-federal-protection-local-falconry.md'
+      - 'docs/fr/posts/uae-hunting-law-federal-protection-local-falconry/index.html'
+      - 'content/fr/uae-hunting-law-federal-protection-local-falconry.md'
+      - 'docs/posts/الأردن-قانون-الزراعة-13-2015-الصيد-البري/index.html'
+      - 'content/posts/الأردن-قانون-الزراعة-13-2015-الصيد-البري.md'
+      - 'docs/en/posts/jordan-agriculture-law-2015-hunting-rules/index.html'
+      - 'content/en/jordan-agriculture-law-2015-hunting-rules.md'
+      - 'docs/fr/posts/jordan-agriculture-law-2015-hunting-rules/index.html'
+      - 'content/fr/jordan-agriculture-law-2015-hunting-rules.md'
+      - 'docs/posts/السعودية-نظام-البيئة-ولائحة-الصيد-البري/index.html'
+      - 'content/posts/السعودية-نظام-البيئة-ولائحة-الصيد-البري.md'
+      - 'docs/en/posts/saudi-environment-law-wildlife-hunting-regulations/index.html'
+      - 'content/en/saudi-environment-law-wildlife-hunting-regulations.md'
+      - 'docs/fr/posts/saudi-environment-law-wildlife-hunting-regulations/index.html'
+      - 'content/fr/saudi-environment-law-wildlife-hunting-regulations.md'
+      - 'docs/posts/قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع/index.html'
+      - 'content/posts/قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع.md'
+      - 'docs/en/posts/lebanon-hunting-law-580-2004-what-is-prohibited/index.html'
+      - 'content/en/lebanon-hunting-law-580-2004-what-is-prohibited.md'
+      - 'docs/fr/posts/lebanon-hunting-law-580-2004-what-is-prohibited/index.html'
+      - 'content/fr/lebanon-hunting-law-580-2004-what-is-prohibited.md'
+      - 'docs/posts/قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات/index.html'
+      - 'content/posts/قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات.md'
+      - 'docs/en/posts/qatar-law-4-2002-wildlife-hunting-rules/index.html'
+      - 'content/en/qatar-law-4-2002-wildlife-hunting-rules.md'
+      - 'docs/fr/posts/qatar-law-4-2002-wildlife-hunting-rules/index.html'
+      - 'content/fr/qatar-law-4-2002-wildlife-hunting-rules.md'
+      - 'docs/posts/عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد/index.html'
+      - 'content/posts/عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد.md'
+      - 'docs/en/posts/oman-wildlife-law-royal-decree-6-2003-hunting/index.html'
+      - 'content/en/oman-wildlife-law-royal-decree-6-2003-hunting.md'
+      - 'docs/fr/posts/oman-wildlife-law-royal-decree-6-2003-hunting/index.html'
+      - 'content/fr/oman-wildlife-law-royal-decree-6-2003-hunting.md'
       - '.github/workflows/laws-landmark-review.yml'
 permissions:
   contents: read
@@ -35,6 +72,8 @@ jobs:
           python scripts/sync_laws_card_landmarks.py --check
           python scripts/test_laws_card_landmarks.py --base "$PR_BASE"
           python scripts/test_laws_card_landmarks_browser.py --base "$PR_BASE"
+          python scripts/test_laws_article_landmarks.py --base "$PR_BASE"
+          python scripts/test_laws_article_landmarks_browser.py --base "$PR_BASE"
       - name: Retain before-after screenshots and measured checks
         if: always()
         uses: actions/upload-artifact@v4

@@ -3,7 +3,7 @@ title: "Qatar's Law 4/2002: The statutory limits that apply beyond hunting seaso
 slug: qatar-law-4-2002-wildlife-hunting-rules
 date: 2026-10-15
 categories: [قوانين]
-featured: media/uploads/2026/10/sayd-legal-explainer-qatar-4-2002.jpg
+featured: media/uploads/2026/10/laws-landmark-qatar-al-zubarah-fort-960.jpg
 ---
 
 Qatar's seasonal hunting notices are implementing decisions, not the hunting law itself. The legal framework includes Law No. 4 of 2002, issued on 11 May and published on 20 May 2002, listed as in force by Qatar's official Al Meezan legal portal.

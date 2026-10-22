@@ -1,6 +1,6 @@
 {
   "schema": "sayd-laws-card-landmarks-v1",
-  "scope": "Only category/قوانين/index.html and its English/French mirrors; never article bodies, article metadata, general archive, homepage or ticker.",
+  "scope": "Only the three laws category pages and the 18 mapped modern law article pages/source featured images. Preserve legal prose, publication dates, both untranslated 2016 articles, general archive, homepage and ticker.",
   "credit_note": {
     "ar": "صور معالم البلدان. نُسخ مصغّرة مع قصّ العرض؛ ترخيص كل صورة موضح أدناه ويشمل نسختها المعروضة.",
     "en": "Country landmarks. Resized previews with display cropping; each photo and its displayed version use the license linked below.",
@@ -292,5 +292,22 @@
       "author_url": "http://commons.wikimedia.org/wiki/User:Peripitus",
       "card_aspect_ratio": "600 / 400"
     }
-  ]
+  ],
+  "article_usage": {
+    "approved_utc": "2026-10-22T15:37:36Z",
+    "placements": 18,
+    "rule": "Use the same existing licensed landmark inside its corresponding modern law article, with caption and source/license credit. Replace modern legal explainer graphics. The two untranslated 2016 article bodies remain unchanged under the existing translation gate.",
+    "enabled_ids": [
+      "united-arab-emirates-al-jahili-fort",
+      "jordan-petra-al-khazneh",
+      "saudi-arabia-hegra-qasr-al-farid",
+      "lebanon-beirut-raouche",
+      "qatar-al-zubarah-fort",
+      "oman-nizwa-fort"
+    ],
+    "deferred_ids": [
+      "lebanon-baalbek-bacchus",
+      "lebanon-byblos-castle"
+    ]
+  }
 }

@@ -4,7 +4,7 @@ slug: jordan-agriculture-law-2015-hunting-rules
 date: 2026-10-15
 author: Sayd
 categories: [قوانين]
-featured: media/uploads/2026/10/sayd-legal-explainer-jordan-13-2015.jpg
+featured: media/uploads/2026/10/laws-landmark-jordan-petra-al-khazneh-960.jpg
 ---
 
 <p class="excerpt">L’article 56 de la loi agricole : permis, espèces protégées et méthodes interdites, à distinguer des décisions saisonnières.</p>
