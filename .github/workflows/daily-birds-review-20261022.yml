@@ -1,0 +1,41 @@
+name: Daily bird encyclopedia review — 22 October
+on:
+  pull_request:
+    paths:
+      - 'content/features/daily-birds-20261022.json'
+      - 'scripts/*daily_birds*20261022.py'
+      - 'docs/media/uploads/2026/10/*-20261022-1600.jpg'
+      - '.github/workflows/daily-birds-review-20261022.yml'
+permissions:
+  contents: read
+jobs:
+  preview:
+    name: Three new species — nine pages and responsive preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install isolated browser test tools
+        run: |
+          pip install playwright==1.55.0 Pillow==11.3.0 lxml==5.3.2
+          python -m playwright install --with-deps chromium
+      - name: Verify exact package and private responsive preview
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          python scripts/test_daily_birds_20261022.py --base "$PR_BASE"
+          python scripts/test_daily_birds_browser_20261022.py
+      - name: Retain screenshots and measured checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-birds-20261022-visual-qa
+          path: daily-bird-visual-qa/
+          if-no-files-found: warn
+          retention-days: 14

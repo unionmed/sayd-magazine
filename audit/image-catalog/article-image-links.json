@@ -1,14 +1,14 @@
 {
   "schema": "sayd-github-article-media-crossref-v3",
   "source": "unionmed/sayd-magazine repository only",
-  "articles_scanned": 748,
-  "articles_with_github_image_references": 49,
-  "image_references_unique_per_article": 114,
-  "exact_links": 114,
+  "articles_scanned": 764,
+  "articles_with_github_image_references": 65,
+  "image_references_unique_per_article": 174,
+  "exact_links": 174,
   "unique_basename_not_verified": 0,
   "ambiguous_basename": 0,
   "not_found": 0,
-  "catalog_images_with_exact_article_link": 103,
+  "catalog_images_with_exact_article_link": 133,
   "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
   "exact": [
     {
@@ -34,6 +34,50 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/أبو-مجرف-في-العالم-العربي.md",
+      "article_title": "أبو مجرف: منقار يرشّح الغذاء ورحلة خريفية عبر الأراضي الرطبة العربية",
+      "source_reference": "media/uploads/2026/10/northern-shoveler-20261022-1600.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/northern-shoveler-20261022-1600.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/northern-shoveler-20261022-1600.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026.md",
+      "article_title": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية",
+      "source_reference": "media/uploads/2026/10/abu-dhabi-wildlife-turtle-wam-owner-approved-20261018.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/abu-dhabi-wildlife-turtle-wam-owner-approved-20261018.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/abu-dhabi-wildlife-turtle-wam-owner-approved-20261018.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026.md",
+      "article_title": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية",
+      "source_reference": "../../media/uploads/2026/10/lamb-zgharta-white-storks.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/lamb-zgharta-white-storks.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/lamb-zgharta-white-storks.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026.md",
+      "article_title": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية",
+      "source_reference": "../../media/uploads/2026/10/qatar-protected-areas-qna.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا.md",
       "article_title": "أجنحة تستعيد السماء… تمارا الزين تزور مركز إنقاذ الطيور في زغرتا",
       "source_reference": "../../media/uploads/2026/10/lamb-zgharta-tamara-el-zein-release.jpg",
@@ -51,6 +95,39 @@
       "expected_local_path": "docs/media/uploads/2026/10/lamb-zgharta-white-storks.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/lamb-zgharta-white-storks.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/ألكسندرا-cabs-الصيد-غير-القانوني.md",
+      "article_title": "ألكسندرا من CABS: معركتنا ضد الصيد غير القانوني",
+      "source_reference": "../../media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/ألكسندرا-cabs-الصيد-غير-القانوني.md",
+      "article_title": "ألكسندرا من CABS: معركتنا ضد الصيد غير القانوني",
+      "source_reference": "../../media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/ألكسندرا-cabs-الصيد-غير-القانوني.md",
+      "article_title": "ألكسندرا من CABS: معركتنا ضد الصيد غير القانوني",
+      "source_reference": "../../media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -84,6 +161,17 @@
       "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-camera-02.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/cabs-alexandra-lebanon-camera-02.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/أين-تستريح-الطيور-المشرق-والجزيرة-العربية.md",
+      "article_title": "أين تستريح الطيور؟",
+      "source_reference": "../../media/uploads/2026/10/batroun-pelican-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/batroun-pelican-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/batroun-pelican-2026.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -190,6 +278,28 @@
     {
       "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
       "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
+      "source_reference": "../../media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
+      "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
+      "source_reference": "../../media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
+      "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
       "source_reference": "media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
       "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
       "matching_paths": [
@@ -265,6 +375,28 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs.md",
+      "article_title": "البقاع الشمالي: حصيلة إزالة شباك الصيد تبلغ 38,280 م²",
+      "source_reference": "../../media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cabs-alexandra-lebanon-binoculars-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/البلبول-الشمالي-في-العالم-العربي.md",
+      "article_title": "البلبول الشمالي: بطة طويلة العنق تصل الخريف العربي بمناطق التكاثر الشمالية",
+      "source_reference": "media/uploads/2026/10/northern-pintail-20261022-1600.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/northern-pintail-20261022-1600.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/northern-pintail-20261022-1600.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/الحميراء-السوداء-في-العالم-العربي.md",
       "article_title": "الحميراء السوداء في العالم العربي بين الإقامة وهجرة الخريف",
       "source_reference": "media/uploads/2026/10/black-redstart-greg-schechter.jpg",
@@ -282,6 +414,39 @@
       "expected_local_path": "docs/media/uploads/2026/10/white-wagtail-charles-j-sharp.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/white-wagtail-charles-j-sharp.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الرياض-تستعيد-صهيلها-موسم-السباقات-2026.md",
+      "article_title": "الرياض تستعيد صهيلها ..وموسم السباقات ينطلق",
+      "source_reference": "../../media/uploads/2026/09/EQ-N01-cover-1800x1000.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/EQ-N01-cover-1800x1000.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/EQ-N01-cover-1800x1000.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الرياض-تستعيد-صهيلها-موسم-السباقات-2026.md",
+      "article_title": "الرياض تستعيد صهيلها ..وموسم السباقات ينطلق",
+      "source_reference": "../../media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الرياض-تستعيد-صهيلها-موسم-السباقات-2026.md",
+      "article_title": "الرياض تستعيد صهيلها ..وموسم السباقات ينطلق",
+      "source_reference": "media/uploads/2026/10/riyadh-season-2026-jcsa.jpeg",
+      "expected_local_path": "docs/media/uploads/2026/10/riyadh-season-2026-jcsa.jpeg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/riyadh-season-2026-jcsa.jpeg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -320,12 +485,45 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/الشمال-إزالة-24750-متر-شباك-الصيد-الجائر.md",
+      "article_title": "بعد البقاع… إزالة 24,750 مترًا مربعًا من شباك الصيد الجائر في الشمال خلال أربع ساعات",
+      "source_reference": "../../media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الشمال-إزالة-24750-متر-شباك-الصيد-الجائر.md",
+      "article_title": "بعد البقاع… إزالة 24,750 مترًا مربعًا من شباك الصيد الجائر في الشمال خلال أربع ساعات",
+      "source_reference": "../../media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/bekaa-apu-cabs-20261009-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/الصمت-الذي-يتكلمه-الخيل.md",
       "article_title": "الصمتُ الذي يتكلّمه الخيل",
       "source_reference": "media/uploads/2026/09/EQ-N01-cover-1800x1000.jpg",
       "expected_local_path": "docs/media/uploads/2026/09/EQ-N01-cover-1800x1000.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/09/EQ-N01-cover-1800x1000.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصواي-الأوراسي-في-العالم-العربي.md",
+      "article_title": "الصواي الأوراسي: بطة راعية تصل الشمال الأوراسي بشتاء الأراضي الرطبة العربية",
+      "source_reference": "media/uploads/2026/10/eurasian-wigeon-20261022-1600.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/eurasian-wigeon-20261022-1600.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/eurasian-wigeon-20261022-1600.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -386,6 +584,116 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/الصيد-السياحي-في-بلدان-الخليج-العربية.md",
+      "article_title": "الصيد السياحي في بلدان الخليج العربية",
+      "source_reference": "../../media/uploads/2026/10/gulf-tourism-gulf-community-photo-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/gulf-tourism-gulf-community-photo-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/gulf-tourism-gulf-community-photo-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-السياحي-في-بلدان-الخليج-العربية.md",
+      "article_title": "الصيد السياحي في بلدان الخليج العربية",
+      "source_reference": "../../media/uploads/2026/10/gulf-tourism-gulf-community-photo-02.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/gulf-tourism-gulf-community-photo-02.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/gulf-tourism-gulf-community-photo-02.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-السياحي-في-بلدان-الخليج-العربية.md",
+      "article_title": "الصيد السياحي في بلدان الخليج العربية",
+      "source_reference": "../../media/uploads/2026/10/gulf-tourism-gulf-hospitality-photo-01.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/gulf-tourism-gulf-hospitality-photo-01.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/gulf-tourism-gulf-hospitality-photo-01.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-السياحي-في-بلدان-الخليج-العربية.md",
+      "article_title": "الصيد السياحي في بلدان الخليج العربية",
+      "source_reference": "../../media/uploads/2026/10/gulf-tourism-gulf-hospitality-photo-02.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/gulf-tourism-gulf-hospitality-photo-02.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/gulf-tourism-gulf-hospitality-photo-02.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-السياحي-في-بلدان-الخليج-العربية.md",
+      "article_title": "الصيد السياحي في بلدان الخليج العربية",
+      "source_reference": "media/uploads/2026/10/gulf-tourism-gulf-original-cover.webp",
+      "expected_local_path": "docs/media/uploads/2026/10/gulf-tourism-gulf-original-cover.webp",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/gulf-tourism-gulf-original-cover.webp"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-السياحي-في-بلدان-الخليج-العربية.md",
+      "article_title": "الصيد السياحي في بلدان الخليج العربية",
+      "source_reference": "../../media/uploads/2026/10/gulf-tourism-gulf-original-north-houbara.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/gulf-tourism-gulf-original-north-houbara.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/gulf-tourism-gulf-original-north-houbara.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-السياحي-في-بلدان-الخليج-العربية.md",
+      "article_title": "الصيد السياحي في بلدان الخليج العربية",
+      "source_reference": "../../media/uploads/2026/10/gulf-tourism-gulf-original-qatar-camp.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/gulf-tourism-gulf-original-qatar-camp.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/gulf-tourism-gulf-original-qatar-camp.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-السياحي-في-بلدان-الخليج-العربية.md",
+      "article_title": "الصيد السياحي في بلدان الخليج العربية",
+      "source_reference": "../../media/uploads/2026/10/gulf-tourism-gulf-original-qatar-vehicle.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/gulf-tourism-gulf-original-qatar-vehicle.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/gulf-tourism-gulf-original-qatar-vehicle.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-السياحي-في-بلدان-الخليج-العربية.md",
+      "article_title": "الصيد السياحي في بلدان الخليج العربية",
+      "source_reference": "../../media/uploads/2026/10/qatar-protected-areas-qna.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الصيد-السياحي-في-بلدان-الخليج-العربية.md",
+      "article_title": "الصيد السياحي في بلدان الخليج العربية",
+      "source_reference": "../../media/uploads/2026/10/saudi-king-abdulaziz-gazelles-20261009.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-king-abdulaziz-gazelles-20261009.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-king-abdulaziz-gazelles-20261009.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/الطيطوي-الشائع-في-العالم-العربي.md",
       "article_title": "الطيطوي الشائع في العالم العربي: مسافر على حافة الماء",
       "source_reference": "media/uploads/2026/10/common-sandpiper.jpg",
@@ -403,6 +711,61 @@
       "expected_local_path": "docs/media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026.md",
+      "article_title": "دراسة: الغواص الشائع يختار بحيرات تشبه موطن نشأته",
+      "source_reference": "media/uploads/2026/10/common-loon-john-picken-wisconsin-2011.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/common-loon-john-picken-wisconsin-2011.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/common-loon-john-picken-wisconsin-2011.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026.md",
+      "article_title": "دراسة: الغواص الشائع يختار بحيرات تشبه موطن نشأته",
+      "source_reference": "../../media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+      "expected_local_path": "docs/media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026.md",
+      "article_title": "دراسة: الغواص الشائع يختار بحيرات تشبه موطن نشأته",
+      "source_reference": "../../media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق.md",
+      "article_title": "حين تغيّر المدن خريطة الطيور… والشتاء يكشف الفارق",
+      "source_reference": "../../media/uploads/2026/10/common-loon-john-picken-wisconsin-2011.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/common-loon-john-picken-wisconsin-2011.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/common-loon-john-picken-wisconsin-2011.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق.md",
+      "article_title": "حين تغيّر المدن خريطة الطيور… والشتاء يكشف الفارق",
+      "source_reference": "../../media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/yuezhuornis-yangyuanensis-fossil-min-wang.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -463,6 +826,50 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027.md",
+      "article_title": "بطولة السلوقي العربي تنطلق في نوفمبر بثلاث مسافات وخمسة ألقاب موسمية",
+      "source_reference": "../../media/uploads/2026/10/saudi-2026-melwah-spa.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/saudi-2026-melwah-spa.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/saudi-2026-melwah-spa.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/بطولة-العالم-بندقية-300-متر-القاهرة-2026.md",
+      "article_title": "النمسا تحصد ذهبية الفرق في مونديال بندقية 300 متر بالقاهرة",
+      "source_reference": "../../media/uploads/2026/09/beretta-a400-xtreme-plus-field.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/beretta-a400-xtreme-plus-field.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/beretta-a400-xtreme-plus-field.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/بطولة-العالم-بندقية-300-متر-القاهرة-2026.md",
+      "article_title": "النمسا تحصد ذهبية الفرق في مونديال بندقية 300 متر بالقاهرة",
+      "source_reference": "media/uploads/2026/10/cairo-300m-issf-owner-approved-20261018.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cairo-300m-issf-owner-approved-20261018.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cairo-300m-issf-owner-approved-20261018.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/بطولة-العالم-بندقية-300-متر-القاهرة-2026.md",
+      "article_title": "النمسا تحصد ذهبية الفرق في مونديال بندقية 300 متر بالقاهرة",
+      "source_reference": "../../media/uploads/2026/10/cairo-air-rifle-20261012-issf-andrea-caroppo.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/cairo-air-rifle-20261012-issf-andrea-caroppo.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/cairo-air-rifle-20261012-issf-andrea-caroppo.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/تتبع-اليمام-القمري-عبر-المتوسط-والبحر-الأحمر-والنيل.md",
       "article_title": "من أذربيجان إلى النيل: أجهزة GPS تكشف الطرق الصعبة لهجرة اليمام القمري",
       "source_reference": "media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
@@ -491,6 +898,72 @@
       "expected_local_path": "docs/media/uploads/2026/10/egyptian-vulture-charles-j-sharp-wikimedia.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/egyptian-vulture-charles-j-sharp-wikimedia.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/تعاون-مصري-إماراتي-الحبارى-محمية-العميد.md",
+      "article_title": "تعاون مصري إماراتي لحماية الحبارى وتطوير محمية العميد",
+      "source_reference": "../../media/uploads/2026/10/abu-dhabi-wildlife-turtle-wam-owner-approved-20261018.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/abu-dhabi-wildlife-turtle-wam-owner-approved-20261018.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/abu-dhabi-wildlife-turtle-wam-owner-approved-20261018.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/تعاون-مصري-إماراتي-الحبارى-محمية-العميد.md",
+      "article_title": "تعاون مصري إماراتي لحماية الحبارى وتطوير محمية العميد",
+      "source_reference": "media/uploads/2026/10/african-houbara-mourad-harzallah-algeria-2020.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/african-houbara-mourad-harzallah-algeria-2020.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/african-houbara-mourad-harzallah-algeria-2020.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/تعاون-مصري-إماراتي-الحبارى-محمية-العميد.md",
+      "article_title": "تعاون مصري إماراتي لحماية الحبارى وتطوير محمية العميد",
+      "source_reference": "../../media/uploads/2026/10/qatar-protected-areas-qna.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/تمبتد-غودولفين-إيفرست-2026.md",
+      "article_title": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست».. والأنظار إلى المحطة التالية",
+      "source_reference": "../../media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/تمبتد-غودولفين-إيفرست-2026.md",
+      "article_title": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست».. والأنظار إلى المحطة التالية",
+      "source_reference": "../../media/uploads/2026/10/riyadh-season-2026-jcsa.jpeg",
+      "expected_local_path": "docs/media/uploads/2026/10/riyadh-season-2026-jcsa.jpeg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/riyadh-season-2026-jcsa.jpeg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/تمبتد-غودولفين-إيفرست-2026.md",
+      "article_title": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست».. والأنظار إلى المحطة التالية",
+      "source_reference": "media/uploads/2026/10/tempted-everest-godolphin-owner-approved-20261018.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/tempted-everest-godolphin-owner-approved-20261018.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/tempted-everest-godolphin-owner-approved-20261018.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -551,6 +1024,61 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/حوام-العسل-هجرة-بولندا-3750-كيلومترا.md",
+      "article_title": "جيران في بولندا… تفصل مسارات هجرتهم 3750 كيلومترًا",
+      "source_reference": "../../media/uploads/2026/10/common-loon-john-picken-wisconsin-2011.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/common-loon-john-picken-wisconsin-2011.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/common-loon-john-picken-wisconsin-2011.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حوام-العسل-هجرة-بولندا-3750-كيلومترا.md",
+      "article_title": "جيران في بولندا… تفصل مسارات هجرتهم 3750 كيلومترًا",
+      "source_reference": "media/uploads/2026/10/honey-buzzard-juvenile-andrey-gulivanov.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/honey-buzzard-juvenile-andrey-gulivanov.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/honey-buzzard-juvenile-andrey-gulivanov.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حوام-العسل-هجرة-بولندا-3750-كيلومترا.md",
+      "article_title": "جيران في بولندا… تفصل مسارات هجرتهم 3750 كيلومترًا",
+      "source_reference": "../../media/uploads/2026/10/honey-buzzard-mirski-2026-figure-1.png",
+      "expected_local_path": "docs/media/uploads/2026/10/honey-buzzard-mirski-2026-figure-1.png",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/honey-buzzard-mirski-2026-figure-1.png"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حوام-العسل-هجرة-بولندا-3750-كيلومترا.md",
+      "article_title": "جيران في بولندا… تفصل مسارات هجرتهم 3750 كيلومترًا",
+      "source_reference": "../../media/uploads/2026/10/honey-buzzard-mirski-2026-figure-2.png",
+      "expected_local_path": "docs/media/uploads/2026/10/honey-buzzard-mirski-2026-figure-2.png",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/honey-buzzard-mirski-2026-figure-2.png"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حوام-العسل-هجرة-بولندا-3750-كيلومترا.md",
+      "article_title": "جيران في بولندا… تفصل مسارات هجرتهم 3750 كيلومترًا",
+      "source_reference": "../../media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+      "expected_local_path": "docs/media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/turtle-dove-eastern-flyway-figure1.png"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/حين-يتغير-الساحل-أين-تستريح-الطيور.md",
       "article_title": "حين يتغيّر الساحل… أين تستريح الطيور؟",
       "source_reference": "../../media/uploads/2026/10/anfeh-saltpans-epa.jpg",
@@ -590,6 +1118,17 @@
       "expected_local_path": "docs/media/uploads/2026/10/egypt-coastal-bird-2026.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/egypt-coastal-bird-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/حين-يتغير-الساحل-أين-تستريح-الطيور.md",
+      "article_title": "حين يتغيّر الساحل… أين تستريح الطيور؟",
+      "source_reference": "../../media/uploads/2026/10/migration-cover-ras-al-khor.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/migration-cover-ras-al-khor.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/migration-cover-ras-al-khor.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
@@ -717,7 +1256,7 @@
     },
     {
       "article_file": "content/posts/رادار-صيد-العربي-سبتمبر-2026.md",
-      "article_title": "رادار صيد العربي | سبتمبر 2026: توقيف 50 صيادًا وإنقاذ آلاف الطيور",
+      "article_title": "رادار صيد العربي | سبتمبر 2026: مخالفات صيد بري وبحري وإنقاذ طيور وقضايا اتجار",
       "source_reference": "../../media/uploads/2026/09/sayd-radar-libya-turtle-doves.jpg",
       "expected_local_path": "docs/media/uploads/2026/09/sayd-radar-libya-turtle-doves.jpg",
       "matching_paths": [
@@ -728,7 +1267,7 @@
     },
     {
       "article_file": "content/posts/رادار-صيد-العربي-سبتمبر-2026.md",
-      "article_title": "رادار صيد العربي | سبتمبر 2026: توقيف 50 صيادًا وإنقاذ آلاف الطيور",
+      "article_title": "رادار صيد العربي | سبتمبر 2026: مخالفات صيد بري وبحري وإنقاذ طيور وقضايا اتجار",
       "source_reference": "../../media/uploads/2026/09/sayd-radar-migratory-birds-beirut.jpg",
       "expected_local_path": "docs/media/uploads/2026/09/sayd-radar-migratory-birds-beirut.jpg",
       "matching_paths": [
@@ -739,7 +1278,7 @@
     },
     {
       "article_file": "content/posts/رادار-صيد-العربي-سبتمبر-2026.md",
-      "article_title": "رادار صيد العربي | سبتمبر 2026: توقيف 50 صيادًا وإنقاذ آلاف الطيور",
+      "article_title": "رادار صيد العربي | سبتمبر 2026: مخالفات صيد بري وبحري وإنقاذ طيور وقضايا اتجار",
       "source_reference": "media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg",
       "expected_local_path": "docs/media/uploads/2026/09/sayd-radar-rooftop-hunter-beirut.jpg",
       "matching_paths": [
@@ -826,6 +1365,94 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/شيرين-بو-رفول-مكافحة-الصيد-الجائر.md",
+      "article_title": "شيرين بو رفول: من وادي لوادي ما قدروا عليها الصيادي!",
+      "source_reference": "../../media/uploads/2026/10/1000508761(1).jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/1000508761(1).jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/1000508761(1).jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/شيرين-بو-رفول-مكافحة-الصيد-الجائر.md",
+      "article_title": "شيرين بو رفول: من وادي لوادي ما قدروا عليها الصيادي!",
+      "source_reference": "../../media/uploads/2026/10/1000513964.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/1000513964.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/1000513964.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/شيرين-بو-رفول-مكافحة-الصيد-الجائر.md",
+      "article_title": "شيرين بو رفول: من وادي لوادي ما قدروا عليها الصيادي!",
+      "source_reference": "../../media/uploads/2026/10/1000513968.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/1000513968.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/1000513968.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/شيرين-بو-رفول-مكافحة-الصيد-الجائر.md",
+      "article_title": "شيرين بو رفول: من وادي لوادي ما قدروا عليها الصيادي!",
+      "source_reference": "../../media/uploads/2026/10/1000513971.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/1000513971.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/1000513971.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/شيرين-بو-رفول-مكافحة-الصيد-الجائر.md",
+      "article_title": "شيرين بو رفول: من وادي لوادي ما قدروا عليها الصيادي!",
+      "source_reference": "../../media/uploads/2026/10/1000513972.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/1000513972.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/1000513972.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/شيرين-بو-رفول-مكافحة-الصيد-الجائر.md",
+      "article_title": "شيرين بو رفول: من وادي لوادي ما قدروا عليها الصيادي!",
+      "source_reference": "../../media/uploads/2026/10/shireen-cabs-fieldwalk-20261018.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/shireen-cabs-fieldwalk-20261018.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/shireen-cabs-fieldwalk-20261018.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/شيرين-بو-رفول-مكافحة-الصيد-الجائر.md",
+      "article_title": "شيرين بو رفول: من وادي لوادي ما قدروا عليها الصيادي!",
+      "source_reference": "../../media/uploads/2026/10/shireen-latest-170157.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/shireen-latest-170157.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/shireen-latest-170157.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/شيرين-بو-رفول-مكافحة-الصيد-الجائر.md",
+      "article_title": "شيرين بو رفول: من وادي لوادي ما قدروا عليها الصيادي!",
+      "source_reference": "media/uploads/2026/10/shireen-monitoring-new.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/shireen-monitoring-new.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/shireen-monitoring-new.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/طائر-الوروار-الأوروبي.md",
       "article_title": "طائر الوروار الأوروبي",
       "source_reference": "media/uploads/2025/09/AP4I0956-1024x683.jpg",
@@ -887,6 +1514,39 @@
       "expected_local_path": "docs/media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-04.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/10/khirbet-selm-joumana-majed-20261007-04.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-في-الحقائب-تهريب-الطيور-2026.md",
+      "article_title": "طيور في الحقائب… من باشق عكار إلى أوراق التهريب المزوّرة",
+      "source_reference": "../../media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/akkar-cabs-raptor-operation.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-في-الحقائب-تهريب-الطيور-2026.md",
+      "article_title": "طيور في الحقائب… من باشق عكار إلى أوراق التهريب المزوّرة",
+      "source_reference": "media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/akkar-injured-sparrowhawk-backpack-apu.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/طيور-في-الحقائب-تهريب-الطيور-2026.md",
+      "article_title": "طيور في الحقائب… من باشق عكار إلى أوراق التهريب المزوّرة",
+      "source_reference": "../../media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/anti-poaching-four-photo-collage-october-2026.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
