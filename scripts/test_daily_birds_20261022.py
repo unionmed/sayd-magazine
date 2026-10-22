@@ -23,6 +23,7 @@ def check(base, repeat=True):
                'audit/image-catalog/article-image-links.json',
                'scripts/publish_daily_birds_20261022.py', 'scripts/test_daily_birds_20261022.py',
                'scripts/test_daily_birds_browser_20261022.py', '.github/workflows/daily-birds-review-20261022.yml',
+               'scripts/test_header_social.py',
                'notes/daily-birds-20261022-verification.json'}
     for lang in p.LANGS:
         prefix = 'docs/' + ('' if lang == 'ar' else lang + '/')
@@ -73,6 +74,7 @@ def check(base, repeat=True):
             assert schema['datePublished'] == a['published_at'] and schema['dateModified'] == a['date']
             assert schema['articleSection'] == p.birds.CATS[lang]
             raw = path.read_text()
+            assert p.site_search.links(raw, path) == raw, 'Search chrome is not deterministic'
             assert raw.count('analytics:start') == 1 and raw.count('googletagmanager.com/gtag/js') == 1
             assert raw.count('article-share:start') == 1
             assert not any(term in body.text_content() for term in ['ملاحظات اعتماد', 'مراجعة مفيد', 'publication approval', 'awaiting approval', 'notes internes'])

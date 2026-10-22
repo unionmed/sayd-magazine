@@ -36,7 +36,8 @@
     "reviewer": "independent_publication_review",
     "review_type": "Independent agent science, naming, language parity, photography, rights and rendered-DOM review; not a GitHub human-owner approval",
     "feature_sha256": "a0897ead2c70ed555287cf6f24216f6c8038948d10e8d05a249ed42ce0022b57",
-    "finding": "All three new taxa and all nine language bodies passed. The final additional Arabic Pintail wording clarifies winter presence rather than meteorological winter and was independently approved. Regional months are not generalized across Arab countries. Rare Shoveler breeding evidence in Saudi Arabia and Algeria is preserved. LC is the category carried in the current checklist, not a claim of a newly dated 2026 IUCN assessment."
+    "finding": "All three new taxa and all nine language bodies passed. The final additional Arabic Pintail wording clarifies winter presence rather than meteorological winter and was independently approved. Regional months are not generalized across Arab countries. Rare Shoveler breeding evidence in Saudi Arabia and Algeria is preserved. LC is the category carried in the current checklist, not a claim of a newly dated 2026 IUCN assessment.",
+    "visual_review": "PASS: all nine article language versions, all three species and 1440/390/320px layouts plus separate credits and all three categories inspected independently. All Arabic title words remain visible at 320px; edge-flush headers are unchanged inherited site styling, not a new regression."
   },
   "validation": {
     "static_status": "PASS",
@@ -47,9 +48,12 @@
       "test_archive_media_contract.py",
       "test_archive_access.py",
       "test_shared_ticker.py",
-      "test_search_index.py: 14 tests"
+      "test_search_index.py: 14 tests",
+      "test_header_social.py against current baseline: 1076 groups and 862 headerless shells PASS",
+      "test_site_search.py: 964 article entries, privacy, chrome, preserved routes and deterministic whole-site rebuild PASS",
+      "test_site_search.cjs, test_related_reading_images.py and both related-reading JavaScript variants PASS"
     ],
-    "visual_status": "PENDING_PR_CI",
+    "visual_status": "PASS on original reviewed PR head; CI repeats on each updated head",
     "local_visual_blocker": "Chromium failed before opening pages because the execution environment denied socket creation. A supported escalation also failed before execution in environment setup. No denied session path was read and no security setting was changed. Read-only ordinary PR browser QA will test the exact nine pages at 1440, 390 and 320 pixels and retain screenshots.",
     "image_catalog_git_blob_verification": {
       "status": "PASS",
@@ -57,8 +61,21 @@
       "unindexed_upload_images": 0,
       "manifest_sha_verified_against_git_tree": true
     },
-    "required_remote_checks": "PENDING_DRAFT_PR",
-    "protected_surfaces": "Homepage sources and three homepages, ticker source, Gulf and laws source/rendered files are unchanged."
+    "required_remote_checks": "Original publication/SEO/archive/ticker/Gulf/bird-preview checks passed. Final-head CI rerun pending after the exact named-batch header counter extension and deterministic search-stylesheet normalization.",
+    "protected_surfaces": "Homepage sources and three homepages, ticker source, Gulf and laws source/rendered files are unchanged.",
+    "visual_evidence": {
+      "tested_head": "2e0fb410b52a6c9c8dcb79c13471b57e0ec9446b",
+      "workflow_run": "https://github.com/unionmed/sayd-magazine/actions/runs/39773214576",
+      "artifact_id": 12423606609,
+      "artifact_sha256": "1357caeedc346f599b5b354936e17fc49017753546f316c8e8aa98e7a6c265d2",
+      "cases_passed": 27,
+      "screenshots": 63,
+      "external_network_blocked": true
+    },
+    "regression_fixes": [
+      "Extend existing exact header/social totals only for these three pinned species, nine mirrored headers and nine verified canonical aliases; all historical and per-page protection checks retained.",
+      "Run the current search-chrome helper after analytics insertion on only the nine new pages. Only existing search-entry.css position changes; article bodies, source data, navigation URLs and images are unchanged."
+    ]
   },
   "catalog_reconciliation": {
     "method": "Unmodified existing deterministic catalog generators; no manual editing of generated records",

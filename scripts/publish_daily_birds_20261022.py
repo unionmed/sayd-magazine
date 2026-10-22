@@ -15,6 +15,7 @@ from pathlib import Path
 import publish_arab_bird_encyclopedia_20261014 as birds
 import publish_six_reference_articles_20261015 as renderer
 import seo_foundation as seo
+import build_site_search as site_search
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
@@ -68,7 +69,10 @@ def run():
     for p in paths:
         text = p.read_text()
         text = text.replace('</head>', seo.seo_block(text, p, DOCS, p.relative_to(DOCS), twins) + '</head>')
-        birds.save(p, seo.add_ga4(seo.add_article_sharing(text, p.relative_to(DOCS))))
+        text = seo.add_ga4(seo.add_article_sharing(text, p.relative_to(DOCS)))
+        # Normalize the current search chrome after analytics insertion, so its
+        # stylesheet remains in the exact deterministic site-wide position.
+        birds.save(p, site_search.links(text, p))
     # This helper touches only the encyclopedia category and normal archive.
     birds.listings(articles)
     for l in LANGS:
