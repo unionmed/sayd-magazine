@@ -3,7 +3,7 @@ title: "Liban : la loi 580/2004 encadre la chasse bien au-delà des dates d'ouve
 slug: lebanon-hunting-law-580-2004-what-is-prohibited
 date: 2026-10-15
 categories: [قوانين]
-featured: media/uploads/2026/10/sayd-legal-explainer-lebanon-580-2004.jpg
+featured: media/uploads/2026/10/laws-landmark-lebanon-beirut-raouche-960.jpg
 ---
 
 L'ouverture administrative de la saison de chasse ne remplace pas la loi qui en fixe les conditions générales. La loi libanaise no 580, datée du 25 février 2004 et publiée au Journal officiel le 4 mars 2004, encadre les espèces pouvant être chassées, les autorisations, les méthodes et les zones protégées.

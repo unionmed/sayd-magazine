@@ -4,7 +4,7 @@ slug: saudi-environment-law-wildlife-hunting-regulations
 date: 2026-10-15
 author: Sayd
 categories: [قوانين]
-featured: media/uploads/2026/10/sayd-legal-explainer-saudi-arabia-m165-2020.jpg
+featured: media/uploads/2026/10/laws-landmark-saudi-arabia-hegra-qasr-al-farid-960.jpg
 ---
 
 <p class="excerpt">A reference guide to the Environment Law, hunting permits, protected wildlife and seasonal implementing decisions.</p>

@@ -3,7 +3,7 @@ title: "Lebanon's Hunting Law 580/2004: Why an open season does not authorize ev
 slug: lebanon-hunting-law-580-2004-what-is-prohibited
 date: 2026-10-15
 categories: [قوانين]
-featured: media/uploads/2026/10/sayd-legal-explainer-lebanon-580-2004.jpg
+featured: media/uploads/2026/10/laws-landmark-lebanon-beirut-raouche-960.jpg
 ---
 
 An announcement opening a hunting season does not override the underlying legislation. Lebanon's Hunting Law 580, dated 25 February 2004 and published in the Official Gazette on 4 March 2004, establishes lasting rules on eligible species, licensing, prohibited methods and protected places.

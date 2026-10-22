@@ -3,7 +3,7 @@ title: "Qatar : la loi 4/2002 fixe des limites permanentes à la chasse"
 slug: qatar-law-4-2002-wildlife-hunting-rules
 date: 2026-10-15
 categories: [قوانين]
-featured: media/uploads/2026/10/sayd-legal-explainer-qatar-4-2002.jpg
+featured: media/uploads/2026/10/laws-landmark-qatar-al-zubarah-fort-960.jpg
 ---
 
 Les annonces saisonnières de chasse au Qatar sont des décisions d'application, distinctes du cadre fixé par la loi no 4 de 2002. Promulguée le 11 mai et publiée le 20 mai 2002, cette loi est présentée comme en vigueur par le portail juridique officiel Al Meezan.
