@@ -75,3 +75,28 @@ test('a weak itinerary gets at most one researched revision',async()=>{
  const res=await h(req({mode:'plan',query:'جولة خفيفة في الشوف'}),env());assert.equal(res.status,200);assert.equal(calls,2);assert.equal(revision.max_tool_calls,2);assert.equal(revision.store,false);assert.ok(JSON.parse(revision.input).revision.draft.includes('دير القمر'));
  calls=0;const failed=await createHandler(async()=>{calls++;return respond(weak);})(req({mode:'plan'}),env());assert.equal(failed.status,502);assert.equal(calls,2);assert.equal((await failed.json()).error,'itinerary_unavailable');
 });
+
+test('live regressions: laws are not stops, duplicates and mixed trails are rejected',async()=>{
+ const {parseItinerary}=await import('../src/trips.mjs'),sources=[{url:'https://example.org/visit'}];
+ const check=p=>parseItinerary(JSON.stringify(p),sources,{query:'مسار هايكينغ واحد في إهدن'});
+ let p=concretePlan('Trail #8','إهدن، لبنان');
+ assert.equal(check(p),null);
+ p.days[0].stops[0].trail={distance_km:1.2,difficulty:'سهل',start:'مدخل المحمية',source_url:sources[0].url};
+ assert.ok(check(p));
+ let bad=structuredClone(p);bad.days[0].stops.push({...bad.days[0].stops[0],name:'Trail #1'});assert.equal(check(bad),null);
+ bad=structuredClone(p);bad.summary='Trail #8 أو Trail #1';assert.equal(check(bad),null);
+ for(const name of ['قانون رقم 580 للصيد','قرار فتح موسم الصيد','Law 580'])assert.equal(parseItinerary(JSON.stringify(concretePlan(name)),sources),null);
+ bad=concretePlan('Hima Hammana');bad.days[0].stops.push({...bad.days[0].stops[0],name:'Nature reserve birdwatching at Hima Hammana'});assert.equal(parseItinerary(JSON.stringify(bad),sources),null);
+ const advice={summary:'لم أجد إعلانًا رسميًا حديثًا يثبت افتتاح الموسم؛ هذا لا يثبت الحظر.',format:'advice',region:'عكار',days:[]};
+ const input={query:'رحلة صيد طيور في عكار',trip:{activities:['hunting']}};
+ assert.ok(parseItinerary(JSON.stringify(advice),sources,input));assert.equal(parseItinerary(JSON.stringify(concretePlan()),sources,input),null);
+ const payload=providerPayload({...input,mode:'plan',lang:'ar'},[],'test',true);assert.match(payload.instructions,/Legal documents are references/);assert.doesNotMatch(payload.instructions,/Return ONLY valid JSON, no markdown fences/);
+});
+test('temporary fixed-case QA allowance expires; public input cannot select it; global cap still applies',async()=>{
+ const {clientDailyLimit}=await import('../src/worker.mjs');const before=Date.parse('2026-10-23T22:00:00Z'),after=Date.parse('2026-10-25T00:00:00Z');
+ assert.equal(clientDailyLimit({},true,before),20);assert.equal(clientDailyLimit({},false,before),10);assert.equal(clientDailyLimit({},true,after),10);
+ const e=env();await createHandler()(req({evaluation:true}),e);assert.equal(JSON.parse(e.requests[0].body).evaluation,false);
+ const storage=new Store(),guard=new MufidGuard({storage},{DAILY_REQUEST_LIMIT:'1'});
+ const reserve=client=>guard.fetch(new Request('https://guard/reserve',{method:'POST',body:JSON.stringify({client,day:'2026-10-23',minute:1,evaluation:true})}));
+ assert.equal((await reserve('qa')).status,200);assert.equal((await reserve('qa')).status,429);assert.equal((await reserve('other')).status,429);
+});

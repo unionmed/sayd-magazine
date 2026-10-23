@@ -21,7 +21,11 @@ async function digest(value,secret) {
   const encoder=new TextEncoder();const key=await crypto.subtle.importKey('raw',encoder.encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);
   return Array.from(new Uint8Array(await crypto.subtle.sign('HMAC',key,encoder.encode(value)))).map(n=>n.toString(16).padStart(2,'0')).join('');
 }
-export function createHandler(network=fetch) {
+export function clientDailyLimit(env,evaluation,now=Date.now()){
+ const normal=bounded(env.PER_CLIENT_DAILY_LIMIT,10,50);
+ return evaluation===true && now<Date.parse('2026-10-24T20:00:00Z')?Math.min(20,normal*2):normal;
+}
+export function createHandler(network=fetch,options={}) {
   return async function(request,env) {
     const url=new URL(request.url),origin=request.headers.get('Origin');
     if(request.method==='GET' && Object.hasOwn(preview,url.pathname)) {
@@ -53,7 +57,7 @@ export function createHandler(network=fetch) {
     if((url.pathname==='/v1/suggestions') !== (input.mode==='suggest'))return reply({error:'invalid_mode'},400);
     const day=new Date().toISOString().slice(0,10);
     const client=await digest(day+'|'+(request.headers.get('CF-Connecting-IP') || 'unknown'),env.RATE_SALT);
-    const limited=await guard.fetch('https://guard/reserve',{method:'POST',body:JSON.stringify({client,day,minute:Math.floor(Date.now()/60000)})});
+    const limited=await guard.fetch('https://guard/reserve',{method:'POST',body:JSON.stringify({client,day,minute:Math.floor(Date.now()/60000),evaluation:options.evaluation===true})});
     if(!limited.ok)return reply({error:'limit'},429);
     if(input.mode==='suggest') {
       const res=await guard.fetch('https://guard/suggest',{method:'POST',body:JSON.stringify({text:input.query,lang:input.lang})});
@@ -76,15 +80,15 @@ export function createHandler(network=fetch) {
       if(web && !output.verified)return reply({error:'verification_failed',articles:cards},502);
       let itinerary;
       if(input.mode==='plan'&&input.task==='itinerary'){
-        itinerary=parseItinerary(output.answer,output.sources);
+        itinerary=parseItinerary(output.answer,output.sources,input);
         // One bounded revision, never an open-ended retry loop or a vague draft.
         if(!itinerary){
-          const revision={draft:output.answer.slice(0,12000),defects:'Provide exact visitor places or restaurant names, source_url from completed search, kind, suggested duration_minutes and walking note; separate departure/return_to from visit stops. Avoid bare towns and alternative entrances.'};
+          const revision={draft:output.answer.slice(0,12000),defects:'Check every constraint again: exact destination region, no duplicate places, no law/documents as visits, no alternatives merged into a route, ONE named hiking trail with sourced length/difficulty. Keep practical visitor sites with source_url, kind, duration_minutes and walking. For unresolved hunting legality use advice with days:[], never a route through law documents. Do not merely move rejected alternatives into summary. Read the draft against the original request and correct it.'};
           const revised=await network('https://api.openai.com/v1/responses',{method:'POST',headers:{'Authorization':'Bearer '+env.OPENAI_API_KEY,'Content-Type':'application/json'},body:JSON.stringify(providerPayload({...input,revision},matches.slice(0,4),env.OPENAI_MODEL,true)),signal:AbortSignal.timeout(45000)});
           if(!revised.ok)return reply({error:'itinerary_unavailable',articles:cards},502);
           data=await revised.json();output=extractResponse(data);
           if(data.status!=='completed'||!output.answer||!output.verified)return reply({error:'itinerary_unavailable',articles:cards},502);
-          itinerary=parseItinerary(output.answer,output.sources);
+          itinerary=parseItinerary(output.answer,output.sources,input);
         }
         if(!itinerary)return reply({error:'itinerary_unavailable',articles:cards},502);
         if(itineraryNeedsReview(itinerary))return reply({answer:ACCESS_NOTE[input.lang],articles:cards,sources:[],verified:false,access_review_required:true});
@@ -111,7 +115,7 @@ export class MufidGuard {
         if(state.day!==v.day){state.day=v.day;state.total=0;state.clients={};}
         const row=state.clients[v.client] || {count:0,minute:v.minute,burst:0};
         if(row.minute!==v.minute){row.minute=v.minute;row.burst=0;}
-        if(state.total>=bounded(this.env.DAILY_REQUEST_LIMIT,50,500) || row.count>=bounded(this.env.PER_CLIENT_DAILY_LIMIT,10,50) || row.burst>=bounded(this.env.PER_CLIENT_MINUTE_LIMIT,3,10))return false;
+        if(state.total>=bounded(this.env.DAILY_REQUEST_LIMIT,50,500) || row.count>=clientDailyLimit(this.env,v.evaluation,now) || row.burst>=bounded(this.env.PER_CLIENT_MINUTE_LIMIT,3,10))return false;
         state.total++;row.count++;row.burst++;state.clients[v.client]=row;await tx.put('limits',state);return true;
       });
       await this.ctx.storage.setAlarm(now+86400000);

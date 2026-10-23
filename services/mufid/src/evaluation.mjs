@@ -14,6 +14,6 @@ export async function runEvaluationCase(env,id,now=Date.now(),network=fetch){
   try{const response=await network(url,options);const data=await response.clone().json(),parsed=extractResponse(data);calls.push({status:response.status,response_status:data.status,answer:parsed.answer,sources:parsed.sources,verified:parsed.verified,error_code:data.error?.code,error_param:data.error?.param,usage:data.usage?{input_tokens:data.usage.input_tokens,output_tokens:data.usage.output_tokens}:undefined});return response;}
   catch(error){calls.push({error_type:error?.name||'Error'});throw error;}
  };
- const start=Date.now(),response=await createHandler(tracked)(request,env);
+ const start=Date.now(),response=await createHandler(tracked,{evaluation:true})(request,env);
  return {id,status:response.status,elapsed_ms:Date.now()-start,result:await response.json(),calls};
 }
