@@ -36,6 +36,15 @@ def fixture(base):
     news.update(slugs={l: 'browser-news-never-publish-'+l for l in compiler.LANGS},
                 primary_door='equestrian', archives=['equestrian'], kind='article',
                 distribution={'placement': 'latest', 'ticker': True})
+    # Keep real lazy related images well beyond the final figure. This catches
+    # a decode() wait that never starts loading an offscreen image.
+    value['articles'][0]['related'] = [
+        'شجيرة-العوسج-حين-تقرأ-الأرض',
+        'كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف',
+    ]
+    for translation in value['articles'][0]['translations'].values():
+        translation['sections'].append({'heading': 'Synthetic distant related-image regression',
+            'paragraphs': ['Synthetic long-body fixture requiring real scrolling before lazy related-image decoding. ' * 100]})
     files = {}; photos = []; shard = []
     for index in range(7):
         photo = copy.deepcopy(value['photos'][0])

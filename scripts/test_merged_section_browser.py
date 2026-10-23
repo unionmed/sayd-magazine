@@ -52,6 +52,25 @@ def capture(page,locator,dest):
     image.quantize(colors=128).save(dest,optimize=True)
 
 
+def decode_visible_image(image):
+    # Lazy images need a real viewport visit. Locator evaluation itself has no
+    # promise timeout, so a missing/stalled image must reject rather than hang.
+    image.scroll_into_view_if_needed(timeout=10000)
+    image.evaluate('''async img => {
+      let timer;
+      try {
+        await Promise.race([
+          img.decode(),
+          new Promise((_, reject) => {
+            timer = setTimeout(() => reject(new Error('Image decode timed out: '+(img.currentSrc || img.src))), 10000);
+          })
+        ]);
+      } finally {
+        clearTimeout(timer);
+      }
+    }''', timeout=10000)
+
+
 def test_compiled_article_browser(context, origin, proof, output):
     """New article pages come only from an independently BASE-verified bundle."""
     screens = []
@@ -80,8 +99,7 @@ def test_compiled_article_browser(context, origin, proof, output):
                         assert images.count() == len(article['photos']), (label, 'exact photograph count')
                         for index, photo_id in enumerate(article['photos']):
                             photo, image = photos[photo_id], images.nth(index)
-                            image.scroll_into_view_if_needed()
-                            image.evaluate('(img)=>img.decode()')
+                            decode_visible_image(image)
                             measured = image.evaluate('''img => {
                               const r=img.getBoundingClientRect(), f=img.closest('figure').getBoundingClientRect();
                               return {loaded:img.complete&&img.naturalWidth>0, natural:img.naturalWidth/img.naturalHeight,
@@ -101,7 +119,7 @@ def test_compiled_article_browser(context, origin, proof, output):
                             assert unquote(image_path) == '/'+photo['path'][5:], (label, 'photo source/order')
                         assert body.locator('figure figcaption').count() == sum(bool(photos[p]['caption'][lang]) for p in article['photos']), (label, 'no extra image captions')
                         for image in body.locator('img').all():
-                            image.evaluate('(img)=>img.decode()')
+                            decode_visible_image(image)
                             assert image.evaluate('img=>img.complete&&img.naturalWidth>0'), (label, 'body/related image decode')
                         credit = body.locator(':scope > .photo-credit')
                         assert credit.count() == 1 and credit.inner_text().startswith(tr['photo_credit']), (label, 'single end photo credit')
@@ -115,7 +133,7 @@ def test_compiled_article_browser(context, origin, proof, output):
                             assert all(unquote(a.evaluate('a=>new URL(a.href).pathname')).removesuffix('index.html') == wanted for a in anchors.all()), (label, 'language target')
                         page.evaluate('scrollTo(0,0)')
                         path = output / f'publication-{record["id"]}-{article_index}-{lang}-{width}.png'
-                        page.screenshot(path=str(path)); screens.append(path)
+                        page.screenshot(path=str(path), full_page=True); screens.append(path)
     finally:
         page.close()
     return screens
