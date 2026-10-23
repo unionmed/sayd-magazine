@@ -1,5 +1,5 @@
 // Explicit one-shot deployment to the existing protected pilot, never the magazine site.
-import {readFileSync,writeFileSync} from 'node:fs';
+import {readFileSync,writeFileSync,existsSync} from 'node:fs';
 import {randomBytes,createCipheriv,publicEncrypt,constants} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {execFileSync,spawnSync} from 'node:child_process';
@@ -34,20 +34,16 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
    if(run('deploy',wrangler,['deploy','--config','wrangler.jsonc','--keep-vars'])){
     const proxyPath=new URL('../data/evaluation-proxy.jsonc',import.meta.url);
     writeFileSync(proxyPath,JSON.stringify({name:'mufid-private-evaluation-client',account_id:account,compatibility_date:'2026-10-01',services:[{binding:'MUFiD',service:config.name,entrypoint:'MufidEvaluation',remote:true}]}));
-    const {getPlatformProxy}=await import('wrangler');
-    const proxy=await getPlatformProxy({configPath:fileURLToPath(proxyPath),persist:false,remoteBindings:true});
-    try{
-     const suite=JSON.parse(readFileSync(new URL('./quality-cases.json',import.meta.url)));
-     for(const item of suite.cases.slice(0,6)){
-      let result=await proxy.env.MUFiD.runCase(item.id);
-      if(result.status===429){const delay=60000-Date.now()%60000+1000;await new Promise(r=>setTimeout(r,Math.min(delay,59000)));if(delay>59000)await new Promise(r=>setTimeout(r,delay-59000));result=await proxy.env.MUFiD.runCase(item.id);}
-      report.live_cases.push(result);console.log('Mufid live case '+item.id+': '+result.status);
-     }
-    }finally{await proxy.dispose();}
+    const child=spawnSync('node',['test/run-live-cases.mjs'],{cwd:service,encoding:'utf8',env:childEnv,timeout:360000});
+    report.stages.push({stage:'live_runner',status:child.status,error:child.error?.code,log:redactLog((child.stdout||'')+'\n'+(child.stderr||''),process.env).slice(-10000)});
+    const resultPath=new URL('../data/live-cases.json',import.meta.url);
+    if(existsSync(resultPath)){const result=JSON.parse(readFileSync(resultPath));report.live_cases=result.cases;report.evaluation_errors=result.errors;}
+
    }
   }
  }catch(error){report.stages.push({stage:'internal_evaluation',status:1,log:redactLog(String(error?.message||error),process.env).slice(0,3000)});}
  // Diagnostic failure does not block the isolated branch Preview from carrying its report.
  const previewPath=new URL('../data/preview.json',import.meta.url),preview=JSON.parse(readFileSync(previewPath));
  preview['/__deploy-report.enc.json']=JSON.stringify(seal(report));writeFileSync(previewPath,JSON.stringify(preview));
+ if(report.stages.some(s=>s.stage==='deploy'&&s.status===0))run('publish_report',wrangler,['deploy','--config','wrangler.jsonc','--keep-vars']);
 }
