@@ -239,6 +239,30 @@ def run(base=None):
                 daily_aliases.extend(matching)
         assert len(daily_aliases)==len(set(daily_aliases))==9
         added+=9
+    # Exactly the explicitly approved Proudfoot Science article, not arbitrary new pages.
+    proudfoot=ROOT/'content/features/proudfoot-vulture-calls-20261023.json'
+    if proudfoot.exists():
+        from urllib.parse import unquote
+        package=json.loads(proudfoot.read_text())
+        assert len(package['articles'])==1
+        a=package['articles'][0]
+        assert a['door']=='science' and a['publication_ready'] is True
+        assert a['date']=='2026-10-23' and a['category']=='علوم-واكتشافات'
+        assert a['slugs']=={'ar':'نسور-تتكلم-قبل-أن-تفقس','en':'vultures-talk-before-they-hatch','fr':'vautours-parlent-avant-eclosion'}
+        links=json.loads((DOCS/'s/links.json').read_text());aliases=[]
+        for lang in ('ar','en','fr'):
+            route='/'+('' if lang=='ar' else lang+'/')+'posts/'+a['slugs'][lang]+'/'
+            page=html.parse(str(DOCS/route.lstrip('/')/'index.html'))
+            assert len(page.xpath('//nav[@class="header-social"]'))==1
+            assert [unquote(url) for url in page.xpath('//link[@rel="canonical"]/@href')]==['https://sayd-magazine.com'+route]
+            matching=[v for k,v in links.items() if unquote(k)==route]
+            assert matching==[{'ar':'/s/1609616f6a/','en':'/s/c4e7388e1e/','fr':'/s/d875b374ed/'}[lang]]
+            shell=html.parse(str(DOCS/matching[0].strip('/')/'index.html'))
+            assert not shell.xpath('//nav[@class="header-social"]')
+            assert [unquote(url) for url in shell.xpath('//link[@rel="canonical"]/@href')]==['https://sayd-magazine.com'+route]
+            aliases.extend(matching)
+        assert len(aliases)==len(set(aliases))==3
+        added+=3
     assert groups==1037+added and headerless==823+added,(groups,headerless)
     print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact social markup, Alexandra shown once under Interviews with original URLs')
 
