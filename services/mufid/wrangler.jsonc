@@ -3,7 +3,9 @@
   "main": "src/worker.mjs",
   "compatibility_date": "2026-10-01",
   "workers_dev": true,
-  "observability": {"enabled": false},
+  "observability": {
+    "enabled": false
+  },
   "vars": {
     "ENABLED": "true",
     "ALLOWED_ORIGINS": "https://sayd-mufid-internal.unionmedia-sarl.workers.dev,https://sayd-magazine.com",
@@ -13,6 +15,36 @@
     "PER_CLIENT_DAILY_LIMIT": "10",
     "PER_CLIENT_MINUTE_LIMIT": "3"
   },
-  "durable_objects": {"bindings": [{"name": "GUARD", "class_name": "MufidGuard"}]},
-  "migrations": [{"tag": "v1", "new_sqlite_classes": ["MufidGuard"]}]
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "GUARD",
+        "class_name": "MufidGuard"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "MufidGuard"
+      ]
+    }
+  ],
+  "previews": {
+    "vars": {
+      "ENABLED": "false",
+      "WEB_ENABLED": "false",
+      "ALLOWED_ORIGINS": "",
+      "OPENAI_MODEL": ""
+    },
+    "durable_objects": {
+      "bindings": [
+        {
+          "name": "GUARD",
+          "class_name": "MufidGuard"
+        }
+      ]
+    }
+  }
 }

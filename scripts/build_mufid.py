@@ -24,6 +24,11 @@ UPDATES={
 MASCOT='<img class="mufid-bird" src="/assets/images/mufid-hoopoe.webp" alt="Mufid" width="185" height="185">'
 
 def build():
+    # Cloudflare's default Preview command runs at the repository root.
+    # Keep one source config; rebase its entry point for that invocation.
+    config=json.loads((ROOT/'services/mufid/wrangler.jsonc').read_text())
+    config['main']='services/mufid/'+config['main']
+    (ROOT/'wrangler.jsonc').write_text(json.dumps(config,ensure_ascii=False,indent=2)+'\n')
     rows=[]
     for lang,c in COPY.items():
         c.update(UI[lang]); c.update(UPDATES[lang])
