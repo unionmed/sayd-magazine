@@ -1,0 +1,36 @@
+name: Riyadh dated update responsive QA
+on:
+  pull_request:
+    paths:
+      - 'content/article-updates.json'
+      - 'docs/posts/الرياض-تستعيد-صهيلها-موسم-السباقات-2026/**'
+      - 'docs/en/posts/riyadh-racing-season-2026-2027-begins/**'
+      - 'docs/fr/posts/riyadh-racing-season-2026-2027-begins/**'
+      - 'scripts/test_riyadh_update_browser_20261023.py'
+      - '.github/workflows/riyadh-update-review-20261023.yml'
+permissions:
+  contents: read
+jobs:
+  preview:
+    name: Three Riyadh updated pages — responsive preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install established pinned browser library
+        run: pip install playwright==1.55.0
+      - name: Check existing runner Chrome with external requests blocked
+        run: python scripts/test_riyadh_update_browser_20261023.py
+      - name: Retain screenshots and measured results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: riyadh-update-20261023-visual-qa
+          path: riyadh-update-visual-qa/
+          if-no-files-found: warn
+          retention-days: 14
