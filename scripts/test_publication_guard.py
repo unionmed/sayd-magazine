@@ -1,4 +1,5 @@
 """Trust-boundary tests; real compiler parity is tested independently."""
+import ast
 import json
 import os
 from pathlib import Path
@@ -347,6 +348,79 @@ class SourceHeaderCounts(unittest.TestCase):
         self.write(self.site, 'content/publications/test.json', '{"articles":[]}')
         self.assertEqual(header_counts.check_source_publication_pairs(self.proof, self.root), 0)
 
+
+
+class BrowserImageWaitTests(unittest.TestCase):
+    """Exercise the exact browser helper without launching a local browser."""
+    @classmethod
+    def setUpClass(cls):
+        source = (Path(__file__).with_name('test_merged_section_browser.py')).read_text()
+        module = ast.parse(source)
+        helper = next(n for n in module.body if isinstance(n, ast.FunctionDef) and n.name == 'decode_visible_image')
+        namespace = {}
+        exec(compile(ast.Module(body=[helper], type_ignores=[]), '<reviewed-image-helper>', 'exec'), namespace)
+        cls.helper = staticmethod(namespace['decode_visible_image'])
+        cls.source = source
+
+    def expression(self):
+        calls = []
+        class Image:
+            def scroll_into_view_if_needed(self, **kwargs):
+                calls.append(('scroll', kwargs))
+            def evaluate(self, expression, **kwargs):
+                calls.append(('decode', kwargs, expression))
+        self.helper(Image())
+        self.assertEqual([c[0] for c in calls], ['scroll', 'decode'])
+        self.assertEqual(calls[0][1], {'timeout': 10000})
+        self.assertEqual(calls[1][1], {'timeout': 10000})
+        return calls[1][2]
+
+    def test_lazy_images_are_scrolled_before_bounded_decode(self):
+        self.expression()
+        self.assertEqual(self.source.count('decode_visible_image(image)'), 3)  # definition + both loops
+        self.assertIn("image.evaluate('img=>img.complete&&img.naturalWidth>0')", self.source)
+        self.assertIn('page.screenshot(path=str(path), full_page=True)', self.source)
+        self.assertLess(self.source.index("page.evaluate('scrollTo(0,0)')"),
+                        self.source.index('page.screenshot(path=str(path), full_page=True)'))
+
+    def test_missing_image_scroll_failure_is_not_swallowed(self):
+        class MissingImage:
+            def scroll_into_view_if_needed(self, **kwargs):
+                raise RuntimeError('missing image')
+            def evaluate(self, *args, **kwargs):
+                raise AssertionError('decode must not follow failed scroll')
+        with self.assertRaisesRegex(RuntimeError, 'missing image'):
+            self.helper(MissingImage())
+
+    def run_decode(self, behavior):
+        # Execute the exact production JS promise, accelerating only the test's
+        # timer clock. Record the requested10-second deadline and cleanup.
+        script = r'''
+const assert = require('node:assert/strict');
+const realSetTimeout = global.setTimeout, realClearTimeout = global.clearTimeout;
+let deadline = null, cleared = 0;
+global.setTimeout = (fn, delay) => { deadline = delay; return realSetTimeout(fn, 1); };
+global.clearTimeout = timer => { cleared++; realClearTimeout(timer); };
+const decodeVisible = EXPRESSION;
+const image = {src: '/local/image.jpg', currentSrc: '', decode: () => BEHAVIOR};
+(async () => {
+  let error = null;
+  try { await decodeVisible(image); } catch (e) { error = e.message; }
+  assert.equal(deadline, 10000); assert.equal(cleared, 1);
+  process.stdout.write(JSON.stringify({error}));
+})().catch(e => { console.error(e); process.exitCode = 1; });
+'''.replace('EXPRESSION', self.expression()).replace('BEHAVIOR', behavior)
+        result = subprocess.run(['node', '-e', script], capture_output=True, text=True, timeout=5, check=True)
+        return json.loads(result.stdout)['error']
+
+    def test_successful_decode_clears_deadline(self):
+        self.assertIsNone(self.run_decode('Promise.resolve()'))
+
+    def test_broken_image_decode_rejection_is_not_swallowed(self):
+        self.assertEqual(self.run_decode("Promise.reject(new Error('broken image'))"), 'broken image')
+
+    def test_never_resolving_decode_rejects_at_deadline(self):
+        self.assertEqual(self.run_decode('new Promise(() => {})'), 'Image decode timed out: /local/image.jpg')
 
 
 if __name__ == '__main__':
