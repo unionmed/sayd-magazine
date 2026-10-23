@@ -1,0 +1,161 @@
+[
+  {
+    "id": "hiking-ehden",
+    "plan": {
+      "summary": "مسار حلقي خفيف-متوسط في حرش إهدن يناسب ساعتين تقريبًا: جوعيت/نَبَع جويت إلى النعص ثم غداء قريب في إهدن قبل العودة إلى زغرتا.",
+      "format": "itinerary",
+      "region": "إهدن، لبنان",
+      "days": [
+        {
+          "day": 1,
+          "base": "زغرتا",
+          "departure": "زغرتا",
+          "return_to": "زغرتا",
+          "stops": [
+            {
+              "name": "مسار جوعيت – النعص (Trail 1) من نبعة جويت",
+              "locality": "إهدن، لبنان",
+              "description": "هذا هو المسار المحدد في خريطة وزارة البيئة/المحمية: طوله 850 مترًا في اتجاه واحد، بزمن وسطي 35 دقيقة، وصعوبته متوسطة إلى وعرة. مناسب لرحلة مشي قصيرة مع تصوير الغابة، ويمكن جعله ذهابًا وإيابًا ضمن حدود الوقت المذكور لشخصين بلياقة متوسطة.",
+              "kind": "nature",
+              "trail": {
+                "distance_km": 0.85,
+                "difficulty": "متوسطة إلى وعرة",
+                "start": "نبعة جويت / Jouit",
+                "source_url": "https://www.moe.gov.lb/ProtectedAreas/images/maps/TRAILMAP-EHDEN.pdf"
+              },
+              "duration_minutes": 80,
+              "walking": "مشي لمسار قصير مع صعود/نزول خفيف إلى متوسط؛ احسبه ذهابًا وإيابًا ضمن نحو ساعتين مع توقفات تصوير قصيرة.",
+              "source_url": "https://www.moe.gov.lb/ProtectedAreas/images/maps/TRAILMAP-EHDEN.pdf"
+            },
+            {
+              "name": "مطعم Pinch",
+              "locality": "إهدن، لبنان",
+              "description": "استراحة غداء قريبة داخل إهدن بعد الهايك، مع صفحة المطعم على موقع محمية حرش إهدن نفسها. مناسب كوقفة قصيرة بعد المشي بدل الانتقال بعيدًا عن المنطقة.",
+              "kind": "meal",
+              "duration_minutes": 60,
+              "walking": "مشي بسيط من داخل إهدن بحسب موقع التوقف في البلدة؛ لا يُفترض أي مجهود إضافي كبير.",
+              "source_url": "https://horshehden.org/pinch/"
+            }
+          ]
+        }
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://horshehden.org/pinch/"
+      },
+      {
+        "url": "https://www.moe.gov.lb/ProtectedAreas/images/maps/TRAILMAP-EHDEN.pdf"
+      }
+    ]
+  },
+  {
+    "id": "nature-restaurants",
+    "plan": {
+      "summary": "لدَي خياران موثّقان في دُوما وقربها مع جلسة طبيعية وطعام محلي، وخيار ثالث قوي في بَيت نُون قرب جبيل إذا قبلت خارج دُوما مباشرة.",
+      "format": "options",
+      "region": "جبيل ودُوما، لبنان",
+      "days": [
+        {
+          "day": 1,
+          "base": "جبيل",
+          "departure": "جبيل",
+          "return_to": "جبيل",
+          "stops": [
+            {
+              "name": "Beit Douma",
+              "locality": "Douma, Lebanon",
+              "description": "بيت تراثي مُرمّم داخل دُوما، تحيط به تراسات وحدائق وبساتين، وتُقدَّم فيه وجبات منزلية على طاولة المفتوح مع أجواء ريفية هادئة. يَقبل الحجوزات عبر الهاتف أو البريد، وهو مناسب لجلوس طبيعي مع طعام محلي بدل مطعم حضري.",
+              "kind": "meal",
+              "duration_minutes": 90,
+              "walking": "مشي خفيف داخل البيت والحدائق والتراسات فقط.",
+              "source_url": "https://www.soukeltayeb.com/beit/1/beit-douma"
+            },
+            {
+              "name": "Pine Straw Douma Restaurant",
+              "locality": "Douma, Batroun, Lebanon",
+              "description": "مطعم ضمن موقع مُحاط بأشجار الصنوبر في قلب دُوما، ويقدّم إفطارًا من 9 صباحًا إلى 12 ظهرًا وعشاءً من 6 مساءً إلى 1 بعد منتصف الليل. الجلسة الطبيعية هنا هي أبرز ما يميّزه، مع أجواء هادئة وإطلالة خضراء ضمن المنتجع.",
+              "kind": "meal",
+              "duration_minutes": 90,
+              "walking": "مشي قصير جدًا حول الجلسة والمنتجع فقط.",
+              "source_url": "https://pinestrawdouma.com/restaurant/"
+            },
+            {
+              "name": "Beit Noun Dining",
+              "locality": "Byblos, Lebanon",
+              "description": "خيار ثالث في محيط جبيل، داخل estate ريفي يركّز على أطباق موسمية مرتبطة بالأرض والمكوّنات المحلية. يختلف عن مطاعم البلدة القديمة لأنه أقرب إلى تجربة مزرعة/موقع طبيعي أكثر من كونه مطعمًا مدينيًا.",
+              "kind": "meal",
+              "duration_minutes": 90,
+              "walking": "مشي خفيف داخل estate بحسب ترتيب الجلسة.",
+              "source_url": "https://www.beitnoun.com/dining"
+            }
+          ]
+        }
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://www.soukeltayeb.com/beit/1/beit-douma"
+      },
+      {
+        "url": "https://www.beitnoun.com/dining"
+      },
+      {
+        "url": "https://pinestrawdouma.com/restaurant/"
+      }
+    ]
+  },
+  {
+    "id": "family-camping",
+    "plan": {
+      "summary": "لا أستطيع تأكيد مخيم لليلة واحدة داخل تنورين نفسها الآن؛ أقرب خيار موثّق وقابل للتحقق هو إقامة في بشعله مع ألعاب هادئة، أما محمية أرز تنورين فممنوع فيها المبيت والنار.",
+      "format": "itinerary",
+      "region": "تنورين، لبنان",
+      "days": [
+        {
+          "day": 1,
+          "base": "بشعله",
+          "departure": "البترون",
+          "return_to": "بشعله",
+          "stops": [
+            {
+              "name": "Cheer Up! camping site",
+              "locality": "بشعله، لبنان",
+              "description": "موقع تخييم طبيعي ضمن Bchaaleh Trails، ويُذكر فيه ممر مشي قصير 5–10 دقائق عبر الغابة للوصول إلى منطقة Capella Tree House الخاصة بالتخييم. الصفحة تصفه كموقع woods camping وتجربة مبيت لليلة أو ليلتين، مع تجهيزات مثل سرير مزدوج، ثلاجة، كراسٍ وطاولة، وكهرباء وموقد في الشتاء.",
+              "kind": "nature",
+              "duration_minutes": 180,
+              "walking": "مشي قصير جدًا داخل الموقع من نقطة الاستقبال إلى منطقة النوم؛ لا توجد مسافة/تضاريس مفصلة في المصدر.",
+              "source_url": "https://bchaalehtrails.org/sleep-in-bchaaleh/"
+            },
+            {
+              "name": "Estirahet Mar Charbel Resto Café",
+              "locality": "بشعله، لبنان",
+              "description": "مقهى/مطعم صغير عائلي في القرية، مناسب لاستراحة غداء أو عشاء هادئ بعد الوصول. الموقع يعرّفه كوجهة ترحب بمجموعات المشي وتقدّم أطعمة محلية وتقليدية مرتبطة بتراث المنطقة.",
+              "kind": "meal",
+              "duration_minutes": 75,
+              "walking": "وصول بسيط بالسيارة داخل البلدة، ثم جلوس قصير دون مشي مجهد.",
+              "source_url": "https://bchaalehtrails.org/eat-in-bchaaleh/"
+            },
+            {
+              "name": "ألعاب بسيطة نحضرها معنا",
+              "locality": "بشعله، لبنان",
+              "description": "اختيار مناسب للعائلة: ورق لعب، Uno، دومينو، كرة خفيفة، ولعبة رمي حلقات أو كرات ناعمة. هذه الأنشطة تناسب ليلة تخييم هادئة ولا تحتاج نارًا أو شواء، ويمكن لعبها قرب مكان الجلوس دون إزعاج للموقع.",
+              "kind": "activity",
+              "duration_minutes": 60,
+              "walking": "بدون مشي؛ نشاط جلوس خفيف للأطفال بعمر 8 و11 سنة.",
+              "source_url": "https://bchaalehtrails.org/sleep-in-bchaaleh/"
+            }
+          ]
+        }
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://bchaalehtrails.org/eat-in-bchaaleh/"
+      },
+      {
+        "url": "https://bchaalehtrails.org/sleep-in-bchaaleh/"
+      }
+    ]
+  }
+]

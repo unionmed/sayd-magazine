@@ -110,3 +110,16 @@ test('unconfirmed current hunting status cannot echo an old-season blanket prohi
  const h=createHandler(async()=>Response.json({status:'completed',output:[{type:'web_search_call',status:'completed',action:{sources:[{type:'url',url:'https://example.org/visit'}]}},{type:'message',content:[{type:'output_text',text:JSON.stringify({summary:'ممنوع في 2026 لأن بيان 2025 يقول ذلك',format:'advice',legal:{status:'unconfirmed'},days:[]})}]}]}));
  const r=await h(req({mode:'plan',query:'رحلة صيد طيور في البقاع',trip:{activities:['hunting']}}),env());assert.equal(r.status,200);const data=await r.json();assert.ok(!data.answer.includes('ممنوع في 2026'));assert.ok(data.answer.includes('البيان الخاص بموسم سابق لا يثبت الوضع الحالي'));
 });
+test('reviewed real G outputs: no loop claim for out-and-back, exact restaurant town, reject two-person cabin and games-as-stop',async()=>{
+ const {parseItinerary}=await import('../src/trips.mjs');const cases=JSON.parse(readFileSync(new URL('./quality-cases.json',import.meta.url))).cases;
+ const fixtures=JSON.parse(readFileSync(new URL('./quality-regressions.json',import.meta.url)));
+ for(const f of fixtures){const input={...cases.find(c=>c.id===f.id),lang:'ar'},p=parseItinerary(JSON.stringify(f.plan),f.sources,input);
+  if(f.id==='family-camping'){assert.equal(p,null);continue;}
+  assert.ok(p);
+  if(f.id==='hiking-ehden'){assert.ok(!p.summary.includes('حلقي'));assert.equal(p.days[0].stops[0].walking,'متوسطة إلى وعرة');}
+  if(f.id==='nature-restaurants')assert.equal(p.days[0].stops.find(s=>s.name.includes('Beit Noun')).locality,'مشمش، قضاء جبيل، لبنان');
+ }
+ const valid=concretePlan('مخيم تجريبي','شحتول، لبنان');valid.days[0].stops[0].camping={unit:'tent',capacity:4,children:'allowed',source_url:'https://example.org/visit',booking:'operator booking'};
+ const input={query:'خيمة لعائلة مع طفلين',trip:{activities:['camping']}};assert.ok(parseItinerary(JSON.stringify(valid),[{url:'https://example.org/visit'}],input));
+ valid.days[0].stops[0].camping.capacity=2;assert.equal(parseItinerary(JSON.stringify(valid),[{url:'https://example.org/visit'}],input),null);
+});

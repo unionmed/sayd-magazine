@@ -5,7 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {execFileSync,spawnSync} from 'node:child_process';
 const root=fileURLToPath(new URL('../../../',import.meta.url));
 const service=fileURLToPath(new URL('../',import.meta.url));
-const marker='[mufid-pilot:20261023D] Verify the trial identity and run six internal live cases';
+const marker='[mufid-pilot:20261023H] Publish reviewed quality guards without new model calls';
 const publicKey="-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzFXG8bxrdSI6+V9X1AUI\npcQN/XfQEkv/Tk27RkWS+YSDYsRtxe5rEezyQNiq3etfrI1lzBKp97wx8UfdhCSd\ncL8YOqg57zGB5dXkmlZAE7N6mCW9k9tiXKOgjWlz5ltmYEEt7C4b6Hnr6J0Uumzh\nMyt/ffeINNU6hvxZZH3CmZPaDOK5u3Nth3cxYCCzQ1pUKVClpvWEjaMYwpF6OyNe\nq8il8DklrKoAo9+njOI8uI0KPBrUkroCiR3LQ36pihBgkCkqAe8kHnbnplT7WPS0\nX4Fr1fSzJNOp6X1+Ge3rywyc6E9eSdhcpaIngPh+eLrn/m5T82UHQfPXBQGhkunK\nzQIDAQAB\n-----END PUBLIC KEY-----";
 function seal(report){const key=randomBytes(32),iv=randomBytes(12),cipher=createCipheriv('aes-256-gcm',key,iv),body=Buffer.concat([cipher.update(JSON.stringify(report),'utf8'),cipher.final()]);return {version:1,key:publicEncrypt({key:publicKey,padding:constants.RSA_PKCS1_OAEP_PADDING,oaepHash:'sha256'},key).toString('base64'),iv:iv.toString('base64'),tag:cipher.getAuthTag().toString('base64'),ciphertext:body.toString('base64')};}
 export function redactLog(text,env){for(const name of ['CLOUDFLARE_API_TOKEN','CLOUDFLARE_API_KEY','OPENAI_API_KEY','PILOT_TOKEN','ADMIN_TOKEN','RATE_SALT'])if(env[name])text=text.replaceAll(env[name],'[redacted]');return text;}

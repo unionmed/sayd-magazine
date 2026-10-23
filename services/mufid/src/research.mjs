@@ -13,3 +13,10 @@ export function researchGuide(input){
  const place=normalize((input.trip?.destination||'')+' '+input.query);
  return groups.filter(g=>g.areas.some(a=>place.includes(a))).map(({urls,note})=>({urls,note}));
 }
+
+// Curated stable identity from the operator's own location footer, checked 2026-10-23.
+// This corrects Maps targeting; it is not a claim about opening or access.
+export function placeLocality(stop,lang='ar'){
+ try{const u=new URL(stop.source_url);if(u.hostname.replace(/^www\./,'')==='beitnoun.com'&&/beit noun|بيت نون|بيت نُون/i.test(stop.name))return lang==='ar'?'مشمش، قضاء جبيل، لبنان':'Mechmech, Jbeil, Lebanon';}catch{}
+ return stop.locality;
+}

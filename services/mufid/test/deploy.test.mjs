@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {deploymentAllowed,redactLog} from './deploy-pilot.mjs';
 test('one-shot deployment is confined to the approved pilot and expires',()=>{
- const env={WORKERS_CI:'1',WORKERS_CI_BRANCH:'feat/mufid-mvp-internal'},message='[mufid-pilot:20261023D] Verify the trial identity and run six internal live cases',now=Date.parse('2026-10-23T22:00:00Z');
+ const env={WORKERS_CI:'1',WORKERS_CI_BRANCH:'feat/mufid-mvp-internal'},message='[mufid-pilot:20261023H] Publish reviewed quality guards without new model calls',now=Date.parse('2026-10-23T22:00:00Z');
  const config={name:'sayd-mufid-internal',vars:{ENABLED:'true',WEB_ENABLED:'true',ALLOWED_ORIGINS:'https://sayd-mufid-internal.unionmedia-sarl.workers.dev'}};
  assert.equal(deploymentAllowed(env,message,config,now),true);
  assert.equal(deploymentAllowed({...env,WORKERS_CI_BRANCH:'main'},message,config,now),false);
