@@ -33,9 +33,9 @@ def build():
     for lang,c in COPY.items():
         c.update(UI[lang]); c.update(UPDATES[lang])
         c.update({
-            'ar':dict(choices='خيارات مقترحة',departure='الانطلاق',return_to='العودة إلى',visit_budget='مدة مقترحة للتوقف',minutes='دقيقة',place_map='المكان على الخريطة',place_source='تفاصيل المكان',distance_note='المسافة ومدة القيادة متاحتان في اتجاهات كل انتقال؛ لم تُحسبا داخل مفيد بعد.'),
-            'en':dict(choices='Suggested choices',departure='Start',return_to='Return to',visit_budget='Suggested time at this stop',minutes='min',place_map='Place on the map',place_source='Place details',distance_note='Open directions for each leg for distance and driving time; these are not yet calculated inside Mufid.'),
-            'fr':dict(choices='Choix proposés',departure='Départ',return_to='Retour à',visit_budget='Temps proposé sur place',minutes='min',place_map='Lieu sur la carte',place_source='Détails du lieu',distance_note='Ouvrez chaque trajet pour la distance et la durée de conduite ; ces valeurs ne sont pas encore calculées dans Mufid.')
+            'ar':dict(trail_length='طول المسار',km='كم',trail_difficulty='الصعوبة',trail_start='نقطة البداية',choices='خيارات مقترحة',departure='الانطلاق',return_to='العودة إلى',visit_budget='مدة مقترحة للتوقف',minutes='دقيقة',place_map='المكان على الخريطة',place_source='تفاصيل المكان',distance_note='المسافة ومدة القيادة متاحتان في اتجاهات كل انتقال؛ لم تُحسبا داخل مفيد بعد.'),
+            'en':dict(trail_length='Trail length',km='km',trail_difficulty='Difficulty',trail_start='Starting point',choices='Suggested choices',departure='Start',return_to='Return to',visit_budget='Suggested time at this stop',minutes='min',place_map='Place on the map',place_source='Place details',distance_note='Open directions for each leg for distance and driving time; these are not yet calculated inside Mufid.'),
+            'fr':dict(trail_length='Longueur du sentier',km='km',trail_difficulty='Difficulté',trail_start='Point de départ',choices='Choix proposés',departure='Départ',return_to='Retour à',visit_budget='Temps proposé sur place',minutes='min',place_map='Lieu sur la carte',place_source='Détails du lieu',distance_note='Ouvrez chaque trajet pour la distance et la durée de conduite ; ces valeurs ne sont pas encore calculées dans Mufid.')
         }[lang])
         c['unavailable']=c['connect_first']
         c['unauthorized']=c['connect_first']

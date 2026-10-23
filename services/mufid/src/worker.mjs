@@ -92,6 +92,10 @@ export function createHandler(network=fetch,options={}) {
         }
         if(!itinerary)return reply({error:'itinerary_unavailable',articles:cards},502);
         if(itineraryNeedsReview(itinerary))return reply({answer:ACCESS_NOTE[input.lang],articles:cards,sources:[],verified:false,access_review_required:true});
+        if(itinerary.legal?.status==='unconfirmed'){
+          const note={ar:'لم أتحقق من إعلان رسمي نافذ للموسم الجاري في الوجهة المطلوبة؛ لذلك لا أعطي وجهة صيد على أساس أنه مسموح. البيان الخاص بموسم سابق لا يثبت الوضع الحالي. قبل الخروج، يلزم تأكيد قرار الموسم والأنواع والأعداد المسموحة والرخص المطلوبة من الجهة الرسمية المختصة.',en:'I could not verify an official notice in force for the current hunting season at the requested destination, so I cannot recommend a hunt as permitted. A previous-season notice does not establish the current position. Confirm the current season decision, permitted species and bag limits, and required licences with the relevant authority before going.',fr:'Je n’ai pas pu vérifier une décision officielle applicable à la saison de chasse actuelle dans la destination demandée. Je ne peux donc pas proposer une chasse comme autorisée. Un avis d’une saison passée ne prouve pas la situation actuelle. Confirmez la saison, les espèces, les quotas et les permis auprès de l’autorité compétente avant de partir.'};
+          itinerary.summary=note[input.lang];
+        }
         output.answer=itinerary.summary;
       }
       const links=birdReferences(corpus.articles,output.answer,input.lang);

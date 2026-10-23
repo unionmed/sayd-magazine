@@ -1,5 +1,5 @@
 {
-  "run_id": "2026-10-23-outings-A",
+  "run_id": "2026-10-23-outings-G",
   "cases": [
     {
       "id": "chouf-light",
@@ -82,5 +82,11 @@
         ]
       }
     }
+  ],
+  "rerun_cases": [
+    "hunting-bekaa",
+    "hiking-ehden",
+    "nature-restaurants",
+    "family-camping"
   ]
 }

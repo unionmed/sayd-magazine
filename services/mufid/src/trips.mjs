@@ -14,7 +14,11 @@ export function parseItinerary(text,sources=[],input={}){
  const trusted=new Map(sources.map(s=>[sourceKey(s.url),s.url]).filter(([key])=>key)),days=[];
  const format=data.format==='advice'?'advice':data.format==='options'?'options':'itinerary';
  const hunting=input.trip?.activities?.includes('hunting')||/صيد طيور|رحلة صيد|hunting|chasse/i.test(input.query||'');
- if(hunting && (format!=='advice'||data.days.length))return null;
+ if(hunting && (format!=='advice'||data.days.length||!data.legal||!['unconfirmed','open','closed'].includes(data.legal.status)))return null;
+ if(hunting && data.legal.status!=='unconfirmed'){
+  const l=data.legal,u=sourceKey(l.source_url);
+  if(!Number.isInteger(l.season_start_year)||l.season_start_year<new Date().getUTCFullYear()||!/^\d{4}-\d{2}-\d{2}$/.test(l.publication_date||'')||l.publication_date>new Date().toISOString().slice(0,10)||!u||!trusted.has(u))return null;
+ }
  if(format==='advice'&&data.days.length)return null;
  const hike=/هايكينغ|هايك|hiking|randonn|مسار.*مشي/i.test(input.query||'');
  if(format==='itinerary'&&data.days.length&&/\s(?:أو|او|or|ou)\s|\s\/\s/i.test(data.summary))return null;
@@ -37,6 +41,6 @@ export function parseItinerary(text,sources=[],input={}){
   }
   days.push({day:d.day,base:d.base.trim().slice(0,160),departure:d.departure.trim().slice(0,160),return_to:d.return_to.trim().slice(0,160),stops});
  }
- return {summary:data.summary.slice(0,1200),format,region:typeof data.region==='string'?data.region.trim().slice(0,160):'',days};
+ return {summary:data.summary.slice(0,1200),format,...(hunting?{legal:data.legal}:{}),region:typeof data.region==='string'?data.region.trim().slice(0,160):'',days};
 }
 export function itineraryNeedsReview(plan){return plan.days.some(d=>accessReviewNeeded(d.base+' '+d.departure+' '+d.return_to+' '+d.stops.map(s=>s.name+' '+s.locality).join(' ')));}

@@ -16,7 +16,7 @@ try{
    report.cases.push(result);save();console.log('Mufid live case '+item.id+': '+result.status);
   }catch(e){report.errors.push({id:item.id,message:String(e?.message||e)});save();}
  };
- const cases=suite.cases.slice(0,6);
+ const cases=suite.rerun_cases?suite.rerun_cases.map(id=>suite.cases.find(c=>c.id===id)).filter(Boolean).slice(0,4):suite.cases.slice(0,6);
  for(let i=0;i<cases.length;i+=2)await Promise.all(cases.slice(i,i+2).map(run));
 }catch(e){report.errors.push({message:String(e?.message||e)});save();}
 finally{save();await proxy?.dispose();}

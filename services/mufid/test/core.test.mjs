@@ -87,9 +87,9 @@ test('live regressions: laws are not stops, duplicates and mixed trails are reje
  bad=structuredClone(p);bad.summary='Trail #8 أو Trail #1';assert.equal(check(bad),null);
  for(const name of ['قانون رقم 580 للصيد','قرار فتح موسم الصيد','Law 580'])assert.equal(parseItinerary(JSON.stringify(concretePlan(name)),sources),null);
  bad=concretePlan('Hima Hammana');bad.days[0].stops.push({...bad.days[0].stops[0],name:'Nature reserve birdwatching at Hima Hammana'});assert.equal(parseItinerary(JSON.stringify(bad),sources),null);
- const advice={summary:'لم أجد إعلانًا رسميًا حديثًا يثبت افتتاح الموسم؛ هذا لا يثبت الحظر.',format:'advice',region:'عكار',days:[]};
+ const advice={summary:'لم أجد إعلانًا رسميًا حديثًا يثبت افتتاح الموسم؛ هذا لا يثبت الحظر.',format:'advice',region:'عكار',legal:{status:'unconfirmed'},days:[]};
  const input={query:'رحلة صيد طيور في عكار',trip:{activities:['hunting']}};
- assert.ok(parseItinerary(JSON.stringify(advice),sources,input));assert.equal(parseItinerary(JSON.stringify(concretePlan()),sources,input),null);
+ assert.ok(parseItinerary(JSON.stringify(advice),sources,input));const old={...advice,legal:{status:'closed',season_start_year:2025,publication_date:'2025-09-04',source_url:sources[0].url}};assert.equal(parseItinerary(JSON.stringify(old),sources,input),null);assert.equal(parseItinerary(JSON.stringify(concretePlan()),sources,input),null);
  const payload=providerPayload({...input,mode:'plan',lang:'ar'},[],'test',true);assert.match(payload.instructions,/Legal documents are references/);assert.doesNotMatch(payload.instructions,/Return ONLY valid JSON, no markdown fences/);
 });
 test('temporary fixed-case QA allowance expires; public input cannot select it; global cap still applies',async()=>{
@@ -99,4 +99,14 @@ test('temporary fixed-case QA allowance expires; public input cannot select it; 
  const storage=new Store(),guard=new MufidGuard({storage},{DAILY_REQUEST_LIMIT:'1'});
  const reserve=client=>guard.fetch(new Request('https://guard/reserve',{method:'POST',body:JSON.stringify({client,day:'2026-10-23',minute:1,evaluation:true})}));
  assert.equal((await reserve('qa')).status,200);assert.equal((await reserve('qa')).status,429);assert.equal((await reserve('other')).status,429);
+});
+test('regional research starts cover multiple destinations and do not become claimed verification',async()=>{
+ const {researchGuide}=await import('../src/research.mjs');
+ const guides=researchGuide({query:'مطاعم في الطبيعة',trip:{destination:'جبيل ودومّا'}});assert.ok(guides.some(g=>g.urls.includes('https://beitnoun.com/dining')));
+ assert.deepEqual(researchGuide({query:'رحلة إلى المغرب',trip:{destination:'المغرب'}}),[]);
+ const p=providerPayload({mode:'plan',task:'itinerary',lang:'ar',query:'مسار هايكينغ في إهدن'},[],'test',true);assert.ok(JSON.parse(p.input).primary_source_guide[0].urls.some(u=>u.endsWith('TRAILMAP-EHDEN.pdf')));assert.equal(p.tool_choice,'required');assert.equal(p.store,false);
+});
+test('unconfirmed current hunting status cannot echo an old-season blanket prohibition',async()=>{
+ const h=createHandler(async()=>Response.json({status:'completed',output:[{type:'web_search_call',status:'completed',action:{sources:[{type:'url',url:'https://example.org/visit'}]}},{type:'message',content:[{type:'output_text',text:JSON.stringify({summary:'ممنوع في 2026 لأن بيان 2025 يقول ذلك',format:'advice',legal:{status:'unconfirmed'},days:[]})}]}]}));
+ const r=await h(req({mode:'plan',query:'رحلة صيد طيور في البقاع',trip:{activities:['hunting']}}),env());assert.equal(r.status,200);const data=await r.json();assert.ok(!data.answer.includes('ممنوع في 2026'));assert.ok(data.answer.includes('البيان الخاص بموسم سابق لا يثبت الوضع الحالي'));
 });

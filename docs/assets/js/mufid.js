@@ -32,12 +32,13 @@ function drawItinerary(plan){
    if(Number.isInteger(stop.duration_minutes)){const meta=node('p',c.visit_budget+': '+stop.duration_minutes+' '+c.minutes);meta.className='mufid-stop-meta';card.append(meta);}
    const detail=node('p');rich(detail,stop.description);card.append(detail);
    if(stop.walking)card.append(node('p',stop.walking));
+   let trailText='';if(stop.trail){const t=stop.trail;trailText=c.trail_length+': '+t.distance_km+' '+c.km+' · '+c.trail_difficulty+': '+t.difficulty+' · '+c.trail_start+': '+t.start;card.append(node('p',trailText));}
    const tools=node('div');tools.className='mufid-stop-tools';
    const map=new URL('https://www.google.com/maps/search/');map.searchParams.set('api','1');map.searchParams.set('query',to);
    const link=node('a',c.place_map);link.href=map.href;link.target='_blank';link.rel='noopener noreferrer';tools.append(link);
    const source=safe(stop.source_url);if(source){const ref=node('a',c.place_source);ref.href=source;ref.target='_blank';ref.rel='noopener noreferrer';tools.append(ref);}
    card.append(tools);box.append(card);
-   lastAnswer+='\n'+stop.name+(Number.isInteger(stop.duration_minutes)?' · '+c.visit_budget+': '+stop.duration_minutes+' '+c.minutes:'')+'\n'+stop.description+(stop.walking?'\n'+stop.walking:'');from=to;
+   lastAnswer+='\n'+stop.name+(Number.isInteger(stop.duration_minutes)?' · '+c.visit_budget+': '+stop.duration_minutes+' '+c.minutes:'')+'\n'+stop.description+(stop.walking?'\n'+stop.walking:'')+(trailText?'\n'+trailText:'');from=to;
   }
   if(!options&&end&&from!==end){const a=node('a',from+' ← '+end+' · '+c.leg);a.href=directions(from,end);a.target='_blank';a.rel='noopener noreferrer';a.className='mufid-leg';box.append(a);}
   root.append(box);
