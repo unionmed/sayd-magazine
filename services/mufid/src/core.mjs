@@ -79,18 +79,26 @@ export function providerPayload(input, articles, model, web) {
   };
 }
 export function extractResponse(data) {
-  const sources = [], parts = [];
+  const sources = [], consulted = [], parts = [];
   let verified = false;
+  const addSource = source => {
+    const url=safeSource(source?.url);
+    if(url && !sources.some(s=>s.url===url)) sources.push({title:source.title || new URL(url).hostname,url});
+  };
   for (const item of data.output || []) {
-    if(item.type === 'web_search_call' && item.status === 'completed') verified = true;
+    if(item.type === 'web_search_call' && item.status === 'completed') {
+      verified = true;
+      // Structured itinerary text may have no inline citation annotations.
+      // These URLs come from the completed tool call, never from model prose.
+      if(Array.isArray(item.action?.sources)) consulted.push(...item.action.sources);
+    }
     for(const c of item.content || []) {
       if(c.type !== 'output_text') continue;
       parts.push(c.text || '');
-      for(const a of c.annotations || []) if(a.type === 'url_citation') {
-        const url = safeSource(a.url);
-        if(url && !sources.some(s=>s.url===url)) sources.push({title:a.title || new URL(url).hostname,url});
-      }
+      for(const a of c.annotations || []) if(a.type === 'url_citation') addSource(a);
     }
   }
+  // Keep explicitly cited references first, then additional consulted sources.
+  consulted.forEach(addSource);
   return {answer:parts.join('\n'),sources,verified:verified && sources.length > 0};
 }

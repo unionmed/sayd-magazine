@@ -10,6 +10,21 @@ test('public corpus boundary and counts',()=>{for(const l of ['ar','en','fr'])as
 test('Arabic normalization and natural-language ranked search',()=>{assert.equal(normalize('إِنَّ الطُّيُورَ'),'ان الطيور');const rows=retrieve(corpus.articles.filter(a=>a.lang==='ar'),'بدي مقالات عن هجرة الطيور');assert.ok(rows.length);assert.ok(rows.some(a=>/هجر|طيور/.test(a.title)));assert.equal(retrieve(corpus.articles,'zzzyyyyqqqq').length,0);});
 test('provider input bounded, stateless, no private tools',()=>{const p=providerPayload({query:'الهجرة',lang:'ar',mode:'understand'},corpus.articles.slice(0,4),'test',false);assert.equal(p.store,false);assert.equal(p.tools,undefined);assert.ok(p.input.length<25000);assert.equal(p.max_output_tokens,1600);assert.ok(needsFresh('ما القانون اليوم؟'));});
 test('citations require actual completed web call, unsafe sources rejected',()=>{const output=[{type:'web_search_call',status:'completed'},{type:'message',content:[{type:'output_text',text:'Checked',annotations:[{type:'url_citation',url:'https://example.org',title:'Source'},{type:'url_citation',url:'javascript:bad'}]}]}];assert.equal(extractResponse({output}).verified,true);assert.equal(extractResponse({output:output.slice(1)}).verified,false);assert.equal(extractResponse({output}).sources.length,1);});
+test('completed web tool sources support JSON answers without inline annotations',async()=>{
+ const answer=JSON.stringify({summary:'جولة خفيفة',days:[{day:1,base:'بيروت',stops:[{name:'دير القمر',locality:'الشوف لبنان',description:'زيارة البلدة القديمة'}]}]});
+ const search={type:'web_search_call',status:'completed',action:{type:'search',sources:[{type:'url',url:'https://example.org/visit'},{type:'url',url:'https://example.org/visit'},{type:'url',url:'javascript:bad'},{type:'url',url:'http://example.org'},{type:'url',url:'https://user:password@example.org/private'}]}};
+ const message={type:'message',content:[{type:'output_text',text:answer,annotations:[]}]};
+ const data={status:'completed',output:[search,message]};
+ const parsed=extractResponse(data);assert.equal(parsed.verified,true);assert.deepEqual(parsed.sources,[{title:'example.org',url:'https://example.org/visit'}]);
+ const response=await createHandler(async()=>Response.json(data))(req({mode:'plan',query:'جولة في الشوف'}),env());
+ const result=await response.json();assert.equal(response.status,200);assert.equal(result.itinerary.days[0].stops[0].name,'دير القمر');assert.ok(result.checked_at);assert.deepEqual(result.sources,parsed.sources);
+ for(const output of [[message],[{...search,status:'failed'},message],[{...search,type:'other_tool'},message],[{...search,action:{sources:[]}},message]]){
+  assert.equal(extractResponse({output}).verified,false);
+  const res=await createHandler(async()=>Response.json({status:'completed',output}))(req({mode:'plan'}),env());assert.equal(res.status,502);assert.equal((await res.json()).error,'verification_failed');
+ }
+ const cited={...message,content:[{type:'output_text',text:answer,annotations:[{type:'url_citation',url:'https://example.org/visit',title:'Visit guide'}]}]};
+ assert.equal(extractResponse({output:[search,cited]}).sources[0].title,'Visit guide');
+});
 test('closed gate, CORS, token, body and mode validation',async()=>{let e=env(),h=createHandler(()=>{throw Error('must not call');});assert.equal((await h(req(),{...e,ENABLED:'false'})).status,503);assert.equal((await h(req({},'/v1/ask',{Origin:'https://evil.example'}),e)).status,403);assert.equal((await h(req({},'/v1/ask',{Authorization:'Bearer bad'}),e)).status,401);assert.equal((await h(req({query:'a'.repeat(9000)}),e)).status,400);assert.equal((await h(req({lang:'de'}),e)).status,400);assert.equal((await h(req({mode:'suggest'}),e)).status,400);});
 test('search uses no provider and returns cards without article bodies',async()=>{const res=await createHandler(()=>{throw Error('provider');})(req(),env());const data=await res.json();assert.equal(res.status,200);assert.ok(data.articles.length);assert.equal(data.articles[0].body,undefined);assert.equal(res.headers.get('cache-control'),'no-store');});
 test('verify fails closed; provider never called when web is disabled',async()=>{let n=0;const h=createHandler(async()=>{n++;});const res=await h(req({mode:'verify'}),{...env(),WEB_ENABLED:'false'});assert.equal(res.status,503);assert.equal(n,0);});
