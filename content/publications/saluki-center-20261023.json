@@ -1,0 +1,346 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "saluki-center-20261023",
+  "expected_base": "d79f5127f5af618b44dd8507c83cdf0ca81bf3e0",
+  "approval_reference": "SALUKI-20261023 editorial decision: separate founding-anniversary news in Hunting & Equestrian and seven-image training/activity gallery in Photos; AR/EN/FR. Preserve existing lead, side cards, Latest and ticker. One institutional end credit. Local preparation only until the prospective compiler workflow is adopted and this release is separately activated.",
+  "bank_search_reference": "The institution-supplied thirteen-image Saluki collection retained in Sayd Library was visually reviewed before selection on 23 October 2026. Seven training/activity photographs and the building image were selected; all eight recovered Library originals match their earlier SHA-256 records. Internal evidence SALUKI-20261023.",
+  "photos": [
+    {
+      "id": "building",
+      "path": "docs/media/publications/saluki-center-20261023/center-building.jpg",
+      "sha256": "ea3aaeaeeffb03f54f37ab422c6bf4f71590048fe9449f0a19e13632f8bb8ba4",
+      "source_sha256": "ea3aaeaeeffb03f54f37ab422c6bf4f71590048fe9449f0a19e13632f8bb8ba4",
+      "source_reference": "Institution-supplied press image ASC2.jpg, accompanying the Arabian Saluki Center media report of 23 October 2026. Retained editorial source record SALUKI-20261023.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied press material for the accompanying editorial coverage; case-specific publication authorized by Sayd. Original photographer and copyright metadata retained. No open licence or blanket institutional ownership claim.",
+        "evidence_reference": "SALUKI-20261023: accompanying institutional press packet and official publication-permission reply, 23 October 2026; Sayd owner approval and single institutional end-credit direction."
+      },
+      "alt": {
+        "ar": "واجهة مركز السلوقي العربي، وأشخاص مع كلاب سلوقي عند المدخل.",
+        "en": "The Arabian Saluki Center facade, with people and Salukis at the entrance.",
+        "fr": "La façade du Centre du saluki arabe, avec des personnes et des salukis à l’entrée."
+      },
+      "caption": {
+        "ar": "مبنى مركز السلوقي العربي بأبوظبي.",
+        "en": "The Arabian Saluki Center building in Abu Dhabi.",
+        "fr": "Le bâtiment du Centre du saluki arabe à Abou Dhabi."
+      }
+    },
+    {
+      "id": "training-01",
+      "path": "docs/media/publications/saluki-center-20261023/training-01.jpg",
+      "sha256": "0e095a255dcdc50fc04047e678ee833f405f243fce9215f903d1ca9e13757ff7",
+      "source_sha256": "0e095a255dcdc50fc04047e678ee833f405f243fce9215f903d1ca9e13757ff7",
+      "source_reference": "Institution-supplied press image DSC_2651.JPG, accompanying the Arabian Saluki Center media report of 23 October 2026. Retained editorial source record SALUKI-20261023.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied press material for the accompanying editorial coverage; case-specific publication authorized by Sayd. Original photographer and copyright metadata retained. No open licence or blanket institutional ownership claim.",
+        "evidence_reference": "SALUKI-20261023: accompanying institutional press packet and official publication-permission reply, 23 October 2026; Sayd owner approval and single institutional end-credit direction."
+      },
+      "alt": {
+        "ar": "كلبا سلوقي يلاحقان طُعمًا موصولًا بحبل على أرض رملية.",
+        "en": "Two Salukis chase a lure attached to a cord across sandy ground.",
+        "fr": "Deux salukis poursuivent un leurre attaché à une corde sur un sol sablonneux."
+      },
+      "caption": {
+        "ar": "كلبا سلوقي يلاحقان طُعمًا موصولًا بحبل على أرض رملية.",
+        "en": "Two Salukis chase a lure attached to a cord across sandy ground.",
+        "fr": "Deux salukis poursuivent un leurre attaché à une corde sur un sol sablonneux."
+      }
+    },
+    {
+      "id": "training-02",
+      "path": "docs/media/publications/saluki-center-20261023/training-02.jpg",
+      "sha256": "a29fa956e2c420e817e851314b9cee7a2ceeadc3b334a785d5fbbcb2773558f0",
+      "source_sha256": "a29fa956e2c420e817e851314b9cee7a2ceeadc3b334a785d5fbbcb2773558f0",
+      "source_reference": "Institution-supplied press image DSC_2608.JPG, accompanying the Arabian Saluki Center media report of 23 October 2026. Retained editorial source record SALUKI-20261023.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied press material for the accompanying editorial coverage; case-specific publication authorized by Sayd. Original photographer and copyright metadata retained. No open licence or blanket institutional ownership claim.",
+        "evidence_reference": "SALUKI-20261023: accompanying institutional press packet and official publication-permission reply, 23 October 2026; Sayd owner approval and single institutional end-credit direction."
+      },
+      "alt": {
+        "ar": "كلاب سلوقي تقفز نحو طُعم يرفعه شخص في ساحة التدريب.",
+        "en": "Salukis jump toward a lure held aloft by a person in the training area.",
+        "fr": "Des salukis sautent vers un leurre tenu en hauteur par une personne dans l’aire d’entraînement."
+      },
+      "caption": {
+        "ar": "كلاب سلوقي تقفز نحو طُعم يرفعه شخص في ساحة التدريب.",
+        "en": "Salukis jump toward a lure held aloft by a person in the training area.",
+        "fr": "Des salukis sautent vers un leurre tenu en hauteur par une personne dans l’aire d’entraînement."
+      }
+    },
+    {
+      "id": "training-03",
+      "path": "docs/media/publications/saluki-center-20261023/training-03.jpg",
+      "sha256": "5f0f792d1bde633072fce33bd742c7cd7eec66c826385e649e4d72839c72f521",
+      "source_sha256": "004f7f684e3c22bbcd7af3ac0a57102acc9ce0f5fd8495cac57b471abc082bf1",
+      "source_reference": "Institution-supplied press image DSC_3463.JPG, accompanying the Arabian Saluki Center media report of 23 October 2026. Retained editorial source record SALUKI-20261023. Publication derivative: removed only a stale APP2 MPF index referencing nonexistent thumbnail data. Primary frame 0; original compressed JPEG scan and all other metadata preserved without re-encoding. Decoded 2784x1856 RGB pixels are exactly identical to the original. Original bank file retained unchanged; derivative evidence SALUKI-20261023-static-JPEG.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied press material for the accompanying editorial coverage; case-specific publication authorized by Sayd. Original photographer and copyright metadata retained. No open licence or blanket institutional ownership claim.",
+        "evidence_reference": "SALUKI-20261023: accompanying institutional press packet and official publication-permission reply, 23 October 2026; Sayd owner approval and single institutional end-credit direction."
+      },
+      "alt": {
+        "ar": "سلوقي يقفز عبر فتحة دائرية في حاجز خشبي داخل ساحة رملية.",
+        "en": "A Saluki jumps through a circular opening in a wooden obstacle in a sandy enclosure.",
+        "fr": "Un saluki saute à travers une ouverture circulaire dans un obstacle en bois, dans un enclos sablonneux."
+      },
+      "caption": {
+        "ar": "سلوقي يقفز عبر فتحة دائرية في حاجز خشبي داخل ساحة رملية.",
+        "en": "A Saluki jumps through a circular opening in a wooden obstacle in a sandy enclosure.",
+        "fr": "Un saluki saute à travers une ouverture circulaire dans un obstacle en bois, dans un enclos sablonneux."
+      }
+    },
+    {
+      "id": "training-04",
+      "path": "docs/media/publications/saluki-center-20261023/training-04.jpg",
+      "sha256": "a5b7d3e5330300ff92793989d85dab5c2def05f94ed7dae137f60492673c4ef8",
+      "source_sha256": "a5b7d3e5330300ff92793989d85dab5c2def05f94ed7dae137f60492673c4ef8",
+      "source_reference": "Institution-supplied press image lll.JPG, accompanying the Arabian Saluki Center media report of 23 October 2026. Retained editorial source record SALUKI-20261023.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied press material for the accompanying editorial coverage; case-specific publication authorized by Sayd. Original photographer and copyright metadata retained. No open licence or blanket institutional ownership claim.",
+        "evidence_reference": "SALUKI-20261023: accompanying institutional press packet and official publication-permission reply, 23 October 2026; Sayd owner approval and single institutional end-credit direction."
+      },
+      "alt": {
+        "ar": "قفزة سلوقي فوق حاجز، في لقطة مضاءة من الخلف.",
+        "en": "A backlit view of a Saluki jumping over an obstacle.",
+        "fr": "Un saluki franchit un obstacle, dans une vue à contre-jour."
+      },
+      "caption": {
+        "ar": "قفزة سلوقي فوق حاجز، في لقطة مضاءة من الخلف.",
+        "en": "A backlit view of a Saluki jumping over an obstacle.",
+        "fr": "Un saluki franchit un obstacle, dans une vue à contre-jour."
+      }
+    },
+    {
+      "id": "training-05",
+      "path": "docs/media/publications/saluki-center-20261023/training-05.jpg",
+      "sha256": "4b0452db66090d353992203dfee4dab44efe2ddcff1092b55604bc27aa1af498",
+      "source_sha256": "4b0452db66090d353992203dfee4dab44efe2ddcff1092b55604bc27aa1af498",
+      "source_reference": "Institution-supplied press image DSC_4734.JPG, accompanying the Arabian Saluki Center media report of 23 October 2026. Retained editorial source record SALUKI-20261023.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied press material for the accompanying editorial coverage; case-specific publication authorized by Sayd. Original photographer and copyright metadata retained. No open licence or blanket institutional ownership claim.",
+        "evidence_reference": "SALUKI-20261023: accompanying institutional press packet and official publication-permission reply, 23 October 2026; Sayd owner approval and single institutional end-credit direction."
+      },
+      "alt": {
+        "ar": "سلوقي يسبح مرتديًا حزامًا متصلًا بمقود.",
+        "en": "A Saluki swims wearing a harness attached to a lead.",
+        "fr": "Un saluki nage, équipé d’un harnais relié à une laisse."
+      },
+      "caption": {
+        "ar": "سلوقي يسبح مرتديًا حزامًا متصلًا بمقود.",
+        "en": "A Saluki swims wearing a harness attached to a lead.",
+        "fr": "Un saluki nage, équipé d’un harnais relié à une laisse."
+      }
+    },
+    {
+      "id": "training-06",
+      "path": "docs/media/publications/saluki-center-20261023/training-06.jpg",
+      "sha256": "9c78688bbe481eed1a49160c22bc854062223fe86332f99ff6d55855744d7153",
+      "source_sha256": "9c78688bbe481eed1a49160c22bc854062223fe86332f99ff6d55855744d7153",
+      "source_reference": "Institution-supplied press image DSC_2537.JPG, accompanying the Arabian Saluki Center media report of 23 October 2026. Retained editorial source record SALUKI-20261023.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied press material for the accompanying editorial coverage; case-specific publication authorized by Sayd. Original photographer and copyright metadata retained. No open licence or blanket institutional ownership claim.",
+        "evidence_reference": "SALUKI-20261023: accompanying institutional press packet and official publication-permission reply, 23 October 2026; Sayd owner approval and single institutional end-credit direction."
+      },
+      "alt": {
+        "ar": "سلوقي يقف على أرض رملية في لقطة تظهر هيئته الرشيقة.",
+        "en": "A Saluki stands on sandy ground, showing its slender build.",
+        "fr": "Un saluki debout sur un sol sablonneux, montrant sa silhouette élancée."
+      },
+      "caption": {
+        "ar": "سلوقي يقف على أرض رملية في لقطة تظهر هيئته الرشيقة.",
+        "en": "A Saluki stands on sandy ground, showing its slender build.",
+        "fr": "Un saluki debout sur un sol sablonneux, montrant sa silhouette élancée."
+      }
+    },
+    {
+      "id": "training-07",
+      "path": "docs/media/publications/saluki-center-20261023/training-07.jpg",
+      "sha256": "da9948a003ebe947333e49bbe9da278fd34b1bffa2448919194af863708d2ae2",
+      "source_sha256": "da9948a003ebe947333e49bbe9da278fd34b1bffa2448919194af863708d2ae2",
+      "source_reference": "Institution-supplied press image DSC_2586.JPG, accompanying the Arabian Saluki Center media report of 23 October 2026. Retained editorial source record SALUKI-20261023.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied press material for the accompanying editorial coverage; case-specific publication authorized by Sayd. Original photographer and copyright metadata retained. No open licence or blanket institutional ownership claim.",
+        "evidence_reference": "SALUKI-20261023: accompanying institutional press packet and official publication-permission reply, 23 October 2026; Sayd owner approval and single institutional end-credit direction."
+      },
+      "alt": {
+        "ar": "لقطة قريبة لكلبَي سلوقي ذوي شعر طويل عند الأذنين.",
+        "en": "A close-up of two Salukis with long hair around their ears.",
+        "fr": "Gros plan de deux salukis aux oreilles garnies de longs poils."
+      },
+      "caption": {
+        "ar": "لقطة قريبة لكلبَي سلوقي ذوي شعر طويل عند الأذنين.",
+        "en": "A close-up of two Salukis with long hair around their ears.",
+        "fr": "Gros plan de deux salukis aux oreilles garnies de longs poils."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
+        "en": "arabian-saluki-center-25-years",
+        "fr": "arabian-saluki-center-25-years"
+      },
+      "published": "2026-10-23",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "building"
+      ],
+      "translations": {
+        "ar": {
+          "title": "مركز السلوقي العربي يحتفي بربع قرن من صون رفيق الصقّار",
+          "subtitle": "تأسس في أبوظبي عام 2001، وجمع بين رعاية السلوقي وتدريبه وحماية السلالات العربية الأصيلة.",
+          "meta_description": "تأسس في أبوظبي عام 2001، وجمع بين رعاية السلوقي وتدريبه وحماية السلالات العربية الأصيلة.",
+          "sections": [
+            {
+              "paragraphs": [
+                "يحتفي مركز السلوقي العربي بأبوظبي في عام 2026 بمرور 25 عامًا على تأسيسه، مستعيدًا مسيرة بدأت عام 2001 ضمن مشاريع نادي صقّاري الإمارات، وجمعت بين المحافظة على تراث الصيد وتطوير الرعاية والتدريب وحماية السلالات العربية الأصيلة.",
+                "وخلال ربع قرن، امتد عمل المركز من الإيواء والرعاية اليومية إلى برامج الإكثار وتوثيق السلالات والخدمات البيطرية، إلى جانب إرشاد المربين وملاك السلوقي إلى أساليب العناية والاقتناء المسؤول.",
+                "ويشكّل التدريب أحد محاور هذه المسيرة. فبحسب التقرير الصادر عن النادي، يضم المركز مسارات للجري ملحقة بغرف الإيواء وميدانًا خارجيًا للتدريب تتجاوز مساحته ألف متر مربع. وتشمل برامجه اللياقة والسباحة والسلوك والطاعة وسباقات السرعة، فضلًا عن الإعداد للاستعراض ومسابقات الجمال.",
+                "ومن محطاته تنظيم مسابقة جمال السلوقي العربي ضمن معرض أبوظبي الدولي للصيد والفروسية منذ عام 2004. وتتواصل هذه الأنشطة مع بطولة السلوقي العربي للموسم 2026–2027 في العين والظفرة، التي يُرتقب أن تنطلق منافساتها في نوفمبر المقبل.",
+                "وتشمل خدمات المركز الفحوص والاستشارات البيطرية والتطعيمات وزرع الشرائح الإلكترونية، إضافة إلى إرشادات السفر والنقل. وهي جوانب عملية تربط الحفاظ على رفيق الصقّار باحتياجات المربين والكلاب اليوم.",
+                "المصدر: نادي صقّاري الإمارات."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "مصدر الصور: مركز السلوقي العربي بأبوظبي — نادي صقّاري الإمارات."
+        },
+        "en": {
+          "title": "Arabian Saluki Center marks 25 years of preserving the falconer’s companion",
+          "subtitle": "Founded in Abu Dhabi in 2001, the center combines Saluki care and training with the preservation of native Arabian bloodlines.",
+          "meta_description": "Founded in Abu Dhabi in 2001, the center combines Saluki care and training with the preservation of native Arabian bloodlines.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Abu Dhabi’s Arabian Saluki Center is marking its 25th anniversary in 2026. Established in 2001 as a project of the Emirates Falconers’ Club, it has combined the preservation of hunting heritage with the development of care, training and native Arabian bloodline conservation.",
+                "Over a quarter of a century, its work has expanded from boarding and daily care to breeding programs, bloodline documentation and veterinary services, alongside guidance for breeders and owners on care and responsible ownership.",
+                "Training is a central part of this work. According to the club’s report, the center has running areas attached to its kennels and an outdoor training ground covering more than 1,000 square meters. Its programs include fitness, swimming, behavior, obedience and sprint racing, as well as preparation for shows and beauty competitions.",
+                "One milestone has been its organization of the Arabian Saluki Beauty Contest at the Abu Dhabi International Hunting and Equestrian Exhibition since 2004. These activities continue with the 2026–2027 Arabian Saluki Championship in Al Ain and Al Dhafra, with competition expected to begin this November.",
+                "The center also provides veterinary examinations and consultations, vaccinations and microchipping, together with travel and transport guidance. These practical services connect the preservation of the falconer’s companion with the needs of breeders and dogs today.",
+                "Source: Emirates Falconers’ Club."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Image source: Arabian Saluki Center, Abu Dhabi — Emirates Falconers’ Club."
+        },
+        "fr": {
+          "title": "Le Centre du saluki arabe célèbre 25 ans au service du compagnon du fauconnier",
+          "subtitle": "Fondé à Abou Dhabi en 2001, le centre associe soins et entraînement des salukis à la préservation des lignées arabes d’origine.",
+          "meta_description": "Fondé à Abou Dhabi en 2001, le centre associe soins et entraînement des salukis à la préservation des lignées arabes d’origine.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Le Centre du saluki arabe d’Abou Dhabi célèbre en 2026 le 25e anniversaire de sa fondation. Créé en 2001 dans le cadre des projets du Club des fauconniers des Émirats, il associe la préservation du patrimoine de la chasse au développement des soins, de l’entraînement et de la conservation des lignées arabes d’origine.",
+                "En un quart de siècle, ses activités se sont étendues de l’hébergement et des soins quotidiens aux programmes d’élevage, à la documentation des lignées et aux services vétérinaires. Le centre conseille également les éleveurs et les propriétaires sur les soins et l’acquisition responsable.",
+                "L’entraînement occupe une place centrale dans ce travail. Selon le rapport du club, le centre dispose de pistes de course attenantes aux chenils et d’un terrain extérieur d’entraînement de plus de 1 000 mètres carrés. Ses programmes comprennent la condition physique, la natation, le comportement, l’obéissance et les courses de vitesse, ainsi que la préparation aux présentations et aux concours de beauté.",
+                "Parmi les étapes de son parcours figure l’organisation du concours de beauté du saluki arabe au Salon international de la chasse et de l’équitation d’Abou Dhabi depuis 2004. Ces activités se poursuivent avec le Championnat du saluki arabe 2026–2027 à Al Ain et Al Dhafra, dont les épreuves devraient débuter en novembre prochain.",
+                "Le centre propose aussi des examens et des consultations vétérinaires, des vaccinations et la pose de puces électroniques, ainsi que des conseils pour les voyages et le transport. Ces services relient concrètement la préservation du compagnon du fauconnier aux besoins actuels des éleveurs et des chiens.",
+                "Source : Club des fauconniers des Émirats."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Source des images : Centre du saluki arabe d’Abou Dhabi — Club des fauconniers des Émirats."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "السلوقي-العربي-في-التدريب-سرعة-وقفز-وسباحة",
+        "en": "arabian-saluki-training-speed-jumping-swimming",
+        "fr": "arabian-saluki-training-speed-jumping-swimming"
+      },
+      "published": "2026-10-23",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "photos",
+      "archives": [
+        "photos"
+      ],
+      "kind": "gallery",
+      "photos": [
+        "training-01",
+        "training-02",
+        "training-03",
+        "training-04",
+        "training-05",
+        "training-06",
+        "training-07"
+      ],
+      "translations": {
+        "ar": {
+          "title": "السلوقي العربي في التدريب: سرعة وقفز وسباحة",
+          "subtitle": "سبع صور من تدريبات مركز السلوقي العربي بأبوظبي ونشاطاته.",
+          "meta_description": "سبع صور من تدريبات مركز السلوقي العربي بأبوظبي ونشاطاته.",
+          "sections": [
+            {
+              "paragraphs": [
+                "من مطاردة الطُعم إلى اجتياز الحواجز والسباحة، تُظهر هذه المجموعة جوانب من تدريبات مركز السلوقي العربي بأبوظبي ونشاطاته خلال مسيرة عمله، وتقترب من ملامح السلوقي الرشيقة."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "مصدر الصور: مركز السلوقي العربي بأبوظبي — نادي صقّاري الإمارات."
+        },
+        "en": {
+          "title": "Arabian Salukis in training: speed, jumping and swimming",
+          "subtitle": "Seven photographs of training and activities at Abu Dhabi’s Arabian Saluki Center.",
+          "meta_description": "Seven photographs of training and activities at Abu Dhabi’s Arabian Saluki Center.",
+          "sections": [
+            {
+              "paragraphs": [
+                "From chasing a lure to clearing obstacles and swimming, this collection shows aspects of training and activities at Abu Dhabi’s Arabian Saluki Center over the course of its work, alongside closer views of the dogs’ slender features."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Image source: Arabian Saluki Center, Abu Dhabi — Emirates Falconers’ Club."
+        },
+        "fr": {
+          "title": "Le saluki arabe à l’entraînement : vitesse, sauts et natation",
+          "subtitle": "Sept photographies de l’entraînement et des activités du Centre du saluki arabe d’Abou Dhabi.",
+          "meta_description": "Sept photographies de l’entraînement et des activités du Centre du saluki arabe d’Abou Dhabi.",
+          "sections": [
+            {
+              "paragraphs": [
+                "De la poursuite d’un leurre au franchissement d’obstacles et à la natation, cette collection montre différents aspects de l’entraînement et des activités du Centre du saluki arabe d’Abou Dhabi au fil de son parcours, ainsi que la silhouette élancée de ces chiens."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Source des images : Centre du saluki arabe d’Abou Dhabi — Club des fauconniers des Émirats."
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      }
+    }
+  ]
+}
