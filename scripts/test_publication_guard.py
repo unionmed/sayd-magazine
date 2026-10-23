@@ -228,5 +228,126 @@ class GuardTests(unittest.TestCase):
                 guard.unchanged_current_payload(base, self.root)
 
 
+
+import copy
+import shutil
+from types import SimpleNamespace
+import test_header_social as header_counts
+
+
+class SourceHeaderCounts(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix='sayd-header-count-')
+        self.addCleanup(self.temp.cleanup)
+        self.site, self.root = (Path(self.temp.name) / name for name in ('expected', 'current'))
+        self.record = {'articles': [{'slugs': {lang: 'fixture-' + lang for lang in ('ar', 'en', 'fr')}}]}
+        self.links = {}
+        nav = '<nav class="header-social"><a href="https://example.test">Social</a></nav>'
+        for n, lang in enumerate(('ar', 'en', 'fr')):
+            route = '/' + ('' if lang == 'ar' else lang + '/') + 'posts/fixture-' + lang + '/'
+            alias = '/s/' + str(n) * 10 + '/'
+            self.links[route] = alias
+            head = '<head><link rel="canonical" href="https://sayd-magazine.com' + route + '"></head>'
+            self.write(self.site, 'docs' + route + 'index.html', head + '<body>' + nav + 'Article</body>')
+            self.write(self.site, 'docs' + alias + 'index.html', head + '<body>Redirect shell</body>')
+        self.write(self.site, 'docs/s/links.json', json.dumps(self.links))
+        self.write(self.site, 'content/publications/test.json', json.dumps(self.record))
+        shutil.copytree(self.site, self.root)
+        self.proof = SimpleNamespace(site=self.site, read=lambda name: (self.site / name).read_text())
+        self.rel = 'docs/posts/fixture-ar/index.html'
+
+    def write(self, root, path, content):
+        file = root / path
+        file.parent.mkdir(parents=True, exist_ok=True)
+        file.write_text(content)
+
+    def mutate(self, rel, change):
+        file = self.root / rel
+        file.write_text(change(file.read_text()))
+
+    def test_exact_three_language_pairs_counted(self):
+        self.assertEqual(header_counts.check_source_publication_pairs(self.proof, self.root), 3)
+
+    def test_wrapper_requires_trusted_base_proof(self):
+        with patch('publication_guard.verified_publication', return_value=self.proof) as verify:
+            self.assertEqual(header_counts.source_publication_header_count('trusted-base', self.root), 3)
+            verify.assert_called_once_with('trusted-base', self.root, include_baseline=True)
+        with patch('publication_guard.verified_publication', return_value=None):
+            self.assertEqual(header_counts.source_publication_header_count('trusted-base', self.root), 0)
+        with patch('publication_guard.verified_publication', side_effect=AssertionError('unproved')):
+            with self.assertRaisesRegex(AssertionError, 'unproved'):
+                header_counts.source_publication_header_count('trusted-base', self.root)
+
+    def test_missing_or_duplicate_article_header_rejected(self):
+        original = (self.root / self.rel).read_text()
+        for replacement in (original.replace('header-social', 'not-social'), original + '<nav class="header-social"></nav>'):
+            self.write(self.root, self.rel, replacement)
+            with self.assertRaises(AssertionError): header_counts.check_source_publication_pairs(self.proof, self.root)
+        self.write(self.root, self.rel, original)
+
+    def test_changed_or_duplicate_social_icon_rejected(self):
+        original = (self.root / self.rel).read_text()
+        for replacement in (original.replace('https://example.test', 'https://wrong.test'), original.replace('</nav>', '<a>Duplicate icon</a></nav>')):
+            self.write(self.root, self.rel, replacement)
+            with self.assertRaisesRegex(AssertionError, 'social markup'):
+                header_counts.check_source_publication_pairs(self.proof, self.root)
+
+    def test_wrong_article_canonical_rejected(self):
+        self.mutate(self.rel, lambda value: value.replace('https://sayd-magazine.com/posts/', 'https://sayd-magazine.com/wrong/'))
+        with self.assertRaises(AssertionError): header_counts.check_source_publication_pairs(self.proof, self.root)
+
+    def test_missing_article_or_shell_rejected(self):
+        for rel in (self.rel, 'docs/s/0000000000/index.html'):
+            path = self.root / rel; original = path.read_bytes(); path.unlink()
+            with self.assertRaises(FileNotFoundError): header_counts.check_source_publication_pairs(self.proof, self.root)
+            path.write_bytes(original)
+
+    def test_changed_alias_rejected(self):
+        links = dict(self.links); links['/posts/fixture-ar/'] = '/s/9999999999/'
+        self.write(self.root, 'docs/s/links.json', json.dumps(links))
+        with self.assertRaisesRegex(AssertionError, 'mapping changed'):
+            header_counts.check_source_publication_pairs(self.proof, self.root)
+
+    def test_changed_or_headered_shell_rejected(self):
+        rel = 'docs/s/0000000000/index.html'; original = (self.root / rel).read_text()
+        for replacement in (original.replace('fixture-ar', 'wrong-target'), original + '<nav class="header-social"></nav>'):
+            self.write(self.root, rel, replacement)
+            with self.assertRaisesRegex(AssertionError, 'shell changed'):
+                header_counts.check_source_publication_pairs(self.proof, self.root)
+
+    def test_redirect_shell_line_endings_are_byte_preserved(self):
+        rel = 'docs/s/0000000000/index.html'
+        original = (self.root / rel).read_bytes().replace(b'</head>', b'</head>\n')
+        for root in (self.site, self.root):
+            (root / rel).write_bytes(original)
+        self.assertEqual(header_counts.check_source_publication_pairs(self.proof, self.root), 3)
+        (self.root / rel).write_bytes(original.replace(b'\n', b'\r\n'))
+        with self.assertRaisesRegex(AssertionError, 'shell changed'):
+            header_counts.check_source_publication_pairs(self.proof, self.root)
+
+    def test_duplicate_source_route_rejected(self):
+        data = copy.deepcopy(self.record); data['articles'] *= 2
+        self.write(self.site, 'content/publications/test.json', json.dumps(data))
+        with self.assertRaisesRegex(AssertionError, 'Duplicate source'):
+            header_counts.check_source_publication_pairs(self.proof, self.root)
+
+    def test_two_articles_cannot_share_redirect_shell(self):
+        links = dict(self.links)
+        links['/en/posts/fixture-en/'] = links['/posts/fixture-ar/']
+        for root in (self.site, self.root):
+            self.write(root, 'docs/s/links.json', json.dumps(links))
+        with self.assertRaisesRegex(AssertionError, 'share a short-link'):
+            header_counts.check_source_publication_pairs(self.proof, self.root)
+
+    def test_unproved_candidate_record_does_not_increase_count(self):
+        self.write(self.root, 'content/publications/unproved.json', json.dumps(self.record))
+        self.assertEqual(header_counts.check_source_publication_pairs(self.proof, self.root), 3)
+
+    def test_media_only_source_adds_no_headers(self):
+        self.write(self.site, 'content/publications/test.json', '{"articles":[]}')
+        self.assertEqual(header_counts.check_source_publication_pairs(self.proof, self.root), 0)
+
+
+
 if __name__ == '__main__':
     unittest.main()
