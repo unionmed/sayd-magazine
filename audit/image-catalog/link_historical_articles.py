@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Read-only cross-reference of GitHub articles and GitHub archive images.
 
-Accepted references are repository-local docs/media/uploads/ paths and URLs
+Accepted references are repository-local docs/media/uploads/ paths, the narrow
+prospective docs/media/publications/<release-id>/<filename> namespace, and URLs
 pointing directly to the unionmed/sayd-magazine GitHub repository. External
 image services and legacy content hosts are deliberately ignored.
 """
@@ -16,7 +17,7 @@ from search_all import ROOT, records
 POSTS = ROOT / "content/posts"
 OUT = ROOT / ".catalog-build/article-image-links.json"
 CANDIDATE = re.compile(
-    r"""https?://[^\s"'<>]+|(?<![\w/])(?:\.\./)*(?:docs/)?media/uploads/[^\s"'<>]+""",
+    r"""https?://[^\s"'<>]+|(?<![\w/])(?:\.\./)*(?:docs/)?media/(?:uploads|publications)/[^\s"'<>]+""",
     re.I,
 )
 SUFFIX = re.compile(r"\.(?:jpe?g|png|webp|gif|avif)$", re.I)
@@ -31,23 +32,42 @@ GITHUB_RAW = re.compile(
     r"/unionmed/sayd-magazine/[^/]+/docs/media/uploads/(\d{4}/\d{2}/[^/]+)$",
     re.I,
 )
+# New publication sources use exactly the compiler's ASCII release/file form.
+# Keep the historical recognizers unchanged; this is association discovery, not
+# a new provenance schema, verification assertion, or licence grant.
+PUBLICATION_TAIL = r"([a-z0-9-]+/[a-z0-9][a-z0-9.-]*\.(?:jpg|jpeg|png|webp))$"
+PUBLICATION_LOCAL = re.compile(r"(?:\.\./)*(?:docs/)?media/publications/" + PUBLICATION_TAIL)
+PUBLICATION_GITHUB = re.compile(
+    r"/unionmed/sayd-magazine/(?:blob|raw)/[^/]+/docs/media/publications/" + PUBLICATION_TAIL)
+PUBLICATION_RAW = re.compile(
+    r"/unionmed/sayd-magazine/[^/]+/docs/media/publications/" + PUBLICATION_TAIL)
 
 def extract_media_path(reference):
     """Canonicalize only locally stored GitHub media references."""
     reference = html.unescape(reference).strip().rstrip(",;)")
     u = urlsplit(reference)
     m = None
+    namespace = "uploads"
     if u.scheme or u.netloc:
         if u.scheme not in ("http", "https"):
             return None
         if u.netloc.lower() == "github.com":
             m = GITHUB.fullmatch(u.path)
+            if not m:
+                m = PUBLICATION_GITHUB.fullmatch(u.path)
+                namespace = "publications"
         elif u.netloc.lower() == "raw.githubusercontent.com":
             m = GITHUB_RAW.fullmatch(u.path)
+            if not m:
+                m = PUBLICATION_RAW.fullmatch(u.path)
+                namespace = "publications"
         else:
             return None
     else:
         m = LOCAL.fullmatch(u.path)
+        if not m:
+            m = PUBLICATION_LOCAL.fullmatch(u.path)
+            namespace = "publications"
     if not m:
         return None
     relative = unquote(m.group(1))
@@ -55,7 +75,7 @@ def extract_media_path(reference):
         return None
     if relative in (".", "..") or "/../" in relative or "/./" in relative:
         return None
-    return "docs/media/uploads/" + relative
+    return "docs/media/" + namespace + "/" + relative
 
 def image_references(body):
     found = {}

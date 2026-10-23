@@ -339,6 +339,8 @@ def test_localized_tv_date_guards():
 
 
 def test_preserved(base):
+    from publication_guard import verified_publication
+    compiled = verified_publication(base)
     old_config=json.loads(subprocess.check_output(['git','show',base+':content/homepage.json'],cwd=ROOT))
     current=config()
     from ticker_policy import select as select_ticker, validate as validate_ticker
@@ -350,7 +352,9 @@ def test_preserved(base):
     approved_three=approved_three_expected(old_config,current) is not None
     approved_honey=honey_expected(old_config,current,base) is not None
     approved_gulf=gulf_expected(old_config,current,base) is not None
-    if approved_four_news or approved_omayed or approved_three or approved_honey or approved_gulf:
+    if compiled is not None:
+        assert current == compiled.config, 'Homepage differs from exact trusted-base compilation'
+    elif approved_four_news or approved_omayed or approved_three or approved_honey or approved_gulf:
         pass  # All changed placement fields independently validated above.
     elif approved_interview:
         from homepage_demotion import demote_side_cards
@@ -379,6 +383,9 @@ def test_preserved(base):
     from interview_collection import homepage_slugs
     assert next(s['slugs'] for s in current['ia_door_sections'] if s['door']=='interviews') == homepage_slugs('ar', current)
     changed_doors=('hunting',) if approved_gulf else ('science',) if approved_honey else ('hunting','equestrian','interviews','gear','wildlife','science') if approved_four_news else ('hunting','equestrian','interviews','science') if approved_three else ('hunting','equestrian','interviews')
+    if compiled is not None:
+        expected_sections = {d['door']: d for d in compiled.config['ia_door_sections']}
+        changed_doors = tuple(d['door'] for d in old_config['ia_door_sections'] if d != expected_sections[d['door']])
     for old in old_config['ia_door_sections']:
         if old['door'] not in changed_doors:
             assert old in current['ia_door_sections'],old['door']
@@ -386,6 +393,8 @@ def test_preserved(base):
         rel='docs/'+prefix+'index.html'
         old=subprocess.check_output(['git','show',base+':'+rel],cwd=ROOT).decode()
         new=(ROOT/rel).read_text()
+        if compiled is not None:
+            assert new == compiled.read(rel), 'Homepage bytes differ from independently compiled expectation'
         before=html.fromstring(old);after=html.fromstring(new)
         assert not after.xpath('//section[@class="memory-strip"]')
         section=after.xpath('//section[@class="home-section"]')[0]
@@ -404,7 +413,7 @@ def test_preserved(base):
             assert_honey_home(old,after,rel,lang,current)
         if approved_three:
             assert_approved_three_home(old,after,rel,lang,current)
-        for cls in (('sayd-tv',) if approved_three or approved_gulf else ('feature-lead','feature-stack','sayd-tv') if approved_four_news or approved_omayed else ('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
+        for cls in (('sayd-tv',) if compiled is not None or approved_three or approved_gulf else ('feature-lead','feature-stack','sayd-tv') if approved_four_news or approved_omayed else ('sayd-tv',) if approved_interview else ('feature-lead','feature-stack','latest-col','sayd-tv','ticker')):
             if cls == 'ticker' and approved_ticker_rotation:
                 from sync_tickers import TICKER, sources, ticker_for
                 expected_ticker = ticker_for(ROOT/rel, sources(DOCS)[lang])

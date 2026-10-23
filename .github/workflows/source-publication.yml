@@ -1,0 +1,263 @@
+name: Source-only publication compiler
+
+on:
+  # No paths filter: schema/helper changes and generated-output tampering must
+  # not evade the publication compiler checks.
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: 'Exact 40-character commit SHA containing only new publication data; creates review output, never publishes'
+        required: true
+        type: string
+      allow_distribution:
+        description: 'Allow preparing requested homepage/ticker changes for normal review (not publication approval)'
+        required: true
+        default: false
+        type: boolean
+
+# No repository administration, Pages, secrets, PR-write, Actions-write or merge
+# permission. The finalizer alone needs the existing built-in contents scope.
+permissions:
+  contents: read
+
+concurrency:
+  group: source-publication-${{ github.event_name }}-${{ inputs.source_commit || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  candidate-parity:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2 Pillow==11.3.0
+      - name: Verify candidate bytes with the trusted base compiler, never PR code
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python - <<'PY'
+          import os, pathlib, re, subprocess
+          def bootstrap_paths_safe(paths):
+              catalog_code = {'audit/image-catalog/link_historical_articles.py',
+                              'audit/image-catalog/test_link_historical_articles.py'}
+              return all(not path.startswith(('content/', 'docs/')) and
+                         (not path.startswith('audit/image-catalog/') or path in catalog_code)
+                         for path in paths if path)
+          base = os.environ['PR_BASE']; head = os.environ['PR_HEAD']
+          assert all(re.fullmatch('[0-9a-f]{40}', sha) for sha in (base, head))
+          subprocess.run(['git', 'fetch', '--no-tags', 'origin', head], check=True)
+          compiler = pathlib.Path('scripts/publication_compiler.py')
+          if not compiler.exists():
+              changed = subprocess.check_output(['git', 'diff', '--name-only', '-z', base, head]).decode().split('\0')
+              assert bootstrap_paths_safe(changed), 'Initial infrastructure installation cannot also publish content or mutate catalog data'
+              with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+                  summary.write('Initial infrastructure installation: base has no compiler. Source/public output changes are forbidden; candidate code receives separate read-only tests and review.\n')
+          else:
+              subprocess.run(['python', str(compiler), '--verify-candidate', head, '--base', base,
+                              '--output', os.environ['RUNNER_TEMP'] + '/candidate-parity-site',
+                              '--report', os.environ['RUNNER_TEMP'] + '/candidate-parity-plan.json'], check=True)
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: source-publication-candidate-parity-${{ github.run_id }}
+          path: ${{ runner.temp }}/candidate-parity-plan.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+  tests:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, pinned 2026-10-23
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2 Pillow==11.3.0
+      - name: Compiler and review-only writer tests
+        run: |
+          python -m unittest discover -s scripts -p 'test_publication_compiler.py' -v
+          python -m unittest discover -s scripts -p 'test_publication_finalize.py' -v
+          python -m unittest discover -s scripts -p 'test_publication_guard.py' -v
+      - name: Prove a no-content build preserves the complete baseline
+        run: |
+          base="$(git rev-parse HEAD)"
+          python scripts/publication_compiler.py --base "$base" --source "$base" --output "$RUNNER_TEMP/no-content-site" --report "$RUNNER_TEMP/no-content-plan.json"
+          python - "$RUNNER_TEMP/no-content-plan.json" <<'PY'
+          import json, sys
+          plan = json.load(open(sys.argv[1]))
+          assert plan['changes'] == [], 'No-content build modified the baseline'
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: source-publication-no-content-${{ github.run_id }}
+          path: ${{ runner.temp }}/no-content-plan.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+  synthetic-browser:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Install existing pinned browser testing dependencies
+        run: |
+          pip install playwright==1.55.0 Pillow==11.3.0 lxml==5.3.2
+          python -m playwright install --with-deps chromium
+      - name: Test synthetic source-only articles and seven-photo gallery without publishing
+        run: python scripts/test_publication_browser_fixture.py --output "$RUNNER_TEMP/publication-browser-fixture"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: source-publication-synthetic-browser-${{ github.run_id }}
+          path: ${{ runner.temp }}/publication-browser-fixture/
+          if-no-files-found: warn
+          retention-days: 30
+
+  compile:
+    if: >-
+      github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' &&
+      github.repository == 'unionmed/sayd-magazine'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    outputs:
+      plan_sha256: ${{ steps.plan.outputs.plan_sha256 }}
+    steps:
+      # Trusted compiler is the dispatch's exact main commit. Never checkout the
+      # source commit: its only acceptable contribution is validated data blobs.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2 Pillow==11.3.0
+      - name: Fetch only the exact data commit and reject stale main
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+          BASE_COMMIT: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import os, re, subprocess
+          source = os.environ['SOURCE_COMMIT']; base = os.environ['BASE_COMMIT']
+          assert re.fullmatch('[0-9a-f]{40}', source), 'Use a full lowercase source SHA'
+          subprocess.run(['git', 'fetch', '--no-tags', 'origin', source], check=True)
+          current = subprocess.check_output(['git', 'ls-remote', 'origin', 'refs/heads/main'], text=True).split()[0]
+          assert current == base, 'Main changed: dispatch again against current main'
+          PY
+      - name: Compile and validate without write credentials
+        id: plan
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+          BASE_COMMIT: ${{ github.sha }}
+          ALLOW_DISTRIBUTION: ${{ inputs.allow_distribution }}
+        run: |
+          args=()
+          if [ "$ALLOW_DISTRIBUTION" = 'true' ]; then args+=(--allow-distribution); fi
+          python scripts/publication_compiler.py --base "$BASE_COMMIT" --source "$SOURCE_COMMIT" --output "$RUNNER_TEMP/publication-site" --report "$RUNNER_TEMP/publication-plan.json" "${args[@]}"
+          python - <<'PY'
+          import json, os, re
+          plan = json.load(open(os.environ['RUNNER_TEMP'] + '/publication-plan.json'))
+          digest = plan['plan_sha256']
+          assert re.fullmatch('[0-9a-f]{64}', digest)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('plan_sha256=' + digest + '\n')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: source-publication-plan-${{ github.run_id }}
+          path: ${{ runner.temp }}/publication-plan.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+  finalize:
+    needs: compile
+    if: >-
+      github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' &&
+      github.repository == 'unionmed/sayd-magazine'
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2 Pillow==11.3.0
+      - name: Independently rebuild exact inputs without consuming artifacts
+        env:
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+          BASE_COMMIT: ${{ github.sha }}
+          ALLOW_DISTRIBUTION: ${{ inputs.allow_distribution }}
+          EXPECTED_PLAN: ${{ needs.compile.outputs.plan_sha256 }}
+        run: |
+          python - <<'PY'
+          import os, re, subprocess
+          source = os.environ['SOURCE_COMMIT']
+          assert re.fullmatch('[0-9a-f]{40}', source)
+          assert re.fullmatch('[0-9a-f]{64}', os.environ['EXPECTED_PLAN'])
+          subprocess.run(['git', 'fetch', '--no-tags', 'origin', source], check=True)
+          PY
+          args=()
+          if [ "$ALLOW_DISTRIBUTION" = 'true' ]; then args+=(--allow-distribution); fi
+          python scripts/publication_compiler.py --base "$BASE_COMMIT" --source "$SOURCE_COMMIT" --output "$RUNNER_TEMP/publication-site" --report "$RUNNER_TEMP/publication-plan.json" "${args[@]}"
+          python - <<'PY'
+          import json, os
+          plan = json.load(open(os.environ['RUNNER_TEMP'] + '/publication-plan.json'))
+          assert plan['plan_sha256'] == os.environ['EXPECTED_PLAN'], 'Independent rebuild differs; no write allowed'
+          PY
+      - name: Create a new review branch only; never update a branch or publish
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SOURCE_COMMIT: ${{ inputs.source_commit }}
+          BASE_COMMIT: ${{ github.sha }}
+          EXPECTED_PLAN: ${{ needs.compile.outputs.plan_sha256 }}
+          ALLOW_DISTRIBUTION: ${{ inputs.allow_distribution }}
+        run: |
+          args=()
+          if [ "$ALLOW_DISTRIBUTION" = 'true' ]; then args+=(--allow-distribution); fi
+          python scripts/publication_finalize.py --site "$RUNNER_TEMP/publication-site" --report "$RUNNER_TEMP/publication-plan.json" --base "$BASE_COMMIT" --source "$SOURCE_COMMIT" --compiler "$BASE_COMMIT" --expected-plan "$EXPECTED_PLAN" --receipt "$RUNNER_TEMP/review-branch-receipt.json" "${args[@]}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: source-publication-review-receipt-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/publication-plan.json
+            ${{ runner.temp }}/review-branch-receipt.json
+          if-no-files-found: ignore
+          retention-days: 90
+      - name: Record the remaining normal review and publication gates
+        run: |
+          echo 'Review output only. An authorized person/tool must open a normal PR.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'GITHUB_TOKEN-created branch pushes do not trigger ordinary CI. Require actual checks on the exact generated commit after PR creation; this workflow does not grant merge or publication approval.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Before merge, verify the actual successful workflow run ID, exact base/source/compiler/head SHAs, policy input and final branch receipt; commit messages and plan hashes alone do not prove dispatch or editorial authority. Obtain explicit content/publication approval separately.' >> "$GITHUB_STEP_SUMMARY"

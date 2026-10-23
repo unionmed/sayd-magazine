@@ -6,6 +6,10 @@ on:
       - 'assets/**'
       - 'scripts/test_merged_section_browser.py'
       - 'scripts/test_combined_hunting_equestrian.py'
+      - 'scripts/test_combined_archive_navigation.py'
+      - 'scripts/publication_*.py'
+      - 'scripts/test_publication_*.py'
+      - 'content/publications/**'
       - 'scripts/test_historical_hunting_merger.py'
       - 'scripts/test_historical_search_social.py'
       - 'scripts/related_images_only_change.py'
@@ -38,6 +42,7 @@ jobs:
         env:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+          SAYD_PUBLICATION_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           export SAYD_BASE_COMMIT="${PR_BASE:-5e243074df106b1cae76703d5309689c81e3a51f}"
           python scripts/test_historical_hunting_merger.py
@@ -67,6 +72,7 @@ jobs:
       - name: Compare baseline and candidate on local HTTP with external requests blocked
         env:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
+          SAYD_PUBLICATION_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           base="${PR_BASE:-5e243074df106b1cae76703d5309689c81e3a51f}"
           python scripts/test_merged_section_browser.py --base "$base" --output sayd-visual-qa
