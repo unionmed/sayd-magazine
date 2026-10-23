@@ -2,20 +2,20 @@
   "memory_after_door": "science",
   "featured": [
     "الصيد-السياحي-في-بلدان-الخليج-العربية",
+    "الصرد-طائر-يعدم-فرائسه-على-الأشواك",
     "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
     "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
-    "طيور-في-الحقائب-تهريب-الطيور-2026",
-    "الرياض-تستعيد-صهيلها-موسم-السباقات-2026"
+    "طيور-في-الحقائب-تهريب-الطيور-2026"
   ],
   "latest": [
     "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
     "تمبتد-غودولفين-إيفرست-2026",
     "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
     "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
+    "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
     "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
     "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
-    "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-    "ختام-الملواح-2026-60-فائزا"
+    "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -79,13 +79,15 @@
     "المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق",
     "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
     "حوام-العسل-هجرة-بولندا-3750-كيلومترا",
-    "نسور-تتكلم-قبل-أن-تفقس"
+    "نسور-تتكلم-قبل-أن-تفقس",
+    "الصرد-طائر-يعدم-فرائسه-على-الأشواك"
   ],
   "omit_from_home_desks": [
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
     "sayd-returns-new-look-wider-vision",
-    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي"
+    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
+    "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -119,7 +121,10 @@
     "hunting-masculinity-dead-birds",
     "قانون-الصيد-اللبناني-580-2004-ما-يسمح-وما-يمنع",
     "قطر-قانون-الصيد-البري-4-2002-المحميات-والعقوبات",
-    "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد"
+    "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد",
+    "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
+    "السلوقي-العربي-في-التدريب-سرعة-وقفز-وسباحة",
+    "الصرد-طائر-يعدم-فرائسه-على-الأشواك"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -154,13 +159,13 @@
   "desk_slugs": {
     "صيد": [
       "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
+      "ختام-الملواح-2026-60-فائزا",
       "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
       "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
       "حين-يتغير-الساحل-أين-تستريح-الطيور",
       "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
       "رادار-صيد-العربي-سبتمبر-2026",
-      "الصمت-الذي-يتكلمه-الخيل",
-      "خريف-الصيد-العربي-2026"
+      "الصمت-الذي-يتكلمه-الخيل"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -184,13 +189,13 @@
     ],
     "Hunting": [
       "arabian-saluki-championship-november-2026-april-2027",
+      "melwah-finale-2026-60-winners",
       "where-migratory-birds-rest-mashreq-arabian-peninsula",
       "northern-bekaa-38280-square-metres-bird-nets-apu-cabs",
       "when-the-coast-changes-where-do-birds-rest",
       "when-autumn-becomes-a-season-for-hunting-images",
       "sayd-arab-radar-september-2026",
-      "the-silence-horses-speak",
-      "arab-hunting-autumn-2026"
+      "the-silence-horses-speak"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -281,26 +286,28 @@
     "بالفيديو-مقناص-سعود-عبد-العزيز-الباب",
     "video-saud-al-babtain-maqnas-afghanistan",
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
-    "great-white-pelican-matn-highway-nayef-krayem"
+    "great-white-pelican-matn-highway-nayef-krayem",
+    "السلوقي-العربي-في-التدريب-سرعة-وقفز-وسباحة",
+    "arabian-saluki-training-speed-jumping-swimming"
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
     "main": "الصيد-السياحي-في-بلدان-الخليج-العربية",
     "important": [
+      "الصرد-طائر-يعدم-فرائسه-على-الأشواك",
       "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
       "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
-      "طيور-في-الحقائب-تهريب-الطيور-2026",
-      "الرياض-تستعيد-صهيلها-موسم-السباقات-2026"
+      "طيور-في-الحقائب-تهريب-الطيور-2026"
     ],
     "latest": [
       "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
       "تمبتد-غودولفين-إيفرست-2026",
       "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
       "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
+      "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
       "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
-      "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط",
-      "ختام-الملواح-2026-60-فائزا"
+      "تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط"
     ]
   },
   "ia_door_sections": [
@@ -308,13 +315,13 @@
       "door": "hunting",
       "slugs": [
         "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
+        "ختام-الملواح-2026-60-فائزا",
         "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
         "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
         "حين-يتغير-الساحل-أين-تستريح-الطيور",
         "حين-يصبح-الخريف-موسما-لاصطياد-الصورة",
         "رادار-صيد-العربي-سبتمبر-2026",
-        "الصمت-الذي-يتكلمه-الخيل",
-        "خريف-الصيد-العربي-2026"
+        "الصمت-الذي-يتكلمه-الخيل"
       ]
     },
     {
@@ -369,10 +376,10 @@
     {
       "door": "photos",
       "slugs": [
+        "السلوقي-العربي-في-التدريب-سرعة-وقفز-وسباحة",
         "طيور-خربة-سلم-بعدسة-جمانة-ماجد",
         "مكافحة-الصيد-غير-القانوني-في-لبنان-بالصور",
-        "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم",
-        "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
+        "طيور-من-ثلاث-بلاد-بعدسة-نايف-كريم"
       ]
     }
   ],
@@ -458,7 +465,10 @@
     "المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق": "science",
     "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027": "hunting",
     "حوام-العسل-هجرة-بولندا-3750-كيلومترا": "science",
-    "الصيد-السياحي-في-بلدان-الخليج-العربية": "hunting"
+    "الصيد-السياحي-في-بلدان-الخليج-العربية": "hunting",
+    "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار": "hunting",
+    "السلوقي-العربي-في-التدريب-سرعة-وقفز-وسباحة": "photos",
+    "الصرد-طائر-يعدم-فرائسه-على-الأشواك": "science"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -751,6 +761,33 @@
         "en": "A falconer holds a falcon in front of sand dunes at Al Marzoom Reserve in Abu Dhabi. Photograph published as part of coverage of the 2023–2024 season.",
         "fr": "Un fauconnier tient un faucon devant les dunes de la réserve d’Al Marzoom, à Abou Dhabi. Photo publiée dans le cadre de la couverture de la saison 2023–2024."
       }
+    },
+    "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار": {
+      "image": "media/publications/saluki-center-20261023/center-building.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "واجهة مركز السلوقي العربي، وأشخاص مع كلاب سلوقي عند المدخل.",
+        "en": "The Arabian Saluki Center facade, with people and Salukis at the entrance.",
+        "fr": "La façade du Centre du saluki arabe, avec des personnes et des salukis à l’entrée."
+      }
+    },
+    "السلوقي-العربي-في-التدريب-سرعة-وقفز-وسباحة": {
+      "image": "media/publications/saluki-center-20261023/training-01.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "كلبا سلوقي يلاحقان طُعمًا موصولًا بحبل على أرض رملية.",
+        "en": "Two Salukis chase a lure attached to a cord across sandy ground.",
+        "fr": "Deux salukis poursuivent un leurre attaché à une corde sur un sol sablonneux."
+      }
+    },
+    "الصرد-طائر-يعدم-فرائسه-على-الأشواك": {
+      "image": "media/publications/shrike-20261023/user-cover.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "صرد إلى جانب فأر وسحلية وحشرات معلقة على أغصان شائكة",
+        "en": "A shrike beside a mouse, lizard and insects hanging on thorny branches",
+        "fr": "Une pie-grièche près d’une souris, d’un lézard et d’insectes suspendus à des branches épineuses"
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
@@ -856,7 +893,9 @@
     "موسوعة-الطيور"
   ],
   "science_news_requires_explicit_approval": true,
-  "approved_science_news": [],
+  "approved_science_news": [
+    "الصرد-طائر-يعدم-فرائسه-على-الأشواك"
+  ],
   "editorial_reference_policy": "Hunting Laws and Bird Encyclopedia articles appear in their own category only, never headline cards, Updates or news ticker. Science & Discoveries appears only in its own desk by default; any placement in headlines, Updates or ticker must have a slug in approved_science_news, added following explicit Nayef approval.",
   "memory_visible": false,
   "card_title_overrides": {
@@ -868,6 +907,15 @@
     },
     "الصيد-بين-الفوضى-والنظام-تجارب-الصي": {
       "ar": "أمير دمج في السعودية: الصيد بين الفوضى والنظام"
+    }
+  },
+  "editorial_rotation_handoffs": {
+    "الصرد-طائر-يعدم-فرائسه-على-الأشواك": {
+      "trigger": "When removed by a later explicitly reviewed publication; no date expiry",
+      "permanent_category": "موسوعة-الطيور",
+      "no_updates": true,
+      "no_ticker": true,
+      "permanent_encyclopedia_listing_now": true
     }
   }
 }
