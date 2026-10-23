@@ -201,6 +201,7 @@ def sync_archive(languages=('ar', 'en', 'fr')) -> dict[str, dict[str, int]]:
         if '/assets/css/combined-archive.css?' not in text:
             text = text.replace('</head>', '  ' + style + '\n</head>', 1)
         compact_style = '<link rel="stylesheet" href="/assets/css/compact-archive-filters.css?v=20261023-roomier">'
+        text = re.sub(r'/assets/css/compact-archive-filters\.css\?v=[^\"]+', '/assets/css/compact-archive-filters.css?v=20261023-roomier', text)
         if '/assets/css/compact-archive-filters.css?' not in text:
             text = text.replace(style, style + '\n  ' + compact_style, 1)
         if '/assets/js/combined-archive.js?' not in text:

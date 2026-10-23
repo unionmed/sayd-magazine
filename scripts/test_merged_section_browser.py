@@ -293,7 +293,7 @@ def run(base,out):
                     archive=new_url+'/'+prefix+'category/'+__import__('urllib.parse',fromlist=['quote']).quote('صيد')+'/index.html'
                     page.goto(archive,wait_until='networkidle')
                     # Approved compact mobile filters retain labels and 44px touch targets.
-                    for filter_width in (320, 360, 390, 412, 468, 600):
+                    for filter_width in (320, 340, 341, 360, 380, 381, 389, 390, 412, 468, 600):
                         page.set_viewport_size({'width':filter_width,'height':1000})
                         page.evaluate('document.fonts.ready')
                         bounds = page.locator('.archive-filters button').evaluate_all('buttons => buttons.map(b => {const r=b.getBoundingClientRect();const t=document.createRange();t.selectNodeContents(b);const tr=t.getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,width:r.width,height:r.height,textLeft:tr.left,textRight:tr.right,font:parseFloat(getComputedStyle(b).fontSize)}})')

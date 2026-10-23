@@ -12,7 +12,7 @@
     min-width: 44px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 389px) {
   .archive-filters { gap: 4px; }
   .archive-filters button { font-size: .8125rem; padding-inline: 2px; }
 }
