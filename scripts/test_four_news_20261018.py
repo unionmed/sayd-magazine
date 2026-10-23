@@ -1,12 +1,30 @@
 #!/usr/bin/env python3
-import hashlib,json,subprocess,sys,tempfile
+import hashlib,json,os,subprocess,sys,tempfile
 from pathlib import Path
 from lxml import html
 from urllib.parse import unquote
 ROOT=Path(__file__).resolve().parents[1];DOCS=ROOT/'docs';A=json.loads((ROOT/'content/features/four-news-20261018.json').read_text())['articles'];BASE='15d82a6f1868c8d612ab5acc2e500bce19bb7dc8'
 old=json.loads(subprocess.check_output(['git','show',BASE+':content/homepage.json'],cwd=ROOT));new=json.loads((ROOT/'content/homepage.json').read_text())
 upper=new
-if new['ia_slots']['main']=='الصيد-السياحي-في-بلدان-الخليج-العربية':
+infrastructure_only=False
+if os.environ.get('SAYD_BASE_COMMIT'):
+ from publication_guard import unchanged_current_payload
+ infrastructure_only=unchanged_current_payload(os.environ['SAYD_BASE_COMMIT'])
+if infrastructure_only:
+ # The full historical proof still executes on its immutable reviewed tree.
+ # Current data must independently equal the exact PR base byte-for-byte; this
+ # cannot authorize new content or exempt later editorial/media changes.
+ proof_head='3f675e6596614caa1eefbedaf79009e1afa51e36'
+ with tempfile.TemporaryDirectory(prefix='sayd-original-four-news-gulf-') as temp:
+  checkout=Path(temp)/'checkout'
+  subprocess.run(['git','worktree','add','--quiet','--detach',str(checkout),proof_head],cwd=ROOT,check=True)
+  try:
+   assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=checkout).decode().strip()==proof_head
+   subprocess.run([sys.executable,'scripts/test_four_news_20261018.py'],cwd=checkout,check=True)
+  finally:
+   subprocess.run(['git','worktree','remove','--force',str(checkout)],cwd=ROOT,check=True)
+ upper=json.loads(subprocess.check_output(['git','show','c16e9f474b74efb48fdc01eab4f418f53beaa82e:content/homepage.json'],cwd=ROOT))
+elif new['ia_slots']['main']=='الصيد-السياحي-في-بلدان-الخليج-العربية':
  # Keep every original four-news/approved-three/honey proof on its immutable
  # last pre-Gulf tree. The original script and its own dependencies run there;
  # no current HEAD substitution and no honey media/content exemptions.

@@ -165,6 +165,7 @@ class GuardTests(unittest.TestCase):
 
     def test_exact_workflow_bootstrap_only_allows_reviewed_catalog_code(self):
         workflow = (guard.ROOT / '.github/workflows/source-publication.yml').read_text()
+        self.assertIn("['git', 'diff', '--no-renames', '--name-only', '-z', base, head]", workflow)
         block = '          def bootstrap_paths_safe(paths):\n' + workflow.split('          def bootstrap_paths_safe(paths):\n', 1)[1].split('          base = ', 1)[0]
         scope = {}; exec(textwrap.dedent(block), scope)
         allowed = scope['bootstrap_paths_safe']
@@ -174,6 +175,57 @@ class GuardTests(unittest.TestCase):
                      'docs/index.html', 'audit/image-catalog/manifest/x.tsv', 'audit/image-catalog/article-image-links.json',
                      'audit/image-catalog/other.py']:
             self.assertFalse(allowed([path]), path)
+
+    def test_infrastructure_proof_requires_unchanged_entire_payload(self):
+        base = self.candidate
+        self.write('scripts/infrastructure.py', '# Infrastructure only\n'); self.commit('Code only')
+        self.assertTrue(guard.unchanged_current_payload(base, self.root))
+        self.write('docs/posts/other/index.html', 'Changed article despite unchanged homepage')
+        self.commit('Unapproved payload')
+        self.assertFalse(guard.unchanged_current_payload(base, self.root))
+
+    def test_infrastructure_proof_rejects_catalog_data_deletion_and_modes(self):
+        for change in ('catalog', 'delete', 'mode', 'rename_out'):
+            with self.subTest(change=change):
+                self.git('checkout', '--quiet', '--detach', self.candidate)
+                if change == 'catalog': self.write('audit/image-catalog/provenance.json', '{}')
+                elif change == 'delete': (self.root/'docs/new.html').unlink()
+                elif change == 'rename_out':
+                    (self.root/'notes').mkdir(exist_ok=True)
+                    (self.root/'docs/new.html').rename(self.root/'notes/renamed.html')
+                else: (self.root/'docs/new.html').chmod(0o755)
+                self.commit('Payload '+change)
+                self.assertFalse(guard.unchanged_current_payload(self.candidate, self.root))
+
+    def test_infrastructure_proof_rejects_head_baseline_nonancestor_and_dirty(self):
+        with self.assertRaisesRegex(AssertionError, 'substitute current HEAD'):
+            guard.unchanged_current_payload(self.candidate, self.root)
+        self.write('scripts/infrastructure.py', '# Infrastructure only\n'); self.commit('Code only')
+        sibling = subprocess.check_output(['git', '-C', str(self.root), 'commit-tree', self.git('rev-parse', self.base+'^{tree}'), '-p', self.base], input=b'Unrelated sibling\n').decode().strip()
+        with self.assertRaisesRegex(AssertionError, 'not an ancestor'):
+            guard.unchanged_current_payload(sibling, self.root)
+        with self.assertRaisesRegex(AssertionError, 'Exact infrastructure PR base'):
+            guard.unchanged_current_payload('HEAD', self.root)
+        self.write('scripts/infrastructure.py', '# Dirty infrastructure\n')
+        with self.assertRaisesRegex(AssertionError, 'Dirty'):
+            guard.unchanged_current_payload(self.candidate, self.root)
+
+    def test_infrastructure_proof_binds_actual_pr_context_and_head(self):
+        base = self.candidate
+        self.write('scripts/infrastructure.py', '# Infrastructure only\n'); head = self.commit('Code only')
+        event = {'pull_request': {'base': {'sha': base, 'ref': 'main', 'repo': {'full_name': 'unionmed/sayd-magazine'}}, 'head': {'sha': head}}}
+        path = self.root/'event.json'; path.write_text(json.dumps(event))
+        env = {'GITHUB_ACTIONS': 'true', 'GITHUB_EVENT_NAME': 'pull_request', 'GITHUB_REPOSITORY': 'unionmed/sayd-magazine', 'GITHUB_EVENT_PATH': str(path), 'SAYD_PUBLICATION_HEAD': head}
+        with patch.dict(os.environ, env):
+            self.assertTrue(guard.unchanged_current_payload(base, self.root))
+            with self.assertRaisesRegex(AssertionError, 'current PR event'):
+                guard.unchanged_current_payload(self.base, self.root)
+            with patch.dict(os.environ, {'SAYD_PUBLICATION_HEAD': self.source}):
+                with self.assertRaisesRegex(AssertionError, 'current PR event'):
+                    guard.unchanged_current_payload(base, self.root)
+            event['pull_request']['base']['ref'] = 'untrusted'; path.write_text(json.dumps(event))
+            with self.assertRaisesRegex(AssertionError, 'trusted repository main'):
+                guard.unchanged_current_payload(base, self.root)
 
 
 if __name__ == '__main__':

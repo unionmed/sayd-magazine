@@ -54,6 +54,28 @@ def check_context(base, candidate):
             'Explicit base/head do not match the current PR event')
 
 
+def unchanged_current_payload(base, root=ROOT):
+    """Infrastructure-only compatibility, never an editorial/publication waiver.
+
+    The caller supplies the real PR base, not HEAD or an arbitrary snapshot.
+    Added/deleted/content/mode changes under all current payload paths defeat
+    this proof even when homepage.json itself is unchanged.
+    """
+    root = Path(root).resolve()
+    require(re.fullmatch(r'[0-9a-f]{40}', base or ''), 'Exact infrastructure PR base required')
+    candidate = os.environ.get('SAYD_PUBLICATION_HEAD') or git(root, 'rev-parse', 'HEAD').decode().strip()
+    require(re.fullmatch(r'[0-9a-f]{40}', candidate or '') and base != candidate,
+            'Infrastructure proof cannot substitute current HEAD for its base')
+    check_context(base, candidate)
+    check_checkout(root, candidate)
+    require(subprocess.run(['git', '-C', str(root), 'merge-base', '--is-ancestor', base, candidate],
+                           capture_output=True).returncode == 0, 'Infrastructure base is not an ancestor')
+    changed = git(root, 'diff', '--no-renames', '--name-only', '-z', base, candidate).decode().split('\0')
+    return not any(path.startswith(('content/', 'docs/', 'assets/')) or
+                   (path.startswith('audit/image-catalog/') and not path.endswith('.py'))
+                   for path in changed if path)
+
+
 @dataclass
 class Proof:
     root: Path

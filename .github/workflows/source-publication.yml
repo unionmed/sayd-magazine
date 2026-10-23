@@ -58,7 +58,7 @@ jobs:
           subprocess.run(['git', 'fetch', '--no-tags', 'origin', head], check=True)
           compiler = pathlib.Path('scripts/publication_compiler.py')
           if not compiler.exists():
-              changed = subprocess.check_output(['git', 'diff', '--name-only', '-z', base, head]).decode().split('\0')
+              changed = subprocess.check_output(['git', 'diff', '--no-renames', '--name-only', '-z', base, head]).decode().split('\0')
               assert bootstrap_paths_safe(changed), 'Initial infrastructure installation cannot also publish content or mutate catalog data'
               with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
                   summary.write('Initial infrastructure installation: base has no compiler. Source/public output changes are forbidden; candidate code receives separate read-only tests and review.\n')
