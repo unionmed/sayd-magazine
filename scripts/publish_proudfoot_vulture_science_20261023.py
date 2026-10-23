@@ -44,9 +44,11 @@ def main():
   for m in a['photos']+a['media']:assert hashlib.sha256((w.DOCS/m['path']).read_bytes()).hexdigest()==m['sha256']
   if a['slugs']['ar'] not in c['omit_from_latest']:c['omit_from_latest'].append(a['slugs']['ar'])
  w.save(ROOT/'content/homepage.json',json.dumps(c,ensure_ascii=False,indent=2)+'\n')
+ homepage_pages={w.DOCS/('' if lang=='ar' else lang)/'index.html':(w.DOCS/('' if lang=='ar' else lang)/'index.html').read_bytes() for lang in w.LANGS}
  preserved={p:p.read_bytes() for lang in w.LANGS for p in [w.DOCS/('' if lang=='ar' else lang)/'interviews/index.html',w.DOCS/('' if lang=='ar' else lang)/'category/مقابلات/index.html']}
  w.run()
- for p,b in preserved.items():p.write_bytes(b)
+ for p,b in {**preserved,**homepage_pages}.items():p.write_bytes(b)
+ w.save(ROOT/'content/homepage.json',json.dumps(c,ensure_ascii=False,indent=2)+'\n')
  after=json.loads((ROOT/'content/homepage.json').read_text())
  for key in ['ia_slots','featured','latest','ticker_entries','ticker_slugs','approved_science_news']:
   assert before[key]==after[key],key
@@ -56,5 +58,5 @@ def main():
  import subprocess
  for script in ['audit/image-catalog/build_preliminary_taxonomy.py','scripts/build_search_index.py','scripts/sync_tickers.py']:
   subprocess.run([sys.executable,script],cwd=ROOT,check=True)
- print('Authorized Science-only article built; upper homepage and ticker preserved.')
+ print('Authorized Science category/archive-only article built; all homepage cards and ticker preserved.')
 if __name__=='__main__':main()
