@@ -1,18 +1,22 @@
-/* Compact archive controls: same labels and touch height, one mobile row. */
+/* One mobile row, using available width for comfortable archive controls. */
 @media (max-width: 600px) {
   .archive-filters {
     flex-wrap: nowrap;
-    gap: .25rem;
+    gap: 6px;
   }
   .archive-filters button {
-    padding-inline: .25rem;
+    flex: 1 0 auto;
+    padding-inline: 6px;
     font-size: .875rem;
     min-height: 44px;
     min-width: 44px;
-    flex-shrink: 0;
   }
 }
-@media (max-width: 380px) {
-  .archive-filters { gap: .125rem; }
-  .archive-filters button { font-size: .8125rem; padding-inline: 0; }
+@media (max-width: 389px) {
+  .archive-filters { gap: 4px; }
+  .archive-filters button { font-size: .8125rem; padding-inline: 2px; }
+}
+@media (max-width: 340px) {
+  .archive-filters { gap: 2px; }
+  .archive-filters button { padding-inline: 0; }
 }
