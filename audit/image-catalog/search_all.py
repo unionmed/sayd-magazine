@@ -47,18 +47,10 @@ def candidate_sections(path):
     return found or ["غير مصنف"]
 
 def records():
-    if not MANIFEST.is_dir():
-        raise FileNotFoundError("Missing manifest folder: " + str(MANIFEST))
-    for manifest in sorted(MANIFEST.glob("*.tsv")):
-        with manifest.open(encoding="utf-8", newline="") as fh:
-            for row in csv.DictReader(fh, delimiter="\t"):
-                if not row.get("path"):
-                    continue
-                yield {"path": row["path"], "sha": row["git_blob_sha"],
-                       "size_bytes": int(row["size_bytes"]),
-                       "sections": candidate_sections(row["path"]),
-                       "visual_status": "UNVERIFIED",
-                       "source_manifest": manifest.name}
+    from incremental_catalog import load_inventory
+    for row in load_inventory(MANIFEST):
+        yield {**row, "sections": candidate_sections(row["path"]),
+               "visual_status": "UNVERIFIED"}
 
 def audit(rows, check_files=False):
     seen, hashes = set(), collections.defaultdict(list)

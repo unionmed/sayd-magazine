@@ -1,0 +1,23 @@
+{
+  "schema": "sayd-editorial-evidence-v1",
+  "records": [
+    {
+      "article_file": "content/posts/نسور-تتكلم-قبل-أن-تفقس.md",
+      "image_path": "docs/media/uploads/2026/10/proudfoot-ruppells-vulture-figure1.png",
+      "image_blob_sha": "0759912fd9c440b3e08d46118191adab90bc1005",
+      "source_blob_sha": "e0671f31ecb935a80a97f7cad8735b8be46b388e",
+      "original_record": {
+        "article_file": "content/posts/نسور-تتكلم-قبل-أن-تفقس.md",
+        "article_title": "نسور تتكلم قبل أن تفقس",
+        "source_reference": "media/uploads/2026/10/proudfoot-ruppells-vulture-figure1.png",
+        "expected_local_path": "docs/media/uploads/2026/10/proudfoot-ruppells-vulture-figure1.png",
+        "matching_paths": [
+          "docs/media/uploads/2026/10/proudfoot-ruppells-vulture-figure1.png"
+        ],
+        "status": "EXACT_PATH",
+        "visual_status": "VERIFIED_ORIGINAL_FIGURE"
+      },
+      "source_commit": "6b91310ee06b9a8059757b34d449230044f28888"
+    }
+  ]
+}

@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
 """Verify Github-only image archive and generate a transparent coverage report."""
 import collections
+import hashlib
 import json
 import os
 import subprocess
 from pathlib import PurePosixPath
 from search_all import ROOT, EXTENSIONS, records, audit, query
+from editorial_provenance import load_overrides
+from link_historical_articles import build_links
+from build_preliminary_taxonomy import classify
 
 HERE = ROOT / "audit/image-catalog"
+BUILD = ROOT / '.catalog-build'
 
 def main():
+    # Validate durable annotations independently of generated visual-status labels.
+    load_overrides(ROOT)
     rows = list(records())
     integrity = audit(rows, check_files=True)
     problems = {field: integrity[field] for field in
@@ -42,14 +49,32 @@ def main():
     missing_in_git = sorted(set(manifest_images) - set(git_images))
     mismatched_sha = sorted(p for p in manifest_images if p in git_images and
                             manifest_images[p] != git_images[p])
+    wrong_sizes = [r['path'] for r in rows if (ROOT/r['path']).stat().st_size != r['size_bytes']]
+    if wrong_sizes:
+        raise SystemExit(json.dumps({'manifest_size_mismatch': wrong_sizes}))
+    # Also verify checkout bytes, not only the commit tree's recorded identity.
+    for row in rows:
+        file = ROOT / row['path']
+        if file.resolve() != file:
+            raise SystemExit('Symlinked catalog image: ' + row['path'])
+        digest = hashlib.sha1(b'blob ' + str(row['size_bytes']).encode() + b'\0')
+        with file.open('rb') as handle:
+            for block in iter(lambda: handle.read(1024*1024), b''):
+                digest.update(block)
+        if digest.hexdigest() != row['sha']:
+            raise SystemExit('Checkout image SHA mismatch: ' + row['path'])
     if unindexed or missing_in_git or mismatched_sha:
         raise SystemExit(json.dumps({
             "unindexed_images": unindexed[:20], "unindexed_count": len(unindexed),
             "not_in_git_tree": missing_in_git[:20], "missing_count": len(missing_in_git),
             "sha_mismatch": mismatched_sha[:20], "mismatched_count": len(mismatched_sha),
         }, ensure_ascii=False))
-    taxonomy = json.loads((HERE / "preliminary-taxonomy.json").read_text(encoding="utf-8"))
-    linking = json.loads((HERE / "article-image-links.json").read_text(encoding="utf-8"))
+    taxonomy = json.loads((BUILD / "preliminary-taxonomy.json").read_text(encoding="utf-8"))
+    linking = json.loads((BUILD / "article-image-links.json").read_text(encoding="utf-8"))
+    if linking != build_links():
+        raise SystemExit('Stale derived article links; rebuild before verification')
+    if taxonomy['records'] != [classify(row) for row in rows]:
+        raise SystemExit('Stale derived taxonomy; rebuild before verification')
     taxrows = taxonomy["records"]
     archive = {r["path"] for r in rows}
     if len(taxrows) != len(rows) or {r["path"] for r in taxrows} != archive:
@@ -99,7 +124,7 @@ def main():
                                  ("صقر", "صيد", "رماية", "horse", "duck", "falcon")},
         "limitations": "Article references to excluded external media are not treated as GitHub image links. No image contents or rights verified."
     }
-    (HERE/"coverage-report.json").write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+    (BUILD/"coverage-report.json").write_text(json.dumps(result, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     label = [
         "# تقرير فحص أرشيف صور صيد — GitHub فقط", "",
         "أُنتج هذا التقرير من الملفات الموجودة في مستودع GitHub فقط.",
@@ -125,7 +150,7 @@ def main():
         "يُتحقق بصريًا من الصورة ومن ملاءمتها ومصدرها قبل أي استعمال تحريري.",
         ""
     ]
-    (HERE/"coverage-report.md").write_text("\n".join(label), encoding="utf-8")
+    (BUILD/"coverage-report.md").write_text("\n".join(label), encoding="utf-8")
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":

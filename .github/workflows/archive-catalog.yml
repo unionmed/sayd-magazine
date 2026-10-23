@@ -1,15 +1,8 @@
 name: Sayd archive catalog verification
 on:
   pull_request:
-    paths:
-      - 'audit/image-catalog/**'
-      - '.github/workflows/archive-catalog.yml'
   push:
     branches: [main]
-    paths:
-      - 'audit/image-catalog/**'
-      - 'docs/media/**'
-      - '.github/workflows/archive-catalog.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -22,11 +15,23 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Unit tests
         run: python -m unittest discover -s audit/image-catalog -p 'test_*.py' -v
+      - name: Enforce immutable inventory and editorial provenance
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE: ${{ github.event.before }}
+        run: |
+          base="${PR_BASE:-$PUSH_BASE}"
+          if [ -n "$base" ] && [ "$base" != "0000000000000000000000000000000000000000" ]; then
+            python audit/image-catalog/incremental_catalog.py --base "$base"
+          else
+            python audit/image-catalog/incremental_catalog.py
+          fi
       - name: Audit archive paths and files
         run: python audit/image-catalog/search_all.py --audit --check-files
       - name: Generate filename-only taxonomy
@@ -40,15 +45,14 @@ jobs:
           python audit/image-catalog/search_editorial.py 'صقر' --limit 5 > /tmp/sayd-falcon-results.json
           python audit/image-catalog/search_editorial.py 'سهيل' --limit 5 > /tmp/sayd-suhail-results.json
           python -c 'import json; a=json.load(open("/tmp/sayd-falcon-results.json")); b=json.load(open("/tmp/sayd-suhail-results.json")); assert a["returned"] > 0; assert b["returned"] > 0; print("Search smoke test",a["returned"],b["returned"])'
-      - name: Archive searchable results as downloadable artifacts
+      - name: Retain concise integrity evidence, not the full derived catalogs
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: sayd-github-image-catalog
           path: |
-            audit/image-catalog/coverage-report.json
-            audit/image-catalog/coverage-report.md
-            audit/image-catalog/article-image-links.json
-            audit/image-catalog/preliminary-taxonomy.json
+            .catalog-build/coverage-report.json
+            .catalog-build/coverage-report.md
+          include-hidden-files: true
           if-no-files-found: warn
           retention-days: 30

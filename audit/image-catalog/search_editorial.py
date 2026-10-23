@@ -6,13 +6,14 @@ import json
 from pathlib import PurePosixPath
 from urllib.parse import quote
 from search_all import ROOT, records, normalize
-
-LINKS = ROOT / "audit/image-catalog/article-image-links.json"
+from link_historical_articles import build_links
+from editorial_provenance import load_overrides, evidence_for
 
 def search(words, section="", limit=20):
-    if not LINKS.exists():
-        raise SystemExit("First run link_historical_articles.py to build Github article links")
-    links = json.loads(LINKS.read_text(encoding="utf-8"))
+    # Fresh in-memory links: an old tracked report is never treated as current.
+    # No report write or public catalog upload is needed to search new shards.
+    links = build_links()
+    evidence = load_overrides(ROOT)
     article_by_path = collections.defaultdict(list)
     for item in links["exact"]:
         title = item["article_title"]
@@ -36,7 +37,8 @@ def search(words, section="", limit=20):
             "image_github_url": "https://github.com/unionmed/sayd-magazine/blob/main/" + quote(path, safe="/"),
             "articles": [
                 {"title": title,
-                 "github_url": "https://github.com/unionmed/sayd-magazine/blob/main/" + quote(p, safe="/")}
+                 "github_url": "https://github.com/unionmed/sayd-magazine/blob/main/" + quote(p, safe="/"),
+                 "inherited_editorial_evidence": evidence_for(evidence, p, path, item['sha'])}
                 for title, p in article_matches
             ],
             "visual_status": "UNVERIFIED",
