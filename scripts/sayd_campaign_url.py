@@ -24,7 +24,7 @@ def make_link(canonical, source, campaign, content):
     path = unquote(parsed.path)
     if not re.match(r"^/(?:en/|fr/)?posts/[^/]+/(?:index\.html)?$", path):
         raise ValueError("Not a single published article path")
-    slug = path.split("/")[2 if path.startswith(("/en/", "/fr/")) else 1]
+    slug = path.split("/")[3 if path.startswith(("/en/", "/fr/")) else 2]
     if slug in {".", ".."} or any(x in path for x in ("\\", "\x00")):
         raise ValueError("Invalid article path")
     if path.endswith("/index.html"):
