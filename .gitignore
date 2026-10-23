@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+
+# Disposable generated image indexes; immutable sources stay in audit/image-catalog.
+.catalog-build/

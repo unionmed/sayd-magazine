@@ -14,7 +14,7 @@ from urllib.parse import unquote, urlsplit
 from search_all import ROOT, records
 
 POSTS = ROOT / "content/posts"
-OUT = ROOT / "audit/image-catalog/article-image-links.json"
+OUT = ROOT / ".catalog-build/article-image-links.json"
 CANDIDATE = re.compile(
     r"""https?://[^\s"'<>]+|(?<![\w/])(?:\.\./)*(?:docs/)?media/uploads/[^\s"'<>]+""",
     re.I,
@@ -116,6 +116,7 @@ def build_links():
     }
 
 def main():
+    OUT.parent.mkdir(exist_ok=True)
     result = build_links()
     OUT.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({k: v for k, v in result.items() if k not in ("exact", "nonexact")}, ensure_ascii=False, indent=2))

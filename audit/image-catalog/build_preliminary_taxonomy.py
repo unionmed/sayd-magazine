@@ -6,7 +6,7 @@ import pathlib
 from search_all import records
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-OUT = ROOT / "audit/image-catalog/preliminary-taxonomy.json"
+OUT = ROOT / ".catalog-build/preliminary-taxonomy.json"
 def classify(row):
     path = row["path"]
     filename = pathlib.PurePosixPath(path).name
@@ -23,6 +23,7 @@ def classify(row):
     }
 
 def main():
+    OUT.parent.mkdir(exist_ok=True)
     items = [classify(r) for r in records()]
     counts = collections.Counter(s for r in items for s in r["section_candidates"])
     output = {"schema": "sayd-preliminary-taxonomy-v1", "classification_basis": "filename only",
