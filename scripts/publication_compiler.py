@@ -539,6 +539,14 @@ def render(stage, records, allow_distribution):
                             kicker.getparent().remove(kicker)
                     save(path, original[:match.start()] + dom.tostring(node, encoding='unicode') + original[match.end():])
             modules['refresh_homepage_doors'].refresh(path, language)
+            if any(a['distribution']['placement'] == 'lead' for _, a in article_records):
+                # Only a requested lead change updates homepage sharing metadata.
+                # Never run the global SEO renderer over authoritative archives.
+                current = path.read_text()
+                updated = seo.apply_html(current, path, stage / 'docs', path.relative_to(stage / 'docs'), twins)
+                updated = modules['build_site_search'].links(updated, path)
+                require(updated.split('</head>', 1)[1] == current.split('</head>', 1)[1], 'Homepage SEO changed body bytes')
+                save(path, updated)
         modules['sync_tickers'].sync(stage / 'docs', root=stage)
     # No global archive, related-reading, source mirror, or SEO rewrite.
     modules['build_search_index'].build(stage / 'docs')
@@ -683,6 +691,7 @@ later independently, avoiding recursive compiler invocation.
             ['scripts/test_archive_access.py'],
             ['scripts/test_shared_ticker.py'],
             ['scripts/test_hreflang_contract.py'],
+            ['scripts/test_seo_foundation.py'],
             ['scripts/build_search_index.py', '--check'],
             ['scripts/test_search_index.py'],
             ['scripts/test_site_search.py'],

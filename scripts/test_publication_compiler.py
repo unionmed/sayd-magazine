@@ -8,6 +8,7 @@ from pathlib import Path
 import shutil
 import struct
 import subprocess
+import sys
 import tempfile
 import unittest
 import zlib
@@ -242,13 +243,30 @@ class RealSiteTests(unittest.TestCase):
     def setUpClass(cls):
         cls.base = compiler.git(ROOT, 'rev-parse', 'HEAD').decode().strip()
 
-    def build(self, value, allow=False):
-        source = source_commit(ROOT, self.base, files_for(value))
+    def build(self, value, allow=False, base=None):
+        base = base or self.base
+        source = source_commit(ROOT, base, files_for(value))
         temp = tempfile.TemporaryDirectory(prefix='sayd-compiler-integration-')
         self.addCleanup(temp.cleanup)
         stage, report = Path(temp.name) / 'site', Path(temp.name) / 'plan.json'
-        result = compiler.compile_publication(ROOT, self.base, source, stage, report, allow)
+        result = compiler.compile_publication(ROOT, base, source, stage, report, allow)
         return stage, result, source
+
+    def controlled_lead_base(self):
+        """Keep real, valid lead chronology without freezing the tested code.
+
+        Later approved side cards may be newer than the existing lead, in which
+        case promotion correctly fails rather than violating date order. Only
+        the lead fixtures use this immutable pre-Shrike payload, overlaid with
+        every current HEAD script (including deletions/modes). Objects are local
+        and unreferenced; neither the working files nor any branch is changed.
+        """
+        pinned = '493719a53adb3faf8412e281ceed3e81534dd526'
+        previous, current = compiler.tree(ROOT, pinned), compiler.tree(ROOT, self.base)
+        paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/')}
+        files = {p: compiler.read_blob(ROOT, current[p]) if p in current else None for p in paths}
+        modes = {p: current[p][0] for p in paths if p in current}
+        return source_commit(ROOT, pinned, files, modes)
 
     def test_media_only_and_no_content_byte_identity(self):
         value = record(self.base, 'compiler-media-only'); value['articles'] = []
@@ -292,20 +310,46 @@ class RealSiteTests(unittest.TestCase):
         subprocess.run(['python', 'scripts/check_publication_contract.py', '--base', self.base], cwd=stage, check=True)
 
     def test_hunting_equestrian_lead_and_filter_membership(self):
-        value = record(self.base, 'compiler-equestrian-fixture', placement='lead', ticker=True)
+        base = self.controlled_lead_base()
+        value = record(base, 'compiler-equestrian-fixture', placement='lead', ticker=True)
         article = value['articles'][0]
         article['primary_door'] = 'equestrian'; article['archives'] = ['equestrian']
-        stage, plan, _ = self.build(value, True)
+        stage, plan, _ = self.build(value, True, base=base)
         from lxml import html
         for language in schema.LANGS:
             page = stage / 'docs' / ('' if language == 'ar' else language) / 'category/صيد/index.html'
             node = html.fromstring(page.read_text())
             filters = json.loads(node.xpath('//script[@id="combined-archive-data"]/text()')[0])
             self.assertIn(article['slugs'][language], filters['equestrian'])
+            homepage = html.fromstring((stage / 'docs' / ('' if language == 'ar' else language) / 'index.html').read_text())
+            published = html.fromstring(compiler.page_path(stage, article, language).read_text())
+            self.assertEqual(homepage.xpath('//head/meta[@property="og:image"]/@content'),
+                             published.xpath('//head/meta[@property="og:image"]/@content'))
         home = json.loads((stage / 'content/homepage.json').read_text())
-        before = json.loads(compiler.git(ROOT, 'show', self.base + ':content/homepage.json'))
+        before = json.loads(compiler.git(ROOT, 'show', base + ':content/homepage.json'))
         self.assertEqual(home['ia_slots']['main'], article['slugs']['ar'])
         self.assertEqual(home['ia_slots']['important'][0], before['ia_slots']['main'])
+
+    def test_newer_side_rejects_conflicting_lead_handoff(self):
+        base = self.controlled_lead_base()
+        value = record(base, 'compiler-lead-date-conflict', placement='side')
+        # The immutable fixture lead was published on 22 October. A newer side
+        # must not be pushed behind it merely to accommodate a requested lead.
+        value['articles'][0]['published'] = '2026-10-23'
+        lead = copy.deepcopy(value['articles'][0])
+        lead['slugs'] = {l: 'compiler-conflicting-lead-' + l for l in schema.LANGS}
+        lead['distribution'] = {'placement': 'lead', 'ticker': False}
+        value['articles'].append(lead)
+        source = source_commit(ROOT, base, files_for(value))
+        with tempfile.TemporaryDirectory(prefix='sayd-lead-date-conflict-') as temp:
+            stage = Path(temp) / 'site'
+            subprocess.run(['git', 'clone', '--shared', '--no-checkout', str(ROOT), str(stage)], check=True, capture_output=True)
+            compiler.git(stage, 'checkout', '--detach', source)
+            result = subprocess.run([sys.executable, str(ROOT / 'scripts/publication_compiler.py'),
+                                     '--worker', str(stage), '--records', json.dumps([value['id']]),
+                                     '--allow-distribution'], capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn('Previous lead must become first side card; conflicting date order needs editorial review', result.stderr)
 
     def test_cross_record_casefold_route_rejected(self):
         first = record(self.base, 'compiler-route-a'); first['articles'][0]['slugs']['ar'] = 'Alpha'
@@ -328,6 +372,11 @@ class RealSiteTests(unittest.TestCase):
         news['distribution'] = {'placement': 'latest', 'ticker': True}
         value['articles'].append(news)
         stage, plan, source = self.build(value, True)
+        # Side/latest additions must not rewrite any homepage head/lead metadata.
+        for prefix in ('', 'en/', 'fr/'):
+            rel = 'docs/' + prefix + 'index.html'
+            before = compiler.git(ROOT, 'show', self.base + ':' + rel).decode()
+            self.assertEqual((stage / rel).read_text().split('</head>', 1)[0], before.split('</head>', 1)[0])
         subprocess.run(['python', 'scripts/check_publication_contract.py', '--base', self.base], cwd=stage, check=True)
         subprocess.run(['python', 'scripts/test_homepage_doors.py'], cwd=stage, check=True)
         subprocess.run(['python', 'scripts/test_shared_ticker.py'], cwd=stage, check=True)

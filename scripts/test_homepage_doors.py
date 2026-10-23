@@ -90,14 +90,25 @@ def test_homepages():
         try:validate_config(bad)
         except AssertionError:pass
         else:raise AssertionError('Extra card accepted')
-    # A French-only missing image must fail; restore the fixture even on failure.
-    p=DOCS/'fr/index.html';original=p.read_text()
+    # Use a current mirrored side card: named historical photos legitimately
+    # rotate out. Prove the mutation happened, and restore the exact bytes.
+    from html import escape
+    from lxml import html
+    p=DOCS/'fr/index.html';original=p.read_bytes()
+    images=html.fromstring(original).xpath('//*[contains(concat(" ",normalize-space(@class)," ")," feature-stack ")]/article//img/@src')
+    assert images and not images[0].startswith(('http:', 'https:', 'data:')), 'Local mirrored card image fixture must exist'
+    needle=('src="'+escape(images[0],quote=True)+'"').encode()
+    replacement=b'src="missing-test-homepage-card-image.png"'
+    assert needle in original and not (p.parent/'missing-test-homepage-card-image.png').exists(), 'Missing-image fixture must be effective'
+    broken=original.replace(needle,replacement,1)
+    assert broken!=original and replacement in broken, 'Mirrored image mutation must be present'
     try:
-        p.write_text(original.replace('EQ-N02-interior-3x2.jpg','missing-test-image.jpg',1))
+        p.write_bytes(broken)
         try:check()
         except AssertionError:pass
         else:raise AssertionError('Broken mirrored image accepted')
-    finally:p.write_text(original)
+    finally:p.write_bytes(original)
+    assert p.read_bytes()==original, 'Mirrored image fixture must restore exact bytes'
     p=DOCS/'en/index.html';original=p.read_text()
     video_id=channel_config()["videos"][0]["id"]
     assert f'data-video-id="{video_id}"' in original, "Channel fixture must exist"

@@ -8,6 +8,59 @@ from refresh_homepage_doors import DOCS, ROOT
 from check_publication_contract import CONTRACT
 
 
+
+def source_publication_header_count(base, root=ROOT):
+    """Count only article/redirect pairs from an independently proved source build.
+
+    The proof executes the immutable PR-base compiler, not candidate code or a
+    self-asserted bundle approval. On later maintenance PRs it reads already
+    reviewed sources from the trusted base. Legacy totals remain unchanged.
+    """
+    from publication_guard import verified_publication
+    proof = verified_publication(base, root, include_baseline=True)
+    return 0 if proof is None else check_source_publication_pairs(proof, root)
+
+
+def check_source_publication_pairs(proof, root):
+    """Every counted addition has one exact article header and one stable shell."""
+    from urllib.parse import unquote
+    root = Path(root)
+    expected_links = json.loads(proof.read('docs/s/links.json'))
+    current_links = json.loads((root / 'docs/s/links.json').read_text())
+    social = re.compile(r'<nav class="header-social"[^>]*>.*?</nav>', re.S)
+    routes, aliases = set(), set()
+    for source in sorted((proof.site / 'content/publications').glob('*.json')):
+        for article in json.loads(source.read_text())['articles']:
+            assert set(article['slugs']) == {'ar', 'en', 'fr'}
+            for lang in ('ar', 'en', 'fr'):
+                route = '/' + ('' if lang == 'ar' else lang + '/') + 'posts/' + article['slugs'][lang] + '/'
+                assert route not in routes, 'Duplicate source article route'
+                routes.add(route)
+                rel = 'docs' + route + 'index.html'
+                original = proof.read(rel)
+                current = (root / rel).read_text()
+                page = html.fromstring(current)
+                assert len(page.xpath('//nav[@class="header-social"]')) == 1, rel
+                assert social.findall(current) == social.findall(original), 'Source article social markup changed: ' + rel
+                target = 'https://sayd-magazine.com' + route
+                assert [unquote(x) for x in page.xpath('//link[@rel="canonical"]/@href')] == [target], rel
+                expected = [v for k, v in expected_links.items() if unquote(k) == route]
+                actual = [v for k, v in current_links.items() if unquote(k) == route]
+                assert len(expected) == 1 and actual == expected, 'Source short-link mapping changed: ' + route
+                alias = expected[0]
+                assert re.fullmatch(r'/s/[0-9a-f]{10}/', alias), 'Unexpected source short-link shape'
+                assert alias not in aliases, 'Source articles share a short-link alias'
+                aliases.add(alias)
+                shell_rel = 'docs' + alias + 'index.html'
+                shell = (root / shell_rel).read_bytes()
+                assert shell == (proof.site / shell_rel).read_bytes(), 'Source short-link shell changed: ' + alias
+                node = html.fromstring(shell)
+                assert not node.xpath('//nav[@class="header-social"]'), shell_rel
+                assert [unquote(x) for x in node.xpath('//link[@rel="canonical"]/@href')] == [target], shell_rel
+    assert len(routes) == len(aliases)
+    return len(routes)
+
+
 def run(base=None):
     base=base or os.environ.get('SAYD_BASE_COMMIT','591e345812138cb1a145d49a4a6c721b200ed99c')
     contract=json.loads(CONTRACT.read_text())
@@ -263,6 +316,7 @@ def run(base=None):
             aliases.extend(matching)
         assert len(aliases)==len(set(aliases))==3
         added+=3
+    added += source_publication_header_count(base, ROOT)
     assert groups==1037+added and headerless==823+added,(groups,headerless)
     print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact social markup, Alexandra shown once under Interviews with original URLs')
 

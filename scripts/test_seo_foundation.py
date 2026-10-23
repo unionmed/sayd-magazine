@@ -258,6 +258,87 @@ def test_consolidation_redirects_off_sitemap() -> None:
     assert season in alias.read_text(encoding="utf-8")
 
 
+def assert_photo_cards(home: str, expected: list[str], registered: set[str], prefix: str) -> None:
+    """Current desk selection rotates; cumulative gallery classification does not."""
+    from lxml import html
+    from urllib.parse import unquote
+    tree = html.fromstring(home)
+    sections = [section for section in tree.xpath('//section')
+                if any(unquote(href) == 'category/صور/index.html'
+                       for href in section.xpath('./div[contains(@class,"section-head")]/a/@href'))]
+    assert len(sections) == 1, 'Exactly one Photos desk is required'
+    cards = sections[0].xpath('./div[@class="home-door-grid"]/article')
+    assert len(expected) == len(set(expected)) == len(cards) == 4, 'Photos has four distinct current cards'
+    actual = []
+    for card in cards:
+        titles = card.xpath('.//h3/a/@href')
+        thumbs = card.xpath('./a[contains(@class,"thumb")]/@href')
+        assert len(titles) == len(thumbs) == 1 and titles == thumbs, 'Photo title/thumbnail targets differ'
+        href = unquote(titles[0])
+        assert prefix + href in registered, 'Visible photo must retain gallery classification'
+        actual.append(href)
+    assert actual == [f'posts/{slug}/index.html' for slug in expected], 'Photos selection/order differs from configuration'
+
+
+def assert_gallery_metadata(rel: str, page: str, sitemap: str, registered: set[str]) -> None:
+    assert rel in registered, rel
+    head = page.split('</head>', 1)[0]
+    assert 'name="robots" content="noindex,follow"' in head, rel
+    assert 'property="og:type" content="website"' in head, rel
+    assert f'<loc>{seo.public_url(Path(rel))}</loc>' not in sitemap, rel
+
+
+def assert_gallery_archived(rel: str, archive: str) -> None:
+    from lxml import html
+    from urllib.parse import unquote, urlsplit
+    import posixpath
+    prefix = rel.split('/', 1)[0] + '/' if rel.startswith(('en/', 'fr/')) else ''
+    def archive_target(href):
+        parts = urlsplit(href)
+        if parts.scheme or parts.netloc:
+            return None
+        path = unquote(parts.path)
+        if path.endswith('/'):
+            path += 'index.html'
+        return posixpath.normpath(path.lstrip('/') if path.startswith('/')
+                                 else prefix + 'category/صور/' + path)
+    assert any(archive_target(href) == rel for href in html.fromstring(archive).xpath('//a/@href')), rel
+
+
+def test_gallery_rotation_contract() -> None:
+    """Rotating out is valid; missing/duplicated/reordered cards or lost archive/SEO are not."""
+    def home(slugs):
+        cards = ''.join(f'<article><a class="thumb" href="posts/{s}/index.html"></a>'
+                        f'<h3><a href="posts/{s}/index.html">{s}</a></h3></article>' for s in slugs)
+        return '<section><div class="section-head"><a href="category/صور/index.html">Photos</a></div><div class="home-door-grid">' + cards + '</div></section>'
+    old = ['a', 'b', 'c', 'oldest']; current = ['new', *old[:3]]
+    registered = {f'posts/{s}/index.html' for s in ['new', *old]}
+    assert_photo_cards(home(old), old, registered, '')
+    assert_photo_cards(home(current), current, registered, '')
+    rel = 'posts/oldest/index.html'
+    page = '<head><meta name="robots" content="noindex,follow"><meta property="og:type" content="website"></head>Archived gallery'
+    archive = '<a href="../../posts/oldest/index.html">Oldest</a>'
+    assert_gallery_metadata(rel, page, '', registered)
+    assert_gallery_archived(rel, archive)
+    checks = [(lambda slugs=slugs: assert_photo_cards(home(slugs), current, registered, ''))
+              for slugs in (current[:-1], current + ['oldest'], ['new', 'new', 'b', 'c'], list(reversed(current)))]
+    checks += [lambda: assert_photo_cards(home(current), current, registered - {'posts/new/index.html'}, ''),
+               lambda: assert_gallery_metadata(rel, page, '', registered - {rel}),
+               lambda: assert_gallery_metadata(rel, page.replace('noindex,follow', 'index,follow'), '', registered),
+               lambda: assert_gallery_metadata(rel, page.replace('content="website"', 'content="article"'), '', registered),
+               lambda: assert_gallery_metadata(rel, page, f'<loc>{seo.public_url(Path(rel))}</loc>', registered),
+               lambda: assert_gallery_archived(rel, '<a href="../../posts/other/index.html">Other</a>'),
+               lambda: assert_gallery_archived(rel, '<a href="javascript:../../posts/oldest/index.html">Bad scheme</a>'),
+               lambda: assert_gallery_archived(rel, '<a href="../../wrong/posts/oldest/index.html">Wrong route</a>')]
+    for check in checks:
+        try:
+            check()
+        except AssertionError:
+            pass
+        else:
+            raise AssertionError('Invalid gallery rotation fixture accepted')
+
+
 def test_gallery_cards_are_not_indexed_articles() -> None:
     """Photo/video cards stay on the desks and out of the sitemap."""
     sitemap = (DOCS / "sitemap.xml").read_text(encoding="utf-8")
@@ -279,14 +360,33 @@ def test_gallery_cards_are_not_indexed_articles() -> None:
         assert 'property="og:type" content="website"' in head
         assert f"<loc>{seo.public_url(Path(rel))}</loc>" not in sitemap, rel
     assert "بالفيديو-مقناص-سعود-عبد-العزيز-الباب" in home
-    assert "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا" in home
     from urllib.parse import unquote
     photos = unquote((DOCS / 'category/صور/index.html').read_text())
     assert "البجع-الأبيض-الكبير-great-white-pelican" in photos
     assert "video-saud-al-babtain-maqnas-afghanistan" in en
-    assert "suhail-2026-in-photos-falcons-visitors" in en
     en_photos = (DOCS / 'en/category/صور/index.html').read_text()
     assert "great-white-pelican-matn-highway-nayef-krayem" in en_photos
+    # Suhail is a durable archived gallery, not a permanent homepage slot.
+    import json
+    config = json.loads((ROOT / 'content/homepage.json').read_text())
+    pairs = json.loads((ROOT / 'content/en/pairs.json').read_text())['pairs']
+    selected = next(section['slugs'] for section in config['ia_door_sections'] if section['door'] == 'photos')
+    archived_ar = 'سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا'
+    registered = seo.gallery_rels()
+    for lang, prefix in (('ar', ''), ('en', 'en/'), ('fr', 'fr/')):
+        def localized(slug):
+            english = pairs[slug]
+            return slug if lang == 'ar' else seo.FR_SLUG_BY_EN.get(english, english) if lang == 'fr' else english
+        assert_photo_cards((DOCS / prefix / 'index.html').read_text(),
+                           [localized(slug) for slug in selected], registered, prefix)
+        for slug in selected:
+            current_rel = prefix + f'posts/{localized(slug)}/index.html'
+            assert (DOCS / current_rel).is_file(), current_rel
+            assert_gallery_metadata(current_rel, (DOCS / current_rel).read_text(), sitemap, registered)
+        rel = prefix + f'posts/{localized(archived_ar)}/index.html'
+        assert (DOCS / rel).is_file(), rel
+        assert_gallery_metadata(rel, (DOCS / rel).read_text(), sitemap, registered)
+        assert_gallery_archived(rel, (DOCS / prefix / 'category/صور/index.html').read_text())
 
 
 def test_gallery_indexing_only_contract() -> None:
@@ -553,6 +653,7 @@ if __name__ == "__main__":
     test_wp_2026_id_stubs()
     test_consolidation_redirects_off_sitemap()
     test_gallery_cards_are_not_indexed_articles()
+    test_gallery_rotation_contract()
     test_incremental_gallery_sync()
     test_gallery_indexing_only_contract()
     test_empty_category_doors_leave_chrome_and_sitemap()
