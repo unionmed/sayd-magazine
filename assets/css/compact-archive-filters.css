@@ -1,0 +1,18 @@
+/* Compact archive controls: same labels and touch height, one mobile row. */
+@media (max-width: 600px) {
+  .archive-filters {
+    flex-wrap: nowrap;
+    gap: .25rem;
+  }
+  .archive-filters button {
+    padding-inline: .25rem;
+    font-size: .875rem;
+    min-height: 44px;
+    min-width: 44px;
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 380px) {
+  .archive-filters { gap: .125rem; }
+  .archive-filters button { font-size: .8125rem; padding-inline: 0; }
+}

@@ -292,6 +292,18 @@ def run(base,out):
                     page.set_viewport_size({'width':390,'height':1000})
                     archive=new_url+'/'+prefix+'category/'+__import__('urllib.parse',fromlist=['quote']).quote('صيد')+'/index.html'
                     page.goto(archive,wait_until='networkidle')
+                    # Approved compact mobile filters retain labels and 44px touch targets.
+                    for filter_width in (320, 360, 390, 412, 600):
+                        page.set_viewport_size({'width':filter_width,'height':1000})
+                        page.evaluate('document.fonts.ready')
+                        bounds = page.locator('.archive-filters button').evaluate_all('buttons => buttons.map(b => {const r=b.getBoundingClientRect();const t=document.createRange();t.selectNodeContents(b);const tr=t.getBoundingClientRect();return {x:r.x,y:r.y,right:r.right,width:r.width,height:r.height,textLeft:tr.left,textRight:tr.right,font:parseFloat(getComputedStyle(b).fontSize)}})')
+                        require(len({round(b['y']) for b in bounds}) == 1, f'{lang}/{filter_width}: filters must use one row')
+                        require(all(b['width'] >= 44 and b['height'] >= 44 for b in bounds), f'{lang}/{filter_width}: preserve touch targets')
+                        require(all(b['x'] >= -1 and b['right'] <= filter_width+1 for b in bounds), f'{lang}/{filter_width}: no controls clipped outside viewport')
+                        require(all(b['font'] >= 13 and b['textLeft'] >= b['x'] and b['textRight'] <= b['right'] for b in bounds), f'{lang}/{filter_width}: complete readable labels {bounds}')
+                        require(not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'), f'{lang}/{filter_width}: filter page overflow')
+                        path=out/f'archive-filters-{lang}-{filter_width}.png';capture(page,page.locator('.archive-filters'),path);screens.insert(0,path)
+                    page.set_viewport_size({'width':390,'height':1000})
                     rows=page.locator('main .post-list > article,main .home-door-grid > article')
                     total=rows.count();topic_data=json.loads(page.locator('#combined-archive-data').text_content())
                     marine=set(topic_data['marine']);mixed=set(topic_data['landMarine']);equestrian=set(topic_data['equestrian'])
