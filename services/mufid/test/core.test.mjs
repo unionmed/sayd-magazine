@@ -123,3 +123,9 @@ test('reviewed real G outputs: no loop claim for out-and-back, exact restaurant 
  const input={query:'خيمة لعائلة مع طفلين',trip:{activities:['camping']}};assert.ok(parseItinerary(JSON.stringify(valid),[{url:'https://example.org/visit'}],input));
  valid.days[0].stops[0].camping.capacity=2;assert.equal(parseItinerary(JSON.stringify(valid),[{url:'https://example.org/visit'}],input),null);
 });
+
+test('an unverified family camp returns an explicit review note, never an accepted itinerary or a false network error',async()=>{
+ const f=JSON.parse(readFileSync(new URL('./quality-regressions.json',import.meta.url))).find(c=>c.id==='family-camping');let calls=0;
+ const h=createHandler(async()=>{calls++;return Response.json({status:'completed',output:[{type:'web_search_call',status:'completed',action:{sources:f.sources.map(s=>({type:'url',...s}))}},{type:'message',content:[{type:'output_text',text:JSON.stringify(f.plan)}]}]});});
+ const r=await h(req({mode:'plan',query:'خيمة لعائلة مع طفلين',trip:{activities:['camping']}}),env());const data=await r.json();assert.equal(r.status,200);assert.equal(calls,2);assert.equal(data.camping_review_required,true);assert.equal(data.verified,false);assert.equal(data.itinerary,undefined);assert.equal(data.error,undefined);assert.ok(data.answer.includes('السعة'));
+});
