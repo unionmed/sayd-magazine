@@ -1,6 +1,6 @@
 {
   "name": "sayd-mufid-internal",
-  "main": "src/worker.mjs",
+  "main": "src/entry.mjs",
   "compatibility_date": "2026-10-01",
   "workers_dev": true,
   "observability": {
