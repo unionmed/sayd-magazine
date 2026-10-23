@@ -25,7 +25,7 @@ export function createHandler(network=fetch) {
   return async function(request,env) {
     const url=new URL(request.url),origin=request.headers.get('Origin');
     if(request.method==='GET' && Object.hasOwn(preview,url.pathname)) {
-      const type=url.pathname.endsWith('.js')?'text/javascript':url.pathname.endsWith('.css')?'text/css':'text/html';
+      const type=url.pathname.endsWith('.js')?'text/javascript':url.pathname.endsWith('.css')?'text/css':url.pathname.endsWith('.json')?'application/json':'text/html';
       return new Response(preview[url.pathname],{headers:{'Content-Type':type+'; charset=utf-8','Cache-Control':'no-store','X-Robots-Tag':'noindex, nofollow','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'}});
     }
     const allowed=(env.ALLOWED_ORIGINS || '').split(',').map(s=>s.trim()).filter(Boolean);
@@ -49,7 +49,7 @@ export function createHandler(network=fetch) {
     if(input.mode==='suggest' && input.consent!==true)return reply({error:'consent_required'},400);
     let trip;try{trip=sanitizeTrip(input.trip);}catch{return reply({error:'invalid_input'},400);}
     const task=['itinerary','weather','wildlife','packing'].includes(input.task)?input.task:'itinerary';
-    input={query:input.query.trim(),lang:input.lang,mode:input.mode,fresh:input.fresh===true,trip,task,previous_plan:typeof input.previous_plan==='string'?input.previous_plan.slice(0,1800):undefined};
+    input={query:input.query.trim(),lang:input.lang,mode:input.mode,fresh:input.fresh===true,trip,task,previous_plan:typeof input.previous_plan==='string'?input.previous_plan.slice(0,5000):undefined};
     if((url.pathname==='/v1/suggestions') !== (input.mode==='suggest'))return reply({error:'invalid_mode'},400);
     const day=new Date().toISOString().slice(0,10);
     const client=await digest(day+'|'+(request.headers.get('CF-Connecting-IP') || 'unknown'),env.RATE_SALT);
@@ -71,12 +71,21 @@ export function createHandler(network=fetch) {
     try {
       const upstream=await network('https://api.openai.com/v1/responses',{method:'POST',headers:{'Authorization':'Bearer '+env.OPENAI_API_KEY,'Content-Type':'application/json'},body:JSON.stringify(providerPayload(input,matches.slice(0,4),env.OPENAI_MODEL,web)),signal:AbortSignal.timeout(45000)});
       if(!upstream.ok)return reply({error:'provider_unavailable',articles:cards},502);
-      const data=await upstream.json();const output=extractResponse(data);
+      let data=await upstream.json(),output=extractResponse(data);
       if(!output.answer || data.status!=='completed')return reply({error:'incomplete_response',articles:cards},502);
       if(web && !output.verified)return reply({error:'verification_failed',articles:cards},502);
       let itinerary;
       if(input.mode==='plan'&&input.task==='itinerary'){
-        itinerary=parseItinerary(output.answer);
+        itinerary=parseItinerary(output.answer,output.sources);
+        // One bounded revision, never an open-ended retry loop or a vague draft.
+        if(!itinerary){
+          const revision={draft:output.answer.slice(0,12000),defects:'Provide exact visitor places or restaurant names, source_url from completed search, kind, suggested duration_minutes and walking note; separate departure/return_to from visit stops. Avoid bare towns and alternative entrances.'};
+          const revised=await network('https://api.openai.com/v1/responses',{method:'POST',headers:{'Authorization':'Bearer '+env.OPENAI_API_KEY,'Content-Type':'application/json'},body:JSON.stringify(providerPayload({...input,revision},matches.slice(0,4),env.OPENAI_MODEL,true)),signal:AbortSignal.timeout(45000)});
+          if(!revised.ok)return reply({error:'itinerary_unavailable',articles:cards},502);
+          data=await revised.json();output=extractResponse(data);
+          if(data.status!=='completed'||!output.answer||!output.verified)return reply({error:'itinerary_unavailable',articles:cards},502);
+          itinerary=parseItinerary(output.answer,output.sources);
+        }
         if(!itinerary)return reply({error:'itinerary_unavailable',articles:cards},502);
         if(itineraryNeedsReview(itinerary))return reply({answer:ACCESS_NOTE[input.lang],articles:cards,sources:[],verified:false,access_review_required:true});
         output.answer=itinerary.summary;

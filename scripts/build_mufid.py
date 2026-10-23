@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build isolated Mufid pilot pages and a public-only Worker corpus; no homepage rollout."""
 from pathlib import Path
-import json, re, shutil, html
+import json, re, shutil, html, os, subprocess
+from datetime import datetime, timezone
 ROOT=Path(__file__).resolve().parents[1]
 COPY={
 'ar':dict(title='اسأل مفيد',intro='من فضولك عن الطبيعة إلى طلعتك الجاية.',pilot='نسخة تجريبية للاختبار الداخلي',search='ابحث في صيد',understand='اسأل عن موضوع',plan='خطّط طلعتك',verify='تحقّق من معلومة حديثة',suggest='اقترح موضوعًا',query='سؤالك أو موضوعك',submit='اسأل مفيد',fresh='أحتاج معلومات حديثة موثّقة',consent='أوافق على حفظ هذا الاقتراح للتحرير لمدة سبعة أيام. لا أضمّن معلومات شخصية. الإرسال لا يضمن النشر.',privacy='يُرسل السؤال والمواد المنشورة ذات الصلة إلى خدمة الذكاء الاصطناعي عند طلب إجابة. لا نحفظ المحادثات ولا نرسل نصوصها إلى أدوات الإحصاء. البحث في صيد يستخدم مواد المجلة المنشورة فقط.',settings='إعدادات الاختبار',endpoint='عنوان خدمة الاختبار',token='رمز الدخول التجريبي',save='اتصال',ready='اختر بداية واكتب سؤالك.',loading='جارٍ البحث…',error='تعذّر إكمال الطلب. حاول مجددًا.',unavailable='الخدمة غير مفعّلة. يمكن اختبار الواجهة بعد توصيل خدمة الاختبار.',none='لم أجد مواد مناسبة. جرّب اسم طائر أو موضوعًا أكثر تحديدًا.',received='وصل اقتراحك إلى قائمة المراجعة التحريرية. لا يضمن ذلك نشره.',sources='مصادر التحقق',articles='من صيد',checked='تاريخ التحقق',clear='مسح الجلسة',nojs='يتطلب مفيد تفعيل JavaScript.',consent_required='يرجى الموافقة على حفظ الاقتراح أولًا.',limit='وصلت إلى حد الاستخدام التجريبي. حاول لاحقًا.',verification_unavailable='التحقق الحديث غير متاح الآن. لا يمكن اعتماد الأرشيف لإثبات معلومة راهنة.',ai_unavailable='خدمة الإجابة غير متصلة بعد. يمكنك تجربة البحث في صيد.',verification_failed='تعذّر إتمام تحقق حديث موثّق. لم تُعرض إجابة غير متحققة.',no_sources='لم أجد مادة كافية في صيد لهذا الطلب. أعد صياغته أو اطلب تحققًا حديثًا.'),
@@ -32,6 +33,11 @@ def build():
     rows=[]
     for lang,c in COPY.items():
         c.update(UI[lang]); c.update(UPDATES[lang])
+        c.update({
+            'ar':dict(choices='خيارات مقترحة',departure='الانطلاق',return_to='العودة إلى',visit_budget='مدة مقترحة للتوقف',minutes='دقيقة',place_map='المكان على الخريطة',place_source='تفاصيل المكان',distance_note='المسافة ومدة القيادة متاحتان في اتجاهات كل انتقال؛ لم تُحسبا داخل مفيد بعد.'),
+            'en':dict(choices='Suggested choices',departure='Start',return_to='Return to',visit_budget='Suggested time at this stop',minutes='min',place_map='Place on the map',place_source='Place details',distance_note='Open directions for each leg for distance and driving time; these are not yet calculated inside Mufid.'),
+            'fr':dict(choices='Choix proposés',departure='Départ',return_to='Retour à',visit_budget='Temps proposé sur place',minutes='min',place_map='Lieu sur la carte',place_source='Détails du lieu',distance_note='Ouvrez chaque trajet pour la distance et la durée de conduite ; ces valeurs ne sont pas encore calculées dans Mufid.')
+        }[lang])
         c['unavailable']=c['connect_first']
         c['unauthorized']=c['connect_first']
     for lang,c in COPY.items():
@@ -98,5 +104,16 @@ def build():
         nav='<nav class="mufid-language" aria-label="Language"><span>SAYD / MUFID</span><a href="/">العربية</a><a href="/en/">English</a><a href="/fr/">Français</a></nav>'
         preview['/' if lang=='ar' else '/'+lang+'/']=f'<!doctype html><html lang="{lang}" dir="{"rtl" if lang=="ar" else "ltr"}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{html.escape(c["title"])}</title><link rel="stylesheet" href="/pilot.css"></head><body>{nav}{main}<script type="application/json" id="mufid-copy">{copy}</script><script src="/pilot.js" defer></script></body></html>'
     (ROOT/'services/mufid/data/preview.json').write_text(json.dumps(preview,ensure_ascii=False))
+    # One explicitly marked, short-lived evaluation build; never ordinary builds.
+    # Only synthetic cases run, with an isolated local guard. Runtime auth is unchanged.
+    if os.environ.get('WORKERS_CI')=='1':
+        suite=json.loads((ROOT/'services/mufid/test/quality-cases.json').read_text())
+        subject=subprocess.check_output(['git','log','-1','--format=%s'],cwd=ROOT,text=True).strip()
+        expiry=datetime.fromisoformat(suite['expires_at'].replace('Z','+00:00'))
+        if os.environ.get('WORKERS_CI_BRANCH')==suite['branch'] and subject==suite['commit_message'] and datetime.now(timezone.utc)<expiry:
+            subprocess.run(['node','services/mufid/test/eval-live.mjs'],cwd=ROOT,check=True,timeout=600)
+            # Only ciphertext is served. No plaintext answers, API keys or user tokens.
+            preview['/__quality-report.enc.json']=(ROOT/'services/mufid/data/quality-report.enc.json').read_text()
+            (ROOT/'services/mufid/data/preview.json').write_text(json.dumps(preview,ensure_ascii=False))
     print(f'Mufid pilot: 3 pages, {len(rows)} public language records. No live entry points changed.')
 if __name__=='__main__':build()

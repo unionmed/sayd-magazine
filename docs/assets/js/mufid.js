@@ -11,7 +11,38 @@ function rich(target,text){target.replaceChildren();const re=/\[([^\]\n]{1,200})
 function sourceList(target,data){if(!data.sources?.length&&!data.checked_at)return;const detail=node('details');detail.className='mufid-source-details';detail.append(node('summary',c.sources_update));target.append(detail);target=detail;if(data.sources?.length){const h=node('h2',c.sources),list=node('ol');for(const s of data.sources){const u=safe(s.url);if(!u)continue;const li=node('li'),a=node('a',s.title);a.href=u;a.target='_blank';a.rel='noopener noreferrer';li.append(a);list.append(li);}target.append(h,list);}if(data.verified&&data.checked_at){const d=new Date(data.checked_at);target.append(node('p',c.checked+': '+(isNaN(d)?data.checked_at:d.toLocaleString(lang))));}}
 function clearOutput(){answer.replaceChildren();answer.hidden=true;$('mufid-answer-wrap').hidden=true;results.replaceChildren();sources.replaceChildren();$('mufid-extras').hidden=true;$('mufid-extra-answer').replaceChildren();$('mufid-itinerary').replaceChildren();$('mufid-birds').replaceChildren();lastAnswer='';lastPlan='';}
 function directions(from,to){const u=new URL('https://www.google.com/maps/dir/');u.searchParams.set('api','1');u.searchParams.set('origin',from);u.searchParams.set('destination',to);if(lastTrip?.transport==='car')u.searchParams.set('travelmode','driving');if(lastTrip?.transport==='walk')u.searchParams.set('travelmode','walking');if(lastTrip?.transport==='bike')u.searchParams.set('travelmode','bicycling');if(lastTrip?.transport==='public')u.searchParams.set('travelmode','transit');return u.href;}
-function drawItinerary(plan){const root=$('mufid-itinerary');if(!plan?.days?.length)return;lastPlan=JSON.stringify(plan).slice(0,1800);root.append(node('p',c.distance_note));lastAnswer+='\n\n'+plan.days.map(d=>c.day+' '+d.day+(d.base?' · '+c.base+': '+d.base:'')+'\n'+d.stops.map(s=>s.name+' — '+s.description).join('\n')).join('\n\n');for(const day of plan.days){const box=node('section');box.className='mufid-day';box.append(node('h3',c.day+' '+day.day));if(day.base)box.append(node('p',c.base+': '+day.base));let from=day.day===1?(lastTrip?.origin||day.base):day.base;for(const stop of day.stops){const to=stop.name+', '+stop.locality;if(from){const a=node('a',from+' ← '+to+' · '+c.leg);a.href=directions(from,to);a.target='_blank';a.rel='noopener noreferrer';a.className='mufid-leg';box.append(a);}box.append(node('h4',stop.name),node('p',stop.description));from=to;}if(day.base&&day.stops.length&&from!==day.base){const a=node('a',c.base+': '+day.base+' · '+c.leg);a.href=directions(from,day.base);a.target='_blank';a.rel='noopener noreferrer';box.append(a);}root.append(box);}}
+function drawItinerary(plan){
+ const root=$('mufid-itinerary');if(!plan?.days?.length)return;
+ const options=plan.format==='options';lastPlan=JSON.stringify(plan).slice(0,5000);
+ if(!$('mufid-destination').value.trim()){$('mufid-destination').value=plan.region||plan.days[0]?.stops[0]?.locality||'';if(lastTrip)lastTrip.destination=$('mufid-destination').value;}
+ if(!$('mufid-origin').value.trim()&&plan.days[0]?.departure){$('mufid-origin').value=plan.days[0].departure;if(lastTrip)lastTrip.origin=plan.days[0].departure;}
+ if(!options)root.append(node('p',c.distance_note));
+ for(const day of plan.days){
+  const box=node('section');box.className='mufid-day';box.append(node('h3',options?c.choices:c.day+' '+day.day));
+  const departure=day.departure||lastTrip?.origin||day.base,end=day.return_to||day.base;
+  if(!options){
+   box.append(node('p',[departure?c.departure+': '+departure:'',end?c.return_to+': '+end:''].filter(Boolean).join(' · ')));
+   lastAnswer+='\n\n'+c.day+' '+day.day+' · '+c.departure+': '+departure+' · '+c.return_to+': '+end;
+  }else lastAnswer+='\n\n'+c.choices;
+  let from=departure;
+  for(const stop of day.stops){
+   const to=stop.name+', '+stop.locality;
+   if(!options&&from){const a=node('a',from+' ← '+to+' · '+c.leg);a.href=directions(from,to);a.target='_blank';a.rel='noopener noreferrer';a.className='mufid-leg';box.append(a);}
+   const card=node('article');card.className='mufid-stop';card.append(node('h4',stop.name));
+   if(Number.isInteger(stop.duration_minutes)){const meta=node('p',c.visit_budget+': '+stop.duration_minutes+' '+c.minutes);meta.className='mufid-stop-meta';card.append(meta);}
+   const detail=node('p');rich(detail,stop.description);card.append(detail);
+   if(stop.walking)card.append(node('p',stop.walking));
+   const tools=node('div');tools.className='mufid-stop-tools';
+   const map=new URL('https://www.google.com/maps/search/');map.searchParams.set('api','1');map.searchParams.set('query',to);
+   const link=node('a',c.place_map);link.href=map.href;link.target='_blank';link.rel='noopener noreferrer';tools.append(link);
+   const source=safe(stop.source_url);if(source){const ref=node('a',c.place_source);ref.href=source;ref.target='_blank';ref.rel='noopener noreferrer';tools.append(ref);}
+   card.append(tools);box.append(card);
+   lastAnswer+='\n'+stop.name+(Number.isInteger(stop.duration_minutes)?' · '+c.visit_budget+': '+stop.duration_minutes+' '+c.minutes:'')+'\n'+stop.description+(stop.walking?'\n'+stop.walking:'');from=to;
+  }
+  if(!options&&end&&from!==end){const a=node('a',from+' ← '+end+' · '+c.leg);a.href=directions(from,end);a.target='_blank';a.rel='noopener noreferrer';a.className='mufid-leg';box.append(a);}
+  root.append(box);
+ }
+}
 function birdLinks(data,target=$('mufid-birds')){if(!data.bird_links?.length)return;const textRoot=target.id==='mufid-birds'?answer:target;for(const b of data.bird_links){const u=safe(b.url,true);if(!u)continue;const walker=document.createTreeWalker(textRoot,NodeFilter.SHOW_TEXT);const nodes=[];while(walker.nextNode())if(!walker.currentNode.parentElement.closest('a')&&walker.currentNode.textContent.includes(b.name))nodes.push(walker.currentNode);for(const n of nodes){const fragment=document.createDocumentFragment(),parts=n.textContent.split(b.name);parts.forEach((part,i)=>{if(i){const a=node('a',b.name);a.href=u;fragment.append(a);}fragment.append(document.createTextNode(part));});n.replaceWith(fragment);}}target.append(node('h3',c.bird_more));for(const b of data.bird_links){const u=safe(b.url,true);if(!u)continue;const a=node('a',b.name);a.href=u;a.className='mufid-bird-link';target.append(a);}}
 function render(data){if(data.answer){rich(answer,data.answer);answer.hidden=false;$('mufid-answer-wrap').hidden=false;lastAnswer=data.answer;}drawItinerary(data.itinerary);birdLinks(data);sourceList(sources,data);if(data.articles?.length){results.append(node('h2',c.more));data.articles.forEach((a,i)=>{const u=safe(a.url,true);if(!u)return;const row=node('article');row.className='mufid-result';if(typeof a.image==='string'&&a.image.startsWith('/media/')&&!a.image.includes('\\')){const img=node('img');img.src=a.image;img.alt='';img.loading='lazy';img.addEventListener('error',()=>img.remove(),{once:true});row.append(img);}const body=node('div'),h=node('h3'),link=node('a',`[${i+1}] ${a.title}`);link.href=u;h.append(link);body.append(h,node('p',[a.date,a.category].filter(Boolean).join(' · ')),node('p',a.excerpt));row.append(body);results.append(row);});}}
 function reset(){revision++;controller?.abort();clearOutput();status.textContent=c.ready;$('mufid-form').removeAttribute('aria-busy');$('mufid-form').querySelector('[type=submit]').disabled=false;document.querySelectorAll('[data-extra]').forEach(b=>b.disabled=false);}
