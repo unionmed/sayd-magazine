@@ -200,7 +200,7 @@ def sync_archive(languages=('ar', 'en', 'fr')) -> dict[str, dict[str, int]]:
         script = '<script src="/assets/js/combined-archive.js?v=20261017" defer></script>'
         if '/assets/css/combined-archive.css?' not in text:
             text = text.replace('</head>', '  ' + style + '\n</head>', 1)
-        compact_style = '<link rel="stylesheet" href="/assets/css/compact-archive-filters.css?v=20261023">'
+        compact_style = '<link rel="stylesheet" href="/assets/css/compact-archive-filters.css?v=20261023-roomier">'
         if '/assets/css/compact-archive-filters.css?' not in text:
             text = text.replace(style, style + '\n  ' + compact_style, 1)
         if '/assets/js/combined-archive.js?' not in text:
