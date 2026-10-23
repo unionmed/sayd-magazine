@@ -1,8 +1,9 @@
+import {sanitizeTrip,accessReviewNeeded,ACCESS_NOTE,parseItinerary,itineraryNeedsReview} from './trips.mjs';
 import preview from '../data/preview.json' with {type:'json'};
 import corpus from '../data/public-index.json' with {type:'json'};
-import {retrieve, publicCard, providerPayload, extractResponse, needsFresh} from './core.mjs';
+import {retrieve, publicCard, providerPayload, extractResponse, needsFresh,retrieveTrip,birdReferences} from './core.mjs';
 const MODES = new Set(['search','understand','plan','verify','suggest']);
-const MAX_BYTES = 8000;
+const MAX_BYTES = 24000;
 function json(value,status=200,headers={}) {
   return new Response(JSON.stringify(value),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...headers}});
 }
@@ -46,7 +47,9 @@ export function createHandler(network=fetch) {
     if(admin) {const res=await guard.fetch('https://guard/inbox',{method:'POST'});return reply(await res.json(),res.status);}
     if(typeof input.query!=='string' || !input.query.trim() || input.query.length>1200 || !['ar','en','fr'].includes(input.lang) || !MODES.has(input.mode)) return reply({error:'invalid_input'},400);
     if(input.mode==='suggest' && input.consent!==true)return reply({error:'consent_required'},400);
-    input={query:input.query.trim(),lang:input.lang,mode:input.mode,fresh:input.fresh===true};
+    let trip;try{trip=sanitizeTrip(input.trip);}catch{return reply({error:'invalid_input'},400);}
+    const task=['itinerary','weather','wildlife','packing'].includes(input.task)?input.task:'itinerary';
+    input={query:input.query.trim(),lang:input.lang,mode:input.mode,fresh:input.fresh===true,trip,task,previous_plan:typeof input.previous_plan==='string'?input.previous_plan.slice(0,1800):undefined};
     if((url.pathname==='/v1/suggestions') !== (input.mode==='suggest'))return reply({error:'invalid_mode'},400);
     const day=new Date().toISOString().slice(0,10);
     const client=await digest(day+'|'+(request.headers.get('CF-Connecting-IP') || 'unknown'),env.RATE_SALT);
@@ -56,10 +59,12 @@ export function createHandler(network=fetch) {
       const res=await guard.fetch('https://guard/suggest',{method:'POST',body:JSON.stringify({text:input.query,lang:input.lang})});
       return reply(await res.json(),res.status);
     }
-    const matches=retrieve(corpus.articles.filter(a=>a.lang===input.lang),input.query);
+    const local=corpus.articles.filter(a=>a.lang===input.lang);
+    const matches=input.mode==='plan'?retrieveTrip(local,input.query,input.trip):retrieve(local,input.query);
     const cards=matches.map(publicCard);
     if(input.mode==='search')return reply({articles:cards,answer:'',sources:[],verified:false,retrieval:'lexical-expanded'});
-    const web=input.mode==='verify' || input.fresh || needsFresh(input.query);
+    if(input.mode==='plan' && input.task==='itinerary' && accessReviewNeeded(input.query,input.trip))return reply({answer:ACCESS_NOTE[input.lang],articles:cards,sources:[],verified:false,access_review_required:true});
+    const web=input.mode==='plan' || input.mode==='verify' || input.fresh || needsFresh(input.query);
     if(web && env.WEB_ENABLED!=='true')return reply({error:'verification_unavailable',articles:cards},503);
     if(!env.OPENAI_API_KEY || !env.OPENAI_MODEL)return reply({error:'ai_unavailable',articles:cards},503);
     if(input.mode==='understand' && !matches.length && !web)return reply({error:'no_sources',articles:[]},422);
@@ -69,7 +74,16 @@ export function createHandler(network=fetch) {
       const data=await upstream.json();const output=extractResponse(data);
       if(!output.answer || data.status!=='completed')return reply({error:'incomplete_response',articles:cards},502);
       if(web && !output.verified)return reply({error:'verification_failed',articles:cards},502);
-      return reply({...output,articles:cards,checked_at:output.verified?new Date().toISOString():null});
+      let itinerary;
+      if(input.mode==='plan'&&input.task==='itinerary'){
+        itinerary=parseItinerary(output.answer);
+        if(!itinerary)return reply({error:'itinerary_unavailable',articles:cards},502);
+        if(itineraryNeedsReview(itinerary))return reply({answer:ACCESS_NOTE[input.lang],articles:cards,sources:[],verified:false,access_review_required:true});
+        output.answer=itinerary.summary;
+      }
+      const links=birdReferences(corpus.articles,output.answer,input.lang);
+      const contextual=input.mode==='plan'?retrieveTrip(local,input.query+' '+output.answer,input.trip):matches;
+      return reply({...output,itinerary,bird_links:links,articles:contextual.map(publicCard),checked_at:output.verified?new Date().toISOString():null});
     }catch{return reply({error:'provider_unavailable',articles:cards},502);}
   };
 }
