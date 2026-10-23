@@ -26,7 +26,7 @@ function drawItinerary(plan){
   }else lastAnswer+='\n\n'+c.choices;
   let from=departure;
   for(const stop of day.stops){
-   const to=stop.name+', '+stop.locality;
+   const to=(stop.trail?.start||stop.name)+', '+stop.locality;
    if(!options&&from){const a=node('a',from+' ← '+to+' · '+c.leg);a.href=directions(from,to);a.target='_blank';a.rel='noopener noreferrer';a.className='mufid-leg';box.append(a);}
    const card=node('article');card.className='mufid-stop';card.append(node('h4',stop.name));
    if(Number.isInteger(stop.duration_minutes)){const meta=node('p',c.visit_budget+': '+stop.duration_minutes+' '+c.minutes);meta.className='mufid-stop-meta';card.append(meta);}
