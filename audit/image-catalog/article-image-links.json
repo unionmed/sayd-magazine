@@ -1,14 +1,14 @@
 {
   "schema": "sayd-github-article-media-crossref-v3",
   "source": "unionmed/sayd-magazine repository only",
-  "articles_scanned": 764,
-  "articles_with_github_image_references": 65,
-  "image_references_unique_per_article": 174,
-  "exact_links": 174,
+  "articles_scanned": 767,
+  "articles_with_github_image_references": 68,
+  "image_references_unique_per_article": 177,
+  "exact_links": 177,
   "unique_basename_not_verified": 0,
   "ambiguous_basename": 0,
   "not_found": 0,
-  "catalog_images_with_exact_article_link": 133,
+  "catalog_images_with_exact_article_link": 136,
   "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
   "exact": [
     {
@@ -397,6 +397,17 @@
       "visual_status": "UNVERIFIED"
     },
     {
+      "article_file": "content/posts/الحذفة-الشتوية-في-العالم-العربي.md",
+      "article_title": "الحذفة الشتوية: بطة صغيرة تصل الأراضي الرطبة العربية بمسارات الشمال",
+      "source_reference": "media/uploads/2026/10/common-teal-20261023-1600.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/common-teal-20261023-1600.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/common-teal-20261023-1600.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
       "article_file": "content/posts/الحميراء-السوداء-في-العالم-العربي.md",
       "article_title": "الحميراء السوداء في العالم العربي بين الإقامة وهجرة الخريف",
       "source_reference": "media/uploads/2026/10/black-redstart-greg-schechter.jpg",
@@ -711,6 +722,28 @@
       "expected_local_path": "docs/media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg",
       "matching_paths": [
         "docs/media/uploads/2026/09/taif-track-jcsa-september24-2026.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الغرة-الأوراسية-في-العالم-العربي.md",
+      "article_title": "الغرّة الأوراسية: مقيمة ومهاجرة تلتقي أسرابها في الأراضي الرطبة العربية",
+      "source_reference": "media/uploads/2026/10/eurasian-coot-20261023-1600.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/eurasian-coot-20261023-1600.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/eurasian-coot-20261023-1600.jpg"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/الغطاس-الصغير-في-العالم-العربي.md",
+      "article_title": "الغطاس الصغير: حياة بين الغوص والقصب ولقاء المقيمين بزوار الشتاء",
+      "source_reference": "media/uploads/2026/10/little-grebe-20261023-1600.jpg",
+      "expected_local_path": "docs/media/uploads/2026/10/little-grebe-20261023-1600.jpg",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/little-grebe-20261023-1600.jpg"
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"

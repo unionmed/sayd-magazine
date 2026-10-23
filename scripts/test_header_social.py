@@ -207,6 +207,38 @@ def run(base=None):
                 daily_aliases.extend(matching)
         assert len(daily_aliases)==len(set(daily_aliases))==9
         added+=9
+    # Exactly the standing-authorized 23 October encyclopedia batch: three
+    # named species, nine mirrored headers and nine unique redirect shells.
+    # Preserve all historical and per-page checks; do not create an open-ended
+    # allowance for arbitrary new pages or altered social navigation.
+    daily=ROOT/'content/features/daily-birds-20261023.json'
+    if daily.exists():
+        from urllib.parse import unquote
+        articles=json.loads(daily.read_text())['articles']
+        expected_species={
+            'eurasian-coot-arab-world':('Fulica atra','الغرة-الأوراسية-في-العالم-العربي'),
+            'common-teal-arab-world':('Anas crecca','الحذفة-الشتوية-في-العالم-العربي'),
+            'little-grebe-arab-world':('Tachybaptus ruficollis','الغطاس-الصغير-في-العالم-العربي'),
+        }
+        assert len(articles)==3 and {a['key'] for a in articles}==set(expected_species)
+        links=json.loads((DOCS/'s/links.json').read_text());daily_aliases=[]
+        for a in articles:
+            scientific,arabic=expected_species[a['key']]
+            assert a['scientific_name']==scientific and a['new'] is True
+            assert a['date']=='2026-10-23' and a['category']=='موسوعة-الطيور'
+            assert a['slugs']=={'ar':arabic,'en':a['key'],'fr':a['key']}
+            for lang in ('ar','en','fr'):
+                route='/'+('' if lang=='ar' else lang+'/')+'posts/'+a['slugs'][lang]+'/'
+                page=html.parse(str(DOCS/route.lstrip('/')/'index.html'))
+                assert len(page.xpath('//nav[@class="header-social"]'))==1
+                matching=[v for k,v in links.items() if unquote(k)==route]
+                assert len(matching)==1
+                shell=html.parse(str(DOCS/matching[0].strip('/')/'index.html'))
+                assert not shell.xpath('//nav[@class="header-social"]')
+                assert [unquote(url) for url in shell.xpath('//link[@rel="canonical"]/@href')]==['https://sayd-magazine.com'+route]
+                daily_aliases.extend(matching)
+        assert len(daily_aliases)==len(set(daily_aliases))==9
+        added+=9
     assert groups==1037+added and headerless==823+added,(groups,headerless)
     print(f'PASS: {groups} four-icon social groups, {headerless} headerless shells preserved, accessible secure TikTok links, exact social markup, Alexandra shown once under Interviews with original URLs')
 
