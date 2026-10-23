@@ -172936,6 +172936,23 @@
       "library_copy_status": "NOT_CHECKED"
     },
     {
+      "path": "docs/media/uploads/2026/10/common-teal-20261023-1600.jpg",
+      "sha": "0621cb2e8747488c252d34e75a93b92901b213a6",
+      "size_bytes": 358365,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "common-teal-20261023-1600.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
       "path": "docs/media/uploads/2026/10/cyprus-latchi-port.jpg",
       "sha": "f7635d66975fb1e435aab84dbb0669fc8854ca3d",
       "size_bytes": 340714,
@@ -173028,6 +173045,23 @@
         "غير مصنف"
       ],
       "filename": "egyptian-vulture-charles-j-sharp-wikimedia.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/eurasian-coot-20261023-1600.jpg",
+      "sha": "3d5f7888e39a0810d24ae199bc8362baf4754774",
+      "size_bytes": 351856,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "eurasian-coot-20261023-1600.jpg",
       "visual_status": "UNVERIFIED",
       "editorial_status": "REVIEW_ON_REUSE",
       "media_kind": "UNVERIFIED",
@@ -173470,6 +173504,23 @@
         "غير مصنف"
       ],
       "filename": "laws-landmark-united-arab-emirates-al-jahili-fort-960.jpg",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
+      "path": "docs/media/uploads/2026/10/little-grebe-20261023-1600.jpg",
+      "sha": "f2069299c7a2c978be4f8819c74d048f46f74fa0",
+      "size_bytes": 262637,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "little-grebe-20261023-1600.jpg",
       "visual_status": "UNVERIFIED",
       "editorial_status": "REVIEW_ON_REUSE",
       "media_kind": "UNVERIFIED",
@@ -174416,9 +174467,9 @@
     }
   ],
   "summary": {
-    "total": 10259,
+    "total": 10262,
     "categories_multi_label": {
-      "غير مصنف": 9678,
+      "غير مصنف": 9681,
       "الطيور": 85,
       "الرماية والعتاد": 138,
       "الصيد": 280,
@@ -174430,6 +174481,6 @@
       "الحياة البرية": 3,
       "التخييم والبر": 1
     },
-    "unclassified": 9678
+    "unclassified": 9681
   }
 }
