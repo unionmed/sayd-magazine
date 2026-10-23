@@ -150,10 +150,13 @@ def test_approved_card_text_guards():
         assert not approved_card_text_only(old,new+'<span>extra</span>',slug)
 
 
-def assert_archive_card_rows(rows, original, additions, gulf_additions, lang):
+def assert_archive_card_rows(rows, original, additions, gulf_additions, lang, compiled_cards=None):
+    compiled_cards = compiled_cards or {}
     by_slug = {archive.slug_of(row): row for row in rows}
     assert len(rows) == len(by_slug), (lang, 'duplicate story')
-    assert set(by_slug) == {archive.slug_of(row) for row in original} | set(archive.marine_registry(lang)) | set(additions), lang
+    assert set(by_slug) == {archive.slug_of(row) for row in original} | set(archive.marine_registry(lang)) | set(additions) | set(compiled_cards), lang
+    for slug, expected in compiled_cards.items():
+        assert by_slug[slug] == expected, (lang, 'exact trusted-compiler archive card', slug)
     for slug,a in additions.items():
         card=html.fromstring(by_slug[slug]);d=a['translations'][lang]
         assert card.xpath('.//h2/a')[0].text_content()==d['title']
@@ -170,6 +173,8 @@ def assert_archive_card_rows(rows, original, additions, gulf_additions, lang):
 
 
 def test_archives_keep_every_published_card():
+    from publication_guard import verified_publication
+    compiled = verified_publication(os.environ.get('SAYD_BASE_COMMIT', 'HEAD'))
     for lang in ('ar', 'en', 'fr'):
         root = DOCS / (lang if lang != 'ar' else '')
         page = root / 'category/صيد/index.html'
@@ -180,7 +185,14 @@ def test_archives_keep_every_published_card():
         original = archive.cards(source_file(page)) + archive.cards(source_file(legacy))
         gulf = approved_gulf_archive_additions(lang)
         additions={**approved_four_news_archive_additions(lang),**approved_three_archive_additions(lang),**gulf}
-        by_slug = assert_archive_card_rows(rows, original, additions, gulf, lang)
+        new_cards = {}
+        compiled_equestrian = set()
+        if compiled is not None:
+            expected = {archive.slug_of(row): row for row in archive.cards(compiled.read(page.relative_to(ROOT).as_posix()))}
+            old_slugs = {archive.slug_of(row) for row in original} | set(archive.marine_registry(lang))
+            new_cards = {slug: row for slug, row in expected.items() if slug not in old_slugs}
+            compiled_equestrian = {a['slugs'][lang] for r in compiled.additions for a in r['articles'] if a['primary_door'] == 'equestrian'}
+        by_slug = assert_archive_card_rows(rows, original, additions, gulf, lang, new_cards)
         tree = html.fromstring(text)
         assert tree.xpath('//main//div[contains(@class,"section-head")]/h1/text() | //main//div[contains(@class,"section-head")]/h2/text()')[0].strip() == ia.door_label('hunting', lang)
         data = json.loads(tree.xpath('string(//script[@id="combined-archive-data"])'))
@@ -200,7 +212,10 @@ def test_archives_keep_every_published_card():
                 assert local_path(page, src).is_file(), (lang, src)
         legacy_before={archive.slug_of(row):row for row in archive.cards(source_file(legacy))}
         legacy_after={archive.slug_of(row):row for row in archive.cards(legacy.read_text())}
-        assert set(legacy_after)==set(legacy_before)|{slug for slug,a in additions.items() if a['door']=='equestrian'}, 'Unapproved legacy archive addition/removal'
+        assert set(legacy_after)==set(legacy_before)|{slug for slug,a in additions.items() if a['door']=='equestrian'}|compiled_equestrian, 'Unapproved legacy archive addition/removal'
+        if compiled is not None:
+            expected_legacy = {archive.slug_of(row): row for row in archive.cards(compiled.read(legacy.relative_to(ROOT).as_posix()))}
+            assert legacy_after == expected_legacy, 'Legacy archive differs from exact trusted compilation'
         assert all(legacy_after[k]==v for k,v in legacy_before.items()), 'Retained old category cards changed'
 
 

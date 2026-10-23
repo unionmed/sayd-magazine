@@ -622,6 +622,13 @@ FR_SLUG_BY_EN = {
     "sayd-arab-radar-september-2026": "radar-arabe-sayd-septembre-2026",
     "the-silence-horses-speak": "le-silence-que-parlent-les-chevaux",
 }
+from publication_schema import french_overrides
+for _en, _fr in french_overrides(ROOT).items():
+    if _en in FR_SLUG_BY_EN and FR_SLUG_BY_EN[_en] != _fr:
+        raise ValueError("Publication attempts to replace a historical French route")
+    if _fr in FR_SLUG_BY_EN.values() and FR_SLUG_BY_EN.get(_en) != _fr:
+        raise ValueError("Publication French route collision")
+    FR_SLUG_BY_EN[_en] = _fr
 EN_SLUG_BY_FR = {fr: en for en, fr in FR_SLUG_BY_EN.items()}
 
 # Page metadata. og:title / og:description stay distinct from <title> and meta description.

@@ -52,7 +52,78 @@ def capture(page,locator,dest):
     image.quantize(colors=128).save(dest,optimize=True)
 
 
+def test_compiled_article_browser(context, origin, proof, output):
+    """New article pages come only from an independently BASE-verified bundle."""
+    screens = []
+    if proof is None:
+        return screens
+    page = context.new_page()
+    try:
+        for record in proof.additions:
+            photos = {p['id']: p for p in record['photos']}
+            for article_index, article in enumerate(record['articles']):
+                for lang in ('ar', 'en', 'fr'):
+                    prefix = '' if lang == 'ar' else lang+'/'
+                    route = '/'+prefix+'posts/'+article['slugs'][lang]+'/'
+                    tr = article['translations'][lang]
+                    for width in (320, 390, 820, 1440):
+                        page.set_viewport_size({'width': width, 'height': 1000})
+                        page.goto(origin+route+'index.html', wait_until='networkidle')
+                        label = (record['id'], lang, width)
+                        assert page.locator('html').get_attribute('lang') == lang, (label, 'article language')
+                        assert page.locator('main h1').inner_text() == tr['title'], (label, 'article title')
+                        assert unquote(urlsplit(page.locator('link[rel="canonical"]').get_attribute('href')).path) == route, (label, 'canonical')
+                        assert not page.evaluate('document.documentElement.scrollWidth > innerWidth + 1'), (label, 'horizontal overflow')
+                        body = page.locator('article.article-content')
+                        assert body.count() == 1 and tr['subtitle'] in body.inner_text(), (label, 'article body')
+                        images = body.locator('figure > img')
+                        assert images.count() == len(article['photos']), (label, 'exact photograph count')
+                        for index, photo_id in enumerate(article['photos']):
+                            photo, image = photos[photo_id], images.nth(index)
+                            image.scroll_into_view_if_needed()
+                            image.evaluate('(img)=>img.decode()')
+                            measured = image.evaluate('''img => {
+                              const r=img.getBoundingClientRect(), f=img.closest('figure').getBoundingClientRect();
+                              return {loaded:img.complete&&img.naturalWidth>0, natural:img.naturalWidth/img.naturalHeight,
+                                rendered:r.width/r.height, width:r.width,height:r.height,
+                                contained:r.left>=f.left-1&&r.right<=f.right+1&&r.top>=f.top-1&&r.bottom<=f.bottom+1};
+                            }''')
+                            assert measured['loaded'] and measured['width'] > 0 and measured['height'] > 0, (label, 'photograph decode')
+                            assert abs(measured['natural']-measured['rendered']) < 0.02, (label, 'photograph aspect ratio')
+                            assert measured['contained'], (label, 'photograph clipping')
+                            assert image.get_attribute('alt') == photo['alt'][lang], (label, 'photo alt')
+                            captions = image.locator('xpath=../figcaption')
+                            caption = photo['caption'][lang]
+                            assert captions.count() == (1 if caption else 0), (label, 'visible caption count/no-caption decision')
+                            if caption:
+                                assert captions.text_content() == caption and captions.is_visible(), (label, 'exact visible caption')
+                            image_path = image.evaluate('img=>new URL(img.src).pathname')
+                            assert unquote(image_path) == '/'+photo['path'][5:], (label, 'photo source/order')
+                        assert body.locator('figure figcaption').count() == sum(bool(photos[p]['caption'][lang]) for p in article['photos']), (label, 'no extra image captions')
+                        for image in body.locator('img').all():
+                            image.evaluate('(img)=>img.decode()')
+                            assert image.evaluate('img=>img.complete&&img.naturalWidth>0'), (label, 'body/related image decode')
+                        credit = body.locator(':scope > .photo-credit')
+                        assert credit.count() == 1 and credit.inner_text().startswith(tr['photo_credit']), (label, 'single end photo credit')
+                        assert credit.evaluate('credit=>!!(credit.previousElementSibling)&&[...credit.parentElement.querySelectorAll("figure")].every(f=>!!(f.compareDocumentPosition(credit)&Node.DOCUMENT_POSITION_FOLLOWING))'), (label, 'credit after photos')
+                        if article['kind'] == 'gallery':
+                            assert body.inner_text().count(tr['photo_credit']) == 1, (label, 'gallery source credit repeated')
+                        for other in ('ar', 'en', 'fr'):
+                            anchors = page.locator('.lang-switch a[lang="'+other+'"]')
+                            assert anchors.count() >= 1, (label, 'language switch')
+                            wanted = ('/' if other == 'ar' else '/'+other+'/')+'posts/'+article['slugs'][other]+'/'
+                            assert all(unquote(a.evaluate('a=>new URL(a.href).pathname')).removesuffix('index.html') == wanted for a in anchors.all()), (label, 'language target')
+                        page.evaluate('scrollTo(0,0)')
+                        path = output / f'publication-{record["id"]}-{article_index}-{lang}-{width}.png'
+                        page.screenshot(path=str(path)); screens.append(path)
+    finally:
+        page.close()
+    return screens
+
+
 def run(base,out):
+    from publication_guard import verified_publication
+    compiled = verified_publication(base, include_baseline=True)
     out.mkdir(parents=True,exist_ok=True)
     errors=[];report=[];screens=[]
     from test_combined_hunting_equestrian import APPROVED_THREE_SLUGS, approved_three_articles
@@ -107,6 +178,7 @@ def run(base,out):
                 test_honey_browser(context, new_url, out)
                 from test_gulf_tourism_20261022 import test_gulf_browser
                 test_gulf_browser(context, new_url, out)
+                screens.extend(test_compiled_article_browser(context, new_url, compiled, out))
                 page=context.new_page();before=context.new_page()
                 for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
                     for width in WIDTHS:
@@ -217,7 +289,26 @@ def run(base,out):
                         page.goto(new_url+'/'+prefix+'index.html',wait_until='networkidle')
                         lead=page.locator('.feature-lead[data-hero="shireen"]')
                         require(lead.count()==1,'Approved lead layout missing')
-                        if approved_three:
+                        if compiled is not None:
+                            from lxml import html as dom
+                            expected_home = dom.fromstring(compiled.read('docs/'+prefix+'index.html'))
+                            expected_cards = expected_home.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," feature-lead ")] | //*[contains(concat(" ",normalize-space(@class)," ")," feature-stack ")]/article')
+                            actual_cards = page.locator('.feature-lead, .feature-stack > article')
+                            require(len(expected_cards) == 5 and actual_cards.count() == 5, 'Compiled lead and four side cards required')
+                            for i, expected_card in enumerate(expected_cards):
+                                actual_card = actual_cards.nth(i)
+                                expected_link = expected_card.xpath('.//h2/a | .//h3/a')[0]
+                                actual_link = actual_card.locator('h2 a, h3 a')
+                                require(actual_link.inner_text() == expected_link.text_content(), 'Compiled card title mismatch')
+                                require(unquote(actual_link.get_attribute('href')) == unquote(expected_link.get('href')), 'Compiled card position/link mismatch')
+                                require(actual_card.locator('img').get_attribute('src') == expected_card.xpath('.//img/@src')[0], 'Compiled card cover mismatch')
+                                actual_card.locator('img').evaluate('(img)=>img.decode()')
+                                require(actual_card.locator('img').evaluate('(img)=>img.complete&&img.naturalWidth>0'), 'Compiled card cover failed')
+                                path=out/f'compiled-home-{lang}-{article_width}-{i}.png';capture(page,actual_card,path);screens.insert(0,path)
+                            # A reviewed new placement can move this interview off
+                            # the homepage, never remove its historical body tests.
+                            article=f"posts/{local_slug('شيرين-بو-رفول-مكافحة-الصيد-الجائر',lang)}/index.html"
+                        elif approved_three:
                             north=publication[0]
                             require(unquote(urlsplit(lead.locator('h2 a').get_attribute('href')).path)==f"posts/{north['slugs'][lang]}/index.html",'Approved North main lead missing')
                             require(lead.locator('h2 a').inner_text()==north['translations'][lang]['title'],'Approved North headline mismatch')
@@ -243,9 +334,10 @@ def run(base,out):
                             article=lead.locator('h3 a').get_attribute('href')
                         else:
                             article=lead.locator('h2 a').get_attribute('href')
-                        require(unquote(urlsplit(article).path)==f"posts/{local_slug('شيرين-بو-رفول-مكافحة-الصيد-الجائر',lang)}/index.html",'Shireen must remain in its exact approved slot')
-                        require('shireen-monitoring-new.jpg' in lead.locator('img').get_attribute('src'),'Approved Shireen cover mismatch')
-                        path=out/f'shireen-home-{lang}-{article_width}.png';capture(page,lead,path);screens.insert(0,path)
+                        if compiled is None:
+                            require(unquote(urlsplit(article).path)==f"posts/{local_slug('شيرين-بو-رفول-مكافحة-الصيد-الجائر',lang)}/index.html",'Shireen must remain in its exact approved slot')
+                            require('shireen-monitoring-new.jpg' in lead.locator('img').get_attribute('src'),'Approved Shireen cover mismatch')
+                            path=out/f'shireen-home-{lang}-{article_width}.png';capture(page,lead,path);screens.insert(0,path)
                         page.goto(new_url+'/'+prefix+article,wait_until='networkidle')
                         require(page.locator('article.article-content figure').count()==8,'Eight approved article photographs required')
                         updates=json.loads((ROOT/'content/article-updates.json').read_text())['articles']
