@@ -1,0 +1,35 @@
+{
+  "status": "all succeeded",
+  "directory_id": "6adb2d81d980819184d257a3bbdf409d",
+  "library_path": "/Sayd picture for use/02_Birds & Wildlife/Netherlands/Rotterdam-Alphen-aan-den-Rijn/2026-10-21_Ruppells-Vulture-Vocalisations_PLOS-Proudfoot",
+  "results": [
+    {
+      "name": "fig1.png",
+      "file_id": "file_0000000057f881f7b24112ffa8ae2e91",
+      "library_file_id": "libfile_f3569534e8bc81918ae4573c381e6cfe",
+      "local_metadata_applied": true,
+      "current_version_number": 0
+    },
+    {
+      "name": "egg_recording.mp4",
+      "file_id": "file_00000000754881f596543aa967f9012a",
+      "library_file_id": "libfile_acdc85c5800c8191b9334f603e7550d2",
+      "local_metadata_applied": true,
+      "current_version_number": 0
+    },
+    {
+      "name": "egg_call.wav",
+      "file_id": "file_000000005ae481f78f9c504b24432ae1",
+      "library_file_id": "libfile_1f51266385ec81918c47c6e4c09c132c",
+      "local_metadata_applied": true,
+      "current_version_number": 0
+    },
+    {
+      "name": "media-rights-manifest.json",
+      "file_id": "file_0000000011fc81f989d720030ac85e0a",
+      "library_file_id": "libfile_6f1a5cfc8bc4819183d21e0cc4e8a223",
+      "local_metadata_applied": true,
+      "current_version_number": 0
+    }
+  ]
+}

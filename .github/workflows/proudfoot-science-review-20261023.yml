@@ -1,0 +1,39 @@
+name: Proudfoot Science article media and responsive QA
+on:
+  pull_request:
+    paths:
+      - 'content/features/proudfoot-vulture-calls-20261023.json'
+      - 'docs/posts/نسور-تتكلم-قبل-أن-تفقس/**'
+      - 'docs/en/posts/vultures-talk-before-they-hatch/**'
+      - 'docs/fr/posts/vautours-parlent-avant-eclosion/**'
+      - 'docs/media/uploads/2026/10/proudfoot-*'
+      - 'scripts/test_proudfoot_science_browser_20261023.py'
+      - '.github/workflows/proudfoot-science-review-20261023.yml'
+permissions:
+  contents: read
+jobs:
+  preview:
+    name: Three Science pages — original media and responsive preview
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install established pinned browser dependencies
+        run: |
+          pip install playwright==1.55.0 Pillow==11.3.0 lxml==5.3.2
+          python -m playwright install --with-deps chromium
+      - name: Check local original media, playback and all language layouts
+        run: python scripts/test_proudfoot_science_browser_20261023.py
+      - name: Retain screenshots and measured results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: proudfoot-science-20261023-visual-qa
+          path: proudfoot-science-visual-qa/
+          if-no-files-found: warn
+          retention-days: 14

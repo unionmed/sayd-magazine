@@ -1,0 +1,57 @@
+{
+  "paper_doi": "https://doi.org/10.1371/journal.pone.0360246",
+  "paper_publication_date": "2026-10-21",
+  "collection_period": "2024-09-27/2025-05-31",
+  "exact_recording_dates": "not supplied",
+  "country": "Netherlands",
+  "locations": [
+    "Diergaarde Blijdorp, Rotterdam",
+    "Vogelpark Avifauna, Alphen aan den Rijn"
+  ],
+  "species": "Gyps rueppelli",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "rights_evidence": [
+    "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0360246",
+    "https://journals.plos.org/plosone/s/licenses-and-copyright"
+  ],
+  "library_status": "Prepared for saving to existing Sayd picture for use bank; actual Library IDs recorded separately in upload receipt",
+  "bank_inventory_check": {
+    "date": "2026-10-23",
+    "items": 414,
+    "files": 266,
+    "folders": 148,
+    "method": "complete recursive filenames/paths plus title/content search",
+    "matching_names_or_paths": 0,
+    "checksum_deduplication": "not possible for all existing binary objects; no same-source candidate found"
+  },
+  "assets": [
+    {
+      "file": "fig1.png",
+      "bytes": 5796213,
+      "sha256": "983f0bd3b77b58d2e2c29577f7fbeb91610a26a43d8466baf5f918b9eb028c62",
+      "source": "https://doi.org/10.1371/journal.pone.0360246.g001",
+      "credit": "Connor Proudfoot",
+      "changes": "none",
+      "description": "Original Figure 1 study photo montage, panels A–I"
+    },
+    {
+      "file": "egg_recording.mp4",
+      "bytes": 6545933,
+      "sha256": "892f1bdf769fb2d065457b57c92500a614f4cf91a9438d2cedc360db0670bb84",
+      "source": "https://doi.org/10.1371/journal.pone.0360246.s001",
+      "credit": "Proudfoot et al., 2026, PLOS One",
+      "changes": "none",
+      "description": "Video S2. Egg Recording; 18.156 seconds"
+    },
+    {
+      "file": "egg_call.wav",
+      "bytes": 19602,
+      "sha256": "202f69619280384b56003ce9e5fb46297619487f805a82c7351ec2530b64e0c6",
+      "source": "https://doi.org/10.1371/journal.pone.0360246.s001",
+      "credit": "Proudfoot et al., 2026, PLOS One",
+      "changes": "none",
+      "description": "Audio S1. Egg Call; 0.221746 seconds"
+    }
+  ]
+}
