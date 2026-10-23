@@ -1,5 +1,8 @@
 name: Mufid internal pilot
 on:
+  push:
+    branches: ['feat/mufid-mvp-internal']
+    paths: ['services/mufid/**', 'scripts/build_mufid.py', 'assets/**/mufid*', 'docs/**/mufid/**', '.github/workflows/mufid-pilot.yml']
   pull_request:
     paths: ['services/mufid/**', 'scripts/build_mufid.py', 'assets/**/mufid.*', 'docs/**/mufid/**', 'docs/assets/search/**', '.github/workflows/mufid-pilot.yml']
   workflow_dispatch:
