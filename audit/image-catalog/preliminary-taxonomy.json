@@ -173684,6 +173684,23 @@
       "library_copy_status": "NOT_CHECKED"
     },
     {
+      "path": "docs/media/uploads/2026/10/proudfoot-ruppells-vulture-figure1.png",
+      "sha": "0759912fd9c440b3e08d46118191adab90bc1005",
+      "size_bytes": 5796213,
+      "section_candidates": [
+        "غير مصنف"
+      ],
+      "filename": "proudfoot-ruppells-vulture-figure1.png",
+      "visual_status": "UNVERIFIED",
+      "editorial_status": "REVIEW_ON_REUSE",
+      "media_kind": "UNVERIFIED",
+      "source": null,
+      "photographer": null,
+      "event_date": null,
+      "country": null,
+      "library_copy_status": "NOT_CHECKED"
+    },
+    {
       "path": "docs/media/uploads/2026/10/qatar-protected-areas-qna.jpg",
       "sha": "c3094ff6057e932cad3f78a5eb964fa4117463e9",
       "size_bytes": 179776,
@@ -174467,9 +174484,9 @@
     }
   ],
   "summary": {
-    "total": 10262,
+    "total": 10263,
     "categories_multi_label": {
-      "غير مصنف": 9681,
+      "غير مصنف": 9682,
       "الطيور": 85,
       "الرماية والعتاد": 138,
       "الصيد": 280,
@@ -174481,6 +174498,6 @@
       "الحياة البرية": 3,
       "التخييم والبر": 1
     },
-    "unclassified": 9681
+    "unclassified": 9682
   }
 }

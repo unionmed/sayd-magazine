@@ -1,14 +1,14 @@
 {
   "schema": "sayd-github-article-media-crossref-v3",
   "source": "unionmed/sayd-magazine repository only",
-  "articles_scanned": 767,
-  "articles_with_github_image_references": 68,
-  "image_references_unique_per_article": 177,
-  "exact_links": 177,
+  "articles_scanned": 768,
+  "articles_with_github_image_references": 69,
+  "image_references_unique_per_article": 178,
+  "exact_links": 178,
   "unique_basename_not_verified": 0,
   "ambiguous_basename": 0,
   "not_found": 0,
-  "catalog_images_with_exact_article_link": 136,
+  "catalog_images_with_exact_article_link": 137,
   "warning": "Only local and GitHub repository image references counted. Missing links do not prove an image is missing. No website changes.",
   "exact": [
     {
@@ -1957,6 +1957,17 @@
       ],
       "status": "EXACT_PATH",
       "visual_status": "UNVERIFIED"
+    },
+    {
+      "article_file": "content/posts/نسور-تتكلم-قبل-أن-تفقس.md",
+      "article_title": "نسور تتكلم قبل أن تفقس",
+      "source_reference": "media/uploads/2026/10/proudfoot-ruppells-vulture-figure1.png",
+      "expected_local_path": "docs/media/uploads/2026/10/proudfoot-ruppells-vulture-figure1.png",
+      "matching_paths": [
+        "docs/media/uploads/2026/10/proudfoot-ruppells-vulture-figure1.png"
+      ],
+      "status": "EXACT_PATH",
+      "visual_status": "VERIFIED_ORIGINAL_FIGURE"
     }
   ],
   "nonexact": []

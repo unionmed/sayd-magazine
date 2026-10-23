@@ -1,0 +1,247 @@
+{
+  "articles": [
+    {
+      "id": "proudfoot-vulture-egg-calls-20261023",
+      "date": "2026-10-23",
+      "slugs": {
+        "ar": "نسور-تتكلم-قبل-أن-تفقس",
+        "en": "vultures-talk-before-they-hatch",
+        "fr": "vautours-parlent-avant-eclosion"
+      },
+      "door": "science",
+      "category": "علوم-واكتشافات",
+      "placement": "category",
+      "publication_ready": true,
+      "translations": {
+        "ar": {
+          "title": "نسور تتكلم قبل أن تفقس",
+          "deck": "أصوات خافتة من داخل البيضة تكشف بداية عالم صوتي غني لدى نسر روبل… وقد تفتح بابًا جديدًا لحمايته.",
+          "meta_description": "دراسة محكّمة توثّق أصوات صغار نسر روبل داخل البيضة وتكشف تنوّع نداءاته. صور وتسجيل أصليان من البحث المنشور في PLOS One.",
+          "intro": [
+            "من داخل البيضة يأتي الصوت أولًا، ثم يخرج الفرخ إلى العالم. هكذا تبدأ الحكاية لدى نسر روبل، الذي تكشف دراسة جديدة أن عالمه أقل صمتًا وأكثر تنوّعًا مما توحي به صورته الشائعة.",
+            "وثّق الباحثون نداءات خافتة تصدرها الصغار قبل الفقس، ضمن دراسة نُشرت في مجلة PLOS One في 21 تشرين الأول 2026. ووفق جامعة أوترخت، تبدأ هذه الأصوات قبل خروج الفرخ بنحو يومين."
+          ],
+          "sections": [
+            [
+              "الصوت يسبق الخروج",
+              [
+                "تصف الدراسة أصواتًا نغمية خفيفة تبدأ بعد أن يخترق الفرخ الحجرة الهوائية داخل البيضة ويبدأ التنفس بالرئتين. وتستمر النداءات خلال الفقس، ثم تبدو كأنها تتحوّل إلى نداءات الصغير بعد خروجه، مع ازدياد تنوّعها.",
+                "كان التحضين الاصطناعي في حديقة حيوان بليدورب في روتردام فرصة لتسجيل هذه اللحظة. أما ما إذا كان الأبوان يردّان على نداءات الفرخ وهو داخل البيضة، فلم تستطع الدراسة تحديده."
+              ]
+            ],
+            [
+              "مجتمع له نداءاته",
+              [
+                "درس الفريق، بقيادة كونور براودفوت، مجموعتين من نسور روبل في هولندا، ضمّتا 35 طائرًا، وحلّل 2500 نداء. جُمعت التسجيلات بين أيلول 2024 وأيار 2025، وشملت سياقات التغذية والتنافس والتكاثر ورعاية الصغار.",
+                "ميّز الباحثون 16 نوعًا من النداءات، بعضها واضح الاختلاف وبعضها يتدرّج ويتداخل. ففي هذا المجتمع الصوتي نداءات لطلب الطعام، وأخرى ترتبط بالدفاع عن مورد أو بالتعرّض للعدوان، وأصوات ترافق إطعام الفراخ. ويتيح هذا التنوّع نافذة على الحياة الاجتماعية لطائر كثيرًا ما وُصف بأنه قليل الصوت."
+              ]
+            ],
+            [
+              "هل تساعد الأصوات في حماية النوع؟",
+              [
+                "نسر روبل، واسمه العلمي Gyps rueppelli، نوع مهدّد بالانقراض بدرجة حرجة. لذلك لا تتوقف أهمية البحث عند غرابة الصوت القادم من البيضة، بل تمتد إلى سؤال عملي: هل يساعد سماع هذه النداءات الأبوين على الاستعداد لاستقبال الفرخ؟",
+                "في برامج التحضين الاصطناعي قد تُستبدل البيضة الحقيقية بنموذج، ولا يعود الفرخ إلى العش إلا بعد الفقس بأيام. يقترح الباحثون اختبار دور الأصوات السابقة للفقس، وإمكان الاستفادة منها مستقبلًا في تحسين تقبّل الفراخ ونجاح إكثار النوع. هذه خطوة مقترحة للبحث، لم تختبر الدراسة أثرها بعد."
+              ]
+            ],
+            [
+              "بداية لفهم أوسع",
+              [
+                "تقدّم الدراسة وصفًا كميًا للذخيرة الصوتية لنسر روبل، لا خاتمة لفهمها. فالعمل أُجري في الأسر، وقد توجد في البرية نداءات أو سياقات أخرى لم تشملها التسجيلات، ومنها التفاعلات أثناء التحليق. وراء الطائر الصامت في مخيلتنا عالمٌ يستحق أن نصغي إليه."
+              ]
+            ]
+          ],
+          "sources": [
+            {
+              "label": "الدراسة الأصلية: Proudfoot وآخرون، PLOS One، 21 تشرين الأول 2026",
+              "url": "https://doi.org/10.1371/journal.pone.0360246"
+            },
+            {
+              "label": "جامعة أوترخت: عرض الدراسة، 21 تشرين الأول 2026",
+              "url": "https://www.uu.nl/nieuws/stille-gieren-blijken-toch-uitgebreid-te-communiceren-met-geluiden"
+            }
+          ]
+        },
+        "en": {
+          "title": "Vultures talk before they hatch",
+          "deck": "Soft calls from inside the egg reveal the beginnings of a rich vocal world in Rüppell’s vultures—and could open a new avenue for conservation.",
+          "meta_description": "A peer-reviewed study records Rüppell’s vulture chicks calling inside the egg and reveals a varied vocal repertoire. Original research photographs and recording.",
+          "intro": [
+            "The sound comes first, from inside the egg; the chick’s arrival follows. That is how the story begins for Rüppell’s vultures, whose vocal lives appear far richer than their supposedly silent image suggests.",
+            "Researchers documented soft calls produced before hatching in a study published in PLOS One on 21 October 2026. According to Utrecht University, the chicks begin making these sounds about two days before they emerge."
+          ],
+          "sections": [
+            [
+              "A voice before emergence",
+              [
+                "The study describes soft, tonal calls beginning after the chick breaks into the egg’s air chamber and starts breathing with its lungs. The calls continue through hatching and appear to develop into the chick’s post-hatching sounds, becoming more variable.",
+                "Artificial incubation at Rotterdam’s Diergaarde Blijdorp offered an opportunity to record this stage. Whether parents answer their chick’s calls while it is still inside the egg could not be determined by the study."
+              ]
+            ],
+            [
+              "A society with calls of its own",
+              [
+                "The team, led by Connor Proudfoot, studied two groups of Rüppell’s vultures in the Netherlands, comprising 35 birds, and analysed 2,500 calls. Recordings collected between September 2024 and May 2025 covered feeding, competition, reproduction and care of young.",
+                "The researchers distinguished 16 call types: some clearly differentiated, others graded and overlapping. This vocal world includes food-begging calls, calls associated with resource defence or receiving aggression, and sounds accompanying the feeding of chicks. Its diversity offers a window into the social life of a bird often described as quiet."
+              ]
+            ],
+            [
+              "Could sound help conserve the species?",
+              [
+                "Rüppell’s vulture, Gyps rueppelli, is critically endangered. The significance of the research therefore extends beyond the surprising sound inside an egg to a practical question: could hearing these calls help parents prepare for their chick’s arrival?",
+                "In artificial-incubation programmes, a model may replace the real egg, and chicks return to the nest only several days after hatching. The researchers propose testing the role of pre-hatching calls and their potential future use in improving chick acceptance and breeding success. This remains a proposed research step; the study has not tested that effect."
+              ]
+            ],
+            [
+              "The beginning of a fuller picture",
+              [
+                "The study provides a quantitative description of the species’ vocal repertoire, rather than the final word on it. The work took place in captivity: wild populations may use calls or encounter contexts not represented in the recordings, including interactions during soaring flight. Behind the silent bird of popular imagination is a world worth listening to."
+              ]
+            ]
+          ],
+          "sources": [
+            {
+              "label": "Original study: Proudfoot et al., PLOS One, 21 October 2026",
+              "url": "https://doi.org/10.1371/journal.pone.0360246"
+            },
+            {
+              "label": "Utrecht University research release, 21 October 2026",
+              "url": "https://www.uu.nl/nieuws/stille-gieren-blijken-toch-uitgebreid-te-communiceren-met-geluiden"
+            }
+          ]
+        },
+        "fr": {
+          "title": "Des vautours parlent avant même d’éclore",
+          "deck": "De faibles appels venus de l’œuf révèlent les débuts d’un univers vocal riche chez le vautour de Rüppell — et pourraient ouvrir une nouvelle piste pour sa conservation.",
+          "meta_description": "Une étude documente les appels du vautour de Rüppell dans l’œuf et la diversité de son répertoire vocal. Photographies et enregistrement originaux de la recherche.",
+          "intro": [
+            "Le son arrive d’abord, depuis l’intérieur de l’œuf ; l’oisillon vient ensuite au monde. Ainsi commence l’histoire du vautour de Rüppell, dont la vie vocale se révèle bien plus riche que ne le laisse supposer son image d’oiseau silencieux.",
+            "Des chercheurs ont documenté de faibles appels émis avant l’éclosion dans une étude publiée dans PLOS One le 21 octobre 2026. Selon l’université d’Utrecht, les petits commencent à produire ces sons environ deux jours avant de sortir de l’œuf."
+          ],
+          "sections": [
+            [
+              "Une voix avant l’éclosion",
+              [
+                "L’étude décrit de faibles appels tonals qui débutent lorsque l’oisillon perce la chambre à air de l’œuf et commence à respirer avec ses poumons. Ces appels se poursuivent pendant l’éclosion et semblent se prolonger dans les vocalisations du petit après sa sortie, en devenant plus variables.",
+                "L’incubation artificielle au zoo de Rotterdam, Diergaarde Blijdorp, a permis d’enregistrer cette étape. En revanche, l’étude n’a pas pu déterminer si les parents répondent aux appels de leur petit encore dans l’œuf."
+              ]
+            ],
+            [
+              "Une société et ses appels",
+              [
+                "L’équipe dirigée par Connor Proudfoot a étudié deux groupes de vautours de Rüppell aux Pays-Bas, réunissant 35 oiseaux, et analysé 2 500 appels. Les enregistrements, recueillis entre septembre 2024 et mai 2025, couvraient l’alimentation, la compétition, la reproduction et les soins aux jeunes.",
+                "Les chercheurs ont distingué 16 types d’appels : certains nettement différenciés, d’autres gradués et partiellement superposés. Cet univers vocal comprend des appels de quémande alimentaire, des sons associés à la défense d’une ressource ou au fait de subir une agression, et d’autres qui accompagnent le nourrissage des petits. Cette diversité ouvre une fenêtre sur la vie sociale d’un oiseau souvent décrit comme peu vocal."
+              ]
+            ],
+            [
+              "Le son peut-il aider à conserver l’espèce ?",
+              [
+                "Le vautour de Rüppell, Gyps rueppelli, est en danger critique d’extinction. L’intérêt de la recherche dépasse donc la surprise d’un son venu de l’œuf : entendre ces appels pourrait-il aider les parents à se préparer à l’arrivée du petit ?",
+                "Dans les programmes d’incubation artificielle, une réplique peut remplacer le véritable œuf, et les petits ne rejoignent le nid que plusieurs jours après l’éclosion. Les chercheurs proposent de tester le rôle des appels précédant l’éclosion et leur utilisation éventuelle pour améliorer l’acceptation des petits et la réussite de la reproduction. Il s’agit d’une piste de recherche : l’étude n’en a pas encore testé l’effet."
+              ]
+            ],
+            [
+              "Le début d’une compréhension plus large",
+              [
+                "L’étude propose une description quantitative du répertoire vocal de l’espèce, sans en épuiser les possibilités. Mené en captivité, le travail ne couvre peut-être pas certains appels ou contextes de la vie sauvage, notamment les interactions en vol plané. Derrière l’oiseau silencieux de notre imaginaire se cache un monde qui mérite d’être écouté."
+              ]
+            ]
+          ],
+          "sources": [
+            {
+              "label": "Étude originale : Proudfoot et al., PLOS One, 21 octobre 2026",
+              "url": "https://doi.org/10.1371/journal.pone.0360246"
+            },
+            {
+              "label": "Université d’Utrecht : présentation de l’étude, 21 octobre 2026",
+              "url": "https://www.uu.nl/nieuws/stille-gieren-blijken-toch-uitgebreid-te-communiceren-met-geluiden"
+            }
+          ]
+        }
+      },
+      "photos": [
+        {
+          "path": "media/uploads/2026/10/proudfoot-ruppells-vulture-figure1.png",
+          "sha256": "983f0bd3b77b58d2e2c29577f7fbeb91610a26a43d8466baf5f918b9eb028c62",
+          "approved_for_article": true,
+          "source_url": "https://doi.org/10.1371/journal.pone.0360246.g001",
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "credit": {
+            "ar": "Connor Proudfoot / Proudfoot et al., PLOS One (2026)",
+            "en": "Connor Proudfoot / Proudfoot et al., PLOS One (2026)",
+            "fr": "Connor Proudfoot / Proudfoot et al., PLOS One (2026)"
+          },
+          "modifications": "None; original composite figure bytes retained.",
+          "alt": {
+            "ar": "لوحة صور من الدراسة: نسر روبل بالغ، تسجيل أصوات البيضة، فرخ حديث الفقس، وأجهزة تسجيل في العش.",
+            "en": "Research photographs showing an adult Rüppell’s vulture, egg-call recording, a newly hatched chick and recording equipment at the nest.",
+            "fr": "Photographies de l’étude : vautour de Rüppell adulte, enregistrement de l’œuf, petit récemment éclos et matériel installé au nid."
+          },
+          "caption": {
+            "ar": "من البيضة إلى العش: صور جمع التسجيلات في هولندا خلال فترة الدراسة، 2024–2025.",
+            "en": "From egg to nest: photographs of recording work in the Netherlands during the 2024–2025 study period.",
+            "fr": "De l’œuf au nid : photographies des enregistrements aux Pays-Bas pendant la période d’étude, en 2024–2025."
+          }
+        }
+      ],
+      "related": [
+        "حوام-العسل-هجرة-بولندا-3750-كيلومترا",
+        "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026"
+      ],
+      "media": [
+        {
+          "kind": "video",
+          "local_filename": "egg_recording.mp4",
+          "path": "media/uploads/2026/10/proudfoot-ruppells-vulture-egg-recording.mp4",
+          "source_url": "https://doi.org/10.1371/journal.pone.0360246.s001",
+          "source_member": "Supplemental Audio and Video Files/Video S2. Egg Recording.mp4",
+          "duration_seconds": 18.156009,
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "credit": "Proudfoot et al., PLOS One (2026)",
+          "modifications": "None; original bytes retained.",
+          "sha256": "892f1bdf769fb2d065457b57c92500a614f4cf91a9438d2cedc360db0670bb84",
+          "caption": {
+            "ar": "تسجيل أصلي للبيضة أمام الميكروفون، من الملحق المرئي للدراسة.",
+            "en": "Original recording of the egg in front of a microphone, from the study’s video supplement.",
+            "fr": "Enregistrement original de l’œuf devant un microphone, issu du supplément vidéo de l’étude."
+          }
+        },
+        {
+          "kind": "audio",
+          "local_filename": "egg_call.wav",
+          "path": "media/uploads/2026/10/proudfoot-ruppells-vulture-egg-call.wav",
+          "source_url": "https://doi.org/10.1371/journal.pone.0360246.s001",
+          "source_member": "Supplemental Audio and Video Files/Audio S1. Egg Call.wav",
+          "duration_seconds": 0.221746,
+          "license": "CC BY 4.0",
+          "license_url": "https://creativecommons.org/licenses/by/4.0/",
+          "credit": "Proudfoot et al., PLOS One (2026)",
+          "modifications": "None; original bytes retained.",
+          "sha256": "202f69619280384b56003ce9e5fb46297619487f805a82c7351ec2530b64e0c6",
+          "caption": {
+            "ar": "عينة صوتية أصلية شديدة القصر لنداء من داخل البيضة؛ أقل من ربع ثانية.",
+            "en": "A very short original audio sample of a call from inside the egg: less than a quarter of a second.",
+            "fr": "Très bref échantillon sonore original d’un appel émis dans l’œuf : moins d’un quart de seconde."
+          }
+        }
+      ],
+      "editorial_links": "Plain text source attribution only; external URLs preserved as provenance, never rendered as anchors.",
+      "publication_authorization": {
+        "message_id": "Sentinel_373f38c9ace08191b8753837a85f83f7",
+        "time_utc": "2026-10-23T11:04:23Z",
+        "scope": "Execute AR/EN/FR publication in existing Science only after removing outbound editorial links; local media; no other placement."
+      },
+      "media_attribution": {
+        "ar": "الصور: Connor Proudfoot؛ التسجيلات: Proudfoot وزملاؤه. © 2026 Proudfoot et al. المصدر: The complex, graded vocal repertoire of the social Rüppell’s vulture، PLOS One؛ الشكل 1 وملحق الصوت والفيديو S1. الأصول دون تعديل.",
+        "en": "Photographs: Connor Proudfoot; recordings: Proudfoot et al. © 2026 Proudfoot et al. Source: The complex, graded vocal repertoire of the social Rüppell’s vulture, PLOS One; Figure 1 and supplementary audio/video file S1. Originals unchanged.",
+        "fr": "Photographies : Connor Proudfoot ; enregistrements : Proudfoot et al. © 2026 Proudfoot et al. Source : The complex, graded vocal repertoire of the social Rüppell’s vulture, PLOS One ; figure 1 et fichier complémentaire audio/vidéo S1. Originaux inchangés."
+      },
+      "media_attribution_uris": [
+        "https://doi.org/10.1371/journal.pone.0360246.g001",
+        "https://doi.org/10.1371/journal.pone.0360246.s001",
+        "https://creativecommons.org/licenses/by/4.0/"
+      ]
+    }
+  ]
+}

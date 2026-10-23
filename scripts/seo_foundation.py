@@ -617,6 +617,7 @@ def hero_image(html_text: str, page: Path, docs: Path, rel: Path) -> str | None:
 
 # French public slug differs from the English slug for these stories.
 FR_SLUG_BY_EN = {
+    "vultures-talk-before-they-hatch": "vautours-parlent-avant-eclosion",
     "arab-hunting-autumn-2026": "automne-chasse-arabe-2026",
     "sayd-arab-radar-september-2026": "radar-arabe-sayd-septembre-2026",
     "the-silence-horses-speak": "le-silence-que-parlent-les-chevaux",
