@@ -31,13 +31,15 @@ for m in a['photos']+a['media']:assert hashlib.sha256((ROOT/'docs'/m['path']).re
 results=[]
 try:
  with sync_playwright() as p:
-  browser=p.chromium.launch(headless=True)
+  browser=p.chromium.launch(channel="chrome",headless=True)
+  (OUT/"browser.json").write_text(json.dumps({"channel":"chrome","version":browser.version},indent=2))
   context=browser.new_context()
   context.route('**/*',lambda route:route.continue_() if route.request.url.startswith((origin+'/','data:','blob:')) else route.abort())
   for lang,slug in a['slugs'].items():
    network=[]
    page=context.new_page();page.on('response',lambda response:network.append({'url':response.url,'status':response.status,'type':response.headers.get('content-type'),'range':response.headers.get('content-range')}) if 'proudfoot-' in response.url else None);page.set_viewport_size({'width':390,'height':844})
    page.goto(origin+'/'+('' if lang=='ar' else lang+'/')+'posts/'+quote(slug)+'/',wait_until='networkidle')
+   assert page.evaluate('document.createElement("video").canPlayType(\'video/mp4; codecs="avc1.640028, mp4a.40.2"\')')
    body=page.locator('.article-content');assert page.locator('h1').inner_text()==a['translations'][lang]['title']
    assert body.locator('a[href^="http"]').count()==0
    assert body.locator('iframe, source[src^="http"],img[src^="http"]').count()==0
