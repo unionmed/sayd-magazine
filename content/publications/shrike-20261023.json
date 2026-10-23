@@ -1,0 +1,390 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "shrike-20261023",
+  "expected_base": "493719a53adb3faf8412e281ceed3e81534dd526",
+  "approval_reference": "private:Sentinel_46357b43a1e88191bcdeeeb40c431aa1; private:Sentinel_7a676c953ca0819181cf2dc3281dbdb8; private:Sentinel_2e9cc690ed88819182646ee7f74c770e",
+  "bank_search_reference": "Library searched 2026-10-23 for الصرد, Great Grey Shrike, Marek Szczepanek, and shrike: no indexed hits returned, not proof of absence. Existing photographic source ledger libfile_6a0384cf9dd0819199ea13baaed79774 read directly; selected original Library photos libfile_b1cc4b3acbf081918254fefb0db3749d and libfile_63bf2218a49481919f55e40d7b9d2e2a reused. No claim of exhaustive bank absence. Latest user decision selects both retained user originals libfile_e5d837c33e50819183d3f56d77ccec24 and libfile_b97acde6b0dc8191a8a60cbca8926143, plus Marek profile libfile_b1cc4b3acbf081918254fefb0db3749d; second Marek image excluded.",
+  "photos": [
+    {
+      "id": "cover",
+      "path": "docs/media/publications/shrike-20261023/user-cover.jpg",
+      "sha256": "560bb475627f6f1eb236ae401ca1118179d234ca3c617df3b33ba38919575e06",
+      "source_sha256": "560bb475627f6f1eb236ae401ca1118179d234ca3c617df3b33ba38919575e06",
+      "source_reference": "User-provided original, Library libfile_e5d837c33e50819183d3f56d77ccec24. Original photographer, publication source, exact species, location and capture date unknown; documentary authenticity not independently authenticated. No finding of fabrication. Original bytes retained.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "User-supplied image explicitly selected for publication after disclosure of unresolved original source and documentary authenticity. External rights and authenticity have not been independently verified. No ownership, license or future-reuse permission is claimed.",
+        "evidence_reference": "private:Sentinel_7a676c953ca0819181cf2dc3281dbdb8",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_7a676c953ca0819181cf2dc3281dbdb8"
+      },
+      "alt": {
+        "ar": "صرد إلى جانب فأر وسحلية وحشرات معلقة على أغصان شائكة",
+        "en": "A shrike beside a mouse, lizard and insects hanging on thorny branches",
+        "fr": "Une pie-grièche près d’une souris, d’un lézard et d’insectes suspendus à des branches épineuses"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "user-insects",
+      "path": "docs/media/publications/shrike-20261023/user-insects.jpg",
+      "sha256": "eecdafce91679a9c8d80d134a5595ab62dfa4708dfe56225d03b5135d759a6da",
+      "source_sha256": "eecdafce91679a9c8d80d134a5595ab62dfa4708dfe56225d03b5135d759a6da",
+      "source_reference": "User-provided original, Library libfile_b97acde6b0dc8191a8a60cbca8926143. Original photographer, publication source, exact species, location and capture date unknown; documentary authenticity not independently authenticated. No finding of fabrication. Original bytes retained.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "User-supplied image explicitly selected for publication after disclosure of unresolved original source and documentary authenticity. External rights and authenticity have not been independently verified. No ownership, license or future-reuse permission is claimed.",
+        "evidence_reference": "private:Sentinel_7a676c953ca0819181cf2dc3281dbdb8",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_7a676c953ca0819181cf2dc3281dbdb8"
+      },
+      "alt": {
+        "ar": "صرد بجوار حشرات معلقة على أغصان شائكة",
+        "en": "A shrike beside insects hanging on thorny branches",
+        "fr": "Une pie-grièche près d’insectes suspendus à des branches épineuses"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "marek-profile",
+      "path": "docs/media/publications/shrike-20261023/1-great-grey-shrike.jpg",
+      "sha256": "0890b7cda03ab551f16debd63985fb7a1600e2b6a9cba01339362cdcad78f625",
+      "source_sha256": "0890b7cda03ab551f16debd63985fb7a1600e2b6a9cba01339362cdcad78f625",
+      "source_reference": "Unmodified original from https://commons.wikimedia.org/wiki/File:Lanius_excubitor_1_(Marek_Szczepanek).jpg. Marek Szczepanek, Poland; capture date unknown; upload 2005 is not a capture date. Existing colour correction MPF, 2019. Saved source ledger libfile_6a0384cf9dd0819199ea13baaed79774.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lanius_excubitor_1_(Marek_Szczepanek).jpg",
+      "rights": {
+        "status": "licensed",
+        "statement": "Marek Szczepanek / Wikimedia Commons, CC BY-SA 3.0. Pre-existing colour correction by MPF. Original retained without cropping or enhancement.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Lanius_excubitor_1_(Marek_Szczepanek).jpg; original saved Library source ledger libfile_6a0384cf9dd0819199ea13baaed79774; live license revalidation 2026-10-23.",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "alt": {
+        "ar": "صرد رمادي كبير بقناع أسود بجوار فأر معلّق على غصن",
+        "en": "A black-masked Great Grey Shrike beside an impaled mouse",
+        "fr": "Une Pie-grièche grise au masque noir près d’une souris empalée"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الصرد-طائر-يعدم-فرائسه-على-الأشواك",
+        "en": "shrike-prey-impaled-on-thorns",
+        "fr": "pie-grieche-proies-empalees-sur-les-epines"
+      },
+      "published": "2026-10-23",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "science",
+      "archives": [
+        "science",
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "cover",
+        "user-insects",
+        "marek-profile"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الصرد… طائر يُعدم فرائسه على الأشواك",
+          "subtitle": "طائر صغير يحوّل الأشواك إلى أدوات لتثبيت الفرائس ومخازن للطعام. كيف يفعل الصرد ذلك، وأين نراه في البلاد العربية؟",
+          "meta_description": "الصرد الرمادي الكبير: طائر يعلّق فرائسه على الأشواك لتثبيتها وتمزيقها وتخزين الطعام. سلوكه وموائله وحضوره في البلاد العربية.",
+          "sections": [
+            {
+              "paragraphs": [
+                "غصن شائك، وفأر معلّق، وطائر صغير بقناع أسود يقف على مقربة. مشهد يشبه مشنقة في البرية، وصاحبه لا يحتاج إلى حجم نسر أو مخالب صقر ليصنعه. إنه الصرد، الطائر الذي يحوّل الشوكة إلى أداة لتثبيت فرائسه ومائدة طعام، وقد يجعل من أغصان شجيرة واحدة مخزنًا لوجبات يعود إليها لاحقًا.",
+                "من بعيد، يبدو مجرد طائر رمادي هادئ فوق غصن مرتفع. لكن تلك الوقفة هي موقع مراقبة. عيناه تتبعان الحركة على الأرض، ومنقاره المعقوف جاهز للانقضاض على حشرة كبيرة أو سحلية أو قارض صغير. وعندما تصبح الفريسة بين يديه، أو بالأحرى بين منقاره وقدميه، تدخل الأشواك في الحكاية."
+              ]
+            },
+            {
+              "heading": "الشوكة التي تعمل بدل المخلب",
+              "paragraphs": [
+                "ينتمي الصرد إلى العصفوريات، لكنه يعيش حياة مفترس. ولأنه لا يملك مخالب الجوارح القوية، يستعين بما توفره البيئة: شوكة حادة، سلك شائك، أو شق بين غصنين. يثبّت فريسته، ثم يستخدم منقاره لتمزيقها واقتطاع الطعام منها.",
+                "هكذا تصبح الشوكة امتدادًا لأدواته الطبيعية؛ تمسك ما يصعب تثبيته، وتتيح له التعامل مع فرائس كبيرة قياسًا بحجمه. وقد يبقى جزء من الفريسة في مكانه ليعود إليه، أو يعلّق فائض ما اصطاده بدل تناوله فورًا.",
+                "وراء هذا المشهد القاسي إذن أكثر من وظيفة: السيطرة على الطعام، وتسهيل تناوله، والاحتفاظ به. وقد تجد على أغصان منطقة الصرد حشرات وفقاريات صغيرة، كأن الطائر ترك سجلًا مكشوفًا لنجاحه في الصيد."
+              ]
+            },
+            {
+              "heading": "حين يصبح مخزن الطعام إعلانًا",
+              "paragraphs": [
+                "للقصة تفصيل آخر يضيف إلى غرابتها. في دراسة على الصرد الرمادي الكبير في بولندا، وجد الباحثون أن الذكور تختار خلال موسم التزاوج مواضع أكثر ظهورًا لتعليق الفرائس. يشير ذلك إلى أن المخزون قد يؤدي دورًا اجتماعيًا أيضًا: الطعام الذي يملكه الطائر يمكن أن يُرى، وربما يحمل رسالة إلى شريك محتمل أو منافس.",
+                "إنها براعة في استثمار المكان. الشجيرة تؤمّن مجثمًا للمراقبة، وأداة لتثبيت الفريسة، ومستودعًا للطعام، وأحيانًا واجهة لعرضه.",
+                "ومن بين أنواع الصرد التي تعرف هذا السلوك، يبرز الصرد الرمادي الكبير بوصفه طائرًا حاضرًا في أجزاء واسعة من العالم العربي؛ تراه جماعات مقيمة في بعض البلدان، وتصل جماعات أخرى مع الهجرة والشتاء."
+              ]
+            },
+            {
+              "heading": "بطاقة التعريف",
+              "paragraphs": [
+                "• الاسم العربي: الصرد الرمادي الكبير.\n• الاسم الإنجليزي: Great Grey Shrike.\n• الاسم الفرنسي: Pie-grièche grise.\n• الاسم العلمي: Lanius excubitor.\n• الفصيلة: الصرديات Laniidae.\n• الرتبة: العصفوريات Passeriformes.\n• الطول: نحو 24–25 سنتيمترًا.\n• الوزن: نحو 48–81 غرامًا وفق مرجع طيور السعودية، مع اختلاف الجماعات.\n• أبرز العلامات: ظهر رمادي، قناع أسود يمر عبر العين، ذيل طويل وأجنحة بالأسود والأبيض، ومنقار معقوف الطرف.\n• الغذاء: حشرات كبيرة، وسحالي وقوارض وطيور صغيرة.\n• الحالة العالمية: أقل إثارة للقلق، بحسب التصنيف العالمي المشار إليه في المراجع؛ وهذه الحالة لا تعني أن أعداده لا تتراجع أو أن جميع جماعاته متساوية في الوفرة."
+              ]
+            },
+            {
+              "heading": "أين نراه في البلاد العربية؟ — في المغرب العربي",
+              "paragraphs": [
+                "تعيش جماعات محلية مقيمة في المغرب والجزائر وتونس، بما يشمل بيئات شمالية وأخرى صحراوية وواحات. وتوجد جماعات مقيمة في ليبيا أيضًا. لذلك يمكن لقاء الصرد في موائله المناسبة خلال العام، وليس في موسم عبور قصير فقط.",
+                "تختلف ألوان هذه الجماعات ودرجات الرمادي والبياض فيها. وما تذكره بعض المراجع القديمة تحت اسم «الصرد الجنوبي» أُعيد تصنيفه؛ تعتمد هذه المادة تصنيف AviList لعام 2026، الذي يضم الجماعات المعنية في شمال أفريقيا والجزيرة العربية وصرد السهوب ضمن الصرد الرمادي الكبير Lanius excubitor."
+              ]
+            },
+            {
+              "heading": "في مصر",
+              "paragraphs": [
+                "له وجود مقيم متكاثر موثق، ومن أمثلته جبل علبة وجبال البحر الأحمر. وفي الصحراء الغربية وُثق تثبيته الفرائس على أشواك العوسج والأسلاك الشائكة. إن مشهد «المشنقة» الذي يشد الانتباه ليس حكاية بعيدة عن بيئاتنا."
+              ]
+            },
+            {
+              "heading": "في السعودية والخليج",
+              "paragraphs": [
+                "في السعودية، الصرد الرمادي الكبير مقيم متكاثر واسع الانتشار، مع وصول جماعات أخرى عابرة أو شتوية. ويصف كتاب «طيور السعودية» استخدامه أشواك الأكاسيا لتعليق الفرائس في وسط المملكة وغربها.",
+                "في الإمارات وقطر وعُمان، توجد جماعات عربية مقيمة متكاثرة، وتضاف إليها جماعات من صرد السهوب أثناء الهجرة أو الشتاء. وفي الإمارات تحديدًا، يمتد عبور الخريف عمومًا بين أغسطس وأكتوبر، وعبور الربيع بين مارس وأبريل، مع بقاء بعض الأفراد شتاءً. أما الطيور المقيمة فيمكن مشاهدتها طوال العام.",
+                "الكويت تختلف: تُصنَّف جماعة صرد السهوب فيها عابرًا وزائرًا شتويًا غير شائع، فيما تُعد الجماعة العربية المقيمة في بلدان مجاورة شاردة في القائمة الكويتية. ليس لكل الخليج إذن جدول حضور واحد."
+              ]
+            },
+            {
+              "heading": "في المشرق",
+              "paragraphs": [
+                "في الأردن يُدرج الصرد الرمادي الكبير ضمن الطيور المقيمة. وفي سوريا تتنوع حالته بحسب الجماعة والمنطقة، بين تكاثر محلي نادر وزيارة شتوية وعبور.",
+                "أما لبنان، فتذكر قائمة الطيور المنشورة عام 2020 تكاثرًا تاريخيًا، لكنها لم تجد دليلًا حديثًا حاسمًا عليه وقت إعدادها. وتوثق عبورًا قليلًا أو نادرًا في أكتوبر حتى منتصف نوفمبر، وعبورًا نادرًا جدًا من أوائل مارس إلى أوائل أبريل. لذلك، لا يُقدَّم بوصفه مقيمًا شائعًا حاليًا في لبنان."
+              ]
+            },
+            {
+              "heading": "أين نبحث عنه في الميدان؟",
+              "paragraphs": [
+                "ابحث عن مشهد مفتوح تتخلله شجيرات أو أشجار متناثرة: أرض زراعية، أطراف واحات، بيئات شبه صحراوية، أو مساحات فيها نباتات شوكية ومجاثم تكشف الأرض. كثيرًا ما يكون أول ما تلاحظه وقفته المكشوفة فوق غصن أو سلك، ثم القناع الأسود والذيل الطويل.",
+                "قد يشبه أنواعًا أخرى من الصرد الرمادي؛ لذلك تفيد صورة واضحة للرأس والجناح والذيل، مع معرفة مكان المشاهدة وتاريخها. اختلاف درجات اللون لا يعني بالضرورة أننا أمام نوع مختلف؛ للعمر والجماعة المحلية دور أيضًا."
+              ]
+            },
+            {
+              "heading": "العش والعائلة",
+              "paragraphs": [
+                "يبني الصرد عشًا كأسيًا في شجرة أو شجيرة، مستخدمًا الأغصان والأعشاب والجذيرات، ويبطّنه بمواد أنعم. تحضن الأنثى البيض أساسًا، ويشارك الأبوان في رعاية الصغار.",
+                "تذكر المراجع السعودية والإماراتية عادةً 3–4 بيضات، وقد يزيد العدد. وتستغرق الحضانة قرابة 15–17 يومًا، ثم تغادر الفراخ العش بعد نحو أسبوعين ونصف. يختلف توقيت التكاثر بين المناطق؛ ففي الإمارات تبرز الفترة من مارس إلى مايو، وقد يبدأ النشاط أبكر.",
+                "ولحماية هذا الطائر، تبقى الشجيرات والأشجار المتناثرة جزءًا مهمًا من موطنه. أما من يصوّره أو يراقبه، فالأفضل أن يترك فرائسه المعلقة في مكانها وألا يقترب من العش أو يغيّر ترتيب المشهد من أجل صورة.",
+                "قد تغادر المكان ويبقى الفأر على الشوكة. بالنسبة إلى العابر، صورة صادمة؛ وبالنسبة إلى الصرد، جزء من نظام حياة يعرف فيه كيف يحوّل غصنًا صغيرًا إلى أداة تمنحه قدرة أكبر من حجمه."
+              ]
+            },
+            {
+              "paragraphs": [
+                "المراجع: The Birds of Saudi Arabia، المجلد الثاني، ص 252؛ Antczak وHromada وTryjanowski (2012)، دراسة تعليق الفرائس لدى الصرد؛ Hegazi (1981)، غذاء الطيور في الصحراء الغربية المصرية؛ Goodman وAbdel Mowla Atta (1987)، The Birds of Southeastern Egypt؛ Ramadan-Jaradi وآخرون (2020)، قائمة طيور لبنان؛ Aidek وآخرون (2025)، قائمة طيور سوريا؛ قائمتا Jordan BirdWatch وطيور الكويت؛ التقييم الوطني الإماراتي؛ AviList v2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة الثالثة: Marek Szczepanek / Wikimedia Commons، CC BY-SA 3.0؛ تصحيح لوني سابق: MPF."
+        },
+        "en": {
+          "title": "The shrike: a bird that executes its prey on thorns",
+          "subtitle": "A small bird turns thorns into tools for holding prey and storing food. How does it do it, and where can shrikes be seen in Arab countries?",
+          "meta_description": "How the Great Grey Shrike uses thorns to secure prey and store food, and where to find it across Arab countries: behaviour, identification and breeding.",
+          "sections": [
+            {
+              "paragraphs": [
+                "A thorny branch, an impaled mouse, and a small bird with a black mask standing nearby. The scene resembles a gallows in the wild, yet its maker needs neither an eagle’s bulk nor a falcon’s talons. This is the shrike, a bird that turns a thorn into a tool for securing its prey and a dining table. It may make the branches of a single shrub into a store of meals to return to later.",
+                "From a distance, it looks like an unassuming grey bird on a high branch. But that perch is a lookout. Its eyes follow movement on the ground, its hooked bill ready to strike at a large insect, a lizard or a small rodent. Once the prey is in its hands—or rather, between its bill and its feet—the thorns enter the story."
+              ]
+            },
+            {
+              "heading": "The thorn that stands in for a talon",
+              "paragraphs": [
+                "The shrike belongs to the passerines, but lives as a predator. Without the powerful talons of birds of prey, it uses what its surroundings provide: a sharp thorn, barbed wire or a crevice between two branches. It secures its prey, then uses its bill to tear off pieces to eat.",
+                "The thorn becomes an extension of its natural equipment: it holds what is difficult to grip and helps the bird handle prey large in relation to its own size. Part of the prey may remain for another meal, or surplus catches may be impaled rather than eaten straight away.",
+                "This harsh-looking spectacle therefore serves several purposes: controlling food, making it easier to eat and keeping it for later. Insects and small vertebrates on branches within a shrike’s territory can look like an open record of its hunting success."
+              ]
+            },
+            {
+              "heading": "When a food store becomes an advertisement",
+              "paragraphs": [
+                "Another detail makes the story more remarkable. In a study of Great Grey Shrikes in Poland, researchers found that males selected more conspicuous places to impale prey during the mating season. This suggests that their stores may also serve a social purpose: food that can be seen may carry a message to a potential mate or a rival.",
+                "It is an ingenious use of space. A shrub provides a lookout, a tool for securing prey, a food store and, sometimes, a display stand.",
+                "Among the shrikes that practise this behaviour, the Great Grey Shrike occurs across substantial parts of the Arab world. Some populations are resident in particular countries; others arrive on migration or in winter."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Arabic name: الصرد الرمادي الكبير. English name: Great Grey Shrike. French name: Pie-grièche grise. Scientific name: Lanius excubitor.",
+                "Family: Laniidae. Order: Passeriformes. Length: about 24–25 centimetres. Weight: around 48–81 grams according to The Birds of Saudi Arabia, with variation among populations.",
+                "Key features: a grey back, a black mask through the eye, a long tail, black-and-white wings, and a bill with a hooked tip. Food: large insects, lizards, rodents and small birds.",
+                "Global status: Least Concern, according to the global assessment cited in the references. This does not mean that its numbers cannot decline or that all its populations are equally abundant."
+              ]
+            },
+            {
+              "heading": "Where can it be seen in Arab countries? — The Maghreb",
+              "paragraphs": [
+                "Local resident populations live in Morocco, Algeria and Tunisia, in northern habitats as well as deserts and oases. Libya also has resident populations. In suitable habitats, shrikes can therefore be encountered throughout the year, not only during a short passage season.",
+                "Their plumage varies in shades of grey and white. Some older references placed these birds under Southern Grey Shrike, but their classification has since changed. This article follows AviList 2026, which includes the relevant North African and Arabian populations, as well as Steppe Grey Shrike, within Great Grey Shrike Lanius excubitor."
+              ]
+            },
+            {
+              "heading": "Egypt",
+              "paragraphs": [
+                "Resident breeding populations are documented, including at Gebel Elba and in the Red Sea mountains. In the Western Desert, shrikes have been recorded securing prey on boxthorn spines and barbed wire. The striking ‘gallows’ scene is not remote from our own landscapes."
+              ]
+            },
+            {
+              "heading": "Saudi Arabia and the Gulf",
+              "paragraphs": [
+                "In Saudi Arabia, the Great Grey Shrike is a widespread resident breeder, with additional passage and wintering populations. The Birds of Saudi Arabia describes its use of acacia thorns to impale prey in the central and western parts of the country.",
+                "The United Arab Emirates, Qatar and Oman have resident breeding Arabian populations, joined by Steppe Grey Shrikes on passage or in winter. In the UAE specifically, autumn passage generally extends from August to October and spring passage from March to April, with some birds remaining over winter. Resident birds can be seen throughout the year.",
+                "Kuwait is different: its checklist treats Steppe Grey Shrike as an uncommon passage migrant and winter visitor, while the Arabian population resident in neighbouring countries is a vagrant. There is no single calendar of occurrence for the entire Gulf."
+              ]
+            },
+            {
+              "heading": "The Levant",
+              "paragraphs": [
+                "In Jordan, Great Grey Shrike is listed as resident. Its status in Syria varies with population and region, from rare local breeding to winter visits and passage.",
+                "For Lebanon, the checklist published in 2020 records historical breeding, but found no conclusive recent evidence of it at the time of preparation. It documents scarce or rare passage in October to mid-November, and very rare passage from early March to early April. The bird should therefore not be presented as a common resident in Lebanon today."
+              ]
+            },
+            {
+              "heading": "Where to look in the field",
+              "paragraphs": [
+                "Look for open country with scattered shrubs or trees: farmland, the edges of oases, semi-desert, or places with thorny vegetation and perches overlooking the ground. The first thing you notice is often its exposed position on a branch or wire, followed by the black mask and long tail.",
+                "It can resemble other grey shrikes. A clear photograph of the head, wings and tail, together with the location and date, helps identification. Differences in colour do not necessarily indicate a different species: age and local population also play a part."
+              ]
+            },
+            {
+              "heading": "Nest and family",
+              "paragraphs": [
+                "The shrike builds a cup-shaped nest in a tree or shrub, using twigs, grasses and rootlets, and lining it with softer material. The female does most of the incubation, and both parents care for the young.",
+                "Saudi and Emirati references usually report 3–4 eggs, sometimes more. Incubation lasts about 15–17 days, and the young leave the nest after roughly two and a half weeks. Breeding timing varies geographically: March to May is prominent in the UAE, though activity may begin earlier.",
+                "Scattered shrubs and trees remain an important part of its habitat. Photographers and birdwatchers should leave impaled prey where it is, keep away from nests and avoid rearranging a scene for a picture.",
+                "You may leave while the mouse remains on its thorn. To a passer-by, it is a startling image; to the shrike, it is part of a way of life in which a small branch becomes a tool that gives it power beyond its size."
+              ]
+            },
+            {
+              "paragraphs": [
+                "References: The Birds of Saudi Arabia, vol. 2, p. 252; Antczak, Hromada & Tryjanowski (2012), study of shrike impaling behaviour; Hegazi (1981), wild-bird food in the Egyptian Western Desert; Goodman & Abdel Mowla Atta (1987), The Birds of Southeastern Egypt; Ramadan-Jaradi et al. (2020), Lebanon bird checklist; Aidek et al. (2025), Syria bird checklist; Jordan BirdWatch and Kuwait bird lists; UAE national assessment; AviList v2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Third photograph: Marek Szczepanek / Wikimedia Commons, CC BY-SA 3.0. Pre-existing colour correction: MPF."
+        },
+        "fr": {
+          "title": "La pie-grièche, cet oiseau qui exécute ses proies sur les épines",
+          "subtitle": "Un petit oiseau transforme les épines en outils pour maintenir ses proies et conserver sa nourriture. Comment fait-il, et où l’observer dans les pays arabes ?",
+          "meta_description": "Comment la Pie-grièche grise utilise les épines pour maintenir ses proies et conserver sa nourriture : comportement, identification et présence dans les pays arabes.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Une branche épineuse, une souris empalée et, tout près, un petit oiseau au masque noir. La scène évoque un gibet dans la nature. Pourtant, son auteur n’a besoin ni de la taille d’un aigle ni des serres d’un faucon. C’est la pie-grièche, qui transforme l’épine en outil pour immobiliser ses proies et en table à manger. Les branches d’un seul arbuste peuvent devenir un garde-manger où elle reviendra plus tard.",
+                "De loin, elle ressemble à un paisible oiseau gris posé sur une branche haute. Mais ce perchoir est un poste d’observation. Ses yeux suivent les mouvements au sol ; son bec crochu est prêt à saisir un gros insecte, un lézard ou un petit rongeur. Une fois la proie entre ses mains — ou plutôt entre son bec et ses pattes —, les épines entrent en scène."
+              ]
+            },
+            {
+              "heading": "L’épine qui remplace la serre",
+              "paragraphs": [
+                "La pie-grièche appartient aux passereaux, mais mène une vie de prédatrice. Dépourvue des puissantes serres des rapaces, elle utilise ce que son environnement lui offre : une épine acérée, un fil barbelé ou une fente entre deux branches. Elle y immobilise sa proie, puis la déchire avec son bec pour en prélever des morceaux.",
+                "L’épine prolonge ainsi ses outils naturels : elle retient ce qui serait difficile à maintenir et permet de traiter des proies grandes par rapport à la taille de l’oiseau. Une partie peut rester sur place pour un autre repas ; les prises excédentaires peuvent être empalées plutôt que consommées immédiatement.",
+                "Ce spectacle saisissant remplit donc plusieurs fonctions : maîtriser la nourriture, en faciliter la consommation et la conserver. Les insectes et petits vertébrés accrochés aux branches de son territoire ressemblent à un registre visible de ses succès de chasse."
+              ]
+            },
+            {
+              "heading": "Quand le garde-manger devient une vitrine",
+              "paragraphs": [
+                "Un autre détail ajoute à l’étrangeté de l’histoire. Une étude menée sur la Pie-grièche grise en Pologne a montré que les mâles choisissaient des emplacements plus visibles pour empaler leurs proies pendant la saison des accouplements. Ces réserves pourraient donc aussi jouer un rôle social : une nourriture bien en vue peut adresser un signal à un partenaire potentiel ou à un rival.",
+                "C’est une remarquable façon d’exploiter l’espace. L’arbuste fournit un poste d’observation, un outil pour immobiliser la proie, un garde-manger et, parfois, un présentoir.",
+                "Parmi les pies-grièches qui adoptent ce comportement, la Pie-grièche grise est présente dans de vastes parties du monde arabe. Certaines populations sont sédentaires dans certains pays ; d’autres arrivent lors des migrations ou en hiver."
+              ]
+            },
+            {
+              "heading": "Fiche d’identité",
+              "paragraphs": [
+                "Nom arabe : الصرد الرمادي الكبير. Nom anglais : Great Grey Shrike. Nom français : Pie-grièche grise. Nom scientifique : Lanius excubitor.",
+                "Famille : Laniidae. Ordre : Passeriformes. Longueur : environ 24–25 centimètres. Masse : environ 48–81 grammes selon The Birds of Saudi Arabia, avec des variations entre populations.",
+                "Principaux caractères : dos gris, masque noir traversant l’œil, longue queue, ailes noires et blanches et extrémité du bec crochue. Alimentation : gros insectes, lézards, rongeurs et petits oiseaux.",
+                "Statut mondial : Préoccupation mineure, selon l’évaluation mondiale citée dans les références. Cela ne signifie ni que ses effectifs ne peuvent pas diminuer, ni que toutes ses populations sont aussi abondantes."
+              ]
+            },
+            {
+              "heading": "Où la rencontre-t-on dans les pays arabes ? — Au Maghreb",
+              "paragraphs": [
+                "Des populations locales sédentaires vivent au Maroc, en Algérie et en Tunisie, dans des milieux septentrionaux comme dans les déserts et les oasis. La Libye accueille également des populations sédentaires. Dans les habitats favorables, on peut donc rencontrer l’oiseau toute l’année, et pas seulement pendant une courte période de passage.",
+                "Les nuances de gris et de blanc varient entre ces populations. Certaines sources anciennes les regroupaient sous le nom de Pie-grièche méridionale, mais leur classification a depuis changé. Cet article suit AviList 2026, qui inclut les populations concernées d’Afrique du Nord et de la péninsule Arabique, ainsi que la pie-grièche des steppes, dans la Pie-grièche grise Lanius excubitor."
+              ]
+            },
+            {
+              "heading": "En Égypte",
+              "paragraphs": [
+                "Des populations nicheuses sédentaires sont documentées, notamment au Gebel Elba et dans les montagnes de la mer Rouge. Dans le désert Occidental, l’oiseau a été observé fixant ses proies sur des épines de lyciet et des fils barbelés. Le spectacle du « gibet » n’est donc pas étranger à nos paysages."
+              ]
+            },
+            {
+              "heading": "En Arabie saoudite et dans le Golfe",
+              "paragraphs": [
+                "En Arabie saoudite, la Pie-grièche grise est une nicheuse sédentaire largement répandue, à laquelle s’ajoutent des populations de passage ou hivernantes. The Birds of Saudi Arabia décrit son utilisation des épines d’acacia pour empaler ses proies dans le centre et l’ouest du pays.",
+                "Les Émirats arabes unis, le Qatar et Oman abritent des populations arabiques nicheuses sédentaires, rejointes par des pies-grièches des steppes en migration ou en hiver. Aux Émirats plus précisément, le passage automnal s’étend généralement d’août à octobre, et le passage printanier de mars à avril ; certains individus restent en hiver. Les oiseaux sédentaires peuvent être observés toute l’année.",
+                "Le Koweït présente une situation différente : sa liste classe la pie-grièche des steppes comme migratrice de passage et visiteuse hivernale peu commune, tandis que la population arabique sédentaire dans les pays voisins n’y apparaît qu’accidentellement. Le calendrier de présence n’est donc pas uniforme dans tout le Golfe."
+              ]
+            },
+            {
+              "heading": "Au Levant",
+              "paragraphs": [
+                "En Jordanie, la Pie-grièche grise est classée parmi les oiseaux sédentaires. En Syrie, son statut varie selon les populations et les régions : reproduction locale rare, visite hivernale ou passage.",
+                "Pour le Liban, la liste publiée en 2020 mentionne une reproduction historique, mais ne relevait pas de preuve récente concluante au moment de sa préparation. Elle décrit un passage peu fréquent ou rare d’octobre à la mi-novembre, et très rare du début mars au début avril. L’espèce ne doit donc pas être présentée comme une sédentaire commune actuellement au Liban."
+              ]
+            },
+            {
+              "heading": "Où la chercher sur le terrain ?",
+              "paragraphs": [
+                "Recherchez des espaces ouverts ponctués de buissons ou d’arbres : terres agricoles, lisières d’oasis, milieux semi-désertiques ou secteurs riches en végétation épineuse et en perchoirs dominant le sol. Le premier indice est souvent sa silhouette bien exposée sur une branche ou un fil, puis son masque noir et sa longue queue.",
+                "Elle peut ressembler à d’autres pies-grièches grises. Une photographie nette de la tête, des ailes et de la queue, accompagnée du lieu et de la date, aide à l’identification. Des nuances de plumage différentes ne signalent pas nécessairement une autre espèce : l’âge et la population locale jouent aussi un rôle."
+              ]
+            },
+            {
+              "heading": "Le nid et la famille",
+              "paragraphs": [
+                "La pie-grièche construit un nid en coupe dans un arbre ou un buisson, avec des brindilles, des herbes et des radicelles, puis le tapisse de matériaux plus doux. La femelle assure l’essentiel de l’incubation ; les deux parents s’occupent des jeunes.",
+                "Les références saoudiennes et émiraties indiquent généralement 3 à 4 œufs, parfois davantage. L’incubation dure environ 15 à 17 jours, et les jeunes quittent le nid au bout d’environ deux semaines et demie. Le calendrier varie selon les régions : aux Émirats, la période de mars à mai est importante, mais l’activité peut commencer plus tôt.",
+                "Les buissons et les arbres dispersés restent une composante importante de son habitat. Photographes et observateurs gagneront à laisser les proies empalées en place, à rester à distance des nids et à ne pas réorganiser la scène pour une image.",
+                "Vous pouvez quitter les lieux alors que la souris demeure sur son épine. Pour le passant, l’image est saisissante ; pour la pie-grièche, elle fait partie d’un mode de vie où une petite branche devient un outil lui donnant une puissance qui dépasse sa taille."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Références : The Birds of Saudi Arabia, vol. 2, p. 252 ; Antczak, Hromada et Tryjanowski (2012), étude du comportement d’empalement des pies-grièches ; Hegazi (1981), alimentation des oiseaux dans le désert Occidental égyptien ; Goodman et Abdel Mowla Atta (1987), The Birds of Southeastern Egypt ; Ramadan-Jaradi et al. (2020), liste des oiseaux du Liban ; Aidek et al. (2025), liste des oiseaux de Syrie ; listes de Jordan BirdWatch et des oiseaux du Koweït ; évaluation nationale émiratie ; AviList v2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Troisième photographie : Marek Szczepanek / Wikimedia Commons, CC BY-SA 3.0. Correction des couleurs antérieure : MPF."
+        }
+      },
+      "distribution": {
+        "placement": "side",
+        "ticker": false,
+        "rotation": {
+          "permanent_door": "birds",
+          "no_updates": true,
+          "no_ticker": true
+        }
+      },
+      "related": [
+        "شجيرة-العوسج-حين-تقرأ-الأرض",
+        "كيف-يحمي-المزارع-الطيور-المهاجرة-هذا-الخريف"
+      ]
+    }
+  ]
+}
