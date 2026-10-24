@@ -173,6 +173,45 @@ class RealSourceTests(unittest.TestCase):
             with self.subTest(path=path), self.assertRaises(ValueError):
                 r.validate_source(ROOT, self.base, self.source(extra={path: b'evil'}))
 
+    def caption_source(self, scope=False, extra=None, mutate=None):
+        record = json.loads((ROOT / 'content/publications/riyadh-results-20261024.json').read_text())
+        import caption_revision
+        current_photo = caption_revision.effective_records(ROOT, record, record['articles'][0])[0]['photos'][0]
+        value = {'schema': 'sayd-caption-revision-v1', 'id': 'request-caption-test',
+                 'expected_base': self.base, 'publication_id': record['id'],
+                 'article_slug': record['articles'][0]['slugs']['ar'],
+                 'photo_id': record['photos'][0]['id'],
+                 'captions': {lang: {'old': current_photo['caption'][lang],
+                                     'new': 'Archive photograph.'} for lang in ('ar', 'en', 'fr')}}
+        if mutate: mutate(value)
+        files = {'content/caption-revisions/request-caption-test.json': json.dumps(value, ensure_ascii=False).encode()}
+        files.update(extra or {})
+        source = source_commit(ROOT, self.base, files)
+        tree = r.git(ROOT, 'rev-parse', source + '^{tree}')
+        env = dict(os.environ, GIT_AUTHOR_NAME='Test', GIT_COMMITTER_NAME='Test',
+                   GIT_AUTHOR_EMAIL='test@example.invalid', GIT_COMMITTER_EMAIL='test@example.invalid')
+        return subprocess.check_output(['git', '-C', str(ROOT), 'commit-tree', tree, '-p', self.base],
+                                       input=MESSAGE.replace('false', str(scope).lower()).encode(), env=env).decode().strip()
+
+    def test_caption_request_has_no_distribution_authority(self):
+        self.assertFalse(r.validate_source(ROOT, self.base, self.caption_source()))
+        with self.assertRaisesRegex(ValueError, 'cannot authorize distribution'):
+            r.validate_source(ROOT, self.base, self.caption_source(scope=True))
+
+    def test_caption_request_rejects_mixed_or_generated_inputs(self):
+        for path in ('content/publications/extra.json', 'content/homepage.json',
+                     'docs/search-index.json', 'scripts/evil.py'):
+            with self.subTest(path=path), self.assertRaises(ValueError):
+                r.validate_source(ROOT, self.base, self.caption_source(extra={path: b'{}'}))
+
+    def test_caption_request_revalidates_exact_base_and_old_text(self):
+        mutations = [lambda v: v.update(expected_base='0'*40),
+                     lambda v: v['captions']['en'].update(old='Wrong old caption.'),
+                     lambda v: v['captions']['fr'].update(new='<script>bad</script>')]
+        for mutate in mutations:
+            with self.assertRaises(ValueError):
+                r.validate_source(ROOT, self.base, self.caption_source(mutate=mutate))
+
     def test_stale_base_rejected(self):
         with self.assertRaises(ValueError): r.validate_source(ROOT, self.base, self.base)
         source = self.source()

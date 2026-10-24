@@ -72,13 +72,13 @@ def decode_visible_image(image):
 
 
 def test_compiled_article_browser(context, origin, proof, output):
-    """New article pages come only from an independently BASE-verified bundle."""
+    """New or caption-revised pages require independent BASE-verified evidence."""
     screens = []
     if proof is None:
         return screens
     page = context.new_page()
     try:
-        for record in proof.additions:
+        for record in (*proof.additions, *getattr(proof, 'revisions', ())):
             photos = {p['id']: p for p in record['photos']}
             for article_index, article in enumerate(record['articles']):
                 for lang in ('ar', 'en', 'fr'):
