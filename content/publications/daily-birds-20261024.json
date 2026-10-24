@@ -1,0 +1,671 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261024",
+  "expected_base": "8e55045e8e35559605fe7f35c913dc47018b61e8",
+  "approval_reference": "private:Sentinel_add138f5d1208191b6da0e78b5865d06; private:daily-bird-encyclopedia-20261024T070000Z",
+  "bank_search_reference": "2026-10-24 Library scientific/common-name search and 146-item recursive Birds & Wildlife inventory reviewed before external acquisition; no suitable identified matching image found. All three licensed originals and rights records saved to existing Sayd picture for use bank; IDs retained in photo records. Full existing docs image SHA256 comparison found no duplicates.",
+  "photos": [
+    {
+      "id": "greenshank",
+      "path": "docs/media/publications/daily-birds-20261024/greenshank.jpg",
+      "sha256": "6d01d5f4a2698f44e96636c4cd2a03cdf4e32e16ca1ede659937c4142f0f1ccc",
+      "source_sha256": "70538d6f8c4178482a569ce9ad43b2ca99081578623de216ed45e271d3d980a6",
+      "source_reference": "Charles J. Sharp; Dohat Arad Lagoon, Muharraq, Bahrain; capture 2022-02-18; original Library libfile_61234fe079cc81919aded23deb321326; rights record libfile_5db650280b308191bfe1dfee30727fee. Resized to 1600px width and JPEG re-encoded, no cropping/content alteration. Exact age, sex and subspecies not assigned.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Common_greenshank_(Tringa_nebularia)_Bahrain.jpg",
+      "rights": {
+        "status": "licensed",
+        "statement": "Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0. Resized and JPEG re-encoded only; derivative under same license.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Common_greenshank_(Tringa_nebularia)_Bahrain.jpg; Library libfile_5db650280b308191bfe1dfee30727fee; independent original-license and pixel review 2026-10-24.",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "alt": {
+        "ar": "طيطوي أخضر الساق بمنقار مائل قليلًا إلى أعلى في مياه ضحلة",
+        "en": "Common Greenshank with a slightly upturned bill in shallow water",
+        "fr": "Chevalier aboyeur au bec légèrement retroussé dans une eau peu profonde"
+      },
+      "caption": {
+        "ar": "الطيطوي أخضر الساق",
+        "en": "Common Greenshank",
+        "fr": "Chevalier aboyeur"
+      }
+    },
+    {
+      "id": "redshank",
+      "path": "docs/media/publications/daily-birds-20261024/redshank.jpg",
+      "sha256": "7146a23f6684d3d368df61d2aa7840527fbfe34ac6e8c31fb6f5dc50584667e2",
+      "source_sha256": "72b086d780afec03dac10f04945a87c3a3e3658cdd8000c35da3975b018fbcc3",
+      "source_reference": "Charles J. Sharp; Dohat Arad Lagoon, Muharraq, Bahrain; capture 2022-02-18; original Library libfile_35670bdac08481919b260c691da316fe; rights record libfile_1a0c6e56f6cc8191b939c5fc99513324. Resized to 1600px width and JPEG re-encoded, no cropping/content alteration. Exact age, sex and subspecies not assigned.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Common_redshank_(Tringa_totanus)_Bahrain.jpg",
+      "rights": {
+        "status": "licensed",
+        "statement": "Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0. Resized and JPEG re-encoded only; derivative under same license.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Common_redshank_(Tringa_totanus)_Bahrain.jpg; Library libfile_1a0c6e56f6cc8191b939c5fc99513324; independent original-license and pixel review 2026-10-24.",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "alt": {
+        "ar": "طيطوي أحمر الساق يسير على أرض طينية في دوحة عراد بالبحرين",
+        "en": "Common Redshank walking across mud at Dohat Arad in Bahrain",
+        "fr": "Chevalier gambette marchant sur la vase à Dohat Arad, à Bahreïn"
+      },
+      "caption": {
+        "ar": "الطيطوي أحمر الساق",
+        "en": "Common Redshank",
+        "fr": "Chevalier gambette"
+      }
+    },
+    {
+      "id": "dunlin",
+      "path": "docs/media/publications/daily-birds-20261024/dunlin.jpg",
+      "sha256": "326182dff8cd40e465f830bb9ea9f90edd3bdffcb27753b750dfc872b1696164",
+      "source_sha256": "fdeb58620022bbab4e4b07d38ab574276a34af29f0805e50d0f58d212fa40291",
+      "source_reference": "Charles J. Sharp; Marken, Netherlands; capture 2026-04-07; original Library libfile_cd492827cd588191b2d3ac435094aed6; rights record libfile_7f05b9f62d1c8191b43dd4b8da5a68b0. Resized to 1600px width and JPEG re-encoded, no cropping/content alteration. Exact age, sex and subspecies not assigned.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dunlin_(Calidris_alpina)_non_breeding_Marken.jpg",
+      "rights": {
+        "status": "licensed",
+        "statement": "Charles J. Sharp / Wikimedia Commons, CC BY-SA 4.0. Resized and JPEG re-encoded only; derivative under same license.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Dunlin_(Calidris_alpina)_non_breeding_Marken.jpg; Library libfile_7f05b9f62d1c8191b43dd4b8da5a68b0; independent original-license and pixel review 2026-10-24.",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "alt": {
+        "ar": "دريجة ألبية بريش غير تكاثري ومنقار أسود منحنٍ قليلًا إلى أسفل",
+        "en": "Dunlin in nonbreeding plumage with a slightly downcurved black bill",
+        "fr": "Bécasseau variable en plumage internuptial, au bec noir légèrement arqué"
+      },
+      "caption": {
+        "ar": "الدريجة الألبية",
+        "en": "Dunlin",
+        "fr": "Bécasseau variable"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الطيطوي-أخضر-الساق-في-العالم-العربي",
+        "en": "common-greenshank-arab-world",
+        "fr": "chevalier-aboyeur-monde-arabe"
+      },
+      "published": "2026-10-24",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "greenshank"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الطيطوي أخضر الساق: زائر المياه الضحلة في العالم العربي",
+          "subtitle": "من السواحل إلى البرك الداخلية، يجمع هذا الطائر المهاجر بين ساقين مخضرتين ومنقار مائل قليلًا إلى أعلى.",
+          "meta_description": "من السواحل إلى البرك الداخلية، يجمع هذا الطائر المهاجر بين ساقين مخضرتين ومنقار مائل قليلًا إلى أعلى.",
+          "sections": [
+            {
+              "heading": "الاسم والتصنيف",
+              "paragraphs": [
+                "الطيطوي أخضر الساق، واسمه العلمي Tringa nebularia، طائر خوّاض من فصيلة الطيطويات والشناقب Scolopacidae، ضمن رتبة الزقزاقيات Charadriiformes. اسمه الإنجليزي Common Greenshank والفرنسي Chevalier aboyeur. وهو نوع مختلف عن الطيطوي الأخضر Tringa ochropus؛ تشابه الاسمين لا يعني أنهما طائر واحد."
+              ]
+            },
+            {
+              "heading": "كيف نتعرّف إليه؟",
+              "paragraphs": [
+                "له ساقان طويلتان بلون أخضر رمادي أو زيتوني، ومنقار قوي نسبيًا يميل طرفه قليلًا إلى أعلى. يبدو في الشتاء رماديًا من الأعلى وأبيض من الأسفل، مع تخطيط خفيف على الرأس والعنق. يزداد التباين والتنقيط الداكن في حلة التكاثر، بينما تحمل ريشات ظهر اليافع حواف فاتحة واضحة.",
+                "لا يكفي لون الساقين وحده للتعرف إليه. فالطيطوي البطائحي Tringa stagnatilis أصغر وأدق بنية، ومنقاره أنحف وأكثر استقامة. أما الطيطوي الأخضر فأقصر وأكثر تباينًا بين أعلاه الداكن وأسفله الأبيض. الجنسان متشابهان ظاهريًا، ولا يمكن الجزم بالجنس من صورة عامة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد المسطحات الطينية ومصبات الأنهار والبحيرات والبرك الضحلة، بما فيها بعض الأراضي الرطبة الاصطناعية. يلتقط اللافقاريات من الماء والطين، وقد يطارد أسماكًا صغيرة في المياه الضحلة. يتغذى منفردًا أو ضمن تجمعات صغيرة، ويمكن أن ينشط نهارًا وليلًا. ويُسمع له نداء رنان، كثيرًا ما يتكرر في مقاطع متتابعة."
+              ]
+            },
+            {
+              "heading": "دورة الحياة والتكاثر",
+              "paragraphs": [
+                "يتكاثر في مناطق شمال أوراسيا، حيث تتجاور الأراضي السبخية والمستنقعات مع الغابات المفتوحة أو الأراضي المكشوفة. يعشش على الأرض، وتضم الحضنة عادة ثلاثًا إلى أربع بيضات. تستطيع الفراخ التحرك والبحث عن الغذاء مبكرًا، مع استمرار حماية الأبوين ورعايتهما. وبعد موسم التكاثر تتجه الطيور إلى مناطق العبور والشتاء؛ وقد تبقى أفراد غير متكاثرة جنوب نطاق التعشيش خلال الصيف."
+              ]
+            },
+            {
+              "heading": "أين يظهر عربيًا، ولماذا يهم في الخريف؟",
+              "paragraphs": [
+                "الخريف فترة مناسبة لرصده مع وصول المهاجرين إلى المياه العربية أو استمرارهم نحو مناطق أبعد. توثق مراجع الأراضي الرطبة ظهوره عابرًا وزائرًا شتويًا في لبنان، كما تثبت تعدادات ليبيا الشتوية وجوده في مواقع ساحلية وداخلية. وهو من الطيور العابرة والشتوية المنتظمة في عُمان.",
+                "وتوثق الدراسات الميدانية ظهوره شتاءً في الأراضي الرطبة المغربية، كما تسجله تقارير حوض آرغين في موريتانيا شتاءً وأثناء العبور. وتدرجه تقارير جهاز شؤون البيئة المصري ضمن الطيور المرصودة في الأراضي الرطبة؛ وهذه أمثلة محلية وليست خريطة لوفرة متساوية في جميع البلدان.",
+                "في الإمارات تكثر مشاهداته بين أغسطس وأبريل على السواحل وعند الأراضي الرطبة، وقد تبقى أفراد قليلة غير متكاثرة صيفًا. وتختلف كثافته ومواعيد عبوره بين الخليج والمشرق وشمال أفريقيا؛ فلا يصح تحويل فترة الرصد في دولة واحدة إلى تقويم يشمل المنطقة كلها. وجوده صيفًا وحده لا يثبت التكاثر."
+              ]
+            },
+            {
+              "heading": "الأهمية البيئية والحماية",
+              "paragraphs": [
+                "يعتمد على شبكة متصلة من مواقع التغذية والراحة خلال الهجرة، لذا فإن حماية الساحل وحده لا تغني عن صون البرك والمستنقعات الداخلية. تصنيفه العالمي «أقل إثارة للقلق» LC، لكنه صُنّف «قريبًا من التهديد» NT في التقييم الوطني الإماراتي لعام 2019 المنشور سنة 2021؛ نطاقا التقييم مختلفان. تغيير استعمال السواحل والتلوث والإزعاج قد تقلل جودة موائله. وتتيح مراقبته من مسافة، دون مطاردته أو دفعه إلى الطيران المتكرر، مشاهدة سلوكه بأقل تدخل."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "المراجع: الاتحاد الدولي لحفظ الطبيعة وBirdLife International؛ القائمة الحمراء الوطنية لطيور الإمارات؛ الصندوق البريطاني لعلم الطيور BTO؛ خطة إدارة محمية جزر النخل؛ أطلس الطيور المائية المشتية في ليبيا؛ قائمة طيور عُمان."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Charles J. Sharp / Wikimedia Commons؛ دوحة عراد، البحرين، 18 فبراير 2022. ترخيص CC BY-SA 4.0؛ صُغّرت وأُعيد ضغطها دون قص أو تغيير المحتوى."
+        },
+        "en": {
+          "title": "Common Greenshank: a shallow-water visitor to the Arab world",
+          "subtitle": "From coasts to inland pools, this migrant combines greenish legs with a bill that turns slightly upwards.",
+          "meta_description": "From coasts to inland pools, this migrant combines greenish legs with a bill that turns slightly upwards.",
+          "sections": [
+            {
+              "heading": "Name and classification",
+              "paragraphs": [
+                "The Common Greenshank, Tringa nebularia, is a wader in the family Scolopacidae and order Charadriiformes. Its French name is Chevalier aboyeur. It is distinct from the Green Sandpiper, Tringa ochropus: similar common names do not denote the same species."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Its long legs are grey-green or olive, and its relatively robust bill turns slightly upwards towards the tip. Winter birds are grey above and white below, with light streaking on the head and neck. Breeding plumage has stronger contrast and darker markings; juveniles show conspicuous pale edges to their back feathers.",
+                "Leg colour alone is insufficient. Marsh Sandpiper, Tringa stagnatilis, is smaller and more delicately built, with a thinner, straighter bill. Green Sandpiper is shorter and more strongly contrasting, dark above and white below. The sexes look similar, and a general photograph does not reliably establish sex."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It uses mudflats, estuaries, lakes and shallow pools, including some artificial wetlands. It takes invertebrates from water and mud and may chase small fish through the shallows. It feeds alone or in small gatherings and can be active by day or night. Its ringing call is often delivered as a sequence of notes."
+              ]
+            },
+            {
+              "heading": "Life cycle and breeding",
+              "paragraphs": [
+                "It breeds in northern Eurasia where boggy ground and marshes adjoin open woodland or open country. It nests on the ground, usually laying three to four eggs. Chicks can move and seek food early, while still receiving parental protection and care. After breeding, birds move towards passage and wintering areas; some non-breeding individuals remain south of the breeding range in summer."
+              ]
+            },
+            {
+              "heading": "Arab distribution and autumn relevance",
+              "paragraphs": [
+                "Autumn is a useful time to look for migrants arriving at Arab wetlands or continuing farther south. Wetland references document passage and winter occurrence in Lebanon, while Libyan winter counts establish its presence at coastal and inland sites. It is a regular passage migrant and winter visitor in Oman.",
+                "Field studies also document winter occurrence at Moroccan wetlands, while Banc d’Arguin reports record wintering and passage in Mauritania. Egyptian Environmental Affairs Agency reports include it among birds recorded at wetlands. These are local examples, not a map of equal abundance across countries.",
+                "In the UAE, records are most numerous between August and April along coasts and at wetlands; a few non-breeding birds may remain in summer. Abundance and migration timing differ across the Gulf, the Levant and North Africa. One country’s observation period must not become a timetable for the entire region. Summer presence alone does not prove breeding."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Migration depends on a connected network of feeding and resting sites; protecting the coast does not replace conserving inland pools and marshes. Globally the species is Least Concern (LC), but the UAE national assessment conducted in 2019 and published in 2021 classified it as Near Threatened (NT): these assessments cover different geographic scales. Coastal land-use change, pollution and disturbance can reduce habitat quality. Watching from a distance, without chasing birds or repeatedly flushing them, allows their behaviour to be observed with less interference."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Sources: IUCN and BirdLife International; UAE National Red List of Birds; British Trust for Ornithology; Palm Islands reserve management plan; Atlas of Wintering Waterbirds of Libya; Oman bird list."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Charles J. Sharp / Wikimedia Commons; Dohat Arad, Bahrain, 18 February 2022. CC BY-SA 4.0; resized and recompressed without cropping or changing the content."
+        },
+        "fr": {
+          "title": "Le Chevalier aboyeur, visiteur des eaux peu profondes du monde arabe",
+          "subtitle": "Des côtes aux mares intérieures, ce migrateur associe des pattes verdâtres à un bec légèrement retroussé.",
+          "meta_description": "Des côtes aux mares intérieures, ce migrateur associe des pattes verdâtres à un bec légèrement retroussé.",
+          "sections": [
+            {
+              "heading": "Nom et classification",
+              "paragraphs": [
+                "Le Chevalier aboyeur, Tringa nebularia, est un limicole de la famille des Scolopacidae et de l’ordre des Charadriiformes. Son nom anglais est Common Greenshank. Il diffère du Chevalier culblanc, Tringa ochropus : la proximité de certains noms vernaculaires ne désigne pas une même espèce."
+              ]
+            },
+            {
+              "heading": "Comment le reconnaître ?",
+              "paragraphs": [
+                "Ses longues pattes sont gris-vert ou olivâtres et son bec, relativement robuste, se relève légèrement vers la pointe. En hiver, le dessus est gris et le dessous blanc, avec de fines stries sur la tête et le cou. Le plumage nuptial est plus contrasté et davantage marqué de sombre ; les jeunes portent des liserés clairs bien visibles sur les plumes du dos.",
+                "La couleur des pattes ne suffit pas. Le Chevalier stagnatile, Tringa stagnatilis, est plus petit et plus fin, avec un bec plus mince et plus droit. Le Chevalier culblanc est plus court et présente un contraste plus fort entre dessus sombre et dessous blanc. Les sexes se ressemblent et une photographie générale ne permet pas de déterminer sûrement le sexe."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il fréquente vasières, estuaires, lacs et mares peu profondes, y compris certains milieux humides artificiels. Il prélève des invertébrés dans l’eau et la vase et peut poursuivre de petits poissons. Il s’alimente seul ou en petits rassemblements, de jour comme de nuit. Son cri sonore est souvent composé d’une succession de notes."
+              ]
+            },
+            {
+              "heading": "Cycle de vie et reproduction",
+              "paragraphs": [
+                "Il niche dans le nord de l’Eurasie, là où tourbières et marais voisinent avec des boisements clairsemés ou des espaces ouverts. Le nid est au sol et la ponte compte habituellement trois à quatre œufs. Les poussins se déplacent et cherchent tôt leur nourriture, tout en restant protégés et accompagnés par leurs parents. Après la reproduction, les oiseaux gagnent leurs étapes migratoires et leurs quartiers d’hiver ; certains non-nicheurs restent en été au sud de l’aire de reproduction."
+              ]
+            },
+            {
+              "heading": "Présence arabe et intérêt automnal",
+              "paragraphs": [
+                "L’automne permet d’observer les migrateurs qui arrivent dans les zones humides arabes ou poursuivent leur route. Les références sur ces milieux attestent son passage et son hivernage au Liban ; les comptages hivernaux libyens documentent sa présence sur des sites côtiers et intérieurs. À Oman, c’est un migrateur de passage et un hivernant régulier.",
+                "Des études de terrain attestent aussi sa présence hivernale dans des zones humides marocaines, tandis que les rapports du banc d’Arguin documentent hivernage et passage en Mauritanie. Des rapports de l’Agence égyptienne des affaires environnementales le recensent dans des zones humides. Ces exemples locaux ne signifient pas une abondance identique dans tous les pays.",
+                "Aux Émirats arabes unis, les observations sont les plus nombreuses entre août et avril, sur les côtes et dans les zones humides ; quelques non-nicheurs peuvent rester en été. L’abondance et les dates de passage diffèrent entre le Golfe, le Levant et l’Afrique du Nord. Le calendrier d’un pays ne vaut donc pas pour toute la région. Une présence estivale ne prouve pas à elle seule la nidification."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Sa migration dépend d’un réseau de sites d’alimentation et de repos : protéger le littoral ne remplace pas la conservation des mares et marais intérieurs. L’espèce est classée « Préoccupation mineure » (LC) à l’échelle mondiale, mais « Quasi menacée » (NT) dans l’évaluation nationale émiratie menée en 2019 et publiée en 2021 : les échelles géographiques diffèrent. L’aménagement du littoral, la pollution et le dérangement peuvent dégrader ses habitats. L’observer à distance, sans le poursuivre ni provoquer des envols répétés, limite les perturbations."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Sources : UICN et BirdLife International ; Liste rouge nationale des oiseaux des Émirats arabes unis ; British Trust for Ornithology ; plan de gestion de la réserve des îles des Palmiers ; Atlas des oiseaux d’eau hivernant en Libye ; liste des oiseaux d’Oman."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Charles J. Sharp / Wikimedia Commons ; Dohat Arad, Bahreïn, 18 février 2022. CC BY-SA 4.0 ; redimensionnée et recompressée sans recadrage ni modification du contenu."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "related": [
+        "الطيطوي-الشائع-في-العالم-العربي",
+        "الغرة-الأوراسية-في-العالم-العربي"
+      ]
+    },
+    {
+      "slugs": {
+        "ar": "الطيطوي-أحمر-الساق-في-العالم-العربي",
+        "en": "common-redshank-arab-world",
+        "fr": "chevalier-gambette-monde-arabe"
+      },
+      "published": "2026-10-24",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "redshank"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الطيطوي أحمر الساق: علامة حمراء على ضفاف الشتاء",
+          "subtitle": "ساقان حمراوان وحافة جناح بيضاء تميزان خوّاضًا يصل إلى كثير من الأراضي الرطبة العربية خلال الهجرة والشتاء.",
+          "meta_description": "ساقان حمراوان وحافة جناح بيضاء تميزان خوّاضًا يصل إلى كثير من الأراضي الرطبة العربية خلال الهجرة والشتاء.",
+          "sections": [
+            {
+              "heading": "الاسم والتصنيف",
+              "paragraphs": [
+                "الطيطوي أحمر الساق Tringa totanus من فصيلة الطيطويات والشناقب Scolopacidae ورتبة الزقزاقيات Charadriiformes. اسمه الإنجليزي Common Redshank، والفرنسي Chevalier gambette. يرتبط بالمياه الضحلة، لكنه ليس الطيطوي أحمر الساق الأرقط Tringa erythropus، وهو نوع مستقل قد يلتبس به خارج موسم التكاثر."
+              ]
+            },
+            {
+              "heading": "علامات التعرف والفروق العمرية",
+              "paragraphs": [
+                "تلفت النظر ساقا البالغ الحمراوان أو البرتقاليتان المحمرتان، مع قاعدة منقار حمراء وطرف داكن. أعلاه بني رمادي، ويكون التنقيط أوضح في حلة التكاثر؛ أما حلة الشتاء فأهدأ لونًا وأقل زخرفة. تظهر أثناء الطيران حافة خلفية بيضاء عريضة للجناح، وهي علامة مهمة لا تقتصر على لون الساقين.",
+                "تبدو حواف ريش اليافع فاتحة ومنقطة، وقد تكون ساقاه أقل احمرارًا من ساقي البالغ. يتشابه الجنسان ظاهريًا. وللطيطوي أحمر الساق الأرقط منقار أطول وأرفع، ولا يحمل الحافة البيضاء العريضة نفسها؛ لذلك ينبغي الجمع بين شكل المنقار ونقش الجناح وبنية الجسم، لا الاعتماد على علامة منفردة."
+              ]
+            },
+            {
+              "heading": "موائل التغذية وسلوك الإنذار",
+              "paragraphs": [
+                "يرتاد المصبات والسبخات والشواطئ الطينية وأطراف البحيرات والمروج الرطبة. يلتقط اللافقاريات الصغيرة من سطح الطين أو يسبر الركيزة بمنقاره. تتغير فرص التغذية على الساحل مع انكشاف الطين وانحسار الماء، وتحتاج الطيور إلى مواقع آمنة للراحة عندما تغمر المياه مناطق التغذية.",
+                "هو طائر كثير النداء، وقد يطلق صفيرًا واضحًا عند اقتراب مصدر إزعاج. خارج التكاثر يمكن رؤيته مع خوّاضات أخرى، بينما تدافع الأزواج المتكاثرة عن محيط أعشاشها وقد تشترك في التنبيه إلى الخطر."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يتكاثر في أجزاء واسعة من أوراسيا، ولا تقتصر بيئته على الشواطئ؛ فالمروج المشبعة بالماء والمستنقعات من موائل التعشيش المهمة. يختبئ العش الأرضي بين النباتات، وتضم الحضنة عادة أربع بيضات. تغادر الفراخ العش وتبدأ التقاط غذائها مبكرًا، لكنها تحتاج إلى حماية الأبوين وإلى غطاء نباتي تختبئ فيه.",
+                "تلي موسم التكاثر حركة نحو مواقع التوقف والشتاء، وتختلف المسافات والمسارات بين الجماعات. وقد تبقى بعض الطيور غير المتكاثرة في مناطق الشتاء خلال الصيف؛ فلا يعني كل رصد صيفي وجود عش."
+              ]
+            },
+            {
+              "heading": "انتشاره العربي وموسمه",
+              "paragraphs": [
+                "تؤكد مراجع لبنان ظهوره عابرًا وزائرًا شتويًا، وتصفه مراجع قطر وعُمان بأنه مهاجر عابر وزائر شتوي منتظم. وتوثق القائمة الحمراء الإماراتية وجود جماعة غير متكاثرة، فيما تسجل مراجع الأراضي الرطبة العراقية والمصرية وجوده أيضًا.",
+                "في شمال أفريقيا يندرج ضمن طيور الأراضي الرطبة المشتية، ومنها مواقع ليبيا، لكن الدليل الإقليمي للتعرف إلى الطيور المائية يشير أيضًا إلى تعشيش محلي في تونس وليبيا. ولذلك لا يوصف كل وجود عربي له بأنه شتوي فقط. في الخريف يزداد الاهتمام بضفاف المياه ومناطق المد والجزر مع وصول المهاجرين، من دون افتراض موعد وصول موحد أو وفرة متساوية في البلدان."
+              ]
+            },
+            {
+              "heading": "قيمته البيئية وحالة الحفظ",
+              "paragraphs": [
+                "يربط غذائيًا بين اللافقاريات في الطين والطيور المفترسة، ويعتمد على بقاء الأراضي الرطبة صالحة للتغذية والتعشيش والراحة. تصنيفه العالمي «أقل إثارة للقلق» LC لا ينفي تراجع جماعات محلية أو إقليمية. تجفيف المروج الرطبة وتعديل السواحل والتلوث والإزعاج من الضغوط التي تستحق المتابعة. وحماية مواقع الشتاء يجب أن ترافقها حماية مواقع التكاثر على امتداد مساره."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "المراجع: BirdLife International؛ الصندوق البريطاني لعلم الطيور BTO؛ الوكالة الاتحادية الألمانية لحماية الطبيعة؛ القائمة الحمراء الوطنية لطيور الإمارات؛ Qatar e-Nature؛ الدليل الإقليمي للتعرف إلى الطيور المائية؛ مراجع جزر النخل وليبيا وعُمان."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Charles J. Sharp / Wikimedia Commons؛ دوحة عراد، البحرين، 18 فبراير 2022. ترخيص CC BY-SA 4.0؛ صُغّرت وأُعيد ضغطها دون قص أو تغيير المحتوى."
+        },
+        "en": {
+          "title": "Common Redshank: red legs beside winter wetlands",
+          "subtitle": "Red legs and a white trailing edge to the wing identify a wader that reaches many Arab wetlands on migration and in winter.",
+          "meta_description": "Red legs and a white trailing edge to the wing identify a wader that reaches many Arab wetlands on migration and in winter.",
+          "sections": [
+            {
+              "heading": "Name and classification",
+              "paragraphs": [
+                "Common Redshank, Tringa totanus, belongs to the family Scolopacidae and order Charadriiformes. Its French name is Chevalier gambette. Associated with shallow water, it is distinct from Spotted Redshank, Tringa erythropus, which can look similar outside the breeding season."
+              ]
+            },
+            {
+              "heading": "Identification and age differences",
+              "paragraphs": [
+                "Adults have red or orange-red legs and a red base to the bill, with a dark tip. The upperparts are grey-brown, more strongly marked in breeding plumage; winter plumage is plainer and less patterned. In flight, a broad white trailing edge to the wing is an important feature, beyond leg colour alone.",
+                "Juveniles have pale, spotted feather edges, and their legs may be less red than those of adults. The sexes look similar. Spotted Redshank has a longer, finer bill and lacks the same broad white wing edge. Identification therefore combines bill shape, wing pattern and body structure rather than a single feature."
+              ]
+            },
+            {
+              "heading": "Feeding habitat and alarm behaviour",
+              "paragraphs": [
+                "It uses estuaries, saltmarshes, mudflats, lake edges and wet grasslands. It picks small invertebrates from the mud surface or probes the substrate with its bill. Coastal feeding opportunities change as mud is exposed and water recedes; safe resting places are needed when feeding grounds are flooded.",
+                "It is a vocal bird and may give clear whistles when disturbed. Outside the breeding season it can occur with other waders; breeding pairs defend the area around their nests and may join in warning of danger."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "It breeds across extensive parts of Eurasia, not only near the sea: waterlogged grasslands and marshes are important nesting habitats. The ground nest is concealed among vegetation, and a clutch usually contains four eggs. Chicks leave the nest and begin taking food early, but need parental protection and vegetation in which to hide.",
+                "After breeding, birds move towards stopover and wintering sites; routes and distances differ between populations. Some non-breeding birds may remain in wintering areas during summer, so a summer sighting does not automatically indicate a nest."
+              ]
+            },
+            {
+              "heading": "Arab distribution and seasonality",
+              "paragraphs": [
+                "Lebanese references document passage and winter occurrence, while references for Qatar and Oman describe regular passage and winter visitors. The UAE national Red List documents a non-breeding population; Iraqi and Egyptian wetland references also record the species.",
+                "In North Africa it occurs among wintering wetland birds, including at Libyan sites, but the regional waterbird identification guide also reports local breeding in Tunisia and Libya. Its Arab occurrence must therefore not be described as exclusively wintering. Autumn brings renewed interest to water margins and tidal areas as migrants arrive, without implying one arrival date or equal abundance in every country."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It links mud-dwelling invertebrates to avian predators and depends on wetlands suitable for feeding, breeding and resting. Its global Least Concern (LC) classification does not rule out local or regional declines. Wet-grassland drainage, coastal alteration, pollution and disturbance are pressures worth monitoring. Protecting wintering sites must be accompanied by protection of breeding habitats along its migratory range."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Sources: BirdLife International; British Trust for Ornithology; German Federal Agency for Nature Conservation; UAE National Red List of Birds; Qatar e-Nature; regional waterbird identification guide; Palm Islands, Libya and Oman references."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Charles J. Sharp / Wikimedia Commons; Dohat Arad, Bahrain, 18 February 2022. CC BY-SA 4.0; resized and recompressed without cropping or changing the content."
+        },
+        "fr": {
+          "title": "Le Chevalier gambette, des pattes rouges au bord des eaux hivernales",
+          "subtitle": "Des pattes rouges et un large bord postérieur blanc à l’aile distinguent ce limicole présent dans de nombreuses zones humides arabes en migration et en hiver.",
+          "meta_description": "Des pattes rouges et un large bord postérieur blanc à l’aile distinguent ce limicole présent dans de nombreuses zones humides arabes en migration et en hiver.",
+          "sections": [
+            {
+              "heading": "Nom et classification",
+              "paragraphs": [
+                "Le Chevalier gambette, Tringa totanus, appartient à la famille des Scolopacidae et à l’ordre des Charadriiformes. Son nom anglais est Common Redshank. Associé aux eaux peu profondes, il diffère du Chevalier arlequin, Tringa erythropus, qui peut lui ressembler hors période de reproduction."
+              ]
+            },
+            {
+              "heading": "Identification et différences d’âge",
+              "paragraphs": [
+                "L’adulte possède des pattes rouges ou rouge orangé et un bec à base rouge et pointe sombre. Le dessus est gris-brun, davantage marqué en plumage nuptial ; le plumage hivernal est plus uniforme. En vol, un large bord postérieur blanc à l’aile constitue un critère important, au-delà de la seule couleur des pattes.",
+                "Les jeunes ont des bordures de plumes claires et tachetées ; leurs pattes peuvent être moins rouges que celles des adultes. Les sexes se ressemblent. Le Chevalier arlequin a un bec plus long et plus fin et ne présente pas le même large bord blanc à l’aile. Il faut donc associer forme du bec, dessin alaire et silhouette plutôt que se fier à un seul caractère."
+              ]
+            },
+            {
+              "heading": "Alimentation et comportement d’alarme",
+              "paragraphs": [
+                "Il fréquente estuaires, marais salés, vasières, berges lacustres et prairies humides. Il capture de petits invertébrés en surface ou sonde le substrat avec son bec. Sur le littoral, les possibilités d’alimentation évoluent avec l’émersion des vasières et le retrait de l’eau ; des reposoirs sûrs sont nécessaires lorsque les zones de nourrissage sont submergées.",
+                "C’est un oiseau sonore, qui peut émettre des sifflements nets lorsqu’il est dérangé. Hors reproduction, il côtoie d’autres limicoles ; les couples nicheurs défendent les alentours de leur nid et peuvent participer à une alarme collective."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Il niche dans une grande partie de l’Eurasie, pas uniquement près de la mer : prairies détrempées et marais sont des habitats de reproduction importants. Le nid au sol est dissimulé dans la végétation et la ponte compte généralement quatre œufs. Les poussins quittent le nid et commencent tôt à se nourrir, mais ont besoin de la protection parentale et d’un couvert végétal pour se cacher.",
+                "Après la reproduction, les oiseaux gagnent les étapes migratoires et les quartiers d’hiver ; distances et itinéraires varient selon les populations. Certains non-nicheurs restent sur les sites d’hivernage en été : une observation estivale ne révèle donc pas automatiquement un nid."
+              ]
+            },
+            {
+              "heading": "Répartition arabe et saisonnalité",
+              "paragraphs": [
+                "Les références libanaises attestent son passage et son hivernage ; celles du Qatar et d’Oman le décrivent comme migrateur et hivernant régulier. La Liste rouge nationale émiratie documente une population non nicheuse ; des références sur les zones humides irakiennes et égyptiennes mentionnent également l’espèce.",
+                "En Afrique du Nord, il figure parmi les oiseaux d’eau hivernants, notamment sur des sites libyens, mais le guide régional d’identification des oiseaux d’eau signale également une nidification locale en Tunisie et en Libye. Sa présence arabe n’est donc pas exclusivement hivernale. L’automne renouvelle l’intérêt des berges et espaces intertidaux avec l’arrivée des migrateurs, sans supposer une date unique ni une abondance identique dans tous les pays."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Il relie les invertébrés de la vase aux oiseaux prédateurs et dépend de zones humides propices à l’alimentation, à la reproduction et au repos. Son classement mondial « Préoccupation mineure » (LC) n’exclut pas des déclins locaux ou régionaux. Drainage des prairies humides, transformation du littoral, pollution et dérangement sont des pressions à suivre. La protection des sites d’hivernage doit accompagner celle des habitats de reproduction sur son aire migratoire."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Sources : BirdLife International ; British Trust for Ornithology ; Agence fédérale allemande pour la conservation de la nature ; Liste rouge nationale des oiseaux des Émirats arabes unis ; Qatar e-Nature ; guide régional d’identification des oiseaux d’eau ; références des îles des Palmiers, de Libye et d’Oman."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Charles J. Sharp / Wikimedia Commons ; Dohat Arad, Bahreïn, 18 février 2022. CC BY-SA 4.0 ; redimensionnée et recompressée sans recadrage ni modification du contenu."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "related": [
+        "الطيطوي-الشائع-في-العالم-العربي",
+        "الغرة-الأوراسية-في-العالم-العربي"
+      ]
+    },
+    {
+      "slugs": {
+        "ar": "الدريجة-الألبية-في-العالم-العربي",
+        "en": "dunlin-arab-world",
+        "fr": "becasseau-variable-monde-arabe"
+      },
+      "published": "2026-10-24",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "dunlin"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الدريجة الألبية: خوّاض صغير يصل الشمال بالشواطئ العربية",
+          "subtitle": "يتبدل ريشها بين بطن أسود صيفًا وحلة رمادية شتاءً، وتجمع مسيرتها بين أراضي التكاثر الشمالية وسواحل العبور والشتاء.",
+          "meta_description": "يتبدل ريشها بين بطن أسود صيفًا وحلة رمادية شتاءً، وتجمع مسيرتها بين أراضي التكاثر الشمالية وسواحل العبور والشتاء.",
+          "sections": [
+            {
+              "heading": "الاسم والتصنيف",
+              "paragraphs": [
+                "الدريجة الألبية Calidris alpina، وترد أيضًا باسم الدريجة المتغيرة في مراجع عربية، هي خوّاض صغير من فصيلة الطيطويات والشناقب Scolopacidae، ضمن رتبة الزقزاقيات Charadriiformes. اسمها الإنجليزي Dunlin والفرنسي Bécasseau variable. وتعدد التسميات لا يعني تعدد الأنواع."
+              ]
+            },
+            {
+              "heading": "الريش والعمر والأنواع المتشابهة",
+              "paragraphs": [
+                "لها منقار أسود يميل قليلًا إلى أسفل وساقان داكنتان. في حلة التكاثر تظهر بقعة سوداء على البطن، مع ظهر مرقش بلون بني محمر؛ وفي الشتاء يصبح الظهر رماديًا والبطن أبيض. وقد تحمل الطيور الواصلة في الخريف بقايا من الريش الصيفي، فلا تكون كل الأفراد متطابقة.",
+                "يظهر على اليافع نقش أوضح وحواف فاتحة لريش الظهر، مع تنقيط داكن في الأسفل. يتشابه الجنسان، وطول المنقار يتفاوت؛ لذلك لا يُحسم الجنس من لقطة عامة. الدريجة الكروانية Calidris ferruginea أطول ساقًا ومنقارًا عادة، أما الدريجة البيضاء Calidris alba فأفتح شتاءً وأقصر منقارًا. تُقرأ هذه الصفات مجتمعة، لأن اختلاف العمر والقلش يزيد صعوبة المقارنة."
+              ]
+            },
+            {
+              "heading": "الغذاء وإيقاع المد والجزر",
+              "paragraphs": [
+                "تبحث عن الديدان والرخويات والقشريات والحشرات وغيرها من اللافقاريات، بالتقاطها أو بسبر الطين والرمل الرطب. وعلى السواحل يتغير مكان التغذية بحسب المد والجزر؛ وعندما تغمر المياه المسطحات الطينية تتجمع الطيور في مواقع راحة قريبة.",
+                "تشتهر بأسرابها المتماسكة التي تبدل اتجاهها فتبدو تارة داكنة وتارة فاتحة. لكنها قد تظهر أيضًا في مجموعات صغيرة عند البحيرات والبرك الداخلية خلال العبور. ولا يعني العدد الكبير في بقعة واحدة أن حال النوع آمنة في جميع أجزاء انتشاره."
+              ]
+            },
+            {
+              "heading": "دورة الحياة والتكاثر",
+              "paragraphs": [
+                "تقع مناطق تكاثرها أساسًا في النطاقات الشمالية والقطبية وشبه القطبية، بما فيها التندرا والمروج والأراضي الخثية الرطبة. يُبنى العش على الأرض، وتضم الحضنة عادة أربع بيضات. الفراخ قادرة على الحركة والبحث عن الغذاء مبكرًا، لكنها تظل بحاجة إلى رعاية وحماية خلال نموها.",
+                "بعد التكاثر تغادر الجماعات إلى مناطق الشتاء عبر مسارات مختلفة. توضح بيانات التحجيل أن بعض الطيور التي تتكاثر في أوروبا تصل إلى شمال أفريقيا، بينما تتجه جماعات أخرى إلى مناطق مختلفة؛ وليست كل الدريجات العربية قادمة من بلد واحد أو سالكة طريقًا واحدًا."
+              ]
+            },
+            {
+              "heading": "الانتشار العربي والملاءمة الموسمية",
+              "paragraphs": [
+                "يمتد وجودها العربي من موريتانيا والمغرب العربي إلى مصر والمشرق والعراق والخليج وشبه الجزيرة العربية، مع اختلاف الوفرة وصفة الوجود محليًا. لحوض آرغين في موريتانيا أهمية خاصة بوصفه منطقة شتاء لبعض الجماعات الشمالية. وفي ليبيا توثق التعدادات الشتوية انتشارها على الساحل وفي بعض الأراضي الرطبة الداخلية.",
+                "في لبنان ترد بوصفها مهاجرًا عابرًا وزائرًا شتويًا، وفي عُمان من الخوّاضات المنتظمة خلال العبور والشتاء. يجعل الخريف البحث عنها مناسبًا عند السواحل والبرك، لكن رؤية طائر خارج الموسم المعتاد لا تكفي لاعتباره مقيمًا أو متكاثرًا، كما لا تثبت قائمة وجود وطنية أن كل مواقع الدولة تستقبل أعدادًا منتظمة."
+              ]
+            },
+            {
+              "heading": "الأهمية البيئية وحالة الحفظ",
+              "paragraphs": [
+                "صُنّفت الدريجة الألبية عالميًا «قريبة من التهديد» NT في تقييم الاتحاد الدولي لحفظ الطبيعة لعام 2024، مع اتجاه عام إلى التراجع. وهذا أحدث من مراجع ما زالت تعرض التصنيف السابق «أقل إثارة للقلق». يرتبط مستقبلها بسلامة مواقع التكاثر الشمالية ومناطق التوقف والشتاء معًا.",
+                "تؤثر خسارة المسطحات الطينية وتدهور الأراضي الرطبة والإزعاج في إمكان حصول الطيور على الغذاء والراحة. يمكن للمراقبين المساعدة بتوثيق النوع والموقع والتاريخ، مع تجنب اقتحام تجمعات الراحة أو إجبارها على الإقلاع مرارًا."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "المراجع: BirdLife International وتقييم القائمة الحمراء العالمية 2024؛ الصندوق البريطاني لعلم الطيور BTO؛ متحف Naturalis للتنوع الحيوي؛ الجمعية الملكية لحماية الطيور RSPB؛ أطلس الطيور المائية المشتية في ليبيا؛ مراجع جزر النخل وعُمان؛ Birds Canada/Avibase."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Charles J. Sharp / Wikimedia Commons؛ ماركن، هولندا، 7 أبريل 2026. ترخيص CC BY-SA 4.0؛ صُغّرت وأُعيد ضغطها دون قص أو تغيير المحتوى."
+        },
+        "en": {
+          "title": "Dunlin: a small wader linking the north to Arab shores",
+          "subtitle": "Its plumage changes from a black summer belly to winter grey, while its journeys connect northern breeding habitats with passage and wintering coasts.",
+          "meta_description": "Its plumage changes from a black summer belly to winter grey, while its journeys connect northern breeding habitats with passage and wintering coasts.",
+          "sections": [
+            {
+              "heading": "Name and classification",
+              "paragraphs": [
+                "Dunlin, Calidris alpina, is a small wader in the family Scolopacidae and order Charadriiformes. Its French name is Bécasseau variable. Arabic references use both al-durayja al-albiyya and al-durayja al-mutaghayyira; these alternative names do not denote different species."
+              ]
+            },
+            {
+              "heading": "Plumage, age and similar species",
+              "paragraphs": [
+                "It has a black bill curving slightly downwards and dark legs. Breeding plumage includes a black belly patch and reddish-brown patterned upperparts; in winter, the back is grey and the belly white. Birds arriving in autumn may retain some summer feathers, so individuals need not look identical.",
+                "Juveniles show stronger patterning and pale edges to their back feathers, with dark spotting below. The sexes look similar and bill length varies, so a general photograph does not establish sex. Curlew Sandpiper, Calidris ferruginea, usually has longer legs and a longer bill; Sanderling, Calidris alba, is paler in winter and shorter-billed. These features must be considered together because age and moult complicate comparisons."
+              ]
+            },
+            {
+              "heading": "Food and the tidal rhythm",
+              "paragraphs": [
+                "It takes worms, molluscs, crustaceans, insects and other invertebrates by picking or probing wet mud and sand. Coastal feeding areas change with the tides; when water covers the mudflats, birds gather at nearby roosts.",
+                "Its close-knit flocks are striking: as they turn, they appear alternately dark and pale. Small groups also occur beside inland lakes and pools during passage. Large numbers at one site do not establish that the species is secure throughout its range."
+              ]
+            },
+            {
+              "heading": "Life cycle and breeding",
+              "paragraphs": [
+                "Breeding areas lie mainly in northern, Arctic and sub-Arctic regions, including tundra, grasslands and wet peatlands. The nest is on the ground and a clutch usually contains four eggs. Chicks can move and seek food early but still need care and protection while growing.",
+                "After breeding, populations leave for wintering areas along different routes. Ringing data show that some European breeders reach North Africa, whereas other populations travel elsewhere. Dunlins in Arab countries do not all originate in one country or follow a single route."
+              ]
+            },
+            {
+              "heading": "Arab distribution and seasonal relevance",
+              "paragraphs": [
+                "Its Arab range extends from Mauritania and the Maghreb to Egypt, the Levant, Iraq, the Gulf and the Arabian Peninsula, with local differences in abundance and occurrence. Banc d’Arguin in Mauritania is particularly important as a wintering area for some northern populations. Libyan winter surveys document coastal distribution and use of some inland wetlands.",
+                "In Lebanon it is recorded as a passage migrant and winter visitor; in Oman it is a regular wader during passage and winter. Autumn is therefore a useful season to look along coasts and pools. An out-of-season bird does not by itself establish residence or breeding, and inclusion on a national list does not mean regular numbers occur at every site in that country."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "The IUCN global assessment of 2024 classified Dunlin as Near Threatened (NT), with an overall declining trend. This supersedes references still displaying its former Least Concern category. Its future depends on northern breeding habitats and on passage and wintering sites together.",
+                "Loss of mudflats, wetland degradation and disturbance affect opportunities to feed and rest. Observers can help by recording species, location and date while avoiding intrusion into roosts or repeatedly forcing birds to fly."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Sources: BirdLife International and the 2024 global Red List assessment; British Trust for Ornithology; Naturalis biodiversity museum; Royal Society for the Protection of Birds; Atlas of Wintering Waterbirds of Libya; Palm Islands and Oman references; Birds Canada/Avibase."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Charles J. Sharp / Wikimedia Commons; Marken, Netherlands, 7 April 2026. CC BY-SA 4.0; resized and recompressed without cropping or changing the content."
+        },
+        "fr": {
+          "title": "Le Bécasseau variable, un petit limicole entre le Nord et les rivages arabes",
+          "subtitle": "Son plumage passe du ventre noir estival au gris hivernal, tandis que ses déplacements relient les habitats de reproduction nordiques aux côtes de passage et d’hivernage.",
+          "meta_description": "Son plumage passe du ventre noir estival au gris hivernal, tandis que ses déplacements relient les habitats de reproduction nordiques aux côtes de passage et d’hivernage.",
+          "sections": [
+            {
+              "heading": "Nom et classification",
+              "paragraphs": [
+                "Le Bécasseau variable, Calidris alpina, est un petit limicole de la famille des Scolopacidae et de l’ordre des Charadriiformes. Son nom anglais est Dunlin. Les références arabes emploient notamment al-durayja al-albiyya et al-durayja al-mutaghayyira : ces appellations ne désignent pas des espèces différentes."
+              ]
+            },
+            {
+              "heading": "Plumage, âge et espèces proches",
+              "paragraphs": [
+                "Il possède un bec noir légèrement recourbé vers le bas et des pattes sombres. Le plumage nuptial montre une tache noire sur le ventre et un dessus brun-roux marqué ; en hiver, le dos est gris et le ventre blanc. Les oiseaux arrivant en automne peuvent conserver des plumes estivales : tous les individus n’ont donc pas le même aspect.",
+                "Les jeunes présentent un dessin plus marqué, des liserés clairs sur les plumes du dos et des taches sombres dessous. Les sexes se ressemblent et la longueur du bec varie ; une photographie générale ne permet pas de déterminer le sexe. Le Bécasseau cocorli, Calidris ferruginea, a généralement des pattes et un bec plus longs ; le Bécasseau sanderling, Calidris alba, est plus pâle en hiver et plus court de bec. Âge et mue imposent de combiner les critères."
+              ]
+            },
+            {
+              "heading": "Alimentation et rythme des marées",
+              "paragraphs": [
+                "Il capture vers, mollusques, crustacés, insectes et autres invertébrés en picorant ou en sondant la vase et le sable humides. Sur le littoral, les zones de nourrissage changent avec les marées ; quand les vasières sont submergées, les oiseaux rejoignent des reposoirs voisins.",
+                "Ses vols groupés sont remarquables : au gré des changements de direction, ils paraissent tantôt sombres, tantôt clairs. De petites troupes fréquentent aussi lacs et mares intérieurs en migration. Un rassemblement important ne démontre pas que l’espèce se porte bien dans toute son aire."
+              ]
+            },
+            {
+              "heading": "Cycle de vie et reproduction",
+              "paragraphs": [
+                "Les zones de reproduction se situent surtout dans les régions nordiques, arctiques et subarctiques : toundras, prairies et tourbières humides. Le nid est au sol et la ponte compte généralement quatre œufs. Les poussins se déplacent et recherchent tôt leur nourriture, mais nécessitent encore soins et protection pendant leur croissance.",
+                "Après la reproduction, les populations gagnent leurs quartiers d’hiver par différents itinéraires. Le baguage montre que certains nicheurs européens atteignent l’Afrique du Nord, tandis que d’autres populations vont ailleurs. Les bécasseaux présents dans les pays arabes ne viennent pas tous d’un même pays et ne suivent pas une route unique."
+              ]
+            },
+            {
+              "heading": "Répartition arabe et intérêt saisonnier",
+              "paragraphs": [
+                "Sa présence arabe s’étend de la Mauritanie et du Maghreb à l’Égypte, au Levant, à l’Irak, au Golfe et à la péninsule Arabique, avec des différences locales d’abondance et de statut. Le banc d’Arguin, en Mauritanie, est un site d’hivernage particulièrement important pour certaines populations nordiques. Les comptages hivernaux libyens documentent une répartition côtière ainsi que l’utilisation de certaines zones humides intérieures.",
+                "Au Liban, il est mentionné comme migrateur de passage et hivernant ; à Oman, c’est un limicole régulier en migration et en hiver. L’automne convient donc à sa recherche sur les côtes et près des mares. Une observation hors saison ne démontre ni résidence ni reproduction ; une liste nationale ne signifie pas non plus que chaque site du pays accueille régulièrement des effectifs."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "L’évaluation mondiale de l’UICN de 2024 classe le Bécasseau variable « Quasi menacé » (NT), avec une tendance générale au déclin. Elle remplace les références affichant encore son ancien statut « Préoccupation mineure ». Son avenir dépend à la fois des habitats de reproduction nordiques et des étapes migratoires et quartiers d’hiver.",
+                "La disparition des vasières, la dégradation des zones humides et le dérangement réduisent les possibilités d’alimentation et de repos. Les observateurs peuvent contribuer en notant espèce, lieu et date, sans pénétrer dans les reposoirs ni provoquer des envols répétés."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Sources : BirdLife International et évaluation mondiale de la Liste rouge 2024 ; British Trust for Ornithology ; musée de la biodiversité Naturalis ; Royal Society for the Protection of Birds ; Atlas des oiseaux d’eau hivernant en Libye ; références des îles des Palmiers et d’Oman ; Birds Canada/Avibase."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Charles J. Sharp / Wikimedia Commons ; Marken, Pays-Bas, 7 avril 2026. CC BY-SA 4.0 ; redimensionnée et recompressée sans recadrage ni modification du contenu."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "related": [
+        "الطيطوي-الشائع-في-العالم-العربي",
+        "الغرة-الأوراسية-في-العالم-العربي"
+      ]
+    }
+  ]
+}
