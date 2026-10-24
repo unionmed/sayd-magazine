@@ -458,13 +458,13 @@
     ],
     "channel_config": "content/tv-channel.json",
     "channel_order": [
+      "P2nk8V1Muls",
       "-Id9SK67khA",
       "ZSsRE2RGKps",
       "Tg9SqzPX8K8",
       "F3Wy0CJc_3w",
       "IJ73ib8gULw",
-      "MmOLLjHzakw",
-      "fuv6vglsx2k"
+      "MmOLLjHzakw"
     ],
     "selection_order": "tv_slugs",
     "unavailable_external_video": "Keep editorial record and show unavailable status; do not silently substitute or download without rights."

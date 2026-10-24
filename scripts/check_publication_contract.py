@@ -4,7 +4,7 @@ import argparse, hashlib, json, re, subprocess
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from lxml import html
-from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, local_slug, channel_config, channel_date
+from refresh_homepage_doors import ROOT, DOCS, config, validate_config, DOORS, local_slug, channel_config, channel_date, channel_href
 import seo_foundation as seo
 from analytics_only_change import analytics_only_repair
 from related_images_only_change import related_images_only_repair
@@ -154,7 +154,7 @@ def check(base=None):
                 if card.get('data-video-id'):
                     video=next((v for v in channel_videos if v['id']==card.get('data-video-id')),None)
                     assert video is not None,f'{lang}: unapproved channel card'
-                    assert card.xpath('.//a/@href')==[f"https://www.youtube.com/watch?v={video['id']}"]*2
+                    assert card.xpath('.//a/@href')==[channel_href(video)]*2
                     assert card.xpath('.//h3/a/text()')==[video['titles'][lang]]
                     assert card.xpath('.//div[@class="meta"]/text()')==[channel_date(video['published_at'],lang)],f'{lang}: channel publication date must be localized'
                     assert card.xpath('.//img/@src')==[video['image']]
