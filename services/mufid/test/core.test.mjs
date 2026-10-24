@@ -129,3 +129,12 @@ test('an unverified family camp returns an explicit review note, never an accept
  const h=createHandler(async()=>{calls++;return Response.json({status:'completed',output:[{type:'web_search_call',status:'completed',action:{sources:f.sources.map(s=>({type:'url',...s}))}},{type:'message',content:[{type:'output_text',text:JSON.stringify(f.plan)}]}]});});
  const r=await h(req({mode:'plan',query:'خيمة لعائلة مع طفلين',trip:{activities:['camping']}}),env());const data=await r.json();assert.equal(r.status,200);assert.equal(calls,2);assert.equal(data.camping_review_required,true);assert.equal(data.verified,false);assert.equal(data.itinerary,undefined);assert.equal(data.error,undefined);assert.ok(data.answer.includes('السعة'));
 });
+test('internal QA deduplicates completed cases, releases rate-limited attempts, and never creates a public route',async()=>{
+ const storage=new Store(),guard=new MufidGuard({storage},{});const call=(path,value)=>guard.fetch(new Request('https://guard/'+path,{method:'POST',body:JSON.stringify(value)}));
+ const key={day:'2026-10-24',id:'regional-01-akkar-light'};
+ assert.equal((await call('qa-claim',key)).status,200);assert.equal((await call('qa-claim',key)).status,409);
+ await call('qa-complete',{...key,result:{id:key.id,status:200,result:{answer:'test'},calls:[]}});
+ const cached=await call('qa-claim',key);assert.equal(cached.status,208);assert.equal((await cached.json()).result.result.answer,'test');
+ const limited={...key,id:'regional-01-akkar-activity'};await call('qa-claim',limited);await call('qa-complete',{...limited,result:{status:429}});assert.equal((await call('qa-claim',limited)).status,200);
+ assert.equal((await createHandler()(req({},'/qa-claim'),env())).status,404);
+});

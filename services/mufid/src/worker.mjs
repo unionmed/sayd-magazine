@@ -113,6 +113,17 @@ export class MufidGuard {
   constructor(ctx,env){this.ctx=ctx;this.env=env;}
   async fetch(request) {
     const path=new URL(request.url).pathname;
+    // Internal fixed-case QA only. No public HTTP route forwards these paths.
+    if(path==='/qa-claim'||path==='/qa-complete'){
+      const v=await request.json();if(!/^(?:regional-|chouf-|hunting-|hiking-|nature-|family-)[a-z0-9-]{1,100}$/.test(v.id||'')||!/^\d{4}-\d{2}-\d{2}$/.test(v.day||''))return json({error:'qa_input'},400);
+      const key='qa:'+v.day+':'+v.id;
+      if(path==='/qa-complete'){
+        if(v.result?.status===429){await this.ctx.storage.delete(key);return json({released:true});}
+        const row={result:v.result,expires_at:Date.now()+14*86400000};if(new TextEncoder().encode(JSON.stringify(row)).length>100000)return json({error:'qa_size'},413);await this.ctx.storage.put(key,row);return json({saved:true});
+      }
+      const claimed=await this.ctx.storage.transaction(async tx=>{const prior=await tx.get(key);if(prior)return prior;await tx.put(key,{pending:true,expires_at:Date.now()+14*86400000});return null;});
+      if(claimed?.result)return json({result:claimed.result},208);if(claimed)return json({error:'evaluation_in_progress'},409);return json({claimed:true});
+    }
     if(path==='/reserve') {
       const v=await request.json(), now=Date.now();
       const ok=await this.ctx.storage.transaction(async tx=>{
@@ -137,6 +148,6 @@ export class MufidGuard {
     }
     return json({error:'route'},404);
   }
-  async clean(){const rows=await this.ctx.storage.list({prefix:'suggestion:'});for(const [key,row] of rows)if(row.expires_at<=Date.now())await this.ctx.storage.delete(key);}
-  async alarm(){await this.clean();await this.ctx.storage.delete('limits');if((await this.ctx.storage.list({prefix:'suggestion:',limit:1})).size)await this.ctx.storage.setAlarm(Date.now()+86400000);}
+  async clean(){for(const prefix of ['suggestion:','qa:']){const rows=await this.ctx.storage.list({prefix});for(const [key,row] of rows)if(row.expires_at<=Date.now())await this.ctx.storage.delete(key);}}
+  async alarm(){await this.clean();await this.ctx.storage.delete('limits');if((await this.ctx.storage.list({prefix:'suggestion:',limit:1})).size||(await this.ctx.storage.list({prefix:'qa:',limit:1})).size)await this.ctx.storage.setAlarm(Date.now()+86400000);}
 }

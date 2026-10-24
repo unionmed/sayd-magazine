@@ -1,0 +1,982 @@
+{
+  "id": "mufid-regions-20261024",
+  "timezone": "Asia/Beirut",
+  "start_date": "2026-10-24",
+  "end_date": "2026-11-02",
+  "expires_at": "2026-11-03T00:00:00Z",
+  "daily_cases": 6,
+  "total_runs": 60,
+  "batches": [
+    {
+      "date": "2026-10-24",
+      "region": "عكار",
+      "focus": "القبيات والقموعة",
+      "cases": [
+        {
+          "id": "regional-01-akkar-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من طرابلس إلى عكار نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "عكار، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-01-akkar-activity",
+          "lang": "ar",
+          "query": "هايكينغ في القموعة بحدود ساعتين، مسار واحد محدد ببدايته وطوله وصعوبته؛ لا أريد اسم غابة فقط.",
+          "trip": {
+            "destination": "عكار، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "moderate",
+            "activities": [
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-01-akkar-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن عكار، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "عكار، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-01-akkar-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن عكار: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "عكار، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-01-akkar-hunting",
+          "lang": "ar",
+          "query": "بدي رحلة صيد طيور في عكار هذا الأسبوع، انطلاقًا من طرابلس. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+          "trip": {
+            "destination": "عكار، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-01-akkar-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من طرابلس إلى عكار نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "عكار، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-01-akkar-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "region": "طرابلس والضنية",
+      "focus": "الضنية ومحيط طرابلس",
+      "cases": [
+        {
+          "id": "regional-02-north-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من طرابلس إلى طرابلس والضنية نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "طرابلس والضنية، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-02-north-activity",
+          "lang": "ar",
+          "query": "نزهة مراقبة طيور وتصوير في محيط طرابلس والضنية. أين أذهب تحديدًا وماذا يُحتمل أن أرى بهذا الموسم؟ اربط أسماء الطيور بصفحات موسوعة صيد المتاحة ولا تضمن المشاهدة.",
+          "trip": {
+            "destination": "طرابلس والضنية، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "birds",
+              "photography"
+            ]
+          }
+        },
+        {
+          "id": "regional-02-north-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن طرابلس والضنية، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "طرابلس والضنية، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-02-north-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن طرابلس والضنية: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "طرابلس والضنية، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-02-north-hunting",
+          "lang": "ar",
+          "query": "بدي رحلة صيد طيور في طرابلس والضنية هذا الأسبوع، انطلاقًا من طرابلس. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+          "trip": {
+            "destination": "طرابلس والضنية، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-02-north-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من طرابلس إلى طرابلس والضنية نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "طرابلس والضنية، لبنان",
+            "origin": "طرابلس",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-02-north-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-26",
+      "region": "إهدن ومنطقة الأرز",
+      "focus": "إهدن والأرز",
+      "cases": [
+        {
+          "id": "regional-03-cedars-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من زغرتا إلى إهدن ومنطقة الأرز نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "إهدن ومنطقة الأرز، لبنان",
+            "origin": "زغرتا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-03-cedars-activity",
+          "lang": "fr",
+          "query": "Propose une seule randonnée de deux heures au maximum dans la région de إهدن ومنطقة الأرز, au Liban, pour deux personnes en forme moyenne. Indique le point de départ précis, la longueur et son sens (aller simple ou aller-retour), la difficulté et la carte. Les données du sentier doivent venir d’une source fiable et l’accès actuel doit être vérifié.",
+          "trip": {
+            "destination": "إهدن ومنطقة الأرز، لبنان",
+            "origin": "زغرتا",
+            "transport": "car",
+            "effort": "moderate",
+            "activities": [
+              "walking",
+              "photography"
+            ]
+          }
+        },
+        {
+          "id": "regional-03-cedars-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن إهدن ومنطقة الأرز، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "إهدن ومنطقة الأرز، لبنان",
+            "origin": "زغرتا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-03-cedars-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن إهدن ومنطقة الأرز: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "إهدن ومنطقة الأرز، لبنان",
+            "origin": "زغرتا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-03-cedars-hunting",
+          "lang": "ar",
+          "query": "بدي رحلة صيد طيور في إهدن ومنطقة الأرز هذا الأسبوع، انطلاقًا من زغرتا. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+          "trip": {
+            "destination": "إهدن ومنطقة الأرز، لبنان",
+            "origin": "زغرتا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-03-cedars-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من زغرتا إلى إهدن ومنطقة الأرز نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "إهدن ومنطقة الأرز، لبنان",
+            "origin": "زغرتا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-03-cedars-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "region": "جبيل ودومّا",
+      "focus": "جبيل ودومّا",
+      "cases": [
+        {
+          "id": "regional-04-jbeil-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من جبيل إلى جبيل ودومّا نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "جبيل ودومّا، لبنان",
+            "origin": "جبيل",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-04-jbeil-activity",
+          "lang": "ar",
+          "query": "تجربة ركوب خيل للمبتدئين قرب جبيل. أريد جهة فعلية، مدة النشاط المتاحة وما يلزم للحجز، دون افتراض أني فارس متمرس.",
+          "trip": {
+            "destination": "جبيل ودومّا، لبنان",
+            "origin": "جبيل",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "riding"
+            ]
+          }
+        },
+        {
+          "id": "regional-04-jbeil-nature-dining",
+          "lang": "en",
+          "query": "Give me two or three real restaurants in a natural setting in جبيل ودومّا, Lebanon. State the exact town, what the setting and food are like, and a sourced booking contact. These are alternatives, not a route to visit all of them. Do not invent Google ratings or prices.",
+          "trip": {
+            "destination": "جبيل ودومّا، لبنان",
+            "origin": "جبيل",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-04-jbeil-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن جبيل ودومّا: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "جبيل ودومّا، لبنان",
+            "origin": "جبيل",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-04-jbeil-hunting",
+          "lang": "ar",
+          "query": "بدي رحلة صيد طيور في جبيل ودومّا هذا الأسبوع، انطلاقًا من جبيل. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+          "trip": {
+            "destination": "جبيل ودومّا، لبنان",
+            "origin": "جبيل",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-04-jbeil-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من جبيل إلى جبيل ودومّا نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "جبيل ودومّا، لبنان",
+            "origin": "جبيل",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-04-jbeil-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-28",
+      "region": "كسروان",
+      "focus": "كسروان",
+      "cases": [
+        {
+          "id": "regional-05-keserwan-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من جونية إلى كسروان نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "كسروان، لبنان",
+            "origin": "جونية",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-05-keserwan-activity",
+          "lang": "ar",
+          "query": "مشي خفيف في جبل موسى أو موقع طبيعي مناسب ضمن كسروان، ساعة إلى ساعتين كحد أقصى. اختر مسارًا واحدًا وحدد البداية والطول والصعوبة وخريطته.",
+          "trip": {
+            "destination": "كسروان، لبنان",
+            "origin": "جونية",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-05-keserwan-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن كسروان، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "كسروان، لبنان",
+            "origin": "جونية",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-05-keserwan-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن كسروان: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "كسروان، لبنان",
+            "origin": "جونية",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-05-keserwan-hunting",
+          "lang": "ar",
+          "query": "بدي رحلة صيد طيور في كسروان هذا الأسبوع، انطلاقًا من جونية. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+          "trip": {
+            "destination": "كسروان، لبنان",
+            "origin": "جونية",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-05-keserwan-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من جونية إلى كسروان نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "كسروان، لبنان",
+            "origin": "جونية",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-05-keserwan-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "region": "المتن وبعبدا، جبل لبنان",
+      "focus": "المتن وبعبدا",
+      "cases": [
+        {
+          "id": "regional-06-mount-lebanon-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من بيروت إلى المتن وبعبدا، جبل لبنان نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "المتن وبعبدا، جبل لبنان، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-06-mount-lebanon-activity",
+          "lang": "ar",
+          "query": "مكان محدد لبيكنيك ومشاوي للعائلة في المتن أو بعبدا، مع طفلين. هل يوفّر طاولات ومرافق وهل تسمح إدارته بالشواء الآن؟ لا تقترح نارًا بلا إذن.",
+          "trip": {
+            "destination": "المتن وبعبدا، جبل لبنان، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic",
+              "barbecue"
+            ]
+          }
+        },
+        {
+          "id": "regional-06-mount-lebanon-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن المتن وبعبدا، جبل لبنان، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "المتن وبعبدا، جبل لبنان، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-06-mount-lebanon-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن المتن وبعبدا، جبل لبنان: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "المتن وبعبدا، جبل لبنان، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-06-mount-lebanon-hunting",
+          "lang": "ar",
+          "query": "بدي رحلة صيد طيور في المتن وبعبدا، جبل لبنان هذا الأسبوع، انطلاقًا من بيروت. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+          "trip": {
+            "destination": "المتن وبعبدا، جبل لبنان، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-06-mount-lebanon-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من بيروت إلى المتن وبعبدا، جبل لبنان نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "المتن وبعبدا، جبل لبنان، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-06-mount-lebanon-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "region": "الشوف",
+      "focus": "دير القمر وبيت الدين والباروك",
+      "cases": [
+        {
+          "id": "regional-07-chouf-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من بيروت إلى الشوف نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "الشوف، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-07-chouf-activity",
+          "lang": "fr",
+          "query": "Propose une seule randonnée de deux heures au maximum dans la région de الشوف, au Liban, pour deux personnes en forme moyenne. Indique le point de départ précis, la longueur et son sens (aller simple ou aller-retour), la difficulté et la carte. Les données du sentier doivent venir d’une source fiable et l’accès actuel doit être vérifié.",
+          "trip": {
+            "destination": "الشوف، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "moderate",
+            "activities": [
+              "walking",
+              "photography"
+            ]
+          }
+        },
+        {
+          "id": "regional-07-chouf-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن الشوف، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "الشوف، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-07-chouf-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن الشوف: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "الشوف، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-07-chouf-hunting",
+          "lang": "ar",
+          "query": "بدي رحلة صيد طيور في الشوف هذا الأسبوع، انطلاقًا من بيروت. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+          "trip": {
+            "destination": "الشوف، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-07-chouf-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من بيروت إلى الشوف نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "الشوف، لبنان",
+            "origin": "بيروت",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-07-chouf-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "region": "جزين وبكاسين",
+      "focus": "جزين وبكاسين",
+      "cases": [
+        {
+          "id": "regional-08-jezzine-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من صيدا إلى جزين وبكاسين نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "جزين وبكاسين، لبنان",
+            "origin": "صيدا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-08-jezzine-activity",
+          "lang": "ar",
+          "query": "مسار هايكينغ واحد مناسب للمشي المتوسط في محيط بكاسين وجزين ضمن ساعتين؛ أين يبدأ وما طوله وصعوبته؟ أريد خريطة لا مجرد اسم منطقة.",
+          "trip": {
+            "destination": "جزين وبكاسين، لبنان",
+            "origin": "صيدا",
+            "transport": "car",
+            "effort": "moderate",
+            "activities": [
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-08-jezzine-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن جزين وبكاسين، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "جزين وبكاسين، لبنان",
+            "origin": "صيدا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-08-jezzine-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن جزين وبكاسين: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "جزين وبكاسين، لبنان",
+            "origin": "صيدا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-08-jezzine-hunting",
+          "lang": "ar",
+          "query": "بدي رحلة صيد طيور في جزين وبكاسين هذا الأسبوع، انطلاقًا من صيدا. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+          "trip": {
+            "destination": "جزين وبكاسين، لبنان",
+            "origin": "صيدا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-08-jezzine-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من صيدا إلى جزين وبكاسين نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "جزين وبكاسين، لبنان",
+            "origin": "صيدا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-08-jezzine-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "region": "البقاع الأوسط والغربي",
+      "focus": "زحلة والبقاع الغربي",
+      "cases": [
+        {
+          "id": "regional-09-bekaa-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من زحلة إلى البقاع الأوسط والغربي نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "البقاع الأوسط والغربي، لبنان",
+            "origin": "زحلة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-09-bekaa-activity",
+          "lang": "ar",
+          "query": "مراقبة طيور وتصوير في البقاع، مع مكان محدد وطيور محتملة بحسب الموئل والموسم. أريد روابط أنواع ذات صلة من موسوعة صيد إن توفرت، لا قائمة طيور عامة.",
+          "trip": {
+            "destination": "البقاع الأوسط والغربي، لبنان",
+            "origin": "زحلة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "birds",
+              "photography"
+            ]
+          }
+        },
+        {
+          "id": "regional-09-bekaa-nature-dining",
+          "lang": "en",
+          "query": "Give me two or three real restaurants in a natural setting in البقاع الأوسط والغربي, Lebanon. State the exact town, what the setting and food are like, and a sourced booking contact. These are alternatives, not a route to visit all of them. Do not invent Google ratings or prices.",
+          "trip": {
+            "destination": "البقاع الأوسط والغربي، لبنان",
+            "origin": "زحلة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-09-bekaa-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن البقاع الأوسط والغربي: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "البقاع الأوسط والغربي، لبنان",
+            "origin": "زحلة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-09-bekaa-hunting",
+          "lang": "ar",
+          "query": "بدي رحلة صيد طيور في البقاع الأوسط والغربي هذا الأسبوع، انطلاقًا من زحلة. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+          "trip": {
+            "destination": "البقاع الأوسط والغربي، لبنان",
+            "origin": "زحلة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-09-bekaa-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من زحلة إلى البقاع الأوسط والغربي نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "البقاع الأوسط والغربي، لبنان",
+            "origin": "زحلة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-09-bekaa-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-02",
+      "region": "حاصبيا",
+      "focus": "حاصبيا ومحيطها",
+      "cases": [
+        {
+          "id": "regional-10-hasbaya-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من راشيا إلى حاصبيا نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "حاصبيا، لبنان",
+            "origin": "راشيا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-10-hasbaya-activity",
+          "lang": "ar",
+          "query": "طلعة سيارة دفع رباعي خفيفة في محيط حاصبيا. تحقق أولًا من الإتاحة الحالية الفعلية؛ لا تجعل ظهور الطريق على الخريطة دليلًا على سلامته أو تسمح لي بدخول طريق غير متحقق. إذا تعذر التحقق بيّن العائق المحدد.",
+          "trip": {
+            "destination": "حاصبيا، لبنان",
+            "origin": "راشيا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "offroad"
+            ]
+          }
+        },
+        {
+          "id": "regional-10-hasbaya-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن حاصبيا، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "حاصبيا، لبنان",
+            "origin": "راشيا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-10-hasbaya-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن حاصبيا: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "حاصبيا، لبنان",
+            "origin": "راشيا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-10-hasbaya-hunting",
+          "lang": "ar",
+          "query": "بدي رحلة صيد طيور في حاصبيا هذا الأسبوع، انطلاقًا من راشيا. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+          "trip": {
+            "destination": "حاصبيا، لبنان",
+            "origin": "راشيا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-10-hasbaya-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من راشيا إلى حاصبيا نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+          "trip": {
+            "destination": "حاصبيا، لبنان",
+            "origin": "راشيا",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-10-hasbaya-light"
+        }
+      ]
+    }
+  ],
+  "rubric": {
+    "direct_usefulness": "Exact places, useful activity details and decisions; reject filler and generic town lists.",
+    "geography": "Exact town and coherent nearby route; no unsupported distance or driving time; check endpoints.",
+    "evidence": "Primary source supports the actual claim; retrieval date is not publication date or proof of current access.",
+    "activity_fit": "Trail metrics and direction; tent capacity and child admission; real natural setting for dining; current official hunting season.",
+    "consistency": "Compare repeated identical question for factual contradictions and unexplained destination changes, not literal wording.",
+    "honesty": "An honest limitation is safer than invention but does not automatically pass usefulness.",
+    "languages": "Review Arabic, English and French for equivalent factual quality.",
+    "verdicts": [
+      "useful_verified",
+      "useful_with_gaps",
+      "generic_unhelpful",
+      "incorrect_or_unsafe",
+      "blocked_or_not_run"
+    ]
+  }
+}
