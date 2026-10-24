@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "الصيد-السياحي-في-دول-المغرب-العربي",
+      "titles": {
+        "ar": "الصيد السياحي في دول المغرب العربي",
+        "en": "Hunting Tourism in the Maghreb",
+        "fr": "Le tourisme cynégétique au Maghreb"
+      },
+      "title": "الصيد السياحي في دول المغرب العربي"
+    },
+    {
       "slug": "الصيد-السياحي-في-بلدان-الخليج-العربية",
       "titles": {
         "ar": "الصيد السياحي في بلدان الخليج العربية: تحقيق «صيد» في رحلات المقناص والضيافة وعمل أهل المنطقة",
@@ -81,15 +90,6 @@
         "fr": "Faux papiers de rapaces : enquête en Espagne ; Tunis accueille une rencontre contre le trafic d’oiseaux"
       },
       "title": "تزوير أوراق الجوارح أمام القضاء في إسبانيا… وتونس تستضيف لقاءً لمكافحة الاتجار غير المشروع بالطيور"
-    },
-    {
-      "slug": "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
-      "titles": {
-        "ar": "عكار: باشق داخل حقيبة ظهر خلال عملية لمكافحة صيد الجوارح",
-        "en": "Akkar: Sparrowhawk found inside backpack during raptor anti-poaching operation",
-        "fr": "Akkar : un épervier découvert dans un sac à dos lors d’une opération anti-braconnage"
-      },
-      "title": "عكار: باشق داخل حقيبة ظهر خلال عملية لمكافحة صيد الجوارح"
     }
   ]
 }
