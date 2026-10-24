@@ -31,6 +31,19 @@ def masked(page, lang, data):
     return ARTICLE.sub(strip_card, CREDITS.sub('', page))
 
 
+def assert_category_scope(before, page, lang, data, path, base):
+    # Preserve the original image-only comparison; a new publication may change
+    # only the canonical shared ticker, never legal/card/chrome content.
+    if masked(before, lang, data) == masked(page, lang, data):
+        return
+    from publication_guard import verified_publication
+    from check_publication_contract import shared_ticker_only_text
+    proof = verified_publication(base, root=ROOT)
+    assert proof is not None, 'Ticker delta needs exact trusted-base publication proof'
+    assert proof.read(str(path.relative_to(ROOT))) == page, 'Category differs from trusted compilation'
+    assert shared_ticker_only_text(before, page, path), f'Out-of-scope category change: {lang}'
+
+
 def main(base=None):
     data = config()
     images = data['images']
@@ -78,7 +91,7 @@ def main(base=None):
         if base:
             rel = str(path.relative_to(ROOT))
             before = subprocess.check_output(['git', 'show', f'{base}:{rel}'], cwd=ROOT).decode()
-            assert masked(before, lang, data) == masked(page, lang, data), f'Out-of-scope category change: {lang}'
+            assert_category_scope(before, page, lang, data, path, base)
     insurance = data['unchanged_cards'][0]['slug']
     tree = html.fromstring(category_path('ar').read_text(encoding='utf-8'))
     cards = [a for a in tree.xpath('//article') if any(

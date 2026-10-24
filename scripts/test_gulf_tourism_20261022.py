@@ -2,7 +2,7 @@
 from copy import deepcopy
 from pathlib import Path
 from unittest.mock import patch
-from urllib.parse import unquote, urlsplit
+from urllib.parse import unquote, urlsplit, urljoin
 import hashlib
 import json
 import os
@@ -349,25 +349,70 @@ def test_rendered_negative_guards(base, old, current, a):
     print('PASS:11 rendered-home,5 article and changed-image-byte negative fixtures rejected')
 
 
-def test_gulf_browser(context, origin, output):
+def gulf_browser_home(lang, a, proof=None):
+    """Historical article identity is fixed; homepage position is not permanent."""
+    config = json.loads((ROOT/'content/homepage.json').read_text())
+    prefix = '' if lang == 'ar' else lang+'/'
+    if config['ia_slots']['main'] == AR:
+        return {'title': a['translations'][lang]['title'],
+                'kicker': a['translations'][lang]['kicker'],
+                'href': '/'+prefix+'posts/'+a['slugs'][lang]+'/index.html',
+                'image': '/'+a['photos'][0]['path'], 'alt': a['photos'][0]['alt'][lang]}
+    assert proof is not None, 'Rotated Gulf lead needs exact trusted-base publication proof'
+    rel = 'docs/'+prefix+'index.html'
+    expected = proof.read(rel)
+    actual = (ROOT/rel).read_text()
+    if config != proof.config or actual != expected:
+        # This marker is assigned only after the existing verifier replays the
+        # entire permitted desk-only change with immutable BASE code. It is not
+        # read from source metadata, an artifact, or a publication approval flag.
+        assert getattr(proof, 'kind', None) == 'verified-desk-restoration', 'Current homepage differs from trusted compilation'
+        from publication_guard import ordinary_desk_restoration
+        ordinary_desk_restoration(proof.config, config)
+        lead_xpath = '//*[contains(concat(" ",normalize-space(@class)," ")," feature-lead ")]'
+        before_lead = html.fromstring(expected).xpath(lead_xpath)
+        after_lead = html.fromstring(actual).xpath(lead_xpath)
+        assert len(before_lead) == len(after_lead) == 1
+        assert html.tostring(before_lead[0], with_tail=False) == html.tostring(after_lead[0], with_tail=False), 'Desk restoration changed the current lead'
+    tree = html.fromstring(expected)
+    leads = tree.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," feature-lead ")]')
+    assert len(leads) == 1
+    links, images = leads[0].xpath('.//h2/a'), leads[0].xpath('.//img')
+    kickers = leads[0].xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," migration-kicker ")]')
+    assert len(links) == len(images) == 1 and len(kickers) <= 1
+    origin = 'https://sayd-magazine.com/'+prefix
+    return {'title': links[0].text_content(), 'kicker': kickers[0].text_content() if kickers else None,
+            'href': unquote(urlsplit(urljoin(origin, links[0].get('href'))).path),
+            'image': unquote(urlsplit(urljoin(origin, images[0].get('src'))).path),
+            'alt': images[0].get('alt')}
+
+
+def test_gulf_browser(context, origin, output, proof=None):
     if not SOURCE.exists(): return
     from playwright.sync_api import expect
     a=package(); page=context.new_page()
     try:
         for lang in ('ar','en','fr'):
             prefix='' if lang=='ar' else lang+'/'
+            expected_home = gulf_browser_home(lang, a, proof)
             for width in (390,1440):
                 page.set_viewport_size({'width':width,'height':1000})
                 page.goto(origin+'/'+prefix,wait_until='networkidle')
                 lead=page.locator('.feature-lead')
-                expect(lead.locator('h2 a')).to_have_text(a['translations'][lang]['title'])
-                expect(lead.locator('.migration-kicker')).to_have_text(a['translations'][lang]['kicker'])
+                expect(lead.locator('h2 a')).to_have_text(expected_home['title'])
+                assert unquote(lead.locator('h2 a').evaluate('a=>new URL(a.href).pathname')) == expected_home['href']
+                assert unquote(lead.locator('img').evaluate('img=>new URL(img.src).pathname')) == expected_home['image']
+                expect(lead.locator('img')).to_have_attribute('alt', expected_home['alt'])
+                if expected_home['kicker'] is None:
+                    expect(lead.locator('.migration-kicker')).to_have_count(0)
+                else:
+                    expect(lead.locator('.migration-kicker')).to_have_text(expected_home['kicker'])
                 lead.locator('img').evaluate('(img)=>img.decode()')
                 lead.screenshot(path=str(output/f'gulf-home-{lang}-{width}.png'))
                 assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),(lang,width,'Gulf homepage overflow')
                 page.locator('.featured-mosaic').screenshot(path=str(output/f'gulf-home-mosaic-{lang}-{width}.png'))
-                lead.locator('h2 a').click()
-                page.wait_for_url(lambda url:unquote(urlsplit(url).path)=='/'+prefix+'posts/'+a['slugs'][lang]+'/index.html')
+                page.goto(origin+'/'+prefix+'posts/'+a['slugs'][lang]+'/index.html', wait_until='networkidle')
+                assert unquote(urlsplit(page.locator('link[rel=canonical]').get_attribute('href')).path).rstrip('/') == ('/'+prefix+'posts/'+a['slugs'][lang]).rstrip('/')
                 expect(page.locator('h1')).to_have_text(a['translations'][lang]['title'])
                 expect(page.locator('.article-kicker')).to_have_text(a['translations'][lang]['kicker'])
                 expect(page.locator('article.article-content > figure')).to_have_count(8)
@@ -388,7 +433,7 @@ def test_gulf_browser(context, origin, output):
                 page.evaluate('window.scrollTo(0,0)')
                 page.screenshot(path=str(output/f'gulf-article-{lang}-{width}.png'),full_page=True)
     finally:page.close()
-    print('PASS: Gulf lead and complete AR/EN/FR8-image4-box articles at390/1440px; forthcoming links absent')
+    print('PASS: verified current homepage and complete historical Gulf AR/EN/FR8-image4-box articles at390/1440px; forthcoming links absent')
 
 
 if __name__ == '__main__':

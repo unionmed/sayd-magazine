@@ -484,6 +484,7 @@ def refresh(path,language):
 
     def test_trusted_replay_allows_only_valid_desk_restoration(self):
         proof=guard.verified_article_evidence(self.base,self.root)
+        self.assertEqual(proof.kind, "verified-desk-restoration")
         self.assertEqual(proof.read('docs/index.html'),'<main>unchanged upper</main>'+','.join(self.old))
         self.assertEqual(proof.additions,())
         with self.assertRaisesRegex(AssertionError,'do not authorize'):
