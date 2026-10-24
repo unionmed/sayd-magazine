@@ -2,7 +2,7 @@
 """Create one review-only branch from a twice-built, trusted publication plan.
 
 This program never updates a ref, creates/approves a PR, merges, or deploys.
-It runs only in the manually dispatched default-branch workflow. The compiler
+It runs only in the validated default-branch dispatch/request workflow. The compiler
 must be trusted main code; source commits are data, never executable checkouts.
 An uncertain API mutation is reported and STOPPED, never automatically retried.
 """
@@ -58,8 +58,9 @@ def validate_context(env, base, source, compiler):
     for value in (base, source, compiler):
         full_sha(value)
     require(base == compiler, "Dispatch must use the exact current-main compiler/base")
+    require(env.get("GITHUB_EVENT_NAME") in ("workflow_dispatch", "workflow_run"), "Untrusted workflow event")
     expected = {
-        "GITHUB_ACTIONS": "true", "GITHUB_EVENT_NAME": "workflow_dispatch",
+        "GITHUB_ACTIONS": "true",
         "GITHUB_REPOSITORY": REPOSITORY, "GITHUB_REF": "refs/heads/main",
         "GITHUB_SHA": compiler, "GITHUB_WORKFLOW_REF": WORKFLOW,
         "GITHUB_WORKFLOW_SHA": compiler, "GITHUB_JOB": "finalize",
@@ -241,7 +242,7 @@ def verify_commit(commit, expected_tree, source, message):
 
 
 def finalize(root, site, plan, base, source, compiler, expected_plan, api, compiler_validator,
-             allow_distribution=False):
+             allow_distribution=False, pre_write_check=None):
     """All validation precedes API mutations. api is injectable for offline tests."""
     require(isinstance(plan, dict), "Invalid plan object")
     require(plan.get("policy") == {"allow_distribution": bool(allow_distribution)},
@@ -279,6 +280,8 @@ def finalize(root, site, plan, base, source, compiler, expected_plan, api, compi
         verify_commit(api.request("GET", "/git/commits/" + sha), expected_tree, source, message)
         check_main(api, base)
         return dict(receipt, status="ALREADY_EXISTS", commit=sha)
+    if pre_write_check:
+        pre_write_check()
     entries = []
     for item, data in changes:
         blob = api.request("POST", "/git/blobs", {"content": base64.b64encode(data).decode(), "encoding": "base64"})
@@ -293,6 +296,8 @@ def finalize(root, site, plan, base, source, compiler, expected_plan, api, compi
     # The only ref mutation is an atomic CREATE of a derived review branch.
     # A race (422), timeout, or ambiguous response stops; it never updates/retries.
     check_main(api, base)
+    if pre_write_check:
+        pre_write_check()
     created = api.request("POST", "/git/refs", {"ref": "refs/heads/" + branch, "sha": sha})
     if created.get("ref") != "refs/heads/" + branch or created.get("object", {}).get("sha") != sha:
         raise UncertainMutation("Uncertain POST /git/refs response for " + branch + "; inspect, do not retry")
@@ -305,6 +310,20 @@ def finalize(root, site, plan, base, source, compiler, expected_plan, api, compi
     return dict(receipt, status="CREATED_REVIEW_ONLY", commit=sha)
 
 
+def request_binding_check(root, env, base, source, allow_distribution):
+    """Return a fresh-read check; workflow_run cannot fall back to dispatch."""
+    if env.get('GITHUB_EVENT_NAME') != 'workflow_run':
+        return None
+    from publication_request import resolve_local
+    event = json.loads(Path(env['GITHUB_EVENT_PATH']).read_text())
+    def check():
+        verified = resolve_local(root, event, env, fetch=False)
+        require(verified['base'] == base and verified['source'] == source
+                and verified['allow_distribution'] == allow_distribution, 'Request binding changed')
+        return verified
+    return check
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("site", "report", "base", "source", "compiler", "expected-plan", "receipt"):
@@ -315,12 +334,15 @@ def main():
     provenance = workflow_receipt_context(os.environ, args.base, args.source, args.compiler, args.allow_distribution)
     require(git(root, "rev-parse", "HEAD").decode().strip() == args.compiler, "Compiler checkout differs from trusted workflow SHA")
     require(not git(root, "status", "--porcelain", "--untracked-files=all").strip(), "Trusted compiler worktree is not clean")
+    request_check = request_binding_check(root, os.environ, args.base, args.source, args.allow_distribution)
+    if request_check:
+        provenance['request'] = request_check()
     from publication_compiler import validate_report
     plan = json.loads(Path(args.report).read_text(), parse_constant=lambda x: (_ for _ in ()).throw(Blocked("Nonfinite JSON")))
     try:
         receipt = finalize(root, Path(args.site), plan, args.base, args.source, args.compiler,
                            args.expected_plan, GitHub(os.environ.get("GITHUB_TOKEN")), validate_report,
-                           allow_distribution=args.allow_distribution)
+                           allow_distribution=args.allow_distribution, pre_write_check=request_check)
     except (ValueError, subprocess.CalledProcessError) as error:
         receipt = {"schema": "sayd-review-branch-receipt-v1", "repository": REPOSITORY,
                    "base_commit": args.base, "source_commit": args.source, "compiler_commit": args.compiler,

@@ -3,6 +3,9 @@ name: Source-only publication compiler
 on:
   # No paths filter: schema/helper changes and generated-output tampering must
   # not evade the publication compiler checks.
+  workflow_run:
+    workflows: ['Source publication request validation']
+    types: [completed]
   pull_request:
   workflow_dispatch:
     inputs:
@@ -93,6 +96,7 @@ jobs:
           python -m unittest discover -s scripts -p 'test_publication_compiler.py' -v
           python -m unittest discover -s scripts -p 'test_publication_finalize.py' -v
           python -m unittest discover -s scripts -p 'test_publication_guard.py' -v
+          python -m unittest discover -s scripts -p 'test_publication_request.py' -v
       - name: Prove a no-content build preserves the complete baseline
         run: |
           base="$(git rev-parse HEAD)"
@@ -138,14 +142,17 @@ jobs:
 
   compile:
     if: >-
-      github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' &&
+        startsWith(github.event.workflow_run.head_branch, 'source/'))) &&
+      github.ref == 'refs/heads/main' &&
       github.repository == 'unionmed/sayd-magazine'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     outputs:
       plan_sha256: ${{ steps.plan.outputs.plan_sha256 }}
     steps:
-      # Trusted compiler is the dispatch's exact main commit. Never checkout the
+      # Trusted compiler is the default-branch workflow's exact main commit. Never checkout the
       # source commit: its only acceptable contribution is validated data blobs.
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -156,9 +163,26 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install lxml==5.3.2 Pillow==11.3.0
+      - name: Resolve exact request independently; never consume upstream artifacts
+        id: request
+        env:
+          DISPATCH_SOURCE: ${{ inputs.source_commit }}
+          DISPATCH_SCOPE: ${{ inputs.allow_distribution }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = 'workflow_run' ]; then
+            python scripts/publication_request.py
+          else
+            python - <<'PYTHON'
+          import os, re
+          source = os.environ['DISPATCH_SOURCE']; scope = os.environ['DISPATCH_SCOPE']
+          assert re.fullmatch('[0-9a-f]{40}', source) and scope in ('true', 'false')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write('source=' + source + '\nallow_distribution=' + scope + '\n')
+          PYTHON
+          fi
       - name: Fetch only the exact data commit and reject stale main
         env:
-          SOURCE_COMMIT: ${{ inputs.source_commit }}
+          SOURCE_COMMIT: ${{ steps.request.outputs.source }}
           BASE_COMMIT: ${{ github.sha }}
         run: |
           python - <<'PY'
@@ -172,9 +196,9 @@ jobs:
       - name: Compile and validate without write credentials
         id: plan
         env:
-          SOURCE_COMMIT: ${{ inputs.source_commit }}
+          SOURCE_COMMIT: ${{ steps.request.outputs.source }}
           BASE_COMMIT: ${{ github.sha }}
-          ALLOW_DISTRIBUTION: ${{ inputs.allow_distribution }}
+          ALLOW_DISTRIBUTION: ${{ steps.request.outputs.allow_distribution }}
         run: |
           args=()
           if [ "$ALLOW_DISTRIBUTION" = 'true' ]; then args+=(--allow-distribution); fi
@@ -198,7 +222,10 @@ jobs:
   finalize:
     needs: compile
     if: >-
-      github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' &&
+        startsWith(github.event.workflow_run.head_branch, 'source/'))) &&
+      github.ref == 'refs/heads/main' &&
       github.repository == 'unionmed/sayd-magazine'
     runs-on: ubuntu-latest
     timeout-minutes: 50
@@ -214,11 +241,28 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install lxml==5.3.2 Pillow==11.3.0
+      - name: Resolve exact request independently; never consume upstream artifacts
+        id: request
+        env:
+          DISPATCH_SOURCE: ${{ inputs.source_commit }}
+          DISPATCH_SCOPE: ${{ inputs.allow_distribution }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = 'workflow_run' ]; then
+            python scripts/publication_request.py
+          else
+            python - <<'PYTHON'
+          import os, re
+          source = os.environ['DISPATCH_SOURCE']; scope = os.environ['DISPATCH_SCOPE']
+          assert re.fullmatch('[0-9a-f]{40}', source) and scope in ('true', 'false')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write('source=' + source + '\nallow_distribution=' + scope + '\n')
+          PYTHON
+          fi
       - name: Independently rebuild exact inputs without consuming artifacts
         env:
-          SOURCE_COMMIT: ${{ inputs.source_commit }}
+          SOURCE_COMMIT: ${{ steps.request.outputs.source }}
           BASE_COMMIT: ${{ github.sha }}
-          ALLOW_DISTRIBUTION: ${{ inputs.allow_distribution }}
+          ALLOW_DISTRIBUTION: ${{ steps.request.outputs.allow_distribution }}
           EXPECTED_PLAN: ${{ needs.compile.outputs.plan_sha256 }}
         run: |
           python - <<'PY'
@@ -239,10 +283,10 @@ jobs:
       - name: Create a new review branch only; never update a branch or publish
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          SOURCE_COMMIT: ${{ inputs.source_commit }}
+          SOURCE_COMMIT: ${{ steps.request.outputs.source }}
           BASE_COMMIT: ${{ github.sha }}
           EXPECTED_PLAN: ${{ needs.compile.outputs.plan_sha256 }}
-          ALLOW_DISTRIBUTION: ${{ inputs.allow_distribution }}
+          ALLOW_DISTRIBUTION: ${{ steps.request.outputs.allow_distribution }}
         run: |
           args=()
           if [ "$ALLOW_DISTRIBUTION" = 'true' ]; then args+=(--allow-distribution); fi
