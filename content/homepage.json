@@ -86,7 +86,10 @@
     "لا-تصدق-وجود-هذا-الطائر،-إنه-مُصمَّم-بب",
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
     "sayd-returns-new-look-wider-vision",
-    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي"
+    "معرض-الصقور-والصيد-السعودي-2026-الملواح-والمزاد-والذكاء-الاصطناعي",
+    "الطيطوي-أخضر-الساق-في-العالم-العربي",
+    "الطيطوي-أحمر-الساق-في-العالم-العربي",
+    "الدريجة-الألبية-في-العالم-العربي"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -123,7 +126,10 @@
     "عمان-قانون-المحميات-وصون-الأحياء-الفطرية-6-2003-الصيد",
     "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
     "السلوقي-العربي-في-التدريب-سرعة-وقفز-وسباحة",
-    "الصرد-طائر-يعدم-فرائسه-على-الأشواك"
+    "الصرد-طائر-يعدم-فرائسه-على-الأشواك",
+    "الطيطوي-أخضر-الساق-في-العالم-العربي",
+    "الطيطوي-أحمر-الساق-في-العالم-العربي",
+    "الدريجة-الألبية-في-العالم-العربي"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -467,7 +473,10 @@
     "الصيد-السياحي-في-بلدان-الخليج-العربية": "hunting",
     "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار": "hunting",
     "السلوقي-العربي-في-التدريب-سرعة-وقفز-وسباحة": "photos",
-    "الصرد-طائر-يعدم-فرائسه-على-الأشواك": "science"
+    "الصرد-طائر-يعدم-فرائسه-على-الأشواك": "science",
+    "الطيطوي-أخضر-الساق-في-العالم-العربي": "birds",
+    "الطيطوي-أحمر-الساق-في-العالم-العربي": "birds",
+    "الدريجة-الألبية-في-العالم-العربي": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -786,6 +795,33 @@
         "ar": "صرد إلى جانب فأر وسحلية وحشرات معلقة على أغصان شائكة",
         "en": "A shrike beside a mouse, lizard and insects hanging on thorny branches",
         "fr": "Une pie-grièche près d’une souris, d’un lézard et d’insectes suspendus à des branches épineuses"
+      }
+    },
+    "الطيطوي-أخضر-الساق-في-العالم-العربي": {
+      "image": "media/publications/daily-birds-20261024/greenshank.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طيطوي أخضر الساق بمنقار مائل قليلًا إلى أعلى في مياه ضحلة",
+        "en": "Common Greenshank with a slightly upturned bill in shallow water",
+        "fr": "Chevalier aboyeur au bec légèrement retroussé dans une eau peu profonde"
+      }
+    },
+    "الطيطوي-أحمر-الساق-في-العالم-العربي": {
+      "image": "media/publications/daily-birds-20261024/redshank.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طيطوي أحمر الساق يسير على أرض طينية في دوحة عراد بالبحرين",
+        "en": "Common Redshank walking across mud at Dohat Arad in Bahrain",
+        "fr": "Chevalier gambette marchant sur la vase à Dohat Arad, à Bahreïn"
+      }
+    },
+    "الدريجة-الألبية-في-العالم-العربي": {
+      "image": "media/publications/daily-birds-20261024/dunlin.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "دريجة ألبية بريش غير تكاثري ومنقار أسود منحنٍ قليلًا إلى أسفل",
+        "en": "Dunlin in nonbreeding plumage with a slightly downcurved black bill",
+        "fr": "Bécasseau variable en plumage internuptial, au bec noir légèrement arqué"
       }
     }
   },
