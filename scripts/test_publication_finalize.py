@@ -403,6 +403,14 @@ class FinalizerTests(unittest.TestCase):
         with self.assertRaisesRegex(f.Blocked, "Duplicate"):
             self.finalize(plan=plan)
 
+    def test_caption_revision_output_path_is_bounded(self):
+        self.assertEqual(str(f.safe_output_path("content/caption-revisions/example.json")),
+                         "content/caption-revisions/example.json")
+        for path in ("content/caption-revisions/example.py", "content/caption-revisions/nested/example.json",
+                     "content/caption-revisions/../publication-contract.json"):
+            with self.subTest(path=path), self.assertRaises(f.Blocked):
+                f.safe_output_path(path)
+
     def test_safe_path_blocks_code_and_protected_inputs(self):
         for path in ["../docs/index.html", "/docs/index.html", "docs//index.html", "docs/./index.html",
                      "docs/../README.md", "docs\\index.html", "docs/.git/config", "scripts/publish.py",

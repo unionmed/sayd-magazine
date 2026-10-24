@@ -103,6 +103,7 @@ def safe_output_path(value):
                   "content/homepage.json", "content/ticker.json", "content/article-updates.json",
                   "content/interviews.json", "content/marine-fishing.json"}
         or (value.startswith("content/publications/") and len(path.parts) == 3 and path.suffix == ".json")
+        or (value.startswith("content/caption-revisions/") and len(path.parts) == 3 and path.suffix == ".json")
         or (path.parts[:2] in {("content", "posts"), ("content", "en"), ("content", "fr")}
             and len(path.parts) == 3 and path.suffix == ".md")
         or (value.startswith("audit/image-catalog/manifest/release-")

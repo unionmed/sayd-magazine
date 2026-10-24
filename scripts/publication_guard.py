@@ -85,6 +85,7 @@ class Proof:
     additions: tuple
     temporary: object
     kind: str = "compiled-publication"
+    revisions: tuple = ()
 
     def read(self, path):
         return (self.site / path).read_text()
@@ -108,17 +109,31 @@ def verified_publication(base, root=ROOT, include_baseline=False):
     require(re.fullmatch(r'[0-9a-f]{40}', candidate), 'Exact publication head SHA required')
     records = git(root, 'ls-tree', '-r', '--name-only', base, '--', 'content/publications/').decode().splitlines()
     changed = git(root, 'diff', '--name-only', base, candidate, '--', 'content/publications/').decode().splitlines()
-    if not changed and not (include_baseline and records):
+    revised = git(root, 'diff', '--name-only', base, candidate, '--', 'content/caption-revisions/').decode().splitlines()
+    active = bool(changed or revised)
+    if not active and not (include_baseline and records):
         return None
     check_context(base, candidate)
     check_checkout(root, candidate)
-    key = (str(root), base, candidate, bool(changed))
+    key = (str(root), base, candidate, active)
     if key in _proofs:
         proof = _proofs[key]
-        require(tree(proof.site, 'HEAD') == tree(root, candidate if changed else base)
+        require(tree(proof.site, 'HEAD') == tree(root, candidate if active else base)
                 and not git(proof.site, 'diff', 'HEAD', '--name-only').strip(), 'Cached expected tree was modified')
         return proof
-    if not changed:
+    if not active:
+        # A baseline proof must not hide unmanifested historical article edits.
+        owned = set()
+        for path in records:
+            record = json.loads(git(root, 'show', base + ':' + path))
+            owned.update(photo['path'] for photo in record.get('photos', []))
+            for article in record['articles']:
+                for language, slug in article['slugs'].items():
+                    prefix = '' if language == 'ar' else language + '/'
+                    owned.add('docs/' + prefix + 'posts/' + slug + '/index.html')
+                    owned.add('content/' + ('posts' if language == 'ar' else language) + '/' + slug + '.md')
+        require(not owned or not git(root, 'diff', '--name-only', base, candidate, '--', *sorted(owned)).strip(),
+                'Baseline proof cannot mask historical article/media edits')
         # Source records already reviewed on main are not an open-ended licence
         # to change slots. Home bytes and their placement/translation/image-card
         # registries stay exact. Unrelated legacy article bodies remain editable
@@ -131,7 +146,7 @@ def verified_publication(base, root=ROOT, include_baseline=False):
         subprocess.run(['git', '-c', 'core.hooksPath=/dev/null', 'clone', '--quiet', '--shared', '--no-checkout', str(root), str(trusted)], check=True)
         git(trusted, 'checkout', '--quiet', '--detach', base)
         require(git(trusted, 'rev-parse', 'HEAD').decode().strip() == base, 'Trusted compiler checkout mismatch')
-        if changed:
+        if active:
             script = trusted / 'scripts/publication_compiler.py'
             require(script.is_file(), 'No trusted compiler installed in PR base')
             env = dict(os.environ, PYTHONPATH='')
@@ -144,15 +159,24 @@ def verified_publication(base, root=ROOT, include_baseline=False):
             require(plan.get('schema') == 'sayd-publication-plan-v1' and plan.get('base_commit') == base
                     and plan.get('compiler_commit') == base, 'Missing exact trusted compilation proof')
             require(tree(output, 'HEAD') == tree(root, candidate), 'Expected build is not exact candidate tree')
-            additions = tuple(json.loads((output / path).read_text()) for path in changed)
+            additions = () if revised else tuple(json.loads((output / path).read_text()) for path in changed)
+            revisions = ()
+            if revised:
+                # The trusted compiler has replayed the complete candidate.
+                # Metadata for browser QA carries no new placement authority.
+                import caption_revision
+                value = json.loads((output / revised[0]).read_text())
+                record = json.loads((trusted / ('content/publications/' + value['publication_id'] + '.json')).read_text())
+                article = next(a for a in record['articles'] if a['slugs']['ar'] == value['article_slug'])
+                revisions = tuple(caption_revision.effective_records(output, record, article))
             site = output
         else:
-            additions, site = (), trusted
+            additions, revisions, site = (), (), trusted
         require(git(trusted, 'rev-parse', 'HEAD').decode().strip() == base and not git(trusted, 'diff', 'HEAD', '--name-only').strip(),
                 'Trusted compiler changed during verification')
         check_checkout(root, candidate)
         proof = Proof(root, site, base, candidate, additions, temp,
-                      "compiled-publication" if changed else "baseline-publication")
+                      "verified-caption-revision" if revised else ("compiled-publication" if changed else "baseline-publication"), revisions)
         _proofs[key] = proof
         return proof
     except BaseException:
@@ -164,7 +188,8 @@ def verified_article_evidence(base, root=ROOT):
     """Article evidence, not placement authority, for an ordinary desk restoration.
 
     New publications still require the exact trusted compiler proof. Existing
-    publications stay immutable. A desk-only restoration is accepted only when
+    publication sources stay immutable; the separate caption path is exact-tree
+    verified above. A desk-only restoration is accepted only when
     trusted BASE rotation/rendering reproduces its complete placement bytes.
     No candidate code runs in that replay; editorial approval remains external.
     The returned snapshot is BASE, never a purported newly approved placement.

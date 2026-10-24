@@ -96,6 +96,7 @@ jobs:
           python -m unittest discover -s scripts -p 'test_publication_compiler.py' -v
           python -m unittest discover -s scripts -p 'test_publication_finalize.py' -v
           python -m unittest discover -s scripts -p 'test_publication_guard.py' -v
+          python -m unittest discover -s scripts -p 'test_caption_revision.py' -v
           python -m unittest discover -s scripts -p 'test_publication_request.py' -v
           python -m unittest discover -s scripts -p 'test_publication_chronology.py' -v
       - name: Prove a no-content build preserves the complete baseline

@@ -63,10 +63,15 @@ def request_scope(message):
 
 
 def validate_source(root, base, source):
-    from publication_compiler import source_records
+    from publication_compiler import source_records, tree
+    import caption_revision
     sha(base); sha(source)
     require(source != base, 'Empty request')
     scope = request_scope(git(root, 'show', '-s', '--format=%B', source))
+    if caption_revision.revision_paths(tree(root, base), tree(root, source)):
+        require(not scope, 'Caption revision cannot authorize distribution')
+        caption_revision.source_input(root, base, source)
+        return False
     _, _, changes, records = source_records(root, base, source)
     require(changes and records, 'No publication inputs')
     require(scope or all(a['distribution']['placement'] == 'archive-only' and not a['distribution']['ticker']

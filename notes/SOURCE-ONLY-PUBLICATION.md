@@ -26,7 +26,8 @@ One atomic source commit, directly on the exact current `main`, may only ADD:
 Existing local photos can be referenced without copying them or changing their
 old catalog rows. A media-only record has `articles: []`. New records and media are
 immutable; corrections to already published articles remain a separately reviewed
-maintenance task, not an implicit add-only update permission.
+maintenance task, not an implicit add-only update permission. The sole bounded
+caption-only exception is described below; it keeps original records immutable.
 
 The compiler generates only the requested new article Markdown/HTML, three-language
 pairs and French aliases, explicit category/archive cards, search entries,
@@ -229,3 +230,57 @@ requests. Branch filtering is only an efficiency gate, never the security proof.
 Activation requires normal reviewed infrastructure merge and actual connector-only
 request → validator → compiler → independent finalizer receipt evidence. Passing
 local tests alone is not evidence that the deployed route has run successfully.
+
+### Bounded caption-only revisions
+
+An existing compiled article's visible image caption may be corrected through a
+separate source-only request, **not** by editing its original publication record.
+The source commit must be directly on the exact current main base and add exactly
+one regular file: `content/caption-revisions/<id>.json`. It cannot mix a new story,
+code, media, configuration, or other source changes.
+
+The closed `sayd-caption-revision-v1` record contains `id`, `expected_base` (full
+40-character commit), `publication_id`, `article_slug` (the original Arabic slug),
+`photo_id`, and `captions`. The latter has exactly `ar`, `en`, and `fr`, each with
+`old` and `new` plain-text, nonempty captions. Captions are bounded to 1,000
+characters, Unicode-normalized, and cannot contain markup or control characters.
+The old strings must exactly match the existing selected figure in all mirrors.
+No caller-supplied output paths or source/credit/image replacements are accepted.
+
+Only trusted base code resolves the immutable original publication, article and
+photo. The native compiler substitutes six literal figcaption spans (HTML and
+Markdown in three languages), plus only the optional capture-year spans described
+below, preserves every other article byte, and uses the
+unchanged trusted search builder to regenerate the three search indexes. Each
+index must remain semantically identical except for the selected article's one
+indexed caption replacement in its body. Titles, other fields, other rows,
+homepage, ticker, aliases, credits, assets and original records stay unchanged.
+The output is exactly those nine derived files plus the additive revision record;
+existing revision records are immutable. Derived indexes are not uploaded by the
+requester.
+
+The existing read-only build/native writer produces the ordinary hashed plan and
+source-parent generated candidate, with distribution scope false. Independent
+trusted-base replay must match the entire candidate tree and provenance. Revisions
+are separate from `Proof.additions`: they grant no new placement membership.
+Responsive browser QA checks the actual revised article in all three languages
+using effective captions. Normal tests, protected review/merge, Pages deployment,
+and live verification still apply. This does **not** enable arbitrary article,
+photo, credit, archive, or distribution edits.
+
+A revision may additionally request `elide_photo_year` as a four-digit integer.
+This is **not** an alt/credit replacement field: it only removes a corroborated
+capture year from a single-photo article. The original provenance's first segment
+must identify the same photo title and creator followed by a valid full calendar
+date with that year; licence-review and copyright dates do not qualify. The original alt must end with the exact localized “in YEAR” phrase,
+which alone is removed. The existing credit must have one delimiter-bound year
+between a plain creator attribution and the localized source phrase, outside the
+quoted photograph title. Copyright/rights notices, shared credits, repeated years,
+and ambiguity are rejected. Only that date span is collapsed to one delimiter.
+
+The original title, creator, source links, licence, resizing disclosure, media,
+publication record, and private provenance remain unchanged. The selected search
+body may additionally reflect this exact credit-year deletion; all other fields
+and rows remain exact. Browser evidence uses effective caption, alt, and credit.
+No arbitrary alt/credit replacement, global year removal, or other body edits are
+supported, and this option does not add output files or privileges.
