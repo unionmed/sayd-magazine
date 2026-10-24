@@ -84,6 +84,7 @@ class Proof:
     candidate: str
     additions: tuple
     temporary: object
+    kind: str = "compiled-publication"
 
     def read(self, path):
         return (self.site / path).read_text()
@@ -150,7 +151,8 @@ def verified_publication(base, root=ROOT, include_baseline=False):
         require(git(trusted, 'rev-parse', 'HEAD').decode().strip() == base and not git(trusted, 'diff', 'HEAD', '--name-only').strip(),
                 'Trusted compiler changed during verification')
         check_checkout(root, candidate)
-        proof = Proof(root, site, base, candidate, additions, temp)
+        proof = Proof(root, site, base, candidate, additions, temp,
+                      "compiled-publication" if changed else "baseline-publication")
         _proofs[key] = proof
         return proof
     except BaseException:
@@ -231,7 +233,7 @@ for language, prefix in [('ar',''), ('en','en'), ('fr','fr')]:
         require(tree(trusted, 'HEAD') == tree(root, base) and not git(trusted, 'diff', 'HEAD', '--name-only').strip(),
                 'Baseline article evidence snapshot changed')
         check_checkout(root, candidate)
-        proof = Proof(root, trusted, base, candidate, (), temp)
+        proof = Proof(root, trusted, base, candidate, (), temp, "verified-desk-restoration")
         _proofs[(str(root), base, candidate, 'article-evidence')] = proof
         return proof
     except BaseException:

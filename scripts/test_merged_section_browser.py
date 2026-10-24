@@ -195,7 +195,7 @@ def run(base,out):
                 from test_honey_buzzard_science_20261021 import test_honey_browser
                 test_honey_browser(context, new_url, out)
                 from test_gulf_tourism_20261022 import test_gulf_browser
-                test_gulf_browser(context, new_url, out)
+                test_gulf_browser(context, new_url, out, compiled)
                 screens.extend(test_compiled_article_browser(context, new_url, compiled, out))
                 page=context.new_page();before=context.new_page()
                 for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:

@@ -2,6 +2,7 @@ name: Gulf feature preview and visual QA
 on:
   pull_request:
     paths:
+      - 'scripts/test_historical_publication_guards.py'
       - 'content/features/gulf-tourism-20261022.json'
       - 'docs/**'
       - 'scripts/test_gulf_tourism*.py'
@@ -25,7 +26,12 @@ jobs:
         run: |
           pip install playwright==1.55.0 Pillow==11.3.0 lxml==5.3.2
           python -m playwright install --with-deps chromium
+      - name: Test strict historical publication boundaries
+        run: python -m unittest discover -s scripts -p 'test_historical_publication_guards.py' -v
       - name: Verify exact complete article and local responsive preview
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          SAYD_PUBLICATION_HEAD: ${{ github.event.pull_request.head.sha }}
         run: python scripts/test_gulf_tourism_browser_20261022.py
       - name: Retain Arabic English French desktop and mobile article previews
         if: always()
