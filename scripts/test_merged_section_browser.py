@@ -140,8 +140,8 @@ def test_compiled_article_browser(context, origin, proof, output):
 
 
 def run(base,out):
-    from publication_guard import verified_publication
-    compiled = verified_publication(base, include_baseline=True)
+    from publication_guard import verified_article_evidence
+    compiled = verified_article_evidence(base)
     out.mkdir(parents=True,exist_ok=True)
     errors=[];report=[];screens=[]
     from test_combined_hunting_equestrian import APPROVED_THREE_SLUGS, approved_three_articles

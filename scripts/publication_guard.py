@@ -156,3 +156,108 @@ def verified_publication(base, root=ROOT, include_baseline=False):
     except BaseException:
         temp.cleanup()
         raise
+
+
+def verified_article_evidence(base, root=ROOT):
+    """Article evidence, not placement authority, for an ordinary desk restoration.
+
+    New publications still require the exact trusted compiler proof. Existing
+    publications stay immutable. A desk-only restoration is accepted only when
+    trusted BASE rotation/rendering reproduces its complete placement bytes.
+    No candidate code runs in that replay; editorial approval remains external.
+    The returned snapshot is BASE, never a purported newly approved placement.
+    """
+    proof = verified_publication(base, root)
+    if proof is not None:
+        return proof
+    root = Path(root).resolve()
+    base = git(root, 'rev-parse', '--verify', base + '^{commit}').decode().strip()
+    candidate = os.environ.get('SAYD_PUBLICATION_HEAD') or git(root, 'rev-parse', 'HEAD').decode().strip()
+    records = git(root, 'ls-tree', '-r', '--name-only', base, '--', 'content/publications/').decode().splitlines()
+    if not records:
+        return None
+    check_context(base, candidate)
+    check_checkout(root, candidate)
+    homes = ('docs/index.html', 'docs/en/index.html', 'docs/fr/index.html')
+    placement = ('content/homepage.json', *homes)
+    fixed = set(CARD_STATE) - set(placement)
+    fixed.add('docs/s/links.json')
+    links = json.loads(git(root, 'show', base + ':docs/s/links.json'))
+    from urllib.parse import unquote
+    for path in records:
+        record = json.loads(git(root, 'show', base + ':' + path))
+        fixed.add(path)
+        fixed.update(photo['path'] for photo in record.get('photos', []))
+        for article in record['articles']:
+            for language, slug in article['slugs'].items():
+                prefix = '' if language == 'ar' else language + '/'
+                route = '/' + prefix + 'posts/' + slug + '/'
+                fixed.add('docs' + route + 'index.html')
+                fixed.add('content/' + ('posts' if language == 'ar' else language) + '/' + slug + '.md')
+                aliases = [alias for url, alias in links.items() if unquote(url) == route]
+                require(len(aliases) == 1, 'Missing/ambiguous baseline article alias')
+                fixed.add('docs' + aliases[0] + 'index.html')
+    require(not git(root, 'diff', '--name-only', base, candidate, '--', *sorted(fixed)).strip(),
+            'Existing article evidence requires unchanged sources, articles, media and aliases')
+    previous = json.loads(git(root, 'show', base + ':content/homepage.json'))
+    current = json.loads(git(root, 'show', candidate + ':content/homepage.json'))
+    ordinary_desk_restoration(previous, current)
+    temp = tempfile.TemporaryDirectory(prefix='sayd-article-evidence-')
+    trusted = Path(temp.name) / 'trusted'
+    try:
+        subprocess.run(['git', '-c', 'core.hooksPath=/dev/null', 'clone', '--quiet', '--shared', '--no-checkout', str(root), str(trusted)], check=True)
+        git(trusted, 'checkout', '--quiet', '--detach', base)
+        if git(root, 'diff', '--name-only', base, candidate, '--', *placement).strip():
+            (trusted / placement[0]).write_bytes(git(root, 'show', candidate + ':' + placement[0]))
+            env = dict(os.environ, PYTHONPATH='')
+            env.pop('PYTHONHOME', None)
+            replay = """import sys
+from pathlib import Path
+sys.path.insert(0, 'scripts')
+import homepage_hunting_rotation as rotation
+import refresh_homepage_doors as renderer
+rotation.sync()
+for language, prefix in [('ar',''), ('en','en'), ('fr','fr')]:
+    renderer.refresh(Path('docs') / prefix / 'index.html', language)
+"""
+            subprocess.run([sys.executable, '-c', replay], cwd=trusted, env=env,
+                           check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            changed = set(git(trusted, 'diff', '--name-only', base).decode().splitlines())
+            require(changed <= set(placement), 'Desk replay changed unrelated files')
+            for path in placement:
+                require((trusted / path).read_bytes() == git(root, 'show', candidate + ':' + path),
+                        'Candidate desk restoration differs from trusted replay: ' + path)
+            git(trusted, 'checkout', base, '--', *placement)
+        require(tree(trusted, 'HEAD') == tree(root, base) and not git(trusted, 'diff', 'HEAD', '--name-only').strip(),
+                'Baseline article evidence snapshot changed')
+        check_checkout(root, candidate)
+        proof = Proof(root, trusted, base, candidate, (), temp)
+        _proofs[(str(root), base, candidate, 'article-evidence')] = proof
+        return proof
+    except BaseException:
+        temp.cleanup()
+        raise
+
+
+def ordinary_desk_restoration(previous, current):
+    """Permit restored hunting-desk eligibility only; never new upper placement."""
+    import copy
+    before, after = copy.deepcopy(previous), copy.deepcopy(current)
+    old_omit, new_omit = before.get('omit_from_home_desks', []), after.get('omit_from_home_desks', [])
+    removed = set(old_omit) - set(new_omit)
+    require(new_omit == [slug for slug in old_omit if slug not in removed],
+            'Only existing desk omissions may be removed')
+    require(all(before['primary_door'].get(slug) in {'hunting', 'bird-hunting', 'land-hunting', 'marine-hunting', 'falconry', 'equestrian'} for slug in removed),
+            'Only Hunting & Equestrian desk eligibility may be restored')
+    after['omit_from_home_desks'] = old_omit
+    if 'omit_from_home_desks' not in before:
+        after.pop('omit_from_home_desks', None)
+    for door in after.get('ia_door_sections', []):
+        if door['door'] == 'hunting':
+            old = [d for d in before['ia_door_sections'] if d['door'] == 'hunting']
+            require(len(old) == 1, 'Ambiguous baseline hunting desk')
+            door['slugs'] = old[0]['slugs']
+    for key in ('صيد', 'Hunting'):
+        if key in after.get('desk_slugs', {}):
+            after['desk_slugs'][key] = before['desk_slugs'][key]
+    require(before == after, 'Desk restoration changed unrelated placement/configuration')

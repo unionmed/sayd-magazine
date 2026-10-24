@@ -270,12 +270,12 @@ class SourceHeaderCounts(unittest.TestCase):
         self.assertEqual(header_counts.check_source_publication_pairs(self.proof, self.root), 3)
 
     def test_wrapper_requires_trusted_base_proof(self):
-        with patch('publication_guard.verified_publication', return_value=self.proof) as verify:
+        with patch('publication_guard.verified_article_evidence', return_value=self.proof) as verify:
             self.assertEqual(header_counts.source_publication_header_count('trusted-base', self.root), 3)
-            verify.assert_called_once_with('trusted-base', self.root, include_baseline=True)
-        with patch('publication_guard.verified_publication', return_value=None):
+            verify.assert_called_once_with('trusted-base', self.root)
+        with patch('publication_guard.verified_article_evidence', return_value=None):
             self.assertEqual(header_counts.source_publication_header_count('trusted-base', self.root), 0)
-        with patch('publication_guard.verified_publication', side_effect=AssertionError('unproved')):
+        with patch('publication_guard.verified_article_evidence', side_effect=AssertionError('unproved')):
             with self.assertRaisesRegex(AssertionError, 'unproved'):
                 header_counts.source_publication_header_count('trusted-base', self.root)
 
@@ -421,6 +421,111 @@ const image = {src: '/local/image.jpg', currentSrc: '', decode: () => BEHAVIOR};
 
     def test_never_resolving_decode_rejects_at_deadline(self):
         self.assertEqual(self.run_decode('new Promise(() => {})'), 'Image decode timed out: /local/image.jpg')
+
+
+
+
+class DeskArticleEvidence(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix='sayd-desk-evidence-test-')
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.env = patch.dict(os.environ, {'GITHUB_ACTIONS': 'false', 'SAYD_PUBLICATION_HEAD': ''})
+        self.env.start(); self.addCleanup(self.env.stop)
+        self.git('init', '--quiet'); self.git('config', 'user.name', 'Fixture'); self.git('config', 'user.email', 'fixture@example.invalid')
+        self.old = ['old'+str(i) for i in range(8)]
+        self.current = ['restored', *self.old[:7]]
+        self.before = {'omit_from_home_desks': ['restored'], 'primary_door': {'restored':'hunting'},
+                       'ia_door_sections':[{'door':'hunting','slugs':self.old}, {'door':'photos','slugs':['gallery']}],
+                       'desk_slugs':{'صيد':self.old, 'Hunting':self.old}, 'featured':['lead'], 'ticker_entries':['ticker']}
+        self.after = copy.deepcopy(self.before)
+        self.after['omit_from_home_desks'] = []
+        self.after['ia_door_sections'][0]['slugs'] = self.current
+        self.after['desk_slugs'] = {'صيد':self.current, 'Hunting':self.current}
+        self.write('content/homepage.json', json.dumps(self.before))
+        self.write('docs/s/links.json', json.dumps({'/posts/fixture/':'/s/0000000000/'}))
+        self.write('content/publications/test.json', json.dumps({'articles':[{'slugs':{'ar':'fixture'}}], 'photos':[{'path':'docs/media/fixture.jpg'}]}))
+        self.write('docs/posts/fixture/index.html','Existing article')
+        self.write('content/posts/fixture.md','Existing article source')
+        self.write('docs/media/fixture.jpg','Original image bytes')
+        self.write('docs/s/0000000000/index.html','Original alias')
+        self.write('scripts/homepage_hunting_rotation.py', '''import json
+from pathlib import Path
+def sync():
+ c=json.loads(Path('content/homepage.json').read_text())
+ expected=['restored']+['old'+str(i) for i in range(7)]
+ assert c['omit_from_home_desks']==[]
+ assert c['ia_door_sections'][0]['slugs']==expected
+ assert c['desk_slugs']=={'صيد':expected,'Hunting':expected}
+''')
+        self.write('scripts/refresh_homepage_doors.py', '''import json
+from pathlib import Path
+def refresh(path,language):
+ c=json.loads(Path('content/homepage.json').read_text())
+ path.write_text('<main>unchanged upper</main>'+','.join(c['ia_door_sections'][0]['slugs']))
+''')
+        for path in ('docs/index.html','docs/en/index.html','docs/fr/index.html'):
+            self.write(path,'<main>unchanged upper</main>'+','.join(self.old))
+        self.base=self.commit()
+        self.write('content/homepage.json',json.dumps(self.after))
+        for path in ('docs/index.html','docs/en/index.html','docs/fr/index.html'):
+            self.write(path,'<main>unchanged upper</main>'+','.join(self.current))
+        self.commit()
+
+    def tearDown(self):
+        for proof in guard._proofs.values(): proof.temporary.cleanup()
+        guard._proofs.clear()
+
+    def git(self,*args): return guard.git(self.root,*args).decode().strip()
+    def write(self,path,text):
+        target=self.root/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_text(text)
+    def commit(self):
+        self.git('add','--all');self.git('commit','--quiet','-m','Fixture change');return self.git('rev-parse','HEAD')
+
+    def test_trusted_replay_allows_only_valid_desk_restoration(self):
+        proof=guard.verified_article_evidence(self.base,self.root)
+        self.assertEqual(proof.read('docs/index.html'),'<main>unchanged upper</main>'+','.join(self.old))
+        self.assertEqual(proof.additions,())
+        with self.assertRaisesRegex(AssertionError,'do not authorize'):
+            guard.verified_publication(self.base,self.root,include_baseline=True)
+
+    def test_upper_card_and_other_home_bytes_cannot_change(self):
+        self.write('docs/index.html','<main>different upper</main>'+','.join(self.current));self.commit()
+        with self.assertRaisesRegex(AssertionError,'trusted replay'):
+            guard.verified_article_evidence(self.base,self.root)
+
+    def test_invalid_rotation_rejected_by_trusted_renderer(self):
+        self.after['ia_door_sections'][0]['slugs']=list(reversed(self.current))
+        self.write('content/homepage.json',json.dumps(self.after));self.commit()
+        with self.assertRaises(subprocess.CalledProcessError):guard.verified_article_evidence(self.base,self.root)
+
+    def test_unrelated_configuration_rejected(self):
+        self.after['ticker_entries']=['other'];self.write('content/homepage.json',json.dumps(self.after));self.commit()
+        with self.assertRaisesRegex(AssertionError,'unrelated placement'):
+            guard.verified_article_evidence(self.base,self.root)
+
+    def test_article_media_and_alias_mutations_rejected(self):
+        head=self.git('rev-parse','HEAD')
+        for path in ('docs/posts/fixture/index.html','content/posts/fixture.md','docs/media/fixture.jpg','docs/s/0000000000/index.html','docs/s/links.json'):
+            self.git('reset','--hard',head);self.write(path,'Changed');self.commit()
+            with self.assertRaisesRegex(AssertionError,'unchanged sources'):
+                guard.verified_article_evidence(self.base,self.root)
+
+    def test_candidate_renderer_is_not_executed(self):
+        self.write('scripts/refresh_homepage_doors.py','raise RuntimeError("UNTRUSTED EXECUTED")')
+        self.commit()
+        proof=guard.verified_article_evidence(self.base,self.root)
+        self.assertEqual(proof.base,self.base)
+
+    def test_existing_source_mutation_cannot_use_baseline_evidence(self):
+        self.write('content/publications/test.json', '{}'); self.commit()
+        with self.assertRaisesRegex(AssertionError, 'trusted compiler'):
+            guard.verified_article_evidence(self.base, self.root)
+
+    def test_new_source_still_requires_independent_compiler(self):
+        self.write('content/publications/new.json','{}');self.commit()
+        with self.assertRaisesRegex(AssertionError,'trusted compiler'):
+            guard.verified_article_evidence(self.base,self.root)
 
 
 if __name__ == '__main__':
