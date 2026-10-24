@@ -1,0 +1,361 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "maghreb-tourism-20261024",
+  "expected_base": "faa6e672372d7b093924cb631e869c6e6766692c",
+  "approval_reference": "private:Sentinel_95a3077151a48191b83b612843d31e25; approved illustrated v4 Library libfile_119147f3f18c8191b05c5b94db8c76ad and review PDF libfile_9f33bbf3abbc8191bd9409c1b97b9cf7",
+  "bank_search_reference": "Reuse exact four user-selected originals 01,03,05,06 from approved Library review package libfile_119147f3f18c8191b05c5b94db8c76ad; source ledger SELECTED-PHOTO-SOURCES.json. No new substitute assets. User accepted responsibility for publication rights; independent copyright verification not claimed.",
+  "photos": [
+    {
+      "id": "photo-1",
+      "path": "docs/media/publications/maghreb-tourism-20261024/01-ma-koudia-02.webp",
+      "sha256": "fea65adc0ecdfc7124ac67e458091c91ddae363b64b2663a281a4719c3c0be31",
+      "source_sha256": "fea65adc0ecdfc7124ac67e458091c91ddae363b64b2663a281a4719c3c0be31",
+      "source_reference": "William Powell Sporting; https://williampowellsporting.co.uk/news/el-koudia-partridge-shooting-morocco-2026/; original source file: https://williampowellsporting.co.uk/wp-content/uploads/2026/07/elkoudia-partridge-shooting-02.webp; capture date unknown. Complete original, signature retained.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "User selected these exact sourced photos and explicitly undertakes copyright handling. External rights and documentary authenticity have not been independently verified; no free licence or ownership claim.",
+        "evidence_reference": "private:Sentinel_46357b43a1e88191bcdeeeb40c431aa1; private:Sentinel_b7e3f85f210c8191afe0f7c0970628cd",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_95a3077151a48191b83b612843d31e25"
+      },
+      "alt": {
+        "ar": "صياد يرفع بندقيته في ميدان الكودية بالمغرب، بحسب صفحة المنظّم.",
+        "en": "A hunter at El Koudia in Morocco, as identified by the organiser.",
+        "fr": "Un chasseur à El Koudia, au Maroc, selon l’organisateur."
+      },
+      "caption": {
+        "ar": "صياد يرفع بندقيته في ميدان الكودية بالمغرب، بحسب صفحة المنظّم.",
+        "en": "A hunter at El Koudia in Morocco, as identified by the organiser.",
+        "fr": "Un chasseur à El Koudia, au Maroc, selon l’organisateur."
+      }
+    },
+    {
+      "id": "photo-3",
+      "path": "docs/media/publications/maghreb-tourism-20261024/03-ma-dhd-chasse-petit-gibier-maroc-02.jpeg.webp",
+      "sha256": "8863847ccbaf4ee587f780d2383f3353db1d05b21a0d9cf8285042a0a89bf89a",
+      "source_sha256": "8863847ccbaf4ee587f780d2383f3353db1d05b21a0d9cf8285042a0a89bf89a",
+      "source_reference": "DHD-Laïka; https://www.agence-dhdlaika.com/voyage/maroc-chasse-petit-gibier/; original source file: https://www.agence-dhdlaika.com/wp-content/uploads/2023/10/chasse-petit-gibier-maroc-02.jpeg.webp; capture date unknown. Complete original, signature retained.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "User selected these exact sourced photos and explicitly undertakes copyright handling. External rights and documentary authenticity have not been independently verified; no free licence or ownership claim.",
+        "evidence_reference": "private:Sentinel_46357b43a1e88191bcdeeeb40c431aa1; private:Sentinel_b7e3f85f210c8191afe0f7c0970628cd",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_95a3077151a48191b83b612843d31e25"
+      },
+      "alt": {
+        "ar": "كلب صيد يحمل طريدة؛ من صور برنامج صيد الطرائد الصغيرة بالمغرب لدى DHD-Laïka.",
+        "en": "A hunting dog carrying game, from DHD-Laïka’s small-game programme in Morocco.",
+        "fr": "Un chien rapportant du gibier, dans les images du programme marocain de DHD-Laïka."
+      },
+      "caption": {
+        "ar": "كلب صيد يحمل طريدة؛ من صور برنامج صيد الطرائد الصغيرة بالمغرب لدى DHD-Laïka.",
+        "en": "A hunting dog carrying game, from DHD-Laïka’s small-game programme in Morocco.",
+        "fr": "Un chien rapportant du gibier, dans les images du programme marocain de DHD-Laïka."
+      }
+    },
+    {
+      "id": "photo-5",
+      "path": "docs/media/publications/maghreb-tourism-20261024/05-tn-report-battue.webp",
+      "sha256": "ca9afe5ae1c7b1f21836c86b089faa4e809f6182f0d660e3b735af26ff47db7a",
+      "source_sha256": "ca9afe5ae1c7b1f21836c86b089faa4e809f6182f0d660e3b735af26ff47db7a",
+      "source_reference": "DHD-Laïka; https://www.agence-dhdlaika.com/chasse-sanglier-tunisie-voyage-battue/; original source file: https://www.agence-dhdlaika.com/wp-content/uploads/2026/06/scene-de-battue-chasse-du-sanglier-en-Tunisie.webp; capture date unknown. Complete original, signature retained.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "User selected these exact sourced photos and explicitly undertakes copyright handling. External rights and documentary authenticity have not been independently verified; no free licence or ownership claim.",
+        "evidence_reference": "private:Sentinel_46357b43a1e88191bcdeeeb40c431aa1; private:Sentinel_b7e3f85f210c8191afe0f7c0970628cd",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_95a3077151a48191b83b612843d31e25"
+      },
+      "alt": {
+        "ar": "صيادان في الميدان خلال مشهد تصفه DHD-Laïka بأنه صيد خنزير بري بالدفع في تونس.",
+        "en": "Two hunters in the field during a Tunisian wild-boar drive, as described by DHD-Laïka.",
+        "fr": "Deux chasseurs sur le terrain lors d’une battue au sanglier en Tunisie, selon DHD-Laïka."
+      },
+      "caption": {
+        "ar": "صيادان في الميدان خلال مشهد تصفه DHD-Laïka بأنه صيد خنزير بري بالدفع في تونس.",
+        "en": "Two hunters in the field during a Tunisian wild-boar drive, as described by DHD-Laïka.",
+        "fr": "Deux chasseurs sur le terrain lors d’une battue au sanglier en Tunisie, selon DHD-Laïka."
+      }
+    },
+    {
+      "id": "photo-6",
+      "path": "docs/media/publications/maghreb-tourism-20261024/06-tn-lilian-ruet.jpg",
+      "sha256": "79f5a1be83b047044a448ab01ed7bfcff26a7c2d64a5c38256c80a4199173b81",
+      "source_sha256": "79f5a1be83b047044a448ab01ed7bfcff26a7c2d64a5c38256c80a4199173b81",
+      "source_reference": "Chasse Sanglier Tunisie / Lilian Ruet (operator; photographer unconfirmed); https://www.chasse-sanglier-tunisie.com/; original source file: https://www.chasse-sanglier-tunisie.com/file/si273858/Chasse%20sanglier%20battue%20Tunisie%20Lilian%20Ruet%20%281%29-fi26995678.JPG; capture date unknown. Complete original, signature retained.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "User selected these exact sourced photos and explicitly undertakes copyright handling. External rights and documentary authenticity have not been independently verified; no free licence or ownership claim.",
+        "evidence_reference": "private:Sentinel_46357b43a1e88191bcdeeeb40c431aa1; private:Sentinel_b7e3f85f210c8191afe0f7c0970628cd",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_95a3077151a48191b83b612843d31e25"
+      },
+      "alt": {
+        "ar": "مجموعة صيادين وطاقم تصوير بعد الصيد، مع خنزيرين بريين مطروحين؛ من موقع رحلات الصيد في تونس.",
+        "en": "Hunters and a camera crew after a hunt, with two wild boars; from Chasse Sanglier Tunisie.",
+        "fr": "Des chasseurs et une équipe de tournage après la chasse, avec deux sangliers ; source : Chasse Sanglier Tunisie."
+      },
+      "caption": {
+        "ar": "مجموعة صيادين وطاقم تصوير بعد الصيد، مع خنزيرين بريين مطروحين؛ من موقع رحلات الصيد في تونس.",
+        "en": "Hunters and a camera crew after a hunt, with two wild boars; from Chasse Sanglier Tunisie.",
+        "fr": "Des chasseurs et une équipe de tournage après la chasse, avec deux sangliers ; source : Chasse Sanglier Tunisie."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الصيد-السياحي-في-دول-المغرب-العربي",
+        "en": "hunting-tourism-maghreb",
+        "fr": "tourisme-cynegetique-maghreb"
+      },
+      "published": "2026-10-24",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "photo-1",
+        "photo-3",
+        "photo-5",
+        "photo-6"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الصيد السياحي في دول المغرب العربي",
+          "subtitle": "من وكالات السفر الأوروبية إلى النزل والمرشدين وفرق العمل المحلية… كيف تتحول رحلة الصيد إلى خدمات ودخل في المغرب وتونس، وما الذي تحتاجه التجربة الجزائرية لتوسيع حضورها السياحي؟",
+          "meta_description": "من وكالات السفر الأوروبية إلى النزل والمرشدين وفرق العمل المحلية… كيف تتحول رحلة الصيد إلى خدمات ودخل في المغرب وتونس، وما الذي تحتاجه التجربة الجزائرية لتوسيع حضورها السياحي؟",
+          "kicker": "الصيد كسياحة ومورد تنمية ٢ من ٣",
+          "ticker_title": "الصيد السياحي في دول المغرب العربي",
+          "sections": [
+            {
+              "paragraphs": [
+                "قد تبدأ الرحلة في مكتب بباريس أو لندن، لكن يوم الصيد نفسه لا يصنعه المكتب وحده. خلفه سائق يستقبل المجموعة، ونزل يجهز الغرف، ومرشد يعرف الأرض، وطاقم يتولى الطعام والعمل الميداني. في المغرب العربي، تتجمع هذه الخدمات حول برامج تسوّقها وكالات أوروبية ومحلية لهواة يأتون لأيام قليلة، وينفقون على أكثر من الطريدة.",
+                "بعد التجارب الخليجية، تنتقل «صيد» في الحلقة الثانية إلى سوق مختلفة: قربٌ من أوروبا، وبرامج للحجل والطرائد الصغيرة والخنزير البري، ومؤسسات تتولى التنظيم المحلي. ويتقدم المغرب وتونس بأمثلة تجارية وإحصاءات تكشف ملامح النشاط، فيما تفتح الجزائر سؤال الانتقال من تنظيم الصيد إلى بناء منتج سياحي متكامل."
+              ]
+            },
+            {
+              "heading": "المغرب: من ثلاثة أيام في البر إلى إقامة في مراكش",
+              "paragraphs": [
+                "بحسب بيانات للوكالة الوطنية للمياه والغابات نقلتها القناة الثانية المغربية، استقبل نشاط الصيد السياحي نحو خمسة آلاف سائح قناص خلال موسم 2025–2026، ويضم القطاع 146 شركة متخصصة. هذه قاعدة من الزوار والمنظمين تتجاوز الرحلات الفردية المتفرقة.",
+                "وتوضح العروض كيف تصل السوق الأوروبية إلى الأرض المغربية. تعرض وكالة DHD-Laïka الفرنسية برنامجًا بين الرباط وطنجة، بثلاثة أيام صيد وأربع ليالٍ، يبدأ من 2,750 يورو للصياد ضمن مجموعة من خمسة فأكثر. يشمل العرض السفر من باريس، عدا رسوم المطارات، والإقامة والإعاشة والنقل والمرشدين والحمالين والتراخيص. إنها حزمة تتوزع خدماتها بين السفر الدولي والعمل في الوجهة، لا مبلغًا يدخل كله إلى الاقتصاد المحلي.",
+                "وفي نموذج مختلف يستهدف المجموعات الخاصة، تسوّق William Powell Sporting البريطانية برنامج «الكودية» في تلال الجبيلات قرب مراكش: يومان لفريق من ثمانية صيادين بسعر معلن يبلغ 40,400 يورو، يشمل الطاقم الميداني والضيافة والنقل والتراخيص والمعدات المحددة في العرض، ولا يشمل الإقامة الفندقية. وتتيح مراكش للمرافقين غير الصيادين الإقامة والزيارة والتسوق، فتتسع الرحلة خارج ساعات الصيد.",
+                "لكن المنتجين ليسا تجربة واحدة. ففي «الكودية»، يوضح المسوّق أن طيورًا مكاثرة تُطلق قبل الموسم. وهذا يختلف عن برنامج يقوم على الطرائد البرية؛ لكل نموذج إدارة ومتابعة بيئية، ولا تكفي كثافة الطيور أو ارتفاع السعر للحكم على استدامته.",
+                "وللمنظم المغربي موقع في البنية القانونية نفسها. فالإطار المنظم للصيد السياحي يربط استقبال السائح غير المقيم بمنظم معتمد، ويشترط في النشاط موارد بشرية ومشروع استثمار وتأجير مجال للصيد. بذلك لا يكون الشريك المحلي مجرد حلقة بيع؛ بل جهة تحمل مسؤوليات في إدارة الرحلة والمجال."
+              ]
+            },
+            {
+              "heading": "ليس ثمن طريدة",
+              "paragraphs": [
+                "غرفة وطعام، نقل وإرشاد، وعمل ميداني ورسوم: هكذا تتوزع خدمات الرحلة. أما نصيب أهل المنطقة، فيتحدد بالأجور والمشتريات والعقود المحلية، لا بالسعر الإجمالي وحده."
+              ]
+            },
+            {
+              "heading": "تونس: سوق فرنسية واضحة… وفرق من القرى",
+              "paragraphs": [
+                "في تونس، تمنح الأرقام صورة ملموسة عن الزائر والعائد العام. يسجل التقرير الوطني حول وضعية البيئة والتنمية المستدامة لسنة 2022 وصول 606 سياح صيادين في موسم 2021–2022، بينهم 532 فرنسيًا. وبلغت مداخيل الخزينة من الصيد السياحي 300,233 دينارًا تونسيًا. وهي حصيلة تاريخية للرسوم والإيرادات العامة المرتبطة بالنشاط، لا قيمة إنفاق الزوار كله ولا أرباح المنظمين.",
+                "وتبقى فرنسا حاضرة في واجهة التسويق. تعرض DHD-Laïka برنامجًا للخنزير البري بخمسة أيام صيد وست ليالٍ، بسعر 2,390 يورو للشخص ضمن مجموعة من عشرة إلى اثني عشر. وتصف تشغيل فريق من خمسة عشر إلى عشرين شخصًا من أبناء القرى لدفع الطرائد، مع فنادق ونقل وتنظيم محلي. وتفتح هذه الخدمات مجالًا لأعمال موسمية في القرى، ترتبط بمواعيد الرحلات ولا تعني بالضرورة وظائف دائمة طوال العام.",
+                "ومن داخل تونس، تقدم «ديزرت روز» برامج باللغة الإسبانية، فتظهر قناة أخرى للوصول إلى الزبون الأوروبي. والميزة هنا ليست اللغة وحدها؛ فالوكالة المحلية تجمع معرفة المنطقة بخدمات الإقامة والتنقل واستقبال المجموعة.",
+                "ويعطي التنظيم التونسي لهذا الدور مضمونًا عمليًا: يتولى الصيد السياحي منظّمون من وكالات الأسفار والمؤسسات الفندقية التونسية وفق شروط تنظيمية تشمل مرافقة مرشد، والتأمين، واستصدار رخص الصيد مسبقًا. وحين ترتبط الرحلة بمنظم مسؤول، تصبح متابعة المشاركين والطرائد جزءًا من الخدمة، لا أمرًا متروكًا للزائر."
+              ]
+            },
+            {
+              "heading": "أموال للخزينة… وليست رقم أعمال",
+              "paragraphs": [
+                "300,233 دينارًا تونسيًا: مداخيل الخزينة من الصيد السياحي في موسم 2021–2022، وفق التقرير الوطني عن حالة البيئة. لا يشمل هذا الرقم تلقائيًا نفقات الفنادق والنقل والطعام، ولا يثبت تخصيصه كله لحماية الطبيعة."
+              ]
+            },
+            {
+              "heading": "الجزائر: التنظيم وحده لا يصنع وجهة",
+              "paragraphs": [
+                "تتناول التشريعات الجزائرية الصيد السياحي صراحة، وتربطه بوكالة سياحية وبشروط خاصة، منها المجالات ذات التكاثر الاصطناعي. وقد أعلنت المديرية العامة للغابات افتتاح موسم الصيد 2026–2027 في 10 أكتوبر، وفق وكالة الأنباء الجزائرية. لكن افتتاح الموسم العام يختلف عن إتاحة برنامج سياحي أجنبي مستوفٍ لشروطه.",
+                "ولتوسيع هذا النشاط في صورة منتج سياحي، لا بد من جمع عناصر الرحلة: وكالة تتولى استقبال الزائر، ومجال مؤهل، وإقامة ونقل وإرشاد، وبرنامج واضح يمكن عرضه وحجزه. الدرس الذي تقدمه الأمثلة المغربية والتونسية أن الجغرافيا وحدها لا تكفي؛ ما يشتريه الزائر هو رحلة منظمة من الوصول إلى المغادرة."
+              ]
+            },
+            {
+              "heading": "موريتانيا: فرصة طرحتها خطط التنمية",
+              "paragraphs": [
+                "وفي موريتانيا، تناول التشخيص التشغيلي لاستراتيجية السياحة، المعد عام 2017 بدعم برنامج الأمم المتحدة الإنمائي والمنشور لدى الوزارة، إمكان عودة الصيد السياحي تحت تنظيم صارم ومطبق، وبتنسيق بين قطاعي السياحة والبيئة. تضع هذه الرؤية شرط الإدارة قبل توسيع النشاط؛ وهي طرح تخطيطي تاريخي، لا إعلانًا عن برنامج صيد قائم اليوم."
+              ]
+            },
+            {
+              "heading": "من دخل موسمي إلى مورد مستدام",
+              "paragraphs": [
+                "توضح النماذج المغاربية أين يمكن أن تنشأ القيمة: في النزل والفندق، وعند السائق والمرشد والطاهي والعامل الميداني، وفي الرسوم التي تحصلها الدولة. ويمكن للمرافقين والأنشطة السياحية المحيطة أن يوسّعوا دائرة الإنفاق، بدل أن تبقى الزيارة محصورة في يوم صيد واحد.",
+                "لكن تحويل الفرصة إلى تنمية يحتاج أكثر من زيادة عدد الزوار. العقود والأجور والمشتريات المحلية تحدد ما يبقى في المنطقة، كما أن التدريب والسلامة وانتظام المواسم تؤثر في جودة العمل واستمراره. ومن الجهة الأخرى، تتطلب الطرائد والموائل متابعة علمية وحصصًا ورقابة؛ فالضغط على المورد الطبيعي قد يقوّض النشاط الذي يعيش منه الناس.",
+                "لهذا، لا يكفي وصف الرحلة بأنها «مستدامة» في إعلانها. المعيار هو الجمع بين نشاط قانوني قابل للمتابعة، وخدمات يستفيد منها أهل المكان، وإدارة تحافظ على المورد للمواسم المقبلة. عند هذا التقاطع، يصبح الصيد السياحي أكثر من رحلة عابرة: فرصة لاقتصاد محلي يستحق التنظيم والقياس والحماية.",
+                "المصادر: الوكالة الوطنية للمياه والغابات المغربية كما نقلت القناة الثانية؛ التقرير الوطني التونسي حول وضعية البيئة والتنمية المستدامة لسنة 2022؛ التشريعات المنظمة للصيد السياحي في المغرب وتونس والجزائر؛ وكالة الأنباء الجزائرية؛ تشخيص استراتيجية السياحة الموريتانية لعام 2017؛ العروض المنشورة للجهات المنظمة. الأسعار أمثلة تجارية منشورة عند المراجعة في 23 أكتوبر 2026، وليست متوسطات للسوق أو تأكيدًا لتوافر الحجز.",
+                "من السلسلة: الصيد السياحي في بلدان الخليج العربية.\nفي الحلقة المقبلة: الصيد السياحي في مصر والعراق والأردن."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "مصادر الصور: William Powell Sporting، DHD-Laïka، Chasse Sanglier Tunisie"
+        },
+        "en": {
+          "title": "Hunting Tourism in the Maghreb",
+          "subtitle": "From European travel agencies to lodges, guides and local teams: how do hunting trips generate services and income in Morocco and Tunisia, and what does Algeria need to broaden its appeal as a hunting-tourism destination?",
+          "meta_description": "From European travel agencies to lodges, guides and local teams: how do hunting trips generate services and income in Morocco and Tunisia, and what does Algeria need to broaden its appeal as a hunting-tourism destination?",
+          "kicker": "Hunting as Tourism and a Resource for Development — 2 of 3",
+          "ticker_title": "Hunting Tourism in the Maghreb",
+          "sections": [
+            {
+              "paragraphs": [
+                "A trip may begin in an office in Paris or London, but that office cannot deliver a day’s hunting on its own. Behind it are a driver welcoming the group, a lodge preparing rooms, a guide who knows the terrain and a team handling meals and work in the field. Across the Maghreb, these services come together in packages marketed by European and local agencies to enthusiasts who visit for a few days and spend on much more than game.",
+                "After exploring the Gulf, Sayd turns in this second instalment to a different market: proximity to Europe, programmes for partridge, small game and wild boar, and businesses providing local organisation. Morocco and Tunisia offer commercial examples and statistics that reveal the outlines of this activity, while Algeria raises the question of how hunting regulation can translate into a complete tourism product."
+              ]
+            },
+            {
+              "heading": "Morocco: from three days in the field to a stay in Marrakech",
+              "paragraphs": [
+                "According to figures from Morocco’s National Agency for Water and Forests reported by 2M, hunting tourism welcomed around 5,000 visiting hunters during the 2025–2026 season, and the sector comprises 146 specialist companies. This is a base of visitors and organisers extending beyond isolated individual trips.",
+                "The offers show how European demand reaches Moroccan terrain. French agency DHD-Laïka advertises a programme between Rabat and Tangier with three hunting days and four nights, starting at €2,750 per hunter for groups of five or more. It includes flights from Paris, excluding airport taxes, accommodation, meals, transfers, guides, porters and permits. The package spans international travel and services at the destination; its entire price does not flow into the local economy.",
+                "In a different model aimed at private groups, Britain’s William Powell Sporting markets El Koudia in the Jbilet hills near Marrakech: two days for eight hunters at an advertised team price of €40,400. Field staff, hospitality, transfers, permits and the equipment specified in the offer are included; hotel accommodation is not. Marrakech also offers non-hunting companions places to stay, sights to visit and shopping, extending the trip beyond time spent hunting.",
+                "Yet the two products are not the same experience. At El Koudia, the marketer explains that reared birds are released before the season. This differs from a programme based on wild game. Each model requires management and environmental monitoring; neither bird density nor a high price establishes sustainability.",
+                "The Moroccan organiser also has a place in the legal framework. Hunting-tourism rules link the reception of non-resident visiting hunters to an authorised organiser and require staffing, an investment project and a leased hunting area. The local partner is therefore more than a sales intermediary: it carries responsibilities for managing both the trip and the area."
+              ]
+            },
+            {
+              "heading": "more than the price of game",
+              "paragraphs": [
+                "Rooms and meals, transport and guiding, field work and fees: these are the services within a hunting trip. Local communities’ share depends on wages, purchases and local contracts, not the package price alone."
+              ]
+            },
+            {
+              "heading": "Tunisia: a clear French market—and teams from villages",
+              "paragraphs": [
+                "In Tunisia, the figures provide a tangible picture of visitors and public revenue. The National Report on the State of the Environment and Sustainable Development for 2022 records 606 visiting hunters in the 2021–2022 season, including 532 French nationals. Treasury receipts from hunting tourism reached 300,233 Tunisian dinars. This is a historical total of fees and public revenue associated with the activity, not visitors’ total spending or organisers’ profits.",
+                "France remains visible in the marketing. DHD-Laïka advertises a wild-boar programme with five hunting days and six nights for €2,390 per person in groups of ten to twelve. It describes employing a team of fifteen to twenty beaters from villages, alongside hotels, transport and local organisation. These services create opportunities for seasonal work in villages, tied to trip dates rather than necessarily providing permanent, year-round jobs.",
+                "Within Tunisia, Desert Rose offers programmes in Spanish, providing another channel to European customers. The advantage is not simply language: a local agency brings knowledge of the region together with accommodation, transport and group reception.",
+                "Tunisian regulations give this role practical substance. Hunting tourism is organised by Tunisian travel agencies and hotel establishments under rules that include accompaniment by a guide, insurance and obtaining hunting permits in advance. When a responsible organiser oversees the trip, monitoring participants and game becomes part of the service rather than something left to the visitor."
+              ]
+            },
+            {
+              "heading": "Treasury revenue, not turnover",
+              "paragraphs": [
+                "300,233 Tunisian dinars: Treasury receipts from hunting tourism in the 2021–2022 season, according to the national environment report. The figure does not automatically include spending on hotels, transport and meals, nor establish that all of it was earmarked for nature conservation."
+              ]
+            },
+            {
+              "heading": "Algeria: regulation alone does not create a destination",
+              "paragraphs": [
+                "Algerian legislation explicitly addresses hunting tourism, linking it to a tourism agency and specific conditions, including areas where game is artificially bred. The Directorate-General of Forests announced the opening of the 2026–2027 hunting season for 10 October, as reported by Algeria Press Service. Opening the general season, however, is different from making a fully compliant programme available to foreign hunting tourists.",
+                "Developing this activity into a broader tourism product requires bringing together the elements of the trip: an agency to receive visitors, a suitable hunting area, accommodation, transport, guiding and a clearly defined programme that can be marketed and booked. The Moroccan and Tunisian examples show that geography alone is not enough. What visitors buy is an organised trip from arrival to departure."
+              ]
+            },
+            {
+              "heading": "Mauritania: an opportunity raised in development plans",
+              "paragraphs": [
+                "In Mauritania, the operational assessment of the tourism strategy, prepared in 2017 with support from the United Nations Development Programme and published by the ministry, considered the potential revival of hunting tourism under strict, enforced regulation and coordination between the tourism and environment sectors. This approach puts management before expansion. It is a historical planning proposal, not an announcement of a hunting programme operating today."
+              ]
+            },
+            {
+              "heading": "From seasonal income to a lasting resource",
+              "paragraphs": [
+                "The Maghreb’s examples show where value can arise: in lodges and hotels, through drivers, guides, cooks and field workers, and in fees collected by the state. Companions and other tourism activities can broaden spending rather than confining a visit to a single day’s hunting.",
+                "Turning an opportunity into development, however, takes more than increasing visitor numbers. Contracts, wages and local purchasing determine what remains in the area, while training, safety and predictable seasons influence the quality and continuity of work. Game and habitats, meanwhile, require scientific monitoring, quotas and enforcement: pressure on the natural resource can undermine the very activity on which livelihoods depend.",
+                "Calling a trip “sustainable” in an advertisement is therefore not enough. The test is whether it combines legal, accountable activity with services that benefit local people and management that safeguards the resource for future seasons. At that intersection, hunting tourism becomes more than a brief visit: an opportunity for a local economy that deserves careful organisation, measurement and protection.",
+                "Sources: Morocco’s National Agency for Water and Forests, as reported by 2M; Tunisia’s National Report on the State of the Environment and Sustainable Development for 2022; legislation governing hunting tourism in Morocco, Tunisia and Algeria; Algeria Press Service; the 2017 assessment of Mauritania’s tourism strategy; published offers from organisers. The prices cited come from commercial offers checked on 23 October 2026, not market averages or confirmation of booking availability.",
+                "From the series: Hunting Tourism in the Arab Gulf Countries.\nNext instalment: Hunting Tourism in Egypt, Iraq and Jordan."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo sources: William Powell Sporting, DHD-Laïka, Chasse Sanglier Tunisie"
+        },
+        "fr": {
+          "title": "Le tourisme cynégétique au Maghreb",
+          "subtitle": "Des agences de voyages européennes aux hébergements, aux guides et aux équipes locales : comment les séjours de chasse génèrent-ils des services et des revenus au Maroc et en Tunisie ? Et de quoi l’Algérie a-t-elle besoin pour développer son offre touristique dans ce domaine ?",
+          "meta_description": "Des agences de voyages européennes aux hébergements, aux guides et aux équipes locales : comment les séjours de chasse génèrent-ils des services et des revenus au Maroc et en Tunisie ? Et de quoi l’Algérie a-t-elle besoin pour développer son offre touristique dans ce domaine ?",
+          "kicker": "La chasse, tourisme et ressource de développement — 2 sur 3",
+          "ticker_title": "Le tourisme cynégétique au Maghreb",
+          "sections": [
+            {
+              "paragraphs": [
+                "Le voyage peut commencer dans un bureau à Paris ou à Londres, mais ce bureau ne suffit pas à organiser une journée de chasse. En coulisses, un chauffeur accueille le groupe, un hébergement prépare les chambres, un guide connaît le terrain et une équipe s’occupe des repas et du travail sur place. Au Maghreb, ces services se réunissent dans des programmes commercialisés par des agences européennes et locales auprès d’amateurs qui viennent quelques jours et dépensent bien au-delà du seul gibier.",
+                "Après les expériences du Golfe, Sayd explore dans ce deuxième volet un autre marché : la proximité de l’Europe, des programmes consacrés à la perdrix, au petit gibier et au sanglier, et des entreprises qui assurent l’organisation locale. Le Maroc et la Tunisie offrent des exemples commerciaux et des statistiques qui éclairent cette activité. L’Algérie pose, quant à elle, la question du passage de l’encadrement de la chasse à un produit touristique complet."
+              ]
+            },
+            {
+              "heading": "Maroc : de trois journées sur le terrain à un séjour à Marrakech",
+              "paragraphs": [
+                "Selon les données de l’Agence nationale des eaux et forêts rapportées par 2M, le tourisme cynégétique a accueilli environ 5 000 chasseurs touristes durant la saison 2025–2026, et le secteur compte 146 entreprises spécialisées. Cette base de visiteurs et d’organisateurs dépasse le cadre de voyages individuels dispersés.",
+                "Les offres montrent comment le marché européen rejoint les territoires marocains. L’agence française DHD-Laïka propose un programme entre Rabat et Tanger, avec trois jours de chasse et quatre nuits, à partir de 2 750 euros par chasseur pour un groupe d’au moins cinq personnes. L’offre comprend le vol au départ de Paris, hors taxes aéroportuaires, l’hébergement, les repas, les transferts, les guides, les porteurs et les permis. Le forfait se répartit ainsi entre transport international et services à destination : son montant ne revient pas intégralement à l’économie locale.",
+                "Dans un autre modèle destiné aux groupes privés, l’entreprise britannique William Powell Sporting commercialise El Koudia, dans les collines des Jbilet, près de Marrakech : deux jours pour huit chasseurs, au prix annoncé de 40 400 euros pour le groupe. Le personnel de terrain, l’accueil, les repas prévus, les transferts, les permis et le matériel indiqué dans l’offre sont compris, mais pas l’hébergement hôtelier. Marrakech permet aussi aux accompagnants non chasseurs de séjourner, de visiter et de faire des achats, prolongeant le voyage au-delà des heures de chasse.",
+                "Ces deux produits ne correspondent pourtant pas à la même expérience. À El Koudia, le commercialisateur précise que des oiseaux d’élevage sont lâchés avant la saison. Ce modèle diffère d’un programme reposant sur du gibier sauvage. Chacun exige une gestion et un suivi environnemental : ni la densité des oiseaux ni un prix élevé ne suffisent à démontrer sa durabilité.",
+                "L’organisateur marocain occupe également une place dans le dispositif juridique. L’encadrement du tourisme cynégétique lie l’accueil du chasseur touriste non résident à un organisateur agréé et prévoit des moyens humains, un projet d’investissement et un territoire de chasse loué. Le partenaire local n’est donc pas seulement un intermédiaire commercial : il assume des responsabilités dans la gestion du séjour et du territoire."
+              ]
+            },
+            {
+              "heading": "bien plus que le prix du gibier",
+              "paragraphs": [
+                "Chambre et repas, transport et guidage, travail de terrain et redevances : voilà les services qui composent le séjour. La part revenant aux habitants dépend des salaires, des achats et des contrats locaux, pas du seul prix global."
+              ]
+            },
+            {
+              "heading": "Tunisie : une clientèle française bien présente… et des équipes villageoises",
+              "paragraphs": [
+                "En Tunisie, les chiffres donnent une image concrète des visiteurs et des recettes publiques. Le Rapport national sur l’état de l’environnement et le développement durable pour 2022 recense 606 chasseurs touristes durant la saison 2021–2022, dont 532 Français. Les recettes du Trésor provenant du tourisme cynégétique ont atteint 300 233 dinars tunisiens. Ce montant historique correspond aux droits et aux recettes publiques liés à l’activité, non à l’ensemble des dépenses des visiteurs ni aux bénéfices des organisateurs.",
+                "La France reste bien présente dans la commercialisation. DHD-Laïka propose un programme consacré au sanglier, avec cinq jours de chasse et six nuits, à 2 390 euros par personne pour un groupe de dix à douze chasseurs. L’agence décrit le recours à quinze à vingt rabatteurs issus des villages, ainsi qu’à des hôtels, des transports et une organisation locale. Ces services ouvrent des possibilités de travail saisonnier dans les villages, liées aux dates des séjours, sans nécessairement constituer des emplois permanents tout au long de l’année.",
+                "Depuis la Tunisie, Desert Rose propose des programmes en espagnol, ouvrant un autre accès à la clientèle européenne. L’avantage ne tient pas seulement à la langue : l’agence locale associe sa connaissance de la région à l’hébergement, aux déplacements et à l’accueil du groupe.",
+                "La réglementation tunisienne donne à ce rôle un contenu pratique. Le tourisme cynégétique est organisé par des agences de voyages et des établissements hôteliers tunisiens selon des règles prévoyant notamment l’accompagnement par un guide, une assurance et l’obtention préalable des permis de chasse. Lorsqu’un organisateur responsable encadre le séjour, le suivi des participants et du gibier fait partie du service au lieu d’être laissé au visiteur."
+              ]
+            },
+            {
+              "heading": "des recettes publiques, pas un chiffre d’affaires",
+              "paragraphs": [
+                "300 233 dinars tunisiens : les recettes du Trésor issues du tourisme cynégétique durant la saison 2021–2022, selon le rapport national sur l’état de l’environnement. Ce chiffre n’intègre pas automatiquement les dépenses d’hébergement, de transport et de restauration ; il ne prouve pas non plus que la totalité de ces recettes soit affectée à la protection de la nature."
+              ]
+            },
+            {
+              "heading": "Algérie : la réglementation ne suffit pas à créer une destination",
+              "paragraphs": [
+                "La législation algérienne traite explicitement de la chasse touristique, en la reliant à une agence de tourisme et à des conditions particulières, notamment des territoires où le gibier fait l’objet d’une reproduction artificielle. La Direction générale des forêts a annoncé l’ouverture de la saison de chasse 2026–2027 pour le 10 octobre, selon Algérie Presse Service. L’ouverture générale de la chasse ne se confond toutefois pas avec la disponibilité d’un programme destiné aux touristes étrangers et répondant à toutes les conditions requises.",
+                "Pour développer cette activité sous la forme d’un produit touristique, il faut réunir les éléments du séjour : une agence qui accueille le visiteur, un territoire adapté, un hébergement, des transports, des guides et un programme clair, commercialisable et réservable. Les exemples marocains et tunisiens rappellent que la géographie ne suffit pas. Ce que le visiteur achète, c’est un séjour organisé de son arrivée à son départ."
+              ]
+            },
+            {
+              "heading": "Mauritanie : une possibilité évoquée dans les plans de développement",
+              "paragraphs": [
+                "En Mauritanie, le diagnostic opérationnel de la stratégie touristique, élaboré en 2017 avec l’appui du Programme des Nations unies pour le développement et publié par le ministère, envisageait une reprise du tourisme cynégétique sous une réglementation stricte et appliquée, avec une coordination entre les secteurs du tourisme et de l’environnement. Cette approche place la gestion avant l’expansion de l’activité. Il s’agit d’une proposition de planification historique, non de l’annonce d’un programme de chasse actuellement en activité."
+              ]
+            },
+            {
+              "heading": "Du revenu saisonnier à une ressource durable",
+              "paragraphs": [
+                "Les exemples maghrébins montrent où la valeur peut se créer : dans les hébergements et les hôtels, auprès des chauffeurs, des guides, des cuisiniers et des travailleurs de terrain, ainsi que dans les redevances perçues par l’État. Les accompagnants et les autres activités touristiques peuvent élargir les dépenses, plutôt que de limiter la visite à une seule journée de chasse.",
+                "Transformer cette possibilité en développement exige cependant davantage qu’une hausse du nombre de visiteurs. Les contrats, les salaires et les achats locaux déterminent ce qui reste dans la région. La formation, la sécurité et la régularité des saisons influent aussi sur la qualité et la continuité du travail. De leur côté, le gibier et les habitats nécessitent un suivi scientifique, des quotas et des contrôles : la pression sur la ressource naturelle peut fragiliser l’activité même dont vivent les habitants.",
+                "Qualifier un séjour de « durable » dans une publicité ne suffit donc pas. L’enjeu est de réunir une activité légale et contrôlable, des services dont bénéficient les habitants et une gestion qui préserve la ressource pour les saisons suivantes. À cette condition, le tourisme cynégétique devient plus qu’un voyage de passage : une possibilité pour l’économie locale, qui mérite d’être organisée, mesurée et protégée.",
+                "Sources : Agence nationale des eaux et forêts du Maroc, citée par 2M ; Rapport national tunisien sur l’état de l’environnement et le développement durable pour 2022 ; législations encadrant le tourisme cynégétique au Maroc, en Tunisie et en Algérie ; Algérie Presse Service ; diagnostic de la stratégie touristique mauritanienne de 2017 ; offres publiées par les organisateurs. Les prix cités proviennent d’offres commerciales consultées le 23 octobre 2026, et non des moyennes du marché ou une confirmation des disponibilités.",
+                "Dans cette série : Le tourisme cynégétique dans les pays arabes du Golfe.\nProchain volet : Le tourisme cynégétique en Égypte, en Irak et en Jordanie."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Sources des photos : William Powell Sporting, DHD-Laïka, Chasse Sanglier Tunisie"
+        }
+      },
+      "distribution": {
+        "placement": "lead",
+        "ticker": true
+      },
+      "related": [
+        "الصيد-السياحي-في-بلدان-الخليج-العربية"
+      ]
+    }
+  ]
+}
