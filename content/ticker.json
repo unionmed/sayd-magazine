@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
+      "titles": {
+        "ar": "«ونعمين» يفوز بتحضيري كأس الأمير محمد بن سعود الكبير بفارق 15 طولًا",
+        "en": "Wanaameen wins Prince Mohammed bin Saud Al Kabeer Cup prep by 15 lengths",
+        "fr": "Wanaameen gagne la préparatoire à la Coupe du prince Mohammed ben Saoud Al Kabeer avec 15 longueurs d’avance"
+      },
+      "title": "«ونعمين» يفوز بتحضيري كأس الأمير محمد بن سعود الكبير بفارق 15 طولًا"
+    },
+    {
       "slug": "الصيد-السياحي-في-دول-المغرب-العربي",
       "titles": {
         "ar": "الصيد السياحي في دول المغرب العربي",
@@ -81,15 +90,6 @@
         "fr": "Shireen Bou Rafoul à Sayd : j’aime la chasse, mais je choisis de lutter contre les infractions et de sauver les oiseaux."
       },
       "title": "شيرين بو رفول لـ«صيد»: أحبّ الصيد، لكنني أختار مكافحة المخالفات وإنقاذ الطيور."
-    },
-    {
-      "slug": "طيور-في-الحقائب-تهريب-الطيور-2026",
-      "titles": {
-        "ar": "تزوير أوراق الجوارح أمام القضاء في إسبانيا… وتونس تستضيف لقاءً لمكافحة الاتجار غير المشروع بالطيور",
-        "en": "Raptor-document forgery under investigation in Spain; Tunis hosts talks on tackling illegal bird trade",
-        "fr": "Faux papiers de rapaces : enquête en Espagne ; Tunis accueille une rencontre contre le trafic d’oiseaux"
-      },
-      "title": "تزوير أوراق الجوارح أمام القضاء في إسبانيا… وتونس تستضيف لقاءً لمكافحة الاتجار غير المشروع بالطيور"
     }
   ]
 }
