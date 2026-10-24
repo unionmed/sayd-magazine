@@ -36,8 +36,8 @@ requiring a new source-code constant for each article. The old alias map is reta
 Catalog taxonomy/association working files stay ignored under `.catalog-build`;
 old `article-image-links.json`, taxonomy snapshots and old TSV shards are unchanged.
 
-Homepage/ticker placement is **not inferred** from category or date. A trusted
-manual dispatch has `allow_distribution=false` by default; `true` only permits
+Homepage/ticker placement is **not inferred** from category or date. Manual dispatch defaults to `allow_distribution=false`; connector requests must
+state `true` or `false` explicitly in their immutable trailer. `true` only permits
 preparing requested broader placement for review. The JSON's `approval_reference`,
 the dispatch flag and the generated commit message are not evidence that the owner
 approved the article or its placement. Explicit editorial approval remains separate.
@@ -121,10 +121,27 @@ publication, not every historical repair process.
    Preserve explicit owner authorization for this exact publication/placement.
 2. On fresh current `main`, create the single source-only commit above. Do not mix
    compiler/workflow changes or historical file edits with that commit.
-3. Dispatch `Source-only publication compiler` on **main**, passing the exact source
-   SHA and whether wider placement may be prepared for review.
+3. Preferred connector route: give the source commit a `source/…` branch and end
+   its message with exactly this two-trailer block (one blank line before it):
+   ```text
+   Sayd-Publication-Request: v1
+   Distribution-Review-Scope: false
+   ```
+   Use `true` only when explicitly requesting preparation of broader distribution.
+   These immutable trailers are request data, **not editorial authorization**.
+   Open a source-only request PR to `main` using the existing connector. The
+   dedicated read-only validator uses trusted BASE code. Its successful completion
+   triggers the existing compiler on default-branch `workflow_run`, which re-reads
+   public GitHub API run/workflow/PR identity, exact head/base and current open state.
+   No upstream artifacts, caches, PR text or candidate code are consumed. The raw
+   source request PR is deliberately unmergeable under candidate parity: never
+   merge it. The generated branch needs its own ordinary PR in step 5.
+   Manual default-branch dispatch remains available, but is not required by this
+   connector route. The connector route requires no new interactive browser session or credentials;
+   the existing manual path is unchanged. Neither adds credentials/permissions.
 4. Inspect the actual trusted GitHub Actions run, not a self-asserted commit message:
-   verify repository, workflow path/ref, event `workflow_dispatch`, base/compiler
+   verify repository, workflow path/ref, event `workflow_dispatch` or validated
+   `workflow_run` (including upstream request run/attempt/PR), base/compiler
    SHA, source SHA, requested scope, successful compile/finalize jobs, plan digest,
    output tree and generated commit against the run's uploaded receipt. Retain this
    evidence plus the owner's article/placement decision in the PR review record.
@@ -146,7 +163,7 @@ publication, not every historical repair process.
 ## Concurrency, failure and rollback
 
 A stale base or moved main fails; re-review/rebase into a **new** atomic source commit,
-then dispatch its new exact SHA. No stale slot rewrite or automatic force push.
+then submit its new exact SHA as a new request (or manual dispatch). No stale slot rewrite or automatic force push.
 Deterministic duplicate dispatch succeeds only if the already-created review branch
 has the identical tree, parent and message. A conflicting branch fails.
 
@@ -176,3 +193,24 @@ aggregate/manifest edits or deletions, scripts/protected paths, symlinks/submodu
 executables, duplicate/unsafe JSON, path/case/Unicode collisions, corrupt raster,
 missing hashes/shards/translations, modified outputs/provenance and conflicting refs.
 Tests never publish synthetic records or pending editorial content.
+
+
+## Connector trigger boundary (approved 24 October 2026)
+
+This adapter changes reachability of the existing review-branch writer: an eligible
+same-repository source PR can request review generation. It does not grant publication
+or security approval. It preserves the existing `contents: write` finalizer-only
+scope; it adds no credential, secret, repository permission, PR-write or auto-merge.
+The public read client fails closed on network/rate-limit/incomplete responses and
+never substitutes an authenticated or alternate endpoint. Default-branch workflow
+identity, upstream validator path/ID/attempt, repository IDs, actual (not synthetic
+merge) source SHA, source-only tree, direct current-main parent and explicit scope
+are independently verified. The finalizer repeats request validation before uploads
+and immediately before creating the review ref, in addition to its current-main
+race guards. Conflicting existing branches and uncertain mutations stop unchanged.
+Requests on arbitrary branch prefixes or non-source generated PRs are not compilation
+requests. Branch filtering is only an efficiency gate, never the security proof.
+
+Activation requires normal reviewed infrastructure merge and actual connector-only
+request → validator → compiler → independent finalizer receipt evidence. Passing
+local tests alone is not evidence that the deployed route has run successfully.

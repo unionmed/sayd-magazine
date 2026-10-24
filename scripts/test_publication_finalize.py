@@ -105,6 +105,30 @@ class FinalizerTests(unittest.TestCase):
         return f.finalize(self.repo, self.site, plan, self.base, self.source, self.base,
                           plan["plan_sha256"], api or FakeAPI(self), validator, **kwargs)
 
+    def test_request_revalidated_before_upload_and_ref_creation(self):
+        seen = []
+        self.finalize(pre_write_check=lambda: seen.append('verified'))
+        self.assertEqual(seen, ['verified', 'verified'])
+
+    def test_changed_request_prevents_ref_creation(self):
+        api = FakeAPI(self)
+        checks = []
+        def check():
+            checks.append(True)
+            if len(checks) == 2:
+                raise f.Blocked('Request head drift')
+        with self.assertRaisesRegex(f.Blocked, 'head drift'):
+            self.finalize(api, pre_write_check=check)
+        self.assertFalse(any(c[:2] == ('POST', '/git/refs') for c in api.calls))
+
+    def test_invalid_request_prevents_all_uploads(self):
+        api = FakeAPI(self)
+        def check():
+            raise f.Blocked('Request closed')
+        with self.assertRaisesRegex(f.Blocked, 'closed'):
+            self.finalize(api, pre_write_check=check)
+        self.assertFalse(any(c[0] == 'POST' for c in api.calls))
+
     def test_expected_tree_digest_matches_real_git(self):
         self.assertEqual(f.tree_sha(f.tree_entries(self.repo, self.source)),
                          run(self.repo, "rev-parse", self.source + "^{tree}"))
