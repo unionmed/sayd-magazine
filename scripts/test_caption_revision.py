@@ -1,5 +1,6 @@
 """Offline exact-tree caption revision tests; fixtures are never published."""
 import copy
+from contextlib import contextmanager
 import json
 from pathlib import Path
 import subprocess
@@ -64,6 +65,23 @@ class CaptionRevisionTests(unittest.TestCase):
     def tearDownClass(cls):
         guard._proofs.clear()
         cls.temp.cleanup()
+
+    @contextmanager
+    def synthetic_pr_context(self, candidate):
+        """Exercise real event binding with fixture refs, never the outer CI PR."""
+        with tempfile.TemporaryDirectory(prefix='sayd-caption-event-') as temp:
+            event_path=Path(temp)/'event.json'
+            event={'pull_request':{'base':{'sha':self.base,'ref':'main',
+                                          'repo':{'full_name':'unionmed/sayd-magazine'}},
+                                   'head':{'sha':candidate,'ref':'synthetic/caption-fixture'}}}
+            event_path.write_text(json.dumps(event))
+            env={'GITHUB_ACTIONS':'true','GITHUB_EVENT_NAME':'pull_request',
+                 'GITHUB_REPOSITORY':'unionmed/sayd-magazine','GITHUB_EVENT_PATH':str(event_path),
+                 'GITHUB_SHA':candidate,'GITHUB_BASE_REF':'main',
+                 'GITHUB_HEAD_REF':'synthetic/caption-fixture',
+                 'SAYD_BASE_COMMIT':self.base,'SAYD_PUBLICATION_HEAD':candidate}
+            with patch.dict('os.environ',env,clear=False):
+                yield event_path
 
     def source(self, value=None):
         value = copy.deepcopy(value or self.value)
@@ -156,7 +174,7 @@ class CaptionRevisionTests(unittest.TestCase):
         candidate=self.candidate(self.files())
         compiler.git(self.root,'checkout','-q','--detach',candidate)
         try:
-            with patch.dict('os.environ', {'SAYD_PUBLICATION_HEAD':candidate}, clear=False):
+            with self.synthetic_pr_context(candidate):
                 proof=guard.verified_article_evidence(self.base,self.root)
                 self.assertEqual(proof.kind,'verified-caption-revision')
                 self.assertEqual(proof.additions,())
@@ -165,6 +183,24 @@ class CaptionRevisionTests(unittest.TestCase):
                                  {lang:'Archive photograph & illustration.' for lang in ('ar','en','fr')})
                 self.assertEqual(guard.tree(proof.site,'HEAD'),guard.tree(self.root,candidate))
         finally: compiler.git(self.root,'checkout','-q','--detach',self.base)
+
+    def test_synthetic_pr_context_still_rejects_wrong_event_refs(self):
+        candidate=self.source()
+        with self.synthetic_pr_context(candidate) as path:
+            good=json.loads(path.read_text())
+            guard.check_context(self.base,candidate)
+            for field in ('base','head'):
+                event=copy.deepcopy(good);event['pull_request'][field]['sha']='0'*40
+                path.write_text(json.dumps(event))
+                with self.subTest(field=field),self.assertRaisesRegex(AssertionError,'current PR event'):
+                    guard.check_context(self.base,candidate)
+            path.write_text(json.dumps(good))
+            with patch.dict('os.environ',{'GITHUB_EVENT_NAME':'workflow_dispatch'}):
+                with self.assertRaisesRegex(AssertionError,'normal PR event'):
+                    guard.check_context(self.base,candidate)
+            with patch.dict('os.environ',{'GITHUB_REPOSITORY':'other/repository'}):
+                with self.assertRaisesRegex(AssertionError,'Unexpected publication repository'):
+                    guard.check_context(self.base,candidate)
 
     def test_search_other_rows_and_fields_cannot_change(self):
         for mutation in ('other-row','title','delete-row'):
@@ -186,8 +222,9 @@ class CaptionRevisionTests(unittest.TestCase):
         candidate=source_commit(self.root,self.base,{path:files[path]})
         compiler.git(self.root,'checkout','-q','--detach',candidate)
         try:
-            with self.assertRaisesRegex(AssertionError,'mask historical'):
-                guard.verified_publication(self.base,self.root,include_baseline=True)
+            with self.synthetic_pr_context(candidate):
+                with self.assertRaisesRegex(AssertionError,'mask historical'):
+                    guard.verified_publication(self.base,self.root,include_baseline=True)
         finally: compiler.git(self.root,'checkout','-q','--detach',self.base)
 
     def test_future_publication_preserves_revised_history(self):
