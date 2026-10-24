@@ -117,6 +117,15 @@ publication, not every historical repair process.
   only CREATE `review/source-publication-<full-source-SHA>`; it cannot update/delete
   a ref or write `main`. This is a program restriction, not a claim that GitHub's
   contents token is itself intrinsically branch-scoped.
+* Generated UTF-8 output is written through bounded Git Trees inline-content
+  batches, reusing exact existing source blobs (including binary photos). Each
+  batch is limited to 64 entries / 4 MiB of the exact UTF-8 JSON request; at most
+  64 batches are allowed. These are internal conservative budgets, not documented
+  GitHub maximum body sizes. All batches are planned before mutation, every
+  intermediate tree SHA is independently verified, and main is checked before
+  each batch. Unknown binary output or any oversized entry fails closed; no
+  fallback upload or retry is attempted. Final tree/provenance/request checks
+  still precede the sole review-ref creation. No ticker architecture changes.
 * No PR is opened, approved, merged or deployed by this workflow. Existing branch
   protection is unchanged. Commit provenance fields alone are forgeable and prove
   neither actual workflow dispatch nor publication authority.
