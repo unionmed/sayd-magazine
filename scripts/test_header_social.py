@@ -16,8 +16,8 @@ def source_publication_header_count(base, root=ROOT):
     self-asserted bundle approval. On later maintenance PRs it reads already
     reviewed sources from the trusted base. Legacy totals remain unchanged.
     """
-    from publication_guard import verified_publication
-    proof = verified_publication(base, root, include_baseline=True)
+    from publication_guard import verified_article_evidence
+    proof = verified_article_evidence(base, root)
     return 0 if proof is None else check_source_publication_pairs(proof, root)
 
 
