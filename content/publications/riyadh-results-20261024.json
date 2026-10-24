@@ -1,0 +1,167 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "riyadh-results-20261024",
+  "expected_base": "4fe150dfb27d2d790fcfedb96afe247952df9a8d",
+  "approval_reference": "private:Sentinel_06f857111d188191831600b57978f642; new final-results report after meeting completion, side cards and ticker only. Official all-12 result completion verified 2026-10-24T18:42:21Z.",
+  "bank_search_reference": "Internal /Sayd picture for use searches on 2026-10-24 found no verified event asset. Existing JCSA cover reviewed but reuse rights unverified, not selected. Licensed archive alternative independently checked and archived as Library libfile_8359354dbdc08191872525cca49a73dc with rights record libfile_d9a706e5779c81919fc12948e3fd3aa9.",
+  "photos": [
+    {
+      "id": "riyadh-archive-2011",
+      "path": "docs/media/publications/riyadh-results-20261024/riyadh-illustrative-2011-sammy-six.jpg",
+      "sha256": "c0e3779057f0bb3dd01c1637eac41a4b889549aa27e800e5c7c00c655fe2731b",
+      "source_sha256": "5cde57d6e47f83cb3916b893e4f8f0102fea99d15fe5c69b83f83168e3185832",
+      "source_reference": "Horse Club Riyadh, Sammy Six, 11 November 2011; original Flickr CC BY 2.0 confirmed 24 October 2026 and Wikimedia Commons Flickr review 15 April 2014. Library original libfile_8359354dbdc08191872525cca49a73dc; rights record libfile_d9a706e5779c81919fc12948e3fd3aa9. Proportional 1800x1200 web resize, no crop; not today’s races or an identified winner.",
+      "source_url": "https://www.flickr.com/photos/sammysix/6335938717/",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC BY 2.0, attribution to Sammy Six; original title Horse Club Riyadh; proportional resize only. No endorsement implied.",
+        "evidence_reference": "Library rights record libfile_d9a706e5779c81919fc12948e3fd3aa9; https://commons.wikimedia.org/wiki/File:Horse_Club_Riyadh_(6335938717).jpg; original Flickr licence independently checked 2026-10-24.",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "alt": {
+        "ar": "حصان داكن اللون بسرج ولجام أحمر في نادٍ للفروسية بالرياض عام 2011.",
+        "en": "A dark horse with a saddle and red tack at an equestrian club in Riyadh in 2011.",
+        "fr": "Un cheval sombre avec une selle et un harnachement rouge dans un club équestre de Riyad en 2011."
+      },
+      "caption": {
+        "ar": "صورة توضيحية أرشيفية لحصان في نادٍ للفروسية بالرياض عام 2011؛ لا تُظهر سباقات اليوم.",
+        "en": "Illustrative archive photograph of a horse at an equestrian club in Riyadh in 2011; not today’s races.",
+        "fr": "Photo d’archives illustrative d’un cheval dans un club équestre à Riyad en 2011 ; elle ne montre pas les courses du jour."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
+        "en": "wanaameen-riyadh-prince-mohammed-cup-prep-2026",
+        "fr": "wanaameen-riyad-preparatoire-coupe-prince-mohammed-2026"
+      },
+      "published": "2026-10-24",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "equestrian",
+      "archives": [
+        "equestrian"
+      ],
+      "kind": "article",
+      "photos": [
+        "riyadh-archive-2011"
+      ],
+      "translations": {
+        "ar": {
+          "title": "«ونعمين» يحسم تحضيري كأس الأمير محمد بن سعود الكبير بفارق 15 طولًا",
+          "kicker": "سباقات الرياض — نتائج السبت 24 تشرين الأول",
+          "subtitle": "الجواد السعودي يتصدر الشوط الختامي على مسافة 2000 متر، وكاميلو أوسبينا يخرج بثلاثة انتصارات من أمسية ميدان الملك عبدالعزيز.",
+          "meta_description": "ونعمين يفوز بتحضيري كأس الأمير محمد بن سعود الكبير بفارق 15 طولًا في الرياض، ضمن نتائج أمسية السبت 24 أكتوبر 2026 التي شهدت 12 شوطًا.",
+          "ticker_title": "«ونعمين» يفوز بتحضيري كأس الأمير محمد بن سعود الكبير بفارق 15 طولًا",
+          "sections": [
+            {
+              "paragraphs": [
+                "حسم «ونعمين» الشوط التحضيري لكأس الأمير محمد بن سعود الكبير بفارق 15 طولًا، في ختام سباقات السبت 24 تشرين الأول 2026 على ميدان الملك عبدالعزيز بالرياض، بعدما قطع مسافة 2000 متر في دقيقتين و10.649 ثانية.",
+                "وقاد الخيّال كاميلو أوسبينا الجواد السعودي، البالغ أربع سنوات والمملوك لأبناء الملك عبدالله بن عبدالعزيز، بإشراف المدرب بدر سعود رزيق. وجاء «شادو» ثانيًا و«كافلهم» ثالثًا، بحسب النتائج الرسمية لنادي سباقات الخيل السعودي.",
+                "بلغت جوائز الشوط الإجمالية 120 ألف ريال، نال الفائز منها 60 ألفًا. وهو شوط تحضيري للكأس، لا سباق الكأس نفسه، وقد اختتم أمسية من 12 شوطًا على المضمار الرملي."
+              ]
+            },
+            {
+              "heading": "ثلاثة انتصارات لأوسبينا",
+              "paragraphs": [
+                "أكمل أوسبينا بفوزه مع «ونعمين» ثلاثية في الحفل؛ إذ سبق أن قاد «الله يحييها» للفوز بالشوط الخامس على مسافة 1400 متر، و«مجال» للفوز بالشوط التاسع على مسافة 1800 متر. والخيول الثلاثة مملوكة لأبناء الملك عبدالله بن عبدالعزيز، فيما أشرف هشام عبدالواحد على تدريب الفائزَين في الشوطين الخامس والتاسع.",
+                "وفي الشوط الثامن المفتوح الدرجات، فاز «يا دار» بقيادة ريكاردو فيريرا وإشراف عبدالله السدراني، قاطعًا مسافة 1600 متر في دقيقة و43.864 ثانية. وبلغت جوائز هذا الشوط 120 ألف ريال، منها 60 ألفًا للفائز."
+              ]
+            },
+            {
+              "heading": "الخيل العربية والإنتاج المحلي",
+              "paragraphs": [
+                "افتتح «باسق اند بيك» الحفل بالفوز بشوط الخيل العربية المفتوح الدرجات على مسافة 1200 متر، مع ريكاردو فيريرا والمدرب بسام الموسي، بزمن دقيقة و22.630 ثانية. وفي الشوط العاشر للخيل العربية على مسافة 2000 متر، فازت «الغيد» بقيادة فواز الشمري وإشراف ريعان البراهيم بزمن دقيقتين و23.044 ثانية.",
+                "وشهدت منافسات الإنتاج المحلي فوز «دهمه الوادي» بالشوط السادس المفتوح الدرجات لعمر السنتين على مسافة 1600 متر، بقيادة إيدي كاسترو وإشراف عبدالعزيز الحزابي. أما الشوط الحادي عشر للخيل المبتدئة من الإنتاج المحلي، فذهب إلى «غلا وتين» مع محمد اليامي والمدرب مانع صالح آل زمانان، على مسافة 2000 متر بزمن دقيقتين و14.040 ثانية.",
+                "وتواصل هذه النتائج منافسات موسم الرياض 2026–2027، الذي انطلق في 16 تشرين الأول على الميدان نفسه.",
+                "المصدر: نادي سباقات الخيل السعودي، البرنامج والنتائج الرسمية لحفل السبت 24 تشرين الأول 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: «Horse Club Riyadh» — Sammy Six، 2011، عبر ويكيميديا كومنز؛ بترخيص CC BY 2.0. أُعيد تحجيمها تناسبيًا للويب دون قص."
+        },
+        "en": {
+          "title": "Wanaameen wins Prince Mohammed bin Saud Al Kabeer Cup prep by 15 lengths",
+          "kicker": "Riyadh racing — Saturday 24 October results",
+          "subtitle": "The Saudi-bred horse dominates the 2,000-metre finale as Camilio Ospina completes a treble at King Abdulaziz Racecourse.",
+          "meta_description": "Wanaameen wins the Prince Mohammed bin Saud Al Kabeer Cup prep by 15 lengths in Riyadh on 24 October 2026, the finale of a 12-race card.",
+          "ticker_title": "Wanaameen wins Prince Mohammed bin Saud Al Kabeer Cup prep by 15 lengths",
+          "sections": [
+            {
+              "paragraphs": [
+                "Wanaameen won the Prince Mohammed bin Saud Al Kabeer Cup preparatory race by 15 lengths at King Abdulaziz Racecourse in Riyadh on Saturday, 24 October 2026, covering 2,000 metres in 2:10.649 in the evening’s finale.",
+                "Camilio Ospina rode the four-year-old Saudi-bred horse for trainer Bader Rizaiq and the sons of King Abdullah bin Abdulaziz. Shadow finished second and Kaflahom third, according to the Jockey Club of Saudi Arabia’s official results.",
+                "The race offered SAR 120,000 in total prize money, including SAR 60,000 for the winner. It was a preparation for the cup, not the cup race itself, and concluded a 12-race dirt card."
+              ]
+            },
+            {
+              "heading": "A treble for Ospina",
+              "paragraphs": [
+                "The victory completed a treble for Ospina, who had earlier won race five over 1,400 metres on Allah Yahyiha and race nine over 1,800 metres on Majaal. All three horses are owned by the sons of King Abdullah bin Abdulaziz; Hesham Abdulwahed trained the winners of races five and nine.",
+                "In race eight, an open race, Ya Dar won under Ricardo Ferreira for trainer Abdullah Alsidrani, completing 1,600 metres in 1:43.864. The race carried a SAR 120,000 purse, with SAR 60,000 going to the winner."
+              ]
+            },
+            {
+              "heading": "Arabian and locally bred winners",
+              "paragraphs": [
+                "Baseq And Bake opened the meeting with victory in the 1,200-metre open Arabian race, ridden by Ricardo Ferreira and trained by Bassim Almousa, in 1:22.630. In race ten, for Arabians over 2,000 metres, Algheed won in 2:23.044 under Fawaz Alshammari for trainer Reyaan Alibrahim.",
+                "Among the locally bred runners, Dahmat Alwadi won race six, an open contest for two-year-olds over 1,600 metres, under Eddie Castro for trainer Abdulaziz Alhzabi. Ghala Wateen took race eleven, a 2,000-metre maiden for locally bred horses, in 2:14.040 with Mohammad Alyami riding for trainer Mana Saleh Alzamanan.",
+                "The meeting continued the 2026–2027 Riyadh racing season, which opened at the same racecourse on 16 October.",
+                "Source: Jockey Club of Saudi Arabia, official programme and results for Saturday, 24 October 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: “Horse Club Riyadh” — Sammy Six, 2011, via Wikimedia Commons; CC BY 2.0. Proportionally resized for the web without cropping."
+        },
+        "fr": {
+          "title": "Wanaameen remporte la préparatoire à la Coupe du prince Mohammed ben Saoud Al Kabeer avec 15 longueurs d’avance",
+          "kicker": "Courses de Riyad — résultats du samedi 24 octobre",
+          "subtitle": "Le cheval élevé en Arabie saoudite domine la finale sur 2 000 mètres, tandis que Camilio Ospina signe un triplé à l’hippodrome du roi Abdelaziz.",
+          "meta_description": "Wanaameen gagne la préparatoire à la Coupe du prince Mohammed ben Saoud Al Kabeer avec 15 longueurs d’avance à Riyad, le 24 octobre 2026.",
+          "ticker_title": "Wanaameen gagne la préparatoire à la Coupe du prince Mohammed ben Saoud Al Kabeer avec 15 longueurs d’avance",
+          "sections": [
+            {
+              "paragraphs": [
+                "Wanaameen a remporté la course préparatoire à la Coupe du prince Mohammed ben Saoud Al Kabeer avec 15 longueurs d’avance, samedi 24 octobre 2026, à l’hippodrome du roi Abdelaziz, à Riyad. Il a parcouru les 2 000 mètres de cette dernière épreuve de la soirée en 2 min 10 s 649.",
+                "Camilio Ospina montait ce cheval de quatre ans élevé en Arabie saoudite, entraîné par Bader Rizaiq et appartenant aux fils du roi Abdallah ben Abdelaziz. Shadow a terminé deuxième et Kaflahom troisième, selon les résultats officiels du Jockey Club d’Arabie saoudite.",
+                "La dotation totale de l’épreuve atteignait 120 000 riyals, dont 60 000 pour le vainqueur. Il s’agissait d’une préparatoire, et non de la coupe elle-même. Elle clôturait une réunion de douze courses disputées sur le sable."
+              ]
+            },
+            {
+              "heading": "Un triplé pour Ospina",
+              "paragraphs": [
+                "Ce succès a permis à Ospina de réaliser un triplé : il avait déjà remporté la cinquième course sur 1 400 mètres avec Allah Yahyiha, puis la neuvième sur 1 800 mètres avec Majaal. Les trois chevaux appartiennent aux fils du roi Abdallah ben Abdelaziz ; Hesham Abdulwahed entraînait les gagnants des cinquième et neuvième épreuves.",
+                "Dans la huitième course, une épreuve ouverte, Ya Dar s’est imposé avec Ricardo Ferreira, pour l’entraîneur Abdullah Alsidrani, en 1 min 43 s 864 sur 1 600 mètres. Cette course était dotée de 120 000 riyals, dont 60 000 pour le gagnant."
+              ]
+            },
+            {
+              "heading": "Chevaux arabes et élevage local",
+              "paragraphs": [
+                "Baseq And Bake avait ouvert la réunion en remportant l’épreuve ouverte aux chevaux arabes sur 1 200 mètres, avec Ricardo Ferreira et l’entraîneur Bassim Almousa, en 1 min 22 s 630. Dans la dixième course, réservée aux chevaux arabes sur 2 000 mètres, Algheed s’est imposée en 2 min 23 s 044, montée par Fawaz Alshammari pour l’entraîneur Reyaan Alibrahim.",
+                "Parmi les chevaux élevés dans le pays, Dahmat Alwadi a gagné la sixième épreuve, ouverte aux deux ans sur 1 600 mètres, avec Eddie Castro pour l’entraîneur Abdulaziz Alhzabi. Ghala Wateen a remporté la onzième, réservée aux chevaux de l’élevage local n’ayant encore jamais gagné, en 2 min 14 s 040 sur 2 000 mètres, avec Mohammad Alyami et l’entraîneur Mana Saleh Alzamanan.",
+                "Cette réunion s’inscrit dans la saison de Riyad 2026–2027, ouverte sur le même hippodrome le 16 octobre.",
+                "Source : Jockey Club d’Arabie saoudite, programme et résultats officiels du samedi 24 octobre 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : « Horse Club Riyadh » — Sammy Six, 2011, via Wikimedia Commons ; CC BY 2.0. Redimensionnement proportionnel pour le web, sans recadrage."
+        }
+      },
+      "distribution": {
+        "placement": "side",
+        "ticker": true
+      },
+      "related": [
+        "الرياض-تستعيد-صهيلها-موسم-السباقات-2026"
+      ]
+    }
+  ]
+}
