@@ -86,8 +86,14 @@ end credit. Supported placements are `archive-only`, `door`, `latest`, `side`,
 `lead`; ticker selection is an explicit boolean. Birds/Laws reference entries
 remain archive-only, and galleries cannot enter news/ticker slots. An explicit
 no-updates/no-ticker rotation can retain a feature's permanent secondary archive.
-Previous lead must become first side card; a contradictory chronological request
-fails rather than silently dropping it or changing its original date.
+Per the explicit 24 October 2026 clarification, original publication-date order
+has priority. The former lead enters the side-card pool at its chronological rank,
+first only if newest; it is not pinned or guaranteed retention beyond four slots.
+Its ordinary overflow follows Updates/category/archive routing with existing
+no-Updates/no-ticker exclusions preserved. A batch gathers lead and side requests
+before ranking, so record order cannot change the result. Equal dates preserve
+existing pool order; new requested tied cards use canonical slug order. No date
+is changed, and the unchanged publication contract still enforces chronology.
 
 V1 does not reclassify existing articles, import old archives, edit protected design,
 create a new taxonomy/door, register new interview collections, or publish TV/video.

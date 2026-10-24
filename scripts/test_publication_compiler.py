@@ -87,6 +87,36 @@ def files_for(value):
     return files
 
 
+class ArticleKickerTests(unittest.TestCase):
+    def header(self):
+        from lxml import html
+        return html.fromstring('<header class="article-header"><p class="article-kicker">Stale series</p><h1>Unchanged title</h1><div class="meta">Date and author</div></header>')
+
+    def test_localized_kicker_precedes_unchanged_title_once(self):
+        for text in ('سلسلة ٢ من ٣', 'Series 2 of 3', 'Série 2 sur 3'):
+            header = self.header()
+            compiler.render_article_kicker(header, text)
+            compiler.render_article_kicker(header, text)
+            self.assertEqual(header.xpath('//*[@class="article-kicker"]/text()'), [text])
+            self.assertEqual(header.xpath('//*[@class="article-kicker"]/following-sibling::*[1]')[0].tag, 'h1')
+            self.assertEqual(header.xpath('string(.//h1)'), 'Unchanged title')
+            self.assertEqual(header.xpath('string(.//*[@class="meta"])'), 'Date and author')
+
+    def test_absent_kicker_does_not_leak_template_label(self):
+        for text in (None, ''):
+            header = self.header(); compiler.render_article_kicker(header, text)
+            self.assertFalse(header.xpath('//*[@class="article-kicker"]'))
+            self.assertEqual(header.xpath('string(.//h1)'), 'Unchanged title')
+
+    def test_html_like_text_is_not_executable_markup(self):
+        from lxml import html
+        header = self.header(); text = '<img src=x onerror=alert(1)> & "label"'
+        compiler.render_article_kicker(header, text)
+        rendered = html.tostring(header, encoding='unicode')
+        self.assertNotIn('<img', rendered)
+        self.assertEqual(header.xpath('//*[@class="article-kicker"]/text()'), [text])
+
+
 class SchemaTests(unittest.TestCase):
     def test_valid_record_and_external_licence(self):
         self.assertEqual(schema.validate(record())['schema'], 'sayd-publication-v1')
@@ -255,9 +285,9 @@ class RealSiteTests(unittest.TestCase):
     def controlled_lead_base(self):
         """Keep real, valid lead chronology without freezing the tested code.
 
-        Later approved side cards may be newer than the existing lead, in which
-        case promotion correctly fails rather than violating date order. Only
-        the lead fixtures use this immutable pre-Shrike payload, overlaid with
+        The immutable pre-Shrike payload isolates the former-lead-newest case;
+        the mixed-batch regression separately proves newer sides outrank it.
+        Only these synthetic lead fixtures use that older payload, overlaid with
         every current HEAD script (including deletions/modes). Objects are local
         and unreferenced; neither the working files nor any branch is changed.
         """
@@ -279,6 +309,8 @@ class RealSiteTests(unittest.TestCase):
 
     def test_category_three_languages_author_archive_and_search(self):
         value = record(self.base, 'compiler-category-fixture')
+        for lang in schema.LANGS:
+            value['articles'][0]['translations'][lang]['kicker'] = {'ar': 'الصيد كسياحة ومورد تنمية ٢ من ٣', 'en': 'Hunting, tourism and development 2 of 3', 'fr': 'Chasse, tourisme et développement 2 sur 3'}[lang]
         stage, plan, _ = self.build(value)
         from lxml import html
         for lang in schema.LANGS:
@@ -286,6 +318,9 @@ class RealSiteTests(unittest.TestCase):
             path = compiler.page_path(stage, article, lang)
             page = html.fromstring(path.read_text())
             self.assertIn(article['author'][lang], page.xpath('string(//header[contains(@class,"article-header")])'))
+            self.assertEqual(page.xpath('//*[@class="article-kicker"]/text()'), [article['translations'][lang]['kicker']])
+            self.assertEqual(page.xpath('//*[@class="article-kicker"]/following-sibling::*[1]')[0].tag, 'h1')
+            self.assertEqual(page.xpath('string(//main//h1)'), article['translations'][lang]['title'])
             self.assertNotIn('article-updated', path.read_text())
             self.assertEqual(page.xpath('//link[@rel="canonical"]/@href'), [compiler.public_url(article, lang)])
             self.assertTrue(any(x['path'] == f'docs/assets/search/index-{lang}.json' for x in plan['changes']))
@@ -330,26 +365,32 @@ class RealSiteTests(unittest.TestCase):
         self.assertEqual(home['ia_slots']['main'], article['slugs']['ar'])
         self.assertEqual(home['ia_slots']['important'][0], before['ia_slots']['main'])
 
-    def test_newer_side_rejects_conflicting_lead_handoff(self):
+    def test_newer_side_precedes_former_lead_in_both_batch_orders(self):
         base = self.controlled_lead_base()
-        value = record(base, 'compiler-lead-date-conflict', placement='side')
-        # The immutable fixture lead was published on 22 October. A newer side
-        # must not be pushed behind it merely to accommodate a requested lead.
+        value = record(base, 'compiler-lead-date-order', placement='side')
         value['articles'][0]['published'] = '2026-10-23'
         lead = copy.deepcopy(value['articles'][0])
-        lead['slugs'] = {l: 'compiler-conflicting-lead-' + l for l in schema.LANGS}
+        lead['slugs'] = {l: 'compiler-chronological-lead-' + l for l in schema.LANGS}
         lead['distribution'] = {'placement': 'lead', 'ticker': False}
         value['articles'].append(lead)
-        source = source_commit(ROOT, base, files_for(value))
-        with tempfile.TemporaryDirectory(prefix='sayd-lead-date-conflict-') as temp:
-            stage = Path(temp) / 'site'
-            subprocess.run(['git', 'clone', '--shared', '--no-checkout', str(ROOT), str(stage)], check=True, capture_output=True)
-            compiler.git(stage, 'checkout', '--detach', source)
-            result = subprocess.run([sys.executable, str(ROOT / 'scripts/publication_compiler.py'),
-                                     '--worker', str(stage), '--records', json.dumps([value['id']]),
-                                     '--allow-distribution'], capture_output=True, text=True)
-            self.assertNotEqual(result.returncode, 0)
-            self.assertIn('Previous lead must become first side card; conflicting date order needs editorial review', result.stderr)
+        before = json.loads(compiler.git(ROOT, 'show', base + ':content/homepage.json'))
+        expected = [value['articles'][0]['slugs']['ar'], before['ia_slots']['main']]
+        snapshots = []
+        for articles in (value['articles'], list(reversed(value['articles']))):
+            fixture = copy.deepcopy(value); fixture['articles'] = articles
+            stage, plan, _ = self.build(fixture, True, base=base)
+            home = json.loads((stage / 'content/homepage.json').read_text())
+            self.assertEqual(home['ia_slots']['main'], lead['slugs']['ar'])
+            self.assertEqual(home['ia_slots']['important'][:2], expected)
+            snapshots.append((home['featured'], home['latest']))
+            from lxml import html
+            for language in schema.LANGS:
+                page = stage / 'docs' / ('' if language == 'ar' else language) / 'index.html'
+                node = html.fromstring(page.read_text())
+                cards = node.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," card-stack ")]')
+                self.assertTrue(cards, 'Missing language side cards')
+            subprocess.run(['python', 'scripts/check_publication_contract.py', '--base', base], cwd=stage, check=True)
+        self.assertEqual(snapshots[0], snapshots[1])
 
     def test_cross_record_casefold_route_rejected(self):
         first = record(self.base, 'compiler-route-a'); first['articles'][0]['slugs']['ar'] = 'Alpha'

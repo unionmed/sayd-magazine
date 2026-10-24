@@ -258,6 +258,18 @@ def body_html(stage, article, language, photos, pairs, doors, seo):
     return result
 
 
+def render_article_kicker(header, text):
+    """Use the validated per-language series label, never the template's label."""
+    from lxml import html as dom
+    for element in classes(header, 'article-kicker'):
+        element.getparent().remove(element)
+    if text:
+        element = dom.Element('p', {'class': 'article-kicker',
+                                  'style': 'font-size:.9rem;font-weight:700;margin:0 0 .6em;color:#536246'})
+        element.text = text
+        header.xpath('.//h1')[0].addprevious(element)
+
+
 def render_article(stage, article, language, photos, pairs, doors, seo):
     from lxml import html as dom
     tr = article['translations'][language]
@@ -295,6 +307,7 @@ def render_article(stage, article, language, photos, pairs, doors, seo):
     for name in ('article-updated', 'article-featured', 'related-block', 'article-kicker', 'author-role'):
         for element in classes(node, name):
             element.getparent().remove(element)
+    render_article_kicker(header, tr.get('kicker'))
     for element in header.xpath('.//a[contains(@href,"category/")]'):
         element.set('href', '../../category/' + quote(display_door['folder']) + '/index.html')
         element.text = display_door[language]
@@ -465,9 +478,7 @@ def render(stage, records, allow_distribution):
                 sitemap = sitemap.replace('</urlset>', '<url><loc>' + public_url(article, language) + '</loc><lastmod>' + article['published'] + '</lastmod></url>\n</urlset>')
     save_json(links_path, links)
     save(sitemap_path, sitemap)
-    old_lead = home['ia_slots']['main']
     require(sum(a['distribution']['placement'] == 'lead' for _, a in article_records) <= 1, 'At most one new lead per atomic publication')
-    old_side = home['ia_slots']['important'].copy()
     old_latest = home['latest'].copy()
     wide = False
     def day(slug):
@@ -478,31 +489,17 @@ def render(stage, records, allow_distribution):
         wide = wide or placement != 'archive-only' or article['distribution']['ticker']
         if article['primary_door'] == 'science' and (placement in {'lead', 'side', 'latest'} or article['distribution']['ticker']):
             home['approved_science_news'] = list(dict.fromkeys(home['approved_science_news'] + [ar]))
-        if placement == 'lead':
-            previous = home['ia_slots']['main']
-            home['ia_slots']['main'] = ar
-            home['ia_slots']['important'] = sorted([previous] + home['ia_slots']['important'], key=day, reverse=True)[:4]
-            require(home['ia_slots']['important'][0] == previous, 'Previous lead must become first side card; conflicting date order needs editorial review')
-        elif placement == 'side':
-            home['ia_slots']['important'] = sorted([ar] + home['ia_slots']['important'], key=day, reverse=True)[:4]
-            require(ar in home['ia_slots']['important'], 'Requested side placement conflicts with publication-date order')
-        elif placement == 'latest':
-            home['latest'] = sorted([ar] + home['latest'], key=day, reverse=True)[:8]
-            require(ar in home['latest'], 'Requested Updates placement conflicts with publication-date order')
-        elif placement == 'door':
+        if placement == 'door':
             door_id = 'hunting' if article['primary_door'] == 'equestrian' else article['primary_door']
             section = next((d for d in home['ia_door_sections'] if d['door'] == door_id), None)
             require(section is not None, 'No homepage door for this category')
-            section['slugs'] = sorted([ar] + section['slugs'], key=day, reverse=True)[:8 if door_id == 'hunting' else 4]
+            section['slugs'] = modules['homepage_demotion'].chronological_cards([ar] + section['slugs'], day, 8 if door_id == 'hunting' else 4)
         if article['distribution']['ticker']:
             home['ticker_entries'] = [{'slug': ar, 'titles': {l: article['translations'][l]['ticker_title'] for l in LANGS}}] + home['ticker_entries']
-    if any(a['distribution']['placement'] == 'lead' for _, a in article_records):
-        require(home['ia_slots']['important'][0] == old_lead, 'Other bundle placements conflict with previous-lead first-side handoff')
     if wide:
-        home['featured'] = [home['ia_slots']['main']] + home['ia_slots']['important']
-        displaced = [s for s in old_side if s not in home['featured'] and s not in home.get('omit_from_latest', [])]
-        home['latest'] = sorted(dict.fromkeys([s for s in home['latest'] + displaced if s not in home['featured']]), key=day, reverse=True)[:8]
-        home['ia_slots']['latest'] = home['latest'].copy()
+        placements = [(a['slugs']['ar'], a['distribution']['placement']) for _, a in article_records
+                      if a['distribution']['placement'] in {'lead', 'side', 'latest'}]
+        modules['homepage_demotion'].apply_upper_distribution(home, placements, day)
         upper = set(home['featured'] + home['latest'])
         for section in home['ia_door_sections']:
             if section['door'] in {'hunting', 'interviews', 'tv'}:
