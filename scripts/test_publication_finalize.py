@@ -8,6 +8,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 
 import publication_finalize as f
 
@@ -30,6 +31,8 @@ class FakeAPI:
         self.stale_at = stale_at
         self.main_reads = 0
         self.commit = None
+        original = f.tree_entries(case.repo, case.source)
+        self.trees = {f.tree_sha(original): original}
 
     def request(self, method, endpoint, payload=None, missing=False):
         self.calls.append((method, endpoint, payload))
@@ -46,10 +49,12 @@ class FakeAPI:
             import base64
             return {"sha": f.blob_sha(base64.b64decode(payload["content"]))}
         if method == "POST" and endpoint == "/git/trees":
-            entries = f.tree_entries(self.case.repo, self.case.source)
+            entries = dict(self.trees[payload["base_tree"]])
             for entry in payload["tree"]:
-                entries[entry["path"]] = (entry["mode"], entry["sha"])
-            return {"sha": f.tree_sha(entries)}
+                entries[entry["path"]] = (entry["mode"], entry.get("sha") or f.blob_sha(entry["content"].encode("utf-8")))
+            sha = f.tree_sha(entries)
+            self.trees[sha] = entries
+            return {"sha": sha}
         if method == "POST" and endpoint == "/git/commits":
             self.commit = {"tree": {"sha": payload["tree"]}, "message": payload["message"],
                            "parents": [{"sha": sha} for sha in payload["parents"]]}
@@ -104,6 +109,153 @@ class FinalizerTests(unittest.TestCase):
         plan = self.plan if plan is None else plan
         return f.finalize(self.repo, self.site, plan, self.base, self.source, self.base,
                           plan["plan_sha256"], api or FakeAPI(self), validator, **kwargs)
+
+    def add_output_changes(self, values):
+        base_entries = f.tree_entries(self.repo, self.base)
+        changes = {item['path']: item for item in self.plan['changes']}
+        for path, data in values.items():
+            self.write(self.site, path, data)
+            old = base_entries.get(path)
+            changes[path] = {'path': path, 'mode': '100644', 'status': 'M' if old else 'A',
+                             'old_blob': old[1] if old else None, 'new_blob': f.blob_sha(data),
+                             'sha256': hashlib.sha256(data).hexdigest(), 'bytes': len(data)}
+        self.plan['changes'] = [changes[path] for path in sorted(changes)]
+        sign(self.plan)
+
+    def many_outputs(self, count=1130):
+        self.add_output_changes({f'docs/posts/scale-{n:04d}/index.html':
+                                 f'<p>Original preserved article {n}; شريط عربي</p>\n'.encode()
+                                 for n in range(count)})
+
+    def test_more_than_1129_outputs_use_bounded_verified_tree_chain(self):
+        self.many_outputs()
+        api = FakeAPI(self)
+        receipt = self.finalize(api)
+        trees = [call[2] for call in api.calls if call[:2] == ('POST', '/git/trees')]
+        self.assertEqual(len(trees), 18)
+        self.assertFalse(any(call[:2] == ('POST', '/git/blobs') for call in api.calls))
+        parent = run(self.repo, 'rev-parse', self.source + '^{tree}')
+        seen = []
+        for payload in trees:
+            self.assertEqual(payload['base_tree'], parent)
+            self.assertLessEqual(len(payload['tree']), f.TREE_BATCH_ENTRIES)
+            self.assertLessEqual(len(f.api_json(payload)), f.TREE_BATCH_BYTES)
+            entries = dict(api.trees[parent])
+            for entry in payload['tree']:
+                self.assertNotIn('sha', entry)
+                entries[entry['path']] = (entry['mode'], f.blob_sha(entry['content'].encode('utf-8')))
+                seen.append(entry['path'])
+            parent = f.tree_sha(entries)
+        self.assertEqual(parent, receipt['tree'])
+        self.assertEqual(len(seen), len(set(seen)))
+        self.assertEqual(len(seen), 1132)  # 1130 new pages + two changed outputs; source JSON skipped.
+        self.assertEqual(sum(c[:2] == ('POST', '/git/commits') for c in api.calls), 1)
+        self.assertEqual(sum(c[:2] == ('POST', '/git/refs') for c in api.calls), 1)
+
+    def test_scaled_existing_review_branch_remains_read_only_idempotent(self):
+        self.many_outputs()
+        first = FakeAPI(self); original = self.finalize(first)
+        second = FakeAPI(self, existing=first.existing)
+        repeated = self.finalize(second)
+        self.assertEqual(repeated['status'], 'ALREADY_EXISTS')
+        self.assertEqual(repeated['tree'], original['tree'])
+        self.assertFalse(any(c[0] == 'POST' for c in second.calls))
+
+    def test_tree_entry_count_cap_splits_even_tiny_outputs(self):
+        changes = [({'path': f'docs/posts/t-{n}/index.html', 'new_blob': f.blob_sha(b'x')}, b'x')
+                   for n in range(65)]
+        batches, _ = f.prepare_tree_batches(changes, {}, f.tree_sha({}))
+        self.assertEqual([len(payload['tree']) for payload, _ in batches], [64, 1])
+        self.assertEqual(batches[1][0]['base_tree'], batches[0][1])
+
+    def test_exact_utf8_wire_boundary_accepts_then_rejects_one_more_byte(self):
+        path = 'docs/posts/حد-عربي/index.html'
+        original = f.tree_sha({})
+        entry = {'path': path, 'mode': '100644', 'type': 'blob', 'content': ''}
+        overhead = len(f.api_json({'base_tree': original, 'tree': [entry]}))
+        room = f.TREE_BATCH_BYTES - overhead
+        data = ('ش' * (room // 2) + 'x' * (room % 2)).encode('utf-8')
+        item = {'path': path, 'new_blob': f.blob_sha(data)}
+        batches, _ = f.prepare_tree_batches([(item, data)], {}, original)
+        self.assertEqual(len(f.api_json(batches[0][0])), f.TREE_BATCH_BYTES)
+        self.assertEqual(batches[0][0]['tree'][0]['content'].encode(), data)
+        data += b'x'
+        with self.assertRaisesRegex(f.Blocked, 'Single tree entry'):
+            f.prepare_tree_batches([({'path': path, 'new_blob': f.blob_sha(data)}, data)], {}, original)
+
+    def test_large_multibyte_text_splits_by_wire_bytes_not_characters(self):
+        data = ('ش' * 1100000).encode()
+        changes = [({'path': f'docs/posts/large-{n}/index.html', 'new_blob': f.blob_sha(data)}, data)
+                   for n in range(2)]
+        batches, _ = f.prepare_tree_batches(changes, {}, f.tree_sha({}))
+        self.assertEqual(len(batches), 2)
+        self.assertTrue(all(len(f.api_json(payload)) <= f.TREE_BATCH_BYTES for payload, _ in batches))
+
+    def test_json_escaping_counts_in_wire_budget(self):
+        data = ('"\\\n' * 100).encode()
+        item = {'path': 'docs/posts/escaped/index.html', 'new_blob': f.blob_sha(data)}
+        payload = {'base_tree': f.tree_sha({}), 'tree': [{'path': item['path'], 'mode': '100644',
+                                                       'type': 'blob', 'content': data.decode()}]}
+        exact = len(f.api_json(payload))
+        self.assertGreater(exact, len(data))
+        with patch.object(f, 'TREE_BATCH_BYTES', exact):
+            self.assertEqual(len(f.prepare_tree_batches([(item, data)], {}, f.tree_sha({}))[0]), 1)
+        with patch.object(f, 'TREE_BATCH_BYTES', exact - 1):
+            with self.assertRaisesRegex(f.Blocked, 'Single tree entry'):
+                f.prepare_tree_batches([(item, data)], {}, f.tree_sha({}))
+
+    def test_batch_count_budget_rejects_entire_plan_before_api(self):
+        self.add_output_changes({f'docs/posts/over-{n:04d}/index.html': b'x' for n in range(4097)})
+        api = FakeAPI(self)
+        with self.assertRaisesRegex(f.Blocked, 'tree request budget'):
+            self.finalize(api)
+        self.assertEqual(api.calls, [])
+
+    def test_unknown_binary_fails_before_any_remote_operation(self):
+        self.add_output_changes({'docs/media/publications/new/unknown.jpg': b'\xff\xd8\x00new binary'})
+        api = FakeAPI(self)
+        with self.assertRaisesRegex(f.Blocked, 'Binary output'):
+            self.finalize(api)
+        self.assertEqual(api.calls, [])
+
+    def test_existing_source_binary_is_reused_by_sha_not_reuploaded(self):
+        binary = b'\xff\xd8\x00known binary'
+        self.write(self.repo, 'docs/media/publications/new/original.jpg', binary)
+        run(self.repo, 'add', '.')
+        run(self.repo, 'commit', '--amend', '--no-edit', '-q')
+        self.source = run(self.repo, 'rev-parse', 'HEAD')
+        self.plan['source_commit'] = self.source
+        self.add_output_changes({'docs/media/publications/new/reused.jpg': binary,
+                                 'docs/media/publications/new/original.jpg': binary})
+        api = FakeAPI(self); self.finalize(api)
+        entries = [entry for c in api.calls if c[:2] == ('POST', '/git/trees') for entry in c[2]['tree']]
+        reused = [entry for entry in entries if entry['path'].endswith('/reused.jpg')]
+        self.assertEqual(reused, [{'path': 'docs/media/publications/new/reused.jpg', 'mode': '100644',
+                                  'type': 'blob', 'sha': f.blob_sha(binary)}])
+        self.assertFalse(any(e['path'].endswith('/original.jpg') for e in entries))
+        self.assertFalse(any(c[:2] == ('POST', '/git/blobs') for c in api.calls))
+
+    def test_tampered_intermediate_tree_stops_before_commit_or_ref(self):
+        self.many_outputs(130)
+        class TamperedTreeAPI(FakeAPI):
+            def request(self, method, endpoint, payload=None, missing=False):
+                result = super().request(method, endpoint, payload, missing)
+                if method == 'POST' and endpoint == '/git/trees':
+                    return {'sha': '0' * 40}
+                return result
+        api = TamperedTreeAPI(self)
+        with self.assertRaisesRegex(f.Blocked, 'remote tree differs'):
+            self.finalize(api)
+        self.assertEqual(sum(c[:2] == ('POST', '/git/trees') for c in api.calls), 1)
+        self.assertFalse(any(c[:2] in [('POST', '/git/commits'), ('POST', '/git/refs')] for c in api.calls))
+
+    def test_main_drift_between_tree_batches_stops_before_second_tree(self):
+        self.many_outputs(130)
+        api = FakeAPI(self, stale_at=3)
+        with self.assertRaisesRegex(f.Blocked, 'Main changed'):
+            self.finalize(api)
+        self.assertEqual(sum(c[:2] == ('POST', '/git/trees') for c in api.calls), 1)
+        self.assertFalse(any(c[:2] in [('POST', '/git/commits'), ('POST', '/git/refs')] for c in api.calls))
 
     def test_request_revalidated_before_upload_and_ref_creation(self):
         seen = []

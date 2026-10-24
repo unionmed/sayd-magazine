@@ -9,7 +9,6 @@ An uncertain API mutation is reported and STOPPED, never automatically retried.
 from __future__ import annotations
 
 import argparse
-import base64
 import hashlib
 import json
 import os
@@ -24,6 +23,10 @@ REPOSITORY = "unionmed/sayd-magazine"
 WORKFLOW = f"{REPOSITORY}/.github/workflows/source-publication.yml@refs/heads/main"
 BRANCH_PREFIX = "review/source-publication-"
 SHA = re.compile(r"[0-9a-f]{40}\Z")
+# Conservative internal request budgets, not claimed GitHub API maxima.
+TREE_BATCH_BYTES = 4 * 1024 * 1024
+TREE_BATCH_ENTRIES = 64
+TREE_BATCH_COUNT = 64
 SHA256 = re.compile(r"[0-9a-f]{64}\Z")
 
 
@@ -190,6 +193,62 @@ def tree_sha(entries):
     return digest(root)
 
 
+def api_json(payload):
+    """One exact UTF-8 wire encoding for request sizing and transmission."""
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+
+
+def prepare_tree_batches(changes, source_entries, original_tree):
+    """Prevalidate all bytes and bound every mutation before the first POST.
+
+    Source/base objects are already present remotely. Reuse those exact SHAs;
+    novel generated text is written inline by GitHub's documented Trees API.
+    Unknown binary output fails closed instead of adding a second upload path.
+    """
+    known_blobs = {sha for mode, sha in source_entries.values() if mode == "100644"}
+    entries = []
+    for item, data in changes:
+        path, sha = item["path"], item["new_blob"]
+        if source_entries.get(path) == ("100644", sha):
+            continue
+        entry = {"path": path, "mode": "100644", "type": "blob"}
+        if sha in known_blobs:
+            entry["sha"] = sha
+        else:
+            try:
+                text = data.decode("utf-8", errors="strict")
+            except UnicodeDecodeError as error:
+                raise Blocked("Binary output is not an existing validated source blob: " + path) from error
+            require(text.encode("utf-8") == data and blob_sha(data) == sha,
+                    "Inline content differs from validated bytes")
+            entry["content"] = text
+        entries.append((entry, sha))
+    batches, pending = [], []
+    current = dict(source_entries)
+    parent_tree = original_tree
+    def finish():
+        nonlocal pending, parent_tree
+        if not pending:
+            return
+        payload = {"base_tree": parent_tree, "tree": [entry for entry, _ in pending]}
+        require(len(api_json(payload)) <= TREE_BATCH_BYTES, "Tree request exceeds bounded byte budget")
+        for entry, sha in pending:
+            current[entry["path"]] = ("100644", sha)
+        expected = tree_sha(current)
+        batches.append((payload, expected))
+        require(len(batches) <= TREE_BATCH_COUNT, "Publication exceeds bounded tree request budget")
+        parent_tree, pending = expected, []
+    for entry, sha in entries:
+        trial = {"base_tree": parent_tree, "tree": [e for e, _ in pending] + [entry]}
+        if pending and (len(pending) >= TREE_BATCH_ENTRIES or len(api_json(trial)) > TREE_BATCH_BYTES):
+            finish()
+        pending.append((entry, sha))
+        require(len(api_json({"base_tree": parent_tree, "tree": [e for e, _ in pending]}))
+                <= TREE_BATCH_BYTES, "Single tree entry exceeds bounded byte budget")
+    finish()
+    return batches, parent_tree
+
+
 class NoRedirect(HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         raise Blocked("GitHub API redirect refused; token is never forwarded")
@@ -205,7 +264,7 @@ class GitHub:
         require(method in ("GET", "POST") and endpoint.startswith("/git/"), "Unsupported API operation")
         # This client cannot PATCH/PUT/DELETE refs, change permissions or merge.
         url = f"https://api.github.com/repos/{REPOSITORY}{endpoint}"
-        body = None if payload is None else json.dumps(payload).encode()
+        body = None if payload is None else api_json(payload)
         req = Request(url, data=body, method=method, headers={
             "Authorization": "Bearer " + self.token, "Accept": "application/vnd.github+json",
             "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "Sayd-Source-Publication/1",
@@ -252,6 +311,7 @@ def finalize(root, site, plan, base, source, compiler, expected_plan, api, compi
     source_entries = tree_entries(root, source)
     original_tree = git(root, "rev-parse", source + "^{tree}").decode().strip()
     require(tree_sha(source_entries) == original_tree, "Source tree digest mismatch")
+    batches, batched_tree = prepare_tree_batches(changes, source_entries, original_tree)
     base_entries = tree_entries(root, base)
     for item, _ in changes:
         old = base_entries.get(item["path"])
@@ -260,6 +320,7 @@ def finalize(root, site, plan, base, source, compiler, expected_plan, api, compi
         require(not old or old[0] == "100644", "Cannot replace nonregular historical file")
         source_entries[item["path"]] = ("100644", item["new_blob"])
     expected_tree = tree_sha(source_entries)
+    require(batched_tree == expected_tree, "Batched tree differs from independently validated final tree")
     branch = BRANCH_PREFIX + full_sha(source)
     receipt = {"schema": "sayd-review-branch-receipt-v1", "repository": REPOSITORY,
                "base_commit": base, "source_commit": source, "compiler_commit": compiler,
@@ -282,13 +343,10 @@ def finalize(root, site, plan, base, source, compiler, expected_plan, api, compi
         return dict(receipt, status="ALREADY_EXISTS", commit=sha)
     if pre_write_check:
         pre_write_check()
-    entries = []
-    for item, data in changes:
-        blob = api.request("POST", "/git/blobs", {"content": base64.b64encode(data).decode(), "encoding": "base64"})
-        require(blob.get("sha") == item["new_blob"], "Uploaded blob does not match validated bytes; stop")
-        entries.append({"path": item["path"], "mode": "100644", "type": "blob", "sha": item["new_blob"]})
-    tree = api.request("POST", "/git/trees", {"base_tree": original_tree, "tree": entries})
-    require(tree.get("sha") == expected_tree, "Generated remote tree differs; no ref created")
+    for payload, expected_batch_tree in batches:
+        check_main(api, base)
+        tree = api.request("POST", "/git/trees", payload)
+        require(tree.get("sha") == expected_batch_tree, "Generated remote tree differs; no ref created")
     check_main(api, base)
     commit = api.request("POST", "/git/commits", {"message": message, "tree": expected_tree, "parents": [source]})
     sha = full_sha(commit.get("sha"))
