@@ -188,11 +188,12 @@ class MaintenanceTests(unittest.TestCase):
         with self.assertRaises(ValueError):self.plan()
 
     def test_missing_wrong_language_canonical_or_nonregular_mirror_rejected(self):
-        for kind in ('missing','language','canonical','symlink'):
+        for kind in ('missing','language','canonical','hreflang','symlink'):
             snap,_,_=fixture();page,_=m.paths(self.article,'fr')
             if kind=='missing':snap.files.pop(page)
             if kind=='language':snap.files[page]=snap.files[page].replace(b'lang="fr"',b'lang="en"')
             if kind=='canonical':snap.files[page]=snap.files[page].replace(b'rel="canonical"',b'rel="untrusted"')
+            if kind=='hreflang':snap.files[page]=snap.files[page].replace(b'hreflang="ar"',b'hreflang="de"')
             if kind=='symlink':snap.items[page]=('120000','blob','a'*40)
             with self.subTest(kind=kind):
                 with self.assertRaises(ValueError):m.bundle(snap,self.value)

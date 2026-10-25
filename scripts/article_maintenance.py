@@ -282,6 +282,9 @@ def bundle(snapshot, value):
         require(node.get('lang') == language, 'Wrong mirror language')
         canon = node.xpath('//link[@rel="canonical"]/@href')
         require(len(canon) == 1 and destination(page, canon[0]) == route(page), 'Canonical identity mismatch')
+        alternates = node.xpath('//link[@rel="alternate"][@hreflang="ar" or @hreflang="en" or @hreflang="fr"]')
+        require(len(alternates) == 3 and {n.get('hreflang'):destination(page,n.get('href','')) for n in alternates}
+                == {l:route(paths(article,l)[0]) for l in LANGS}, 'Three-language alternate identity mismatch')
         require(len(node.xpath('//article[@class="article-content"]')) == 1, 'Active compiled mirror required')
         snapshot.read(markdown)
     operation = value['operation']
