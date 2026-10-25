@@ -32,7 +32,8 @@ export function regionalStop(stop,sources,input,format){
  if(/بلديه|municipality|municipal hall|mairie|hotel de ville/.test(name))return {ok:false,reason:'administrative_source_is_not_a_visit'};
  const place=AKKAR_EVIDENCE.find(p=>p.aliases.includes(name));
  if(!place)return {ok:false,reason:'place_identity_or_region_unverified'};
- if(format==='options'&&/مطاعم|مطعم|restaurants?|dining/i.test(input.query||'')&&!place.nature_dining)return {ok:false,reason:'nature_dining_setting_unverified'};
+ const diningOptions=/مطاعم|restaurants|dining options|restaurant options|مطعم.*(?:قلب الطبيعة|وسط الطبيعة)/i.test(input.query||'')||(format==='options'&&/مطعم|restaurant|dining/i.test(input.query||''));
+ if(diningOptions&&!place.nature_dining)return {ok:false,reason:'nature_dining_setting_unverified'};
  if(place.kind!==stop.kind)return {ok:false,reason:'activity_does_not_match_place'};
  // A forest identity is not a named measured hiking route, nor a campsite.
  if(stop.trail||stop.camping)return {ok:false,reason:'trail_or_camping_details_unverified'};

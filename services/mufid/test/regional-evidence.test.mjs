@@ -56,7 +56,7 @@ test('reviewed local visitor sites and nature dining pass with bounded factual t
  const options=plan([stop(haykal)]);options.format='options';
  assert.ok(parse(options,[source(haykal)],{...input,query:'مطعم في قلب الطبيعة في عكار'}));
  assert.equal(parse(plan([{...stop(museum),kind:'meal'}]),[source(museum)]),null);
- const wrongType=plan([stop(museum)]);wrongType.format='options';assert.equal(parse(wrongType,[source(museum)],{...input,query:'مطاعم في قلب الطبيعة في عكار'}),null);
+ const wrongType=plan([stop(museum)]);for(const format of ['options','itinerary']){wrongType.format=format;assert.equal(parse(wrongType,[source(museum)],{...input,query:'مطاعم في قلب الطبيعة في عكار'}),null);}
 });
 test('the Qammoua hiking drafts remain rejected; no fabricated shortening of a long trail',()=>{
  const c=recorded.cases.find(c=>c.id.endsWith('activity'));
