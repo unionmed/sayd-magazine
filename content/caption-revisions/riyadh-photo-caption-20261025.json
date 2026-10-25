@@ -1,0 +1,23 @@
+{
+  "schema": "sayd-caption-revision-v1",
+  "id": "riyadh-photo-caption-20261025",
+  "expected_base": "8946f627e82fa90a7c3f801411fde6abe06321b3",
+  "publication_id": "riyadh-results-20261024",
+  "article_slug": "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
+  "photo_id": "riyadh-archive-2011",
+  "captions": {
+    "ar": {
+      "old": "صورة توضيحية أرشيفية لحصان في نادٍ للفروسية بالرياض عام 2011؛ لا تُظهر سباقات اليوم.",
+      "new": "صورة أرشيفية."
+    },
+    "en": {
+      "old": "Illustrative archive photograph of a horse at an equestrian club in Riyadh in 2011; not today’s races.",
+      "new": "Archive photograph."
+    },
+    "fr": {
+      "old": "Photo d’archives illustrative d’un cheval dans un club équestre à Riyad en 2011 ; elle ne montre pas les courses du jour.",
+      "new": "Photo d’archives."
+    }
+  },
+  "elide_photo_year": 2011
+}
