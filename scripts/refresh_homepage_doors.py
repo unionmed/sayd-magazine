@@ -41,7 +41,21 @@ def channel_config():
     for v in c['videos']:
         assert set(v['titles'])=={'ar','en','fr'} and all(v['titles'].values())
         assert v['image'].startswith('data:image/jpeg;base64,')
+        if 'internal_href' in v:
+            target=urlsplit(v['internal_href'])
+            assert not target.scheme and not target.netloc and not target.query
+            assert target.path.startswith('category/') and '..' not in Path(unquote(target.path)).parts and '\\' not in target.path
+            assert target.fragment and re.fullmatch(r'[A-Za-z][A-Za-z0-9_-]*',target.fragment)
+            for prefix in ('','en','fr'):
+                page=DOCS/prefix/unquote(target.path)
+                assert page.is_file(), 'Internal TV destination must exist in every language'
+                assert len(dom.parse(str(page)).xpath('//*[@id=$anchor]',anchor=target.fragment))==1
     return c
+
+
+def channel_href(video):
+    """An approved internal viewing route takes precedence over the channel URL."""
+    return video.get('internal_href', f"https://www.youtube.com/watch?v={video['id']}")
 
 
 def channel_date(published_at, lang):
@@ -309,7 +323,7 @@ def refresh(path,lang):
                 parts.append(f'<div class="sayd-tv-group" data-tv-group="{group}"><div style="display:flex;justify-content:space-between;align-items:center;margin:18px 0 12px"><h3>{label}</h3><a href="{base}#{group}">{labels[2]}</a></div><div class="home-door-grid">')
                 if group=='sayd-channel':
                     for v in channel['videos'][:channel['home_limit']]:
-                        item=dict(title=v['titles'][lang],date=channel_date(v['published_at'],lang),image=v['image'],alt=v['titles'][lang],href=f"https://www.youtube.com/watch?v={v['id']}")
+                        item=dict(title=v['titles'][lang],date=channel_date(v['published_at'],lang),image=v['image'],alt=v['titles'][lang],href=channel_href(v))
                         card=render_card(v['id'],item).replace('<article class="card">',f'<article class="card" data-video-id="{v["id"]}">',1)
                         parts.append(card)
                 else:parts.extend(render_card(*data(s)) for s in sections[door])

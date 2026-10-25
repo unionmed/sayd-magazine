@@ -310,6 +310,73 @@ def localized_tv_dates_only(before, after, old_source, current_source, lang):
     return html.tostring(old, with_tail=False) == html.tostring(new, with_tail=False)
 
 
+def isf_tv_addition_only(before, after, old_source, current_source, lang):
+    """Exact owner-approved 24 Oct card insertion; all other TV bytes survive."""
+    import base64, hashlib
+    from refresh_homepage_doors import channel_date, render_card
+    old_config, current = json.loads(old_source), json.loads(current_source)
+    video_id='P2nk8V1Muls'
+    if any(v['id']==video_id for v in old_config['videos']):
+        return False
+    record=deepcopy(current['videos'][0])
+    image=record.pop('image', '')
+    expected_record={
+        'id':video_id,'date':'24 أكتوبر 2026','published_at':'2026-10-24','source_published_at':'2026-10-20',
+        'titles':{'ar':'من البقاع إلى الشمال… مواجهة شباك إبادة الطيور',
+                  'en':'From Bekaa to northern Lebanon: confronting bird-trapping nets',
+                  'fr':'De la Bekaa au nord du Liban : lutter contre les filets de capture d’oiseaux'},
+        'internal_href':'category/استديو-صيد/index.html#isf-video-heading',
+        'image_source':{'credit':'Lebanese Internal Security Forces',
+                        'video_sha256':'3b76cc54060b7606138a226c7b6c38b4195d22fe49c8e83f1bf47272ae518d51',
+                        'frame_seconds':6,
+                        'poster_sha256':'00161e67ace8a03a160f7813021a2a688578731d9cf81595caef07c34f307518',
+                        'transformation':'Full original frame scaled and letterboxed; logo retained; no AI generation.'}}
+    if record != expected_record or not image.startswith('data:image/jpeg;base64,'):
+        return False
+    try:
+        if hashlib.sha256(base64.b64decode(image.split(',',1)[1],validate=True)).hexdigest()!=record['image_source']['poster_sha256']:
+            return False
+    except ValueError:
+        return False
+    record['image']=image
+    expected=deepcopy(old_config)
+    expected['videos']=[record]+old_config['videos']
+    expected['approved_order']=[video_id]+old_config['approved_order']
+    expected['order_approval']='Owner approved 24 October 2026: newest ISF video first, linked to the internal Sayd TV player; retain the seven-card limit and prior order of all older videos. Supersedes the fixed 16 October first-card fixture only.'
+    if current != expected or current['home_limit'] != 7:
+        return False
+    old, new=deepcopy(before),deepcopy(after)
+    xp='.//*[@data-tv-group="sayd-channel"]//article[@data-video-id]'
+    old_cards,new_cards=old.xpath(xp),new.xpath(xp)
+    if len(old_cards)!=7 or len(new_cards)!=7 or [n.get('data-video-id') for n in new_cards]!=[video_id]+[n.get('data-video-id') for n in old_cards[:6]]:
+        return False
+    item=dict(title=record['titles'][lang],date=channel_date(record['published_at'],lang),image=image,alt=record['titles'][lang],href=record['internal_href'])
+    expected_card=html.fromstring(render_card(video_id,item).replace('<article class="card">',f'<article class="card" data-video-id="{video_id}">',1))
+    if html.tostring(new_cards[0],with_tail=False)!=html.tostring(expected_card,with_tail=False):
+        return False
+    parent=new_cards[0].getparent();parent.remove(new_cards[0]);parent.append(deepcopy(old_cards[-1]))
+    return html.tostring(old,with_tail=False)==html.tostring(new,with_tail=False)
+
+
+def test_isf_tv_addition_negative_guards(before, after, old_source, current_source, lang):
+    if not isf_tv_addition_only(before,after,old_source,current_source,lang):
+        return
+    for xpath,attribute,value in [('.//article[1]//a','href','https://example.org/'),
+                                  ('.//article[1]//img','src','other.jpg'),
+                                  ('.//article[1]//div[@class="meta"]',None,'20 October 2026'),
+                                  ('.//article[2]//h3/a',None,'Changed older title')]:
+        bad=deepcopy(after);node=bad.xpath(xpath)[0]
+        if attribute:node.set(attribute,value)
+        else:node.text=value
+        assert not isf_tv_addition_only(before,bad,old_source,current_source,lang),(xpath,attribute)
+    bad=deepcopy(after);cards=bad.xpath('.//*[@data-tv-group="sayd-channel"]//article');cards[0].getparent().insert(0,cards[1])
+    assert not isf_tv_addition_only(before,bad,old_source,current_source,lang)
+    bad_source=json.loads(current_source);bad_source['home_limit']=8
+    assert not isf_tv_addition_only(before,after,old_source,json.dumps(bad_source),lang)
+    bad_source=json.loads(current_source);bad_source['videos'][1]['titles']['ar']='Changed old source'
+    assert not isf_tv_addition_only(before,after,old_source,json.dumps(bad_source),lang)
+
+
 def test_localized_tv_date_guards():
     source = json.dumps({'videos':[{'id':'one','date':'16 أكتوبر 2026','published_at':'2026-10-16'}]})
     old = html.fromstring('<section><div data-tv-group="sayd-channel"><article data-video-id="one"><a href="same"><img src="same.jpg"/></a><h3>Same title</h3><div class="meta">16 أكتوبر 2026</div></article></div><div data-tv-group="reels"><video src="same.mp4"/></div></section>')
@@ -427,6 +494,9 @@ def test_preserved(base):
                 old_source = subprocess.check_output(['git','show',base+':content/tv-channel.json'],cwd=ROOT)
                 current_source = (ROOT/'content/tv-channel.json').read_bytes()
                 if len(old_nodes) == len(new_nodes) == 1 and localized_tv_dates_only(old_nodes[0], new_nodes[0], old_source, current_source, lang):
+                    continue
+                if len(old_nodes) == len(new_nodes) == 1 and isf_tv_addition_only(old_nodes[0],new_nodes[0],old_source,current_source,lang):
+                    test_isf_tv_addition_negative_guards(old_nodes[0],new_nodes[0],old_source,current_source,lang)
                     continue
             def canonical(n):return html.tostring(n,encoding='unicode',with_tail=False)
             assert [canonical(n) for n in before.xpath(xp)]==[canonical(n) for n in after.xpath(xp)],(lang,cls)
