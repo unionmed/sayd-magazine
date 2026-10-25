@@ -75,19 +75,24 @@ with patch.object(c,'validate_stage'):
         # Existing immutable trailers, still request data rather than approval.
         tree=compiler.git(self.root,'rev-parse',source+'^{tree}').decode().strip()
         env=dict(os.environ,GIT_AUTHOR_NAME='Test',GIT_AUTHOR_EMAIL='test@example.invalid',GIT_COMMITTER_NAME='Test',GIT_COMMITTER_EMAIL='test@example.invalid')
-        message='Synthetic maintenance request\n\nSayd-Publication-Request: v1\nDistribution-Review-Scope: false\n'
+        scope=bool(value.get('placement'))
+        if value['operation']=='restore':
+            previous=state.current(self.root)[value['article_slug']]
+            scope=native.review_scope({e['path']:None for e in previous['changes']})
+        message='Synthetic maintenance request\n\nSayd-Publication-Request: v1\nDistribution-Review-Scope: '+str(scope).lower()+'\n'
         return subprocess.check_output(['git','-C',str(self.root),'commit-tree',tree,'-p',value['expected_base']],input=message.encode(),env=env).decode().strip()
 
     def build(self,value=None,full=False):
         value=copy.deepcopy(value or self.value)
         source=self.source(value)
+        scope=requests.request_scope(compiler.git(self.root,'show','-s','--format=%B',source).decode())
         with tempfile.TemporaryDirectory(prefix='sayd-native-maintenance-build-') as directory:
             output=Path(directory)/'site';report=Path(directory)/'plan.json'
             if full:
-                plan=compiler.compile_publication(self.root,value['expected_base'],source,output,report)
+                plan=compiler.compile_publication(self.root,value['expected_base'],source,output,report,scope)
             else:
                 with patch.object(compiler,'validate_stage'):
-                    plan=compiler.compile_publication(self.root,value['expected_base'],source,output,report)
+                    plan=compiler.compile_publication(self.root,value['expected_base'],source,output,report,scope)
             files={e['path']:(output/e['path']).read_bytes() for e in plan['changes']}
         return source,plan,files
 
@@ -216,6 +221,73 @@ with patch.object(c,'validate_stage'):
         compiler.git(self.root,'checkout','-q','--detach',altered)
         value['expected_base']=altered
         with self.assertRaises(ValueError):self.build(value)
+
+    def test_full_selected_lead_withdrawal_and_shared_ticker(self):
+        original_base=self.base
+        value=record(original_base,'native-upper-maintenance-fixture',placement='lead',ticker=True)
+        value['articles'][0]['archives']=['science']
+        replacement=copy.deepcopy(value['articles'][0])
+        replacement['slugs']={l:'native-upper-replacement-'+l for l in compiler.LANGS}
+        replacement['distribution']={'placement':'archive-only','ticker':False}
+        for language in compiler.LANGS:
+            replacement['translations'][language]['title']='Replacement synthetic fixture '+language
+        value['articles'].append(replacement)
+        source=source_commit(self.root,original_base,files_for(value))
+        with tempfile.TemporaryDirectory(prefix='sayd-upper-bootstrap-') as directory:
+            output=Path(directory)/'site'
+            script="""import sys
+from pathlib import Path
+from unittest.mock import patch
+sys.path.insert(0,'scripts')
+import publication_compiler as c
+with patch.object(c,'validate_stage'):
+    c.compile_publication(Path.cwd(),sys.argv[1],sys.argv[2],Path(sys.argv[3]),Path(sys.argv[4]),True)
+"""
+            result=subprocess.run([sys.executable,'-c',script,original_base,source,str(output),str(Path(directory)/'plan.json')],cwd=self.root,capture_output=True,text=True)
+            self.assertEqual(result.returncode,0,result.stdout[-1500:]+result.stderr[-5000:])
+            base=compiler.git(output,'rev-parse','HEAD').decode().strip()
+            compiler.git(self.root,'fetch','--quiet',str(output),base)
+            compiler.git(self.root,'checkout','--quiet','--detach',base)
+        home=json.loads((self.root/'content/homepage.json').read_text())
+        target=value['articles'][0]['slugs']['ar']
+        self.assertEqual(home['ia_slots']['main'],target)
+        request={'schema':maintenance.SCHEMA,'id':'withdraw-selected-lead','expected_base':base,
+                 'publication_id':value['id'],'article_slug':target,'operation':'withdraw',
+                 'decision_reference':'private:synthetic-owner-decision','conflicts':[],
+                 'notice':{l:'Synthetic withdrawn lead notice. '+l for l in compiler.LANGS},
+                 'placement':{'decision_reference':'private:synthetic-explicit-replacement',
+                              'lead':replacement['slugs']['ar'],'side':home['ia_slots']['important'],
+                              'latest':home['latest'],'desks':{}}}
+        source,plan,files=self.build(request,full=True)
+        self.assertEqual(plan['policy'],{'allow_distribution':True})
+        self.assertTrue(requests.validate_source(self.root,base,source))
+        candidate=self.candidate(source,plan,files)
+        compiler.git(self.root,'checkout','--quiet','--detach',candidate)
+        transition=native.verified_transition(self.root,base)
+        self.assertEqual(transition['ledger']['after_state']['status'],'withdrawn')
+        changed_home=json.loads((self.root/'content/homepage.json').read_text())
+        self.assertEqual(changed_home['ia_slots']['main'],replacement['slugs']['ar'])
+        self.assertNotIn(target,changed_home['ticker_slugs'])
+        self.assertEqual(changed_home['ia_slots']['important'],home['ia_slots']['important'])
+        self.assertEqual(changed_home['latest'],home['latest'])
+        from lxml import html
+        for language,prefix in (('ar',''),('en','en'),('fr','fr')):
+            node=html.fromstring((self.root/'docs'/prefix/'index.html').read_bytes())
+            href=node.xpath('//article[contains(@class,"feature-lead")]//h2/a/@href')
+            self.assertEqual(href,['posts/'+replacement['slugs'][language]+'/index.html'])
+        restore={k:copy.deepcopy(v) for k,v in request.items() if k not in {'notice','placement'}}
+        restore.update(id='restore-selected-lead',operation='restore',expected_base=candidate,
+                       previous_revision=request['id'],restore_revision=request['id'])
+        inverse_source,inverse_plan,inverse_files=self.build(restore,full=True)
+        self.assertEqual(inverse_plan['policy'],{'allow_distribution':True})
+        self.assertTrue(requests.validate_source(self.root,candidate,inverse_source))
+        for change in transition['ledger']['changes']:
+            self.assertEqual(inverse_files[change['path']],compiler.git(self.root,'show',base+':'+change['path']))
+        inverse=self.candidate(inverse_source,inverse_plan,inverse_files)
+        compiler.git(self.root,'checkout','--quiet','--detach',inverse)
+        self.assertEqual(native.verified_transition(self.root,candidate)['ledger']['after_state']['status'],'active')
+        state.assert_effective(self.root)
+        self.assertTrue((self.root/state.PREFIX/(request['id']+'.json')).is_file())
 
 
 if __name__=='__main__':

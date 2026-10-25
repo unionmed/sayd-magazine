@@ -6,6 +6,7 @@ trusted-BASE whole-tree replay. Existing main data remains audit history.
 import copy
 from pathlib import Path
 import re
+from functools import lru_cache
 from publication_schema import ID, COMMIT, SHA, LANGS, keys, loads, require, slug
 
 PREFIX = 'content/maintenance-ledger/'
@@ -71,17 +72,34 @@ def from_snapshot(snapshot):
                      for path in sorted(snapshot.items) if path.startswith(PREFIX) and path.endswith('.json')])
 
 
-def current(root):
+def fingerprint(root):
     root = Path(root)
     directory = root/PREFIX
     if not directory.exists():
-        return {}
+        return ()
     require(not directory.is_symlink(), 'Symlinked maintenance ledger')
-    records=[]
+    result=[]
     for path in sorted(directory.glob('*.json')):
         require(not path.is_symlink(), 'Symlinked maintenance record')
-        records.append(validate(loads(path.read_text()),path.relative_to(root).as_posix()))
+        info=path.stat()
+        result.append((path.name,info.st_dev,info.st_ino,info.st_size,info.st_mtime_ns))
+    return tuple(result)
+
+
+@lru_cache(maxsize=16)
+def _current(root,stamp):
+    records=[]
+    for name,*_ in stamp:
+        path=Path(root)/PREFIX/name
+        records.append(validate(loads(path.read_text()),PREFIX+name))
     return assemble(records)
+
+
+def current(root):
+    root=str(Path(root).resolve())
+    # This process-local parse cache is not a publication proof. Whole-tree
+    # verification uses from_snapshot(), immutable blobs and no filesystem cache.
+    return copy.deepcopy(_current(root,fingerprint(root)))
 
 
 def path_states(root):
@@ -94,7 +112,15 @@ def path_states(root):
 
 
 def is_withdrawn(root, relative):
-    return path_states(root).get(str(relative),{}).get('status') == 'withdrawn'
+    root=str(Path(root).resolve())
+    return str(relative) in _withdrawn(root,fingerprint(root))
+
+
+@lru_cache(maxsize=16)
+def _withdrawn(root,stamp):
+    return frozenset(('' if language=='ar' else language+'/')+'posts/'+name+'/index.html'
+                     for row in _current(root,stamp).values() if row['after_state']['status']=='withdrawn'
+                     for language,name in row['slugs'].items())
 
 
 def assert_effective(root):

@@ -40,6 +40,11 @@ existing trailer block (preceded by one blank line):
     Sayd-Publication-Request: v1
     Distribution-Review-Scope: false
 
+Use true instead of false only when the request includes an explicit placement
+proposal, or restores a prior placement change. The validator independently
+derives whether the output changes homepages/ticker and requires an exact match;
+the trailer is review scope, never editorial authority.
+
 The read-only source-request validator runs exact BASE code. The default-branch
 workflow_run adapter rechecks actual repository, PR, run, source and base
 identity. Compiler and independent finalizer rebuild the same request and
@@ -64,17 +69,36 @@ are required. Historical pages are never regenerated from incomplete Markdown:
 a requested body span absent from the source fails rather than approximating it.
 No missing language is fabricated.
 
-The category adapter covers existing Gear, Land & Sea, Science, Birds, Heritage,
-Laws and Photos archives. It does not invent taxonomy or convert an article into
+The category adapter covers existing Hunting & Equestrian, Gear, Land & Sea,
+Science, Birds, Heritage, Laws and Photos archives. It does not invent taxonomy or convert an article into
 a gallery. Original publication/update dates, media/rights, unrelated body bytes
 and date ordering remain intact. Title, image/rights, credit, source and date
 changes are not implicitly authorized by this route.
 
-Homepage/ticker membership, combined Hunting/Equestrian filters, multiple search
-facets and unknown/special card shapes fail before a candidate is written.
-Those need an explicitly scoped placement/combined-archive adapter or specific
-repair; uploading derived aggregates manually or relaxing guards is not a
-workaround. This scope bound is technical, not an editorial veto.
+Without a placement proposal, existing homepage/ticker membership fails before
+output. A placement object provides its own private decision_reference, the
+exact lead, four side identities, eight latest identities and replacements for
+affected existing desks. All proposed materials must have complete published
+editions. Only the selected target may leave the news set; unrelated lead/slot
+changes and same-day reordering fail. Required desk capacities, chronology,
+Hunting rotation, language/image parity and every existing contract remain checked.
+No new card is inferred from category/date. The ticker removes only the selected
+entry, preserving other entries and the ceiling of ten rather than refilling it
+without a decision. A changed lead is rebuilt from the selected existing article
+card and receives the normal homepage SEO refresh.
+
+Combined Hunting/Equestrian withdrawal and category transitions remove only the
+selected identity from topic filters and update the exact card count; other
+classification entries remain intact. Already reviewed marine membership uses
+effective maintenance state so later combined-archive rebuilds cannot resurrect
+a withdrawn/reclassified item. The shared ticker builder test compares every
+source entry and enforces the existing ceiling; it does not require ten entries
+after a nine-item withdrawal.
+
+Protected TV/interview collection changes, multiple independent search facets
+and unknown card shapes need a collection-specific decision/adapter. Existing
+constraints that conflict with a particular future decision still require its
+disclosed scoped implementation, not a blanket guard relaxation.
 
 ## Append-only history and current state
 

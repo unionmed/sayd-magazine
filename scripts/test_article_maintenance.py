@@ -222,7 +222,18 @@ class MaintenanceTests(unittest.TestCase):
         path='docs/category/special/index.html'
         self.snapshot.files[path]=('<main><script id="combined-archive-data"></script><article class="card"><a href="'+m.route(m.paths(self.article,'ar')[0])+'">Story</a></article></main>').encode()
         self.snapshot.items[path]=('100644','blob','a'*40)
-        with self.assertRaisesRegex(ValueError,'Combined'):self.withdraw()
+        with self.assertRaises(ValueError):self.withdraw()
+
+    def test_withdrawal_updates_combined_filters_without_changing_other_topics(self):
+        path='docs/category/صيد/index.html';slug=self.article['slugs']['ar']
+        filters={'equestrian':[slug,'unrelated'],'marine':['unrelated'],'landMarine':[],'countLabel':'items'}
+        raw='<main><article class="post-row"><a href="'+m.route(m.paths(self.article,'ar')[0])+'">Selected</a></article><article class="post-row"><a href="/posts/unrelated/">Other</a></article><p class="archive-result-count" hidden>2 items</p><script type="application/json" id="combined-archive-data">'+json.dumps(filters)+'</script></main>'
+        self.snapshot.files[path]=raw.encode();self.snapshot.items[path]=('100644','blob','a'*40)
+        changed=m.replay(self.snapshot,self.withdraw())[path].decode()
+        self.assertNotIn('Selected',changed);self.assertIn('Other',changed)
+        self.assertIn('>1 items</p>',changed)
+        node=dom.fromstring(changed);data=json.loads(node.xpath('//script[@id="combined-archive-data"]/text()')[0])
+        self.assertEqual(data,dict(filters,equestrian=['unrelated']))
 
     def test_duplicate_json_keys_rejected(self):
         with self.assertRaises(ValueError):m.loads('{"schema":1,"schema":2}')
@@ -232,6 +243,32 @@ class MaintenanceTests(unittest.TestCase):
         self.assertEqual(m.request(value,self.snapshot.base)['article_slug'],'مقال،-قديم')
         for bad in ('../escape','a/b','%2e%2e'):
             with self.assertRaises(ValueError):m.request(dict(value,article_slug=bad),self.snapshot.base)
+
+    def test_placement_schema_is_closed_and_action_bound(self):
+        self.withdraw()
+        placement={'decision_reference':'private:exact-placement','lead':'lead',
+                   'side':['side-'+str(i) for i in range(4)],'latest':['latest-'+str(i) for i in range(8)],'desks':{}}
+        value=dict(self.value,placement=placement)
+        m.request(value,self.snapshot.base)
+        for change in ({'side':['short']},{'desks':{'tv':[]}},{'output_paths':['AGENTS.md']}):
+            with self.assertRaises(ValueError):m.request(dict(value,placement=dict(placement,**change)),self.snapshot.base)
+        self.setUp()
+        with self.assertRaises(ValueError):m.request(dict(self.value,placement=placement),self.snapshot.base)
+
+    def test_reclassification_into_combined_door_updates_only_count_and_selected_card(self):
+        for language in m.LANGS:
+            prefix='' if language=='ar' else language+'/'
+            existing='docs/'+prefix+'category/'+m.DOORS['wildlife'][0]+'/index.html'
+            destination='docs/'+prefix+'category/'+m.DOORS['hunting'][0]+'/index.html'
+            filters={'equestrian':[],'marine':[],'landMarine':[],'countLabel':'items'}
+            self.snapshot.files[destination]=self.snapshot.files[existing].replace(b'</main>',('<p class="archive-result-count" hidden>2 items</p><script type="application/json" id="combined-archive-data">'+json.dumps(filters)+'</script></main>').encode())
+            self.snapshot.items[destination]=('100644','blob','a'*40)
+        self.value.pop('replacements');self.value.update(operation='reclassify',old_door='science',new_door='hunting')
+        result=m.replay(self.snapshot,self.plan())
+        for language in m.LANGS:
+            prefix='' if language=='ar' else language+'/'
+            path='docs/'+prefix+'category/'+m.DOORS['hunting'][0]+'/index.html'
+            self.assertIn(b'>3 items</p>',result[path]);self.assertIn(b'Original headline',result[path])
 
     def test_source_and_media_never_enter_proposed_diff(self):
         for operation in ('edit','withdraw','reclassify'):

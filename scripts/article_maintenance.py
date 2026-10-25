@@ -25,8 +25,10 @@ from publication_schema import COMMIT, ID, LANGS, keys, loads, require, text, va
 ORIGIN = 'https://sayd-magazine.com'
 SCHEMA = 'sayd-article-maintenance-v1'
 BUNDLE = 'sayd-maintenance-bundle-v1'
-# Existing simple archives only. Combined Hunting/Interviews/TV need adapters.
+# Existing category archives, including combined Hunting/Equestrian. Protected
+# interview/TV collections require their own scoped adapters.
 DOORS = {
+    'hunting': ('صيد', 'صيد وفروسية', 'Hunting & Equestrian', 'Chasse et équitation'),
     'gear': ('عتاد-وسلاح-الصيد', 'رماية وعتاد', 'Shooting & Gear', 'Tir et équipement'),
     'wildlife': ('حياة-برية-وتخييم', 'بر وبحر', 'Land & Sea', 'Terre et mer'),
     'science': ('علوم-واكتشافات', 'علوم', 'Science', 'Sciences'),
@@ -61,7 +63,7 @@ def plain(value, maximum=50000):
 def request(value, base):
     keys(value, ('schema', 'id', 'expected_base', 'publication_id', 'article_slug',
                  'operation', 'decision_reference', 'conflicts'),
-         ('replacements', 'old_door', 'new_door', 'notice', 'restore_revision', 'previous_revision'))
+         ('replacements', 'old_door', 'new_door', 'notice', 'restore_revision', 'previous_revision', 'placement'))
     require(value['schema'] == SCHEMA, 'Unknown maintenance schema')
     for field in ('id', 'publication_id'):
         identifier(value[field])
@@ -85,6 +87,10 @@ def request(value, base):
     require(set(value) & {'replacements', 'notice', 'old_door', 'new_door', 'restore_revision'} == fields[operation], 'Mixed or missing operation payload')
     if value.get('previous_revision') is not None:
         identifier(value['previous_revision'])
+    if 'placement' in value:
+        require(operation in {'withdraw','reclassify'}, 'Placement applies only to selected withdrawal/reclassification')
+        from maintenance_placement import validate as validate_placement
+        validate_placement(value['placement'])
     if operation == 'edit':
         keys(value['replacements'], LANGS)
         for language in LANGS:
@@ -103,7 +109,7 @@ def request(value, base):
     elif operation == 'restore':
         identifier(value['restore_revision'])
     else:
-        require(value['old_door'] in DOORS and value['new_door'] in DOORS and value['old_door'] != value['new_door'], 'Only distinct existing simple archives supported')
+        require(value['old_door'] in DOORS and value['new_door'] in DOORS and value['old_door'] != value['new_door'], 'Only distinct existing archive transitions supported')
     return value
 
 
@@ -209,6 +215,20 @@ def remove_cards(raw, path, targets):
     data = raw.decode()
     for match in reversed(target_cards(raw, path, targets)):
         data = data[:match.start()] + data[match.end():]
+    combined=re.search(r'(<script type="application/json" id="combined-archive-data">)(.*?)(</script>)',data,re.S)
+    require('combined-archive-data' not in data or combined is not None, 'Unsupported combined archive markup')
+    if combined:
+        selected={t.strip('/').split('/')[-1] for t in targets}
+        filters=loads(combined[2])
+        keys(filters,('equestrian','marine','landMarine','countLabel'))
+        for key,values in filters.items():
+            if isinstance(values,list):
+                require(all(isinstance(v,str) for v in values),'Invalid combined archive identity list')
+                filters[key]=[v for v in values if v not in selected]
+        data=data[:combined.start(2)]+json.dumps(filters,ensure_ascii=False).replace('<','\\u003c')+data[combined.end(2):]
+        count=len(re.findall(r'<article\b[^>]*>.*?</article>',data,re.S))
+        data,n=re.subn(r'(<p class="archive-result-count"[^>]*>)\d+( )',lambda hit:hit[1]+str(count)+hit[2],data)
+        require(n==1,'Missing combined archive result count')
     return data.encode()
 
 
@@ -217,6 +237,11 @@ def replace_category(raw, path, language, old, new):
     old_folder, new_folder = DOORS[old][0], DOORS[new][0]
     if path.endswith('.md'):
         before = 'categories: ' + json.dumps([old_folder], ensure_ascii=False)
+        if old=='hunting':
+            alternatives=['categories: '+json.dumps([folder],ensure_ascii=False) for folder in ('صيد','فروسية','صيد-بري','صيد-بحري','صيد-الطيور','الصقارة')]
+            present=[token for token in alternatives if data.count(token)==1]
+            require(len(present)==1,'Unambiguous original combined-door category required')
+            before=present[0]
         after = 'categories: ' + json.dumps([new_folder], ensure_ascii=False)
         require(data.count(before) == 1, 'Exact original Markdown category required')
         return data.replace(before, after, 1).encode()
@@ -384,7 +409,7 @@ def bundle(snapshot, value):
         snapshot.read(markdown)
     operation = value['operation']
     # Withdrawal/reclassification do not silently redistribute homepage/ticker.
-    if operation != 'edit':
+    if operation != 'edit' and 'placement' not in value:
         for language in LANGS:
             prefix = '' if language == 'ar' else language + '/'
             home = 'docs/' + prefix + 'index.html'
@@ -403,13 +428,18 @@ def bundle(snapshot, value):
             cards = target_cards(snapshot.read(before), before, targets)
             require(len(cards) == 1, 'One original category card required')
             require(not target_cards(snapshot.read(after), after, targets), 'Destination already lists article')
-            require('combined-archive-data' not in snapshot.read(after).decode(), 'Combined archive needs separate adapter')
             card = cards[0][0]
+            card=re.sub(r'<span class="card-topic">.*?</span>','',card,flags=re.S)
             # Sibling category folders share depth, so original relative links
             # and local images remain correct; verify instead of guessing.
             for u in dom.fromstring(card).xpath('.//@href | .//@src'):
                 require(destination(before, u) == destination(after, u), 'Card relocation changes URL meaning')
             put(before, remove_cards(snapshot.read(before), before, targets))
+            if old=='hunting':
+                for folder in ('فروسية','صيد-بري','صيد-بحري','صيد-الطيور','الصقارة'):
+                    alias='docs/'+prefix+'category/'+folder+'/index.html'
+                    if alias in snapshot.items and target_cards(snapshot.read(alias),alias,targets):
+                        put(alias,remove_cards(snapshot.read(alias),alias,targets))
             data = snapshot.read(after).decode()
             candidates = list(re.finditer(r'<article\b[^>]*>.*?</article>', data, re.S))
             require(candidates, 'Empty/unknown archive template needs a separate adapter')
@@ -427,12 +457,16 @@ def bundle(snapshot, value):
             dates = [date_of(m) for m in candidates]
             require(dates == sorted(dates, reverse=True), 'Existing archive is not chronological')
             position = next((m.start() for m, date in zip(candidates, dates) if date < article['published']), candidates[-1].end())
-            put(after, (data[:position] + card + data[position:]).encode())
+            inserted=(data[:position]+card+data[position:]).encode()
+            if b'combined-archive-data' in inserted:
+                inserted=remove_cards(inserted,after,set())  # Count/filters only; no card can match an empty identity set.
+            put(after,inserted)
             for path in paths(article, language):
                 put(path, replace_category(snapshot.read(path), path, language, old, new))
         config_path = 'content/homepage.json'
         config = loads(snapshot.read(config_path).decode())
-        require(config.get('primary_door', {}).get(value['article_slug']) == old, 'Existing primary-door registry required')
+        prior=config.get('primary_door',{}).get(value['article_slug'])
+        require(prior==old or old=='hunting' and prior in {'bird-hunting','land-hunting','marine-hunting','falconry','equestrian'}, 'Existing primary-door registry required')
         config['primary_door'][value['article_slug']] = new
         put(config_path, (json.dumps(config, ensure_ascii=False, indent=2)+'\n').encode())
     else:
@@ -445,6 +479,8 @@ def bundle(snapshot, value):
             if not path.startswith('docs/') or not path.endswith('.html') or path in {paths(article, l)[0] for l in LANGS}:
                 continue
             raw = snapshot.read(path)
+            if 'placement' in value and path in {'docs/index.html','docs/en/index.html','docs/fr/index.html'}:
+                continue  # Trusted placement renderer handles all homepage cards/ticker loops.
             node = dom.fromstring(raw)
             canon = node.xpath('//link[@rel="canonical"]/@href')
             if canon and any(destination(path, u) in targets for u in canon):
@@ -462,7 +498,6 @@ def bundle(snapshot, value):
             cards = target_cards(raw, path, targets)
             if cards:
                 require('/category/' in path or path in {'docs/articles/index.html','docs/en/stories/index.html','docs/fr/stories/index.html'}, 'Special card placement needs separate adapter: '+path)
-                require(b'combined-archive-data' not in raw, 'Combined archive needs separate adapter')
                 put(path, remove_cards(raw, path, targets))
         sitemap = 'docs/sitemap.xml'
         data = snapshot.read(sitemap).decode()
@@ -496,6 +531,9 @@ def bundle(snapshot, value):
             row['category'] = row['categories'][0]
         from build_search_index import serialize
         put(index_path, serialize(index))
+    if 'placement' in value:
+        from maintenance_placement import changes as placement_changes
+        changes=placement_changes(snapshot,changes,value)
     return finish_bundle(snapshot,value,article,changes)
 
 

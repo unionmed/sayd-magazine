@@ -56,7 +56,9 @@ def source_input(root,base,source):
         after_state['status']='withdrawn'
     elif value['operation']=='reclassify':
         after_state['primary_door']=value['new_door']
-        after_state['archives']=[value['new_door'] if door==value['old_door'] else door for door in after_state['archives']]
+        after_state['archives']=list(dict.fromkeys(value['new_door'] if door==value['old_door'] or
+            value['old_door']=='hunting' and door in {'equestrian','bird-hunting','land-hunting','marine-hunting','falconry'} else door
+            for door in after_state['archives']))
     elif value['operation']=='restore':
         after_state=copy.deepcopy(previous['before_state'])
     expected={e['path']:base64.b64decode(e['after_base64'],validate=True) for e in plan['changes']}
@@ -77,6 +79,10 @@ def source_input(root,base,source):
     return path,raw,value,expected,ledger
 
 
+def review_scope(expected):
+    return bool(set(expected)&{'docs/index.html','docs/en/index.html','docs/fr/index.html','content/ticker.json'})
+
+
 def report_for(root,base,source,expected):
     import publication_compiler as compiler
     before=compiler.tree(root,base)
@@ -84,7 +90,7 @@ def report_for(root,base,source,expected):
               'new_blob':compiler.blob_sha(data),'sha256':compiler.sha256(data),'bytes':len(data),
               'status':'M' if path in before else 'A'} for path,data in sorted(expected.items())]
     report={'schema':compiler.SCHEMA,'base_commit':base,'source_commit':source,'compiler_commit':base,
-            'policy':{'allow_distribution':False},'changes':changes}
+            'policy':{'allow_distribution':review_scope(expected)},'changes':changes}
     report['plan_sha256']=compiler.sha256(compiler.canonical(report))
     return report
 
@@ -93,8 +99,8 @@ def compile_source(root,base,source,output,report_path,allow_distribution=False)
     import publication_compiler as compiler
     root,output=Path(root).resolve(),Path(output).resolve()
     require(compiler.git(root,'rev-parse','HEAD').decode().strip()==base, 'Maintenance compiler must execute trusted BASE')
-    require(not allow_distribution, 'Maintenance does not implicitly authorize distribution')
     _,_,_,expected,_=source_input(root,base,source)
+    require(allow_distribution==review_scope(expected),'Maintenance placement scope must match the explicit dispatch/request flag')
     require(not output.exists() and not output.is_relative_to(root), 'Use a fresh external maintenance stage')
     subprocess.run(['git','-c','core.hooksPath=/dev/null','clone','--quiet','--shared','--no-checkout',str(root),str(output)],check=True)
     compiler.git(output,'checkout','--quiet','--detach',source)
@@ -110,7 +116,7 @@ def compile_source(root,base,source,output,report_path,allow_distribution=False)
     for path,data in expected.items():
         require(after[path]==('100644','blob',compiler.blob_sha(data)), 'Maintenance output mode/blob mismatch')
     report=report_for(root,base,source,expected)
-    compiler.validate_report(output,report,base,source,base,False)
+    compiler.validate_report(output,report,base,source,base,allow_distribution)
     env=dict(os.environ,GIT_AUTHOR_NAME='Sayd isolated maintenance compiler',GIT_AUTHOR_EMAIL='validation@users.noreply.github.com',
              GIT_COMMITTER_NAME='Sayd isolated maintenance compiler',GIT_COMMITTER_EMAIL='validation@users.noreply.github.com')
     provisional=subprocess.check_output(['git','-C',str(output),'commit-tree',generated,'-p',source],
@@ -130,7 +136,8 @@ def verify(root,base,candidate,output,report_path):
     import publication_compiler as compiler
     parents=compiler.git(root,'show','-s','--format=%P',candidate).decode().split()
     require(len(parents)==1, 'Maintenance candidate needs one source parent')
-    plan=compile_source(root,base,parents[0],output,report_path)
+    _,_,_,expected,_=source_input(root,base,parents[0])
+    plan=compile_source(root,base,parents[0],output,report_path,review_scope(expected))
     require(compiler.git(root,'show','-s','--format=%B',candidate).decode().strip()==compiler.provenance_message(plan), 'Maintenance provenance mismatch')
     require(compiler.git(output,'rev-parse','HEAD^{tree}')==compiler.git(root,'rev-parse',candidate+'^{tree}'), 'Maintenance candidate entire tree mismatch')
     return plan

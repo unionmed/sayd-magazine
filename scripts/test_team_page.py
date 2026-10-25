@@ -42,7 +42,12 @@ def test_team_pages():
   assert seo.add_team_linkedin(restored,Path(relative))==restored
   assert len(doc.xpath('//link[@rel="canonical"]'))==1
   assert set(doc.xpath('//link[@rel="alternate"]/@hreflang'))=={'ar','en','fr','x-default'}
-  assert all(len(loop.xpath('./a'))==10 for loop in doc.xpath('//div[@class="ticker"]'))
+  from ticker_policy import entries,title,LIMIT
+  selected=entries(ROOT)
+  assert 0<len(selected)<=LIMIT==10
+  loops=doc.xpath('//div[@class="ticker"]')
+  assert len(loops)==2
+  assert all([a.text_content() for a in loop.xpath('./a')]==[title(entry,lang) for entry in selected] for loop in loops)
  ar=(ROOT/'content/pages/من-نحن.md').read_text().split('---',2)[2].strip()
  generated=html.fromstring((ROOT/'docs'/PAGES['ar']).read_text()).xpath('//article[@class="article-content"]')[0]
  source=html.fragment_fromstring(ar,create_parent='article')

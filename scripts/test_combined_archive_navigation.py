@@ -183,6 +183,12 @@ def test_archives_keep_every_published_card():
         assert archive.add_ga4(text) == text, (lang, 'GA4 block must remain canonical')
         rows = archive.cards(text)
         original = archive.cards(source_file(page)) + archive.cards(source_file(legacy))
+        if compiled is not None and getattr(compiled,'maintenance',()):
+            # Exact trusted replay proves the entire archive, not an unchecked
+            # JSON exception. Only the selected withdrawn identity can disappear.
+            assert page.read_text()==compiled.read(page.relative_to(ROOT).as_posix()), 'Maintained combined archive differs from independent replay'
+            removed={r['slugs'][lang] for r in compiled.maintenance if r['after_state']['status']=='withdrawn' or r['after_state']['primary_door'] not in {'hunting','equestrian','bird-hunting','land-hunting','marine-hunting','falconry'}}
+            original=[row for row in original if archive.slug_of(row) not in removed]
         gulf = approved_gulf_archive_additions(lang)
         additions={**approved_four_news_archive_additions(lang),**approved_three_archive_additions(lang),**gulf}
         new_cards = {}

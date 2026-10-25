@@ -24,7 +24,7 @@ def check_site():
     source = load()
     validate(source)
     selected = entries()
-    assert len(selected) == LIMIT == 10
+    assert 0 < len(selected) <= LIMIT == 10
     legacy = json.loads((ROOT/'content/ticker.json').read_text())['items']
     assert legacy == [dict(entry, title=title(entry, 'ar')) for entry in selected]
     expected = {}
@@ -160,10 +160,13 @@ def check_builders():
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     expected = [(e['slug'], title(e, 'ar')) for e in entries()]
+    assert 0 < len(expected) <= LIMIT == 10
     assert module.load_ticker_items() == expected
     for depth in (0, 1, 2, 4):
         block = module.chrome_ticker(depth)
-        assert len(html.fromstring(block).xpath('//div[@class="ticker"][1]/a')) == 10
+        anchors=html.fromstring(block).xpath('//div[@class="ticker"][1]/a')
+        assert len(anchors)==len(expected)
+        assert [a.text_content() for a in anchors]==[label for _,label in expected]
     from build_en_edition import ticker_html
     from build_fr_edition import french_ticker_blocks, prune_and_translate_cards
     from ticker_policy import local_slug

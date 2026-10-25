@@ -377,7 +377,7 @@ class BrowserImageWaitTests(unittest.TestCase):
 
     def test_lazy_images_are_scrolled_before_bounded_decode(self):
         self.expression()
-        self.assertEqual(self.source.count('decode_visible_image(image)'), 3)  # definition + both loops
+        self.assertEqual(self.source.count('decode_visible_image(image)'), 4)  # definition + publication/maintenance loops
         self.assertIn("image.evaluate('img=>img.complete&&img.naturalWidth>0')", self.source)
         self.assertIn('page.screenshot(path=str(path), full_page=True)', self.source)
         self.assertLess(self.source.index("page.evaluate('scrollTo(0,0)')"),
