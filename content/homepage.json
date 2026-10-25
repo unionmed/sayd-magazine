@@ -341,6 +341,7 @@
     {
       "door": "gear",
       "slugs": [
+        "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
         "أسلحة-الصيد-في-معرض-الرياض-2026",
         "القاهرة-تستعد-لكأس-العالم-للبندقية-والمسدس",
         "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
@@ -478,7 +479,8 @@
     "الطيطوي-أحمر-الساق-في-العالم-العربي": "birds",
     "الدريجة-الألبية-في-العالم-العربي": "birds",
     "الصيد-السياحي-في-دول-المغرب-العربي": "hunting",
-    "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026": "equestrian"
+    "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026": "equestrian",
+    "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026": "gear"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -497,6 +499,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
     "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
     "الصيد-السياحي-في-دول-المغرب-العربي",
     "الصيد-السياحي-في-بلدان-الخليج-العربية",
@@ -505,8 +508,7 @@
     "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
     "تمبتد-غودولفين-إيفرست-2026",
     "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
-    "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
-    "شيرين-بو-رفول-مكافحة-الصيد-الجائر"
+    "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -843,11 +845,29 @@
         "en": "A dark horse with a saddle and red tack at an equestrian club in Riyadh in 2011.",
         "fr": "Un cheval sombre avec une selle et un harnachement rouge dans un club équestre de Riyad en 2011."
       }
+    },
+    "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026": {
+      "image": "media/publications/syria-helice-championship-20261024/podium-a.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ثلاثة متوجين يحملون الكؤوس والميداليات على منصة بطولة الجمهورية في صيدنايا.",
+        "en": "Three medallists holding trophies and medals on the championship podium in Saydnaya.",
+        "fr": "Trois médaillés avec leurs coupes et médailles sur le podium du championnat à Saydnaya."
+      },
+      "fit": "contain"
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
+      "titles": {
+        "ar": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا",
+        "en": "Syria’s Helice shooting champions crowned in Saydnaya",
+        "fr": "Les champions de Syrie de tir aux hélices couronnés à Saydnaya"
+      }
+    },
     {
       "slug": "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
       "titles": {
@@ -918,14 +938,6 @@
         "ar": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية",
         "en": "Abu Dhabi launches a wildlife rescue network",
         "fr": "Abou Dhabi lance un réseau de sauvetage de la faune"
-      }
-    },
-    {
-      "slug": "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
-      "titles": {
-        "ar": "شيرين بو رفول لـ«صيد»: أحبّ الصيد، لكنني أختار مكافحة المخالفات وإنقاذ الطيور.",
-        "en": "Shireen Bou Rafoul tells Sayd: I love hunting, but I choose to fight violations and rescue birds.",
-        "fr": "Shireen Bou Rafoul à Sayd : j’aime la chasse, mais je choisis de lutter contre les infractions et de sauver les oiseaux."
       }
     }
   ],

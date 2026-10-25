@@ -1,0 +1,178 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "syria-helice-championship-20261024",
+  "expected_base": "77e380dc31bef1bc1cc0647f693198754871d984",
+  "approval_reference": "private:Sentinel_2cb0eac26bfc8191b418fa15f5ed4d6a",
+  "bank_search_reference": "Library /Sayd picture for use searched 24 October 2026 for صيدنايا رماية بطولة الجمهورية 2026 / Saydnaya shooting championship 2026, then صيدنايا / Saydnaya. No indexed results returned; not proof of complete absence. Exact statement photographs selected by owner; provenance retained without claiming external reuse rights.",
+  "photos": [
+    {
+      "id": "awards-podium",
+      "path": "docs/media/publications/syria-helice-championship-20261024/podium-a.jpg",
+      "sha256": "f9f188d7844f0517df1138a71c7112bb2031b636e46766b1db237e15be1a7be0",
+      "source_sha256": "f9f188d7844f0517df1138a71c7112bb2031b636e46766b1db237e15be1a7be0",
+      "source_reference": "Saydnaya Shooting and Hunting Club; closing statement album 1657747872814623, 24 October 2026; private:syria-helice-source-evidence-20261024; full unaltered source JPEG; photographer uncredited. Album/source identity visually verified; no individual identification inferred from faces.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Owner explicitly selected one or two photographs from this identified statement album for this article. The selected source was supplied by reference, not a binary upload. External reuse rights and independent forensic authenticity remain unverified; no open licence, ownership, rightsholder permission or unrestricted reuse is claimed.",
+        "evidence_reference": "private:Sentinel_2cb0eac26bfc8191b418fa15f5ed4d6a",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_2cb0eac26bfc8191b418fa15f5ed4d6a"
+      },
+      "alt": {
+        "ar": "ثلاثة متوجين يحملون الكؤوس والميداليات على منصة بطولة الجمهورية في صيدنايا.",
+        "en": "Three medallists holding trophies and medals on the championship podium in Saydnaya.",
+        "fr": "Trois médaillés avec leurs coupes et médailles sur le podium du championnat à Saydnaya."
+      },
+      "caption": {
+        "ar": "من تتويج الفائزين في صيدنايا.",
+        "en": "Winners on the podium in Saydnaya.",
+        "fr": "Des lauréats sur le podium à Saydnaya."
+      }
+    },
+    {
+      "id": "ceremony-group",
+      "path": "docs/media/publications/syria-helice-championship-20261024/group-wide.jpg",
+      "sha256": "39cb31920ea1d3d55861c043a3c5e35ffbb8f13601033ea6893fa719d62a12f0",
+      "source_sha256": "39cb31920ea1d3d55861c043a3c5e35ffbb8f13601033ea6893fa719d62a12f0",
+      "source_reference": "Saydnaya Shooting and Hunting Club; closing statement album 1657747872814623, 24 October 2026; private:syria-helice-source-evidence-20261024; full unaltered source JPEG; photographer uncredited. Album/source identity visually verified; no individual identification inferred from faces.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Owner explicitly selected one or two photographs from this identified statement album for this article. The selected source was supplied by reference, not a binary upload. External reuse rights and independent forensic authenticity remain unverified; no open licence, ownership, rightsholder permission or unrestricted reuse is claimed.",
+        "evidence_reference": "private:Sentinel_2cb0eac26bfc8191b418fa15f5ed4d6a",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_2cb0eac26bfc8191b418fa15f5ed4d6a"
+      },
+      "alt": {
+        "ar": "المتوجون والحضور في ختام بطولة الجمهورية لرماية الأطباق المروحية في صيدنايا.",
+        "en": "Medallists and guests at the closing ceremony of the Syrian Republic Helice Shooting Championship in Saydnaya.",
+        "fr": "Médaillés et invités à la clôture du championnat de Syrie de tir aux hélices à Saydnaya."
+      },
+      "caption": {
+        "ar": "المتوجون والحضور في ختام البطولة.",
+        "en": "Medallists and guests at the closing ceremony.",
+        "fr": "Médaillés et invités lors de la clôture du championnat."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
+        "en": "syria-republic-helice-shooting-championship-2026",
+        "fr": "championnat-syrie-tir-helices-2026"
+      },
+      "published": "2026-10-25",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "gear",
+      "archives": [
+        "gear"
+      ],
+      "kind": "article",
+      "photos": [
+        "awards-podium",
+        "ceremony-group"
+      ],
+      "translations": {
+        "ar": {
+          "title": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا",
+          "subtitle": "30 رامياً في منافسات الفئتين أ وب والفرق، بحضور معاون الوزير جمال الشريف",
+          "meta_description": "برعاية وزارة الرياضة والشباب وحضور معاون الوزير جمال الشريف، اختتمت بطولة الجمهورية لرماية الأطباق المروحية في صيدنايا بمشاركة 30 رامياً.",
+          "ticker_title": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا",
+          "sections": [
+            {
+              "paragraphs": [
+                "برعاية وزارة الرياضة والشباب السورية، اختُتمت في نادي صيدنايا للرماية والفروسية والصيد بريف دمشق، السبت 24 تشرين الأول/أكتوبر 2026، بطولة الجمهورية لرماية الأطباق المروحية، بحضور معاون الوزير جمال الشريف.",
+                "أُقيمت البطولة يومي 23 و24 أكتوبر بمشاركة 30 رامياً، بإشراف الاتحاد العربي السوري للرماية، وبالتعاون مع مجلس مدينة صيدنايا وشركة الترامديكا للصناعات الدوائية. وشملت منافسات الفئتين أ وب، إلى جانب ترتيب الفرق."
+              ]
+            },
+            {
+              "heading": "نتائج الفردي",
+              "paragraphs": [
+                "في الفئة أ، أحرز أحمد برقاوي المركز الأول، تلاه إيلي فرح ثانياً ووليد حجيج ثالثاً. وفي الفئة ب، التي سماها بيان النادي «الجونيور»، حلّ راتب حنون أولاً، وآلان أندراوس ثانياً، وزهير عجاج ثالثاً."
+              ]
+            },
+            {
+              "heading": "الفرق وتكريم أصغر المشاركين",
+              "paragraphs": [
+                "وتصدّر ترتيب الفرق الثلاثي وليد حجيج وإلياس حداد ومعروف موصلي. وجاء فريق إيلي فرح وشادي رماح ورزوق كلش في المركز الثاني، فيما حلّ فريق خليل قزق وصفوان طيارة وملحم قزق ثالثاً.",
+                "وشهد الختام تكريم جمال الشريف للرامي آدم موسى بصفته أصغر المشاركين في البطولة."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصور: نادي صيدنايا للرماية والصيد."
+        },
+        "en": {
+          "title": "Syria’s Helice shooting champions crowned in Saydnaya",
+          "subtitle": "Thirty shooters competed in Classes A and B and the team event, with Assistant Minister Jamal al-Sharif in attendance",
+          "meta_description": "Thirty shooters competed in Saydnaya under Sports and Youth Ministry patronage, with Assistant Minister Jamal al-Sharif in attendance.",
+          "ticker_title": "Syria’s Helice shooting champions crowned in Saydnaya",
+          "sections": [
+            {
+              "paragraphs": [
+                "Held under the patronage of Syria’s Ministry of Sports and Youth, the National Helice Shooting Championship concluded at the Saydnaya Shooting, Equestrian and Hunting Club in rural Damascus on Saturday, 24 October 2026. Assistant Minister Jamal al-Sharif attended the event.",
+                "The championship took place on 23–24 October with 30 shooters, under the supervision of the Syrian Arab Shooting Federation and in cooperation with Saydnaya City Council and Ultra Medica Pharmaceutical Industries. Competition covered Classes A and B, alongside the team standings."
+              ]
+            },
+            {
+              "heading": "Individual results",
+              "paragraphs": [
+                "Ahmad Barqawi won Class A, ahead of Elie Farah in second and Walid Hajij in third. In Class B, labelled “Junior” in the club’s statement, Rateb Hannoun finished first, Alan Andraos second and Zuhair Ajaj third."
+              ]
+            },
+            {
+              "heading": "Team standings and a youngest-participant honour",
+              "paragraphs": [
+                "Walid Hajij, Elias Haddad and Maarouf Mawsili topped the team standings. Elie Farah, Shadi Rammah and Razzouk Kalash placed second, followed by Khalil Qazaq, Safwan Tayara and Melhem Qazaq in third.",
+                "At the closing ceremony, Jamal al-Sharif honoured Adam Moussa as the championship’s youngest participant."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographs: Saydnaya Shooting and Hunting Club."
+        },
+        "fr": {
+          "title": "Les champions de Syrie de tir aux hélices couronnés à Saydnaya",
+          "subtitle": "Trente tireurs en catégories A et B et par équipes, en présence de Jamal al-Sharif, adjoint au ministre",
+          "meta_description": "Trente tireurs réunis à Saydnaya sous le patronage du ministère des Sports et de la Jeunesse, en présence de Jamal al-Sharif, adjoint au ministre.",
+          "ticker_title": "Les champions de Syrie de tir aux hélices couronnés à Saydnaya",
+          "sections": [
+            {
+              "paragraphs": [
+                "Organisé sous le patronage du ministère syrien des Sports et de la Jeunesse, le Championnat de Syrie de tir aux hélices s’est achevé samedi 24 octobre 2026 au club de tir, d’équitation et de chasse de Saydnaya, dans la campagne de Damas, en présence de Jamal al-Sharif, adjoint au ministre.",
+                "Disputée les 23 et 24 octobre, la compétition a réuni 30 tireurs sous la supervision de la Fédération arabe syrienne de tir, en coopération avec le conseil municipal de Saydnaya et Ultra Medica Pharmaceutical Industries. Elle comprenait les catégories A et B ainsi qu’un classement par équipes."
+              ]
+            },
+            {
+              "heading": "Résultats individuels",
+              "paragraphs": [
+                "Ahmad Barqawi a remporté la catégorie A, devant Elie Farah et Walid Hajij. Dans la catégorie B, appelée « Junior » dans le communiqué du club, Rateb Hannoun a pris la première place, suivi d’Alan Andraos et de Zuhair Ajaj."
+              ]
+            },
+            {
+              "heading": "Classement par équipes et hommage au plus jeune participant",
+              "paragraphs": [
+                "Walid Hajij, Elias Haddad et Maarouf Mawsili ont terminé en tête du classement par équipes. Elie Farah, Shadi Rammah et Razzouk Kalash ont pris la deuxième place, devant Khalil Qazaq, Safwan Tayara et Melhem Qazaq, troisièmes.",
+                "Lors de la clôture, Jamal al-Sharif a distingué Adam Moussa, le plus jeune participant au championnat."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographies : club de tir et de chasse de Saydnaya."
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": true
+      }
+    }
+  ]
+}
