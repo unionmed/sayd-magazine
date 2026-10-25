@@ -270,7 +270,7 @@ def replace_category(raw, path, language, old, new):
 def notice_page(raw, language, notice):
     data = raw.decode()
     label = {'ar': 'مادة مسحوبة', 'en': 'Article withdrawn', 'fr': 'Article retiré'}[language]
-    data, count = re.subn(r'(<main\b[^>]*>).*?</main>', lambda hit: hit[1][:-1]+' data-sayd-withdrawn="true"><article class="withdrawn-notice"><h1>' + html.escape(label) + '</h1><p>' + html.escape(notice) + '</p></article></main>', data, flags=re.S)
+    data, count = re.subn(r'(<main\b[^>]*>).*?</main>', lambda hit: hit[1][:-1]+' data-sayd-withdrawn="true"><article class="withdrawn-notice" style="max-width:100%;box-sizing:border-box;padding:1.5rem 1rem;overflow-wrap:anywhere;white-space:normal"><h1>' + html.escape(label) + '</h1><p dir="auto">' + html.escape(notice) + '</p></article></main>', data, flags=re.S)
     require(count == 1, 'One main region required for withdrawal')
     data = re.sub(r'<title>.*?</title>', '<title>' + label + ' — Sayd Magazine</title>', data, flags=re.S)
     data = re.sub(r'<script\b[^>]*type="application/ld\+json"[^>]*>.*?</script>', '', data, flags=re.S)

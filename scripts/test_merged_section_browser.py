@@ -174,12 +174,19 @@ def test_maintenance_browser(context, origin, proof, output):
                         assert page.locator('article.article-content').count()==0,(label,'no public article body')
                         assert page.locator('meta[name="robots"]').get_attribute('content')=='noindex,follow',(label,'noindex')
                         assert page.locator('meta[property="og:image"],script[type="application/ld+json"]').count()==0,(label,'no stale rich content')
+                        for notice in page.locator('.withdrawn-notice h1,.withdrawn-notice p').all():
+                            assert notice.evaluate('''element=>{
+                              const outer=element.getBoundingClientRect(),range=document.createRange();
+                              range.selectNodeContents(element);
+                              return element.scrollWidth<=element.clientWidth+1&&[...range.getClientRects()].every(r=>r.left>=outer.left-1&&r.right<=outer.right+1&&r.left>=-1&&r.right<=innerWidth+1);
+                            }'''),(label,'notice text fits without clipping')
                     else:
                         assert page.locator('article.article-content').count()==1,(label,'effective body')
                         for image in page.locator('article.article-content img').all():
                             decode_visible_image(image)
                             assert image.evaluate('img=>img.complete&&img.naturalWidth>0'),(label,'preserved local media')
                     path=output/f'maintenance-{ledger["id"]}-{language}-{width}.png'
+                    page.evaluate('scrollTo(0,0)')
                     page.screenshot(path=str(path),full_page=True);screens.append(path)
     finally:
         page.close()
