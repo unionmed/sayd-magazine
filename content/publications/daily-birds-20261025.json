@@ -1,0 +1,704 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261025",
+  "expected_base": "e9b750043077abe947519a3493829325b77ebd4e",
+  "approval_reference": "private:Sentinel_4fc857ac29988191ab2cfd656cf652d6; private:encyclopedia-reviewed-trilingual-package-20261025",
+  "bank_search_reference": "2026-10-25: existing Sayd picture for use Birds & Wildlife bank fully listed (83 files, no next page), plus scoped scientific/common-name searches. No suitable existing images. Complete 1066 source files and 2024 generated files searched for scientific names, synonyms and article routes; no species profiles. Exact originals, source-rights records and independent science/image reviews saved in Library. Article-body hashes retained in reviewed package libfile_02c69a70dad48191a8d6e335df01854a. Fresh main checked before new publication.",
+  "photos": [
+    {
+      "id": "godwit",
+      "path": "docs/media/publications/daily-birds-20261025/godwit.jpg",
+      "sha256": "55af8ac4cb121cd43e4940b9a3ec36932665e4f91cf38dd0ab7ef302ab83f9e7",
+      "source_sha256": "55af8ac4cb121cd43e4940b9a3ec36932665e4f91cf38dd0ab7ef302ab83f9e7",
+      "source_reference": "Berend Jan Stijf; captured 2007-05-15; locality unspecified; adult breeding-type plumage, sex not assigned. Original unchanged. Original Library libfile_8b53c58ac2bc81918d32764f9569a43e; rights libfile_c6ffaacb706c819190384bdefcdfc81a.",
+      "rights": {
+        "status": "licensed",
+        "statement": "Author public-domain dedication (PD-self), unrestricted reuse without attribution/link condition.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Grutto.jpg; source-rights record and verified image in existing Sayd picture for use bank; independent visual and licence review 2026-10-25."
+      },
+      "alt": {
+        "ar": "بقويقة سوداء الذيل في ريش التكاثر وسط عشب أخضر، ترفع جناحيها فيظهر الشريط الأبيض العريض ونهاية الذيل السوداء، ومنقارها مفتوح.",
+        "en": "A Black-tailed Godwit in breeding plumage among green grass, with its bill open and wings raised to show broad white wing bars and a black-ended tail.",
+        "fr": "Une Barge à queue noire en plumage nuptial dans l’herbe verte, le bec ouvert et les ailes relevées montrant leurs larges barres blanches et l’extrémité noire de la queue."
+      },
+      "caption": {
+        "ar": "بقويقة سوداء الذيل",
+        "en": "Black-tailed Godwit",
+        "fr": "Barge à queue noire"
+      }
+    },
+    {
+      "id": "avocet",
+      "path": "docs/media/publications/daily-birds-20261025/avocet.jpg",
+      "sha256": "d4e8bf025defe4fcaa90dcdee376029c10a8af629dd245c8c5bed767468305a3",
+      "source_sha256": "d4e8bf025defe4fcaa90dcdee376029c10a8af629dd245c8c5bed767468305a3",
+      "source_reference": "freddy dendoktoor; zoo setting, place and capture date unspecified; platform free rendition unchanged. Original Library libfile_f625a7d3e86081919da2c153423d6d86. Independent species visual review; sex not assigned.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 public-domain dedication; no attribution or hyperlink condition. Supplied credit retained voluntarily.",
+        "evidence_reference": "https://www.publicdomainpictures.net/en/view-image.php?image=434031&picture=avocet-recurvirostra-avosetta-bird; source-rights record and verified image in existing Sayd picture for use bank; independent visual and licence review 2026-10-25."
+      },
+      "alt": {
+        "ar": "نكات أبقع بمنقار أسود مقوس إلى أعلى وساقين رماديتين مزرقتين في حديقة حيوان",
+        "en": "Pied Avocet with a black upturned bill and blue-grey legs in a zoo",
+        "fr": "Avocette élégante au bec noir retroussé et aux pattes gris bleu dans un zoo"
+      },
+      "caption": {
+        "ar": "النكات الأبقع",
+        "en": "Pied Avocet",
+        "fr": "Avocette élégante"
+      }
+    },
+    {
+      "id": "stilt",
+      "path": "docs/media/publications/daily-birds-20261025/stilt.png",
+      "sha256": "b4bf2ca1d17c61edba630a2798deafae3220e7b78689d34b83eb3fc84aae53bc",
+      "source_sha256": "3030ae221fdb03453b4f64208f321079cf3dbaf3d60a88b78b0daf42cf0811eb",
+      "source_reference": "Xadrik; captured 2024-06-23, locality unspecified. Native still at45 seconds from real original video; no crop or retouch. Video original SHA2563030ae221fdb03453b4f64208f321079cf3dbaf3d60a88b78b0daf42cf0811eb. Image Library libfile_48c6f5a3b4988191a16114ee73818a4e. Sex not assigned.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 public-domain dedication; no attribution or hyperlink condition. Supplied credit retained voluntarily.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Ходулочник.webm; source-rights record and verified image in existing Sayd picture for use bank; independent visual and licence review 2026-10-25."
+      },
+      "alt": {
+        "ar": "أبو المغازل بمنقار أسود مستقيم وساقين ورديتين طويلتين في مياه ضحلة",
+        "en": "Black-winged Stilt with a straight black bill and long pink legs in shallow water",
+        "fr": "Échasse blanche au bec noir droit et aux longues pattes roses dans une eau peu profonde"
+      },
+      "caption": {
+        "ar": "أبو المغازل (الكرسوع)",
+        "en": "Black-winged Stilt",
+        "fr": "Échasse blanche"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "بقويقة-سوداء-الذيل-في-العالم-العربي",
+        "en": "black-tailed-godwit-arab-world",
+        "fr": "barge-a-queue-noire-monde-arabe"
+      },
+      "published": "2026-10-25",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "godwit"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "بقويقة سوداء الذيل",
+          "subtitle": "Limosa limosa — طائر الخوض طويل المنقار بين الهجرة ومواطن الشتاء",
+          "meta_description": "Limosa limosa — طائر الخوض طويل المنقار بين الهجرة ومواطن الشتاء",
+          "sections": [
+            {
+              "heading": "الهوية والتصنيف",
+              "paragraphs": [
+                "بقويقة سوداء الذيل، المعروفة أيضًا باسم «بقويقة سلطانية» في بعض المراجع العربية، طائر خوّاض من فصيلة الشنقبية Scolopacidae ورتبة الزقزاقيات Charadriiformes. اسمها العلمي Limosa limosa، وقد وصفها لينيوس سنة 1758. ليست طائرًا بحريًا محضًا؛ فالمياه العذبة والمروج المبتلة مهمة في حياتها، إلى جانب المصبات والبحيرات الساحلية."
+              ]
+            },
+            {
+              "heading": "كيف تُعرَف؟",
+              "paragraphs": [
+                "يبلغ طولها نحو 36–44 سنتيمترًا، ولها ساقان طويلتان وعنق ممتد ومنقار طويل شبه مستقيم، وردي أو برتقالي عند القاعدة وداكن عند الطرف. يظهر في ريش التكاثر لون صدئي على الرأس والعنق والصدر مع تخطيط داكن أسفل الجسم؛ ويكون الذكر عادة أشد تلوّنًا، بينما الأنثى أكبر في المتوسط وأطول منقارًا. شتاءً يغلب الرمادي البني، أما اليافعات فتحمل مسحة برتقالية مصفرة وحواف فاتحة لريش الظهر.",
+                "عند الطيران يظهر شريط أبيض عريض على كل جناح وعجز أبيض وذيل ذو نهاية سوداء واضحة. وهذه العلامات أنفع من اللون وحده لتمييزها من بقويقة مخططة الذيل Limosa lapponica، التي تفتقر إلى الشريط الجناحي الأبيض البارز، ولها ذيل مخطط ومنقار يميل إلى التقوس صعودًا."
+              ]
+            },
+            {
+              "heading": "انتشار عالمي ومسارات متعددة",
+              "paragraphs": [
+                "يمتد نطاق التكاثر، بصورة غير متصلة، من آيسلندا عبر أوروبا إلى شمال آسيا وشرق روسيا. وتقضي جماعات مختلفة الموسم غير التكاثري في أوروبا وأفريقيا والشرق الأوسط وجنوب آسيا وصولًا إلى أسترالاسيا. ليست لهذه الجماعات رحلة واحدة مشتركة؛ فطيور آيسلندا وطيور أوروبا القارية تختلف في مساراتها ومناطق شتائها، وتتغير محطات بعض الأفراد بين الأعوام."
+              ]
+            },
+            {
+              "heading": "حضورها في البلدان العربية",
+              "paragraphs": [
+                "يوثَّق وجود شتوي في المغرب والجزائر وتونس وموريتانيا، وتوجد أيضًا سجلات شتوية من ليبيا ومصر والعراق واليمن؛ لكن ذلك لا يعني تساوي الوفرة أو الانتظام بين البلدان. للمناطق الرطبة في موريتانيا، ومنها دلتا نهر السنغال، دور في شبكة مواقع الشتاء الغربية. أما لبنان فتُعد فيه عابرة قليلة، في مارس–أبريل وأغسطس–نوفمبر؛ وفي الأردن عابرة، وتشتّي بأعداد أقل.",
+                "في السعودية هي عابرة وزائرة شتوية غير شائعة، وتبرز الهجرة في مارس–أبريل وأكتوبر–نوفمبر. وفي عُمان تُصنَّف عابرة وزائرة شتوية شائعة. أما الإمارات فوجودها محلي جدًا، ويبرز رأس الخور، مع بقاء أفراد قليلة صيفًا. وفي الكويت هي عابرة غير شائعة، نادرة شتاءً وقليلة صيفًا. لذا يلائم أواخر أكتوبر التعريف بها، خصوصًا في السعودية وشرق المنطقة؛ لكنه ليس موعد وصول موحدًا للعالم العربي. والبقاء الصيفي لا يثبت الإقامة الدائمة أو التكاثر."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تستخدم الشواطئ الطينية والبرك الضحلة والمستنقعات والمروج المغمورة وحقول الأرز، وتتفاوت تفضيلاتها بين الجماعات. تغرس منقارها في الطين أو تلتقط الغذاء من السطح، وتأكل الديدان والحشرات ويرقاتها والرخويات والقشريات؛ وقد تضيف البذور وحبوب الأرز خارج موسم التكاثر. كثيرًا ما تبحث عن الطعام وتستريح في أسراب، ولذلك تحتاج إلى مواقع تغذية ومبيت هادئة، لا إلى رقعة ماء منفردة فقط."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "تتكاثر أساسًا في مروج ومستنقعات مفتوحة رطبة ضمن نطاقها الشمالي، وليس وجودها المعتاد في البلدان العربية وجودًا تكاثريًا. العش حفرة أرضية مبطنة بالنباتات، وتضم الحضنة عادة أربع بيضات. يتناوب الأبوان الحضانة نحو 22–24 يومًا. تخرج الفراخ مكسوة بالزغب وقادرة على الحركة مبكرًا، وتبلغ مرحلة الطيران عادة بعد نحو 25–30 يومًا. وهذه مدد نموذجية وليست مواعيد ثابتة لكل عش. وبعد التكاثر تتجمع الطيور وتنتقل تدريجيًا إلى مناطقها غير التكاثرية."
+              ]
+            },
+            {
+              "heading": "حالة الحفظ والمراقبة المسؤولة",
+              "paragraphs": [
+                "تصنيفها العالمي «قريبة من التهديد» NT، ولا ينبغي الخلط بينه وبين تقييمات أشد خطورة تخص بلدانًا معينة. من أهم الضغوط تجفيف الأراضي الرطبة وتكثيف الزراعة والقص المبكر للمروج، بما يخفض نجاح التكاثر، إضافة إلى تدهور مواقع التوقف والشتاء. حمايتها تتطلب الحفاظ على هذه المواقع عبر مسار الهجرة كله. وعند الرصد، تُراقَب من مسافة لا تدفعها إلى التوقف عن التغذية أو الطيران، ولا تُطارَد لإظهار شريط جناحها."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "المراجع العلمية: BirdLife International؛ BTO، BirdFacts؛ اتفاقيتا CMS وAEWA، خطة عمل بقويقة سوداء الذيل؛ The Birds of Saudi Arabia، ج2، ص127؛ قائمة طيور الإمارات EBRC، تحديث فبراير 2026؛ Birds of Oman؛ KuwaitBirds؛ Jordan BirdWatch؛ Lebanese Science Journal، 2020. مراجعة المعلومات: 25 أكتوبر 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Berend Jan Stijf — ويكيميديا كومنز، ملكية عامة."
+        },
+        "en": {
+          "title": "Black-tailed Godwit",
+          "subtitle": "Limosa limosa — a long-billed wader between migration and wintering grounds",
+          "meta_description": "Limosa limosa — a long-billed wader between migration and wintering grounds",
+          "sections": [
+            {
+              "heading": "Identity and classification",
+              "paragraphs": [
+                "The Black-tailed Godwit, also called “Baqwiqa Sultaniya” in some Arabic references, is a wader in the family Scolopacidae and the order Charadriiformes. Its scientific name is Limosa limosa, and Linnaeus described it in 1758. It is not an exclusively coastal bird: freshwater wetlands and damp meadows matter throughout its life, alongside estuaries and coastal lagoons."
+              ]
+            },
+            {
+              "heading": "How to recognise it",
+              "paragraphs": [
+                "About 36–44 centimetres long, it has long legs, an extended neck and a long, almost straight bill, pink or orange at the base and dark at the tip. Breeding plumage includes rusty colouring on the head, neck and breast, with dark barring below. Males are usually more colourful; females are larger on average and have longer bills. Winter plumage is mainly grey-brown, while juveniles show a warm buff-orange wash and pale edges to their back feathers.",
+                "In flight, a broad white bar crosses each wing; the rump is white and the tail has a conspicuously black end. These markings are more useful than colour alone for distinguishing it from the Bar-tailed Godwit Limosa lapponica, which lacks the prominent white wing bar, has a barred tail and a bill that tends to curve slightly upwards."
+              ]
+            },
+            {
+              "heading": "A global range, several migration systems",
+              "paragraphs": [
+                "Its discontinuous breeding range extends from Iceland through Europe to northern Asia and eastern Russia. Different populations spend the non-breeding season in Europe, Africa, the Middle East and southern Asia, reaching Australasia. They do not all follow one shared journey: Icelandic and continental European birds differ in their routes and wintering areas, and some individuals change their stopovers between years."
+              ]
+            },
+            {
+              "heading": "Occurrence in Arab countries",
+              "paragraphs": [
+                "Winter occurrence is documented in Morocco, Algeria, Tunisia and Mauritania, with winter records also from Libya, Egypt, Iraq and Yemen. This does not imply equal abundance or regularity in each country. Mauritanian wetlands, including the Senegal River delta, form part of the western wintering network. In Lebanon it is a scarce passage migrant in March–April and August–November; in Jordan it is a passage migrant and a less numerous winter visitor.",
+                "In Saudi Arabia it is an uncommon passage migrant and winter visitor, with migration particularly evident in March–April and October–November. Oman classifies it as a common passage migrant and winter visitor. In the United Arab Emirates its distribution is very local, notably at Ras Al Khor, and a few birds remain through summer. In Kuwait it is an uncommon passage migrant, a rare winter visitor and a scarce summer visitor. Late October is therefore a fitting time to introduce it, especially in Saudi Arabia and the eastern part of the region, but is not a uniform arrival date throughout the Arab world. Summer presence does not establish year-round residence or breeding."
+              ]
+            },
+            {
+              "heading": "Habitats, diet and behaviour",
+              "paragraphs": [
+                "It uses mudflats, shallow pools, marshes, flooded grasslands and rice fields, with habitat preferences varying among populations. It probes mud or picks food from the surface, taking worms, insects and their larvae, molluscs and crustaceans; seeds and rice grains may supplement its diet outside the breeding season. Birds often feed and rest in flocks, so they need undisturbed feeding and roosting sites, not simply an isolated patch of water."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "It breeds mainly in open, wet meadows and marshes within its northern range; its usual occurrence in Arab countries is non-breeding. The nest is a shallow ground scrape lined with vegetation, and a clutch usually contains four eggs. Both parents incubate for about 22–24 days. Down-covered chicks can move around soon after hatching and typically become capable of flight after about 25–30 days. These are typical durations, not fixed deadlines for every nest. After breeding, birds gather and progressively move to their non-breeding areas."
+              ]
+            },
+            {
+              "heading": "Conservation and responsible observation",
+              "paragraphs": [
+                "Its global category is Near Threatened (NT), which should not be confused with more severe assessments applying to particular countries. Major pressures include wetland drainage, intensive agriculture and early meadow mowing, which reduce breeding success, as well as deterioration of stopover and wintering sites. Conservation requires protecting these places across the entire migration route. Watch from a distance that does not make birds stop feeding or take flight; never chase them to reveal their wing bars."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Scientific references: BirdLife International; BTO, BirdFacts; CMS and AEWA, Black-tailed Godwit Action Plan; The Birds of Saudi Arabia, Vol. 2, p. 127; EBRC Annotated Checklist of the Birds of the UAE, February 2026 update; Birds of Oman; KuwaitBirds; Jordan BirdWatch; Lebanese Science Journal, 2020. Information reviewed: 25 October 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Berend Jan Stijf — Wikimedia Commons, public domain."
+        },
+        "fr": {
+          "title": "Barge à queue noire",
+          "subtitle": "Limosa limosa — un limicole au long bec, entre migration et quartiers d’hiver",
+          "meta_description": "Limosa limosa — un limicole au long bec, entre migration et quartiers d’hiver",
+          "sections": [
+            {
+              "heading": "Identité et classification",
+              "paragraphs": [
+                "La Barge à queue noire, également appelée « Baqwiqa Sultaniya » dans certaines références arabes, est un limicole de la famille des Scolopacidés, dans l’ordre des Charadriiformes. Son nom scientifique est Limosa limosa ; Linné l’a décrite en 1758. Ce n’est pas un oiseau exclusivement côtier : les zones humides d’eau douce et les prairies humides comptent dans sa vie, aux côtés des estuaires et des lagunes littorales."
+              ]
+            },
+            {
+              "heading": "Comment la reconnaître ?",
+              "paragraphs": [
+                "Longue d’environ 36 à 44 centimètres, elle possède de longues pattes, un cou étiré et un long bec presque droit, rose ou orangé à la base et sombre à l’extrémité. En plumage nuptial, la tête, le cou et la poitrine prennent des tons roux, avec des barres sombres sur le dessous. Le mâle est généralement plus coloré ; la femelle est en moyenne plus grande et son bec plus long. En hiver, le gris-brun domine, tandis que les jeunes présentent une nuance chamois orangé et des liserés clairs aux plumes du dos.",
+                "En vol apparaissent une large barre blanche sur chaque aile, un croupion blanc et une queue à extrémité nettement noire. Ces caractères sont plus utiles que la couleur seule pour la distinguer de la Barge rousse Limosa lapponica : cette dernière n’a pas de barre alaire blanche aussi marquée, possède une queue barrée et un bec légèrement retroussé."
+              ]
+            },
+            {
+              "heading": "Une aire mondiale, plusieurs systèmes migratoires",
+              "paragraphs": [
+                "Son aire de reproduction discontinue s’étend de l’Islande, à travers l’Europe, jusqu’au nord de l’Asie et à l’est de la Russie. Différentes populations passent la saison non reproductrice en Europe, en Afrique, au Moyen-Orient et dans le sud de l’Asie, jusqu’en Australasie. Elles ne suivent pas toutes le même voyage : les oiseaux islandais et ceux d’Europe continentale empruntent des routes différentes et fréquentent des quartiers d’hiver distincts ; certains individus changent d’escales selon les années."
+              ]
+            },
+            {
+              "heading": "Présence dans les pays arabes",
+              "paragraphs": [
+                "Une présence hivernale est documentée au Maroc, en Algérie, en Tunisie et en Mauritanie, avec également des observations hivernales en Libye, en Égypte, en Irak et au Yémen. Cela ne signifie pas que l’abondance et la régularité sont identiques dans chaque pays. Les zones humides mauritaniennes, dont le delta du fleuve Sénégal, appartiennent au réseau occidental d’hivernage. Au Liban, c’est une migratrice de passage peu fréquente en mars–avril et en août–novembre ; en Jordanie, elle est migratrice de passage et visiteuse hivernale moins nombreuse.",
+                "En Arabie saoudite, c’est une migratrice de passage et une visiteuse hivernale peu commune, avec un passage particulièrement marqué en mars–avril et en octobre–novembre. À Oman, elle est classée comme migratrice de passage et visiteuse hivernale commune. Aux Émirats arabes unis, sa répartition est très localisée, notamment à Ras Al Khor, et quelques oiseaux restent en été. Au Koweït, elle passe en faible nombre, hiverne rarement et séjourne peu fréquemment en été. La fin octobre convient donc pour la présenter, surtout en Arabie saoudite et dans l’est de la région, sans constituer une date d’arrivée commune à tout le monde arabe. Une présence estivale ne prouve ni la sédentarité ni la reproduction."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Elle fréquente les vasières, les mares peu profondes, les marais, les prairies inondées et les rizières, avec des préférences variables selon les populations. Elle sonde la vase ou prélève sa nourriture en surface : vers, insectes et larves, mollusques et crustacés. Des graines, notamment de riz, peuvent compléter son alimentation hors reproduction. Elle se nourrit et se repose souvent en groupes ; elle a donc besoin de lieux d’alimentation et de repos tranquilles, et non d’une simple surface d’eau isolée."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Elle niche surtout dans les prairies et les marais ouverts et humides de son aire septentrionale ; sa présence habituelle dans les pays arabes est non reproductrice. Le nid est une dépression du sol garnie de végétaux ; la ponte compte généralement quatre œufs. Les deux parents les couvent pendant environ 22 à 24 jours. Les poussins, couverts de duvet, se déplacent rapidement après l’éclosion et peuvent généralement voler au bout de 25 à 30 jours environ. Il s’agit de durées typiques, non d’échéances fixes pour chaque nid. Après la reproduction, les oiseaux se regroupent et rejoignent progressivement leurs zones non reproductrices."
+              ]
+            },
+            {
+              "heading": "Conservation et observation responsable",
+              "paragraphs": [
+                "Son statut mondial est « Quasi menacée » (NT), à ne pas confondre avec des évaluations plus sévères propres à certains pays. Les principales pressions comprennent le drainage des zones humides, l’agriculture intensive et les fauches précoces, qui diminuent le succès reproducteur, ainsi que la dégradation des escales et des quartiers d’hiver. Sa conservation exige de protéger ces sites tout au long des routes migratoires. Il faut observer à une distance qui ne pousse pas les oiseaux à interrompre leur alimentation ou à s’envoler, sans jamais les poursuivre pour voir leurs barres alaires."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Références scientifiques : BirdLife International ; BTO, BirdFacts ; CMS et AEWA, plan d’action pour la Barge à queue noire ; The Birds of Saudi Arabia, vol. 2, p. 127 ; liste annotée EBRC des oiseaux des Émirats arabes unis, mise à jour de février 2026 ; Birds of Oman ; KuwaitBirds ; Jordan BirdWatch ; Lebanese Science Journal, 2020. Informations vérifiées le 25 octobre 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Berend Jan Stijf — Wikimedia Commons, domaine public."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "النكات-الأبقع-في-العالم-العربي",
+        "en": "pied-avocet-arab-world",
+        "fr": "avocette-elegante-monde-arabe"
+      },
+      "published": "2026-10-25",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "avocet"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "النكات الأبقع",
+          "subtitle": "Recurvirostra avosetta — طائر خوّاض يجمع بين الهجرة والتكاثر المحلي في الأراضي الرطبة العربية.",
+          "meta_description": "Recurvirostra avosetta — طائر خوّاض يجمع بين الهجرة والتكاثر المحلي في الأراضي الرطبة العربية.",
+          "sections": [
+            {
+              "heading": "الهوية والتصنيف",
+              "paragraphs": [
+                "النكات الأبقع، المعروف أيضًا بالنكات، طائر من فصيلة النكاتيات Recurvirostridae ورتبة الزقزاقيات Charadriiformes. يجمع ريشه الأبيض والأسود ومنقاره المعقوف إلى أعلى بين سهولة التعرّف إليه وتخصّص دقيق في التقاط الغذاء. ينتشر عبر أوروبا وآسيا وأفريقيا، لكن جماعاته ليست كلها مهاجرة؛ فبعضها مقيم أو متجوّل بحسب توافر المياه."
+              ]
+            },
+            {
+              "heading": "كيف نتعرّف إليه؟",
+              "paragraphs": [
+                "يبلغ طوله نحو 42–46 سنتيمترًا، وباع جناحيه 67–77 سنتيمترًا. أبرز علاماته منقار أسود رفيع صاعد الطرف، وساقان رماديتان مزرقتان، وقبعة سوداء مع مساحات سوداء على الجناحين والظهر. الجنسان متشابهان؛ يميل منقار الذكر إلى أن يكون أطول وأقل تقوّسًا، فلا يُحسم الجنس من اللون وحده. تبدو علامات اليافع بنية باهتة بدل السواد الصافي. ويختلف عن أبي المغازل (الكرسوع)، الذي له منقار مستقيم وساقان طويلتان ورديتان مائلتان إلى الحمرة."
+              ]
+            },
+            {
+              "heading": "الموطن والغذاء والسلوك",
+              "paragraphs": [
+                "يرتبط بالمياه الضحلة والسهول الطينية والبحيرات الساحلية والملاحات والسبخات، ويستخدم أيضًا بعض الأراضي الرطبة الداخلية والأحواض الاصطناعية. يحرّك منقاره المفتوح قليلًا من جانب إلى آخر داخل الماء أو الطين الرخو، ملتقطًا لافقاريات صغيرة، منها القشريات والديدان ويرقات الحشرات. وقد يلتقط الفرائس مباشرة. يتغذى نهارًا وأحيانًا ليلًا، ويتجمع خارج موسم التكاثر في أسراب للغذاء والراحة، دون أن يعني وجود سرب بقاءه في الموقع طوال العام."
+              ]
+            },
+            {
+              "heading": "وجوده في البلدان العربية",
+              "paragraphs": [
+                "في المغرب عابر وزائر شتوي شائع، مع تكاثر محلي؛ وفي شمال شرق الجزائر توجد جماعات مقيمة متكاثرة، بينما توثّق تونس التكاثر والشتاء في أراضيها الرطبة. وتستقبل مصر طيور العبور والشتاء، ومنها مواقع شمال سيناء والدلتا. وفي العراق تجمعات مقيمة وزوار شتويون، مع توثيق التكاثر في الأهوار الجنوبية.",
+                "في السعودية عابر وزائر شتوي غير شائع، ويتكاثر بأعداد محدودة في المنطقة الشرقية. وفي الكويت عابر غير شائع لكنه زائر شتوي شائع؛ وفي عُمان عابر وشتوي شائع نسبيًا. أما الإمارات فيظهر غالبًا بين سبتمبر ومارس، بأعداد شتوية متقلبة ومحلية جدًا، مع تكاثر محدود موثّق. وفي لبنان عابر قليل العدد وزائر شتوي نادر، لا طائر مقيم واسع الانتشار."
+              ]
+            },
+            {
+              "heading": "ماذا تعني أواخر أكتوبر؟",
+              "paragraphs": [
+                "يتوافق هذا الوقت مع نهاية نافذة العبور الخريفي الموثّقة في السعودية ولبنان، ويدخل ضمن موسم الوجود المعتاد في الإمارات. وفي السعودية يحدد المرجع موسم الشتاء بنوفمبر–فبراير. لذلك يصلح النكات موضوعًا خريفيًا، لكن لا يصح تعميم موعد وصول واحد على العالم العربي، أو اعتبار كل مشاهدة دليلًا على الشتاء أو التكاثر. وتبقى المشاهدات الفعلية مرتبطة بالموقع والماء والغذاء."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يبني الزوج حفرة ضحلة على أرض مكشوفة قرب الماء أو فوق جزيرة منخفضة، وقد يعشش ضمن مستعمرة. تضم الحضنة عادة 3–4 بيضات، ويتناوب الأبوان حضانتها ورعاية الصغار. تذكر بيانات BTO مدة نموذجية للحضانة تبلغ 23–25 يومًا، والطيران بعد 35–42 يومًا من الفقس؛ وهي قيم مرجعية وليست موعدًا ثابتًا لكل جماعة. تغادر الفراخ الزغبية العش مبكرًا وتلتقط غذاءها بنفسها تحت حماية الأبوين، ويبدأ التكاثر عادة في عمر سنتين."
+              ]
+            },
+            {
+              "heading": "الحماية والمراقبة المسؤولة",
+              "paragraphs": [
+                "يصنّفه التقييم العالمي للقائمة الحمراء ضمن «أقل إثارة للقلق» (LC)، مع اتجاه عالمي للأعداد غير معروف؛ فلا يعني ذلك غياب الأخطار المحلية. يضرّه فقدان الأراضي الرطبة وتلوثها والإزعاج، وتتعرض الأعشاش الأرضية للغمر والافتراس. تُراقَب الطيور من مسافة مناسبة، من دون دخول تجمعاتها أو الاقتراب من الأعشاش والفراخ. وحماية موائل التغذية والراحة مهمة بقدر حماية مواقع التكاثر."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "المصادر: BirdLife International، تقييم القائمة الحمراء للنكات، 2021؛ BTO، BirdFacts؛ LPO، بطاقة النكات؛ جمعية هونغ كونغ لمراقبة الطيور، موسوعة طيور هونغ كونغ؛ طيور السعودية، بولند والسحيباني؛ قائمتا طيور الكويت والإمارات الرسميتان، تحديثات 2026؛ OSME؛ GREPOM/Go-South؛ وثائق رامسار التونسية؛ دراسات الطيور في الجزائر ومصر والعراق؛ القائمة المحدّثة لطيور لبنان. مراجعة المعلومات: 25 أكتوبر 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: freddy dendoktoor — PublicDomainPictures (CC0)."
+        },
+        "en": {
+          "title": "Pied Avocet",
+          "subtitle": "Recurvirostra avosetta — a wader combining migration with local breeding in Arab wetlands.",
+          "meta_description": "Recurvirostra avosetta — a wader combining migration with local breeding in Arab wetlands.",
+          "sections": [
+            {
+              "heading": "Identity and classification",
+              "paragraphs": [
+                "The Pied Avocet belongs to the family Recurvirostridae and the order Charadriiformes. Its black-and-white plumage and upturned bill make it readily recognisable while revealing a specialised way of feeding. It occurs across Europe, Asia and Africa, but not every population migrates: some are resident or move opportunistically as water becomes available."
+              ]
+            },
+            {
+              "heading": "How to recognise it",
+              "paragraphs": [
+                "It measures approximately 42–46 cm in length, with a wingspan of 67–77 cm. Key features are a slender black bill curving upwards, bluish-grey legs, and a black cap with black areas on the wings and back. The sexes look similar; the male tends to have a longer, less sharply curved bill, so colour alone does not establish sex. Juveniles have dull brown rather than clean black markings. The Black-winged Stilt differs in having a straight bill and very long pinkish-red legs."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It uses shallow water, mudflats, coastal lagoons, saltpans and saline wetlands, as well as some inland wetlands and artificial pools. Sweeping its slightly open bill from side to side through water or soft mud, it takes small invertebrates, including crustaceans, worms and insect larvae. It may also pick prey directly. Feeding takes place by day and sometimes at night. Outside the breeding season, birds gather in flocks to feed and rest; a flock’s presence does not establish year-round residence."
+              ]
+            },
+            {
+              "heading": "Occurrence in Arab countries",
+              "paragraphs": [
+                "In Morocco it is a common passage migrant and winter visitor, with local breeding. Northeastern Algeria supports resident breeding populations, while Tunisia has documented breeding and wintering in its wetlands. Egypt receives passage migrants and winter visitors, including in northern Sinai and the Nile Delta. Iraq supports residents and winter visitors, with breeding documented in the southern marshes.",
+                "In Saudi Arabia it is an uncommon passage migrant and winter visitor, breeding in small numbers in the Eastern Province. In Kuwait passage is uncommon but winter occurrence is common; in Oman it is a fairly common passage migrant and winter visitor. In the United Arab Emirates it occurs mainly from September to March, with highly localised, variable winter numbers and documented small-scale breeding. In Lebanon it is a scarce passage migrant and a rare winter visitor, not a widespread resident."
+              ]
+            },
+            {
+              "heading": "What does late October mean?",
+              "paragraphs": [
+                "This period coincides with the end of the documented autumn passage window in Saudi Arabia and Lebanon, and falls within the usual season of occurrence in the UAE. The Saudi reference defines winter as November–February. The species therefore suits an autumn feature, but one arrival date cannot be applied across the Arab world, nor does every sighting demonstrate wintering or breeding. Actual occurrence remains dependent on the site, water and food."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "The pair makes a shallow scrape on open ground near water or on a low island, sometimes nesting in a colony. A typical clutch contains 3–4 eggs; both parents incubate and care for the young. BTO gives typical incubation of 23–25 days and fledging at 35–42 days after hatching: reference values, not a fixed timetable for every population. Downy chicks leave the nest early and feed themselves under parental protection. Birds typically begin breeding at two years old."
+              ]
+            },
+            {
+              "heading": "Conservation and responsible observation",
+              "paragraphs": [
+                "The global Red List assessment places the species in Least Concern (LC), with its worldwide population trend unknown; this does not mean local threats are absent. Wetland loss, pollution and disturbance affect it, while ground nests face flooding and predation. Observe from a suitable distance without entering flocks or approaching nests and chicks. Protecting feeding and resting habitat matters as much as protecting breeding sites."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Sources: BirdLife International, Pied Avocet Red List assessment, 2021; BTO BirdFacts; LPO species account; Hong Kong Bird Watching Society, The Avifauna of Hong Kong; The Birds of Saudi Arabia, Boland and Al-Suhaibany; official Kuwait and UAE bird checklists, 2026 updates; OSME; GREPOM/Go-South; Tunisian Ramsar documentation; ornithological studies from Algeria, Egypt and Iraq; Updated Checklist of the Birds of Lebanon. Information reviewed: 25 October 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: freddy dendoktoor — PublicDomainPictures (CC0)."
+        },
+        "fr": {
+          "title": "Avocette élégante",
+          "subtitle": "Recurvirostra avosetta — un limicole à la fois migrateur et nicheur local dans les zones humides du monde arabe.",
+          "meta_description": "Recurvirostra avosetta — un limicole à la fois migrateur et nicheur local dans les zones humides du monde arabe.",
+          "sections": [
+            {
+              "heading": "Identité et classification",
+              "paragraphs": [
+                "L’Avocette élégante appartient à la famille des Recurvirostridae et à l’ordre des Charadriiformes. Son plumage noir et blanc et son bec retroussé la rendent aisément reconnaissable, tout en révélant une technique alimentaire spécialisée. Présente en Europe, en Asie et en Afrique, elle n’est pas partout migratrice : certaines populations sont sédentaires ou se déplacent selon la disponibilité de l’eau."
+              ]
+            },
+            {
+              "heading": "Comment la reconnaître ?",
+              "paragraphs": [
+                "Elle mesure environ 42–46 cm de long, pour une envergure de 67–77 cm. Ses principaux caractères sont un bec noir fin recourbé vers le haut, des pattes gris bleuté, une calotte noire et des zones noires sur les ailes et le dos. Les sexes se ressemblent ; le mâle présente généralement un bec plus long et moins courbé, si bien que la couleur seule ne permet pas de déterminer le sexe. Les jeunes portent des marques brun terne plutôt que franchement noires. L’Échasse blanche s’en distingue par son bec droit et ses très longues pattes rouge rosé."
+              ]
+            },
+            {
+              "heading": "Habitat, alimentation et comportement",
+              "paragraphs": [
+                "Elle fréquente les eaux peu profondes, les vasières, les lagunes côtières, les salines et les zones humides salées, ainsi que certains milieux humides intérieurs et bassins artificiels. Elle balaie l’eau ou la vase meuble avec son bec légèrement entrouvert, prélevant de petits invertébrés : crustacés, vers et larves d’insectes. Elle peut aussi saisir directement ses proies. Elle se nourrit le jour et parfois la nuit. Hors reproduction, les oiseaux se rassemblent pour s’alimenter et se reposer ; la présence d’un groupe ne prouve pas une résidence à l’année."
+              ]
+            },
+            {
+              "heading": "Présence dans les pays arabes",
+              "paragraphs": [
+                "Au Maroc, c’est une migratrice de passage et une hivernante commune, qui niche localement. Le nord-est de l’Algérie accueille des populations nicheuses sédentaires ; en Tunisie, reproduction et hivernage sont documentés dans les zones humides. L’Égypte reçoit des migratrices et des hivernantes, notamment dans le nord du Sinaï et le delta du Nil. L’Irak accueille des oiseaux sédentaires et hivernants, avec une reproduction attestée dans les marais du sud.",
+                "En Arabie saoudite, c’est une migratrice et une hivernante peu commune, nichant en petit nombre dans la Province orientale. Au Koweït, elle est peu commune au passage mais commune en hiver ; à Oman, elle est assez commune au passage et en hiver. Aux Émirats arabes unis, elle apparaît surtout de septembre à mars, avec des effectifs hivernaux variables et très localisés, ainsi qu’une reproduction limitée attestée. Au Liban, elle est peu fréquente au passage et rare en hiver, et non une résidente largement répandue."
+              ]
+            },
+            {
+              "heading": "Que signifie la fin octobre ?",
+              "paragraphs": [
+                "Cette période correspond à la fin du passage automnal documenté en Arabie saoudite et au Liban, et s’inscrit dans la saison habituelle de présence aux Émirats. Le guide saoudien situe l’hivernage de novembre à février. L’espèce convient donc à un dossier automnal, sans qu’une date d’arrivée unique puisse être appliquée à tout le monde arabe, ni que chaque observation prouve un hivernage ou une reproduction. La présence effective dépend du site, de l’eau et des ressources alimentaires."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Le couple aménage une petite dépression sur un sol dégagé près de l’eau ou sur un îlot bas, parfois au sein d’une colonie. La ponte compte généralement 3–4 œufs ; les deux parents couvent et s’occupent des jeunes. Le BTO indique une incubation habituelle de 23–25 jours et un premier envol à 35–42 jours après l’éclosion : des valeurs de référence, non un calendrier immuable pour chaque population. Les poussins duveteux quittent tôt le nid et se nourrissent seuls sous la protection des parents. La première reproduction intervient généralement à deux ans."
+              ]
+            },
+            {
+              "heading": "Protection et observation responsable",
+              "paragraphs": [
+                "L’évaluation mondiale de la Liste rouge classe l’espèce en Préoccupation mineure (LC), avec une tendance démographique mondiale inconnue ; cela n’exclut pas les menaces locales. La disparition des zones humides, la pollution et le dérangement lui nuisent, tandis que les nids au sol sont exposés aux inondations et à la prédation. Observez à une distance appropriée, sans pénétrer dans les groupes ni approcher nids et poussins. Préserver les lieux d’alimentation et de repos importe autant que protéger les sites de reproduction."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Sources : BirdLife International, évaluation de l’Avocette pour la Liste rouge, 2021 ; BTO BirdFacts ; fiche espèce de la LPO ; Hong Kong Bird Watching Society, The Avifauna of Hong Kong ; The Birds of Saudi Arabia, Boland et Al-Suhaibany ; listes officielles des oiseaux du Koweït et des Émirats, mises à jour 2026 ; OSME ; GREPOM/Go-South ; documentation Ramsar tunisienne ; études ornithologiques d’Algérie, d’Égypte et d’Irak ; Updated Checklist of the Birds of Lebanon. Informations vérifiées le 25 octobre 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : freddy dendoktoor — PublicDomainPictures (CC0)."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "أبو-المغازل-الكرسوع-في-العالم-العربي",
+        "en": "black-winged-stilt-arab-world",
+        "fr": "echasse-blanche-monde-arabe"
+      },
+      "published": "2026-10-25",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "stilt"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "أبو المغازل (الكرسوع)",
+          "subtitle": "Himantopus himantopus — خوّاض طويل الساقين بين الإقامة والهجرة",
+          "meta_description": "Himantopus himantopus — خوّاض طويل الساقين بين الإقامة والهجرة",
+          "sections": [
+            {
+              "heading": "الاسم والهوية",
+              "paragraphs": [
+                "أبو المغازل، المعروف أيضًا بالكرسوع، طائر خوّاض من فصيلة النكاتيات Recurvirostridae ورتبة الزقزاقيات Charadriiformes. تتبع هذه المادة فصل نوع العالم القديم، الموجود في إفريقيا وأوروبا وآسيا، عن أنواع الكرسوع الأخرى في التصنيفات الحديثة. وتختلف حدود النوع بين المراجع والقوائم؛ فلا تُخلط معلوماته بمعلومات الكرسوع الأمريكي أو طيور هاواي المشابهة."
+              ]
+            },
+            {
+              "heading": "كيف نتعرّف إليه؟",
+              "paragraphs": [
+                "ساقان ورديتان طويلتان جدًا، ومنقار أسود رفيع مستقيم، وجسم أبيض يقابله جناحان داكنان: هذه أبرز علاماته. وفي الطيران تمتد الساقان بعيدًا خلف الذيل، ويظهر التباين بين أسفل الجناحين الأسود والبطن الأبيض. ويميزه المنقار المستقيم عن النكات ذي المنقار المقوّس إلى أعلى.",
+                "ظهر الذكر البالغ أشد سوادًا، بينما يميل ظهر الأنثى إلى البني الداكن. لكن مقدار السواد على الرأس متغيّر، فلا يصلح وحده لتحديد الجنس. تكون الأجزاء العليا لدى اليافع بنية بحواف ريش فاتحة، وساقاه أبهت لونًا؛ وقد تبقى بعض هذه العلامات في شتائه الأول. لذلك تُقرأ هيئة الطائر وريشه معًا، لا لون الرأس منفردًا."
+              ]
+            },
+            {
+              "heading": "الموئل والغذاء",
+              "paragraphs": [
+                "يستخدم المياه العذبة وقليلة الملوحة والمالحة حين تكون ضحلة، بما فيها المستنقعات والبحيرات الساحلية والبرك والمسطحات الطينية. كما يستفيد من بعض الأراضي الرطبة المنشأة، ومنها أحواض المعالجة، إذا توافرت الحواف المناسبة. يتغذى أساسًا على لافقاريات صغيرة؛ كالحشرات المائية ويرقاتها والرخويات والقشريات. يلتقط الفرائس من سطح الماء والطين، وقد يغمر منقاره بحثًا عنها؛ وتتيح له ساقاه الخوض دون غمر جسمه."
+              ]
+            },
+            {
+              "heading": "السلوك اليومي",
+              "paragraphs": [
+                "يُشاهد منفردًا أو في جماعات، ويستريح على الضفاف أو في الماء الضحل. صوته حاد ومتكرر، وقد يلفت الانتباه قبل ملاحظة الطائر نفسه. وفي مواسم الحركة تتغير أعداد الجماعات من موقع إلى آخر؛ فوجود سرب كبير لا يعني أنه يتكاثر في المكان، كما أن البقاء صيفًا وحده لا يثبت التعشيش."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يعشش منفردًا أو في مستعمرات متباعدة، في حفرة أرضية أو منصة نباتية قريبة من الماء، وأحيانًا على جزيرة صغيرة. يشترك الأبوان في بناء العش والحضانة ورعاية الصغار. تضم الحضنة غالبًا أربع بيضات، وتستغرق الحضانة نحو 24–26 يومًا. تغادر الفراخ العش سريعًا بعد الفقس، وتبلغ القدرة على الطيران عادةً في عمر يقارب الشهر. ولا يتطابق التقويم بين المناطق؛ فتوافر الماء وظروف الموقع يغيّران توقيت التكاثر ونجاحه."
+              ]
+            },
+            {
+              "heading": "أين يوجد في البلدان العربية؟",
+              "paragraphs": [
+                "لا يصح وصفه بأنه زائر شتوي في جميع البلدان العربية. ففي السعودية توجد جماعات مقيمة متكاثرة، إلى جانب عبور وزيارة شتوية شائعين؛ وقد ساعدت الأراضي الرطبة الاصطناعية على توسعه. وفي عُمان يجتمع أيضًا التكاثر والإقامة والعبور والشتاء. وتسجل الإمارات طيورًا مهاجرة ومقيمة متكاثرة، ومنها في الزوراء. أما الكويت فهو فيها عابر شائع، وزائر شتوي قليل، مع تكاثر محلي.",
+                "في العراق يجتمع التكاثر مع العبور والوجود الشتوي. وفي لبنان يغلب العبور، وتذكر القائمة الوطنية موسمًا خريفيًا يمتد إلى أواخر أكتوبر. وفي شمال إفريقيا توجد مواقع تكاثر موثقة بالمغرب والجزائر وتونس، كما وُثّق التعشيش على الساحل المصري المتوسطي. وتوجد طيور شتوية بالمغرب أيضًا؛ لكن مشاهدة الطائر في بلد لا تبرهن أن جميع أفراده مقيمة أو أن كل أراضيه الرطبة مواقع تعشيش."
+              ]
+            },
+            {
+              "heading": "لماذا يبرز في الخريف؟",
+              "paragraphs": [
+                "تهاجر بعض الجماعات الشمالية جنوبًا، فيما تقيم جماعات أخرى أو تتحرك محليًا. تلتقي في هذه الفترة حركة الطيور المهاجرة مع جماعات محلية باقية، بحسب البلد والموقع. لذلك تلائم أواخر أكتوبر مراقبته في الأراضي الرطبة العربية، دون اعتبار الشهر ذروة موحدة لكل المنطقة. ومن المفيد تسجيل التاريخ وعدد الطيور وحالة المياه، ومراقبتها بالمنظار من مسافة لا تدفعها إلى الطيران أو ترك التغذية."
+              ]
+            },
+            {
+              "heading": "الحماية وحدود التقييم",
+              "paragraphs": [
+                "يصنفه تقييم القائمة الحمراء لعام 2025 «أقل قلقًا (LC)»، وفق التعريف التصنيفي الواسع المعتمد في ذلك التقييم. ولا يلغي هذا التصنيف المخاطر المحلية: فتغير مناسيب المياه والإزعاج قد يضران بالتعشيش. وأظهرت دراسة قرب الصويرة أثرًا مشتركًا لتباين الأمطار والتدخل البشري؛ وحماية الموائل أهم من الاكتفاء بوفرة الطائر الظاهرة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "المصادر: القائمة الحمراء للاتحاد الدولي لحفظ الطبيعة، تقييم 2025؛ أطلس الطيور الساحلية والبحرية في لبنان، 2021؛ الجمعية البريطانية لعلم الطيور؛ الجمعية الملكية لحماية الطيور؛ دليل Blasco-Zumeta وHeinze للتعرف إلى الطيور؛ جمعية هونغ كونغ لمراقبة الطيور؛ متحف Naturalis؛ دليل مركز أبحاث مبالا؛ طيور السعودية؛ القائمة الرسمية لطيور الكويت؛ قاعدة طيور عُمان؛ رامسار، الزوراء؛ قوائم OSME ولبنان؛ Wetlands International؛ دراسات Wader Study عن مصر والمغرب. مراجعة المعلومات: 25 أكتوبر 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: لقطة من تصوير Xadrik — ويكيميديا كومنز (CC0)."
+        },
+        "en": {
+          "title": "Black-winged Stilt",
+          "subtitle": "Himantopus himantopus — a long-legged wader, both resident and migrant",
+          "meta_description": "Himantopus himantopus — a long-legged wader, both resident and migrant",
+          "sections": [
+            {
+              "heading": "Name and identity",
+              "paragraphs": [
+                "The Black-winged Stilt, known in Arabic as Abu al-Maghazil or al-Karsu, is a wader in the family Recurvirostridae and order Charadriiformes. This account follows modern classifications that separate the Old World species, found in Africa, Europe and Asia, from other stilts. Species limits differ between references and checklists; its information should not be confused with that for American or similar Hawaiian stilts."
+              ]
+            },
+            {
+              "heading": "How to identify it",
+              "paragraphs": [
+                "Exceptionally long pink legs, a slender straight black bill, and a white body contrasting with dark wings are its most conspicuous features. In flight, the legs project far beyond the tail, while the black underwings contrast with the white belly. Its straight bill distinguishes it from the avocet, whose bill curves upwards.",
+                "An adult male has a blacker back, whereas the female’s back tends towards dark brown. However, the amount of black on the head varies and cannot determine sex on its own. Juveniles have brown upperparts with pale feather fringes and duller legs; some of these features can persist through their first winter. Overall shape and plumage should therefore be considered together, rather than head colour alone."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It uses shallow fresh, brackish and saline water, including marshes, coastal lagoons, pools and mudflats. It also benefits from some constructed wetlands, including treatment ponds, where suitable margins are available. It feeds mainly on small invertebrates, such as aquatic insects and their larvae, molluscs and crustaceans. It picks prey from the water surface and mud, and may immerse its bill to search for food; its legs allow it to wade without submerging its body."
+              ]
+            },
+            {
+              "heading": "Daily behaviour",
+              "paragraphs": [
+                "It is seen alone or in groups, resting on banks or in shallow water. Its sharp repeated calls may draw attention before the bird itself is noticed. During periods of movement, flock sizes vary between sites: a large flock does not imply local breeding, and summer presence alone does not establish nesting."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "It nests singly or in loose colonies, using a ground scrape or a platform of vegetation close to water, sometimes on a small island. Both parents build the nest, incubate and care for the young. A clutch usually contains four eggs, with incubation lasting approximately 24–26 days. Chicks leave the nest soon after hatching and usually become capable of flight at around one month old. The calendar is not identical everywhere: water availability and local conditions influence breeding timing and success."
+              ]
+            },
+            {
+              "heading": "Where does it occur in Arab countries?",
+              "paragraphs": [
+                "It cannot be described simply as a winter visitor throughout the Arab world. Saudi Arabia has resident breeding populations as well as common passage migrants and winter visitors; constructed wetlands have helped its expansion. In Oman, breeding, residency, passage and wintering also overlap. The United Arab Emirates records migrants and breeding residents, including at Al-Zora. In Kuwait, it is a common passage migrant and scarce winter visitor, with local breeding.",
+                "In Iraq, breeding occurs alongside passage and winter presence. In Lebanon, passage predominates, and the national checklist gives an autumn passage period extending into late October. North Africa has documented breeding sites in Morocco, Algeria and Tunisia, while nesting has also been recorded on Egypt’s Mediterranean coast. Morocco holds wintering birds too. However, a sighting within a country does not establish that all its birds are resident, or that every wetland is a nesting site."
+              ]
+            },
+            {
+              "heading": "Why is it relevant in autumn?",
+              "paragraphs": [
+                "Some northern populations migrate south, while others remain resident or move locally. At this time of year, migrants and local birds may occur together, depending on the country and site. Late October is therefore a suitable time to watch for it in Arab wetlands, without treating that month as a uniform regional peak. Useful observations include the date, bird count and water conditions; watch through binoculars from a distance that does not make birds take flight or stop feeding."
+              ]
+            },
+            {
+              "heading": "Conservation and the limits of assessment",
+              "paragraphs": [
+                "The 2025 Red List assessment classifies it as Least Concern (LC), under the broad taxonomic definition adopted by that assessment. That category does not remove local risks: changing water levels and disturbance can harm nesting. A study near Essaouira demonstrated the combined influence of rainfall variation and human disturbance. Protecting habitat matters more than relying on the bird’s apparent abundance."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Sources: IUCN Red List, 2025 assessment; Atlas of the coastal and seabirds of Lebanon, 2021; British Trust for Ornithology; Royal Society for the Protection of Birds; Blasco-Zumeta and Heinze identification guide; Hong Kong Bird Watching Society; Naturalis; Mpala Research Centre field guide; The Birds of Saudi Arabia; Official Kuwait Bird List; Birds of Oman database; Ramsar, Al-Zora; OSME and Lebanon checklists; Wetlands International; Wader Study research on Egypt and Morocco. Information reviewed: 25 October 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: still frame from footage by Xadrik — Wikimedia Commons (CC0)."
+        },
+        "fr": {
+          "title": "Échasse blanche",
+          "subtitle": "Himantopus himantopus — un limicole aux longues pattes, sédentaire ou migrateur",
+          "meta_description": "Himantopus himantopus — un limicole aux longues pattes, sédentaire ou migrateur",
+          "sections": [
+            {
+              "heading": "Nom et identité",
+              "paragraphs": [
+                "L’Échasse blanche, appelée en arabe Abou al-Maghazil ou al-Karsou, est un limicole de la famille des Recurvirostridae et de l’ordre des Charadriiformes. Cette notice suit les classifications modernes qui distinguent l’espèce de l’Ancien Monde, présente en Afrique, en Europe et en Asie, des autres échasses. Les limites de l’espèce varient selon les références et les listes ; ses informations ne doivent pas être confondues avec celles des échasses américaines ou des oiseaux semblables d’Hawaï."
+              ]
+            },
+            {
+              "heading": "Comment la reconnaître ?",
+              "paragraphs": [
+                "Des pattes roses exceptionnellement longues, un bec noir fin et droit, et un corps blanc contrastant avec des ailes sombres constituent ses caractères les plus visibles. En vol, les pattes dépassent largement la queue, tandis que le dessous noir des ailes contraste avec le ventre blanc. Le bec droit la distingue de l’avocette, dont le bec est recourbé vers le haut.",
+                "Le dos du mâle adulte est plus noir, tandis que celui de la femelle tend vers le brun foncé. La quantité de noir sur la tête est cependant variable et ne permet pas, à elle seule, de déterminer le sexe. Les juvéniles présentent des parties supérieures brunes aux plumes bordées de clair et des pattes plus ternes ; certains de ces caractères peuvent subsister durant leur premier hiver. Il faut donc considérer ensemble la silhouette et le plumage, plutôt que la seule couleur de la tête."
+              ]
+            },
+            {
+              "heading": "Habitat et alimentation",
+              "paragraphs": [
+                "Elle fréquente les eaux douces, saumâtres ou salées peu profondes : marais, lagunes côtières, mares et vasières. Elle utilise aussi certaines zones humides artificielles, notamment des bassins de traitement des eaux, lorsque leurs bordures conviennent. Elle se nourrit principalement de petits invertébrés : insectes aquatiques et leurs larves, mollusques et crustacés. Elle prélève ses proies à la surface de l’eau ou sur la vase, et peut immerger son bec pour les rechercher ; ses pattes lui permettent de marcher dans l’eau sans y plonger le corps."
+              ]
+            },
+            {
+              "heading": "Comportement quotidien",
+              "paragraphs": [
+                "On l’observe seule ou en groupes, se reposant sur les berges ou dans l’eau peu profonde. Ses cris aigus et répétés peuvent attirer l’attention avant que l’oiseau soit aperçu. Durant les périodes de déplacement, la taille des groupes varie d’un site à l’autre : un grand rassemblement ne prouve pas une reproduction locale, pas plus qu’une simple présence estivale ne démontre la nidification."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Elle niche isolément ou en colonies lâches, dans une dépression au sol ou sur une plateforme de végétaux près de l’eau, parfois sur un petit îlot. Les deux parents construisent le nid, incubent et prennent soin des jeunes. La ponte comporte généralement quatre œufs, et l’incubation dure environ 24 à 26 jours. Les poussins quittent le nid rapidement après l’éclosion et deviennent généralement capables de voler vers l’âge d’un mois. Le calendrier n’est pas identique partout : la disponibilité en eau et les conditions locales influencent la période et le succès de la reproduction."
+              ]
+            },
+            {
+              "heading": "Où la trouve-t-on dans les pays arabes ?",
+              "paragraphs": [
+                "On ne peut pas la qualifier simplement de visiteuse hivernale dans tout le monde arabe. L’Arabie saoudite accueille des populations nicheuses sédentaires, ainsi que des migrateurs de passage et des hivernants communs ; les zones humides artificielles ont favorisé son expansion. À Oman, reproduction, sédentarité, passage et hivernage se superposent également. Les Émirats arabes unis accueillent des migrateurs et des nicheurs sédentaires, notamment à Al-Zora. Au Koweït, c’est une migratrice de passage commune et une hivernante peu fréquente, avec une reproduction locale.",
+                "En Irak, la reproduction s’ajoute au passage et à la présence hivernale. Au Liban, le passage prédomine, et la liste nationale indique un passage automnal se prolongeant jusqu’à la fin octobre. En Afrique du Nord, des sites de reproduction sont documentés au Maroc, en Algérie et en Tunisie ; la nidification est aussi attestée sur la côte méditerranéenne de l’Égypte. Des oiseaux hivernent également au Maroc. Cependant, une observation dans un pays ne prouve pas que tous ses individus y sont sédentaires, ni que toutes ses zones humides sont des sites de nidification."
+              ]
+            },
+            {
+              "heading": "Pourquoi s’y intéresser en automne ?",
+              "paragraphs": [
+                "Certaines populations septentrionales migrent vers le sud, tandis que d’autres sont sédentaires ou se déplacent localement. À cette période, migrateurs et oiseaux locaux peuvent se rencontrer, selon le pays et le site. La fin octobre se prête donc à son observation dans les zones humides arabes, sans que ce mois représente partout le même pic saisonnier. Il est utile de noter la date, l’effectif et l’état des eaux, et d’observer aux jumelles à une distance qui ne provoque ni envol ni interruption de l’alimentation."
+              ]
+            },
+            {
+              "heading": "Conservation et limites de l’évaluation",
+              "paragraphs": [
+                "L’évaluation de la Liste rouge de 2025 la classe en Préoccupation mineure (LC), selon la définition taxonomique large retenue dans cette évaluation. Cette catégorie n’efface pas les risques locaux : les variations du niveau de l’eau et le dérangement peuvent nuire à la nidification. Une étude près d’Essaouira a montré l’influence combinée de la variabilité des pluies et du dérangement humain. Protéger l’habitat importe davantage que se fier à l’abondance apparente de l’oiseau."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Sources : Liste rouge de l’UICN, évaluation 2025 ; Atlas of the coastal and seabirds of Lebanon, 2021 ; British Trust for Ornithology ; Royal Society for the Protection of Birds ; guide d’identification de Blasco-Zumeta et Heinze ; Hong Kong Bird Watching Society ; Naturalis ; guide du Mpala Research Centre ; The Birds of Saudi Arabia ; liste officielle des oiseaux du Koweït ; base Birds of Oman ; Ramsar, Al-Zora ; listes de l’OSME et du Liban ; Wetlands International ; études Wader Study sur l’Égypte et le Maroc. Informations vérifiées le 25 octobre 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : image extraite d’une vidéo de Xadrik — Wikimedia Commons (CC0)."
+        }
+      }
+    }
+  ]
+}
