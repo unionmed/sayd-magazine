@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Offline, review-only maintenance bundles. Never changes a repository or publishes.
 
-Only complete compiler-owned AR/EN/FR articles are supported. Public candidates
-still require trusted-base CI integration and owner approval; a decision reference
+Complete existing AR/EN/FR articles are supported, with exact legacy-route binding.
+Public candidates require the native trusted-base pipeline and owner approval; a decision reference
 in input is audit data, never authentication. Bundles include original bytes and
 an exact reverse plan. No uploaded bundle is executable or a guard exemption.
 """
@@ -61,13 +61,17 @@ def plain(value, maximum=50000):
 def request(value, base):
     keys(value, ('schema', 'id', 'expected_base', 'publication_id', 'article_slug',
                  'operation', 'decision_reference', 'conflicts'),
-         ('replacements', 'old_door', 'new_door', 'notice'))
+         ('replacements', 'old_door', 'new_door', 'notice', 'restore_revision', 'previous_revision'))
     require(value['schema'] == SCHEMA, 'Unknown maintenance schema')
     for field in ('id', 'publication_id'):
         identifier(value[field])
     require(isinstance(value['expected_base'], str) and COMMIT.fullmatch(value['expected_base']) and value['expected_base'] == base, 'Stale maintenance base')
-    from publication_schema import slug
-    slug(value['article_slug'], 'ar')
+    from publication_schema import slug, safe_path
+    if value['publication_id']=='legacy':
+        safe_path(value['article_slug'])
+        require('/' not in value['article_slug'] and len(value['article_slug'])<=180, 'Invalid legacy article basename')
+    else:
+        slug(value['article_slug'], 'ar')
     # References cannot assert that approval was verified. No conversation dumps.
     require(isinstance(value['decision_reference'], str) and re.fullmatch(r'private:[A-Za-z0-9._-]{1,200}', value['decision_reference']), 'Bounded private decision reference required')
     require(isinstance(value['conflicts'], list) and len(value['conflicts']) <= 10, 'Conflict list required')
@@ -76,9 +80,11 @@ def request(value, base):
         for field in conflict:
             plain(conflict[field], 1000)
     operation = value['operation']
-    fields = {'edit': {'replacements'}, 'withdraw': {'notice'}, 'reclassify': {'old_door', 'new_door'}}
-    require(operation in fields, 'Unsupported maintenance operation')
-    require(set(value) & {'replacements', 'notice', 'old_door', 'new_door'} == fields[operation], 'Mixed or missing operation payload')
+    fields = {'edit': {'replacements'}, 'withdraw': {'notice'}, 'reclassify': {'old_door', 'new_door'}, 'restore': {'restore_revision'}}
+    require(isinstance(operation,str) and operation in fields, 'Unsupported maintenance operation')
+    require(set(value) & {'replacements', 'notice', 'old_door', 'new_door', 'restore_revision'} == fields[operation], 'Mixed or missing operation payload')
+    if value.get('previous_revision') is not None:
+        identifier(value['previous_revision'])
     if operation == 'edit':
         keys(value['replacements'], LANGS)
         for language in LANGS:
@@ -94,6 +100,8 @@ def request(value, base):
         keys(value['notice'], LANGS)
         for language in LANGS:
             plain(value['notice'][language], 2000)
+    elif operation == 'restore':
+        identifier(value['restore_revision'])
     else:
         require(value['old_door'] in DOORS and value['new_door'] in DOORS and value['old_door'] != value['new_door'], 'Only distinct existing simple archives supported')
     return value
@@ -101,11 +109,12 @@ def request(value, base):
 
 class Snapshot:
     """Read immutable Git blobs, never execute code from a request or candidate."""
-    def __init__(self, root, base):
+    def __init__(self, root, base, require_checkout=True):
         self.root = Path(root).resolve()
         require(isinstance(base, str) and COMMIT.fullmatch(base), 'Exact base SHA required')
-        require(git(self.root, 'rev-parse', 'HEAD').decode().strip() == base, 'Checkout must be exact BASE')
-        require(not git(self.root, 'status', '--porcelain', '--untracked-files=all').strip(), 'Clean tracked/untracked checkout required')
+        if require_checkout:
+            require(git(self.root, 'rev-parse', 'HEAD').decode().strip() == base, 'Checkout must be exact BASE')
+            require(not git(self.root, 'status', '--porcelain', '--untracked-files=all').strip(), 'Clean tracked/untracked checkout required')
         self.base = base
         self.items = {}
         self.cache = {}
@@ -186,6 +195,8 @@ def target_cards(raw, path, targets):
     matches = []
     for match in re.finditer(r'<article\b[^>]*>.*?</article>', data, re.S):
         node = dom.fromstring(match[0])
+        if 'article-content' in node.get('class','').split():
+            continue  # Inline editorial backlinks retain their context and lead to the notice.
         links = node.xpath('.//a[@href]/@href')
         if any(destination(path, u) in targets for u in links):
             require(set(node.get('class', '').split()) & {'card', 'post-row'}, 'Unsupported listing card; separate placement adapter required: ' + path)
@@ -230,21 +241,36 @@ def replace_category(raw, path, language, old, new):
         data = data[:block.start()] + updated + data[block.end():]
     require(changed >= 1, 'No category label updated')
     # Semantic JSON-LD article section, retaining original publication/update dates.
+    news_count = 0
     def schema(match):
+        nonlocal news_count
         value = loads(match[2])
-        require(isinstance(value, dict) and value.get('@type') == 'NewsArticle', 'Unsupported article schema')
-        require(value.get('articleSection') == DOORS[old][LANGS.index(language)+1], 'Existing schema category mismatch')
-        value['articleSection'] = DOORS[new][LANGS.index(language)+1]
+        require(isinstance(value, dict), 'Unsupported structured metadata')
+        if value.get('@type') in {'NewsArticle','Article'}:
+            news_count += 1
+            require(value.get('articleSection') == DOORS[old][LANGS.index(language)+1], 'Existing schema category mismatch')
+            value['articleSection'] = DOORS[new][LANGS.index(language)+1]
+        elif value.get('@type') == 'BreadcrumbList':
+            modified = False
+            for entry in value.get('itemListElement',[]):
+                if isinstance(entry,dict) and isinstance(entry.get('item'),str) and destination(path,entry['item']) == destination(path,'../../category/'+quote(old_folder)+'/index.html'):
+                    entry['item']=ORIGIN+quote(destination(path,'../../category/'+quote(new_folder)+'/index.html'),safe='/')
+                    entry['name']=DOORS[new][LANGS.index(language)+1]
+                    modified=True
+            if not modified:
+                return match[0]
+        else:
+            return match[0]
         return match[1] + json.dumps(value, ensure_ascii=False).replace('<', '\\u003c') + match[3]
     data, count = re.subn(r'(<script type="application/ld\+json">)(.*?)(</script>)', schema, data, flags=re.S)
-    require(count == 1, 'One compiler article schema required')
+    require(news_count <= 1, 'Ambiguous article structured metadata')
     return data.encode()
 
 
 def notice_page(raw, language, notice):
     data = raw.decode()
     label = {'ar': 'مادة مسحوبة', 'en': 'Article withdrawn', 'fr': 'Article retiré'}[language]
-    data, count = re.subn(r'<main\b[^>]*>.*?</main>', lambda _: '<main><article class="withdrawn-notice"><h1>' + html.escape(label) + '</h1><p>' + html.escape(notice) + '</p></article></main>', data, flags=re.S)
+    data, count = re.subn(r'(<main\b[^>]*>).*?</main>', lambda hit: hit[1][:-1]+' data-sayd-withdrawn="true"><article class="withdrawn-notice"><h1>' + html.escape(label) + '</h1><p>' + html.escape(notice) + '</p></article></main>', data, flags=re.S)
     require(count == 1, 'One main region required for withdrawal')
     data = re.sub(r'<title>.*?</title>', '<title>' + label + ' — Sayd Magazine</title>', data, flags=re.S)
     data = re.sub(r'<script\b[^>]*type="application/ld\+json"[^>]*>.*?</script>', '', data, flags=re.S)
@@ -257,19 +283,88 @@ def notice_page(raw, language, notice):
         return match[0]
     data = re.sub(r'<meta\b[^>]*>', metadata, data)
     require('</head>' in data, 'Page head required')
-    data = data.replace('</head>', '<meta name="robots" content="noindex,follow"></head>', 1)
+    data = data.replace('</head>', '<meta name="robots" content="noindex,follow"><meta property="og:title" content="'+html.escape(label,quote=True)+'"></head>', 1)
     require(not dom.fromstring(data).xpath('//article[@class="article-content"]'), 'Original content survived withdrawal')
     return data.encode()
+
+
+def resolve_article(snapshot, value):
+    """Resolve from BASE originals or existing reciprocal legacy routes only."""
+    from maintenance_state import from_snapshot
+    previous=from_snapshot(snapshot).get(value['article_slug'])
+    if value['publication_id'] != 'legacy':
+        source = 'content/publications/' + value['publication_id'] + '.json'
+        record = validate(loads(snapshot.read(source).decode()), value['publication_id'])
+        selected = [a for a in record['articles'] if a['slugs']['ar'] == value['article_slug']]
+        require(len(selected) == 1, 'One existing compiler-owned article required')
+        article = copy.deepcopy(selected[0])
+    elif previous:
+        article={'slugs':copy.deepcopy(previous['slugs']),'published':previous['published'],
+                 'primary_door':previous['after_state']['primary_door'],'archives':previous['after_state']['archives'],'kind':'article'}
+    else:
+        ar_page='docs/posts/'+value['article_slug']+'/index.html'
+        node=dom.fromstring(snapshot.read(ar_page))
+        slugs={'ar':value['article_slug']}
+        for language in ('en','fr'):
+            urls=node.xpath('//link[@rel="alternate"][@hreflang=$lang]/@href',lang=language)
+            require(len(urls)==1, 'Legacy article needs three existing reciprocal editions')
+            match=re.fullmatch('/'+language+'/posts/([^/]+)/',destination(ar_page,urls[0]) or '')
+            require(match, 'Legacy alternate is not an article')
+            slugs[language]=match[1]
+        labels=node.xpath('//header[contains(concat(" ",normalize-space(@class)," ")," article-header ")]//a[contains(@href,"category/")]/@href')
+        folders={urlsplit(destination(ar_page,u) or '').path.split('/category/')[-1].strip('/') for u in labels}
+        doors=[key for key,spec in DOORS.items() if spec[0] in folders]
+        require(len(doors)==1, 'Legacy article needs a supported unambiguous door')
+        # Parse publication metadata, never use a later update for ordering.
+        from build_search_index import publication_date, structured
+        published=publication_date(node,next(structured(node),{}),'ar')
+        require(re.fullmatch(r'\d{4}-\d\d-\d\d',published or ''), 'Legacy original publication date required')
+        article={'slugs':slugs,'published':published,'primary_door':doors[0],
+                 'archives':[doors[0]],'kind':'article'}
+    require(value.get('previous_revision') == (previous['id'] if previous else None), 'Stale/omitted maintenance predecessor')
+    if previous:
+        require(previous['slugs']==article['slugs'], 'Maintenance identity changed')
+        article.update(copy.deepcopy(previous['after_state']))
+    else:
+        article['status']='active'
+    return article, previous
+
+
+def finish_bundle(snapshot, value, article, changes):
+    require(changes, 'Empty maintenance')
+    entries=[]
+    for path,after in sorted(changes.items()):
+        before=snapshot.read(path)
+        entries.append({'path':path,'mode':'100644','before_sha256':digest(before),'after_sha256':digest(after),
+                        'before_base64':base64.b64encode(before).decode(),'after_base64':base64.b64encode(after).decode()})
+    result={'schema':BUNDLE,'expected_base':snapshot.base,'request':value,'changes':entries,
+            'identity':{key:copy.deepcopy(article[key]) for key in ('slugs','published','primary_door','archives','status')},
+            'status':'REVIEW_ONLY_NOT_APPROVED_NOT_PUBLISHED',
+            'requires':['independent owner-decision verification','trusted-base candidate parity',
+                        'unchanged publication/archive/catalog/SEO checks','AR/EN/FR responsive review','protected merge approval'],
+            'retained':['immutable original publication record','original publication dates','translation identities','media and rights evidence','Git history'],
+            'limitations':['existing complete AR/EN/FR editions only','no implicit homepage/ticker redistribution','no new taxonomy',
+                           'withdrawal is a noindex notice with HTTP 200 on static Pages, not HTTP 410',
+                           'public Git history and retained media are not made private by withdrawal']}
+    result['bundle_sha256']=digest(canonical(result))
+    return result
 
 
 def bundle(snapshot, value):
     """Generate bounded proposed byte changes, without writing any repository file."""
     value = request(copy.deepcopy(value), snapshot.base)
-    source = 'content/publications/' + value['publication_id'] + '.json'
-    record = validate(loads(snapshot.read(source).decode()), value['publication_id'])
-    selected = [a for a in record['articles'] if a['slugs']['ar'] == value['article_slug']]
-    require(len(selected) == 1, 'One existing compiler-owned article required; legacy import is separate')
-    article = selected[0]
+    article,previous = resolve_article(snapshot,value)
+    if value['operation']=='restore':
+        require(previous and value['restore_revision']==previous['id'], 'Only the current article revision may be restored')
+        changes={}
+        for entry in previous['changes']:
+            require(digest(snapshot.read(entry['path']))==entry['after_sha256'], 'Concurrent edit blocks automatic restore: '+entry['path'])
+            require(hasattr(snapshot,'root'), 'Restore requires immutable Git history')
+            original=git(snapshot.root,'show',previous['base_commit']+':'+entry['path'])
+            require(digest(original)==entry['before_sha256'], 'Original restore bytes changed')
+            changes[entry['path']]=original
+        return finish_bundle(snapshot,value,article,changes)
+    require(article['status']=='active', 'Withdrawn article needs an explicit restore decision')
     targets = {route(paths(article, lang)[0]) for lang in LANGS}
     changes = {}
     def put(path, data):
@@ -320,18 +415,15 @@ def bundle(snapshot, value):
             require(candidates, 'Empty/unknown archive template needs a separate adapter')
             # ISO date is unavailable in old card markup. Require original-date
             # parsing via the existing builder, never prepend arbitrarily.
-            from build_search_index import MONTHS
+            from seo_foundation import parse_date
             def date_of(match):
                 node = dom.fromstring(match[0])
                 stamps = node.xpath('.//*[@class="meta" or @class="feed-date"]')
                 require(len(stamps) == 1, 'Ambiguous archive date')
                 stamp = ' '.join(stamps[0].text_content().split())
-                for index, month in enumerate(MONTHS[language], 1):
-                    hit = re.fullmatch(r'(\d{1,2}) ' + re.escape(month) + r' (\d{4})', stamp)
-                    if hit:
-                        from datetime import date
-                        return date(int(hit[2]), index, int(hit[1])).isoformat()
-                raise ValueError('Unsupported archive date; no inferred ordering')
+                parsed = parse_date(stamp)
+                require(parsed is not None, 'Unsupported archive date; no inferred ordering')
+                return parsed
             dates = [date_of(m) for m in candidates]
             require(dates == sorted(dates, reverse=True), 'Existing archive is not chronological')
             position = next((m.start() for m, date in zip(candidates, dates) if date < article['published']), candidates[-1].end())
@@ -404,23 +496,7 @@ def bundle(snapshot, value):
             row['category'] = row['categories'][0]
         from build_search_index import serialize
         put(index_path, serialize(index))
-    require(changes, 'Empty maintenance')
-    entries = []
-    for path, after in sorted(changes.items()):
-        before = snapshot.read(path)
-        entries.append({'path':path,'mode':'100644','before_sha256':digest(before),'after_sha256':digest(after),
-                        'before_base64':base64.b64encode(before).decode(),'after_base64':base64.b64encode(after).decode()})
-    result = {'schema':BUNDLE,'expected_base':snapshot.base,'request':value,'changes':entries,
-              'status':'REVIEW_ONLY_NOT_APPROVED_NOT_PUBLISHED',
-              'requires':['independent owner-decision verification','trusted-base candidate parity integration',
-                          'unchanged publication/archive/catalog/SEO checks','AR/EN/FR responsive review','protected merge approval'],
-              'retained':['immutable original publication record','original publication dates','translation identities',
-                          'media and rights evidence','Git history'],
-              'limitations':['compiled articles only','no homepage/ticker redistribution','no new taxonomy',
-                             'withdrawal is a noindex notice with HTTP 200 on static Pages, not HTTP 410',
-                             'public Git history and retained media are not made private by withdrawal']}
-    result['bundle_sha256'] = digest(canonical(result))
-    return result
+    return finish_bundle(snapshot,value,article,changes)
 
 
 def replay(snapshot, plan, reverse=False):

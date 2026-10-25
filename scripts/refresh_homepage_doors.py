@@ -134,6 +134,9 @@ def source_article_category(ar_slug):
     This prevents news workflows accidentally pushing encyclopedic or statutory
     reference articles into the lead, Updates, or shared ticker.
     """
+    from maintenance_state import is_withdrawn
+    if is_withdrawn(ROOT, 'posts/'+ar_slug+'/index.html'):
+        raise ValueError('Withdrawn article cannot enter homepage/news: '+ar_slug)
     page=DOCS/'posts'/ar_slug/'index.html'
     if not page.is_file():
         raise ValueError(f'Unknown news candidate: {ar_slug}')

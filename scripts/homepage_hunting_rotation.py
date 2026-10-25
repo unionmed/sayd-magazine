@@ -22,6 +22,8 @@ def select(c,candidates):
     reserved=set(homepage_slugs('ar',c))
     blocked=set(c['featured']+c['latest']+c.get('omit_from_home',[])+c.get('omit_from_home_desks',[]))
     blocked.update(reserved)
+    from maintenance_state import current as maintenance_state
+    blocked.update(slug for slug,row in maintenance_state(ROOT).items() if row['after_state']['status']=='withdrawn')
     blocked.update(s for d in c['ia_door_sections'] if d['door']!='hunting' for s in d['slugs'])
     pool=[]
     for slug,day in sorted(candidates,key=lambda x:x[1],reverse=True):

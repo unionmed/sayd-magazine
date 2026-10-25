@@ -223,6 +223,15 @@ IA_SLOTS = _home['ia_slots']
 DOOR_SECTIONS = [(d['door'], d['slugs']) for d in _home['ia_door_sections']]
 APPROVED_HOME_REPEATS = set(_home.get('approved_home_repeats', []))
 
+# Already reviewed maintenance overrides immutable historical classification.
+# Candidate ledger additions still require exact trusted-base native replay.
+from maintenance_state import current as _maintenance_state
+for _slug, _revision in _maintenance_state(_Path(__file__).resolve().parents[1]).items():
+    _state = _revision['after_state']
+    if _state['status'] == 'active':
+        PRIMARY[_slug] = dict(PRIMARY.get(_slug, {}), door=_state['primary_door'],
+                              en=_revision['slugs']['en'], remove_from=PRIMARY.get(_slug, {}).get('remove_from', []))
+
 AFFILIATE_HOSTS = {
     "amazon.com",
     "amazon.ae",

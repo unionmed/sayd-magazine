@@ -135,7 +135,9 @@ class MaintenanceTests(unittest.TestCase):
             node=dom.fromstring(changes[page])
             self.assertFalse(node.xpath('//article[@class="article-content"]'))
             self.assertEqual(node.xpath('//meta[@name="robots"]/@content'),['noindex,follow'])
-            self.assertFalse(node.xpath('//script[@type="application/ld+json"] | //meta[starts-with(@property,"og:")]'))
+            self.assertFalse(node.xpath('//script[@type="application/ld+json"] | //meta[@property="og:image" or @property="og:description"]'))
+            self.assertEqual(len(node.xpath('//meta[@property="og:title"]')),1)
+            self.assertNotIn('Original headline',node.xpath('//meta[@property="og:title"]/@content')[0])
             self.assertIn(b'Keep chrome',changes[page]);self.assertIn(b'Keep footer',changes[page]);self.assertIn(b'Keep ticker',changes[page])
             self.assertNotIn(markdown,changes)
             self.assertNotIn(self.paragraphs[language].encode(),changes[page])
@@ -165,6 +167,17 @@ class MaintenanceTests(unittest.TestCase):
         config=json.loads(changes['content/homepage.json'])
         self.assertEqual(config['unrelated'],'preserved')
         self.assertEqual(config['primary_door'][self.article['slugs']['ar']],'wildlife')
+
+    def test_reclassification_keeps_unrelated_breadcrumb_schema(self):
+        for language in m.LANGS:
+            page,_=m.paths(self.article,language)
+            breadcrumb={'@type':'BreadcrumbList','itemListElement':[{'position':1,'name':'Unchanged home','item':m.ORIGIN+'/'}]}
+            data='<script type="application/ld+json">'+json.dumps(breadcrumb)+'</script>'
+            self.snapshot.files[page]=self.snapshot.files[page].replace(b'</head>',data.encode()+b'</head>')
+        changes=m.replay(self.snapshot,self.reclassify())
+        for language in m.LANGS:
+            page,_=m.paths(self.article,language)
+            self.assertIn(data.encode(),changes[page])
 
     def test_stale_base_unknown_fields_and_claimed_approval_rejected(self):
         for update in ({'expected_base':'c'*40},{'approved':True},{'output_paths':['AGENTS.md']},{'operation':'execute'}):
@@ -213,6 +226,12 @@ class MaintenanceTests(unittest.TestCase):
 
     def test_duplicate_json_keys_rejected(self):
         with self.assertRaises(ValueError):m.loads('{"schema":1,"schema":2}')
+
+    def test_legacy_punctuation_is_preserved_without_allowing_paths(self):
+        value=copy.deepcopy(self.value);value.update(publication_id='legacy',article_slug='مقال،-قديم')
+        self.assertEqual(m.request(value,self.snapshot.base)['article_slug'],'مقال،-قديم')
+        for bad in ('../escape','a/b','%2e%2e'):
+            with self.assertRaises(ValueError):m.request(dict(value,article_slug=bad),self.snapshot.base)
 
     def test_source_and_media_never_enter_proposed_diff(self):
         for operation in ('edit','withdraw','reclassify'):

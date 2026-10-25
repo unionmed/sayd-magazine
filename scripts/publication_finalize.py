@@ -104,6 +104,8 @@ def safe_output_path(value):
                   "content/interviews.json", "content/marine-fishing.json"}
         or (value.startswith("content/publications/") and len(path.parts) == 3 and path.suffix == ".json")
         or (value.startswith("content/caption-revisions/") and len(path.parts) == 3 and path.suffix == ".json")
+        or (path.parts[:2] in {("content", "article-maintenance"), ("content", "maintenance-ledger")}
+            and len(path.parts) == 3 and re.fullmatch(r'[a-z0-9][a-z0-9-]{0,79}\.json',path.name))
         or (path.parts[:2] in {("content", "posts"), ("content", "en"), ("content", "fr")}
             and len(path.parts) == 3 and path.suffix == ".md")
         or (value.startswith("audit/image-catalog/manifest/release-")

@@ -116,7 +116,7 @@ def allowed_output_path(path):
         safe_path(path)
     except ValueError:
         return False
-    return bool(INPUT.fullmatch(path) or re.fullmatch(r'content/caption-revisions/[a-z0-9][a-z0-9-]{0,79}\.json', path) or path in CONFIGS
+    return bool(INPUT.fullmatch(path) or re.fullmatch(r'content/(?:caption-revisions|article-maintenance|maintenance-ledger)/[a-z0-9][a-z0-9-]{0,79}\.json', path) or path in CONFIGS
                 or re.fullmatch(r'content/(?:posts|en|fr)/[^/]+\.md', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?(?:posts/[^/]+|category/[^/]+|articles|stories)/index\.html', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?index\.html', path)
@@ -638,6 +638,9 @@ def compile_publication(root, base, source, output, report_path, allow_distribut
     require(not output.is_relative_to(root), 'Build outside the source checkout')
     compiler = git(root, 'rev-parse', 'HEAD').decode().strip()
     import caption_revision
+    import maintenance_native
+    if maintenance_native.request_paths(tree(root, base), tree(root, source)):
+        return maintenance_native.compile_source(root, base, source, output, report_path, allow_distribution)
     if caption_revision.revision_paths(tree(root, base), tree(root, source)):
         return caption_revision.compile_source(root, base, source, output, report_path, allow_distribution)
     before, after, inputs, records = source_records(root, base, source)
@@ -723,6 +726,9 @@ def verify_candidate(root, base, candidate, output, report_path):
     require(git(root, 'rev-parse', 'HEAD').decode().strip() == base, 'Candidate verification must execute trusted base checkout')
     before, after = tree(root, base), tree(root, candidate)
     import caption_revision
+    import maintenance_native
+    if maintenance_native.request_paths(before, after) or maintenance_native.ledger_paths(before, after):
+        return maintenance_native.verify(root, base, candidate, output, report_path)
     if caption_revision.revision_paths(before, after):
         return caption_revision.verify(root, base, candidate, output, report_path)
     changed_records = [p for p in before.keys() | after.keys() if p.startswith('content/publications/') and before.get(p) != after.get(p)]
@@ -738,7 +744,14 @@ def verify_candidate(root, base, candidate, output, report_path):
                         prefix = '' if language == 'ar' else language + '/'
                         owned.add('docs/' + prefix + 'posts/' + article['slugs'][language] + '/index.html')
                         owned.add('content/' + ('posts' if language == 'ar' else language) + '/' + article['slugs'][language] + '.md')
-        require(all(before.get(p) == after.get(p) for p in owned), 'Previously compiled article/media changes need a separately reviewed revision path')
+        from maintenance_state import from_snapshot as maintenance_state
+        from article_maintenance import Snapshot
+        for revision in maintenance_state(Snapshot(root,base,require_checkout=False)).values():
+            for language,name in revision['slugs'].items():
+                prefix='' if language=='ar' else language+'/'
+                owned.add('docs/'+prefix+'posts/'+name+'/index.html')
+                owned.add('content/'+('posts' if language=='ar' else language)+'/'+name+'.md')
+        require(all(before.get(p) == after.get(p) for p in owned), 'Previously compiled/maintained article/media changes need a separately reviewed revision path')
         report = {'candidate': candidate, 'status': 'no-new-publication-records'}
         save_json(Path(report_path), report)
         return report

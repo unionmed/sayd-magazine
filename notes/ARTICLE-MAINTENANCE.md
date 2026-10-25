@@ -1,140 +1,143 @@
-# Published-article maintenance: inspection and review-only implementation
+# Native maintenance of published articles
 
-Technical inspection, 25 October 2026. Governing editorial authority remains
-AGENTS.md and the owner-decision section of SOURCE-ONLY-PUBLICATION.md. This is
-an implementation status report, not a new publication protocol or authorization.
+Technical implementation of the scoped owner-decision rule in AGENTS.md and
+SOURCE-ONLY-PUBLICATION.md. This changes no editorial authority, general
+publication rule, permission or merge/deployment requirement.
 
-## Finding
+## Native route
 
-Inspected main `e0a00a7eaf867d52659796c633a15c5bf1eb8e86`, including merged
-PR #321 (`e9b750043077abe947519a3493829325b77ebd4e`). The newer main also contains
-the subsequently published three-bird batch. Seven immutable publication records
-currently describe twelve articles; the historical archive is substantially wider.
-The native source compiler supports additions and separate caption revisions,
-not general body edits, withdrawal or category transitions. PR #311, the separate
-Riyadh caption correction, was open at inspection; it is outside this change.
+The original publication compiler remains add-only. A separate closed data route
+now reuses its request validator, isolated compiler, independent finalizer and
+ordinary generated-candidate PR for body edits, withdrawal, ordinary category
+transitions and an explicit inverse. No second writer, PAT, new secret,
+PR-write permission, auto-approval, auto-merge or deployment action is added.
 
-Reusable infrastructure:
+This infrastructure PR contains code/tests/documentation only. No request targets
+a real article, and no actual article maintenance has been published.
 
-- `publication_compiler.py`: exact Git snapshots, isolated builds, hashed plans,
-  complete-tree candidate replay and source-parent provenance.
-- `publication_request.py` and `publication_finalize.py`: source-only requests,
-  independently repeated validation, review-branch creation only, existing token.
-- `caption_revision.py`: immutable original source plus bounded derived corrections.
-- `publication_guard.py`: trusted BASE replay; source declarations or receipts alone
-  never grant a preservation exception or new distribution authority.
-- `build_search_index.py`: existing public body extraction and index serialization.
-- Existing protected merge, three-language, homepage, archive, catalog, SEO and
-  browser checks. The branch endpoint reported main protected and the required
-  `Three-mirror publication check`; this does not prove every bypass setting.
+## Source input and approval
 
-## What this PR implements
+On exact current main, add exactly one regular immutable file:
+content/article-maintenance/<id>.json.
 
-`scripts/article_maintenance.py` computes an external, deterministic review bundle.
-It reads exact regular Git blobs from a clean checkout pinned to a full BASE SHA.
-It accepts one closed data request for one compiler-owned article; unknown fields,
-raw markup, missing translations, ambiguous text, stale base and unsupported
-placements fail before output. No request in this PR targets a real article.
+The closed sayd-article-maintenance-v1 schema is in article_maintenance.request().
+It includes id, expected_base, publication_id, article_slug, one operation,
+a bounded private decision_reference and a conflicts list. A disclosed conflict
+records its rule reference, consequence and confirmation evidence reference.
+After an article has maintenance history, previous_revision must name its exact
+current revision. Unknown fields, mixed actions, executable markup, caller-chosen
+output paths, duplicate JSON keys, ambiguous old text and stale inputs fail.
 
-The three proposed operations are:
+A private reference identifies evidence; it is not authenticated approval.
+The reviewer must verify Nayef's actual decision, scope and any disclosed conflict
+confirmation. Do not put private discussion text in public articles or records.
+Compilation prepares review output; the existing protected merge/publication
+review remains necessary.
 
-| Operation | Implemented proposal | Deliberate bounds |
-| --- | --- | --- |
-| Edit | Exact plain paragraph/heading replacements in six HTML/Markdown mirrors, with only the selected search bodies regenerated using the existing extractor | Three explicit translations; no title/date/image/rights/credit/source/distribution changes |
-| Withdraw | Three noindex notices, removal of ordinary archive cards, selected search rows and sitemap entries; rich preview cleanup on existing redirect aliases | Refuses homepage/ticker membership, special/combined cards, contentful aliases and surviving sitemap alternates |
-| Reclassify | Category badge/breadcrumb/JSON-LD, Markdown category, old/new ordinary archive cards, primary-door registry and selected search categories | Existing simple doors only; preserves original-date ordering; refuses new taxonomy, multiple search facets and homepage/ticker membership |
+Use the existing source/... branch, with a commit message ending in the exact
+existing trailer block (preceded by one blank line):
 
-Original publication records, media, attribution evidence, translation identities,
-publication/update dates and unrelated article bytes remain intact. A withdrawal
-retains the source Markdown and Git history; removing public page content is not
-erasing the original record. Static GitHub Pages notices return HTTP 200 with
-noindex; the tool does not claim HTTP 410, search-engine cache erasure, private Git
-history, removal of retained public media, or withdrawal from social channels.
+    Sayd-Publication-Request: v1
+    Distribution-Review-Scope: false
 
-The bundle contains every affected file's original/proposed bytes and SHA-256,
-the exact BASE and decision/conflict evidence references, and a digest. Replay
-recomputes the entire bundle from BASE instead of trusting supplied output paths.
-The inverse is exact only if all affected files still match the proposed bytes;
-later aggregate/index edits block automatic rollback and need a fresh scoped diff.
-Saved JSON and its hash are integrity aids, not signatures or approval proof.
+The read-only source-request validator runs exact BASE code. The default-branch
+workflow_run adapter rechecks actual repository, PR, run, source and base
+identity. Compiler and independent finalizer rebuild the same request and
+prepare only the existing review branch. The raw source PR is deliberately
+unmergeable. Open the generated branch in a separate normal PR; inspect the
+actual run/receipt and all required checks. Existing manual dispatch also works.
+Neither route adds credentials or widens finalizer permissions.
 
-The CLI writes only a new directory outside the checkout, containing `plan.json`
-and `review.json`. It does not create a source/candidate commit, stage files, move
-a ref, apply a bundle, merge, deploy, or contact an external service. The `replay`
-and `rollback` helpers return proposed byte mappings; neither writes them.
-Do not upload the external before/after bundle as a public publication asset.
+## Supported decisions
 
-```bash
-python scripts/article_maintenance.py \
-  --repo /path/to/clean/sayd-magazine \
-  --base FULL_CURRENT_MAIN_COMMIT \
-  --request /private/reviewed-request.json \
-  --output /outside-checkout/new-review-directory
-```
+| Operation | Bounded effect |
+| --- | --- |
+| edit | Explicit plain paragraph/internal-heading replacements in all three editions: six HTML/Markdown mirrors and selected search bodies |
+| withdraw | Three stable noindex notices; ordinary archive-card/search/sitemap removal and redirect rich-preview cleanup; original Markdown retained |
+| reclassify | Existing category badge, breadcrumb/structured metadata, Markdown category, dated archive cards, primary-door registry and selected search categories |
+| restore | New decision naming the exact current revision; restore prior bytes/state while retaining both requests and ledgers |
 
-The closed request schema is in `request()` and the synthetic example is in
-`test_article_maintenance.py`. `decision_reference: private:...` and conflict
-confirmation references identify evidence for independent human verification.
-They do not establish that Nayef approved anything. Approval of this infrastructure
-does not approve changes to a particular article.
+Identity comes from immutable publication records. publication_id set to legacy
+instead resolves existing reciprocal AR/EN/FR routes and original dates from
+BASE. Six existing regular mirrors and matching canonical/alternate identities
+are required. Historical pages are never regenerated from incomplete Markdown:
+a requested body span absent from the source fails rather than approximating it.
+No missing language is fabricated.
 
-## Production boundary: still closed
+The category adapter covers existing Gear, Land & Sea, Science, Birds, Heritage,
+Laws and Photos archives. It does not invent taxonomy or convert an article into
+a gallery. Original publication/update dates, media/rights, unrelated body bytes
+and date ordering remain intact. Title, image/rights, credit, source and date
+changes are not implicitly authorized by this route.
 
-This PR is a **review-only first stage**, not a working production maintenance
-route. The current native source allowlist does not accept these requests; no
-maintenance exception has been added to the preservation guards. Manually
-uploading the proposed derived files is not a supported workaround.
+Homepage/ticker membership, combined Hunting/Equestrian filters, multiple search
+facets and unknown/special card shapes fail before a candidate is written.
+Those need an explicitly scoped placement/combined-archive adapter or specific
+repair; uploading derived aggregates manually or relaxing guards is not a
+workaround. This scope bound is technical, not an editorial veto.
 
-Before a real maintenance decision can execute through the native writer, finish
-and review these linked changes:
+## Append-only history and current state
 
-1. Add a separate immutable maintenance request/decision ledger with exact
-   article/operation/base/content binding. Keep independently verified owner
-   decision evidence outside public article text. A conflict must be explained
-   before the confirmed exception executes; the exception remains item-specific.
-2. Extend trusted-BASE request validation, compilation and independent finalizer
-   replay for that exact ledger format. Keep one direct-base source commit,
-   immutable prior records, exact-tree/mode comparison, existing review-only ref
-   restriction and current permissions. Never interpret `approved:true`, a PR
-   description or this bundle as an authorization grant.
-3. Teach all relevant existing guards to recognize *only* the replayed expected
-   maintenance tree. Withdrawal needs an explicit tombstone state in article,
-   archive, SEO/search, hreflang, image-association and responsive QA checks;
-   preserve every unrelated assertion. Keep maintenance separate from new-story
-   `Proof.additions` so it cannot grant distribution.
-4. Make later builders/search/taxonomy/browser QA read effective maintenance
-   state while retaining immutable originals, preventing withdrawn content from
-   reappearing on a future build. Add ordered subsequent revisions and a fresh
-   authorized restore/reverse decision, rather than deleting prior audit records.
-5. Add reviewed homepage/ticker replacement/rotation and combined archive adapters;
-   preserve slot counts, chronology and all three languages. Add a separate legacy
-   adapter based on the actual historical rendered pages and proven identity;
-   never regenerate old articles from incomplete Markdown.
-6. Prove the full source request -> independent compiler/finalizer -> separate
-   candidate PR sequence on exact current main, run all unchanged regression and
-   three-language responsive checks, then obtain the required merge/publication
-   approval for the particular article decision. Local unit tests do not prove
-   that this deployed sequence has run.
+Trusted code generates content/maintenance-ledger/<id>.json; the requester cannot
+supply it. It binds the request hash, exact base, language identities, original
+publication date, predecessor/generation, before/after effective state and Git
+blob/SHA-256 identities for every derived path. Editing/deleting previous
+requests, ledgers, originals, media or rights evidence fails.
 
-These are engineering gaps, not a new editorial veto. The owner has already
-authorized developing the path; no new approval is needed just to finish that
-development. Production activation and any particular publication change still
-require the review and approvals specified in the current task.
+maintenance_state.py rejects broken/forked chains. Source originals remain audit
+evidence; the latest ledger provides public status/classification. Search,
+sitemap/SEO, classification and homepage eligibility respect this state.
+SEO refuses stale article HTML on a withdrawn route. Normal candidate parity
+also protects maintained legacy mirrors from unmanifested later changes.
 
-## Verification
+Static Pages withdrawal is an HTTP 200 noindex notice, not HTTP 410. It does not
+erase search-engine caches, public Git history, retained media, third-party
+copies or social posts. Inline editorial backlinks can still lead to the notice;
+text in unrelated stories is not silently changed.
 
-Twenty synthetic offline tests pass, including the real CLI against a temporary
-Git repository, unchanged repository/index/HEAD, six mirrors, search-row scope,
-category chronology, withdrawal/alias metadata, exact inverse, concurrent edits,
-stale/missing/wrong-language/canonical/mode inputs, ambiguous text, unsafe markup,
-Unicode controls, duplicate JSON keys, special placements and tampered bundles.
+A reverse is a new reviewed decision, not deletion of history or a blanket
+publication revert. If any affected file has changed since the target revision,
+automatic restore fails with its path; prepare a new scoped correction rather
+than overwriting later work.
 
-```bash
-python -m unittest discover -s scripts -p test_article_maintenance.py -v
-```
+## Byte proof and checks
 
-The existing publication-contract workflow runs this test command as an additive
-step. Its permissions and existing checks are unchanged. No live article was
-modified, no production maintenance candidate was generated, and no publication
-or merge was performed. Full repository/Actions/browser validation remains to be
-observed on the draft PR; only the focused offline tests were executed locally.
+maintenance_native.source_input() accepts only one source file directly on BASE.
+BASE code resolves all output paths/bytes. Code, protected files, originals,
+media and rights cannot be changed by maintenance data.
+
+The isolated candidate contains derived output plus its generated ledger, with
+the original source commit as parent. Verification repeats the build from
+immutable BASE and compares the entire tree, file modes, plan and provenance.
+Source JSON, ledger data, an approved flag or a receipt is never a guard waiver.
+
+The publication contract recognizes withdrawal only after non-recursive native
+whole-tree recomputation, then checks the exact noindex notice and absence from
+search. There is no blanket empty-article exception. The independent publication
+guard also uses trusted-BASE replay. Maintenance goes into Proof.maintenance,
+never new-publication Proof.additions, and grants no distribution authority.
+
+All existing catalog, homepage, archive, ticker, hreflang, SEO, search,
+related-image and navigation checks still run on the committed isolated stage.
+The finalizer independently recomputes the source and retains its existing
+review-ref-only restriction. A real candidate still needs actual exact-head
+checks, owner-decision verification, linguistic review and publication approval.
+
+## Synthetic verification
+
+Focused tests cover the CLI, source validator, generated scope, stale/mixed/forged
+inputs, modes/symlinks, exact replay, legacy identity, revision binding, no
+resurrection and inverse decisions. Full stage checks run against synthetic
+publications inside temporary full-corpus clones. Responsive QA renders
+edit/reclassification/withdrawal in AR/EN/FR at 320, 390, 820 and 1440 pixels:
+36 screenshots. Fixtures are never published or submitted to the native writer.
+
+    python -m unittest discover -s scripts -p test_article_maintenance.py -v
+    python -m unittest discover -s scripts -p test_maintenance_native.py -v
+    python scripts/test_maintenance_browser_fixture.py --output /outside-checkout/qa
+
+The standalone CLI continues to write an external review bundle only. It never
+applies files; before/after bytes are private review material, not public assets.
+Actual execution uses the native source-request/generated-candidate sequence.
+Keep the infrastructure PR unmerged until review and approval. Infrastructure
+approval does not select or approve a real article change.

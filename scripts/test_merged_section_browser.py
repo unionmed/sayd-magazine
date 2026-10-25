@@ -139,6 +139,53 @@ def test_compiled_article_browser(context, origin, proof, output):
     return screens
 
 
+def test_maintenance_browser(context, origin, proof, output):
+    """Inspect only transitions already proved by trusted native whole-tree replay."""
+    screens=[]
+    if proof is None:
+        return screens
+    from lxml import html as dom
+    from urllib.parse import quote
+    page=context.new_page()
+    try:
+        for ledger in getattr(proof,'maintenance',()):
+            for language,slug in ledger['slugs'].items():
+                prefix='' if language=='ar' else language+'/'
+                relative=prefix+'posts/'+slug+'/index.html'
+                expected=dom.fromstring((proof.site/'docs'/relative).read_bytes())
+                expected_main=expected.xpath('//main')
+                assert len(expected_main)==1
+                expected_text=' '.join(expected_main[0].text_content().split())
+                for width in (320,390,820,1440):
+                    page.set_viewport_size({'width':width,'height':1000})
+                    page.goto(origin+'/'+quote(relative),wait_until='networkidle')
+                    label=(ledger['id'],language,width)
+                    assert page.locator('html').get_attribute('lang')==language,(label,'language')
+                    assert ' '.join(page.locator('main').text_content().split())==expected_text,(label,'exact approved effective main text')
+                    assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),(label,'horizontal overflow')
+                    wanted='/'+prefix+'posts/'+slug+'/'
+                    assert unquote(urlsplit(page.locator('link[rel="canonical"]').get_attribute('href')).path)==wanted,(label,'stable canonical')
+                    for other,name in ledger['slugs'].items():
+                        target='/'+('' if other=='ar' else other+'/')+'posts/'+name+'/'
+                        links=page.locator('link[rel="alternate"][hreflang="'+other+'"]')
+                        assert links.count()==1 and unquote(urlsplit(links.get_attribute('href')).path)==target,(label,'preserved language identity')
+                    if ledger['after_state']['status']=='withdrawn':
+                        assert page.locator('main[data-sayd-withdrawn="true"]').count()==1,(label,'explicit notice')
+                        assert page.locator('article.article-content').count()==0,(label,'no public article body')
+                        assert page.locator('meta[name="robots"]').get_attribute('content')=='noindex,follow',(label,'noindex')
+                        assert page.locator('meta[property="og:image"],script[type="application/ld+json"]').count()==0,(label,'no stale rich content')
+                    else:
+                        assert page.locator('article.article-content').count()==1,(label,'effective body')
+                        for image in page.locator('article.article-content img').all():
+                            decode_visible_image(image)
+                            assert image.evaluate('img=>img.complete&&img.naturalWidth>0'),(label,'preserved local media')
+                    path=output/f'maintenance-{ledger["id"]}-{language}-{width}.png'
+                    page.screenshot(path=str(path),full_page=True);screens.append(path)
+    finally:
+        page.close()
+    return screens
+
+
 
 def test_compiled_podium_card_browser(context, origin, proof, output):
     """Inspect the new source-verified card; later caption edits do not place cards."""
@@ -261,6 +308,7 @@ def run(base,out):
                 test_gulf_browser(context, new_url, out, compiled)
                 screens.extend(test_compiled_podium_card_browser(context, new_url, compiled, out))
                 screens.extend(test_compiled_article_browser(context, new_url, compiled, out))
+                screens.extend(test_maintenance_browser(context, new_url, compiled, out))
                 page=context.new_page();before=context.new_page()
                 for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
                     for width in WIDTHS:
