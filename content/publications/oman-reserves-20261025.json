@@ -1,0 +1,217 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "oman-reserves-20261025",
+  "expected_base": "e0a00a7eaf867d52659796c633a15c5bf1eb8e86",
+  "approval_reference": "private:Sentinel_850d91f3e6d08191abebfd1537376bfe; exact Arabic text/photos approved 2026-10-25 19:36 UTC; short title and ticker approved private:Sentinel_2c8ecc7aeb80819184b7cf9bae6a4e45 19:37 UTC; door and ticker only, no lead/side/latest/social",
+  "bank_search_reference": "Sayd picture for use bank search and Outdoors subtree review; archived originals libfile_313016f9f3848191985ba04a02209d63 and libfile_538b9927efcc8191abab9f1007bbefff; rights libfile_61a6510e0808819196568bfdfd129e38",
+  "photos": [
+    {
+      "id": "cover",
+      "path": "docs/media/publications/oman-reserves-20261025/khor-rori-03.jpg",
+      "sha256": "48db2286fd04ca37058226670007c5c2d1c932a28508df6f87e736a3b0bb1764",
+      "source_sha256": "48db2286fd04ca37058226670007c5c2d1c932a28508df6f87e736a3b0bb1764",
+      "source_reference": "libfile_313016f9f3848191985ba04a02209d63; Juozas Šalna, 21 March 2014; https://commons.wikimedia.org/wiki/File:Khor_Rori_3.jpg; original unmodified bytes",
+      "rights": {
+        "status": "licensed",
+        "statement": "Juozas Šalna / Wikimedia Commons; CC BY 2.0; original photographs, unmodified; attribution and licence link retained.",
+        "evidence_reference": "libfile_61a6510e0808819196568bfdfd129e38; Commons Flickr licence review 10 April 2014; owner approved licence-link exception Sentinel_f93badb64510819182243a5ac7ca405c",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "alt": {
+        "ar": "خور روري، ضمن محميات الخيران بساحل صلالة",
+        "en": "Khor Rori, part of the khor reserves along the Salalah coast.",
+        "fr": "Khor Rori, au sein des réserves des khors du littoral de Salalah."
+      },
+      "caption": {
+        "ar": "خور روري، ضمن محميات الخيران بساحل صلالة",
+        "en": "Khor Rori, part of the khor reserves along the Salalah coast.",
+        "fr": "Khor Rori, au sein des réserves des khors du littoral de Salalah."
+      }
+    },
+    {
+      "id": "inside",
+      "path": "docs/media/publications/oman-reserves-20261025/khor-rori-01.jpg",
+      "sha256": "ed9b33b89f7cb3bfb94f5ddd75cb547ab00ee2606b16e3c43cdacc4bac9e680e",
+      "source_sha256": "ed9b33b89f7cb3bfb94f5ddd75cb547ab00ee2606b16e3c43cdacc4bac9e680e",
+      "source_reference": "libfile_538b9927efcc8191abab9f1007bbefff; Juozas Šalna, 21 March 2014; https://commons.wikimedia.org/wiki/File:Khor_Rori_1.jpg; original unmodified bytes",
+      "rights": {
+        "status": "licensed",
+        "statement": "Juozas Šalna / Wikimedia Commons; CC BY 2.0; original photographs, unmodified; attribution and licence link retained.",
+        "evidence_reference": "libfile_61a6510e0808819196568bfdfd129e38; Commons Flickr licence review 10 April 2014; owner approved licence-link exception Sentinel_f93badb64510819182243a5ac7ca405c",
+        "license_url": "https://creativecommons.org/licenses/by/2.0/"
+      },
+      "alt": {
+        "ar": "خور روري والحاجز الرملي الفاصل بينه وبين البحر",
+        "en": "Khor Rori and the sandbar separating it from the sea.",
+        "fr": "Khor Rori et le cordon sableux qui le sépare de la mer."
+      },
+      "caption": {
+        "ar": "خور روري والحاجز الرملي الفاصل بينه وبين البحر",
+        "en": "Khor Rori and the sandbar separating it from the sea.",
+        "fr": "Khor Rori et le cordon sableux qui le sépare de la mer."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "عمان-تنظم-زيارة-المحميات-والتخييم",
+        "en": "oman-nature-reserve-visits-camping-rules",
+        "fr": "oman-visites-reserves-naturelles-camping"
+      },
+      "published": "2026-10-25",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "wildlife",
+      "archives": [
+        "wildlife"
+      ],
+      "kind": "article",
+      "photos": [
+        "cover",
+        "inside"
+      ],
+      "translations": {
+        "ar": {
+          "title": "عُمان تنظّم زيارة محمياتها والتخييم فيها",
+          "subtitle": "ستة قرارات تنظّم دخول الزوار والتخييم والمبيت وتحمي الحياة الفطرية",
+          "meta_description": "عُمان تصدر ستة قرارات لتنظيم زيارة المحميات والتخييم والمبيت والتصوير الوثائقي، مع ضوابط لحماية الحياة الفطرية يبدأ العمل بها في 26 أكتوبر 2026.",
+          "sections": [
+            {
+              "paragraphs": [
+                "أصدرت هيئة البيئة في سلطنة عُمان ستة قرارات لتنظيم إدارة محميات طبيعية، تتناول دخول الزوار والتخييم والمبيت والتصوير الوثائقي، وتحدد الأنشطة المحظورة لحماية الحياة الفطرية. نُشرت القرارات في الجريدة الرسمية بتاريخ 25 أكتوبر 2026، ويبدأ العمل بها في 26 أكتوبر.",
+                "وتشمل القرارات محمية خور صلالة الطبيعية، ومحمية الجبل الغربي الطبيعية، ومحمية الظاهرة الطبيعية، ومحميات الخيران بساحل صلالة، ومحمية واحة البريمي الطبيعية، ومحمية رأس الشجر الطبيعية."
+              ]
+            },
+            {
+              "heading": "قبل الزيارة والتخييم",
+              "paragraphs": [
+                "تشترط الأحكام الحصول على تصريح لدخول المحميات المشمولة، أو التخييم أو المبيت فيها. وتنص أحكام محميات الجبل الغربي والظاهرة وواحة البريمي ورأس الشجر أيضًا على إخضاع التجوال وممارسة رياضة المشي الجبلي للتصريح.",
+                "ويُقدَّم الطلب إلى هيئة البيئة وفق النموذج المخصص، على أن تبت الجهة المختصة فيه خلال 30 يومًا من تقديمه مكتملًا، ما يستدعي ترتيب الرحلة واستكمال إجراءاتها مسبقًا.",
+                "وتوجد استثناءات محددة من تصريح الدخول، تشمل سكان المحمية وأقاربهم من الدرجة الأولى، وطلبة المدارس أثناء الرحلات التعليمية، والوفود الحكومية الرسمية، وفئات عسكرية وأمنية وحكومية وأكاديمية أثناء أداء الأعمال المحددة في الأحكام. وتخص هذه الاستثناءات الدخول، ولا تعني الإعفاء تلقائيًا من تصاريح الأنشطة الأخرى."
+              ]
+            },
+            {
+              "heading": "ماذا عن التصوير؟",
+              "paragraphs": [
+                "تُلزم الأحكام بالحصول على تصريح للتصوير بغرض إنتاج الأفلام الوثائقية أو الترويج للمحمية. أما التصوير الشخصي فلم يرد ضمن هذا البند، الذي يحدد غرض التصوير المطلوب له تصريح.",
+                "وتضم محميات الخيران بساحل صلالة خور روري، الذي يجمع المشهد الساحلي والمياه والموائل الطبيعية، وتظهره الصورتان المرافقتان للخبر."
+              ]
+            },
+            {
+              "heading": "الصيد محظور والمسارات ملزمة",
+              "paragraphs": [
+                "تحظر الأحكام الصيد واستخدام الأسلحة، ووضع السموم، وجمع المستحاثات والقطع الأثرية والأحجار وغيرها من موجودات المحمية. كما تحظر قيادة المركبات خارج المسارات المحددة، والإضرار بالأشجار والنباتات، وتلويث مصادر المياه، وإدخال الكائنات الفطرية الدخيلة أو الغازية.",
+                "وتخضع أنشطة أخرى لتصريح، منها إشعال النار خارج الأماكن المخصصة، والدراسات والبحوث وجمع عينات الأحياء الفطرية. ولا يغني تصريح الدخول عن التصاريح اللازمة لهذه الأنشطة.",
+                "وتتضمن القرارات رسومًا وجداول للمخالفات والغرامات الإدارية. وتختلف التفاصيل بحسب المحمية والنشاط، ولذلك ينبغي لمن يخطط لزيارة أو رحلة تخييم مراجعة الأحكام الخاصة بالمحمية المقصودة، والتأكد من التصريح والرسوم المطبقة على رحلته."
+              ]
+            },
+            {
+              "paragraphs": [
+                "المصدر: الجريدة الرسمية العُمانية، العدد 1671، بتاريخ 25 أكتوبر 2026؛ قرارات هيئة البيئة أرقام 190–195/2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصور: Juozas Šalna / ويكيميديا كومنز، بترخيص CC BY 2.0.",
+          "ticker_title": "عُمان تصدر ضوابط لزيارة المحميات والتخييم فيها"
+        },
+        "en": {
+          "title": "Oman regulates reserve visits and camping",
+          "subtitle": "Six decisions regulate visitor entry, camping and overnight stays to protect wildlife",
+          "meta_description": "Oman issues six decisions regulating reserve visits, camping, overnight stays and documentary filming, with wildlife protection rules effective from 26 October 2026.",
+          "ticker_title": "Oman issues rules for reserve visits and camping",
+          "sections": [
+            {
+              "paragraphs": [
+                "Oman's Environment Authority has issued six decisions regulating the management of nature reserves. They cover visitor entry, camping, overnight stays and documentary filming, and specify activities prohibited to protect wildlife. The decisions were published in the Official Gazette on 25 October 2026 and take effect on 26 October 2026.",
+                "The decisions cover Khor Salalah Nature Reserve, Al Jabal Al Gharbi Nature Reserve, Al Dhahirah Nature Reserve, the khor reserves along the Salalah coast, Al Buraimi Oasis Nature Reserve and Ras Al Shajar Nature Reserve."
+              ]
+            },
+            {
+              "heading": "Before visiting or camping",
+              "paragraphs": [
+                "The provisions require permits to enter the reserves concerned, camp or stay overnight. The rules for Al Jabal Al Gharbi, Al Dhahirah, Al Buraimi Oasis and Ras Al Shajar reserves also make roaming and mountain hiking subject to a permit.",
+                "Applications must be submitted to the Environment Authority using the designated form. The competent body must decide on an application within 30 days of receiving it complete, making advance trip planning and completion of the necessary procedures important.",
+                "Specific exemptions from the entry permit include reserve residents and their first-degree relatives, school pupils on educational trips, official government delegations, and specified military, security, government and academic personnel performing the duties set out in the provisions. These exemptions concern entry only and do not automatically waive permits for other activities."
+              ]
+            },
+            {
+              "heading": "What about photography?",
+              "paragraphs": [
+                "The provisions require a permit for photography or filming intended to produce documentaries or promote the reserve. Personal photography is not mentioned in this clause, which specifies the purposes for which a permit is required.",
+                "The khor reserves along the Salalah coast include Khor Rori, where the coastal landscape, water and natural habitats meet. It is shown in the two photographs accompanying this article."
+              ]
+            },
+            {
+              "heading": "No hunting; keep to designated routes",
+              "paragraphs": [
+                "The provisions prohibit hunting and the use of weapons, laying poison, and collecting fossils, archaeological objects, stones or other items found in the reserve. They also prohibit driving vehicles off designated routes, damaging trees and plants, polluting water sources, and introducing alien or invasive wildlife species.",
+                "Other activities require permits, including lighting fires outside designated areas, studies and research, and collecting wildlife samples. An entry permit does not replace the permits required for these activities.",
+                "The decisions include fees and schedules of offences and administrative fines. Details vary by reserve and activity. Anyone planning a visit or camping trip should therefore check the provisions for the intended reserve and confirm the permits and fees applicable to their trip."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Source: Oman's Official Gazette, issue 1671, dated 25 October 2026; Environment Authority Decisions Nos. 190–195/2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photos: Juozas Šalna / Wikimedia Commons, licensed under CC BY 2.0."
+        },
+        "fr": {
+          "title": "Oman encadre les visites et le camping dans ses réserves",
+          "subtitle": "Six décisions encadrent l'accès, le camping et les nuitées pour protéger la faune sauvage",
+          "meta_description": "Oman réglemente les visites, le camping, les nuitées et les tournages documentaires dans ses réserves. Les mesures entrent en vigueur le 26 octobre 2026.",
+          "ticker_title": "Oman fixe les règles de visite et de camping dans ses réserves",
+          "sections": [
+            {
+              "paragraphs": [
+                "L'Autorité de l'environnement du sultanat d'Oman a pris six décisions encadrant la gestion de réserves naturelles. Elles portent sur l'accès des visiteurs, le camping, les nuitées et les tournages documentaires, et définissent les activités interdites pour protéger la faune sauvage. Publiées au Journal officiel le 25 octobre 2026, elles entrent en vigueur le 26 octobre 2026.",
+                "Ces décisions concernent les réserves naturelles de Khor Salalah, d'Al Jabal Al Gharbi, d'Al Dhahirah, les réserves des khors du littoral de Salalah, ainsi que les réserves naturelles de l'oasis d'Al Buraimi et de Ras Al Shajar."
+              ]
+            },
+            {
+              "heading": "Avant une visite ou un séjour en camping",
+              "paragraphs": [
+                "Les dispositions imposent une autorisation pour entrer dans les réserves concernées, y camper ou y passer la nuit. Dans les réserves d'Al Jabal Al Gharbi, d'Al Dhahirah, de l'oasis d'Al Buraimi et de Ras Al Shajar, les promenades et la randonnée en montagne sont également soumises à autorisation.",
+                "La demande doit être adressée à l'Autorité de l'environnement au moyen du formulaire prévu. Le service compétent doit statuer dans les 30 jours suivant le dépôt du dossier complet, d'où l'importance de préparer son voyage et d'accomplir les démarches à l'avance.",
+                "Des exemptions précises à l'autorisation d'entrée sont prévues pour les habitants de la réserve et leurs parents au premier degré, les élèves en sortie éducative, les délégations gouvernementales officielles, ainsi que certaines catégories de personnels militaires, de sécurité, gouvernementaux et universitaires accomplissant les tâches définies par les dispositions. Ces exemptions portent uniquement sur l'entrée et ne dispensent pas automatiquement des autorisations nécessaires aux autres activités."
+              ]
+            },
+            {
+              "heading": "Qu'en est-il des prises de vue ?",
+              "paragraphs": [
+                "Les dispositions imposent une autorisation pour les prises de vue destinées à la réalisation de documentaires ou à la promotion de la réserve. La photographie personnelle n'est pas mentionnée dans cette clause, qui précise les finalités soumises à autorisation.",
+                "Les réserves des khors du littoral de Salalah comprennent Khor Rori, où se rencontrent paysage côtier, eaux et habitats naturels. Les deux photographies accompagnant cet article le représentent."
+              ]
+            },
+            {
+              "heading": "Chasse interdite et respect des itinéraires",
+              "paragraphs": [
+                "Les dispositions interdisent la chasse, l'utilisation d'armes, le dépôt de poisons et la collecte de fossiles, d'objets archéologiques, de pierres ou d'autres éléments présents dans la réserve. Elles interdisent également la circulation des véhicules hors des itinéraires désignés, les dommages aux arbres et aux plantes, la pollution des sources d'eau et l'introduction d'espèces sauvages exotiques ou envahissantes.",
+                "D'autres activités nécessitent une autorisation, notamment allumer un feu hors des emplacements prévus, mener des études et des recherches ou prélever des échantillons d'organismes sauvages. L'autorisation d'entrée ne remplace pas celles exigées pour ces activités.",
+                "Les décisions prévoient des redevances ainsi que des barèmes d'infractions et d'amendes administratives. Les modalités varient selon la réserve et l'activité. Toute personne préparant une visite ou un séjour en camping doit donc consulter les dispositions propres à la réserve choisie et vérifier les autorisations et les redevances applicables à son voyage."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Source : Journal officiel d'Oman, n° 1671 du 25 octobre 2026 ; décisions de l'Autorité de l'environnement nos 190–195/2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photos : Juozas Šalna / Wikimedia Commons, sous licence CC BY 2.0."
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": true
+      }
+    }
+  ]
+}
