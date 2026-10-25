@@ -356,10 +356,10 @@
     {
       "door": "wildlife",
       "slugs": [
+        "عمان-تنظم-زيارة-المحميات-والتخييم",
         "دبي-سفاري-الموسم-الثامن-2026",
         "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا",
-        "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026",
-        "قطر-حماية-المناطق-البرية-والبحرية-2030"
+        "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026"
       ]
     },
     {
@@ -489,7 +489,8 @@
     "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026": "gear",
     "بقويقة-سوداء-الذيل-في-العالم-العربي": "birds",
     "النكات-الأبقع-في-العالم-العربي": "birds",
-    "أبو-المغازل-الكرسوع-في-العالم-العربي": "birds"
+    "أبو-المغازل-الكرسوع-في-العالم-العربي": "birds",
+    "عمان-تنظم-زيارة-المحميات-والتخييم": "wildlife"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -508,6 +509,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "عمان-تنظم-زيارة-المحميات-والتخييم",
     "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
     "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
     "الصيد-السياحي-في-دول-المغرب-العربي",
@@ -516,8 +518,7 @@
     "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
     "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
     "تمبتد-غودولفين-إيفرست-2026",
-    "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
-    "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026"
+    "بطولة-العالم-بندقية-300-متر-القاهرة-2026"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -891,11 +892,28 @@
         "en": "Black-winged Stilt with a straight black bill and long pink legs in shallow water",
         "fr": "Échasse blanche au bec noir droit et aux longues pattes roses dans une eau peu profonde"
       }
+    },
+    "عمان-تنظم-زيارة-المحميات-والتخييم": {
+      "image": "media/publications/oman-reserves-20261025/khor-rori-03.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "خور روري، ضمن محميات الخيران بساحل صلالة",
+        "en": "Khor Rori, part of the khor reserves along the Salalah coast.",
+        "fr": "Khor Rori, au sein des réserves des khors du littoral de Salalah."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "عمان-تنظم-زيارة-المحميات-والتخييم",
+      "titles": {
+        "ar": "عُمان تصدر ضوابط لزيارة المحميات والتخييم فيها",
+        "en": "Oman issues rules for reserve visits and camping",
+        "fr": "Oman fixe les règles de visite et de camping dans ses réserves"
+      }
+    },
     {
       "slug": "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
       "titles": {
@@ -966,14 +984,6 @@
         "ar": "النمسا تحصد ذهبية فرق بندقية 300 متر بالقاهرة",
         "en": "Austria wins 300m rifle team gold in Cairo",
         "fr": "L’Autriche remporte l’or par équipes à 300 m au Caire"
-      }
-    },
-    {
-      "slug": "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
-      "titles": {
-        "ar": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية",
-        "en": "Abu Dhabi launches a wildlife rescue network",
-        "fr": "Abou Dhabi lance un réseau de sauvetage de la faune"
       }
     }
   ],
