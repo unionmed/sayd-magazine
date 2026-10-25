@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
+      "titles": {
+        "ar": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا",
+        "en": "Syria’s Helice shooting champions crowned in Saydnaya",
+        "fr": "Les champions de Syrie de tir aux hélices couronnés à Saydnaya"
+      },
+      "title": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا"
+    },
+    {
       "slug": "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
       "titles": {
         "ar": "«ونعمين» يفوز بتحضيري كأس الأمير محمد بن سعود الكبير بفارق 15 طولًا",
@@ -81,15 +90,6 @@
         "fr": "Abou Dhabi lance un réseau de sauvetage de la faune"
       },
       "title": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية"
-    },
-    {
-      "slug": "شيرين-بو-رفول-مكافحة-الصيد-الجائر",
-      "titles": {
-        "ar": "شيرين بو رفول لـ«صيد»: أحبّ الصيد، لكنني أختار مكافحة المخالفات وإنقاذ الطيور.",
-        "en": "Shireen Bou Rafoul tells Sayd: I love hunting, but I choose to fight violations and rescue birds.",
-        "fr": "Shireen Bou Rafoul à Sayd : j’aime la chasse, mais je choisis de lutter contre les infractions et de sauver les oiseaux."
-      },
-      "title": "شيرين بو رفول لـ«صيد»: أحبّ الصيد، لكنني أختار مكافحة المخالفات وإنقاذ الطيور."
     }
   ]
 }
