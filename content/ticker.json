@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "عمان-تنظم-زيارة-المحميات-والتخييم",
+      "titles": {
+        "ar": "عُمان تصدر ضوابط لزيارة المحميات والتخييم فيها",
+        "en": "Oman issues rules for reserve visits and camping",
+        "fr": "Oman fixe les règles de visite et de camping dans ses réserves"
+      },
+      "title": "عُمان تصدر ضوابط لزيارة المحميات والتخييم فيها"
+    },
+    {
       "slug": "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
       "titles": {
         "ar": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا",
@@ -81,15 +90,6 @@
         "fr": "L’Autriche remporte l’or par équipes à 300 m au Caire"
       },
       "title": "النمسا تحصد ذهبية فرق بندقية 300 متر بالقاهرة"
-    },
-    {
-      "slug": "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
-      "titles": {
-        "ar": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية",
-        "en": "Abu Dhabi launches a wildlife rescue network",
-        "fr": "Abou Dhabi lance un réseau de sauvetage de la faune"
-      },
-      "title": "أبوظبي تطلق شبكة لإنقاذ الحياة الفطرية"
     }
   ]
 }
