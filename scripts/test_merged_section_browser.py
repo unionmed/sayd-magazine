@@ -139,6 +139,69 @@ def test_compiled_article_browser(context, origin, proof, output):
     return screens
 
 
+
+def test_compiled_podium_card_browser(context, origin, proof, output):
+    """Inspect the new source-verified card; later caption edits do not place cards."""
+    screens, measurements = [], []
+    from site_ia import DOORS
+    gear_folder = next(door['folder'] for door in DOORS if door['id'] == 'gear')
+    if proof is None:
+        return screens
+    page = context.new_page()
+    try:
+        for record in proof.additions:
+            photos = {p['id']: p for p in record['photos']}
+            for article in record['articles']:
+                if article['slugs']['ar'] != 'بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026':
+                    continue
+                photo = photos[article['photos'][0]]
+                expected_path = 'docs/media/publications/syria-helice-championship-20261024/podium-a.jpg'
+                expected_hash = 'f9f188d7844f0517df1138a71c7112bb2031b636e46766b1db237e15be1a7be0'
+                assert photo['path'] == expected_path, 'Approved podium cover path'
+                assert photo['sha256'] == photo['source_sha256'] == expected_hash, 'Approved podium cover hashes'
+                assert hashlib.sha256((ROOT/expected_path).read_bytes()).hexdigest() == expected_hash, 'Unchanged podium bytes'
+                for lang in ('ar', 'en', 'fr'):
+                    prefix = '' if lang == 'ar' else lang+'/'
+                    for kind, suffix in (('home', 'index.html'), ('gear', 'category/'+gear_folder+'/index.html'),
+                                         ('archive', ('articles' if lang == 'ar' else 'stories')+'/index.html')):
+                        for width in (390, 1440):
+                            page.set_viewport_size({'width': width, 'height': 1000})
+                            page.goto(origin+'/'+prefix+suffix, wait_until='networkidle')
+                            card_image = page.locator('main img[src*="media/publications/syria-helice-championship-20261024/podium-a.jpg"]')
+                            label = (lang, kind, width)
+                            assert card_image.count() == 1, (label, 'exact podium card count')
+                            decode_visible_image(card_image)
+                            measured = card_image.evaluate("""img => {
+                              const r=img.getBoundingClientRect(), t=img.closest('.thumb').getBoundingClientRect();
+                              const scale=Math.min(r.width/img.naturalWidth,r.height/img.naturalHeight);
+                              const w=img.naturalWidth*scale,h=img.naturalHeight*scale;
+                              const x=r.x+(r.width-w)/2,y=r.y+(r.height-h)/2;
+                              return {fit:getComputedStyle(img).objectFit, position:getComputedStyle(img).objectPosition,
+                                naturalWidth:img.naturalWidth,naturalHeight:img.naturalHeight,
+                                box:{width:r.width,height:r.height}, painted:{width:w,height:h},
+                                whole:x>=t.left-1&&x+w<=t.right+1&&y>=t.top-1&&y+h<=t.bottom+1};
+                            }""")
+                            assert measured['fit'] == 'contain', (label, 'whole approved portrait, not cover crop')
+                            assert measured['position'] == '50% 50%', (label, 'unchanged centered position')
+                            assert (measured['naturalWidth'], measured['naturalHeight']) == (810, 1080), (label, 'original dimensions')
+                            assert measured['whole'] and measured['painted']['width'] > 0, (label, 'whole portrait inside thumbnail')
+                            assert abs(measured['painted']['width']/measured['painted']['height'] - 810/1080) < .001, (label, 'natural photo ratio')
+                            if kind == 'home':
+                                assert abs(measured['box']['width']/measured['box']['height'] - 16/9) < .02, (label, 'unchanged home card dimensions')
+                            assert card_image.get_attribute('alt') == photo['alt'][lang], (label, 'unchanged alt')
+                            card = card_image.locator('xpath=ancestor::article[1]')
+                            assert article['translations'][lang]['title'] in card.inner_text(), (label, 'exact card title')
+                            path = output / f'podium-card-{lang}-{kind}-{width}.png'
+                            capture(page, card, path); screens.append(path)
+                            measurements.append({'language': lang, 'kind': kind, 'width': width, **measured})
+    finally:
+        page.close()
+        if measurements:
+            (output/'podium-card-geometry.json').write_text(json.dumps(measurements, ensure_ascii=False, indent=2))
+            print('SAYD_PODIUM_CARD_GEOMETRY '+json.dumps(measurements, ensure_ascii=False))
+    return screens
+
+
 def run(base,out):
     from publication_guard import verified_article_evidence
     compiled = verified_article_evidence(base)
@@ -196,6 +259,7 @@ def run(base,out):
                 test_honey_browser(context, new_url, out)
                 from test_gulf_tourism_20261022 import test_gulf_browser
                 test_gulf_browser(context, new_url, out, compiled)
+                screens.extend(test_compiled_podium_card_browser(context, new_url, compiled, out))
                 screens.extend(test_compiled_article_browser(context, new_url, compiled, out))
                 page=context.new_page();before=context.new_page()
                 for lang,prefix in [('ar',''),('en','en/'),('fr','fr/')]:
@@ -449,7 +513,7 @@ def run(base,out):
             (out/'geometry.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
             (out/'errors.json').write_text(json.dumps(errors,ensure_ascii=False,indent=2))
             budget=3_000_000
-            screens.sort(key=lambda p:(0 if p.name.startswith('shireen-cabs') else 1 if p.name.startswith('shireen-home-ar') else 1 if p.name.startswith('shireen-home-en') else 2 if p.name.startswith('shireen-article-ar') else 3 if p.name.startswith('shireen-article-en') else 4,p.name))
+            screens.sort(key=lambda p:(-1 if p.name.startswith('podium-card') else 0 if p.name.startswith('shireen-cabs') else 1 if p.name.startswith('shireen-home-ar') else 1 if p.name.startswith('shireen-home-en') else 2 if p.name.startswith('shireen-article-ar') else 3 if p.name.startswith('shireen-article-en') else 4,p.name))
             for path in screens:
                 data=base64.b64encode(path.read_bytes()).decode()
                 if len(data)<=budget:

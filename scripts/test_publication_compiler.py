@@ -117,6 +117,58 @@ class ArticleKickerTests(unittest.TestCase):
         self.assertEqual(header.xpath('//*[@class="article-kicker"]/text()'), [text])
 
 
+
+class ExactPodiumCardTests(unittest.TestCase):
+    def fixture(self):
+        # Metadata-only unit fixture: no photograph/source object is fabricated.
+        value = record()
+        article, photo = value['articles'][0], value['photos'][0]
+        article['slugs']['ar'] = 'بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026'
+        photo['path'] = 'docs/media/publications/syria-helice-championship-20261024/podium-a.jpg'
+        photo['sha256'] = photo['source_sha256'] = 'f9f188d7844f0517df1138a71c7112bb2031b636e46766b1db237e15be1a7be0'
+        return article, photo
+
+    def listing_image(self, article, photo, lang):
+        from lxml import html
+        with tempfile.TemporaryDirectory() as temp:
+            stage = Path(temp)
+            path = stage / 'docs' / ('' if lang == 'ar' else lang) / 'category/fixture/index.html'
+            path.parent.mkdir(parents=True)
+            historical = '<article class="card"><p>Historical card unchanged</p></article>'
+            path.write_text('<main>' + historical + '</main>')
+            compiler.insert_listing(stage, article, lang, photo, path)
+            self.assertIn(historical, path.read_text())
+            return html.fromstring(path.read_text()).xpath('//img')[0]
+
+    def test_exact_approved_portrait_contained_in_home_and_all_listing_languages(self):
+        article, photo = self.fixture()
+        before = copy.deepcopy((article, photo))
+        override = compiler.card_image_override(article, photo)
+        self.assertEqual(override, {'image': photo['path'][5:], 'position': '50% 50%',
+                                    'alt': photo['alt'], 'fit': 'contain'})
+        for lang in schema.LANGS:
+            image = self.listing_image(article, photo, lang)
+            self.assertEqual(image.get('style'), 'object-fit:contain')
+            self.assertEqual(image.get('alt'), photo['alt'][lang])
+        self.assertEqual((article, photo), before)
+
+    def test_other_article_path_and_either_hash_retain_default_cover_behavior(self):
+        for field in ('article', 'path', 'sha256', 'source_sha256'):
+            with self.subTest(field=field):
+                article, photo = self.fixture()
+                if field == 'article':
+                    article['slugs']['ar'] = 'another-article'
+                elif field == 'path':
+                    photo[field] = photo[field].replace('podium-a.jpg', 'other.jpg')
+                else:
+                    photo[field] = '0' * 64
+                self.assertFalse(compiler.contain_syria_podium(article, photo))
+                self.assertEqual(compiler.card_image_override(article, photo),
+                                 {'image': photo['path'][5:], 'position': '50% 50%', 'alt': photo['alt']})
+                for lang in schema.LANGS:
+                    self.assertIsNone(self.listing_image(article, photo, lang).get('style'))
+
+
 class SchemaTests(unittest.TestCase):
     def test_valid_record_and_external_licence(self):
         self.assertEqual(schema.validate(record())['schema'], 'sayd-publication-v1')
@@ -343,6 +395,28 @@ class RealSiteTests(unittest.TestCase):
             self.assertEqual(len(page.xpath('//*[@class="article-content"]//figure/img')), 7)
             self.assertNotIn(compiler.public_url(value['articles'][0], lang), (stage / 'docs/sitemap.xml').read_text())
         subprocess.run(['python', 'scripts/check_publication_contract.py', '--base', self.base], cwd=stage, check=True)
+
+    def test_persisted_contain_override_survives_future_homepage_regeneration(self):
+        # Use explicitly synthetic bytes/paths, never masquerade as the news photo.
+        value = record(self.base, 'compiler-contain-fixture', placement='door')
+        stage, _, _ = self.build(value, True)
+        article = value['articles'][0]
+        path = stage / 'content/homepage.json'
+        home = json.loads(path.read_text())
+        home['card_image_overrides'][article['slugs']['ar']]['fit'] = 'contain'
+        compiler.save_json(path, home)
+        pages = [stage / 'docs' / ('' if lang == 'ar' else lang) / 'index.html' for lang in schema.LANGS]
+        snapshots = []
+        from lxml import html
+        for _ in range(2):
+            subprocess.run([sys.executable, '-c', "import sys; sys.path.insert(0, 'scripts'); import refresh_homepage_doors as home; [home.refresh(home.DOCS / prefix / 'index.html', lang) for lang, prefix in [('ar', ''), ('en', 'en'), ('fr', 'fr')]]"], cwd=stage, check=True)
+            snapshots.append([page.read_bytes() for page in pages])
+            for lang, page in zip(schema.LANGS, pages):
+                image = html.fromstring(page.read_text()).xpath('//img[contains(@src,"compiler-contain-fixture/cover.png")]')
+                self.assertEqual(len(image), 1)
+                self.assertIn('object-fit:contain', image[0].get('style', ''))
+            self.assertEqual(json.loads(path.read_text())['card_image_overrides'][article['slugs']['ar']]['fit'], 'contain')
+        self.assertEqual(snapshots[0], snapshots[1])
 
     def test_hunting_equestrian_lead_and_filter_membership(self):
         base = self.controlled_lead_base()

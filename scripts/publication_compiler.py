@@ -357,6 +357,20 @@ def render_article(stage, article, language, photos, pairs, doors, seo):
     save(source, '---\n' + ''.join(k + ': ' + json.dumps(v, ensure_ascii=False) + '\n' for k, v in front.items()) + '---\n\n' + body + '\n')
 
 
+def contain_syria_podium(article, photo):
+    """Keep this exact approved portrait whole; not a general crop policy."""
+    return (article['slugs']['ar'] == 'بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026'
+            and photo['path'] == 'docs/media/publications/syria-helice-championship-20261024/podium-a.jpg'
+            and photo['sha256'] == photo['source_sha256'] == 'f9f188d7844f0517df1138a71c7112bb2031b636e46766b1db237e15be1a7be0')
+
+
+def card_image_override(article, photo):
+    override = {'image': photo['path'][5:], 'position': '50% 50%', 'alt': photo['alt']}
+    if contain_syria_podium(article, photo):
+        override['fit'] = 'contain'
+    return override
+
+
 def insert_listing(stage, article, language, photo, path):
     require(path.is_file(), 'Missing existing archive; no implicit new section')
     original = path.read_text()
@@ -366,7 +380,8 @@ def insert_listing(stage, article, language, photo, path):
     style = 'post-row' if 'post-row' in match[0] else 'card overlay' if 'overlay' in match[0] else 'card'
     href = quote(os.path.relpath(page_path(stage, article, language), path.parent), safe='/')
     image = os.path.relpath(stage / photo['path'], path.parent)
-    row = '<article class="' + style + '"><a class="thumb" href="' + href + '"><img src="' + image + '" alt="' + html.escape(photo['alt'][language], quote=True) + '" loading="lazy"></a><div class="body"><h2><a href="' + href + '">' + html.escape(tr['title']) + '</a></h2><div class="meta">' + date_label(article['published'], language) + '</div><p class="excerpt">' + html.escape(tr['subtitle']) + '</p></div></article>\n'
+    image_style = ' style="object-fit:contain"' if contain_syria_podium(article, photo) else ''
+    row = '<article class="' + style + '"><a class="thumb" href="' + href + '"><img src="' + image + '" alt="' + html.escape(photo['alt'][language], quote=True) + '" loading="lazy"' + image_style + '></a><div class="body"><h2><a href="' + href + '">' + html.escape(tr['title']) + '</a></h2><div class="meta">' + date_label(article['published'], language) + '</div><p class="excerpt">' + html.escape(tr['subtitle']) + '</p></div></article>\n'
     # Insert in descending original-date order. Existing card bytes/order survive.
     from lxml import html as dom
     from seo_foundation import parse_date
@@ -446,7 +461,7 @@ def render(stage, records, allow_distribution):
         ar = article['slugs']['ar']
         home['primary_door'][ar] = article['primary_door']
         photo = photos[article['photos'][0]]
-        home['card_image_overrides'][ar] = {'image': photo['path'][5:], 'position': '50% 50%', 'alt': photo['alt']}
+        home['card_image_overrides'][ar] = card_image_override(article, photo)
         if article['kind'] == 'gallery':
             home['gallery'].extend(s for s in dict.fromkeys(article['slugs'].values()) if s not in home['gallery'])
         if article['distribution']['placement'] == 'archive-only':
