@@ -14,6 +14,30 @@ The first infrastructure PR must contain no pending article/image publication.
 The existing protected merge and Pages deployment remain unchanged. Do not use
 this prospective workflow to reroute a previously rejected aggregate upload.
 
+## Owner decisions and scoped maintenance — 25 October 2026
+
+The governing Arabic rule is the section “قرارات نايف الخاصة وحدود القواعد العامة”
+in AGENTS.md. Preservation protects against unintended changes; it is not an
+editorial veto over Nayef's informed, explicitly approved amendment, removal, or
+reclassification of a particular publication.
+
+Explain a concrete conflict with an existing publication rule and its consequence
+to Nayef before executing an exception. Once he confirms the informed decision,
+execute only that decision's scope without asking for the same approval again.
+A decision about one article does not change the general rule or grant authority
+over other articles; a permanent rule change requires his explicit statement.
+
+Keep original publication records as provenance while providing separately
+reviewed, bounded maintenance for their effective public text, availability, or
+classification. An approved removal can remove public availability while retaining
+private/audit history. The current add-only compiler and caption-only revision path
+do not yet implement general body revisions, withdrawal, or reclassification.
+Documentation of authority alone does not make those code paths exist or make
+their checks pass: prepare the narrowly necessary implementation and normal review,
+preserving unrelated content and protections. Do not claim a technical hard stop
+is a separate editorial decision by Nayef, and do not silently turn a single
+exception into a general guard relaxation.
+
 ## Sources and generated compatibility outputs
 
 One atomic source commit, directly on the exact current `main`, may only ADD:
