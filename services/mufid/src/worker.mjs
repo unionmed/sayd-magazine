@@ -1,3 +1,4 @@
+import {akkarScope,regionalDefects,regionalReviewNote} from './regional-evidence.mjs';
 import {sanitizeTrip,accessReviewNeeded,ACCESS_NOTE,parseItinerary,itineraryNeedsReview} from './trips.mjs';
 import preview from '../data/preview.json' with {type:'json'};
 import corpus from '../data/public-index.json' with {type:'json'};
@@ -83,13 +84,14 @@ export function createHandler(network=fetch,options={}) {
         itinerary=parseItinerary(output.answer,output.sources,input);
         // One bounded revision, never an open-ended retry loop or a vague draft.
         if(!itinerary){
-          const revision={draft:output.answer.slice(0,12000),defects:'Check every constraint again: exact destination region, no duplicate places, no law/documents as visits, no alternatives merged into a route, ONE named hiking trail with sourced length/difficulty. Keep practical visitor sites with source_url, kind, duration_minutes and walking. For unresolved hunting legality use advice with days:[], never a route through law documents. Do not merely move rejected alternatives into summary. Read the draft against the original request and correct it.'};
+          const revision={regional_defects:regionalDefects(output.answer,output.sources,input),draft:output.answer.slice(0,12000),defects:'Check every constraint again: exact destination region, no duplicate places, no law/documents as visits, no alternatives merged into a route, ONE named hiking trail with sourced length/difficulty. Keep practical visitor sites with source_url, kind, duration_minutes and walking. For unresolved hunting legality use advice with days:[], never a route through law documents. Do not merely move rejected alternatives into summary. Read the draft against the original request and correct it.'};
           const revised=await network('https://api.openai.com/v1/responses',{method:'POST',headers:{'Authorization':'Bearer '+env.OPENAI_API_KEY,'Content-Type':'application/json'},body:JSON.stringify(providerPayload({...input,revision},matches.slice(0,4),env.OPENAI_MODEL,true)),signal:AbortSignal.timeout(45000)});
           if(!revised.ok)return reply({error:'itinerary_unavailable',articles:cards},502);
           data=await revised.json();output=extractResponse(data);
           if(data.status!=='completed'||!output.answer||!output.verified)return reply({error:'itinerary_unavailable',articles:cards},502);
           itinerary=parseItinerary(output.answer,output.sources,input);
         }
+        if(!itinerary&&akkarScope(input))return reply({answer:regionalReviewNote(input),articles:cards,sources:[],verified:false,regional_review_required:true});
         if(!itinerary&&input.trip?.activities?.includes('camping')){const note={ar:'لم أتمكن من توثيق خيمة بالسعة المطلوبة وقبول الأطفال من الجهة المشغلة؛ لذلك لم أعتمد برنامج مبيت لهذه الأسرة. راجع تفاصيل المخيم في المصادر للتأكد من السعة وسياسة الأطفال والحجز، ولا تعتبر بيت شجرة بسرير مزدوج خيمة عائلية.',en:'I could not verify a tent with the required capacity and child admission from its operator, so I have not accepted this overnight plan. The campsite references can help check capacity, child policy and booking; a double-bed treehouse is not a family tent.',fr:'Je n’ai pas pu confirmer une tente de capacité suffisante et l’accueil des enfants auprès de l’exploitant. Ce programme de nuitée n’est donc pas retenu. Vérifiez la capacité, les conditions d’accueil et la réservation dans les références du camping ; une cabane avec un lit double ne remplace pas une tente familiale.'};return reply({answer:note[input.lang],sources:output.sources,articles:cards,verified:false,camping_review_required:true});}
         if(!itinerary)return reply({error:'itinerary_unavailable',articles:cards},502);
         if(itineraryNeedsReview(itinerary))return reply({answer:ACCESS_NOTE[input.lang],articles:cards,sources:[],verified:false,access_review_required:true});
@@ -97,6 +99,7 @@ export function createHandler(network=fetch,options={}) {
           const note={ar:'لم أتحقق من إعلان رسمي نافذ للموسم الجاري في الوجهة المطلوبة؛ لذلك لا أعطي وجهة صيد على أساس أنه مسموح. البيان الخاص بموسم سابق لا يثبت الوضع الحالي. قبل الخروج، يلزم تأكيد قرار الموسم والأنواع والأعداد المسموحة والرخص المطلوبة من الجهة الرسمية المختصة.',en:'I could not verify an official notice in force for the current hunting season at the requested destination, so I cannot recommend a hunt as permitted. A previous-season notice does not establish the current position. Confirm the current season decision, permitted species and bag limits, and required licences with the relevant authority before going.',fr:'Je n’ai pas pu vérifier une décision officielle applicable à la saison de chasse actuelle dans la destination demandée. Je ne peux donc pas proposer une chasse comme autorisée. Un avis d’une saison passée ne prouve pas la situation actuelle. Confirmez la saison, les espèces, les quotas et les permis auprès de l’autorité compétente avant de partir.'};
           itinerary.summary=note[input.lang];
         }
+        if(itinerary.regional_review_required){output.verified=false;output.sources=[...new Set(itinerary.days.flatMap(d=>d.stops.map(s=>s.source_url)))].map(url=>output.sources.find(s=>s.url===url)||{url,title:new URL(url).hostname});}
         output.answer=itinerary.summary;
       }
       const links=birdReferences(corpus.articles,output.answer,input.lang);
@@ -151,3 +154,4 @@ export class MufidGuard {
   async clean(){for(const prefix of ['suggestion:','qa:']){const rows=await this.ctx.storage.list({prefix});for(const [key,row] of rows)if(row.expires_at<=Date.now())await this.ctx.storage.delete(key);}}
   async alarm(){await this.clean();await this.ctx.storage.delete('limits');if((await this.ctx.storage.list({prefix:'suggestion:',limit:1})).size||(await this.ctx.storage.list({prefix:'qa:',limit:1})).size)await this.ctx.storage.setAlarm(Date.now()+86400000);}
 }
+
