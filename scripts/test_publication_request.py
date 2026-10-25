@@ -182,7 +182,8 @@ class RealSourceTests(unittest.TestCase):
                  'article_slug': record['articles'][0]['slugs']['ar'],
                  'photo_id': record['photos'][0]['id'],
                  'captions': {lang: {'old': current_photo['caption'][lang],
-                                     'new': 'Archive photograph.'} for lang in ('ar', 'en', 'fr')}}
+                                     'new': ('Synthetic caption A.' if current_photo['caption'][lang] != 'Synthetic caption A.'
+                                             else 'Synthetic caption B.')} for lang in ('ar', 'en', 'fr')}}
         if mutate: mutate(value)
         files = {'content/caption-revisions/request-caption-test.json': json.dumps(value, ensure_ascii=False).encode()}
         files.update(extra or {})
@@ -207,6 +208,7 @@ class RealSourceTests(unittest.TestCase):
     def test_caption_request_revalidates_exact_base_and_old_text(self):
         mutations = [lambda v: v.update(expected_base='0'*40),
                      lambda v: v['captions']['en'].update(old='Wrong old caption.'),
+                     lambda v: v['captions']['en'].update(new=v['captions']['en']['old']),
                      lambda v: v['captions']['fr'].update(new='<script>bad</script>')]
         for mutate in mutations:
             with self.assertRaises(ValueError):
