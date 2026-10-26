@@ -5,6 +5,7 @@ on:
     paths:
       - 'content/publications/**'
       - 'content/caption-revisions/**'
+      - 'content/editorial-revisions/**'
 permissions:
   contents: read
 concurrency:
