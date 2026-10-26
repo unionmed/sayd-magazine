@@ -200,57 +200,68 @@ def assert_archive_card_rows(rows, original, additions, gulf_additions, lang, co
 
 
 def test_photo_revision_proof_scope_guards():
-    page = DOCS / 'en/category/صيد/index.html'
-    slug = 'wanaameen-riyadh-prince-mohammed-cup-prep-2026'
+    record = json.loads((ROOT / 'content/publications/riyadh-results-20261024.json').read_text())
     path = 'content/editorial-revisions/wanaameen-jcsa-photo-20261026.json'
-    revision = {'operation': 'replace-wanaameen-photo', 'expected_base': 'base'}
-    record = {'id': 'riyadh-results-20261024', 'articles': [{'slugs': {'en': slug}}]}
-    proof = SimpleNamespace(kind='verified-editorial-revision', base='base', candidate='head', revisions=(record,),
-                            read=lambda p: json.dumps(revision) if p == path else page.read_text())
-    with patch.object(subprocess, 'check_output', return_value=(path + '\n').encode()):
-        assert set(approved_wanaameen_photo_cards(proof, page, 'en')) == {slug}
-        proof.kind = 'baseline-publication'
-        assert approved_wanaameen_photo_cards(proof, page, 'en') == {}
-        proof.kind = 'verified-editorial-revision'
-        for obj, key, wrong in [(revision, 'operation', 'add-adonis-ticker'),
-                                (revision, 'expected_base', 'other'), (record, 'id', 'other-publication')]:
-            old = obj[key]; obj[key] = wrong
-            try:
-                approved_wanaameen_photo_cards(proof, page, 'en')
-            except AssertionError:
-                pass
-            else:
-                raise AssertionError('Out-of-scope photo proof accepted')
-            finally:
-                obj[key] = old
-    with patch.object(subprocess, 'check_output', return_value=b''):
-        assert approved_wanaameen_photo_cards(proof, page, 'en') == {}
-    assert approved_wanaameen_photo_cards(None, page, 'en') == {}
+    for lang in ('ar', 'en', 'fr'):
+        page = DOCS / (lang if lang != 'ar' else '') / 'category/صيد/index.html'
+        slug = record['articles'][0]['slugs'][lang]
+        revision = {'operation': 'replace-wanaameen-photo', 'expected_base': 'base'}
+        proof = SimpleNamespace(kind='verified-editorial-revision', base='base', candidate='head', revisions=(record,),
+                                read=lambda p: json.dumps(revision) if p == path else page.read_text())
+        with patch.object(subprocess, 'check_output', return_value=(path + '\n').encode()):
+            assert set(approved_wanaameen_photo_cards(proof, page, lang)) == {slug}
+            proof.kind = 'baseline-publication'
+            assert approved_wanaameen_photo_cards(proof, page, lang) == {}
+            proof.kind = 'verified-editorial-revision'
+            for obj, key, wrong in [(revision, 'operation', 'add-adonis-ticker'),
+                                    (revision, 'expected_base', 'other'), (record, 'id', 'other-publication')]:
+                old = obj[key]; obj[key] = wrong
+                try:
+                    approved_wanaameen_photo_cards(proof, page, lang)
+                except AssertionError:
+                    pass
+                else:
+                    raise AssertionError((lang, 'Out-of-scope photo proof accepted'))
+                finally:
+                    obj[key] = old
+        with patch.object(subprocess, 'check_output', return_value=b''):
+            assert approved_wanaameen_photo_cards(proof, page, lang) == {}
+        assert approved_wanaameen_photo_cards(None, page, lang) == {}
 
 
 def test_exact_photo_revision_row_guards():
-    page = DOCS / 'en/category/صيد/index.html'
-    slug = 'wanaameen-riyadh-prince-mohammed-cup-prep-2026'
-    old = next(row for row in archive.cards(page.read_text()) if archive.slug_of(row) == slug)
-    image = html.fromstring(old).xpath('.//img/@src')[0]
-    revised = old.replace(image, 'approved-photo.jpg', 1)
-    with patch.object(archive, 'marine_registry', return_value={}):
-        assert_archive_card_rows([revised], [old], {}, {}, 'en', revised_cards={slug: revised})
-        for bad in [revised.replace('approved-photo.jpg', 'other.jpg'), revised + '<span>extra</span>',
-                    revised.replace('<h2>', '<h2 data-tampered="1">', 1)]:
-            try:
-                assert_archive_card_rows([bad], [old], {}, {}, 'en', revised_cards={slug: revised})
-            except AssertionError:
-                pass
-            else:
-                raise AssertionError('Non-exact revised archive row accepted')
-        for expected in [{}, {'unknown-story': revised}]:
-            try:
-                assert_archive_card_rows([revised], [old], {}, {}, 'en', revised_cards=expected)
-            except AssertionError:
-                pass
-            else:
-                raise AssertionError('Missing or unrelated revision proof accepted')
+    record = json.loads((ROOT / 'content/publications/riyadh-results-20261024.json').read_text())
+    for lang in ('ar', 'en', 'fr'):
+        page = DOCS / (lang if lang != 'ar' else '') / 'category/صيد/index.html'
+        slug = record['articles'][0]['slugs'][lang]
+        old = next(row for row in archive.cards(page.read_text()) if archive.slug_of(row) == slug)
+        node = html.fromstring(old)
+        image = node.xpath('.//img/@src')[0]
+        revised = old.replace(image, 'approved-photo.jpg', 1)
+        mutations = [revised.replace('approved-photo.jpg', 'other.jpg'), revised + '<span>extra</span>',
+                     revised.replace('<h2>', '<h2 data-tampered="1">', 1)]
+        for value in (node.xpath('.//img/@alt')[0], node.xpath('.//a/@href')[0],
+                      node.xpath('.//h2/a')[0].text_content(), node.xpath('.//div[@class="meta"]')[0].text_content(),
+                      node.xpath('.//p[@class="excerpt"]')[0].text_content()):
+            encoded = escaped_html.escape(value, quote=True)
+            assert encoded in revised
+            mutations.append(revised.replace(encoded, 'Unapproved change', 1))
+        with patch.object(archive, 'marine_registry', return_value={}):
+            assert_archive_card_rows([revised], [old], {}, {}, lang, revised_cards={slug: revised})
+            for bad_rows in [[bad] for bad in mutations] + [[], [revised, revised]]:
+                try:
+                    assert_archive_card_rows(bad_rows, [old], {}, {}, lang, revised_cards={slug: revised})
+                except AssertionError:
+                    pass
+                else:
+                    raise AssertionError((lang, 'Non-exact revised archive rows accepted'))
+            for expected in [{}, {'unknown-story': revised}]:
+                try:
+                    assert_archive_card_rows([revised], [old], {}, {}, lang, revised_cards=expected)
+                except AssertionError:
+                    pass
+                else:
+                    raise AssertionError((lang, 'Missing or unrelated revision proof accepted'))
 
 
 def test_archives_keep_every_published_card():
