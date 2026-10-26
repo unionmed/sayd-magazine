@@ -9,6 +9,7 @@ import tempfile
 import html as escaped_html
 from datetime import timedelta
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 from urllib.parse import quote, unquote, urlsplit
 
@@ -150,8 +151,30 @@ def test_approved_card_text_guards():
         assert not approved_card_text_only(old,new+'<span>extra</span>',slug)
 
 
-def assert_archive_card_rows(rows, original, additions, gulf_additions, lang, compiled_cards=None):
+def approved_wanaameen_photo_cards(compiled, page, lang):
+    """Only exact rows from an independently replayed fixed photo revision."""
+    if compiled is None or compiled.kind != 'verified-editorial-revision':
+        return {}
+    revision_path = 'content/editorial-revisions/wanaameen-jcsa-photo-20261026.json'
+    changed = subprocess.check_output(['git', 'diff', '--name-only', compiled.base,
+                                      compiled.candidate, '--', revision_path], cwd=ROOT).decode().splitlines()
+    if changed != [revision_path]:
+        return {}
+    revision = json.loads(compiled.read(revision_path))
+    assert revision['operation'] == 'replace-wanaameen-photo'
+    assert revision['expected_base'] == compiled.base
+    records = [r for r in compiled.revisions if r['id'] == 'riyadh-results-20261024']
+    assert len(records) == 1 and len(records[0]['articles']) == 1
+    slug = records[0]['articles'][0]['slugs'][lang]
+    expected = {archive.slug_of(row): row for row in archive.cards(compiled.read(page.relative_to(ROOT).as_posix()))}
+    assert slug in expected
+    return {slug: expected[slug]}
+
+
+def assert_archive_card_rows(rows, original, additions, gulf_additions, lang, compiled_cards=None, revised_cards=None):
     compiled_cards = compiled_cards or {}
+    revised_cards = revised_cards or {}
+    assert set(revised_cards) <= {archive.slug_of(row) for row in original}
     by_slug = {archive.slug_of(row): row for row in rows}
     assert len(rows) == len(by_slug), (lang, 'duplicate story')
     assert set(by_slug) == {archive.slug_of(row) for row in original} | set(archive.marine_registry(lang)) | set(additions) | set(compiled_cards), lang
@@ -165,11 +188,69 @@ def assert_archive_card_rows(rows, original, additions, gulf_additions, lang, co
         assert str(archive.stamp(by_slug[slug]))[:10]==a['date']
     for slug,a in gulf_additions.items():
         assert by_slug[slug] == exact_gulf_archive_card(a, lang), (lang, 'exact approved Gulf archive card')
+    for slug, expected in revised_cards.items():
+        assert by_slug[slug] == expected, (lang, 'exact trusted photo-revision card', slug)
     for row in original:
         # Card text, original publication date and selected photo are exact.
-        assert by_slug[archive.slug_of(row)] == row or approved_card_text_only(row, by_slug[archive.slug_of(row)], archive.slug_of(row)), (lang, archive.slug_of(row))
+        assert (by_slug[archive.slug_of(row)] == row
+                or approved_card_text_only(row, by_slug[archive.slug_of(row)], archive.slug_of(row))
+                or (archive.slug_of(row) in revised_cards and by_slug[archive.slug_of(row)] == revised_cards[archive.slug_of(row)])), (lang, archive.slug_of(row))
     assert [archive.stamp(row) for row in rows] == sorted((archive.stamp(row) for row in rows), reverse=True)
     return by_slug
+
+
+def test_photo_revision_proof_scope_guards():
+    page = DOCS / 'en/category/صيد/index.html'
+    slug = 'wanaameen-riyadh-prince-mohammed-cup-prep-2026'
+    path = 'content/editorial-revisions/wanaameen-jcsa-photo-20261026.json'
+    revision = {'operation': 'replace-wanaameen-photo', 'expected_base': 'base'}
+    record = {'id': 'riyadh-results-20261024', 'articles': [{'slugs': {'en': slug}}]}
+    proof = SimpleNamespace(kind='verified-editorial-revision', base='base', candidate='head', revisions=(record,),
+                            read=lambda p: json.dumps(revision) if p == path else page.read_text())
+    with patch.object(subprocess, 'check_output', return_value=(path + '\n').encode()):
+        assert set(approved_wanaameen_photo_cards(proof, page, 'en')) == {slug}
+        proof.kind = 'baseline-publication'
+        assert approved_wanaameen_photo_cards(proof, page, 'en') == {}
+        proof.kind = 'verified-editorial-revision'
+        for obj, key, wrong in [(revision, 'operation', 'add-adonis-ticker'),
+                                (revision, 'expected_base', 'other'), (record, 'id', 'other-publication')]:
+            old = obj[key]; obj[key] = wrong
+            try:
+                approved_wanaameen_photo_cards(proof, page, 'en')
+            except AssertionError:
+                pass
+            else:
+                raise AssertionError('Out-of-scope photo proof accepted')
+            finally:
+                obj[key] = old
+    with patch.object(subprocess, 'check_output', return_value=b''):
+        assert approved_wanaameen_photo_cards(proof, page, 'en') == {}
+    assert approved_wanaameen_photo_cards(None, page, 'en') == {}
+
+
+def test_exact_photo_revision_row_guards():
+    page = DOCS / 'en/category/صيد/index.html'
+    slug = 'wanaameen-riyadh-prince-mohammed-cup-prep-2026'
+    old = next(row for row in archive.cards(page.read_text()) if archive.slug_of(row) == slug)
+    image = html.fromstring(old).xpath('.//img/@src')[0]
+    revised = old.replace(image, 'approved-photo.jpg', 1)
+    with patch.object(archive, 'marine_registry', return_value={}):
+        assert_archive_card_rows([revised], [old], {}, {}, 'en', revised_cards={slug: revised})
+        for bad in [revised.replace('approved-photo.jpg', 'other.jpg'), revised + '<span>extra</span>',
+                    revised.replace('<h2>', '<h2 data-tampered="1">', 1)]:
+            try:
+                assert_archive_card_rows([bad], [old], {}, {}, 'en', revised_cards={slug: revised})
+            except AssertionError:
+                pass
+            else:
+                raise AssertionError('Non-exact revised archive row accepted')
+        for expected in [{}, {'unknown-story': revised}]:
+            try:
+                assert_archive_card_rows([revised], [old], {}, {}, 'en', revised_cards=expected)
+            except AssertionError:
+                pass
+            else:
+                raise AssertionError('Missing or unrelated revision proof accepted')
 
 
 def test_archives_keep_every_published_card():
@@ -192,7 +273,8 @@ def test_archives_keep_every_published_card():
             old_slugs = {archive.slug_of(row) for row in original} | set(archive.marine_registry(lang))
             new_cards = {slug: row for slug, row in expected.items() if slug not in old_slugs}
             compiled_equestrian = {a['slugs'][lang] for r in compiled.additions for a in r['articles'] if a['primary_door'] == 'equestrian'}
-        by_slug = assert_archive_card_rows(rows, original, additions, gulf, lang, new_cards)
+        revised_cards = approved_wanaameen_photo_cards(compiled, page, lang)
+        by_slug = assert_archive_card_rows(rows, original, additions, gulf, lang, new_cards, revised_cards)
         tree = html.fromstring(text)
         assert tree.xpath('//main//div[contains(@class,"section-head")]/h1/text() | //main//div[contains(@class,"section-head")]/h2/text()')[0].strip() == ia.door_label('hunting', lang)
         data = json.loads(tree.xpath('string(//script[@id="combined-archive-data"])'))
@@ -216,7 +298,8 @@ def test_archives_keep_every_published_card():
         if compiled is not None:
             expected_legacy = {archive.slug_of(row): row for row in archive.cards(compiled.read(legacy.relative_to(ROOT).as_posix()))}
             assert legacy_after == expected_legacy, 'Legacy archive differs from exact trusted compilation'
-        assert all(legacy_after[k]==v for k,v in legacy_before.items()), 'Retained old category cards changed'
+        revised_legacy = approved_wanaameen_photo_cards(compiled, legacy, lang)
+        assert all(legacy_after[k] == revised_legacy.get(k, v) for k, v in legacy_before.items()), 'Retained old category cards changed'
 
 
 def test_gulf_archive_negative_guards():
@@ -354,6 +437,8 @@ def test_transform_preserves_article_body_head_and_legacy_children():
 
 if __name__ == '__main__':
     test_approved_card_text_guards()
+    test_exact_photo_revision_row_guards()
+    test_photo_revision_proof_scope_guards()
     test_archives_keep_every_published_card()
     test_gulf_archive_negative_guards()
     test_sync_idempotence_and_new_legacy_publication()

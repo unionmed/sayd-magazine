@@ -308,3 +308,24 @@ body may additionally reflect this exact credit-year deletion; all other fields
 and rows remain exact. Browser evidence uses effective caption, alt, and credit.
 No arbitrary alt/credit replacement, global year removal, or other body edits are
 supported, and this option does not add output files or privileges.
+
+## Exact episode-three lead correction — 26 October 2026
+
+The single `promote-episode-three-lead` editorial maintenance operation promotes
+only the existing `hunting-tourism-egypt-iraq-jordan-20261026` article from its
+ordinary homepage door card to the main lead. Its immutable revision filename is
+`content/editorial-revisions/episode-three-lead-20261026.json`; its payload is empty.
+It requires the exact current BASE, original publication SHA-256, and aggregate
+SHA-256 of the four current target files. The owner decision remains independently
+reviewed evidence, not authority conferred by these declarations.
+
+The trusted renderer requires the Maghreb episode to be the current lead and
+Adonis to be first side card. It reuses the existing chronological upper-card and
+hunting-door rotation, preserves original publication dates and all current photo
+overrides, and changes only `content/homepage.json` and the AR/EN/FR homepage HTML
+(including lead sharing metadata). The original publication, article HTML/Markdown,
+photo assets, taxonomy and ticker stay unchanged. No duplicate publication or new
+Facebook post is created. Repetition, arbitrary targets, nonempty payloads, code in
+the source commit, stale hashes and unrelated tree changes fail closed. This exact
+correction is not a general API for editing slots. Normal replay, finalizer, PR,
+contract and browser gates remain required.
