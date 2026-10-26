@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "الصيد-السياحي-في-مصر-والعراق-والأردن",
+      "titles": {
+        "ar": "الصيد السياحي في مصر والعراق والأردن",
+        "en": "Hunting Tourism in Egypt, Iraq and Jordan",
+        "fr": "Le tourisme cynégétique en Égypte, en Irak et en Jordanie"
+      },
+      "title": "الصيد السياحي في مصر والعراق والأردن"
+    },
+    {
       "slug": "عمان-تنظم-زيارة-المحميات-والتخييم",
       "titles": {
         "ar": "عُمان تصدر ضوابط لزيارة المحميات والتخييم فيها",
@@ -81,15 +90,6 @@
         "fr": "Tempted offre à Godolphin sa première victoire dans l’Everest"
       },
       "title": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست»"
-    },
-    {
-      "slug": "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
-      "titles": {
-        "ar": "النمسا تحصد ذهبية فرق بندقية 300 متر بالقاهرة",
-        "en": "Austria wins 300m rifle team gold in Cairo",
-        "fr": "L’Autriche remporte l’or par équipes à 300 m au Caire"
-      },
-      "title": "النمسا تحصد ذهبية فرق بندقية 300 متر بالقاهرة"
     }
   ]
 }

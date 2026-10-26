@@ -176,14 +176,14 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "الصيد-السياحي-في-مصر-والعراق-والأردن",
       "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
       "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
       "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
       "ختام-الملواح-2026-60-فائزا",
       "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-      "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
-      "حين-يتغير-الساحل-أين-تستريح-الطيور"
+      "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -206,14 +206,14 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "hunting-tourism-egypt-iraq-jordan",
       "arabian-saluki-center-25-years",
       "arabian-saluki-championship-november-2026-april-2027",
       "hunting-masculinity-dead-birds",
       "akkar-sparrowhawk-backpack-raptor-poaching",
       "melwah-finale-2026-60-winners",
       "where-migratory-birds-rest-mashreq-arabian-peninsula",
-      "northern-bekaa-38280-square-metres-bird-nets-apu-cabs",
-      "when-the-coast-changes-where-do-birds-rest"
+      "northern-bekaa-38280-square-metres-bird-nets-apu-cabs"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -332,14 +332,14 @@
     {
       "door": "hunting",
       "slugs": [
+        "الصيد-السياحي-في-مصر-والعراق-والأردن",
         "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
         "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
         "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
         "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
         "ختام-الملواح-2026-60-فائزا",
         "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-        "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs",
-        "حين-يتغير-الساحل-أين-تستريح-الطيور"
+        "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs"
       ]
     },
     {
@@ -501,7 +501,8 @@
     "بط-كستنائي-الرأس": "birds",
     "بطة-قنبراء": "birds",
     "البط-السماري": "birds",
-    "عندما-تهين-الطريدة-أنت-تهين-نفسك": "hunting"
+    "عندما-تهين-الطريدة-أنت-تهين-نفسك": "hunting",
+    "الصيد-السياحي-في-مصر-والعراق-والأردن": "hunting"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -520,6 +521,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "الصيد-السياحي-في-مصر-والعراق-والأردن",
     "عمان-تنظم-زيارة-المحميات-والتخييم",
     "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
     "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
@@ -528,8 +530,7 @@
     "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
     "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
     "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
-    "تمبتد-غودولفين-إيفرست-2026",
-    "بطولة-العالم-بندقية-300-متر-القاهرة-2026"
+    "تمبتد-غودولفين-إيفرست-2026"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -948,11 +949,28 @@
         "en": "Birds on the ground and a boot next to one of them in a video frame.",
         "fr": "Des oiseaux au sol et une botte contre l’un d’eux, dans une image tirée d’une vidéo."
       }
+    },
+    "الصيد-السياحي-في-مصر-والعراق-والأردن": {
+      "image": "media/publications/hunting-tourism-egypt-iraq-jordan-20261026/iraq-marsh-boat.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "زورق تقليدي في الأهوار العراقية؛ النقل والإرشاد من الخدمات المرتبطة بزيارة البيئات الطبيعية.",
+        "en": "A traditional boat in the Iraqi marshes; transport and guiding are among the services associated with visits to natural environments.",
+        "fr": "Une embarcation traditionnelle dans les marais irakiens ; transport et accompagnement font partie des services liés à la visite des milieux naturels."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "الصيد-السياحي-في-مصر-والعراق-والأردن",
+      "titles": {
+        "ar": "الصيد السياحي في مصر والعراق والأردن",
+        "en": "Hunting Tourism in Egypt, Iraq and Jordan",
+        "fr": "Le tourisme cynégétique en Égypte, en Irak et en Jordanie"
+      }
+    },
     {
       "slug": "عمان-تنظم-زيارة-المحميات-والتخييم",
       "titles": {
@@ -1023,14 +1041,6 @@
         "ar": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست»",
         "en": "Tempted delivers Godolphin’s first Everest victory",
         "fr": "Tempted offre à Godolphin sa première victoire dans l’Everest"
-      }
-    },
-    {
-      "slug": "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
-      "titles": {
-        "ar": "النمسا تحصد ذهبية فرق بندقية 300 متر بالقاهرة",
-        "en": "Austria wins 300m rifle team gold in Cairo",
-        "fr": "L’Autriche remporte l’or par équipes à 300 m au Caire"
       }
     }
   ],
