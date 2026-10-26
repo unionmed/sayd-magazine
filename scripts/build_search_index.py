@@ -232,6 +232,9 @@ def category_facets(tree, slug, lang, mappings):
 
 
 def extract_article(path, docs, lang, mappings=None):
+    from maintenance_state import is_withdrawn
+    if is_withdrawn(Path(docs).parent, path.relative_to(docs).as_posix()):
+        return None
     tree = html.fromstring(path.read_bytes())
     if tree.xpath('//meta[translate(@http-equiv,"REFSH","refsh")="refresh"]'):
         return None

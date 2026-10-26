@@ -299,9 +299,21 @@ def header_asset_version_only_repair(file, base):
 
 def check_new_stories(paths,pairs,base=None):
     checked=set()
+    maintenance=None
+    if base:
+        from maintenance_native import verified_transition
+        maintenance=verified_transition(ROOT,base)
     for file in paths:
         m=re.fullmatch(r'docs/(?:(en|fr)/)?posts/([^/]+)/index.html',file)
         if not m:continue
+        if maintenance and maintenance['ledger']['after_state']['status']=='withdrawn':
+            ledger=maintenance['ledger']
+            if file in {'docs/'+('' if l=='ar' else l+'/')+'posts/'+s+'/index.html' for l,s in ledger['slugs'].items()}:
+                # No generic skip: exact native whole-tree replay above proves
+                # this route, its noindex notice and index/alias removals.
+                from maintenance_state import assert_effective
+                assert_effective(ROOT)
+                continue
         if footer_label_only_repair(file,base):
             continue
         if header_asset_version_only_repair(file,base):

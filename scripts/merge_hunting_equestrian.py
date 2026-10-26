@@ -107,7 +107,12 @@ def retitle(text: str, lang: str, count: int) -> str:
 
 def marine_registry(lang):
     registry = json.loads((ROOT / 'content/marine-fishing.json').read_text())['entries']
-    return {row[lang]: row for row in registry if row.get(lang)}
+    from maintenance_state import is_withdrawn,current
+    prefix='' if lang=='ar' else lang+'/'
+    effective=current(ROOT)
+    hunting={'hunting','equestrian','bird-hunting','land-hunting','marine-hunting','falconry'}
+    return {row[lang]: row for row in registry if row.get(lang) and not is_withdrawn(ROOT,prefix+'posts/'+row[lang]+'/index.html')
+            and (row.get('ar') not in effective or effective[row['ar']]['after_state']['primary_door'] in hunting)}
 
 
 def marine_cards(lang):

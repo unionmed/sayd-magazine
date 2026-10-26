@@ -78,6 +78,43 @@ jobs:
           if-no-files-found: ignore
           retention-days: 30
 
+  maintenance-tests:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: pip install lxml==5.3.2 Pillow==11.3.0
+      - run: python -m unittest discover -s scripts -p 'test_maintenance_native.py' -v
+
+  maintenance-browser:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.55.0 Pillow==11.3.0 lxml==5.3.2
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/test_maintenance_browser_fixture.py --output "$RUNNER_TEMP/maintenance-browser"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-maintenance-browser-${{ github.run_id }}
+          path: ${{ runner.temp }}/maintenance-browser
+          if-no-files-found: error
+          retention-days: 30
+
   tests:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
@@ -97,6 +134,7 @@ jobs:
           python -m unittest discover -s scripts -p 'test_publication_finalize.py' -v
           python -m unittest discover -s scripts -p 'test_publication_guard.py' -v
           python -m unittest discover -s scripts -p 'test_caption_revision.py' -v
+          python -m unittest discover -s scripts -p 'test_article_maintenance.py' -v
           python -m unittest discover -s scripts -p 'test_publication_request.py' -v
           python -m unittest discover -s scripts -p 'test_publication_chronology.py' -v
       - name: Prove a no-content build preserves the complete baseline

@@ -65,9 +65,14 @@ def request_scope(message):
 def validate_source(root, base, source):
     from publication_compiler import source_records, tree
     import caption_revision
+    import maintenance_native
     sha(base); sha(source)
     require(source != base, 'Empty request')
     scope = request_scope(git(root, 'show', '-s', '--format=%B', source))
+    if maintenance_native.request_paths(tree(root, base), tree(root, source)):
+        _,_,_,outputs,_=maintenance_native.source_input(root, base, source)
+        require(scope==maintenance_native.review_scope(outputs), 'Maintenance distribution scope differs from explicit placements')
+        return scope
     if caption_revision.revision_paths(tree(root, base), tree(root, source)):
         require(not scope, 'Caption revision cannot authorize distribution')
         caption_revision.source_input(root, base, source)

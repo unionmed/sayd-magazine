@@ -465,7 +465,10 @@ def is_numeric_permalink_stub(rel: Path) -> bool:
     return len(rel.parts) == 2 and rel.name == "index.html" and rel.parts[0].isdigit()
 
 
-def in_sitemap(rel: Path) -> bool:
+def in_sitemap(rel: Path, docs: Path | None = None) -> bool:
+    from maintenance_state import is_withdrawn
+    if is_withdrawn((docs or DOCS).parent, rel.as_posix()):
+        return False
     posix = rel.as_posix()
     if canonical_rel(rel) != rel:
         return False
@@ -912,6 +915,11 @@ def apply_html(
     rel: Path,
     twins: dict[str, str],
 ) -> str:
+    from maintenance_state import is_withdrawn
+    if is_withdrawn(docs.parent, rel.as_posix()):
+        if 'data-sayd-withdrawn="true"' not in html_text or 'class="article-content"' in html_text:
+            raise ValueError('Attempt to rebuild withdrawn article from stale content: '+rel.as_posix())
+        return html_text
     # Search has its own localized metadata and deliberately no analytics.
     # Preserve that privacy boundary during shared SEO regeneration.
     if rel.as_posix() in ('search/index.html', 'en/search/index.html', 'fr/search/index.html'):
@@ -1127,7 +1135,7 @@ def apply(docs: Path | None = None) -> dict[str, int]:
         if new != text:
             path.write_text(new, encoding="utf-8")
             changed += 1
-        if in_sitemap(rel):
+        if in_sitemap(rel, docs):
             sitemap_rows.append((public_url(rel), lastmod_from_html(new, rel, updates)))
     sitemap_rows.sort(key=lambda row: (row[0] != ORIGIN + "/", row[0]))
     (docs / "sitemap.xml").write_text(render_sitemap(sitemap_rows), encoding="utf-8")

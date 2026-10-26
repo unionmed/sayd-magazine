@@ -30,8 +30,11 @@ over other articles; a permanent rule change requires his explicit statement.
 Keep original publication records as provenance while providing separately
 reviewed, bounded maintenance for their effective public text, availability, or
 classification. An approved removal can remove public availability while retaining
-private/audit history. The current add-only compiler and caption-only revision path
-do not yet implement general body revisions, withdrawal, or reclassification.
+private/audit history. The publication path remains add-only; a separate bounded
+native route now handles existing-article body revisions, withdrawal, ordinary
+reclassification and explicit inverse decisions. See
+[ARTICLE-MAINTENANCE.md](ARTICLE-MAINTENANCE.md) for its data schema, append-only
+ledger, exact-BASE replay, supported scope and required independent review.
 Documentation of authority alone does not make those code paths exist or make
 their checks pass: prepare the narrowly necessary implementation and normal review,
 preserving unrelated content and protections. Do not claim a technical hard stop

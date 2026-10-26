@@ -86,6 +86,7 @@ class Proof:
     temporary: object
     kind: str = "compiled-publication"
     revisions: tuple = ()
+    maintenance: tuple = ()
 
     def read(self, path):
         return (self.site / path).read_text()
@@ -110,7 +111,8 @@ def verified_publication(base, root=ROOT, include_baseline=False):
     records = git(root, 'ls-tree', '-r', '--name-only', base, '--', 'content/publications/').decode().splitlines()
     changed = git(root, 'diff', '--name-only', base, candidate, '--', 'content/publications/').decode().splitlines()
     revised = git(root, 'diff', '--name-only', base, candidate, '--', 'content/caption-revisions/').decode().splitlines()
-    active = bool(changed or revised)
+    maintained = git(root, 'diff', '--name-only', base, candidate, '--', 'content/article-maintenance/', 'content/maintenance-ledger/').decode().splitlines()
+    active = bool(changed or revised or maintained)
     if not active and not (include_baseline and records):
         return None
     check_context(base, candidate)
@@ -134,6 +136,14 @@ def verified_publication(base, root=ROOT, include_baseline=False):
                     owned.add('content/' + ('posts' if language == 'ar' else language) + '/' + slug + '.md')
         require(not owned or not git(root, 'diff', '--name-only', base, candidate, '--', *sorted(owned)).strip(),
                 'Baseline proof cannot mask historical article/media edits')
+        from maintenance_state import current as maintenance_state
+        for row in maintenance_state(root).values():
+            for language,slug in row['slugs'].items():
+                prefix='' if language=='ar' else language+'/'
+                owned.add('docs/'+prefix+'posts/'+slug+'/index.html')
+                owned.add('content/'+('posts' if language=='ar' else language)+'/'+slug+'.md')
+        require(not owned or not git(root, 'diff', '--name-only', base, candidate, '--', *sorted(owned)).strip(),
+                'Baseline proof cannot mask maintained legacy article edits')
         # Source records already reviewed on main are not an open-ended licence
         # to change slots. Home bytes and their placement/translation/image-card
         # registries stay exact. Unrelated legacy article bodies remain editable
@@ -159,7 +169,7 @@ def verified_publication(base, root=ROOT, include_baseline=False):
             require(plan.get('schema') == 'sayd-publication-plan-v1' and plan.get('base_commit') == base
                     and plan.get('compiler_commit') == base, 'Missing exact trusted compilation proof')
             require(tree(output, 'HEAD') == tree(root, candidate), 'Expected build is not exact candidate tree')
-            additions = () if revised else tuple(json.loads((output / path).read_text()) for path in changed)
+            additions = () if revised or maintained else tuple(json.loads((output / path).read_text()) for path in changed)
             revisions = ()
             if revised:
                 # The trusted compiler has replayed the complete candidate.
@@ -176,7 +186,8 @@ def verified_publication(base, root=ROOT, include_baseline=False):
                 'Trusted compiler changed during verification')
         check_checkout(root, candidate)
         proof = Proof(root, site, base, candidate, additions, temp,
-                      "verified-caption-revision" if revised else ("compiled-publication" if changed else "baseline-publication"), revisions)
+                      "verified-article-maintenance" if maintained else ("verified-caption-revision" if revised else ("compiled-publication" if changed else "baseline-publication")), revisions,
+                      tuple(json.loads((output/path).read_text()) for path in maintained if path.startswith('content/maintenance-ledger/')) if maintained else ())
         _proofs[key] = proof
         return proof
     except BaseException:
