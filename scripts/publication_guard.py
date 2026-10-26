@@ -111,7 +111,8 @@ def verified_publication(base, root=ROOT, include_baseline=False):
     changed = git(root, 'diff', '--name-only', base, candidate, '--', 'content/publications/').decode().splitlines()
     revised = git(root, 'diff', '--name-only', base, candidate, '--', 'content/caption-revisions/').decode().splitlines()
     maintained = git(root, 'diff', '--name-only', base, candidate, '--', 'content/editorial-revisions/').decode().splitlines()
-    active = bool(changed or revised or maintained)
+    native_tv = git(root, 'diff', '--name-only', base, candidate, '--', 'content/tv-publications/').decode().splitlines()
+    active = bool(changed or revised or maintained or native_tv)
     if not active and not (include_baseline and records):
         return None
     check_context(base, candidate)
@@ -160,7 +161,7 @@ def verified_publication(base, root=ROOT, include_baseline=False):
             require(plan.get('schema') == 'sayd-publication-plan-v1' and plan.get('base_commit') == base
                     and plan.get('compiler_commit') == base, 'Missing exact trusted compilation proof')
             require(tree(output, 'HEAD') == tree(root, candidate), 'Expected build is not exact candidate tree')
-            additions = () if (revised or maintained) else tuple(json.loads((output / path).read_text()) for path in changed)
+            additions = () if (revised or maintained or native_tv) else tuple(json.loads((output / path).read_text()) for path in changed)
             revisions = ()
             if revised:
                 # The trusted compiler has replayed the complete candidate.

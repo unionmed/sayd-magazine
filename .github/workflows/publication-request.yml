@@ -6,6 +6,7 @@ on:
       - 'content/publications/**'
       - 'content/caption-revisions/**'
       - 'content/editorial-revisions/**'
+      - 'content/tv-publications/**'
 permissions:
   contents: read
 concurrency:

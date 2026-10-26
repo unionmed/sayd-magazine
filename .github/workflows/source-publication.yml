@@ -101,6 +101,7 @@ jobs:
           python -m unittest discover -s scripts -p 'test_scoped_photo_revision.py' -v
           python -m unittest discover -s scripts -p 'test_publication_request.py' -v
           python -m unittest discover -s scripts -p 'test_publication_chronology.py' -v
+          python -m unittest discover -s scripts -p 'test_tv_publication.py' -v
       - name: Prove a no-content build preserves the complete baseline
         run: |
           base="$(git rev-parse HEAD)"
@@ -135,7 +136,9 @@ jobs:
           pip install playwright==1.55.0 Pillow==11.3.0 lxml==5.3.2
           python -m playwright install --with-deps chromium
       - name: Test synthetic source-only articles and seven-photo gallery without publishing
-        run: python scripts/test_publication_browser_fixture.py --output "$RUNNER_TEMP/publication-browser-fixture"
+        run: |
+          python scripts/test_publication_browser_fixture.py --output "$RUNNER_TEMP/publication-browser-fixture"
+          python scripts/test_tv_publication_browser.py --output "$RUNNER_TEMP/publication-browser-fixture/native-tv"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:

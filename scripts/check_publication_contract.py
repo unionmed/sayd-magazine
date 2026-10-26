@@ -140,17 +140,25 @@ def check(base=None):
         from interview_collection import homepage_slugs
         def selected(d):
             return homepage_slugs(lang,c) if d['door']=='interviews' else d['slugs']
-        assert len(doors)==len(DOORS) and [len(g) for g in groups[3:]]==[10 if d['door']=='tv' else len(selected(d)) for d in c['ia_door_sections']],f'{lang}: door counts'
+        import tv_publication
+        native=bool((ROOT/tv_publication.SOURCE).is_file())
+        if native:tv_publication.check_published(ROOT)
+        assert len(doors)==len(DOORS) and [len(g) for g in groups[3:]]==[10+int(native) if d['door']=='tv' else len(selected(d)) for d in c['ia_door_sections']],f'{lang}: door counts'
         assert t.xpath('//section['+css_class('home-section')+']//h2/text()')==[d[{'ar':1,'en':2,'fr':3}[lang]] for d in DOORS], f'{lang}: door order'
         tv=doors[next(i for i,d in enumerate(DOORS) if d[0]=='tv')]
         assert tv.xpath('./div[@data-tv-group]/@data-tv-group')==contract['tv_structure']['groups'],f'{lang}: TV groups missing or reordered'
-        assert [len(nodes(g,'home-door-grid')[0].xpath('./article')) for g in tv.xpath('./div[@data-tv-group]')]==[7,3]
+        assert [len(nodes(g,'home-door-grid')[0].xpath('./article')) for g in tv.xpath('./div[@data-tv-group]')]==[7,3+int(native)]
         assert contract['counts']['tv']==c['layout_limits']['tv']==10
         assert contract['counts']['tv_channel']==7 and contract['counts']['tv_selections']==3
         slots=[]
         for group_index,group in enumerate(groups):
             row=[]
             for card in group:
+                if card.get('data-native-video'):
+                    assert native and card.get('data-native-video')==tv_publication.ID
+                    assert card.getparent().getparent().get('data-tv-group')=='sayd-selections'
+                    row.append(('native:'+tv_publication.ID,card.xpath('.//img/@src')))
+                    continue
                 if card.get('data-video-id'):
                     video=next((v for v in channel_videos if v['id']==card.get('data-video-id')),None)
                     assert video is not None,f'{lang}: unapproved channel card'
@@ -177,7 +185,7 @@ def check(base=None):
         for group in groups[1:3]:
             dates=[day(' '.join(n.xpath('.//*['+css_class('meta')+' or '+css_class('feed-date')+']/text()'))) for n in group]
             assert all(dates) and dates==sorted(dates,reverse=True),f'{lang}: dates out of order {dates}'
-        for d,row in zip(c['ia_door_sections'],slots[3:]):assert [s for s,_ in row]==(['youtube:'+v['id'] for v in channel_videos] if d['door']=='tv' else [])+selected(d),(lang,d['door'])
+        for d,row in zip(c['ia_door_sections'],slots[3:]):assert [s for s,_ in row]==(['youtube:'+v['id'] for v in channel_videos]+(['native:'+tv_publication.ID] if native else []) if d['door']=='tv' else [])+selected(d),(lang,d['door'])
         # Publication dates must descend within every lower homepage door.
         # Previously Wildlife placed a 20 September item ahead of 5 October.
         for idx,door in enumerate(c['ia_door_sections']):
@@ -196,7 +204,7 @@ def check(base=None):
         co_slug='حين-يتغير-الساحل-أين-تستريح-الطيور' if lang=='ar' else 'when-the-coast-changes-where-do-birds-rest'
         assert co_slug not in {slug(h) for h in wildlife_listing.xpath('//article//a/@href')}, f'{lang}: coastal story still in wildlife listing'
         assert co_slug in {slug(h) for h in hunting_listing.xpath('//article//a/@href')}, f'{lang}: coastal story missing from hunting listing'
-        assert [s for s,_ in slots[3+next(i for i,d in enumerate(DOORS) if d[0]=='tv')]]==['youtube:'+v['id'] for v in channel_videos]+contract['tv_slugs'],f'{lang}: protected TV order changed'
+        assert [s for s,_ in slots[3+next(i for i,d in enumerate(DOORS) if d[0]=='tv')]]==['youtube:'+v['id'] for v in channel_videos]+(['native:'+tv_publication.ID] if native else [])+contract['tv_slugs'],f'{lang}: protected TV order changed'
         interview_index=3+next(i for i,d in enumerate(DOORS) if d[0]=='interviews')
         interview_slots=slots[interview_index]
         assert len(interview_slots)==contract['counts']['interviews'][lang], f'{lang}: approved interview count changed'
