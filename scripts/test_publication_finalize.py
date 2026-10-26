@@ -411,6 +411,27 @@ class FinalizerTests(unittest.TestCase):
             with self.subTest(path=path), self.assertRaises(f.Blocked):
                 f.safe_output_path(path)
 
+    def test_two_editorial_revision_records_are_read_with_exact_hashes(self):
+        for name in ("wanaameen-jcsa-photo-20261026", "adonis-ticker-20261026"):
+            path = "content/editorial-revisions/" + name + ".json"
+            data = b'{"fixture":"path validation only, never publication authority"}\n'
+            self.write(self.site, path, data)
+            item = {"path": path, "mode": "100644", "status": "A", "old_blob": None,
+                    "new_blob": f.blob_sha(data), "sha256": hashlib.sha256(data).hexdigest(),
+                    "bytes": len(data)}
+            with self.subTest(path=path):
+                self.assertEqual(str(f.safe_output_path(path)), path)
+                self.assertEqual(f.read_change(self.site, item), data)
+                altered = dict(item, sha256="0" * 64)
+                with self.assertRaisesRegex(f.Blocked, "Output bytes changed"):
+                    f.read_change(self.site, altered)
+        for path in ("content/editorial-revisions/other.json",
+                     "content/editorial-revisions/adonis-ticker-20261026.py",
+                     "content/editorial-revisions/nested/adonis-ticker-20261026.json",
+                     "content/editorial-revisions/../publication-contract.json"):
+            with self.subTest(path=path), self.assertRaises(f.Blocked):
+                f.safe_output_path(path)
+
     def test_safe_path_blocks_code_and_protected_inputs(self):
         for path in ["../docs/index.html", "/docs/index.html", "docs//index.html", "docs/./index.html",
                      "docs/../README.md", "docs\\index.html", "docs/.git/config", "scripts/publish.py",
