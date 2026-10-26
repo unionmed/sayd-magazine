@@ -71,7 +71,7 @@ def validate_source(root, base, source):
     import editorial_revision
     if editorial_revision.revision_paths(tree(root, base), tree(root, source)):
         _, value, _, _, _ = editorial_revision.source_input(root, base, source)
-        require(scope == (value['operation'] == 'add-adonis-ticker'), 'Exact editorial review scope required')
+        require(scope == (value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead'}), 'Exact editorial review scope required')
         return scope
     if caption_revision.revision_paths(tree(root, base), tree(root, source)):
         require(not scope, 'Caption revision cannot authorize distribution')
