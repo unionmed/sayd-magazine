@@ -73,7 +73,7 @@ test('a weak itinerary gets at most one researched revision',async()=>{
  const respond=answer=>Response.json({status:'completed',output:[{type:'web_search_call',status:'completed',action:{sources:[{type:'url',url:'https://example.org/visit'}]}},{type:'message',content:[{type:'output_text',text:JSON.stringify(answer)}]}]});
  const h=createHandler(async(u,o)=>{calls++;if(calls===2)revision=JSON.parse(o.body);return respond(calls===1?weak:concretePlan());});
  const res=await h(req({mode:'plan',query:'جولة خفيفة في الشوف'}),env());assert.equal(res.status,200);assert.equal(calls,2);assert.equal(revision.max_tool_calls,2);assert.equal(revision.store,false);assert.ok(JSON.parse(revision.input).revision.draft.includes('دير القمر'));
- calls=0;const failed=await createHandler(async()=>{calls++;return respond(weak);})(req({mode:'plan'}),env());assert.equal(failed.status,502);assert.equal(calls,2);assert.equal((await failed.json()).error,'itinerary_unavailable');
+ calls=0;const failed=await createHandler(async()=>{calls++;return respond(weak);})(req({mode:'plan'}),env());assert.equal(failed.status,200);assert.equal(calls,2);const limitation=await failed.json();assert.equal(limitation.plan_review_required,true);assert.equal(limitation.verified,false);assert.equal(limitation.itinerary,undefined);
 });
 
 test('live regressions: laws are not stops, duplicates and mixed trails are rejected',async()=>{
