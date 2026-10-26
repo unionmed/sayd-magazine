@@ -116,7 +116,7 @@ def allowed_output_path(path):
         safe_path(path)
     except ValueError:
         return False
-    return bool(INPUT.fullmatch(path) or re.fullmatch(r'content/caption-revisions/[a-z0-9][a-z0-9-]{0,79}\.json', path) or path in CONFIGS
+    return bool(INPUT.fullmatch(path) or re.fullmatch(r'content/(?:caption|editorial)-revisions/[a-z0-9][a-z0-9-]{0,79}\.json', path) or path in CONFIGS
                 or re.fullmatch(r'content/(?:posts|en|fr)/[^/]+\.md', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?(?:posts/[^/]+|category/[^/]+|articles|stories)/index\.html', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?index\.html', path)
@@ -643,6 +643,9 @@ def compile_publication(root, base, source, output, report_path, allow_distribut
     require(not output.exists(), 'Output directory must not already exist')
     require(not output.is_relative_to(root), 'Build outside the source checkout')
     compiler = git(root, 'rev-parse', 'HEAD').decode().strip()
+    import editorial_revision
+    if editorial_revision.revision_paths(tree(root, base), tree(root, source)):
+        return editorial_revision.compile_source(root, base, source, output, report_path, allow_distribution)
     import caption_revision
     if caption_revision.revision_paths(tree(root, base), tree(root, source)):
         return caption_revision.compile_source(root, base, source, output, report_path, allow_distribution)
@@ -728,6 +731,9 @@ def verify_candidate(root, base, candidate, output, report_path):
     """Run from trusted BASE code, proving a generated PR is not source-only/tampered."""
     require(git(root, 'rev-parse', 'HEAD').decode().strip() == base, 'Candidate verification must execute trusted base checkout')
     before, after = tree(root, base), tree(root, candidate)
+    import editorial_revision
+    if editorial_revision.revision_paths(before, after):
+        return editorial_revision.verify(root, base, candidate, output, report_path)
     import caption_revision
     if caption_revision.revision_paths(before, after):
         return caption_revision.verify(root, base, candidate, output, report_path)

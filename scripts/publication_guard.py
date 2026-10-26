@@ -110,7 +110,8 @@ def verified_publication(base, root=ROOT, include_baseline=False):
     records = git(root, 'ls-tree', '-r', '--name-only', base, '--', 'content/publications/').decode().splitlines()
     changed = git(root, 'diff', '--name-only', base, candidate, '--', 'content/publications/').decode().splitlines()
     revised = git(root, 'diff', '--name-only', base, candidate, '--', 'content/caption-revisions/').decode().splitlines()
-    active = bool(changed or revised)
+    maintained = git(root, 'diff', '--name-only', base, candidate, '--', 'content/editorial-revisions/').decode().splitlines()
+    active = bool(changed or revised or maintained)
     if not active and not (include_baseline and records):
         return None
     check_context(base, candidate)
@@ -159,7 +160,7 @@ def verified_publication(base, root=ROOT, include_baseline=False):
             require(plan.get('schema') == 'sayd-publication-plan-v1' and plan.get('base_commit') == base
                     and plan.get('compiler_commit') == base, 'Missing exact trusted compilation proof')
             require(tree(output, 'HEAD') == tree(root, candidate), 'Expected build is not exact candidate tree')
-            additions = () if revised else tuple(json.loads((output / path).read_text()) for path in changed)
+            additions = () if (revised or maintained) else tuple(json.loads((output / path).read_text()) for path in changed)
             revisions = ()
             if revised:
                 # The trusted compiler has replayed the complete candidate.
@@ -169,6 +170,13 @@ def verified_publication(base, root=ROOT, include_baseline=False):
                 record = json.loads((trusted / ('content/publications/' + value['publication_id'] + '.json')).read_text())
                 article = next(a for a in record['articles'] if a['slugs']['ar'] == value['article_slug'])
                 revisions = tuple(caption_revision.effective_records(output, record, article))
+            if maintained:
+                # Exact trusted replay above proves all bytes. This metadata is
+                # for image/browser QA, not new placement authority.
+                import editorial_revision
+                value = json.loads((output / maintained[0]).read_text())
+                _, effective, _ = editorial_revision.expected_changes(trusted, base, value, maintained[0])
+                revisions = (effective,)
             site = output
         else:
             additions, revisions, site = (), (), trusted
@@ -176,7 +184,7 @@ def verified_publication(base, root=ROOT, include_baseline=False):
                 'Trusted compiler changed during verification')
         check_checkout(root, candidate)
         proof = Proof(root, site, base, candidate, additions, temp,
-                      "verified-caption-revision" if revised else ("compiled-publication" if changed else "baseline-publication"), revisions)
+                      "verified-editorial-revision" if maintained else ("verified-caption-revision" if revised else ("compiled-publication" if changed else "baseline-publication")), revisions)
         _proofs[key] = proof
         return proof
     except BaseException:

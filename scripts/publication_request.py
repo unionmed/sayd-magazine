@@ -68,6 +68,11 @@ def validate_source(root, base, source):
     sha(base); sha(source)
     require(source != base, 'Empty request')
     scope = request_scope(git(root, 'show', '-s', '--format=%B', source))
+    import editorial_revision
+    if editorial_revision.revision_paths(tree(root, base), tree(root, source)):
+        _, value, _, _, _ = editorial_revision.source_input(root, base, source)
+        require(scope == (value['operation'] == 'add-adonis-ticker'), 'Exact editorial review scope required')
+        return scope
     if caption_revision.revision_paths(tree(root, base), tree(root, source)):
         require(not scope, 'Caption revision cannot authorize distribution')
         caption_revision.source_input(root, base, source)
