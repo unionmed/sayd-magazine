@@ -154,3 +154,17 @@ def check_published(root):
         require(len(nodes)==1 and dom.tostring(nodes[0],with_tail=False)==dom.tostring(dom.fromstring(native_card(value,lang,poster)),with_tail=False),'Native selection card drift')
         require(len(home.xpath('//*[@data-tv-group="sayd-selections"]//article'))==4,'Four selections required')
     return value
+
+
+def historical_placement_snapshot(root, base):
+    """Legacy placement assertions use their pinned snapshot only after proof.
+
+    No new publication authority: either every current payload byte is unchanged,
+    or this exact new TV source has passed trusted BASE whole-tree replay.
+    """
+    import publication_guard as guard
+    root=Path(root).resolve()
+    if guard.unchanged_current_payload(base, root):return True
+    changed=guard.git(root,'diff','--name-only',base,'HEAD','--',SOURCE).decode().splitlines()
+    if changed != [SOURCE]:return False
+    return guard.verified_publication(base,root) is not None

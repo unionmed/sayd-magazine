@@ -6,14 +6,15 @@ from urllib.parse import unquote
 ROOT=Path(__file__).resolve().parents[1];DOCS=ROOT/'docs';A=json.loads((ROOT/'content/features/four-news-20261018.json').read_text())['articles'];BASE='15d82a6f1868c8d612ab5acc2e500bce19bb7dc8'
 old=json.loads(subprocess.check_output(['git','show',BASE+':content/homepage.json'],cwd=ROOT));new=json.loads((ROOT/'content/homepage.json').read_text())
 upper=new
-infrastructure_only=False
+historical_snapshot=False
 if os.environ.get('SAYD_BASE_COMMIT'):
- from publication_guard import unchanged_current_payload
- infrastructure_only=unchanged_current_payload(os.environ['SAYD_BASE_COMMIT'])
-if infrastructure_only:
+ from tv_publication import historical_placement_snapshot
+ historical_snapshot=historical_placement_snapshot(ROOT,os.environ['SAYD_BASE_COMMIT'])
+if historical_snapshot:
  # The full historical proof still executes on its immutable reviewed tree.
- # Current data must independently equal the exact PR base byte-for-byte; this
- # cannot authorize new content or exempt later editorial/media changes.
+ # Current payload is byte-identical to the exact PR base, or this exact TV
+ # insertion has independently replayed its entire tree from trusted BASE.
+ # Historical ticker membership is not a requirement to keep old news current.
  proof_head='3f675e6596614caa1eefbedaf79009e1afa51e36'
  with tempfile.TemporaryDirectory(prefix='sayd-original-four-news-gulf-') as temp:
   checkout=Path(temp)/'checkout'
@@ -69,8 +70,9 @@ elif new['ia_slots']['main']=='الشمال-إزالة-24750-متر-شباك-ا�
   assert approved_three_expected(prior,new) is not None
  upper=prior
 assert upper['featured']==old['featured'];assert upper['ia_slots']['main']==old['ia_slots']['main'];assert upper['ia_slots']['important']==old['ia_slots']['important'];assert len(new['ia_slots']['latest'])==8;assert len(new['ticker_entries'])==10
+placements=upper if historical_snapshot else new
 for a in A:
- ar=a['slugs']['ar'];assert new['primary_door'][ar]==a['door'];assert (ar in new['ia_slots']['latest'])==(a['placement']=='news');assert (ar in [x['slug'] for x in new['ticker_entries']])==(a['placement']=='news')
+ ar=a['slugs']['ar'];assert new['primary_door'][ar]==a['door'];assert (ar in placements['ia_slots']['latest'])==(a['placement']=='news');assert (ar in [x['slug'] for x in placements['ticker_entries']])==(a['placement']=='news')
  p=a['photos'][0];assert hashlib.sha256((DOCS/p['path']).read_bytes()).hexdigest()==p['sha256']
  for l in ['ar','en','fr']:
   f=DOCS/('' if l=='ar' else l)/'posts'/a['slugs'][l]/'index.html';s=f.read_text();t=html.fromstring(s);d=a['translations'][l];assert len(t.xpath('//h1'))==1 and t.xpath('//h1')[0].text_content()==d['title'];body=t.xpath('//article[@class="article-content"]')[0];plain=' '.join(body.text_content().split())

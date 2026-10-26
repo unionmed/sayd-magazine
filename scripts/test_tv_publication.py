@@ -1,5 +1,5 @@
 """Native TV insertion tests: immutable media, bounded paths and old content preservation."""
-import copy, hashlib, json, tempfile, unittest
+import copy, hashlib, json, os, tempfile, unittest
 from pathlib import Path
 from unittest.mock import patch
 import tv_publication as tv
@@ -54,5 +54,30 @@ class TVTests(unittest.TestCase):
         before={};after={tv.SOURCE:('100644','blob','1'*40),'scripts/evil.py':('100644','blob','2'*40)}
         with patch.object(c,'tree',side_effect=[before,after]):
             with self.assertRaises(ValueError):tv.source_input(ROOT,self.base,'b'*40)
+
+    def test_historical_snapshot_requires_unchanged_payload_or_exact_tv_replay(self):
+        import publication_guard as guard
+        with patch.object(guard,'unchanged_current_payload',return_value=True), patch.object(guard,'verified_publication') as replay:
+            self.assertTrue(tv.historical_placement_snapshot(ROOT,self.base));replay.assert_not_called()
+        with patch.object(guard,'unchanged_current_payload',return_value=False), patch.object(guard,'git',return_value=b'docs/index.html\n'), patch.object(guard,'verified_publication') as replay:
+            self.assertFalse(tv.historical_placement_snapshot(ROOT,self.base));replay.assert_not_called()
+        with patch.object(guard,'unchanged_current_payload',return_value=False), patch.object(guard,'git',return_value=(tv.SOURCE+'\n').encode()), patch.object(guard,'verified_publication',return_value=None):
+            self.assertFalse(tv.historical_placement_snapshot(ROOT,self.base))
+        with patch.object(guard,'unchanged_current_payload',return_value=False), patch.object(guard,'git',return_value=(tv.SOURCE+'\n').encode()), patch.object(guard,'verified_publication',side_effect=AssertionError('tampered tree')):
+            with self.assertRaises(AssertionError):tv.historical_placement_snapshot(ROOT,self.base)
+
+    def test_real_payload_mutation_cannot_claim_historical_snapshot(self):
+        import subprocess
+        with tempfile.TemporaryDirectory(prefix='native-tv-negative-') as temp:
+            root=Path(temp);(root/'docs').mkdir();(root/'docs/index.html').write_text('original')
+            def git(*args):return subprocess.check_output(['git','-C',str(root),*args],stderr=subprocess.PIPE)
+            git('init','-q');git('config','user.name','Isolated test');git('config','user.email','test@example.invalid')
+            git('add','.');git('commit','-qm','base');base=git('rev-parse','HEAD').decode().strip()
+            (root/'scripts').mkdir();(root/'scripts/fixture.py').write_text('# code-only change')
+            git('add','.');git('commit','-qm','infrastructure')
+            with patch.dict(os.environ,{'GITHUB_ACTIONS':'false','SAYD_PUBLICATION_HEAD':''}):
+                self.assertTrue(tv.historical_placement_snapshot(root,base))
+                (root/'docs/index.html').write_text('unauthorized ticker change');git('add','.');git('commit','-qm','tamper')
+                self.assertFalse(tv.historical_placement_snapshot(root,base))
 
 if __name__=='__main__':unittest.main()
