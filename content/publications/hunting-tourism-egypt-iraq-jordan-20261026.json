@@ -1,0 +1,332 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "hunting-tourism-egypt-iraq-jordan-20261026",
+  "expected_base": "1cdc768ddb0904b6e3e1bad69d7f01420ace5552",
+  "approval_reference": "private:Sentinel_49c938e2555481918097332ef628a095",
+  "bank_search_reference": "Sayd picture for use: libfile_a10e46f8b304819194d841bd5ca7e919; libfile_b037e5562cac819181b9766da43f5907; libfile_fc6da7465c988191a9172f65c312e0b4",
+  "photos": [
+    {
+      "id": "cover",
+      "path": "docs/media/publications/hunting-tourism-egypt-iraq-jordan-20261026/iraq-marsh-boat.jpg",
+      "sha256": "3275c20bff603c82946032e3ace63aa95f6ee18f4d7bde57e1e06473564c0ff0",
+      "source_sha256": "3275c20bff603c82946032e3ace63aa95f6ee18f4d7bde57e1e06473564c0ff0",
+      "source_reference": "The Shakhtoor, a transportation device in the Iraqi marshes; Ahmed Alsarraf; 2016-04-08; Wikimedia Commons; unchanged original; Library libfile_a10e46f8b304819194d841bd5ca7e919.",
+      "source_url": "https://commons.wikimedia.org/w/index.php?curid=58425446",
+      "rights": {
+        "status": "licensed",
+        "statement": "Creative Commons Attribution-ShareAlike 4.0. Creator, title, source and licence acknowledged; original image unchanged.",
+        "evidence_reference": "https://commons.wikimedia.org/w/index.php?curid=58425446",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "alt": {
+        "ar": "زورق تقليدي في الأهوار العراقية؛ النقل والإرشاد من الخدمات المرتبطة بزيارة البيئات الطبيعية.",
+        "en": "A traditional boat in the Iraqi marshes; transport and guiding are among the services associated with visits to natural environments.",
+        "fr": "Une embarcation traditionnelle dans les marais irakiens ; transport et accompagnement font partie des services liés à la visite des milieux naturels."
+      },
+      "caption": {
+        "ar": "زورق تقليدي في الأهوار العراقية؛ النقل والإرشاد من الخدمات المرتبطة بزيارة البيئات الطبيعية.",
+        "en": "A traditional boat in the Iraqi marshes; transport and guiding are among the services associated with visits to natural environments.",
+        "fr": "Une embarcation traditionnelle dans les marais irakiens ; transport et accompagnement font partie des services liés à la visite des milieux naturels."
+      }
+    },
+    {
+      "id": "egypt",
+      "path": "docs/media/publications/hunting-tourism-egypt-iraq-jordan-20261026/egypt-qarun-lake.jpg",
+      "sha256": "cd2a7c23c53b3ea98e552dab4f7760aa596220a3ec8f4fda9683650a3142aa6a",
+      "source_sha256": "cd2a7c23c53b3ea98e552dab4f7760aa596220a3ec8f4fda9683650a3142aa6a",
+      "source_reference": "QarunLake; Roland Unger; 2003-03-07; Wikimedia Commons; unchanged original; Library libfile_b037e5562cac819181b9766da43f5907.",
+      "source_url": "https://commons.wikimedia.org/w/index.php?curid=22693876",
+      "rights": {
+        "status": "licensed",
+        "statement": "Creative Commons Attribution-ShareAlike 3.0. Creator, title, source and licence acknowledged; original image unchanged.",
+        "evidence_reference": "https://commons.wikimedia.org/w/index.php?curid=22693876",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "alt": {
+        "ar": "بحيرة قارون في الفيوم؛ تنوّع طبيعي يمكن أن يثري تجربة الزائر.",
+        "en": "Lake Qarun in Fayoum: natural diversity that can enrich the visitor experience.",
+        "fr": "Le lac Qaroun au Fayoum : une diversité naturelle qui peut enrichir l’expérience du visiteur."
+      },
+      "caption": {
+        "ar": "بحيرة قارون في الفيوم؛ تنوّع طبيعي يمكن أن يثري تجربة الزائر.",
+        "en": "Lake Qarun in Fayoum: natural diversity that can enrich the visitor experience.",
+        "fr": "Le lac Qaroun au Fayoum : une diversité naturelle qui peut enrichir l’expérience du visiteur."
+      }
+    },
+    {
+      "id": "jordan",
+      "path": "docs/media/publications/hunting-tourism-egypt-iraq-jordan-20261026/qasr-burqu-and-lake.jpg",
+      "sha256": "fe16a1e3f066cb1449d19d2baf15c1866fdc6857fa16ba9156dfbae4040c4520",
+      "source_sha256": "fe16a1e3f066cb1449d19d2baf15c1866fdc6857fa16ba9156dfbae4040c4520",
+      "source_reference": "Qasr Burqu’ and Lake; Bashar Tabbah; 2013-04-26; Wikimedia Commons; unchanged original; Library libfile_fc6da7465c988191a9172f65c312e0b4.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Qasr_Burqu%E2%80%99_and_Lake.jpg",
+      "rights": {
+        "status": "licensed",
+        "statement": "Creative Commons Attribution-ShareAlike 4.0. Creator, title, source and licence acknowledged; original image unchanged.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Qasr_Burqu%E2%80%99_and_Lake.jpg",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "alt": {
+        "ar": "قصر برقع والبحيرة في البادية الأردنية — صورة أرشيفية",
+        "en": "Qasr Burqu and the lake in Jordan’s Badia — archive photo",
+        "fr": "Qasr Burqu et le lac dans la Badia jordanienne — photo d’archives"
+      },
+      "caption": {
+        "ar": "قصر برقع والبحيرة في البادية الأردنية — صورة أرشيفية",
+        "en": "Qasr Burqu and the lake in Jordan’s Badia — archive photo",
+        "fr": "Qasr Burqu et le lac dans la Badia jordanienne — photo d’archives"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الصيد-السياحي-في-مصر-والعراق-والأردن",
+        "en": "hunting-tourism-egypt-iraq-jordan",
+        "fr": "tourisme-cynegetique-egypte-irak-jordanie"
+      },
+      "published": "2026-10-26",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "cover",
+        "egypt",
+        "jordan"
+      ],
+      "translations": {
+        "en": {
+          "title": "Hunting Tourism in Egypt, Iraq and Jordan",
+          "subtitle": "Local services, the cost of organising a trip and falconry in Burqu: three different ways of examining how hunting tourism can contribute to development.",
+          "meta_description": "Egypt, Iraq and Jordan: how accommodation, guiding, transport and falconry connect hunting tourism with local services and development.",
+          "kicker": "Hunting as Tourism and a Resource for Development — 3 of 3",
+          "sections": [
+            {
+              "paragraphs": [
+                "When a hunter travels to another country, they are not buying only an opportunity to hunt. They need somewhere to sleep, a guide who knows the terrain, transport, food and services throughout the trip. This is where economic value can begin to reach villages and areas far from major tourism centres. But that benefit is not automatic: a trip may be expensive while local people receive very little of its value.",
+                "After our visits to the Gulf countries and the Maghreb, we conclude this series in Egypt, Iraq and Jordan. Three different cases raise one question: how can regulated hunting, where it is permitted, become an activity that serves the local economy without depleting the wildlife on which it depends?"
+              ]
+            },
+            {
+              "heading": "Egypt: the value of a trip lies in what surrounds the hunt",
+              "paragraphs": [
+                "Egypt offers enough variety to combine several experiences in one trip. In Fayoum, for example, the Egyptian Tourism Authority presents a mix of countryside, lakes, desert, traditional crafts and local food. These services can extend a visitor’s stay and spending, rather than limiting the visit to one activity and a few hours.",
+                "For the organiser of a licensed hunting trip, this means opportunities to buy services from rural accommodation providers, hire local drivers and guides, and add a craft visit or a meal featuring the area’s cuisine. But the presence of a lake or an abundance of birds does not make a place available for hunting. The tourism product must be built around the permits, species, sites and dates that are allowed, not an attractive advertising photograph.",
+                "In 2026, the Egyptian Environmental Affairs Agency announced the implementation of Decision No. 559 regulating hunting, alongside campaigns against violations in Burullus. These measures show that regulating the season and protecting places where birds congregate are two aspects of managing the same resource. A responsible trip cannot be marketed outside the rules that protect it.",
+                "Burullus also offers a practical example of broadening bird-related sources of income. Nature Conservation Egypt reports that a programme began in 2023 to train bird hunters and a local tourism agency in birdwatching, and that Camp Burullus worked with a hunter who uses his boat for these trips. The man retained the value of his knowledge of the area and the usefulness of his boat while offering visitors a different service.",
+                "This does not make birdwatching another name for hunting. It demonstrates how local work can be diversified, particularly where hunting is prohibited at a site or its season has ended. A guide who understands birds’ movements can also help people watch and photograph them, while boats, accommodation and food retain their value after the season ends."
+              ]
+            },
+            {
+              "heading": "A broader trip, a wider benefit",
+              "paragraphs": [
+                "Accommodation, guiding, transport, food and local crafts widen the circle of people who benefit from a hunter’s visit, without requiring more game to be taken."
+              ]
+            },
+            {
+              "heading": "Iraq: regulating entry is not enough to create development",
+              "paragraphs": [
+                "Iraq’s rules for the 2025–2026 season clearly illustrate that receiving foreign hunting groups requires arrangements extending beyond booking accommodation. The document published through the UAE Embassy in Baghdad set a season from 1 December 2025 to 1 February 2026, with groups of five to fifteen hunters, entry procedures, security escorts and a temporary hunting permit from the Ministry of Agriculture.",
+                "The cost table listed US$125,000 for a group of five hunters, including US$25,000 for food and transport for the accompanying security detachments. These figures concern the arrangements for that particular season. They are not a current price for a tourism package, nor evidence of how much reached local communities.",
+                "This is the economic question: what share goes towards procedures and security services, and what share becomes wages for local guides, purchases from producers, accommodation, meals and transport within the area? Regulatory fees and costs alone do not answer that question, however high they may be.",
+                "If this activity is to serve development, local services should be an explicit part of its design: contracts with transport and accommodation providers, training for guides who know the permitted species and limits, and purchases whose benefits to local people can be tracked. Protecting habitats and water remains a prerequisite for the continuity of any economy that depends on wildlife.",
+                "Discussing Iraq’s wetlands here does not automatically make the marshes hunting grounds. Their tourism and ecological value is broader than that, and any activity must comply with the site’s legal status and applicable restrictions. Nor do the rules for a past season establish that a new season has opened on the same terms."
+              ]
+            },
+            {
+              "heading": "Where does a visitor’s spending go?",
+              "paragraphs": [
+                "Measuring local wages and purchases reveals a trip’s contribution to development more accurately than looking only at the amount of its fees."
+              ]
+            },
+            {
+              "heading": "Jordan: falconry becomes a tourism experience in Burqu",
+              "paragraphs": [
+                "In the northeastern Badia, the Burqu area provides a direct example of the connection between hunting with falcons and travel and accommodation services. The Royal Society for the Conservation of Nature presents an experience in training falcons using captive-bred houbara bustards, within an area covering no more than 20% of the reserve. In November 2025, the society included Burqu’s sustainable-hunting experience among successful case studies implemented in its reserves.",
+                "The tourism dimension of this experience is apparent in the programme offered to visitors to Jordan by Falconry Experiences. According to its published services, the trip begins with the reception of falconers at Queen Alia International Airport or the Al-Omari border crossing. It includes accommodation, meals, four-wheel-drive transport and guides, as well as facilities for caring for falcons. The visitor is buying not an isolated activity but a trip combining hospitality, transport, guiding and specialist services.",
+                "This is not an invitation to hunt wild birds without restrictions. Under the programme rules published by the company, captive-bred houbara are specified for falcon training, and the use of guns is excluded from this experience. The distinction matters: organised falconry tourism does not mean opening the entire reserve to hunting or treating wild houbara populations as a resource freely available to visitors.",
+                "Through these advertised services, Burqu shows how a trip’s economic value extends to what surrounds the hunt: accommodation, food, transport, field knowledge and bird care. These are the services that can connect visitors with the area’s economy, rather than reducing a visit to the number of birds taken. How much of that value reaches residents, however, requires data on employment and local procurement. The existence of a programme cannot be turned into an assumed number of jobs or an unverified revenue figure."
+              ]
+            },
+            {
+              "heading": "A complete trip, not unrestricted hunting",
+              "paragraphs": [
+                "Falcon training with captive-bred houbara, accommodation, transport and guiding are specific elements of the Burqu experience, not general permission to hunt wild birds."
+              ]
+            },
+            {
+              "heading": "What remains for local people?",
+              "paragraphs": [
+                "This tour brings together three lessons: diversify the services within a trip, distinguish its cost from the share that reaches residents, and connect the activity with specific travel and accommodation services. Successful hunting tourism does not require open-ended promises of abundant game. It needs a protected natural resource, enforceable rules and a service that makes visitors want to return.",
+                "At the end of this series, the yardstick remains simple: when a hunter leaves, do they leave behind income, skills and opportunities for the local community, while wildlife remains capable of renewing itself? Only then does the idea of hunting as a resource for development become more than an appealing headline.",
+                "Sources: Egyptian Tourism Authority; Egyptian Environmental Affairs Agency; Nature Conservation Egypt; Iraq’s 2025–2026 hunting-season rules published through the UAE Embassy in Baghdad; the Royal Society for the Conservation of Nature in Jordan; the Jordan programme and services published by Falconry Experiences."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photos via Wikimedia Commons: Ahmed Alsarraf — “The Shakhtoor, a transportation device in the Iraqi marshes” (CC BY-SA 4.0); Roland Unger — “QarunLake” (CC BY-SA 3.0); Bashar Tabbah — “Qasr Burqu’ and Lake” (CC BY-SA 4.0). Original images unchanged.",
+          "ticker_title": "Hunting Tourism in Egypt, Iraq and Jordan"
+        },
+        "fr": {
+          "title": "Le tourisme cynégétique en Égypte, en Irak et en Jordanie",
+          "subtitle": "Services locaux, coût d’organisation des séjours et fauconnerie à Burqu : trois façons d’examiner la contribution possible du tourisme cynégétique au développement.",
+          "meta_description": "Égypte, Irak et Jordanie : hébergement, accompagnement, transport et fauconnerie relient tourisme cynégétique, services locaux et développement.",
+          "kicker": "La chasse, tourisme et ressource de développement — 3 sur 3",
+          "sections": [
+            {
+              "paragraphs": [
+                "Lorsqu’un chasseur se rend dans un autre pays, il n’achète pas seulement la possibilité de chasser. Il a besoin d’un lieu où dormir, d’un guide connaissant le terrain, de moyens de transport, de repas et de services tout au long du séjour. C’est là que commence la valeur économique susceptible de bénéficier aux villages et aux régions éloignées des grands centres touristiques. Mais ces retombées ne sont pas automatiques : un voyage peut coûter cher et ne laisser qu’une faible part de sa valeur aux habitants.",
+                "Après notre parcours dans les pays du Golfe et du Maghreb, nous terminons cette série en Égypte, en Irak et en Jordanie. Trois situations différentes posent une même question : comment la chasse encadrée, là où elle est autorisée, peut-elle servir l’économie locale sans épuiser la faune sauvage dont elle dépend ?"
+              ]
+            },
+            {
+              "heading": "Égypte : la valeur du séjour se trouve aussi autour de la chasse",
+              "paragraphs": [
+                "La diversité de l’Égypte permet de réunir plusieurs expériences dans un même voyage. Au Fayoum, par exemple, l’Office égyptien du tourisme présente un ensemble associant campagne, lacs, désert, artisanat traditionnel et cuisine locale. Ces services peuvent prolonger le séjour et accroître les dépenses du visiteur, au lieu de limiter sa venue à une seule activité et à quelques heures.",
+                "Pour l’organisateur d’un séjour de chasse autorisé, cela ouvre la possibilité de faire appel à des hébergements ruraux, d’engager des chauffeurs et des guides locaux, et d’ajouter une visite artisanale ou un repas mettant à l’honneur la cuisine de la région. Mais la présence d’un lac ou l’abondance d’oiseaux ne suffit pas à rendre un lieu accessible à la chasse. Le produit touristique doit reposer sur les permis, les espèces, les sites et les dates autorisés, et non sur une photographie publicitaire attrayante.",
+                "En 2026, l’Agence égyptienne des affaires environnementales a annoncé l’application de la décision no 559 réglementant la chasse, parallèlement à des campagnes contre les infractions à Burullus. Ces mesures montrent que l’encadrement de la saison et la protection des lieux de rassemblement des oiseaux sont deux aspects de la gestion d’une même ressource. Un séjour responsable ne peut être commercialisé en dehors des règles qui la protègent.",
+                "Burullus offre également un exemple concret de diversification des revenus liés aux oiseaux. Nature Conservation Egypt indique qu’un programme a commencé en 2023 pour former des chasseurs d’oiseaux et une agence touristique locale à l’observation ornithologique, et que Camp Burullus a collaboré avec un chasseur qui utilise son bateau pour ces sorties. Cet homme a ainsi conservé la valeur de sa connaissance des lieux et l’utilité de son embarcation, tout en proposant un service différent aux visiteurs.",
+                "Cela ne fait pas de l’observation des oiseaux un autre nom pour la chasse. Cet exemple montre plutôt comment diversifier les activités locales, notamment lorsque la chasse est interdite sur un site ou que sa saison est terminée. Un guide qui connaît les déplacements des oiseaux peut aussi aider à les observer et à les photographier ; le bateau, l’hébergement et la restauration conservent leur valeur après la fin de la saison."
+              ]
+            },
+            {
+              "heading": "Un séjour plus riche, des bénéfices plus largement répartis",
+              "paragraphs": [
+                "L’hébergement, l’accompagnement, le transport, la restauration et l’artisanat local élargissent le cercle des bénéficiaires de la visite d’un chasseur, sans nécessiter davantage de prélèvements."
+              ]
+            },
+            {
+              "heading": "Irak : encadrer l’entrée ne suffit pas à créer du développement",
+              "paragraphs": [
+                "Les règles irakiennes de la saison 2025–2026 illustrent clairement que l’accueil de groupes de chasseurs étrangers exige des dispositions allant au-delà de la réservation d’un hébergement. Le document publié par l’intermédiaire de l’ambassade des Émirats arabes unis à Bagdad fixait une saison du 1er décembre 2025 au 1er février 2026, avec des groupes de cinq à quinze chasseurs, des procédures d’entrée, des escortes de sécurité et un permis de chasse temporaire délivré par le ministère de l’Agriculture.",
+                "Le barème des coûts indiquait 125 000 dollars américains pour un groupe de cinq chasseurs, dont 25 000 dollars pour la nourriture et le transport des détachements de sécurité accompagnateurs. Ces chiffres concernent les dispositions propres à cette saison. Ils ne constituent ni un tarif actuel de séjour touristique ni une mesure des sommes effectivement revenues aux communautés locales.",
+                "La question économique est donc la suivante : quelle part finance les procédures et les services de sécurité, et quelle part devient salaires pour les guides locaux, achats auprès des producteurs, hébergement, repas et transport dans la région ? Les droits et les coûts réglementaires, même élevés, ne répondent pas à eux seuls à cette question.",
+                "Pour que cette activité contribue au développement, les services locaux doivent être explicitement intégrés à sa conception : contrats avec les prestataires de transport et d’hébergement, formation de guides connaissant les espèces et les limites autorisées, et achats dont les retombées pour les habitants peuvent être suivies. La protection des habitats et de l’eau reste une condition de la pérennité de toute économie dépendant de la faune sauvage.",
+                "Évoquer ici les zones humides irakiennes ne fait pas automatiquement des marais des terrains de chasse. Leur valeur touristique et écologique est plus large, et toute activité doit respecter le statut juridique du site ainsi que les restrictions applicables. De même, les règles d’une saison passée ne prouvent pas qu’une nouvelle saison a été ouverte aux mêmes conditions."
+              ]
+            },
+            {
+              "heading": "Où vont les dépenses du visiteur ?",
+              "paragraphs": [
+                "Mesurer les salaires et les achats locaux révèle plus précisément l’apport d’un séjour au développement que le seul montant des droits acquittés."
+              ]
+            },
+            {
+              "heading": "Jordanie : la fauconnerie devient une expérience touristique à Burqu",
+              "paragraphs": [
+                "Dans la Badia du nord-est, la région de Burqu offre un exemple direct du lien entre chasse au faucon et services de voyage et d’hébergement. La Société royale pour la conservation de la nature présente une expérience d’entraînement des faucons avec des outardes houbara élevées en captivité, dans un secteur ne dépassant pas 20 % de la réserve. En novembre 2025, elle a inclus l’expérience de chasse durable de Burqu parmi les études de cas réussies mises en œuvre dans ses réserves.",
+                "La dimension touristique de cette expérience apparaît dans le programme que Falconry Experiences propose aux visiteurs de la Jordanie. Selon les services publiés par l’entreprise, le voyage commence par l’accueil des fauconniers à l’aéroport international Queen Alia ou au poste-frontière d’Al-Omari. Il comprend l’hébergement, les repas, les déplacements en véhicules tout-terrain et l’accompagnement par des guides, ainsi que des installations pour les soins aux faucons. Le visiteur n’achète donc pas une activité isolée, mais un séjour associant hospitalité, transport, accompagnement et services spécialisés.",
+                "Il ne s’agit pas d’une invitation à chasser les oiseaux sauvages sans restrictions. D’après les règles du programme publiées par l’entreprise, l’entraînement des faucons utilise des outardes houbara élevées en captivité et exclut l’usage des fusils dans cette expérience. La distinction est importante : un tourisme de fauconnerie encadré ne signifie ni ouvrir toute la réserve à la chasse ni considérer les populations sauvages de houbara comme une ressource librement accessible aux visiteurs.",
+                "À travers ces services annoncés, Burqu montre comment la valeur économique du séjour s’étend à ce qui entoure la chasse : hébergement, restauration, transport, connaissance du terrain et soins aux oiseaux. Ces services peuvent relier le visiteur à l’économie de la région, plutôt que de réduire son séjour au nombre de prises. La part qui revient effectivement aux habitants nécessite toutefois des données sur l’emploi et les achats locaux. L’existence du programme ne permet pas d’inventer un nombre d’emplois ou un montant de recettes."
+              ]
+            },
+            {
+              "heading": "Un séjour complet, pas une chasse sans limites",
+              "paragraphs": [
+                "Entraînement des faucons avec des outardes houbara élevées en captivité, hébergement, transport et accompagnement : ce sont des composantes précises de l’expérience de Burqu, et non une autorisation générale de chasser les oiseaux sauvages."
+              ]
+            },
+            {
+              "heading": "Que reste-t-il aux habitants ?",
+              "paragraphs": [
+                "Ce parcours réunit trois enseignements : diversifier les services du séjour, distinguer son coût de la part qui revient aux habitants, et relier l’activité à des prestations précises de voyage et d’hébergement. La réussite du tourisme cynégétique n’exige pas de promesses illimitées d’abondance de gibier. Elle suppose une ressource naturelle préservée, des règles applicables et une qualité de service qui donne envie au visiteur de revenir.",
+                "Au terme de cette série, le critère reste simple : lorsqu’un chasseur repart, laisse-t-il derrière lui des revenus, des compétences et des possibilités pour la population locale, tout en permettant à la faune sauvage de se renouveler ? Alors seulement, la chasse comme ressource de développement devient autre chose qu’un titre séduisant.",
+                "Sources : Office égyptien du tourisme ; Agence égyptienne des affaires environnementales ; Nature Conservation Egypt ; règles de la saison de chasse 2025–2026 en Irak publiées par l’intermédiaire de l’ambassade des Émirats arabes unis à Bagdad ; Société royale pour la conservation de la nature en Jordanie ; programme en Jordanie et services publiés par Falconry Experiences."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photos via Wikimedia Commons : Ahmed Alsarraf — “The Shakhtoor, a transportation device in the Iraqi marshes” (CC BY-SA 4.0); Roland Unger — “QarunLake” (CC BY-SA 3.0); Bashar Tabbah — “Qasr Burqu’ and Lake” (CC BY-SA 4.0). Images originales non modifiées.",
+          "ticker_title": "Le tourisme cynégétique en Égypte, en Irak et en Jordanie"
+        },
+        "ar": {
+          "title": "الصيد السياحي في مصر والعراق والأردن",
+          "subtitle": "الخدمات المحلية وكلفة تنظيم الرحلة وتجربة الصقارة في برقع: ثلاث حالات لفهم علاقة الصيد السياحي بالتنمية.",
+          "meta_description": "مصر والعراق والأردن: كيف تربط الإقامة والإرشاد والنقل والصقارة الصيد السياحي بالخدمات المحلية والتنمية؟",
+          "kicker": "الصيد كسياحة ومورد تنمية ٣ من ٣",
+          "sections": [
+            {
+              "paragraphs": [
+                "حين يسافر الصياد إلى بلد آخر، لا يشتري فرصة الصيد وحدها. فهو يحتاج إلى مكان ينام فيه، ودليل يعرف الأرض، ووسيلة نقل، وطعام وخدمات ترافق رحلته. هنا تبدأ القيمة الاقتصادية التي يمكن أن تصل إلى القرى والمناطق البعيدة عن المراكز السياحية الكبرى. لكن وصولها ليس تلقائيًا؛ فقد ترتفع كلفة الرحلة، ولا ينال أهل المكان منها إلا القليل.",
+                "بعد جولتنا في بلدان الخليج ودول المغرب العربي، نختتم هذه السلسلة في مصر والعراق والأردن. ثلاث حالات مختلفة تطرح سؤالًا واحدًا: كيف يتحول الصيد المنظّم، حيث يُسمح به، إلى نشاط يخدم الاقتصاد المحلي، من دون أن يستهلك الحياة البرية التي يقوم عليها؟"
+              ]
+            },
+            {
+              "heading": "مصر: قيمة الرحلة في ما يحيط بالصيد",
+              "paragraphs": [
+                "تملك مصر تنوعًا يسمح بجمع أكثر من تجربة في رحلة واحدة. وفي الفيوم، مثلًا، تعرض هيئة تنشيط السياحة مزيجًا من الريف والبحيرات والصحراء والحرف التقليدية والطعام المحلي. هذه الخدمات تستطيع أن تزيد مدة إقامة الزائر وإنفاقه، بدل أن تبقى زيارته مرتبطة بنشاط واحد وساعات محدودة.",
+                "بالنسبة إلى منظّم رحلة صيد مرخّصة، يعني ذلك إمكان شراء خدمات من أصحاب الإقامة الريفية، والاستعانة بسائقين وأدلاء محليين، وإضافة زيارة حرفية أو وجبة من مطبخ المنطقة. لكن وجود البحيرة أو كثرة الطيور لا يكفيان لاعتبار المكان متاحًا للصيد؛ فالمنتج السياحي يجب أن يُبنى على التصاريح والأنواع والمواقع والمواعيد المسموح بها، لا على صورة جذابة في إعلان.",
+                "وفي عام 2026، أعلن جهاز شؤون البيئة تطبيق القرار رقم 559 المنظّم لأعمال الصيد، بالتوازي مع حملات لمواجهة المخالفات في البرلس. وتوضح هذه الإجراءات أن تنظيم الموسم وحماية مناطق تجمع الطيور وجهان لإدارة المورد نفسه؛ إذ لا يمكن تسويق رحلة مسؤولة خارج الضوابط التي تحميه.",
+                "ومن البرلس يأتي مثال عملي على توسيع مصادر الدخل المرتبطة بالطيور. تذكر جمعية حماية الطبيعة في مصر أن برنامجًا بدأ عام 2023 لتدريب صيادي طيور وجهة سياحية محلية على مراقبة الطيور، وأن جهة «كامب برلس» تعاونت مع صياد يستخدم قاربه في هذه الرحلات. هنا احتفظ الرجل بقيمة معرفته بالمكان وبفائدة قاربه، مع تقديم خدمة مختلفة للزائر.",
+                "ولا يحوّل ذلك مراقبة الطيور إلى اسم آخر للصيد، بل يبيّن إمكان تنويع العمل المحلي، خصوصًا عندما يُمنع الصيد في موقع أو يتوقف موسمه. فالدليل الذي يعرف حركة الطيور يستطيع أن يساعد على مشاهدتها وتصويرها أيضًا، والمركب والإقامة والطعام لا تفقد قيمتها بانتهاء الموسم."
+              ]
+            },
+            {
+              "heading": "رحلة أوسع، منفعة أكبر",
+              "paragraphs": [
+                "الإقامة والإرشاد والنقل والطعام والحرف المحلية توسّع دائرة المستفيدين من زيارة الصياد، من دون الحاجة إلى زيادة عدد الطرائد."
+              ]
+            },
+            {
+              "heading": "العراق: تنظيم الدخول لا يكفي لصناعة التنمية",
+              "paragraphs": [
+                "تقدّم الضوابط العراقية لموسم 2025–2026 مثالًا واضحًا على أن استقبال مجموعات الصيد الأجنبية يحتاج إلى ترتيبات تتجاوز حجز الإقامة. فالوثيقة المنشورة عبر سفارة الإمارات في بغداد حدّدت موسمًا من الأول من كانون الأول 2025 إلى الأول من شباط 2026، ومجموعات من خمسة إلى خمسة عشر صيادًا، مع إجراءات للدخول والمرافقة الأمنية وتصريح صيد مؤقت من وزارة الزراعة.",
+                "وأدرج جدول الكلفة مبلغ 125 ألف دولار لمجموعة من خمسة صيادين، يتضمن 25 ألف دولار لطعام وتنقّل المفارز الأمنية المرافقة. هذه أرقام تخص ترتيبات ذلك الموسم، وليست تسعيرة حالية لرحلة سياحية، ولا دليلًا على حجم ما وصل إلى المجتمعات المحلية.",
+                "وهنا تكمن المسألة الاقتصادية: ما الجزء الذي يذهب إلى الإجراءات والخدمات الأمنية، وما الجزء الذي يتحول إلى أجور أدلاء محليين، ومشتريات من المنتجين، وإقامة وطعام ونقل داخل المنطقة؟ لا تجيب الرسوم والكلف التنظيمية وحدها عن هذا السؤال، مهما ارتفعت.",
+                "إذا أريد لهذا النشاط أن يخدم التنمية، فينبغي أن تكون الخدمات المحلية جزءًا واضحًا من تصميمه: عقود مع مزوّدي النقل والإقامة، وتدريب لأدلاء يعرفون الأنواع والحدود المسموح بها، ومشتريات يمكن تتبّع استفادة أهل المنطقة منها. أما حماية الموائل والمياه، فتبقى شرطًا لاستمرار أي اقتصاد يعتمد على الحياة البرية.",
+                "والحديث عن الأراضي الرطبة العراقية هنا لا يجعل الأهوار تلقائيًا ساحات للصيد. قيمتها السياحية والبيئية أوسع من ذلك، وأي نشاط يجب أن يخضع لوضع الموقع القانوني والقيود المطبقة عليه. كما أن ضوابط موسم مضى لا تثبت فتح موسم جديد بالشروط نفسها."
+              ]
+            },
+            {
+              "heading": "أين يذهب إنفاق الزائر؟",
+              "paragraphs": [
+                "قياس الأجور والمشتريات المحلية يكشف أثر الرحلة التنموي بصورة أدق من الاكتفاء بقيمة رسومها."
+              ]
+            },
+            {
+              "heading": "الأردن: الصقارة تتحوّل إلى تجربة سياحية في برقع",
+              "paragraphs": [
+                "في البادية الشمالية الشرقية، تقدّم منطقة برقع مثالًا مباشرًا على ارتباط الصيد بالصقور بخدمات السفر والإقامة. وتعرض الجمعية الملكية لحماية الطبيعة تجربة تدريب الصقور على حبارى مكثّرة في الأسر، ضمن نطاق لا يتجاوز 20% من المحمية. وفي تشرين الثاني 2025، أدرجت الجمعية تجربة برقع في الصيد المستدام ضمن حالات دراسية ناجحة جرى تنفيذها في محمياتها.",
+                "أما الصورة السياحية لهذه التجربة، فتظهر في البرنامج الذي تعرضه شركة «فالكونري إكسبيرينسز» لزوار الأردن. فبحسب خدماتها المنشورة، تبدأ الرحلة باستقبال الصقارين في مطار الملكة علياء الدولي أو معبر العمري، وتضم الإقامة والوجبات والتنقّل بمركبات دفع رباعي ومرافقة مرشدين، إلى جانب مرافق للعناية بالصقور. هنا لا يشتري الزائر نشاطًا منفردًا؛ بل رحلة تتكامل فيها الضيافة والنقل والإرشاد والخدمات المتخصصة.",
+                "وهذه ليست دعوة إلى صيد الطيور البرية بلا قيود. فبحسب ضوابط البرنامج المنشورة لدى الشركة، يُحدَّد استخدام الحبارى المكثّرة في الأسر لتدريب الصقور، ويستبعد استعمال البنادق في هذه التجربة. والتمييز مهم: سياحة الصقارة المنظّمة لا تعني فتح المحمية كلها للصيد، ولا اعتبار مجموعات الحبارى البرية موردًا مفتوحًا للزائر.",
+                "تُظهر برقع، بهذه الخدمات المعلنة، كيف تمتد القيمة الاقتصادية للرحلة إلى ما حول الصيد: الإقامة والطعام والنقل والمعرفة الميدانية ورعاية الطيور. وهذه هي الخدمات التي يمكن أن تربط الزائر باقتصاد المنطقة، بدل اختزال الزيارة في عدد الطرائد. أما مقدار ما يعود منها إلى السكان، فيحتاج إلى بيانات عن التشغيل والتوريد المحلي؛ فلا يصح تحويل وجود البرنامج إلى رقم مفترض للوظائف أو الإيرادات."
+              ]
+            },
+            {
+              "heading": "رحلة متكاملة لا صيد مفتوح",
+              "paragraphs": [
+                "تدريب الصقور على حبارى مكثّرة في الأسر، وإقامة ونقل وإرشاد: عناصر محددة في تجربة برقع، وليست إباحة عامة لصيد الطيور البرية."
+              ]
+            },
+            {
+              "heading": "ما الذي يبقى لأهل المكان؟",
+              "paragraphs": [
+                "تجمع هذه الجولة ثلاثة دروس: تنويع خدمات الرحلة، والتمييز بين كلفتها وما يصل منها إلى السكان، وربط النشاط بخدمات سفر وإقامة محددة. ولا يحتاج نجاح الصيد السياحي إلى وعود مفتوحة بكثرة الطرائد؛ بل إلى مورد طبيعي مصان، وتنظيم يمكن تطبيقه، وخدمة تجعل الزائر يرغب في العودة.",
+                "وفي نهاية هذه السلسلة، يبقى المعيار بسيطًا: عندما يغادر الصياد، هل يترك وراءه دخلًا ومهارات وفرصًا لأهل المنطقة، مع بقاء الحياة البرية قادرة على التجدد؟ عندها فقط يصبح الحديث عن الصيد كمورد تنمية أكثر من عنوان جذاب.",
+                "المصادر: هيئة تنشيط السياحة المصرية؛ جهاز شؤون البيئة المصري؛ جمعية حماية الطبيعة في مصر؛ ضوابط موسم الصيد في العراق 2025–2026 المنشورة عبر سفارة دولة الإمارات في بغداد؛ الجمعية الملكية لحماية الطبيعة في الأردن؛ برنامج الأردن والخدمات المنشورة لدى شركة «فالكونري إكسبيرينسز»."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصور عبر ويكيميديا كومنز: Ahmed Alsarraf — “The Shakhtoor, a transportation device in the Iraqi marshes” (CC BY-SA 4.0)؛ Roland Unger — “QarunLake” (CC BY-SA 3.0)؛ Bashar Tabbah — “Qasr Burqu’ and Lake” (CC BY-SA 4.0). الصور الأصلية دون تعديل.",
+          "ticker_title": "الصيد السياحي في مصر والعراق والأردن"
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": true
+      },
+      "related": [
+        "الصيد-السياحي-في-بلدان-الخليج-العربية",
+        "الصيد-السياحي-في-دول-المغرب-العربي"
+      ]
+    }
+  ]
+}
