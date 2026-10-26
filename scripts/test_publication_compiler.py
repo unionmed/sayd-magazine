@@ -169,6 +169,38 @@ class ExactPodiumCardTests(unittest.TestCase):
                     self.assertIsNone(self.listing_image(article, photo, lang).get('style'))
 
 
+class ListingCountTests(unittest.TestCase):
+    def test_new_card_recounts_stale_heading_without_changing_existing_cards(self):
+        value = record()
+        article, photo = value['articles'][0], value['photos'][0]
+        for lang, title in (('ar', 'موسوعة الطيور'), ('en', 'Bird Encyclopedia')):
+            with self.subTest(lang=lang), tempfile.TemporaryDirectory() as temp:
+                stage = Path(temp)
+                path = stage / 'docs' / ('' if lang == 'ar' else lang) / 'category/fixture/index.html'
+                path.parent.mkdir(parents=True)
+                historical = '<article class="post-row"><p>Historical card unchanged</p></article>'
+                heading = '<div class="section-head"><h2>' + title + ' <span class="badge">20</span></h2></div>'
+                path.write_text('<main>' + heading + historical + '</main>')
+                compiler.insert_listing(stage, article, lang, photo, path)
+                updated = path.read_text()
+                self.assertIn(heading.replace('>20<', '>2<'), updated)
+                self.assertIn(historical, updated)
+                self.assertEqual(updated.count('<article '), 2)
+
+    def test_template_without_heading_count_keeps_unrelated_badge(self):
+        value = record()
+        with tempfile.TemporaryDirectory() as temp:
+            stage = Path(temp)
+            path = stage / 'docs/fr/category/fixture/index.html'
+            path.parent.mkdir(parents=True)
+            heading = '<div class="section-head accent-olive"><h1>Encyclopédie des oiseaux</h1></div>'
+            historical = '<article class="card"><span class="badge">20</span></article>'
+            path.write_text('<main>' + heading + historical + '</main>')
+            compiler.insert_listing(stage, value['articles'][0], 'fr', value['photos'][0], path)
+            self.assertIn(heading, path.read_text())
+            self.assertIn(historical, path.read_text())
+
+
 class SchemaTests(unittest.TestCase):
     def test_valid_record_and_external_licence(self):
         self.assertEqual(schema.validate(record())['schema'], 'sayd-publication-v1')
