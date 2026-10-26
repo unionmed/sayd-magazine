@@ -17,12 +17,17 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class CaptionRevisionTests(unittest.TestCase):
+    # Caption-only fixtures exercise the original archival photograph, even
+    # after a separately reviewed editorial operation replaces it on main.
+    fixture_base = '7da1242fe7777cc6a6388c4f14482cb09f1fb02c'
+
     @classmethod
     def setUpClass(cls):
         cls.temp = tempfile.TemporaryDirectory(prefix='sayd-caption-tests-')
         cls.root = Path(cls.temp.name) / 'repo'
-        subprocess.run(['git', 'clone', '-q', '--shared', str(ROOT), str(cls.root)], check=True)
-        original = compiler.git(cls.root, 'rev-parse', 'HEAD').decode().strip()
+        subprocess.run(['git', 'clone', '-q', '--shared', '--no-checkout', str(ROOT), str(cls.root)], check=True)
+        original = cls.fixture_base or compiler.git(cls.root, 'rev-parse', 'HEAD').decode().strip()
+        compiler.git(cls.root, 'checkout', '-q', '--detach', original)
         code = {str(p.relative_to(ROOT)): p.read_bytes() for p in (ROOT / 'scripts').glob('*.py')}
         cls.record = json.loads((cls.root / 'content/publications/riyadh-results-20261024.json').read_text())
         cls.article = cls.record['articles'][0]
@@ -289,7 +294,7 @@ class CaptionRevisionTests(unittest.TestCase):
             self.assertIn('2011',evidence['photos'][0]['source_reference'])
             # Prove the fixture bootstrap still works when real main already
             # contains the short captions and date-free visible alt/credit.
-            future_fixture=type('AlreadyCorrectedFixture',(CaptionRevisionTests,),{})
+            future_fixture=type('AlreadyCorrectedFixture',(CaptionRevisionTests,),{'fixture_base': None})
             with patch(__name__+'.ROOT',stage):
                 future_fixture.setUpClass()
                 try:
