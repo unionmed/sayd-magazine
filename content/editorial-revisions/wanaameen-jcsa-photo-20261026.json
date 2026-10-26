@@ -1,0 +1,66 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "wanaameen-jcsa-photo-20261026",
+  "expected_base": "7da1242fe7777cc6a6388c4f14482cb09f1fb02c",
+  "operation": "replace-wanaameen-photo",
+  "approval_reference": "private:Sentinel_2d45c1b1d47081918b026e9505ae7e69",
+  "expected_source_sha256": "3f1437a469f1c7aec3220996df6c14e426ec7e6f3772b2738a236ce9d48b0f76",
+  "expected_targets_sha256": "b0e1176e670f6e51ed6b3258571fbab280ad9c897d428c44139de3194480dc38",
+  "payload": {
+    "photo": {
+      "id": "wanaameen-jcsa-47526",
+      "path": "docs/media/publications/riyadh-results-20261024/wanaameen-riyadh-jcsa-20261024-47526.jpg",
+      "sha256": "1a70a6907cfb156a3ee5cfbf56ca967b45f2875a4e2f5e8b9e432419d0690934",
+      "source_sha256": "0ebb5a6f54f3a45f1db5353573f47345673272110ba5da5fc8033e7eb0c51e3a",
+      "source_reference": "JCSA ResourceSpace photograph 47526: Race 12, Meet 24, 24 October 2026; Wanaameen (KSA), King Abdulaziz Racecourse, Riyadh. Photographer: Ali Abdullah Alzunaydi. Official 2000 x 1333 rendition; original 4535 x 3023. Original Library libfile_b2e02873b62081918634af833b350ae9; rendition libfile_b5ecff79f2148191a29bce76b330ded6.",
+      "source_url": "https://jcsa.resourcespace.com/?r=47526",
+      "rights": {
+        "status": "permission",
+        "statement": "JCSA permission for editorial use only, with attribution to Jockey Club of Saudi Arabia / Ali Abdullah Alzunaydi. Permitted for descriptive newspaper or magazine articles, websites and social media, and non-commercial presentations. No advertising, promotional material, paid advertorial, resale products, books or non-official merchandise. Rights holders reserve the right to withdraw use. No open licence or unrestricted reuse is claimed.",
+        "evidence_reference": "Private JCSA permission and accepted download terms, 26 October 2026; Library rights record libfile_1c8532f175d88191a0fc635e3a60c299."
+      },
+      "alt": {
+        "ar": "«ونعمين» بقيادة كاميلو أوسبينا على المضمار الرملي في ميدان الملك عبدالعزيز بالرياض.",
+        "en": "Wanaameen ridden by Camilio Ospina on the dirt track at King Abdulaziz Racecourse in Riyadh.",
+        "fr": "Wanaameen monté par Camilio Ospina sur la piste en sable de l’hippodrome du roi Abdelaziz à Riyad."
+      },
+      "caption": {
+        "ar": "«ونعمين» في الشوط التحضيري لكأس الأمير محمد بن سعود الكبير، الرياض، 24 تشرين الأول 2026.",
+        "en": "Wanaameen in the Prince Mohammed bin Saud Al Kabeer Cup preparatory race, Riyadh, 24 October 2026.",
+        "fr": "Wanaameen lors de la préparatoire à la Coupe du prince Mohammed ben Saoud Al Kabeer, à Riyad, le 24 octobre 2026."
+      }
+    },
+    "photo_credit": {
+      "ar": "الصورة: نادي سباقات الخيل السعودي (JCSA) / Ali Abdullah Alzunaydi.",
+      "en": "Photo: Jockey Club of Saudi Arabia (JCSA) / Ali Abdullah Alzunaydi.",
+      "fr": "Photo : Jockey Club of Saudi Arabia (JCSA) / Ali Abdullah Alzunaydi."
+    },
+    "expected_sha256": {
+      "content/en/wanaameen-riyadh-prince-mohammed-cup-prep-2026.md": "64a894581d1dd6ef093071db2a4c9353e4ce98ecb5b6ca368934fc2a78a9ad2f",
+      "content/fr/wanaameen-riyad-preparatoire-coupe-prince-mohammed-2026.md": "d710722f8b91dee9e53edf9ac207275c59584b7c17c4634be7a28fe817d33c5a",
+      "content/homepage.json": "3fc6967a8920a1dfae94fdce56de7e7ee54ad2f62fe46a4a2110a9b98f583c01",
+      "content/posts/ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026.md": "9756bcc182dd3e05270465fa5bd3cb58e7ae264ecdcfeb6c00ae5eeecf6d363c",
+      "docs/articles/index.html": "b277206f82301f5b9bc8649dc674ed1bdb6615d4eee5e5382f3f36868cef6189",
+      "docs/assets/search/index-ar.json": "3d3d3f14888f67397a30a57caf7bb4bfbf575c8b5d55105e6457c99b21b6ad8b",
+      "docs/assets/search/index-en.json": "5d15b1fc0acc340e5f93c7ff4077adab4e9dc728a211a4a277cfc109f8c43a6a",
+      "docs/assets/search/index-fr.json": "3c293b9f0af2f6b0977d113e017badb326457ffe2383a7d7a06c10f7f9393073",
+      "docs/category/صيد/index.html": "7be731cfa4569376a7cdd7df532517c592da3b4f6f2db571c5879734cea1ca5d",
+      "docs/category/فروسية/index.html": "64213d5909a93e819ca22a65d3651f0db5daa0522664eb5c791b13d59fde27a5",
+      "docs/en/category/صيد/index.html": "91ae5ea01fc0ed83ba433c1e39277e47679dbefa9886efe0463ea85cba028b83",
+      "docs/en/category/فروسية/index.html": "3f0c7a920940030096678282fb2959c45717575118d3b892758d5b6c07c79104",
+      "docs/en/index.html": "14ba4b14105659ca71f462156603d6081288de4cf18a718640d2e789ea5cc9d0",
+      "docs/en/posts/wanaameen-riyadh-prince-mohammed-cup-prep-2026/index.html": "cd4ca231cb29a63830625c2cd58dd53f10fe1f3a1308d58aaab1b2402a08a1d4",
+      "docs/en/stories/index.html": "c3e758f70697bf3579e6e36ef1d5b5b59368190f2d7e1c9c15a23479f00c4fd1",
+      "docs/fr/category/صيد/index.html": "1621af2b186e6d2efaec97e635359fd6a074474f19666025a048db125c1384fd",
+      "docs/fr/category/فروسية/index.html": "b36355b57d99a7115b1c3e8a0d9aad2374814f84e0da4385b61cf8ea356acbc2",
+      "docs/fr/index.html": "658596a737ea69ec19d68f5871e45abf18d7257b6d57a24b7762f9aecc93bd0c",
+      "docs/fr/posts/wanaameen-riyad-preparatoire-coupe-prince-mohammed-2026/index.html": "a233d4c1ba01c9ae3c153ff7c317a18fd7e716f0b12d0e32f1e60f90ccd73566",
+      "docs/fr/stories/index.html": "3ec69a07213f8ed22fca06133ccdb6e53f8f192eab5036c950be8c73652e855d",
+      "docs/index.html": "74e5d3aa4178ae6b0afb596bf532cd1374d45429c4fedeef5604cda52fa7059a",
+      "docs/posts/ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026/index.html": "d9c0906ee047b864b2ed144ed1889c1e0a60ad8e82b92368d237c71defe22b73",
+      "docs/s/16679afd65/index.html": "ddf000f87b32810d7f4d5fe45bd669fc31feb0ca802c83c5e23ff737a552f6e3",
+      "docs/s/58cf7d1bcd/index.html": "136fa81824aa4c674e64965ae003846275e0afc4eaae016b37d56af24f9804d3",
+      "docs/s/a3e9009e23/index.html": "7f1fc2d12aaa4a5d2b63950744539aaeff62354c30fef6b94a393b5e0a1f56a7"
+    }
+  }
+}
