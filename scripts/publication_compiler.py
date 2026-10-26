@@ -395,6 +395,12 @@ def insert_listing(stage, article, language, photo, path):
             break
         position = card.end()
     updated = original[:position] + row + original[position:]
+    # The heading badge must count the actual cards, not retain a stale total.
+    # Replace only its digits so historical cards and surrounding chrome survive.
+    count = len(re.findall(r'<article\b[^>]*>.*?</article>', updated, re.S))
+    updated = re.sub(
+        r'(<div class="section-head"><h2>[^<]*<span class="badge">)\d+(</span>)',
+        lambda m: m[1] + str(count) + m[2], updated, count=1)
     data = re.search(r'(<script type="application/json" id="combined-archive-data">)(.*?)(</script>)', updated, re.S)
     if data:
         filters = loads(data[2])
