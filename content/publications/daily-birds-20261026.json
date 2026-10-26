@@ -1,0 +1,698 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261026",
+  "expected_base": "a8ef8a03872922b8b8142f3b4120388ff3b63d7b",
+  "approval_reference": "private:Sentinel_4fc857ac29988191ab2cfd656cf652d6; encyclopedia standing prepare-and-publish authority renewed 2026-10-26. Scope: three new species, AR/EN/FR, encyclopedia only.",
+  "bank_search_reference": "2026-10-26: full existing Birds & Wildlife bank listing and species-name searches found no suitable unused originals. Dedicated-profile absence verified across 799 post directories, 784 Arabic search article bodies and 27 English encyclopedia entries; scientific names and Gadwall synonym Anas strepera checked. All three originals and source-rights records saved in existing bank; six successful Library receipts retained privately.",
+  "photos": [
+    {
+      "id": "pochard",
+      "path": "docs/media/publications/daily-birds-20261026/pochard.jpg",
+      "sha256": "aef4ce0b031c2e39a7a5ae874729d44509d46aa08719be6c8e5d998395b3b3f2",
+      "source_sha256": "aef4ce0b031c2e39a7a5ae874729d44509d46aa08719be6c8e5d998395b3b3f2",
+      "source_reference": "Gary Houston; 2005-05-14; Verulamium Park, St Albans, Hertfordshire, England. Adult-plumaged male; red iris, chestnut head, black chest, pale grey body and pale bill band visually confirmed. Original unchanged. Original Library libfile_75117f4b48cc81918cf4aacd728751f7; rights Library libfile_a3e0e2df52ac8191b58f73864d834644.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; no compulsory external hyperlink or attribution condition. Supplied creator credit preserved voluntarily.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:20050514-003-aythya-ferina.jpg; source explicitly identifies image licence; exact original and rights evidence saved in Sayd picture for use on 2026-10-26."
+      },
+      "alt": {
+        "ar": "ذكر البط كستنائي الرأس برأس كستنائي وصدر أسود وجسم رمادي يسبح على الماء.",
+        "en": "A male Common Pochard with a chestnut head, black breast and grey body swimming on water.",
+        "fr": "Un Fuligule milouin mâle à tête rousse, poitrine noire et corps gris nage sur l’eau."
+      },
+      "caption": {
+        "ar": "البط كستنائي الرأس",
+        "en": "Common Pochard",
+        "fr": "Fuligule milouin"
+      }
+    },
+    {
+      "id": "tufted",
+      "path": "docs/media/publications/daily-birds-20261026/tufted.jpg",
+      "sha256": "d9644fb6420f23447269595c57be1e4e9f239d7a1ea20667df938b2909e8ea09",
+      "source_sha256": "d9644fb6420f23447269595c57be1e4e9f239d7a1ea20667df938b2909e8ea09",
+      "source_reference": "Terry Hughes; 2017-02-03 EXIF and date field; description says 03/02/2016, unresolved; Winterley Pool, Cheshire East, England. Male at left, female at right, both yellow eyes; exact age not determined. No year asserted publicly. Original unchanged. Original Library libfile_144d93375220819183632795ce042588; rights Library libfile_4881d6c3f4b8819194931896f667215b.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; no compulsory external hyperlink or attribution condition. Supplied creator credit preserved voluntarily.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Aythya_fuligula_Couple_(31855721664).jpg; source explicitly identifies image licence; exact original and rights evidence saved in Sayd picture for use on 2026-10-26."
+      },
+      "alt": {
+        "ar": "ذكر بطة قنبراء إلى اليسار وأنثى إلى اليمين، يسبحان على الماء.",
+        "en": "A male Tufted Duck on the left and a female on the right swimming on water.",
+        "fr": "Un Fuligule morillon mâle à gauche et une femelle à droite nagent sur l’eau."
+      },
+      "caption": {
+        "ar": "بطة قنبراء",
+        "en": "Tufted Duck",
+        "fr": "Fuligule morillon"
+      }
+    },
+    {
+      "id": "gadwall",
+      "path": "docs/media/publications/daily-birds-20261026/gadwall.jpg",
+      "sha256": "ba5e71124c884152749f5af15dbcd3d395762d59cda73fc0140d779b27855662",
+      "source_sha256": "e71380efc997ae67b4a61a19480926eeff0620a358e172f7f7af54cbde5bd482",
+      "source_reference": "Gary Kramer / USFWS; 2003-01-01 source date field; precision not independently confirmed; Not specified on source record. Adult-plumaged male; black bill and rump, grey vermiculated body, chestnut wing patch; exact age unknown. Faithful proportional 1600x1280 delivery JPEG, quality87, no crop or content alteration; original retained unchanged in Library. Original Library libfile_88d079ec2e048191b3161cb8173c16e3; rights Library libfile_6665f1716b788191b1805c014a1fe7ca.",
+      "rights": {
+        "status": "licensed",
+        "statement": "Public Domain; no compulsory external hyperlink or attribution condition. Supplied creator credit preserved voluntarily.",
+        "evidence_reference": "https://www.fws.gov/media/gadwall-1; source explicitly identifies image licence; exact original and rights evidence saved in Sayd picture for use on 2026-10-26."
+      },
+      "alt": {
+        "ar": "ذكر البط السماري بمنقار أسود وجسم رمادي دقيق النقوش على الماء.",
+        "en": "A male Gadwall with a black bill and finely patterned grey body on water.",
+        "fr": "Un Canard chipeau mâle au bec noir et au corps gris finement dessiné sur l’eau."
+      },
+      "caption": {
+        "ar": "البط السماري",
+        "en": "Gadwall",
+        "fr": "Canard chipeau"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "بط-كستنائي-الرأس",
+        "en": "common-pochard",
+        "fr": "fuligule-milouin"
+      },
+      "published": "2026-10-26",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "pochard"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البط كستنائي الرأس",
+          "subtitle": "Aythya ferina — بط غطّاس بين الهجرة والشتاء والتكاثر المحلي",
+          "meta_description": "Aythya ferina — بط غطّاس بين الهجرة والشتاء والتكاثر المحلي",
+          "sections": [
+            {
+              "heading": "الاسم والهوية",
+              "paragraphs": [
+                "البط كستنائي الرأس Aythya ferina من فصيلة البطية Anatidae ورتبة الإوزيات Anseriformes. وهو بط غطّاس، لا مجرد نسخة حمراء الرأس من البط السابح على السطح. يرد هذا الاسم العربي في مرجع KuwaitBirds، بينما يسجل دليل وزارة البيئة اللبنانية «بط حمراوي» و«ونس». هذه تسميات موثقة في سياقات مختلفة، وليست أسماء شعبية موحدة في جميع البلدان العربية."
+              ]
+            },
+            {
+              "heading": "كيف نميّزه؟",
+              "paragraphs": [
+                "يُعرَف الذكر في ريشه الواضح برأس وعنق كستنائيين، وصدر أسود، وجسم رمادي فاتح، وعين حمراء. الجبهة مائلة وتنساب إلى منقار طويل نسبيًا، تتوسطه منطقة رمادية مزرقة بين القاعدة والطرف الداكنين. لا يحمل خصلة الرأس التي تميز ذكر بطة قنبراء، كما أن جسمه الرمادي يختلف عن التباين الأسود والأبيض لدى ذلك النوع.",
+                "الأنثى بنية رمادية، أفتح على الخد والذقن، وأقل تباينًا بكثير من الذكر. يشبهها اليافع، مع ظهر أقل تموجًا بالرمادي. وقد يصبح الذكر في ريش الكسوف بعد موسم التكاثر أقرب إلى الأنثى؛ لذلك لا يكفي لون الرأس منفردًا لتحديد الجنس أو العمر. وفي الطيران يظهر شريط جناحي رمادي فاتح غير صارخ. أما ذكر Netta rufina فيتميز برأس أضخم برتقالي ومنقار أحمر، فلا ينبغي جمع النوعين تحت تشخيص واحد."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يستخدم البحيرات والمستنقعات والخزانات والبرك ذات النباتات المائية، ويحتاج إلى مساحات تسمح بالغوص. وقد يستفيد من البحيرات الاصطناعية وأحواض معالجة المياه إذا توافرت ظروف مناسبة؛ لكن وجود الماء وحده لا يضمن جودة الموئل. يجمع غذاؤه بين النباتات المائية والبذور واللافقاريات الصغيرة، وتختلف نسبها باختلاف الموقع والموسم.",
+                "كثيرًا ما يُرى ضمن مجموعات، وقد يختلط بأنواع أخرى من البط. لا يعني تجمع الطيور الساكنة أن الموقع غير مهم: فدراسة في مناطق غيربس–صنهاجة الرطبة بالجزائر وجدت أن البط الغطاس يستخدم الموقع أيضًا للراحة النهارية والنوم والتنظيف. وتتكامل أماكن الراحة الهادئة مع مناطق التغذية؛ إزعاج أحدهما قد ينتقص من قيمة المنطقة الرطبة كلها."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يمتد نطاقه عبر أوروبا وآسيا، وتنتقل جماعات منه إلى مناطق أدفأ شتاءً، ومنها شمال أفريقيا والشرق الأوسط. يضم نطاق الشتاء الأفريقي المغرب والجزائر وتونس ومصر والسودان، لكن خريطة الانتشار لا تعني أن كل موقع داخل هذه البلدان يستضيفه بانتظام أو بأعداد متشابهة.",
+                "في المغرب يجتمع العبور والشتاء مع تكاثر محلي؛ ووثقت دراسة حديثة إقامة وتكاثرًا منتظمًا في مرجة الفوارات. في لبنان هو عابر غير شائع في أكتوبر–نوفمبر، وأندر في مارس–أبريل، وزائر شتوي قليل. وفي الكويت تصفه القائمة الرسمية بأنه عابر وزائر شتوي قليل. أما قاعدة طيور عُمان فتصفه بزائر شتوي شائع نسبيًا، وهو اختلاف مهم عن الكويت. وتوثق تقارير الإمارات حضورًا شتويًا محليًا قد يكون أوفر في بحيرات بعينها. لا يجوز تحويل هذه الفروق إلى حكم بأنه مقيم أو متكاثر في الخليج."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يرتبط التعشيش بغطاء نباتي قريب من الماء يحجب الأنثى والحضنة. تضع الأنثى عادة ثماني إلى عشر بيضات، وتتولى الحضانة نحو خمسة وعشرين يومًا. تخرج الفراخ مكسوة بالزغب وقادرة على الحركة مبكرًا، وتبلغ الطيران عادة بعد نحو خمسين إلى خمسة وخمسين يومًا. هذه قيم نموذجية، وليست جدولًا ثابتًا لكل بلد أو عش. وجود فراخ مع الأنثى دليل أقوى على التكاثر من مجرد بقاء بط بالغ خلال الصيف."
+              ]
+            },
+            {
+              "heading": "لماذا يهم في أواخر أكتوبر؟",
+              "paragraphs": [
+                "يقع أواخر أكتوبر ضمن عبوره الخريفي الموثق في لبنان، ويمكن أن يصادف ازدياد الوافدين إلى مواقع الشتاء. وفي الفوارات المغربية بينت المتابعة زيادة خريفية وشتوية فوق الحضور المحلي. لكن ذلك لا يحدد يوم وصول إقليميًا، ولا يجعل أواخر أكتوبر ذروة موحدة. دوّن المكان والتاريخ والعدد والجنس الظاهر، وافصل بين الملاحظة المباشرة والاستنتاج عن أصل الطيور."
+              ]
+            },
+            {
+              "heading": "الحفظ والمشاهدة المسؤولة",
+              "paragraphs": [
+                "تصنيفه العالمي «معرّض للانقراض» VU، وليس «أقل قلقًا» لمجرد وجود أسراب كبيرة في بعض البحيرات. تشمل الضغوط فقد الأراضي الرطبة وتدهورها، والصيد، والتلوث، والتسمم بالرصاص الناتج عن ابتلاع ذخائر الصيد. حماية الماء والغطاء النباتي ومواقع الراحة إجراءات مترابطة. يُراقَب بمنظار من مسافة لا تجبره على الغوص هربًا أو الإقلاع، ولا تُطارَد الطيور لاختبار لون الجناح أو للحصول على صورة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "BirdLife International، Common Pochard، 2024؛ BTO، BirdFacts؛ RSPB؛ Naturalis، Birds of Europe؛ دليل طيور عُمان؛ KuwaitBirds والقائمة الرسمية لطيور الكويت؛ دليل وزارة البيئة اللبنانية والقائمة المحدثة لطيور لبنان؛ تقارير لجنة طيور الإمارات؛ Wetlands International؛ Lahrouz وزملاؤه، Zoology and Ecology، 2024؛ جامعة سوق أهراس، دراسة البط الغطاس في غيربس–صنهاجة. مراجعة المعلومات: 26 أكتوبر 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Gary Houston — CC0 1.0."
+        },
+        "en": {
+          "title": "Common Pochard",
+          "subtitle": "Aythya ferina — a diving duck between migration, wintering and local breeding",
+          "meta_description": "Aythya ferina — a diving duck between migration, wintering and local breeding",
+          "sections": [
+            {
+              "heading": "Name and identity",
+              "paragraphs": [
+                "The Common Pochard Aythya ferina belongs to the family Anatidae and order Anseriformes. It is a diving duck, not simply a red-headed version of a surface-feeding duck. KuwaitBirds documents the Arabic name “al-batt kastana’i al-ra’s”; the Lebanese Ministry of Environment guide also records “batt hamrawi” and “wans”. These names belong to documented regional contexts rather than a single vernacular shared across the Arab world."
+              ]
+            },
+            {
+              "heading": "How to recognise it",
+              "paragraphs": [
+                "A male in distinctive plumage has a chestnut head and neck, black breast, pale grey body and red eye. Its sloping forehead merges into a relatively long bill, with a blue-grey central area between dark base and tip. It lacks the male Tufted Duck’s crest, and its grey body differs from that species’ black-and-white contrast.",
+                "The female is grey-brown, paler on the cheek and chin, and much less contrasting. Juveniles resemble females, with less grey vermiculation on the back. A male in post-breeding eclipse plumage can also look more female-like; head colour alone therefore cannot reliably establish sex or age. In flight the pale grey wing bar is subdued. The male Red-crested Pochard Netta rufina instead has a larger orange head and red bill: these two species should not be identified as one."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It uses lakes, marshes, reservoirs and ponds with aquatic vegetation, requiring areas suitable for diving. Artificial lakes and treatment ponds can provide habitat when conditions are appropriate, but water alone does not guarantee habitat quality. Its food includes aquatic plants, seeds and small invertebrates, with proportions varying between sites and seasons.",
+                "Often seen in groups, it may associate with other ducks. Resting flocks do not mean that a site is unimportant: research in Algeria’s Guerbes–Sanhadja wetlands found that diving ducks also used the site for daytime resting, sleeping and preening. Quiet resting places complement feeding areas; disturbance to either can reduce the value of the wider wetland."
+              ]
+            },
+            {
+              "heading": "Distribution and Arab-country occurrence",
+              "paragraphs": [
+                "Its range extends across Europe and Asia, with some populations moving to warmer wintering regions, including North Africa and the Middle East. Its African wintering range includes Morocco, Algeria, Tunisia, Egypt and Sudan. A range map does not, however, mean that every site within those countries regularly holds similar numbers.",
+                "In Morocco, passage and wintering overlap with local breeding; a recent study documented residency and regular nesting at Merja Fouwarate. In Lebanon it is uncommon on passage in October–November, rarer in March–April, and a scarce winter visitor. Kuwait’s official list describes scarce passage and winter occurrence. The Birds of Oman database instead calls it a fairly common winter visitor, an important contrast with Kuwait. UAE reports document locally concentrated winter presence, sometimes more numerous on particular lakes. These differences do not justify treating it as resident or breeding across the Gulf."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Nesting is associated with vegetation near water that conceals the female and clutch. She usually lays eight to ten eggs and incubates them for about twenty-five days. Downy chicks are mobile soon after hatching and typically become capable of flight after roughly fifty to fifty-five days. These are typical values, not a fixed timetable for every country or nest. Ducklings accompanying a female provide stronger breeding evidence than adult ducks merely remaining through summer."
+              ]
+            },
+            {
+              "heading": "Why late October matters",
+              "paragraphs": [
+                "Late October falls within the documented autumn passage in Lebanon and may coincide with growing arrivals at wintering sites. Monitoring at Morocco’s Fouwarate found autumn and winter increases on top of local presence. This does not establish a regional arrival date or make late October a universal peak. Record location, date, count and apparent sex, distinguishing direct observations from assumptions about the birds’ origins."
+              ]
+            },
+            {
+              "heading": "Conservation and responsible observation",
+              "paragraphs": [
+                "Its global status is Vulnerable (VU), not Least Concern simply because large flocks occur on some lakes. Pressures include wetland loss and degradation, hunting, pollution and lead poisoning from ingested ammunition. Protecting water, vegetation and resting areas are interconnected measures. Use binoculars at a distance that does not force birds to dive away or take flight; do not chase them to check wing markings or obtain a photograph."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "BirdLife International, Common Pochard, 2024; BTO BirdFacts; RSPB; Naturalis, Birds of Europe; Field Guide to the Birds of Oman; KuwaitBirds and Official Kuwait Bird List; Lebanese Ministry of Environment guide and updated Lebanon bird checklist; Emirates Bird Records Committee reports; Wetlands International; Lahrouz and colleagues, Zoology and Ecology, 2024; University of Souk Ahras, diving-duck study in Guerbes–Sanhadja. Information reviewed: 26 October 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Gary Houston — CC0 1.0."
+        },
+        "fr": {
+          "title": "Fuligule milouin",
+          "subtitle": "Aythya ferina — un canard plongeur entre migration, hivernage et reproduction locale",
+          "meta_description": "Aythya ferina — un canard plongeur entre migration, hivernage et reproduction locale",
+          "sections": [
+            {
+              "heading": "Nom et identité",
+              "paragraphs": [
+                "Le Fuligule milouin Aythya ferina appartient à la famille des Anatidae et à l’ordre des Anseriformes. C’est un canard plongeur, et non simplement un canard de surface à tête rouge. KuwaitBirds documente le nom arabe « al-batt kastana’i al-ra’s » ; le guide du ministère libanais de l’Environnement mentionne également « batt hamrawi » et « wans ». Ces noms correspondent à des usages régionaux attestés, et non à un vocabulaire uniforme dans tout le monde arabe."
+              ]
+            },
+            {
+              "heading": "Comment le reconnaître ?",
+              "paragraphs": [
+                "Le mâle en plumage caractéristique possède une tête et un cou châtains, une poitrine noire, un corps gris clair et un œil rouge. Le front incliné prolonge un bec relativement long, dont la zone centrale gris bleu contraste avec la base et l’extrémité sombres. Il n’a pas la huppe du mâle de Fuligule morillon ; son corps gris diffère aussi du contraste noir et blanc de cette espèce.",
+                "La femelle, gris-brun, présente une joue et un menton plus clairs et des contrastes beaucoup plus discrets. Le juvénile lui ressemble, mais son dos porte moins de vermiculures grises. Le mâle en plumage d’éclipse après la reproduction peut aussi se rapprocher de la femelle : la couleur de la tête ne suffit donc pas à établir le sexe ou l’âge. En vol, la barre alaire gris clair reste discrète. Le mâle de Nette rousse Netta rufina présente au contraire une tête orange plus volumineuse et un bec rouge : ces espèces ne doivent pas être confondues."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il fréquente lacs, marais, réservoirs et étangs riches en végétation aquatique, avec des zones permettant la plongée. Les lacs artificiels et bassins de traitement peuvent fournir un habitat approprié, mais la présence d’eau ne garantit pas sa qualité. Son alimentation associe plantes aquatiques, graines et petits invertébrés, dans des proportions variables selon le lieu et la saison.",
+                "Souvent observé en groupes, il peut se mêler à d’autres canards. Des oiseaux au repos ne rendent pas un site moins important : une étude des zones humides de Guerbes–Sanhadja, en Algérie, montre que les canards plongeurs utilisent aussi ces lieux pour le repos diurne, le sommeil et la toilette. Les espaces tranquilles complètent les zones d’alimentation ; déranger les uns ou les autres peut réduire la valeur de l’ensemble de la zone humide."
+              ]
+            },
+            {
+              "heading": "Répartition et présence dans les pays arabes",
+              "paragraphs": [
+                "Son aire s’étend à travers l’Europe et l’Asie ; certaines populations gagnent des régions plus chaudes en hiver, notamment l’Afrique du Nord et le Moyen-Orient. L’hivernage africain concerne notamment le Maroc, l’Algérie, la Tunisie, l’Égypte et le Soudan. Une carte de répartition ne signifie pourtant pas que chaque site de ces pays accueille régulièrement des effectifs semblables.",
+                "Au Maroc, passage et hivernage se conjuguent avec une reproduction locale ; une étude récente a documenté une présence sédentaire et une nidification régulière à Merja Fouwarate. Au Liban, le passage est peu commun en octobre–novembre, plus rare en mars–avril, et l’hivernage reste peu fréquent. La liste officielle du Koweït le décrit comme migrateur de passage et hivernant peu fréquent. La base Birds of Oman le considère au contraire comme un hivernant assez commun, distinction importante. Les rapports des Émirats arabes unis documentent une présence hivernale concentrée, parfois plus abondante sur certains lacs. Ces différences ne permettent pas de le qualifier de sédentaire ou de nicheur dans l’ensemble du Golfe."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "La nidification est associée à une végétation proche de l’eau qui dissimule la femelle et la ponte. Elle pond généralement huit à dix œufs et les couve pendant environ vingt-cinq jours. Les poussins duveteux se déplacent rapidement après l’éclosion et volent habituellement vers cinquante à cinquante-cinq jours. Il s’agit de valeurs typiques, non d’un calendrier fixe pour chaque pays ou chaque nid. Des canetons accompagnant une femelle constituent un indice de reproduction plus solide que la simple présence estivale d’adultes."
+              ]
+            },
+            {
+              "heading": "Pourquoi la fin octobre compte-t-elle ?",
+              "paragraphs": [
+                "La fin octobre appartient à la période de passage automnal documentée au Liban et peut coïncider avec des arrivées croissantes sur les sites d’hivernage. À Fouwarate, au Maroc, le suivi a montré des augmentations automnales et hivernales s’ajoutant à la présence locale. Cela ne définit ni une date d’arrivée régionale ni un maximum universel fin octobre. Noter le lieu, la date, l’effectif et le sexe apparent, en distinguant l’observation directe des suppositions sur l’origine des oiseaux."
+              ]
+            },
+            {
+              "heading": "Conservation et observation responsable",
+              "paragraphs": [
+                "Son statut mondial est Vulnérable (VU), et non Préoccupation mineure sous prétexte que certains lacs accueillent de grands groupes. Les pressions comprennent la disparition et la dégradation des zones humides, la chasse, la pollution et le saturnisme lié à l’ingestion de munitions. Préserver l’eau, la végétation et les reposoirs constitue un ensemble de mesures complémentaires. Observer aux jumelles à une distance qui ne provoque ni plongée de fuite ni envol ; ne pas poursuivre les oiseaux pour vérifier leurs ailes ou obtenir une photographie."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "BirdLife International, Common Pochard, 2024 ; BTO BirdFacts ; RSPB ; Naturalis, Birds of Europe ; Field Guide to the Birds of Oman ; KuwaitBirds et liste officielle des oiseaux du Koweït ; guide du ministère libanais de l’Environnement et liste actualisée des oiseaux du Liban ; rapports de l’Emirates Bird Records Committee ; Wetlands International ; Lahrouz et collaborateurs, Zoology and Ecology, 2024 ; université de Souk Ahras, étude des canards plongeurs de Guerbes–Sanhadja. Informations vérifiées le 26 octobre 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Gary Houston — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "بطة-قنبراء",
+        "en": "tufted-duck",
+        "fr": "fuligule-morillon"
+      },
+      "published": "2026-10-26",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "tufted"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "بطة قنبراء",
+          "subtitle": "Aythya fuligula — بطة غواصة بين العبور ومواقع الشتاء",
+          "meta_description": "Aythya fuligula — بطة غواصة بين العبور ومواقع الشتاء",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "بطة قنبراء طائر مائي غواص من فصيلة البطية Anatidae ورتبة الإوزيات Anseriformes، واسمه العلمي Aythya fuligula. يرد اسم «أبو خصلة» في المراجع السعودية والليبية، وتستخدم قائمة طيور الكويت «الحذف المقنزع». هذه أسماء موثقة للنوع نفسه، وليست أنواعًا مستقلة. أما وصفه بالغواص فيشير إلى طريقة تغذيته، ولا يجعله من فصيلة الغطاسيات."
+              ]
+            },
+            {
+              "heading": "التعرف إلى الذكر والأنثى واليافع",
+              "paragraphs": [
+                "يظهر الذكر البالغ بتباين واضح بين الرأس والصدر والظهر السوداء والخاصرتين البيضاوين. تتدلى خصلة من مؤخرة الرأس، وقد يبدو الرأس بلمعان أرجواني بحسب الضوء. العين صفراء والمنقار رمادي مزرق بطرف أسود عريض. في الأنثى يغلب البني الداكن، وتكون الخاصرتان أفتح والخصلة أقصر بكثير؛ وقد توجد مساحة بيضاء متفاوتة حول قاعدة المنقار. لذلك لا تكفي علامة الوجه منفردة لتحديد النوع.",
+                "تبدو الطيور اليافعة أكثر بهتانًا، وقد تحتفظ خلال شتائها الأول بريش جناح بني ضيق يختلف عن ريش البالغين؛ لكن تقدير العمر عن بعد ليس مضمونًا. كما يقل التباين لدى الذكر في ريش الكسوف بعد التكاثر. في الطيران يظهر شريط جناحي أبيض واضح في الجنسين. ويمتاز الذكر من الإسكوب الكبير Aythya marila بظهره الأسود لا الرمادي؛ أما الإناث فتحتاج إلى مقارنة الخصلة وشكل الرأس ولون الظهر ونمط المنقار معًا، لا إلى البحث عن خصلة ظاهرة دائمًا."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تستخدم البحيرات والبرك والخزانات، ومنها المسطحات الصناعية، وتوجد أحيانًا في مياه ساحلية محمية. المساحة المفتوحة للسباحة مهمة، لكنها لا تعني أن الطائر يستغني عن ضفاف صالحة للراحة أو التعشيش. يغوص بحثًا عن رخويات ولافقاريات مائية، ويأكل أيضًا بذورًا وأجزاء نباتية؛ لذا ليس لاحمًا حصريًا ولا آكل نبات حصريًا.",
+                "قد يجتمع مع أنواع أخرى من البط، ويقضي فترات طويلة ساكنًا أو نائمًا على الماء. مشاهدة سرب هادئ لا تعني أنه لا يستخدم الموقع للتغذية؛ فالملاحظة القصيرة لا تكشف دورة نشاطه كاملة. ومن الأفضل تسجيل أعداد الطيور وسلوكها وحالة الماء بدل الاكتفاء باسم النوع."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يمتد نطاق تكاثره عبر أجزاء واسعة من أوراسيا، وتقضي جماعات مهاجرة الشتاء جنوب نطاقها الشمالي. وليست جميع الطيور متطابقة في حركتها؛ ففي أجزاء من بريطانيا توجد طيور مقيمة تتعزز أعدادها شتاءً بوافدين، وهو مثال يوضح لماذا لا يصح نقل وصف بلد إلى آخر.",
+                "في السعودية هو أساسًا زائر شتوي خلال أكتوبر–فبراير، ومهاجر عابر نادر، ولا يذكر المرجع السعودي تكاثره في المملكة؛ وقد تبقى أفراد صيفًا دون أن يثبت ذلك التعشيش. وفي الكويت تصنفه القائمة الرسمية عابرًا وزائرًا شتويًا نادرًا. وفي عُمان يورده الدليل ضمن الزوار الشتويين، بينما توثق التقارير الإماراتية وجوده الشتوي، خصوصًا في بعض البحيرات.",
+                "في لبنان يعبر بأعداد غير شائعة في أراضي البقاع الرطبة، من منتصف سبتمبر إلى أواخر نوفمبر، ويبقى عدد قليل شتاءً. وفي ليبيا وثق أطلس الطيور المائية الشتوية وجودًا محدودًا في مسوح 2005–2010؛ وهذه بيانات فترة محددة وليست تعدادًا راهنًا. تسجل AEWA وجوده أيضًا في المغرب والجزائر وتونس ومصر والعراق، لكن مجرد الإدراج الوطني لا يحدد وفرته أو موسم كل موقع."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يبنى العش من النبات قريبًا من الماء، وقد يوضع على جزيرة أو بين الأعشاب. تضع الأنثى عادة 8–11 بيضة وتحضنها نحو 25 يومًا. تخرج الفراخ مكسوة بالزغب وقادرة على الحركة، وتصل عادة إلى الطيران بعد نحو 45–50 يومًا. هذه مدد نموذجية وليست جدولًا ثابتًا لكل عش، ولا يصح تقديمها بوصفها موسم تكاثر عربيًا؛ فالحضور الإقليمي الموصوف هنا غالبًا حضور مرور وشتاء."
+              ]
+            },
+            {
+              "heading": "أواخر أكتوبر والحماية",
+              "paragraphs": [
+                "تتقاطع أواخر أكتوبر مع العبور الخريفي في لبنان ومع نافذة الوجود الشتوي المذكورة للسعودية؛ لذا يكون التعريف بالنوع مناسبًا الآن، دون الادعاء بوصول متزامن إلى البلدان العربية كلها. التصنيف العالمي في تقييم 2025 هو «أقل قلقًا» LC، مع اتجاه عام متناقص للأعداد، وليس معنى التصنيف انتفاء الضغوط. تشمل المخاطر تدهور الأراضي الرطبة والتلوث والإزعاج والصيد. وتبقى الحماية العملية مرتبطة بماء مناسب ومناطق راحة هادئة؛ راقبه من مسافة لا تدفعه إلى الفرار، ولا تطارده لإظهار الخصلة أو شريط الجناح."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "BirdLife International، تقييم 2025؛ BTO، BirdFacts؛ RSPB؛ مختبر كورنيل لعلم الطيور؛ دليل Blasco-Zumeta وHeinze؛ AEWA؛ الطيور في السعودية عبر طبيعة السعودية؛ القائمة الرسمية لطيور الكويت؛ دليل طيور عُمان؛ تقارير طيور الإمارات؛ القائمة المحدثة لطيور لبنان؛ أطلس الطيور المائية الشتوية في ليبيا 2005–2010. مراجعة المعلومات: 26 أكتوبر 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Terry Hughes — CC0 1.0."
+        },
+        "en": {
+          "title": "Tufted Duck",
+          "subtitle": "Aythya fuligula — a diving duck on passage and wintering waters",
+          "meta_description": "Aythya fuligula — a diving duck on passage and wintering waters",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "The Tufted Duck is a diving waterbird in the family Anatidae and order Anseriformes, scientifically named Aythya fuligula. Arabic references use “Batta Qanbaraa”; Saudi and Libyan sources also record “Abu Khusla”, while the Kuwait checklist uses “al-Hadhaf al-Muqanza”. These are documented names for the same species, not separate species. Calling it a diving duck describes its feeding method; it does not place it in the grebe family."
+              ]
+            },
+            {
+              "heading": "Recognising males, females and young",
+              "paragraphs": [
+                "An adult male contrasts black head, breast and back with white flanks. A tuft hangs behind the head, which can show a purple sheen depending on the light. The eye is yellow and the bill blue-grey with a broad black tip. Females are predominantly dark brown, with paler flanks and a much shorter tuft; a variable white patch may surround the bill base. The face pattern alone therefore cannot establish identification.",
+                "Young birds appear duller and may retain narrow, brown juvenile wing feathers into their first winter, unlike adult feathers; ageing at a distance is not always reliable. Males also become less contrasting in post-breeding eclipse plumage. Both sexes show a conspicuous white wing bar in flight. Male Greater Scaup Aythya marila have grey rather than black backs. Females require comparison of tuft, head shape, back colour and bill pattern together, rather than expecting an obvious tuft on every bird."
+              ]
+            },
+            {
+              "heading": "Habitat, diet and behaviour",
+              "paragraphs": [
+                "It uses lakes, ponds and reservoirs, including artificial waterbodies, and sometimes sheltered coastal waters. Open swimming water matters, but does not remove its need for suitable margins for resting or nesting. It dives for molluscs and aquatic invertebrates and also eats seeds and plant material: it is neither exclusively carnivorous nor exclusively vegetarian.",
+                "It may join other ducks and spend long periods resting or sleeping on the water. A quiet flock does not mean a site is unused for feeding: a brief visit cannot reveal its full activity cycle. Recording numbers, behaviour and water conditions is more informative than recording the species name alone."
+              ]
+            },
+            {
+              "heading": "Distribution and Arab-country occurrence",
+              "paragraphs": [
+                "It breeds across large parts of Eurasia, and migrant populations winter south of their northern breeding range. Movements are not identical everywhere: parts of Britain have resident birds whose numbers increase with winter arrivals, illustrating why one country’s status should not be transferred to another.",
+                "In Saudi Arabia it is primarily a winter visitor during October–February and a rare passage migrant; the Saudi reference does not report breeding in the kingdom. Some individuals may remain through summer without proving nesting. Kuwait’s official list classifies it as a rare passage migrant and winter visitor. The Oman field guide lists it as a winter visitor, while UAE reports document winter occurrence, particularly on certain lakes.",
+                "In Lebanon it is an uncommon passage migrant in Beqaa wetlands from mid-September to late November, with a few remaining in winter. Libya’s wintering-waterbird atlas documented limited occurrence during its 2005–2010 surveys; these represent a defined study period, not a current census. AEWA also records occurrence in Morocco, Algeria, Tunisia, Egypt and Iraq, but national listing alone does not establish abundance or the season at every site."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "The nest is made of vegetation near water, sometimes on an island or among grasses. A female typically lays 8–11 eggs and incubates for about 25 days. Chicks hatch downy and mobile and usually become capable of flight at around 45–50 days. These are typical durations rather than a fixed schedule for every nest. They should not be presented as an Arab breeding calendar: the regional occurrence described here is predominantly passage and winter presence."
+              ]
+            },
+            {
+              "heading": "Late October and conservation",
+              "paragraphs": [
+                "Late October overlaps autumn passage in Lebanon and the winter occurrence window reported for Saudi Arabia. It is therefore a useful moment to learn the species, without claiming simultaneous arrival throughout the Arab world. Its global category in the 2025 assessment is Least Concern (LC), with an overall decreasing population trend; the category does not mean an absence of pressures. Risks include wetland degradation, pollution, disturbance and hunting. Practical protection depends on suitable water and quiet resting areas. Watch from a distance that does not cause escape, and never chase birds to reveal their tuft or wing bar."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "BirdLife International, 2025 assessment; BTO BirdFacts; RSPB; Cornell Lab of Ornithology; Blasco-Zumeta and Heinze identification guide; AEWA; The Birds of Saudi Arabia via Saudi Nature; Official Kuwait Bird List; Field Guide to the Birds of Oman; UAE bird reports; Updated checklist of the birds of Lebanon; Atlas of wintering waterbirds of Libya, 2005–2010. Information reviewed: 26 October 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Terry Hughes — CC0 1.0."
+        },
+        "fr": {
+          "title": "Fuligule morillon",
+          "subtitle": "Aythya fuligula — un canard plongeur de passage et des eaux hivernales",
+          "meta_description": "Aythya fuligula — un canard plongeur de passage et des eaux hivernales",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "Le Fuligule morillon est un canard plongeur de la famille des Anatidae et de l’ordre des Anseriformes, nommé scientifiquement Aythya fuligula. Les références arabes emploient « Batta Qanbaraa » ; les sources saoudiennes et libyennes donnent aussi « Abou Khousla », tandis que la liste koweïtienne utilise « al-Hadhaf al-Mouqanza ». Ces noms documentés désignent une même espèce, non des espèces distinctes. Le terme plongeur décrit son alimentation et ne le rattache pas à la famille des grèbes."
+              ]
+            },
+            {
+              "heading": "Reconnaître mâles, femelles et jeunes",
+              "paragraphs": [
+                "Chez le mâle adulte, la tête, la poitrine et le dos noirs contrastent avec les flancs blancs. Une huppe pend derrière la tête, qui peut présenter un reflet violet selon la lumière. L’œil est jaune et le bec gris bleu à large extrémité noire. La femelle est surtout brun foncé, avec des flancs plus clairs et une huppe beaucoup plus courte ; une zone blanche variable peut entourer la base du bec. Le dessin facial ne suffit donc pas à l’identification.",
+                "Les jeunes paraissent plus ternes et peuvent conserver durant leur premier hiver des plumes juvéniles des ailes étroites et brunes, différentes de celles des adultes ; déterminer l’âge à distance reste délicat. Les mâles deviennent aussi moins contrastés en plumage d’éclipse après la reproduction. En vol, les deux sexes montrent une barre alaire blanche marquée. Le mâle du Fuligule milouinan Aythya marila a le dos gris, non noir. Pour les femelles, il faut comparer ensemble huppe, silhouette de la tête, dos et dessin du bec, sans attendre une huppe évidente chez chaque oiseau."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il fréquente lacs, étangs et réservoirs, y compris artificiels, et parfois des eaux littorales abritées. Les surfaces dégagées pour nager sont importantes, sans supprimer le besoin de berges convenant au repos ou à la nidification. Il plonge pour capturer mollusques et invertébrés aquatiques et consomme aussi graines et matières végétales : il n’est exclusivement ni carnivore ni végétarien.",
+                "Il peut se joindre à d’autres canards et rester longtemps au repos ou endormi sur l’eau. Un groupe calme ne signifie pas que le site n’est pas utilisé pour se nourrir : une courte visite ne révèle pas tout son cycle d’activité. Noter les effectifs, les comportements et l’état des eaux est plus instructif que relever seulement le nom de l’espèce."
+              ]
+            },
+            {
+              "heading": "Répartition et présence dans les pays arabes",
+              "paragraphs": [
+                "Il niche dans une grande partie de l’Eurasie, et les populations migratrices hivernent au sud de leurs régions septentrionales de reproduction. Les déplacements ne sont pas identiques partout : certaines régions britanniques accueillent des oiseaux sédentaires renforcés par des arrivées hivernales, ce qui montre pourquoi le statut d’un pays ne doit pas être transposé à un autre.",
+                "En Arabie saoudite, c’est surtout un hivernant d’octobre à février et un migrateur de passage rare ; la référence saoudienne ne signale pas de reproduction dans le royaume. Quelques individus peuvent rester l’été sans que cela prouve la nidification. La liste officielle du Koweït le classe comme migrateur de passage et hivernant rare. Le guide d’Oman le donne comme hivernant, tandis que les rapports des Émirats arabes unis documentent sa présence hivernale, notamment sur certains lacs.",
+                "Au Liban, c’est un migrateur de passage peu commun dans les zones humides de la Bekaa de mi-septembre à fin novembre, avec quelques hivernants. L’atlas libyen des oiseaux d’eau hivernants documente une présence limitée durant les comptages de 2005–2010 ; il s’agit d’une période d’étude définie, non d’un recensement actuel. L’AEWA signale aussi sa présence au Maroc, en Algérie, en Tunisie, en Égypte et en Irak, mais une inscription nationale ne précise ni l’abondance ni la saison de chaque site."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Le nid est construit de végétaux près de l’eau, parfois sur un îlot ou parmi les herbes. La femelle pond généralement 8 à 11 œufs et les incube environ 25 jours. Les poussins naissent couverts de duvet et mobiles ; ils deviennent habituellement capables de voler vers 45 à 50 jours. Ce sont des durées typiques, non un calendrier fixe pour chaque nid. Elles ne constituent pas un calendrier de reproduction arabe : la présence régionale décrite ici relève surtout du passage et de l’hivernage."
+              ]
+            },
+            {
+              "heading": "Fin octobre et conservation",
+              "paragraphs": [
+                "La fin octobre correspond au passage automnal au Liban et à la fenêtre de présence hivernale indiquée pour l’Arabie saoudite. C’est donc un moment pertinent pour découvrir l’espèce, sans prétendre à une arrivée simultanée dans tout le monde arabe. L’évaluation mondiale de 2025 la classe en Préoccupation mineure (LC), avec une tendance générale des effectifs à la baisse ; cette catégorie ne signifie pas absence de pressions. Les risques comprennent la dégradation des zones humides, la pollution, le dérangement et la chasse. La protection concrète dépend d’eaux adaptées et de secteurs de repos tranquilles. Observer à une distance qui ne provoque pas la fuite, sans poursuivre les oiseaux pour voir leur huppe ou leur barre alaire."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "BirdLife International, évaluation 2025 ; BTO BirdFacts ; RSPB ; Cornell Lab of Ornithology ; guide de Blasco-Zumeta et Heinze ; AEWA ; The Birds of Saudi Arabia via Saudi Nature ; liste officielle des oiseaux du Koweït ; Field Guide to the Birds of Oman ; rapports ornithologiques des Émirats arabes unis ; Updated checklist of the birds of Lebanon ; Atlas of wintering waterbirds of Libya, 2005–2010. Informations vérifiées le 26 octobre 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Terry Hughes — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البط-السماري",
+        "en": "gadwall",
+        "fr": "canard-chipeau"
+      },
+      "published": "2026-10-26",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "gadwall"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البط السماري",
+          "subtitle": "Mareca strepera — بطة سطحية ذات رقعة جناحية بيضاء",
+          "meta_description": "Mareca strepera — بطة سطحية ذات رقعة جناحية بيضاء",
+          "sections": [
+            {
+              "heading": "الهوية والاسم",
+              "paragraphs": [
+                "البط السماري، ويَرِد أيضًا باسم «سمارية» في مراجع عربية، نوع من البطيات Anatidae ورتبة الإوزيات Anseriformes. اسمه العلمي المعتمد هنا Mareca strepera؛ وتستخدم مراجع أقدم وبعض القوائم الإقليمية الاسم Anas strepera للنوع نفسه. وهو من البط السطحي التغذية، وليس من البط الغواص الذي يعتمد عادة على النزول الكامل تحت الماء. وقد يبدو الذكر باهتًا من بعيد، لكن الاقتراب البصري بالمنظار يكشف نقشًا دقيقًا لا لونًا رماديًا موحدًا."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "الذكر في ريشه المميز رمادي بني، ذو خطوط دقيقة على الجسم ومؤخرة سوداء ومنقار داكن. تظهر على الجناح مساحة بيضاء، ومعها درجات سوداء وكستنائية عند النظر جيدًا. الرأس مرتفع الجبهة، والجسم أنحف قليلًا من الخضاري. الأنثى بنية مرقطة، ومنقارها داكن تحفه حواف برتقالية؛ وتظهر رقعة الجناح البيضاء عند الطيران وقد تُرى أثناء الراحة.",
+                "تشبه اليافعات الأنثى، فلا يكفي غياب اللون الرمادي للحكم على الجنس أو العمر. كما يمر الذكر بعد التكاثر بريش كسوف يشبه ريش الأنثى. تساعد الرقعة الجناحية البيضاء والمنقار الأنحف والبطن الفاتح في تمييزه من الخضاري؛ والأفضل جمع هذه العلامات بدل الاعتماد على لون واحد أو صورة بعيدة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يرتبط بالبحيرات والبرك والمستنقعات الغنية بالنباتات المائية، ويستخدم مياهًا عذبة وأحيانًا قليلة الملوحة، طبيعية أو اصطناعية. يتغذى غالبًا قرب السطح، ويميل بجسمه إلى الأمام للوصول إلى النباتات المغمورة. الأوراق والسيقان والبذور جزء مهم من غذائه، وتزداد أهمية اللافقاريات، ومنها الحشرات والرخويات الصغيرة، في فترة التكاثر. وقد ينتزع نباتات جمعتها طيور أخرى، مثل الغرة والبط الغواص، عندما تصعد إلى السطح."
+              ]
+            },
+            {
+              "heading": "السلوك ودورة الحياة",
+              "paragraphs": [
+                "يختلط بأنواع بط أخرى ويكوّن أسرابًا خارج التكاثر، وقد تظهر الأزواج منذ الخريف والشتاء. تبني الأنثى عشًا أرضيًا تخفيه النباتات، وتبطنه بمواد نباتية وزغب؛ وتوفر الجزر الصغيرة أحيانًا مواضع مناسبة. تسجل بيانات BTO حضنة نموذجية من 9–11 بيضة، تحضنها الأنثى نحو 24–26 يومًا. تخرج الفراخ مكسوة بالزغب وقادرة على الحركة، وتصبح قادرة على الطيران عادة بعد نحو 45–50 يومًا. هذه مدد مرجعية، وليست تقويمًا موحدًا لجميع الجماعات."
+              ]
+            },
+            {
+              "heading": "الانتشار والهجرة",
+              "paragraphs": [
+                "يمتد انتشاره التكاثري عبر أجزاء واسعة من أمريكا الشمالية وأوروبا وآسيا، مع تكاثر محلي في شمال غربي أفريقيا. تهاجر جماعات الشمال بقوة، بينما تقيم جماعات أخرى أو تتحرك مسافات أقصر. وفي أوروبا تمر الطيور بفترة تبديل ريش الجناح بعد التكاثر تفقد خلالها القدرة على الطيران مؤقتًا، ثم تواصل حركتها. لهذا لا يعني وجود طائر في الصيف وحده أنه مقيم دائم أو يعشش في الموقع."
+              ]
+            },
+            {
+              "heading": "حضوره في البلدان العربية",
+              "paragraphs": [
+                "يوثق دليل الطيور المائية لشمال أفريقيا وجودًا شتويًا في المغرب والجزائر وتونس وليبيا ومصر والسودان، ولا يعمم ذلك على موريتانيا. وهذه إشارة إلى الانتشار، لا إلى وفرة متساوية في كل بلد أو كل منطقة رطبة. وفي لبنان تصفه قائمة 2020 بأنه زائر شتوي شديد القلة وغير منتظم، من أواخر أكتوبر إلى منتصف مارس.",
+                "في الكويت هو عابر غير شائع وزائر شتوي قليل، وقد سُجل تكاثره؛ لذلك لا يصح نفي التعشيش عنه في المنطقة كلها. وفي عُمان يُعد زائرًا شتويًا شائعًا نسبيًا. أما الإمارات فتصفه قائمتها بأنه عابر وزائر شتوي تتراوح وفرته من غير شائع إلى شائع نسبيًا، لكنه نادرًا ما يكون كثير العدد. وتوثق سجلات الظهران السعودية زيارة شتوية غير شائعة خلال أكتوبر–مارس؛ وهذه ملاحظة محلية، لا حكم على المملكة كلها."
+              ]
+            },
+            {
+              "heading": "لماذا أواخر أكتوبر؟",
+              "paragraphs": [
+                "تتزامن هذه الفترة مع جانب من الحركة الخريفية للنوع؛ وفي لبنان تبدأ نافذة وجوده الشتوي الموثقة في أواخر الشهر. لكنها لا تمثل ذروة موحدة للعالم العربي، ولا تضمن ظهوره في كل بحيرة. يفيد تسجيل التاريخ والعدد وحالة المياه، مع مراقبة هادئة لا تضطر الطيور إلى قطع التغذية أو ترك مكان الراحة."
+              ]
+            },
+            {
+              "heading": "الحفظ والضغوط",
+              "paragraphs": [
+                "يصنفه تقييم القائمة الحمراء العالمي لعام 2025 ضمن «أقل قلقًا» LC. لا تعني هذه الفئة غياب المشكلات المحلية: يذكر التقييم تلوث المياه وإزعاج الأنشطة الترفيهية، والصيد عبر أجزاء واسعة من نطاقه، والتسمم بابتلاع الرصاص في إسبانيا. حماية الغطاء النباتي ومواقع التغذية والتعشيش والمبيت تدعم استمرار وجوده، ولا تغني وفرة النوع عالميًا عن متابعة حالته في كل بلد."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "BirdLife International / القائمة الحمراء للاتحاد الدولي لحفظ الطبيعة، تقييم 2025؛ BTO BirdFacts؛ Cornell Lab of Ornithology؛ U.S. Fish & Wildlife Service؛ Smithsonian؛ EURING/CMS، أطلس الهجرة؛ دليل الطيور المائية لشمال أفريقيا، AAO وONCFS؛ قائمة طيور الكويت الرسمية؛ Birds of Oman؛ قائمة الإمارات EBRC، يوليو 2026؛ قائمة طيور لبنان، Sandgrouse 42، 2020؛ Birds of Saudi Arabia، قائمة الظهران. مراجعة المعلومات: 26 أكتوبر 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Gary Kramer / USFWS — Public Domain."
+        },
+        "en": {
+          "title": "Gadwall",
+          "subtitle": "Mareca strepera — a dabbling duck with a white wing patch",
+          "meta_description": "Mareca strepera — a dabbling duck with a white wing patch",
+          "sections": [
+            {
+              "heading": "Identity and name",
+              "paragraphs": [
+                "The Gadwall, called “al-batt al-sumari” and “sumariya” in Arabic references, belongs to Anatidae and the order Anseriformes. The scientific name used here is Mareca strepera; older references and some regional checklists use Anas strepera for the same species. It is a dabbling duck rather than a diving duck that normally feeds completely underwater. A male may look dull from a distance, but binoculars reveal intricate patterning rather than uniform grey."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "A male in characteristic plumage is grey-brown, finely patterned across the body, with a black rear end and a dark bill. The wing has a white patch, with black and chestnut areas visible on closer inspection. The forehead is steep and the body a little slimmer than a Mallard’s. The female is mottled brown, with orange edges to her dark bill; the white wing patch shows in flight and may be visible at rest.",
+                "Juveniles resemble females, so the absence of grey does not determine sex or age. Males also acquire female-like eclipse plumage after breeding. The white wing patch, narrower bill and pale belly help distinguish Gadwall from Mallard; these features should be assessed together rather than relying on one colour or a distant photograph."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "Gadwall use lakes, ponds and marshes rich in aquatic vegetation, in fresh and sometimes brackish water, both natural and artificial. They usually feed near the surface, tipping forwards to reach submerged plants. Leaves, stems and seeds are important foods; invertebrates, including insects and small molluscs, become more important during breeding. They may take vegetation gathered by other birds, including coots and diving ducks, as these return to the surface."
+              ]
+            },
+            {
+              "heading": "Behaviour and life cycle",
+              "paragraphs": [
+                "They mix with other ducks and form flocks outside the breeding season; pairs may already be evident in autumn and winter. The female builds a ground nest concealed by vegetation and lined with plant material and down; small islands sometimes provide suitable sites. BTO records give a typical clutch of 9–11 eggs, incubated by the female for about 24–26 days. Chicks hatch covered in down and able to move, and usually become capable of flight at around 45–50 days. These are reference durations, not a uniform calendar for every population."
+              ]
+            },
+            {
+              "heading": "Distribution and migration",
+              "paragraphs": [
+                "The breeding range extends across large parts of North America, Europe and Asia, with local breeding in northwestern Africa. Northern populations are strongly migratory, whereas others remain resident or move shorter distances. In Europe, birds undergo a post-breeding wing moult that temporarily prevents flight before continuing their movements. Summer presence alone therefore does not demonstrate permanent residency or nesting at a site."
+              ]
+            },
+            {
+              "heading": "Occurrence in Arab countries",
+              "paragraphs": [
+                "The North African waterbird guide documents winter occurrence in Morocco, Algeria, Tunisia, Libya, Egypt and Sudan, without extending that generalisation to Mauritania. This describes distribution, not equal abundance in every country or wetland. Lebanon’s 2020 checklist describes a very scarce, irregular winter visitor from late October to mid-March.",
+                "In Kuwait it is an uncommon passage migrant and scarce winter visitor, and breeding has been recorded; nesting cannot therefore be ruled out across the entire region. Oman lists it as a fairly common winter visitor. The UAE checklist describes an uncommon to fairly common migrant and winter visitor, but seldom numerous. Records from Dhahran, Saudi Arabia, describe an uncommon winter visitor during October–March; this is local evidence, not a classification for the whole kingdom."
+              ]
+            },
+            {
+              "heading": "Why late October?",
+              "paragraphs": [
+                "This period overlaps part of the species’ autumn movements; in Lebanon, the documented winter occurrence window begins late in the month. It is not a single peak throughout the Arab world and does not guarantee birds at every lake. Recording dates, counts and water conditions is useful; watch quietly without making birds stop feeding or abandon their resting place."
+              ]
+            },
+            {
+              "heading": "Conservation and pressures",
+              "paragraphs": [
+                "The 2025 global Red List assessment classifies Gadwall as Least Concern (LC). This does not mean local problems are absent: the assessment identifies water pollution, disturbance from recreation, hunting across much of the range, and lead poisoning through ingestion in Spain. Protecting vegetation and feeding, nesting and resting sites supports the species; global abundance does not replace country-level monitoring."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "BirdLife International / IUCN Red List, 2025 assessment; BTO BirdFacts; Cornell Lab of Ornithology; U.S. Fish & Wildlife Service; Smithsonian; EURING/CMS Migration Atlas; North African waterbird identification guide, AAO and ONCFS; Official Kuwait Bird List; Birds of Oman; EBRC UAE checklist, July 2026; Lebanon checklist, Sandgrouse 42, 2020; Birds of Saudi Arabia, Dhahran checklist. Information reviewed: 26 October 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Gary Kramer / USFWS — Public Domain."
+        },
+        "fr": {
+          "title": "Canard chipeau",
+          "subtitle": "Mareca strepera — un canard de surface à tache alaire blanche",
+          "meta_description": "Mareca strepera — un canard de surface à tache alaire blanche",
+          "sections": [
+            {
+              "heading": "Identité et nom",
+              "paragraphs": [
+                "Le Canard chipeau, appelé « al-batt al-sumari » et « sumariya » dans des références arabes, appartient aux Anatidae et à l’ordre des Anseriformes. Le nom scientifique retenu ici est Mareca strepera ; des ouvrages anciens et certaines listes régionales utilisent Anas strepera pour la même espèce. C’est un canard de surface, et non un canard plongeur recherchant habituellement sa nourriture entièrement sous l’eau. De loin, le mâle paraît terne ; aux jumelles, son plumage révèle pourtant un dessin délicat plutôt qu’un gris uniforme."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Le mâle en plumage caractéristique est gris-brun, finement dessiné sur le corps, avec l’arrière noir et le bec sombre. L’aile porte une tache blanche, accompagnée de zones noires et marron visibles de plus près. Le front est abrupt et le corps un peu plus élancé que celui du Colvert. La femelle est brune et mouchetée, avec les bords du bec sombre orangés ; sa tache alaire blanche apparaît en vol et peut se voir au repos.",
+                "Les juvéniles ressemblent aux femelles : l’absence de gris ne suffit donc pas à déterminer le sexe ou l’âge. Après la reproduction, les mâles prennent également un plumage d’éclipse ressemblant à celui des femelles. La tache alaire blanche, le bec plus fin et le ventre clair aident à distinguer le Chipeau du Colvert ; mieux vaut réunir ces caractères que se fier à une seule couleur ou à une photographie lointaine."
+              ]
+            },
+            {
+              "heading": "Habitat et alimentation",
+              "paragraphs": [
+                "Il fréquente les lacs, mares et marais riches en végétation aquatique, en eau douce et parfois saumâtre, dans des milieux naturels ou artificiels. Il se nourrit généralement près de la surface, basculant vers l’avant pour atteindre les plantes immergées. Feuilles, tiges et graines constituent une part importante de son alimentation ; les invertébrés, dont les insectes et les petits mollusques, prennent davantage d’importance pendant la reproduction. Il peut dérober des végétaux récoltés par d’autres oiseaux, notamment les foulques et les canards plongeurs, lorsqu’ils remontent à la surface."
+              ]
+            },
+            {
+              "heading": "Comportement et cycle de vie",
+              "paragraphs": [
+                "Il se mêle à d’autres canards et forme des groupes hors reproduction ; des couples peuvent être visibles dès l’automne et l’hiver. La femelle aménage au sol un nid dissimulé dans la végétation et garni de matières végétales et de duvet ; de petits îlots offrent parfois des emplacements favorables. Les données du BTO indiquent une ponte typique de 9 à 11 œufs, incubés par la femelle pendant environ 24 à 26 jours. Les poussins éclosent couverts de duvet et capables de se déplacer ; ils peuvent généralement voler vers 45 à 50 jours. Ce sont des durées de référence, non un calendrier identique pour toutes les populations."
+              ]
+            },
+            {
+              "heading": "Répartition et migration",
+              "paragraphs": [
+                "L’aire de reproduction couvre de vastes parties de l’Amérique du Nord, de l’Europe et de l’Asie, avec une nidification locale dans le nord-ouest de l’Afrique. Les populations septentrionales sont fortement migratrices ; d’autres sont sédentaires ou se déplacent moins loin. En Europe, une mue des rémiges après la reproduction empêche temporairement le vol, avant la poursuite des déplacements. Une présence estivale ne prouve donc pas, à elle seule, la sédentarité ou la nidification sur place."
+              ]
+            },
+            {
+              "heading": "Présence dans les pays arabes",
+              "paragraphs": [
+                "Le guide des oiseaux d’eau d’Afrique du Nord documente un hivernage au Maroc, en Algérie, en Tunisie, en Libye, en Égypte et au Soudan, sans étendre cette généralisation à la Mauritanie. Il décrit une répartition, non une abondance identique dans chaque pays ou zone humide. La liste libanaise de 2020 le présente comme un hivernant très peu fréquent et irrégulier, de fin octobre à mi-mars.",
+                "Au Koweït, c’est un migrateur de passage peu commun et un hivernant peu fréquent ; sa reproduction y a été enregistrée, ce qui interdit d’exclure la nidification dans toute la région. Oman le classe comme un hivernant assez commun. Aux Émirats arabes unis, la liste indique un migrateur et hivernant peu commun à assez commun, mais rarement nombreux. À Dhahran, en Arabie saoudite, les observations le décrivent comme un hivernant peu commun d’octobre à mars : une donnée locale, pas un statut pour l’ensemble du royaume."
+              ]
+            },
+            {
+              "heading": "Pourquoi fin octobre ?",
+              "paragraphs": [
+                "Cette période correspond à une partie des mouvements automnaux ; au Liban, la fenêtre documentée de présence hivernale commence en fin de mois. Elle ne constitue ni un pic unique dans le monde arabe ni une garantie de présence sur chaque lac. Noter la date, l’effectif et les conditions de l’eau est utile ; observer calmement évite d’interrompre l’alimentation ou de faire abandonner un lieu de repos."
+              ]
+            },
+            {
+              "heading": "Conservation et pressions",
+              "paragraphs": [
+                "L’évaluation mondiale de la Liste rouge de 2025 classe l’espèce en Préoccupation mineure (LC). Cela n’efface pas les problèmes locaux : l’évaluation mentionne la pollution des eaux, le dérangement lié aux loisirs, la chasse dans une grande partie de l’aire de répartition et l’intoxication par ingestion de plomb en Espagne. Préserver la végétation ainsi que les sites d’alimentation, de nidification et de repos favorise sa conservation ; l’abondance mondiale ne remplace pas le suivi dans chaque pays."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "BirdLife International / Liste rouge de l’UICN, évaluation 2025 ; BTO BirdFacts ; Cornell Lab of Ornithology ; U.S. Fish & Wildlife Service ; Smithsonian ; atlas des migrations EURING/CMS ; guide des oiseaux d’eau d’Afrique du Nord, AAO et ONCFS ; liste officielle des oiseaux du Koweït ; Birds of Oman ; liste EBRC des Émirats arabes unis, juillet 2026 ; liste du Liban, Sandgrouse 42, 2020 ; Birds of Saudi Arabia, liste de Dhahran. Informations vérifiées le 26 octobre 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Gary Kramer / USFWS — Public Domain."
+        }
+      }
+    }
+  ]
+}
