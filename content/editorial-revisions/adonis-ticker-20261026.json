@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "adonis-ticker-20261026",
+  "expected_base": "68f30a63e4eff6319b87f9b0a8f09ee29fc2eac5",
+  "operation": "add-adonis-ticker",
+  "approval_reference": "private:Sentinel_2d45c1b1d47081918b026e9505ae7e69",
+  "expected_source_sha256": "ce05f2d4184e32fe2a1b11b96a6fab6341ccfdc5aea532f13e1e2ae7949c4eeb",
+  "expected_targets_sha256": "699bd32cf6a5771fc8ad9834bded43d5915b7cbe2fd7f52c17d3fd6690b56c0a",
+  "payload": {}
+}
