@@ -326,7 +326,11 @@ def refresh(path,lang):
                         item=dict(title=v['titles'][lang],date=channel_date(v['published_at'],lang),image=v['image'],alt=v['titles'][lang],href=channel_href(v))
                         card=render_card(v['id'],item).replace('<article class="card">',f'<article class="card" data-video-id="{v["id"]}">',1)
                         parts.append(card)
-                else:parts.extend(render_card(*data(s)) for s in sections[door])
+                else:
+                    import tv_publication
+                    native=tv_publication.homepage_card(ROOT,lang)
+                    if native:parts.append(native)
+                    parts.extend(render_card(*data(s)) for s in sections[door])
                 parts.append('</div></div>')
             parts.append('</section>')
             page,n=re.subn(r'<section class="home-section sayd-tv"[^>]*>.*?</section>',lambda m:'\n'.join(parts),page,count=1,flags=re.S)

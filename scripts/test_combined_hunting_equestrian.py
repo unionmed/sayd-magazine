@@ -490,6 +490,12 @@ def test_preserved(base):
                 continue
             xp='//*[contains(concat(" ",normalize-space(@class)," ")," '+cls+' ")]'
             if cls == 'sayd-tv':
+                # Only a complete trusted BASE replay authorizes this exact TV insertion.
+                import tv_publication
+                if compiled is not None and (ROOT/tv_publication.SOURCE).is_file():
+                    tv_publication.check_published(ROOT)
+                    assert new == compiled.read(rel), 'Native TV differs from trusted full-tree replay'
+                    continue
                 old_nodes, new_nodes = before.xpath(xp), after.xpath(xp)
                 old_source = subprocess.check_output(['git','show',base+':content/tv-channel.json'],cwd=ROOT)
                 current_source = (ROOT/'content/tv-channel.json').read_bytes()
