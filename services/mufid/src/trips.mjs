@@ -16,6 +16,7 @@ export function parseItinerary(text,sources=[],input={},diagnostics=[]){
  if(!data||typeof data.summary!=='string'||!data.summary.trim()||!Array.isArray(data.days)||data.days.length>5)return reject('missing_summary_or_days');
  const trusted=new Map(sources.map(s=>[sourceKey(s.url),s.url]).filter(([key])=>key)),days=[];
  const format=data.format==='advice'?'advice':data.format==='options'?'options':'itinerary';
+ if(format==='options')foldOptionContacts(data,trusted);
  const hunting=input.trip?.activities?.includes('hunting')||/صيد طيور|رحلة صيد|hunting|chasse/i.test(input.query||'');
  if(hunting && (format!=='advice'||data.days.length||!data.legal||!['unconfirmed','open','closed'].includes(data.legal.status)))return reject('hunting_format');
  if(hunting && data.legal.status!=='unconfirmed'){
@@ -64,3 +65,24 @@ export function parseItinerary(text,sources=[],input={},diagnostics=[]){
  return {summary:data.summary.slice(0,1200),format,...(hunting?{legal:data.legal}:{}),region:typeof data.region==='string'?data.region.trim().slice(0,160):'',days};
 }
 export function itineraryNeedsReview(plan){return plan.days.some(d=>accessReviewNeeded(d.base+' '+d.departure+' '+d.return_to+' '+d.stops.map(s=>s.name+' '+s.locality).join(' ')));}
+
+// Booking instructions describe an option; they are not another geographical stop.
+function foldOptionContacts(data,trusted){
+ const base=name=>normalize(name).replace(/ (?:booking contact|reservation contact|contact|dining|restaurant)$/,'');
+ for(const day of data.days){
+  if(!Array.isArray(day?.stops))continue;
+  const keep=[];
+  for(const stop of day.stops){
+   if(stop?.kind==='activity'&&/ (?:booking contact|reservation contact|contact)$/.test(normalize(stop.name))){
+    const venue=day.stops.find(v=>v?.kind==='meal'&&base(v.name)===base(stop.name)&&normalize(v.locality)===normalize(stop.locality));
+    if(venue&&trusted.has(sourceKey(stop.source_url))&&trusted.has(sourceKey(venue.source_url))&&new URL(stop.source_url).hostname.replace(/^www\./,'')===new URL(venue.source_url).hostname.replace(/^www\./,'')){
+     if(typeof venue.description==='string'&&typeof stop.description==='string')venue.description=venue.description.slice(0,280)+' '+stop.description.slice(0,210);
+     else {keep.push(stop);continue;}
+     continue;
+    }
+   }
+   keep.push(stop);
+  }
+  day.stops=keep;
+ }
+}
