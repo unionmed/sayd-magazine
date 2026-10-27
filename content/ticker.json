@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "عندما-تهين-الطريدة-أنت-تهين-نفسك",
+      "titles": {
+        "ar": "عندما تهين الطريدة… أنت تهين نفسك!",
+        "en": "When You Humiliate Your Quarry… You Humiliate Yourself!",
+        "fr": "Quand vous humiliez votre gibier… vous vous humiliez vous-même !"
+      },
+      "title": "عندما تهين الطريدة… أنت تهين نفسك!"
+    },
+    {
       "slug": "الصيد-السياحي-في-مصر-والعراق-والأردن",
       "titles": {
         "ar": "الصيد السياحي في مصر والعراق والأردن",
@@ -81,15 +90,6 @@
         "fr": "Coopération Égypte–Émirats pour l’outarde houbara et la gestion d’Omayed"
       },
       "title": "تعاون مصري إماراتي لحماية الحبارى وتطوير إدارة محمية العميد"
-    },
-    {
-      "slug": "تمبتد-غودولفين-إيفرست-2026",
-      "titles": {
-        "ar": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست»",
-        "en": "Tempted delivers Godolphin’s first Everest victory",
-        "fr": "Tempted offre à Godolphin sa première victoire dans l’Everest"
-      },
-      "title": "«تمبتد» تمنح غودولفين أول لقب في «إيفرست»"
     }
   ]
 }
