@@ -1,11 +1,33 @@
 """Play the independent native video in AR/EN/FR, without any external writes."""
-import argparse, functools, http.server, json, os, threading
+import argparse, functools, http.server, json, os, threading, re
 from pathlib import Path
 from lxml import html
 import tv_publication as tv
 import publication_compiler as c
 
 ROOT=Path(__file__).resolve().parents[1]
+
+class MediaHandler(http.server.SimpleHTTPRequestHandler):
+    """Match the existing native-media QA server's byte-range support."""
+    def send_head(self):
+        self._range=None
+        path=Path(self.translate_path(self.path));header=self.headers.get('Range','')
+        match=re.fullmatch(r'bytes=(\d+)-(\d*)',header)
+        if path.is_file() and match:
+            size=path.stat().st_size;start=int(match[1]);end=min(int(match[2]) if match[2] else size-1,size-1)
+            if start>end:self.send_error(416);return None
+            source=path.open('rb');source.seek(start);self._range=(start,end)
+            self.send_response(206);self.send_header('Content-Type',self.guess_type(str(path)))
+            self.send_header('Accept-Ranges','bytes');self.send_header('Content-Range',f'bytes {start}-{end}/{size}')
+            self.send_header('Content-Length',str(end-start+1));self.end_headers();return source
+        return super().send_head()
+    def copyfile(self,source,outputfile):
+        if self._range is None:return super().copyfile(source,outputfile)
+        remaining=self._range[1]-self._range[0]+1
+        while remaining:
+            data=source.read(min(65536,remaining))
+            if not data:break
+            outputfile.write(data);remaining-=len(data)
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--output',required=True);args=parser.parse_args()
@@ -20,13 +42,22 @@ def main():
         (out/'native-tv.json').write_text(json.dumps({'status':'source-only request: playback tested on generated candidate'}));return
     tv.check_published(ROOT)
     from playwright.sync_api import sync_playwright
-    handler=functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(ROOT/'docs'))
+    handler=functools.partial(MediaHandler,directory=str(ROOT/'docs'))
     server=http.server.ThreadingHTTPServer(('127.0.0.1',0),handler)
     threading.Thread(target=server.serve_forever,daemon=True).start()
     base=f'http://127.0.0.1:{server.server_port}';results=[]
     try:
         with sync_playwright() as p:
-            browser=p.chromium.launch(headless=True)
+            # Record the original harness browser's codec support; this is diagnostic,
+            # never a substitute for the actual six-view playback acceptance below.
+            probe=p.chromium.launch(headless=True)
+            probe_page=probe.new_page()
+            codec_support=probe_page.evaluate('''()=>document.createElement('video').canPlayType('video/mp4; codecs="avc1.64001e, mp4a.40.2"')''')
+            (out/'chromium-codec-diagnostic.json').write_text(json.dumps({'version':probe.version,'codec_support':codec_support},indent=2))
+            probe.close()
+            # The existing Proudfoot native MP4 acceptance uses installed Chrome for H.264/AAC.
+            browser=p.chromium.launch(channel="chrome",headless=True)
+            (out/'browser.json').write_text(json.dumps({'channel':'chrome','version':browser.version},indent=2))
             for lang in tv.LANGS:
                 prefix='' if lang=='ar' else '/'+lang
                 for width,height in ((390,844),(1440,1000)):
@@ -38,8 +69,16 @@ def main():
                     selection.scroll_into_view_if_needed();page.screenshot(path=str(out/f'{lang}-{width}-selections.png'))
                     selection.locator('[data-native-video] h3 a').click()
                     video=page.locator('[data-native-video] video');video.wait_for()
+                    capability=video.evaluate('''(v)=>v.canPlayType('video/mp4; codecs="avc1.64001e, mp4a.40.2"')''')
+                    assert capability, 'Acceptance browser must support original H.264/AAC media'
                     video.evaluate('(v)=>{v.muted=true;v.load()}')
-                    page.wait_for_function('document.querySelector("[data-native-video] video").readyState>=1')
+                    try:
+                        page.wait_for_function('(()=>{const v=document.querySelector("[data-native-video] video");return v.readyState>=1||v.error})()')
+                        assert video.evaluate('(v)=>v.readyState>=1 && !v.error'), 'Native media metadata failed'
+                    except Exception:
+                        diagnostic=video.evaluate('(v)=>({src:v.currentSrc,state:v.readyState,network:v.networkState,error:v.error&&{code:v.error.code,message:v.error.message}})')
+                        (out/f'{lang}-{width}-media-failure.json').write_text(json.dumps(diagnostic,indent=2))
+                        raise
                     facts=video.evaluate('(v)=>({duration:v.duration,width:v.videoWidth,height:v.videoHeight,error:v.error&&v.error.message,src:v.currentSrc})')
                     assert 70<facts['duration']<72 and facts['width']==478 and facts['height']==850 and not facts['error']
                     assert facts['src'].startswith(base) and facts['src'].endswith('/mushroom.mp4')
