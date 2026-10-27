@@ -1,0 +1,40 @@
+{
+  "description": {
+    "ar": "فطر يرتبط بهلوسات يرى فيها بعض الناس أشخاصًا مصغّرين! يدرس الباحثون Lanmaoa asiatica، بينما ما تزال المادة المسؤولة عن تأثيره غير محسومة.",
+    "en": "A mushroom associated with hallucinations in which some people see miniature humans. Researchers are studying Lanmaoa asiatica, while the substance responsible for its effects remains uncertain.",
+    "fr": "Un champignon associé à des hallucinations où certaines personnes voient des humains miniatures. Les chercheurs étudient Lanmaoa asiatica, mais la substance responsable de ses effets reste indéterminée."
+  },
+  "disclosure": {
+    "ar": "صورة الفطر محاكاة لصورة حقيقية، والمشاهد الأخرى توضيحية مولّدة بالذكاء الاصطناعي.",
+    "en": "The mushroom image recreates a real photograph; the other scenes are AI-generated illustrations.",
+    "fr": "L’image du champignon reproduit une photographie réelle ; les autres scènes sont des illustrations générées par intelligence artificielle."
+  },
+  "study": {
+    "authors": "Domnauer & Dentinger",
+    "journal": "Mycologia",
+    "date": "2026-06-05",
+    "doi": "https://doi.org/10.1080/00275514.2026.2670968"
+  },
+  "schema": "sayd-tv-publication-v1",
+  "id": "lanmaoa-asiatica-20261026",
+  "expected_base": "b75c0d1cbf7dd2b86bcc2346677d52f6013df95f",
+  "approval_reference": "private:Sentinel_851c47a995508191b66faaa403f90d94",
+  "published": "2026-10-27",
+  "titles": {
+    "ar": "بشر صغار… بسبب فطر!",
+    "en": "Tiny people… because of a mushroom!",
+    "fr": "Des humains miniatures… à cause d’un champignon !"
+  },
+  "credit": {
+    "ar": "العلم كل يوم",
+    "en": "العلم كل يوم",
+    "fr": "العلم كل يوم"
+  },
+  "poster_sha256": "b20129736c061adda313ca17207b8512479f91a5574d3280c2ec1dffd00478b7",
+  "expected_channel_sha256": "613c985a053f8a531cf2e9fa2f86ac14c6713bd1be7e333b294173e5118b1c7b",
+  "rights": {
+    "status": "owner-authorized-reuse",
+    "evidence_reference": "private:owner-mushroom-video-20261026",
+    "statement": "Independent magazine copy authorized by the owner; source video unchanged. AI imagery disclosure retained."
+  }
+}
