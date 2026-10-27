@@ -173,10 +173,35 @@ class RealSourceTests(unittest.TestCase):
             with self.subTest(path=path), self.assertRaises(ValueError):
                 r.validate_source(ROOT, self.base, self.source(extra={path: b'evil'}))
 
+    def test_stale_base_rejected(self):
+        with self.assertRaises(ValueError): r.validate_source(ROOT, self.base, self.base)
+        source = self.source()
+        with self.assertRaises((ValueError, subprocess.CalledProcessError)):
+            r.validate_source(ROOT, r.git(ROOT, 'rev-parse', self.base + '^'), source)
+
+
+class RealCaptionSourceTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # Caption-adapter fixtures precede the separately approved media change.
+        # Other source-adapter tests above continue to exercise current HEAD.
+        cls.temp = tempfile.TemporaryDirectory(prefix='sayd-caption-request-tests-')
+        cls.root = Path(cls.temp.name) / 'repo'
+        subprocess.run(['git', 'clone', '-q', '--shared', str(ROOT), str(cls.root)], check=True)
+        original = '5aa9a562f9485638571f2b4a5e272442af5d69ce'
+        r.git(cls.root, 'checkout', '-q', '--detach', original)
+        code = {str(p.relative_to(ROOT)): p.read_bytes() for p in (ROOT / 'scripts').glob('*.py')}
+        cls.base = source_commit(cls.root, original, code)
+        r.git(cls.root, 'checkout', '-q', '--detach', cls.base)
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.temp.cleanup()
+
     def caption_source(self, scope=False, extra=None, mutate=None):
-        record = json.loads((ROOT / 'content/publications/riyadh-results-20261024.json').read_text())
+        record = json.loads((self.root / 'content/publications/riyadh-results-20261024.json').read_text())
         import caption_revision
-        current_photo = caption_revision.effective_records(ROOT, record, record['articles'][0])[0]['photos'][0]
+        current_photo = caption_revision.effective_records(self.root, record, record['articles'][0])[0]['photos'][0]
         value = {'schema': 'sayd-caption-revision-v1', 'id': 'request-caption-test',
                  'expected_base': self.base, 'publication_id': record['id'],
                  'article_slug': record['articles'][0]['slugs']['ar'],
@@ -187,23 +212,23 @@ class RealSourceTests(unittest.TestCase):
         if mutate: mutate(value)
         files = {'content/caption-revisions/request-caption-test.json': json.dumps(value, ensure_ascii=False).encode()}
         files.update(extra or {})
-        source = source_commit(ROOT, self.base, files)
-        tree = r.git(ROOT, 'rev-parse', source + '^{tree}')
+        source = source_commit(self.root, self.base, files)
+        tree = r.git(self.root, 'rev-parse', source + '^{tree}')
         env = dict(os.environ, GIT_AUTHOR_NAME='Test', GIT_COMMITTER_NAME='Test',
                    GIT_AUTHOR_EMAIL='test@example.invalid', GIT_COMMITTER_EMAIL='test@example.invalid')
-        return subprocess.check_output(['git', '-C', str(ROOT), 'commit-tree', tree, '-p', self.base],
+        return subprocess.check_output(['git', '-C', str(self.root), 'commit-tree', tree, '-p', self.base],
                                        input=MESSAGE.replace('false', str(scope).lower()).encode(), env=env).decode().strip()
 
     def test_caption_request_has_no_distribution_authority(self):
-        self.assertFalse(r.validate_source(ROOT, self.base, self.caption_source()))
+        self.assertFalse(r.validate_source(self.root, self.base, self.caption_source()))
         with self.assertRaisesRegex(ValueError, 'cannot authorize distribution'):
-            r.validate_source(ROOT, self.base, self.caption_source(scope=True))
+            r.validate_source(self.root, self.base, self.caption_source(scope=True))
 
     def test_caption_request_rejects_mixed_or_generated_inputs(self):
         for path in ('content/publications/extra.json', 'content/homepage.json',
                      'docs/search-index.json', 'scripts/evil.py'):
             with self.subTest(path=path), self.assertRaises(ValueError):
-                r.validate_source(ROOT, self.base, self.caption_source(extra={path: b'{}'}))
+                r.validate_source(self.root, self.base, self.caption_source(extra={path: b'{}'}))
 
     def test_caption_request_revalidates_exact_base_and_old_text(self):
         mutations = [lambda v: v.update(expected_base='0'*40),
@@ -212,13 +237,8 @@ class RealSourceTests(unittest.TestCase):
                      lambda v: v['captions']['fr'].update(new='<script>bad</script>')]
         for mutate in mutations:
             with self.assertRaises(ValueError):
-                r.validate_source(ROOT, self.base, self.caption_source(mutate=mutate))
+                r.validate_source(self.root, self.base, self.caption_source(mutate=mutate))
 
-    def test_stale_base_rejected(self):
-        with self.assertRaises(ValueError): r.validate_source(ROOT, self.base, self.base)
-        source = self.source()
-        with self.assertRaises((ValueError, subprocess.CalledProcessError)):
-            r.validate_source(ROOT, r.git(ROOT, 'rev-parse', self.base + '^'), source)
 
 
 if __name__ == '__main__': unittest.main()

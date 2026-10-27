@@ -22,7 +22,11 @@ class CaptionRevisionTests(unittest.TestCase):
         cls.temp = tempfile.TemporaryDirectory(prefix='sayd-caption-tests-')
         cls.root = Path(cls.temp.name) / 'repo'
         subprocess.run(['git', 'clone', '-q', '--shared', str(ROOT), str(cls.root)], check=True)
-        original = compiler.git(cls.root, 'rev-parse', 'HEAD').decode().strip()
+        # Isolated caption fixture must precede the separately approved photo
+        # replacement; current main may legitimately have different media.
+        # Overlay current code below, retaining every existing assertion.
+        original = '5aa9a562f9485638571f2b4a5e272442af5d69ce'
+        compiler.git(cls.root, 'checkout', '-q', '--detach', original)
         code = {str(p.relative_to(ROOT)): p.read_bytes() for p in (ROOT / 'scripts').glob('*.py')}
         cls.record = json.loads((cls.root / 'content/publications/riyadh-results-20261024.json').read_text())
         cls.article = cls.record['articles'][0]

@@ -411,8 +411,8 @@ class FinalizerTests(unittest.TestCase):
             with self.subTest(path=path), self.assertRaises(f.Blocked):
                 f.safe_output_path(path)
 
-    def test_two_editorial_revision_records_are_read_with_exact_hashes(self):
-        for name in ("wanaameen-jcsa-photo-20261026", "adonis-ticker-20261026"):
+    def test_three_editorial_revision_records_are_read_with_exact_hashes(self):
+        for name in ("wanaameen-jcsa-photo-20261026", "adonis-ticker-20261026", "episode-three-lead-20261026"):
             path = "content/editorial-revisions/" + name + ".json"
             data = b'{"fixture":"path validation only, never publication authority"}\n'
             self.write(self.site, path, data)

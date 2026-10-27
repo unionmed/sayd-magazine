@@ -15,12 +15,25 @@ class TVTests(unittest.TestCase):
         self.poster=b'\xff\xd8\xffposter'
         self.value={'schema':'sayd-tv-publication-v1','id':tv.ID,'expected_base':self.base,'approval_reference':'private:owner-20261026','published':'2026-10-26','titles':dict.fromkeys(tv.LANGS,'Mushroom'),'description':dict.fromkeys(tv.LANGS,'Description'),'disclosure':dict.fromkeys(tv.LANGS,'AI illustration'),'credit':dict.fromkeys(tv.LANGS,'Science Every Day'),'study':{'authors':'Domnauer & Dentinger','journal':'Mycologia','date':'2026-06-05','doi':'https://doi.org/10.1080/00275514.2026.2670968'},'poster_sha256':c.sha256(self.poster),'expected_channel_sha256':c.sha256((ROOT/tv.CHANNEL).read_bytes()),'rights':{'status':'owner-authorized-reuse','evidence_reference':'private:owner-mushroom-video-20261026','statement':'Independent magazine copy authorized by the owner; source video unchanged. AI imagery disclosure retained.'}}
     def test_schema_rejects_unauthorized_fields_and_markup(self):
-        for key,value in [('id','other'),('published','2026-10-27'),('expected_base','a'*40),('approval_reference','chat transcript'),('titles',{'ar':'x'}),('description',dict.fromkeys(tv.LANGS,'<script>')),('poster_sha256','bad'),('study',{})]:
+        for key,value in [('id','other'),('published','2099-10-27'),('expected_base','a'*40),('approval_reference','chat transcript'),('titles',{'ar':'x'}),('description',dict.fromkeys(tv.LANGS,'<script>')),('poster_sha256','bad'),('study',{})]:
             with self.subTest(key=key):
                 candidate=copy.deepcopy(self.value);candidate[key]=value
                 with self.assertRaises(ValueError):tv.validate(candidate,self.base)
         candidate=dict(self.value,html='danger')
         with self.assertRaises(ValueError):tv.validate(candidate,self.base)
+    def test_actual_release_date_without_backdating_or_future_dates(self):
+        from datetime import date
+        class ReleaseDay(date):
+            @classmethod
+            def today(cls):return cls(2026,10,27)
+        with patch.object(tv,'date',ReleaseDay):
+            for day in ('2026-10-26','2026-10-27'):
+                value=dict(self.value,published=day)
+                self.assertEqual(tv.validate(value,self.base)['published'],day)
+            for day in ('2026-10-25','2026-10-28','2026-02-30','27/10/2026'):
+                with self.subTest(day=day):
+                    with self.assertRaises(ValueError):tv.validate(dict(self.value,published=day),self.base)
+
     def test_reuses_player_without_external_embed(self):
         for lang in tv.LANGS:
             player=html.fromstring(tv.player(self.value,lang))

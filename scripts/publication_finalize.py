@@ -108,7 +108,8 @@ def safe_output_path(value):
         or (value.startswith("content/publications/") and len(path.parts) == 3 and path.suffix == ".json")
         or (value.startswith("content/caption-revisions/") and len(path.parts) == 3 and path.suffix == ".json")
         or value in {"content/editorial-revisions/wanaameen-jcsa-photo-20261026.json",
-                     "content/editorial-revisions/adonis-ticker-20261026.json"}
+                     "content/editorial-revisions/adonis-ticker-20261026.json",
+                     "content/editorial-revisions/episode-three-lead-20261026.json"}
         or (path.parts[:2] in {("content", "posts"), ("content", "en"), ("content", "fr")}
             and len(path.parts) == 3 and path.suffix == ".md")
         or (value.startswith("audit/image-catalog/manifest/release-")

@@ -4,6 +4,7 @@ No executable input, old-player edits, social actions, or publication authority.
 """
 import base64, copy, html, json, os, re, subprocess
 from pathlib import Path
+from datetime import date
 from publication_schema import keys, localized, loads, require, COMMIT, SHA, LANGS
 from caption_revision import changed_paths
 
@@ -28,7 +29,9 @@ def validate(value, base):
     require(value['schema']=='sayd-tv-publication-v1' and value['id']==ID, 'Only approved TV insertion supported')
     require(COMMIT.fullmatch(value['expected_base'] or '') and value['expected_base']==base, 'Stale TV base')
     require(re.fullmatch(r'private:[A-Za-z0-9][A-Za-z0-9._-]{0,299}',value['approval_reference'] or ''), 'Bounded approval reference required')
-    require(value['published']=='2026-10-26', 'Original TV publication date required')
+    require(isinstance(value['published'],str) and re.fullmatch(r'20\d\d-\d\d-\d\d',value['published']), 'ISO TV publication date required')
+    published=date.fromisoformat(value['published'])
+    require(date(2026,10,26) <= published <= date.today(), 'TV publication date must follow approval and not be future-dated')
     for field in ('titles','description','disclosure','credit'): localized(value[field],2000)
     require(value['study']=={'authors':'Domnauer & Dentinger','journal':'Mycologia','date':'2026-06-05','doi':'https://doi.org/10.1080/00275514.2026.2670968'}, 'Study identity mismatch')
     require(value['rights']=={'status':'owner-authorized-reuse','evidence_reference':'private:owner-mushroom-video-20261026','statement':'Independent magazine copy authorized by the owner; source video unchanged. AI imagery disclosure retained.'}, 'Explicit bounded reuse record required')

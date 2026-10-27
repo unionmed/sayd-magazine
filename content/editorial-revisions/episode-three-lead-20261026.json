@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "episode-three-lead-20261026",
+  "expected_base": "3912400d3b91c7825436771ce40bb846064f0bbb",
+  "operation": "promote-episode-three-lead",
+  "approval_reference": "private:Sentinel_fb957d755bc08191a30716f04f69cf75",
+  "expected_source_sha256": "0996360381928acd459984ae75891a7a3e92092f8395fa8247ec340c765fb7cf",
+  "expected_targets_sha256": "c6048786e44e77e3c7c9d7c095e4a60dc550e29985d459636183bb18dc4b6b00",
+  "payload": {}
+}
