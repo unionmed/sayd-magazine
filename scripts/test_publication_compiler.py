@@ -142,8 +142,13 @@ class InterviewFriendlyCardTests(unittest.TestCase):
                 self.assertEqual(friendly.read_text(), friendly_view(canonical.read_text(), canonical, friendly))
                 if lang == 'ar':
                     from urllib.parse import quote
-                    self.assertIn(quote(article['slugs'][lang]), canonical.read_text())
+                    self.assertIn(article['slugs'][lang], canonical.read_text())
                     self.assertIn(article['slugs'][lang], friendly.read_text())
+                    ordinary = canonical.parent.parent / 'fixture/index.html'
+                    ordinary.parent.mkdir(parents=True, exist_ok=True)
+                    ordinary.write_text('<main><article class="card"><p>Historical</p></article></main>')
+                    compiler.insert_listing(stage, article, lang, photo, ordinary)
+                    self.assertIn(quote(article['slugs'][lang]), ordinary.read_text())
 
 
 class ExactPodiumCardTests(unittest.TestCase):

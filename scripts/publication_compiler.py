@@ -387,9 +387,10 @@ def insert_listing(stage, article, language, photo, path):
     tr = article['translations'][language]
     style = 'post-row' if 'post-row' in match[0] else 'card overlay' if 'overlay' in match[0] else 'card'
     relative_href = os.path.relpath(page_path(stage, article, language), path.parent)
-    friendly_collection = stage / 'docs' / ('' if language == 'ar' else language) / 'interviews/index.html'
-    # Match friendly_view's decoded relative paths without rewriting historical cards.
-    href = html.escape(relative_href, quote=True) if path == friendly_collection else quote(relative_href, safe='/')
+    collection_root = stage / 'docs' / ('' if language == 'ar' else language)
+    interview_collections = {collection_root / 'interviews/index.html', collection_root / 'category/مقابلات/index.html'}
+    # Match both existing interview views' decoded paths; preserve historical cards.
+    href = html.escape(relative_href, quote=True) if path in interview_collections else quote(relative_href, safe='/')
     image = os.path.relpath(stage / photo['path'], path.parent)
     image_style = ' style="object-fit:contain"' if contain_syria_podium(article, photo) else ''
     row = '<article class="' + style + '"><a class="thumb" href="' + href + '"><img src="' + image + '" alt="' + html.escape(photo['alt'][language], quote=True) + '" loading="lazy"' + image_style + '></a><div class="body"><h2><a href="' + href + '">' + html.escape(tr['title']) + '</a></h2><div class="meta">' + date_label(article['published'], language) + '</div><p class="excerpt">' + html.escape(tr['subtitle']) + '</p></div></article>\n'
