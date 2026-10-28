@@ -2,7 +2,10 @@ import {readFileSync} from 'node:fs';
 import test from 'node:test';import assert from 'node:assert/strict';
 import corpus from '../data/public-index.json' with {type:'json'};
 import {retrieve,normalize,providerPayload,extractResponse,needsFresh} from '../src/core.mjs';
-import {createHandler,MufidGuard} from '../src/worker.mjs';
+import {createHandler as baseHandler,MufidGuard} from '../src/worker.mjs';
+// Isolate protocol/shape unit tests from the reviewed-place dataset.
+// The production evidence gate and worker integration are exercised separately.
+const createHandler=(network,options={})=>baseHandler(network,{...options,planEvidenceReviewer:plan=>({ok:true,plan})});
 const origin='http://localhost:8080';
 function concretePlan(name='ساحة دير القمر',locality='دير القمر، لبنان',source_url='https://example.org/visit'){
  return {summary:'جولة خفيفة',format:'itinerary',days:[{day:1,base:'بيروت',departure:'بيروت',return_to:'بيروت',stops:[{name,locality,kind:'visit',description:'زيارة المعلم والتصوير مع استراحة',duration_minutes:40,walking:'مشي اختياري قصير',source_url}]}]};

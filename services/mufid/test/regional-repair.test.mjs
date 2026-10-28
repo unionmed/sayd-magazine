@@ -34,7 +34,7 @@ test('generic restaurants and nature guessed from a name are rejected with concr
 test('revision preserves actually consulted sources and receives the specific rejection reason',async()=>{
  let count=0,payload;
  const response=(p,sources)=>Response.json({status:'completed',output:[{type:'web_search_call',status:'completed',action:{sources:sources.map(url=>({type:'url',url}))}},{type:'message',content:[{type:'output_text',text:JSON.stringify(p)}]}]});
- const h=createHandler(async(u,o)=>{count++;if(count===1)return response(plan('مطعم في خان العسكر'),[source]);payload=JSON.parse(o.body);return response(plan(),['https://example.org/another']);});
+ const h=createHandler(async(u,o)=>{count++;if(count===1)return response(plan('مطعم في خان العسكر'),[source]);payload=JSON.parse(o.body);return response(plan(),['https://example.org/another']);},{planEvidenceReviewer:plan=>({ok:true,plan})}); // This test isolates source preservation; the shared evidence gate has integration tests.
  const env={ENABLED:'true',WEB_ENABLED:'true',PILOT_TOKEN:'test',RATE_SALT:'test',ALLOWED_ORIGINS:'https://test.example',OPENAI_API_KEY:'test',OPENAI_MODEL:'test',GUARD:{idFromName:()=>'',get:()=>({fetch:async()=>Response.json({ok:true})})}};
  const req=new Request('https://test.example/v1/ask',{method:'POST',headers:{Origin:'https://test.example',Authorization:'Bearer test','Content-Type':'application/json'},body:JSON.stringify({mode:'plan',lang:'ar',query:'مطاعم في إهدن'})});
  const result=await (await h(req,env)).json();assert.equal(count,2);assert.equal(result.itinerary.days[0].stops[0].name,'Named restaurant');

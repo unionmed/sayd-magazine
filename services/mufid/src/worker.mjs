@@ -1,3 +1,4 @@
+import {acceptPlaceEvidence} from './place-evidence.mjs';
 import {verifyLegalNotice} from './evidence.mjs';
 import {akkarScope,regionalDefects,regionalReviewNote} from './regional-evidence.mjs';
 import {sanitizeTrip,accessReviewNeeded,ACCESS_NOTE,parseItinerary,itineraryNeedsReview} from './trips.mjs';
@@ -81,8 +82,15 @@ export function createHandler(network=fetch,options={}) {
       if(!output.answer || data.status!=='completed')return reply({error:'incomplete_response',articles:cards},502);
       if(web && !output.verified)return reply({error:'verification_failed',articles:cards},502);
       let itinerary;const defects=[];let consulted=output.sources;
+      const parseReviewed=(answer,sources)=>{
+        const parsed=parseItinerary(answer,sources,input,defects);
+        if(!parsed)return null;
+        const review=(options.planEvidenceReviewer||acceptPlaceEvidence)(parsed,sources,input);
+        if(!review.ok){defects.push('place_evidence: '+review.reason+': '+review.name);return null;}
+        return review.plan;
+      };
       if(input.mode==='plan'&&input.task==='itinerary'){
-        itinerary=parseItinerary(output.answer,output.sources,input,defects);
+        itinerary=parseReviewed(output.answer,output.sources);
         // One bounded revision, never an open-ended retry loop or a vague draft.
         if(!itinerary){
           const revision={regional_defects:regionalDefects(output.answer,output.sources,input),draft:output.answer.slice(0,12000),defects:JSON.stringify(defects)+'. Check every constraint again: exact destination region, no duplicate places, no law/documents as visits, no alternatives merged into a route, ONE named hiking trail with sourced length/difficulty. Keep practical visitor sites with source_url, kind, duration_minutes and walking. For unresolved hunting legality use advice with days:[], never a route through law documents. Do not merely move rejected alternatives into summary. Read the draft against the original request and correct it.'};
@@ -91,7 +99,7 @@ export function createHandler(network=fetch,options={}) {
           data=await revised.json();output=extractResponse(data);
           output.sources=[...new Map([...consulted,...output.sources].map(s=>[s.url,s])).values()];
           if(data.status!=='completed'||!output.answer||!output.verified)return reply({error:'itinerary_unavailable',articles:cards},502);
-          itinerary=parseItinerary(output.answer,output.sources,input,defects);
+          itinerary=parseReviewed(output.answer,output.sources);
         }
         if(!itinerary&&akkarScope(input))return reply({answer:regionalReviewNote(input),articles:cards,sources:[],verified:false,regional_review_required:true});
         if(!itinerary&&input.trip?.activities?.includes('camping')){const note={ar:'لم أتمكن من توثيق خيمة بالسعة المطلوبة وقبول الأطفال من الجهة المشغلة؛ لذلك لم أعتمد برنامج مبيت لهذه الأسرة. راجع تفاصيل المخيم في المصادر للتأكد من السعة وسياسة الأطفال والحجز، ولا تعتبر بيت شجرة بسرير مزدوج خيمة عائلية.',en:'I could not verify a tent with the required capacity and child admission from its operator, so I have not accepted this overnight plan. The campsite references can help check capacity, child policy and booking; a double-bed treehouse is not a family tent.',fr:'Je n’ai pas pu confirmer une tente de capacité suffisante et l’accueil des enfants auprès de l’exploitant. Ce programme de nuitée n’est donc pas retenu. Vérifiez la capacité, les conditions d’accueil et la réservation dans les références du camping ; une cabane avec un lit double ne remplace pas une tente familiale.'};return reply({answer:note[input.lang],sources:output.sources,articles:cards,verified:false,camping_review_required:true});}
@@ -109,7 +117,7 @@ export function createHandler(network=fetch,options={}) {
           itinerary.summary=note[input.lang];
         }
         if(!itinerary.days.length)output.verified=false;
-        if(itinerary.regional_review_required){output.verified=false;output.sources=[...new Set(itinerary.days.flatMap(d=>d.stops.map(s=>s.source_url)))].map(url=>output.sources.find(s=>s.url===url)||{url,title:new URL(url).hostname});}
+        if(itinerary.regional_review_required){output.verified=false;output.sources=[...new Set(itinerary.days.flatMap(d=>d.stops.flatMap(s=>s.verification?.sources||[s.source_url])))].map(url=>output.sources.find(s=>s.url===url)||{url,title:new URL(url).hostname});}
         // Consulted URLs are not a semantic audit of capacity, locality or access.
         output.sources_consulted=output.sources.length>0;
         output.verified=false;

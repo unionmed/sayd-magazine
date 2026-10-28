@@ -1,0 +1,125 @@
+[
+  {
+    "id": "harissa-shrine",
+    "names": [
+      "مزار سيدة لبنان – حريصا",
+      "مزار سيدة لبنان",
+      "Our Lady of Lebanon",
+      "Notre-Dame du Liban"
+    ],
+    "regions": [
+      "كسروان",
+      "keserwan",
+      "kesserwan"
+    ],
+    "kind": "visit",
+    "locality": {
+      "ar": "حريصا، كسروان، لبنان",
+      "en": "Harissa, Keserwan, Lebanon",
+      "fr": "Harissa, Keserwan, Liban"
+    },
+    "sources": [
+      "https://ololb.org/page/about-us"
+    ],
+    "description": {
+      "ar": "مزار ديني في حريصا بإطلالة على خليج جونية. تأكيد إتاحة الزيارة من إدارة المزار مطلوب.",
+      "en": "A religious sanctuary in Harissa overlooking Jounieh Bay; confirm visitor access with the sanctuary.",
+      "fr": "Sanctuaire religieux à Harissa surplombant la baie de Jounieh ; accès à confirmer auprès du sanctuaire."
+    },
+    "checked_at": "2026-10-28",
+    "basis": "Primary pages reviewed in campaign reports of 27–28 October 2026. Identity and activity evidence only; current access and booking are unconfirmed."
+  },
+  {
+    "id": "ghazir-palace",
+    "names": [
+      "قصر المزار التاريخي",
+      "مزار/قصر المزار التاريخي في غزير",
+      "Al Mzar Historical Palace"
+    ],
+    "regions": [
+      "كسروان",
+      "keserwan",
+      "kesserwan"
+    ],
+    "kind": "visit",
+    "locality": {
+      "ar": "غزير، كسروان، لبنان",
+      "en": "Ghazir, Keserwan, Lebanon",
+      "fr": "Ghazir, Keserwan, Liban"
+    },
+    "sources": [
+      "https://mot.gov.lb/en/discover-cities-villages/"
+    ],
+    "description": {
+      "ar": "قصر المزار في غزير مدرج على الخريطة السياحية بقرار 65 ضمن قرارات 2024. الإدراج لا يؤكد السماح بالدخول اليوم.",
+      "en": "Al Mzar Palace in Ghazir is listed under 2024 tourism decision 65; listing does not establish current admission.",
+      "fr": "Le palais Al Mzar à Ghazir figure dans la décision touristique 65 de 2024 ; accès actuel non confirmé."
+    },
+    "checked_at": "2026-10-28",
+    "basis": "Primary pages reviewed in campaign reports of 27–28 October 2026. Identity and activity evidence only; current access and booking are unconfirmed."
+  },
+  {
+    "id": "ghazir-valley",
+    "names": [
+      "وادي غزير",
+      "Wadi Ghazir"
+    ],
+    "regions": [
+      "كسروان",
+      "keserwan",
+      "kesserwan"
+    ],
+    "kind": "nature",
+    "locality": {
+      "ar": "غزير، كسروان، لبنان",
+      "en": "Ghazir, Keserwan, Lebanon",
+      "fr": "Ghazir, Keserwan, Liban"
+    },
+    "sources": [
+      "https://mot.gov.lb/en/discover-cities-villages/"
+    ],
+    "description": {
+      "ar": "وادي غزير مدرج للسياحة البيئية بقرار 69 ضمن قرارات 2024؛ لا يثبت المصدر مدخل مشي أو مسارًا مقاسًا.",
+      "en": "Wadi Ghazir is listed for ecotourism under 2024 decision 69; no walking entrance or measured trail is established.",
+      "fr": "Wadi Ghazir figure dans la décision écotouristique 69 de 2024 ; entrée pédestre et sentier mesuré non établis."
+    },
+    "checked_at": "2026-10-28",
+    "basis": "Primary pages reviewed in campaign reports of 27–28 October 2026. Identity and activity evidence only; current access and booking are unconfirmed."
+  },
+  {
+    "id": "beit-noun-dining",
+    "names": [
+      "بيت نون",
+      "Beit Noun",
+      "Beit Noun Dining",
+      "بيت نون – الغداء"
+    ],
+    "regions": [
+      "جبيل",
+      "jbeil",
+      "byblos"
+    ],
+    "kind": "meal",
+    "locality": {
+      "ar": "مشمش، قضاء جبيل، لبنان",
+      "en": "Mechmech, Jbeil, Lebanon",
+      "fr": "Mechmech, Jbeil, Liban"
+    },
+    "sources": [
+      "https://beitnoun.com/dining"
+    ],
+    "description": {
+      "ar": "طعام موسمي في بيت نون بمشمش؛ العقار يصف جلسات بين الأشجار. للحجز 03 272121، ويلزم تأكيد استقبال غير النزلاء وتوفر الطاولة. بوفيه عطلة الأسبوع منشور لفترة مايو–سبتمبر.",
+      "en": "Seasonal food at Beit Noun, Mechmech, in a wooded estate. Booking: +961 3 272121; confirm non-resident admission and availability. The published weekend buffet season is May–September.",
+      "fr": "Cuisine saisonnière à Beit Noun, Mechmech, dans un domaine boisé. Réservation : +961 3 272121 ; accueil des non-résidents et disponibilité à confirmer. Buffet de week-end annoncé de mai à septembre."
+    },
+    "checked_at": "2026-10-28",
+    "basis": "Primary pages reviewed in campaign reports of 27–28 October 2026. Identity and activity evidence only; current access and booking are unconfirmed.",
+    "nature_dining": true,
+    "required_sources": [
+      "https://beitnoun.com/dining",
+      "https://beitnoun.com/estate",
+      "https://www.beitnoun.com/contact-us"
+    ]
+  }
+]
