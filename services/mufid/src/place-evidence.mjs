@@ -1,11 +1,17 @@
 // Acceptance uses editor-reviewed records, never the model's locality or a URL alone.
-import {normalize,containsPlace} from './core.mjs';
+import {normalize} from './core.mjs';
 import {AKKAR_EVIDENCE,evidenceKey} from './regional-evidence.mjs';
 import additional from './reviewed-places.json' with {type:'json'};
 export const PLACE_EVIDENCE=[...AKKAR_EVIDENCE.map(p=>({...p,regions:['عكار','akkar']})),...additional];
 function inDestination(place,input){
- const destination=normalize(input.trip?.destination||input.destination||input.query||'');
- return place.regions.some(r=>containsPlace(destination,normalize(r)));
+ const raw=input.trip?.destination||input.destination;
+ if(raw){
+  const clean=value=>normalize(value).replace(/^(?:منطقه|قضاء|محافظه|district|region|governorate|caza) /,'').replace(/ (?:لبنان|lebanon|liban)$/,'').trim();
+  const parts=[raw,...raw.split(/[,،]|\s+و(?=\p{L})|\s+and\s+|\s+et\s+/iu)].map(clean);
+  return place.regions.some(r=>parts.includes(normalize(r)));
+ }
+ const query=' '+normalize(input.query)+' ';
+ return place.regions.some(r=>{const alias=normalize(r);return query.trim()===alias||['في','الي','in','to','dans','a'].some(prefix=>query.includes(' '+prefix+' '+alias+' '));});
 }
 export function placeEvidenceGuide(input,catalog=PLACE_EVIDENCE){return catalog.filter(p=>inDestination(p,input)).map(({id,names,kind,locality,sources,basis,checked_at,trail,nature_dining,required_sources,camping,source_role})=>({id,names,kind,locality,sources,basis,checked_at,trail,nature_dining,required_sources,camping,source_role,access:'unconfirmed'}));}
 export function acceptPlaceEvidence(plan,sources,input,catalog=PLACE_EVIDENCE){

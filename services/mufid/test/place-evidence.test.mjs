@@ -59,3 +59,9 @@ test('new operator-reviewed camping facts use the same gate; group size cannot r
  p.days[0].stops[0].camping.capacity=3;assert.equal(acceptPlaceEvidence(p,[{url:r.sources[0]}],input,[record]).ok,true);
  record.source_role='press';assert.equal(acceptPlaceEvidence(p,[{url:r.sources[0]}],input,[record]).ok,false);
 });
+test('a district name inside another district is not destination evidence',()=>{
+ const input={trip:{destination:'بنت جبيل، لبنان'}};assert.equal(placeEvidenceGuide(input).some(x=>x.id==='beit-noun-dining'),false);
+ assert.ok(placeEvidenceGuide({trip:{destination:'جبيل ودومّا، لبنان'}}).some(x=>x.id==='beit-noun-dining'));
+ assert.ok(placeEvidenceGuide({query:'مطعم في جبيل'}).some(x=>x.id==='beit-noun-dining'));
+ assert.equal(placeEvidenceGuide({query:'مطعم في بنت جبيل'}).some(x=>x.id==='beit-noun-dining'),false);
+});
