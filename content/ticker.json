@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
+      "titles": {
+        "ar": "عقاب وسط غابة كثيفة… كيف يجد طريقه إلى قفاز ناتالي؟",
+        "en": "An eagle in dense woodland… how does he find his way to Nathalie’s glove?",
+        "fr": "Un aigle au cœur d’un bois dense… comment rejoint-il le gant de Nathalie ?"
+      },
+      "title": "عقاب وسط غابة كثيفة… كيف يجد طريقه إلى قفاز ناتالي؟"
+    },
+    {
       "slug": "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
       "titles": {
         "ar": "من دبي إلى سباق المليوني دولار… بن حرمش يستلهم نجاح اليابان",
@@ -81,15 +90,6 @@
         "fr": "Après la Bekaa, 24 750 m² de filets de braconnage retirés dans le nord du Liban en quatre heures"
       },
       "title": "بعد البقاع… إزالة 24,750 مترًا مربعًا من شباك الصيد الجائر في الشمال خلال أربع ساعات"
-    },
-    {
-      "slug": "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
-      "titles": {
-        "ar": "بطولة السلوقي العربي تنطلق في نوفمبر بثلاث مسافات وخمسة ألقاب موسمية",
-        "en": "Arabian Saluki Championship starts in November with three distances and five season titles",
-        "fr": "Le championnat du saluki arabe débute en novembre : trois distances et cinq titres saisonniers"
-      },
-      "title": "بطولة السلوقي العربي تنطلق في نوفمبر بثلاث مسافات وخمسة ألقاب موسمية"
     }
   ]
 }
