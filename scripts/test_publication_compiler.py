@@ -4,6 +4,7 @@ from datetime import date
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import struct
@@ -116,6 +117,33 @@ class ArticleKickerTests(unittest.TestCase):
         self.assertNotIn('<img', rendered)
         self.assertEqual(header.xpath('//*[@class="article-kicker"]/text()'), [text])
 
+
+
+class InterviewFriendlyCardTests(unittest.TestCase):
+    def test_unicode_listing_matches_exact_canonical_friendly_view(self):
+        from interview_sharing import friendly_view
+        value = record()
+        article, photo = value['articles'][0], value['photos'][0]
+        article['slugs']['ar'] = 'مقابلة-اختبارية-غير-منشورة'
+        with tempfile.TemporaryDirectory() as temp:
+            stage = Path(temp)
+            for lang in schema.LANGS:
+                prefix = Path('docs') / ('' if lang == 'ar' else lang)
+                canonical = stage / prefix / 'category/مقابلات/index.html'
+                friendly = stage / prefix / 'interviews/index.html'
+                for path in (canonical, friendly):
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.write_bytes((ROOT / path.relative_to(stage)).read_bytes())
+                old_cards = {path: re.findall(r'<article\b[^>]*>.*?</article>', path.read_text(), re.S) for path in (canonical, friendly)}
+                for path in (canonical, friendly):
+                    compiler.insert_listing(stage, article, lang, photo, path)
+                    for card in old_cards[path]:
+                        self.assertIn(card, path.read_text())
+                self.assertEqual(friendly.read_text(), friendly_view(canonical.read_text(), canonical, friendly))
+                if lang == 'ar':
+                    from urllib.parse import quote
+                    self.assertIn(quote(article['slugs'][lang]), canonical.read_text())
+                    self.assertIn(article['slugs'][lang], friendly.read_text())
 
 
 class ExactPodiumCardTests(unittest.TestCase):
