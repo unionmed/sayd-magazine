@@ -175,14 +175,14 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
       "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
       "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
       "طيور-في-الحقائب-تهريب-الطيور-2026",
       "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
       "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
       "ختام-الملواح-2026-60-فائزا",
-      "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-      "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs"
+      "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -205,14 +205,14 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "bin-harmash-dark-saffron-breeders-cup-2026",
       "arabian-saluki-center-25-years",
       "arabian-saluki-championship-november-2026-april-2027",
       "birds-in-bags-illegal-bird-trade-2026",
       "hunting-masculinity-dead-birds",
       "akkar-sparrowhawk-backpack-raptor-poaching",
       "melwah-finale-2026-60-winners",
-      "where-migratory-birds-rest-mashreq-arabian-peninsula",
-      "northern-bekaa-38280-square-metres-bird-nets-apu-cabs"
+      "where-migratory-birds-rest-mashreq-arabian-peninsula"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -331,14 +331,14 @@
     {
       "door": "hunting",
       "slugs": [
+        "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
         "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
         "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
         "طيور-في-الحقائب-تهريب-الطيور-2026",
         "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
         "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
         "ختام-الملواح-2026-60-فائزا",
-        "أين-تستريح-الطيور-المشرق-والجزيرة-العربية",
-        "البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs"
+        "أين-تستريح-الطيور-المشرق-والجزيرة-العربية"
       ]
     },
     {
@@ -501,7 +501,8 @@
     "بطة-قنبراء": "birds",
     "البط-السماري": "birds",
     "عندما-تهين-الطريدة-أنت-تهين-نفسك": "hunting",
-    "الصيد-السياحي-في-مصر-والعراق-والأردن": "hunting"
+    "الصيد-السياحي-في-مصر-والعراق-والأردن": "hunting",
+    "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026": "equestrian"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -520,6 +521,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
     "عندما-تهين-الطريدة-أنت-تهين-نفسك",
     "الصيد-السياحي-في-مصر-والعراق-والأردن",
     "عمان-تنظم-زيارة-المحميات-والتخييم",
@@ -528,8 +530,7 @@
     "الصيد-السياحي-في-دول-المغرب-العربي",
     "الصيد-السياحي-في-بلدان-الخليج-العربية",
     "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
-    "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
-    "تعاون-مصري-إماراتي-الحبارى-محمية-العميد"
+    "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -957,11 +958,28 @@
         "en": "A traditional boat in the Iraqi marshes; transport and guiding are among the services associated with visits to natural environments.",
         "fr": "Une embarcation traditionnelle dans les marais irakiens ; transport et accompagnement font partie des services liés à la visite des milieux naturels."
       }
+    },
+    "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026": {
+      "image": "media/publications/dubai-dark-saffron-20261028/dark-saffron.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "دارك سافرون مع الخيّال كونور بيسلي خلال سباق في دبي.",
+        "en": "Dark Saffron with jockey Connor Beasley during a race in Dubai.",
+        "fr": "Dark Saffron avec le jockey Connor Beasley lors d’une course à Dubaï."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
+      "titles": {
+        "ar": "من دبي إلى سباق المليوني دولار… بن حرمش يستلهم نجاح اليابان",
+        "en": "From Dubai to a $2 million race… Bin Harmash takes inspiration from Japan",
+        "fr": "De Dubaï à une course dotée de deux millions de dollars… Bin Harmash s’inspire du Japon"
+      }
+    },
     {
       "slug": "عندما-تهين-الطريدة-أنت-تهين-نفسك",
       "titles": {
@@ -1032,14 +1050,6 @@
         "ar": "بطولة السلوقي العربي تنطلق في نوفمبر بثلاث مسافات وخمسة ألقاب موسمية",
         "en": "Arabian Saluki Championship starts in November with three distances and five season titles",
         "fr": "Le championnat du saluki arabe débute en novembre : trois distances et cinq titres saisonniers"
-      }
-    },
-    {
-      "slug": "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
-      "titles": {
-        "ar": "تعاون مصري إماراتي لحماية الحبارى وتطوير إدارة محمية العميد",
-        "en": "Egypt–UAE cooperation focuses on houbara and Omayed Reserve management",
-        "fr": "Coopération Égypte–Émirats pour l’outarde houbara et la gestion d’Omayed"
       }
     }
   ],
