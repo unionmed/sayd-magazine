@@ -1,0 +1,149 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "dubai-dark-saffron-20261028",
+  "expected_base": "ba36786358256be84caf61735c01392fe9c26dc4",
+  "approval_reference": "private:Sentinel_e0db0c19d21881918a19aee8967e60ea; owner approved final text and two photos 2026-10-28 09:51:39 UTC. Placement private:Sentinel_c490da083f788191bcf43857e21dfd89: Hunting & Equestrian homepage door, internal category, ticker only. No lead replacement or social.",
+  "bank_search_reference": "Sayd picture for use existing bank checked; selected exact newly archived institutional images in 05_Equestrian/UAE/Dubai/2026-10-28_RECEIVED_Dark-Saffron_Dubai-Racing-Club. Original Library receipts and permission record verified 2026-10-28.",
+  "photos": [
+    {
+      "id": "dark-saffron",
+      "path": "docs/media/publications/dubai-dark-saffron-20261028/dark-saffron.jpg",
+      "sha256": "c053d3441f6cc6d0d4cc8399cf9d3fdea7e1a259cf710524f26033df307733b7",
+      "source_sha256": "c053d3441f6cc6d0d4cc8399cf9d3fdea7e1a259cf710524f26033df307733b7",
+      "source_reference": "Dubai Racing Club supplied original Dark Saffron 1.jpg; Library libfile_1b338d883ad48191934ab4d925b0eb20; received 2026-10-28, capture date and photographer not specified. Original unchanged. Rights Library libfile_0922324fdf0081918ba7b2e5e98cf112.",
+      "rights": {
+        "status": "permission",
+        "statement": "Dubai Racing Club supplied these photographs for this editorial story, online or in print, with mandatory exact credit: Supplied by Dubai Racing Club. No blanket unrelated redistribution licence inferred.",
+        "evidence_reference": "private:Zoho-1793179579454014300; DRC media reply received 2026-10-28 11:26:15 +0200; Library libfile_0922324fdf0081918ba7b2e5e98cf112"
+      },
+      "alt": {
+        "ar": "دارك سافرون مع الخيّال كونور بيسلي خلال سباق في دبي.",
+        "en": "Dark Saffron with jockey Connor Beasley during a race in Dubai.",
+        "fr": "Dark Saffron avec le jockey Connor Beasley lors d’une course à Dubaï."
+      },
+      "caption": {
+        "ar": "دارك سافرون",
+        "en": "Dark Saffron",
+        "fr": "Dark Saffron"
+      }
+    },
+    {
+      "id": "ahmad-bin-harmash",
+      "path": "docs/media/publications/dubai-dark-saffron-20261028/ahmad-bin-harmash.jpg",
+      "sha256": "882e808b6b851ea3a1ef3dd7bfe63efc02b3efc1c09696b74f7c7f149bf4eb38",
+      "source_sha256": "882e808b6b851ea3a1ef3dd7bfe63efc02b3efc1c09696b74f7c7f149bf4eb38",
+      "source_reference": "Dubai Racing Club supplied original Ahmad bin Harmash.jpg; Library libfile_24f944bedf408191b76f6a65cd768699; received 2026-10-28, capture date and photographer not specified. Original unchanged. Rights Library libfile_0922324fdf0081918ba7b2e5e98cf112.",
+      "rights": {
+        "status": "permission",
+        "statement": "Dubai Racing Club supplied these photographs for this editorial story, online or in print, with mandatory exact credit: Supplied by Dubai Racing Club. No blanket unrelated redistribution licence inferred.",
+        "evidence_reference": "private:Zoho-1793179579454014300; DRC media reply received 2026-10-28 11:26:15 +0200; Library libfile_0922324fdf0081918ba7b2e5e98cf112"
+      },
+      "alt": {
+        "ar": "المدرب أحمد بن حرمش.",
+        "en": "Trainer Ahmad bin Harmash.",
+        "fr": "L’entraîneur Ahmad bin Harmash."
+      },
+      "caption": {
+        "ar": "المدرب أحمد بن حرمش",
+        "en": "Trainer Ahmad bin Harmash",
+        "fr": "L’entraîneur Ahmad bin Harmash"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
+        "en": "bin-harmash-dark-saffron-breeders-cup-2026",
+        "fr": "bin-harmash-dark-saffron-breeders-cup-2026"
+      },
+      "published": "2026-10-28",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "equestrian",
+      "archives": [
+        "equestrian"
+      ],
+      "kind": "article",
+      "photos": [
+        "dark-saffron",
+        "ahmad-bin-harmash"
+      ],
+      "translations": {
+        "ar": {
+          "title": "من دبي إلى سباق المليوني دولار… بن حرمش يستلهم نجاح اليابان",
+          "subtitle": "«دارك سافرون» يستعد لتحدّي «بريدرز كاب سبرينت» في كينلاند يوم 31 أكتوبر.",
+          "meta_description": "أحمد بن حرمش يستلهم نجاح الخيول اليابانية مع استعداد دارك سافرون لسباق بريدرز كاب سبرينت في كينلاند، بجوائز إجمالية تبلغ مليوني دولار.",
+          "ticker_title": "من دبي إلى سباق المليوني دولار… بن حرمش يستلهم نجاح اليابان",
+          "sections": [
+            {
+              "paragraphs": [
+                "يستلهم المدرب أحمد بن حرمش نجاح الخيول اليابانية في السباقات الأميركية، وهو يتأهب لخوض تحدٍّ جديد مع «دارك سافرون»، بطل «دبي غولدن شاهين» مرتين.",
+                "الحصان المملوك لسلطان علي يستعد للمشاركة في «بريدرز كاب سبرينت» يوم 31 أكتوبر في كينلاند، وهو سباق دولي من الفئة الأولى لمسافة نحو 1200 متر رملي، يبلغ مجموع جوائزه مليوني دولار.",
+                "وفي تصريح نقله تقرير لشون كولينز، تساءل بن حرمش عن إمكانية تكرار نجاح اليابانيين مع فريق من بلد آخر، موضحًا أن التحضير بدأ منذ نهاية مايو وأن الحصان تأقلم جيدًا في كينلاند."
+              ]
+            },
+            {
+              "paragraphs": [
+                "المصادر: شون كولينز، TrueNicks / BloodHorse، 27 أكتوبر 2026؛ الجدول الرسمي لسباقات بريدرز كاب؛ نادي دبي لسباق الخيل."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Supplied by Dubai Racing Club"
+        },
+        "en": {
+          "title": "From Dubai to a $2 million race… Bin Harmash takes inspiration from Japan",
+          "subtitle": "Dark Saffron prepares for the Breeders’ Cup Sprint at Keeneland on 31 October.",
+          "meta_description": "Ahmad bin Harmash takes inspiration from Japanese success as Dark Saffron prepares for the $2 million Breeders’ Cup Sprint at Keeneland.",
+          "ticker_title": "From Dubai to a $2 million race… Bin Harmash takes inspiration from Japan",
+          "sections": [
+            {
+              "paragraphs": [
+                "Trainer Ahmad bin Harmash is drawing inspiration from the success of Japanese horses in American racing as he prepares for a new challenge with Dark Saffron, a two-time Dubai Golden Shaheen winner.",
+                "Owned by Sultan Ali, the horse is preparing to contest the Breeders’ Cup Sprint at Keeneland on 31 October, an international Grade 1 dirt race over approximately 1,200 metres with a total purse of $2 million.",
+                "In comments reported by Sean Collins, Bin Harmash wondered whether a team from another country could repeat the Japanese success. He explained that preparations began in late May and that the horse had settled well at Keeneland."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Sources: Sean Collins, TrueNicks / BloodHorse, 27 October 2026; official Breeders’ Cup race schedule; Dubai Racing Club."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Supplied by Dubai Racing Club"
+        },
+        "fr": {
+          "title": "De Dubaï à une course dotée de deux millions de dollars… Bin Harmash s’inspire du Japon",
+          "subtitle": "Dark Saffron se prépare au Breeders’ Cup Sprint, le 31 octobre à Keeneland.",
+          "meta_description": "Ahmad bin Harmash s’inspire des succès japonais avant le Breeders’ Cup Sprint de Dark Saffron à Keeneland, doté de deux millions de dollars.",
+          "ticker_title": "De Dubaï à une course dotée de deux millions de dollars… Bin Harmash s’inspire du Japon",
+          "sections": [
+            {
+              "paragraphs": [
+                "L’entraîneur Ahmad bin Harmash s’inspire des succès des chevaux japonais dans les courses américaines alors qu’il se prépare à relever un nouveau défi avec Dark Saffron, double vainqueur du Dubai Golden Shaheen.",
+                "Le cheval appartenant à Sultan Ali se prépare à disputer le Breeders’ Cup Sprint, le 31 octobre à Keeneland : une course internationale de Groupe 1 sur le sable, sur environ 1 200 mètres, dotée au total de deux millions de dollars.",
+                "Dans des propos rapportés par Sean Collins, Bin Harmash s’est interrogé sur la possibilité, pour une équipe d’un autre pays, de reproduire la réussite japonaise. Il a précisé que la préparation avait commencé fin mai et que le cheval s’était bien acclimaté à Keeneland."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Sources : Sean Collins, TrueNicks / BloodHorse, 27 octobre 2026 ; programme officiel de la Breeders’ Cup ; Dubai Racing Club."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Supplied by Dubai Racing Club"
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": true
+      }
+    }
+  ]
+}
