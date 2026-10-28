@@ -201,6 +201,86 @@ class ListingCountTests(unittest.TestCase):
             self.assertIn(historical, path.read_text())
 
 
+# Paste into test_publication_compiler.py before its unittest.main() guard.
+# Uses that file's existing imports, record(), and png(); no original checkout.
+class PullquoteTests(unittest.TestCase):
+    def render(self, value, language):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            for photo in value['photos']:
+                path = root / photo['path']
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(png())
+            return compiler.body_html(root, value['articles'][0], language,
+                                      {p['id']: p for p in value['photos']}, {}, {}, None)
+
+    def test_no_quote_matches_pre_feature_body_bytes(self):
+        # SHA-256 snapshots from the unmodified renderer with record().
+        expected = {
+            'ar': '2fad9a049a47aa7d9e2aeb6a90a832f96a6dd200eb069a405588ce9288edb105',
+            'en': '7c0f553359918aad645cf63d93174d22c06919e9f22e45a6da0fff53af84e4a1',
+            'fr': 'a9fb9d116d4a3feb48629051e65842873e8ab85e14564bf33fe22933dec51805',
+        }
+        for language in schema.LANGS:
+            with self.subTest(language=language):
+                body = self.render(record(), language)
+                self.assertNotIn('<blockquote', body)
+                self.assertEqual(hashlib.sha256(body.encode()).hexdigest(), expected[language])
+
+    def test_localized_quote_is_only_additive_after_its_paragraphs(self):
+        import html
+        value = record()
+        quotes = {'ar': '«قول عربي»', 'en': 'A & B "quote"\nSecond line',
+                  'fr': 'Une citation française'}
+        for language, quote in quotes.items():
+            before = self.render(value, language)
+            section = value['articles'][0]['translations'][language]['sections'][0]
+            section['pullquote'] = quote
+            schema.validate(value)
+            rendered = self.render(value, language)
+            markup = '<blockquote class="en-callout"><p>' + html.escape(quote).replace('\n', '<br>') + '</p></blockquote>'
+            self.assertEqual(rendered.count(markup), 1)
+            self.assertEqual(rendered.replace(markup, '', 1), before)
+            self.assertIn('<p>' + section['paragraphs'][-1] + '</p>' + markup, rendered)
+
+    def test_quote_precedes_its_section_photo(self):
+        value = record()
+        photo = copy.deepcopy(value['photos'][0])
+        photo.update(id='second', path=photo['path'].replace('cover.png', 'second.png'))
+        value['photos'].append(photo)
+        value['articles'][0]['photos'].append('second')
+        value['articles'][0]['translations']['en']['sections'][0]['pullquote'] = 'Quote'
+        schema.validate(value)
+        self.assertIn('</p></blockquote><figure><img', self.render(value, 'en'))
+
+    def test_quote_validation_uses_plain_text_contract(self):
+        invalid = ['', ' \n\t', None, False, 1, [], {}, 'x' * 1001, ' ' * 1000 + 'x',
+                   '<script>x</script>', 'a\x00b', 'e\u0301']
+        for bad in invalid:
+            with self.subTest(value=repr(bad)):
+                value = record()
+                value['articles'][0]['translations']['en']['sections'][0]['pullquote'] = bad
+                with self.assertRaises(ValueError):
+                    schema.validate(value)
+        value = record()
+        value['articles'][0]['translations']['en']['sections'][0]['pullquote'] = 'x' * 1000
+        schema.validate(value)
+
+    def test_quote_renderer_escapes_even_unvalidated_markup(self):
+        value = record()
+        value['articles'][0]['translations']['en']['sections'][0]['pullquote'] = '<img src=x onerror=alert(1)> &'
+        body = self.render(value, 'en')  # Deliberately bypass schema for defense-in-depth.
+        self.assertIn('&lt;img src=x onerror=alert(1)&gt; &amp;', body)
+        self.assertNotIn('<img src=x', body)
+
+    def test_section_does_not_accept_raw_html(self):
+        for key in ('html', 'raw_html', 'script'):
+            value = record()
+            value['articles'][0]['translations']['en']['sections'][0][key] = 'x'
+            with self.subTest(key=key), self.assertRaises(ValueError):
+                schema.validate(value)
+
+
 class SchemaTests(unittest.TestCase):
     def test_valid_record_and_external_licence(self):
         self.assertEqual(schema.validate(record())['schema'], 'sayd-publication-v1')
@@ -543,3 +623,4 @@ class RealSiteTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

@@ -144,7 +144,10 @@ def validate(record, expected_id=None):
                     text(tr[field], 300)
             require(isinstance(tr['sections'], list) and tr['sections'], 'Empty translation')
             for section in tr['sections']:
-                keys(section, ('paragraphs',), ('heading',))
+                keys(section, ('paragraphs',), ('heading', 'pullquote'))
+                if 'pullquote' in section:
+                    text(section['pullquote'], 1000)
+                    require(len(section['pullquote']) <= 1000, 'Oversized pullquote')
                 if 'heading' in section:
                     text(section['heading'], 500)
                 require(isinstance(section['paragraphs'], list) and section['paragraphs'], 'Empty section')
@@ -187,3 +190,4 @@ def french_overrides(root):
             result[en] = fr
             reverse[fr] = en
     return result
+

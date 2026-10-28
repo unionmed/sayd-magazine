@@ -226,6 +226,8 @@ def body_html(stage, article, language, photos, pairs, doors, seo):
         if section.get('heading'):
             result += '<h2>' + html.escape(section['heading']) + '</h2>'
         result += ''.join('<p>' + html.escape(p).replace('\n', '<br>') + '</p>' for p in section['paragraphs'])
+        if section.get('pullquote'):
+            result += '<blockquote class="en-callout"><p>' + html.escape(section['pullquote']).replace('\n', '<br>') + '</p></blockquote>'
         if index + 1 < len(article['photos']):
             result += figure(photos[article['photos'][index + 1]])
     for photo_id in article['photos'][len(tr['sections']) + 1:]:
@@ -800,3 +802,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
