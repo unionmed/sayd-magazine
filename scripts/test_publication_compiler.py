@@ -462,6 +462,38 @@ class RealSiteTests(unittest.TestCase):
         modes = {p: current[p][0] for p in paths if p in current}
         return source_commit(ROOT, pinned, files, modes)
 
+    def test_upper_slot_displacement_resyncs_existing_interview_selection(self):
+        # A real pre-Nathalie payload has an approved interview in latest.
+        # Overlay current scripts, so this fixture never freezes old code.
+        pinned = '9d22c0a5f893e3626baf33fc72a59f4efd128e9b'
+        previous, current = compiler.tree(ROOT, pinned), compiler.tree(ROOT, self.base)
+        paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/')}
+        files = {p: compiler.read_blob(ROOT, current[p]) if p in current else None for p in paths}
+        modes = {p: current[p][0] for p in paths if p in current}
+        base = source_commit(ROOT, pinned, files, modes)
+        before = json.loads(compiler.git(ROOT, 'show', base + ':content/homepage.json'))
+        registry = json.loads(compiler.git(ROOT, 'show', base + ':content/interviews.json'))
+        registered = {r['slug'] for r in registry['entries']}
+        self.assertTrue(registered.intersection(before['latest']), 'Fixture must expose a displaced interview')
+        value = record(base, 'compiler-interview-selection', placement='latest')
+        original = value['articles'][0]
+        value['articles'] = []
+        for index in range(10):
+            article = copy.deepcopy(original)
+            article['slugs'] = {l: f'compiler-interview-selection-{index}-{l}' for l in schema.LANGS}
+            value['articles'].append(article)
+        stage, plan, _ = self.build(value, True, base=base)
+        home = json.loads((stage / 'content/homepage.json').read_text())
+        blocked = set(home['featured'] + home['latest'] + home.get('omit_from_home', []) + home.get('omit_from_home_desks', []))
+        ordered = sorted(registry['entries'], key=lambda r: (r['published_at'], r['slug']), reverse=True)
+        expected = [r['slug'] for r in ordered if r['slug'] not in blocked][:4]
+        selected = next(d['slugs'] for d in home['ia_door_sections'] if d['door'] == 'interviews')
+        self.assertEqual(selected, expected)
+        self.assertEqual(home['desk_slugs']['مقابلات'], expected)
+        self.assertTrue(registered.intersection(before['latest']) - blocked)
+        self.assertEqual((stage / 'content/interviews.json').read_bytes(), compiler.git(ROOT, 'show', base + ':content/interviews.json'))
+        subprocess.run(['python', 'scripts/test_homepage_doors.py'], cwd=stage, check=True)
+
     def test_media_only_and_no_content_byte_identity(self):
         value = record(self.base, 'compiler-media-only'); value['articles'] = []
         stage, plan, _ = self.build(value)

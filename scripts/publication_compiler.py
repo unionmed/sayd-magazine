@@ -534,6 +534,8 @@ def render(stage, records, allow_distribution):
     save_json(home_path, home)
     if wide:
         modules['homepage_hunting_rotation'].sync()
+        # Upper-slot changes can expose existing approved interviews in the door.
+        modules['interview_collection'].sync_selection()
         modules['ticker_policy'].sync_config(stage)
         for language in LANGS:
             path = stage / 'docs' / ('' if language == 'ar' else language) / 'index.html'
