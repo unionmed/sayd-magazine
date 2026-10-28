@@ -17,8 +17,8 @@
     "hunting_equestrian": 8,
     "interviews": {
       "ar": 4,
-      "en": 1,
-      "fr": 1
+      "en": 4,
+      "fr": 4
     }
   },
   "protected_files": {
@@ -586,21 +586,21 @@
     "approved_on": "2026-10-17",
     "registry": "content/interviews.json",
     "format_separate_from_primary_topic": true,
-    "homepage_slugs": {
-      "ar": [
-        "ألكسندرا-cabs-الصيد-غير-القانوني",
-        "الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي",
-        "الصيادة-اللبنانية-سارة-عقيقي-الصيد-هو",
-        "صيّاد-بس-هيك-قالت-مرتو"
+    "historical_exception": "Collection display only: reviewed Arabic archive interviews retain original publication dates; EN/FR show existing 2026+ translations only, without padding. New or edited article bodies still require the full AR/EN/FR publication gate.",
+    "homepage_policy": {
+      "approved_on": "2026-10-28",
+      "selection": "latest-approved-registry",
+      "order": [
+        "published_at:descending",
+        "slug:descending"
       ],
-      "en": [
-        "ألكسندرا-cabs-الصيد-غير-القانوني"
-      ],
-      "fr": [
-        "ألكسندرا-cabs-الصيد-غير-القانوني"
-      ]
-    },
-    "historical_exception": "Collection display only: reviewed Arabic archive interviews retain original publication dates; EN/FR show existing 2026+ translations only, without padding. New or edited article bodies still require the full AR/EN/FR publication gate."
+      "maximum_per_language": 4,
+      "exclude_upper_slots": true,
+      "exclude_omitted": true,
+      "translated_minimum_year": 2026,
+      "require_existing_language": true,
+      "pad_missing": false
+    }
   },
   "memory_display": {
     "visible": false,

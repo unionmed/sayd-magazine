@@ -25,7 +25,7 @@ ORIGIN = 'https://sayd-magazine.com'
 SCHEMA = 'sayd-publication-plan-v1'
 INPUT = re.compile(r'(?:content/publications/([a-z0-9-]+)\.json|docs/media/publications/([a-z0-9-]+)/[a-z0-9][a-z0-9.-]*\.(?:jpg|jpeg|png|webp)|audit/image-catalog/manifest/release-([a-z0-9-]+)\.tsv)\Z')
 ARTICLE = re.compile(r'docs/(?:(?:en|fr)/)?posts/[^/]+/index\.html\Z')
-CONFIGS = {'content/en/pairs.json', 'content/homepage.json', 'content/ticker.json',
+CONFIGS = {'content/interviews.json', 'content/en/pairs.json', 'content/homepage.json', 'content/ticker.json',
            'docs/s/links.json', 'docs/sitemap.xml'}
 TEMPLATE = {'ar': 'الرياض-تستعيد-صهيلها-موسم-السباقات-2026',
             'en': 'riyadh-racing-season-2026-2027-begins',
@@ -118,7 +118,7 @@ def allowed_output_path(path):
         return False
     return bool(path in {'content/tv-publications/lanmaoa-asiatica-20261026.json', 'docs/media/publications/lanmaoa-asiatica-20261026/mushroom.mp4'} or INPUT.fullmatch(path) or re.fullmatch(r'content/(?:caption|editorial)-revisions/[a-z0-9][a-z0-9-]{0,79}\.json', path) or path in CONFIGS
                 or re.fullmatch(r'content/(?:posts|en|fr)/[^/]+\.md', path)
-                or re.fullmatch(r'docs/(?:(?:en|fr)/)?(?:posts/[^/]+|category/[^/]+|articles|stories)/index\.html', path)
+                or re.fullmatch(r'docs/(?:(?:en|fr)/)?(?:posts/[^/]+|category/[^/]+|articles|stories|interviews)/index\.html', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?index\.html', path)
                 or re.fullmatch(r'docs/assets/search/index-(?:ar|en|fr)\.json', path)
                 or re.fullmatch(r'docs/s/[a-f0-9]{10}/index\.html', path)
@@ -373,6 +373,12 @@ def card_image_override(article, photo):
     return override
 
 
+def interview_entry(article):
+    """Derive only the explicitly declared interview identity; never infer titles."""
+    return {'slug': article['slugs']['ar'], 'published_at': article['published'],
+            'reviewed_as': 'interview', 'languages': dict(article['slugs'])}
+
+
 def insert_listing(stage, article, language, photo, path):
     require(path.is_file(), 'Missing existing archive; no implicit new section')
     original = path.read_text()
@@ -451,6 +457,16 @@ def render(stage, records, allow_distribution):
     article_records = [(record, article) for record in records for article in record['articles']]
     if not article_records:
         return
+    interviews = [a for _, a in article_records if a.get('format') == 'interview']
+    if interviews:
+        registry_path = stage / 'content/interviews.json'
+        registry = loads(registry_path.read_text())
+        identities = {row['slug'] for row in registry['entries']}
+        for article in interviews:
+            require(article['slugs']['ar'] not in identities, 'Existing interview registry identity')
+            registry['entries'].append(interview_entry(article))
+            identities.add(article['slugs']['ar'])
+        save_json(registry_path, registry)
     route_names = {language: {p.name.casefold() for p in (stage / 'docs' / ('' if language == 'ar' else language) / 'posts').iterdir()} for language in LANGS}
     for record, article in article_records:
         ar, en = article['slugs']['ar'], article['slugs']['en']
@@ -485,6 +501,8 @@ def render(stage, records, allow_distribution):
             paths = [root / 'category' / doors[d]['folder'] / 'index.html' for d in article['archives']]
             if article['primary_door'] == 'equestrian':
                 paths.append(root / 'category/صيد/index.html')
+            if article.get('format') == 'interview':
+                paths.extend([root / 'category/مقابلات/index.html', root / 'interviews/index.html'])
             paths.append(root / ('articles' if language == 'ar' else 'stories') / 'index.html')
             for path in dict.fromkeys(paths):
                 insert_listing(stage, article, language, photo, path)
@@ -534,6 +552,8 @@ def render(stage, records, allow_distribution):
     save_json(home_path, home)
     if wide:
         modules['homepage_hunting_rotation'].sync()
+        # Upper-slot changes can expose existing approved interviews in the door.
+        modules['interview_collection'].sync_selection()
         modules['ticker_policy'].sync_config(stage)
         for language in LANGS:
             path = stage / 'docs' / ('' if language == 'ar' else language) / 'index.html'
@@ -583,11 +603,11 @@ def preservation(root, stage, before, records, changes, allow_distribution):
             continue
         old = read_blob(root, before[path])
         new = (stage / path).read_bytes()
-        if ARTICLE.fullmatch(path) or (path.startswith('docs/') and path.endswith('.html') and not re.fullmatch(r'docs/(?:(?:en|fr)/)?(?:(?:category/[^/]+|articles|stories)/)?index\.html', path)):
+        if ARTICLE.fullmatch(path) or (path.startswith('docs/') and path.endswith('.html') and not re.fullmatch(r'docs/(?:(?:en|fr)/)?(?:(?:category/[^/]+|articles|stories|interviews)/)?index\.html', path)):
             require(ticker, 'Historical page modified without ticker scope: ' + path)
             outside = lambda b: TICKER.sub(lambda m: m[1] + m[3], b.decode())
             require(outside(old) == outside(new), 'Historical page changed outside exact ticker loops: ' + path)
-        elif '/category/' in path or path.endswith(('/articles/index.html', '/stories/index.html')):
+        elif '/category/' in path or path.endswith(('/articles/index.html', '/stories/index.html', '/interviews/index.html')):
             original_cards = re.findall(r'<article\b[^>]*>.*?</article>', old.decode(), re.S)
             cursor = 0
             for card in original_cards:
@@ -606,6 +626,11 @@ def preservation(root, stage, before, records, changes, allow_distribution):
                         require(current_data[key][:len(value)] == value, 'Historical equestrian classification changed')
                     else:
                         require(current_data[key] == value, 'Historical combined archive filter metadata changed')
+        elif path == 'content/interviews.json':
+            previous, current = loads(old.decode()), loads(new.decode())
+            require({k: v for k, v in previous.items() if k != 'entries'} == {k: v for k, v in current.items() if k != 'entries'}, 'Interview registry metadata changed')
+            additions = [interview_entry(a) for a in articles if a.get('format') == 'interview']
+            require(current['entries'] == previous['entries'] + additions, 'Interview registry changed beyond explicit source identities')
         elif path == 'content/en/pairs.json':
             previous, current = loads(old.decode()), loads(new.decode())
             require(all(current['pairs'].get(k) == v for k, v in previous['pairs'].items()), 'Historical translation mapping changed')

@@ -282,6 +282,15 @@ class PullquoteTests(unittest.TestCase):
 
 
 class SchemaTests(unittest.TestCase):
+    def test_explicit_interview_format_only(self):
+        value = record(); value['articles'][0]['format'] = 'interview'
+        schema.validate(value)
+        for invalid in ('Interview', 'news', True, None):
+            value['articles'][0]['format'] = invalid
+            with self.assertRaises(ValueError): schema.validate(value)
+        value = record(kind='gallery'); value['articles'][0]['format'] = 'interview'
+        with self.assertRaises(ValueError): schema.validate(value)
+
     def test_valid_record_and_external_licence(self):
         self.assertEqual(schema.validate(record())['schema'], 'sayd-publication-v1')
         value = record(); value['photos'][0]['rights']['license_url'] = 'https://creativecommons.org/licenses/by-sa/3.0/'
@@ -402,6 +411,7 @@ class GitScopeTests(unittest.TestCase):
     def test_source_script_and_protected_file_rejected(self):
         self.assert_source_rejected({'scripts/untrusted.py': b'print(1)'})
         self.assert_source_rejected({'content/publication-contract.json': b'{}'})
+        self.assert_source_rejected({'content/interviews.json': b'{}'})
 
     def test_symlink_and_executable_rejected(self):
         value = record(self.base); files = files_for(value); path = next(iter(files))
@@ -457,14 +467,77 @@ class RealSiteTests(unittest.TestCase):
         """
         pinned = '493719a53adb3faf8412e281ceed3e81534dd526'
         previous, current = compiler.tree(ROOT, pinned), compiler.tree(ROOT, self.base)
-        paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/')}
+        paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/') or p == 'content/publication-contract.json'}
         files = {p: compiler.read_blob(ROOT, current[p]) if p in current else None for p in paths}
         modes = {p: current[p][0] for p in paths if p in current}
+        # Only the newly approved interview rule is overlaid on this old payload.
+        contract_path = 'content/publication-contract.json'
+        old_contract = json.loads(compiler.read_blob(ROOT, previous[contract_path]))
+        current_contract = json.loads(compiler.read_blob(ROOT, current[contract_path]))
+        old_contract['interviews'] = current_contract['interviews']
+        old_contract['counts']['interviews'] = current_contract['counts']['interviews']
+        files[contract_path] = (json.dumps(old_contract, ensure_ascii=False, indent=2) + '\n').encode()
         return source_commit(ROOT, pinned, files, modes)
+
+    def test_upper_slot_displacement_resyncs_existing_interview_selection(self):
+        # A real pre-Nathalie payload has an approved interview in latest.
+        # Overlay current scripts, so this fixture never freezes old code.
+        pinned = '9d22c0a5f893e3626baf33fc72a59f4efd128e9b'
+        previous, current = compiler.tree(ROOT, pinned), compiler.tree(ROOT, self.base)
+        paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/') or p == 'content/publication-contract.json'}
+        files = {p: compiler.read_blob(ROOT, current[p]) if p in current else None for p in paths}
+        modes = {p: current[p][0] for p in paths if p in current}
+        base = source_commit(ROOT, pinned, files, modes)
+        before = json.loads(compiler.git(ROOT, 'show', base + ':content/homepage.json'))
+        registry = json.loads(compiler.git(ROOT, 'show', base + ':content/interviews.json'))
+        registered = {r['slug'] for r in registry['entries']}
+        self.assertTrue(registered.intersection(before['latest']), 'Fixture must expose a displaced interview')
+        value = record(base, 'compiler-interview-selection', placement='latest')
+        original = value['articles'][0]
+        value['articles'] = []
+        for index in range(8):
+            article = copy.deepcopy(original)
+            article['slugs'] = {l: f'compiler-interview-selection-{index}-{l}' for l in schema.LANGS}
+            if index == 0:  # Retain the existing hunting-demotion regression prerequisite.
+                article['primary_door'] = 'hunting'
+                article['archives'] = ['hunting']
+            value['articles'].append(article)
+        stage, plan, _ = self.build(value, True, base=base)
+        home = json.loads((stage / 'content/homepage.json').read_text())
+        blocked = set(home['featured'] + home['latest'] + home.get('omit_from_home', []) + home.get('omit_from_home_desks', []))
+        ordered = sorted(registry['entries'], key=lambda r: (r['published_at'], r['slug']), reverse=True)
+        expected = [r['slug'] for r in ordered if r['slug'] not in blocked][:4]
+        selected = next(d['slugs'] for d in home['ia_door_sections'] if d['door'] == 'interviews')
+        self.assertEqual(selected, expected)
+        self.assertEqual(home['desk_slugs']['مقابلات'], expected)
+        self.assertTrue(registered.intersection(before['latest']) - blocked)
+        self.assertEqual((stage / 'content/interviews.json').read_bytes(), compiler.git(ROOT, 'show', base + ':content/interviews.json'))
+        subprocess.run(['python', 'scripts/test_homepage_doors.py'], cwd=stage, check=True)
+
+    def test_explicit_interview_registry_and_archives(self):
+        value = record(self.base, 'compiler-interview-entry', placement='lead', ticker=True)
+        value['articles'][0]['format'] = 'interview'
+        stage, plan, _ = self.build(value, True)
+        original = json.loads(compiler.git(ROOT, 'show', self.base + ':content/interviews.json'))
+        expected = copy.deepcopy(original)
+        expected['entries'].append(compiler.interview_entry(value['articles'][0]))
+        self.assertEqual(json.loads((stage / 'content/interviews.json').read_text()), expected)
+        for language in schema.LANGS:
+            root = stage / 'docs' / ('' if language == 'ar' else language)
+            for suffix in ('category/مقابلات/index.html', 'interviews/index.html'):
+                self.assertIn(value['articles'][0]['slugs'][language], (root / suffix).read_text())
+        changed = [row['path'] for row in plan['changes']]
+        self.assertIn('content/interviews.json', changed)
+        registry = expected
+        registry['entries'][0]['published_at'] = '2000-01-01'
+        (stage / 'content/interviews.json').write_text(json.dumps(registry))
+        with self.assertRaisesRegex(ValueError, 'Interview registry changed'):
+            compiler.preservation(ROOT, stage, compiler.tree(ROOT, self.base), [value], ['content/interviews.json'], True)
 
     def test_media_only_and_no_content_byte_identity(self):
         value = record(self.base, 'compiler-media-only'); value['articles'] = []
         stage, plan, _ = self.build(value)
+        self.assertEqual((stage / 'content/interviews.json').read_bytes(), compiler.git(ROOT, 'show', self.base + ':content/interviews.json'))
         self.assertEqual(len(plan['changes']), 3)
         self.assertTrue(all(compiler.INPUT.fullmatch(x['path']) for x in plan['changes']))
         with tempfile.TemporaryDirectory(prefix='sayd-no-content-test-') as temp:
@@ -476,6 +549,7 @@ class RealSiteTests(unittest.TestCase):
         for lang in schema.LANGS:
             value['articles'][0]['translations'][lang]['kicker'] = {'ar': 'الصيد كسياحة ومورد تنمية ٢ من ٣', 'en': 'Hunting, tourism and development 2 of 3', 'fr': 'Chasse, tourisme et développement 2 sur 3'}[lang]
         stage, plan, _ = self.build(value)
+        self.assertEqual((stage / 'content/interviews.json').read_bytes(), compiler.git(ROOT, 'show', self.base + ':content/interviews.json'))
         from lxml import html
         for lang in schema.LANGS:
             article = value['articles'][0]
@@ -529,6 +603,26 @@ class RealSiteTests(unittest.TestCase):
                 self.assertIn('object-fit:contain', image[0].get('style', ''))
             self.assertEqual(json.loads(path.read_text())['card_image_overrides'][article['slugs']['ar']]['fit'], 'contain')
         self.assertEqual(snapshots[0], snapshots[1])
+
+    def test_historical_lead_fixture_exact_policy_scope(self):
+        from test_hunting_reels import historical_reel_fixture
+        pinned = '493719a53adb3faf8412e281ceed3e81534dd526'
+        base = self.controlled_lead_base()
+        with tempfile.TemporaryDirectory(prefix='sayd-historical-scope-') as temp:
+            root = Path(temp); (root / 'content').mkdir()
+            (root / '.git').write_text('gitdir: ' + str(ROOT / '.git') + '\n')
+            (root / 'content/tv-channel.json').write_bytes(compiler.git(ROOT, 'show', pinned + ':content/tv-channel.json'))
+            self.assertTrue(historical_reel_fixture(base, root))
+            self.assertFalse(historical_reel_fixture(self.base, root))
+            contract = json.loads(compiler.git(ROOT, 'show', base + ':content/publication-contract.json'))
+            for field in ('tv', 'unrelated'):
+                changed = copy.deepcopy(contract)
+                if field == 'tv': changed['tv_structure']['channel_order'] = []
+                else: changed['unapproved_fixture_field'] = True
+                bad = source_commit(ROOT, pinned, {'content/publication-contract.json': json.dumps(changed).encode()})
+                self.assertFalse(historical_reel_fixture(bad, root))
+            wrong_parent = source_commit(ROOT, base, {'scripts/fixture-note.txt': b'test'})
+            self.assertFalse(historical_reel_fixture(wrong_parent, root))
 
     def test_hunting_equestrian_lead_and_filter_membership(self):
         base = self.controlled_lead_base()

@@ -332,7 +332,9 @@ def run(base,out):
                         require(new['links'][1]['text']=={'ar':'مقابلات','en':'Interviews','fr':'Entretiens'}[lang],'Interviews must immediately follow Hunting & Equestrian')
                         require(page.locator('.memory-strip').count()==0,'Memory display remains')
                         interview_cards=page.locator('section.home-section').nth(1).locator('.home-door-grid > article')
-                        require(interview_cards.count()==(4 if lang=='ar' else 1),'Interview collection count')
+                        from check_publication_contract import approved_interview_selection
+                        expected_interviews=approved_interview_selection(current_contract,current_config,lang)
+                        require(interview_cards.count()==len(expected_interviews),'Interview collection count')
                         interview_geometry=page.locator('section.home-section').nth(1).locator('.home-door-grid').evaluate("""grid => {
                             const rect=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height}};
                             return {rail:rect(grid),scrollLeft:grid.scrollLeft,cards:[...grid.querySelectorAll(':scope > article')].map(card=>({rect:rect(card),href:card.querySelector('h3 a').getAttribute('href')}))};
@@ -341,7 +343,6 @@ def run(base,out):
                         visual_cards=interview_geometry['cards']
                         visual_order=sorted(range(len(visual_cards)),key=lambda i:(round(visual_cards[i]['rect']['y']),-visual_cards[i]['rect']['x'] if lang=='ar' else visual_cards[i]['rect']['x']))
                         require(visual_order==list(range(len(visual_cards))),'Interview visual order differs from chronological card order')
-                        expected_interviews=current_contract['interviews']['homepage_slugs'][lang]
                         from refresh_homepage_doors import local_slug
                         actual_interviews=[unquote(urlsplit(card['href']).path).split('posts/')[-1].split('/')[0] for card in visual_cards]
                         require(actual_interviews==[local_slug(slug,lang) for slug in expected_interviews],'Interview chronology/identity mismatch')
@@ -444,7 +445,12 @@ def run(base,out):
                         page.set_viewport_size({'width':collection_width,'height':1000})
                         page.goto(collection,wait_until='networkidle')
                         rows=page.locator('main .post-list > article, main .home-door-grid > article')
-                        require(rows.count()==(70 if lang=='ar' else 2),'Collection count after exclusions')
+                        from interview_collection import entries
+                        expected_collection=[row['languages'][lang] for row in entries(lang)]
+                        require(rows.count()==len(expected_collection),'Collection count after exclusions')
+                        collection_links=rows.locator(':scope > div.body > h2 > a').evaluate_all('(links)=>links.map(a=>a.href)')
+                        collection_slugs=[unquote(urlsplit(href).path).split('posts/')[-1].strip('/').removesuffix('/index.html') for href in collection_links]
+                        require(collection_slugs==expected_collection,'Collection identities/original-date order differ from approved registry')
                         for row in rows.all():
                             require(row.locator(':scope > img').count()==0,'Bare thumbnail outside anchor')
                             require(row.locator(':scope > a.thumb').count()<=1,'Duplicate thumb anchor')

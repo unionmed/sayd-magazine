@@ -2,12 +2,16 @@
 """Real local HTTP browser search QA; external requests blocked and inspected."""
 import base64,json
 from pathlib import Path
+from urllib.parse import quote, unquote, urlsplit
+from datetime import date
 from playwright.sync_api import sync_playwright,expect
 from test_merged_section_browser import server
 ROOT=Path(__file__).resolve().parents[1]
 
 def run():
     out=ROOT/'sayd-visual-qa';out.mkdir(exist_ok=True)
+    registry=json.loads((ROOT/'content/interviews.json').read_text())['entries']
+    assert all(row['reviewed_as']=='interview' for row in registry)
     srv,url=server(ROOT/'docs'); external=[]; failures=[]
     try:
         with sync_playwright() as p:
@@ -61,8 +65,16 @@ def run():
                     interview={'ar':'مقابلات','en':'Interviews','fr':'Entretiens'}[lang]
                     page.locator('#search-category').select_option(label=interview)
                     expect(page.locator('.search-result').first).to_be_visible()
-                    assert page.locator('#search-status').inner_text().startswith(('70 ' if lang=='ar' else '2 '))
-                    assert __import__('urllib.parse',fromlist=['unquote']).unquote(page.locator('.search-result h2 a').first.get_attribute('href')).find('شيرين' if lang=='ar' else 'shireen-bou-rafoul')>=0
+                    eligible=[{'date':row['published_at'], 'url':'/'+prefix+'posts/'+quote(row['languages'][lang])+'/'}
+                              for row in registry if lang in row['languages'] and
+                              (lang=='ar' or date.fromisoformat(row['published_at']).year>=2026)]
+                    # Empty-query facet results rank by original date then URL,
+                    # just like search, without freezing the newest identity.
+                    ordered=page.evaluate('(rows)=>rows.sort((a,b)=>b.date.localeCompare(a.date)||a.url.localeCompare(b.url)).map(row=>row.url)',eligible)
+                    assert page.locator('#search-status').inner_text().startswith(str(len(ordered))+' ')
+                    expect(page.locator('.search-result')).to_have_count(min(20,len(ordered)))
+                    actual=[unquote(urlsplit(href).path) for href in page.locator('.search-result h2 a').evaluate_all('(links)=>links.map(a=>a.href)')]
+                    assert actual==[unquote(path) for path in ordered[:20]], 'Interview result identities/chronology differ from registry'
                     assert all(' · ' not in text for text in page.locator('#search-category option').all_text_contents())
                     page.locator('#search-category').select_option('')
                     query.fill('Phoenicurus phoenicurus');query.press('Enter')
