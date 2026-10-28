@@ -13,9 +13,11 @@ STYLE = '''<style id="nathalie-interview-typography">
 
 
 def corrected(before):
-    if before.count(b'</head>') != 1 or b'nathalie-interview-typography' in before:
+    if (before.count(b'<head>\n') != 1 or before.count(b'</head>') != 1 or before.count(b'  <!-- analytics:start -->') != 1
+            or before.index(b'  <!-- analytics:start -->') > before.index(b'</head>')
+            or b'nathalie-interview-typography' in before):
         raise ValueError('Expected uncorrected article with exactly one head')
-    return before.replace(b'</head>', STYLE.encode() + b'</head>', 1)
+    return before.replace(b'<head>\n', b'<head>\n' + STYLE.encode(), 1)
 
 
 def exact_revision(before, after, read):

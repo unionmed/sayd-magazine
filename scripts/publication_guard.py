@@ -233,8 +233,7 @@ def verified_article_evidence(base, root=ROOT):
                 aliases = [alias for url, alias in links.items() if unquote(url) == route]
                 require(len(aliases) == 1, 'Missing/ambiguous baseline article alias')
                 fixed.add('docs' + aliases[0] + 'index.html')
-    require(not git(root, 'diff', '--name-only', base, candidate, '--', *sorted(fixed)).strip(),
-            'Existing article evidence requires unchanged sources, articles, media and aliases')
+    fixed_changed = bool(git(root, 'diff', '--name-only', base, candidate, '--', *sorted(fixed)).strip())
     previous = json.loads(git(root, 'show', base + ':content/homepage.json'))
     current = json.loads(git(root, 'show', candidate + ':content/homepage.json'))
     ordinary_desk_restoration(previous, current)
@@ -243,6 +242,23 @@ def verified_article_evidence(base, root=ROOT):
     try:
         subprocess.run(['git', '-c', 'core.hooksPath=/dev/null', 'clone', '--quiet', '--shared', '--no-checkout', str(root), str(trusted)], check=True)
         git(trusted, 'checkout', '--quiet', '--detach', base)
+        if fixed_changed:
+            # Only trusted BASE code may recognize the owner's exact three-page style correction.
+            replay = '''import sys
+sys.path.insert(0, 'scripts')
+import publication_compiler as c
+import nathalie_typography_revision as n
+from pathlib import Path
+root = Path.cwd()
+if not n.exact_revision(c.tree(root, sys.argv[1]), c.tree(root, sys.argv[2]), lambda e: c.read_blob(root, e)):
+    raise SystemExit('Not an exact typography correction')
+'''
+            replay_env = dict(os.environ, PYTHONPATH='')
+            replay_env.pop('PYTHONHOME', None)
+            result = subprocess.run([sys.executable, '-c', replay, base, candidate], cwd=trusted,
+                                    env=replay_env, capture_output=True)
+            require(result.returncode == 0,
+                    'Existing article evidence requires unchanged sources/articles or exact trusted typography correction')
         if git(root, 'diff', '--name-only', base, candidate, '--', *placement).strip():
             (trusted / placement[0]).write_bytes(git(root, 'show', candidate + ':' + placement[0]))
             env = dict(os.environ, PYTHONPATH='')

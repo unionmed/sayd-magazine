@@ -21,7 +21,7 @@ from nathalie_typography_revision import PATHS, corrected, exact_revision
 
 class ExactTypographyTests(unittest.TestCase):
     def setUp(self):
-        self.blobs = {'old': b'<html><head></head><body><h2>Question</h2><p>Answer</p></body></html>'}
+        self.blobs = {'old': b'<html><head>\n  <!-- analytics:start --><!-- analytics:end -->\n</head><body><h2>Question</h2><p>Answer</p></body></html>'}
         self.blobs['new'] = corrected(self.blobs['old'])
         self.before = {p: ('100644', 'blob', 'old') for p in PATHS}
         self.after = {p: ('100644', 'blob', 'new') for p in PATHS}
@@ -46,7 +46,8 @@ class ExactTypographyTests(unittest.TestCase):
         self.after[PATHS[0]] = ('120000', 'blob', 'new')
         self.assertFalse(self.check())
     def test_replay_and_missing_head(self):
-        for value in (self.blobs['new'], b'<body></body>', b'</head></head>'):
+        for value in (self.blobs['new'], b'<body></body>', b'</head></head>',
+                      self.blobs['old'] + b'</head>', b'</head>  <!-- analytics:start -->'):
             with self.assertRaises(ValueError): corrected(value)
 
 
