@@ -118,6 +118,32 @@ def archive_image_repair(file, base):
             return False
     return True
 
+def approved_interview_selection(contract, c, lang):
+    """Independently enforce the owner-approved bounded rolling collection policy."""
+    from datetime import date
+    from interview_collection import entries
+    policy = contract['interviews']['homepage_policy']
+    assert policy == {
+        'approved_on': '2026-10-28', 'selection': 'latest-approved-registry',
+        'order': ['published_at:descending', 'slug:descending'],
+        'maximum_per_language': 4, 'exclude_upper_slots': True,
+        'exclude_omitted': True, 'translated_minimum_year': 2026,
+        'require_existing_language': True, 'pad_missing': False,
+    }, 'Interview policy changed without approval'
+    assert contract['counts']['interviews'] == {'ar': 4, 'en': 4, 'fr': 4}
+    assert contract['interviews']['registry'] == 'content/interviews.json'
+    assert contract['interviews']['format_separate_from_primary_topic'] is True
+    assert lang in LANGS
+    blocked = set(c['featured'] + c['latest'] + c.get('omit_from_home', []) +
+                  c.get('omit_from_home_desks', []))
+    rows = entries('ar')  # validates the complete explicitly reviewed registry
+    eligible = [row for row in rows if row['slug'] not in blocked and
+                lang in row['languages'] and
+                (lang == 'ar' or date.fromisoformat(row['published_at']).year >= 2026)]
+    eligible.sort(key=lambda row: (row['published_at'], row['slug']), reverse=True)
+    return [row['slug'] for row in eligible[:4]]
+
+
 def check(base=None):
     c=config();validate_config(c);channel=channel_config();channel_videos=channel['videos'][:7]
     if c.get('hunting_rotation'):
@@ -207,11 +233,25 @@ def check(base=None):
         assert [s for s,_ in slots[3+next(i for i,d in enumerate(DOORS) if d[0]=='tv')]]==['youtube:'+v['id'] for v in channel_videos]+(['native:'+tv_publication.ID] if native else [])+contract['tv_slugs'],f'{lang}: protected TV order changed'
         interview_index=3+next(i for i,d in enumerate(DOORS) if d[0]=='interviews')
         interview_slots=slots[interview_index]
-        assert len(interview_slots)==contract['counts']['interviews'][lang], f'{lang}: approved interview count changed'
-        assert [s for s,_ in interview_slots]==contract['interviews']['homepage_slugs'][lang], f'{lang}: unapproved interview selection'
+        expected_interviews=approved_interview_selection(contract,c,lang)
+        assert homepage_slugs(lang,c)==expected_interviews, f'{lang}: interview selector violates rolling policy'
+        assert len(interview_slots)<=contract['counts']['interviews'][lang], f'{lang}: interview cap exceeded'
+        assert [s for s,_ in interview_slots]==expected_interviews, f'{lang}: unapproved interview selection'
         mirrored=slots[:interview_index]+slots[interview_index+1:]
         if reference is None:
             reference=mirrored; interview_reference=dict(interview_slots)
+            # A translated top-four can include a registry item outside Arabic's
+            # top-four. Preserve image parity against its real Arabic source card.
+            from interview_collection import source_cards
+            source=DOCS/'category/مقابلات/index.html'
+            for card in source_cards('ar'):
+                node=html.fromstring(card)
+                identity=slug(node.xpath('.//h2/a/@href')[0])
+                media=images(node,source)
+                override=c.get('card_image_overrides',{}).get(identity)
+                if override:
+                    media=[resolved(DOCS/'index.html',override['image'])]
+                interview_reference.setdefault(identity,media)
         else:
             assert mirrored==reference,f'{lang}: mirrored story placement or photograph differs'
             assert all(interview_reference.get(s)==media for s,media in interview_slots), f'{lang}: interview photograph differs'

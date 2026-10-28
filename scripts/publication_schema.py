@@ -119,7 +119,7 @@ def validate(record, expected_id=None):
         photos[photo['id']] = photo
     seen = set()
     for article in record['articles']:
-        keys(article, ('slugs', 'published', 'author', 'primary_door', 'archives', 'kind', 'photos', 'translations', 'distribution'), ('related',))
+        keys(article, ('slugs', 'published', 'author', 'primary_door', 'archives', 'kind', 'photos', 'translations', 'distribution'), ('related', 'format'))
         keys(article['slugs'], LANGS)
         for language in LANGS:
             slug(article['slugs'][language], language)
@@ -132,6 +132,8 @@ def validate(record, expected_id=None):
         require(isinstance(article['archives'], list) and article['archives'] and set(article['archives']) <= DOORS and len(set(article['archives'])) == len(article['archives']), 'Explicit distinct archive memberships required')
         require(article['primary_door'] in article['archives'], 'Primary archive missing')
         require(article['kind'] in {'article', 'gallery'}, 'Unsupported article kind')
+        if 'format' in article:
+            require(article['format'] == 'interview' and article['kind'] == 'article', 'Unsupported article format')
         require(article['kind'] != 'gallery' or article['primary_door'] == 'photos', 'Gallery requires Photos primary door')
         require(isinstance(article['photos'], list) and article['photos'] and len(set(article['photos'])) == len(article['photos']) and set(article['photos']) <= set(photos), 'Unknown/duplicate article photos')
         keys(article['translations'], LANGS)

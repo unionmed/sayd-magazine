@@ -195,13 +195,21 @@ class PublishedCorpusTests(unittest.TestCase):
         self.assertEqual(before, after)
 
     def test_canonical_topic_and_interview_facets(self):
-        expected = {'ar': 70, 'en': 2, 'fr': 2}
+        from datetime import date
+        registry = json.loads((search.ROOT / 'content/interviews.json').read_text())['entries']
+        self.assertTrue(all(row['reviewed_as'] == 'interview' for row in registry))
+        expected = {lang: {row['languages'][lang] for row in registry
+                           if lang in row['languages'] and
+                           (lang == 'ar' or date.fromisoformat(row['published_at']).year >= 2026)}
+                    for lang in search.FOLDERS}
         for lang, index in self.indexes.items():
             allowed = [search.ia.chrome_label(door, lang) for door in search.ia.DOORS]
             self.assertEqual(index['categories'][:10], allowed)
             interview = search.ia.chrome_label(search.ia.door_by_id('interviews'), lang)
             records = [r for r in index['articles'] if interview in r['categories']]
-            self.assertEqual(len(records), expected[lang])
+            identities = {unquote(row['url']).strip('/').split('/')[-1] for row in records}
+            self.assertEqual(identities, expected[lang], 'Interview facets must match approved registry identities')
+            self.assertEqual(len(records), len(expected[lang]))
             self.assertTrue(any('cabs' in r['url'] for r in records))
             for record in index['articles']:
                 self.assertTrue(record['categories'])

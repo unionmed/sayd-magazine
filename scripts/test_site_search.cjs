@@ -28,11 +28,17 @@ assert.equal(search(facets,'bird',{category:'Interviews'}).length,2);
 assert.equal(search(facets,'',{category:'Hunting & Equestrian'}).length,3);
 assert.equal(search(facets,'',{category:'Hunting & Equestrian · Interviews'}).length,0);
 const fs = require('node:fs');
-for (const [lang,label,total] of [['ar','مقابلات',70],['en','Interviews',2],['fr','Entretiens',2]]) {
+const registry = JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../content/interviews.json'))).entries;
+assert(registry.every(row=>row.reviewed_as==='interview'));
+for (const [lang,label] of [['ar','مقابلات'],['en','Interviews'],['fr','Entretiens']]) {
+ const eligible=registry.filter(row=>row.languages[lang] && (lang==='ar' || row.published_at>='2026-01-01'));
+ const expected=eligible.map(row=>row.languages[lang]).sort();
  const data=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../docs/assets/search/index-'+lang+'.json')));
  const rows=data.articles.map(prepare);
  assert.equal(data.version,2);
- assert.equal(search(rows,'',{category:label}).length,total);
+ const matches=search(rows,'',{category:label});
+ assert.equal(matches.length,expected.length);
+ assert.deepEqual(matches.map(row=>decodeURIComponent(row.url).split('/').filter(Boolean).at(-1)).sort(),expected);
  assert.equal(search(rows,'CABS',{category:label,year:'2026'}).length,2);
  assert.equal(data.categories.length,11);
  assert(data.categories.every(value=>!value.includes(' · ')));

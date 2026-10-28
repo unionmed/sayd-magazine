@@ -282,6 +282,15 @@ class PullquoteTests(unittest.TestCase):
 
 
 class SchemaTests(unittest.TestCase):
+    def test_explicit_interview_format_only(self):
+        value = record(); value['articles'][0]['format'] = 'interview'
+        schema.validate(value)
+        for invalid in ('Interview', 'news', True, None):
+            value['articles'][0]['format'] = invalid
+            with self.assertRaises(ValueError): schema.validate(value)
+        value = record(kind='gallery'); value['articles'][0]['format'] = 'interview'
+        with self.assertRaises(ValueError): schema.validate(value)
+
     def test_valid_record_and_external_licence(self):
         self.assertEqual(schema.validate(record())['schema'], 'sayd-publication-v1')
         value = record(); value['photos'][0]['rights']['license_url'] = 'https://creativecommons.org/licenses/by-sa/3.0/'
@@ -402,6 +411,7 @@ class GitScopeTests(unittest.TestCase):
     def test_source_script_and_protected_file_rejected(self):
         self.assert_source_rejected({'scripts/untrusted.py': b'print(1)'})
         self.assert_source_rejected({'content/publication-contract.json': b'{}'})
+        self.assert_source_rejected({'content/interviews.json': b'{}'})
 
     def test_symlink_and_executable_rejected(self):
         value = record(self.base); files = files_for(value); path = next(iter(files))
@@ -457,7 +467,7 @@ class RealSiteTests(unittest.TestCase):
         """
         pinned = '493719a53adb3faf8412e281ceed3e81534dd526'
         previous, current = compiler.tree(ROOT, pinned), compiler.tree(ROOT, self.base)
-        paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/')}
+        paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/') or p == 'content/publication-contract.json'}
         files = {p: compiler.read_blob(ROOT, current[p]) if p in current else None for p in paths}
         modes = {p: current[p][0] for p in paths if p in current}
         return source_commit(ROOT, pinned, files, modes)
@@ -467,7 +477,7 @@ class RealSiteTests(unittest.TestCase):
         # Overlay current scripts, so this fixture never freezes old code.
         pinned = '9d22c0a5f893e3626baf33fc72a59f4efd128e9b'
         previous, current = compiler.tree(ROOT, pinned), compiler.tree(ROOT, self.base)
-        paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/')}
+        paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/') or p == 'content/publication-contract.json'}
         files = {p: compiler.read_blob(ROOT, current[p]) if p in current else None for p in paths}
         modes = {p: current[p][0] for p in paths if p in current}
         base = source_commit(ROOT, pinned, files, modes)
@@ -481,6 +491,9 @@ class RealSiteTests(unittest.TestCase):
         for index in range(8):
             article = copy.deepcopy(original)
             article['slugs'] = {l: f'compiler-interview-selection-{index}-{l}' for l in schema.LANGS}
+            if index == 0:  # Retain the existing hunting-demotion regression prerequisite.
+                article['primary_door'] = 'hunting'
+                article['archives'] = ['hunting']
             value['articles'].append(article)
         stage, plan, _ = self.build(value, True, base=base)
         home = json.loads((stage / 'content/homepage.json').read_text())
@@ -494,9 +507,30 @@ class RealSiteTests(unittest.TestCase):
         self.assertEqual((stage / 'content/interviews.json').read_bytes(), compiler.git(ROOT, 'show', base + ':content/interviews.json'))
         subprocess.run(['python', 'scripts/test_homepage_doors.py'], cwd=stage, check=True)
 
+    def test_explicit_interview_registry_and_archives(self):
+        value = record(self.base, 'compiler-interview-entry', placement='lead', ticker=True)
+        value['articles'][0]['format'] = 'interview'
+        stage, plan, _ = self.build(value, True)
+        original = json.loads(compiler.git(ROOT, 'show', self.base + ':content/interviews.json'))
+        expected = copy.deepcopy(original)
+        expected['entries'].append(compiler.interview_entry(value['articles'][0]))
+        self.assertEqual(json.loads((stage / 'content/interviews.json').read_text()), expected)
+        for language in schema.LANGS:
+            root = stage / 'docs' / ('' if language == 'ar' else language)
+            for suffix in ('category/مقابلات/index.html', 'interviews/index.html'):
+                self.assertIn(value['articles'][0]['slugs'][language], (root / suffix).read_text())
+        changed = [row['path'] for row in plan['changes']]
+        self.assertIn('content/interviews.json', changed)
+        registry = expected
+        registry['entries'][0]['published_at'] = '2000-01-01'
+        (stage / 'content/interviews.json').write_text(json.dumps(registry))
+        with self.assertRaisesRegex(ValueError, 'Interview registry changed'):
+            compiler.preservation(ROOT, stage, compiler.tree(ROOT, self.base), [value], ['content/interviews.json'], True)
+
     def test_media_only_and_no_content_byte_identity(self):
         value = record(self.base, 'compiler-media-only'); value['articles'] = []
         stage, plan, _ = self.build(value)
+        self.assertEqual((stage / 'content/interviews.json').read_bytes(), compiler.git(ROOT, 'show', self.base + ':content/interviews.json'))
         self.assertEqual(len(plan['changes']), 3)
         self.assertTrue(all(compiler.INPUT.fullmatch(x['path']) for x in plan['changes']))
         with tempfile.TemporaryDirectory(prefix='sayd-no-content-test-') as temp:
@@ -508,6 +542,7 @@ class RealSiteTests(unittest.TestCase):
         for lang in schema.LANGS:
             value['articles'][0]['translations'][lang]['kicker'] = {'ar': 'الصيد كسياحة ومورد تنمية ٢ من ٣', 'en': 'Hunting, tourism and development 2 of 3', 'fr': 'Chasse, tourisme et développement 2 sur 3'}[lang]
         stage, plan, _ = self.build(value)
+        self.assertEqual((stage / 'content/interviews.json').read_bytes(), compiler.git(ROOT, 'show', self.base + ':content/interviews.json'))
         from lxml import html
         for lang in schema.LANGS:
             article = value['articles'][0]
