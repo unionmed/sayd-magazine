@@ -1,0 +1,1249 @@
+{
+  "origin_commit": "c48aec7dab101627d66301ab33853790f6474de1",
+  "batch_date": "2026-10-24",
+  "source_library_file_id": "libfile_380ebf055a80819198a72b2a8412307b",
+  "cases": [
+    {
+      "id": "regional-01-akkar-light",
+      "input": {
+        "query": "طالعين شخصين من طرابلس إلى عكار نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+        "trip": {
+          "destination": "عكار، لبنان",
+          "origin": "طرابلس",
+          "transport": "car",
+          "effort": "light",
+          "activities": [
+            "heritage",
+            "walking"
+          ]
+        },
+        "lang": "ar"
+      },
+      "original_status": 200,
+      "original_itinerary": {
+        "summary": "طلعة خفيفة ومترابطة بين القبيات وحلبا: طبيعة بالقموعة، ثم متحف الطيور والفراشات، ثم غداء محدد في القبيات، مع خاتمة تراثية قريبة قبل الرجعة إلى طرابلس.",
+        "format": "itinerary",
+        "region": "عكار، لبنان",
+        "days": [
+          {
+            "day": 1,
+            "base": "طرابلس",
+            "departure": "طرابلس",
+            "return_to": "طرابلس",
+            "stops": [
+              {
+                "name": "غابة القموعة",
+                "locality": "القبيات، عكار، لبنان",
+                "description": "تمشية قصيرة وسط طبيعة عكار الجبلية وغابات البلّوط، وهي من أبرز المشاهد الطبيعية في القضاء. مناسبة كبداية هادئة لنهار خفيف بالسيارة مع توقف تصوير واستراحة قصيرة فقط.",
+                "kind": "nature",
+                "duration_minutes": 75,
+                "walking": "مشي خفيف جدًا على مقاطع قصيرة واختيارية قرب نقاط الوقوف، بلا مسار طويل.",
+                "source_url": "https://investinlebanon.gov.lb/ar/lebanon_at_a_glance/invest_in_regions/akkar_governorate"
+              },
+              {
+                "name": "متحف الحيوانات والطيور والفراشات مع الأب أيوب يعقوب",
+                "locality": "القبيات، عكار، لبنان",
+                "description": "زيارة معلم ثقافي/طبيعي موثق على خريطة السياحة اللبنانية في القبيات، ومناسب كوقفة داخلية خفيفة بعد الطبيعة. يعطيكم محطة واضحة ومعلّمة ضمن نفس المنطقة من دون تنقل بعيد.",
+                "kind": "visit",
+                "duration_minutes": 45,
+                "walking": "مشي بسيط داخل الموقع بحسب الزيارة المعتادة، من دون مجهود كبير.",
+                "source_url": "https://mot.gov.lb/ar/%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B9%D8%A7%D9%85-%D9%A2%D9%A0%D9%A2%D9%A3/"
+              },
+              {
+                "name": "مطعم سما جاج",
+                "locality": "جاج، عكار، لبنان",
+                "description": "غداء محدد في مطعم مدرج رسميًا على خريطة السياحة، ويفيد كوقفة ثابتة قبل العودة. الموقع في قرية قريبة نسبيًا داخل الشريط الجبلي نفسه، فبيخلي الغداء جزء من نفس الجولة بدل ما يصير التفاف طويل.",
+                "kind": "meal",
+                "duration_minutes": 90,
+                "walking": "وصول مباشر بالسيارة، ومشي قصير جدًا من الموقف إلى المدخل.",
+                "source_url": "https://mot.gov.lb/ar/%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B9%D8%A7%D9%85-%D9%A2%D9%A0%D9%A2%D9%A3/"
+              },
+              {
+                "name": "دير مار شليطا القديم",
+                "locality": "حلسبان القبيات، عكار، لبنان",
+                "description": "محطة تراثية قريبة وموثقة في عكار، مناسبة كختام خفيف قبل الرجعة. تختصروا فيها وقت الوقوف وتاخدوا لمحة دينية/تراثية من نفس المنطقة بدل توسيع المسار.",
+                "kind": "visit",
+                "duration_minutes": 40,
+                "walking": "مشي قصير حول الموقع فقط، مع تجنب أي تنقلات إضافية داخلية طويلة.",
+                "source_url": "https://mot.gov.lb/ar/%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B9%D8%A7%D9%85-%D9%A2%D9%A0%D9%A2%D9%A3/"
+              }
+            ]
+          }
+        ]
+      },
+      "calls": [
+        {
+          "answer": "{\"summary\":\"طلعة خفيفة ومترابطة بين القبيات وحلبا: طبيعة بالقموعة، ثم متحف الطيور والفراشات، ثم غداء محدد في القبيات، مع خاتمة تراثية قريبة قبل الرجعة إلى طرابلس.\",\"format\":\"itinerary\",\"region\":\"عكار، لبنان\",\"days\":[{\"day\":1,\"base\":\"طرابلس\",\"departure\":\"طرابلس\",\"return_to\":\"طرابلس\",\"stops\":[{\"name\":\"غابة القموعة\",\"locality\":\"القبيات، عكار، لبنان\",\"kind\":\"nature\",\"description\":\"تمشية قصيرة وسط طبيعة عكار الجبلية وغابات البلّوط، وهي من أبرز المشاهد الطبيعية في القضاء. مناسبة كبداية هادئة لنهار خفيف بالسيارة مع توقف تصوير واستراحة قصيرة فقط.\",\"duration_minutes\":75,\"walking\":\"مشي خفيف جدًا على مقاطع قصيرة واختيارية قرب نقاط الوقوف، بلا مسار طويل.\",\"source_url\":\"https://investinlebanon.gov.lb/ar/lebanon_at_a_glance/invest_in_regions/akkar_governorate\",\"trail\":null,\"camping\":null},{\"name\":\"متحف الحيوانات والطيور والفراشات مع الأب أيوب يعقوب\",\"locality\":\"القبيات، عكار، لبنان\",\"kind\":\"visit\",\"description\":\"زيارة معلم ثقافي/طبيعي موثق على خريطة السياحة اللبنانية في القبيات، ومناسب كوقفة داخلية خفيفة بعد الطبيعة. يعطيكم محطة واضحة ومعلّمة ضمن نفس المنطقة من دون تنقل بعيد.\",\"duration_minutes\":45,\"walking\":\"مشي بسيط داخل الموقع بحسب الزيارة المعتادة، من دون مجهود كبير.\",\"source_url\":\"https://mot.gov.lb/ar/%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B9%D8%A7%D9%85-%D9%A2%D9%A0%D9%A2%D9%A3/\",\"trail\":null,\"camping\":null},{\"name\":\"مطعم سما جاج\",\"locality\":\"جاج، عكار، لبنان\",\"kind\":\"meal\",\"description\":\"غداء محدد في مطعم مدرج رسميًا على خريطة السياحة، ويفيد كوقفة ثابتة قبل العودة. الموقع في قرية قريبة نسبيًا داخل الشريط الجبلي نفسه، فبيخلي الغداء جزء من نفس الجولة بدل ما يصير التفاف طويل.\",\"duration_minutes\":90,\"walking\":\"وصول مباشر بالسيارة، ومشي قصير جدًا من الموقف إلى المدخل.\",\"source_url\":\"https://mot.gov.lb/ar/%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B9%D8%A7%D9%85-%D9%A2%D9%A0%D9%A2%D9%A3/\",\"trail\":null,\"camping\":null},{\"name\":\"دير مار شليطا القديم\",\"locality\":\"حلسبان القبيات، عكار، لبنان\",\"kind\":\"visit\",\"description\":\"محطة تراثية قريبة وموثقة في عكار، مناسبة كختام خفيف قبل الرجعة. تختصروا فيها وقت الوقوف وتاخدوا لمحة دينية/تراثية من نفس المنطقة بدل توسيع المسار.\",\"duration_minutes\":40,\"walking\":\"مشي قصير حول الموقع فقط، مع تجنب أي تنقلات إضافية داخلية طويلة.\",\"source_url\":\"https://mot.gov.lb/ar/%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B9%D8%A7%D9%85-%D9%A2%D9%A0%D9%A2%D9%A3/\",\"trail\":null,\"camping\":null}]}]}",
+          "sources": [
+            {
+              "title": "www.investinlebanon.gov.lb",
+              "url": "https://www.investinlebanon.gov.lb/Content/uploads/SideBlock/180606110132198~Akkar%20Region%20Presentation%202018.pdf"
+            },
+            {
+              "title": "moe.gov.lb",
+              "url": "https://moe.gov.lb/ProtectedAreas/categories.htm"
+            },
+            {
+              "title": "investinlebanon.gov.lb",
+              "url": "https://investinlebanon.gov.lb/en/lebanon_at_a_glance/invest_in_regions/akkar_governorate"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/en/discover-cities-villages/2/"
+            },
+            {
+              "title": "dglac.gov.lb",
+              "url": "https://dglac.gov.lb/en/web/guest/municipal-federations"
+            },
+            {
+              "title": "dglac.gov.lb",
+              "url": "https://dglac.gov.lb/en/municipalities"
+            },
+            {
+              "title": "cas.gov.lb",
+              "url": "https://cas.gov.lb/images/Maps/Heritage_New.pdf"
+            },
+            {
+              "title": "urbcomfayhaa.gov.lb",
+              "url": "https://urbcomfayhaa.gov.lb/touristic-places-ar/"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/wp-content/uploads/2024/07/Entrance-Fees-to-Tourist-Sites.pdf"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/ar/%D8%AE%D8%B1%D9%8A%D8%B7%D8%A9-%D8%AA%D9%81%D8%A7%D8%B9%D9%84%D9%8A%D8%A9/"
+            },
+            {
+              "title": "www.dglac.gov.lb",
+              "url": "https://www.dglac.gov.lb/en/municipal-federations"
+            },
+            {
+              "title": "dglac.gov.lb",
+              "url": "https://dglac.gov.lb/en/municipal-federations"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/en/explore-lebanon/"
+            },
+            {
+              "title": "investinlebanon.gov.lb",
+              "url": "https://investinlebanon.gov.lb/Content/uploads/SideBlock/180305115155190~INVESTMENT%20OPPORTUNITIES%20IN%20AKKAR%202018.pdf"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/en/"
+            },
+            {
+              "title": "investinlebanon.gov.lb",
+              "url": "https://investinlebanon.gov.lb/ar/lebanon_at_a_glance/invest_in_regions/akkar_governorate"
+            },
+            {
+              "title": "www.cdr.gov.lb",
+              "url": "https://www.cdr.gov.lb/CDR/media/CDR/StudiesandReports/Roads%20and%20Employment/Caza/Akkar_Final-ESMP.pdf"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/en/discover-cities-villages/3/"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/en/discover-cities-villages/"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/ar/%D8%A5%D9%83%D8%AA%D8%B4%D9%81-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D9%82%D8%B9-%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%AC%D8%A9/2/"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/ar/%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B9%D8%A7%D9%85-%D9%A2%D9%A0%D9%A2%D9%A3/"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/en/the-ministry/"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/ar/%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B9%D8%A7%D9%85-%D9%A2%D9%A0%D9%A2%D9%A2/"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/ar/author/machtadmin/"
+            },
+            {
+              "title": "mot.gov.lb",
+              "url": "https://mot.gov.lb/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regional-01-akkar-activity",
+      "input": {
+        "query": "هايكينغ في القموعة بحدود ساعتين، مسار واحد محدد ببدايته وطوله وصعوبته؛ لا أريد اسم غابة فقط.",
+        "trip": {
+          "destination": "عكار، لبنان",
+          "origin": "طرابلس",
+          "transport": "car",
+          "effort": "moderate",
+          "activities": [
+            "walking"
+          ]
+        },
+        "lang": "ar"
+      },
+      "original_status": 502,
+      "original_itinerary": null,
+      "calls": [
+        {
+          "answer": "{\"summary\":\"اخترت مسارًا واحدًا محددًا في القموعة: درب القموعة–نبي خالد، بطول 13.1 كم وصعوبة متوسطة، مع بديل قصير بدروب الغابة إذا أردتم الاكتفاء بجزء منه.\",\"format\":\"itinerary\",\"region\":\"عكار، لبنان\",\"days\":[{\"day\":1,\"base\":\"طرابلس\",\"departure\":\"طرابلس\",\"return_to\":\"طرابلس\",\"stops\":[{\"name\":\"درب القموعة إلى نبي خالد\",\"locality\":\"القموعة، عكار، لبنان\",\"kind\":\"nature\",\"description\":\"مسار جبلي واحد محدد يبدأ من هضبة القموعة ويمر عبر نبي خالد والـEnglish Road ووادي البلاط، ثم يعود إلى نقطة الانطلاق. مناسب لطلعة هايكينغ بحدود ساعتين إلى ثلاث بحسب وتيرتكم، مع مقاطع غابية ومناظر مفتوحة.\",\"duration_minutes\":120,\"walking\":\"مشي جبلي متوسط على مسار طوله 13.10 كم؛ الوتيرة الهادئة تكفي لاختيار جزء قصير فقط إذا أردتم نحو ساعتين.\",\"source_url\":\"https://guide.moovtoo.com/LB/en/trails/du-plateau-de-qammoua-a-nabi-khaled\",\"trail\":{\"distance_km\":13.1,\"difficulty\":\"متوسط\",\"start\":\"Qammoua plateau\",\"source_url\":\"https://guide.moovtoo.com/LB/en/trails/du-plateau-de-qammoua-a-nabi-khaled\"},\"camping\":null},{\"name\":\"درب حرار - شان\",\"locality\":\"حرار، عكار، لبنان\",\"kind\":\"nature\",\"description\":\"بديل مسار واحد أيضًا إذا فضّلتم نقلًا مختلفًا داخل عكار: يبدأ من حرار وينتهي في شان، مع غابات صنوبر وسنديان وعين الربيع ومغارة الدرة كمعلم بارز على الدرب. أدرجته كخيار احتياطي فقط، وليس كجزء من الجولة نفسها.\",\"duration_minutes\":90,\"walking\":\"مشي جبلي متوسط لمسار 12 كم؛ يصلح فقط إذا أردتم هايكينغًا أطول من ساعتين.\",\"source_url\":\"https://akkartrail.com/ar/trails/darb-15-drb-hrar-shan/\",\"trail\":{\"distance_km\":12,\"difficulty\":\"متوسط\",\"start\":\"حرار\",\"source_url\":\"https://akkartrail.com/ar/trails/darb-15-drb-hrar-shan/\"},\"camping\":null}]},{\"day\":2,\"base\":\"طرابلس\",\"departure\":\"طرابلس\",\"return_to\":\"طرابلس\",\"stops\":[{\"name\":\"درب القموعة إلى نبي خالد\",\"locality\":\"القموعة، عكار، لبنان\",\"kind\":\"nature\",\"description\":\"إذا أردتم تنفيذ الخطة ذاتها بوقت أقصر، خذوا مقطعًا مختصرًا من الهضبة باتجاه الغابة ثم عودوا من النقطة نفسها. هذا يحافظ على الفكرة الأساسية: مسار واحد محدد باسم وبداية واضحة، من دون الاكتفاء بذكر الغابة فقط.\",\"duration_minutes\":75,\"walking\":\"مشي خفيف إلى متوسط على مقطع مختار من المسار الأصلي؛ مناسب لحدود ساعتين شاملين التوقفات.\",\"source_url\":\"https://guide.moovtoo.com/LB/en/trails/du-plateau-de-qammoua-a-nabi-khaled\",\"trail\":{\"distance_km\":13.1,\"difficulty\":\"متوسط\",\"start\":\"Qammoua plateau\",\"source_url\":\"https://guide.moovtoo.com/LB/en/trails/du-plateau-de-qammoua-a-nabi-khaled\"},\"camping\":null}]}]}",
+          "sources": [
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/trails/lmt-section-2-from-el-qammouaa-to-el-qemmamine"
+            },
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/en/"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/trails/du-plateau-de-qammoua-a-nabi-khaled"
+            },
+            {
+              "title": "www.enicbcmed.eu",
+              "url": "https://www.enicbcmed.eu/sites/default/files/2023-04/Liban-EN.pdf"
+            },
+            {
+              "title": "www.lebanonvisitor.com",
+              "url": "https://www.lebanonvisitor.com/destinations/akkar"
+            },
+            {
+              "title": "mapcarta.com",
+              "url": "https://mapcarta.com/12904130"
+            },
+            {
+              "title": "qlayaatairport.com",
+              "url": "https://qlayaatairport.com/2026/09/06/qammouha-plain-hiking-guide/"
+            },
+            {
+              "title": "www.wikiloc.com",
+              "url": "https://www.wikiloc.com/hiking-trails/hiking-at-qammouaa-valley-amp-ezer-forest-akkar-district-28417173"
+            },
+            {
+              "title": "www.lebanontraveler.com",
+              "url": "https://www.lebanontraveler.com/en/magazine/calendar_events/ammouaa-akkar-district/"
+            },
+            {
+              "title": "www.wikiloc.com",
+              "url": "https://www.wikiloc.com/hiking-trails/qammouaa-forest-loop-akkar-243828702"
+            },
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/en/our-story/"
+            },
+            {
+              "title": "onmetravel.com",
+              "url": "https://onmetravel.com/akkar-hiking-trails"
+            },
+            {
+              "title": "crm.visit-lebanon.org",
+              "url": "https://crm.visit-lebanon.org/alternatedocroots/a57a4eeb-9f37-4774-a4f8-189fa7fd97e3-LT20.pdf"
+            },
+            {
+              "title": "tourism-lebanon.com",
+              "url": "https://tourism-lebanon.com/hiking-activity-lebanon/hiking-trip-to-ammouaa-ezer/"
+            },
+            {
+              "title": "api.lebanontrail.org",
+              "url": "https://api.lebanontrail.org/content/uploads/TheLmtaDirectory/LMT-JBEIL-Geotrails-Flyer.pdf"
+            },
+            {
+              "title": "pdf.usaid.gov",
+              "url": "https://pdf.usaid.gov/pdf_docs/PA00XK6M.pdf"
+            },
+            {
+              "title": "api.lebanontrail.org",
+              "url": "https://api.lebanontrail.org/content/uploads/TheLmtaDirectory/408~LMT-Society-Magazine-N.8_2019.pdf"
+            },
+            {
+              "title": "nylebcons.org",
+              "url": "https://nylebcons.org/wp-content/uploads/2020/12/Outdoor-Activities.pdf"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Akkar_District"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Berbara%2C_Akkar"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Lebanon_Mountain_Trail"
+            },
+            {
+              "title": "www.reddit.com",
+              "url": "https://www.reddit.com/r/lebanon/comments/1btxl8k"
+            },
+            {
+              "title": "www.reddit.com",
+              "url": "https://www.reddit.com/r/lebanon/comments/1e9ouvv/what_are_your_thoughts_on_akkar/"
+            },
+            {
+              "title": "fr.wikipedia.org",
+              "url": "https://fr.wikipedia.org/wiki/Lebanon_Mountain_Trail"
+            },
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/ar/trails/darb-15-drb-hrar-shan/"
+            },
+            {
+              "title": "www.lebanontrail.org",
+              "url": "https://www.lebanontrail.org/geotrails.pdf"
+            },
+            {
+              "title": "api.lebanontrail.org",
+              "url": "https://api.lebanontrail.org/content/uploads/TheLmtaDirectory/065~210-Voices-of-the-LMT-Magazine-2022.pdf"
+            },
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/ar/our-story/"
+            },
+            {
+              "title": "booking.lebanontrail.org",
+              "url": "https://booking.lebanontrail.org/event/thru-hike-2026"
+            },
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/en/weather/akkar-el-atika-pws/"
+            },
+            {
+              "title": "api.lebanontrail.org",
+              "url": "https://api.lebanontrail.org/content/uploads/TheLmtaDirectory/Magazine2.pdf"
+            },
+            {
+              "title": "lebanontrail.org",
+              "url": "https://lebanontrail.org/"
+            },
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/en/wiki/species/pinus-brutia/"
+            },
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/en/wiki/species/cupressus-sempervirens/"
+            },
+            {
+              "title": "booking.lebanontrail.org",
+              "url": "https://booking.lebanontrail.org/faq"
+            },
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/en/wiki/species/dodonaea-viscosa/"
+            },
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/en/wiki/species/salvia-fruticosa/"
+            }
+          ]
+        },
+        {
+          "answer": "{\"summary\":\"مسار واحد واضح في القموعة ببدء من هضبة القموعة وطول 13.10 كم وصعوبة متوسطة، مع نقطة انطلاق/عودة من فنيّدق بدل إدخال بدائل أو مسارات أخرى.\",\"format\":\"itinerary\",\"region\":\"عكار، لبنان\",\"days\":[{\"day\":1,\"base\":\"طرابلس\",\"departure\":\"طرابلس\",\"return_to\":\"طرابلس\",\"stops\":[{\"name\":\"درب القموعة إلى نبي خالد\",\"locality\":\"فنيّدق، قضاء عكار، لبنان\",\"kind\":\"nature\",\"description\":\"مسار واحد محدد يبدأ من هضبة القموعة ويمرّ عبر طريق الإنكليز ووادي البلاط، ثم يصل إلى نبي خالد قبل العودة إلى القموعة. هذا يلائم هايكينغ بحدود ساعتين إذا اكتفيتم بمقطع مختصر من المسار، أو بوقت أطول إذا مشيتمه كاملًا.\",\"duration_minutes\":120,\"walking\":\"مشي جبلي متوسط على درب طوله 13.10 كم وصعوبته متوسطة؛ يمكن الاكتفاء بجزء قصير ذهابًا وإيابًا بدل إنهاء الدرب كاملًا.\",\"source_url\":\"https://guide.moovtoo.com/LB/en/trails/du-plateau-de-qammoua-a-nabi-khaled\",\"trail\":{\"distance_km\":13.1,\"difficulty\":\"Moderate\",\"start\":\"Qammoua Plateau\",\"source_url\":\"https://guide.moovtoo.com/LB/en/trails/du-plateau-de-qammoua-a-nabi-khaled\"},\"camping\":null}]}]}",
+          "sources": [
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/trails/du-plateau-de-qammoua-a-nabi-khaled"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/trails/lmt-section-2-from-el-qammouaa-to-el-qemmamine"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/experiences/erouba-suivez-le-guide-jusquau-toit-du-akkar"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/experiences/randonnee-vers-qamouaa-nabi-khaled"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/storage/Trail/Liban/PDF/Sur%20les%20sentiers%20de%20Bchaaleh.pdf"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/city/list/a-visiter/beit-el-khalil"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/city/1382/al-bireh"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/trails/lmt-section-4-from-kfar-bebnine-to-bqaa-sefrine"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/trails/lmt-section-26-from-hasbaya-to-marjayoun"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/trails?theme_slug=6423091cf87616692a0d5932"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/city/list/a-visiter/mish-mish"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/city/1333/menjez"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/fr/trails/lmt-section-1-el-qammouaa-to-el-qobayat"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/storage/Trail/map-bhannine.pdf"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/trails/lmt-section-24-from-majdel-balhis-to-rachaya-el-wadi"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/trails/lmt-section-1a-andket-el-qobayat"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/en/trails/lmt-section-7-from-qozhaya-to-bcharre"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/LB/fr/trails/lmt-section-13-from-farayachabrouh-to-kfardebiane"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/storage/Trail/map-Bkassine.pdf"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/storage/Trail/map-hiking-roum.pdf"
+            },
+            {
+              "title": "guide.moovtoo.com",
+              "url": "https://guide.moovtoo.com/storage/Trail/map-Jezzine-Haytoura.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regional-01-akkar-nature-dining",
+      "input": {
+        "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن عكار، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+        "trip": {
+          "destination": "عكار، لبنان",
+          "origin": "طرابلس",
+          "transport": "car",
+          "effort": "light",
+          "activities": [
+            "picnic"
+          ]
+        },
+        "lang": "ar"
+      },
+      "original_status": 200,
+      "original_itinerary": {
+        "summary": "اخترت لك خيارين موثّقين داخل عكار: واحد في حلبا وآخر على طريق العبدة-حلبا، وكلاهما جلسة خفيفة وسط أجواء مفتوحة مع حجز قبل الذهاب.",
+        "format": "options",
+        "region": "عكار، لبنان",
+        "days": [
+          {
+            "day": 1,
+            "base": "طرابلس",
+            "departure": "طرابلس، لبنان",
+            "return_to": "طرابلس، لبنان",
+            "stops": [
+              {
+                "name": "Anawa's Coffee Shop",
+                "locality": "حلبا، لبنان",
+                "description": "مقهى في قلب عكار، وُصف بأنه يقدّم تجربة قهوة مميزة مع أجواء جلوس مناسبة لوقفـة خفيفة بدل جولة طويلة. يصلح إذا أردتم جلسة بسيطة ومشروبًا أو وجبة خفيفة قبل أو بعد التنقّل داخل المنطقة.",
+                "kind": "meal",
+                "duration_minutes": 60,
+                "walking": "مشي قصير جدًا من مكان الركن إلى الجلسة فقط، بلا مسار طويل.",
+                "source_url": "https://www.tripadvisor.com/Restaurant_Review-g15364221-d15073285-Reviews-Anawa_s_Coffee_Shop-Halba_North_Governorate.html"
+              },
+              {
+                "name": "Oakland Nature Park",
+                "locality": "Souk El Khan, Hasbaya, Lebanon",
+                "description": "مطعم مفتوح على الطبيعة على النهر مع جلوس خارجي، ومطبخ لبناني/بحري، ويذكر صفحة المكان الحجز والجلوس الخارجي. يميّزه أنه يصلح كخيار نهار ريفي واحد يجمع الأكل مع أجواء الطبيعة دون التنقّل بين أكثر من محطة.",
+                "kind": "meal",
+                "duration_minutes": 90,
+                "walking": "مشي خفيف داخل الساحة والجلسة فقط؛ لا حاجة لمسار مشي.",
+                "source_url": "https://www.tripadvisor.com/Restaurant_Review-g8750099-d26323157-Reviews-Oakland_Nature_Park-Hasbaya_Mount_Lebanon_Governorate.html"
+              }
+            ]
+          }
+        ]
+      },
+      "calls": [
+        {
+          "answer": "{\"summary\":\"اخترت لك خيارين موثّقين داخل عكار: واحد في حلبا وآخر على طريق العبدة-حلبا، وكلاهما جلسة خفيفة وسط أجواء مفتوحة مع حجز قبل الذهاب.\",\"format\":\"options\",\"region\":\"عكار، لبنان\",\"days\":[{\"day\":1,\"base\":\"طرابلس\",\"departure\":\"طرابلس، لبنان\",\"return_to\":\"طرابلس، لبنان\",\"stops\":[{\"name\":\"Anawa's Coffee Shop\",\"locality\":\"حلبا، لبنان\",\"kind\":\"meal\",\"description\":\"مقهى في قلب عكار، وُصف بأنه يقدّم تجربة قهوة مميزة مع أجواء جلوس مناسبة لوقفـة خفيفة بدل جولة طويلة. يصلح إذا أردتم جلسة بسيطة ومشروبًا أو وجبة خفيفة قبل أو بعد التنقّل داخل المنطقة.\",\"duration_minutes\":60,\"walking\":\"مشي قصير جدًا من مكان الركن إلى الجلسة فقط، بلا مسار طويل.\",\"source_url\":\"https://www.tripadvisor.com/Restaurant_Review-g15364221-d15073285-Reviews-Anawa_s_Coffee_Shop-Halba_North_Governorate.html\",\"trail\":null,\"camping\":null},{\"name\":\"Oakland Nature Park\",\"locality\":\"Souk El Khan, Hasbaya, Lebanon\",\"kind\":\"meal\",\"description\":\"مطعم مفتوح على الطبيعة على النهر مع جلوس خارجي، ومطبخ لبناني/بحري، ويذكر صفحة المكان الحجز والجلوس الخارجي. يميّزه أنه يصلح كخيار نهار ريفي واحد يجمع الأكل مع أجواء الطبيعة دون التنقّل بين أكثر من محطة.\",\"duration_minutes\":90,\"walking\":\"مشي خفيف داخل الساحة والجلسة فقط؛ لا حاجة لمسار مشي.\",\"source_url\":\"https://www.tripadvisor.com/Restaurant_Review-g8750099-d26323157-Reviews-Oakland_Nature_Park-Hasbaya_Mount_Lebanon_Governorate.html\",\"trail\":null,\"camping\":null}]}]}",
+          "sources": [
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g1955925-d23001030-Reviews-Keif_Jezzine_reservation_only-Jezzine_South_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g8750099-d26323157-Reviews-Oakland_Nature_Park-Hasbaya_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g1957196-d7034048-Reviews-Shallalat_Al_Zarka-Baakleen_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Hotel_Review-g3861905-d27717650-Reviews-Al_Jourd_Ecotourism_Campsite-Hermel_Bekaa_Governorate.html"
+            },
+            {
+              "title": "ar.tripadvisor.com",
+              "url": "https://ar.tripadvisor.com/Restaurant_Review-g8750099-d26323157-Reviews-Oakland_Nature_Park-Hasbaya_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g4960259-d15043480-Reviews-Cabane_de_Mtein-Ras_el_Metn_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g298263-d8401536-Reviews-or45-Mounir-Broummana_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g1957196-d7034048-Reviews-or120-Shallalat_Al_Zarka-Baakleen_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g3735768-d8746710-Reviews-Shallalat_Nabeh_Merched-Maasser_el_Chouf_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g19073312-d12614682-Reviews-Amaleen_Restaurant_Cafe-Taanayel_Bekaa_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g6585473-d17425880-Reviews-Coara-Deir_el_Qamar_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g1985418-d3734346-Reviews-Restaurant_Tallet_Nasr-Bikfaya_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g15364221-d15073285-Reviews-Anawa_s_Coffee_Shop-Halba_North_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g303400-d3192754-Reviews-Akkar_Restaurante-Uberlandia_State_of_Minas_Gerais.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Tourism-g303400-Uberlandia_State_of_Minas_Gerais-Vacations.html"
+            },
+            {
+              "title": "ar.tripadvisor.com",
+              "url": "https://ar.tripadvisor.com/Restaurant_Review-g15364221-d15073285-Reviews-Anawa_s_Coffee_Shop-Halba_North_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Attraction_Review-g1858121-d12951937-Reviews-Saydet_el_Hosn_Lady_of_the_Fortress-Ehden_North_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/LocationPhotoDirectLink-g2624513-i183506840-North_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g663395-d25254412-Reviews-Okoto-Byala_Varna_Province.html"
+            },
+            {
+              "title": "cn.tripadvisor.com",
+              "url": "https://cn.tripadvisor.com/Restaurant_Review-g15364221-d15073285-Reviews-Anawa_s_Coffee_Shop-Halba_North_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g190499-d780194-Reviews-Frati-Trondheim_Trondheim_Municipality_Trondelag_Central_Norway.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g14782503-d20138924-Reviews-Akkar_Juice_Bar-Yogyakarta_Yogyakarta_Region_Java.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Hotel_Review-g3223554-d3335364-Reviews-Flor_Do_Campo-Jebrayel_North_Governorate.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regional-01-akkar-family-camp",
+      "input": {
+        "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن عكار: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+        "trip": {
+          "destination": "عكار، لبنان",
+          "origin": "طرابلس",
+          "transport": "car",
+          "effort": "light",
+          "activities": [
+            "camping",
+            "picnic"
+          ]
+        },
+        "lang": "ar"
+      },
+      "original_status": 200,
+      "original_itinerary": null,
+      "calls": [
+        {
+          "answer": "{\"summary\":\"اخترتُ مخيمًا عائليًا فعليًا في كوبايات مع بديل مراقبة طيور قريب في عكار، مع التركيز على خيمة مناسبة لأربعة وألعاب بسيطة للنشاط في الطبيعة.\",\"format\":\"itinerary\",\"region\":\"عكار، لبنان\",\"days\":[{\"day\":1,\"base\":\"كوبايات، عكار، لبنان\",\"departure\":\"طرابلس، لبنان\",\"return_to\":\"كوبايات، عكار، لبنان\",\"stops\":[{\"name\":\"Horizon Pines — Family & Friends Camping\",\"locality\":\"كوبايات، عكار، لبنان\",\"kind\":\"nature\",\"description\":\"مخيم عائلي يعلن عن خيام/إقامة لِـ2–6 أشخاص ضمن موقع غابي في عكار، مع خيار tent + mattress، ومذكور لديه fire pits وBBQ وملعب. هذا يناسب أسرة من شخصين بالغين وطفلين إذا حجزتم وحدة تتسع لأربعة بوضوح بدل الاعتماد على سرير مزدوج فقط.\",\"duration_minutes\":120,\"walking\":\"تنقّل قصير داخل الموقع بين الخيمة ومساحة اللعب والجلوس.\",\"source_url\":\"https://horizonpines.com/camping/\",\"trail\":null,\"camping\":{\"unit\":\"tent\",\"capacity\":4,\"children\":\"unknown\",\"booking\":\"Send Booking Request عبر صفحة الحجز في الموقع\",\"source_url\":\"https://horizonpines.com/camping/\"}},{\"name\":\"Fire-Watching tower, Morgan Road\",\"locality\":\"كوبايات، عكار، لبنان\",\"kind\":\"visit\",\"description\":\"نقطة محلية مرتبطة بمبادرة بيئية في عكار، وتصلح كزيارة قصيرة قبل المبيت إذا أردتم إضافة لمسة طبيعة ومشهد جبلي قريب من منطقة التخييم. لا أعتبرها بديلاً عن المبيت، بل توقفًا خفيفًا ضمن اليوم نفسه.\",\"duration_minutes\":45,\"walking\":\"وقفة قصيرة ومشي خفيف حول النقطة فقط.\",\"source_url\":\"https://www.conseildelenvironnement.org/\",\"trail\":null,\"camping\":null},{\"name\":\"Birdwatching in Upper Mountains of Akkar-Donnieh\",\"locality\":\"عكار، لبنان\",\"kind\":\"activity\",\"description\":\"منطقة موائل جبلية وغابية موثقة كـ Important Bird Area في عكار-الضنية، لذا يمكن جعلها نشاط مراقبة طيور خفيفًا بدل الصيد. الاحتمال الأفضل لرصد الجوارح والطيور المهاجرة يكون في أوقات الحركة الموسمية، لا كضمان مشاهدة.\",\"duration_minutes\":60,\"walking\":\"مشي خفيف جدًا أو وقوف بالموقع حسب الموضع المختار.\",\"source_url\":\"https://www.spnl.org/upper-mountains-of-akkar-donnieh/\",\"trail\":null,\"camping\":null}]}]}",
+          "sources": [
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/en/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/upper-mountains-of-akkar-donnieh/"
+            },
+            {
+              "title": "mada.org.lb",
+              "url": "https://mada.org.lb/en/natural-park/"
+            },
+            {
+              "title": "moe.gov.lb",
+              "url": "https://moe.gov.lb/ProtectedAreas/categories.htm"
+            },
+            {
+              "title": "www.hammana.gov.lb",
+              "url": "https://www.hammana.gov.lb/thingstodo/nature-tourism/hima-hammana"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/ProtectedAreas/memories.htm"
+            },
+            {
+              "title": "horizonpines.com",
+              "url": "https://horizonpines.com/camping/"
+            },
+            {
+              "title": "www.lebanontraveler.com",
+              "url": "https://www.lebanontraveler.com/en/magazine/5-things-to-do-in-akkar/?hilite=SURSOCK+MUSEUM%2F2%2F%2F2%2F"
+            },
+            {
+              "title": "www.jabalmoussa.org",
+              "url": "https://www.jabalmoussa.org/sites/default/files/The%20961-%2010%2B%20incredible%20hiking%20destinations%20in%20Lebanon.pdf"
+            },
+            {
+              "title": "www.conseildelenvironnement.org",
+              "url": "https://www.conseildelenvironnement.org/"
+            },
+            {
+              "title": "www.govserv.org",
+              "url": "https://www.govserv.org/IQ/Akkar/115397373494101/%D9%85%D8%B5%D9%84%D8%AD%D8%A9-%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9-%D8%B9%D9%83%D8%A7%D8%B1---%D9%88%D8%B2%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A%D8%A9"
+            },
+            {
+              "title": "himahammana.org",
+              "url": "https://himahammana.org/about"
+            },
+            {
+              "title": "jabalrihane.org",
+              "url": "https://jabalrihane.org/"
+            },
+            {
+              "title": "www.birdsoflebanon.com",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "title": "mada.org.lb",
+              "url": "https://mada.org.lb/wp-content/uploads/2020/11/AVIFAUNA-ASSESSMENT-IN-UPPER-AKKAR-DONNIEH.pdf"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/wp-content/uploads/2014/12/Status-of-Birds-in-Lebanon-LOW.pdf"
+            },
+            {
+              "title": "www.opendatalebanon.org",
+              "url": "https://www.opendatalebanon.org/wp-content/uploads/2020/10/Bekaa.pdf"
+            },
+            {
+              "title": "iczmplatform.org",
+              "url": "https://iczmplatform.org/storage/documents/LThiuLdDVmWU593qAPGJBZzojSODCR6ugd5sUTpf.pdf"
+            },
+            {
+              "title": "www.reddit.com",
+              "url": "https://www.reddit.com/r/lebanon/comments/z1p2i2"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Berbara%2C_Akkar"
+            },
+            {
+              "title": "www.reddit.com",
+              "url": "https://www.reddit.com/r/lebanon/comments/1btxl8k"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Natural_areas_in_Lebanon"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Al_Shouf_Cedar_Nature_Reserve"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Rihaniyeh"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Bireh%2C_Akkar"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Chakdouf"
+            },
+            {
+              "title": "www.reddit.com",
+              "url": "https://www.reddit.com/r/lebanon/comments/1vsvfl6/campsite_locations/"
+            },
+            {
+              "title": "www.reddit.com",
+              "url": "https://www.reddit.com/r/lebanon/comments/1e9ouvv/what_are_your_thoughts_on_akkar/"
+            }
+          ]
+        },
+        {
+          "answer": "{\"summary\":\"أعددتُ ليلتكم على مخيم عائلي فعلي في الكورة/كوبايات بعكار مع توقف خفيف محلي لمراقبة الطيور بدل أي بديل بعيد، مع خيمة تتسع لأربعة ومرافق واضحة وألعاب بسيطة مناسبة للأطفال.\",\"format\":\"itinerary\",\"region\":\"عكار، لبنان\",\"days\":[{\"day\":1,\"base\":\"كوبايات، عكار، لبنان\",\"departure\":\"طرابلس، لبنان\",\"return_to\":\"كوبايات، عكار، لبنان\",\"stops\":[{\"name\":\"Horizon Pines — Camping\",\"locality\":\"كوبايات، عكار، لبنان\",\"kind\":\"nature\",\"description\":\"مخيم فعلي يعلن خيامًا تتسع لـ2–6 أشخاص، مع خيار خيمة مع فرش، ومرافق تشمل حمّامات، دش خارجي، مطبخًا مجهزًا، ومنطقة BBQ. هذا يناسب عائلة من أربعة إذا حجزتم خيمة واضحة السعة بدل الاعتماد على سرير مزدوج فقط.\",\"duration_minutes\":120,\"walking\":\"تنقل قصير جدًا داخل الموقع بين الخيمة والمرافق ومساحة الجلوس.\",\"source_url\":\"https://horizonpines.com/camping/\",\"trail\":null,\"camping\":{\"unit\":\"tent\",\"capacity\":4,\"children\":\"unknown\",\"booking\":\"طلب حجز عبر صفحة Camping في الموقع أو التواصل المنشور لديهم\",\"source_url\":\"https://horizonpines.com/camping/\"}},{\"name\":\"Fire-Watching tower, Morgan Road\",\"locality\":\"كوبايات، عكار، لبنان\",\"kind\":\"visit\",\"description\":\"توقف طبيعي قصير مرتبط بسياق محلي في عكار، يصلح لالتقاط مشهد جبلي سريع قبل العودة إلى المخيم. ليس بديلًا عن المبيت، بل وقفة خفيفة ضمن اليوم نفسه.\",\"duration_minutes\":45,\"walking\":\"مشي خفيف جدًا أو وقوف قرب النقطة فقط.\",\"source_url\":\"https://www.conseildelenvironnement.org/\",\"trail\":null,\"camping\":null},{\"name\":\"Upper Mountains of Akkar-Donnieh\",\"locality\":\"عكار، لبنان\",\"kind\":\"activity\",\"description\":\"هذا نطاق طيور مهم في عكار-الضنية وفق SPNL، لذا يصلح لنشاط مراقبة طيور هادئ بدل الصيد، مع احتمال أفضل لرصد الجوارح والطيور المهاجرة في مواسم الحركة لا كضمان مشاهدة. في المنطقة نفسها جرى توثيق مكافحة صيد غير قانوني حديثًا، لذلك يبقى النشاط هنا مراقبة فقط.\",\"duration_minutes\":60,\"walking\":\"مراقبة من نقطة ثابتة أو مشي قصير جدًا بحسب المكان المختار.\",\"source_url\":\"https://www.spnl.org/upper-mountains-of-akkar-donnieh/\",\"trail\":null,\"camping\":null}]}]}",
+          "sources": [
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Hotel_Review-g3861905-d27717650-Reviews-Al_Jourd_Ecotourism_Campsite-Hermel_Bekaa_Governorate.html"
+            },
+            {
+              "title": "ar.tripadvisor.com",
+              "url": "https://ar.tripadvisor.com/Hotel_Review-g2213356-d10757230-Reviews-Cedars_Ground_Campsite-Barouk_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Hotel_Review-g2213356-d10757230-Reviews-Cedars_Ground_Campsite-Barouk_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Hotel_Review-g1955925-d4125570-Reviews-Pinea_Campus-Jezzine_South_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Hotel_Review-g9583398-d23638630-Reviews-Balloot_Camping_Site-Kobayat_North_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Hotel_Review-g3861905-d8148071-Reviews-Chir_Al_Assi_Rafting_Club-Hermel_Bekaa_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Hotels-g294004-c3-zff29-Lebanon-Hotels.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Attraction_Review-g12848737-d13172800-Reviews-The_Pine_Yards-Mar_Moussa_El_Douar_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Hotel_Feature-g2213356-d10757230-zft9168-Cedars_Ground_Campsite.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Hotel_Review-g2213356-d10757230-Reviews-or10-Cedars_Ground_Campsite-Barouk_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Attraction_Review-g11789052-d10231037-Reviews-Swings-Zaraaoun_Mount_Lebanon_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/HotelsList-Lebanon-Pets-Allowed-Campground-zfp13968156.html"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/upper-mountains-of-akkar-donnieh/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/wp-content/uploads/2014/12/Status-of-Birds-in-Lebanon-LOW.pdf"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/hima-andaket-guide/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/wp-content/uploads/2024/10/Al-Hima-Magazine-Issue-No.-4.pdf"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/wp-content/uploads/2014/12/Bird-Identification-Manual-Low.pdf"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/wp-content/uploads/2014/09/spnl-magazine_02-9-14.pdf"
+            },
+            {
+              "title": "www.conseildelenvironnement.org",
+              "url": "https://www.conseildelenvironnement.org/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/protecting-lebanons-migratory-birds-a-month-of-field-action-and-awareness/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/darayya-village-in-danniyeh-is-now-the-site-of-a-birdwatching/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/hima-munjez/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/ar/at-dawn-in-the-beqaa-how-spnl-s-tracking-lebanons-birds-one-checklist-at-a-time/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/spnls-anti-poaching-unit-in-a-nutshell/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/ibas-kbas/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/annotated-checklist-of-the-marine-and-coastal-birds-of-lebanon/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/arrests-of-illegal-hunting-offenders-across-several-lebanese-regions/"
+            },
+            {
+              "title": "www.spnl.org",
+              "url": "https://www.spnl.org/important-bird-and-biodiversity-areas-iba-in-lebanon-birdlife-declares-16-ibas-with-two-more-on-the-way/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regional-01-akkar-hunting",
+      "input": {
+        "query": "بدي رحلة صيد طيور في عكار هذا الأسبوع، انطلاقًا من طرابلس. هل الموسم الجاري مفتوح رسميًا، وما الرخص والأنواع والأعداد المسموحة؟ أعطني وجهة فقط إذا ثبت السماح والوصول الحالي؛ لا تعتمد إعلان موسم قديم أو وجود الطيور. إذا لم يتأكد ذلك قل لي ما الذي ينقص بدل التخمين.",
+        "trip": {
+          "destination": "عكار، لبنان",
+          "origin": "طرابلس",
+          "transport": "car",
+          "effort": "light",
+          "activities": [
+            "hunting"
+          ]
+        },
+        "lang": "ar"
+      },
+      "original_status": 200,
+      "original_itinerary": {
+        "summary": "لم أتحقق من إعلان رسمي نافذ للموسم الجاري في الوجهة المطلوبة؛ لذلك لا أعطي وجهة صيد على أساس أنه مسموح. البيان الخاص بموسم سابق لا يثبت الوضع الحالي. قبل الخروج، يلزم تأكيد قرار الموسم والأنواع والأعداد المسموحة والرخص المطلوبة من الجهة الرسمية المختصة.",
+        "format": "advice",
+        "legal": {
+          "status": "unconfirmed",
+          "season_start_year": 2026,
+          "publication_date": null,
+          "source_url": "https://moe.gov.lb/%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D9%88%D8%B2%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D8%AA%D8%AA%D9%85%D9%86%D9%89-%D8%B9%D9%84%D9%89-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D9%82%D9%88%D9%89-%D8%A7%D9%84%D8%A7%D9%85%D9%86-%D9%81%D9%8A-%D9%82%D9%85%D8%B9-%D9%85%D9%85%D8%A7%D8%B1%D8%B3%D8%A7%D8%AA-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D9%85%D9%85%D9%86%D9%88%D8%B9-%D8%AD%D8%A7%D9%84%D9%8A%D8%A7%D9%8B.aspx?lang=ar-lb"
+        },
+        "region": "عكار، لبنان",
+        "days": []
+      },
+      "calls": [
+        {
+          "answer": "{\"summary\":\"بحسب وزارة البيئة اللبنانية، لا يوجد حتى الآن قرار رسمي معلَن بفتح موسم الصيد البري 2025/2026؛ والوزارة قالت صراحة إن الصيد ما زال ممنوعًا على كامل الأراضي اللبنانية ولجميع الأنواع. هذا يعني أن طلبك عن صيد طيور في عكار هذا الأسبوع غير مُثبت قانونيًا الآن، ولا يجوز الاعتماد على إعلان قديم أو على وجود الطيور. قانون الصيد يفرض أصلًا رخصة صيد من وزارة البيئة، ورخصة حمل السلاح المناسبة، ويمنع صيد الطيور المهاجرة والأنواع المحمية ويحدد الأنواع المسموحة فقط بقرار سنوي. ما ينقص لتأكيد الإباحة: قرار فتح الموسم الحالي نفسه، وجدول الأنواع والأعداد المسموحة، وأي قيود محلية خاصة بعكار من جهة رسمية حديثة. إن لم يظهر هذا القرار، فالوضع غير مؤكد لا مفتوح.\",\"format\":\"advice\",\"region\":\"عكار، لبنان\",\"legal\":{\"status\":\"unconfirmed\",\"season_start_year\":2026,\"publication_date\":null,\"source_url\":\"https://moe.gov.lb/%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D9%88%D8%B2%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D8%AA%D8%AA%D9%85%D9%86%D9%89-%D8%B9%D9%84%D9%89-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D9%82%D9%88%D9%89-%D8%A7%D9%84%D8%A7%D9%85%D9%86-%D9%81%D9%8A-%D9%82%D9%85%D8%B9-%D9%85%D9%85%D8%A7%D8%B1%D8%B3%D8%A7%D8%AA-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D9%85%D9%85%D9%86%D9%88%D8%B9-%D8%AD%D8%A7%D9%84%D9%8A%D8%A7%D9%8B.aspx?lang=ar-lb\"},\"days\":[]}",
+          "sources": [
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA/%D9%82%D8%B1%D8%A7%D8%B1-%D8%B1%D9%82%D9%85-7-%D8%A8-%D8%AA%D9%86%D8%B8%D9%8A%D9%85-%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%B7%D9%8A%D9%88%D8%B1-%D9%88%D8%B7%D8%B1%D8%A7%D9%8A%D8%AF-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF.aspx?lang=ar-LB"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86/%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-580-%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A-%D9%81%D9%8A-%D9%84%D8%A8%D9%86%D8%A7%D9%86.aspx"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/getattachment/11d1c57b-5983-41ef-84dc-3860376c8a1f/%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D8%B5%D9%8A%D8%A7%D8%AF-%D8%A7%D9%84%D9%85%D8%B5%D9%88%D8%B1.aspx"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA/%D9%82%D8%B1%D8%A7%D8%B1-%D8%B1%D9%82%D9%85-7-%D8%A8-%D8%AA%D9%86%D8%B8%D9%8A%D9%85-%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%B7%D9%8A%D9%88%D8%B1-%D9%88%D8%B7%D8%B1%D8%A7%D9%8A%D8%AF-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF.aspx?lang=en-us"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86.aspx?lang=en-us"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA/%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%86%D8%AF%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B7%D9%84%D9%88%D8%A8%D8%A9-%D9%84%D9%85%D8%B9%D8%A7%D9%85%D9%84%D8%A7%D8%AA-%D8%B1%D8%AE%D8%B5-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF.aspx"
+            },
+            {
+              "title": "moe.gov.lb",
+              "url": "https://moe.gov.lb/%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D9%88%D8%B2%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D8%AA%D8%AA%D9%85%D9%86%D9%89-%D8%B9%D9%84%D9%89-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D9%82%D9%88%D9%89-%D8%A7.aspx?lang=ar-lb"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA/%D9%82%D8%B1%D8%A7%D8%B1-%D8%B1%D9%82%D9%85-7-%D8%A8-%D8%AA%D9%86%D8%B8%D9%8A%D9%85-%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%B7%D9%8A%D9%88%D8%B1-%D9%88%D8%B7%D8%B1%D8%A7%D9%8A%D8%AF-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF.aspx"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D8%B9%D8%B1%D8%B6-%D9%85%D8%B9-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9-%D9%84%D8%AA%D9%81%D8%B9%D9%8A%D9%84-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9-%D8%A7%D9%84%D8%A8.aspx"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA/%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A-%D9%A2%D9%A0%D9%A2%D9%A0.aspx"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/getattachment/63643c65-a1df-4750-8892-7b6673947f60/%D8%AF%D9%84%D9%8A%D9%84-%D8%B9%D9%85%D9%84%D9%8A-%D9%84%D9%84%D8%B4%D8%B1%D8%B7%D8%A9-%D8%A7%D9%84%D8%A8%D9%84%D8%AF%D9%8A%D8%A9-%D9%84%D8%AA%D8%B9%D8%B2%D9%8A%D8%B2-%D8%A7%D9%84%D8%A7%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D9%8A%D8%A9.aspx"
+            },
+            {
+              "title": "moe.gov.lb",
+              "url": "https://moe.gov.lb/%D8%A7%D9%84%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D9%8A%D8%B9%D9%84%D9%86-%D9%81%D8%AA%D8%AD-%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A-%D9%85%D9%86-1-%D8%A7%D9%8A%D9%84%D9%88%D9%84-%D9%84.aspx?lang=ar-lb"
+            },
+            {
+              "title": "www.moe.gov.lb",
+              "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA.aspx?page=4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "regional-01-akkar-repeat",
+      "input": {
+        "query": "طالعين شخصين من طرابلس إلى عكار نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+        "trip": {
+          "destination": "عكار، لبنان",
+          "origin": "طرابلس",
+          "transport": "car",
+          "effort": "light",
+          "activities": [
+            "heritage",
+            "walking"
+          ]
+        },
+        "lang": "ar"
+      },
+      "original_status": 200,
+      "original_itinerary": {
+        "summary": "الطلعة الأنسب هي عرقة ثم القبيات: محطة أثرية خفيفة، تمشية قصيرة بطبيعة القبيات، وغداء محدد قبل الرجعة إلى طرابلس.",
+        "format": "itinerary",
+        "region": "عكار، لبنان",
+        "days": [
+          {
+            "day": 1,
+            "base": "طرابلس",
+            "departure": "طرابلس",
+            "return_to": "طرابلس",
+            "stops": [
+              {
+                "name": "Tell Arqa",
+                "locality": "عرقا، عكار، لبنان",
+                "description": "محطة أثرية أساسية في عكار، وتناسب طلبكم لأنّها معلم يستحق الزيارة وليس مجرد مرور. خذوا جولة خفيفة حول التلّ ومحيطه، ثم تابعوا مباشرة نحو القبيات.",
+                "kind": "visit",
+                "duration_minutes": 60,
+                "walking": "مشي خفيف على الموقع وحول التل فقط.",
+                "source_url": "https://lebanonuntravelled.com/tal-arqa-great-city-antiquity/"
+              },
+              {
+                "name": "بلدية القبيات",
+                "locality": "القبيات، عكار، لبنان",
+                "description": "القبيات هي قاعدة طبيعية مناسبة لوقفة قصيرة بعد عرقة، والبلدية نفسها مصدر محلي يثبت البلدة وخدماتها. اجعلوا هنا تمشية خفيفة داخل البلدة أو في محيط قريب قبل الغداء، من دون تحويلها إلى مشوار طويل.",
+                "kind": "nature",
+                "duration_minutes": 45,
+                "walking": "تمشية قصيرة خفيفة داخل البلدة فقط.",
+                "source_url": "https://kobayat-municipality.org/ar"
+              },
+              {
+                "name": "Haykal Al Chambouk",
+                "locality": "القبيات، عكار، لبنان",
+                "description": "غداء محدد في القبيات وبأجواء ريفية قريبة من الطبيعة، وهو الأنسب كاستراحة منتصف اليوم قبل الرجعة. المكان موصوف كخيار طعام لبناني/متوسطي مع أجواء طبيعية ومزرعة ومياه عذبة.",
+                "kind": "meal",
+                "duration_minutes": 75,
+                "walking": "الدخول من السيارة إلى الطاولة فقط.",
+                "source_url": "https://www.tripadvisor.com/Restaurant_Review-g9583398-d12142500-Reviews-Haykal_Al_Chambouk-Kobayat_North_Governorate.html"
+              }
+            ]
+          }
+        ]
+      },
+      "calls": [
+        {
+          "answer": "{\"summary\":\"بعطيكن طلعة خفيفة ومركّزة بين عرقا والقبيات: أثر تاريخي أساسي، طبيعة قريبة، وغداء محدد بالقبيات قبل الرجعة.\",\"format\":\"itinerary\",\"region\":\"عكار، لبنان\",\"days\":[{\"day\":1,\"base\":\"طرابلس\",\"departure\":\"طرابلس\",\"return_to\":\"طرابلس\",\"stops\":[{\"name\":\"Tell Arqa\",\"locality\":\"عرقا، عكار، لبنان\",\"kind\":\"visit\",\"description\":\"موقع أثري أساسي في عكار، مناسب كأول محطة لأنّه يضيف المعلم التاريخي المطلوب بدون مشوار طويل بين المحطات. خذوا جولة خفيفة بين التلّ والآثار المحيطة، ثم انطلقوا بعدها مباشرة نحو القبيات. ([lcf.lau.edu.lb](https://lcf.lau.edu.lb/images/phoenician-route-smart-ways-best-practice-in-lebanon-2.pdf?utm_source=openai))\",\"duration_minutes\":60,\"walking\":\"مشي خفيف على الموقع الأثري وحول التلّ؛ لا يُفترض مجهود طويل.\",\"source_url\":\"https://www.iccrom.org/sites/default/files/publications/2018-11/protectiveshelters_web_rev.pdf\",\"trail\":null,\"camping\":null},{\"name\":\"بلدية القبيات / وسط القبيات القديم\",\"locality\":\"القبيات، عكار، لبنان\",\"kind\":\"nature\",\"description\":\"القبيات بلدة معروفة في عكار وبالمنطقة محيط طبيعي مناسب لطلعة نهارية خفيفة. توقّفوا هون لتمشية قصيرة في الوسط والهواء الجبلي قبل الغداء، بدل التنقّل بين أكتر من بلدة. ([kobayat-municipality.org](https://kobayat-municipality.org/ar?utm_source=openai))\",\"duration_minutes\":45,\"walking\":\"تمشية قصيرة داخل البلدة ومحيطها القريب فقط.\",\"source_url\":\"https://kobayat-municipality.org/ar\",\"trail\":null,\"camping\":null},{\"name\":\"Hatbe w Nar\",\"locality\":\"القبيات، عكار، لبنان\",\"kind\":\"meal\",\"description\":\"مكان غداء محدد ومذكور ضمن القبيات، مشهور بالخبز التنور والمناقيش والأكل المحلي. مناسب كاستراحة وسط اليوم قبل الرجعة إلى طرابلس، وبقربه خيارات أكل أخرى إذا بدّكن تبدّلوا لاحقًا. ([lebanontraveler.com](https://www.lebanontraveler.com/en/magazine/mini-guide-qobayat/?utm_source=openai))\",\"duration_minutes\":75,\"walking\":\"الدخول من السيارة إلى الطاولة فقط؛ مشي محدود.\",\"source_url\":\"https://www.lebanontraveler.com/en/magazine/mini-guide-qobayat/\",\"trail\":null,\"camping\":null}]}]}",
+          "sources": [
+            {
+              "title": "PowerPoint Presentation",
+              "url": "https://lcf.lau.edu.lb/images/phoenician-route-smart-ways-best-practice-in-lebanon-2.pdf?utm_source=openai"
+            },
+            {
+              "title": "بلدية القبيات | الموقع الرسمي",
+              "url": "https://kobayat-municipality.org/ar?utm_source=openai"
+            },
+            {
+              "title": "Mini Guide to Qobayat - Lebanon Traveler",
+              "url": "https://www.lebanontraveler.com/en/magazine/mini-guide-qobayat/?utm_source=openai"
+            },
+            {
+              "title": "akkartrail.com",
+              "url": "https://akkartrail.com/en/"
+            },
+            {
+              "title": "www.discoverlebanon.com",
+              "url": "https://www.discoverlebanon.com/en/panoramic_views/north/akkar/index.php"
+            },
+            {
+              "title": "wenrayhin.com",
+              "url": "https://wenrayhin.com/en/towns/al-qoubaiyat/food_drink"
+            },
+            {
+              "title": "www.lebanontraveler.com",
+              "url": "https://www.lebanontraveler.com/en/magazine/mini-guide-qobayat/"
+            },
+            {
+              "title": "www.cybo.com",
+              "url": "https://www.cybo.com/LB/al-qoubaiyat/restaurants/"
+            },
+            {
+              "title": "moe.gov.lb",
+              "url": "https://moe.gov.lb/ProtectedAreas/categories.htm"
+            },
+            {
+              "title": "masjid4all.com",
+              "url": "https://masjid4all.com/business/cask-restaurant/"
+            },
+            {
+              "title": "www.tcnr-leb.com",
+              "url": "https://www.tcnr-leb.com/visitor-center/"
+            },
+            {
+              "title": "today.lorientlejour.com",
+              "url": "https://today.lorientlejour.com/article/1179371/qobayat-inhale-the-pure-and-fresh-air.html"
+            },
+            {
+              "title": "www.undp.org",
+              "url": "https://www.undp.org/lebanon/projects/stepping-nature-reserves-capacity-step4nature-0"
+            },
+            {
+              "title": "moe.gov.lb",
+              "url": "https://moe.gov.lb/ProtectedAreas/memories.htm"
+            },
+            {
+              "title": "dglac.gov.lb",
+              "url": "https://dglac.gov.lb/en/municipalities"
+            },
+            {
+              "title": "investinlebanon.gov.lb",
+              "url": "https://investinlebanon.gov.lb/Content/uploads/SideBlock/180606110132198~Akkar%20Region%20Presentation%202018.pdf"
+            },
+            {
+              "title": "www.opendatalebanon.org",
+              "url": "https://www.opendatalebanon.org/wp-content/uploads/2020/10/Tourism_north_lebanonBOOK_NORTH.pdf"
+            },
+            {
+              "title": "www.imarabe.org",
+              "url": "https://www.imarabe.org/sites/default/files/2025-06/photographing-lebanon-s-heritage-visitor-s-guide.pdf"
+            },
+            {
+              "title": "crm.visit-lebanon.org",
+              "url": "https://crm.visit-lebanon.org/alternatedocroots/a57a4eeb-9f37-4774-a4f8-189fa7fd97e3-LT20.pdf"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Al-Qoubaiyat"
+            },
+            {
+              "title": "crm.visit-lebanon.org",
+              "url": "https://crm.visit-lebanon.org/alternatedocroots/b282097e-f84a-4a69-80bd-5d745c97b355-September-December2014.pdf"
+            },
+            {
+              "title": "www.enicbcmed.eu",
+              "url": "https://www.enicbcmed.eu/sites/default/files/2021-03/MEDUSA%20Attractions%2C%20Inventory%20and%20Mapping%20for%20Adventure%20Tourism%20in%20Lebanon.pdf"
+            },
+            {
+              "title": "www.reddit.com",
+              "url": "https://www.reddit.com/r/lebanon/comments/1btxl8k"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Akkar_al-Atika"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Qabeit"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Gibelacar"
+            },
+            {
+              "title": "www.reddit.com",
+              "url": "https://www.reddit.com/r/lebanon/comments/1kion2y"
+            },
+            {
+              "title": "fr.wikipedia.org",
+              "url": "https://fr.wikipedia.org/wiki/Kobayat"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Akkar_District"
+            },
+            {
+              "title": "www.reddit.com",
+              "url": "https://www.reddit.com/r/lebanon/comments/1e9ouvv/what_are_your_thoughts_on_akkar/"
+            },
+            {
+              "title": "www.dglac.gov.lb",
+              "url": "https://www.dglac.gov.lb/en/municipalities"
+            },
+            {
+              "title": "dglac.gov.lb",
+              "url": "https://dglac.gov.lb/en/municipal-federations"
+            },
+            {
+              "title": "www.govserv.org",
+              "url": "https://www.govserv.org/LB/Akkar/1579981295629597/Municipality-of-Akkar-Al-Atika---%D8%A8%D9%84%D8%AF%D9%8A%D8%A9-%D8%B9%D9%83%D8%A7%D8%B1-%D8%A7%D9%84%D8%B9%D8%AA%D9%8A%D9%82%D8%A9"
+            },
+            {
+              "title": "kobayat-municipality.org",
+              "url": "https://kobayat-municipality.org/ar"
+            },
+            {
+              "title": "daleel-madani.org",
+              "url": "https://daleel-madani.org/civil-society-directory/municipality-akkar-atika"
+            },
+            {
+              "title": "aakkar-el-attiqa.albaladiya.com",
+              "url": "https://aakkar-el-attiqa.albaladiya.com/"
+            },
+            {
+              "title": "www.indexoflebanon.com",
+              "url": "https://www.indexoflebanon.com/directory/m/municipalities-in-lebanon/lebanon-company-business-akkar-el-atika_akkar-el-atiqa.php"
+            },
+            {
+              "title": "www.moph.gov.lb",
+              "url": "https://www.moph.gov.lb/en/HealthFacilities/view/3/188/71811/center-of-health-and-social-services-of-akkar-al-atikas-municipality?district=&facility_type=4&name="
+            },
+            {
+              "title": "www.govserv.org",
+              "url": "https://www.govserv.org/LB/Mishmish/123368998353502/MeshMesh-Municipality---%D8%A8%D9%84%D8%AF%D9%8A%D8%A9-%D9%85%D8%B4%D9%85%D8%B4"
+            },
+            {
+              "title": "civildefense.gov.lb",
+              "url": "https://civildefense.gov.lb/index.php?page=qoubayat"
+            },
+            {
+              "title": "wadikhaledmunicipality.gov.lb",
+              "url": "https://wadikhaledmunicipality.gov.lb/"
+            },
+            {
+              "title": "digitallibrary.un.org",
+              "url": "https://digitallibrary.un.org/record/3894999/files/E_ESCWA_CL1.CCS_2020_TP.1-EN.pdf"
+            },
+            {
+              "title": "documents1.worldbank.org",
+              "url": "https://documents1.worldbank.org/curated/en/099010926130542596/pdf/P500390-836d7373-716f-4d29-bf8d-cf24ce883b23.pdf"
+            },
+            {
+              "title": "lcf.lau.edu.lb",
+              "url": "https://lcf.lau.edu.lb/images/phoenician-route-smart-ways-best-practice-in-lebanon-2.pdf"
+            },
+            {
+              "title": "www.iccrom.org",
+              "url": "https://www.iccrom.org/sites/default/files/publications/2018-11/protectiveshelters_web_rev.pdf"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/Arqa"
+            },
+            {
+              "title": "it.wikipedia.org",
+              "url": "https://it.wikipedia.org/wiki/Kobayat"
+            },
+            {
+              "title": "en.wikipedia.org",
+              "url": "https://en.wikipedia.org/wiki/List_of_municipalities_of_Lebanon"
+            }
+          ]
+        },
+        {
+          "answer": "{\"summary\":\"الطلعة الأنسب هي عرقة ثم القبيات: محطة أثرية خفيفة، تمشية قصيرة بطبيعة القبيات، وغداء محدد قبل الرجعة إلى طرابلس.\",\"format\":\"itinerary\",\"region\":\"عكار، لبنان\",\"days\":[{\"day\":1,\"base\":\"طرابلس\",\"departure\":\"طرابلس\",\"return_to\":\"طرابلس\",\"stops\":[{\"name\":\"Tell Arqa\",\"locality\":\"عرقا، عكار، لبنان\",\"kind\":\"visit\",\"description\":\"محطة أثرية أساسية في عكار، وتناسب طلبكم لأنّها معلم يستحق الزيارة وليس مجرد مرور. خذوا جولة خفيفة حول التلّ ومحيطه، ثم تابعوا مباشرة نحو القبيات.\",\"duration_minutes\":60,\"walking\":\"مشي خفيف على الموقع وحول التل فقط.\",\"source_url\":\"https://lebanonuntravelled.com/tal-arqa-great-city-antiquity/\",\"trail\":null,\"camping\":null},{\"name\":\"بلدية القبيات\",\"locality\":\"القبيات، عكار، لبنان\",\"kind\":\"nature\",\"description\":\"القبيات هي قاعدة طبيعية مناسبة لوقفة قصيرة بعد عرقة، والبلدية نفسها مصدر محلي يثبت البلدة وخدماتها. اجعلوا هنا تمشية خفيفة داخل البلدة أو في محيط قريب قبل الغداء، من دون تحويلها إلى مشوار طويل.\",\"duration_minutes\":45,\"walking\":\"تمشية قصيرة خفيفة داخل البلدة فقط.\",\"source_url\":\"https://kobayat-municipality.org/ar\",\"trail\":null,\"camping\":null},{\"name\":\"Haykal Al Chambouk\",\"locality\":\"القبيات، عكار، لبنان\",\"kind\":\"meal\",\"description\":\"غداء محدد في القبيات وبأجواء ريفية قريبة من الطبيعة، وهو الأنسب كاستراحة منتصف اليوم قبل الرجعة. المكان موصوف كخيار طعام لبناني/متوسطي مع أجواء طبيعية ومزرعة ومياه عذبة.\",\"duration_minutes\":75,\"walking\":\"الدخول من السيارة إلى الطاولة فقط.\",\"source_url\":\"https://www.tripadvisor.com/Restaurant_Review-g9583398-d12142500-Reviews-Haykal_Al_Chambouk-Kobayat_North_Governorate.html\",\"trail\":null,\"camping\":null}]}]}",
+          "sources": [
+            {
+              "title": "kobayat-municipality.org",
+              "url": "https://kobayat-municipality.org/ar"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g9583398-d12142500-Reviews-Haykal_Al_Chambouk-Kobayat_North_Governorate.html"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurant_Review-g9583398-d18849961-Reviews-Dibby_s_Resto_Cafe-Kobayat_North_Governorate.html"
+            },
+            {
+              "title": "lebanonuntravelled.com",
+              "url": "https://lebanonuntravelled.com/tal-arqa-great-city-antiquity/"
+            },
+            {
+              "title": "www.facebook.com",
+              "url": "https://www.facebook.com/Tarf.0036/posts/-%D8%B7%D8%B1%D8%AD%D8%AA-%D8%B3%D8%A4%D8%A7%D9%84-%D8%B9%D9%84%D9%89-chatgpt-%D9%85%D8%A7%D9%87%D9%88-%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8-%D8%A8%D9%84%D8%AF%D9%8A%D8%A7%D8%AA-%D9%88%D9%84%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%B7%D8%A7%D8%B1%D9%81-%D8%AD%D8%B3%D8%A8-%D8%A7%D9%84%D8%AA%D9%85%D9%8A%D8%B2-%D9%88%D9%87%D8%A7-%D9%83%D8%A7%D9%86%D8%AA-%D8%A7%D9%84%D8%A5%D8%AC%D8%A7%D8%A8/1189502959881505/"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Restaurants-g9583398-c31-Kobayat_North_Governorate.html"
+            },
+            {
+              "title": "www.facebook.com",
+              "url": "https://www.facebook.com/tartousiat/posts/%D9%85%D8%B7%D8%B9%D9%85-%D8%B2%D8%B9%D9%81%D8%B1%D8%A7%D9%86-%D8%B1%D8%AC%D8%B9%D9%84%D9%83%D9%86-%D8%A8%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9%EF%B8%8F%D9%87%D8%A7%D9%84%D9%85%D8%B7%D8%B9%D9%85-%D8%A7%D9%84%D9%85%D9%85%D9%8A%D8%B2-%D9%88%D8%A7%D9%84%D9%85%D8%B9%D8%B1%D9%88%D9%81-%D8%A8%D8%A3%D9%83%D9%84%D8%A7%D8%AA%D9%88-%D8%A7%D9%84%D8%B4%D9%87%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D9%85%D9%85%D9%8A%D8%B2%D8%A9%D8%A7/1178364587663181/"
+            },
+            {
+              "title": "www.facebook.com",
+              "url": "https://www.facebook.com/AlTaybatUSA/"
+            },
+            {
+              "title": "www.tripadvisor.com",
+              "url": "https://www.tripadvisor.com/Tourism-g9583398-Kobayat_North_Governorate-Vacations.html"
+            },
+            {
+              "title": "www.facebook.com",
+              "url": "https://www.facebook.com/EgyptianChefsAssociation/posts/%D8%A3%D9%81%D8%B6%D9%84-%D9%85%D8%B7%D8%A7%D8%B9%D9%85-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D9%84%D8%B9%D8%A7%D9%85-2024-%D8%B5%D8%AF%D8%B1%D8%AA-%D8%A3%D9%85%D8%B3-%D8%A7%D9%84%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A7%D9%84%D8%B3%D9%86%D9%88%D9%8A%D8%A9-%D9%84%D8%A3%D9%81%D8%B6%D9%84-50-%D9%85%D8%B7%D8%B9%D9%85%D8%A7-%D8%B9%D9%84%D9%89-%D9%85%D8%B3%D8%AA%D9%88%D9%89-%D8%A7/1039146368245709/"
+            },
+            {
+              "title": "lebanonuntravelled.com",
+              "url": "https://lebanonuntravelled.com/forest-of-iron-oak-akkar/"
+            },
+            {
+              "title": "lebanonuntravelled.com",
+              "url": "https://lebanonuntravelled.com/category/akkar/"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
