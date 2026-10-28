@@ -110,6 +110,9 @@ export function createHandler(network=fetch,options={}) {
         }
         if(!itinerary.days.length)output.verified=false;
         if(itinerary.regional_review_required){output.verified=false;output.sources=[...new Set(itinerary.days.flatMap(d=>d.stops.map(s=>s.source_url)))].map(url=>output.sources.find(s=>s.url===url)||{url,title:new URL(url).hostname});}
+        // Consulted URLs are not a semantic audit of capacity, locality or access.
+        output.sources_consulted=output.sources.length>0;
+        output.verified=false;
         output.answer=itinerary.summary;
       }
       const links=birdReferences(corpus.articles,output.answer+' '+JSON.stringify(itinerary?.days||[]),input.lang);

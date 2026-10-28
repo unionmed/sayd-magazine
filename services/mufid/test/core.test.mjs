@@ -21,7 +21,7 @@ test('completed web tool sources support JSON answers without inline annotations
  const data={status:'completed',output:[search,message]};
  const parsed=extractResponse(data);assert.equal(parsed.verified,true);assert.deepEqual(parsed.sources,[{title:'example.org',url:'https://example.org/visit'}]);
  const response=await createHandler(async()=>Response.json(data))(req({mode:'plan',query:'جولة في الشوف'}),env());
- const result=await response.json();assert.equal(response.status,200);assert.equal(result.itinerary.days[0].stops[0].name,'ساحة دير القمر');assert.ok(result.checked_at);assert.deepEqual(result.sources,parsed.sources);
+ const result=await response.json();assert.equal(response.status,200);assert.equal(result.itinerary.days[0].stops[0].name,'ساحة دير القمر');assert.equal(result.sources_consulted,true);assert.equal(result.checked_at,null);assert.deepEqual(result.sources,parsed.sources);
  for(const output of [[message],[{...search,status:'failed'},message],[{...search,type:'other_tool'},message],[{...search,action:{sources:[]}},message]]){
   assert.equal(extractResponse({output}).verified,false);
   const res=await createHandler(async()=>Response.json({status:'completed',output}))(req({mode:'plan'}),env());assert.equal(res.status,502);assert.equal((await res.json()).error,'verification_failed');
@@ -137,4 +137,9 @@ test('internal QA deduplicates completed cases, releases rate-limited attempts, 
  const cached=await call('qa-claim',key);assert.equal(cached.status,208);assert.equal((await cached.json()).result.result.answer,'test');
  const limited={...key,id:'regional-01-akkar-activity'};await call('qa-claim',limited);await call('qa-complete',{...limited,result:{status:429}});assert.equal((await call('qa-claim',limited)).status,200);
  assert.equal((await createHandler()(req({},'/qa-claim'),env())).status,404);
+});
+
+test('consulted trip sources cannot certify all place claims or current access',async()=>{
+ const h=createHandler(async()=>Response.json({status:'completed',output:[{type:'web_search_call',status:'completed',action:{sources:[{type:'url',url:'https://example.org/visit'}]}},{type:'message',content:[{type:'output_text',text:JSON.stringify(concretePlan())}]}]}));
+ const res=await h(req({mode:'plan',query:'جولة خفيفة في الشوف'}),env());const out=await res.json();assert.equal(res.status,200);assert.ok(out.itinerary.days.length);assert.equal(out.sources_consulted,true);assert.equal(out.verified,false);assert.equal(out.checked_at,null);
 });
