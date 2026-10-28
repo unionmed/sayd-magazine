@@ -1,0 +1,468 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "nathalie-denolf-interview-20261028",
+  "expected_base": "9d22c0a5f893e3626baf33fc72a59f4efd128e9b",
+  "approval_reference": "Owner approved this interview, cover, three pullquotes, ticker and homepage lead on 28 October 2026; approval evidence retained privately. One separately authorized Facebook promotion after live publication.",
+  "bank_search_reference": "Existing Sayd picture bank checked during original image archival; selected original cover verified against its private archive record and hash. No bank-wide reuse licence inferred.",
+  "photos": [
+    {
+      "id": "nathalie-cover",
+      "path": "docs/media/publications/nathalie-denolf-interview-20261028/nathalie-cover.jpg",
+      "sha256": "ec8fc773efbf15f07efff4a74130e4f27088d9e44f209a14f2ce3b0c9c3fe962",
+      "source_sha256": "ec8fc773efbf15f07efff4a74130e4f27088d9e44f209a14f2ce3b0c9c3fe962",
+      "source_reference": "Interview photograph supplied by Nathalie Denolf via editor-in-chief Adonis El-Khatib. Capture date, location and photographer unspecified. Original unchanged; full provenance retained privately.",
+      "rights": {
+        "status": "permission",
+        "statement": "Limited contextual editorial supply: Adonis requested answers and photos for the SAYD interview on 22 October; Nathalie sent the interview answers and photographs in that same thread on 25 October. Owner approved this cover and promotion of this interview on Facebook. No standalone stock reuse, general ownership or blanket licence claimed.",
+        "evidence_reference": "Private interview correspondence and owner approval retained in the editorial permissions record for this interview."
+      },
+      "alt": {
+        "ar": "ناتالي دينولف عن قرب مع أحد عقبانها.",
+        "en": "Nathalie Denolf close to one of her eagles.",
+        "fr": "Nathalie Denolf tout près de l’un de ses aigles."
+      },
+      "caption": {
+        "ar": "ناتالي دينولف مع أحد عقبانها",
+        "en": "Nathalie Denolf with one of her eagles",
+        "fr": "Nathalie Denolf avec l’un de ses aigles"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
+        "en": "nathalie-denolf-eagle-trust-raptor-intelligence",
+        "fr": "nathalie-denolf-confiance-aigle-intelligence-rapaces"
+      },
+      "published": "2026-10-28",
+      "author": {
+        "ar": "حوار: رئيس التحرير أدونيس الخطيب",
+        "en": "Interview: Adonis El-Khatib, Editor-in-Chief",
+        "fr": "Entretien : Adonis El-Khatib, rédacteur en chef"
+      },
+      "primary_door": "wildlife",
+      "archives": [
+        "wildlife"
+      ],
+      "kind": "article",
+      "photos": [
+        "nathalie-cover"
+      ],
+      "translations": {
+        "ar": {
+          "title": "ناتالي دينولف: ثقة العقاب تُكتسب ولا تُفرض",
+          "subtitle": "من طفولة أسرها عالم الجوارح إلى تجربة تمتد ما يقارب سبعة عشر عامًا في عدد من البلدان الأوروبية، تتحدث ناتالي دينولف إلى «صيد» عن الثقة التي تربطها بطيورها، وذكائها الذي لا يزال يدهشها، والحد الفاصل بين الرعاية والاستغلال. وفي هذا الحوار، تروي مواقف عاشتها مع عقابها «أوروفيريون»، وتدافع عن صقارة مسؤولة تضع رفاه الطائر أولًا، وعن حماية لا تتوقف عند حدود البلدان.",
+          "meta_description": "ناتالي دينولف تتحدث إلى رئيس التحرير أدونيس الخطيب عن ذكاء الجوارح والثقة والصقارة المسؤولة وحماية الطيور المهاجرة.",
+          "ticker_title": "عقاب وسط غابة كثيفة… كيف يجد طريقه إلى قفاز ناتالي؟",
+          "photo_credit": "الصورة مقدّمة من ناتالي دينولف لهذه المقابلة.",
+          "sections": [
+            {
+              "heading": "ناتالي، كيف بدأت رحلتك مع الطيور الجارحة؟ وما الذي ألهمك لتكرّسي حياتك لهذه الكائنات المهيبة بدلًا من اختيار مسار مهني آخر؟",
+              "paragraphs": [
+                "بدأ افتتاني بالطيور الجارحة حين كنت طفلة صغيرة جدًا. كان في هذه الكائنات الرائعة ما يأسرني دائمًا، قبل زمن طويل من أن أتخيّل أن العمل معها سيصبح مهنتي.",
+                "أما نقطة التحوّل الحقيقية فجاءت حين وجدت نفسي وجهًا لوجه مع عقابي الذهبي. في تلك اللحظة، عرفت من دون أدنى شك أن هذا هو ما أريد أن أكرّس له حياتي.",
+                "كنت في صغري شديدة الخجل، لكن العمل مع الجوارح منحني ثقة لم أعرفها من قبل. إلى جانب هذه الحيوانات، كنت أشعر براحة تامة، ولم أكن بحاجة إلى أن أكون أي شخص غير نفسي.",
+                "وبعد نحو سبعة عشر عامًا، عملت خلالها مع الجوارح في عدد من البلدان الأوروبية، لم يزدد هذا الشغف إلا قوة. لم تمنحني الجوارح مهنة فحسب، بل منحتني غاية في الحياة."
+              ]
+            },
+            {
+              "heading": "نرى في فيديوهاتك علاقة استثنائية بينك وبين العقبان، وخصوصًا «أوروفيريون». كيف تنشأ هذه الثقة بين إنسان وطائر جارح بهذه القوة؟ وهل تعتقدين أن هذه الطيور قادرة على التعبير عن مشاعر تشبه الحب والمودة؟",
+              "paragraphs": [
+                "أعتقد أن أساس أي علاقة ذات معنى مع طائر جارح هو الثقة والصبر والاحترام، وقبل كل شيء، الفهم.",
+                "لا يمكنك أن تُجبر عقابًا على الوثوق بك. عليك أن تكتسب ثقته بثبات تعاملك معه، والتواصل، وتعلّم فهم العالم من منظوره، بدلًا من أن تتوقع منه التكيّف مع عالمنا.",
+                "مع أوروفيريون، تطوّرت هذه العلاقة على مدى سنوات من العمل معًا. فهو يعرف ما يمكن أن يتوقّعه مني، ويفهم مقاصدي، ويشعر بالارتياح للتعبير عن تفضيلاته وحدوده الخاصة.",
+                "أما الحب والمودة، فأنا أؤمن تمامًا بقدرة الجوارح على تكوين روابط عاطفية قوية. لا نستطيع أن نثبت علميًا أنها تختبر الحب بالطريقة نفسها تمامًا التي يختبره بها البشر، لكن هذا لا يجعل علاقاتها أقل قيمة.",
+                "يسعى أوروفيريون، بمحض اختياره، إلى الاقتراب الجسدي مني. ويحيّيني بأن يلمس أنفي بمنقاره، وكثيرًا ما يحيط بي بجناحيه الهائلين.",
+                "إنها سلوكيات يختار التعبير عنها، وليست أمورًا أطلبها منه.",
+                "وهذا، بالنسبة إليّ، ما يجعل علاقتنا استثنائية إلى هذا الحد. إنه حيوان شديد القوة ومستقل، تعلّم أن يثق بي، ويختار أن يشاركني هذا القرب."
+              ],
+              "pullquote": "«لا يمكنك أن تُجبر عقابًا على الوثوق بك.»"
+            },
+            {
+              "heading": "خلال سنوات عملك مع الجوارح، هل عشت لحظة مع طائر بعينه غيّرت تمامًا نظرتك إلى ذكائها أو شخصياتها؟ وهل هناك قصة لن تنسيها؟",
+              "paragraphs": [
+                "بعد نحو سبعة عشر عامًا من العمل مع الجوارح، لا يزال ذكاؤها يثير فضولي ودهشتي.",
+                "ومن التجارب التي تبقى في ذاكرتي ما حدث مع أوروفيريون، عقابي من نوع العقاب المقاتل.",
+                "في مناسبات عدة، حملته الرياح القوية إلى غابة كثيفة. ولأن باع جناحيه يبلغ نحو 2.2 متر، لا يستطيع ببساطة أن يهبط طائرًا بين الأغصان المتشابكة ليصل إليّ.",
+                "لكنه، بدلًا من الاضطراب، يجد حلّه بنفسه.",
+                "يتنقّل بين تيجان الأشجار، متابعًا إياي من شجرة إلى أخرى فيما أمشي تحتها. وهكذا نشقّ طريقنا عبر الغابة معًا إلى أن نصل إلى فسحة، فيطير فورًا عائدًا إلى قفازي.",
+                "ما يدهشني هو قدرته على تقييم الموقف، وتكييف سلوكه، والعمل معي لتجاوز عقبة.",
+                "تذكّرني هذه التجارب بأن الجوارح أذكى وأكثر قدرة على ابتكار الحلول مما يظن كثيرون. وكذلك، حين تُقدَّم لها ألعاب تحفيز، تسارع إلى فهمها وحل ما تطرحه من تحديات.",
+                "وحتى بعد كل هذه السنوات، ما زلت أشعر بأن أمامنا الكثير لنكتشفه عن عقولها المذهلة."
+              ]
+            },
+            {
+              "heading": "يرى بعض الناس أن مكان الجوارح هو البرية، حيث تحلّق بحرية في السماء، لا أن تُدرَّب أو تعيش تحت رعاية البشر. كيف تنظرين إلى هذا النقاش؟ وأين ترسمين الحد الأخلاقي بين رعاية الطائر واستغلاله؟",
+              "paragraphs": [
+                "أتفق تمامًا على أن مكان الجوارح هو البرية، وأنه ينبغي، في الوضع المثالي، أن تتمكن جميع أنواعها من الازدهار هناك. لكن الواقع، للأسف، هو أننا نحن البشر جعلنا أجزاء واسعة من عالمها الطبيعي أكثر خطرًا يومًا بعد يوم.",
+                "دمّرنا موائلها، واستنزفنا جماعات فرائسها، وسمّمنا السلاسل الغذائية، وأوجدنا أخطارًا لا تُحصى بفعل التعدّي البشري والاستهداف.",
+                "لكن مجرد فتح باب حظيرة الطيور وإطلاق طائر وُلد في الأسر لا يعني بالضرورة منحه الحرية. فمن دون مهارات البقاء المناسبة والتحضير اللازم، قد يكون ذلك حكمًا عليه بالموت.",
+                "يمكن للرعاية البشرية المسؤولة أن تؤدي دورًا مهمًا في الإكثار لأغراض الحفظ، والتعليم، والبحث، وتوفير مكان آمن للطيور التي لا تستطيع البقاء في البرية.",
+                "وأؤمن أيضًا بقوة بالقيمة التعليمية لعروض الطيران المسؤولة والمُحكمة التنفيذ. هناك أثر بالغ لمشاهدة جارح وهو يطير، ورؤية قدراته الطبيعية عن قرب، والتعرّف إلى التحديات التي تواجه نظائره البرية.",
+                "هذه التجربة المباشرة قد تحوّل الفضول إلى إعجاب، والإعجاب إلى فهم، والفهم في النهاية إلى فعل. فإذا غادر شخص العرض وقد ألهمه الدفاع عن الجوارح أو دعم حمايتها، نكون قد حققنا شيئًا ذا قيمة حقيقية.",
+                "لكن الاحتفاظ بهذه الحيوانات يرتّب مسؤولية أخلاقية واضحة جدًا.",
+                "بالنسبة إليّ، يُتجاوز الحد بين الرعاية والاستغلال عندما تُقدَّم طموحات البشر، أو الترفيه، أو المصالح المالية على سلامة الطائر الجسدية والنفسية.",
+                "على الصقّار المسؤول أن يفهم النوع الذي يتعامل معه، ويحترم احتياجات الطائر الفردية وحدوده، ويوفّر له ظروف معيشة مناسبة وفرصًا لممارسة سلوكياته الطبيعية.",
+                "طيوري ليست أدوات عرض موجودة لمجرد تسلية البشر. إنها كائنات حية وذكية، لكل منها فرديتها، ويجب أن تأتي سلامتها أولًا دائمًا.",
+                "ينبغي ألا يطغى امتياز العمل مع جارح على مسؤوليتنا تجاهه."
+              ],
+              "pullquote": "«طيوري ليست أدوات عرض موجودة لمجرد تسلية البشر.»"
+            },
+            {
+              "heading": "تعملين عن قرب مع العقبان والصقور والبوم، ولكل منها خصائص وسلوكيات مختلفة جدًا. ما الذي يدهشك أكثر في ذكائها؟ وهل تعتقدين أن لكل طائر شخصيته وطريقته الفريدة في التفاعل مع البشر؟",
+              "paragraphs": [
+                "بالتأكيد! من أكثر ما أحبّه في العمل مع الجوارح اكتشاف مدى اختلافها، حتى بين أفراد النوع الواحد.",
+                "بعضها واثق وفضولي جدًا، وبعضها الآخر حذر أو خجول. ومنها ما يستمتع بالتفاعل القريب مع صقّاره، فيما يفضّل غيره الاستقلال. لكل منها شخصيته وتفضيلاته وطرقه في التواصل.",
+                "أجدها شديدة الإدراك. فهي تلاحظ تغيّرات دقيقة في سلوكنا ولغة أجسادنا وروتيننا، وكثيرًا ما تستجيب إلى إشارات لا ندرك نحن أنفسنا أننا نرسلها.",
+                "أكثر ما يدهشني هو أن ذكاءها لا يزال يُستهان به كثيرًا، حتى أحيانًا من أشخاص يعملون معها باحتراف.",
+                "أعتقد أننا لم نتجاوز بعد بدايات فهم قدراتها الإدراكية.",
+                "وكلما أتحنا لها فرصًا أكبر للتفكير والاستكشاف والاختيار والتعبير عن شخصياتها الفردية، كشفت لنا أكثر عن مدى تميّزها."
+              ]
+            },
+            {
+              "heading": "استنادًا إلى خبرتك، ما أكبر الأخطار التي تواجه الجوارح اليوم؟ وهل ترين أن جهود الحماية الدولية الحالية كافية لصونها من الصيد غير القانوني والتسميم وفقدان الموائل؟",
+              "paragraphs": [
+                "لا شك في أن أكبر الأخطار التي تواجه الجوارح اليوم ناجمة عن البشر.",
+                "فتدمير الموائل، وتراجع جماعات الفرائس، والصيد غير القانوني، والتسميم المتعمّد، والصعق بالكهرباء على خطوط الطاقة غير الآمنة، والاتجار بالحياة البرية، كلها تلحق خسائر فادحة بجماعات الجوارح في أنحاء العالم.",
+                "وما يفطر قلبي خصوصًا هو أن هذه الطيور كثيرًا ما تُستهدف لمجرد قيامها بما هيّأتها الطبيعة له: الصيد من أجل البقاء.",
+                "ولا، لا أعتقد أن جهود الحماية الحالية كافية.",
+                "هناك مؤسسات وأفراد استثنائيون يعملون بلا كلل لحماية هذه الأنواع، وغالبًا بموارد محدودة جدًا. لكن العاملين في الحماية لا يمكنهم مواصلة معركة شاقة فيما يستمر حولهم تدمير الموائل والاستهداف والاتجار غير القانوني بالحياة البرية.",
+                "نحتاج إلى تطبيق أقوى لقوانين حماية الحياة البرية القائمة، وتعاون دولي أوسع، وتعليم أفضل، واستثمار أكبر في حماية الموائل ومعالجة التعارض بين البشر والحياة البرية.",
+                "وعلينا أيضًا أن ندرك أن الحماية لا تتوقف عند الحدود الوطنية. فالطيور المهاجرة قد تقطع آلاف الكيلومترات، وتعبر بلدانًا عديدة، وهي تحتاج إلى الحماية طوال رحلتها.",
+                "لا ينبغي أن يُحمى طائر في بلد، ثم يصبح عرضة لإطلاق النار أو الوقوع في الفخاخ بمجرد عبوره إلى بلد آخر.",
+                "في النهاية، لا يمكن أن تنجح الحماية بجهود عدد قليل من المؤسسات المخلصة وحدها. إنها تتطلب تحمّل الحكومات والمجتمعات المحلية والصقّارين والصيادين والجمهور الأوسع مسؤولياتهم.",
+                "نحن نعرف بالفعل كثيرًا من الأخطار التي تواجه هذه الطيور الرائعة. وما نحتاج إليه بشدة الآن هو إرادة جماعية لفعل شيء حيالها."
+              ]
+            },
+            {
+              "heading": "الصقارة تقليد عريق يعود إلى آلاف السنين، وله جذور تاريخية عميقة في أوروبا والعالم العربي. كيف يمكن للصقارة والصيد المسؤول أن يتوافقا مع حماية الحياة البرية؟ وما الذي يميّز، برأيك، الصقّار المسؤول ممن يستغل الجوارح؟",
+              "paragraphs": [
+                "للصقارة تاريخ استثنائي، وأرى خصوصية كبيرة في تقليد ربط البشر بالجوارح آلاف السنين.",
+                "لكن ينبغي ألا تُستخدم التقاليد ذريعة لتجاهل رفاه الحيوانات أو حمايتها.",
+                "أعتقد أن الصقارة المسؤولة والصيد المستدام يمكن أن يتوافقا مع حماية الحياة البرية، شريطة أن يُمارسا بأخلاقية، وضمن القانون، وباحترام حقيقي للطيور وللنظام البيئي الأوسع.",
+                "الصقّار المسؤول، بالنسبة إليّ، هو من يضع سلامة طائره قبل طموحاته الشخصية، ويفهم احتياجاته الجسدية والسلوكية، ويكون مستعدًا لبذل الوقت والجهد الهائلين اللذين تتطلبهما هذه الحيوانات.",
+                "وعلى الصياد المسؤول أيضًا أن يفهم أثر نشاطه في الجماعات البرية، وأن يدرك أن الاستدامة تعني ألا يأخذ إلا ما تستطيع الطبيعة حقًا تحمّل فقدانه.",
+                "ما يقلقني هو تحوّل الجوارح إلى رموز للمكانة الاجتماعية، أو ممتلكات يُستغنى عنها، أو أدوات للترفيه، بدلًا من معاملتها بوصفها كائنات حية استثنائية.",
+                "وأعتقد أيضًا أن أمام الصقّارين فرصة فريدة للإسهام في الحماية. فمعرفتنا وخبرتنا وشغفنا يمكن أن تصبح أدوات قوية للتعليم والبحث وحماية الجوارح البرية.",
+                "بالنسبة إليّ، الفرق بين الصقّار المسؤول ومن يستغل الجوارح بسيط: الأول يسأل عما يستطيع أن يقدّمه للطائر، أما الآخر فلا يفكر إلا فيما يستطيع الطائر أن يقدّمه له.",
+                "في النهاية، ينبغي أن يسير الحفاظ على تقليد الصقارة جنبًا إلى جنب مع الحفاظ على الطيور والموائل الطبيعية التي تجعل هذا التقليد ممكنًا."
+              ]
+            },
+            {
+              "heading": "يقع لبنان على أحد أهم مسارات هجرة الجوارح في العالم بين أوروبا وأفريقيا. وللأسف، تتعرّض بعض هذه الطيور لإطلاق النار بصورة غير قانونية خلال هجرتها، وأحيانًا لمجرد التسلية أو التقاط الصور. ما الرسالة التي تودّين توجيهها إلى من يطلقون النار على هذه الطيور المهيبة؟",
+              "paragraphs": [
+                "دعوني أكون واضحة تمامًا: إطلاق النار على جارح رائع من أجل التسلية، أو صورة، أو تذكار صيد، هو فعل جبن محض. لا مهارة ولا شجاعة، ولا شرف بالتأكيد، في قتل حيوان أعزل لمجرد أنك تستطيع ذلك.",
+                "الضغط على الزناد في وجه كائن لا يشكّل خطرًا عليك لا يجعلك قويًا أو شجاعًا أو أكثر رجولة. بل على العكس تمامًا، إنه يكشف غيابًا كاملًا لاحترام الحياة وكل ما ينبغي أن تمثّله الشجاعة الحقيقية والشرف.",
+                "قطعت هذه الطيور آلاف الكيلومترات، وتجاوزت تحديات استثنائية، لتنتهي حياتها بلا داعٍ من أجل تسلية شخص ما.",
+                "المقياس الحقيقي للشخصية ليس مقدار ما تملكه من قوة على كائن ضعيف، بل ما إذا كنت تمتلك النبل والرحمة لتتركه يعيش.",
+                "إذا أردت حقًا أن تُظهر القوة والشجاعة، فضع السلاح جانبًا، وقف مدافعًا عن الحياة البرية التي لا تستطيع الدفاع عن نفسها في مواجهتك."
+              ]
+            },
+            {
+              "heading": "يعمل مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر «مكشاب»، من خلال وحدة مكافحة الصيد الجائر، على حماية الطيور المهاجرة والتصدي للصيد غير القانوني. ما أهمية التعاون الدولي بين الصقّارين وخبراء الحياة البرية ومؤسسات الحماية الميدانية في صون هذه الطيور على امتداد مسارات هجرتها؟",
+              "paragraphs": [
+                "التعاون الدولي ضروري تمامًا. الحياة البرية لا تعترف بالحدود السياسية، وينبغي ألا تتوقف جهود حمايتنا عندها أيضًا.",
+                "لا يمكن أن نتوقّع النجاح في حماية الطيور المهاجرة إذا كنّا نحميها في بعض البلدان ونتركها عرضة للخطر في مواضع أخرى من رحلتها.",
+                "يقدّم الصقّارون وباحثو الحياة البرية ومؤسسات الحماية وفرق مكافحة الصيد الجائر خبرات مختلفة. ومن خلال تبادل المعرفة وبيانات الهجرة والموارد والخبرات العملية، يمكننا أن نحقّق معًا أكثر بكثير مما تستطيع أي مؤسسة تحقيقه بمفردها.",
+                "أكنّ احترامًا كبيرًا للأشخاص الذين يعملون ميدانيًا لمكافحة الصيد غير القانوني. فمؤسسات مثل مكشاب ووحدة مكافحة الصيد الجائر التابعة لها تؤدي دورًا مهمًا، لأن حماية الحياة البرية تتطلب أكثر من التوعية؛ إنها تحتاج أيضًا إلى أشخاص مستعدين للتحرّك حيث تقع هذه الجرائم فعلًا.",
+                "ولأنني أعمل في الصقارة وحماية الطبيعة معًا، أؤمن بقوة بأن علينا مسؤولية بناء الجسور بين هذه الأوساط والعمل نحو هدف مشترك.",
+                "ينبغي ألا تتمحور الحماية حول نيل الاعتراف الفردي أو التنافس بين المؤسسات، بل حول توحيد قوانا لتحقيق ما يهم أكثر من أي شيء آخر: إبقاء هذه الطيور الرائعة حية في البرية."
+              ],
+              "pullquote": "«مؤسسات مثل مكشاب ووحدة مكافحة الصيد الجائر التابعة لها تؤدي دورًا مهمًا…»"
+            },
+            {
+              "heading": "أخيرًا، لو كان بإمكانك تغيير أمر واحد فقط في العلاقة بين البشر والجوارح، فما هو؟ وما الرسالة التي تودّين توجيهها إلى قرّاء «صيد»، وخصوصًا الصيادين ومحبي الطبيعة في العالم العربي؟",
+              "paragraphs": [
+                "لو استطعت تغيير أمر واحد، لكان الطريقة التي ينظر بها البشر إلى مكانهم في العالم الطبيعي.",
+                "علينا أن نتوقف عن النظر إلى أنفسنا بوصفنا أسياد الطبيعة، وأن نبدأ بإدراك أننا جزء منها، ومسؤولون عن حمايتها.",
+                "أسرت الجوارح البشر آلاف السنين. وهي تمثّل القوة والحرية والجمال الاستثنائي، ومع ذلك نواصل تدمير الموائل التي تعتمد عليها، واستهدافها لمجرد اتباع غرائزها الطبيعية.",
+                "أقول لقرّاء «صيد»، وخصوصًا الصقّارين والصيادين ومحبي الطبيعة في أنحاء العالم العربي: لديكم صلة ثقافية استثنائية بالجوارح، ويحمل هذا الإرث فرصة استثنائية بالقدر نفسه للإسهام في حمايتها.",
+                "سواء أكنت صقّارًا أم صيادًا أم مجرد شخص معجب بالحياة البرية، فإن خياراتك مؤثرة. احترم الحيوانات التي تصادفها، وتصدَّ للاستهداف غير القانوني، وانقل إلى الجيل المقبل تقديرًا صادقًا للطبيعة.",
+                "ينبغي ألا تكون التقاليد والحماية خصمين. فأعظم إرث يمكن أن نتركه ليس الحفاظ على تقاليدنا فحسب، بل ضمان بقاء الحياة البرية التي ألهمتها للأجيال المقبلة.",
+                "ولعل الأهم هو أن نتذكّر أن هذه الطيور الرائعة ليست ملكًا لنا. نحن محظوظون فحسب بأن نتشارك معها هذا الكوكب."
+              ]
+            }
+          ],
+          "sources": []
+        },
+        "en": {
+          "title": "Nathalie Denolf: An eagle’s trust is earned, not imposed",
+          "subtitle": "From a childhood fascination with birds of prey to almost seventeen years of work across several European countries, Nathalie Denolf speaks to SAYD about trust, the intelligence that continues to amaze her, and the line between care and exploitation. She shares experiences with her eagle Oropherion and advocates responsible falconry that puts birds’ welfare first, alongside conservation that reaches across borders.",
+          "meta_description": "Nathalie Denolf speaks to editor-in-chief Adonis El-Khatib about raptor intelligence, trust, responsible falconry and protecting migratory birds.",
+          "ticker_title": "An eagle in dense woodland… how does he find his way to Nathalie’s glove?",
+          "photo_credit": "Photograph supplied by Nathalie Denolf for this interview.",
+          "sections": [
+            {
+              "heading": "Nathalie, how did your journey with birds of prey begin? What inspired you to dedicate your life to these magnificent creatures rather than pursue another career?",
+              "paragraphs": [
+                "My fascination with birds of prey began when I was a very young child. There was always something about these magnificent creatures that captivated me, long before I ever imagined making a career out of working with them.",
+                "The real turning point came when I found myself face to face with my Golden Eagle. At that moment, I knew without a shadow of a doubt that this was what I wanted to dedicate my life to.",
+                "Growing up, I was actually a very shy person. But working with birds of prey gave me a confidence I had never known before. Around these animals, I felt completely at ease and didn’t need to be anyone other than myself.",
+                "Almost 17 years later, having worked with raptors across several European countries, that passion has only grown stronger.\nBirds of prey didn’t just give me a career. They gave me a purpose."
+              ]
+            },
+            {
+              "heading": "In your videos, we see an extraordinary bond between you and the eagles, particularly Oropherion. How does such trust develop between a human and such a powerful bird of prey? Do you believe these birds are capable of expressing emotions similar to love and affection?",
+              "paragraphs": [
+                "I believe the foundation of any meaningful relationship with a bird of prey is trust, patience, respect, and above all, understanding.",
+                "You cannot force an eagle to trust you. You have to earn that trust through consistency, communication, and by learning to understand the world from their perspective rather than expecting them to adapt to ours.",
+                "With Oropherion, that relationship has developed over years of working together. He knows what to expect from me, understands my intentions, and feels comfortable expressing his own preferences and boundaries.",
+                "As for love and affection, I absolutely believe birds of prey are capable of forming strong emotional bonds. Whether they experience love in exactly the same way humans do is something we cannot scientifically establish, but that doesn’t make their relationships any less meaningful.",
+                "Oropherion voluntarily seeks physical closeness, greets me by touching his beak to my nose, and often wraps me in his enormous wings.",
+                "These are behaviours he chooses to express, not something I demand from him.",
+                "And for me, that is what makes our relationship so extraordinary. He is an incredibly powerful, independent animal who has learned to trust me, and who chooses to share that closeness with me."
+              ],
+              "pullquote": "“You cannot force an eagle to trust you.”"
+            },
+            {
+              "heading": "Throughout your years of working with birds of prey, have you ever experienced a moment with a particular bird that completely changed your perception of their intelligence or personality? Is there a story you will never forget?",
+              "paragraphs": [
+                "After almost 17 years of working with birds of prey, their intelligence still manages to intrigue and fascinate me.",
+                "One experience that stands out with Oropherion, my Martial Eagle.",
+                "On several occasions, strong winds have carried him into dense woodland. With a wingspan of approximately 2.2 metres, he cannot simply fly down through the tightly packed branches to reach me.",
+                "But rather than becoming distressed, he finds his own solution.",
+                "He moves through the forest canopy, following me from tree to tree while I walk underneath. We essentially navigate the forest together until we reach a clearing, where he immediately flies back onto my glove.",
+                "What fascinates me is his ability to assess the situation, adapt his behaviour, and work with me to overcome an obstacle.",
+                "Experiences like these remind me that birds of prey are far more intelligent and resourceful than many people give them credit for.\nOr when given enrichment toys, they are so quick and problem-solving to figure them out.",
+                "And even after all these years, I still feel there is so much more for us to discover about their remarkable minds."
+              ]
+            },
+            {
+              "heading": "Some people believe that birds of prey belong in the wild, flying freely in the sky, rather than being trained or kept under human care. How do you respond to this debate? Where do you draw the ethical line between caring for a bird and exploiting it?",
+              "paragraphs": [
+                "I absolutely agree that birds of prey belong in the wild, and ideally, that is where every species should be able to thrive. Unfortunately, the reality is that we humans have made much of their natural world increasingly unsafe.",
+                "We’ve destroyed habitats, depleted prey populations, poisoned food chains, and created countless dangers through human encroachment and persecution.",
+                "However, simply opening an aviary door and releasing a captive-bred bird is not necessarily giving it freedom. Without the appropriate survival skills and preparation, it could be a death sentence.",
+                "Responsible human care can play an important role in conservation breeding, education, research, and providing a safe home for birds that cannot survive in the wild.",
+                "I also strongly believe in the educational value of responsible, well-conducted flight displays. There is something incredibly powerful about witnessing a bird of prey in flight, seeing its natural abilities up close, and learning about the challenges its wild counterparts face.",
+                "That firsthand experience can turn curiosity into admiration, admiration into understanding, and ultimately, understanding into action. If someone leaves a display inspired to speak up for birds of prey or support their conservation, then we have achieved something truly meaningful.",
+                "But there is a very clear ethical responsibility attached to keeping these animals.",
+                "For me, the line between care and exploitation is crossed when human ambitions, entertainment, or financial interests are placed above the bird’s physical and psychological welfare.",
+                "A responsible falconer must understand the species, respect the individual bird’s needs and boundaries, provide appropriate living conditions, and allow opportunities to express natural behaviours.",
+                "My birds are not props that exist purely for human entertainment. They are living, intelligent individuals whose wellbeing must always come first.",
+                "The privilege of working with a bird of prey should never outweigh the responsibility we have towards it."
+              ],
+              "pullquote": "“My birds are not props that exist purely for human entertainment.”"
+            },
+            {
+              "heading": "You work closely with eagles, falcons, and owls, each with very different characteristics and behaviors. What surprises you most about their intelligence? Do you believe every bird has its own personality and a unique way of interacting with humans?",
+              "paragraphs": [
+                "Absolutely! One of the things I love most about working with birds of prey is discovering just how different they all are, even individuals of the same species.",
+                "Some are incredibly confident and curious, others are cautious or shy. Some enjoy interacting closely with their falconer, while others prefer their independence. They all have their own personalities, preferences, and ways of communicating.",
+                "I find them remarkably perceptive. They notice subtle changes in our behaviour, body language, and routines, often responding to things we don’t even realise we’re communicating.",
+                "What surprises me most is that their intelligence is still so frequently underestimated, sometimes even by people who work with them professionally.",
+                "I believe we have barely scratched the surface of understanding their cognitive abilities.",
+                "The more opportunities we give these birds to think, explore, make choices, and express their individual personalities, the more they reveal to us just how extraordinary they truly are."
+              ]
+            },
+            {
+              "heading": "Based on your experience, what are the greatest threats facing birds of prey today? Do you believe current international conservation efforts are sufficient to protect them from illegal hunting, poisoning, and habitat loss?",
+              "paragraphs": [
+                "Without a doubt, the greatest threats facing birds of prey today are caused by humans.",
+                "Habitat destruction, declining prey populations, illegal hunting, deliberate poisoning, electrocution on unsafe power lines, and wildlife trafficking are all taking a devastating toll on raptor populations worldwide.",
+                "What I find particularly heartbreaking is that these birds are often persecuted simply for doing what nature designed them to do: hunting to survive.",
+                "And no, I don’t believe our current conservation efforts are sufficient.",
+                "There are extraordinary organisations and individuals working tirelessly to protect these species, often with very limited resources. But conservationists cannot keep fighting an uphill battle while habitat destruction, persecution, and illegal wildlife trade continue around them.",
+                "We need stronger enforcement of existing wildlife protection laws, greater international cooperation, better education, and more investment in protecting habitats and addressing human-wildlife conflict.",
+                "We also need to recognise that conservation doesn’t stop at national borders. Migratory birds can travel thousands of kilometres, crossing numerous countries, and they need protection throughout their entire journey.",
+                "A bird protected in one country should not face being shot or trapped the moment it crosses into another.",
+                "Ultimately, conservation cannot succeed through the efforts of a few dedicated organisations alone. It requires governments, local communities, falconers, hunters, and the wider public to take responsibility.",
+                "We already know many of the threats these magnificent birds face. What we desperately need now is the collective determination to do something about them."
+              ]
+            },
+            {
+              "heading": "Falconry is an ancient tradition dating back thousands of years, with deep historical roots in both Europe and the Arab world. How can falconry and responsible hunting coexist with wildlife conservation? In your opinion, what distinguishes a responsible falconer from someone who exploits birds of prey?",
+              "paragraphs": [
+                "Falconry has an extraordinary history, and I believe there is something very special about a tradition that has connected humans and birds of prey for thousands of years.",
+                "But tradition should never be used as an excuse to disregard animal welfare or conservation.",
+                "I believe responsible falconry and sustainable hunting can coexist with wildlife conservation, provided they are practised ethically, within the law, and with genuine respect for both the birds and the wider ecosystem.",
+                "For me, a responsible falconer is someone who puts the welfare of their bird above personal ambitions, understands its physical and behavioural needs, and is willing to dedicate the enormous amount of time and effort these animals require.",
+                "A responsible hunter must also understand the impact their activities have on wild populations and recognise that sustainability means taking only what nature can genuinely afford to lose.",
+                "What concerns me is when birds of prey become status symbols, disposable possessions, or tools for entertainment, rather than being treated as the extraordinary living creatures they are.",
+                "I also believe falconers have a unique opportunity to contribute to conservation. Our knowledge, experience, and passion can be powerful tools for education, research, and protecting wild raptors.",
+                "To me, the difference between a responsible falconer and someone who exploits birds of prey is simple: one asks what they can do for the bird, while the other only considers what the bird can do for them.",
+                "Ultimately, preserving the tradition of falconry should go hand in hand with preserving the birds and natural habitats that make that tradition possible."
+              ]
+            },
+            {
+              "heading": "Lebanon lies along one of the world's most important migration routes for birds of prey traveling between Europe and Africa. Unfortunately, some of these birds are illegally shot during their migration, sometimes simply for entertainment or photographs. What message would you like to send to those who shoot these magnificent birds?",
+              "paragraphs": [
+                "Let me be absolutely clear: shooting a magnificent bird of prey for amusement, a photograph, or a trophy is an act of sheer cowardice. There is no skill, no bravery, and certainly no honour in killing a defenceless animal simply because you can.",
+                "Pulling a trigger against a creature that poses no threat to you does not make you powerful, brave, or more of a man. Quite the opposite. It exposes a complete lack of respect for life and everything that true courage and honour should represent.",
+                "These birds have travelled thousands of kilometres, overcoming extraordinary challenges, only to have their lives needlessly ended for someone’s entertainment.",
+                "A real measure of character is not how much power you have over a vulnerable creature, but whether you have the decency and compassion to let it live.",
+                "If you truly want to demonstrate strength and courage, put down the gun and stand up for the wildlife that cannot defend itself against you."
+              ]
+            },
+            {
+              "heading": "The Middle East Center for Sustainable Harvest and Anti-Poaching (MECSHAP), through its Anti-Poaching Unit (APU), works to protect migratory birds and combat illegal hunting. How important do you believe international cooperation between falconers, wildlife experts, and field conservation organizations is in protecting these birds throughout their migration routes?",
+              "paragraphs": [
+                "International cooperation is absolutely essential. Wildlife does not recognise political borders, and neither should our conservation efforts.",
+                "We cannot expect to protect migratory birds successfully if we only safeguard them in certain countries while leaving them vulnerable elsewhere along their journey.",
+                "Falconers, wildlife researchers, conservation organisations, and anti-poaching teams all bring different expertise to the table. By sharing knowledge, migration data, resources, and practical experience, we can achieve far more together than any organisation could accomplish alone.",
+                "I have enormous respect for the people working on the ground to combat illegal hunting. Organisations such as MECSHAP and their Anti-Poaching Unit play an important role because protecting wildlife requires more than raising awareness. It also requires people willing to take action where these crimes actually occur.",
+                "As someone working in both falconry and conservation, I strongly believe we have a responsibility to bridge the gap between these communities and work towards a common goal.",
+                "Conservation should never be about individual recognition or competing organisations. It should be about combining our strengths to achieve what matters most: keeping these magnificent birds alive in the wild."
+              ],
+              "pullquote": "“Organisations such as MECSHAP and their Anti-Poaching Unit play an important role…”"
+            },
+            {
+              "heading": "Finally, if you could change just one thing about the relationship between humans and birds of prey, what would it be? And what message would you like to share with the readers of SAYD Magazine, particularly hunters and nature lovers across the Arab world?",
+              "paragraphs": [
+                "If I could change just one thing, it would be the way humans perceive their place in the natural world.",
+                "We need to stop seeing ourselves as masters of nature and start recognising that we are part of it, with a responsibility to protect it.",
+                "Birds of prey have fascinated humanity for thousands of years. They represent strength, freedom, and extraordinary beauty, yet we continue to destroy the very habitats they depend upon and persecute them for simply following their natural instincts.",
+                "To the readers of SAYD Magazine, particularly the falconers, hunters, and nature lovers across the Arab world, I would say this: you have an extraordinary cultural connection to birds of prey, and with that heritage comes an equally extraordinary opportunity to help protect them.",
+                "Whether you are a falconer, a hunter, or simply someone who admires wildlife, your choices matter. Respect the animals you encounter, challenge illegal persecution, and pass on a genuine appreciation for nature to the next generation.",
+                "Tradition and conservation should never be enemies. The greatest legacy we can leave is not simply preserving our traditions, but ensuring that the wildlife which inspired them will still exist for generations to come.",
+                "And perhaps most importantly, remember that these magnificent birds do not belong to us. We are simply privileged to share this planet with them."
+              ]
+            }
+          ],
+          "sources": []
+        },
+        "fr": {
+          "title": "Nathalie Denolf : la confiance d’un aigle se gagne, elle ne s’impose pas",
+          "subtitle": "D’une fascination d’enfance pour les rapaces à près de dix-sept années de travail dans plusieurs pays européens, Nathalie Denolf parle à SAYD de confiance, d’une intelligence qui continue de l’étonner et de la frontière entre soins et exploitation. Elle raconte ses expériences avec son aigle Oropherion et défend une fauconnerie responsable, donnant la priorité au bien-être des oiseaux, ainsi qu’une protection qui dépasse les frontières.",
+          "meta_description": "Nathalie Denolf parle au rédacteur en chef Adonis El-Khatib de l’intelligence des rapaces, de confiance, de fauconnerie responsable et de protection des oiseaux migrateurs.",
+          "ticker_title": "Un aigle au cœur d’un bois dense… comment rejoint-il le gant de Nathalie ?",
+          "photo_credit": "Photographie fournie par Nathalie Denolf pour cet entretien.",
+          "sections": [
+            {
+              "heading": "Nathalie, comment votre parcours auprès des rapaces a-t-il commencé ? Qu’est-ce qui vous a donné envie de consacrer votre vie à ces créatures magnifiques plutôt que de choisir une autre carrière ?",
+              "paragraphs": [
+                "Ma fascination pour les rapaces remonte à ma plus tendre enfance. Il y a toujours eu chez ces créatures magnifiques quelque chose qui me captivait, bien avant que j’imagine un jour faire de mon travail auprès d’elles un métier.",
+                "Le véritable tournant est survenu lorsque je me suis retrouvée face à face avec mon aigle royal. À cet instant, j’ai su, sans l’ombre d’un doute, que c’était à cela que je voulais consacrer ma vie.",
+                "En grandissant, j’étais en réalité très timide. Mais travailler avec les rapaces m’a donné une confiance que je n’avais jamais connue auparavant. Auprès de ces animaux, je me sentais parfaitement à l’aise et je n’avais pas besoin d’être quelqu’un d’autre que moi-même.",
+                "Près de dix-sept ans plus tard, après avoir travaillé avec des rapaces dans plusieurs pays européens, cette passion n’a fait que grandir. Les rapaces ne m’ont pas seulement offert un métier. Ils ont donné un sens à ma vie."
+              ]
+            },
+            {
+              "heading": "Dans vos vidéos, nous voyons le lien extraordinaire qui vous unit aux aigles, notamment à Oropherion. Comment une telle confiance se construit-elle entre un être humain et un rapace aussi puissant ? Pensez-vous que ces oiseaux soient capables d’exprimer des émotions semblables à l’amour et à l’affection ?",
+              "paragraphs": [
+                "Je crois que toute relation profonde avec un rapace repose sur la confiance, la patience, le respect et, surtout, la compréhension.",
+                "On ne peut pas obliger un aigle à nous faire confiance. Cette confiance se mérite par la constance, la communication et l’apprentissage de sa façon de percevoir le monde, plutôt qu’en attendant de lui qu’il s’adapte au nôtre.",
+                "Avec Oropherion, cette relation s’est construite au fil de nos années de travail ensemble. Il sait à quoi s’attendre de ma part, comprend mes intentions et se sent suffisamment à l’aise pour exprimer ses propres préférences et ses limites.",
+                "Quant à l’amour et à l’affection, je suis absolument convaincue que les rapaces sont capables de nouer des liens affectifs forts. Nous ne pouvons pas établir scientifiquement s’ils éprouvent l’amour exactement comme les êtres humains, mais cela ne rend pas leurs relations moins importantes.",
+                "Oropherion recherche de lui-même la proximité physique, me salue en posant son bec contre mon nez et m’enveloppe souvent de ses immenses ailes.",
+                "Ce sont des comportements qu’il choisit d’exprimer, et non quelque chose que j’exige de lui.",
+                "Et c’est précisément ce qui rend notre relation si extraordinaire à mes yeux. C’est un animal incroyablement puissant et indépendant, qui a appris à me faire confiance et qui choisit de partager cette proximité avec moi."
+              ],
+              "pullquote": "« On ne peut pas forcer un aigle à vous faire confiance. »"
+            },
+            {
+              "heading": "Au fil de vos années de travail avec les rapaces, avez-vous vécu avec un oiseau en particulier un moment qui a complètement changé votre perception de leur intelligence ou de leur personnalité ? Y a-t-il une histoire que vous n’oublierez jamais ?",
+              "paragraphs": [
+                "Après près de dix-sept ans passés à travailler avec les rapaces, leur intelligence continue de m’intriguer et de me fasciner.",
+                "Une expérience avec Oropherion, mon aigle martial, me vient particulièrement à l’esprit.",
+                "À plusieurs reprises, des vents violents l’ont emporté dans des bois denses. Avec une envergure d’environ 2,2 mètres, il ne peut pas simplement descendre en vol entre les branches serrées pour me rejoindre.",
+                "Mais, au lieu de s’affoler, il trouve lui-même une solution.",
+                "Il se déplace dans la canopée, me suivant d’arbre en arbre tandis que je marche en dessous. Nous progressons en quelque sorte ensemble à travers la forêt jusqu’à une clairière, où il revient aussitôt se poser sur mon gant.",
+                "Ce qui me fascine, c’est sa capacité à évaluer la situation, à adapter son comportement et à coopérer avec moi pour surmonter un obstacle.",
+                "De telles expériences me rappellent que les rapaces sont bien plus intelligents et ingénieux que beaucoup ne le pensent. Lorsqu’on leur propose des jouets d’enrichissement, ils font aussi preuve d’une grande rapidité pour en comprendre le fonctionnement et résoudre les problèmes qu’ils présentent.",
+                "Et même après toutes ces années, j’ai toujours le sentiment qu’il nous reste énormément à découvrir sur leurs remarquables facultés mentales."
+              ]
+            },
+            {
+              "heading": "Certains estiment que la place des rapaces est dans la nature, en liberté dans le ciel, plutôt que dans le dressage ou sous la garde des humains. Quelle est votre réponse à ce débat ? Où situez-vous la limite éthique entre prendre soin d’un oiseau et l’exploiter ?",
+              "paragraphs": [
+                "Je suis tout à fait d’accord pour dire que la place des rapaces est dans la nature et que, dans l’idéal, chaque espèce devrait pouvoir y prospérer. Malheureusement, la réalité est que nous, les humains, avons rendu une grande partie de leur milieu naturel de plus en plus dangereuse.",
+                "Nous avons détruit des habitats, appauvri les populations de proies, empoisonné les chaînes alimentaires et créé d’innombrables dangers par notre empiètement sur leurs milieux et les persécutions que nous leur infligeons.",
+                "Cependant, ouvrir simplement la porte d’une volière et relâcher un oiseau né en captivité ne revient pas nécessairement à lui rendre sa liberté. Sans les aptitudes à la survie et la préparation nécessaires, cela peut le condamner à mort.",
+                "Une prise en charge humaine responsable peut jouer un rôle important dans l’élevage à des fins de conservation, l’éducation, la recherche et l’accueil, dans un environnement sûr, d’oiseaux incapables de survivre dans la nature.",
+                "Je crois aussi fermement à la valeur éducative des démonstrations de vol responsables et bien menées. Voir un rapace en vol, observer de près ses aptitudes naturelles et découvrir les difficultés auxquelles sont confrontés ses congénères sauvages est une expérience d’une force extraordinaire.",
+                "Cette expérience directe peut transformer la curiosité en admiration, l’admiration en compréhension et, finalement, la compréhension en action. Si quelqu’un repart d’une démonstration avec l’envie de défendre les rapaces ou de soutenir leur conservation, alors nous avons accompli quelque chose de véritablement important.",
+                "Mais garder ces animaux implique une responsabilité éthique très claire.",
+                "Pour moi, la limite entre le soin et l’exploitation est franchie dès lors que les ambitions humaines, le divertissement ou les intérêts financiers passent avant le bien-être physique et psychologique de l’oiseau.",
+                "Un fauconnier responsable doit connaître l’espèce, respecter les besoins et les limites propres à chaque oiseau, lui offrir des conditions de vie adaptées et lui permettre d’exprimer ses comportements naturels.",
+                "Mes oiseaux ne sont pas des accessoires dont la seule raison d’être serait de divertir les humains. Ce sont des êtres vivants et intelligents, dont le bien-être doit toujours passer en premier.",
+                "Le privilège de travailler avec un rapace ne devrait jamais l’emporter sur la responsabilité que nous avons envers lui."
+              ],
+              "pullquote": "« Mes oiseaux ne sont pas des accessoires et ne sont pas là simplement pour divertir les humains. »"
+            },
+            {
+              "heading": "Vous travaillez au plus près d’aigles, de faucons et de rapaces nocturnes, aux caractéristiques et aux comportements très différents. Qu’est-ce qui vous surprend le plus dans leur intelligence ? Pensez-vous que chaque oiseau possède sa propre personnalité et une manière unique d’interagir avec les humains ?",
+              "paragraphs": [
+                "Absolument ! L’une des choses que j’aime le plus dans mon travail avec les rapaces, c’est de découvrir à quel point ils sont tous différents, même au sein d’une même espèce.",
+                "Certains sont incroyablement confiants et curieux, d’autres prudents ou timides. Certains apprécient les interactions rapprochées avec leur fauconnier, tandis que d’autres préfèrent leur indépendance. Ils ont tous leur personnalité, leurs préférences et leur manière de communiquer.",
+                "Je les trouve remarquablement perceptifs. Ils remarquent des changements subtils dans notre comportement, notre langage corporel et nos habitudes, et réagissent souvent à des signaux que nous ne sommes même pas conscients de leur envoyer.",
+                "Ce qui me surprend le plus, c’est que leur intelligence soit encore si souvent sous-estimée, parfois même par des professionnels qui travaillent avec eux.",
+                "Je crois que nous n’avons fait qu’effleurer la compréhension de leurs capacités cognitives.",
+                "Plus nous donnons à ces oiseaux la possibilité de réfléchir, d’explorer, de faire des choix et d’exprimer leur personnalité, plus ils nous révèlent à quel point ils sont extraordinaires."
+              ]
+            },
+            {
+              "heading": "D’après votre expérience, quelles sont aujourd’hui les principales menaces qui pèsent sur les rapaces ? Pensez-vous que les efforts internationaux actuels de conservation suffisent à les protéger de la chasse illégale, de l’empoisonnement et de la disparition de leurs habitats ?",
+              "paragraphs": [
+                "Il ne fait aucun doute que les plus grandes menaces qui pèsent aujourd’hui sur les rapaces sont d’origine humaine.",
+                "La destruction des habitats, le déclin des populations de proies, la chasse illégale, les empoisonnements délibérés, l’électrocution sur des lignes électriques dangereuses et le trafic d’animaux sauvages ont tous des conséquences dévastatrices sur les populations de rapaces à travers le monde.",
+                "Ce qui me brise particulièrement le cœur, c’est que ces oiseaux sont souvent persécutés simplement parce qu’ils font ce pour quoi la nature les a faits : chasser pour survivre.",
+                "Et non, je ne pense pas que nos efforts actuels de conservation soient suffisants.",
+                "Des organisations et des personnes extraordinaires travaillent sans relâche pour protéger ces espèces, souvent avec des moyens très limités. Mais les défenseurs de la nature ne peuvent pas continuer à mener un combat à contre-courant tandis que la destruction des habitats, les persécutions et le commerce illégal d’espèces sauvages se poursuivent autour d’eux.",
+                "Nous avons besoin d’une application plus rigoureuse des lois existantes de protection de la faune, d’une coopération internationale accrue, d’une meilleure éducation et de davantage d’investissements pour protéger les habitats et faire face aux conflits entre les humains et la faune sauvage.",
+                "Nous devons aussi reconnaître que la conservation ne s’arrête pas aux frontières nationales. Les oiseaux migrateurs peuvent parcourir des milliers de kilomètres en traversant de nombreux pays, et ils ont besoin d’être protégés tout au long de leur voyage.",
+                "Un oiseau protégé dans un pays ne devrait pas risquer d’être abattu ou piégé dès qu’il entre dans un autre.",
+                "En définitive, la conservation ne peut pas réussir grâce aux seuls efforts de quelques organisations dévouées. Elle exige que les gouvernements, les communautés locales, les fauconniers, les chasseurs et le grand public prennent leurs responsabilités.",
+                "Nous connaissons déjà bon nombre des menaces auxquelles ces oiseaux magnifiques sont confrontés. Ce dont nous avons désespérément besoin maintenant, c’est d’une détermination collective à agir."
+              ]
+            },
+            {
+              "heading": "La fauconnerie est une tradition plusieurs fois millénaire, profondément enracinée dans l’histoire de l’Europe comme du monde arabe. Comment la fauconnerie et une chasse responsable peuvent-elles coexister avec la conservation de la faune sauvage ? Selon vous, qu’est-ce qui distingue un fauconnier responsable d’une personne qui exploite les rapaces ?",
+              "paragraphs": [
+                "La fauconnerie possède une histoire extraordinaire, et je trouve très particulière cette tradition qui relie les humains et les rapaces depuis des milliers d’années.",
+                "Mais la tradition ne devrait jamais servir de prétexte pour négliger le bien-être animal ou la conservation.",
+                "Je crois qu’une fauconnerie responsable et une chasse durable peuvent coexister avec la conservation de la faune sauvage, à condition d’être pratiquées de manière éthique, dans le respect de la loi et avec une réelle considération pour les oiseaux comme pour l’ensemble de l’écosystème.",
+                "Pour moi, un fauconnier responsable est quelqu’un qui fait passer le bien-être de son oiseau avant ses ambitions personnelles, comprend ses besoins physiques et comportementaux et accepte de lui consacrer le temps et les efforts considérables que ces animaux exigent.",
+                "Un chasseur responsable doit également comprendre les conséquences de ses activités sur les populations sauvages et reconnaître qu’une pratique durable consiste à ne prélever que ce que la nature peut réellement supporter de perdre.",
+                "Ce qui m’inquiète, c’est lorsque les rapaces deviennent des symboles de prestige, des possessions dont on peut se débarrasser ou des instruments de divertissement, au lieu d’être traités comme les êtres vivants extraordinaires qu’ils sont.",
+                "Je crois aussi que les fauconniers ont une occasion unique de contribuer à la conservation. Nos connaissances, notre expérience et notre passion peuvent être de puissants atouts pour l’éducation, la recherche et la protection des rapaces sauvages.",
+                "À mes yeux, la différence entre un fauconnier responsable et une personne qui exploite les rapaces est simple : le premier se demande ce qu’il peut faire pour l’oiseau ; la seconde ne pense qu’à ce que l’oiseau peut faire pour elle.",
+                "En définitive, préserver la tradition de la fauconnerie devrait aller de pair avec la préservation des oiseaux et des habitats naturels qui rendent cette tradition possible."
+              ]
+            },
+            {
+              "heading": "Le Liban se trouve sur l’un des axes migratoires les plus importants au monde pour les rapaces qui voyagent entre l’Europe et l’Afrique. Malheureusement, certains de ces oiseaux sont abattus illégalement au cours de leur migration, parfois simplement pour se divertir ou prendre des photos. Quel message souhaitez-vous adresser à ceux qui tirent sur ces oiseaux magnifiques ?",
+              "paragraphs": [
+                "Je veux être parfaitement claire : abattre un rapace magnifique pour s’amuser, prendre une photo ou obtenir un trophée est un acte de pure lâcheté. Il n’y a ni habileté, ni bravoure, et certainement aucun honneur à tuer un animal sans défense simplement parce qu’on en a la possibilité.",
+                "Appuyer sur la détente contre une créature qui ne représente aucune menace pour vous ne vous rend ni puissant, ni courageux, ni plus viril. Bien au contraire. Cela révèle une absence totale de respect pour la vie et pour tout ce que devraient représenter le véritable courage et l’honneur.",
+                "Ces oiseaux ont parcouru des milliers de kilomètres, surmonté des épreuves extraordinaires, pour que leur vie soit inutilement interrompue pour le divertissement de quelqu’un.",
+                "La véritable mesure du caractère n’est pas le pouvoir que l’on possède sur une créature vulnérable, mais la décence et la compassion dont on fait preuve en la laissant vivre.",
+                "Si vous voulez véritablement faire preuve de force et de courage, posez votre arme et défendez cette faune qui ne peut pas se défendre contre vous."
+              ]
+            },
+            {
+              "heading": "Le Middle East Center for Sustainable Harvest and Anti-Poaching (MECSHAP), par l’intermédiaire de son unité de lutte contre le braconnage, l’Anti-Poaching Unit (APU), œuvre à la protection des oiseaux migrateurs et à la lutte contre la chasse illégale. Quelle importance accordez-vous à la coopération internationale entre fauconniers, spécialistes de la faune sauvage et organisations de conservation présentes sur le terrain pour protéger ces oiseaux tout au long de leurs voies migratoires ?",
+              "paragraphs": [
+                "La coopération internationale est absolument essentielle. La faune sauvage ne connaît pas les frontières politiques, et nos efforts de conservation ne devraient pas s’y arrêter non plus.",
+                "Nous ne pouvons pas espérer protéger efficacement les oiseaux migrateurs si nous ne les préservons que dans certains pays, tout en les laissant vulnérables ailleurs sur leur parcours.",
+                "Fauconniers, chercheurs spécialisés dans la faune sauvage, organisations de conservation et équipes de lutte contre le braconnage apportent chacun des compétences différentes. En partageant nos connaissances, nos données sur les migrations, nos ressources et notre expérience de terrain, nous pouvons accomplir ensemble bien davantage que n’importe quelle organisation isolée.",
+                "J’ai un immense respect pour les personnes qui travaillent sur le terrain contre la chasse illégale. Des organisations comme MECSHAP et leur unité de lutte contre le braconnage jouent un rôle important, car protéger la faune exige davantage que de la sensibilisation. Il faut aussi des personnes prêtes à agir là où ces crimes sont effectivement commis.",
+                "Travaillant à la fois dans la fauconnerie et dans la conservation, je crois fermement que nous avons la responsabilité de rapprocher ces communautés et d’œuvrer à un objectif commun.",
+                "La conservation ne devrait jamais être une question de reconnaissance individuelle ou de concurrence entre organisations. Elle devrait consister à unir nos forces pour accomplir ce qui compte le plus : maintenir ces oiseaux magnifiques en vie dans la nature."
+              ],
+              "pullquote": "« Des organisations comme le MECSHAP et son unité de lutte contre le braconnage jouent un rôle important… »"
+            },
+            {
+              "heading": "Enfin, si vous pouviez changer une seule chose dans la relation entre les humains et les rapaces, quelle serait-elle ? Et quel message souhaiteriez-vous adresser aux lecteurs de SAYD Magazine, en particulier aux chasseurs et aux amoureux de la nature du monde arabe ?",
+              "paragraphs": [
+                "Si je pouvais changer une seule chose, ce serait la façon dont les humains perçoivent leur place dans le monde naturel.",
+                "Nous devons cesser de nous considérer comme les maîtres de la nature et commencer à reconnaître que nous en faisons partie, avec la responsabilité de la protéger.",
+                "Les rapaces fascinent l’humanité depuis des milliers d’années. Ils incarnent la force, la liberté et une beauté extraordinaire. Pourtant, nous continuons à détruire les habitats mêmes dont ils dépendent et à les persécuter simplement parce qu’ils suivent leurs instincts naturels.",
+                "Aux lecteurs de SAYD Magazine, en particulier aux fauconniers, aux chasseurs et aux amoureux de la nature du monde arabe, je voudrais dire ceci : vous entretenez un lien culturel extraordinaire avec les rapaces, et cet héritage vous offre une occasion tout aussi extraordinaire de contribuer à leur protection.",
+                "Que vous soyez fauconnier, chasseur ou simplement admirateur de la faune sauvage, vos choix comptent. Respectez les animaux que vous rencontrez, opposez-vous aux persécutions illégales et transmettez à la génération suivante un véritable amour de la nature.",
+                "Tradition et conservation ne devraient jamais être ennemies. Le plus bel héritage que nous puissions laisser ne consiste pas seulement à préserver nos traditions, mais aussi à faire en sorte que la faune qui les a inspirées existe encore pour les générations à venir.",
+                "Et, peut-être surtout, souvenez-vous que ces oiseaux magnifiques ne nous appartiennent pas. Nous avons simplement le privilège de partager cette planète avec eux."
+              ]
+            }
+          ],
+          "sources": []
+        }
+      },
+      "distribution": {
+        "placement": "lead",
+        "ticker": true
+      }
+    }
+  ]
+}
