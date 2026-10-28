@@ -1,4 +1,5 @@
 import {verifyLegalNotice} from './evidence.mjs';
+import {akkarScope,regionalDefects,regionalReviewNote} from './regional-evidence.mjs';
 import {sanitizeTrip,accessReviewNeeded,ACCESS_NOTE,parseItinerary,itineraryNeedsReview} from './trips.mjs';
 import preview from '../data/preview.json' with {type:'json'};
 import corpus from '../data/public-index.json' with {type:'json'};
@@ -84,7 +85,7 @@ export function createHandler(network=fetch,options={}) {
         itinerary=parseItinerary(output.answer,output.sources,input,defects);
         // One bounded revision, never an open-ended retry loop or a vague draft.
         if(!itinerary){
-          const revision={draft:output.answer.slice(0,12000),defects:JSON.stringify(defects)+'. Check every constraint again: exact destination region, no duplicate places, no law/documents as visits, no alternatives merged into a route, ONE named hiking trail with sourced length/difficulty. Keep practical visitor sites with source_url, kind, duration_minutes and walking. For unresolved hunting legality use advice with days:[], never a route through law documents. Do not merely move rejected alternatives into summary. Read the draft against the original request and correct it.'};
+          const revision={regional_defects:regionalDefects(output.answer,output.sources,input),draft:output.answer.slice(0,12000),defects:JSON.stringify(defects)+'. Check every constraint again: exact destination region, no duplicate places, no law/documents as visits, no alternatives merged into a route, ONE named hiking trail with sourced length/difficulty. Keep practical visitor sites with source_url, kind, duration_minutes and walking. For unresolved hunting legality use advice with days:[], never a route through law documents. Do not merely move rejected alternatives into summary. Read the draft against the original request and correct it.'};
           const revised=await network('https://api.openai.com/v1/responses',{method:'POST',headers:{'Authorization':'Bearer '+env.OPENAI_API_KEY,'Content-Type':'application/json'},body:JSON.stringify(providerPayload({...input,revision,consulted_sources:consulted},matches.slice(0,4),env.OPENAI_MODEL,true)),signal:AbortSignal.timeout(45000)});
           if(!revised.ok)return reply({error:'itinerary_unavailable',articles:cards},502);
           data=await revised.json();output=extractResponse(data);
@@ -92,6 +93,7 @@ export function createHandler(network=fetch,options={}) {
           if(data.status!=='completed'||!output.answer||!output.verified)return reply({error:'itinerary_unavailable',articles:cards},502);
           itinerary=parseItinerary(output.answer,output.sources,input,defects);
         }
+        if(!itinerary&&akkarScope(input))return reply({answer:regionalReviewNote(input),articles:cards,sources:[],verified:false,regional_review_required:true});
         if(!itinerary&&input.trip?.activities?.includes('camping')){const note={ar:'لم أتمكن من توثيق خيمة بالسعة المطلوبة وقبول الأطفال من الجهة المشغلة؛ لذلك لم أعتمد برنامج مبيت لهذه الأسرة. راجع تفاصيل المخيم في المصادر للتأكد من السعة وسياسة الأطفال والحجز، ولا تعتبر بيت شجرة بسرير مزدوج خيمة عائلية.',en:'I could not verify a tent with the required capacity and child admission from its operator, so I have not accepted this overnight plan. The campsite references can help check capacity, child policy and booking; a double-bed treehouse is not a family tent.',fr:'Je n’ai pas pu confirmer une tente de capacité suffisante et l’accueil des enfants auprès de l’exploitant. Ce programme de nuitée n’est donc pas retenu. Vérifiez la capacité, les conditions d’accueil et la réservation dans les références du camping ; une cabane avec un lit double ne remplace pas une tente familiale.'};return reply({answer:note[input.lang],sources:output.sources,articles:cards,verified:false,camping_review_required:true});}
         if(!itinerary){
           const note={ar:'تعذر اعتماد برنامج محدد بعد مراجعة مصادر الأماكن أو تفاصيل المسار. لم أتأكد من جميع الشروط اللازمة لهذه الرحلة؛ لذلك لم أقدمها كبرنامج جاهز.',en:'I could not validate a specific itinerary against its place sources or trail details. Essential trip conditions remain unverified, so this is not a ready-to-use route.',fr:'Je n’ai pas pu valider un itinéraire précis à partir des sources des lieux ou des données du sentier. Des conditions essentielles restent à vérifier ; ce parcours ne peut pas être présenté comme prêt.'};
@@ -107,6 +109,7 @@ export function createHandler(network=fetch,options={}) {
           itinerary.summary=note[input.lang];
         }
         if(!itinerary.days.length)output.verified=false;
+        if(itinerary.regional_review_required){output.verified=false;output.sources=[...new Set(itinerary.days.flatMap(d=>d.stops.map(s=>s.source_url)))].map(url=>output.sources.find(s=>s.url===url)||{url,title:new URL(url).hostname});}
         output.answer=itinerary.summary;
       }
       const links=birdReferences(corpus.articles,output.answer+' '+JSON.stringify(itinerary?.days||[]),input.lang);
