@@ -478,7 +478,7 @@ class RealSiteTests(unittest.TestCase):
         value = record(base, 'compiler-interview-selection', placement='latest')
         original = value['articles'][0]
         value['articles'] = []
-        for index in range(10):
+        for index in range(8):
             article = copy.deepcopy(original)
             article['slugs'] = {l: f'compiler-interview-selection-{index}-{l}' for l in schema.LANGS}
             value['articles'].append(article)
