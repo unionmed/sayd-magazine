@@ -470,6 +470,13 @@ class RealSiteTests(unittest.TestCase):
         paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/') or p == 'content/publication-contract.json'}
         files = {p: compiler.read_blob(ROOT, current[p]) if p in current else None for p in paths}
         modes = {p: current[p][0] for p in paths if p in current}
+        # Only the newly approved interview rule is overlaid on this old payload.
+        contract_path = 'content/publication-contract.json'
+        old_contract = json.loads(compiler.read_blob(ROOT, previous[contract_path]))
+        current_contract = json.loads(compiler.read_blob(ROOT, current[contract_path]))
+        old_contract['interviews'] = current_contract['interviews']
+        old_contract['counts']['interviews'] = current_contract['counts']['interviews']
+        files[contract_path] = (json.dumps(old_contract, ensure_ascii=False, indent=2) + '\n').encode()
         return source_commit(ROOT, pinned, files, modes)
 
     def test_upper_slot_displacement_resyncs_existing_interview_selection(self):
@@ -596,6 +603,26 @@ class RealSiteTests(unittest.TestCase):
                 self.assertIn('object-fit:contain', image[0].get('style', ''))
             self.assertEqual(json.loads(path.read_text())['card_image_overrides'][article['slugs']['ar']]['fit'], 'contain')
         self.assertEqual(snapshots[0], snapshots[1])
+
+    def test_historical_lead_fixture_exact_policy_scope(self):
+        from test_hunting_reels import historical_reel_fixture
+        pinned = '493719a53adb3faf8412e281ceed3e81534dd526'
+        base = self.controlled_lead_base()
+        with tempfile.TemporaryDirectory(prefix='sayd-historical-scope-') as temp:
+            root = Path(temp); (root / 'content').mkdir()
+            (root / '.git').write_text('gitdir: ' + str(ROOT / '.git') + '\n')
+            (root / 'content/tv-channel.json').write_bytes(compiler.git(ROOT, 'show', pinned + ':content/tv-channel.json'))
+            self.assertTrue(historical_reel_fixture(base, root))
+            self.assertFalse(historical_reel_fixture(self.base, root))
+            contract = json.loads(compiler.git(ROOT, 'show', base + ':content/publication-contract.json'))
+            for field in ('tv', 'unrelated'):
+                changed = copy.deepcopy(contract)
+                if field == 'tv': changed['tv_structure']['channel_order'] = []
+                else: changed['unapproved_fixture_field'] = True
+                bad = source_commit(ROOT, pinned, {'content/publication-contract.json': json.dumps(changed).encode()})
+                self.assertFalse(historical_reel_fixture(bad, root))
+            wrong_parent = source_commit(ROOT, base, {'scripts/fixture-note.txt': b'test'})
+            self.assertFalse(historical_reel_fixture(wrong_parent, root))
 
     def test_hunting_equestrian_lead_and_filter_membership(self):
         base = self.controlled_lead_base()

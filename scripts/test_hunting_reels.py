@@ -26,8 +26,15 @@ def historical_reel_fixture(base, root=ROOT):
         if git('rev-list','--parents','-n','1',base).decode().split()!=[base,pinned]:
             return False
         changed=git('diff','--name-only','-z',pinned,base).decode().strip('\0').split('\0')
-        if not changed or not all(path.startswith('scripts/') for path in changed):
+        contract_path='content/publication-contract.json'
+        if not changed or not all(path.startswith('scripts/') or path==contract_path for path in changed):
             return False
+        if contract_path in changed:
+            # Exact pinned fixture plus only the approved 28 October interview
+            # policy/count fields. Every other field, including TV, is frozen.
+            approved='da5660bc773916c7fbdd643fda262eb69b433c9e9737e1ab6575ce9d666d2303'
+            if hashlib.sha256(git('show',base+':'+contract_path)).hexdigest()!=approved:
+                return False
         return source==git('show',pinned+':content/tv-channel.json')==git('show',base+':content/tv-channel.json')
     except subprocess.CalledProcessError:
         return False
