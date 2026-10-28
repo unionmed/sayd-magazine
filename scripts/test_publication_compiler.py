@@ -17,6 +17,39 @@ import zlib
 import publication_compiler as compiler
 import publication_schema as schema
 
+from nathalie_typography_revision import PATHS, corrected, exact_revision
+
+class ExactTypographyTests(unittest.TestCase):
+    def setUp(self):
+        self.blobs = {'old': b'<html><head></head><body><h2>Question</h2><p>Answer</p></body></html>'}
+        self.blobs['new'] = corrected(self.blobs['old'])
+        self.before = {p: ('100644', 'blob', 'old') for p in PATHS}
+        self.after = {p: ('100644', 'blob', 'new') for p in PATHS}
+    def check(self):
+        return exact_revision(self.before, self.after, lambda e: self.blobs[e[2]])
+    def test_exact_three(self):
+        self.assertTrue(self.check())
+        self.assertEqual(self.blobs['new'].split(b'</head>')[1], self.blobs['old'].split(b'</head>')[1])
+    def test_text_tamper(self):
+        self.blobs['new'] = self.blobs['new'].replace(b'Answer', b'Changed')
+        self.assertFalse(self.check())
+    def test_style_tamper(self):
+        self.blobs['new'] = self.blobs['new'].replace(b'1.35em', b'9em')
+        self.assertFalse(self.check())
+    def test_other_file(self):
+        self.after['docs/index.html'] = ('100644', 'blob', 'new')
+        self.assertFalse(self.check())
+    def test_partial(self):
+        self.after[PATHS[0]] = self.before[PATHS[0]]
+        self.assertFalse(self.check())
+    def test_mode(self):
+        self.after[PATHS[0]] = ('120000', 'blob', 'new')
+        self.assertFalse(self.check())
+    def test_replay_and_missing_head(self):
+        for value in (self.blobs['new'], b'<body></body>', b'</head></head>'):
+            with self.assertRaises(ValueError): corrected(value)
+
+
 ROOT = Path(__file__).resolve().parents[1]
 
 

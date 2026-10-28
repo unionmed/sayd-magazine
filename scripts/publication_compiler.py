@@ -765,6 +765,11 @@ def verify_candidate(root, base, candidate, output, report_path):
     """Run from trusted BASE code, proving a generated PR is not source-only/tampered."""
     require(git(root, 'rev-parse', 'HEAD').decode().strip() == base, 'Candidate verification must execute trusted base checkout')
     before, after = tree(root, base), tree(root, candidate)
+    import nathalie_typography_revision
+    if nathalie_typography_revision.exact_revision(before, after, lambda entry: read_blob(root, entry)):
+        report = {'candidate': candidate, 'status': 'exact-nathalie-typography-revision'}
+        save_json(Path(report_path), report)
+        return report
     import editorial_revision
     if editorial_revision.revision_paths(before, after):
         return editorial_revision.verify(root, base, candidate, output, report_path)
