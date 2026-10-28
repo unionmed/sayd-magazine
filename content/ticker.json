@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
+      "titles": {
+        "ar": "من دبي إلى سباق المليوني دولار… بن حرمش يستلهم نجاح اليابان",
+        "en": "From Dubai to a $2 million race… Bin Harmash takes inspiration from Japan",
+        "fr": "De Dubaï à une course dotée de deux millions de dollars… Bin Harmash s’inspire du Japon"
+      },
+      "title": "من دبي إلى سباق المليوني دولار… بن حرمش يستلهم نجاح اليابان"
+    },
+    {
       "slug": "عندما-تهين-الطريدة-أنت-تهين-نفسك",
       "titles": {
         "ar": "عندما تهين الطريدة… أنت تهين نفسك!",
@@ -81,15 +90,6 @@
         "fr": "Le championnat du saluki arabe débute en novembre : trois distances et cinq titres saisonniers"
       },
       "title": "بطولة السلوقي العربي تنطلق في نوفمبر بثلاث مسافات وخمسة ألقاب موسمية"
-    },
-    {
-      "slug": "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
-      "titles": {
-        "ar": "تعاون مصري إماراتي لحماية الحبارى وتطوير إدارة محمية العميد",
-        "en": "Egypt–UAE cooperation focuses on houbara and Omayed Reserve management",
-        "fr": "Coopération Égypte–Émirats pour l’outarde houbara et la gestion d’Omayed"
-      },
-      "title": "تعاون مصري إماراتي لحماية الحبارى وتطوير إدارة محمية العميد"
     }
   ]
 }
