@@ -122,7 +122,25 @@ def approved_interview_selection(contract, c, lang):
     """Independently enforce the owner-approved bounded rolling collection policy."""
     from datetime import date
     from interview_collection import entries
-    policy = contract['interviews']['homepage_policy']
+    selection = contract['interviews']
+    common = {'approved_on', 'registry', 'format_separate_from_primary_topic', 'historical_exception'}
+    assert selection['registry'] == 'content/interviews.json'
+    assert selection['format_separate_from_primary_topic'] is True
+    assert lang in LANGS
+    if 'homepage_slugs' in selection:
+        # Replay the protected historical contract exactly, not today's policy.
+        assert set(selection) == common | {'homepage_slugs'}, 'Unknown/mixed interview schema'
+        legacy = {
+            'ar': ['ألكسندرا-cabs-الصيد-غير-القانوني', 'الصيادة-ريتا-حبيب-الشعار-مقتنعة-بهواي',
+                   'الصيادة-اللبنانية-سارة-عقيقي-الصيد-هو', 'صيّاد-بس-هيك-قالت-مرتو'],
+            'en': ['ألكسندرا-cabs-الصيد-غير-القانوني'],
+            'fr': ['ألكسندرا-cabs-الصيد-غير-القانوني'],
+        }
+        assert selection['homepage_slugs'] == legacy, 'Unapproved legacy interview identities'
+        assert contract['counts']['interviews'] == {'ar': 4, 'en': 1, 'fr': 1}
+        return list(legacy[lang])
+    assert set(selection) == common | {'homepage_policy'}, 'Unknown/mixed interview schema'
+    policy = selection['homepage_policy']
     assert policy == {
         'approved_on': '2026-10-28', 'selection': 'latest-approved-registry',
         'order': ['published_at:descending', 'slug:descending'],

@@ -169,6 +169,17 @@ class InterviewCollectionTests(unittest.TestCase):
 class InterviewRollingPolicyTests(unittest.TestCase):
     def setUp(self):
         self.contract = json.loads((interviews.ROOT / 'content/publication-contract.json').read_text())
+        # Exercise the approved rolling schema even when replaying a historical
+        # frozen-contract caption/photo fixture with today's test code.
+        self.contract['interviews'].pop('homepage_slugs', None)
+        self.contract['interviews']['homepage_policy'] = {
+            'approved_on': '2026-10-28', 'selection': 'latest-approved-registry',
+            'order': ['published_at:descending', 'slug:descending'],
+            'maximum_per_language': 4, 'exclude_upper_slots': True,
+            'exclude_omitted': True, 'translated_minimum_year': 2026,
+            'require_existing_language': True, 'pad_missing': False,
+        }
+        self.contract['counts']['interviews'] = {'ar': 4, 'en': 4, 'fr': 4}
         self.config = {'featured': ['upper'], 'latest': ['latest'],
                        'omit_from_home': ['omitted'], 'omit_from_home_desks': ['desk-omitted']}
         def row(slug, published, languages=('ar', 'en', 'fr')):
@@ -199,6 +210,22 @@ class InterviewRollingPolicyTests(unittest.TestCase):
                 path.write_text(json.dumps(registry))
                 with self.assertRaises(AssertionError):
                     approved_interview_selection(self.contract, self.config, 'ar')
+
+    def test_exact_legacy_contract_and_schema_rejection(self):
+        from check_publication_contract import approved_interview_selection
+        legacy = json.loads(subprocess.check_output(['git', 'show',
+            '9d22c0a5f893e3626baf33fc72a59f4efd128e9b:content/publication-contract.json'], cwd=interviews.ROOT))
+        for lang in ('ar', 'en', 'fr'):
+            self.assertEqual(approved_interview_selection(legacy, self.config, lang),
+                             legacy['interviews']['homepage_slugs'][lang])
+        mutations = []
+        mixed = copy.deepcopy(legacy); mixed['interviews']['homepage_policy'] = self.contract['interviews']['homepage_policy']; mutations.append(mixed)
+        changed = copy.deepcopy(legacy); changed['interviews']['homepage_slugs']['ar'].reverse(); mutations.append(changed)
+        changed = copy.deepcopy(legacy); changed['counts']['interviews']['en'] = 4; mutations.append(changed)
+        changed = copy.deepcopy(legacy); changed['interviews']['unknown'] = True; mutations.append(changed)
+        changed = copy.deepcopy(self.contract); del changed['interviews']['homepage_policy']; mutations.append(changed)
+        for changed in mutations:
+            with self.assertRaises(AssertionError): approved_interview_selection(changed, self.config, 'ar')
 
     def test_contract_policy_changes_fail_closed(self):
         from check_publication_contract import approved_interview_selection
