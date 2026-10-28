@@ -81,7 +81,7 @@ test('live regressions: laws are not stops, duplicates and mixed trails are reje
  const check=p=>parseItinerary(JSON.stringify(p),sources,{query:'مسار هايكينغ واحد في إهدن'});
  let p=concretePlan('Trail #8','إهدن، لبنان');
  assert.equal(check(p),null);
- p.days[0].stops[0].trail={distance_km:1.2,difficulty:'سهل',start:'مدخل المحمية',source_url:sources[0].url};
+ p.days[0].stops[0].trail={distance_km:1.2,difficulty:'سهل',start:'مدخل المحمية',end:'نفس المدخل',direction:'loop',return_plan:'العودة إلى المدخل',map_url:sources[0].url,source_url:sources[0].url};
  assert.ok(check(p));
  let bad=structuredClone(p);bad.days[0].stops.push({...bad.days[0].stops[0],name:'Trail #1'});assert.equal(check(bad),null);
  bad=structuredClone(p);bad.summary='Trail #8 أو Trail #1';assert.equal(check(bad),null);
@@ -114,7 +114,7 @@ test('reviewed real G outputs: no loop claim for out-and-back, exact restaurant 
  const {parseItinerary}=await import('../src/trips.mjs');const cases=JSON.parse(readFileSync(new URL('./quality-cases.json',import.meta.url))).cases;
  const fixtures=JSON.parse(readFileSync(new URL('./quality-regressions.json',import.meta.url)));
  for(const f of fixtures){const input={...cases.find(c=>c.id===f.id),lang:'ar'},p=parseItinerary(JSON.stringify(f.plan),f.sources,input);
-  if(f.id==='family-camping'){assert.equal(p,null);continue;}
+  if(f.id==='family-camping'||f.id==='hiking-ehden'){assert.equal(p,null);continue;}
   assert.ok(p);
   if(f.id==='hiking-ehden'){assert.ok(!p.summary.includes('حلقي'));assert.equal(p.days[0].stops[0].walking,'متوسطة إلى وعرة');}
   if(f.id==='nature-restaurants')assert.equal(p.days[0].stops.find(s=>s.name.includes('Beit Noun')).locality,'مشمش، قضاء جبيل، لبنان');

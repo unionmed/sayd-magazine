@@ -1,0 +1,165 @@
+[
+  {
+    "id": "regional-05-keserwan-activity",
+    "plan": {
+      "summary": "اخترت مسار Roman Stairs الوحيد داخل محمية جبل موسى لأنه الأسهل والأقصر هنا: 2.1 كم، نحو ساعة، من مدخل قهيمز إلى مدخل المشاتي، ويعود المشي إلى مدخل الخروج نفسه بحسب الوصف الرسمي. ([jabalmoussa.org](https://www.jabalmoussa.org/trails-facilities))",
+      "format": "itinerary",
+      "region": "كسروان، لبنان",
+      "days": [
+        {
+          "day": 1,
+          "base": "جونية",
+          "departure": "جونية",
+          "return_to": "جونية",
+          "stops": [
+            {
+              "name": "Roman Stairs trail — مدخل قهيمز إلى مدخل المشاتي",
+              "locality": "كسروان، لبنان",
+              "description": "امشِ هذا المسار الخفيف نسبيًا داخل محمية جبل موسى: يبدأ من مدخل قهيمز وينتهي عند مدخل المشاتي، مع نزول سهل عبر درج روماني ومنظر تراثي طبيعي. الموقع الرسمي يذكره كمسار Easy بطول 2.1 كم وزمن hike نحو ساعة واحدة. ([jabalmoussa.org](https://www.jabalmoussa.org/trails-facilities))",
+              "kind": "nature",
+              "duration_minutes": 60,
+              "walking": "مشي خفيف مع نزول واضح؛ الطول محسوب one-way، ثم تحتاج ترتيب العودة بالسيارة/النقل إلى نقطة البداية لأن المشي لا يعود إلى المدخل نفسه. ([jabalmoussa.org](https://www.jabalmoussa.org/trails-facilities))",
+              "source_url": "https://www.jabalmoussa.org/trails-facilities"
+            }
+          ]
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "Trails and facilities - Jabal Moussa Biosphere Reserve",
+        "url": "https://www.jabalmoussa.org/trails-facilities"
+      }
+    ]
+  },
+  {
+    "id": "regional-05-keserwan-family-camp",
+    "plan": {
+      "summary": "اعتمدتُ Chahtoul Camping في كسروان كمخيم الليلة الواحدة المناسب لعائلة من 4، مع حجز مسبق ومرافق على الموقع، ومن دون إدراج نار إلا حيث يسمح المصدر صراحةً.",
+      "format": "itinerary",
+      "region": "كسروان، لبنان",
+      "days": [
+        {
+          "day": 1,
+          "base": "جونية",
+          "departure": "جونية",
+          "return_to": "جونية",
+          "stops": [
+            {
+              "name": "Chahtoul Camping",
+              "locality": "Chahtoul, Keserwan, Lebanon",
+              "description": "موقع تخييم فعلي في كسروان، وُصف بأنه مناسب لمن يريدون تجربة خارجية نشطة، مع مرافق على الموقع وخيارات إقامة/تخييم منظّمة. المصدر الإعلاني يذكر أن الحجز المسبق مطلوب، وأنه موجه أيضًا للعائلات والأنشطة الخارجية.",
+              "kind": "activity",
+              "camping": {
+                "unit": "tent",
+                "capacity": 4,
+                "children": "allowed",
+                "source_url": "https://today.lorientlejour.com/article/1470687/where-to-camp-this-summer-in-lebanon.html",
+                "booking": "الحجز المسبق مطلوب؛ رقم التواصل المذكور في المادة: +961 70 30 20 40"
+              },
+              "duration_minutes": 150,
+              "walking": "تنقّل خفيف داخل الموقع بين الخيمة، الجلسة، والأنشطة؛ لا أؤكد سهولة الأرض أو المسارات دون معاينة حديثة.",
+              "source_url": "https://today.lorientlejour.com/article/1470687/where-to-camp-this-summer-in-lebanon.html"
+            },
+            {
+              "name": "أنشطة خفيفة داخل المخيم: فريسبي وبادمنتون ولعب الأطفال",
+              "locality": "Chahtoul, Keserwan, Lebanon",
+              "description": "الأنشطة المذكورة في التغطية تشمل الفريسبي والبادمنتون، مع مساحة مناسبة لتمضية وقت الأطفال من دون مسار مشي طويل. هذا يناسب ليلة واحدة خفيفة مع لعب حرّ ومراقبة الأطفال بسهولة.",
+              "kind": "activity",
+              "duration_minutes": 60,
+              "walking": "حركة قصيرة جدًا بين جلسة العائلة ومكان اللعب؛ لا يتطلب مشيًا مجهدًا.",
+              "source_url": "https://today.lorientlejour.com/article/1470687/where-to-camp-this-summer-in-lebanon.html"
+            },
+            {
+              "name": "مستلزماتكم الخاصة للألعاب والمبيت",
+              "locality": "Chahtoul, Keserwan, Lebanon",
+              "description": "احملوا خيمة حقيقية لأربعة، فرش نوم، بطانيات خفيفة، مصابيح، وماء. وللأطفال خذوا كرة صغيرة، أوراق لعب، حبل نط، وراكتين بادمنتون خفيفتين؛ هذه إضافات عملية لأن المصدر لا يثبت كل الألعاب على الموقع.",
+              "kind": "activity",
+              "duration_minutes": 30,
+              "walking": "بدون مشي إضافي؛ تجهيز داخل المخيم.",
+              "source_url": "https://today.lorientlejour.com/article/1470687/where-to-camp-this-summer-in-lebanon.html"
+            }
+          ]
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "today.lorientlejour.com",
+        "url": "https://today.lorientlejour.com/article/1470687/where-to-camp-this-summer-in-lebanon.html"
+      }
+    ]
+  },
+  {
+    "id": "regional-05-keserwan-repeat",
+    "plan": {
+      "summary": "جولة خفيفة من جونية إلى حريصا ثم فقرا، مع معلم ديني/إطلالة، وآثار فقرا، وغداء محدد في كسا را.",
+      "format": "itinerary",
+      "region": "كسروان، لبنان",
+      "days": [
+        {
+          "day": 1,
+          "base": "جونية",
+          "departure": "جونية",
+          "return_to": "جونية",
+          "stops": [
+            {
+              "name": "مزار سيدة لبنان – حريصا",
+              "locality": "حريصا، كسروان، لبنان",
+              "description": "توقفوا عند المزار والإطلالة فوق خليج جونية؛ الزيارة مناسبة كافتتاح خفيف وفيها مشهد واسع من الهضبة والبحر. يمكنكم المشي القصير حول الساحة والتماثيل ثم النزول بالسيارة مباشرة إلى المحطة التالية.",
+              "kind": "visit",
+              "duration_minutes": 75,
+              "walking": "مشي خفيف وقصير حول الساحة والمنظر، مع تنقل بالسيارة بين المحطات.",
+              "source_url": "https://ololb.org/page/about-us"
+            },
+            {
+              "name": "تلفريك جونية إلى حريصا",
+              "locality": "جونية/حريصا، لبنان",
+              "description": "اصعدوا بالتلفريك لتبديل الجو من الساحل إلى الجبل من دون مجهود كبير. هو مناسب كتنقّل وتجربة منظرية قصيرة قبل الغداء أو بعده، وليس يحتاج مشيًا طويلًا.",
+              "kind": "activity",
+              "duration_minutes": 45,
+              "walking": "صعود ونزول بالمصعد الجبلي؛ المشي داخل المحطة فقط.",
+              "source_url": "https://www.teleferiquelb.com/"
+            },
+            {
+              "name": "Château Ksara – المطعم",
+              "locality": "زحلة، لبنان",
+              "description": "غداء محدد في برجكة القصر/الوينري، مع جلسة هادئة بعد الزيارة السابقة. الموقع يقدّم غداء يوميًّا وهو خيار مناسب لوجبة واضحة ومكان معروف قبل الرجوع إلى جونية.",
+              "kind": "meal",
+              "duration_minutes": 90,
+              "walking": "دخول قصير من الموقف إلى المطعم، بلا مشي متعب.",
+              "source_url": "https://chateauksara.com/visit-us/"
+            },
+            {
+              "name": "Faqra Ruins",
+              "locality": "كفرذبيان، كسروان، لبنان",
+              "description": "اختموا عند آثار فقرا: بقايا رومانية/بيزنطية مع منظر جبلي واضح، وتكفي جولة قصيرة بين الأطلال واللقطات المفتوحة. هذا أفضل معلم أثري في الجولة إذا بدكم طبيعة ومعلم معًا بدون مشي شاق.",
+              "kind": "visit",
+              "duration_minutes": 75,
+              "walking": "مشي خفيف بين نقاط الموقع الأثرية؛ اختصروا الجولة حسب الوقت.",
+              "source_url": "https://www.sanninerent.com/what-s-around/faqra-ruins"
+            }
+          ]
+        }
+      ]
+    },
+    "sources": [
+      {
+        "title": "chateauksara.com",
+        "url": "https://chateauksara.com/visit-us/"
+      },
+      {
+        "title": "www.teleferiquelb.com",
+        "url": "https://www.teleferiquelb.com/"
+      },
+      {
+        "title": "ololb.org",
+        "url": "https://ololb.org/page/about-us"
+      },
+      {
+        "title": "www.sanninerent.com",
+        "url": "https://www.sanninerent.com/what-s-around/faqra-ruins"
+      }
+    ]
+  }
+]

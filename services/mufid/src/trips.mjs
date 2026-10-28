@@ -28,7 +28,7 @@ export function parseItinerary(text,sources=[],input={},diagnostics=[]){
  const camping=input.trip?.activities?.includes('camping');
  const children=/طفل|اطفال|أطفال|children|kids|enfants/i.test(input.query||'');
  const familyFour=/طفلين|طفلان|two children|2 children|deux enfants/i.test(input.query||'');
- const hike=/هايكينغ|هايك|hiking|randonn|مسار.*مشي/i.test(input.query||'');
+ const hike=/هايك|hiking|randonn|\btrail\b|مسار/.test(normalize(input.query));
  if(format==='itinerary'&&data.days.length&&/\s(?:أو|او|or|ou)\s|\s\/\s/i.test(data.summary))return reject('alternatives_in_summary');
  for(const d of data.days){
   if(!d||!Number.isInteger(d.day)||d.day<1||d.day>30||typeof d.base!=='string'||typeof d.departure!=='string'||typeof d.return_to!=='string'||!Array.isArray(d.stops)||!d.stops.length||d.stops.length>4)return reject('day_shape_or_stop_count');
@@ -42,12 +42,14 @@ export function parseItinerary(text,sources=[],input={},diagnostics=[]){
    if(placeConflict(stop,input))return reject('outside_requested_region: '+stop.name);
    if(/اسمه يوحي|name suggests|nom suggere/i.test(normalize(stop.description)))return reject('setting_inferred_from_name');
    if(stop.kind==='meal'&&/^(?:مطعم ومقهي|مطعم في |مطعم علي |restaurant in |restaurant on |القرب من )/.test(key))return reject('unnamed_restaurant');
+   if(camping&&!stop.camping&&/العاب|انشطه|مستلزمات|تجهيز|packing|games|activities|checklist/.test(key))return reject('camp_non_place_activity');
    if(/^(?:العاب بسيطه|العاب نحضرها|العاب للعائله|العاب العائله|قانون|قرار|بيان|law|decree|regulation|packing|العوده الي)\s/i.test(key)||key===normalize(stop.locality.split(/[,،]/)[0]))return reject('not_a_visitor_stop');
    if([...seen].some(n=>n===key||(Math.min(n.length,key.length)>8&&(n.includes(key)||key.includes(n)))))return reject('duplicate_stop: '+stop.name);
    if(/\s(?:أو|او|or|ou)\s|\s\/\s/i.test(stop.name))return reject('alternatives_in_stop');
    let camp;
    if(camping&&stop.camping){
     const c=stop.camping;
+    if(/(?:^|\.)(?:lorientlejour\.com|the961\.com|lebanontraveler\.com|sobeirut\.com)$/.test(new URL(safeSource(c.source_url)||'https://invalid.example').hostname))return reject('camp_requires_operator_evidence');
     if(!['tent','own_tent'].includes(c.unit)||!Number.isInteger(c.capacity)||c.capacity<1||(familyFour&&c.capacity<4)||(children&&c.children!=='allowed')||!trusted.has(sourceKey(c.source_url))||typeof c.booking!=='string'||!c.booking.trim())return reject('camp_capacity_children_booking');
     camp={unit:c.unit,capacity:c.capacity,children:c.children==='allowed'?'allowed':'unknown',source_url:trusted.get(sourceKey(c.source_url)),booking:c.booking.slice(0,240)};camps++;
    }
@@ -55,10 +57,11 @@ export function parseItinerary(text,sources=[],input={},diagnostics=[]){
    if(hike && stop.kind!=='meal' && (stop.trail||stop.kind==='nature'||stop.kind==='activity')){
     const t=stop.trail;
     if(!t||!Number.isFinite(t.distance_km)||t.distance_km<=0||t.distance_km>40||typeof t.difficulty!=='string'||!t.difficulty.trim()||typeof t.start!=='string'||!t.start.trim()||!trusted.has(sourceKey(t.source_url)))return reject('trail_measurements');
+    if(!['one_way','return','loop'].includes(t.direction)||typeof t.end!=='string'||!t.end.trim()||typeof t.return_plan!=='string'||!t.return_plan.trim()||!trusted.has(sourceKey(t.map_url)))return reject('trail_direction_return_map');
     if(++trails>1&&format==='itinerary')return reject('multiple_trails');
-    trail={distance_km:t.distance_km,difficulty:t.difficulty.slice(0,120),start:t.start.slice(0,180),source_url:trusted.get(sourceKey(t.source_url))};
+    trail={distance_km:t.distance_km,difficulty:t.difficulty.slice(0,120),start:t.start.slice(0,180),end:t.end.slice(0,180),direction:t.direction,return_plan:t.return_plan.slice(0,220),map_url:trusted.get(sourceKey(t.map_url)),source_url:trusted.get(sourceKey(t.source_url))};
    }
-   seen.add(key);stops.push({name:stop.name.trim().slice(0,160),locality:placeLocality(stop,input.lang).trim().slice(0,160),description:stop.description.trim().slice(0,500),kind:stop.kind,...(trail?{trail}:{}),...(camp?{camping:camp}:{}),duration_minutes:stop.duration_minutes,walking:trail?trail.difficulty:stop.walking.trim().slice(0,220),source_url,...(regional.fields||{})});
+   seen.add(key);stops.push({name:stop.name.trim().slice(0,160),locality:placeLocality(stop,input.lang).trim().slice(0,160),description:stop.description.trim().slice(0,500),kind:stop.kind,...(trail?{trail}:{}),...(camp?{camping:camp}:{}),duration_minutes:stop.duration_minutes,walking:trail?[trail.difficulty,trail.direction,trail.return_plan].join(' — '):stop.walking.trim().slice(0,220),source_url,...(regional.fields||{})});
   }
   days.push({day:d.day,base:d.base.trim().slice(0,160),departure:d.departure.trim().slice(0,160),return_to:d.return_to.trim().slice(0,160),stops});
  }

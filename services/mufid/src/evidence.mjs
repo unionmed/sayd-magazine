@@ -30,6 +30,7 @@ export async function verifyLegalNotice(legal,network=fetch,now=new Date()){
 // This is not a current-access map and unknown places are NOT certified by it.
 export function placeConflict(stop,input){
  const target=normalize(input.trip?.destination||'');
+ if(/كسروان|keserwan|kesserwan/.test(target)&&!/البقاع|bekaa|زحله|zahle/.test(target)&&(/زحله|زحلة|zahle|البقاع|bekaa/.test(normalize(stop.locality))||/chateauksara\.com/.test(stop.source_url||'')))return true;
  const name=normalize(stop.name+' '+stop.locality),source=stop.source_url||'';
  if(/عكار|akkar/.test(target)&&/oakland|اوكلاند|حاصبيا|hasbaya|جاج|\bjaj\b/.test(name))return true;
  if(/طرابلس|الضنيه|tripoli|dinnieh|danniyeh/.test(target)&&!/الكوره|koura|اهدن|ehden|تنورين|tannourine/.test(target)&&(/talle koura|talle|الكوره|koura|اهدن|ehden|تنورين|tannourine/.test(name)||/horshehden\.org|tannourine/.test(source)))return true;
