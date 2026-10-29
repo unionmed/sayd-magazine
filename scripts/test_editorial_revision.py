@@ -118,4 +118,6 @@ class EditorialRevisionTests(unittest.TestCase):
             with self.assertRaises(ValueError):revision.source_input(self.root,self.base,source)
 
 
+from test_nathalie_photo_revision import NathaliePhotoRevisionTests
+
 if __name__=='__main__':unittest.main()
