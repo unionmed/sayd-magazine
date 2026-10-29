@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "homepage-only-ticker-20261028",
+  "expected_base": "c571f9db76e7bfe69eebda3509e241c20f781632",
+  "operation": "homepage-only-ticker",
+  "approval_reference": "private:owner-homepage-only-ticker-20261028-213327",
+  "expected_source_sha256": "268177d02ec63dbf796945aff8bff8cb419d88b039581075349a2fab4b6f3efc",
+  "expected_targets_sha256": "53c75d479cc82e84b205cabf11d6b32b76e12575677cc6e77b90724ed00a3abd",
+  "payload": {}
+}
