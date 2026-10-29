@@ -16,7 +16,8 @@ import threading
 from urllib.parse import quote, unquote, urlsplit
 from playwright.sync_api import sync_playwright
 from sync_laws_card_landmarks import ROOT, DOCS, LANGUAGES, config, category_path
-from test_laws_card_landmarks import main as check_static
+from test_laws_card_landmarks import main as check_static, assert_card_geometry
+from check_publication_contract import homepage_ticker_scope_repair
 
 
 VIEWPORTS = [('desktop', 1440, 1000), ('mobile', 390, 844), ('narrow-mobile', 320, 800)]
@@ -27,8 +28,10 @@ def run(base, output):
     output.mkdir(parents=True, exist_ok=True)
     data = config()
     baseline = {}
+    strip_migrations = {}
     for lang in LANGUAGES:
         path = category_path(lang)
+        strip_migrations[lang] = homepage_ticker_scope_repair(str(path.relative_to(ROOT)), base)
         baseline['/' + str(path.relative_to(DOCS))] = subprocess.check_output(
             ['git', 'show', f'{base}:{path.relative_to(ROOT)}'], cwd=ROOT)
 
@@ -95,6 +98,12 @@ def run(base, output):
                     ready(page)
                     no_overflow(page, label + '-before')
                     before = metrics(page)
+                    removed_strip = None
+                    if strip_migrations[lang]:
+                        assert page.locator('.news-strip').count() == 1
+                        removed_strip = page.locator('.news-strip').evaluate(
+                            'e => { const r=e.getBoundingClientRect(); return {y:r.y+scrollY,height:r.height}; }')
+                        assert removed_strip['height'] > 0
                     assert len(before) == (9 if lang == 'ar' else 6)
                     page.screenshot(path=str(output / f'{label}-before.png'), full_page=True)
 
@@ -103,6 +112,8 @@ def run(base, output):
                     ready(page)
                     no_overflow(page, label + '-after')
                     after = metrics(page)
+                    if strip_migrations[lang]:
+                        assert page.locator('.news-strip, .ticker').count() == 0
                     # Retain both views and measurements even if an assertion
                     # catches a layout defect before this case completes.
                     page.screenshot(path=str(output / f'{label}-after.png'), full_page=True)
@@ -110,8 +121,7 @@ def run(base, output):
                     assert len(after) == len(before)
                     for old, new in zip(before, after):
                         assert old['text'] == new['text'] and old['href'] == new['href'], (label, 'card content changed')
-                        for key in ['x', 'y', 'width', 'height']:
-                            assert abs(old[key] - new[key]) <= 1, (label, key, old, new)
+                        assert_card_geometry(old, new, label, removed_strip)
                         assert new['loaded'], (label, 'broken image', new)
                     assert sum('laws-landmark-' in i['image'] for i in after) == len(selected)
                     assert all(i['naturalWidth'] == 960 for i in after if 'laws-landmark-' in i['image'])
@@ -157,7 +167,8 @@ def run(base, output):
                     report['cases'].append({'language': lang, 'viewport': mode, 'width': width,
                         'card_count': len(after), 'landmark_count': len(selected),
                         'before': before, 'after': after, 'no_overflow': True,
-                        'card_geometry_and_text_unchanged': True, 'credits_keyboard_and_repeated_clicks': True,
+                        'card_geometry_and_text_unchanged_except_verified_strip': True,
+                        'removed_strip': removed_strip, 'credits_keyboard_and_repeated_clicks': True,
                         'article_links_and_back_forward': True})
                     report.pop('current_case', None)
                     (output / 'report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')

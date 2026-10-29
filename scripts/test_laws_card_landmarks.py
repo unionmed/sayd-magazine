@@ -45,6 +45,19 @@ def assert_category_scope(before, page, lang, data, path, base):
             or homepage_ticker_scope_repair(str(path.relative_to(ROOT)), base)), f'Out-of-scope category change: {lang}'
 
 
+def assert_card_geometry(old, new, label, removed_strip=None):
+    """Only a separately verified strip removal may shift following cards."""
+    expected = {key: old[key] for key in ('x', 'y', 'width', 'height')}
+    if removed_strip is not None:
+        import math
+        assert all(math.isfinite(removed_strip[key]) for key in ('y', 'height'))
+        assert removed_strip['height'] > 0, (label, 'Invalid removed strip height')
+        if old['y'] >= removed_strip['y'] + removed_strip['height'] - 1:
+            expected['y'] -= removed_strip['height']
+    for key, value in expected.items():
+        assert abs(value - new[key]) <= 1, (label, key, old, new, removed_strip)
+
+
 def main(base=None):
     data = config()
     images = data['images']
