@@ -27,7 +27,7 @@ test('completed web tool sources support JSON answers without inline annotations
  const result=await response.json();assert.equal(response.status,200);assert.equal(result.itinerary.days[0].stops[0].name,'ساحة دير القمر');assert.equal(result.sources_consulted,true);assert.equal(result.checked_at,null);assert.deepEqual(result.sources,parsed.sources);
  for(const output of [[message],[{...search,status:'failed'},message],[{...search,type:'other_tool'},message],[{...search,action:{sources:[]}},message]]){
   assert.equal(extractResponse({output}).verified,false);
-  const res=await createHandler(async()=>Response.json({status:'completed',output}))(req({mode:'plan'}),env());assert.equal(res.status,502);assert.equal((await res.json()).error,'verification_failed');
+  const res=await createHandler(async()=>Response.json({status:'completed',output}))(req({mode:'plan'}),env());assert.equal(res.status,502);assert.equal((await res.json()).error,'itinerary_unavailable');
  }
  const cited={...message,content:[{type:'output_text',text:answer,annotations:[{type:'url_citation',url:'https://example.org/visit',title:'Visit guide'}]}]};
  assert.equal(extractResponse({output:[search,cited]}).sources[0].title,'Visit guide');

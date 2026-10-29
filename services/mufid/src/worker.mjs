@@ -80,7 +80,7 @@ export function createHandler(network=fetch,options={}) {
       if(!upstream.ok)return reply({error:'provider_unavailable',articles:cards},502);
       let data=await upstream.json(),output=extractResponse(data);
       if(!output.answer || data.status!=='completed')return reply({error:'incomplete_response',articles:cards},502);
-      if(web && !output.verified)return reply({error:'verification_failed',articles:cards},502);
+      if(web && !output.verified && !(input.mode==='plan'&&input.task==='itinerary'))return reply({error:'verification_failed',articles:cards},502);
       let itinerary;const defects=[];let consulted=output.sources;
       const parseReviewed=(answer,sources)=>{
         const parsed=parseItinerary(answer,sources,input,defects);
@@ -90,7 +90,8 @@ export function createHandler(network=fetch,options={}) {
         return review.plan;
       };
       if(input.mode==='plan'&&input.task==='itinerary'){
-        itinerary=parseReviewed(output.answer,output.sources);
+        if(!output.verified)defects.push('web_sources_missing: retrieve the actual supporting pages; registry records are not retrieved sources');
+        itinerary=output.verified?parseReviewed(output.answer,output.sources):null;
         // One bounded revision, never an open-ended retry loop or a vague draft.
         if(!itinerary){
           const revision={regional_defects:regionalDefects(output.answer,output.sources,input),draft:output.answer.slice(0,12000),defects:JSON.stringify(defects)+'. Check every constraint again: exact destination region, no duplicate places, no law/documents as visits, no alternatives merged into a route, ONE named hiking trail with sourced length/difficulty. Keep practical visitor sites with source_url, kind, duration_minutes and walking. For unresolved hunting legality use advice with days:[], never a route through law documents. Do not merely move rejected alternatives into summary. Read the draft against the original request and correct it.'};
@@ -115,6 +116,12 @@ export function createHandler(network=fetch,options={}) {
           output.verified=false;
           const note={ar:'لم أتحقق من إعلان رسمي نافذ للموسم الجاري في الوجهة المطلوبة؛ لذلك لا أعطي وجهة صيد على أساس أنه مسموح. البيان الخاص بموسم سابق لا يثبت الوضع الحالي. الناقص تحديدًا قرار وزارة البيئة للموسم الجاري، ولائحة الطرائد والأعداد والقيود. الرخصة والتأمين لا يحلان محل قرار فتح الموسم.',en:'I could not verify an official notice in force for the current hunting season at the requested destination, so I cannot recommend a hunt as permitted. A previous-season notice does not establish the current position. Confirm the current season decision, permitted species and bag limits, and required licences with the relevant authority before going.',fr:'Je n’ai pas pu vérifier une décision officielle applicable à la saison de chasse actuelle dans la destination demandée. Je ne peux donc pas proposer une chasse comme autorisée. Un avis d’une saison passée ne prouve pas la situation actuelle. Confirmez la saison, les espèces, les quotas et les permis auprès de l’autorité compétente avant de partir.'};
           itinerary.summary=note[input.lang];
+          const lebanon= /لبنان|lebanon|liban/i.test(input.trip?.destination||'');
+          const law=output.sources.find(s=>{try{return /(?:^|\.)moe.gov.lb$/.test(new URL(s.url).hostname)&&/قانون رقم 580/.test(decodeURIComponent(s.url).replace(/-/g,' '));}catch{return false;}});
+          if(lebanon&&law){
+            const licence={ar:' التحضير القانوني: رخصة الصيد شخصية وسنوية من وزارة البيئة. أثناء الصيد يلزم حملها مع رخصة السلاح وتأمين المسؤولية تجاه الغير، وفق المادتين 6 و13 من القانون 580/2004. هذه المستندات لا تفتح الموسم ولا تحدد طرائده.',en:' Legal preparation under Articles 6 and 13 of Law 580/2004: an annual personal hunting licence from the Environment Ministry, the firearm licence and third-party hunting insurance. These documents do not open a season or define permitted game.',fr:' Préparation légale selon les articles 6 et 13 de la loi 580/2004 : permis personnel annuel du ministère de l’Environnement, permis d’arme et assurance de responsabilité envers les tiers. Ces documents ne déclarent pas la saison ouverte.'};
+            itinerary.summary+=licence[input.lang];
+          }
         }
         if(!itinerary.days.length)output.verified=false;
         if(itinerary.regional_review_required){output.verified=false;output.sources=[...new Set(itinerary.days.flatMap(d=>d.stops.flatMap(s=>s.verification?.sources||[s.source_url])))].map(url=>output.sources.find(s=>s.url===url)||{url,title:new URL(url).hostname});}

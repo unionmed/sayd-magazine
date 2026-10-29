@@ -13,14 +13,37 @@ function inDestination(place,input){
  const query=' '+normalize(input.query)+' ';
  return place.regions.some(r=>{const alias=normalize(r);return query.trim()===alias||['في','الي','in','to','dans','a'].some(prefix=>query.includes(' '+prefix+' '+alias+' '));});
 }
-export function placeEvidenceGuide(input,catalog=PLACE_EVIDENCE){return catalog.filter(p=>inDestination(p,input)).map(({id,names,kind,locality,sources,basis,checked_at,trail,nature_dining,required_sources,camping,source_role})=>({id,names,kind,locality,sources,basis,checked_at,trail,nature_dining,required_sources,camping,source_role,access:'unconfirmed'}));}
+function activityMatch(p,input){
+ const acts=input.trip?.activities||[],q=normalize(input.query);
+ if(acts.includes('hunting'))return false;
+ if(acts.includes('camping'))return !!p.camping&&p.source_role==='operator';
+ if(acts.includes('barbecue'))return p.activities_supported?.includes('barbecue')===true;
+ if(acts.includes('riding'))return p.activities_supported?.includes('riding')===true;
+ if(/هايك|hiking|randonn|مسار|\btrail\b/.test(q))return !!p.trail;
+ if(/مطعم|مطاعم|restaurant|dining/.test(q))return p.kind==='meal'&&(!/طبيعه|nature|natural/.test(q)||p.nature_dining===true);
+ return true;
+}
+function missingActivityNote(input,lang){
+ const acts=input.trip?.activities||[];
+ const kind=acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':/هايك|hiking|randonn|مسار|\btrail\b/.test(normalize(input.query))?'trail':'other';
+ const notes={
+ camping:{ar:'لم تتأكد من الجهة المشغلة خيمة بالسعة المطلوبة وقبول الأطفال ومرافق المبيت والحجز؛ لذلك لا يوجد برنامج تخييم معتمد لهذه الأسرة.',en:'Operator evidence has not confirmed the required tent capacity, child admission, overnight facilities and booking; no family camping plan is accepted.',fr:'La capacité de la tente, l’accueil des enfants, les équipements et la réservation ne sont pas confirmés par l’exploitant ; aucune nuitée familiale n’est validée.'},
+ barbecue:{ar:'لم يتأكد إذن الشواء الحالي من إدارة موقع محدد، مع الطاولات والمرافق المطلوبة؛ لذلك لا أعتمد مكانًا جاهزًا للشواء ولا أوصي بإشعال النار.',en:'Current barbecue permission, tables and facilities have not been confirmed by a specific site operator; no ready-to-use barbecue site is accepted.',fr:'L’autorisation actuelle de barbecue, les tables et les équipements ne sont pas confirmés par un exploitant précis ; aucun site de barbecue n’est validé.'},
+ trail:{ar:'لم تكتمل أدلة مسار واحد يناسب الوقت المطلوب، ببداية ونهاية وطول وصعوبة وخريطة وخطة عودة موثقة.',en:'Evidence is incomplete for one trail within the requested time, with documented endpoints, distance, difficulty, map and return plan.',fr:'Les preuves restent incomplètes pour un sentier adapté au temps demandé : départ, arrivée, distance, difficulté, carte et retour.'},
+ other:{ar:'لم يكتمل دليل المكان أو شروط النشاط اللازمة لبرنامج قابل للتنفيذ.',en:'Place evidence or essential activity conditions remain incomplete for an actionable plan.',fr:'Les preuves du lieu ou les conditions essentielles de l’activité restent incomplètes pour un programme utilisable.'}};
+ return notes[kind][lang];
+}
+export function placeEvidenceGuide(input,catalog=PLACE_EVIDENCE){return catalog.filter(p=>inDestination(p,input)&&activityMatch(p,input)).map(({id,names,kind,locality,sources,basis,checked_at,trail,nature_dining,required_sources,camping,source_role})=>({id,names,kind,locality,sources,basis,checked_at,trail,nature_dining,required_sources,camping,source_role,access:'unconfirmed'}));}
 export function acceptPlaceEvidence(plan,sources,input,catalog=PLACE_EVIDENCE){
  if(!plan)return {ok:false,reason:'missing_plan',name:''};
  if(!plan.days.length){
   if(plan.legal)return {ok:true,plan};
   const lang=['ar','en','fr'].includes(input.lang)?input.lang:'ar';
-  const leads=catalog.filter(p=>inDestination(p,input)&&p.sources.some(url=>sources.some(s=>evidenceKey(s.url)===evidenceKey(url))));
-  const summary=({ar:'لم يكتمل دليل المكان أو شروط النشاط اللازمة لبرنامج قابل للتنفيذ.',en:'Place evidence or essential activity conditions remain incomplete for an actionable plan.',fr:'Les preuves du lieu ou les conditions essentielles de l’activité restent incomplètes pour un programme utilisable.'})[lang];
+  const consulted=new Set(sources.map(s=>evidenceKey(s.url)));
+  const leads=catalog.filter(p=>inDestination(p,input)&&activityMatch(p,input)&&p.sources.some(url=>consulted.has(evidenceKey(url)))&&(p.required_sources||[]).every(url=>consulted.has(evidenceKey(url))));
+  const details=leads.slice(0,2).map(p=>p.names[0]+': '+p.description[lang]).join('\n');
+  const partial={ar:'معلومات جزئية موثقة، وليست برنامجًا جاهزًا:',en:'Reviewed partial information, not a ready itinerary:',fr:'Informations partielles documentées, pas un programme prêt :'}[lang];
+  const summary=missingActivityNote(input,lang)+(details?'\n'+partial+'\n'+details:'');
   return {ok:true,plan:{...plan,summary,reviewed_leads:leads.map(p=>({name:p.names[0],source_url:p.sources[0],description:p.description[lang]}))}};
  }
  const consulted=new Set(sources.map(s=>evidenceKey(s.url)));

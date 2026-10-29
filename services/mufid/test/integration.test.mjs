@@ -13,7 +13,7 @@ test('Akkar revision combines reviewed identities, concrete defects and earlier 
  const handler=createHandler(async(url,opts)=>{
   assert.equal(url,'https://api.openai.com/v1/responses');calls++;
   const payload=JSON.parse(opts.body),context=JSON.parse(payload.input);
-  assert.equal(context.reviewed_regional_places.length,4);
+  assert.equal(context.reviewed_regional_places.length,1);
   if(calls===1)return response(plan('Oakland'),[haykal.sources[0]]);
   assert.equal(calls,2);assert.equal(payload.max_tool_calls,2);
   assert.match(context.revision.defects,/regional_evidence/);
