@@ -649,5 +649,6 @@
       "noreferrer"
     ],
     "scope": "All existing mast-top headers in AR/EN/FR; preserve headerless legacy and redirect shells. Existing social destinations and order remain unchanged; append TikTok."
-  }
+  },
+  "ticker_scope": {"version": 1, "pages": ["index.html", "en/index.html", "fr/index.html"]}
 }
