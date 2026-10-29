@@ -16,7 +16,8 @@ from caption_revision import changed_paths
 
 PREFIX = 'content/editorial-revisions/'
 SCHEMA = 'sayd-editorial-revision-v1'
-TARGETS = {'homepage-only-ticker': None, 'add-adonis-ticker': 'adonis-respect-quarry-20261026',
+TARGETS = {'add-nathalie-interview-photos': 'nathalie-denolf-interview-20261028',
+           'homepage-only-ticker': None, 'add-adonis-ticker': 'adonis-respect-quarry-20261026',
            'replace-wanaameen-photo': 'riyadh-results-20261024',
            'promote-episode-three-lead': 'hunting-tourism-egypt-iraq-jordan-20261026'}
 
@@ -40,6 +41,9 @@ def validate_revision(value, path, base):
         keys(value['payload'], ())  # Titles come only from the approved source.
     if value['operation'] == 'homepage-only-ticker':
         require(value['id'] == 'homepage-only-ticker-20261028', 'Exact ticker scope revision ID required')
+    if value['operation'] == 'add-nathalie-interview-photos':
+        keys(value['payload'], ())
+        require(value['id'] == 'nathalie-five-photos-20261029', 'Exact Nathalie photo revision ID required')
     if value['operation'] == 'promote-episode-three-lead':
         require(value['id'] == 'episode-three-lead-20261026', 'Exact episode promotion revision ID required')
     return value
@@ -140,6 +144,9 @@ def expected_changes(root, base, value, path):
         elif value['operation'] == 'promote-episode-three-lead':
             import scoped_lead_revision
             result, effective, article = scoped_lead_revision.expected_changes(root, base, record)
+        elif value['operation'] == 'add-nathalie-interview-photos':
+            import nathalie_photo_revision
+            result, effective, article = nathalie_photo_revision.expected_changes(root, base, value['payload'])
         else:
             import scoped_photo_revision
             result, effective, article = scoped_photo_revision.expected_changes(root, base, value['payload'])
@@ -175,6 +182,22 @@ def source_input(root, base, source):
         inventory = ('path\tgit_blob_sha\tsize_bytes\n' + asset + '\t' + after[asset][2] + '\t' + str(len(image)) + '\n').encode()
         require(compiler.read_blob(root, after[shard]) == inventory, 'Exact new image inventory required')
         inputs.update({asset: image, shard: inventory})
+    if value['operation'] == 'add-nathalie-interview-photos':
+        import nathalie_photo_revision as nathalie
+        shard = 'audit/image-catalog/manifest/release-' + value['id'] + '.tsv'
+        inventory = 'path\tgit_blob_sha\tsize_bytes\n'
+        for photo in sorted(nathalie.PHOTOS, key=lambda p: p['path']):
+            asset = photo['path']
+            require(asset not in before and after.get(asset, ())[:2] == ('100644', 'blob'), 'Exact additive original image required')
+            require(not any(p.casefold() == asset.casefold() for p in before), 'Image path collision')
+            image = compiler.read_blob(root, after[asset])
+            require(compiler.sha256(image) == photo['sha256'], 'Supplied original image hash mismatch')
+            inputs[asset] = image
+            inventory += asset + '\t' + after[asset][2] + '\t' + str(len(image)) + '\n'
+        require(shard not in before and after.get(shard, ())[:2] == ('100644', 'blob'), 'Exact additive inventory required')
+        require(not any(p.casefold() == shard.casefold() for p in before), 'Inventory path collision')
+        require(compiler.read_blob(root, after[shard]) == inventory.encode(), 'Exact four-image inventory required')
+        inputs[shard] = inventory.encode()
     require(set(changed_paths(before, after)) == set(inputs), 'Revision source contains unsupported files')
     return path, value, dict(expected, **inputs), record, article
 
@@ -194,6 +217,10 @@ def compile_source(root, base, source, output, report_path, allow_distribution=F
         (output / target).write_bytes(data)
     if value['operation'] == 'replace-wanaameen-photo':
         compiler.image_size(output / value['payload']['photo']['path'])
+    if value['operation'] == 'add-nathalie-interview-photos':
+        import nathalie_photo_revision as nathalie
+        for photo in nathalie.PHOTOS:
+            require(compiler.image_size(output / photo['path']) == nathalie.DIMENSIONS[photo['id']], 'Original image dimensions mismatch')
     compiler.git(output, 'add', '--all')
     generated_tree = compiler.git(output, 'write-tree').decode().strip()
     before, after = compiler.tree(root, base), compiler.tree(output, generated_tree)
