@@ -825,8 +825,11 @@ def en_chrome(
     en_href: str,
     articles: dict[str, dict],
     extra_head: str = "",
+    is_home: bool = False,
 ) -> str:
     """English chrome. Absolute canonical/OG/hreflang are applied afterwards by seo_foundation.py."""
+    from ticker_scope import homepage_only
+    ticker = ticker_html(depth, articles, "en") if is_home or not homepage_only(ROOT) else ""
     css = rel(depth, "assets/css/site.css") + f"?v={CSS_CACHE}"
     logo = rel(depth, "media/brand/sayd-logo.png")
     home_en = rel(depth, "en/index.html")
@@ -884,7 +887,7 @@ def en_chrome(
         </details>
       </div>
     </header>
-    {ticker_html(depth, articles, "en")}
+    {ticker}
   </div>
 {body}
   <footer class="site-footer">
@@ -1216,6 +1219,7 @@ def write_home(articles: dict[str, dict]) -> None:
 """
     html = en_chrome(
         depth=1,
+        is_home=True,
         title="Sayd Magazine · English",
         description=TAGLINE_EN,
         body=main,

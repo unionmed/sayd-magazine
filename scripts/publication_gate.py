@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 from urllib.parse import quote, unquote, urljoin, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 from lxml import html
+from ticker_scope import homepage_only_contract
 
 ORIGIN = 'https://sayd-magazine.com'
 REPO = 'unionmed/sayd-magazine'
@@ -93,6 +94,10 @@ def tickers(doc, base):
     require(items[0] and items[0] == items[1], 'Different/empty ticker loops: ' + base)
     return items[0]
 
+def no_internal_ticker(doc, base):
+    nodes = doc.xpath('//*[contains(concat(" ", normalize-space(@class), " "), " ticker ") or contains(concat(" ", normalize-space(@class), " "), " news-strip ")]')
+    require(not nodes, "Unexpected internal ticker: " + base)
+
 def main_signature(doc, base):
     nodes = doc.xpath('//main')
     require(len(nodes) == 1, 'Missing/ambiguous main content: ' + base)
@@ -127,6 +132,11 @@ def placements(doc, base, target):
     return result
 
 def verify(source, article_url, payload=None, review=None, get=fetch):
+    # Policy is read from the same pinned published tree as the article, never cwd.
+    try:
+        homepage_ticker_only = homepage_only_contract(json.loads(source.read("content/publication-contract.json")))
+    except (ValueError, TypeError, AssertionError) as error:
+        raise Blocked("Invalid published ticker scope: " + str(error)) from error
     evidence = []
     cache = {}
     def live(url):
@@ -177,7 +187,12 @@ def verify(source, article_url, payload=None, review=None, get=fetch):
         require(place, 'Article absent from approved homepage placement: ' + lang)
         require(place == placements(home_live,home,target), 'Editorial placement mismatch: '+lang)
         ticker = tickers(home_source,home)
-        require(ticker == tickers(home_live,home) == tickers(actual,target), 'Stale internal ticker: '+lang)
+        require(ticker == tickers(home_live,home), 'Stale homepage ticker: '+lang)
+        if homepage_ticker_only:
+            no_internal_ticker(expected,target)
+            no_internal_ticker(actual,target)
+        else:
+            require(ticker == tickers(actual,target), 'Stale internal ticker: '+lang)
         # Internal category and Updates listing are independently checked against main.
         cats = expected.xpath('//div[@class="breadcrumb"]//a/@href | //header[contains(@class,"article-header")]//a[contains(@class,"badge")]/@href')
         category = [absolute(target,c) for c in cats if '/category/' in absolute(target,c)]
@@ -188,7 +203,11 @@ def verify(source, article_url, payload=None, review=None, get=fetch):
             ls = document(source.read(source_path(listing)))
             la = document(live(listing))
             require(main_signature(ls,listing) == main_signature(la,listing), 'Live category/Updates mismatch: '+listing)
-            require(tickers(la,listing) == ticker, 'Stale listing ticker: '+listing)
+            if homepage_ticker_only:
+                no_internal_ticker(ls,listing)
+                no_internal_ticker(la,listing)
+            else:
+                require(tickers(la,listing) == ticker, 'Stale listing ticker: '+listing)
             if listing == category[0]:
                 require(any(absolute(listing,a.get('href')) == target for a in la.xpath('//main//a[@href]')),
                         'Article missing from internal category: '+lang)

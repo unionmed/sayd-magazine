@@ -16,7 +16,7 @@ from caption_revision import changed_paths
 
 PREFIX = 'content/editorial-revisions/'
 SCHEMA = 'sayd-editorial-revision-v1'
-TARGETS = {'add-adonis-ticker': 'adonis-respect-quarry-20261026',
+TARGETS = {'homepage-only-ticker': None, 'add-adonis-ticker': 'adonis-respect-quarry-20261026',
            'replace-wanaameen-photo': 'riyadh-results-20261024',
            'promote-episode-three-lead': 'hunting-tourism-egypt-iraq-jordan-20261026'}
 
@@ -36,8 +36,10 @@ def validate_revision(value, path, base):
     require(re.fullmatch(r'private:[A-Za-z0-9][A-Za-z0-9._-]{0,299}', value['approval_reference'] or ''), 'Bounded private approval reference required')
     for field in ('expected_source_sha256', 'expected_targets_sha256'):
         require(SHA.fullmatch(value[field] or ''), 'Required expected SHA256 missing')
-    if value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead'}:
+    if value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead', 'homepage-only-ticker'}:
         keys(value['payload'], ())  # Titles come only from the approved source.
+    if value['operation'] == 'homepage-only-ticker':
+        require(value['id'] == 'homepage-only-ticker-20261028', 'Exact ticker scope revision ID required')
     if value['operation'] == 'promote-episode-three-lead':
         require(value['id'] == 'episode-three-lead-20261026', 'Exact episode promotion revision ID required')
     return value
@@ -102,6 +104,9 @@ def ticker_changes(root, base, record):
     for path in sorted(before):
         if not (path.startswith('docs/') and path.endswith('.html')):
             continue
+        from ticker_scope import homepage_only, is_homepage
+        if homepage_only(root) and not is_homepage(Path(root)/path, docs):
+            continue
         raw = read(path); page = raw.decode()
         loops = sync_tickers.TICKER.findall(page)
         if not loops:
@@ -119,19 +124,25 @@ def expected_changes(root, base, value, path):
     import publication_compiler as compiler
     value = validate_revision(value, path, base)
     before = compiler.tree(root, base)
-    source_path = 'content/publications/' + TARGETS[value['operation']] + '.json'
-    require(before.get(source_path, ())[:2] == ('100644', 'blob'), 'Approved existing publication required')
-    raw = compiler.read_blob(root, before[source_path])
-    require(compiler.sha256(raw) == value['expected_source_sha256'], 'Existing source hash mismatch')
-    record = validate(loads(raw.decode()), TARGETS[value['operation']])
-    if value['operation'] == 'add-adonis-ticker':
-        result, effective, article = ticker_changes(root, base, record)
-    elif value['operation'] == 'promote-episode-three-lead':
-        import scoped_lead_revision
-        result, effective, article = scoped_lead_revision.expected_changes(root, base, record)
+    if value['operation'] == 'homepage-only-ticker':
+        contract_raw = compiler.read_blob(root, before['content/publication-contract.json'])
+        require(compiler.sha256(contract_raw) == value['expected_source_sha256'], 'Protected contract source hash mismatch')
+        from ticker_scope import migration_changes
+        result, effective, article = migration_changes(root, base)
     else:
-        import scoped_photo_revision
-        result, effective, article = scoped_photo_revision.expected_changes(root, base, value['payload'])
+        source_path = 'content/publications/' + TARGETS[value['operation']] + '.json'
+        require(before.get(source_path, ())[:2] == ('100644', 'blob'), 'Approved existing publication required')
+        raw = compiler.read_blob(root, before[source_path])
+        require(compiler.sha256(raw) == value['expected_source_sha256'], 'Existing source hash mismatch')
+        record = validate(loads(raw.decode()), TARGETS[value['operation']])
+        if value['operation'] == 'add-adonis-ticker':
+            result, effective, article = ticker_changes(root, base, record)
+        elif value['operation'] == 'promote-episode-three-lead':
+            import scoped_lead_revision
+            result, effective, article = scoped_lead_revision.expected_changes(root, base, record)
+        else:
+            import scoped_photo_revision
+            result, effective, article = scoped_photo_revision.expected_changes(root, base, value['payload'])
     require(result and all(p in before for p in result), 'Only existing derived targets may be modified')
     originals = read_base_blobs(root, before, result)
     digest = compiler.sha256(compiler.canonical({p: compiler.sha256(originals[p]) for p in sorted(result)}))

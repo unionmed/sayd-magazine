@@ -109,7 +109,8 @@ def safe_output_path(value):
         or (value.startswith("content/caption-revisions/") and len(path.parts) == 3 and path.suffix == ".json")
         or value in {"content/editorial-revisions/wanaameen-jcsa-photo-20261026.json",
                      "content/editorial-revisions/adonis-ticker-20261026.json",
-                     "content/editorial-revisions/episode-three-lead-20261026.json"}
+                     "content/editorial-revisions/episode-three-lead-20261026.json",
+                     "content/editorial-revisions/homepage-only-ticker-20261028.json"}
         or (path.parts[:2] in {("content", "posts"), ("content", "en"), ("content", "fr")}
             and len(path.parts) == 3 and path.suffix == ".md")
         or (value.startswith("audit/image-catalog/manifest/release-")
@@ -127,8 +128,11 @@ def blob_sha(data):
     return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
 
 
-def read_change(site, item):
-    path = safe_output_path(item.get("path"))
+def read_change(site, item, expected_contract=None):
+    if item.get("path") == "content/publication-contract.json" and expected_contract is not None:
+        path = PurePosixPath("content/publication-contract.json")
+    else:
+        path = safe_output_path(item.get("path"))
     require(item.get("mode") == "100644", "Only regular non-executable output files are accepted")
     require(item.get("status") in ("A", "M"), "Deletions/renames are forbidden")
     full_sha(item.get("new_blob"))
@@ -144,6 +148,8 @@ def read_change(site, item):
         require(not cursor.is_symlink(), "Symlinked output component")
     require(target.is_file(), f"Missing output file: {path}")
     data = target.read_bytes()
+    if path.as_posix() == "content/publication-contract.json":
+        require(data == expected_contract, "Protected contract differs from exact ticker migration")
     require(len(data) == item["bytes"] and hashlib.sha256(data).hexdigest() == item["sha256"]
             and blob_sha(data) == item["new_blob"], f"Output bytes changed: {path}")
     return data
@@ -161,7 +167,15 @@ def validate_plan(site, plan, base, source, compiler, expected_plan):
     paths = [item.get("path") for item in changes if isinstance(item, dict)]
     require(len(paths) == len(changes) and all(isinstance(p, str) for p in paths), "Invalid changes")
     require(paths == sorted(set(paths)), "Duplicate or unordered change paths")
-    return [(item, read_change(site, item)) for item in changes]
+    expected_contract = None
+    if "content/publication-contract.json" in paths:
+        from ticker_scope import verified_migration_outputs
+        expected = verified_migration_outputs(site, base, source)
+        require(set(paths) == set(expected), "Exact ticker migration output set required")
+        require(all((site / p).read_bytes() == data for p, data in expected.items()),
+                "Ticker migration output differs from trusted BASE")
+        expected_contract = expected["content/publication-contract.json"]
+    return [(item, read_change(site, item, expected_contract)) for item in changes]
 
 
 def tree_entries(root, commit):

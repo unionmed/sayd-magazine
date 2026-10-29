@@ -47,12 +47,23 @@ def sync(docs=ROOT / 'docs', check=False, root=ROOT):
     else:
         from ticker_policy import load, validate
         validate(load(root), root)
+    from ticker_scope import homepage_only, is_homepage, strip_internal_ticker
+    home_only = homepage_only(root)
     source = sources(docs, root)
     scanned = changed = 0
     for path in sorted(docs.rglob('*.html')):
         page = path.read_text()
+        if home_only and not is_homepage(path, docs):
+            updated = strip_internal_ticker(page)
+            if updated != page:
+                changed += 1
+                if not check:
+                    path.write_text(updated)
+            continue
         loops = TICKER.findall(page)
         if not loops:
+            if home_only:
+                raise ValueError(f"{path}: homepage ticker missing")
             continue
         if len(loops) != 2:
             raise ValueError(f'{path}: expected two ticker loops, found {len(loops)}')

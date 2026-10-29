@@ -134,14 +134,21 @@ def validate_report(site, report, expected_base, expected_source, expected_compi
     require(report['policy'] == {'allow_distribution': allow_distribution}, 'Plan distribution scope mismatch')
     require(report['plan_sha256'] == sha256(canonical({k: v for k, v in report.items() if k != 'plan_sha256'})), 'Plan hash mismatch')
     paths = []
+    migration = None
+    if any(e.get('path') == 'content/publication-contract.json' for e in report['changes']):
+        from ticker_scope import verified_migration_outputs
+        migration = verified_migration_outputs(site, expected_base, expected_source)
+        require({e['path'] for e in report['changes']} == set(migration), 'Exact ticker migration outputs required')
     for entry in report['changes']:
         require(set(entry) == {'path', 'mode', 'old_blob', 'new_blob', 'sha256', 'bytes', 'status'}, 'Invalid changed-file record')
         path = entry['path']
-        require(allowed_output_path(path) and entry['mode'] == '100644' and entry['status'] in {'A', 'M'}, 'Disallowed output file/mode')
+        require((allowed_output_path(path) or (migration is not None and path == 'content/publication-contract.json')) and entry['mode'] == '100644' and entry['status'] in {'A', 'M'}, 'Disallowed output file/mode')
         target = site / path
         require(target.is_file() and not any(p.is_symlink() for p in [target, *target.parents] if p != site.parent), 'Unsafe output symlink')
         require(target.resolve().is_relative_to(site), 'Output escapes staging root')
         data = target.read_bytes()
+        if migration is not None:
+            require(data == migration[path], 'Output differs from exact ticker migration')
         require((sha256(data), blob_sha(data), len(data)) == (entry['sha256'], entry['new_blob'], entry['bytes']), 'Changed output bytes')
         require((entry['old_blob'] is None) == (entry['status'] == 'A'), 'Bad output status')
         paths.append(path)
@@ -349,7 +356,9 @@ def render_article(stage, article, language, photos, pairs, doors, seo):
     from sync_tickers import TICKER, sources, ticker_for
     rendered = '<!DOCTYPE html>\n' + dom.tostring(node, encoding='unicode', method='html')
     ticker = ticker_for(path, sources(stage / 'docs', stage)[language])
-    rendered = TICKER.sub(lambda m: m[1] + ticker + m[3], rendered)
+    from ticker_scope import homepage_only, strip_internal_ticker
+    rendered = (strip_internal_ticker(rendered) if homepage_only(stage) else
+                TICKER.sub(lambda m: m[1] + ticker + m[3], rendered))
     save(path, search_links(rendered, path))
     front = {'title': tr['title'], 'slug': article['slugs'][language], 'date': article['published'],
              'author': article['author'][language], 'categories': [doors[article['primary_door']]['folder']],
@@ -600,7 +609,9 @@ def preservation(root, stage, before, records, changes, allow_distribution):
     """Independent exact historical-byte guard, with narrow derived exceptions."""
     from sync_tickers import TICKER
     articles = [a for record in records for a in record['articles']]
+    from ticker_scope import homepage_only
     ticker = allow_distribution and any(a['distribution']['ticker'] for a in articles)
+    legacy_internal_ticker = ticker and not homepage_only(stage)
     for path in changes:
         require(allowed_output_path(path), 'Unexpected generated file: ' + path)
         if path not in before:
@@ -608,7 +619,7 @@ def preservation(root, stage, before, records, changes, allow_distribution):
         old = read_blob(root, before[path])
         new = (stage / path).read_bytes()
         if ARTICLE.fullmatch(path) or (path.startswith('docs/') and path.endswith('.html') and not re.fullmatch(r'docs/(?:(?:en|fr)/)?(?:(?:category/[^/]+|articles|stories|interviews)/)?index\.html', path)):
-            require(ticker, 'Historical page modified without ticker scope: ' + path)
+            require(legacy_internal_ticker, 'Historical page modified without ticker scope: ' + path)
             outside = lambda b: TICKER.sub(lambda m: m[1] + m[3], b.decode())
             require(outside(old) == outside(new), 'Historical page changed outside exact ticker loops: ' + path)
         elif '/category/' in path or path.endswith(('/articles/index.html', '/stories/index.html', '/interviews/index.html')):

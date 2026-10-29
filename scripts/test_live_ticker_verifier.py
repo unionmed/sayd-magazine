@@ -19,6 +19,20 @@ class LiveTickerVerifierTests(unittest.TestCase):
     def accepts(self, actual, source=None, count=2):
         return matches_release(actual.encode(), (source or self.source).encode(), count)
 
+    def test_internal_absence_exact_content_and_known_cdn(self):
+        source = self.source.replace(self.ticker, '')
+        cdn = self.cdn.replace(self.ticker, '')
+        check = lambda actual, expected=source: matches_release(actual.encode(), expected.encode(), 2, ticker_expected=False)
+        self.assertTrue(check(source))
+        self.assertTrue(check(cdn))
+        for markup in (self.ticker, '<div class="news-strip"></div>', '<div class="extra ticker"></div>'):
+            self.assertFalse(check(source + markup))
+            self.assertFalse(check(source + markup, source + markup))
+        self.assertFalse(check(cdn.replace('Keep this text', 'Changed text')))
+        self.assertFalse(check(cdn.replace('photo.jpg', 'other.jpg')))
+        self.assertFalse(matches_release(source.encode(), source.encode(), 2))
+        self.assertFalse(matches_release(b'', source.encode(), 2, ticker_expected=False))
+
     def test_exact_release_and_known_cdn_transform(self):
         self.assertTrue(self.accepts(self.source))
         self.assertTrue(self.accepts(self.cdn))

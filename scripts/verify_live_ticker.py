@@ -9,6 +9,9 @@ import time
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 from sync_tickers import ROOT, TICKER
+from ticker_scope import homepage_only, is_homepage
+from lxml import html as dom_html
+from lxml.etree import ParserError
 
 
 def cloudflare_email(value):
@@ -35,10 +38,17 @@ def origin_html(page):
     return re.sub(beacon_script, '', page)
 
 
-def matches_release(actual, expected, count):
+def matches_release(actual, expected, count, *, ticker_expected=True):
     try:
         page, source = actual.decode('utf-8'), expected.decode('utf-8')
         loops, approved = TICKER.findall(page), TICKER.findall(source)
+        if not ticker_expected:
+            # Reject empty wrappers and alternate class ordering as well as loops.
+            for value in (page, source):
+                doc = dom_html.fromstring(value)
+                if doc.xpath('//*[contains(concat(" ", normalize-space(@class), " "), " ticker ") or contains(concat(" ", normalize-space(@class), " "), " news-strip ")]'):
+                    return False
+            return page == source or origin_html(page) == source
         if not (0 < count <= 10 and len(loops) == len(approved) == 2):
             return False
         if loops != approved or loops[0][1] != loops[1][1]:
@@ -46,11 +56,12 @@ def matches_release(actual, expected, count):
         if loops[0][1].count('<a ') != count:
             return False
         return page == source or origin_html(page) == source
-    except (ValueError, UnicodeError, IndexError):
+    except (ValueError, UnicodeError, IndexError, ParserError):
         return False
 
 
 def verify(revision, timeout=900):
+    scope_homepage_only = homepage_only(ROOT)
     source = json.loads((ROOT/'content/homepage.json').read_text())
     from ticker_policy import local_slug
     slugs = source['ticker_slugs']
@@ -67,10 +78,10 @@ def verify(revision, timeout=900):
                 request = Request(url, headers={'Cache-Control':'no-cache', 'User-Agent':'Sayd-Publication-Verification/1.0'})
                 with urlopen(request, timeout=30) as response:
                     actual = response.read()
-                if not matches_release(actual, expected, len(slugs)):
+                if not matches_release(actual, expected, len(slugs), ticker_expected=(not scope_homepage_only or is_homepage(ROOT/'docs'/path, ROOT/'docs'))):
                     print('Waiting for current release:', path, flush=True)
                     continue
-                print('LIVE PASS:', path, 'news:', len(slugs), 'exact ticker and origin content (known Cloudflare additions normalized)', flush=True)
+                print('LIVE PASS:', path, 'news:', len(slugs), 'exact scoped ticker and origin content (known Cloudflare additions normalized)', flush=True)
                 del pending[path]
             except (OSError, ValueError) as error:
                 print('Waiting for live page:', path, str(error), flush=True)

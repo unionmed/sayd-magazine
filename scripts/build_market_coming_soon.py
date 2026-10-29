@@ -77,6 +77,9 @@ def build(lang):
     assert count == 1
     target = DOCS / target_dir / 'index.html'
     target.parent.mkdir(parents=True, exist_ok=True)
+    from ticker_scope import homepage_only, strip_internal_ticker
+    if homepage_only(ROOT):
+        page = strip_internal_ticker(page)
     target.write_text(page, encoding='utf-8')
     return target
 
