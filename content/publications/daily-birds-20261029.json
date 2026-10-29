@@ -1,0 +1,2286 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261029",
+  "expected_base": "c571f9db76e7bfe69eebda3509e241c20f781632",
+  "approval_reference": "private:automation-bird-encyclopedia-20261028T080000Z; Nayef standing preparation and publication authorization dated 2026-10-25, with ten-species trial approved 2026-10-27 through 2026-11-02. Scope: new species AR/EN/FR, encyclopedia only, no social or news distribution. Continued under 2026-10-29T080000Z same ten-species trial; prior batch was prepared only, zero species published. Reuse exact reviewed content and assets, no second competing batch. Owner reiterated publication 2026-10-29T12:49:48Z, Sentinel_e1a6b05fd60c8191813ac91791fd7d77.",
+  "bank_search_reference": "2026-10-28: existing Sayd picture for use bank searched first, including complete Birds & Wildlife and Nayef-Krayem-iNaturalist listings. Owner-bank images with CC-BY-NC metadata were not assumed to have a no-link publication waiver. Full archive dedupe: 789 Arabic, 109 English, 99 French complete search article bodies, scientific names, historical synonyms and Arabic variants; existing Robin, Grey Heron and Cormorant profiles excluded. Library photo receipts retained separately. Ten originals and ten associated rights records saved with successful Library receipts on 2026-10-28; originals accessible via recorded Library identifiers.",
+  "photos": [
+    {
+      "id": "mallard",
+      "path": "docs/media/publications/daily-birds-20261029/mallard.jpg",
+      "sha256": "324c538f57e919f313422c5473cb14affb9ed863202e5420ac72d4c04810fc6f",
+      "source_sha256": "324c538f57e919f313422c5473cb14affb9ed863202e5420ac72d4c04810fc6f",
+      "source_reference": "Iurie Nistor; 2021-11-06; Valea Morilor Lake, Chisinau, Moldova. https://commons.wikimedia.org/wiki/File:Wild_duck_(Anas_platyrhynchos).jpg; Library original libfile_66800e62a2f08191a94461fe9c3f6109; Library rights libfile_465b9c52f4608191bd033149183c3edd",
+      "rights": {
+        "status": "licensed",
+        "statement": "Rights holder dedicates image to public domain worldwide; commercial reuse permitted without attribution/link requirement. Preserve photographer credit separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Wild_duck_(Anas_platyrhynchos).jpg"
+      },
+      "alt": {
+        "ar": "ذكر خضاري برأس أخضر ومنقار أصفر يمد جناحه وتظهر مرآته الزرقاء",
+        "en": "Male Mallard with a green head and yellow bill stretching a wing to reveal the blue speculum",
+        "fr": "Canard colvert mâle à tête verte et bec jaune étirant une aile où apparaît le miroir bleu"
+      },
+      "caption": {
+        "ar": "الخضاري (بط البركة)",
+        "en": "Mallard",
+        "fr": "Canard colvert"
+      }
+    },
+    {
+      "id": "moorhen",
+      "path": "docs/media/publications/daily-birds-20261029/moorhen.jpg",
+      "sha256": "8f904df23e90f7f31e27dcccfce0edcd862a4b9129d93d31321adc378a50a627",
+      "source_sha256": "8f904df23e90f7f31e27dcccfce0edcd862a4b9129d93d31321adc378a50a627",
+      "source_reference": "Rex; capture date unknown; Netherlands, author garden. https://commons.wikimedia.org/wiki/File:Gallinula_chloropus.jpg; Library original libfile_430f58e0650c8191bf137dcde52324b1; Library rights libfile_22e99d767d0c81918f8ef72039d373d2",
+      "rights": {
+        "status": "licensed",
+        "statement": "Rights holder dedicates image to public domain worldwide; commercial reuse permitted without attribution/link requirement. Preserve photographer credit separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Gallinula_chloropus.jpg"
+      },
+      "alt": {
+        "ar": "دجاجة ماء بريش داكن ومنقار أحمر ذي طرف أصفر بين الأوراق",
+        "en": "Common Moorhen with dark plumage and a red bill tipped yellow among leaves",
+        "fr": "Gallinule poule-d’eau au plumage sombre et au bec rouge à pointe jaune parmi les feuilles"
+      },
+      "caption": {
+        "ar": "دجاجة الماء الشائعة (الفرفر الشائع)",
+        "en": "Common Moorhen",
+        "fr": "Gallinule poule-d’eau"
+      }
+    },
+    {
+      "id": "great-egret",
+      "path": "docs/media/publications/daily-birds-20261029/great-egret.jpg",
+      "sha256": "4097774c6a6b3ec8f7640efbe11122e91186e06ee208c9359872432806ff3d20",
+      "source_sha256": "4097774c6a6b3ec8f7640efbe11122e91186e06ee208c9359872432806ff3d20",
+      "source_reference": "Hobbyfotowiki; 2024-10-22; Federsee, Germany. https://commons.wikimedia.org/wiki/File:Great_egret_(great_egret_(Ardea_alba)_at_Federsee,_Germany)_at_Federsee.jpg; Library original libfile_dae014a01a1c8191b96c32460e7173c3; Library rights libfile_7ebb3d9b513081919c316859e817cfe7",
+      "rights": {
+        "status": "licensed",
+        "statement": "Rights holder dedicates image to public domain worldwide; commercial reuse permitted without attribution/link requirement. Preserve photographer credit separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Great_egret_(great_egret_(Ardea_alba)_at_Federsee,_Germany)_at_Federsee.jpg"
+      },
+      "alt": {
+        "ar": "بلشون أبيض كبير في الطيران بمنقار أصفر طويل ورقبة مطوية",
+        "en": "Great Egret in flight with a long yellow bill and its neck retracted",
+        "fr": "Grande Aigrette en vol, au long bec jaune et au cou replié"
+      },
+      "caption": {
+        "ar": "البلشون الأبيض الكبير",
+        "en": "Great Egret",
+        "fr": "Grande Aigrette"
+      }
+    },
+    {
+      "id": "little-egret",
+      "path": "docs/media/publications/daily-birds-20261029/little-egret.jpg",
+      "sha256": "4a66abc5a81e574528ae0f4207b203413da2e026be2856328e621c180eecba16",
+      "source_sha256": "88bd206efa4f0f309e459300c2efdb1152f1d1013294e6248d65980375d42e0d",
+      "source_reference": "Stefania.foto6 / Iaia quark; 2019-08-29; Italy. https://commons.wikimedia.org/wiki/File:Flying_egret_in_profile.jpg; Library original libfile_7aa6aa6df7a08191a01f8d20107d15af; Library rights libfile_4e14f4b9dc3c8191b003c0b2c7c8dc8c",
+      "rights": {
+        "status": "licensed",
+        "statement": "Rights holder dedicates image to public domain worldwide; commercial reuse permitted without attribution/link requirement. Preserve photographer credit separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Flying_egret_in_profile.jpg"
+      },
+      "alt": {
+        "ar": "بلشون أبيض صغير في الطيران بمنقار أسود وقدمين صفراوين",
+        "en": "Little Egret in flight with a black bill and yellow feet",
+        "fr": "Aigrette garzette en vol, au bec noir et aux pieds jaunes"
+      },
+      "caption": {
+        "ar": "البلشون الأبيض الصغير",
+        "en": "Little Egret",
+        "fr": "Aigrette garzette"
+      }
+    },
+    {
+      "id": "starling",
+      "path": "docs/media/publications/daily-birds-20261029/starling.jpg",
+      "sha256": "b7e759fe872f9f7688d211fbbb7967191be9887a858193ab419fd89c9c295d8d",
+      "source_sha256": "9e7aa3e58ef71d83e862142a08a2b9e6fe23dd2a17ce87cf942afbe9bc22340e",
+      "source_reference": "Bernard Spragg. NZ; 2016-07-08; Christchurch, New Zealand. https://commons.wikimedia.org/wiki/File:Starling_(Sternus_vulgaris)_(28886045420).jpg; Library original libfile_99db4655b38c8191bbc97e3159ea7a23; Library rights libfile_6fa40b726bf48191a39704c0aa32f024",
+      "rights": {
+        "status": "licensed",
+        "statement": "Rights holder dedicates image to public domain worldwide; commercial reuse permitted without attribution/link requirement. Preserve photographer credit separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Starling_(Sternus_vulgaris)_(28886045420).jpg"
+      },
+      "alt": {
+        "ar": "زرزور بريش لامع منقط ومنقار مدبب واقف على غصن",
+        "en": "Common Starling with speckled iridescent plumage and a pointed bill perched on a branch",
+        "fr": "Étourneau sansonnet au plumage irisé ponctué et au bec pointu, perché sur une branche"
+      },
+      "caption": {
+        "ar": "الزرزور الشائع",
+        "en": "Common Starling",
+        "fr": "Étourneau sansonnet"
+      }
+    },
+    {
+      "id": "chaffinch",
+      "path": "docs/media/publications/daily-birds-20261029/chaffinch.jpg",
+      "sha256": "0a58a7b041be096aa161fa15d025f8ff2c4897e601ad8af125f76b714c15b126",
+      "source_sha256": "0a58a7b041be096aa161fa15d025f8ff2c4897e601ad8af125f76b714c15b126",
+      "source_reference": "Bernard Spragg. NZ; 2011-07-25; Christchurch, New Zealand. https://commons.wikimedia.org/wiki/File:Common_chaffinch._(Fringilla_coelebs),_(8065409168).jpg; Library original libfile_9377788047708191ab0422298773f533; Library rights libfile_3695f681b6288191bc1a48a5d7206da3",
+      "rights": {
+        "status": "licensed",
+        "statement": "Rights holder dedicates image to public domain worldwide; commercial reuse permitted without attribution/link requirement. Preserve photographer credit separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Common_chaffinch._(Fringilla_coelebs),_(8065409168).jpg"
+      },
+      "alt": {
+        "ar": "ذكر شرشور بتاج رمادي مزرق وصدر وردي وشريطين أبيضين على الجناح",
+        "en": "Male Common Chaffinch with a blue-grey crown, pinkish breast and two white wing bars",
+        "fr": "Pinson des arbres mâle à calotte gris bleu, poitrine rosée et deux barres alaires blanches"
+      },
+      "caption": {
+        "ar": "الشرشور الأوراسي (الصلنج)",
+        "en": "Eurasian Chaffinch",
+        "fr": "Pinson des arbres"
+      }
+    },
+    {
+      "id": "blackbird",
+      "path": "docs/media/publications/daily-birds-20261029/blackbird.jpg",
+      "sha256": "a05a61bbe99e334cce6db2562f5b944198dda7dce4533feca4bf532b276d847b",
+      "source_sha256": "a05a61bbe99e334cce6db2562f5b944198dda7dce4533feca4bf532b276d847b",
+      "source_reference": "WikiPokos; 2022-03-30; Vitoria-Gasteiz, Spain. https://commons.wikimedia.org/wiki/File:Turdus_merula_(mirlo).jpg; Library original libfile_f5532f15bf3c8191bc09c9f3bc2445fa; Library rights libfile_709e3a089b948191bbe44b6e814c9a5f",
+      "rights": {
+        "status": "licensed",
+        "statement": "Rights holder dedicates image to public domain worldwide; commercial reuse permitted without attribution/link requirement. Preserve photographer credit separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Turdus_merula_(mirlo).jpg"
+      },
+      "alt": {
+        "ar": "ذكر شحرور أسود الريش بمنقار وحلقة عين برتقاليين مصفرين",
+        "en": "Male Eurasian Blackbird with black plumage and an orange-yellow bill and eye ring",
+        "fr": "Merle noir mâle au plumage noir, au bec et au cercle oculaire jaune orangé"
+      },
+      "caption": {
+        "ar": "الشحرور الشائع",
+        "en": "Common Blackbird",
+        "fr": "Merle noir"
+      }
+    },
+    {
+      "id": "hooded-crow",
+      "path": "docs/media/publications/daily-birds-20261029/hooded-crow.jpg",
+      "sha256": "eeed7c5f84140788c959d65f5fe29c57791c62fc5a49270ad050e5333f8120b8",
+      "source_sha256": "97f307dea7de6d570c18d3e57c309f059bb6062ba7003541468693bdf6601972",
+      "source_reference": "Nicolas Weghaupt; 2012-12-13; Augarten, Vienna, Austria. https://commons.wikimedia.org/wiki/File:Corvus_cornix_Vienna.JPG; Library original libfile_6183994f43a081918f604c5aeb802af9; Library rights libfile_4f6289c77f6c8191bc5c6cc4fbbe5056",
+      "rights": {
+        "status": "licensed",
+        "statement": "Rights holder dedicates image to public domain worldwide; commercial reuse permitted without attribution/link requirement. Preserve photographer credit separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Corvus_cornix_Vienna.JPG"
+      },
+      "alt": {
+        "ar": "غراب مقنع بجسم رمادي ورأس وجناحين وذيل سوداء واقف على العشب",
+        "en": "Hooded Crow with a grey body and black head, wings and tail standing on grass",
+        "fr": "Corneille mantelée au corps gris, à la tête, aux ailes et à la queue noires, posée sur l’herbe"
+      },
+      "caption": {
+        "ar": "الغراب المقنّع",
+        "en": "Hooded Crow",
+        "fr": "Corneille mantelée"
+      }
+    },
+    {
+      "id": "laughing-dove",
+      "path": "docs/media/publications/daily-birds-20261029/laughing-dove.jpg",
+      "sha256": "b9bf2f5e545c57f80b8770884a96b5e986b98aa4d0e937a9435210b034b33f72",
+      "source_sha256": "715eda1109cdbc22ad6c50951b4757b7e50daad4dd13df5435c46ff2348d4226",
+      "source_reference": "The Great Mule of Eupatoria; 2023-11-17; Doha, Qatar. https://commons.wikimedia.org/wiki/File:Laughing_dove_fahad.jpg; Library original libfile_e8118ab3467c81918a56109ae9d836bc; Library rights libfile_f38573afafec8191939c9bda1883c458",
+      "rights": {
+        "status": "licensed",
+        "statement": "Rights holder dedicates image to public domain worldwide; commercial reuse permitted without attribution/link requirement. Preserve photographer credit separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Laughing_dove_fahad.jpg"
+      },
+      "alt": {
+        "ar": "يمام ضاحك بصدر وردي وبقع سوداء على جانب العنق وجناح رمادي مزرق واقف على سلك",
+        "en": "Laughing Dove with a pinkish breast, black neck spots and blue-grey wing perched on wire",
+        "fr": "Tourterelle maillée à poitrine rosée, taches noires au cou et aile gris bleu, perchée sur un fil"
+      },
+      "caption": {
+        "ar": "اليمام الضاحك",
+        "en": "Laughing Dove",
+        "fr": "Tourterelle maillée"
+      }
+    },
+    {
+      "id": "house-sparrow",
+      "path": "docs/media/publications/daily-birds-20261029/house-sparrow.jpg",
+      "sha256": "f86e13546b68a8cd8fccfde230a94a50408c551fd0f0569db57d96869d76c2cc",
+      "source_sha256": "f07ecfc451c083361b4ef3266556fe7768b4a29f971e128625b35193165dd7d2",
+      "source_reference": "Gonzalo Arias; 2019-04-05; Not specified on file page; author based in Chile, do not equate author residence to capture location. https://commons.wikimedia.org/wiki/File:Gorrión_común_(Passer_domesticus)_(50102288606).jpg; Library original libfile_e84c2a3dd414819195cf53ec6569b3a8; Library rights libfile_77a6ac1275208191becf2c9fc87551e8",
+      "rights": {
+        "status": "licensed",
+        "statement": "Rights holder dedicates image to public domain worldwide; commercial reuse permitted without attribution/link requirement. Preserve photographer credit separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Gorrión_común_(Passer_domesticus)_(50102288606).jpg"
+      },
+      "alt": {
+        "ar": "عصفور دوري منزلي ذو خد رمادي وبقعة سوداء عند الحلق واقف على العشب",
+        "en": "House Sparrow with a grey cheek and black throat patch standing on grass",
+        "fr": "Moineau domestique à joue grise et bavette noire, posé sur l’herbe"
+      },
+      "caption": {
+        "ar": "العصفور الدوري",
+        "en": "House Sparrow",
+        "fr": "Moineau domestique"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الخضاري-بط-البركة",
+        "en": "mallard",
+        "fr": "canard-colvert"
+      },
+      "published": "2026-10-29",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "mallard"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الخضاري (بط البركة)",
+          "subtitle": "Anas platyrhynchos — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Anas platyrhynchos — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الخضاري، أو بط البركة، Anas platyrhynchos بط سطحي من فصيلة البطيات، يبلغ طول الطائر البري النموذجي نحو 50–65 سم. يتميز الذكر في ريش التزاوج برأس أخضر لامع وطوق أبيض ضيق وصدر كستنائي وجسم رمادي، مع ريشات سوداء ملتفة في وسط الذيل. الأنثى بنية مرقطة، ومنقارها برتقالي بني تتخلله علامات داكنة. يظهر في جناح الجنسين شريط أزرق بنفسجي تحيط به حواف بيضاء. يشبه اليافع الأنثى، ويتحول الذكر البالغ أيضًا إلى مظهر بني خلال ريش الكسوف؛ لذلك ليس غياب الرأس الأخضر دليلًا كافيًا على أن الطائر أنثى."
+              ]
+            },
+            {
+              "heading": "التمييز من الأنواع المشابهة",
+              "paragraphs": [
+                "ينبغي جمع صفات المنقار وشكل الجسم والصوت والرقعة الجناحية بدل الاعتماد على اللون البني وحده. تظهر لدى أنثى البط السماري رقعة جناحية بيضاء، بخلاف المرآة الزرقاء البنفسجية للخضاري. صوت البط المرتفع المألوف تصدره الأنثى، أما الذكر فصوته أخفض وأخشن. قد تكون الطيور ذات الأصل المستأنس والهجن كبيرة أو بيضاء أو مبقعة، وقد تختلف كثيرًا عن الهيئة البرية المعروفة. وجودها في حديقة أو بحيرة ترفيهية لا يثبت وحده أن الموقع يؤوي جماعة برية أصيلة تتكاثر طبيعيًا."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يستخدم هذا النوع المرن البحيرات الضحلة والمستنقعات والأنهار البطيئة والخزانات والبحيرات الساحلية والبرك المُدارة. يلتقط غذاءه من السطح، ويغمس الرأس، أو يقلب الجسم إلى الأمام للوصول إلى الغذاء تحت الماء، كما يرعى ويلتقط البذور على اليابسة. تشمل قائمته النباتات المائية والبذور واللافقاريات، وتزداد أهمية الغذاء الحيواني خلال التكاثر ونمو الفراخ. خارج مناطق التعشيش قد يستريح في مجموعات ويختلط بأنواع أخرى من البط. بعض طيور الحدائق معتاد على الناس، لكن الطيور المعرضة للصيد قد تبقى شديدة الحذر، فلا يصح تعميم الألفة على النوع كله."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "تتشكل الأزواج غالبًا قبل موسم التكاثر، ولا يعني ذلك ارتباطًا يستمر مدى الحياة. تنشئ الأنثى عشًا مخفيًا مبطنًا بالزغب، يكون عادة على الأرض قرب الماء، مع وجود أعشاش في مواضع مرتفعة أحيانًا. يختلف حجم الحضنة؛ وتسجل المتابعة البريطانية عادة 11–14 بيضة. تتولى الأنثى الحضانة نحو 27–28 يومًا ورعاية الصغار. تغادر الفراخ الزغبية العش سريعًا بعد الفقس، وتلتقط طعامها بنفسها، ويبدأ طيرانها غالبًا بعمر يقارب 50–60 يومًا. تبدل الطيور البالغة ريش الطيران معًا فتعجز مؤقتًا عن الطيران، وتصبح المياه الهادئة المحاطة بالغطاء النباتي مهمة خصوصًا خلال هذه الفترة الحساسة."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "توجد ضمن الانتشار الواسع للنوع جماعات مقيمة وأخرى مهاجرة، وتتحرك جماعات التكاثر الشمالية غالبًا جنوبًا. لا يوجد تقويم واحد يصلح لكل الجزيرة العربية. تشير سجلات شرق السعودية إلى العبور والإشتاء على نطاق يمتد من أواخر أغسطس إلى مايو، مع تركز الأعداد عادة بين سبتمبر ومارس. يوجد تكاثر في منطقة الرياض، لكن المرجع الوطني السعودي يميز الجماعات المتوحشة الناشئة من طيور الزينة المدخلة عن الزوار البريين الطبيعيين. وفي الكويت يسجل النوع أثناء العبور والشتاء، ونادرًا في الصيف، مع تسجيل تكاثر سابق. لذلك لا تكفي مشاهدة صيفية واحدة لإثبات التعشيش أو الأصل البري للطائر المشاهد. وفي لبنان تسجل قائمة عام 2020 العبور والإشتاء من أغسطس إلى أوائل أبريل، مع تكاثر محلي. أما المغرب فيضم جماعات مقيمة متكاثرة وزوار شتاء."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يدخل الخضاري في الشبكة الغذائية للمناطق الرطبة بوصفه مستهلكًا للنباتات والحيوانات الصغيرة وفريسة لحيوانات أخرى. قد يؤثر فقد الموائل وتراجع جودة المياه والإزعاج والصيد في جماعاته محليًا، كما تعقد مخالطته للبط المستأنس أعمال الرصد والحماية. يضع تقييم الاتحاد الدولي لصون الطبيعة لعام 2025 النوع ضمن فئة أقل إثارة للقلق، لكنه يصف الاتجاه العالمي بالتناقص. لا يعني هذا التصنيف أن كل جماعة محلية آمنة. تساعد المحافظة على ضفاف نباتية هادئة ومياه مستمرة وشبكة مترابطة من الأراضي الرطبة في دعم التعشيش والقلش والإشتاء."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Naturalis — Birds of Europe: Mallard",
+                "RSPB — Gadwall",
+                "Cornell Lab of Ornithology — All About Birds: Mallard Life History",
+                "Cornell Lab of Ornithology — Mallard Overview",
+                "British Trust for Ornithology — BirdFacts: Mallard",
+                "Ducks Unlimited — Mallard Annual Life Cycle",
+                "Birds of Saudi Arabia — Large group of Mallards in a field, Haradh",
+                "The Birds of Saudi Arabia — species accounts",
+                "KuwaitBirds — Mallard",
+                "BirdLife International — IUCN Red List assessment of Anas platyrhynchos, 2025",
+                "Missouri Department of Conservation — Mallard",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Squalli and colleagues — Wintering waterbirds of the Saïss–Middle Atlas, Animals (2024)"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Iurie Nistor — CC0 1.0."
+        },
+        "en": {
+          "title": "Mallard",
+          "subtitle": "Anas platyrhynchos — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Anas platyrhynchos — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Mallard, Anas platyrhynchos, is a dabbling duck in the family Anatidae. A typical wild bird is about 50–65 cm long. The breeding-plumaged male combines a glossy green head, narrow white neck ring, chestnut breast and grey body; the central black tail feathers curl upwards. The female is mottled brown, with an orange-brown bill carrying darker markings. Both show a blue-violet wing panel bordered with white. Young birds resemble females. During eclipse, adult males also become brownish, so a green head is not a year-round identification requirement."
+              ]
+            },
+            {
+              "heading": "Distinguishing similar birds",
+              "paragraphs": [
+                "Compare the wing panel, bill, body proportions and voice rather than relying on brown plumage alone. Female Gadwalls show a white wing patch rather than the Mallard’s blue-violet panel. A female Mallard gives the familiar loud quack; males have a quieter rasping voice. Domestic descendants and hybrids may be unusually large, white, patchy or otherwise unlike textbook wild birds. Their presence in a park does not, by itself, establish a native breeding population."
+              ]
+            },
+            {
+              "heading": "Habitat, feeding and behaviour",
+              "paragraphs": [
+                "Shallow lakes, marshes, slow rivers, reservoirs, lagoons and managed ponds can all support this adaptable species. It feeds by picking, dabbling, dipping its head and tipping forwards, also grazing or gathering seeds on land. Foods include aquatic vegetation, seeds and invertebrates; animal food is particularly important during breeding and growth. Mallards often rest communally and mix with other ducks outside nesting territories. Birds accustomed to people may approach closely, while hunted populations can remain very wary."
+              ]
+            },
+            {
+              "heading": "Breeding and annual cycle",
+              "paragraphs": [
+                "Pairs commonly form before the breeding season, but this is not lifelong pair bonding. The female makes a concealed, down-lined nest, usually on the ground near water, although unusual elevated sites occur. Clutch size varies: British nest records give a typical 11–14 eggs. The female incubates for approximately 27–28 days and tends the downy young. Ducklings leave the nest soon after hatching, feed for themselves and usually fly at roughly 50–60 days. Adults replace their flight feathers together and are temporarily flightless; sheltered wetlands are particularly valuable during this vulnerable period."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Resident and migratory populations coexist across the wider range; northern breeding birds commonly move south. Arabian occurrence should not be reduced to one calendar. Eastern Saudi records place passage and winter birds broadly from late August to May, with concentrations mainly September–March. Riyadh records include breeding, but the Saudi national account identifies ornamental introductions as the origin of established feral residents. Kuwait reports passage and winter visitors, occasional summer birds and historical breeding. A summer sighting alone therefore cannot establish either wild origin or nesting. In Lebanon, the 2020 checklist records passage and winter presence from August to early April, with local breeding. Morocco supports resident breeders and winter visitors."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "As a consumer of plants and small animals, and prey for predators, the Mallard participates in wetland food webs. Wetland loss, poor water quality, disturbance and shooting can affect local populations; mixing with domestic stock complicates conservation and monitoring. The 2025 global IUCN assessment lists Least Concern but a decreasing population trend. This does not mean every local population is secure. Retaining quiet, vegetated shores, dependable water and connected wetland habitat supports nesting, moulting and wintering birds."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Naturalis — Birds of Europe: Mallard",
+                "RSPB — Gadwall",
+                "Cornell Lab of Ornithology — All About Birds: Mallard Life History",
+                "Cornell Lab of Ornithology — Mallard Overview",
+                "British Trust for Ornithology — BirdFacts: Mallard",
+                "Ducks Unlimited — Mallard Annual Life Cycle",
+                "Birds of Saudi Arabia — Large group of Mallards in a field, Haradh",
+                "The Birds of Saudi Arabia — species accounts",
+                "KuwaitBirds — Mallard",
+                "BirdLife International — IUCN Red List assessment of Anas platyrhynchos, 2025",
+                "Missouri Department of Conservation — Mallard",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Squalli and colleagues — Wintering waterbirds of the Saïss–Middle Atlas, Animals (2024)"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Iurie Nistor — CC0 1.0."
+        },
+        "fr": {
+          "title": "Canard colvert",
+          "subtitle": "Anas platyrhynchos — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Anas platyrhynchos — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Canard colvert, Anas platyrhynchos, appartient aux Anatidés et au groupe des canards de surface. Un oiseau sauvage typique mesure environ 50–65 cm. Le mâle en plumage nuptial porte une tête verte brillante, un fin collier blanc, une poitrine marron et un corps gris; ses rectrices centrales noires sont recourbées. La femelle est brune et mouchetée, avec un bec brun orangé marqué de sombre. Les deux sexes présentent un miroir alaire bleu-violet bordé de blanc. Les jeunes ressemblent aux femelles. En éclipse, les mâles adultes deviennent également brunâtres: la tête verte n’est donc pas visible toute l’année."
+              ]
+            },
+            {
+              "heading": "Espèces proches",
+              "paragraphs": [
+                "Pour identifier un oiseau brun, examinez ensemble le miroir, le bec, les proportions et la voix. La femelle du Canard chipeau montre une plage alaire blanche, non le miroir bleu-violet du colvert. Le cancanement sonore familier vient de la femelle; le mâle émet une voix plus discrète et râpeuse. Les descendants domestiques et les hybrides peuvent être grands, blancs, panachés ou atypiques. Leur présence dans un parc ne suffit pas à démontrer une population nicheuse indigène."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "L’espèce fréquente les lacs peu profonds, marais, cours d’eau lents, réservoirs, lagunes et bassins aménagés. Elle prélève sa nourriture en surface, plonge la tête, bascule le corps ou pâture à terre. Végétation aquatique, graines et invertébrés composent son régime; les aliments animaux prennent une importance particulière pendant la reproduction et la croissance. Hors des territoires de nidification, les colverts se reposent souvent ensemble et rejoignent d’autres canards. Des oiseaux habitués aux visiteurs peuvent être familiers, tandis que les populations chassées restent parfois très farouches."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "Les couples se forment souvent avant la saison de reproduction, sans constituer nécessairement une union durable. La femelle aménage un nid caché, garni de duvet, généralement au sol près de l’eau; des emplacements surélevés existent aussi. La ponte varie: les suivis britanniques indiquent habituellement 11–14 œufs. La femelle assure environ 27–28 jours d’incubation et accompagne les jeunes. Les canetons duveteux quittent rapidement le nid, cherchent eux-mêmes leur nourriture et volent vers 50–60 jours. Les adultes remplacent simultanément leurs rémiges et deviennent temporairement incapables de voler: les zones humides abritées sont alors essentielles."
+              ]
+            },
+            {
+              "heading": "Présence dans les pays arabes",
+              "paragraphs": [
+                "À l’échelle de son aire, l’espèce associe populations résidentes et migratrices; les nicheurs septentrionaux descendent souvent vers le sud. Aucun calendrier unique ne décrit toute l’Arabie. Dans l’est saoudien, les observations de passage et d’hivernage s’étendent largement de fin août à mai, surtout de septembre à mars. Des colverts nichent dans la région de Riyad, mais la synthèse nationale attribue l’établissement des résidents féralisés à des introductions ornementales. Au Koweït, l’espèce est signalée au passage, en hiver, exceptionnellement en été, avec reproduction historique. Une présence estivale ne prouve donc ni une origine sauvage ni une nidification. Au Liban, la liste de 2020 décrit le passage et l’hivernage d’août à début avril, avec reproduction locale. Le Maroc accueille nicheurs résidents et hivernants."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Consommateur de végétaux et de petits animaux, mais aussi proie, le colvert appartient aux réseaux alimentaires des zones humides. Disparition des habitats, dégradation de l’eau, dérangement et tirs peuvent affecter ses populations locales. Les croisements avec les oiseaux domestiques compliquent leur suivi. L’évaluation mondiale de l’UICN de 2025 le classe en Préoccupation mineure, avec une tendance décroissante. Ce classement ne garantit pas la sécurité de chaque population. Des berges tranquilles et végétalisées, une eau durable et un réseau de sites favorisent nidification, mue et hivernage."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Naturalis — Birds of Europe: Mallard",
+                "RSPB — Gadwall",
+                "Cornell Lab of Ornithology — All About Birds: Mallard Life History",
+                "Cornell Lab of Ornithology — Mallard Overview",
+                "British Trust for Ornithology — BirdFacts: Mallard",
+                "Ducks Unlimited — Mallard Annual Life Cycle",
+                "Birds of Saudi Arabia — Large group of Mallards in a field, Haradh",
+                "The Birds of Saudi Arabia — species accounts",
+                "KuwaitBirds — Mallard",
+                "BirdLife International — IUCN Red List assessment of Anas platyrhynchos, 2025",
+                "Missouri Department of Conservation — Mallard",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Squalli and colleagues — Wintering waterbirds of the Saïss–Middle Atlas, Animals (2024)"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Iurie Nistor — CC0 1.0."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "دجاجة-الماء",
+        "en": "common-moorhen",
+        "fr": "gallinule-poule-deau"
+      },
+      "published": "2026-10-29",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "moorhen"
+      ],
+      "translations": {
+        "ar": {
+          "title": "دجاجة الماء الشائعة (الفرفر الشائع)",
+          "subtitle": "Gallinula chloropus — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Gallinula chloropus — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "دجاجة الماء الشائعة، أو الفرفر الشائع، Gallinula chloropus طائر من فصيلة المرعات، وليس من البط رغم مظهره المائي. يبلغ طوله نحو 30–38 سم، وله ساقان مخضرتان طويلتان وأصابع ممتدة. ظهر البالغ بني داكن، وأجزاؤه السفلية سوداء أردوازية، وعلى جانبيه خط أبيض، مع بياض واضح تحت الذيل. المنقار والدرع الجبهي أحمران، وينتهي المنقار بطرف أصفر. يتشابه الجنسان في المظهر، ولا يكفي الحجم وحده لتحديد جنس طائر منفرد بثقة. اليافع أكثر بنية ومنقاره باهت، ولا يحمل نمط الوجه الزاهي نفسه الذي يميز الطيور البالغة."
+              ]
+            },
+            {
+              "heading": "التمييز والسلوك",
+              "paragraphs": [
+                "يمتلك الغر الأوراسي البالغ منقارًا ودرعًا جبهيًا أبيضين، بخلاف منقار دجاجة الماء الأحمر والأصفر. ترفع دجاجة الماء ذيلها وتهزه كثيرًا فتظهر العلامات البيضاء، وقد تختفي سريعًا بين نباتات الضفة. يمكن مراقبتها وهي تسبح أو تمشي على الحواف العشبية. لا يعني اختفاؤها وسط القصب أنها غائبة عن الموقع؛ لذلك تحسن الزيارات الهادئة المتكررة دقة التعداد. أما دجاجة الماء الأمريكية Gallinula galeata فتُعامل الآن نوعًا مستقلًا؛ ولهذا ينبغي عدم نقل كل تفاصيل المراجع القديمة التي كانت تجمع النوعين تحت اسم علمي واحد دون التحقق من المقصود."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "تعد حواف المياه العذبة المكسوة بالنبات مهمة لهذا الطائر، بما فيها البرك والمستنقعات والمجاري البطيئة والخزانات والمناطق الرطبة الاصطناعية المناسبة. وقد توفر أحواض المياه المعالجة المحاطة بالقصب موئلًا له في مناطق جافة بطبيعتها. يتناول النباتات والطحالب والبذور، إلى جانب اللافقاريات البرية والمائية، ويأكل أيضًا فقاريات صغيرة. يلتقط الطعام من النباتات والسطح والأرض، فتربط تغذيته بين الماء واليابسة داخل الموقع نفسه. لذلك تختلف البركة التي تجمع الغطاء النباتي ومناطق التقاط الغذاء عن حوض زينة مكشوف الحواف، حتى إن تشابهت مساحة الماء في الاثنين."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الصغار",
+              "paragraphs": [
+                "تدافع الطيور المتكاثرة عن نطاقها، وغالبًا تكون في أزواج، مع وجود ترتيبات تزاوج أكثر تعقيدًا أحيانًا. العش كأس كبيرة من السيقان والأوراق، تُخفى عادة بين النباتات عند مستوى الماء أو فوقه قليلًا. يشترك الأبوان في بناء العش ورعاية الصغار. تسجل بيانات الأعشاش البريطانية عادة 5–7 بيضات، وحضانة تستمر نحو 20–22 يومًا. تغادر الفراخ الزغبية العش مبكرًا لكنها تظل تتلقى الرعاية. ووفق البيانات البريطانية يبدأ الطيران في عمر يقارب سبعة إلى ثمانية أسابيع. يمكن إنتاج أكثر من حضنة، وقد تساعد الصغار الأكبر سنًا أحيانًا في إطعام الفراخ التالية."
+              ]
+            },
+            {
+              "heading": "الوجود والحركة في المنطقة العربية",
+              "paragraphs": [
+                "ينتشر النوع على نطاق واسع في العالم القديم، وتضم جماعاته مقيمين وطيورًا تتنقل محليًا وأخرى مهاجرة. تشير بيانات التحجيل الأوروبية إلى حركة بارزة حول سبتمبر ومارس–أبريل، مع بعض استرجاعات الطيور شتاءً في شمال أفريقيا. لا تمثل هذه المواعيد تقويمًا دقيقًا صالحًا لكل الجزيرة العربية. في السعودية ساعد إنشاء الأراضي الرطبة الاصطناعية على استقرار جماعات متكاثرة، إلى جانب الزوار الموسميين. ويصف المرجع الكويتي جماعات مقيمة متكاثرة محليًا وزوار عبور وشتاء بأعداد قليلة. وتوثق التقارير الإماراتية مقيمين وزوار شتاء، وتذكر التقارير التاريخية امتداد وجود الزوار من أواخر أغسطس حتى مارس. لهذا قد يخفي الحضور طوال السنة تغيرًا في الأفراد، لا إقامة جميع الطيور نفسها دون حركة. وفي لبنان يتكاثر مقيمون وتسجل البيوض من مارس إلى أواخر يونيو، وتزداد الأعداد بالهجرة من منتصف أغسطس إلى أواخر أبريل. ويضم المغرب أيضًا مقيمين وزوار شتاء."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والتهديدات والحالة",
+              "paragraphs": [
+                "تستهلك دجاجة الماء نباتات وحيوانات صغيرة، وتدخل بدورها غذاءً للمفترسات. يهدد تجفيف المناطق الرطبة وتدهور الموائل وإزالة غطاء الضفاف جماعاتها المحلية. يفيد الحفاظ على النباتات والمياه المناسبة ومساحات الوصول إلى الغذاء بما يلبي احتياجات هذا الطائر. يضع تقييم BirdLife العالمي لعام 2025 النوع في فئة أقل إثارة للقلق، مع اتجاه عام نحو التناقص. ينبغي التمييز بين هذه الفئة العالمية وبين وفرة الطائر داخل بلد أو محمية. وعند الرصد، تسجل اليافعات والأعشاش والفراخ التابعة للأبوين منفصلة عن مجرد المشاهدة، مع إبقاء مسافة آمنة حتى لا يؤدي توثيق التكاثر إلى تعريض العش للإزعاج."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Royal Commission for AlUla — Birds of AlUla",
+                "RSPB — Moorhen",
+                "Sex identification in the moorhen by flow cytometry and morphometric analysis",
+                "Yorkshire Wildlife Trust — Coot",
+                "British Trust for Ornithology — BirdFacts: Moorhen",
+                "The Birds of Saudi Arabia — species accounts",
+                "Aramco — The Birds of Saudi Arabia: Life of Birds",
+                "KuwaitBirds — Common Moorhen",
+                "UAE Birding — Emirates Bird Report 19",
+                "UAE Birding — Birds of the United Arab Emirates Annual Report 2014",
+                "EURING/CMS — Eurasian-African Bird Migration Atlas: Common Moorhen",
+                "BirdLife International — Common Moorhen species factsheet and 2025 Red List assessment",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Squalli and colleagues — Wintering waterbirds of the Saïss–Middle Atlas, Animals (2024)"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Rex — ملك عام."
+        },
+        "en": {
+          "title": "Common Moorhen",
+          "subtitle": "Gallinula chloropus — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Gallinula chloropus — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Common Moorhen, Gallinula chloropus, belongs to the rail family Rallidae, not the ducks. It is a compact waterbird about 30–38 cm long, with long greenish legs and elongated toes. Adults have a dark brown back, slaty-black underparts, a white flank line and conspicuous white beneath the tail. The bill and frontal shield are red, with a yellow bill tip. The sexes look alike; size alone is not a dependable way to sex an isolated bird. Juveniles are browner and have a dull bill, lacking the adult’s bright facial pattern."
+              ]
+            },
+            {
+              "heading": "Lookalikes and behaviour",
+              "paragraphs": [
+                "The adult Eurasian Coot has a white bill and frontal shield rather than the Moorhen’s red-and-yellow bill. Moorhens frequently lift and flick the tail, exposing white markings, and can disappear rapidly into marginal vegetation. Watch both swimming birds and those walking along grassy banks. A bird hiding in reeds is not necessarily absent from a wetland census: repeated patient observations improve detection. The American Common Gallinule, Gallinula galeata, is now treated separately; older accounts that combine the two should not automatically be applied to this species."
+              ]
+            },
+            {
+              "heading": "Habitat and feeding",
+              "paragraphs": [
+                "Vegetated freshwater margins are particularly important: ponds, marshes, slow waterways, reservoirs and suitable artificial wetlands all provide habitat. Reed-lined treatment-water ponds can support birds in otherwise arid landscapes. Moorhens take plant material, algae and seeds as well as aquatic and terrestrial invertebrates; small vertebrates are also eaten. They pick food from vegetation, the surface and the ground. This varied diet links land and water within the same feeding area. A pond offering both cover and accessible feeding edges differs substantially from a bare ornamental basin."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "Breeding birds defend territories, generally as pairs, though more complex mating arrangements occur. A substantial cup of stems and leaves is usually concealed in vegetation at or just above water. Both adults contribute to nesting and parental care. British nest data give typical clutches of 5–7 eggs and incubation of 20–22 days. Downy chicks leave the nest early but still receive parental care. Flight develops at approximately seven to eight weeks in British data. More than one brood can be raised, and older young sometimes help feed subsequent chicks."
+              ]
+            },
+            {
+              "heading": "Arab-region occurrence and movements",
+              "paragraphs": [
+                "The species is widespread in the Old World, with resident, dispersive and migratory populations. European ringing evidence places major movements around September and March–April, with some winter recoveries in North Africa. These dates are not an exact Arabian timetable. In Saudi Arabia, artificial wetlands have enabled established breeding populations, alongside seasonal visitors. Kuwait describes local breeding residents and scarce passage and winter visitors. UAE reports document both residents and winter visitors; historical reports place winter arrivals from late August and departures through March. A year-round site may therefore contain changing individuals rather than an entirely sedentary population. Lebanon has resident breeders, with eggs recorded March–late June and immigration from mid-August to late April. Morocco likewise supports residents and winter visitors."
+              ]
+            },
+            {
+              "heading": "Ecology, threats and status",
+              "paragraphs": [
+                "Moorhens consume both vegetation and small animals and themselves provide food for predators. Wetland drainage, habitat degradation and removal of shoreline cover threaten local populations. Conservation should retain vegetation while maintaining suitable water and open feeding patches. BirdLife’s 2025 global assessment lists Least Concern with a decreasing trend. Distinguish this global category from national abundance. Record juveniles, nests and dependent young separately from simple presence, and observe from a distance so a breeding record does not come at the expense of the nest."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Royal Commission for AlUla — Birds of AlUla",
+                "RSPB — Moorhen",
+                "Sex identification in the moorhen by flow cytometry and morphometric analysis",
+                "Yorkshire Wildlife Trust — Coot",
+                "British Trust for Ornithology — BirdFacts: Moorhen",
+                "The Birds of Saudi Arabia — species accounts",
+                "Aramco — The Birds of Saudi Arabia: Life of Birds",
+                "KuwaitBirds — Common Moorhen",
+                "UAE Birding — Emirates Bird Report 19",
+                "UAE Birding — Birds of the United Arab Emirates Annual Report 2014",
+                "EURING/CMS — Eurasian-African Bird Migration Atlas: Common Moorhen",
+                "BirdLife International — Common Moorhen species factsheet and 2025 Red List assessment",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Squalli and colleagues — Wintering waterbirds of the Saïss–Middle Atlas, Animals (2024)"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Rex — Public domain."
+        },
+        "fr": {
+          "title": "Gallinule poule-d’eau",
+          "subtitle": "Gallinula chloropus — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Gallinula chloropus — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Gallinule poule-d’eau, Gallinula chloropus, appartient aux Rallidés, non aux canards. Cet oiseau aquatique compact mesure environ 30–38 cm et possède de longues pattes verdâtres ainsi que des doigts allongés. L’adulte montre un dos brun sombre, des parties inférieures noir ardoisé, une ligne blanche sur les flancs et du blanc bien visible sous la queue. Son bec et sa plaque frontale sont rouges, avec la pointe du bec jaune. Les sexes se ressemblent; la taille seule ne permet pas de sexer sûrement un individu isolé. Le jeune, plus brun, porte un bec terne sans le dessin facial vif de l’adulte."
+              ]
+            },
+            {
+              "heading": "Confusions et comportement",
+              "paragraphs": [
+                "La Foulque macroule adulte possède un bec et une plaque frontale blancs, contrairement au bec rouge et jaune de la gallinule. Celle-ci relève fréquemment la queue, découvrant ses marques blanches, et disparaît rapidement dans la végétation des berges. Observez aussi bien les oiseaux nageant que ceux marchant sur l’herbe. Un individu caché dans les roseaux n’est pas nécessairement absent d’un site: plusieurs observations patientes améliorent le recensement. La Gallinule d’Amérique, Gallinula galeata, est désormais séparée; les anciens textes réunissant ces deux espèces doivent être utilisés avec prudence."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Les bordures végétalisées d’eau douce sont importantes: mares, marais, cours d’eau lents, retenues et zones humides artificielles adaptées. Des bassins d’épuration bordés de roseaux peuvent accueillir l’espèce dans un paysage aride. Son régime associe végétaux, algues et graines aux invertébrés terrestres et aquatiques; de petits vertébrés sont également consommés. Elle prélève sa nourriture sur les plantes, à la surface ou au sol. Ce régime relie milieux terrestre et aquatique dans un même secteur. Une mare offrant abris et zones d’alimentation accessibles diffère donc d’un bassin décoratif aux berges nues."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Les nicheurs défendent un territoire, généralement en couple, bien que des organisations reproductrices plus complexes existent. Le nid, coupe volumineuse de tiges et de feuilles, est habituellement dissimulé dans la végétation, au niveau de l’eau ou légèrement au-dessus. Les deux adultes participent à la nidification et aux soins. Les données britanniques indiquent couramment 5–7 œufs et 20–22 jours d’incubation. Les poussins duveteux quittent tôt le nid mais continuent à être accompagnés. Selon les données britanniques, ils volent vers sept à huit semaines. Plusieurs nichées sont possibles; des jeunes plus âgés nourrissent parfois les suivants."
+              ]
+            },
+            {
+              "heading": "Présence et déplacements dans les pays arabes",
+              "paragraphs": [
+                "L’espèce est largement répartie dans l’Ancien Monde, avec populations résidentes, dispersives et migratrices. Le baguage européen indique surtout des mouvements vers septembre et mars–avril, ainsi que quelques reprises hivernales en Afrique du Nord. Ce calendrier n’est pas directement transposable à l’Arabie. En Arabie saoudite, les zones humides artificielles ont permis l’installation de nicheurs, à côté des visiteurs saisonniers. Le Koweït décrit des résidents nicheurs localisés et de rares visiteurs de passage et d’hiver. Les rapports émiratis mentionnent résidents et hivernants; les anciens suivis situent ces derniers de fin août à mars. Une présence annuelle peut donc masquer un renouvellement des individus. Au Liban, des résidents nichent, avec pontes de mars à fin juin et immigration de mi-août à fin avril. Le Maroc accueille également résidents et hivernants."
+              ]
+            },
+            {
+              "heading": "Écologie, menaces et statut",
+              "paragraphs": [
+                "La gallinule consomme végétaux et petits animaux et sert elle-même de proie. Drainage, dégradation des zones humides et suppression de la végétation riveraine menacent les populations locales. Préserver le couvert, l’eau et des espaces accessibles pour se nourrir répond aux besoins de l’espèce. L’évaluation mondiale BirdLife de 2025 retient la Préoccupation mineure, avec une tendance décroissante. Cette catégorie mondiale ne décrit pas l’abondance nationale. Distinguez présence, juvéniles, nids et jeunes dépendants dans les relevés, en restant assez loin pour ne pas compromettre la reproduction."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Royal Commission for AlUla — Birds of AlUla",
+                "RSPB — Moorhen",
+                "Sex identification in the moorhen by flow cytometry and morphometric analysis",
+                "Yorkshire Wildlife Trust — Coot",
+                "British Trust for Ornithology — BirdFacts: Moorhen",
+                "The Birds of Saudi Arabia — species accounts",
+                "Aramco — The Birds of Saudi Arabia: Life of Birds",
+                "KuwaitBirds — Common Moorhen",
+                "UAE Birding — Emirates Bird Report 19",
+                "UAE Birding — Birds of the United Arab Emirates Annual Report 2014",
+                "EURING/CMS — Eurasian-African Bird Migration Atlas: Common Moorhen",
+                "BirdLife International — Common Moorhen species factsheet and 2025 Red List assessment",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Squalli and colleagues — Wintering waterbirds of the Saïss–Middle Atlas, Animals (2024)"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Rex — Domaine public."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البلشون-الأبيض-الكبير",
+        "en": "great-egret",
+        "fr": "grande-aigrette"
+      },
+      "published": "2026-10-29",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "great-egret"
+      ],
+      "translations": {
+        "ar": {
+          "title": "البلشون الأبيض الكبير",
+          "subtitle": "Ardea alba — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Ardea alba — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "البلشون الأبيض الكبير، Ardea alba، طائر مائي كبير من فصيلة البلشونيات Ardeidae ورتبة البجعيات Pelecaniformes. يتميز بجسم نحيل ورقبة طويلة جداً وساقين طويلتين ومنقار مستقيم يشبه الخنجر. يبلغ طول الطيور الأوروبية نحو 85–102 سم، وباع الجناحين 140–170 سم؛ وهذه قياسات تقريبية تختلف جغرافياً وليست حدوداً ثابتة لجميع التجمعات.",
+                "الريش أبيض عند الجنسين وفي مختلف الأعمار. يكون الذكر أكبر في المتوسط، لكن الحجم وحده لا يتيح عادة تحديد الجنس بثقة ميدانياً. تشبه اليافعات البالغات خارج موسم التكاثر، وتفتقر إلى ريش الظهر الزخرفي الطويل. يكون المنقار أصفر غالباً خارج موسم التكاثر، لكنه قد يصبح أسود في معظمه عند الطيور الأوراسية المتكاثرة، مع اخضرار الجلد أمام العين واشتداد لون أعلى الساقين. لذلك ينبغي تفسير لون المنقار بحسب الموسم والتجمع، لا اعتباره علامة ثابتة.",
+                "يفوق البلشون الأبيض الصغير حجماً وطولاً للرقبة، ولا يمتلك قدميه الصفراوين الواضحتين أو ريشتي قفاه الطويلتين. أما بلشون البقر فأكثر امتلاءً وأقصر رقبة. وتحتاج البلشونات البيضاء المتوسطة الحجم إلى تدقيق أكبر: يمتد شق الفم خلف العين عند هذا النوع. وفي الطيران يطوي الرقبة ويمد الساقين خلف الجسم، خلافاً للقلق وأبي ملعقة اللذين يطيران برقبة ممدودة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد مستنقعات المياه العذبة وحواف البحيرات والأنهار والحقول المغمورة وأحواض الأسماك، وكذلك البحيرات الساحلية والمصبات والأراضي الرطبة البحرية. وتهمه المياه الضحلة المتاحة للبحث عن الطعام أكثر من كون الموقع طبيعياً بالكامل. يوفر القصب الكثيف والأشجار والشجيرات أماكن للتعشيش أو الراحة.",
+                "ينتظر ساكناً أو يمشي ببطء قبل أن ينقض بمنقاره على الفريسة. تشكل الأسماك غذاءً مهماً، وتضاف إليها البرمائيات واللافقاريات المائية وأحياناً فقاريات برية صغيرة. وقد يتغذى منفرداً أو وسط طيور مائية أخرى، مع دفاعه عن بقعة غنية بالغذاء. ولا يعني المبيت الجماعي وجود تعاون في الصيد. طيرانه منتظم وهادئ، وتبرز أصواته الخشنة خصوصاً قرب المستعمرات."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يتبع موعد التكاثر الظروف المحلية: الربيع والصيف في المناطق المعتدلة، بينما يزداد أثر الأمطار وتوافر المياه جنوباً. يبنى العش من الأغصان أو القصب في الأشجار أو الشجيرات أو أحراج القصب، منفرداً أو ضمن مستعمرة. وتشمل المغازلة عرض ريش الظهر الدقيق. تضم الحضنة عادة 3–5 بيضات زرقاء مخضرة شاحبة؛ ويتقاسم الأبوان الحضانة مدة تقارب 25–26 يوماً وإطعام الفراخ. تستطيع الصغار التسلق خارج العش قبل الطيران، الذي تبدأه عادة قرب عمر ستة أسابيع. ومغادرة العش لا تعني الاستقلال الكامل عن الأبوين."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية الإقليمية",
+              "paragraphs": [
+                "ينتشر النوع بمفهومه الواسع في أجزاء كبيرة من الأمريكتين وأفريقيا وأوراسيا وأسترالاسيا. تهاجر التجمعات الشمالية، بينما تتنقل تجمعات أخرى أو تبقى قرب الأراضي الرطبة الملائمة. وفي الجزيرة العربية يغلب عليه العبور والزيارة الشتوية. وفي المشرق، يسجل لبنان طيور عبور وشتاء، مع مشاهدات صيفية عرضية لطيور غير متكاثرة. وتعد مصر أساساً منطقة عبور وشتاء. وفي المغرب العربي تستقبل الأراضي الرطبة المغربية والتونسية زوار الشتاء والمهاجرين؛ ولا يكفي وجود طائر صيفاً لإثبات تعشيشه."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يربط هذا المفترس الفرائس المائية بشبكات الغذاء في الأراضي الرطبة. يصنف عالمياً ضمن «أقل إثارة للقلق» LC، لكن ذلك لا يضمن سلامة كل تجمع محلي. يؤثر التجفيف وتغيير النظام المائي والجريان الملوث والإزعاج في مواقع التغذية والتعشيش. وتحتاج الحماية إلى مستعمرات آمنة وموائل غذائية محيطة بها معاً. ويبين تاريخ صيده للحصول على ريش الزينة ضرر الطلب التجاري على الطيور. الأفضل مراقبته من مسافة وعدم الاقتراب من مستعمرة التعشيش لالتقاط صورة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList. Annual AviList Update, v2026.",
+                "Cornell Lab of Ornithology. All About Birds: Great Egret, identification and life history.",
+                "Observatoire FAUNA / INPN. Ardea alba: fiche espèce.",
+                "National Parks Board Singapore. Ardea alba.",
+                "British Trust for Ornithology. BirdFacts: Great White Egret.",
+                "OSME. Region List, version 10.1, 2024.",
+                "Ramadan-Jaradi and collaborators. Updated Checklist of the Birds of Lebanon. Sandgrouse 42, 2020.",
+                "Rihane, A. Observations de Grandes Aigrettes près de Mohammedia. Go-South Bulletin 11, 2014.",
+                "Thévenot and Bergier. La Grande Aigrette au Maroc. 2008.",
+                "BirdLife South Africa. Great Egret. Regional Red Data Book, 2025."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Hobbyfotowiki — CC0 1.0."
+        },
+        "en": {
+          "title": "Great Egret",
+          "subtitle": "Ardea alba — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Ardea alba — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Great Egret, Ardea alba, is a large white heron in the family Ardeidae, order Pelecaniformes. Its slender silhouette combines a very long neck, long legs and a dagger-shaped bill. European birds measure approximately 85–102 cm in length, with a wingspan of 140–170 cm; measurements vary geographically.",
+                "Plumage is white in both sexes and at all ages. Males average larger, but size alone rarely allows reliable sexing in the field. Juveniles resemble nonbreeding adults and lack the long ornamental back plumes. The bill is generally yellow outside breeding; breeding birds of the Eurasian population can develop a largely black bill, greenish facial skin and brighter upper legs. Bill colour must therefore be interpreted with season and population, not used as an absolute rule.",
+                "Compared with Little Egret, it is substantially larger, longer-necked and lacks that species’ conspicuous yellow feet and paired nape plumes. Cattle egrets are stockier and shorter-necked. Intermediate-sized white egrets demand closer examination: in Great Egret the gape extends behind the eye. In flight the neck is folded and the legs trail behind, unlike the extended neck of a flying stork or spoonbill."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It uses freshwater marshes, lake margins, rivers, flooded fields and fishponds, but also lagoons, estuaries and coastal wetlands. Accessible shallow water matters more than whether a site is entirely natural. Dense reeds, trees and shrubs provide nesting or resting cover.",
+                "A bird often waits motionless or walks slowly before striking at prey. Fish are important, supplemented by amphibians, aquatic invertebrates and occasionally small terrestrial vertebrates. It may feed alone or among other waterbirds, while defending a profitable feeding patch. Communal roosting does not mean that individuals cooperate while hunting. Flight is steady and deliberate; harsh calls are especially noticeable around colonies."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Breeding timing follows local conditions: spring and summer in temperate areas, with rainfall and water availability more influential farther south. Nests of sticks or reeds occur in trees, bushes or reedbeds, singly or in colonies. Courtship includes displaying the fine back plumes. A typical clutch contains 3–5 pale blue-green eggs; both parents incubate for about 25–26 days and feed the young. Young birds can climb outside the nest before they fly, usually at around six weeks. Nest departure and independence are not the same event."
+              ]
+            },
+            {
+              "heading": "Distribution and regional seasonality",
+              "paragraphs": [
+                "The broadly defined species occupies extensive parts of the Americas, Africa, Eurasia and Australasia. Northern populations migrate; others disperse or remain near suitable wetlands. Arabia chiefly receives passage and winter visitors. In the Mashriq, Lebanon has passage and wintering birds, with occasional nonbreeding summer records. Egypt is principally a passage and wintering area. In the Maghreb, Moroccan and Tunisian wetlands support winter visitors and migrants; summer presence alone does not establish breeding."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "As a predator it links aquatic prey to wetland food webs. Global status is Least Concern, not a guarantee of local security. Drainage, altered water regimes, contaminated runoff and disturbance can degrade feeding or nesting sites. Protection needs both safe colonies and surrounding feeding habitat. Historical plume hunting illustrates how demand for ornamental feathers can damage populations. Observe from a distance and never approach a colony to obtain a closer photograph."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList. Annual AviList Update, v2026.",
+                "Cornell Lab of Ornithology. All About Birds: Great Egret, identification and life history.",
+                "Observatoire FAUNA / INPN. Ardea alba: fiche espèce.",
+                "National Parks Board Singapore. Ardea alba.",
+                "British Trust for Ornithology. BirdFacts: Great White Egret.",
+                "OSME. Region List, version 10.1, 2024.",
+                "Ramadan-Jaradi and collaborators. Updated Checklist of the Birds of Lebanon. Sandgrouse 42, 2020.",
+                "Rihane, A. Observations de Grandes Aigrettes près de Mohammedia. Go-South Bulletin 11, 2014.",
+                "Thévenot and Bergier. La Grande Aigrette au Maroc. 2008.",
+                "BirdLife South Africa. Great Egret. Regional Red Data Book, 2025."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Hobbyfotowiki — CC0 1.0."
+        },
+        "fr": {
+          "title": "Grande Aigrette",
+          "subtitle": "Ardea alba — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Ardea alba — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Grande Aigrette, Ardea alba, est un grand héron blanc de la famille des Ardeidae et de l’ordre des Pelecaniformes. Sa silhouette élancée associe un très long cou, de longues pattes et un bec en poignard. Les oiseaux européens mesurent environ 85–102 cm, pour une envergure de 140–170 cm ; les dimensions varient géographiquement.",
+                "Le plumage est blanc chez les deux sexes et à tous les âges. Les mâles sont en moyenne plus grands, mais la taille seule permet rarement un sexage fiable sur le terrain. Les jeunes ressemblent aux adultes internuptiaux, sans les longues plumes ornementales du dos. Généralement jaune hors reproduction, le bec peut devenir largement noir chez les oiseaux nicheurs eurasiens, avec des lores verdâtres et des couleurs plus vives au-dessus des pattes. Sa couleur dépend donc de la saison et de la population.",
+                "L’espèce est nettement plus grande et plus longiligne que l’Aigrette garzette ; elle n’a ni ses pieds jaunes bien visibles ni ses deux longues plumes de nuque. Les hérons garde-bœufs sont plus trapus, avec un cou plus court. Les aigrettes blanches de taille intermédiaire exigent un examen attentif : chez la Grande Aigrette, la commissure du bec dépasse l’œil vers l’arrière. En vol, elle replie le cou et laisse dépasser les pattes, contrairement aux cigognes et aux spatules qui tendent le cou."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Elle fréquente marais d’eau douce, berges des lacs et rivières, champs inondés et bassins piscicoles, mais aussi lagunes, estuaires et zones humides littorales. L’accès à une eau peu profonde importe davantage que le caractère entièrement naturel du site. Roselières denses, arbres et buissons fournissent des supports de nidification ou de repos.",
+                "Elle attend immobile ou avance lentement avant de saisir sa proie. Les poissons occupent une place importante, complétés par des amphibiens, des invertébrés aquatiques et parfois de petits vertébrés terrestres. Elle pêche seule ou parmi d’autres oiseaux d’eau, tout en pouvant défendre un secteur rentable. Les dortoirs collectifs n’impliquent pas une chasse coopérative. Le vol est régulier ; les cris rauques sont particulièrement perceptibles près des colonies."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "La reproduction dépend du contexte local : printemps et été en région tempérée, rôle accru des pluies et de la disponibilité en eau plus au sud. Le nid de branches ou de roseaux se trouve dans un arbre, un buisson ou une roselière, isolément ou en colonie. Les parades mettent en valeur les fines plumes dorsales. La ponte comprend généralement 3–5 œufs bleu-vert pâle. Les deux parents incubent environ 25–26 jours et nourrissent les jeunes. Ceux-ci peuvent grimper hors du nid avant de voler, généralement vers six semaines. Quitter le nid ne signifie pas être indépendant."
+              ]
+            },
+            {
+              "heading": "Répartition et saisons régionales",
+              "paragraphs": [
+                "L’espèce au sens large occupe de vastes régions des Amériques, d’Afrique, d’Eurasie et d’Australasie. Les populations septentrionales migrent ; d’autres se dispersent ou restent près des zones humides favorables. L’Arabie accueille surtout des migrateurs et des hivernants. Au Machrek, le Liban reçoit ces deux catégories, ainsi que quelques estivants non nicheurs. L’Égypte est principalement une zone de passage et d’hivernage. Au Maghreb, les zones humides marocaines et tunisiennes accueillent migrants et hivernants ; une présence estivale ne prouve pas la nidification."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Ce prédateur relie les proies aquatiques aux réseaux alimentaires des zones humides. Son statut mondial est « Préoccupation mineure » LC, sans garantie de sécurité locale. Drainage, modification des niveaux d’eau, ruissellement pollué et dérangement peuvent dégrader les sites. La protection doit concerner les colonies et leurs secteurs d’alimentation. L’ancienne chasse aux plumes rappelle les effets du commerce des ornements. Observer à distance, sans approcher une colonie pour photographier."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList. Annual AviList Update, v2026.",
+                "Cornell Lab of Ornithology. All About Birds: Great Egret, identification and life history.",
+                "Observatoire FAUNA / INPN. Ardea alba: fiche espèce.",
+                "National Parks Board Singapore. Ardea alba.",
+                "British Trust for Ornithology. BirdFacts: Great White Egret.",
+                "OSME. Region List, version 10.1, 2024.",
+                "Ramadan-Jaradi and collaborators. Updated Checklist of the Birds of Lebanon. Sandgrouse 42, 2020.",
+                "Rihane, A. Observations de Grandes Aigrettes près de Mohammedia. Go-South Bulletin 11, 2014.",
+                "Thévenot and Bergier. La Grande Aigrette au Maroc. 2008.",
+                "BirdLife South Africa. Great Egret. Regional Red Data Book, 2025."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Hobbyfotowiki — CC0 1.0."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البلشون-الأبيض-الصغير",
+        "en": "little-egret",
+        "fr": "aigrette-garzette"
+      },
+      "published": "2026-10-29",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "little-egret"
+      ],
+      "translations": {
+        "ar": {
+          "title": "البلشون الأبيض الصغير",
+          "subtitle": "Egretta garzetta — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Egretta garzetta — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "البلشون الأبيض الصغير، Egretta garzetta، من فصيلة البلشونيات Ardeidae ورتبة البجعيات Pelecaniformes. وهو طائر مائي أبيض نحيل، يبلغ طوله نحو 55–65 سم، وله منقار داكن دقيق ورقبة طويلة وساقان داكنتان. وفي التجمع المنتمي إلى السلالة الاسمية الموجود في منطقتنا، تتباين القدمان الصفراوان عادة مع سواد أسفل الساقين. وقد يخفي الوحل أو الظل أو غمر القدمين بالماء هذه العلامة المفيدة، فلا يصح استبعاد النوع لمجرد تعذر رؤيتها.",
+                "يتشابه الذكر والأنثى في المظهر، ولا يمكن عادة تحديد جنس طائر منفرد من الريش بثقة. تكتسب البالغات المتكاثرة ريشتين طويلتين رفيعتين في القفا وريشاً زخرفياً دقيقاً على الصدر والظهر. وقد تشتد ألوان الجلد العاري أمام العين والقدمين أثناء المغازلة. تفتقر اليافعات إلى الزينة الكاملة للبالغات، وقد تكون سيقانها أكثر اخضراراً وأقدامها أقل إشراقاً. لذلك ليس كل طائر أبيض بلا ريش طويل طائراً يافعاً بالضرورة؛ إذ تتبدل الزينة أيضاً بحسب الموسم.",
+                "البلشون الأبيض الكبير أكبر بكثير وأطول رقبة. أما بلشونات البقر فأكثر امتلاءً، ورقابها أقصر وأغلظ مظهراً، ومناقيرها صفراء عادة باستثناء المراحل العمرية المبكرة. وعلى سواحل الجزيرة العربية والبحر الأحمر، يتطلب الطور الأبيض لبلشون الصخر الغربي تدقيقاً خاصاً: شكل المنقار ونسب الساقين ومجموعة العلامات كلها أهم من البياض أو اصفرار القدمين منفردين. وتتعامل هذه الصفحة مع بلشون الصخر بوصفه نوعاً منفصلاً، خلافاً لبعض المراجع القديمة التي دمجته مع البلشون الأبيض الصغير."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يفضل المياه الضحلة المتاحة للبحث عن الطعام: أطراف المستنقعات وضفاف الأنهار والبحيرات الساحلية والمصبات والمسطحات الطينية وقنوات الري. كما يستفيد من حقول الأرز وأحواض الأسماك. وقد تقع أشجار المبيت والغطاء الآمن للتعشيش بعيداً عن منطقة التغذية، ولذلك لا تكفي حماية بركة صغيرة وحدها دائماً لتلبية احتياجاته.",
+                "غالباً ما يكون نشيطاً أثناء الصيد؛ يمشي ويتوقف، أو يجري خلف الفريسة، أو يحرك القاع بإحدى قدميه لإخراج الحيوانات المختبئة. يلتقط الأسماك الصغيرة والقشريات والحشرات المائية وغيرها من الحيوانات المائية الصغيرة بضربات سريعة من المنقار. وقد يتغذى منفرداً أو في تجمعات متباعدة مع الدفاع عن بقعة جيدة. وفي الليل قد تجتمع الطيور في مواقع مبيت مشتركة. يطوي الرقبة في الطيران ويمد الساقين خلفه، وتظهر أصواته الخشنة خصوصاً عند الإزعاج أو التفاعل مع طيور أخرى."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يعشش غالباً في مستعمرات، أحياناً مع أنواع أخرى من البلشون، في الأشجار أو الشجيرات، وأحياناً ضمن نباتات محمية أخرى. وتحمل البيض منصة من الأغصان الدقيقة. يتغير توقيت التكاثر بحسب المناخ المحلي والظروف المائية، ولا يسري تقويم واحد على كامل نطاق النوع. تضم الحضنة عادة 4–5 بيضات، ويتقاسم الأبوان حضانتها نحو 21–22 يوماً ثم إطعام الصغار المعتمدة عليهما. تبدأ الفراخ الطيران غالباً بعمر 40–45 يوماً، وقد تتسلق مبتعدة عن العش قبل ذلك. وهذه أرقام نموذجية إرشادية، وليست مواعيد مضمونة لكل عش."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية الإقليمية",
+              "paragraphs": [
+                "ينتشر على نطاق واسع في أفريقيا وأوروبا وآسيا وصولاً إلى أسترالاسيا. تهاجر بعض التجمعات، بينما تقيم أخرى أو تتفرق بعد التكاثر. تستقبل الجزيرة العربية طيور عبور وشتاء، مع تكاثر محلي يشمل تسجيلاً موثقاً في السعودية عام 2020. وفي المشرق يستقبل لبنان طيور عبور وزواراً شتويين، وثبت فيه أيضاً التعشيش محلياً. وتجمع مصر بين تجمعات متكاثرة مقيمة وتحركات موسمية، مع توثيق مستعمرات في بحيرة ناصر. وفي المغرب العربي تتجاور تجمعات التكاثر والزوار الموسميون، ومن أمثلتها تعشيش مثبت في المغرب. ولا يثبت وجود النوع طوال السنة أن الأفراد نفسها بقيت في المكان."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يسهم هذا المفترس الصغير في شبكات الغذاء بالأراضي الرطبة، ويتأثر بتوافر المياه الضحلة المناسبة. يصنف عالمياً ضمن «أقل إثارة للقلق» LC، رغم وجود ضغوط محلية. فالتجفيف وردم السواحل والتلوث وإزالة نباتات التعشيش أو إزعاجها قد تقلل الموائل الملائمة. وحماية مواقع المبيت والمستعمرات ومسطحات التغذية معاً أهم من الحصول على صورة قريبة. تراقب الطيور بهدوء ومن مسافة، دون دفعها إلى الطيران أو الاقتراب من الأعشاش."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "British Trust for Ornithology. BirdFacts: Little Egret.",
+                "New Zealand Birds Online. Little egret.",
+                "IUCN. Atlas of the Coastal and Seabirds of Lebanon, 2021.",
+                "OSME. Region List, version 10.1, 2024.",
+                "Hering and collaborators. Large breeding colonies of herons, egrets and Glossy Ibis at Lake Nasser, Egypt. Alauda 88, 2020.",
+                "Ramadan-Jaradi and collaborators. Updated Checklist of the Birds of Lebanon. Sandgrouse 42, 2020.",
+                "Fareh and collaborators. Phénologie des Ardéiformes de la zone humide Fouarat de Kénitra, Maroc. 2015.",
+                "Qninba and collaborators. Nidification de l’Aigrette garzette dans la retenue de barrage d’Al Massira-Laâyoune en 2009. Go-South Bulletin 6.",
+                "IUCN SSC Heron Specialist Group. Little Egret: natural-history account; historical taxonomy not followed."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Stefania.foto6 / Iaia quark — CC0 1.0."
+        },
+        "en": {
+          "title": "Little Egret",
+          "subtitle": "Egretta garzetta — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Egretta garzetta — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Little Egret, Egretta garzetta, belongs to the heron family Ardeidae in the order Pelecaniformes. It is a slender white waterbird, approximately 55–65 cm long, with a fine dark bill, long neck and dark legs. In the regional nominate population, yellow feet usually contrast sharply with the black lower legs. Mud, shade and immersion can conceal this useful feature.",
+                "Male and female look alike; a solitary bird cannot normally be sexed confidently from plumage. Breeding adults acquire two long, narrow nape plumes and delicate ornamental feathers on the breast and back. Bare facial skin and feet can become more brightly coloured during courtship. Young birds lack the adults’ full ornaments and may have greener legs and duller feet. A white bird without long plumes is therefore not necessarily a juvenile.",
+                "Great Egret is much larger and longer-necked. Cattle egrets are more compact, with shorter, thicker-looking necks and usually yellow bills outside the youngest stages. On Arabian and Red Sea coasts, white Western Reef Herons require particular care: bill shape, leg proportions and the complete combination of features matter more than white plumage or yellow feet alone. This account treats reef herons separately rather than following older sources that lumped them with Little Egret."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It favours accessible shallow water: marsh edges, river margins, lagoons, estuaries, mudflats and irrigation channels. Rice fields and fishponds can also provide feeding sites. Suitable roost trees and secure nesting cover may be separate from the feeding area, so conserving one small pool is not always enough.",
+                "Its hunting is often lively. The bird walks, pauses, runs after prey or stirs the bottom with a foot to flush hidden animals. Small fish, crustaceans, aquatic insects and other small aquatic animals are taken with quick bill strikes. It can feed alone or in loose gatherings while defending a productive patch. At night, birds may gather at shared roosts. In flight the neck folds back and the legs extend behind. Rough calls are most evident when birds are disturbed or interacting."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Little Egrets often nest colonially, sometimes with other herons, in trees or shrubs and occasionally other sheltered vegetation. A platform of twigs supports the eggs. Breeding dates depend on local climate and water conditions rather than a single calendar throughout the range. A typical clutch contains 4–5 eggs. Both parents incubate for about 21–22 days and feed the dependent young. First flight is generally around 40–45 days; climbing away from the nest can precede this. These are useful typical figures, not guarantees for every nest."
+              ]
+            },
+            {
+              "heading": "Distribution and regional seasonality",
+              "paragraphs": [
+                "The species occurs widely across Africa, Europe and Asia into Australasia. Some populations migrate; others remain resident or disperse after breeding. Arabia receives passage and winter visitors, but local breeding occurs, including a documented Saudi breeding record in 2020. In the Mashriq, Lebanon supports passage and wintering birds and has confirmed local breeding. Egypt combines resident breeders with seasonal movements; Lake Nasser colonies are documented. In the Maghreb, breeding populations and seasonal visitors coexist, including confirmed nesting in Morocco. Presence throughout a year does not by itself prove that the same birds stayed."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "This small predator participates in wetland food webs and responds to the availability of shallow feeding water. Its global status is Least Concern, despite local pressures. Wetland drainage, coastal reclamation, pollution and removal or disturbance of nesting vegetation can reduce suitable habitat. Protecting roosts, colonies and feeding shallows together is more useful than protecting a photograph opportunity. Watch quietly from a distance and avoid flushing birds or approaching nests."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "British Trust for Ornithology. BirdFacts: Little Egret.",
+                "New Zealand Birds Online. Little egret.",
+                "IUCN. Atlas of the Coastal and Seabirds of Lebanon, 2021.",
+                "OSME. Region List, version 10.1, 2024.",
+                "Hering and collaborators. Large breeding colonies of herons, egrets and Glossy Ibis at Lake Nasser, Egypt. Alauda 88, 2020.",
+                "Ramadan-Jaradi and collaborators. Updated Checklist of the Birds of Lebanon. Sandgrouse 42, 2020.",
+                "Fareh and collaborators. Phénologie des Ardéiformes de la zone humide Fouarat de Kénitra, Maroc. 2015.",
+                "Qninba and collaborators. Nidification de l’Aigrette garzette dans la retenue de barrage d’Al Massira-Laâyoune en 2009. Go-South Bulletin 6.",
+                "IUCN SSC Heron Specialist Group. Little Egret: natural-history account; historical taxonomy not followed."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Stefania.foto6 / Iaia quark — CC0 1.0."
+        },
+        "fr": {
+          "title": "Aigrette garzette",
+          "subtitle": "Egretta garzetta — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Egretta garzetta — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Aigrette garzette, Egretta garzetta, appartient aux Ardeidae, dans l’ordre des Pelecaniformes. Cet oiseau d’eau blanc et élancé mesure environ 55–65 cm. Il possède un bec sombre et fin, un long cou et des pattes foncées. Chez la population nominale présente dans la région, les pieds jaunes contrastent généralement avec le bas noir des pattes. La vase, l’ombre ou l’immersion peuvent masquer ce caractère utile.",
+                "Les sexes se ressemblent ; le plumage d’un oiseau isolé ne permet normalement pas de déterminer son sexe avec certitude. En reproduction, les adultes portent deux longues plumes étroites à la nuque et de fines plumes ornementales sur la poitrine et le dos. La peau nue du visage et les pieds peuvent devenir plus vivement colorés pendant les parades. Les jeunes n’ont pas toute cette parure et peuvent présenter des pattes plus verdâtres et des pieds plus ternes. L’absence de longues plumes ne suffit donc pas à identifier un jeune.",
+                "La Grande Aigrette est nettement plus grande et plus longiligne. Les hérons garde-bœufs sont plus compacts, avec un cou plus court et plus épais, et généralement un bec jaune, sauf aux tout premiers âges. Sur les côtes d’Arabie et de la mer Rouge, les Aigrettes des récifs blanches demandent une attention particulière : forme du bec, proportions des pattes et ensemble des caractères sont plus fiables que la couleur blanche ou les pieds jaunes seuls. Cette fiche sépare les aigrettes des récifs, contrairement à certains ouvrages anciens qui les regroupaient avec la garzette."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Elle recherche les eaux peu profondes accessibles : bordures de marais, rivières, lagunes, estuaires, vasières et canaux d’irrigation. Les rizières et bassins piscicoles peuvent aussi fournir de la nourriture. Arbres-dortoirs et végétation de nidification peuvent être éloignés des secteurs de pêche : préserver une petite mare ne suffit donc pas toujours.",
+                "La chasse est souvent dynamique. L’oiseau marche, s’arrête, poursuit une proie en courant ou remue le fond avec un pied pour faire sortir les animaux cachés. Petits poissons, crustacés, insectes et autres petits animaux aquatiques sont capturés par des coups de bec rapides. Elle se nourrit seule ou en groupes lâches, tout en défendant un secteur favorable. La nuit, des dortoirs collectifs peuvent se former. En vol, le cou est replié et les pattes dépassent derrière le corps. Les cris rauques s’entendent surtout lors d’interactions ou d’un dérangement."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "La nidification est souvent coloniale, parfois avec d’autres hérons, dans les arbres, buissons ou, occasionnellement, une autre végétation abritée. Le nid est une plate-forme de brindilles. Les dates dépendent du climat local et des conditions hydrologiques, non d’un calendrier unique. Une ponte typique comprend 4–5 œufs. Les deux parents incubent environ 21–22 jours et nourrissent les jeunes dépendants. Le premier vol intervient généralement vers 40–45 jours ; les déplacements hors du nid en grimpant peuvent commencer auparavant. Ces durées sont indicatives, non garanties pour chaque nid."
+              ]
+            },
+            {
+              "heading": "Répartition et saisons régionales",
+              "paragraphs": [
+                "L’espèce est largement répartie en Afrique, Europe et Asie, jusqu’en Australasie. Certaines populations migrent ; d’autres sont sédentaires ou se dispersent après reproduction. L’Arabie reçoit migrants et hivernants, mais abrite aussi une reproduction locale, notamment documentée en Arabie saoudite en 2020. Au Machrek, le Liban accueille migrants et hivernants, avec une nidification locale confirmée. L’Égypte associe nicheurs résidents et mouvements saisonniers ; des colonies sont documentées au lac Nasser. Au Maghreb, nicheurs et visiteurs saisonniers coexistent, avec une reproduction certaine au Maroc. Une présence annuelle ne prouve pas que les mêmes individus restent."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Ce petit prédateur participe aux réseaux alimentaires des zones humides et dépend de zones de pêche peu profondes. Son statut mondial est « Préoccupation mineure » LC, malgré des pressions locales. Drainage, remblaiement côtier, pollution, destruction ou dérangement de la végétation de nidification peuvent réduire les habitats disponibles. Préserver ensemble dortoirs, colonies et secteurs de pêche prime sur une photographie rapprochée. Observer calmement à distance, sans provoquer l’envol ni approcher les nids."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "British Trust for Ornithology. BirdFacts: Little Egret.",
+                "New Zealand Birds Online. Little egret.",
+                "IUCN. Atlas of the Coastal and Seabirds of Lebanon, 2021.",
+                "OSME. Region List, version 10.1, 2024.",
+                "Hering and collaborators. Large breeding colonies of herons, egrets and Glossy Ibis at Lake Nasser, Egypt. Alauda 88, 2020.",
+                "Ramadan-Jaradi and collaborators. Updated Checklist of the Birds of Lebanon. Sandgrouse 42, 2020.",
+                "Fareh and collaborators. Phénologie des Ardéiformes de la zone humide Fouarat de Kénitra, Maroc. 2015.",
+                "Qninba and collaborators. Nidification de l’Aigrette garzette dans la retenue de barrage d’Al Massira-Laâyoune en 2009. Go-South Bulletin 6.",
+                "IUCN SSC Heron Specialist Group. Little Egret: natural-history account; historical taxonomy not followed."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Stefania.foto6 / Iaia quark — CC0 1.0."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الزرزور-الأوروبي",
+        "en": "common-starling",
+        "fr": "etourneau-sansonnet"
+      },
+      "published": "2026-10-29",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "starling"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الزرزور الشائع",
+          "subtitle": "Sturnus vulgaris — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Sturnus vulgaris — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الزرزور الشائع Sturnus vulgaris من فصيلة الزرازير Sturnidae، طائر مكتنز بطول يقارب 21 سم، قصير الذيل ودقيق المنقار، تبدو جناحاه مدببتين أثناء الطيران. ريش البالغ داكن ذو لمعان أخضر وأرجواني؛ وفي الريش الحديث تظهر نقط فاتحة تقل مع اهتراء أطراف الريش. لا يحتاج هذا التحول إلى افتراض أن كل طائر أسود فقد نقاطه ينتمي لنوع آخر. يكون المنقار أصفر في موسم التكاثر وأغمق خارجه، واليافع بني رمادي قبل اكتساب الريش المنقّط. يتشابه الجنسان عموماً، وتحتاج الفروق الدقيقة إلى رؤية قريبة جيدة."
+              ]
+            },
+            {
+              "heading": "الأنواع المشابهة",
+              "paragraphs": [
+                "يفيد الذيل القصير وشكل الجناح والمشية في تمييزه من الشحرور الأطول ذيلاً. وفي المغرب العربي تجب مقارنته بالزرزور الأسود Sturnus unicolor؛ غياب النقط وحده ليس حاسماً، خصوصاً عند تآكل الريش. أما الزرزور الوردي البالغ فيجمع اللون الوردي والأسود، لكن يافعاته تحتاج تدقيقاً في المنقار ونقش الريش والبنية."
+              ]
+            },
+            {
+              "heading": "الموطن والغذاء والسلوك",
+              "paragraphs": [
+                "يستغل المراعي والمروج والأراضي المزروعة والبساتين والحدائق والمناطق الحضرية. يمشي باحثاً عن اللافقاريات، ويغرز منقاره في الأرض، كما يأكل الثمار والبذور ومواد غذائية أخرى بحسب المتاح. غذاؤه متنوع وليس دليلاً على كونه ضاراً أو نافعاً دائماً في كل مزرعة. يجتمع خارج التكاثر في أسراب قد تبيت جماعياً في القصب أو الأشجار أو منشآت مناسبة. تتكون حركة السرب المنسقة من استجابات الطيور لجيرانها، وليست طيراناً عشوائياً. الأغنية غنية بالصفير والطقطقة والتقليد الصوتي."
+              ]
+            },
+            {
+              "heading": "التكاثر والنمو",
+              "paragraphs": [
+                "يعشش في تجاويف الأشجار والمباني وصناديق الأعشاش المناسبة. تضم الحضنة غالباً 4–5 بيضات فاتحة زرقاء، وتستغرق الحضانة نحو 12–15 يوماً. يغذي الأبوان الفراخ، التي تغادر التجويف بعد نحو ثلاثة أسابيع مع اختلاف المدة. تعتمد الفراخ على غذاء حيواني غني بالبروتين. قد تتبع المحاولة الأولى حضنة أخرى أو تعويضية، لكن ذلك ليس قاعدة موحّدة لجميع الجماعات. تتجمع اليافعات بعد الاستقلال وتكتسب ريشاً أقرب إلى ريش البالغين خلال تبدّل الريش."
+              ]
+            },
+            {
+              "heading": "الهجرة والمواسم العربية",
+              "paragraphs": [
+                "مهاجر جزئي ذو جماعات مقيمة وأخرى تتحرك جنوباً وغرباً في الخريف. تصبح أعداد الشتاء كبيرة في مناطق متوسطية من العالم العربي، ثم تنحسر أعداد الزوار في الربيع. لا يعني ذلك انعدام التكاثر عربياً؛ فله جماعات متكاثرة في شمال العراق. وفي السعودية يتركز حضوره الشتوي في النصف الشمالي، مع أسراب واضحة في المنطقة الشرقية وندرة أكبر جنوباً، ولا يوصف هناك كنوع متكاثر. تختلف كثافة الحضور بين الحقول والمدن والمبيتات وبين السنوات، فلا يكفي سرب واحد لتقدير عدد الجماعة أو تعميم الموسم. في لبنان يبرز العبور الخريفي خلال أكتوبر ونوفمبر، وتتركز أسراب الشتاء في الأراضي المفتوحة والمزروعة بالبقاع. وفي موقع مغربي موثق بمنطقة الدايات سُجل شتاءً من أكتوبر إلى فبراير، مختلطاً بأسراب الزرزور الأسود المقيم؛ وهذا مثال محلي وليس موعداً موحداً لكل المغرب."
+              ]
+            },
+            {
+              "heading": "البيئة والحماية",
+              "paragraphs": [
+                "يسهم في استهلاك اللافقاريات ونقل بعض البذور، ويدخل غذاء الجوارح. يصنف عالمياً «أقل إثارة للقلق»، لكنه شهد تراجعات مهمة في أجزاء من أوروبا؛ لذلك لا تلغي الأسراب الضخمة الحاجة إلى المتابعة. فقد المراعي المناسبة وتغير إدارة الزراعة وتراجع الغذاء من الضغوط المدروسة. وهو نوع دخيل في مناطق خارج نطاقه الأصلي، لكن هذا الوصف لا ينطبق تلقائياً على زواره الطبيعيين في البلدان العربية. تحفظ المراقبة الهادئة مسافة من المبيتات والأعشاش، وتفرّق بين خطر محلي مثبت وسمعة عامة غير دقيقة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Cornell Lab — All About Birds: European Starling identification",
+                "Audubon — European Starling field guide",
+                "BTO — BirdFacts: Starling",
+                "The Birds of Saudi Arabia, volume 2 — Common Starling",
+                "OSME — Region List 10.2, passerines",
+                "Minnesota Department of Natural Resources — European Starling",
+                "BirdLife International — African-Eurasian flyway species listings",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "Go-South Bulletin 14, 193–204 (2017) — Moroccan site avifauna"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Bernard Spragg. NZ — CC0 1.0."
+        },
+        "en": {
+          "title": "Common Starling",
+          "subtitle": "Sturnus vulgaris — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Sturnus vulgaris — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Common Starling, Sturnus vulgaris, belongs to Sturnidae. About 21 cm long, it has a compact body, short tail, slender bill and pointed wings in flight. Adult plumage is dark with green and purple iridescence. Fresh feathers carry pale spots that become less conspicuous as their tips wear; a dark, sparsely spotted bird is not automatically another species. The bill is yellow during breeding and darker outside that period. Juveniles are grey-brown before acquiring spotted plumage. The sexes broadly resemble one another, and subtle differences require a good close view."
+              ]
+            },
+            {
+              "heading": "Similar species",
+              "paragraphs": [
+                "The short tail, wing shape and walking gait help separate starlings from longer-tailed blackbirds. In the Maghreb, compare carefully with Spotless Starling, Sturnus unicolor: absence of spots alone is insufficient, especially in worn plumage. Adult Rosy Starlings combine pink and black, but juvenile birds require closer attention to bill, feather pattern and proportions."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Pasture, lawns, cultivated fields, orchards, parks and urban areas all provide opportunities. Starlings walk while searching for invertebrates and probe the ground with their bills; they also eat fruits, seeds and other available foods. Their varied diet does not make them invariably beneficial or harmful to every farm. Outside breeding, flocks may roost communally in reeds, trees or suitable structures. Coordinated flock movements arise from birds responding to their neighbours rather than moving randomly. The complex song incorporates whistles, rattles and imitations."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "Nests occupy holes in trees, buildings and suitable nest boxes. A typical clutch contains 4–5 pale blue eggs, with incubation lasting about 12–15 days. Both parents feed the chicks, which leave the cavity after roughly three weeks, with variation. Growing young rely heavily on protein-rich animal food. A later or replacement brood is possible, but not universal across populations. Independent juveniles gather into flocks and develop more adult-like plumage through moult."
+              ]
+            },
+            {
+              "heading": "Migration and Arab-region seasons",
+              "paragraphs": [
+                "This is a partial migrant, with resident populations and others moving south or west in autumn. Winter numbers become substantial in Mediterranean parts of the Arab world, followed by a reduction as visitors leave in spring. This does not imply that the species never breeds in Arab countries: breeding populations occur in northern Iraq. In Saudi Arabia, winter occurrence is concentrated in the northern half, with conspicuous Eastern Province flocks and much scarcer occurrence farther south; it is not treated there as a breeding species. Abundance varies among farmland, towns and roosts, and between years. A single flock cannot establish population size or a universal seasonal calendar. In Lebanon, autumn passage is conspicuous in October–November, with winter flocks concentrated in open and cultivated Beqaa habitats. At a documented Moroccan daya wetland site, October–February winter records included birds mixing with resident Spotless Starlings; these dates describe that site rather than the entire country."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Starlings consume invertebrates, disperse some seeds and provide food for raptors. Globally they are Least Concern, but substantial declines in parts of Europe show that spectacular flocks do not remove the need for monitoring. Loss of suitable pasture, changing farming practices and reduced food availability are studied pressures. The species is introduced outside its native range in several regions; this label should not automatically be applied to natural visitors in Arab countries. Quiet observation should keep its distance from nests and communal roosts and distinguish demonstrated local problems from a blanket reputation."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Cornell Lab — All About Birds: European Starling identification",
+                "Audubon — European Starling field guide",
+                "BTO — BirdFacts: Starling",
+                "The Birds of Saudi Arabia, volume 2 — Common Starling",
+                "OSME — Region List 10.2, passerines",
+                "Minnesota Department of Natural Resources — European Starling",
+                "BirdLife International — African-Eurasian flyway species listings",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "Go-South Bulletin 14, 193–204 (2017) — Moroccan site avifauna"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Bernard Spragg. NZ — CC0 1.0."
+        },
+        "fr": {
+          "title": "Étourneau sansonnet",
+          "subtitle": "Sturnus vulgaris — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Sturnus vulgaris — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "L’Étourneau sansonnet, Sturnus vulgaris, appartient aux Sturnidés. Long d’environ 21 cm, il possède un corps compact, une queue courte, un bec fin et des ailes pointues en vol. L’adulte porte un plumage sombre aux reflets verts et pourpres. Les plumes neuves ont des pointes claires qui s’usent progressivement : un oiseau peu tacheté n’appartient donc pas nécessairement à une autre espèce. Le bec devient jaune en période de reproduction et reste plus sombre hors de cette période. Le juvénile est brun gris avant d’acquérir son plumage ponctué. Les sexes se ressemblent globalement ; les différences fines exigent une bonne observation rapprochée."
+              ]
+            },
+            {
+              "heading": "Espèces ressemblantes",
+              "paragraphs": [
+                "La queue courte, les ailes et la démarche permettent de le distinguer du merle, plus long de queue. Au Maghreb, il faut le comparer avec l’Étourneau unicolore, Sturnus unicolor : l’absence de taches ne suffit pas, notamment lorsque les plumes sont usées. L’Étourneau roselin adulte associe rose et noir, mais les jeunes nécessitent un examen du bec, des motifs et des proportions."
+              ]
+            },
+            {
+              "heading": "Milieux, régime et comportement",
+              "paragraphs": [
+                "Pâtures, pelouses, cultures, vergers, parcs et espaces urbains lui offrent des ressources. Il recherche les invertébrés en marchant et en sondant le sol ; fruits, graines et autres aliments complètent son régime opportuniste. Cette diversité ne le rend ni systématiquement utile ni toujours nuisible dans chaque exploitation. Hors reproduction, les groupes peuvent dormir ensemble dans les roseaux, les arbres ou des structures adaptées. Les évolutions coordonnées résultent des réponses des individus à leurs voisins, et non de mouvements aléatoires. Son chant complexe mêle sifflements, crépitements et imitations."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Il niche dans les cavités des arbres, des bâtiments ou de nichoirs adaptés. La ponte comporte habituellement 4–5 œufs bleu pâle, incubés pendant environ 12–15 jours. Les deux parents nourrissent les poussins, qui quittent la cavité vers trois semaines, avec une certaine variation. Les jeunes en croissance reçoivent surtout des aliments animaux riches en protéines. Une seconde ponte ou une ponte de remplacement est possible, sans constituer une règle générale. Les jeunes indépendants se regroupent et acquièrent un plumage plus proche de celui des adultes par la mue."
+              ]
+            },
+            {
+              "heading": "Migration et saisons dans les pays arabes",
+              "paragraphs": [
+                "Migrateur partiel, il comprend des populations résidentes et d’autres se déplaçant vers le sud ou l’ouest en automne. Les effectifs hivernaux deviennent importants dans certaines régions arabes méditerranéennes, puis diminuent au départ printanier des visiteurs. Cela n’exclut pas la nidification arabe : des populations se reproduisent dans le nord de l’Irak. En Arabie saoudite, l’hivernage concerne surtout la moitié nord, avec des rassemblements visibles dans la Province orientale et une présence beaucoup plus rare au sud ; l’espèce n’y est pas considérée comme nicheuse. Les effectifs varient entre cultures, villes, dortoirs et années. Au Liban, le passage automnal ressort en octobre–novembre, avec des groupes hivernaux dans les milieux ouverts et cultivés de la Beqaa. Sur un site marocain de dayas étudié, les mentions hivernales d’octobre à février concernaient notamment des oiseaux mêlés aux Étourneaux unicolores résidents ; ces dates sont locales, non nationales."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "L’espèce consomme des invertébrés, disperse certaines graines et nourrit des rapaces. Son statut mondial est « Préoccupation mineure », malgré des déclins marqués dans certaines régions européennes. Perte de pâtures favorables, changements agricoles et disponibilité alimentaire sont des pressions étudiées. Introduite dans plusieurs régions hors de son aire naturelle, elle ne doit pas être qualifiée automatiquement d’exotique chez les visiteurs naturels des pays arabes. L’observation doit respecter dortoirs et nids et distinguer les problèmes locaux démontrés des réputations générales."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Cornell Lab — All About Birds: European Starling identification",
+                "Audubon — European Starling field guide",
+                "BTO — BirdFacts: Starling",
+                "The Birds of Saudi Arabia, volume 2 — Common Starling",
+                "OSME — Region List 10.2, passerines",
+                "Minnesota Department of Natural Resources — European Starling",
+                "BirdLife International — African-Eurasian flyway species listings",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "Go-South Bulletin 14, 193–204 (2017) — Moroccan site avifauna"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Bernard Spragg. NZ — CC0 1.0."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الشرشور-الشائع",
+        "en": "common-chaffinch",
+        "fr": "pinson-des-arbres"
+      },
+      "published": "2026-10-29",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "chaffinch"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الشرشور الأوراسي (الصلنج)",
+          "subtitle": "Fringilla coelebs — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Fringilla coelebs — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتصنيف",
+              "paragraphs": [
+                "الشرشور الأوراسي Fringilla coelebs، المعروف أيضاً بالشرشور الشائع أو الصلنج، عصفور من فصيلة الشرشوريات Fringillidae بطول نحو 15 سم. تعالج هذه الصفحة النوع بمفهومه الحديث: شرشور أفريقيا Fringilla spodiogenys، المقيم والمتكاثر في المغرب العربي، نوع منفصل، وكذلك أنواع جزر الأطلسي التي كانت تجمع معه قديماً."
+              ]
+            },
+            {
+              "heading": "التعرّف والتمييز",
+              "paragraphs": [
+                "يحمل الذكر رأساً أزرق رمادياً ووجهاً وأجزاء سفلية وردية بنية وظهراً بنياً دافئاً وعجزاً أخضر زيتونياً. الأنثى أهدأ لوناً، رمادية بنية، وتشبهها اليافعات. يشترك الجنسان في علامات جناحية بيضاء واضحة وحواف بيضاء للذيل. منقاره المخروطي أقصر وأقوى من منقار الطيور الآكلة للحشرات حصراً. يتميز شرشور الشمال بعجز أبيض وألوان كتف وصدر أكثر برتقالية. أما الفصل بين هذا النوع وشرشور أفريقيا، ولا سيما الإناث والطيور غير المكتملة اللون، فيحتاج مجموع الصفات والموقع والصوت، لا علامة منفردة."
+              ]
+            },
+            {
+              "heading": "الموطن والغذاء والسلوك",
+              "paragraphs": [
+                "يتكاثر في الغابات عريضة الأوراق والصنوبرية والبساتين والحدائق ذات الأشجار. شتاءً يتسع استخدامه للحقول وحواف الطرق والأرض المفتوحة قرب غطاء آمن. يأكل البذور واللافقاريات، وتزداد أهمية الحشرات ويرقاتها عند إطعام الفراخ. يلتقط كثيراً من غذائه من الأرض، وقد ينضم إلى أسراب مختلطة مع شرشور الشمال وأنواع أخرى. نداءاته قصيرة واضحة، وأغنيته المتكررة تتدرج في عبارة تنتهي بزخرفة مميزة. يدافع الذكر عن نطاق التكاثر، بينما يكون السلوك أكثر اجتماعية خارج الموسم."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "تبني الأنثى كأساً متماسكاً في شجرة أو شجيرة، من ألياف ونباتات دقيقة وطحالب، وقد تكسوه بالأشنات. تضم الحضنة عادة 4–5 بيضات، تحضنها الأنثى نحو 12–13 يوماً. يشارك الأبوان في التغذية، وتغادر الفراخ بعد نحو أسبوعين. تتباين المواعيد مع المكان والارتفاع؛ ففي لبنان يمتد التكاثر الموثق من منتصف مارس إلى أواخر يوليو. وجود حشرات كافية ومواقع تعشيش محمية مهم لنجاح الحضنة، حتى في نوع يتناول البذور بكثرة شتاءً."
+              ]
+            },
+            {
+              "heading": "الانتشار العربي والمواسم",
+              "paragraphs": [
+                "تقيم جماعات جنوبية بينما تتحرك جماعات شمالية وشرقية جنوباً وغرباً في الخريف. في لبنان هو متكاثر مقيم شائع، وتنضم إليه أعداد عابرة ومشتية من أوائل أكتوبر إلى أواخر أبريل، خاصة بالغابات والبساتين. في شمال العراق له تكاثر محدود ويظهر أيضاً شتاءً. وتؤوي غابات دبين الأردنية شرشوراً شتوياً، بينما تسجل مصر وجوده كزائر شتوي. الطيور المتكاثرة في المغرب والجزائر وتونس ومعظم المجال الليبي المغاربي تعود إلى شرشور أفريقيا المنفصل، لا إلى الشرشور الأوراسي تلقائياً. في قطر والإمارات تُظهر السجلات المنشورة ندرة حضوره؛ لذا تختلف صورة الخليج جذرياً عن لبنان. قد تتداخل أنواع الشرشور في موسم البرد، مما يزيد أهمية توثيق الهوية."
+              ]
+            },
+            {
+              "heading": "البيئة والحماية",
+              "paragraphs": [
+                "يسهم في استهلاك البذور واللافقاريات وهو غذاء لمفترسات طبيعية. تدرجه مراجع حفظ الأنواع ضمن «أقل إثارة للقلق»، مع ضرورة الانتباه إلى النطاق التصنيفي للتقييمات القديمة. سجلت تراجعات محلية في بريطانيا مرتبطة بداء المشعرات وعوامل أخرى؛ ولا يجوز افتراض أن العامل نفسه يفسر كل تغير عربي. حماية الأشجار والأسيجة والتنوع الغذائي والحد من المبيدات تدعم موائله."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Cornell Lab — eBird taxonomy update 2023",
+                "BTO — BirdFacts: Chaffinch",
+                "Naturalis — Bird Remains Identification System: Fringilla coelebs",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "OSME — Region List 10.2, passerines",
+                "State of Jordan’s Birds — Dibbeen account",
+                "IUCN Red List — Fringilla coelebs, 2018 assessment"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Bernard Spragg. NZ — CC0 1.0."
+        },
+        "en": {
+          "title": "Eurasian Chaffinch",
+          "subtitle": "Fringilla coelebs — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Fringilla coelebs — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and taxonomy",
+              "paragraphs": [
+                "The Eurasian Chaffinch, Fringilla coelebs, also called Common Chaffinch, is a finch approximately 15 cm long. This account follows the modern restricted species concept. African Chaffinch, Fringilla spodiogenys, resident and breeding in the Maghreb, is separate, as are the Atlantic-island species formerly grouped with it."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Males have a blue-grey head, pink-brown face and underparts, warm brown back and olive-green rump. Females are quieter grey-brown birds, and juveniles resemble them. Both sexes show conspicuous white wing markings and white outer tail feathers. The conical bill is shorter and stronger than that of a specialist insect-eater. Brambling has a white rump and stronger orange on the shoulders and breast. Separating Eurasian and African Chaffinches, particularly females and incompletely coloured birds, requires a combination of plumage, locality and vocal evidence rather than one isolated feature."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Breeding habitat includes broadleaved and coniferous woodland, orchards and tree-rich gardens. In winter the species also uses farmland, verges and open ground close to shelter. It eats seeds and invertebrates; insects and larvae become especially important when feeding chicks. Much feeding takes place on the ground, sometimes in mixed flocks with Bramblings and other species. Short, clear calls accompany a repeated song phrase ending in a distinctive flourish. Males defend breeding territories, whereas behaviour becomes more social outside the season."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "The female constructs a compact cup in a tree or shrub from fine vegetation, fibres and moss, sometimes camouflaging it with lichens. A typical clutch contains 4–5 eggs, incubated by the female for approximately 12–13 days. Both parents provide food, and chicks leave the nest after about a fortnight. Timing varies with place and altitude: documented breeding in Lebanon extends from mid-March to late July. Adequate insect food and protected nest sites matter even for a bird associated with winter seed feeding."
+              ]
+            },
+            {
+              "heading": "Arab distribution and seasons",
+              "paragraphs": [
+                "Some southern populations are resident while northern and eastern populations move south and west in autumn. Lebanon supports common resident breeders, joined by passage and winter birds from early October to late April, especially in woodland and orchards. Northern Iraq has limited breeding as well as winter occurrence. Jordan’s Dibbeen woodland supports wintering chaffinches; Egypt also receives winter visitors. Breeding chaffinches in Morocco, Algeria, Tunisia and much of the Libyan Maghreb belong to the separate African Chaffinch, not automatically to this species. Published records from Qatar and the United Arab Emirates show rare occurrence, a very different situation from Lebanon. Overlap among chaffinch species during the cold season makes careful identification valuable."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Seed and invertebrate consumption connect the species to food webs in which it also feeds natural predators. Conservation references list Least Concern, although older assessments need their taxonomic scope checked. British declines have been associated with trichomonosis and other factors; the same explanation should not be assumed for every Arab population change. Maintaining trees, hedges and varied food resources, while reducing pesticide pressure, supports its habitats."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Cornell Lab — eBird taxonomy update 2023",
+                "BTO — BirdFacts: Chaffinch",
+                "Naturalis — Bird Remains Identification System: Fringilla coelebs",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "OSME — Region List 10.2, passerines",
+                "State of Jordan’s Birds — Dibbeen account",
+                "IUCN Red List — Fringilla coelebs, 2018 assessment"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Bernard Spragg. NZ — CC0 1.0."
+        },
+        "fr": {
+          "title": "Pinson des arbres",
+          "subtitle": "Fringilla coelebs — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Fringilla coelebs — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et taxonomie",
+              "paragraphs": [
+                "Le Pinson des arbres, Fringilla coelebs, est un Fringillidé d’environ 15 cm. Cette notice suit la définition moderne et restreinte de l’espèce. Le Pinson d’Afrique, Fringilla spodiogenys, résident et nicheur au Maghreb, est distinct, comme les espèces des archipels atlantiques autrefois réunies avec lui."
+              ]
+            },
+            {
+              "heading": "Reconnaissance",
+              "paragraphs": [
+                "Le mâle présente une tête bleu gris, une face et un dessous brun rosé, un dos brun chaud et un croupion vert olive. La femelle est plus discrète, gris brun, et les jeunes lui ressemblent. Les deux sexes montrent des marques alaires blanches bien visibles et du blanc sur les rectrices externes. Le bec conique est plus court et robuste que celui d’un insectivore spécialisé. Le Pinson du Nord possède un croupion blanc et davantage d’orange aux épaules et à la poitrine. Séparer Pinson des arbres et Pinson d’Afrique, surtout les femelles et les oiseaux imparfaitement colorés, exige plusieurs critères de plumage, de localisation et de voix."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il niche dans les bois feuillus ou résineux, les vergers et les jardins arborés. En hiver, il fréquente aussi les cultures, les accotements et les terrains ouverts proches d’un abri. Il consomme graines et invertébrés ; insectes et larves deviennent particulièrement importants pour les poussins. Il se nourrit souvent au sol, parfois dans des groupes mixtes avec des Pinsons du Nord et d’autres espèces. Ses cris courts et nets accompagnent un chant répété se terminant par une fioriture caractéristique. Territorial pendant la reproduction, il devient plus sociable ensuite."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "La femelle construit une coupe compacte dans un arbre ou un buisson avec des fibres, de fines matières végétales et de la mousse, parfois camouflée par des lichens. La ponte compte généralement 4–5 œufs qu’elle incube environ 12–13 jours. Les deux parents nourrissent les jeunes, qui quittent le nid après approximativement deux semaines. Les dates dépendent du lieu et de l’altitude : au Liban, la reproduction documentée s’étend de mi-mars à fin juillet. Des insectes abondants et des sites protégés restent indispensables à cet oiseau pourtant associé aux graines en hiver."
+              ]
+            },
+            {
+              "heading": "Répartition arabe et saisons",
+              "paragraphs": [
+                "Certaines populations méridionales sont résidentes, tandis que celles du nord et de l’est migrent vers le sud et l’ouest en automne. Le Liban accueille des nicheurs résidents communs, renforcés par les migrateurs et hivernants de début octobre à fin avril, notamment dans les bois et vergers. Le nord de l’Irak possède une reproduction limitée et reçoit des hivernants. La forêt jordanienne de Dibbeen accueille l’espèce en hiver, tout comme l’Égypte. Les pinsons nicheurs du Maroc, d’Algérie, de Tunisie et d’une grande partie du Maghreb libyen appartiennent au Pinson d’Afrique distinct. Les mentions publiées au Qatar et aux Émirats arabes unis indiquent une présence rare, très différente de celle du Liban. Le chevauchement hivernal des espèces renforce l’intérêt d’une identification précise."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Consommateur de graines et d’invertébrés, il nourrit aussi des prédateurs naturels. Les références de conservation indiquent « Préoccupation mineure », mais le périmètre taxonomique des anciens bilans doit être contrôlé. Des déclins britanniques ont été associés à la trichomonose et à d’autres facteurs, sans que cette explication soit automatiquement applicable aux populations arabes. Arbres, haies, ressources diversifiées et moindre pression des pesticides favorisent ses habitats."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Cornell Lab — eBird taxonomy update 2023",
+                "BTO — BirdFacts: Chaffinch",
+                "Naturalis — Bird Remains Identification System: Fringilla coelebs",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "OSME — Region List 10.2, passerines",
+                "State of Jordan’s Birds — Dibbeen account",
+                "IUCN Red List — Fringilla coelebs, 2018 assessment"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Bernard Spragg. NZ — CC0 1.0."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الشحرور-الأوراسي",
+        "en": "eurasian-blackbird",
+        "fr": "merle-noir"
+      },
+      "published": "2026-10-29",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "blackbird"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الشحرور الشائع",
+          "subtitle": "Turdus merula — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Turdus merula — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الشحرور الشائع Turdus merula طائر من فصيلة السمنيات Turdidae، يبلغ طوله نحو 24–25 سم. الذكر البالغ أسود، غالباً بمنقار أصفر أو برتقالي وحلقة عين صفراء. الأنثى بنية، بحلق أفتح ونقش خفيف على الصدر، واليافع بني منقّط ولا يصح اعتباره أنثى بمجرد اللون. وقد يحتفظ الذكر الفتي بمنقار داكن وريش أجنحة بني نسبياً. الذيل طويل مقارنة بذيل الزرزور، والطائر يتحرك على الأرض بقفزات أو جري قصير تتخلله وقفات."
+              ]
+            },
+            {
+              "heading": "الأنواع المشابهة والتصنيف",
+              "paragraphs": [
+                "يمتاز الشحرور المطوق عادة بهلال صدري فاتح وحواف ريش تمنح الجناح مظهراً أفتح؛ ويجب الانتباه إلى الأفراد الفتية التي يضعف فيها الهلال. الزرزور أقصر ذيلاً ومدبب الجناحين. تشمل هذه المعالجة شحرور شمال أفريقيا ضمن Turdus merula؛ ولا تحوّل اختلافات تحت الأنواع إلى أنواع مستقلة. أما الشحرور الهندي والتبتي والصيني، التي فُصلت في التصنيفات الحديثة، فلا تدخل هنا."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والصوت",
+              "paragraphs": [
+                "يستغل الغابات والشجيرات والبساتين والحدائق والمساحات الخضراء بالمدن، بشرط توافر غذاء أرضي وغطاء قريب. يقلب الأوراق ويبحث في التربة عن الديدان والحشرات ولافقاريات أخرى، ويأكل الثمار خصوصاً حين تتاح بكثرة. يتغير الغذاء بحسب رطوبة الأرض والفصل والموطن. له أغنية صفيرية غنية يؤديها غالباً من موضع مرتفع، ونداءات إنذار حادة تختلف بوضوح عن الغناء. يدافع عن نطاقه أثناء التكاثر، وقد تجتمع طيور متعددة حول مورد ثمار دون أن تكوّن مستعمرة تعشيش."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "تبني الأنثى عشاً كأسياً متيناً من مواد نباتية، تقويه بالطين وتبطّنه بمواد أدق، داخل شجيرة أو شجرة أو موضع محمي. الحضنة المعتادة 3–4 بيضات، مع اختلاف العدد، والحضانة نحو 12–14 يوماً. يغذي الأبوان الفراخ التي تغادر العش بعد نحو أسبوعين. قد تتعدد الحضنات، ويستمر إطعام الفراخ بعد خروجها. وثقت دراسة مغربية التكاثر في بساتين التفاح والغطاء الخشبي المجاور بآيت عياش؛ وتدل مثل هذه الدراسات المحلية على ضرورة ربط التقويم بالموطن لا نقله آلياً من أوروبا."
+              ]
+            },
+            {
+              "heading": "الانتشار والمواسم العربية",
+              "paragraphs": [
+                "الشحرور ليس مجرد زائر شتوي عربي. له جماعات مقيمة متكاثرة في المغرب والجزائر وتونس، وفي أجزاء من بلاد الشام وشمال العراق. في لبنان هو مقيم شائع، تنضم إليه أعداد أقل من المهاجرين والزوار بين منتصف أكتوبر ومنتصف مارس. وفي الأردن توضح المقارنة بين وادي فينان ومرتفعات دانا أثر الارتفاع: الأول يستقبل زواراً شتويين، والثانية تؤوي طيوراً مقيمة. وسُجل تكاثره في واحات مصرية، فلا تختزل حالته المصرية في الهجرة وحدها. أما سجلات قطر فهي نادرة، وتختلف عن مناطق الإقامة المتوسطية. عالمياً تتحرك بعض الجماعات الشمالية جنوباً في الخريف بينما تبقى جماعات أخرى، وقد يصل المهاجر إلى منطقة يقيم فيها شحرور محلي أصلاً."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يسهم في شبكات الغذاء باستهلاك اللافقاريات ونقل بذور بعض الثمار، ويغذي بدوره الجوارح ومفترسات أخرى. حالته العالمية «أقل إثارة للقلق»، مع تباين الاتجاهات محلياً. تشمل الضغوط إزالة الأسيجة والغطاء الأرضي والمبيدات والاصطدامات وافتراس القطط. الاحتفاظ بشجيرات كثيفة وفرشة أوراق آمنة وعدم إزعاج الأعشاش يساعد النوع، ولا يتعارض نجاحه في بعض المدن مع حساسية جماعات أخرى لتغير الموائل."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "BTO — BirdFacts: Blackbird",
+                "RSPB — Blackbird",
+                "Woodland Trust — Blackbird",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "University of Reading — Birds of Faynan, Past and Present",
+                "OSME — Region List 10.2, passerines",
+                "El Hassani and colleagues — Breeding Performances of the European Blackbird in Morocco, 2021",
+                "Djemadi and colleagues — Biometric data of North African Blackbird, 2019",
+                "BirdLife International — Algeria country species factsheet"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: WikiPokos — CC0 1.0."
+        },
+        "en": {
+          "title": "Common Blackbird",
+          "subtitle": "Turdus merula — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Turdus merula — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Common Blackbird, Turdus merula, is a thrush approximately 24–25 cm long. Adult males are black, usually with a yellow or orange bill and yellow eye-ring. Females are brown with a paler throat and subdued breast markings. Juveniles are brown and mottled: brown plumage alone does not identify a female. Young males may retain dark bills and relatively brown wings. Compared with a starling, the tail is long. On the ground, hopping or short runs alternate with pauses."
+              ]
+            },
+            {
+              "heading": "Similar species and taxonomy",
+              "paragraphs": [
+                "Ring Ouzel generally shows a pale breast crescent and feather edges that make its wings appear paler; immature birds with a weak crescent need care. Starlings have shorter tails and pointed wings. This account includes North African blackbirds within Turdus merula rather than converting subspecies differences into separate species. The Indian, Tibetan and Chinese Blackbirds separated by modern taxonomies are excluded."
+              ]
+            },
+            {
+              "heading": "Habitat, diet and voice",
+              "paragraphs": [
+                "Woodland, scrub, orchards, gardens and urban green spaces are suitable where ground-feeding opportunities and nearby cover coexist. Blackbirds turn leaves and search soil for earthworms, insects and other invertebrates, adding fruit when available. Diet varies with season, habitat and soil moisture. Rich, fluting song is often delivered from an elevated perch; sharp alarm calls sound very different. Breeding birds defend territories, whereas several may gather at a fruit source without forming a nesting colony."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "The female builds a substantial cup of plant material strengthened with mud and lined with finer material, in a bush, tree or sheltered position. A typical clutch contains 3–4 eggs, with variation, and incubation lasts roughly 12–14 days. Both parents feed chicks, which leave the nest after about two weeks. Multiple broods are possible, and parental care continues after fledging. A Moroccan study documented breeding in apple orchards and adjacent woody vegetation at Ait Ayach. Such local work illustrates why breeding calendars should be related to habitat rather than copied automatically from European accounts."
+              ]
+            },
+            {
+              "heading": "Arab distribution and seasons",
+              "paragraphs": [
+                "Blackbirds are not merely Arab-region winter visitors. Resident breeding populations occur in Morocco, Algeria and Tunisia, and in parts of the Levant and northern Iraq. In Lebanon the species is a common resident, supplemented by smaller numbers of passage and winter birds between mid-October and mid-March. Jordan illustrates an altitudinal contrast: Wadi Faynan receives winter visitors, whereas higher Wadi Dana supports residents. Breeding has also been recorded in Egyptian oases, so Egypt cannot be described solely as a migration destination. Qatar records are rare, unlike the situation in Mediterranean resident areas. Globally, some northern populations move south in autumn while others remain, and migrants may join places already occupied by local blackbirds."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Blackbirds consume invertebrates, disperse seeds of some fruits and provide food for raptors and other predators. Their global category is Least Concern, but local trends differ. Pressures include hedge and ground-cover removal, pesticides, collisions and cat predation. Retaining dense shrubs and safe leaf litter and avoiding nest disturbance supports the species. Success in some cities does not mean every population is insensitive to habitat change."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "BTO — BirdFacts: Blackbird",
+                "RSPB — Blackbird",
+                "Woodland Trust — Blackbird",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "University of Reading — Birds of Faynan, Past and Present",
+                "OSME — Region List 10.2, passerines",
+                "El Hassani and colleagues — Breeding Performances of the European Blackbird in Morocco, 2021",
+                "Djemadi and colleagues — Biometric data of North African Blackbird, 2019",
+                "BirdLife International — Algeria country species factsheet"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: WikiPokos — CC0 1.0."
+        },
+        "fr": {
+          "title": "Merle noir",
+          "subtitle": "Turdus merula — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Turdus merula — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Merle noir, Turdus merula, est un Turdidé d’environ 24–25 cm. Le mâle adulte est noir, généralement avec un bec jaune ou orange et un cercle orbital jaune. La femelle est brune, avec une gorge plus claire et de discrètes marques pectorales. Le jeune est brun et moucheté : la seule couleur brune ne permet pas de reconnaître une femelle. Les jeunes mâles peuvent conserver un bec sombre et des ailes relativement brunes. La queue est longue par comparaison avec celle d’un étourneau. Au sol, sauts ou petites courses alternent avec des pauses."
+              ]
+            },
+            {
+              "heading": "Espèces proches et taxonomie",
+              "paragraphs": [
+                "Le Merle à plastron présente généralement un croissant pectoral clair et des bordures de plumes éclaircissant les ailes ; les immatures au plastron peu marqué demandent davantage d’attention. L’étourneau possède une queue plus courte et des ailes pointues. Cette notice inclut les merles nord-africains dans Turdus merula, sans transformer les différences entre sous-espèces en espèces distinctes. Les Merles indien, du Tibet et de Chine séparés par les classifications modernes sont exclus."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et voix",
+              "paragraphs": [
+                "Bois, broussailles, vergers, jardins et espaces verts urbains conviennent lorsqu’ils réunissent nourriture au sol et couvert proche. Le merle retourne les feuilles et fouille la terre pour capturer lombrics, insectes et autres invertébrés, complétant son régime avec les fruits disponibles. L’alimentation varie selon la saison, le milieu et l’humidité du sol. Son chant riche et flûté, souvent émis depuis un perchoir élevé, contraste avec les cris d’alarme secs. Territorial pendant la reproduction, il peut se rassembler avec d’autres individus autour de fruits sans constituer une colonie nicheuse."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "La femelle construit une coupe robuste de végétaux, renforcée de boue et garnie de matériaux plus fins, dans un buisson, un arbre ou un emplacement abrité. La ponte comprend habituellement 3–4 œufs, avec des variations ; l’incubation dure environ 12–14 jours. Les deux parents nourrissent les poussins, qui quittent le nid après approximativement deux semaines. Plusieurs nichées sont possibles et les soins continuent après l’envol. Une étude marocaine a documenté la reproduction dans des vergers de pommiers et la végétation ligneuse voisine à Ait Ayach. Ces travaux montrent l’importance des calendriers locaux plutôt que d’une simple transposition des données européennes."
+              ]
+            },
+            {
+              "heading": "Répartition arabe et saisons",
+              "paragraphs": [
+                "Le merle n’est pas seulement un hivernant des pays arabes. Des populations résidentes nichent au Maroc, en Algérie, en Tunisie et dans certaines parties du Levant et du nord de l’Irak. Au Liban, il est résident commun, rejoint par des migrateurs et hivernants moins nombreux de mi-octobre à mi-mars. La Jordanie illustre un contraste altitudinal : hivernant au Wadi Faynan, il est résident plus haut dans le Wadi Dana. Sa reproduction est aussi connue dans des oasis égyptiennes. Les mentions au Qatar restent rares, contrairement aux régions méditerranéennes de résidence. Certaines populations septentrionales migrent vers le sud en automne et peuvent rejoindre des merles déjà présents localement."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Consommateur d’invertébrés et disperseur de certaines graines, il nourrit aussi rapaces et autres prédateurs. Son statut mondial est « Préoccupation mineure », avec des tendances locales variables. Suppression des haies et du couvert, pesticides, collisions et chats constituent des pressions. Conserver des buissons denses et de la litière, tout en respectant les nids, lui est favorable. Sa réussite dans certaines villes ne garantit pas la résistance de toutes ses populations aux changements des milieux."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "BTO — BirdFacts: Blackbird",
+                "RSPB — Blackbird",
+                "Woodland Trust — Blackbird",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "University of Reading — Birds of Faynan, Past and Present",
+                "OSME — Region List 10.2, passerines",
+                "El Hassani and colleagues — Breeding Performances of the European Blackbird in Morocco, 2021",
+                "Djemadi and colleagues — Biometric data of North African Blackbird, 2019",
+                "BirdLife International — Algeria country species factsheet"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : WikiPokos — CC0 1.0."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الغراب-المقنع",
+        "en": "hooded-crow",
+        "fr": "corneille-mantelee"
+      },
+      "published": "2026-10-29",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "hooded-crow"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الغراب المقنّع",
+          "subtitle": "Corvus cornix — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Corvus cornix — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الغراب المقنّع Corvus cornix من فصيلة الغرابيات Corvidae، بطول يقارب نصف متر. يجمع عادة جسماً رمادياً مع رأس وحلق وجناحين وذيل سوداء، ومنقار وساقين داكنتين. الذكر والأنثى متشابهان؛ تفاوت الحجم لا يكفي عادة لتحديد جنس فرد منفرد. اليافع أقل لمعاناً وقد يبدو الريش الرمادي بنياً قليلاً. تساعد مقارنة مناطق اللون وشكل المنقار والذيل على التعرّف أكثر من الحجم وحده."
+              ]
+            },
+            {
+              "heading": "المشابهات وحدود التصنيف",
+              "paragraphs": [
+                "غراب المنازل Corvus splendens، الموجود في بعض المدن الساحلية العربية، يملك توزيعاً مختلفاً للرمادي وبنية أنحف؛ أما الغربان السوداء الكبيرة فلا تحمل العباءة الرمادية نفسها. ويمكن أن يتهجن المقنّع مع غراب الجيف في مناطق التماس الأوروبية. وفي العراق يحتاج غراب الرافدين capellanus إلى توضيح خاص: تضعه قوائم ضمن Corvus cornix، بينما تفرده قائمة OSME ككيان تصنيفي يستحق بحث استقلاله. يتميز بمناطق شاحبة جداً ومنقار كبير نسبياً. لذلك تعرض هنا جماعاته الجنوبية بصورة مستقلة عن جماعات المقنّع الرمادية في الشمال، ولا يُقدَّم الخلاف التصنيفي كأنه محسوم."
+              ]
+            },
+            {
+              "heading": "الموطن والغذاء والسلوك",
+              "paragraphs": [
+                "يستغل الأراضي الزراعية والمراعي وحواف الغابات والسواحل والحدائق والبلدات. هو قارت مرن، يأكل اللافقاريات والحبوب والثمار والجيف وبقايا الطعام، وقد يفترس فقاريات صغيرة أو بيضاً وفراخاً. تختلف نسب الغذاء بين المواقع والفصول. يمشي بحثاً عن الطعام ويفحص الموارد بعناية، وقد يخزن بعضه. يطلق نعيباً خشناً، ويدافع الزوج عن نطاق التعشيش؛ وخارجه قد تظهر مجموعات ومواضع مبيت جماعية. وجوده عند مكب لا يعني اقتصار غذائه على النفايات."
+              ]
+            },
+            {
+              "heading": "التكاثر والنمو",
+              "paragraphs": [
+                "يُبنى عش كبير من الأغصان، مبطن بمواد ألين، في شجرة أو على حافة صخرية أو منشأة مناسبة. تضم الحضنة غالباً 3–6 بيضات، تحضنها الأنثى نحو 18–19 يوماً. يغذي الأبوان الفراخ، التي تغادر العش بعد قرابة شهر وتستمر في طلب الطعام. الحضنة الواحدة هي النمط المعتاد، مع إمكان التعويض بعد الفشل. مواعيد التكاثر تختلف: يوثق لبنان النشاط من أواخر فبراير إلى أواخر يوليو، بينما رصدت دراسة بالإسماعيلية المصرية موسماً أبكر من يناير إلى أبريل."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والمواسم",
+              "paragraphs": [
+                "في لبنان هو مقيم متكاثر شائع، وفي شمال غرب الأردن متكاثر مقيم أيضاً. وفي مصر توجد جماعات مقيمة بوادي النيل والدلتا والفيوم ومنطقة قناة السويس، فلا يعد ظهوره هناك إعلاناً عن بدء الهجرة. في شمال العراق توجد جماعات مقيمة، بينما يرتبط capellanus بسهول وبساتين نخيل وسط العراق وجنوبه وبالأهوار. تسجل الكويت والإمارات وصولاً نادراً لهذا الشكل الرافدي، ولا تعني تلك المشاهدات وجود جماعات مقيمة. وفي شمال غرب السعودية نشرت سجلات قليلة للمقنّع، تختلف جذرياً عن وضعه المصري واللبناني. بعض جماعات النطاق الشمالي تتحرك موسمياً، لكن الإقامة هي الأساس في أمثلة عربية كثيرة."
+              ]
+            },
+            {
+              "heading": "البيئة والحماية",
+              "paragraphs": [
+                "يسهم في استهلاك اللافقاريات والجيف، كما يفترس أنواعاً أخرى ضمن شبكة الغذاء. تصفه المراجع العالمية بأنه من «أقل إثارة للقلق»، دون أن تحسم بذلك حالة كل جماعة أو الكيانات التصنيفية المختلف عليها. قد تغير النفايات المتاحة أعداده وتوزيعه وتزيد الاحتكاك بالبشر. إدارة النفايات وحماية الموائل وتقييم الضرر محلياً أفضل من تعميم وصفه بالنافع أو الضار، ولا تبرر مشاهدة افتراس عش وحدها استنتاج انهيار جماعة طيور كاملة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "BTO — BirdFacts: Hooded Crow",
+                "OSME — Region List 10.2, passerines",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "University of Reading — Birds of Faynan, Past and Present",
+                "Mostafa and colleagues — Population estimation and biology of Hooded Crow at Ismailia, 2015",
+                "Fazaa and colleagues — Distributions and Community Composition of Birds in Iraq’s Central Marsh, 2017",
+                "Molecular Ecology — Population structure and introgression in the Corvus corone complex, 2025",
+                "NCBI Taxonomy — Corvus cornix capellanus"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Nicolas Weghaupt — CC0 1.0."
+        },
+        "en": {
+          "title": "Hooded Crow",
+          "subtitle": "Corvus cornix — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Corvus cornix — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Hooded Crow, Corvus cornix, is a member of Corvidae approximately half a metre long. It usually combines a grey body with black head, throat, wings and tail, plus a dark bill and legs. The sexes look alike; size variation rarely allows a single bird to be sexed confidently. Juveniles are less glossy and their grey plumage can look slightly brown. Distribution of colour, bill structure and tail shape are more useful than size alone."
+              ]
+            },
+            {
+              "heading": "Similar birds and taxonomic boundaries",
+              "paragraphs": [
+                "House Crow, Corvus splendens, present in some Arab coastal cities, has differently distributed grey and a slimmer build. Larger black ravens lack the same grey mantle. Hooded and Carrion Crows can hybridise where their European ranges meet. Iraq’s capellanus requires particular care: some lists include it within Corvus cornix, whereas OSME treats it separately as a taxon whose independence merits investigation. It has very pale areas and a relatively large bill. Its southern populations are therefore distinguished here from northern grey Hooded Crows rather than presenting the taxonomic disagreement as settled."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Farmland, pasture, woodland edges, coasts, parks and settlements all provide habitat. This flexible omnivore eats invertebrates, grain, fruit, carrion and discarded food, and may take small vertebrates, eggs or chicks. Dietary proportions vary among places and seasons. Birds walk while searching and inspect resources carefully; some food may be cached. Harsh cawing is characteristic. Pairs defend nesting territories, while groups and communal roosts may form outside breeding. Occurrence at a rubbish dump does not mean that refuse is the entire diet."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "A large stick nest, lined with softer material, is built in a tree, on a rocky ledge or on a suitable structure. Typical clutches contain 3–6 eggs; the female incubates for approximately 18–19 days. Both parents feed chicks, which leave after about a month and continue begging. One brood is usual, with replacement attempts possible following failure. Timing varies: Lebanon records breeding from late February to late July, while an Ismailia study in Egypt reported an earlier January–April season."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasons",
+              "paragraphs": [
+                "The species is a common resident breeder in Lebanon and also breeds as a resident in northwestern Jordan. Egypt supports residents in the Nile Valley and Delta, Faiyum and the Suez Canal area: their appearance is not a signal that migration has begun. Northern Iraq has resident populations, while capellanus occupies the plains, date orchards and marshlands of central and southern Iraq. Rare occurrences of that Mesopotamian form in Kuwait and the United Arab Emirates do not establish resident populations. A few Hooded Crow records from northwestern Saudi Arabia contrast sharply with its Egyptian and Lebanese status. Some northern populations move seasonally, but residency characterises many Arab examples."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Invertebrate and carrion consumption, together with predation on other animals, connect this crow to food webs. Global references describe Least Concern, without settling the status of every population or disputed taxon. Accessible refuse can alter abundance and distribution and increase conflict with people. Waste management, habitat protection and locally evidenced assessment are more useful than universal labels of beneficial or harmful. A single observed nest predation event cannot demonstrate collapse of another bird population."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "BTO — BirdFacts: Hooded Crow",
+                "OSME — Region List 10.2, passerines",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "University of Reading — Birds of Faynan, Past and Present",
+                "Mostafa and colleagues — Population estimation and biology of Hooded Crow at Ismailia, 2015",
+                "Fazaa and colleagues — Distributions and Community Composition of Birds in Iraq’s Central Marsh, 2017",
+                "Molecular Ecology — Population structure and introgression in the Corvus corone complex, 2025",
+                "NCBI Taxonomy — Corvus cornix capellanus"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Nicolas Weghaupt — CC0 1.0."
+        },
+        "fr": {
+          "title": "Corneille mantelée",
+          "subtitle": "Corvus cornix — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Corvus cornix — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Corneille mantelée, Corvus cornix, est un Corvidé d’environ un demi-mètre. Elle associe généralement un corps gris à une tête, une gorge, des ailes et une queue noires, avec bec et pattes sombres. Les sexes se ressemblent ; la taille permet rarement de déterminer sûrement le sexe d’un individu isolé. Le jeune est moins lustré et son gris peut paraître légèrement brun. La répartition des couleurs, le bec et la queue sont plus utiles que la taille seule."
+              ]
+            },
+            {
+              "heading": "Ressemblances et limites taxonomiques",
+              "paragraphs": [
+                "Le Corbeau familier, Corvus splendens, présent dans certaines villes côtières arabes, possède une silhouette plus mince et une autre répartition du gris. Les grands corbeaux noirs n’ont pas le même manteau gris. Corneilles mantelée et noire peuvent s’hybrider dans leurs zones de contact européennes. En Irak, capellanus mérite une attention particulière : certaines listes l’incluent dans Corvus cornix, tandis que l’OSME le traite séparément comme taxon dont l’indépendance demande examen. Ses parties claires sont très pâles et son bec relativement grand. Ses populations méridionales sont donc distinguées ici des corneilles grises du nord, sans présenter le débat comme résolu."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Cultures, pâtures, lisières, côtes, parcs et localités lui conviennent. Cet omnivore souple consomme invertébrés, céréales, fruits, charognes et déchets alimentaires, parfois aussi petits vertébrés, œufs et poussins. Les proportions changent selon le lieu et la saison. Il recherche la nourriture en marchant, examine les ressources et peut en cacher une partie. Les cris sont des croassements rauques. Les couples défendent leur territoire de nidification ; des groupes et dortoirs collectifs peuvent se former hors reproduction. Fréquenter une décharge ne signifie pas se nourrir exclusivement d’ordures."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Un grand nid de branchettes, garni de matériaux plus doux, est construit dans un arbre, sur une corniche ou une structure adaptée. La ponte comprend habituellement 3–6 œufs, incubés par la femelle environ 18–19 jours. Les deux adultes nourrissent les jeunes, qui sortent vers un mois et continuent à quémander. Une nichée est habituelle, avec remplacement possible après un échec. Les dates varient : de fin février à fin juillet au Liban, mais de janvier à avril dans une étude d’Ismaïlia, en Égypte."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Résidente nicheuse commune au Liban, elle est également nicheuse résidente dans le nord-ouest jordanien. L’Égypte accueille des résidents dans la vallée et le delta du Nil, le Fayoum et la région du canal de Suez : leur apparition ne marque pas un début de migration. Le nord de l’Irak possède des populations résidentes, tandis que capellanus occupe plaines, palmeraies et marais du centre et du sud. Ses rares mentions au Koweït et aux Émirats arabes unis ne prouvent pas l’installation de populations. Quelques observations de Corneille mantelée au nord-ouest saoudien contrastent avec son statut égyptien et libanais. Certaines populations septentrionales se déplacent saisonnièrement, mais la résidence domine plusieurs exemples arabes."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "La consommation d’invertébrés et de charognes, comme la prédation, l’inscrit dans les réseaux alimentaires. Les références mondiales indiquent « Préoccupation mineure », sans résoudre le statut de chaque population ou taxon discuté. Les déchets accessibles peuvent modifier abondance et répartition et renforcer les conflits humains. Gestion des déchets, protection des milieux et évaluation locale sont préférables aux étiquettes générales d’oiseau utile ou nuisible. Une prédation observée au nid ne prouve pas l’effondrement d’une population entière."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "BTO — BirdFacts: Hooded Crow",
+                "OSME — Region List 10.2, passerines",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, 2020",
+                "University of Reading — Birds of Faynan, Past and Present",
+                "Mostafa and colleagues — Population estimation and biology of Hooded Crow at Ismailia, 2015",
+                "Fazaa and colleagues — Distributions and Community Composition of Birds in Iraq’s Central Marsh, 2017",
+                "Molecular Ecology — Population structure and introgression in the Corvus corone complex, 2025",
+                "NCBI Taxonomy — Corvus cornix capellanus"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Nicolas Weghaupt — CC0 1.0."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "اليمام-الضاحك",
+        "en": "laughing-dove",
+        "fr": "tourterelle-maillee"
+      },
+      "published": "2026-10-29",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "laughing-dove"
+      ],
+      "translations": {
+        "ar": {
+          "title": "اليمام الضاحك",
+          "subtitle": "Spilopelia senegalensis — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Spilopelia senegalensis — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "اليمام الضاحك، Spilopelia senegalensis، طائر صغير من فصيلة الحماميات Columbidae ورتبة الحماميات Columbiformes، ويعرف أيضاً بيمام النخيل. وهو مألوف حول كثير من البلدات والمزارع والواحات العربية. يبلغ طوله نحو 25–27 سم وباع جناحيه قرابة 40–45 سم، ويجمع بين رأس صغير وجسم نحيل وذيل طويل نسبياً.",
+                "لون الرأس والصدر عند البالغ دافئ يميل إلى البني الوردي، بينما يكون الظهر أكثر بنية، وتظهر مناطق رمادية مزرقة على الجناحين. ومن أبرز علاماته رقعة من التنقيط الأسود على أرضية صدئية في أسفل مقدمة الرقبة. ويبرز البياض على جانبي الذيل عندما ينشره. يتشابه الجنسان، ولا تكفي فروق اللون الطفيفة عادة لتحديد جنس طائر منفرد. أما اليافع فأبهت لوناً وتكون رقعة الرقبة المنقطة ضعيفة أو غائبة.",
+                "اليمام المطوق الأوراسي أكبر وأفتح لوناً، وله نصف طوق داكن بسيط خلف الرقبة. وتتميز القمرية الأوروبية بنمط أوضح على أعلى الجناح، حيث تكون مراكز الريش داكنة، وببقعة مخططة على جانب الرقبة. ويبدو جناح اليمام الضاحك أقل نقشاً وذيله أطول نسبياً. والأفضل جمع هذه العلامات بدلاً من الاعتماد على تقدير الحجم في صورة منفردة. أما اسمه فيرتبط بسلسلة هديله الناعم المتتابع؛ فهو وصف للصوت وليس تعبيراً عن ضحك بشري."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يسكن الأحراج المفتوحة والمناطق قليلة الأشجار والبساتين والأراضي المزروعة والحدائق والتجمعات السكانية. وتوفر الحدائق المروية والواحات في البيئات الجافة الغذاء والنباتات اللازمة للتعشيش. ويستفيد أيضاً من منشآت بشرية مثل الحواف المحمية وأوعية النباتات. ولا تكفي كثرة المباني وحدها لتفسير وجوده؛ إذ تهمه الرقع الصغيرة التي توفر الطعام ومواقع العش.",
+                "يجمع معظم غذائه من الأرض. تسود البذور الصغيرة والحبوب، مع بعض الثمار والمواد النباتية الأخرى والحشرات. يمشي ويلتقط الطعام حبة بعد أخرى، غالباً في أزواج أو مجموعات صغيرة، وقد تتشكل تجمعات أكبر عند مصادر الغذاء أو الماء المركزة. طيرانه سريع، وقد يرتفع فجأة عند الفزع. وتدافع الأزواج عن نطاقات التكاثر حتى عندما تعيش طيور كثيرة في الحي نفسه."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "تشمل المغازلة تكرار الهديل وحركات الجسم وطيران العرض. يساهم الشريكان في بناء منصة بسيطة من الأغصان، غالباً داخل شجرة أو شجيرة، وأحياناً على مبنى. تضع الأنثى عادة بيضتين بيضاوين، ويتقاسم الأبوان الحضانة وإطعام الصغار التي تتلقى في البداية لبن الحوصلة الغني بالغذاء. تستمر الحضانة عادة نحو أسبوعين، وتغادر الفراخ العش بعد قرابة أسبوعين من الفقس، مع اختلاف بين التجمعات والدراسات. وقد تبقى معتمدة على الأبوين بعد مغادرتها.",
+                "يمكن أن تتكرر فرص التكاثر خلال السنة. وفي السعودية وثق التكاثر خلال موسم واسع، مع نشاط ملحوظ من أواخر الشتاء إلى الصيف، وسجلت دراسة في الطائف بدايته في منتصف فبراير. ولتجمعات مصر والمغرب العربي أيضاً مواسم تكاثر، لكن الظروف المحلية مؤثرة؛ فوجود عش مغربي موثق ببيض في أغسطس يوضح لماذا لا يلائم النوع تقويم ضيق واحد في جميع المواقع."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية الإقليمية",
+              "paragraphs": [
+                "يشمل نطاقه الواسع معظم أنحاء أفريقيا وأجزاء من غرب آسيا ووسطها وجنوبها، بينما ترجع تجمعات غرب أستراليا إلى الإدخال البشري. وهو مقيم أساساً، مع انتشار وتحركات محلية مرتبطة بالظروف، وليس من المهاجرين الذين يلزمهم عبور موسمي طويل المسافة.",
+                "يتكاثر في الجزيرة العربية على نطاق واسع حيث تتوافر الموائل السكنية والزراعية المناسبة، ومنها السعودية وعمان والكويت. وفي المشرق يضم لبنان تجمعاً متكاثراً مقيماً مستقراً. وتستضيف مصر تجمعات متكاثرة مقيمة في المناطق السكنية والمزروعة، وقد تناولتها دراسات ميدانية في الشرقية وسيناء. أما في المغرب العربي فيعشش في البساتين والبلدات والواحات، ووثق توسع نطاقه في المغرب ومناطق أخرى من شمال أفريقيا. وتختلف كثافته بين المواقع بحسب توافر موارده."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "ينتمي هذا الطائر أساساً إلى آكلات البذور، ويمثل بدوره فريسة ضمن شبكات الغذاء البرية. يصنف عالمياً ضمن «أقل إثارة للقلق» LC. وقد تؤدي المفترسات أو الإزعاج أو هجر الأعشاش إلى فقد محاولات تكاثر محلية، كما سجل إطلاق النار العشوائي ضمن الضغوط عليه. يفيد الحفاظ على الشجيرات والبساتين وأماكن التعشيش الهادئة في استمرار وجوده قرب الإنسان. تترك الأعشاش المشغولة دون إزعاج، ويمكن الاستمتاع بالهديل من غير الاقتراب من الطيور."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "SEO/BirdLife. Tórtola senegalesa.",
+                "Almalki, M. Breeding ecology of the laughing dove in Taif City, Kingdom of Saudi Arabia. Brazilian Journal of Biology 83, 2023.",
+                "Boucherit and collaborators. Traditional Orchards and Drivers of Reproductive Performance in a Northern Algerian Population of Laughing Doves. Journal of Biological and Environmental Sciences 14, 2020.",
+                "Salama and collaborators. Preliminary Study on Breeding Biology of the Palm Dove at Sharkia Governorate, Egypt. Zagazig Journal of Agricultural Research 51, 2024.",
+                "Ramadan-Jaradi and collaborators. Updated Checklist of the Birds of Lebanon. Sandgrouse 42, 2020.",
+                "White and collaborators. Resident breeding birds in the St Katherine Protectorate, south Sinai. Sandgrouse 30, 2008.",
+                "Go-South. Summer breeding of Laughing Dove at Foum el Oued, 2020.",
+                "Mpala Research Centre. Laughing Dove field guide.",
+                "Kuwait Birds. Laughing Dove species account."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: The Great Mule of Eupatoria — CC0 1.0."
+        },
+        "en": {
+          "title": "Laughing Dove",
+          "subtitle": "Spilopelia senegalensis — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Spilopelia senegalensis — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Laughing Dove, Spilopelia senegalensis, is a small member of the pigeon and dove family, Columbidae, in the order Columbiformes. Also called Palm Dove, it is familiar around many Arab towns, farms and oases. At approximately 25–27 cm long, with a wingspan of about 40–45 cm, it combines a small head, slender body and relatively long tail.",
+                "Adults have warm pinkish-brown head and breast, a browner back and blue-grey areas on the wings. A patch of black spotting on a rusty background across the lower fore-neck is especially useful. White on the outer tail becomes conspicuous when the tail opens. The sexes are similar, and small colour differences are unreliable for identifying a single bird’s sex. Young birds are duller and have a weak or absent spotted neck patch.",
+                "Eurasian Collared Dove is larger and paler, with a simple dark half-collar behind the neck. European Turtle Dove shows more strongly patterned, dark-centred upperwing feathers and a striped neck patch. Laughing Dove has a plainer upperwing and longer-looking tail. These characters are best assessed together, rather than relying on size in an isolated photograph. Its soft, rolling series of coos gives rise to the English name; the bird is not expressing human laughter."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It occupies open scrub, lightly wooded country, orchards, cultivated land, gardens and settlements. In arid landscapes, watered gardens and oases provide food and vegetation for nesting. It also uses built structures, including sheltered ledges and plant containers. Dense buildings without food or nesting opportunities are less informative than the presence of suitable small patches of habitat.",
+                "Most food is collected on the ground. Small seeds and grains predominate, with some fruit, other plant material and insects. Birds walk and pick up individual food items, often as a pair or in small groups. Larger gatherings can form at concentrated food or water. Flight is quick, and a startled bird may rise abruptly. Pairs maintain breeding territories even where many birds occupy the same neighbourhood."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Courtship combines repeated cooing, body movements and display flights. Both partners contribute to the simple twig platform, usually in a tree or shrub but sometimes on a building. Two white eggs are usual. Both parents incubate and feed the young, which initially receive nutrient-rich crop milk. Incubation generally lasts about two weeks; young leave the nest roughly two weeks after hatching, with variation between populations and studies. They may still depend on their parents after leaving.",
+                "Breeding opportunities can recur within a year. In Saudi Arabia breeding is documented over a broad season, with much activity from late winter into summer. A Taif study recorded the onset in mid-February. Egyptian and Maghreb populations also breed seasonally, but local conditions matter: a documented Moroccan nest with eggs in August illustrates why a single narrow calendar is unsuitable."
+              ]
+            },
+            {
+              "heading": "Distribution and regional seasonality",
+              "paragraphs": [
+                "Its extensive range covers much of Africa and parts of western, central and southern Asia; western Australian populations are introduced. It is principally resident, with dispersal and local movements associated with conditions rather than obligatory long-distance seasonal migration.",
+                "In Arabia it breeds widely in suitable settled and cultivated habitats, including Saudi Arabia, Oman and Kuwait. In the Mashriq, Lebanon has an established resident breeding population. Egypt supports resident breeders in settled and cultivated areas, with field studies in Sharkia and Sinai. In the Maghreb it breeds in orchards, towns and oases; its expansion across Morocco and other North African areas is well documented."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "A mainly seed-eating bird, it is also prey within terrestrial food webs. Global status is Least Concern. Local nesting losses can result from predation, disturbance or nest abandonment; indiscriminate shooting is another recorded pressure. Maintaining shrubs, orchard habitat and quiet nesting places benefits birds alongside people. Leave active nests undisturbed and enjoy the calls without approaching the birds."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "SEO/BirdLife. Tórtola senegalesa.",
+                "Almalki, M. Breeding ecology of the laughing dove in Taif City, Kingdom of Saudi Arabia. Brazilian Journal of Biology 83, 2023.",
+                "Boucherit and collaborators. Traditional Orchards and Drivers of Reproductive Performance in a Northern Algerian Population of Laughing Doves. Journal of Biological and Environmental Sciences 14, 2020.",
+                "Salama and collaborators. Preliminary Study on Breeding Biology of the Palm Dove at Sharkia Governorate, Egypt. Zagazig Journal of Agricultural Research 51, 2024.",
+                "Ramadan-Jaradi and collaborators. Updated Checklist of the Birds of Lebanon. Sandgrouse 42, 2020.",
+                "White and collaborators. Resident breeding birds in the St Katherine Protectorate, south Sinai. Sandgrouse 30, 2008.",
+                "Go-South. Summer breeding of Laughing Dove at Foum el Oued, 2020.",
+                "Mpala Research Centre. Laughing Dove field guide.",
+                "Kuwait Birds. Laughing Dove species account."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: The Great Mule of Eupatoria — CC0 1.0."
+        },
+        "fr": {
+          "title": "Tourterelle maillée",
+          "subtitle": "Spilopelia senegalensis — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Spilopelia senegalensis — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Tourterelle maillée, Spilopelia senegalensis, est un petit membre de la famille des Columbidae, dans l’ordre des Columbiformes. Également appelée Tourterelle du Sénégal, elle est familière autour de nombreuses villes, fermes et oasis arabes. Elle mesure environ 25–27 cm, pour une envergure de 40–45 cm, avec une petite tête, un corps élancé et une queue relativement longue.",
+                "L’adulte présente une tête et une poitrine brun rosé chaud, un dos plus brun et des zones gris bleuté sur les ailes. Une plage de ponctuations noires sur fond roux au bas de l’avant du cou constitue un bon critère. Le blanc des bords de la queue apparaît nettement lorsque celle-ci s’ouvre. Les sexes sont semblables ; de faibles différences de couleur ne permettent pas de sexer sûrement un oiseau isolé. Les jeunes sont plus ternes, avec une plage ponctuée faible ou absente.",
+                "La Tourterelle turque est plus grande et plus pâle, avec un simple demi-collier noir derrière le cou. La Tourterelle des bois possède des plumes du dessus des ailes plus fortement dessinées, à centre sombre, et une plage rayée au cou. La maillée présente une aile plus unie et une queue paraissant plus longue. Mieux vaut combiner ces critères que juger uniquement la taille sur une photographie. Son nom anglais évoque ses roucoulements doux et roulés, sans leur attribuer une émotion humaine."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Elle occupe broussailles ouvertes, boisements clairs, vergers, cultures, jardins et agglomérations. En milieu aride, jardins irrigués et oasis procurent nourriture et végétation de nidification. Elle utilise aussi des supports artificiels, notamment rebords abrités et pots de plantes. La présence de petites surfaces favorables compte davantage que la densité des bâtiments seuls.",
+                "La nourriture est principalement ramassée au sol. Petites graines et céréales dominent, avec quelques fruits, autres matières végétales et insectes. Les oiseaux marchent en picorant, souvent par deux ou en petits groupes. Des rassemblements plus importants peuvent se former aux sources concentrées de nourriture ou d’eau. Le vol est rapide ; un oiseau surpris peut décoller brusquement. Les couples défendent un territoire de reproduction, même lorsque de nombreux individus vivent dans le même quartier."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "La parade associe roucoulements répétés, mouvements du corps et vols de présentation. Les deux partenaires contribuent à la plate-forme simple de brindilles, généralement dans un arbre ou un buisson, parfois sur un bâtiment. La ponte habituelle est de deux œufs blancs. Les parents se relaient pour incuber et nourrir les jeunes, qui reçoivent d’abord du lait de jabot riche en nutriments. L’incubation dure généralement environ deux semaines ; les jeunes quittent le nid environ deux semaines après l’éclosion, avec des variations entre populations et études. Ils peuvent rester dépendants des adultes après ce départ.",
+                "Plusieurs occasions de reproduction peuvent se succéder dans l’année. En Arabie saoudite, la nidification est documentée sur une longue période, avec une forte activité de la fin de l’hiver à l’été. Une étude à Taïf a relevé un début à la mi-février. Les populations égyptiennes et maghrébines ont aussi des saisons de reproduction, mais les conditions locales comptent : un nid marocain contenant des œufs en août montre les limites d’un calendrier trop étroit."
+              ]
+            },
+            {
+              "heading": "Répartition et saisons régionales",
+              "paragraphs": [
+                "Son vaste domaine couvre une grande partie de l’Afrique et des régions d’Asie occidentale, centrale et méridionale ; les populations d’Australie occidentale sont introduites. L’espèce est principalement sédentaire, avec dispersion et déplacements locaux liés aux conditions, plutôt qu’une migration saisonnière obligatoire à longue distance.",
+                "En Arabie, elle niche largement dans les secteurs habités et cultivés favorables, notamment en Arabie saoudite, à Oman et au Koweït. Au Machrek, le Liban possède une population nicheuse résidente établie. L’Égypte abrite des nicheurs résidents dans les zones cultivées et habitées, étudiés notamment dans la province de Charqiya et au Sinaï. Au Maghreb, elle niche dans les vergers, villes et oasis ; son expansion au Maroc et ailleurs en Afrique du Nord est bien documentée."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Principalement granivore, elle constitue aussi une proie dans les réseaux alimentaires terrestres. Son statut mondial est « Préoccupation mineure » LC. Prédation, dérangement ou abandon peuvent faire échouer les nids ; les tirs indiscriminés représentent également une pression documentée. Préserver buissons, vergers et supports tranquilles favorise sa coexistence avec les habitants. Laisser les nids occupés intacts et apprécier les roucoulements à distance."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "SEO/BirdLife. Tórtola senegalesa.",
+                "Almalki, M. Breeding ecology of the laughing dove in Taif City, Kingdom of Saudi Arabia. Brazilian Journal of Biology 83, 2023.",
+                "Boucherit and collaborators. Traditional Orchards and Drivers of Reproductive Performance in a Northern Algerian Population of Laughing Doves. Journal of Biological and Environmental Sciences 14, 2020.",
+                "Salama and collaborators. Preliminary Study on Breeding Biology of the Palm Dove at Sharkia Governorate, Egypt. Zagazig Journal of Agricultural Research 51, 2024.",
+                "Ramadan-Jaradi and collaborators. Updated Checklist of the Birds of Lebanon. Sandgrouse 42, 2020.",
+                "White and collaborators. Resident breeding birds in the St Katherine Protectorate, south Sinai. Sandgrouse 30, 2008.",
+                "Go-South. Summer breeding of Laughing Dove at Foum el Oued, 2020.",
+                "Mpala Research Centre. Laughing Dove field guide.",
+                "Kuwait Birds. Laughing Dove species account."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : The Great Mule of Eupatoria — CC0 1.0."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "عصفور-الدوري-المنزلي",
+        "en": "house-sparrow",
+        "fr": "moineau-domestique"
+      },
+      "published": "2026-10-29",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "house-sparrow"
+      ],
+      "translations": {
+        "ar": {
+          "title": "العصفور الدوري",
+          "subtitle": "Passer domesticus — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Passer domesticus — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والمظهر",
+              "paragraphs": [
+                "العصفور الدوري Passer domesticus طائر مكتنز من فصيلة عصافير العالم القديم، يبلغ طوله عادة نحو 15 سم. منقاره قصير قوي ومخروطي، يلائم التعامل مع البذور. يتميز الذكر البالغ النموذجي بتاج رمادي، ولون كستنائي على جانبي الرأس والعنق، وخدين فاتحين وبقعة سوداء على الحلق وأعلى الصدر. الظهر بني مخطط بالداكن، وعلى الجناح شريط فاتح. الأنثى أهدأ نقشًا، ولها حاجب قمحي وأجزاء سفلية رمادية بنية غير مزخرفة بوضوح. يشبه اليافع الأنثى، وقد تبقى عند الفرخ حديث المغادرة للعش حواف صفراء واضحة حول فتحة الفم تساعد في التعرف إلى عمره الصغير."
+              ]
+            },
+            {
+              "heading": "التغير الموسمي والأنواع المشابهة",
+              "paragraphs": [
+                "تبدو البقعة السوداء عند الذكر أصغر في الريش الحديث خارج موسم التكاثر، لأن أطراف الريش الفاتحة تغطي جزءًا من السواد. يكشف تآكل هذه الأطراف مساحة سوداء أكبر، دون أن يعني ذلك نمو بقعة جديدة كاملة على الحلق. أما عصفور الشجر الأوراسي فله تاج كستنائي وبقعة سوداء مميزة على كل خد. ويحتاج التعرف في شمال أفريقيا إلى عناية خاصة: يتزاوج الدوري مع العصفور الإسباني، فتوجد أشكال وسطية داخل منطقة تماس معقدة، خصوصًا في الجزائر. لا يصح تسمية هذه الجماعات كلها بالعصفور الإيطالي؛ فهذا النوع المعترف به يملك تاريخًا تطوريًا هجينًا متميزًا. وقد يصعب تحديد الطيور الشبيهة بالإناث أكثر من الذكور الواضحة الصفات."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والحياة الاجتماعية",
+              "paragraphs": [
+                "يفضل الدوري التجمعات السكانية والمزارع والحدائق وحواف الأراضي المزروعة. تساعده صلته بالناس على احتلال بيئات قاسية، لكنها لا تجعله منتشرًا بالتساوي في الصحراء الخالية من السكان. يتناول البالغ كثيرًا من البذور والحبوب، ويستغل أغذية أخرى بحسب المتاح. الحشرات واللافقاريات مهمة خصوصًا للفراخ. وقد وجدت دراسة في النوبة اختلافًا في الغذاء بين مواقع بشمال السودان وجنوب مصر، بما يوضح المرونة المحلية بدل وجود قائمة ثابتة لكل الجماعات. تبحث الطيور عن الطعام في أسراب، وتقفز على الأرض، وتستحم بالماء والتراب، وتتواصل بزقزقات متكررة يسمعها الناس قرب البيوت والمزارع."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "تشغل الأعشاش فجوات المباني والمنشآت والأشجار، وتبنى أحيانًا في مواضع أكثر انكشافًا بين النباتات. تشكل الأعشاب ومواد التبطين الدقيقة حجرة محمية للصغار. قد تتجاور الأزواج في التعشيش وتعيد استخدام المواقع. تسجل البيانات البريطانية عادة 4–5 بيضات، وحضانة تقارب 12–15 يومًا، وبقاء للفراخ في العش نحو 15–17 يومًا. تفقس الصغار عاجزة وتحتاج إلى الإطعام. تنتج الطيور غالبًا حضنتين أو ثلاثًا عندما تسمح الظروف. وتوضح هذه المراحل حاجة الموقع إلى فجوات تعشيش وغذاء قريب مناسب للفراخ، لا إلى الحبوب التي تأكلها الطيور البالغة وحدها."
+              ]
+            },
+            {
+              "heading": "الانتشار العالمي والعربي",
+              "paragraphs": [
+                "موطن النوع الأصلي يشمل أجزاء واسعة من أوروبا وآسيا ومناطق من شمال أفريقيا، وقد أُدخل إلى مناطق كثيرة خارجه. وفي كثير من المدن العربية هو مقيم طوال السنة، وليس مهاجرًا منتظمًا يعبر كل ربيع وخريف. تصفه المراجع السعودية بأنه مقيم متكاثر واسع الانتشار، وتسجل الكويت وفرة المقيمين قرب المباني والمزارع. وتعده القائمة اللبنانية أيضًا مقيمًا متكاثرًا واسع الانتشار. توثق دراسات مصرية إقامته وتغير أعداده المحلية بين الفصول؛ ولا تثبت هذه التغيرات وحدها هجرة لمسافات بعيدة. وفي المغرب العربي يزيد التهجين تعقيد خريطة الانتشار والتعرف. تعتمد مواعيد التكاثر على الظروف المحلية، ولا يصح فرض تقويم تعشيش أوروبي واحد على جميع الجماعات العربية من الساحل إلى الداخل."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والضغوط والحماية",
+              "paragraphs": [
+                "تستهلك العصافير البذور واللافقاريات، وتوفر غذاءً للمفترسات، وتنافس طيورًا أخرى على تجاويف التعشيش. يختلف دورها بين موطنها الأصلي والمناطق التي أُدخلت إليها. تصنيفها العالمي لدى الاتحاد الدولي لصون الطبيعة هو أقل إثارة للقلق، لكن ألفتها لا تعني استقرارها في كل مكان؛ فقد وُثقت تراجعات طويلة الأمد في بريطانيا. يؤدي فقد فرص التعشيش والنباتات الغنية بالغذاء إلى خفض جودة الموئل، وتذكر المراجع الكويتية افتراس القطط ضمن الضغوط المحلية. تساعد المحافظة على مواقع الأعشاش والنباتات التي توفر الحشرات والبذور في تلبية الاحتياجات المتغيرة عبر دورة الحياة، بدل التعامل مع هذا الطائر الشائع كأنه لا يحتاج إلى موائل سليمة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Cornell Lab of Ornithology — House Sparrow Identification",
+                "Naturalis — Bird Remains Identification System: House Sparrow",
+                "Tennessee Wildlife Resources Agency — House Sparrow",
+                "Natural History Museum — House Sparrow",
+                "Cornell Lab of Ornithology — House Sparrow Life History",
+                "British Trust for Ornithology — BirdFacts: House Sparrow",
+                "KuwaitBirds — House Sparrow",
+                "The Birds of Saudi Arabia — species accounts",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Mosallm and colleagues — House Sparrow population fluctuation in Assiut, Archives of Agriculture Sciences Journal (2021)",
+                "Hering and Grimm — House Sparrow diet in northern Sudan and southern Egypt, Alauda (2017)",
+                "Ait Belkacem and colleagues — North African hybrid sparrows, Ecology and Evolution (2016)",
+                "Genetic admixture despite ecological segregation in a North African sparrow hybrid zone, Ecology and Evolution (2019)",
+                "Game and Wildlife Conservation Trust — House Sparrow"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Gonzalo Arias — CC0 1.0."
+        },
+        "en": {
+          "title": "House Sparrow",
+          "subtitle": "Passer domesticus — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Passer domesticus — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and appearance",
+              "paragraphs": [
+                "The House Sparrow, Passer domesticus, is a compact member of the Old World sparrow family Passeridae, usually about 15 cm long. Its stout, conical bill is suited to handling seeds. A typical adult male has a grey crown, chestnut at the sides of the head and neck, pale cheeks and a black throat bib. The back is brown and dark-streaked, with a pale wing bar. Females are quieter in pattern, with a buff eyebrow and plain grey-brown underparts. Young birds resemble females; recently fledged birds may retain conspicuous yellow gape edges."
+              ]
+            },
+            {
+              "heading": "Seasonal appearance and similar species",
+              "paragraphs": [
+                "The male’s bib looks less extensive in fresh nonbreeding plumage because pale feather tips partly cover the black. Wear exposes more black without requiring the bird to acquire an entirely new throat patch. Eurasian Tree Sparrows have chestnut crowns and distinct black cheek spots. North African identification requires particular care: House and Spanish Sparrows interbreed, producing intermediate birds across a complex contact zone, notably in Algeria. These populations should not all be labelled Italian Sparrow; the recognised Italian Sparrow has a distinct hybrid evolutionary history. Female-looking birds may be especially difficult to assign confidently."
+              ]
+            },
+            {
+              "heading": "Habitat, feeding and social life",
+              "paragraphs": [
+                "House Sparrows favour settlements, farms, gardens and the edges of cultivated land. Their close relationship with people helps them occupy otherwise harsh environments, but they are not uniformly distributed through empty desert. Adults eat many seeds and grains, with other foods taken opportunistically. Insects and other invertebrates are particularly important for chicks. A Nubian study found contrasting diets at northern Sudanese and southern Egyptian sites, illustrating local flexibility rather than a fixed menu. Birds forage in flocks, hop on the ground, bathe in water and dust, and communicate through repeated chirping calls."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Nests occupy cavities in buildings, other structures or trees; some are more exposed constructions in vegetation. Grass and finer lining material form a sheltered chamber. Pairs may nest near one another, and sites can be reused. British data give typical clutches of 4–5 eggs, incubation around 12–15 days and a nestling period of roughly 15–17 days. Chicks hatch helpless and require feeding. Two or three broods are common where conditions allow. These stages explain why a site needs both nest spaces and nearby feeding habitat, not merely a supply of adult seed food."
+              ]
+            },
+            {
+              "heading": "World and Arab-region distribution",
+              "paragraphs": [
+                "Native across much of Europe, Asia and parts of North Africa, the species has been introduced widely elsewhere. Across many Arab towns it is a year-round resident rather than a regular spring-and-autumn migrant. Saudi references describe widespread resident breeding, and Kuwait reports abundant residents around buildings and farms. Lebanon’s checklist likewise identifies a widespread breeding resident. Egyptian studies document resident birds and seasonal changes in local counts; these fluctuations are not proof of long-distance migration. In the Maghreb, hybridisation complicates the map. Breeding dates depend on local conditions, so a single European nesting calendar should not be imposed on all Arab populations."
+              ]
+            },
+            {
+              "heading": "Ecology, pressures and conservation",
+              "paragraphs": [
+                "Sparrows consume seeds and invertebrates, feed predators and compete for nest spaces. Their ecological role differs between native and introduced ranges. Global IUCN status is Least Concern, but familiarity does not imply universal stability: long-term declines are documented in Britain. Loss of nesting opportunities and food-rich vegetation can reduce habitat quality, while cats are a locally noted threat in Kuwait. Conserving nesting spaces alongside insect-rich vegetation and seed-bearing plants addresses different stages of the life cycle."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Cornell Lab of Ornithology — House Sparrow Identification",
+                "Naturalis — Bird Remains Identification System: House Sparrow",
+                "Tennessee Wildlife Resources Agency — House Sparrow",
+                "Natural History Museum — House Sparrow",
+                "Cornell Lab of Ornithology — House Sparrow Life History",
+                "British Trust for Ornithology — BirdFacts: House Sparrow",
+                "KuwaitBirds — House Sparrow",
+                "The Birds of Saudi Arabia — species accounts",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Mosallm and colleagues — House Sparrow population fluctuation in Assiut, Archives of Agriculture Sciences Journal (2021)",
+                "Hering and Grimm — House Sparrow diet in northern Sudan and southern Egypt, Alauda (2017)",
+                "Ait Belkacem and colleagues — North African hybrid sparrows, Ecology and Evolution (2016)",
+                "Genetic admixture despite ecological segregation in a North African sparrow hybrid zone, Ecology and Evolution (2019)",
+                "Game and Wildlife Conservation Trust — House Sparrow"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Gonzalo Arias — CC0 1.0."
+        },
+        "fr": {
+          "title": "Moineau domestique",
+          "subtitle": "Passer domesticus — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Passer domesticus — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et apparence",
+              "paragraphs": [
+                "Le Moineau domestique, Passer domesticus, est un représentant compact des Passéridés, mesurant habituellement environ 15 cm. Son bec court, robuste et conique permet de manipuler les graines. Le mâle adulte typique porte une calotte grise, du marron sur les côtés de la tête et le cou, des joues pâles et une bavette noire. Son dos brun est strié de sombre; une barre claire traverse l’aile. La femelle présente un dessin plus discret, avec sourcil beige et dessous gris-brun uni. Les jeunes lui ressemblent; les individus récemment envolés peuvent conserver des commissures jaunes bien visibles."
+              ]
+            },
+            {
+              "heading": "Plumage saisonnier et confusions",
+              "paragraphs": [
+                "En plumage neuf, hors reproduction, la bavette du mâle paraît réduite: les extrémités pâles des plumes masquent partiellement le noir. Leur usure le découvre sans nécessiter une nouvelle bavette. Le Moineau friquet possède une calotte marron et une tache noire nette sur chaque joue. En Afrique du Nord, l’identification est délicate: Moineaux domestiques et espagnols s’hybrident, donnant des oiseaux intermédiaires dans une zone de contact complexe, notamment en Algérie. Il ne faut pas appeler toutes ces populations Moineau cisalpin: celui-ci possède une histoire évolutive hybride distincte. Les oiseaux d’aspect femelle sont particulièrement difficiles à attribuer."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et vie sociale",
+              "paragraphs": [
+                "L’espèce fréquente habitations, fermes, jardins et bordures cultivées. Son association avec l’être humain facilite son installation dans des environnements difficiles, sans la rendre uniformément présente dans le désert inhabité. Les adultes consomment beaucoup de graines et de céréales, mais exploitent d’autres ressources. Insectes et autres invertébrés sont particulièrement importants pour les poussins. Une étude nubienne a trouvé des régimes contrastés dans le nord du Soudan et le sud de l’Égypte, illustrant cette souplesse locale. Les moineaux cherchent leur nourriture en groupes, sautillent au sol, prennent des bains d’eau et de poussière et communiquent par pépiements répétés."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Les nids occupent des cavités de bâtiments, d’autres structures ou d’arbres; certains sont construits plus ouvertement dans la végétation. Herbes sèches et matériaux fins constituent une chambre abritée. Les couples nichent parfois à proximité et réutilisent des emplacements. Les données britanniques donnent habituellement 4–5 œufs, environ 12–15 jours d’incubation et 15–17 jours au nid. Les petits naissent démunis et doivent être nourris. Deux ou trois nichées sont courantes lorsque les conditions le permettent. Le site doit donc offrir des lieux de nidification et une alimentation accessible, pas seulement des graines adaptées aux adultes."
+              ]
+            },
+            {
+              "heading": "Répartition mondiale et pays arabes",
+              "paragraphs": [
+                "Originaire d’une grande partie de l’Europe, de l’Asie et de certaines régions nord-africaines, l’espèce a été introduite ailleurs. Dans beaucoup de villes arabes, elle réside toute l’année plutôt que d’effectuer une migration régulière de printemps et d’automne. Les références saoudiennes décrivent une reproduction résidente largement répartie; le Koweït signale des résidents abondants autour des fermes et bâtiments. Au Liban, la liste nationale le classe également comme nicheur résident répandu. En Égypte, des études documentent sa résidence et des variations saisonnières d’effectifs locaux, sans que celles-ci prouvent une migration lointaine. Au Maghreb, l’hybridation complique la répartition. Les dates de reproduction dépendent des conditions locales, non d’un calendrier européen unique."
+              ]
+            },
+            {
+              "heading": "Écologie, pressions et conservation",
+              "paragraphs": [
+                "Les moineaux consomment graines et invertébrés, nourrissent des prédateurs et concurrencent d’autres oiseaux pour les cavités. Leur rôle diffère entre aire native et régions d’introduction. L’UICN les classe mondialement en Préoccupation mineure, mais cette familiarité ne garantit pas une stabilité partout: des déclins durables sont documentés en Grande-Bretagne. La disparition de cavités et de végétation nourricière dégrade l’habitat; les chats sont une menace locale signalée au Koweït. Conserver des emplacements de nid et des plantes fournissant insectes et graines répond aux besoins successifs du cycle annuel."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Cornell Lab of Ornithology — House Sparrow Identification",
+                "Naturalis — Bird Remains Identification System: House Sparrow",
+                "Tennessee Wildlife Resources Agency — House Sparrow",
+                "Natural History Museum — House Sparrow",
+                "Cornell Lab of Ornithology — House Sparrow Life History",
+                "British Trust for Ornithology — BirdFacts: House Sparrow",
+                "KuwaitBirds — House Sparrow",
+                "The Birds of Saudi Arabia — species accounts",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Mosallm and colleagues — House Sparrow population fluctuation in Assiut, Archives of Agriculture Sciences Journal (2021)",
+                "Hering and Grimm — House Sparrow diet in northern Sudan and southern Egypt, Alauda (2017)",
+                "Ait Belkacem and colleagues — North African hybrid sparrows, Ecology and Evolution (2016)",
+                "Genetic admixture despite ecological segregation in a North African sparrow hybrid zone, Ecology and Evolution (2019)",
+                "Game and Wildlife Conservation Trust — House Sparrow"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Gonzalo Arias — CC0 1.0."
+        }
+      },
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    }
+  ]
+}
