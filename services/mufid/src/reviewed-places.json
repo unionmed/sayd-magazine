@@ -121,5 +121,110 @@
       "https://beitnoun.com/estate",
       "https://www.beitnoun.com/contact-us"
     ]
+  },
+  {
+    "id": "mtein-arts-museum",
+    "names": [
+      "متحف الفنون في المتين",
+      "متحف المتين للفنون",
+      "Mtein Arts Museum"
+    ],
+    "regions": [
+      "المتن",
+      "بعبدا",
+      "Matn",
+      "Metn",
+      "Baabda"
+    ],
+    "kind": "visit",
+    "locality": {
+      "ar": "المتين، المتن، لبنان",
+      "en": "Mtein, Matn, Lebanon",
+      "fr": "Mtein, Metn, Liban"
+    },
+    "sources": [
+      "https://mot.gov.lb/ar/قرارات-عام-٢٠٢٣/"
+    ],
+    "description": {
+      "ar": "متحف فنون في المتين، أدرجته وزارة السياحة كوجهة ثقافية بالقرار 139 ضمن قرارات 2023 المنشورة في 30 أبريل 2025. يلزم تأكيد مواعيد الزيارة والدخول من الجهة المسؤولة.",
+      "en": "An art museum in Mtein, listed under tourism decision 139 in the 2023 decisions published on 30 April 2025; confirm visiting arrangements.",
+      "fr": "Musée d’art à Mtein, classé par décision touristique 139 dans les décisions 2023 publiées le 30 avril 2025 ; visite à confirmer."
+    },
+    "checked_at": "2026-10-29",
+    "basis": "Primary-source review 29 October 2026. Identity and published service facts only, not same-day opening or access."
+  },
+  {
+    "id": "al-wadi-mar-chaaya",
+    "names": [
+      "Al Wadi",
+      "مطعم الوادي",
+      "الوادي – مار شعيا",
+      "Al Wadi – Domaine de Mar Chaaya"
+    ],
+    "regions": [
+      "المتن",
+      "بعبدا",
+      "Matn",
+      "Metn",
+      "Baabda"
+    ],
+    "kind": "meal",
+    "locality": {
+      "ar": "مار شعيا مزكة، المتن، لبنان",
+      "en": "Mar Chaaya Mzekke, Matn, Lebanon",
+      "fr": "Mar Chaaya Mzekke, Metn, Liban"
+    },
+    "sources": [
+      "https://www.domainedemarchaaya.com/al-wadi"
+    ],
+    "description": {
+      "ar": "مطعم لبناني ضمن دومين مار شعيا، والعقار يصف محيطًا طبيعيًا وملعبًا للأطفال. يقدم المازة والمشاوي؛ للحجز 03 448364 أو 71 131300. تأكد من توفر الجلسة المطلوبة والطاولة قبل الذهاب.",
+      "en": "A Lebanese restaurant at Domaine de Mar Chaaya, an estate describing a natural setting and children’s playground. Mezze and grills; booking +961 3 448364 or +961 71 131300. Confirm your table and seating.",
+      "fr": "Restaurant libanais au Domaine de Mar Chaaya, domaine dans un cadre naturel avec aire de jeux. Mezze et grillades ; réservation +961 3 448364 ou +961 71 131300. Table et placement à confirmer."
+    },
+    "checked_at": "2026-10-29",
+    "basis": "Primary-source review 29 October 2026. Identity and published service facts only, not same-day opening or access.",
+    "nature_dining": true,
+    "required_sources": [
+      "https://www.domainedemarchaaya.com/home",
+      "https://www.domainedemarchaaya.com/al-wadi"
+    ]
+  },
+  {
+    "id": "lanai-mar-chaaya",
+    "names": [
+      "Lanai",
+      "Lanai Resto-Pub",
+      "لاناي",
+      "لاناي – دومين مار شعيا"
+    ],
+    "regions": [
+      "المتن",
+      "بعبدا",
+      "Matn",
+      "Metn",
+      "Baabda"
+    ],
+    "kind": "meal",
+    "locality": {
+      "ar": "مار شعيا مزكة، المتن، لبنان",
+      "en": "Mar Chaaya Mzekke, Matn, Lebanon",
+      "fr": "Mar Chaaya Mzekke, Metn, Liban"
+    },
+    "sources": [
+      "https://www.domainedemarchaaya.com/lanai"
+    ],
+    "description": {
+      "ar": "ريستو-بوب بمطبخ دولي داخل دومين مار شعيا المحاط بالطبيعة. للحجز 71 131300؛ تأكد من الجلسة الخارجية وإتاحة الطاولة. هو خيار آخر داخل العقار نفسه، وليس وجهة بعيدة مستقلة.",
+      "en": "An international resto-pub in the same nature-surrounded Domaine de Mar Chaaya estate. Booking +961 71 131300; confirm outdoor seating and table availability. This is another venue in the same estate.",
+      "fr": "Resto-pub international au sein du même Domaine de Mar Chaaya entouré de nature. Réservation +961 71 131300 ; terrasse et disponibilité à confirmer."
+    },
+    "checked_at": "2026-10-29",
+    "basis": "Primary-source review 29 October 2026. Identity and published service facts only, not same-day opening or access.",
+    "nature_dining": true,
+    "required_sources": [
+      "https://www.domainedemarchaaya.com/home",
+      "https://www.domainedemarchaaya.com/lanai"
+    ]
   }
 ]

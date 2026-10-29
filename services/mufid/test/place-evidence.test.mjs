@@ -65,3 +65,10 @@ test('a district name inside another district is not destination evidence',()=>{
  assert.ok(placeEvidenceGuide({query:'مطعم في جبيل'}).some(x=>x.id==='beit-noun-dining'));
  assert.equal(placeEvidenceGuide({query:'مطعم في بنت جبيل'}).some(x=>x.id==='beit-noun-dining'),false);
 });
+test('Metn/Baabda coverage uses the shared evidence gate and distinct source entries',()=>{
+ const input={lang:'ar',query:'مطاعم في قلب الطبيعة',trip:{destination:'المتن وبعبدا، جبل لبنان، لبنان'}};
+ const rows=placeEvidenceGuide(input);assert.ok(rows.some(r=>r.id==='mtein-arts-museum'));
+ const dining=PLACE_EVIDENCE.find(r=>r.id==='al-wadi-mar-chaaya');const p=plan();Object.assign(p.days[0].stops[0],{name:dining.names[0],kind:'meal',source_url:dining.sources[0]});p.format='options';
+ assert.equal(acceptPlaceEvidence(p,dining.required_sources.map(url=>({url})),input).ok,true);
+ assert.equal(acceptPlaceEvidence(p,[{url:dining.sources[0]}],input).reason,'supporting_fact_sources_not_consulted');
+});
