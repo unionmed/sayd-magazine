@@ -163,6 +163,10 @@ def approved_interview_selection(contract, c, lang):
 
 
 def check(base=None):
+    from ticker_scope import homepage_only
+    if homepage_only(ROOT):
+        from sync_tickers import sync
+        sync(DOCS, check=True, root=ROOT)
     c=config();validate_config(c);channel=channel_config();channel_videos=channel['videos'][:7]
     if c.get('hunting_rotation'):
         from homepage_hunting_rotation import expected
@@ -378,6 +382,8 @@ def check_new_stories(paths,pairs,base=None):
             continue
         if science_navigation_only_repair(file,base):
             continue
+        if homepage_ticker_scope_repair(file,base):
+            continue
         if shared_ticker_only_repair(file,base):
             continue
         if gallery_indexing_only_repair(file,base):
@@ -408,6 +414,19 @@ def check_new_stories(paths,pairs,base=None):
         assert media[0]==media[1]==media[2],f'Article photographs/video differ: {ar}'
         assert categories[0]==categories[1]==categories[2],f'Article doors differ: {ar}'
 
+def homepage_ticker_scope_repair(file, base):
+    """Only exact one-way strip removal, preserving all outside bytes."""
+    from ticker_scope import homepage_only, homepage_only_contract, is_homepage, strip_internal_ticker
+    if not base or not homepage_only(ROOT) or is_homepage(ROOT/file, DOCS):
+        return False
+    previous = subprocess.run(['git','show',base+':content/publication-contract.json'],cwd=ROOT,capture_output=True)
+    old = subprocess.run(['git','show',base+':'+file],cwd=ROOT,capture_output=True)
+    if previous.returncode or old.returncode or homepage_only_contract(json.loads(previous.stdout)):
+        return False
+    before = old.stdout.decode(); after = (ROOT/file).read_text()
+    return before != after and strip_internal_ticker(before) == after
+
+
 def shared_ticker_only_repair(file,base):
     """An existing article's shared chrome update is not an editorial republication.
 
@@ -423,6 +442,9 @@ def shared_ticker_only_repair(file,base):
 
 def shared_ticker_only_text(before,after,path):
     from sync_tickers import TICKER, sources, language, ticker_for
+    from ticker_scope import homepage_only, is_homepage
+    if homepage_only(ROOT) and not is_homepage(path, DOCS):
+        return False
     a=TICKER.findall(before);b=TICKER.findall(after)
     if before==after or len(a)!=2 or len(b)!=2:
         return False

@@ -177,7 +177,7 @@ def verified_publication(base, root=ROOT, include_baseline=False):
                 import editorial_revision
                 value = json.loads((output / maintained[0]).read_text())
                 _, effective, _ = editorial_revision.expected_changes(trusted, base, value, maintained[0])
-                revisions = (effective,)
+                revisions = (effective,) if effective is not None else ()
             site = output
         else:
             additions, revisions, site = (), (), trusted

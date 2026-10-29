@@ -468,6 +468,9 @@ def french_ticker_blocks() -> list[str] | None:
 
 
 def patch_listing_html(text: str, switch: tuple[str, str, str]) -> str:
+    from ticker_scope import homepage_only, strip_internal_ticker
+    if homepage_only(ROOT):
+        text = strip_internal_ticker(text)
     ar, en, fr = switch
     nav = (
         f'<a href="{ar}" lang="ar" hreflang="ar">العربية</a> '
@@ -628,7 +631,11 @@ def render_static(name,translations):
     title={'team':'Équipe','contact':'Contact','about':'À propos','license':'Licence'}[name]
     tree.xpath('//title')[0].text=title+' | Sayd Magazine'
     dest=DOCS/'fr'/name/'index.html';dest.parent.mkdir(parents=True,exist_ok=True)
-    dest.write_bytes(html.tostring(tree,encoding='utf-8',method='html',doctype='<!DOCTYPE html>'))
+    from ticker_scope import homepage_only, strip_internal_ticker
+    rendered = html.tostring(tree,encoding='unicode',method='html',doctype='<!DOCTYPE html>')
+    if homepage_only(ROOT):
+        rendered = strip_internal_ticker(rendered)
+    dest.write_text(rendered, encoding='utf-8')
 
 
 def wire_original_switches():
@@ -797,7 +804,11 @@ def render_article(slug, data, translations):
     ar_url=BASE + ar[0].replace('../../../','/') .replace('index.html','') if ar else None
     head(tree,slug,data['title'],ar_url)
     dest=DOCS/'fr/posts'/slug/'index.html'; dest.parent.mkdir(parents=True,exist_ok=True)
-    dest.write_bytes(html.tostring(tree,encoding='utf-8',method='html',doctype='<!DOCTYPE html>'))
+    from ticker_scope import homepage_only, strip_internal_ticker
+    rendered = html.tostring(tree,encoding='unicode',method='html',doctype='<!DOCTYPE html>')
+    if homepage_only(ROOT):
+        rendered = strip_internal_ticker(rendered)
+    dest.write_text(rendered, encoding='utf-8')
 
 
 def main():

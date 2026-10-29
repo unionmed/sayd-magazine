@@ -1533,11 +1533,11 @@ def layout(
     en_href: str | None = None,
     ar_href: str | None = None,
 ) -> str:
-    """Single shared chrome (masthead + ticker + footer) for every page.
+    """Shared masthead/footer; ticker follows the protected publication scope.
 
     Home, articles, categories, and static pages (فريقنا, إتصل بنا, …)
-    all call this builder. Ticker items come from chrome_ticker(); there
-    is no per-page ticker or footer special-case.
+    all call this builder. Ticker items come from chrome_ticker(); only
+    an explicit home call emits it under the homepage-only policy.
 
     Canonical, Open Graph, Twitter, and absolute hreflang are not inlined
     here. scripts/seo_foundation.py adds that head block after HTML is written.
@@ -1555,9 +1555,12 @@ def layout(
         if is_home
         else f"{esc(title)} — {SITE_TITLE}"
     )
-    # Shared ticker: callers pass chrome_ticker(depth, items); if omitted,
-    # still emit the same editorial strip so no page can diverge.
-    if not ticker:
+    # Legacy snapshots retain shared chrome; the versioned policy narrows
+    # new output to explicit home calls, even if a caller supplies a strip.
+    from ticker_scope import homepage_only
+    if homepage_only(ROOT) and not is_home:
+        ticker = ""
+    elif not ticker:
         ticker = chrome_ticker(depth)
     # New brand path — never reuse the edge-cached 404
     # /media/uploads/2020/04/Sayd-Magazine-Logo.png

@@ -821,7 +821,8 @@ def _en_door_page(door: dict, stories: list[dict]) -> str:
             '<p class="empty-note">No English stories are published in this section yet.</p>'
         )
     count = len(stories)
-    ticker = _ticker_at_depth(depth)
+    from ticker_scope import homepage_only
+    ticker = "" if homepage_only(ROOT) else _ticker_at_depth(depth)
     return f"""<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>

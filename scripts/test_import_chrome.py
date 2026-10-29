@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import re
 import sys
+from unittest.mock import patch
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -142,9 +143,14 @@ def test_layout_footer_and_default_ticker() -> None:
     assert "GitHub Pages" not in page
     assert "عاجل" not in page
     assert "label-urgent" not in page
-    assert TICKER_LABEL in page
-    for _, title in DEFAULT_TICKER_ITEMS:
-        assert title in page
+    from ticker_scope import homepage_only
+    if homepage_only(ROOT):
+        assert 'class="news-strip"' not in page
+        assert 'class="ticker"' not in page
+    else:
+        assert TICKER_LABEL in page
+        for _, title in DEFAULT_TICKER_ITEMS:
+            assert title in page
     assert 'src="../../media/brand/sayd-logo.png"' in page
     assert 'src="../../media/brand/sayd-footer-logo.png"' in page
     assert ">العربية<" in page
@@ -236,13 +242,18 @@ def test_docs_already_share_clean_chrome() -> None:
         assert "label-urgent" not in html, path
         assert "GitHub Pages" not in html, path
         assert "تصدير ووردبريس" not in html, path
-        assert TICKER_LABEL in html
-        for title in titles:
-            assert title in html, (path, title)
-        m = re.search(r'<div class="ticker">(.*?)</div>', html, re.S)
-        assert m, path
-        found = re.findall(r">([^<]+)</a>", m.group(1))
-        assert found == titles, (path.name, found)
+        from ticker_scope import homepage_only, is_homepage
+        if homepage_only(ROOT) and not is_homepage(path, ROOT / "docs"):
+            assert 'class="news-strip"' not in html
+            assert 'class="ticker"' not in html
+        else:
+            assert TICKER_LABEL in html
+            for title in titles:
+                assert title in html, (path, title)
+            m = re.search(r'<div class="ticker">(.*?)</div>', html, re.S)
+            assert m, path
+            found = re.findall(r">([^<]+)</a>", m.group(1))
+            assert found == titles, (path.name, found)
         footer = html.split('class="footer-bottom"', 1)[1]
         assert MECSHAP_URL in footer
         assert MECSHAP_LABEL_AR in footer
@@ -737,7 +748,23 @@ def test_docs_visible_listings_are_2022_plus() -> None:
         assert "حماية-طيور-هجرة-الخريف-لبنان-شراكة-منذ-2017" in html or "protecting-autumn-migratory-birds-lebanon-khatib-2017" in html
 
 
+
+def test_homepage_only_layout_scope() -> None:
+    """Explicit scope suppresses even a caller-supplied internal ticker."""
+    with patch('ticker_scope.homepage_only', return_value=True):
+        home = layout("الرئيسية", "<main>body</main>", is_home=True)
+        internal = layout("مقال", "<main>body</main>", depth=2,
+                          ticker=chrome_ticker(2))
+        assert home.count('class="news-strip"') == 1
+        assert 'class="news-strip"' not in internal
+        assert 'class="ticker"' not in internal
+        assert '<main>body</main>' in internal
+        assert 'class="footer-bottom"' in internal
+    with patch('ticker_scope.homepage_only', return_value=False):
+        assert 'class="news-strip"' in layout("مقال", "<main>body</main>", depth=2)
+
 if __name__ == "__main__":
+    test_homepage_only_layout_scope()
     test_source_has_no_regression_strings()
     test_ticker_source_is_mars_list()
     test_shared_ticker_all_depths()

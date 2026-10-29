@@ -10,6 +10,7 @@ from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
 from lxml import html
 from sync_tickers import ROOT, TICKER, sync
+from ticker_scope import homepage_only
 from ticker_policy import LIMIT, entries, load, publication_date, select, title, validate
 
 
@@ -41,10 +42,15 @@ def check_site():
             if fragment:
                 assert html.fromstring(target.read_text()).xpath('//*[@id=$id]', id=fragment), url
     count = 0
+    home_only = homepage_only(ROOT)
+    homes = {'index.html', 'en/index.html', 'fr/index.html'}
     for path in docs.rglob('*.html'):
         page = path.read_text()
         loops = TICKER.findall(page)
         document = html.fromstring(page)
+        if home_only and path.relative_to(docs).as_posix() not in homes:
+            assert not document.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," news-strip ") or contains(concat(" ",normalize-space(@class)," ")," ticker ")]'), f'Internal ticker remains: {path}'
+            continue
         if document.xpath('//nav[contains(concat(" ",normalize-space(@class)," ")," main-nav ")]'):
             assert len(loops) == 2, f'Shared navigation page has missing ticker: {path}'
         if not loops:
@@ -54,14 +60,15 @@ def check_site():
         lang = first if first in ('en', 'fr') else 'ar'
         assert len(loops) == 2 and loops[0][1] == loops[1][1], path
         assert items(page, path, docs) == expected[lang], path
-    assert count > 900, count
+    assert count == 3 if home_only else count > 900, count
     assert sync(docs, check=True) == (count, 0)
     print(f'PASS: all {count} pages share their language homepage ticker and valid destinations.')
 
 
 def check_gate():
     from check_publication_contract import shared_ticker_only_text
-    path = ROOT / 'docs/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs/index.html'
+    internal = ROOT / 'docs/posts/البقاع-الشمالي-إزالة-38280-متر-شباك-apu-cabs/index.html'
+    path = ROOT / 'docs/index.html' if homepage_only(ROOT) else internal
     after = path.read_text()
     before = TICKER.sub(lambda m:m[1]+'<a href="old.html">old news</a>'+m[3],after)
     assert shared_ticker_only_text(before, after, path)
@@ -69,6 +76,8 @@ def check_gate():
     assert not shared_ticker_only_text(before, before.replace('old news', 'other stale news'), path)
     assert not shared_ticker_only_text('', after, path)
     assert not shared_ticker_only_text(before, after.replace('class="ticker" aria-hidden="true"', 'class="removed"'), path)
+    if homepage_only(ROOT):
+        assert not shared_ticker_only_text(before, after, internal)
     print('PASS: publication gate rejects new articles, editorial edits, stale news and missing ticker loops.')
 
 
@@ -108,6 +117,7 @@ def check_repair():
         docs = root/'docs'
         (root/'content/en').mkdir(parents=True)
         (root/'content/posts').mkdir()
+        (root/'content/publication-contract.json').write_text('{}')
         source = [{'slug': f'news-{i}', 'anchor': 'film', 'titles': {lang: f'{lang} news {i}' for lang in ('ar','en','fr')}} for i in range(11)]
         config = {'ticker_entries': source[1:], 'ticker_slugs': [e['slug'] for e in source[1:]]}
         (root/'content/homepage.json').write_text(json.dumps(config))
@@ -152,6 +162,61 @@ def check_repair():
             assert len(items(content, target, docs)) == 10
             assert content.startswith('<header>keep</header>') and content.endswith('<main>keep body</main>')
         assert sync(docs, root=root) == (6, 0)
+        # New scope migrates complete strips, never leaves empty green bands.
+        for path in docs.rglob('*.html'):
+            old = path.read_text()
+            loops = ''.join(''.join(m) for m in TICKER.findall(old))
+            path.write_text('<div class="site-sticky"><header>keep</header><div class="news-strip"><div class="ticker-track">'+loops+'</div></div></div><main>keep body</main>')
+        policy = {'ticker_scope': {'version': 1, 'pages': ['index.html', 'en/index.html', 'fr/index.html']}}
+        (root/'content/publication-contract.json').write_text(json.dumps(policy))
+        try:
+            sync(docs, check=True, root=root)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError('Internal strips must fail homepage-only checks')
+        assert sync(docs, root=root) == (3, 3)
+        internal_bytes = {}
+        for path in docs.rglob('*.html'):
+            if path.relative_to(docs).as_posix() in {'index.html', 'en/index.html', 'fr/index.html'}:
+                assert len(TICKER.findall(path.read_text())) == 2
+            else:
+                assert path.read_text() == '<div class="site-sticky"><header>keep</header></div><main>keep body</main>'
+                internal_bytes[path] = path.read_bytes()
+        assert sync(docs, check=True, root=root) == (3, 0)
+        # Future rotation changes exactly three homes, zero historical pages.
+        (root/'content/posts/news-new.md').write_text('---\ndate: 2026-10-01\n---\n')
+        pairs = json.loads((root/'content/en/pairs.json').read_text())
+        pairs['pairs']['news-new'] = 'news-new'
+        (root/'content/en/pairs.json').write_text(json.dumps(pairs))
+        config = load(root)
+        config['ticker_entries'].insert(0, {'slug': 'news-new', 'titles': {l: l+' new' for l in ('ar','en','fr')}})
+        config['ticker_slugs'] = [e['slug'] for e in config['ticker_entries']]
+        (root/'content/homepage.json').write_text(json.dumps(config))
+        assert sync(docs, root=root) == (3, 3)
+        assert all(path.read_bytes() == data for path, data in internal_bytes.items())
+        assert sync(docs, root=root) == (3, 0)
+        internal = next(iter(internal_bytes)); clean = internal.read_bytes()
+        for malformed in ('<div class="news-strip"></div>', '<div class="ticker">orphan</div>'):
+            internal.write_text('<div class="site-sticky">'+malformed+'</div><main>keep body</main>')
+            try:
+                sync(docs, check=True, root=root)
+            except ValueError:
+                pass
+            else:
+                raise AssertionError('Malformed internal ticker accepted')
+            internal.write_bytes(clean)
+        for bad in ({'version': 2, 'pages': policy['ticker_scope']['pages']},
+                    {'version': 1, 'pages': ['index.html']},
+                    dict(policy['ticker_scope'], fallback='all-pages')):
+            (root/'content/publication-contract.json').write_text(json.dumps({'ticker_scope': bad}))
+            try:
+                sync(docs, check=True, root=root)
+            except ValueError:
+                pass
+            else:
+                raise AssertionError('Unknown or mixed scope accepted')
+        (root/'content/publication-contract.json').write_text(json.dumps(policy))
     print('PASS: eleventh-story publishing updates every language/home/depth, anchors, source/export, body preservation and idempotence.')
 
 
@@ -180,6 +245,36 @@ def check_builders():
     print('PASS: AR importer and EN/FR helpers use the shared source; old translation manifests cannot prune ticker news.')
 
 
+def without_complete_strip(page):
+    """Independent HTMLParser span proof, never the production remover."""
+    from html.parser import HTMLParser
+    class Span(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=False)
+            self.lines = page.splitlines(keepends=True)
+            self.depth = 0; self.start = self.end = None
+        def byte_offset(self):
+            line, col = self.getpos()
+            return sum(map(len, self.lines[:line-1])) + col
+        def handle_starttag(self, tag, attrs):
+            if tag == 'div':
+                if 'news-strip' in dict(attrs).get('class', '').split():
+                    assert self.start is None, 'Duplicate strip'
+                    self.start = self.byte_offset()
+                if self.start is not None and self.end is None:
+                    self.depth += 1
+        def handle_endtag(self, tag):
+            if tag == 'div' and self.start is not None and self.end is None:
+                self.depth -= 1
+                if self.depth == 0:
+                    self.end = page.index('>', self.byte_offset()) + 1
+    parser = Span(); parser.feed(page)
+    if parser.start is None:
+        return page
+    assert parser.end is not None, 'Unclosed strip'
+    return page[:parser.start] + page[parser.end:]
+
+
 def check_preserved(base):
     changed = subprocess.check_output(['git','diff','--name-only','-z',base,'--','docs'],cwd=ROOT).decode().split('\0')
     count = 0
@@ -187,8 +282,11 @@ def check_preserved(base):
         assert name.endswith('.html'), ('Unexpected non-HTML change', name)
         before = subprocess.check_output(['git','show',base+':'+name],cwd=ROOT).decode()
         after = (ROOT/name).read_text()
-        outside = lambda page: TICKER.sub(lambda m:m[1]+m[3],page)
-        assert outside(before) == outside(after), ('Unrelated page content changed', name)
+        if homepage_only(ROOT) and name not in {'docs/index.html', 'docs/en/index.html', 'docs/fr/index.html'}:
+            assert without_complete_strip(before) == after, ('Change beyond complete ticker removal', name)
+        else:
+            outside = lambda page: TICKER.sub(lambda m:m[1]+m[3],page)
+            assert outside(before) == outside(after), ('Unrelated page content changed', name)
         count += 1
     assert count > 900, count
     print(f'PASS: all {count} changed pages are byte-identical outside ticker loops; articles, photos, URLs, SEO and navigation preserved.')

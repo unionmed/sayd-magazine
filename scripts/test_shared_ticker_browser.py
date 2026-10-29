@@ -17,6 +17,8 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import quote, unquote, urlsplit
 
 from playwright.sync_api import sync_playwright
+from ticker_scope import homepage_only
+from test_shared_ticker import without_complete_strip
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
@@ -34,7 +36,7 @@ CASES = tuple(
         ('category', 'category/صيد/index.html'),
     )
 ) + (('historical-article-ar', 'ar', 'posts/صيّاد-بس-هيك-قالت-مرتو/index.html'),)
-# Independent of the publishing implementation: only ticker bodies may differ.
+# Independent baseline proof: home loop bodies may differ; internal strips may only be removed.
 TICKER_BODY = re.compile(r'(<div class="ticker"(?: aria-hidden="true")?>).*?(</div>)', re.S)
 
 
@@ -96,31 +98,31 @@ SNAPSHOT = r'''() => {
     };
     const track = document.querySelector('.ticker-track');
     const viewport = document.querySelector('.ticker-viewport');
-    const style = getComputedStyle(track);
-    const v = viewport.getBoundingClientRect();
-    const anchors = [...track.querySelectorAll('.ticker:first-child > a')];
+    const style = track ? getComputedStyle(track) : null;
+    const v = viewport ? viewport.getBoundingClientRect() : null;
+    const anchors = track ? [...track.querySelectorAll('.ticker:first-child > a')] : [];
     return {
         language: document.documentElement.lang,
         direction: getComputedStyle(document.documentElement).direction,
         overflow: Math.max(0, document.documentElement.scrollWidth - innerWidth),
-        strip: rect(document.querySelector('.news-strip')),
-        viewport: rect(viewport),
+        strip: document.querySelector('.news-strip') ? rect(document.querySelector('.news-strip')) : null,
+        viewport: viewport ? rect(viewport) : null,
         visibleLinks: anchors.filter(a => {
             const r = a.getBoundingClientRect();
             return Math.min(r.right,v.right,innerWidth) > Math.max(r.left,v.left,0)
                 && Math.min(r.bottom,v.bottom,innerHeight) > Math.max(r.top,v.top,0);
         }).length,
-        animation: {
+        animation: style ? {
             name:style.animationName, duration:style.animationDuration,
             easing:style.animationTimingFunction, iterations:style.animationIterationCount,
             state:style.animationPlayState,
             x:new DOMMatrixReadOnly(style.transform).m41
-        },
-        loops: [...track.querySelectorAll(':scope > .ticker')].map(loop => ({
+        } : null,
+        loops: track ? [...track.querySelectorAll(':scope > .ticker')].map(loop => ({
             hidden:loop.getAttribute('aria-hidden'),
             width:loop.getBoundingClientRect().width,
             links:[...loop.querySelectorAll(':scope > a')].map(a=>({href:a.href,text:a.textContent.trim()}))
-        })),
+        })) : [],
         media: [...document.querySelectorAll('img,video,audio,source,iframe')]
             .filter(node=>!node.closest('.news-strip')).map(node=>({
                 tag:node.tagName, src:node.getAttribute('src'),
@@ -141,19 +143,23 @@ def navigate(page, url):
 def screenshot(page, output, name):
     # Freeze only after measuring real, running CSS animation. Both screenshots
     # start at the same animation phase; source files/styles are never modified.
-    page.locator('.ticker-track').evaluate('el => el.getAnimations().forEach(a => {a.pause();a.currentTime=0;})')
+    if page.locator('.ticker-track').count():
+        page.locator('.ticker-track').evaluate('el => el.getAnimations().forEach(a => {a.pause();a.currentTime=0;})')
     page.screenshot(path=str(output / f'{name}.png'), full_page=False)
 
 
-def compare_media(current, before, case):
+def compare_media(current, before, case, removed_strip=None):
     assert len(current) == len(before), (case, 'media count changed outside ticker')
     for item, old in zip(current, before):
         assert {k:v for k,v in item.items() if k != 'box'} == {
             k:v for k,v in old.items() if k != 'box'
         }, (case, 'media identity/attributes changed', item, old)
-        # Media can be far below the fold. Its document geometry must still stay
-        # unchanged; the ticker shortening must not move or resize article media.
-        assert all(abs(item['box'][k] - old['box'][k]) <= 1 for k in item['box']), (
+        # Only strip removal may move following media vertically. Header media
+        # and every size/x coordinate remain exact; no general layout waiver.
+        expected = dict(old['box'])
+        if removed_strip and old['box']['height'] and old['box']['y'] >= removed_strip['y'] + removed_strip['height'] - 1:
+            expected['y'] -= removed_strip['height']
+        assert all(abs(item['box'][k] - expected[k]) <= 1 for k in item['box']), (
             case, 'media geometry changed outside ticker', item, old)
 
 
@@ -161,6 +167,8 @@ def run(base=None, output=ROOT / 'sayd-visual-qa/ticker'):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     expected = expected_paths()
+    home_only = homepage_only(ROOT)
+    homes = {"index.html", "en/index.html", "fr/index.html"}
     servers = []
     results = []
     blocked = set()
@@ -182,7 +190,10 @@ def run(base=None, output=ROOT / 'sayd-visual-qa/ticker'):
                 old = git_bytes(base, 'docs/' + rel)
                 current = (DOCS / rel).read_bytes()
                 strip = lambda data: TICKER_BODY.sub(r'\1\2', data.decode())
-                assert strip(old) == strip(current), (name, 'HTML changed outside ticker')
+                if home_only and rel not in homes:
+                    assert without_complete_strip(old.decode()) == current.decode(), (name, 'HTML changed outside full strip removal')
+                else:
+                    assert strip(old) == strip(current), (name, 'HTML changed outside ticker')
                 overrides[rel] = old
             handler = type('BaselineHandler', (QuietHandler,), {'overrides': overrides})
             server, baseline_origin = serve(handler)
@@ -214,6 +225,25 @@ def run(base=None, output=ROOT / 'sayd-visual-qa/ticker'):
                     print(f'Checking {label}', flush=True)
                     page.set_viewport_size({'width': width, 'height': 1000})
                     navigate(page, origin + '/' + quote(rel))
+                    if home_only and rel not in homes:
+                        assert page.locator('.news-strip, .ticker, .ticker-track, .ticker-viewport').count() == 0, (label, 'internal ticker chrome remains')
+                        current = page.evaluate(SNAPSHOT)
+                        assert current['language'] == lang, (label, 'wrong language')
+                        assert current['direction'] == ('rtl' if lang == 'ar' else 'ltr'), (label, 'wrong direction')
+                        assert current['overflow'] <= 1, (label, 'horizontal page overflow')
+                        old = None
+                        if before_page:
+                            before_page.set_viewport_size({'width': width, 'height': 1000})
+                            navigate(before_page, baseline_origin + '/' + quote(rel))
+                            old = before_page.evaluate(SNAPSHOT)
+                            assert current['overflow'] <= old['overflow'] + 1, (label, 'new horizontal overflow')
+                            compare_media(current['media'], old['media'], label, removed_strip=old['strip'])
+                            screenshot(before_page, output, 'before-' + label)
+                        screenshot(page, output, label)
+                        results.append({'case': name, 'language': lang, 'width': width,
+                                        'ticker_absent': True, 'overflow_px': current['overflow'],
+                                        'media_unchanged': len(current['media']) if old else None})
+                        continue
                     assert page.locator('.news-strip').count() == 1, label
                     assert page.locator('.ticker-track').count() == 1, label
                     current = page.evaluate(SNAPSHOT)
@@ -308,7 +338,7 @@ def run(base=None, output=ROOT / 'sayd-visual-qa/ticker'):
             server.server_close()
     print('SAYD_TICKER_BROWSER_RESULTS ' + json.dumps(results, ensure_ascii=False))
     print(f'PASS: {len(results)} layouts; {len(checked_links)} localized ticker destinations; '
-          f'9 mouse and {len(results)} keyboard activations; external requests blocked '
+          f'9 mouse and {sum(not r.get("ticker_absent") for r in results)} keyboard activations; external requests blocked '
           f'({", ".join(sorted(blocked))}); screenshots: {output}')
 
 

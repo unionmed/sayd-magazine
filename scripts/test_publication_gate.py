@@ -18,7 +18,7 @@ class Source:
 
 def fixture():
     mirrors={l:g.ORIGIN+('/' if l=='ar' else '/'+l+'/')+'posts/story/' for l in ('ar','en','fr')}
-    data={}; live={}; image=g.ORIGIN+'/media/story.jpg'
+    data={'content/publication-contract.json': b'{}'}; live={}; image=g.ORIGIN+'/media/story.jpg'
     def add(url,body):
         value=body.encode(); data[g.source_path(url)]=value; live[url]=value
     for lang,url in mirrors.items():
@@ -43,6 +43,45 @@ class GateTests(unittest.TestCase):
     def setUp(self): self.source,self.live,self.payload,self.mirrors=fixture()
     def run_gate(self,payload=True):
         return g.verify(self.source,self.mirrors['ar'],self.payload if payload else None,get=self.live.__getitem__)
+    def homepage_only_fixture(self):
+        self.source.data['content/publication-contract.json'] = json.dumps({'ticker_scope': {'version': 1, 'pages': ['index.html', 'en/index.html', 'fr/index.html']}}).encode()
+        import re
+        for url, value in list(self.live.items()):
+            if '/posts/' in url or '/category/' in url or '/articles/' in url:
+                value = re.sub(rb'<div class="ticker">.*?</div>', b'', value)
+                self.live[url] = value
+                self.source.data[g.source_path(url)] = value
+    def test_homepage_only_published_complete(self):
+        self.homepage_only_fixture()
+        self.assertEqual(self.run_gate()['article_status'], 'PUBLISHED')
+    def test_homepage_only_rejects_internal_ticker_in_source_or_live(self):
+        for side in ('source', 'live'):
+            for suffix in ('posts/story/', 'category/hunting/', 'articles/'):
+                for markup in (b'<div class="news-strip"></div>', b'<div class="extra ticker"></div>'):
+                    self.setUp(); self.homepage_only_fixture()
+                    url = g.ORIGIN + '/en/' + suffix
+                    if side == 'source':
+                        self.source.data[g.source_path(url)] += markup
+                    else:
+                        self.live[url] += markup
+                    with self.assertRaisesRegex(g.Blocked, 'internal ticker'): self.run_gate()
+    def test_homepage_only_preserves_homepage_and_body_checks(self):
+        self.homepage_only_fixture()
+        home = g.ORIGIN + '/'
+        self.live[home] = self.live[home].replace(b'>News</a>', b'>Wrong</a>')
+        with self.assertRaisesRegex(g.Blocked, 'homepage ticker'): self.run_gate()
+        self.setUp(); self.homepage_only_fixture()
+        self.live[self.mirrors['en']] = self.live[self.mirrors['en']].replace(b'Full body', b'Changed body')
+        with self.assertRaisesRegex(g.Blocked, 'differs'): self.run_gate()
+    def test_unknown_scope_or_missing_published_contract_rejected(self):
+        for scope in ({'version': 2, 'pages': ['index.html']}, None, 'homepage-only'):
+            self.source.data['content/publication-contract.json'] = json.dumps({'ticker_scope': scope}).encode()
+            with self.assertRaises(g.Blocked): self.run_gate()
+        for invalid in ([], None, 'legacy'):
+            self.source.data['content/publication-contract.json'] = json.dumps(invalid).encode()
+            with self.assertRaises(g.Blocked): self.run_gate()
+        del self.source.data['content/publication-contract.json']
+        with self.assertRaises(g.Blocked): self.run_gate()
     def test_published_complete(self):
         r=self.run_gate(); self.assertEqual(r['article_status'],'PUBLISHED')
         self.assertEqual(r['social']['status'],'READY_NOT_SENT')

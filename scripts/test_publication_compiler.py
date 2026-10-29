@@ -16,6 +16,7 @@ import zlib
 
 import publication_compiler as compiler
 import publication_schema as schema
+from test_ticker_scope import TickerScopeTests
 
 from nathalie_typography_revision import PATHS, corrected, exact_revision
 

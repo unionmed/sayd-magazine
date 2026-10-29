@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from unittest.mock import patch
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -716,9 +717,14 @@ def test_every_en_page_is_ltr_plex() -> None:
             or "?v=20260923-footer-once" in html
             or f"?v={CSS_CACHE}" in html
         )
-        assert "ticker-track-ltr" in html
+        from ticker_scope import homepage_only, is_homepage
+        if homepage_only(ROOT) and not is_homepage(path, DOCS):
+            assert 'class="news-strip"' not in html
+            assert 'class="ticker"' not in html
+        else:
+            assert "ticker-track-ltr" in html
+            assert "ticker-track" in html
         assert "19 Sep 2026" not in html
-        assert "ticker-track" in html
 
 
 def test_empty_2022_category_chrome_is_css_only() -> None:
@@ -788,7 +794,36 @@ def test_empty_2022_category_chrome_is_css_only() -> None:
     assert 'class="post-row"' in gear
 
 
+
+def test_homepage_only_edition_builders() -> None:
+    import build_en_edition as en
+    import build_fr_edition as fr
+    marker = '<div class="news-strip"><div class="ticker">sample</div></div>'
+    kwargs = dict(depth=1, title="Test", description="Test", body="<main>body</main>",
+                  ar_href="../index.html", en_href="index.html", articles={})
+    with patch('ticker_scope.homepage_only', return_value=True), patch.object(en, 'ticker_html', return_value=marker):
+        assert marker in en.en_chrome(**kwargs, is_home=True)
+        assert marker not in en.en_chrome(**kwargs)
+        assert '<main>body</main>' in en.en_chrome(**kwargs)
+    with patch('ticker_scope.homepage_only', return_value=False), patch.object(en, 'ticker_html', return_value=marker):
+        assert marker in en.en_chrome(**kwargs)
+    # A cloned home listing must lose its whole strip, even without a language nav.
+    with patch('ticker_scope.homepage_only', return_value=True), patch('ticker_scope.strip_internal_ticker', return_value='<main>body</main>') as strip:
+        assert fr.patch_listing_html(marker+'<main>body</main>', ('a','e','f')) == '<main>body</main>'
+        strip.assert_called_once()
+    # Real shared wrapper (not a mocked remover) from the approved homepage.
+    from lxml import html as dom
+    original = (DOCS / 'fr/index.html').read_text()
+    with patch('ticker_scope.homepage_only', return_value=True):
+        listing = fr.patch_listing_html(original, ('../../index.html', '../../en/index.html', 'index.html'))
+    assert 'class="news-strip"' not in listing
+    assert 'class="ticker"' not in listing
+    before_main = dom.tostring(dom.fromstring(original).xpath('//main')[0])
+    after_main = dom.tostring(dom.fromstring(listing).xpath('//main')[0])
+    assert before_main == after_main
+
 if __name__ == "__main__":
+    test_homepage_only_edition_builders()
     test_pairs_cover_reviewed_drafts()
     test_september_2026_ar_stories_have_en_twins()
     test_en_home_keeps_all_2022_plus_twins()
