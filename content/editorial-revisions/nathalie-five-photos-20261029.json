@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "nathalie-five-photos-20261029",
+  "expected_base": "eb2e6407db18cc399e8170037e6c2f742ab03855",
+  "operation": "add-nathalie-interview-photos",
+  "approval_reference": "private:nathalie-all-five-photo-authorization-20261029",
+  "expected_source_sha256": "0555393860de882aaa5acff2dc882701757ef2a2a605ea05ca929415e7284291",
+  "expected_targets_sha256": "98e48fceb3fad53bfa8d1cee6e78c84a496823c78b0e825bfa23be8305271bb8",
+  "payload": {}
+}
