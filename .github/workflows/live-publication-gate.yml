@@ -56,7 +56,9 @@ jobs:
           sys.path.insert(0,'scripts')
           import publication_gate as g
           source=g.GitSource(subprocess.check_output(['git','rev-parse','origin/main'],text=True).strip())
-          url='https://sayd-magazine.com/posts/تحذير-أوروبي-11-36-مليون-طائر-في-المتوسط/'
+          featured=json.loads(source.read('content/homepage.json'))['featured']
+          assert isinstance(featured,list) and featured and isinstance(featured[0],str) and '/' not in featured[0]
+          url=g.ORIGIN+'/posts/'+featured[0]+'/'
           doc=g.document(source.read(g.source_path(url)))
           short=json.loads(source.read('docs/s/links.json'))[url[len(g.ORIGIN):]]
           payload={'platform':'facebook','article_url':g.ORIGIN+short,'text':'Validation probe '+g.ORIGIN+short,'article_title':g.text(doc.xpath('//main//h1')[0]),'article_image':doc.xpath('//meta[@property="og:image"]/@content')[0]}
