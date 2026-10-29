@@ -95,7 +95,17 @@
     "أبو-المغازل-الكرسوع-في-العالم-العربي",
     "بط-كستنائي-الرأس",
     "بطة-قنبراء",
-    "البط-السماري"
+    "البط-السماري",
+    "الخضاري-بط-البركة",
+    "دجاجة-الماء",
+    "البلشون-الأبيض-الكبير",
+    "البلشون-الأبيض-الصغير",
+    "الزرزور-الأوروبي",
+    "الشرشور-الشائع",
+    "الشحرور-الأوراسي",
+    "الغراب-المقنع",
+    "اليمام-الضاحك",
+    "عصفور-الدوري-المنزلي"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -141,7 +151,17 @@
     "أبو-المغازل-الكرسوع-في-العالم-العربي",
     "بط-كستنائي-الرأس",
     "بطة-قنبراء",
-    "البط-السماري"
+    "البط-السماري",
+    "الخضاري-بط-البركة",
+    "دجاجة-الماء",
+    "البلشون-الأبيض-الكبير",
+    "البلشون-الأبيض-الصغير",
+    "الزرزور-الأوروبي",
+    "الشرشور-الشائع",
+    "الشحرور-الأوراسي",
+    "الغراب-المقنع",
+    "اليمام-الضاحك",
+    "عصفور-الدوري-المنزلي"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -503,7 +523,17 @@
     "عندما-تهين-الطريدة-أنت-تهين-نفسك": "hunting",
     "الصيد-السياحي-في-مصر-والعراق-والأردن": "hunting",
     "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026": "equestrian",
-    "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح": "wildlife"
+    "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح": "wildlife",
+    "الخضاري-بط-البركة": "birds",
+    "دجاجة-الماء": "birds",
+    "البلشون-الأبيض-الكبير": "birds",
+    "البلشون-الأبيض-الصغير": "birds",
+    "الزرزور-الأوروبي": "birds",
+    "الشرشور-الشائع": "birds",
+    "الشحرور-الأوراسي": "birds",
+    "الغراب-المقنع": "birds",
+    "اليمام-الضاحك": "birds",
+    "عصفور-الدوري-المنزلي": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -976,6 +1006,96 @@
         "ar": "ناتالي دينولف عن قرب مع أحد عقبانها.",
         "en": "Nathalie Denolf close to one of her eagles.",
         "fr": "Nathalie Denolf tout près de l’un de ses aigles."
+      }
+    },
+    "الخضاري-بط-البركة": {
+      "image": "media/publications/daily-birds-20261029/mallard.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر خضاري برأس أخضر ومنقار أصفر يمد جناحه وتظهر مرآته الزرقاء",
+        "en": "Male Mallard with a green head and yellow bill stretching a wing to reveal the blue speculum",
+        "fr": "Canard colvert mâle à tête verte et bec jaune étirant une aile où apparaît le miroir bleu"
+      }
+    },
+    "دجاجة-الماء": {
+      "image": "media/publications/daily-birds-20261029/moorhen.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "دجاجة ماء بريش داكن ومنقار أحمر ذي طرف أصفر بين الأوراق",
+        "en": "Common Moorhen with dark plumage and a red bill tipped yellow among leaves",
+        "fr": "Gallinule poule-d’eau au plumage sombre et au bec rouge à pointe jaune parmi les feuilles"
+      }
+    },
+    "البلشون-الأبيض-الكبير": {
+      "image": "media/publications/daily-birds-20261029/great-egret.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بلشون أبيض كبير في الطيران بمنقار أصفر طويل ورقبة مطوية",
+        "en": "Great Egret in flight with a long yellow bill and its neck retracted",
+        "fr": "Grande Aigrette en vol, au long bec jaune et au cou replié"
+      }
+    },
+    "البلشون-الأبيض-الصغير": {
+      "image": "media/publications/daily-birds-20261029/little-egret.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بلشون أبيض صغير في الطيران بمنقار أسود وقدمين صفراوين",
+        "en": "Little Egret in flight with a black bill and yellow feet",
+        "fr": "Aigrette garzette en vol, au bec noir et aux pieds jaunes"
+      }
+    },
+    "الزرزور-الأوروبي": {
+      "image": "media/publications/daily-birds-20261029/starling.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "زرزور بريش لامع منقط ومنقار مدبب واقف على غصن",
+        "en": "Common Starling with speckled iridescent plumage and a pointed bill perched on a branch",
+        "fr": "Étourneau sansonnet au plumage irisé ponctué et au bec pointu, perché sur une branche"
+      }
+    },
+    "الشرشور-الشائع": {
+      "image": "media/publications/daily-birds-20261029/chaffinch.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر شرشور بتاج رمادي مزرق وصدر وردي وشريطين أبيضين على الجناح",
+        "en": "Male Common Chaffinch with a blue-grey crown, pinkish breast and two white wing bars",
+        "fr": "Pinson des arbres mâle à calotte gris bleu, poitrine rosée et deux barres alaires blanches"
+      }
+    },
+    "الشحرور-الأوراسي": {
+      "image": "media/publications/daily-birds-20261029/blackbird.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر شحرور أسود الريش بمنقار وحلقة عين برتقاليين مصفرين",
+        "en": "Male Eurasian Blackbird with black plumage and an orange-yellow bill and eye ring",
+        "fr": "Merle noir mâle au plumage noir, au bec et au cercle oculaire jaune orangé"
+      }
+    },
+    "الغراب-المقنع": {
+      "image": "media/publications/daily-birds-20261029/hooded-crow.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "غراب مقنع بجسم رمادي ورأس وجناحين وذيل سوداء واقف على العشب",
+        "en": "Hooded Crow with a grey body and black head, wings and tail standing on grass",
+        "fr": "Corneille mantelée au corps gris, à la tête, aux ailes et à la queue noires, posée sur l’herbe"
+      }
+    },
+    "اليمام-الضاحك": {
+      "image": "media/publications/daily-birds-20261029/laughing-dove.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "يمام ضاحك بصدر وردي وبقع سوداء على جانب العنق وجناح رمادي مزرق واقف على سلك",
+        "en": "Laughing Dove with a pinkish breast, black neck spots and blue-grey wing perched on wire",
+        "fr": "Tourterelle maillée à poitrine rosée, taches noires au cou et aile gris bleu, perchée sur un fil"
+      }
+    },
+    "عصفور-الدوري-المنزلي": {
+      "image": "media/publications/daily-birds-20261029/house-sparrow.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "عصفور دوري منزلي ذو خد رمادي وبقعة سوداء عند الحلق واقف على العشب",
+        "en": "House Sparrow with a grey cheek and black throat patch standing on grass",
+        "fr": "Moineau domestique à joue grise et bavette noire, posé sur l’herbe"
       }
     }
   },
