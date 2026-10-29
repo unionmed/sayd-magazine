@@ -215,6 +215,28 @@ class HistoricalPublicationGuards(unittest.TestCase):
 
 
 
+class CardGeometryTests(unittest.TestCase):
+    def test_only_measured_strip_shift_is_allowed(self):
+        old = {'x': 100, 'y': 261.046875, 'width': 1240, 'height': 90}
+        strip = {'y': 160, 'height': 38}
+        shifted = dict(old, y=223.046875)
+        laws.assert_card_geometry(old, shifted, 'approved', strip)
+        laws.assert_card_geometry(old, old, 'legacy')
+        with self.assertRaises(AssertionError):
+            laws.assert_card_geometry(old, shifted, 'unapproved')
+        for key in old:
+            bad = dict(shifted); bad[key] += 2
+            with self.subTest(key=key), self.assertRaises(AssertionError):
+                laws.assert_card_geometry(old, bad, 'outside geometry', strip)
+        above = dict(old, y=30)
+        laws.assert_card_geometry(above, above, 'above strip', strip)
+        with self.assertRaises(AssertionError):
+            laws.assert_card_geometry(above, dict(above, y=-8), 'wrong above shift', strip)
+        for height in (0, -38, float('nan'), float('inf')):
+            with self.subTest(height=height), self.assertRaises(AssertionError):
+                laws.assert_card_geometry(old, shifted, 'invalid measurement', dict(strip, height=height))
+
+
 class BrowserProofPlumbingTests(unittest.TestCase):
     def test_both_browser_callers_pass_their_existing_trusted_proof(self):
         import ast
