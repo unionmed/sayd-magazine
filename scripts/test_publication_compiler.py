@@ -555,6 +555,16 @@ class RealSiteTests(unittest.TestCase):
         paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/') or p == 'content/publication-contract.json'}
         files = {p: compiler.read_blob(ROOT, current[p]) if p in current else None for p in paths}
         modes = {p: current[p][0] for p in paths if p in current}
+        # Keep the pinned payload's ticker policy: its internal wrappers have
+        # not undergone the separately authorized homepage-only migration.
+        contract_path = 'content/publication-contract.json'
+        old_contract = json.loads(compiler.read_blob(ROOT, previous[contract_path]))
+        current_contract = json.loads(compiler.read_blob(ROOT, current[contract_path]))
+        pinned_ticker_scope = old_contract.get('ticker_scope')
+        old_contract['interviews'] = current_contract['interviews']
+        old_contract['counts']['interviews'] = current_contract['counts']['interviews']
+        files[contract_path] = (json.dumps(old_contract, ensure_ascii=False, indent=2) + '\n').encode()
+        self.assertEqual(json.loads(files[contract_path]).get('ticker_scope'), pinned_ticker_scope)
         base = source_commit(ROOT, pinned, files, modes)
         before = json.loads(compiler.git(ROOT, 'show', base + ':content/homepage.json'))
         registry = json.loads(compiler.git(ROOT, 'show', base + ':content/interviews.json'))

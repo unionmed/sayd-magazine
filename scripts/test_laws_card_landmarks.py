@@ -37,11 +37,12 @@ def assert_category_scope(before, page, lang, data, path, base):
     if masked(before, lang, data) == masked(page, lang, data):
         return
     from publication_guard import verified_publication
-    from check_publication_contract import shared_ticker_only_text
+    from check_publication_contract import shared_ticker_only_text, homepage_ticker_scope_repair
     proof = verified_publication(base, root=ROOT)
     assert proof is not None, 'Ticker delta needs exact trusted-base publication proof'
     assert proof.read(str(path.relative_to(ROOT))) == page, 'Category differs from trusted compilation'
-    assert shared_ticker_only_text(before, page, path), f'Out-of-scope category change: {lang}'
+    assert (shared_ticker_only_text(before, page, path)
+            or homepage_ticker_scope_repair(str(path.relative_to(ROOT)), base)), f'Out-of-scope category change: {lang}'
 
 
 def main(base=None):

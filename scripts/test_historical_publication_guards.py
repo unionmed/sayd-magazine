@@ -1,5 +1,6 @@
 """Historical article QA permits only independently verified publication chrome."""
 import json
+import subprocess
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from types import SimpleNamespace
@@ -19,7 +20,9 @@ class HistoricalPublicationGuards(unittest.TestCase):
         self.root = Path(self.tmp.name)
         self.docs = self.root / 'docs'
         (self.root / 'content').mkdir()
+        (self.root / 'content/publication-contract.json').write_text('{}')
         for mod, attr, value in ((gulf, 'ROOT', self.root), (laws, 'ROOT', self.root),
+                                 (contract, 'ROOT', self.root),
                                  (contract, 'DOCS', self.docs)):
             p = patch.object(mod, attr, value); p.start(); self.addCleanup(p.stop)
         self.a = {'translations': {l: {'title': 'Gulf '+l, 'kicker': 'Series '+l} for l in ('ar','en','fr')},
@@ -123,6 +126,44 @@ class HistoricalPublicationGuards(unittest.TestCase):
         for lang in ('ar','en','fr'):
             path,source,before,page,_=self.category(lang)
             self.scope(lang,before,page,path,source)
+
+    def test_homepage_only_policy_rejects_internal_loop_rotation(self):
+        from ticker_scope import POLICY
+        (self.root/'content/publication-contract.json').write_text(json.dumps({'ticker_scope':POLICY}))
+        for lang in ('ar','en','fr'):
+            path,source,before,page,_=self.category(lang)
+            with self.assertRaises(AssertionError):self.scope(lang,before,page,path,source)
+
+    def test_exact_wrapper_migration_requires_proof_and_preserves_outside_bytes(self):
+        from ticker_scope import POLICY, strip_internal_ticker
+        def git(*args):
+            return subprocess.check_output(['git','-C',str(self.root),*args],stderr=subprocess.DEVNULL)
+        git('init','-q')
+        originals={}
+        for lang in ('ar','en','fr'):
+            path,source,before,_,_=self.category(lang)
+            split=before.index('<header>')
+            before='<div class="site-sticky"><div class="news-strip">'+before[:split]+'</div></div>'+before[split:]
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_text(before)
+            originals[lang]=(path,source,before)
+        git('add','.')
+        git('-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-qm','Legacy fixture')
+        base=git('rev-parse','HEAD').decode().strip()
+        (self.root/'content/publication-contract.json').write_text(json.dumps({'ticker_scope':POLICY}))
+        for lang,(path,source,before) in originals.items():
+            page=strip_internal_ticker(before);path.write_text(page)
+            proof=SimpleNamespace(read=lambda _,value=page:value)
+            with patch('publication_guard.verified_publication',return_value=proof):
+                laws.assert_category_scope(before,page,lang,{'images':[{'slugs':{lang:'law'}}]},path,base)
+            for badproof in (None,SimpleNamespace(read=lambda _:'wrong')):
+                with patch('publication_guard.verified_publication',return_value=badproof),self.assertRaises(AssertionError):
+                    laws.assert_category_scope(before,page,lang,{'images':[{'slugs':{lang:'law'}}]},path,base)
+            for old,new in [('Header','Wrong header'),('Legal body','Wrong body'),('>Law<','>Wrong title<'),
+                            ('../../posts/law/','../../posts/other/'),('old.jpg','wrong.jpg')]:
+                altered=page.replace(old,new);path.write_text(altered)
+                with patch('publication_guard.verified_publication',return_value=SimpleNamespace(read=lambda _:altered)),self.assertRaises(AssertionError):
+                    laws.assert_category_scope(before,altered,lang,{'images':[{'slugs':{lang:'law'}}]},path,base)
+            path.write_text(page)
 
     def test_noop_and_original_photo_only_change_need_no_proof(self):
         for lang in ('ar','en','fr'):
