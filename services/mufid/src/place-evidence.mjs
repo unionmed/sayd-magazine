@@ -23,6 +23,14 @@ function activityMatch(p,input){
  if(/مطعم|مطاعم|restaurant|dining/.test(q))return p.kind==='meal'&&(!/طبيعه|nature|natural/.test(q)||p.nature_dining===true);
  return true;
 }
+export function maximumTrailMinutes(query){
+ const q=normalize(String(query||'').replace(/[٠-٩]/g,c=>String('٠١٢٣٤٥٦٧٨٩'.indexOf(c))).replace(/([0-9])[.,٫](?=[0-9])/g,'$1decimal'));
+ if(!/maximum|max\b|at most|up to|no more than|كحد|لا تتجاوز|بحد|حد اقصي/.test(q))return null;
+ if(/ساعتين|ساعتان/.test(q))return 120;
+ const hours=q.match(/(\d+(?:decimal\d+)?|one|two|three|un|une|deux|trois)\s*(?:hours?|heures?|h)\b|(?:مده|حدها|اقصي)?\s*(\d+)\s*(?:ساعات|ساعه)/);
+ if(hours){const n=hours[1]||hours[2],words={one:1,two:2,three:3,un:1,une:1,deux:2,trois:3};return (words[n]||Number(n.replace('decimal','.')))*60;}
+ const minutes=q.match(/(\d+)\s*(?:minutes?|min|دقيقه)\b/);return minutes?Number(minutes[1]):null;
+}
 function missingActivityNote(input,lang){
  const acts=input.trip?.activities||[];
  const kind=acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':/هايك|hiking|randonn|مسار|\btrail\b/.test(normalize(input.query))?'trail':'other';
@@ -69,10 +77,13 @@ export function acceptPlaceEvidence(plan,sources,input,catalog=PLACE_EVIDENCE){
   stop.walking={ar:'المدخل والجهد والإتاحة الحالية تحتاج تأكيدًا من الجهة المشغلة.',en:'Confirm the entrance, effort and current access with the operator.',fr:'Entrée, effort et accès actuel à confirmer auprès de l’exploitant.'}[lang];
   if(record.trail){
    if(!stop.trail)return fail('reviewed_trail_fields_required');
-   const t=record.trail;
+   const t=record.trail,maximum=maximumTrailMinutes(input.query);
+   if(maximum!==null&&(!Number.isFinite(t.duration_minutes)||t.duration_minutes<=0))return fail('trail_published_duration_required');
+   if(maximum!==null&&t.duration_minutes>maximum)return fail('trail_exceeds_requested_duration');
    if(t.distance_km!==stop.trail.distance_km||t.direction!==stop.trail.direction||normalize(t.start)!==normalize(stop.trail.start)||normalize(t.end)!==normalize(stop.trail.end))return fail('trail_claim_differs_from_evidence');
    if(!consulted.has(evidenceKey(t.map_url)))return fail('reviewed_trail_map_not_consulted');
    stop.trail={...t};stop.walking=t.return_plan;
+   if(Number.isFinite(t.duration_minutes))stop.duration_minutes=t.duration_minutes;
   }
   stop.verification={identity:'confirmed',activity_type:'confirmed',access:'unconfirmed',identity_checked_at:record.checked_at,evidence_id:record.id,sources:[...new Set([stop.source_url,...(record.required_sources||[])])]};
  }

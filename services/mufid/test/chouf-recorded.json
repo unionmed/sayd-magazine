@@ -1,0 +1,220 @@
+[
+  {
+    "id": "regional-07-chouf-activity",
+    "input": {
+      "id": "regional-07-chouf-activity",
+      "lang": "fr",
+      "query": "Propose une seule randonnée de deux heures au maximum dans la région de الشوف, au Liban, pour deux personnes en forme moyenne. Indique le point de départ précis, la longueur et son sens (aller simple ou aller-retour), la difficulté et la carte. Les données du sentier doivent venir d’une source fiable et l’accès actuel doit être vérifié.",
+      "trip": {
+        "destination": "الشوف، لبنان",
+        "origin": "بيروت",
+        "transport": "car",
+        "effort": "moderate",
+        "activities": [
+          "walking",
+          "photography"
+        ]
+      }
+    },
+    "calls": [
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"Randonnée courte et vérifiée: le sentier Darb el Hajal au départ de l’entrée de Jbaa, en boucle, 7 km, difficulté facile à modérée, adapté à environ 2 h 30 mais à garder en version photo/randonnée légère si vous voulez rester proche de 2 heures.\",\"format\":\"itinerary\",\"region\":\"الشوف، لبنان\",\"days\":[{\"day\":1,\"base\":\"بيروت\",\"departure\":\"بيروت\",\"return_to\":\"بيروت\",\"stops\":[{\"name\":\"Jbaa entrance of the reserve\",\"locality\":\"Jbaa el Shouf, Lebanon\",\"kind\":\"nature\",\"description\":\"Point de départ exact du sentier Darb el Hajal. Le site officiel du Shouf Cedar Reserve indique que cette entrée donne accès à une randonnée en boucle, avec paysages naturels et patrimoine local, utile pour une sortie de marche et photo sans détour inutile.\",\"duration_minutes\":25,\"walking\":\"Courte marche d’accès depuis l’entrée; effort global léger à modéré sur sentier de 7 km.\",\"source_url\":\"https://www.shoufcedar.org/visiting_us/the_trails\",\"trail\":{\"distance_km\":7,\"difficulty\":\"easy to moderate difficulty\",\"start\":\"Jbaa entrance of the reserve\",\"end\":\"Jbaa entrance of the reserve\",\"direction\":\"loop\",\"return_plan\":\"Boucle; retour au point de départ par le même sentier circulaire.\",\"map_url\":\"https://www.shoufcedar.org/visiting_us/the_trails\",\"source_url\":\"https://www.shoufcedar.org/visiting_us/the_trails\"},\"camping\":null},{\"name\":\"Darb el Hajal (The Partridge Trail)\",\"locality\":\"Jbaa el Shouf, Lebanon\",\"kind\":\"activity\",\"description\":\"Randonnée principale du jour: 7 km en boucle, annoncée facile à modérée, avec une durée officielle de 2,5 heures. Pour deux personnes en forme moyenne, c’est la meilleure option du Chouf si vous voulez rester sur une sortie courte, avec pauses photo, sans dépasser fortement la fenêtre des deux heures.\",\"duration_minutes\":150,\"walking\":\"Sentier de montagne en boucle, montée modérée par endroits; prévoir rythme tranquille et pauses courtes.\",\"source_url\":\"https://www.shoufcedar.org/visiting_us/the_trails\",\"trail\":{\"distance_km\":7,\"difficulty\":\"easy to moderate difficulty\",\"start\":\"Jbaa entrance of the reserve\",\"end\":\"Jbaa entrance of the reserve\",\"direction\":\"loop\",\"return_plan\":\"Boucle; pas de navette nécessaire.\",\"map_url\":\"https://www.shoufcedar.org/visiting_us/the_trails\",\"source_url\":\"https://www.shoufcedar.org/visiting_us/the_trails\"},\"camping\":null}]}]}",
+        "sources": [
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/visiting_us/fees_opening_hours"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us/reaching_the_reserve"
+          },
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/visiting_us/reaching_the_reserve"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us/rules_and_regulations"
+          },
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/visiting_us/the_trails"
+          },
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/visiting_us"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us/the_trails"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/"
+          },
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us/the_guides"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/resources"
+          }
+        ],
+        "verified": true
+      },
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"Randonnée unique et vérifiée: le sentier Darb el Hajal à Jbaa el Shouf, en boucle depuis l’entrée de la réserve, 7 km, difficulté facile à modérée, avec accès confirmé sur le site officiel du Chouf.\",\"format\":\"itinerary\",\"region\":\"الشوف، لبنان\",\"days\":[{\"day\":1,\"base\":\"بيروت\",\"departure\":\"بيروت\",\"return_to\":\"بيروت\",\"stops\":[{\"name\":\"Darb el Hajal (The Partridge Trail)\",\"locality\":\"Jbaa el Shouf, Lebanon\",\"kind\":\"nature\",\"description\":\"Sentier officiel du Shouf Biosphere Reserve pour une sortie photo et marche légère. Le départ et l’arrivée sont au même point, ce qui évite toute logistique de retour; la randonnée est annoncée à 7 km et 2,5 heures sans les arrêts aux points d’intérêt.\",\"duration_minutes\":120,\"walking\":\"Boucle en terrain de montagne; effort léger à modéré pour des personnes en forme moyenne, avec pauses photo courtes.\",\"source_url\":\"https://www.shoufcedar.org/visiting_us/the_trails\",\"trail\":{\"distance_km\":7,\"difficulty\":\"easy to moderate difficulty\",\"start\":\"Jbaa entrance of the reserve\",\"end\":\"Jbaa entrance of the reserve\",\"direction\":\"loop\",\"return_plan\":\"Boucle; retour au point de départ par le même itinéraire circulaire.\",\"map_url\":\"https://www.shoufcedar.org/visiting_us/the_trails\",\"source_url\":\"https://www.shoufcedar.org/visiting_us/the_trails\"},\"camping\":null}]}]}",
+        "sources": [],
+        "verified": false
+      }
+    ]
+  },
+  {
+    "id": "regional-07-chouf-family-camp",
+    "input": {
+      "id": "regional-07-chouf-family-camp",
+      "lang": "ar",
+      "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن الشوف: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+      "trip": {
+        "destination": "الشوف، لبنان",
+        "origin": "بيروت",
+        "transport": "car",
+        "effort": "light",
+        "activities": [
+          "camping",
+          "picnic"
+        ]
+      }
+    },
+    "calls": [
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"أنسب خيار مثبت هنا هو يوم/ليلة تخييم عائلي قرب غابة أرز الشوف عند باروك أو معصرة الشوف، لكن صفحات المحمية لا تُثبت مخيمًا مُدارًا بسعة خيمة وحجز عائلي؛ المثبت فقط مداخل، مرافق، ووجوب منع النار داخل المحمية.\",\"format\":\"itinerary\",\"region\":\"الشوف، لبنان\",\"days\":[]}\n",
+        "sources": [
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/visiting_us/fees_opening_hours"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us"
+          },
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/visiting_us"
+          },
+          {
+            "title": "www.deiraloumarahotel.com",
+            "url": "https://www.deiraloumarahotel.com/restaurant/"
+          },
+          {
+            "title": "www.deiraloumarahotel.com",
+            "url": "https://www.deiraloumarahotel.com/"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us/useful_contacts"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/contact_us/form"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/contact_us"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us/pets_in_the_reserve"
+          },
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/"
+          },
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/profile/the_staff"
+          },
+          {
+            "title": "www.deiraloumarahotel.com",
+            "url": "https://www.deiraloumarahotel.com/aboutus/"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us/rules_and_regulations"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/"
+          },
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/visiting_us/reaching_the_reserve"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us/reaching_the_reserve"
+          },
+          {
+            "title": "www.shoufcedar.org",
+            "url": "https://www.shoufcedar.org/profile/the_green_list"
+          },
+          {
+            "title": "shoufcedar.org",
+            "url": "https://shoufcedar.org/visiting_us/fees_opening_hours"
+          }
+        ],
+        "verified": true
+      }
+    ]
+  },
+  {
+    "id": "regional-07-chouf-repeat",
+    "input": {
+      "id": "regional-07-chouf-repeat",
+      "lang": "ar",
+      "query": "طالعين شخصين من بيروت إلى الشوف نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار.",
+      "trip": {
+        "destination": "الشوف، لبنان",
+        "origin": "بيروت",
+        "transport": "car",
+        "effort": "light",
+        "activities": [
+          "heritage",
+          "walking"
+        ]
+      },
+      "repeat_of": "regional-07-chouf-light"
+    },
+    "calls": [
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"برنامج خفيف للشوف: زيارة بيت الدين، ثم غداء في دير القمر، ثم مشوار قصير إلى مدخل غابة أرز الباروك مع عودة مساءً.\",\"format\":\"itinerary\",\"region\":\"الشوف، لبنان\",\"days\":[{\"day\":1,\"base\":\"بيروت\",\"departure\":\"بيروت\",\"return_to\":\"بيروت\",\"stops\":[{\"name\":\"قصر بيت الدين\",\"locality\":\"بيت الدين، الشوف، لبنان\",\"kind\":\"visit\",\"description\":\"شوفوا القاعات والساحات والفونات الموصوفة في القصر، خصوصًا دار الميدان ودار الوسط والحمامات والمتاحف الصغيرة المذكورة في الصفحة الرسمية. هذا هو المعلم الأبرز في الجولة، وزيارته مناسبة كوقفة تراثية واضحة قبل الانتقال للغداء.\",\"duration_minutes\":75,\"walking\":\"مشي خفيف داخل الساحات والردهات مع درج وبعض الحركة بين الأجنحة.\",\"source_url\":\"https://www.beiteddine.org/the-palace/\",\"trail\":null,\"camping\":null},{\"name\":\"Soufrat Al Oumara – Deir Al Oumara Hotel\",\"locality\":\"دير القمر، لبنان\",\"kind\":\"meal\",\"description\":\"غداء محدد في مطعم الفندق داخل بيت تاريخي في دير القمر، مع أطباق لبنانية ومطبخ يستخدم مكونات محلية وموسمية. الموقع يذكر أيضًا الحجز والاتصال، ما يجعله توقفًا مناسبًا وواضحًا في منتصف اليوم.\",\"duration_minutes\":90,\"walking\":\"مشي قصير جدًا من المدخل إلى ساحة الجلوس، بلا جهد يُذكر.\",\"source_url\":\"https://www.deiraloumarahotel.com/restaurant/\",\"trail\":null,\"camping\":null},{\"name\":\"مدخل غابة أرز الباروك\",\"locality\":\"الباروك، الشوف، لبنان\",\"kind\":\"nature\",\"description\":\"وقفة طبيعة خفيفة عند المدخل الرسمي لغابة أرز الباروك، حيث توجد معلومات للزوار ومرافق أساسية، ويمكن الاكتفاء بنزهة قصيرة عند المدخل بدل الدخول في مسار طويل. الصفحة الرسمية تذكر أن المدخل يفتح على غابة أرز واسعة وفيه نقطة انطلاق للمسارات، لكن حالة الوصول الحالية غير مؤكدة من المصادر المتاحة.\",\"duration_minutes\":50,\"walking\":\"مشي قصير جدًا قرب المدخل أو على مقطع قصير فقط إذا كانت الزيارة متاحة.\",\"source_url\":\"https://www.shoufcedar.org/visiting_us\",\"trail\":null,\"camping\":null}]}]}",
+        "sources": [],
+        "verified": false
+      },
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"برنامج خفيف ومترابط: بيت الدين ثم غداء في دير القمر ثم مدخل غابة أرز الباروك، مع عودة مساءً إلى بيروت.\",\"format\":\"itinerary\",\"region\":\"الشوف، لبنان\",\"days\":[{\"day\":1,\"base\":\"بيروت\",\"departure\":\"بيروت\",\"return_to\":\"بيروت\",\"stops\":[{\"name\":\"قصر بيت الدين\",\"locality\":\"بيت الدين، الشوف، لبنان\",\"kind\":\"visit\",\"description\":\"شوفوا الساحات الواسعة والنوافير والردهات الرئيسية، خصوصًا دار الميدان ودار الوسط والحمامات والمتاحف الصغيرة المذكورة في الصفحة الرسمية. هذا هو المعلم التراثي الأبرز في اليوم، وزيارته خفيفة ومناسبة قبل الغداء.\",\"duration_minutes\":75,\"walking\":\"مشي خفيف داخل الساحات والردهات مع درج وحركة بين الأجنحة.\",\"source_url\":\"https://www.beiteddine.org/the-palace/\",\"trail\":null,\"camping\":null},{\"name\":\"Soufrat Al Oumara – Deir Al Oumara Hotel\",\"locality\":\"دير القمر، لبنان\",\"kind\":\"meal\",\"description\":\"غداء محدد في مطعم الفندق داخل بيت تاريخي في دير القمر، مع أطباق لبنانية وعالمية ومكوّنات موسمية ومحلية. الصفحة الرسمية تذكر أيضًا الحجز والاتصال، لذلك هو توقف عملي وواضح في منتصف الجولة.\",\"duration_minutes\":90,\"walking\":\"مشي قصير جدًا من المدخل إلى ساحة الجلوس.\",\"source_url\":\"https://www.deiraloumarahotel.com/restaurant/\",\"trail\":null,\"camping\":null},{\"name\":\"مدخل غابة أرز الباروك\",\"locality\":\"الباروك، الشوف، لبنان\",\"kind\":\"nature\",\"description\":\"وقفة طبيعة عند المدخل الرسمي لغابة أرز الباروك، حيث توجد معلومات للزوار وخيارات مسارات داخل الغابة. نكتفي هنا بنزهة قصيرة عند المدخل، لأن حالة الوصول الحالية غير مؤكدة في المصادر المتاحة.\",\"duration_minutes\":50,\"walking\":\"مشي قصير قرب المدخل أو على مقطع قصير فقط إذا كانت الزيارة متاحة.\",\"source_url\":\"https://www.shoufcedar.org/visiting_us\",\"trail\":null,\"camping\":null}]}]}",
+        "sources": [],
+        "verified": false
+      }
+    ]
+  }
+]

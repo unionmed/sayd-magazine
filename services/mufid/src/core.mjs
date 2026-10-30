@@ -22,12 +22,14 @@ export function containsPlace(text,place){return (' '+text+' ').includes(' '+pla
 export function retrieveTrip(articles,query,trip,limit=6){
  const area=normalize(trip?.destination||'');
  const candidates=area?[area,...(REGIONS.filter(g=>g.some(n=>containsPlace(area,n))).flat())]:REGIONS.filter(g=>g.some(n=>containsPlace(normalize(query),n))).flat();
- const topics={walking:'مشي هايكينغ رحلة hiking randonnée trail',heritage:'تراث آثار معلم heritage patrimoine souk',camping:'تخييم مخيم خيمة camping campement tent',riding:'فروسية خيل ركوب equestrian riding équitation',picnic:'مطعم مطاعم نزهة restaurant dining picnic',birds:'طيور عصفور oiseaux birds',hunting:'صيد قانون موسم chasse hunting'};
+ const legalHunt=trip?.activities?.includes('hunting')&&/موسم|رخص|ترخيص|مسموح|قانون|season|licen|permit|legal|saison|permis/i.test(query);
+ const legalTopics='قانون قوانين رخص رخصة ترخيص موسم طرائد species season permit legal regulation licence permis saison';
+ const topics={walking:'مشي هايكينغ مسار hiking randonnée trail',heritage:'تراث آثار معلم heritage patrimoine souk',camping:'تخييم مخيم خيمة camping campement tent',riding:'فروسية خيل ركوب equestrian riding équitation',picnic:'مطعم مطاعم نزهة restaurant dining picnic',birds:'طيور عصفور oiseaux birds',hunting:legalHunt?legalTopics:'صيد قانون موسم chasse hunting'};
  const terms=normalize((trip?.activities||[]).map(a=>topics[a]||'').join(' ')).split(' ').filter(Boolean);
  const direct=candidates.length?articles.map(a=>{const x=indexed(a);const regionScore=candidates.reduce((max,n)=>Math.max(max,containsPlace(x.title,n)?100:containsPlace(x.keywords,n)?60:containsPlace(x.body,n)?40:0),0);const topicScore=terms.some(t=>containsPlace(x.title,t)||containsPlace(x.keywords,t))?30:0;return {a,score:regionScore===40&&!topicScore?0:regionScore?regionScore+topicScore:0};}).filter(x=>x.score>0).sort((a,b)=>b.score-a.score):[];
  if(direct.length)return direct.slice(0,limit).map(x=>x.a);
  const activities={walking:'مشي hiking randonnée',camping:'تخييم camping',birds:'طيور oiseaux birds',heritage:'آثار تراث heritage patrimoine',photography:'تصوير photography',picnic:'نزهة picnic',barbecue:'شواء barbecue',hunting:'صيد hunting chasse',riding:'فروسية equestrian équitation',swimming:'سباحة swimming',rafting:'تجديف rafting',offroad:'offroad طرق وعرة'};
- const context=trip?.activities?.map(x=>activities[x]||'').join(' ')||'';
+ const context=trip?.activities?.map(x=>x==='hunting'&&legalHunt?legalTopics:activities[x]||'').join(' ')||'';
  // Fallback must match an actual activity/name, not boilerplate fields.
  return retrieve(articles,context||query,limit).filter(a=>{const terms=normalize(context||query).split(' ').filter(t=>t.length>2&&!STOP.has(t));const x=indexed(a);return terms.some(t=>x.title.includes(t)||x.keywords.includes(t));});
 }

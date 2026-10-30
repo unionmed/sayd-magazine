@@ -260,5 +260,40 @@
       "https://www.shoufcedar.org/visiting_us",
       "https://www.shoufcedar.org/visiting_us/rules_and_regulations"
     ]
+  },
+  {
+    "id": "bkerzay-restaurant",
+    "names": [
+      "مطعم بكرزاي",
+      "Bkerzay Restaurant",
+      "Bkerzay restaurant",
+      "Restaurant Bkerzay"
+    ],
+    "regions": [
+      "الشوف",
+      "Chouf",
+      "Shouf"
+    ],
+    "kind": "meal",
+    "locality": {
+      "ar": "بكرزاي، الشوف، لبنان",
+      "en": "Bkerzay, Chouf, Lebanon",
+      "fr": "Bkerzay, Chouf, Liban"
+    },
+    "sources": [
+      "https://bkerzay.com/dining"
+    ],
+    "description": {
+      "ar": "مطعم بكرزاي ضمن مشروع محاط بالأشجار والمناظر الجبلية في الشوف، بجلسات داخلية وخارجية ومطبخ دولي. للاستفسار والحجز 71 766664. تأكد من الطاولة والجلسة واستقبال غير النزلاء؛ لا يثبت هذا حجزًا متاحًا أو حالة الطريق، ولم يثبت المصدر أنه في الباروك.",
+      "en": "Bkerzay’s main restaurant offers international food with indoor and outdoor mountain-view seating in a wooded Chouf estate. Dining enquiries and booking: +961 71 766664. Confirm table, seating and non-resident admission; availability and road access are unconfirmed. The source does not place it in Barouk.",
+      "fr": "Le restaurant principal de Bkerzay propose une cuisine internationale, avec salle et terrasse donnant sur les montagnes dans un domaine boisé du Chouf. Réservation : +961 71 766664. Table, placement et accueil des non-résidents à confirmer ; accès routier non confirmé. Le site ne le situe pas à Barouk."
+    },
+    "checked_at": "2026-10-30",
+    "basis": "Operator homepage and dining page read on 30 October 2026. No publication date or current booking/access is asserted. Exact town is not independently established; do not relabel as Barouk.",
+    "nature_dining": true,
+    "required_sources": [
+      "https://bkerzay.com/",
+      "https://bkerzay.com/dining"
+    ]
   }
 ]
