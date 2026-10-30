@@ -226,5 +226,39 @@
       "https://www.domainedemarchaaya.com/home",
       "https://www.domainedemarchaaya.com/lanai"
     ]
+  },
+  {
+    "id": "barouk-cedar-entrance",
+    "names": [
+      "مدخل غابة أرز الباروك",
+      "غابة أرز الباروك",
+      "Barouk Cedar Forest",
+      "Forêt de cèdres de Barouk"
+    ],
+    "regions": [
+      "الشوف",
+      "Chouf",
+      "Shouf"
+    ],
+    "kind": "nature",
+    "locality": {
+      "ar": "الباروك، الشوف، لبنان",
+      "en": "Barouk, Chouf, Lebanon",
+      "fr": "Barouk, Chouf, Liban"
+    },
+    "sources": [
+      "https://www.shoufcedar.org/visiting_us"
+    ],
+    "description": {
+      "ar": "مدخل غابة أرز الباروك يضم معلومات زوار ومراحيض ومتجر منتجات محلية. تذكر المحمية أنه على بعد كيلومترين من مركز الباروك؛ بيانات مسار قصير وإتاحته الحالية غير مؤكدة. للتأكد من الزيارة: 05 350250 أو info@shoufcedar.org. الصيد وإشعال النار والدفع الرباعي ممنوعة داخل المحمية.",
+      "en": "The Barouk cedar entrance has visitor information, toilets and a local-products shop. The reserve places it 2 km from Barouk centre; a short trail and current access remain unconfirmed. Visitor enquiries: +961 5 350250 or info@shoufcedar.org. Hunting, fires and 4x4 driving are prohibited inside the reserve.",
+      "fr": "L’entrée de la cédraie de Barouk comprend information, toilettes et boutique de produits locaux. La réserve la situe à 2 km du centre de Barouk ; un court sentier et l’accès actuel restent à confirmer. Contact : +961 5 350250 ou info@shoufcedar.org. Chasse, feux et 4x4 interdits dans la réserve."
+    },
+    "checked_at": "2026-10-30",
+    "basis": "Reserve operator entrance and rules pages retrieved 30 October 2026; no publication date is asserted. Identity and facilities only; current access is unconfirmed.",
+    "required_sources": [
+      "https://www.shoufcedar.org/visiting_us",
+      "https://www.shoufcedar.org/visiting_us/rules_and_regulations"
+    ]
   }
 ]
