@@ -359,11 +359,25 @@ def test_gallery_cards_are_not_indexed_articles() -> None:
         assert 'name="robots" content="noindex,follow"' in head
         assert 'property="og:type" content="website"' in head
         assert f"<loc>{seo.public_url(Path(rel))}</loc>" not in sitemap, rel
-    assert "بالفيديو-مقناص-سعود-عبد-العزيز-الباب" in home
+    # The approved four-card TV rotation retires Babtain from the homepage,
+    # never from its archive or its noindex video-page classification above.
+    # Without the exact bounded source, retain the original homepage assertion.
+    import adonis_tv_publication as external_tv
+    if external_tv.active(ROOT):
+        external_tv.check_published(ROOT)
+    for language, prefix in (('ar', ''), ('en', 'en/'), ('fr', 'fr/')):
+        outgoing = external_tv.OUTGOING if language == 'ar' else external_tv.OUTGOING_LATIN
+        page = (DOCS / prefix / 'index.html').read_text()
+        from urllib.parse import unquote
+        archive = unquote((DOCS / prefix / external_tv.TV_PATH).read_text())
+        assert outgoing in archive, 'Retired TV selection must remain accessible in every archive'
+        if external_tv.active(ROOT):
+            assert outgoing not in page, 'Approved outgoing selection still occupies homepage'
+        else:
+            assert outgoing in page, 'Legacy TV selection unexpectedly disappeared'
     from urllib.parse import unquote
     photos = unquote((DOCS / 'category/صور/index.html').read_text())
     assert "البجع-الأبيض-الكبير-great-white-pelican" in photos
-    assert "video-saud-al-babtain-maqnas-afghanistan" in en
     en_photos = (DOCS / 'en/category/صور/index.html').read_text()
     assert "great-white-pelican-matn-highway-nayef-krayem" in en_photos
     # Suhail is a durable archived gallery, not a permanent homepage slot.

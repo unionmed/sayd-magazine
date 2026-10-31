@@ -327,10 +327,13 @@ def refresh(path,lang):
                         card=render_card(v['id'],item).replace('<article class="card">',f'<article class="card" data-video-id="{v["id"]}">',1)
                         parts.append(card)
                 else:
+                    import adonis_tv_publication
+                    external=adonis_tv_publication.homepage_card(ROOT,lang)
+                    if external:parts.append(external)
                     import tv_publication
                     native=tv_publication.homepage_card(ROOT,lang)
                     if native:parts.append(native)
-                    parts.extend(render_card(*data(s)) for s in sections[door])
+                    parts.extend(render_card(*data(s)) for s in adonis_tv_publication.selected_slugs(ROOT,sections[door]))
                 parts.append('</div></div>')
             parts.append('</section>')
             page,n=re.subn(r'<section class="home-section sayd-tv"[^>]*>.*?</section>',lambda m:'\n'.join(parts),page,count=1,flags=re.S)

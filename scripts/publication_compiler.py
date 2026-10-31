@@ -116,7 +116,7 @@ def allowed_output_path(path):
         safe_path(path)
     except ValueError:
         return False
-    return bool(path in {'content/tv-publications/lanmaoa-asiatica-20261026.json', 'docs/media/publications/lanmaoa-asiatica-20261026/mushroom.mp4'} or INPUT.fullmatch(path) or re.fullmatch(r'content/(?:caption|editorial)-revisions/[a-z0-9][a-z0-9-]{0,79}\.json', path) or path in CONFIGS
+    return bool(path in {'content/tv-publications/adonis-aljadeed-20261031.json', 'content/tv-publications/lanmaoa-asiatica-20261026.json', 'docs/media/publications/lanmaoa-asiatica-20261026/mushroom.mp4'} or INPUT.fullmatch(path) or re.fullmatch(r'content/(?:caption|editorial)-revisions/[a-z0-9][a-z0-9-]{0,79}\.json', path) or path in CONFIGS
                 or re.fullmatch(r'content/(?:posts|en|fr)/[^/]+\.md', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?(?:posts/[^/]+|category/[^/]+|articles|stories|interviews)/index\.html', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?index\.html', path)
@@ -688,6 +688,9 @@ def compile_publication(root, base, source, output, report_path, allow_distribut
     import editorial_revision
     if editorial_revision.revision_paths(tree(root, base), tree(root, source)):
         return editorial_revision.compile_source(root, base, source, output, report_path, allow_distribution)
+    import adonis_tv_publication
+    if adonis_tv_publication.revision_paths(tree(root, base), tree(root, source)):
+        return adonis_tv_publication.compile_source(root, base, source, output, report_path, allow_distribution)
     import tv_publication
     if tv_publication.revision_paths(tree(root, base), tree(root, source)):
         return tv_publication.compile_source(root, base, source, output, report_path, allow_distribution)
@@ -784,6 +787,9 @@ def verify_candidate(root, base, candidate, output, report_path):
     import editorial_revision
     if editorial_revision.revision_paths(before, after):
         return editorial_revision.verify(root, base, candidate, output, report_path)
+    import adonis_tv_publication
+    if adonis_tv_publication.revision_paths(before, after):
+        return adonis_tv_publication.verify(root, base, candidate, output, report_path)
     import tv_publication
     if tv_publication.revision_paths(before, after):
         return tv_publication.verify(root, base, candidate, output, report_path)

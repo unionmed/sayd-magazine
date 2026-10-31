@@ -93,4 +93,6 @@ class TVTests(unittest.TestCase):
                 (root/'docs/index.html').write_text('unauthorized ticker change');git('add','.');git('commit','-qm','tamper')
                 self.assertFalse(tv.historical_placement_snapshot(root,base))
 
+from test_adonis_tv_publication import AdonisTVTests
+
 if __name__=='__main__':unittest.main()
