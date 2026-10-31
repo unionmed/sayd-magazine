@@ -1,0 +1,32 @@
+{
+  "schema": "sayd-external-tv-publication-v1",
+  "id": "adonis-aljadeed-20261031",
+  "expected_base": "2bcfadf37a8a871d05464e8fa7d971aeef562495",
+  "approval_reference": "private:nayef-adonis-homepage-four-selections-20261031",
+  "published": "2026-10-31",
+  "video_id": "Kk6RKr6n0KY",
+  "source_url": "https://www.youtube.com/watch?v=Kk6RKr6n0KY",
+  "channel": "AL Jadeed",
+  "titles": {
+    "ar": "شبكات الصيد الجائر في لبنان… مقابلة مع رئيس التحرير أدونيس الخطيب",
+    "en": "Poaching networks in Lebanon: an interview with Editor-in-Chief Adonis El Khateeb",
+    "fr": "Réseaux de braconnage au Liban : entretien avec le rédacteur en chef Adonis El Khateeb"
+  },
+  "credit": {
+    "ar": "فيديو: الجديد · صورة أرشيفية من صيد",
+    "en": "Video: AL Jadeed · Sayd archive portrait",
+    "fr": "Vidéo : AL Jadeed · portrait des archives de Sayd"
+  },
+  "alt": {
+    "ar": "صورة أرشيفية لرئيس التحرير أدونيس الخطيب",
+    "en": "Archive portrait of Editor-in-Chief Adonis El Khateeb",
+    "fr": "Portrait d’archives du rédacteur en chef Adonis El Khateeb"
+  },
+  "poster_sha256": "e0d91bd95b8ae15c61d770b8b8354ef01c250bee9253dea68956364e0bc2347d",
+  "expected_channel_sha256": "613c985a053f8a531cf2e9fa2f86ac14c6713bd1be7e333b294173e5118b1c7b",
+  "rights": {
+    "status": "existing-site-archive",
+    "statement": "Existing Sayd archive portrait supplied by Nayef and published locally on the same site in commit a5f6cee5809e27cf3c3a015043b48e98f71eec45 (2026-09-19), reused as an archival illustration, not an interview frame. External copyright ownership and licence remain unverified; no new licence or unrestricted reuse claim. AL Jadeed video remains on its original YouTube page, not downloaded or reuploaded.",
+    "evidence_reference": "private:sayd-existing-editor-portrait-20261031"
+  }
+}
