@@ -1,0 +1,2271 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261031",
+  "expected_base": "b0559dc60dd40a9d50a3d203c67d5294092b779c",
+  "approval_reference": "private:automation-bird-encyclopedia-20261031T080000Z; Nayef standing preparation and publication authorization dated2026-10-25; ten-species trial approved2026-10-27 through2026-11-02. Scope new species AR/EN/FR encyclopedia only, no homepage/ticker/social, normal protected CI and review.",
+  "bank_search_reference": "2026-10-31 existing Sayd picture for use recursive inventory360files searched first. Existing eligible bank species already published; owner iNaturalistCC-BY-NC metadata not treated as publication waiver. Full1033archive bodies (AR801/EN121/FR111), scientific names, synonyms and Arabic variants checked to avoid existing profiles. Independently excluded ten prepared unpublished Oct30 profiles. New original images and rights records saved in existing bank with actual successful Library receipts; identifiers below.",
+  "photos": [
+    {
+      "id": "little-stint",
+      "path": "docs/media/publications/daily-birds-20261031/little-stint.jpg",
+      "sha256": "a7c0d2317a258fb0b078c49214eb6eb158d36f4624cbbe33649ed53b6bea6b5c",
+      "source_sha256": "a7c0d2317a258fb0b078c49214eb6eb158d36f4624cbbe33649ed53b6bea6b5c",
+      "source_reference": "Лариса Артемьева; 2025-08-29; Ilyinsky district, Perm Krai, Russia. https://www.inaturalist.org/photos/559462165; Library original libfile_78730f7ccc7c81919dff143439b40886; Library rights libfile_eaf025030488819190a48e416e908a1e.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://www.inaturalist.org/photos/559462165; Library rights libfile_eaf025030488819190a48e416e908a1e"
+      },
+      "alt": {
+        "ar": "دريجة صغيرة بريش يافع على ضفة طينية",
+        "en": "Juvenile-plumaged Little Stint on a muddy shore",
+        "fr": "Bécasseau minute en plumage juvénile sur une rive vaseuse"
+      },
+      "caption": {
+        "ar": "الدريجة الصغيرة",
+        "en": "Little Stint",
+        "fr": "Bécasseau minute"
+      }
+    },
+    {
+      "id": "green-sandpiper",
+      "path": "docs/media/publications/daily-birds-20261031/green-sandpiper.jpg",
+      "sha256": "3849b37adfe50bfff2d2d6c41959fdcd3a71100eaa98f137f614399d8510febd",
+      "source_sha256": "3849b37adfe50bfff2d2d6c41959fdcd3a71100eaa98f137f614399d8510febd",
+      "source_reference": "Stephen Matthews; 2026-01-02; Tai Po, Hong Kong. https://www.inaturalist.org/photos/604739480; Library original libfile_9935ce730b3081919b7e11d15915d340; Library rights libfile_ca7921728fd881919cc8ab3a838364a1.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://www.inaturalist.org/photos/604739480; Library rights libfile_ca7921728fd881919cc8ab3a838364a1"
+      },
+      "alt": {
+        "ar": "طيطوي أخضر يقف عند حافة الماء",
+        "en": "Green Sandpiper standing at the water’s edge",
+        "fr": "Chevalier cul-blanc au bord de l’eau"
+      },
+      "caption": {
+        "ar": "الطيطوي الأخضر",
+        "en": "Green Sandpiper",
+        "fr": "Chevalier cul-blanc"
+      }
+    },
+    {
+      "id": "eurasian-siskin",
+      "path": "docs/media/publications/daily-birds-20261031/eurasian-siskin.jpg",
+      "sha256": "aebd84ce38abd7712cb301f28db1549c3d1d5f89fdd664d2d1fdd5cac279e0ec",
+      "source_sha256": "aebd84ce38abd7712cb301f28db1549c3d1d5f89fdd664d2d1fdd5cac279e0ec",
+      "source_reference": "Estormiz; 2017-06-24; Simo, Finland. https://commons.wikimedia.org/wiki/File:Spinus_spinus_Simo_20170624_03.jpg; Library original libfile_f8d7b473cf9c8191b139b380811a04ec; Library rights libfile_ddbcceb3e5508191a6b2e36ea161a5e3.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Spinus_spinus_Simo_20170624_03.jpg; Library rights libfile_ddbcceb3e5508191a6b2e36ea161a5e3"
+      },
+      "alt": {
+        "ar": "ذكر حسون الشوك على غصن شجرة مخروطية",
+        "en": "Male Eurasian Siskin on a conifer branch",
+        "fr": "Tarin des aulnes mâle sur une branche de conifère"
+      },
+      "caption": {
+        "ar": "حسون الشوك",
+        "en": "Eurasian Siskin",
+        "fr": "Tarin des aulnes"
+      }
+    },
+    {
+      "id": "little-owl",
+      "path": "docs/media/publications/daily-birds-20261031/little-owl.png",
+      "sha256": "b3c3eef8e8ef9e4d54b25ffd2893c06c2d761a14e8905b611a38303d7534f2b8",
+      "source_sha256": "b3c3eef8e8ef9e4d54b25ffd2893c06c2d761a14e8905b611a38303d7534f2b8",
+      "source_reference": "Carlo Caimi; 2023-10-07; Giba, Sardinia, Italy. https://commons.wikimedia.org/wiki/File:Civetta-Giba_(SU)_7.10.2023.png; Library original libfile_56805b7f8f7c8191b5b2ee06b8ad85e9; Library rights libfile_991ee94700a08191a8780381df6b2c43.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Civetta-Giba_(SU)_7.10.2023.png; Library rights libfile_991ee94700a08191a8780381df6b2c43"
+      },
+      "alt": {
+        "ar": "بومة صغيرة بعينين صفراوين على جدار",
+        "en": "Little Owl with yellow eyes perched on a wall",
+        "fr": "Chevêche d’Athéna aux yeux jaunes perchée sur un mur"
+      },
+      "caption": {
+        "ar": "البومة الصغيرة (صدى)",
+        "en": "Little Owl",
+        "fr": "Chevêche d’Athéna"
+      }
+    },
+    {
+      "id": "brambling",
+      "path": "docs/media/publications/daily-birds-20261031/brambling.jpg",
+      "sha256": "63209f5e3c54ad6f0e999915495a13cddb69943e2bbcc8c7ba353e0a716a8c78",
+      "source_sha256": "63209f5e3c54ad6f0e999915495a13cddb69943e2bbcc8c7ba353e0a716a8c78",
+      "source_reference": "Estormiz; 2012-05-07; Hollihaka Park, Oulu, Finland. https://commons.wikimedia.org/wiki/File:Fringilla_montifringilla_Oulu_20120507b.JPG; Library original libfile_58053aa9c34c8191bab664f6cde000ee; Library rights libfile_64680439b15081919e92396e992acb42.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Fringilla_montifringilla_Oulu_20120507b.JPG; Library rights libfile_64680439b15081919e92396e992acb42"
+      },
+      "alt": {
+        "ar": "ذكر الشرشور الجبلي برأس أسود وصدر برتقالي على غصن",
+        "en": "Male Brambling with black head and orange breast perched on a branch",
+        "fr": "Pinson du Nord mâle à tête noire et poitrine orange sur une branche"
+      },
+      "caption": {
+        "ar": "الشرشور الجبلي",
+        "en": "Brambling",
+        "fr": "Pinson du Nord"
+      }
+    },
+    {
+      "id": "european-serin",
+      "path": "docs/media/publications/daily-birds-20261031/european-serin.jpg",
+      "sha256": "6da6da698adca7257941e7b868343880e5c4a314e418a06f5348bbfde6545da5",
+      "source_sha256": "6da6da698adca7257941e7b868343880e5c4a314e418a06f5348bbfde6545da5",
+      "source_reference": "Romzig; 2026-06-09; Location not stated by source. https://commons.wikimedia.org/wiki/File:Girlitz_(Juni_2026).jpg; Library original libfile_cd666a911ec88191ad54838ee03694fd; Library rights libfile_cbe25d1c1eb48191827ef1b2307e6161.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Girlitz_(Juni_2026).jpg; Library rights libfile_cbe25d1c1eb48191827ef1b2307e6161"
+      },
+      "alt": {
+        "ar": "ذكر نعار أوروبي إلى جانب طائر يافع من النوع نفسه",
+        "en": "Male European Serin beside a juvenile of the same species",
+        "fr": "Serin cini mâle auprès d’un juvénile de la même espèce"
+      },
+      "caption": {
+        "ar": "النعار الأوروبي",
+        "en": "European Serin",
+        "fr": "Serin cini"
+      }
+    },
+    {
+      "id": "ferruginous-duck",
+      "path": "docs/media/publications/daily-birds-20261031/ferruginous-duck.jpg",
+      "sha256": "dd4a688601a7d239442085e1413c2986d66cc332f813c80a6e226b7394ee8680",
+      "source_sha256": "dd4a688601a7d239442085e1413c2986d66cc332f813c80a6e226b7394ee8680",
+      "source_reference": "Tero Linjama (terolinjama); 2010; Aswan, Egypt. https://commons.wikimedia.org/wiki/File:Ferruginous_Duck,_Aswan.jpg; Library original libfile_930fadedb6a0819193bc1a9582d9c091; Library rights libfile_833da5c6d1708191991fa0aaee74b402.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Ferruginous_Duck,_Aswan.jpg; Library rights libfile_833da5c6d1708191991fa0aaee74b402"
+      },
+      "alt": {
+        "ar": "بط حديدي يسبح قرب القصب في أسوان بمصر",
+        "en": "Ferruginous Duck swimming beside reeds in Aswan, Egypt",
+        "fr": "Fuligule nyroca nageant près des roseaux à Assouan, en Égypte"
+      },
+      "caption": {
+        "ar": "البط الحديدي (حمراوي أبيض العين)",
+        "en": "Ferruginous Duck",
+        "fr": "Fuligule nyroca"
+      }
+    },
+    {
+      "id": "common-linnet",
+      "path": "docs/media/publications/daily-birds-20261031/common-linnet.jpg",
+      "sha256": "008d90576118e513b1c899976049c088b14f54b32772a6d3fc7bf6d5a5ba6b6e",
+      "source_sha256": "008d90576118e513b1c899976049c088b14f54b32772a6d3fc7bf6d5a5ba6b6e",
+      "source_reference": "Stein Arne Jensen; 2014-04-29; Son Real, Santa Margalida, Mallorca, Spain. https://www.flickr.com/photos/steinarnejensen/15913373554/; Library original libfile_22874f719bb48191858bab3d96521a41; Library rights libfile_855adbaed5e0819195d6db6bf891e1b5.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://www.flickr.com/photos/steinarnejensen/15913373554/; Library rights libfile_855adbaed5e0819195d6db6bf891e1b5"
+      },
+      "alt": {
+        "ar": "ذكر الحسون التفاحي بصدر محمر يقف على وتد خشبي",
+        "en": "Male Common Linnet with reddish breast perched on a wooden post",
+        "fr": "Linotte mélodieuse mâle à poitrine rougeâtre sur un piquet de bois"
+      },
+      "caption": {
+        "ar": "الحسون التفاحي",
+        "en": "Common Linnet",
+        "fr": "Linotte mélodieuse"
+      }
+    },
+    {
+      "id": "common-buzzard",
+      "path": "docs/media/publications/daily-birds-20261031/common-buzzard.jpg",
+      "sha256": "739f0888fbe1bf4e007453218bb5926505596a5c8355fb57304969cdea245a3b",
+      "source_sha256": "739f0888fbe1bf4e007453218bb5926505596a5c8355fb57304969cdea245a3b",
+      "source_reference": "Andrew Deacon; 2023-11-28; West Coast Peninsula, South Africa. https://www.inaturalist.org/photos/343655188; Library original libfile_0a4a01a406448191addef0fccb702f7f; Library rights libfile_bcebf1e258f48191978f912282a4c550.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://www.inaturalist.org/photos/343655188; Library rights libfile_bcebf1e258f48191978f912282a4c550"
+      },
+      "alt": {
+        "ar": "حوام شائع يقف على وتد في أرض مفتوحة",
+        "en": "Common Buzzard perched on a post in open country",
+        "fr": "Buse variable perchée sur un piquet en terrain ouvert"
+      },
+      "caption": {
+        "ar": "الحوّام الشائع",
+        "en": "Common Buzzard",
+        "fr": "Buse variable"
+      }
+    },
+    {
+      "id": "sparrowhawk",
+      "path": "docs/media/publications/daily-birds-20261031/sparrowhawk.jpg",
+      "sha256": "7df5e8f709de82dc8274ee37591b762a5142b69607bb22e687734e3f7fae7c29",
+      "source_sha256": "7df5e8f709de82dc8274ee37591b762a5142b69607bb22e687734e3f7fae7c29",
+      "source_reference": "Stein Arne Jensen; 2012-06-29; Kongsgårdmoen, Kongsberg, Norway. https://www.flickr.com/photos/steinarnejensen/7849557754/; Library original libfile_bb23730bffe081918347e3c8e310daa3; Library rights libfile_b80fd3631b008191a9f35202be9edb25.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://www.flickr.com/photos/steinarnejensen/7849557754/; Library rights libfile_b80fd3631b008191a9f35202be9edb25"
+      },
+      "alt": {
+        "ar": "باشق أوراسي على غصن، يظهر بطنه المخطط وذيله الطويل",
+        "en": "Eurasian Sparrowhawk on a branch, showing barred underparts and a long tail",
+        "fr": "Épervier d’Europe sur une branche, montrant son dessous barré et sa longue queue"
+      },
+      "caption": {
+        "ar": "الباشق الأوراسي",
+        "en": "Eurasian Sparrowhawk",
+        "fr": "Épervier d’Europe"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الدريجة-الصغيرة",
+        "en": "little-stint",
+        "fr": "becasseau-minute"
+      },
+      "translations": {
+        "ar": {
+          "title": "الدريجة الصغيرة",
+          "subtitle": "Calidris minuta — خوّاض صغير يصل التندرا الشمالية بضفاف العبور والإشتاء العربية",
+          "meta_description": "خوّاض صغير يصل التندرا الشمالية بضفاف العبور والإشتاء العربية — Calidris minuta",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الدريجة الصغيرة Calidris minuta خوّاض صغير جدًا من فصيلة الشنقبيات، يجمع بين منقار أسود دقيق مستقيم وساقين سوداوين وبطن أبيض. يبلغ طول الجسم نحو 12–14 سم، ويبدو أصغر بكثير من الدريجة الألبية التي قد ترافقه. تتغير كسوته مع الموسم: ففي التكاثر يكتسب الرأس والظهر درجات صهباء مع علامات داكنة، بينما يغلب الرمادي على أعلى الجسم شتاءً. تبقى نسب المنقار والجسم والساقين مفاتيح مهمة حين تتلاشى الألوان الدافئة."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "يتشابه الجنسان في المظهر الميداني. تحمل الطيور اليافعة حواف ريش فاتحة وخطوطًا باهتة على الظهر قد ترسم هيئة حرف V، فتبدو أكثر نقشًا من بالغ في كسوته الشتوية. لدريجة تيمنك ساقان أفتح مائلتان إلى الزيتوني أو الأصفر، بينما يكون منقار الدريجة الألبية أطول وأكثر انحناءً. والدريجة البيضاء أكبر وأشد شحوبًا في الشتاء. أما الدريجة حمراء الرقبة فقد تكون شديدة الشبه، خصوصًا خارج التكاثر؛ وتحتاج المشاهدات غير المألوفة إلى صور واضحة لعدة جوانب بدل الاعتماد على لون الصدر وحده."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تتردد على الطين المكشوف وضفاف البحيرات والبحيرات الساحلية والملاحات والمسطحات المدية، وتستخدم المياه العذبة والمالحة. تتحرك بسرعة ثم تنقر الفرائس الصغيرة من السطح أو الماء بالغ الضحالة. يشمل غذاؤها الحشرات ويرقاتها والقشريات والرخويات الصغيرة والديدان. وقد تجتمع في أسراب مختلطة، ثم ترتاح في تجمعات عندما يغمر المد مواضع الطعام. بالنسبة إلى هذا الطائر الصغير، ليست الضفة العارية مساحة فارغة؛ إنها سطح غذائي يعتمد على حيوانات دقيقة وتوقيت انكشاف الطين."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يقع نطاق التكاثر في التندرا الشمالية الأوراسية، بعيدًا عن مواقع العبور والإشتاء العربية. الحضنة المعتادة أربع بيضات، وتستغرق الحضانة نحو 20–25 يومًا، ويصبح الصغار قادرين على الطيران بعد قرابة 15–21 يومًا. تولد الفراخ مكسوة بالزغب وقادرة على الحركة. تكشف الدراسات القطبية نظام رعاية يمكن أن يتولى فيه أحد الأبوين حضنة منفردًا، وقد تترك الأنثى حضنة للذكر وترعى أخرى. تؤمن وفرة اللافقاريات في الصيف القطبي موارد النمو السريع."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "في لبنان توثق قائمة 2020 عبورًا شائعًا ربيعًا وخريفًا، والأخير من أوائل أغسطس إلى أواخر أكتوبر. وفي قطر هو عابر وزائر شتوي شائع، مسجل في جميع الأشهر، وفي عُمان عابر وفير وزائر شتوي. ويبين التقييم الوطني الإماراتي أن بعض الطيور تقضي الشتاء، بينما تواصل أخرى جنوبًا، وقد يبقى بعض غير البالغين صيفًا. وتمتد محطات الشتاء الغربية إلى موريتانيا، حيث توثق إحصاءات الطيور المائية وجوده. لذلك قد يشاهد آخر أكتوبر في نهاية عبوره ببلد، وفي بداية إقامة أطول ببلد آخر."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يصنف عالميًا ضمن «أقل إثارة للقلق»، لكن حاجته إلى سلسلة مواقع آمنة تجعل حماية الضفاف ومناطق الراحة جزءًا من حماية رحلته. يشير التقييم الإماراتي إلى أخطار محتملة من تغير استخدام السواحل والتلوث النفطي. وهو مستهلك للافقاريات وفريسة لطيور جارحة ضمن شبكة الأراضي الرطبة الغذائية. تساعد مساحات الطين غير المردومة والمياه الضحلة النظيفة ومواقع الراحة الهادئة في الحفاظ على وظائف الموئل. ولا تكفي كثرة الطيور في تجمع واحد للحكم على اتجاه كامل المسار الهجري."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Naturalis — Birds of Europe: Calidris minuta",
+                "RSPB — Little Stint identification",
+                "New Zealand Birds Online — Little stint",
+                "BTO — BirdFacts: Little Stint",
+                "Tulp and colleagues — Body mass patterns of Little Stints, Ibis (2002)",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Qatar Bird Observation Group — Little Stint",
+                "Birds of Oman — species database",
+                "UAE National Red List of Birds (2021) — Calidris minuta",
+                "Revue Marocaine des Sciences Agronomiques et Vétérinaires 2(1) (2014) — Mauritanian waterbird counts",
+                "CMS — Calidris minuta species account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева — CC0-1.0."
+        },
+        "en": {
+          "title": "Little Stint",
+          "subtitle": "Calidris minuta — A tiny shorebird linking Arctic tundra with Arab passage and winter shores",
+          "meta_description": "A tiny shorebird linking Arctic tundra with Arab passage and winter shores — Calidris minuta",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Little Stint, Calidris minuta, is a tiny shorebird in the family Scolopacidae, with a fine straight black bill, black legs and white underparts. Approximately 12–14 cm long, it is markedly smaller than the Dunlins that may accompany it. Plumage changes seasonally: breeding birds show rufous tones on the head and upperparts with dark markings, while winter birds become predominantly grey above. Bill, body and leg proportions remain useful when the warm colours have faded."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "The sexes look similar in the field. Juveniles have pale feather edges and light lines on the back that can form a V-shaped pattern, appearing more patterned than winter adults. Temminck’s Stints have paler olive or yellowish legs; Dunlins have longer, more curved bills. Sanderlings are larger and much paler in winter. Red-necked Stints can be particularly similar outside breeding plumage. Unusual records therefore benefit from clear photographs showing several views rather than identification based only on breast colour."
+              ]
+            },
+            {
+              "heading": "Habitats, diet and behaviour",
+              "paragraphs": [
+                "Exposed mud, lake margins, lagoons, saltpans and intertidal flats provide feeding habitat in fresh and saline water. It runs quickly and picks small prey from the surface or extremely shallow water. Foods include insects and their larvae, crustaceans, small molluscs and worms. It may join mixed flocks, then gather at resting sites when rising water covers the feeding flats. A bare shore is consequently not empty ground for this bird: it is a feeding surface supported by small animals and the timing of mud exposure."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Breeding takes place on northern Eurasian tundra, far from Arab passage and wintering sites. A typical clutch contains four eggs; incubation lasts roughly 20–25 days and young fly at approximately 15–21 days. Chicks hatch down-covered and mobile. Arctic studies describe a system in which one parent can care for a clutch alone; a female may leave one clutch with a male and tend another. Summer invertebrate availability provides resources for rapid chick growth."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist records common spring and autumn passage, the latter from early August to late October. In Qatar it is a common passage migrant and winter visitor recorded in every month; Oman lists abundant passage and winter occurrence. The UAE national assessment distinguishes birds staying for winter from those continuing south, with some immatures remaining through summer. Western wintering sites extend to Mauritania, where waterbird counts document its presence. Late October may thus mark the end of passage in one country and the beginning of a longer stay in another."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Its global category is Least Concern, but dependence on successive safe sites makes shore and roost protection important throughout the journey. The UAE assessment identifies potential pressures from changing coastal land use and oil pollution. As an invertebrate consumer and prey for raptors, it participates in wetland food webs. Unreclaimed mudflats, clean shallow water and quiet resting sites help maintain habitat functions. A crowded flock at one location does not by itself establish the trend across an entire migratory flyway."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Naturalis — Birds of Europe: Calidris minuta",
+                "RSPB — Little Stint identification",
+                "New Zealand Birds Online — Little stint",
+                "BTO — BirdFacts: Little Stint",
+                "Tulp and colleagues — Body mass patterns of Little Stints, Ibis (2002)",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Qatar Bird Observation Group — Little Stint",
+                "Birds of Oman — species database",
+                "UAE National Red List of Birds (2021) — Calidris minuta",
+                "Revue Marocaine des Sciences Agronomiques et Vétérinaires 2(1) (2014) — Mauritanian waterbird counts",
+                "CMS — Calidris minuta species account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0-1.0."
+        },
+        "fr": {
+          "title": "Bécasseau minute",
+          "subtitle": "Calidris minuta — Un minuscule limicole entre toundra arctique et rivages arabes de passage et d’hiver",
+          "meta_description": "Un minuscule limicole entre toundra arctique et rivages arabes de passage et d’hiver — Calidris minuta",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Bécasseau minute, Calidris minuta, est un très petit limicole de la famille des Scolopacidés. Il possède un bec noir fin et droit, des pattes noires et un dessous blanc. Long d’environ 12–14 cm, il est nettement plus petit que le Bécasseau variable qu’il accompagne parfois. En plumage nuptial, tête et dessus deviennent roux avec des marques sombres; en hiver, le dessus est surtout gris. Les proportions du bec, du corps et des pattes restent utiles lorsque les couleurs chaudes s’atténuent."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "Les sexes se ressemblent sur le terrain. Les jeunes portent des liserés pâles et des lignes claires sur le dos pouvant dessiner un V; ils paraissent plus dessinés que les adultes hivernaux. Le Bécasseau de Temminck possède des pattes plus claires, olive ou jaunâtres; le variable a un bec plus long et courbé. Le sanderling est plus grand et beaucoup plus pâle en hiver. Le Bécasseau à cou roux peut être très semblable hors plumage nuptial. Pour une observation inhabituelle, des photographies sous plusieurs angles sont préférables à une identification fondée sur la poitrine seule."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Vasières découvertes, berges de lacs, lagunes, salines et estrans constituent ses milieux alimentaires, en eau douce comme salée. Il court rapidement et picore de petites proies à la surface ou dans une eau extrêmement peu profonde: insectes, larves, crustacés, petits mollusques et vers. Il peut rejoindre des groupes mixtes, puis se rassembler au repos lorsque l’eau recouvre les secteurs alimentaires. Une rive nue n’est donc pas un espace vide: elle offre une ressource dépendant de petits animaux et des périodes d’exposition de la vase."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Il se reproduit dans la toundra du nord de l’Eurasie, loin des étapes et hivernages arabes. La ponte habituelle comprend quatre œufs; l’incubation dure environ 20–25 jours et les jeunes volent vers 15–21 jours. Les poussins naissent couverts de duvet et mobiles. Des études arctiques décrivent une prise en charge individuelle: une femelle peut confier une ponte au mâle et s’occuper d’une autre. Les invertébrés disponibles pendant l’été polaire soutiennent la croissance rapide des jeunes."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité arabes",
+              "paragraphs": [
+                "La liste libanaise de 2020 indique des passages communs au printemps et de début août à fin octobre. Au Qatar, c’est un migrateur et hivernant commun, signalé tous les mois; Oman le décrit comme abondant au passage et en hiver. L’évaluation nationale émiratie distingue les oiseaux qui restent pour hiverner de ceux poursuivant vers le sud; certains immatures demeurent durant l’été. À l’ouest, des dénombrements documentent l’hivernage en Mauritanie. Fin octobre peut ainsi correspondre à la fin du passage dans un pays et au début d’un séjour prolongé dans un autre."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Son statut mondial est «Préoccupation mineure». Sa dépendance à une succession de sites sûrs rend toutefois importante la protection des berges et reposoirs. L’évaluation émiratie relève des risques potentiels liés aux usages côtiers et à la pollution pétrolière. Consommateur d’invertébrés et proie de rapaces, il appartient aux réseaux alimentaires des zones humides. Vasières préservées du remblaiement, eaux peu profondes propres et reposoirs tranquilles maintiennent les fonctions du milieu. Un groupe dense ne suffit pas à décrire la tendance d’une voie migratoire entière."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Naturalis — Birds of Europe: Calidris minuta",
+                "RSPB — Little Stint identification",
+                "New Zealand Birds Online — Little stint",
+                "BTO — BirdFacts: Little Stint",
+                "Tulp and colleagues — Body mass patterns of Little Stints, Ibis (2002)",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Qatar Bird Observation Group — Little Stint",
+                "Birds of Oman — species database",
+                "UAE National Red List of Birds (2021) — Calidris minuta",
+                "Revue Marocaine des Sciences Agronomiques et Vétérinaires 2(1) (2014) — Mauritanian waterbird counts",
+                "CMS — Calidris minuta species account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Лариса Артемьева — CC0-1.0."
+        }
+      },
+      "published": "2026-10-31",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "little-stint"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الطيطوي-الأخضر",
+        "en": "green-sandpiper",
+        "fr": "chevalier-cul-blanc"
+      },
+      "translations": {
+        "ar": {
+          "title": "الطيطوي الأخضر",
+          "subtitle": "Tringa ochropus — عجز أبيض وأجنحة داكنة لطائر يزور المياه العربية ويعشش في أشجار الشمال",
+          "meta_description": "عجز أبيض وأجنحة داكنة لطائر يزور المياه العربية ويعشش في أشجار الشمال — Tringa ochropus",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الطيطوي الأخضر Tringa ochropus خوّاض من فصيلة الشنقبيات، لا يغلب الأخضر على ريشه كما قد يوحي اسمه. يبدو أعلى الجسم بنيًا داكنًا قريبًا من الأسود، يقابله بطن أبيض وعجز أبيض واضح عند الطيران. يحمل الصدر والرأس علامات دقيقة، ويظهر في نهاية الذيل تخطيط داكن عريض. المنقار مستقيم داكن والساقان رماديتان مخضرتان. يبلغ طوله نحو 21–24 سم."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "يتشابه الجنسان، وتكون حواف ريش اليافع منقطة بلون كريمي، بينما تقل علامات أعلى الجسم في الكساء غير التكاثري. الطيطوي الأخضر أدكن عمومًا من طيطوي الغياض، وتبدو الجهة السفلى من جناحيه داكنة في الطيران. ويختلف عن الطيطوي الشائع الذي يظهر شريطًا أبيض واضحًا في الجناح ولا يملك العجز الأبيض الواسع نفسه. أما الطيطوي أخضر الساق فنوع آخر أكبر وأطول منقارًا؛ تشابه الاسمين لا يعني تطابق الطائرين. يفيد الجمع بين العجز والجناح والمنقار والصوت في المشاهدة السريعة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يميل إلى المياه العذبة: أطراف البرك والجداول والمستنقعات والخنادق والأحواض المعالجة، وغالبًا يكون منفردًا أو في أعداد صغيرة. يلتقط الحشرات واللافقاريات من السطح والمياه الضحلة، وقد يأخذ الديدان والقشريات والرخويات أيضًا. يهز جسمه ورأسه أو ذيله، ثم يطلق صفيرًا واضحًا إذا أقلق. ويمكن أن يطير أولًا منخفضًا ومتعرجًا قبل أن يرتفع مبتعدًا. يفسر هذا الحذر لماذا تكون بعض اللقاءات معه لمحة عابرة من عجز أبيض، لا مشاهدة طويلة على شاطئ مكشوف."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يتكاثر قرب المياه في مناطق الغابات الرطبة شمال أوراسيا، وله سلوك غير مألوف بين الخواضات: يستخدم أعشاشًا قديمة لطيور أخرى في الأشجار بدل حفر عش أرضي دائمًا. الحضنة المعتادة أربع بيضات، وتدوم الحضانة نحو 20–23 يومًا، ويبلغ الصغار مرحلة الطيران بعد نحو 27–29 يومًا. الفراخ زغبية قادرة على الحركة بعد الفقس. هذا الارتباط بالماء والغطاء الشجري في موطن التكاثر يختلف عن مشهد الطائر على حافة بركة عربية خلال الهجرة؛ فالموقعان يخدمان مرحلتين من دورة حياته."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "في لبنان تصفه قائمة 2020 بعابر شائع نسبيًا ربيعًا وخريفًا، مع إشتاء قليل العدد من نوفمبر إلى فبراير. وفي قطر هو عابر وزائر شتوي شائع، مع تسجيله في جميع الأشهر؛ وفي عُمان يوصف بأنه وفير أثناء العبور والشتاء. توثق المراجع الإقليمية وجوده كذلك في مصر والمغرب والجزائر وموريتانيا. لذا تتصل نهاية عبور أكتوبر في المشرق بإقامة شتوية في مواقع أخرى، وقد تكون البرك الصغيرة مهمة بقدر أهمية المسطحات الكبيرة لهذا الطائر المتفرق."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يصنف عالميًا ضمن «أقل إثارة للقلق». يستهلك اللافقاريات ويدخل في غذاء المفترسات، وتنبع أهميته من موقعه في شبكة المياه الضحلة لا من أعداده وحدها. تجفيف البرك وإزالة الضفاف الطبيعية وتلوث المياه قد تقلل فرص الغذاء والراحة. ولأنه يستخدم خنادق ومياه صغيرة، يمكن أن يؤثر تعديل محدود في حافة مجرى على موئله المحلي. المحافظة على مياه نظيفة وضفاف متفاوتة العمق وغطاء قريب، مع ترك مسافة للمراقبة، تساعده على الاستفادة من محطات رحلته دون إزعاج متكرر."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Naturalis — Birds of Europe: Tringa ochropus",
+                "RSPB — Green Sandpiper identification",
+                "BTO — BirdFacts: Green Sandpiper",
+                "Wildlife Trusts — Green Sandpiper natural history",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Qatar Bird Observation Group — Qatar bird list",
+                "Birds of Oman — species database",
+                "BirdLife International — Green Sandpiper species factsheet",
+                "LANUK Nordrhein-Westfalen — Tringa ochropus species account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Stephen Matthews — CC0-1.0."
+        },
+        "en": {
+          "title": "Green Sandpiper",
+          "subtitle": "Tringa ochropus — White rump and dark wings: an Arab wetland visitor nesting in northern trees",
+          "meta_description": "White rump and dark wings: an Arab wetland visitor nesting in northern trees — Tringa ochropus",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Green Sandpiper, Tringa ochropus, is a shorebird in the family Scolopacidae, not a predominantly green bird despite its English name. Dark brown, almost black upperparts contrast with a white belly and a conspicuous white rump in flight. The head and breast carry fine markings, while the tail tip shows broad dark bars. Its straight bill is dark and its legs grey-green. At roughly 21–24 cm long, it is a compact wader."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "The sexes look alike. Juveniles have buff-spotted feather margins; non-breeding adults show less upperpart spotting. Green Sandpipers generally look darker than Wood Sandpipers, and the underwings appear dark in flight. Common Sandpipers show an obvious white wing stripe and lack the same broad white rump. Common Greenshanks are a different, larger species with a longer bill; their similar English names should not obscure these distinctions. A combination of rump, wing, bill and call helps resolve a brief encounter."
+              ]
+            },
+            {
+              "heading": "Habitats, diet and behaviour",
+              "paragraphs": [
+                "It favours freshwater margins around pools, streams, marshes, ditches and treatment ponds, often appearing alone or in small numbers. Insects and other invertebrates are picked from the surface and shallow water; worms, crustaceans and molluscs are also eaten. It bobs its body, head or tail and gives a clear whistle when alarmed. Flight may begin low and zigzagging before the bird climbs away. This wariness helps explain why encounters can be fleeting glimpses of a white rump rather than prolonged views on an exposed shore."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Breeding occurs near water in wet wooded parts of northern Eurasia. Unusually among waders, it uses old nests of other birds in trees instead of invariably making a ground scrape. A typical clutch contains four eggs. Incubation lasts about 20–23 days, and young reach flight at approximately 27–29 days; chicks hatch down-covered and mobile. The association with water and trees on the breeding grounds contrasts with a bird using the edge of an Arab pond during migration. Both habitats support different stages of the same annual cycle."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist describes fairly common spring and autumn passage and scarce November–February winter occurrence. Qatar lists a common passage migrant and winter visitor, with records in every month; Oman describes abundant passage and winter occurrence. Regional references also document its presence in Egypt, Morocco, Algeria and Mauritania. The end of October passage in the Levant thus connects with winter residence elsewhere. Small pools can matter alongside larger wetlands for this dispersed species."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Its global conservation category is Least Concern. An invertebrate consumer and prey for predators, it belongs to shallow-water food webs; its ecological importance is not measured by flock size alone. Draining pools, removing natural margins and polluting water can reduce feeding and resting opportunities. Because it uses ditches and small waterbodies, even a localized alteration of a stream edge can affect its habitat. Clean water, varied shallow margins and nearby cover, together with observation from a respectful distance, help birds use successive stopovers without repeated disturbance."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Naturalis — Birds of Europe: Tringa ochropus",
+                "RSPB — Green Sandpiper identification",
+                "BTO — BirdFacts: Green Sandpiper",
+                "Wildlife Trusts — Green Sandpiper natural history",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Qatar Bird Observation Group — Qatar bird list",
+                "Birds of Oman — species database",
+                "BirdLife International — Green Sandpiper species factsheet",
+                "LANUK Nordrhein-Westfalen — Tringa ochropus species account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Stephen Matthews — CC0-1.0."
+        },
+        "fr": {
+          "title": "Chevalier cul-blanc",
+          "subtitle": "Tringa ochropus — Croupion blanc et ailes sombres: un visiteur des eaux arabes nichant dans les arbres du Nord",
+          "meta_description": "Croupion blanc et ailes sombres: un visiteur des eaux arabes nichant dans les arbres du Nord — Tringa ochropus",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Chevalier cul-blanc, Tringa ochropus, est un limicole de la famille des Scolopacidés. Malgré son nom anglais «Green Sandpiper», son plumage n’est pas principalement vert. Le dessus brun très sombre contraste avec le ventre blanc et le croupion blanc bien visible en vol. La tête et la poitrine sont finement marquées; l’extrémité de la queue porte de larges barres sombres. Le bec est droit et foncé, les pattes gris verdâtre. Long d’environ 21–24 cm, c’est un limicole compact."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "Les sexes se ressemblent. Les jeunes présentent des bordures de plumes ponctuées de beige; les adultes internuptiaux ont le dessus moins tacheté. Le cul-blanc paraît généralement plus sombre que le Chevalier sylvain et ses dessous d’ailes sont foncés en vol. Le Chevalier guignette montre une bande alaire blanche nette et n’a pas le même large croupion blanc. Le Chevalier aboyeur est une autre espèce, plus grande et au bec plus long. Croupion, ailes, bec et voix associés permettent de mieux interpréter une rencontre brève."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il préfère les bordures d’eau douce: mares, ruisseaux, marais, fossés et bassins de traitement. On le rencontre souvent seul ou en petits nombres. Il prélève insectes et autres invertébrés à la surface ou dans l’eau peu profonde, consommant aussi vers, crustacés et mollusques. Il balance le corps, la tête ou la queue et émet un sifflement clair lorsqu’il est inquiet. Son départ peut être bas et zigzaguant avant une montée rapide. Cette méfiance explique les rencontres limitées à un éclair de croupion blanc plutôt qu’à une longue observation sur une rive dégagée."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "La reproduction a lieu près de l’eau dans les régions boisées humides du nord de l’Eurasie. Particularité parmi les limicoles, il utilise d’anciens nids d’autres oiseaux dans les arbres, au lieu de creuser systématiquement une cuvette au sol. La ponte habituelle compte quatre œufs. L’incubation dure environ 20–23 jours et les jeunes volent vers 27–29 jours; ils naissent couverts de duvet et mobiles. Cette association d’eau et d’arbres contraste avec l’image d’un oiseau sur une mare arabe en migration. Les deux milieux correspondent à des étapes différentes du cycle annuel."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité arabes",
+              "paragraphs": [
+                "La liste libanaise de 2020 décrit des passages assez communs au printemps et en automne, avec peu d’hivernants de novembre à février. Au Qatar, il est migrateur et hivernant commun, observé tous les mois; Oman le décrit comme abondant au passage et en hiver. Les références régionales documentent aussi sa présence en Égypte, au Maroc, en Algérie et en Mauritanie. La fin du passage d’octobre au Levant rejoint ainsi l’installation hivernale ailleurs. Pour cette espèce dispersée, les petites mares peuvent compter autant que les grandes zones humides."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Son statut mondial est «Préoccupation mineure». Consommateur d’invertébrés et proie de prédateurs, il participe aux réseaux alimentaires des eaux peu profondes; son rôle ne se mesure pas seulement à la taille des groupes. Assèchement, suppression des berges naturelles et pollution peuvent réduire nourriture et repos. Comme il utilise de petites eaux, une modification locale de berge peut affecter son habitat. Eau propre, marges peu profondes diversifiées, couvert proche et observation à distance l’aident à utiliser ses haltes sans dérangements répétés."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Naturalis — Birds of Europe: Tringa ochropus",
+                "RSPB — Green Sandpiper identification",
+                "BTO — BirdFacts: Green Sandpiper",
+                "Wildlife Trusts — Green Sandpiper natural history",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Qatar Bird Observation Group — Qatar bird list",
+                "Birds of Oman — species database",
+                "BirdLife International — Green Sandpiper species factsheet",
+                "LANUK Nordrhein-Westfalen — Tringa ochropus species account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Stephen Matthews — CC0-1.0."
+        }
+      },
+      "published": "2026-10-31",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "green-sandpiper"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "حسون-الشوك",
+        "en": "eurasian-siskin",
+        "fr": "tarin-des-aulnes"
+      },
+      "translations": {
+        "ar": {
+          "title": "حسون الشوك",
+          "subtitle": "حسون صغير يتنقل مع البذور: عبور خريفي وشتاء متفاوت الحضور عربيًا",
+          "meta_description": "حسون صغير يتنقل مع البذور: عبور خريفي وشتاء متفاوت الحضور عربيًا",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "حسون الشوك Spinus spinus طائر صغير من الحسونيات، وتَرِد له تسمية «حسون الشوكة الأوربي» في مرجع قطر الطبيعي. استُخدم له سابقًا الاسم Carduelis spinus. يبدو الذكر أصفر مخضرًا مع تاج وذقن أسودين وجناحين داكنين يقطعهما الأصفر. الأنثى أكثر رمادية وتخطيطًا وتفتقر إلى التاج الأسود الواضح. اليافع أشد تخطيطًا وأقل اصفرارًا. الذيل قصير مشقوق وله جانبان أصفران، والمنقار المخروطي الدقيق مناسب لاستخراج البذور الصغيرة. لون الطائر وحده أقل إفادة من اجتماع التخطيط والجناح والذيل وشكل المنقار."
+              ]
+            },
+            {
+              "heading": "التمييز من الأنواع المشابهة",
+              "paragraphs": [
+                "قد يلتبس بالحسون الأخضر، لكن الأخير أكبر وأثقل هيئة وأغلظ منقارًا. وللنعار الأوروبي منقار أقصر وأشد امتلاء، بينما يبرز في حسون الشوك اصفرار جوانب الذيل والشريط الجناحي. يرتبط اختلاف مظهر الذكر والأنثى أيضًا بدرجة وضوح الرأس الأسود؛ غيابه عن أنثى أو يافع لا ينفي هوية حسون الشوك. يفيد تتبع الطائر وهو يتسلق الأغصان الرفيعة ويتدلى منها أكثر من الاعتماد على لمحة سريعة لطائر أصفر بين الأوراق."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تتركز موائل التكاثر في الغابات المخروطية، ويستعمل خارجها أشجار الألدر والبتولا وحدائق ومتنزهات مناسبة. يلتقط البذور من المخاريط والنورات وقد يتدلى مقلوبًا أثناء ذلك، ثم يجمع البذور المتساقطة على الأرض. أسرابه متحركة وكثيرة النداء، وطيرانه متموج. توجد جماعات مقيمة وأخرى مهاجرة، وتزداد قابلية الهجرة عمومًا في العروض الشمالية. يسجل أطلس EURING تحركات تصل إلى شمال أفريقيا والشرق الأوسط، مع اختلاف واضح بين المسارات والأعوام تبعًا لأصل الطيور وموارد الغذاء."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يُخبّئ العش بين أغصان الأشجار، وغالبًا في المخروطيات، مستخدمًا عيدانًا دقيقة وحزازيات ومواد لينة. المعتاد أربع أو خمس بيضات تحضنها الأنثى. تورد بيانات BTO حضانة نموذجية من 12 إلى 13 يومًا، ومغادرة العش بعد 13 إلى 15 يومًا. تستمر رعاية الفراخ بعد خروجها، وقد ينتج الزوج أكثر من حضنة عندما تساعد الظروف الغذائية. تتعلق هذه الدورة بنطاقات التكاثر الموثقة، فيما تصف سجلات المنطقة العربية أساسًا زوار الشتاء والعبور."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "في لبنان توثق قائمة 2020 عبورًا خريفيًا من أواخر أكتوبر إلى أواخر نوفمبر، وشتاءً من ديسمبر إلى منتصف فبراير، خاصة في المخروطيات وجبل لبنان والبقاع. وتدرجه الأردن زائرًا شتويًا، كما تصنفه قائمة المغرب لعام 2017. يتناقص انتظامه شرقًا وجنوبًا: تصفه الكويت في قائمتها المحدّثة عام 2026 بزائر شتوي نادر، بينما يعده مرجع قطر طائرًا عارضًا. بذلك يكون أواخر أكتوبر مناسبًا لمراقبة بدء العبور اللبناني، مع بقاء اختلاف الحضور بين البلدان والسنوات جزءًا أساسيًا من فهمه."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "حسون الشوك مستهلك للبذور ضمن شبكات الغابات والحدائق الغذائية، ويرتبط وجوده بتنوع الأشجار وإنتاجها الموسمي. تصنيفه العالمي الحالي «أقل قلقًا» LC. وتتطلب قراءة أعداد الشتاء مراعاة التنقل؛ اختفاء سرب من موقع قد يعكس انتقاله إلى مورد غذائي آخر. الحفاظ على مجموعات الأشجار المتنوعة والموائل التي تؤمن الغذاء خلال البرد إجراء مفيد، كما يمنح تسجيل النوع والعدد والتاريخ والموئل صورة أدق من مقارنة ملاحظة منفردة بعام كامل."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList — The Global Avian Checklist, v2026",
+                "BTO — BirdFacts: Siskin",
+                "Naturalis Biodiversity Center — Spinus spinus",
+                "Vogelbescherming Nederland — Sijs",
+                "EURING/CMS — Eurasian-African Bird Migration Atlas: Eurasian Siskin",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Bergier et al. — Liste des oiseaux du Maroc, 2017",
+                "KORC — Kuwait Bird List, September 2026",
+                "Qatar eNature — حسون الشوكة الأوربي"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Estormiz — CC0-1.0."
+        },
+        "en": {
+          "title": "Eurasian Siskin",
+          "subtitle": "A small seed specialist with autumn passage and variable winter occurrence across the Arab region",
+          "meta_description": "A small seed specialist with autumn passage and variable winter occurrence across the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Eurasian Siskin Spinus spinus is a small member of Fringillidae, formerly often placed in Carduelis. Arabic references use «حسون الشوك», while Qatar’s nature guide gives the variant «حسون الشوكة الأوربي». Males are yellow-green with a black cap and chin and dark wings crossed by yellow. Females are greyer and more streaked, without the conspicuous black cap. Juveniles show heavier streaking and less yellow. The short forked tail has yellow sides, and the fine conical bill extracts small seeds. These combined features are more useful than colour alone."
+              ]
+            },
+            {
+              "heading": "Distinguishing similar birds",
+              "paragraphs": [
+                "European Greenfinches are bulkier and have much stronger bills. European Serins have shorter, stouter bills, whereas Siskins show prominent yellow tail sides and wing bars. Sex and age influence the visibility of the black head markings: their absence in a female or young bird does not rule out Siskin. Following a bird as it climbs thin branches and hangs below them gives a better view than a fleeting glimpse of yellow among leaves."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Breeding is associated particularly with coniferous woodland. Outside breeding, alders, birches, suitable gardens and parks provide feeding opportunities. Birds extract seeds from cones and catkins, sometimes hanging upside down, and collect fallen seeds from the ground. Flocks are mobile and vocal, with an undulating flight. Populations range from resident to migratory, with migration generally more pronounced at northern latitudes. EURING documents movements reaching North Africa and the Middle East; routes and annual arrivals vary with population origin and food resources."
+              ]
+            },
+            {
+              "heading": "Breeding and annual cycle",
+              "paragraphs": [
+                "The nest is concealed among tree branches, often in a conifer, and uses fine twigs, moss and softer material. A normal clutch contains four or five eggs, incubated by the female. BTO gives typical incubation of 12–13 days and a nestling period of 13–15 days. Care continues after the young leave the nest, and favourable food conditions can allow more than one brood. These describe the known breeding range, whereas Arab-region records mainly concern winter visitors and passage birds."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist records autumn passage from late October to late November and winter presence from December to mid-February, notably in conifers in Mount Lebanon and the Beqaa. Jordan lists it as a winter visitor, as does Morocco’s 2017 checklist. Occurrence becomes less regular farther east and south: Kuwait’s updated 2026 list calls it a rare winter visitor, while Qatar’s nature guide treats it as a vagrant. Late October is therefore appropriate for watching the start of Lebanese passage, with substantial differences between countries and years."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Siskins consume seeds within woodland and garden food webs, and their presence reflects tree diversity and seasonal seed production. Their current global category is Least Concern. Winter counts must be interpreted alongside mobility: a flock disappearing from one site may have moved to another food source. Maintaining varied tree stands and cold-season feeding habitats is useful. Records combining species, number, date and habitat reveal more than comparing a single sighting with an entire previous year."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList — The Global Avian Checklist, v2026",
+                "BTO — BirdFacts: Siskin",
+                "Naturalis Biodiversity Center — Spinus spinus",
+                "Vogelbescherming Nederland — Sijs",
+                "EURING/CMS — Eurasian-African Bird Migration Atlas: Eurasian Siskin",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Bergier et al. — Liste des oiseaux du Maroc, 2017",
+                "KORC — Kuwait Bird List, September 2026",
+                "Qatar eNature — حسون الشوكة الأوربي"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Estormiz — CC0-1.0."
+        },
+        "fr": {
+          "title": "Tarin des aulnes",
+          "subtitle": "Un petit amateur de graines, migrateur automnal et hivernant variable dans le monde arabe",
+          "meta_description": "Un petit amateur de graines, migrateur automnal et hivernant variable dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Tarin des aulnes Spinus spinus est un petit Fringillidé, autrefois souvent placé dans le genre Carduelis. Les références arabes emploient «حسون الشوك»; le guide naturel du Qatar donne la variante «حسون الشوكة الأوربي». Le mâle est jaune verdâtre, avec calotte et menton noirs et ailes sombres barrées de jaune. La femelle est plus grise et striée, sans calotte noire nette. Les jeunes sont encore plus striés et moins jaunes. La queue courte et fourchue montre des côtés jaunes; le bec conique fin extrait de petites graines."
+              ]
+            },
+            {
+              "heading": "Espèces proches",
+              "paragraphs": [
+                "Le Verdier d’Europe est plus massif et son bec bien plus puissant. Le Serin cini possède un bec plus court et trapu, tandis que les côtés jaunes de la queue et les barres alaires ressortent chez le tarin. Sexe et âge modifient les marques noires de la tête: leur absence chez une femelle ou un jeune ne suffit pas à écarter l’identification. Suivre l’oiseau lorsqu’il escalade ou suspend son corps aux rameaux permet une observation plus sûre qu’une simple silhouette jaune entre les feuilles."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "La reproduction est surtout associée aux boisements de conifères. Hors nidification, aulnes, bouleaux, jardins et parcs favorables offrent d’autres ressources. Les oiseaux retirent les graines des cônes et chatons, parfois la tête en bas, puis ramassent celles tombées au sol. Les bandes sont mobiles, bruyantes et volent en ondulations. Certaines populations sont sédentaires, d’autres migratrices; la migration devient généralement plus marquée vers le nord. EURING documente des déplacements atteignant l’Afrique du Nord et le Moyen-Orient, avec des variations selon l’origine des oiseaux et les ressources alimentaires."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "Le nid est dissimulé dans les branches d’un arbre, souvent un conifère, et comprend fins rameaux, mousses et matériaux souples. La ponte habituelle compte quatre ou cinq œufs, couvés par la femelle. Le BTO donne généralement 12 à 13 jours d’incubation et 13 à 15 jours de séjour au nid. Les soins se poursuivent après l’envol et des ressources favorables permettent plusieurs nichées. Ces données concernent les aires de reproduction connues, alors que les observations arabes décrivent surtout hivernants et migrateurs de passage."
+              ]
+            },
+            {
+              "heading": "Présence et saisons dans le monde arabe",
+              "paragraphs": [
+                "Au Liban, la liste de 2020 décrit un passage automnal de fin octobre à fin novembre et un hivernage de décembre à mi-février, notamment dans les conifères du mont Liban et de la Béqaa. La Jordanie le classe comme hivernant, tout comme la liste marocaine de 2017. Sa présence devient moins régulière vers l’est et le sud: la liste koweïtienne actualisée en 2026 mentionne un hivernant rare et le guide qatari un visiteur accidentel. La fin octobre convient donc à la recherche des premiers migrateurs au Liban, avec des différences importantes entre pays et années."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Consommateur de graines, le tarin participe aux réseaux alimentaires forestiers et des jardins. Sa présence dépend de la diversité des arbres et de leur production saisonnière. Son statut mondial actuel est Préoccupation mineure. Les comptages hivernaux doivent tenir compte de sa mobilité: une bande absente peut avoir rejoint une autre ressource. Maintenir des peuplements variés et des habitats nourriciers pendant le froid lui est favorable. Noter espèce, effectif, date et milieu donne une vision plus juste qu’une observation isolée comparée à toute une année antérieure."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList — The Global Avian Checklist, v2026",
+                "BTO — BirdFacts: Siskin",
+                "Naturalis Biodiversity Center — Spinus spinus",
+                "Vogelbescherming Nederland — Sijs",
+                "EURING/CMS — Eurasian-African Bird Migration Atlas: Eurasian Siskin",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Bergier et al. — Liste des oiseaux du Maroc, 2017",
+                "KORC — Kuwait Bird List, September 2026",
+                "Qatar eNature — حسون الشوكة الأوربي"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Estormiz — CC0-1.0."
+        }
+      },
+      "published": "2026-10-31",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "eurasian-siskin"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البومة-الصغيرة",
+        "en": "little-owl",
+        "fr": "cheveche-athena"
+      },
+      "translations": {
+        "ar": {
+          "title": "البومة الصغيرة (صدى)",
+          "subtitle": "Athene noctua — بومة صغيرة مقيمة في بيئات عربية متنوعة، تنشط ليلًا وعند الغسق وقد تظهر نهارًا",
+          "meta_description": "البومة الصغيرة (صدى) (Athene noctua): بومة صغيرة مقيمة في بيئات عربية متنوعة، تنشط ليلًا وعند الغسق وقد تظهر نهارًا",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "البومة الصغيرة Athene noctua، التي تُعرف باسم «صدى» في المراجع السعودية، من فصيلة البوم الحقيقي Strigidae. تجمع جسمًا مكتنزًا وذيلًا قصيرًا ورأسًا عريضًا يبدو مسطح القمة، مع عينين صفراوين وحاجبين فاتحين يمنحان الوجه تعبيرًا صارمًا. الريش بني إلى رمادي بني، مرقط بالأبيض في الأعلى ومخطط في الأسفل. وقد تُرى نهارًا على صخرة أو شجرة أو مبنى، وتهز رأسها عند الانتباه. يستقر النوع في بيئات متنوعة من شمال أفريقيا والمشرق والجزيرة العربية إلى أجزاء واسعة من أوراسيا."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "يتشابه الذكر والأنثى في الريش، مع ميل الأنثى إلى حجم أكبر قليلًا وتداخل واسع بين القياسات. ريش الصغار ألين وأقصر وأفتح نسبيًا، وتتطور هيئة الوجه ونقوشه مع النمو والقلش. يساعد الرأس العريض بلا خصل أذنية بارزة، والظهر المرقط والطيران المتموج، في التعرف عليها مقارنة بالبومات الصغيرة من جنس Otus ذات الهيئة المختلفة. تتفاوت درجات اللون بين النويعات والمناطق؛ فكثير من طيور البيئات الجافة فاتح نسبيًا. ويحتاج إسناد الطائر إلى نويع محدد معرفة الموقع والتفاصيل، لأن اختلاف اللون وحده قد يضلل."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تسكن الأراضي شبه المفتوحة والمزارع والبساتين والمناطق الصخرية وشبه الصحراوية، مستفيدة من التجاويف ومجاثم المراقبة. تنشط خصوصًا عند الغسق والليل، وقد تصطاد في الضوء أيضًا. تلتقط خنافس ولافقاريات أخرى، وثدييات صغيرة وزواحف وطيورًا، من مجثم أو بمطاردة قصيرة على الأرض. تجمع مرونتها بين صغر الحجم وتنوع الغذاء، وتبقى الأراضي ذات الغطاء المنخفض مهمة لوصولها إلى الفرائس. أما الأشجار القديمة والجدران والشقوق فتوفر مواضع للاختباء والتعشيش قرب هذه المساحات."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "تضع البيض في تجويف، كشق صخري أو ثقب شجرة أو مبنى، وقد تعيد استخدام الموقع نفسه. يصف المرجع السعودي حضنة واحدة عادة من 3–5 بيضات، وحضانة نحو 28–33 يومًا وفترة بقاء في العش تقارب 30–35 يومًا. تحتضن الأنثى وتعتني بالفراخ الصغيرة، ويجلب الذكر الغذاء، ثم تتسع مشاركة الأبوين في الرعاية مع نموها. هذه قيم مرجعية تتغير بين الجماعات والظروف. وقد يبقى الزوج في نطاقه على مدار العام، بينما تنتشر الطيور اليافعة بحثًا عن مواقع تستقر فيها."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية في العالم العربي",
+              "paragraphs": [
+                "تسجلها قائمة لبنان لعام 2020 مقيمة متكاثرة في مناطق جبلية كثيرة وفي البقاع، وتسجلها قائمة الأردن مقيمة أيضًا. وفي السعودية هي مقيمة متكاثرة واسعة الانتشار ولكنها غير شائعة، وتشمل موائلها الصخور المنخفضة والأراضي المزروعة. وتوضح AviList 2026 اتساع الاختلاف الإقليمي: ينتشر glaux في شمال أفريقيا، وsaharae في أجزاء من المغرب العربي وغرب مصر والجزيرة العربية، وlilith في داخل المشرق حتى جنوب سيناء، وbactriana حتى العراق، مع نويعات أخرى على ساحل السودان وفي الصومال. أواخر أكتوبر جزء من حضورها المقيم في هذه البيئات؛ وقد تتغير فرص رؤيتها مع النشاط والانتشار المحلي للصغار أكثر من تغيرها بوصول هجرة بعيدة."
+              ]
+            },
+            {
+              "heading": "الأهمية البيئية والحماية",
+              "paragraphs": [
+                "تستهلك البومة الصغيرة قوارض ولافقاريات ضمن شبكات الغذاء الزراعية والطبيعية، وتحتاج في الوقت نفسه إلى غذاء وتجاويف آمنة. حالتها العالمية «أقل إثارة للقلق» وفق بيانات AviList 2026، مع تراجع موثق لبعض الجماعات الأوروبية مرتبط بتغير الموائل والموارد. يساعد الحفاظ على الأشجار المجوفة والمواقع الصخرية والحواف الغنية بالفرائس في دعمها. وتتيح المراقبة الهادئة من مسافة مناسبة الاستمتاع بها دون إزعاج مواضع الراحة أو الاقتراب من الأعشاش."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026",
+                "British Trust for Ornithology — Little Owl: identification, ecology and conservation",
+                "British Trust for Ornithology — Little Owl Monitoring Guide",
+                "RSPB — Little Owl",
+                "Saudipedia — Little Owl (2023), citing The Birds of Saudi Arabia",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "UK Little Owl Project — Spotter’s Guide"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Carlo Caimi — CC0-1.0."
+        },
+        "en": {
+          "title": "Little Owl",
+          "subtitle": "Athene noctua — A small resident owl in diverse Arab habitats, active at night and dusk and sometimes visible by day",
+          "meta_description": "Little Owl (Athene noctua): A small resident owl in diverse Arab habitats, active at night and dusk and sometimes visible by day",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Little Owl, Athene noctua, belongs to the family Strigidae and is also called sada in Saudi references. A compact body, short tail and broad, flat-looking head combine with yellow eyes and pale eyebrows to give it a stern expression. Brown to grey-brown plumage is spotted with white above and streaked below. Birds may sit openly by day on rocks, trees or buildings, bobbing their heads when alert. The species inhabits diverse environments across North Africa, the Levant, Arabia and much of Eurasia."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "Males and females share similar plumage; females tend to be slightly larger, with considerable overlap in measurements. Young birds have softer, shorter and relatively paler feathers, and facial appearance and markings develop with growth and moult. The broad head without prominent ear tufts, spotted upperparts and undulating flight help distinguish it from small Otus owls with a different outline. Plumage shades vary among regions and subspecies, with many dry-country birds relatively pale. Subspecific identification requires locality and detailed characters, since colour alone can mislead."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Semi-open country, farmland, orchards, rocky ground and semi-desert provide habitat, together with cavities and lookout perches. Activity is especially marked around dusk and at night, although birds may also hunt in daylight. Prey includes beetles and other invertebrates, small mammals, reptiles and birds, taken from a perch or during a short ground pursuit. Its small size accompanies considerable dietary flexibility. Low vegetation facilitates access to prey, while old trees, walls and rock crevices provide hiding and nesting places close to feeding areas."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Eggs are laid in a cavity such as a rock crevice, tree hole or building, and sites may be reused. The Saudi reference describes a typical single brood of three to five eggs, approximately 28–33 days of incubation and about 30–35 days in the nest. The female incubates and tends small chicks while the male brings food; both parents’ participation in care expands as the young grow. These are reference values that vary among populations and conditions. Pairs may remain in their territory year-round, while young disperse in search of places to settle."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist records a breeding resident in many mountain areas and the Beqaa; Jordan’s list also records residence. In Saudi Arabia it is a widespread but uncommon breeding resident, using low rocky areas and cultivated land. AviList 2026 illustrates substantial regional differentiation: glaux occurs in North Africa; saharae in parts of the Maghreb, western Egypt and Arabia; lilith in the inland Levant south to southern Sinai; and bactriana reaches Iraq. Other subspecies occur on Sudan’s coast and in Somalia. Late October forms part of resident occurrence in these habitats; visibility may change with activity and local dispersal of young rather than the arrival of distant migrants."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Little Owls consume rodents and invertebrates within natural and agricultural food webs, requiring both prey and safe cavities. AviList 2026 lists global Least Concern, while some European populations have documented declines associated with changing habitats and resources. Retaining hollow trees, rocky nesting sites and prey-rich margins helps support them. Quiet observation from a suitable distance allows people to enjoy the birds while leaving resting sites and nests undisturbed."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026",
+                "British Trust for Ornithology — Little Owl: identification, ecology and conservation",
+                "British Trust for Ornithology — Little Owl Monitoring Guide",
+                "RSPB — Little Owl",
+                "Saudipedia — Little Owl (2023), citing The Birds of Saudi Arabia",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "UK Little Owl Project — Spotter’s Guide"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Carlo Caimi — CC0-1.0."
+        },
+        "fr": {
+          "title": "Chevêche d’Athéna",
+          "subtitle": "Athene noctua — Une petite chouette résidente de divers milieux arabes, active la nuit et au crépuscule, parfois visible le jour",
+          "meta_description": "Chevêche d’Athéna (Athene noctua): Une petite chouette résidente de divers milieux arabes, active la nuit et au crépuscule, parfois visible le jour",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Chevêche d’Athéna, Athene noctua, appartient aux Strigidés; les références saoudiennes l’appellent aussi sada. Un corps trapu, une queue courte et une tête large paraissant aplatie s’associent à des yeux jaunes et des sourcils clairs qui lui donnent un air sévère. Son plumage brun à gris-brun est ponctué de blanc dessus et strié dessous. Elle peut rester visible le jour sur un rocher, un arbre ou un bâtiment, hochant la tête lorsqu’elle est attentive. L’espèce occupe divers milieux d’Afrique du Nord, du Levant, d’Arabie et d’une grande partie de l’Eurasie."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "Les sexes portent un plumage semblable; les femelles tendent à être légèrement plus grandes, avec un large chevauchement des mesures. Les jeunes ont des plumes plus souples, courtes et relativement pâles; l’aspect du visage et les dessins évoluent avec la croissance et la mue. La tête large sans aigrettes saillantes, le dessus tacheté et le vol ondulant aident à la distinguer des petits Otus de silhouette différente. Les teintes varient selon régions et sous-espèces, beaucoup d’oiseaux des milieux secs étant relativement pâles. Déterminer une sous-espèce demande lieu et caractères détaillés, la couleur seule pouvant tromper."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Milieux semi-ouverts, terres agricoles, vergers, terrains rocheux et semi-déserts offrent des habitats, avec cavités et postes d’affût. L’activité est particulièrement marquée au crépuscule et la nuit, mais la chasse peut aussi se dérouler en plein jour. Les proies comprennent coléoptères et autres invertébrés, petits mammifères, reptiles et oiseaux, capturés depuis un perchoir ou après une courte poursuite terrestre. Sa petite taille s’accompagne d’une grande souplesse alimentaire. Une végétation basse facilite l’accès aux proies; vieux arbres, murs et fissures procurent abris et sites de reproduction proches."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Les œufs sont déposés dans une cavité, comme une fissure rocheuse, un trou d’arbre ou un bâtiment; le site peut être réutilisé. La référence saoudienne décrit généralement une nichée de trois à cinq œufs, environ 28–33 jours d’incubation et 30–35 jours au nid. La femelle incube et soigne les petits pendant que le mâle apporte la nourriture; les deux parents participent davantage aux soins lorsque les jeunes grandissent. Ces repères varient selon populations et conditions. Les couples peuvent rester dans leur territoire toute l’année, tandis que les jeunes se dispersent pour s’installer ailleurs."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "Au Liban, la liste de 2020 décrit une résidente nicheuse dans de nombreuses régions montagneuses et la Beqaa; la liste jordanienne mentionne également la résidence. En Arabie saoudite, elle est une nicheuse résidente répandue mais peu commune, fréquentant terrains rocheux bas et cultures. AviList 2026 montre une forte différenciation régionale: glaux en Afrique du Nord; saharae dans certaines parties du Maghreb, de l’ouest égyptien et de l’Arabie; lilith à l’intérieur du Levant jusqu’au sud du Sinaï; bactriana jusqu’en Irak. D’autres sous-espèces occupent la côte soudanaise et la Somalie. La fin octobre correspond à une présence résidente; la visibilité peut varier avec l’activité et la dispersion locale des jeunes plutôt qu’avec l’arrivée de migrateurs lointains."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "La chevêche consomme rongeurs et invertébrés dans les réseaux trophiques naturels et agricoles; elle a besoin simultanément de proies et de cavités sûres. AviList 2026 indique « Préoccupation mineure » à l’échelle mondiale, alors que des déclins documentés touchent certaines populations européennes en lien avec les habitats et ressources. Conserver arbres creux, sites rocheux et bordures riches en proies la favorise. Une observation calme et distante permet de l’apprécier tout en préservant la tranquillité des reposoirs et nids."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026",
+                "British Trust for Ornithology — Little Owl: identification, ecology and conservation",
+                "British Trust for Ornithology — Little Owl Monitoring Guide",
+                "RSPB — Little Owl",
+                "Saudipedia — Little Owl (2023), citing The Birds of Saudi Arabia",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "UK Little Owl Project — Spotter’s Guide"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Carlo Caimi — CC0-1.0."
+        }
+      },
+      "published": "2026-10-31",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "little-owl"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الشرشور-الجبلي",
+        "en": "brambling",
+        "fr": "pinson-du-nord"
+      },
+      "translations": {
+        "ar": {
+          "title": "الشرشور الجبلي",
+          "subtitle": "زائر الشتاء ذو العجز الأبيض: من الغابات الشمالية إلى أحراج المشرق والمغرب",
+          "meta_description": "زائر الشتاء ذو العجز الأبيض: من الغابات الشمالية إلى أحراج المشرق والمغرب",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الشرشور الجبلي Fringilla montifringilla من الحسونيات Fringillidae، ويَرِد في الدليل اللبناني باسم «صليج الشمال» و«دريك الصلنج». يجمع بين كتفين وصدر برتقاليين وبطن أبيض وعجز أبيض يظهر بوضوح عند الطيران. يصبح رأس الذكر وظهره أسودين في ريش التكاثر، بينما تحجب الحواف الفاتحة بعض هذا السواد في الشتاء. الأنثى أهدأ لونًا، برأس رمادي بني وصدر برتقالي باهت. تبدو الطيور اليافعة أقرب إلى الأنثى منها إلى الذكر الصيفي الزاهي، ولذلك تبقى علامات الجناح والعجز مهمة عند تحديد النوع."
+              ]
+            },
+            {
+              "heading": "التمييز من الأنواع المشابهة",
+              "paragraphs": [
+                "قد يختلط بشرشور الأشجار داخل سرب واحد. العجز الأبيض هو الفارق الميداني الأوضح للشرشور الجبلي، مع البرتقالي على الكتفين والصدر والتباين بين أسفل الصدر والبطن. أما شرشور الأشجار فلا يحمل هذا العجز الأبيض. يتغير لون المنقار أيضًا مع الموسم؛ يكون داكنًا لدى الذكر المتكاثر، وأصفر ذا طرف داكن غالبًا خارج التكاثر. مشاهدة السرب طائرًا ثم هابطًا على الأرض تمنح فرصة لقراءة صفات لا تظهر في صورة أمامية واحدة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يتكاثر في نطاق الغابات الشمالية من أوروبا عبر آسيا، بما فيها أحراج البتولا والغابات المختلطة بالمخروطيات. شتاءً يرتاد الأحراج وحوافها والأراضي الزراعية والبساتين حيث تتوافر البذور. تشكل ثمار الزان موردًا مهمًا في مناطق الشتاء الأوروبية، ويأكل أيضًا بذورًا أخرى ولافقاريات، خصوصًا في موسم التكاثر. يتغذى كثيرًا على الأرض، وينضم إلى أسراب من الحساسين. تفاوت إنتاج البذور يفسر جزءًا من اختلاف أعداد الزوار بين شتاء وآخر."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يبني عشًا كأسيًا في شجرة، مستفيدًا من تفرعات البتولا أو التنوب مثلًا، ويستخدم أعشابًا وحزازيات ومواد نباتية مع بطانة أدق. تضع الأنثى عادة خمسًا إلى سبع بيضات وتحضنها. يلخص BTO فترة حضانة معتادة من 11 إلى 12 يومًا، ومغادرة للفراخ العش بعد 13 إلى 14 يومًا. هذه معلومات عن دورة التكاثر في نطاقه الشمالي؛ حضوره الشتوي في البلدان العربية جزء آخر من الرحلة السنوية."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "الحضور العربي موثق أساسًا في موسم البرد. يسجل الدليل اللبناني عبورًا وشتاءً منتظمين لكن غير شائعين، من أوائل أكتوبر إلى أواخر أبريل، في أحراج الأرز والصنوبر والشوح والبساتين. وتدرجه قائمة الأردن زائرًا شتويًا. وفي المغرب تصنفه قائمة 2017 ضمن الزوار الشتويين. أما قائمة الكويت المحدّثة في سبتمبر 2026 فتصفه بزائر شتوي نادر. لذلك يحمل ظهور سرب خريفي في المشرق معنى مختلفًا عن سجل نادر في الخليج؛ تتغير كثافة وصوله بين السنوات والمواقع."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يشارك في الشبكات الغذائية عبر استهلاك البذور واللافقاريات، وتربط هجرته الغابات الشمالية بموائل الشتاء جنوبًا. تصنيفه العالمي «أقل قلقًا» LC، وهو وصف لخطر الانقراض العالمي لا لوفرة الطائر في كل بلد. حفظ الأحراج والبساتين المتنوعة ومصادر البذور يدعم الطيور أثناء إقامتها الشتوية. ويتيح رصد الأسراب وتسجيل عددها وموئلها وتاريخها التمييز بين عام غني بالزوار وتغير مستمر في الحضور المحلي، مع تجنب الاقتراب الذي يبدد السرب المتغذي."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "BTO — BirdFacts: Brambling",
+                "Woodland Trust — Brambling",
+                "University of Michigan — Animal Diversity Web: Fringilla montifringilla",
+                "وزارة البيئة اللبنانية — دليل الصياد المصوّر",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Bergier et al. — Liste des oiseaux du Maroc, révision 4.0, Go-South Bulletin 14, 2017",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List, September 2026"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Estormiz — CC0-1.0."
+        },
+        "en": {
+          "title": "Brambling",
+          "subtitle": "A white-rumped winter visitor linking northern forests with the Levant and Morocco",
+          "meta_description": "A white-rumped winter visitor linking northern forests with the Levant and Morocco",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Brambling Fringilla montifringilla belongs to the finch family Fringillidae. The Lebanese guide also records the names «صليج الشمال» and «دريك الصلنج». Orange shoulders and breast, a white belly and a conspicuous white rump form its main field pattern. The breeding male has a black head and back, partly obscured by pale feather edges in winter. Females have a quieter grey-brown head and subdued orange breast. Young birds resemble the female more than the striking summer male, making wing and rump markings particularly useful."
+              ]
+            },
+            {
+              "heading": "Distinguishing similar birds",
+              "paragraphs": [
+                "Bramblings often share flocks with Chaffinches. The clean white rump is their clearest distinction, supported by the orange shoulders and breast and the transition to the white belly. Chaffinches lack this white rump. Bill colour also changes: breeding males have a dark bill, whereas a yellowish bill with a dark tip is usual outside breeding. Watching a flock both in flight and on the ground reveals features that may be hidden in a single frontal photograph."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Breeding habitats extend across northern Eurasian woodland, including birch stands and mixed coniferous forest. In winter the species uses woodland edges, farmland and orchards with accessible seed. Beech mast is an important food in European wintering areas; other seeds and invertebrates also feature, particularly in the breeding season. Birds frequently feed on the ground and associate with other finches. Variable seed crops help explain why winter abundance can differ markedly between years."
+              ]
+            },
+            {
+              "heading": "Breeding and annual cycle",
+              "paragraphs": [
+                "The cup-shaped nest occupies a tree fork, for example in birch or spruce, and incorporates grasses, moss and other plant material with a finer lining. Females normally lay five to seven eggs and perform incubation. BTO summarises typical incubation as 11–12 days and the nestling period as 13–14 days. These are breeding-cycle figures from the northern range; winter visits to Arab countries represent a different part of the annual cycle."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Arab-region occurrence is principally associated with the colder months. The Lebanese guide records regular but uncommon passage and winter presence from early October to late April in cedar, pine and fir woods and orchards. Jordan lists it as a winter visitor. Morocco’s 2017 checklist also classifies it as wintering. Kuwait’s checklist, updated in September 2026, calls it a rare winter visitor. A Levantine autumn flock therefore has a different regional context from a rare Gulf record; the scale of arrivals varies between places and years."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Seed and invertebrate consumption connect this finch to woodland food webs, while migration links northern breeding forests with southern winter habitats. Its global category is Least Concern, a measure of extinction risk rather than abundance in every country. Diverse woods, orchards and winter seed supplies support visiting birds. Recording flock size, habitat and date helps distinguish a productive winter from sustained local change. Observations are best made without repeatedly flushing feeding flocks."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "BTO — BirdFacts: Brambling",
+                "Woodland Trust — Brambling",
+                "University of Michigan — Animal Diversity Web: Fringilla montifringilla",
+                "وزارة البيئة اللبنانية — دليل الصياد المصوّر",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Bergier et al. — Liste des oiseaux du Maroc, révision 4.0, Go-South Bulletin 14, 2017",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List, September 2026"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Estormiz — CC0-1.0."
+        },
+        "fr": {
+          "title": "Pinson du Nord",
+          "subtitle": "Un visiteur hivernal au croupion blanc, des forêts boréales au Levant et au Maroc",
+          "meta_description": "Un visiteur hivernal au croupion blanc, des forêts boréales au Levant et au Maroc",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Pinson du Nord Fringilla montifringilla appartient aux Fringillidés. Le guide libanais donne également les appellations «صليج الشمال» et «دريك الصلنج». Les épaules et la poitrine orangées, le ventre blanc et surtout le croupion blanc composent son dessin caractéristique. Le mâle nuptial porte une tête et un dos noirs, partiellement masqués en hiver par les bordures claires des plumes. La femelle possède une tête gris-brun et une poitrine plus pâle. Les jeunes ressemblent davantage à la femelle qu’au mâle estival; le dessin des ailes et du croupion reste donc précieux."
+              ]
+            },
+            {
+              "heading": "Espèces proches",
+              "paragraphs": [
+                "Il accompagne souvent le Pinson des arbres dans les mêmes bandes. Son croupion franchement blanc constitue le meilleur critère, complété par les épaules orangées et le contraste entre poitrine et ventre. Le Pinson des arbres ne présente pas ce croupion blanc. Le bec varie également selon la saison: sombre chez le mâle nicheur, il devient généralement jaunâtre avec une extrémité foncée hors reproduction. Observer les oiseaux en vol puis au sol permet de voir des caractères cachés sur une photographie prise de face."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il niche dans les boisements du nord de l’Eurasie, notamment les bouleaux et les forêts mixtes de conifères. En hiver, il fréquente aussi lisières, cultures et vergers offrant des graines. Les faînes constituent une ressource importante dans les quartiers d’hiver européens. Il consomme également d’autres graines et des invertébrés, particulièrement pendant la reproduction. Il recherche souvent sa nourriture au sol et rejoint d’autres fringillidés. Les variations de production des graines contribuent aux différences d’abondance entre les hivers."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "Le nid en coupe occupe une fourche d’arbre, par exemple un bouleau ou un épicéa. Il contient herbes, mousses et autres matériaux végétaux, avec une garniture plus fine. La femelle pond généralement cinq à sept œufs et assure l’incubation. Le BTO indique habituellement 11 à 12 jours d’incubation et 13 à 14 jours de séjour des poussins au nid. Ces valeurs décrivent la reproduction dans l’aire septentrionale; les visites hivernales aux pays arabes correspondent à une autre étape du cycle annuel."
+              ]
+            },
+            {
+              "heading": "Présence et saisons dans le monde arabe",
+              "paragraphs": [
+                "Dans le monde arabe, sa présence concerne surtout la saison froide. Le guide libanais décrit un passage et un hivernage réguliers mais peu communs, du début octobre à la fin avril, dans les cédraies, pinèdes, sapinières et vergers. La liste jordanienne le classe comme hivernant, tout comme celle du Maroc publiée en 2017. La liste koweïtienne actualisée en septembre 2026 parle d’un hivernant rare. Une bande automnale au Levant et une observation exceptionnelle dans le Golfe ont ainsi des contextes différents; les arrivées fluctuent selon les années et les sites."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "En consommant graines et invertébrés, il participe aux réseaux alimentaires forestiers. Sa migration relie les forêts boréales aux habitats d’hiver méridionaux. Son statut mondial est Préoccupation mineure, une mesure du risque d’extinction et non de l’abondance dans chaque pays. Préserver boisements variés, vergers et ressources en graines favorise les visiteurs hivernaux. Noter effectif, habitat et date aide à distinguer un hiver favorable d’une évolution durable. L’observation doit éviter les envols répétés des oiseaux en train de se nourrir."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "BTO — BirdFacts: Brambling",
+                "Woodland Trust — Brambling",
+                "University of Michigan — Animal Diversity Web: Fringilla montifringilla",
+                "وزارة البيئة اللبنانية — دليل الصياد المصوّر",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Bergier et al. — Liste des oiseaux du Maroc, révision 4.0, Go-South Bulletin 14, 2017",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List, September 2026"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Estormiz — CC0-1.0."
+        }
+      },
+      "published": "2026-10-31",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "brambling"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "النعار-الأوروبي",
+        "en": "european-serin",
+        "fr": "serin-cini"
+      },
+      "translations": {
+        "ar": {
+          "title": "النعار الأوروبي",
+          "subtitle": "صوت البساتين الأصفر: التعرّف على النعار الأوروبي وتكاثره وحضوره الشتوي",
+          "meta_description": "صوت البساتين الأصفر: التعرّف على النعار الأوروبي وتكاثره وحضوره الشتوي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "النعار الأوروبي Serinus serinus من أصغر الحسونيات، ويمتاز بهيئة مكتنزة ومنقار قصير غليظ نسبيًا وذيل مشقوق. يحمل الذكر أصفر ليمونيًا على الوجه والصدر والعجز مع ظهر وجانبين مخططين. الأنثى أقل اصفرارًا وأكثر بنية، واليافع أشد شبهًا بها ويفتقر إلى الصفرة البارزة على الأسفل. يظهر العجز الأصفر عند الطيران، وتضيف الأغنية السريعة المتتابعة علامة سلوكية نافعة. يَرِد في المصادر السورية باسم «النعار الأوربي»، وهو النوع نفسه رغم اختلاف كتابة الاسم العربي."
+              ]
+            },
+            {
+              "heading": "التمييز من الأنواع المشابهة",
+              "paragraphs": [
+                "ينبغي تمييزه من النعار السوري Serinus syriacus، وهو نوع مستقل حاضر في المشرق، ومن حسون الشوك Spinus spinus. يساعد التخطيط الواضح في الأوروبي والمنقار القصير جدًا في التعرف عليه، فيما يتميز حسون الشوك بمنقار أدق وأطول نسبيًا، وأصفر على جانبي الذيل وتاج أسود لدى الذكر. يتقارب النعاران في الشكل؛ لذلك تكون مشاهدة الرأس والجناح والعجز والسماع معًا أفضل من الحكم على الاصفرار وحده. لا يعني ظهور طائر أصفر صغير في مرتفعات لبنان أنه بالضرورة النعار السوري."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يستعمل الحدائق والبساتين والمتنزهات وحواف الأحراج، خصوصًا حيث تجتمع أشجار للغناء والتعشيش مع أرض عشبية منتجة للبذور. يلتقط بذورًا وبراعم وأجزاء نباتية صغيرة، ويضيف لافقاريات إلى غذائه. قد يتغذى على الأرض بين الأعشاب القصيرة ثم ينتقل إلى الأشجار. توجد جماعات مقيمة وأخرى مهاجرة جزئيًا أو بانتظام؛ تزداد الهجرة في العروض الشمالية. ويربط أطلس EURING بعض الجماعات الأوروبية الشتوية بشمال غرب أفريقيا، مع وضوح الهجرة الخريفية في أوروبا خلال أكتوبر."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "تبني الأنثى عشًا صغيرًا متماسكًا في شجرة أو شجيرة، مستفيدة من الأغصان الخارجية أو موضع محمي قرب الجذع. تضع عادة ثلاثًا أو أربع بيضات. تلخص بيانات BTO الحضانة بنحو 11 إلى 13 يومًا، وبقاء الفراخ في العش من 13 إلى 18 يومًا. وقد ينجح الزوج في أكثر من حضنة. مواعيد التكاثر محلية وتتأثر بالمناخ والارتفاع؛"
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "أكدت دراسة نشرت عام 2016 تكاثره في عنجر اللبنانية خلال ربيع 2015، اعتمادًا على أدلة الأعشاش والفراخ. وتصف قائمة لبنان 2020 شتاءً شائعًا في البساتين الساحلية والتلال المنخفضة والبقاع، مع عبور خريفي في أكتوبر ونوفمبر. وفي سوريا تسجله مراجعة 2025 متكاثرًا مقيمًا في الغرب وزائرًا شتويًا في الجزيرة والفرات. أما الأردن فتؤكد قائمته صفة الزائر الشتوي وتبقي الإقامة المحتملة غير محسومة. في المغرب تسجل قائمة 2017 المقيمين المتكاثرين والوافدين شتاءً."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تصنيفه العالمي الحالي «أقل قلقًا» LC، ويجب إبقاؤه منفصلًا عن وضع النعار السوري الحساس للحفظ. ترتبط قيمته البيئية باستهلاك البذور واللافقاريات وبشبكة الحدائق والبساتين التي يستخدمها. يقلل الإفراط في إزالة الأعشاب واستعمال مبيدات الأعشاب من النباتات المنتجة للغذاء؛ وتفيد المحافظة على تنوعها مع أشجار مناسبة للتعشيش. يمنح توثيق الأعشاش من مسافة آمنة ومراقبة إطعام الفراخ دليلًا أقوى على التكاثر من وجود ذكر مغرد أو طائر منفرد في موسم الربيع."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList — The Global Avian Checklist, v2026",
+                "BTO — BirdFacts: Serin",
+                "RSPB — Serin",
+                "Vogelbescherming Nederland — Europese kanarie",
+                "EURING/CMS — Migration Atlas: European Serin",
+                "Ramadan-Jaradi, Serhal & Ramadan-Jaradi — First confirmed breeding of the European Serin in Lebanon, Sandgrouse 38, 2016",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria, 2025",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Bergier et al. — Liste des oiseaux du Maroc, 2017"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Romzig — CC0-1.0."
+        },
+        "en": {
+          "title": "European Serin",
+          "subtitle": "A yellow orchard songbird: recognition, breeding and winter occurrence of the European Serin",
+          "meta_description": "A yellow orchard songbird: recognition, breeding and winter occurrence of the European Serin",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The European Serin Serinus serinus is a very small finch, with a compact body, short comparatively stout bill and forked tail. Males show lemon-yellow on the face, breast and rump, with streaking on the back and flanks. Females are browner and less yellow; juveniles resemble them and lack the conspicuous yellow underparts. The yellow rump is visible in flight, while the rapid, continuous song adds a useful behavioural cue. Arabic references use al-Na’ar al-Urubbi, with minor spelling variants referring to the same species."
+              ]
+            },
+            {
+              "heading": "Distinguishing similar birds",
+              "paragraphs": [
+                "It must be distinguished from the Syrian Serin Serinus syriacus, a separate Levantine species, and Eurasian Siskin Spinus spinus. Conspicuous streaking and the very short bill help identify European Serin. Siskin has a relatively longer, finer bill, yellow tail sides and, in males, a black cap. The two serins resemble one another, so combined views of head, wings and rump, together with voice, are preferable to judging yellow colour alone. A small yellow bird in Lebanon’s mountains is not automatically Syrian Serin."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Gardens, orchards, parks and woodland edges provide habitat, particularly where song and nest trees occur beside seed-bearing ground vegetation. Food includes seeds, buds, small plant parts and invertebrates. Birds may feed among short herbs before returning to trees. Populations range from resident through partially migratory to migratory, with migration more pronounced farther north. EURING connects some European winter movements with northwest Africa and records conspicuous autumn migration across Europe in October."
+              ]
+            },
+            {
+              "heading": "Breeding and annual cycle",
+              "paragraphs": [
+                "The female constructs a small compact nest in a tree or shrub, using outer branches or a sheltered position near the trunk. Three or four eggs are usual. BTO summarises incubation at about 11–13 days and the nestling period at 13–18 days. More than one brood is possible. Breeding schedules vary with climate and altitude."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "A study published in 2016 confirmed breeding at Anjar, Lebanon, during spring 2015 through nest and young-bird evidence. Lebanon’s 2020 checklist describes common winter occurrence in coastal orchards, low hills and the Beqaa, with autumn passage in October and November. Syria’s 2025 review records resident breeding in the west and winter occurrence in Al-Jazira and the Euphrates region. Jordan confirms winter-visitor status while leaving possible residency uncertain. Morocco’s 2017 checklist lists resident breeders and winter arrivals."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "The current global category is Least Concern and must remain distinct from the conservation-sensitive status of Syrian Serin. Its ecological role involves seed and invertebrate consumption within networks of gardens and orchards. Excessive weed removal and herbicide use reduce food-producing plants; retaining diverse ground vegetation alongside suitable nesting trees is helpful. Observing nests from a safe distance and documenting food delivery to young provide stronger breeding evidence than the presence of a singing male or a lone bird in spring."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList — The Global Avian Checklist, v2026",
+                "BTO — BirdFacts: Serin",
+                "RSPB — Serin",
+                "Vogelbescherming Nederland — Europese kanarie",
+                "EURING/CMS — Migration Atlas: European Serin",
+                "Ramadan-Jaradi, Serhal & Ramadan-Jaradi — First confirmed breeding of the European Serin in Lebanon, Sandgrouse 38, 2016",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria, 2025",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Bergier et al. — Liste des oiseaux du Maroc, 2017"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Romzig — CC0-1.0."
+        },
+        "fr": {
+          "title": "Serin cini",
+          "subtitle": "Un petit chanteur jaune des vergers: reconnaître le Serin cini, sa reproduction et son hivernage",
+          "meta_description": "Un petit chanteur jaune des vergers: reconnaître le Serin cini, sa reproduction et son hivernage",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Serin cini Serinus serinus est un très petit fringillidé au corps compact, au bec court relativement épais et à la queue fourchue. Le mâle présente du jaune citron sur la face, la poitrine et le croupion, avec des stries sur le dos et les flancs. La femelle est plus brune et moins jaune; les jeunes lui ressemblent et n’ont pas encore le dessous jaune bien visible. Le croupion jaune apparaît en vol; le chant rapide et continu apporte un indice comportemental utile. Les références arabes l’appellent al-Na’ar al-Urubbi, avec quelques variantes orthographiques."
+              ]
+            },
+            {
+              "heading": "Espèces proches",
+              "paragraphs": [
+                "Il faut le distinguer du Serin syriaque Serinus syriacus, espèce différente présente au Levant, ainsi que du Tarin des aulnes Spinus spinus. Les stries marquées et le bec très court aident à reconnaître le Serin cini. Le tarin possède un bec relativement plus long et fin, des côtés de queue jaunes et une calotte noire chez le mâle. Les deux serins se ressemblent: examiner ensemble tête, ailes et croupion, puis écouter, vaut mieux que se fier au seul jaune. Un petit oiseau jaune dans les montagnes libanaises n’est pas automatiquement un Serin syriaque."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il utilise jardins, vergers, parcs et lisières, surtout lorsque des arbres de chant et de nidification voisinent avec une végétation herbacée à graines. Son alimentation comprend graines, bourgeons, petites parties végétales et invertébrés. Il peut se nourrir au sol entre les herbes puis revenir dans les arbres. Les populations sont sédentaires, partiellement migratrices ou migratrices, cette dernière stratégie étant plus marquée vers le nord. EURING relie certains déplacements européens à l’Afrique du Nord-Ouest et décrit une migration automnale européenne bien visible en octobre."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "La femelle construit un petit nid compact dans un arbre ou un arbuste, sur une branche extérieure ou à l’abri près du tronc. La ponte habituelle compte trois ou quatre œufs. Le BTO résume l’incubation à environ 11 à 13 jours et le séjour au nid à 13 à 18 jours. Plusieurs nichées sont possibles. Le calendrier varie selon climat et altitude."
+              ]
+            },
+            {
+              "heading": "Présence et saisons dans le monde arabe",
+              "paragraphs": [
+                "Une étude publiée en 2016 a confirmé sa reproduction à Anjar, au Liban, au printemps 2015 grâce à des observations de nids et de jeunes. La liste libanaise de 2020 décrit un hivernage commun dans les vergers côtiers, les basses collines et la Béqaa, ainsi qu’un passage en octobre et novembre. La synthèse syrienne de 2025 signale une nidification sédentaire à l’ouest et un hivernage en Al-Jazira et dans la région de l’Euphrate. La liste jordanienne confirme l’hivernage, tout en laissant incertaine une éventuelle résidence. Au Maroc, la liste de 2017 indique nicheurs sédentaires et hivernants."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Le statut mondial actuel est Préoccupation mineure; il doit rester distinct de la situation plus sensible du Serin syriaque. Son rôle écologique associe consommation de graines et d’invertébrés dans les réseaux des jardins et vergers. Le désherbage excessif et les herbicides réduisent les plantes nourricières; maintenir une végétation diversifiée près d’arbres convenant aux nids est favorable. Observer à distance et documenter le nourrissage des jeunes constituent des preuves de reproduction plus solides que la seule présence d’un mâle chanteur ou d’un individu isolé au printemps."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList — The Global Avian Checklist, v2026",
+                "BTO — BirdFacts: Serin",
+                "RSPB — Serin",
+                "Vogelbescherming Nederland — Europese kanarie",
+                "EURING/CMS — Migration Atlas: European Serin",
+                "Ramadan-Jaradi, Serhal & Ramadan-Jaradi — First confirmed breeding of the European Serin in Lebanon, Sandgrouse 38, 2016",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria, 2025",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Bergier et al. — Liste des oiseaux du Maroc, 2017"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Romzig — CC0-1.0."
+        }
+      },
+      "published": "2026-10-31",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "european-serin"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البط-الحديدي",
+        "en": "ferruginous-duck",
+        "fr": "fuligule-nyroca"
+      },
+      "translations": {
+        "ar": {
+          "title": "البط الحديدي (حمراوي أبيض العين)",
+          "subtitle": "Aythya nyroca — بطة كستنائية قريبة من التهديد تربط مواقع التكاثر العربية ببحيرات الشتاء",
+          "meta_description": "بطة كستنائية قريبة من التهديد تربط مواقع التكاثر العربية ببحيرات الشتاء — Aythya nyroca",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "البط الحديدي Aythya nyroca، أو حمراوي أبيض العين، بطة غطاسة من فصيلة البطيات. يتميز الذكر بلون كستنائي غني، وظهر أدكن، وعين فاتحة تكاد تكون بيضاء. يبدو الرأس مرتفع القمة قليلًا، والمنقار رماديًا داكنًا. من علاماته المهمة بياض أسفل الذيل، والشريط الأبيض العريض في الجناح عند الطيران. يبلغ طول الجسم نحو 38–42 سم، ويبدو أصغر وأقل ضخامة من بعض البط الغطاس الذي قد يرافقه."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "تشبه الأنثى الذكر في التخطيط العام، لكنها أبهت وعينها بنية. يشبه اليافع الأنثى، مع لون بني أقل إشراقًا وبياض أقل نقاءً في البطن وأسفل الذيل؛ لذلك لا تنفي العين الداكنة وجود هذا النوع. يختلف عن ذكر البط كستنائي الرأس ذي الجسم الرمادي والصدر الأسود، وعن البط المقنزع ذي العرف الواضح. وقد تربك إناث البط الغطاس وبعض الهجن عملية التعرف، مما يجعل شكل الرأس والمنقار ولون العين وبياض أسفل الذيل والجناح مجموعة علامات متكاملة، لا بدائل منفصلة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يفضل المياه العذبة الضحلة الغنية بالنباتات المغمورة والطافية، مع أحزمة من القصب أو غطاء كثيف عند الحواف. وقد يستخدم بركًا قليلة الملوحة أيضًا. يجمع غذاءه بالغوص ومن السطح، ويشمل البذور والجذور وأجزاء النباتات المائية واللافقاريات. اختباؤه قرب النبات قد يجعل اكتشافه أصعب مما توحي به مساحة البحيرة. خارج التكاثر يمكن أن يرافق البط الغطاس الآخر، بينما توفر الفسحات المائية بين النباتات أماكن للسباحة والغذاء والراحة. توازن الماء المفتوح والغطاء النباتي عنصر مهم في موئله."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يقع العش قرب الماء وسط نباتات كثيفة، أو فوق منصة نباتية أو جزيرة طافية. تشير المراجع البيولوجية إلى حضنة معتادة من 7–10 بيضات، وحضانة تقارب 25–28 يومًا، وطيران الصغار بعمر نحو 55–60 يومًا. وفي بحيرة طونغا الجزائرية درست أبحاث منشورة سنة 2021 خمسين عشًا خلال موسمي 2016 و2017؛ وأظهرت ارتباط النجاح بخصائص الموقع وكثافة الأعشاش. كما سجلت وضع بعض الإناث بيضها في أعشاش أخرى من النوع نفسه، وهو ما يفسر وجود أعشاش ذات أعداد بيض استثنائية. تمثل البحيرة موطن تكاثر، لا محطة شتوية فقط."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "حضور النوع العربي متنوع: ففي الجزائر يتكاثر في أراضٍ رطبة منها طونغا، وفي مصر تؤكد BirdLife أهمية بحيرة ناصر للإشتاء. وفي لبنان تسجل قائمة 2020 عبورًا وإشتاءً قليل العدد بين سبتمبر ومارس، وصيفًا بعض الأفراد غير المتكاثرة. وفي العراق وثقت دراسة منشورة سنة 2011 أعشاشًا وأسرًا في أهوار الدلمج خلال مايو 2010. لذلك يصل الخريف بين جماعات متكاثرة إقليميًا ووافدين من مناطق أبعد، ولا تعني مشاهدة الصيف دائمًا وجود عش."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تصنيفه العالمي «قريب من التهديد»، وهو ما أعادت BirdLife تأكيده في مادة منشورة في أغسطس 2026. تشمل الضغوط فقد الأراضي الرطبة وتدهور نباتاتها وتغير الماء والجفاف والصيد المفرط. يرتبط بقاؤه بشبكة مواقع تشمل التكاثر والتوقف والإشتاء، وليس بحماية بحيرة منفردة فقط. ويحافظ تأمين مياه مناسبة وغطاء نباتي متنوع ومناطق هادئة على موارده الغذائية ومواقع أعشاشه. مراقبته من بعيد أكثر فائدة من دفعه للطيران بغرض التصوير، خصوصًا في المواقع الصغيرة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "BirdLife International — Across continents: The journey of the Ferruginous Duck (26 August 2026)",
+                "BirdLife Cyprus — Ferruginous Duck",
+                "CMS / AEWA — International Single Species Action Plan for the Ferruginous Duck (2006)",
+                "Global Ecology and Conservation — Nest site selection and breeding ecology of the Ferruginous Duck in Algeria (2021)",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Ararat and colleagues — breeding records in Iraq, Sandgrouse 33 (2011)",
+                "Mediterranean Waterbirds Network — Ferruginous Duck identification",
+                "Libyan Birds — Aythya nyroca"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Tero Linjama (terolinjama) — CC0-1.0."
+        },
+        "en": {
+          "title": "Ferruginous Duck",
+          "subtitle": "Aythya nyroca — A Near Threatened chestnut duck linking Arab breeding wetlands with winter lakes",
+          "meta_description": "A Near Threatened chestnut duck linking Arab breeding wetlands with winter lakes — Aythya nyroca",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Ferruginous Duck, Aythya nyroca, is a diving duck in the family Anatidae. The male combines rich chestnut plumage, a darker back and a very pale, almost white iris. Its crown is slightly peaked and its bill dark grey. White undertail-coverts and a broad white wing stripe in flight are important recognition features. At approximately 38–42 cm long, it is smaller and less bulky than some accompanying diving ducks."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "Females share the general pattern but are duller and have brown eyes. Juveniles resemble females, with duller brown plumage and less clean white on the belly and undertail. A dark eye therefore does not rule out the species. The male Common Pochard has a grey body and black breast, while Tufted Ducks possess a conspicuous crest. Female diving ducks and some hybrids can complicate identification: head and bill shape, eye colour, undertail and wing pattern should be considered together rather than as interchangeable single clues."
+              ]
+            },
+            {
+              "heading": "Habitats, diet and behaviour",
+              "paragraphs": [
+                "Shallow freshwater rich in submerged and floating plants, with reedbeds or dense marginal cover, is favoured habitat. Some brackish pools are also used. It feeds by diving and taking food near the surface, consuming seeds, roots and other aquatic plant material alongside invertebrates. Its tendency to remain near vegetation can make it difficult to detect even on a large lake. Outside breeding it may associate with other diving ducks. Open-water gaps among plants supply feeding, swimming and resting space; the combination of cover and accessible water is important."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Nests occur close to water in dense vegetation, on plant platforms or on floating islets. Biological references give a usual clutch of 7–10 eggs, incubation of approximately 25–28 days and flight at around 55–60 days. Research published in 2021 examined fifty nests at Algeria’s Lake Tonga during 2016 and 2017, linking breeding outcomes to nest-site characteristics and nest density. Some females deposited eggs in other nests of their own species, helping explain exceptionally large egg totals. The lake is consequently a breeding habitat, not merely a winter refuge."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Its Arab distribution includes different seasonal roles. It breeds at Algerian wetlands including Tonga, while BirdLife identifies Egypt’s Lake Nasser as an important wintering area. Lebanon’s 2020 checklist records scarce September–March passage and winter birds, with occasional non-breeding summer visitors. In Iraq, a study published in 2011 documented nests and families at Dalmaj marshes during May 2010. Autumn therefore connects regional breeding populations with arrivals from farther away, while a summer sighting alone need not indicate an active nest."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "The global category is Near Threatened, reaffirmed by BirdLife in an August 2026 publication. Pressures include wetland loss, vegetation degradation, altered water conditions, drought and excessive hunting. Survival depends on connected breeding, stopover and wintering sites rather than protection of one lake alone. Suitable water regimes, varied vegetation and quiet areas support feeding and nesting. Watching from a distance avoids forcing birds into flight for photographs, particularly at small sites where disturbance can repeatedly interrupt their activities."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "BirdLife International — Across continents: The journey of the Ferruginous Duck (26 August 2026)",
+                "BirdLife Cyprus — Ferruginous Duck",
+                "CMS / AEWA — International Single Species Action Plan for the Ferruginous Duck (2006)",
+                "Global Ecology and Conservation — Nest site selection and breeding ecology of the Ferruginous Duck in Algeria (2021)",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Ararat and colleagues — breeding records in Iraq, Sandgrouse 33 (2011)",
+                "Mediterranean Waterbirds Network — Ferruginous Duck identification",
+                "Libyan Birds — Aythya nyroca"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Tero Linjama (terolinjama) — CC0-1.0."
+        },
+        "fr": {
+          "title": "Fuligule nyroca",
+          "subtitle": "Aythya nyroca — Un canard châtain quasi menacé entre zones de reproduction arabes et lacs d’hiver",
+          "meta_description": "Un canard châtain quasi menacé entre zones de reproduction arabes et lacs d’hiver — Aythya nyroca",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Fuligule nyroca, Aythya nyroca, est un canard plongeur de la famille des Anatidés. Le mâle présente un plumage châtain soutenu, un dos plus sombre et un iris très pâle, presque blanc. Sa calotte paraît légèrement pointue et son bec est gris foncé. Les sous-caudales blanches et la large bande alaire blanche visible en vol constituent des critères importants. Long d’environ 38–42 cm, il est plus petit et moins massif que certains canards plongeurs qui l’accompagnent."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "La femelle conserve le même dessin général, mais elle est plus terne et ses yeux sont bruns. Le jeune lui ressemble, avec un brun moins vif et un blanc moins pur au ventre et sous la queue. Un œil sombre n’exclut donc pas l’espèce. Le mâle du Fuligule milouin possède un corps gris et une poitrine noire; le morillon porte une huppe marquée. Femelles de canards plongeurs et hybrides peuvent compliquer l’identification: forme de la tête et du bec, iris, sous-caudales et ailes doivent être examinés ensemble."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il préfère les eaux douces peu profondes, riches en plantes immergées et flottantes, bordées de roseaux ou d’un couvert dense. Certaines mares saumâtres sont également utilisées. Il se nourrit en plongeant et près de la surface, consommant graines, racines et autres éléments végétaux aquatiques ainsi que des invertébrés. Sa discrétion près des plantes peut le rendre difficile à repérer même sur un grand lac. Hors reproduction, il rejoint parfois d’autres plongeurs. Les trouées d’eau libre entre les plantes permettent de nager, se nourrir et se reposer: leur association avec le couvert est essentielle."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Le nid se trouve près de l’eau dans une végétation dense, sur une plateforme végétale ou un îlot flottant. Les références biologiques indiquent habituellement 7–10 œufs, environ 25–28 jours d’incubation et l’envol vers 55–60 jours. Une étude publiée en 2021 a suivi cinquante nids au lac Tonga, en Algérie, pendant 2016 et 2017. Elle relie la réussite aux caractéristiques des sites et à la densité des nids. Certaines femelles déposaient leurs œufs dans d’autres nids de la même espèce, contribuant aux nombres d’œufs exceptionnels. Ce lac est donc aussi un lieu de reproduction."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité arabes",
+              "paragraphs": [
+                "Dans le monde arabe, ses rôles saisonniers diffèrent. Il niche dans des zones humides algériennes, dont Tonga; BirdLife souligne l’importance du lac Nasser, en Égypte, pour l’hivernage. La liste libanaise de 2020 décrit de rares migrateurs et hivernants entre septembre et mars, et quelques estivants non nicheurs. En Irak, une étude publiée en 2011 documente nids et familles dans les marais de Dalmaj en mai 2010. L’automne relie ainsi des populations reproductrices régionales à des arrivants plus lointains; une observation estivale ne prouve pas toujours la nidification."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Son statut mondial est «Quasi menacé», confirmé par BirdLife dans une publication d’août 2026. Disparition des zones humides, dégradation de la végétation, perturbation des niveaux d’eau, sécheresse et chasse excessive constituent des pressions. Sa survie dépend d’un réseau de sites de reproduction, halte et hivernage, plutôt que d’un lac isolé. Des régimes hydrologiques adaptés, une végétation variée et des espaces tranquilles favorisent alimentation et nidification. L’observation à distance évite de provoquer des envols répétés pour une photographie, particulièrement dans les petites zones humides."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "BirdLife International — Across continents: The journey of the Ferruginous Duck (26 August 2026)",
+                "BirdLife Cyprus — Ferruginous Duck",
+                "CMS / AEWA — International Single Species Action Plan for the Ferruginous Duck (2006)",
+                "Global Ecology and Conservation — Nest site selection and breeding ecology of the Ferruginous Duck in Algeria (2021)",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Ararat and colleagues — breeding records in Iraq, Sandgrouse 33 (2011)",
+                "Mediterranean Waterbirds Network — Ferruginous Duck identification",
+                "Libyan Birds — Aythya nyroca"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Tero Linjama (terolinjama) — CC0-1.0."
+        }
+      },
+      "published": "2026-10-31",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "ferruginous-duck"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الحسون-التفاحي",
+        "en": "common-linnet",
+        "fr": "linotte-melodieuse"
+      },
+      "translations": {
+        "ar": {
+          "title": "الحسون التفاحي",
+          "subtitle": "حسون الحقول والشجيرات: مقيمون متكاثرون ووافدون شتويون من المغرب إلى المشرق",
+          "meta_description": "حسون الحقول والشجيرات: مقيمون متكاثرون ووافدون شتويون من المغرب إلى المشرق",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الحسون التفاحي Linaria cannabina من الحسونيات Fringillidae، وتستعمل بعض المراجع الأقدم اسم Carduelis cannabina. يظهر الذكر المتكاثر بجبهة وصدر محمرين ورأس رمادي وظهر بني كستنائي. الأنثى بنية رمادية وأكثر تخطيطًا، واليافع قريب منها في المظهر. يخف بروز الأحمر خارج موسم التكاثر. يساعد المنقار الرمادي والأبيض على الجناحين وحواف الذيل المشقوق في التعرف عليه حين تبدو الألوان باهتة أو تكون الإضاءة ضعيفة."
+              ]
+            },
+            {
+              "heading": "التمييز من الأنواع المشابهة",
+              "paragraphs": [
+                "تشبه الأنثى بعض الحساسين البنية، وخصوصًا النوع القريب Linaria flavirostris. يمتاز الأخير بمنقار أصفر شتاءً، ويظهر لدى ذكره عجز وردي، بينما يفيد في التفاحي اجتماع المنقار الرمادي والظهر الكستنائي والأبيض الجناحي. وقد تلتبس الطيور المخططة الصغيرة بأنواع Acanthis أيضًا. لذلك تُفحص الهيئة والمنقار والظهر والذيل معًا، ويُقرأ الأحمر في سياقه العمري والموسمي."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد البيئات المفتوحة التي تجمع شجيرات للتعشيش ونباتات منتجة للبذور: حواف الحقول والأسيجة والمراعي والأراضي العشبية والسواحل المناسبة. يتغذى أساسًا على البذور، وينزل إلى الأرض ثم يعود إلى مجثم مكشوف. وهو اجتماعي، وقد تُرى مجموعات صغيرة حتى أثناء التكاثر، وتكبر التجمعات خارج موسمه. تبقى الجماعات الجنوبية أكثر استقرارًا عادة، فيما تتحرك جماعات شمالية نحو الجنوب الغربي. ويوثق أطلس EURING وصول بعض الطيور الأوروبية إلى شمال غرب أفريقيا؛ تتجمع في الشتاء طيور ذات أصول وحركات مختلفة."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يضع عشه بين شجيرات كثيفة أو أسيجة شوكية. تتوافر فيها الحماية بالقرب من مناطق التقاط البذور، وهي علاقة مهمة بين موضع العش والموئل الغذائي المحيط. تحضن الأنثى البيض، وعدده المعتاد أربع أو خمس بيضات. يسجل BTO حضانة من 12 إلى 14 يومًا، ومغادرة العش بعد 13 إلى 14 يومًا. قد يتكاثر الزوج أكثر من مرة في الموسم. وتختلف مواعيد التعشيش بحسب المنطقة والارتفاع، بينما تأتي الأرقام المذكورة من تجميع بيانات التكاثر المرجعية."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "في المغرب تسجله قائمة 2017 مقيمًا متكاثرًا وزائرًا شتويًا. وفي سوريا تصفه مراجعة 2025 مقيمًا متكاثرًا غير شائع في الغرب، مع شتاء في مناطق أخرى؛ وتسجله الأردن مقيمًا وزائرًا شتويًا أقل شيوعًا. أما السعودية فيصف مرجعها الوطني زواره الشتويين بالقلة، خصوصًا في الشمال وتبوك، وأحيانًا المنطقة الشرقية. وفي الكويت تصنفه قائمة سبتمبر 2026 عارضًا بسبعة سجلات."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تصنيفه العالمي «أقل قلقًا» LC، لكن توفر البذور ومواقع التعشيش يظل مؤثرًا في نجاحه محليًا. تربط دراسات ومتابعات الأراضي الزراعية الأوروبية تراجعاته بتكثيف الزراعة وتراجع موارد الغذاء والنجاح التناسلي. المحافظة على الأسيجة والشجيرات والهوامش العشبية المنتجة للبذور تعزز تكامل موائله. وفي العالم العربي يفيد الفصل بين المقيمين المتكاثرين والوافدين شتاءً عند متابعة الأعداد؛ الزيادة الشتوية في حقل لا تعني زيادة مماثلة في جماعته المحلية المتكاثرة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList — The Global Avian Checklist, v2026",
+                "BTO — BirdFacts: Linnet and Twite",
+                "BirdWatch Ireland — Linnet",
+                "RSPB — Linnet",
+                "Game & Wildlife Conservation Trust — Linnet",
+                "National Biodiversity Data Centre — Species Profile: Common Linnet",
+                "EURING/CMS — Migration Atlas: Common Linnet",
+                "Bergier et al. — Liste des oiseaux du Maroc, 2017",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria, 2025",
+                "Jordan BirdWatch — Jordan Bird List",
+                "The Birds of Saudi Arabia — Volume 2, 2020",
+                "KORC — Kuwait Bird List, September 2026"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Stein Arne Jensen — CC0-1.0."
+        },
+        "en": {
+          "title": "Common Linnet",
+          "subtitle": "The finch of fields and hedges: resident breeders and winter arrivals from Morocco to the Levant",
+          "meta_description": "The finch of fields and hedges: resident breeders and winter arrivals from Morocco to the Levant",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Common Linnet Linaria cannabina belongs to Fringillidae; older references often use Carduelis cannabina. Breeding males show a red forehead and breast, grey head and chestnut-brown back. Females are grey-brown and more streaked, and juveniles resemble them. The red becomes less conspicuous outside breeding. A grey bill and white markings in the wings and along the forked tail help identification when colours are subdued or the light is poor."
+              ]
+            },
+            {
+              "heading": "Distinguishing similar birds",
+              "paragraphs": [
+                "Females can resemble other brown finches, particularly Twite Linaria flavirostris. Twite has a yellow bill in winter, with a pink rump in males, whereas Linnet identification benefits from the combination of grey bill, chestnut back and white wing markings. Small streaked birds may also be confused with redpolls of the genus Acanthis. Shape, bill, back and tail should therefore be assessed together, with red plumage interpreted according to age and season."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "The species uses open country combining nesting shrubs and seed-bearing vegetation: field edges, hedgerows, pasture, rough grassland and suitable coastal habitats. It feeds chiefly on seeds, often dropping to the ground before returning to an exposed perch. It is sociable, with small groups even during breeding and larger gatherings afterwards. Southern populations are generally more sedentary, while northern birds move southwest. EURING documents European birds reaching northwest Africa, so winter flocks can contain birds with different origins and movement strategies."
+              ]
+            },
+            {
+              "heading": "Breeding and annual cycle",
+              "paragraphs": [
+                "Nests are placed in dense shrubs or thorny hedges. These provide cover near feeding areas, making the relationship between nest sites and surrounding seed resources important. Females incubate the usual clutch of four or five eggs. BTO reports typical incubation of 12–14 days and nest departure at 13–14 days. Pairs can produce more than one brood. Breeding dates vary with region and altitude; these numerical ranges describe reference breeding data rather than a single calendar for all Arab populations."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Morocco’s 2017 checklist records resident breeders and winter visitors. Syria’s 2025 review describes uncommon resident breeding in the west and winter occurrence elsewhere. Jordan lists resident birds and less-common winter visitors. Saudi Arabia’s national reference describes scarce winter visits, especially in the north and Tabuk, occasionally also the Eastern Province. In contrast, Kuwait’s September 2026 list treats the species as a vagrant with seven records."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "The global category is Least Concern, but seed resources and nesting cover remain important locally. European farmland research and monitoring link declines to agricultural intensification, reduced food resources and breeding success. Retaining hedges, shrubs and seed-producing field margins helps maintain the complete habitat mosaic. Arab-region monitoring benefits from distinguishing resident breeders from winter arrivals: a seasonal increase in a field does not necessarily represent growth in its local breeding population."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList — The Global Avian Checklist, v2026",
+                "BTO — BirdFacts: Linnet and Twite",
+                "BirdWatch Ireland — Linnet",
+                "RSPB — Linnet",
+                "Game & Wildlife Conservation Trust — Linnet",
+                "National Biodiversity Data Centre — Species Profile: Common Linnet",
+                "EURING/CMS — Migration Atlas: Common Linnet",
+                "Bergier et al. — Liste des oiseaux du Maroc, 2017",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria, 2025",
+                "Jordan BirdWatch — Jordan Bird List",
+                "The Birds of Saudi Arabia — Volume 2, 2020",
+                "KORC — Kuwait Bird List, September 2026"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Stein Arne Jensen — CC0-1.0."
+        },
+        "fr": {
+          "title": "Linotte mélodieuse",
+          "subtitle": "Le fringillidé des champs et des haies: nicheurs résidents et hivernants du Maroc au Levant",
+          "meta_description": "Le fringillidé des champs et des haies: nicheurs résidents et hivernants du Maroc au Levant",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Linotte mélodieuse Linaria cannabina appartient aux Fringillidés; les anciennes références utilisent souvent Carduelis cannabina. Le mâle nicheur présente un front et une poitrine rouges, une tête grise et un dos brun châtain. La femelle est gris-brun et plus striée; les jeunes lui ressemblent. Le rouge devient moins visible hors reproduction. Le bec gris et les marques blanches des ailes et des bords de la queue fourchue facilitent l’identification lorsque les couleurs sont ternes ou la lumière médiocre."
+              ]
+            },
+            {
+              "heading": "Espèces proches",
+              "paragraphs": [
+                "Les femelles peuvent rappeler d’autres petits fringillidés bruns, notamment la Linotte à bec jaune Linaria flavirostris. Cette dernière possède un bec jaune en hiver, et son mâle un croupion rose; chez la Linotte mélodieuse, l’association bec gris, dos châtain et marques alaires blanches est utile. Les oiseaux striés peuvent aussi être confondus avec des sizerins du genre Acanthis. Il faut donc examiner ensemble silhouette, bec, dos et queue, en replaçant le rouge dans son contexte saisonnier et d’âge."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Elle fréquente les paysages ouverts réunissant arbustes de nidification et végétation à graines: bordures de champs, haies, pâtures, prairies et secteurs côtiers favorables. Elle consomme surtout des graines, descend souvent au sol puis regagne un perchoir dégagé. Sociable, elle forme de petits groupes même pendant la reproduction, puis des rassemblements plus importants. Les populations méridionales sont généralement plus sédentaires, tandis que des oiseaux septentrionaux gagnent le sud-ouest. EURING documente l’arrivée d’oiseaux européens en Afrique du Nord-Ouest; les bandes hivernales peuvent donc réunir plusieurs origines."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "Le nid est installé dans un arbuste dense ou une haie épineuse. Cet abri proche des zones nourricières souligne le lien entre sites de nidification et ressources en graines. La femelle couve habituellement quatre ou cinq œufs. Le BTO indique 12 à 14 jours d’incubation et 13 à 14 jours de séjour au nid. Un couple peut élever plusieurs nichées. Les dates varient avec la région et l’altitude: les durées citées résument des données de référence et non un calendrier unique pour toutes les populations arabes."
+              ]
+            },
+            {
+              "heading": "Présence et saisons dans le monde arabe",
+              "paragraphs": [
+                "La liste marocaine de 2017 mentionne des nicheurs sédentaires et des hivernants. La synthèse syrienne de 2025 décrit une nidification sédentaire peu commune à l’ouest et un hivernage ailleurs. La Jordanie signale des résidents et des hivernants moins communs. La référence nationale saoudienne décrit des visites hivernales peu nombreuses, surtout au nord et à Tabuk, parfois dans la Province orientale. Au Koweït, la liste de septembre 2026 la classe au contraire comme accidentelle avec sept données acceptées."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Le statut mondial est Préoccupation mineure, mais graines et abris de nidification restent essentiels localement. Les recherches et suivis agricoles européens relient ses déclins à l’intensification, à la réduction des ressources et du succès reproducteur. Maintenir haies, arbustes et marges riches en graines protège la mosaïque nécessaire. Dans les pays arabes, distinguer nicheurs résidents et arrivants hivernaux améliore les suivis: davantage d’oiseaux dans un champ en hiver ne signifie pas forcément davantage de reproducteurs locaux."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList — The Global Avian Checklist, v2026",
+                "BTO — BirdFacts: Linnet and Twite",
+                "BirdWatch Ireland — Linnet",
+                "RSPB — Linnet",
+                "Game & Wildlife Conservation Trust — Linnet",
+                "National Biodiversity Data Centre — Species Profile: Common Linnet",
+                "EURING/CMS — Migration Atlas: Common Linnet",
+                "Bergier et al. — Liste des oiseaux du Maroc, 2017",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria, 2025",
+                "Jordan BirdWatch — Jordan Bird List",
+                "The Birds of Saudi Arabia — Volume 2, 2020",
+                "KORC — Kuwait Bird List, September 2026"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Stein Arne Jensen — CC0-1.0."
+        }
+      },
+      "published": "2026-10-31",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "common-linnet"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الحوام-الشائع",
+        "en": "common-buzzard",
+        "fr": "buse-variable"
+      },
+      "translations": {
+        "ar": {
+          "title": "الحوّام الشائع",
+          "subtitle": "Buteo buteo — جارح متنوع الألوان، واسع الجناحين، يحلّق فوق الأراضي المفتوحة ويعبر المشرق في طريق الهجرة",
+          "meta_description": "الحوّام الشائع (Buteo buteo): جارح متنوع الألوان، واسع الجناحين، يحلّق فوق الأراضي المفتوحة ويعبر المشرق في طريق الهجرة",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الحوّام الشائع Buteo buteo جارح نهاري من فصيلة البازيات Accipitridae، يُعرف أيضًا بالبازي الحوام في مراجع عربية. يتسم بجناحين عريضين وذيل قصير نسبيًا وجسم ممتلئ. تتباين ألوان أفراده من بني داكن إلى ريش فاتح كثير البياض، ويعرض جناحيه غالبًا على هيئة حرف V ضحل عند التحليق. تحتفظ قائمة AviList لعام 2026 بالحوام السهبي Buteo buteo vulpinus نويعًا ضمن هذا النوع، وهو من أبرز الجوارح العابرة للمشرق. وتتوزع جماعات النوع بين الإقامة والهجرة لمسافات مختلفة."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "تتشابه هيئة الجنسين عمومًا، ولا يُعتمد على درجة اللون وحدها للفصل بينهما. تحمل البوالغ عادة شريطًا طرفيًا داكنًا واضحًا في الذيل وحافة خلفية داكنة للجناح، بينما تتطلب معرفة عمر الطائر جمع تفاصيل الريش وحالته. يختلف الحوام طويل الساقين Buteo rufinus عنه في البنية والنسب وتفاصيل الريش، مع تداخل لوني قد يربك المشاهد. وحوام النحل الأوروبي Pernis apivorus ذو رأس أصغر وأبرز إلى الأمام وذيل أطول نسبيًا. يساعد تصوير الجناحين والذيل من أكثر من زاوية على توثيق الهوية، خاصة عندما تختلط الجوارح المهاجرة في السماء."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يستخدم الأراضي المفتوحة والمراعي والحقول القريبة من الأشجار أو الأحراج. ينتظر أحيانًا على عمود أو شجرة، ويراقب الأرض، أو يحلق مستفيدًا من الهواء الصاعد قبل الانقضاض. غذاؤه مرن يشمل القوارض وثدييات صغيرة أخرى وطيورًا وزواحف ولافقاريات، كما يتناول الجيف. وقد يمشي في الحقول بحثًا عن ديدان الأرض. تجمع حاجاته بين أرض مكشوفة يسهل فيها العثور على الغذاء ومواقع مرتفعة للراحة أو التعشيش؛ لذلك قد يظهر عند أطراف الطرق والحقول دون أن تكون المدن موئله الأساسي."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يبني عشًا من الأغصان في نطاق تكاثره، وتستغرق تربية الصغار أسابيع من الرعاية الأبوية. تشير بيانات الأعشاش البريطانية إلى حضنة واحدة عادة، تضم بيضتين أو ثلاثًا، وحضانة تقارب 34 يومًا تؤديها الأنثى أساسًا وقد يشارك الذكر، ثم طيران الصغار بعمر نحو 44–52 يومًا. هذه مدد مرجعية من المتابعة البريطانية؛ ويتغير توقيت التكاثر مع الجماعة والمنطقة. وتؤدي جماعات مهاجرة دورة حياتها بين مناطق تعشيش شمالية وممرات عبور ومناطق إشتاء جنوبية."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية في العالم العربي",
+              "paragraphs": [
+                "في لبنان تصف قائمة 2020 عبورًا خريفيًا من أوائل أغسطس إلى نوفمبر، وإشتاءً منتظمًا للنويع الاسمي من نوفمبر إلى منتصف مارس، خاصة في البقاع. ويمر نويع vulpinus بأعداد أكبر، مع إشتاء أقل انتظامًا. وفي الأردن يُسجل الحوام السهبي عابرًا شائعًا والنويع الاسمي شتويًا. وتصف المراجع السعودية عبورًا خريفيًا خصوصًا في الغرب خلال سبتمبر وأكتوبر، مع أعداد شتوية محدودة بجنوب تهامة. أما مصر فتضم ممرات مهمة للحوام السهبي على البحر الأحمر، وقد وثقت أبحاث مرصد الجلالة أهمية العبور الربيعي هناك. وهكذا تتزامن نهاية أكتوبر مع أواخر العبور وبداية الاقتراب من موسم الإشتاء في أجزاء من المشرق."
+              ]
+            },
+            {
+              "heading": "الأهمية البيئية والحماية",
+              "paragraphs": [
+                "يستهلك الحوام القوارض وكائنات أخرى، ويسهم تناوله الجيف في إعادة المواد إلى الشبكة الغذائية. تصنيفه العالمي «أقل إثارة للقلق» في قائمة AviList 2026 المنقولة عن بيانات القائمة الحمراء. وتشمل الأخطار المحلية إطلاق النار والتسميم وفقد مواقع الغذاء والتعشيش. وتكتسب سلامة ممرات الجوارح أهمية خاصة حيث تلتقي أعداد مهاجرة كبيرة، بينما تساعد متابعة المواقع الشتوية في تمييز الطيور المستقرة مؤقتًا من العابرة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026",
+                "RSPB — Buzzard",
+                "British Trust for Ornithology — BirdFacts: Buzzard",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "Boland and Al-Suhaibany — The Birds of Saudi Arabia (2020), species account reproduced by KSA Nature",
+                "Nature Conservation Egypt — Globally important proportions of six raptor populations migrate past Galala Bird Observatory, Egypt, in spring"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Andrew Deacon — CC0-1.0."
+        },
+        "en": {
+          "title": "Common Buzzard",
+          "subtitle": "Buteo buteo — A broad-winged raptor with variable plumage, soaring over open country and migrating through the Levant",
+          "meta_description": "Common Buzzard (Buteo buteo): A broad-winged raptor with variable plumage, soaring over open country and migrating through the Levant",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Common Buzzard, Buteo buteo, is a diurnal raptor of the family Accipitridae. Arabic references also call it al-bazi al-hawwam. Broad wings, a relatively short tail and a substantial body characterize its shape. Individuals range from dark brown to extensively pale plumage, and often soar with their wings in a shallow V. AviList 2026 retains the Steppe Buzzard, Buteo buteo vulpinus, as a subspecies within this species. It is an important migrant through the Levant. Different populations are resident or migrate over varying distances."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "The sexes look broadly similar, and overall colour alone is unreliable for separating them. Adults generally show a distinct dark terminal tail band and dark trailing edges to the wings; ageing requires several feather characters and their condition. Long-legged Buzzards, Buteo rufinus, differ in structure, proportions and plumage details, but colour overlap can confuse observers. European Honey Buzzards, Pernis apivorus, have a smaller, more projecting head and a relatively longer tail. Views of both wings and tail from several angles improve identification, particularly in mixed gatherings of migrating raptors."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Open land, pasture and fields adjoining trees or woodland provide suitable habitat. A buzzard may watch the ground from a post or tree, or soar in rising air before descending on prey. Its flexible diet includes rodents and other small mammals, birds, reptiles and invertebrates, as well as carrion. Birds sometimes walk across fields looking for earthworms. Their needs combine accessible feeding ground with elevated resting or nesting sites, explaining frequent appearances beside roads and fields even though cities are not their principal habitat."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Buzzards build stick nests within their breeding range, and raising young requires weeks of parental care. British nest records typically indicate one brood of two or three eggs. Incubation lasts approximately 34 days and is mainly performed by the female, sometimes with male participation; young usually fledge at around 44–52 days. These are reference values from British monitoring, with breeding dates varying by population and region. Migratory populations complete their annual cycle between northern nesting areas, passage corridors and southern wintering grounds."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist describes autumn passage from early August to November and regular wintering by the nominate subspecies from November to mid-March, especially in the Beqaa. Vulpinus passes in larger numbers and winters less regularly. Jordan records common passage by Steppe Buzzards and winter occurrence of the nominate form. Saudi references describe autumn migration particularly in the west during September and October, with limited winter presence in southern Tihama. Egypt includes important Red Sea corridors for Steppe Buzzards; research at Galala Observatory documents the significance of spring passage there. Late October consequently falls near the end of passage and approaching winter residence in parts of the Levant."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Buzzards consume rodents and other animals; scavenging also returns material to food webs. AviList 2026 lists global Least Concern using Red List data. Local hazards include shooting, poisoning and loss of feeding or nesting sites. Safe migration corridors are particularly important where many raptors concentrate, while monitoring winter sites helps distinguish temporarily settled birds from passing migrants."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026",
+                "RSPB — Buzzard",
+                "British Trust for Ornithology — BirdFacts: Buzzard",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "Boland and Al-Suhaibany — The Birds of Saudi Arabia (2020), species account reproduced by KSA Nature",
+                "Nature Conservation Egypt — Globally important proportions of six raptor populations migrate past Galala Bird Observatory, Egypt, in spring"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Andrew Deacon — CC0-1.0."
+        },
+        "fr": {
+          "title": "Buse variable",
+          "subtitle": "Buteo buteo — Un rapace aux ailes larges et au plumage variable, planant sur les espaces ouverts et migrant par le Levant",
+          "meta_description": "Buse variable (Buteo buteo): Un rapace aux ailes larges et au plumage variable, planant sur les espaces ouverts et migrant par le Levant",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Buse variable, Buteo buteo, est un rapace diurne de la famille des Accipitridés. Des références arabes l’appellent aussi al-bazi al-hawwam. Sa silhouette associe ailes larges, queue relativement courte et corps robuste. Le plumage varie du brun sombre à des formes largement claires; en vol ascendant, les ailes dessinent souvent un V peu prononcé. AviList 2026 maintient la Buse des steppes, Buteo buteo vulpinus, comme sous-espèce. Elle figure parmi les rapaces migrateurs importants au Levant. Selon les populations, l’espèce est résidente ou migratrice sur des distances variables."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "Les sexes se ressemblent généralement, et la couleur d’ensemble seule les distingue mal. Les adultes montrent habituellement une bande terminale sombre nette à la queue et un bord postérieur foncé aux ailes; déterminer l’âge exige plusieurs caractères des plumes et leur état. La Buse féroce, Buteo rufinus, diffère par sa structure, ses proportions et certains détails du plumage, avec des recouvrements de couleur parfois trompeurs. La Bondrée apivore, Pernis apivorus, présente une tête plus petite et projetée vers l’avant, ainsi qu’une queue relativement plus longue. Plusieurs angles montrant ailes et queue améliorent l’identification dans les rassemblements migratoires mixtes."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Espaces ouverts, pâtures et champs voisins d’arbres ou de bois offrent des habitats favorables. La buse peut surveiller le sol depuis un poteau ou un arbre, ou profiter d’un courant ascendant avant de descendre sur une proie. Son régime souple comprend rongeurs et autres petits mammifères, oiseaux, reptiles et invertébrés, ainsi que charognes. Elle marche parfois dans les champs pour rechercher des vers de terre. Ses besoins associent terrain nourricier accessible et sites élevés de repos ou de nidification, expliquant sa présence près des routes et cultures sans faire des villes son habitat principal."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Elle construit un nid de branches dans son aire de reproduction; l’élevage demande plusieurs semaines de soins. Les suivis britanniques indiquent généralement une nichée de deux ou trois œufs, environ 34 jours d’incubation assurée principalement par la femelle, parfois avec participation du mâle, puis l’envol des jeunes vers 44–52 jours. Ce sont des valeurs de référence britanniques; les dates varient selon populations et régions. Les populations migratrices partagent leur cycle annuel entre sites de reproduction septentrionaux, corridors de passage et quartiers d’hiver méridionaux."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "Au Liban, la liste de 2020 décrit un passage automnal de début août à novembre et un hivernage régulier de la sous-espèce nominale de novembre à mi-mars, surtout dans la Beqaa. Vulpinus passe en plus grand nombre et hiverne moins régulièrement. En Jordanie, la Buse des steppes est une migratrice commune, la forme nominale une hivernante. Les références saoudiennes décrivent le passage automnal surtout dans l’ouest en septembre et octobre, avec une présence hivernale limitée dans le sud de la Tihama. L’Égypte comprend d’importants corridors sur la mer Rouge; les recherches de l’observatoire de Galala attestent l’importance du passage printanier. La fin octobre correspond ainsi à la fin du passage et à l’approche de l’hivernage dans certaines parties du Levant."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "La buse consomme rongeurs et autres animaux; son activité de charognard contribue aussi aux réseaux trophiques. AviList 2026 la classe mondialement en « Préoccupation mineure » à partir des données de la Liste rouge. Les risques locaux comprennent tirs, empoisonnement et disparition des sites nourriciers ou de nidification. La sécurité des corridors compte particulièrement aux concentrations migratoires; suivre les sites hivernaux aide à distinguer oiseaux temporairement installés et migrateurs de passage."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026",
+                "RSPB — Buzzard",
+                "British Trust for Ornithology — BirdFacts: Buzzard",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "Boland and Al-Suhaibany — The Birds of Saudi Arabia (2020), species account reproduced by KSA Nature",
+                "Nature Conservation Egypt — Globally important proportions of six raptor populations migrate past Galala Bird Observatory, Egypt, in spring"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Andrew Deacon — CC0-1.0."
+        }
+      },
+      "published": "2026-10-31",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "common-buzzard"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الباشق-الأوراسي",
+        "en": "eurasian-sparrowhawk",
+        "fr": "epervier-europe"
+      },
+      "translations": {
+        "ar": {
+          "title": "الباشق الأوراسي",
+          "subtitle": "Accipiter nisus — صياد طيور سريع المناورة، يتعاقب خفقانه وانزلاقه وتفوق أنثاه الذكر حجمًا بوضوح",
+          "meta_description": "الباشق الأوراسي (Accipiter nisus): صياد طيور سريع المناورة، يتعاقب خفقانه وانزلاقه وتفوق أنثاه الذكر حجمًا بوضوح",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الباشق الأوراسي Accipiter nisus جارح من فصيلة البازيات Accipitridae، وتحتفظ قائمة AviList 2026 بهذا الاسم العلمي. يُعرف أيضًا بباشق العصافير في المراجع العربية، وهو صياد سريع متخصص أساسًا في الطيور. جناحاه قصيران عريضان نسبيًا وذيله طويل ذو نهاية شبه مربعة، مما يساعده على المناورة بين الأشجار. يتعاقب خفقان جناحيه السريع مع انزلاقات قصيرة، فيبدو مختلفًا عن التحليق الطويل للحوامات. وتمتد جماعاته من أوروبا وشمال غرب أفريقيا عبر أجزاء واسعة من آسيا، مع هجرة جنوبية للجماعات الشمالية."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "الأنثى أكبر بكثير من الذكر، وهو فرق مهم في فهم أحجام الفرائس وهيئة الطيور المرصودة. يكون ظهر الذكر البالغ رماديًا مزرقًا وأسفله فاتحًا بتخطط عرضي برتقالي بني، بينما يغلب الرمادي البني والتخطط الداكن على الأنثى. اليافع بني من الأعلى، مع اختلاف في هيئة العلامات السفلية، وقد يظهر حاجب فاتح واضح. يلتبس النوع أحيانًا بالباشق الشامي أو الباز الأكبر؛ وتفيد مقارنة نسب الجسم والذيل والجناح وتفاصيل أسفله. العين والساقان الفاتحتان والذيل الطويل صفات مساعدة، لكن اجتماع الصفات أوضح من الاعتماد على الحجم وحده."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يسكن الأحراج وحواف الغابات والحدائق والمزارع ذات الأشجار، ويستفيد من الغطاء ليقترب خفية. يطير منخفضًا بمحاذاة الشجيرات أو المباني ثم يندفع فجأة وراء فريسة، وقد يتابعها إلى أرض مكشوفة. تكاد الطيور الصغيرة والمتوسطة تشكل غذاءه كله؛ ويلتقط الذكر الأصغر فرائس أصغر عمومًا من فرائس الأنثى. وبعد الصيد قد ينتف الريش في موضع ساتر. تجذب وفرة العصافير هذا الجارح إلى الحدائق، فتُسمع نداءات الإنذار قبل ظهوره؛ وهو جزء من شبكة الافتراس الطبيعية في هذه الموائل."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يُنشئ عشًا من الأغصان في شجرة داخل موئل مناسب للتكاثر. تشير سجلات الأعشاش البريطانية إلى حضنة واحدة عادة من 4–5 بيضات، وحضانة أنثوية تقارب 33 يومًا، ثم طيران الفراخ بعد نحو 27–31 يومًا من الفقس. هذه مدد مرجعية تتفاوت مع الظروف والجماعة. وتعتمد الفراخ في العش على الغذاء الذي يوفره الأبوان، فتتصل جودة موئل التعشيش بوجود أشجار ساترة وفرائس يمكن الوصول إليها. وتختلف مناطق الإشتاء عن نطاق التعشيش لدى الأفراد المهاجرة."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية في العالم العربي",
+              "paragraphs": [
+                "تسجل قائمة لبنان لعام 2020 عبورًا شائعًا في سبتمبر إلى أوائل نوفمبر، وفي مارس إلى أوائل مايو، مع أعداد قليلة تشتو في الجبال والبقاع من نوفمبر إلى أواخر فبراير. وفي الأردن تجمع القائمة بين العبور والإشتاء الشائعين والإقامة المحلية. وتصف المراجع السعودية عبورًا غير شائع واسع الانتشار في سبتمبر وأكتوبر ومارس وأبريل، وإشتاءً من نوفمبر إلى فبراير. وفي الكويت هو عابر وزائر شتوي غير شائع، يرتبط بالمواضع الملائمة المشجرة. أما شمال غرب أفريقيا فيضم نويع punicus ضمن نطاق النوع من المغرب إلى تونس وفق AviList. تقع نهاية أكتوبر بذلك ضمن حركة العبور واقتراب الإشتاء في المشرق والخليج، مع اختلاف وضع الجماعات المقيمة."
+              ]
+            },
+            {
+              "heading": "الأهمية البيئية والحماية",
+              "paragraphs": [
+                "تساعد دراسة الباشق في فهم العلاقات بين الجوارح وفرائسها وتأثير الملوثات عبر السلسلة الغذائية. وثقت الأبحاث البريطانية تراجعًا تاريخيًا بسبب مبيدات عضوية كلورية سببت ترقق قشر البيض، ثم تعافيًا بعد تقليص استخدامها. ويذكر المرجع الكويتي إطلاق النار العشوائي خطرًا محليًا. حالته العالمية «أقل إثارة للقلق» في بيانات AviList 2026، بينما تحتاج سلامة الجماعات المحلية إلى متابعة مستقلة. وتدعم حماية الأشجار وممرات الحركة وتقليل التعرض للسموم بقاء هذا الصياد ضمن نظامه الطبيعي."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026",
+                "RSPB — Sparrowhawk",
+                "British Trust for Ornithology — BirdFacts: Sparrowhawk",
+                "Naturalis Biodiversity Center — Birds of Europe: Eurasian Sparrowhawk",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "KuwaitBirds / Biodiversity East — Eurasian Sparrowhawk",
+                "Boland and Al-Suhaibany — The Birds of Saudi Arabia (2020), species account reproduced by KSA Nature"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Stein Arne Jensen — CC0-1.0."
+        },
+        "en": {
+          "title": "Eurasian Sparrowhawk",
+          "subtitle": "Accipiter nisus — An agile bird hunter alternating wingbeats and glides, with females markedly larger than males",
+          "meta_description": "Eurasian Sparrowhawk (Accipiter nisus): An agile bird hunter alternating wingbeats and glides, with females markedly larger than males",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Eurasian Sparrowhawk, Accipiter nisus, is a raptor of the family Accipitridae; AviList 2026 retains this scientific name. Arabic references also call it bashiq al-asafir. A fast predator specializing chiefly in birds, it has relatively short, broad wings and a long, nearly square-ended tail that aid manoeuvring among trees. Rapid wingbeats alternate with brief glides, contrasting with a buzzard’s prolonged soaring. Its populations extend from Europe and northwestern Africa across much of Asia, with northern birds migrating south."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "Females are substantially larger than males, an important distinction when interpreting prey size and apparent body size. Adult males have blue-grey upperparts and pale underparts barred orange-brown; females are generally brown-grey above with darker barring below. Juveniles are brown above, with differing lower-body markings and sometimes a clear pale eyebrow. Confusion can arise with Levant Sparrowhawks or larger goshawks; body, tail and wing proportions and underwing detail are useful comparisons. Pale eyes and legs and a long tail assist identification, but a combination of features is more reliable than size alone."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Woodland, forest edges, gardens and tree-rich farmland provide habitat, with cover allowing a concealed approach. The bird flies low beside bushes or buildings before suddenly striking, sometimes pursuing prey into open ground. Small and medium-sized birds form almost its entire diet; smaller males generally take smaller prey than females. Captures may be plucked in a sheltered place. Concentrations of small birds attract sparrowhawks to gardens, where alarm calls may precede the raptor’s appearance. This is part of the natural predator–prey network in such habitats."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "A stick nest is built in a tree within suitable breeding habitat. British nest records typically indicate one brood of four or five eggs, female incubation lasting approximately 33 days, and fledging at roughly 27–31 days after hatching. These are reference values that vary with conditions and population. Nestlings depend on food supplied by their parents, linking habitat quality to sheltered trees and accessible prey. Migratory individuals use winter grounds separate from their nesting range."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist records common passage from September to early November and March to early May, with small wintering numbers in mountains and the Beqaa from November to late February. Jordan’s list combines common passage and wintering with local residence. Saudi references describe uncommon but widespread passage in September–October and March–April, and winter presence from November to February. In Kuwait it is an uncommon passage migrant and winter visitor associated with suitable wooded sites. Northwestern Africa also supports the subspecies punicus from Morocco to Tunisia, according to AviList. Late October thus falls within passage and the approach of wintering in the Levant and Gulf, alongside differing resident populations."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Sparrowhawk research illuminates relationships between raptors, prey and contaminants moving through food chains. British studies documented historical decline caused by organochlorine pesticides that thinned eggshells, followed by recovery as their use diminished. Kuwait’s reference identifies indiscriminate shooting as a local threat. AviList 2026 records global Least Concern, while local population health requires its own monitoring. Protecting trees and movement routes and reducing exposure to poisons helps retain this predator within its natural system."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026",
+                "RSPB — Sparrowhawk",
+                "British Trust for Ornithology — BirdFacts: Sparrowhawk",
+                "Naturalis Biodiversity Center — Birds of Europe: Eurasian Sparrowhawk",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "KuwaitBirds / Biodiversity East — Eurasian Sparrowhawk",
+                "Boland and Al-Suhaibany — The Birds of Saudi Arabia (2020), species account reproduced by KSA Nature"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Stein Arne Jensen — CC0-1.0."
+        },
+        "fr": {
+          "title": "Épervier d’Europe",
+          "subtitle": "Accipiter nisus — Un chasseur d’oiseaux agile alternant battements et glissades, dont la femelle dépasse nettement le mâle en taille",
+          "meta_description": "Épervier d’Europe (Accipiter nisus): Un chasseur d’oiseaux agile alternant battements et glissades, dont la femelle dépasse nettement le mâle en taille",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "L’Épervier d’Europe, Accipiter nisus, appartient aux Accipitridés; AviList 2026 conserve ce nom scientifique. Des références arabes le nomment aussi bashiq al-asafir. Ce prédateur rapide, spécialisé surtout dans les oiseaux, possède des ailes relativement courtes et larges et une longue queue presque carrée à l’extrémité, facilitant ses manœuvres parmi les arbres. Des battements rapides alternent avec de brèves glissades, contrairement aux longs vols ascendants des buses. Ses populations s’étendent d’Europe et d’Afrique du Nord-Ouest à une grande partie de l’Asie, les oiseaux septentrionaux migrant vers le sud."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "La femelle est nettement plus grande que le mâle, distinction importante pour interpréter la taille des proies et des oiseaux observés. Le mâle adulte présente un dessus gris-bleu et un dessous clair barré de brun orangé; la femelle est généralement gris-brun dessus, avec des barres plus sombres dessous. Le jeune est brun dessus, avec des marques inférieures différentes et parfois un sourcil clair net. Des confusions existent avec l’Épervier à pieds courts ou des autours plus grands; proportions du corps, de la queue et des ailes et détails sous-alaires facilitent la comparaison. Yeux et pattes clairs et longue queue sont utiles, mais plusieurs caractères réunis valent mieux que la taille seule."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Boisements, lisières, jardins et cultures arborées offrent des habitats où le couvert permet une approche discrète. L’oiseau vole bas le long des buissons ou bâtiments avant une attaque soudaine, poursuivant parfois sa proie à découvert. Les petits et moyens oiseaux composent presque tout son régime; les mâles plus petits capturent généralement des proies plus petites que les femelles. Une capture peut être plumée à l’abri. Les concentrations de passereaux attirent l’épervier dans les jardins, où des cris d’alarme précèdent parfois son apparition. Il participe ainsi au réseau naturel des relations prédateur–proie."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Un nid de branches est construit dans un arbre d’un habitat favorable. Les suivis britanniques indiquent généralement une nichée de quatre ou cinq œufs, une incubation assurée par la femelle d’environ 33 jours et l’envol vers 27–31 jours après l’éclosion. Ces valeurs de référence varient selon conditions et populations. Les poussins dépendent des aliments apportés par les parents, reliant la qualité du milieu aux arbres protecteurs et aux proies accessibles. Les individus migrateurs utilisent des quartiers d’hiver distincts de leur aire de nidification."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "La liste libanaise de 2020 mentionne un passage commun de septembre à début novembre et de mars à début mai, avec quelques hivernants dans les montagnes et la Beqaa de novembre à fin février. La liste jordanienne associe passage et hivernage communs à une résidence locale. Les références saoudiennes décrivent un passage peu commun mais répandu en septembre–octobre et mars–avril, puis l’hivernage de novembre à février. Au Koweït, il est migrateur et hivernant peu commun dans les sites boisés favorables. L’Afrique du Nord-Ouest accueille aussi punicus du Maroc à la Tunisie selon AviList. La fin octobre correspond donc au passage et à l’approche de l’hivernage au Levant et dans le Golfe, avec un statut différent pour les résidents."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "L’étude de l’épervier éclaire les relations entre rapaces, proies et contaminants circulant dans les chaînes alimentaires. Les travaux britanniques ont documenté un déclin historique provoqué par les pesticides organochlorés amincissant les coquilles, puis un rétablissement avec leur réduction. La référence koweïtienne cite les tirs indiscriminés comme menace locale. AviList 2026 indique « Préoccupation mineure » mondialement, tandis que les populations locales nécessitent leur propre suivi. Préserver arbres et voies de déplacement et limiter les poisons aide à maintenir ce prédateur dans son système naturel."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026",
+                "RSPB — Sparrowhawk",
+                "British Trust for Ornithology — BirdFacts: Sparrowhawk",
+                "Naturalis Biodiversity Center — Birds of Europe: Eurasian Sparrowhawk",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "KuwaitBirds / Biodiversity East — Eurasian Sparrowhawk",
+                "Boland and Al-Suhaibany — The Birds of Saudi Arabia (2020), species account reproduced by KSA Nature"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Stein Arne Jensen — CC0-1.0."
+        }
+      },
+      "published": "2026-10-31",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "sparrowhawk"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    }
+  ]
+}
