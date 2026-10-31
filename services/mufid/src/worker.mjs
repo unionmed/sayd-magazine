@@ -1,4 +1,4 @@
-import {acceptPlaceEvidence} from './place-evidence.mjs';
+import {acceptPlaceEvidence,partialPlaceInformation} from './place-evidence.mjs';
 import {verifyLegalNotice} from './evidence.mjs';
 import {akkarScope,regionalDefects,regionalReviewNote} from './regional-evidence.mjs';
 import {sanitizeTrip,accessReviewNeeded,ACCESS_NOTE,parseItinerary,itineraryNeedsReview} from './trips.mjs';
@@ -82,6 +82,10 @@ export function createHandler(network=fetch,options={}) {
       if(!output.answer || data.status!=='completed')return reply({error:'incomplete_response',articles:cards},502);
       if(web && !output.verified && !(input.mode==='plan'&&input.task==='itinerary'))return reply({error:'verification_failed',articles:cards},502);
       let itinerary;const defects=[];let consulted=output.sources;const initialResearch=output.verified;
+      const partialReply=(flags={})=>{
+        const partial=partialPlaceInformation(input,output.sources);
+        return reply({answer:partial.summary,reviewed_leads:partial.reviewed_leads,enquiry_contacts:partial.enquiry_contacts,articles:cards,sources:partial.sources,verified:false,checked_at:null,sources_consulted:partial.sources_consulted,partial_information:true,plan_review_required:true,...(akkarScope(input)?{regional_review_required:true}:{}),...(input.trip?.activities?.includes('camping')?{camping_review_required:true}:{}),...flags});
+      };
       const parseReviewed=(answer,sources)=>{
         const parsed=parseItinerary(answer,sources,input,defects);
         if(!parsed)return null;
@@ -102,16 +106,15 @@ export function createHandler(network=fetch,options={}) {
           // A correction may reuse actual pages retrieved in the first response.
           // No sources in either response still fails closed.
           output.verified=output.verified||initialResearch;
-          if(data.status!=='completed'||!output.answer||!output.verified)return reply({error:'itinerary_unavailable',articles:cards},502);
+          if(data.status!=='completed'||!output.answer)return reply({error:'itinerary_unavailable',articles:cards},502);
+          if(!output.verified){
+            // Previously reviewed information may still help, explicitly dated.
+            if(partialPlaceInformation(input,output.sources).has_information)return partialReply({research_unavailable:true});
+            return reply({error:'itinerary_unavailable',articles:cards},502);
+          }
           itinerary=parseReviewed(output.answer,output.sources);
         }
-        if(!itinerary&&akkarScope(input))return reply({answer:regionalReviewNote(input),articles:cards,sources:[],verified:false,regional_review_required:true});
-        if(!itinerary&&input.trip?.activities?.includes('camping')){const note={ar:'لم أتمكن من توثيق خيمة بالسعة المطلوبة وقبول الأطفال من الجهة المشغلة؛ لذلك لم أعتمد برنامج مبيت لهذه الأسرة. راجع تفاصيل المخيم في المصادر للتأكد من السعة وسياسة الأطفال والحجز، ولا تعتبر بيت شجرة بسرير مزدوج خيمة عائلية.',en:'I could not verify a tent with the required capacity and child admission from its operator, so I have not accepted this overnight plan. The campsite references can help check capacity, child policy and booking; a double-bed treehouse is not a family tent.',fr:'Je n’ai pas pu confirmer une tente de capacité suffisante et l’accueil des enfants auprès de l’exploitant. Ce programme de nuitée n’est donc pas retenu. Vérifiez la capacité, les conditions d’accueil et la réservation dans les références du camping ; une cabane avec un lit double ne remplace pas une tente familiale.'};return reply({answer:note[input.lang],sources:output.sources,articles:cards,verified:false,camping_review_required:true});}
-        if(!itinerary){
-          // Build a bounded gap from reviewed facts, never from a rejected draft.
-          const partial=acceptPlaceEvidence({summary:'',format:'advice',days:[]},output.sources,input).plan;
-          return reply({answer:partial.summary,sources:output.sources,articles:cards,verified:false,sources_consulted:output.sources.length>0,plan_review_required:true,missing_details:[...new Set(defects.map(d=>d.split(':')[0]))]});
-        }
+        if(!itinerary)return partialReply({missing_details:[...new Set(defects.map(d=>d.split(':')[0]))]});
         if(itinerary.legal?.status&&itinerary.legal.status!=='unconfirmed'&&!await verifyLegalNotice(itinerary.legal,network)){
           itinerary.legal={status:'unconfirmed',season_start_year:new Date().getUTCFullYear(),publication_date:null,source_url:itinerary.legal.source_url};output.verified=false;
         }
@@ -128,9 +131,10 @@ export function createHandler(network=fetch,options={}) {
           }
         }
         if(!itinerary.days.length)output.verified=false;
-        if(itinerary.regional_review_required){output.verified=false;output.sources=[...new Set(itinerary.days.flatMap(d=>d.stops.flatMap(s=>s.verification?.sources||[s.source_url])))].map(url=>output.sources.find(s=>s.url===url)||{url,title:new URL(url).hostname});}
+        if(itinerary.regional_review_required&&itinerary.days.length){output.verified=false;output.sources=[...new Set(itinerary.days.flatMap(d=>d.stops.flatMap(s=>s.verification?.sources||[s.source_url])))].map(url=>output.sources.find(s=>s.url===url)||{url,title:new URL(url).hostname});}
         // Consulted URLs are not a semantic audit of capacity, locality or access.
-        output.sources_consulted=output.sources.length>0;
+        if(itinerary.partial_sources)output.sources=itinerary.partial_sources;
+        output.sources_consulted=itinerary.partial_sources?itinerary.partial_sources_consulted:output.sources.length>0;
         output.verified=false;
         output.answer=itinerary.summary;
       }

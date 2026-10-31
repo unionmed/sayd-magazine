@@ -82,7 +82,7 @@ test('actual bad dining output replayed through handler twice yields a review no
  const c=recorded.cases.find(c=>c.id.endsWith('nature-dining'));let calls=0;
  const handler=createHandler(async(url,opts)=>{calls++;assert.equal(url,'https://api.openai.com/v1/responses');if(calls===2)assert.ok(JSON.parse(JSON.parse(opts.body).input).revision.regional_defects.length);return response(c.calls[0]);});
  const res=await handler(request(c.input),env),body=await res.json();
- assert.equal(calls,2);assert.equal(res.status,200);assert.equal(body.verified,false);assert.equal(body.regional_review_required,true);assert.equal(body.itinerary,undefined);assert.deepEqual(body.sources,[]);assert.ok(!/Oakland|Anawa|حاصبيا/.test(body.answer));
+ assert.equal(calls,2);assert.equal(res.status,200);assert.equal(body.verified,false);assert.equal(body.regional_review_required,true);assert.equal(body.itinerary,undefined);assert.ok(body.sources.every(s=>s.url==='https://reefassociation.org/reef-encounters-2026/'));assert.match(body.answer,/2026-09-25/);assert.match(body.answer,/2026-10-25/);assert.ok(!/Oakland|Anawa|حاصبيا/.test(body.answer));
 });
 test('bounded revision can accept a reviewed local restaurant, preserving uncertainty instead of claiming a verified trip',async()=>{
  const c=recorded.cases.find(c=>c.id.endsWith('nature-dining'));let calls=0;

@@ -10,8 +10,8 @@ for(const row of frozen)test('recorded missing-source response receives exactly 
  let calls=0;const h=createHandler(async(u,o)=>{calls++;if(calls===1)return response(row.first_answer);const p=JSON.parse(o.body),ctx=JSON.parse(p.input);assert.equal(calls,2);assert.equal(p.max_tool_calls,2);assert.match(ctx.revision.defects,/web_sources_missing/);return response(JSON.stringify(valid),[home,dining]);});
  const r=await h(req(),env),out=await r.json();assert.equal(r.status,200);assert.equal(calls,2);assert.equal(out.itinerary.days[0].stops[0].verification.evidence_id,'al-wadi-mar-chaaya');assert.equal(out.verified,false);
 });
-test('missing sources after the correction remain rejected; verification mode does not gain a retry',async()=>{
- for(const mode of ['plan','verify']){let calls=0;const h=createHandler(async()=>{calls++;return response(JSON.stringify(valid));});const res=await h(req(mode),env);assert.equal(res.status,502);assert.equal(calls,mode==='plan'?2:1);}
+test('missing current search yields dated stored information only in planning; verify still rejects without a retry',async()=>{
+ for(const mode of ['plan','verify']){let calls=0;const h=createHandler(async()=>{calls++;return response(JSON.stringify(valid));});const res=await h(req(mode),env);assert.equal(res.status,mode==='plan'?200:502);assert.equal(calls,mode==='plan'?2:1);if(mode==='plan'){const out=await res.json();assert.equal(out.sources_consulted,false);assert.equal(out.verified,false);assert.equal(out.itinerary,undefined);assert.match(out.answer,/2026-10-29/);}}
 });
 test('camping research and empty-plan explanation do not relabel restaurants or museums as campsites',()=>{
  const input={lang:'ar',query:'خيمة لطفلين',trip:{destination:'المتن وبعبدا، جبل لبنان، لبنان',activities:['camping']}};
@@ -35,5 +35,5 @@ test('unconfirmed Lebanese season keeps reviewed licence requirements without as
 test('relevant consulted evidence remains visible as partial information without an invented itinerary',()=>{
  const input={lang:'ar',query:'مطعم في قلب الطبيعة',trip:{destination:'المتن وبعبدا، لبنان',activities:['picnic']}};
  const out=acceptPlaceEvidence({summary:'Invented cafe is open',days:[]},[{url:home},{url:dining}],input).plan;
- assert.match(out.summary,/Al Wadi/);assert.match(out.summary,/03 448364/);assert.ok(!out.summary.includes('Invented'));assert.equal(out.days.length,0);assert.equal(out.reviewed_leads.length,1);
+ assert.match(out.summary,/Al Wadi/);assert.match(out.summary,/03 448364/);assert.ok(!out.summary.includes('Invented'));assert.equal(out.days.length,0);assert.equal(out.reviewed_leads.length,2);assert.equal(out.reviewed_leads.find(x=>x.name==='Al Wadi').retrieved_this_request,true);assert.equal(out.reviewed_leads.find(x=>x.name==='Lanai').retrieved_this_request,false);
 });

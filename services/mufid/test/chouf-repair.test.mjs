@@ -14,10 +14,10 @@ test('recorded hiking correction reuses earlier research but still rejects unsup
  const res=await h(req(row.input),env),out=await res.json();assert.equal(calls,2);assert.equal(res.status,200);
  assert.equal(out.plan_review_required,true);assert.match(out.answer,/durée|temps/);assert.ok(!out.answer.includes('accès confirmé'));assert.ok(!out.itinerary?.days?.length);assert.equal(out.verified,false);
 });
-test('recorded repeat with no sources in either response still fails closed',async()=>{
+test('recorded repeat with no current search returns only dated editorial facts, never the rejected route',async()=>{
  const row=frozen.find(x=>x.id.endsWith('-repeat'));let calls=0;
  const h=createHandler(async()=>{const x=row.calls[calls++];return response(x.answer,x.sources);});
- assert.equal((await h(req(row.input),env)).status,502);assert.equal(calls,2);
+ const res=await h(req(row.input),env),out=await res.json();assert.equal(res.status,200);assert.equal(calls,2);assert.equal(out.partial_information,true);assert.equal(out.sources_consulted,false);assert.equal(out.verified,false);assert.ok(!out.itinerary?.days?.length);assert.match(out.answer,/2026-10-30/);assert.ok(!out.answer.includes('قصر بيت الدين'));assert.ok(!out.answer.includes('Soufrat'));assert.match(out.answer,/بكرزاي/);
 });
 test('completed correction may use actually consulted earlier pages without another search',async()=>{
  const r=PLACE_EVIDENCE.find(x=>x.id==='al-wadi-mar-chaaya');

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "shouf-reserve-enquiries",
+    "names": {
+      "ar": "إدارة محمية أرز الشوف",
+      "en": "Shouf Biosphere Reserve administration",
+      "fr": "Administration de la réserve du Chouf"
+    },
+    "regions": [
+      "الشوف",
+      "chouf",
+      "shouf"
+    ],
+    "activities": [
+      "walking",
+      "hiking",
+      "camping",
+      "barbecue",
+      "birds",
+      "offroad"
+    ],
+    "phone": "+961 5 350250",
+    "email": "info@shoufcedar.org",
+    "source_url": "https://www.shoufcedar.org/visiting_us",
+    "checked_at": "2026-10-31",
+    "publication_date": null,
+    "description": {
+      "ar": "إتاحة المدخل والمسار المناسب ومدة المشي وقواعد المبيت والنار؛ رقم الإدارة ليس حجز مخيم ولا إثبات خيمة لأربعة أو قبول الأطفال.",
+      "en": "entrance access, a suitable trail, walking duration and overnight/fire rules; this administration contact is not a campsite booking or proof of a four-person tent or child admission.",
+      "fr": "l’accès, un sentier adapté, sa durée et les règles de nuitée et de feu ; ce contact administratif ne confirme ni camping, ni tente pour quatre, ni accueil des enfants."
+    }
+  }
+]

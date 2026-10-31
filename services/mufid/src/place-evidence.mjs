@@ -2,6 +2,7 @@
 import {normalize} from './core.mjs';
 import {AKKAR_EVIDENCE,evidenceKey} from './regional-evidence.mjs';
 import additional from './reviewed-places.json' with {type:'json'};
+import enquiries from './reviewed-enquiries.json' with {type:'json'};
 export const PLACE_EVIDENCE=[...AKKAR_EVIDENCE.map(p=>({...p,regions:['عكار','akkar']})),...additional];
 function inDestination(place,input){
  const raw=input.trip?.destination||input.destination;
@@ -35,24 +36,49 @@ function missingActivityNote(input,lang){
  const acts=input.trip?.activities||[];
  const kind=acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':/هايك|hiking|randonn|مسار|\btrail\b/.test(normalize(input.query))?'trail':'other';
  const notes={
- camping:{ar:'لم تتأكد من الجهة المشغلة خيمة بالسعة المطلوبة وقبول الأطفال ومرافق المبيت والحجز؛ لذلك لا يوجد برنامج تخييم معتمد لهذه الأسرة.',en:'Operator evidence has not confirmed the required tent capacity, child admission, overnight facilities and booking; no family camping plan is accepted.',fr:'La capacité de la tente, l’accueil des enfants, les équipements et la réservation ne sont pas confirmés par l’exploitant ; aucune nuitée familiale n’est validée.'},
+ camping:{ar:'المتبقي تأكيده من الجهة المشغلة: السعة الفعلية للخيمة المطلوبة وقبول الأطفال ومرافق المبيت وتوفر الحجز. لا تعتبر المعلومات المتاحة حجزًا أو تأكيدًا لهذه الشروط.',en:'Still to confirm with the operator: required tent capacity, child admission, overnight facilities and booking availability. The available information is not a booking or confirmation of those conditions.',fr:'À confirmer auprès de l’exploitant : capacité de la tente, accueil des enfants, équipements et disponibilité. Ces informations ne constituent ni une réservation ni une confirmation de ces conditions.'},
  barbecue:{ar:'لم يتأكد إذن الشواء الحالي من إدارة موقع محدد، مع الطاولات والمرافق المطلوبة؛ لذلك لا أعتمد مكانًا جاهزًا للشواء ولا أوصي بإشعال النار.',en:'Current barbecue permission, tables and facilities have not been confirmed by a specific site operator; no ready-to-use barbecue site is accepted.',fr:'L’autorisation actuelle de barbecue, les tables et les équipements ne sont pas confirmés par un exploitant précis ; aucun site de barbecue n’est validé.'},
  trail:{ar:'لم تكتمل أدلة مسار واحد يناسب الوقت المطلوب، ببداية ونهاية وطول وصعوبة وخريطة وخطة عودة موثقة.',en:'Evidence is incomplete for one trail within the requested time, with documented endpoints, distance, difficulty, map and return plan.',fr:'Les preuves restent incomplètes pour un sentier adapté au temps demandé : départ, arrivée, distance, difficulté, carte et retour.'},
- other:{ar:'لم يكتمل دليل المكان أو شروط النشاط اللازمة لبرنامج قابل للتنفيذ.',en:'Place evidence or essential activity conditions remain incomplete for an actionable plan.',fr:'Les preuves du lieu ou les conditions essentielles de l’activité restent incomplètes pour un programme utilisable.'}};
+ other:{ar:'لم يتأكد الفتح والوصول وتوفر الحجز حاليًا.',en:'Current opening, access and booking availability remain unconfirmed.',fr:'Ouverture, accès et disponibilité actuels restent à confirmer.'}};
  return notes[kind][lang];
 }
-export function placeEvidenceGuide(input,catalog=PLACE_EVIDENCE){return catalog.filter(p=>inDestination(p,input)&&activityMatch(p,input)).map(({id,names,kind,locality,sources,basis,checked_at,trail,nature_dining,required_sources,camping,source_role})=>({id,names,kind,locality,sources,basis,checked_at,trail,nature_dining,required_sources,camping,source_role,access:'unconfirmed'}));}
+function informationDateNote(p,lang,retrieved){
+ const date=p.publication_date||p.listing_page_date||null,review=p.checked_at||null;
+ const period=p.information_date||p.event_dates||null;
+ const old=String(period||date||'').slice(0,4)<String(new Date().getUTCFullYear())&&!!(period||date);
+ const notes={
+ ar:[date?'تاريخ نشر المصدر: '+date+'؛':'تاريخ نشر المصدر غير محدد؛',period?'الفترة التي تصفها المعلومة: '+period+'؛':'',old?'معلومة أقدم من العام الجاري؛':'',review?'آخر مراجعة للمصدر: '+review+'؛':'تاريخ المراجعة غير متاح؛',retrieved?'أُعيد الاطلاع على مصادرها في هذا الطلب، دون تأكيد الإتاحة أو الحجز الآن.':'معلومات محفوظة من المراجعة السابقة؛ لم يُعد الاطلاع على جميع مصادرها في هذا الطلب.'],
+ en:[date?'Source published: '+date+';':'Source publication date unknown;',period?'Information period: '+period+';':'',old?'Information predates the current year;':'',review?'Last source review: '+review+';':'Review date unavailable;',retrieved?'Supporting pages were consulted in this request; present access and booking remain unconfirmed.':'Stored information from the earlier review; not all supporting pages were consulted in this request.'],
+ fr:[date?'Publication de la source : '+date+' ;':'Date de publication inconnue ;',period?'Période décrite : '+period+' ;':'',old?'Information antérieure à l’année en cours ;':'',review?'Dernière lecture : '+review+' ;':'Date de lecture inconnue ;',retrieved?'Sources consultées dans cette demande ; accès et réservation actuels non confirmés.':'Informations conservées de la lecture précédente ; toutes les sources n’ont pas été relues dans cette demande.']};
+ return notes[lang].filter(Boolean).join(' ');
+}
+// A dated editorial snapshot can inform an enquiry without certifying a trip.
+// It never uses the rejected model draft, its place names, phones or access claims.
+export function partialPlaceInformation(input,sources=[],catalog=PLACE_EVIDENCE,contacts=enquiries){
+ const lang=['ar','en','fr'].includes(input.lang)?input.lang:'ar';
+ const consulted=new Set(sources.map(s=>evidenceKey(s.url)));
+ const urls=p=>[...new Set([...(p.sources||[]),...(p.required_sources||[])])];
+ const leads=catalog.filter(p=>inDestination(p,input)&&activityMatch(p,input)&&/^\d{4}-\d{2}-\d{2}$/.test(p.checked_at||'')).slice(0,3).map(p=>{
+  const supporting=urls(p),retrieved=supporting.every(u=>consulted.has(evidenceKey(u)));
+  return {name:p.names[0],description:p.description[lang],source_url:p.sources[0],sources:supporting,publication_date:p.publication_date||p.listing_page_date||null,information_date:p.information_date||p.event_dates||null,last_reviewed_at:p.checked_at,retrieved_this_request:retrieved,date_note:informationDateNote(p,lang,retrieved),current_access:'unconfirmed'};
+ });
+ const acts=input.trip?.activities||[],q=normalize(input.query);
+ const purpose=acts.includes('hunting')?'hunting':acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':/هايك|hiking|randonn|مسار|\btrail\b/.test(q)?'hiking':/مطعم|مطاعم|restaurant|dining/.test(q)?'dining':'walking';
+ const enquiryContacts=contacts.filter(p=>inDestination(p,input)&&p.activities.includes(purpose)).slice(0,2).map(p=>({...p,description:p.description[lang],name:p.names[lang],retrieved_this_request:consulted.has(evidenceKey(p.source_url)),date_note:informationDateNote(p,lang,consulted.has(evidenceKey(p.source_url)))}));
+ const labels={ar:{facts:'المعلومات المتاحة، مع حدودها:',contact:'جهة مرشحة للاستفسار، وليست تأكيدًا لتوفر النشاط:',ask:'اسألها تحديدًا عن',phone:'الهاتف',email:'البريد'},en:{facts:'Available information and its limits:',contact:'Enquiry contact, not confirmation that the activity is available:',ask:'Specifically ask about',phone:'Phone',email:'Email'},fr:{facts:'Informations disponibles et leurs limites :',contact:'Contact à interroger, sans confirmation de disponibilité :',ask:'À vérifier précisément',phone:'Téléphone',email:'Courriel'}}[lang];
+ const details=leads.map(p=>p.name+': '+p.description+'\n'+p.date_note+'\n'+p.source_url);
+ const inquiries=enquiryContacts.map(p=>labels.contact+' '+p.name+'؛ '+[p.phone?labels.phone+': '+p.phone:'',p.email?labels.email+': '+p.email:''].filter(Boolean).join('؛ ')+'\n'+labels.ask+' '+p.description+'\n'+p.date_note+'\n'+p.source_url);
+ const summary=[leads.length?labels.facts:'',...details,...inquiries,missingActivityNote(input,lang)].filter(Boolean).join('\n\n');
+ const sourceUrls=[...new Set([...leads.flatMap(p=>p.sources),...enquiryContacts.map(p=>p.source_url)])];
+ return {summary,reviewed_leads:leads,enquiry_contacts:enquiryContacts,has_information:!!(leads.length||enquiryContacts.length),sources:sourceUrls.map(url=>({url,title:new URL(url).hostname})),sources_consulted:sourceUrls.length>0&&sourceUrls.every(u=>consulted.has(evidenceKey(u)))};
+}
+export function placeEvidenceGuide(input,catalog=PLACE_EVIDENCE){return catalog.filter(p=>inDestination(p,input)&&activityMatch(p,input)).map(({id,names,kind,locality,sources,basis,checked_at,trail,nature_dining,required_sources,camping,source_role,description,publication_date,information_date})=>({id,names,kind,locality,sources,basis,checked_at,trail,nature_dining,required_sources,camping,source_role,description,publication_date,information_date,access:'unconfirmed'}));}
 export function acceptPlaceEvidence(plan,sources,input,catalog=PLACE_EVIDENCE){
  if(!plan)return {ok:false,reason:'missing_plan',name:''};
  if(!plan.days.length){
   if(plan.legal)return {ok:true,plan};
-  const lang=['ar','en','fr'].includes(input.lang)?input.lang:'ar';
-  const consulted=new Set(sources.map(s=>evidenceKey(s.url)));
-  const leads=catalog.filter(p=>inDestination(p,input)&&activityMatch(p,input)&&p.sources.some(url=>consulted.has(evidenceKey(url)))&&(p.required_sources||[]).every(url=>consulted.has(evidenceKey(url))));
-  const details=leads.slice(0,2).map(p=>p.names[0]+': '+p.description[lang]).join('\n');
-  const partial={ar:'معلومات جزئية موثقة، وليست برنامجًا جاهزًا:',en:'Reviewed partial information, not a ready itinerary:',fr:'Informations partielles documentées, pas un programme prêt :'}[lang];
-  const summary=missingActivityNote(input,lang)+(details?'\n'+partial+'\n'+details:'');
-  return {ok:true,plan:{...plan,summary,reviewed_leads:leads.map(p=>({name:p.names[0],source_url:p.sources[0],description:p.description[lang]}))}};
+  const partial=partialPlaceInformation(input,sources,catalog);
+  return {ok:true,plan:{...plan,summary:partial.summary,reviewed_leads:partial.reviewed_leads,enquiry_contacts:partial.enquiry_contacts,partial_sources:partial.sources,partial_sources_consulted:partial.sources_consulted}};
  }
  const consulted=new Set(sources.map(s=>evidenceKey(s.url)));
  const accepted=structuredClone(plan),lang=['ar','en','fr'].includes(input.lang)?input.lang:'ar';
@@ -73,7 +99,7 @@ export function acceptPlaceEvidence(plan,sources,input,catalog=PLACE_EVIDENCE){
   }
   if(stop.trail&&!record.trail)return fail('trail_measurements_unreviewed');
   // These descriptions intentionally keep access/booking separate from identity.
-  stop.locality=record.locality[lang];stop.description=record.description[lang];
+  stop.locality=record.locality[lang];stop.description=record.description[lang]+' '+informationDateNote(record,lang,true);
   stop.walking={ar:'المدخل والجهد والإتاحة الحالية تحتاج تأكيدًا من الجهة المشغلة.',en:'Confirm the entrance, effort and current access with the operator.',fr:'Entrée, effort et accès actuel à confirmer auprès de l’exploitant.'}[lang];
   if(record.trail){
    if(!stop.trail)return fail('reviewed_trail_fields_required');

@@ -56,7 +56,8 @@
       "fr": "Le palais Al Mzar à Ghazir figure dans la décision touristique 65 de 2024 ; accès actuel non confirmé."
     },
     "checked_at": "2026-10-28",
-    "basis": "Primary pages reviewed in campaign reports of 27–28 October 2026. Identity and activity evidence only; current access and booking are unconfirmed."
+    "basis": "Primary pages reviewed in campaign reports of 27–28 October 2026. Identity and activity evidence only; current access and booking are unconfirmed.",
+    "information_date": "2024"
   },
   {
     "id": "ghazir-valley",
@@ -84,7 +85,8 @@
       "fr": "Wadi Ghazir figure dans la décision écotouristique 69 de 2024 ; entrée pédestre et sentier mesuré non établis."
     },
     "checked_at": "2026-10-28",
-    "basis": "Primary pages reviewed in campaign reports of 27–28 October 2026. Identity and activity evidence only; current access and booking are unconfirmed."
+    "basis": "Primary pages reviewed in campaign reports of 27–28 October 2026. Identity and activity evidence only; current access and booking are unconfirmed.",
+    "information_date": "2024"
   },
   {
     "id": "beit-noun-dining",
@@ -151,7 +153,9 @@
       "fr": "Musée d’art à Mtein, classé par décision touristique 139 dans les décisions 2023 publiées le 30 avril 2025 ; visite à confirmer."
     },
     "checked_at": "2026-10-29",
-    "basis": "Primary-source review 29 October 2026. Identity and published service facts only, not same-day opening or access."
+    "basis": "Primary-source review 29 October 2026. Identity and published service facts only, not same-day opening or access.",
+    "publication_date": "2025-04-30",
+    "information_date": "2023"
   },
   {
     "id": "al-wadi-mar-chaaya",
