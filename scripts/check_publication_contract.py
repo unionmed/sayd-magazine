@@ -186,7 +186,11 @@ def check(base=None):
         assert [len(g) for g in groups[:3]]==[1,4,8],f'{lang}: lead/side/updates counts'
         assert not nodes(t,'memory-strip') and contract['counts']['memory']==0 and c['memory_visible'] is False, f'{lang}: Memory display must be removed'
         from interview_collection import homepage_slugs
+        import adonis_tv_publication
+        external=adonis_tv_publication.active(ROOT)
+        if external:adonis_tv_publication.check_published(ROOT)
         def selected(d):
+            if d['door']=='tv':return adonis_tv_publication.selected_slugs(ROOT,d['slugs'])
             return homepage_slugs(lang,c) if d['door']=='interviews' else d['slugs']
         import tv_publication
         native=bool((ROOT/tv_publication.SOURCE).is_file())
@@ -202,6 +206,11 @@ def check(base=None):
         for group_index,group in enumerate(groups):
             row=[]
             for card in group:
+                if card.get('data-external-selection'):
+                    assert external and card.get('data-external-selection')==adonis_tv_publication.ID
+                    assert card.getparent().getparent().get('data-tv-group')=='sayd-selections'
+                    row.append(('external:'+adonis_tv_publication.ID,card.xpath('.//img/@src')))
+                    continue
                 if card.get('data-native-video'):
                     assert native and card.get('data-native-video')==tv_publication.ID
                     assert card.getparent().getparent().get('data-tv-group')=='sayd-selections'
@@ -233,7 +242,7 @@ def check(base=None):
         for group in groups[1:3]:
             dates=[day(' '.join(n.xpath('.//*['+css_class('meta')+' or '+css_class('feed-date')+']/text()'))) for n in group]
             assert all(dates) and dates==sorted(dates,reverse=True),f'{lang}: dates out of order {dates}'
-        for d,row in zip(c['ia_door_sections'],slots[3:]):assert [s for s,_ in row]==(['youtube:'+v['id'] for v in channel_videos]+(['native:'+tv_publication.ID] if native else []) if d['door']=='tv' else [])+selected(d),(lang,d['door'])
+        for d,row in zip(c['ia_door_sections'],slots[3:]):assert [s for s,_ in row]==(['youtube:'+v['id'] for v in channel_videos]+(['external:'+adonis_tv_publication.ID] if external else [])+(['native:'+tv_publication.ID] if native else []) if d['door']=='tv' else [])+selected(d),(lang,d['door'])
         # Publication dates must descend within every lower homepage door.
         # Previously Wildlife placed a 20 September item ahead of 5 October.
         for idx,door in enumerate(c['ia_door_sections']):
@@ -252,7 +261,7 @@ def check(base=None):
         co_slug='حين-يتغير-الساحل-أين-تستريح-الطيور' if lang=='ar' else 'when-the-coast-changes-where-do-birds-rest'
         assert co_slug not in {slug(h) for h in wildlife_listing.xpath('//article//a/@href')}, f'{lang}: coastal story still in wildlife listing'
         assert co_slug in {slug(h) for h in hunting_listing.xpath('//article//a/@href')}, f'{lang}: coastal story missing from hunting listing'
-        assert [s for s,_ in slots[3+next(i for i,d in enumerate(DOORS) if d[0]=='tv')]]==['youtube:'+v['id'] for v in channel_videos]+(['native:'+tv_publication.ID] if native else [])+contract['tv_slugs'],f'{lang}: protected TV order changed'
+        assert [s for s,_ in slots[3+next(i for i,d in enumerate(DOORS) if d[0]=='tv')]]==['youtube:'+v['id'] for v in channel_videos]+(['external:'+adonis_tv_publication.ID] if external else [])+(['native:'+tv_publication.ID] if native else [])+adonis_tv_publication.selected_slugs(ROOT,contract['tv_slugs']),f'{lang}: protected TV order changed'
         interview_index=3+next(i for i,d in enumerate(DOORS) if d[0]=='interviews')
         interview_slots=slots[interview_index]
         expected_interviews=approved_interview_selection(contract,c,lang)
