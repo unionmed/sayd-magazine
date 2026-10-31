@@ -115,7 +115,17 @@
     "الذعرة-الرمادية",
     "القلعي-المطوق",
     "الحميراء-الشائعة",
-    "الهدهد"
+    "الهدهد",
+    "الدريجة-الصغيرة",
+    "الطيطوي-الأخضر",
+    "حسون-الشوك",
+    "البومة-الصغيرة",
+    "الشرشور-الجبلي",
+    "النعار-الأوروبي",
+    "البط-الحديدي",
+    "الحسون-التفاحي",
+    "الحوام-الشائع",
+    "الباشق-الأوراسي"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -181,7 +191,17 @@
     "الذعرة-الرمادية",
     "القلعي-المطوق",
     "الحميراء-الشائعة",
-    "الهدهد"
+    "الهدهد",
+    "الدريجة-الصغيرة",
+    "الطيطوي-الأخضر",
+    "حسون-الشوك",
+    "البومة-الصغيرة",
+    "الشرشور-الجبلي",
+    "النعار-الأوروبي",
+    "البط-الحديدي",
+    "الحسون-التفاحي",
+    "الحوام-الشائع",
+    "الباشق-الأوراسي"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -563,7 +583,17 @@
     "الذعرة-الرمادية": "birds",
     "القلعي-المطوق": "birds",
     "الحميراء-الشائعة": "birds",
-    "الهدهد": "birds"
+    "الهدهد": "birds",
+    "الدريجة-الصغيرة": "birds",
+    "الطيطوي-الأخضر": "birds",
+    "حسون-الشوك": "birds",
+    "البومة-الصغيرة": "birds",
+    "الشرشور-الجبلي": "birds",
+    "النعار-الأوروبي": "birds",
+    "البط-الحديدي": "birds",
+    "الحسون-التفاحي": "birds",
+    "الحوام-الشائع": "birds",
+    "الباشق-الأوراسي": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1216,6 +1246,96 @@
         "ar": "هدهد بعرف ذي أطراف سوداء ومنقار طويل بين الأعشاب",
         "en": "Common Hoopoe with a black-tipped crest and long bill among grasses",
         "fr": "Huppe fasciée à huppe terminée de noir et long bec parmi les herbes"
+      }
+    },
+    "الدريجة-الصغيرة": {
+      "image": "media/publications/daily-birds-20261031/little-stint.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "دريجة صغيرة بريش يافع على ضفة طينية",
+        "en": "Juvenile-plumaged Little Stint on a muddy shore",
+        "fr": "Bécasseau minute en plumage juvénile sur une rive vaseuse"
+      }
+    },
+    "الطيطوي-الأخضر": {
+      "image": "media/publications/daily-birds-20261031/green-sandpiper.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طيطوي أخضر يقف عند حافة الماء",
+        "en": "Green Sandpiper standing at the water’s edge",
+        "fr": "Chevalier cul-blanc au bord de l’eau"
+      }
+    },
+    "حسون-الشوك": {
+      "image": "media/publications/daily-birds-20261031/eurasian-siskin.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر حسون الشوك على غصن شجرة مخروطية",
+        "en": "Male Eurasian Siskin on a conifer branch",
+        "fr": "Tarin des aulnes mâle sur une branche de conifère"
+      }
+    },
+    "البومة-الصغيرة": {
+      "image": "media/publications/daily-birds-20261031/little-owl.png",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بومة صغيرة بعينين صفراوين على جدار",
+        "en": "Little Owl with yellow eyes perched on a wall",
+        "fr": "Chevêche d’Athéna aux yeux jaunes perchée sur un mur"
+      }
+    },
+    "الشرشور-الجبلي": {
+      "image": "media/publications/daily-birds-20261031/brambling.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر الشرشور الجبلي برأس أسود وصدر برتقالي على غصن",
+        "en": "Male Brambling with black head and orange breast perched on a branch",
+        "fr": "Pinson du Nord mâle à tête noire et poitrine orange sur une branche"
+      }
+    },
+    "النعار-الأوروبي": {
+      "image": "media/publications/daily-birds-20261031/european-serin.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر نعار أوروبي إلى جانب طائر يافع من النوع نفسه",
+        "en": "Male European Serin beside a juvenile of the same species",
+        "fr": "Serin cini mâle auprès d’un juvénile de la même espèce"
+      }
+    },
+    "البط-الحديدي": {
+      "image": "media/publications/daily-birds-20261031/ferruginous-duck.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بط حديدي يسبح قرب القصب في أسوان بمصر",
+        "en": "Ferruginous Duck swimming beside reeds in Aswan, Egypt",
+        "fr": "Fuligule nyroca nageant près des roseaux à Assouan, en Égypte"
+      }
+    },
+    "الحسون-التفاحي": {
+      "image": "media/publications/daily-birds-20261031/common-linnet.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر الحسون التفاحي بصدر محمر يقف على وتد خشبي",
+        "en": "Male Common Linnet with reddish breast perched on a wooden post",
+        "fr": "Linotte mélodieuse mâle à poitrine rougeâtre sur un piquet de bois"
+      }
+    },
+    "الحوام-الشائع": {
+      "image": "media/publications/daily-birds-20261031/common-buzzard.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "حوام شائع يقف على وتد في أرض مفتوحة",
+        "en": "Common Buzzard perched on a post in open country",
+        "fr": "Buse variable perchée sur un piquet en terrain ouvert"
+      }
+    },
+    "الباشق-الأوراسي": {
+      "image": "media/publications/daily-birds-20261031/sparrowhawk.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "باشق أوراسي على غصن، يظهر بطنه المخطط وذيله الطويل",
+        "en": "Eurasian Sparrowhawk on a branch, showing barred underparts and a long tail",
+        "fr": "Épervier d’Europe sur une branche, montrant son dessous barré et sa longue queue"
       }
     }
   },
