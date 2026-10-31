@@ -105,7 +105,17 @@
     "الشحرور-الأوراسي",
     "الغراب-المقنع",
     "اليمام-الضاحك",
-    "عصفور-الدوري-المنزلي"
+    "عصفور-الدوري-المنزلي",
+    "القرقف-الكبير",
+    "اليمام-المطوق",
+    "الدخلة-السوداء-الرأس",
+    "الزاغ-الغربي",
+    "الذعرة-الصفراء-الغربية",
+    "القليعي-البرقش-الأحمر",
+    "الذعرة-الرمادية",
+    "القلعي-المطوق",
+    "الحميراء-الشائعة",
+    "الهدهد"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -161,7 +171,17 @@
     "الشحرور-الأوراسي",
     "الغراب-المقنع",
     "اليمام-الضاحك",
-    "عصفور-الدوري-المنزلي"
+    "عصفور-الدوري-المنزلي",
+    "القرقف-الكبير",
+    "اليمام-المطوق",
+    "الدخلة-السوداء-الرأس",
+    "الزاغ-الغربي",
+    "الذعرة-الصفراء-الغربية",
+    "القليعي-البرقش-الأحمر",
+    "الذعرة-الرمادية",
+    "القلعي-المطوق",
+    "الحميراء-الشائعة",
+    "الهدهد"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -533,7 +553,17 @@
     "الشحرور-الأوراسي": "birds",
     "الغراب-المقنع": "birds",
     "اليمام-الضاحك": "birds",
-    "عصفور-الدوري-المنزلي": "birds"
+    "عصفور-الدوري-المنزلي": "birds",
+    "القرقف-الكبير": "birds",
+    "اليمام-المطوق": "birds",
+    "الدخلة-السوداء-الرأس": "birds",
+    "الزاغ-الغربي": "birds",
+    "الذعرة-الصفراء-الغربية": "birds",
+    "القليعي-البرقش-الأحمر": "birds",
+    "الذعرة-الرمادية": "birds",
+    "القلعي-المطوق": "birds",
+    "الحميراء-الشائعة": "birds",
+    "الهدهد": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1096,6 +1126,96 @@
         "ar": "عصفور دوري منزلي ذو خد رمادي وبقعة سوداء عند الحلق واقف على العشب",
         "en": "House Sparrow with a grey cheek and black throat patch standing on grass",
         "fr": "Moineau domestique à joue grise et bavette noire, posé sur l’herbe"
+      }
+    },
+    "القرقف-الكبير": {
+      "image": "media/publications/daily-birds-20261030/great-tit.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قرقف كبير بخدين أبيضين وأسفل أصفر وشريط أسود على الصدر",
+        "en": "Great Tit with white cheeks, yellow underparts and a black breast stripe",
+        "fr": "Mésange charbonnière aux joues blanches, au dessous jaune et à la bande pectorale noire"
+      }
+    },
+    "اليمام-المطوق": {
+      "image": "media/publications/daily-birds-20261030/collared-dove.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "يمامتان مطوقتان بريش رمادي فاتح وطوق أسود خلف العنق",
+        "en": "Two Eurasian Collared Doves with pale grey plumage and black hindneck collars",
+        "fr": "Deux Tourterelles turques au plumage gris clair et au demi-collier noir"
+      }
+    },
+    "الدخلة-السوداء-الرأس": {
+      "image": "media/publications/daily-birds-20261030/sardinian-warbler.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "دخلة سوداء الرأس بحلقة عين حمراء وحلق أبيض على غصن",
+        "en": "Sardinian Warbler with a black head, red eye ring and white throat perched on a branch",
+        "fr": "Fauvette mélanocéphale à tête noire, cercle oculaire rouge et gorge blanche sur une branche"
+      }
+    },
+    "الزاغ-الغربي": {
+      "image": "media/publications/daily-birds-20261030/jackdaw.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "زاغ غربي بقفا رمادي وعين فاتحة بين الأعشاب",
+        "en": "Eurasian Jackdaw with a grey nape and pale eye among grasses",
+        "fr": "Choucas des tours à nuque grise et œil pâle parmi les herbes"
+      }
+    },
+    "الذعرة-الصفراء-الغربية": {
+      "image": "media/publications/daily-birds-20261030/yellow-wagtail.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذعرة صفراء غربية تمد جناحها على سياج ويظهر أسفلها الأصفر",
+        "en": "Western Yellow Wagtail stretching a wing on a fence, showing yellow underparts",
+        "fr": "Bergeronnette printanière étirant une aile sur une clôture, le dessous jaune visible"
+      }
+    },
+    "القليعي-البرقش-الأحمر": {
+      "image": "media/publications/daily-birds-20261030/whinchat.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قليعي بحاجب أبيض عريض وصدر برتقالي فوق ساق نبات",
+        "en": "Whinchat with a broad white eyebrow and orange breast perched on a plant stem",
+        "fr": "Tarier des prés au large sourcil blanc et à la poitrine orangée sur une tige"
+      }
+    },
+    "الذعرة-الرمادية": {
+      "image": "media/publications/daily-birds-20261030/grey-wagtail.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذعرة رمادية بذيل طويل وريش أصفر تحت الذيل فوق جذع قرب الماء",
+        "en": "Grey Wagtail with a long tail and yellow undertail perched on a log beside water",
+        "fr": "Bergeronnette des ruisseaux à longue queue et sous-caudales jaunes sur une branche au bord de l’eau"
+      }
+    },
+    "القلعي-المطوق": {
+      "image": "media/publications/daily-birds-20261030/stonechat.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قلعي مطوق على غصن بمنقار مفتوح ورأس داكن وبقعة بيضاء على جانب العنق",
+        "en": "European Stonechat perched with its bill open, dark head and white neck-side patch",
+        "fr": "Tarier pâtre perché, bec ouvert, tête sombre et plage blanche sur le côté du cou"
+      }
+    },
+    "الحميراء-الشائعة": {
+      "image": "media/publications/daily-birds-20261030/redstart.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "حميراء شائعة فتية بريش مرقش على الرأس وذيل صدئي",
+        "en": "Young Common Redstart with a mottled head and rusty tail",
+        "fr": "Jeune Rougequeue à front blanc à tête mouchetée et queue rousse"
+      }
+    },
+    "الهدهد": {
+      "image": "media/publications/daily-birds-20261030/hoopoe.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "هدهد بعرف ذي أطراف سوداء ومنقار طويل بين الأعشاب",
+        "en": "Common Hoopoe with a black-tipped crest and long bill among grasses",
+        "fr": "Huppe fasciée à huppe terminée de noir et long bec parmi les herbes"
       }
     }
   },
