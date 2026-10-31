@@ -299,5 +299,76 @@
       "https://bkerzay.com/",
       "https://bkerzay.com/dining"
     ]
+  },
+  {
+    "regions": [
+      "جزين",
+      "بكاسين",
+      "Jezzine",
+      "Bkassine",
+      "Bkassin"
+    ],
+    "checked_at": "2026-10-31",
+    "basis": "Operator Home, Restaurant and Contact read 31 October 2026. Undated visitor facts only. Unrelated spam links observed in the footer; no current availability or safe access is certified.",
+    "id": "beit-el-ghabeh-bkassine",
+    "names": [
+      "مطعم بيت الغابة",
+      "بيت الغابة",
+      "Beit El Ghabeh",
+      "BEIT EL GHÂBEH",
+      "La Maison de la Forêt Restaurant"
+    ],
+    "kind": "meal",
+    "locality": {
+      "ar": "بكاسين، قضاء جزين، لبنان",
+      "en": "Bkassine, Jezzine, Lebanon",
+      "fr": "Bkassine, Jezzine, Liban"
+    },
+    "sources": [
+      "https://lamaisondelaforet.net/en/Restaurant"
+    ],
+    "required_sources": [
+      "https://lamaisondelaforet.net/en/Restaurant",
+      "https://lamaisondelaforet.net/en/Home",
+      "https://lamaisondelaforet.net/en/Contact"
+    ],
+    "nature_dining": true,
+    "description": {
+      "ar": "مطعم بيت الغابة ضمن لا ميزون دو لا فوريه في غابة صنوبر بكاسين، يقدم مطبخ منطقة جزين. للاستفسار عن الجلسة والحجز: 07 800222 أو 78 941030، reservations@lamaisondelaforet.net. بوفيه الأحد مذكور دون تاريخ نشر؛ لا يؤكد توفره في موعدك أو فتح الطريق.",
+      "en": "Beit El Ghabeh at La Maison de la Forêt in Bkassine pine forest serves Jezzine-region cuisine. Enquiries: +961 7 800222 or +961 78 941030, reservations@lamaisondelaforet.net. The undated page mentions a Sunday buffet; current seating, booking and road access remain unconfirmed.",
+      "fr": "Beit El Ghabeh, à La Maison de la Forêt dans la pinède de Bkassine, propose la cuisine de Jezzine. Contact : +961 7 800222 ou +961 78 941030, reservations@lamaisondelaforet.net. Buffet dominical annoncé sans date ; table et accès actuel à confirmer."
+    }
+  },
+  {
+    "regions": [
+      "جزين",
+      "بكاسين",
+      "Jezzine",
+      "Bkassine",
+      "Bkassin"
+    ],
+    "checked_at": "2026-10-31",
+    "basis": "Operator Home, Restaurant and Contact read 31 October 2026. Undated visitor facts only. Unrelated spam links observed in the footer; no current availability or safe access is certified.",
+    "id": "bkassine-pine-forest",
+    "names": [
+      "غابة صنوبر بكاسين",
+      "غابة بكاسين",
+      "Bkassine Pine Forest",
+      "Pinède de Bkassine"
+    ],
+    "kind": "nature",
+    "locality": {
+      "ar": "بكاسين، قضاء جزين، لبنان",
+      "en": "Bkassine, Jezzine, Lebanon",
+      "fr": "Bkassine, Jezzine, Liban"
+    },
+    "sources": [
+      "https://lamaisondelaforet.net/en/Home"
+    ],
+    "description": {
+      "ar": "غابة صنوبر في بكاسين؛ المشغل يحدد موقع بيت الغابة داخلها. لا يثبت هذا مدخلًا عامًا أو مسارًا مقاسًا أو خيمة أو إتاحة حالية؛ للاستفسار عن ترتيبات الزيارة 07 800222 أو 78 941030.",
+      "en": "Pine forest in Bkassine; the operator locates its property within it. A public entrance, measured trail, tent and current access are not established. Visitor enquiries: +961 7 800222 or +961 78 941030.",
+      "fr": "Pinède de Bkassine où l’exploitant situe son établissement. Entrée publique, sentier mesuré, tente et accès actuel non établis. Contact : +961 7 800222 ou +961 78 941030."
+    }
   }
 ]

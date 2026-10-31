@@ -29,5 +29,34 @@
       "en": "entrance access, a suitable trail, walking duration and overnight/fire rules; this administration contact is not a campsite booking or proof of a four-person tent or child admission.",
       "fr": "l’accès, un sentier adapté, sa durée et les règles de nuitée et de feu ; ce contact administratif ne confirme ni camping, ni tente pour quatre, ni accueil des enfants."
     }
+  },
+  {
+    "id": "maison-foret-enquiries",
+    "names": {
+      "ar": "مشغّل لا ميزون دو لا فوريه – بكاسين",
+      "en": "La Maison de la Forêt operator, Bkassine",
+      "fr": "Exploitant de La Maison de la Forêt, Bkassine"
+    },
+    "regions": [
+      "جزين",
+      "بكاسين",
+      "Jezzine",
+      "Bkassine",
+      "Bkassin"
+    ],
+    "activities": [
+      "walking",
+      "hiking",
+      "camping"
+    ],
+    "phone": "+961 7 800222 / +961 78 941030",
+    "email": "reservations@lamaisondelaforet.net",
+    "source_url": "https://lamaisondelaforet.net/en/Contact",
+    "checked_at": "2026-10-31",
+    "description": {
+      "ar": "مدخل المشي وخريطة المسار وطوله وصعوبته وإمكان مشاركة شخصين؛ صفحة الأنشطة غير المؤرخة تشترط الحجز قبل يوم ودليلًا وحدًا أدنى خمسة للمشي، فلا تعتبر عرض الساعتين مناسبًا تلقائيًا لشخصين. وللمبيت اسأل عن خيمة فعلية لأربعة وقبول الطفلين والمرافق؛ صفحات الضيافة لا تثبت هذه الشروط.",
+      "en": "trail entry, map, length, difficulty and whether two people can join; the undated activities page requires booking a day ahead, a guide and a minimum of five for hiking. Ask separately about an actual four-person tent, children and facilities; these are not established by the lodging pages.",
+      "fr": "départ, carte, distance, difficulté et accueil de deux marcheurs ; la page non datée exige réservation la veille, guide et groupe de cinq minimum. Tente pour quatre, enfants et équipements à vérifier séparément."
+    }
   }
 ]
