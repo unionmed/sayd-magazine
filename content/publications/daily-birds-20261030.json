@@ -1,0 +1,2259 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261030",
+  "expected_base": "989072dfa86a0442d1e92b3c9f3567f53f54d68a",
+  "approval_reference": "private:automation-bird-encyclopedia-20261030T080000Z; Nayef standing preparation and publication authorization dated2026-10-25; ten-species trial approved2026-10-27 through2026-11-02. Scope new species AR/EN/FR encyclopedia only, no homepage/ticker/social, normal protected CI and review.",
+  "bank_search_reference": "2026-10-30 existing Sayd picture for use recursive inventory340files searched first, Birds&Wildlife126files/70images. Existing eligible bank species already published; owner iNaturalistCC-BY-NC metadata not treated as publication waiver. Full1033archive bodies (AR801/EN121/FR111), scientific names, synonyms and Arabic variants checked to avoid existing profiles. New original images and rights records saved in existing bank with actual successful Library receipts; identifiers below.",
+  "photos": [
+    {
+      "id": "great-tit",
+      "path": "docs/media/publications/daily-birds-20261030/great-tit.jpg",
+      "sha256": "e9b02f1360c86d30ccaa06a1538526dcec06cbc485a434f7a21e01f487365d86",
+      "source_sha256": "e9b02f1360c86d30ccaa06a1538526dcec06cbc485a434f7a21e01f487365d86",
+      "source_reference": "Jani Kettunen; 2021-04-18; Oulu vicinity Finland (coordinates source). https://commons.wikimedia.org/wiki/File:Parus_major_121514796.jpg; Library original libfile_366708782708819182053343fbca696a; Library rights libfile_69cc2ae33bf88191a0e644023445d5f5.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Parus_major_121514796.jpg; Library rights libfile_69cc2ae33bf88191a0e644023445d5f5"
+      },
+      "alt": {
+        "ar": "قرقف كبير بخدين أبيضين وأسفل أصفر وشريط أسود على الصدر",
+        "en": "Great Tit with white cheeks, yellow underparts and a black breast stripe",
+        "fr": "Mésange charbonnière aux joues blanches, au dessous jaune et à la bande pectorale noire"
+      },
+      "caption": {
+        "ar": "القرقف الكبير",
+        "en": "Great Tit",
+        "fr": "Mésange charbonnière"
+      }
+    },
+    {
+      "id": "collared-dove",
+      "path": "docs/media/publications/daily-birds-20261030/collared-dove.jpg",
+      "sha256": "ce71e47579960c1600827985e845a3258e9fbab8ed1f7018447c115752525b32",
+      "source_sha256": "ce71e47579960c1600827985e845a3258e9fbab8ed1f7018447c115752525b32",
+      "source_reference": "Beyond silence; 2007; Croatia. https://commons.wikimedia.org/wiki/File:Streptopelia_decaocto-cr.jpg; Library original libfile_7d192b1c8acc8191b698a35d88f7ac45; Library rights libfile_99285d21331881919bbdcf156eedc969.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Streptopelia_decaocto-cr.jpg; Library rights libfile_99285d21331881919bbdcf156eedc969"
+      },
+      "alt": {
+        "ar": "يمامتان مطوقتان بريش رمادي فاتح وطوق أسود خلف العنق",
+        "en": "Two Eurasian Collared Doves with pale grey plumage and black hindneck collars",
+        "fr": "Deux Tourterelles turques au plumage gris clair et au demi-collier noir"
+      },
+      "caption": {
+        "ar": "اليمام المطوق (فاختة أوراسية)",
+        "en": "Eurasian Collared Dove",
+        "fr": "Tourterelle turque"
+      }
+    },
+    {
+      "id": "sardinian-warbler",
+      "path": "docs/media/publications/daily-birds-20261030/sardinian-warbler.jpg",
+      "sha256": "e9c5b895cf1d91f174ba7fbc201d8c559f508c6d8efd495bbd95b9f6b6741f93",
+      "source_sha256": "e9c5b895cf1d91f174ba7fbc201d8c559f508c6d8efd495bbd95b9f6b6741f93",
+      "source_reference": "Stein Arne Jensen; 2013-05-13; Playa de Muro Mallorca Spain. https://www.flickr.com/photos/steinarnejensen/22441014014/; Library original libfile_f1fa4fc62dd88191a049e7d1ce21cf52; Library rights libfile_736a0801ca108191b2239258f822df34.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://www.flickr.com/photos/steinarnejensen/22441014014/; Library rights libfile_736a0801ca108191b2239258f822df34"
+      },
+      "alt": {
+        "ar": "دخلة سوداء الرأس بحلقة عين حمراء وحلق أبيض على غصن",
+        "en": "Sardinian Warbler with a black head, red eye ring and white throat perched on a branch",
+        "fr": "Fauvette mélanocéphale à tête noire, cercle oculaire rouge et gorge blanche sur une branche"
+      },
+      "caption": {
+        "ar": "الدخلة السوداء الرأس (الهارجة السردينية)",
+        "en": "Sardinian Warbler",
+        "fr": "Fauvette mélanocéphale"
+      }
+    },
+    {
+      "id": "jackdaw",
+      "path": "docs/media/publications/daily-birds-20261030/jackdaw.jpg",
+      "sha256": "21dadfbd65c062e09a1c9a50bccea72922d565cd64ed5fc30f8df1024c824174",
+      "source_sha256": "21dadfbd65c062e09a1c9a50bccea72922d565cd64ed5fc30f8df1024c824174",
+      "source_reference": "Matti Virtala; 2020-05-26; Oulu Finland. https://commons.wikimedia.org/wiki/File:Corvus_monedula_Oulu_Finland_2020-05-26.jpg; Library original libfile_fe31d8e4116081918d0bbaadf7581f4b; Library rights libfile_2ff59218521c8191b81bdef95bbeb0d9.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Corvus_monedula_Oulu_Finland_2020-05-26.jpg; Library rights libfile_2ff59218521c8191b81bdef95bbeb0d9"
+      },
+      "alt": {
+        "ar": "زاغ غربي بقفا رمادي وعين فاتحة بين الأعشاب",
+        "en": "Eurasian Jackdaw with a grey nape and pale eye among grasses",
+        "fr": "Choucas des tours à nuque grise et œil pâle parmi les herbes"
+      },
+      "caption": {
+        "ar": "الزاغ الغربي",
+        "en": "Eurasian Jackdaw",
+        "fr": "Choucas des tours"
+      }
+    },
+    {
+      "id": "yellow-wagtail",
+      "path": "docs/media/publications/daily-birds-20261030/yellow-wagtail.jpg",
+      "sha256": "8b429edb1df2a8845b4b565cc8a11f47660a7b20034bde50cc38d7645ba48b1b",
+      "source_sha256": "8b429edb1df2a8845b4b565cc8a11f47660a7b20034bde50cc38d7645ba48b1b",
+      "source_reference": "Estormiz; 2026-07-03; Oulu Finland. https://commons.wikimedia.org/wiki/File:Motacilla_flava_Oulu_20260703_03.jpg; Library original libfile_67e65547f7708191a24c184af7cdc526; Library rights libfile_c4c9dba6719081918f189895e1db1a91.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Motacilla_flava_Oulu_20260703_03.jpg; Library rights libfile_c4c9dba6719081918f189895e1db1a91"
+      },
+      "alt": {
+        "ar": "ذعرة صفراء غربية تمد جناحها على سياج ويظهر أسفلها الأصفر",
+        "en": "Western Yellow Wagtail stretching a wing on a fence, showing yellow underparts",
+        "fr": "Bergeronnette printanière étirant une aile sur une clôture, le dessous jaune visible"
+      },
+      "caption": {
+        "ar": "الذعرة الصفراء الغربية",
+        "en": "Western Yellow Wagtail",
+        "fr": "Bergeronnette printanière"
+      }
+    },
+    {
+      "id": "whinchat",
+      "path": "docs/media/publications/daily-birds-20261030/whinchat.jpg",
+      "sha256": "1e4dddc03da133b3187719913737ff1bda7260ba50805add398f6c03a38a40ef",
+      "source_sha256": "1e4dddc03da133b3187719913737ff1bda7260ba50805add398f6c03a38a40ef",
+      "source_reference": "Аимаина хикари; 2016-05-03; Desna floodplain near Zazymya, Kyiv oblast, Ukraine. https://commons.wikimedia.org/wiki/File:Saxicola_rubetra_Zazymya.jpg; Library original libfile_0d0f4d1db3f08191adee0686584a760f; Library rights libfile_e5a4c63ea2008191b152a855ed123355.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Saxicola_rubetra_Zazymya.jpg; Library rights libfile_e5a4c63ea2008191b152a855ed123355"
+      },
+      "alt": {
+        "ar": "قليعي بحاجب أبيض عريض وصدر برتقالي فوق ساق نبات",
+        "en": "Whinchat with a broad white eyebrow and orange breast perched on a plant stem",
+        "fr": "Tarier des prés au large sourcil blanc et à la poitrine orangée sur une tige"
+      },
+      "caption": {
+        "ar": "القليعي (البرقش الأحمر)",
+        "en": "Whinchat",
+        "fr": "Tarier des prés"
+      }
+    },
+    {
+      "id": "grey-wagtail",
+      "path": "docs/media/publications/daily-birds-20261030/grey-wagtail.jpg",
+      "sha256": "cd470a5d94680ee3092f3db81a3c9cce83c0dddeb0a413046a47b7c7b11e9634",
+      "source_sha256": "cd470a5d94680ee3092f3db81a3c9cce83c0dddeb0a413046a47b7c7b11e9634",
+      "source_reference": "Andrew Cunnington; 2026-01-03; Dover UK. https://www.inaturalist.org/photos/605081538; Library original libfile_006613b89a808191afd4cf5191a2ab51; Library rights libfile_98dde6317e708191b29cd5d6dbfa98d8.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://www.inaturalist.org/photos/605081538; Library rights libfile_98dde6317e708191b29cd5d6dbfa98d8"
+      },
+      "alt": {
+        "ar": "ذعرة رمادية بذيل طويل وريش أصفر تحت الذيل فوق جذع قرب الماء",
+        "en": "Grey Wagtail with a long tail and yellow undertail perched on a log beside water",
+        "fr": "Bergeronnette des ruisseaux à longue queue et sous-caudales jaunes sur une branche au bord de l’eau"
+      },
+      "caption": {
+        "ar": "الذعرة الرمادية",
+        "en": "Grey Wagtail",
+        "fr": "Bergeronnette des ruisseaux"
+      }
+    },
+    {
+      "id": "stonechat",
+      "path": "docs/media/publications/daily-birds-20261030/stonechat.jpg",
+      "sha256": "ec6c5e43b980409144c44dbe69a750e6cecea3d3faa06fc78fe1dc048ee0b512",
+      "source_sha256": "ec6c5e43b980409144c44dbe69a750e6cecea3d3faa06fc78fe1dc048ee0b512",
+      "source_reference": "Hobbyfotowiki; 2024-05-30; Sagres Algarve Portugal. https://commons.wikimedia.org/wiki/File:European_stonechat_(Saxicola_rubicola).jpg; Library original libfile_8f34929a12d0819194c1d5e7cf9065d3; Library rights libfile_02d893c5ce208191b7f3987dee669209.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:European_stonechat_(Saxicola_rubicola).jpg; Library rights libfile_02d893c5ce208191b7f3987dee669209"
+      },
+      "alt": {
+        "ar": "قلعي مطوق على غصن بمنقار مفتوح ورأس داكن وبقعة بيضاء على جانب العنق",
+        "en": "European Stonechat perched with its bill open, dark head and white neck-side patch",
+        "fr": "Tarier pâtre perché, bec ouvert, tête sombre et plage blanche sur le côté du cou"
+      },
+      "caption": {
+        "ar": "القلعي المطوق (القليعي الأوروبي)",
+        "en": "European Stonechat",
+        "fr": "Tarier pâtre"
+      }
+    },
+    {
+      "id": "redstart",
+      "path": "docs/media/publications/daily-birds-20261030/redstart.jpg",
+      "sha256": "089ec18c6b4103262a1ab9e13b813ef0ea2f0f9410f66fa1460dba3917b78843",
+      "source_sha256": "089ec18c6b4103262a1ab9e13b813ef0ea2f0f9410f66fa1460dba3917b78843",
+      "source_reference": "Hobbyfotowiki; 2017-07-25; Berchtesgaden Bavarian Alps Germany. https://commons.wikimedia.org/wiki/File:Common_Redstart_-_(Phoenicurus_phoenicurus,_juvenile).jpg; Library original libfile_01d1ff4cde048191b70e92f704fcb63c; Library rights libfile_2815162c9f408191a30c18e05d65bbda.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Common_Redstart_-_(Phoenicurus_phoenicurus,_juvenile).jpg; Library rights libfile_2815162c9f408191a30c18e05d65bbda"
+      },
+      "alt": {
+        "ar": "حميراء شائعة فتية بريش مرقش على الرأس وذيل صدئي",
+        "en": "Young Common Redstart with a mottled head and rusty tail",
+        "fr": "Jeune Rougequeue à front blanc à tête mouchetée et queue rousse"
+      },
+      "caption": {
+        "ar": "الحميراء الشائعة",
+        "en": "Common Redstart",
+        "fr": "Rougequeue à front blanc"
+      }
+    },
+    {
+      "id": "hoopoe",
+      "path": "docs/media/publications/daily-birds-20261030/hoopoe.jpg",
+      "sha256": "c9923940de5b82ea6ef1d6986d4b307394618281633a601feb83070dbc7b9832",
+      "source_sha256": "c9923940de5b82ea6ef1d6986d4b307394618281633a601feb83070dbc7b9832",
+      "source_reference": "Stein Arne Jensen; 2015-10-03; Parque Polideportivo Arguineguín Gran Canaria Spain. https://www.flickr.com/photos/steinarnejensen/23016560746/; Library original libfile_63dfea9c9d588191aa0beceb2c395b58; Library rights libfile_ec847c547ab8819197dac42d214c3690.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Original photograph, no generative reconstruction. Photographer credited separately under Sayd protocol.",
+        "evidence_reference": "https://www.flickr.com/photos/steinarnejensen/23016560746/; Library rights libfile_ec847c547ab8819197dac42d214c3690"
+      },
+      "alt": {
+        "ar": "هدهد بعرف ذي أطراف سوداء ومنقار طويل بين الأعشاب",
+        "en": "Common Hoopoe with a black-tipped crest and long bill among grasses",
+        "fr": "Huppe fasciée à huppe terminée de noir et long bec parmi les herbes"
+      },
+      "caption": {
+        "ar": "الهدهد",
+        "en": "Common Hoopoe",
+        "fr": "Huppe fasciée"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "القرقف-الكبير",
+        "en": "great-tit",
+        "fr": "mesange-charbonniere"
+      },
+      "translations": {
+        "ar": {
+          "title": "القرقف الكبير",
+          "subtitle": "Parus major — دليل التعرف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Parus major — دليل التعرف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "القرقف الكبير Parus major طائر من فصيلة القرقفيات، يجمع بين رأس أسود وخدين أبيضين وظهر زيتوني وبطن أصفر يقطعه شريط أسود. تتدرج الأجنحة والذيل بين الرمادي والأزرق، ويظهر شريط جناحي أبيض. يبلغ طوله نحو 12.5–15 سم؛ وهو من أكبر القراقف المألوفة في نطاقه. تساعد هذه المجموعة من العلامات، لا لون واحد منفرد، في التعرف إليه بين أوراق الأشجار."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "يكون الشريط الأسود أسفل الجسم أعرض عادة عند الذكر، وأضيق عند الأنثى، لكن وضعية الطائر والريش قد يغيران مظهره في الصورة. تبدو خدود الصغار مصفرة والرأس أقل لمعانًا والألوان أخف وضوحًا من البالغين. يختلف القرقف الأزرق بقلنسوته الزرقاء وحجمه الأصغر، بينما يفتقر القرقف الفحمي إلى البطن الأصفر الواضح ويحمل رقعة بيضاء خلف الرأس. لذلك لا ينبغي الخلط بين «الكبير» و«الفحمي»، أو تحديد الجنس من لقطة بعيدة لا تظهر الشريط البطني جيدًا."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يسكن الأحراج وحواف الغابات والبساتين والحدائق، ويستفيد من الأشجار الناضجة التي توفر الغذاء والتجاويف. يبحث بين الأوراق والأغصان وشقوق اللحاء، وقد يلتقط الغذاء من الأرض. يأكل الحشرات ويرقاتها والعناكب، وتزداد أهمية البذور والثمار خارج موسم التكاثر. يمسك بعض القطع بقدمه ويفتحها بمنقاره. وقد ينضم شتاءً إلى مجموعات مختلطة من الطيور الصغيرة، بينما تصبح الأغنية والدفاع عن الحيز أكثر بروزًا في موسم التعشيش. تنوع نداءاته يعني أن اختلاف الصوت لا يدل دائمًا على اختلاف النوع."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يعشش في تجاويف الأشجار وقد يستخدم صناديق التعشيش المناسبة. تبني الأنثى العش وتتولى الحضانة، ويشارك الأبوان في إطعام الفراخ. تستغرق الحضانة عادة نحو 12–15 يومًا، وتبقى الفراخ في العش قرابة 16–22 يومًا؛ هذه نطاقات عامة وليست تقويمًا ثابتًا لكل بلد. يعتمد نجاح الأسرة على توافر اللافقاريات في الوقت الذي تنمو فيه الفراخ. ينبغي رصد الأعشاش دون فتح التجاويف أو إزعاج الأسرة."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية في العالم العربي",
+              "paragraphs": [
+                "في لبنان تصفه قائمة الطيور المحدثة المنشورة سنة 2020 بأنه مقيم متكاثر شائع جدًا، من الأودية عند نحو 300 متر حتى نطاق الأشجار المرتفع، مع تكاثر مسجل من أواخر مارس إلى أواخر يوليو. وتدرجه قائمة الأردن ضمن المقيمين. وفي شمال غرب أفريقيا يمتد وجوده من المغرب إلى تونس، وتوثقه المصادر التونسية في البيئات المشجرة. لهذا فإن مشاهدته في أكتوبر في غابات المشرق أو المغرب العربي لا تعني بالضرورة وصول مهاجر جديد؛ فقد تكون لطائر مقيم. وتختلف صورته الموسمية بين هذه البيئات المشجرة والمناطق الصحراوية الأبعد جنوبًا."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يسهم غذاؤه من الحشرات في الشبكات الغذائية للغابات والحدائق، وهو بدوره فريسة لكائنات أخرى. يصنف عالميًا ضمن «أقل إثارة للقلق»، لكن التصنيف العام لا يقيس سلامة كل موقع عربي. إزالة الأشجار الناضجة وفقد التجاويف وتقليص موارد الحشرات قد تحد من جودة موائله. تساعد المحافظة على تنوع الأشجار والغطاء الطبيعي في دعم الغذاء والتعشيش."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Cornell Lab of Ornithology — All About Birds: Great Tit, identification and life history",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "CEPF — Catalogue of biodiversity of Oued Maden Key Biodiversity Area, Tunisia",
+                "BirdLife Austria — Kohlmeise",
+                "British Trust for Ornithology — BirdFacts: Great Tit",
+                "Avibase — Parus major taxonomy and distribution"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Jani Kettunen — CC0."
+        },
+        "en": {
+          "title": "Great Tit",
+          "subtitle": "Parus major — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Parus major — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Great Tit, Parus major, belongs to the family Paridae. Its black head, white cheeks, olive back and yellow underparts crossed by a black central stripe form a distinctive combination. The wings and tail are blue-grey, with a white wing bar. At about 12.5–15 cm long, it is among the larger familiar tits within its range. Identification should use this combination rather than one isolated colour."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "The male usually has a broader black stripe down the underparts than the female. Posture and feather position can alter its appearance in a photograph. Young birds have yellowish cheeks, a less glossy crown and generally softer markings. Blue Tits are smaller and have a blue crown; Coal Tits lack the conspicuous yellow belly and show a white patch on the nape. These differences prevent confusion between the Great and Coal Tits. A distant image that conceals the belly stripe is not a reliable basis for assigning sex."
+              ]
+            },
+            {
+              "heading": "Habitat, diet and behaviour",
+              "paragraphs": [
+                "Woodland, forest edges, orchards and gardens provide habitat, especially where mature trees supply cavities and food. Birds search leaves, twigs and bark crevices, sometimes feeding on the ground. Insects, their larvae and spiders are important foods, with seeds and fruit becoming more important outside breeding. A bird may hold a food item against a perch with its foot while opening it. Mixed-species flocks occur in winter; song and territorial defence become more prominent during breeding. Its varied calls mean that different sounds need not represent different species."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Great Tits nest in tree cavities and also use suitable nest boxes. The female builds and incubates, while both parents feed the young. Incubation generally takes approximately 12–15 days, and young remain in the nest for about 16–22 days. These are broad biological ranges, not an identical timetable for every country. Breeding success depends partly on invertebrate availability during chick growth. Observations should avoid opening occupied cavities or disturbing families."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Lebanon’s updated checklist, published in 2020, describes a very common resident breeder, from ravines at roughly 300 m to high-elevation tree habitat; recorded breeding extends from late March to late July. Jordan’s checklist also lists it as resident. In north-western Africa its range extends from Morocco to Tunisia, where biodiversity surveys document wooded habitats. Consequently an October sighting in Levantine or Maghreb woodland does not necessarily mark a new migrant’s arrival: the bird may be resident. Its regional seasonal pattern is closely associated with the distribution of suitable wooded habitats."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Insect consumption places the species within woodland and garden food webs, while it is itself prey for other animals. Its global conservation category is Least Concern, not a guarantee that every Arab locality is secure. Removal of mature trees, loss of cavities and reduced insect resources can diminish habitat quality. Retaining varied trees and natural vegetation supports feeding and nesting."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Cornell Lab of Ornithology — All About Birds: Great Tit, identification and life history",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "CEPF — Catalogue of biodiversity of Oued Maden Key Biodiversity Area, Tunisia",
+                "BirdLife Austria — Kohlmeise",
+                "British Trust for Ornithology — BirdFacts: Great Tit",
+                "Avibase — Parus major taxonomy and distribution"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Jani Kettunen — CC0."
+        },
+        "fr": {
+          "title": "Mésange charbonnière",
+          "subtitle": "Parus major — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Parus major — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Mésange charbonnière, Parus major, appartient aux Paridés. Elle associe une tête noire, des joues blanches, un dos olive et un ventre jaune traversé par une bande noire médiane. Les ailes et la queue sont gris bleuté, avec une barre alaire blanche. Mesurant environ 12,5–15 cm, elle figure parmi les grandes mésanges familières de son aire. L’identification repose sur cet ensemble de caractères."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "La bande noire ventrale est généralement plus large chez le mâle que chez la femelle. La posture et la disposition des plumes peuvent toutefois modifier son apparence sur une photographie. Les jeunes ont les joues jaunâtres, une calotte moins brillante et des couleurs moins franches. La Mésange bleue est plus petite et porte une calotte bleue; la Mésange noire n’a pas le ventre franchement jaune et possède une tache blanche sur la nuque. Une photographie lointaine masquant la bande ventrale ne suffit pas pour déterminer le sexe."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "L’espèce fréquente les boisements, lisières, vergers et jardins, particulièrement lorsque des arbres âgés fournissent nourriture et cavités. Elle inspecte les feuilles, rameaux et fissures de l’écorce, et se nourrit parfois au sol. Insectes, larves et araignées composent une part importante du régime; graines et fruits prennent davantage de place hors reproduction. Elle peut maintenir un aliment avec sa patte pour l’ouvrir du bec. En hiver, elle rejoint parfois des groupes plurispécifiques; le chant et la défense territoriale deviennent plus marqués pendant la reproduction. Sa voix variée peut surprendre l’observateur."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Elle niche dans les cavités des arbres et utilise aussi des nichoirs appropriés. La femelle construit le nid et couve; les deux parents nourrissent les jeunes. L’incubation dure généralement environ 12–15 jours, puis les jeunes restent au nid approximativement 16–22 jours. Ces fourchettes ne constituent pas un calendrier identique dans chaque pays. Le succès reproducteur dépend notamment des invertébrés disponibles pendant la croissance. L’observation doit éviter l’ouverture des cavités occupées et le dérangement."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "La liste actualisée des oiseaux du Liban, publiée en 2020, décrit un nicheur résident très commun, des ravins vers 300 m jusqu’aux boisements d’altitude; la reproduction y est signalée de fin mars à fin juillet. La liste jordanienne le classe également comme résident. En Afrique du Nord-Ouest, son aire s’étend du Maroc à la Tunisie, où des inventaires le documentent dans les milieux boisés. Une observation en octobre dans le Levant ou le Maghreb ne signifie donc pas nécessairement une arrivée migratoire. Sa présence saisonnière régionale est étroitement liée à la répartition des milieux boisés favorables."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Consommatrice d’insectes et proie d’autres animaux, la charbonnière participe aux réseaux alimentaires des bois et jardins. Son statut mondial est «Préoccupation mineure», sans garantir la sécurité de chaque population locale. La suppression des arbres âgés, la disparition des cavités et l’appauvrissement en insectes peuvent réduire la qualité du milieu. Conserver des arbres diversifiés et une végétation naturelle soutient alimentation et nidification."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Cornell Lab of Ornithology — All About Birds: Great Tit, identification and life history",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "CEPF — Catalogue of biodiversity of Oued Maden Key Biodiversity Area, Tunisia",
+                "BirdLife Austria — Kohlmeise",
+                "British Trust for Ornithology — BirdFacts: Great Tit",
+                "Avibase — Parus major taxonomy and distribution"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Jani Kettunen — CC0."
+        }
+      },
+      "published": "2026-10-30",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "great-tit"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "اليمام-المطوق",
+        "en": "eurasian-collared-dove",
+        "fr": "tourterelle-turque"
+      },
+      "translations": {
+        "ar": {
+          "title": "اليمام المطوق (فاختة أوراسية)",
+          "subtitle": "Streptopelia decaocto — دليل التعرف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Streptopelia decaocto — دليل التعرف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "اليمام المطوق Streptopelia decaocto، المعروف أيضًا بالفاختة الأوراسية، من فصيلة الحماميات. لونه العام رمادي مائل إلى البيج، وعلامته الأبرز نصف طوق أسود خلف العنق. له منقار داكن وعين محمرة وذيل طويل تظهر في أجزائه الخارجية والنهاية مساحات بيضاء. تكون ريشات الطيران أكثر قتامة من بقية الجناح. يوحي مظهره الهادئ بلون واحد، لكن اجتماع الطوق وشكل الذيل والصوت أهم من درجة الرمادي التي قد تتبدل بحسب الإضاءة."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "يتشابه الذكر والأنثى كثيرًا، فلا يمكن الجزم بالجنس من اللون وحده. قد يغيب الطوق عن اليافع أو يظهر غير مكتمل، وتكون حواف بعض ريشه فاتحة. يختلف عن القمري الأوروبي ذي الظهر والأجنحة الدافئة المزخرفة ورقعة العنق المخططة. أما اليمام الضاحك فيظهر أصغر وأكثر دفئًا في اللون، مع رقعة مرقطة على مقدمة العنق بدل نصف الطوق الخلفي. نداء المطوق متكرر ذو ثلاث وحدات مميزة، بخلاف خرخرة القمري. وعند تصوير طائر غير بالغ ينبغي جمع هيئة الجسم والذيل والجناح، لا اعتبار غياب الطوق نفيًا للنوع."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتبط بالقرى والمدن والمزارع والبساتين، ويستفيد من الأشجار والماء والحبوب في المناظر التي يستخدمها الإنسان. يأكل أساسًا البذور والحبوب، ومعها كميات من الثمار والأجزاء النباتية واللافقاريات. يلتقط الكثير من غذائه من الأرض، وقد يجتمع مع أفراد آخرين قرب موارد الغذاء وخارج مواقع التعشيش. يصدر الذكر هديله من موضع مرتفع ويؤدي عروضًا مرتبطة بالتكاثر. لا يعني نجاحه قرب الناس أن جميع الأراضي المفتوحة مناسبة له؛ توافر الغذاء ومواضع الراحة والتعشيش يظل مهمًا."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "العش منصة بسيطة من الأغصان، يحمل الذكر موادها وتجمعها الأنثى. تحتوي الحضنة غالبًا على بيضتين، ويشارك الأبوان في الحضانة ورعاية الصغار. تدوم الحضانة نحو أسبوعين إلى أقل من ثلاثة، وتغادر الفراخ العش عادة بعد مدة تقارب أسبوعين إلى ثلاثة أسابيع أخرى. تختلف الأرقام الدقيقة بين المراجع والجماعات. يمكن تكرار التعشيش خلال السنة في الظروف المناسبة، لكن عدد الحضنات وموعدها ليسا ثابتين في جميع البلدان."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية في العالم العربي",
+              "paragraphs": [
+                "في لبنان والأردن يوجد بوصفه مقيمًا متكاثرًا، ولا تعد كل مشاهدة خريفية دليلًا على هجرة. وتصفه المصادر السعودية بأنه واسع الانتشار في البيئات البشرية، مع قلة حضوره في المرتفعات الغربية. أما التقييم الوطني الإماراتي، المنجز سنة 2019 والمنشور سنة 2021، فيصفه بمقيم واسع الانتشار تزايد مع الزراعة والري، ويسجل تكاثرًا طوال العام بذروة بين مارس ومايو. وتختلف ذروة التكاثر بين المناطق بحسب الظروف المحلية. وفي المغرب وثقت دراسة ميدانية أُجريت في 2018–2019 ارتباط مشاهداته بالمساكن والأراضي الزراعية في نطاق المسح."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يصنف عالميًا ضمن «أقل إثارة للقلق». كما صنفه التقييم الإماراتي وطنيًا في الفئة نفسها مع اتجاه متزايد، وهما مستويان مختلفان من التقييم. يستهلك الحبوب ويدخل في غذاء المفترسات، ويمكن أن تتأثر تجمعاته المحلية بتغير الموائل أو الإزعاج أو الأمراض. لا تكفي وفرة الطائر لتقرير قانونية صيده؛ تحدد القوانين المحلية الأنواع والمواسم والشروط. ويفيد تسجيل الطيور المتكاثرة والأعشاش والموائل في متابعة توسعه وتحديد المواقع المهمة له."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Cornell Lab of Ornithology — All About Birds: Eurasian Collared-Dove, life history",
+                "Naturalis — Birds of Europe: Streptopelia decaocto",
+                "IPM Centers — Eurasian Collared-Dove identification",
+                "Saudipedia — يمام مطوق (2023)",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "UAE National Red List — Streptopelia decaocto, assessment 2019, publication 2021",
+                "African Journal of Ecology — Moroccan elevational study, field surveys 2018–2019",
+                "British Trust for Ornithology — BirdFacts: Collared Dove"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Beyond silence — PD-self."
+        },
+        "en": {
+          "title": "Eurasian Collared Dove",
+          "subtitle": "Streptopelia decaocto — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Streptopelia decaocto — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Eurasian Collared Dove, Streptopelia decaocto, belongs to the pigeon and dove family Columbidae. Its overall grey-buff plumage carries a black half-collar across the back of the neck. It has a dark bill, reddish eye and a long tail with conspicuous white outer and terminal areas. The flight feathers are darker than much of the wing. Its apparently simple colouring varies with light, so the collar, tail pattern and voice together are more useful than an isolated shade of grey."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "Males and females look very similar and cannot reliably be sexed from colour alone. Juveniles may lack a complete collar and show pale feather edges. The European Turtle Dove has warmer, patterned upperparts and a striped neck patch. The smaller, warmer-coloured Laughing Dove has a speckled patch on the front of the neck instead of this rear half-collar. The Collared Dove’s repeated three-part coo contrasts with the Turtle Dove’s purring voice. A young bird without a collar should therefore be assessed using body shape, tail and wings, not rejected solely on that missing feature."
+              ]
+            },
+            {
+              "heading": "Habitat, diet and behaviour",
+              "paragraphs": [
+                "Villages, towns, farms and orchards provide habitat; trees, water and grain within human-used landscapes are valuable resources. Seeds and grain dominate its diet, supplemented with some fruit, plant material and invertebrates. Much food is collected on the ground. Birds may gather around feeding resources and away from nesting territories. Males coo from elevated perches and perform breeding displays. Success close to people does not make all open land suitable: food and places to rest and nest still matter."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "The nest is a simple twig platform, with the male bringing material and the female assembling it. A clutch commonly contains two eggs. Both parents incubate and care for the young. Incubation lasts roughly two to under three weeks; young usually leave the nest after approximately another two to three weeks. Exact ranges differ between references and populations. Repeated broods are possible under favourable conditions, but their number and timing are not identical in every country."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "In Lebanon and Jordan the species is a resident breeder, so an autumn sighting does not necessarily indicate migration. Saudi sources describe widespread occurrence in human-associated habitats, with limited presence in the western highlands. The UAE national assessment, conducted in 2019 and published in 2021, describes a widespread resident that increased alongside agriculture and irrigation. Breeding can occur throughout the year there, peaking in March–May. Breeding peaks elsewhere vary with local conditions. In Morocco, fieldwork in 2018–2019 linked records to settlements and farmland within the study area."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "The global conservation category is Least Concern. The UAE assessment also assigned Least Concern nationally, with an increasing trend; these are distinct assessment scales. A grain consumer and prey for predators, the dove participates in local food webs. Habitat changes, disturbance or disease can affect particular populations. Abundance does not establish that hunting is legal: local legislation determines species, seasons and conditions. Recording breeding birds, nests and habitats helps monitor expansion and identify important sites."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Cornell Lab of Ornithology — All About Birds: Eurasian Collared-Dove, life history",
+                "Naturalis — Birds of Europe: Streptopelia decaocto",
+                "IPM Centers — Eurasian Collared-Dove identification",
+                "Saudipedia — يمام مطوق (2023)",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "UAE National Red List — Streptopelia decaocto, assessment 2019, publication 2021",
+                "African Journal of Ecology — Moroccan elevational study, field surveys 2018–2019",
+                "British Trust for Ornithology — BirdFacts: Collared Dove"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Beyond silence — PD-self."
+        },
+        "fr": {
+          "title": "Tourterelle turque",
+          "subtitle": "Streptopelia decaocto — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Streptopelia decaocto — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Tourterelle turque, Streptopelia decaocto, appartient aux Columbidés. Son plumage gris beige porte un demi-collier noir à l’arrière du cou. Elle possède un bec sombre, un œil rougeâtre et une longue queue dont les parties externes et terminales montrent beaucoup de blanc. Les rémiges sont plus sombres que le reste de l’aile. La couleur générale varie avec l’éclairage: il vaut mieux associer collier, dessin de la queue et voix que s’appuyer sur une seule nuance de gris."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "Les sexes se ressemblent fortement et la couleur ne permet pas de les distinguer avec certitude. Les jeunes peuvent ne pas présenter de collier complet et portent des bordures de plumes pâles. La Tourterelle des bois possède des parties supérieures plus chaudes et dessinées, ainsi qu’une plage rayée au cou. Plus petite et plus rousse, la Tourterelle maillée présente une plage mouchetée à l’avant du cou plutôt que ce demi-collier postérieur. Le roucoulement répété en trois parties contraste avec le ronronnement de la Tourterelle des bois. Chez un jeune sans collier, il faut aussi examiner silhouette, queue et ailes."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Villages, villes, fermes et vergers lui fournissent un habitat. Arbres, eau et grains dans les paysages fréquentés par l’être humain constituent des ressources utiles. Graines et céréales dominent son alimentation, complétée par quelques fruits, éléments végétaux et invertébrés. Elle se nourrit beaucoup au sol et peut se rassembler autour des ressources alimentaires, à l’écart des territoires de nidification. Le mâle roucoule depuis un perchoir élevé et réalise des parades. Son adaptation aux lieux habités ne rend pas tous les espaces ouverts favorables: nourriture, reposoirs et sites de nid restent nécessaires."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Le nid est une simple plateforme de brindilles; le mâle apporte les matériaux et la femelle les assemble. La ponte comprend généralement deux œufs. Les deux parents couvent et s’occupent des jeunes. L’incubation dure approximativement deux à moins de trois semaines; les jeunes quittent habituellement le nid après environ deux à trois semaines supplémentaires. Les valeurs précises diffèrent selon les références et les populations. Plusieurs nichées sont possibles lorsque les conditions le permettent, sans nombre ni calendrier identiques partout."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "Au Liban et en Jordanie, c’est un nicheur résident: une observation automnale ne prouve donc pas une migration. Les sources saoudiennes décrivent une large présence dans les milieux humains, plus limitée dans les hauteurs occidentales. L’évaluation nationale des Émirats arabes unis, réalisée en 2019 et publiée en 2021, décrit un résident répandu ayant progressé avec l’agriculture et l’irrigation. La reproduction y est possible toute l’année, avec un pic de mars à mai. Ailleurs, les pics de reproduction varient selon les conditions locales. Au Maroc, une étude de terrain menée en 2018–2019 associe les observations aux habitations et terres agricoles de sa zone d’étude."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Le statut mondial est «Préoccupation mineure». L’évaluation émiratie retient aussi cette catégorie à l’échelle nationale, avec une tendance croissante; les deux échelles restent distinctes. Consommatrice de graines et proie de prédateurs, l’espèce participe aux réseaux alimentaires locaux. Modifications du milieu, dérangement ou maladies peuvent affecter certaines populations. L’abondance ne signifie pas que la chasse est autorisée: espèces, périodes et conditions relèvent des lois locales. Noter reproduction, nids et habitats permet de suivre son expansion et de repérer les sites importants."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Cornell Lab of Ornithology — All About Birds: Eurasian Collared-Dove, life history",
+                "Naturalis — Birds of Europe: Streptopelia decaocto",
+                "IPM Centers — Eurasian Collared-Dove identification",
+                "Saudipedia — يمام مطوق (2023)",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Jordan BirdWatch — Jordan Bird List (2020)",
+                "UAE National Red List — Streptopelia decaocto, assessment 2019, publication 2021",
+                "African Journal of Ecology — Moroccan elevational study, field surveys 2018–2019",
+                "British Trust for Ornithology — BirdFacts: Collared Dove"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Beyond silence — PD-self."
+        }
+      },
+      "published": "2026-10-30",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "collared-dove"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الدخلة-السوداء-الرأس",
+        "en": "sardinian-warbler",
+        "fr": "fauvette-melanocephale"
+      },
+      "translations": {
+        "ar": {
+          "title": "الدخلة السوداء الرأس (الهارجة السردينية)",
+          "subtitle": "Curruca melanocephala — دليل التعرف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Curruca melanocephala — دليل التعرف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الدخلة السوداء الرأس Curruca melanocephala طائر صغير من فصيلة الدخلات، يرد في المراجع القديمة باسم Sylvia melanocephala، وفي دليل طيور العلا باسم «الهارجة السردينية». يبلغ طوله نحو 13–14 سم، وله ذيل داكن طويل نسبيًا تظهر في ريشه الخارجي أطراف بيضاء، وحلقة حمراء حول العين. لا يعني اسمه الإنجليزي «السرديني» أن انتشاره محصور في جزيرة سردينيا؛ فهو من طيور حوض المتوسط وأطرافه العربية."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "للذكر البالغ غطاء رأس أسود واسع يحيط بالعين، وحلق أبيض وظهر وجانبان رماديان. رأس الأنثى أكثر رمادية وظهرها بني، وأجزاء جسمها السفلية أفتح مع جوانب مائلة إلى البيج. الصغار أقل تباينًا، ولا يكفي غياب الرأس الأسود لتحديد الأنثى. تختلف عن أبي قلنسوة الذي يحمل قلنسوة فوق الرأس ولا يظهر الحلقة الحمراء المميزة. وقد تظهر في الدخلة القبرصية نقط داكنة بالحلق، بينما تحمل الدخلة ذات النظارة رقعة جناحية كستنائية. يلزم فحص عدة علامات عند تمييز الإناث والطيور الصغيرة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تسكن الشجيرات المتوسطية والأحراج المفتوحة ذات الطبقة السفلية الكثيفة وحواف البساتين. تتحرك داخل الغطاء وتلوح بذيلها، فيسمع الراصد نداءها الخشن المتكرر قبل أن يراها بوضوح. تجمع الحشرات واللافقاريات الصغيرة من الأوراق والأغصان، وتأكل الثمار أيضًا. يتيح هذا التنوع في الغذاء استغلال موارد موسمية مختلفة. لا يعني اختباؤها أنها غائبة عن الموقع؛ يساعد الجمع بين المشاهدة والصوت في رصدها، مع تجنب تشغيل الأصوات المتكرر الذي قد يزعج الطيور المقيمة في حيزها."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "تبني عشًا كأسيًا منخفضًا داخل شجيرة، وتشارك في الحضانة ورعاية الصغار أزواج الطيور. تختلف أعداد البيض ومواعيد التعشيش بحسب المنطقة. توثق قائمة لبنان المحدثة التكاثر من أواخر مارس إلى أواخر يوليو. وتشكل الشجيرات الكثيفة مواضع تعشيش واختباء؛ لذا فإن قصها خلال وجود عش نشط قد يزيل الأسرة نفسها لا غطاءها فقط. يبقى توثيق التكاثر معتمدًا على دليل كعش أو صغار، وليس على مجرد رؤية طائر في الصيف."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية في العالم العربي",
+              "paragraphs": [
+                "في لبنان تصفه قائمة 2020 بمقيم متكاثر شائع جدًا حتى نحو 1600 متر في شمال البلاد، إضافة إلى عابر وزائر شتوي شائع من منتصف سبتمبر إلى أواخر أبريل. هكذا قد يجمع أكتوبر طيورًا مقيمة وأخرى وافدة في الموقع نفسه. وفي ليبيا يرد ضمن الطيور المقيمة، بينما يشمل نطاقه العام أجزاء من شمال أفريقيا والمشرق وسيناء. ويذكر دليل العلا وجوده في غرب الجزيرة العربية شتاءً، مع مواقع تشمل حرة عويرض والغراميل ووادي نخلة. أما في عُمان فوجوده المعروف في المرجع الإقليمي عرضي، بخلاف حضوره الشتوي في غرب الجزيرة العربية."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "صنفه تقييم الاتحاد الدولي لصون الطبيعة المنجز سنة 2018 ضمن «أقل إثارة للقلق»، مع اتجاه عالمي متزايد. يسهم باستهلاك اللافقاريات والثمار في الشبكات الغذائية للشجيرات، وتؤثر إزالة الغطاء أو تغيير بنيته في المواقع الملائمة له. كما تدرجه مصادر قبرص بين الأنواع المتضررة من الشباك والوسائل غير القانونية. الحفاظ على شبكة من الشجيرات والأحراج والحدائق ذات الغطاء المتنوع يفيد المقيمين والزوار معًا."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "BirdLife International — IUCN Red List assessment of Curruca melanocephala (2018)",
+                "Royal Commission for AlUla — Birds of AlUla, English and Arabic editions",
+                "Naturalis — Birds of Europe: Sylvia melanocephala",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "OSME — Region List, version 8.1, Passerines (2022)",
+                "Libyan Wildlife — Sylvia melanocephala species account",
+                "BirdLife Cyprus — identification guidance and species affected by trapping"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Stein Arne Jensen — CC0."
+        },
+        "en": {
+          "title": "Sardinian Warbler",
+          "subtitle": "Curruca melanocephala — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Curruca melanocephala — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Sardinian Warbler, Curruca melanocephala, is a small member of the family Sylviidae. Older literature uses Sylvia melanocephala for the same species. At about 13–14 cm long, it has a relatively long dark tail with white outer tips and a red eye-ring. Its English name does not confine it to Sardinia: its range includes Mediterranean habitats and adjoining Arab regions."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "An adult male has an extensive black hood surrounding the eye, a white throat, grey back and grey flanks. The female has a greyer head, browner back and pale underparts with buff-toned flanks. Juveniles are less contrasting; absence of a black hood alone does not establish a female. Blackcaps have a cap rather than this extensive hood and lack the characteristic red eye-ring. Cyprus Warblers may show dark throat spotting, while Spectacled Warblers have a chestnut wing panel. Females and young birds require several features to be checked together, not identification from a single head colour."
+              ]
+            },
+            {
+              "heading": "Habitat, diet and behaviour",
+              "paragraphs": [
+                "Mediterranean scrub, open woodland with dense undergrowth and orchard edges provide habitat. Birds move within cover and flick their tails; a repeated harsh call may reveal them before a clear view is possible. They collect insects and other small invertebrates from foliage and twigs and also eat fruit. This varied diet allows exploitation of seasonally different resources. Concealment should not be confused with absence. Combining visual and acoustic observations improves detection, while repeated playback can unnecessarily disturb birds occupying a territory."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "A cup nest is built low inside a shrub, and both members of the pair participate in incubation and caring for young. Clutch size and breeding dates vary geographically. Lebanon’s updated checklist records breeding from late March to late July. Dense shrubs supply nesting and concealment sites, so cutting an occupied bush can destroy the family rather than simply remove cover. Evidence such as an occupied nest or dependent young is needed to confirm breeding: a summer sighting alone is insufficient."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist describes a very common resident breeder, reaching approximately 1,600 m in the north, as well as common passage and winter birds from mid-September to late April. October can therefore bring residents and arrivals together. It is listed as resident in Libya, while its broader range includes parts of North Africa, the Levant and Sinai. The AlUla bird guide records winter occurrence in western Arabia, including Harrat Uwayrid, AlGharameel and Wadi Nakhlah. In Oman, the regional reference documents vagrancy, contrasting with winter occurrence in western Arabia."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "The global IUCN assessment conducted in 2018 classified the species as Least Concern, with an increasing global trend. Invertebrate and fruit consumption places it within scrubland food webs. Removing vegetation or changing its structure can affect suitable sites. Cyprus sources also list it among birds harmed by illegal trapping. Maintaining connected patches of structurally varied scrub, woodland and gardens supports both residents and seasonal visitors."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "BirdLife International — IUCN Red List assessment of Curruca melanocephala (2018)",
+                "Royal Commission for AlUla — Birds of AlUla, English and Arabic editions",
+                "Naturalis — Birds of Europe: Sylvia melanocephala",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "OSME — Region List, version 8.1, Passerines (2022)",
+                "Libyan Wildlife — Sylvia melanocephala species account",
+                "BirdLife Cyprus — identification guidance and species affected by trapping"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Stein Arne Jensen — CC0."
+        },
+        "fr": {
+          "title": "Fauvette mélanocéphale",
+          "subtitle": "Curruca melanocephala — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Curruca melanocephala — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Fauvette mélanocéphale, Curruca melanocephala, est un petit Sylviidé. Les publications anciennes la nomment Sylvia melanocephala: il s’agit du même oiseau. Longue d’environ 13–14 cm, elle possède une queue sombre relativement longue, avec du blanc aux extrémités externes, et un cercle orbital rouge. Son nom anglais, «Sardinian Warbler», ne limite pas son aire à la Sardaigne: elle fréquente le bassin méditerranéen et plusieurs régions arabes voisines."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "Le mâle adulte porte un capuchon noir étendu autour de l’œil, une gorge blanche, un dos gris et des flancs gris. La femelle présente une tête plus grise, un dos brun et un dessous pâle aux flancs beiges. Les jeunes sont moins contrastés: l’absence de capuchon noir ne suffit pas à reconnaître une femelle. La Fauvette à tête noire possède une calotte plutôt qu’un tel capuchon et n’a pas ce cercle orbital rouge. La Fauvette de Chypre peut montrer des taches sombres à la gorge; celle à lunettes porte une plage alaire rousse. Plusieurs critères doivent être associés chez les femelles et les jeunes."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Maquis, broussailles méditerranéennes, boisements ouverts à sous-bois dense et bordures de vergers constituent ses milieux. Elle se déplace dans le couvert en remuant la queue; son cri rêche répété peut la révéler avant qu’elle soit visible. Elle prélève insectes et petits invertébrés sur le feuillage et les rameaux, et consomme aussi des fruits. Ce régime diversifié permet d’exploiter des ressources saisonnières. Un oiseau caché n’est pas nécessairement absent: associer écoute et observation améliore le suivi. La diffusion répétée de chants peut cependant déranger inutilement les occupants d’un territoire."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Le nid en coupe est installé bas dans un buisson. Les deux partenaires participent à l’incubation et aux soins des jeunes. Taille de ponte et dates de reproduction varient selon les régions. La liste actualisée du Liban documente la reproduction de fin mars à fin juillet. Les buissons denses offrent sites de nid et abris: leur coupe lorsqu’un nid est occupé peut détruire une famille. Un nid actif ou des jeunes dépendants attestent la reproduction, contrairement à une simple observation estivale."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "La liste libanaise de 2020 décrit un nicheur résident très commun, atteignant environ 1 600 m dans le nord, auquel s’ajoutent des migrateurs et hivernants communs de mi-septembre à fin avril. En octobre, résidents et arrivants peuvent donc cohabiter. L’espèce est indiquée comme résidente en Libye; son aire générale comprend des parties de l’Afrique du Nord, du Levant et du Sinaï. Le guide d’AlUla documente l’hivernage dans l’ouest de l’Arabie, notamment à Harrat Uwayrid, AlGharameel et Wadi Nakhlah. À Oman, la référence régionale documente une présence accidentelle, qui contraste avec l’hivernage dans l’ouest de l’Arabie."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "L’évaluation mondiale de l’UICN réalisée en 2018 classe l’espèce en «Préoccupation mineure», avec une tendance croissante. La consommation d’invertébrés et de fruits l’intègre aux réseaux alimentaires des broussailles. Défrichement et modification du couvert peuvent altérer les sites favorables. Des sources chypriotes la citent parmi les victimes du piégeage illégal. Conserver des ensembles reliés de broussailles, boisements et jardins diversifiés profite aux résidents comme aux visiteurs saisonniers."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "BirdLife International — IUCN Red List assessment of Curruca melanocephala (2018)",
+                "Royal Commission for AlUla — Birds of AlUla, English and Arabic editions",
+                "Naturalis — Birds of Europe: Sylvia melanocephala",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "OSME — Region List, version 8.1, Passerines (2022)",
+                "Libyan Wildlife — Sylvia melanocephala species account",
+                "BirdLife Cyprus — identification guidance and species affected by trapping"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Stein Arne Jensen — CC0."
+        }
+      },
+      "published": "2026-10-30",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "sardinian-warbler"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الزاغ-الغربي",
+        "en": "western-jackdaw",
+        "fr": "choucas-des-tours"
+      },
+      "translations": {
+        "ar": {
+          "title": "الزاغ الغربي",
+          "subtitle": "Coloeus monedula — دليل التعرّف والموائل والتكاثر والحضور الموسمي في العالم العربي",
+          "meta_description": "Coloeus monedula — دليل التعرّف والموائل والتكاثر والحضور الموسمي في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الزاغ الغربي Coloeus monedula طائر من الغرابيات، يرد في مراجع أقدم باسم Corvus monedula. وهو أصغر وأكثر اكتنازًا من الغربان الكبيرة، بمنقار قصير نسبيًا وقبعة داكنة ومؤخرة رأس ورقبة رمادية فضية. تبرز لدى البالغ عين فاتحة تتباين بوضوح مع الرأس الداكن. يرد له اسم «غراب الزرع» في بعض مراجع الأسماء العربية، لكن هذا الاسم قد يلتبس بغراب آخر؛ لذلك يبقى الاسم العلمي ضروريًا لتحديد النوع."
+              ]
+            },
+            {
+              "heading": "تمييز العمر والأنواع المشابهة",
+              "paragraphs": [
+                "يشبه الجنسان أحدهما الآخر في الهيئة العامة، ولا يكفي لون الريش لتسمية الطائر المصوَّر ذكرًا أو أنثى. يكون اليافع أكثر بنية وأقل وضوحًا في تباين الرأس، ويتغير لون عينيه مع العمر؛ لذا لا يصلح لون العين وحده لتحديد عمره أو لاستبعاد النوع عند الصغار. يساعد اجتماع الحجم المكتنز والمنقار القصير والرقبة الرمادية والصوت في تمييزه من الغربان الأخرى. أما غراب الزرع Corvus frugilegus فأكبر وله منقار أطول، وهو نوع مستقل رغم تشابه الأسماء المتداولة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يبحث الزاغ عن غذائه في الحقول والمراعي والمساحات ذات الأعشاب القصيرة، ويستخدم الأشجار المجوفة والصخور والمباني القديمة مواقع للتعشيش. قد يجتمع في أسراب صاخبة أو مبيت جماعي، خصوصًا خارج موسم التكاثر. غذاؤه متنوع: لافقاريات وبذور وثمار، وقد يتناول البيض أو الفراخ. يلتقط جانبًا مهمًا من طعامه على الأرض، فلا يعني وجوده قرب العمران اعتماده الكامل على مخلفات البشر. وتوفر له المناظر التي تجمع الغذاء المكشوف والتجاويف الآمنة حاجتين مختلفتين ضمن نطاق واحد."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يبني العش داخل تجويف مناسب في شجرة أو صخرة أو مبنى. تسجل بيانات الأعشاش البريطانية عادة حضنة واحدة في الموسم و4–5 بيضات، وتتولى الأنثى الحضانة نحو عشرين يومًا، ويغادر الصغار العش بعمر يقارب 32 يومًا. هذه مدد مرجعية تقريبية مستمدة من الرصد البريطاني. تختلف بداية التعشيش مع المناخ والموقع؛ كما أن مشاهدة أسراب في الخريف تدل على وجود الطيور، لا على تكاثرها محليًا."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية في العالم العربي",
+              "paragraphs": [
+                "يفرق الانتشار العربي بين الإقامة والإشتاء والظهور النادر. تصفه قائمة لبنان لعام 2020 بأنه زائر شتوي منتظم من أكتوبر إلى أوائل مارس في البقاع والسلسلة الشرقية ومرجعيون، وتلفت إلى غياب دليل محدد على تقارير الإقامة. تسجله القائمة الأردنية مقيمًا وزائرًا شتويًا، بينما تشير قائمة OSME الإقليمية لعام 2024 إلى تكاثر غير شائع في العراق. وفي المغرب وثقت قائمة 2010 جماعات متكاثرة مقيمة وتوسعًا في السهول الأطلسية الشمالية حتى الرباط. ويوثق المرجع الإقليمي تسجيل الكويت الأول في أكتوبر 2023، مقابل وجود شتوي منتظم يبدأ في الخريف بلبنان."
+              ]
+            },
+            {
+              "heading": "الأهمية البيئية والحماية",
+              "paragraphs": [
+                "يدخل الزاغ في الشبكات الغذائية مستهلكًا لمواد نباتية وحيوانية. ويظهر تصنيفه العالمي ضمن «أقل إثارة للقلق» في المرجع الذي يستند إلى القائمة الحمراء، لكن ذلك ليس ضمانًا لسلامة كل جماعة محلية. قد يقلل فقد التجاويف وتغيير استعمال الأراضي فرص التعشيش والتغذية. تساعد المحافظة على مواقع الأعشاش الآمنة ومراقبة الجماعات المحلية في فهم حالته."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Jackdaw",
+                "RSPB — Jackdaw",
+                "Cornell Lab of Ornithology — All About Birds: Eurasian Jackdaw",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "OSME — Region List of Birds, version 10.1 (2024)",
+                "Thévenot and colleagues — Liste des oiseaux du Maroc, mise à jour février 2010",
+                "AbdulRahman Al-Sirhan — Arabic–English Names of Middle Eastern Birds"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Matti Virtala — CC0."
+        },
+        "en": {
+          "title": "Eurasian Jackdaw",
+          "subtitle": "Coloeus monedula — Identification, habitats, breeding and seasonal occurrence in the Arab region",
+          "meta_description": "Coloeus monedula — Identification, habitats, breeding and seasonal occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Eurasian Jackdaw, also called the Western Jackdaw, Coloeus monedula, is a member of the crow family Corvidae. Older references may place it in Corvus as Corvus monedula. Compact and smaller than the larger crows, it has a relatively short bill, a dark cap and a silvery-grey nape and neck. Adults have conspicuously pale eyes contrasting with the dark head. Arabic sources sometimes call it “ghurab al-zarʿ”, a name that can also cause confusion with the Rook. The scientific name therefore remains important when matching regional names to species."
+              ]
+            },
+            {
+              "heading": "Age and similar species",
+              "paragraphs": [
+                "Males and females look broadly alike: ordinary plumage photographs do not reliably establish sex. Young birds are browner, with a less strongly contrasting head; eye colour changes with age. Iris colour alone should not establish exact age or exclude a young Jackdaw. Identification should combine its compact build, short bill, grey neck and voice rather than a single colour. The Rook, Corvus frugilegus, is larger and longer-billed; it is a separate species despite similar vernacular names."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Jackdaws feed in fields, pastures and short grass, while tree holes, rocky cavities and old buildings provide nesting places. Noisy flocks and communal roosts are particularly noticeable outside the breeding season. Their varied diet includes invertebrates, seeds and fruit, sometimes eggs or nestlings. Much feeding takes place on the ground. A bird seen near buildings is not necessarily dependent on human refuse: suitable landscapes can combine open feeding areas with secure nesting cavities."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "The nest is built inside a suitable cavity in a tree, rock face or building. British nest records indicate a typical single brood and four or five eggs. Female incubation lasts around twenty days, and young leave the nest at approximately 32 days. These approximate reference values come from British monitoring. Nesting dates vary with location and climate; the presence of an autumn flock is not evidence of local breeding."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Arab occurrence includes residents, winter visitors and rare records. Lebanon’s 2020 checklist describes a regular winter visitor from October to early March in the Beqaa, Anti-Lebanon and Marjaayoun, noting that reported residency lacks specific supporting evidence. Jordan’s list records residents and winter visitors; OSME’s 2024 regional list describes uncommon breeding in Iraq. Morocco’s 2010 checklist documented resident breeders and expansion through the northern Atlantic plains towards Rabat. The regional reference documents Kuwait’s first record in October 2023, contrasting with regular winter occurrence beginning in autumn in Lebanon."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "As a consumer of plant and animal food, the Jackdaw participates in several food webs. Its global category is Least Concern in the referenced Red List-based account, but this does not demonstrate that every local population is secure. Loss of cavities and changes in land use can reduce nesting or feeding opportunities. Protecting safe nesting sites and monitoring local populations are useful responses."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Jackdaw",
+                "RSPB — Jackdaw",
+                "Cornell Lab of Ornithology — All About Birds: Eurasian Jackdaw",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "OSME — Region List of Birds, version 10.1 (2024)",
+                "Thévenot and colleagues — Liste des oiseaux du Maroc, mise à jour février 2010",
+                "AbdulRahman Al-Sirhan — Arabic–English Names of Middle Eastern Birds"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Matti Virtala — CC0."
+        },
+        "fr": {
+          "title": "Choucas des tours",
+          "subtitle": "Coloeus monedula — Identification, habitats, reproduction et présence saisonnière dans le monde arabe",
+          "meta_description": "Coloeus monedula — Identification, habitats, reproduction et présence saisonnière dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Choucas des tours, Coloeus monedula, appartient aux Corvidés. Des références plus anciennes utilisent la combinaison Corvus monedula. Plus petit et plus compact que les grands corbeaux, il possède un bec relativement court, une calotte sombre et une nuque gris argenté. Chez l’adulte, l’iris pâle contraste nettement avec la tête sombre. Certains ouvrages arabes le nomment « ghurab al-zarʿ », une appellation susceptible de confusion avec le Corbeau freux. Le nom scientifique reste donc indispensable pour faire correspondre noms régionaux et espèces."
+              ]
+            },
+            {
+              "heading": "Âge et espèces proches",
+              "paragraphs": [
+                "Les sexes se ressemblent: une photographie ordinaire du plumage ne permet pas de déterminer sûrement le sexe. Les jeunes sont plus bruns, avec une tête moins contrastée; la couleur des yeux évolue avec l’âge. L’iris seul ne permet donc pas de déterminer un âge précis ni d’exclure un jeune choucas. Pour l’identifier, il faut associer silhouette compacte, bec court, nuque grise et voix, plutôt que retenir une seule couleur. Le Corbeau freux, Corvus frugilegus, est plus grand et possède un bec plus long: il s’agit d’une espèce distincte malgré des noms vernaculaires semblables."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Le choucas recherche sa nourriture dans les champs, pâtures et pelouses courtes; les cavités des arbres, rochers et vieux bâtiments lui offrent des sites de nidification. Des groupes bruyants et des dortoirs collectifs s’observent notamment hors reproduction. Son alimentation variée comprend invertébrés, graines et fruits, parfois œufs ou oisillons. Une part importante de la recherche alimentaire se déroule au sol. La proximité des bâtiments ne prouve pas une dépendance aux déchets humains: un paysage favorable peut associer espaces ouverts nourriciers et cavités sûres."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Le nid est installé dans une cavité adaptée d’un arbre, d’un rocher ou d’un bâtiment. Les données britanniques indiquent généralement une nichée annuelle de quatre ou cinq œufs. La femelle incube environ vingt jours; les jeunes quittent le nid vers 32 jours. Ces valeurs approximatives proviennent des suivis britanniques. Le début de la reproduction dépend du climat et du lieu. Un groupe observé en automne ne constitue pas une preuve de nidification locale."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "Dans le monde arabe, il faut distinguer résidents, hivernants et observations exceptionnelles. Au Liban, la liste de 2020 décrit un hivernant régulier d’octobre à début mars dans la Beqaa, l’Anti-Liban et Marjaayoun; les mentions de résidence ne disposent pas de preuves précises dans cette synthèse. La liste jordanienne indique résidence et hivernage; celle de l’OSME de 2024 signale une reproduction peu commune en Irak. Au Maroc, la liste de 2010 documente des nicheurs résidents et une expansion dans les plaines atlantiques septentrionales jusqu’à Rabat. La référence régionale documente la première observation koweïtienne en octobre 2023, contrairement à la présence hivernale régulière commençant en automne au Liban."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Consommateur d’aliments végétaux et animaux, le choucas participe à plusieurs réseaux trophiques. Son classement mondial est « Préoccupation mineure » dans la synthèse fondée sur la Liste rouge citée, sans garantie pour chaque population locale. Disparition des cavités et changements d’usage des terres peuvent réduire les possibilités de nidification ou d’alimentation. Conserver des sites sûrs et suivre les populations locales est utile."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Jackdaw",
+                "RSPB — Jackdaw",
+                "Cornell Lab of Ornithology — All About Birds: Eurasian Jackdaw",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "OSME — Region List of Birds, version 10.1 (2024)",
+                "Thévenot and colleagues — Liste des oiseaux du Maroc, mise à jour février 2010",
+                "AbdulRahman Al-Sirhan — Arabic–English Names of Middle Eastern Birds"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Matti Virtala — CC0."
+        }
+      },
+      "published": "2026-10-30",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "jackdaw"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الذعرة-الصفراء-الغربية",
+        "en": "western-yellow-wagtail",
+        "fr": "bergeronnette-printaniere"
+      },
+      "translations": {
+        "ar": {
+          "title": "الذعرة الصفراء الغربية",
+          "subtitle": "Motacilla flava — دليل التعرّف والموائل والتكاثر والحضور الموسمي في العالم العربي",
+          "meta_description": "Motacilla flava — دليل التعرّف والموائل والتكاثر والحضور الموسمي في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الذعرة الصفراء الغربية Motacilla flava عصفور من فصيلة الذعريات Motacillidae، نحيل الجسم، داكن الساقين، يمشي ويعدو على الأرض مع تحريك الذيل. يجمع ريش كثير من البالغين أصفر الأسفل وأخضر الظهر، لكن لون الرأس يختلف بين النويعات؛ فليس كل الذكور زرقاء الرأس. تفصل المعالجة التصنيفية الحديثة الذعرة الصفراء الشرقية Motacilla tschutschensis عنها. ويمنع الاسم العلمي التباس الأسماء الشعبية المشتركة بين ذعريات مختلفة."
+              ]
+            },
+            {
+              "heading": "تمييز العمر والأنواع المشابهة",
+              "paragraphs": [
+                "تكون الإناث والصغار عادة أهدأ لونًا من الذكور، لكن الاختلاف بين النويعات يزيد التعرف تعقيدًا. توضح المراجع القطرية أن بعض طيور الخريف الأولى من نويع beema قد تفتقر تقريبًا إلى الأصفر في الأسفل وتبدو رمادية من الأعلى. لذا لا يكفي غياب اللون الأصفر لاستبعاد الذعرة الصفراء. وقد تلتبس الطيور الفتية بالذعرة الصفراء الشرقية أو الليمونية؛ وينبغي جمع صفات الرأس والجناح والذيل والصوت إن توفر، مع المكان والتاريخ. يتطلب تحديد النويعة والجنس مشاهدة واضحة لصفات متعددة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تستخدم المروج الرطبة والأراضي الزراعية وحواف المستنقعات والأنهار وقنوات الري، وتبحث عن الحشرات واللافقاريات الصغيرة على الأرض وبين النباتات المنخفضة. وقد ترافق الماشية أو تستفيد من الفرائس التي تحركها الحيوانات. توفّر الحقول المروية محطات تغذية مهمة للمهاجرين، لكن مشاهدة الطائر في مزرعة لا تعني أنه يتكاثر فيها. ويختلف استخدام الموئل بين التكاثر والعبور والشتاء؛ فما يصلح للاستراحة والتغذية يومًا واحدًا قد لا يوفر الغطاء والمياه اللازمين طوال موسم التعشيش."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "العش كأس صغير على الأرض، مخفي بين النباتات. تقوم الأنثى بمعظم البناء والحضانة، ويساهم الأبوان في إطعام الفراخ. تسجل البيانات البريطانية عادة 5–6 بيضات، وحضنة أو حضنتين في الموسم، وحضانة تقارب أربعة عشر يومًا، ثم مغادرة الصغار العش بعمر نحو 13–15 يومًا. هذه أرقام مرجعية بريطانية، مع اختلاف التوقيت بحسب المنطقة. يحتاج العش الأرضي إلى غطاء مناسب؛ ويمكن أن يؤدي تغيير إدارة الحقل أثناء وجوده إلى فقد هذا الغطاء، حتى لو بقيت المساحة خضراء في نظر المراقب."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية في العالم العربي",
+              "paragraphs": [
+                "يجمع حضور الذعرة الصفراء في العالم العربي بين الإقامة والتكاثر والعبور والإشتاء. تضم مصر جماعة مقيمة من نويع pygmaea مرتبطة بوادي النيل ودلتاه، وتوجد جماعات متكاثرة من iberiae في شمال أفريقيا. أما القائمة الأردنية فتجمع بين تكاثر محدود وعبور شائع. وتوثق المراجع اللبنانية عبورًا خريفيًا، ولا سيما في سبتمبر وأكتوبر، مع تكاثر صيفي محدود على المستوى الوطني. وتجمع سجلات الجزيرة العربية بين العبور والإشتاء في بعض المناطق، بحسب الموقع والنويع. تستقبل الحقول الرطبة طيورًا عابرة خلال الهجرة الخريفية، فيما تبقى جماعة النيل مقيمة طوال العام."
+              ]
+            },
+            {
+              "heading": "الأهمية البيئية والحماية",
+              "paragraphs": [
+                "تربط الذعرة بين وفرة اللافقاريات والطيور في البيئات الزراعية والرطبة، وتدخل بدورها في غذاء مفترسات أخرى. يضع تقييم الاتحاد الدولي لصون الطبيعة لعام 2019 النوع ضمن «أقل إثارة للقلق». أما إدراجه في القائمة الحمراء البريطانية فيعكس وضعًا وطنيًا مختلفًا، ولا يجعله تلقائيًا مهددًا عالميًا. يشكل فقد المروج الرطبة وتكثيف الزراعة وتقليل الفرائس ضغوطًا محتملة. وتدعم حماية الحواف الرطبة والغطاء النباتي والغذاء الحشري الطيور المقيمة والعابرة، مع مراعاة اختلاف حاجاتها الموسمية."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Yellow Wagtail",
+                "RSPB — Yellow Wagtail",
+                "Qatar eNature — Yellow Wagtail",
+                "The Birds of Saudi Arabia — Western Yellow Wagtail",
+                "Bulgarian Society for the Protection of Birds — Breeding Bird Atlas: Yellow Wagtail",
+                "OSME — Region List of Birds, version 10.1 (2024)",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Lebanese Ministry of Environment — Palm Islands Nature Reserve report",
+                "BirdLife International — IUCN assessment of Motacilla flava (2019)"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Estormiz — CC0."
+        },
+        "en": {
+          "title": "Western Yellow Wagtail",
+          "subtitle": "Motacilla flava — Identification, habitats, breeding and seasonal occurrence in the Arab region",
+          "meta_description": "Motacilla flava — Identification, habitats, breeding and seasonal occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Western Yellow Wagtail, Motacilla flava, is a slender member of the family Motacillidae, with dark legs and a habit of walking or running on the ground while moving its tail. Many adults combine yellow underparts with greenish upperparts, but head colour varies among subspecies: not every male has a blue head. Modern taxonomy separates the Eastern Yellow Wagtail, Motacilla tschutschensis. Scientific names also help resolve regional names shared by different wagtails."
+              ]
+            },
+            {
+              "heading": "Age and similar species",
+              "paragraphs": [
+                "Females and young birds are generally duller than males, but subspecific variation makes identification more complex. Qatar’s field account notes that some first-autumn beema may have almost no yellow below and look grey above. Absence of yellow alone therefore does not exclude a Yellow Wagtail. Immatures can be confused with Eastern Yellow or Citrine Wagtails; head, wing and tail patterns, calls when available, locality and date should be considered together. Reliable assignment of subspecies or sex requires clear views of several features."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Wet grassland, farmland, marsh edges, river margins and irrigation channels provide feeding habitat. The birds search for insects and other small invertebrates on the ground and among low vegetation. They may accompany livestock or take prey disturbed by animals. Irrigated fields can provide important migratory feeding stops, but a bird on a farm is not necessarily nesting there. Habitat use differs between breeding, passage and winter: a site offering a day’s food and rest may not provide the cover and water required throughout nesting."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "The small cup nest is on the ground, concealed in vegetation. The female undertakes most building and incubation, while both parents feed the young. British records typically indicate five or six eggs, one or two broods, approximately fourteen days of incubation and departure of young at around 13–15 days. These are British reference values; timing varies by region. Ground nests require suitable cover; a change in field management during nesting may remove it even while the field still looks green to an observer."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Yellow Wagtail occurrence in the Arab region includes residence, breeding, passage and wintering. Egypt supports resident pygmaea associated with the Nile Valley and Delta; breeding iberiae also occur in North Africa. Jordan’s list combines limited breeding with common passage. Lebanese references document autumn passage, particularly September and October, and limited summer breeding nationally. Arabian records include passage and wintering in some areas, varying by locality and subspecies. Wet fields receive passage birds during autumn migration, while the Nile population remains resident year-round."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "The wagtail links invertebrate abundance to birds in farmland and wetland food webs and is itself prey for predators. The 2019 IUCN assessment lists Least Concern. Its British Red List status reflects a separate national situation, not automatic global threatened status. Loss of wet grassland, agricultural intensification and reduced prey can create pressures. Retaining wet margins, vegetation cover and insect food supports residents and passage birds while recognizing their different seasonal needs."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Yellow Wagtail",
+                "RSPB — Yellow Wagtail",
+                "Qatar eNature — Yellow Wagtail",
+                "The Birds of Saudi Arabia — Western Yellow Wagtail",
+                "Bulgarian Society for the Protection of Birds — Breeding Bird Atlas: Yellow Wagtail",
+                "OSME — Region List of Birds, version 10.1 (2024)",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Lebanese Ministry of Environment — Palm Islands Nature Reserve report",
+                "BirdLife International — IUCN assessment of Motacilla flava (2019)"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Estormiz — CC0."
+        },
+        "fr": {
+          "title": "Bergeronnette printanière",
+          "subtitle": "Motacilla flava — Identification, habitats, reproduction et présence saisonnière dans le monde arabe",
+          "meta_description": "Motacilla flava — Identification, habitats, reproduction et présence saisonnière dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Bergeronnette printanière, Motacilla flava, est un passereau élancé de la famille des Motacillidés, aux pattes sombres, qui marche ou court au sol en remuant la queue. Beaucoup d’adultes associent dessous jaunes et dessus verdâtres, mais la couleur de la tête varie selon les sous-espèces: tous les mâles n’ont pas la tête bleue. La taxonomie actuelle distingue la Bergeronnette orientale, Motacilla tschutschensis. Le nom scientifique aide aussi à clarifier les appellations régionales partagées entre bergeronnettes."
+              ]
+            },
+            {
+              "heading": "Âge et espèces proches",
+              "paragraphs": [
+                "Femelles et jeunes sont généralement plus ternes que les mâles, mais les variations entre sous-espèces compliquent l’identification. Le guide qatari indique que certains beema de premier automne peuvent presque manquer de jaune dessous et paraître gris dessus. L’absence de jaune n’exclut donc pas cette bergeronnette. Des immatures peuvent être confondus avec la Bergeronnette orientale ou la Citrine: dessins de la tête, ailes et queue, cris disponibles, lieu et date doivent être réunis. L’attribution fiable du sexe ou de la sous-espèce exige une vue claire de plusieurs caractères."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Prairies humides, terres agricoles, lisières des marais, berges et canaux d’irrigation offrent des terrains d’alimentation. Les oiseaux recherchent insectes et autres petits invertébrés au sol et dans la végétation basse. Ils peuvent accompagner le bétail ou saisir des proies dérangées par les animaux. Les champs irrigués constituent parfois d’importantes haltes alimentaires, mais une présence agricole ne prouve pas la nidification. L’usage du milieu diffère entre reproduction, passage et hiver: un site offrant nourriture et repos une journée ne fournit pas nécessairement couvert et eau pendant toute la nidification."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Le nid, petite coupe au sol, est caché dans la végétation. La femelle assure l’essentiel de sa construction et de l’incubation; les deux parents nourrissent les jeunes. Les données britanniques indiquent généralement cinq ou six œufs, une ou deux nichées, environ quatorze jours d’incubation et un départ des jeunes vers 13–15 jours. Ce sont des valeurs de référence britanniques; le calendrier varie selon les régions. Un nid terrestre exige un couvert adapté; une modification des pratiques agricoles peut le supprimer pendant la reproduction, même si le champ paraît encore vert."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "La présence de la Bergeronnette printanière dans le monde arabe associe résidence, reproduction, passage et hivernage. L’Égypte abrite des pygmaea résidentes liées à la vallée et au delta du Nil; des iberiae nichent également en Afrique du Nord. La liste jordanienne associe reproduction limitée et passage commun. Les références libanaises documentent le passage automnal, notamment en septembre et octobre, et une reproduction estivale limitée à l’échelle nationale. Les observations d’Arabie comprennent passage et hivernage dans certains secteurs, selon les lieux et sous-espèces. Les champs humides accueillent des oiseaux de passage pendant la migration automnale, tandis que la population du Nil reste résidente toute l’année."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "La bergeronnette relie l’abondance des invertébrés aux oiseaux dans les réseaux trophiques agricoles et humides; elle est aussi une proie. L’évaluation UICN de 2019 la classe en « Préoccupation mineure ». Son inscription sur la Liste rouge britannique correspond à une situation nationale distincte, sans lui conférer automatiquement un statut mondial menacé. Disparition des prairies humides, intensification agricole et diminution des proies peuvent exercer des pressions. Préserver bordures humides, couvert végétal et nourriture favorise résidents et migrateurs, dont les besoins saisonniers diffèrent."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Yellow Wagtail",
+                "RSPB — Yellow Wagtail",
+                "Qatar eNature — Yellow Wagtail",
+                "The Birds of Saudi Arabia — Western Yellow Wagtail",
+                "Bulgarian Society for the Protection of Birds — Breeding Bird Atlas: Yellow Wagtail",
+                "OSME — Region List of Birds, version 10.1 (2024)",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Lebanese Ministry of Environment — Palm Islands Nature Reserve report",
+                "BirdLife International — IUCN assessment of Motacilla flava (2019)"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Estormiz — CC0."
+        }
+      },
+      "published": "2026-10-30",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "yellow-wagtail"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "القليعي-البرقش-الأحمر",
+        "en": "whinchat",
+        "fr": "tarier-des-pres"
+      },
+      "translations": {
+        "ar": {
+          "title": "القليعي (البرقش الأحمر)",
+          "subtitle": "Saxicola rubetra — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Saxicola rubetra — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "القليعي، المعروف أيضًا بالبرقش الأحمر، Saxicola rubetra طائر صغير من فصيلة خاطفات الذباب Muscicapidae. يحمل الذكر حاجبًا أبيض واضحًا فوق العين، وجانبي رأس داكنين، وحلقًا وصدرًا برتقاليين. الأنثى أقل تباينًا، بجانبي رأس بنيين وحاجب أفتح من الريش المحيط. الظهر بني مخطط، والذيل قصير نسبيًا مع بياض عند جانبي قاعدته. لدى اليافع تنقيط أو تبقيع أوضح، ولا يصح افتراض أن كل فرد باهت أنثى بالغة."
+              ]
+            },
+            {
+              "heading": "التمييز من الأنواع المشابهة",
+              "paragraphs": [
+                "أقرب مصادر الالتباس القليعي المطوق والقليعي السيبيري. يساعد اجتماع الحاجب الواضح والعجز البني المخطط والبياض عند قاعدة جانبي الذيل على تمييزه، مع بروز أطول للقوادم خلف الريش الداخلي للجناح المطوي. وقد تظهر بقعة بيضاء على غطائيات الجناح، لكنها تكون ضعيفة جدًا في بعض طيور الخريف الأول؛ لذا غيابها لا ينفي الهوية. ينبغي خصوصًا في الخريف فحص الرأس والعجز والذيل معًا، بدل اختيار الاسم اعتمادًا على اللون البرتقالي المشترك."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يستخدم المروج والأراضي العشبية والمراعي ذات الأعشاب والسيقان المرتفعة أو الشجيرات المتناثرة التي تصلح مجاثم. ويزور الحقول والمناطق المزروعة أثناء الهجرة. يقف على ساق أو سياج أو شجيرة منخفضة، يراقب ثم يندفع نحو فريسة على الأرض أو في الهواء. يعتمد أساسًا على الحشرات واللافقاريات، مع تناول بعض الثمار والبذور في الخريف. لا يحتاج إلى غطاء شجري كثيف بقدر حاجته إلى أرض غنية بالفرائس ومجاثم موزعة فوقها."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يتكاثر في نطاق واسع من أوروبا إلى غرب سيبيريا. يختبئ عشه المنخفض بين الأعشاب أو عند قاعدة غطاء نباتي، ما يجعله عرضة للحش المبكر واضطراب المروج. تسجل المراجع حضنات غالبًا بين أربع وسبع بيضات؛ وتتولى الأنثى الحضانة نحو أسبوعين، ويغادر الصغار العش بعد مدة تقارب أسبوعين أخرى. لا تعني هذه المغادرة اكتمال استقلالها. تختلف التواريخ بحسب المنطقة، ولا يمثل وجوده في حقل عربي خلال الخريف دليلًا على تعشيشه فيه."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "يقضي الشتاء أساسًا في أفريقيا المدارية، وتظهر أهمية البلدان العربية كممرات ومحطات توقف. تصنفه القائمة الأردنية عابرًا، وتصفه طبيعة قطر كذلك؛ وتحدد مجموعة مراقبة الطيور القطرية العبور عادة بأبريل–مايو وسبتمبر–أكتوبر. يسجله دليل طيور العلا السعودي عابرًا قليلًا في حرة خيبر، ضمن نطاق المسح المحلي للدليل. وتصفه مراجع الكويت بعابر غير شائع، مع زيارات شتوية نادرة. وتؤكد خريطة الانتشار العالمية وجوده أيضًا في مصر وبلدان المغرب العربي. لذلك تُقرأ مشاهدة أكتوبر وفق البلد والموطن، لا باعتبارها وصول زائر شتوي ثابت أينما شوهد."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يربط القليعي مجتمعات اللافقاريات بالمفترسات الأعلى في الأراضي المفتوحة. تظهر متابعة مناطقه الأوروبية أن تدهور المروج والتكثيف الزراعي وضعف نجاح التكاثر من مشكلاته، وتبرز أهمية إبقاء مواضع التعشيش بعيدًا عن الحش المبكر. كما تحتاج الطيور العابرة إلى محطات توقف يتوافر فيها الغذاء والغطاء. تصنيفه العالمي أقل إثارة للقلق، لكن ذلك لا يلغي تراجعات موثقة في بعض البلدان. وتظل متابعة الجماعات العربية مهمة لتحديد اتجاهاتها الخاصة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Whinchat",
+                "Naturalis — Birds of Europe: Whinchat",
+                "Qatar e-Nature — القليعي",
+                "Qatar Bird Observation Group — Whinchat",
+                "Royal Commission for AlUla — Birds of AlUla",
+                "Birds of Kuwait — Whinchat",
+                "BirdLife International — Saxicola rubetra, IUCN Red List assessment 2016",
+                "RSPB — Species spotlight: Whinchat",
+                "LPO — Tarier des prés",
+                "Jordan BirdWatch — Jordan Bird List"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Аимаина хикари — CC0 1.0."
+        },
+        "en": {
+          "title": "Whinchat",
+          "subtitle": "Saxicola rubetra — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Saxicola rubetra — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Whinchat, Saxicola rubetra, is a small member of the flycatcher family Muscicapidae. Its Arabic names include al-qulay‘i and al-birqish al-ahmar. Males show a clear white eyebrow above dark cheeks, with an orange throat and breast. Females are less contrasting, with browner cheeks and an eyebrow paler than the surrounding feathers. The back is brown and streaked; the relatively short tail has white at the sides of its base. Juveniles are more conspicuously spotted or mottled, so not every dull bird is an adult female."
+              ]
+            },
+            {
+              "heading": "Distinguishing similar birds",
+              "paragraphs": [
+                "European and Siberian Stonechats are the main identification challenges. Combine the prominent eyebrow, streaked brown rump and white sides to the tail base, together with the longer primary projection beyond the inner feathers of the folded wing. A white patch may show on the wing coverts, but can be very reduced in first-autumn birds: its absence does not exclude Whinchat. Autumn identification should therefore compare head, rump and tail rather than rely on orange colouring shared with other chats."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Meadows, grassland and pasture provide habitat where tall stems or scattered bushes offer lookout posts. Fields and cultivated areas are also visited on migration. From a stem, fence or low shrub, the bird watches before darting after prey on the ground or in the air. Insects and other invertebrates dominate the diet, with some fruits and seeds taken in autumn. Dense woodland is less important than prey-rich open ground with appropriately spaced perches."
+              ]
+            },
+            {
+              "heading": "Breeding and annual cycle",
+              "paragraphs": [
+                "The breeding range extends across Europe to western Siberia. The low nest is concealed among grasses or at the base of vegetation, making early mowing and grassland disturbance important risks. Accounts commonly describe four to seven eggs. The female incubates for approximately two weeks, and young leave the nest after roughly another fortnight, before they are fully independent. Dates vary regionally; a bird seen in an Arab field during autumn is not evidence that it nests there."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Wintering is mainly in tropical Africa, with Arab countries providing migration routes and stopping places. Jordan’s checklist and Qatar e-Nature classify it as a passage migrant; Qatar Bird Observation Group places passage mainly in April–May and September–October. Saudi Arabia’s Birds of AlUla guide records a scarce migrant at Harrat Khaybar within the guide’s local survey area. Kuwaiti references describe uncommon passage and rare winter visits. The global distribution account also confirms occurrence in Egypt and Maghreb countries. October sightings must therefore be interpreted locally, rather than automatically labelled the arrival of a regular winter resident."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Whinchats connect grassland invertebrates with higher predators. European monitoring highlights grassland deterioration, agricultural intensification and poor breeding success; protecting nesting cover from early mowing is particularly relevant. Migrants also require stopping places with food and shelter. The global category is Least Concern, but documented declines in individual countries remain important. Monitoring Arab-region populations remains important for establishing their own trends."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Whinchat",
+                "Naturalis — Birds of Europe: Whinchat",
+                "Qatar e-Nature — القليعي",
+                "Qatar Bird Observation Group — Whinchat",
+                "Royal Commission for AlUla — Birds of AlUla",
+                "Birds of Kuwait — Whinchat",
+                "BirdLife International — Saxicola rubetra, IUCN Red List assessment 2016",
+                "RSPB — Species spotlight: Whinchat",
+                "LPO — Tarier des prés",
+                "Jordan BirdWatch — Jordan Bird List"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Аимаина хикари — CC0 1.0."
+        },
+        "fr": {
+          "title": "Tarier des prés",
+          "subtitle": "Saxicola rubetra — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Saxicola rubetra — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Tarier des prés, Saxicola rubetra, est un petit Muscicapidé, appelé notamment al-qulay‘i et al-birqish al-ahmar en arabe. Le mâle porte un sourcil blanc bien visible au-dessus de joues sombres, avec gorge et poitrine orangées. La femelle est moins contrastée, avec des joues brunes et un sourcil plus clair que le plumage voisin. Le dos est brun strié; la queue relativement courte présente du blanc sur les côtés de sa base. Les juvéniles sont davantage tachetés ou mouchetés: tout oiseau terne n’est donc pas une femelle adulte."
+              ]
+            },
+            {
+              "heading": "Espèces proches",
+              "paragraphs": [
+                "Les Tariers pâtre et de Sibérie constituent les principales confusions possibles. On examine ensemble sourcil marqué, croupion brun strié, blanc à la base latérale de la queue et projection des rémiges primaires au-delà des plumes internes de l’aile fermée. Une tache blanche peut apparaître sur les couvertures alaires, mais elle est parfois très réduite chez les oiseaux de premier automne. Son absence n’exclut donc pas l’espèce. En automne, mieux vaut comparer tête, croupion et queue que se fier à l’orangé commun à plusieurs tariers."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Prés, prairies et pâtures conviennent lorsqu’ils offrent hautes tiges ou buissons épars servant de postes d’observation. L’espèce fréquente aussi les champs et cultures pendant la migration. Depuis une tige, une clôture ou un arbuste bas, elle repère une proie puis la capture au sol ou en vol. Insectes et autres invertébrés dominent le régime, complété à l’automne par quelques fruits et graines. Elle dépend moins d’une forêt dense que de terrains ouverts riches en proies et pourvus de perchoirs."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "L’aire de reproduction s’étend de l’Europe à la Sibérie occidentale. Le nid bas se dissimule dans les herbes ou au pied de la végétation; fauche précoce et dérangement des prairies représentent donc des risques. Les références décrivent souvent quatre à sept œufs. La femelle couve environ deux semaines, puis les jeunes quittent le nid après une durée voisine, avant leur indépendance complète. Les dates varient: un tarier observé dans un champ arabe en automne n’y niche pas nécessairement."
+              ]
+            },
+            {
+              "heading": "Présence et saisons dans le monde arabe",
+              "paragraphs": [
+                "L’hivernage se déroule principalement en Afrique tropicale; les pays arabes offrent des couloirs et des haltes. La liste jordanienne et Qatar e-Nature le classent comme migrateur de passage. Le groupe d’observation qatari situe surtout ce passage en avril–mai et septembre–octobre. Le guide saoudien Birds of AlUla signale un migrateur peu nombreux à Harrat Khaybar, dans le secteur couvert par ce guide local. Les références koweïtiennes mentionnent un passage peu commun et de rares visites hivernales. La répartition mondiale confirme aussi sa présence en Égypte et au Maghreb. Une observation d’octobre doit donc être interprétée localement, sans conclure automatiquement à un hivernage régulier."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Le Tarier des prés relie les invertébrés des prairies aux prédateurs supérieurs. Les suivis européens soulignent la dégradation des milieux herbacés, l’intensification agricole et un faible succès reproducteur. Préserver les nids de la fauche précoce est particulièrement important. Les migrateurs ont également besoin de haltes nourricières et abritées. Le statut mondial reste Préoccupation mineure, sans annuler les baisses documentées dans certains pays. Le suivi des populations arabes reste important pour établir leurs propres tendances."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Whinchat",
+                "Naturalis — Birds of Europe: Whinchat",
+                "Qatar e-Nature — القليعي",
+                "Qatar Bird Observation Group — Whinchat",
+                "Royal Commission for AlUla — Birds of AlUla",
+                "Birds of Kuwait — Whinchat",
+                "BirdLife International — Saxicola rubetra, IUCN Red List assessment 2016",
+                "RSPB — Species spotlight: Whinchat",
+                "LPO — Tarier des prés",
+                "Jordan BirdWatch — Jordan Bird List"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Аимаина хикари — CC0 1.0."
+        }
+      },
+      "published": "2026-10-30",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "whinchat"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الذعرة-الرمادية",
+        "en": "grey-wagtail",
+        "fr": "bergeronnette-des-ruisseaux"
+      },
+      "translations": {
+        "ar": {
+          "title": "الذعرة الرمادية",
+          "subtitle": "Motacilla cinerea — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Motacilla cinerea — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الذعرة الرمادية Motacilla cinerea من فصيلة الذعرات والجشنات Motacillidae. لا يصف اسمها كل ألوانها: فالظهر رمادي، لكن منطقة ما تحت الذيل صفراء واضحة، ويبدو الذيل طويلًا جدًا قياسًا بالجسم. الساقان بنيتان ورديتان. يحمل الذكر في موسم التكاثر حلقًا أسود، بينما يكون حلق الأنثى أفتح وقد تظهر فيه مساحة سوداء متفاوتة. يبدو اليافع أقل سطوعًا، بحلق فاتح وصفرة أضعف على الصدر. تتغير هذه السمات مع العمر والموسم، فلا يصح تحديد الجنس من الحلق وحده خارج ريش التكاثر."
+              ]
+            },
+            {
+              "heading": "التمييز من الأنواع المشابهة",
+              "paragraphs": [
+                "يقل احتمال الخلط بالذعرة البيضاء عند الانتباه إلى الأصفر تحت الذيل، لكن الخلط بالذعرات الصفراء يحتاج إلى مقارنة أدق. تجمع الرمادية ظهرًا رماديًا وذيلًا أطول نسبيًا وساقين فاتحتين، بدل الاكتفاء بوجود الأصفر في الريش. وقد يظهر شريط فاتح في الجناح أثناء الطيران. يساعد سلوكها حول الصخور وحواف المياه على التشخيص، إلا أن وجود ذعرة قرب جدول لا يعفي من فحص شكلها؛ فالأنواع الأخرى قد تزور المكان نفسه."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "ترتبط خلال التكاثر بالجداول والأنهار، ولا سيما المواقع التي توفر حواف صخرية وحشرات ومخابئ للعش. خارج الموسم تتوسع إلى مياه أبطأ وبرك وبحيرات وقنوات، وقد تهبط من المرتفعات إلى مناطق أدفأ. تلتقط الحشرات واللافقاريات الصغيرة عند الحافة ومن الأسطح المكشوفة، وقد تصطاد حشرة طائرة. أظهر بحث ميداني في قبرص أن الذباب واليعاسيب كانا بين فرائس الفراخ، ما يوضح صلتها بالحشرات المحيطة بالماء."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يوضع العش في موضع محمي قرب الماء، مثل فجوة صخر أو جدار أو أسفل جسر أو بين جذور ضفة. وقد تستخدم صناديق تعشيش ملائمة. تورد سجلات بريطانية حضنة نموذجية من خمس بيضات، وحضانة نحو 12–13 يومًا، وبقاء الفراخ في العش نحو 14–15 يومًا. تتفاوت هذه المدد، بينما يتحدد موسم التعشيش محليًا. يرتبط نجاح التكاثر بتوافر الغذاء وموقع عش لا يغمره الماء أو يتعرض للإزعاج المتكرر."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "لا تتوزع الإقامة والهجرة بالتساوي عربيًا. تسجل القائمة الأردنية النوع زائرًا شتويًا وعابرًا أقل شيوعًا. وتوثق قائمة سوريا لعام 2025 تكاثرًا مقيمًا غير شائع في شمال المنطقة الساحلية، مع إشتاء واسع وعبور في مختلف المناطق. وتسجل القائمة المغربية المنشورة عام 2010 جماعات مقيمة متكاثرة وزوار شتاء. أما مرجع طبيعة قطر فيصفها بالعابرة النادرة. لذلك قد تكون مشاهدة أكتوبر في المشرق مرتبطة بالعبور أو بداية الحضور الشتوي، بينما لا ينبغي تحويل وجود نادر في الخليج إلى إشتاء شائع على امتداده. وفي الكويت توثق القائمة المعتمدة المحدثة في سبتمبر 2026 عبورًا غير شائع وإشتاءً قليلًا."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تعتمد هذه الذعرة على الصلة بين المياه وضفافها واللافقاريات التي تتغذى عليها. يفيدها الحفاظ على جريان مناسب وضفاف متنوعة ومواضع تعشيش محمية. يشكل تلوث المياه وتدهور مجاريها وتغيير الضفاف أخطارًا محتملة على الموائل والغذاء، وقد تؤثر الأحوال الشتوية القاسية في بعض الجماعات. تصنف عالميًا ضمن أقل إثارة للقلق؛ ولا تعني الفئة العالمية أن كل تجمع محلي مستقر. رصدها المنتظم مفيد، لكن وجود فرد واحد لا يصلح وحده شهادة على نقاء المياه."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Grey Wagtail",
+                "RSPB — Grey Wagtail",
+                "Qatar e-Nature — الذعرة الرمادية",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria: Species Diversity, Subspecies, Distribution, and Conservation Status, 2025",
+                "Thévenot et al. — Liste des oiseaux du Maroc, Go-South Bulletin 7, 2010",
+                "Ornithological Science 22 — Grey Wagtail breeding ecology in Cyprus, 2023",
+                "LPO PACA — La Bergeronnette des ruisseaux",
+                "Sovon — Motacilla cinerea",
+                "Kuwait Ornithological Rarities Committee — Official Kuwait Bird List, September 2026"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Andrew Cunnington — CC0 1.0."
+        },
+        "en": {
+          "title": "Grey Wagtail",
+          "subtitle": "Motacilla cinerea — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Motacilla cinerea — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Grey Wagtail, Motacilla cinerea, belongs to Motacillidae, the wagtail and pipit family. Its name describes only part of its appearance: the back is grey, but the undertail is conspicuously yellow and the tail is extremely long relative to the body. Legs are pinkish brown. A breeding male has a black throat; females have a paler throat, sometimes with variable black. Young birds are less vivid, with a pale throat and weaker yellow on the breast. These characters change with age and season, so throat colour alone is not a reliable year-round sexing method."
+              ]
+            },
+            {
+              "heading": "Distinguishing similar birds",
+              "paragraphs": [
+                "Yellow undertail feathers help separate it from a White Wagtail. Distinguishing it from yellow wagtails requires closer comparison: look for the combination of a grey back, proportionately longer tail and pale legs, rather than yellow plumage alone. A pale wing stripe may show in flight. Feeding around rocks and water margins also provides a clue, but habitat never replaces identification: other wagtails can visit the same stream."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Breeding birds are associated with streams and rivers, especially where rocky margins provide insects and sheltered nesting places. Outside the season they also use slower water, ponds, lakes and channels; some move downhill to milder areas. They collect insects and other small invertebrates along edges and exposed surfaces, sometimes catching prey in the air. A field study in Cyprus recorded flies and dragonflies among nestling foods, illustrating the connection with insects around water."
+              ]
+            },
+            {
+              "heading": "Breeding and annual cycle",
+              "paragraphs": [
+                "The nest occupies shelter near water, such as a rock or wall recess, a space beneath a bridge or roots in a bank. Suitable nestboxes may be accepted. British records give a typical clutch of five eggs, incubation of about 12–13 days and a nestling period of roughly 14–15 days. These reference durations vary; the breeding season is established locally. Successful nesting requires food and a site protected from flooding and repeated disturbance."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Residence and migration differ across Arab countries. Jordan’s checklist describes a winter visitor and a less common passage migrant. Syria’s 2025 checklist documents uncommon resident breeding in the northern coastal region, together with widespread wintering and passage in different regions. The Moroccan checklist published in 2010 records resident breeders and winter visitors. Qatar e-Nature, by contrast, describes a rare passage migrant. An October observation in the Levant may therefore fit passage or the beginning of winter presence. Occasional Gulf records should not be turned into a claim of common wintering throughout the Gulf. Kuwait’s endorsed checklist, updated in September 2026, records uncommon passage and scarce winter presence."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "The bird depends on connections between water, its margins and invertebrate food. Maintaining suitable flow, varied banks and sheltered nesting places benefits its habitat. Water pollution, channel deterioration and altered banks can threaten habitat and prey; severe winter weather can affect some populations. Its global category is Least Concern, not a guarantee that every local population is stable. Regular monitoring is useful, but a single wagtail sighting is not, by itself, a certificate of clean water."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Grey Wagtail",
+                "RSPB — Grey Wagtail",
+                "Qatar e-Nature — الذعرة الرمادية",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria: Species Diversity, Subspecies, Distribution, and Conservation Status, 2025",
+                "Thévenot et al. — Liste des oiseaux du Maroc, Go-South Bulletin 7, 2010",
+                "Ornithological Science 22 — Grey Wagtail breeding ecology in Cyprus, 2023",
+                "LPO PACA — La Bergeronnette des ruisseaux",
+                "Sovon — Motacilla cinerea",
+                "Kuwait Ornithological Rarities Committee — Official Kuwait Bird List, September 2026"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Andrew Cunnington — CC0 1.0."
+        },
+        "fr": {
+          "title": "Bergeronnette des ruisseaux",
+          "subtitle": "Motacilla cinerea — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Motacilla cinerea — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Bergeronnette des ruisseaux, Motacilla cinerea, appartient aux Motacillidés, famille des bergeronnettes et des pipits. Son dos gris contraste avec les sous-caudales jaunes et une queue très longue par rapport au corps. Les pattes sont brun rosé. Le mâle nuptial porte une gorge noire; celle de la femelle est plus claire, parfois marquée de noir. Les jeunes sont moins vifs, avec une gorge pâle et une poitrine moins jaune. L’âge et la saison modifient ces caractères: la gorge seule ne permet donc pas de déterminer sûrement le sexe toute l’année."
+              ]
+            },
+            {
+              "heading": "Espèces proches",
+              "paragraphs": [
+                "Le jaune sous la queue la distingue de la Bergeronnette grise. Pour la séparer des bergeronnettes jaunes, il faut examiner l’ensemble: dos gris, queue proportionnellement plus longue et pattes claires, plutôt que le jaune seul. Une bande alaire claire peut apparaître en vol. La recherche de nourriture autour des pierres et des berges aide à la reconnaître, sans remplacer les critères morphologiques: d’autres bergeronnettes visitent les mêmes cours d’eau."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Les nicheurs sont liés aux ruisseaux et aux rivières, notamment aux berges rocheuses offrant insectes et abris. Hors reproduction, l’espèce fréquente aussi eaux plus lentes, mares, lacs et canaux; certains oiseaux descendent vers des altitudes plus douces. Elle capture insectes et petits invertébrés sur les marges et les surfaces découvertes, parfois en vol. Une étude chypriote a notamment identifié mouches et libellules parmi les proies apportées aux poussins, illustrant le lien avec les insectes des milieux aquatiques."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "Le nid est abrité près de l’eau: creux de rocher ou de mur, espace sous un pont ou racines d’une berge. Des nichoirs adaptés peuvent être utilisés. Les suivis britanniques indiquent généralement cinq œufs, environ 12–13 jours d’incubation et 14–15 jours de séjour des jeunes au nid. Ces durées sont variables; la saison de reproduction se précise localement. Le succès dépend de la nourriture et d’un emplacement préservé des crues et des dérangements répétés."
+              ]
+            },
+            {
+              "heading": "Présence et saisons dans le monde arabe",
+              "paragraphs": [
+                "Le statut varie selon les pays arabes. La liste jordanienne décrit une visiteuse hivernale et une migratrice de passage moins commune. La synthèse syrienne de 2025 mentionne une reproduction résidente peu commune dans le nord de la région côtière, avec hivernage étendu et passage dans différentes régions. La liste marocaine publiée en 2010 indique des nicheurs résidents et des hivernants. À l’inverse, Qatar e-Nature décrit une migratrice de passage rare. En octobre, une observation au Levant peut correspondre au transit ou au début de l’hivernage. Des observations occasionnelles dans le Golfe ne prouvent pas un hivernage commun dans toute cette région. La liste officielle du Koweït, mise à jour en septembre 2026, indique un passage peu commun et un hivernage peu nombreux."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "L’espèce dépend des liens entre eau, berges et invertébrés. Le maintien d’un écoulement adapté, de rives variées et de refuges pour nicher lui est favorable. Pollution, dégradation des cours d’eau et transformation des berges peuvent affecter habitats et proies; les hivers rigoureux touchent certaines populations. Son classement mondial en Préoccupation mineure ne garantit pas la stabilité locale. Un suivi régulier est utile, mais la présence d’un seul oiseau ne constitue pas, à elle seule, une preuve de pureté de l’eau."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Grey Wagtail",
+                "RSPB — Grey Wagtail",
+                "Qatar e-Nature — الذعرة الرمادية",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria: Species Diversity, Subspecies, Distribution, and Conservation Status, 2025",
+                "Thévenot et al. — Liste des oiseaux du Maroc, Go-South Bulletin 7, 2010",
+                "Ornithological Science 22 — Grey Wagtail breeding ecology in Cyprus, 2023",
+                "LPO PACA — La Bergeronnette des ruisseaux",
+                "Sovon — Motacilla cinerea",
+                "Kuwait Ornithological Rarities Committee — Official Kuwait Bird List, September 2026"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Andrew Cunnington — CC0 1.0."
+        }
+      },
+      "published": "2026-10-30",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "grey-wagtail"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "القلعي-المطوق",
+        "en": "european-stonechat",
+        "fr": "tarier-patre"
+      },
+      "translations": {
+        "ar": {
+          "title": "القلعي المطوق (القليعي الأوروبي)",
+          "subtitle": "Saxicola rubicola — دليل التعرّف والموائل والتكاثر والحضور الموسمي في العالم العربي",
+          "meta_description": "Saxicola rubicola — دليل التعرّف والموائل والتكاثر والحضور الموسمي في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "القلعي المطوق، أو القليعي الأوروبي، Saxicola rubicola طائر صغير من فصيلة صائدات الذباب Muscicapidae. ورد ضمن مفهوم أوسع للقلعي في مراجع قديمة، وتفصله المعالجة الحديثة عن القلعي السيبيري والأفريقي، ولكل منها نطاقه الجغرافي. يتميز الذكر برأس داكن يكاد يكون أسود، وبقع بيضاء على جانبي العنق، وصدر برتقالي محمر وظهر بني مرقش. الأنثى أهدأ لونًا، برأس وظهر بنيين وصدر مائل إلى البرتقالي. وقد يبدو الذكر نفسه مختلفًا مع تغير حالة الريش والإضاءة."
+              ]
+            },
+            {
+              "heading": "تمييز العمر والأنواع المشابهة",
+              "paragraphs": [
+                "يظهر اليافع مرقشًا، ولا يمكن تعيين عمر الطائر البالغ بدقة من مظهره وحده. تغير القلش وتآكل أطراف الريش درجة التباين التي نراها؛ ولذلك ينبغي تجنب تحديد الجنس والعمر من صورة بعيدة أو غير واضحة. قد يشبهه القلعي السيبيري Saxicola maurus، ولا تكفي رقعة بيضاء واحدة للفصل بينهما؛ يجب جمع صفات الريش والموقع والموسم والتوثيق المرافق للصورة. أما القليعي (البرقش الأحمر)، المعروف بالـWhinchat، فيتميز عادة بحاجب فاتح بارز. وتبقى المشاهدات الجيدة أهم من الانطباع الأول عن اللون."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد الأراضي المفتوحة ذات الأعشاب والشجيرات المنخفضة، والأطراف الزراعية والمواضع التي توفر مجاثم مرتفعة قليلًا فوق الأرض. كثيرًا ما يقف على رأس شجيرة أو ساق نبات، ثم ينقض إلى الأرض لالتقاط فريسة صغيرة. الحشرات وغيرها من اللافقاريات أساس غذائه، وقد يستكمله بثمار وبذور. يسهل ملاحظته بسبب استخدامه المجاثم الظاهرة وحركات جناحيه، وتذكّر نداءاته القصيرة بصوت اصطدام حجرين؛ ومن هنا جاءت تسميته الإنجليزية. يناسب هذا الطائر تداخل النباتات المنخفضة والمساحات المفتوحة."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يوضع العش منخفضًا أو على الأرض داخل نباتات كثيفة تخفيه. تسجل المتابعة البريطانية عادة 5–6 بيضات، وحضنتين إلى ثلاث خلال الموسم، مع حضانة أنثوية تقارب أربعة عشر يومًا، ومغادرة الصغار العش بعد نحو 14–15 يومًا. هذه بيانات مرجعية بريطانية، وتختلف المواعيد وعدد الحضنات بين الجماعات. كما يجب فصل موسم التكاثر في مناطق الأصل عن وجود الطائر الشتوي في المشرق؛ فالطائر الذي يقضي الشتاء في حقل لبناني قد يتكاثر في مكان آخر."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية في العالم العربي",
+              "paragraphs": [
+                "تضع قائمة لبنان لعام 2020 النوع ضمن مهاجري العبور وزوار الشتاء الشائعين من منتصف سبتمبر إلى أواخر أبريل، في موائل مفتوحة جبلية وفي عمّيق. وتسجله قائمة الأردن عابرًا وزائرًا شتويًا، بينما تصفه قائمة عُمان لعام 2020 بأنه مهاجر عبور غير شائع. ويتحرك بعض طيور نطاقه الأوروبي جنوبًا نحو شمال أفريقيا، فيما تختلف الإقامة والهجرة باختلاف الجماعة. تقع أواخر أكتوبر ضمن فترة وصول الطيور وإشتائها في المشرق، حيث تستخدم المروج والشجيرات المنخفضة."
+              ]
+            },
+            {
+              "heading": "الأهمية البيئية والحماية",
+              "paragraphs": [
+                "يمثل القلعي حلقة في شبكة غذاء الموائل المفتوحة، باستهلاكه اللافقاريات ووقوعه فريسة بدوره. حالته العالمية «أقل إثارة للقلق» وفق المرجع العلمي المستخدم، لكن التصنيف العالمي ليس تقييمًا لكل موقع عربي. تؤثر إزالة الغطاء العشبي والشجيرات وفقد الموائل المتصلة في فرص التغذية والتعشيش، وقد تأثرت جماعات أوروبية بشتاءات قاسية. وتحافظ إدارة الحواف العشبية والشجيرات المتناثرة على بنية الموئل التي يعتمد عليها دون تحويل الأرض المفتوحة إلى غابة كثيفة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Stonechat",
+                "RSPB — Stonechat",
+                "Ibis — European Stonechat plumage study (2024), DOI: 10.1111/ibi.13252",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Oman Bird Records Committee — Oman Bird List, version 7.10 (2020)",
+                "SongBird Survival — Stonechat"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Hobbyfotowiki — CC0 1.0."
+        },
+        "en": {
+          "title": "European Stonechat",
+          "subtitle": "Saxicola rubicola — Identification, habitats, breeding and seasonal occurrence in the Arab region",
+          "meta_description": "Saxicola rubicola — Identification, habitats, breeding and seasonal occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The European Stonechat, Saxicola rubicola, is a small member of the flycatcher family Muscicapidae. Older publications sometimes treated stonechats within a broader species; modern taxonomy separates European, Siberian and African stonechats, each with its own distribution. A male has a very dark, often black-looking head, white neck-side patches, an orange-red breast and a mottled brown back. Females are duller, with a brown head and back and an orange-tinged breast. Feather condition and lighting also alter a male’s apparent contrast."
+              ]
+            },
+            {
+              "heading": "Age and similar species",
+              "paragraphs": [
+                "Juveniles are mottled. Adult age cannot generally be established precisely from appearance alone, and moult and feather wear change visible patterns. Sex or age should not be assigned from a distant, unclear photograph. The Siberian Stonechat, Saxicola maurus, can be similar: no single white patch is sufficient for identification. Plumage features, locality, season and reliable photographic provenance should be considered together. Whinchats usually show a conspicuous pale eyebrow. Clear observations of several features are more useful than a first impression of colour."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "European Stonechats use open country with grasses, low scrub, agricultural margins and slightly elevated lookout perches. A bird often watches from a shrub top or plant stem before dropping to seize a small prey item. Insects and other invertebrates dominate the diet, supplemented by fruit or seeds. Exposed perching and wing movements make the species noticeable; its short calls suggest two stones striking together, explaining the English name. A mixture of low vegetation and open space suits this bird."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "The nest is low or on the ground, hidden in dense vegetation. British records typically show five or six eggs and two or three broods, with female incubation around fourteen days and young leaving after roughly 14–15 days. These are British reference observations; dates and brood numbers vary among populations. Breeding in the bird’s area of origin must also be distinguished from winter occurrence in the Levant: a bird wintering in a Lebanese field may nest elsewhere."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist describes a common passage migrant and winter visitor from mid-September to late April, using open mountain habitats and Aammiq. Jordan’s list records passage and winter presence, whereas Oman’s 2020 list describes an uncommon passage migrant. Some European populations move south towards North Africa; residency and migration vary among populations. Late October falls within the period of arrival and winter residence in the Levant, where birds use grassland and low scrub."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "By consuming invertebrates and serving as prey, the Stonechat belongs to open-country food webs. Its global category is Least Concern in the scientific reference used here, not a separate assessment of every Arab locality. Removal of rough grass and scrub and fragmentation of suitable habitat can reduce feeding and nesting opportunities; severe winters have affected European populations. Retaining grassy margins and scattered shrubs preserves its habitat structure without converting open land into dense woodland."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Stonechat",
+                "RSPB — Stonechat",
+                "Ibis — European Stonechat plumage study (2024), DOI: 10.1111/ibi.13252",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Oman Bird Records Committee — Oman Bird List, version 7.10 (2020)",
+                "SongBird Survival — Stonechat"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Hobbyfotowiki — CC0 1.0."
+        },
+        "fr": {
+          "title": "Tarier pâtre",
+          "subtitle": "Saxicola rubicola — Identification, habitats, reproduction et présence saisonnière dans le monde arabe",
+          "meta_description": "Saxicola rubicola — Identification, habitats, reproduction et présence saisonnière dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Tarier pâtre, Saxicola rubicola, est un petit passereau de la famille des Muscicapidés. Des publications anciennes regroupaient plusieurs tariers dans une espèce plus large; la taxonomie actuelle distingue les espèces européenne, sibérienne et africaine, chacune avec sa propre répartition. Le mâle présente une tête très sombre, paraissant souvent noire, des plages blanches sur les côtés du cou, une poitrine orangée à rousse et un dos brun moucheté. La femelle est plus terne, avec tête et dos bruns et poitrine teintée d’orange. L’état des plumes et l’éclairage modifient également les contrastes du mâle."
+              ]
+            },
+            {
+              "heading": "Âge et espèces proches",
+              "paragraphs": [
+                "Les juvéniles sont mouchetés. L’âge exact d’un adulte ne peut généralement pas être établi d’après sa seule apparence; mue et usure des plumes modifient les dessins visibles. Il faut éviter de déterminer sexe ou âge sur une photographie lointaine et imprécise. Le Tarier de Sibérie, Saxicola maurus, peut lui ressembler: une seule plage blanche ne suffit pas à trancher. Plusieurs caractères du plumage, le lieu, la saison et une provenance photographique fiable doivent être réunis. Le Tarier des prés possède généralement un sourcil clair marqué. Une observation détaillée vaut mieux qu’une première impression de couleur."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Le Tarier pâtre fréquente les milieux ouverts à végétation herbacée, broussailles basses, bordures agricoles et postes d’affût légèrement surélevés. Il observe souvent depuis un buisson ou une tige avant de descendre capturer une petite proie. Insectes et autres invertébrés dominent son régime, complété de fruits ou de graines. Ses perchoirs exposés et ses mouvements d’ailes le rendent visible. Ses cris brefs évoquent deux pierres entrechoquées, à l’origine du nom anglais. Une mosaïque de végétation basse et d’espaces ouverts convient à cet oiseau."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Le nid, bas ou au sol, est dissimulé dans une végétation dense. Les suivis britanniques indiquent généralement cinq ou six œufs et deux ou trois nichées, une incubation assurée par la femelle durant environ quatorze jours, puis un départ des jeunes vers 14–15 jours. Ces valeurs proviennent des suivis britanniques; dates et nombre de nichées varient selon les populations. Il faut aussi distinguer reproduction dans la région d’origine et séjour hivernal au Levant: un oiseau hivernant dans un champ libanais peut nicher ailleurs."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "Au Liban, la liste de 2020 le décrit comme migrateur de passage et hivernant commun de mi-septembre à fin avril, dans les milieux montagnards ouverts et à Aammiq. La liste jordanienne mentionne passage et hivernage, tandis que celle d’Oman de 2020 le considère comme migrateur de passage peu commun. Certaines populations européennes descendent vers l’Afrique du Nord; résidence et migration varient selon les populations. La fin octobre se situe dans la période d’arrivée et d’hivernage au Levant, où les oiseaux fréquentent prairies et broussailles basses."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "Consommateur d’invertébrés et lui-même proie, le tarier appartient aux réseaux trophiques des espaces ouverts. Son statut mondial est « Préoccupation mineure » dans la référence scientifique utilisée, sans constituer une évaluation de chaque localité arabe. Suppression des herbes hautes et buissons et fragmentation des habitats peuvent réduire ses possibilités de nourriture et de nidification; des hivers rigoureux ont affecté des populations européennes. Conserver des bordures herbeuses et des arbustes dispersés maintient la structure favorable, sans transformer les espaces ouverts en forêt dense."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Stonechat",
+                "RSPB — Stonechat",
+                "Ibis — European Stonechat plumage study (2024), DOI: 10.1111/ibi.13252",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Ramadan-Jaradi and colleagues — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+                "Oman Bird Records Committee — Oman Bird List, version 7.10 (2020)",
+                "SongBird Survival — Stonechat"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Hobbyfotowiki — CC0 1.0."
+        }
+      },
+      "published": "2026-10-30",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "stonechat"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الحميراء-الشائعة",
+        "en": "common-redstart",
+        "fr": "rougequeue-a-front-blanc"
+      },
+      "translations": {
+        "ar": {
+          "title": "الحميراء الشائعة",
+          "subtitle": "Phoenicurus phoenicurus — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Phoenicurus phoenicurus — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الحميراء الشائعة Phoenicurus phoenicurus طائر صغير من فصيلة خاطفات الذباب Muscicapidae. يجمع الذكر في ريش التكاثر بين جبهة بيضاء ووجه وحلق أسودين وظهر رمادي وصدر وبطن برتقاليين محمرين. الأنثى بنية رمادية من أعلى، وأفتح من أسفل مع مسحة برتقالية. يبقى الذيل الصدئي علامة نافعة في الجنسين. أما الفراخ الحديثة فتظهر عليها بقع وتمويهات، ولا تحمل فورًا ألوان الذكر الواضحة. يختلف مظهر الطائر أيضًا مع الموسم؛ لذلك ينبغي قراءة مجموعة الصفات لا لون الصدر وحده."
+              ]
+            },
+            {
+              "heading": "التمييز من الأنواع المشابهة",
+              "paragraphs": [
+                "تتشابه الأنثى مع أنثى الحميراء السوداء، لكن الأخيرة تبدو عادة أكثر قتامة وتجانسًا، بينما تميل الشائعة إلى أسفل أدفأ لونًا. يرتبط تشخيص الذكر بالجبهة البيضاء والحلق الأسود واللون البرتقالي تحت الجسم. تظهر رقعة جناحية بيضاء أوضح في بعض أفراد النويع samamisicus، لكن اختلاف الريش والتداخل بين الجماعات يجعلان الرقعة وحدها غير كافية لتحديد النويع. هز الذيل سلوك مساعد للتعرّف، وليس صفة تخص هذا النوع وحده."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تستخدم أثناء التكاثر الأحراج المفتوحة والبساتين القديمة التي تجمع الأشجار ذات التجاويف بأرض يسهل الوصول إليها. وفي العبور قد تظهر بين شجيرات الأراضي الزراعية والحدائق والمناطق شبه المفتوحة. تترقب الفريسة من مجثم منخفض، ثم تنقض على الأرض أو تلتقط حشرة طائرة وتعود إلى المجثم. تشمل غذاءها الحشرات ويرقاتها والعناكب ولافقاريات أخرى، وقد تتناول ثمارًا صغيرة في أواخر الصيف والخريف. البحث عن الطعام نهاري، أما الهجرة فتجري أساسًا ليلًا."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يبنى العش داخل تجويف شجرة أو شق صخري أو فجوة جدار، وقد تقبل صناديق التعشيش المناسبة. تصنع الأنثى كأسًا من مواد نباتية وتبطنه بمواد دقيقة. تورد المراجع عادة خمسًا إلى سبع بيضات، وحضانة تقارب أسبوعين تتولاها الأنثى. يظل الصغار محتاجين إلى رعاية بعد مغادرة العش. تختلف مواعيد التكاثر تبعًا لخط العرض والموطن، وتحتاج الجماعات العربية إلى متابعة محلية لتحديد تقويمها."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "النوع مهاجر بعيد المدى، تقضي جماعاته الشتاء أساسًا في أفريقيا جنوب الصحراء، ومنها نطاق الساحل الأفريقي. وتوثق القائمة الأردنية وجوده عابرًا. أما قائمة سوريا لعام 2025 فتذكر عبورًا واسعًا وتكاثرًا محدودًا، يشمل غابات شمال المنطقة الساحلية. في السعودية يبرز عبور الربيع من مارس إلى مايو شمالًا وشرقًا، وعبور الخريف من سبتمبر إلى نوفمبر غربًا وجنوبًا؛ ويظل الإشتاء نادرًا في الجنوب الغربي، ولا سيما تهامة. لذلك تتوافق مشاهدته في أكتوبر مع الهجرة الخريفية، لكنها لا تثبت الإقامة الشتوية أو التكاثر في الموقع. وفي لبنان توثق قائمة 2020 عبوره وتكاثرًا مهاجرًا محدودًا من أواخر مارس إلى أوائل يوليو في الأحراج المفتوحة والبساتين، خصوصًا على السفوح المدرّجة في سلسلتي لبنان ولبنان الشرقية."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يساهم افتراس اللافقاريات في ربط الأشجار والتربة بالشبكة الغذائية. يعتمد نجاحه على موائل سليمة في مناطق التكاثر والعبور والإشتاء معًا. فقد الأشجار القديمة والتجاويف، وتكثيف استخدام المبيدات، وتدهور مناطق الشتاء والجفاف عوامل يمكن أن تؤثر في جماعاته. يصنف عالميًا ضمن أقل إثارة للقلق؛ وهذا لا يساوي الأمان في كل منطقة، ولا ينبغي خلطه بتصنيفات وطنية مختلفة. الاحتفاظ ببساتين متنوعة وأشجار ذات تجاويف ومواقع توقف غنية بالغذاء يخدم دورة حياته كاملة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Redstart",
+                "Saudipedia — حميراء شائعة",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria: Species Diversity, Subspecies, Distribution, and Conservation Status, Jordan Journal of Natural History 12(1), 2025",
+                "Mahmiyat — Common Redstart",
+                "FSC France — Fiches espèces, 2022: Rougequeue à front blanc",
+                "Journal of Ornithology 164 — Subspecies distribution limits and intergradation in Common Redstart, 2023",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020",
+                "Oiseaux.net — Rougequeue à front blanc, expert species account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Hobbyfotowiki — CC0 1.0."
+        },
+        "en": {
+          "title": "Common Redstart",
+          "subtitle": "Phoenicurus phoenicurus — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Phoenicurus phoenicurus — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Common Redstart, Phoenicurus phoenicurus, is a small member of the flycatcher family Muscicapidae. A breeding male combines a white forehead, black face and throat, grey back and orange-red breast and belly. Females are grey-brown above and paler below, with a warm orange wash. The rusty tail is useful in both sexes. Recently fledged young are spotted and mottled rather than miniature versions of the colourful male. Appearance also changes with season: identification should combine several features instead of relying on the breast alone."
+              ]
+            },
+            {
+              "heading": "Distinguishing similar birds",
+              "paragraphs": [
+                "Females resemble female Black Redstarts, which are generally darker and more uniformly coloured; Common Redstarts tend to look warmer underneath. In males, consider the white forehead, black throat and orange underparts together. Some birds of the subspecies samamisicus have a conspicuous white wing panel, but variation and intergradation make this an insufficient subspecies test on its own. The frequently trembling tail is another helpful clue, although other redstarts share this behaviour."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Breeding habitat includes open woodland and old orchards where cavity-bearing trees stand above accessible feeding ground. On migration, birds also use gardens, agricultural scrub and other semi-open places. A low perch serves as a lookout: the bird drops to the ground or makes a short aerial pursuit, often returning to its perch. Insects, their larvae, spiders and other invertebrates provide food; small fruits may supplement the diet in late summer and autumn. Feeding is diurnal, whereas migration takes place mainly at night."
+              ]
+            },
+            {
+              "heading": "Breeding and annual cycle",
+              "paragraphs": [
+                "A tree hole, rock crevice or wall cavity can hold the nest; suitable nestboxes are also accepted. The female constructs a cup of plant material with a finer lining. Accounts commonly give five to seven eggs and approximately two weeks of incubation by the female. Young remain dependent after leaving the nest. Breeding dates vary with latitude and habitat; local observations establish the calendar of individual Arab-region populations."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "This long-distance migrant winters principally in sub-Saharan Africa, including the Sahel. Jordan’s checklist identifies it as a passage migrant. The 2025 Syrian checklist describes widespread passage and limited breeding, including woodland in the northern coastal region. In Saudi Arabia, spring passage is prominent in the north and east from March to May, while autumn passage occurs especially in the west and south from September to November. Wintering is rare in the southwest, notably Tihama. An October sighting therefore fits autumn migration, but does not establish either local winter residence or breeding. Lebanon’s 2020 checklist also documents passage and scarce migrant breeding from late March to early July in open woodland and orchards, especially terraced slopes of the Lebanon and Anti-Lebanon ranges."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "By consuming invertebrates, redstarts participate in food webs linking vegetation and soil. Their annual cycle depends on suitable breeding, stopover and wintering habitat. Loss of old trees and cavities, intensive pesticide use, deterioration of winter quarters and drought can affect populations. The global category is Least Concern, which does not imply security everywhere and must not be confused with differing national assessments. Retaining varied orchards, cavity-bearing trees and food-rich resting places supports the bird across its annual cycle."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Redstart",
+                "Saudipedia — حميراء شائعة",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria: Species Diversity, Subspecies, Distribution, and Conservation Status, Jordan Journal of Natural History 12(1), 2025",
+                "Mahmiyat — Common Redstart",
+                "FSC France — Fiches espèces, 2022: Rougequeue à front blanc",
+                "Journal of Ornithology 164 — Subspecies distribution limits and intergradation in Common Redstart, 2023",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020",
+                "Oiseaux.net — Rougequeue à front blanc, expert species account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Hobbyfotowiki — CC0 1.0."
+        },
+        "fr": {
+          "title": "Rougequeue à front blanc",
+          "subtitle": "Phoenicurus phoenicurus — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Phoenicurus phoenicurus — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Rougequeue à front blanc, Phoenicurus phoenicurus, est un petit Muscicapidé. En plumage nuptial, le mâle associe front blanc, face et gorge noirs, dos gris et dessous rouge orangé. La femelle est gris brun dessus, plus claire dessous avec une nuance orangée. La queue rousse reste un indice utile chez les deux sexes. Les jeunes récemment envolés sont tachetés et mouchetés: ils ne portent pas immédiatement les couleurs du mâle. Le plumage varie aussi selon la saison; plusieurs caractères doivent donc être examinés ensemble."
+              ]
+            },
+            {
+              "heading": "Espèces proches",
+              "paragraphs": [
+                "La femelle ressemble à celle du Rougequeue noir, généralement plus sombre et plus uniforme; celle du Rougequeue à front blanc paraît plus chaude dessous. Chez le mâle, il faut associer front blanc, gorge noire et dessous orangé. Certains individus de la sous-espèce samamisicus montrent une plage blanche sur l’aile, mais les variations et les zones d’intergradation empêchent d’en faire un critère suffisant à lui seul. Les tremblements de la queue aident aussi, sans être propres à cette espèce."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Pour nicher, l’espèce utilise les boisements ouverts et les vieux vergers associant arbres creux et sol accessible. En migration, elle fréquente également jardins, cultures avec buissons et autres milieux semi-ouverts. Depuis un perchoir bas, elle repère une proie, descend au sol ou effectue une courte poursuite aérienne, puis revient souvent se poser. Insectes, larves, araignées et autres invertébrés constituent sa nourriture; de petits fruits peuvent compléter ce régime en fin d’été et en automne. Elle se nourrit le jour et migre principalement la nuit."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "Le nid occupe une cavité d’arbre, une fissure rocheuse ou un trou de mur; des nichoirs adaptés sont également acceptés. La femelle construit une coupe végétale garnie de matériaux fins. Les références indiquent couramment cinq à sept œufs et environ deux semaines d’incubation assurée par la femelle. Les jeunes restent dépendants après leur départ du nid. Les dates varient avec la latitude et le milieu; des observations locales précisent le calendrier des différentes populations arabes."
+              ]
+            },
+            {
+              "heading": "Présence et saisons dans le monde arabe",
+              "paragraphs": [
+                "Ce migrateur au long cours hiverne surtout en Afrique subsaharienne, notamment au Sahel. La liste jordanienne le classe comme migrateur de passage. La synthèse syrienne de 2025 signale un passage étendu et une reproduction limitée, notamment dans les bois du nord de la région côtière. En Arabie saoudite, le passage printanier concerne surtout le nord et l’est de mars à mai; celui d’automne touche particulièrement l’ouest et le sud de septembre à novembre. L’hivernage est rare dans le sud-ouest, surtout à Tihama. Une observation en octobre correspond donc au passage automnal, sans prouver un hivernage local ni une nidification. Au Liban, la liste de 2020 documente aussi le passage et une reproduction migratrice peu commune de fin mars à début juillet dans les boisements ouverts et les vergers, surtout sur les pentes en terrasses des chaînes du Liban et de l’Anti-Liban."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "La consommation d’invertébrés relie cet oiseau aux réseaux alimentaires de la végétation et du sol. Son cycle dépend des habitats de reproduction, de halte et d’hivernage. Disparition des vieux arbres et des cavités, usage intensif de pesticides, dégradation des quartiers d’hiver et sécheresse peuvent affecter les populations. Le statut mondial est Préoccupation mineure, sans garantie de sécurité locale; il ne faut pas le confondre avec des classements nationaux différents. Préserver vergers diversifiés, arbres creux et haltes riches en nourriture soutient l’ensemble de son cycle annuel."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Redstart",
+                "Saudipedia — حميراء شائعة",
+                "Jordan BirdWatch — Jordan Bird List",
+                "Aidek et al. — An Annotated Checklist of the Birds of Syria: Species Diversity, Subspecies, Distribution, and Conservation Status, Jordan Journal of Natural History 12(1), 2025",
+                "Mahmiyat — Common Redstart",
+                "FSC France — Fiches espèces, 2022: Rougequeue à front blanc",
+                "Journal of Ornithology 164 — Subspecies distribution limits and intergradation in Common Redstart, 2023",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020",
+                "Oiseaux.net — Rougequeue à front blanc, expert species account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Hobbyfotowiki — CC0 1.0."
+        }
+      },
+      "published": "2026-10-30",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "redstart"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الهدهد",
+        "en": "common-hoopoe",
+        "fr": "huppe-fasciee"
+      },
+      "translations": {
+        "ar": {
+          "title": "الهدهد",
+          "subtitle": "Upupa epops — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "meta_description": "Upupa epops — دليل التعرّف والموائل والتكاثر والحضور في العالم العربي",
+          "sections": [
+            {
+              "heading": "الهوية والتعرّف",
+              "paragraphs": [
+                "الهدهد Upupa epops من فصيلة الهدهديات Upupidae، وله هيئة لا تشبه معظم طيور الحدائق العربية. يجمع ريشًا دافئًا بلون الرمل المحمر، وجناحين وذيلًا مخططين بالأبيض والأسود، ومنقارًا طويلًا مقوسًا إلى الأسفل. يتوج رأسه عرف ذو أطراف سوداء يستطيع رفعه وبسطه ثم طيه. يبدو في الطيران أعرض مما يوحي جسمه وهو واقف، بسبب جناحيه المستديرين وضرباتهما المتتابعة."
+              ]
+            },
+            {
+              "heading": "التمييز من الأنواع المشابهة",
+              "paragraphs": [
+                "يتشابه الجنسان إلى حد كبير؛ وقد تبدو الأنثى أصغر وأبهت قليلًا، لكن الفروق ليست أساسًا آمنًا لتحديد الجنس من كل صورة. يكون اليافع باهتًا نسبيًا، بمنقار وعرف أقصر من البالغ. لا يعني العرف المطوي أن الطائر نوع آخر، ولا يجوز تحديد عمره من قصر العرف الظاهر وحده. يساعد الجمع بين المنقار المقوس وتخطيط الجناحين والعرف على التعرف، مع الانتباه إلى أن الإضاءة ووضعية الريش قد تغير الانطباع اللوني."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يحتاج إلى أرض يستطيع إدخال منقاره فيها أو التقاط الفرائس من سطحها، مع تجاويف قريبة للتعشيش. لذلك يستخدم البساتين والمراعي والحقول والحدائق والأراضي المفتوحة المتناثرة الأشجار. يبحث أساسًا عن الحشرات الكبيرة ويرقاتها ولافقاريات أخرى، مستعملًا منقاره للسبر والالتقاط. انخفاض كثافة العشب أو وجود رقع مكشوفة يسهل وصوله إلى الطعام. صوته المتكرر ذو المقاطع المجوفة وسيلة لإعلان الإقليم، وقد تسمع الطائر قبل رؤيته."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "الهدهد طائر يعشش في التجاويف، سواء في شجرة قديمة أو جدار أو بين الصخور، وقد يستفيد من صندوق مناسب. تضع الأنثى البيض داخل التجويف وتتولى الحضانة، بينما يمدها الذكر بالغذاء. تذكر المراجع الأوروبية عادة خمسًا إلى ثماني بيضات وحضانة تقارب 16 يومًا؛ وهذه أرقام متغيرة وليست قاعدة لكل الجماعات. تحتاج الفراخ إلى إمداد متواصل بالغذاء قبل مغادرة العش. تبين أبحاث ميدانية أن مقدار الغذاء وترتيب الصغار داخل الحضنة يرتبطان بفرص بقائها، لذلك تهم وفرة الفرائس بقدر أهمية وجود التجويف."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "يجمع حضوره العربي بين جماعات متكاثرة وأخرى عابرة أو شاتية. يضم الانتشار المصري النويع major من Upupa epops. تسجل الأردن مقيمًا وعابرًا، والعراق متكاثرًا صيفيًا واسع الانتشار في المرجع الإقليمي. وتضم الإمارات جماعات متكاثرة توسعت مع الموائل الملائمة. أما عُمان فتستقبل عبورًا وإشتاءً وفيرين مع تكاثر أقل انتشارًا، بينما يصف مرجع قطر النوع بالعابر. لذلك قد يلتقي في أكتوبر طائر محلي بآخر مهاجر في المنطقة نفسها؛ ولا يثبت ظهور الهدهد في حديقة أنه مقيم فيها طوال العام."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يدخل الهدهد في شبكة غذائية مرتبطة بالتربة والحشرات. وتصنيفه العالمي أقل إثارة للقلق، لكن تراجع الحشرات وفقد الأشجار المجوفة وتغير استخدام الأرض قد يضغط على جماعات محلية. تساعد حماية التجاويف والبساتين المتنوعة وتقليل المبيدات في إبقاء موارد الغذاء والتكاثر. وهو مشهور وقابل للتصوير، لكن الاقتراب المتكرر من مدخل العش قد يعرقل إطعام الفراخ. الأفضل مراقبته من مسافة تسمح للأبوين بالدخول والخروج دون تردد، لا استدراجه عند التجويف."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026",
+                "Qatar e-Nature — الهدهد",
+                "Cornell Lab of Ornithology — Birds of the World: Common Hoopoe",
+                "Swiss Ornithological Institute — Common Hoopoe conservation programme",
+                "LPO — Huppe fasciée",
+                "OSME — Region List 8.1, Non-Passerines, 2022",
+                "Jordan BirdWatch — Jordan Bird List",
+                "UAE National Red List — Upupa epops",
+                "Food supply and provisioning behavior of parents: Are small hoopoe nestlings condemned to die?, 2023",
+                "Oiseaux.net — Huppe fasciée, identification account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Stein Arne Jensen — CC0 1.0."
+        },
+        "en": {
+          "title": "Common Hoopoe",
+          "subtitle": "Upupa epops — Identification, habitats, breeding and occurrence in the Arab region",
+          "meta_description": "Upupa epops — Identification, habitats, breeding and occurrence in the Arab region",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "The Common Hoopoe, Upupa epops, belongs to Upupidae and has a distinctive appearance among birds of Arab gardens. Warm sandy-rufous plumage contrasts with black-and-white wings and tail, and a long bill curves downwards. A black-tipped crest can be raised and spread or folded back. Rounded wings and successive beats make the flying bird look broader than its perched body suggests."
+              ]
+            },
+            {
+              "heading": "Distinguishing similar birds",
+              "paragraphs": [
+                "The sexes look much alike. Females may be slightly smaller and paler, but these differences do not safely establish sex in every photograph. Juveniles are comparatively dull, with shorter bills and crests. A folded crest does not indicate a different species, and apparent crest length alone is insufficient for ageing. Combine the curved bill, patterned wings and crest, remembering that light and feather position can alter the impression of colour."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Hoopoes require ground where they can probe or collect prey, with nesting cavities nearby. Orchards, pastures, fields, gardens and open landscapes with scattered trees can provide this combination. Large insects, their larvae and other invertebrates form the principal food. The bill probes and picks; short vegetation or exposed patches make prey accessible. The repeated hollow song advertises a territory, and a bird may be heard before it is seen."
+              ]
+            },
+            {
+              "heading": "Breeding and annual cycle",
+              "paragraphs": [
+                "An old tree, wall, rock cavity or suitable nestbox can accommodate the nest. The female lays and incubates inside the cavity while the male supplies food. European accounts commonly report five to eight eggs and approximately 16 days of incubation, variable figures rather than a rule for every population. Nestlings require sustained provisioning before leaving. Field research shows that food supply and a chick’s position within the brood are associated with survival prospects: abundant prey matters as much as the presence of a hole."
+              ]
+            },
+            {
+              "heading": "Arab-region distribution and seasonality",
+              "paragraphs": [
+                "Arab occurrence combines breeding populations with passage migrants and winter visitors. Egypt’s population includes the subspecies Upupa epops major. Jordan records residents and migrants; the regional account describes widespread summer breeding in Iraq. The UAE supports breeding populations that expanded with suitable habitat. Oman receives substantial passage and winter numbers, with breeding more restricted, while Qatar’s reference describes passage. In October, therefore, a local bird and a migrant may occur in the same region. Finding a hoopoe in a garden does not establish year-round residence there."
+              ]
+            },
+            {
+              "heading": "Ecology and conservation",
+              "paragraphs": [
+                "Hoopoes belong to food webs centred on soil and insects. Their global category is Least Concern, although declining insect resources, loss of cavity-bearing trees and changing land use can pressure local populations. Protecting holes and varied orchards, while reducing pesticide use, helps retain food and breeding resources. This conspicuous bird attracts photographers, but repeated approaches to a nest entrance can interrupt feeding. Watch from a distance that allows adults to enter and leave freely rather than trying to draw them out at the cavity."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026",
+                "Qatar e-Nature — الهدهد",
+                "Cornell Lab of Ornithology — Birds of the World: Common Hoopoe",
+                "Swiss Ornithological Institute — Common Hoopoe conservation programme",
+                "LPO — Huppe fasciée",
+                "OSME — Region List 8.1, Non-Passerines, 2022",
+                "Jordan BirdWatch — Jordan Bird List",
+                "UAE National Red List — Upupa epops",
+                "Food supply and provisioning behavior of parents: Are small hoopoe nestlings condemned to die?, 2023",
+                "Oiseaux.net — Huppe fasciée, identification account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Stein Arne Jensen — CC0 1.0."
+        },
+        "fr": {
+          "title": "Huppe fasciée",
+          "subtitle": "Upupa epops — Identification, habitats, reproduction et présence dans le monde arabe",
+          "meta_description": "Upupa epops — Identification, habitats, reproduction et présence dans le monde arabe",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "La Huppe fasciée, Upupa epops, appartient aux Upupidés et se distingue nettement parmi les oiseaux des jardins arabes. Son plumage sable roussâtre contraste avec les ailes et la queue noires et blanches; le long bec s’incurve vers le bas. La huppe à pointes noires peut se déployer ou se rabattre. Les ailes arrondies et leurs battements donnent à l’oiseau en vol une largeur peu apparente lorsqu’il est posé."
+              ]
+            },
+            {
+              "heading": "Espèces proches",
+              "paragraphs": [
+                "Les sexes se ressemblent beaucoup. La femelle peut être légèrement plus petite et plus pâle, sans que ces différences permettent de sexer chaque photographie avec certitude. Les juvéniles sont relativement ternes, avec bec et huppe plus courts. Une huppe repliée ne désigne pas une autre espèce, et sa longueur apparente ne suffit pas à déterminer l’âge. Il faut réunir bec courbe, dessin alaire et huppe, en tenant compte des effets de la lumière et de la position des plumes."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "L’espèce a besoin d’un sol où sonder et prélever ses proies, ainsi que de cavités proches pour nicher. Vergers, pâtures, champs, jardins et paysages ouverts à arbres dispersés peuvent réunir ces conditions. Gros insectes, larves et autres invertébrés forment l’essentiel de sa nourriture. Le bec sert à sonder et à saisir; végétation rase et plages découvertes facilitent l’accès aux proies. Le chant répété et sourd signale un territoire: l’oiseau est parfois entendu avant d’être aperçu."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle annuel",
+              "paragraphs": [
+                "Un vieil arbre, un mur, une cavité rocheuse ou un nichoir adapté peut accueillir la reproduction. La femelle pond et couve dans la cavité pendant que le mâle la nourrit. Les références européennes indiquent souvent cinq à huit œufs et environ 16 jours d’incubation, valeurs variables et non règles universelles. Les poussins ont besoin d’un approvisionnement soutenu avant leur départ. Des recherches de terrain relient disponibilité alimentaire et position du poussin dans la nichée à ses chances de survie: les proies comptent autant que la présence d’un trou."
+              ]
+            },
+            {
+              "heading": "Présence et saisons dans le monde arabe",
+              "paragraphs": [
+                "La présence arabe associe nicheurs, migrateurs de passage et hivernants. La population égyptienne comprend la sous-espèce Upupa epops major. La Jordanie accueille résidents et migrateurs; la synthèse régionale décrit une reproduction estivale étendue en Irak. Les Émirats arabes unis abritent des nicheurs dont l’expansion a accompagné les habitats favorables. Oman reçoit un passage et un hivernage importants, avec une reproduction plus localisée; la référence qatarie décrit le passage. En octobre, oiseaux locaux et migrateurs peuvent donc se rencontrer dans une même région. Observer une huppe au jardin ne prouve pas qu’elle y réside toute l’année."
+              ]
+            },
+            {
+              "heading": "Écologie et conservation",
+              "paragraphs": [
+                "La huppe participe aux réseaux alimentaires du sol et des insectes. Son statut mondial est Préoccupation mineure, mais raréfaction des insectes, disparition des arbres creux et changements d’usage des terres peuvent fragiliser certaines populations. Préserver cavités et vergers diversifiés tout en réduisant les pesticides maintient nourriture et lieux de reproduction. L’oiseau attire les photographes, mais des approches répétées du nid peuvent interrompre le nourrissage. Mieux vaut rester assez loin pour laisser entrer et sortir librement les adultes, sans chercher à les attirer devant la cavité."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026",
+                "Qatar e-Nature — الهدهد",
+                "Cornell Lab of Ornithology — Birds of the World: Common Hoopoe",
+                "Swiss Ornithological Institute — Common Hoopoe conservation programme",
+                "LPO — Huppe fasciée",
+                "OSME — Region List 8.1, Non-Passerines, 2022",
+                "Jordan BirdWatch — Jordan Bird List",
+                "UAE National Red List — Upupa epops",
+                "Food supply and provisioning behavior of parents: Are small hoopoe nestlings condemned to die?, 2023",
+                "Oiseaux.net — Huppe fasciée, identification account"
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Stein Arne Jensen — CC0 1.0."
+        }
+      },
+      "published": "2026-10-30",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "hoopoe"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    }
+  ]
+}
