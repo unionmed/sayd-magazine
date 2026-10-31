@@ -1,0 +1,183 @@
+[
+  {
+    "id": "regional-08-jezzine-nature-dining",
+    "calls": [
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"الخيار المؤكَّد حاليًا هو مطعم بيت الغابة في بكاسين فقط؛ لم تظهر لي بين اليدين خيارات مطاعم أخرى داخل جزين/بكاسين بمستوى توثيق مشابه، لذا أضعه كخيار واحد موثوق بدل الحشو.\",\"format\":\"options\",\"region\":\"جزين وبكاسين، لبنان\",\"days\":[{\"day\":1,\"base\":\"صيدا\",\"departure\":\"صيدا\",\"return_to\":\"صيدا\",\"stops\":[{\"name\":\"مطعم بيت الغابة / Beit El Ghabeh\",\"locality\":\"بكاسين، قضاء جزين، لبنان\",\"kind\":\"meal\",\"description\":\"جلسة داخل غابة صنوبر بكاسين ضمن La Maison de la Forêt، مع أكل يقدّم مطبخ منطقة جزين. الصفحة تذكر أجواء الطبيعة والبوفيه الأحد، لكن الحجز والجلوس الحاليان يبقيان على الاستفسار المباشر.\",\"duration_minutes\":90,\"walking\":\"مشي خفيف جدًا حول الجلسة والهواء الطلق فقط؛ لا أتعامل معه كمسار مشي.\",\"source_url\":\"https://lamaisondelaforet.net/en/Restaurant\",\"trail\":null,\"camping\":null}]}]}",
+        "sources": [],
+        "verified": false,
+        "usage": {
+          "input_tokens": 8909,
+          "output_tokens": 300
+        }
+      },
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"الخياران الموثَّقان في قلب الطبيعة داخل بكاسين هما مطعم بيت الغابة نفسه بصيغتين/اسمين تجاريين مرتبطين بالموقع، ولا أملك بمصادر رسمية أخرى هنا مطعمًا ثالثًا داخل جزين/بكاسين بمستوى توثيق مشابه؛ لذلك أضع خيارًا واحدًا موثوقًا بدل حشو غير مؤكَّد.\", \"format\":\"options\", \"region\":\"جزين وبكاسين، لبنان\", \"days\":[{\"day\":1,\"base\":\"صيدا\",\"departure\":\"صيدا\",\"return_to\":\"صيدا\",\"stops\":[{\"name\":\"مطعم بيت الغابة / Beit El Ghabeh\",\"locality\":\"بكاسين، قضاء جزين، لبنان\",\"kind\":\"meal\",\"description\":\"جلسة داخل غابة صنوبر بكاسين ضمن La Maison de la Forêt، مع أطباق من مطبخ منطقة جزين. الصفحة الرسمية تذكر الأكل المحلي والأجواء الطبيعية، وتوفّر الحجز عبر الهاتف أو البريد؛ البوفيه الأحد مذكور لكن دون تاريخ نشر، لذلك أتعامل معه كمعلومة وصفية لا كإتاحة مؤكدة لليوم المطلوب.\",\"duration_minutes\":90,\"walking\":\"مشي خفيف جدًا حول الجلسة والمنطقة المحيطة فقط؛ ليس مسارًا للمشي.\",\"source_url\":\"https://lamaisondelaforet.net/en/Restaurant\",\"trail\":null,\"camping\":null},{\"name\":\"The Area – Bkassine / Jezzine\",\"locality\":\"بكاسين، قضاء جزين، لبنان\",\"kind\":\"visit\",\"description\":\"تعريف سريع بالمحيط الطبيعي الذي يميّز الجلسة: غابة الصنوبر في بكاسين، مع إشارة إلى معالم قريبة مثل الأودية والينابيع والمواقع التراثية في البلدة. هذا يصلح كخلفية لاختيار المطعم وليس كزيارة منفصلة طويلة.\",\"duration_minutes\":30,\"walking\":\"وقفة خفيفة ومحدودة قرب المكان أو من دون مشي إضافي.\",\"source_url\":\"https://lamaisondelaforet.net/en/The-Area\",\"trail\":null,\"camping\":null}]}]}",
+        "sources": [
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/en/Contact"
+          },
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/en/Restaurant"
+          },
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/en/restaurant"
+          },
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/en/Home"
+          },
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/en/bungalows"
+          },
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/documents/fe_file/BEIT-EL-GHABEH-Menu.pdf"
+          },
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/en/The-Area"
+          },
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/en/corporate"
+          },
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/en/Rooms"
+          },
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/en/Activities"
+          },
+          {
+            "title": "lamaisondelaforet.net",
+            "url": "https://lamaisondelaforet.net/en/News-Events/Personal-Events"
+          }
+        ],
+        "verified": true,
+        "usage": {
+          "input_tokens": 12993,
+          "output_tokens": 613
+        }
+      }
+    ]
+  },
+  {
+    "id": "regional-08-jezzine-hunting",
+    "calls": [
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"الموسم الجاري غير متأكد رسميًا حتى الآن: وزارة البيئة اللبنانية نشرت بيانًا يفيد بأنه «لم يصدر لتاريخه قرار من وزير البيئة بفتح موسم الصيد البري 2025/2026، وبالتالي ما زال الصيد البري ممنوعاً على كافة الاراضي اللبنانية ولجميع الانواع». كما يوضح القانون 580/2004 أن الوزير وحده يحدد فتح الموسم والطرائد المسموحة، وأن الرخصة سنوية وتستلزم رخصة سلاح وتأمينًا. لذلك لا أستطيع إعطاء وجهة صيد في جزين وبكاسين على أنها مسموحة حاليًا. ما ينقص قبل أي خطة: قرار فتح موسم 2026/2027 أو 2025/2026 المنشور رسميًا، قائمة الطرائد والكميات في ذلك القرار، وتأكيدات الوصول المحلي إن كانت المنطقة ضمن حظر أو إقفال.\",\"format\":\"advice\",\"region\":\"جزين وبكاسين، لبنان\",\"legal\":{\"status\":\"closed\",\"season_start_year\":2026,\"publication_date\":null,\"source_url\":\"https://moe.gov.lb/%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D9%88%D8%B2%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D8%AA%D8%AA%D9%85%D9%86%D9%89-%D8%B9%D9%84%D9%89-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D9%82%D9%88%D9%89-%D8%A7.aspx?lang=ar-lb\",\"evidence_quote\":\"لم يصدر لتاريخه قرار من وزير البيئة بفتح موسم الصيد البري 2025/2026، وبالتالي ما زال الصيد البري ممنوعاً على كافة الاراضي اللبنانية ولجميع الانواع\"},\"days\":[]}",
+        "sources": [
+          {
+            "title": "moe.gov.lb",
+            "url": "https://moe.gov.lb/%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D9%88%D8%B2%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D8%AA%D8%AA%D9%85%D9%86%D9%89-%D8%B9%D9%84%D9%89-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D9%82%D9%88%D9%89-%D8%A7.aspx?lang=ar-lb"
+          },
+          {
+            "title": "moe.gov.lb",
+            "url": "https://moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86/%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-580-%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A-%D9%81%D9%8A-%D9%84%D8%A8%D9%86%D8%A7%D9%86.aspx?lang=ar-LB"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86/%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-580-%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A-%D9%81%D9%8A-%D9%84%D8%A8%D9%86%D8%A7%D9%86.aspx"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D9%88%D8%B2%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A-%D9%84%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-2025-%D8%B9%D8%A7%D9%85-%D9%85.aspx"
+          },
+          {
+            "title": "moe.gov.lb",
+            "url": "https://moe.gov.lb/%D8%A7%D9%84%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D9%8A%D8%B9%D9%84%D9%86-%D9%81%D8%AA%D8%AD-%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A-%D9%85%D9%86-1-%D8%A7%D9%8A%D9%84%D9%88%D9%84-%D9%84.aspx?lang=ar-lb"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D8%B9%D8%B1%D8%B6-%D9%85%D8%B9-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9-%D9%84%D8%AA%D9%81%D8%B9%D9%8A%D9%84-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9-%D8%A7%D9%84%D8%A8.aspx"
+          },
+          {
+            "title": "moe.gov.lb",
+            "url": "https://moe.gov.lb/%D8%A7%D9%84%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA/%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%86%D8%AF%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B7%D9%84%D9%88%D8%A8%D8%A9-%D9%84%D9%85%D8%B9%D8%A7%D9%85%D9%84%D8%A7%D8%AA-%D8%B1%D8%AE%D8%B5-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF.aspx?lang=ar-lb"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/getattachment/11d1c57b-5983-41ef-84dc-3860376c8a1f/%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D8%B5%D9%8A%D8%A7%D8%AF-%D8%A7%D9%84%D9%85%D8%B5%D9%88%D8%B1.aspx"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA/%D9%82%D8%B1%D8%A7%D8%B1-%D8%B1%D9%82%D9%85-901-1-%D8%AA%D8%AD%D8%AF%D9%8A%D8%AF-%D8%B1%D8%B3%D9%85-%D8%B1%D8%AE%D8%B5%D8%A9-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A.aspx?lang=en-us"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA.aspx"
+          },
+          {
+            "title": "moe.gov.lb",
+            "url": "https://moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA.aspx?lang=ar-lb"
+          }
+        ],
+        "verified": true,
+        "usage": {
+          "input_tokens": 18586,
+          "output_tokens": 803
+        }
+      },
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"الموسم الجاري غير متأكد رسميًا حتى الآن. وزارة البيئة اللبنانية نشرت نصًا رسميًا يقول: «لم يصدر لتاريخه قرار من وزير البيئة بفتح موسم الصيد البري 2025/2026، وبالتالي ما زال الصيد البري ممنوعاً على كافة الاراضي اللبنانية ولجميع الانواع». كما أن قانون 580/2004 يجعل فتح الموسم وتحديد الطرائد المسموحة والكميات بقرار وزاري سنوي، والرخصة سنوية وتحتاج رخصة سلاح وتأمين وشهادة نجاح امتحان الصيد. لذلك لا أستطيع أن أوصي بوجهة صيد في جزين وبكاسين على أنها مسموحة حاليًا. ما ينقص قبل أي خطة: القرار الرسمي الأحدث لفتح موسم 2026/2027 أو 2025/2026 مع لائحة الأنواع والكميات، ثم أي تأكيد محلي للوصول إذا صدر القرار.\",\"format\":\"advice\",\"region\":\"جزين وبكاسين، لبنان\",\"legal\":{\"status\":\"closed\",\"season_start_year\":2026,\"publication_date\":null,\"source_url\":\"https://moe.gov.lb/%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8خبار/%D9%88%D8%B2%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D8%AA%D8%AA%D9%85%D9%86%D9%89-%D8%B9%D9%84%D9%89-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D9%82%D9%88%D9%89-%D8%A7.aspx?lang=ar-lb\",\"evidence_quote\":\"لم يصدر لتاريخه قرار من وزير البيئة بفتح موسم الصيد البري 2025/2026، وبالتالي ما زال الصيد البري ممنوعاً على كافة الاراضي اللبنانية ولجميع الانواع\"},\"days\":[]}",
+        "sources": [
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86/%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-580-%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A-%D9%81%D9%8A-%D9%84%D8%A8%D9%86%D8%A7%D9%86.aspx"
+          },
+          {
+            "title": "moe.gov.lb",
+            "url": "https://moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86/%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B1%D9%82%D9%85-580-%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A-%D9%81%D9%8A-%D9%84%D8%A8%D9%86%D8%A7%D9%86.aspx?lang=ar-LB"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D9%88%D8%B2%D8%A7%D8%B1%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D8%A7%D9%86%D8%B8%D9%85%D8%A9/%D8%A7%D9%84%D9%82%D9%88%D8%A7%D9%86%D9%8A%D9%86.aspx?lang=en-us"
+          },
+          {
+            "title": "moe.gov.lb",
+            "url": "https://moe.gov.lb/%D9%84%D9%84%D8%AD%D8%B5%D9%88%D9%84-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D8%A7%D8%AA/%D8%A7%D9%84%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1/%D9%88%D8%B2%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D8%AA%D8%AA%D9%85%D9%86%D9%89-%D8%B9%D9%84%D9%89-%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D8%A9-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D9%82%D9%88%D9%89-%D8%A7.aspx?lang=ar-lb"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/getattachment/63643c65-a1df-4750-8892-7b6673947f60/%D8%AF%D9%84%D9%8A%D9%84-%D8%B9%D9%85%D9%84%D9%8A-%D9%84%D9%84%D8%B4%D8%B1%D8%B7%D8%A9-%D8%A7%D9%84%D8%A8%D9%84%D8%AF%D9%8A%D8%A9-%D9%84%D8%AA%D8%B9%D8%B2%D9%8A%D8%B2-%D8%A7%D9%84%D8%A7%D8%AF%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D9%8A%D8%A9.aspx"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/getattachment/11d1c57b-5983-41ef-84dc-3860376c8a1f/%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D8%B5%D9%8A%D8%A7%D8%AF-%D8%A7%D9%84%D9%85%D8%B5%D9%88%D8%B1.aspx"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA/%D8%A7%D8%B1%D8%B4%D8%A7%D8%AF%D8%A7%D8%AA-%D8%A8%D9%8A%D9%8A%D9%8A%D8%A9-%D8%A8%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D9%8A-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A.aspx"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA/16-%D8%AA%D8%B4%D8%B1%D9%8A%D9%86-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%A8%D9%8A%D9%8A%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A.aspx"
+          },
+          {
+            "title": "www.moe.gov.lb",
+            "url": "https://www.moe.gov.lb/%D8%A7%D9%84%D8%A7%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA/%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%A8%D8%B1%D9%8A-%D9%A2%D9%A0%D9%A2%D9%A0.aspx"
+          }
+        ],
+        "verified": true,
+        "usage": {
+          "input_tokens": 18213,
+          "output_tokens": 736
+        }
+      }
+    ]
+  }
+]

@@ -1,3 +1,4 @@
+import {canonicalPlaceName} from './place-evidence.mjs';
 // Trip context is optional, bounded, and treated as untrusted user data.
 import {normalize,safeSource} from './core.mjs';
 import {placeLocality} from './research.mjs';
@@ -35,6 +36,7 @@ export function parseItinerary(text,sources=[],input={},diagnostics=[]){
   const stops=[],seen=new Set();let trails=0,camps=0;
   for(const stop of d.stops){
    if(!stop||typeof stop.name!=='string'||!stop.name.trim()||typeof stop.locality!=='string'||!stop.locality.trim()||typeof stop.description!=='string'||!stop.description.trim()||typeof stop.walking!=='string'||!stop.walking.trim()||!['visit','nature','meal','activity'].includes(stop.kind)||!Number.isInteger(stop.duration_minutes)||stop.duration_minutes<5||stop.duration_minutes>360)return reject('stop_fields');
+   stop.name=canonicalPlaceName(stop.name);
    const regional=regionalStop(stop,sources,input,format);
    if(!regional.ok)return reject('regional_evidence: '+regional.reason+': '+stop.name);
    const key=normalize(stop.name),source_url=trusted.get(sourceKey(stop.source_url));

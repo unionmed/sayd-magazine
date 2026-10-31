@@ -4,6 +4,12 @@ import {AKKAR_EVIDENCE,evidenceKey} from './regional-evidence.mjs';
 import additional from './reviewed-places.json' with {type:'json'};
 import enquiries from './reviewed-enquiries.json' with {type:'json'};
 export const PLACE_EVIDENCE=[...AKKAR_EVIDENCE.map(p=>({...p,regions:['عكار','akkar']})),...additional];
+export function canonicalPlaceName(name,catalog=PLACE_EVIDENCE){
+ const parts=String(name||'').split(/\s+\/\s+/).map(normalize);
+ if(parts.length<2)return name;
+ const p=catalog.find(p=>parts.every(n=>p.names.some(a=>normalize(a)===n)));
+ return p?p.names[0]:name;
+}
 function inDestination(place,input){
  const raw=input.trip?.destination||input.destination;
  if(raw){
@@ -26,7 +32,7 @@ function activityMatch(p,input){
 }
 export function maximumTrailMinutes(query){
  const q=normalize(String(query||'').replace(/[٠-٩]/g,c=>String('٠١٢٣٤٥٦٧٨٩'.indexOf(c))).replace(/([0-9])[.,٫](?=[0-9])/g,'$1decimal'));
- if(!/maximum|max\b|at most|up to|no more than|كحد|لا تتجاوز|بحد|حد اقصي/.test(q))return null;
+ if(!/maximum|max\b|at most|up to|no more than|within|كحد|لا تتجاوز|بحد|حد اقصي|ضمن|خلال/.test(q))return null;
  if(/ساعتين|ساعتان/.test(q))return 120;
  const hours=q.match(/(\d+(?:decimal\d+)?|one|two|three|un|une|deux|trois)\s*(?:hours?|heures?|h)\b|(?:مده|حدها|اقصي)?\s*(\d+)\s*(?:ساعات|ساعه)/);
  if(hours){const n=hours[1]||hours[2],words={one:1,two:2,three:3,un:1,une:1,deux:2,trois:3};return (words[n]||Number(n.replace('decimal','.')))*60;}
@@ -64,7 +70,7 @@ export function partialPlaceInformation(input,sources=[],catalog=PLACE_EVIDENCE,
  });
  const acts=input.trip?.activities||[],q=normalize(input.query);
  const purpose=acts.includes('hunting')?'hunting':acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':/هايك|hiking|randonn|مسار|\btrail\b/.test(q)?'hiking':/مطعم|مطاعم|restaurant|dining/.test(q)?'dining':'walking';
- const enquiryContacts=contacts.filter(p=>inDestination(p,input)&&p.activities.includes(purpose)).slice(0,2).map(p=>({...p,description:p.description[lang],name:p.names[lang],retrieved_this_request:consulted.has(evidenceKey(p.source_url)),date_note:informationDateNote(p,lang,consulted.has(evidenceKey(p.source_url)))}));
+ const enquiryContacts=contacts.filter(p=>inDestination(p,input)&&p.activities.includes(purpose)).slice(0,2).map(p=>({...p,description:p.description_by_activity?.[purpose]?.[lang]||p.description[lang],name:p.names[lang],retrieved_this_request:consulted.has(evidenceKey(p.source_url)),date_note:informationDateNote(p,lang,consulted.has(evidenceKey(p.source_url)))}));
  const labels={ar:{facts:'المعلومات المتاحة، مع حدودها:',contact:'جهة مرشحة للاستفسار، وليست تأكيدًا لتوفر النشاط:',ask:'اسألها تحديدًا عن',phone:'الهاتف',email:'البريد'},en:{facts:'Available information and its limits:',contact:'Enquiry contact, not confirmation that the activity is available:',ask:'Specifically ask about',phone:'Phone',email:'Email'},fr:{facts:'Informations disponibles et leurs limites :',contact:'Contact à interroger, sans confirmation de disponibilité :',ask:'À vérifier précisément',phone:'Téléphone',email:'Courriel'}}[lang];
  const details=leads.map(p=>p.name+': '+p.description+'\n'+p.date_note+'\n'+p.source_url);
  const inquiries=enquiryContacts.map(p=>labels.contact+' '+p.name+'؛ '+[p.phone?labels.phone+': '+p.phone:'',p.email?labels.email+': '+p.email:''].filter(Boolean).join('؛ ')+'\n'+labels.ask+' '+p.description+'\n'+p.date_note+'\n'+p.source_url);

@@ -114,7 +114,11 @@ export function createHandler(network=fetch,options={}) {
           }
           itinerary=parseReviewed(output.answer,output.sources);
         }
-        if(!itinerary)return partialReply({missing_details:[...new Set(defects.map(d=>d.split(':')[0]))]});
+        if(!itinerary){
+          const hunting=input.trip?.activities?.includes('hunting')||/صيد طيور|رحلة صيد|hunting|chasse/i.test(input.query);
+          if(hunting)itinerary={summary:'',format:'advice',region:input.trip?.destination||'',days:[],legal:{status:'unconfirmed',season_start_year:new Date().getUTCFullYear(),publication_date:null,source_url:null}};
+          else return partialReply({missing_details:[...new Set(defects.map(d=>d.split(':')[0]))]});
+        }
         if(itinerary.legal?.status&&itinerary.legal.status!=='unconfirmed'&&!await verifyLegalNotice(itinerary.legal,network)){
           itinerary.legal={status:'unconfirmed',season_start_year:new Date().getUTCFullYear(),publication_date:null,source_url:itinerary.legal.source_url};output.verified=false;
         }

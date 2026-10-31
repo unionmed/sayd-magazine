@@ -57,6 +57,23 @@
       "ar": "مدخل المشي وخريطة المسار وطوله وصعوبته وإمكان مشاركة شخصين؛ صفحة الأنشطة غير المؤرخة تشترط الحجز قبل يوم ودليلًا وحدًا أدنى خمسة للمشي، فلا تعتبر عرض الساعتين مناسبًا تلقائيًا لشخصين. وللمبيت اسأل عن خيمة فعلية لأربعة وقبول الطفلين والمرافق؛ صفحات الضيافة لا تثبت هذه الشروط.",
       "en": "trail entry, map, length, difficulty and whether two people can join; the undated activities page requires booking a day ahead, a guide and a minimum of five for hiking. Ask separately about an actual four-person tent, children and facilities; these are not established by the lodging pages.",
       "fr": "départ, carte, distance, difficulté et accueil de deux marcheurs ; la page non datée exige réservation la veille, guide et groupe de cinq minimum. Tente pour quatre, enfants et équipements à vérifier séparément."
+    },
+    "description_by_activity": {
+      "camping": {
+        "ar": "هل توجد خيمة فعلية تتسع لأربعة، وهل يقبل المبيت طفلين 8 و11 سنة، وما المرافق والحجز وسياسة النار؟ هذه الشروط غير مثبتة في صفحات الإقامة؛ لا تعتبر أكواخ المبيت خيامًا.",
+        "en": "whether an actual four-person tent is offered, admission for children aged 8 and 11, facilities, booking and fire rules; lodging pages do not establish these conditions.",
+        "fr": "tente réelle pour quatre, accueil des enfants de 8 et 11 ans, équipements, réservation et feu ; les hébergements ne prouvent pas ces conditions."
+      },
+      "hiking": {
+        "ar": "نقطة البداية وخريطة مسار واحد وطوله وصعوبته والعودة وإمكان مشاركة شخصين؛ الصفحة غير المؤرخة تعرض ساعة أو ساعتين وتشترط الحجز قبل يوم ودليلًا وحدًا أدنى خمسة مشاركين. يلزم تأكيد ترتيب يناسب شخصين.",
+        "en": "one trail map, start, length, difficulty, return and admission for two; the undated page advertises one- or two-hour walks, booking a day ahead, a guide and at least five participants. Confirm arrangements for two.",
+        "fr": "carte, départ, distance, difficulté, retour et accueil de deux personnes ; la page non datée annonce une ou deux heures, réservation la veille, guide et cinq personnes minimum."
+      },
+      "walking": {
+        "ar": "المدخل المتاح حاليًا ومساحة زيارة قصيرة قرب المطعم وإمكان استقبال زوار النهار؛ لا يفترض ذلك وجود مسار عام أو فتح الطريق.",
+        "en": "current entrance, a short visitor area near the restaurant and day admission; a public trail and open road are not assumed.",
+        "fr": "entrée actuelle, courte visite près du restaurant et visiteurs à la journée ; sentier public et route ouverte non présumés."
+      }
     }
   }
 ]
