@@ -26,6 +26,7 @@ function activityMatch(p,input){
  if(acts.includes('camping'))return !!p.camping&&p.source_role==='operator';
  if(acts.includes('barbecue'))return p.activities_supported?.includes('barbecue')===true;
  if(acts.includes('riding'))return p.activities_supported?.includes('riding')===true;
+ if(acts.includes('birds'))return p.activities_supported?.includes('birds')===true;
  if(/هايك|hiking|randonn|مسار|\btrail\b/.test(q))return !!p.trail;
  if(/مطعم|مطاعم|restaurant|dining/.test(q))return p.kind==='meal'&&(!/طبيعه|nature|natural/.test(q)||p.nature_dining===true);
  return true;
@@ -46,7 +47,11 @@ function missingActivityNote(input,lang){
  barbecue:{ar:'لم يتأكد إذن الشواء الحالي من إدارة موقع محدد، مع الطاولات والمرافق المطلوبة؛ لذلك لا أعتمد مكانًا جاهزًا للشواء ولا أوصي بإشعال النار.',en:'Current barbecue permission, tables and facilities have not been confirmed by a specific site operator; no ready-to-use barbecue site is accepted.',fr:'L’autorisation actuelle de barbecue, les tables et les équipements ne sont pas confirmés par un exploitant précis ; aucun site de barbecue n’est validé.'},
  trail:{ar:'لم تكتمل أدلة مسار واحد يناسب الوقت المطلوب، ببداية ونهاية وطول وصعوبة وخريطة وخطة عودة موثقة.',en:'Evidence is incomplete for one trail within the requested time, with documented endpoints, distance, difficulty, map and return plan.',fr:'Les preuves restent incomplètes pour un sentier adapté au temps demandé : départ, arrivée, distance, difficulté, carte et retour.'},
  other:{ar:'لم يتأكد الفتح والوصول وتوفر الحجز حاليًا.',en:'Current opening, access and booking availability remain unconfirmed.',fr:'Ouverture, accès et disponibilité actuels restent à confirmer.'}};
- return notes[kind][lang];
+ const preparation=kind==='camping'&&/ألعاب|العاب|games|jeux|ما يلزم|معنا|packing|bring|apporter/i.test(input.query)?{
+ ar:'تحضير مستقل عن اختيار المخيم، بعد تأكيد المبيت: احضروا لعبة بطاقات، دفتر رسم ولعبة ملاحظة صامتة للطبيعة دون إزعاج الحيوانات أو جمع النباتات؛ هذه ألعاب تحملونها وليست مرافق مؤكدة. جهّزوا أكياس نوم وفرشًا عازلة وطبقات دافئة وعازل مطر وماءً وطعامًا جاهزًا ومصابيح وإسعافات وأكياس نفايات. اسألوا المشغّل أيّها مشمول، وملاءمة التجهيز لطقس الموعد. لا نار ولا موقد دون سماح صريح. لم يتأكد مخيم أو خيمة مناسبة بعد.',
+ en:'Preparation separate from choosing a campsite, after overnight arrangements are confirmed: bring cards, drawing materials and a quiet nature-observation game without disturbing wildlife or collecting plants; these are your games, not promised facilities. Pack sleeping bags, insulating mats, warm layers, rain protection, water, ready-to-eat food, lights, first aid and waste bags. Ask what the operator supplies and check suitability for the forecast. No fire or stove without explicit permission. No suitable campsite or tent is confirmed yet.',
+ fr:'Préparation indépendante du choix du camping, après confirmation de la nuitée : cartes, dessin et jeu d’observation discret, sans déranger la faune ni cueillir ; jeux à apporter, pas équipements promis. Prévoir couchages, tapis isolants, vêtements chauds, pluie, eau, repas prêts, lampes, premiers secours et sacs à déchets. Vérifier le matériel fourni et la météo. Ni feu ni réchaud sans autorisation explicite ; camping et tente adaptés non confirmés.'}[lang]:'';
+ return [notes[kind][lang],preparation].filter(Boolean).join('\n\n');
 }
 function informationDateNote(p,lang,retrieved){
  const date=p.publication_date||p.listing_page_date||null,review=p.checked_at||null;
@@ -69,7 +74,7 @@ export function partialPlaceInformation(input,sources=[],catalog=PLACE_EVIDENCE,
   return {name:p.names[0],description:p.description[lang],source_url:p.sources[0],sources:supporting,publication_date:p.publication_date||p.listing_page_date||null,information_date:p.information_date||p.event_dates||null,last_reviewed_at:p.checked_at,retrieved_this_request:retrieved,date_note:informationDateNote(p,lang,retrieved),current_access:'unconfirmed'};
  });
  const acts=input.trip?.activities||[],q=normalize(input.query);
- const purpose=acts.includes('hunting')?'hunting':acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':/هايك|hiking|randonn|مسار|\btrail\b/.test(q)?'hiking':/مطعم|مطاعم|restaurant|dining/.test(q)?'dining':'walking';
+ const purpose=acts.includes('hunting')?'hunting':acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':acts.includes('birds')?'birds':/هايك|hiking|randonn|مسار|\btrail\b/.test(q)?'hiking':/مطعم|مطاعم|restaurant|dining/.test(q)?'dining':'walking';
  const enquiryContacts=contacts.filter(p=>inDestination(p,input)&&p.activities.includes(purpose)).slice(0,2).map(p=>({...p,description:p.description_by_activity?.[purpose]?.[lang]||p.description[lang],name:p.names[lang],retrieved_this_request:consulted.has(evidenceKey(p.source_url)),date_note:informationDateNote(p,lang,consulted.has(evidenceKey(p.source_url)))}));
  const labels={ar:{facts:'المعلومات المتاحة، مع حدودها:',contact:'جهة مرشحة للاستفسار، وليست تأكيدًا لتوفر النشاط:',ask:'اسألها تحديدًا عن',phone:'الهاتف',email:'البريد'},en:{facts:'Available information and its limits:',contact:'Enquiry contact, not confirmation that the activity is available:',ask:'Specifically ask about',phone:'Phone',email:'Email'},fr:{facts:'Informations disponibles et leurs limites :',contact:'Contact à interroger, sans confirmation de disponibilité :',ask:'À vérifier précisément',phone:'Téléphone',email:'Courriel'}}[lang];
  const details=leads.map(p=>p.name+': '+p.description+'\n'+p.date_note+'\n'+p.source_url);

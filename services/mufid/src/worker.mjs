@@ -84,7 +84,7 @@ export function createHandler(network=fetch,options={}) {
       let itinerary;const defects=[];let consulted=output.sources;const initialResearch=output.verified;
       const partialReply=(flags={})=>{
         const partial=partialPlaceInformation(input,output.sources);
-        return reply({answer:partial.summary,reviewed_leads:partial.reviewed_leads,enquiry_contacts:partial.enquiry_contacts,articles:cards,sources:partial.sources,verified:false,checked_at:null,sources_consulted:partial.sources_consulted,partial_information:true,plan_review_required:true,...(akkarScope(input)?{regional_review_required:true}:{}),...(input.trip?.activities?.includes('camping')?{camping_review_required:true}:{}),...flags});
+        return reply({answer:partial.summary,reviewed_leads:partial.reviewed_leads,enquiry_contacts:partial.enquiry_contacts,bird_links:birdReferences(corpus.articles,partial.summary,input.lang),articles:cards,sources:partial.sources,verified:false,checked_at:null,sources_consulted:partial.sources_consulted,partial_information:true,plan_review_required:true,...(akkarScope(input)?{regional_review_required:true}:{}),...(input.trip?.activities?.includes('camping')?{camping_review_required:true}:{}),...flags});
       };
       const parseReviewed=(answer,sources)=>{
         const parsed=parseItinerary(answer,sources,input,defects);

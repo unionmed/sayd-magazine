@@ -1,0 +1,252 @@
+[
+  {
+    "id": "regional-09-bekaa-activity",
+    "calls": [
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"جولة خفيفة لالتقاط طيور وموائل عميق مع محطة تصوير عند المستنقع ووجبة في عميق القديمة أو صغبين؛ المعلومة الموسمية الأوضح الآن هي ازدياد فرص الطيور المائية والراقدة في الخريف والشتاء.\",\"format\":\"itinerary\",\"region\":\"البقاع الغربي، لبنان\",\"days\":[{\"day\":1,\"base\":\"زحلة\",\"departure\":\"زحلة\",\"return_to\":\"زحلة\",\"stops\":[{\"name\":\"Ammiq Wetland\",\"locality\":\"عميق، البقاع الغربي، لبنان\",\"kind\":\"nature\",\"description\":\"موئل مناسب جدًا للمراقبة والتصوير الهادئ لأن A Rocha توثق فيه أكثر من 250 نوعًا تاريخيًا، مع كثافة أفضل للطيور الراقدة والمائية في الخريف والشتاء. الأنواع المحتملة بحسب الموئل والموسم تشمل Great Egret وCattle Egret وNight Heron وBlack Stork وWhite Stork، مع وجود جارحات راقدة مثل Kestrel وCommon Buzzard وLesser Spotted Eagle في فترات الهجرة والشتاء.\",\"duration_minutes\":120,\"walking\":\"مشي خفيف على الحواف والنقاط المفتوحة فقط؛ لا يُفترض مسار مقاس أو وصول مفتوح دائمًا.\",\"source_url\":\"https://lebanon.arocha.org/home/conservation-2/previous-project-ammiq-wetlands/\",\"trail\":null,\"camping\":null},{\"name\":\"طاولة عميق\",\"locality\":\"عميق القديمة، البقاع الغربي، لبنان\",\"kind\":\"meal\",\"description\":\"توقف غداء/قهوة في عميق القديمة بإطلالة على سهل البقاع؛ يصلح كفاصل قريب بعد المراقبة، لكن الفتح والحجز يحتاجان تأكيدًا مباشرًا لأن الصفحة لا تثبت الوضع الحالي. يفيد كقاعدة خفيفة قبل العودة أو المتابعة نحو صغبين.\",\"duration_minutes\":60,\"walking\":\"دخول قصير إلى الجلسة فقط.\",\"source_url\":\"https://www.soukeltayeb.com/tawlet/2/tawlet-ammiq\",\"trail\":null,\"camping\":null},{\"name\":\"Masharef Saghbine Restaurant\",\"locality\":\"صغبين، البقاع الغربي، لبنان\",\"kind\":\"meal\",\"description\":\"بديل وجبة مسائية أو قهوة على التراس مع إطلالة على بحيرة القرعون والجبال، مناسب بعد جلسة تصوير عند المستنقع أو عند الانتقال شمالًا داخل البقاع الغربي. الحجز والاستفسار مذكوران في صفحة المشغّل، لكن الجلسة والفتح يبقيان بحاجة لتأكيد مباشر.\",\"duration_minutes\":60,\"walking\":\"مشي قصير جدًا إلى التراس والجلسة.\",\"source_url\":\"https://masharefsaghbine.com/\",\"trail\":null,\"camping\":null}]}]}",
+        "sources": [
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/wp-content/uploads/sites/43/2022/06/ARL-SC-05-3-Report-on-Roosting-Harrier-Project-at-Aammiq.pdf"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/wp-content/uploads/sites/43/2022/06/ARL-SC-06-1-Monitoring-Pilot-Study.pdf"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/home/conservation-2/previous-project-ammiq-wetlands/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/en/posts/where-migratory-birds-rest-mashreq-arabian-peninsula/index.html"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/home/conservation-2/previous-project-scientific-studies/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/category/%D8%B5%D9%8A%D8%AF-%D8%A7%D9%84%D8%B7%D9%8A%D9%88%D8%B1/index.html"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9-ar-%F0%9F%87%B1%F0%9F%87%A7/%D8%A7%D9%84%D8%AD%D9%81%D8%A7%D8%B8-%D8%B9%D9%84%D9%89/%D8%A7%D9%84%D8%AD%D9%81%D8%B8-%D9%81%D9%8A-%D8%A3%D8%B1%D8%A7%D8%B6%D9%8A-%D8%A7%D9%84%D8%A3%D9%85%D9%8A%D9%83-%D8%A7%D9%84%D8%B1%D8%B7%D8%A8%D8%A9/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/fr/posts/where-migratory-birds-rest-mashreq-arabian-peninsula/index.html"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/home/conservation-2/reports-and-publications/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/en/index.html"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/articles/"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/accueil-fr-%F0%9F%87%AB%F0%9F%87%B7/conservation/projet-termine-etudes-scientifiques/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/en/posts/northern-bekaa-38280-square-metres-bird-nets-apu-cabs/index.html"
+          }
+        ],
+        "verified": true,
+        "usage": {
+          "input_tokens": 15920,
+          "output_tokens": 712
+        }
+      },
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"جولة خفيفة لمراقبة وتصوير الطيور حول مستنقع عميق مع وجبة قريبة في عميق القديمة أو صغبين، وأفضل فرص الخريف والشتاء هنا للطيور المائية والجارحة الراقدة.\",\"format\":\"itinerary\",\"region\":\"البقاع الغربي، لبنان\",\"days\":[{\"day\":1,\"base\":\"زحلة\",\"departure\":\"زحلة\",\"return_to\":\"زحلة\",\"stops\":[{\"name\":\"Ammiq Wetland\",\"locality\":\"عميق، البقاع الغربي، لبنان\",\"kind\":\"nature\",\"description\":\"موئل مناسب للمراقبة والتصوير الهادئ: A Rocha تذكر أكثر من 250 نوعًا مسجّلًا تاريخيًا في الموقع، مع ذروة أوضح للطيور الراقدة والمائية في الخريف والشتاء. الأنواع المحتملة بحسب الموئل والموسم تشمل Great Egret وCattle Egret وNight Heron وBlack Stork وWhite Stork، إضافة إلى Kestrel وCommon Buzzard وLesser Spotted Eagle في فترات العبور والشتاء. ([lebanon.arocha.org](https://lebanon.arocha.org/home/conservation-2/previous-project-ammiq-wetlands/?utm_source=openai))\",\"duration_minutes\":120,\"walking\":\"مشي خفيف على الحواف والنقاط المفتوحة فقط؛ لا يُفترض مسار مقاس أو وصول مفتوح دائمًا.\",\"source_url\":\"https://lebanon.arocha.org/home/conservation-2/previous-project-ammiq-wetlands/\",\"trail\":null,\"camping\":null},{\"name\":\"طاولة عميق\",\"locality\":\"عميق القديمة، البقاع الغربي، لبنان\",\"kind\":\"meal\",\"description\":\"توقف غداء قريب بعد جلسة الرصد، مع مطبخ ريفي وإطلالة على سهل البقاع. رقم الاستفسار الظاهر في دليل المشغّل المفهرس هو +961 3 004481، لكن الفتح والحجز يحتاجان تأكيدًا مباشرًا لأن الصفحة ليست إثباتًا للوضع الحالي. ([sayd-magazine.com](https://sayd-magazine.com/articles/?utm_source=openai))\",\"duration_minutes\":60,\"walking\":\"دخول قصير إلى الجلسة فقط.\",\"source_url\":\"https://www.soukeltayeb.com/tawlet/2/tawlet-ammiq\",\"trail\":null,\"camping\":null},{\"name\":\"Masharef Saghbine Restaurant\",\"locality\":\"صغبين، البقاع الغربي، لبنان\",\"kind\":\"meal\",\"description\":\"بديل وجبة مسائية أو قهوة بتراس وإطلالة على بحيرة القرعون والجبال، مناسب بعد التصوير في عميق أو قبل الرجوع إلى زحلة. صفحة المشغّل تذكر الحجز على +961 8 671200 وinfo@masharefsaghbine.com، لكن الجلسة والفتح يبقيان بحاجة لتأكيد مباشر. ([sayd-magazine.com](https://sayd-magazine.com/articles/?utm_source=openai))\",\"duration_minutes\":60,\"walking\":\"مشي قصير جدًا إلى التراس والجلسة.\",\"source_url\":\"https://masharefsaghbine.com/\",\"trail\":null,\"camping\":null}]}]}",
+        "sources": [
+          {
+            "title": "Previous project : Ammiq wetlands - Liban | A Rocha",
+            "url": "https://lebanon.arocha.org/home/conservation-2/previous-project-ammiq-wetlands/?utm_source=openai"
+          },
+          {
+            "title": "الأرشيف — صفحة 1 — مجلة صيد",
+            "url": "https://sayd-magazine.com/articles/?utm_source=openai"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/wp-content/uploads/sites/43/2022/06/ARL-SC-05-3-Report-on-Roosting-Harrier-Project-at-Aammiq.pdf"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/home/conservation-2/previous-project-ammiq-wetlands/"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/wp-content/uploads/sites/43/2022/06/ARL-SC-06-1-Monitoring-Pilot-Study.pdf"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/home/conservation-2/previous-project-scientific-studies/"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/accueil-fr-%F0%9F%87%AB%F0%9F%87%B7/conservation/projet-termine-les-marais-dammiq/"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/home/conservation-2/reports-and-publications/"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9-ar-%F0%9F%87%B1%F0%9F%87%A7/%D8%A7%D9%84%D8%AD%D9%81%D8%A7%D8%B8-%D8%B9%D9%84%D9%89/%D8%A7%D9%84%D8%AD%D9%81%D8%B8-%D9%81%D9%8A-%D8%A3%D8%B1%D8%A7%D8%B6%D9%8A-%D8%A7%D9%84%D8%A3%D9%85%D9%8A%D9%83-%D8%A7%D9%84%D8%B1%D8%B7%D8%A8%D8%A9/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/articles/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/index.html"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/en/posts/sayd-returns-new-look-wider-vision/index.html"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/the-case-of-the-missing-frogs-2/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/en/stories/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/en/index.html"
+          },
+          {
+            "title": "lebanon.arocha.org",
+            "url": "https://lebanon.arocha.org/le-cas-des-grenouilles-disparues-2/"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/articles/index.html"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/fr/stories/index.html"
+          },
+          {
+            "title": "sayd-magazine.com",
+            "url": "https://sayd-magazine.com/fr/posts/grande-aigrette/index.html"
+          }
+        ],
+        "verified": true,
+        "usage": {
+          "input_tokens": 21839,
+          "output_tokens": 941
+        }
+      }
+    ]
+  },
+  {
+    "id": "regional-09-bekaa-family-camp",
+    "calls": [
+      {
+        "status": 200,
+        "response_status": "completed",
+        "answer": "{\"summary\":\"المتاح الموثّق الآن لا يكفي لتثبيت مخيّم عائلي فعلي داخل البقاع الأوسط/الغربي بسعة خيمة وحجز وأطفال دون الرجوع لصفحة المشغّل؛ أحتاج اسم مخيم واحد موثّق أو أرجّح أيامًا مفرغة بدل اختراع وجهة.\",\"format\":\"itinerary\",\"region\":\"البقاع الأوسط والغربي، لبنان\",\"days\":[]}",
+        "sources": [
+          {
+            "title": "www.beirut.com",
+            "url": "https://www.beirut.com/en/directory/le-camp/"
+          },
+          {
+            "title": "www.general-security.gov.lb",
+            "url": "https://www.general-security.gov.lb/ar/posts/272"
+          },
+          {
+            "title": "www.madeinliban.com",
+            "url": "https://www.madeinliban.com/ar/10-best-spots-for-camping-in-lebanon/"
+          },
+          {
+            "title": "horizonpines.com",
+            "url": "https://horizonpines.com/"
+          },
+          {
+            "title": "www.general-security.gov.lb",
+            "url": "https://www.general-security.gov.lb/ar/sitemap"
+          },
+          {
+            "title": "guide.moovtoo.com",
+            "url": "https://guide.moovtoo.com/LB/en/outdoor-activities-venues/detail/swings-camp-2522"
+          },
+          {
+            "title": "www.raftingsquad.com",
+            "url": "https://www.raftingsquad.com/activities"
+          },
+          {
+            "title": "www.general-security.gov.lb",
+            "url": "https://www.general-security.gov.lb/ar/activities/details/directorate/898"
+          },
+          {
+            "title": "enfantsdusoleil.com",
+            "url": "https://enfantsdusoleil.com/en/faq/"
+          },
+          {
+            "title": "www.dpna-lb.org",
+            "url": "https://www.dpna-lb.org/en/einzaarour"
+          },
+          {
+            "title": "1waycamping.com",
+            "url": "https://1waycamping.com/beqaa-lebanon-camping-guide/"
+          },
+          {
+            "title": "www.opendatalebanon.org",
+            "url": "https://www.opendatalebanon.org/wp-content/uploads/2020/10/Bekaa.pdf"
+          },
+          {
+            "title": "info.wafa.ps",
+            "url": "https://info.wafa.ps/Categorys/Details/1331"
+          },
+          {
+            "title": "m.al-sharq.com",
+            "url": "https://m.al-sharq.com/pdf/20231101_1698791521-656.pdf"
+          },
+          {
+            "title": "s2.nidaalwatan.com",
+            "url": "https://s2.nidaalwatan.com/storage/pdfs/2026/5183_0_2db76a044ea860ace2d5a5342bfeebe1.pdf"
+          },
+          {
+            "title": "cdn.freedomfund.org",
+            "url": "https://cdn.freedomfund.org/app/uploads/2024/03/Lebanon-Report-FINAL-8April16.pdf"
+          },
+          {
+            "title": "crm.visit-lebanon.org",
+            "url": "https://crm.visit-lebanon.org/alternatedocroots/a57a4eeb-9f37-4774-a4f8-189fa7fd97e3-LT20.pdf"
+          },
+          {
+            "title": "camplebanon.org",
+            "url": "https://camplebanon.org/wp-content/uploads/2021/04/2021-Camp-Lebanon-Family-Resort.pdf"
+          }
+        ],
+        "verified": true,
+        "usage": {
+          "input_tokens": 14764,
+          "output_tokens": 166
+        }
+      }
+    ]
+  }
+]
