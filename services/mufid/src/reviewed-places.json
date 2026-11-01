@@ -370,5 +370,125 @@
       "en": "Pine forest in Bkassine; the operator locates its property within it. A public entrance, measured trail, tent and current access are not established. Visitor enquiries: +961 7 800222 or +961 78 941030.",
       "fr": "Pinède de Bkassine où l’exploitant situe son établissement. Entrée publique, sentier mesuré, tente et accès actuel non établis. Contact : +961 7 800222 ou +961 78 941030."
     }
+  },
+  {
+    "id": "tawlet-ammiq",
+    "names": [
+      "طاولة عميق",
+      "مطعم طاولة عميق",
+      "Tawlet Ammiq",
+      "Tawlet Aammiq"
+    ],
+    "regions": [
+      "البقاع الأوسط والغربي",
+      "البقاع الأوسط",
+      "البقاع الغربي",
+      "البقاع",
+      "Bekaa",
+      "West Bekaa",
+      "Central Bekaa",
+      "Békaa"
+    ],
+    "kind": "meal",
+    "locality": {
+      "ar": "عميق القديمة، البقاع الغربي، لبنان",
+      "en": "Old Ammiq village, West Bekaa, Lebanon",
+      "fr": "Vieux village d’Ammiq, Békaa-Ouest, Liban"
+    },
+    "sources": [
+      "https://www.soukeltayeb.com/tawlet/2/tawlet-ammiq"
+    ],
+    "description": {
+      "ar": "مطبخ ريفي محلي في عميق القديمة بإطلالة على سهل البقاع. للاستفسار: +961 3 004481، من دليل المشغل المفهرس؛ أعادت قراءة الدليل المباشرة خطأ إعداد خادم. يلزم تأكيد الرقم والفتح والحجز؛ لا تثبت الصفحة الجلوس داخل المستنقع.",
+      "en": "Local rural cuisine in old Ammiq, overlooking the Bekaa plain. Enquiries: +961 3 004481 from the indexed operator directory; its direct retrieval returned a server configuration error. Reconfirm contact, opening and booking; this is not wetland-side seating.",
+      "fr": "Cuisine rurale locale au vieux village d’Ammiq, vue sur la plaine. Contact indexé de l’exploitant : +961 3 004481 ; le répertoire direct affiche une erreur serveur. Numéro, ouverture et réservation à reconfirmer ; pas une table dans le marais."
+    },
+    "checked_at": "2026-11-01",
+    "publication_date": null,
+    "nature_dining": true,
+    "required_sources": [
+      "https://www.soukeltayeb.com/tawlet/2/tawlet-ammiq",
+      "https://www.soukeltayeb.com/tawlet"
+    ],
+    "basis": "Restaurant page read 2026-11-01. Contact appears in indexed operator directory; direct directory returned SourceGuardian configuration error. Undated; no present booking/access assertion."
+  },
+  {
+    "id": "masharef-saghbine",
+    "names": [
+      "مشارف صغبين",
+      "مطعم مشارف صغبين",
+      "Masharef Saghbine",
+      "Masharef Saghbine Restaurant"
+    ],
+    "regions": [
+      "البقاع الأوسط والغربي",
+      "البقاع الأوسط",
+      "البقاع الغربي",
+      "البقاع",
+      "Bekaa",
+      "West Bekaa",
+      "Central Bekaa",
+      "Békaa"
+    ],
+    "kind": "meal",
+    "locality": {
+      "ar": "صغبين، البقاع الغربي، لبنان",
+      "en": "Saghbine, West Bekaa, Lebanon",
+      "fr": "Saghbine, Békaa-Ouest, Liban"
+    },
+    "sources": [
+      "https://masharefsaghbine.com/"
+    ],
+    "description": {
+      "ar": "مطعم في صغبين بتراس خارجي وإطلالة على بحيرة القرعون والجبال، يقدم المازة والمشاوي والصاج. حجز واستفسار: +961 8 671200، info@masharefsaghbine.com. الوصف غير مؤرخ؛ الإطلالة لا تعني شاطئًا أو سباحة في البحيرة، ويلزم تأكيد الجلسة والفتح.",
+      "en": "Saghbine restaurant with an outdoor terrace overlooking Qaraoun Lake and mountains; Lebanese mezze, grills and saj. Booking enquiries: +961 8 671200, info@masharefsaghbine.com. Undated description; a view is not lakefront or lake-swimming access. Confirm seating and opening.",
+      "fr": "Restaurant à Saghbine, terrasse avec vue sur le lac de Qaraoun et les montagnes ; mezzés, grillades et saj. Contact : +961 8 671200, info@masharefsaghbine.com. Description non datée ; vue ne signifie ni rive accessible ni baignade. Ouverture à confirmer."
+    },
+    "checked_at": "2026-11-01",
+    "publication_date": null,
+    "nature_dining": true,
+    "basis": "Operator homepage sections Restaurant, Address and Contact read 2026-11-01. Accommodation and Avatar Boot Camp are not tent camping. No current access or booking established."
+  },
+  {
+    "id": "ammiq-wetland",
+    "names": [
+      "مستنقعات عميق",
+      "مستنقع عميق",
+      "Ammiq Wetland",
+      "Aammiq Wetland",
+      "Marais d’Ammiq"
+    ],
+    "regions": [
+      "البقاع الأوسط والغربي",
+      "البقاع الأوسط",
+      "البقاع الغربي",
+      "البقاع",
+      "Bekaa",
+      "West Bekaa",
+      "Central Bekaa",
+      "Békaa"
+    ],
+    "kind": "nature",
+    "locality": {
+      "ar": "عميق، البقاع الغربي، جنوب قب إلياس، لبنان",
+      "en": "Ammiq, West Bekaa, south of Qab Elias, Lebanon",
+      "fr": "Ammiq, Békaa-Ouest, au sud de Qab Elias, Liban"
+    },
+    "sources": [
+      "https://lebanon.arocha.org/home/conservation-2/previous-project-ammiq-wetlands/"
+    ],
+    "description": {
+      "ar": "موئل مياه عذبة وقصب وبرك مع حقول وأشجار محيطة، توثّق A Rocha فيه أكثر من 250 نوع طائر تاريخيًا. الصفحة عن مشروع سابق، لا رصد لهذا الأسبوع ولا ضمان مشاهدة أو مدخل مفتوح، ولا تثبت مسارًا مقاسًا أو تخييمًا.",
+      "en": "Freshwater wetland with reedbeds, pools, nearby fields and trees. A Rocha documents over 250 historically recorded bird species. This previous-project page is not a current bird survey, sighting guarantee, open entrance, measured trail or campsite.",
+      "fr": "Zone humide d’eau douce, roselières, mares, champs et arbres ; plus de 250 espèces historiquement recensées par A Rocha. Page d’un ancien projet, sans relevé actuel, garantie d’observation, entrée ouverte, sentier mesuré ni camping."
+    },
+    "checked_at": "2026-11-01",
+    "publication_date": null,
+    "activities_supported": [
+      "birds",
+      "photography",
+      "walking"
+    ],
+    "basis": "A Rocha previous-project page read 2026-11-01; historical ecological description, not present visitor management or current sightings."
   }
 ]

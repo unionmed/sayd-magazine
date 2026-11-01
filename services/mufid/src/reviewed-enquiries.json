@@ -75,5 +75,36 @@
         "fr": "entrée actuelle, courte visite près du restaurant et visiteurs à la journée ; sentier public et route ouverte non présumés."
       }
     }
+  },
+  {
+    "id": "arocha-bekaa-enquiries",
+    "names": {
+      "ar": "A Rocha لبنان – جهة بحث وحفاظ على الطبيعة",
+      "en": "A Rocha Lebanon, conservation research enquiry",
+      "fr": "A Rocha Liban, conservation et recherche"
+    },
+    "regions": [
+      "البقاع الأوسط والغربي",
+      "البقاع الأوسط",
+      "البقاع الغربي",
+      "البقاع",
+      "Bekaa",
+      "West Bekaa",
+      "Central Bekaa",
+      "Békaa"
+    ],
+    "activities": [
+      "birds",
+      "walking"
+    ],
+    "email": "lebanon@arocha.org",
+    "source_url": "https://lebanon.arocha.org/home/get-involved/contact-us/",
+    "checked_at": "2026-11-01",
+    "publication_date": null,
+    "description": {
+      "ar": "المعلومات الموسمية المتاحة عن طيور عميق، والجهة المسؤولة حاليًا عن الزيارة والمدخل؛ صفحة الاتصال تحدد مقرها في منتزه مكسة، ولا تثبت أنها تدير دخول عميق اليوم.",
+      "en": "seasonal bird information for Ammiq and the current visitor/entrance authority; the contact page locates A Rocha at Meksé Nature Park, not proof of present Ammiq visitor management.",
+      "fr": "oiseaux saisonniers d’Ammiq et gestionnaire actuel de l’accès ; le contact situe A Rocha au parc de Meksé, sans confirmer la gestion actuelle des visites à Ammiq."
+    }
   }
 ]
