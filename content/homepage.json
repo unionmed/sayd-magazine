@@ -125,7 +125,17 @@
     "البط-الحديدي",
     "الحسون-التفاحي",
     "الحوام-الشائع",
-    "الباشق-الأوراسي"
+    "الباشق-الأوراسي",
+    "أبو-منجل-اللامع",
+    "كروان-الماء-الكبير",
+    "النفاش-المشاكس",
+    "طيطوي-الغيط",
+    "الطيطوي-أحمر-الساق-الأرقط",
+    "القطقاط-الرمادي",
+    "الزقزاق-المطوق-الشائع",
+    "بط-أبو-فروة",
+    "الغطاس-المتوج-الكبير",
+    "الإوز-الرمادي"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -201,7 +211,17 @@
     "البط-الحديدي",
     "الحسون-التفاحي",
     "الحوام-الشائع",
-    "الباشق-الأوراسي"
+    "الباشق-الأوراسي",
+    "أبو-منجل-اللامع",
+    "كروان-الماء-الكبير",
+    "النفاش-المشاكس",
+    "طيطوي-الغيط",
+    "الطيطوي-أحمر-الساق-الأرقط",
+    "القطقاط-الرمادي",
+    "الزقزاق-المطوق-الشائع",
+    "بط-أبو-فروة",
+    "الغطاس-المتوج-الكبير",
+    "الإوز-الرمادي"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -593,7 +613,17 @@
     "البط-الحديدي": "birds",
     "الحسون-التفاحي": "birds",
     "الحوام-الشائع": "birds",
-    "الباشق-الأوراسي": "birds"
+    "الباشق-الأوراسي": "birds",
+    "أبو-منجل-اللامع": "birds",
+    "كروان-الماء-الكبير": "birds",
+    "النفاش-المشاكس": "birds",
+    "طيطوي-الغيط": "birds",
+    "الطيطوي-أحمر-الساق-الأرقط": "birds",
+    "القطقاط-الرمادي": "birds",
+    "الزقزاق-المطوق-الشائع": "birds",
+    "بط-أبو-فروة": "birds",
+    "الغطاس-المتوج-الكبير": "birds",
+    "الإوز-الرمادي": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1336,6 +1366,96 @@
         "ar": "باشق أوراسي على غصن، يظهر بطنه المخطط وذيله الطويل",
         "en": "Eurasian Sparrowhawk on a branch, showing barred underparts and a long tail",
         "fr": "Épervier d’Europe sur une branche, montrant son dessous barré et sa longue queue"
+      }
+    },
+    "أبو-منجل-اللامع": {
+      "image": "media/publications/daily-birds-20261101/glossy-ibis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "أبو منجل لامع بمنقار طويل مقوس يقف قرب النباتات والماء",
+        "en": "Glossy Ibis with a long curved bill standing beside wetland vegetation",
+        "fr": "Ibis falcinelle au long bec recourbé près de la végétation humide"
+      }
+    },
+    "كروان-الماء-الكبير": {
+      "image": "media/publications/daily-birds-20261101/eurasian-curlew.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "كروان أوراسي بمنقاره الطويل المقوس بين الأعشاب الجافة",
+        "en": "Eurasian Curlew with a long curved bill among dry grasses",
+        "fr": "Courlis cendré au long bec recourbé dans des herbes sèches"
+      }
+    },
+    "النفاش-المشاكس": {
+      "image": "media/publications/daily-birds-20261101/ruff.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "نفاش مشاكس بريش يافع يقف على ضفة صخرية",
+        "en": "Ruff in juvenile-type plumage on a stony shore",
+        "fr": "Combattant varié au plumage de type juvénile sur une rive pierreuse"
+      }
+    },
+    "طيطوي-الغيط": {
+      "image": "media/publications/daily-birds-20261101/wood-sandpiper.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طائران من طيطوي الغيط في مياه ضحلة بين الأعشاب",
+        "en": "Two Wood Sandpipers in shallow water among grasses",
+        "fr": "Deux Chevaliers sylvains dans une eau peu profonde parmi les herbes"
+      }
+    },
+    "الطيطوي-أحمر-الساق-الأرقط": {
+      "image": "media/publications/daily-birds-20261101/spotted-redshank.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طيطوي أرقط بريش غير تكاثري يخوض المياه الضحلة بساقيه الحمراوين",
+        "en": "Spotted Redshank in nonbreeding-type plumage wading on red legs",
+        "fr": "Chevalier arlequin en plumage de type internuptial marchant dans l’eau"
+      }
+    },
+    "القطقاط-الرمادي": {
+      "image": "media/publications/daily-birds-20261101/grey-plover.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "زقزاق رمادي بريش غير تكاثري يقف في مياه ضحلة",
+        "en": "Grey Plover in nonbreeding-type plumage standing in shallow water",
+        "fr": "Pluvier argenté en plumage de type internuptial dans une eau peu profonde"
+      }
+    },
+    "الزقزاق-المطوق-الشائع": {
+      "image": "media/publications/daily-birds-20261101/common-ringed-plover.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "زقزاق مطوق يرفع جناحه في مقدمة شاطئ صخري وطائر آخر خلفه",
+        "en": "Common Ringed Plover stretching a wing in the foreground of a rocky shore, with another bird behind",
+        "fr": "Grand Gravelot étirant une aile au premier plan sur un rivage rocheux, avec un autre oiseau derrière"
+      }
+    },
+    "بط-أبو-فروة": {
+      "image": "media/publications/daily-birds-20261101/ruddy-shelduck.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر بط أبو فروة بطوق عنق أسود رفيع يقف قرب الماء",
+        "en": "Male Ruddy Shelduck with a narrow black neck ring beside water",
+        "fr": "Tadorne casarca mâle au fin collier noir près de l’eau"
+      }
+    },
+    "الغطاس-المتوج-الكبير": {
+      "image": "media/publications/daily-birds-20261101/great-crested-grebe.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "غطاسان متوجان بريش التكاثر يسبحان على سطح الماء",
+        "en": "Two Great Crested Grebes in breeding plumage swimming on the water",
+        "fr": "Deux Grèbes huppés en plumage nuptial nageant à la surface de l’eau"
+      }
+    },
+    "الإوز-الرمادي": {
+      "image": "media/publications/daily-birds-20261101/greylag-goose.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "إوزة رمادية بمنقار وساقين ورديين وحلقات ظاهرة على الساقين تقف على الصخور",
+        "en": "Greylag Goose with pinkish bill and feet and visible leg rings standing on rocks",
+        "fr": "Oie cendrée au bec et aux pattes rosés, avec des bagues visibles, sur des rochers"
       }
     }
   },
