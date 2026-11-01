@@ -1,0 +1,2226 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261101",
+  "expected_base": "118bd6637afc52a8829f37d40a43b58d5d270db5",
+  "approval_reference": "private:automation-bird-encyclopedia-20261101T080000Z; Nayef standing preparation and publication authorization dated 2026-10-25; ten-species trial approved 2026-10-27 through 2026-11-02. New species AR/EN/FR encyclopedia only, no homepage/ticker/social; normal protected CI and independent scientific/visual review.",
+  "bank_search_reference": "Current existing Sayd picture for use inventory searched before external acquisition; complete current archive and scientific names, synonyms and common-name variants independently reviewed. Only actual CC0/public-domain originals saved with source and rights records; exact Library receipts referenced per image.",
+  "photos": [
+    {
+      "id": "glossy-ibis",
+      "path": "docs/media/publications/daily-birds-20261101/glossy-ibis.jpg",
+      "sha256": "f5f51ad75680c3e03371300ab8178cfe5978cfa8d7263e2f0636d08aa0fb24b2",
+      "source_sha256": "f5f51ad75680c3e03371300ab8178cfe5978cfa8d7263e2f0636d08aa0fb24b2",
+      "source_reference": "Zygy; 2019-12-20; Celebration, FL 34747, USA. https://www.inaturalist.org/photos/58251461; Library original libfile_3e520189065881918ec03d486a4a1b7f; Library rights libfile_cbb2e5807b1c8191b3e92357d177343d.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Real photograph; creator attribution retained separately.",
+        "evidence_reference": "https://www.inaturalist.org/photos/58251461; Library rights libfile_cbb2e5807b1c8191b3e92357d177343d"
+      },
+      "alt": {
+        "ar": "أبو منجل لامع بمنقار طويل مقوس يقف قرب النباتات والماء",
+        "en": "Glossy Ibis with a long curved bill standing beside wetland vegetation",
+        "fr": "Ibis falcinelle au long bec recourbé près de la végétation humide"
+      },
+      "caption": {
+        "ar": "أبو منجل اللامع",
+        "en": "Glossy Ibis",
+        "fr": "Ibis falcinelle"
+      }
+    },
+    {
+      "id": "eurasian-curlew",
+      "path": "docs/media/publications/daily-birds-20261101/eurasian-curlew.jpg",
+      "sha256": "a4c369a77b77ed895bac0d6b93a821fbb4cda9e8b298aef342ad09e990b32bb5",
+      "source_sha256": "a4c369a77b77ed895bac0d6b93a821fbb4cda9e8b298aef342ad09e990b32bb5",
+      "source_reference": "Лариса Артемьева; 2023-04-22; Пермский р-н, Пермский край, Россия. https://www.inaturalist.org/photos/269868844; Library original libfile_c4f43211e07c8191980ce016482ba2fb; Library rights libfile_ad7ec7fbf44c819196ef533bc4413c91.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Real photograph; creator attribution retained separately.",
+        "evidence_reference": "https://www.inaturalist.org/photos/269868844; Library rights libfile_ad7ec7fbf44c819196ef533bc4413c91"
+      },
+      "alt": {
+        "ar": "كروان أوراسي بمنقاره الطويل المقوس بين الأعشاب الجافة",
+        "en": "Eurasian Curlew with a long curved bill among dry grasses",
+        "fr": "Courlis cendré au long bec recourbé dans des herbes sèches"
+      },
+      "caption": {
+        "ar": "كروان الماء الكبير",
+        "en": "Eurasian Curlew",
+        "fr": "Courlis cendré"
+      }
+    },
+    {
+      "id": "ruff",
+      "path": "docs/media/publications/daily-birds-20261101/ruff.jpg",
+      "sha256": "1efd4ad37ebc21439bfa40e977a8090cdd2335eb5f341233105652d99f63fb5f",
+      "source_sha256": "1efd4ad37ebc21439bfa40e977a8090cdd2335eb5f341233105652d99f63fb5f",
+      "source_reference": "Лариса Артемьева; 2025-08-29; Ильинский р-н, Пермский край, Россия. https://www.inaturalist.org/photos/559436303; Library original libfile_09552366f45081919d83e3b33ffced68; Library rights libfile_8e155125432081919d7203d0212da6dd.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Real photograph; creator attribution retained separately.",
+        "evidence_reference": "https://www.inaturalist.org/photos/559436303; Library rights libfile_8e155125432081919d7203d0212da6dd"
+      },
+      "alt": {
+        "ar": "نفاش مشاكس بريش يافع يقف على ضفة صخرية",
+        "en": "Ruff in juvenile-type plumage on a stony shore",
+        "fr": "Combattant varié au plumage de type juvénile sur une rive pierreuse"
+      },
+      "caption": {
+        "ar": "النفاش المشاكس",
+        "en": "Ruff",
+        "fr": "Combattant varié"
+      }
+    },
+    {
+      "id": "wood-sandpiper",
+      "path": "docs/media/publications/daily-birds-20261101/wood-sandpiper.jpeg",
+      "sha256": "5ac67d79b1f075cb6e24b10e753a8607258ab38b7b7ffec53aa8305557204efa",
+      "source_sha256": "5ac67d79b1f075cb6e24b10e753a8607258ab38b7b7ffec53aa8305557204efa",
+      "source_reference": "Лариса Артемьева; 2022-07-16; Кунгурский р-н, Пермский край, Россия. https://www.inaturalist.org/photos/215153315; Library original libfile_de703c11ac98819188b65f31676faa1a; Library rights libfile_06c2eb5f8f588191bdd14709cbe65fc9.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Real photograph; creator attribution retained separately.",
+        "evidence_reference": "https://www.inaturalist.org/photos/215153315; Library rights libfile_06c2eb5f8f588191bdd14709cbe65fc9"
+      },
+      "alt": {
+        "ar": "طائران من طيطوي الغيط في مياه ضحلة بين الأعشاب",
+        "en": "Two Wood Sandpipers in shallow water among grasses",
+        "fr": "Deux Chevaliers sylvains dans une eau peu profonde parmi les herbes"
+      },
+      "caption": {
+        "ar": "طيطوي الغيط",
+        "en": "Wood Sandpiper",
+        "fr": "Chevalier sylvain"
+      }
+    },
+    {
+      "id": "spotted-redshank",
+      "path": "docs/media/publications/daily-birds-20261101/spotted-redshank.jpg",
+      "sha256": "4acd76c40abbbeb9c6ebe2dbd114dbe3a91340419d01a807e1f7b78bc7affb85",
+      "source_sha256": "4acd76c40abbbeb9c6ebe2dbd114dbe3a91340419d01a807e1f7b78bc7affb85",
+      "source_reference": "Paulo Caseirito; 2022-03-06; 2625 Forte da Casa, Portugal. https://www.inaturalist.org/photos/181862070; Library original libfile_64a42679052c819186b64162e402789a; Library rights libfile_91dbeecddff881919ed2e91d88bc52a8.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Real photograph; creator attribution retained separately.",
+        "evidence_reference": "https://www.inaturalist.org/photos/181862070; Library rights libfile_91dbeecddff881919ed2e91d88bc52a8"
+      },
+      "alt": {
+        "ar": "طيطوي أرقط بريش غير تكاثري يخوض المياه الضحلة بساقيه الحمراوين",
+        "en": "Spotted Redshank in nonbreeding-type plumage wading on red legs",
+        "fr": "Chevalier arlequin en plumage de type internuptial marchant dans l’eau"
+      },
+      "caption": {
+        "ar": "الطيطوي أحمر الساق الأرقط",
+        "en": "Spotted Redshank",
+        "fr": "Chevalier arlequin"
+      }
+    },
+    {
+      "id": "grey-plover",
+      "path": "docs/media/publications/daily-birds-20261101/grey-plover.jpg",
+      "sha256": "45f5cf0713927b88c3cccbb059b8a977878ea00a2f8262ca58b6c561a0b745b0",
+      "source_sha256": "45f5cf0713927b88c3cccbb059b8a977878ea00a2f8262ca58b6c561a0b745b0",
+      "source_reference": "Andy Wilson; 2007-07-23; Sarasota, FL, USA. https://www.inaturalist.org/photos/24623809; Library original libfile_88a570a3af14819184dbb8fa9ffe596b; Library rights libfile_78dc8cc6dfa081918126c2f8eba135de.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Real photograph; creator attribution retained separately.",
+        "evidence_reference": "https://www.inaturalist.org/photos/24623809; Library rights libfile_78dc8cc6dfa081918126c2f8eba135de"
+      },
+      "alt": {
+        "ar": "زقزاق رمادي بريش غير تكاثري يقف في مياه ضحلة",
+        "en": "Grey Plover in nonbreeding-type plumage standing in shallow water",
+        "fr": "Pluvier argenté en plumage de type internuptial dans une eau peu profonde"
+      },
+      "caption": {
+        "ar": "القطقاط الرمادي (الزقزاق الرمادي)",
+        "en": "Grey Plover",
+        "fr": "Pluvier argenté"
+      }
+    },
+    {
+      "id": "common-ringed-plover",
+      "path": "docs/media/publications/daily-birds-20261101/common-ringed-plover.jpeg",
+      "sha256": "cb3aad5df008ecf5bb8c2f3d13e44d8841ad812a9fe667bced134ff3d4b5290e",
+      "source_sha256": "cb3aad5df008ecf5bb8c2f3d13e44d8841ad812a9fe667bced134ff3d4b5290e",
+      "source_reference": "Dario Taraborelli; 2022-08-05; Arrecife, Las Palmas, Spain. https://www.inaturalist.org/photos/220241751; Library original libfile_017329b0c4908191b7b60f7d5aefcda6; Library rights libfile_7d7423b41f408191a879247b9380e77d.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Real photograph; creator attribution retained separately.",
+        "evidence_reference": "https://www.inaturalist.org/photos/220241751; Library rights libfile_7d7423b41f408191a879247b9380e77d"
+      },
+      "alt": {
+        "ar": "زقزاق مطوق يرفع جناحه في مقدمة شاطئ صخري وطائر آخر خلفه",
+        "en": "Common Ringed Plover stretching a wing in the foreground of a rocky shore, with another bird behind",
+        "fr": "Grand Gravelot étirant une aile au premier plan sur un rivage rocheux, avec un autre oiseau derrière"
+      },
+      "caption": {
+        "ar": "الزقزاق المطوق الشائع",
+        "en": "Common Ringed Plover",
+        "fr": "Grand Gravelot"
+      }
+    },
+    {
+      "id": "ruddy-shelduck",
+      "path": "docs/media/publications/daily-birds-20261101/ruddy-shelduck.jpg",
+      "sha256": "bc2d689aad92593d085b532f6d0783cb541f8e4ba8da7ceac9f37dafa496867c",
+      "source_sha256": "bc2d689aad92593d085b532f6d0783cb541f8e4ba8da7ceac9f37dafa496867c",
+      "source_reference": "Nicolás Tamargo; 2021-05-25; Tartu, Tartu, Estonia. https://www.inaturalist.org/photos/131488768; Library original libfile_af73277fa0b481918bdec7af56d33f0c; Library rights libfile_1c5e1162f1648191b3a4c0d0cbd039ee.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Real photograph; creator attribution retained separately.",
+        "evidence_reference": "https://www.inaturalist.org/photos/131488768; Library rights libfile_1c5e1162f1648191b3a4c0d0cbd039ee"
+      },
+      "alt": {
+        "ar": "ذكر بط أبو فروة بطوق عنق أسود رفيع يقف قرب الماء",
+        "en": "Male Ruddy Shelduck with a narrow black neck ring beside water",
+        "fr": "Tadorne casarca mâle au fin collier noir près de l’eau"
+      },
+      "caption": {
+        "ar": "بط أبو فروة",
+        "en": "Ruddy Shelduck",
+        "fr": "Tadorne casarca"
+      }
+    },
+    {
+      "id": "great-crested-grebe",
+      "path": "docs/media/publications/daily-birds-20261101/great-crested-grebe.jpeg",
+      "sha256": "8a0146f60e7bda8d28235e36e474cf4b5af689abae244b62e37e62c972f3c5ad",
+      "source_sha256": "8a0146f60e7bda8d28235e36e474cf4b5af689abae244b62e37e62c972f3c5ad",
+      "source_reference": "Andra Waagmeester; 2019-05-01; Drimmelen, De Biesbosch, Noord-Brabant, Netherlands. https://www.inaturalist.org/photos/37588706; Library original libfile_4cd684286ea08191ab7ae6b113dd43ea; Library rights libfile_465bfc11be488191adde41423b05df2a.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Real photograph; creator attribution retained separately.",
+        "evidence_reference": "https://www.inaturalist.org/photos/37588706; Library rights libfile_465bfc11be488191adde41423b05df2a"
+      },
+      "alt": {
+        "ar": "غطاسان متوجان بريش التكاثر يسبحان على سطح الماء",
+        "en": "Two Great Crested Grebes in breeding plumage swimming on the water",
+        "fr": "Deux Grèbes huppés en plumage nuptial nageant à la surface de l’eau"
+      },
+      "caption": {
+        "ar": "الغطاس المتوج الكبير",
+        "en": "Great Crested Grebe",
+        "fr": "Grèbe huppé"
+      }
+    },
+    {
+      "id": "greylag-goose",
+      "path": "docs/media/publications/daily-birds-20261101/greylag-goose.jpg",
+      "sha256": "18f0fa09c36daa8422c914ff91488b6a83aa6423e9695cf3a033530ebdb621cc",
+      "source_sha256": "18f0fa09c36daa8422c914ff91488b6a83aa6423e9695cf3a033530ebdb621cc",
+      "source_reference": "Dag Endresen; 2019-05-21; Hovedøya, Oslo, Oslo, NO. https://www.inaturalist.org/photos/39505737; Library original libfile_35029d88e2008191bf7b7ab074989a8f; Library rights libfile_a14e5f4454a48191807e6f0109057edc.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0/public-domain dedication permits commercial republication without a mandatory external attribution link. Real photograph; creator attribution retained separately.",
+        "evidence_reference": "https://www.inaturalist.org/photos/39505737; Library rights libfile_a14e5f4454a48191807e6f0109057edc"
+      },
+      "alt": {
+        "ar": "إوزة رمادية بمنقار وساقين ورديين وحلقات ظاهرة على الساقين تقف على الصخور",
+        "en": "Greylag Goose with pinkish bill and feet and visible leg rings standing on rocks",
+        "fr": "Oie cendrée au bec et aux pattes rosés, avec des bagues visibles, sur des rochers"
+      },
+      "caption": {
+        "ar": "الإوز الرمادي (الإوز الأربد)",
+        "en": "Greylag Goose",
+        "fr": "Oie cendrée"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "أبو-منجل-اللامع",
+        "en": "glossy-ibis",
+        "fr": "ibis-falcinelle"
+      },
+      "translations": {
+        "ar": {
+          "title": "أبو منجل اللامع",
+          "subtitle": "Plegadis falcinellus — الأنوق اللامع وطيور الأراضي الرطبة",
+          "meta_description": "أبو منجل اللامع: تمييزه وبيئته وتكاثره وحركته بين الأراضي الرطبة العربية، مع فصل العبور عن الشتاء والتكاثر.",
+          "sections": [
+            {
+              "heading": "الاسم والهوية",
+              "paragraphs": [
+                "أبو منجل اللامع، ويسمى أيضًا الأنوق اللامع في المراجع الكويتية، نوع من فصيلة أبي منجل وأبي ملعقة Threskiornithidae، ضمن رتبة البجعيات Pelecaniformes. تعتمد قائمة AviList لعام 2026 الاسم العلمي Plegadis falcinellus. يمتد انتشاره عبر أجزاء من أوراسيا وإفريقيا وأسترالاسيا والأمريكتين؛ لذلك لا يصح اختزال كل تجمعاته في مسار هجرة واحد، أو اعتبار مشاهدة طائر في موقع جديد دليلًا على استقراره فيه. ويسميه الدليل اللبناني «أبو منجل اللماع»."
+              ]
+            },
+            {
+              "heading": "كيف نميّزه؟",
+              "paragraphs": [
+                "يبدو داكنًا من بعيد، لكن الإضاءة الجيدة تكشف جسمًا كستنائيًا وأجنحة ذات لمعان أخضر وبرونزي. المنقار طويل مقوس إلى أسفل، والعنق والرجلان طويلان؛ وفي الطيران يمد عنقه إلى الأمام، بخلاف البلشونات التي تطويه. الجنسان متشابهان في الريش ولا يحدد الجنس بثقة من صورة عادية. تبدو الطيور اليافعة أكثر بنية وأقل لمعانًا، مع تخطيط فاتح على العنق؛ ويبهت لون البالغ خارج موسم التكاثر أيضًا. رأسه المكسو بالريش يفرقه عن أبي منجل الأصلع الشمالي، ولا يكفي اللون الأسود الظاهر لتعيين النوع."
+              ]
+            },
+            {
+              "heading": "الموطن والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد المستنقعات والبرك الضحلة والسهول المغمورة والحقول الرطبة، ويستخدم مياهًا عذبة وأخرى شروبًا. يغرس منقاره في الطين أو يلتقط الفرائس من الماء والسطح؛ وتشمل غذاءه الحشرات ويرقاتها والديدان والرخويات والقشريات، مع فرائس مائية صغيرة أخرى. يعيش اجتماعيًا، وقد يتغذى ويبيت مع أفراد نوعه وطيور مائية أخرى. لا يعادل وجوده قرب حقل زراعي إثبات منفعة زراعية كمية؛ الأوضح أنه جزء من الشبكة الغذائية للأراضي الرطبة، وأنه يعتمد على توافر الماء والطين القابل للاختراق."
+              ]
+            },
+            {
+              "heading": "التكاثر والحركة",
+              "paragraphs": [
+                "يعشش في مستعمرات، وقد يشارك البلشونات مواقع التعشيش. يبني الزوج منصة من الأغصان والنباتات في شجيرة أو شجرة أو بين القصب، ويشارك الأبوان في رعاية الحضنة. يتبع توقيت التكاثر الظروف المحلية، فلا يُنقل تقويم منطقة إلى جميع البلدان العربية. تستطيع الطيور الانتشار بعيدًا بعد التكاثر، إلى جانب الهجرة الموسمية لبعض التجمعات. أظهرت دراسات التحجيل صلات بين مستعمرات شمال الجزائر ومواقع في غرب المتوسط، ما يبرز قيمة شبكة الأراضي الرطبة المتصلة بدل حماية بقعة منفردة فقط."
+              ]
+            },
+            {
+              "heading": "الانتشار العربي ومعنى مشاهدته في نوفمبر",
+              "paragraphs": [
+                "يعطي دليل طيور لبنان، الطبعة الثانية المنشورة في يونيو 2026، صورة أحدث: متكاثر صيفي محلي وغير منتظم في المنصورة، وعابر غير شائع في الأراضي الرطبة الساحلية والداخلية؛ ولا يصفه بزائر شتوي منتظم. في الكويت هو عابر غير شائع وشتوي نادر، بينما تصنفه قاعدة طيور عُمان عابرًا وزائرًا شتويًا وفيرًا. وفي المغرب والجزائر توجد مواقع تكاثر موثقة، إلى جانب الحركة الموسمية؛ ووُثق تكاثر في سبخة بوعرك بالمغرب سنة 2024. لذلك تلائم مادة نوفمبر موسم الشتاء في عُمان، لكنها لا تعني أن نوفمبر موسم وفرة له في لبنان، ولا أن كل طيور شمال إفريقيا مهاجرة وافدة."
+              ]
+            },
+            {
+              "heading": "الحفظ والمشاهدة المسؤولة",
+              "paragraphs": [
+                "حالته العالمية أقل إثارة للقلق LC، وليست ضمانًا لسلامة كل تجمع محلي. تجفيف المستنقعات وتلوث المياه والمبيدات وإزعاج المستعمرات والقتل تهديدات تستدعي الانتباه. تفيد حماية الضفاف والقصب ونوعية المياه ومواقع المبيت، مع تصوير الطيور من مسافة لا تغير سلوكها. لا تُقتحم المستعمرة للحصول على صورة، ولا يُستنتج من حالة الحفظ العالمية حكم قانوني على الصيد في أي بلد."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "Cornell Lab of Ornithology — All About Birds: Glossy Ibis, identification and life history.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds: Glossy Ibis.",
+                "Birds of Oman — national species database.",
+                "Blowin’ in the wind: dispersal of Glossy Ibis in the western Mediterranean, 2023.",
+                "Azaouaghe & Oujidi — Nidification de l’Ibis falcinelle dans le nord-est du Maroc, Go-South Bulletin 21, 2024.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Zygy — CC0-1.0."
+        },
+        "en": {
+          "title": "Glossy Ibis",
+          "subtitle": "Plegadis falcinellus — an iridescent wetland wanderer",
+          "meta_description": "Recognising the Glossy Ibis and understanding its feeding, breeding and contrasting seasonal occurrence across Arab wetlands.",
+          "sections": [
+            {
+              "heading": "Name and identity",
+              "paragraphs": [
+                "The Glossy Ibis, Plegadis falcinellus, belongs to Threskiornithidae, the ibis and spoonbill family, within Pelecaniformes. This placement follows AviList 2026. Arabic references also use the name al-anuq al-lamiʿ. Its distribution spans parts of Eurasia, Africa, Australasia and the Americas. These widely separated populations do not all share one migration route, and a bird appearing at a new wetland does not establish that the species is resident or breeding there. The Lebanese guide also uses the Arabic name Abu Minjal al-lammaʿ."
+              ]
+            },
+            {
+              "heading": "Recognition and similar birds",
+              "paragraphs": [
+                "From a distance it looks dark, but good light reveals chestnut body feathers and green-bronze iridescence on the wings. The long, downcurved bill, extended neck and long legs form a distinctive outline. It flies with its neck stretched forward, unlike a heron. Sexes have similar plumage and should not be assigned from an ordinary photograph. Young birds are browner and less glossy, often with pale neck streaking; non-breeding adults also lose some richness. Its feathered head distinguishes it from the Northern Bald Ibis. Apparent blackness alone is not a useful identification."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It uses marshes, shallow pools, flooded ground and wet farmland, including fresh and brackish habitats. Probing soft mud and picking prey from the surface, it takes insects and larvae, worms, molluscs and crustaceans, with other small aquatic prey. Feeding and roosting can be communal, sometimes alongside other waterbirds. Its occurrence near farmland does not quantify an agricultural benefit: what can be established is its place in wetland food webs and its dependence on accessible shallow water and workable mud."
+              ]
+            },
+            {
+              "heading": "Breeding and movements",
+              "paragraphs": [
+                "It nests colonially, sometimes in mixed heronries. The pair builds a platform of twigs and vegetation in a tree, shrub or reedbed, and both parents contribute to brood care. Breeding timing depends on local conditions, so one regional calendar should not be applied throughout the Arab world. Post-breeding dispersal accompanies seasonal migration in some populations. Ringing studies have connected northern Algerian colonies with other western Mediterranean locations, illustrating why a network of wetlands matters rather than an isolated protected patch."
+              ]
+            },
+            {
+              "heading": "Arab distribution and November context",
+              "paragraphs": [
+                "Lebanon’s updated photographic guide, published in June 2026, reports localised, irregular summer breeding at Al Mansoura and uncommon passage through coastal and inland wetlands, not regular winter visitation. Kuwait lists uncommon passage and rare winter occurrence, whereas Oman’s database describes abundant passage and winter visitation. Morocco and Algeria have documented breeding sites as well as seasonal movements; breeding at Morocco’s Sebkha Bou Areg was documented in 2024. November therefore provides a winter-wetland context in Oman, not evidence of Lebanese abundance or proof that every North African ibis is a visiting migrant."
+              ]
+            },
+            {
+              "heading": "Conservation and responsible observation",
+              "paragraphs": [
+                "Globally it is Least Concern, not a guarantee that every local population is secure. Wetland drainage, pollution, pesticides, colony disturbance and killing remain concerns. Protecting reedbeds, water quality, shorelines and roosts supports its habitat needs. Observe without changing the birds’ behaviour; entering a colony for a photograph is inappropriate. Global conservation status does not determine whether hunting is legal in a particular country."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "Cornell Lab of Ornithology — All About Birds: Glossy Ibis, identification and life history.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds: Glossy Ibis.",
+                "Birds of Oman — national species database.",
+                "Blowin’ in the wind: dispersal of Glossy Ibis in the western Mediterranean, 2023.",
+                "Azaouaghe & Oujidi — Nidification de l’Ibis falcinelle dans le nord-est du Maroc, Go-South Bulletin 21, 2024.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Zygy — CC0-1.0."
+        },
+        "fr": {
+          "title": "Ibis falcinelle",
+          "subtitle": "Plegadis falcinellus — un ibis des zones humides",
+          "meta_description": "Identifier l’Ibis falcinelle et comprendre son alimentation, sa reproduction et ses saisons contrastées dans les zones humides arabes.",
+          "sections": [
+            {
+              "heading": "Nom et identité",
+              "paragraphs": [
+                "L’Ibis falcinelle, Plegadis falcinellus, appartient aux Threskiornithidae, famille des ibis et des spatules, dans l’ordre des Pelecaniformes. Cette classification suit AviList 2026. Des références arabes emploient aussi le nom al-anouq al-lamiʿ. Présent dans plusieurs régions d’Eurasie, d’Afrique, d’Australasie et des Amériques, il ne suit pas partout un itinéraire migratoire unique. Son observation dans une nouvelle zone humide ne suffit pas à y démontrer une résidence permanente ou une reproduction. Le guide libanais emploie aussi le nom arabe Abou Minjal al-lammaʿ."
+              ]
+            },
+            {
+              "heading": "Reconnaissance et confusions",
+              "paragraphs": [
+                "À distance, il paraît sombre ; sous une bonne lumière, son corps châtain et les reflets verts et bronze des ailes deviennent visibles. Son long bec recourbé vers le bas, son cou et ses longues pattes dessinent une silhouette caractéristique. Il vole le cou tendu, contrairement aux hérons. Les sexes ont un plumage semblable : une photographie ordinaire ne permet pas de les attribuer sûrement. Les jeunes sont plus bruns, moins brillants, avec des stries claires au cou ; l’adulte internuptial est également plus terne. Sa tête emplumée le distingue de l’Ibis chauve."
+              ]
+            },
+            {
+              "heading": "Milieux, nourriture et comportement",
+              "paragraphs": [
+                "Il fréquente marais, mares peu profondes, terrains inondés et cultures humides, en eau douce ou saumâtre. Il sonde la vase et capture des proies à la surface : insectes et larves, vers, mollusques, crustacés et autres petits animaux aquatiques. Il peut se nourrir et dormir en groupes, parfois avec d’autres oiseaux d’eau. Sa présence près des cultures ne mesure pas, à elle seule, un bénéfice agricole. Elle témoigne surtout de son rôle dans les réseaux alimentaires humides et de sa dépendance envers une eau accessible et un substrat meuble."
+              ]
+            },
+            {
+              "heading": "Reproduction et déplacements",
+              "paragraphs": [
+                "Il niche en colonies, parfois au sein de héronnières mixtes. Le couple aménage une plateforme de branches et de végétaux dans un arbre, un buisson ou une roselière ; les deux parents participent aux soins. Le calendrier dépend des conditions locales et ne peut être généralisé à tous les pays arabes. La dispersion après la reproduction s’ajoute aux migrations saisonnières de certaines populations. Des études de baguage relient des colonies du nord algérien à d’autres sites méditerranéens occidentaux : protéger un réseau de zones humides est donc essentiel."
+              ]
+            },
+            {
+              "heading": "Répartition arabe et contexte de novembre",
+              "paragraphs": [
+                "Le guide photographique libanais actualisé, publié en juin 2026, signale une reproduction estivale localisée et irrégulière à Al Mansoura et un passage peu commun dans les zones humides côtières et intérieures, sans hivernage régulier. Au Koweït, le passage est peu commun et l’hivernage rare ; la base omanaise le donne abondant dans les deux saisons. Le Maroc et l’Algérie possèdent des sites de reproduction documentés, avec aussi des mouvements saisonniers ; la nidification à Sebkha Bou Areg a été décrite en 2024. Novembre convient donc au contexte hivernal omanais, sans prouver une abondance libanaise ni une origine migratrice de tous les ibis nord-africains."
+              ]
+            },
+            {
+              "heading": "Conservation et observation responsable",
+              "paragraphs": [
+                "Son statut mondial est Préoccupation mineure, sans garantie pour chaque population locale. Drainage, pollution, pesticides, dérangement des colonies et destruction directe restent préoccupants. Préserver roselières, berges, qualité de l’eau et dortoirs répond à ses besoins. L’observation doit rester à une distance qui ne modifie pas le comportement ; une photographie ne justifie pas l’entrée dans une colonie. Le statut mondial ne détermine pas la légalité de la chasse dans un pays."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "Cornell Lab of Ornithology — All About Birds: Glossy Ibis, identification and life history.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds: Glossy Ibis.",
+                "Birds of Oman — national species database.",
+                "Blowin’ in the wind: dispersal of Glossy Ibis in the western Mediterranean, 2023.",
+                "Azaouaghe & Oujidi — Nidification de l’Ibis falcinelle dans le nord-est du Maroc, Go-South Bulletin 21, 2024.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Zygy — CC0-1.0."
+        }
+      },
+      "published": "2026-11-01",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "glossy-ibis"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "كروان-الماء-الكبير",
+        "en": "eurasian-curlew",
+        "fr": "courlis-cendre"
+      },
+      "translations": {
+        "ar": {
+          "title": "كروان الماء الكبير",
+          "subtitle": "Numenius arquata — الكروان الأوراسي وسواحل الشتاء",
+          "meta_description": "كروان الماء الكبير: علامات تمييزه عن الكروان الصغير، وانتشاره العربي الموسمي وحماية السهول الطينية ومواقع الراحة.",
+          "sections": [
+            {
+              "heading": "الاسم والتصنيف",
+              "paragraphs": [
+                "كروان الماء الكبير، أو الكروان الأوراسي، هو Numenius arquata من فصيلة دجاج الأرض Scolopacidae ورتبة الزقزاقيات Charadriiformes. تثبت قائمة AviList لعام 2026 هذا الاسم وتصنف حالته العالمية قريبًا من التهديد NT. كلمة «كروان» وحدها ملتبسة لأنها تدخل في أسماء طيور مختلفة؛ لذا يفيد إرفاق الاسم العلمي، ولا سيما عند مقارنة صور أو سجلات قديمة. وهو من الطيور الخواضة الكبيرة، وليس من الطيور المغردة التي قد تحمل أسماء شعبية مشابهة."
+              ]
+            },
+            {
+              "heading": "علامات التمييز والعمر والجنس",
+              "paragraphs": [
+                "أبرز علاماته منقار طويل يتقوس تدريجيًا إلى أسفل، وريش بني مخطط وعنق ورجلان طويلان. تتشابه ألوان الجنسين، لكن منقار الأنثى أطول عادة، مع تداخل يمنع الجزم من الطول وحده. وقد يكون منقار اليافع أقصر، فلا يُحوّل كل طائر قصير المنقار إلى نوع آخر. يشبهه الكروان الصغير Numenius phaeopus، لكنه أصغر عادة وأقصر منقارًا، وله تخطيط أقوى على الرأس مع شريط وسطي فاتح في التاج. يُفحص الشكل العام والرأس والمنقار معًا؛ ولا تكفي صورة بعيدة أو زاوية تخفي انحناء المنقار."
+              ]
+            },
+            {
+              "heading": "بين الطين والمروج",
+              "paragraphs": [
+                "خارج التكاثر يرتاد المسطحات المدية والمصبات والسواحل المحمية، ويستخدم أيضًا حقولًا ومروجًا قريبة. يغوص المنقار في الطين بحثًا عن الديدان والرخويات والقشريات، ويلتقط فرائس من السطح كذلك. يتغير موضع التغذية مع المد والجزر، وتصبح مواقع الراحة فوق مستوى الماء ضرورية عندما تغمر مناطق الغذاء. وجود ساحل طويل لا يعني توافر موطن صالح: فالردم قد يزيل الطين المنتج، بينما يحرم الإزعاج المتكرر الطيور من الراحة حتى إذا بقيت منطقة التغذية سليمة."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يمتد نطاق التكاثر عبر أجزاء واسعة من أوراسيا، في المروج الرطبة والمستنقعات والمناطق المفتوحة. العش منخفض على الأرض، ويشارك الأبوان في حضانة البيض. تترك الفراخ العش مبكرًا وتتحرك وتتغذى بنفسها تحت رعاية الأبوين، قبل أن تستطيع الطيران؛ لذلك لا يعني وجود فرخ على الأرض أنه متروك. تؤثر إدارة المروج وتجفيفها وجزها المبكر في نجاح التكاثر. وبعد الموسم تتحرك طيور كثيرة نحو سواحل أدفأ؛ وقد تبقى أفراد غير متكاثرة جنوب نطاق التكاثر صيفًا، وهو أمر مختلف عن إثبات التعشيش."
+              ]
+            },
+            {
+              "heading": "الانتشار العربي في الخريف والشتاء",
+              "paragraphs": [
+                "في الكويت هو زائر شتوي بارز وعابر، مع أفراد تمكث صيفًا دون أن يعني ذلك تكاثره. وتصفه قاعدة طيور عُمان بأنه وفير في العبور والشتاء. في المغرب توثق المسوح استخدام مصبات وبحيرات ساحلية شتاء، ومنها مركب سيدي موسى–الوليدية؛ كما توجد سجلات شتوية موثقة في عدن باليمن. أما دليل لبنان لعام 2026 فيصنفه طائرًا عرضيًا على الساحل، فلا يُعمم عليه وضع الخليج. تجعل بداية نوفمبر السواحل المناسبة في الخليج وشمال إفريقيا زاوية موسمية منطقية، لكن تقدير أعداد موقع بعينه يحتاج تعدادًا حديثًا، لا إعادة تقديم أرقام مسح قديم."
+              ]
+            },
+            {
+              "heading": "لماذا يحتاج إلى الحماية؟",
+              "paragraphs": [
+                "قريب من التهديد عالميًا، ويتعرض لفقد الموائل وتدهورها والقتل والإزعاج، إضافة إلى ضغوط على مناطق التكاثر. حماية الطين ومواقع الراحة معًا أهم من التركيز على أحدهما فقط. للمراقب، تراجع الطيور المتكرر أو توقفها عن التغذية علامة على ضرورة الابتعاد. لا تُستخدم مطاردة السرب للحصول على لقطة طيران، ولا يستنتج من وجوده في موسم الشتاء أنه مباح الصيد؛ التنظيم القانوني مسألة منفصلة تتبع البلد والتاريخ."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Curlew and Whimbrel.",
+                "RSPB — Curlew; Wash Wader Research Group — Curlew.",
+                "BirdLife International — Migratory bird of the month: Eurasian Curlew, July 2024; Aden Important Bird Area account.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds: Eurasian Curlew.",
+                "Birds of Oman — national species database.",
+                "Waders wintering in Morocco: national population estimates and trends, Wader Study Group Bulletin 96, 2001; Phenology of waders in the Sidi Moussa–Walidia coastal wetlands, 2009.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева — CC0-1.0."
+        },
+        "en": {
+          "title": "Eurasian Curlew",
+          "subtitle": "Numenius arquata — a long-billed visitor to winter shores",
+          "meta_description": "The Eurasian Curlew: identification, Arab wintering coasts, breeding ecology and the importance of undisturbed mudflats and roosts.",
+          "sections": [
+            {
+              "heading": "Name and classification",
+              "paragraphs": [
+                "The Eurasian Curlew, Numenius arquata, belongs to Scolopacidae within Charadriiformes. AviList 2026 retains this name and lists its global status as Near Threatened. Arabic sources use “large water curlew” as well as “Eurasian curlew”. The shortened word “curlew” can be ambiguous in local names, making the scientific name valuable when checking photographs and older records. This is a large wading bird, not one of the songbirds that may carry a similar vernacular name."
+              ]
+            },
+            {
+              "heading": "Identification, age and sex",
+              "paragraphs": [
+                "Its most conspicuous feature is a long bill curving smoothly downwards, combined with streaked brown plumage, a long neck and long legs. Sexes look similar, but females generally have longer bills; overlap prevents reliable sexing from bill length alone. Young birds can be shorter-billed and should not automatically be reassigned to another species. The Eurasian Whimbrel, Numenius phaeopus, is usually smaller and shorter-billed, with a stronger head pattern and pale central crown stripe. Use the whole structure, head markings and bill together, rather than one distant photograph."
+              ]
+            },
+            {
+              "heading": "Between mudflats and meadows",
+              "paragraphs": [
+                "Outside the breeding season it favours tidal flats, estuaries and sheltered coasts, also using nearby fields and meadows. Its bill probes for worms, molluscs and crustaceans, while surface prey is also taken. Feeding opportunities shift with the tide, making safe high-water roosts essential when mudflats disappear underwater. A long coastline is not necessarily suitable habitat: reclamation can remove productive mud, while repeated disturbance can deprive birds of rest even where feeding grounds remain intact."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Breeding extends across much of Eurasia in wet meadows, marshy ground and open landscapes. The nest is on the ground and both parents incubate. Chicks leave the nest early and move and feed under parental supervision before they can fly; a chick on the ground is therefore not necessarily abandoned. Drainage and early mowing can reduce breeding success. Many birds move towards warmer coasts afterwards. Non-breeding individuals may remain south of the breeding range in summer, which is not evidence of local nesting."
+              ]
+            },
+            {
+              "heading": "Arab autumn and winter distribution",
+              "paragraphs": [
+                "In Kuwait it is a prominent winter visitor and passage migrant, with some summering birds but no implication of breeding. Oman’s database describes abundant passage and winter occurrence. Moroccan surveys document winter use of coastal lagoons and estuaries, including Sidi Moussa–Oualidia; winter records are also documented at Aden in Yemen. Lebanon differs sharply: its 2026 guide treats it as a coastal vagrant. Early November is therefore relevant to suitable Gulf and North African shores, but present-day abundance at any particular site requires a current count, not recycled historical totals."
+              ]
+            },
+            {
+              "heading": "Why protection matters",
+              "paragraphs": [
+                "Its Near Threatened status reflects concerns including habitat loss and degradation, killing, disturbance and pressures on breeding grounds. Feeding flats and roosts need protection together. For an observer, repeated retreat or interrupted feeding means more distance is needed. Chasing a flock for a flight photograph is not responsible observation. Winter presence does not imply permission to hunt: applicable law is a separate, country- and date-specific question."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Curlew and Whimbrel.",
+                "RSPB — Curlew; Wash Wader Research Group — Curlew.",
+                "BirdLife International — Migratory bird of the month: Eurasian Curlew, July 2024; Aden Important Bird Area account.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds: Eurasian Curlew.",
+                "Birds of Oman — national species database.",
+                "Waders wintering in Morocco: national population estimates and trends, Wader Study Group Bulletin 96, 2001; Phenology of waders in the Sidi Moussa–Walidia coastal wetlands, 2009.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0-1.0."
+        },
+        "fr": {
+          "title": "Courlis cendré",
+          "subtitle": "Numenius arquata — un grand limicole des rivages hivernaux",
+          "meta_description": "Le Courlis cendré : identification, côtes arabes d’hivernage, reproduction et protection des vasières et reposoirs.",
+          "sections": [
+            {
+              "heading": "Nom et classification",
+              "paragraphs": [
+                "Le Courlis cendré, Numenius arquata, appartient aux Scolopacidae, dans l’ordre des Charadriiformes. AviList 2026 conserve ce nom et le classe Quasi menacé à l’échelle mondiale. Les références arabes utilisent notamment les noms de « grand courlis d’eau » et de « courlis eurasiatique ». Les appellations populaires abrégées pouvant désigner différents oiseaux, le nom scientifique facilite la vérification des photographies et des archives. Il s’agit d’un grand limicole, et non d’un oiseau chanteur portant un nom populaire voisin."
+              ]
+            },
+            {
+              "heading": "Identification, âge et sexe",
+              "paragraphs": [
+                "Son signe le plus évident est un long bec régulièrement recourbé vers le bas, associé à un plumage brun strié, un long cou et de longues pattes. Les sexes se ressemblent, mais le bec de la femelle est généralement plus long ; les chevauchements empêchent un sexage certain sur ce seul critère. Les jeunes peuvent avoir un bec plus court. Le Courlis corlieu, Numenius phaeopus, est généralement plus petit, avec un bec plus court et une tête davantage rayée, notamment une bande claire au centre de la calotte. Il faut comparer silhouette, tête et bec ensemble."
+              ]
+            },
+            {
+              "heading": "Entre vasières et prairies",
+              "paragraphs": [
+                "Hors reproduction, il fréquente vasières intertidales, estuaires et côtes abritées, mais aussi des champs et prairies voisins. Il sonde la vase pour trouver vers, mollusques et crustacés, sans dédaigner les proies de surface. L’alimentation suit les marées ; des reposoirs sûrs deviennent indispensables quand l’eau recouvre les vasières. Une longue côte n’est donc pas forcément favorable : les remblais peuvent supprimer les secteurs nourriciers, et le dérangement répété prive les oiseaux de repos même si leur zone d’alimentation subsiste."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "La reproduction s’étend sur une grande partie de l’Eurasie, dans les prairies humides, marais et paysages ouverts. Le nid est au sol et les deux parents couvent. Les poussins quittent rapidement le nid, se déplacent et se nourrissent sous surveillance avant de voler ; un poussin au sol n’est donc pas forcément abandonné. Drainage et fauche précoce peuvent compromettre la reproduction. Ensuite, beaucoup gagnent des côtes plus chaudes. Certains individus non reproducteurs restent au sud en été, ce qui ne démontre pas une nidification locale."
+              ]
+            },
+            {
+              "heading": "Répartition arabe en automne et en hiver",
+              "paragraphs": [
+                "Au Koweït, c’est un hivernant important et un migrateur de passage, avec quelques estivants sans reproduction impliquée. La base omanaise le donne abondant au passage et en hiver. Au Maroc, les suivis documentent l’utilisation hivernale des lagunes et estuaires, notamment Sidi Moussa–Oualidia ; l’hivernage est également documenté à Aden, au Yémen. Le contraste libanais est net : le guide de 2026 le considère accidentel sur le littoral. Début novembre concerne donc surtout les rivages favorables du Golfe et d’Afrique du Nord ; les effectifs actuels d’un site exigent un comptage récent."
+              ]
+            },
+            {
+              "heading": "Pourquoi le protéger ?",
+              "paragraphs": [
+                "Son statut Quasi menacé souligne les risques liés à la disparition et à la dégradation des habitats, à la destruction directe, au dérangement et aux pressions sur les sites de reproduction. Vasières et reposoirs doivent être protégés ensemble. Des reculs répétés ou une alimentation interrompue imposent de s’éloigner. Poursuivre un groupe pour photographier son envol n’est pas responsable. La présence hivernale ne vaut pas autorisation de chasse : le droit dépend du pays et de la date."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Curlew and Whimbrel.",
+                "RSPB — Curlew; Wash Wader Research Group — Curlew.",
+                "BirdLife International — Migratory bird of the month: Eurasian Curlew, July 2024; Aden Important Bird Area account.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds: Eurasian Curlew.",
+                "Birds of Oman — national species database.",
+                "Waders wintering in Morocco: national population estimates and trends, Wader Study Group Bulletin 96, 2001; Phenology of waders in the Sidi Moussa–Walidia coastal wetlands, 2009.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Лариса Артемьева — CC0-1.0."
+        }
+      },
+      "published": "2026-11-01",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "eurasian-curlew"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "النفاش-المشاكس",
+        "en": "ruff",
+        "fr": "combattant-varie"
+      },
+      "translations": {
+        "ar": {
+          "title": "النفاش المشاكس",
+          "subtitle": "Calidris pugnax — طائر الاستعراض الذي يتبدل مظهره",
+          "meta_description": "النفاش المشاكس: لماذا يختلف الذكر عن الأنثى، وكيف يبدو في الشتاء، وأين يعبر ويشتي في البلدان العربية.",
+          "sections": [
+            {
+              "heading": "الاسم الصحيح",
+              "paragraphs": [
+                "النفاش المشاكس هو Calidris pugnax، من فصيلة دجاج الأرض Scolopacidae ورتبة الزقزاقيات Charadriiformes. تضعه AviList 2026 في جنس Calidris؛ أما Philomachus pugnax الذي يظهر في كتب وقواعد بيانات أقدم فهو اسم سابق للنوع نفسه، وليس طائرًا إضافيًا. لا يدل وصف «المشاكس» على أنه يؤذي الطيور الأخرى عمومًا، بل يرتبط بصورة الذكور المتنافسة في موسم التزاوج. وهو طائر خواض يتغير منظره كثيرًا بين الربيع والخريف. ويستخدم دليل لبنان لعام 2026 اسم «دريجة شرسة»."
+              ]
+            },
+            {
+              "heading": "ريش الزينة ليس ريش الشتاء",
+              "paragraphs": [
+                "يحمل كثير من الذكور في موسم التكاثر طوقًا ضخمًا من الريش وزوائد ريشية حول الرأس، تتنوع ألوانها بين الأبيض والأسود والبني المحمر. الذكر أكبر بوضوح من الأنثى، لكن الطيور خارج التكاثر لا تحمل هذه الزينة اللافتة. عندئذ يُبحث عن رأس صغير وعنق طويل نسبيًا ومنقار غير طويل يميل طرفه قليلًا إلى أسفل. لون الرجلين متغير، فلا يعتمد عليه وحده. تبدو اليافعات دافئة اللون على الوجه والصدر، مع حواف فاتحة منتظمة لريش الظهر. ويظهر في الطيران بياض على جانبي قاعدة الذيل؛ لذلك تُجمع علامات البنية والريش بدل انتظار الطوق الشهير."
+              ]
+            },
+            {
+              "heading": "تمييزه في أسراب الخواضات",
+              "paragraphs": [
+                "قد تلتبس الأنثى الصغيرة بطيطوي أخرى، بينما يوحي الذكر الأكبر بطائر مختلف تمامًا في السرب نفسه. لا يُفسر فرق الحجم وحده بأنه اختلاف نوعي. يختلف عن الطيطوي أحمر الساق في نسب الرأس والمنقار وفي نمط بياض الجناح والذيل، ويختلف عن طيطوي الغيط في البنية والريش؛ لكن الصور البعيدة لا تسمح دائمًا بتعيين موثوق. في الخريف والشتاء من الطبيعي أن تكون مشاهدة طائر بلا طوق هي المشاهدة المعتادة، وليست علامة على أن الصورة لا تمثل النفاش."
+              ]
+            },
+            {
+              "heading": "المعيشة والتكاثر",
+              "paragraphs": [
+                "يرتاد الحقول الرطبة والمروج المغمورة والبرك والهوامش الطينية، وليس مقصورًا على البحر. يلتقط اللافقاريات من الأرض والماء الضحل، ويأكل أيضًا مواد نباتية وبذورًا، ويتجمع خارج التكاثر في أسراب قد تكون مختلطة. يتكاثر في مناطق رطبة من شمال أوراسيا، حيث تتجمع الذكور للاستعراض في ساحات تقصدها الإناث. تتولى الأنثى الحضانة ورعاية الفراخ، ولا يقوم الذكر بدور الأب المعتني بالحضنة. العش على الأرض والفراخ متحركة بعد الفقس. يصل جزء كبير من الطيور شتاء إلى إفريقيا، وتمتد مناطق الشتاء أيضًا إلى جنوب آسيا."
+              ]
+            },
+            {
+              "heading": "المواسم في البلدان العربية",
+              "paragraphs": [
+                "في لبنان تصفه قائمة 2020 بعابر شائع إلى وفير، مع مرور خريفي يمتد من أوائل أغسطس إلى منتصف نوفمبر، ووجود شتوي قليل في بعض المواقع الساحلية. ولذلك قد تمثل مشاهدة أوائل نوفمبر نهاية العبور لا تجمعًا شتويًا مستقرًا. في الكويت هو عابر غير شائع وزائر شتوي نادر، مع وجود صيفي لا يثبت التكاثر. في المقابل تصنفه قاعدة طيور عُمان وفيرًا في العبور والشتاء. وتوثق تعدادات المغرب حضوره الشتوي في الأراضي الرطبة. لا يجوز نقل هذه الدرجات المحلية إلى كامل الخليج أو المشرق؛ تختلف أهمية الموقع بحسب مياهه وموسمه وإدارة الحقول حوله. ويؤكد دليل لبنان لعام 2026 وفرة العبور وقلة الوجود الشتوي."
+              ]
+            },
+            {
+              "heading": "الحفظ والتعامل المسؤول",
+              "paragraphs": [
+                "تصنيفه العالمي أقل إثارة للقلق LC، لكن استنزاف الأراضي الرطبة وتحويل المروج والتلوث والإزعاج قد يقلل موائل التغذية والتكاثر. الحفاظ على فسيفساء البرك والحقول الرطبة مهم بقدر الحفاظ على البحيرات الكبيرة. تُراقب الأسراب من حافة بعيدة ولا تُدفع إلى الطيران المتكرر، خاصة أثناء التزود بالغذاء في الهجرة. حالة الحفظ العالمية ليست ترخيصًا بالصيد، كما أن التباين الكبير في الريش يستدعي الحذر قبل إطلاق أي حكم على صورة أو طائر بعيد."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Ruff; RSPB — Ruff.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds: Ruff.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Birds of Oman — national species database, Ruff under the earlier combination Philomachus pugnax.",
+                "Waders wintering in Morocco: national population estimates and trends, Wader Study Group Bulletin 96, 2001.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева — CC0-1.0."
+        },
+        "en": {
+          "title": "Ruff",
+          "subtitle": "Calidris pugnax — beyond the spectacular breeding ruff",
+          "meta_description": "Ruff identification beyond its breeding plumage, with sex and age differences and regional Arab migration and winter status.",
+          "sections": [
+            {
+              "heading": "The current name",
+              "paragraphs": [
+                "The Ruff is Calidris pugnax, a member of Scolopacidae within Charadriiformes. AviList 2026 places it in Calidris. Philomachus pugnax, still found in older books and databases, is an earlier combination for the same species, not another bird. Its Arabic name, al-naffash al-mushakis, evokes the displaying, competing males; it does not mean that the species habitually attacks other birds. This is a wader whose appearance changes dramatically between the breeding season and autumn. Lebanon’s 2026 guide uses the Arabic name durayja sharisa."
+              ]
+            },
+            {
+              "heading": "Breeding finery is not winter plumage",
+              "paragraphs": [
+                "Many breeding males carry an extravagant neck ruff and head tufts, varying from white to black and reddish brown. Males are markedly larger than females, but non-breeding birds lack this conspicuous finery. Look instead for a small head, relatively long neck and a moderately short bill with a slightly drooping tip. Leg colour varies and is unreliable alone. Juveniles often have a warm-toned face and breast and neatly pale-edged upperpart feathers. White patches beside the tail base help in flight: structure and several plumage characters matter more than the famous ruff."
+              ]
+            },
+            {
+              "heading": "Finding it among other waders",
+              "paragraphs": [
+                "A small female can be confused with other sandpipers, while a larger male in the same flock may look surprisingly different. Size differences alone do not establish different species. Head and bill proportions and the pattern of white in wings and tail help separate it from Common Redshank; structure and plumage also distinguish Wood Sandpiper. Distant photographs may remain inconclusive. In autumn and winter, seeing a Ruff without a ruff is normal, not evidence that the photograph has been misidentified."
+              ]
+            },
+            {
+              "heading": "Feeding and breeding",
+              "paragraphs": [
+                "It uses wet fields, flooded grassland, pools and muddy margins rather than being restricted to the sea. It takes invertebrates from land and shallow water and also eats plant material and seeds. Outside breeding it gathers in flocks, sometimes mixed with other waders. Breeding occurs in northern Eurasian wetlands, where males assemble at display grounds visited by females. The female incubates and cares for the chicks; males do not provide brood care. Nests are on the ground and chicks are mobile after hatching. Many birds winter in Africa, with wintering areas also extending into southern Asia."
+              ]
+            },
+            {
+              "heading": "Seasons in Arab countries",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist describes common to abundant passage, with autumn movement from early August to mid-November and scarce winter occurrence at some coastal sites. An early-November sighting may therefore represent late passage rather than an established winter flock. Kuwait lists uncommon passage and rare winter occurrence, with summer visits that do not establish breeding. Oman, by contrast, lists abundant passage and winter visitation. Moroccan waterbird counts document winter presence. These local categories should not be transferred across the entire Gulf or Levant: water conditions, season and management of surrounding fields shape a site’s value. Lebanon’s 2026 guide confirms abundant passage and scarce winter occurrence."
+              ]
+            },
+            {
+              "heading": "Conservation and responsible conduct",
+              "paragraphs": [
+                "Its global category is Least Concern, but wetland loss, grassland conversion, pollution and disturbance can reduce feeding and breeding habitat. A mosaic of pools and wet fields can matter as much as a large lake. Watch flocks from a distant edge without repeatedly flushing them, especially while they refuel on migration. Conservation status is not a hunting permit, and the species’ exceptional plumage variation warrants caution before identifying a distant bird or photograph."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Ruff; RSPB — Ruff.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds: Ruff.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Birds of Oman — national species database, Ruff under the earlier combination Philomachus pugnax.",
+                "Waders wintering in Morocco: national population estimates and trends, Wader Study Group Bulletin 96, 2001.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0-1.0."
+        },
+        "fr": {
+          "title": "Combattant varié",
+          "subtitle": "Calidris pugnax — bien au-delà de la collerette nuptiale",
+          "meta_description": "Reconnaître le Combattant varié hors du plumage nuptial et comprendre ses différences d’âge, de sexe et de présence dans les pays arabes.",
+          "sections": [
+            {
+              "heading": "Le nom actuel",
+              "paragraphs": [
+                "Le Combattant varié est Calidris pugnax, un Scolopacidae de l’ordre des Charadriiformes. AviList 2026 le place dans le genre Calidris. Philomachus pugnax, encore présent dans des ouvrages et bases anciens, désigne le même oiseau et non une espèce supplémentaire. Son nom évoque les mâles en parade et en compétition ; il ne signifie pas que l’oiseau agresse habituellement les autres espèces. Ce limicole change considérablement d’apparence entre la saison nuptiale et l’automne. Le guide libanais de 2026 utilise aussi le nom arabe dourayja charissa."
+              ]
+            },
+            {
+              "heading": "La parure n’est pas le plumage hivernal",
+              "paragraphs": [
+                "Beaucoup de mâles nuptiaux portent une ample collerette et des touffes sur la tête, aux couleurs allant du blanc au noir et au brun roux. Le mâle est nettement plus grand que la femelle, mais les oiseaux internuptiaux n’ont pas cette parure. On recherche alors une petite tête, un cou relativement long et un bec assez court, légèrement infléchi à l’extrémité. La couleur variable des pattes ne suffit pas. Les jeunes montrent souvent une face et une poitrine chaudes, avec des plumes dorsales régulièrement bordées de clair. Des plages blanches près de la base de la queue aident en vol."
+              ]
+            },
+            {
+              "heading": "Le reconnaître parmi les limicoles",
+              "paragraphs": [
+                "Une petite femelle peut évoquer d’autres chevaliers, tandis qu’un grand mâle du même groupe paraît très différent. La taille seule ne permet donc pas de séparer les espèces. Les proportions de la tête et du bec, ainsi que la disposition du blanc dans les ailes et la queue, aident à le distinguer du Chevalier gambette ; silhouette et plumage le séparent aussi du Chevalier sylvain. Une photographie lointaine peut rester indécidable. En automne et en hiver, l’absence de collerette est normale et ne réfute pas l’identification."
+              ]
+            },
+            {
+              "heading": "Alimentation et reproduction",
+              "paragraphs": [
+                "Il fréquente champs humides, prairies inondées, mares et bordures vaseuses, sans être limité au littoral. Il capture des invertébrés au sol et dans l’eau peu profonde et consomme aussi des végétaux et des graines. Hors reproduction, il forme des groupes parfois mêlés à d’autres limicoles. Il niche dans les zones humides du nord de l’Eurasie : les mâles se rassemblent sur des arènes de parade visitées par les femelles. Celles-ci assurent incubation et soins aux poussins, sans participation paternelle. Le nid est au sol et les jeunes se déplacent après l’éclosion. Beaucoup hivernent en Afrique, d’autres jusqu’en Asie méridionale."
+              ]
+            },
+            {
+              "heading": "Saisons dans les pays arabes",
+              "paragraphs": [
+                "Au Liban, la liste de 2020 décrit un passage commun à abondant, d’août à la mi-novembre en automne, et un hivernage peu nombreux sur certains sites côtiers. Une observation début novembre peut donc relever d’un passage tardif plutôt que d’un groupe hivernant installé. Au Koweït, le passage est peu commun et l’hivernage rare, avec des estivants qui ne prouvent pas la reproduction. À l’inverse, Oman le donne abondant au passage et en hiver. Les comptages marocains documentent aussi sa présence hivernale. Ces catégories locales ne se généralisent pas à tout le Golfe ou au Levant. Le guide libanais de 2026 confirme le passage abondant et l’hivernage peu nombreux."
+              ]
+            },
+            {
+              "heading": "Conservation et précautions",
+              "paragraphs": [
+                "Il est mondialement classé Préoccupation mineure, mais disparition des zones humides, transformation des prairies, pollution et dérangement réduisent ses habitats. Une mosaïque de mares et de champs humides peut compter autant qu’un grand lac. Observer depuis une bordure éloignée évite les envols répétés, particulièrement pendant le ravitaillement migratoire. Le statut de conservation n’autorise pas la chasse, et la grande variabilité du plumage impose de la prudence devant un oiseau ou une photographie éloignés."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Ruff; RSPB — Ruff.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds: Ruff.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Birds of Oman — national species database, Ruff under the earlier combination Philomachus pugnax.",
+                "Waders wintering in Morocco: national population estimates and trends, Wader Study Group Bulletin 96, 2001.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Лариса Артемьева — CC0-1.0."
+        }
+      },
+      "published": "2026-11-01",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "ruff"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "طيطوي-الغيط",
+        "en": "wood-sandpiper",
+        "fr": "chevalier-sylvain"
+      },
+      "translations": {
+        "ar": {
+          "title": "طيطوي الغيط",
+          "subtitle": "Tringa glareola — عابر المستنقعات والحقول المغمورة",
+          "meta_description": "طيطوي الغيط: تمييزه عن الطيطوي الأخضر، وغذاؤه وتكاثره، واختلاف العبور والشتاء بين لبنان والكويت وعُمان.",
+          "sections": [
+            {
+              "heading": "الهوية والاسم",
+              "paragraphs": [
+                "طيطوي الغيط Tringa glareola من فصيلة دجاج الأرض Scolopacidae ورتبة الزقزاقيات Charadriiformes، وفق AviList 2026. يرد اسم «طيطوى الغيط» في المراجع الكويتية. أما اسمه الإنجليزي المرتبط بالغابات فلا يعني أنه طائر يعيش داخل الغابة الجافة: يرتبط في موسم التكاثر بالمناطق الشمالية الرطبة، ويبحث في الهجرة والشتاء عن الماء الضحل وحواف المستنقعات. فصل هذه المواسم ضروري لفهم سبب مشاهدته في حقل مغمور في بلد عربي. ويسميه دليل لبنان لعام 2026 «دريجة الغاب»."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "هو خواض رشيق بمنقار دقيق شبه مستقيم ورجلين صفراوين إلى مخضرتين، وحاجب فاتح واضح يمتد خلف العين. ظهره بني منقط بالفاتح وأسفله أبيض، مع تخطيط على الصدر. تكون اليافعات أكثر انتظامًا في بقع الظهر المائلة إلى الصفرة، بينما قد يبدو البالغ الشتوي أرمَد وأقل تباينًا. يتشابه الذكر والأنثى في الريش، فلا تُلصق بالصورة صفة الجنس دون دليل مستقل. في الطيران تظهر منطقة بيضاء واضحة عند العجز، من دون شريط أبيض ممتد على الجناح."
+              ]
+            },
+            {
+              "heading": "الأنواع المشابهة",
+              "paragraphs": [
+                "الطيطوي الأخضر Tringa ochropus أشد تباينًا بين ظهر داكن وأسفل فاتح، وأقصر رجلين نسبيًا، وحاجبه أقل امتدادًا خلف العين؛ ويكون باطن جناحه داكنًا خلافًا لباطن الجناح الأفتح في طيطوي الغيط. أما الطيطوي الشائع Actitis hypoleucos فله شريط جناح أبيض ظاهر في الطيران وبنية مختلفة. يُفضل الجمع بين الحاجب ونسب الجسم والعجز وباطن الجناح، لا الاعتماد على لون الرجلين الذي تغيره الإضاءة والطين. لا يستلزم التحقق إقلاع الطائر عمدًا؛ يمكن انتظار حركة طبيعية أو الاكتفاء بتعيين غير محسوم."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والتكاثر",
+              "paragraphs": [
+                "يفضل المياه العذبة الضحلة ذات الحواف النباتية، كالبرك والمستنقعات والحقول المغمورة، ولا يُعد طائر الشواطئ البحرية المكشوفة النموذجي. يلتقط الحشرات ويرقاتها وغيرها من اللافقاريات، ومنها الديدان والرخويات، من السطح أو الماء الضحل. يظهر منفردًا أو في مجموعات صغيرة، وتصبح محطات التوقف مهمة لاستعادة الطاقة. يتكاثر في مناطق رطبة شمال أوراسيا قرب الغطاء الشجري، ويضع البيض في عش أرضي غالبًا. الفراخ مكسوة بالزغب ومتحركة بعد الفقس، وتحتاج موطنًا رطبًا آمنًا حتى تنمو قدرتها على الطيران."
+              ]
+            },
+            {
+              "heading": "ماذا يعني وجوده في نوفمبر؟",
+              "paragraphs": [
+                "يصفه دليل لبنان لعام 2026 بأنه عابر شائع على الساحل والجزر والأراضي الرطبة، لا شتوي منتظم. وتحدد قائمة 2020 العبور الخريفي من أواخر يوليو إلى أوائل نوفمبر، فتوافق بداية نوفمبر آخر ذلك الموسم. في الكويت تدرجه القائمة الرسمية عابرًا شائعًا لكنه زائر شتوي نادر، بينما تصنفه قاعدة طيور عُمان وفيرًا في العبور والشتاء. وتوثق المسوح الشتوية وجوده في المغرب وليبيا، بما في ذلك مواقع داخلية، دون أن تثبت وفرة متساوية بين البلدان. هذه أمثلة على اختلاف المواسم داخل العالم العربي؛ ليست مشاهدة طائر في الشتاء دليلًا على أنه مقيم أو متكاثر."
+              ]
+            },
+            {
+              "heading": "حماية المحطات الصغيرة",
+              "paragraphs": [
+                "حالته العالمية أقل إثارة للقلق LC، لكن ذلك لا يلغي أثر تجفيف البرك وتلوث الماء وفقد هوامش المستنقعات. قد تكون بركة صغيرة آمنة محطة ذات قيمة في وسط جاف، ولا يمكن الحكم على أهميتها من مساحتها وحدها. يفضل تجنب الاقتراب الذي يوقف التغذية، وحماية الغطاء الهامشي بدل تنظيف جميع الضفاف من النبات. دوره في استهلاك اللافقاريات جزء من شبكة غذائية، وليس إثباتًا تلقائيًا بأنه يكافح آفة بعينها أو مؤشرًا كافيًا لجودة المياه."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Wood Sandpiper; RSPB — Wood Sandpiper.",
+                "Naturalis Biodiversity Center — Birds of Europe: Tringa glareola.",
+                "Bird Count India — Identifying waders, 2017.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds — Arabic checklist.",
+                "Birds of Oman — national species database.",
+                "Waders wintering in Morocco, Wader Study Group Bulletin 96, 2001; Results of the seventh winter waterbird census in Libya, January–February 2011.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева — CC0-1.0."
+        },
+        "en": {
+          "title": "Wood Sandpiper",
+          "subtitle": "Tringa glareola — a migrant of pools and flooded fields",
+          "meta_description": "Wood Sandpiper identification and ecology, with the seasonal contrast between Lebanese passage and wintering in parts of Arabia.",
+          "sections": [
+            {
+              "heading": "Identity and name",
+              "paragraphs": [
+                "The Wood Sandpiper, Tringa glareola, belongs to Scolopacidae within Charadriiformes, following AviList 2026. Kuwaiti Arabic references use “taytawa al-ghayt”. Its English name does not mean a bird of dry woodland: northern breeding habitats are wet, while passage and winter birds seek shallow water and marsh edges. Distinguishing these seasons explains why a species called “wood sandpiper” may be encountered in a flooded field in an Arab country. Lebanon’s 2026 guide calls it durayjat al-ghab in Arabic."
+              ]
+            },
+            {
+              "heading": "Recognition",
+              "paragraphs": [
+                "A slim wader, it has a fine, nearly straight bill, yellowish to greenish legs and a clear pale eyebrow extending behind the eye. Brown upperparts carry pale spots; the underparts are white with breast streaking. Juveniles tend to show more regular buff-toned spotting, while winter adults may appear greyer and less contrasting. Male and female plumage is similar, so photographs should not be labelled by sex without independent evidence. In flight, a conspicuous white rump is visible, but there is no extended white wing stripe."
+              ]
+            },
+            {
+              "heading": "Similar species",
+              "paragraphs": [
+                "Green Sandpiper, Tringa ochropus, shows stronger contrast between dark upperparts and pale underparts, relatively shorter legs and a less extensive eyebrow behind the eye. Its underwing is dark, unlike the paler underwing of Wood Sandpiper. Common Sandpiper, Actitis hypoleucos, has a conspicuous white wing stripe in flight and a different structure. Combine eyebrow, body proportions, rump and underwing rather than relying on leg colour altered by light or mud. Identification does not justify deliberately flushing a bird: await natural movement or retain an uncertain identification."
+              ]
+            },
+            {
+              "heading": "Habitats, feeding and breeding",
+              "paragraphs": [
+                "It favours shallow freshwater with vegetated edges: pools, marshes and flooded fields rather than exposed marine beaches. It picks insects, larvae and other invertebrates, including worms and molluscs, from the surface or shallow water. Birds occur singly or in small groups, with stopovers providing opportunities to replenish energy. Breeding takes place in northern Eurasian wetlands near woody cover, usually with a ground nest. Downy chicks are mobile after hatching and require safe wet habitat until their flight ability develops."
+              ]
+            },
+            {
+              "heading": "What does a November record mean?",
+              "paragraphs": [
+                "Lebanon’s 2026 guide describes common passage on the coast, islands and wetlands, not regular winter visitation. The 2020 checklist places autumn passage from late July to early November, so early November can coincide with its end. Kuwait’s official list calls it a common passage migrant but rare winter visitor; Oman’s database describes abundant passage and winter occurrence. Winter surveys document it in Morocco and Libya, including inland locations, without demonstrating equal abundance between countries. These contrasts show why an Arab-wide seasonal label is misleading: a winter sighting does not establish residency or breeding."
+              ]
+            },
+            {
+              "heading": "Protecting small stopovers",
+              "paragraphs": [
+                "Globally it is Least Concern, but drainage, polluted water and the loss of marsh edges still matter. A small safe pool in a dry landscape may be a valuable stopover; area alone does not determine importance. Avoid approaches that interrupt feeding, and retain marginal vegetation instead of clearing every bank. Its consumption of invertebrates places it in a food web, but does not automatically establish control of a particular pest or prove good water quality."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Wood Sandpiper; RSPB — Wood Sandpiper.",
+                "Naturalis Biodiversity Center — Birds of Europe: Tringa glareola.",
+                "Bird Count India — Identifying waders, 2017.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds — Arabic checklist.",
+                "Birds of Oman — national species database.",
+                "Waders wintering in Morocco, Wader Study Group Bulletin 96, 2001; Results of the seventh winter waterbird census in Libya, January–February 2011.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0-1.0."
+        },
+        "fr": {
+          "title": "Chevalier sylvain",
+          "subtitle": "Tringa glareola — le migrateur des mares et prairies inondées",
+          "meta_description": "Identifier le Chevalier sylvain et comprendre les contrastes entre passage libanais et hivernage dans certaines régions arabes.",
+          "sections": [
+            {
+              "heading": "Identité et nom",
+              "paragraphs": [
+                "Le Chevalier sylvain, Tringa glareola, appartient aux Scolopacidae, dans l’ordre des Charadriiformes, selon AviList 2026. Les références arabes koweïtiennes emploient « taytawa al-ghayt ». Son nom n’en fait pas un habitant de la forêt sèche : ses milieux nordiques de reproduction sont humides, et les migrateurs ou hivernants recherchent eaux peu profondes et bordures de marais. Distinguer les saisons explique sa présence possible dans un champ inondé d’un pays arabe. Le guide libanais de 2026 emploie le nom arabe dourayjat al-ghab."
+              ]
+            },
+            {
+              "heading": "Reconnaissance",
+              "paragraphs": [
+                "Ce limicole élancé possède un bec fin presque droit, des pattes jaunâtres à verdâtres et un sourcil clair dépassant l’œil. Le dessus brun est ponctué de clair ; le dessous est blanc, avec une poitrine striée. Les jeunes présentent souvent des taches dorsales chamois plus régulières, tandis que l’adulte hivernal peut paraître plus gris et moins contrasté. Les sexes ont un plumage semblable : leur attribution photographique exige d’autres preuves. En vol, le croupion blanc est net, sans longue barre alaire blanche."
+              ]
+            },
+            {
+              "heading": "Espèces proches",
+              "paragraphs": [
+                "Le Chevalier culblanc, Tringa ochropus, oppose davantage dessus sombre et dessous clair ; ses pattes sont relativement plus courtes et le sourcil dépasse moins l’œil. Son dessous d’aile est sombre, contrairement à celui, plus clair, du sylvain. Le Chevalier guignette, Actitis hypoleucos, montre en vol une barre alaire blanche bien visible et une autre silhouette. Il faut combiner sourcil, proportions, croupion et dessous d’aile, plutôt que la couleur des pattes modifiée par la lumière ou la vase. L’identification ne justifie pas un envol provoqué : attendre un mouvement naturel ou conserver le doute est préférable."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et reproduction",
+              "paragraphs": [
+                "Il préfère les eaux douces peu profondes bordées de végétation : mares, marais et champs inondés plutôt que plages marines exposées. Il prélève insectes, larves et autres invertébrés, notamment vers et mollusques, à la surface ou dans l’eau peu profonde. Solitaire ou en petits groupes, il utilise les haltes pour refaire ses réserves. Il niche dans les zones humides du nord eurasiatique proches d’un couvert arboré, généralement au sol. Les poussins duveteux se déplacent après l’éclosion et ont besoin d’un milieu humide sûr jusqu’au développement du vol."
+              ]
+            },
+            {
+              "heading": "Que signifie une observation en novembre ?",
+              "paragraphs": [
+                "Le guide libanais de 2026 décrit un passage commun sur les côtes, les îles et les zones humides, sans hivernage régulier. La liste de 2020 situe le passage automnal de fin juillet à début novembre : début novembre peut donc en marquer la fin. La liste officielle koweïtienne le donne commun au passage mais rare en hiver ; la base omanaise le décrit abondant dans les deux saisons. Des suivis hivernaux documentent sa présence au Maroc et en Libye, y compris à l’intérieur des terres, sans démontrer une abondance comparable entre pays. Une observation hivernale n’établit ni résidence permanente ni reproduction."
+              ]
+            },
+            {
+              "heading": "Protéger les petites haltes",
+              "paragraphs": [
+                "Son statut mondial de Préoccupation mineure n’annule pas les effets du drainage, de la pollution et de la disparition des lisières de marais. Une petite mare sûre peut constituer une halte précieuse en milieu aride : sa surface ne mesure pas seule son importance. Éviter les approches interrompant l’alimentation et conserver la végétation des berges sont utiles. Son régime d’invertébrés participe au réseau alimentaire, sans prouver automatiquement une lutte contre un ravageur précis ni garantir la qualité de l’eau."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Wood Sandpiper; RSPB — Wood Sandpiper.",
+                "Naturalis Biodiversity Center — Birds of Europe: Tringa glareola.",
+                "Bird Count India — Identifying waders, 2017.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds — Arabic checklist.",
+                "Birds of Oman — national species database.",
+                "Waders wintering in Morocco, Wader Study Group Bulletin 96, 2001; Results of the seventh winter waterbird census in Libya, January–February 2011.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Лариса Артемьева — CC0-1.0."
+        }
+      },
+      "published": "2026-11-01",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "wood-sandpiper"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الطيطوي-أحمر-الساق-الأرقط",
+        "en": "spotted-redshank",
+        "fr": "chevalier-arlequin"
+      },
+      "translations": {
+        "ar": {
+          "title": "الطيطوي أحمر الساق الأرقط",
+          "subtitle": "Tringa erythropus — من السواد الصيفي إلى الرمادي الشتوي",
+          "meta_description": "الطيطوي أحمر الساق الأرقط: تبدل الريش والعمر والجنس، والفرق عن أحمر الساق الشائع، ومواقع العبور والشتاء العربية.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "الطيطوي أحمر الساق الأرقط Tringa erythropus نوع مستقل عن الطيطوي أحمر الساق Tringa totanus، وينتمي مثله إلى فصيلة دجاج الأرض Scolopacidae ورتبة الزقزاقيات Charadriiformes. تعتمد AviList 2026 هذا الاسم العلمي. ترد في المراجع العربية صيغ مثل «الطيطوى حمراء الساق الرقطاء»؛ إرفاق الاسم العلمي يمنع خلط الأنواع عند اختلاف التسمية المحلية. لا يعني اسمه أن البقع السوداء أو الأرجل الحمراء تكفيان وحدهما للتعرف عليه، فريشه يتبدل بوضوح مع الموسم."
+              ]
+            },
+            {
+              "heading": "ريش الصيف والشتاء واليافع",
+              "paragraphs": [
+                "البالغ في ريش التكاثر شديد السواد، مع تنقيط أبيض على الأجزاء العليا؛ أما في الشتاء فيصبح رمادي الظهر وأبيض الأسفل، وله حاجب أبيض واضح. اليافع بني من أعلى ومبقع بالفاتح، مع تخطيط عرضي أوضح على الأسفل؛ وتختفي بعض علامات اليافع تدريجيًا خلال الخريف. يتشابه الجنسان خارج التكاثر، لذلك لا يُحدد الجنس من صورة شتوية عادية. المنقار طويل ودقيق، داكن مع حمرة عند قاعدة الفك السفلي، والرجلان قد تبدوان محمرتين أو شديدتي القتامة بحسب الريش والإضاءة. ليس المنقار أحمر بالكامل."
+              ]
+            },
+            {
+              "heading": "الفرق عن أحمر الساق الشائع",
+              "paragraphs": [
+                "مقارنة بالطيطوي أحمر الساق الشائع، يبدو الأرقط أنحف وأطول منقارًا ورجلين، وأكثر رمادية وشحوبًا في الشتاء. الأهم في الطيران أنه يفتقر إلى الحافة الخلفية البيضاء العريضة للجناح التي تميز أحمر الساق الشائع، مع وجود بياض في الظهر والعجز يمتد كالإسفين. قد يختلط بالنوعين أحمر الساق وأخضر الساق في الموقع نفسه؛ لذلك لا يدل وجوده داخل سرب مألوف على تطابق جميع أفراده. لا تُفسر صورة طائر رمادي في نوفمبر بأنها نوع آخر لمجرد اختلافها عن صورته السوداء الربيعية."
+              ]
+            },
+            {
+              "heading": "الغذاء والتكاثر والهجرة",
+              "paragraphs": [
+                "يرتاد البرك والبحيرات الضحلة والمسطحات الطينية ومياهًا عذبة وشروبًا، وليس مقصورًا على الشاطئ البحري. يلتقط الحشرات ويرقاتها والديدان والقشريات والأسماك الصغيرة، وقد يسبح أو يغمر مقدمة جسمه لبلوغ الغذاء. يتكاثر في شمال أوراسيا، في التندرا والمناطق الرطبة قرب الأشجار، بعش أرضي. يتحمل الذكر العبء الأكبر من الحضانة، والفراخ متحركة بعد الفقس؛ وهذا يختلف عن نموذج الرعاية المتساوية الذي قد يُفترض لكل الطيور. يمتد الشتاء من أجزاء من أوروبا وإفريقيا إلى جنوب آسيا وشرقها، وتتطلب الرحلة مواقع آمنة للتغذية والراحة."
+              ]
+            },
+            {
+              "heading": "الانتشار العربي والملاءمة الموسمية",
+              "paragraphs": [
+                "في لبنان يصفه دليل 2026 بأنه عابر قليل العدد وزائر شتوي وصيفي نادر، في السواحل والجزر والأراضي الرطبة. كانت قائمة 2020 تسجل العبور أساسًا في مارس وأبريل وأواخر يوليو إلى سبتمبر؛ ويُعتمد الدليل الأحدث لوصف وضعه الحالي دون افتراض وفرة شتوية. الكويت تسجله قليل العدد في العبور والشتاء، وعُمان تسجله شائعًا في الموسمين. وتشمل مناطق الشتاء الموثقة مصر وجنوب العراق واليمن، وتؤكد تعدادات تاريخية وجوده الشتوي في المغرب وليبيا. لذلك تخدم مادة نوفمبر مراقبة الأراضي الرطبة العربية الشتوية، مع إبقاء درجة الوفرة محلية. وجوده في بلد لا يعني انتشاره في كل محافظاته، ولا تعني بيانات مسح قديم أن أعداده الحالية لم تتغير."
+              ]
+            },
+            {
+              "heading": "الحفظ والمراقبة",
+              "paragraphs": [
+                "حالته العالمية أقل إثارة للقلق LC. تبقى سلامة الأراضي الرطبة ونوعية المياه وتوافر الفرائس أساسية، ويهددها التجفيف والردم والتلوث والإزعاج. يُراقب من مسافة تسمح له بمواصلة التغذية، وتُوثق الملاحظة بالتاريخ والموقع والريش دون نشر مواقع حساسة إذا كان ذلك يزيد الضغط عليها. لا يُستخدم وضع الحفظ العالمي لإصدار حكم على قانونية الصيد، ولا تُحوّل مشاهدة منفردة إلى إعلان عن تغير مسار الهجرة دون سلسلة بيانات قابلة للمقارنة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Spotted Redshank; RSPB — Spotted Redshank.",
+                "Naturalis Biodiversity Center — Birds of Europe: Tringa erythropus.",
+                "Blasco-Zumeta & Heinze — Spotted Redshank identification, ageing and sexing guide, Aranzadi.",
+                "Toochin — Status and occurrence of Spotted Redshank in British Columbia, E-Fauna BC, University of British Columbia.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds — Spotted Redshank.",
+                "Birds of Oman — national species database.",
+                "Waders wintering in Morocco, Wader Study Group Bulletin 96, 2001; Results of the seventh winter waterbird census in Libya, January–February 2011.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Paulo Caseirito — CC0-1.0."
+        },
+        "en": {
+          "title": "Spotted Redshank",
+          "subtitle": "Tringa erythropus — from summer black to winter grey",
+          "meta_description": "Spotted Redshank identification, changing plumage and breeding ecology, with regional Arab passage and winter distribution.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "The Spotted Redshank, Tringa erythropus, is distinct from the Common Redshank, Tringa totanus. Both belong to Scolopacidae within Charadriiformes. AviList 2026 retains this scientific name. Arabic references use variant forms of “spotted red-legged sandpiper”; attaching the scientific name avoids confusion between local names. Neither spotting nor red legs alone identifies it, because its plumage changes markedly with the season and several other waders have reddish legs."
+              ]
+            },
+            {
+              "heading": "Summer, winter and juvenile plumage",
+              "paragraphs": [
+                "Breeding adults become strikingly black, with white spotting above. In winter they turn grey-backed and white below, with a conspicuous white eyebrow. Juveniles have brown, pale-spotted upperparts and more strongly barred underparts; some juvenile markings disappear progressively during autumn. Sexes look alike outside the breeding season, so an ordinary winter photograph should not be sexed. The bill is long and fine, dark with reddish colour at the base of the lower mandible. Legs may appear reddish or very dark depending on plumage and lighting. The bill is not wholly red."
+              ]
+            },
+            {
+              "heading": "Separating it from Common Redshank",
+              "paragraphs": [
+                "Compared with Common Redshank it appears more slender, longer-billed and longer-legged, and greyer and paler in winter. A particularly useful flight character is the absence of Common Redshank’s broad white trailing edge to the wing; it still has a white wedge extending through the back and rump. It can mingle with redshanks and greenshanks, so a familiar flock need not contain only one species. A grey November bird should not be rejected merely because it differs from photographs of black spring adults."
+              ]
+            },
+            {
+              "heading": "Food, breeding and migration",
+              "paragraphs": [
+                "It uses pools, shallow lakes, mudflats and fresh or brackish water, not only marine shores. Food includes insects and larvae, worms, crustaceans and small fish; birds may swim or tip forward into the water to reach prey. Breeding takes place in northern Eurasian tundra and wetlands near trees, with a ground nest. The male carries most incubation responsibility, and chicks are mobile after hatching: equal parental care should not be assumed for every bird species. Winter distribution extends from parts of Europe and Africa into southern and eastern Asia, requiring safe feeding and resting sites along the journey."
+              ]
+            },
+            {
+              "heading": "Arab distribution and seasonal context",
+              "paragraphs": [
+                "Lebanon’s 2026 guide describes scarce passage and rare winter and summer visitation on coasts, islands and wetlands. Its 2020 checklist placed passage mainly in March–April and late July–September; the newer guide takes precedence for current status without implying winter abundance. Kuwait records scarce passage and winter presence; Oman lists it as common in both seasons. Documented winter range includes Egypt, southern Iraq and Yemen, and historical counts confirm winter presence in Morocco and Libya. A November profile therefore suits Arab winter wetlands, while abundance must remain locally qualified. Country presence does not imply occurrence everywhere, and old surveys cannot establish unchanged present-day numbers."
+              ]
+            },
+            {
+              "heading": "Conservation and observation",
+              "paragraphs": [
+                "Its global status is Least Concern. Wetland integrity, water quality and prey availability remain essential, threatened by drainage, reclamation, pollution and disturbance. Observe far enough away for feeding to continue, and record date, location and plumage without publicising sensitive sites where this would increase pressure. Global status does not decide hunting legality, and a single sighting cannot establish a change in migration routes without comparable observations over time."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Spotted Redshank; RSPB — Spotted Redshank.",
+                "Naturalis Biodiversity Center — Birds of Europe: Tringa erythropus.",
+                "Blasco-Zumeta & Heinze — Spotted Redshank identification, ageing and sexing guide, Aranzadi.",
+                "Toochin — Status and occurrence of Spotted Redshank in British Columbia, E-Fauna BC, University of British Columbia.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds — Spotted Redshank.",
+                "Birds of Oman — national species database.",
+                "Waders wintering in Morocco, Wader Study Group Bulletin 96, 2001; Results of the seventh winter waterbird census in Libya, January–February 2011.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Paulo Caseirito — CC0-1.0."
+        },
+        "fr": {
+          "title": "Chevalier arlequin",
+          "subtitle": "Tringa erythropus — du noir nuptial au gris hivernal",
+          "meta_description": "Le Chevalier arlequin : plumages, reproduction, distinction du gambette et répartition saisonnière dans les pays arabes.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "Le Chevalier arlequin, Tringa erythropus, est distinct du Chevalier gambette, Tringa totanus. Tous deux appartiennent aux Scolopacidae, dans l’ordre des Charadriiformes. AviList 2026 conserve ce nom scientifique. Les références arabes utilisent différentes formes de « chevalier tacheté à pattes rouges » ; joindre le nom scientifique évite les confusions entre appellations locales. Ni les taches ni les pattes rouges ne suffisent à l’identifier : son plumage varie fortement avec la saison et d’autres limicoles ont les pattes rougeâtres."
+              ]
+            },
+            {
+              "heading": "Plumages nuptial, hivernal et juvénile",
+              "paragraphs": [
+                "L’adulte nuptial devient remarquablement noir, ponctué de blanc sur le dessus. En hiver, il présente un dos gris, un dessous blanc et un sourcil blanc évident. Le jeune possède un dessus brun tacheté de clair et un dessous davantage barré ; certains caractères juvéniles s’effacent progressivement en automne. Les sexes se ressemblent hors reproduction, ce qui interdit un sexage certain sur une simple photographie hivernale. Le bec long et fin est sombre, avec du rouge à la base de la mandibule inférieure. Les pattes paraissent rougeâtres ou très sombres selon le plumage et la lumière ; le bec n’est pas entièrement rouge."
+              ]
+            },
+            {
+              "heading": "Le distinguer du Chevalier gambette",
+              "paragraphs": [
+                "Par rapport au gambette, il paraît plus élancé, avec un bec et des pattes plus longs, et un plumage hivernal plus gris et plus pâle. En vol, l’absence de la large bordure blanche postérieure de l’aile du gambette est précieuse ; un coin blanc reste visible sur le dos et le croupion. Il peut se mêler aux gambettes et aux aboyeurs : un groupe familier n’est pas forcément monospécifique. Un oiseau gris de novembre ne doit pas être écarté parce qu’il diffère des adultes noirs photographiés au printemps."
+              ]
+            },
+            {
+              "heading": "Alimentation, reproduction et migration",
+              "paragraphs": [
+                "Il fréquente mares, lacs peu profonds, vasières et eaux douces ou saumâtres, sans se limiter aux côtes marines. Il consomme insectes et larves, vers, crustacés et petits poissons ; il peut nager ou basculer vers l’avant pour atteindre ses proies. Il niche au sol dans les toundras et zones humides du nord eurasiatique proches des arbres. Le mâle assure l’essentiel de l’incubation, et les poussins se déplacent après l’éclosion : un partage égal des soins ne doit pas être supposé chez tous les oiseaux. L’hivernage s’étend de parties de l’Europe et de l’Afrique à l’Asie méridionale et orientale."
+              ]
+            },
+            {
+              "heading": "Répartition arabe et contexte saisonnier",
+              "paragraphs": [
+                "Au Liban, le guide de 2026 décrit un passage peu nombreux et de rares présences hivernales et estivales sur les côtes, les îles et les zones humides. La liste de 2020 situait surtout le passage en mars-avril et de fin juillet à septembre ; le guide récent prévaut pour le statut actuel, sans impliquer un hivernage abondant. Le Koweït le signale peu nombreux au passage et en hiver ; Oman le donne commun dans les deux saisons. L’hivernage documenté comprend l’Égypte, le sud de l’Irak et le Yémen ; des comptages historiques confirment aussi sa présence au Maroc et en Libye. Un portrait de novembre convient donc aux zones humides arabes, sans généraliser l’abondance ni supposer les effectifs inchangés."
+              ]
+            },
+            {
+              "heading": "Conservation et observation",
+              "paragraphs": [
+                "Son statut mondial est Préoccupation mineure. Intégrité des zones humides, qualité de l’eau et disponibilité des proies restent essentielles, face au drainage, aux remblais, à la pollution et au dérangement. Observer à distance permet la poursuite de l’alimentation ; noter date, lieu et plumage est utile, sans divulguer un site sensible si cela accroît la pression. Le statut mondial ne fixe pas la légalité de la chasse, et une observation isolée ne démontre pas une modification d’itinéraire migratoire."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026, 20 October 2026.",
+                "British Trust for Ornithology — BirdFacts: Spotted Redshank; RSPB — Spotted Redshank.",
+                "Naturalis Biodiversity Center — Birds of Europe: Tringa erythropus.",
+                "Blasco-Zumeta & Heinze — Spotted Redshank identification, ageing and sexing guide, Aranzadi.",
+                "Toochin — Status and occurrence of Spotted Redshank in British Columbia, E-Fauna BC, University of British Columbia.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42, 2020.",
+                "Kuwait Ornithological Rarities Committee — Kuwait Bird List; Kuwait Birds — Spotted Redshank.",
+                "Birds of Oman — national species database.",
+                "Waders wintering in Morocco, Wader Study Group Bulletin 96, 2001; Results of the seventh winter waterbird census in Libya, January–February 2011.",
+                "Ramadan-Jaradi & Itani — Birds of Lebanon: A Photographic Guide to 409 Species, second edition, UNDP, June 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Paulo Caseirito — CC0-1.0."
+        }
+      },
+      "published": "2026-11-01",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "spotted-redshank"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "القطقاط-الرمادي",
+        "en": "grey-plover",
+        "fr": "pluvier-argente"
+      },
+      "translations": {
+        "ar": {
+          "title": "القطقاط الرمادي (الزقزاق الرمادي)",
+          "subtitle": "Pluvialis squatarola — زائر السواحل الذي يصل التندرا بالمسطحات الطينية العربية",
+          "meta_description": "القطقاط الرمادي (الزقزاق الرمادي) — زائر السواحل الذي يصل التندرا بالمسطحات الطينية العربية — Pluvialis squatarola",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "القطقاط الرمادي طائر خواض من فصيلة الزقزاقيات، يحمل الاسم العلمي Pluvialis squatarola في قائمة AviList لعام 2026. يُعرف أيضًا بالزقزاق الرمادي. جسمه ممتلئ نسبيًا، ورأسه كبير ومنقاره الأسود قصير وقوي وساقاه داكنتان. في كسوة الشتاء تكون أجزاؤه العليا رمادية منقطة وتغلب البياض على أسفله، ولذلك لا يصلح الاسم وحده لوصف جميع كسواته."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "في كسوة التكاثر يظهر السواد على الوجه والصدر والبطن محاطًا بمناطق بيضاء؛ تكون الإناث عادة أقل سوادًا متصلًا من الذكور، لكن التباين والتبديل الريشي يمنعان الجزم بالجنس من لقطة عابرة. لليافع تنقيط أعلى الظهر أميل إلى الصفرة. أهم علامة فاصلة عن الزقازيق الذهبية هي الريش الإبطي الأسود تحت الجناح، ويظهر في الطيران أو عند رفعه حتى في كسوة الشتاء. لا ينبغي إزعاج الطائر لإجباره على إظهارها؛ الصورة الجيدة أو المراقبة الهادئة تكفيان."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يعتمد خارج التكاثر على الشواطئ الرملية والمسطحات الطينية ومصبات الأنهار والبحيرات الساحلية، وقد يزور المياه الداخلية. يتقدم خطوات ثم يتوقف ليراقب السطح قبل التقاط فريسته؛ تشمل غذاءه الديدان البحرية والقشريات والرخويات ولافقاريات أخرى. يتغير موضع البحث مع المد والجزر، وتحتاج الطيور إلى مواضع مرتفعة وآمنة للراحة عندما يغمر الماء مناطق التغذي. وجود الطيور ساكنة عند المد لا يعني أن الموقع غير مهم لها."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يتكاثر في التندرا القطبية، وليس على السواحل العربية التي يزورها شتاءً. العش منخفض بسيط على الأرض، والحضنة المعتادة أربع بيضات. تشارك الأنثى والذكر في الرعاية، وتغادر الفراخ العش بعد الفقس لتبحث عن غذائها تحت حماية الأبوين. تربط الهجرة مناطق التكاثر الشمالية بمواقع توقف متعاقبة ثم بسواحل معتدلة ومدارية واسعة؛ لذلك لا تتحرك جميع الفئات العمرية أو الأفراد في اليوم نفسه."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "في العالم العربي هو عابر وزائر شتوي ساحلي أساسًا: يستخدم سواحل شمال إفريقيا والبحر الأحمر والخليج وبحر العرب. توثقه أدلة عدن طائرًا عابرًا وشتويًا، وتوثق الجهات البيئية الإماراتية مروره الخريفي. في لبنان تصفه القوائم العلمية بأنه قليل أثناء العبور والشتاء على الساحل والجزر؛ ليس طائر تكاثر مقيمًا هناك. في نوفمبر تكون كثير من الطيور قد بلغت مواقع الإشتاء، مع استمرار الحركة بحسب الموقع والمد والطقس. لا تعني مشاهدة فرد صيفًا إثبات التعشيش، ولا تتساوى وفرته بين الساحل اللبناني والخليج أو مواقع المغرب العربي."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يسهم افتراسه اللافقاريات في الشبكة الغذائية الساحلية، وتدل حاجته إلى التغذي والراحة على أهمية حماية الموقعين معًا. صُنّف عالميًا «معرّضًا للخطر» VU في تقييم 2024، وهو التصنيف الذي تنقله AviList 2026؛ إدراجه «أقل إثارة للقلق» في بعض الصفحات القديمة لم يعد المرجع الحالي. تشمل الضغوط فقد الموائل الساحلية وتدهورها والإزعاج والصيد على مسارات الهجرة. حماية الطائر تعني إبقاء المسطحات متصلة بملاجئ المد، وعدم مطاردة الأسراب بالمركبات أو الاقتراب المتكرر للتصوير. التصنيف العالمي ليس بحد ذاته تصريحًا أو حكمًا قانونيًا محليًا للصيد."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList 2026 — Pluvialis squatarola.",
+                "BirdLife International — IUCN global assessment, 2024; migratory shorebird update, 28 October 2024.",
+                "BTO — BirdFacts: Grey Plover.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020.",
+                "Environment Agency – Abu Dhabi — Environmental Atlas, Life on the Wing.",
+                "Mediterranean Waterbirds Network — Guide to the identification of North African waterbirds; Yemen biodiversity clearing-house — Aden waterbirds."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Andy Wilson — CC0-1.0."
+        },
+        "en": {
+          "title": "Grey Plover",
+          "subtitle": "Pluvialis squatarola — An Arctic breeder linked to Arab tidal shores",
+          "meta_description": "Grey Plover — An Arctic breeder linked to Arab tidal shores — Pluvialis squatarola",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Grey Plover is a member of Charadriidae, retained as Pluvialis squatarola in AviList 2026. Its relatively bulky body, large head, stout black bill and dark legs help establish its identity. Winter birds are mottled grey above and predominantly pale below. The alternative English name Black-bellied Plover describes breeding plumage rather than the appearance most observers encounter on Arab shores in November."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "Breeding plumage includes a black face, breast and belly bordered by white; females generally show less uninterrupted black than males. Individual variation and changing plumage make sexing a distant bird unreliable. Juveniles have yellowish spotting above. Black axillary feathers, visible beneath an open wing, are the decisive feature separating this species from golden plovers in every plumage. Wait for a natural stretch or flight rather than flushing a bird to obtain this diagnostic view. A single grey-looking photograph may not securely establish either age or sex."
+              ]
+            },
+            {
+              "heading": "Habitats, food and behaviour",
+              "paragraphs": [
+                "Outside the breeding season it uses sandy beaches, tidal mudflats, estuaries and coastal lagoons, occasionally visiting inland waters. It searches visually, advancing and pausing before taking prey from the surface or shallow substrate. Marine worms, crustaceans, molluscs and other invertebrates are important foods. Feeding space changes with the tide, while safe high-tide resting places allow birds to conserve energy when exposed flats disappear. A resting flock is therefore using an essential part of its habitat, not merely occupying an empty beach."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Breeding takes place on Arctic tundra, not on the Arab coasts used in winter. A shallow ground nest normally contains four eggs. Both parents contribute to care; chicks leave the nest after hatching and find food under parental protection. Migration connects these northern breeding grounds with a sequence of staging areas and temperate or tropical coasts. Individuals and age classes do not all travel at once, so arrivals and departures overlap rather than obeying a single universal date."
+              ]
+            },
+            {
+              "heading": "Distribution and seasonality in the Arab world",
+              "paragraphs": [
+                "In the Arab world this is primarily a coastal passage migrant and winter visitor, using North African, Red Sea, Gulf and Arabian Sea shores. Aden waterbird accounts document passage and winter occurrence, while Emirati environmental sources describe autumn migration. Lebanese scientific checklists treat it as an uncommon passage and winter bird of the coast and islands, not a resident breeder. November finds many birds on wintering grounds, although movements continue according to locality, weather and tides. Summer presence alone does not prove nesting, and abundance on a Lebanese beach should not be extrapolated to the Gulf or North Africa."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "As an invertebrate predator it forms part of coastal food webs, with survival depending on both feeding and resting habitat. The global assessment changed to Vulnerable, VU, in 2024, a status retained by AviList 2026. Older pages that still display Least Concern are outdated for this purpose. Pressures include coastal habitat loss and degradation, disturbance and hunting along migration routes. Maintaining connected mudflats and high-tide refuges, and avoiding repeated approaches or vehicle disturbance, are practical conservation priorities. Global conservation status does not itself establish local hunting law."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList 2026 — Pluvialis squatarola.",
+                "BirdLife International — IUCN global assessment, 2024; migratory shorebird update, 28 October 2024.",
+                "BTO — BirdFacts: Grey Plover.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020.",
+                "Environment Agency – Abu Dhabi — Environmental Atlas, Life on the Wing.",
+                "Mediterranean Waterbirds Network — Guide to the identification of North African waterbirds; Yemen biodiversity clearing-house — Aden waterbirds."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Andy Wilson — CC0-1.0."
+        },
+        "fr": {
+          "title": "Pluvier argenté",
+          "subtitle": "Pluvialis squatarola — Un nicheur arctique relié aux estrans arabes",
+          "meta_description": "Pluvier argenté — Un nicheur arctique relié aux estrans arabes — Pluvialis squatarola",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Pluvier argenté appartient aux Charadriidés et conserve le nom Pluvialis squatarola dans AviList 2026. Son corps assez massif, sa grosse tête, son bec noir court et robuste et ses pattes sombres contribuent à l’identification. En hiver, le dessus est gris moucheté et le dessous surtout blanc. Son aspect de novembre sur les côtes arabes diffère donc nettement de sa livrée nuptiale."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "En plumage nuptial, la face, la poitrine et le ventre deviennent noirs, encadrés de blanc. Les femelles présentent généralement moins de noir continu, mais les variations individuelles et la mue empêchent souvent de déterminer le sexe à distance. Le jeune possède un dessus ponctué de teintes jaunâtres. Les plumes axillaires noires, sous l’aile, constituent le meilleur critère pour le séparer des pluviers dorés dans tous les plumages. Il convient d’attendre un étirement ou un envol spontané, sans provoquer le départ de l’oiseau. Une photographie isolée ne suffit pas toujours à préciser son âge ou son sexe."
+              ]
+            },
+            {
+              "heading": "Habitats, alimentation et comportement",
+              "paragraphs": [
+                "Hors reproduction, il fréquente plages sableuses, vasières intertidales, estuaires et lagunes côtières, parfois les eaux intérieures. Sa chasse visuelle alterne petits déplacements et pauses avant la capture. Vers marins, crustacés, mollusques et autres invertébrés composent son alimentation. Les surfaces accessibles varient avec la marée; des reposoirs tranquilles restent indispensables lorsque l’eau recouvre les secteurs nourriciers. Un groupe immobile à marée haute utilise ainsi une partie essentielle de son habitat."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "La reproduction se déroule dans la toundra arctique, non sur les côtes arabes fréquentées en hiver. Le nid est une dépression au sol et contient habituellement quatre œufs. Les deux parents participent aux soins; les poussins quittent le nid après l’éclosion et recherchent leur nourriture sous leur protection. La migration relie ces régions septentrionales à plusieurs étapes puis aux côtes tempérées ou tropicales. Les individus et les classes d’âge ne voyagent pas tous simultanément: les passages s’étalent dans le temps."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "Dans le monde arabe, l’espèce est principalement migratrice de passage et hivernante sur les côtes d’Afrique du Nord, de la mer Rouge, du Golfe et de la mer d’Arabie. Les inventaires d’Aden signalent passage et hivernage; les sources environnementales émiraties documentent la migration automnale. Au Liban, les listes scientifiques la décrivent comme peu commune au passage et en hiver sur le littoral et les îles, sans population nicheuse résidente. En novembre, de nombreux oiseaux ont rejoint leurs quartiers d’hiver, mais des mouvements persistent selon le site, le temps et les marées. Une présence estivale ne démontre pas une nidification, et les abondances ne se transposent pas d’un littoral à l’autre."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Prédateur d’invertébrés, ce pluvier participe aux réseaux alimentaires côtiers et dépend à la fois des zones de gagnage et des reposoirs. Son classement mondial est passé à «Vulnérable», VU, en 2024, statut repris par AviList 2026. Certaines pages affichant encore «Préoccupation mineure» ne sont donc plus à jour. La disparition et la dégradation des habitats côtiers, les dérangements et la chasse sur les voies migratoires constituent des pressions importantes. Préserver les vasières et leurs refuges de marée haute, sans poursuites ni approches répétées, reste prioritaire. Le statut mondial ne détermine pas à lui seul la réglementation locale de la chasse."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList 2026 — Pluvialis squatarola.",
+                "BirdLife International — IUCN global assessment, 2024; migratory shorebird update, 28 October 2024.",
+                "BTO — BirdFacts: Grey Plover.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020.",
+                "Environment Agency – Abu Dhabi — Environmental Atlas, Life on the Wing.",
+                "Mediterranean Waterbirds Network — Guide to the identification of North African waterbirds; Yemen biodiversity clearing-house — Aden waterbirds."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Andy Wilson — CC0-1.0."
+        }
+      },
+      "published": "2026-11-01",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "grey-plover"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الزقزاق-المطوق-الشائع",
+        "en": "common-ringed-plover",
+        "fr": "grand-gravelot"
+      },
+      "translations": {
+        "ar": {
+          "title": "الزقزاق المطوق الشائع",
+          "subtitle": "Charadrius hiaticula — خواض صغير يقرأ الشاطئ بخطوات وتوقفات",
+          "meta_description": "الزقزاق المطوق الشائع — خواض صغير يقرأ الشاطئ بخطوات وتوقفات — Charadrius hiaticula",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الزقزاق المطوق الشائع، Charadrius hiaticula، من فصيلة الزقزاقيات. الاسم الإنجليزي المعتمد في AviList 2026 هو Common Ringed Plover، والفرنسي Grand Gravelot. يرد عربيًا أيضًا باسم القطقاط المطوق، ويسجل دليل قطر الاسم المحلي «قريوي أبو طوق»؛ الاسم المحلي ليس تسمية موحدة لكل البلاد. بنيته مكتنزة، وظهره بني رمادي وبطنه أبيض، ويعبر صدره طوق داكن واضح."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "للبالغ في كسوة التكاثر قناع أسود وجبهة بيضاء وطوق صدري أسود، وساقان برتقاليتان، ومنقار برتقالي القاعدة أسود الطرف. شتاءً يصبح الرسم أهدأ وقد يبدو المنقار داكنًا. اليافع ذو علامات بنية بدل السواد القوي وحواف ريش فاتحة؛ لا يكفي غياب السواد لتحديد الجنس. يتشابه الجنسان، وقد يكون رسم الأنثى أقل حدة. يجب تمييزه من الزقزاق المطوق الصغير: فالشائع أمتن، وله شريط جناح أبيض ظاهر في الطيران، ولا يحمل الحلقة الصفراء البارزة حول العين المميزة للصغير. يلزم جمع علامات الرأس والمنقار والجناح بدل الاعتماد على لون الساق وحده."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يستخدم الشواطئ الرملية والحصوية وحواف البحيرات والمسطحات الطينية، وقد يتوقف على مسطحات داخلية مناسبة. يركض مسافة قصيرة، يتوقف، ثم يلتقط لافقاريات صغيرة من السطح. يتناول الديدان والقشريات والرخويات والحشرات بحسب البيئة. تفرض حركة المد انتقاله بين مناطق التغذي والراحة، وقد تختلط أسرابه بخواضات أخرى؛ وجودها معًا لا يجعل حاجاتها أو هوياتها متطابقة."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يتكاثر أساسًا في نطاقات شمالية وقطبية وأجزاء من شمال غرب أوروبا. يضع البيض في حفرة سطحية بين الحصى أو على أرض مكشوفة؛ المعتاد أربع بيضات جيدة التمويه. يحتضن الأبوان ويرعيان الفراخ، التي تتحرك وتتغذى بنفسها بعد الفقس تحت مراقبتهما. قد يستخدم البالغ تمثيل الإصابة لإبعاد الخطر عن العش. إذا ظهر هذا السلوك ينبغي الابتعاد، لا الاقتراب بحثًا عن البيض. تختلف الهجرة بين الجماعات؛ بعض الطيور الشمالية تقطع مسافات طويلة بينما تكون جماعات أخرى أقصر حركة."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "في المنطقة العربية هو عابر وزائر شتوي على نطاق واسع، وليس وجوده على شاطئ في نوفمبر دليل تكاثر. تشمل نطاقاته المتوسط وشمال إفريقيا ومصر والسواحل الشرقية وصولًا إلى الخليج، وتستقبله أيضًا بعض الأراضي الرطبة الداخلية. يسجل دليل قطر مرورًا وإشتاءً شائعين مع مشاهدات في جميع الأشهر، وهي لا تثبت التعشيش. في لبنان يتركز المرور في الربيع وأواخر الصيف والخريف، وتبقى أعداد قليلة شتاءً؛ لذلك لا يوصف الشتاء اللبناني بالكثافة نفسها المسجلة في الخليج. في نوفمبر تتداخل نهاية المرور مع الإقامة الشتوية، وتختلف أعداد الموقع مع المد وحالة المياه."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يصنف عالميًا «أقل إثارة للقلق» LC، وهو لا ينفي خسارة موقع محلي أو تناقص جماعة محددة. يسهم في استهلاك اللافقاريات ونقل الطاقة ضمن شبكات الأراضي الرطبة. يهدده تعديل الشواطئ وتجفيف المواقع والإزعاج بالمركبات والكلاب والاقتراب من مناطق الراحة؛ وتكون الأعشاش الأرضية معرضة للدوس حيث يتكاثر. تحمي المراقبة من مسافة مناسبة غذاء الطائر وطاقته. لا يجوز استنتاج إباحة صيده من حالته العالمية، ولا تعميم مواسم التعشيش الأوروبية على الدول العربية."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList 2026 — Charadrius hiaticula.",
+                "BTO — BirdFacts: Ringed Plover.",
+                "EURING/CMS — Eurasian African Bird Migration Atlas: Charadrius hiaticula.",
+                "Scottish Seabird Centre — Ringed Plover.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020.",
+                "Qatar Bird Observation Group — Common Ringed Plover; King Salman bin Abdulaziz Royal Reserve — bird checklist."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Dario Taraborelli — CC0-1.0."
+        },
+        "en": {
+          "title": "Common Ringed Plover",
+          "subtitle": "Charadrius hiaticula — A small shorebird feeding through runs and pauses",
+          "meta_description": "Common Ringed Plover — A small shorebird feeding through runs and pauses — Charadrius hiaticula",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Common Ringed Plover, Charadrius hiaticula, belongs to Charadriidae. AviList 2026 uses this English name; the French name is Grand Gravelot. Arabic sources also use the equivalent of Ringed Plover, while the Qatar bird guide records a specifically local name, rather than an Arabic-wide standard. This compact shorebird combines grey-brown upperparts, white underparts and a conspicuous dark breast band."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "In breeding plumage the adult has a black face pattern, white forehead, black breast band, orange legs and an orange-based bill with a black tip. Winter markings become less emphatic and the bill may look dark. Juveniles have brown rather than strongly black markings and pale feather edges. Lack of extensive black is therefore not a safe shortcut to sexing. The sexes resemble one another, with females sometimes less sharply marked. Compared with Little Ringed Plover, this species is sturdier, shows a clear white wing bar in flight and lacks the striking yellow eye-ring characteristic of that species. Assess head, bill and wing together rather than relying on leg colour alone."
+              ]
+            },
+            {
+              "heading": "Habitats, food and behaviour",
+              "paragraphs": [
+                "It uses sandy and shingle shores, lake margins and tidal flats, and may stop at suitable inland wetlands. A typical feeding sequence is a short run, a pause and a quick pick from the surface. Worms, crustaceans, molluscs and insects are taken according to habitat. Tides repeatedly redistribute feeding and resting areas. Flocks may mix with other waders, but association does not make their identities or habitat requirements interchangeable."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "The main breeding range lies in northern and Arctic regions and parts of northwestern Europe. A shallow scrape on open ground or among pebbles usually holds four well-camouflaged eggs. Both parents incubate and tend the chicks, which move about and feed themselves soon after hatching. Adults may feign injury to divert danger from a nest; an observer encountering this behaviour should withdraw rather than search for eggs. Migration differs among populations, ranging from long journeys by northern birds to much shorter movements elsewhere."
+              ]
+            },
+            {
+              "heading": "Distribution and seasonality in the Arab world",
+              "paragraphs": [
+                "Across the Arab region it is a widespread passage migrant and winter visitor. A November sighting on a beach is not evidence of breeding. Its range includes Mediterranean and North African shores, Egypt and eastern coasts extending to the Gulf, together with suitable inland stopping places. Qatar records common passage and winter occurrence and observations in every month, without those observations alone establishing nesting. In Lebanon, passage is concentrated in spring and late summer–autumn, with relatively few birds remaining in winter. Lebanese winter abundance should therefore not be described as equivalent to that of Gulf sites. November can combine late passage with settled wintering birds, and local counts change with tides and water conditions."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "The global category is Least Concern, LC; this does not exclude deterioration at a particular site or within a population. By consuming invertebrates, the species participates in wetland food webs. Shoreline modification, wetland loss and disturbance by vehicles, dogs or repeated human approaches can reduce usable habitat. Ground nests are also vulnerable to trampling where breeding occurs. Observing from a sensible distance preserves feeding time and energy. Global status does not establish hunting permission, and European nesting calendars must not be applied indiscriminately to Arab countries."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList 2026 — Charadrius hiaticula.",
+                "BTO — BirdFacts: Ringed Plover.",
+                "EURING/CMS — Eurasian African Bird Migration Atlas: Charadrius hiaticula.",
+                "Scottish Seabird Centre — Ringed Plover.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020.",
+                "Qatar Bird Observation Group — Common Ringed Plover; King Salman bin Abdulaziz Royal Reserve — bird checklist."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dario Taraborelli — CC0-1.0."
+        },
+        "fr": {
+          "title": "Grand Gravelot",
+          "subtitle": "Charadrius hiaticula — Un petit limicole qui explore les rivages par courses et arrêts",
+          "meta_description": "Grand Gravelot — Un petit limicole qui explore les rivages par courses et arrêts — Charadrius hiaticula",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Grand Gravelot, Charadrius hiaticula, appartient aux Charadriidés. AviList 2026 retient le nom anglais Common Ringed Plover. Plusieurs appellations arabes évoquent son collier; le guide du Qatar mentionne aussi un nom local, qui ne constitue pas une dénomination uniforme pour tous les pays. Ce petit limicole compact présente un dessus brun-gris, un dessous blanc et une bande pectorale sombre bien visible."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "L’adulte nuptial porte un masque noir, un front blanc, un collier noir, des pattes orange et un bec orange à pointe noire. En hiver, les contrastes s’atténuent et le bec peut paraître sombre. Le jeune présente des dessins bruns plutôt que franchement noirs et des liserés clairs aux plumes. Une faible quantité de noir ne permet donc pas de déterminer le sexe. Les sexes se ressemblent, la femelle étant parfois moins contrastée. Comparé au Petit Gravelot, le Grand Gravelot paraît plus robuste, montre une nette barre alaire blanche en vol et ne possède pas son cercle oculaire jaune très voyant. Il faut combiner les caractères de la tête, du bec et de l’aile plutôt que retenir seulement la couleur des pattes."
+              ]
+            },
+            {
+              "heading": "Habitats, alimentation et comportement",
+              "paragraphs": [
+                "Il fréquente plages sableuses ou de galets, rives lacustres et vasières, avec des haltes possibles dans les zones humides intérieures. Sa recherche alimentaire alterne course brève, arrêt et capture rapide à la surface. Vers, crustacés, mollusques et insectes sont consommés selon le milieu. La marée redistribue sans cesse les secteurs de nourrissage et les reposoirs. Les groupes peuvent se mêler à d’autres limicoles, sans que leurs besoins écologiques ni leurs identités deviennent identiques."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "La reproduction concerne surtout les régions septentrionales et arctiques ainsi qu’une partie du nord-ouest de l’Europe. Une cuvette peu profonde, sur terrain découvert ou parmi les cailloux, reçoit habituellement quatre œufs camouflés. Les deux parents couvent et surveillent les poussins, mobiles et capables de se nourrir après l’éclosion. Un adulte peut simuler une blessure pour détourner un danger du nid: il faut alors s’éloigner, non chercher les œufs. Les stratégies migratoires varient, des longs trajets des populations nordiques aux déplacements plus courts d’autres populations."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "Dans le monde arabe, c’est un migrateur de passage et un hivernant largement réparti. Sa présence sur une plage en novembre ne démontre pas une reproduction. Son aire inclut les côtes méditerranéennes et nord-africaines, l’Égypte et les littoraux orientaux jusqu’au Golfe, ainsi que des étapes intérieures appropriées. Au Qatar, passage et hivernage sont communs; des observations existent tous les mois sans constituer, à elles seules, une preuve de nidification. Au Liban, le passage se concentre au printemps et de la fin de l’été à l’automne, avec relativement peu d’hivernants. Il ne faut donc pas attribuer au littoral libanais les abondances de certains sites du Golfe. Novembre associe parfois derniers passages et installation hivernale, avec des effectifs variables selon les marées et les niveaux d’eau."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Son statut mondial est «Préoccupation mineure», LC, ce qui n’exclut pas le déclin d’une population ou la dégradation d’un site. Consommateur d’invertébrés, il participe aux réseaux trophiques des zones humides. L’aménagement des rivages, la disparition des habitats et les dérangements par véhicules, chiens ou approches répétées réduisent les espaces utilisables. Les nids au sol sont vulnérables au piétinement dans les régions de reproduction. Observer à distance préserve le temps d’alimentation et l’énergie. Le statut mondial n’autorise pas la chasse, et les calendriers de nidification européens ne s’appliquent pas indistinctement aux pays arabes."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList 2026 — Charadrius hiaticula.",
+                "BTO — BirdFacts: Ringed Plover.",
+                "EURING/CMS — Eurasian African Bird Migration Atlas: Charadrius hiaticula.",
+                "Scottish Seabird Centre — Ringed Plover.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020.",
+                "Qatar Bird Observation Group — Common Ringed Plover; King Salman bin Abdulaziz Royal Reserve — bird checklist."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Dario Taraborelli — CC0-1.0."
+        }
+      },
+      "published": "2026-11-01",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "common-ringed-plover"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "بط-أبو-فروة",
+        "en": "ruddy-shelduck",
+        "fr": "tadorne-casarca"
+      },
+      "translations": {
+        "ar": {
+          "title": "بط أبو فروة",
+          "subtitle": "Tadorna ferruginea — بين بحيرات الأطلس وشتاء المشرق: ليس زائرًا عابرًا في كل مكان",
+          "meta_description": "بط أبو فروة — بين بحيرات الأطلس وشتاء المشرق: ليس زائرًا عابرًا في كل مكان — Tadorna ferruginea",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "بط أبو فروة، Tadorna ferruginea، من فصيلة البطيات، ويحتفظ بتصنيفه في AviList 2026. يبرز بلون جسده البرتقالي الصدئ ورأسه الأفتح ومنقاره وساقيه السوداوين. جسمه كبير نسبيًا ووضعه المنتصب يجعلان شكله أقرب إلى الإوز من كثير من أنواع البط، لكنه ليس إوزة رمادية ولا مجرد شكل ملون من البط المستأنس."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "يظهر لدى الذكر البالغ طوق أسود ضيق في كسوة التكاثر، وتكون الأنثى بلا هذا الطوق ووجهها أشد بياضًا عادة. يشبه اليافع الأنثى، لذلك لا يثبت غياب الطوق أن الطائر أنثى، خصوصًا خارج موسم التكاثر. في الطيران تبدو مساحة بيضاء واسعة على الجناح متباينة مع ريش الطيران الأسود، مع لمعان أخضر في المرآة الجناحية. يختلف عن الشهرمان الشائع ذي المنقار الأحمر والجسم الأبيض المتداخل مع الأسود والبني. ينبغي أن تجمع الصورة بين الجسد والرأس والمنقار؛ تغيّر الضوء وحده قد يبدل درجة اللون الصدئ."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يستخدم البحيرات والأراضي الرطبة المفتوحة والأنهار البطيئة والمسطحات في المناطق شبه الجافة، بما فيها بحيرات مرتفعات الأطلس. يتغذى على الأعشاب والنباتات المائية والبذور، ويأخذ أيضًا لافقاريات مثل الحشرات والرخويات والقشريات. يبحث على اليابسة وعند الحواف وفي المياه الضحلة. قد يشاهد في أزواج أو في مجموعات خارج التكاثر، وصوته القوي يساعد على ملاحظته؛ أما الألفة الظاهرة فلا تبرر الاقتراب من الأسرة أو العش."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يعشش في تجاويف أو جحور أو شقوق مناسبة، وقد يكون موضع العش بعيدًا عن حافة الماء. تتولى الأنثى الحضانة، ثم يرافق الأبوان الفراخ التي تستطيع الحركة ومغادرة العش بعد الفقس. يتغير موعد التكاثر مع الإقليم والارتفاع وظروف المياه، فلا تُعمم فترة واحدة على الأطلس والمشرق وآسيا. بعض الجماعات مقيمة أو محدودة الحركة وأخرى مهاجرة؛ وقد تزيد التجمعات الشتوية في موقع توجد حوله طيور متكاثرة أصلًا."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "في المغرب ليس النوع زائرًا شتويًا فقط: توثق المصادر الرسمية تكاثره وإقامته محليًا في بحيرات مثل أغلمام سيدي علي، وتستخدم طيور أخرى مواقع الأطلس خلال الشتاء. وتوثق المراجع تكاثره في أجزاء من الجزائر وتونس أيضًا، دون أن يعني ذلك انتشاره المقيم في كل موقع مغاربي. في مصر يرد ضمن العبور والإشتاء، وفي العراق والمشرق تتباين حركة الجماعات. حدّثت قائمة لبنان لعام 2020 وضعه من شارد إلى زائر شتوي قليل المشاهدة؛ وتسجله قطر زائرًا شتويًا نادرًا. لذلك يقدم نوفمبر فرصة لرصد الشتويات في الشرق، بينما قد تكون مشاهدة الأطلس لطيور محلية. يلزم توثيق مصدر الطيور غير المعتادة، لأن أفراد الأسر أو الهرب لا تثبت هجرة طبيعية."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "حالته العالمية «أقل إثارة للقلق» LC. يجمع بين استهلاك النباتات واللافقاريات، ويربط مناطق الرعي بالمياه، لكن هذا التصنيف لا يحمي تلقائيًا تجمعًا صغيرًا من فقد موئله. تشمل الضغوط تجفيف الأراضي الرطبة وتلوثها والإزعاج والصيد، مع أهمية توفير الهدوء للأسر ومواقع التعشيش. الحفاظ على المياه وتنوع الحواف والتجاويف المناسبة أفضل من إطعام الطيور لجذبها للتصوير. ولا تمثل تسمية «مقيم» تصريح صيد أو دليلًا على ثبات الأعداد سنة بعد سنة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList 2026 — Tadorna ferruginea.",
+                "Parc national d’Ifrane — Tadorne casarca.",
+                "Moroccan biodiversity clearing-house — Aguelmam Sidi Ali et Aguelmam Ntifounassine.",
+                "Mediterranean Waterbirds Network — Ruddy Shelduck identification account and North African waterbird guide.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; SPNL and Ramadan-Jaradi and colleagues — Lebanon checklist update, 2020.",
+                "Qatar eNature — Ruddy Shelduck."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Nicolás Tamargo — CC0-1.0."
+        },
+        "en": {
+          "title": "Ruddy Shelduck",
+          "subtitle": "Tadorna ferruginea — From Atlas lakes to Levantine winters: not a visitor everywhere",
+          "meta_description": "Ruddy Shelduck — From Atlas lakes to Levantine winters: not a visitor everywhere — Tadorna ferruginea",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Ruddy Shelduck, Tadorna ferruginea, is a member of Anatidae whose classification is retained in AviList 2026. Its rusty-orange body, paler head and black bill and legs are conspicuous. The relatively large body and upright stance can suggest a goose, but this is neither a grey goose nor simply an unusually coloured domestic duck."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "The adult male develops a narrow black neck ring in breeding plumage; the female lacks this ring and usually has a whiter face. Juveniles resemble females, so absence of the ring does not establish sex, especially outside the breeding season. In flight a broad white wing panel contrasts with black flight feathers, with a glossy green speculum. Common Shelduck instead combines a red bill with strongly patterned white, black and brown plumage. Identification photographs should include body, head and bill, since lighting alone can alter the apparent rusty colour."
+              ]
+            },
+            {
+              "heading": "Habitats, food and behaviour",
+              "paragraphs": [
+                "The species uses lakes, open wetlands, slow rivers and water bodies in semi-arid country, including the mountain lakes of the Atlas. It eats grasses, aquatic plants and seeds, together with invertebrates such as insects, molluscs and crustaceans. Feeding takes place on land, along margins and in shallow water. Birds may occur as pairs or gather outside the breeding season. Their loud calls help attract attention, but apparent tolerance of people is not a reason to approach a family or nest."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Nests occupy cavities, burrows or suitable crevices and may be some distance from the water’s edge. The female incubates, after which both parents accompany the mobile young as they leave the nest. Breeding timing changes with region, altitude and water conditions; a single calendar should not be imposed on Atlas, Levantine and Asian birds. Some populations are resident or move relatively little, whereas others migrate. Winter numbers at a lake may therefore increase even where local breeding birds are already present."
+              ]
+            },
+            {
+              "heading": "Distribution and seasonality in the Arab world",
+              "paragraphs": [
+                "In Morocco the species is not merely a winter visitor: official sources document local resident breeding at lakes such as Aguelmam Sidi Ali, while other birds use Atlas sites during winter. References also document breeding in parts of Algeria and Tunisia, without implying year-round occupation of every North African wetland. Egypt lies within passage and winter occurrence, while populations using Iraq and the Levant show different movements. Lebanon’s 2020 checklist changed its classification from vagrant to an infrequently observed winter visitor; Qatar treats it as a rare winter visitor. November thus offers opportunities to observe eastern winter arrivals, whereas an Atlas bird may be local. Unusual records should consider provenance, because captive or escaped individuals do not establish natural migration."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "The global category is Least Concern, LC. By taking plants and invertebrates, the species links terrestrial grazing with aquatic habitats, but this category does not protect a small local population from habitat loss. Wetland drainage, pollution, disturbance and hunting are pressures, and breeding families need secure, quiet space. Maintaining water, varied shorelines and suitable nesting cavities is preferable to feeding birds to draw them into photographs. Calling a population resident neither grants hunting permission nor demonstrates stable numbers from year to year."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList 2026 — Tadorna ferruginea.",
+                "Parc national d’Ifrane — Tadorne casarca.",
+                "Moroccan biodiversity clearing-house — Aguelmam Sidi Ali et Aguelmam Ntifounassine.",
+                "Mediterranean Waterbirds Network — Ruddy Shelduck identification account and North African waterbird guide.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; SPNL and Ramadan-Jaradi and colleagues — Lebanon checklist update, 2020.",
+                "Qatar eNature — Ruddy Shelduck."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Nicolás Tamargo — CC0-1.0."
+        },
+        "fr": {
+          "title": "Tadorne casarca",
+          "subtitle": "Tadorna ferruginea — Des lacs de l’Atlas aux hivers levantins: pas seulement un visiteur",
+          "meta_description": "Tadorne casarca — Des lacs de l’Atlas aux hivers levantins: pas seulement un visiteur — Tadorna ferruginea",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Tadorne casarca, Tadorna ferruginea, appartient aux Anatidés et conserve sa classification dans AviList 2026. Son corps roux orangé, sa tête plus claire, son bec et ses pattes noirs le rendent remarquable. Sa taille assez grande et son maintien dressé évoquent une oie, mais il ne s’agit ni d’une oie grise ni simplement d’une forme colorée de canard domestique."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "Le mâle adulte porte un mince collier noir en plumage nuptial; la femelle en est dépourvue et présente généralement une face plus blanche. Les jeunes ressemblent aux femelles: l’absence du collier ne suffit donc pas à déterminer le sexe, notamment hors reproduction. En vol, une large plage alaire blanche contraste avec les rémiges noires et un miroir vert brillant. Le Tadorne de Belon possède au contraire un bec rouge et un plumage nettement composé de blanc, de noir et de brun. Pour identifier un oiseau photographié, il faut voir ensemble corps, tête et bec; la lumière peut modifier la perception du roux."
+              ]
+            },
+            {
+              "heading": "Habitats, alimentation et comportement",
+              "paragraphs": [
+                "L’espèce fréquente lacs, zones humides ouvertes, cours d’eau lents et plans d’eau des régions semi-arides, notamment les lacs d’altitude de l’Atlas. Elle consomme herbes, plantes aquatiques et graines, complétées par des invertébrés comme insectes, mollusques et crustacés. Elle se nourrit à terre, sur les berges et dans les faibles profondeurs. Les oiseaux s’observent en couples ou en groupes hors reproduction. Leurs cris puissants facilitent le repérage, sans que leur tolérance apparente justifie l’approche d’une famille ou d’un nid."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Le nid occupe une cavité, un terrier ou une anfractuosité adaptée, parfois à distance de l’eau. La femelle assure l’incubation; les deux parents accompagnent ensuite les jeunes mobiles lorsqu’ils quittent le nid. Les dates dépendent de la région, de l’altitude et des conditions hydrologiques: un calendrier unique ne convient pas à l’Atlas, au Levant et à l’Asie. Certaines populations sont résidentes ou peu mobiles, d’autres migratrices. Un lac peut donc accueillir davantage d’oiseaux en hiver tout en hébergeant déjà des nicheurs locaux."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "Au Maroc, l’espèce n’est pas seulement hivernante: des sources officielles attestent sa reproduction résidente locale, notamment à Aguelmam Sidi Ali, tandis que d’autres individus fréquentent les sites de l’Atlas en hiver. Des références signalent aussi la nidification dans certaines régions d’Algérie et de Tunisie, sans résidence généralisée dans toutes les zones humides maghrébines. L’Égypte accueille des oiseaux en passage et en hivernage; les populations utilisant l’Irak et le Levant ont des mouvements variables. La liste libanaise de 2020 a remplacé le statut d’occasionnel par celui d’hivernant peu souvent observé; au Qatar, l’espèce est une hivernante rare. Novembre permet donc de rechercher des arrivées hivernales à l’est, alors qu’un oiseau de l’Atlas peut être local. Une observation inhabituelle doit considérer l’origine possible de l’oiseau: un individu échappé ne prouve pas une migration naturelle."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Son statut mondial est «Préoccupation mineure», LC. En consommant végétaux et invertébrés, il relie les zones de pâturage aux milieux aquatiques, mais ce classement ne protège pas une petite population locale de la perte de son habitat. Assèchement, pollution, dérangements et chasse exercent des pressions; les familles nécessitent des espaces tranquilles et sûrs. Maintenir l’eau, des berges diversifiées et des cavités adaptées est préférable au nourrissage destiné à obtenir des images. Le terme résident n’autorise pas la chasse et ne démontre pas une stabilité annuelle des effectifs."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList 2026 — Tadorna ferruginea.",
+                "Parc national d’Ifrane — Tadorne casarca.",
+                "Moroccan biodiversity clearing-house — Aguelmam Sidi Ali et Aguelmam Ntifounassine.",
+                "Mediterranean Waterbirds Network — Ruddy Shelduck identification account and North African waterbird guide.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; SPNL and Ramadan-Jaradi and colleagues — Lebanon checklist update, 2020.",
+                "Qatar eNature — Ruddy Shelduck."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Nicolás Tamargo — CC0-1.0."
+        }
+      },
+      "published": "2026-11-01",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "ruddy-shelduck"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الغطاس-المتوج-الكبير",
+        "en": "great-crested-grebe",
+        "fr": "grebe-huppe"
+      },
+      "translations": {
+        "ar": {
+          "title": "الغطاس المتوج الكبير",
+          "subtitle": "Podiceps cristatus — غواص البحيرات بين التعشيش المحلي والزيارات الشتوية",
+          "meta_description": "الغطاس المتوج الكبير — غواص البحيرات بين التعشيش المحلي والزيارات الشتوية — Podiceps cristatus",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الغطاس المتوج الكبير، Podiceps cristatus، من فصيلة الغطاسيات ورتبة الغطاسيات، وليس من البطيات رغم اشتراكه معها في البحيرات. تثبت AviList 2026 هذا الاسم العلمي. جسمه منخفض على الماء، وعنقه طويل نحيل، ومنقاره مدبب كالحربة. موضع ساقيه المتأخر يساعده على الدفع تحت الماء لكنه يجعله غير رشيق على اليابسة؛ لذا فالغوص والسباحة جزء أساسي من حياته لا سلوك طارئ."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "في كسوة التكاثر يحمل البالغ عرفًا أسود مزدوجًا وطوقًا وجهيًا كستنائيًا وأسود. يتشابه الجنسان، ولا يحدد حجم العرف وحده الجنس بثقة. شتاءً يختفي معظم الزخرف وتصبح الوجنتان ومقدمة العنق بيضاوين مع قبعة داكنة. للفراخ خطوط داكنة على الرأس والعنق، وقد تبقى آثارها لدى اليافع. يفصله عن الغطاس الصغير طول العنق والمنقار والبنية الأكبر؛ وعن الغطاس أسود الرقبة المنقار الأطول والأكثر استقامة والوجه المختلف. في الشتاء قد يربكه المراقب مع غواصات أخرى، فينبغي فحص الرأس والمنقار ووضع الجسم لا اللون فقط."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يعتمد على بحيرات وخزانات ومسطحات واسعة نسبيًا تتوافر فيها فرائس تحت الماء، مع غطاء نباتي ملائم للتعشيش. وقد ينتقل خارج التكاثر إلى المياه الساحلية المحمية والمصبات. يصطاد الأسماك ويأخذ لافقاريات مائية، باحثًا تحت السطح ثم مبتلعًا الفريسة المناسبة. اختفاؤه المتكرر بالغوص لا يعني مغادرة الموقع؛ يفيد الانتظار الهادئ في مشاهدة نمط تغذيه دون دفعه إلى الهرب. تختلف كثافته بحسب صفاء المياه وعمقها والغذاء والإزعاج، لا بحسب مساحة البحيرة وحدها."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يشتهر بعروض الزوج المتقابلة وتحريك الرأس وحمل نباتات مائية في بعض مراحل العرض. يبني عشًا من مواد نباتية على الماء، مثبتًا عادة بالنباتات المحيطة. الحضنة المعتادة ثلاث إلى أربع بيضات، ويتقاسم الأبوان الحضانة ورعاية الفراخ. تحمل الفراخ الصغيرة أحيانًا على ظهر أحد الأبوين؛ وجودها هناك سلوك طبيعي وليس علامة إصابة. تتعلم الفراخ الغوص وتتلقى الغذاء قبل الاستقلال. يؤثر تقلب منسوب الماء في استقرار الأعشاش، لذلك لا يكفي وجود مساحة مائية لضمان نجاح التكاثر."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "في المغرب والجزائر وتونس توجد جماعات تتكاثر محليًا، وتضاف إليها طيور شتوية؛ وتصل الشتويات أيضًا إلى ليبيا ومصر. في المشرق لا يصح وصف الجميع بعابرات: توثق المراجع تعشيشًا محدودًا في سوريا، وسجل لبنان تكاثره في عميق عام 2019، إلى جانب طيور شتوية في المياه الداخلية. تصف القائمة اللبنانية الشتاء المنتظم أساسًا من ديسمبر إلى أوائل مارس؛ لذا يكون نوفمبر زمن متابعة التحول الموسمي، لا ذروة شتوية مضمونة. أما قائمة الكويت المحدثة فتعده عابرًا وزائرًا شتويًا نادرًا، ويسجل دليل الهيئة العامة للبيئة التكاثر أيضًا؛ وهذا لا يعني جماعة مقيمة واسعة الانتشار. ولا يجوز تعميم وضع البحيرات المغاربية عليها. مشاهدة طائر صيفًا وحدها ليست إثبات تعشيش؛ يلزم عش أو فراخ أو دليل سلوكي موثق."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يصنف عالميًا «أقل إثارة للقلق» LC، مع احتمال تضرر جماعات محلية. يشارك بوصفه مفترسًا مائيًا في الشبكة الغذائية، ويحتاج إلى جودة المياه وإتاحة الفرائس ومناطق تعشيش مستقرة. من الضغوط تلوث المياه وفقد الغطاء الشاطئي والإزعاج وتقلبات المنسوب الحادة والتشابك في أدوات الصيد. ينبغي إبقاء مسافة من الأسر وتجنب قطع مسارها بالقوارب، وعدم الاقتراب من عش عائم للتصوير. لا يعني غيابه عن بحيرة أن الماء ملوث حتمًا؛ يلزم رصد منهجي قبل تفسير السبب."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList 2026 — Podiceps cristatus.",
+                "BTO — BirdFacts: Great Crested Grebe.",
+                "RSPB — Great Crested Grebe.",
+                "Mediterranean Waterbirds Network — North African waterbird identification guide.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020.",
+                "Jordan Journal of Natural History — annotated bird checklist of Syria.",
+                "Kuwait Environment Public Authority and IUCN Regional Office for West Asia — Conservation Directory of the Birds of Kuwait; Kuwait Ornithological Rarities Committee — Official Kuwait Bird List, September 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Andra Waagmeester — CC0-1.0."
+        },
+        "en": {
+          "title": "Great Crested Grebe",
+          "subtitle": "Podiceps cristatus — A lake diver combining local breeding and winter visits",
+          "meta_description": "Great Crested Grebe — A lake diver combining local breeding and winter visits — Podiceps cristatus",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Great Crested Grebe, Podiceps cristatus, belongs to Podicipedidae within Podicipediformes, not to the duck family despite sharing many lakes with ducks. AviList 2026 retains this scientific name. It sits low in the water, with a long slim neck and pointed, dagger-like bill. Legs positioned far back provide underwater propulsion but make movement on land awkward; swimming and diving are central to its way of life."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "Breeding adults carry a double black crest and chestnut-and-black facial ruff. The sexes look alike, and crest size alone is not a reliable way to sex a bird. Most ornaments disappear in winter, leaving white cheeks and fore-neck beneath a dark cap. Chicks have striped heads and necks, with traces persisting in young birds. The long neck, pointed bill and larger build separate it from Little Grebe. Compared with Black-necked Grebe, its bill is longer and straighter and the head pattern differs. Winter identification should combine head shape, bill and body posture rather than rely on colour alone."
+              ]
+            },
+            {
+              "heading": "Habitats, food and behaviour",
+              "paragraphs": [
+                "It uses lakes, reservoirs and relatively extensive waters with underwater prey and suitable vegetation for nesting. Outside the breeding season it may move to sheltered coastal water and estuaries. Fish and aquatic invertebrates are captured below the surface, with suitable prey swallowed after capture. Repeated disappearance underwater does not mean that the bird has left the site. Patient observation reveals feeding behaviour without provoking escape. Local abundance depends on water conditions, depth, food and disturbance, not simply the size of a lake."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Pair displays include facing one another, head movements and, during some phases, presentation of aquatic vegetation. The nest is built from plant material on the water and usually anchored to surrounding vegetation. A typical clutch contains three or four eggs; both parents incubate and care for the young. Small chicks sometimes ride on a parent’s back, a normal behaviour rather than a sign of injury. They learn to dive and receive food before becoming independent. Water-level fluctuations can undermine nests, so the presence of open water alone does not ensure successful breeding."
+              ]
+            },
+            {
+              "heading": "Distribution and seasonality in the Arab world",
+              "paragraphs": [
+                "Morocco, Algeria and Tunisia support local breeding populations supplemented by winter visitors; wintering birds also reach Libya and Egypt. In the Levant it is incorrect to describe all birds as transient. References document limited breeding in Syria, and Lebanon recorded breeding at Aammiq in 2019 alongside winter use of inland waters. The Lebanese checklist places regular winter occurrence mainly from December to early March. November is consequently a useful time to monitor seasonal change, not a guaranteed winter peak. The updated Kuwait list describes a rare passage and winter bird, while the Environment Public Authority directory also records breeding; this does not imply a widespread resident population. North African lake status therefore cannot simply be transferred to the Gulf. Summer presence alone does not prove nesting; a nest, chicks or documented breeding behaviour is needed."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "The global category is Least Concern, LC, although local populations may be affected. As an aquatic predator it participates in food webs and depends on water quality, accessible prey and stable nesting areas. Pressures include pollution, loss of shoreline vegetation, disturbance, abrupt water-level changes and entanglement in fishing gear. Keep boats and observers away from families, avoid cutting across their route and do not approach floating nests for photographs. Absence from a lake is not by itself evidence of pollution: interpreting the cause requires systematic observation."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList 2026 — Podiceps cristatus.",
+                "BTO — BirdFacts: Great Crested Grebe.",
+                "RSPB — Great Crested Grebe.",
+                "Mediterranean Waterbirds Network — North African waterbird identification guide.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020.",
+                "Jordan Journal of Natural History — annotated bird checklist of Syria.",
+                "Kuwait Environment Public Authority and IUCN Regional Office for West Asia — Conservation Directory of the Birds of Kuwait; Kuwait Ornithological Rarities Committee — Official Kuwait Bird List, September 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Andra Waagmeester — CC0-1.0."
+        },
+        "fr": {
+          "title": "Grèbe huppé",
+          "subtitle": "Podiceps cristatus — Un plongeur des lacs, entre nidification locale et hivernage",
+          "meta_description": "Grèbe huppé — Un plongeur des lacs, entre nidification locale et hivernage — Podiceps cristatus",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Grèbe huppé, Podiceps cristatus, appartient aux Podicipédidés, dans l’ordre des Podicipédiformes, non aux canards avec lesquels il partage pourtant de nombreux lacs. AviList 2026 conserve ce nom scientifique. Son corps repose bas sur l’eau, son cou est long et mince et son bec pointu rappelle un poignard. Ses pattes placées très en arrière favorisent la propulsion sous-marine mais rendent la marche maladroite: nage et plongée structurent son mode de vie."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "L’adulte nuptial porte une double huppe noire et une collerette rousse et noire. Les sexes se ressemblent; la taille de la huppe ne suffit pas à les distinguer sûrement. En hiver, l’essentiel de ces ornements disparaît, laissant joues et avant du cou blancs sous une calotte sombre. Les poussins ont la tête et le cou rayés, avec des traces persistantes chez les jeunes. Cou allongé, bec pointu et silhouette plus grande le distinguent du Grèbe castagneux. Face au Grèbe à cou noir, son bec est plus long et plus droit et les dessins de la tête diffèrent. L’identification hivernale doit combiner tête, bec et posture plutôt que se limiter à la couleur."
+              ]
+            },
+            {
+              "heading": "Habitats, alimentation et comportement",
+              "paragraphs": [
+                "Il fréquente lacs, retenues et plans d’eau assez étendus offrant des proies subaquatiques et une végétation adaptée au nid. Hors reproduction, il peut gagner les eaux côtières abritées et les estuaires. Poissons et invertébrés aquatiques sont capturés sous la surface puis avalés lorsqu’ils conviennent. Ses disparitions répétées en plongée ne signifient pas qu’il quitte le site. Une observation patiente révèle sa recherche alimentaire sans déclencher la fuite. L’abondance dépend des conditions de l’eau, de la profondeur, des ressources et du dérangement, non de la seule superficie du lac."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "Les parades comprennent des face-à-face, des mouvements de tête et, à certaines étapes, la présentation de végétaux aquatiques. Le nid, formé de matières végétales sur l’eau, est généralement fixé à la végétation environnante. La ponte habituelle comprend trois ou quatre œufs; les deux parents couvent et soignent les jeunes. Les petits voyagent parfois sur le dos d’un parent, comportement normal qui ne signale pas une blessure. Ils apprennent à plonger et reçoivent de la nourriture avant l’indépendance. Les fluctuations du niveau d’eau peuvent déstabiliser les nids: une surface en eau ne garantit donc pas la réussite reproductive."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "Maroc, Algérie et Tunisie accueillent des populations nicheuses locales auxquelles s’ajoutent des hivernants; ces derniers atteignent aussi la Libye et l’Égypte. Au Levant, tous les oiseaux ne sont pas simplement de passage. Les références documentent une reproduction limitée en Syrie, et le Liban a enregistré une nidification à Aammiq en 2019, en plus de l’hivernage dans les eaux intérieures. La liste libanaise situe l’hivernage régulier surtout de décembre au début de mars. Novembre permet donc de suivre la transition saisonnière sans constituer nécessairement le maximum hivernal. Au Koweït, la liste actualisée décrit un migrateur et hivernant rare, tandis que le répertoire de l’autorité publique de l’environnement indique aussi une reproduction, sans impliquer une population résidente largement répartie. Le statut des lacs maghrébins ne se transpose donc pas directement au Golfe. Une présence estivale seule ne prouve pas la nidification; il faut un nid, des poussins ou un comportement reproducteur documenté."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Le statut mondial est «Préoccupation mineure», LC, sans exclure les difficultés locales. Ce prédateur aquatique participe aux réseaux trophiques et dépend d’une eau de qualité, de proies accessibles et de zones de nidification stables. Pollution, disparition de végétation riveraine, dérangements, variations brusques du niveau et emmêlement dans les engins de pêche constituent des pressions. Observateurs et bateaux doivent rester éloignés des familles, éviter de couper leur trajet et ne pas approcher les nids flottants pour photographier. Une absence sur un lac ne démontre pas à elle seule une pollution: une interprétation exige un suivi méthodique."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList 2026 — Podiceps cristatus.",
+                "BTO — BirdFacts: Great Crested Grebe.",
+                "RSPB — Great Crested Grebe.",
+                "Mediterranean Waterbirds Network — North African waterbird identification guide.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020.",
+                "Jordan Journal of Natural History — annotated bird checklist of Syria.",
+                "Kuwait Environment Public Authority and IUCN Regional Office for West Asia — Conservation Directory of the Birds of Kuwait; Kuwait Ornithological Rarities Committee — Official Kuwait Bird List, September 2026."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Andra Waagmeester — CC0-1.0."
+        }
+      },
+      "published": "2026-11-01",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "great-crested-grebe"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الإوز-الرمادي",
+        "en": "greylag-goose",
+        "fr": "oie-cendree"
+      },
+      "translations": {
+        "ar": {
+          "title": "الإوز الرمادي (الإوز الأربد)",
+          "subtitle": "Anser anser — إوزة برية كبيرة لا تتساوى وفرتها بين العراق وبلدان الساحل",
+          "meta_description": "الإوز الرمادي (الإوز الأربد) — إوزة برية كبيرة لا تتساوى وفرتها بين العراق وبلدان الساحل — Anser anser",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الإوز الرمادي، Anser anser، من فصيلة البطيات ورتبة الإوزيات، وهو الاسم العلمي المحتفظ به في AviList 2026. يرد في المصادر العربية أيضًا باسم الإوز الأربد. طائر كبير ثقيل البنية، برقبة ورأس قويين، وريش رمادي بني ذي حواف أفتح، وساقين ورديتين. منقاره الغليظ برتقالي أو وردي تبعًا للجماعة، فلا يصح تحويل لون المنقار وحده إلى تعريف قاطع."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والأنواع المشابهة",
+              "paragraphs": [
+                "يتشابه الذكر والأنثى في الريش، وإن كان الذكر أكبر عادة؛ لا تكفي صورة منفردة بلا مقارنة لتحديد الجنس. تبدو اليافعات أقل وضوحًا في بعض علامات البطن. عند الطيران يظهر مقدم الجناح الرمادي الفاتح متباينًا مع ريش الطيران الأغمق. يلتبس بإوز الجبهة البيضاء، لكن البالغ من الأخير يحمل بياضًا عند قاعدة المنقار وخطوطًا داكنة قوية على البطن؛ يفتقر الصغير إلى اكتمال هذه العلامات، فتزداد أهمية شكل الرأس والمنقار والجناح. كما أن الإوز المستأنس والمتوحش والهجن قد يشبه البرية؛ مظهر الطائر ومكان وجوده لا يثبتان وحدهما أصله الطبيعي."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتبط بالمياه العذبة والبحيرات والمستنقعات والسهول الفيضية، مع استخدام المروج والحقول القريبة للتغذي. غذاؤه نباتي في معظمه، من أعشاب وأجزاء نباتات مائية وحبوب ومحاصيل متاحة. قد تخرج الأسراب إلى الأرض للتغذي ثم تعود إلى الماء للراحة والمبيت. تبقى المجموعات العائلية متماسكة، وتتجمع خارج التكاثر مع طيور أخرى؛ أما قرب العش فيدافع الزوج عن مساحته. ينبغي ألا تُفسر مشاهدة طائر أليف قرب حديقة بوصفها سجل هجرة برية."
+              ]
+            },
+            {
+              "heading": "التكاثر ودورة الحياة",
+              "paragraphs": [
+                "يتكاثر عبر نطاق واسع من أوراسيا. يقام العش على الأرض قرب الماء وبين الغطاء النباتي، وتكون الحضنة عادة خمسًا إلى سبع بيضات. تتولى الأنثى الحضانة بينما يساهم الذكر في الحماية، وتغادر الفراخ العش سريعًا لتتبع الأبوين وتتغذى. خلال تبديل ريش الجناح تمر الطيور بفترة تعجز فيها عن الطيران، فتزداد حاجتها إلى مياه آمنة. تختلف الإقامة والهجرة باختلاف الجماعة؛ وجود جماعات مقيمة في بلد أوروبي لا يعني أن الطيور الواردة إلى العراق مقيمة أيضًا."
+              ]
+            },
+            {
+              "heading": "الانتشار والموسمية عربيًا",
+              "paragraphs": [
+                "في المنطقة العربية تتضح أهمية العراق ضمن نطاق الإشتاء الشرقي، خاصة الأراضي الرطبة والأهوار. وتوثق المراجعات العلمية أيضًا تكاثرًا محليًا محدودًا في جنوب العراق، فلا تختزل الصورة في صفة واحدة لجميع الأفراد. يمتد نطاق الشتاء إلى أقصى شمال إفريقيا، لكن الانتظام والعدد يختلفان بين المواقع. في الخليج تسجله مراجع قطر زائرًا شتويًا نادرًا، وفي لبنان يؤكد دليل الطيور لعام 2026 وضعه طائرًا شاردًا، لا إوزة شتوية مألوفة. نوفمبر بداية مناسبة لمراقبة وصول الطيور في نطاقات الإشتاء، لكنه ليس وعدًا بوجودها في كل بحيرة عربية. توثيق التاريخ والموقع والسلوك والأصل المحتمل مهم لأي مشاهدة خارج المراكز المعروفة."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "حالته العالمية «أقل إثارة للقلق» LC، مع اختلاف أوضاع الجماعات. يربط الرعي بين الحقول والمياه، وقد يثير استخدام المحاصيل تعارضًا مع الزراعة في بعض المناطق؛ لا يفترض ذلك وقوع ضرر في كل موقع. تجفيف الأراضي الرطبة والتلوث والإزعاج والصيد غير المنضبط ضغوط تستدعي إدارة محلية موثقة. الحفاظ على المبيت الهادئ والمياه المتصلة بمناطق التغذي أكثر فائدة من مطاردة الأسراب لأجل صورة. ولا يحدد التصنيف العالمي قانونية الصيد أو مواسمه في أي دولة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList 2026 — Anser anser.",
+                "BTO — BirdFacts: Greylag Goose.",
+                "The Wildlife Trusts — Greylag Goose.",
+                "Mediterranean Waterbirds Network — Greylag Goose identification account.",
+                "Wetlands International — regional breeding-waterbird population estimates, 2017–2018, Iraq synthesis.",
+                "Qatar eNature — Greylag Goose.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Dag Endresen — CC0-1.0."
+        },
+        "en": {
+          "title": "Greylag Goose",
+          "subtitle": "Anser anser — A large wild goose whose regional abundance varies sharply",
+          "meta_description": "Greylag Goose — A large wild goose whose regional abundance varies sharply — Anser anser",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Greylag Goose, Anser anser, belongs to Anatidae within Anseriformes, with its scientific name retained in AviList 2026. Arabic sources use names corresponding to grey or ashy goose. This is a large, heavy-bodied bird with a strong neck and head, grey-brown plumage edged paler, and pink legs. The substantial bill may be orange or pink according to population, so bill colour alone is not a definitive identification test."
+              ]
+            },
+            {
+              "heading": "Age, sex and similar species",
+              "paragraphs": [
+                "Males and females have similar plumage, although males are generally larger; an isolated photograph without comparison seldom establishes sex. Young birds show less developed features in parts of the belly pattern. In flight the pale grey forewing contrasts with darker flight feathers. Adult Greater White-fronted Geese have white at the bill base and strong dark belly barring, but young birds have not developed the complete pattern. Head, bill and wing structure therefore remain important. Domestic, feral and hybrid geese can also resemble wild Greylags; appearance and location alone do not prove natural wild origin."
+              ]
+            },
+            {
+              "heading": "Habitats, food and behaviour",
+              "paragraphs": [
+                "The species uses freshwater lakes, marshes and floodplains, together with nearby grassland and fields. Food is predominantly plant material, including grasses, aquatic vegetation, grain and available crops. Flocks may leave water to graze and return to rest or roost. Family groups remain associated and join other birds outside the breeding season, whereas nesting pairs defend their immediate space. A tame goose beside an ornamental pond should not automatically be treated as evidence of wild migration."
+              ]
+            },
+            {
+              "heading": "Breeding and life cycle",
+              "paragraphs": [
+                "Breeding occurs across a broad Eurasian range. A ground nest close to water and vegetation usually contains five to seven eggs. The female incubates while the male contributes protection; goslings soon leave the nest to follow their parents and feed. Replacement of the wing feathers produces a flightless period, increasing the importance of secure water. Resident and migratory strategies differ between populations. The existence of resident geese in a European country does not imply that birds arriving in Iraq belong to a resident population."
+              ]
+            },
+            {
+              "heading": "Distribution and seasonality in the Arab world",
+              "paragraphs": [
+                "Within the Arab region, Iraq is important in the eastern wintering range, particularly its marshes and other wetlands. Scientific regional reviews also document limited local breeding in southern Iraq, so a single seasonal label cannot describe every bird there. The winter range reaches the northernmost parts of Africa, with strongly variable numbers and regularity. Qatar accounts treat the species as a rare winter visitor, while Lebanon’s 2026 bird guide confirms its vagrant status rather than treating it as a familiar winter goose. November is an appropriate time to watch for arrivals within wintering areas, not a guarantee of occurrence at every Arab lake. Date, locality, behaviour and possible origin should be recorded carefully for observations away from known centres."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Its global category is Least Concern, LC, but population circumstances differ. Grazing links terrestrial feeding grounds with wetlands. Use of crops can create agricultural conflicts in some regions, without implying damage at every site. Wetland drainage, pollution, disturbance and uncontrolled hunting require evidence-based local management. Quiet roosts connected to feeding grounds are more useful to the birds than repeated pursuit for photographs. Global conservation status does not determine the legality or season of hunting in any country."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList 2026 — Anser anser.",
+                "BTO — BirdFacts: Greylag Goose.",
+                "The Wildlife Trusts — Greylag Goose.",
+                "Mediterranean Waterbirds Network — Greylag Goose identification account.",
+                "Wetlands International — regional breeding-waterbird population estimates, 2017–2018, Iraq synthesis.",
+                "Qatar eNature — Greylag Goose.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dag Endresen — CC0-1.0."
+        },
+        "fr": {
+          "title": "Oie cendrée",
+          "subtitle": "Anser anser — Une grande oie sauvage à la présence régionale très inégale",
+          "meta_description": "Oie cendrée — Une grande oie sauvage à la présence régionale très inégale — Anser anser",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Oie cendrée, Anser anser, appartient aux Anatidés, dans l’ordre des Ansériformes; son nom scientifique est conservé par AviList 2026. Ses appellations arabes évoquent une oie grise ou cendrée. C’est un grand oiseau massif, au cou et à la tête robustes, au plumage brun-gris bordé de clair et aux pattes roses. Son gros bec peut être orange ou rose selon la population: sa couleur seule ne suffit pas à l’identifier avec certitude."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et espèces proches",
+              "paragraphs": [
+                "Les sexes ont un plumage semblable, le mâle étant généralement plus grand; une photographie isolée sans comparaison ne permet guère de les distinguer. Les jeunes montrent certains dessins ventraux moins développés. En vol, l’avant de l’aile gris pâle contraste avec les rémiges plus sombres. L’Oie rieuse adulte possède du blanc à la base du bec et de fortes barres noires sur le ventre, mais ces caractères sont incomplets chez les jeunes. Il faut donc également examiner la tête, le bec et l’aile. Oies domestiques, oiseaux féralisés et hybrides peuvent ressembler à des Oies cendrées sauvages; l’aspect et le lieu ne prouvent pas, à eux seuls, une origine naturelle."
+              ]
+            },
+            {
+              "heading": "Habitats, alimentation et comportement",
+              "paragraphs": [
+                "L’espèce fréquente lacs d’eau douce, marais et plaines inondables, ainsi que prairies et cultures proches. Son alimentation est surtout végétale: herbes, végétation aquatique, céréales et plantes cultivées disponibles. Les groupes quittent parfois l’eau pour pâturer, puis y reviennent se reposer ou dormir. Les familles restent associées et rejoignent d’autres oiseaux hors reproduction; près du nid, le couple défend son espace. Une oie familière dans un bassin de jardin ne constitue pas automatiquement une observation migratoire."
+              ]
+            },
+            {
+              "heading": "Reproduction et cycle de vie",
+              "paragraphs": [
+                "La reproduction couvre une vaste aire eurasiatique. Le nid est installé au sol, près de l’eau et de la végétation, et reçoit habituellement cinq à sept œufs. La femelle couve, le mâle contribuant à la protection. Les oisons quittent rapidement le nid pour suivre les parents et se nourrir. Le renouvellement des plumes des ailes entraîne une période d’incapacité de vol, durant laquelle des eaux sûres deviennent particulièrement importantes. Les stratégies sédentaires ou migratrices diffèrent selon les populations; la présence d’oies résidentes en Europe ne signifie pas que les arrivantes en Irak le soient également."
+              ]
+            },
+            {
+              "heading": "Répartition et saisonnalité dans le monde arabe",
+              "paragraphs": [
+                "Dans le monde arabe, l’Irak occupe une place importante dans l’aire orientale d’hivernage, notamment ses marais et autres zones humides. Des synthèses scientifiques documentent aussi une reproduction locale limitée dans le sud du pays: une seule étiquette saisonnière ne décrit donc pas tous les individus. L’hivernage atteint l’extrême nord de l’Afrique, avec une régularité et des effectifs variables. Au Qatar, l’espèce est considérée comme une hivernante rare; au Liban, le guide de 2026 confirme son statut occasionnel, non celui d’une oie hivernante familière. Novembre permet de rechercher les arrivées dans les régions d’hivernage sans garantir leur présence sur chaque lac arabe. Date, lieu, comportement et origine possible méritent d’être documentés loin des secteurs habituels."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Son statut mondial est «Préoccupation mineure», LC, mais la situation varie entre populations. Le pâturage relie milieux terrestres et zones humides. L’utilisation des cultures peut provoquer des conflits agricoles dans certaines régions, sans impliquer des dégâts partout. Assèchement, pollution, dérangements et chasse incontrôlée demandent une gestion locale étayée. Préserver des dortoirs calmes reliés aux zones d’alimentation est préférable aux poursuites photographiques. Le statut mondial ne fixe ni la légalité ni les périodes de chasse d’un pays."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList 2026 — Anser anser.",
+                "BTO — BirdFacts: Greylag Goose.",
+                "The Wildlife Trusts — Greylag Goose.",
+                "Mediterranean Waterbirds Network — Greylag Goose identification account.",
+                "Wetlands International — regional breeding-waterbird population estimates, 2017–2018, Iraq synthesis.",
+                "Qatar eNature — Greylag Goose.",
+                "Ramadan-Jaradi and Itani — Birds of Lebanon: A Photographic Guide to 409 Species, UNDP, second edition, 2026; Ramadan-Jaradi and colleagues — Sandgrouse 42, 2020."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Dag Endresen — CC0-1.0."
+        }
+      },
+      "published": "2026-11-01",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "greylag-goose"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      }
+    }
+  ]
+}
