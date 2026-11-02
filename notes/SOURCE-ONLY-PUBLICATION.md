@@ -329,3 +329,26 @@ Facebook post is created. Repetition, arbitrary targets, nonempty payloads, code
 the source commit, stale hashes and unrelated tree changes fail closed. This exact
 correction is not a general API for editing slots. Normal replay, finalizer, PR,
 contract and browser gates remain required.
+
+## Exact two-bird life-cycle completion — 2 November 2026
+
+The owner’s 1 November authorization to repair verified encyclopedia gaps is
+implemented here only for the Sardinian Warbler and Common Redstart in
+`daily-birds-20261030`. Operation `complete-two-bird-lifecycles` accepts only
+revision ID `two-bird-lifecycles-20261102` and an empty payload. Trusted BASE
+code contains the six fixed additions and their two institutional references;
+request data cannot select text, articles or output paths. The original source
+SHA-256, current BASE and aggregate target hash must match.
+
+The output is exactly twelve existing HTML/Markdown mirrors, three search
+indexes, six sitemap lastmod entries and the existing update-date registry, plus one immutable revision.
+Only the selected life-cycle and final reference paragraphs change, together
+with the normal 2 November update label and dateModified metadata. The original publication dates,
+images, credits, taxonomy, listing cards, homepage and ticker remain exact.
+Search changes must agree with the existing builder and affect only two bodies
+per language. Repeat application and altered original paragraphs fail closed.
+
+Evidence checked 2 November 2026: CSIC Vertebrados Ibéricos (incubation
+12–15 days; nest departure 12–14 days; further parental care 2–3 weeks), and
+BTO BirdFacts Redstart (incubation 13–14 days; fledging 16–17 days). These are
+reference durations, not a borrowed European breeding calendar for Arab countries.
