@@ -9,11 +9,23 @@ ROOT=Path(__file__).resolve().parents[1]
 class BirdLifecycleTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.base=c.git(ROOT,'rev-parse','HEAD').decode().strip()
+  global ROOT
+  cls.original_root=ROOT
+  cls.temp=tempfile.TemporaryDirectory(prefix='sayd-two-bird-fixture-')
+  fixture=Path(cls.temp.name)/'repo'
+  subprocess.run(['git','clone','-q','--shared',str(ROOT),str(fixture)],check=True)
+  cls.base='9a39f7f21462af07af3da0fb843049fd5077336f'
+  c.git(fixture,'checkout','-q','--detach',cls.base)
+  ROOT=fixture
   cls.record=json.loads((ROOT/('content/publications/'+b.PUBLICATION+'.json')).read_text())
   cls.out,cls.effective,_=b.expected_changes(ROOT,cls.base,cls.record)
   cls.value={'schema':r.SCHEMA,'id':b.REVISION_ID,'expected_base':cls.base,'operation':b.OPERATION,'approval_reference':'private:nayef-birds-20261101','expected_source_sha256':b.SOURCE_SHA256,'expected_targets_sha256':c.sha256(c.canonical({p:c.sha256((ROOT/p).read_bytes()) for p in sorted(cls.out)})),'payload':{}}
   cls.path=r.PREFIX+b.REVISION_ID+'.json'
+ @classmethod
+ def tearDownClass(cls):
+  global ROOT
+  ROOT=cls.original_root
+  cls.temp.cleanup()
  def test_exact_scope(self):
   self.assertEqual(len(self.out),17);self.assertEqual(len(self.effective['articles']),2)
   for p,data in self.out.items():
