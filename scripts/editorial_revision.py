@@ -16,7 +16,7 @@ from caption_revision import changed_paths
 
 PREFIX = 'content/editorial-revisions/'
 SCHEMA = 'sayd-editorial-revision-v1'
-TARGETS = {'add-nathalie-interview-photos': 'nathalie-denolf-interview-20261028',
+TARGETS = {'complete-two-bird-lifecycles': 'daily-birds-20261030', 'add-nathalie-interview-photos': 'nathalie-denolf-interview-20261028',
            'homepage-only-ticker': None, 'add-adonis-ticker': 'adonis-respect-quarry-20261026',
            'replace-wanaameen-photo': 'riyadh-results-20261024',
            'promote-episode-three-lead': 'hunting-tourism-egypt-iraq-jordan-20261026'}
@@ -41,6 +41,9 @@ def validate_revision(value, path, base):
         keys(value['payload'], ())  # Titles come only from the approved source.
     if value['operation'] == 'homepage-only-ticker':
         require(value['id'] == 'homepage-only-ticker-20261028', 'Exact ticker scope revision ID required')
+    if value['operation'] == 'complete-two-bird-lifecycles':
+        keys(value['payload'], ())
+        require(value['id'] == 'two-bird-lifecycles-20261102', 'Exact two-bird revision ID required')
     if value['operation'] == 'add-nathalie-interview-photos':
         keys(value['payload'], ())
         require(value['id'] == 'nathalie-five-photos-20261029', 'Exact Nathalie photo revision ID required')
@@ -139,7 +142,10 @@ def expected_changes(root, base, value, path):
         raw = compiler.read_blob(root, before[source_path])
         require(compiler.sha256(raw) == value['expected_source_sha256'], 'Existing source hash mismatch')
         record = validate(loads(raw.decode()), TARGETS[value['operation']])
-        if value['operation'] == 'add-adonis-ticker':
+        if value['operation'] == 'complete-two-bird-lifecycles':
+            import scoped_bird_lifecycle_revision
+            result, effective, article = scoped_bird_lifecycle_revision.expected_changes(root, base, record)
+        elif value['operation'] == 'add-adonis-ticker':
             result, effective, article = ticker_changes(root, base, record)
         elif value['operation'] == 'promote-episode-three-lead':
             import scoped_lead_revision
