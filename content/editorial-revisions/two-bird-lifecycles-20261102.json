@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "two-bird-lifecycles-20261102",
+  "expected_base": "515488ac7accfaa0f695ebd41f13ffe398eda1b6",
+  "operation": "complete-two-bird-lifecycles",
+  "approval_reference": "private:Sentinel_b26913c7cda48191a735e974623bf194",
+  "expected_source_sha256": "2f828892245da3b18ed8de768f6e2b18f637da057ffd7e3ed4f3b5afff1f4486",
+  "expected_targets_sha256": "56095fb4cd397189f98fc54e26170aaa753b6919185392fb42f3ff2a71c432ed",
+  "payload": {}
+}
