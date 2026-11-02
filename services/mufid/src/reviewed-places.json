@@ -495,5 +495,38 @@
       "https://lebanon.arocha.org/wp-content/uploads/sites/43/2022/06/ARL-SC-05-3-Report-on-Roosting-Harrier-Project-at-Aammiq.pdf"
     ],
     "information_date": "2004-2005 (roosting survey); report December 2005"
+  },
+  {
+    "id": "fawar-al-hasbani",
+    "names": [
+      "فوار الحاصباني",
+      "مطعم فوار الحاصباني",
+      "Fawar al Hasbani",
+      "Fawar Al Hasbani"
+    ],
+    "regions": [
+      "حاصبيا",
+      "Hasbaya",
+      "Hasbaiya"
+    ],
+    "kind": "meal",
+    "locality": {
+      "ar": "حاصبيا، نهر الحاصباني، لبنان",
+      "en": "Hasbaya, Hasbani River, Lebanon",
+      "fr": "Hasbaya, rivière Hasbani, Liban"
+    },
+    "sources": [
+      "https://www.fawaralhasbani.com/"
+    ],
+    "nature_dining": true,
+    "source_role": "operator",
+    "checked_at": "2026-11-02",
+    "publication_date": null,
+    "basis": "Operator homepage read 2026-11-02: riverside seats, gardens, Lebanese mezze, grills and fish, exact Hasbaya footer and phones. Undated, no present access, booking, swimming or tent capacity certified.",
+    "description": {
+      "ar": "مطعم في حاصبيا قرب نهر الحاصباني بجلسات بمحاذاة الماء وحدائق وأشجار؛ الصفحة تعرض مازة لبنانية ومشاوي وسمكًا. للاستفسار والحجز: +961 7 845100 أو +961 3 297586. الصفحة غير مؤرخة؛ يلزم تأكيد الفتح والجلسة والحجز والوصول. لا يثبت هذا تخييمًا أو خيمة أو إتاحة مسبح اليوم.",
+      "en": "Hasbaya restaurant beside the Hasbani River, with riverside seating, gardens and trees; Lebanese mezze, grills and fish. Enquiries: +961 7 845100 or +961 3 297586. Undated page; opening, seating, booking and access unconfirmed. Not evidence of tent camping or current pool availability.",
+      "fr": "Restaurant à Hasbaya au bord du Hasbani, jardins et arbres ; mezzés, grillades et poisson. Contact : +961 7 845100 ou +961 3 297586. Page non datée ; ouverture, réservation et accès à confirmer. Ni camping ni piscine actuelle confirmés."
+    }
   }
 ]
