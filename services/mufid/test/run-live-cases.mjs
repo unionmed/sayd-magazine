@@ -1,9 +1,10 @@
 // Fixed daily synthetic batch. Same-account RPC; no access token leaves the Worker.
 import {writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
-import {campaign,batchForDay} from '../src/qa-campaign.mjs';
+import {campaignForRequest,batchForDay} from '../src/qa-campaign.mjs';
 import request from './qa-request.json' with {type:'json'};
-const batch=batchForDay(request.date);if(!batch)throw Error('unknown_batch');
+const campaign=campaignForRequest(request);
+const batch=batchForDay(request.date,campaign.id);if(!batch)throw Error('unknown_batch');
 const path=new URL('../data/live-cases.json',import.meta.url);
 const report={campaign:campaign.id,batch_date:batch.date,region:batch.region,mode:'same-account-private-rpc-real-handler',cases:[],errors:[],not_run:[]};
 const save=()=>writeFileSync(path,JSON.stringify(report));

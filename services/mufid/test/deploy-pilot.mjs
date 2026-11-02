@@ -6,14 +6,14 @@ import {fileURLToPath} from 'node:url';
 import {execFileSync,spawnSync} from 'node:child_process';
 const root=fileURLToPath(new URL('../../../',import.meta.url));
 const service=fileURLToPath(new URL('../',import.meta.url));
-import {campaign,campaignRequestAllowed} from '../src/qa-campaign.mjs';
+import {campaigns,campaignForRequest,campaignRequestAllowed} from '../src/qa-campaign.mjs';
 import qaRequest from './qa-request.json' with {type:'json'};
 const publicKey="-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA10Oi7SQztTKfyPYjtvjp\nXglpZJ2Wsd6vrywzCmfJOnB8De/VkOER4TuaAWeZBzIQ1aiXCaW7Oymfob7PPWfn\n+TPhJ6o2DKsbtGEpPhJ0fZRBsU6Kvx3P9CefqA39nO58caQjEwO31Dy6+NcsXh+b\nhQ7S9u78mchh2NGOSqmvnq6a7z5ahcJDw6JUNxfa2cFSXs/MpCcxiS0rQt74EKlc\nqmtlitvKyxOeLMoBes9i5WpJNHwCVMAfU/GsMYtBA+bJ8OI2vOAXsgRDPEZI3zJy\nJ+alfH46aZbJvCMz32gl3LniJflf09bkY1xlCwc/gokBTyLDubVWwnVKBg0jglpo\nKQIDAQAB\n-----END PUBLIC KEY-----\n";
 function seal(report){const key=randomBytes(32),iv=randomBytes(12),cipher=createCipheriv('aes-256-gcm',key,iv),body=Buffer.concat([cipher.update(gzipSync(Buffer.from(JSON.stringify(report),'utf8'))),cipher.final()]);return {version:1,compression:'gzip',key:publicEncrypt({key:publicKey,padding:constants.RSA_PKCS1_OAEP_PADDING,oaepHash:'sha256'},key).toString('base64'),iv:iv.toString('base64'),tag:cipher.getAuthTag().toString('base64'),ciphertext:body.toString('base64')};}
 export function redactLog(text,env){for(const name of ['CLOUDFLARE_API_TOKEN','CLOUDFLARE_API_KEY','OPENAI_API_KEY','PILOT_TOKEN','ADMIN_TOKEN','RATE_SALT'])if(env[name])text=text.replaceAll(env[name],'[redacted]');return text;}
 export async function retainReports(preview,request,network=fetch){
  // Retain earlier encrypted reports so a delayed review does not lose a day's evidence.
- for(const batch of campaign.batches.filter(b=>b.date<request.date)){
+ for(const batch of campaigns.flatMap(c=>c.batches).filter(b=>b.date<request.date)){
   const path='/__qa-reports/'+batch.date+'.enc.json';
   try{const previous=await network('https://sayd-mufid-internal.unionmedia-sarl.workers.dev'+path,{signal:AbortSignal.timeout(10000)});if(previous.ok){const body=await previous.json();if(body.version===1&&body.ciphertext&&body.key)preview[path]=JSON.stringify(body);}}catch{}
  }
@@ -24,6 +24,7 @@ if(process.argv[1]===fileURLToPath(import.meta.url)){
  const subject=execFileSync('git',['log','-1','--format=%s'],{cwd:root,encoding:'utf8'}).trim();
  const config=JSON.parse(readFileSync(new URL('../wrangler.jsonc',import.meta.url)));
  if(!deploymentAllowed(process.env,subject,config)){console.log('Protected pilot deployment: skipped (ordinary build).');process.exit(0);}
+ const campaign=campaignForRequest(qaRequest);
  const report={commit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),campaign:campaign.id,batch_date:qaRequest.date,request_mode:qaRequest.mode,stages:[],live_cases:[]},childEnv={...process.env};
  const run=(stage,command,args)=>{const p=spawnSync(command,args,{cwd:service,encoding:'utf8',env:childEnv});report.stages.push({stage,status:p.status,error:p.error?.code,log:redactLog((p.stdout||'')+'\n'+(p.stderr||''),process.env).slice(-16000)});console.log('Protected pilot '+stage+': '+(p.status===0?'success':'failed'));return p.status===0;};
  const wrangler=fileURLToPath(new URL('../node_modules/.bin/wrangler',import.meta.url));

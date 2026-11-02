@@ -1,0 +1,695 @@
+{
+  "id": "mufid-uae-20261103",
+  "country": "AE",
+  "timezone": "Asia/Beirut",
+  "service_timezone": "Asia/Dubai",
+  "start_date": "2026-11-03",
+  "end_date": "2026-11-09",
+  "expires_at": "2026-11-10T00:00:00Z",
+  "command_prefix": "[mufid-qa:20261103]",
+  "daily_cases": 6,
+  "total_runs": 42,
+  "baseline_commit": "6a63f6449570c29d2cf719bd1f33a7bfe0697596",
+  "baseline_review_id": "libfile_dc39389fe4248191a7bbaeacb9f757ed",
+  "batches": [
+    {
+      "date": "2026-11-03",
+      "region": "أبوظبي",
+      "cases": [
+        {
+          "id": "regional-uae-01-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة أبوظبي ضمن إمارة أبوظبي في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "أبوظبي، الإمارات العربية المتحدة",
+            "origin": "مدينة أبوظبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-01-activity",
+          "lang": "ar",
+          "query": "نزهة مراقبة طيور وتصوير في محيط إمارة أبوظبي في الإمارات. أين أذهب تحديدًا وماذا يُحتمل أن أرى بهذا الموسم؟ اربط أسماء الطيور بصفحات موسوعة صيد المتاحة ولا تضمن المشاهدة.",
+          "trip": {
+            "destination": "أبوظبي، الإمارات العربية المتحدة",
+            "origin": "مدينة أبوظبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "birds",
+              "photography"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-01-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن إمارة أبوظبي في الإمارات، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "أبوظبي، الإمارات العربية المتحدة",
+            "origin": "مدينة أبوظبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-01-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن إمارة أبوظبي في الإمارات: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "أبوظبي، الإمارات العربية المتحدة",
+            "origin": "مدينة أبوظبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-01-hunting",
+          "lang": "ar",
+          "query": "هل يمكن قانونًا ترتيب صيد طيور بري ضمن إمارة أبوظبي في الإمارات هذا الأسبوع؟ تحقق من التشريع الاتحادي والجهة المحلية والأنواع والقيود والتصاريح النافذة. ميّز الصيد البري من الرماية الرياضية والصقارة. لا تفترض موسمًا على نمط لبنان ولا تنقل رخصه. إن ثبت المنع أو تعذر التحقق فاشرح الدليل والنقص وجهة الاستفسار. لا وجهة بلا إذن ووصول متحققين.",
+          "trip": {
+            "destination": "أبوظبي، الإمارات العربية المتحدة",
+            "origin": "مدينة أبوظبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-01-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة أبوظبي ضمن إمارة أبوظبي في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "أبوظبي، الإمارات العربية المتحدة",
+            "origin": "مدينة أبوظبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-uae-01-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "region": "دبي",
+      "cases": [
+        {
+          "id": "regional-uae-02-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة دبي ضمن إمارة دبي في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "دبي، الإمارات العربية المتحدة",
+            "origin": "مدينة دبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-02-activity",
+          "lang": "ar",
+          "query": "تجربة ركوب خيل للمبتدئين ضمن إمارة دبي في الإمارات. أريد جهة فعلية ومدة النشاط المتاحة وما يلزم للحجز، دون افتراض أني فارس متمرس. تحقق من العمر وشروط المشغل.",
+          "trip": {
+            "destination": "دبي، الإمارات العربية المتحدة",
+            "origin": "مدينة دبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "riding"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-02-nature-dining",
+          "lang": "en",
+          "query": "Give me two or three real restaurants in a natural setting in إمارة دبي في الإمارات, United Arab Emirates. State the exact town, what the setting and food are like, and a sourced booking contact. These are alternatives, not a route to visit all of them. Do not invent Google ratings or prices.",
+          "trip": {
+            "destination": "دبي، الإمارات العربية المتحدة",
+            "origin": "مدينة دبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-02-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن إمارة دبي في الإمارات: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "دبي، الإمارات العربية المتحدة",
+            "origin": "مدينة دبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-02-hunting",
+          "lang": "ar",
+          "query": "هل يمكن قانونًا ترتيب صيد طيور بري ضمن إمارة دبي في الإمارات هذا الأسبوع؟ تحقق من التشريع الاتحادي والجهة المحلية والأنواع والقيود والتصاريح النافذة. ميّز الصيد البري من الرماية الرياضية والصقارة. لا تفترض موسمًا على نمط لبنان ولا تنقل رخصه. إن ثبت المنع أو تعذر التحقق فاشرح الدليل والنقص وجهة الاستفسار. لا وجهة بلا إذن ووصول متحققين.",
+          "trip": {
+            "destination": "دبي، الإمارات العربية المتحدة",
+            "origin": "مدينة دبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-02-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة دبي ضمن إمارة دبي في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "دبي، الإمارات العربية المتحدة",
+            "origin": "مدينة دبي",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-uae-02-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-05",
+      "region": "الشارقة",
+      "cases": [
+        {
+          "id": "regional-uae-03-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة الشارقة ضمن إمارة الشارقة في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "الشارقة، الإمارات العربية المتحدة",
+            "origin": "مدينة الشارقة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-03-activity",
+          "lang": "ar",
+          "query": "مكان محدد لبيكنيك وشواء للعائلة ضمن إمارة الشارقة في الإمارات، مع طفلين. هل يوفر طاولات ومرافق وهل تسمح إدارته بالشواء حاليًا وفي أي موضع؟ لا تقترح نارًا بلا إذن صريح من إدارة المكان.",
+          "trip": {
+            "destination": "الشارقة، الإمارات العربية المتحدة",
+            "origin": "مدينة الشارقة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic",
+              "barbecue"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-03-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن إمارة الشارقة في الإمارات، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "الشارقة، الإمارات العربية المتحدة",
+            "origin": "مدينة الشارقة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-03-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن إمارة الشارقة في الإمارات: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "الشارقة، الإمارات العربية المتحدة",
+            "origin": "مدينة الشارقة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-03-hunting",
+          "lang": "ar",
+          "query": "هل يمكن قانونًا ترتيب صيد طيور بري ضمن إمارة الشارقة في الإمارات هذا الأسبوع؟ تحقق من التشريع الاتحادي والجهة المحلية والأنواع والقيود والتصاريح النافذة. ميّز الصيد البري من الرماية الرياضية والصقارة. لا تفترض موسمًا على نمط لبنان ولا تنقل رخصه. إن ثبت المنع أو تعذر التحقق فاشرح الدليل والنقص وجهة الاستفسار. لا وجهة بلا إذن ووصول متحققين.",
+          "trip": {
+            "destination": "الشارقة، الإمارات العربية المتحدة",
+            "origin": "مدينة الشارقة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-03-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة الشارقة ضمن إمارة الشارقة في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "الشارقة، الإمارات العربية المتحدة",
+            "origin": "مدينة الشارقة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-uae-03-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "region": "رأس الخيمة",
+      "cases": [
+        {
+          "id": "regional-uae-04-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة رأس الخيمة ضمن إمارة رأس الخيمة في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "رأس الخيمة، الإمارات العربية المتحدة",
+            "origin": "مدينة رأس الخيمة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-04-activity",
+          "lang": "fr",
+          "query": "Propose une seule randonnée de deux heures au maximum dans l’émirat de رأس الخيمة, aux Émirats arabes unis, pour deux personnes en forme moyenne. Indique le départ et l’arrivée précis, la longueur mesurée, le sens, la durée publiée, la difficulté, une carte et le retour. Vérifie l’accès actuel et les permis.",
+          "trip": {
+            "destination": "رأس الخيمة، الإمارات العربية المتحدة",
+            "origin": "مدينة رأس الخيمة",
+            "transport": "car",
+            "effort": "moderate",
+            "activities": [
+              "walking",
+              "photography"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-04-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن إمارة رأس الخيمة في الإمارات، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "رأس الخيمة، الإمارات العربية المتحدة",
+            "origin": "مدينة رأس الخيمة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-04-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن إمارة رأس الخيمة في الإمارات: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "رأس الخيمة، الإمارات العربية المتحدة",
+            "origin": "مدينة رأس الخيمة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-04-hunting",
+          "lang": "ar",
+          "query": "هل يمكن قانونًا ترتيب صيد طيور بري ضمن إمارة رأس الخيمة في الإمارات هذا الأسبوع؟ تحقق من التشريع الاتحادي والجهة المحلية والأنواع والقيود والتصاريح النافذة. ميّز الصيد البري من الرماية الرياضية والصقارة. لا تفترض موسمًا على نمط لبنان ولا تنقل رخصه. إن ثبت المنع أو تعذر التحقق فاشرح الدليل والنقص وجهة الاستفسار. لا وجهة بلا إذن ووصول متحققين.",
+          "trip": {
+            "destination": "رأس الخيمة، الإمارات العربية المتحدة",
+            "origin": "مدينة رأس الخيمة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-04-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة رأس الخيمة ضمن إمارة رأس الخيمة في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "رأس الخيمة، الإمارات العربية المتحدة",
+            "origin": "مدينة رأس الخيمة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-uae-04-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "region": "الفجيرة",
+      "cases": [
+        {
+          "id": "regional-uae-05-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة الفجيرة ضمن إمارة الفجيرة في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "الفجيرة، الإمارات العربية المتحدة",
+            "origin": "مدينة الفجيرة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-05-activity",
+          "lang": "fr",
+          "query": "Propose une seule randonnée de deux heures au maximum dans l’émirat de الفجيرة, aux Émirats arabes unis, pour deux personnes en forme moyenne. Indique le départ et l’arrivée précis, la longueur mesurée, le sens, la durée publiée, la difficulté, une carte et le retour. Vérifie l’accès actuel et les permis.",
+          "trip": {
+            "destination": "الفجيرة، الإمارات العربية المتحدة",
+            "origin": "مدينة الفجيرة",
+            "transport": "car",
+            "effort": "moderate",
+            "activities": [
+              "walking",
+              "photography"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-05-nature-dining",
+          "lang": "ar",
+          "query": "اقترح خيارين أو ثلاثة لمطاعم فعلية في قلب الطبيعة ضمن إمارة الفجيرة في الإمارات، مع اسم البلدة والجلسة وما يميز الأكل وطريقة الحجز. بدنا نختار واحدًا، لا نلف بينها كلها. لا تعطيني تقييمات أو أسعارًا من الذاكرة.",
+          "trip": {
+            "destination": "الفجيرة، الإمارات العربية المتحدة",
+            "origin": "مدينة الفجيرة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-05-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن إمارة الفجيرة في الإمارات: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "الفجيرة، الإمارات العربية المتحدة",
+            "origin": "مدينة الفجيرة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-05-hunting",
+          "lang": "ar",
+          "query": "هل يمكن قانونًا ترتيب صيد طيور بري ضمن إمارة الفجيرة في الإمارات هذا الأسبوع؟ تحقق من التشريع الاتحادي والجهة المحلية والأنواع والقيود والتصاريح النافذة. ميّز الصيد البري من الرماية الرياضية والصقارة. لا تفترض موسمًا على نمط لبنان ولا تنقل رخصه. إن ثبت المنع أو تعذر التحقق فاشرح الدليل والنقص وجهة الاستفسار. لا وجهة بلا إذن ووصول متحققين.",
+          "trip": {
+            "destination": "الفجيرة، الإمارات العربية المتحدة",
+            "origin": "مدينة الفجيرة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-05-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة الفجيرة ضمن إمارة الفجيرة في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "الفجيرة، الإمارات العربية المتحدة",
+            "origin": "مدينة الفجيرة",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-uae-05-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "region": "عجمان",
+      "cases": [
+        {
+          "id": "regional-uae-06-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة عجمان ضمن إمارة عجمان في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "عجمان، الإمارات العربية المتحدة",
+            "origin": "مدينة عجمان",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-06-activity",
+          "lang": "ar",
+          "query": "طلعة سيارة دفع رباعي خفيفة ضمن إمارة عجمان في الإمارات. تحقق من طريق مسمى وبدايته ونهايته والإتاحة والإذن والطقس المحلي. لا تجعل ظهور الطريق على الخريطة دليل سلامة، ولا تستبدل عائق الطريق بمطعم.",
+          "trip": {
+            "destination": "عجمان، الإمارات العربية المتحدة",
+            "origin": "مدينة عجمان",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "offroad"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-06-nature-dining",
+          "lang": "en",
+          "query": "Give me two or three real restaurants in a natural setting within the Emirate of Ajman, United Arab Emirates. State exact locality, setting, food and a sourced booking contact. These are alternatives, not a route. Verify visitor eligibility; do not invent prices or ratings.",
+          "trip": {
+            "destination": "عجمان، الإمارات العربية المتحدة",
+            "origin": "مدينة عجمان",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-06-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن إمارة عجمان في الإمارات: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "عجمان، الإمارات العربية المتحدة",
+            "origin": "مدينة عجمان",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-06-hunting",
+          "lang": "ar",
+          "query": "هل يمكن قانونًا ترتيب صيد طيور بري ضمن إمارة عجمان في الإمارات هذا الأسبوع؟ تحقق من التشريع الاتحادي والجهة المحلية والأنواع والقيود والتصاريح النافذة. ميّز الصيد البري من الرماية الرياضية والصقارة. لا تفترض موسمًا على نمط لبنان ولا تنقل رخصه. إن ثبت المنع أو تعذر التحقق فاشرح الدليل والنقص وجهة الاستفسار. لا وجهة بلا إذن ووصول متحققين.",
+          "trip": {
+            "destination": "عجمان، الإمارات العربية المتحدة",
+            "origin": "مدينة عجمان",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-06-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة عجمان ضمن إمارة عجمان في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "عجمان، الإمارات العربية المتحدة",
+            "origin": "مدينة عجمان",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-uae-06-light"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "region": "أم القيوين",
+      "cases": [
+        {
+          "id": "regional-uae-07-light",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة أم القيوين ضمن إمارة أم القيوين في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "أم القيوين، الإمارات العربية المتحدة",
+            "origin": "مدينة أم القيوين",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-07-activity",
+          "lang": "ar",
+          "query": "مراقبة طيور وتصوير ضمن إمارة أم القيوين في الإمارات، مع مكان محدد وطيور محتملة بحسب الموئل والموسم. أريد روابط أنواع ذات صلة من موسوعة صيد إن توفرت، وتحققًا من دخول الزوار والتصاريح، دون ضمان المشاهدة.",
+          "trip": {
+            "destination": "أم القيوين، الإمارات العربية المتحدة",
+            "origin": "مدينة أم القيوين",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "birds",
+              "photography"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-07-nature-dining",
+          "lang": "en",
+          "query": "Give me two or three real restaurants in a natural setting in إمارة أم القيوين في الإمارات, United Arab Emirates. State the exact town, what the setting and food are like, and a sourced booking contact. These are alternatives, not a route to visit all of them. Do not invent Google ratings or prices.",
+          "trip": {
+            "destination": "أم القيوين، الإمارات العربية المتحدة",
+            "origin": "مدينة أم القيوين",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-07-family-camp",
+          "lang": "ar",
+          "query": "نريد خيمة وألعابًا في الطبيعة لليلة واحدة ضمن إمارة أم القيوين في الإمارات: شخصان بالغان وطفلان عمرهما 8 و11. اقترح مخيمًا فعليًا، سعة الخيمة وقبول الأطفال والمرافق والحجز، وألعابًا نحضرها وما يلزم معنا. لا تعتبر بيتًا بسرير مزدوج خيمة لأربعة ولا تقترح نارًا بلا سماح.",
+          "trip": {
+            "destination": "أم القيوين، الإمارات العربية المتحدة",
+            "origin": "مدينة أم القيوين",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "camping",
+              "picnic"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-07-hunting",
+          "lang": "ar",
+          "query": "هل يمكن قانونًا ترتيب صيد طيور بري ضمن إمارة أم القيوين في الإمارات هذا الأسبوع؟ تحقق من التشريع الاتحادي والجهة المحلية والأنواع والقيود والتصاريح النافذة. ميّز الصيد البري من الرماية الرياضية والصقارة. لا تفترض موسمًا على نمط لبنان ولا تنقل رخصه. إن ثبت المنع أو تعذر التحقق فاشرح الدليل والنقص وجهة الاستفسار. لا وجهة بلا إذن ووصول متحققين.",
+          "trip": {
+            "destination": "أم القيوين، الإمارات العربية المتحدة",
+            "origin": "مدينة أم القيوين",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "hunting"
+            ]
+          }
+        },
+        {
+          "id": "regional-uae-07-repeat",
+          "lang": "ar",
+          "query": "طالعين شخصين من مدينة أم القيوين ضمن إمارة أم القيوين في الإمارات نهارًا وراجعين مساءً. بدنا طلعة خفيفة بالسيارة فيها طبيعة ومعلم يستحق الزيارة وغداء بمكان محدد، ومحطات قريبة من بعضها. خبرني شو منشوف ومنعمل بكل محطة وكيف مننتقل بينها، وباختصار. ميّز الانتقالات المقاسة والإتاحة الحالية من المعلومات القديمة.",
+          "trip": {
+            "destination": "أم القيوين، الإمارات العربية المتحدة",
+            "origin": "مدينة أم القيوين",
+            "transport": "car",
+            "effort": "light",
+            "activities": [
+              "heritage",
+              "walking"
+            ]
+          },
+          "repeat_of": "regional-uae-07-light"
+        }
+      ]
+    }
+  ],
+  "rubric": {
+    "direct_usefulness": "Exact places, useful activity details and decisions; reject filler and generic town lists.",
+    "geography": "Exact town and coherent nearby route; no unsupported distance or driving time; check endpoints.",
+    "evidence": "Primary source supports the actual claim; retrieval date is not publication date or proof of current access.",
+    "activity_fit": "Trail metrics and direction; tent capacity and child admission; real natural setting for dining; current official hunting season.",
+    "consistency": "Compare repeated identical question for factual contradictions and unexplained destination changes, not literal wording.",
+    "honesty": "An honest limitation is safer than invention but does not automatically pass usefulness.",
+    "languages": "Review Arabic, English and French for equivalent factual quality.",
+    "verdicts": [
+      "useful_verified",
+      "useful_with_gaps",
+      "generic_unhelpful",
+      "incorrect_or_unsafe",
+      "blocked_or_not_run"
+    ]
+  }
+}
