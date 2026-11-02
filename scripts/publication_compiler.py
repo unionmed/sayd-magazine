@@ -139,14 +139,22 @@ def validate_report(site, report, expected_base, expected_source, expected_compi
         from ticker_scope import verified_migration_outputs
         migration = verified_migration_outputs(site, expected_base, expected_source)
         require({e['path'] for e in report['changes']} == set(migration), 'Exact ticker migration outputs required')
+    bird_outputs = None
+    if any(e.get('path') == 'content/article-updates.json' for e in report['changes']):
+        import editorial_revision
+        _, value, bird_outputs, _, _ = editorial_revision.source_input(site, expected_base, expected_source)
+        require(value['operation'] == 'complete-two-bird-lifecycles', 'Exact bird maintenance required for update registry')
+        require({e['path'] for e in report['changes']} == set(bird_outputs), 'Exact bird maintenance outputs required')
     for entry in report['changes']:
         require(set(entry) == {'path', 'mode', 'old_blob', 'new_blob', 'sha256', 'bytes', 'status'}, 'Invalid changed-file record')
         path = entry['path']
-        require((allowed_output_path(path) or (migration is not None and path == 'content/publication-contract.json')) and entry['mode'] == '100644' and entry['status'] in {'A', 'M'}, 'Disallowed output file/mode')
+        require((allowed_output_path(path) or (migration is not None and path == 'content/publication-contract.json') or (bird_outputs is not None and path == 'content/article-updates.json')) and entry['mode'] == '100644' and entry['status'] in {'A', 'M'}, 'Disallowed output file/mode')
         target = site / path
         require(target.is_file() and not any(p.is_symlink() for p in [target, *target.parents] if p != site.parent), 'Unsafe output symlink')
         require(target.resolve().is_relative_to(site), 'Output escapes staging root')
         data = target.read_bytes()
+        if bird_outputs is not None:
+            require(data == bird_outputs[path], 'Output differs from exact bird maintenance')
         if migration is not None:
             require(data == migration[path], 'Output differs from exact ticker migration')
         require((sha256(data), blob_sha(data), len(data)) == (entry['sha256'], entry['new_blob'], entry['bytes']), 'Changed output bytes')
