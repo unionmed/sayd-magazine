@@ -1,0 +1,170 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "qatar-shooting-worlds-20261102",
+  "expected_base": "515488ac7accfaa0f695ebd41f13ffe398eda1b6",
+  "approval_reference": "private:Sentinel_939afead2a4c81919e34be4f8bed0758-and-Sentinel_b26913c7cda48191a735e974623bf194",
+  "bank_search_reference": "All 420 pre-run Library Sayd picture for use bank files checked by photo archivist; no shooting photograph found. Exact replacement and rights archived separately under private:qatar-photo-alternative-20261102. Rejected DVIDS photo is not used.",
+  "photos": [
+    {
+      "id": "air-rifle-illustration",
+      "path": "docs/media/publications/qatar-shooting-worlds-20261102/air-rifle-illustration.jpg",
+      "sha256": "c7feed920d4bc4f60a3701746300004f32ba248e6fdfc07c55e60feb62dc84ca",
+      "source_sha256": "c7feed920d4bc4f60a3701746300004f32ba248e6fdfc07c55e60feb62dc84ca",
+      "source_reference": "Kapa65 / Pixabay image 2457829; published 2017-06-30, capture date and location unverified. Public 1280px rendition unchanged. Archival sports illustration, not Qatar 2026. Verified original image page publication date and Pixabay Terms section 4 on 2026-11-02.",
+      "source_url": "https://pixabay.com/photos/young-man-sport-shooting-luftggewehr-2457829/",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0: Pixabay Terms section 4 explicitly applies CC0 to content with Published date before 2019-01-09; this asset original page lists 2017-06-30. Attribution, external link and endorsement disclaimer not required. Voluntary source credit retained. Used as neutral sports illustration, not product endorsement or identification of a Qatar 2026 participant.",
+        "evidence_reference": "https://pixabay.com/service/terms/",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "صورة توضيحية لرامٍ بالبندقية الهوائية داخل ميدان رماية.",
+        "en": "Illustrative photograph of an air-rifle shooter at an indoor range.",
+        "fr": "Photo d’illustration d’un tireur à la carabine à air dans un stand couvert."
+      },
+      "caption": {
+        "ar": "صورة توضيحية",
+        "en": "Illustrative image",
+        "fr": "Photo d’illustration"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "مونديال-الرماية-قطر-2026",
+        "en": "qatar-shooting-world-championships-2026",
+        "fr": "mondiaux-tir-qatar-2026"
+      },
+      "published": "2026-11-02",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "gear",
+      "archives": [
+        "gear"
+      ],
+      "kind": "article",
+      "photos": [
+        "air-rifle-illustration"
+      ],
+      "distribution": {
+        "placement": "side",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "مونديال الرماية في قطر: 36 بطاقة أولمبية وبث مجاني للنهائيات",
+          "subtitle": "1,041 رياضيًا من 91 دولة يتنافسون في لوسيل على ألقاب العالم وبطاقات لوس أنجلوس 2028.",
+          "meta_description": "تستضيف لوسيل بطولة العالم للرماية بمشاركة 1,041 رياضيًا من 91 دولة، مع 36 بطاقة أولمبية وبث مجاني للنهائيات.",
+          "ticker_title": "مونديال الرماية في قطر: 36 بطاقة أولمبية وبث مجاني للنهائيات",
+          "sections": [
+            {
+              "paragraphs": [
+                "تبدأ الثلاثاء 3 نوفمبر منافسات بطولة العالم للرماية في مجمع ميادين لوسيل بقطر، بمشاركة 1,041 رياضيًا من 91 دولة. ويتنافس المشاركون على ألقاب العالم وعلى 36 بطاقة تأهل إلى أولمبياد لوس أنجلوس 2028، في أولى محطات التأهيل للألعاب.",
+                "يمتد البرنامج العام للبطولة من 1 إلى 14 نوفمبر، بما يشمل وصول الوفود والتدريبات والمغادرة، فيما تُقام المنافسات من 3 إلى 13 نوفمبر. وتجمع البطولة ثلاثة اختصاصات رئيسية: البندقية والمسدس والشوزن."
+              ]
+            },
+            {
+              "heading": "أهداف ثابتة وأطباق طائرة",
+              "paragraphs": [
+                "في مسابقات البندقية والمسدس، يصوّب الرماة إلى أهداف محددة على مسافات تختلف بحسب الاختصاص، ومنها البندقية والمسدس الهوائيان لمسافة عشرة أمتار، والبندقية من ثلاثة أوضاع لمسافة خمسين مترًا.",
+                "أما الشوزن فيشمل السكيت والتراب، حيث يحاول الرماة إصابة أطباق طائرة تطلقها آلات. وتختلف المسابقتان في مسارات الأطباق ومواقع الرمي، مع ما يتطلبه ذلك من سرعة استجابة وتركيز ودقة. ويضم البرنامج منافسات للرجال والسيدات والفرق المختلطة."
+              ]
+            },
+            {
+              "heading": "طريق إلى لوس أنجلوس",
+              "paragraphs": [
+                "تُوزّع البطاقات الأولمبية الست والثلاثون على 12 مسابقة فردية، بواقع ثلاث بطاقات لكل مسابقة، وفق شروط التأهل المعتمدة. وتُمنح أولى البطاقات في 3 نوفمبر بمسابقتَي البندقية الهوائية للرجال والسيدات، بينما تُحسم بطاقات السكيت في 6 نوفمبر والتراب في 12 منه.",
+                "وتشارك قطر بـ22 راميًا ورامية في السكيت والتراب والبندقية والمسدس. ومن الأسماء المشاركة في السكيت ناصر العطية وراشد صالح العذبة، وسط سعي أصحاب الأرض إلى المنافسة على الميداليات والبطاقات الأولمبية."
+              ]
+            },
+            {
+              "heading": "كيف يتابع الجمهور النهائيات؟",
+              "paragraphs": [
+                "يتيح الاتحاد الدولي جميع النهائيات مباشرة ومجانًا عبر قناته الرسمية على YouTube، مع نشر الجداول والنتائج على موقعه."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Kapa65 / Pixabay"
+        },
+        "en": {
+          "title": "Qatar shooting worlds: 36 Olympic quota places and free finals coverage",
+          "subtitle": "A total of 1,041 athletes from 91 countries compete in Lusail for world titles and places at Los Angeles 2028.",
+          "meta_description": "Lusail hosts the shooting world championships with 1,041 athletes from 91 countries, 36 Olympic quota places and free live coverage of the finals.",
+          "ticker_title": "Qatar shooting worlds: 36 Olympic quota places and free finals coverage",
+          "sections": [
+            {
+              "paragraphs": [
+                "Competition at the shooting world championships begins on Tuesday, 3 November, at the Lusail Shooting Complex in Qatar, with 1,041 athletes from 91 countries. They will compete for world titles and 36 quota places for the Los Angeles 2028 Olympic Games, at the opening stage of Olympic qualification.",
+                "The overall championship programme runs from 1 to 14 November, including arrivals, training and departures, while competition takes place from 3 to 13 November. It brings together three main disciplines: rifle, pistol and shotgun."
+              ]
+            },
+            {
+              "heading": "Fixed targets and flying clays",
+              "paragraphs": [
+                "In rifle and pistol events, athletes aim at targets over distances that vary by event. These include 10-metre air rifle and air pistol, as well as 50-metre rifle three positions.",
+                "Shotgun events include skeet and trap, in which athletes attempt to hit clay targets launched by machines. The two events differ in target trajectories and shooting stations, demanding quick reactions, concentration and accuracy. The programme includes men’s, women’s and mixed-team events."
+              ]
+            },
+            {
+              "heading": "The road to Los Angeles",
+              "paragraphs": [
+                "The 36 Olympic quota places are distributed across 12 individual events, with three places available in each, subject to the qualification rules. The first will be awarded on 3 November in men’s and women’s air rifle. Skeet quota places will be decided on 6 November and trap places on 12 November.",
+                "Qatar is represented by 22 male and female athletes across skeet, trap, rifle and pistol. Its skeet competitors include Nasser Al-Attiyah and Rashid Saleh Al-Athba, as the hosts seek medals and Olympic quota places."
+              ]
+            },
+            {
+              "heading": "How can viewers follow the finals?",
+              "paragraphs": [
+                "The International Shooting Sport Federation is streaming every final live and free on its official YouTube channel, with schedules and results available on its website."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Kapa65 / Pixabay"
+        },
+        "fr": {
+          "title": "Mondiaux de tir au Qatar : 36 quotas olympiques et des finales en accès libre",
+          "subtitle": "À Lusail, 1 041 athlètes de 91 pays se disputent les titres mondiaux et des quotas pour Los Angeles 2028.",
+          "meta_description": "Lusail accueille les Mondiaux de tir avec 1 041 athlètes de 91 pays, 36 quotas olympiques et la diffusion gratuite des finales en direct.",
+          "ticker_title": "Mondiaux de tir au Qatar : 36 quotas olympiques et des finales en accès libre",
+          "sections": [
+            {
+              "paragraphs": [
+                "Les compétitions des Championnats du monde de tir débutent le mardi 3 novembre au complexe de tir de Lusail, au Qatar, avec 1 041 athlètes de 91 pays. Ils se disputent les titres mondiaux ainsi que 36 quotas pour les Jeux olympiques de Los Angeles 2028, lors de la première étape des qualifications olympiques.",
+                "Le programme général des championnats s’étend du 1er au 14 novembre, arrivées, entraînements et départs compris, tandis que les compétitions se déroulent du 3 au 13 novembre. Trois grandes disciplines sont réunies : la carabine, le pistolet et le tir aux plateaux."
+              ]
+            },
+            {
+              "heading": "Cibles fixes et plateaux volants",
+              "paragraphs": [
+                "Dans les épreuves de carabine et de pistolet, les athlètes visent des cibles à des distances variables selon la spécialité. Le programme comprend notamment la carabine et le pistolet à air à 10 mètres, ainsi que la carabine trois positions à 50 mètres.",
+                "Le tir aux plateaux comprend le skeet et la fosse, où les athlètes tentent de toucher des plateaux lancés par des machines. Les trajectoires et les postes de tir diffèrent entre les deux épreuves, qui exigent rapidité de réaction, concentration et précision. Le programme comprend des compétitions masculines, féminines et par équipes mixtes."
+              ]
+            },
+            {
+              "heading": "En route vers Los Angeles",
+              "paragraphs": [
+                "Les 36 quotas olympiques sont répartis entre 12 épreuves individuelles, à raison de trois par épreuve, conformément aux règles de qualification. Les premiers seront attribués le 3 novembre dans les épreuves masculine et féminine de carabine à air. Les quotas du skeet seront décidés le 6 novembre et ceux de la fosse le 12 novembre.",
+                "Le Qatar aligne 22 athlètes, hommes et femmes, en skeet, fosse, carabine et pistolet. Nasser Al-Attiyah et Rashid Saleh Al-Athba figurent parmi ses représentants en skeet, avec pour objectif de décrocher des médailles et des quotas olympiques à domicile."
+              ]
+            },
+            {
+              "heading": "Comment suivre les finales ?",
+              "paragraphs": [
+                "La Fédération internationale de tir sportif diffuse toutes les finales en direct et gratuitement sur sa chaîne YouTube officielle. Les horaires et les résultats sont également disponibles sur son site."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Kapa65 / Pixabay"
+        }
+      }
+    }
+  ]
+}
