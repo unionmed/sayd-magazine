@@ -528,5 +528,33 @@
       "en": "Hasbaya restaurant beside the Hasbani River, with riverside seating, gardens and trees; Lebanese mezze, grills and fish. Enquiries: +961 7 845100 or +961 3 297586. Undated page; opening, seating, booking and access unconfirmed. Not evidence of tent camping or current pool availability.",
       "fr": "Restaurant à Hasbaya au bord du Hasbani, jardins et arbres ; mezzés, grillades et poisson. Contact : +961 7 845100 ou +961 3 297586. Page non datée ; ouverture, réservation et accès à confirmer. Ni camping ni piscine actuelle confirmés."
     }
+  },
+  {
+    "id": "hasbaya-shehabi-serail",
+    "names": [
+      "السرايا الشهابية في حاصبيا",
+      "Hasbaya Shehabi Serail"
+    ],
+    "regions": [
+      "حاصبيا",
+      "Hasbaya"
+    ],
+    "kind": "visit",
+    "locality": {
+      "ar": "حاصبيا، لبنان",
+      "en": "Hasbaya, Lebanon",
+      "fr": "Hasbaya, Liban"
+    },
+    "sources": [
+      "https://www.unesco.org/en/culture/cultural-property-under-enhanced-protection-lebanon"
+    ],
+    "checked_at": "2026-11-02",
+    "information_date": "2026 (UNESCO list)",
+    "basis": "UNESCO 2026 enhanced-protection list entry 17 read 2026-11-02. Identity/listing only, not visitor admission, hours or road access.",
+    "description": {
+      "ar": "السرايا الشهابية في حاصبيا مدرجة باسم Hasbaya Shehabi Serail في قائمة UNESCO لعام 2026 للممتلكات الثقافية تحت الحماية المعززة. الإدراج يثبت هوية المعلم ولا يحدد فتحه للزوار أو إذن الدخول أو الطريق؛ يلزم تأكيدها من الجهة المسؤولة.",
+      "en": "Hasbaya Shehabi Serail appears in UNESCO’s 2026 enhanced-protection list. This establishes its listed identity, not visitor opening, permission or road access; confirm these with the responsible authority.",
+      "fr": "Le sérail Chehabi de Hasbaya figure sur la liste UNESCO 2026 de protection renforcée. Cela ne confirme ni ouverture aux visiteurs, ni autorisation, ni accès routier."
+    }
   }
 ]

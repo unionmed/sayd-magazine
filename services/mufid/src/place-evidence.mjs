@@ -22,7 +22,7 @@ function inDestination(place,input){
 }
 function activityMatch(p,input){
  const acts=input.trip?.activities||[],q=normalize(input.query);
- if(acts.includes('hunting'))return false;
+ if(acts.includes('hunting')||acts.includes('offroad'))return false;
  if(acts.includes('camping'))return !!p.camping&&p.source_role==='operator';
  if(acts.includes('barbecue'))return p.activities_supported?.includes('barbecue')===true;
  if(acts.includes('riding'))return p.activities_supported?.includes('riding')===true;
@@ -41,8 +41,9 @@ export function maximumTrailMinutes(query){
 }
 function missingActivityNote(input,lang){
  const acts=input.trip?.activities||[];
- const kind=acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':/هايك|hiking|randonn|مسار|\btrail\b/.test(normalize(input.query))?'trail':'other';
+ const kind=acts.includes('offroad')?'offroad':acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':/هايك|hiking|randonn|مسار|\btrail\b/.test(normalize(input.query))?'trail':'other';
  const notes={
+ offroad:{ar:'لم يتوفر تحقق محلي حديث لمسار دفع رباعي محدد: نحتاج اسم الطريق وبدايته ونهايته ومصدرًا مسؤولًا يؤكد الإتاحة الحالية والإذن بالمرور. لا أوصي بطريق غير متحقق؛ الخريطة أو مناقصة صيانة قديمة أو بيان عن طريق آخر لا تثبت صلاحيته اليوم.',en:'Current local evidence is missing for a specific off-road route: its name, start, end, current access and permission from the responsible authority are needed. No unverified road is recommended. A map, old maintenance tender or notice about another road does not establish present access.',fr:'Preuve locale récente manquante pour un itinéraire tout-terrain précis : nom, départ, arrivée, accès actuel et autorisation du responsable. Aucun chemin non vérifié n’est recommandé ; carte, ancien marché de travaux ou avis sur une autre route ne prouvent pas son accès actuel.'},
  camping:{ar:'المتبقي تأكيده من الجهة المشغلة: السعة الفعلية للخيمة المطلوبة وقبول الأطفال ومرافق المبيت وتوفر الحجز. لا تعتبر المعلومات المتاحة حجزًا أو تأكيدًا لهذه الشروط.',en:'Still to confirm with the operator: required tent capacity, child admission, overnight facilities and booking availability. The available information is not a booking or confirmation of those conditions.',fr:'À confirmer auprès de l’exploitant : capacité de la tente, accueil des enfants, équipements et disponibilité. Ces informations ne constituent ni une réservation ni une confirmation de ces conditions.'},
  barbecue:{ar:'لم يتأكد إذن الشواء الحالي من إدارة موقع محدد، مع الطاولات والمرافق المطلوبة؛ لذلك لا أعتمد مكانًا جاهزًا للشواء ولا أوصي بإشعال النار.',en:'Current barbecue permission, tables and facilities have not been confirmed by a specific site operator; no ready-to-use barbecue site is accepted.',fr:'L’autorisation actuelle de barbecue, les tables et les équipements ne sont pas confirmés par un exploitant précis ; aucun site de barbecue n’est validé.'},
  trail:{ar:'لم تكتمل أدلة مسار واحد يناسب الوقت المطلوب، ببداية ونهاية وطول وصعوبة وخريطة وخطة عودة موثقة.',en:'Evidence is incomplete for one trail within the requested time, with documented endpoints, distance, difficulty, map and return plan.',fr:'Les preuves restent incomplètes pour un sentier adapté au temps demandé : départ, arrivée, distance, difficulté, carte et retour.'},
@@ -58,6 +59,7 @@ function informationDateNote(p,lang,retrieved){
  const period=p.information_date||p.event_dates||null;
  const old=String(period||date||'').slice(0,4)<String(new Date().getUTCFullYear())&&!!(period||date);
  const notes={
+ offroad:{ar:'لم يتوفر تحقق محلي حديث لمسار دفع رباعي محدد: نحتاج اسم الطريق وبدايته ونهايته ومصدرًا مسؤولًا يؤكد الإتاحة الحالية والإذن بالمرور. لا أوصي بطريق غير متحقق؛ الخريطة أو مناقصة صيانة قديمة أو بيان عن طريق آخر لا تثبت صلاحيته اليوم.',en:'Current local evidence is missing for a specific off-road route: its name, start, end, current access and permission from the responsible authority are needed. No unverified road is recommended. A map, old maintenance tender or notice about another road does not establish present access.',fr:'Preuve locale récente manquante pour un itinéraire tout-terrain précis : nom, départ, arrivée, accès actuel et autorisation du responsable. Aucun chemin non vérifié n’est recommandé ; carte, ancien marché de travaux ou avis sur une autre route ne prouvent pas son accès actuel.'},
  ar:[date?'تاريخ نشر المصدر: '+date+'؛':'تاريخ نشر المصدر غير محدد؛',period?'الفترة التي تصفها المعلومة: '+period+'؛':'',old?'معلومة أقدم من العام الجاري؛':'',review?'آخر مراجعة للمصدر: '+review+'؛':'تاريخ المراجعة غير متاح؛',retrieved?'أُعيد الاطلاع على مصادرها في هذا الطلب، دون تأكيد الإتاحة أو الحجز الآن.':'معلومات محفوظة من المراجعة السابقة؛ لم يُعد الاطلاع على جميع مصادرها في هذا الطلب.'],
  en:[date?'Source published: '+date+';':'Source publication date unknown;',period?'Information period: '+period+';':'',old?'Information predates the current year;':'',review?'Last source review: '+review+';':'Review date unavailable;',retrieved?'Supporting pages were consulted in this request; present access and booking remain unconfirmed.':'Stored information from the earlier review; not all supporting pages were consulted in this request.'],
  fr:[date?'Publication de la source : '+date+' ;':'Date de publication inconnue ;',period?'Période décrite : '+period+' ;':'',old?'Information antérieure à l’année en cours ;':'',review?'Dernière lecture : '+review+' ;':'Date de lecture inconnue ;',retrieved?'Sources consultées dans cette demande ; accès et réservation actuels non confirmés.':'Informations conservées de la lecture précédente ; toutes les sources n’ont pas été relues dans cette demande.']};
@@ -74,7 +76,7 @@ export function partialPlaceInformation(input,sources=[],catalog=PLACE_EVIDENCE,
   return {name:p.names[0],description:p.description[lang],source_url:p.sources[0],sources:supporting,publication_date:p.publication_date||p.listing_page_date||null,information_date:p.information_date||p.event_dates||null,last_reviewed_at:p.checked_at,retrieved_this_request:retrieved,date_note:informationDateNote(p,lang,retrieved),current_access:'unconfirmed'};
  });
  const acts=input.trip?.activities||[],q=normalize(input.query);
- const purpose=acts.includes('hunting')?'hunting':acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':acts.includes('birds')?'birds':/هايك|hiking|randonn|مسار|\btrail\b/.test(q)?'hiking':/مطعم|مطاعم|restaurant|dining/.test(q)?'dining':'walking';
+ const purpose=acts.includes('offroad')?'offroad':acts.includes('hunting')?'hunting':acts.includes('camping')?'camping':acts.includes('barbecue')?'barbecue':acts.includes('birds')?'birds':/هايك|hiking|randonn|مسار|\btrail\b/.test(q)?'hiking':/مطعم|مطاعم|restaurant|dining/.test(q)?'dining':'walking';
  const enquiryContacts=contacts.filter(p=>inDestination(p,input)&&p.activities.includes(purpose)).slice(0,2).map(p=>({...p,description:p.description_by_activity?.[purpose]?.[lang]||p.description[lang],name:p.names[lang],retrieved_this_request:consulted.has(evidenceKey(p.source_url)),date_note:informationDateNote(p,lang,consulted.has(evidenceKey(p.source_url)))}));
  const labels={ar:{facts:'المعلومات المتاحة، مع حدودها:',contact:'جهة مرشحة للاستفسار، وليست تأكيدًا لتوفر النشاط:',ask:'اسألها تحديدًا عن',phone:'الهاتف',email:'البريد'},en:{facts:'Available information and its limits:',contact:'Enquiry contact, not confirmation that the activity is available:',ask:'Specifically ask about',phone:'Phone',email:'Email'},fr:{facts:'Informations disponibles et leurs limites :',contact:'Contact à interroger, sans confirmation de disponibilité :',ask:'À vérifier précisément',phone:'Téléphone',email:'Courriel'}}[lang];
  const details=leads.map(p=>p.name+': '+p.description+'\n'+p.date_note+'\n'+p.source_url);
@@ -91,6 +93,7 @@ export function acceptPlaceEvidence(plan,sources,input,catalog=PLACE_EVIDENCE){
   const partial=partialPlaceInformation(input,sources,catalog);
   return {ok:true,plan:{...plan,summary:partial.summary,reviewed_leads:partial.reviewed_leads,enquiry_contacts:partial.enquiry_contacts,partial_sources:partial.sources,partial_sources_consulted:partial.sources_consulted}};
  }
+ if(input.trip?.activities?.includes('offroad'))return {ok:false,reason:'offroad_current_access_unreviewed',name:''};
  const consulted=new Set(sources.map(s=>evidenceKey(s.url)));
  const accepted=structuredClone(plan),lang=['ar','en','fr'].includes(input.lang)?input.lang:'ar';
  for(const day of accepted.days)for(const stop of day.stops){

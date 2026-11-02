@@ -1,0 +1,84 @@
+{
+  "id": "regional-10-hasbaya-activity",
+  "calls": [
+    {
+      "status": 200,
+      "response_status": "completed",
+      "answer": "{\"summary\":\"لا أستطيع تأكيد مسار offroad آمنًا وحاليًا داخل حاصبيا من مصادر رسمية حديثة؛ المتحقق فقط هو مطعم فوار الحاصباني قرب النهر كاستراحة/وجبة، ومعه عائق التحقق المحدد: لا يوجد مصدر رسمي حديث يثبت فتح أو صلاحية أي طريق جردي مقصود للقيادة خارج المسارات.\",\"format\":\"itinerary\",\"region\":\"حاصبيا، لبنان\",\"days\":[{\"day\":1,\"base\":\"راشيا\",\"departure\":\"راشيا\",\"return_to\":\"راشيا\",\"stops\":[{\"name\":\"فوار الحاصباني\",\"locality\":\"حاصبيا، لبنان\",\"kind\":\"meal\",\"description\":\"جلسة مطلّة على نهر الحاصباني وحدائق وأشجار، مع مازة لبنانية ومشاوي وسمك. يصلح كاستراحة ميدانية خفيفة بعد تنقّل بسيارة، لكن الفتح والحجز والوصول الحالي غير مؤكدين من الصفحة نفسها، لذا يلزم الاتصال قبل الاعتماد عليه.\",\"duration_minutes\":75,\"walking\":\"مشي قصير جدًا بين المواقف والجلسة؛ لا يوجد توثيق لمسار مشي.\",\"source_url\":\"https://www.fawaralhasbani.com/\",\"trail\":null,\"camping\":null}]}]}",
+      "sources": [
+        {
+          "title": "www.ppa.gov.lb",
+          "url": "https://www.ppa.gov.lb/ar/tenders/details/9674/tenders"
+        },
+        {
+          "title": "www.nna-leb.gov.lb",
+          "url": "https://www.nna-leb.gov.lb/ar/news/552946/%D9%86%D8%AF%D8%A7%D8%A1-%D9%85%D9%86-%D8%A3%D9%87%D8%A7%D9%84%D9%8A-%D9%88%D8%A8%D9%84%D8%AF%D9%8A%D8%A7%D8%AA-%D9%88%D9%85%D8%AE%D8%A7%D8%AA%D9%8A%D8%B1-%D9%88%D9%81%D8%A7%D8%B9%D9%84%D9%8A%D8%A7%D8%AA-%D9%82%D8%B6%D8%A7%D8%A6%D9%8A-%D9%85%D8%B1%D8%AC%D8%B9%D9%8A%D9%88%D9%86-%E2%80%93-%D8%AD%D8%A7%D8%B5%D8%A8%D9%8A%D8%A7-%D9%84%D9%81%D8%AA%D8%AD-%D8%B7%D8%B1%D9%8A%D9%82-%D8%A7%D9%84%D8%AE%D8%B1%D8%AF%D9%84%D9%8A-2"
+        },
+        {
+          "title": "www.ppa.gov.lb",
+          "url": "https://www.ppa.gov.lb/ar/tenders/details/9794/plan"
+        },
+        {
+          "title": "www.lebarmy.gov.lb",
+          "url": "https://www.lebarmy.gov.lb/ar/content/%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D9%8A%D8%B2%D9%8A%D9%84-%D8%B3%D9%88%D8%A7%D8%AA%D8%B1-%D8%AA%D8%B1%D8%A7%D8%A8%D9%8A%D8%A9-%D8%A3%D9%82%D8%A7%D9%85%D9%87%D8%A7-%D8%A7%D9%84%D8%B9%D8%AF%D9%88-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D9%81%D9%8A-%D8%AE%D8%B1%D8%A7%D8%AC-%D8%A8%D9%84%D8%AF%D8%A9-%D8%B4%D8%A8%D8%B9%D8%A7-%D8%AD%D8%A7%D8%B5%D8%A8%D9%8A%D8%A7"
+        },
+        {
+          "title": "www.ppa.gov.lb",
+          "url": "https://www.ppa.gov.lb/ar/tenders/details/8869/tenders"
+        },
+        {
+          "title": "www.nna-leb.gov.lb",
+          "url": "https://www.nna-leb.gov.lb/ar/news/49524/nna-leb.gov.lb"
+        },
+        {
+          "title": "isf.gov.lb",
+          "url": "https://isf.gov.lb/ar/news/%D8%AA%D8%AF%D8%A7%D8%A8%D9%8A%D8%B1-%D8%B3%D9%8A%D8%B1-%D9%84%D9%85%D8%AF%D8%A9-%D8%AB%D9%84%D8%A7%D8%AB%D8%A9-%D8%A3%D9%8A%D8%A7%D9%85-%D8%AA%D8%B2%D8%A7%D9%85%D9%86%D9%8B%D8%A7-%D9%85%D8%B9-%D8%A5/"
+        },
+        {
+          "title": "www.nna-leb.gov.lb",
+          "url": "https://www.nna-leb.gov.lb/ar/news/30893/%D9%81%D8%AA%D8%AD-%D8%B7%D8%B1%D9%8A%D9%82-%D8%AD%D8%A7%D8%B5%D8%A8%D9%8A%D8%A7-%D8%A7%D9%84%D8%A8%D9%82%D8%A7%D8%B9"
+        },
+        {
+          "title": "www.ppa.gov.lb",
+          "url": "https://www.ppa.gov.lb/ar/tenders/details/2341/tenders"
+        },
+        {
+          "title": "isf.gov.lb",
+          "url": "https://isf.gov.lb/ar/news/%D8%AA%D8%AF%D8%A7%D8%A8%D9%8A%D8%B1-%D8%B3%D9%8A%D8%B1-%D8%A8%D8%B3%D8%A8%D8%A8-%D8%A3%D8%B9%D9%85%D8%A7%D9%84-%D8%AA%D8%B2%D9%81%D9%8A%D8%AA-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B7%D8%B1%D9%8A%D9%82/"
+        },
+        {
+          "title": "isf.gov.lb",
+          "url": "https://isf.gov.lb/"
+        },
+        {
+          "title": "www.ppa.gov.lb",
+          "url": "https://www.ppa.gov.lb/ar/tenders/details/10267/awards"
+        },
+        {
+          "title": "www.cdr.gov.lb",
+          "url": "https://www.cdr.gov.lb/getmedia/3304748a-fb46-4603-a1c7-55e09cd47b36/QA-on-REP-Arabic-FINAL-Rev.pdf.aspx"
+        },
+        {
+          "title": "www.cdr.gov.lb",
+          "url": "https://www.cdr.gov.lb/MediaFolder/Procurement/1041PPA.pdf"
+        }
+      ],
+      "verified": true,
+      "usage": {
+        "input_tokens": 14869,
+        "output_tokens": 358
+      }
+    },
+    {
+      "status": 200,
+      "response_status": "completed",
+      "answer": "{\"summary\":\"لا يوجد تحقق رسمي حديث يثبت صلاحية أي مسار offroad مقصود داخل محيط حاصبيا، لذا لا أضع طريقًا قياديًا كخيار جاهز؛ المتاح فقط هو استراحة موثقة قرب النهر في فوار الحاصباني، مع بقاء العائق المحدد هو غياب مصدر محلي رسمي حديث يثبت فتح/سلامة طريق جردي بعينه.\",\"format\":\"itinerary\",\"region\":\"حاصبيا، لبنان\",\"days\":[],\"consulted_note\":\"المعلومة المتوفرة اليوم تثبت فقط هوية مطعم فوار الحاصباني وصفحته الرسمية غير المؤرخة. لم أجد مصدرًا رسميًا حديثًا يثبت إتاحة مسار offroad في حاصبيا أو حالة طرق جردية محددة، لذلك لا أقدّم برنامج قيادة غير متحقق.\"}",
+      "sources": [],
+      "verified": false,
+      "usage": {
+        "input_tokens": 12482,
+        "output_tokens": 292
+      }
+    }
+  ]
+}
