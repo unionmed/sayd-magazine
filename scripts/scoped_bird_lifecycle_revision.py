@@ -4,6 +4,7 @@ No generic body-edit API, paths or replacement strings accepted from source reco
 import copy
 import html
 import json
+import re
 from urllib.parse import quote
 from publication_schema import LANGS, require
 from caption_revision import article_paths
@@ -24,6 +25,7 @@ def expected_changes(root, base, record):
     raw = compiler.read_blob(root, before['content/publications/' + PUBLICATION + '.json'])
     require(compiler.sha256(raw) == SOURCE_SHA256, 'Exact original bird publication required')
     result = {}
+    sitemap = compiler.read_blob(root, before['docs/sitemap.xml']).decode()
     effective = copy.deepcopy(record)
     effective['articles'] = []
     indices = {}
@@ -54,8 +56,15 @@ def expected_changes(root, base, record):
                     text = text.replace(old,new)
                 if target.endswith('.html'):
                     text = article_dates.patch(text, UPDATED, language)
+                    old_modified = '"dateModified": "' + article['published'] + '"'
+                    require(text.count(old_modified) == 1, 'Exact original modified metadata required')
+                    text = text.replace(old_modified, '"dateModified": "' + UPDATED + '"')
                 result[target] = text.encode()
             route = '/' + ('' if language == 'ar' else language+'/') + 'posts/' + article['slugs'][language] + '/'
+            url = 'https://sayd-magazine.com' + quote(route, safe='/@-._~')
+            pattern = r'(<loc>' + re.escape(url) + r'</loc>\s*<lastmod>)' + re.escape(article['published']) + r'(</lastmod>)'
+            sitemap, count = re.subn(pattern, lambda m: m[1] + UPDATED + m[2], sitemap)
+            require(count == 1, 'Exact original sitemap date required')
             rows = [row for row in indices[language]['articles'] if row['url'] == quote(route,safe='/@-._~')]
             require(len(rows) == 1, 'Exact search row required')
             for old, new in pairs:
@@ -65,5 +74,6 @@ def expected_changes(root, base, record):
         effective['articles'].append(effective_article)
     for language in LANGS:
         result['docs/assets/search/index-' + language + '.json'] = search.serialize(indices[language])
+    result['docs/sitemap.xml'] = sitemap.encode()
     result[registry_path] = (json.dumps(registry,ensure_ascii=False,indent=2)+'\n').encode()
     return result, effective, effective['articles'][0]

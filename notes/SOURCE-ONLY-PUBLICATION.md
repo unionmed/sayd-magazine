@@ -341,9 +341,9 @@ request data cannot select text, articles or output paths. The original source
 SHA-256, current BASE and aggregate target hash must match.
 
 The output is exactly twelve existing HTML/Markdown mirrors, three search
-indexes and the existing update-date registry, plus one immutable revision.
+indexes, six sitemap lastmod entries and the existing update-date registry, plus one immutable revision.
 Only the selected life-cycle and final reference paragraphs change, together
-with the normal 2 November update label. The original publication dates,
+with the normal 2 November update label and dateModified metadata. The original publication dates,
 images, credits, taxonomy, listing cards, homepage and ticker remain exact.
 Search changes must agree with the existing builder and affect only two bodies
 per language. Repeat application and altered original paragraphs fail closed.

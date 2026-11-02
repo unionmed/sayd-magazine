@@ -15,7 +15,7 @@ class BirdLifecycleTests(unittest.TestCase):
   cls.value={'schema':r.SCHEMA,'id':b.REVISION_ID,'expected_base':cls.base,'operation':b.OPERATION,'approval_reference':'private:nayef-birds-20261101','expected_source_sha256':b.SOURCE_SHA256,'expected_targets_sha256':c.sha256(c.canonical({p:c.sha256((ROOT/p).read_bytes()) for p in sorted(cls.out)})),'payload':{}}
   cls.path=r.PREFIX+b.REVISION_ID+'.json'
  def test_exact_scope(self):
-  self.assertEqual(len(self.out),16);self.assertEqual(len(self.effective['articles']),2)
+  self.assertEqual(len(self.out),17);self.assertEqual(len(self.effective['articles']),2)
   for p,data in self.out.items():
    self.assertNotEqual(data,(ROOT/p).read_bytes())
    self.assertFalse(p.startswith(('docs/media/','content/publications/')))
