@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "طيور-تتعطر-بالنمل",
+      "titles": {
+        "ar": "طيور تتعطر بالنمل: دراسة على السمنة اليابانية تكشف أثر إفرازاته في إبعاد بعض الحشرات.",
+        "en": "Birds perfume themselves with ants: a Japanese Thrush study finds ant secretions can repel some insects.",
+        "fr": "Des oiseaux se parfument avec des fourmis : leurs sécrétions peuvent éloigner certains insectes, selon une étude sur la Grive du Japon."
+      },
+      "title": "طيور تتعطر بالنمل: دراسة على السمنة اليابانية تكشف أثر إفرازاته في إبعاد بعض الحشرات."
+    },
+    {
       "slug": "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
       "titles": {
         "ar": "عقاب وسط غابة كثيفة… كيف يجد طريقه إلى قفاز ناتالي؟",
@@ -81,15 +90,6 @@
         "fr": "Le tourisme de chasse dans le Golfe arabe : Sayd enquête sur les séjours de chasse, l’accueil et le travail local"
       },
       "title": "الصيد السياحي في بلدان الخليج العربية: تحقيق «صيد» في رحلات المقناص والضيافة وعمل أهل المنطقة"
-    },
-    {
-      "slug": "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
-      "titles": {
-        "ar": "بعد البقاع… إزالة 24,750 مترًا مربعًا من شباك الصيد الجائر في الشمال خلال أربع ساعات",
-        "en": "After the Bekaa: 24,750 square metres of illegal hunting nets removed in northern Lebanon in four hours",
-        "fr": "Après la Bekaa, 24 750 m² de filets de braconnage retirés dans le nord du Liban en quatre heures"
-      },
-      "title": "بعد البقاع… إزالة 24,750 مترًا مربعًا من شباك الصيد الجائر في الشمال خلال أربع ساعات"
     }
   ]
 }
