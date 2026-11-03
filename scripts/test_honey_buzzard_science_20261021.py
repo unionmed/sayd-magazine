@@ -244,7 +244,10 @@ def honey_browser_rotation(lang, proof=None):
     if slugs[0] == AR:
         return None
     assert proof is not None, 'Rotated honey-buzzard card needs trusted publication proof'
-    assert getattr(proof, 'kind', None) in {'compiled-publication', 'baseline-publication', 'verified-editorial-revision'}, 'Unsupported Science rotation proof'
+    # Code-only PRs receive the existing article-evidence BASE snapshot. Its
+    # kind permits no changed config or homepage: exact equality below remains
+    # mandatory, including for a verified desk-restoration proof.
+    assert getattr(proof, 'kind', None) in {'compiled-publication', 'baseline-publication', 'verified-editorial-revision', 'verified-desk-restoration'}, 'Unsupported Science rotation proof'
     assert len(slugs) == 4 and slugs.count(AR) == 1, 'Historical Science card must remain present'
     prefix = '' if lang == 'ar' else lang + '/'
     rel = 'docs/' + prefix + 'index.html'

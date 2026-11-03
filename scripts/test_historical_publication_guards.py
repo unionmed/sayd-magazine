@@ -277,7 +277,7 @@ class HoneyScienceRotationTests(unittest.TestCase):
         self.proof = SimpleNamespace(kind='compiled-publication', config=self.config, read=lambda rel: self.pages[rel])
 
     def test_compiled_and_baseline_exact_trees_preserve_historical_card(self):
-        for kind in ('compiled-publication', 'baseline-publication', 'verified-editorial-revision'):
+        for kind in ('compiled-publication', 'baseline-publication', 'verified-editorial-revision', 'verified-desk-restoration'):
             self.proof.kind = kind
             for lang in ('ar', 'en', 'fr'):
                 cards, index = self.honey.honey_browser_rotation(lang, self.proof)
@@ -332,6 +332,65 @@ class HoneyEditorialScienceRotationTests(HoneyScienceRotationTests):
     def setUp(self):
         super().setUp()
         self.proof.kind = 'verified-editorial-revision'
+
+
+class HoneyBaselineEvidenceScienceRotationTests(HoneyScienceRotationTests):
+    """An existing BASE proof never permits changed homepage/config bytes."""
+    def setUp(self):
+        super().setUp()
+        self.proof.kind = 'verified-desk-restoration'
+
+
+class HoneyCodeOnlyProofTests(unittest.TestCase):
+    def test_real_code_only_pr_uses_exact_base_article_evidence(self):
+        import os
+        import publication_guard as guard
+        import publication_compiler as compiler
+        import test_honey_buzzard_science_20261021 as honey
+        from test_publication_compiler import source_commit
+        root = Path(__file__).resolve().parents[1]
+        # Preserve the actual post-anting placement even after future releases.
+        base = '66046c57313ad74936aab318a004d5c5b2754df0'
+        with TemporaryDirectory(prefix='sayd-honey-code-only-') as temp:
+            fixture = Path(temp) / 'repo'
+            subprocess.run(['git', 'clone', '-q', '--shared', str(root), str(fixture)], check=True)
+            code = {str(p.relative_to(root)): p.read_bytes() for p in (root / 'scripts').glob('*.py')}
+            candidate = source_commit(fixture, base, code)
+            compiler.git(fixture, 'checkout', '-q', '--detach', candidate)
+            changed = compiler.git(fixture, 'diff', '--name-only', base, candidate).decode().splitlines()
+            self.assertTrue(changed and all(p.startswith('scripts/') for p in changed))
+            event = Path(temp) / 'event.json'
+            event.write_text(json.dumps({'pull_request': {
+                'base': {'sha': base, 'ref': 'main', 'repo': {'full_name': 'unionmed/sayd-magazine'}},
+                'head': {'sha': candidate}}}))
+            env = {'GITHUB_ACTIONS': 'true', 'GITHUB_EVENT_NAME': 'pull_request',
+                   'GITHUB_REPOSITORY': 'unionmed/sayd-magazine',
+                   'GITHUB_EVENT_PATH': str(event), 'SAYD_PUBLICATION_HEAD': candidate}
+            proof = None
+            try:
+                with patch.dict(os.environ, env), patch.object(honey, 'ROOT', fixture), \
+                     patch.object(honey, 'SOURCE', fixture / 'content/features/honey-buzzard-science-20261021.json'):
+                    # No production guard or proof factory is mocked.
+                    proof = guard.verified_article_evidence(base, fixture)
+                    self.assertEqual(proof.kind, 'verified-desk-restoration')
+                    self.assertEqual(proof.config, json.loads((fixture / 'content/homepage.json').read_text()))
+                    for language in ('ar', 'en', 'fr'):
+                        rel = 'docs/' + ('' if language == 'ar' else language + '/') + 'index.html'
+                        self.assertEqual((fixture / rel).read_text(), proof.read(rel))
+                        cards, index = honey.honey_browser_rotation(language, proof)
+                        self.assertEqual(len(cards), 4)
+                        self.assertEqual(cards[index]['title'], honey.package()['translations'][language]['title'])
+                        original = (fixture / rel).read_text()
+                        (fixture / rel).write_text(original + '<!-- unrelated change -->')
+                        with self.assertRaisesRegex(AssertionError, 'homepage differs'):
+                            honey.honey_browser_rotation(language, proof)
+                        (fixture / rel).write_text(original)
+            finally:
+                if proof is not None:
+                    proof.temporary.cleanup()
+                for key in list(guard._proofs):
+                    if key[0] == str(fixture):
+                        guard._proofs.pop(key)
 
 
 if __name__=='__main__':unittest.main()
