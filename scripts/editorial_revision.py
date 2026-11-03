@@ -1,6 +1,6 @@
-"""Three bounded, immutable editorial maintenance operations, never publication authority.
+"""Closed, immutable editorial maintenance operations, never publication authority.
 
-No body, deletion, date, category or generic slot editing API. Every candidate is replayed
+No generic body, deletion, date, category or slot editing API. Every candidate is replayed
 using trusted BASE code and compared byte-for-byte across its entire Git tree.
 """
 import copy
@@ -16,7 +16,7 @@ from caption_revision import changed_paths
 
 PREFIX = 'content/editorial-revisions/'
 SCHEMA = 'sayd-editorial-revision-v1'
-TARGETS = {'complete-two-bird-lifecycles': 'daily-birds-20261030', 'add-nathalie-interview-photos': 'nathalie-denolf-interview-20261028',
+TARGETS = {'update-qatar-shooting-results': 'qatar-shooting-worlds-20261102', 'complete-two-bird-lifecycles': 'daily-birds-20261030', 'add-nathalie-interview-photos': 'nathalie-denolf-interview-20261028',
            'homepage-only-ticker': None, 'add-adonis-ticker': 'adonis-respect-quarry-20261026',
            'replace-wanaameen-photo': 'riyadh-results-20261024',
            'promote-episode-three-lead': 'hunting-tourism-egypt-iraq-jordan-20261026'}
@@ -41,6 +41,9 @@ def validate_revision(value, path, base):
         keys(value['payload'], ())  # Titles come only from the approved source.
     if value['operation'] == 'homepage-only-ticker':
         require(value['id'] == 'homepage-only-ticker-20261028', 'Exact ticker scope revision ID required')
+    if value['operation'] == 'update-qatar-shooting-results':
+        keys(value['payload'], ())
+        require(value['id'] == 'qatar-shooting-update-20261103', 'Exact Qatar update revision ID required')
     if value['operation'] == 'complete-two-bird-lifecycles':
         keys(value['payload'], ())
         require(value['id'] == 'two-bird-lifecycles-20261102', 'Exact two-bird revision ID required')
@@ -142,7 +145,10 @@ def expected_changes(root, base, value, path):
         raw = compiler.read_blob(root, before[source_path])
         require(compiler.sha256(raw) == value['expected_source_sha256'], 'Existing source hash mismatch')
         record = validate(loads(raw.decode()), TARGETS[value['operation']])
-        if value['operation'] == 'complete-two-bird-lifecycles':
+        if value['operation'] == 'update-qatar-shooting-results':
+            import scoped_qatar_results_revision
+            result, effective, article = scoped_qatar_results_revision.expected_changes(root, base, record)
+        elif value['operation'] == 'complete-two-bird-lifecycles':
             import scoped_bird_lifecycle_revision
             result, effective, article = scoped_bird_lifecycle_revision.expected_changes(root, base, record)
         elif value['operation'] == 'add-adonis-ticker':
@@ -213,7 +219,7 @@ def compile_source(root, base, source, output, report_path, allow_distribution=F
     root, output = Path(root).resolve(), Path(output).resolve()
     require(compiler.git(root, 'rev-parse', 'HEAD').decode().strip() == base, 'Editorial compiler must execute trusted BASE')
     path, value, expected, record, article = source_input(root, base, source)
-    distribution = value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead'}
+    distribution = value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead', 'update-qatar-shooting-results'}
     require(allow_distribution == distribution, 'Exact operation distribution scope required')
     require(not output.exists() and not output.is_relative_to(root), 'Fresh external revision output required')
     subprocess.run(['git', '-c', 'core.hooksPath=/dev/null', 'clone', '--quiet', '--shared', '--no-checkout', str(root), str(output)], check=True)
@@ -260,7 +266,7 @@ def verify(root, base, candidate, output, report_path):
     require(len(parents) == 1, 'Editorial candidate requires exactly one source parent')
     source = parents[0]
     _, value, _, _, _ = source_input(root, base, source)
-    plan = compile_source(root,base,source,output,report_path,value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead'})
+    plan = compile_source(root,base,source,output,report_path,value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead', 'update-qatar-shooting-results'})
     require(compiler.git(root,'show','-s','--format=%B',candidate).decode().strip() == compiler.provenance_message(plan), 'Editorial provenance mismatch')
     require(compiler.git(output,'rev-parse','HEAD^{tree}') == compiler.git(root,'rev-parse',candidate+'^{tree}'), 'Editorial candidate entire tree mismatch')
     return plan

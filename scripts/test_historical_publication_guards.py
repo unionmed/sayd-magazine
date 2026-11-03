@@ -277,7 +277,7 @@ class HoneyScienceRotationTests(unittest.TestCase):
         self.proof = SimpleNamespace(kind='compiled-publication', config=self.config, read=lambda rel: self.pages[rel])
 
     def test_compiled_and_baseline_exact_trees_preserve_historical_card(self):
-        for kind in ('compiled-publication', 'baseline-publication'):
+        for kind in ('compiled-publication', 'baseline-publication', 'verified-editorial-revision'):
             self.proof.kind = kind
             for lang in ('ar', 'en', 'fr'):
                 cards, index = self.honey.honey_browser_rotation(lang, self.proof)
@@ -326,5 +326,12 @@ class HoneyScienceRotationTests(unittest.TestCase):
         calls = [n for n in ast.walk(module) if isinstance(n, ast.Call) and isinstance(n.func, ast.Name) and n.func.id == 'test_honey_browser']
         self.assertEqual(len(calls), 1); self.assertEqual(len(calls[0].args), 4)
         self.assertEqual(calls[0].args[3].id, 'compiled')
+
+class HoneyEditorialScienceRotationTests(HoneyScienceRotationTests):
+    """Run every unchanged-byte/card negative against editorial revision proof too."""
+    def setUp(self):
+        super().setUp()
+        self.proof.kind = 'verified-editorial-revision'
+
 
 if __name__=='__main__':unittest.main()
