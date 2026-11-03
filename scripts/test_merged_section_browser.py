@@ -256,7 +256,7 @@ def run(base,out):
                         request.abort()
                 context.route('**/*',route_local)
                 from test_honey_buzzard_science_20261021 import test_honey_browser
-                test_honey_browser(context, new_url, out)
+                test_honey_browser(context, new_url, out, compiled)
                 from test_gulf_tourism_20261022 import test_gulf_browser
                 test_gulf_browser(context, new_url, out, compiled)
                 screens.extend(test_compiled_podium_card_browser(context, new_url, compiled, out))

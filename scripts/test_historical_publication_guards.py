@@ -251,4 +251,80 @@ class BrowserProofPlumbingTests(unittest.TestCase):
             self.assertIsInstance(calls[0].args[3], ast.Name)
             self.assertEqual(calls[0].args[3].id, expected)
 
+
+class HoneyScienceRotationTests(unittest.TestCase):
+    def setUp(self):
+        import test_honey_buzzard_science_20261021 as honey
+        self.honey = honey
+        self.tmp = TemporaryDirectory(); self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.config = {'ia_door_sections': [{'door': 'science', 'slugs': ['new', honey.AR, 'third', 'fourth']}]}
+        (self.root / 'content').mkdir()
+        self.config_path = self.root / 'content/homepage.json'
+        self.config_path.write_text(json.dumps(self.config))
+        self.article = {'slugs': {l: 'historical-' + l for l in ('ar', 'en', 'fr')}}
+        self.pages = {}
+        for lang in ('ar', 'en', 'fr'):
+            prefix = '' if lang == 'ar' else lang + '/'
+            rel = 'docs/' + prefix + 'index.html'
+            cards = ''.join('<article><h3><a href="posts/' + slug + '/index.html">' + slug + '</a></h3><img src="/media/' + slug + '.jpg" alt="' + slug + '"></article>' for slug in ('new', self.article['slugs'][lang], 'third', 'fourth'))
+            page = '<section class="home-section"><h2>' + honey.LABELS[lang] + '</h2><div class="home-door-grid">' + cards + '</div></section>'
+            self.pages[rel] = page
+            (self.root / rel).parent.mkdir(parents=True, exist_ok=True)
+            (self.root / rel).write_text(page)
+        for name, value in (('ROOT', self.root), ('package', lambda: self.article)):
+            p = patch.object(honey, name, value); p.start(); self.addCleanup(p.stop)
+        self.proof = SimpleNamespace(kind='compiled-publication', config=self.config, read=lambda rel: self.pages[rel])
+
+    def test_compiled_and_baseline_exact_trees_preserve_historical_card(self):
+        for kind in ('compiled-publication', 'baseline-publication'):
+            self.proof.kind = kind
+            for lang in ('ar', 'en', 'fr'):
+                cards, index = self.honey.honey_browser_rotation(lang, self.proof)
+                self.assertEqual(index, 1); self.assertEqual(len(cards), 4)
+                self.assertEqual(cards[index]['title'], self.article['slugs'][lang])
+
+    def test_missing_or_wrong_kind_proof_rejected(self):
+        for proof in (None, SimpleNamespace(kind='metadata-flag', config=self.config, read=self.proof.read)):
+            with self.assertRaises(AssertionError): self.honey.honey_browser_rotation('ar', proof)
+
+    def test_changed_config_or_rendered_home_rejected(self):
+        self.config_path.write_text(json.dumps(dict(self.config, unauthorized=True)))
+        with self.assertRaises(AssertionError): self.honey.honey_browser_rotation('ar', self.proof)
+        self.config_path.write_text(json.dumps(self.config))
+        (self.root / 'docs/index.html').write_text(self.pages['docs/index.html'] + 'unauthorized')
+        with self.assertRaises(AssertionError): self.honey.honey_browser_rotation('ar', self.proof)
+
+    def test_missing_or_duplicated_historical_card_rejected(self):
+        for slugs in (['new','other','third','fourth'], ['new',self.honey.AR,self.honey.AR,'fourth']):
+            self.config['ia_door_sections'][0]['slugs'] = slugs
+            self.config_path.write_text(json.dumps(self.config))
+            with self.assertRaises(AssertionError): self.honey.honey_browser_rotation('ar', self.proof)
+
+    def test_rendered_order_image_and_duplicate_mutations_rejected(self):
+        rel = 'docs/index.html'; original = self.pages[rel]
+        first_start = original.index('<article>'); first_end = original.index('</article>') + len('</article>')
+        second_end = original.index('</article>', first_end) + len('</article>')
+        mutations = [
+            original[:first_start] + original[first_end:second_end] + original[first_start:first_end] + original[second_end:],
+            original.replace('/media/new.jpg', '/media/unapproved.jpg'),
+            original[:first_end] + original[first_start:first_end] + original[first_end:],
+        ]
+        for candidate in mutations:
+            (self.root / rel).write_text(candidate)
+            with self.assertRaises(AssertionError): self.honey.honey_browser_rotation('ar', self.proof)
+
+    def test_corrupt_historical_href_in_matching_tree_rejected(self):
+        rel = 'docs/index.html'
+        self.pages[rel] = self.pages[rel].replace('posts/historical-ar/', 'posts/wrong/')
+        (self.root / rel).write_text(self.pages[rel])
+        with self.assertRaises(AssertionError): self.honey.honey_browser_rotation('ar', self.proof)
+
+    def test_caller_passes_existing_verified_proof(self):
+        import ast
+        module = ast.parse((Path(__file__).resolve().parent / 'test_merged_section_browser.py').read_text())
+        calls = [n for n in ast.walk(module) if isinstance(n, ast.Call) and isinstance(n.func, ast.Name) and n.func.id == 'test_honey_browser']
+        self.assertEqual(len(calls), 1); self.assertEqual(len(calls[0].args), 4)
+        self.assertEqual(calls[0].args[3].id, 'compiled')
+
 if __name__=='__main__':unittest.main()
