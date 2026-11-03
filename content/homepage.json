@@ -452,10 +452,10 @@
     {
       "door": "science",
       "slugs": [
+        "طيور-تتعطر-بالنمل",
         "حوام-العسل-هجرة-بولندا-3750-كيلومترا",
         "المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق",
-        "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026",
-        "طائر-جوراسي-لا-يطير-يعيد-رسم-بدايات-تطور-الطيور"
+        "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026"
       ]
     },
     {
@@ -625,7 +625,8 @@
     "بط-أبو-فروة": "birds",
     "الغطاس-المتوج-الكبير": "birds",
     "الإوز-الرمادي": "birds",
-    "مونديال-الرماية-قطر-2026": "gear"
+    "مونديال-الرماية-قطر-2026": "gear",
+    "طيور-تتعطر-بالنمل": "science"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -644,6 +645,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "طيور-تتعطر-بالنمل",
     "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
     "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
     "عندما-تهين-الطريدة-أنت-تهين-نفسك",
@@ -652,8 +654,7 @@
     "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
     "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
     "الصيد-السياحي-في-دول-المغرب-العربي",
-    "الصيد-السياحي-في-بلدان-الخليج-العربية",
-    "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر"
+    "الصيد-السياحي-في-بلدان-الخليج-العربية"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -1468,11 +1469,28 @@
         "en": "Illustrative photograph of an air-rifle shooter at an indoor range.",
         "fr": "Photo d’illustration d’un tireur à la carabine à air dans un stand couvert."
       }
+    },
+    "طيور-تتعطر-بالنمل": {
+      "image": "media/publications/birds-anting-science-20261102/japanese-thrush-tokumi.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "السمنة اليابانية ذات الرأس والصدر الأسودين والبطن الأبيض المنقّط.",
+        "en": "Japanese thrush with black head and breast and a spotted white belly.",
+        "fr": "Grive du Japon à tête et poitrine noires et ventre blanc tacheté."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "طيور-تتعطر-بالنمل",
+      "titles": {
+        "ar": "طيور تتعطر بالنمل: دراسة على السمنة اليابانية تكشف أثر إفرازاته في إبعاد بعض الحشرات.",
+        "en": "Birds perfume themselves with ants: a Japanese Thrush study finds ant secretions can repel some insects.",
+        "fr": "Des oiseaux se parfument avec des fourmis : leurs sécrétions peuvent éloigner certains insectes, selon une étude sur la Grive du Japon."
+      }
+    },
     {
       "slug": "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
       "titles": {
@@ -1544,14 +1562,6 @@
         "en": "Hunting tourism in the Arab Gulf: a Sayd investigation into hunting trips, hospitality and local livelihoods",
         "fr": "Le tourisme de chasse dans le Golfe arabe : Sayd enquête sur les séjours de chasse, l’accueil et le travail local"
       }
-    },
-    {
-      "slug": "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
-      "titles": {
-        "ar": "بعد البقاع… إزالة 24,750 مترًا مربعًا من شباك الصيد الجائر في الشمال خلال أربع ساعات",
-        "en": "After the Bekaa: 24,750 square metres of illegal hunting nets removed in northern Lebanon in four hours",
-        "fr": "Après la Bekaa, 24 750 m² de filets de braconnage retirés dans le nord du Liban en quatre heures"
-      }
     }
   ],
   "hunting_rotation": {
@@ -1574,7 +1584,8 @@
   ],
   "science_news_requires_explicit_approval": true,
   "approved_science_news": [
-    "الصرد-طائر-يعدم-فرائسه-على-الأشواك"
+    "الصرد-طائر-يعدم-فرائسه-على-الأشواك",
+    "طيور-تتعطر-بالنمل"
   ],
   "editorial_reference_policy": "Hunting Laws and Bird Encyclopedia articles appear in their own category only, never headline cards, Updates or news ticker. Science & Discoveries appears only in its own desk by default; any placement in headlines, Updates or ticker must have a slug in approved_science_news, added following explicit Nayef approval.",
   "memory_visible": false,
