@@ -236,7 +236,42 @@ def test_rendered_negative_guards(base, old, current):
     print('PASS: 9 rendered-DOM, changed-image-byte and missing-rendered-translation mutations rejected')
 
 
-def test_honey_browser(context, origin, output):
+def honey_browser_rotation(lang, proof=None):
+    """Allow a retained historical card to move only in an exact verified tree."""
+    from urllib.parse import urljoin, urlsplit
+    config = json.loads((ROOT / 'content/homepage.json').read_text())
+    slugs = next(d['slugs'] for d in config['ia_door_sections'] if d['door'] == 'science')
+    if slugs[0] == AR:
+        return None
+    assert proof is not None, 'Rotated honey-buzzard card needs trusted publication proof'
+    assert getattr(proof, 'kind', None) in {'compiled-publication', 'baseline-publication'}, 'Unsupported Science rotation proof'
+    assert len(slugs) == 4 and slugs.count(AR) == 1, 'Historical Science card must remain present'
+    prefix = '' if lang == 'ar' else lang + '/'
+    rel = 'docs/' + prefix + 'index.html'
+    expected = proof.read(rel)
+    assert config == proof.config, 'Science configuration differs from trusted compilation'
+    assert (ROOT / rel).read_text() == expected, 'Science homepage differs from trusted compilation'
+    tree = html.fromstring(expected)
+    sections = tree.xpath('//section[contains(concat(" ",normalize-space(@class)," ")," home-section ")][.//h2[normalize-space(.)=$label]]', label=LABELS[lang])
+    assert len(sections) == 1
+    cards = sections[0].xpath('.//*[contains(concat(" ",normalize-space(@class)," ")," home-door-grid ")]/article')
+    assert len(cards) == 4
+    result = []
+    origin = 'https://sayd-magazine.com/' + prefix
+    for card in cards:
+        links, images = card.xpath('.//h3/a'), card.xpath('.//img')
+        assert len(links) == len(images) == 1
+        result.append({'title': links[0].text_content(),
+                       'href': unquote(urlsplit(urljoin(origin, links[0].get('href'))).path),
+                       'image': unquote(urlsplit(urljoin(origin, images[0].get('src'))).path),
+                       'alt': images[0].get('alt')})
+    historical = '/' + prefix + 'posts/' + package()['slugs'][lang] + '/index.html'
+    assert [card['href'] for card in result].count(historical) == 1
+    assert result[slugs.index(AR)]['href'] == historical
+    return result, slugs.index(AR)
+
+
+def test_honey_browser(context, origin, output, proof=None):
     """Render the exact approved article/card; never permit external requests."""
     if not SOURCE.exists():
         return
@@ -248,6 +283,7 @@ def test_honey_browser(context, origin, output):
         for lang in ('ar', 'en', 'fr'):
             prefix = '' if lang == 'ar' else lang + '/'
             route = '/' + prefix + 'posts/' + a['slugs'][lang] + '/index.html'
+            rotation = honey_browser_rotation(lang, proof)
             for width in (390, 1440):
                 page.set_viewport_size({'width': width, 'height': 1000})
                 page.goto(origin + '/' + prefix, wait_until='networkidle')
@@ -256,7 +292,17 @@ def test_honey_browser(context, origin, output):
                 expect(section).to_have_count(1)
                 cards = section.locator('.home-door-grid > article')
                 expect(cards).to_have_count(4)
-                first = cards.first
+                if rotation is not None:
+                    expected_cards, historical_index = rotation
+                    for index, expected in enumerate(expected_cards):
+                        card = cards.nth(index)
+                        expect(card.locator('h3 a')).to_have_text(expected['title'])
+                        assert unquote(urlsplit(urljoin(page.url, card.locator('h3 a').get_attribute('href'))).path) == expected['href']
+                        assert unquote(urlsplit(urljoin(page.url, card.locator('img').get_attribute('src'))).path) == expected['image']
+                        expect(card.locator('img')).to_have_attribute('alt', expected['alt'])
+                    first = cards.nth(historical_index)
+                else:
+                    first = cards.first
                 expect(first.locator('h3 a')).to_have_text(a['translations'][lang]['title'])
                 href = first.locator('h3 a').get_attribute('href')
                 assert unquote(urlsplit(urljoin(page.url, href)).path) == route
