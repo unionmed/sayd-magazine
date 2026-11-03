@@ -135,7 +135,17 @@
     "الزقزاق-المطوق-الشائع",
     "بط-أبو-فروة",
     "الغطاس-المتوج-الكبير",
-    "الإوز-الرمادي"
+    "الإوز-الرمادي",
+    "جشنة-المروج",
+    "الحسون-الأخضر",
+    "عصفور-الشوك",
+    "قبرة-الغاب",
+    "قنبرة-الماء",
+    "الدريجة-البيضاء",
+    "كروان-الماء-الصغير",
+    "طيطوي-المستنقعات",
+    "بقويقة-مخططة-الذيل",
+    "غطاس-أسود-الرقبة"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -222,7 +232,17 @@
     "بط-أبو-فروة",
     "الغطاس-المتوج-الكبير",
     "الإوز-الرمادي",
-    "مونديال-الرماية-قطر-2026"
+    "مونديال-الرماية-قطر-2026",
+    "جشنة-المروج",
+    "الحسون-الأخضر",
+    "عصفور-الشوك",
+    "قبرة-الغاب",
+    "قنبرة-الماء",
+    "الدريجة-البيضاء",
+    "كروان-الماء-الصغير",
+    "طيطوي-المستنقعات",
+    "بقويقة-مخططة-الذيل",
+    "غطاس-أسود-الرقبة"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -626,7 +646,17 @@
     "الغطاس-المتوج-الكبير": "birds",
     "الإوز-الرمادي": "birds",
     "مونديال-الرماية-قطر-2026": "gear",
-    "طيور-تتعطر-بالنمل": "science"
+    "طيور-تتعطر-بالنمل": "science",
+    "جشنة-المروج": "birds",
+    "الحسون-الأخضر": "birds",
+    "عصفور-الشوك": "birds",
+    "قبرة-الغاب": "birds",
+    "قنبرة-الماء": "birds",
+    "الدريجة-البيضاء": "birds",
+    "كروان-الماء-الصغير": "birds",
+    "طيطوي-المستنقعات": "birds",
+    "بقويقة-مخططة-الذيل": "birds",
+    "غطاس-أسود-الرقبة": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1477,6 +1507,96 @@
         "ar": "السمنة اليابانية ذات الرأس والصدر الأسودين والبطن الأبيض المنقّط.",
         "en": "Japanese thrush with black head and breast and a spotted white belly.",
         "fr": "Grive du Japon à tête et poitrine noires et ventre blanc tacheté."
+      }
+    },
+    "جشنة-المروج": {
+      "image": "media/publications/daily-birds-20261102/meadow-pipit.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "جشنة المروج بريش بني مخطط تقف على جذع بين النباتات",
+        "en": "Meadow Pipit with streaked brown plumage standing on a log among plants",
+        "fr": "Pipit farlouse au plumage brun strié posé sur un tronc parmi les plantes"
+      }
+    },
+    "الحسون-الأخضر": {
+      "image": "media/publications/daily-birds-20261102/european-greenfinch.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "حسون أخضر بمنقار قوي وبقعة صفراء على الجناح عند منصة تغذية",
+        "en": "European Greenfinch with a thick bill and yellow wing panel at a feeding platform",
+        "fr": "Verdier d’Europe au bec épais et à la plage alaire jaune sur une mangeoire"
+      }
+    },
+    "عصفور-الشوك": {
+      "image": "media/publications/daily-birds-20261102/dunnock.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "عصفور الشوك برأس رمادي وظهر بني مخطط يقف قرب العشب",
+        "en": "Dunnock with a grey head and streaked brown back standing beside grass",
+        "fr": "Accenteur mouchet à la tête grise et au dos brun strié près de l’herbe"
+      }
+    },
+    "قبرة-الغاب": {
+      "image": "media/publications/daily-birds-20261102/woodlark.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قبرة الغابات بحاجب فاتح وصدر مخطط بين الأعشاب",
+        "en": "Woodlark with a pale eyebrow and streaked breast among grasses",
+        "fr": "Alouette lulu au sourcil clair et à la poitrine striée parmi les herbes"
+      }
+    },
+    "قنبرة-الماء": {
+      "image": "media/publications/daily-birds-20261102/ruddy-turnstone.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قلب حجارة بساقين برتقاليتين يقف مع طيور من نوعه على الصخور الساحلية",
+        "en": "Ruddy Turnstone with orange legs standing with others on coastal rocks",
+        "fr": "Tournepierre à collier aux pattes orange avec ses congénères sur les rochers côtiers"
+      }
+    },
+    "الدريجة-البيضاء": {
+      "image": "media/publications/daily-birds-20261102/sanderling.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "دريجة ثلاثية الأصابع بريش فاتح تمشي على الرمل الرطب",
+        "en": "Sanderling in pale plumage walking on wet sand",
+        "fr": "Bécasseau sanderling au plumage clair marchant sur le sable humide"
+      }
+    },
+    "كروان-الماء-الصغير": {
+      "image": "media/publications/daily-birds-20261102/eurasian-whimbrel.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "كروان صغير بمنقار مقوس وخطوط واضحة على الرأس يقف على ضفة طينية",
+        "en": "Eurasian Whimbrel with a curved bill and distinct head stripes on a muddy shore",
+        "fr": "Courlis corlieu au bec recourbé et à la tête rayée sur une rive vaseuse"
+      }
+    },
+    "طيطوي-المستنقعات": {
+      "image": "media/publications/daily-birds-20261102/marsh-sandpiper.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طيطوي المستنقعات بمنقار رفيع وساقين طويلتين في الماء الضحل",
+        "en": "Marsh Sandpiper with a slender bill and long legs in shallow water",
+        "fr": "Chevalier stagnatile au bec fin et aux longues pattes dans l’eau peu profonde"
+      }
+    },
+    "بقويقة-مخططة-الذيل": {
+      "image": "media/publications/daily-birds-20261102/bar-tailed-godwit.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بقويقة مخططة الذيل بريش تكاثر كستنائي تقف بين الأعشاب",
+        "en": "Bar-tailed Godwit in chestnut breeding plumage standing among grasses",
+        "fr": "Barge rousse au plumage nuptial roux parmi les herbes"
+      }
+    },
+    "غطاس-أسود-الرقبة": {
+      "image": "media/publications/daily-birds-20261102/black-necked-grebe.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "غطاس أسود الرقبة بريش تكاثر وعين حمراء يرفرف فوق الماء",
+        "en": "Black-necked Grebe in breeding plumage with a red eye stretching its wings on the water",
+        "fr": "Grèbe à cou noir en plumage nuptial, à l’œil rouge, déployant ses ailes sur l’eau"
       }
     }
   },
