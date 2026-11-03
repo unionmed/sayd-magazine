@@ -1,0 +1,120 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "birds-anting-science-20261102",
+  "expected_base": "c14a455a5da5ca2fda751cc29814b4622ff1aab1",
+  "approval_reference": "private:Sentinel_e263aeddd95081919f5c6cd5fd1abff2",
+  "bank_search_reference": "2026-11-02: all 424 bank file entries reviewed; no Turdus cardis/Japanese thrush/kurotsugumi match. Library scoped searches also no matching image. Banked image libfile_a53a02e58fd0819194afb1f0575650b1 and rights libfile_58bd4ad7a5588191af0d00e9dd219801.",
+  "photos": [
+    {
+      "id": "japanese-thrush",
+      "path": "docs/media/publications/birds-anting-science-20261102/japanese-thrush-tokumi.jpg",
+      "sha256": "81868a64ac33365e283bd4888a4e52ea658563f7aac12ca358c913cde769f76f",
+      "source_sha256": "81868a64ac33365e283bd4888a4e52ea658563f7aac12ca358c913cde769f76f",
+      "source_reference": "Tokumi (Gin tonic), own work; Hokkaido, Japan, April2014, month precision. Commons Wiki-kurotsugumi-1.jpg. Original fullresolution file unmodified. Male plumage; age unverified. Internal provenance: species portrait, not documented anting.",
+      "rights": {
+        "status": "licensed",
+        "statement": "Author dedicated own photograph to public domain worldwide; unconditional fallback permission except conditions required by law. No attribution/link requirement; short voluntary creator/source credit retained.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Wiki-kurotsugumi-1.jpg"
+      },
+      "alt": {
+        "ar": "السمنة اليابانية ذات الرأس والصدر الأسودين والبطن الأبيض المنقّط.",
+        "en": "Japanese thrush with black head and breast and a spotted white belly.",
+        "fr": "Grive du Japon à tête et poitrine noires et ventre blanc tacheté."
+      },
+      "caption": {
+        "ar": "السمنة اليابانية",
+        "en": "Japanese thrush",
+        "fr": "Grive du Japon"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "طيور-تتعطر-بالنمل",
+        "en": "birds-perfume-themselves-with-ants",
+        "fr": "oiseaux-se-parfument-avec-des-fourmis"
+      },
+      "published": "2026-11-03",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "science",
+      "archives": [
+        "science"
+      ],
+      "kind": "article",
+      "photos": [
+        "japanese-thrush"
+      ],
+      "distribution": {
+        "placement": "door",
+        "ticker": true
+      },
+      "translations": {
+        "ar": {
+          "title": "طيور تتعطر بالنمل",
+          "subtitle": "تجارب على السمنة اليابانية تكشف كيف تترك إفرازات النمل أثرًا على الريش يساعد في إبعاد بعض الحشرات.",
+          "meta_description": "تجارب على السمنة اليابانية تكشف كيف تترك إفرازات النمل أثرًا على الريش يساعد في إبعاد بعض الحشرات.",
+          "ticker_title": "طيور تتعطر بالنمل: دراسة على السمنة اليابانية تكشف أثر إفرازاته في إبعاد بعض الحشرات.",
+          "sections": [
+            {
+              "paragraphs": [
+                "قد يبدو المشهد غريبًا: طائر يلتقط النمل ويمرّره بين ريشه، أو يسمح له بالزحف على جسمه. هذا السلوك، المعروف باسم «التنميل»، سُجّل لدى أكثر من 200 نوع من الطيور. وما يشبه حمّامًا عطريًا قد تكون فائدته الحماية من الحشرات.",
+                "في دراسة محكّمة نُشرت مطلع نوفمبر في مجلة Scientific Reports، اختبر باحثون يابانيون هذه الفكرة على السمنة اليابانية، باستخدام نوعين من النمل. وأظهر التحليل الكيميائي أن المعالجة بالنمل غيّرت المركّبات الموجودة على سطح جسم الطائر، وأبرزها مادة متطايرة تسمى «دندرولاسين»، مصدرها النمل.",
+                "وفي تجربة شملت 165 طائرًا، قارن الباحثون بين مجموعتين عولجتا بالنمل ومجموعة ضابطة. وجمعوا من مجموعتَي المعالجة عددًا أكبر من ذباب القمل وغيره من الحشرات التي غادرت أجسام الطيور، بما يدعم قدرة المعالجة على إبعاد بعض الطفيليات الخارجية.",
+                "واختبرت تجارب مختبرية منفصلة أثر إفرازات النمل على البعوض، باستخدام قطع ريش معالَجة بها. وكان عدد البعوض المستقر على الريش المعالَج أقل، فيما أظهرت اختبارات بعض المركّبات تأثيرات طاردة أيضًا. واختلفت الاستجابة باختلاف الحشرات والطفيليات.",
+                "تضيف النتائج تفسيرًا محتملًا لعادة أثارت فضول الباحثين طويلًا: قد تستعير الطيور وسائل الدفاع الكيميائية للنمل للعناية بأجسامها. وتبقى معرفة أثر ذلك في الحد من انتقال الأمراض، ومنها ملاريا الطيور، بحاجة إلى اختبارات في الطبيعة.",
+                "وهكذا، فإن «التعطّر بالنمل» قد يكون وسيلة نافعة تجمع عالمَي الريش والحشرات، أكثر مما هو بحث عن رائحة جميلة."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Tokumi / Wikimedia Commons"
+        },
+        "en": {
+          "title": "Birds perfume themselves with ants",
+          "subtitle": "Experiments on Japanese Thrushes show how ant secretions left on feathers can help keep some insects away.",
+          "meta_description": "Experiments on Japanese Thrushes show how ant secretions left on feathers can help keep some insects away.",
+          "ticker_title": "Birds perfume themselves with ants: a Japanese Thrush study finds ant secretions can repel some insects.",
+          "sections": [
+            {
+              "paragraphs": [
+                "The sight can seem surprising: a bird picks up ants and works them through its feathers, or allows them to crawl over its body. Known as anting, this behaviour has been reported in more than 200 bird species. What looks like a perfume bath may help protect birds against insects.",
+                "In a peer-reviewed study published in early November in Scientific Reports, Japanese researchers tested this idea on the Japanese Thrush using two ant species. Chemical analysis showed that ant treatment altered the compounds on the birds’ body surfaces, notably adding an ant-derived volatile substance called dendrolasin.",
+                "In an experiment involving 165 birds, the researchers compared two ant-treatment groups with a control group. They collected more louse flies and other insects that had left the birds in the treatment groups, supporting the treatment’s ability to remove some external parasites.",
+                "Separate laboratory experiments tested the effects of ant secretions on mosquitoes using treated pieces of feather. Fewer mosquitoes remained on the treated feathers, while tests of some compounds also found repellent effects. Responses varied among insects and parasites.",
+                "The findings offer a possible explanation for a behaviour that has long intrigued researchers: birds may borrow ants’ chemical defences to care for their bodies. Whether this reduces disease transmission, including avian malaria, still needs to be tested in the wild.",
+                "“Perfuming with ants” may therefore be a useful interaction between the worlds of feathers and insects, rather than a quest for a pleasant scent."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Tokumi / Wikimedia Commons"
+        },
+        "fr": {
+          "title": "Des oiseaux se parfument avec des fourmis",
+          "subtitle": "Des expériences sur la Grive du Japon montrent comment les sécrétions des fourmis déposées sur les plumes peuvent éloigner certains insectes.",
+          "meta_description": "Des expériences sur la Grive du Japon montrent comment les sécrétions des fourmis déposées sur les plumes peuvent éloigner certains insectes.",
+          "ticker_title": "Des oiseaux se parfument avec des fourmis : leurs sécrétions peuvent éloigner certains insectes, selon une étude sur la Grive du Japon.",
+          "sections": [
+            {
+              "paragraphs": [
+                "La scène peut surprendre : un oiseau saisit des fourmis et les passe dans son plumage, ou les laisse parcourir son corps. Ce comportement, appelé bain de fourmis, a été observé chez plus de 200 espèces d’oiseaux. Ce qui ressemble à un bain parfumé pourrait servir à protéger les oiseaux contre certains insectes.",
+                "Dans une étude évaluée par les pairs et publiée début novembre dans Scientific Reports, des chercheurs japonais ont testé cette idée chez la Grive du Japon avec deux espèces de fourmis. Les analyses chimiques ont montré que le traitement modifiait les composés présents à la surface du corps des oiseaux, avec notamment l’apparition d’une substance volatile provenant des fourmis : la dendrolasine.",
+                "Dans une expérience portant sur 165 oiseaux, les chercheurs ont comparé deux groupes traités avec des fourmis à un groupe témoin. Ils ont recueilli davantage de mouches hippoboscides et d’autres insectes ayant quitté le corps des oiseaux traités, ce qui soutient la capacité du traitement à éliminer certains parasites externes.",
+                "Des expériences distinctes en laboratoire ont testé l’effet des sécrétions des fourmis sur des moustiques, à l’aide de morceaux de plumes traités. Moins de moustiques restaient posés sur ces plumes, tandis que les essais de certains composés révélaient aussi des effets répulsifs. Les réactions variaient selon les insectes et les parasites.",
+                "Ces résultats proposent une explication possible à une pratique qui intrigue les chercheurs depuis longtemps : les oiseaux pourraient emprunter les défenses chimiques des fourmis pour prendre soin de leur corps. Il reste à vérifier dans la nature si cela réduit la transmission de maladies, notamment le paludisme aviaire.",
+                "Se « parfumer avec des fourmis » pourrait donc être une pratique utile reliant le monde des plumes à celui des insectes, plutôt qu’une recherche de bonne odeur."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Tokumi / Wikimedia Commons"
+        }
+      }
+    }
+  ]
+}
