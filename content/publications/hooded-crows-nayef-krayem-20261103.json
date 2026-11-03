@@ -1,0 +1,148 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "hooded-crows-nayef-krayem-20261103",
+  "expected_base": "24fe1d780e837a7d8de6a899f2a960b069d1e757",
+  "approval_reference": "private:hooded-crows-owner-publication-20261103",
+  "bank_search_reference": "The three owner-supplied photographs were inspected visually. This publication uses only these exact originals selected and supplied by the photographer for the Photos section.",
+  "photos": [
+    {
+      "id": "crow-01",
+      "path": "docs/media/publications/hooded-crows-nayef-krayem-20261103/crow-01.jpg",
+      "sha256": "b1c404480f31280471e44a5dec0591871daff139fc74571a7009798a7bc4f39a",
+      "source_sha256": "b1c404480f31280471e44a5dec0591871daff139fc74571a7009798a7bc4f39a",
+      "source_reference": "Original user-supplied photograph 1000532070.jpg. Location and photographer supplied by Nayef Krayem; capture date unspecified. Original bytes retained.",
+      "rights": {
+        "status": "owned",
+        "statement": "Photographer Nayef Krayem supplied his own photographs and authorized publication in the Sayd Photos section.",
+        "evidence_reference": "private:hooded-crows-owner-publication-20261103"
+      },
+      "alt": {
+        "ar": "غرابان مقنعان على أغصان شجرة في جنوب لبنان.",
+        "en": "Two hooded crows perched on a tree in southern Lebanon.",
+        "fr": "Deux corneilles mantelées perchées dans un arbre dans le sud du Liban."
+      },
+      "caption": {
+        "ar": "غرابان مقنعان على أغصان شجرة في جنوب لبنان.",
+        "en": "Two hooded crows perched on a tree in southern Lebanon.",
+        "fr": "Deux corneilles mantelées perchées dans un arbre dans le sud du Liban."
+      }
+    },
+    {
+      "id": "crow-02",
+      "path": "docs/media/publications/hooded-crows-nayef-krayem-20261103/crow-02.jpg",
+      "sha256": "add8c5987aa0c099dc13c3c8295a91e8c2656ea2c64b7b8672392abd9b5cdfc3",
+      "source_sha256": "add8c5987aa0c099dc13c3c8295a91e8c2656ea2c64b7b8672392abd9b5cdfc3",
+      "source_reference": "Original user-supplied photograph 1000532011(1).jpg. Location and photographer supplied by Nayef Krayem; capture date unspecified. Original bytes retained.",
+      "rights": {
+        "status": "owned",
+        "statement": "Photographer Nayef Krayem supplied his own photographs and authorized publication in the Sayd Photos section.",
+        "evidence_reference": "private:hooded-crows-owner-publication-20261103"
+      },
+      "alt": {
+        "ar": "غراب مقنع يبسط جناحيه قرب آخر على قمة الشجرة.",
+        "en": "A hooded crow spreads its wings beside another at the treetop.",
+        "fr": "Une corneille mantelée déploie ses ailes près d’une autre à la cime de l’arbre."
+      },
+      "caption": {
+        "ar": "غراب مقنع يبسط جناحيه قرب آخر على قمة الشجرة.",
+        "en": "A hooded crow spreads its wings beside another at the treetop.",
+        "fr": "Une corneille mantelée déploie ses ailes près d’une autre à la cime de l’arbre."
+      }
+    },
+    {
+      "id": "crow-03",
+      "path": "docs/media/publications/hooded-crows-nayef-krayem-20261103/crow-03.jpg",
+      "sha256": "c9dba8bb8c975e56b017ba3b4da433bf8fb8c522df8215d8c18a0634d24bd688",
+      "source_sha256": "c9dba8bb8c975e56b017ba3b4da433bf8fb8c522df8215d8c18a0634d24bd688",
+      "source_reference": "Original user-supplied photograph 1000532012.jpg. Location and photographer supplied by Nayef Krayem; capture date unspecified. Original bytes retained.",
+      "rights": {
+        "status": "owned",
+        "statement": "Photographer Nayef Krayem supplied his own photographs and authorized publication in the Sayd Photos section.",
+        "evidence_reference": "private:hooded-crows-owner-publication-20261103"
+      },
+      "alt": {
+        "ar": "غرابان مقنعان على أغصان شجرة في جنوب لبنان.",
+        "en": "Two hooded crows perched on a tree in southern Lebanon.",
+        "fr": "Deux corneilles mantelées perchées dans un arbre dans le sud du Liban."
+      },
+      "caption": {
+        "ar": "غرابان مقنعان على أغصان شجرة في جنوب لبنان.",
+        "en": "Two hooded crows perched on a tree in southern Lebanon.",
+        "fr": "Deux corneilles mantelées perchées dans un arbre dans le sud du Liban."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم",
+        "en": "hooded-crows-khirbet-selm-qallawiyeh-nayef-krayem",
+        "fr": "hooded-crows-khirbet-selm-qallawiyeh-nayef-krayem"
+      },
+      "published": "2026-11-03",
+      "author": {
+        "ar": "نايف كريم",
+        "en": "Nayef Krayem",
+        "fr": "Nayef Krayem"
+      },
+      "primary_door": "photos",
+      "archives": [
+        "photos"
+      ],
+      "kind": "gallery",
+      "photos": [
+        "crow-01",
+        "crow-02",
+        "crow-03"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الغراب المقنع على طريق خربة سلم وقلويه",
+          "subtitle": "ثلاث صور للغراب المقنع في جنوب لبنان، بعدسة نايف كريم.",
+          "meta_description": "الغراب المقنع على طريق خربة سلم وقلويه في جنوب لبنان في ثلاث صور بعدسة نايف كريم.",
+          "sections": [
+            {
+              "paragraphs": [
+                "غرابان مقنعان على أغصان شجرة على طريق خربة سلم وقلويه في جنوب لبنان."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصور: نايف كريم."
+        },
+        "en": {
+          "title": "Hooded crows on the Khirbet Selm–Qallawiyeh road",
+          "subtitle": "Three photographs of hooded crows in southern Lebanon, by Nayef Krayem.",
+          "meta_description": "Three photographs of hooded crows on the road between Khirbet Selm and Qallawiyeh, southern Lebanon, by Nayef Krayem.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Two hooded crows perch on a tree on the road between Khirbet Selm and Qallawiyeh in southern Lebanon."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photos: Nayef Krayem."
+        },
+        "fr": {
+          "title": "Corneilles mantelées sur la route de Khirbet Selm à Qallawiyeh",
+          "subtitle": "Trois photographies de corneilles mantelées dans le sud du Liban, par Nayef Krayem.",
+          "meta_description": "Trois photographies de corneilles mantelées sur la route entre Khirbet Selm et Qallawiyeh, dans le sud du Liban, par Nayef Krayem.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Deux corneilles mantelées sont perchées dans un arbre sur la route entre Khirbet Selm et Qallawiyeh, dans le sud du Liban."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographies : Nayef Krayem."
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      }
+    }
+  ]
+}
