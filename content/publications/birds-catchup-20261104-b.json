@@ -1,0 +1,2100 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "birds-catchup-20261104-b",
+  "expected_base": "e55f5ac47ce348389a548588e9c7b5325238af0f",
+  "approval_reference": "private:nayef-encyclopedia-20261104-forty-arab-birds-catchup",
+  "bank_search_reference": "Sayd photo archive searched before external selection, 2026-11-04. Full AR search archive and 163 EN entries checked, including older standalone profiles outside the 80-entry encyclopedia index. Existing lapwing source415/candidate416 reused; not duplicated. All selected actual photographs visually inspected with species diagnostics, rights evidence and exact original bytes retained. Internal evidence: birds40 selection and per-photo records.",
+  "photos": [
+    {
+      "id": "white-throated-kingfisher",
+      "path": "docs/media/publications/birds-catchup-20261104-b/halcyon-smyrnensis.jpg",
+      "sha256": "f817d20d7414351a7265547b3f626bbf63b9d54184009af24c9c906fd5f6ec98",
+      "source_sha256": "f817d20d7414351a7265547b3f626bbf63b9d54184009af24c9c906fd5f6ec98",
+      "source_reference": "Dan Horowitz; 2021-08-07; מרכז צפרות - פארק הרצליה, Unnamed Road, Hertsliya, Israel. iNaturalist observation 90287569, photograph 149202330. Actual original inspected; taxon Halcyon smyrnensis and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/149202330; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "الرفراف أبيض الصدر — Halcyon smyrnensis",
+        "en": "White-throated Kingfisher — Halcyon smyrnensis",
+        "fr": "Martin-chasseur de Smyrne — Halcyon smyrnensis"
+      },
+      "caption": {
+        "ar": "الرفراف أبيض الصدر",
+        "en": "White-throated Kingfisher",
+        "fr": "Martin-chasseur de Smyrne"
+      }
+    },
+    {
+      "id": "european-roller",
+      "path": "docs/media/publications/birds-catchup-20261104-b/coracias-garrulus.jpg",
+      "sha256": "257bad5b89dbac8719c6226c6503dd9d86a685c8ae457348dba30cdd0465234c",
+      "source_sha256": "257bad5b89dbac8719c6226c6503dd9d86a685c8ae457348dba30cdd0465234c",
+      "source_reference": "Лариса Артемьева; 2023-05-12; Каякентский р-н, Респ. Дагестан, Россия. iNaturalist observation 192725981, photograph 338394831. Actual original inspected; taxon Coracias garrulus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/338394831; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "الشقراق الأوروبي — Coracias garrulus",
+        "en": "European Roller — Coracias garrulus",
+        "fr": "Rollier d’Europe — Coracias garrulus"
+      },
+      "caption": {
+        "ar": "الشقراق الأوروبي",
+        "en": "European Roller",
+        "fr": "Rollier d’Europe"
+      }
+    },
+    {
+      "id": "arabian-green-bee-eater",
+      "path": "docs/media/publications/birds-catchup-20261104-b/merops-cyanophrys.jpg",
+      "sha256": "5f708815888093e5b602538654b81cd99dcfdba16bb40183d18cc742383499af",
+      "source_sha256": "5f708815888093e5b602538654b81cd99dcfdba16bb40183d18cc742383499af",
+      "source_reference": "wilmotsenaratne; 2016-09-19; Jerash, Jordan. iNaturalist observation 368519899, photograph 673092654. Actual original inspected; taxon Merops cyanophrys and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/673092654; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "الوروار الأخضر العربي — Merops cyanophrys",
+        "en": "Arabian Green Bee-eater — Merops cyanophrys",
+        "fr": "Guêpier d’Arabie — Merops cyanophrys"
+      },
+      "caption": {
+        "ar": "الوروار الأخضر العربي",
+        "en": "Arabian Green Bee-eater",
+        "fr": "Guêpier d’Arabie"
+      }
+    },
+    {
+      "id": "rock-dove",
+      "path": "docs/media/publications/birds-catchup-20261104-b/columba-livia.jpg",
+      "sha256": "7731af35f368e9cdf0918af81a0b5c1d6dbd2650c5a0089b5538e4a1e4044825",
+      "source_sha256": "7731af35f368e9cdf0918af81a0b5c1d6dbd2650c5a0089b5538e4a1e4044825",
+      "source_reference": "Jean-Paul Boerekamps; 2023-05-03; Ounagha, Marrakesh-Safi, MA. iNaturalist observation 161804206, photograph 279709035. Actual original inspected; taxon Columba livia and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/279709035; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "الحمام الصخري — Columba livia",
+        "en": "Rock Dove — Columba livia",
+        "fr": "Pigeon biset — Columba livia"
+      },
+      "caption": {
+        "ar": "الحمام الصخري",
+        "en": "Rock Dove",
+        "fr": "Pigeon biset"
+      }
+    },
+    {
+      "id": "black-bellied-sandgrouse",
+      "path": "docs/media/publications/birds-catchup-20261104-b/pterocles-orientalis.jpg",
+      "sha256": "3459fd2c8fcd9fd56382b0648b938ea046fed30b7864111ee7eb30bc24b455a0",
+      "source_sha256": "3459fd2c8fcd9fd56382b0648b938ea046fed30b7864111ee7eb30bc24b455a0",
+      "source_reference": "Лариса Артемьева; 2025-04-29; Бура. iNaturalist observation 282432067, photograph 507420471. Actual original inspected; taxon Pterocles orientalis and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/507420471; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "القطا أسود البطن — Pterocles orientalis",
+        "en": "Black-bellied Sandgrouse — Pterocles orientalis",
+        "fr": "Ganga unibande — Pterocles orientalis"
+      },
+      "caption": {
+        "ar": "القطا أسود البطن",
+        "en": "Black-bellied Sandgrouse",
+        "fr": "Ganga unibande"
+      }
+    },
+    {
+      "id": "pin-tailed-sandgrouse",
+      "path": "docs/media/publications/birds-catchup-20261104-b/pterocles-alchata.jpg",
+      "sha256": "2538fd30aa558961321c853320a47076b5e1f18f8f4fd1d9e53620980d312c4d",
+      "source_sha256": "2538fd30aa558961321c853320a47076b5e1f18f8f4fd1d9e53620980d312c4d",
+      "source_reference": "Mourad Harzallah; 2019-09-27; Mecheria, Algérie. iNaturalist observation 105276490, photograph 176603239. Actual original inspected; taxon Pterocles alchata and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC BY 4.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc-by; original photo page https://www.inaturalist.org/photos/176603239; https://creativecommons.org/licenses/by/4.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "القطا دبوسي الذيل — Pterocles alchata",
+        "en": "Pin-tailed Sandgrouse — Pterocles alchata",
+        "fr": "Ganga cata — Pterocles alchata"
+      },
+      "caption": {
+        "ar": "القطا دبوسي الذيل",
+        "en": "Pin-tailed Sandgrouse",
+        "fr": "Ganga cata"
+      }
+    },
+    {
+      "id": "sand-partridge",
+      "path": "docs/media/publications/birds-catchup-20261104-b/ammoperdix-heyi.jpg",
+      "sha256": "52d38382d93269c2b5f6f0a9da3689ab709640947213117b5d0b13b1b04a6ea4",
+      "source_sha256": "52d38382d93269c2b5f6f0a9da3689ab709640947213117b5d0b13b1b04a6ea4",
+      "source_reference": "Raffaele Maiorano; 2023-04-10; Nabq Nature Reserve. iNaturalist observation 154570681, photograph 267093047. Actual original inspected; taxon Ammoperdix heyi and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/267093047; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "حجل الرمال — Ammoperdix heyi",
+        "en": "Sand Partridge — Ammoperdix heyi",
+        "fr": "Perdrix de Hey — Ammoperdix heyi"
+      },
+      "caption": {
+        "ar": "حجل الرمال",
+        "en": "Sand Partridge",
+        "fr": "Perdrix de Hey"
+      }
+    },
+    {
+      "id": "desert-wheatear",
+      "path": "docs/media/publications/birds-catchup-20261104-b/oenanthe-deserti.jpg",
+      "sha256": "f9ab7bb5e53463691a5beac801012fe6d58443328875d8bd765f0894d08d04aa",
+      "source_sha256": "f9ab7bb5e53463691a5beac801012fe6d58443328875d8bd765f0894d08d04aa",
+      "source_reference": "Лариса Артемьева; 2022-05-08; Республика Алтай, RU. iNaturalist observation 116021297, photograph 195884476. Actual original inspected; taxon Oenanthe deserti and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/195884476; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "الأبلق الصحراوي — Oenanthe deserti",
+        "en": "Desert Wheatear — Oenanthe deserti",
+        "fr": "Traquet du désert — Oenanthe deserti"
+      },
+      "caption": {
+        "ar": "الأبلق الصحراوي",
+        "en": "Desert Wheatear",
+        "fr": "Traquet du désert"
+      }
+    },
+    {
+      "id": "desert-lark",
+      "path": "docs/media/publications/birds-catchup-20261104-b/ammomanes-deserti.jpg",
+      "sha256": "db63c78f2c20036a1a4695c5958c735bd1eb5b2bca5536d68f72c06251b8924a",
+      "source_sha256": "db63c78f2c20036a1a4695c5958c735bd1eb5b2bca5536d68f72c06251b8924a",
+      "source_reference": "Tero Linjama; 2005-03-25; Be'er Sheva, Israel. iNaturalist observation 63900045, photograph 102634091. Actual original inspected; taxon Ammomanes deserti and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/102634091; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "قبرة الصحراء — Ammomanes deserti",
+        "en": "Desert Lark — Ammomanes deserti",
+        "fr": "Ammomane isabelline — Ammomanes deserti"
+      },
+      "caption": {
+        "ar": "قبرة الصحراء",
+        "en": "Desert Lark",
+        "fr": "Ammomane isabelline"
+      }
+    },
+    {
+      "id": "greater-hoopoe-lark",
+      "path": "docs/media/publications/birds-catchup-20261104-b/alaemon-alaudipes.jpg",
+      "sha256": "d567aa6bf1614b0cda1646a0ad179a9190b8eebf4d443c3f6e8e52a009657dcb",
+      "source_sha256": "d567aa6bf1614b0cda1646a0ad179a9190b8eebf4d443c3f6e8e52a009657dcb",
+      "source_reference": "Andy Wilson; 1997-11-23; Errachidia Province, Morocco. iNaturalist observation 144206576, photograph 247458601. Actual original inspected; taxon Alaemon alaudipes and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/247458601; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "القبرة الهدهدية — Alaemon alaudipes",
+        "en": "Greater Hoopoe-Lark — Alaemon alaudipes",
+        "fr": "Sirli du désert — Alaemon alaudipes"
+      },
+      "caption": {
+        "ar": "القبرة الهدهدية",
+        "en": "Greater Hoopoe-Lark",
+        "fr": "Sirli du désert"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الرفراف-أبيض-الصدر",
+        "en": "white-throated-kingfisher",
+        "fr": "martin-chasseur-de-smyrne"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "white-throated-kingfisher"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الرفراف أبيض الصدر",
+          "subtitle": "Halcyon smyrnensis",
+          "meta_description": "الرفراف أبيض الصدر Halcyon smyrnensis من الرفرافيات Alcedinidae. يجمع بين رأس وجسم كستنائيين وصدر وحلق أبيضين وظهر وأجنحة زرقاء ومنقار أحمر كبير. يختلف بوضوح عن الرفراف الشائع الأصغر وعن الرفراف الأبقع الأسود والأبيض..",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الرفراف أبيض الصدر Halcyon smyrnensis من الرفرافيات Alcedinidae. يجمع بين رأس وجسم كستنائيين وصدر وحلق أبيضين وظهر وأجنحة زرقاء ومنقار أحمر كبير. يختلف بوضوح عن الرفراف الشائع الأصغر وعن الرفراف الأبقع الأسود والأبيض. يتشابه الجنسان في الميدان."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "لا يقتصر على ضفاف المياه؛ يستخدم الأراضي الزراعية والبساتين والمناطق المفتوحة قرب القنوات. يرصد الفرائس من غصن أو سلك وينقض عليها. يأكل حشرات كبيرة وسحالي وبرمائيات وفرائس صغيرة أخرى، مع الأسماك حين تتاح، لذلك لا يعني اسمه اعتمادًا حصريًا على صيد السمك."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يحفر نفقًا في ضفة ترابية ينتهي بحجرة للبيض. تسجل المراجع حضنات من 3–7 بيضات؛ ويتشارك الأبوان الحضانة وإطعام الفراخ داخل الحجرة. يحتاج خروج الصغار إلى نموها في العش أولًا؛ ولا يجوز فتح النفق للحصول على صورة."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يمتد نطاقه من شرق المتوسط عبر أجزاء من الشرق الأوسط إلى جنوب آسيا. في لبنان تصفه قائمة 2020 بزائر مسجل في معظم الشهور دون إثبات تكاثر آنذاك. لذا يُفصل بين حضوره الموثق وبين ادعاء أنه مقيم متكاثر لبناني مؤكد."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "في المناطق التي يقيم فيها يمكن مشاهدته طوال العام؛ وتساعد نداءاته العالية والمجاثم المكشوفة في اكتشافه. مشاهدة نوفمبر في موقع شرقي لا تحدد وحدها هل الفرد مقيم أم متحرك؛ وتوثيق السلوك عبر السنة أكثر دلالة."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يستهلك طيفًا من الفرائس ويساعد على تنوع شبكة الغذاء الزراعية. يفقد أماكن التعشيش عند تسوية الضفاف، كما يتأثر بالمبيدات وتلوث المياه. حفظ ضفاف ترابية مستقرة ومجاثم آمنة وغطاء نباتي متنوع يخدمه دون الحاجة إلى إزعاج الأعشاش."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Halcyon smyrnensis."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Dan Horowitz — CC0 1.0."
+        },
+        "en": {
+          "title": "White-throated Kingfisher",
+          "subtitle": "Halcyon smyrnensis",
+          "meta_description": "White-throated Kingfisher Halcyon smyrnensis belongs to Alcedinidae. Chestnut head and body contrast with a white throat and breast, blue back and wings and a large red bill. It differs conspicuously from smaller Common.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "White-throated Kingfisher Halcyon smyrnensis belongs to Alcedinidae. Chestnut head and body contrast with a white throat and breast, blue back and wings and a large red bill. It differs conspicuously from smaller Common Kingfisher and black-and-white Pied Kingfisher. The sexes look alike in the field."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It is not confined to water margins, using farmland, orchards and open ground near channels. From a branch or wire it watches and dives onto prey. Large insects, lizards, amphibians and other small animals supplement available fish; it is not exclusively a fish eater."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A tunnel excavated into an earthen bank ends in an egg chamber. References report clutches of three to seven eggs. Both parents incubate and provision young inside the chamber. Chicks develop in the nest before emerging; opening a tunnel for photography destroys necessary protection."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range extends from the eastern Mediterranean through parts of the Middle East to southern Asia. Lebanon’s 2020 checklist records it in most months without then confirming breeding. Documented occurrence should therefore be distinguished from a claim of proven Lebanese breeding residence."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "It can be observed throughout the year in resident areas. Loud calls and exposed lookout perches aid detection. A November sighting at an eastern site alone does not reveal whether an individual is resident or moving; observations across seasons are more informative."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Its varied prey connects it to agricultural food webs. Bank levelling removes nesting opportunities, while pesticides and polluted water are pressures. Stable earthen banks, safe perches and varied vegetation support the bird without disturbing nests."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Halcyon smyrnensis."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dan Horowitz — CC0 1.0."
+        },
+        "fr": {
+          "title": "Martin-chasseur de Smyrne",
+          "subtitle": "Halcyon smyrnensis",
+          "meta_description": "Le Martin-chasseur de Smyrne Halcyon smyrnensis appartient aux Alcedinidae. Tête et corps châtains contrastent avec gorge et poitrine blanches, dos et ailes bleus et grand bec rouge. Il diffère nettement du petit.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Martin-chasseur de Smyrne Halcyon smyrnensis appartient aux Alcedinidae. Tête et corps châtains contrastent avec gorge et poitrine blanches, dos et ailes bleus et grand bec rouge. Il diffère nettement du petit Martin-pêcheur d’Europe et du Martin-pêcheur pie noir et blanc. Les sexes se ressemblent sur le terrain."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il ne se limite pas aux berges : cultures, vergers et espaces ouverts près des canaux lui conviennent. Depuis une branche ou un fil, il guette puis fond sur ses proies. Gros insectes, lézards, amphibiens et autres petits animaux complètent les poissons disponibles ; ce n’est pas un piscivore exclusif."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Un tunnel creusé dans une berge terreuse aboutit à une chambre de ponte. Les références indiquent trois à sept œufs. Les deux parents couvent et nourrissent les jeunes dans la chambre. Les poussins grandissent au nid avant de sortir ; ouvrir le tunnel pour les photographier détruit leur protection."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire s’étend de la Méditerranée orientale à l’Asie méridionale par certaines régions du Moyen-Orient. La liste libanaise de 2020 le signale pendant la plupart des mois, sans reproduction alors confirmée. Présence documentée et statut de résident nicheur prouvé doivent rester distincts."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Dans ses régions de résidence, il s’observe toute l’année. Cris puissants et postes de guet dégagés facilitent sa détection. Une observation orientale de novembre ne détermine pas à elle seule résidence ou déplacement ; un suivi saisonnier renseigne davantage."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Son régime varié le relie aux réseaux alimentaires agricoles. Le nivellement des berges supprime des sites de nidification ; pesticides et eau polluée constituent des pressions. Berges stables, perchoirs sûrs et végétation diversifiée le favorisent sans déranger ses nids."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Halcyon smyrnensis."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dan Horowitz — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الشقراق-الأوروبي",
+        "en": "european-roller",
+        "fr": "rollier-deurope"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "european-roller"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الشقراق الأوروبي",
+          "subtitle": "Coracias garrulus",
+          "meta_description": "الشقراق الأوروبي Coracias garrulus من الشقراقيات Coraciidae. الرأس والجسم أزرقان في البالغ والظهر بني محمر، وتظهر درجات زرقاء داكنة في الجناح أثناء الطيران. اليافع أبهت. جسمه أمتن ومنقاره أقوى من الوروار، ولا يحمل الذيل.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الشقراق الأوروبي Coracias garrulus من الشقراقيات Coraciidae. الرأس والجسم أزرقان في البالغ والظهر بني محمر، وتظهر درجات زرقاء داكنة في الجناح أثناء الطيران. اليافع أبهت. جسمه أمتن ومنقاره أقوى من الوروار، ولا يحمل الذيل المدبب الطويل نفسه."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يستخدم الأرياف المفتوحة والمراعي ذات الأشجار المتناثرة والأسلاك أو الأغصان للمراقبة. ينقض إلى الأرض على حشرات كبيرة، وقد يأخذ سحالي وفرائس صغيرة أخرى. حركات العرض الهوائي المتقلبة تفسر اسمه الإنجليزي، لكنها تختلف عن الطيران الاعتيادي بين المجاثم."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يعشش في تجاويف الأشجار أو جدران ومنحدرات مناسبة، وقد يستخدم صناديق تعشيش ملائمة في مناطق التكاثر. يتعاون الأبوان في الحضانة وإطعام الفراخ بالحشرات. اعتماد النوع على التجاويف يجعل حفظ الأشجار القديمة مهمًا؛ فوجود أرض صيد وحده لا يكفي لقيام زوج متكاثر."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يتكاثر عبر أجزاء من أوروبا وغرب آسيا وشمال أفريقيا ويقضي الشتاء في أفريقيا جنوب الصحراء. تصفه قائمة لبنان بأنه مهاجر عبور شائع، بينما لم يكن التكاثر الحديث مؤكدًا في مرجع 2020. لا يثبت مرور طائر في الربيع تعشيشه المحلي."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمر بلبنان عادة من أواخر مارس إلى أوائل يونيو ومن أوائل أغسطس إلى أواخر أكتوبر. نوفمبر يلي ذروة مروره الخريفي المعتاد. تتغير مواعيد الوصول والمغادرة على امتداد النطاق العربي؛ والتسجيل المؤرخ أدق من تعميم موسم واحد على المنطقة."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يفترس الحشرات الكبيرة ويستفيد من الزراعة المتنوعة قليلة المبيدات. تضره إزالة الأشجار المجوفة وتكثيف الزراعة والمبيدات والصيد غير القانوني. حماية التجاويف ومراعي الحشرات على مسار الهجرة تدعم النوع، مع ترك مسافة حول الأعشاش ومجاثم الراحة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, European Roller."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева — CC0 1.0."
+        },
+        "en": {
+          "title": "European Roller",
+          "subtitle": "Coracias garrulus",
+          "meta_description": "European Roller Coracias garrulus belongs to Coraciidae. Adults have a blue head and body, a reddish-brown back and darker blue flight feathers. Juveniles are duller. Its heavier build and stronger bill separate it from.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "European Roller Coracias garrulus belongs to Coraciidae. Adults have a blue head and body, a reddish-brown back and darker blue flight feathers. Juveniles are duller. Its heavier build and stronger bill separate it from bee-eaters, and it lacks their elongated pointed central tail feathers."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Open farmland and grassland with scattered trees, wires or branches provide lookout posts. It drops to the ground for large insects and sometimes takes lizards and other small prey. Tumbling courtship displays explain its English name but differ from routine flight between perches."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "It nests in tree cavities or suitable walls and banks, sometimes accepting nest boxes in breeding areas. Both parents contribute to incubation and insect provisioning. Dependence on cavities makes old trees important: available hunting ground alone cannot support a nesting pair."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It breeds across parts of Europe, western Asia and North Africa and winters in sub-Saharan Africa. Lebanon’s 2020 checklist calls it a common passage migrant without confirmed recent breeding. A bird passing in spring does not demonstrate local nesting."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanese passage usually extends from late March to early June and early August to late October. November follows the usual autumn peak. Dates vary across the Arab region; dated records are more useful than imposing a single regional season."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Large-insect predation links it to varied, low-pesticide farmland. Loss of hollow trees, agricultural intensification, pesticides and illegal shooting are pressures. Preserving cavities and insect-rich feeding areas along migration routes supports the species while leaving nests and resting birds undisturbed."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, European Roller."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0 1.0."
+        },
+        "fr": {
+          "title": "Rollier d’Europe",
+          "subtitle": "Coracias garrulus",
+          "meta_description": "Le Rollier d’Europe Coracias garrulus appartient aux Coraciidae. L’adulte possède tête et corps bleus, dos brun roux et rémiges bleu plus sombre. Le jeune est plus terne. Corps robuste et bec fort le distinguent des.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Rollier d’Europe Coracias garrulus appartient aux Coraciidae. L’adulte possède tête et corps bleus, dos brun roux et rémiges bleu plus sombre. Le jeune est plus terne. Corps robuste et bec fort le distinguent des guêpiers ; il n’a pas leurs longues rectrices centrales effilées."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Campagnes ouvertes et prairies avec arbres dispersés, fils ou branches offrent des postes de guet. Il capture au sol de gros insectes, parfois lézards et autres petites proies. Les acrobaties nuptiales expliquent son nom anglais, mais diffèrent du vol ordinaire entre perchoirs."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Il niche dans des cavités d’arbres, murs ou talus appropriés et accepte parfois des nichoirs dans les régions de reproduction. Les deux parents participent à l’incubation et au nourrissage d’insectes. Les vieux arbres sont essentiels : un terrain de chasse sans cavité ne suffit pas à un couple nicheur."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Il niche dans certaines régions d’Europe, d’Asie occidentale et d’Afrique du Nord puis hiverne en Afrique subsaharienne. La liste libanaise de 2020 le décrit comme migrateur commun sans reproduction récente confirmée. Un passage printanier ne démontre pas une nidification locale."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Au Liban, le passage va généralement de fin mars à début juin et de début août à fin octobre. Novembre suit le pic automnal habituel. Les dates varient dans le monde arabe ; les relevés datés valent mieux qu’une saison uniforme imposée à toute la région."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Prédateur de gros insectes, il profite des campagnes diversifiées peu traitées. Disparition des arbres creux, intensification, pesticides et tirs illégaux constituent des pressions. Préserver cavités et zones riches en insectes le long des migrations aide l’espèce, en respectant nids et reposoirs."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, European Roller."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الوروار-الأخضر-العربي",
+        "en": "arabian-green-bee-eater",
+        "fr": "guepier-darabie"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "arabian-green-bee-eater"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الوروار الأخضر العربي",
+          "subtitle": "Merops cyanophrys",
+          "meta_description": "الوروار الأخضر العربي Merops cyanophrys من الوروارية Meropidae. ريشه أخضر، وحول العين شريط أسود، وعلى الحلق والوجه زرقة واضحة مع ريشتي ذيل مركزيتين طويلتين في البالغ. فُصل عن مجموعة الوروار الأخضر القديمة؛ لذلك لا يجوز.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الوروار الأخضر العربي Merops cyanophrys من الوروارية Meropidae. ريشه أخضر، وحول العين شريط أسود، وعلى الحلق والوجه زرقة واضحة مع ريشتي ذيل مركزيتين طويلتين في البالغ. فُصل عن مجموعة الوروار الأخضر القديمة؛ لذلك لا يجوز جمع كل صور Merops orientalis القديمة تحت هويته دون فحص البلد والعلامات."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يسكن الأودية والمزارع والحدائق والأراضي الجافة ذات المجاثم المكشوفة. يترقب الحشرات ثم يلتقطها في الهواء ويعود غالبًا إلى مجثم. يشمل غذاؤه نحلًا ودبابير وحشرات طائرة أخرى؛ واسم الوروار لا يعني أنه يعيش على نحل المناحل وحده."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يحفر نفق تعشيش في تربة ملائمة ينتهي بحجرة داخلية. يُطعم الصغار بالحشرات التي يجلبها البالغون. سلامة الضفة أو الجرف الصغير واستقرار التربة ضروريان لنجاح الحضنة؛ ولا تُكشف الحجرة أو يُدخل أي جسم في النفق للتحقق من وجودها."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "نوع مرتبط بالجزيرة العربية والأطراف الجنوبية للشام، وله حضور في السعودية وعُمان واليمن وأجزاء مجاورة. يوثق دليل طيور العلا حضوره في السعودية، وتدعمه مشاهدات عمانية وأردنية. يختلف نطاقه عن الوروار الأخضر الأفريقي والأنواع الآسيوية التي كانت تجمع معه سابقًا."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "مقيم في أجزاء واسعة من نطاقه العربي المناسب، مع تحركات محلية تبعًا للغذاء. يمكن مشاهدته في نوفمبر من دون افتراض هجرة طويلة. تعزز الصور المؤرخة ذات الموقع الدقيق التمييز بين تجمع مقيم وطائر متحرك خارج الموقع المعتاد."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يستهلك الحشرات الطائرة ويحتاج إلى مجاثم ومواضع ترابية آمنة. المبيدات وتسوية الجروف وإزعاج الأعشاش تضعف موائله. عند قربه من منحل تفيد إدارة الموقع وتوثيق السلوك الفعلي بدل افتراض الضرر أو اللجوء إلى القتل."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Royal Commission for AlUla — Birds of AlUla, Arabian Green Bee-eater.",
+                "Saudi Aramco — Birds of Saudi Arabia, volume 2, Arabian Green Bee-eater."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: wilmotsenaratne — CC0 1.0."
+        },
+        "en": {
+          "title": "Arabian Green Bee-eater",
+          "subtitle": "Merops cyanophrys",
+          "meta_description": "Arabian Green Bee-eater Merops cyanophrys belongs to Meropidae. Green plumage, a black eye stripe, conspicuous blue face and throat and elongated adult central tail feathers characterise it. It was split from the former.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Arabian Green Bee-eater Merops cyanophrys belongs to Meropidae. Green plumage, a black eye stripe, conspicuous blue face and throat and elongated adult central tail feathers characterise it. It was split from the former green bee-eater complex; old Merops orientalis photographs require geographic and diagnostic checks."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Wadis, farmland, gardens and dry country with exposed perches provide habitat. It sallies for flying insects and often returns to a perch. Bees, wasps and other flying insects are eaten; the name does not imply exclusive dependence on managed honeybees."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "It excavates a nesting tunnel in suitable soil, ending in an internal chamber. Adults bring insects to the young. A stable bank or small earth face is important for nesting success. Never expose a chamber or insert an object into the tunnel to check occupancy."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Associated with Arabia and the southern Levant, it occurs in Saudi Arabia, Oman, Yemen and adjoining areas. The Birds of AlUla guide documents Saudi occurrence, supported by Omani and Jordanian observations. Its range differs from African and Asian green bee-eaters formerly combined with it."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "It is resident across suitable parts of its Arab range, with local movements following food. November observations need not imply long-distance migration. Dated, accurately located photographs help distinguish resident groups from movements beyond usual sites."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It consumes flying insects and requires perches and safe earthen nesting sites. Pesticides, bank levelling and nest disturbance degrade habitat. Near apiaries, site management and documented feeding behaviour are preferable to assuming damage or killing birds."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Royal Commission for AlUla — Birds of AlUla, Arabian Green Bee-eater.",
+                "Saudi Aramco — Birds of Saudi Arabia, volume 2, Arabian Green Bee-eater."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: wilmotsenaratne — CC0 1.0."
+        },
+        "fr": {
+          "title": "Guêpier d’Arabie",
+          "subtitle": "Merops cyanophrys",
+          "meta_description": "Le Guêpier d’Arabie Merops cyanophrys appartient aux Meropidae. Plumage vert, bande oculaire noire, face et gorge nettement bleues et longues rectrices centrales adultes le caractérisent. Séparé de l’ancien complexe des.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Guêpier d’Arabie Merops cyanophrys appartient aux Meropidae. Plumage vert, bande oculaire noire, face et gorge nettement bleues et longues rectrices centrales adultes le caractérisent. Séparé de l’ancien complexe des guêpiers verts, il exige un contrôle géographique et visuel des anciennes photos nommées Merops orientalis."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Oueds, cultures, jardins et milieux secs avec perchoirs dégagés lui conviennent. Il capture les insectes en vol et revient souvent se poser. Abeilles, guêpes et autres insectes volants composent son régime ; son nom ne signifie pas une dépendance exclusive aux abeilles domestiques."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Il creuse un tunnel dans un sol approprié, terminé par une chambre. Les adultes apportent des insectes aux jeunes. La stabilité du talus ou de la petite paroi terreuse compte pour la réussite. Ne jamais ouvrir la chambre ni introduire un objet dans le tunnel pour contrôler son occupation."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Lié à l’Arabie et au sud du Levant, il est présent en Arabie saoudite, Oman, Yémen et régions voisines. Le guide Birds of AlUla documente sa présence saoudienne, complétée par des observations omanaises et jordaniennes. Son aire diffère de celles des guêpiers verts africains et asiatiques autrefois réunis."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Résident dans les secteurs favorables de son aire arabe, il effectue des déplacements locaux selon les ressources. Une observation de novembre n’implique pas nécessairement une grande migration. Des photos datées et précisément localisées distinguent mieux groupes résidents et mouvements hors sites habituels."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Consommateur d’insectes volants, il dépend de perchoirs et de terrains de nidification sûrs. Pesticides, arasement des talus et dérangement dégradent son habitat. Près des ruchers, gestion du site et documentation du comportement valent mieux qu’un dommage supposé ou la destruction des oiseaux."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Royal Commission for AlUla — Birds of AlUla, Arabian Green Bee-eater.",
+                "Saudi Aramco — Birds of Saudi Arabia, volume 2, Arabian Green Bee-eater."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: wilmotsenaratne — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الحمام-الصخري",
+        "en": "rock-dove",
+        "fr": "pigeon-biset"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "rock-dove"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الحمام الصخري",
+          "subtitle": "Columba livia",
+          "meta_description": "الحمام الصخري Columba livia من الحماميات Columbidae، وهو الأصل البري للحمام المستأنس. صورته البرية المعتادة رمادية مع شريطين أسودين على الجناح وعجز فاتح ولمعان أخضر وبنفسجي على العنق. لكن حمام المدن قد يحمل المظهر نفسه؛.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الحمام الصخري Columba livia من الحماميات Columbidae، وهو الأصل البري للحمام المستأنس. صورته البرية المعتادة رمادية مع شريطين أسودين على الجناح وعجز فاتح ولمعان أخضر وبنفسجي على العنق. لكن حمام المدن قد يحمل المظهر نفسه؛ فلا يثبت اللون وحده نقاء الأصل البري."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يعشش بريًا في المنحدرات والكهوف الساحلية والداخلية، ويتغذى في الأراضي المفتوحة على البذور والحبوب. استفادت أشكال مستأنسة ومتوحشة من المباني والغذاء البشري. يطير في أسراب ويتردد على الماء، مع اختلاف الاعتماد على الإنسان بين التجمعات."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يضع عادة بيضتين في عش بسيط على رف صخري أو مكان محمي. يتناوب الأبوان الحضانة نحو 18–19 يومًا ويغذيان الفراخ بلبن الحوصلة ثم بغذاء نباتي تدريجيًا. يمكن تكرار الحضنات إذا سمحت الظروف؛ ولا تعني كثرة تكاثر حمام المدن أن كل تجمع صخري يملك الإنتاج نفسه."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "تشمل أصوله البرية حوض المتوسط وشمال أفريقيا والشرق الأوسط. تصف قائمة لبنان الحمام الصخري بمقيم متكاثر على الجروف، بينما ينتشر الحمام المتوحش قرب المدن في بلدان عربية كثيرة. التفريق بينهما مهم عند وصف موطن طبيعي أو تعداد تجمع بري."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "مقيم عادة في مواضع توفر الصخور والغذاء، لذلك يمكن رصده في نوفمبر. تسجل الموائل والسلوك والابتعاد عن المستوطنات إلى جانب علامات الريش، مع بقاء الأصول المختلطة ممكنة؛ لا تُمنح هوية «بري نقي» اعتمادًا على صورة واحدة."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "ينقل البذور ضمن غذائه ويشكل فريسة لجوارح متعددة. يهدد اختلاط الحمام المنزلي التجمعات البرية الأصيلة، إلى جانب إزعاج الجروف وفقدان الموائل. إدارة حمام المدن موضوع مستقل عن حماية الأصول البرية؛ وتجنب إطعام الطيور عشوائيًا يحسن صحة التجمعات الحضرية."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Columba livia."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Jean-Paul Boerekamps — CC0 1.0."
+        },
+        "en": {
+          "title": "Rock Dove",
+          "subtitle": "Columba livia",
+          "meta_description": "Rock Dove Columba livia belongs to Columbidae and is the wild ancestor of domestic pigeons. Typical wild-type birds are grey with two black wing bars, a pale rump and green-purple neck gloss. Feral city pigeons can.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Rock Dove Columba livia belongs to Columbidae and is the wild ancestor of domestic pigeons. Typical wild-type birds are grey with two black wing bars, a pale rump and green-purple neck gloss. Feral city pigeons can share this appearance, so colour alone cannot establish genetically wild ancestry."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Wild birds nest on coastal and inland cliffs and in caves, feeding on seeds and grain in open country. Domestic and feral forms exploit buildings and human food. Flocks travel to feeding and watering places; dependence on people varies among populations."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "Usually two eggs lie in a simple nest on a ledge or sheltered site. Both parents incubate for about 18–19 days and feed chicks crop milk, progressively adding plant food. Repeated broods are possible when conditions permit; urban productivity cannot be assumed for every wild cliff population."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its native wild range includes the Mediterranean, North Africa and Middle East. Lebanon’s checklist describes a cliff-nesting breeding resident. Feral pigeons are widespread around Arab cities. Distinguishing these categories matters when describing natural habitats or counting wild populations."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Usually resident where rock sites and food persist, it can be observed in November. Habitat, behaviour and distance from settlements should accompany plumage notes, while mixed ancestry remains possible. A single photograph should not be labelled proof of genetically pure wild origin."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It consumes seeds and supplies prey for several raptors. Domestic introgression threatens original wild populations, alongside cliff disturbance and habitat loss. Urban pigeon management differs from protecting wild ancestry; avoiding indiscriminate feeding also improves conditions for urban flocks."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Columba livia."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Jean-Paul Boerekamps — CC0 1.0."
+        },
+        "fr": {
+          "title": "Pigeon biset",
+          "subtitle": "Columba livia",
+          "meta_description": "Le Pigeon biset Columba livia appartient aux Columbidae et constitue l’ancêtre sauvage des pigeons domestiques. Le type sauvage est gris, avec deux barres alaires noires, croupion clair et reflets verts et violets au.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Pigeon biset Columba livia appartient aux Columbidae et constitue l’ancêtre sauvage des pigeons domestiques. Le type sauvage est gris, avec deux barres alaires noires, croupion clair et reflets verts et violets au cou. Les pigeons urbains peuvent avoir ce plumage ; il ne prouve donc pas une ascendance sauvage pure."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Les oiseaux sauvages nichent dans falaises et grottes littorales ou intérieures et consomment graines et céréales en terrain ouvert. Les formes domestiques et férales exploitent bâtiments et nourriture humaine. Les groupes rejoignent leurs zones de nourrissage et d’abreuvement ; leur dépendance à l’homme varie."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Deux œufs reposent généralement dans un nid sommaire sur une corniche ou un site abrité. Les deux parents couvent environ 18–19 jours et produisent du lait de jabot, puis ajoutent progressivement des végétaux. Plusieurs nichées sont possibles si les conditions le permettent ; la productivité urbaine ne se généralise pas aux colonies sauvages."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire sauvage d’origine comprend Méditerranée, Afrique du Nord et Moyen-Orient. La liste libanaise le décrit comme résident nicheur des falaises. Les pigeons féraux sont répandus dans les villes arabes. Cette distinction compte pour décrire un milieu naturel ou dénombrer une population sauvage."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Généralement résident lorsque rochers et nourriture restent disponibles, il s’observe en novembre. Habitat, comportement et distance aux habitations complètent les critères du plumage ; une ascendance mixte reste possible. Une seule photographie ne prouve pas une origine génétiquement sauvage pure."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Consommateur de graines, il nourrit plusieurs rapaces. L’introgression domestique menace les populations sauvages d’origine, avec dérangement des falaises et perte d’habitats. Gérer les pigeons urbains diffère de préserver les lignées sauvages ; éviter les nourrissages indiscriminés améliore aussi les conditions sanitaires urbaines."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Columba livia."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Jean-Paul Boerekamps — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "القطا-أسود-البطن",
+        "en": "black-bellied-sandgrouse",
+        "fr": "ganga-unibande"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "black-bellied-sandgrouse"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "القطا أسود البطن",
+          "subtitle": "Pterocles orientalis",
+          "meta_description": "القطا أسود البطن Pterocles orientalis من القطويات Pteroclidae. طائر ممتلئ ذو رأس صغير وجناحين مدببين، وتظهر رقعة بطن سوداء واضحة في الجنسين. الذكر أبسط لونًا على الرأس والصدر، والأنثى أكثر تنقيطًا وتمويهًا. الذيل أقصر.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "القطا أسود البطن Pterocles orientalis من القطويات Pteroclidae. طائر ممتلئ ذو رأس صغير وجناحين مدببين، وتظهر رقعة بطن سوداء واضحة في الجنسين. الذكر أبسط لونًا على الرأس والصدر، والأنثى أكثر تنقيطًا وتمويهًا. الذيل أقصر وأقل استطالة من ذيل القطا دبوسي الذيل."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يسكن السهوب والأراضي شبه الجافة والحقول المفتوحة قليلة الغطاء، ويأكل البذور من الأرض. يرتاد موارد الماء وقد يطير إليها من مسافات بعيدة. لا يعادل تحمله الجفاف الاستغناء عن الماء، خصوصًا عند تربية الفراخ."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يعشش في حفرة أرضية مكشوفة نسبيًا، وغالبًا ما تضم الحضنة ثلاث بيضات. يتناوب الأبوان الحضانة؛ ووثقت دراسة في غرب وسط المغرب مدة تقارب 26 يومًا. تغادر الفراخ العش مبكرًا وتلتقط غذاءها، ويحمل الذكر الماء إليها في ريش البطن المتخصص؛ وتبقى بحاجة إلى حماية الأبوين."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يشمل نطاقه أجزاء من شمال أفريقيا والشرق الأوسط وآسيا. توثق دراسات مغربية تكاثره في السهوب، بينما تصفه قائمة لبنان بزائر شتوي بعد زيادة السجلات. لا تعني زيارة الشتاء اللبنانية أنه يتكاثر هناك، ولا أن كل القطا العربي من هذا النوع."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "قد توجد تجمعات مقيمة وأخرى متحركة وفق الماء والمواسم. في نوفمبر تناسب مراقبة الموارد والسهوب دون قطع طريق الطيور بين الغذاء والماء. توثق العلامات والنداءات والعدد لتجنب الخلط مع أنواع القطا الأخرى."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تضر به خسارة السهوب وتحويل الزراعة والصيد والإزعاج قرب المياه. الأعشاش الأرضية معرضة للدهس والآليات. صون فسيفساء الأراضي المفتوحة وموارد الماء الآمنة يحافظ على دورة الغذاء والتكاثر؛ ولا تُستخدم المياه فخًا لجذب الطيور وصيدها."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Ostrich — Breeding biology of the Black-bellied Sandgrouse Pterocles orientalis in west-central Morocco.",
+                "Ferraz et al. — Animal Biotelemetry 12 (2024), 30."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева — CC0 1.0."
+        },
+        "en": {
+          "title": "Black-bellied Sandgrouse",
+          "subtitle": "Pterocles orientalis",
+          "meta_description": "Black-bellied Sandgrouse Pterocles orientalis belongs to Pteroclidae. Its plump body, small head and pointed wings accompany a conspicuous black belly in both sexes. Males have simpler head and breast colours; females.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Black-bellied Sandgrouse Pterocles orientalis belongs to Pteroclidae. Its plump body, small head and pointed wings accompany a conspicuous black belly in both sexes. Males have simpler head and breast colours; females are more mottled. The tail is shorter and less elongated than in Pin-tailed Sandgrouse."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Steppe, semiarid country and sparsely vegetated open fields provide seed food collected on the ground. Birds visit water, sometimes flying considerable distances. Tolerance of dry conditions does not eliminate water requirements, especially while raising chicks."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "The nest is a ground scrape, usually with three eggs. Both parents alternate incubation; a west-central Moroccan study documented about 26 days. Chicks leave early and pick up food, while the male carries water in specialised belly feathers. Parental protection remains necessary after nest departure."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range includes parts of North Africa, the Middle East and Asia. Moroccan studies document steppe breeding, while Lebanon’s checklist describes winter visits following increased records. Lebanese winter presence does not establish local breeding; Arab sandgrouse are not all this species."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Populations include residents and birds moving with water and seasonal conditions. November observation can focus on steppe and water without obstructing feeding-to-drinking journeys. Record plumage, calls and numbers to distinguish other sandgrouse."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Steppe loss, agricultural change, hunting and disturbance around water are pressures. Ground nests are vulnerable to vehicles and trampling. Open-land mosaics and safe water support feeding and breeding; drinking sites should not become traps for capture."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Ostrich — Breeding biology of the Black-bellied Sandgrouse Pterocles orientalis in west-central Morocco.",
+                "Ferraz et al. — Animal Biotelemetry 12 (2024), 30."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0 1.0."
+        },
+        "fr": {
+          "title": "Ganga unibande",
+          "subtitle": "Pterocles orientalis",
+          "meta_description": "Le Ganga unibande Pterocles orientalis appartient aux Pteroclidae. Corps trapu, petite tête et ailes pointues accompagnent un ventre nettement noir chez les deux sexes. Le mâle possède tête et poitrine moins marquées ;.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Ganga unibande Pterocles orientalis appartient aux Pteroclidae. Corps trapu, petite tête et ailes pointues accompagnent un ventre nettement noir chez les deux sexes. Le mâle possède tête et poitrine moins marquées ; la femelle est plus tachetée. Sa queue est moins allongée que celle du Ganga cata."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Steppes, milieux semi-arides et champs ouverts peu végétalisés fournissent des graines récoltées au sol. Les oiseaux rejoignent les points d’eau, parfois éloignés. Leur adaptation à l’aridité ne supprime pas le besoin d’eau, surtout pendant l’élevage des jeunes."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid est une dépression au sol contenant généralement trois œufs. Les parents alternent l’incubation ; une étude du centre-ouest marocain a documenté environ 26 jours. Les poussins quittent tôt le nid et prennent leur nourriture ; le mâle transporte de l’eau dans ses plumes ventrales spécialisées. Leur protection parentale reste nécessaire."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire comprend des parties de l’Afrique du Nord, du Moyen-Orient et de l’Asie. Des études marocaines documentent sa reproduction steppique ; la liste libanaise décrit des visites hivernales après une hausse des observations. L’hivernage libanais ne prouve pas la nidification locale et tous les gangas arabes ne sont pas cette espèce."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Des populations résident et d’autres se déplacent selon eau et saisons. En novembre, steppes et abreuvoirs permettent l’observation sans interrompre les trajets alimentaires. Plumage, cris et effectifs aident à distinguer les autres gangas."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Disparition des steppes, transformations agricoles, chasse et dérangement près de l’eau constituent des pressions. Les nids au sol sont sensibles aux véhicules et au piétinement. Mosaïques ouvertes et eau sûre soutiennent alimentation et reproduction ; les abreuvoirs ne doivent pas devenir des pièges."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Ostrich — Breeding biology of the Black-bellied Sandgrouse Pterocles orientalis in west-central Morocco.",
+                "Ferraz et al. — Animal Biotelemetry 12 (2024), 30."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "القطا-دبوسي-الذيل",
+        "en": "pin-tailed-sandgrouse",
+        "fr": "ganga-cata"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "pin-tailed-sandgrouse"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "القطا دبوسي الذيل",
+          "subtitle": "Pterocles alchata",
+          "meta_description": "القطا دبوسي الذيل Pterocles alchata من القطويات Pteroclidae، ويعرف عربيًا بأسماء محلية متعددة. يتميز بذيل ذي ريشات مركزية مدببة وبطن أبيض، خلافًا للبطن الأسود عند القطا أسود البطن. يحمل الذكر ألوانًا وخطوطًا صدرية أوضح،.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "القطا دبوسي الذيل Pterocles alchata من القطويات Pteroclidae، ويعرف عربيًا بأسماء محلية متعددة. يتميز بذيل ذي ريشات مركزية مدببة وبطن أبيض، خلافًا للبطن الأسود عند القطا أسود البطن. يحمل الذكر ألوانًا وخطوطًا صدرية أوضح، والأنثى أكثر تمويهًا؛ ويجمع التشخيص بين البطن والذيل والرأس."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "طائر سهوب وسهول جافة وأراضٍ زراعية مفتوحة قليلة الأشجار. يلتقط بذورًا صغيرة من الأرض ويشرب بانتظام، وقد يتجمع في أسراب عند الماء. أجنحته طويلة مدببة وطيرانه سريع؛ وليس كل سرب يعبر الصحراء في الاتجاه نفسه مهاجرًا لمسافة قارية."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يعشش على الأرض في حفرة بسيطة، وتضم الحضنة عادة ثلاث بيضات. أكدت دراسات ميدانية تناوب الجنسين على الحضانة. الفراخ مبكرة الحركة وتلتقط الغذاء بنفسها، بينما ينقل الذكر الماء في الريش المتخصص ويحميها الأبوان. تتبع المواعيد المطر والغذاء والظروف الإقليمية."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يشمل نطاقه شمال أفريقيا وأجزاء من الشرق الأوسط، بما فيها تجمعات السهوب العراقية، إلى جانب نطاق أوروبي وآسيوي. في لبنان هو نادر جدًا بحسب قائمة 2020؛ لذلك تركز أهميته العربية على أقاليمه السهبية، لا على وصفه بطائر لبناني شائع."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "تختلف الإقامة والتحركات بين التجمعات. في نوفمبر تفيد مراقبة السهوب وموارد الماء من بعيد، وتسجيل اتجاه الوصول والمغادرة. النهايات الذيلية الطويلة قد تكون غير ظاهرة في صورة أمامية؛ لذا يفضل توثيق أكثر من زاوية دون مطاردة."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يتأثر بتحويل السهوب وتكثيف الزراعة والاضطراب والصيد. وتبين دراسات الأعشاش حساسيته لزيارات الإنسان؛ لذلك لا ينبغي البحث عن البيض بالمشي العشوائي أو السيارات. حماية موائل الغذاء والشراب والتعشيش معًا تحفظ دورة حياته."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Ferraz et al. — Using GPS and accelerometer data to remotely detect breeding events in two elusive ground-nesting steppe birds, Animal Biotelemetry 12 (2024), 30."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Mourad Harzallah — original photograph, unmodified",
+              "url": "https://www.inaturalist.org/photos/176603239"
+            },
+            {
+              "label": "CC BY 4.0",
+              "url": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "photo_credit": "الصورة: Mourad Harzallah — CC BY 4.0."
+        },
+        "en": {
+          "title": "Pin-tailed Sandgrouse",
+          "subtitle": "Pterocles alchata",
+          "meta_description": "Pin-tailed Sandgrouse Pterocles alchata belongs to Pteroclidae. Pointed central tail feathers and a white belly distinguish it from Black-bellied Sandgrouse. Males have stronger breast colours and bands, females more.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Pin-tailed Sandgrouse Pterocles alchata belongs to Pteroclidae. Pointed central tail feathers and a white belly distinguish it from Black-bellied Sandgrouse. Males have stronger breast colours and bands, females more cryptic markings. Identification combines belly, tail and head rather than a single feature."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It uses steppe, dry plains and open, sparsely wooded farmland. Small seeds are collected on the ground; birds drink regularly and may gather at water. Long pointed wings produce fast flight. A desert flock travelling in one direction is not necessarily undertaking continental migration."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A simple ground scrape usually holds three eggs. Field studies confirm alternating male and female incubation. Mobile chicks collect their own food, while the male transports water in specialised feathers and both parents protect them. Rainfall, food and regional conditions influence timing."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range includes North Africa and parts of the Middle East, including Iraqi steppe populations, as well as Europe and Asia. Lebanon’s 2020 checklist treats it as very rare. Its Arab importance therefore centres on steppe regions rather than common Lebanese occurrence."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Residence and movements differ among populations. November observation should use distant views of steppe and water, noting arrival and departure directions. Long tail tips may be hidden in a frontal view; several angles help without pursuing birds."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Steppe conversion, agricultural intensification, disturbance and hunting are pressures. Nest studies demonstrate sensitivity to human visits; random searching on foot or by vehicle can threaten eggs. Feeding, drinking and nesting habitats require protection together."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Ferraz et al. — Using GPS and accelerometer data to remotely detect breeding events in two elusive ground-nesting steppe birds, Animal Biotelemetry 12 (2024), 30."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Mourad Harzallah — original photograph, unmodified",
+              "url": "https://www.inaturalist.org/photos/176603239"
+            },
+            {
+              "label": "CC BY 4.0",
+              "url": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "photo_credit": "Photo: Mourad Harzallah — CC BY 4.0."
+        },
+        "fr": {
+          "title": "Ganga cata",
+          "subtitle": "Pterocles alchata",
+          "meta_description": "Le Ganga cata Pterocles alchata appartient aux Pteroclidae. Rectrices centrales effilées et ventre blanc le distinguent du Ganga unibande au ventre noir. Le mâle présente des couleurs et bandes pectorales plus affirmées.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Ganga cata Pterocles alchata appartient aux Pteroclidae. Rectrices centrales effilées et ventre blanc le distinguent du Ganga unibande au ventre noir. Le mâle présente des couleurs et bandes pectorales plus affirmées ; la femelle est davantage camouflée. L’identification combine ventre, queue et tête."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il fréquente steppes, plaines sèches et campagnes ouvertes peu boisées. Il prélève de petites graines au sol et boit régulièrement, parfois en groupes. Ses ailes longues et pointues produisent un vol rapide. Un groupe traversant le désert n’effectue pas nécessairement une migration continentale."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Une dépression simple au sol contient généralement trois œufs. Les études de terrain confirment l’alternance des sexes pendant l’incubation. Les poussins mobiles prennent leur nourriture ; le mâle transporte l’eau dans des plumes spécialisées et les deux parents les protègent. Pluies, nourriture et conditions régionales règlent les dates."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire couvre Afrique du Nord et certaines régions du Moyen-Orient, dont les steppes irakiennes, ainsi que l’Europe et l’Asie. La liste libanaise de 2020 le considère très rare. Son importance arabe tient donc surtout aux régions steppiques, sans en faire un oiseau libanais commun."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Résidence et déplacements varient entre populations. En novembre, observer de loin steppes et points d’eau permet de noter directions d’arrivée et de départ. Les pointes de la queue peuvent être cachées de face ; plusieurs angles aident sans poursuivre les oiseaux."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Conversion des steppes, intensification agricole, dérangement et chasse constituent des pressions. Les études de nids montrent la sensibilité aux visites humaines ; recherches aléatoires à pied ou en véhicule menacent les pontes. Alimentation, abreuvement et nidification nécessitent une protection conjointe."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Ferraz et al. — Using GPS and accelerometer data to remotely detect breeding events in two elusive ground-nesting steppe birds, Animal Biotelemetry 12 (2024), 30."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Mourad Harzallah — original photograph, unmodified",
+              "url": "https://www.inaturalist.org/photos/176603239"
+            },
+            {
+              "label": "CC BY 4.0",
+              "url": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "photo_credit": "Photo: Mourad Harzallah — CC BY 4.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "حجل-الرمال",
+        "en": "sand-partridge",
+        "fr": "perdrix-de-hey"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "sand-partridge"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "حجل الرمال",
+          "subtitle": "Ammoperdix heyi",
+          "meta_description": "حجل الرمال Ammoperdix heyi من التدرجيات Phasianidae. طائر صغير مستدير بلون رملي، تظهر على جنبيه أشرطة بيضاء وكستنائية. رأس الذكر رمادي بعلامات بيضاء وسوداء، والأنثى أبسط وأكثر تمويهًا. يختلف عن الحجل البربري والشوكار.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "حجل الرمال Ammoperdix heyi من التدرجيات Phasianidae. طائر صغير مستدير بلون رملي، تظهر على جنبيه أشرطة بيضاء وكستنائية. رأس الذكر رمادي بعلامات بيضاء وسوداء، والأنثى أبسط وأكثر تمويهًا. يختلف عن الحجل البربري والشوكار بحجمه وبنية علامات الرأس والرقبة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد السفوح الصخرية الجافة والأودية والمنحدرات ذات الشجيرات المتناثرة. يجري بين الصخور ويجمع بذورًا وأجزاء نباتية وحشرات من الأرض. قد تتجمع الطيور قرب الماء؛ واندماجها بلون الصخور يجعل اكتشافها صوتيًا أو عند الحركة أسهل من رؤيتها ساكنة."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "العش حفرة أرضية محمية نسبيًا بالصخر أو النبات. تتولى الأنثى الحضانة، وتخرج الفراخ مكسوة بالزغب وقادرة على السير والتقاط الغذاء بصحبة البالغين. لا تعني هذه القدرة اكتمال الطيران. بيانات التكاثر المحلية ليست متساوية الوفرة في جميع البلدان، لذلك لا تُعمم أرقام بلد واحد على النطاق كله."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "من طيور البيئات الجافة في مصر وسيناء والأردن وأجزاء من الجزيرة العربية. في الإمارات تصفه سجلات التقييم الوطني بطائر متكاثر في الموائل المناسبة. أما لبنان فسجله عرضي قديم، ولا يصح اختياره على أساس أنه حجل لبناني منتشر."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "مقيم في أجزاء من نطاقه، مع تحركات محلية مرتبطة بالماء والغذاء. يمكن رصده في نوفمبر في الأودية الصخرية الهادئة، خاصة في ساعات الحرارة المعتدلة. تتطلب مجموعات العائلات مساحة للابتعاد مشيًا دون إجبارها على الطيران المتكرر."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تحتاج تجمعاته إلى سفوح سليمة وملاجئ وموارد آمنة. تضر بها المطاردة بالمركبات والصيد المفرط وأعمال التجريف. يحافظ البقاء على المسارات وتجنب اقتحام المخابئ على طائر يعتمد على الجري والتخفي في بيئة جافة مكشوفة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "UAE National Red List — Ammoperdix heyi.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Sand Partridge."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Raffaele Maiorano — CC0 1.0."
+        },
+        "en": {
+          "title": "Sand Partridge",
+          "subtitle": "Ammoperdix heyi",
+          "meta_description": "Sand Partridge Ammoperdix heyi belongs to Phasianidae. Small and rounded, it has sandy plumage and white-and-chestnut flank bars. Males show a grey head with black-and-white markings; females are plainer. Size and.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Sand Partridge Ammoperdix heyi belongs to Phasianidae. Small and rounded, it has sandy plumage and white-and-chestnut flank bars. Males show a grey head with black-and-white markings; females are plainer. Size and head-and-neck pattern separate it from Barbary Partridge and Chukar."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Dry rocky slopes, wadis and sparsely scrubbed hills provide habitat. It runs between rocks and collects seeds, plant material and insects on the ground. Birds may gather near water. Camouflage often makes calls or movement easier to detect than a stationary individual."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A ground hollow is sheltered by rock or vegetation. The female incubates; downy chicks can walk and collect food while accompanying adults. Mobility is not fully developed flight. Local breeding information remains uneven among countries, so figures from one population should not be imposed throughout the range."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its dry-country range includes Egypt and Sinai, Jordan and parts of Arabia. UAE national assessment records describe breeding in suitable habitat. Lebanon has an old accidental record, rather than evidence of a widespread local partridge."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Resident in parts of its range, it makes local movements with water and food. Quiet rocky wadis can support November observation, especially in moderate temperatures. Give family groups room to walk away without repeated forced flights."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Populations need intact slopes, shelter and safe resources. Vehicle pursuit, excessive hunting and excavation are pressures. Staying on tracks and avoiding refuges protects a bird adapted to running and concealment in exposed arid terrain."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "UAE National Red List — Ammoperdix heyi.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Sand Partridge."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Raffaele Maiorano — CC0 1.0."
+        },
+        "fr": {
+          "title": "Perdrix de Hey",
+          "subtitle": "Ammoperdix heyi",
+          "meta_description": "La Perdrix de Hey Ammoperdix heyi appartient aux Phasianidae. Petite et ronde, elle porte un plumage sable et des flancs barrés de blanc et de châtain. Le mâle a une tête grise marquée de noir et blanc ; la femelle est.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Perdrix de Hey Ammoperdix heyi appartient aux Phasianidae. Petite et ronde, elle porte un plumage sable et des flancs barrés de blanc et de châtain. Le mâle a une tête grise marquée de noir et blanc ; la femelle est plus uniforme. Taille et dessins de la tête et du cou la distinguent des perdrix gambra et choukar."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Elle fréquente pentes rocheuses sèches, oueds et collines peu buissonneuses. Elle court entre les rochers et récolte graines, végétaux et insectes au sol. Des groupes peuvent rejoindre l’eau. Le camouflage rend souvent cris et mouvements plus perceptibles qu’un individu immobile."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Une dépression au sol est abritée par roche ou végétation. La femelle couve ; les poussins duveteux marchent et prennent leur nourriture en accompagnant les adultes. Cette mobilité ne signifie pas un vol développé. Les données locales sont inégales : les chiffres d’une population ne se généralisent pas à toute l’aire."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire aride comprend Égypte et Sinaï, Jordanie et certaines régions d’Arabie. L’évaluation nationale émiratie signale la reproduction dans les milieux appropriés. Le Liban ne possède qu’un ancien signalement accidentel, sans population locale largement répandue."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Résidente dans certaines parties de son aire, elle se déplace localement selon eau et nourriture. Les oueds rocheux tranquilles permettent l’observation en novembre, surtout aux heures tempérées. Laisser les familles s’éloigner à pied évite les envols forcés répétés."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Les populations dépendent de pentes intactes, refuges et ressources sûres. Poursuites motorisées, chasse excessive et terrassements constituent des pressions. Rester sur les pistes et respecter les abris protège cet oiseau adapté à la course et au camouflage en milieu aride."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "UAE National Red List — Ammoperdix heyi.",
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Sand Partridge."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Raffaele Maiorano — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الأبلق-الصحراوي",
+        "en": "desert-wheatear",
+        "fr": "traquet-du-desert"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "desert-wheatear"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الأبلق الصحراوي",
+          "subtitle": "Oenanthe deserti",
+          "meta_description": "الأبلق الصحراوي Oenanthe deserti من صائدات الذباب Muscicapidae. للذكر وجه وحلق أسودان وظهر رملي، والأنثى أبهت. أهم العلامات ذيل يبدو أسود في معظمه مع قاعدة بيضاء محدودة، بخلاف الرسم الأبيض والأسود الأوسع عند أبلقات.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الأبلق الصحراوي Oenanthe deserti من صائدات الذباب Muscicapidae. للذكر وجه وحلق أسودان وظهر رملي، والأنثى أبهت. أهم العلامات ذيل يبدو أسود في معظمه مع قاعدة بيضاء محدودة، بخلاف الرسم الأبيض والأسود الأوسع عند أبلقات أخرى. قد تحجب وضعية الذيل بعض العلامات."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يعيش في صحارى وسهول حصوية وأراضٍ جافة مفتوحة قليلة النبات. يقف على حجر أو شجيرة ثم يلتقط الحشرات واللافقاريات من الأرض، وأحيانًا في طلعة قصيرة. تتيح الملاجئ والظل مواضع راحة، ولا تعني البيئة الصحراوية نشاطًا متساويًا في حر النهار كله."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يضع عشًا مستورًا في فجوة أو تحت صخرة أو داخل جحر مناسب. تُطعم الفراخ بلافقاريات حتى تغادر العش وتستمر رعاية البالغين بعدها. يرتبط بدء التكاثر في البيئات الجافة بتوفر الغذاء وظروف الموسم؛ فلا يُنقل توقيت التعشيش الأوروبي أو الآسيوي إلى كل صحراء عربية."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "له نطاق شمال أفريقي وآسيوي يشمل صحارى عربية، مع تجمعات مقيمة وأخرى مهاجرة. في لبنان تصفه القائمة بعابر خريفي قليل وغير منتظم وعابر ربيعي نادر، لا بمقيم واسع الانتشار. وتستقبل مناطق من الجزيرة العربية طيورًا شتوية."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "نوفمبر مناسب لمراقبته في مناطق الشتاء الصحراوية، بينما قد يكون متأخرًا عن معظم عبوره اللبناني المعتاد. صورة الذيل المفرود والوجه والجناح تقوي التشخيص. تقترن الملاحظة بالمكان والتاريخ لأن تغيرات العمر والجنس تقلل موثوقية اللون وحده."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يشغل موقعًا في شبكة غذاء الصحراء كمستهلك للافقاريات وفريسة للجوارح. تضر به خسارة الغطاء المتناثر والتجريف والسير خارج الطرق. ترك بقع النبات والصخور دون تسوية يحفظ مواضع الغذاء والظل والتعشيش في بيئة تبدو فارغة وهي عامرة بالحياة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Desert Wheatear."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева — CC0 1.0."
+        },
+        "en": {
+          "title": "Desert Wheatear",
+          "subtitle": "Oenanthe deserti",
+          "meta_description": "Desert Wheatear Oenanthe deserti belongs to Muscicapidae. Males combine a black face and throat with sandy upperparts; females are duller. A mostly black tail with only a restricted white base is important, unlike the.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Desert Wheatear Oenanthe deserti belongs to Muscicapidae. Males combine a black face and throat with sandy upperparts; females are duller. A mostly black tail with only a restricted white base is important, unlike the broader black-and-white patterns of other wheatears. Tail position can hide diagnostic features."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Desert, gravel plains and dry open land with sparse plants provide habitat. From a stone or shrub it drops onto ground insects and other invertebrates, sometimes making short aerial sallies. Shelter and shade provide rest; desert adaptation does not mean equal activity throughout midday heat."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A concealed nest occupies a cavity, space beneath a rock or suitable burrow. Invertebrates feed growing nestlings, and care continues after nest departure. Food and seasonal conditions influence breeding in arid habitats; European or Asian calendars should not be imposed on every Arab desert."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its North African and Asian range includes Arab deserts, with both resident and migratory populations. Lebanon’s checklist describes scarce irregular autumn passage and rare spring passage, rather than widespread residence. Parts of Arabia receive wintering birds."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "November suits observation in desert wintering areas, while following most usual Lebanese autumn passage. Views of spread tail, face and wings improve identification. Location and date matter because age and sex reduce the value of colour alone."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It consumes invertebrates and feeds desert raptors. Loss of scattered vegetation, land levelling and off-road driving are pressures. Retaining rocks and plant patches preserves food, shade and nesting places in terrain that may look empty but supports varied life."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Desert Wheatear."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0 1.0."
+        },
+        "fr": {
+          "title": "Traquet du désert",
+          "subtitle": "Oenanthe deserti",
+          "meta_description": "Le Traquet du désert Oenanthe deserti appartient aux Muscicapidae. Le mâle associe face et gorge noires à un dessus sable ; la femelle est plus terne. La queue surtout noire, avec peu de blanc à la base, est importante.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Traquet du désert Oenanthe deserti appartient aux Muscicapidae. Le mâle associe face et gorge noires à un dessus sable ; la femelle est plus terne. La queue surtout noire, avec peu de blanc à la base, est importante face aux dessins plus largement blancs et noirs d’autres traquets. Sa position peut cacher ces signes."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Déserts, plaines caillouteuses et terrains secs à végétation clairsemée lui conviennent. Depuis pierre ou buisson, il capture au sol insectes et autres invertébrés, parfois lors d’un bref vol. Refuges et ombre offrent du repos ; l’adaptation au désert n’implique pas une activité égale durant toute la chaleur de midi."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid est dissimulé dans une cavité, sous une pierre ou dans un terrier approprié. Les invertébrés nourrissent les jeunes, encore soignés après leur sortie. Nourriture et conditions saisonnières règlent la reproduction aride ; les calendriers européens ou asiatiques ne se transposent pas à tous les déserts arabes."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire nord-africaine et asiatique comprend des déserts arabes, avec populations résidentes et migratrices. La liste libanaise décrit un passage automnal rare et irrégulier et un passage printanier très rare, sans résidence générale. Certaines régions d’Arabie accueillent des hivernants."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Novembre convient à son observation dans les zones désertiques d’hivernage mais suit l’essentiel du passage libanais habituel. Queue étalée, face et ailes aident au diagnostic. Date et lieu comptent, car âge et sexe réduisent la valeur de la couleur seule."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Il consomme des invertébrés et nourrit des rapaces du désert. Disparition des plantes dispersées, nivellement et conduite hors piste constituent des pressions. Garder rochers et taches végétales conserve nourriture, ombre et nidification dans un milieu apparemment vide mais vivant."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Desert Wheatear."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "قبرة-الصحراء",
+        "en": "desert-lark",
+        "fr": "ammomane-isabelline"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "desert-lark"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "قبرة الصحراء",
+          "subtitle": "Ammomanes deserti",
+          "meta_description": "قبرة الصحراء Ammomanes deserti من القبرات Alaudidae. لونها رملي أو بني يماثل صخور موطنها، ومنقارها قوي نسبيًا وصدرها قليل التخطيط. لا تحمل العرف الواضح للقبرة المتوجة. تختلف ألوان التجمعات بحسب البيئة، لذا يراعى شكل.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "قبرة الصحراء Ammomanes deserti من القبرات Alaudidae. لونها رملي أو بني يماثل صخور موطنها، ومنقارها قوي نسبيًا وصدرها قليل التخطيط. لا تحمل العرف الواضح للقبرة المتوجة. تختلف ألوان التجمعات بحسب البيئة، لذا يراعى شكل المنقار والذيل والنداء مع لون الظهر."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "ترتبط بالصخور والتلال الجافة والأودية أكثر من ارتباطها بالرمال المفتوحة الخالصة. تبحث مشيًا عن بذور وحشرات، وتتوارى في الظل خلال الظروف القاسية. قد تظهر في أزواج أو مجموعات صغيرة؛ وتكشفها حركتها بين الصخور أكثر من سكونها."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "تبني عشًا أرضيًا مستورًا جزئيًا بحجر أو نبات، وقد تحيطه قطع صغيرة من الحصى. تحتاج الفراخ إلى إمداد متكرر بالغذاء، خصوصًا اللافقاريات. يحدد المطر ووفرة الغذاء فرص التكاثر محليًا، ولا يجوز تحويل مشاهدة زوج بالغ إلى سجل عش مثبت."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "منتشرة في البيئات الصخرية الجافة بشمال أفريقيا والشرق الأوسط والجزيرة العربية. يدرجها التقرير الوطني الكويتي ضمن الطيور المقيمة المتكاثرة. في لبنان ذات حضور مقيم نادر ومحلي في الشمال الشرقي؛ وهذا التباين يعكس أهمية الموطن، لا اتساع الانتشار وحده."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "مقيمة غالبًا، لذلك تناسب متابعتها في نوفمبر ضمن المواقع الملائمة، مع تحركات محلية محتملة. يفيد التصوير الجانبي الواضح للمنقار والذيل في الفصل من القبرة الصحراوية الشاحبة وغيرها، ولا يصح التعرف من تطابق لون الطائر والرمل وحده."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تعتمد على سلامة الأرض الصخرية وغطائها القليل. التجريف والطرق والمركبات خارج المسارات قد تدمر الأعشاش ومواقع الغذاء. حماية تنوع الموائل الصغيرة، من ظل الحجر إلى بقعة النبات، ذات أثر مهم في صحراء قليلة الإنتاجية."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "State of Kuwait — Fifth National Report to the Convention on Biological Diversity (2014), bird list.",
+                "Royal Commission for AlUla — Birds of AlUla, Desert Lark."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Tero Linjama — CC0 1.0."
+        },
+        "en": {
+          "title": "Desert Lark",
+          "subtitle": "Ammomanes deserti",
+          "meta_description": "Desert Lark Ammomanes deserti belongs to Alaudidae. Sandy or brown plumage matches local rock, with a relatively strong bill and lightly marked breast. It lacks Crested Lark’s prominent crest. Geographic colour.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Desert Lark Ammomanes deserti belongs to Alaudidae. Sandy or brown plumage matches local rock, with a relatively strong bill and lightly marked breast. It lacks Crested Lark’s prominent crest. Geographic colour variation makes bill shape, tail and calls useful alongside upperpart colour."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Rocky hills, dry slopes and wadis are more characteristic than extensive bare sand. It walks for seeds and insects and uses shade in harsh conditions. Pairs or small parties may appear; movement among rocks often reveals otherwise well-camouflaged birds."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A ground nest is partly sheltered by stone or vegetation and may be bordered with small pebbles. Chicks need regular food, especially invertebrates. Rainfall and food availability influence local breeding opportunities; seeing an adult pair does not demonstrate a confirmed nest."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It is widespread in rocky dry habitats of North Africa, the Middle East and Arabia. Kuwait’s national report lists it as a breeding resident. Lebanon has a rare, local resident presence in the northeast. This contrast reflects habitat suitability rather than range size alone."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Usually resident, it can be watched in suitable November habitats, with possible local movements. Clear side views of bill and tail help distinguish similar desert larks. Matching sandy colour alone is insufficient identification."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It depends on intact rocky ground and sparse vegetation. Excavation, roads and off-track vehicles can destroy nests and feeding patches. Conserving small habitat features, from shaded stones to plants, matters in a low-productivity desert."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "State of Kuwait — Fifth National Report to the Convention on Biological Diversity (2014), bird list.",
+                "Royal Commission for AlUla — Birds of AlUla, Desert Lark."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Tero Linjama — CC0 1.0."
+        },
+        "fr": {
+          "title": "Ammomane isabelline",
+          "subtitle": "Ammomanes deserti",
+          "meta_description": "L’Ammomane isabelline Ammomanes deserti appartient aux Alaudidae. Son plumage sable ou brun épouse les rochers locaux ; bec assez fort et poitrine peu marquée la caractérisent. Elle n’a pas la huppe nette du Cochevis.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Ammomane isabelline Ammomanes deserti appartient aux Alaudidae. Son plumage sable ou brun épouse les rochers locaux ; bec assez fort et poitrine peu marquée la caractérisent. Elle n’a pas la huppe nette du Cochevis huppé. La variation géographique des couleurs rend utiles bec, queue et cris."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Collines rocheuses, pentes sèches et oueds sont plus caractéristiques que les vastes sables nus. Elle marche pour prendre graines et insectes et utilise l’ombre dans les conditions difficiles. Couples ou petits groupes apparaissent ; leurs mouvements révèlent des oiseaux autrement bien camouflés."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid au sol est partiellement abrité par pierre ou végétation et parfois bordé de petits cailloux. Les jeunes nécessitent des apports réguliers, notamment d’invertébrés. Pluie et ressources règlent les possibilités locales ; voir un couple adulte ne constitue pas une preuve de nid occupé."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Elle est répandue dans les milieux rocheux secs d’Afrique du Nord, du Moyen-Orient et d’Arabie. Le rapport national koweïtien la classe résidente nicheuse. Au Liban, sa résidence est rare et locale dans le nord-est. Le contraste traduit la disponibilité des habitats."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Généralement résidente, elle peut être observée dans les milieux appropriés en novembre, avec de possibles déplacements locaux. Des vues latérales nettes du bec et de la queue aident à distinguer les espèces voisines. Une couleur sable similaire ne suffit pas."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Elle dépend d’un sol rocheux intact et d’une végétation clairsemée. Terrassements, routes et véhicules hors piste peuvent détruire nids et zones de nourrissage. Préserver les petits éléments du milieu, des pierres ombragées aux plantes, compte dans un désert peu productif."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "State of Kuwait — Fifth National Report to the Convention on Biological Diversity (2014), bird list.",
+                "Royal Commission for AlUla — Birds of AlUla, Desert Lark."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Tero Linjama — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "القبرة-الهدهدية",
+        "en": "greater-hoopoe-lark",
+        "fr": "sirli-du-desert"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "greater-hoopoe-lark"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "القبرة الهدهدية",
+          "subtitle": "Alaemon alaudipes",
+          "meta_description": "القبرة الهدهدية Alaemon alaudipes من القبرات Alaudidae. منقارها طويل مقوس إلى أسفل وساقاها طويلتان، ويظهر جناحها الأسود والأبيض بوضوح في الطيران. لونها الرملي وهي واقفة يخفي هذه العلامة. تشبه الهدهد في المنقار لا في.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "القبرة الهدهدية Alaemon alaudipes من القبرات Alaudidae. منقارها طويل مقوس إلى أسفل وساقاها طويلتان، ويظهر جناحها الأسود والأبيض بوضوح في الطيران. لونها الرملي وهي واقفة يخفي هذه العلامة. تشبه الهدهد في المنقار لا في العرف أو تصنيف الفصيلة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تعيش في سهول صحراوية مفتوحة ذات رمال أو حصى ونباتات متناثرة. تجري بسرعة وتلتقط اللافقاريات، وتتناول بذورًا أيضًا. قد تعرض طيرانًا غنائيًا يكشف نمط الجناحين؛ والظلال والشجيرات تساعد على تنظيم التعرض للحرارة."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "تعشش على الأرض أو قريبًا منها عند نبات مناسب. أظهرت دراسة ميدانية صحراوية أن اختيار موقع العش يتصل بالحرارة ومخاطر الافتراس. يطعم الأبوان الفراخ؛ ويتغير نجاح التكاثر مع المطر والغذاء، فلا تكفي حرارة الجو وحدها لتفسير موعد العش."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "من طيور الصحراء الواسعة الانتشار عبر شمال أفريقيا والجزيرة العربية إلى مناطق آسيوية. تؤكد مصادر سعودية وكويتية إقامتها وتكاثرها. على النقيض، هي عرضية شديدة الندرة في لبنان؛ لذا لا تمثل مشاهدتها هناك حضورًا اعتياديًا."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "توجد طوال السنة في مناطق إقامتها المناسبة، مع تحركات محلية. في نوفمبر تسهل متابعتها في ساعات معتدلة من أطراف الطرق والمسارات، دون قيادة عبر السهول للاقتراب منها. سجل المنقار ونمط الجناح يفيد أكثر من لون الجسم وحده."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تتأثر بتدهور السهول الجافة والقيادة خارج الطرق والتجريف. تبدو الموائل الصحراوية بسيطة لكنها تحتوي مواقع غذاء وأعشاشًا دقيقة الاختيار. حفظ الشجيرات والأرض غير المضطربة يحمي الغذاء والظل وفرص التكاثر معًا."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "State of Kuwait — Fifth National Report to the Convention on Biological Diversity (2014), bird list.",
+                "Saudipedia — Greater Hoopoe-Lark.",
+                "Tieleman et al. — The Condor 110 (2008), 116–124: nest-site selection in a desert bird."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Andy Wilson — CC0 1.0."
+        },
+        "en": {
+          "title": "Greater Hoopoe-Lark",
+          "subtitle": "Alaemon alaudipes",
+          "meta_description": "Greater Hoopoe-Lark Alaemon alaudipes belongs to Alaudidae. A long downcurved bill and long legs accompany striking black-and-white wings in flight. Sandy standing plumage conceals that pattern. The hoopoe resemblance.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Greater Hoopoe-Lark Alaemon alaudipes belongs to Alaudidae. A long downcurved bill and long legs accompany striking black-and-white wings in flight. Sandy standing plumage conceals that pattern. The hoopoe resemblance concerns the bill, not a crest or membership of the same family."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Open desert plains with sand, gravel and scattered plants provide habitat. It runs quickly for invertebrates and also takes seeds. Song flights expose the wing pattern. Shade and shrubs influence exposure to extreme heat."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "It nests on or close to the ground beside suitable vegetation. Desert field research links nest-site choice with temperature and predation risk. Parents feed the young; rainfall and food influence breeding success, so air temperature alone cannot explain nesting dates."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "A widespread desert bird, its range crosses North Africa and Arabia into Asia. Saudi and Kuwaiti sources document residence and breeding. Lebanon, by contrast, has exceptionally rare accidental records rather than routine occurrence."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Suitable resident areas support year-round birds with local movements. Moderate November hours permit observation from tracks and roadsides without driving across plains towards birds. Bill and wing-pattern records are more useful than sandy body colour alone."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Dry-plain degradation, off-road driving and excavation are pressures. Apparently simple desert habitat contains carefully selected feeding and nesting sites. Keeping shrubs and undisturbed ground preserves food, shade and opportunities to breed."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "State of Kuwait — Fifth National Report to the Convention on Biological Diversity (2014), bird list.",
+                "Saudipedia — Greater Hoopoe-Lark.",
+                "Tieleman et al. — The Condor 110 (2008), 116–124: nest-site selection in a desert bird."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Andy Wilson — CC0 1.0."
+        },
+        "fr": {
+          "title": "Sirli du désert",
+          "subtitle": "Alaemon alaudipes",
+          "meta_description": "Le Sirli du désert Alaemon alaudipes appartient aux Alaudidae. Long bec incurvé et longues pattes accompagnent des ailes noires et blanches frappantes en vol. Le plumage sable les dissimule au repos. Sa ressemblance.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Sirli du désert Alaemon alaudipes appartient aux Alaudidae. Long bec incurvé et longues pattes accompagnent des ailes noires et blanches frappantes en vol. Le plumage sable les dissimule au repos. Sa ressemblance avec la huppe concerne le bec, sans huppe sur la tête ni même famille."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Les plaines désertiques ouvertes, sableuses ou caillouteuses avec plantes dispersées, constituent son milieu. Il court vite pour capturer des invertébrés et prend aussi des graines. Les vols chantés révèlent le dessin alaire. Ombre et buissons modulent son exposition à la chaleur."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Il niche au sol ou très près, à proximité d’une végétation appropriée. Des travaux de terrain relient le choix du nid à la température et au risque de prédation. Les parents nourrissent les jeunes ; pluie et nourriture influencent la réussite, au-delà de la seule température de l’air."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Oiseau désertique répandu, son aire traverse Afrique du Nord et Arabie vers l’Asie. Les sources saoudiennes et koweïtiennes documentent résidence et reproduction. Au Liban, les observations sont au contraire accidentelles et exceptionnellement rares."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Ses régions de résidence favorables l’accueillent toute l’année, avec déplacements locaux. Les heures tempérées de novembre permettent l’observation depuis pistes et bords de route, sans traverser les plaines en véhicule vers lui. Bec et ailes renseignent mieux que la seule couleur sable."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Dégradation des plaines sèches, conduite hors piste et terrassements constituent des pressions. Un désert apparemment simple contient des sites alimentaires et des nids précisément choisis. Conserver buissons et sols non perturbés préserve nourriture, ombre et reproduction."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "State of Kuwait — Fifth National Report to the Convention on Biological Diversity (2014), bird list.",
+                "Saudipedia — Greater Hoopoe-Lark.",
+                "Tieleman et al. — The Condor 110 (2008), 116–124: nest-site selection in a desert bird."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Andy Wilson — CC0 1.0."
+        }
+      }
+    }
+  ]
+}

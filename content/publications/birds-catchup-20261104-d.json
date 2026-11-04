@@ -1,0 +1,2067 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "birds-catchup-20261104-d",
+  "expected_base": "e55f5ac47ce348389a548588e9c7b5325238af0f",
+  "approval_reference": "private:nayef-encyclopedia-20261104-forty-arab-birds-catchup",
+  "bank_search_reference": "Sayd photo archive searched before external selection, 2026-11-04. Full AR search archive and 163 EN entries checked, including older standalone profiles outside the 80-entry encyclopedia index. Existing lapwing source415/candidate416 reused; not duplicated. All selected actual photographs visually inspected with species diagnostics, rights evidence and exact original bytes retained. Internal evidence: birds40 selection and per-photo records.",
+  "photos": [
+    {
+      "id": "steppe-eagle",
+      "path": "docs/media/publications/birds-catchup-20261104-d/aquila-nipalensis.jpg",
+      "sha256": "f0669bef82a2e3be39ad5361ca2e2cdef7655b0ec27335195a11773580295e07",
+      "source_sha256": "f0669bef82a2e3be39ad5361ca2e2cdef7655b0ec27335195a11773580295e07",
+      "source_reference": "Лариса Артемьева; 2020-09-25; Александровский, Ставропольский край, RU. iNaturalist observation 60691300, photograph 97065943. Actual original inspected; taxon Aquila nipalensis and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/97065943; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "عقاب السهوب — Aquila nipalensis",
+        "en": "Steppe Eagle — Aquila nipalensis",
+        "fr": "Aigle des steppes — Aquila nipalensis"
+      },
+      "caption": {
+        "ar": "عقاب السهوب",
+        "en": "Steppe Eagle",
+        "fr": "Aigle des steppes"
+      }
+    },
+    {
+      "id": "eurasian-wren",
+      "path": "docs/media/publications/birds-catchup-20261104-d/troglodytes-troglodytes.jpg",
+      "sha256": "74f165408a456b9349eeffd449019313fa04e0399f3120b81978207de1e0149e",
+      "source_sha256": "74f165408a456b9349eeffd449019313fa04e0399f3120b81978207de1e0149e",
+      "source_reference": "Scarlet Rifles; 2023-02-10; Hillsborough Walled Garden. iNaturalist observation 148534859, photograph 255805247. Actual original inspected; taxon Nannus troglodytes and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/255805247; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "النمنمة الأوراسية — Nannus troglodytes",
+        "en": "Eurasian Wren — Nannus troglodytes",
+        "fr": "Troglodyte mignon — Nannus troglodytes"
+      },
+      "caption": {
+        "ar": "النمنمة الأوراسية",
+        "en": "Eurasian Wren",
+        "fr": "Troglodyte mignon"
+      }
+    },
+    {
+      "id": "griffon-vulture",
+      "path": "docs/media/publications/birds-catchup-20261104-d/gyps-fulvus.jpg",
+      "sha256": "bbdac7b69b3ccf2a359bff8e8dbb816e11a04a4912e76ff31fc64b408910b06a",
+      "source_sha256": "bbdac7b69b3ccf2a359bff8e8dbb816e11a04a4912e76ff31fc64b408910b06a",
+      "source_reference": "Dominique; 2025-08-10; Mulhacen, Granada, Spain. iNaturalist observation 305847615, photograph 551492664. Actual original inspected; taxon Gyps fulvus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/551492664; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "النسر الأسمر — Gyps fulvus",
+        "en": "Griffon Vulture — Gyps fulvus",
+        "fr": "Vautour fauve — Gyps fulvus"
+      },
+      "caption": {
+        "ar": "النسر الأسمر",
+        "en": "Griffon Vulture",
+        "fr": "Vautour fauve"
+      }
+    },
+    {
+      "id": "pharaoh-eagle-owl",
+      "path": "docs/media/publications/birds-catchup-20261104-d/bubo-ascalaphus.jpg",
+      "sha256": "7eb7aa1a96324215bac226ce82b7478cc4d92c3917202c31c181c5575abf61e3",
+      "source_sha256": "7eb7aa1a96324215bac226ce82b7478cc4d92c3917202c31c181c5575abf61e3",
+      "source_reference": "Jean-Paul Boerekamps; 2018-03-30; Et Taous, Meknès-Tafilalet, MA. iNaturalist observation 72988165, photograph 119103018. Actual original inspected; taxon Bubo ascalaphus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/119103018; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "البوهة الفرعونية — Bubo ascalaphus",
+        "en": "Pharaoh Eagle-Owl — Bubo ascalaphus",
+        "fr": "Grand-duc ascalaphe — Bubo ascalaphus"
+      },
+      "caption": {
+        "ar": "البوهة الفرعونية",
+        "en": "Pharaoh Eagle-Owl",
+        "fr": "Grand-duc ascalaphe"
+      }
+    },
+    {
+      "id": "white-spectacled-bulbul",
+      "path": "docs/media/publications/birds-catchup-20261104-d/pycnonotus-xanthopygos.jpg",
+      "sha256": "52fc4f7a380a29d46708bbd82f96e1138edc2d9e8d0a5d6917bd15c39322d06e",
+      "source_sha256": "52fc4f7a380a29d46708bbd82f96e1138edc2d9e8d0a5d6917bd15c39322d06e",
+      "source_reference": "Dan Horowitz; 2022-12-24; Herzliya, Israel. iNaturalist observation 144970624, photograph 248936452. Actual original inspected; taxon Pycnonotus xanthopygos and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/248936452; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "البلبل أصفر العجز — Pycnonotus xanthopygos",
+        "en": "White-spectacled Bulbul — Pycnonotus xanthopygos",
+        "fr": "Bulbul à lunettes — Pycnonotus xanthopygos"
+      },
+      "caption": {
+        "ar": "البلبل أصفر العجز",
+        "en": "White-spectacled Bulbul",
+        "fr": "Bulbul à lunettes"
+      }
+    },
+    {
+      "id": "white-eared-bulbul",
+      "path": "docs/media/publications/birds-catchup-20261104-d/pycnonotus-leucotis.jpg",
+      "sha256": "5da4c67daac95596f182cb0a1cfe079bb196ca5abec3d442ee1b21c60f0a07a5",
+      "source_sha256": "5da4c67daac95596f182cb0a1cfe079bb196ca5abec3d442ee1b21c60f0a07a5",
+      "source_reference": "Михаил и Максим Поспеловы; 2025-01-08; G926+MM9 - Al ʻIqqah - Fujairah - Объединенные Арабские Эмираты. iNaturalist observation 257772847, photograph 462466257. Actual original inspected; taxon Pycnonotus leucotis and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/462466257; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "البلبل أبيض الخدين — Pycnonotus leucotis",
+        "en": "White-eared Bulbul — Pycnonotus leucotis",
+        "fr": "Bulbul à oreillons blancs — Pycnonotus leucotis"
+      },
+      "caption": {
+        "ar": "البلبل أبيض الخدين",
+        "en": "White-eared Bulbul",
+        "fr": "Bulbul à oreillons blancs"
+      }
+    },
+    {
+      "id": "common-bulbul",
+      "path": "docs/media/publications/birds-catchup-20261104-d/pycnonotus-barbatus.jpg",
+      "sha256": "81609e7c70250e270cbb387cd39b2e3a93972caa1955fe9cb34d09d0dbfab615",
+      "source_sha256": "81609e7c70250e270cbb387cd39b2e3a93972caa1955fe9cb34d09d0dbfab615",
+      "source_reference": "karim Attouche; 2021-05-21; Hamman Melouane, Algérie. iNaturalist observation 200399366, photograph 353560194. Actual original inspected; taxon Pycnonotus barbatus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/353560194; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "البلبل الشائع — Pycnonotus barbatus",
+        "en": "Common Bulbul — Pycnonotus barbatus",
+        "fr": "Bulbul des jardins — Pycnonotus barbatus"
+      },
+      "caption": {
+        "ar": "البلبل الشائع",
+        "en": "Common Bulbul",
+        "fr": "Bulbul des jardins"
+      }
+    },
+    {
+      "id": "purple-heron",
+      "path": "docs/media/publications/birds-catchup-20261104-d/ardea-purpurea.jpg",
+      "sha256": "a73f1dce9ad9adb835d68a13626fb4ee7ad1e1540e3658bc8fbb2b0532598607",
+      "source_sha256": "a73f1dce9ad9adb835d68a13626fb4ee7ad1e1540e3658bc8fbb2b0532598607",
+      "source_reference": "Istvan Sipos; 2026-05-30; Iernut, Maros, RO. iNaturalist observation 366615645, photograph 669447066. Actual original inspected; taxon Ardea purpurea and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/669447066; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "البلشون الأرجواني — Ardea purpurea",
+        "en": "Purple Heron — Ardea purpurea",
+        "fr": "Héron pourpré — Ardea purpurea"
+      },
+      "caption": {
+        "ar": "البلشون الأرجواني",
+        "en": "Purple Heron",
+        "fr": "Héron pourpré"
+      }
+    },
+    {
+      "id": "spotless-starling",
+      "path": "docs/media/publications/birds-catchup-20261104-d/sturnus-unicolor.jpg",
+      "sha256": "e98e29a90cda4a5121437b2474ae862afb9a04cbd34731f4562a852c6a039bd9",
+      "source_sha256": "e98e29a90cda4a5121437b2474ae862afb9a04cbd34731f4562a852c6a039bd9",
+      "source_reference": "Mirela; 2023-05-05; Talaa, Fes, Maroko. iNaturalist observation 167085284, photograph 289397902. Actual original inspected; taxon Sturnus unicolor and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/289397902; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "الزرزور الأسود — Sturnus unicolor",
+        "en": "Spotless Starling — Sturnus unicolor",
+        "fr": "Étourneau unicolore — Sturnus unicolor"
+      },
+      "caption": {
+        "ar": "الزرزور الأسود",
+        "en": "Spotless Starling",
+        "fr": "Étourneau unicolore"
+      }
+    },
+    {
+      "id": "european-red-rumped-swallow",
+      "path": "docs/media/publications/birds-catchup-20261104-d/cecropis-rufula.jpg",
+      "sha256": "d700ea1fe83165ca08de3baa68218100f537400ebfeb05ed4548b377d31dbc6f",
+      "source_sha256": "d700ea1fe83165ca08de3baa68218100f537400ebfeb05ed4548b377d31dbc6f",
+      "source_reference": "José Antonio León Mangado; 2025-08-04; 26006 Logroño, La Rioja, España. iNaturalist observation 303678633, photograph 547375131. Actual original inspected; taxon Cecropis rufula and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/547375131; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "السنونو أحمر العجز الغربي — Cecropis rufula",
+        "en": "European Red-rumped Swallow — Cecropis rufula",
+        "fr": "Hirondelle rousseline — Cecropis rufula"
+      },
+      "caption": {
+        "ar": "السنونو أحمر العجز الغربي",
+        "en": "European Red-rumped Swallow",
+        "fr": "Hirondelle rousseline"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "عقاب-السهوب",
+        "en": "steppe-eagle",
+        "fr": "aigle-des-steppes"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "steppe-eagle"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "عقاب السهوب",
+          "subtitle": "Aquila nipalensis",
+          "meta_description": "عقاب السهوب Aquila nipalensis من البازيات Accipitridae. عقاب كبيرة بنية، ذات جناحين عريضين وشق فم طويل يمتد إلى مستوى مؤخر العين تقريبًا. تظهر على اليافع أشرطة فاتحة في الجناح. يصعب فصلها من العقاب الصفراء وغيرها في.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "عقاب السهوب Aquila nipalensis من البازيات Accipitridae. عقاب كبيرة بنية، ذات جناحين عريضين وشق فم طويل يمتد إلى مستوى مؤخر العين تقريبًا. تظهر على اليافع أشرطة فاتحة في الجناح. يصعب فصلها من العقاب الصفراء وغيرها في اللقطات البعيدة، لذلك لا تُعتمد شدة البني وحدها."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تصطاد في السهوب والأراضي الجافة المفتوحة، وتأكل ثدييات صغيرة وطيورًا وجيفًا. قد تتجمع بأعداد عند موارد غذاء شتوية، بما فيها مواقع النفايات. التحليق على التيارات الصاعدة يوفر طاقة السفر، لكنه يجعل مساراتها تتأثر بالطقس والوقت."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "تعشش في موطن التكاثر على الأرض أو الصخور وأحيانًا على منشآت أو أشجار. تورد مؤسسة Peregrine Fund حضنات من 1–4 بيضات وحضانة تقارب 45 يومًا، ويبدأ طيران الصغار بعمر نحو 55–65 يومًا. نمو الريش لا يعني الاستقلال الفوري؛ ويختلف نجاح الحضنة مع الفرائس والظروف."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "تتكاثر في مناطق سهبية آسيوية وتهاجر جنوبًا، عابرة الشرق الأوسط نحو مواقع شتاء عربية وأفريقية وآسيوية. في لبنان مهاجرة عبور قليلة، أساسًا في الربيع والخريف. لا يُشتق وضعها الشتوي اللبناني من وجود تجمعات شتاء في الجزيرة العربية."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "تورد قائمة لبنان عبورًا من فبراير إلى مايو ومن سبتمبر إلى منتصف نوفمبر. نوفمبر جزء من نهاية مرورها الخريفي، وقد يوافق الوصول إلى مواقع الشتاء جنوبًا. ربط صورة العقاب بموقع عربـي يتطلب مصدرًا مكانيًا مستقلًا؛ فالصورة التعريفية لا توثق مسار الفرد."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تهددها الصعقات الكهربائية والسموم والتصادم وفقدان الموائل. قد يصبح تجمعها حول غذاء ملوث خطرًا جماعيًا. عزل أعمدة الكهرباء الخطرة وتقليل السموم وحفظ ممرات الهجرة إجراءات عملية، ويظل تسجيل النفوق بدقة مهمًا لفهم مصدر الخطر."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "The Peregrine Fund — Steppe Eagle."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева — CC0 1.0."
+        },
+        "en": {
+          "title": "Steppe Eagle",
+          "subtitle": "Aquila nipalensis",
+          "meta_description": "Steppe Eagle Aquila nipalensis belongs to Accipitridae. Large and brown, it has broad wings and a long gape reaching approximately the rear of the eye. Juveniles show pale wing bands. Distant separation from Tawny Eagle.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Steppe Eagle Aquila nipalensis belongs to Accipitridae. Large and brown, it has broad wings and a long gape reaching approximately the rear of the eye. Juveniles show pale wing bands. Distant separation from Tawny Eagle and other eagles is difficult; brown colour alone is insufficient."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Steppe and dry open country provide small mammals, birds and carrion. Winter birds may gather at concentrated food, including waste sites. Thermal soaring saves travel energy but makes routes sensitive to weather and time of day."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "Breeding nests stand on ground, rocks and sometimes structures or trees. The Peregrine Fund reports one to four eggs and incubation around 45 days; young begin flight around 55–65 days. Feather growth does not mean immediate independence. Prey and conditions influence breeding success."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Asian steppe breeding areas connect through the Middle East to Arab, African and Asian wintering regions. Lebanon has scarce spring and autumn passage. Winter concentrations in Arabia do not establish Lebanese winter status."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanon’s checklist records passage in February–May and September–mid-November. November can coincide with the end of passage and arrival farther south. Assigning a photograph to an Arab locality requires independent geographic provenance; an identification image cannot document an individual’s route."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Electrocution, poisons, collisions and habitat loss are threats. Gathering around contaminated food can create collective risk. Insulating dangerous poles, reducing toxicants and preserving migration corridors are practical measures; accurately documenting mortality helps identify causes."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "The Peregrine Fund — Steppe Eagle."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0 1.0."
+        },
+        "fr": {
+          "title": "Aigle des steppes",
+          "subtitle": "Aquila nipalensis",
+          "meta_description": "L’Aigle des steppes Aquila nipalensis appartient aux Accipitridae. Grand et brun, il possède ailes larges et commissure du bec atteignant environ l’arrière de l’œil. Le jeune montre des bandes alaires claires. À.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Aigle des steppes Aquila nipalensis appartient aux Accipitridae. Grand et brun, il possède ailes larges et commissure du bec atteignant environ l’arrière de l’œil. Le jeune montre des bandes alaires claires. À distance, la distinction avec l’Aigle ravisseur et d’autres aigles est délicate ; le brun seul ne suffit pas."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Steppes et terrains secs ouverts fournissent petits mammifères, oiseaux et charognes. Les hivernants peuvent se concentrer près d’une ressource, notamment les déchets. Le vol thermique économise l’énergie mais rend les trajets sensibles au temps et à l’heure."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Les nids occupent sol, rochers et parfois structures ou arbres. Le Peregrine Fund indique un à quatre œufs, environ 45 jours d’incubation et un début du vol vers 55–65 jours. La croissance des plumes ne signifie pas l’autonomie immédiate. Proies et conditions règlent la réussite."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Les steppes asiatiques de reproduction sont reliées, par le Moyen-Orient, aux régions d’hivernage arabes, africaines et asiatiques. Au Liban, le passage printanier et automnal est peu abondant. Les concentrations hivernales arabiques ne prouvent pas un hivernage libanais."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "La liste libanaise donne le passage en février–mai et septembre–mi-novembre. Novembre peut correspondre aux derniers passages et aux arrivées plus au sud. Attribuer une photo à un lieu arabe exige une provenance géographique indépendante ; une illustration ne retrace pas le voyage individuel."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Électrocution, poison, collisions et perte d’habitats menacent l’espèce. Les rassemblements sur nourriture contaminée créent un risque collectif. Isoler les poteaux dangereux, réduire les toxiques et préserver les corridors sont des mesures concrètes ; documenter la mortalité aide à identifier ses causes."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "The Peregrine Fund — Steppe Eagle."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "النمنمة-الأوراسية",
+        "en": "eurasian-wren",
+        "fr": "troglodyte-mignon"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "eurasian-wren"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "النمنمة الأوراسية",
+          "subtitle": "Nannus troglodytes",
+          "meta_description": "النمنمة الأوراسية Nannus troglodytes من النمنميات Troglodytidae، وترد في مراجع واسعة باسم Troglodytes troglodytes. طائر بالغ الصغر، بني مخطط، ذو حاجب فاتح وذيل قصير يرفعه كثيرًا. الجنسان متشابهان، وصوتها أقوى مما يوحي.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "النمنمة الأوراسية Nannus troglodytes من النمنميات Troglodytidae، وترد في مراجع واسعة باسم Troglodytes troglodytes. طائر بالغ الصغر، بني مخطط، ذو حاجب فاتح وذيل قصير يرفعه كثيرًا. الجنسان متشابهان، وصوتها أقوى مما يوحي حجمها. اختلاف اسم الجنس لا يعني وجود نوعين مستقلين."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تعيش في الشجيرات الكثيفة والأحراج الرطبة وحواف الجداول والحدائق ذات الغطاء السفلي. تبحث بين الأوراق والجذور عن حشرات وعناكب ولافقاريات صغيرة. تتحرك قرب الأرض وتختفي داخل الغطاء، فلا يشترط أن تظهر على غصن عال لتكون مغردة في المكان."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني الذكر أعشاشًا كروية متعددة بفتحة جانبية، وتختار الأنثى أحدها وتبطّنه. تورد بيانات BTO خمسًا أو ست بيضات عادة، وحضانة أنثوية نحو 16–18 يومًا. يغادر الصغار بعد نحو 15–18 يومًا، مع رعاية لاحقة. هذه مدد مرجعية لا تجعل تقويم بريطانيا مطابقًا للمناخ العربي."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "واسعة الانتشار في أوراسيا، ولها حضور في غابات شمال أفريقيا وبلاد الشام. في لبنان مقيمة متكاثرة شائعة في الموائل الكثيفة والرطبة من الساحل إلى الجبال. لا يجعل صغر حجمها أو غناؤها كل طائر بني صغير في المنطقة نمنمة."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمكن متابعتها طوال السنة في المواضع المقيمة، ومنها نوفمبر. النداءات ومراقبة الحواف من خارج الشجيرات يفيدان أكثر من اختراق الغطاء. تتطلب مقارنة الأسماء القديمة والحديثة الرجوع إلى الهوية العلمية نفسها عند جمع سجلات الأرشيف."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تربطها اللافقاريات بسلامة الغطاء الأرضي والرطوبة المحلية. إزالة الأوراق المتساقطة والشجيرات وتجفيف الجداول تقلل ملاذاتها. حفظ زوايا نباتية كثيفة في الحدائق والأحراج يتيح الغذاء والتعشيش، بدل تحويل كامل الأرض إلى سطوح نظيفة مكشوفة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Wren.",
+                "AviList — 2026 taxonomic updates and Nannus/Troglodytes nomenclature."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Scarlet Rifles — CC0 1.0."
+        },
+        "en": {
+          "title": "Eurasian Wren",
+          "subtitle": "Nannus troglodytes",
+          "meta_description": "Eurasian Wren Nannus troglodytes belongs to Troglodytidae and is widely recorded under Troglodytes troglodytes. Tiny, brown and barred, it has a pale eyebrow and a short tail often held upright. The sexes look alike and.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Eurasian Wren Nannus troglodytes belongs to Troglodytidae and is widely recorded under Troglodytes troglodytes. Tiny, brown and barred, it has a pale eyebrow and a short tail often held upright. The sexes look alike and the song is remarkably powerful. Different genus names do not create two species."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Dense scrub, damp woodland, stream margins and gardens with undergrowth provide habitat. It searches leaves and roots for insects, spiders and small invertebrates. Movement is often near the ground; a singing bird need not be visible on an exposed high branch."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "The male builds several domed nests with side entrances; the female selects and lines one. BTO gives five or six eggs, incubated by the female for about 16–18 days. Young leave at roughly 15–18 days and receive further care. These reference durations do not transfer a British calendar to Arab climates."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Widespread in Eurasia, it also occurs in North African and Levantine woodland. Lebanon has common breeding residents in dense, moist habitats from coast to mountains. Neither small size nor song makes every little brown regional bird a wren."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Resident sites support year-round observation, including November. Calls and watching cover edges are more useful than penetrating dense vegetation. Archive records using old and new names must be reconciled to the same scientific identity."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Its invertebrate diet links it to ground cover and local moisture. Leaf-litter removal, scrub clearance and stream drying reduce refuges. Retaining dense vegetated corners in gardens and woods preserves food and nests rather than exposing every ground surface."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Wren.",
+                "AviList — 2026 taxonomic updates and Nannus/Troglodytes nomenclature."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Scarlet Rifles — CC0 1.0."
+        },
+        "fr": {
+          "title": "Troglodyte mignon",
+          "subtitle": "Nannus troglodytes",
+          "meta_description": "Le Troglodyte mignon Nannus troglodytes appartient aux Troglodytidae et figure souvent sous Troglodytes troglodytes. Minuscule, brun barré, il porte sourcil clair et queue courte souvent relevée. Les sexes se.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Troglodyte mignon Nannus troglodytes appartient aux Troglodytidae et figure souvent sous Troglodytes troglodytes. Minuscule, brun barré, il porte sourcil clair et queue courte souvent relevée. Les sexes se ressemblent et le chant est puissant. Deux noms de genre ne créent pas deux espèces."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Fourrés denses, bois humides, bords de ruisseaux et jardins avec sous-bois lui conviennent. Il fouille feuilles et racines pour insectes, araignées et petits invertébrés. Il reste souvent près du sol ; un chanteur ne doit pas nécessairement être visible sur une haute branche dégagée."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le mâle construit plusieurs nids globuleux à entrée latérale ; la femelle en choisit un et le garnit. Le BTO donne cinq ou six œufs, couvés par elle environ 16–18 jours. Les jeunes sortent vers 15–18 jours puis restent soignés. Ces durées ne transposent pas le calendrier britannique aux climats arabes."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Répandu en Eurasie, il occupe aussi des bois nord-africains et levantins. Au Liban, il est résident nicheur commun des couverts denses et humides, du littoral aux montagnes. Petite taille et chant ne suffisent pas à nommer tout petit oiseau brun troglodyte."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Les sites de résidence permettent l’observation toute l’année, y compris en novembre. Écoute et observation des lisières valent mieux qu’une pénétration dans les fourrés. Les archives utilisant ancien et nouveau genres doivent être réunies sous la même identité."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Son régime d’invertébrés le relie au couvert du sol et à l’humidité locale. Enlèvement des feuilles, suppression des buissons et assèchement réduisent les refuges. Conserver des coins végétaux denses préserve nourriture et nids plutôt que dénuder toutes les surfaces."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Wren.",
+                "AviList — 2026 taxonomic updates and Nannus/Troglodytes nomenclature."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Scarlet Rifles — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "النسر-الأسمر",
+        "en": "griffon-vulture",
+        "fr": "vautour-fauve"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "griffon-vulture"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "النسر الأسمر",
+          "subtitle": "Gyps fulvus",
+          "meta_description": "النسر الأسمر Gyps fulvus من البازيات Accipitridae. نسر كبير بجناحين عريضين وريش طيران داكن وجسم بني فاتح، وعنق طويل مكسو بزغب فاتح وطوق حول قاعدته. الذيل قصير نسبيًا. تختلف ملامح اليافع، ولا يكفي كبر الحجم للفصل من.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "النسر الأسمر Gyps fulvus من البازيات Accipitridae. نسر كبير بجناحين عريضين وريش طيران داكن وجسم بني فاتح، وعنق طويل مكسو بزغب فاتح وطوق حول قاعدته. الذيل قصير نسبيًا. تختلف ملامح اليافع، ولا يكفي كبر الحجم للفصل من النسور والعقبان الأخرى."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يبحث عن الجيف فوق الجبال والسهول، مستخدمًا التيارات الصاعدة للبحث الواسع. يتغذى غالبًا اجتماعيًا، ويعتمد على جيف متاحة وآمنة. وجوده قرب ماشية لا يعني أنه يهاجم حيوانات سليمة؛ فهو متخصص أساسًا باستهلاك الجيف."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يعشش في مستعمرات على حواف الجروف، ويضع عادة بيضة واحدة. يتناوب الأبوان الحضانة ويغذيان الفرخ بغذاء مرتجع، وتستغرق تنشئته أشهرًا. بطء الدورة يجعل خسارة البالغين أو فشل الأعشاش ذا أثر طويل؛ ولا يعوض فقدان زوج تكاثر موسم ناجح واحد بسهولة."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "له نطاق متوسطي وغرب آسيوي يشمل مناطق عربية جبلية، مع تراجع أو فقدان محلي في بعض المواقع. في لبنان توثق القائمة تكاثرًا سابقًا، لكن وضع الإقامة والتكاثر الحالي غير مؤكد مع مشاهدات عبور قليلة. لا تُقدم السجلات التاريخية كإثبات لمستعمرة قائمة اليوم."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "قد يُرى طوال العام قرب مناطق الإقامة، وتتحرك أفراد وتجمعات خارجها. في نوفمبر تساعد مراقبة التحليق من نقاط جبلية على اكتشافه. لا تُستخدم جيفة مجهولة المصدر لجذبه للتصوير، لأن غياب الرائحة أو المظهر الغريب لا يثبت سلامتها."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يسهم في إزالة الجيف، لكنه شديد الحساسية للتسمم ومخاطر الكهرباء والإزعاج. قد تقتل جيفة مسمومة عدة نسور. حماية مواقع الأعشاش ومنع السموم والتعامل المنظم مع جيف الماشية إجراءات مترابطة، وتحتاج أي تغذية مساعدة إلى إدارة مختصة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Griffon Vulture.",
+                "Jerusalem Biblical Zoo — Griffon Vulture conservation programme."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Dominique — CC0 1.0."
+        },
+        "en": {
+          "title": "Griffon Vulture",
+          "subtitle": "Gyps fulvus",
+          "meta_description": "Griffon Vulture Gyps fulvus belongs to Accipitridae. Large, with broad wings, dark flight feathers and a pale-brown body, it has a long pale-down-covered neck with a ruff at the base. The tail is relatively short..",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Griffon Vulture Gyps fulvus belongs to Accipitridae. Large, with broad wings, dark flight feathers and a pale-brown body, it has a long pale-down-covered neck with a ruff at the base. The tail is relatively short. Juveniles differ; large size alone cannot separate vultures and eagles."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It searches widely for carrion above mountains and plains, using rising air. Feeding is often social and requires available, safe carcasses. A vulture near livestock is not evidence of attacks on healthy animals: carrion is its principal resource."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "Colonies occupy cliff ledges and pairs usually lay one egg. Both parents incubate and feed the chick regurgitated food; rearing takes months. A slow reproductive cycle makes adult loss and nest failure consequential. One successful season cannot readily replace a lost breeding pair."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its Mediterranean and western Asian range includes Arab mountain regions, with local declines or losses. Lebanon’s checklist documents historical breeding but uncertain current resident and breeding status, alongside scarce passage. Historical records must not be presented as proof of a colony active today."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Residents may be seen year-round near occupied areas, with movements beyond them. November mountain viewpoints help locate soaring birds. Never use an unverified carcass to attract vultures: an ordinary appearance does not establish freedom from poison."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Carrion removal is a major role, but poisoning, electrical hazards and disturbance threaten it. One contaminated carcass can kill several birds. Nest protection, poison prevention and organised livestock-carcass management belong together; supplementary feeding needs specialist management."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Griffon Vulture.",
+                "Jerusalem Biblical Zoo — Griffon Vulture conservation programme."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dominique — CC0 1.0."
+        },
+        "fr": {
+          "title": "Vautour fauve",
+          "subtitle": "Gyps fulvus",
+          "meta_description": "Le Vautour fauve Gyps fulvus appartient aux Accipitridae. Grand, aux ailes larges, rémiges sombres et corps brun clair, il possède un long cou couvert de duvet pâle et une collerette. La queue est assez courte. Le jeune.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Vautour fauve Gyps fulvus appartient aux Accipitridae. Grand, aux ailes larges, rémiges sombres et corps brun clair, il possède un long cou couvert de duvet pâle et une collerette. La queue est assez courte. Le jeune diffère ; la grande taille seule ne sépare pas vautours et aigles."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il recherche largement les charognes au-dessus des montagnes et plaines grâce aux ascendances. Les repas sont souvent collectifs et exigent des carcasses sûres. Sa présence près du bétail ne prouve pas une attaque sur des animaux sains : la charogne constitue sa ressource principale."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Les colonies occupent des corniches et les couples pondent généralement un œuf. Les deux parents couvent et nourrissent par régurgitation ; l’élevage dure des mois. Ce cycle lent rend pertes d’adultes et échecs importants. Une saison réussie remplace difficilement un couple reproducteur perdu."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire méditerranéenne et ouest-asiatique comprend des montagnes arabes, avec déclins ou disparitions locales. La liste libanaise documente une reproduction historique, mais résidence et reproduction actuelles incertaines, avec peu de passages. Un ancien signalement ne prouve pas une colonie active aujourd’hui."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Les résidents peuvent être observés toute l’année près des sites occupés, avec déplacements ailleurs. Les points montagneux aident en novembre. Ne pas attirer avec une carcasse non vérifiée : un aspect ordinaire ne garantit pas l’absence de poison."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "L’élimination des charognes est importante, mais empoisonnement, dangers électriques et dérangement menacent l’espèce. Une carcasse toxique peut tuer plusieurs oiseaux. Protection des nids, prévention des poisons et gestion des carcasses doivent être coordonnées ; le nourrissage demande une gestion spécialisée."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Griffon Vulture.",
+                "Jerusalem Biblical Zoo — Griffon Vulture conservation programme."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dominique — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البوهة-الفرعونية",
+        "en": "pharaoh-eagle-owl",
+        "fr": "grand-duc-ascalaphe"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "pharaoh-eagle-owl"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البوهة الفرعونية",
+          "subtitle": "Bubo ascalaphus",
+          "meta_description": "البوهة الفرعونية Bubo ascalaphus من البوميات Strigidae. بومة صحراوية كبيرة بلون رملي منقط، وعينين برتقاليتين مصفرتين وخصلتي ريش فوق الرأس. تختلف عن البوهة الأوراسية الأكبر، لكن الصور المظلمة لا تكفي وحدها للفصل بين.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "البوهة الفرعونية Bubo ascalaphus من البوميات Strigidae. بومة صحراوية كبيرة بلون رملي منقط، وعينين برتقاليتين مصفرتين وخصلتي ريش فوق الرأس. تختلف عن البوهة الأوراسية الأكبر، لكن الصور المظلمة لا تكفي وحدها للفصل بين أنواع البوم. الخصلتان ريش وليستا أذنين خارجيتين."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تستخدم الجروف والأودية والأراضي الصحراوية الصخرية. تنشط ليلًا وتصطاد قوارض وطيورًا وزواحف وفرائس أخرى بحسب الموقع. تمنحها الأجنحة المتخصصة اقترابًا هادئًا من الفريسة. قد تظهر نهارًا قرب مدخل تجويف أو موضع راحة، وليس ظهورها النهاري دليلًا على مرض."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "تعشش على الجروف وفي التجاويف المحمية، وقد تستخدم أعشاش غربان قديمة، وفق هيئة البيئة في أبوظبي. تعتمد الفراخ على إمداد البالغين بالفرائس وحماية الموقع. نجاح التكاثر يتطلب هدوء المكان وغذاء متاحًا؛ ولا ينبغي إضاءة التجويف لعد البيض أو الصغار."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "مقيمة في مناطق من شمال أفريقيا والجزيرة العربية، وتوثق هيئة البيئة حضورها ومتابعتها في أبوظبي. انتشارها صحراوي مناسب، وليس حضورًا متساويًا في جميع بلدان العالم العربي. يتطلب إسناد سجل جديد مقارنة علامات الوجه والعين والبنية مع المكان."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمكن رصدها في نوفمبر ضمن مواقع الإقامة. الاستماع من مسافة وفي الوقت الملائم أفضل من الاقتراب أو تشغيل نداءات متكررة. لا يُعلن موقع التجويف الدقيق إذا كان ذلك سيجلب زوارًا إلى موضع تعشيش حساس."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تستهلك قوارض وفرائس صحراوية، وتتأثر بالسموم والصيد وتدمير الجروف. قد يؤدي تسميم القوارض إلى تسميم مفترساتها. حماية التجاويف والحد من السموم واحترام نشاطها الليلي خطوات عملية؛ ولا يُستخدم الفلاش المتكرر أو استدراجها للحصول على صورة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Environment Agency–Abu Dhabi — Pharaoh Eagle Owl."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Jean-Paul Boerekamps — CC0 1.0."
+        },
+        "en": {
+          "title": "Pharaoh Eagle-Owl",
+          "subtitle": "Bubo ascalaphus",
+          "meta_description": "Pharaoh Eagle-Owl Bubo ascalaphus belongs to Strigidae. A large desert owl, it has sandy mottled plumage, orange-yellow eyes and head feather tufts. It differs from larger Eurasian Eagle-Owl, but dark photographs alone.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Pharaoh Eagle-Owl Bubo ascalaphus belongs to Strigidae. A large desert owl, it has sandy mottled plumage, orange-yellow eyes and head feather tufts. It differs from larger Eurasian Eagle-Owl, but dark photographs alone cannot reliably separate owls. The tufts are feathers, not external ears."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Cliffs, wadis and rocky desert provide habitat. Nocturnal hunting takes rodents, birds, reptiles and other locally available prey. Specialised wings permit quiet approaches. A bird resting near a cavity by day is not necessarily ill."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "It nests on cliffs and in sheltered cavities, sometimes using old raven nests, according to Abu Dhabi’s Environment Agency. Young depend on adult prey deliveries and site protection. Quiet habitat and food determine success; cavities must not be illuminated to count eggs or chicks."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It is resident in parts of North Africa and Arabia, with occurrence and monitoring documented in Abu Dhabi. Suitable desert distribution does not mean equal presence in all Arab countries. New records require face, eye and structure comparisons alongside location."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Residents can be observed in November. Listening at a distance is preferable to approach or repeated call playback. Exact cavity locations should not be publicised if they would attract disturbance to a sensitive breeding site."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It consumes desert rodents and other prey and faces poisoning, hunting and cliff destruction. Rodenticides can poison predators through prey. Protecting cavities, reducing toxicants and respecting nocturnal activity help; repeated flash or deliberate luring should be avoided."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Environment Agency–Abu Dhabi — Pharaoh Eagle Owl."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Jean-Paul Boerekamps — CC0 1.0."
+        },
+        "fr": {
+          "title": "Grand-duc ascalaphe",
+          "subtitle": "Bubo ascalaphus",
+          "meta_description": "Le Grand-duc ascalaphe Bubo ascalaphus appartient aux Strigidae. Grand rapace nocturne du désert, il présente plumage sable tacheté, yeux jaune orangé et aigrettes. Il diffère du Grand-duc d’Europe plus grand, mais des.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Grand-duc ascalaphe Bubo ascalaphus appartient aux Strigidae. Grand rapace nocturne du désert, il présente plumage sable tacheté, yeux jaune orangé et aigrettes. Il diffère du Grand-duc d’Europe plus grand, mais des clichés sombres ne suffisent pas. Les aigrettes sont des plumes, pas des oreilles externes."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Falaises, oueds et déserts rocheux lui conviennent. La chasse nocturne fournit rongeurs, oiseaux, reptiles et autres proies locales. Ses ailes permettent une approche discrète. Un individu posé près d’une cavité le jour n’est pas nécessairement malade."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Il niche sur les falaises et dans des cavités abritées, parfois dans d’anciens nids de corbeaux selon l’Agence de l’environnement d’Abou Dhabi. Les jeunes dépendent des proies apportées et de la protection des adultes. Tranquillité et nourriture conditionnent la réussite ; ne pas éclairer les cavités pour compter œufs ou poussins."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Il réside dans certaines régions d’Afrique du Nord et d’Arabie ; présence et suivi sont documentés à Abou Dhabi. Cette répartition désertique ne signifie pas une présence uniforme dans tous les pays arabes. Les nouveaux signalements nécessitent comparaison de face, yeux et structure avec le contexte géographique."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Les résidents peuvent être observés en novembre. Écouter à distance vaut mieux qu’approcher ou répéter des enregistrements. Les emplacements précis des cavités ne doivent pas être diffusés s’ils risquent d’attirer des visiteurs sur un site sensible."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Il consomme rongeurs et autres proies désertiques mais subit poison, chasse et destruction des falaises. Les rodenticides atteignent aussi les prédateurs. Préserver cavités, réduire les toxiques et respecter l’activité nocturne aide ; flash répété et appâtage sont à éviter."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Environment Agency–Abu Dhabi — Pharaoh Eagle Owl."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Jean-Paul Boerekamps — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البلبل-أصفر-العجز",
+        "en": "white-spectacled-bulbul",
+        "fr": "bulbul-a-lunettes"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "white-spectacled-bulbul"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البلبل أصفر العجز",
+          "subtitle": "Pycnonotus xanthopygos",
+          "meta_description": "البلبل أصفر العجز Pycnonotus xanthopygos من البلابل Pycnonotidae، ويعرف بالبلبل ذي النظارة البيضاء. رأسه أسود وعينه محاطة بحلقة بيضاء واضحة، وجسمه بني رمادي وأسفل الذيل أصفر. تختلف حلقة العين من بقعة الخد البيضاء.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "البلبل أصفر العجز Pycnonotus xanthopygos من البلابل Pycnonotidae، ويعرف بالبلبل ذي النظارة البيضاء. رأسه أسود وعينه محاطة بحلقة بيضاء واضحة، وجسمه بني رمادي وأسفل الذيل أصفر. تختلف حلقة العين من بقعة الخد البيضاء الكبيرة عند البلبل أبيض الخدين؛ وهما نوعان مستقلان."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يسكن الحدائق والبساتين والشجيرات والأحراج المفتوحة قرب الناس. يتغذى على الثمار والحشرات، وقد يزور الأشجار المثمرة في أزواج أو مجموعات صغيرة. نداءاته قوية ومتنوعة؛ وتوفر النباتات المحلية المتعاقبة الإثمار غذاء عبر الموسم."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني عشًا كأسيًا في شجيرة أو شجرة، من ألياف ومواد نباتية. يتعاون الأبوان في إطعام الفراخ، وتختلف تفاصيل المدة وحجم الحضنة بين المواقع. تصف الدراسات دور الغطاء النباتي وموضع العش؛ لذلك لا يُقتحم شجـر الحديقة لمتابعة النمو عن قرب."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يرتبط بشرق المتوسط وأجزاء من الجزيرة العربية. في لبنان مقيم متكاثر واسع الانتشار من السواحل إلى ارتفاعات متوسطة بحسب القائمة المحدثة. لا تعني تسمية «بلبل» أن الأنواع الثلاثة لها نطاق أو علامات واحدة."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "مقيم في مناطق حضوره، ويمكن متابعته في نوفمبر على الثمار والغطاء الشجري. يسجل وجود الحلقة حول العين واللون الأصفر أسفل الذيل مع الموقع، لأن الصورة الأمامية قد تخفي علامة العجز."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تسهم الثمار التي يأكلها في نقل بعض البذور، ويأكل الحشرات أيضًا. إزالة الشجيرات وتبسيط الحدائق والمبيدات تقلل غذاءه ومواقع أعشاشه. زراعة أنواع محلية متنوعة وصون الغطاء الكثيف يوفران موردًا أفضل من التغذية العشوائية ببقايا بشرية."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Zoology in the Middle East — Breeding biology of White-spectacled Bulbul (2017)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Dan Horowitz — CC0 1.0."
+        },
+        "en": {
+          "title": "White-spectacled Bulbul",
+          "subtitle": "Pycnonotus xanthopygos",
+          "meta_description": "White-spectacled Bulbul Pycnonotus xanthopygos belongs to Pycnonotidae. A black head and conspicuous white eye-ring accompany a grey-brown body and yellow undertail. The eye-ring differs from White-eared Bulbul’s large.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "White-spectacled Bulbul Pycnonotus xanthopygos belongs to Pycnonotidae. A black head and conspicuous white eye-ring accompany a grey-brown body and yellow undertail. The eye-ring differs from White-eared Bulbul’s large white cheek patch: these are distinct species."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Gardens, orchards, scrub and open woodland near people provide habitat. It eats fruit and insects, visiting fruiting trees in pairs or small groups. Calls are strong and varied. Native plants fruiting at different times sustain food through the season."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A cup nest of fibres and plant material is placed in a shrub or tree. Both parents feed young; clutch and developmental measurements vary among study sites. Vegetation cover and nest position matter. Garden trees should not be penetrated to watch chicks at close range."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It is associated with the eastern Mediterranean and parts of Arabia. Lebanon’s updated checklist describes a widespread breeding resident from the coast to moderate elevations. A shared bulbul name does not give the three species identical ranges or field marks."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Residents can be followed in November around fruit and tree cover. Document the eye-ring, yellow undertail and location; frontal photographs may conceal the yellow area."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Fruit feeding contributes to dispersal of some seeds, while insects are also consumed. Scrub removal, simplified gardens and pesticides reduce food and nests. Diverse native planting and dense cover provide more suitable resources than indiscriminate human scraps."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Zoology in the Middle East — Breeding biology of White-spectacled Bulbul (2017)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dan Horowitz — CC0 1.0."
+        },
+        "fr": {
+          "title": "Bulbul à lunettes",
+          "subtitle": "Pycnonotus xanthopygos",
+          "meta_description": "Le Bulbul à lunettes Pycnonotus xanthopygos appartient aux Pycnonotidae. Tête noire, cercle oculaire blanc net, corps gris brun et dessous de la queue jaune le caractérisent. Le cercle diffère de la grande tache blanche.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Bulbul à lunettes Pycnonotus xanthopygos appartient aux Pycnonotidae. Tête noire, cercle oculaire blanc net, corps gris brun et dessous de la queue jaune le caractérisent. Le cercle diffère de la grande tache blanche des joues du Bulbul à oreillons blancs : ce sont deux espèces."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Jardins, vergers, broussailles et bois clairs près des habitations constituent son milieu. Il mange fruits et insectes, fréquentant les arbres en couples ou petits groupes. Ses cris sont puissants et variés. Des plantes locales aux fructifications décalées assurent une ressource saisonnière."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid en coupe, de fibres et végétaux, est placé dans un buisson ou un arbre. Les parents nourrissent les jeunes ; ponte et développement varient entre sites étudiés. Couvert et emplacement comptent. Pénétrer les arbres du jardin pour suivre les poussins de près est à éviter."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Il est associé à la Méditerranée orientale et à certaines régions d’Arabie. Au Liban, la liste actualisée le décrit comme résident nicheur répandu du littoral aux altitudes moyennes. Le nom bulbul ne donne pas aux trois espèces mêmes aires ou critères."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Les résidents se suivent en novembre autour des fruits et du couvert arboré. Documenter cercle oculaire, jaune sous la queue et lieu aide ; les clichés de face peuvent masquer la zone jaune."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "La consommation de fruits disperse certaines graines ; il mange aussi des insectes. Suppression des buissons, jardins simplifiés et pesticides réduisent nourriture et nids. Diversité des plantes locales et couvert dense conviennent mieux que des restes alimentaires distribués sans discernement."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Zoology in the Middle East — Breeding biology of White-spectacled Bulbul (2017)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dan Horowitz — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البلبل-أبيض-الخدين",
+        "en": "white-eared-bulbul",
+        "fr": "bulbul-a-oreillons-blancs"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "white-eared-bulbul"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البلبل أبيض الخدين",
+          "subtitle": "Pycnonotus leucotis",
+          "meta_description": "البلبل أبيض الخدين Pycnonotus leucotis من البلابل Pycnonotidae، ويسمى بالإنجليزية White-eared Bulbul. رأسه أسود وعلى جانبيه بقعتان بيضاوان كبيرتان، مع أسفل ذيل أصفر وجسم بني رمادي. تختلف بقعة الخد من الحلقة البيضاء.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "البلبل أبيض الخدين Pycnonotus leucotis من البلابل Pycnonotidae، ويسمى بالإنجليزية White-eared Bulbul. رأسه أسود وعلى جانبيه بقعتان بيضاوان كبيرتان، مع أسفل ذيل أصفر وجسم بني رمادي. تختلف بقعة الخد من الحلقة البيضاء الضيقة حول عين البلبل أصفر العجز. لا تُحسم الهوية من الاصفرار أسفل الذيل وحده."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يسكن البساتين والحدائق والواحات والمناطق الزراعية ذات الأشجار والشجيرات. يتناول ثمارًا وبذورًا وحشرات، ويتحرك في أزواج أو مجموعات صغيرة. قربه من الناس لا يعني اعتماده على التغذية البشرية؛ فالأشجار المثمرة واللافقاريات موارد طبيعية مهمة."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني عشًا كأسيًا في شجيرة أو شجرة، وقد يستخدم النخيل. توثق مراجع عراقية حضنات صغيرة تصل إلى ثلاث بيضات، مع رعاية للفراخ وتغذيتها. تتفاوت المواعيد بين المناطق؛ ولا تُنقل بيانات الإكثار في الأقفاص بوصفها نتائج من التجمعات البرية."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يمتد نطاقه من جنوب غرب آسيا إلى أجزاء من الخليج، وهو معروف في العراق والبحرين، وتصفه المصادر السعودية بمقيم متكاثر شائع. قد تتداخل تجمعات أصلية وأخرى مدخلة في بلدان المنطقة؛ لذلك يُوضح أصل التجمع إذا توفر دليل ولا تُنسب كل مشاهدة إلى انتشار طبيعي."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمكن رؤيته طوال العام في مواقع الإقامة، ومنها نوفمبر. تُوثق مساحة البقعة البيضاء وشكل الرأس والذيل مع المكان. ظهور فرد بعيد عن نطاق معتاد لا يثبت تلقائيًا توسعًا بريًا أو تكاثرًا؛ فقد يلزم استبعاد الهروب من الأسر."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يسهم في تناول الثمار والحشرات ونقل بعض البذور. الأسر والاتجار غير المشروع والمبيدات وفقدان الحدائق المتنوعة ضغوط مهمة. حفظ النباتات المحلية والامتناع عن اقتناص الطيور للزينة يدعمان تجمعاته، مع تجنب إطلاق أفراد أسيرة عشوائيًا."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "B. E. Allouse — Ornithological Excursion in Iraq, Iraq Natural History Museum.",
+                "Saudipedia — White-Eared Bulbul."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Михаил и Максим Поспеловы — CC0 1.0."
+        },
+        "en": {
+          "title": "White-eared Bulbul",
+          "subtitle": "Pycnonotus leucotis",
+          "meta_description": "White-eared Bulbul Pycnonotus leucotis belongs to Pycnonotidae. A black head bears large white cheek patches above a grey-brown body and yellow undertail. Those patches differ from White-spectacled Bulbul’s narrow.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "White-eared Bulbul Pycnonotus leucotis belongs to Pycnonotidae. A black head bears large white cheek patches above a grey-brown body and yellow undertail. Those patches differ from White-spectacled Bulbul’s narrow eye-ring. Yellow undertail colour alone does not identify either species."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Orchards, gardens, oases and wooded farmland provide habitat. Fruit, seeds and insects are eaten in pairs or small groups. Association with people does not mean dependence on handouts: fruiting trees and invertebrates remain natural resources."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A cup nest occupies a shrub or tree, including palms. Iraqi references document small clutches of up to three eggs and parental provisioning. Dates vary among regions. Captive-breeding observations should not be presented as measurements from wild populations."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range extends from southwestern Asia into parts of the Gulf. It is familiar in Iraq and Bahrain; Saudi sources describe a common breeding resident. Native and introduced populations may coexist regionally, so origin should be stated when established rather than assuming every record reflects natural spread."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Resident sites support year-round sightings, including November. Document cheek-patch extent, head and tail with location. An isolated bird beyond its expected range does not automatically prove natural expansion or breeding; escape from captivity may need exclusion."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Fruit and insect consumption contribute to food webs and some seed dispersal. Illegal capture and trade, pesticides and loss of varied gardens are pressures. Native planting and avoiding ornamental capture help, while indiscriminate releases of captive birds should be avoided."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "B. E. Allouse — Ornithological Excursion in Iraq, Iraq Natural History Museum.",
+                "Saudipedia — White-Eared Bulbul."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Михаил и Максим Поспеловы — CC0 1.0."
+        },
+        "fr": {
+          "title": "Bulbul à oreillons blancs",
+          "subtitle": "Pycnonotus leucotis",
+          "meta_description": "Le Bulbul à oreillons blancs Pycnonotus leucotis appartient aux Pycnonotidae. Sa tête noire porte deux grandes taches blanches aux joues, avec corps gris brun et dessous de la queue jaune. Ces taches diffèrent du cercle.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Bulbul à oreillons blancs Pycnonotus leucotis appartient aux Pycnonotidae. Sa tête noire porte deux grandes taches blanches aux joues, avec corps gris brun et dessous de la queue jaune. Ces taches diffèrent du cercle étroit du Bulbul à lunettes. Le jaune sous la queue ne suffit pas à identifier ces espèces."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Vergers, jardins, oasis et cultures arborées fournissent son milieu. Il mange fruits, graines et insectes en couples ou petits groupes. Sa proximité avec l’homme ne signifie pas une dépendance aux distributions : arbres fruitiers et invertébrés restent des ressources naturelles."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid en coupe occupe buisson ou arbre, notamment les palmiers. Des références irakiennes documentent de petites pontes allant jusqu’à trois œufs et le nourrissage parental. Les dates varient régionalement. Les données d’élevage en captivité ne doivent pas être présentées comme des mesures de populations sauvages."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire va du sud-ouest asiatique à certaines régions du Golfe. Familier en Irak et à Bahreïn, il est décrit en Arabie saoudite comme résident nicheur commun. Populations indigènes et introduites peuvent coexister : préciser l’origine lorsqu’elle est établie évite de supposer une expansion naturelle pour toute observation."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Les sites résidents l’accueillent toute l’année, notamment en novembre. Étendue des joues blanches, tête, queue et lieu doivent être documentés. Un individu isolé hors aire attendue ne prouve ni expansion ni reproduction ; une échappée de captivité peut devoir être exclue."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Fruits et insectes le relient aux réseaux alimentaires et à certaines dispersions de graines. Capture et commerce illégaux, pesticides et disparition des jardins variés sont des pressions. Planter local et éviter la capture ornementale aide, sans relâcher au hasard des oiseaux captifs."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "B. E. Allouse — Ornithological Excursion in Iraq, Iraq Natural History Museum.",
+                "Saudipedia — White-Eared Bulbul."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Михаил и Максим Поспеловы — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البلبل-الشائع",
+        "en": "common-bulbul",
+        "fr": "bulbul-des-jardins"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "common-bulbul"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البلبل الشائع",
+          "subtitle": "Pycnonotus barbatus",
+          "meta_description": "البلبل الشائع Pycnonotus barbatus من البلابل Pycnonotidae، ويعرف فرنسيًا ببلبل الحدائق. في تجمعات المغرب العربي رأسه داكن وجسمه بني رمادي وأسفل الذيل فاتح، دون خد أبيض كبير أو حلقة عين بيضاء صارخة. تختلف الألوان ضمن.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "البلبل الشائع Pycnonotus barbatus من البلابل Pycnonotidae، ويعرف فرنسيًا ببلبل الحدائق. في تجمعات المغرب العربي رأسه داكن وجسمه بني رمادي وأسفل الذيل فاتح، دون خد أبيض كبير أو حلقة عين بيضاء صارخة. تختلف الألوان ضمن نطاقه الأفريقي، لذلك تُقارن الصور بالمنطقة ولا تُستخدم صورة جنوبية ممثلة لكل التجمعات."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد الحدائق والبساتين والأحراج والهوامش المزروعة. يأكل الثمار والحشرات ومكونات نباتية أخرى، ويظهر في أزواج أو مجموعات صغيرة. تشمل دراسات غذائه في الجزائر دور الثمار واللافقاريات، وتبين ارتباطه بموارد تتغير موسميًا."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني عشًا كأسيًا في نبات كثيف أو شجرة مناسبة. يحتاج الصغار إلى رعاية وإطعام حتى يغادروا العش وما بعد ذلك. يختلف توقيت التعشيش مع المنطقة والظروف؛ فلا تعني ندرة رؤية الأعشاش غياب التكاثر عند طائر يخفيها داخل الغطاء."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "من طيور أفريقيا الواسعة الانتشار، ومعروف مقيمًا في مناطق من المغرب والجزائر وتونس. لا يُساوى تلقائيًا بالبلبل أصفر العجز في المشرق أو أبيض الخدين في العراق والخليج؛ فهذه أنواع مستقلة بعلامات ونطاقات مختلفة."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمكن مشاهدته في نوفمبر في مناطق إقامته المغاربية، خاصة قرب الأشجار المثمرة. يسجل لون أسفل الذيل ونمط الرأس وموقع الصورة. اسم «بلبل» وحده في سجل شعبي لا يكفي لتحديد النوع دون وصف أو صورة واضحة."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يسهم في نقل بذور بعض الثمار ويستهلك الحشرات. إزالة الشجيرات والمبيدات والاتجار بالطيور تضغط عليه. حفظ حدائق متنوعة وأنواع نباتية محلية مثمرة يدعم الغذاء والملاجئ، مع ترك الأعشاش داخل الغطاء دون كشف للتصوير."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Revue d’Écologie (La Terre et la Vie) 60 (2005) — food ecology of Pycnonotus barbatus in Algeria.",
+                "Milla et al. — Régime alimentaire du Bulbul des jardins dans le Sahel algérois, Revue d’Écologie 60 (2005), 369–380."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: karim Attouche — CC0 1.0."
+        },
+        "en": {
+          "title": "Common Bulbul",
+          "subtitle": "Pycnonotus barbatus",
+          "meta_description": "Common Bulbul Pycnonotus barbatus belongs to Pycnonotidae. Maghreb birds have a dark head, grey-brown body and pale undertail, without a large white cheek or striking white eye-ring. Colour varies across its African.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Common Bulbul Pycnonotus barbatus belongs to Pycnonotidae. Maghreb birds have a dark head, grey-brown body and pale undertail, without a large white cheek or striking white eye-ring. Colour varies across its African range, so southern photographs should not represent every geographical population."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Gardens, orchards, woodland and cultivated edges provide habitat. It eats fruit, insects and other plant material, appearing in pairs or small groups. Algerian diet studies document fruit and invertebrates and links with seasonally changing resources."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A cup nest is placed in dense vegetation or a suitable tree. Young need provisioning before and after nest departure. Breeding timing varies with region and conditions. Rarely seeing concealed nests does not imply that local birds fail to breed."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Widespread in Africa, it is familiar as a resident in parts of Morocco, Algeria and Tunisia. It should not be equated with White-spectacled Bulbul in the Levant or White-eared Bulbul in Iraq and the Gulf: these are separate species with different marks and ranges."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "November observation is possible in resident Maghreb areas, particularly at fruiting trees. Record undertail colour, head pattern and photograph location. A vernacular record naming only a bulbul cannot establish species without description or a clear image."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It disperses some fruit seeds and consumes insects. Scrub clearance, pesticides and bird trade are pressures. Diverse gardens with native fruiting plants preserve food and refuge; concealed nests should remain covered rather than exposed for photography."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Revue d’Écologie (La Terre et la Vie) 60 (2005) — food ecology of Pycnonotus barbatus in Algeria.",
+                "Milla et al. — Régime alimentaire du Bulbul des jardins dans le Sahel algérois, Revue d’Écologie 60 (2005), 369–380."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: karim Attouche — CC0 1.0."
+        },
+        "fr": {
+          "title": "Bulbul des jardins",
+          "subtitle": "Pycnonotus barbatus",
+          "meta_description": "Le Bulbul des jardins Pycnonotus barbatus appartient aux Pycnonotidae. Au Maghreb, il présente tête sombre, corps gris brun et dessous de la queue clair, sans grande joue blanche ni cercle oculaire blanc frappant. Les.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Bulbul des jardins Pycnonotus barbatus appartient aux Pycnonotidae. Au Maghreb, il présente tête sombre, corps gris brun et dessous de la queue clair, sans grande joue blanche ni cercle oculaire blanc frappant. Les couleurs varient en Afrique ; une photo méridionale ne représente pas toutes les populations."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Jardins, vergers, bois et bordures cultivées lui conviennent. Il consomme fruits, insectes et autres végétaux, en couples ou petits groupes. Des études algériennes documentent fruits et invertébrés, avec des ressources changeant selon les saisons."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid en coupe occupe une végétation dense ou un arbre approprié. Les jeunes nécessitent nourrissage avant et après la sortie. Les dates varient selon région et conditions. Observer rarement des nids dissimulés ne signifie pas l’absence de reproduction locale."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Répandu en Afrique, il est familier comme résident dans certaines régions du Maroc, d’Algérie et de Tunisie. Il ne doit pas être assimilé aux Bulbuls à lunettes du Levant ou à oreillons blancs d’Irak et du Golfe : espèces, critères et aires sont distincts."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Il s’observe en novembre dans ses régions maghrébines résidentes, notamment aux arbres fruitiers. Couleur sous la queue, tête et lieu de la photo doivent être notés. Un signalement populaire mentionnant seulement un bulbul ne détermine pas l’espèce sans description ou image nette."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Il disperse certaines graines et consomme des insectes. Défrichement, pesticides et commerce des oiseaux constituent des pressions. Des jardins variés avec plantes locales fruitières préservent nourriture et refuges ; les nids cachés doivent rester couverts plutôt qu’exposés pour une photo."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Revue d’Écologie (La Terre et la Vie) 60 (2005) — food ecology of Pycnonotus barbatus in Algeria.",
+                "Milla et al. — Régime alimentaire du Bulbul des jardins dans le Sahel algérois, Revue d’Écologie 60 (2005), 369–380."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: karim Attouche — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البلشون-الأرجواني",
+        "en": "purple-heron",
+        "fr": "heron-pourpre"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "purple-heron"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البلشون الأرجواني",
+          "subtitle": "Ardea purpurea",
+          "meta_description": "البلشون الأرجواني Ardea purpurea من البلشونيات Ardeidae. أرفع بنية من البلشون الرمادي، بعنق طويل ومنقار مدبب، وريش بني كستنائي وتخطيط داكن على العنق في البالغ. اليافع أبنى وأقل تباينًا. يسحب عنقه أثناء الطيران مثل.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "البلشون الأرجواني Ardea purpurea من البلشونيات Ardeidae. أرفع بنية من البلشون الرمادي، بعنق طويل ومنقار مدبب، وريش بني كستنائي وتخطيط داكن على العنق في البالغ. اليافع أبنى وأقل تباينًا. يسحب عنقه أثناء الطيران مثل بلشونات أخرى، خلافًا للقالق التي تمده."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتبط بالمستنقعات الكثيفة القصب والمياه الضحلة وحواف البحيرات والقنوات. يتخفى بين النباتات أو ينتظر الفريسة، ملتقطًا الأسماك والبرمائيات والحشرات وحيوانات صغيرة أخرى. امتزاج لونه بالقصب ووقفته الساكنة قد يخفيان طائرًا كبيرًا عن النظر."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني عشًا من عيدان القصب والأغصان وسط غطاء رطب كثيف، وأحيانًا فوق شجيرات. تورد بيانات BTO ثلاثًا إلى خمس بيضات عادة وحضانة مشتركة نحو 25–30 يومًا. يتعاون الأبوان في الإطعام، وقد يتسلق الصغار النبات قبل اكتمال الطيران؛ فمغادرة سطح العش لا تعني الاستقلال."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يمتد نطاقه عبر أجزاء من أوروبا وأفريقيا وآسيا، وتستخدم الطيور العربية مناطق التكاثر والعبور والشتاء بحسب الموقع. في لبنان تصفه القائمة المحدثة بمهاجر عبور على السواحل والجزر والمياه الداخلية، لا بمتكاثر مثبت بمجرد كثرة مشاهداته."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "تورد قائمة لبنان العبور من منتصف مارس إلى منتصف يونيو، وبأعداد أكبر من أوائل أغسطس إلى أواخر نوفمبر. لذلك تقع مشاهدة نوفمبر ضمن موسمه الخريفي المتوقع. تُوثق علامات العنق والمنقار والجناح للفصل من البلشون الرمادي، دون اقتحام القصب."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "حفظ القصب والمياه والغذاء ضروري لبقائه. تجفيف الأراضي الرطبة وحرق القصب وتلوث المياه والإزعاج تضغط عليه. إدارة القصب يجب أن تراعي مواسم الطيور وتترك مساحات آمنة؛ فلا يستبدل تجميل حافة بركة وظيفة مستنقع متكامل."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Purple Heron.",
+                "IUCN SSC Heron Specialist Group — Purple Heron, HeronConservation."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Istvan Sipos — CC0 1.0."
+        },
+        "en": {
+          "title": "Purple Heron",
+          "subtitle": "Ardea purpurea",
+          "meta_description": "Purple Heron Ardea purpurea belongs to Ardeidae. More slender than Grey Heron, it has a long neck, pointed bill and adult chestnut-brown plumage with dark neck stripes. Juveniles are browner and less contrasting. Like.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Purple Heron Ardea purpurea belongs to Ardeidae. More slender than Grey Heron, it has a long neck, pointed bill and adult chestnut-brown plumage with dark neck stripes. Juveniles are browner and less contrasting. Like other herons, it retracts its neck in flight, unlike extended-necked storks."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Dense reed marshes, shallow water, lakesides and channels provide habitat. Concealed among plants or waiting still, it takes fish, amphibians, insects and other small animals. Reed-coloured plumage and immobility can hide a large bird surprisingly effectively."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A nest of reed stems and twigs stands within dense wet cover, sometimes in shrubs. BTO gives three to five eggs and shared incubation around 25–30 days. Both parents feed young, which may climb vegetation before full flight. Leaving the nest platform does not mean independence."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range spans parts of Europe, Africa and Asia. Arab wetlands serve breeding, passage or wintering functions according to location. Lebanon’s updated checklist describes coastal, island and inland passage; frequent sightings alone do not establish breeding."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanese passage extends from mid-March to mid-June and, in larger numbers, early August to late November. November therefore falls within expected autumn occurrence. Neck, bill and wing details distinguish Grey Heron without entering reeds."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Reed cover, water and food are essential. Drainage, reed burning, pollution and disturbance are pressures. Reed management should respect bird seasons and retain safe areas; cosmetic pond edges cannot replace the functions of a complete marsh."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Purple Heron.",
+                "IUCN SSC Heron Specialist Group — Purple Heron, HeronConservation."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Istvan Sipos — CC0 1.0."
+        },
+        "fr": {
+          "title": "Héron pourpré",
+          "subtitle": "Ardea purpurea",
+          "meta_description": "Le Héron pourpré Ardea purpurea appartient aux Ardeidae. Plus élancé que le Héron cendré, il possède long cou, bec pointu et plumage adulte brun châtain avec rayures sombres au cou. Le jeune est plus brun et moins.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Héron pourpré Ardea purpurea appartient aux Ardeidae. Plus élancé que le Héron cendré, il possède long cou, bec pointu et plumage adulte brun châtain avec rayures sombres au cou. Le jeune est plus brun et moins contrasté. Comme les autres hérons, il vole cou replié, contrairement aux cigognes."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Marais à roseaux denses, eaux peu profondes, bords de lacs et canaux lui conviennent. Caché dans les plantes ou immobile, il capture poissons, amphibiens, insectes et autres petits animaux. Couleur des roseaux et immobilité dissimulent efficacement ce grand oiseau."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid de tiges et brindilles occupe un couvert humide dense, parfois des buissons. Le BTO donne trois à cinq œufs et environ 25–30 jours d’incubation partagée. Les parents nourrissent les jeunes, capables de grimper avant de bien voler. Quitter la plateforme ne signifie pas l’autonomie."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire couvre certaines régions d’Europe, d’Afrique et d’Asie. Les zones humides arabes servent à la reproduction, au passage ou à l’hivernage selon les lieux. La liste libanaise décrit le passage côtier, insulaire et intérieur ; l’abondance des observations ne prouve pas une nidification."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Au Liban, le passage va de mi-mars à mi-juin et, plus abondamment, de début août à fin novembre. Novembre correspond donc à sa présence automnale attendue. Cou, bec et ailes le distinguent du Héron cendré sans pénétrer les roseaux."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Roseaux, eau et nourriture sont essentiels. Drainage, brûlage, pollution et dérangement constituent des pressions. La gestion des roselières doit respecter les saisons et conserver des refuges ; des berges décoratives ne remplacent pas les fonctions d’un marais complet."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Purple Heron.",
+                "IUCN SSC Heron Specialist Group — Purple Heron, HeronConservation."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Istvan Sipos — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الزرزور-الأسود",
+        "en": "spotless-starling",
+        "fr": "etourneau-unicolore"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "spotless-starling"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الزرزور الأسود",
+          "subtitle": "Sturnus unicolor",
+          "meta_description": "الزرزور الأسود Sturnus unicolor من الزرزوريات Sturnidae، ويعرف بالزرزور غير المنقط. ريشه داكن لامع مع ريشات حلق طويلة نسبيًا. يختلف عن الزرزور الشائع بقلة التنقيط، لكن الشائع قد يفقد كثيرًا من نقاطه في موسم التكاثر؛.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الزرزور الأسود Sturnus unicolor من الزرزوريات Sturnidae، ويعرف بالزرزور غير المنقط. ريشه داكن لامع مع ريشات حلق طويلة نسبيًا. يختلف عن الزرزور الشائع بقلة التنقيط، لكن الشائع قد يفقد كثيرًا من نقاطه في موسم التكاثر؛ لذلك تُقرأ بنية الريش والصوت والموقع معًا."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد الأراضي الزراعية والمراعي والبساتين والبلدات. يتناول الحشرات ويرقاتها من الأرض ويضيف الثمار والبذور موسميًا. يعيش اجتماعيًا ويكون تجمعات للمبيت، ويغني من مجاثم مكشوفة. تتغير نسب الغذاء مع الموسم وتوفر الموارد."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يعشش في تجاويف الأشجار والصخور والمباني. يورد دليل SEO/BirdLife الإسباني أربعًا أو خمس بيضات عادة، وحضانة نحو 10–15 يومًا، وطيران الصغار بعد نحو 21–22 يومًا، مع استمرار الإطعام بعدها. قد توجد حضنتان؛ وهذه مدد مرجعية من نطاق التكاثر وليست تقويمًا مفروضًا على المغرب العربي."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "ينتشر في غرب المتوسط، خصوصًا شبه الجزيرة الأيبيرية وأجزاء من المغرب العربي وجزر متوسطية. حضور شمال أفريقيا يجعله مهمًا للموسوعة العربية، لكنه ليس بديلًا اسميًا للزرزور الشائع المنتشر على نطاق أوسع؛ فلكل منهما هوية علمية مستقلة."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "مقيم أساسًا في نطاقه، مع تحركات محلية، ويمكن متابعته في نوفمبر. قد تختلط تجمعاته مع الزرزور الشائع الشتوي، فيلزم توثيق أكثر من فرد وزاوية. غياب النقاط في صورة بعيدة أو مظلمة لا يكفي لإثبات النوع."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يستهلك لا فقاريات زراعية وينقل بعض بذور الثمار، وقد يزور محاصيل مثمرة. حماية المواقع التجويفية وتنوع الأرياف وتقليل المبيدات تدعم تجمعاته. عند وجود ضرر محصولي، تفيد وسائل إدارة موضعية لا تدمر مواقع المبيت والتكاثر أو تؤذي أنواعًا مختلطة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "SEO/BirdLife — Estornino negro, Sturnus unicolor.",
+                "Gil — III Atlas de las aves en época de reproducción en España (2022), Estornino negro."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Mirela — CC0 1.0."
+        },
+        "en": {
+          "title": "Spotless Starling",
+          "subtitle": "Sturnus unicolor",
+          "meta_description": "Spotless Starling Sturnus unicolor belongs to Sturnidae. Dark glossy plumage includes relatively long throat feathers. It generally lacks Common Starling’s heavy spotting, but breeding Common Starlings can also lose.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Spotless Starling Sturnus unicolor belongs to Sturnidae. Dark glossy plumage includes relatively long throat feathers. It generally lacks Common Starling’s heavy spotting, but breeding Common Starlings can also lose many spots. Feather structure, voice and location must therefore be combined."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Farmland, pasture, orchards and towns provide habitat. It takes ground insects and larvae, adding fruit and seeds seasonally. Social birds form communal roosts and sing from exposed perches. Food proportions vary with season and resources."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "Nests occupy tree, rock and building cavities. Spain’s SEO/BirdLife account gives usually four or five eggs, incubation around 10–15 days and young flying at about 21–22 days, followed by further feeding. Two broods are possible. These breeding-range reference durations do not impose a Spanish calendar on the Maghreb."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It occurs in the western Mediterranean, particularly Iberia, parts of the Maghreb and Mediterranean islands. North African occurrence makes it relevant to an Arab encyclopedia, but it is not another name for widespread Common Starling: the scientific identities are distinct."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Mainly resident with local movements, it can be watched in November. Flocks may mix with wintering Common Starlings, requiring several individuals and angles to be documented. Lack of visible spots in a dark or distant photograph is insufficient."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It consumes agricultural invertebrates and disperses some fruit seeds, while sometimes visiting fruit crops. Cavities, varied farmland and reduced pesticides support populations. Local crop management should avoid destroying roosts or nests and harming mixed species."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "SEO/BirdLife — Estornino negro, Sturnus unicolor.",
+                "Gil — III Atlas de las aves en época de reproducción en España (2022), Estornino negro."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Mirela — CC0 1.0."
+        },
+        "fr": {
+          "title": "Étourneau unicolore",
+          "subtitle": "Sturnus unicolor",
+          "meta_description": "L’Étourneau unicolore Sturnus unicolor appartient aux Sturnidae. Son plumage sombre brillant comporte des plumes de gorge assez longues. Il est généralement moins ponctué que le Sansonnet, mais celui-ci perd aussi.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Étourneau unicolore Sturnus unicolor appartient aux Sturnidae. Son plumage sombre brillant comporte des plumes de gorge assez longues. Il est généralement moins ponctué que le Sansonnet, mais celui-ci perd aussi beaucoup de points en plumage nuptial. Structure des plumes, voix et lieu doivent être combinés."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Cultures, pâturages, vergers et villes constituent son milieu. Il prend insectes et larves au sol, ajoutant fruits et graines selon la saison. Sociable, il forme des dortoirs et chante depuis des postes dégagés. Le régime varie avec ressources et saisons."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Les nids occupent cavités d’arbres, rochers et bâtiments. Le guide espagnol SEO/BirdLife donne généralement quatre ou cinq œufs, environ 10–15 jours d’incubation et un envol vers 21–22 jours, suivi de nourrissage. Deux nichées sont possibles. Ces durées ne transposent pas le calendrier espagnol au Maghreb."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Il occupe la Méditerranée occidentale, notamment Ibérie, certaines régions maghrébines et des îles méditerranéennes. Sa présence nord-africaine justifie son intérêt arabe, sans en faire un autre nom du Sansonnet plus largement répandu : les identités scientifiques sont distinctes."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Principalement résident avec déplacements locaux, il s’observe en novembre. Les groupes peuvent mêler des Sansonnets hivernants ; plusieurs individus et angles sont à documenter. L’absence de points visibles sur une photo sombre ou lointaine ne suffit pas."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Il consomme des invertébrés agricoles, disperse certaines graines et visite parfois des cultures fruitières. Cavités, campagnes variées et pesticides réduits le favorisent. La gestion locale des dommages doit éviter de détruire dortoirs et nids ou de toucher les espèces mélangées."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "SEO/BirdLife — Estornino negro, Sturnus unicolor.",
+                "Gil — III Atlas de las aves en época de reproducción en España (2022), Estornino negro."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Mirela — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "السنونو-أحمر-العجز-الغربي",
+        "en": "european-red-rumped-swallow",
+        "fr": "hirondelle-rousseline"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "european-red-rumped-swallow"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "السنونو أحمر العجز الغربي",
+          "subtitle": "Cecropis rufula",
+          "meta_description": "السنونو أحمر العجز الغربي Cecropis rufula من السنونويات Hirundinidae، ويسمى بالإنجليزية European Red-rumped Swallow. يحمل عجزًا وقفا محمرين وبطنًا فاتحًا وذيلًا مشقوقًا طويلًا. يختلف عن سنونو الحظائر بعلامات العجز.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "السنونو أحمر العجز الغربي Cecropis rufula من السنونويات Hirundinidae، ويسمى بالإنجليزية European Red-rumped Swallow. يحمل عجزًا وقفا محمرين وبطنًا فاتحًا وذيلًا مشقوقًا طويلًا. يختلف عن سنونو الحظائر بعلامات العجز والقفا والعش. فُصل من السنونو أحمر العجز الشرقي Cecropis daurica؛ وتحتاج السجلات القديمة إلى قراءة جغرافية وتصنيفية."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يلتقط الحشرات الطائرة فوق الأرياف والوديان والمناطق المفتوحة، وقد يتجمع مع سنونوات أخرى قرب الماء. يستفيد من المباني والجسور والجروف للتعشيش. الطين ومصدر الغذاء القريب عنصران متكاملان، ولا يكفي وجود جسر لوجود مستعمرة."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني عشًا طينيًا مغلقًا ذا مدخل أنبوبي، يشبه قارورة مثبتة إلى سطح محمي. يتعاون الزوج في بناء العش ورعاية الفراخ وإطعامها بالحشرات. يحتفظ العش بقيمته في مواسم لاحقة إذا ظل سليمًا؛ ويجب التحقق من إشغاله قبل أعمال الصيانة."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يشمل نطاقه جنوب أوروبا وشمال أفريقيا والشرق الأوسط شرقًا إلى مناطق آسيوية. تصفه قائمة لبنان باسم rufula كمتكاثر صيفي غير شائع ومهاجر عبور. يؤكد BTO هويته المستقلة عن النوع الشرقي، فلا تُحتسب الأسماء القديمة نوعًا إضافيًا."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "في لبنان يمتد التكاثر من مارس إلى أغسطس، والعبور أساسًا في مارس وأبريل ثم سبتمبر وأكتوبر. نوفمبر متأخر عن معظم حضوره المحلي المعتاد، مع اختلاف الموسمية في النطاق الأوسع. يوثق العجز والقفا والذيل، لا مجرد اللون العام في الطيران."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يستهلك الحشرات الجوية ويتأثر بتراجعها وتدمير الأعشاش أثناء صيانة الجسور والمباني. حفظ الأعشاش السليمة وتأجيل العمل حول المشغول منها وتقليل المبيدات خطوات عملية. يمكن مراقبة مداخل الأعشاش من بعيد دون الوقوف في مسار دخول الأبوين."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: European Red-rumped Swallow, Cecropis rufula."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: José Antonio León Mangado — CC0 1.0."
+        },
+        "en": {
+          "title": "European Red-rumped Swallow",
+          "subtitle": "Cecropis rufula",
+          "meta_description": "European Red-rumped Swallow Cecropis rufula belongs to Hirundinidae. A rufous rump and nape accompany pale underparts and a long forked tail. Rump, nape and nest structure distinguish it from Barn Swallow. It was.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "European Red-rumped Swallow Cecropis rufula belongs to Hirundinidae. A rufous rump and nape accompany pale underparts and a long forked tail. Rump, nape and nest structure distinguish it from Barn Swallow. It was separated from Eastern Red-rumped Swallow Cecropis daurica; old records require geographic and taxonomic interpretation."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It catches flying insects over farmland, valleys and open country, sometimes joining other swallows near water. Buildings, bridges and cliffs provide nest sites. Mud and nearby food are complementary resources; a bridge alone does not ensure a colony."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "The enclosed mud nest has a tubular entrance, resembling a flask attached beneath shelter. The pair builds and tends young, provisioning insects. An intact nest can retain value in later seasons. Occupancy must be checked before maintenance work."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range includes southern Europe, North Africa and the Middle East, extending east into Asia. Lebanon’s checklist uses rufula for an uncommon migrant breeder and passage migrant. BTO confirms its separation from the eastern species; historical names must not be counted as additional species."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanese breeding extends from March to August, with passage mainly in March–April and September–October. November follows most usual local occurrence, while seasonality differs elsewhere. Document rump, nape and tail rather than general colour in flight."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It consumes aerial insects and is affected by their decline and nest destruction during bridge or building maintenance. Retaining sound nests, delaying work around occupied ones and reducing pesticides help. Observe entrances at a distance without obstructing parents."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: European Red-rumped Swallow, Cecropis rufula."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: José Antonio León Mangado — CC0 1.0."
+        },
+        "fr": {
+          "title": "Hirondelle rousseline",
+          "subtitle": "Cecropis rufula",
+          "meta_description": "L’Hirondelle rousseline Cecropis rufula appartient aux Hirundinidae. Croupion et nuque roux accompagnent dessous clair et longue queue fourchue. Ces marques et le nid la distinguent de l’Hirondelle rustique. Elle a été.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Hirondelle rousseline Cecropis rufula appartient aux Hirundinidae. Croupion et nuque roux accompagnent dessous clair et longue queue fourchue. Ces marques et le nid la distinguent de l’Hirondelle rustique. Elle a été séparée de la rousseline orientale Cecropis daurica ; les anciens signalements nécessitent une interprétation géographique et taxonomique."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Elle capture les insectes en vol au-dessus des campagnes, vallées et espaces ouverts, parfois avec d’autres hirondelles près de l’eau. Bâtiments, ponts et falaises offrent des sites. Boue et nourriture proche se complètent ; un pont seul ne garantit pas une colonie."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid de boue fermé possède un tunnel d’entrée, évoquant une bouteille fixée sous abri. Le couple construit et soigne les jeunes, nourris d’insectes. Un nid intact garde une valeur les saisons suivantes. Son occupation doit être vérifiée avant les travaux."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire comprend Europe méridionale, Afrique du Nord et Moyen-Orient, avec prolongement asiatique. La liste libanaise emploie rufula pour une nicheuse migratrice peu commune et migratrice de passage. Le BTO confirme la séparation orientale ; les anciens noms ne comptent pas comme espèces supplémentaires."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Au Liban, la reproduction va de mars à août et le passage surtout en mars–avril et septembre–octobre. Novembre suit l’essentiel de la présence habituelle, avec d’autres saisons ailleurs. Documenter croupion, nuque et queue vaut mieux que la couleur générale en vol."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Elle consomme des insectes aériens mais subit leur raréfaction et la destruction des nids lors des travaux. Conserver les nids solides, différer les interventions près des nids occupés et réduire les pesticides aide. Observer les entrées à distance laisse circuler les parents."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: European Red-rumped Swallow, Cecropis rufula."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: José Antonio León Mangado — CC0 1.0."
+        }
+      }
+    }
+  ]
+}
