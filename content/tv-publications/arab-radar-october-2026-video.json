@@ -1,0 +1,19 @@
+{
+  "schema": "sayd-radar-tv-publication-v1",
+  "id": "arab-radar-october-2026-video",
+  "expected_base": "579e1cffbcb7c277d3f053c38100284e6cec8c24",
+  "approval_reference": "private:Sentinel_39afad049484819185dbdaf6c58235cf",
+  "published": "2026-11-04",
+  "titles": {
+    "ar": "رادار صيد العربي لأكتوبر 2026",
+    "en": "Sayd Arab Radar — October 2026",
+    "fr": "Radar arabe Sayd — octobre 2026"
+  },
+  "description": {
+    "ar": "أبرز الأرقام والوقائع من الأخبار المنشورة خلال أكتوبر 2026.",
+    "en": "Key figures and events from news published in October 2026.",
+    "fr": "Les principaux chiffres et faits des actualités publiées en octobre 2026."
+  },
+  "poster_sha256": "251345f9c022e14fb351a2355ab04338f019ad853796388b8c9ecbdadbd4b407",
+  "expected_channel_sha256": "613c985a053f8a531cf2e9fa2f86ac14c6713bd1be7e333b294173e5118b1c7b"
+}
