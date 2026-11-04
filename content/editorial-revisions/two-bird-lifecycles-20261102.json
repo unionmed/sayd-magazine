@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "two-bird-lifecycles-20261102",
+  "expected_base": "e55f5ac47ce348389a548588e9c7b5325238af0f",
+  "operation": "complete-two-bird-lifecycles",
+  "approval_reference": "private:nayef-bird-encyclopedia-20261101-standing-publication-and-verified-repairs",
+  "expected_source_sha256": "2f828892245da3b18ed8de768f6e2b18f637da057ffd7e3ed4f3b5afff1f4486",
+  "expected_targets_sha256": "7e68fb020a3cb3bdeadb3484756bcd3a1d0c31bfce97c19e1b89f5ff080bf367",
+  "payload": {}
+}
