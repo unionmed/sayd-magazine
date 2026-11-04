@@ -349,6 +349,176 @@ class PullquoteTests(unittest.TestCase):
                 schema.validate(value)
 
 
+class PhotoPlacementTests(unittest.TestCase):
+    render = PullquoteTests.render
+
+    def fixture(self, section_count=21, photo_count=9):
+        value = record()
+        article = value['articles'][0]
+        for index in range(1, photo_count):
+            photo = copy.deepcopy(value['photos'][0])
+            photo['id'] = f'interior-{index}'
+            photo['path'] = photo['path'].replace('cover.png', photo['id'] + '.png')
+            value['photos'].append(photo)
+            article['photos'].append(photo['id'])
+        for lang in schema.LANGS:
+            article['translations'][lang]['sections'] = [
+                {'heading': f'Country {index}', 'paragraphs': [f'{lang} paragraph {index}']}
+                for index in range(section_count)]
+        return value
+
+    def test_nine_photos_in_country_sections_without_captions(self):
+        from lxml import html
+        value = self.fixture()
+        article = value['articles'][0]
+        indices = [0, 2, 5, 8, 11, 14, 17, 20]
+        article['photo_placements'] = [{'photo_id': p, 'after_section': i}
+                                       for p, i in zip(article['photos'][1:], indices)]
+        for photo in value['photos']:
+            photo['caption'] = {lang: '' for lang in schema.LANGS}
+        schema.validate(value)
+        for lang in schema.LANGS:
+            body = self.render(value, lang)
+            node = html.fromstring('<main>' + body + '</main>')
+            figures = node.xpath('./figure')
+            self.assertEqual(len(figures), 9)
+            self.assertFalse(node.xpath('.//figcaption'))
+            for figure, index, photo_id in zip(figures[1:], indices, article['photos'][1:]):
+                self.assertEqual(figure.getprevious().text, f'{lang} paragraph {index}')
+                self.assertTrue(figure.xpath('./img/@src')[0].endswith(photo_id + '.png'))
+            self.assertEqual(len(node.xpath('./p[@class="photo-credit"]')), 1)
+
+    def test_placement_failures(self):
+        valid = [{'photo_id': 'interior-1', 'after_section': 0},
+                 {'photo_id': 'interior-2', 'after_section': 2}]
+        invalid = [None, {}, '', [], valid[:1], valid + valid[:1],
+                   [valid[0], valid[0]], list(reversed(valid))]
+        for key, bad in [('photo_id', 'cover'), ('photo_id', 'unknown'), ('photo_id', []),
+                         ('after_section', -1), ('after_section', 3), ('after_section', True),
+                         ('after_section', '1'), ('after_section', 1.0), ('after_section', None)]:
+            changed = copy.deepcopy(valid); changed[1][key] = bad; invalid.append(changed)
+        for field in ('photo_id', 'after_section'):
+            changed = copy.deepcopy(valid); del changed[1][field]; invalid.append(changed)
+        changed = copy.deepcopy(valid); changed[1]['html'] = '<figure>'; invalid.append(changed)
+        changed = copy.deepcopy(valid); changed[0]['after_section'] = 2; changed[1]['after_section'] = 0; invalid.append(changed)
+        for placements in invalid:
+            value = self.fixture(3, 3); value['articles'][0]['photo_placements'] = placements
+            with self.subTest(placements=placements), self.assertRaises(ValueError):
+                schema.validate(value)
+        for lang in schema.LANGS:
+            value = self.fixture(3, 3); value['articles'][0]['photo_placements'] = valid
+            value['articles'][0]['translations'][lang]['sections'].pop()
+            with self.subTest(short_language=lang), self.assertRaises(ValueError):
+                schema.validate(value)
+
+    def test_shared_section_and_cover_only(self):
+        value = self.fixture(1, 3)
+        value['articles'][0]['photo_placements'] = [
+            {'photo_id': p, 'after_section': 0} for p in value['articles'][0]['photos'][1:]]
+        schema.validate(value)
+        self.assertEqual(self.render(value, 'en').count('<figure>'), 3)
+        value = record(); before = self.render(value, 'en')
+        value['articles'][0]['photo_placements'] = []
+        schema.validate(value)
+        self.assertEqual(self.render(value, 'en'), before)
+
+    def test_absent_mapping_matches_original_renderer_bytes(self):
+        # Frozen SHA-256 outputs of d5846ed's renderer, including overflow images.
+        expected = {
+            (1, 1): ['340f637d00b327d8a9f48ef2ed4dfd8d7f37a302744c223dbc29ec1f146ccf9a', 'e1156c63f6813cde12f3637e9adc88ef0c0cb58df4995ff1e25c9b463b1dc944', '16840c6f67eba2375b5eb31397dbc6b0424ed3d03034e2495841fef19737365c'],
+            (1, 9): ['c66459e0dcb03b475b0092bbcd549f62369814b3fe97453a0fd46fb53c811f3f', 'aa1758792f5cc70a629a2742a3913a88cca231746432bcf493dd94b9bee825b7', '712638658789a0d20c89e597e22e31b75895500aeefe96af8c21e60f98e2991c'],
+            (21, 9): ['c242b2f0c42c3d996ebef72ed1bccae9b9b1882012d03d4f6fda6e6e16728213', '2b0807b2ba37dfea7503d7217391f0303c07fa87d5b722f1cad5e11cafde1552', '5b98709e643cab3419181926065430eed03876f92662cd7f79336386332ec2d1'],
+            (3, 3): ['482a889991c23227925ccab3cc856400e0e9be083234a2524c00724fd33cf81c', '0dd7325e41c070136f9cf5a2e498aa1be22b3ad50b07e8b56147367e41bd0143', '7acfc4a15872a3e79f87313190768a32f0202fc108e8b7b473cbcb96ecaf504b'],
+        }
+        for (sections, photos), hashes in expected.items():
+            value = self.fixture(sections, photos)
+            for lang, digest in zip(schema.LANGS, hashes):
+                with self.subTest(sections=sections, photos=photos, lang=lang):
+                    self.assertEqual(hashlib.sha256(self.render(value, lang).encode()).hexdigest(), digest)
+
+
+class ExactRadarBundleTests(unittest.TestCase):
+    def fixture(self):
+        value = record(release=schema.RADAR_RELEASE)
+        template = value['photos'][0]
+        value['photos'] = []
+        for photo_id, path, digest in schema.RADAR_PHOTOS:
+            photo = copy.deepcopy(template)
+            photo.update(id=photo_id, path=path, sha256=digest, source_sha256=digest,
+                         caption={lang: '' for lang in schema.LANGS})
+            del photo['rights']
+            value['photos'].append(photo)
+        article = value['articles'][0]
+        article['slugs'] = dict(schema.RADAR_SLUGS)
+        article['photos'] = [photo[0] for photo in schema.RADAR_PHOTOS]
+        article['photo_placements'] = copy.deepcopy(schema.RADAR_PLACEMENTS)
+        for lang in schema.LANGS:
+            article['translations'][lang]['sections'] *= 21
+        return value
+
+    def test_exact_bundle_omits_field_without_adding_status(self):
+        value = self.fixture()
+        self.assertIs(schema.validate(value), value)
+        for photo in value['photos']:
+            self.assertNotIn('rights', photo)
+        # Rendering is independent of byte hashing (compile gates check hashes).
+        body = PullquoteTests.render(self, value, 'en')
+        self.assertEqual(body.count('<figure>'), 9)
+        self.assertNotIn('<figcaption>', body)
+        self.assertNotIn('rel="license"', body)
+        self.assertNotIn('private:', body)
+
+    def test_no_rights_field_is_accepted_on_any_exact_photo(self):
+        for index in range(9):
+            for rights in (None, {}, {'status': 'owned'}, {'status': 'owner_selected_external_source_unresolved'}):
+                value = self.fixture(); value['photos'][index]['rights'] = rights
+                with self.subTest(index=index, rights=rights), self.assertRaises(ValueError):
+                    schema.validate(value)
+
+    def test_every_photo_identity_component_is_exact(self):
+        for index in range(9):
+            for field in ('id', 'path', 'sha256', 'source_sha256'):
+                value = self.fixture()
+                value['photos'][index][field] += 'x'
+                with self.subTest(index=index, field=field), self.assertRaises(ValueError):
+                    schema.validate(value)
+            for field in ('source_reference', 'alt', 'sha256', 'source_sha256'):
+                value = self.fixture(); del value['photos'][index][field]
+                with self.subTest(index=index, missing=field), self.assertRaises(ValueError):
+                    schema.validate(value)
+
+    def test_release_slug_article_count_photo_count_and_order_are_bound(self):
+        mutations = [
+            lambda v: v.update(id='different-release'),
+            lambda v: v['photos'].pop(),
+            lambda v: v['photos'].append(copy.deepcopy(v['photos'][0])),
+            lambda v: v['photos'].reverse(),
+            lambda v: v.update(articles=[]),
+            lambda v: v['articles'].append(copy.deepcopy(v['articles'][0])),
+            lambda v: v['articles'][0]['photos'].pop(),
+            lambda v: v['articles'][0]['photos'].reverse(),
+            lambda v: v['articles'][0].pop('photo_placements'),
+            lambda v: v['articles'][0]['photo_placements'][0].update(after_section=5),
+            lambda v: v['photos'][0]['caption'].update(en='Caption'),
+        ]
+        for lang in schema.LANGS:
+            mutations.append(lambda v, lang=lang: v['articles'][0]['slugs'].update({lang: 'other-slug'}))
+        for index, mutate in enumerate(mutations):
+            value = self.fixture(); mutate(value)
+            with self.subTest(mutation=index), self.assertRaises(ValueError): schema.validate(value)
+
+    def test_other_releases_keep_original_rights_requirements(self):
+        value = record(); schema.validate(value)
+        del value['photos'][0]['rights']
+        with self.assertRaises(ValueError): schema.validate(value)
+        value = record()
+        value['photos'][0]['rights']['status'] = 'owner_selected_external_source_unresolved'
+        with self.assertRaises(ValueError): schema.validate(value)
+        # No opt-in switch or permission status grants a reusable omission.
+        value = record(); value['omit_rights'] = True
+        with self.assertRaises(ValueError): schema.validate(value)
+
+
 class SchemaTests(unittest.TestCase):
     def test_explicit_interview_format_only(self):
         value = record(); value['articles'][0]['format'] = 'interview'

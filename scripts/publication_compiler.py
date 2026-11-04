@@ -238,23 +238,29 @@ def body_html(stage, article, language, photos, pairs, doors, seo):
         caption = '<figcaption>' + html.escape(photo['caption'][language]) + '</figcaption>' if photo['caption'][language] else ''
         return '<figure><img src="' + src + '" width="' + str(width) + '" height="' + str(height) + '" alt="' + html.escape(photo['alt'][language], quote=True) + '" loading="lazy" decoding="async" style="display:block;width:100%;height:auto">' + caption + '</figure>'
     result = figure(photos[article['photos'][0]]) + '<p class="excerpt">' + html.escape(tr['subtitle']) + '</p>'
+    placements = article.get('photo_placements')
     for index, section in enumerate(tr['sections']):
         if section.get('heading'):
             result += '<h2>' + html.escape(section['heading']) + '</h2>'
         result += ''.join('<p>' + html.escape(p).replace('\n', '<br>') + '</p>' for p in section['paragraphs'])
         if section.get('pullquote'):
             result += '<blockquote class="en-callout"><p>' + html.escape(section['pullquote']).replace('\n', '<br>') + '</p></blockquote>'
-        if index + 1 < len(article['photos']):
+        if placements is not None:
+            for placement in placements:
+                if placement['after_section'] == index:
+                    result += figure(photos[placement['photo_id']])
+        elif index + 1 < len(article['photos']):
             result += figure(photos[article['photos'][index + 1]])
-    for photo_id in article['photos'][len(tr['sections']) + 1:]:
-        result += figure(photos[photo_id])
+    if placements is None:
+        for photo_id in article['photos'][len(tr['sections']) + 1:]:
+            result += figure(photos[photo_id])
     if tr['sources']:
         result += '<p class="article-sources">' + ' · '.join('<a href="' + html.escape(s['url'], quote=True) + '">' + html.escape(s['label']) + '</a>' for s in tr['sources']) + '</p>'
     result += '<p class="photo-credit">' + html.escape(tr['photo_credit'])
     source_urls = list(dict.fromkeys(photos[p].get('source_url') for p in article['photos'] if photos[p].get('source_url')))
     for index, source_url in enumerate(source_urls, 1):
         result += ' · <a href="' + html.escape(source_url, quote=True) + '">' + str(index) + '</a>'
-    licenses = list(dict.fromkeys(photos[p]['rights'].get('license_url') for p in article['photos'] if photos[p]['rights'].get('license_url')))
+    licenses = list(dict.fromkeys(photos[p].get('rights', {}).get('license_url') for p in article['photos'] if photos[p].get('rights', {}).get('license_url')))
     for licence in licenses:
         result += ' · <a rel="license" href="' + html.escape(licence, quote=True) + '">' + html.escape(licence) + '</a>'
     result += '</p>'

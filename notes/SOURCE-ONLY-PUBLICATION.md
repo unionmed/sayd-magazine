@@ -98,11 +98,32 @@ hashes. Normal licensed-image evidence and legally required attribution remain
 unchanged, including when visible descriptive captions are omitted. Never relabel
 this unresolved status as licensed or verified permission to make a test pass.
 
+The one exact `arab-radar-october-2026` publication has a bounded schema exception:
+its nine fixed photo IDs, local paths, published/source SHA-256 values, order,
+trilingual slugs and section placements must match the constants in the schema.
+It contains exactly one article using those nine photos, with empty captions.
+For this bundle the `rights` field is omitted and rejected if present. This adds
+no permission status, verification claim or reusable authorization. Every other
+release retains the existing required photo fields and validation. Photo integrity,
+source references, alt text, compilation review and all publication gates remain.
+
 Each article has complete AR/EN/FR slugs, author, title, description, subtitle,
 plain-text sections, sources, end-of-article photo credit and optional ticker title.
 Photo order is explicit and identical across languages. Sources use credential-free
 HTTPS links; metadata can retain legitimate external license references. Public
 text, source wording and links still require normal editorial review.
+
+An optional article-level `photo_placements` list places interior photographs after
+specified sections, identically in all languages. Each entry contains only
+`photo_id` and zero-based integer `after_section`. The first photo remains the cover
+and must not appear in the list. Every remaining article photo must appear exactly
+once, in article photo order, with nondecreasing section indices valid in **all**
+three translations. Multiple photos may share a section, in the declared order.
+An empty list is valid only for a cover-only article. No raw HTML or per-language
+placement override is accepted. When absent, the existing automatic placement and
+overflow behavior remains byte-identical. Empty captions still omit figcaptions;
+alt text, end credit and source/rights evidence remain required.
+
 
 `primary_door` and explicit `archives` are distinct from distribution. Supported
 new material includes normal trilingual news, Science features with a secondary
