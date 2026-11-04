@@ -79,6 +79,22 @@
         "en": "qatar-shooting-world-championships-2026",
         "fr": "mondiaux-tir-qatar-2026"
       }
+    },
+    {
+      "updated": "2026-11-02",
+      "slugs": {
+        "ar": "الدخلة-السوداء-الرأس",
+        "en": "sardinian-warbler",
+        "fr": "fauvette-melanocephale"
+      }
+    },
+    {
+      "updated": "2026-11-02",
+      "slugs": {
+        "ar": "الحميراء-الشائعة",
+        "en": "common-redstart",
+        "fr": "rougequeue-a-front-blanc"
+      }
     }
   ]
 }
