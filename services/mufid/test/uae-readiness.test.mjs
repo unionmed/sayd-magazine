@@ -3,6 +3,17 @@ import assert from 'node:assert/strict';
 import {verifyLegalNotice} from '../src/evidence.mjs';
 import {partialPlaceInformation} from '../src/place-evidence.mjs';
 import {createHandler} from '../src/worker.mjs';
+import {retrieveTrip} from '../src/core.mjs';
+test('UAE trip recommendations exclude explicitly Lebanese-only legal and camping articles',()=>{
+ const base={lang:'ar',body:'',keywords:'',category:'قوانين',date:'2026-11-04'};
+ const lebanon={...base,title:'قانون الصيد اللبناني 580/2004',url:'/lebanon/'};
+ const camp={...base,title:'التخييم في الطبيعة اللبنانية',url:'/camp/'};
+ const uae={...base,title:'قانون الصيد في الإمارات',url:'/uae/'};
+ const comparison={...base,title:'قانون الصيد في الإمارات ولبنان مقارنة',url:'/comparison/'};
+ const input={destination:'دبي، الإمارات العربية المتحدة',activities:['hunting']};
+ assert.deepEqual(retrieveTrip([lebanon,camp,uae,comparison],'قانون الصيد',input).map(a=>a.url),['/uae/','/comparison/']);
+ assert.ok(retrieveTrip([lebanon],'قانون الصيد',{destination:'لبنان',activities:['hunting']}).includes(lebanon));
+});
 test('a Lebanese hunting notice cannot verify a UAE destination', async()=>{
  let fetched=false;
  assert.equal(await verifyLegalNotice({status:'open',source_url:'https://moe.gov.lb/current'},async()=>{fetched=true;throw Error('unexpected');},new Date('2026-11-04T00:00:00Z'),'دبي، الإمارات العربية المتحدة'),false);
@@ -23,3 +34,4 @@ test('UAE legal fallback retains local legal uncertainty without Lebanese season
  const response=await createHandler(network)(request,env),out=await response.json();
  assert.equal(response.status,200);assert.match(out.answer,/اتحادي ومحلي/);assert.ok(!out.answer.includes('وزارة البيئة'));assert.ok(!out.answer.includes('580'));assert.equal(out.verified,false);
 });
+

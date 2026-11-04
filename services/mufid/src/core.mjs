@@ -31,6 +31,15 @@ function outsideRequestedSector(a,area){
 }
 export function retrieveTrip(articles,query,trip,limit=6){
  const area=normalize(trip?.destination||'');
+ const uaeDestination=/الامارات|united arab emirates|\buae\b|dubai|دبي/.test(area);
+ if(uaeDestination){
+  articles=articles.filter(article=>{
+   const topic=indexed(article).title+' '+indexed(article).keywords;
+   const explicitlyLebanese=/لبنان|لبناني|لبنانيه|lebanon|lebanese|liban/.test(topic);
+   const explicitlyEmirati=/الامارات|اماراتي|united arab emirates|\buae\b|dubai|دبي/.test(topic);
+   return !explicitlyLebanese||explicitlyEmirati;
+  });
+ }
  articles=articles.filter(a=>!outsideRequestedSector(a,area)&&!/^صور$|^photos?$|^images?$/i.test(a.category||''));
  const candidates=area?[area,...(REGIONS.filter(g=>g.some(n=>containsPlace(area,n))).flat())]:REGIONS.filter(g=>g.some(n=>containsPlace(normalize(query),n))).flat();
  const legalHunt=trip?.activities?.includes('hunting')&&/موسم|رخص|ترخيص|مسموح|قانون|season|licen|permit|legal|saison|permis/i.test(query);
@@ -138,3 +147,4 @@ export function extractResponse(data) {
   consulted.forEach(addSource);
   return {answer:parts.join('\n'),sources,verified:verified && sources.length > 0};
 }
+
