@@ -146,7 +146,46 @@
     "طيطوي-المستنقعات",
     "بقويقة-مخططة-الذيل",
     "غطاس-أسود-الرقبة",
-    "الزقزاق-الشامي"
+    "الزقزاق-الشامي",
+    "الحسون-الأوروبي",
+    "البلشون-الذهبي",
+    "العندليب-الشائع",
+    "بلشون-الصخر-الغربي",
+    "النحام-الكبير",
+    "الحجل-البربري",
+    "اللقلق-الأسود",
+    "الحوام-طويل-الساقين",
+    "الصقر-الوكري",
+    "الرفراف-أبيض-الصدر",
+    "الشقراق-الأوروبي",
+    "الوروار-الأخضر-العربي",
+    "الحمام-الصخري",
+    "القطا-أسود-البطن",
+    "القطا-دبوسي-الذيل",
+    "حجل-الرمال",
+    "الأبلق-الصحراوي",
+    "قبرة-الصحراء",
+    "القبرة-الهدهدية",
+    "خطاف-المنازل",
+    "خطاف-الرمال",
+    "السمامة-الشائعة",
+    "السمامة-الباهتة",
+    "السمامة-الألبية",
+    "الحدأة-السوداء",
+    "الأبلق-الأشهب",
+    "العقاب-النساري",
+    "القيق-الأوراسي",
+    "العقاب-المسيرة",
+    "عقاب-السهوب",
+    "النمنمة-الأوراسية",
+    "النسر-الأسمر",
+    "البوهة-الفرعونية",
+    "البلبل-أصفر-العجز",
+    "البلبل-أبيض-الخدين",
+    "البلبل-الشائع",
+    "البلشون-الأرجواني",
+    "الزرزور-الأسود",
+    "السنونو-أحمر-العجز-الغربي"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -244,7 +283,46 @@
     "بقويقة-مخططة-الذيل",
     "غطاس-أسود-الرقبة",
     "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم",
-    "الزقزاق-الشامي"
+    "الزقزاق-الشامي",
+    "الحسون-الأوروبي",
+    "البلشون-الذهبي",
+    "العندليب-الشائع",
+    "بلشون-الصخر-الغربي",
+    "النحام-الكبير",
+    "الحجل-البربري",
+    "اللقلق-الأسود",
+    "الحوام-طويل-الساقين",
+    "الصقر-الوكري",
+    "الرفراف-أبيض-الصدر",
+    "الشقراق-الأوروبي",
+    "الوروار-الأخضر-العربي",
+    "الحمام-الصخري",
+    "القطا-أسود-البطن",
+    "القطا-دبوسي-الذيل",
+    "حجل-الرمال",
+    "الأبلق-الصحراوي",
+    "قبرة-الصحراء",
+    "القبرة-الهدهدية",
+    "خطاف-المنازل",
+    "خطاف-الرمال",
+    "السمامة-الشائعة",
+    "السمامة-الباهتة",
+    "السمامة-الألبية",
+    "الحدأة-السوداء",
+    "الأبلق-الأشهب",
+    "العقاب-النساري",
+    "القيق-الأوراسي",
+    "العقاب-المسيرة",
+    "عقاب-السهوب",
+    "النمنمة-الأوراسية",
+    "النسر-الأسمر",
+    "البوهة-الفرعونية",
+    "البلبل-أصفر-العجز",
+    "البلبل-أبيض-الخدين",
+    "البلبل-الشائع",
+    "البلشون-الأرجواني",
+    "الزرزور-الأسود",
+    "السنونو-أحمر-العجز-الغربي"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -662,7 +740,46 @@
     "بقويقة-مخططة-الذيل": "birds",
     "غطاس-أسود-الرقبة": "birds",
     "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم": "photos",
-    "الزقزاق-الشامي": "birds"
+    "الزقزاق-الشامي": "birds",
+    "الحسون-الأوروبي": "birds",
+    "البلشون-الذهبي": "birds",
+    "العندليب-الشائع": "birds",
+    "بلشون-الصخر-الغربي": "birds",
+    "النحام-الكبير": "birds",
+    "الحجل-البربري": "birds",
+    "اللقلق-الأسود": "birds",
+    "الحوام-طويل-الساقين": "birds",
+    "الصقر-الوكري": "birds",
+    "الرفراف-أبيض-الصدر": "birds",
+    "الشقراق-الأوروبي": "birds",
+    "الوروار-الأخضر-العربي": "birds",
+    "الحمام-الصخري": "birds",
+    "القطا-أسود-البطن": "birds",
+    "القطا-دبوسي-الذيل": "birds",
+    "حجل-الرمال": "birds",
+    "الأبلق-الصحراوي": "birds",
+    "قبرة-الصحراء": "birds",
+    "القبرة-الهدهدية": "birds",
+    "خطاف-المنازل": "birds",
+    "خطاف-الرمال": "birds",
+    "السمامة-الشائعة": "birds",
+    "السمامة-الباهتة": "birds",
+    "السمامة-الألبية": "birds",
+    "الحدأة-السوداء": "birds",
+    "الأبلق-الأشهب": "birds",
+    "العقاب-النساري": "birds",
+    "القيق-الأوراسي": "birds",
+    "العقاب-المسيرة": "birds",
+    "عقاب-السهوب": "birds",
+    "النمنمة-الأوراسية": "birds",
+    "النسر-الأسمر": "birds",
+    "البوهة-الفرعونية": "birds",
+    "البلبل-أصفر-العجز": "birds",
+    "البلبل-أبيض-الخدين": "birds",
+    "البلبل-الشائع": "birds",
+    "البلشون-الأرجواني": "birds",
+    "الزرزور-الأسود": "birds",
+    "السنونو-أحمر-العجز-الغربي": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1621,6 +1738,357 @@
         "ar": "سرب من الزقزاق الشامي بقنازع رفيعة وريش أخضر داكن وبطون بيضاء يقف في ماء ضحل",
         "en": "Northern Lapwings with narrow crests, dark green upperparts and white bellies standing in shallow water",
         "fr": "Vanneaux huppés aux fines huppes, au dessus vert sombre et au ventre blanc dans une eau peu profonde"
+      }
+    },
+    "الحسون-الأوروبي": {
+      "image": "media/publications/birds-catchup-20261104-a/carduelis-carduelis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الحسون الأوروبي — Carduelis carduelis",
+        "en": "European Goldfinch — Carduelis carduelis",
+        "fr": "Chardonneret élégant — Carduelis carduelis"
+      }
+    },
+    "البلشون-الذهبي": {
+      "image": "media/publications/birds-catchup-20261104-a/ardeola-ralloides.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "البلشون الذهبي — Ardeola ralloides",
+        "en": "Squacco Heron — Ardeola ralloides",
+        "fr": "Crabier chevelu — Ardeola ralloides"
+      }
+    },
+    "العندليب-الشائع": {
+      "image": "media/publications/birds-catchup-20261104-a/luscinia-megarhynchos.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "العندليب الشائع — Luscinia megarhynchos",
+        "en": "Common Nightingale — Luscinia megarhynchos",
+        "fr": "Rossignol philomèle — Luscinia megarhynchos"
+      }
+    },
+    "بلشون-الصخر-الغربي": {
+      "image": "media/publications/birds-catchup-20261104-a/egretta-gularis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بلشون الصخر الغربي — Egretta gularis",
+        "en": "Western Reef Heron — Egretta gularis",
+        "fr": "Aigrette des récifs — Egretta gularis"
+      }
+    },
+    "النحام-الكبير": {
+      "image": "media/publications/birds-catchup-20261104-a/phoenicopterus-roseus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "النحام الكبير — Phoenicopterus roseus",
+        "en": "Greater Flamingo — Phoenicopterus roseus",
+        "fr": "Flamant rose — Phoenicopterus roseus"
+      }
+    },
+    "الحجل-البربري": {
+      "image": "media/publications/birds-catchup-20261104-a/alectoris-barbara.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الحجل البربري — Alectoris barbara",
+        "en": "Barbary Partridge — Alectoris barbara",
+        "fr": "Perdrix gambra — Alectoris barbara"
+      }
+    },
+    "اللقلق-الأسود": {
+      "image": "media/publications/birds-catchup-20261104-a/ciconia-nigra.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "اللقلق الأسود — Ciconia nigra",
+        "en": "Black Stork — Ciconia nigra",
+        "fr": "Cigogne noire — Ciconia nigra"
+      }
+    },
+    "الحوام-طويل-الساقين": {
+      "image": "media/publications/birds-catchup-20261104-a/buteo-rufinus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الحوام طويل الساقين — Buteo rufinus",
+        "en": "Long-legged Buzzard — Buteo rufinus",
+        "fr": "Buse féroce — Buteo rufinus"
+      }
+    },
+    "الصقر-الوكري": {
+      "image": "media/publications/birds-catchup-20261104-a/falco-biarmicus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الصقر الوكري — Falco biarmicus",
+        "en": "Lanner Falcon — Falco biarmicus",
+        "fr": "Faucon lanier — Falco biarmicus"
+      }
+    },
+    "الرفراف-أبيض-الصدر": {
+      "image": "media/publications/birds-catchup-20261104-b/halcyon-smyrnensis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الرفراف أبيض الصدر — Halcyon smyrnensis",
+        "en": "White-throated Kingfisher — Halcyon smyrnensis",
+        "fr": "Martin-chasseur de Smyrne — Halcyon smyrnensis"
+      }
+    },
+    "الشقراق-الأوروبي": {
+      "image": "media/publications/birds-catchup-20261104-b/coracias-garrulus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الشقراق الأوروبي — Coracias garrulus",
+        "en": "European Roller — Coracias garrulus",
+        "fr": "Rollier d’Europe — Coracias garrulus"
+      }
+    },
+    "الوروار-الأخضر-العربي": {
+      "image": "media/publications/birds-catchup-20261104-b/merops-cyanophrys.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الوروار الأخضر العربي — Merops cyanophrys",
+        "en": "Arabian Green Bee-eater — Merops cyanophrys",
+        "fr": "Guêpier d’Arabie — Merops cyanophrys"
+      }
+    },
+    "الحمام-الصخري": {
+      "image": "media/publications/birds-catchup-20261104-b/columba-livia.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الحمام الصخري — Columba livia",
+        "en": "Rock Dove — Columba livia",
+        "fr": "Pigeon biset — Columba livia"
+      }
+    },
+    "القطا-أسود-البطن": {
+      "image": "media/publications/birds-catchup-20261104-b/pterocles-orientalis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "القطا أسود البطن — Pterocles orientalis",
+        "en": "Black-bellied Sandgrouse — Pterocles orientalis",
+        "fr": "Ganga unibande — Pterocles orientalis"
+      }
+    },
+    "القطا-دبوسي-الذيل": {
+      "image": "media/publications/birds-catchup-20261104-b/pterocles-alchata.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "القطا دبوسي الذيل — Pterocles alchata",
+        "en": "Pin-tailed Sandgrouse — Pterocles alchata",
+        "fr": "Ganga cata — Pterocles alchata"
+      }
+    },
+    "حجل-الرمال": {
+      "image": "media/publications/birds-catchup-20261104-b/ammoperdix-heyi.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "حجل الرمال — Ammoperdix heyi",
+        "en": "Sand Partridge — Ammoperdix heyi",
+        "fr": "Perdrix de Hey — Ammoperdix heyi"
+      }
+    },
+    "الأبلق-الصحراوي": {
+      "image": "media/publications/birds-catchup-20261104-b/oenanthe-deserti.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الأبلق الصحراوي — Oenanthe deserti",
+        "en": "Desert Wheatear — Oenanthe deserti",
+        "fr": "Traquet du désert — Oenanthe deserti"
+      }
+    },
+    "قبرة-الصحراء": {
+      "image": "media/publications/birds-catchup-20261104-b/ammomanes-deserti.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قبرة الصحراء — Ammomanes deserti",
+        "en": "Desert Lark — Ammomanes deserti",
+        "fr": "Ammomane isabelline — Ammomanes deserti"
+      }
+    },
+    "القبرة-الهدهدية": {
+      "image": "media/publications/birds-catchup-20261104-b/alaemon-alaudipes.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "القبرة الهدهدية — Alaemon alaudipes",
+        "en": "Greater Hoopoe-Lark — Alaemon alaudipes",
+        "fr": "Sirli du désert — Alaemon alaudipes"
+      }
+    },
+    "خطاف-المنازل": {
+      "image": "media/publications/birds-catchup-20261104-c/delichon-urbicum.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "خطاف المنازل — Delichon urbicum",
+        "en": "Common House Martin — Delichon urbicum",
+        "fr": "Hirondelle de fenêtre — Delichon urbicum"
+      }
+    },
+    "خطاف-الرمال": {
+      "image": "media/publications/birds-catchup-20261104-c/riparia-riparia.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "خطاف الرمال — Riparia riparia",
+        "en": "Sand Martin — Riparia riparia",
+        "fr": "Hirondelle de rivage — Riparia riparia"
+      }
+    },
+    "السمامة-الشائعة": {
+      "image": "media/publications/birds-catchup-20261104-c/apus-apus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "السمامة الشائعة — Apus apus",
+        "en": "Common Swift — Apus apus",
+        "fr": "Martinet noir — Apus apus"
+      }
+    },
+    "السمامة-الباهتة": {
+      "image": "media/publications/birds-catchup-20261104-c/apus-pallidus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "السمامة الباهتة — Apus pallidus",
+        "en": "Pallid Swift — Apus pallidus",
+        "fr": "Martinet pâle — Apus pallidus"
+      }
+    },
+    "السمامة-الألبية": {
+      "image": "media/publications/birds-catchup-20261104-c/tachymarptis-melba.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "السمامة الألبية — Tachymarptis melba",
+        "en": "Alpine Swift — Tachymarptis melba",
+        "fr": "Martinet à ventre blanc — Tachymarptis melba"
+      }
+    },
+    "الحدأة-السوداء": {
+      "image": "media/publications/birds-catchup-20261104-c/milvus-migrans.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الحدأة السوداء — Milvus migrans",
+        "en": "Black Kite — Milvus migrans",
+        "fr": "Milan noir — Milvus migrans"
+      }
+    },
+    "الأبلق-الأشهب": {
+      "image": "media/publications/birds-catchup-20261104-c/oenanthe-isabellina.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الأبلق الأشهب — Oenanthe isabellina",
+        "en": "Isabelline Wheatear — Oenanthe isabellina",
+        "fr": "Traquet isabelle — Oenanthe isabellina"
+      }
+    },
+    "العقاب-النساري": {
+      "image": "media/publications/birds-catchup-20261104-c/pandion-haliaetus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "العقاب النساري — Pandion haliaetus",
+        "en": "Osprey — Pandion haliaetus",
+        "fr": "Balbuzard pêcheur — Pandion haliaetus"
+      }
+    },
+    "القيق-الأوراسي": {
+      "image": "media/publications/birds-catchup-20261104-c/garrulus-glandarius.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "القيق الأوراسي — Garrulus glandarius",
+        "en": "Eurasian Jay — Garrulus glandarius",
+        "fr": "Geai des chênes — Garrulus glandarius"
+      }
+    },
+    "العقاب-المسيرة": {
+      "image": "media/publications/birds-catchup-20261104-c/hieraaetus-pennatus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "العقاب المُسيَّرة — Hieraaetus pennatus",
+        "en": "Booted Eagle — Hieraaetus pennatus",
+        "fr": "Aigle botté — Hieraaetus pennatus"
+      }
+    },
+    "عقاب-السهوب": {
+      "image": "media/publications/birds-catchup-20261104-d/aquila-nipalensis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "عقاب السهوب — Aquila nipalensis",
+        "en": "Steppe Eagle — Aquila nipalensis",
+        "fr": "Aigle des steppes — Aquila nipalensis"
+      }
+    },
+    "النمنمة-الأوراسية": {
+      "image": "media/publications/birds-catchup-20261104-d/troglodytes-troglodytes.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "النمنمة الأوراسية — Nannus troglodytes",
+        "en": "Eurasian Wren — Nannus troglodytes",
+        "fr": "Troglodyte mignon — Nannus troglodytes"
+      }
+    },
+    "النسر-الأسمر": {
+      "image": "media/publications/birds-catchup-20261104-d/gyps-fulvus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "النسر الأسمر — Gyps fulvus",
+        "en": "Griffon Vulture — Gyps fulvus",
+        "fr": "Vautour fauve — Gyps fulvus"
+      }
+    },
+    "البوهة-الفرعونية": {
+      "image": "media/publications/birds-catchup-20261104-d/bubo-ascalaphus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "البوهة الفرعونية — Bubo ascalaphus",
+        "en": "Pharaoh Eagle-Owl — Bubo ascalaphus",
+        "fr": "Grand-duc ascalaphe — Bubo ascalaphus"
+      }
+    },
+    "البلبل-أصفر-العجز": {
+      "image": "media/publications/birds-catchup-20261104-d/pycnonotus-xanthopygos.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "البلبل أصفر العجز — Pycnonotus xanthopygos",
+        "en": "White-spectacled Bulbul — Pycnonotus xanthopygos",
+        "fr": "Bulbul à lunettes — Pycnonotus xanthopygos"
+      }
+    },
+    "البلبل-أبيض-الخدين": {
+      "image": "media/publications/birds-catchup-20261104-d/pycnonotus-leucotis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "البلبل أبيض الخدين — Pycnonotus leucotis",
+        "en": "White-eared Bulbul — Pycnonotus leucotis",
+        "fr": "Bulbul à oreillons blancs — Pycnonotus leucotis"
+      }
+    },
+    "البلبل-الشائع": {
+      "image": "media/publications/birds-catchup-20261104-d/pycnonotus-barbatus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "البلبل الشائع — Pycnonotus barbatus",
+        "en": "Common Bulbul — Pycnonotus barbatus",
+        "fr": "Bulbul des jardins — Pycnonotus barbatus"
+      }
+    },
+    "البلشون-الأرجواني": {
+      "image": "media/publications/birds-catchup-20261104-d/ardea-purpurea.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "البلشون الأرجواني — Ardea purpurea",
+        "en": "Purple Heron — Ardea purpurea",
+        "fr": "Héron pourpré — Ardea purpurea"
+      }
+    },
+    "الزرزور-الأسود": {
+      "image": "media/publications/birds-catchup-20261104-d/sturnus-unicolor.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الزرزور الأسود — Sturnus unicolor",
+        "en": "Spotless Starling — Sturnus unicolor",
+        "fr": "Étourneau unicolore — Sturnus unicolor"
+      }
+    },
+    "السنونو-أحمر-العجز-الغربي": {
+      "image": "media/publications/birds-catchup-20261104-d/cecropis-rufula.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "السنونو أحمر العجز الغربي — Cecropis rufula",
+        "en": "European Red-rumped Swallow — Cecropis rufula",
+        "fr": "Hirondelle rousseline — Cecropis rufula"
       }
     }
   },
