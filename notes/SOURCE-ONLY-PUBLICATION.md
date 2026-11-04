@@ -98,11 +98,31 @@ hashes. Normal licensed-image evidence and legally required attribution remain
 unchanged, including when visible descriptive captions are omitted. Never relabel
 this unresolved status as licensed or verified permission to make a test pass.
 
+The separate `owner_selected_external_source_unresolved` status records an informed
+owner selection of externally retrieved photos, without calling them user-supplied.
+It requires `user_supplied: false`, `external_rights_verified: false`,
+`authenticity_verified: false`, and the same bounded private authorization reference.
+It forbids a `license_url` and carries the same independent decision/hash review,
+unresolved-rights limitations and attribution obligations as above. Neither status
+turns an editorial decision into a licence or permits general future reuse.
+
 Each article has complete AR/EN/FR slugs, author, title, description, subtitle,
 plain-text sections, sources, end-of-article photo credit and optional ticker title.
 Photo order is explicit and identical across languages. Sources use credential-free
 HTTPS links; metadata can retain legitimate external license references. Public
 text, source wording and links still require normal editorial review.
+
+An optional article-level `photo_placements` list places interior photographs after
+specified sections, identically in all languages. Each entry contains only
+`photo_id` and zero-based integer `after_section`. The first photo remains the cover
+and must not appear in the list. Every remaining article photo must appear exactly
+once, in article photo order, with nondecreasing section indices valid in **all**
+three translations. Multiple photos may share a section, in the declared order.
+An empty list is valid only for a cover-only article. No raw HTML or per-language
+placement override is accepted. When absent, the existing automatic placement and
+overflow behavior remains byte-identical. Empty captions still omit figcaptions;
+alt text, end credit and source/rights evidence remain required.
+
 
 `primary_door` and explicit `archives` are distinct from distribution. Supported
 new material includes normal trilingual news, Science features with a secondary

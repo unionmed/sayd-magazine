@@ -101,11 +101,12 @@ def validate(record, expected_id=None):
             url(photo['source_url'])
         unresolved_fields = ('user_supplied', 'external_rights_verified', 'authenticity_verified', 'editorial_authorization_reference')
         keys(photo['rights'], ('status', 'statement', 'evidence_reference'), ('license_url', *unresolved_fields))
-        require(photo['rights']['status'] in {'owned', 'licensed', 'permission', 'user_selected_source_unresolved'}, 'Unknown image rights status')
-        if photo['rights']['status'] == 'user_selected_source_unresolved':
+        require(photo['rights']['status'] in {'owned', 'licensed', 'permission', 'user_selected_source_unresolved', 'owner_selected_external_source_unresolved'}, 'Unknown image rights status')
+        if photo['rights']['status'] in {'user_selected_source_unresolved', 'owner_selected_external_source_unresolved'}:
             require(all(key in photo['rights'] for key in unresolved_fields), 'Missing unresolved-photo evidence fields')
-            require(photo['rights']['user_supplied'] is True and photo['rights']['external_rights_verified'] is False and photo['rights']['authenticity_verified'] is False, 'Unresolved user selection cannot claim verified rights/authenticity')
-            require('license_url' not in photo['rights'], 'Unresolved user photo cannot claim a verified licence')
+            user_supplied = photo['rights']['status'] == 'user_selected_source_unresolved'
+            require(photo['rights']['user_supplied'] is user_supplied and photo['rights']['external_rights_verified'] is False and photo['rights']['authenticity_verified'] is False, 'Unresolved selection requires truthful origin and unverified rights/authenticity')
+            require('license_url' not in photo['rights'], 'Unresolved photo cannot claim a verified licence')
             reference = photo['rights']['editorial_authorization_reference']
             require(isinstance(reference, str) and re.fullmatch(r'private:[A-Za-z0-9][A-Za-z0-9._-]{0,299}', reference), 'Use a bounded private evidence identifier, not conversation text or credentials')  # Never executable authorization.
         else:
@@ -119,7 +120,7 @@ def validate(record, expected_id=None):
         photos[photo['id']] = photo
     seen = set()
     for article in record['articles']:
-        keys(article, ('slugs', 'published', 'author', 'primary_door', 'archives', 'kind', 'photos', 'translations', 'distribution'), ('related', 'format'))
+        keys(article, ('slugs', 'published', 'author', 'primary_door', 'archives', 'kind', 'photos', 'translations', 'distribution'), ('related', 'format', 'photo_placements'))
         keys(article['slugs'], LANGS)
         for language in LANGS:
             slug(article['slugs'][language], language)
@@ -160,6 +161,23 @@ def validate(record, expected_id=None):
                 keys(source, ('label', 'url'))
                 text(source['label'], 500)
                 url(source['url'])
+        if 'photo_placements' in article:
+            placements = article['photo_placements']
+            require(isinstance(placements, list) and len(placements) == len(article['photos']) - 1,
+                    'Place every interior photo exactly once; exclude the cover')
+            placed = []
+            section_indices = []
+            for placement in placements:
+                keys(placement, ('photo_id', 'after_section'))
+                require(isinstance(placement['photo_id'], str) and placement['photo_id'] in article['photos'][1:],
+                        'Placement must name an interior article photo, never the cover')
+                index = placement['after_section']
+                require(type(index) is int and all(0 <= index < len(article['translations'][l]['sections']) for l in LANGS),
+                        'Photo section index must exist in every language')
+                placed.append(placement['photo_id'])
+                section_indices.append(index)
+            require(placed == article['photos'][1:] and section_indices == sorted(section_indices),
+                    'Placements must preserve photo order without duplicates or omissions')
         dist = article['distribution']
         keys(dist, ('placement', 'ticker'), ('rotation',))
         require(dist['placement'] in {'archive-only', 'door', 'latest', 'side', 'lead'}, 'Unsupported placement')
