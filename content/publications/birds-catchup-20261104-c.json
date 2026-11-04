@@ -1,0 +1,2094 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "birds-catchup-20261104-c",
+  "expected_base": "e55f5ac47ce348389a548588e9c7b5325238af0f",
+  "approval_reference": "private:nayef-encyclopedia-20261104-forty-arab-birds-catchup",
+  "bank_search_reference": "Sayd photo archive searched before external selection, 2026-11-04. Full AR search archive and 163 EN entries checked, including older standalone profiles outside the 80-entry encyclopedia index. Existing lapwing source415/candidate416 reused; not duplicated. All selected actual photographs visually inspected with species diagnostics, rights evidence and exact original bytes retained. Internal evidence: birds40 selection and per-photo records.",
+  "photos": [
+    {
+      "id": "western-house-martin",
+      "path": "docs/media/publications/birds-catchup-20261104-c/delichon-urbicum.jpg",
+      "sha256": "e6b58dade1f515f8cdabdcf53940b96e501a2423b31d24b810b71b37d2cab780",
+      "source_sha256": "e6b58dade1f515f8cdabdcf53940b96e501a2423b31d24b810b71b37d2cab780",
+      "source_reference": "Paulo Caseirito; 2023-09-02; 8365 Pêra, Portugal. iNaturalist observation 184035332, photograph 321175601. Actual original inspected; taxon Delichon urbicum and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/321175601; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "خطاف المنازل — Delichon urbicum",
+        "en": "Western House Martin — Delichon urbicum",
+        "fr": "Hirondelle de fenêtre — Delichon urbicum"
+      },
+      "caption": {
+        "ar": "خطاف المنازل",
+        "en": "Western House Martin",
+        "fr": "Hirondelle de fenêtre"
+      }
+    },
+    {
+      "id": "sand-martin",
+      "path": "docs/media/publications/birds-catchup-20261104-c/riparia-riparia.jpg",
+      "sha256": "463dc1ea465a558e964073beb290a9583a84b27cd0cf0d469bdd792577e6a877",
+      "source_sha256": "463dc1ea465a558e964073beb290a9583a84b27cd0cf0d469bdd792577e6a877",
+      "source_reference": "Braden J. Judson; 2022-08-29; Kamloops, BC, Canada. iNaturalist observation 137188549, photograph 234247885. Actual original inspected; taxon Riparia riparia and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/234247885; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "خطاف الرمال — Riparia riparia",
+        "en": "Sand Martin — Riparia riparia",
+        "fr": "Hirondelle de rivage — Riparia riparia"
+      },
+      "caption": {
+        "ar": "خطاف الرمال",
+        "en": "Sand Martin",
+        "fr": "Hirondelle de rivage"
+      }
+    },
+    {
+      "id": "common-swift",
+      "path": "docs/media/publications/birds-catchup-20261104-c/apus-apus.jpg",
+      "sha256": "076569a556d9ccdfb0724eff5ff6058ae618e6e5772118f7e49f909492732a36",
+      "source_sha256": "076569a556d9ccdfb0724eff5ff6058ae618e6e5772118f7e49f909492732a36",
+      "source_reference": "Luis Ferreira; 2024-05-11; 2770 Paço de Arcos, Portugal. iNaturalist observation 216170697, photograph 382277341. Actual original inspected; taxon Apus apus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/382277341; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "السمامة الشائعة — Apus apus",
+        "en": "Common Swift — Apus apus",
+        "fr": "Martinet noir — Apus apus"
+      },
+      "caption": {
+        "ar": "السمامة الشائعة",
+        "en": "Common Swift",
+        "fr": "Martinet noir"
+      }
+    },
+    {
+      "id": "pallid-swift",
+      "path": "docs/media/publications/birds-catchup-20261104-c/apus-pallidus.jpg",
+      "sha256": "21448927390bd472162d44d44f35a1e982c43e77dde772fa7c57e79ca5e7c6a2",
+      "source_sha256": "21448927390bd472162d44d44f35a1e982c43e77dde772fa7c57e79ca5e7c6a2",
+      "source_reference": "karim Attouche; 2023-05-01; Blida, Algérie. iNaturalist observation 183507857, photograph 320165748. Actual original inspected; taxon Apus pallidus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/320165748; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "السمامة الباهتة — Apus pallidus",
+        "en": "Pallid Swift — Apus pallidus",
+        "fr": "Martinet pâle — Apus pallidus"
+      },
+      "caption": {
+        "ar": "السمامة الباهتة",
+        "en": "Pallid Swift",
+        "fr": "Martinet pâle"
+      }
+    },
+    {
+      "id": "alpine-swift",
+      "path": "docs/media/publications/birds-catchup-20261104-c/tachymarptis-melba.jpg",
+      "sha256": "e80a555a8ff8164f7dbf52a8d03e5ae6ed004f03d79167fa258d963c023f6010",
+      "source_sha256": "e80a555a8ff8164f7dbf52a8d03e5ae6ed004f03d79167fa258d963c023f6010",
+      "source_reference": "Paulo Caseirito; 2022-04-18; Vau, 8500 Portimão, Portugal. iNaturalist observation 112188135, photograph 189480813. Actual original inspected; taxon Tachymarptis melba and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/189480813; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "السمامة الألبية — Tachymarptis melba",
+        "en": "Alpine Swift — Tachymarptis melba",
+        "fr": "Martinet à ventre blanc — Tachymarptis melba"
+      },
+      "caption": {
+        "ar": "السمامة الألبية",
+        "en": "Alpine Swift",
+        "fr": "Martinet à ventre blanc"
+      }
+    },
+    {
+      "id": "black-kite",
+      "path": "docs/media/publications/birds-catchup-20261104-c/milvus-migrans.jpg",
+      "sha256": "1b3f9dcffa324c30b1a84f63ae37062a41202a33dd0265d98a661632c1551f17",
+      "source_sha256": "1b3f9dcffa324c30b1a84f63ae37062a41202a33dd0265d98a661632c1551f17",
+      "source_reference": "Murielle Desrois; 2024-06-10; 33140 Villenave-d'Ornon, France. iNaturalist observation 221814975, photograph 392847939. Actual original inspected; taxon Milvus migrans and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/392847939; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "الحدأة السوداء — Milvus migrans",
+        "en": "Black Kite — Milvus migrans",
+        "fr": "Milan noir — Milvus migrans"
+      },
+      "caption": {
+        "ar": "الحدأة السوداء",
+        "en": "Black Kite",
+        "fr": "Milan noir"
+      }
+    },
+    {
+      "id": "isabelline-wheatear",
+      "path": "docs/media/publications/birds-catchup-20261104-c/oenanthe-isabellina.jpg",
+      "sha256": "0ef904f4d41f6612d08bde35ad47a8f1e55c37162c7081053ada4ec4cdb69243",
+      "source_sha256": "0ef904f4d41f6612d08bde35ad47a8f1e55c37162c7081053ada4ec4cdb69243",
+      "source_reference": "Юрий Носков; 2024-05-31; Ахтубинский р-н, Астраханская обл., Россия. iNaturalist observation 224454489, photograph 397814001. Actual original inspected; taxon Oenanthe isabellina and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/397814001; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "الأبلق الأشهب — Oenanthe isabellina",
+        "en": "Isabelline Wheatear — Oenanthe isabellina",
+        "fr": "Traquet isabelle — Oenanthe isabellina"
+      },
+      "caption": {
+        "ar": "الأبلق الأشهب",
+        "en": "Isabelline Wheatear",
+        "fr": "Traquet isabelle"
+      }
+    },
+    {
+      "id": "osprey",
+      "path": "docs/media/publications/birds-catchup-20261104-c/pandion-haliaetus.jpg",
+      "sha256": "383692bb86907c93a2e9f13870a09ffedc61c3b4bfbfd67013c9854b7f58c214",
+      "source_sha256": "383692bb86907c93a2e9f13870a09ffedc61c3b4bfbfd67013c9854b7f58c214",
+      "source_reference": "Glenn Berry; 2021-08-06; Southcrest, London, ON, Canada. iNaturalist observation 90170837, photograph 148993337. Actual original inspected; taxon Pandion haliaetus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/148993337; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "العقاب النساري — Pandion haliaetus",
+        "en": "Osprey — Pandion haliaetus",
+        "fr": "Balbuzard pêcheur — Pandion haliaetus"
+      },
+      "caption": {
+        "ar": "العقاب النساري",
+        "en": "Osprey",
+        "fr": "Balbuzard pêcheur"
+      }
+    },
+    {
+      "id": "eurasian-jay",
+      "path": "docs/media/publications/birds-catchup-20261104-c/garrulus-glandarius.jpg",
+      "sha256": "9580bfd3a9f05607a78e0b21906d6e122aef545de78d42d4be9aa4d855e42967",
+      "source_sha256": "9580bfd3a9f05607a78e0b21906d6e122aef545de78d42d4be9aa4d855e42967",
+      "source_reference": "renshuchu; 2023-04-01; Japan. iNaturalist observation 153813410, photograph 265704989. Actual original inspected; taxon Garrulus glandarius japonicus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/265704989; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "القيق الأوراسي — Garrulus glandarius",
+        "en": "Eurasian Jay — Garrulus glandarius",
+        "fr": "Geai des chênes — Garrulus glandarius"
+      },
+      "caption": {
+        "ar": "القيق الأوراسي",
+        "en": "Eurasian Jay",
+        "fr": "Geai des chênes"
+      }
+    },
+    {
+      "id": "booted-eagle",
+      "path": "docs/media/publications/birds-catchup-20261104-c/hieraaetus-pennatus.jpg",
+      "sha256": "2d1ab3d448e7c26a3cd25c3e4d0eab6540e542f5421930a76395cc55f4d86e51",
+      "source_sha256": "2d1ab3d448e7c26a3cd25c3e4d0eab6540e542f5421930a76395cc55f4d86e51",
+      "source_reference": "Luis Ferreira; 2025-04-07; Portugal. iNaturalist observation 269196061, photograph 483982866. Actual original inspected; taxon Hieraaetus pennatus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/483982866; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained."
+      },
+      "alt": {
+        "ar": "العقاب المُسيَّرة — Hieraaetus pennatus",
+        "en": "Booted Eagle — Hieraaetus pennatus",
+        "fr": "Aigle botté — Hieraaetus pennatus"
+      },
+      "caption": {
+        "ar": "العقاب المُسيَّرة",
+        "en": "Booted Eagle",
+        "fr": "Aigle botté"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "خطاف-المنازل",
+        "en": "western-house-martin",
+        "fr": "hirondelle-de-fenetre"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "western-house-martin"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "خطاف المنازل",
+          "subtitle": "Delichon urbicum",
+          "meta_description": "خطاف المنازل Delichon urbicum من السنونويات Hirundinidae. ظهره داكن لامع وبطنه أبيض، وأبرز علاماته عجز أبيض فوق قاعدة الذيل. الذيل مشقوق وأقصر من ذيل سنونو الحظائر. لا تُخلط السنونوات بالسمامات؛ فالأخيرة تنتمي إلى فصيلة.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "خطاف المنازل Delichon urbicum من السنونويات Hirundinidae. ظهره داكن لامع وبطنه أبيض، وأبرز علاماته عجز أبيض فوق قاعدة الذيل. الذيل مشقوق وأقصر من ذيل سنونو الحظائر. لا تُخلط السنونوات بالسمامات؛ فالأخيرة تنتمي إلى فصيلة مختلفة ولها أجنحة أكثر منجلية. تصنيفه ضمن رتبة Passeriformes. وتورد بيانات IUCN المرفقة بقائمة AviList 2026 وضعه العالمي ضمن فئة «أقل إثارة للقلق (LC)»."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يصطاد الحشرات الطائرة فوق الأرياف والمياه والأحياء، ويستفيد من مساحات مفتوحة قريبة من مواضع التعشيش. قد يتجمع في أسراب مختلطة مع سنونوات أخرى. يلزمه ماء وطين للبناء، وغذاء حشري يتغير مع الطقس."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني عشًا طينيًا شبه مغلق تحت إفريز أو نتوء، بفتحة دخول صغيرة. تورد بيانات BTO أربعًا أو خمس بيضات عادة، وحضانة مشتركة تدوم 13–19 يومًا، ثم نحو 19–25 يومًا حتى مغادرة الصغار. قد ينتج حضنتين؛ وهذه مدد مرجعية تتأثر بالطقس والغذاء وليست رزنامة محلية ثابتة."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يتكاثر في مناطق من أوروبا وشمال أفريقيا وغرب آسيا ويهاجر إلى أفريقيا. في لبنان هو متكاثر صيفي ومهاجر عبور، خاصة قرب المباني والجروف المناسبة. لا يدل وجود أعشاش طينية قديمة في الشتاء على بقاء أصحابها."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "تورد القائمة اللبنانية التكاثر من مارس إلى منتصف يوليو، والعبور من فبراير إلى مايو ثم سبتمبر إلى أوائل نوفمبر. قد تصادف بداية نوفمبر أواخر عبوره. تُوثق هوية الطيور بعجزها الأبيض وبنية العش دون إزعاج المستعمرة."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يستهلك الحشرات الجوية ويتأثر بانخفاضها وإزالة الأعشاش أثناء ترميم المباني. يفيد تنفيذ أعمال الواجهات خارج موسم إشغال الأعشاش وحفظ منافذها. لا تعوض صناديق التعشيش فقدان مواقع الغذاء أو استعمال المبيدات على نطاق واسع."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: House Martin.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Paulo Caseirito — CC0 1.0."
+        },
+        "en": {
+          "title": "Western House Martin",
+          "subtitle": "Delichon urbicum",
+          "meta_description": "Western House Martin Delichon urbicum, also called Common House Martin, belongs to Hirundinidae. Glossy dark upperparts contrast with a white belly and diagnostic white rump above the tail. Its forked tail is shorter.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Western House Martin Delichon urbicum, also called Common House Martin, belongs to Hirundinidae. Glossy dark upperparts contrast with a white belly and diagnostic white rump above the tail. Its forked tail is shorter than Barn Swallow’s. Martins are not swifts: the latter belong to another family and have more strongly sickle-shaped wings. It is placed in the order Passeriformes. The IUCN category carried in AviList 2026 is Least Concern (LC)."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It catches flying insects over farmland, water and settlements, using open feeding areas near nest sites. Mixed flocks with other swallows occur. Water and mud are necessary for construction, while airborne food varies with weather."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A nearly enclosed mud nest with a small entrance is built beneath an eave or overhang. BTO gives four or five eggs, shared incubation for 13–19 days and young leaving after about 19–25 days. Two broods are possible. Weather and food affect these reference durations; they are not a fixed local calendar."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It breeds in parts of Europe, North Africa and western Asia and migrates to Africa. In Lebanon it is a migrant breeder and passage migrant around suitable buildings and cliffs. Old winter mud nests do not show that their occupants remain present."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanon’s checklist places breeding from March to mid-July and passage in February–May and September–early November. Early November can catch late passage. White rump and nest structure aid documentation without disturbing colonies."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It consumes aerial insects and is affected by insect declines and nest removal during building work. Scheduling repairs outside nest occupation and maintaining access help. Nest boxes cannot replace lost feeding habitats or counter extensive pesticide use."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: House Martin.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Paulo Caseirito — CC0 1.0."
+        },
+        "fr": {
+          "title": "Hirondelle de fenêtre",
+          "subtitle": "Delichon urbicum",
+          "meta_description": "L’Hirondelle de fenêtre Delichon urbicum appartient aux Hirundinidae. Dessus sombre brillant, ventre blanc et surtout croupion blanc au-dessus de la queue la caractérisent. La queue fourchue est plus courte que celle de.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Hirondelle de fenêtre Delichon urbicum appartient aux Hirundinidae. Dessus sombre brillant, ventre blanc et surtout croupion blanc au-dessus de la queue la caractérisent. La queue fourchue est plus courte que celle de l’Hirondelle rustique. Les martinets constituent une autre famille, aux ailes plus nettement en faux. L’espèce appartient à l’ordre des Passeriformes. La catégorie UICN reprise par AviList 2026 est Préoccupation mineure (LC)."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Elle capture les insectes en vol au-dessus des cultures, de l’eau et des quartiers, près de ses sites de nidification. Elle peut rejoindre des groupes mixtes d’hirondelles. Eau et boue sont nécessaires à la construction ; les ressources aériennes dépendent du temps."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid de boue presque fermé possède une petite entrée sous un toit ou un surplomb. Le BTO donne quatre ou cinq œufs, une incubation partagée de 13–19 jours puis une sortie des jeunes vers 19–25 jours. Deux nichées sont possibles. Météo et nourriture modulent ces durées, sans calendrier local fixe."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Elle niche dans certaines régions d’Europe, d’Afrique du Nord et d’Asie occidentale, puis migre vers l’Afrique. Au Liban, elle est nicheuse migratrice et migratrice de passage près des bâtiments et falaises appropriés. Un vieux nid en hiver ne prouve pas la présence de ses occupants."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "La liste libanaise situe la reproduction de mars à mi-juillet et le passage en février–mai puis septembre–début novembre. Début novembre peut correspondre aux derniers passages. Croupion et structure du nid aident à documenter sans déranger les colonies."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Consommatrice d’insectes aériens, elle souffre de leur diminution et de la destruction des nids pendant les travaux. Réparer hors occupation et maintenir les accès sont utiles. Les nichoirs ne remplacent ni zones d’alimentation perdues ni réduction des pesticides."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: House Martin.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Paulo Caseirito — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "خطاف-الرمال",
+        "en": "sand-martin",
+        "fr": "hirondelle-de-rivage"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "sand-martin"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "خطاف الرمال",
+          "subtitle": "Riparia riparia",
+          "meta_description": "خطاف الرمال Riparia riparia من السنونويات Hirundinidae. صغير بني الظهر، أبيض البطن، يعبر صدره شريط بني واضح. يفصل هذا الشريط، مع شكل الرأس والطيران، بينه وبين خطاف المنازل ذي العجز الأبيض. وقد تحتاج الأنواع القريبة من.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "خطاف الرمال Riparia riparia من السنونويات Hirundinidae. صغير بني الظهر، أبيض البطن، يعبر صدره شريط بني واضح. يفصل هذا الشريط، مع شكل الرأس والطيران، بينه وبين خطاف المنازل ذي العجز الأبيض. وقد تحتاج الأنواع القريبة من خطاطيف الرمال إلى مقارنة أدق. تصنيفه ضمن رتبة Passeriformes. وتورد بيانات IUCN المرفقة بقائمة AviList 2026 وضعه العالمي ضمن فئة «أقل إثارة للقلق (LC)»."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يصطاد حشرات طائرة فوق المياه والحقول والسهول الرطبة. يجتمع بأعداد في مواقع التغذية والمبيت خلال الهجرة، ويستخدم القصب أحيانًا للمبيت. تعكس التجمعات وفرة الغذاء ومواقع الراحة؛ فلا تثبت بذاتها وجود مستعمرة تعشيش."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يحفر جحرًا أفقيًا في ضفة رملية أو ترابية، وغالبًا ما يعشش في مستعمرات. تورد بيانات BTO أربعًا أو خمس بيضات، وحضانة مشتركة نحو 14–15 يومًا، وخروج الصغار بعد نحو 19–21 يومًا. قد توجد حضنتان؛ وتبقى استدامة الجرف وسلامة مدخل الجحر أساسيتين."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يتكاثر عبر نطاق واسع من المناطق المعتدلة ويقضي الشتاء جنوبًا. هو مهاجر عبور شائع في لبنان؛ وكان التكاثر قرب العاصي محتملًا دون تأكيد في قائمة 2020. لا يجوز مساواة كثرة العابرين بإثبات إقامة أو تعشيش."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمتد مروره اللبناني من فبراير إلى مايو ومن أغسطس إلى نوفمبر. نوفمبر جزء من نهاية موسم العبور الخريفي، وقد تساعد مشاهدة عدة زوايا على تأكيد الشريط الصدري. يحتاج عدّ الأسراب إلى تجنب احتساب الطيور الدائرة مرارًا."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تضره إزالة الضفاف أثناء إشغالها وتلوث المياه وتراجع الحشرات. تأمين جروف تعشيش مستقرة خارج مواقع العمل الخطرة يفيد النوع. مراقبة الجحور تتم من بعيد؛ فالوقوف أمام المداخل يمنع الأبوين من إطعام الفراخ."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Sand Martin.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Braden J. Judson — CC0 1.0."
+        },
+        "en": {
+          "title": "Sand Martin",
+          "subtitle": "Riparia riparia",
+          "meta_description": "Sand Martin Riparia riparia belongs to Hirundinidae. Small and brown above, it has white underparts crossed by a distinct brown breast band. This band, head shape and flight separate it from white-rumped House Martin..",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Sand Martin Riparia riparia belongs to Hirundinidae. Small and brown above, it has white underparts crossed by a distinct brown breast band. This band, head shape and flight separate it from white-rumped House Martin. Closely related sand martins may require more detailed comparison. It is placed in the order Passeriformes. The IUCN category carried in AviList 2026 is Least Concern (LC)."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It catches flying insects above water, fields and wet plains. Migrants gather at feeding and roosting sites, sometimes using reeds for sleep. Concentrations reflect food and resting opportunities rather than proving a nesting colony."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A horizontal burrow is excavated into a sandy or earthen face, often in colonies. BTO gives four or five eggs, shared incubation around 14–15 days and young leaving at about 19–21 days. Two broods are possible. A stable bank and unobstructed entrance are essential."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It breeds widely in temperate regions and winters farther south. Lebanon has common passage; possible nesting near the Assi remained unconfirmed in the 2020 checklist. Large migrant numbers must not be equated with residence or breeding."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanese passage extends through February–May and August–November. November falls within the end of autumn passage. Multiple views confirm the breast band; counts must avoid repeatedly counting circling birds."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Bank destruction while occupied, polluted water and insect declines are pressures. Stable nesting faces away from hazardous work help. Observe burrows from a distance: standing at entrances prevents parents from provisioning young."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Sand Martin.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Braden J. Judson — CC0 1.0."
+        },
+        "fr": {
+          "title": "Hirondelle de rivage",
+          "subtitle": "Riparia riparia",
+          "meta_description": "L’Hirondelle de rivage Riparia riparia appartient aux Hirundinidae. Petite, brune dessus et blanche dessous, elle porte une bande pectorale brune nette. Bande, tête et vol la distinguent de l’Hirondelle de fenêtre au.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Hirondelle de rivage Riparia riparia appartient aux Hirundinidae. Petite, brune dessus et blanche dessous, elle porte une bande pectorale brune nette. Bande, tête et vol la distinguent de l’Hirondelle de fenêtre au croupion blanc. Les espèces proches nécessitent parfois une comparaison plus fine. L’espèce appartient à l’ordre des Passeriformes. La catégorie UICN reprise par AviList 2026 est Préoccupation mineure (LC)."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Elle capture les insectes en vol au-dessus de l’eau, des champs et des plaines humides. Les migratrices se rassemblent pour manger et dormir, parfois dans les roseaux. Ces concentrations traduisent ressources et reposoirs plutôt qu’une colonie de nidification."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Elle creuse un terrier horizontal dans une paroi sableuse ou terreuse, souvent en colonie. Le BTO donne quatre ou cinq œufs, environ 14–15 jours d’incubation partagée et une sortie vers 19–21 jours. Deux nichées sont possibles. Stabilité du talus et libre accès sont essentiels."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Elle niche largement dans les régions tempérées et hiverne plus au sud. Son passage est commun au Liban ; une nidification possible près de l’Assi restait non confirmée en 2020. L’abondance des migratrices ne prouve ni résidence ni reproduction."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Au Liban, le passage s’étend en février–mai et août–novembre. Novembre correspond à la fin du passage automnal. Plusieurs vues confirment la bande pectorale ; les comptages doivent éviter de recompter les oiseaux tournoyant."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Destruction des berges occupées, pollution et raréfaction des insectes constituent des pressions. Des parois stables éloignées des travaux dangereux sont utiles. Observer les terriers à distance laisse les parents nourrir leurs jeunes ; stationner devant les entrées les en empêche."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Sand Martin.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Braden J. Judson — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "السمامة-الشائعة",
+        "en": "common-swift",
+        "fr": "martinet-noir"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "common-swift"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "السمامة الشائعة",
+          "subtitle": "Apus apus",
+          "meta_description": "السمامة الشائعة Apus apus من السماميات Apodidae. جسمها داكن وجناحاها طويلان منجليان وذيلها مشقوق، مع بقعة حلق فاتحة محدودة. ليست سنونوًا رغم تشابه نمط الحياة. يصعب الفصل من السمامة الباهتة في الضوء القاسي؛ فالتعريض قد.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "السمامة الشائعة Apus apus من السماميات Apodidae. جسمها داكن وجناحاها طويلان منجليان وذيلها مشقوق، مع بقعة حلق فاتحة محدودة. ليست سنونوًا رغم تشابه نمط الحياة. يصعب الفصل من السمامة الباهتة في الضوء القاسي؛ فالتعريض قد يجعل الداكن فاتحًا. تصنيفه ضمن رتبة Apodiformes. وتورد بيانات IUCN المرفقة بقائمة AviList 2026 وضعه العالمي ضمن فئة «أقل إثارة للقلق (LC)»."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تقضي معظم نشاطها في الهواء، ملتقطة الحشرات والعناكب المحمولة بالرياح. تطوف فوق المدن والأرياف والمياه بحسب الغذاء والطقس. صرخاتها الجماعية حول المباني لافتة في موسم التكاثر؛ وهي لا تتغذى على الحبوب ولا تُطعم خبزًا عند الإنقاذ."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "تعشش في فجوات المباني أو الصخور. يتشارك الأبوان حضانة 2–3 بيضات عادة، لمدة نحو 18–24 يومًا بحسب بيانات BTO. تمكث الصغار قرابة 37–56 يومًا قبل الطيران؛ وتؤثر وفرة الحشرات والطقس في المدة. الفجوة المشغولة ليست ثقبًا مهملًا يجوز سده أثناء الترميم."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "متكاثرة في أوروبا وشمال أفريقيا وأجزاء من آسيا، وتهاجر إلى أفريقيا جنوب الصحراء. في لبنان زائر صيفي متكاثر غزير ومهاجر عبور. وجودها الصيفي البارز في المدن لا يعني أنها مقيمة شتاءً."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "تورد القائمة اللبنانية التعشيش من مارس إلى يوليو، والعبور من فبراير إلى أبريل ثم من يونيو إلى نوفمبر. تكون أعداد نوفمبر مختلفة عن أسراب الصيف، وقد يحدث خلط مع سمامات أخرى؛ لذلك يوثق الرأس والحلق والجناح إلى جانب التاريخ."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تتأثر بفقدان فجوات التعشيش وانخفاض الحشرات. تفيد ترميمات تراعي الأعشاش المشغولة وحلول التعشيش المناسبة مع حفظ الغذاء. إذا وُجدت سمامة على الأرض، لا تُرمى في الهواء؛ فالإصابة أو الضعف يحتاجان تقييم مختص."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Swift.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Luis Ferreira — CC0 1.0."
+        },
+        "en": {
+          "title": "Common Swift",
+          "subtitle": "Apus apus",
+          "meta_description": "Common Swift Apus apus belongs to Apodidae. A dark body, long sickle-shaped wings and forked tail accompany a limited pale throat patch. It is not a swallow. Separation from Pallid Swift is difficult in harsh light,.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Common Swift Apus apus belongs to Apodidae. A dark body, long sickle-shaped wings and forked tail accompany a limited pale throat patch. It is not a swallow. Separation from Pallid Swift is difficult in harsh light, which can make dark plumage look pale. It is placed in the order Apodiformes. The IUCN category carried in AviList 2026 is Least Concern (LC)."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Most activity occurs in flight, catching insects and windborne spiders. It ranges over towns, farmland and water according to food and weather. Screaming groups around buildings are prominent during breeding. Swifts do not feed on grain and should not receive bread during rescue."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "Nests occupy building or rock cavities. BTO gives a typical two or three eggs, incubated by both parents for about 18–24 days. Young remain around 37–56 days before flight; insect supply and weather influence duration. An occupied cavity must not be sealed during renovation."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It breeds in Europe, North Africa and parts of Asia, migrating to sub-Saharan Africa. Lebanon has abundant migrant breeders and passage birds. Conspicuous summer city flocks do not imply winter residence."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanese nesting runs from March to July, with passage in February–April and June–November. November numbers differ from summer flocks, and confusion with other swifts is possible. Record head, throat and wing details alongside date."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Loss of nesting cavities and declines in aerial insects are pressures. Renovations respecting occupied nests and suitable nesting provision help when food remains available. A grounded swift should never be thrown into the air; injury or weakness requires expert assessment."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Swift.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Luis Ferreira — CC0 1.0."
+        },
+        "fr": {
+          "title": "Martinet noir",
+          "subtitle": "Apus apus",
+          "meta_description": "Le Martinet noir Apus apus appartient aux Apodidae. Corps sombre, longues ailes en faux et queue fourchue accompagnent une petite gorge claire. Ce n’est pas une hirondelle. Le distinguer du Martinet pâle devient.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Martinet noir Apus apus appartient aux Apodidae. Corps sombre, longues ailes en faux et queue fourchue accompagnent une petite gorge claire. Ce n’est pas une hirondelle. Le distinguer du Martinet pâle devient difficile sous une lumière forte qui éclaircit artificiellement le plumage. L’espèce appartient à l’ordre des Apodiformes. La catégorie UICN reprise par AviList 2026 est Préoccupation mineure (LC)."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il passe l’essentiel de son activité en vol, capturant insectes et araignées portées par le vent. Villes, cultures et eaux sont parcourues selon nourriture et météo. Les groupes criards autour des bâtiments marquent la reproduction. Il ne mange pas de graines et ne doit pas recevoir de pain lors d’un sauvetage."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid occupe une cavité de bâtiment ou de rocher. Le BTO donne deux ou trois œufs, couvés par les parents environ 18–24 jours. Les jeunes restent environ 37–56 jours avant l’envol ; ressources et météo modulent cette durée. Une cavité occupée ne doit pas être bouchée pendant des travaux."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Il niche en Europe, Afrique du Nord et dans certaines régions d’Asie puis migre vers l’Afrique subsaharienne. Au Liban, il est nicheur migrateur abondant et migrateur de passage. Les groupes urbains estivaux ne signifient pas une résidence hivernale."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Au Liban, la nidification s’étend de mars à juillet, avec passage en février–avril et juin–novembre. Les effectifs de novembre diffèrent des groupes estivaux et les autres martinets compliquent l’identification. Tête, gorge et ailes doivent être documentées avec la date."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Perte des cavités et raréfaction des insectes constituent des pressions. Travaux respectueux des nids et installations adaptées aident si la nourriture reste disponible. Ne jamais lancer en l’air un martinet au sol : blessure ou faiblesse nécessitent une évaluation spécialisée."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Swift.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Luis Ferreira — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "السمامة-الباهتة",
+        "en": "pallid-swift",
+        "fr": "martinet-pale"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "pallid-swift"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "السمامة الباهتة",
+          "subtitle": "Apus pallidus",
+          "meta_description": "السمامة الباهتة Apus pallidus من السماميات Apodidae. تشبه السمامة الشائعة، لكنها غالبًا أبنى وأفتح، مع حلق فاتح أوسع وتباين بين أغطية الجناح وريش الطيران. قد يبدو الوجه أفتح. هذه فروق دقيقة تتبدل بالإضاءة والعمر؛ ولا.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "السمامة الباهتة Apus pallidus من السماميات Apodidae. تشبه السمامة الشائعة، لكنها غالبًا أبنى وأفتح، مع حلق فاتح أوسع وتباين بين أغطية الجناح وريش الطيران. قد يبدو الوجه أفتح. هذه فروق دقيقة تتبدل بالإضاءة والعمر؛ ولا يكفي أن تبدو الصورة باهتة لتسمية النوع. تصنيفه ضمن رتبة Apodiformes. وتورد بيانات IUCN المرفقة بقائمة AviList 2026 وضعه العالمي ضمن فئة «أقل إثارة للقلق (LC)»."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تصطاد الحشرات والعوالق الهوائية فوق المدن والسواحل والأرياف. قد تختلط بسمامات أخرى في أسراب تغذية، وتتحرك وفق الطقس وارتفاع الفرائس. الأجنحة المنجلية ونمط الطيران يفرقان السمامات من السنونوات، لكنهما لا يكفيان للفصل بين أنواع Apus."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "تستخدم فجوات الأبنية والصخور للتعشيش، وقد تشكل مستعمرات. يتعاون الأبوان في الحضانة وجلب الغذاء للفراخ. تتفاوت مدة بقاء الصغار مع الغذاء والطقس، وقد يختلف توقيت التعشيش بين المواقع الساحلية والأقاليم؛ ولا تُستنسخ أرقام السمامة الشائعة على أنها بيانات لهذا النوع."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يرتبط نطاقها بالمتوسط وشمال أفريقيا وأجزاء من الشرق الأوسط. في لبنان متكاثرة صيفية محلية ومهاجرة عبور بحسب القائمة المحدثة. وتوجد أنماط موسمية مختلفة في نطاقها الأوسع؛ فلا تُفترض الإقامة الشتوية من وجود مستعمرة صيفية."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "في لبنان يرد العبور الربيعي من فبراير إلى مايو والخريفي من يونيو إلى سبتمبر. لذلك تحتاج مشاهدة نوفمبر إلى تدقيق خاص في الهوية والموقع. تساعد صور جيدة التعريض للحلق والوجه والجناحين على فصلها من الشائعة دون مبالغة في يقين اللقطات البعيدة."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تحتاج إلى فجوات آمنة وحشرات جوية. سد فتحات المباني أثناء إشغالها قد يحبس الطيور أو يمنع إطعام الفراخ. التخطيط للترميم خارج فترة التعشيش والحفاظ على منافذ دخول مناسبة يدعمان بقاء المستعمرات مع صيانة المباني."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Pallid Swift.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: karim Attouche — CC0 1.0."
+        },
+        "en": {
+          "title": "Pallid Swift",
+          "subtitle": "Apus pallidus",
+          "meta_description": "Pallid Swift Apus pallidus belongs to Apodidae. Similar to Common Swift, it is often browner and paler, with a broader pale throat and contrast between wing coverts and flight feathers. The face may look paler. Light.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Pallid Swift Apus pallidus belongs to Apodidae. Similar to Common Swift, it is often browner and paler, with a broader pale throat and contrast between wing coverts and flight feathers. The face may look paler. Light and age alter these subtle features; an overexposed photograph cannot identify it. It is placed in the order Apodiformes. The IUCN category carried in AviList 2026 is Least Concern (LC)."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It catches insects and airborne invertebrates over towns, coasts and farmland. Mixed swift feeding flocks occur, tracking weather and prey height. Sickle wings and flight distinguish swifts from swallows but do not separate all Apus species."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "Building and rock cavities support nests, sometimes in colonies. Both parents contribute to incubation and feeding. Food and weather affect nestling development, while breeding timing varies among coastal sites and regions. Common Swift statistics should not be presented as measurements for this species."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range is associated with the Mediterranean, North Africa and parts of the Middle East. Lebanon’s updated checklist describes local migrant breeding and passage. Seasonal strategies differ across the wider range; a summer colony does not establish winter residence."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanese spring passage extends from February to May and autumn passage from June to September. A November record therefore requires particular attention to identity and location. Well-exposed views of throat, face and wings help, without overstating distant photographs."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It needs safe cavities and aerial insects. Sealing occupied building openings can trap birds or prevent provisioning. Repairs outside nesting periods and retained suitable entrances help colonies coexist with maintained buildings."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Pallid Swift.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: karim Attouche — CC0 1.0."
+        },
+        "fr": {
+          "title": "Martinet pâle",
+          "subtitle": "Apus pallidus",
+          "meta_description": "Le Martinet pâle Apus pallidus appartient aux Apodidae. Proche du Martinet noir, il paraît souvent plus brun et clair, avec gorge pâle plus étendue et contraste entre couvertures et rémiges. La face peut être plus.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Martinet pâle Apus pallidus appartient aux Apodidae. Proche du Martinet noir, il paraît souvent plus brun et clair, avec gorge pâle plus étendue et contraste entre couvertures et rémiges. La face peut être plus claire. Âge et lumière modifient ces critères subtils ; une photo surexposée ne suffit pas. L’espèce appartient à l’ordre des Apodiformes. La catégorie UICN reprise par AviList 2026 est Préoccupation mineure (LC)."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il capture insectes et invertébrés aériens au-dessus des villes, côtes et campagnes. Il rejoint parfois d’autres martinets, suivant météo et altitude des proies. Ailes en faux et vol le distinguent des hirondelles, sans séparer toutes les espèces d’Apus."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Il niche dans les cavités des bâtiments et rochers, parfois en colonie. Les deux parents participent à l’incubation et au nourrissage. Nourriture et météo modulent la croissance ; les dates varient entre régions et sites côtiers. Les chiffres du Martinet noir ne doivent pas être présentés comme ceux de cette espèce."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire concerne Méditerranée, Afrique du Nord et certaines régions du Moyen-Orient. La liste libanaise actualisée décrit une nidification migratrice locale et le passage. Les stratégies saisonnières varient : une colonie estivale ne démontre pas une résidence hivernale."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Au Liban, le passage printanier va de février à mai et celui d’automne de juin à septembre. Une observation de novembre demande donc une attention particulière au lieu et à l’identité. Gorge, face et ailes bien exposées aident, sans surestimer les clichés lointains."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Cavités sûres et insectes aériens sont nécessaires. Boucher une ouverture occupée peut emprisonner les oiseaux ou empêcher le nourrissage. Programmer les réparations hors nidification et conserver des accès adaptés favorisent les colonies tout en entretenant les bâtiments."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Pallid Swift.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: karim Attouche — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "السمامة-الألبية",
+        "en": "alpine-swift",
+        "fr": "martinet-a-ventre-blanc"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "alpine-swift"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "السمامة الألبية",
+          "subtitle": "Tachymarptis melba",
+          "meta_description": "السمامة الألبية Tachymarptis melba من السماميات Apodidae. أكبر من السمامتين الشائعة والباهتة، وتتميز ببطن أبيض وحلق أبيض يفصل بينهما شريط صدري داكن. جناحاها طويلان وقويان. الاسم القديم Apus melba يعود إلى النوع نفسه،.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "السمامة الألبية Tachymarptis melba من السماميات Apodidae. أكبر من السمامتين الشائعة والباهتة، وتتميز ببطن أبيض وحلق أبيض يفصل بينهما شريط صدري داكن. جناحاها طويلان وقويان. الاسم القديم Apus melba يعود إلى النوع نفسه، وليس نوعًا إضافيًا للموسوعة. تصنيفه ضمن رتبة Apodiformes. وتورد بيانات IUCN المرفقة بقائمة AviList 2026 وضعه العالمي ضمن فئة «أقل إثارة للقلق (LC)»."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تحلق فوق الجبال والسواحل والمدن لالتقاط الحشرات في الهواء. يمكن أن تشاهد بعيدًا عن الجروف التي تعشش فيها، لذا لا يحدد موقع التغذية موضع العش. تتجمع وتطلق نداءات قوية؛ ويساعد البطن الأبيض في التعرف أثناء المرور العالي."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "تعشش في شقوق الجروف والأبنية، مستخدمة مواد خفيفة يثبتها اللعاب. تضع غالبًا ثلاث بيضات؛ ويشارك الأبوان في الحضانة والإطعام. تورد مراجع النوع مدة رعاية داخل العش تقارب 6–10 أسابيع، مع تباين الظروف؛ فمغادرة العش تتطلب بلوغ قدرة طيران مناسبة."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يشمل نطاقها مناطق من جنوب أوروبا وشمال أفريقيا والشرق الأوسط ونطاقًا أوسع جنوبًا وشرقًا. في لبنان متكاثرة صيفية محلية على الجروف ومهاجرة عبور. لا يعني وجودها فوق الساحل أنها تعشش في كل مبنى تمر فوقه."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "تورد قائمة لبنان التكاثر من فبراير إلى يوليو، والعبور الربيعي من فبراير إلى أبريل والخريفي من يوليو إلى منتصف أكتوبر. نوفمبر متأخر عن معظم مروره المحلي المعتاد. يوثق البطن والشريط الصدري لتجنب الخلط مع طيور كبيرة أخرى في الضوء البعيد."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تتأثر بفقدان شقوق التعشيش والإزعاج وتغير وفرة الحشرات. حماية الجروف واحترام المستعمرات أثناء التسلق والأعمال الإنشائية ضروريان. يفضل تتبع الطيران من نقاط بعيدة تتيح رؤية البطن دون الاقتراب من الأعشاش."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Tachymarptis melba.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Paulo Caseirito — CC0 1.0."
+        },
+        "en": {
+          "title": "Alpine Swift",
+          "subtitle": "Tachymarptis melba",
+          "meta_description": "Alpine Swift Tachymarptis melba belongs to Apodidae. Larger than Common and Pallid Swifts, it shows white belly and throat separated by a dark breast band. Wings are long and powerful. The older name Apus melba refers.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Alpine Swift Tachymarptis melba belongs to Apodidae. Larger than Common and Pallid Swifts, it shows white belly and throat separated by a dark breast band. Wings are long and powerful. The older name Apus melba refers to the same species, not an additional encyclopedia bird. It is placed in the order Apodiformes. The IUCN category carried in AviList 2026 is Least Concern (LC)."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It catches airborne insects above mountains, coasts and towns. Feeding birds may range far from nesting cliffs, so a feeding location does not locate a nest. Groups give strong calls; the white belly helps identify high-flying individuals."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "Rock and building crevices hold nests made with light material bound by saliva. Three eggs are usual; both parents incubate and feed young. Species references describe roughly six to ten weeks of nest care, varying with conditions. Nest departure requires adequate flight development."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range includes southern Europe, North Africa and the Middle East, extending farther south and east. In Lebanon it is a local cliff-nesting migrant breeder and passage migrant. Birds above a coast are not necessarily nesting in every building they cross."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanon’s checklist gives breeding from February to July, spring passage in February–April and autumn passage from July to mid-October. November follows most usual local passage. Document belly and breast band to avoid confusion with other distant large birds."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Loss of nesting crevices, disturbance and changing insect supplies are pressures. Respecting cliff colonies during climbing and construction matters. Distant viewpoints permit belly views without approaching nests."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Tachymarptis melba.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Paulo Caseirito — CC0 1.0."
+        },
+        "fr": {
+          "title": "Martinet à ventre blanc",
+          "subtitle": "Tachymarptis melba",
+          "meta_description": "Le Martinet à ventre blanc Tachymarptis melba appartient aux Apodidae. Plus grand que les Martinets noir et pâle, il porte ventre et gorge blancs séparés par une bande pectorale sombre. Ses ailes sont longues et.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Martinet à ventre blanc Tachymarptis melba appartient aux Apodidae. Plus grand que les Martinets noir et pâle, il porte ventre et gorge blancs séparés par une bande pectorale sombre. Ses ailes sont longues et puissantes. L’ancien nom Apus melba désigne la même espèce, sans ajout au nombre de l’encyclopédie. L’espèce appartient à l’ordre des Apodiformes. La catégorie UICN reprise par AviList 2026 est Préoccupation mineure (LC)."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il capture les insectes en vol au-dessus des montagnes, côtes et villes. Les zones de nourrissage peuvent être éloignées des falaises de nidification ; elles ne localisent donc pas le nid. Les groupes émettent des cris puissants et le ventre blanc aide à reconnaître les oiseaux hauts."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid occupe une fissure de rocher ou de bâtiment, avec matériaux légers liés par la salive. Trois œufs sont habituels ; les parents couvent et nourrissent. Les références décrivent environ six à dix semaines de soins au nid, selon les conditions. La sortie exige une capacité de vol suffisante."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire comprend Europe méridionale, Afrique du Nord et Moyen-Orient, avec prolongements au sud et à l’est. Au Liban, il est nicheur migrateur local des falaises et migrateur de passage. Un oiseau survolant la côte ne niche pas nécessairement dans chaque bâtiment franchi."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "La liste libanaise donne la reproduction de février à juillet, le passage printanier en février–avril et l’automnal de juillet à mi-octobre. Novembre suit l’essentiel du passage habituel. Ventre et bande pectorale évitent la confusion avec de grands oiseaux lointains."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Perte de fissures, dérangement et variations des insectes constituent des pressions. Respecter les colonies pendant escalade et travaux est essentiel. Les points d’observation éloignés permettent de voir le ventre sans approcher les nids."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Tachymarptis melba.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Paulo Caseirito — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الحدأة-السوداء",
+        "en": "black-kite",
+        "fr": "milan-noir"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "black-kite"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الحدأة السوداء",
+          "subtitle": "Milvus migrans",
+          "meta_description": "الحدأة السوداء Milvus migrans من البازيات Accipitridae. داكنة بنية ذات جناحين طويلين وذيل مشقوق تشقيقًا ضحلًا، قد يبدو مستقيمًا عند فرده. اليافع منقط وأفتح في أجزاء من الجسم. تختلف عن الحدأة الحمراء بذيل أقصر وأقل.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الحدأة السوداء Milvus migrans من البازيات Accipitridae. داكنة بنية ذات جناحين طويلين وذيل مشقوق تشقيقًا ضحلًا، قد يبدو مستقيمًا عند فرده. اليافع منقط وأفتح في أجزاء من الجسم. تختلف عن الحدأة الحمراء بذيل أقصر وأقل تشقيقًا. تفصل بعض المراجع حدأة صفراء المنقار، بينما تضمها AviList 2026 إلى M. migrans بانتظار مزيد من البحث. تصنيفه ضمن رتبة Accipitriformes."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تستخدم الأراضي المفتوحة والمياه وضواحي المدن ومواقع تتوفر فيها الفرائس أو الجيف. تأكل أسماكًا وحيوانات صغيرة وبقايا، وقد تختطف الغذاء من طيور أخرى. تصنع أعدادها الكبيرة حول مكب صورة لوفرة الطعام، لا دليلًا على سلامة الغذاء أو صحة الموطن."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "تبني عشًا من الأغصان في شجرة، وأحيانًا في موقع صخري، وقد تبطنه بمواد ملتقطة. تضم الحضنة غالبًا 2–3 بيضات، والحضانة نحو شهر، وتحتاج الفراخ نحو 6–8 أسابيع قبل الطيران مع استمرار الرعاية. تتباين التفاصيل بين الأقاليم والتجمعات."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "واسعة الانتشار في العالم القديم، وتجمع تجمعات مقيمة ومهاجرة. في لبنان مهاجرة عبور وزائرة شتوية من أوائل سبتمبر إلى أواخر أبريل بحسب القائمة المحدثة. عند مقارنة السجلات يُذكر النظام التصنيفي المستخدم، لأن إدراج مجموعة صفراء المنقار يغير نطاق النوع؛ ولا تُعمم الموسمية اللبنانية على كل أفريقيا العربية."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "نوفمبر ضمن موسم وجودها الشتوي اللبناني. يمكن مراقبة التحليق والذيل من مواقع بعيدة، مع الانتباه إلى أن فرد الذيل يخفي الشق. تعطي سلسلة صور أثناء الانعطاف معلومات أفضل من لقطة واحدة."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تسهم في استهلاك الجيف، لكنها معرضة للسموم والابتلاع العرضي للبلاستيك والصعق الكهربائي. إدارة النفايات والسموم ومخاطر الكهرباء تخدمها. لا يُنصح بجذبها بتقديم بقايا مجهولة، فقد تحول موردًا ظاهريًا إلى مصدر تسمم."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Milvus migrans.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Murielle Desrois — CC0 1.0."
+        },
+        "en": {
+          "title": "Black Kite",
+          "subtitle": "Milvus migrans",
+          "meta_description": "Black Kite Milvus migrans belongs to Accipitridae. Brown and long-winged, it has a shallowly forked tail that can look square when spread. Juveniles are more spotted. Compared with Red Kite, the tail is shorter and less.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Black Kite Milvus migrans belongs to Accipitridae. Brown and long-winged, it has a shallowly forked tail that can look square when spread. Juveniles are more spotted. Compared with Red Kite, the tail is shorter and less deeply forked. Some references split Yellow-billed Kite, whereas AviList 2026 includes it within M. migrans pending further research. It is placed in the order Accipitriformes."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Open country, water, urban edges and sites with prey or carrion provide food. It takes fish, small animals and scraps and may steal from other birds. Large gatherings at a dump demonstrate food concentration, not necessarily safe food or healthy habitat."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A twig nest usually stands in a tree, sometimes on rock, and may incorporate collected lining material. Two or three eggs are usual; incubation lasts about a month. Chicks require roughly six to eight weeks before flight and further care afterwards. Details vary geographically."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Widespread in the Old World, it includes resident and migratory populations. Lebanon’s updated checklist describes passage and winter visits from early September to late April. Comparisons must state the taxonomy used, because including the Yellow-billed group changes the species’ scope. Lebanese seasonality should not be generalised across Arab Africa."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "November falls within Lebanese winter occurrence. Distant views of flight and tail are useful, remembering that a spread tail hides its fork. A sequence during turns gives better evidence than one frame."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Carrion consumption is an ecological role, but poisons, accidental plastic ingestion and electrocution are risks. Waste, toxicant and power-line management help. Deliberately attracting kites with unknown scraps can turn apparent food into a poisoning source."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Milvus migrans.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Murielle Desrois — CC0 1.0."
+        },
+        "fr": {
+          "title": "Milan noir",
+          "subtitle": "Milvus migrans",
+          "meta_description": "Le Milan noir Milvus migrans appartient aux Accipitridae. Brun aux longues ailes, il porte une queue faiblement fourchue qui peut sembler droite lorsqu’elle est étalée. Le jeune est plus tacheté. Sa queue est moins.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Milan noir Milvus migrans appartient aux Accipitridae. Brun aux longues ailes, il porte une queue faiblement fourchue qui peut sembler droite lorsqu’elle est étalée. Le jeune est plus tacheté. Sa queue est moins longue et moins échancrée que celle du Milan royal. Certaines références séparent le Milan à bec jaune ; AviList 2026 l’inclut dans M. migrans en attendant des recherches complémentaires. L’espèce appartient à l’ordre des Accipitriformes."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Milieux ouverts, eaux, périphéries urbaines et sites riches en proies ou charognes lui conviennent. Il consomme poissons, petits animaux et restes, parfois dérobés à d’autres oiseaux. Un rassemblement sur une décharge indique une concentration alimentaire, sans garantir sécurité ou bon état du milieu."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid de branches est généralement dans un arbre, parfois sur un rocher, avec matériaux de garniture collectés. Deux ou trois œufs sont habituels ; l’incubation dure environ un mois. Les jeunes nécessitent environ six à huit semaines avant l’envol puis d’autres soins. Les détails varient géographiquement."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Répandu dans l’Ancien Monde, il réunit populations résidentes et migratrices. Au Liban, la liste actualisée donne passage et hivernage de début septembre à fin avril. Comparer les données exige de préciser la classification, car inclure le groupe à bec jaune modifie les limites de l’espèce. La saison libanaise ne se généralise pas à toute l’Afrique arabe."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Novembre appartient à son hivernage libanais. Les vues lointaines du vol et de la queue sont utiles, mais la queue étalée masque la fourche. Une séquence pendant les virages renseigne mieux qu’une image unique."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Il consomme des charognes, mais subit poisons, ingestion accidentelle de plastique et électrocution. Gestion des déchets, toxiques et lignes électriques aide l’espèce. L’attirer avec des restes inconnus peut transformer une ressource apparente en source d’empoisonnement."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Milvus migrans.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Murielle Desrois — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الأبلق-الأشهب",
+        "en": "isabelline-wheatear",
+        "fr": "traquet-isabelle"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "isabelline-wheatear"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الأبلق الأشهب",
+          "subtitle": "Oenanthe isabellina",
+          "meta_description": "الأبلق الأشهب Oenanthe isabellina من صائدات الذباب Muscicapidae. لونه رملي فاتح مع وقفة منتصبة وساقين طويلتين نسبيًا. تظهر رقعة داكنة عند الجناح والذيل أبيض وأسود. يختلف من الأبلق الصحراوي بذيل لا يبدو أسود بالكامل،.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الأبلق الأشهب Oenanthe isabellina من صائدات الذباب Muscicapidae. لونه رملي فاتح مع وقفة منتصبة وساقين طويلتين نسبيًا. تظهر رقعة داكنة عند الجناح والذيل أبيض وأسود. يختلف من الأبلق الصحراوي بذيل لا يبدو أسود بالكامل، وتساعد بنية الرأس والحاجب والنداء في الفصل من أبلقات أخرى. تصنيفه ضمن رتبة Passeriformes. وتورد بيانات IUCN المرفقة بقائمة AviList 2026 وضعه العالمي ضمن فئة «أقل إثارة للقلق (LC)»."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد السهوب والأراضي الجافة المفتوحة والمراعي قليلة النبات. يركض ويتوقف على الأرض، ويلتقط الحشرات ولافقاريات صغيرة. قد يقف على حجر أو كتلة تراب للمراقبة. الاعتماد على حشرات الأرض يربطه بجودة الموطن، ولو بدا المكان فقيرًا بالنبات."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يعشش داخل جحر مناسب أو تجويف أرضي، وقد يستفيد من جحور ثدييات صغيرة. تُبنى حجرة العش بمواد نباتية ويُجلب الغذاء إلى الفراخ. خروج الصغار يتبعه استمرار الرعاية؛ ولا يدل وجود الطائر قرب جحر على أنه يحفره بنفسه أو يشغله للتكاثر."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يتكاثر في نطاق سُهبي من جنوب شرق أوروبا عبر غرب ووسط آسيا، ويعبر ويشتو جنوبًا. في لبنان متكاثر صيفي في شمال البقاع ومهاجر عبور. توجد مشاهدات شتوية في أجزاء من المنطقة العربية، لكن لا تُنقل صفات بلد إلى آخر دون قائمته."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "تشير قائمة لبنان إلى عبور ربيعي من منتصف فبراير إلى أوائل مايو وخريفي يبدأ في أغسطس. تُقرأ مشاهدة نوفمبر بحسب بلدها وموقعها لا وفق موسم التعشيش وحده. تساعد صور الذيل والجناح والمنقار على توثيق النوع."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يستهلك اللافقاريات ويتأثر بتحويل السهوب والرعي الذي يزيل التنوع والقيادة فوق مواقع الجحور. صون أرض مفتوحة متنوعة الغطاء أفضل من تسوية كل النتوءات. تترك الجحور دون فتح أو إدخال كاميرا، فهي قد تؤوي طيورًا أو كائنات أخرى."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Isabelline Wheatear.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Юрий Носков — CC0 1.0."
+        },
+        "en": {
+          "title": "Isabelline Wheatear",
+          "subtitle": "Oenanthe isabellina",
+          "meta_description": "Isabelline Wheatear Oenanthe isabellina belongs to Muscicapidae. Pale sandy plumage accompanies an upright stance and relatively long legs. A dark wing patch and black-and-white tail are useful. Unlike Desert Wheatear,.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Isabelline Wheatear Oenanthe isabellina belongs to Muscicapidae. Pale sandy plumage accompanies an upright stance and relatively long legs. A dark wing patch and black-and-white tail are useful. Unlike Desert Wheatear, the tail is not predominantly black; head shape, eyebrow and voice help with other wheatears. It is placed in the order Passeriformes. The IUCN category carried in AviList 2026 is Least Concern (LC)."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It uses steppe, dry open ground and sparsely vegetated pasture. Running and pausing on the ground, it collects insects and small invertebrates. Stones and soil clods provide lookouts. Dependence on ground invertebrates links it to habitat quality even in apparently sparse terrain."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A suitable burrow or ground cavity holds the nest, sometimes using small-mammal burrows. Plant material lines the chamber and adults bring food to young. Care continues after nest departure. A bird near a hole does not prove that it excavated it or occupies it for breeding."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It breeds across steppe from southeastern Europe through western and central Asia and migrates or winters farther south. Lebanon has summer breeding in the northern Beqaa and passage. Winter records occur in parts of the Arab region, but national statuses should not be transferred indiscriminately."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanon’s checklist places spring passage from mid-February to early May and autumn passage beginning in August. November sightings require country and site context rather than the breeding calendar alone. Tail, wing and bill photographs improve documentation."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It consumes invertebrates and is affected by steppe conversion, grazing that removes habitat variety and vehicles over burrow sites. Varied open ground is preferable to uniform levelling. Leave holes unopened: they may shelter birds or other animals."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Isabelline Wheatear.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Юрий Носков — CC0 1.0."
+        },
+        "fr": {
+          "title": "Traquet isabelle",
+          "subtitle": "Oenanthe isabellina",
+          "meta_description": "Le Traquet isabelle Oenanthe isabellina appartient aux Muscicapidae. Son plumage sable clair accompagne une posture droite et des pattes assez longues. Tache alaire sombre et queue blanche et noire sont utiles..",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Traquet isabelle Oenanthe isabellina appartient aux Muscicapidae. Son plumage sable clair accompagne une posture droite et des pattes assez longues. Tache alaire sombre et queue blanche et noire sont utiles. Contrairement au Traquet du désert, la queue n’est pas surtout noire ; tête, sourcil et voix complètent le diagnostic. L’espèce appartient à l’ordre des Passeriformes. La catégorie UICN reprise par AviList 2026 est Préoccupation mineure (LC)."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il occupe steppes, sols secs ouverts et pâturages peu végétalisés. Il court, s’arrête puis prend insectes et petits invertébrés au sol. Pierres et mottes servent de postes de guet. Sa dépendance aux invertébrés le relie à la qualité du milieu, même apparemment pauvre."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid occupe un terrier ou une cavité terrestre, parfois un ancien terrier de petit mammifère. Des végétaux garnissent la chambre et les adultes apportent la nourriture. Les soins continuent après la sortie. Un oiseau près d’un trou ne prouve ni son excavation ni son occupation reproductrice."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Il niche dans les steppes du sud-est européen à l’Asie occidentale et centrale, puis migre ou hiverne plus au sud. Au Liban, il niche l’été dans le nord de la Bekaa et passe en migration. Certaines régions arabes ont des observations hivernales, sans statut national uniformément transférable."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "La liste libanaise situe le passage printanier de mi-février à début mai et le début du passage automnal en août. Une observation de novembre exige le contexte du pays et du site. Photos de queue, aile et bec améliorent la documentation."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Consommateur d’invertébrés, il subit conversion des steppes, pâturage uniformisant et véhicules sur les terriers. Une mosaïque ouverte vaut mieux qu’un nivellement uniforme. Les trous restent fermés à l’observation intrusive : ils peuvent abriter oiseaux ou autres animaux."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Royal Commission for AlUla — Birds of AlUla, Isabelline Wheatear.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Юрий Носков — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "العقاب-النساري",
+        "en": "osprey",
+        "fr": "balbuzard-pecheur"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "osprey"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "العقاب النساري",
+          "subtitle": "Pandion haliaetus",
+          "meta_description": "العقاب النساري Pandion haliaetus من النساريات Pandionidae، ويعرف أيضًا بعقاب السمك. بطنه فاتح وظهره داكن، وعلى وجهه شريط داكن عبر العين. تبدو أجنحته طويلة منثنية عند الرسغ في الطيران. يختلف عن عقبان البحر ببنيته الأخف.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "العقاب النساري Pandion haliaetus من النساريات Pandionidae، ويعرف أيضًا بعقاب السمك. بطنه فاتح وظهره داكن، وعلى وجهه شريط داكن عبر العين. تبدو أجنحته طويلة منثنية عند الرسغ في الطيران. يختلف عن عقبان البحر ببنيته الأخف وقناعه ونمط الصيد الغاطس. تصنيفه ضمن رتبة Accipitriformes. وتورد بيانات IUCN المرفقة بقائمة AviList 2026 وضعه العالمي ضمن فئة «أقل إثارة للقلق (LC)»."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "متخصص بصيد الأسماك قرب السواحل والبحيرات والأنهار. يحوم أو يرفرف ثابتًا قبل الاندفاع نحو الماء ومد القدمين للإمساك بالفريسة. يسهم اتجاه حمل السمكة ونشاط الصيد في التعرف، لكن الوجود فوق البحر وحده لا يميز النوع."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني عشًا كبيرًا من الأغصان في شجرة أو على صخر أو منصة مناسبة. تضم الحضنة غالبًا ثلاث بيضات؛ وتتفاوت الحضانة في المراجع بين نحو 32–43 يومًا، والطيران الأول بين نحو 48–76 يومًا. يعتمد الصغار على الغذاء بعد الطيران، ويؤمن الذكر كثيرًا من الفرائس أثناء الحضانة ونمو الفراخ."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "واسع الانتشار عالميًا، وله تجمعات مقيمة ومهاجرة. توجد مناطق تعشيش ساحلية في الجزيرة العربية، بينما يرد في لبنان كمهاجر عبور غير شائع، أساسًا في الربيع والخريف. لذلك لا تُفسر كل مشاهدة ساحلية عربية على أنها من مستعمرة محلية."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمتد العبور اللبناني الخريفي من سبتمبر إلى أوائل نوفمبر، والربيعي أساسًا في أواخر مارس وأبريل. يمكن أن توافق بداية نوفمبر آخر العابرين هناك؛ وفي مواضع الإقامة الساحلية قد يوجد طوال العام. توثق الحلقة أو اللون إن ظهرا من دون ملاحقة الطائر."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "سلامة المياه والأسماك ومواقع الأعشاش أساسية. يتأثر بالتشابك في خيوط الصيد والتلوث والإزعاج والتصادم. جمع معدات الصيد المهملة وحفظ مسافة عن الأعشاش يقللان أخطارًا يمكن تجنبها، خاصة عندما تكون المنصة أو الصخرة قريبة من حركة البشر."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Pandion haliaetus.",
+                "Royal Commission for AlUla — Birds of AlUla, Osprey.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Glenn Berry — CC0 1.0."
+        },
+        "en": {
+          "title": "Osprey",
+          "subtitle": "Pandion haliaetus",
+          "meta_description": "Osprey Pandion haliaetus belongs to Pandionidae. Pale underparts, dark upperparts and a dark eye stripe accompany long wings bent at the wrist. Its lighter build, facial mask and plunging fishing technique distinguish.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Osprey Pandion haliaetus belongs to Pandionidae. Pale underparts, dark upperparts and a dark eye stripe accompany long wings bent at the wrist. Its lighter build, facial mask and plunging fishing technique distinguish it from sea eagles. It is placed in the order Accipitriformes. The IUCN category carried in AviList 2026 is Least Concern (LC)."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It specialises in fish along coasts, lakes and rivers. Hovering or circling precedes a plunge with feet extended towards prey. Fish-carrying position and hunting behaviour aid recognition, but a raptor above the sea is not automatically an Osprey."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A large stick nest stands in a tree, on rock or on a suitable platform. Three eggs are usual. References give incubation around 32–43 days and first flight roughly 48–76 days. Young continue receiving food after fledging; males provide much prey while females incubate and young grow."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Globally widespread, it has resident and migratory populations. Coastal nesting occurs in Arabia, while Lebanon has uncommon spring and autumn passage. Not every Arab coastal sighting therefore belongs to a local breeding colony."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanese autumn passage extends from September to early November, with spring passage chiefly in late March and April. Early November may catch the last local migrants; resident coastal sites may hold birds year-round. Document visible rings without pursuing the bird."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Clean water, fish and safe nest sites are essential. Fishing-line entanglement, pollution, disturbance and collisions are threats. Removing abandoned fishing gear and keeping distance from nests reduce avoidable risks, especially near human activity."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Pandion haliaetus.",
+                "Royal Commission for AlUla — Birds of AlUla, Osprey.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Glenn Berry — CC0 1.0."
+        },
+        "fr": {
+          "title": "Balbuzard pêcheur",
+          "subtitle": "Pandion haliaetus",
+          "meta_description": "Le Balbuzard pêcheur Pandion haliaetus appartient aux Pandionidae. Dessous clair, dessus sombre et bande oculaire foncée accompagnent de longues ailes coudées au poignet. Silhouette plus légère, masque et pêche.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Balbuzard pêcheur Pandion haliaetus appartient aux Pandionidae. Dessous clair, dessus sombre et bande oculaire foncée accompagnent de longues ailes coudées au poignet. Silhouette plus légère, masque et pêche plongeante le distinguent des pygargues. L’espèce appartient à l’ordre des Accipitriformes. La catégorie UICN reprise par AviList 2026 est Préoccupation mineure (LC)."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Spécialiste des poissons, il fréquente côtes, lacs et rivières. Vol stationnaire ou cercles précèdent le plongeon, pattes tendues vers la proie. Port du poisson et comportement aident au diagnostic, mais tout rapace au-dessus de la mer n’est pas un balbuzard."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le grand nid de branches occupe arbre, rocher ou plateforme appropriée. Trois œufs sont habituels. Les références donnent environ 32–43 jours d’incubation et 48–76 jours avant le premier vol. Le nourrissage se poursuit ensuite ; le mâle fournit beaucoup de proies pendant incubation et croissance."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Très répandu mondialement, il possède populations résidentes et migratrices. Des sites côtiers arabiques accueillent sa reproduction ; au Liban, il passe peu communément au printemps et à l’automne. Toute observation côtière arabe ne provient donc pas d’une colonie locale."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Le passage automnal libanais va de septembre à début novembre, celui du printemps surtout de fin mars à avril. Début novembre peut voir les derniers migrants ; certains sites côtiers résidents l’accueillent toute l’année. Documenter les bagues visibles ne justifie pas de poursuivre l’oiseau."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Eaux saines, poissons et nids sûrs sont essentiels. Enchevêtrement dans les fils, pollution, dérangement et collisions constituent des risques. Retirer les engins abandonnés et respecter les nids réduit des dangers évitables, surtout près des activités humaines."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Pandion haliaetus.",
+                "Royal Commission for AlUla — Birds of AlUla, Osprey.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Glenn Berry — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "القيق-الأوراسي",
+        "en": "eurasian-jay",
+        "fr": "geai-des-chenes"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "eurasian-jay"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "القيق الأوراسي",
+          "subtitle": "Garrulus glandarius",
+          "meta_description": "القيق الأوراسي Garrulus glandarius من الغرابيات Corvidae. جسمه بني وردي، وعلى الجناح رقعة زرقاء مخططة بالأسود، مع شارب داكن وعجز أبيض يظهر في الطيران. تتباين ألوان الرأس جغرافيًا. يتشابه الجنسان؛ والرقعة الزرقاء مفيدة.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "القيق الأوراسي Garrulus glandarius من الغرابيات Corvidae. جسمه بني وردي، وعلى الجناح رقعة زرقاء مخططة بالأسود، مع شارب داكن وعجز أبيض يظهر في الطيران. تتباين ألوان الرأس جغرافيًا. يتشابه الجنسان؛ والرقعة الزرقاء مفيدة لكن يراعى شكل الجسم وبقية العلامات. تصنيفه ضمن رتبة Passeriformes."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يسكن الغابات والأحراج والبساتين ذات الأشجار، خاصة البلوط. يأكل ثمار البلوط وبذورًا وحشرات ومواد حيوانية أخرى، ويخزن الغذاء في الأرض. صوته الخشن يكشفه كثيرًا قبل رؤيته، وقد يقلد أصواتًا؛ ولا يقتصر غذاؤه على البلوط."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني عشًا كأسيًا من الأغصان داخل شجرة. تورد المراجع أربعًا أو خمس بيضات غالبًا، وحضانة تقارب 18 يومًا، وخروج الصغار بعد نحو 20–23 يومًا. يشارك الأبوان في رعاية الفراخ ويستمر الإطعام بعد خروجها؛ وتتغير المواعيد مع المناخ والارتفاع."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "واسع الانتشار في الغابات الأوراسية، وله حضور في غابات شمال أفريقيا وبلاد الشام. تصفه قائمة لبنان بمقيم متكاثر غزير في الموائل الحرجية. هذا الوصف لا يشمل الصحارى العربية المفتوحة التي لا توفر بيئته الشجرية."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمكن مشاهدته طوال السنة في مناطق الإقامة. في الخريف ينشط جمع الثمار وإخفاؤها، ما يتيح مراقبة دوره في نقل البلوط. في نوفمبر تفيد نقاط المراقبة عند حواف الأحراج، مع ترك مساراته إلى أماكن التخزين دون إزعاج."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تنبت بعض ثمار البلوط التي يخزنها ولا يستعيدها، فيسهم في انتشار الأشجار. فقدان الغابات وتجزئتها يقللان موائله. حماية البلوط وأحراجه المتصلة تفيد القيق وتجدد الغابة، دون تبسيط سلوكه إلى دور واحد أو وصفه ضارًا لأنه يأكل فرائس أحيانًا."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Garrulus glandarius.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: renshuchu — CC0 1.0."
+        },
+        "en": {
+          "title": "Eurasian Jay",
+          "subtitle": "Garrulus glandarius",
+          "meta_description": "Eurasian Jay Garrulus glandarius belongs to Corvidae. A pinkish-brown body, blue-and-black wing panel, dark moustache and white rump in flight are useful features. Head pattern varies geographically. The sexes look.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Eurasian Jay Garrulus glandarius belongs to Corvidae. A pinkish-brown body, blue-and-black wing panel, dark moustache and white rump in flight are useful features. Head pattern varies geographically. The sexes look alike; the blue panel should be read with shape and other markings. It is placed in the order Passeriformes."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Woodland, forest and wooded orchards, especially with oaks, provide habitat. It eats acorns, seeds, insects and other animal food and caches supplies in the ground. Harsh calls often reveal it before a view, and mimicry occurs. Acorns are important but not its only food."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A twig cup is built in a tree. References commonly give four or five eggs, incubation around 18 days and nest departure about 20–23 days after hatching. Both parents care for young and continue feeding after departure. Climate and altitude influence the calendar."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Widespread through Eurasian woodland, it also occurs in North African and Levantine forests. Lebanon’s checklist describes an abundant breeding resident in wooded habitats. This does not extend its ecological requirements to open Arab deserts."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Resident populations can be observed year-round. Autumn collection and storage reveal acorn transport. November woodland-edge viewpoints allow watching without interrupting journeys to caches."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Some unrecovered cached acorns germinate, contributing to tree dispersal. Forest loss and fragmentation reduce habitat. Protecting connected oak woods benefits both jays and woodland regeneration, without reducing a varied animal to a single role or calling it harmful for occasionally taking prey."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Garrulus glandarius.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: renshuchu — CC0 1.0."
+        },
+        "fr": {
+          "title": "Geai des chênes",
+          "subtitle": "Garrulus glandarius",
+          "meta_description": "Le Geai des chênes Garrulus glandarius appartient aux Corvidae. Corps brun rosé, panneau alaire bleu rayé de noir, moustache sombre et croupion blanc en vol le caractérisent. La tête varie géographiquement. Les sexes se.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Geai des chênes Garrulus glandarius appartient aux Corvidae. Corps brun rosé, panneau alaire bleu rayé de noir, moustache sombre et croupion blanc en vol le caractérisent. La tête varie géographiquement. Les sexes se ressemblent ; la plage bleue doit être associée à la silhouette et aux autres marques. L’espèce appartient à l’ordre des Passeriformes."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Bois, forêts et vergers arborés, notamment avec chênes, constituent son milieu. Il mange glands, graines, insectes et autres aliments animaux, en cachant des réserves dans le sol. Ses cris rauques le révèlent souvent avant la vue ; il imite aussi des sons. Le gland n’est pas son unique aliment."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid de brindilles en coupe est installé dans un arbre. Les références donnent souvent quatre ou cinq œufs, environ 18 jours d’incubation et une sortie vers 20–23 jours. Les deux parents soignent les jeunes et les nourrissent après la sortie. Climat et altitude règlent les dates."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Répandu dans les forêts eurasiatiques, il occupe aussi des forêts nord-africaines et levantines. La liste libanaise le décrit comme résident nicheur abondant dans les milieux boisés. Ce statut ne supprime pas ses exigences forestières dans les déserts arabes ouverts."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Les résidents s’observent toute l’année. Collecte et stockage d’automne révèlent le transport des glands. En novembre, les lisières permettent de suivre l’activité sans interrompre les trajets vers les caches."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Certains glands non récupérés germent, contribuant à la dispersion des arbres. Perte et fragmentation forestières réduisent son milieu. Préserver des chênaies connectées aide geais et régénération, sans réduire un régime varié à une fonction unique ni qualifier l’oiseau de nuisible pour ses prises occasionnelles de proies."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Garrulus glandarius.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: renshuchu — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "العقاب-المسيرة",
+        "en": "booted-eagle",
+        "fr": "aigle-botte"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "booted-eagle"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "العقاب المُسيَّرة",
+          "subtitle": "Hieraaetus pennatus",
+          "meta_description": "العقاب المُسيَّرة Hieraaetus pennatus من البازيات Accipitridae، وتعرف أيضًا بالعقاب الصغيرة أو Booted Eagle. لها شكل فاتح الجسم وآخر داكن؛ ويظهر في الشكل الفاتح تباين البطن وأغطية الجناح الفاتحة مع ريش الطيران الداكن..",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "العقاب المُسيَّرة Hieraaetus pennatus من البازيات Accipitridae، وتعرف أيضًا بالعقاب الصغيرة أو Booted Eagle. لها شكل فاتح الجسم وآخر داكن؛ ويظهر في الشكل الفاتح تباين البطن وأغطية الجناح الفاتحة مع ريش الطيران الداكن. الساقان مكسوتان بالريش، ولا يكفي صغر الحجم للفصل من الحوامات. تصنيفه ضمن رتبة Accipitriformes. وتورد بيانات IUCN المرفقة بقائمة AviList 2026 وضعه العالمي ضمن فئة «أقل إثارة للقلق (LC)»."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "تفضل فسيفساء من الأشجار والأرض المفتوحة، وتصطاد طيورًا وثدييات صغيرة وزواحف. قد تبحث من ارتفاع أو تستخدم اندفاعًا سريعًا. تتباين الفرائس باختلاف المناطق، وترتبط مواضع التعشيش الشجرية بأرض صيد مجاورة مناسبة."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "تبني عشًا في شجرة وتضع عادة بيضتين. تورد المراجع حضانة نحو 37–40 يومًا، تتولاها الأنثى أساسًا مع إمداد الذكر بالغذاء، وطيران الصغار بعد نحو 50–55 يومًا. يشارك الأبوان في الرعاية، وتبقى الحاجة إلى الغذاء بعد الطيران الأول."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "تتكاثر في أجزاء من أوروبا وشمال أفريقيا وغرب آسيا، وتهاجر تجمعات جنوبًا. في لبنان متكاثرة صيفية قليلة وغير منتظمة ومهاجرة عبور؛ ولا تثبت المراجع الحديثة وجودًا شتويًا منتظمًا. وقد ترد في مصادر قديمة تحت تراكيب تصنيفية مختلفة للنوع نفسه."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "تورد القائمة اللبنانية العبور الربيعي في مارس وأبريل والخريفي من أغسطس إلى أكتوبر. نوفمبر متأخر عن معظم حضورها المعتاد هناك. يسجل الشكل اللوني وصور الجناح والذيل دون تحويل الطائر الداكن إلى نوع آخر لمجرد اختلاف اللون."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "تتأثر بإزالة الأشجار الكبيرة والسموم والاضطهاد ومخاطر الكهرباء. حفظ مواقع الأعشاش وفسيفساء الغابة والأرض المفتوحة يدعم دورة حياتها. لا تُحدد مواقع الأعشاش الدقيقة للعامة إذا كان ذلك يزيد الإزعاج أو الوصول إليها."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Hieraaetus pennatus.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Luis Ferreira — CC0 1.0."
+        },
+        "en": {
+          "title": "Booted Eagle",
+          "subtitle": "Hieraaetus pennatus",
+          "meta_description": "Booted Eagle Hieraaetus pennatus belongs to Accipitridae. Pale and dark forms occur; pale birds show light body and wing coverts contrasting with dark flight feathers. Feathered legs explain the English name. Small size.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Booted Eagle Hieraaetus pennatus belongs to Accipitridae. Pale and dark forms occur; pale birds show light body and wing coverts contrasting with dark flight feathers. Feathered legs explain the English name. Small size alone cannot separate it from buzzards. It is placed in the order Accipitriformes. The IUCN category carried in AviList 2026 is Least Concern (LC)."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "A mosaic of trees and open ground provides habitat. Birds, small mammals and reptiles form its prey, captured after searching from height or rapid attacks. Diet varies regionally. Tree nesting requires suitable hunting country nearby."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "It builds in a tree and usually lays two eggs. References give incubation around 37–40 days, principally by the female while the male supplies food, and first flight at about 50–55 days. Both contribute to care, with feeding dependence continuing after first flight."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It breeds in parts of Europe, North Africa and western Asia, with populations migrating south. Lebanon has scarce irregular summer breeding and passage, without established regular modern winter occurrence. Older taxonomic combinations can refer to this same species."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanese spring passage occurs in March–April and autumn passage in August–October. November follows most usual local occurrence. Record colour form and wing and tail views without treating a dark individual as another species simply because of colour."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Loss of large trees, poison, persecution and electrical hazards are pressures. Protecting nests and woodland-open-country mosaics supports its life cycle. Exact nesting coordinates should not be publicly disclosed where this would increase disturbance or access."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Hieraaetus pennatus.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Luis Ferreira — CC0 1.0."
+        },
+        "fr": {
+          "title": "Aigle botté",
+          "subtitle": "Hieraaetus pennatus",
+          "meta_description": "L’Aigle botté Hieraaetus pennatus appartient aux Accipitridae. Des formes claires et sombres existent ; la claire oppose corps et couvertures pâles aux rémiges foncées. Les pattes emplumées expliquent le nom. La petite.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Aigle botté Hieraaetus pennatus appartient aux Accipitridae. Des formes claires et sombres existent ; la claire oppose corps et couvertures pâles aux rémiges foncées. Les pattes emplumées expliquent le nom. La petite taille seule ne suffit pas à le distinguer des buses. L’espèce appartient à l’ordre des Accipitriformes. La catégorie UICN reprise par AviList 2026 est Préoccupation mineure (LC)."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Une mosaïque d’arbres et d’espaces ouverts lui convient. Oiseaux, petits mammifères et reptiles sont capturés après recherche en altitude ou attaques rapides. Le régime varie régionalement. La nidification arboricole nécessite des terrains de chasse proches."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Il niche dans un arbre et pond habituellement deux œufs. Les références donnent environ 37–40 jours d’incubation, surtout par la femelle ravitaillée par le mâle, puis un premier vol vers 50–55 jours. Les deux parents soignent les jeunes, encore dépendants après l’envol."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Il niche dans certaines régions d’Europe, d’Afrique du Nord et d’Asie occidentale ; des populations migrent au sud. Au Liban, la reproduction estivale est rare et irrégulière avec passage, sans hivernage moderne régulier établi. D’anciennes combinaisons taxonomiques peuvent désigner la même espèce."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Au Liban, le passage printanier concerne mars–avril, l’automnal août–octobre. Novembre suit l’essentiel de la présence habituelle. Noter forme colorée, ailes et queue évite de transformer un individu sombre en une autre espèce sur la seule couleur."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Perte des grands arbres, poison, persécution et dangers électriques constituent des pressions. Préserver nids et mosaïques boisées ouvertes soutient son cycle. Les coordonnées précises des nids ne doivent pas être diffusées si elles augmentent dérangement ou accès."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Hieraaetus pennatus.",
+                "AviList Core Team — AviList: The Global Avian Checklist, v2026 (20 October 2026)."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Luis Ferreira — CC0 1.0."
+        }
+      }
+    }
+  ]
+}
