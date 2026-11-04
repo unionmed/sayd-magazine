@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "qatar-shooting-update-20261103",
+  "expected_base": "573191a56fe99cd6507a7075682ce68d21e525be",
+  "operation": "update-qatar-shooting-results",
+  "approval_reference": "private:nayef-qatar-results-and-ticker-20261103",
+  "expected_source_sha256": "a413b5aeaacb61c4fdf86ad87c5fc2dea13a8b29e4830f7a30ac86ac4bb2210b",
+  "expected_targets_sha256": "9cf1ce7993ee3465901282f9cbf91f78a0ffc08e4805460f29bb2d620bea1221",
+  "payload": {}
+}
