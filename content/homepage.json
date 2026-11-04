@@ -145,7 +145,8 @@
     "كروان-الماء-الصغير",
     "طيطوي-المستنقعات",
     "بقويقة-مخططة-الذيل",
-    "غطاس-أسود-الرقبة"
+    "غطاس-أسود-الرقبة",
+    "الزقزاق-الشامي"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -242,7 +243,8 @@
     "طيطوي-المستنقعات",
     "بقويقة-مخططة-الذيل",
     "غطاس-أسود-الرقبة",
-    "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم"
+    "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم",
+    "الزقزاق-الشامي"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -659,7 +661,8 @@
     "طيطوي-المستنقعات": "birds",
     "بقويقة-مخططة-الذيل": "birds",
     "غطاس-أسود-الرقبة": "birds",
-    "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم": "photos"
+    "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم": "photos",
+    "الزقزاق-الشامي": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1609,6 +1612,15 @@
         "ar": "غرابان مقنعان على أغصان شجرة في جنوب لبنان.",
         "en": "Two hooded crows perched on a tree in southern Lebanon.",
         "fr": "Deux corneilles mantelées perchées dans un arbre dans le sud du Liban."
+      }
+    },
+    "الزقزاق-الشامي": {
+      "image": "media/publications/daily-birds-20261104/northern-lapwing.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "سرب من الزقزاق الشامي بقنازع رفيعة وريش أخضر داكن وبطون بيضاء يقف في ماء ضحل",
+        "en": "Northern Lapwings with narrow crests, dark green upperparts and white bellies standing in shallow water",
+        "fr": "Vanneaux huppés aux fines huppes, au dessus vert sombre et au ventre blanc dans une eau peu profonde"
       }
     }
   },

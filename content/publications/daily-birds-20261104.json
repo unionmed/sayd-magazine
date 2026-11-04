@@ -1,0 +1,242 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261104",
+  "expected_base": "d5846eddf4b16030a8d94e1b251b98ce3d12b308",
+  "approval_reference": "private:nayef-bird-encyclopedia-20261101-standing-publication-and-verified-repairs",
+  "bank_search_reference": "Library exact-title lapwing search on 2026-11-04 returned no existing asset. All 80 current Arabic encyclopedia pages at main d5846eddf4b16030a8d94e1b251b98ce3d12b308 were read: no Vanellus vanellus, Tringa vanellus, Charadrius vanellus or the checked Arabic variants. No matching title in the full index. Direct actual-original image comparison against independent RSPB/BTO diagnostics; licence and author checked at original photo page.",
+  "photos": [
+    {
+      "id": "northern-lapwing",
+      "path": "docs/media/publications/daily-birds-20261104/northern-lapwing.jpg",
+      "sha256": "968aba0d1c8cf18cf646c13507d9e5b516ef800e34de320f1d2131dc48bc0947",
+      "source_sha256": "968aba0d1c8cf18cf646c13507d9e5b516ef800e34de320f1d2131dc48bc0947",
+      "source_reference": "Roy Lowry; 2017-11-01; Cheshire West and Chester, United Kingdom. iNaturalist observation 52008806, photo 82657913. Original 1422x948 JPEG downloaded unchanged; direct visual review 2026-11-04: long crests, green upperparts, dark breast and white belly support Vanellus vanellus. Sex and exact age not assigned. UK image is illustrative, not Arab distribution evidence.",
+      "source_url": "https://www.inaturalist.org/photos/82657913",
+      "rights": {
+        "status": "licensed",
+        "statement": "Roy Lowry, CC BY 4.0. Commercial republication permitted with author, source and licence attribution. Original bytes retained without modification.",
+        "evidence_reference": "Photo page https://www.inaturalist.org/photos/82657913 links https://creativecommons.org/licenses/by/4.0/; API observation 52008806 identifies Roy Lowry and cc-by. Checked 2026-11-04.",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "alt": {
+        "ar": "سرب من الزقزاق الشامي بقنازع رفيعة وريش أخضر داكن وبطون بيضاء يقف في ماء ضحل",
+        "en": "Northern Lapwings with narrow crests, dark green upperparts and white bellies standing in shallow water",
+        "fr": "Vanneaux huppés aux fines huppes, au dessus vert sombre et au ventre blanc dans une eau peu profonde"
+      },
+      "caption": {
+        "ar": "الزقزاق الشامي في تجمع خارج موسم التكاثر",
+        "en": "Northern Lapwings gathered outside the breeding season",
+        "fr": "Vanneaux huppés rassemblés hors de la reproduction"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الزقزاق-الشامي",
+        "en": "northern-lapwing",
+        "fr": "vanneau-huppe"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "northern-lapwing"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الزقزاق الشامي (القطقاط الشمالي)",
+          "subtitle": "Vanellus vanellus — طائر الحقول الرطبة بين عبور الخريف وزيارة الشتاء",
+          "meta_description": "Vanellus vanellus — طائر الحقول الرطبة بين عبور الخريف وزيارة الشتاء",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الزقزاق الشامي Vanellus vanellus من فصيلة القطقاطيات Charadriidae. يرد أيضًا باسم القطقاط الشمالي، وتسجّل قائمة طيور قطر اسم «دحروج» ضمن أسمائه المحلية. تميزه قنزعة رفيعة خلف الرأس، وظهر داكن يلمع بالأخضر والبنفسجي، وبطن أبيض يتباين مع الصدر الداكن. تبدو أجنحته عريضة مستديرة أثناء الطيران. تختلف شدة الألوان وطول القنزعة مع العمر والموسم، لذلك تُقرأ العلامات معًا عند التعرف عليه."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يرتاد الحقول المفتوحة والمراعي القصيرة والأراضي الرطبة وحواف المياه الضحلة، وقد يتجمع في أسراب خارج موسم التكاثر. يبحث على الأرض عن ديدان الأرض والحشرات ويرقاتها. يتيح الغطاء النباتي القصير والتربة الرطبة الوصول إلى الغذاء؛ لذلك تتصل فائدته للحقول ببقاء فسيفساء من الموائل الرطبة والأرض المفتوحة."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يعشش على الأرض في موائل مفتوحة. تورد بيانات BTO أربع بيضات عادة، وحضانة تستغرق نحو 25–34 يومًا تتولاها الأنثى أساسًا وقد يشارك الذكر. تفقس الفراخ مكسوة بالزغب وقادرة على الحركة، وتصل إلى مرحلة الطيران بعد نحو 35–40 يومًا من الفقس. مغادرة موضع العش مبكرًا تختلف عن اكتمال القدرة على الطيران. هذه مدد مرجعية عامة؛ ويتبع تقويم وضع البيض المنطقة وظروف الموطن، فلا تُنقل مواعيد التكاثر البريطانية إلى البلدان العربية."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "في لبنان، تصفه القائمة المحدثة المنشورة في Sandgrouse عام 2020 بأنه مهاجر عبور واسع الانتشار وغزير، وزائر شتوي شائع في سهل البقاع. يمتد نطاق التسجيل من منتصف أغسطس إلى منتصف مايو، ويتركز خصوصًا بين أواخر أكتوبر ومنتصف أبريل. وفي قطر، تدرجه قائمة مجموعة مراقبة الطيور القطرية ضمن الزوار الشتويين قليلي المشاهدة (Scarce). لذلك ترتبط متابعة نوفمبر في لبنان بوصول العابرين والمشتين، وفي قطر بزيارة شتوية أقل شيوعًا؛ ولا يُستنتج من هذين الوصفين أنه مقيم أو متكاثر في البلدين. تختلف صفات الحضور بين البلدان العربية، ويُرجع لكل بلد إلى قائمته المحلية."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تتعرض موائله لضغوط تجفيف الأراضي الرطبة وتغير إدارة الأراضي الزراعية. يفيد الحفاظ على المراعي الرطبة والموائل المفتوحة وتقليل الإزعاج للأسراب المتغذية والراحة. عند التصوير تُترك مسافة تسمح للطائر بمتابعة سلوكه؛ فالطيران المتكرر استجابة لاقتراب المراقب يستهلك وقت التغذي والطاقة. الصورة المرافقة التقطت في بريطانيا، وتوضح النوع ولا توثق وجوده في بلد عربي."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "BTO — Lapwing, biology and identification",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/lapwing"
+            },
+            {
+              "label": "RSPB — Lapwing, habitats and recognition",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/lapwing"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. 2020 — Updated checklist of the birds of Lebanon, Sandgrouse 42, p.197",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — current checklist, accessed 4 November 2026",
+              "url": "https://qatarbirds.org/qatar-bird-list/"
+            },
+            {
+              "label": "Arabic bird-name reference, Plate 52",
+              "url": "https://alsirhan.com/wp-content/uploads/2020/10/BoME_Arabic-English_Names.pdf"
+            }
+          ],
+          "photo_credit": "الصورة: Roy Lowry — CC BY 4.0، عبر iNaturalist. بريطانيا، 1 نوفمبر 2017؛ دون تعديل."
+        },
+        "en": {
+          "title": "Northern Lapwing",
+          "subtitle": "Vanellus vanellus — Wet fields, autumn passage and winter visitors",
+          "meta_description": "Vanellus vanellus — Wet fields, autumn passage and winter visitors",
+          "sections": [
+            {
+              "heading": "Identity and recognition",
+              "paragraphs": [
+                "Northern Lapwing Vanellus vanellus belongs to the plover family Charadriidae. Arabic names include al-zaqzaq al-shami and al-qatqat al-shamali; the Qatar checklist also records Dahrouj. A narrow crest, dark upperparts with green and purple iridescence, and white underparts contrasting with the dark breast distinguish it. Its wings look broad and rounded in flight. Colour intensity and crest length vary with age and season, so identification uses a combination of features."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It uses open fields, short pasture, wetlands and shallow water margins, sometimes gathering in flocks outside the breeding season. It searches the ground for earthworms, insects and their larvae. Short vegetation and moist soil make food accessible, linking its farmland habitat to a mosaic of wet patches and open ground."
+              ]
+            },
+            {
+              "heading": "Breeding and chick development",
+              "paragraphs": [
+                "It nests on the ground in open habitats. BTO gives a typical clutch of four eggs and incubation of about 25–34 days, mainly by the female with occasional male participation. Chicks hatch downy and mobile, reaching fledging at about 35–40 days after hatching. Early departure from the nest site differs from acquiring flight. These are general reference durations. Egg-laying dates depend on region and habitat conditions; British breeding dates should not be transferred to Arab countries."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "In Lebanon, the updated checklist published in Sandgrouse in 2020 describes it as a widespread, abundant passage migrant and a common winter visitor to the Beqaa Valley. Records extend from mid-August to mid-May, especially late October to mid-April. In Qatar, the Qatar Bird Observation Group checklist lists it as a scarce winter visitor. November observation in Lebanon therefore coincides with passage and winter arrivals, while Qatar has a less common winter presence. These descriptions do not establish resident or breeding status in either country. Status varies across Arab countries and should be read from each national checklist."
+              ]
+            },
+            {
+              "heading": "Watching and conservation",
+              "paragraphs": [
+                "Drainage and changes in agricultural land management put pressure on its habitats. Wet pasture, open habitat and low disturbance around feeding and resting flocks are valuable. Photographers should keep enough distance for birds to continue their normal behaviour; repeated disturbance flights cost feeding time and energy. The accompanying photograph was taken in Britain. It illustrates the species and does not document occurrence in an Arab country."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "BTO — Lapwing, biology and identification",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/lapwing"
+            },
+            {
+              "label": "RSPB — Lapwing, habitats and recognition",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/lapwing"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. 2020 — Updated checklist of the birds of Lebanon, Sandgrouse 42, p.197",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — current checklist, accessed 4 November 2026",
+              "url": "https://qatarbirds.org/qatar-bird-list/"
+            },
+            {
+              "label": "Arabic bird-name reference, Plate 52",
+              "url": "https://alsirhan.com/wp-content/uploads/2020/10/BoME_Arabic-English_Names.pdf"
+            }
+          ],
+          "photo_credit": "Photo: Roy Lowry — CC BY 4.0, via iNaturalist. Britain, 1 November 2017; unmodified."
+        },
+        "fr": {
+          "title": "Vanneau huppé",
+          "subtitle": "Vanellus vanellus — Champs humides, passage automnal et visite hivernale",
+          "meta_description": "Vanellus vanellus — Champs humides, passage automnal et visite hivernale",
+          "sections": [
+            {
+              "heading": "Identité et reconnaissance",
+              "paragraphs": [
+                "Le Vanneau huppé Vanellus vanellus appartient aux Charadriidae. Ses noms arabes comprennent al-zaqzaq al-shami et al-qatqat al-shamali; la liste du Qatar mentionne aussi Dahrouj. Une fine huppe, des parties supérieures sombres à reflets verts et violets, et un ventre blanc contrastant avec la poitrine sombre le caractérisent. Ses ailes paraissent larges et arrondies en vol. La longueur de la huppe et l’intensité des couleurs varient avec l’âge et la saison: plusieurs critères servent à l’identification."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il fréquente champs ouverts, pâturages courts, zones humides et rives peu profondes, parfois en groupes hors reproduction. Il recherche au sol vers de terre, insectes et larves. Une végétation courte et un sol humide facilitent l’accès à la nourriture; son habitat agricole dépend ainsi d’une mosaïque de surfaces ouvertes et humides."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Il niche au sol dans les milieux ouverts. Le BTO indique habituellement quatre œufs et une incubation d’environ 25–34 jours, assurée surtout par la femelle, occasionnellement par le mâle. Les poussins naissent couverts de duvet et capables de se déplacer; ils atteignent l’envol vers 35–40 jours après l’éclosion. Leur départ précoce du site du nid se distingue de l’acquisition du vol. Ces durées sont des repères généraux. Les dates de ponte dépendent de la région et du milieu; le calendrier britannique ne se transpose pas aux pays arabes."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Au Liban, la liste actualisée publiée dans Sandgrouse en 2020 le décrit comme un migrateur de passage répandu et abondant, et un hivernant commun dans la vallée de la Beqaa. Les observations vont de mi-août à mi-mai, surtout de fin octobre à mi-avril. Au Qatar, la liste du Qatar Bird Observation Group le classe comme hivernant peu commun (Scarce). En novembre, son observation au Liban accompagne donc passage et arrivées hivernales; au Qatar, sa présence hivernale est moins fréquente. Ces descriptions n’établissent pas un statut résident ou nicheur dans ces deux pays. Les statuts varient entre pays arabes et se lisent dans chaque liste nationale."
+              ]
+            },
+            {
+              "heading": "Observation et protection",
+              "paragraphs": [
+                "Le drainage des zones humides et les changements de gestion agricole exercent une pression sur ses habitats. Pâturages humides, espaces ouverts et tranquillité des groupes au repos ou en alimentation sont précieux. Le photographe garde une distance permettant aux oiseaux de poursuivre leur comportement normal; les envols répétés réduisent le temps de nourrissage et coûtent de l’énergie. La photographie jointe a été prise en Grande-Bretagne. Elle illustre l’espèce et ne documente pas sa présence dans un pays arabe."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "BTO — Lapwing, biology and identification",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/lapwing"
+            },
+            {
+              "label": "RSPB — Lapwing, habitats and recognition",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/lapwing"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. 2020 — Updated checklist of the birds of Lebanon, Sandgrouse 42, p.197",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — current checklist, accessed 4 November 2026",
+              "url": "https://qatarbirds.org/qatar-bird-list/"
+            },
+            {
+              "label": "Arabic bird-name reference, Plate 52",
+              "url": "https://alsirhan.com/wp-content/uploads/2020/10/BoME_Arabic-English_Names.pdf"
+            }
+          ],
+          "photo_credit": "Photo: Roy Lowry — CC BY 4.0, via iNaturalist. Grande-Bretagne, 1er novembre 2017; sans modification."
+        }
+      }
+    }
+  ]
+}
