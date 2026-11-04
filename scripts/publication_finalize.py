@@ -99,7 +99,10 @@ def safe_output_path(value):
     # Defense in depth, in addition to the compiler's exact bundle-derived scope.
     # No source or generated executable, workflow, policy, CSS, JS, or contract.
     allowed = (
-        value in {"content/tv-publications/adonis-aljadeed-20261031.json",
+        value in {"content/tv-publications/arab-radar-october-2026-video.json",
+                  "docs/media/publications/arab-radar-october-2026-video/radar.mp4",
+                  "content/tv-channel.json",
+                  "content/tv-publications/adonis-aljadeed-20261031.json",
                   "content/tv-publications/lanmaoa-asiatica-20261026.json",
                   "docs/media/publications/lanmaoa-asiatica-20261026/mushroom.mp4"}
         or

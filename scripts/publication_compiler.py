@@ -116,7 +116,7 @@ def allowed_output_path(path):
         safe_path(path)
     except ValueError:
         return False
-    return bool(path in {'content/tv-publications/adonis-aljadeed-20261031.json', 'content/tv-publications/lanmaoa-asiatica-20261026.json', 'docs/media/publications/lanmaoa-asiatica-20261026/mushroom.mp4'} or INPUT.fullmatch(path) or re.fullmatch(r'content/(?:caption|editorial)-revisions/[a-z0-9][a-z0-9-]{0,79}\.json', path) or path in CONFIGS
+    return bool(path in {'content/tv-publications/arab-radar-october-2026-video.json', 'docs/media/publications/arab-radar-october-2026-video/radar.mp4', 'content/tv-channel.json', 'content/tv-publications/adonis-aljadeed-20261031.json', 'content/tv-publications/lanmaoa-asiatica-20261026.json', 'docs/media/publications/lanmaoa-asiatica-20261026/mushroom.mp4'} or INPUT.fullmatch(path) or re.fullmatch(r'content/(?:caption|editorial)-revisions/[a-z0-9][a-z0-9-]{0,79}\.json', path) or path in CONFIGS
                 or re.fullmatch(r'content/(?:posts|en|fr)/[^/]+\.md', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?(?:posts/[^/]+|category/[^/]+|articles|stories|interviews)/index\.html', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?index\.html', path)
@@ -146,6 +146,11 @@ def validate_report(site, report, expected_base, expected_source, expected_compi
         require(value['operation'] in {'complete-two-bird-lifecycles', 'update-qatar-shooting-results'},
                 'Exact approved maintenance required for update registry')
         require({e['path'] for e in report['changes']} == set(registry_outputs), 'Exact update registry maintenance outputs required')
+    radar_outputs = None
+    if any(e.get('path') == 'content/tv-channel.json' for e in report['changes']):
+        import radar_tv_publication
+        _, radar_outputs = radar_tv_publication.source_input(site, expected_base, expected_source)
+        require({e['path'] for e in report['changes']} == set(radar_outputs), 'Exact Radar channel output scope required')
     for entry in report['changes']:
         require(set(entry) == {'path', 'mode', 'old_blob', 'new_blob', 'sha256', 'bytes', 'status'}, 'Invalid changed-file record')
         path = entry['path']
@@ -154,6 +159,8 @@ def validate_report(site, report, expected_base, expected_source, expected_compi
         require(target.is_file() and not any(p.is_symlink() for p in [target, *target.parents] if p != site.parent), 'Unsafe output symlink')
         require(target.resolve().is_relative_to(site), 'Output escapes staging root')
         data = target.read_bytes()
+        if radar_outputs is not None:
+            require(data == radar_outputs[path], 'Output differs from exact Radar TV publication')
         if registry_outputs is not None:
             require(data == registry_outputs[path], 'Output differs from exact update registry maintenance')
         if migration is not None:
@@ -703,6 +710,9 @@ def compile_publication(root, base, source, output, report_path, allow_distribut
     import editorial_revision
     if editorial_revision.revision_paths(tree(root, base), tree(root, source)):
         return editorial_revision.compile_source(root, base, source, output, report_path, allow_distribution)
+    import radar_tv_publication
+    if radar_tv_publication.revision_paths(tree(root, base), tree(root, source)):
+        return radar_tv_publication.compile_source(root, base, source, output, report_path, allow_distribution)
     import adonis_tv_publication
     if adonis_tv_publication.revision_paths(tree(root, base), tree(root, source)):
         return adonis_tv_publication.compile_source(root, base, source, output, report_path, allow_distribution)
@@ -802,6 +812,9 @@ def verify_candidate(root, base, candidate, output, report_path):
     import editorial_revision
     if editorial_revision.revision_paths(before, after):
         return editorial_revision.verify(root, base, candidate, output, report_path)
+    import radar_tv_publication
+    if radar_tv_publication.revision_paths(before, after):
+        return radar_tv_publication.verify(root, base, candidate, output, report_path)
     import adonis_tv_publication
     if adonis_tv_publication.revision_paths(before, after):
         return adonis_tv_publication.verify(root, base, candidate, output, report_path)
