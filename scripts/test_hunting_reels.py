@@ -46,6 +46,15 @@ def check_reels():
     assert len(set(ids))==4 and all(re.fullmatch(r'[A-Za-z0-9_-]{11}',x) for x in ids)
     channel=json.loads((ROOT/'content/tv-channel.json').read_text())
     assert channel['home_limit']==7
+    # The approved Radar insertion advances this historical seven-card window.
+    # Its exact media, source and translated player are independently validated;
+    # removing only that record must reproduce the prior channel order.
+    import radar_tv_publication as radar
+    has_radar=(ROOT/radar.SOURCE).exists()
+    if has_radar:
+        radar.check_published(ROOT)
+        visible=[v['id'] for v in channel['videos'][:7]]
+        channel=dict(channel, videos=[v for v in channel['videos'] if v['id']!=radar.ID])
     historical=historical_reel_fixture(os.environ.get('SAYD_BASE_COMMIT'))
     if historical:
         assert [r['id'] for r in channel['videos'][:7]]==ids+OLD_VISIBLE
@@ -57,6 +66,8 @@ def check_reels():
         assert first['published_at']=='2026-10-24' and first['source_published_at']=='2026-10-20'
         assert first['internal_href']=='category/استديو-صيد/index.html#isf-video-heading'
         expected=[ISF_VIDEO]+ids+OLD_VISIBLE[:2]
+    if has_radar:
+        expected=visible
     for prefix in ('','en','fr'):
         home=html.parse(str(ROOT/'docs'/prefix/'index.html'))
         assert home.xpath('//*[@data-tv-group="sayd-channel"]//article/@data-video-id')==expected

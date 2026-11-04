@@ -94,5 +94,6 @@ class TVTests(unittest.TestCase):
                 self.assertFalse(tv.historical_placement_snapshot(root,base))
 
 from test_adonis_tv_publication import AdonisTVTests
+from test_radar_tv_publication import RadarTVTests
 
 if __name__=='__main__':unittest.main()

@@ -73,6 +73,11 @@ def validate_source(root, base, source):
         _, value, _, _, _ = editorial_revision.source_input(root, base, source)
         require(scope == (value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead', 'update-qatar-shooting-results'}), 'Exact editorial review scope required')
         return scope
+    import radar_tv_publication
+    if radar_tv_publication.revision_paths(tree(root, base), tree(root, source)):
+        require(scope is True, 'Radar TV homepage distribution scope required')
+        radar_tv_publication.source_input(root, base, source)
+        return True
     import adonis_tv_publication
     if adonis_tv_publication.revision_paths(tree(root, base), tree(root, source)):
         require(scope, "External TV insertion requires homepage scope")
