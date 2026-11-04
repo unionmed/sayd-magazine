@@ -17,7 +17,7 @@ class AdonisTVTests(unittest.TestCase):
                     'video_id':tv.VIDEO_ID,'source_url':tv.URL,'channel':'AL Jadeed',
                     'titles':dict.fromkeys(tv.LANGS,'Interview with Editor-in-Chief Adonis'),
                     'credit':dict.fromkeys(tv.LANGS,'AL Jadeed — archive portrait'),'alt':dict.fromkeys(tv.LANGS,'Archive portrait of Editor-in-Chief Adonis'),
-                    'poster_sha256':c.sha256(self.poster),'expected_channel_sha256':c.sha256((ROOT/tv.CHANNEL).read_bytes()),
+                    'poster_sha256':c.sha256(self.poster),'expected_channel_sha256':c.sha256(c.git(ROOT,'show',BASE+':'+tv.CHANNEL)),
                     'rights':{'status':'existing-site-archive','statement':'Original source thumbnail with a link to the original video; video is not copied.','evidence_reference':'private:youtube-source-20261031'}}
     def test_identity_date_schema_fail_closed(self):
         for key,value in [('id','other'),('video_id','other'),('source_url','https://evil.example/'),('published','2026-10-30'),('expected_base','a'*40),('channel','other'),('titles',{'ar':'x'}),('credit',dict.fromkeys(tv.LANGS,'<script>')),('rights',{}),('approval_reference','full private conversation')]:
