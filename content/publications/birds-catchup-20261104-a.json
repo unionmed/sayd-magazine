@@ -1,0 +1,1883 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "birds-catchup-20261104-a",
+  "expected_base": "3cf0f9d3bf205cf5509f6e6a06fe6018cdaa38e9",
+  "approval_reference": "private:nayef-encyclopedia-20261104-forty-arab-birds-catchup",
+  "bank_search_reference": "Sayd photo archive searched before external selection, 2026-11-04. Full AR search archive and 163 EN entries checked, including older standalone profiles outside the 80-entry encyclopedia index. Existing lapwing source415/candidate416 reused; not duplicated. All selected actual photographs visually inspected with species diagnostics, rights evidence and exact original bytes retained. Internal evidence: birds40 selection and per-photo records.",
+  "photos": [
+    {
+      "id": "european-goldfinch",
+      "path": "docs/media/publications/birds-catchup-20261104-a/carduelis-carduelis.jpg",
+      "sha256": "e391dcbf28257e864b0c94a4baa2b5d6fbe9aad6c90dba61308b3f4bd14cf794",
+      "source_sha256": "e391dcbf28257e864b0c94a4baa2b5d6fbe9aad6c90dba61308b3f4bd14cf794",
+      "source_reference": "Møl Herold; 2021-04-03; 4970 Rødby, Denmark. iNaturalist observation 137053885, photograph 234000864. Actual original inspected; taxon Carduelis carduelis and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "source_url": "https://www.inaturalist.org/photos/234000864",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/234000864; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "الحسون الأوروبي — Carduelis carduelis",
+        "en": "European Goldfinch — Carduelis carduelis",
+        "fr": "Chardonneret élégant — Carduelis carduelis"
+      },
+      "caption": {
+        "ar": "الحسون الأوروبي",
+        "en": "European Goldfinch",
+        "fr": "Chardonneret élégant"
+      }
+    },
+    {
+      "id": "squacco-heron",
+      "path": "docs/media/publications/birds-catchup-20261104-a/ardeola-ralloides.jpg",
+      "sha256": "ceb7798e4abcb59d93e378d5fc7be2551643f07b235cf6a80245238d81274d26",
+      "source_sha256": "ceb7798e4abcb59d93e378d5fc7be2551643f07b235cf6a80245238d81274d26",
+      "source_reference": "Irene; 2023-08-10; Tana Water Front Centre Commercial, Antananarivo, MG. iNaturalist observation 177766563, photograph 309223505. Actual original inspected; taxon Ardeola ralloides and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "source_url": "https://www.inaturalist.org/photos/309223505",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/309223505; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "البلشون الذهبي — Ardeola ralloides",
+        "en": "Squacco Heron — Ardeola ralloides",
+        "fr": "Crabier chevelu — Ardeola ralloides"
+      },
+      "caption": {
+        "ar": "البلشون الذهبي",
+        "en": "Squacco Heron",
+        "fr": "Crabier chevelu"
+      }
+    },
+    {
+      "id": "common-nightingale",
+      "path": "docs/media/publications/birds-catchup-20261104-a/luscinia-megarhynchos.jpg",
+      "sha256": "9ed9125eee0f6dcd50faef44095051794996c276290fa71e7840d8ade7c6395e",
+      "source_sha256": "9ed9125eee0f6dcd50faef44095051794996c276290fa71e7840d8ade7c6395e",
+      "source_reference": "Leonard Wägele; 2020-04-28; Saalekreis, Sachsen-Anhalt, Germany. iNaturalist observation 44295754, photograph 70223528. Actual original inspected; taxon Luscinia megarhynchos and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "source_url": "https://www.inaturalist.org/photos/70223528",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/70223528; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "العندليب الشائع — Luscinia megarhynchos",
+        "en": "Common Nightingale — Luscinia megarhynchos",
+        "fr": "Rossignol philomèle — Luscinia megarhynchos"
+      },
+      "caption": {
+        "ar": "العندليب الشائع",
+        "en": "Common Nightingale",
+        "fr": "Rossignol philomèle"
+      }
+    },
+    {
+      "id": "western-reef-heron",
+      "path": "docs/media/publications/birds-catchup-20261104-a/egretta-gularis.jpg",
+      "sha256": "cf4a68425bee45b2b9af0433b563f262b83eaddbd7e4782f5a38c51602c5ee32",
+      "source_sha256": "cf4a68425bee45b2b9af0433b563f262b83eaddbd7e4782f5a38c51602c5ee32",
+      "source_reference": "Mirela; 2023-03-14; Al Bateen - Abu Dhabi - Zjednoczone Emiraty Arabskie. iNaturalist observation 156140762, photograph 269957862. Actual original inspected; taxon Egretta gularis and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "source_url": "https://www.inaturalist.org/photos/269957862",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/269957862; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "بلشون الصخر الغربي — Egretta gularis",
+        "en": "Western Reef Heron — Egretta gularis",
+        "fr": "Aigrette des récifs — Egretta gularis"
+      },
+      "caption": {
+        "ar": "بلشون الصخر الغربي",
+        "en": "Western Reef Heron",
+        "fr": "Aigrette des récifs"
+      }
+    },
+    {
+      "id": "greater-flamingo",
+      "path": "docs/media/publications/birds-catchup-20261104-a/phoenicopterus-roseus.jpg",
+      "sha256": "04e8f626cd4c1e9595fa90bffa4ecd7788b075a7524b51bf241c302402059916",
+      "source_sha256": "04e8f626cd4c1e9595fa90bffa4ecd7788b075a7524b51bf241c302402059916",
+      "source_reference": "Nicolás Tamargo; 2023-09-30; Barcelona, Cataluña, Spain. iNaturalist observation 185812778, photograph 324582163. Actual original inspected; taxon Phoenicopterus roseus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "source_url": "https://www.inaturalist.org/photos/324582163",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/324582163; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "النحام الكبير — Phoenicopterus roseus",
+        "en": "Greater Flamingo — Phoenicopterus roseus",
+        "fr": "Flamant rose — Phoenicopterus roseus"
+      },
+      "caption": {
+        "ar": "النحام الكبير",
+        "en": "Greater Flamingo",
+        "fr": "Flamant rose"
+      }
+    },
+    {
+      "id": "barbary-partridge",
+      "path": "docs/media/publications/birds-catchup-20261104-a/alectoris-barbara.jpg",
+      "sha256": "0893a16efecb3359ff4b953e4d97b3e3d2db943a05db8a1d30b4240db2e338b4",
+      "source_sha256": "0893a16efecb3359ff4b953e4d97b3e3d2db943a05db8a1d30b4240db2e338b4",
+      "source_reference": "Dario Taraborelli; 2022-08-06; Costa Teguise Golf, Costa Teguise, Spain. iNaturalist observation 129732261, photograph 220506644. Actual original inspected; taxon Alectoris barbara koenigi and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "source_url": "https://www.inaturalist.org/photos/220506644",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/220506644; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "الحجل البربري — Alectoris barbara",
+        "en": "Barbary Partridge — Alectoris barbara",
+        "fr": "Perdrix gambra — Alectoris barbara"
+      },
+      "caption": {
+        "ar": "الحجل البربري",
+        "en": "Barbary Partridge",
+        "fr": "Perdrix gambra"
+      }
+    },
+    {
+      "id": "black-stork",
+      "path": "docs/media/publications/birds-catchup-20261104-a/ciconia-nigra.jpg",
+      "sha256": "d06966b80a8622ed78ccae210d0c3f768f22419e8607d2c99c708a5b2eb081e0",
+      "source_sha256": "d06966b80a8622ed78ccae210d0c3f768f22419e8607d2c99c708a5b2eb081e0",
+      "source_reference": "Dave Brown; 2025-12-22; Uitenhage Farms, Gqeberha, South Africa. iNaturalist observation 332569359, photograph 603583229. Actual original inspected; taxon Ciconia nigra and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "source_url": "https://www.inaturalist.org/photos/603583229",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/603583229; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "اللقلق الأسود — Ciconia nigra",
+        "en": "Black Stork — Ciconia nigra",
+        "fr": "Cigogne noire — Ciconia nigra"
+      },
+      "caption": {
+        "ar": "اللقلق الأسود",
+        "en": "Black Stork",
+        "fr": "Cigogne noire"
+      }
+    },
+    {
+      "id": "long-legged-buzzard",
+      "path": "docs/media/publications/birds-catchup-20261104-a/buteo-rufinus.jpg",
+      "sha256": "ec49309023c419ba053a30107af966729a92f3022e2dded89c76700fa9281a8c",
+      "source_sha256": "ec49309023c419ba053a30107af966729a92f3022e2dded89c76700fa9281a8c",
+      "source_reference": "Лариса Артемьева; 2025-05-03; Енбекшиказахский район, Казахстан. iNaturalist observation 326621456, photograph 591584121. Actual original inspected; taxon Buteo rufinus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "source_url": "https://www.inaturalist.org/photos/591584121",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/591584121; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "الحوام طويل الساقين — Buteo rufinus",
+        "en": "Long-legged Buzzard — Buteo rufinus",
+        "fr": "Buse féroce — Buteo rufinus"
+      },
+      "caption": {
+        "ar": "الحوام طويل الساقين",
+        "en": "Long-legged Buzzard",
+        "fr": "Buse féroce"
+      }
+    },
+    {
+      "id": "lanner-falcon",
+      "path": "docs/media/publications/birds-catchup-20261104-a/falco-biarmicus.jpg",
+      "sha256": "32bdfeee632e07a3551817e13323d4d3ddeab4d434a362ce619a67b13bb70139",
+      "source_sha256": "32bdfeee632e07a3551817e13323d4d3ddeab4d434a362ce619a67b13bb70139",
+      "source_reference": "Nogga_Eugene; 2025-03-18; Kunene Region, Namibia. iNaturalist observation 266220227, photograph 478301388. Actual original inspected; taxon Falco biarmicus and visible diagnostics reviewed. No age/sex assignment. Photograph illustrates identity, not Arab occurrence. Original bytes unchanged.",
+      "source_url": "https://www.inaturalist.org/photos/478301388",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Commercial republication and archival storage permitted. Creator, source and licence retained. Original unchanged.",
+        "evidence_reference": "Selected image licence verified separately from observation-data licence: API photo license_code=cc0; original photo page https://www.inaturalist.org/photos/478301388; https://creativecommons.org/publicdomain/zero/1.0/. Checked 2026-11-04. Per-photo original metadata and licence-page evidence retained.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "الصقر الوكري — Falco biarmicus",
+        "en": "Lanner Falcon — Falco biarmicus",
+        "fr": "Faucon lanier — Falco biarmicus"
+      },
+      "caption": {
+        "ar": "الصقر الوكري",
+        "en": "Lanner Falcon",
+        "fr": "Faucon lanier"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الحسون-الأوروبي",
+        "en": "european-goldfinch",
+        "fr": "chardonneret-elegant"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "european-goldfinch"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الحسون الأوروبي",
+          "subtitle": "Carduelis carduelis",
+          "meta_description": "الحسون الأوروبي Carduelis carduelis عصفور من فصيلة الشرشوريات Fringillidae. يجمع البالغ بين قناع أحمر ووجه أبيض وأسود وشريط أصفر عريض في الجناح؛ أما اليافع فيفتقد القناع الأحمر. منقاره المخروطي المدبب ملائم لالتقاط.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الحسون الأوروبي Carduelis carduelis عصفور من فصيلة الشرشوريات Fringillidae. يجمع البالغ بين قناع أحمر ووجه أبيض وأسود وشريط أصفر عريض في الجناح؛ أما اليافع فيفتقد القناع الأحمر. منقاره المخروطي المدبب ملائم لالتقاط البذور الصغيرة، ولا يكفي الشريط الأصفر وحده لتمييزه من الحسون الأخضر."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يعيش في البساتين والأرياف وحواف الغابات والحدائق، خاصة حيث توجد نباتات بذرية مثل الشوك. يتشبث برؤوس النباتات لالتقاط البذور، ويأكل أيضًا حشرات، خصوصًا عند تربية الفراخ. يتجمع خارج موسم التكاثر في أسراب كثيرة الحركة ذات نداءات رنانة."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "تبني الأنثى عشًا كأسيًا متقنًا في أغصان الشجر. تورد بيانات BTO خمس بيضات عادة، وحضانة أنثوية تدوم 12–14 يومًا. يغادر الصغار العش بعد نحو 14–17 يومًا من الفقس، ويستمر إطعامهم بعد ذلك؛ وقد ينتج الزوج حضنتين. تتغير مواعيد وضع البيض باختلاف المناخ والمنطقة."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يمتد نطاقه الطبيعي عبر أوروبا وغرب آسيا وشمال أفريقيا. هو من الطيور المألوفة في المغرب العربي وبلاد الشام؛ وتصفه قائمة لبنان المحدثة بأنه مقيم متكاثر شائع، مع عبور وهجرة شتوية تعززان أعداده. لا تعني هذه الصفة أنه مقيم طبيعي في كل بلد خليجي."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمكن مشاهدته طوال السنة في مناطق إقامته، وتصبح أسرابه أوضح في الخريف والشتاء. في لبنان يحدث التكاثر أساسًا من الربيع إلى الصيف؛ وتُفسر مشاهدة نوفمبر ضمن الحضور المقيم والزيادة الشتوية، لا كدليل على تعشيش متأخر."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يسهم في استهلاك البذور والحشرات ويستفيد من تنوع النباتات البرية. يهدده الأسر والاتجار غير المشروع وفقدان موائل الحواف. إبقاء الشوك وبعض النباتات حتى تنضج بذورها، وتقليل المبيدات، يحافظان على غذائه؛ ومراقبته في الطبيعة أجدى من اقتنائه في قفص."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Goldfinch."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Møl Herold — CC0 1.0."
+        },
+        "en": {
+          "title": "European Goldfinch",
+          "subtitle": "Carduelis carduelis",
+          "meta_description": "European Goldfinch Carduelis carduelis belongs to Fringillidae. Adults combine a red mask, black-and-white head and broad yellow wing bar; juveniles lack the red mask. The pointed conical bill extracts small seeds. A.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "European Goldfinch Carduelis carduelis belongs to Fringillidae. Adults combine a red mask, black-and-white head and broad yellow wing bar; juveniles lack the red mask. The pointed conical bill extracts small seeds. A yellow wing bar alone does not distinguish it from European Greenfinch."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Orchards, farmland, woodland edges and gardens provide habitat, especially where seed-bearing plants remain. It clings to thistle heads to extract seeds and also takes insects, particularly when feeding young. Outside breeding, mobile flocks announce themselves with bright, liquid calls."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "The female builds a neat cup among tree branches. BTO gives a typical clutch of five eggs, incubated by the female for 12–14 days. Young leave at about 14–17 days after hatching and remain dependent on feeding afterwards. Two broods are possible; local climate and geography determine laying dates."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its natural range spans Europe, western Asia and North Africa. It is familiar in the Maghreb and Levant. Lebanon’s updated checklist describes a common breeding resident supplemented by passage and winter immigration. That status does not imply native residence throughout the Gulf."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "It can be watched throughout the year in resident areas, with flocks particularly apparent in autumn and winter. Lebanese breeding principally extends from spring into summer. November observations fit resident presence and winter additions, rather than demonstrating late nesting."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "It consumes seeds and insects and benefits from varied wild vegetation. Illegal capture and trade, together with loss of edge habitats, are pressures. Leaving thistles and other seed plants to mature and reducing pesticides maintain food supplies; wild observation supports a different relationship from cage keeping."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Goldfinch."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Møl Herold — CC0 1.0."
+        },
+        "fr": {
+          "title": "Chardonneret élégant",
+          "subtitle": "Carduelis carduelis",
+          "meta_description": "Le Chardonneret élégant Carduelis carduelis appartient aux Fringillidae. L’adulte associe masque rouge, tête noire et blanche et large barre alaire jaune ; le jeune n’a pas encore ce masque rouge. Son bec conique pointu.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Chardonneret élégant Carduelis carduelis appartient aux Fringillidae. L’adulte associe masque rouge, tête noire et blanche et large barre alaire jaune ; le jeune n’a pas encore ce masque rouge. Son bec conique pointu extrait les petites graines. La barre jaune seule ne suffit pas à le distinguer du Verdier d’Europe."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Vergers, campagnes, lisières et jardins lui conviennent, surtout lorsque persistent des plantes à graines. Il s’accroche aux capitules des chardons et consomme aussi des insectes, notamment pour nourrir les jeunes. Hors reproduction, ses groupes mobiles émettent des cris clairs et liquides."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "La femelle construit une coupe soignée dans les branches. Le BTO indique habituellement cinq œufs, couvés par elle pendant 12–14 jours. Les jeunes quittent le nid vers 14–17 jours après l’éclosion et restent ensuite nourris par les parents. Deux nichées sont possibles ; climat et région modulent les dates de ponte."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire naturelle couvre l’Europe, l’Asie occidentale et l’Afrique du Nord. Familier au Maghreb et au Levant, il est décrit au Liban comme résident nicheur commun, renforcé par le passage et l’immigration hivernale. Ce statut ne signifie pas une résidence naturelle dans tous les pays du Golfe."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Dans ses régions de résidence, il s’observe toute l’année ; les groupes se remarquent davantage en automne et en hiver. Au Liban, la reproduction s’étend surtout du printemps à l’été. Les observations de novembre correspondent aux résidents et aux arrivées hivernales, sans prouver une nidification tardive."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Consommateur de graines et d’insectes, il profite d’une flore diversifiée. Capture et commerce illégaux ainsi que disparition des lisières constituent des pressions. Laisser mûrir les chardons et limiter les pesticides préserve sa nourriture ; son observation libre évite de réduire cet oiseau à la captivité."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Goldfinch."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Møl Herold — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البلشون-الذهبي",
+        "en": "squacco-heron",
+        "fr": "crabier-chevelu"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "squacco-heron"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البلشون الذهبي",
+          "subtitle": "Ardeola ralloides",
+          "meta_description": "البلشون الذهبي Ardeola ralloides من البلشونيات Ardeidae. يبدو واقفًا بلون كريمي بني مع تخطيط على الرأس والعنق، لكنه يكشف أجنحة بيضاء لافتة عند الطيران. تطول ريشات الرأس في موسم التكاثر؛ واليافع أكثر تخطيطًا. يختلف عن.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "البلشون الذهبي Ardeola ralloides من البلشونيات Ardeidae. يبدو واقفًا بلون كريمي بني مع تخطيط على الرأس والعنق، لكنه يكشف أجنحة بيضاء لافتة عند الطيران. تطول ريشات الرأس في موسم التكاثر؛ واليافع أكثر تخطيطًا. يختلف عن بلشون الليل الأقصر عنقًا وذي التاج الداكن المتباين."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يفضل المياه الضحلة والقصب وقنوات الري وحواف المستنقعات. يقف ساكنًا أو يتحرك ببطء قبل التقاط السمك الصغير والبرمائيات والحشرات المائية. قد يصطاد من نباتات طافية، معتمدًا على التخفي والاندفاع القصير بدل المطاردة الطويلة."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يعشش في مستعمرات، كثيرًا ما يشاركها بلشونات أخرى، فوق شجيرات أو أشجار قريبة من الماء أو بين القصب. يبني عشًا من الأغصان ويتعاون الأبوان في رعاية الحضنة وإطعام الفراخ. تحتاج الصغار إلى البقاء قرب العش بعد الفقس؛ والتكاثر مرتبط بمياه هادئة وغذاء متاح."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يعبر شمال أفريقيا وشرق المتوسط، ويتكاثر في مواقع رطبة متفرقة ضمن نطاقه الأوسع. في لبنان هو مهاجر عبور شائع، مع قلة تقضي الشتاء. وثقت القائمة المحدثة أول تكاثر مؤكد في البلاد في مايو 2020، وهو سجل محلي لا يبرر وصفه بمتكاثر واسع الانتشار."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "في لبنان يبرز العبور من منتصف مارس إلى أوائل يونيو ومن أوائل أغسطس إلى أواخر سبتمبر، مع أعداد شتوية قليلة. لذلك تتطلب مشاهدة نوفمبر توثيقًا جيدًا، لكنها ليست مستبعدة. تختلف الموسمية بين مستنقعات المغرب العربي وحوض النيل وبلاد الشام."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يربط غذائيًا بين اللافقاريات والأسماك الصغيرة ومفترسات الأراضي الرطبة. يضر به تجفيف المستنقعات وتلوث قنوات المياه وإزعاج مستعمرات التعشيش. تبقى مسافة المراقبة ضرورية، خاصة في المستعمرات المختلطة؛ فترك البالغين للأعشاش قد يعرض البيض والفراخ للحرارة والافتراس."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Squacco Heron."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Irene — CC0 1.0."
+        },
+        "en": {
+          "title": "Squacco Heron",
+          "subtitle": "Ardeola ralloides",
+          "meta_description": "Squacco Heron Ardeola ralloides belongs to Ardeidae. At rest it looks buff-brown, with streaking on head and neck; in flight its white wings are striking. Breeding adults develop longer head plumes, while juveniles are.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Squacco Heron Ardeola ralloides belongs to Ardeidae. At rest it looks buff-brown, with streaking on head and neck; in flight its white wings are striking. Breeding adults develop longer head plumes, while juveniles are more heavily streaked. Night herons have a shorter-necked appearance and more contrasting dark crown."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Shallow water, reedbeds, irrigation channels and marsh margins provide feeding habitat. It waits or walks slowly before seizing small fish, amphibians and aquatic insects. Floating vegetation may serve as a platform; concealment and short strikes replace prolonged pursuit."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "It nests colonially, often with other herons, in shrubs or trees near water or among reeds. Twigs form the nest and both parents contribute to care and provisioning. Young remain dependent around the nest after hatching. Breeding requires relatively undisturbed habitat with reliable food and water."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It crosses North Africa and the eastern Mediterranean and breeds at scattered wetlands within its wider range. Lebanon’s updated checklist calls it a common passage migrant with small winter numbers. The first confirmed Lebanese breeding was documented in May 2020; that local record does not establish widespread breeding."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanese passage is prominent from mid-March to early June and early August to late September, with a few wintering birds. November sightings therefore require careful documentation but are possible. Seasonality differs among Maghreb wetlands, the Nile basin and the Levant."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Its diet connects aquatic invertebrates and small fish with wetland predators. Drainage, polluted channels and disturbance of nesting colonies are pressures. Observe mixed colonies from a distance: adults forced from nests can leave eggs and chicks exposed to heat and predation."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Squacco Heron."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Irene — CC0 1.0."
+        },
+        "fr": {
+          "title": "Crabier chevelu",
+          "subtitle": "Ardeola ralloides",
+          "meta_description": "Le Crabier chevelu Ardeola ralloides appartient aux Ardeidae. Posé, il paraît brun chamois, avec la tête et le cou striés ; en vol, ses ailes blanches deviennent frappantes. L’adulte nuptial porte de longues plumes à la.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Crabier chevelu Ardeola ralloides appartient aux Ardeidae. Posé, il paraît brun chamois, avec la tête et le cou striés ; en vol, ses ailes blanches deviennent frappantes. L’adulte nuptial porte de longues plumes à la tête, le jeune davantage de stries. Le bihoreau paraît plus court de cou et présente une calotte sombre plus contrastée."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Eaux peu profondes, roselières, canaux et bordures de marais lui offrent des terrains de chasse. Immobile ou lentement mobile, il saisit petits poissons, amphibiens et insectes aquatiques. Il peut utiliser la végétation flottante ; camouflage et attaques brèves remplacent une longue poursuite."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Il niche en colonie, souvent avec d’autres hérons, dans des arbustes ou des arbres proches de l’eau, parfois dans les roseaux. Le nid est fait de brindilles ; les deux parents participent aux soins et au nourrissage. Après l’éclosion, les jeunes restent dépendants autour du nid. Eau, nourriture et tranquillité conditionnent la reproduction."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Il traverse l’Afrique du Nord et la Méditerranée orientale et se reproduit dans des zones humides dispersées. La liste libanaise actualisée le décrit comme migrateur commun avec quelques hivernants. La première reproduction confirmée au Liban date de mai 2020 ; ce constat local ne prouve pas une nidification largement répandue."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Au Liban, le passage se remarque de mi-mars à début juin et de début août à fin septembre, avec quelques oiseaux en hiver. Une observation de novembre mérite donc documentation sans être exclue. Les saisons diffèrent entre zones humides maghrébines, bassin du Nil et Levant."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Son alimentation relie invertébrés aquatiques et petits poissons aux prédateurs des marais. Drainage, pollution et dérangement des colonies constituent des pressions. Observer à distance évite que les adultes quittent leurs nids, exposant alors œufs et jeunes à la chaleur et aux prédateurs."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Squacco Heron."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Irene — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "العندليب-الشائع",
+        "en": "common-nightingale",
+        "fr": "rossignol-philomele"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "common-nightingale"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "العندليب الشائع",
+          "subtitle": "Luscinia megarhynchos",
+          "meta_description": "العندليب الشائع Luscinia megarhynchos من صائدات الذباب Muscicapidae. ريشه بني دافئ وذيله محمر، وبطنه أفتح دون قناع أو صدر برتقالي. يتشابه الجنسان؛ وشهرته الصوتية أكبر من وضوحه البصري. يحتاج تمييزه من العندليب الأرقط إلى.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "العندليب الشائع Luscinia megarhynchos من صائدات الذباب Muscicapidae. ريشه بني دافئ وذيله محمر، وبطنه أفتح دون قناع أو صدر برتقالي. يتشابه الجنسان؛ وشهرته الصوتية أكبر من وضوحه البصري. يحتاج تمييزه من العندليب الأرقط إلى قراءة تخطيط الصدر واللون والصوت معًا."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يسكن الشجيرات الكثيفة وحواف الأحراج والبساتين ذات الغطاء السفلي. يلتقط الحشرات واليرقات والعناكب من الأرض والأوراق المتساقطة، ويضيف الثمار الصغيرة موسميًا. قد يغني الذكر ليلًا، خصوصًا قبل الاقتران، لكنه يغني نهارًا أيضًا؛ والغناء الليلي ليس حكرًا عليه."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبنى العش منخفضًا بين النباتات أو قرب الأرض. تضع الأنثى عادة 4–5 بيضات وتحضنها نحو 13–14 يومًا. يغادر الصغار العش بعمر يقارب 11–13 يومًا، قبل أن يصبح طيرانهم قويًا، وتستمر رعاية الأبوين. ينبغي ترك الفراخ المتسترة في الشجيرات في موضعها."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يتكاثر في أجزاء من أوروبا وغرب آسيا وشمال أفريقيا ويهاجر جنوبًا إلى أفريقيا جنوب الصحراء. في لبنان هو زائر صيفي متكاثر غير شائع ومهاجر عبور؛ ولذلك لا تعني شهرته في الأدب العربي وجوده المقيم طوال السنة في جميع البلدان."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "تورد قائمة لبنان التكاثر بين أبريل ويوليو، والعبور الربيعي من مارس إلى منتصف مايو والخريفي في سبتمبر وأكتوبر. نوفمبر يقع بعد معظم مروره المحلي المعتاد؛ ولا يمكن استنتاج حضوره من تسجيل غنائي منشور دون تاريخ ومكان."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يحافظ الغطاء الشجيري والأوراق المتساقطة على غذائه ومواقع التعشيش. تقليم التحوطات وإزالة الشجيرات في موسم التكاثر والمبيدات يضعفان موائله. مراقبة الغناء من المسارات وترك الشجيرات دون اقتحام يحميان طائرًا يعتمد على التخفي أكثر من الهروب المكشوف."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Nightingale.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Luscinia megarhynchos."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Leonard Wägele — CC0 1.0."
+        },
+        "en": {
+          "title": "Common Nightingale",
+          "subtitle": "Luscinia megarhynchos",
+          "meta_description": "Common Nightingale Luscinia megarhynchos belongs to Muscicapidae. Warm brown plumage, a rufous tail and paler underparts lack a mask or orange breast. The sexes look similar; its voice is more conspicuous than its.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Common Nightingale Luscinia megarhynchos belongs to Muscicapidae. Warm brown plumage, a rufous tail and paler underparts lack a mask or orange breast. The sexes look similar; its voice is more conspicuous than its appearance. Separation from Thrush Nightingale combines breast markings, colour and sound."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Dense scrub, woodland edges and orchards with undergrowth provide cover. It takes insects, larvae and spiders from the ground and leaf litter, adding small fruit seasonally. Males may sing at night, particularly before pairing, but also sing by day. Night singing alone does not identify the species."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A low nest is concealed in vegetation or near the ground. The female usually lays four or five eggs and incubates for about 13–14 days. Young leave at roughly 11–13 days, before strong flight develops, and parental care continues. Hidden fledglings should be left where found."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It breeds in parts of Europe, western Asia and North Africa, migrating south to sub-Saharan Africa. In Lebanon it is an uncommon migrant breeder and passage migrant. Its prominence in Arabic literature therefore does not imply year-round residence across Arab countries."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "The Lebanese checklist places breeding in April–July, spring passage from March to mid-May and autumn passage in September–October. November follows most usual local passage. An undated song recording without a location cannot establish current local occurrence."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Scrub and leaf litter maintain feeding and nesting sites. Hedge cutting, scrub clearance during breeding and pesticides degrade habitat. Listening from paths and avoiding penetration of dense cover protects an unobtrusive bird whose safety depends strongly on concealment."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Nightingale.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Luscinia megarhynchos."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Leonard Wägele — CC0 1.0."
+        },
+        "fr": {
+          "title": "Rossignol philomèle",
+          "subtitle": "Luscinia megarhynchos",
+          "meta_description": "Le Rossignol philomèle Luscinia megarhynchos appartient aux Muscicapidae. Son plumage brun chaud, sa queue rousse et son dessous plus clair ne présentent ni masque ni poitrine orange. Les sexes se ressemblent ; sa voix.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Rossignol philomèle Luscinia megarhynchos appartient aux Muscicapidae. Son plumage brun chaud, sa queue rousse et son dessous plus clair ne présentent ni masque ni poitrine orange. Les sexes se ressemblent ; sa voix attire davantage que son apparence. Le distinguer du Rossignol progné exige de combiner poitrine, coloration et chant."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il fréquente fourrés denses, lisières et vergers avec sous-bois. Il prélève insectes, larves et araignées au sol et dans la litière, puis ajoute de petits fruits selon la saison. Le mâle chante parfois la nuit, surtout avant l’appariement, mais également le jour. Un chant nocturne seul ne suffit pas à l’identifier."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid est caché bas dans la végétation ou près du sol. La femelle pond généralement quatre ou cinq œufs et couve environ 13–14 jours. Les jeunes sortent vers 11–13 jours, avant de bien voler, et les soins parentaux continuent. Les jeunes dissimulés dans les fourrés doivent être laissés sur place."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Il niche dans certaines régions d’Europe, d’Asie occidentale et d’Afrique du Nord, puis migre vers l’Afrique subsaharienne. Au Liban, il est nicheur migrateur peu commun et migrateur de passage. Sa célébrité dans la littérature arabe ne signifie donc pas une présence résidente dans tous les pays."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "La liste libanaise situe la reproduction en avril–juillet, le passage printanier de mars à mi-mai et celui d’automne en septembre–octobre. Novembre suit l’essentiel du passage local habituel. Un chant enregistré sans lieu ni date ne démontre pas une présence actuelle."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Fourrés et feuilles mortes préservent nourriture et sites de nidification. Taille des haies, défrichement en période de reproduction et pesticides dégradent l’habitat. Écouter depuis les chemins, sans pénétrer les buissons, protège cet oiseau discret dont la sécurité repose sur le couvert."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "British Trust for Ornithology — BirdFacts: Nightingale.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Luscinia megarhynchos."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Leonard Wägele — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "بلشون-الصخر-الغربي",
+        "en": "western-reef-heron",
+        "fr": "aigrette-des-recifs"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "western-reef-heron"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "بلشون الصخر الغربي",
+          "subtitle": "Egretta gularis",
+          "meta_description": "بلشون الصخر الغربي Egretta gularis من البلشونيات Ardeidae. له شكل رمادي داكن وآخر أبيض؛ وغالبًا ما تظهر بقعة حلق بيضاء في الشكل الداكن. المنقار قوي نسبيًا والقدمان صفراوان. الشكل الأبيض يشبه البلشون الصغير، لذلك لا.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "بلشون الصخر الغربي Egretta gularis من البلشونيات Ardeidae. له شكل رمادي داكن وآخر أبيض؛ وغالبًا ما تظهر بقعة حلق بيضاء في الشكل الداكن. المنقار قوي نسبيًا والقدمان صفراوان. الشكل الأبيض يشبه البلشون الصغير، لذلك لا تُحسم الهوية بلون الجسم وحده، وقد يعقد التهجين التشخيص."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "طائر سواحل ضحلة ومسطحات مدية وقرم وشعاب مكشوفة. يصيد الأسماك الصغيرة والقشريات واللافقاريات، ماشيًا أو منتظرًا انكشاف الفريسة. تؤثر حركة المد والجزر في أماكن تغذيه، وقد يطارد الفريسة بحركات سريعة أو يحجب الماء بجناحيه."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يعشش قرب السواحل على أشجار القرم أو الشجيرات ومواقع أخرى آمنة. وثقت دراسة ميدانية في أبوظبي حضنات من 3–4 بيضات وحضانة تقارب 26–28 يومًا، مع مشاركة الأبوين في الرعاية. هذه قياسات محلية، وليست تقويمًا ثابتًا لكل مستعمرات نطاقه."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "للنطاق الغربي حضور على سواحل أفريقيا، وللنطاق الشرقي حضور حول البحر الأحمر والخليج وبحر العرب. في الإمارات طائر ساحلي متكاثر معروف، وتؤكد دراسات القرم المحلية ذلك. الصورة التعريفية لا تكفي وحدها لإثبات أنه موجود أو متكاثر في بلد آخر."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمكن رؤيته طوال السنة في مواقع إقامته الساحلية، وتتغير أعداد الطيور وتجمعاتها مع الغذاء وموسم التعشيش. المراقبة عند الجزر تكشف مناطق التغذية، لكن الاقتراب من جزر التعشيش يجب ألا يسبب مغادرة البالغين للأعشاش."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يعتمد على سلامة السواحل والقرم والمياه الضحلة. إزالة القرم وردم المسطحات والتلوث النفطي وإزعاج المستعمرات ضغوط مباشرة. حماية مستعمرة تعشيش تتطلب حماية نطاق تغذيتها أيضًا؛ فبقاء الشجرة وحدها لا يعوض فقدان المسطح المدي المحيط."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Environment Agency–Abu Dhabi — Western Reef Heron, UAE National Red List.",
+                "Life 15 (2025), 1380 — field study of Western Reef Heron breeding in Abu Dhabi."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Mirela — CC0 1.0."
+        },
+        "en": {
+          "title": "Western Reef Heron",
+          "subtitle": "Egretta gularis",
+          "meta_description": "Western Reef Heron Egretta gularis belongs to Ardeidae. Dark-grey and white forms occur; a white throat patch often marks the dark form. The bill is relatively substantial and the feet yellow. White birds resemble.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Western Reef Heron Egretta gularis belongs to Ardeidae. Dark-grey and white forms occur; a white throat patch often marks the dark form. The bill is relatively substantial and the feet yellow. White birds resemble Little Egret, so body colour alone is insufficient; hybridisation can complicate identification."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It feeds along shallow coasts, tidal flats, mangroves and exposed reefs. Small fish, crustaceans and other invertebrates are captured by walking or waiting. Tides determine access to feeding places. Short pursuits and wing shading may help locate or catch prey."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "Nests stand near the coast in mangroves, shrubs or other secure sites. An Abu Dhabi field study documented clutches of three or four eggs and incubation around 26–28 days, with both parents contributing to care. These local measurements are not a fixed calendar for every colony."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Western populations occur along African coasts; eastern populations occupy the Red Sea, Gulf and Arabian Sea region. It is a documented coastal breeding bird in the UAE, including studied mangrove colonies. An identification photograph alone cannot establish occurrence or breeding in another country."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Resident coastal sites support year-round observation, while numbers and gatherings vary with feeding and breeding conditions. Low tide reveals feeding grounds. Approaching nesting islands must not force adults from their nests."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Healthy coasts, mangroves and shallow water sustain it. Mangrove loss, tidal-flat reclamation, oil pollution and colony disturbance are direct pressures. Protecting a nesting colony also requires protecting its feeding grounds: retaining a tree cannot compensate for losing the surrounding tidal habitat."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Environment Agency–Abu Dhabi — Western Reef Heron, UAE National Red List.",
+                "Life 15 (2025), 1380 — field study of Western Reef Heron breeding in Abu Dhabi."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Mirela — CC0 1.0."
+        },
+        "fr": {
+          "title": "Aigrette des récifs",
+          "subtitle": "Egretta gularis",
+          "meta_description": "L’Aigrette des récifs Egretta gularis appartient aux Ardeidae. Elle présente des formes gris sombre et blanches ; une tache blanche à la gorge marque souvent la forme sombre. Le bec est assez fort et les pieds jaunes..",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Aigrette des récifs Egretta gularis appartient aux Ardeidae. Elle présente des formes gris sombre et blanches ; une tache blanche à la gorge marque souvent la forme sombre. Le bec est assez fort et les pieds jaunes. Les oiseaux blancs ressemblent à l’Aigrette garzette : la couleur seule ne suffit pas, et les hybridations compliquent parfois le diagnostic."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Côtes peu profondes, vasières, mangroves et récifs découverts lui fournissent de petits poissons, crustacés et autres invertébrés. Elle marche ou attend une proie. Les marées règlent l’accès aux zones de chasse ; courtes poursuites et ombrage avec les ailes peuvent faciliter la capture."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Elle niche près du littoral, dans les palétuviers, les buissons ou d’autres sites sûrs. Une étude à Abou Dhabi a documenté trois ou quatre œufs et une incubation voisine de 26–28 jours, avec participation des deux parents aux soins. Ces mesures locales ne constituent pas un calendrier universel."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Les populations occidentales occupent des côtes africaines ; les orientales fréquentent mer Rouge, Golfe et mer d’Arabie. Aux Émirats, sa reproduction côtière est documentée, notamment dans les mangroves étudiées. Une photographie d’identification ne prouve pas une présence ou une nidification dans un autre pays."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Elle peut être observée toute l’année sur ses sites côtiers de résidence ; effectifs et rassemblements changent avec alimentation et reproduction. La marée basse découvre ses terrains de chasse. L’approche des îlots de nidification ne doit pas provoquer le départ des adultes."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "L’espèce dépend de côtes, mangroves et eaux peu profondes fonctionnelles. Destruction des palétuviers, remblaiement, pollution pétrolière et dérangement des colonies constituent des pressions directes. Préserver une colonie exige aussi ses zones d’alimentation : un arbre conservé ne remplace pas la vasière disparue."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Environment Agency–Abu Dhabi — Western Reef Heron, UAE National Red List.",
+                "Life 15 (2025), 1380 — field study of Western Reef Heron breeding in Abu Dhabi."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Mirela — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "النحام-الكبير",
+        "en": "greater-flamingo",
+        "fr": "flamant-rose"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "greater-flamingo"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "النحام الكبير",
+          "subtitle": "Phoenicopterus roseus",
+          "meta_description": "النحام الكبير Phoenicopterus roseus من النحاميات Phoenicopteridae، ويعرف أيضًا بالفلامنغو الكبير. يتميز بساقين وعنق طويلين ومنقار وردي ذي طرف أسود؛ ريش البالغ أبيض وردي، بينما يبدو الصغير رماديًا. يختلف عن النحام الصغير.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "النحام الكبير Phoenicopterus roseus من النحاميات Phoenicopteridae، ويعرف أيضًا بالفلامنغو الكبير. يتميز بساقين وعنق طويلين ومنقار وردي ذي طرف أسود؛ ريش البالغ أبيض وردي، بينما يبدو الصغير رماديًا. يختلف عن النحام الصغير بمنقاره الأفتح وحجمه الأكبر، ولا تكفي درجة الوردي وحدها للتشخيص."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد البحيرات الساحلية والسبخات والبحيرات الضحلة. يرشح الغذاء بمنقاره المقلوب، مستخرجًا قشريات ويرقات وكائنات مائية صغيرة. تأتي الأصباغ الوردية من الغذاء؛ وتؤثر أعماق المياه وملوحتها وتوفر الفرائس في مواقع التجمع."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يتكاثر في مستعمرات، بانيًا كومة طينية تعلوها حفرة. يضع عادة بيضة واحدة يتناوب الأبوان حضانتها نحو 27–31 يومًا. يغذي الأبوان الفرخ بإفراز غذائي، ثم تتجمع الصغار في حضانات جماعية قبل اكتمال الطيران بعمر يقارب 65–90 يومًا. تتبدل مواعيد التعشيش تبعًا للمياه والظروف المحلية."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "له حضور واسع في أحواض المتوسط وشمال أفريقيا والشرق الأوسط. توثق هيئة البيئة في أبوظبي تكاثره في محمية الوثبة، بينما تصفه قائمة لبنان بزائر عبور وشتاء قليل وغير منتظم. اختلاف الصفتين يوضح أن مشاهدة أسراب شتوية لا تثبت وجود مستعمرة تكاثر محلية."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "يمكن مشاهدته طوال العام في بعض المواقع الخليجية، مع تجمعات موسمية أكبر. في نوفمبر تجتذب السبخات والبحيرات الشتوية أعدادًا متحركة؛ وقد تفشل المستعمرة أو تنتقل إذا انخفض الماء أو زاد الإزعاج. المواقع المحمية تتيح المراقبة دون دخول مناطق الحضانات."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "حماية المسطحات المائية ونظامها الهيدرولوجي أهم من حماية مساحة جافة حولها فقط. يهدده التلوث وتغير المياه والتصادم بالبنى الكهربائية والإزعاج. تطير الأسراب بعنق وساقين ممدودتين؛ والاقتراب المتكرر الذي يدفعها للطيران يحرمها وقت التغذية والراحة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Environment Agency–Abu Dhabi — Greater Flamingo and Al Wathba Wetland Reserve.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Phoenicopterus roseus."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Nicolás Tamargo — CC0 1.0."
+        },
+        "en": {
+          "title": "Greater Flamingo",
+          "subtitle": "Phoenicopterus roseus",
+          "meta_description": "Greater Flamingo Phoenicopterus roseus belongs to Phoenicopteridae. Long legs and neck accompany a pink bill with a black tip. Adults are whitish pink; young birds are grey. Compared with Lesser Flamingo, it is larger.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Greater Flamingo Phoenicopterus roseus belongs to Phoenicopteridae. Long legs and neck accompany a pink bill with a black tip. Adults are whitish pink; young birds are grey. Compared with Lesser Flamingo, it is larger with a paler bill. Pinkness alone is not a reliable identification character."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Coastal lagoons, saltpans and shallow lakes provide feeding grounds. It filters small crustaceans, larvae and other aquatic organisms with its inverted bill. Dietary pigments produce its pink colour. Water depth, salinity and prey availability determine where flocks can feed."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "Colonies nest on mud mounds topped by a shallow hollow. Usually one egg is incubated by both parents for about 27–31 days. Both feed the chick with a nutritive secretion. Young later gather in crèches before attaining flight at roughly 65–90 days. Local water conditions influence nesting dates."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "It occurs widely around the Mediterranean, North Africa and Middle East. Abu Dhabi’s Environment Agency documents breeding at Al Wathba, whereas Lebanon’s checklist describes scarce, irregular passage and winter visits. Winter flocks therefore do not by themselves demonstrate a local breeding colony."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Some Gulf sites support year-round birds alongside seasonal concentrations. In November, winter lagoons and saltpans attract mobile flocks. A colony may fail or relocate if water levels or disturbance become unsuitable. Protected viewpoints allow observation without entering crèche areas."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Conservation depends on functioning wetlands and their water regime. Pollution, altered water levels, power infrastructure collisions and disturbance are pressures. Flocks fly with necks and legs extended; repeatedly forcing them into flight costs feeding and resting time."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Environment Agency–Abu Dhabi — Greater Flamingo and Al Wathba Wetland Reserve.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Phoenicopterus roseus."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Nicolás Tamargo — CC0 1.0."
+        },
+        "fr": {
+          "title": "Flamant rose",
+          "subtitle": "Phoenicopterus roseus",
+          "meta_description": "Le Flamant rose Phoenicopterus roseus appartient aux Phoenicopteridae. Longues pattes et long cou accompagnent un bec rose à extrémité noire. L’adulte est blanc rosé, le jeune gris. Plus grand que le Flamant nain, il.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Flamant rose Phoenicopterus roseus appartient aux Phoenicopteridae. Longues pattes et long cou accompagnent un bec rose à extrémité noire. L’adulte est blanc rosé, le jeune gris. Plus grand que le Flamant nain, il possède aussi un bec plus clair ; l’intensité du rose seule ne suffit pas à l’identifier."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Lagunes, salines et lacs peu profonds constituent ses lieux d’alimentation. Son bec renversé filtre petits crustacés, larves et autres organismes aquatiques. Les pigments alimentaires produisent sa coloration rose. Profondeur, salinité et disponibilité des proies déterminent les lieux fréquentés."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Les colonies bâtissent des monticules de boue terminés par une dépression. Un œuf, généralement unique, est couvé par les deux parents pendant environ 27–31 jours. Tous deux nourrissent le poussin d’une sécrétion nutritive. Les jeunes se rassemblent ensuite en crèches avant l’envol vers 65–90 jours. Le régime des eaux influence les dates."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Il fréquente largement Méditerranée, Afrique du Nord et Moyen-Orient. L’Agence de l’environnement d’Abou Dhabi documente sa reproduction à Al Wathba ; la liste libanaise décrit au contraire un passage et un hivernage rares et irréguliers. Un groupe hivernal ne prouve donc pas une colonie reproductrice locale."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Certains sites du Golfe accueillent des oiseaux toute l’année et des concentrations saisonnières. En novembre, lagunes et salines hivernales attirent des groupes mobiles. Une colonie peut échouer ou changer de site si l’eau ou la tranquillité deviennent insuffisantes. Les observatoires évitent de pénétrer les crèches."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Sa protection repose sur des zones humides fonctionnelles et leur régime hydrologique. Pollution, modification des niveaux d’eau, collisions électriques et dérangement constituent des pressions. Les groupes volent cou et pattes tendus ; des envols répétés imposés réduisent leur temps de repos et d’alimentation."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Environment Agency–Abu Dhabi — Greater Flamingo and Al Wathba Wetland Reserve.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Phoenicopterus roseus."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Nicolás Tamargo — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الحجل-البربري",
+        "en": "barbary-partridge",
+        "fr": "perdrix-gambra"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "barbary-partridge"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الحجل البربري",
+          "subtitle": "Alectoris barbara",
+          "meta_description": "الحجل البربري Alectoris barbara من التدرجيات Phasianidae، ومن طيور المغرب العربي المميزة. عنقه رمادي يحده طوق كستنائي منقط بالأبيض، وعلى الجنب أشرطة فاتحة وداكنة؛ والمنقار والساقان محمران. يختلف طوقه المنقط عن الطوق.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الحجل البربري Alectoris barbara من التدرجيات Phasianidae، ومن طيور المغرب العربي المميزة. عنقه رمادي يحده طوق كستنائي منقط بالأبيض، وعلى الجنب أشرطة فاتحة وداكنة؛ والمنقار والساقان محمران. يختلف طوقه المنقط عن الطوق الأسود الأوضح في حجل الشوكار."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يسكن السفوح الصخرية والشجيرات والأراضي الزراعية ذات الغطاء المتنوع. يجمع البذور والأجزاء النباتية من الأرض ويضيف الحشرات، خاصة للفراخ. يعيش في مجموعات خارج التعشيش، ويفضل الجري والاختباء قبل الطيران القصير القوي."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "العش حفرة أرضية مستورة بالأعشاب أو قرب شجيرة. تتولى الأنثى الحضانة، بينما يسهم الذكر في الحماية. تفقس الصغار مكسوة بالزغب وتغادر موضع العش مبكرًا لتتغذى وهي بصحبة البالغين؛ فالقدرة على المشي لا تعني الاستقلال أو اكتمال الطيران."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "موطنه الطبيعي شمال أفريقيا، من المغرب عبر الجزائر وتونس إلى ليبيا وأجزاء من مصر. تؤكد GREPOM حضوره المغربي وتنوعه الجغرافي. هو مثال لطائر مقيم مغاربي؛ ولا يصح تقديمه بوصفه حجلًا بريًا أصيلًا منتشرًا بالتساوي في المشرق والخليج."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "تتم مشاهدته طوال السنة في مناطق إقامته، مع تجمعات عائلية أو مجموعات خارج التكاثر. يتغير توقيت التعشيش حسب الأمطار والارتفاع. في نوفمبر يفيد فحص السفوح الهادئة والأرياف ذات الملاجئ النباتية دون مطاردة المجموعات."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يؤثر فيه فقدان الغطاء الشجيري والصيد الجائر وإطلاق طيور غير ملائمة وراثيًا. تناولت دراسة مغربية التداخل الوراثي الناتج عن الإطلاقات. صون تجمعاته البرية يتطلب حماية الموائل ومراقبة أصول طيور الإكثار؛ فلا يعوض إطلاق الطيور عشوائيًا تدهور البيئة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "GREPOM/BirdLife Maroc — Perdrix gambra, Alectoris barbara.",
+                "Diversity 17 (2025), 79 — genetic study of Moroccan Barbary Partridge populations."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Dario Taraborelli — CC0 1.0."
+        },
+        "en": {
+          "title": "Barbary Partridge",
+          "subtitle": "Alectoris barbara",
+          "meta_description": "Barbary Partridge Alectoris barbara belongs to Phasianidae and is characteristic of the Maghreb. Its grey neck is bordered by a chestnut collar spotted white; pale and dark bars mark the flanks, with reddish bill and.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Barbary Partridge Alectoris barbara belongs to Phasianidae and is characteristic of the Maghreb. Its grey neck is bordered by a chestnut collar spotted white; pale and dark bars mark the flanks, with reddish bill and legs. The spotted collar differs from Chukar’s more contrasting black border."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Rocky slopes, scrub and varied farmland provide habitat. It gathers seeds and plant material on the ground and adds insects, particularly for chicks. Groups form outside nesting. Running and concealment usually precede a short, powerful escape flight."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "The nest is a ground hollow screened by vegetation or a shrub. The female incubates while the male helps guard. Downy chicks leave the nest site early and feed while accompanying adults. Walking ability does not mean independence or fully developed flight."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its native range lies in North Africa, from Morocco through Algeria and Tunisia to Libya and parts of Egypt. GREPOM documents Moroccan occurrence and geographic variation. It is a resident Maghreb bird, not an equally widespread native partridge of the Levant and Gulf."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Residents can be observed throughout the year, in family parties or nonbreeding groups. Rainfall and altitude influence breeding timing. In November, quiet rocky slopes and farmland with protective vegetation offer observation without pursuing groups."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Scrub loss, excessive hunting and releases of genetically unsuitable stock are pressures. A Moroccan study examined genetic introgression associated with releases. Conserving wild populations requires habitat protection and attention to captive-stock origins; indiscriminate releases cannot compensate for degraded environments."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "GREPOM/BirdLife Maroc — Perdrix gambra, Alectoris barbara.",
+                "Diversity 17 (2025), 79 — genetic study of Moroccan Barbary Partridge populations."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dario Taraborelli — CC0 1.0."
+        },
+        "fr": {
+          "title": "Perdrix gambra",
+          "subtitle": "Alectoris barbara",
+          "meta_description": "La Perdrix gambra Alectoris barbara appartient aux Phasianidae et caractérise le Maghreb. Son cou gris porte un collier châtain ponctué de blanc ; les flancs sont barrés et le bec comme les pattes rougeâtres. Le collier.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Perdrix gambra Alectoris barbara appartient aux Phasianidae et caractérise le Maghreb. Son cou gris porte un collier châtain ponctué de blanc ; les flancs sont barrés et le bec comme les pattes rougeâtres. Le collier tacheté diffère de la bordure noire plus contrastée de la Perdrix choukar."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Elle occupe pentes rocheuses, broussailles et cultures diversifiées. Elle récolte graines et végétaux au sol et ajoute des insectes, surtout pour les poussins. Des groupes se forment hors nidification. Elle préfère courir et se cacher avant un envol court et puissant."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid est une dépression au sol dissimulée par la végétation ou un buisson. La femelle couve tandis que le mâle participe à la garde. Les poussins duveteux quittent tôt le site et s’alimentent en accompagnant les adultes. Marcher ne signifie ni autonomie ni vol pleinement développé."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire naturelle se situe en Afrique du Nord, du Maroc à l’Algérie, la Tunisie, la Libye et certaines parties de l’Égypte. Le GREPOM documente sa présence et sa variation géographique au Maroc. C’est une résidente maghrébine, sans répartition naturelle équivalente au Levant et dans le Golfe."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Elle s’observe toute l’année dans son aire résidente, en familles ou groupes hors reproduction. Pluie et altitude influencent le calendrier de nidification. En novembre, pentes tranquilles et campagnes offrant du couvert permettent une observation sans poursuite."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Disparition des broussailles, chasse excessive et lâchers de souches génétiquement inadéquates constituent des pressions. Une étude marocaine a examiné l’introgression liée aux lâchers. Conserver les populations sauvages suppose habitats préservés et contrôle des origines captives ; les lâchers indiscriminés ne réparent pas un milieu dégradé."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "GREPOM/BirdLife Maroc — Perdrix gambra, Alectoris barbara.",
+                "Diversity 17 (2025), 79 — genetic study of Moroccan Barbary Partridge populations."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dario Taraborelli — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "اللقلق-الأسود",
+        "en": "black-stork",
+        "fr": "cigogne-noire"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "black-stork"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "اللقلق الأسود",
+          "subtitle": "Ciconia nigra",
+          "meta_description": "اللقلق الأسود Ciconia nigra من اللقلقيات Ciconiidae. يكسو الأسود اللامع معظم جسمه، مع بطن أبيض ومنقار وساقين حمراوين في البالغ. اليافع أبهت ومنقاره أقل احمرارًا. يطير بعنق ممدود مثل اللقلق الأبيض، لكنه يبدو أغمق بكثير.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "اللقلق الأسود Ciconia nigra من اللقلقيات Ciconiidae. يكسو الأسود اللامع معظم جسمه، مع بطن أبيض ومنقار وساقين حمراوين في البالغ. اليافع أبهت ومنقاره أقل احمرارًا. يطير بعنق ممدود مثل اللقلق الأبيض، لكنه يبدو أغمق بكثير ولا يحمل توزيع الأبيض الواسع نفسه."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "أكثر تحفظًا من اللقلق الأبيض، ويستخدم الأنهار والبرك والمناطق الرطبة القريبة من غابات أو مواقع هادئة. يصيد السمك والبرمائيات وفرائس مائية صغيرة. أثناء الهجرة يحلق مستفيدًا من التيارات الصاعدة، ويتوقف في الأراضي الرطبة للتغذي والراحة."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني عشًا كبيرًا في شجرة أو على حافة صخرية ضمن مناطق التكاثر. تضم الحضنة عادة 3–5 بيضات، ويشارك الأبوان في حضانة تستغرق نحو 32–38 يومًا. يكتمل طيران الصغار بعد نحو 63–71 يومًا، وتستمر رعايتها فترة بعد ذلك؛ وهي مدد عامة لا تثبت التعشيش في بلد العبور."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "تربط هجرته مناطق تكاثر أوراسية بمناطق شتاء أفريقية. في لبنان مهاجر عبور، تُسجل حركته من منتصف فبراير إلى منتصف يونيو ومن منتصف أغسطس إلى أوائل نوفمبر. لا تصفه هذه السجلات بمقيم أو متكاثر لبناني، وتحتاج الدول الأخرى إلى وصفها المحلي."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "قد تصادف أوائل نوفمبر نهاية مروره الخريفي في شرق المتوسط. يجدر التفريق بين أسراب العبور المرتفعة والطيور المتوقفة للتغذي. تسجيل العدد والاتجاه والوقت أكثر فائدة لتوثيق الهجرة من الاقتراب من طائر مستريح."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يفيده الحفاظ على شبكة أراضٍ رطبة هادئة على امتداد مسار الهجرة. الصعق الكهربائي والتصادم والصيد غير القانوني وتدهور المياه من الضغوط. حماية مواقع التوقف تكمل حماية الأعشاش البعيدة، لأن رحلة الهجرة تعتمد على أكثر من موطن واحد."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Ciconia nigra."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Dave Brown — CC0 1.0."
+        },
+        "en": {
+          "title": "Black Stork",
+          "subtitle": "Ciconia nigra",
+          "meta_description": "Black Stork Ciconia nigra belongs to Ciconiidae. Glossy black covers most of the body, contrasting with a white belly and adult red bill and legs. Juveniles are duller with less red bills. It flies with its neck.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Black Stork Ciconia nigra belongs to Ciconiidae. Glossy black covers most of the body, contrasting with a white belly and adult red bill and legs. Juveniles are duller with less red bills. It flies with its neck extended like White Stork, but shows much less white."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "More secretive than White Stork, it uses rivers, pools and wetlands near woodland or quiet sites. Fish, amphibians and other small aquatic prey form its diet. Migrants soar on rising air and stop at wetlands for food and rest."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A large nest occupies a tree or rock ledge within the breeding range. Usually three to five eggs are incubated by both parents for about 32–38 days. Young reach flight at roughly 63–71 days and receive further care. These general durations do not demonstrate nesting in a passage country."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Migration links Eurasian breeding areas with African wintering grounds. In Lebanon it is a passage migrant, recorded from mid-February to mid-June and mid-August to early November. These records establish neither Lebanese residence nor breeding; other countries require their own status descriptions."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Early November can coincide with the end of eastern Mediterranean autumn passage. Distinguish high travelling flocks from birds stopping to feed. Counts, direction and time document migration more usefully than closely approaching a resting individual."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "A network of quiet wetlands supports the migration route. Electrocution, collisions, illegal shooting and degraded water habitats are pressures. Protecting stopovers complements protection of distant nests because the journey depends on multiple habitats."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Ciconia nigra."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dave Brown — CC0 1.0."
+        },
+        "fr": {
+          "title": "Cigogne noire",
+          "subtitle": "Ciconia nigra",
+          "meta_description": "La Cigogne noire Ciconia nigra appartient aux Ciconiidae. Le noir brillant couvre l’essentiel du corps, contrastant avec le ventre blanc et le bec ainsi que les pattes rouges de l’adulte. Le jeune est plus terne et son.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Cigogne noire Ciconia nigra appartient aux Ciconiidae. Le noir brillant couvre l’essentiel du corps, contrastant avec le ventre blanc et le bec ainsi que les pattes rouges de l’adulte. Le jeune est plus terne et son bec moins rouge. Comme la Cigogne blanche, elle vole cou tendu, mais montre beaucoup moins de blanc."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Plus discrète que la Cigogne blanche, elle fréquente rivières, mares et zones humides proches de bois ou de lieux tranquilles. Elle capture poissons, amphibiens et petites proies aquatiques. En migration, elle plane dans les ascendances et s’arrête dans les zones humides pour se nourrir et se reposer."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Un grand nid occupe arbre ou corniche rocheuse dans l’aire de reproduction. Trois à cinq œufs sont habituellement couvés par les deux parents pendant environ 32–38 jours. Les jeunes prennent leur envol vers 63–71 jours et reçoivent encore des soins. Ces durées générales ne prouvent pas une nidification dans un pays traversé."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Sa migration relie reproduction eurasiatique et hivernage africain. Au Liban, elle est migratrice de passage, de mi-février à mi-juin puis de mi-août à début novembre. Ces données n’établissent ni résidence ni reproduction libanaise ; chaque autre pays nécessite son propre statut."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Début novembre peut correspondre à la fin du passage automnal en Méditerranée orientale. Il faut distinguer groupes en voyage et oiseaux arrêtés pour s’alimenter. Noter effectif, direction et heure documente mieux la migration qu’approcher un individu au repos."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Un réseau de zones humides tranquilles soutient son trajet migratoire. Électrocution, collisions, tirs illégaux et dégradation de l’eau constituent des pressions. Protéger les haltes complète la préservation des nids lointains, car le voyage dépend de plusieurs habitats."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Ciconia nigra."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dave Brown — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الحوام-طويل-الساقين",
+        "en": "long-legged-buzzard",
+        "fr": "buse-feroce"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "long-legged-buzzard"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الحوام طويل الساقين",
+          "subtitle": "Buteo rufinus",
+          "meta_description": "الحوام طويل الساقين Buteo rufinus من البازيات Accipitridae. جناحاه عريضان، ورأسه غالبًا فاتح، وذيله في كثير من البالغين محمر قليل التخطيط. تتعدد أشكاله اللونية وتتداخل مع الحوام الشائع، لذلك تُقرأ بقع الرسغ ونمط الجناح.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الحوام طويل الساقين Buteo rufinus من البازيات Accipitridae. جناحاه عريضان، ورأسه غالبًا فاتح، وذيله في كثير من البالغين محمر قليل التخطيط. تتعدد أشكاله اللونية وتتداخل مع الحوام الشائع، لذلك تُقرأ بقع الرسغ ونمط الجناح والذيل والنسب معًا، ولا يكفي اللون المحمر."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يصطاد في السهوب والأراضي شبه الصحراوية والسفوح والأرياف المفتوحة. تشمل فرائسه قوارض وزواحف وطيورًا صغيرة ولافقاريات؛ يراقب من مرتفع أو يحلق قبل الانقضاض. تختلف حصة كل مجموعة من الفرائس مع البيئة وتوفر الغذاء."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يبني عشًا من الأغصان على الصخور أو الأشجار وقد يعيد استخدامه. وثقت دراسة صغيرة في جنوب غرب إيران حضنات من ثلاث بيضات وحضانة تقارب 31 يومًا، وتعاون الأبوين في تربية الصغار. هذه نتيجة لعينة محلية وليست رقمًا موحدًا لكل التجمعات؛ ويحتاج الصغار إلى أسابيع من الرعاية قبل الاستقلال."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يمتد نطاقه عبر شمال أفريقيا وأجزاء من الشرق الأوسط وآسيا. تصفه قائمة لبنان بأنه مقيم متكاثر، تضاف إليه طيور عابرة ومشتية. وتتباين تجمعاته الجغرافية؛ فلا يُستدل من شكله أو من مشاهدة منفردة على أصل الفرد أو نمط هجرته."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "الحضور اللبناني المقيم يسمح بمشاهدته في نوفمبر، مع احتمال انضمام مهاجرين. في أيام الحرارة المناسبة يمكن تتبع التحليق من نقاط بعيدة. تحديد النوع يتطلب صورة واضحة للجانحين والذيل، خاصة عند المرور المختلط مع حوامات أخرى."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يفترس قوارض ويسهم في شبكات غذاء الأراضي المفتوحة. تهدده السموم والمبيدات والتعرض للصعق والاضطهاد وفقدان الموائل. حماية الجوارح لا تنفصل عن إدارة السموم والقوارض؛ فقد يصل السم إلى الحوام عبر فريسة مسمومة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Türk J Zool 39 (2015), 653–658 — Breeding Long-legged Buzzard Buteo rufinus in forests of southwestern Iran: feeding habits and reproductive performance.",
+                "The Peregrine Fund — Long-legged Buzzard."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева — CC0 1.0."
+        },
+        "en": {
+          "title": "Long-legged Buzzard",
+          "subtitle": "Buteo rufinus",
+          "meta_description": "Long-legged Buzzard Buteo rufinus belongs to Accipitridae. Broad wings, often a pale head and a frequently rufous, sparsely barred adult tail are useful clues. Colour forms overlap with Common Buzzard. Combine carpal.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Long-legged Buzzard Buteo rufinus belongs to Accipitridae. Broad wings, often a pale head and a frequently rufous, sparsely barred adult tail are useful clues. Colour forms overlap with Common Buzzard. Combine carpal patches, wing and tail patterns and proportions rather than relying on rufous colour."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Steppe, semidesert, slopes and open farmland provide hunting grounds. Rodents, reptiles, small birds and invertebrates contribute to its diet. It watches from a perch or soars before attacking. The importance of each prey group varies with habitat and availability."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "A twig nest stands on rocks or in a tree and may be reused. A small southwestern Iranian study documented three-egg clutches, incubation around 31 days and parental cooperation. This is a local sample, not a universal value; young require weeks of care before independence."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range spans North Africa and parts of the Middle East and Asia. Lebanon’s checklist describes a breeding resident supplemented by passage and winter birds. Geographical populations vary; appearance or a single sighting cannot determine an individual’s origin or migration strategy."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "Lebanese residents can be seen in November alongside possible immigrants. Suitable thermal conditions permit distant observation of soaring birds. Clear wing and tail views are important, especially when several buzzard species migrate together."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Rodent predation connects it with open-country food webs. Poisons, pesticides, electrocution, persecution and habitat loss are pressures. Raptor protection requires careful rodent and poison management because contaminated prey can transfer toxins to predators."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Türk J Zool 39 (2015), 653–658 — Breeding Long-legged Buzzard Buteo rufinus in forests of southwestern Iran: feeding habits and reproductive performance.",
+                "The Peregrine Fund — Long-legged Buzzard."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0 1.0."
+        },
+        "fr": {
+          "title": "Buse féroce",
+          "subtitle": "Buteo rufinus",
+          "meta_description": "La Buse féroce Buteo rufinus appartient aux Accipitridae. Ailes larges, tête souvent claire et queue adulte fréquemment rousse et peu barrée sont des indices. Ses formes colorées recoupent celles de la Buse variable. Il.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Buse féroce Buteo rufinus appartient aux Accipitridae. Ailes larges, tête souvent claire et queue adulte fréquemment rousse et peu barrée sont des indices. Ses formes colorées recoupent celles de la Buse variable. Il faut combiner poignets, dessins alaires, queue et proportions plutôt que retenir uniquement le roux."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Steppes, milieux semi-désertiques, pentes et campagnes ouvertes offrent des terrains de chasse. Rongeurs, reptiles, petits oiseaux et invertébrés contribuent au régime. Elle surveille depuis un perchoir ou plane avant l’attaque. La part de chaque proie dépend du milieu et de sa disponibilité."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Le nid de branches est installé sur un rocher ou un arbre et peut être réutilisé. Une petite étude du sud-ouest iranien a documenté des pontes de trois œufs, environ 31 jours d’incubation et une coopération parentale. Ce résultat local n’est pas universel ; les jeunes exigent des semaines de soins avant leur autonomie."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire couvre l’Afrique du Nord et certaines régions du Moyen-Orient et d’Asie. La liste libanaise la décrit comme résidente nicheuse, renforcée par passage et hivernage. Les populations géographiques varient ; apparence ou observation isolée ne déterminent pas l’origine ni la stratégie migratoire d’un individu."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "Les résidents libanais peuvent être observés en novembre, avec d’éventuels arrivants. Les ascendances permettent une observation à distance. Des vues nettes des ailes et de la queue sont essentielles lorsque plusieurs espèces de buses migrent ensemble."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "La consommation de rongeurs l’inscrit dans les réseaux alimentaires des milieux ouverts. Poisons, pesticides, électrocution, persécution et perte d’habitats sont des pressions. La gestion des produits toxiques compte autant que celle des rongeurs : les proies contaminées peuvent empoisonner leurs prédateurs."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "Türk J Zool 39 (2015), 653–658 — Breeding Long-legged Buzzard Buteo rufinus in forests of southwestern Iran: feeding habits and reproductive performance.",
+                "The Peregrine Fund — Long-legged Buzzard."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الصقر-الوكري",
+        "en": "lanner-falcon",
+        "fr": "faucon-lanier"
+      },
+      "published": "2026-11-04",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "lanner-falcon"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الصقر الوكري",
+          "subtitle": "Falco biarmicus",
+          "meta_description": "الصقر الوكري Falco biarmicus من الصقريات Falconidae. يبدو رشيقًا طويل الذيل، ويجمع البالغ غالبًا بين تاج وقفا محمرين وشارب داكن أضيق من شارب الشاهين. اليافع أكثر تخطيطًا. تتباين السلالات، ويحتاج الفصل من الصقر الحر.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الصقر الوكري Falco biarmicus من الصقريات Falconidae. يبدو رشيقًا طويل الذيل، ويجمع البالغ غالبًا بين تاج وقفا محمرين وشارب داكن أضيق من شارب الشاهين. اليافع أكثر تخطيطًا. تتباين السلالات، ويحتاج الفصل من الصقر الحر والشاهين إلى النسب ونمط الرأس والذيل، لا اللون وحده."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد الأراضي المفتوحة والصخرية وشبه الصحراوية والأرياف. يصطاد الطيور أساسًا، وقد يأخذ ثدييات صغيرة وزواحف وحشرات. يطارد في الهواء أو ينقض من مرتفع، ويمكن أن يتعاون الزوج في الصيد؛ ولا يجعل السلوك وحده التعرف محسومًا."
+              ]
+            },
+            {
+              "heading": "التكاثر ورعاية الفراخ",
+              "paragraphs": [
+                "يستخدم حافة صخرية أو عشًا قديمًا لطائر آخر بدل بناء عش متقن. تضم الحضنة عادة 3–4 بيضات، والحضانة نحو 32 يومًا. يبدأ طيران الصغار بعد نحو 35–47 يومًا من الفقس، مع استمرار اعتمادها على الوالدين. تختلف مواعيد التعشيش بين شمال أفريقيا والأقاليم الأخرى."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "للوكرى نطاق أفريقي وشرق أوسطي يشمل تجمعات عربية مقيمة في شمال أفريقيا. أما في لبنان فتصفه القائمة بأنه عابر وزائر شتوي قليل المشاهدة، دون تكاثر مؤكد. لا يصح نقل صفة الإقامة في المغرب العربي إلى كل بلاد الشام."
+              ]
+            },
+            {
+              "heading": "الموسمية والمراقبة",
+              "paragraphs": [
+                "قد يُرى في نوفمبر ضمن حضوره الشتوي الشرقي أو تجمعاته المقيمة المغاربية. تتطلب الصور البعيدة احتياطًا عند الفصل من الصقور المتقاربة. من الأفضل تسجيل سلسلة صور للرأس والجناحين والذيل دون الاقتراب من عش أو موضع راحة."
+              ]
+            },
+            {
+              "heading": "الدور البيئي والحماية",
+              "paragraphs": [
+                "يتأثر بإزالة الفرائس وفقدان الموائل وأخذ البيض والفراخ والاتجار غير المشروع. المحافظة على مواقع التعشيش الهادئة وتطبيق قوانين الحماية يدعمان التجمعات البرية. قيمة التعرف الصحيح تشمل تمييز الطيور البرية من الطيور الهاربة من الأسر عند توثيق سجل جديد."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Falco biarmicus."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Nogga_Eugene — CC0 1.0."
+        },
+        "en": {
+          "title": "Lanner Falcon",
+          "subtitle": "Falco biarmicus",
+          "meta_description": "Lanner Falcon Falco biarmicus belongs to Falconidae. Slender and long-tailed, adults often show a rufous crown and nape with a narrower dark moustache than Peregrine. Juveniles are more streaked. Geographic variation.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Lanner Falcon Falco biarmicus belongs to Falconidae. Slender and long-tailed, adults often show a rufous crown and nape with a narrower dark moustache than Peregrine. Juveniles are more streaked. Geographic variation means separation from Saker and Peregrine requires proportions, head and tail patterns together."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Open rocky country, semidesert and farmland provide hunting habitat. Birds dominate the diet, supplemented by small mammals, reptiles and insects. It pursues prey in flight or attacks from a perch; pairs may cooperate. Hunting behaviour alone does not settle identification."
+              ]
+            },
+            {
+              "heading": "Breeding and parental care",
+              "paragraphs": [
+                "It uses rock ledges or another bird’s old nest rather than building a substantial nest. A typical clutch contains three or four eggs; incubation lasts about 32 days. Young begin flying around 35–47 days after hatching and remain dependent on parents. Breeding calendars differ between North Africa and other regions."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its African and Middle Eastern range includes resident Arab populations in North Africa. Lebanon’s checklist instead describes scarce passage and winter visits without confirmed breeding. Maghreb resident status should not be transferred across the Levant."
+              ]
+            },
+            {
+              "heading": "Seasonality and observation",
+              "paragraphs": [
+                "November sightings may involve eastern winter visitors or resident Maghreb birds. Distant photographs require caution with similar falcons. A sequence showing head, wings and tail helps identification without approaching nests or resting places."
+              ]
+            },
+            {
+              "heading": "Ecological role and conservation",
+              "paragraphs": [
+                "Prey depletion, habitat loss, egg and chick collection and illegal trade affect wild populations. Quiet nesting sites and enforcement of protection laws matter. Reliable records should also distinguish genuinely wild birds from individuals escaped from captivity."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Falco biarmicus."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Nogga_Eugene — CC0 1.0."
+        },
+        "fr": {
+          "title": "Faucon lanier",
+          "subtitle": "Falco biarmicus",
+          "meta_description": "Le Faucon lanier Falco biarmicus appartient aux Falconidae. Élancé et assez long de queue, l’adulte présente souvent calotte et nuque rousses, avec une moustache plus étroite que celle du Pèlerin. Le jeune est davantage.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Faucon lanier Falco biarmicus appartient aux Falconidae. Élancé et assez long de queue, l’adulte présente souvent calotte et nuque rousses, avec une moustache plus étroite que celle du Pèlerin. Le jeune est davantage strié. Variations géographiques, proportions et dessins de la tête et de la queue doivent être combinés pour le distinguer du Sacre et du Pèlerin."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Milieux ouverts et rocheux, semi-déserts et campagnes lui servent de terrains de chasse. Les oiseaux dominent son régime, complété par petits mammifères, reptiles et insectes. Poursuite aérienne et attaque depuis un perchoir sont possibles ; les couples coopèrent parfois. Le comportement seul ne tranche pas l’identification."
+              ]
+            },
+            {
+              "heading": "Reproduction et soins aux jeunes",
+              "paragraphs": [
+                "Il utilise une corniche ou l’ancien nid d’un autre oiseau. La ponte habituelle compte trois ou quatre œufs ; l’incubation dure environ 32 jours. Les jeunes commencent à voler vers 35–47 jours après l’éclosion, tout en dépendant encore des parents. Le calendrier diffère entre Afrique du Nord et autres régions."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire africaine et moyen-orientale comprend des populations arabes résidentes en Afrique du Nord. La liste libanaise décrit plutôt de rares passages et visites hivernales, sans reproduction confirmée. Le statut résident maghrébin ne se transpose pas à tout le Levant."
+              ]
+            },
+            {
+              "heading": "Saisons et observation",
+              "paragraphs": [
+                "En novembre, les observations concernent des hivernants orientaux ou des résidents maghrébins. Les clichés lointains exigent de la prudence avec les faucons proches. Une série montrant tête, ailes et queue aide sans approcher nid ou reposoir."
+              ]
+            },
+            {
+              "heading": "Rôle écologique et conservation",
+              "paragraphs": [
+                "Raréfaction des proies, perte d’habitats, prélèvement des œufs et jeunes et commerce illégal affectent les populations. Tranquillité des nids et application des protections comptent. Les nouveaux signalements doivent aussi distinguer oiseaux sauvages et individus échappés de captivité."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020), 186–238.",
+                "University of Michigan Museum of Zoology — Animal Diversity Web: Falco biarmicus."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Nogga_Eugene — CC0 1.0."
+        }
+      }
+    }
+  ]
+}
