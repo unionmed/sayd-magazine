@@ -8,10 +8,11 @@ test('UAE trip recommendations exclude explicitly Lebanese-only legal and campin
  const base={lang:'ar',body:'',keywords:'',category:'قوانين',date:'2026-11-04'};
  const lebanon={...base,title:'قانون الصيد اللبناني 580/2004',url:'/lebanon/'};
  const camp={...base,title:'التخييم في الطبيعة اللبنانية',url:'/camp/'};
+ const unspecifiedLaw={...base,title:'وزارة البيئة تفتتح موسم الصيد',url:'/unspecified/'};
  const uae={...base,title:'قانون الصيد في الإمارات',url:'/uae/'};
  const comparison={...base,title:'قانون الصيد في الإمارات ولبنان مقارنة',url:'/comparison/'};
  const input={destination:'دبي، الإمارات العربية المتحدة',activities:['hunting']};
- assert.deepEqual(retrieveTrip([lebanon,camp,uae,comparison],'قانون الصيد',input).map(a=>a.url),['/uae/','/comparison/']);
+ assert.deepEqual(retrieveTrip([lebanon,camp,unspecifiedLaw,uae,comparison],'قانون الصيد',input).map(a=>a.url),['/uae/','/comparison/']);
  assert.ok(retrieveTrip([lebanon],'قانون الصيد',{destination:'لبنان',activities:['hunting']}).includes(lebanon));
 });
 test('a Lebanese hunting notice cannot verify a UAE destination', async()=>{

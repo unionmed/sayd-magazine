@@ -37,6 +37,7 @@ export function retrieveTrip(articles,query,trip,limit=6){
    const topic=indexed(article).title+' '+indexed(article).keywords;
    const explicitlyLebanese=/لبنان|لبناني|لبنانيه|lebanon|lebanese|liban/.test(topic);
    const explicitlyEmirati=/الامارات|اماراتي|united arab emirates|\buae\b|dubai|دبي/.test(topic);
+   if(trip?.activities?.includes('hunting'))return explicitlyEmirati;
    return !explicitlyLebanese||explicitlyEmirati;
   });
  }
