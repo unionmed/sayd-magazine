@@ -556,5 +556,179 @@
       "en": "Hasbaya Shehabi Serail appears in UNESCO’s 2026 enhanced-protection list. This establishes its listed identity, not visitor opening, permission or road access; confirm these with the responsible authority.",
       "fr": "Le sérail Chehabi de Hasbaya figure sur la liste UNESCO 2026 de protection renforcée. Cela ne confirme ni ouverture aux visiteurs, ni autorisation, ni accès routier."
     }
+  },
+  {
+    "id": "dubai-al-qudra",
+    "names": [
+      "بحيرات القدرة",
+      "Al Qudra Lakes"
+    ],
+    "regions": [
+      "دبي",
+      "Dubai",
+      "Dubaï"
+    ],
+    "kind": "nature",
+    "locality": {
+      "ar": "إمارة دبي، الإمارات العربية المتحدة",
+      "en": "Dubai, United Arab Emirates",
+      "fr": "Dubaï, Émirats arabes unis"
+    },
+    "sources": [
+      "https://www.visitdubai.com/en/places-to-visit/al-qudra-lakes"
+    ],
+    "basis": "Primary source identity and activity review, 2026-11-04. Current booking and access require confirmation.",
+    "checked_at": "2026-11-04",
+    "publication_date": null,
+    "description": {
+      "ar": "بحيرات القدرة في دبي، موئل طبيعي تصفه هيئة السياحة للزيارة ومراقبة الطبيعة. لا يثبت الوصف حجزًا أو طريقًا مقاسًا أو إذن نار.",
+      "en": "Al Qudra Lakes, Dubai, is a nature destination listed by Dubai tourism. Booking, measured transfers and fire permission remain unconfirmed.",
+      "fr": "Les lacs Al Qudra sont un lieu naturel répertorié par Dubai Tourism. Réservation, trajets mesurés et feu restent à vérifier."
+    }
+  },
+  {
+    "id": "dubai-sonara-dining",
+    "names": [
+      "سونارا",
+      "مطعم سونارا",
+      "Sonara Camp",
+      "Sonara Camp Dubai",
+      "Sonara Desert Restaurant"
+    ],
+    "regions": [
+      "دبي",
+      "Dubai",
+      "Dubaï"
+    ],
+    "kind": "meal",
+    "locality": {
+      "ar": "إمارة دبي، الإمارات العربية المتحدة",
+      "en": "Dubai, United Arab Emirates",
+      "fr": "Dubaï, Émirats arabes unis"
+    },
+    "sources": [
+      "https://www.nara.ae/sonara-camp-dubai/"
+    ],
+    "basis": "Primary source identity and activity review, 2026-11-04. Current booking and access require confirmation.",
+    "checked_at": "2026-11-04",
+    "publication_date": null,
+    "description": {
+      "ar": "مطعم صحراوي في محمية دبي الصحراوية، يقدم مطبخًا متوسطيًا وشرق أوسطي. يعلن المشغل خدمة العشاء والتواصل +971 50 336 7909 وinfo@sonara.ae. مواعيد اليوم والحجز تحتاج تأكيدًا، ومبيت The Nest وحدة مستقلة.",
+      "en": "Desert dining in Dubai Desert Conservation Reserve, with Mediterranean and Middle Eastern food. Operator contact +971 50 336 7909, info@sonara.ae. Confirm booking and timing. The Nest overnight product is separate.",
+      "fr": "Restaurant désertique dans la réserve de Dubaï, cuisine méditerranéenne et moyen-orientale. Contact +971 50 336 7909, info@sonara.ae. Confirmer horaires et réservation. Nuitée The Nest séparée."
+    },
+    "nature_dining": true,
+    "source_role": "operator"
+  },
+  {
+    "id": "dubai-al-hadheerah",
+    "names": [
+      "الحظيرة",
+      "مطعم الحظيرة",
+      "Al Hadheerah"
+    ],
+    "regions": [
+      "دبي",
+      "Dubai",
+      "Dubaï"
+    ],
+    "kind": "meal",
+    "locality": {
+      "ar": "إمارة دبي، الإمارات العربية المتحدة",
+      "en": "Dubai, United Arab Emirates",
+      "fr": "Dubaï, Émirats arabes unis"
+    },
+    "sources": [
+      "https://www.visitdubai.com/en/restaurants/al-hadheerah",
+      "https://www.babalshams.com/dining/al-hadheerah"
+    ],
+    "basis": "Primary source identity and activity review, 2026-11-04. Current booking and access require confirmation.",
+    "checked_at": "2026-11-04",
+    "publication_date": null,
+    "description": {
+      "ar": "مطعم الحظيرة في باب الشمس على طريق القدرة بدبي، تجربة طعام صحراوية مكشوفة ومأكولات شرق أوسطية ومحطات طبخ. الاتصال المنشور 04 809 6194. يلزم تأكيد مواعيد العشاء والحجز، ولا يفترض توفر غداء.",
+      "en": "Al Hadheerah at Bab Al Shams, Al Qudra Road, Dubai offers open-air desert dining and Middle Eastern live cooking. Published contact +971 4 809 6194. Confirm dinner timing and availability; lunch is not established.",
+      "fr": "Al Hadheerah à Bab Al Shams, route Al Qudra, propose un dîner désertique en plein air et une cuisine moyen-orientale. Contact +971 4 809 6194. Déjeuner non établi; confirmer réservation et horaires."
+    },
+    "nature_dining": true,
+    "required_sources": [
+      "https://www.visitdubai.com/en/restaurants/al-hadheerah",
+      "https://www.babalshams.com/dining/al-hadheerah"
+    ],
+    "source_role": "operator"
+  },
+  {
+    "id": "dubai-hatta-horses",
+    "names": [
+      "Hatta Horses",
+      "Hatta Horses at Wadi Hub",
+      "خيل حتا",
+      "حتا هورسز"
+    ],
+    "regions": [
+      "دبي",
+      "Dubai",
+      "Dubaï"
+    ],
+    "kind": "activity",
+    "locality": {
+      "ar": "إمارة دبي، الإمارات العربية المتحدة",
+      "en": "Dubai, United Arab Emirates",
+      "fr": "Dubaï, Émirats arabes unis"
+    },
+    "sources": [
+      "https://www.visithatta.com/en/play/horse-riding"
+    ],
+    "basis": "Primary source identity and activity review, 2026-11-04. Current booking and access require confirmation.",
+    "checked_at": "2026-11-04",
+    "publication_date": null,
+    "description": {
+      "ar": "تجربة Hatta Horses في وادي هب بحتا، دبي. ينشر الموقع جولة 30 دقيقة بين الأشجار للمبتدئين وحد وزن 100 كغ وعمر 5 سنوات فأكثر، والاتصال +971 52 446 0322. يلزم تأكيد الموعد والتجهيز والحجز. تختلف عن مسار بلدية دبي قرب سد الخطم.",
+      "en": "Hatta Horses at Wadi Hub, Hatta, Dubai lists a 30-minute beginner ride, weight limit 100 kg, age five and over, contact +971 52 446 0322. Confirm equipment, booking and timing. Separate from the municipal track at Al Khattem Dam.",
+      "fr": "Hatta Horses à Wadi Hub propose 30 minutes pour débutants, poids maximal 100 kg, âge minimum cinq ans. Contact +971 52 446 0322. Confirmer équipement et réservation. Distinct de la piste municipale."
+    },
+    "activities_supported": [
+      "riding"
+    ],
+    "source_role": "operator"
+  },
+  {
+    "id": "dubai-al-jiyad",
+    "names": [
+      "Al Jiyad Stables",
+      "إسطبلات الجياد",
+      "اسطبلات الجياد"
+    ],
+    "regions": [
+      "دبي",
+      "Dubai",
+      "Dubaï"
+    ],
+    "kind": "activity",
+    "locality": {
+      "ar": "إمارة دبي، الإمارات العربية المتحدة",
+      "en": "Dubai, United Arab Emirates",
+      "fr": "Dubaï, Émirats arabes unis"
+    },
+    "sources": [
+      "https://www.visitdubai.com/en/places-to-visit/al-jiyad-stables",
+      "https://www.aljiyadstables.com/contact-us/"
+    ],
+    "basis": "Primary source identity and activity review, 2026-11-04. Current booking and access require confirmation.",
+    "checked_at": "2026-11-04",
+    "publication_date": null,
+    "description": {
+      "ar": "إسطبلات الجياد على طريق القدرة قبل باب الشمس في دبي، وتؤيد هيئة السياحة تدريب المبتدئين. هاتف المشغل +971 50 5599262. لم تثبت مدة الجلسة والتجهيز والحجز الحالي.",
+      "en": "Al Jiyad Stables on Al Qudra Road near Bab Al Shams, Dubai, offers beginner training according to Dubai tourism. Operator phone +971 50 5599262. Session duration, equipment and current booking need confirmation.",
+      "fr": "Al Jiyad Stables près de Bab Al Shams à Dubaï propose une formation débutante selon Dubai Tourism. Téléphone +971 50 5599262. Durée, équipement et réservation à confirmer."
+    },
+    "activities_supported": [
+      "riding"
+    ],
+    "source_role": "operator",
+    "required_sources": [
+      "https://www.visitdubai.com/en/places-to-visit/al-jiyad-stables",
+      "https://www.aljiyadstables.com/contact-us/"
+    ]
   }
 ]

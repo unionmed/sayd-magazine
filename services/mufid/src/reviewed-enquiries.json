@@ -106,5 +106,31 @@
       "en": "seasonal bird information for Ammiq and the current visitor/entrance authority; the contact page locates A Rocha at Meksé Nature Park, not proof of present Ammiq visitor management.",
       "fr": "oiseaux saisonniers d’Ammiq et gestionnaire actuel de l’accès ; le contact situe A Rocha au parc de Meksé, sans confirmer la gestion actuelle des visites à Ammiq."
     }
+  },
+  {
+    "id": "dubai-hatta-stay-enquiry",
+    "names": {
+      "ar": "حجوزات منتجعات حتا",
+      "en": "Hatta Resorts reservations",
+      "fr": "Réservations Hatta Resorts"
+    },
+    "regions": [
+      "دبي",
+      "Dubai",
+      "Dubaï"
+    ],
+    "activities": [
+      "camping"
+    ],
+    "phone": "+971 4 8205555 / +971 4 8205500",
+    "email": "hotelreservation@hattaresorts.com",
+    "source_url": "https://www.visithatta.com/en/stays/hatta-dome-park",
+    "checked_at": "2026-11-04",
+    "publication_date": null,
+    "description": {
+      "ar": "اسأل عن خيمة تستوعب أربعة أشخاص وتوفرها ومرافقها. صفحة القباب تصف بالغين وطفلين تحت 12، وتعرض إغلاق الصيف مع إعلان موسم لاحق في التذييل، فتحتاج الإتاحة لإعادة تأكيد. لم تثبت خيمة لأربعة بالغين.",
+      "en": "Ask about a tent for four people, availability and facilities. The dome page specifies two adults and two children under 12 and mixes summer closure with a later-season footer; current access needs confirmation. Four-adult tent capacity is unproven.",
+      "fr": "Demander une tente pour quatre personnes, disponibilité et équipements. La page indique deux adultes et deux enfants et mêle fermeture estivale et annonce de saison suivante. Capacité pour quatre adultes non établie."
+    }
   }
 ]

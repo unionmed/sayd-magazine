@@ -119,7 +119,7 @@ export function createHandler(network=fetch,options={}) {
           if(hunting)itinerary={summary:'',format:'advice',region:input.trip?.destination||'',days:[],legal:{status:'unconfirmed',season_start_year:new Date().getUTCFullYear(),publication_date:null,source_url:null}};
           else return partialReply({missing_details:[...new Set(defects.map(d=>d.split(':')[0]))]});
         }
-        if(itinerary.legal?.status&&itinerary.legal.status!=='unconfirmed'&&!await verifyLegalNotice(itinerary.legal,network)){
+        if(itinerary.legal?.status&&itinerary.legal.status!=='unconfirmed'&&!await verifyLegalNotice(itinerary.legal,network,new Date(),input.trip?.destination||'')){
           itinerary.legal={status:'unconfirmed',season_start_year:new Date().getUTCFullYear(),publication_date:null,source_url:itinerary.legal.source_url};output.verified=false;
         }
         if(itineraryNeedsReview(itinerary))return reply({answer:ACCESS_NOTE[input.lang],articles:cards,sources:[],verified:false,access_review_required:true});
@@ -128,6 +128,14 @@ export function createHandler(network=fetch,options={}) {
           const note={ar:'لم أتحقق من إعلان رسمي نافذ للموسم الجاري في الوجهة المطلوبة؛ لذلك لا أعطي وجهة صيد على أساس أنه مسموح. البيان الخاص بموسم سابق لا يثبت الوضع الحالي. الناقص تحديدًا قرار وزارة البيئة للموسم الجاري، ولائحة الطرائد والأعداد والقيود. الرخصة والتأمين لا يحلان محل قرار فتح الموسم.',en:'I could not verify an official notice in force for the current hunting season at the requested destination, so I cannot recommend a hunt as permitted. A previous-season notice does not establish the current position. Confirm the current season decision, permitted species and bag limits, and required licences with the relevant authority before going.',fr:'Je n’ai pas pu vérifier une décision officielle applicable à la saison de chasse actuelle dans la destination demandée. Je ne peux donc pas proposer une chasse comme autorisée. Un avis d’une saison passée ne prouve pas la situation actuelle. Confirmez la saison, les espèces, les quotas et les permis auprès de l’autorité compétente avant de partir.'};
           itinerary.summary=note[input.lang];
           const lebanon= /لبنان|lebanon|liban/i.test(input.trip?.destination||'');
+          if(/الإمارات|الامارات|united arab emirates|\buae\b|dubai|دبي/i.test(input.trip?.destination||'')){
+            const localNote={
+              ar:'لم أستكمل التحقق من الوضع القانوني للصيد البري في الوجهة المطلوبة. يلزم نص اتحادي ومحلي نافذ يحدد الأنواع والقيود والتصاريح والجهة المختصة. تُراجع الرماية الرياضية والصقارة كل نشاط وفق نظامه. لا أعتمد وجهة صيد قبل إثبات الإذن والوصول.',
+              en:'The current legal position for wild hunting at this destination remains unverified. Applicable national and local rules, species restrictions, permits and the responsible authority are needed. Sport shooting and falconry require their own checks. No hunting destination is accepted without permission and access evidence.',
+              fr:'Le cadre actuel de la chasse sauvage reste à vérifier pour cette destination : textes nationaux et locaux applicables, espèces, restrictions, permis et autorité compétente. Tir sportif et fauconnerie nécessitent leurs propres vérifications. Aucun lieu de chasse n’est validé sans preuve d’autorisation et d’accès.'
+            };
+            itinerary.summary=localNote[input.lang];
+          }
           const law=output.sources.find(s=>{try{return /(?:^|\.)moe.gov.lb$/.test(new URL(s.url).hostname)&&/قانون رقم 580/.test(decodeURIComponent(s.url).replace(/-/g,' '));}catch{return false;}});
           if(lebanon&&law){
             const licence={ar:' التحضير القانوني: رخصة الصيد شخصية وسنوية من وزارة البيئة. أثناء الصيد يلزم حملها مع رخصة السلاح وتأمين المسؤولية تجاه الغير، وفق المادتين 6 و13 من القانون 580/2004. هذه المستندات لا تفتح الموسم ولا تحدد طرائده.',en:' Legal preparation under Articles 6 and 13 of Law 580/2004: an annual personal hunting licence from the Environment Ministry, the firearm licence and third-party hunting insurance. These documents do not open a season or define permitted game.',fr:' Préparation légale selon les articles 6 et 13 de la loi 580/2004 : permis personnel annuel du ministère de l’Environnement, permis d’arme et assurance de responsabilité envers les tiers. Ces documents ne déclarent pas la saison ouverte.'};

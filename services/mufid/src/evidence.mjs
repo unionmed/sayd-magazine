@@ -1,7 +1,9 @@
 // A search citation is a lead, not proof of a current legal decision.
 import {normalize} from './core.mjs';
-export async function verifyLegalNotice(legal,network=fetch,now=new Date()){
+export async function verifyLegalNotice(legal,network=fetch,now=new Date(),destination=''){
  if(!legal||legal.status==='unconfirmed')return false;
+ // This verifier supports Lebanon only. A matching Lebanese notice cannot authorise another country.
+ if(/الإمارات|الامارات|united arab emirates|\\buae\\b|dubai|دبي/i.test(destination))return false;
  let url;try{url=new URL(legal.source_url);}catch{return false;}
  if(url.protocol!=='https:'||url.username||url.password||url.port||!['moe.gov.lb','www.moe.gov.lb'].includes(url.hostname))return false;
  const year=now.getUTCFullYear();

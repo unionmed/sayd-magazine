@@ -2,6 +2,7 @@
 // The model must actually retrieve the page and use the returned citation URL.
 import {normalize} from './core.mjs';
 const groups=[
+ {areas:['دبي','dubai','dubaï'],urls:["https://www.visitdubai.com/en/places-to-visit/al-qudra-lakes","https://www.nara.ae/sonara-camp-dubai/","https://www.visitdubai.com/en/restaurants/al-hadheerah","https://www.babalshams.com/dining/al-hadheerah","https://www.visithatta.com/en/play/horse-riding","https://www.visitdubai.com/en/places-to-visit/al-jiyad-stables","https://www.aljiyadstables.com/contact-us/"],note:'Dubai records establish identity and activity facts only. Confirm exact operator hours and booking. Hatta is within Dubai emirate but distant from central Dubai. Do not infer a nearby loop or lunch service from dinner listings. Research UAE law separately from Lebanon.'},
  {areas:['البقاع','bekaa','beqaa','békaa'],urls:['https://lebanon.arocha.org/home/conservation-2/previous-project-ammiq-wetlands/','https://lebanon.arocha.org/home/get-involved/contact-us/','https://lebanon.arocha.org/wp-content/uploads/sites/43/2022/06/ARL-SC-05-3-Report-on-Roosting-Harrier-Project-at-Aammiq.pdf'],note:'The Ammiq PDF is a 2004–2005 survey published December 2005, not current sightings. A Rocha contact is a research enquiry, not proof of present visitor management. Never infer access from habitat or historical records.'},
  {areas:['الشوف','chouf','shouf','بيت الدين','دير القمر'],urls:['https://www.beiteddine.org/the-palace/','https://www.shoufcedar.org/visiting_us','https://www.shoufcedar.org/visiting_us/reaching_the_reserve','https://www.deiraloumarahotel.com/restaurant/','https://www.shoufcedar.org/visiting_us/the_trails','https://bkerzay.com/dining','https://bkerzay.com/'],note:'Separate actual cedar entrances from the park office. The reserve publishes some road distances; use only an exact matching pair, not a distance to a different gate.'},
  {areas:['إهدن','ehden'],urls:['https://horshehden.org/ecotourism/','https://www.moe.gov.lb/ProtectedAreas/images/maps/TRAILMAP-EHDEN.pdf','https://horshehden.org/wp-content/uploads/2024/05/horsh-ehden-trail-map.pdf'],note:'The ministry trail map has trail measurements; the newer operator map is not evidence for measurements copied from the older map. Attribute the exact document. Select one trail and state one-way versus return distance. Older map data cannot establish present access.'},
@@ -13,6 +14,13 @@ const groups=[
 // Each directory URL has an explicit activity purpose. Geography alone does not
 // make a restaurant/guesthouse a camping, trail or legal-research source.
 const purposes=new Map([
+["https://www.visitdubai.com/en/places-to-visit/al-qudra-lakes",["walking","birds"]],
+["https://www.nara.ae/sonara-camp-dubai/",["dining"]],
+["https://www.visitdubai.com/en/restaurants/al-hadheerah",["dining"]],
+["https://www.babalshams.com/dining/al-hadheerah",["dining"]],
+["https://www.visithatta.com/en/play/horse-riding",["riding"]],
+["https://www.visitdubai.com/en/places-to-visit/al-jiyad-stables",["riding"]],
+["https://www.aljiyadstables.com/contact-us/",["riding"]],
  ['https://lebanon.arocha.org/home/conservation-2/previous-project-ammiq-wetlands/',['birds']],
  ['https://lebanon.arocha.org/home/get-involved/contact-us/',['birds']],
  ['https://lebanon.arocha.org/wp-content/uploads/sites/43/2022/06/ARL-SC-05-3-Report-on-Roosting-Harrier-Project-at-Aammiq.pdf',['birds']],
