@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "رادار-صيد-العربي-تشرين-الأول-2026",
+      "titles": {
+        "ar": "رادار صيد لشهر تشرين الأول: 23 عملية ضبط لأشخاص مرتبطة بالصيد البري و57 شخصًا مضبوطًا أو موقوفًا في ست دول عربية.",
+        "en": "Sayd October Radar: 23 wildlife-hunting enforcement operations and 57 people apprehended or detained across six Arab countries.",
+        "fr": "Radar Sayd d’octobre : 23 opérations de contrôle liées à la chasse et 57 personnes interpellées ou arrêtées dans six pays arabes."
+      },
+      "title": "رادار صيد لشهر تشرين الأول: 23 عملية ضبط لأشخاص مرتبطة بالصيد البري و57 شخصًا مضبوطًا أو موقوفًا في ست دول عربية."
+    },
+    {
       "slug": "طيور-تتعطر-بالنمل",
       "titles": {
         "ar": "طيور تتعطر بالنمل: دراسة على السمنة اليابانية تكشف أثر إفرازاته في إبعاد بعض الحشرات.",
@@ -81,15 +90,6 @@
         "fr": "Wanaameen gagne la préparatoire à la Coupe du prince Mohammed ben Saoud Al Kabeer avec 15 longueurs d’avance"
       },
       "title": "«ونعمين» يفوز بتحضيري كأس الأمير محمد بن سعود الكبير بفارق 15 طولًا"
-    },
-    {
-      "slug": "الصيد-السياحي-في-دول-المغرب-العربي",
-      "titles": {
-        "ar": "الصيد السياحي في دول المغرب العربي",
-        "en": "Hunting Tourism in the Maghreb",
-        "fr": "Le tourisme cynégétique au Maghreb"
-      },
-      "title": "الصيد السياحي في دول المغرب العربي"
     }
   ]
 }
