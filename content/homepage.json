@@ -146,7 +146,16 @@
     "طيطوي-المستنقعات",
     "بقويقة-مخططة-الذيل",
     "غطاس-أسود-الرقبة",
-    "الزقزاق-الشامي"
+    "الزقزاق-الشامي",
+    "الحسون-الأوروبي",
+    "البلشون-الذهبي",
+    "العندليب-الشائع",
+    "بلشون-الصخر-الغربي",
+    "النحام-الكبير",
+    "الحجل-البربري",
+    "اللقلق-الأسود",
+    "الحوام-طويل-الساقين",
+    "الصقر-الوكري"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -244,7 +253,16 @@
     "بقويقة-مخططة-الذيل",
     "غطاس-أسود-الرقبة",
     "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم",
-    "الزقزاق-الشامي"
+    "الزقزاق-الشامي",
+    "الحسون-الأوروبي",
+    "البلشون-الذهبي",
+    "العندليب-الشائع",
+    "بلشون-الصخر-الغربي",
+    "النحام-الكبير",
+    "الحجل-البربري",
+    "اللقلق-الأسود",
+    "الحوام-طويل-الساقين",
+    "الصقر-الوكري"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -662,7 +680,16 @@
     "بقويقة-مخططة-الذيل": "birds",
     "غطاس-أسود-الرقبة": "birds",
     "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم": "photos",
-    "الزقزاق-الشامي": "birds"
+    "الزقزاق-الشامي": "birds",
+    "الحسون-الأوروبي": "birds",
+    "البلشون-الذهبي": "birds",
+    "العندليب-الشائع": "birds",
+    "بلشون-الصخر-الغربي": "birds",
+    "النحام-الكبير": "birds",
+    "الحجل-البربري": "birds",
+    "اللقلق-الأسود": "birds",
+    "الحوام-طويل-الساقين": "birds",
+    "الصقر-الوكري": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1621,6 +1648,87 @@
         "ar": "سرب من الزقزاق الشامي بقنازع رفيعة وريش أخضر داكن وبطون بيضاء يقف في ماء ضحل",
         "en": "Northern Lapwings with narrow crests, dark green upperparts and white bellies standing in shallow water",
         "fr": "Vanneaux huppés aux fines huppes, au dessus vert sombre et au ventre blanc dans une eau peu profonde"
+      }
+    },
+    "الحسون-الأوروبي": {
+      "image": "media/publications/birds-catchup-20261104-a/carduelis-carduelis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الحسون الأوروبي — Carduelis carduelis",
+        "en": "European Goldfinch — Carduelis carduelis",
+        "fr": "Chardonneret élégant — Carduelis carduelis"
+      }
+    },
+    "البلشون-الذهبي": {
+      "image": "media/publications/birds-catchup-20261104-a/ardeola-ralloides.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "البلشون الذهبي — Ardeola ralloides",
+        "en": "Squacco Heron — Ardeola ralloides",
+        "fr": "Crabier chevelu — Ardeola ralloides"
+      }
+    },
+    "العندليب-الشائع": {
+      "image": "media/publications/birds-catchup-20261104-a/luscinia-megarhynchos.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "العندليب الشائع — Luscinia megarhynchos",
+        "en": "Common Nightingale — Luscinia megarhynchos",
+        "fr": "Rossignol philomèle — Luscinia megarhynchos"
+      }
+    },
+    "بلشون-الصخر-الغربي": {
+      "image": "media/publications/birds-catchup-20261104-a/egretta-gularis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بلشون الصخر الغربي — Egretta gularis",
+        "en": "Western Reef Heron — Egretta gularis",
+        "fr": "Aigrette des récifs — Egretta gularis"
+      }
+    },
+    "النحام-الكبير": {
+      "image": "media/publications/birds-catchup-20261104-a/phoenicopterus-roseus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "النحام الكبير — Phoenicopterus roseus",
+        "en": "Greater Flamingo — Phoenicopterus roseus",
+        "fr": "Flamant rose — Phoenicopterus roseus"
+      }
+    },
+    "الحجل-البربري": {
+      "image": "media/publications/birds-catchup-20261104-a/alectoris-barbara.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الحجل البربري — Alectoris barbara",
+        "en": "Barbary Partridge — Alectoris barbara",
+        "fr": "Perdrix gambra — Alectoris barbara"
+      }
+    },
+    "اللقلق-الأسود": {
+      "image": "media/publications/birds-catchup-20261104-a/ciconia-nigra.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "اللقلق الأسود — Ciconia nigra",
+        "en": "Black Stork — Ciconia nigra",
+        "fr": "Cigogne noire — Ciconia nigra"
+      }
+    },
+    "الحوام-طويل-الساقين": {
+      "image": "media/publications/birds-catchup-20261104-a/buteo-rufinus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الحوام طويل الساقين — Buteo rufinus",
+        "en": "Long-legged Buzzard — Buteo rufinus",
+        "fr": "Buse féroce — Buteo rufinus"
+      }
+    },
+    "الصقر-الوكري": {
+      "image": "media/publications/birds-catchup-20261104-a/falco-biarmicus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "الصقر الوكري — Falco biarmicus",
+        "en": "Lanner Falcon — Falco biarmicus",
+        "fr": "Faucon lanier — Falco biarmicus"
       }
     }
   },
