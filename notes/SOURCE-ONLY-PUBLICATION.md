@@ -98,13 +98,14 @@ hashes. Normal licensed-image evidence and legally required attribution remain
 unchanged, including when visible descriptive captions are omitted. Never relabel
 this unresolved status as licensed or verified permission to make a test pass.
 
-The separate `owner_selected_external_source_unresolved` status records an informed
-owner selection of externally retrieved photos, without calling them user-supplied.
-It requires `user_supplied: false`, `external_rights_verified: false`,
-`authenticity_verified: false`, and the same bounded private authorization reference.
-It forbids a `license_url` and carries the same independent decision/hash review,
-unresolved-rights limitations and attribution obligations as above. Neither status
-turns an editorial decision into a licence or permits general future reuse.
+The one exact `arab-radar-october-2026` publication has a bounded schema exception:
+its nine fixed photo IDs, local paths, published/source SHA-256 values, order,
+trilingual slugs and section placements must match the constants in the schema.
+It contains exactly one article using those nine photos, with empty captions.
+For this bundle the `rights` field is omitted and rejected if present. This adds
+no permission status, verification claim or reusable authorization. Every other
+release retains the existing required photo fields and validation. Photo integrity,
+source references, alt text, compilation review and all publication gates remain.
 
 Each article has complete AR/EN/FR slugs, author, title, description, subtitle,
 plain-text sections, sources, end-of-article photo credit and optional ticker title.

@@ -260,7 +260,7 @@ def body_html(stage, article, language, photos, pairs, doors, seo):
     source_urls = list(dict.fromkeys(photos[p].get('source_url') for p in article['photos'] if photos[p].get('source_url')))
     for index, source_url in enumerate(source_urls, 1):
         result += ' · <a href="' + html.escape(source_url, quote=True) + '">' + str(index) + '</a>'
-    licenses = list(dict.fromkeys(photos[p]['rights'].get('license_url') for p in article['photos'] if photos[p]['rights'].get('license_url')))
+    licenses = list(dict.fromkeys(photos[p].get('rights', {}).get('license_url') for p in article['photos'] if photos[p].get('rights', {}).get('license_url')))
     for licence in licenses:
         result += ' · <a rel="license" href="' + html.escape(licence, quote=True) + '">' + html.escape(licence) + '</a>'
     result += '</p>'

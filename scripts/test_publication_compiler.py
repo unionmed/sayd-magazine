@@ -437,6 +437,88 @@ class PhotoPlacementTests(unittest.TestCase):
                     self.assertEqual(hashlib.sha256(self.render(value, lang).encode()).hexdigest(), digest)
 
 
+class ExactRadarBundleTests(unittest.TestCase):
+    def fixture(self):
+        value = record(release=schema.RADAR_RELEASE)
+        template = value['photos'][0]
+        value['photos'] = []
+        for photo_id, path, digest in schema.RADAR_PHOTOS:
+            photo = copy.deepcopy(template)
+            photo.update(id=photo_id, path=path, sha256=digest, source_sha256=digest,
+                         caption={lang: '' for lang in schema.LANGS})
+            del photo['rights']
+            value['photos'].append(photo)
+        article = value['articles'][0]
+        article['slugs'] = dict(schema.RADAR_SLUGS)
+        article['photos'] = [photo[0] for photo in schema.RADAR_PHOTOS]
+        article['photo_placements'] = copy.deepcopy(schema.RADAR_PLACEMENTS)
+        for lang in schema.LANGS:
+            article['translations'][lang]['sections'] *= 21
+        return value
+
+    def test_exact_bundle_omits_field_without_adding_status(self):
+        value = self.fixture()
+        self.assertIs(schema.validate(value), value)
+        for photo in value['photos']:
+            self.assertNotIn('rights', photo)
+        # Rendering is independent of byte hashing (compile gates check hashes).
+        body = PullquoteTests.render(self, value, 'en')
+        self.assertEqual(body.count('<figure>'), 9)
+        self.assertNotIn('<figcaption>', body)
+        self.assertNotIn('rel="license"', body)
+        self.assertNotIn('private:', body)
+
+    def test_no_rights_field_is_accepted_on_any_exact_photo(self):
+        for index in range(9):
+            for rights in (None, {}, {'status': 'owned'}, {'status': 'owner_selected_external_source_unresolved'}):
+                value = self.fixture(); value['photos'][index]['rights'] = rights
+                with self.subTest(index=index, rights=rights), self.assertRaises(ValueError):
+                    schema.validate(value)
+
+    def test_every_photo_identity_component_is_exact(self):
+        for index in range(9):
+            for field in ('id', 'path', 'sha256', 'source_sha256'):
+                value = self.fixture()
+                value['photos'][index][field] += 'x'
+                with self.subTest(index=index, field=field), self.assertRaises(ValueError):
+                    schema.validate(value)
+            for field in ('source_reference', 'alt', 'sha256', 'source_sha256'):
+                value = self.fixture(); del value['photos'][index][field]
+                with self.subTest(index=index, missing=field), self.assertRaises(ValueError):
+                    schema.validate(value)
+
+    def test_release_slug_article_count_photo_count_and_order_are_bound(self):
+        mutations = [
+            lambda v: v.update(id='different-release'),
+            lambda v: v['photos'].pop(),
+            lambda v: v['photos'].append(copy.deepcopy(v['photos'][0])),
+            lambda v: v['photos'].reverse(),
+            lambda v: v.update(articles=[]),
+            lambda v: v['articles'].append(copy.deepcopy(v['articles'][0])),
+            lambda v: v['articles'][0]['photos'].pop(),
+            lambda v: v['articles'][0]['photos'].reverse(),
+            lambda v: v['articles'][0].pop('photo_placements'),
+            lambda v: v['articles'][0]['photo_placements'][0].update(after_section=5),
+            lambda v: v['photos'][0]['caption'].update(en='Caption'),
+        ]
+        for lang in schema.LANGS:
+            mutations.append(lambda v, lang=lang: v['articles'][0]['slugs'].update({lang: 'other-slug'}))
+        for index, mutate in enumerate(mutations):
+            value = self.fixture(); mutate(value)
+            with self.subTest(mutation=index), self.assertRaises(ValueError): schema.validate(value)
+
+    def test_other_releases_keep_original_rights_requirements(self):
+        value = record(); schema.validate(value)
+        del value['photos'][0]['rights']
+        with self.assertRaises(ValueError): schema.validate(value)
+        value = record()
+        value['photos'][0]['rights']['status'] = 'owner_selected_external_source_unresolved'
+        with self.assertRaises(ValueError): schema.validate(value)
+        # No opt-in switch or permission status grants a reusable omission.
+        value = record(); value['omit_rights'] = True
+        with self.assertRaises(ValueError): schema.validate(value)
+
+
 class SchemaTests(unittest.TestCase):
     def test_explicit_interview_format_only(self):
         value = record(); value['articles'][0]['format'] = 'interview'
@@ -470,33 +552,6 @@ class SchemaTests(unittest.TestCase):
         for field, replacement in [('approved', True), ('editorial_authorization_reference', 'User conversation text is not an identifier'), ('editorial_authorization_reference', 'private:https://user:password@example.org')]:
             changed = copy.deepcopy(value); changed['photos'][0]['rights'][field] = replacement
             with self.assertRaises(ValueError): schema.validate(changed)
-
-    def test_owner_selected_external_photo_requires_honest_unresolved_evidence(self):
-        value = record()
-        rights = value['photos'][0]['rights']
-        rights.update(status='owner_selected_external_source_unresolved', user_supplied=False,
-                      external_rights_verified=False, authenticity_verified=False,
-                      editorial_authorization_reference='private:bounded-owner-decision')
-        schema.validate(value)
-        for field in ('user_supplied', 'external_rights_verified', 'authenticity_verified'):
-            for bad in (True, 0, 1, 'false', None):
-                changed = copy.deepcopy(value); changed['photos'][0]['rights'][field] = bad
-                with self.subTest(field=field, bad=bad), self.assertRaises(ValueError): schema.validate(changed)
-        for field in ('user_supplied', 'external_rights_verified', 'authenticity_verified', 'editorial_authorization_reference'):
-            changed = copy.deepcopy(value); del changed['photos'][0]['rights'][field]
-            with self.subTest(missing=field), self.assertRaises(ValueError): schema.validate(changed)
-        for reference in ('', 'private:', 'private:' + 'a' * 301, 'public:decision', 'private:contains spaces',
-                          'private:https://user:password@example.org', '<b>decision</b>', None):
-            changed = copy.deepcopy(value); changed['photos'][0]['rights']['editorial_authorization_reference'] = reference
-            with self.subTest(reference=reference), self.assertRaises(ValueError): schema.validate(changed)
-        for status in ('owned', 'licensed', 'permission', 'user_selected_source_unresolved'):
-            changed = copy.deepcopy(value); changed['photos'][0]['rights']['status'] = status
-            with self.subTest(status=status), self.assertRaises(ValueError): schema.validate(changed)
-        changed = copy.deepcopy(value); changed['photos'][0]['rights']['license_url'] = 'https://example.org/license'
-        with self.assertRaises(ValueError): schema.validate(changed)
-        body = PullquoteTests.render(self, value, 'en')
-        for private_value in ('private:bounded-owner-decision', 'owner_selected_external_source_unresolved', 'user_supplied'):
-            self.assertNotIn(private_value, body)
 
     def test_empty_visible_caption_keeps_alt_and_end_credit(self):
         value = record(); value['photos'][0]['caption'] = {l: '' for l in schema.LANGS}

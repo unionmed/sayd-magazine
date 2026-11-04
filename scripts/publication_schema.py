@@ -77,6 +77,52 @@ def url(value):
     require(p.scheme == 'https' and bool(p.hostname) and not p.username and not p.password and not any(c.isspace() for c in value), 'Only credential-free HTTPS references are accepted')
 
 
+# Exact publication identity; this exception cannot authorize other releases or photos.
+RADAR_RELEASE = 'arab-radar-october-2026'
+RADAR_SLUGS = {
+    'ar': 'رادار-صيد-العربي-تشرين-الأول-2026',
+    'en': 'sayd-arab-radar-october-2026',
+    'fr': 'radar-arabe-sayd-octobre-2026',
+}
+RADAR_PHOTOS = (
+    ('saudi-oryx', 'docs/media/publications/arab-radar-october-2026/saudi-oryx.webp', 'e200d98700e6ebf7b529efcc2835ad2598cb8a5289b7d8ad9df84291d28dc266'),
+    ('algeria-enforcement', 'docs/media/publications/arab-radar-october-2026/algeria-enforcement.jpg', 'bd8334895a3b16c5019a924304a0d5fdcd7c7243f3d733c565cec1a1f3fb74ce'),
+    ('algeria-moutas', 'docs/media/publications/arab-radar-october-2026/algeria-moutas.jpg', '6992e14092fab9a8ebb7c6e96ad6f300beec1bbe311d1b9e5cc4d21584c0007a'),
+    ('lebanon-team', 'docs/assets/images/2026/10/north-lebanon-nets-team-20261020.jpg', '360786f1d2bc35ae70cea84a414121b301f741fa638c6b7507ec53adce451eef'),
+    ('lebanon-fieldwork', 'docs/assets/images/2026/10/north-lebanon-nets-fieldwork-20261020.jpg', '57434fc453ebc42638123eb6bd0ce89c65c8e8fb364d85d84494f6f0e9c5826e'),
+    ('egypt-stork', 'docs/media/publications/arab-radar-october-2026/egypt-stork.webp', 'fd221561c73322079caaa9540ad61c97531ed1f924dda9be3e9bf7a148c3695e'),
+    ('egypt-eagle', 'docs/media/publications/arab-radar-october-2026/egypt-eagle.jpg', 'd2a4eabe573a1b3982e0d2c4892bbfb36aa78f28514737b5724f407455f184cb'),
+    ('oman-gazelles', 'docs/media/publications/arab-radar-october-2026/oman-gazelles.jpg', '2a39dccd7bbc6820f77ddf132d339d4fd3d51fa3e1d4f043583d69716b24fb4d'),
+    ('kuwait-vehicle', 'docs/media/publications/arab-radar-october-2026/kuwait-vehicle.jpg', '60d0d6a5e2acf4aadc772d92f5dfc8334d575be5bc74d166f53d950669e11c62'),
+)
+RADAR_PLACEMENTS = [
+    {'photo_id': photo[0], 'after_section': section}
+    for photo, section in zip(RADAR_PHOTOS[1:], (6, 6, 8, 8, 9, 9, 14, 15))
+]
+
+
+def exact_radar_bundle(record):
+    """Recognize only the bounded publication; declarations do not grant approval."""
+    if record['id'] != RADAR_RELEASE:
+        return False
+    require(isinstance(record['photos'], list) and len(record['photos']) == len(RADAR_PHOTOS),
+            'Exact Radar photo bundle required')
+    for photo, (photo_id, path, digest) in zip(record['photos'], RADAR_PHOTOS):
+        require(isinstance(photo, dict) and
+                (photo.get('id'), photo.get('path'), photo.get('sha256'), photo.get('source_sha256')) ==
+                (photo_id, path, digest, digest), 'Radar photo identity/hash mismatch')
+        require(photo.get('caption') == {lang: '' for lang in LANGS}, 'Radar captions must be empty')
+    articles = record['articles']
+    require(isinstance(articles, list) and len(articles) == 1 and isinstance(articles[0], dict),
+            'Exact Radar article required')
+    article = articles[0]
+    require(article.get('slugs') == RADAR_SLUGS and
+            article.get('photos') == [photo[0] for photo in RADAR_PHOTOS] and
+            article.get('photo_placements') == RADAR_PLACEMENTS,
+            'Radar article identity/photo order/placement mismatch')
+    return True
+
+
 def validate(record, expected_id=None):
     keys(record, ('schema', 'id', 'expected_base', 'approval_reference', 'bank_search_reference', 'photos', 'articles'))
     require(record['schema'] == 'sayd-publication-v1', 'Unknown publication schema')
@@ -88,9 +134,11 @@ def validate(record, expected_id=None):
     require(isinstance(record['photos'], list) and len(record['photos']) <= 40, 'Invalid photo list')
     require(isinstance(record['articles'], list) and len(record['articles']) <= 10, 'Invalid article list')
     require(record['photos'] or record['articles'], 'Empty publication record')
+    radar_bundle = exact_radar_bundle(record)
     photos = {}
     for photo in record['photos']:
-        keys(photo, ('id', 'path', 'sha256', 'source_sha256', 'source_reference', 'rights', 'alt', 'caption'), ('source_url',))
+        required = ('id', 'path', 'sha256', 'source_sha256', 'source_reference', 'alt', 'caption')
+        keys(photo, required if radar_bundle else (*required, 'rights'), ('source_url',))
         require(ID.fullmatch(photo['id'] or '') and photo['id'] not in photos, 'Duplicate/invalid photo ID')
         safe_path(photo['path'])
         require(photo['path'].startswith(('docs/media/', 'docs/assets/images/')) and Path(photo['path']).suffix.lower() in {'.jpg', '.jpeg', '.png', '.webp'}, 'Local raster photo required')
@@ -99,22 +147,22 @@ def validate(record, expected_id=None):
         text(photo['source_reference'], 2000)
         if 'source_url' in photo:
             url(photo['source_url'])
-        unresolved_fields = ('user_supplied', 'external_rights_verified', 'authenticity_verified', 'editorial_authorization_reference')
-        keys(photo['rights'], ('status', 'statement', 'evidence_reference'), ('license_url', *unresolved_fields))
-        require(photo['rights']['status'] in {'owned', 'licensed', 'permission', 'user_selected_source_unresolved', 'owner_selected_external_source_unresolved'}, 'Unknown image rights status')
-        if photo['rights']['status'] in {'user_selected_source_unresolved', 'owner_selected_external_source_unresolved'}:
-            require(all(key in photo['rights'] for key in unresolved_fields), 'Missing unresolved-photo evidence fields')
-            user_supplied = photo['rights']['status'] == 'user_selected_source_unresolved'
-            require(photo['rights']['user_supplied'] is user_supplied and photo['rights']['external_rights_verified'] is False and photo['rights']['authenticity_verified'] is False, 'Unresolved selection requires truthful origin and unverified rights/authenticity')
-            require('license_url' not in photo['rights'], 'Unresolved photo cannot claim a verified licence')
-            reference = photo['rights']['editorial_authorization_reference']
-            require(isinstance(reference, str) and re.fullmatch(r'private:[A-Za-z0-9][A-Za-z0-9._-]{0,299}', reference), 'Use a bounded private evidence identifier, not conversation text or credentials')  # Never executable authorization.
-        else:
-            require(not any(key in photo['rights'] for key in unresolved_fields), 'Unresolved evidence flags require distinct unresolved status')
-        for key in ('statement', 'evidence_reference'):
-            text(photo['rights'][key], 4000)
-        if 'license_url' in photo['rights']:
-            url(photo['rights']['license_url'])
+        if not radar_bundle:
+            unresolved_fields = ('user_supplied', 'external_rights_verified', 'authenticity_verified', 'editorial_authorization_reference')
+            keys(photo['rights'], ('status', 'statement', 'evidence_reference'), ('license_url', *unresolved_fields))
+            require(photo['rights']['status'] in {'owned', 'licensed', 'permission', 'user_selected_source_unresolved'}, 'Unknown image rights status')
+            if photo['rights']['status'] == 'user_selected_source_unresolved':
+                require(all(key in photo['rights'] for key in unresolved_fields), 'Missing unresolved-photo evidence fields')
+                require(photo['rights']['user_supplied'] is True and photo['rights']['external_rights_verified'] is False and photo['rights']['authenticity_verified'] is False, 'Unresolved user selection cannot claim verified rights/authenticity')
+                require('license_url' not in photo['rights'], 'Unresolved user photo cannot claim a verified licence')
+                reference = photo['rights']['editorial_authorization_reference']
+                require(isinstance(reference, str) and re.fullmatch(r'private:[A-Za-z0-9][A-Za-z0-9._-]{0,299}', reference), 'Use a bounded private evidence identifier, not conversation text or credentials')  # Never executable authorization.
+            else:
+                require(not any(key in photo['rights'] for key in unresolved_fields), 'Unresolved evidence flags require distinct unresolved status')
+            for key in ('statement', 'evidence_reference'):
+                text(photo['rights'][key], 4000)
+            if 'license_url' in photo['rights']:
+                url(photo['rights']['license_url'])
         localized(photo['alt'], 1000)
         localized(photo['caption'], 4000, allow_empty=True)
         photos[photo['id']] = photo
