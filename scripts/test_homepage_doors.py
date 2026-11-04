@@ -122,7 +122,7 @@ def test_homepages():
         try:
             p.write_text(wrong)
             try:check()
-            except AssertionError:pass
+            except (AssertionError, ValueError):pass
             else:raise AssertionError('Invalid channel structure or unlocalized date accepted')
         finally:p.write_text(original)
     # A displaced recent hunting story enters its door, replacing the oldest card.

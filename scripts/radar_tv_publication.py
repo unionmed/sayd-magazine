@@ -15,8 +15,8 @@ MEDIA = 'docs/media/publications/' + ID + '/'
 VIDEO = MEDIA + 'radar.mp4'
 POSTER = MEDIA + 'radar-poster.jpg'
 SHARD = 'audit/image-catalog/manifest/release-' + ID + '.tsv'
-VIDEO_HASH = '8ebedbdfab6a61893b2d325454ef1a0d09f8ba210113f0aacec39780def8c0e5'
-VIDEO_BYTES = 8190246
+VIDEO_HASH = 'c5636c002b5a1d13aa488af5433a902f11d35527f57b335f264c31b93ea29190'
+VIDEO_BYTES = 1935372
 ANCHOR = 'radar-october-2026-video-heading'
 TV_PATH = 'category/استديو-صيد/index.html'
 CHANNEL = 'content/tv-channel.json'
@@ -100,7 +100,7 @@ def source_input(root,base,source):
     inputs={p:c.read_blob(root,after[p]) for p in paths}
     require(len(inputs[SOURCE])<=16000,'TV source too large')
     value=validate(loads(inputs[SOURCE].decode()),base)
-    require(len(inputs[VIDEO])==VIDEO_BYTES and c.sha256(inputs[VIDEO])==VIDEO_HASH,'Original MP4 bytes required')
+    require(len(inputs[VIDEO])==VIDEO_BYTES and c.sha256(inputs[VIDEO])==VIDEO_HASH,'Approved web MP4 bytes required')
     require(len(inputs[POSTER])<=1000000 and c.sha256(inputs[POSTER])==value['poster_sha256'],'Poster hash/size mismatch')
     require(inputs[POSTER].startswith(b'\xff\xd8\xff'),'JPEG poster required')
     inventory=('path\tgit_blob_sha\tsize_bytes\n'+POSTER+'\t'+after[POSTER][2]+'\t'+str(len(inputs[POSTER]))+'\n').encode()
