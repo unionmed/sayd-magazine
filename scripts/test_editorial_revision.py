@@ -123,5 +123,6 @@ from test_nathalie_photo_revision import NathaliePhotoRevisionTests
 from test_scoped_bird_lifecycle_revision import BirdLifecycleTests
 
 from test_scoped_qatar_results_revision import QatarResultsRevisionTests
+from test_scoped_qatar_results_nov4 import QatarNov4Tests
 
 if __name__=='__main__':unittest.main()
