@@ -98,6 +98,19 @@ hashes. Normal licensed-image evidence and legally required attribution remain
 unchanged, including when visible descriptive captions are omitted. Never relabel
 this unresolved status as licensed or verified permission to make a test pass.
 
+The one exact `dubai-carnival-20261105` release accommodates the owner's selected,
+assistant-found `meydan-archive` photo without mislabeling it as user-supplied.
+It requires exactly one photo and one article, the fixed local path, published and
+source SHA-256, AR/EN/FR slugs and private selection-evidence identifier in the
+schema. Only this bundle requires `user_supplied: false` with the existing
+`user_selected_source_unresolved` status. Both verification flags remain strictly
+`false`; license URLs and ownership/licence/permission statuses are rejected.
+The evidence identifier is a declaration, not an approval mechanism or proof of
+external rights. Independently review the informed owner decision, attribution,
+source and bytes before publication. All other releases retain the original
+user-supplied requirement; normal photo-integrity, compilation, review and
+protected publication gates remain unchanged.
+
 The one exact `arab-radar-october-2026` publication has a bounded schema exception:
 its nine fixed photo IDs, local paths, published/source SHA-256 values, order,
 trilingual slugs and section placements must match the constants in the schema.

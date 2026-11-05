@@ -123,6 +123,43 @@ def exact_radar_bundle(record):
     return True
 
 
+# One selected, assistant-found photo; not a licence or an approval mechanism.
+DUBAI_RELEASE = 'dubai-carnival-20261105'
+DUBAI_PHOTO = (
+    'meydan-archive',
+    'docs/media/publications/dubai-carnival-20261105/meydan-archive.jpg',
+    '567a65f0c14acf7a6036c7a7f03aa812968f4044dd00d6e2e0bd53d475acb4c5',
+)
+DUBAI_SLUGS = {
+    'ar': 'كرنفال-دبي-ميدان-2026-2027',
+    'en': 'dubai-racing-carnival-2026-2027',
+    'fr': 'carnaval-courses-dubai-2026-2027',
+}
+DUBAI_SELECTION_REFERENCE = 'private:Sentinel_82bb1edb2e70819193d43a6171eaaa6c'
+
+
+def exact_dubai_selection(record):
+    """Bound a truthful provenance declaration, never confer publication authority."""
+    if record['id'] != DUBAI_RELEASE:
+        return False
+    require(len(record['photos']) == 1 and isinstance(record['photos'][0], dict),
+            'Exact Dubai photo required')
+    photo = record['photos'][0]
+    photo_id, path, digest = DUBAI_PHOTO
+    require((photo.get('id'), photo.get('path'), photo.get('sha256'), photo.get('source_sha256')) ==
+            (photo_id, path, digest, digest), 'Dubai photo identity/hash mismatch')
+    require(len(record['articles']) == 1 and isinstance(record['articles'][0], dict),
+            'Exact Dubai article required')
+    article = record['articles'][0]
+    require(article.get('slugs') == DUBAI_SLUGS and article.get('photos') == [photo_id],
+            'Dubai article identity/photo mismatch')
+    rights = photo.get('rights')
+    require(isinstance(rights, dict) and rights.get('status') == 'user_selected_source_unresolved' and
+            rights.get('editorial_authorization_reference') == DUBAI_SELECTION_REFERENCE,
+            'Dubai selection requires exact unresolved evidence declaration')
+    return True
+
+
 def validate(record, expected_id=None):
     keys(record, ('schema', 'id', 'expected_base', 'approval_reference', 'bank_search_reference', 'photos', 'articles'))
     require(record['schema'] == 'sayd-publication-v1', 'Unknown publication schema')
@@ -135,6 +172,7 @@ def validate(record, expected_id=None):
     require(isinstance(record['articles'], list) and len(record['articles']) <= 10, 'Invalid article list')
     require(record['photos'] or record['articles'], 'Empty publication record')
     radar_bundle = exact_radar_bundle(record)
+    dubai_selection = exact_dubai_selection(record)
     photos = {}
     for photo in record['photos']:
         required = ('id', 'path', 'sha256', 'source_sha256', 'source_reference', 'alt', 'caption')
@@ -153,7 +191,7 @@ def validate(record, expected_id=None):
             require(photo['rights']['status'] in {'owned', 'licensed', 'permission', 'user_selected_source_unresolved'}, 'Unknown image rights status')
             if photo['rights']['status'] == 'user_selected_source_unresolved':
                 require(all(key in photo['rights'] for key in unresolved_fields), 'Missing unresolved-photo evidence fields')
-                require(photo['rights']['user_supplied'] is True and photo['rights']['external_rights_verified'] is False and photo['rights']['authenticity_verified'] is False, 'Unresolved user selection cannot claim verified rights/authenticity')
+                require(photo['rights']['user_supplied'] is (False if dubai_selection else True) and photo['rights']['external_rights_verified'] is False and photo['rights']['authenticity_verified'] is False, 'Unresolved user selection cannot claim verified rights/authenticity')
                 require('license_url' not in photo['rights'], 'Unresolved user photo cannot claim a verified licence')
                 reference = photo['rights']['editorial_authorization_reference']
                 require(isinstance(reference, str) and re.fullmatch(r'private:[A-Za-z0-9][A-Za-z0-9._-]{0,299}', reference), 'Use a bounded private evidence identifier, not conversation text or credentials')  # Never executable authorization.
