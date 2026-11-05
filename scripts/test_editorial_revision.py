@@ -125,4 +125,6 @@ from test_scoped_bird_lifecycle_revision import BirdLifecycleTests
 from test_scoped_qatar_results_revision import QatarResultsRevisionTests
 from test_scoped_qatar_results_nov4 import QatarNov4Tests
 
+from test_scoped_bird_reference_revision import BirdReferenceRevisionTests
+
 if __name__=='__main__':unittest.main()
