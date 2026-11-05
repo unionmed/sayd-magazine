@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "كرنفال-دبي-ميدان-2026-2027",
+      "titles": {
+        "ar": "كرنفال سباقات دبي ينطلق في ميدان يوم ٦ نوفمبر بـ١٦ أمسية، والمنيف يشارك بخيلين في ليلة الافتتاح.",
+        "en": "The Dubai Racing Carnival opens at Meydan on 6 November with 16 race nights, and Al Monif fields two horses on opening night.",
+        "fr": "Le Carnaval des courses de Dubaï débute à Meydan le 6 novembre avec 16 soirées, et Al Monif présente deux chevaux lors de la soirée d’ouverture."
+      },
+      "title": "كرنفال سباقات دبي ينطلق في ميدان يوم ٦ نوفمبر بـ١٦ أمسية، والمنيف يشارك بخيلين في ليلة الافتتاح."
+    },
+    {
       "slug": "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
       "titles": {
         "ar": "الناعمة: توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد ليلي",
@@ -81,15 +90,6 @@
         "fr": "Oman fixe les règles de visite et de camping dans ses réserves"
       },
       "title": "عُمان تصدر ضوابط لزيارة المحميات والتخييم فيها"
-    },
-    {
-      "slug": "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
-      "titles": {
-        "ar": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا",
-        "en": "Syria’s Helice shooting champions crowned in Saydnaya",
-        "fr": "Les champions de Syrie de tir aux hélices couronnés à Saydnaya"
-      },
-      "title": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا"
     }
   ]
 }

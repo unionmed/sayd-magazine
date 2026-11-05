@@ -1,0 +1,124 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "dubai-carnival-20261105",
+  "expected_base": "19d3a66371d6911a97e4cb7f3cc41e68b278a71f",
+  "approval_reference": "private:dubai-revised-copy-approved-20261105",
+  "bank_search_reference": "Owner selected the exact presented Dubai Racing Club archival image, libfile_2c691f22f9b88191bb4c41f34580ce2d, on 5 November 2026. No substitution.",
+  "photos": [
+    {
+      "id": "meydan-archive",
+      "path": "docs/media/publications/dubai-carnival-20261105/meydan-archive.jpg",
+      "sha256": "567a65f0c14acf7a6036c7a7f03aa812968f4044dd00d6e2e0bd53d475acb4c5",
+      "source_sha256": "567a65f0c14acf7a6036c7a7f03aa812968f4044dd00d6e2e0bd53d475acb4c5",
+      "source_reference": "Dubai Racing Club archival photograph downloaded from its public image URL https://drcwebblob.blob.core.windows.net/drcwebmediacontent/2021/03/sNB6tKrd.jpg and independently byte-matched with selected image on 5 November 2026. Original JPEG unchanged, no crop. The in-image display shows 2020–2021; precise capture date and photographer not established. Not evidence of the 6 November 2026 opening.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Owner selected this assistant-found official-source archival photograph for this exact website news item after notice that external reuse rights were not independently established. External rights and photographic authenticity remain unverified. No ownership, licence, permission from the rightsholder or unrestricted future reuse is claimed.",
+        "evidence_reference": "private:Sentinel_82bb1edb2e70819193d43a6171eaaa6c",
+        "user_supplied": false,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_82bb1edb2e70819193d43a6171eaaa6c"
+      },
+      "alt": {
+        "ar": "سباق خيل في مضمار ميدان بدبي.",
+        "en": "Horse racing at Meydan Racecourse in Dubai.",
+        "fr": "Courses hippiques à l’hippodrome de Meydan, à Dubaï."
+      },
+      "caption": {
+        "ar": "من سباقات الخيل في مضمار ميدان بدبي. صورة أرشيفية.",
+        "en": "Horse racing at Meydan Racecourse in Dubai. Archive photo.",
+        "fr": "Courses hippiques à l’hippodrome de Meydan, à Dubaï. Photo d’archives."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "كرنفال-دبي-ميدان-2026-2027",
+        "en": "dubai-racing-carnival-2026-2027",
+        "fr": "carnaval-courses-dubai-2026-2027"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "equestrian",
+      "archives": [
+        "equestrian"
+      ],
+      "kind": "article",
+      "photos": [
+        "meydan-archive"
+      ],
+      "translations": {
+        "ar": {
+          "title": "كرنفال دبي ينطلق في ميدان بـ١٦ أمسية وحضور سعودي في الافتتاح",
+          "subtitle": "المنيف يشارك بخيلين في ليلة افتتاح الموسم الذي يضم ١٦ أمسية.",
+          "meta_description": "يفتتح كرنفال سباقات دبي في ميدان يوم ٦ نوفمبر ٢٠٢٦، بمشاركة المدرب السعودي عبدالله المنيف بخيلين، ضمن موسم يضم ١٦ أمسية حتى ١٢ مارس ٢٠٢٧.",
+          "ticker_title": "كرنفال سباقات دبي ينطلق في ميدان يوم ٦ نوفمبر بـ١٦ أمسية، والمنيف يشارك بخيلين في ليلة الافتتاح.",
+          "sections": [
+            {
+              "paragraphs": [
+                "يفتتح مضمار ميدان، الجمعة ٦ نوفمبر ٢٠٢٦، موسمًا جديدًا من كرنفال سباقات دبي، ببرنامج يضم ١٦ أمسية تمتد حتى ١٢ مارس ٢٠٢٧، وتجمع خيولًا ومدربين من الإمارات وخارجها.",
+                "وتنطلق سباقات ليلة الافتتاح، برعاية طيران الإمارات، عند الخامسة والنصف مساءً بتوقيت دبي، فيما تفتح الأبواب للجمهور عند الرابعة عصرًا. ويتصدر البرنامج شوط يحمل اسم الشيخ أحمد بن راشد آل مكتوم، لمسافة ١٦٠٠ متر، بمشاركة سبعة خيول، بينها «براذرلي لاف» بإشراف جيمي أوزبورن و«غن كاريج» بإشراف ديلان كونها، العائدان للموسم الثاني إلى الكرنفال.",
+                "وتشهد الأمسية مشاركة المدرب السعودي عبدالله المنيف، الذي وصل إلى دبي بخيلين يمثلان «AMM Racing» والمالك أيمن الراجحي. وتخوض المهرة «اللجين» (Allajayn) شوطًا لمسافة ١٤٠٠ متر للخيول في سن الثلاث سنوات، بعدما حلّت ثانية في آخر مشاركتين لها بالطائف، فيما يشارك «بريف فيكوما» (Brave Vekoma) في شوط للخيول التي لم يسبق لها الفوز.",
+                "وبدأ المنيف، البالغ ٣٤ عامًا، مسيرته مع الخيل في قفز الحواجز قبل انتقاله إلى سباقات السرعة، واكتسب خبرة في أيرلندا وبريطانيا والولايات المتحدة. ويشرف حاليًا على نحو ٣٠ رأسًا في السعودية، ويطمح من خلال مشاركته في دبي إلى اكتساب خبرة دولية واختبار قدرات خيله أمام منافسين جدد.",
+                "وتشمل أبرز محطات الموسم «فيستيف فرايداي» في ١٨ ديسمبر، و«فاشون فرايداي» في ٢٢ يناير، و«الإمارات سوبر ساترداي» في ٢٧ فبراير. وبعد ختام الكرنفال، يستضيف ميدان كأس دبي العالمي في ٢٧ مارس ٢٠٢٧، ضمن أمسية تضم تسعة أشواط تبلغ جوائزها الإجمالية ٣٠٫٥ مليون دولار.",
+                "المصدر: نادي دبي لسباق الخيل ووكالة أنباء الإمارات."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Dubai Racing Club"
+        },
+        "en": {
+          "title": "Dubai Racing Carnival opens at Meydan with 16 race nights and Saudi participation on opening night",
+          "subtitle": "Al Monif fields two horses on the opening night of the 16-meeting season.",
+          "meta_description": "The Dubai Racing Carnival opens at Meydan on 6 November 2026, with Saudi trainer Abdullah Al Monif fielding two horses. Its 16 race nights run until 12 March 2027.",
+          "ticker_title": "The Dubai Racing Carnival opens at Meydan on 6 November with 16 race nights, and Al Monif fields two horses on opening night.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Meydan Racecourse opens a new Dubai Racing Carnival season on Friday, 6 November 2026, with a programme of 16 race nights running until 12 March 2027 and bringing together horses and trainers from the UAE and abroad.",
+                "Racing on opening night, sponsored by Emirates, starts at 5:30pm Dubai time, with gates opening to the public at 4pm. The programme is headed by a 1,600-metre race named after Sheikh Ahmed bin Rashid Al Maktoum, featuring seven horses, including Brotherly Love, trained by Jamie Osborne, and Gun Carriage, trained by Dylan Cunha. Both horses are returning for their second carnival.",
+                "Saudi trainer Abdullah Al Monif will take part in the evening, having arrived in Dubai with two horses representing AMM Racing and owner Ayman AlRajhi. The filly Allajayn will contest a 1,400-metre race for three-year-olds after finishing second in her last two starts at Taif, while Brave Vekoma will run in a maiden race.",
+                "Al Monif, 34, began his equestrian career in show jumping before moving into flat racing and gained experience in Ireland, Britain and the United States. He currently trains around 30 horses in Saudi Arabia and hopes his participation in Dubai will give him international experience and test his horses against new rivals.",
+                "Season highlights include Festive Friday on 18 December, Fashion Friday on 22 January and Emirates Super Saturday on 27 February. Following the carnival’s conclusion, Meydan will host the Dubai World Cup on 27 March 2027, featuring nine races with total prize money of US$30.5 million.",
+                "Source: Dubai Racing Club and Emirates News Agency."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Dubai Racing Club"
+        },
+        "fr": {
+          "title": "Le Carnaval de Dubaï s’ouvre à Meydan avec 16 soirées de courses et une participation saoudienne dès l’ouverture",
+          "subtitle": "Al Monif présente deux chevaux lors de la soirée d’ouverture d’une saison de 16 réunions.",
+          "meta_description": "Le Carnaval des courses de Dubaï débute à Meydan le 6 novembre 2026 avec deux chevaux de l’entraîneur saoudien Abdullah Al Monif. Ses 16 soirées se poursuivent jusqu’au 12 mars 2027.",
+          "ticker_title": "Le Carnaval des courses de Dubaï débute à Meydan le 6 novembre avec 16 soirées, et Al Monif présente deux chevaux lors de la soirée d’ouverture.",
+          "sections": [
+            {
+              "paragraphs": [
+                "L’hippodrome de Meydan ouvre, vendredi 6 novembre 2026, une nouvelle saison du Carnaval des courses de Dubaï, avec un programme de 16 soirées jusqu’au 12 mars 2027, réunissant des chevaux et des entraîneurs des Émirats arabes unis et de l’étranger.",
+                "Les courses de la soirée d’ouverture, parrainée par Emirates, débutent à 17 h 30, heure de Dubaï, tandis que les portes ouvrent au public à 16 h. L’épreuve phare du programme, qui porte le nom du cheikh Ahmed ben Rachid Al Maktoum, se dispute sur 1 600 mètres avec sept chevaux au départ, dont Brotherly Love, entraîné par Jamie Osborne, et Gun Carriage, entraîné par Dylan Cunha. Les deux chevaux reviennent pour leur deuxième carnaval.",
+                "L’entraîneur saoudien Abdullah Al Monif participe à cette soirée après être arrivé à Dubaï avec deux chevaux représentant AMM Racing et le propriétaire Ayman AlRajhi. La pouliche Allajayn dispute une course de 1 400 mètres réservée aux chevaux de trois ans, après avoir terminé deuxième lors de ses deux dernières sorties à Taïf. Brave Vekoma prend quant à lui le départ d’une épreuve réservée aux chevaux n’ayant jamais gagné.",
+                "Âgé de 34 ans, Al Monif a commencé son parcours équestre dans le saut d’obstacles avant de se tourner vers les courses de plat. Il a acquis de l’expérience en Irlande, en Grande-Bretagne et aux États-Unis. Il entraîne actuellement une trentaine de chevaux en Arabie saoudite et espère, grâce à sa participation à Dubaï, acquérir une expérience internationale et mesurer les capacités de ses chevaux face à de nouveaux concurrents.",
+                "Les principaux rendez-vous de la saison comprennent Festive Friday, le 18 décembre, Fashion Friday, le 22 janvier, et Emirates Super Saturday, le 27 février. Après la clôture du carnaval, Meydan accueillera la Dubai World Cup le 27 mars 2027, lors d’une soirée comprenant neuf courses dotées au total de 30,5 millions de dollars américains.",
+                "Source : Dubai Racing Club et Agence de presse des Émirats."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Dubai Racing Club"
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": true
+      }
+    }
+  ]
+}

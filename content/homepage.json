@@ -378,14 +378,14 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "كرنفال-دبي-ميدان-2026-2027",
       "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
       "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
       "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
       "طيور-في-الحقائب-تهريب-الطيور-2026",
       "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
       "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
-      "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
-      "ختام-الملواح-2026-60-فائزا"
+      "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -408,14 +408,14 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "dubai-racing-carnival-2026-2027",
       "bin-harmash-dark-saffron-breeders-cup-2026",
       "arabian-saluki-center-25-years",
       "arabian-saluki-championship-november-2026-april-2027",
       "birds-in-bags-illegal-bird-trade-2026",
       "riyadh-racing-season-2026-2027-begins",
       "hunting-masculinity-dead-birds",
-      "akkar-sparrowhawk-backpack-raptor-poaching",
-      "melwah-finale-2026-60-winners"
+      "akkar-sparrowhawk-backpack-raptor-poaching"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -540,14 +540,14 @@
     {
       "door": "hunting",
       "slugs": [
+        "كرنفال-دبي-ميدان-2026-2027",
         "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
         "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
         "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
         "طيور-في-الحقائب-تهريب-الطيور-2026",
         "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
         "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
-        "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
-        "ختام-الملواح-2026-60-فائزا"
+        "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح"
       ]
     },
     {
@@ -819,7 +819,8 @@
     "الشنقب-الصغير": "birds",
     "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان": "wildlife",
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs": "hunting",
-    "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي": "photos"
+    "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي": "photos",
+    "كرنفال-دبي-ميدان-2026-2027": "equestrian"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -838,6 +839,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "كرنفال-دبي-ميدان-2026-2027",
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
     "رادار-صيد-العربي-تشرين-الأول-2026",
     "طيور-تتعطر-بالنمل",
@@ -846,8 +848,7 @@
     "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
     "عندما-تهين-الطريدة-أنت-تهين-نفسك",
     "الصيد-السياحي-في-مصر-والعراق-والأردن",
-    "عمان-تنظم-زيارة-المحميات-والتخييم",
-    "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026"
+    "عمان-تنظم-زيارة-المحميات-والتخييم"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -2256,11 +2257,28 @@
         "en": "Electronic devices, loudspeakers, lights, ammunition and hunting equipment laid out on the floor.",
         "fr": "Des appareils électroniques, des haut-parleurs, des lampes, des munitions et du matériel de chasse disposés au sol."
       }
+    },
+    "كرنفال-دبي-ميدان-2026-2027": {
+      "image": "media/publications/dubai-carnival-20261105/meydan-archive.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "سباق خيل في مضمار ميدان بدبي.",
+        "en": "Horse racing at Meydan Racecourse in Dubai.",
+        "fr": "Courses hippiques à l’hippodrome de Meydan, à Dubaï."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "كرنفال-دبي-ميدان-2026-2027",
+      "titles": {
+        "ar": "كرنفال سباقات دبي ينطلق في ميدان يوم ٦ نوفمبر بـ١٦ أمسية، والمنيف يشارك بخيلين في ليلة الافتتاح.",
+        "en": "The Dubai Racing Carnival opens at Meydan on 6 November with 16 race nights, and Al Monif fields two horses on opening night.",
+        "fr": "Le Carnaval des courses de Dubaï débute à Meydan le 6 novembre avec 16 soirées, et Al Monif présente deux chevaux lors de la soirée d’ouverture."
+      }
+    },
     {
       "slug": "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
       "titles": {
@@ -2331,14 +2349,6 @@
         "ar": "عُمان تصدر ضوابط لزيارة المحميات والتخييم فيها",
         "en": "Oman issues rules for reserve visits and camping",
         "fr": "Oman fixe les règles de visite et de camping dans ses réserves"
-      }
-    },
-    {
-      "slug": "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
-      "titles": {
-        "ar": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا",
-        "en": "Syria’s Helice shooting champions crowned in Saydnaya",
-        "fr": "Les champions de Syrie de tir aux hélices couronnés à Saydnaya"
       }
     }
   ],
