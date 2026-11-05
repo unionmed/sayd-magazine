@@ -344,7 +344,8 @@
     "جشنة-الماء",
     "الشنقب-الصغير",
     "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان",
-    "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي"
+    "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي",
+    "فرصة-للتعافي-أنواع-قاربت-الانقراض"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -580,10 +581,10 @@
     {
       "door": "science",
       "slugs": [
+        "فرصة-للتعافي-أنواع-قاربت-الانقراض",
         "طيور-تتعطر-بالنمل",
         "حوام-العسل-هجرة-بولندا-3750-كيلومترا",
-        "المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق",
-        "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026"
+        "المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق"
       ]
     },
     {
@@ -821,7 +822,8 @@
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs": "hunting",
     "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي": "photos",
     "كرنفال-دبي-ميدان-2026-2027": "equestrian",
-    "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026": "wildlife"
+    "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026": "wildlife",
+    "فرصة-للتعافي-أنواع-قاربت-الانقراض": "science"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2275,6 +2277,15 @@
         "ar": "شرشير أوراسي يمدّ جناحيه فوق الماء في محمية لو تيش بفرنسا.",
         "en": "A Eurasian teal spreading its wings over the water at Le Teich bird reserve in France.",
         "fr": "Une sarcelle d’hiver déploie ses ailes sur l’eau dans la réserve ornithologique du Teich, en France."
+      }
+    },
+    "فرصة-للتعافي-أنواع-قاربت-الانقراض": {
+      "image": "media/publications/small-populations-recovery-20261105/lord-howe-woodhen-granitethighs.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طائر لوردهاو وودهن بني اللون يقف على العشب، وتظهر حلقات تعريف حول ساقيه.",
+        "en": "A brown Lord Howe woodhen standing on grass, with identification bands around its legs.",
+        "fr": "Un râle de Lord Howe brun sur l’herbe, portant des bagues d’identification aux pattes."
       }
     }
   },
