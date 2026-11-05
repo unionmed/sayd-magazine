@@ -86,6 +86,30 @@ class BirdReferenceRevisionTests(unittest.TestCase):
                     self.assertIsNotNone(actual)
                     self.assertEqual(actual['body'], changed[lang][actual['url']]['body'])
 
+    def test_complete_plan_passes_native_finalizer_validation(self):
+        import publication_finalize as finalizer
+        files = dict(self.out)
+        files[self.path] = (json.dumps(self.value, ensure_ascii=False, indent=2) + '\n').encode()
+        source = '1' * 40  # Synthetic identity only; no writer or remote API call.
+        plan = {'schema': compiler.SCHEMA, 'base_commit': self.base,
+                'source_commit': source, 'compiler_commit': self.base,
+                'policy': {'allow_distribution': False}, 'changes': []}
+        with tempfile.TemporaryDirectory() as temp:
+            site = Path(temp)
+            for path, raw in sorted(files.items()):
+                target = site / path
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(raw)
+                plan['changes'].append({'path': path, 'mode': '100644',
+                    'old_blob': self.tree[path][2] if path in self.tree else None,
+                    'new_blob': compiler.blob_sha(raw), 'sha256': compiler.sha256(raw),
+                    'bytes': len(raw), 'status': 'M' if path in self.tree else 'A'})
+            plan['plan_sha256'] = compiler.sha256(compiler.canonical(plan))
+            rows = finalizer.validate_plan(site, plan, self.base, source,
+                                           self.base, plan['plan_sha256'])
+            self.assertEqual(len(rows), 64)
+            self.assertEqual({item['path'] for item, raw in rows}, set(files))
+
     def test_exact_replay(self):
         self.assertEqual(revision.expected_changes(ROOT, self.base, self.value, self.path)[0], self.out)
 

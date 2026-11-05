@@ -68,6 +68,17 @@ class FakeAPI:
 
 
 class FinalizerTests(unittest.TestCase):
+    def test_nov5_bird_reference_exact_revision_path_only(self):
+        allowed = "content/editorial-revisions/nov5-bird-text-references-20261105.json"
+        self.assertEqual(str(f.safe_output_path(allowed)), allowed)
+        for path in (allowed.replace("20261105", "20261106"),
+                     allowed.replace("nov5-bird", "other-bird"),
+                     allowed.replace(".json", ".py"),
+                     allowed.replace("/nov5", "/nested/nov5"),
+                     "content/editorial-revisions/../publication-contract.json"):
+            with self.subTest(path=path), self.assertRaises(f.Blocked):
+                f.safe_output_path(path)
+
     def test_qatar_nov4_exact_revision_path_only(self):
         allowed = "content/editorial-revisions/qatar-shooting-update-20261104.json"
         self.assertEqual(str(f.safe_output_path(allowed)), allowed)
@@ -424,7 +435,8 @@ class FinalizerTests(unittest.TestCase):
 
     def test_exact_editorial_revision_records_are_read_with_exact_hashes(self):
         for name in ("wanaameen-jcsa-photo-20261026", "adonis-ticker-20261026", "episode-three-lead-20261026",
-                     "qatar-shooting-update-20261103", "qatar-shooting-update-20261104"):
+                     "qatar-shooting-update-20261103", "qatar-shooting-update-20261104",
+                     "nov5-bird-text-references-20261105"):
             path = "content/editorial-revisions/" + name + ".json"
             data = b'{"fixture":"path validation only, never publication authority"}\n'
             self.write(self.site, path, data)
