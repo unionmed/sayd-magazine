@@ -185,7 +185,17 @@
     "البلبل-الشائع",
     "البلشون-الأرجواني",
     "الزرزور-الأسود",
-    "السنونو-أحمر-العجز-الغربي"
+    "السنونو-أحمر-العجز-الغربي",
+    "مرعة-الماء",
+    "الإوز-الأغر-الكبير",
+    "النورس-أسود-الرأس",
+    "النورس-الشائع",
+    "النورس-دقيق-المنقار",
+    "خرشنة-الساندويش",
+    "الخرشنة-القزوينية",
+    "الخرشنة-نورسية-المنقار",
+    "جشنة-الماء",
+    "الشنقب-الصغير"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -322,7 +332,17 @@
     "البلبل-الشائع",
     "البلشون-الأرجواني",
     "الزرزور-الأسود",
-    "السنونو-أحمر-العجز-الغربي"
+    "السنونو-أحمر-العجز-الغربي",
+    "مرعة-الماء",
+    "الإوز-الأغر-الكبير",
+    "النورس-أسود-الرأس",
+    "النورس-الشائع",
+    "النورس-دقيق-المنقار",
+    "خرشنة-الساندويش",
+    "الخرشنة-القزوينية",
+    "الخرشنة-نورسية-المنقار",
+    "جشنة-الماء",
+    "الشنقب-الصغير"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -781,7 +801,17 @@
     "البلشون-الأرجواني": "birds",
     "الزرزور-الأسود": "birds",
     "السنونو-أحمر-العجز-الغربي": "birds",
-    "رادار-صيد-العربي-تشرين-الأول-2026": "hunting"
+    "رادار-صيد-العربي-تشرين-الأول-2026": "hunting",
+    "مرعة-الماء": "birds",
+    "الإوز-الأغر-الكبير": "birds",
+    "النورس-أسود-الرأس": "birds",
+    "النورس-الشائع": "birds",
+    "النورس-دقيق-المنقار": "birds",
+    "خرشنة-الساندويش": "birds",
+    "الخرشنة-القزوينية": "birds",
+    "الخرشنة-نورسية-المنقار": "birds",
+    "جشنة-الماء": "birds",
+    "الشنقب-الصغير": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2100,6 +2130,96 @@
         "ar": "مها عربي مع صغيره في السعودية",
         "en": "Arabian oryx with its calf in Saudi Arabia",
         "fr": "Oryx d’Arabie avec son petit en Arabie saoudite"
+      }
+    },
+    "مرعة-الماء": {
+      "image": "media/publications/daily-birds-20261105/water-rail.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "مرعة ماء بمنقار محمر طويل بين القصب",
+        "en": "Water Rail with a long reddish bill among reeds",
+        "fr": "Râle d’eau au long bec rougeâtre parmi les roseaux"
+      }
+    },
+    "الإوز-الأغر-الكبير": {
+      "image": "media/publications/daily-birds-20261105/greater-white-fronted-goose.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "إوز أغر كبير في الطيران تظهر علامات سوداء على بطونه",
+        "en": "Greater White-fronted Geese in flight showing dark belly bars",
+        "fr": "Oies rieuses en vol aux barres ventrales noires"
+      }
+    },
+    "النورس-أسود-الرأس": {
+      "image": "media/publications/daily-birds-20261105/black-headed-gull.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "نوارس سوداء الرأس في ريش الشتاء تقف على سياج قرب الماء",
+        "en": "Black-headed Gulls in winter plumage on a fence beside water",
+        "fr": "Mouettes rieuses en plumage hivernal sur une barrière près de l’eau"
+      }
+    },
+    "النورس-الشائع": {
+      "image": "media/publications/daily-birds-20261105/common-gull.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "نورس شائع رمادي الظهر وذو بقع بيضاء على أطراف الجناحين",
+        "en": "Common Gull with grey upperparts and white markings on the wingtips",
+        "fr": "Goéland cendré au dessus gris et aux marques blanches des pointes alaires"
+      }
+    },
+    "النورس-دقيق-المنقار": {
+      "image": "media/publications/daily-birds-20261105/slender-billed-gull.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "نورس دقيق المنقار يقف عند حافة ماء ضحل",
+        "en": "Slender-billed Gull standing at a shallow water margin",
+        "fr": "Goéland railleur au bord d’une eau peu profonde"
+      }
+    },
+    "خرشنة-الساندويش": {
+      "image": "media/publications/daily-birds-20261105/sandwich-tern.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "خرشنة ساندويش بمنقار داكن أصفر الطرف على عوامة",
+        "en": "Sandwich Tern with a yellow-tipped dark bill on a buoy",
+        "fr": "Sterne caugek au bec sombre à pointe jaune sur une bouée"
+      }
+    },
+    "الخرشنة-القزوينية": {
+      "image": "media/publications/daily-birds-20261105/caspian-tern.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "خرشنة قزوينية بمنقار أحمر ضخم في الطيران",
+        "en": "Caspian Tern in flight with a massive red bill",
+        "fr": "Sterne caspienne en vol au bec rouge massif"
+      }
+    },
+    "الخرشنة-نورسية-المنقار": {
+      "image": "media/publications/daily-birds-20261105/gull-billed-tern.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "خرشنة نورسية المنقار تقف قرب الماء بمنقار أسود قصير وقوي",
+        "en": "Gull-billed Tern beside water showing a short stout black bill",
+        "fr": "Sterne hansel près de l’eau au bec noir court et robuste"
+      }
+    },
+    "جشنة-الماء": {
+      "image": "media/publications/daily-birds-20261105/water-pipit.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "جشنة ماء تحمل حشرات في منقارها على غصن",
+        "en": "Water Pipit holding insects while perched on a branch",
+        "fr": "Pipit spioncelle tenant des insectes sur une branche"
+      }
+    },
+    "الشنقب-الصغير": {
+      "image": "media/publications/daily-birds-20261105/jack-snipe.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "شنقب صغير مموه بخطوط فاتحة على الظهر بين النباتات",
+        "en": "Jack Snipe camouflaged among plants with pale back stripes",
+        "fr": "Bécassine sourde dissimulée dans la végétation aux bandes dorsales claires"
       }
     }
   },
