@@ -81,8 +81,11 @@ def build(lang):
     label, status, paragraph, home_label, magazine, locale = COPY[lang]
     source_dir = '' if lang == 'ar' else lang
     target_dir = ROUTES[lang].rstrip('/')
+    # Search reuses this shell with temporary COPY/ROUTES. Only real market
+    # routes may preserve their existing page or receive product content/styles.
+    is_market = target_dir == posixpath.join(source_dir, 'market')
     existing = DOCS / target_dir / 'index.html'
-    source = existing if existing.is_file() else DOCS / source_dir / 'index.html'
+    source = existing if is_market and existing.is_file() else DOCS / source_dir / 'index.html'
     page = source.read_text(encoding='utf-8')
     title = f'{label} — {status} | {magazine}'
     canonical = ORIGIN + ROUTES[lang]
@@ -93,14 +96,19 @@ def build(lang):
     <div class="market-shell">
       <div class="breadcrumb"><a href="{home}">{home_label}</a> / {label}</div>
       <header class="market-intro"><p class="market-name">{label}</p><h1>{status}</h1><p>{paragraph}</p></header>
-      {product_cards(lang)}
+      {product_cards(lang) if is_market else ''}
     </div>
   </div>
 </main>'''
     page, count = re.subn(r'<main\b[^>]*>.*?</main>', lambda _: body, page, count=1, flags=re.S)
     assert count == 1
     page = re.sub(r'<style id="sayd-market-styles">.*?</style>\n?', '', page, flags=re.S)
-    page = page.replace('</head>', STYLE + '\n</head>', 1)
+    if is_market:
+        # Shared search regeneration keeps its entry CSS just before analytics.
+        # Place market CSS ahead of it so both builders preserve the same order.
+        search_style = re.search(r'<link rel="stylesheet" href="[^\"]*search-entry\.css[^\"]*">', page)
+        insertion = search_style.start() if search_style else page.index('</head>')
+        page = page[:insertion] + STYLE + '\n' + page[insertion:]
     # Relative URLs are rooted in the source edition; rebase for /market/.
     def rebase(match):
         attr, quote, raw = match.groups()
