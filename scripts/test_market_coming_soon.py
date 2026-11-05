@@ -3,6 +3,8 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 from lxml import html
 import json
+import hashlib
+from decimal import Decimal
 from build_market_coming_soon import DOCS, ROUTES, COPY, ORIGIN, CATALOG, LABELS
 
 def test_pages():
@@ -24,9 +26,20 @@ def test_pages():
             link=card.xpath('.//a[@class="market-buy"]')[0]
             assert link.get('href')==product['url'] and link.get('target')=='_blank'
             assert set(link.get('rel').split())=={'noopener','noreferrer'}
-            assert link.text==LABELS[lang][0]+' ↗'
-            assert card.xpath('.//svg[@role="img"]/@aria-label')
-            assert card.xpath('.//*[@class="market-illustration"]/text()')==[LABELS[lang][2]]
+            assert link.text==LABELS[lang][0]
+            assert not card.xpath('.//svg | .//*[@class="market-illustration"]')
+            image=card.xpath('.//img[@class="market-photo"]')[0]
+            assert image.get('src')=='/'+product['image']['path']
+            assert image.get('alt')=='SilverAnt — '+product['copy'][lang]['name']
+            data=(DOCS/product['image']['path']).read_bytes()
+            assert hashlib.sha256(data).hexdigest()==product['image']['sha256']
+            assert card.xpath('.//a[@class="market-visual"]/@href')==[product['url']]
+            price=card.xpath('.//p[@class="market-price"]')[0]
+            amount=f"{Decimal(product['price']['amount']):.2f}"
+            assert price.get('data-currency')=='USD' and price.get('data-price')==amount
+            assert ''.join(price.itertext())=='$'+amount+' USD'
+            assert 'variant='+str(product['price']['variant_id']) in product['url']
+            assert 'currency=USD' in product['url']
         assert t.xpath('//*[@class="market-note"]/text()')==[LABELS[lang][1]]
         assert not t.xpath('//script[contains(@src,"affiliate")]')
         for code,route2 in ROUTES.items():
@@ -39,6 +52,6 @@ def test_pages():
             if dest.is_dir():dest=dest/'index.html'
             assert dest.exists(),(lang,raw)
         assert t.xpath('//nav[@class="header-social"]') and t.xpath('//footer')
-    print('PASS: eight real products and seller links in AR/EN/FR, localized illustrations, reciprocal language links, local assets, no on-site checkout')
+    print('PASS: eight real products and seller links in AR/EN/FR, original local product photographs and USD prices, reciprocal language links, local assets, no on-site checkout')
 
 if __name__=='__main__':test_pages()
