@@ -1,0 +1,134 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "france-bird-flu-risk-20261105",
+  "expected_base": "a2b080a936e466ead2e0672e3a4add3a1148a1bc",
+  "approval_reference": "private:france-bird-flu-publication-approved-20261105; Nayef explicitly approved the presented Arabic article and photo for Updates and the homepage ticker. No social distribution authorized. French and English mirror the approved Arabic text.",
+  "bank_search_reference": "Sayd picture for use: France/Le-Teich/2020-02-06_Eurasian-Teal_Hobbyfotowiki. Original libfile_05707d69d06c81918e5471ca2d83035d; rights libfile_7c83676c35f0819184ee56e30e899b8c. Source and actual pixels verified 2026-11-05; reuse the identical existing 1600px website derivative without adding duplicate media.",
+  "photos": [
+    {
+      "id": "cover",
+      "path": "docs/media/uploads/2026/10/common-teal-20261023-1600.jpg",
+      "sha256": "f151298a167555516eb58a30ca73260837b70568af03ab987ab5e7574650a00e",
+      "source_sha256": "8fa20f799d4919b5afd4994be8d8c0ca16f07ba94ced25bbb8abe682128b2356",
+      "source_reference": "Hobbyfotowiki; Eurasian teal, male; Réserve Ornithologique du Teich, France; photographed 2020-02-06. Original libfile_05707d69d06c81918e5471ca2d83035d. Existing 1600px website derivative, no new edits. Archive illustration, not a photograph of an infected bird.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Eurasian_teal_(Anas_crecca).jpg",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 Universal Public Domain Dedication by the photographer; commercial reuse and adaptations permitted. Photographer credited once.",
+        "evidence_reference": "libfile_7c83676c35f0819184ee56e30e899b8c; Commons source page rechecked 2026-11-05.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "شرشير أوراسي يمدّ جناحيه فوق الماء في محمية لو تيش بفرنسا.",
+        "en": "A Eurasian teal spreading its wings over the water at Le Teich bird reserve in France.",
+        "fr": "Une sarcelle d’hiver déploie ses ailes sur l’eau dans la réserve ornithologique du Teich, en France."
+      },
+      "caption": {
+        "ar": "شرشير أوراسي في محمية لو تيش بفرنسا، صورة أرشيفية.",
+        "en": "A Eurasian teal at Le Teich bird reserve in France. Archive photograph.",
+        "fr": "Une sarcelle d’hiver dans la réserve ornithologique du Teich, en France. Photo d’archives."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
+        "en": "france-raises-bird-flu-risk-november-2026",
+        "fr": "france-releve-risque-grippe-aviaire-novembre-2026"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "wildlife",
+      "archives": [
+        "wildlife"
+      ],
+      "kind": "article",
+      "photos": [
+        "cover"
+      ],
+      "translations": {
+        "ar": {
+          "title": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات في دول مجاورة",
+          "subtitle": "المستوى المتوسط يدخل حيّز التنفيذ مع تدابير إضافية للوقاية وضوابط تمسّ صيد الطيور المائية",
+          "meta_description": "فرنسا ترفع خطر إنفلونزا الطيور إلى متوسط اعتبارًا من 5 تشرين الثاني 2026، بعد تزايد الإصابات بين الطيور البرية في دول مجاورة، مع ضوابط للصيد والوقاية.",
+          "ticker_title": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات بين الطيور البرية في دول مجاورة",
+          "sections": [
+            {
+              "paragraphs": [
+                "رفعت فرنسا مستوى خطر إنفلونزا الطيور شديدة الإمراض من «ضئيل» إلى «متوسط» على كامل أراضيها الأوروبية، اعتبارًا من 5 تشرين الثاني 2026، بعد تزايد الإصابات المسجّلة بين الطيور البرية في عدد من الدول المجاورة.",
+                "ويستند القرار إلى تطوّر العدوى على مسارات الهجرة، واحتمال انتقال الفيروس بواسطة الطيور المهاجرة التي تعبر فرنسا. وصدر في 2 تشرين الثاني، ونُشر في الجريدة الرسمية في الرابع منه، على أن يدخل حيّز التنفيذ في اليوم التالي.",
+                "ويفعّل رفع مستوى الخطر تدابير إضافية للمراقبة والوقاية، تشمل ضوابط تمسّ صيد الطيور المائية. ويُمنع أثناء النقل خلط الطيور الحية المستخدمة لاستدراج الطرائد إذا كانت آتية من أماكن احتجاز مختلفة، كما يُحظر التلامس المباشر بين الطيور المقيمة في موقع الصيد وتلك التي تُنقل إليه.",
+                "وفي المناطق المصنّفة ذات خطر خاص، تُطبّق قيود إضافية على نقل هذه الطيور واستخدامها بحسب فئة حائزها، إلى جانب تدابير لحماية الدواجن والطيور الأسيرة من الاختلاط بالطيور البرية. وتخضع حركة طيور الطرائد في هذه المناطق لشروط بيطرية، مع فحوص فيروسية إضافية عند نقل طيور فصيلة البطيات بين مزارع تربيتها.",
+                "ويهدف الإجراء إلى الحدّ من انتقال العدوى من الطيور البرية إلى الطيور المربّاة، مع إمكان اتخاذ تدابير محلية أشدّ بحسب تقييم المخاطر."
+              ]
+            },
+            {
+              "paragraphs": [
+                "المصدر: الجريدة الرسمية الفرنسية."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "تصوير: Hobbyfotowiki."
+        },
+        "en": {
+          "title": "France raises bird flu risk after cases increase in neighbouring countries",
+          "subtitle": "Moderate risk level takes effect with additional prevention measures and rules affecting waterfowl hunting",
+          "meta_description": "France raises its bird flu risk to moderate from 5 November 2026 after rising cases in wild birds in neighbouring countries, with prevention and hunting measures.",
+          "ticker_title": "France raises bird flu risk after cases increase in wild birds in neighbouring countries",
+          "sections": [
+            {
+              "paragraphs": [
+                "France raised its highly pathogenic avian influenza risk level from “negligible” to “moderate” across metropolitan France from 5 November 2026, following an increase in cases recorded in wild birds in several neighbouring countries.",
+                "The decision reflects the spread of infection along migration routes and the possibility of the virus being carried by migratory birds passing through France. The order was issued on 2 November and published in the Official Journal on 4 November, taking effect the following day.",
+                "The higher risk level activates additional surveillance and prevention measures, including rules affecting waterfowl hunting. During transport, live decoy birds from different holding sites must not be mixed. Direct contact between decoys resident at a hunting site and those transported to it is also prohibited.",
+                "In designated special-risk areas, additional restrictions apply to the transport and use of these birds according to their keeper’s category, alongside measures protecting poultry and other captive birds from contact with wild birds. Movements of game birds in these areas are subject to veterinary conditions, with additional virological testing when birds of the duck family are moved between game-bird farms.",
+                "The measure aims to limit transmission from wild birds to birds kept by people, with stricter local measures possible according to the risk assessment."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Source: France’s Official Journal."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Hobbyfotowiki."
+        },
+        "fr": {
+          "title": "La France relève le risque de grippe aviaire après une hausse des cas dans les pays voisins",
+          "subtitle": "Le niveau modéré entre en vigueur avec des mesures de prévention supplémentaires et des règles concernant la chasse au gibier d’eau",
+          "meta_description": "La France relève le risque de grippe aviaire à modéré le 5 novembre 2026 après une hausse des cas chez les oiseaux sauvages de pays voisins, avec des mesures de prévention.",
+          "ticker_title": "La France relève le risque de grippe aviaire après une hausse des cas chez les oiseaux sauvages des pays voisins",
+          "sections": [
+            {
+              "paragraphs": [
+                "La France a relevé le niveau de risque d’influenza aviaire hautement pathogène de « négligeable » à « modéré » sur l’ensemble du territoire métropolitain à compter du 5 novembre 2026, après une hausse des cas détectés chez les oiseaux sauvages dans plusieurs pays voisins.",
+                "La décision tient compte de la dynamique de l’infection dans les couloirs de migration et de la possibilité de diffusion du virus par les oiseaux migrateurs de passage en France. Pris le 2 novembre, l’arrêté a été publié au Journal officiel le 4 novembre et est entré en vigueur le lendemain.",
+                "Ce relèvement active des mesures supplémentaires de surveillance et de prévention, notamment des règles concernant la chasse au gibier d’eau. Lors du transport, le mélange d’appelants provenant de différents lieux de détention est interdit. Les contacts directs entre les appelants résidents d’un site de chasse et les appelants qui y sont transportés sont également interdits.",
+                "Dans les zones à risque particulier, des restrictions supplémentaires s’appliquent au transport et à l’utilisation de ces oiseaux selon la catégorie de leur détenteur, ainsi que des mesures protégeant les volailles et les autres oiseaux captifs des contacts avec les oiseaux sauvages. Les mouvements de gibier à plumes dans ces zones sont soumis à des conditions vétérinaires, avec un dépistage virologique supplémentaire lors des mouvements entre élevages de gibier de la famille des Anatidés.",
+                "La mesure vise à limiter la transmission des oiseaux sauvages aux oiseaux détenus, avec la possibilité de mesures locales plus strictes selon l’évaluation des risques."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Source : Journal officiel de la République française."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Hobbyfotowiki."
+        }
+      },
+      "distribution": {
+        "placement": "latest",
+        "ticker": true
+      }
+    }
+  ]
+}
