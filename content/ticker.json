@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
+      "titles": {
+        "ar": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات بين الطيور البرية في دول مجاورة",
+        "en": "France raises bird flu risk after cases increase in wild birds in neighbouring countries",
+        "fr": "La France relève le risque de grippe aviaire après une hausse des cas chez les oiseaux sauvages des pays voisins"
+      },
+      "title": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات بين الطيور البرية في دول مجاورة"
+    },
+    {
       "slug": "كرنفال-دبي-ميدان-2026-2027",
       "titles": {
         "ar": "كرنفال سباقات دبي ينطلق في ميدان يوم ٦ نوفمبر بـ١٦ أمسية، والمنيف يشارك بخيلين في ليلة الافتتاح.",
@@ -81,15 +90,6 @@
         "fr": "Le tourisme cynégétique en Égypte, en Irak et en Jordanie"
       },
       "title": "الصيد السياحي في مصر والعراق والأردن"
-    },
-    {
-      "slug": "عمان-تنظم-زيارة-المحميات-والتخييم",
-      "titles": {
-        "ar": "عُمان تصدر ضوابط لزيارة المحميات والتخييم فيها",
-        "en": "Oman issues rules for reserve visits and camping",
-        "fr": "Oman fixe les règles de visite et de camping dans ses réserves"
-      },
-      "title": "عُمان تصدر ضوابط لزيارة المحميات والتخييم فيها"
     }
   ]
 }
