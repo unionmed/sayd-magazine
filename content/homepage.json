@@ -342,7 +342,8 @@
     "الخرشنة-القزوينية",
     "الخرشنة-نورسية-المنقار",
     "جشنة-الماء",
-    "الشنقب-الصغير"
+    "الشنقب-الصغير",
+    "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -566,10 +567,10 @@
     {
       "door": "wildlife",
       "slugs": [
+        "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان",
         "عمان-تنظم-زيارة-المحميات-والتخييم",
         "دبي-سفاري-الموسم-الثامن-2026",
-        "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا",
-        "موسم-الطوقي-محمية-الملك-عبدالعزيز-2026"
+        "أجنحة-تستعيد-السماء-تمارا-الزين-زغرتا"
       ]
     },
     {
@@ -811,7 +812,8 @@
     "الخرشنة-القزوينية": "birds",
     "الخرشنة-نورسية-المنقار": "birds",
     "جشنة-الماء": "birds",
-    "الشنقب-الصغير": "birds"
+    "الشنقب-الصغير": "birds",
+    "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان": "wildlife"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2220,6 +2222,15 @@
         "ar": "شنقب صغير مموه بخطوط فاتحة على الظهر بين النباتات",
         "en": "Jack Snipe camouflaged among plants with pale back stripes",
         "fr": "Bécassine sourde dissimulée dans la végétation aux bandes dorsales claires"
+      }
+    },
+    "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان": {
+      "image": "media/publications/king-salman-birds-20261105/king-salman-vulture-2025.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "نسر في محمية الملك سلمان بن عبدالعزيز الملكية.",
+        "en": "A vulture in King Salman bin Abdulaziz Royal Reserve.",
+        "fr": "Un vautour dans la réserve royale du roi Salmane ben Abdelaziz."
       }
     }
   },
