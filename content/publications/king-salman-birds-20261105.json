@@ -1,0 +1,128 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "king-salman-birds-20261105",
+  "expected_base": "1404bacc2618939d6e8d3582cdefe5f89612ef45",
+  "approval_reference": "private:Sentinel_82bb1edb2e70819193d43a6171eaaa6c",
+  "bank_search_reference": "Exact owner-selected photo libfile_88b03c94126c8191b7e18c84496f0ff0 after editorial image review, 5 November 2026. No substitution.",
+  "photos": [
+    {
+      "id": "king-salman-vulture",
+      "path": "docs/media/publications/king-salman-birds-20261105/king-salman-vulture-2025.jpg",
+      "sha256": "2a7f4e140671040982540b47047cf6692085783ecc3d41c1ed272203d9e07683",
+      "source_sha256": "2a7f4e140671040982540b47047cf6692085783ecc3d41c1ed272203d9e07683",
+      "source_reference": "SPA / Saudi Photos Hub. Original image 8747714, page 2435253, titled a vulture in King Salman bin Abdulaziz Royal Reserve (2025). Exact JPEG retained unchanged, no crop or alteration. Image is archival and not presented as November 2026 coverage. https://cc-cdn.spa.gov.sa/mashaa/media/nuipi0bn/8747714.jpg",
+      "source_url": "https://cc.spa.gov.sa/ar/news/2435253",
+      "rights": {
+        "status": "licensed",
+        "statement": "Saudi Photos Hub terms permit use under CC BY-SA 4.0 with attribution. Original JPEG unchanged. Credit, source and license are retained; no claim of a more specific bird identification.",
+        "evidence_reference": "https://cc.spa.gov.sa/en/terms/1220",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "alt": {
+        "ar": "نسر في محمية الملك سلمان بن عبدالعزيز الملكية.",
+        "en": "A vulture in King Salman bin Abdulaziz Royal Reserve.",
+        "fr": "Un vautour dans la réserve royale du roi Salmane ben Abdelaziz."
+      },
+      "caption": {
+        "ar": "نسر في محمية الملك سلمان بن عبدالعزيز الملكية، في صورة أرشيفية من عام ٢٠٢٥.",
+        "en": "A vulture in King Salman bin Abdulaziz Royal Reserve, in an archive photo from 2025.",
+        "fr": "Un vautour dans la réserve royale du roi Salmane ben Abdelaziz, sur une photo d’archives de 2025."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان",
+        "en": "king-salman-reserve-296-bird-species",
+        "fr": "reserve-roi-salmane-296-especes-oiseaux"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "wildlife",
+      "archives": [
+        "wildlife"
+      ],
+      "kind": "article",
+      "photos": [
+        "king-salman-vulture"
+      ],
+      "translations": {
+        "ar": {
+          "title": "٢٩٦ نوعًا من الطيور في محمية الملك سلمان",
+          "subtitle": "المحمية توفر موائل للطيور المقيمة ومحطات للطيور المهاجرة.",
+          "meta_description": "أعلنت هيئة تطوير محمية الملك سلمان بن عبدالعزيز الملكية تسجيل ٢٩٦ نوعًا من الطيور في المحمية الواقعة شمال السعودية وشمالها الغربي.",
+          "sections": [
+            {
+              "paragraphs": [
+                "أعلنت هيئة تطوير محمية الملك سلمان بن عبدالعزيز الملكية أن عدد أنواع الطيور المسجلة داخل المحمية بلغ ٢٩٦ نوعًا.",
+                "وتشمل الأنواع التي أوردها الإعلان النسر الأسمر، والنسر الأذون، وصقر الغروب، والنسر المصري.",
+                "وتقع المحمية في شمال السعودية وشمالها الغربي، وتوفر موائلها محطات للطيور المهاجرة للراحة والتغذية، إلى جانب احتضانها أنواعًا مقيمة.",
+                "وقارنت الهيئة الحصيلة بسجل سابق يضم ١٩٠ نوعًا. وكانت قد أعلنت في أكتوبر ٢٠٢٤ توثيق أكثر من ٢٩٠ نوعًا من الطيور في المحمية."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "المصدر: وكالة الأنباء السعودية، ٤ نوفمبر ٢٠٢٦.",
+              "url": "https://www.spa.gov.sa/N2718039"
+            }
+          ],
+          "photo_credit": "الصورة: واس / منصة الصور السعودية · CC BY-SA 4.0"
+        },
+        "en": {
+          "title": "296 bird species recorded in King Salman Royal Reserve",
+          "subtitle": "The reserve provides habitats for resident and migratory birds.",
+          "meta_description": "The King Salman bin Abdulaziz Royal Reserve Development Authority reports 296 bird species recorded in the reserve in northern and northwestern Saudi Arabia.",
+          "sections": [
+            {
+              "paragraphs": [
+                "The King Salman bin Abdulaziz Royal Reserve Development Authority has announced that 296 bird species have been recorded within the reserve.",
+                "Species mentioned in the announcement include the griffon vulture, lappet-faced vulture, sooty falcon and Egyptian vulture.",
+                "Located in northern and northwestern Saudi Arabia, the reserve provides habitats where migratory birds can rest and feed, alongside resident species.",
+                "The authority compared the total with an earlier record of 190 species. In October 2024, it had announced the documentation of more than 290 bird species in the reserve."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Source: Saudi Press Agency, 4 November 2026.",
+              "url": "https://www.spa.gov.sa/N2718039"
+            }
+          ],
+          "photo_credit": "Photo: SPA / Saudi Photos Hub · CC BY-SA 4.0"
+        },
+        "fr": {
+          "title": "296 espèces d’oiseaux recensées dans la réserve royale du roi Salmane",
+          "subtitle": "La réserve abrite des oiseaux sédentaires et accueille des oiseaux migrateurs.",
+          "meta_description": "L’Autorité de développement de la réserve royale du roi Salmane ben Abdelaziz annonce 296 espèces d’oiseaux recensées dans la réserve, située dans le nord et le nord-ouest de l’Arabie saoudite.",
+          "sections": [
+            {
+              "paragraphs": [
+                "L’Autorité de développement de la réserve royale du roi Salmane ben Abdelaziz a annoncé que 296 espèces d’oiseaux avaient été recensées dans la réserve.",
+                "Les espèces citées dans l’annonce comprennent le vautour fauve, le vautour oricou, le faucon concolore et le vautour percnoptère.",
+                "Située dans le nord et le nord-ouest de l’Arabie saoudite, la réserve offre aux oiseaux migrateurs des habitats où se reposer et se nourrir, tout en abritant des espèces sédentaires.",
+                "L’Autorité a comparé ce total à un précédent recensement de 190 espèces. En octobre 2024, elle avait annoncé avoir documenté plus de 290 espèces d’oiseaux dans la réserve."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Source : Agence de presse saoudienne, 4 novembre 2026.",
+              "url": "https://www.spa.gov.sa/N2718039"
+            }
+          ],
+          "photo_credit": "Photo : SPA / Plateforme saoudienne de photographies · CC BY-SA 4.0"
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      }
+    }
+  ]
+}
