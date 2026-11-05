@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
+      "titles": {
+        "ar": "الناعمة: توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد ليلي",
+        "en": "Naameh: arrests, impounded vehicles and seized night-hunting equipment",
+        "fr": "Naameh : interpellations, véhicules mis en fourrière et saisie de matériel de chasse nocturne"
+      },
+      "title": "الناعمة: توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد ليلي"
+    },
+    {
       "slug": "رادار-صيد-العربي-تشرين-الأول-2026",
       "titles": {
         "ar": "رادار صيد لشهر تشرين الأول: 23 عملية ضبط لأشخاص مرتبطة بالصيد البري و57 شخصًا مضبوطًا أو موقوفًا في ست دول عربية.",
@@ -81,15 +90,6 @@
         "fr": "Les champions de Syrie de tir aux hélices couronnés à Saydnaya"
       },
       "title": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا"
-    },
-    {
-      "slug": "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
-      "titles": {
-        "ar": "«ونعمين» يفوز بتحضيري كأس الأمير محمد بن سعود الكبير بفارق 15 طولًا",
-        "en": "Wanaameen wins Prince Mohammed bin Saud Al Kabeer Cup prep by 15 lengths",
-        "fr": "Wanaameen gagne la préparatoire à la Coupe du prince Mohammed ben Saoud Al Kabeer avec 15 longueurs d’avance"
-      },
-      "title": "«ونعمين» يفوز بتحضيري كأس الأمير محمد بن سعود الكبير بفارق 15 طولًا"
     }
   ]
 }

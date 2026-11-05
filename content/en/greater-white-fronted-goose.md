@@ -1,0 +1,11 @@
+---
+title: "Greater White-fronted Goose"
+slug: "greater-white-fronted-goose"
+date: "2026-11-05"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261105/greater-white-fronted-goose.jpg"
+subtitle: "Anser albifrons"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261105/greater-white-fronted-goose.jpg" width="2048" height="1684" alt="Greater White-fronted Geese in flight showing dark belly bars" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Greater White-fronted Goose</figcaption></figure><p class="excerpt">Anser albifrons</p><h2>Identity and identification</h2><p>Greater White-fronted Goose Anser albifrons belongs to Anatidae. Adults show white around the bill base, irregular black belly bars and orange legs. Young birds lack some of these marks; head, bill and body proportions help separate the species from Lesser White-fronted Goose.</p><h2>Habitat and food</h2><p>It grazes in open, damp landscapes and rests on quiet water. Flocks commute between feeding and roosting areas, so conservation must retain both.</p><h2>Breeding and development</h2><p>It breeds in northern regions in a lined ground nest. BTO gives a typical clutch of 5–6 eggs, incubated by the female for 27–28 days. Downy young walk early; the reference fledging age is 40–43 days. Walking ability does not imply flight.</p><h2>Arab occurrence and seasonality</h2><p>Lebanon’s 2020 checklist documents passage and irregular winter occurrence, usually from mid-November to early March. Qatar’s current list describes a rare winter visitor. November precedes the main Lebanese winter period; presence in Qatar remains rare. Neither status describes a resident population.</p><h2>Observation and conservation</h2><p>Chasing flocks and draining wetlands reduce feeding and resting opportunities. Avoid approaching roosts to force birds into flight for photographs.</p><p class="article-sources">British Trust for Ornithology — BirdFacts: White Fronted Goose · RSPB — White Fronted Goose · Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020) · Qatar Bird Observation Group — Qatar Bird List · AviList Core Team — Global Avian Checklist v2026, 20 October 2026</p><p class="photo-credit">Species illustration: Tero Linjama — CC0 1.0. · iNaturalist: 485815299</p>

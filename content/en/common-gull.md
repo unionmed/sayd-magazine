@@ -1,0 +1,11 @@
+---
+title: "Common Gull"
+slug: "common-gull"
+date: "2026-11-05"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261105/common-gull.jpg"
+subtitle: "Larus canus"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261105/common-gull.jpg" width="1268" height="845" alt="Common Gull with grey upperparts and white markings on the wingtips" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Common Gull</figcaption></figure><p class="excerpt">Larus canus</p><h2>Identity and identification</h2><p>Common Gull Larus canus belongs to Laridae. Adults have grey upperparts, white underparts, a relatively slender greenish-yellow bill and black wingtips with white markings. The winter head becomes streaked; immature birds differ considerably from adults.</p><h2>Habitat and food</h2><p>It takes invertebrates, fish and other foods along shores, fields and water margins. Outside breeding, mixed flocks require identification of individual birds rather than assigning one name to the whole gathering.</p><h2>Breeding and development</h2><p>The vegetation nest occupies the ground or a suitable raised site. BTO gives a typical clutch of three eggs, shared incubation of 22–28 days and fledging at about 34–36 days. Growing chicks require food and protection.</p><h2>Arab occurrence and seasonality</h2><p>Lebanon’s 2020 checklist separates scarce passage in March and early November to mid-December from widespread common winter presence in December to late February. A few birds remain in summer, which alone does not prove breeding. November falls within the passage period preceding the winter peak.</p><h2>Observation and conservation</h2><p>This entry uses Larus canus under AviList 2026. Short-billed Gull Larus brachyrhynchus is separate: its photographs and records must not automatically be transferred here. Clean shores and quiet resting places support the species.</p><p class="article-sources">British Trust for Ornithology — BirdFacts: Common Gull · RSPB — Common Gull · Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020) · AviList Core Team — Global Avian Checklist v2026, 20 October 2026</p><p class="photo-credit">Species illustration: Шухободская Ольга Владимировна — CC0 1.0. · iNaturalist: 599512357</p>

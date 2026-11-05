@@ -1,0 +1,11 @@
+---
+title: "Sterne caspienne"
+slug: "sterne-caspienne"
+date: "2026-11-05"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261105/caspian-tern.jpg"
+subtitle: "Hydroprogne caspia"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261105/caspian-tern.jpg" width="1849" height="1494" alt="Sterne caspienne en vol au bec rouge massif" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Sterne caspienne</figcaption></figure><p class="excerpt">Hydroprogne caspia</p><h2>Identité et identification</h2><p>La Sterne caspienne Hydroprogne caspia appartient aux Laridae ; son ancien nom est Sterna caspia. La plus grande sterne possède un bec rouge massif, un corps robuste et une queue peu fourchue. La calotte nuptiale noire se mêle de blanc hors saison.</p><h2>Milieux et alimentation</h2><p>Elle recherche les poissons au-dessus des eaux côtières, lacs et estuaires, puis plonge pour les capturer. Rivages ouverts et îlots servent de reposoirs. Selon les populations, elle est résidente ou migratrice.</p><h2>Reproduction et développement</h2><p>Le nid est une simple dépression au sol. Animal Diversity Web indique un à trois œufs, une incubation partagée de 25–28 jours et l’envol vers 37 jours après l’éclosion. Les jeunes restent nourris après l’envol ; les dates septentrionales ne doivent pas être appliquées au Golfe.</p><h2>Présence arabe et saisons</h2><p>La liste actuelle du Qatar la classe comme nicheuse résidente et hivernante commune, observée tous les mois. Novembre peut donc réunir résidents et arrivants hivernaux. Cela ne signifie ni que tout oiseau est migrateur ni que la nidification a lieu ce mois-là ; le statut qatari ne vaut pas pour tous les pays arabes.</p><h2>Observation et conservation</h2><p>Des zones de pêche saines et des reposoirs et sites de nidification tranquilles sont nécessaires. Observer de loin évite d’exposer œufs et poussins en dérangeant les parents.</p><p class="article-sources">University of Michigan — Animal Diversity Web: Caspian Tern · British Trust for Ornithology — BirdFacts: Caspian Tern · Qatar Bird Observation Group — Qatar Bird List · AviList Core Team — Global Avian Checklist v2026, 20 October 2026</p><p class="photo-credit">Illustration de l’espèce : David Bird — CC0 1.0. · iNaturalist: 130867907</p>

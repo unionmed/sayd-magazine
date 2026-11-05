@@ -1,0 +1,11 @@
+---
+title: "Water Rail"
+slug: "water-rail"
+date: "2026-11-05"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261105/water-rail.jpg"
+subtitle: "Rallus aquaticus"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261105/water-rail.jpg" width="2048" height="1367" alt="Water Rail with a long reddish bill among reeds" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Water Rail</figcaption></figure><p class="excerpt">Rallus aquaticus</p><h2>Identity and identification</h2><p>Water Rail Rallus aquaticus belongs to Rallidae. Adult plumage combines a long reddish bill, grey face and breast, and black-and-white barred flanks. Its narrow body passes through reeds; the long bill helps separate it from many shorter-billed crakes.</p><h2>Habitat and food</h2><p>It picks invertebrates from mud and water margins and also eats plant material. Dense wetland vegetation usually conceals it, so calls may reveal a bird that remains unseen.</p><h2>Breeding and development</h2><p>The vegetation nest is hidden close to water. BTO gives a typical clutch of 6–11 eggs and incubation of 19–22 days. Downy chicks become mobile early: leaving the nest site is distinct from being able to fly or becoming independent.</p><h2>Arab occurrence and seasonality</h2><p>Lebanon’s 2020 checklist describes common passage and winter presence from early September to early May, with scarce summer breeding. Qatar’s current list describes a rare winter visitor and passage migrant. November therefore suits observation in both countries, with different abundance and status; these descriptions do not establish the same status throughout the Arab world.</p><h2>Observation and conservation</h2><p>Retaining reeds, suitable water levels and clean margins protects habitat. Watch from a distance without entering cover or using playback near potentially breeding birds.</p><p class="article-sources">British Trust for Ornithology — BirdFacts: Water Rail · RSPB — Water Rail · Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020) · Qatar Bird Observation Group — Qatar Bird List · AviList Core Team — Global Avian Checklist v2026, 20 October 2026</p><p class="photo-credit">Species illustration: Лариса Артемьева — CC0 1.0. · iNaturalist: 355642248</p>

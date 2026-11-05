@@ -1,0 +1,11 @@
+---
+title: "Jack Snipe"
+slug: "jack-snipe"
+date: "2026-11-05"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261105/jack-snipe.jpg"
+subtitle: "Lymnocryptes minimus"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261105/jack-snipe.jpg" width="1975" height="1975" alt="Jack Snipe camouflaged among plants with pale back stripes" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Jack Snipe</figcaption></figure><p class="excerpt">Lymnocryptes minimus</p><h2>Identity and identification</h2><p>Jack Snipe Lymnocryptes minimus belongs to Scolopacidae. Smaller and shorter-billed than Common Snipe, it has a compact body, conspicuous pale back stripes and a dark crown lacking Common Snipe’s pale central stripe. Camouflage plumage does not permit sex or exact age to be assigned from every photograph.</p><h2>Habitat and food</h2><p>It hides in damp vegetation, eating insects, worms and snails. Repeated body-bobbing accompanies feeding. It may remain still until danger approaches; deliberately flushing it to test this behaviour is inappropriate.</p><h2>Breeding and development</h2><p>It breeds in northern marshlands with a concealed ground nest. BTO gives a typical clutch of four eggs and female incubation of 17–24 days. Downy chicks become mobile early; movement does not establish flight capability.</p><h2>Arab occurrence and seasonality</h2><p>Lebanon’s 2020 checklist describes a rare migrant and scarce winter visitor from mid-October to late April, noting that concealment may suppress sightings. Qatar’s current list also gives scarce winter status. November falls within its winter visitor period; few records do not establish absence.</p><h2>Observation and conservation</h2><p>Waterlogged soils and vegetation provide food and concealment. Quiet photography at a distance is preferable to repeatedly forcing the bird into flight.</p><p class="article-sources">British Trust for Ornithology — BirdFacts: Jack Snipe · RSPB — Jack Snipe · Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020) · Qatar Bird Observation Group — Qatar Bird List · AviList Core Team — Global Avian Checklist v2026, 20 October 2026</p><p class="photo-credit">Species illustration: Istvan Sipos — CC0 1.0. · iNaturalist: 601438427</p>

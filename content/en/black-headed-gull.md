@@ -1,0 +1,11 @@
+---
+title: "Black-headed Gull"
+slug: "black-headed-gull"
+date: "2026-11-05"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261105/black-headed-gull.jpg"
+subtitle: "Chroicocephalus ridibundus"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261105/black-headed-gull.jpg" width="2048" height="1366" alt="Black-headed Gulls in winter plumage on a fence beside water" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Black-headed Gull</figcaption></figure><p class="excerpt">Chroicocephalus ridibundus</p><h2>Identity and identification</h2><p>Black-headed Gull Chroicocephalus ridibundus belongs to Laridae; older references use Larus ridibundus. The breeding hood is chocolate-brown. In winter it disappears, usually leaving a dark ear spot. Adults have reddish bills and legs.</p><h2>Habitat and food</h2><p>It uses coasts, estuaries, lakes and fields. Food includes invertebrates, small fish and items collected on land. A bird on a beach is not necessarily restricted to marine habitats.</p><h2>Breeding and development</h2><p>Colonies occupy vegetation or low ground, often near water. BTO gives a typical clutch of 2–3 eggs, shared incubation of 23–26 days and fledging at about 34–36 days. Before flight, chicks still depend on parental protection and feeding.</p><h2>Arab occurrence and seasonality</h2><p>Lebanon’s 2020 checklist describes abundant passage and winter presence from August to late April, peaking in November and December. Qatar’s current list calls it a common winter visitor. November offers a useful lesson in recognising winter plumage despite the species’ name.</p><h2>Observation and conservation</h2><p>Clean water and undisturbed resting areas matter. Its abundance should not be transferred to other gull species, and gathering near rubbish does not remove its need for natural habitat.</p><p class="article-sources">British Trust for Ornithology — BirdFacts: Black Headed Gull · RSPB — Black Headed Gull · Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020) · Qatar Bird Observation Group — Qatar Bird List · AviList Core Team — Global Avian Checklist v2026, 20 October 2026</p><p class="photo-credit">Species illustration: Charlie Farrell — CC0 1.0. · iNaturalist: 167324118</p>
