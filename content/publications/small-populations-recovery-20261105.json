@@ -1,0 +1,164 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "small-populations-recovery-20261105",
+  "expected_base": "4370dc33f8744a851a20b09fc0d2b11a86bb807b",
+  "approval_reference": "private:species-recovery-publication-approved-20261105; Nayef approved the presented short Arabic article and selected woodhen photograph in Studies, without the news ticker. Caption limited to identifying the bird as a species examined in the study, with photographer attribution. English and French mirror the approved Arabic. No social publication authorized.",
+  "bank_search_reference": "Library searches for Lord Howe woodhen and its Arabic name on 2026-11-05 returned the exact selected and user-reviewed original libfile_5fa28ad11e188191bbc814d2848ea52f. The Commons source and reuse licence were inspected. The approved primary image is saved as a static JPEG, preserving its complete framing; no alternative photograph is substituted.",
+  "photos": [
+    {
+      "id": "cover",
+      "path": "docs/media/publications/small-populations-recovery-20261105/lord-howe-woodhen-granitethighs.jpg",
+      "sha256": "a4d654c268898b3217d50bbc7f250e662e0224e0536169a74bd9a27dc18bf40a",
+      "source_sha256": "efce46a97e6d46f0b94d1f23bd1b4254b7e16f7889451f2135067d850a688b4d",
+      "source_reference": "Original photograph by Granitethighs, Lord Howe Island. Library libfile_5fa28ad11e188191bbc814d2848ea52f; original Commons file and pixels inspected 2026-11-05. Technical conversion: primary frame of original MPO container saved as a static JPEG, quality 85, resized from 2944 by 2208 to 1600 by 1200 for web delivery, retaining complete 4:3 framing without crop, compositing or content changes. Capture year is not asserted because file-page date, filename and EXIF differ.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Woodhen_Tricholimnas_sylvestris_Ned%27sBeachRd_11June2011.jpg",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC BY-SA 3.0 Unported, published by photographer Granitethighs; reuse permitted with attribution and licence link. The primary frame is technically converted to static JPEG and reduced to 1600 by 1200 pixels without cropping or changing photographic content; the resulting image remains under the same licence.",
+        "evidence_reference": "Commons licensing section inspected 2026-11-05; original file saved as libfile_5fa28ad11e188191bbc814d2848ea52f.",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "alt": {
+        "ar": "طائر لوردهاو وودهن بني اللون يقف على العشب، وتظهر حلقات تعريف حول ساقيه.",
+        "en": "A brown Lord Howe woodhen standing on grass, with identification bands around its legs.",
+        "fr": "Un râle de Lord Howe brun sur l’herbe, portant des bagues d’identification aux pattes."
+      },
+      "caption": {
+        "ar": "طائر لوردهاو وودهن، أحد الأنواع التي تناولتها الدراسة.",
+        "en": "A Lord Howe woodhen, one of the species examined in the study.",
+        "fr": "Un râle de Lord Howe, l’une des espèces examinées dans l’étude."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "فرصة-للتعافي-أنواع-قاربت-الانقراض",
+        "en": "chance-to-recover-species-near-extinction",
+        "fr": "chance-retablissement-especes-proches-extinction"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "science",
+      "archives": [
+        "science"
+      ],
+      "kind": "article",
+      "photos": [
+        "cover"
+      ],
+      "translations": {
+        "ar": {
+          "title": "فرصة للتعافي: دراسة تتتبّع عودة أنواع قاربت الانقراض",
+          "subtitle": "حماية مباشرة ارتبطت باستعادة الأعداد لدى أنواع انخفضت إلى أقل من ٥٠ فردًا في البرية",
+          "meta_description": "دراسة على ١٤١ نوعًا من الطيور والثدييات تربط الحماية المباشرة بتعافي الأعداد، حتى بعد انخفاضها إلى أقل من ٥٠ فردًا في البرية، مع استمرار الحاجة للحماية.",
+          "sections": [
+            {
+              "paragraphs": [
+                "حين لا يبقى من نوعٍ حيواني سوى بضع عشرات من الأفراد في البرية، قد يبدو إنقاذه بعيد المنال. لكن دراسة حديثة تُظهر أن التدخلات المباشرة ارتبطت بتعافي أعداد أنواع بلغت حافة الانقراض.",
+                "جمع باحثون من جامعة موناش وجمعية علم الحيوان في لندن سجلات ١٤٧ نوعًا من الطيور والثدييات انخفضت أعدادها في البرية إلى أقل من ٥٠ فردًا في مرحلة ما منذ عام ١٩٥٠. وأمكن تقييم نتائج ١٤١ نوعًا منها."
+              ]
+            },
+            {
+              "heading": "ما الذي أظهرته الأرقام؟",
+              "paragraphs": [
+                "من بين ٥١ نوعًا تلقت تدخلات حماية مباشرة، ارتفعت أعداد ٣١ نوعًا إلى ١٠٠ فرد أو أكثر، أي نحو ٦١٪. وفي المقابل، بلغ هذا المستوى نوعان فقط من أصل ٩٠ نوعًا لم تتلقَّ تدخلًا مباشرًا، فيما انقرض ٣٣ نوعًا من هذه المجموعة.",
+                "وشملت التدخلات مكافحة الحيوانات المفترسة الدخيلة، واستعادة الموائل، والإكثار لأغراض الحماية، ونقل الأفراد وإعادة إطلاقهم. كما انقرضت ستة أنواع من المجموعة التي تلقت تدخلًا مباشرًا."
+              ]
+            },
+            {
+              "heading": "طائر لورد هاو: عودة على مدى عقود",
+              "paragraphs": [
+                "من الأمثلة التي تناولتها الدراسة طائر لورد هاو وودهِن الأسترالي. انخفضت أعداده إلى نحو ٢٣ طائرًا في أواخر سبعينيات القرن الماضي، قبل تطبيق إجراءات شملت إزالة حيوانات دخيلة والإكثار وإعادة الإطلاق. وبحلول عام ٢٠٢٤، بلغ العدد المسجَّل ١٦٣٨ طائرًا.",
+                "وبلغ الوسيط الزمني للوصول إلى ١٠٠ فرد لدى الأنواع التي تعافت بعد تدخل مباشر نحو ١٨ عامًا. ويشير الباحثون إلى أن بلوغ ١٠٠ فرد معيار عددي للمقارنة، فيما تستمر حاجة الأنواع إلى الحماية؛ وبعضها ما زال يعتمد على الرعاية والإكثار خارج موطنه."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "المصدر: دراسة منشورة في دورية Proceedings of the Royal Society B، في ٤ نوفمبر ٢٠٢٦.",
+              "url": "https://doi.org/10.1098/rspb.2026.2436"
+            }
+          ],
+          "photo_credit": "تصوير: Granitethighs / Wikimedia Commons."
+        },
+        "en": {
+          "title": "A chance to recover: study tracks the return of species that neared extinction",
+          "subtitle": "Direct conservation was associated with population recovery in species reduced to fewer than 50 individuals in the wild",
+          "meta_description": "A study of 141 bird and mammal species links direct conservation with population recovery after numbers fell below 50 in the wild, while protection remains necessary.",
+          "sections": [
+            {
+              "paragraphs": [
+                "When only a few dozen individuals of an animal species remain in the wild, saving it may seem a distant prospect. But a new study shows that direct interventions were associated with population recovery in species that had reached the brink of extinction.",
+                "Researchers from Monash University and the Zoological Society of London compiled records for 147 bird and mammal species whose wild populations fell below 50 individuals at some point since 1950. Outcomes could be assessed for 141 of them."
+              ]
+            },
+            {
+              "heading": "What did the numbers show?",
+              "paragraphs": [
+                "Of 51 species that received direct conservation interventions, 31 recovered to 100 individuals or more, approximately 61%. By comparison, only two of the 90 species that received no direct intervention reached that level, while 33 species in this group became extinct.",
+                "Interventions included controlling invasive predators, restoring habitats, conservation breeding, translocations and releases. Six species in the group that received direct intervention also became extinct."
+              ]
+            },
+            {
+              "heading": "The Lord Howe woodhen: a return spanning decades",
+              "paragraphs": [
+                "One example examined in the study is Australia’s Lord Howe woodhen. Its population fell to approximately 23 birds in the late 1970s, before measures including the removal of introduced animals, breeding and releases were implemented. By 2024, the recorded population had reached 1,638 birds.",
+                "Among species that recovered after direct intervention, the median time to reach 100 individuals was approximately 18 years. The researchers note that reaching 100 individuals is a numerical benchmark for comparison, while species continue to need protection; some still depend on care and breeding outside their natural habitat."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Source: study published in Proceedings of the Royal Society B on 4 November 2026.",
+              "url": "https://doi.org/10.1098/rspb.2026.2436"
+            }
+          ],
+          "photo_credit": "Photo: Granitethighs / Wikimedia Commons."
+        },
+        "fr": {
+          "title": "Une chance de rétablissement : une étude retrace le retour d’espèces proches de l’extinction",
+          "subtitle": "Des actions directes de conservation étaient associées au rétablissement d’espèces réduites à moins de 50 individus à l’état sauvage",
+          "meta_description": "Une étude sur 141 espèces d’oiseaux et de mammifères associe conservation directe et rétablissement après une chute sous 50 individus sauvages. La protection reste nécessaire.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Lorsqu’il ne reste que quelques dizaines d’individus d’une espèce animale à l’état sauvage, la sauver peut sembler hors de portée. Pourtant, une nouvelle étude montre que des interventions directes étaient associées au rétablissement des effectifs d’espèces parvenues au bord de l’extinction.",
+                "Des chercheurs de l’université Monash et de la Société zoologique de Londres ont rassemblé les données de 147 espèces d’oiseaux et de mammifères dont les effectifs sauvages étaient tombés sous 50 individus à un moment donné depuis 1950. Les résultats ont pu être évalués pour 141 d’entre elles."
+              ]
+            },
+            {
+              "heading": "Que révèlent les chiffres ?",
+              "paragraphs": [
+                "Parmi les 51 espèces ayant bénéficié d’interventions directes de conservation, 31 ont atteint au moins 100 individus, soit environ 61 %. À titre de comparaison, seules deux des 90 espèces sans intervention directe ont atteint ce niveau, tandis que 33 espèces de ce groupe se sont éteintes.",
+                "Les interventions comprenaient la lutte contre les prédateurs introduits, la restauration des habitats, l’élevage à des fins de conservation, les transferts et les lâchers d’individus. Six espèces du groupe ayant bénéficié d’une intervention directe se sont également éteintes."
+              ]
+            },
+            {
+              "heading": "Le râle de Lord Howe : un retour sur plusieurs décennies",
+              "paragraphs": [
+                "Le râle de Lord Howe, en Australie, figure parmi les exemples examinés dans l’étude. Ses effectifs étaient tombés à environ 23 oiseaux à la fin des années 1970, avant la mise en œuvre de mesures comprenant l’élimination d’animaux introduits, l’élevage et les lâchers. En 2024, la population recensée atteignait 1 638 oiseaux.",
+                "Pour les espèces qui se sont rétablies après une intervention directe, le délai médian pour atteindre 100 individus était d’environ 18 ans. Les chercheurs soulignent que ce seuil de 100 individus constitue un repère numérique de comparaison, alors que ces espèces continuent d’avoir besoin de protection ; certaines dépendent encore de soins et d’élevage hors de leur milieu naturel."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Source : étude publiée dans Proceedings of the Royal Society B le 4 novembre 2026.",
+              "url": "https://doi.org/10.1098/rspb.2026.2436"
+            }
+          ],
+          "photo_credit": "Photo : Granitethighs / Wikimedia Commons."
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      }
+    }
+  ]
+}
