@@ -519,6 +519,73 @@ class ExactRadarBundleTests(unittest.TestCase):
         with self.assertRaises(ValueError): schema.validate(value)
 
 
+class ExactDubaiSelectionTests(unittest.TestCase):
+    def fixture(self):
+        # Identity-only fixture. Never compile synthetic bytes as the actual photo.
+        value = record(release=schema.DUBAI_RELEASE)
+        photo_id, path, digest = schema.DUBAI_PHOTO
+        photo = value['photos'][0]
+        photo.update(id=photo_id, path=path, sha256=digest, source_sha256=digest)
+        photo['rights'].update(
+            status='user_selected_source_unresolved', user_supplied=False,
+            external_rights_verified=False, authenticity_verified=False,
+            editorial_authorization_reference=schema.DUBAI_SELECTION_REFERENCE)
+        value['articles'][0].update(slugs=dict(schema.DUBAI_SLUGS), photos=[photo_id])
+        return value
+
+    def test_exact_truthful_selection_validates(self):
+        value = self.fixture()
+        self.assertIs(schema.validate(value), value)
+        self.assertIs(value['photos'][0]['rights']['user_supplied'], False)
+
+    def test_release_photo_identity_and_article_are_bound(self):
+        mutations = [
+            lambda v: v.update(id='other-release'),
+            lambda v: v.update(photos=[]),
+            lambda v: v['photos'].append(copy.deepcopy(v['photos'][0])),
+            lambda v: v.update(articles=[]),
+            lambda v: v['articles'].append(copy.deepcopy(v['articles'][0])),
+            lambda v: v['articles'][0].update(photos=['other-photo']),
+        ]
+        for field in ('id', 'path', 'sha256', 'source_sha256'):
+            mutations.append(lambda v, field=field: v['photos'][0].update({field: 'other-photo' if field == 'id' else
+                'docs/media/publications/dubai-carnival-20261105/other.jpg' if field == 'path' else 'a' * 64}))
+        for lang in schema.LANGS:
+            mutations.append(lambda v, lang=lang: v['articles'][0]['slugs'].update({lang: 'other-slug'}))
+        for index, mutate in enumerate(mutations):
+            value = self.fixture(); mutate(value)
+            with self.subTest(mutation=index), self.assertRaises(ValueError):
+                schema.validate(value)
+
+    def test_rights_evidence_and_boolean_types_remain_strict(self):
+        mutations = [('status', status) for status in ('owned', 'licensed', 'permission')]
+        mutations += [('editorial_authorization_reference', ref) for ref in
+                      ('private:other-decision', '', None)]
+        mutations += [('license_url', 'https://example.org/licence'), ('approved', True)]
+        for field in ('user_supplied', 'external_rights_verified', 'authenticity_verified'):
+            mutations += [(field, value) for value in (True, 0, 1, 'false', 'true', None)]
+        for field, replacement in mutations:
+            value = self.fixture(); value['photos'][0]['rights'][field] = replacement
+            with self.subTest(field=field, replacement=replacement), self.assertRaises(ValueError):
+                schema.validate(value)
+        for field in ('status', 'statement', 'evidence_reference', 'user_supplied',
+                      'external_rights_verified', 'authenticity_verified',
+                      'editorial_authorization_reference'):
+            value = self.fixture(); del value['photos'][0]['rights'][field]
+            with self.subTest(missing=field), self.assertRaises(ValueError):
+                schema.validate(value)
+
+    def test_regular_provenance_and_public_credit_still_required(self):
+        for field in ('source_reference', 'alt', 'caption', 'rights'):
+            value = self.fixture(); del value['photos'][0][field]
+            with self.subTest(missing=field), self.assertRaises(ValueError):
+                schema.validate(value)
+        for lang in schema.LANGS:
+            value = self.fixture(); value['articles'][0]['translations'][lang]['photo_credit'] = ''
+            with self.subTest(language=lang), self.assertRaises(ValueError):
+                schema.validate(value)
+
+
 class SchemaTests(unittest.TestCase):
     def test_explicit_interview_format_only(self):
         value = record(); value['articles'][0]['format'] = 'interview'
