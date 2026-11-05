@@ -1,0 +1,2309 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261105",
+  "expected_base": "bf6ad709bc72991164eb929687771cfe309d6c38",
+  "approval_reference": "private:nayef-bird-encyclopedia-20261101-standing-publication-and-20261104-ten-daily-plus-backlog",
+  "bank_search_reference": "2026-11-05: Library exact-title photo-bank and species searches, Drive exact folder search and repository media-name search found no suitable verified archived photographs. External originals used. Complete main AR archive 884 rows plus EN/FR checked for scientific names, former combinations and Arabic/local variants; existing generic Larus article is not an individual species profile. Numenius arquata excluded as existing. Actual 10 originals directly viewed, independently compared with BTO/RSPB/CIESM/ADW diagnostics, source pages and per-photo CC0 links inspected. Rights, identity and Arab presence reviewed separately. Audience-data baseline unavailable; seasonal education is an untested editorial hypothesis; encyclopedia archive only, no social distribution.",
+  "photos": [
+    {
+      "id": "water-rail",
+      "path": "docs/media/publications/daily-birds-20261105/water-rail.jpg",
+      "sha256": "37ed9e6fefa9b48dd9392b73fe479f4cde8204098163334e2fcdda8e01438215",
+      "source_sha256": "37ed9e6fefa9b48dd9392b73fe479f4cde8204098163334e2fcdda8e01438215",
+      "source_reference": "Лариса Артемьева; 2024-02-23; Карджин, Респ. Северная Осетия — Алания, Россия, 363311. iNaturalist observation 201465058, photo 355642248. Exact original viewed directly 2026-11-05; independent institutional diagnostics: Long red bill, slate-grey face and black/white flank bars; adult-type plumage. Sex and exact age unassigned. Location/capture date are source metadata; illustrative species image, not evidence for Qatar or other country status.",
+      "source_url": "https://www.inaturalist.org/photos/355642248",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Original bytes unchanged; creator and source retained. Commercial reuse and archival storage permitted.",
+        "evidence_reference": "Actual per-photo page 355642248 and observation 201465058 inspected 2026-11-05: photo API cc0, original page title identifies same creator and links https://creativecommons.org/publicdomain/zero/1.0/. Exact original SHA-256 and decoded dimensions checked.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "مرعة ماء بمنقار محمر طويل بين القصب",
+        "en": "Water Rail with a long reddish bill among reeds",
+        "fr": "Râle d’eau au long bec rougeâtre parmi les roseaux"
+      },
+      "caption": {
+        "ar": "مرعة الماء (سكة الماء)",
+        "en": "Water Rail",
+        "fr": "Râle d’eau"
+      }
+    },
+    {
+      "id": "greater-white-fronted-goose",
+      "path": "docs/media/publications/daily-birds-20261105/greater-white-fronted-goose.jpg",
+      "sha256": "6add585aded0a02d097062e9969422e1e632cc512ebb9afefaaca873de14cbc3",
+      "source_sha256": "6add585aded0a02d097062e9969422e1e632cc512ebb9afefaaca873de14cbc3",
+      "source_reference": "Tero Linjama; 2025-04-13; Hämeenlahti, Jyväskylä, Suomi. iNaturalist observation 270152940, photo 485815299. Exact original viewed directly 2026-11-05; independent institutional diagnostics: White bill-base patches, irregular dark belly bars and long-necked grey-goose proportions visible in flight; no sex/subspecies assigned. Location/capture date are source metadata; illustrative species image, not evidence for Qatar or other country status.",
+      "source_url": "https://www.inaturalist.org/photos/485815299",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Original bytes unchanged; creator and source retained. Commercial reuse and archival storage permitted.",
+        "evidence_reference": "Actual per-photo page 485815299 and observation 270152940 inspected 2026-11-05: photo API cc0, original page title identifies same creator and links https://creativecommons.org/publicdomain/zero/1.0/. Exact original SHA-256 and decoded dimensions checked.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "إوز أغر كبير في الطيران تظهر علامات سوداء على بطونه",
+        "en": "Greater White-fronted Geese in flight showing dark belly bars",
+        "fr": "Oies rieuses en vol aux barres ventrales noires"
+      },
+      "caption": {
+        "ar": "الإوز الأغر الكبير",
+        "en": "Greater White-fronted Goose",
+        "fr": "Oie rieuse"
+      }
+    },
+    {
+      "id": "black-headed-gull",
+      "path": "docs/media/publications/daily-birds-20261105/black-headed-gull.jpg",
+      "sha256": "a658dbc47677690a1dfc780039496f4ea1638432d4bbb0582a4a69788feecf8e",
+      "source_sha256": "a658dbc47677690a1dfc780039496f4ea1638432d4bbb0582a4a69788feecf8e",
+      "source_reference": "Charlie Farrell; 2021-11-04; Hollingworth Lake Water Activity Centre, Littleborough, Greater Manchester, UK. iNaturalist observation 100267753, photo 167324118. Exact original viewed directly 2026-11-05; independent institutional diagnostics: White winter heads with dark ear marks, red bills/legs, pale grey upperparts and black/white wingtips; exact age/sex unassigned. Location/capture date are source metadata; illustrative species image, not evidence for Qatar or other country status.",
+      "source_url": "https://www.inaturalist.org/photos/167324118",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Original bytes unchanged; creator and source retained. Commercial reuse and archival storage permitted.",
+        "evidence_reference": "Actual per-photo page 167324118 and observation 100267753 inspected 2026-11-05: photo API cc0, original page title identifies same creator and links https://creativecommons.org/publicdomain/zero/1.0/. Exact original SHA-256 and decoded dimensions checked.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "نوارس سوداء الرأس في ريش الشتاء تقف على سياج قرب الماء",
+        "en": "Black-headed Gulls in winter plumage on a fence beside water",
+        "fr": "Mouettes rieuses en plumage hivernal sur une barrière près de l’eau"
+      },
+      "caption": {
+        "ar": "النورس أسود الرأس",
+        "en": "Black-headed Gull",
+        "fr": "Mouette rieuse"
+      }
+    },
+    {
+      "id": "common-gull",
+      "path": "docs/media/publications/daily-birds-20261105/common-gull.jpg",
+      "sha256": "90dbf717cb74c18b5acab2aeda0cf36a42cdc46798ac19d2f9f8d5a2b0821f8d",
+      "source_sha256": "90dbf717cb74c18b5acab2aeda0cf36a42cdc46798ac19d2f9f8d5a2b0821f8d",
+      "source_reference": "Шухободская Ольга Владимировна; 2025-12-13; Приморский р-н, Санкт-Петербург, Россия. iNaturalist observation 330591368, photo 599512357. Exact original viewed directly 2026-11-05; independent institutional diagnostics: Rounded head, relatively slender yellowish bill with winter dark marks, grey mantle and white-marked black primaries. No exact age/sex/subspecies assigned; not the rejected North American brachyrhynchus images. Location/capture date are source metadata; illustrative species image, not evidence for Qatar or other country status.",
+      "source_url": "https://www.inaturalist.org/photos/599512357",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Original bytes unchanged; creator and source retained. Commercial reuse and archival storage permitted.",
+        "evidence_reference": "Actual per-photo page 599512357 and observation 330591368 inspected 2026-11-05: photo API cc0, original page title identifies same creator and links https://creativecommons.org/publicdomain/zero/1.0/. Exact original SHA-256 and decoded dimensions checked.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "نورس شائع رمادي الظهر وذو بقع بيضاء على أطراف الجناحين",
+        "en": "Common Gull with grey upperparts and white markings on the wingtips",
+        "fr": "Goéland cendré au dessus gris et aux marques blanches des pointes alaires"
+      },
+      "caption": {
+        "ar": "النورس الشائع",
+        "en": "Common Gull",
+        "fr": "Goéland cendré"
+      }
+    },
+    {
+      "id": "slender-billed-gull",
+      "path": "docs/media/publications/daily-birds-20261105/slender-billed-gull.jpg",
+      "sha256": "3437f07a63a9fbf39387a740dab4471b4720ecb0d42e56015aa64cd0e5cf6b0e",
+      "source_sha256": "3437f07a63a9fbf39387a740dab4471b4720ecb0d42e56015aa64cd0e5cf6b0e",
+      "source_reference": "Sunny Zhang 张迎新; 2024-03-17; Dubai - United Arab Emirates. iNaturalist observation 255053311, photo 456989292. Exact original viewed directly 2026-11-05; independent institutional diagnostics: Long tapered bill, elongated head/neck, white head without hood and pale eye. Mixed immature-type wing feathering; exact age/sex unassigned. Location/capture date are source metadata; illustrative species image, not evidence for Qatar or other country status.",
+      "source_url": "https://www.inaturalist.org/photos/456989292",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Original bytes unchanged; creator and source retained. Commercial reuse and archival storage permitted.",
+        "evidence_reference": "Actual per-photo page 456989292 and observation 255053311 inspected 2026-11-05: photo API cc0, original page title identifies same creator and links https://creativecommons.org/publicdomain/zero/1.0/. Exact original SHA-256 and decoded dimensions checked.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "نورس دقيق المنقار يقف عند حافة ماء ضحل",
+        "en": "Slender-billed Gull standing at a shallow water margin",
+        "fr": "Goéland railleur au bord d’une eau peu profonde"
+      },
+      "caption": {
+        "ar": "النورس دقيق المنقار",
+        "en": "Slender-billed Gull",
+        "fr": "Goéland railleur"
+      }
+    },
+    {
+      "id": "sandwich-tern",
+      "path": "docs/media/publications/daily-birds-20261105/sandwich-tern.jpg",
+      "sha256": "3d767667279d915d318ba0bb21202afe70b75020426cc54bc99c7fab03706f00",
+      "source_sha256": "3d767667279d915d318ba0bb21202afe70b75020426cc54bc99c7fab03706f00",
+      "source_reference": "Sunny Zhang 张迎新; 2024-03-16; 68WF+WW6 - Dubai - United Arab Emirates. iNaturalist observation 251617793, photo 450251492. Exact original viewed directly 2026-11-05; independent institutional diagnostics: Long slender dark bill with clear yellow tip, black legs, pale forecrown and dark hindcrown. Exact age/sex unassigned. Location/capture date are source metadata; illustrative species image, not evidence for Qatar or other country status.",
+      "source_url": "https://www.inaturalist.org/photos/450251492",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Original bytes unchanged; creator and source retained. Commercial reuse and archival storage permitted.",
+        "evidence_reference": "Actual per-photo page 450251492 and observation 251617793 inspected 2026-11-05: photo API cc0, original page title identifies same creator and links https://creativecommons.org/publicdomain/zero/1.0/. Exact original SHA-256 and decoded dimensions checked.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "خرشنة ساندويش بمنقار داكن أصفر الطرف على عوامة",
+        "en": "Sandwich Tern with a yellow-tipped dark bill on a buoy",
+        "fr": "Sterne caugek au bec sombre à pointe jaune sur une bouée"
+      },
+      "caption": {
+        "ar": "خرشنة الساندويش",
+        "en": "Sandwich Tern",
+        "fr": "Sterne caugek"
+      }
+    },
+    {
+      "id": "caspian-tern",
+      "path": "docs/media/publications/daily-birds-20261105/caspian-tern.jpg",
+      "sha256": "1a33c2310829c331b155bb5ff298d56c62e8b937861ea0a81b72b3a7192af22d",
+      "source_sha256": "1a33c2310829c331b155bb5ff298d56c62e8b937861ea0a81b72b3a7192af22d",
+      "source_reference": "David Bird; 2021-05-22; Fifty Point Conservation Area, Baseline Road, Hamilton, ON, Canada. iNaturalist observation 79878120, photo 130867907. Exact original viewed directly 2026-11-05; independent institutional diagnostics: Massive red bill, black cap, broad pale wings and robust shape; adult-type breeding plumage, exact age/sex unassigned. Location/capture date are source metadata; illustrative species image, not evidence for Qatar or other country status.",
+      "source_url": "https://www.inaturalist.org/photos/130867907",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Original bytes unchanged; creator and source retained. Commercial reuse and archival storage permitted.",
+        "evidence_reference": "Actual per-photo page 130867907 and observation 79878120 inspected 2026-11-05: photo API cc0, original page title identifies same creator and links https://creativecommons.org/publicdomain/zero/1.0/. Exact original SHA-256 and decoded dimensions checked.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "خرشنة قزوينية بمنقار أحمر ضخم في الطيران",
+        "en": "Caspian Tern in flight with a massive red bill",
+        "fr": "Sterne caspienne en vol au bec rouge massif"
+      },
+      "caption": {
+        "ar": "الخرشنة القزوينية",
+        "en": "Caspian Tern",
+        "fr": "Sterne caspienne"
+      }
+    },
+    {
+      "id": "gull-billed-tern",
+      "path": "docs/media/publications/daily-birds-20261105/gull-billed-tern.jpg",
+      "sha256": "d35a42b4bd822640282c6db7a5980519c05f171a17ea7a0d43a8a4a1ce61cab1",
+      "source_sha256": "d35a42b4bd822640282c6db7a5980519c05f171a17ea7a0d43a8a4a1ce61cab1",
+      "source_reference": "Don Wellmann; 2021-04-08; Imperial County, CA, USA. iNaturalist observation 73460607, photo 119934029. Exact original viewed directly 2026-11-05; independent institutional diagnostics: Short thick black bill, black cap, broad pale wings and robust body; breeding-type plumage, sex/exact age unassigned. Non-Australian source matches nilotica, not separated macrotarsa. Location/capture date are source metadata; illustrative species image, not evidence for Qatar or other country status.",
+      "source_url": "https://www.inaturalist.org/photos/119934029",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Original bytes unchanged; creator and source retained. Commercial reuse and archival storage permitted.",
+        "evidence_reference": "Actual per-photo page 119934029 and observation 73460607 inspected 2026-11-05: photo API cc0, original page title identifies same creator and links https://creativecommons.org/publicdomain/zero/1.0/. Exact original SHA-256 and decoded dimensions checked.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "خرشنة نورسية المنقار تقف قرب الماء بمنقار أسود قصير وقوي",
+        "en": "Gull-billed Tern beside water showing a short stout black bill",
+        "fr": "Sterne hansel près de l’eau au bec noir court et robuste"
+      },
+      "caption": {
+        "ar": "الخرشنة نورسية المنقار (الأويق)",
+        "en": "Gull-billed Tern",
+        "fr": "Sterne hansel"
+      }
+    },
+    {
+      "id": "water-pipit",
+      "path": "docs/media/publications/daily-birds-20261105/water-pipit.jpg",
+      "sha256": "df96e06576b4459d5f2ad3405b5feec7ada8e9f435d29581ab3aa6be4c24f24a",
+      "source_sha256": "df96e06576b4459d5f2ad3405b5feec7ada8e9f435d29581ab3aa6be4c24f24a",
+      "source_reference": "Paulo Caseirito; 2022-07-15; Asturias, Espanha. iNaturalist observation 129335262, photo 219774448. Exact original viewed directly 2026-11-05; independent institutional diagnostics: Fine bill, pale eyebrow, greyish head and relatively unstreaked warm breeding-type breast; insects in bill. Exact sex/age and actual nesting unassigned. Location/capture date are source metadata; illustrative species image, not evidence for Qatar or other country status.",
+      "source_url": "https://www.inaturalist.org/photos/219774448",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Original bytes unchanged; creator and source retained. Commercial reuse and archival storage permitted.",
+        "evidence_reference": "Actual per-photo page 219774448 and observation 129335262 inspected 2026-11-05: photo API cc0, original page title identifies same creator and links https://creativecommons.org/publicdomain/zero/1.0/. Exact original SHA-256 and decoded dimensions checked.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "جشنة ماء تحمل حشرات في منقارها على غصن",
+        "en": "Water Pipit holding insects while perched on a branch",
+        "fr": "Pipit spioncelle tenant des insectes sur une branche"
+      },
+      "caption": {
+        "ar": "جشنة الماء",
+        "en": "Water Pipit",
+        "fr": "Pipit spioncelle"
+      }
+    },
+    {
+      "id": "jack-snipe",
+      "path": "docs/media/publications/daily-birds-20261105/jack-snipe.jpg",
+      "sha256": "3f73316c6c91898101b5b917c5eac012730e921eb79ed80b5e9ba72116896745",
+      "source_sha256": "3f73316c6c91898101b5b917c5eac012730e921eb79ed80b5e9ba72116896745",
+      "source_reference": "Istvan Sipos; 2025-12-21; Lugasu De Jos, Bihor, RO. iNaturalist observation 331523502, photo 601438427. Exact original viewed directly 2026-11-05; independent institutional diagnostics: Short bill, compact body, dark crown without pale central stripe and bold golden dorsal stripes. Exact sex/age unassigned. Location/capture date are source metadata; illustrative species image, not evidence for Qatar or other country status.",
+      "source_url": "https://www.inaturalist.org/photos/601438427",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Original bytes unchanged; creator and source retained. Commercial reuse and archival storage permitted.",
+        "evidence_reference": "Actual per-photo page 601438427 and observation 331523502 inspected 2026-11-05: photo API cc0, original page title identifies same creator and links https://creativecommons.org/publicdomain/zero/1.0/. Exact original SHA-256 and decoded dimensions checked.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "شنقب صغير مموه بخطوط فاتحة على الظهر بين النباتات",
+        "en": "Jack Snipe camouflaged among plants with pale back stripes",
+        "fr": "Bécassine sourde dissimulée dans la végétation aux bandes dorsales claires"
+      },
+      "caption": {
+        "ar": "الشنقب الصغير (الجهلول)",
+        "en": "Jack Snipe",
+        "fr": "Bécassine sourde"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "مرعة-الماء",
+        "en": "water-rail",
+        "fr": "rale-deau"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "water-rail"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "مرعة الماء (سكة الماء)",
+          "subtitle": "Rallus aquaticus",
+          "meta_description": "مرعة الماء Rallus aquaticus من التفلقية Rallidae.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "مرعة الماء Rallus aquaticus من التفلقية Rallidae. يتميز الطائر ذو الريش البالغ بمنقار طويل محمر ووجه وصدر رماديين وجانبين مخططين بالأبيض والأسود. جسمه الضيق يساعده على المرور بين القصب؛ والمنقار الطويل يميزه من كثير من المرعات الأقصر منقارًا."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يلتقط اللافقاريات من الطين وحواف الماء ويأكل مواد نباتية أيضًا. يعيش غالبًا متخفيًا في نباتات الأراضي الرطبة، وقد يدل صوته على وجوده حين يتعذر رؤيته."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يبني عشًا من النبات بين الغطاء الكثيف قرب الماء. تورد BTO عادة 6–11 بيضة وحضانة 19–22 يومًا. تفقس الفراخ مكسوة بالزغب وقادرة على الحركة مبكرًا؛ مغادرتها موضع العش لا تعني أنها تستطيع الطيران أو استغنت عن الرعاية."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "تصف قائمة لبنان لعام 2020 عبوره وإقامته الشتوية بالشائعين من أوائل سبتمبر إلى أوائل مايو، مع تكاثر صيفي نادر. وتعدّه قائمة قطر الحالية زائرًا شتويًا وعابرًا نادرًا. لذلك يناسب نوفمبر مراقبته في البلدين، مع اختلاف وفرته وصفة حضوره؛ ولا تمتد هذه الصفات تلقائيًا إلى جميع البلدان العربية."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "حفظ القصب ومستويات الماء وتجنب تلويث الحواف يحافظ على موائله. تُراقب الطيور من مسافة، دون اقتحام الغطاء النباتي أو تشغيل النداءات قرب طيور مشتبه بتكاثرها."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Water Rail",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/water-rail"
+            },
+            {
+              "label": "RSPB — Water Rail",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/water-rail"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Лариса Артемьева — CC0 1.0."
+        },
+        "en": {
+          "title": "Water Rail",
+          "subtitle": "Rallus aquaticus",
+          "meta_description": "Water Rail Rallus aquaticus belongs to Rallidae.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Water Rail Rallus aquaticus belongs to Rallidae. Adult plumage combines a long reddish bill, grey face and breast, and black-and-white barred flanks. Its narrow body passes through reeds; the long bill helps separate it from many shorter-billed crakes."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It picks invertebrates from mud and water margins and also eats plant material. Dense wetland vegetation usually conceals it, so calls may reveal a bird that remains unseen."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "The vegetation nest is hidden close to water. BTO gives a typical clutch of 6–11 eggs and incubation of 19–22 days. Downy chicks become mobile early: leaving the nest site is distinct from being able to fly or becoming independent."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist describes common passage and winter presence from early September to early May, with scarce summer breeding. Qatar’s current list describes a rare winter visitor and passage migrant. November therefore suits observation in both countries, with different abundance and status; these descriptions do not establish the same status throughout the Arab world."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Retaining reeds, suitable water levels and clean margins protects habitat. Watch from a distance without entering cover or using playback near potentially breeding birds."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Water Rail",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/water-rail"
+            },
+            {
+              "label": "RSPB — Water Rail",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/water-rail"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Species illustration: Лариса Артемьева — CC0 1.0."
+        },
+        "fr": {
+          "title": "Râle d’eau",
+          "subtitle": "Rallus aquaticus",
+          "meta_description": "Le Râle d’eau Rallus aquaticus appartient aux Rallidae.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Râle d’eau Rallus aquaticus appartient aux Rallidae. Le plumage adulte associe long bec rougeâtre, face et poitrine grises et flancs barrés de noir et blanc. Son corps étroit se glisse dans les roseaux ; le long bec le distingue de nombreuses marouettes."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il prélève des invertébrés dans la vase et aux abords de l’eau, ainsi que des matières végétales. La végétation dense des zones humides le cache souvent : ses cris peuvent signaler un oiseau invisible."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le nid végétal est dissimulé près de l’eau. Le BTO indique généralement 6–11 œufs et une incubation de 19–22 jours. Les poussins duveteux deviennent rapidement mobiles : quitter le nid ne signifie ni savoir voler ni être indépendant."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "La liste libanaise de 2020 décrit un migrateur de passage et hivernant commun, de début septembre à début mai, avec une nidification estivale rare. La liste actuelle du Qatar le donne comme hivernant et migrateur rare. Novembre convient donc à l’observation dans les deux pays, avec des abondances et statuts différents, sans généralisation à tous les pays arabes."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Conserver les roselières, des niveaux d’eau adaptés et des berges propres protège son habitat. Observer à distance, sans pénétrer dans le couvert ni diffuser des cris près d’oiseaux susceptibles de nicher."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Water Rail",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/water-rail"
+            },
+            {
+              "label": "RSPB — Water Rail",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/water-rail"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Лариса Артемьева — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الإوز-الأغر-الكبير",
+        "en": "greater-white-fronted-goose",
+        "fr": "oie-rieuse"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "greater-white-fronted-goose"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الإوز الأغر الكبير",
+          "subtitle": "Anser albifrons",
+          "meta_description": "الإوز الأغر الكبير Anser albifrons من البطية Anatidae.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الإوز الأغر الكبير Anser albifrons من البطية Anatidae. يحمل البالغ بياضًا حول قاعدة المنقار وعلامات سوداء غير منتظمة على البطن، مع ساقين برتقاليتين. تفتقد الفراخ والطيور اليافعة بعض هذه العلامات؛ ويجب مقارنة حجم الرأس والمنقار والجسم قبل فصله عن الإوز الأغر الصغير."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يرعى الأعشاب والنباتات في الأراضي المفتوحة الرطبة، ويستخدم المياه الهادئة للراحة. تتحرك أسرابه بين مواقع الغذاء والمبيت، وتتطلب الحماية المحافظة على الموقعين."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يتكاثر في مناطق شمالية، ويقيم عشًا أرضيًا مبطنًا. تورد BTO عادة 5–6 بيضات تحضنها الأنثى 27–28 يومًا. الفراخ زغبية وقادرة على السير مبكرًا، ويبلغ عمر الطيران المرجعي 40–43 يومًا؛ القدرة على السير ليست قدرة على الطيران."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "في لبنان، توثق قائمة 2020 عبورًا وحضورًا شتويًا غير منتظم، يبدأ عادة من منتصف نوفمبر ويستمر إلى أوائل مارس. وتصفه قائمة قطر الحالية بزائر شتوي نادر. يناسب إدراجه الآن التعريف بوصول الشتاء، دون تقديمه كنوع شائع أو مقيم في البلدين."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تؤثر ملاحقة الأسراب وتجفيف الأراضي الرطبة في فرص الراحة والتغذية. لا يُقترب من مجموعات المبيت لإجبارها على الطيران من أجل التصوير."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: White Fronted Goose",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/white-fronted-goose"
+            },
+            {
+              "label": "RSPB — White Fronted Goose",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/white-fronted-goose"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Tero Linjama — CC0 1.0."
+        },
+        "en": {
+          "title": "Greater White-fronted Goose",
+          "subtitle": "Anser albifrons",
+          "meta_description": "Greater White-fronted Goose Anser albifrons belongs to Anatidae.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Greater White-fronted Goose Anser albifrons belongs to Anatidae. Adults show white around the bill base, irregular black belly bars and orange legs. Young birds lack some of these marks; head, bill and body proportions help separate the species from Lesser White-fronted Goose."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It grazes in open, damp landscapes and rests on quiet water. Flocks commute between feeding and roosting areas, so conservation must retain both."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "It breeds in northern regions in a lined ground nest. BTO gives a typical clutch of 5–6 eggs, incubated by the female for 27–28 days. Downy young walk early; the reference fledging age is 40–43 days. Walking ability does not imply flight."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist documents passage and irregular winter occurrence, usually from mid-November to early March. Qatar’s current list describes a rare winter visitor. A November profile introduces the winter arrival period without portraying the bird as common or resident in either country."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Chasing flocks and draining wetlands reduce feeding and resting opportunities. Avoid approaching roosts to force birds into flight for photographs."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: White Fronted Goose",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/white-fronted-goose"
+            },
+            {
+              "label": "RSPB — White Fronted Goose",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/white-fronted-goose"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Species illustration: Tero Linjama — CC0 1.0."
+        },
+        "fr": {
+          "title": "Oie rieuse",
+          "subtitle": "Anser albifrons",
+          "meta_description": "L’Oie rieuse Anser albifrons appartient aux Anatidae.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Oie rieuse Anser albifrons appartient aux Anatidae. L’adulte porte du blanc autour de la base du bec, des barres noires irrégulières sur le ventre et des pattes orange. Les jeunes n’ont pas encore tous ces caractères ; les proportions de la tête, du bec et du corps aident à la distinguer de l’Oie naine."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Elle broute dans des paysages ouverts et humides et se repose sur des eaux tranquilles. Les groupes alternent entre zones alimentaires et dortoirs : les deux doivent être préservés."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Elle niche dans les régions septentrionales, dans un nid au sol garni d’une litière. Le BTO indique généralement 5–6 œufs, couvés par la femelle pendant 27–28 jours. Les poussins duveteux marchent tôt ; l’âge de référence pour l’envol est de 40–43 jours. Marcher ne signifie pas voler."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "La liste libanaise de 2020 documente le passage et un hivernage irrégulier, habituellement de mi-novembre à début mars. La liste actuelle du Qatar la décrit comme hivernante rare. Ce portrait accompagne l’arrivée de l’hiver sans la présenter comme commune ou résidente dans ces pays."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Poursuivre les groupes et drainer les zones humides réduit les possibilités de repos et d’alimentation. Ne pas faire décoller les oiseaux d’un dortoir pour les photographier."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: White Fronted Goose",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/white-fronted-goose"
+            },
+            {
+              "label": "RSPB — White Fronted Goose",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/white-fronted-goose"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Tero Linjama — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "النورس-أسود-الرأس",
+        "en": "black-headed-gull",
+        "fr": "mouette-rieuse"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "black-headed-gull"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "النورس أسود الرأس",
+          "subtitle": "Chroicocephalus ridibundus",
+          "meta_description": "النورس أسود الرأس Chroicocephalus ridibundus من النورسية Laridae.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "النورس أسود الرأس Chroicocephalus ridibundus من النورسية Laridae، ويظهر في مراجع أقدم باسم Larus ridibundus. غطاء الرأس بني شوكولاتي في ريش التكاثر، لكنه يختفي شتاءً وتبقى عادة بقعة داكنة خلف العين. المنقار والساقان محمران عند البالغ."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يرتاد السواحل والمصبات والبحيرات والحقول. غذاؤه متنوع، من اللافقاريات والأسماك الصغيرة إلى مواد يلتقطها على اليابسة. وجوده على الشاطئ لا يجعله مقصورًا على البحر."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يعشش في مستعمرات، غالبًا قرب الماء وعلى نباتات أو أرض منخفضة. تورد BTO عادة 2–3 بيضات، وحضانة مشتركة 23–26 يومًا، وطيران الفراخ بعمر 34–36 يومًا تقريبًا. تبقى الفراخ قبل ذلك مرتبطة بحماية الأبوين وإطعامهما."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "تصفه قائمة لبنان 2020 بعابر وزائر شتوي وفير من أغسطس إلى أواخر أبريل، مع ذروة في نوفمبر وديسمبر. وفي قطر تسجله القائمة الحالية زائرًا شتويًا شائعًا. اختلاف ريش الشتاء عن اسم الطائر نفسه يجعل نوفمبر مناسبًا لتعلم التعرف عليه."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "يحتاج إلى مياه نظيفة ومواقع راحة آمنة. لا تُعمم وفرة هذا النوع على أنواع النورس الأخرى، ولا يُفسر تجمعه قرب النفايات بأنه استغناء عن الموائل الطبيعية."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Black Headed Gull",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/black-headed-gull"
+            },
+            {
+              "label": "RSPB — Black Headed Gull",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/black-headed-gull"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Charlie Farrell — CC0 1.0."
+        },
+        "en": {
+          "title": "Black-headed Gull",
+          "subtitle": "Chroicocephalus ridibundus",
+          "meta_description": "Black-headed Gull Chroicocephalus ridibundus belongs to Laridae; older references use Larus ridibundus.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Black-headed Gull Chroicocephalus ridibundus belongs to Laridae; older references use Larus ridibundus. The breeding hood is chocolate-brown. In winter it disappears, usually leaving a dark ear spot. Adults have reddish bills and legs."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It uses coasts, estuaries, lakes and fields. Food includes invertebrates, small fish and items collected on land. A bird on a beach is not necessarily restricted to marine habitats."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "Colonies occupy vegetation or low ground, often near water. BTO gives a typical clutch of 2–3 eggs, shared incubation of 23–26 days and fledging at about 34–36 days. Before flight, chicks still depend on parental protection and feeding."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist describes abundant passage and winter presence from August to late April, peaking in November and December. Qatar’s current list calls it a common winter visitor. November offers a useful lesson in recognising winter plumage despite the species’ name."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Clean water and undisturbed resting areas matter. Its abundance should not be transferred to other gull species, and gathering near rubbish does not remove its need for natural habitat."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Black Headed Gull",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/black-headed-gull"
+            },
+            {
+              "label": "RSPB — Black Headed Gull",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/black-headed-gull"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Species illustration: Charlie Farrell — CC0 1.0."
+        },
+        "fr": {
+          "title": "Mouette rieuse",
+          "subtitle": "Chroicocephalus ridibundus",
+          "meta_description": "La Mouette rieuse Chroicocephalus ridibundus appartient aux Laridae ; les anciens ouvrages utilisent Larus ridibundus.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Mouette rieuse Chroicocephalus ridibundus appartient aux Laridae ; les anciens ouvrages utilisent Larus ridibundus. Son capuchon nuptial est brun chocolat. Il disparaît en hiver, laissant généralement une tache sombre derrière l’œil. Bec et pattes sont rougeâtres chez l’adulte."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Elle fréquente côtes, estuaires, lacs et champs. Son régime comprend invertébrés, petits poissons et aliments prélevés à terre. Sa présence sur une plage ne signifie pas qu’elle soit exclusivement marine."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Elle niche en colonies sur la végétation ou un sol bas, souvent près de l’eau. Le BTO indique habituellement 2–3 œufs, une incubation partagée de 23–26 jours et l’envol vers 34–36 jours. Avant l’envol, les poussins dépendent encore de la protection et du nourrissage des parents."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "La liste libanaise de 2020 décrit un passage et un hivernage abondants d’août à fin avril, avec un maximum en novembre et décembre. La liste actuelle du Qatar la classe parmi les hivernants communs. Novembre permet d’apprendre à reconnaître son plumage hivernal malgré son nom."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Eaux propres et reposoirs tranquilles sont nécessaires. Son abondance ne doit pas être attribuée aux autres laridés ; sa présence près des déchets ne supprime pas son besoin de milieux naturels."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Black Headed Gull",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/black-headed-gull"
+            },
+            {
+              "label": "RSPB — Black Headed Gull",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/black-headed-gull"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Charlie Farrell — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "النورس-الشائع",
+        "en": "common-gull",
+        "fr": "goeland-cendre"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "common-gull"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "النورس الشائع",
+          "subtitle": "Larus canus",
+          "meta_description": "النورس الشائع Larus canus من النورسية Laridae.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "النورس الشائع Larus canus من النورسية Laridae. يبدو البالغ رمادي الظهر وأبيض الجسم، بمنقار أصفر مخضر أدق من مناقير النوارس الكبيرة، وأطراف جناح سوداء تحمل مساحات بيضاء. يكتسب الرأس تخطيطًا في الشتاء، وتختلف الطيور غير البالغة كثيرًا عن البالغ."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يبحث عن اللافقاريات والأسماك وغيرها على الشواطئ والحقول وحواف المياه. يتجمع خارج التكاثر في مجموعات قد تختلط بأنواع أخرى، ولذلك تُراجع علامات كل طائر بدل تعريف السرب كله باسم واحد."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "ينشئ عشًا من النبات على الأرض أو موضع مرتفع مناسب. تورد BTO ثلاث بيضات عادة، يتشارك الأبوان حضانتها 22–28 يومًا. يبلغ عمر الطيران نحو 34–36 يومًا؛ وتحتاج الفراخ إلى الغذاء والحماية أثناء نموها."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "في لبنان، تفصل قائمة 2020 بين عبور قليل في مارس ومن أوائل نوفمبر إلى منتصف ديسمبر، وحضور شتوي شائع وواسع من ديسمبر إلى أواخر فبراير. وتذكر بقاء أعداد قليلة صيفًا، وهو لا يكفي لإثبات التكاثر. يبدأ اهتمام نوفمبر به مع العبور السابق لذروة الشتاء."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تعتمد هوية هذا المدخل على Larus canus وفق AviList 2026؛ النورس قصير المنقار Larus brachyrhynchus نوع منفصل، ولا تُنقل صوره أو سجلاته آليًا إلى هذا النوع. تحافظ نظافة الشواطئ وهدوء مواقع الراحة على بيئته."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Common Gull",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/common-gull"
+            },
+            {
+              "label": "RSPB — Common Gull",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/common-gull"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Шухободская Ольга Владимировна — CC0 1.0."
+        },
+        "en": {
+          "title": "Common Gull",
+          "subtitle": "Larus canus",
+          "meta_description": "Common Gull Larus canus belongs to Laridae.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Common Gull Larus canus belongs to Laridae. Adults have grey upperparts, white underparts, a relatively slender greenish-yellow bill and black wingtips with white markings. The winter head becomes streaked; immature birds differ considerably from adults."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It takes invertebrates, fish and other foods along shores, fields and water margins. Outside breeding, mixed flocks require identification of individual birds rather than assigning one name to the whole gathering."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "The vegetation nest occupies the ground or a suitable raised site. BTO gives a typical clutch of three eggs, shared incubation of 22–28 days and fledging at about 34–36 days. Growing chicks require food and protection."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist separates scarce passage in March and early November to mid-December from widespread common winter presence in December to late February. A few birds remain in summer, which alone does not prove breeding. November interest concerns passage preceding the winter peak."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "This entry uses Larus canus under AviList 2026. Short-billed Gull Larus brachyrhynchus is separate: its photographs and records must not automatically be transferred here. Clean shores and quiet resting places support the species."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Common Gull",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/common-gull"
+            },
+            {
+              "label": "RSPB — Common Gull",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/common-gull"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Species illustration: Шухободская Ольга Владимировна — CC0 1.0."
+        },
+        "fr": {
+          "title": "Goéland cendré",
+          "subtitle": "Larus canus",
+          "meta_description": "Le Goéland cendré Larus canus appartient aux Laridae.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Goéland cendré Larus canus appartient aux Laridae. L’adulte présente un dessus gris, un dessous blanc, un bec jaune verdâtre relativement fin et des extrémités alaires noires marquées de blanc. Sa tête se strie en hiver ; les immatures diffèrent fortement des adultes."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il prélève invertébrés, poissons et autres aliments sur les rivages, dans les champs et au bord de l’eau. Hors reproduction, les groupes mixtes exigent d’identifier chaque oiseau plutôt que de donner un seul nom à tout le rassemblement."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Son nid végétal se trouve au sol ou sur un support surélevé adapté. Le BTO indique habituellement trois œufs, une incubation partagée de 22–28 jours et l’envol vers 34–36 jours. Les poussins en croissance ont besoin de nourriture et de protection."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "La liste libanaise de 2020 distingue un passage peu abondant en mars et de début novembre à mi-décembre d’un hivernage commun et étendu de décembre à fin février. Quelques oiseaux restent en été, sans que cela prouve la nidification. Novembre correspond au passage précédant le maximum hivernal."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Ce portrait suit Larus canus dans AviList 2026. Le Goéland à bec court Larus brachyrhynchus est distinct : ses photographies et données ne doivent pas être transférées automatiquement. Rivages propres et reposoirs tranquilles favorisent l’espèce."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Common Gull",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/common-gull"
+            },
+            {
+              "label": "RSPB — Common Gull",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/common-gull"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Шухободская Ольга Владимировна — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "النورس-دقيق-المنقار",
+        "en": "slender-billed-gull",
+        "fr": "goeland-railleur"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "slender-billed-gull"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "النورس دقيق المنقار",
+          "subtitle": "Chroicocephalus genei",
+          "meta_description": "النورس دقيق المنقار Chroicocephalus genei من النورسية Laridae.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "النورس دقيق المنقار Chroicocephalus genei من النورسية Laridae، ويُعرف في التصنيفات الأقدم باسم Larus genei. يتميز بمنقار طويل نسبيًا ورأس أبيض لا يكتسب غطاءً داكنًا صيفًا، وقد يميل الصدر إلى الوردي. يُقارن طول العنق وشكل الرأس والمنقار معًا عند فصله عن النورس أسود الرأس."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يرتاد البحيرات المالحة والملاحات والسواحل الضحلة، ويلتقط الأسماك واللافقاريات. تتجمع الطيور خارج التكاثر قرب مواضع الغذاء والراحة، ولا تكون المشاهدة الشتوية دليل تعشيش."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تعشش أزواج في مستعمرات على أرض أو جزر منخفضة قرب المياه. يورد دليل CIESM بيضتين أو ثلاثًا، وحضانة نحو 25 يومًا، وفترة تنشئة للفراخ تبلغ 4–5 أسابيع. هذه مدد مرجعية وليست تقويم تكاثر موحدًا لكل بلد."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "تسجله قائمة قطر الحالية زائرًا شتويًا شائعًا؛ أما قائمة لبنان 2020 فتصفه بزائر شتوي غير شائع وعابر ربيعي غير منتظم. تفسر هاتان الصفتان أهمية نوفمبر في قطر وبداية الموسم البارد في لبنان دون تسوية الوفرة بينهما."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تتضرر الموائل بتغيير المياه في الملاحات وردم السواحل وإزعاج المستعمرات. تتم المراقبة من مسافة، ولا تُنشر مواقع أعشاش نشطة."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "CIESM — Guide of Seabirds: Slender Billed Gull",
+              "url": "https://ciesm.org/seabird-guide/slender-billed-gull/"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Slender Billed Gull",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/slender-billed-gull"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Sunny Zhang 张迎新 — CC0 1.0."
+        },
+        "en": {
+          "title": "Slender-billed Gull",
+          "subtitle": "Chroicocephalus genei",
+          "meta_description": "Slender-billed Gull Chroicocephalus genei belongs to Laridae; older classifications use Larus genei.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Slender-billed Gull Chroicocephalus genei belongs to Laridae; older classifications use Larus genei. A relatively long bill and white head without a dark summer hood are useful features; the breast can appear pinkish. Neck length, head shape and bill should be considered together when separating it from Black-headed Gull."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It uses saline lagoons, saltpans and shallow coasts, taking fish and invertebrates. Non-breeding gatherings occur around feeding and resting areas; winter presence does not demonstrate nesting."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "Colonies nest on low ground or islands near water. The CIESM guide gives two or three eggs, about 25 days of incubation and 4–5 weeks of chick rearing. These reference durations are not a single breeding calendar for every country."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Qatar’s current list describes a common winter visitor. Lebanon’s 2020 checklist instead describes an uncommon winter visitor and irregular spring migrant. November is relevant to Qatar’s wintering birds and the approaching cold season in Lebanon without implying equal abundance."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Changes to saltpan water regimes, coastal infilling and colony disturbance affect habitat. Observe at a distance and do not publicise active nest locations."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "CIESM — Guide of Seabirds: Slender Billed Gull",
+              "url": "https://ciesm.org/seabird-guide/slender-billed-gull/"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Slender Billed Gull",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/slender-billed-gull"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Species illustration: Sunny Zhang 张迎新 — CC0 1.0."
+        },
+        "fr": {
+          "title": "Goéland railleur",
+          "subtitle": "Chroicocephalus genei",
+          "meta_description": "Le Goéland railleur Chroicocephalus genei appartient aux Laridae ; les anciennes classifications utilisent Larus genei.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Goéland railleur Chroicocephalus genei appartient aux Laridae ; les anciennes classifications utilisent Larus genei. Son bec relativement long et sa tête blanche, sans capuchon sombre en été, sont utiles ; la poitrine peut paraître rosée. Cou, tête et bec doivent être examinés ensemble pour le distinguer de la Mouette rieuse."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il fréquente lagunes salées, salines et côtes peu profondes, où il capture poissons et invertébrés. Les rassemblements hors reproduction occupent des zones alimentaires et de repos ; une présence hivernale ne démontre pas la nidification."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Les colonies nichent au sol ou sur des îlots bas près de l’eau. Le guide CIESM indique deux ou trois œufs, environ 25 jours d’incubation et 4–5 semaines d’élevage des poussins. Ces durées ne constituent pas un calendrier de reproduction unique pour tous les pays."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "La liste actuelle du Qatar le décrit comme hivernant commun. Celle du Liban de 2020 indique plutôt un hivernant peu commun et un migrateur printanier irrégulier. Novembre concerne l’hivernage au Qatar et l’arrivée de la saison froide au Liban, sans égalité d’abondance supposée."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Modifier l’eau des salines, remblayer les côtes et déranger les colonies dégrade son habitat. Observer à distance, sans divulguer l’emplacement de nids actifs."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "CIESM — Guide of Seabirds: Slender Billed Gull",
+              "url": "https://ciesm.org/seabird-guide/slender-billed-gull/"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Slender Billed Gull",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/slender-billed-gull"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Sunny Zhang 张迎新 — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "خرشنة-الساندويش",
+        "en": "sandwich-tern",
+        "fr": "sterne-caugek"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "sandwich-tern"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "خرشنة الساندويش",
+          "subtitle": "Thalasseus sandvicensis",
+          "meta_description": "خرشنة الساندويش Thalasseus sandvicensis من النورسية Laridae.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "خرشنة الساندويش Thalasseus sandvicensis من النورسية Laridae، وترد قديمًا باسم Sterna sandvicensis. من علامات الطائر ذي الريش البالغ منقار أسود طويل بطرف أصفر وساقان سوداوان وقنزعة داكنة. يزداد البياض على مقدمة الرأس خارج التكاثر؛ ولا يكفي لون المنقار وحده عند مقارنة الطيور اليافعة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "تحلق فوق المياه الساحلية ثم تغوص لالتقاط الأسماك الصغيرة. تستخدم الشواطئ والحواجز والجزر للراحة، ويهمها توفر مناطق تغذية قريبة من مواقع الاستراحة."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تعشش في مستعمرات أرضية على الرمل أو الحصى. تورد BTO بيضة أو بيضتين عادة، وحضانة مشتركة 21–29 يومًا، وطيران الفراخ بعد نحو 28–30 يومًا من الفقس. يستمر إطعام الفراخ أثناء نموها؛ ولا تعني مشاهدة طائر في ريش التكاثر ثبوت تعشيشه محليًا."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "تعدّها قائمة قطر الحالية زائرًا شتويًا قليل العدد، مع تسجيلات في جميع أشهر السنة. وتوضح قائمة لبنان 2020 أن مشاهدات 2008–2019 رفعت تقديرها إلى زائر شتوي شائع نسبيًا بعد اعتبارها شديدة الندرة. يناسب نوفمبر مراقبة الحضور الشتوي، دون تعميم صفة التكاثر على البلدين."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تحتاج مواقع الراحة والمستعمرات إلى تجنب الاقتراب المتكرر، وتؤثر خسارة الشواطئ وتراجع موارد الأسماك في بيئتها."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Sandwich Tern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/sandwich-tern"
+            },
+            {
+              "label": "RSPB — Sandwich Tern",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/sandwich-tern"
+            },
+            {
+              "label": "CIESM — Guide of Seabirds: Sandwich Tern",
+              "url": "https://ciesm.org/seabird-guide/sandwich-tern/"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Sunny Zhang 张迎新 — CC0 1.0."
+        },
+        "en": {
+          "title": "Sandwich Tern",
+          "subtitle": "Thalasseus sandvicensis",
+          "meta_description": "Sandwich Tern Thalasseus sandvicensis belongs to Laridae; older references use Sterna sandvicensis.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Sandwich Tern Thalasseus sandvicensis belongs to Laridae; older references use Sterna sandvicensis. Adult plumage includes a long black bill with a yellow tip, black legs and a dark crest. The forecrown becomes whiter outside breeding; bill colour alone is insufficient when comparing juveniles."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It searches coastal water from the air and plunge-dives for small fish. Beaches, structures and islands provide resting places, preferably near feeding areas."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "Colonies nest on sandy or shingly ground. BTO gives a typical clutch of one or two eggs, shared incubation of 21–29 days and fledging about 28–30 days after hatching. Parents feed the growing chicks; breeding plumage alone does not establish local nesting."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Qatar’s current list calls it a scarce winter visitor, with records in every month. Lebanon’s 2020 checklist explains that records from 2008–2019 support fairly common winter status after earlier assessments of extreme rarity. November suits winter observation without assigning breeding status to either country."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Avoid repeated approaches to resting sites and colonies. Loss of shore habitat and reduced fish resources affect its environment."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Sandwich Tern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/sandwich-tern"
+            },
+            {
+              "label": "RSPB — Sandwich Tern",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/sandwich-tern"
+            },
+            {
+              "label": "CIESM — Guide of Seabirds: Sandwich Tern",
+              "url": "https://ciesm.org/seabird-guide/sandwich-tern/"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Species illustration: Sunny Zhang 张迎新 — CC0 1.0."
+        },
+        "fr": {
+          "title": "Sterne caugek",
+          "subtitle": "Thalasseus sandvicensis",
+          "meta_description": "La Sterne caugek Thalasseus sandvicensis appartient aux Laridae ; les anciens ouvrages utilisent Sterna sandvicensis.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Sterne caugek Thalasseus sandvicensis appartient aux Laridae ; les anciens ouvrages utilisent Sterna sandvicensis. Le plumage adulte présente un long bec noir à pointe jaune, des pattes noires et une huppe sombre. Le front blanchit hors reproduction ; la couleur du bec seule ne suffit pas chez les jeunes."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Elle survole les eaux côtières et plonge pour saisir de petits poissons. Plages, structures et îlots offrent des reposoirs, de préférence près des zones alimentaires."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Les colonies nichent au sol sur sable ou galets. Le BTO indique habituellement un ou deux œufs, une incubation partagée de 21–29 jours et l’envol vers 28–30 jours après l’éclosion. Les parents nourrissent les poussins ; le plumage nuptial seul ne prouve pas une nidification locale."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "La liste actuelle du Qatar la classe comme hivernante peu abondante, avec des observations tous les mois. Celle du Liban de 2020 explique que les données de 2008–2019 indiquent un hivernage assez commun, après les anciennes évaluations d’extrême rareté. Novembre convient à l’observation hivernale sans attribuer la nidification aux deux pays."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Éviter les approches répétées des reposoirs et colonies. La disparition des rivages et la réduction des ressources en poissons affectent son environnement."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Sandwich Tern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/sandwich-tern"
+            },
+            {
+              "label": "RSPB — Sandwich Tern",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/sandwich-tern"
+            },
+            {
+              "label": "CIESM — Guide of Seabirds: Sandwich Tern",
+              "url": "https://ciesm.org/seabird-guide/sandwich-tern/"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Sunny Zhang 张迎新 — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الخرشنة-القزوينية",
+        "en": "caspian-tern",
+        "fr": "sterne-caspienne"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "caspian-tern"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الخرشنة القزوينية",
+          "subtitle": "Hydroprogne caspia",
+          "meta_description": "الخرشنة القزوينية Hydroprogne caspia من النورسية Laridae.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الخرشنة القزوينية Hydroprogne caspia من النورسية Laridae، واسمها القديم Sterna caspia. هي أكبر الخرشنات، بمنقار أحمر ضخم وجسم قوي وذيل قليل التفرع. يغطي الرأس سواد في ريش التكاثر، ويختلط به البياض خارج الموسم."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "تبحث عن الأسماك فوق المياه الساحلية والبحيرات والمصبات، ثم تغوص لالتقاطها. ترتاح على ضفاف مفتوحة أو جزر، وتختلف حركة جماعاتها بين الإقامة والهجرة بحسب المنطقة."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "العش حفرة أرضية بسيطة. يورد مرجع Animal Diversity Web عادة بيضة إلى ثلاث، وحضانة مشتركة 25–28 يومًا، وطيرانًا قرب اليوم 37 من الفقس. تبقى الفراخ معتمدة على الإطعام حتى بعد الطيران؛ ولا تُنقل مواعيد التكاثر الشمالية إلى الخليج."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "تصنفها قائمة قطر الحالية مقيمة متكاثرة وزائرة شتوية، شائعة ومسجلة في جميع الأشهر. لذلك يجتمع في نوفمبر حضور مقيم وزيادة شتوية، ولا يثبت ذلك أن كل طائر مشاهد مهاجر أو أن التعشيش جارٍ في ذلك الشهر. لا يُسقط وضع قطر على بقية البلدان العربية."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تحتاج إلى مناطق صيد أسماك سليمة ومواقع راحة وتعشيش هادئة. المراقبة من بعيد تحمي البيض والفراخ من التعرض عند إزعاج الأبوين."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "University of Michigan — Animal Diversity Web: Caspian Tern",
+              "url": "https://animaldiversity.org/accounts/Sterna_caspia/"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Caspian Tern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/caspian-tern"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: David Bird — CC0 1.0."
+        },
+        "en": {
+          "title": "Caspian Tern",
+          "subtitle": "Hydroprogne caspia",
+          "meta_description": "Caspian Tern Hydroprogne caspia belongs to Laridae; its older name is Sterna caspia.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Caspian Tern Hydroprogne caspia belongs to Laridae; its older name is Sterna caspia. The largest tern has a massive red bill, robust body and shallowly forked tail. The breeding cap is black, becoming mixed with white outside that season."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It searches coastal water, lakes and estuaries for fish, then dives to capture them. Open shores and islands provide resting sites. Populations differ in being resident or migratory."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "The nest is a simple ground scrape. Animal Diversity Web gives one to three eggs, shared incubation of 25–28 days and fledging around 37 days after hatching. Young still depend on feeding after flight; northern breeding dates should not be transferred to the Gulf."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Qatar’s current list classifies it as a common resident breeder and winter visitor, recorded in all months. November can therefore combine resident presence with winter additions. This does not make every bird a migrant or establish nesting during that month, and Qatar’s status cannot be assigned to other Arab countries."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Healthy fishing areas and quiet resting and nesting sites are necessary. Distant observation avoids exposing eggs and chicks when parents are disturbed."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "University of Michigan — Animal Diversity Web: Caspian Tern",
+              "url": "https://animaldiversity.org/accounts/Sterna_caspia/"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Caspian Tern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/caspian-tern"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Species illustration: David Bird — CC0 1.0."
+        },
+        "fr": {
+          "title": "Sterne caspienne",
+          "subtitle": "Hydroprogne caspia",
+          "meta_description": "La Sterne caspienne Hydroprogne caspia appartient aux Laridae ; son ancien nom est Sterna caspia.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Sterne caspienne Hydroprogne caspia appartient aux Laridae ; son ancien nom est Sterna caspia. La plus grande sterne possède un bec rouge massif, un corps robuste et une queue peu fourchue. La calotte nuptiale noire se mêle de blanc hors saison."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Elle recherche les poissons au-dessus des eaux côtières, lacs et estuaires, puis plonge pour les capturer. Rivages ouverts et îlots servent de reposoirs. Selon les populations, elle est résidente ou migratrice."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le nid est une simple dépression au sol. Animal Diversity Web indique un à trois œufs, une incubation partagée de 25–28 jours et l’envol vers 37 jours après l’éclosion. Les jeunes restent nourris après l’envol ; les dates septentrionales ne doivent pas être appliquées au Golfe."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "La liste actuelle du Qatar la classe comme nicheuse résidente et hivernante commune, observée tous les mois. Novembre peut donc réunir résidents et arrivants hivernaux. Cela ne signifie ni que tout oiseau est migrateur ni que la nidification a lieu ce mois-là ; le statut qatari ne vaut pas pour tous les pays arabes."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Des zones de pêche saines et des reposoirs et sites de nidification tranquilles sont nécessaires. Observer de loin évite d’exposer œufs et poussins en dérangeant les parents."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "University of Michigan — Animal Diversity Web: Caspian Tern",
+              "url": "https://animaldiversity.org/accounts/Sterna_caspia/"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Caspian Tern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/caspian-tern"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : David Bird — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الخرشنة-نورسية-المنقار",
+        "en": "gull-billed-tern",
+        "fr": "sterne-hansel"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "gull-billed-tern"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الخرشنة نورسية المنقار (الأويق)",
+          "subtitle": "Gelochelidon nilotica",
+          "meta_description": "الخرشنة نورسية المنقار Gelochelidon nilotica من النورسية Laridae.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الخرشنة نورسية المنقار Gelochelidon nilotica من النورسية Laridae، وترد قديمًا باسم Sterna nilotica. يجمع شكلها بين جسم قوي وجناحين عريضين ومنقار أسود قصير وسميك، بخلاف منقار خرشنة الساندويش الأطول والأدق. يغيب الغطاء الأسود الكامل للرأس خارج ريش التكاثر."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "تلتقط الحشرات وفرائس صغيرة من الأرض أو قرب سطح الماء، أكثر مما تعتمد على الغوص لصيد الأسماك. تناسبها الأراضي المفتوحة قرب البحيرات والملاحات والمصبات."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تعشش في حفرة سطحية على الرمل أو الطين، قد تبطنها بالنبات. يورد CIESM بيضتين أو ثلاثًا، وحضانة 22–23 يومًا، وطيران الفراخ بعد 28–35 يومًا من الفقس. تتعلق هذه المدد بنمو الفراخ ولا تحدد شهر التكاثر في كل منطقة."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "في قطر، تصفها القائمة الحالية بالشائعة كزائرة شتوية وعابرة، مع تسجيلات طوال السنة؛ ولا تمنحها صفة المقيمة المتكاثرة. أما قائمة لبنان 2020 فتعتبرها عابرة نادرة بعد مشاهدات إضافية، بدل وصفها القديم كطائر عرضي. أولوية نوفمبر هنا شتوية في قطر، لا ادعاء وفرة شتوية في لبنان."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تحمي المياه الضحلة والأراضي المفتوحة المتنوعة غذاءها. ينبغي تجنب إزعاج الجزر والمنخفضات التي قد تستخدمها مستعمرات الطيور."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "CIESM — Guide of Seabirds: Gull Billed Tern",
+              "url": "https://ciesm.org/seabird-guide/gull-billed-tern/"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Gull Billed Tern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/gull-billed-tern"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Don Wellmann — CC0 1.0."
+        },
+        "en": {
+          "title": "Gull-billed Tern",
+          "subtitle": "Gelochelidon nilotica",
+          "meta_description": "Gull-billed Tern Gelochelidon nilotica belongs to Laridae; older references use Sterna nilotica.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Gull-billed Tern Gelochelidon nilotica belongs to Laridae; older references use Sterna nilotica. Its robust body, broad wings and short, thick black bill differ from Sandwich Tern’s longer, finer bill. The complete black cap is absent outside breeding plumage."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It takes insects and small prey from land or near the water surface rather than relying on fish-diving. Open land near lagoons, saltpans and estuaries provides suitable habitat."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "A shallow scrape in sand or mud may contain vegetation. CIESM gives two or three eggs, incubation of 22–23 days and fledging 28–35 days after hatching. These developmental periods do not establish a breeding month in every region."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Qatar’s current list describes common winter and passage presence, with records throughout the year; it does not assign resident breeding status. Lebanon’s 2020 checklist instead regards it as a rare migrant after additional records, replacing the older vagrant assessment. November priority concerns Qatar’s winter visitors, not abundant Lebanese wintering."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Shallow water and varied open habitats support feeding. Avoid disturbing islands and low ground that may be used by bird colonies."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "CIESM — Guide of Seabirds: Gull Billed Tern",
+              "url": "https://ciesm.org/seabird-guide/gull-billed-tern/"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Gull Billed Tern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/gull-billed-tern"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Species illustration: Don Wellmann — CC0 1.0."
+        },
+        "fr": {
+          "title": "Sterne hansel",
+          "subtitle": "Gelochelidon nilotica",
+          "meta_description": "La Sterne hansel Gelochelidon nilotica appartient aux Laridae ; les anciens ouvrages utilisent Sterna nilotica.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Sterne hansel Gelochelidon nilotica appartient aux Laridae ; les anciens ouvrages utilisent Sterna nilotica. Corps robuste, ailes larges et bec noir court et épais la distinguent de la Sterne caugek au bec plus long et fin. La calotte entièrement noire disparaît hors plumage nuptial."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Elle capture insectes et petites proies à terre ou près de la surface, plutôt que de dépendre de la plongée pour pêcher. Les terrains ouverts voisins des lagunes, salines et estuaires lui conviennent."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Une dépression peu profonde dans le sable ou la vase peut être garnie de végétation. Le CIESM indique deux ou trois œufs, une incubation de 22–23 jours et l’envol 28–35 jours après l’éclosion. Ces durées de développement ne fixent pas un mois de nidification pour chaque région."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "La liste actuelle du Qatar décrit un hivernage et un passage communs, avec des données toute l’année, sans attribuer un statut de nicheuse résidente. La liste libanaise de 2020 la considère plutôt comme migratrice rare après de nouvelles observations, remplaçant l’ancien statut accidentel. La priorité de novembre concerne les hivernants du Qatar, sans supposer un hivernage abondant au Liban."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Eaux peu profondes et milieux ouverts diversifiés permettent l’alimentation. Éviter de déranger îlots et terrains bas susceptibles d’accueillir des colonies."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "CIESM — Guide of Seabirds: Gull Billed Tern",
+              "url": "https://ciesm.org/seabird-guide/gull-billed-tern/"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Gull Billed Tern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/gull-billed-tern"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Don Wellmann — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "جشنة-الماء",
+        "en": "water-pipit",
+        "fr": "pipit-spioncelle"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "water-pipit"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "جشنة الماء",
+          "subtitle": "Anthus spinoletta",
+          "meta_description": "جشنة الماء Anthus spinoletta من الذعرية Motacillidae.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "جشنة الماء Anthus spinoletta من الذعرية Motacillidae. من علامات ريش الشتاء الحاجب الفاتح والصدر المخطط والساقان الداكنتان عادة. يصبح الصدر أقل تخطيطًا ويميل إلى الوردي في ريش التكاثر. تُقارن علامات الوجه والجناح والساقين مع جشنة المروج، ولا يكفي مكان التصوير قرب الماء لتحديد النوع."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "تلتقط الحشرات واللافقاريات على الأرض الرطبة وحواف المياه. تتكاثر جماعات في المروج الجبلية، ثم تنتقل إلى موائل أخفض وأدفأ خارج الموسم."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يقام العش على الأرض بين الغطاء النباتي. تورد BTO عادة 4–5 بيضات، تحضنها الأنثى 14–15 يومًا، وتغادر الفراخ العش بعد نحو 15–16 يومًا. تفقس غير قادرة على الاعتماد على نفسها وتحتاج إلى التغذية؛ ولا تعني مغادرة العش استقلالها الكامل."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "تصف قائمة لبنان 2020 عبورًا واسعًا من منتصف سبتمبر إلى أواخر نوفمبر ومن منتصف فبراير إلى أوائل مايو، مع شتاء محلي قليل العدد في الأراضي الرطبة. وفي قطر تصنفها القائمة الحالية زائرًا شتويًا شائعًا. يجمع نوفمبر إذن عبور لبنان وبدء الشتاء في قطر، بوفرة مختلفة."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "حفظ حواف المياه والمروج الرطبة يقلل فقدان مواقع التغذية. تُراقب الطيور دون دفعها من بقعة إلى أخرى."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Water Pipit",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/water-pipit"
+            },
+            {
+              "label": "RSPB — Water Pipit",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/water-pipit"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Paulo Caseirito — CC0 1.0."
+        },
+        "en": {
+          "title": "Water Pipit",
+          "subtitle": "Anthus spinoletta",
+          "meta_description": "Water Pipit Anthus spinoletta belongs to Motacillidae.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Water Pipit Anthus spinoletta belongs to Motacillidae. Winter plumage shows a pale eyebrow, streaked breast and usually dark legs. The breeding breast becomes less streaked and pinkish. Compare face, wings and legs with Meadow Pipit: a photograph beside water cannot establish identity by itself."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It collects insects and other invertebrates from damp ground and water margins. Populations breed in mountain grasslands, moving to lower, warmer habitats outside breeding."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "The ground nest is concealed among vegetation. BTO gives a typical clutch of 4–5 eggs, female incubation of 14–15 days and nest departure around 15–16 days. Hatchlings cannot support themselves and need feeding; nest departure is not full independence."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist describes widespread passage from mid-September to late November and mid-February to early May, with scarce, local wintering in wetlands. Qatar’s current list classifies it as a common winter visitor. November thus connects Lebanese passage with Qatar’s winter season, at different abundance."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Retaining wet margins and damp grassland preserves feeding habitat. Watch without repeatedly displacing birds between feeding patches."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Water Pipit",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/water-pipit"
+            },
+            {
+              "label": "RSPB — Water Pipit",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/water-pipit"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Species illustration: Paulo Caseirito — CC0 1.0."
+        },
+        "fr": {
+          "title": "Pipit spioncelle",
+          "subtitle": "Anthus spinoletta",
+          "meta_description": "Le Pipit spioncelle Anthus spinoletta appartient aux Motacillidae.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Pipit spioncelle Anthus spinoletta appartient aux Motacillidae. En hiver, il présente un sourcil pâle, une poitrine striée et des pattes généralement sombres. La poitrine nuptiale devient moins striée et rosée. Comparer face, ailes et pattes avec le Pipit farlouse : une photographie près de l’eau ne prouve pas l’identité."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il prélève insectes et autres invertébrés sur les sols humides et au bord de l’eau. Des populations nichent dans les prairies montagnardes, puis gagnent des habitats plus bas et plus chauds hors reproduction."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le nid au sol se cache dans la végétation. Le BTO indique habituellement 4–5 œufs, une incubation femelle de 14–15 jours et une sortie du nid vers 15–16 jours. Les poussins ne peuvent se nourrir seuls ; quitter le nid n’est pas devenir totalement indépendant."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "La liste libanaise de 2020 décrit un passage étendu de mi-septembre à fin novembre et de mi-février à début mai, avec un hivernage local peu abondant dans les zones humides. La liste actuelle du Qatar le classe comme hivernant commun. Novembre relie donc le passage libanais à l’hiver qatari, avec une abondance différente."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Conserver berges humides et prairies mouillées préserve ses zones alimentaires. Observer sans déplacer continuellement les oiseaux entre leurs secteurs de nourrissage."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Water Pipit",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/water-pipit"
+            },
+            {
+              "label": "RSPB — Water Pipit",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/water-pipit"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Paulo Caseirito — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الشنقب-الصغير",
+        "en": "jack-snipe",
+        "fr": "becassine-sourde"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "jack-snipe"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الشنقب الصغير (الجهلول)",
+          "subtitle": "Lymnocryptes minimus",
+          "meta_description": "الشنقب الصغير Lymnocryptes minimus من الشنقبية Scolopacidae.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الشنقب الصغير Lymnocryptes minimus من الشنقبية Scolopacidae. أصغر وأقصر منقارًا من الشنقب الشائع، مع جسم مدمج وخطوط فاتحة واضحة على الظهر وتاج داكن دون الشريط الوسطي الفاتح المميز للشنقب الشائع. تمويه الريش لا يسمح بتحديد الجنس أو العمر الدقيق من كل صورة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يتخفى في النباتات الرطبة ويبحث عن الحشرات والديدان والقواقع. من سلوكه أثناء التغذية حركة ارتدادية متكررة للجسم، وقد يظل ساكنًا حتى يقترب الخطر؛ لا ينبغي تعمد إخافته لاختبار ذلك."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يتكاثر في الأراضي المستنقعية الشمالية، ويخفي عشًا أرضيًا. تورد BTO أربع بيضات عادة وحضانة أنثوية 17–24 يومًا. الفراخ زغبية وقادرة على الحركة مبكرًا؛ ولا يُستنتج من حركة الفرخ أنه أصبح قادرًا على الطيران."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "تصفه قائمة لبنان 2020 بعابر نادر وزائر شتوي قليل العدد من منتصف أكتوبر إلى أواخر أبريل، وتشير إلى أن التخفي قد يخفض عدد المشاهدات. وفي قطر تسجله القائمة الحالية زائرًا شتويًا قليل العدد. لذلك يناسب نوفمبر التعريف به دون تحويل قلة الرصد إلى غياب."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "حماية التربة المشبعة بالماء والغطاء النباتي تحافظ على مواضع الغذاء والاختباء. التصوير الهادئ من مسافة أفضل من تكرار دفع الطائر إلى الطيران."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Jack Snipe",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/jack-snipe"
+            },
+            {
+              "label": "RSPB — Jack Snipe",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/jack-snipe"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Istvan Sipos — CC0 1.0."
+        },
+        "en": {
+          "title": "Jack Snipe",
+          "subtitle": "Lymnocryptes minimus",
+          "meta_description": "Jack Snipe Lymnocryptes minimus belongs to Scolopacidae.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Jack Snipe Lymnocryptes minimus belongs to Scolopacidae. Smaller and shorter-billed than Common Snipe, it has a compact body, conspicuous pale back stripes and a dark crown lacking Common Snipe’s pale central stripe. Camouflage plumage does not permit sex or exact age to be assigned from every photograph."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It hides in damp vegetation, eating insects, worms and snails. Repeated body-bobbing accompanies feeding. It may remain still until danger approaches; deliberately flushing it to test this behaviour is inappropriate."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "It breeds in northern marshlands with a concealed ground nest. BTO gives a typical clutch of four eggs and female incubation of 17–24 days. Downy chicks become mobile early; movement does not establish flight capability."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2020 checklist describes a rare migrant and scarce winter visitor from mid-October to late April, noting that concealment may suppress sightings. Qatar’s current list also gives scarce winter status. November suits introducing the species without treating few records as absence."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Waterlogged soils and vegetation provide food and concealment. Quiet photography at a distance is preferable to repeatedly forcing the bird into flight."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Jack Snipe",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/jack-snipe"
+            },
+            {
+              "label": "RSPB — Jack Snipe",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/jack-snipe"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Species illustration: Istvan Sipos — CC0 1.0."
+        },
+        "fr": {
+          "title": "Bécassine sourde",
+          "subtitle": "Lymnocryptes minimus",
+          "meta_description": "La Bécassine sourde Lymnocryptes minimus appartient aux Scolopacidae.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Bécassine sourde Lymnocryptes minimus appartient aux Scolopacidae. Plus petite et plus courte de bec que la Bécassine des marais, elle présente un corps compact, de nettes bandes dorsales pâles et une calotte sombre sans la raie centrale claire de sa cousine. Le plumage mimétique ne permet pas toujours de déterminer sexe ou âge précis sur photographie."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Elle se cache dans la végétation humide et mange insectes, vers et escargots. Un mouvement répété de balancement accompagne la recherche de nourriture. Elle peut rester immobile jusqu’à l’approche du danger ; il ne faut pas provoquer son envol pour tester ce comportement."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Elle niche dans les marais septentrionaux, avec un nid caché au sol. Le BTO indique habituellement quatre œufs et une incubation femelle de 17–24 jours. Les poussins duveteux deviennent rapidement mobiles, sans que cela prouve leur capacité à voler."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "La liste libanaise de 2020 décrit un migrateur rare et un hivernant peu abondant de mi-octobre à fin avril, dont la discrétion peut réduire les observations. La liste actuelle du Qatar indique également un hivernage peu abondant. Novembre convient à sa découverte, sans confondre peu de données et absence."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Sols gorgés d’eau et végétation offrent nourriture et cachettes. Photographier calmement à distance vaut mieux que provoquer des envols répétés."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Jack Snipe",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/jack-snipe"
+            },
+            {
+              "label": "RSPB — Jack Snipe",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/jack-snipe"
+            },
+            {
+              "label": "Ramadan-Jaradi et al. — Updated checklist of the birds of Lebanon, Sandgrouse 42 (2020)",
+              "url": "https://www.birdsoflebanon.com/uploads/1/3/0/5/130560280/updated_checklist_of_the_birds_of_lebanon.pdf"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Istvan Sipos — CC0 1.0."
+        }
+      }
+    }
+  ]
+}
