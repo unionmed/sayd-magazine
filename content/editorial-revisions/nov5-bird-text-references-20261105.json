@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "nov5-bird-text-references-20261105",
+  "expected_base": "479edf99c4ba2d3eebb05e5487066027606e07ce",
+  "operation": "text-only-nov5-bird-references",
+  "approval_reference": "private:nayef-encyclopedia-repair-20261101-and-text-sources",
+  "expected_source_sha256": "bb1c9d9939a14e481e1bc19e5627eec40c8cef9c83e339a7df2a43e31df52011",
+  "expected_targets_sha256": "7e7d2610b6427ba137f3cd9baaabf5b5f036fcab16678379a213fef0bd354008",
+  "payload": {}
+}
