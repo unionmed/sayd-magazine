@@ -1,0 +1,338 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "naameh-night-poaching-20261105",
+  "expected_base": "d5b0b7462ce875eee12bd2ede8033b34b15c8b1b",
+  "approval_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53",
+  "bank_search_reference": "Library archive search on 2026-11-05 for Naameh/Adonis and الناعمة/أدونيس; the owner explicitly selected and supplied these five original files. Only those exact images are used; no external or archive substitute was selected. All five were visually inspected and their original bytes are preserved in website media.",
+  "photos": [
+    {
+      "id": "naameh-01",
+      "path": "docs/media/publications/naameh-night-poaching-20261105/naameh-01.jpg",
+      "sha256": "4317208588511c5c7f351fe7e794a7e2c018a726abb98223ddf4e2bbd6ac6667",
+      "source_sha256": "4317208588511c5c7f351fe7e794a7e2c018a726abb98223ddf4e2bbd6ac6667",
+      "source_reference": "Original user-supplied file 1000534381.jpg; Library identity libfile_35a5c1651f908191b14386d54cb30352. Nayef identified Editor-in-Chief Adonis Elkhateeb as the source of this Naameh operation photograph. Capture date unspecified; original bytes preserved.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Nayef supplied these exact photographs, identified Editor-in-Chief Adonis Elkhateeb as their source, and authorized their publication with this news report and in the Sayd Photos section. External copyright ownership and independent photographic authenticity have not been independently verified; no open licence or unrestricted future reuse is claimed.",
+        "evidence_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53"
+      },
+      "alt": {
+        "ar": "أشخاص وسيارة وكراسٍ في موقع ليلي، وتظهر سترات تحمل شارات الاستقصاء وAPU.",
+        "en": "People, a car and chairs at a night-time location, with Investigations and APU markings visible on clothing.",
+        "fr": "Des personnes, une voiture et des chaises sur un site de nuit, avec des inscriptions du service des investigations et de l’APU visibles sur les vêtements."
+      },
+      "caption": {
+        "ar": "جانب من عملية الناعمة بمشاركة استقصاء قوى الأمن الداخلي وفريق العمليات المشترك APU–CABS.",
+        "en": "A scene from the Naameh operation involving the Internal Security Forces’ Investigations unit and the joint APU–CABS team.",
+        "fr": "Une scène de l’opération de Naameh menée avec le service des investigations des Forces de sécurité intérieure et l’équipe conjointe APU–CABS."
+      }
+    },
+    {
+      "id": "naameh-02",
+      "path": "docs/media/publications/naameh-night-poaching-20261105/naameh-02.jpg",
+      "sha256": "553fae17ad0ae6f8f91303b04471a3ae0f98dc18217b252eee005794f797c097",
+      "source_sha256": "553fae17ad0ae6f8f91303b04471a3ae0f98dc18217b252eee005794f797c097",
+      "source_reference": "Original user-supplied file 1000534380.jpg; Library identity libfile_6f66f40fff0c81918904361d77deca7e. Nayef identified Editor-in-Chief Adonis Elkhateeb as the source of this Naameh operation photograph. Capture date unspecified; original bytes preserved.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Nayef supplied these exact photographs, identified Editor-in-Chief Adonis Elkhateeb as their source, and authorized their publication with this news report and in the Sayd Photos section. External copyright ownership and independent photographic authenticity have not been independently verified; no open licence or unrestricted future reuse is claimed.",
+        "evidence_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53"
+      },
+      "alt": {
+        "ar": "أشخاص قرب مركبة ليلًا، وفي المقدمة شخص يرتدي سترة تحمل شعار APU.",
+        "en": "People near a vehicle at night, with an APU-marked vest in the foreground.",
+        "fr": "Des personnes près d’un véhicule de nuit, avec un gilet portant le sigle APU au premier plan."
+      },
+      "caption": {
+        "ar": "التحرك الميداني في الناعمة ضمن التعاون بين استقصاء قوى الأمن الداخلي وAPU–CABS.",
+        "en": "Field activity in Naameh as part of cooperation between ISF Investigations and APU–CABS.",
+        "fr": "L’intervention sur le terrain à Naameh, dans le cadre de la coopération entre les investigations des FSI et APU–CABS."
+      }
+    },
+    {
+      "id": "naameh-03",
+      "path": "docs/media/publications/naameh-night-poaching-20261105/naameh-03.jpg",
+      "sha256": "bde5970fc5771c9cee57ae4d052c8951e6c674ac2d9a637afb14645938580c9d",
+      "source_sha256": "bde5970fc5771c9cee57ae4d052c8951e6c674ac2d9a637afb14645938580c9d",
+      "source_reference": "Original user-supplied file 1000534379.jpg; Library identity libfile_5606550de9fc8191abf42dcbc1f98069. Nayef identified Editor-in-Chief Adonis Elkhateeb as the source of this Naameh operation photograph. Capture date unspecified; original bytes preserved.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Nayef supplied these exact photographs, identified Editor-in-Chief Adonis Elkhateeb as their source, and authorized their publication with this news report and in the Sayd Photos section. External copyright ownership and independent photographic authenticity have not been independently verified; no open licence or unrestricted future reuse is claimed.",
+        "evidence_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53"
+      },
+      "alt": {
+        "ar": "بنادق وحافظات وكشافات ومولّد كهربائي وكراسٍ مصطفّة داخل مبنى.",
+        "en": "Guns, cases, lights, a generator and chairs lined up inside a building.",
+        "fr": "Des fusils, des housses, des projecteurs, un groupe électrogène et des chaises alignés à l’intérieur d’un bâtiment."
+      },
+      "caption": {
+        "ar": "بنادق صيد وكشافات ومولّد كهربائي ضمن المعدات المضبوطة في عملية الناعمة.",
+        "en": "Hunting guns, lights and a generator among the equipment seized during the Naameh operation.",
+        "fr": "Des fusils de chasse, des projecteurs et un groupe électrogène parmi le matériel saisi lors de l’opération de Naameh."
+      }
+    },
+    {
+      "id": "naameh-04",
+      "path": "docs/media/publications/naameh-night-poaching-20261105/naameh-04.jpg",
+      "sha256": "4aa07fcf573989293d8eafc06a13745087a5db905b687cd2a682ecf37082ea6c",
+      "source_sha256": "4aa07fcf573989293d8eafc06a13745087a5db905b687cd2a682ecf37082ea6c",
+      "source_reference": "Original user-supplied file 1000534378.jpg; Library identity libfile_1be281180ff48191ae2e68ea01580c5c. Nayef identified Editor-in-Chief Adonis Elkhateeb as the source of this Naameh operation photograph. Capture date unspecified; original bytes preserved.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Nayef supplied these exact photographs, identified Editor-in-Chief Adonis Elkhateeb as their source, and authorized their publication with this news report and in the Sayd Photos section. External copyright ownership and independent photographic authenticity have not been independently verified; no open licence or unrestricted future reuse is claimed.",
+        "evidence_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53"
+      },
+      "alt": {
+        "ar": "أجهزة إلكترونية ومكبّرات صوت وكشافات وذخائر وأدوات صيد موضوعة على الأرض.",
+        "en": "Electronic devices, loudspeakers, lights, ammunition and hunting equipment laid out on the floor.",
+        "fr": "Des appareils électroniques, des haut-parleurs, des lampes, des munitions et du matériel de chasse disposés au sol."
+      },
+      "caption": {
+        "ar": "أجهزة لبث أصوات الطيور ومكبّرات صوت وذخائر ضمن المضبوطات.",
+        "en": "Bird-call playback devices, loudspeakers and ammunition among the seized items.",
+        "fr": "Des appareils diffusant des chants d’oiseaux, des haut-parleurs et des munitions parmi les objets saisis."
+      }
+    },
+    {
+      "id": "naameh-05",
+      "path": "docs/media/publications/naameh-night-poaching-20261105/naameh-05.jpg",
+      "sha256": "ff5bf1d068a96bf3556ba920cd286fc80083aaa30ab781e216f7b124b30d7d98",
+      "source_sha256": "ff5bf1d068a96bf3556ba920cd286fc80083aaa30ab781e216f7b124b30d7d98",
+      "source_reference": "Original user-supplied file 1000534272.jpg; Library identity libfile_4844081195908191be674df0a2b44f65. Nayef identified Editor-in-Chief Adonis Elkhateeb as the source of this Naameh operation photograph. Capture date unspecified; original bytes preserved.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Nayef supplied these exact photographs, identified Editor-in-Chief Adonis Elkhateeb as their source, and authorized their publication with this news report and in the Sayd Photos section. External copyright ownership and independent photographic authenticity have not been independently verified; no open licence or unrestricted future reuse is claimed.",
+        "evidence_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:Sentinel_628b5a9f01f88191872e4a57e3f1fe53"
+      },
+      "alt": {
+        "ar": "أشخاص يتحركون ليلًا على طريق ترابي تضيئه الكشافات.",
+        "en": "People moving at night along a dirt track lit by flashlights.",
+        "fr": "Des personnes se déplaçant de nuit sur un chemin de terre éclairé par des lampes."
+      },
+      "caption": {
+        "ar": "جانب من التحرك الليلي لإزالة مخالفات الصيد في الناعمة.",
+        "en": "Part of the night-time operation against illegal hunting in Naameh.",
+        "fr": "Une scène de l’intervention nocturne contre la chasse illégale à Naameh."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
+        "en": "naameh-night-hunting-operation-isf-apu-cabs",
+        "fr": "naameh-operation-chasse-nocturne-fsi-apu-cabs"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "رئيس التحرير أدونيس الخطيب",
+        "en": "Adonis Elkhateeb, Editor-in-Chief",
+        "fr": "Adonis Elkhateeb, rédacteur en chef"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "naameh-02",
+        "naameh-01",
+        "naameh-03",
+        "naameh-04",
+        "naameh-05"
+      ],
+      "translations": {
+        "ar": {
+          "title": "إزالة مخالفات صيد ليلي في الناعمة... توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد",
+          "subtitle": "عملية لاستقصاء قوى الأمن الداخلي بالتعاون الميداني والمعلوماتي مع فريق APU–CABS، إثر شكوى موثّقة من صيادين مستدامين.",
+          "meta_description": "عملية لاستقصاء جبل لبنان بالتعاون مع APU–CABS في الناعمة تسفر عن توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات مستخدمة في الصيد الليلي.",
+          "sections": [
+            {
+              "paragraphs": [
+                "نفّذت مفرزة استقصاء جبل لبنان التابعة لقوى الأمن الداخلي، بالتعاون الميداني والمعلوماتي مع فريق العمليات المشترك اللبناني–الدولي (APU–CABS)، عملية لإزالة مخالفات الصيد الليلي في منطقة الناعمة، وذلك بناءً على شكوى موثّقة تقدّم بها صيادون مستدامون في المنطقة إلى وحدة مكافحة الصيد الجائر (APU)."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وأسفرت العملية عن توقيف عدد من المخالفين، وحجز سيارات، وضبط أسلحة ومعدات صيد شملت بنادق صيد وكشافات ضوئية وأجهزة إلكترونية لبث أصوات الطيور واستدراجها ومولّدات كهربائية."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وتأتي هذه العملية في إطار التعاون المستمر بين القوى الأمنية وفريق العمليات المشترك (APU–CABS) والصيادين المستدامين، بهدف مكافحة الصيد الجائر وحماية الطيور المهاجرة والحياة البرية."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وتتم هذه العمليات بالتنسيق مع غرفة عمليات قيادة الدرك وشعبة العلاقات العامة في قوى الأمن الداخلي."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "مصدر الصور: رئيس التحرير أدونيس الخطيب.",
+          "ticker_title": "الناعمة: توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد ليلي"
+        },
+        "en": {
+          "title": "Naameh night-hunting operation: offenders arrested, vehicles impounded and weapons and equipment seized",
+          "subtitle": "An ISF Investigations operation with field and intelligence cooperation from APU–CABS, following a documented complaint by sustainable hunters.",
+          "meta_description": "An ISF Investigations operation with APU–CABS in Naameh led to arrests, impounded vehicles and the seizure of weapons and night-hunting equipment.",
+          "sections": [
+            {
+              "paragraphs": [
+                "The Mount Lebanon Investigations detachment of the Internal Security Forces (ISF), working with the joint Lebanese–international operations team (APU–CABS) through field and intelligence cooperation, carried out an operation against illegal night hunting in Naameh. It followed a documented complaint submitted by sustainable hunters in the area to the Anti-Poaching Unit (APU)."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The operation resulted in the arrest of several offenders, the impounding of vehicles and the seizure of weapons and hunting equipment, including hunting guns, lights, electronic devices used to broadcast bird calls and lure birds, and generators."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The operation is part of ongoing cooperation between the security forces, the joint APU–CABS operations team and sustainable hunters to combat poaching and protect migratory birds and wildlife."
+              ]
+            },
+            {
+              "paragraphs": [
+                "These operations are coordinated with the Gendarmerie Command’s operations room and the ISF Public Relations Division."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Image source: Adonis Elkhateeb, Editor-in-Chief.",
+          "ticker_title": "Naameh: arrests, impounded vehicles and seized night-hunting equipment"
+        },
+        "fr": {
+          "title": "Chasse nocturne illégale à Naameh : interpellations, mise en fourrière de véhicules et saisie d’armes et de matériel",
+          "subtitle": "Une opération des investigations des FSI, avec la coopération sur le terrain et en matière de renseignement d’APU–CABS, après une plainte documentée de chasseurs pratiquant une chasse durable.",
+          "meta_description": "Une opération des investigations des FSI avec APU–CABS à Naameh a conduit à des interpellations, à la mise en fourrière de véhicules et à la saisie de matériel.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Le détachement des investigations du Mont-Liban, relevant des Forces de sécurité intérieure (FSI), a mené une opération contre la chasse nocturne illégale dans la région de Naameh, avec la coopération sur le terrain et en matière de renseignement de l’équipe opérationnelle conjointe libano-internationale APU–CABS. Cette intervention faisait suite à une plainte documentée déposée par des chasseurs pratiquant une chasse durable de la région auprès de l’Unité de lutte contre le braconnage (APU)."
+              ]
+            },
+            {
+              "paragraphs": [
+                "L’opération a abouti à l’interpellation de plusieurs contrevenants, à la mise en fourrière de véhicules ainsi qu’à la saisie d’armes et de matériel de chasse, notamment des fusils, des projecteurs, des appareils électroniques destinés à diffuser des chants d’oiseaux pour les attirer, et des groupes électrogènes."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Cette opération s’inscrit dans la coopération continue entre les forces de sécurité, l’équipe opérationnelle conjointe APU–CABS et les chasseurs pratiquant une chasse durable, afin de lutter contre le braconnage et de protéger les oiseaux migrateurs et la faune sauvage."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Ces opérations sont coordonnées avec la salle des opérations du commandement de la gendarmerie et la division des relations publiques des FSI."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Source des images : Adonis Elkhateeb, rédacteur en chef.",
+          "ticker_title": "Naameh : interpellations, véhicules mis en fourrière et saisie de matériel de chasse nocturne"
+        }
+      },
+      "distribution": {
+        "placement": "side",
+        "ticker": true
+      }
+    },
+    {
+      "slugs": {
+        "ar": "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي",
+        "en": "naameh-night-hunting-operation-in-photos",
+        "fr": "operation-nocturne-naameh-en-images"
+      },
+      "published": "2026-11-05",
+      "author": {
+        "ar": "رئيس التحرير أدونيس الخطيب",
+        "en": "Adonis Elkhateeb, Editor-in-Chief",
+        "fr": "Adonis Elkhateeb, rédacteur en chef"
+      },
+      "primary_door": "photos",
+      "archives": [
+        "photos"
+      ],
+      "kind": "gallery",
+      "photos": [
+        "naameh-04",
+        "naameh-02",
+        "naameh-01",
+        "naameh-03",
+        "naameh-05"
+      ],
+      "translations": {
+        "ar": {
+          "title": "بالصور: عملية الناعمة لمكافحة الصيد الليلي",
+          "subtitle": "خمس صور للتحرك الميداني والمضبوطات في عملية استقصاء قوى الأمن الداخلي وAPU–CABS.",
+          "meta_description": "خمس صور للتحرك الميداني والمضبوطات في عملية استقصاء قوى الأمن الداخلي وAPU–CABS.",
+          "sections": [
+            {
+              "paragraphs": [
+                "مشاهد من عملية إزالة مخالفات الصيد الليلي في الناعمة، التي نفّذتها مفرزة استقصاء جبل لبنان التابعة لقوى الأمن الداخلي بالتعاون الميداني والمعلوماتي مع فريق العمليات المشترك اللبناني–الدولي (APU–CABS). وتُظهر الصور جوانب من التحرك الميداني والأسلحة والمعدات المضبوطة."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "مصدر الصور: رئيس التحرير أدونيس الخطيب."
+        },
+        "en": {
+          "title": "In photos: the Naameh operation against illegal night hunting",
+          "subtitle": "Five photographs of field activity and seized equipment from the ISF Investigations and APU–CABS operation.",
+          "meta_description": "Five photographs of field activity and seized equipment from the ISF Investigations and APU–CABS operation.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Scenes from the operation against illegal night hunting in Naameh, carried out by the Mount Lebanon Investigations detachment of the Internal Security Forces with field and intelligence cooperation from the joint Lebanese–international operations team APU–CABS. The photographs show aspects of the field activity and the weapons and equipment seized."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Image source: Adonis Elkhateeb, Editor-in-Chief."
+        },
+        "fr": {
+          "title": "En images : l’opération de Naameh contre la chasse nocturne illégale",
+          "subtitle": "Cinq photographies de l’intervention sur le terrain et du matériel saisi lors de l’opération des investigations des FSI et d’APU–CABS.",
+          "meta_description": "Cinq photographies de l’intervention sur le terrain et du matériel saisi lors de l’opération des investigations des FSI et d’APU–CABS.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Des scènes de l’opération contre la chasse nocturne illégale à Naameh, menée par le détachement des investigations du Mont-Liban des Forces de sécurité intérieure, avec la coopération sur le terrain et en matière de renseignement de l’équipe opérationnelle conjointe libano-internationale APU–CABS. Les photographies montrent des aspects de l’intervention ainsi que les armes et le matériel saisis."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Source des images : Adonis Elkhateeb, rédacteur en chef."
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      },
+      "related": [
+        "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs"
+      ]
+    }
+  ]
+}
