@@ -373,3 +373,22 @@ Evidence checked 2 November 2026: CSIC Vertebrados Ibéricos (incubation
 12–15 days; nest departure 12–14 days; further parental care 2–3 weeks), and
 BTO BirdFacts Redstart (incubation 13–14 days; fledging 16–17 days). These are
 reference durations, not a borrowed European breeding calendar for Arab countries.
+
+## Bounded November 5 bird reference presentation repair
+
+The `text-only-nov5-bird-references` editorial operation applies only to the exact
+immutable `daily-birds-20261105` publication and its ten CC0 photo identities. It
+removes visible reference hyperlinks in its thirty AR/EN/FR articles while keeping
+the reference names, creator credits, CC0 1.0 and plain-text iNaturalist photo IDs.
+The original source/license URLs and full provenance record remain immutable.
+The ten photo-specific CC0 dedications and official CC0 legal code were checked
+independently on 5 November 2026: CC0 imposes no attribution or hyperlink condition.
+This finding is not a guarantee of ownership or clearance of third-party rights.
+
+The operation accepts an empty payload, exact revision ID and original source
+hash, plus current-base and target hashes. Only sixty article mirrors and the
+matching ten rows of each of three search indices change. No image, scientific
+paragraph, date, metadata, archive, distribution, generic renderer, or other
+publication changes. The ordinary source-request, trusted compile, whole-tree
+parity, protected merge and live-verification process remains mandatory.
+It is not a generic license/link waiver or a policy for other articles.
