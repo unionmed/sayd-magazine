@@ -1,0 +1,2273 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261106",
+  "expected_base": "7b66e70a997fa639aecb3b563bf5baddd3e2a483",
+  "approval_reference": "private:nayef-birds-20261101-standing-ten-daily-and-20261104-ten-actually-published-plus-backlog",
+  "bank_search_reference": "2026-11-06: Library photo-bank and exact scientific-species searches returned no verified suitable archived originals. Whole current main search archives AR899 EN219 FR209 inspected for accepted scientific names, synonyms and Arabic/local names; incidental news mentions distinguished from dedicated profiles. 10 actual originals decoded/viewed directly and compared independently with UNDP/ABCL/MOE Lebanon2026 ID guide, BTO/RSPB/SEO/BSPB and accepted AviList20Oct2026 taxonomy. Each actual photo page and licence URL inspected, source creator/place/date retained. Photo identity, rights and country/status evidence are distinct. No nests or sensitive coordinates disclosed. Regional presence from Lebanon guide18Jun2026, OBRC8.0 1Jan2026 and currentQBOG6Nov2026. No social distribution or general rule/design changes.",
+  "photos": [
+    {
+      "id": "cettis-warbler",
+      "path": "docs/media/publications/daily-birds-20261106/cettis-warbler.jpg",
+      "sha256": "3743f581ce5ff61700d157335d425a6c33886b87fb604a7e1f36fcbbb656053a",
+      "source_sha256": "3743f581ce5ff61700d157335d425a6c33886b87fb604a7e1f36fcbbb656053a",
+      "source_reference": "Dario Taraborelli; 2023-12-02; Torbiere del Sebino, Province of Brescia, Italy. iNaturalist observation 192836777, photo 338614643. Exact original viewed directly 6 November2026 and independently compared: Reddish-brown upperparts, greyish face, fine pale eyebrow, compact broad-tailed warbler; sex and exact age unassigned; 10 rectrices not counted in this photograph. Source capture date/place declared metadata, not independently geolocated. Illustrative species photograph; country/status claims rely on named regional references, not this photograph.",
+      "source_url": "https://www.inaturalist.org/photos/338614643",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes. Source creator, title, photo-page and licence link retained; commercial reuse and storage allowed under this licence.",
+        "evidence_reference": "Per-photo API 338614643 license cc0; actual original photo page independently inspected 6November2026, creator matches; actual https://creativecommons.org/publicdomain/zero/1.0/ link verified, not observation-data licence. Published/source SHA256 match and file fully decoded.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "هازجة سيتي بنية الظهر عند حافة نباتات كثيفة",
+        "en": "Cetti’s Warbler with brown upperparts in dense vegetation",
+        "fr": "Bouscarle de Cetti au dessus brun dans une végétation dense"
+      },
+      "caption": {
+        "ar": "هازجة سيتي (الدخلة رمادية الأذن)",
+        "en": "Cetti’s Warbler",
+        "fr": "Bouscarle de Cetti"
+      }
+    },
+    {
+      "id": "moustached-warbler",
+      "path": "docs/media/publications/daily-birds-20261106/moustached-warbler.jpg",
+      "sha256": "ad97faaa3725732d645ad843c3a8ca2a21712dd3d0504d55add662353f328c22",
+      "source_sha256": "ad97faaa3725732d645ad843c3a8ca2a21712dd3d0504d55add662353f328c22",
+      "source_reference": "egorbirder; 2024-05-03; Каякентский р-н, Респ. Дагестан, Россия. iNaturalist observation 215455465, photo 380926859. Exact original viewed directly 6 November2026 and independently compared: Broad pale supercilium, dark eye/cheek and crown contrast, short primary projection, warm streaked brown upperparts and pale throat; original 156596147 rejected because face obscured. No sex/age/subspecies assigned. Source capture date/place declared metadata, not independently geolocated. Illustrative species photograph; country/status claims rely on named regional references, not this photograph.",
+      "source_url": "https://www.inaturalist.org/photos/380926859",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC BY 4.0. Unmodified original bytes. Source creator, title, photo-page and licence link retained; commercial reuse and storage allowed under this licence.",
+        "evidence_reference": "Per-photo API 380926859 license cc-by; actual original photo page independently inspected 6November2026, creator matches; actual https://creativecommons.org/licenses/by/4.0/ link verified, not observation-data licence. Published/source SHA256 match and file fully decoded.",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "alt": {
+        "ar": "هازجة ذات الشارب بحاجب فاتح عريض تمسك ساق قصب",
+        "en": "Moustached Warbler with a broad pale eyebrow clinging to a reed",
+        "fr": "Lusciniole à moustaches au large sourcil clair agrippée à un roseau"
+      },
+      "caption": {
+        "ar": "الهازجة ذات الشارب",
+        "en": "Moustached Warbler",
+        "fr": "Lusciniole à moustaches"
+      }
+    },
+    {
+      "id": "common-reed-bunting",
+      "path": "docs/media/publications/daily-birds-20261106/common-reed-bunting.jpg",
+      "sha256": "1f10e4bebd93a0d27778d879e52d57f933d5a46a53dae3aa586f7e2ac12503c3",
+      "source_sha256": "1f10e4bebd93a0d27778d879e52d57f933d5a46a53dae3aa586f7e2ac12503c3",
+      "source_reference": "Stephen James McWilliam; 2017-03-16; Pennington Flash, St Helens Road, Leigh, Greater Manchester, UK. iNaturalist observation 64106826, photo 103008998. Exact original viewed directly 6 November2026 and independently compared: Black male-type head and throat, white moustache/collar, streaked brown back and pale underparts; breeding-type plumage but source March date retained, no exact age/subspecies assigned. Source capture date/place declared metadata, not independently geolocated. Illustrative species photograph; country/status claims rely on named regional references, not this photograph.",
+      "source_url": "https://www.inaturalist.org/photos/103008998",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes. Source creator, title, photo-page and licence link retained; commercial reuse and storage allowed under this licence.",
+        "evidence_reference": "Per-photo API 103008998 license cc0; actual original photo page independently inspected 6November2026, creator matches; actual https://creativecommons.org/publicdomain/zero/1.0/ link verified, not observation-data licence. Published/source SHA256 match and file fully decoded.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "درسة قصب برأس أسود وطوق أبيض على غصن",
+        "en": "Common Reed Bunting with black head and white collar on a branch",
+        "fr": "Bruant des roseaux à tête noire et collier blanc sur une branche"
+      },
+      "caption": {
+        "ar": "درسة القصب",
+        "en": "Common Reed Bunting",
+        "fr": "Bruant des roseaux"
+      }
+    },
+    {
+      "id": "goldcrest",
+      "path": "docs/media/publications/daily-birds-20261106/goldcrest.jpg",
+      "sha256": "8b5682a1ea30f944b027840b9632b1203ad78e594636fce0930156e8b9ac732c",
+      "source_sha256": "8b5682a1ea30f944b027840b9632b1203ad78e594636fce0930156e8b9ac732c",
+      "source_reference": "Istvan Sipos; 2025-10-12; Florești, Cluj, RO. iNaturalist observation 320354858, photo 579201510. Exact original viewed directly 6 November2026 and independently compared: Olive plumage, yellow crown edged black, two pale wing bars, fine bill, plain face without broad white supercilium; no exact sex/age assigned from partly concealed crest. Source capture date/place declared metadata, not independently geolocated. Illustrative species photograph; country/status claims rely on named regional references, not this photograph.",
+      "source_url": "https://www.inaturalist.org/photos/579201510",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes. Source creator, title, photo-page and licence link retained; commercial reuse and storage allowed under this licence.",
+        "evidence_reference": "Per-photo API 579201510 license cc0; actual original photo page independently inspected 6November2026, creator matches; actual https://creativecommons.org/publicdomain/zero/1.0/ link verified, not observation-data licence. Published/source SHA256 match and file fully decoded.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "صعو أصفر العرف صغير زيتوني الريش على غصن",
+        "en": "Small olive-coloured Goldcrest with yellow crown on a branch",
+        "fr": "Petit Roitelet huppé au plumage olive et à la raie sommitale jaune sur une branche"
+      },
+      "caption": {
+        "ar": "صعو أصفر العرف (ذهبي التاج)",
+        "en": "Goldcrest",
+        "fr": "Roitelet huppé"
+      }
+    },
+    {
+      "id": "spotted-crake",
+      "path": "docs/media/publications/daily-birds-20261106/spotted-crake.jpg",
+      "sha256": "4a3fef28a849706061c17e22ffc6b624fbade69c719286807adc8541c749f56f",
+      "source_sha256": "4a3fef28a849706061c17e22ffc6b624fbade69c719286807adc8541c749f56f",
+      "source_reference": "Лариса Артемьева; 2021-07-20; Кунгурский р-н, Пермский край, Россия. iNaturalist observation 87889551, photo 144952997. Exact original viewed directly 6 November2026 and independently compared: Extensive fine white spotting on head/breast/back, short yellow bill with reddish base, green legs and barred flanks; adult-type, sex/exact age unassigned. Source capture date/place declared metadata, not independently geolocated. Illustrative species photograph; country/status claims rely on named regional references, not this photograph.",
+      "source_url": "https://www.inaturalist.org/photos/144952997",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes. Source creator, title, photo-page and licence link retained; commercial reuse and storage allowed under this licence.",
+        "evidence_reference": "Per-photo API 144952997 license cc0; actual original photo page independently inspected 6November2026, creator matches; actual https://creativecommons.org/publicdomain/zero/1.0/ link verified, not observation-data licence. Published/source SHA256 match and file fully decoded.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "مرعة منقطة بمنقار أصفر قصير وريش منقط بين القصب",
+        "en": "Spotted Crake with a short yellow bill and spotted plumage among reeds",
+        "fr": "Marouette ponctuée au bec jaune court et au plumage ponctué parmi les roseaux"
+      },
+      "caption": {
+        "ar": "المرعة المنقطة (المرعة الرقطاء)",
+        "en": "Spotted Crake",
+        "fr": "Marouette ponctuée"
+      }
+    },
+    {
+      "id": "eurasian-bittern",
+      "path": "docs/media/publications/daily-birds-20261106/eurasian-bittern.jpg",
+      "sha256": "1a28ba867c4dfd4efcca2d4c357f5fc8a16d5f9f5e69916d7385f7e90eeda6f5",
+      "source_sha256": "1a28ba867c4dfd4efcca2d4c357f5fc8a16d5f9f5e69916d7385f7e90eeda6f5",
+      "source_reference": "Thierry Arbault; 2024-10-26; Belgium. iNaturalist observation 250143129, photo 447302164. Exact original viewed directly 6 November2026 and independently compared: Large stocky heron, blackish crown, long strong bill, buff/dark-streaked and barred plumage, no pale large wing panel; sex/exact age unassigned. Source capture date/place declared metadata, not independently geolocated. Illustrative species photograph; country/status claims rely on named regional references, not this photograph.",
+      "source_url": "https://www.inaturalist.org/photos/447302164",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes. Source creator, title, photo-page and licence link retained; commercial reuse and storage allowed under this licence.",
+        "evidence_reference": "Per-photo API 447302164 license cc0; actual original photo page independently inspected 6November2026, creator matches; actual https://creativecommons.org/publicdomain/zero/1.0/ link verified, not observation-data licence. Published/source SHA256 match and file fully decoded.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "واق أوراسي مموه بتخطيط داكن بين سيقان القصب",
+        "en": "Eurasian Bittern with dark-streaked camouflage among reed stems",
+        "fr": "Butor étoilé au plumage camouflé strié de sombre parmi les roseaux"
+      },
+      "caption": {
+        "ar": "الواق الأوراسي (الواق الكبير)",
+        "en": "Eurasian Bittern",
+        "fr": "Butor étoilé"
+      }
+    },
+    {
+      "id": "hen-harrier",
+      "path": "docs/media/publications/daily-birds-20261106/hen-harrier.jpg",
+      "sha256": "96d2c7e05b232443dc1135a43eaf374d7a3aeb0550f733ad8857630b28b958a4",
+      "source_sha256": "96d2c7e05b232443dc1135a43eaf374d7a3aeb0550f733ad8857630b28b958a4",
+      "source_reference": "Griha Hasanov; 2021-04-28; Иволгинский р-н, Респ. Бурятия, Россия. iNaturalist observation 75543476, photo 123607170. Exact original viewed directly 6 November2026 and independently compared: Male-type grey head/chest, white belly, broad extensive black tips and five fingers, no Montagu wing-bar; actual accepted cyaneus, not rejected hudsonius results. Exact age unassigned. Source capture date/place declared metadata, not independently geolocated. Illustrative species photograph; country/status claims rely on named regional references, not this photograph.",
+      "source_url": "https://www.inaturalist.org/photos/123607170",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC BY 4.0. Unmodified original bytes. Source creator, title, photo-page and licence link retained; commercial reuse and storage allowed under this licence.",
+        "evidence_reference": "Per-photo API 123607170 license cc-by; actual original photo page independently inspected 6November2026, creator matches; actual https://creativecommons.org/licenses/by/4.0/ link verified, not observation-data licence. Published/source SHA256 match and file fully decoded.",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "alt": {
+        "ar": "مرزة دجاج في الطيران تظهر أطراف جناحيها السوداء الواسعة",
+        "en": "Hen Harrier in flight showing extensive black wingtips",
+        "fr": "Busard Saint-Martin en vol montrant ses larges extrémités alaires noires"
+      },
+      "caption": {
+        "ar": "مرزة الدجاج",
+        "en": "Hen Harrier",
+        "fr": "Busard Saint-Martin"
+      }
+    },
+    {
+      "id": "pallid-harrier",
+      "path": "docs/media/publications/daily-birds-20261106/pallid-harrier.jpg",
+      "sha256": "2d68394189f856c835c764e66e4496d820fb375befa4cc9113e1a13c3d0c159b",
+      "source_sha256": "2d68394189f856c835c764e66e4496d820fb375befa4cc9113e1a13c3d0c159b",
+      "source_reference": "Sunny Zhang 张迎新; 2024-03-01; Narok, KE. iNaturalist observation 216716254, photo 383306739. Exact original viewed directly 6 November2026 and independently compared: Male-type pale grey upperwing, narrow black tip/4 fingers, no dark Montagu secondary bar; compared with UNDP2026 harrier plates. Exact age unassigned. Source capture date/place declared metadata, not independently geolocated. Illustrative species photograph; country/status claims rely on named regional references, not this photograph.",
+      "source_url": "https://www.inaturalist.org/photos/383306739",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes. Source creator, title, photo-page and licence link retained; commercial reuse and storage allowed under this licence.",
+        "evidence_reference": "Per-photo API 383306739 license cc0; actual original photo page independently inspected 6November2026, creator matches; actual https://creativecommons.org/publicdomain/zero/1.0/ link verified, not observation-data licence. Published/source SHA256 match and file fully decoded.",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "مرزة باهتة رمادية في الطيران فوق أرض مفتوحة",
+        "en": "Pale grey Pallid Harrier in flight over open ground",
+        "fr": "Busard pâle gris clair en vol au-dessus d’un espace ouvert"
+      },
+      "caption": {
+        "ar": "المرزة الباهتة (مرزة بغثاء)",
+        "en": "Pallid Harrier",
+        "fr": "Busard pâle"
+      }
+    },
+    {
+      "id": "greater-spotted-eagle",
+      "path": "docs/media/publications/daily-birds-20261106/greater-spotted-eagle.jpg",
+      "sha256": "17289f151404a26c50a419b0aab2b132c230790f98c3f783c9ce7629e488d481",
+      "source_sha256": "17289f151404a26c50a419b0aab2b132c230790f98c3f783c9ce7629e488d481",
+      "source_reference": "Jan Ebr & Ivana Ebrová; 2017-12-31; Al Jahrah, KW. iNaturalist observation 71485388, photo 505778420. Exact original viewed directly 6 November2026 and independently compared: Juvenile-type heavy pale spots on dark coverts, dark head/eye, short gape and no pale nape patch; independently compared with UNDP2026 p100. Sex/exact year unassigned. Single folded-wing view cannot test genetic ancestry; none claimed. Source capture date/place declared metadata, not independently geolocated. Illustrative species photograph; country/status claims rely on named regional references, not this photograph.",
+      "source_url": "https://www.inaturalist.org/photos/505778420",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC BY 4.0. Unmodified original bytes. Source creator, title, photo-page and licence link retained; commercial reuse and storage allowed under this licence.",
+        "evidence_reference": "Per-photo API 505778420 license cc-by; actual original photo page independently inspected 6November2026, creator matches; actual https://creativecommons.org/licenses/by/4.0/ link verified, not observation-data licence. Published/source SHA256 match and file fully decoded.",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "alt": {
+        "ar": "عقاب منقط كبير بريش داكن وبقع فاتحة على الجناح المطوي",
+        "en": "Greater Spotted Eagle with dark plumage and pale spots on the folded wing",
+        "fr": "Aigle criard au plumage sombre et aux taches pâles sur l’aile repliée"
+      },
+      "caption": {
+        "ar": "العقاب المنقط الكبير",
+        "en": "Greater Spotted Eagle",
+        "fr": "Aigle criard"
+      }
+    },
+    {
+      "id": "eastern-imperial-eagle",
+      "path": "docs/media/publications/daily-birds-20261106/eastern-imperial-eagle.jpg",
+      "sha256": "442b838bf1789288e44ebea8653e3fb9424110dc2f144330d6fd004035e7bc8c",
+      "source_sha256": "442b838bf1789288e44ebea8653e3fb9424110dc2f144330d6fd004035e7bc8c",
+      "source_reference": "Andrew Bazdyrev; 2021-05-02; Ordzhonikidzevskiy rayon, RU-KK, RU. iNaturalist observation 79306537, photo 129874502. Exact original viewed directly 6 November2026 and independently compared: Dark body, conspicuously pale golden head/nape and white shoulder epaulettes match adult-type heliaca; exact age/sex unassigned. Not adalberti. Source capture date/place declared metadata, not independently geolocated. Illustrative species photograph; country/status claims rely on named regional references, not this photograph.",
+      "source_url": "https://www.inaturalist.org/photos/129874502",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC BY 4.0. Unmodified original bytes. Source creator, title, photo-page and licence link retained; commercial reuse and storage allowed under this licence.",
+        "evidence_reference": "Per-photo API 129874502 license cc-by; actual original photo page independently inspected 6November2026, creator matches; actual https://creativecommons.org/licenses/by/4.0/ link verified, not observation-data licence. Published/source SHA256 match and file fully decoded.",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "alt": {
+        "ar": "ملك عقبان شرقي داكن تظهر بقعة كتفه البيضاء على أرض عشبية",
+        "en": "Dark Eastern Imperial Eagle showing a white shoulder patch on grassland",
+        "fr": "Aigle impérial sombre montrant une tache blanche à l’épaule dans l’herbe"
+      },
+      "caption": {
+        "ar": "ملك العقبان الشرقي",
+        "en": "Eastern Imperial Eagle",
+        "fr": "Aigle impérial"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "هازجة-سيتي",
+        "en": "cettis-warbler",
+        "fr": "bouscarle-de-cetti"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "cettis-warbler"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "هازجة سيتي (الدخلة رمادية الأذن)",
+          "subtitle": "Cettia cetti",
+          "meta_description": "هازجة سيتي (الدخلة رمادية الأذن): التعرف ودورة الحياة والحضور الموسمي في البلدان العربية المذكورة، بمراجع علمية وإقليمية.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "هازجة سيتي طائر صغير من فصيلة Cettiidae، أعلاه بني محمر وأسفله فاتح، وله حاجب رفيع وذيل عريض. يساعد صوته القوي على اكتشافه داخل الشجيرات الكثيفة، حيث قد يُسمع قبل أن يُرى."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يعيش بين القصب والعليق والشجيرات القريبة من الماء، ويتغذى أساسًا على الحشرات الصغيرة. بقاء الغطاء النباتي الرطب متصلًا يوفر له الغذاء والمأوى طوال السنة."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تورد بيانات BTO عادة 4–5 بيضات، تحضنها الأنثى نحو 16–17 يومًا. تحتاج الفراخ إلى الرعاية والإطعام داخل العش، وتبلغ مرحلة مغادرته عادة بعد 14–16 يومًا من الفقس. هذه مدد عامة لنمو النوع، وليست تقويمًا ثابتًا لجميع مناطقه."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "يصفه دليل طيور لبنان الصادر عام 2026 بأنه مقيم متكاثر شائع قرب المياه والغطاء النباتي الكثيف. لذلك يمثل وجوده في نوفمبر استمرارًا لحياة طائر مقيم، وليس وصول زائر شتوي جديد."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "يمكن مراقبته من حافة المسار بالانتظار والاستماع، دون اقتحام القصب أو تشغيل النداءات لاستدراجه. حماية ضفاف الأنهار من التجفيف والحريق تحفظ موائله."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Cettis Warbler",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/cettis-warbler"
+            },
+            {
+              "label": "RSPB — Cettis Warbler",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/cettis-warbler"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Dario Taraborelli — CC0 1.0."
+        },
+        "en": {
+          "title": "Cetti’s Warbler",
+          "subtitle": "Cettia cetti",
+          "meta_description": "Cetti’s Warbler: identification, life cycle and seasonal occurrence in the Arab countries covered, with scientific and regional references.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "Cetti’s Warbler belongs to Cettiidae. Reddish-brown upperparts, pale underparts, a fine eyebrow and a broad tail help identify this small bird. Its powerful song often reveals it before it emerges from dense cover."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It inhabits reeds, brambles and dense vegetation near water, feeding mainly on small insects. Continuous wetland vegetation provides food and shelter throughout the year."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "BTO gives a typical clutch of 4–5 eggs, incubated by the female for about 16–17 days. The young need care and feeding in the nest and normally fledge after 14–16 days. These are general developmental intervals, rather than a fixed calendar across its range."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "The 2026 Birds of Lebanon guide describes it as a common resident breeder in dense vegetation near water. Its presence in November therefore continues a resident life cycle, rather than marking the arrival of a winter visitor."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Wait and listen from a path edge without entering reedbeds or using playback to draw birds out. Protecting river margins from drainage and fire conserves its habitat."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Cettis Warbler",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/cettis-warbler"
+            },
+            {
+              "label": "RSPB — Cettis Warbler",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/cettis-warbler"
+            }
+          ],
+          "photo_credit": "Species illustration: Dario Taraborelli — CC0 1.0."
+        },
+        "fr": {
+          "title": "Bouscarle de Cetti",
+          "subtitle": "Cettia cetti",
+          "meta_description": "Bouscarle de Cetti : identification, cycle de vie et présence saisonnière dans les pays arabes présentés, avec références scientifiques et régionales.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Bouscarle de Cetti appartient aux Cettiidae. Son dessus brun roux, son dessous clair, son fin sourcil et sa large queue aident à la reconnaître. Son chant puissant la révèle souvent avant qu’elle ne sorte de la végétation."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Elle fréquente les roseaux, les ronciers et les fourrés proches de l’eau et consomme surtout de petits insectes. Une végétation humide continue lui procure nourriture et abri toute l’année."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le BTO indique habituellement 4–5 œufs, couvés par la femelle pendant environ 16–17 jours. Les petits doivent être nourris au nid et prennent normalement leur envol après 14–16 jours. Ces durées générales ne constituent pas un calendrier uniforme pour toute l’aire de répartition."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Le guide des oiseaux du Liban de 2026 le décrit comme un nicheur sédentaire commun dans la végétation dense proche de l’eau. Sa présence en novembre relève donc de la vie d’une population résidente, plutôt que de l’arrivée d’un hivernant."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "On peut l’observer en attendant et en écoutant depuis un sentier, sans pénétrer dans les roseaux ni utiliser la repasse. Préserver les berges du drainage et des incendies protège son habitat."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Cettis Warbler",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/cettis-warbler"
+            },
+            {
+              "label": "RSPB — Cettis Warbler",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/cettis-warbler"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Dario Taraborelli — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الهازجة-ذات-الشارب",
+        "en": "moustached-warbler",
+        "fr": "lusciniole-a-moustaches"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "moustached-warbler"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الهازجة ذات الشارب",
+          "subtitle": "Acrocephalus melanopogon",
+          "meta_description": "الهازجة ذات الشارب: التعرف ودورة الحياة والحضور الموسمي في البلدان العربية المذكورة، بمراجع علمية وإقليمية.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الهازجة ذات الشارب من فصيلة Acrocephalidae، وتتميز بحاجب فاتح عريض يحده تاج داكن وخد أغمق. ظهرها بني مخطط وأسفلها فاتح مع مسحة بنية على الجانبين؛ ويحتاج تمييزها من هوازج القصب المشابهة إلى رؤية الرأس جيدًا."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يختبئ بين النباتات المائية والقصب، حيث يلتقط اللافقاريات الصغيرة، ومنها الخنافس والحلزونات الدقيقة. يرتبط بموائل رطبة ذات نباتات كثيفة، ويتأثر بتجفيفها وحرق القصب."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تصف SEO/BirdLife عشًا كأسيًا بين النباتات المائية ودفعة من 3–6 بيضات. يتشارك الأبوان حضانتها نحو 14–15 يومًا وإطعام الفراخ، وتصبح الصغار قادرة على الطيران قرابة اليوم الثاني عشر. يختلف توقيت التكاثر باختلاف المنطقة."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "يصنفه دليل لبنان لعام 2026 متكاثرًا صيفيًا شائعًا وعابرًا قليل العدد ومشتّيًا نادرًا. لا تعني وفرة طيور التكاثر وفرة مماثلة في نوفمبر؛ إذ يتداخل حينها مرور الخريف مع بقاء أعداد محدودة للشتاء."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "يفضل انتظار ظهوره عند حافة النبات بدل فتح ممر داخل القصب. كما أن تسجيل غيابه في زيارة قصيرة لا يكفي للحكم على خلو الموقع من هذا الطائر المتخفي."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "SEO/BirdLife — Carricerín real",
+              "url": "https://seo.org/ave/carricerin-real/"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: egorbirder — CC BY 4.0."
+        },
+        "en": {
+          "title": "Moustached Warbler",
+          "subtitle": "Acrocephalus melanopogon",
+          "meta_description": "Moustached Warbler: identification, life cycle and seasonal occurrence in the Arab countries covered, with scientific and regional references.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Moustached Warbler is an Acrocephalidae species with a broad pale eyebrow contrasting with a dark crown and darker cheek. It has streaked brown upperparts and pale underparts with brownish flanks; a clear view of the head helps separate similar reedbed warblers."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It searches aquatic vegetation and reeds for small invertebrates, including beetles and tiny snails. Dense wetland vegetation is central to its habitat, making drainage and reed burning important pressures."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "SEO/BirdLife describes a cup nest within aquatic vegetation and a clutch of 3–6 eggs. Both parents incubate for about 14–15 days and feed the chicks, which become capable of flight at around 12 days. Breeding dates vary between regions."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "The 2026 Lebanon guide lists it as a common summer breeder, scarce passage migrant and rare winter visitor. Breeding abundance does not imply similar numbers in November, when autumn passage overlaps with limited winter presence."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Wait for it at a vegetation edge rather than forcing a route through reeds. Failure to detect this secretive bird during a short visit does not establish absence."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "SEO/BirdLife — Carricerín real",
+              "url": "https://seo.org/ave/carricerin-real/"
+            }
+          ],
+          "photo_credit": "Species illustration: egorbirder — CC BY 4.0."
+        },
+        "fr": {
+          "title": "Lusciniole à moustaches",
+          "subtitle": "Acrocephalus melanopogon",
+          "meta_description": "Lusciniole à moustaches : identification, cycle de vie et présence saisonnière dans les pays arabes présentés, avec références scientifiques et régionales.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Lusciniole à moustaches, de la famille des Acrocephalidae, possède un large sourcil clair contrastant avec une calotte sombre et une joue plus foncée. Son dessus brun est strié, son dessous clair et ses flancs brunâtres. Une bonne vue de la tête aide à la distinguer des espèces voisines."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Elle recherche de petits invertébrés, notamment des coléoptères et de minuscules escargots, dans la végétation aquatique. Les formations palustres denses sont essentielles à son habitat, menacé par le drainage et le brûlage des roseaux."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "SEO/BirdLife décrit un nid en coupe dans la végétation aquatique et une ponte de 3–6 œufs. Les deux parents couvent pendant environ 14–15 jours et nourrissent les petits, capables de voler vers 12 jours. Les dates de reproduction varient selon les régions."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Le guide libanais de 2026 le classe comme nicheur estival commun, migrateur de passage peu nombreux et hivernant rare. L’abondance en période de reproduction ne se transpose pas à novembre, lorsque passage automnal et faible présence hivernale peuvent se rencontrer."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Mieux vaut attendre son apparition en lisière que se frayer un passage dans les roseaux. Une visite brève sans observation ne prouve pas l’absence de cet oiseau discret."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "SEO/BirdLife — Carricerín real",
+              "url": "https://seo.org/ave/carricerin-real/"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : egorbirder — CC BY 4.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "درسة-القصب",
+        "en": "common-reed-bunting",
+        "fr": "bruant-des-roseaux"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "common-reed-bunting"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "درسة القصب",
+          "subtitle": "Schoeniclus schoeniclus",
+          "meta_description": "درسة القصب: التعرف ودورة الحياة والحضور الموسمي في البلدان العربية المذكورة، بمراجع علمية وإقليمية.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "درسة القصب من فصيلة Emberizidae. يعتمد AviList 2026 الاسم Schoeniclus schoeniclus، بينما تستعمل مراجع أقدم الاسم Emberiza schoeniclus للنوع نفسه. يتميز الذكر في ريش التكاثر برأس وحلق أسودين وطوق وشارب أبيضين؛ ويكون رأس الأنثى واليافع بنيًا مخططًا."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يرتاد القصب والأعشاب والمزارع القريبة من الماء. يتناول البذور واللافقاريات، وتكتسب الحشرات أهمية خاصة في غذاء الفراخ. قد يختلف مظهر الرأس في الشتاء عن الصورة المألوفة لذكر الربيع."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تورد BTO دفعة معتادة من 4–5 بيضات، وحضانة تتولاها الأنثى نحو 12–13 يومًا. تنمو الفراخ داخل العش قبل المغادرة عادة بعد 12–13.5 يومًا من الفقس. ولا تعني المغادرة استقلالًا فوريًا في التغذية."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "يصفه دليل لبنان لعام 2026 بأنه عابر وزائر شتوي قليل العدد من أواخر أكتوبر إلى أوائل أبريل، في الأراضي الرطبة والحقول القريبة من المياه. يتوافق نوفمبر مع بداية هذه الفترة؛ ولا يثبت ذلك إقامة النوع أو تكاثره في كل بلد عربي."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تتيح المراقبة الهادئة لحواف القصب رؤية الطيور وهي تتغذى دون دفعها إلى الطيران مرارًا. ويخدم إبقاء هوامش الحقول والنباتات الرطبة غذاء الشتاء."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Reed Bunting",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/reed-bunting"
+            },
+            {
+              "label": "RSPB — Reed Bunting",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/reed-bunting"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Stephen James McWilliam — CC0 1.0."
+        },
+        "en": {
+          "title": "Common Reed Bunting",
+          "subtitle": "Schoeniclus schoeniclus",
+          "meta_description": "Common Reed Bunting: identification, life cycle and seasonal occurrence in the Arab countries covered, with scientific and regional references.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Common Reed Bunting belongs to Emberizidae. AviList 2026 uses Schoeniclus schoeniclus, while older sources call the same species Emberiza schoeniclus. Breeding males have a black head and throat with a white collar and moustache; females and juveniles have streaked brown heads."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It uses reedbeds, grassland and farmland near water, taking seeds and invertebrates. Insects are particularly important for the chicks. Winter head patterns may look different from the familiar spring male."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "BTO gives a typical clutch of 4–5 eggs, incubated by the female for about 12–13 days. Young develop in the nest and normally fledge after 12–13.5 days. Leaving the nest does not mean immediate feeding independence."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "The 2026 Lebanon guide describes it as a scarce passage migrant and winter visitor from late October to early April, in wetlands and fields near water. November falls at the start of that period; this does not establish residency or breeding throughout Arab countries."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Quiet observation along reed edges allows feeding birds to be watched without repeatedly flushing them. Retaining field margins and wetland vegetation supports winter food supplies."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Reed Bunting",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/reed-bunting"
+            },
+            {
+              "label": "RSPB — Reed Bunting",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/reed-bunting"
+            }
+          ],
+          "photo_credit": "Species illustration: Stephen James McWilliam — CC0 1.0."
+        },
+        "fr": {
+          "title": "Bruant des roseaux",
+          "subtitle": "Schoeniclus schoeniclus",
+          "meta_description": "Bruant des roseaux : identification, cycle de vie et présence saisonnière dans les pays arabes présentés, avec références scientifiques et régionales.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Bruant des roseaux appartient aux Emberizidae. AviList 2026 emploie Schoeniclus schoeniclus, tandis que des références antérieures nomment la même espèce Emberiza schoeniclus. Le mâle nuptial a la tête et la gorge noires, avec collier et moustache blancs ; femelles et jeunes ont la tête brune striée."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il fréquente roselières, herbages et terres agricoles proches de l’eau, où il mange graines et invertébrés. Les insectes sont particulièrement importants pour les poussins. En hiver, la tête peut différer de celle du mâle printanier bien connu."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le BTO indique habituellement 4–5 œufs, couvés par la femelle pendant environ 12–13 jours. Les petits se développent au nid et s’envolent normalement après 12–13,5 jours. Le départ du nid ne signifie pas une indépendance alimentaire immédiate."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Le guide libanais de 2026 le décrit comme migrateur de passage et hivernant peu nombreux de fin octobre à début avril, dans les zones humides et les champs voisins. Novembre correspond au début de cette période ; cela ne démontre ni résidence ni reproduction dans l’ensemble des pays arabes."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "L’observation calme des lisières de roselières permet de voir les oiseaux se nourrir sans les faire décoller sans cesse. Conserver les bordures de champs et la végétation humide favorise leurs ressources hivernales."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Reed Bunting",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/reed-bunting"
+            },
+            {
+              "label": "RSPB — Reed Bunting",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/reed-bunting"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Stephen James McWilliam — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "صعو-أصفر-العرف",
+        "en": "goldcrest",
+        "fr": "roitelet-huppe"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "goldcrest"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "صعو أصفر العرف (ذهبي التاج)",
+          "subtitle": "Regulus regulus",
+          "meta_description": "صعو أصفر العرف (ذهبي التاج): التعرف ودورة الحياة والحضور الموسمي في البلدان العربية المذكورة، بمراجع علمية وإقليمية.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "صعو أصفر العرف طائر صغير جدًا من فصيلة Regulidae، أخضر زيتوني من الأعلى وفاتح من الأسفل، وله خطان فاتحان على الجناح وعرف أصفر تحفه حافتان سوداوان. يساعد غياب الحاجب الأبيض الواضح وخط العين الداكن على تمييزه من الصعو ناري العرف."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يتنقل بخفة بين أغصان الأشجار، ولا سيما المخروطيات، ملتقطًا الحشرات الصغيرة. يحتاج رصده إلى تفحص أطراف الأغصان والإنصات للأصوات الدقيقة مع تجنب ملاحقته."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تضع الأنثى عادة 6–8 بيضات، وتستغرق الحضانة نحو 16–19 يومًا وفق BTO. تبقى الفراخ محتاجة إلى الرعاية في العش، وتغادره عادة بعد 16.5–18 يومًا من الفقس. لا يُنقل تقويم التكاثر البريطاني تلقائيًا إلى غابات لبنان."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "يسجل دليل لبنان لعام 2026 جماعة مقيمة متكاثرة قليلة العدد ومحلية الانتشار، إلى جانب زيارات شتوية نادرة جدًا وغير منتظمة. لذا قد تجمع مشاهدة نوفمبر بين طيور محلية وزوار؛ ولا يصح وصف جميع طيور لبنان بأنها مهاجرة شتوية."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تحافظ حماية الغابات المختلطة والمخروطيات من التدهور والمبيدات على موائله. وتوثق الصور من المسارات دون كشف مواقع الأعشاش أو الاقتراب منها."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Goldcrest",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/goldcrest"
+            },
+            {
+              "label": "RSPB — Goldcrest",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/goldcrest"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Istvan Sipos — CC0 1.0."
+        },
+        "en": {
+          "title": "Goldcrest",
+          "subtitle": "Regulus regulus",
+          "meta_description": "Goldcrest: identification, life cycle and seasonal occurrence in the Arab countries covered, with scientific and regional references.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Goldcrest is a tiny Regulidae species with olive upperparts, pale underparts, two pale wing bars and a yellow crown bordered by black. The lack of a bold white eyebrow and dark eye stripe helps distinguish it from Firecrest."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It moves actively through branches, especially in conifers, picking off tiny insects. Scan the outer foliage and listen for fine calls without pursuing the bird."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "BTO reports a typical clutch of 6–8 eggs and female incubation lasting about 16–19 days. Young require care in the nest and normally fledge after 16.5–18 days. British breeding dates should not automatically be transferred to Lebanese woodland."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "The 2026 Lebanon guide records a scarce, localized resident breeding population alongside very rare, irregular winter visits. November observations may therefore involve local birds or visitors; all Lebanese birds should not be described as winter migrants."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Protecting mixed woodland and conifers from degradation and insecticides preserves its habitat. Photograph birds from paths without approaching or revealing nest sites."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Goldcrest",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/goldcrest"
+            },
+            {
+              "label": "RSPB — Goldcrest",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/goldcrest"
+            }
+          ],
+          "photo_credit": "Species illustration: Istvan Sipos — CC0 1.0."
+        },
+        "fr": {
+          "title": "Roitelet huppé",
+          "subtitle": "Regulus regulus",
+          "meta_description": "Roitelet huppé : identification, cycle de vie et présence saisonnière dans les pays arabes présentés, avec références scientifiques et régionales.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Roitelet huppé est un minuscule Regulidae au dessus olive, au dessous clair et aux deux barres alaires pâles. Une raie jaune bordée de noir orne sa tête. L’absence de sourcil blanc marqué et de bande oculaire sombre le distingue du Roitelet à triple bandeau."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il se déplace vivement dans les branches, notamment celles des conifères, pour y saisir de minuscules insectes. Examiner les rameaux et écouter les cris fins permet de l’observer sans le poursuivre."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le BTO donne habituellement 6–8 œufs et une incubation assurée par la femelle d’environ 16–19 jours. Les petits dépendent des soins au nid et s’envolent normalement après 16,5–18 jours. Le calendrier britannique ne se transpose pas automatiquement aux forêts libanaises."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Le guide libanais de 2026 signale une population nicheuse sédentaire, peu nombreuse et localisée, ainsi que des visites hivernales très rares et irrégulières. Une observation de novembre peut donc concerner un résident ou un visiteur ; tous les individus du pays ne sont pas des migrateurs hivernaux."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Préserver les boisements mixtes et les conifères de la dégradation et des insecticides protège son habitat. Les photographies se prennent depuis les sentiers, sans approcher ni révéler les nids."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Goldcrest",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/goldcrest"
+            },
+            {
+              "label": "RSPB — Goldcrest",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/goldcrest"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Istvan Sipos — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "المرعة-المنقطة",
+        "en": "spotted-crake",
+        "fr": "marouette-ponctuee"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "spotted-crake"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "المرعة المنقطة (المرعة الرقطاء)",
+          "subtitle": "Porzana porzana",
+          "meta_description": "المرعة المنقطة (المرعة الرقطاء): التعرف ودورة الحياة والحضور الموسمي في البلدان العربية المذكورة، بمراجع علمية وإقليمية.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "المرعة المنقطة من فصيلة Rallidae، وهي طائر مكتنز صغير بمنقار قصير مصفر محمر القاعدة وساقين خضراوين. تظهر نقاط بيضاء على ريش الرأس والجسم، مع تخطيط على الجانبين؛ ويختلف منقارها القصير عن منقار مرعة الماء الطويل."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يرتبط بالمستنقعات قليلة العمق والحواف الموحلة ذات الغطاء النباتي. يتغذى على اللافقاريات والمواد النباتية، وغالبًا ما يبقى مستترًا، فتتطلب مراقبته صبرًا عند حافة الموئل."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تورد BTO عادة 10–12 بيضة وحضانة مشتركة بين الأبوين مدتها 18–19 يومًا. تخرج الفراخ مغطاة بالزغب وقادرة على الحركة مبكرًا، لكن القدرة على الطيران تتأخر عادة إلى 43–56 يومًا؛ فمغادرة موضع العش ليست طيرانًا مكتملًا."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "في لبنان، يصفه دليل 2026 بأنه عابر ربيعي شائع، وأقل عددًا في الخريف، ونادر الشتاء من منتصف نوفمبر إلى أواخر فبراير. وفي قطر تصنفه قائمة مجموعة رصد الطيور عابرًا قليل العدد. تختلف صفة الشتاء بين المرجعين والبلدين، ولا تُعمم من أحدهما على الآخر."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "يساعد إبقاء نباتات المستنقع والمياه الضحلة على حفظ مناطق الراحة والتغذية. تُراقب الطيور دون دخول القصب أو دفعها من مخابئها من أجل صورة."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Spotted Crake",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/spotted-crake"
+            },
+            {
+              "label": "RSPB — Spotted Crake",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/spotted-crake"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Лариса Артемьева — CC0 1.0."
+        },
+        "en": {
+          "title": "Spotted Crake",
+          "subtitle": "Porzana porzana",
+          "meta_description": "Spotted Crake: identification, life cycle and seasonal occurrence in the Arab countries covered, with scientific and regional references.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Spotted Crake is a small, compact Rallidae species with a short yellowish bill tinged red at the base and greenish legs. White spotting marks the head and body, with barring on the flanks. Its short bill contrasts with the long bill of Water Rail."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It uses shallow marshes and vegetated muddy margins, feeding on invertebrates and plant material. It often stays concealed, rewarding patient observation at a habitat edge."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "BTO reports a typical clutch of 10–12 eggs and shared incubation lasting 18–19 days. Downy chicks can move about early, but flight normally develops at 43–56 days. Leaving the nest site therefore differs from becoming capable of flight."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2026 guide describes common spring passage, scarce autumn passage and rare winter presence from mid-November to late February. Qatar Bird Observation Group lists scarce passage. Winter status should therefore not be transferred from one country to the other."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Retaining marsh vegetation and shallow water preserves resting and feeding habitat. Watch without entering reeds or driving birds out for a photograph."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Spotted Crake",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/spotted-crake"
+            },
+            {
+              "label": "RSPB — Spotted Crake",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/spotted-crake"
+            }
+          ],
+          "photo_credit": "Species illustration: Лариса Артемьева — CC0 1.0."
+        },
+        "fr": {
+          "title": "Marouette ponctuée",
+          "subtitle": "Porzana porzana",
+          "meta_description": "Marouette ponctuée : identification, cycle de vie et présence saisonnière dans les pays arabes présentés, avec références scientifiques et régionales.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "La Marouette ponctuée est un petit Rallidae trapu au bec court jaunâtre, rougeâtre à la base, et aux pattes verdâtres. Des ponctuations blanches marquent la tête et le corps, tandis que les flancs sont barrés. Son bec court diffère de celui, long, du Râle d’eau."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Elle fréquente les marais peu profonds et les berges vaseuses végétalisées, où elle consomme invertébrés et matières végétales. Souvent cachée, elle demande une observation patiente en lisière."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le BTO indique habituellement 10–12 œufs et une incubation partagée de 18–19 jours. Les poussins duveteux se déplacent précocement, mais l’aptitude au vol apparaît normalement à 43–56 jours. Quitter l’emplacement du nid ne signifie donc pas encore savoir voler."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Le guide libanais de 2026 décrit un passage printanier commun, un passage automnal peu nombreux et un hivernage rare de mi-novembre à fin février. La liste du Qatar indique un migrateur de passage peu nombreux. Le statut hivernal ne se transpose donc pas d’un pays à l’autre."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Maintenir la végétation palustre et les eaux peu profondes préserve reposoirs et zones d’alimentation. On observe sans entrer dans les roseaux ni déloger les oiseaux pour une photographie."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Spotted Crake",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/spotted-crake"
+            },
+            {
+              "label": "RSPB — Spotted Crake",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/spotted-crake"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Лариса Артемьева — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الواق-الأوراسي",
+        "en": "eurasian-bittern",
+        "fr": "butor-etoile"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "eurasian-bittern"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الواق الأوراسي (الواق الكبير)",
+          "subtitle": "Botaurus stellaris",
+          "meta_description": "الواق الأوراسي (الواق الكبير): التعرف ودورة الحياة والحضور الموسمي في البلدان العربية المذكورة، بمراجع علمية وإقليمية.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "الواق الأوراسي بلشون كبير من فصيلة Ardeidae، بلون بني مصفر وتخطيط داكن يموّهانه بين القصب. له منقار قوي مدبب وتاج داكن، وقد يمد عنقه إلى أعلى حين يتنبه إلى الخطر."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يصطاد في المياه الضحلة وبين نباتات المستنقع، ولا سيما الأسماك والبرمائيات وغيرها من الفرائس المائية. قد تخفيه حركاته البطيئة وريشه المموه حتى عندما يكون قريبًا."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تضع الأنثى عادة 4–6 بيضات وتتولى حضانتها نحو 25–26 يومًا، وفق BTO. تحتاج الفراخ إلى الإطعام والرعاية، وتكتسب القدرة على الطيران عادة بعد 50–55 يومًا من الفقس؛ فلا تساوي حركتها بين القصب اكتمال نموها."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "يذكر دليل لبنان لعام 2026 عبورًا قليل العدد من منتصف سبتمبر إلى نوفمبر ومن منتصف مارس إلى أواخر مايو، مع اشتاء أفراد في الأراضي الرطبة. وتدرجه قائمة قطر زائرًا شتويًا نادرًا. يوافق نوفمبر الانتقال إلى فترة الشتاء، مع اختلاف العدد والانتظام بين البلدين."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تُحفظ مسافة آمنة من الطيور المستترة وأماكن راحتها. حماية القصب والمياه من التجفيف والتلوث أكثر فائدة من إجبار طائر مموه على الظهور."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Bittern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/bittern"
+            },
+            {
+              "label": "RSPB — Bittern",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/bittern"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Thierry Arbault — CC0 1.0."
+        },
+        "en": {
+          "title": "Eurasian Bittern",
+          "subtitle": "Botaurus stellaris",
+          "meta_description": "Eurasian Bittern: identification, life cycle and seasonal occurrence in the Arab countries covered, with scientific and regional references.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Eurasian Bittern is a large Ardeidae heron whose buff-brown plumage and dark markings camouflage it among reeds. It has a strong pointed bill and dark crown, and may stretch its neck upwards when alert."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It hunts in shallow water and marsh vegetation, taking fish, amphibians and other aquatic prey. Slow movements and cryptic plumage may conceal it even at close range."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "BTO gives a typical clutch of 4–6 eggs, incubated by the female for about 25–26 days. Chicks need feeding and care and normally become capable of flight at 50–55 days. Moving among reeds does not mean development is complete."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "The 2026 Lebanon guide records scarce passage from mid-September to November and mid-March to late May, with individual birds overwintering in wetlands. Qatar’s list describes a rare winter visitor. November fits the transition into winter, with different abundance and regularity in the two countries."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Keep a safe distance from concealed birds and resting places. Protecting reeds and water from drainage and pollution is more useful than forcing a camouflaged bird into view."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Bittern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/bittern"
+            },
+            {
+              "label": "RSPB — Bittern",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/bittern"
+            }
+          ],
+          "photo_credit": "Species illustration: Thierry Arbault — CC0 1.0."
+        },
+        "fr": {
+          "title": "Butor étoilé",
+          "subtitle": "Botaurus stellaris",
+          "meta_description": "Butor étoilé : identification, cycle de vie et présence saisonnière dans les pays arabes présentés, avec références scientifiques et régionales.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Butor étoilé est un grand héron de la famille des Ardeidae. Son plumage brun chamois marqué de sombre le camoufle parmi les roseaux. Il possède un bec robuste et pointu, une calotte sombre et peut dresser le cou lorsqu’il est en alerte."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il chasse dans les eaux peu profondes et la végétation palustre, capturant poissons, amphibiens et autres proies aquatiques. Ses mouvements lents et son camouflage peuvent le rendre invisible même à faible distance."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le BTO donne habituellement 4–6 œufs, couvés par la femelle pendant environ 25–26 jours. Les petits ont besoin de nourriture et de soins et deviennent normalement capables de voler à 50–55 jours. Se déplacer dans les roseaux ne signifie pas avoir achevé leur développement."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Le guide libanais de 2026 indique un passage peu nombreux de mi-septembre à novembre et de mi-mars à fin mai, avec quelques individus hivernants. La liste du Qatar décrit un hivernant rare. Novembre correspond à la transition hivernale, avec une abondance et une régularité différentes selon le pays."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "On garde ses distances avec les oiseaux cachés et leurs reposoirs. Préserver les roseaux et l’eau du drainage et de la pollution est plus utile que de forcer un oiseau camouflé à se montrer."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Bittern",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/bittern"
+            },
+            {
+              "label": "RSPB — Bittern",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/bittern"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Thierry Arbault — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "مرزة-الدجاج",
+        "en": "hen-harrier",
+        "fr": "busard-saint-martin"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "hen-harrier"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "مرزة الدجاج",
+          "subtitle": "Circus cyaneus",
+          "meta_description": "مرزة الدجاج: التعرف ودورة الحياة والحضور الموسمي في البلدان العربية المذكورة، بمراجع علمية وإقليمية.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "مرزة الدجاج جارح من فصيلة Accipitridae، طويل الجناحين والذيل. يكون الذكر البالغ رمادي الرأس والصدر وفاتح البطن مع نهايات جناح سوداء واسعة؛ أما الإناث واليافعات فبنية ويظهر عندها بياض فوق قاعدة الذيل. لا تكفي علامة الردف وحدها لتمييز جميع المرزات."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يمسح الحقول والأراضي المفتوحة والمناطق الرطبة بطيران منخفض بحثًا عن الثدييات الصغيرة والطيور. يساعد شكل الجناح ونمط الريش وطريقة الطيران مجتمعة على تمييزه من المرزة الباهتة ومرزة مونتاغو."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تورد BTO دفعة معتادة من 4–5 بيضات، وحضانة تتولاها الأنثى تقارب 34 يومًا. تنمو الفراخ معتمدة على رعاية الأبوين، وتغادر العش عادة بعد 36.5–41.5 يومًا من الفقس. هذه مراحل نمو عامة وليست إثباتًا لتكاثره في بلد العبور أو الشتاء."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "يصفه دليل لبنان لعام 2026 بأنه عابر وزائر شتوي غير شائع. وتصنفه قائمة عُمان الرسمية، إصدار 8.0 المؤرخ 1 يناير 2026، عابرًا وشتويًا غير شائع أيضًا. يندرج نوفمبر ضمن سياق العبور والاشتاء، وليس موسم تكاثر مستنتجًا من رؤيته."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تُراقب الجوارح من مسافة دون ملاحقتها أو الاقتراب من مواقع مبيتها الجماعي. ويساعد الحد من السموم والصعق الكهربائي وحماية الموائل المفتوحة على صونها."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Hen Harrier",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/hen-harrier"
+            },
+            {
+              "label": "RSPB — Hen Harrier",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/hen-harrier"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Griha Hasanov — CC BY 4.0."
+        },
+        "en": {
+          "title": "Hen Harrier",
+          "subtitle": "Circus cyaneus",
+          "meta_description": "Hen Harrier: identification, life cycle and seasonal occurrence in the Arab countries covered, with scientific and regional references.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Hen Harrier is an Accipitridae raptor with long wings and tail. Adult males have a grey head and breast, pale belly and extensive black wingtips. Females and juveniles are brown with a white rump, but that feature alone does not identify every harrier."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It quarters fields, open ground and wetlands in low flight for small mammals and birds. Wing shape, plumage and flight style together help separate it from Pallid and Montagu’s Harriers."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "BTO reports a typical clutch of 4–5 eggs and female incubation of about 34 days. Young depend on parental care and normally fledge after 36.5–41.5 days. These general stages do not demonstrate breeding in a passage or wintering country."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2026 guide describes an uncommon passage migrant and winter visitor. Oman’s official list, version 8.0 dated 1 January 2026, gives the same broad status. November belongs to the passage and wintering context; a sighting does not establish local breeding."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Watch raptors from a distance without pursuing them or approaching communal roosts. Reducing poisoning and electrocution and retaining open habitat supports their conservation."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Hen Harrier",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/hen-harrier"
+            },
+            {
+              "label": "RSPB — Hen Harrier",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/hen-harrier"
+            }
+          ],
+          "photo_credit": "Species illustration: Griha Hasanov — CC BY 4.0."
+        },
+        "fr": {
+          "title": "Busard Saint-Martin",
+          "subtitle": "Circus cyaneus",
+          "meta_description": "Busard Saint-Martin : identification, cycle de vie et présence saisonnière dans les pays arabes présentés, avec références scientifiques et régionales.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Busard Saint-Martin est un Accipitridae aux ailes et à la queue longues. Le mâle adulte présente tête et poitrine grises, ventre clair et larges extrémités alaires noires. Femelles et jeunes sont bruns avec un croupion blanc, caractère qui ne suffit pas à identifier tous les busards."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il prospecte champs, espaces ouverts et zones humides en vol bas pour capturer petits mammifères et oiseaux. Forme des ailes, plumage et vol permettent ensemble de le distinguer des Busards pâle et cendré."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le BTO indique habituellement 4–5 œufs et une incubation d’environ 34 jours assurée par la femelle. Les petits dépendent des parents et s’envolent normalement après 36,5–41,5 jours. Ces étapes générales ne prouvent pas une reproduction dans un pays de passage ou d’hivernage."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Le guide libanais de 2026 le décrit comme migrateur de passage et hivernant peu commun. La liste officielle d’Oman, version 8.0 du 1er janvier 2026, lui attribue le même statut général. Novembre relève du passage et de l’hivernage ; une observation ne démontre pas une reproduction locale."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Les rapaces s’observent à distance, sans les poursuivre ni approcher leurs dortoirs collectifs. Réduire empoisonnement et électrocution, tout en conservant les milieux ouverts, favorise leur protection."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "British Trust for Ornithology — BirdFacts: Hen Harrier",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/hen-harrier"
+            },
+            {
+              "label": "RSPB — Hen Harrier",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/hen-harrier"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Griha Hasanov — CC BY 4.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "المرزة-الباهتة",
+        "en": "pallid-harrier",
+        "fr": "busard-pale"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "pallid-harrier"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "المرزة الباهتة (مرزة بغثاء)",
+          "subtitle": "Circus macrourus",
+          "meta_description": "المرزة الباهتة (مرزة بغثاء): التعرف ودورة الحياة والحضور الموسمي في البلدان العربية المذكورة، بمراجع علمية وإقليمية.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "المرزة الباهتة جارح نحيل من فصيلة Accipitridae. يكون الذكر فاتحًا رماديًا مع سواد ضيق عند أطراف الجناحين، فيما تكون الإناث واليافعات بنية وأكثر شبهًا بمرزات أخرى. يلزم جمع علامات الرأس والجناح والذيل قبل حسم هوية الطيور البنية."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يصطاد فوق السهول والأعشاب بطيران منخفض، متناولًا القوارض والطيور الصغيرة والزواحف والحشرات. تختلف أهمية الفرائس بين مناطق التكاثر والشتاء، ولا يقتصر غذاؤه على مجموعة واحدة في كل مكان."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يعشش على الأرض وسط الأعشاب في مناطق تكاثره الأوراسية. يورد صندوق الشاهين 3–6 بيضات تحضنها الأنثى نحو 29–30 يومًا، بينما يمدها الذكر بالغذاء. تطير الفراخ لأول مرة بعد نحو 6–7 أسابيع، وتبقى مع الأبوين أسابيع إضافية قبل الاستقلال. وجود الطائر شتاءً لا يعني تعشيشه محليًا."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "يصفه دليل لبنان لعام 2026 بأنه عابر منتظم غير شائع وشتوي نادر. أما قائمتا قطر وعُمان 2026 فتصفانه بعابر وزائر شتوي شائع. لذلك تختلف فرصة مشاهدته في نوفمبر بين المشرق والخليج، ولا يصح تعميم ندرته اللبنانية على الجزيرة العربية."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تحتاج مراعيه وحقوله إلى إدارة تحافظ على الغطاء النباتي وتقلل التسمم والاضطراب. عند توثيق طائر مشكوك الهوية، تكون الصور المتعددة من مسافة آمنة أنفع من مطاردته للحصول على لقطة أقرب."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "BirdLife South Africa — Pallid Harrier, Regional Red Data Book 2025",
+              "url": "https://www.birdlife.org.za/red-data-book/red-list/pallid-harrier/"
+            },
+            {
+              "label": "The Peregrine Fund — Pallid Harrier: Nest, Eggs and Young",
+              "url": "https://peregrinefund.org/explore-raptors-species/hawks/pallid-harrier"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Sunny Zhang 张迎新 — CC0 1.0."
+        },
+        "en": {
+          "title": "Pallid Harrier",
+          "subtitle": "Circus macrourus",
+          "meta_description": "Pallid Harrier: identification, life cycle and seasonal occurrence in the Arab countries covered, with scientific and regional references.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Pallid Harrier is a slender Accipitridae raptor. Males are pale grey with narrow black wingtips, while brown females and juveniles resemble other harriers more closely. Head, wing and tail features should be assessed together before identifying brown birds."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It hunts low over plains and grassland, taking rodents, small birds, reptiles and insects. The importance of different prey varies between breeding and wintering grounds, rather than remaining uniform everywhere."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "It nests on the ground among grasses in its Eurasian breeding range. The Peregrine Fund reports 3–6 eggs, incubated by the female for about 29–30 days while the male supplies food. Chicks first fly at about 6–7 weeks and remain with their parents for several more weeks before independence. Winter presence does not imply local nesting."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2026 guide describes uncommon but regular passage and rare winter presence. Qatar’s list and Oman’s 2026 list instead describe common passage and winter visits. November encounter prospects therefore differ between the Levant and Gulf; Lebanese rarity should not be extended to Arabia."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Its grasslands and fields benefit from vegetation retention and reduced poisoning and disturbance. For an uncertain identification, several views from a safe distance are more useful than chasing a bird for a closer photograph."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "BirdLife South Africa — Pallid Harrier, Regional Red Data Book 2025",
+              "url": "https://www.birdlife.org.za/red-data-book/red-list/pallid-harrier/"
+            },
+            {
+              "label": "The Peregrine Fund — Pallid Harrier: Nest, Eggs and Young",
+              "url": "https://peregrinefund.org/explore-raptors-species/hawks/pallid-harrier"
+            }
+          ],
+          "photo_credit": "Species illustration: Sunny Zhang 张迎新 — CC0 1.0."
+        },
+        "fr": {
+          "title": "Busard pâle",
+          "subtitle": "Circus macrourus",
+          "meta_description": "Busard pâle : identification, cycle de vie et présence saisonnière dans les pays arabes présentés, avec références scientifiques et régionales.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "Le Busard pâle est un Accipitridae élancé. Les mâles sont gris pâle avec une zone noire étroite aux extrémités alaires ; femelles et jeunes bruns ressemblent davantage aux autres busards. Tête, ailes et queue doivent être examinées ensemble pour identifier ces plumages."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il chasse à faible hauteur au-dessus des plaines et des herbages, capturant rongeurs, petits oiseaux, reptiles et insectes. La part des différentes proies varie entre lieux de reproduction et d’hivernage."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Il niche au sol parmi les herbes dans son aire eurasiatique de reproduction. Le Peregrine Fund indique 3–6 œufs, couvés par la femelle pendant environ 29–30 jours, le mâle apportant la nourriture. Les petits volent vers 6–7 semaines et restent encore plusieurs semaines avec leurs parents avant l’autonomie. La présence hivernale ne signifie pas une nidification locale."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Le guide libanais de 2026 indique un passage régulier mais peu commun et un hivernage rare. Les listes du Qatar et d’Oman 2026 indiquent au contraire un migrateur et hivernant commun. Les possibilités d’observation en novembre diffèrent donc entre Levant et Golfe ; la rareté libanaise ne se généralise pas à l’Arabie."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "La conservation du couvert végétal et la réduction des empoisonnements et du dérangement profitent à ses herbages. Pour une identification incertaine, plusieurs vues à distance sont préférables à une poursuite visant une photographie plus proche."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "BirdLife South Africa — Pallid Harrier, Regional Red Data Book 2025",
+              "url": "https://www.birdlife.org.za/red-data-book/red-list/pallid-harrier/"
+            },
+            {
+              "label": "The Peregrine Fund — Pallid Harrier: Nest, Eggs and Young",
+              "url": "https://peregrinefund.org/explore-raptors-species/hawks/pallid-harrier"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Sunny Zhang 张迎新 — CC0 1.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "العقاب-المنقط-الكبير",
+        "en": "greater-spotted-eagle",
+        "fr": "aigle-criard"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "greater-spotted-eagle"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "العقاب المنقط الكبير",
+          "subtitle": "Clanga clanga",
+          "meta_description": "العقاب المنقط الكبير: التعرف ودورة الحياة والحضور الموسمي في البلدان العربية المذكورة، بمراجع علمية وإقليمية.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "العقاب المنقط الكبير من فصيلة Accipitridae، ويعرف في المراجع الأقدم باسم Aquila clanga. يبدو غالبًا داكنًا عريض الجناحين، وتحمل الطيور اليافعة بقعًا فاتحة واضحة على غطائيات الجناح. يتطلب تمييزه من العقاب المنقط الأصغر فحص عدة علامات، ولا تكفي البقع وحدها."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يرتبط بالأراضي الرطبة والمروج القريبة من الغابات، ويصطاد الثدييات الصغيرة والطيور وفرائس أخرى بحسب الموئل. يربط تنقله بين مناطق التكاثر الشمالية ومناطق الشتاء الجنوبية، فتكتسب الأراضي الرطبة العربية أهمية في رحلته."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تورد خطة الحماية المعتمدة من هيئة البيئة الإستونية في 2024 دفعة غالبًا من بيضتين وحضانة 42–44 يومًا. تكتسب الفراخ القدرة على الطيران عادة بعمر 60–65 يومًا، وتستمر الرعاية بعد مغادرة العش قبل الاستقلال. هذه مدد نمو، ولا تنقل تواريخ الأعشاش الإستونية إلى بلاد الشتاء العربية."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "يصفه دليل لبنان لعام 2026 عابرًا غير منتظم وقليل العدد، بينما تصنفه قائمة قطر شتويًا قليل العدد. وفي عُمان تورد القائمة الرسمية لعام 2026 صفة العابر والزائر الشتوي الوفير. تعكس هذه الفروق أهمية الخليج وعُمان شتاءً، ولا تثبت تكاثرًا محليًا."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "تُراقب العقبان دون إزعاج مواقع الراحة أو نشر إحداثيات حساسة. تقليل الصعق الكهربائي والتسمم وحماية الأراضي الرطبة عناصر مهمة لصون هذا الجارح."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "Estonian Environmental Board — Greater Spotted Eagle conservation action plan, approved 4 April 2024, section 1.1.3",
+              "url": "https://keskkonnaamet.ee/sites/default/files/documents/2024-04/Suur-konnakotka%20tegevuskava.pdf"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Jan Ebr & Ivana Ebrová — CC BY 4.0."
+        },
+        "en": {
+          "title": "Greater Spotted Eagle",
+          "subtitle": "Clanga clanga",
+          "meta_description": "Greater Spotted Eagle: identification, life cycle and seasonal occurrence in the Arab countries covered, with scientific and regional references.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Greater Spotted Eagle belongs to Accipitridae and appears in older sources as Aquila clanga. Usually dark and broad-winged, juveniles show conspicuous pale spots on the wing coverts. Separation from Lesser Spotted Eagle requires several features, rather than spotting alone."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It uses wetlands and meadows near woodland, hunting small mammals, birds and other prey according to habitat. Its movements connect northern breeding areas with southern wintering grounds, making Arab wetlands part of that journey."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "Estonia’s Environmental Board conservation plan, approved in 2024, reports usually two eggs and incubation lasting 42–44 days. Young normally become capable of flight at 60–65 days, with parental care continuing after departure before independence. These developmental intervals do not transfer Estonian nesting dates to Arab wintering countries."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2026 guide describes irregular, scarce passage, while Qatar’s list gives scarce winter presence. Oman’s official 2026 list describes abundant passage and winter visits. These differences highlight the Gulf and Oman in winter without demonstrating local breeding."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Observe eagles without disturbing resting sites or publishing sensitive coordinates. Reducing electrocution and poisoning and protecting wetlands are important conservation measures."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "Estonian Environmental Board — Greater Spotted Eagle conservation action plan, approved 4 April 2024, section 1.1.3",
+              "url": "https://keskkonnaamet.ee/sites/default/files/documents/2024-04/Suur-konnakotka%20tegevuskava.pdf"
+            }
+          ],
+          "photo_credit": "Species illustration: Jan Ebr & Ivana Ebrová — CC BY 4.0."
+        },
+        "fr": {
+          "title": "Aigle criard",
+          "subtitle": "Clanga clanga",
+          "meta_description": "Aigle criard : identification, cycle de vie et présence saisonnière dans les pays arabes présentés, avec références scientifiques et régionales.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Aigle criard appartient aux Accipitridae et figure dans les anciennes références sous Aquila clanga. Généralement sombre et large d’ailes, le jeune porte des taches pâles visibles sur les couvertures alaires. Le distinguer de l’Aigle pomarin exige plusieurs caractères, au-delà des seules taches."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il fréquente zones humides et prairies proches des bois, où il chasse petits mammifères, oiseaux et autres proies selon le milieu. Ses déplacements relient reproduction septentrionale et hivernage méridional, donnant une place aux zones humides arabes dans ce parcours."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le plan de conservation approuvé en 2024 par l’Office estonien de l’environnement indique généralement deux œufs et une incubation de 42–44 jours. Les jeunes volent normalement vers 60–65 jours et restent ensuite dépendants des soins parentaux avant l’autonomie. Ces durées ne transposent pas les dates de nidification estoniennes aux pays arabes d’hivernage."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Le guide libanais de 2026 décrit un passage irrégulier et peu nombreux, tandis que la liste du Qatar indique un hivernant peu nombreux. La liste officielle d’Oman 2026 mentionne un passage et un hivernage abondants. Ces différences soulignent l’importance du Golfe et d’Oman en hiver sans démontrer une reproduction locale."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Les aigles s’observent sans perturber leurs reposoirs ni diffuser de coordonnées sensibles. Réduire électrocution et empoisonnement et préserver les zones humides contribue à leur conservation."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "Estonian Environmental Board — Greater Spotted Eagle conservation action plan, approved 4 April 2024, section 1.1.3",
+              "url": "https://keskkonnaamet.ee/sites/default/files/documents/2024-04/Suur-konnakotka%20tegevuskava.pdf"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Jan Ebr & Ivana Ebrová — CC BY 4.0."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "ملك-العقبان-الشرقي",
+        "en": "eastern-imperial-eagle",
+        "fr": "aigle-imperial"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "eastern-imperial-eagle"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "ملك العقبان الشرقي",
+          "subtitle": "Aquila heliaca",
+          "meta_description": "ملك العقبان الشرقي: التعرف ودورة الحياة والحضور الموسمي في البلدان العربية المذكورة، بمراجع علمية وإقليمية.",
+          "sections": [
+            {
+              "heading": "الهوية والتعرف",
+              "paragraphs": [
+                "ملك العقبان الشرقي جارح كبير من فصيلة Accipitridae. يكون البالغ داكن الجسم مع لون ذهبي فاتح على القفا وبقع بيضاء على الكتفين، بينما اليافع أفتح وأكثر تخطيطًا. وهو نوع مستقل عن ملك العقبان الإسباني Aquila adalberti في AviList 2026."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "يفضل المشاهد التي تتجاور فيها الأشجار والمراعي والحقول المفتوحة، حيث يصطاد الثدييات الصغيرة والطيور ويستفيد من الجيف. تحتاج العقبان إلى أشجار ملائمة للراحة والتعشيش وإلى مناطق تغذية واسعة."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يصف مشروع LIFE التابع للجمعية البلغارية لحماية الطيور عشًا من الأغصان على شجرة، ودفعة غالبًا من بيضتين. تستغرق الحضانة نحو 43 يومًا وتتولاها الأنثى أساسًا مع مساهمة الذكر في الإمداد بالغذاء والتناوب. تستمر تغذية الصغار وتعلمها الصيد بعد مغادرة العش؛ ولا تعني رحلة الطيران الأولى الاستقلال."
+              ]
+            },
+            {
+              "heading": "الحضور العربي والموسمية",
+              "paragraphs": [
+                "يذكر دليل لبنان لعام 2026 عبورًا نادرًا في أواخر فبراير–منتصف أبريل ومنتصف سبتمبر–أكتوبر، ولا يصفه مشتّيًا منتظمًا. وفي قطر تدرجه القائمة عابرًا نادرًا، بينما تصفه قائمة عُمان الرسمية لعام 2026 بأنه عابر وزائر شتوي شائع إلى وفير. لذلك يرتبط سياق نوفمبر خصوصًا بحضوره الشتوي في عُمان."
+              ]
+            },
+            {
+              "heading": "المراقبة والحماية",
+              "paragraphs": [
+                "من أبرز ما يفيد حمايته تقليل أخطار خطوط الكهرباء والسموم والإزعاج. تُحفظ مسافة المراقبة ولا تنشر تفاصيل مواقع الأعشاش أو المبيت."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "Bulgarian Society for the Protection of Birds / LIFE — Imperial Eagle: Biology",
+              "url": "https://landforlife.bspb.org/en/Species/Imperial-Eagle.html"
+            }
+          ],
+          "photo_credit": "صورة توضيحية للنوع: Andrew Bazdyrev — CC BY 4.0."
+        },
+        "en": {
+          "title": "Eastern Imperial Eagle",
+          "subtitle": "Aquila heliaca",
+          "meta_description": "Eastern Imperial Eagle: identification, life cycle and seasonal occurrence in the Arab countries covered, with scientific and regional references.",
+          "sections": [
+            {
+              "heading": "Identity and identification",
+              "paragraphs": [
+                "The Eastern Imperial Eagle is a large Accipitridae raptor. Adults have a dark body, pale golden nape and white shoulder patches; juveniles are paler and more streaked. AviList 2026 treats it separately from the Spanish Imperial Eagle Aquila adalberti."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "It favours landscapes combining trees with pasture and open fields, taking small mammals and birds and also using carrion. Eagles need suitable resting and nesting trees as well as extensive feeding habitat."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "The Bulgarian Society for the Protection of Birds LIFE project describes a tree nest built of sticks and usually two eggs. Incubation takes about 43 days, mainly by the female, with male food delivery and relief. Young continue to receive food and learn to hunt after leaving the nest; first flight is not independence."
+              ]
+            },
+            {
+              "heading": "Arab occurrence and seasonality",
+              "paragraphs": [
+                "Lebanon’s 2026 guide records rare passage in late February–mid-April and mid-September–October, without describing regular wintering. Qatar’s list gives rare passage. Oman’s official 2026 list instead describes common to abundant passage and winter visits, making Oman’s winter presence particularly relevant in November."
+              ]
+            },
+            {
+              "heading": "Observation and conservation",
+              "paragraphs": [
+                "Reducing power-line hazards, poisoning and disturbance supports its conservation. Maintain observation distance and do not disclose nest or roost locations."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "Bulgarian Society for the Protection of Birds / LIFE — Imperial Eagle: Biology",
+              "url": "https://landforlife.bspb.org/en/Species/Imperial-Eagle.html"
+            }
+          ],
+          "photo_credit": "Species illustration: Andrew Bazdyrev — CC BY 4.0."
+        },
+        "fr": {
+          "title": "Aigle impérial",
+          "subtitle": "Aquila heliaca",
+          "meta_description": "Aigle impérial : identification, cycle de vie et présence saisonnière dans les pays arabes présentés, avec références scientifiques et régionales.",
+          "sections": [
+            {
+              "heading": "Identité et identification",
+              "paragraphs": [
+                "L’Aigle impérial est un grand Accipitridae. L’adulte a le corps sombre, la nuque dorée claire et des taches blanches aux épaules ; le jeune est plus pâle et davantage strié. AviList 2026 le distingue de l’Aigle ibérique Aquila adalberti."
+              ]
+            },
+            {
+              "heading": "Milieux et alimentation",
+              "paragraphs": [
+                "Il préfère les paysages où les arbres côtoient pâturages et champs ouverts. Il capture petits mammifères et oiseaux et consomme aussi des charognes. Les aigles ont besoin d’arbres adaptés au repos et à la nidification ainsi que de vastes zones d’alimentation."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le projet LIFE de la Société bulgare de protection des oiseaux décrit un nid de branches dans un arbre et généralement deux œufs. L’incubation dure environ 43 jours, principalement assurée par la femelle, le mâle apportant la nourriture et prenant parfois le relais. Après le départ du nid, les jeunes restent nourris et apprennent à chasser ; premier vol ne signifie pas autonomie."
+              ]
+            },
+            {
+              "heading": "Présence arabe et saisons",
+              "paragraphs": [
+                "Le guide libanais de 2026 indique un passage rare de fin février à mi-avril et de mi-septembre à octobre, sans hivernage régulier décrit. La liste du Qatar indique un passage rare. La liste officielle d’Oman 2026 décrit au contraire passage et hivernage communs à abondants : ce contexte omanais est particulièrement pertinent en novembre."
+              ]
+            },
+            {
+              "heading": "Observation et conservation",
+              "paragraphs": [
+                "Réduire les dangers des lignes électriques, les empoisonnements et le dérangement contribue à sa protection. On garde ses distances et l’on ne révèle pas les sites de nidification ou de dortoir."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AviList Core Team — Global Avian Checklist v2026, 20 October 2026",
+              "url": "https://www.avilist.org/checklist/v2026/"
+            },
+            {
+              "label": "UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026",
+              "url": "https://www.undp.org/lebanon/publications/birds-lebanon-photographic-guide-409-species"
+            },
+            {
+              "label": "Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026",
+              "url": "https://qatarbirds.org/QBList"
+            },
+            {
+              "label": "Oman Bird Records Committee — Oman Bird List v8.0, 1 January 2026",
+              "url": "https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx"
+            },
+            {
+              "label": "Bulgarian Society for the Protection of Birds / LIFE — Imperial Eagle: Biology",
+              "url": "https://landforlife.bspb.org/en/Species/Imperial-Eagle.html"
+            }
+          ],
+          "photo_credit": "Illustration de l’espèce : Andrew Bazdyrev — CC BY 4.0."
+        }
+      }
+    }
+  ]
+}
