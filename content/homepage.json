@@ -8,14 +8,14 @@
     "الصيد-السياحي-في-مصر-والعراق-والأردن"
   ],
   "latest": [
+    "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
     "عندما-تهين-الطريدة-أنت-تهين-نفسك",
     "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
     "الصيد-السياحي-في-دول-المغرب-العربي",
     "الصيد-السياحي-في-بلدان-الخليج-العربية",
     "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
     "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
-    "تمبتد-غودولفين-إيفرست-2026",
-    "بطولة-العالم-بندقية-300-متر-القاهرة-2026"
+    "تمبتد-غودولفين-إيفرست-2026"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -344,7 +344,8 @@
     "جشنة-الماء",
     "الشنقب-الصغير",
     "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان",
-    "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي"
+    "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي",
+    "فرصة-للتعافي-أنواع-قاربت-الانقراض"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -378,14 +379,14 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "كرنفال-دبي-ميدان-2026-2027",
       "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
       "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
       "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
       "طيور-في-الحقائب-تهريب-الطيور-2026",
       "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
       "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
-      "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
-      "ختام-الملواح-2026-60-فائزا"
+      "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -408,14 +409,14 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "dubai-racing-carnival-2026-2027",
       "bin-harmash-dark-saffron-breeders-cup-2026",
       "arabian-saluki-center-25-years",
       "arabian-saluki-championship-november-2026-april-2027",
       "birds-in-bags-illegal-bird-trade-2026",
       "riyadh-racing-season-2026-2027-begins",
       "hunting-masculinity-dead-birds",
-      "akkar-sparrowhawk-backpack-raptor-poaching",
-      "melwah-finale-2026-60-winners"
+      "akkar-sparrowhawk-backpack-raptor-poaching"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -526,28 +527,28 @@
       "الصيد-السياحي-في-مصر-والعراق-والأردن"
     ],
     "latest": [
+      "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
       "عندما-تهين-الطريدة-أنت-تهين-نفسك",
       "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
       "الصيد-السياحي-في-دول-المغرب-العربي",
       "الصيد-السياحي-في-بلدان-الخليج-العربية",
       "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
       "تعاون-مصري-إماراتي-الحبارى-محمية-العميد",
-      "تمبتد-غودولفين-إيفرست-2026",
-      "بطولة-العالم-بندقية-300-متر-القاهرة-2026"
+      "تمبتد-غودولفين-إيفرست-2026"
     ]
   },
   "ia_door_sections": [
     {
       "door": "hunting",
       "slugs": [
+        "كرنفال-دبي-ميدان-2026-2027",
         "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
         "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
         "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
         "طيور-في-الحقائب-تهريب-الطيور-2026",
         "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
         "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
-        "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح",
-        "ختام-الملواح-2026-60-فائزا"
+        "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح"
       ]
     },
     {
@@ -563,9 +564,9 @@
       "door": "gear",
       "slugs": [
         "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
+        "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
         "أسلحة-الصيد-في-معرض-الرياض-2026",
-        "القاهرة-تستعد-لكأس-العالم-للبندقية-والمسدس",
-        "في-الميزان-الميداني-beretta-a400-أم-benelli-sbe-3"
+        "القاهرة-تستعد-لكأس-العالم-للبندقية-والمسدس"
       ]
     },
     {
@@ -580,10 +581,10 @@
     {
       "door": "science",
       "slugs": [
+        "فرصة-للتعافي-أنواع-قاربت-الانقراض",
         "طيور-تتعطر-بالنمل",
         "حوام-العسل-هجرة-بولندا-3750-كيلومترا",
-        "المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق",
-        "الغواص-الشائع-بحيرات-موطن-النشأة-دراسة-2026"
+        "المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق"
       ]
     },
     {
@@ -819,7 +820,10 @@
     "الشنقب-الصغير": "birds",
     "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان": "wildlife",
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs": "hunting",
-    "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي": "photos"
+    "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي": "photos",
+    "كرنفال-دبي-ميدان-2026-2027": "equestrian",
+    "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026": "wildlife",
+    "فرصة-للتعافي-أنواع-قاربت-الانقراض": "science"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -838,6 +842,8 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
+    "كرنفال-دبي-ميدان-2026-2027",
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
     "رادار-صيد-العربي-تشرين-الأول-2026",
     "طيور-تتعطر-بالنمل",
@@ -845,9 +851,7 @@
     "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
     "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
     "عندما-تهين-الطريدة-أنت-تهين-نفسك",
-    "الصيد-السياحي-في-مصر-والعراق-والأردن",
-    "عمان-تنظم-زيارة-المحميات-والتخييم",
-    "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026"
+    "الصيد-السياحي-في-مصر-والعراق-والأردن"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -2256,11 +2260,54 @@
         "en": "Electronic devices, loudspeakers, lights, ammunition and hunting equipment laid out on the floor.",
         "fr": "Des appareils électroniques, des haut-parleurs, des lampes, des munitions et du matériel de chasse disposés au sol."
       }
+    },
+    "كرنفال-دبي-ميدان-2026-2027": {
+      "image": "media/publications/dubai-carnival-20261105/meydan-archive.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "سباق خيل في مضمار ميدان بدبي.",
+        "en": "Horse racing at Meydan Racecourse in Dubai.",
+        "fr": "Courses hippiques à l’hippodrome de Meydan, à Dubaï."
+      }
+    },
+    "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026": {
+      "image": "media/uploads/2026/10/common-teal-20261023-1600.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "شرشير أوراسي يمدّ جناحيه فوق الماء في محمية لو تيش بفرنسا.",
+        "en": "A Eurasian teal spreading its wings over the water at Le Teich bird reserve in France.",
+        "fr": "Une sarcelle d’hiver déploie ses ailes sur l’eau dans la réserve ornithologique du Teich, en France."
+      }
+    },
+    "فرصة-للتعافي-أنواع-قاربت-الانقراض": {
+      "image": "media/publications/small-populations-recovery-20261105/lord-howe-woodhen-granitethighs.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طائر لوردهاو وودهن بني اللون يقف على العشب، وتظهر حلقات تعريف حول ساقيه.",
+        "en": "A brown Lord Howe woodhen standing on grass, with identification bands around its legs.",
+        "fr": "Un râle de Lord Howe brun sur l’herbe, portant des bagues d’identification aux pattes."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
+      "titles": {
+        "ar": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات بين الطيور البرية في دول مجاورة",
+        "en": "France raises bird flu risk after cases increase in wild birds in neighbouring countries",
+        "fr": "La France relève le risque de grippe aviaire après une hausse des cas chez les oiseaux sauvages des pays voisins"
+      }
+    },
+    {
+      "slug": "كرنفال-دبي-ميدان-2026-2027",
+      "titles": {
+        "ar": "كرنفال سباقات دبي ينطلق في ميدان يوم ٦ نوفمبر بـ١٦ أمسية، والمنيف يشارك بخيلين في ليلة الافتتاح.",
+        "en": "The Dubai Racing Carnival opens at Meydan on 6 November with 16 race nights, and Al Monif fields two horses on opening night.",
+        "fr": "Le Carnaval des courses de Dubaï débute à Meydan le 6 novembre avec 16 soirées, et Al Monif présente deux chevaux lors de la soirée d’ouverture."
+      }
+    },
     {
       "slug": "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
       "titles": {
@@ -2323,22 +2370,6 @@
         "ar": "الصيد السياحي في مصر والعراق والأردن",
         "en": "Hunting Tourism in Egypt, Iraq and Jordan",
         "fr": "Le tourisme cynégétique en Égypte, en Irak et en Jordanie"
-      }
-    },
-    {
-      "slug": "عمان-تنظم-زيارة-المحميات-والتخييم",
-      "titles": {
-        "ar": "عُمان تصدر ضوابط لزيارة المحميات والتخييم فيها",
-        "en": "Oman issues rules for reserve visits and camping",
-        "fr": "Oman fixe les règles de visite et de camping dans ses réserves"
-      }
-    },
-    {
-      "slug": "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
-      "titles": {
-        "ar": "تتويج أبطال الجمهورية لرماية الأطباق المروحية في صيدنايا",
-        "en": "Syria’s Helice shooting champions crowned in Saydnaya",
-        "fr": "Les champions de Syrie de tir aux hélices couronnés à Saydnaya"
       }
     }
   ],
