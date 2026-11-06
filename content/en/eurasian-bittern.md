@@ -1,0 +1,11 @@
+---
+title: "Eurasian Bittern"
+slug: "eurasian-bittern"
+date: "2026-11-06"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261106/eurasian-bittern.jpg"
+subtitle: "Botaurus stellaris"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261106/eurasian-bittern.jpg" width="2048" height="1365" alt="Eurasian Bittern with dark-streaked camouflage among reed stems" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Eurasian Bittern</figcaption></figure><p class="excerpt">Botaurus stellaris</p><h2>Identity and identification</h2><p>The Eurasian Bittern is a large Ardeidae heron whose buff-brown plumage and dark markings camouflage it among reeds. It has a strong pointed bill and dark crown, and may stretch its neck upwards when alert.</p><h2>Habitat and food</h2><p>It hunts in shallow water and marsh vegetation, taking fish, amphibians and other aquatic prey. Slow movements and cryptic plumage may conceal it even at close range.</p><h2>Breeding and development</h2><p>BTO gives a typical clutch of 4–6 eggs, incubated by the female for about 25–26 days. Chicks need feeding and care and normally become capable of flight at 50–55 days. Moving among reeds does not mean development is complete.</p><h2>Arab occurrence and seasonality</h2><p>The 2026 Lebanon guide records scarce passage from mid-September to November and mid-March to late May, with individual birds overwintering in wetlands. Qatar’s list describes a rare winter visitor. November fits the transition into winter, with different abundance and regularity in the two countries.</p><h2>Observation and conservation</h2><p>The Eurasian Bittern is globally classified as Least Concern (LC) on the IUCN Red List. Keep a safe distance from concealed birds and resting places. Protecting reeds and water from drainage and pollution is more useful than forcing a camouflaged bird into view.</p><h2>References</h2><p>AviList Core Team — Global Avian Checklist v2026, 20 October 2026؛ UNDP / ABCL / Ministry of Environment — Birds of Lebanon: A Photographic Guide to 409 Species, 18 June 2026؛ Qatar Bird Observation Group — Qatar Bird List, consulted 6 November 2026؛ British Trust for Ornithology — BirdFacts: Bittern؛ RSPB — Bittern</p><p class="photo-credit">Species illustration: Thierry Arbault — CC0 1.0.</p>
