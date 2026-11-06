@@ -205,7 +205,8 @@
     "مرزة-الدجاج",
     "المرزة-الباهتة",
     "العقاب-المنقط-الكبير",
-    "ملك-العقبان-الشرقي"
+    "ملك-العقبان-الشرقي",
+    "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -365,7 +366,8 @@
     "مرزة-الدجاج",
     "المرزة-الباهتة",
     "العقاب-المنقط-الكبير",
-    "ملك-العقبان-الشرقي"
+    "ملك-العقبان-الشرقي",
+    "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -399,11 +401,11 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027",
       "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
       "كرنفال-دبي-ميدان-2026-2027",
       "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
       "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
-      "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
       "طيور-في-الحقائب-تهريب-الطيور-2026",
       "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
       "الصيد-الذكوري-الرجولة-بين-جثث-الطيور"
@@ -429,11 +431,11 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "arabian-saluki-championship-al-ain-al-dhafra-2026-2027",
       "libya-sirte-three-year-hunting-ban",
       "dubai-racing-carnival-2026-2027",
       "bin-harmash-dark-saffron-breeders-cup-2026",
       "arabian-saluki-center-25-years",
-      "arabian-saluki-championship-november-2026-april-2027",
       "birds-in-bags-illegal-bird-trade-2026",
       "riyadh-racing-season-2026-2027-begins",
       "hunting-masculinity-dead-birds"
@@ -561,11 +563,11 @@
     {
       "door": "hunting",
       "slugs": [
+        "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027",
         "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
         "كرنفال-دبي-ميدان-2026-2027",
         "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
         "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
-        "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
         "طيور-في-الحقائب-تهريب-الطيور-2026",
         "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
         "الصيد-الذكوري-الرجولة-بين-جثث-الطيور"
@@ -854,7 +856,8 @@
     "المرزة-الباهتة": "birds",
     "العقاب-المنقط-الكبير": "birds",
     "ملك-العقبان-الشرقي": "birds",
-    "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات": "hunting"
+    "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات": "hunting",
+    "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027": "hunting"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2416,6 +2419,15 @@
         "ar": "شعار الهيئة الليبية للتراث والحياة البرية على تصميم يحمل هوية وكالة الأنباء الليبية.",
         "en": "The Libyan Authority for Heritage and Wildlife logo on a graphic carrying Libyan News Agency branding.",
         "fr": "Le logo de l’Autorité libyenne du patrimoine et de la vie sauvage sur un visuel portant l’identité de l’Agence de presse libyenne."
+      }
+    },
+    "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027": {
+      "image": "media/publications/arabian-saluki-championship-20261106/saluki-racing.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "كلاب سلوقي تتسابق على مضمار رملي.",
+        "en": "Salukis race along a sandy track.",
+        "fr": "Des salukis courent sur une piste de sable."
       }
     }
   },
