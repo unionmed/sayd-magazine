@@ -1,0 +1,131 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "libya-sirte-hunting-ban-20261106",
+  "expected_base": "925eeb8d262ae53e2f7f4ab7ecf08ea8c3d7648d",
+  "approval_reference": "private:libya-news-publication-and-logo-selection-20261106; Nayef requested this Libya news in the Hunting homepage cards and news ticker, and confirmed the same attached logo graphic after disclosure of unresolved reuse rights. No social publication or lead/Updates placement.",
+  "bank_search_reference": "Library search on 6 November 2026 scoped to Sayd picture for use for Libya, Sirte and the authority returned archive guidance only, no matching image. Exact user-provided article/photo reference was retained; no substitute selected.",
+  "photos": [
+    {
+      "id": "authority-logo",
+      "sha256": "95319f07354d9446df7f0b7738fea0f4c3528b9c0d456fa954b8ed388c154329",
+      "alt": {
+        "ar": "شعار الهيئة الليبية للتراث والحياة البرية على تصميم يحمل هوية وكالة الأنباء الليبية.",
+        "en": "The Libyan Authority for Heritage and Wildlife logo on a graphic carrying Libyan News Agency branding.",
+        "fr": "Le logo de l’Autorité libyenne du patrimoine et de la vie sauvage sur un visuel portant l’identité de l’Agence de presse libyenne."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "path": "docs/media/publications/libya-sirte-hunting-ban-20261106/authority-logo-lana.jpg",
+      "source_sha256": "95319f07354d9446df7f0b7738fea0f4c3528b9c0d456fa954b8ed388c154329",
+      "source_reference": "The exact logo graphic accompanying the article/photo reference supplied by Nayef for this Libya story. Downloaded by the assistant from the selected LANA page, not uploaded by Nayef. Original bytes unchanged. The gold authority emblem visually matches lawhs.ly; the graphic includes LANA branding and is not a photograph of the location or enforcement.",
+      "source_url": "https://www.lananews.com/ar/?p=511943",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Nayef explicitly selected this exact article logo graphic for publication after disclosure that no reuse permission or licence statement had been verified. The source reference was supplied by the user; the assistant materialized its image. This is an informed editorial selection, not ownership, a verified licence, permission from the external rights holder, or unrestricted future reuse.",
+        "evidence_reference": "private:libya-logo-selection-after-rights-disclosure-20261106",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:libya-logo-selection-after-rights-disclosure-20261106"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
+        "en": "libya-sirte-three-year-hunting-ban",
+        "fr": "libye-syrte-interdiction-chasse-trois-ans"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "authority-logo"
+      ],
+      "translations": {
+        "ar": {
+          "title": "ليبيا: حظر صيد الحيوانات والطيور البرية في سرت لثلاث سنوات",
+          "subtitle": "القرار يشمل المدينة ومحيطها والمناطق الساحلية والبرية والمحميات",
+          "meta_description": "حظر صيد الحيوانات والطيور البرية في سرت ومحيطها لمدة ثلاث سنوات من صدور القرار 24 لسنة 2026، وفق صحيفة الأنباء الليبية.",
+          "ticker_title": "ليبيا: حظر صيد الحيوانات والطيور البرية في سرت ومحيطها لثلاث سنوات",
+          "sections": [
+            {
+              "paragraphs": [
+                "حظرت الهيئة الليبية للتراث والحياة البرية صيد الحيوانات والطيور البرية بجميع أنواعها في سرت ومحيطها لمدة ثلاث سنوات، بموجب القرار رقم 24 لسنة 2026، وفق ما نشرته صحيفة الأنباء الليبية في 5 تشرين الثاني 2026.",
+                "ويسري الحظر على المناطق الساحلية والبرية والمحميات ضمن هذا النطاق، وتُحتسب مدته من تاريخ صدور القرار.",
+                "وأُسندت إلى الجهات المختصة مهمة متابعة التطبيق واتخاذ الإجراءات القانونية بحق المخالفين، وفق التشريعات النافذة. ويهدف الإجراء إلى حماية الأنواع البرية وموائلها، والحد من الضغوط التي تتعرض لها، وصون التنوع البيولوجي."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "صحيفة الأنباء الليبية: خبر حظر الصيد في سرت، 5 تشرين الثاني 2026",
+              "url": "https://www.lananews.com/ar/?p=511943"
+            }
+          ],
+          "photo_credit": "شعار الهيئة الليبية للتراث والحياة البرية."
+        },
+        "en": {
+          "title": "Libya: three-year hunting ban for wild animals and birds in Sirte",
+          "subtitle": "The decision covers the city and surrounding areas, including coastal and inland areas and reserves",
+          "meta_description": "Decision No. 24 of 2026 bans hunting wild animals and birds in Sirte and surrounding areas for three years from its issue date, Al-Anbaa al-Libiya reports.",
+          "ticker_title": "Libya bans hunting wild animals and birds in Sirte and surrounding areas for three years",
+          "sections": [
+            {
+              "paragraphs": [
+                "The Libyan Authority for Heritage and Wildlife has banned the hunting of all wild animal and bird species in Sirte and surrounding areas for three years under Decision No. 24 of 2026, according to a report published by the Al-Anbaa al-Libiya newspaper on 5 November 2026.",
+                "The ban covers coastal and inland areas and reserves within that geographical scope. Its three-year term runs from the date the decision was issued.",
+                "The relevant authorities have been tasked with enforcing the measure and taking legal action against offenders under applicable legislation. The measure aims to protect wild species and their habitats, reduce the pressures they face and conserve biodiversity."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Al-Anbaa al-Libiya: Sirte hunting-ban report, 5 November 2026",
+              "url": "https://www.lananews.com/ar/?p=511943"
+            }
+          ],
+          "photo_credit": "Logo of the Libyan Authority for Heritage and Wildlife."
+        },
+        "fr": {
+          "title": "Libye : la chasse aux animaux et oiseaux sauvages interdite à Syrte pour trois ans",
+          "subtitle": "La décision concerne la ville et ses environs, y compris les zones côtières, les espaces terrestres et les réserves",
+          "meta_description": "La décision n° 24 de 2026 interdit la chasse aux animaux et oiseaux sauvages à Syrte et dans ses environs pendant trois ans à compter de sa date d’adoption.",
+          "ticker_title": "Libye : la chasse aux animaux et oiseaux sauvages interdite à Syrte et dans ses environs pour trois ans",
+          "sections": [
+            {
+              "paragraphs": [
+                "L’Autorité libyenne du patrimoine et de la vie sauvage a interdit la chasse à toutes les espèces d’animaux et d’oiseaux sauvages à Syrte et dans ses environs pour trois ans, en vertu de la décision n° 24 de 2026, selon une information publiée le 5 novembre 2026 par le journal Al-Anbaa al-Libiya.",
+                "L’interdiction couvre les zones côtières, les espaces terrestres et les réserves situés dans ce périmètre. La durée de trois ans est calculée à compter de la date à laquelle la décision a été prise.",
+                "Les autorités compétentes sont chargées de faire appliquer la mesure et d’engager les procédures légales contre les contrevenants, conformément à la législation en vigueur. L’objectif est de protéger les espèces sauvages et leurs habitats, de réduire les pressions qu’elles subissent et de préserver la biodiversité."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Al-Anbaa al-Libiya : interdiction de la chasse à Syrte, 5 novembre 2026",
+              "url": "https://www.lananews.com/ar/?p=511943"
+            }
+          ],
+          "photo_credit": "Logo de l’Autorité libyenne du patrimoine et de la vie sauvage."
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": true
+      }
+    }
+  ]
+}
