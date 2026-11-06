@@ -405,3 +405,29 @@ paragraph, date, metadata, archive, distribution, generic renderer, or other
 publication changes. The ordinary source-request, trusted compile, whole-tree
 parity, protected merge and live-verification process remains mandatory.
 It is not a generic license/link waiver or a policy for other articles.
+
+## Exact Qatar Updates and ticker correction — 6 November 2026
+
+The operation `move-qatar-to-updates-nov6` accepts only revision ID
+`qatar-updates-ticker-20261106`, the original `qatar-shooting-worlds-20261102`
+source hash, current BASE, aggregate target hash and an empty payload. It moves
+only the existing Qatar side card to Updates and refills the fourth side slot
+with the existing newest Updates card, France bird flu. Both groups retain
+original publication-date ordering and exactly four/eight cards, without
+introducing or removing an upper-card article. Unexpected placement, exclusions,
+refill identity, ticker policy or prior Qatar ticker titles fail closed. A fixed
+original source hash and six fixed post-November-6 article mirror hashes require
+the result update to be present first; outdated or altered mirrors are rejected.
+
+Only the existing Qatar ticker titles change, in AR/EN/FR, to Azmy Mehelba’s
+silver for Egypt, Abdulaziz Alsaad’s bronze for Kuwait and Olympic quota places
+for both countries. The ten-item maximum, entry order and homepage-only scope
+remain unchanged. The existing renderer generates exactly five existing targets:
+`content/homepage.json`, `content/ticker.json`, and the three homepage mirrors.
+Article HTML/Markdown, dates, original publication, images and all other files
+remain byte-identical. No arbitrary titles, slots, targets or payload are accepted.
+The source request must declare distribution scope `true`; normal trusted replay,
+review, protected merge and deployment gates still apply. Approval references
+are declarations, never publication authority. This code change carries no
+publication record or source request; the separately reviewed operation follows
+the November 6 article-only result update.
