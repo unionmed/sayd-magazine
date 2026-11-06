@@ -128,3 +128,5 @@ from test_scoped_qatar_results_nov4 import QatarNov4Tests
 from test_scoped_bird_reference_revision import BirdReferenceRevisionTests
 
 if __name__=='__main__':unittest.main()
+
+from test_scoped_qatar_results_nov5 import QatarNov5Tests
