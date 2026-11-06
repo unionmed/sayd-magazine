@@ -195,7 +195,17 @@
     "الخرشنة-القزوينية",
     "الخرشنة-نورسية-المنقار",
     "جشنة-الماء",
-    "الشنقب-الصغير"
+    "الشنقب-الصغير",
+    "هازجة-سيتي",
+    "الهازجة-ذات-الشارب",
+    "درسة-القصب",
+    "صعو-أصفر-العرف",
+    "المرعة-المنقطة",
+    "الواق-الأوراسي",
+    "مرزة-الدجاج",
+    "المرزة-الباهتة",
+    "العقاب-المنقط-الكبير",
+    "ملك-العقبان-الشرقي"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -345,7 +355,17 @@
     "الشنقب-الصغير",
     "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان",
     "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي",
-    "فرصة-للتعافي-أنواع-قاربت-الانقراض"
+    "فرصة-للتعافي-أنواع-قاربت-الانقراض",
+    "هازجة-سيتي",
+    "الهازجة-ذات-الشارب",
+    "درسة-القصب",
+    "صعو-أصفر-العرف",
+    "المرعة-المنقطة",
+    "الواق-الأوراسي",
+    "مرزة-الدجاج",
+    "المرزة-الباهتة",
+    "العقاب-المنقط-الكبير",
+    "ملك-العقبان-الشرقي"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -823,7 +843,17 @@
     "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي": "photos",
     "كرنفال-دبي-ميدان-2026-2027": "equestrian",
     "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026": "wildlife",
-    "فرصة-للتعافي-أنواع-قاربت-الانقراض": "science"
+    "فرصة-للتعافي-أنواع-قاربت-الانقراض": "science",
+    "هازجة-سيتي": "birds",
+    "الهازجة-ذات-الشارب": "birds",
+    "درسة-القصب": "birds",
+    "صعو-أصفر-العرف": "birds",
+    "المرعة-المنقطة": "birds",
+    "الواق-الأوراسي": "birds",
+    "مرزة-الدجاج": "birds",
+    "المرزة-الباهتة": "birds",
+    "العقاب-المنقط-الكبير": "birds",
+    "ملك-العقبان-الشرقي": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2286,6 +2316,96 @@
         "ar": "طائر لوردهاو وودهن بني اللون يقف على العشب، وتظهر حلقات تعريف حول ساقيه.",
         "en": "A brown Lord Howe woodhen standing on grass, with identification bands around its legs.",
         "fr": "Un râle de Lord Howe brun sur l’herbe, portant des bagues d’identification aux pattes."
+      }
+    },
+    "هازجة-سيتي": {
+      "image": "media/publications/daily-birds-20261106/cettis-warbler.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "هازجة سيتي بنية الظهر عند حافة نباتات كثيفة",
+        "en": "Cetti’s Warbler with brown upperparts in dense vegetation",
+        "fr": "Bouscarle de Cetti au dessus brun dans une végétation dense"
+      }
+    },
+    "الهازجة-ذات-الشارب": {
+      "image": "media/publications/daily-birds-20261106/moustached-warbler.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "هازجة ذات الشارب بحاجب فاتح عريض تمسك ساق قصب",
+        "en": "Moustached Warbler with a broad pale eyebrow clinging to a reed",
+        "fr": "Lusciniole à moustaches au large sourcil clair agrippée à un roseau"
+      }
+    },
+    "درسة-القصب": {
+      "image": "media/publications/daily-birds-20261106/common-reed-bunting.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "درسة قصب برأس أسود وطوق أبيض على غصن",
+        "en": "Common Reed Bunting with black head and white collar on a branch",
+        "fr": "Bruant des roseaux à tête noire et collier blanc sur une branche"
+      }
+    },
+    "صعو-أصفر-العرف": {
+      "image": "media/publications/daily-birds-20261106/goldcrest.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "صعو أصفر العرف صغير زيتوني الريش على غصن",
+        "en": "Small olive-coloured Goldcrest with yellow crown on a branch",
+        "fr": "Petit Roitelet huppé au plumage olive et à la raie sommitale jaune sur une branche"
+      }
+    },
+    "المرعة-المنقطة": {
+      "image": "media/publications/daily-birds-20261106/spotted-crake.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "مرعة منقطة بمنقار أصفر قصير وريش منقط بين القصب",
+        "en": "Spotted Crake with a short yellow bill and spotted plumage among reeds",
+        "fr": "Marouette ponctuée au bec jaune court et au plumage ponctué parmi les roseaux"
+      }
+    },
+    "الواق-الأوراسي": {
+      "image": "media/publications/daily-birds-20261106/eurasian-bittern.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "واق أوراسي مموه بتخطيط داكن بين سيقان القصب",
+        "en": "Eurasian Bittern with dark-streaked camouflage among reed stems",
+        "fr": "Butor étoilé au plumage camouflé strié de sombre parmi les roseaux"
+      }
+    },
+    "مرزة-الدجاج": {
+      "image": "media/publications/daily-birds-20261106/hen-harrier.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "مرزة دجاج في الطيران تظهر أطراف جناحيها السوداء الواسعة",
+        "en": "Hen Harrier in flight showing extensive black wingtips",
+        "fr": "Busard Saint-Martin en vol montrant ses larges extrémités alaires noires"
+      }
+    },
+    "المرزة-الباهتة": {
+      "image": "media/publications/daily-birds-20261106/pallid-harrier.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "مرزة باهتة رمادية في الطيران فوق أرض مفتوحة",
+        "en": "Pale grey Pallid Harrier in flight over open ground",
+        "fr": "Busard pâle gris clair en vol au-dessus d’un espace ouvert"
+      }
+    },
+    "العقاب-المنقط-الكبير": {
+      "image": "media/publications/daily-birds-20261106/greater-spotted-eagle.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "عقاب منقط كبير بريش داكن وبقع فاتحة على الجناح المطوي",
+        "en": "Greater Spotted Eagle with dark plumage and pale spots on the folded wing",
+        "fr": "Aigle criard au plumage sombre et aux taches pâles sur l’aile repliée"
+      }
+    },
+    "ملك-العقبان-الشرقي": {
+      "image": "media/publications/daily-birds-20261106/eastern-imperial-eagle.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ملك عقبان شرقي داكن تظهر بقعة كتفه البيضاء على أرض عشبية",
+        "en": "Dark Eastern Imperial Eagle showing a white shoulder patch on grassland",
+        "fr": "Aigle impérial sombre montrant une tache blanche à l’épaule dans l’herbe"
       }
     }
   },
