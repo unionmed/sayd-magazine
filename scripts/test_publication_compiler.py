@@ -1030,6 +1030,186 @@ class RealSiteTests(unittest.TestCase):
             compiler.validate_report(stage, plan, self.base, source, self.base, True)
 
 
+class SalukiSupersessionTests(unittest.TestCase):
+    """Exact same-event card retirement, never removal of the old publication."""
+    @classmethod
+    def setUpClass(cls):
+        # Retain the pre-publication data, but always exercise current scripts.
+        # This local, unreferenced fixture also runs after the real release lands.
+        pinned = 'bff8daa3f51ac89c016894c7439065fbfe9a7156'
+        head = compiler.git(ROOT, 'rev-parse', 'HEAD').decode().strip()
+        previous, current = compiler.tree(ROOT, pinned), compiler.tree(ROOT, head)
+        paths = {p for p in previous.keys() | current.keys() if p.startswith('scripts/')}
+        files = {p: compiler.read_blob(ROOT, current[p]) if p in current else None
+                 for p in paths if previous.get(p) != current.get(p)}
+        modes = {p: current[p][0] for p in files if p in current}
+        cls.base = source_commit(ROOT, pinned, files, modes) if files else pinned
+
+    def setUp(self):
+        import scoped_saluki_supersession as scoped
+        self.scoped = scoped
+        temp = tempfile.TemporaryDirectory(prefix='sayd-saluki-scope-')
+        self.addCleanup(temp.cleanup)
+        self.stage = Path(temp.name)
+        self.archives = [f'docs/{prefix}{listing}/index.html'
+                         for prefix in ('', 'en/', 'fr/')
+                         for listing in ('category/صيد', 'stories' if prefix else 'articles')]
+        paths = list(scoped.OLD_FILES) + ['content/en/pairs.json'] + self.archives
+        self.originals = {path: compiler.git(ROOT, 'show', self.base + ':' + path) for path in paths}
+        for relative, data in self.originals.items():
+            path = self.stage / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(data)
+        self.home = json.loads(compiler.git(ROOT, 'show', self.base + ':content/homepage.json'))
+
+    def fixture(self):
+        value = record(self.base, self.scoped.RELEASE, placement='door')
+        article = value['articles'][0]
+        article.update(slugs=dict(self.scoped.SLUGS), published='2026-11-06',
+                       primary_door='hunting', archives=['hunting'])
+        return value
+
+    def reject(self, values, home=None, allow=True):
+        home = copy.deepcopy(self.home if home is None else home)
+        previous = copy.deepcopy(home)
+        with self.assertRaises(ValueError):
+            self.scoped.apply(self.stage, values, home, allow)
+        self.assertEqual(home, previous, 'Rejection must not partially change distribution')
+
+    def test_only_appends_predecessor_desk_exclusion(self):
+        expected = copy.deepcopy(self.home)
+        expected['omit_from_home_desks'].append(self.scoped.OLD_AR)
+        value = self.fixture()
+        schema.validate(value)
+        self.assertTrue(self.scoped.apply(self.stage, [value], self.home, True))
+        self.assertEqual(self.home, expected)
+        self.assertTrue(self.scoped.apply(self.stage, [value], self.home, True))
+        self.assertEqual(self.home, expected, 'No duplicate exclusion on replay')
+        for relative, data in self.originals.items():
+            self.assertEqual((self.stage / relative).read_bytes(), data)
+
+    def test_other_release_is_noop_without_reading_site(self):
+        value = self.fixture(); value['id'] = 'another-release'
+        previous = copy.deepcopy(self.home)
+        self.assertFalse(self.scoped.apply(self.stage / 'absent', [value], self.home, True))
+        self.assertFalse(self.scoped.apply(self.stage / 'absent', [], self.home, False))
+        self.assertEqual(self.home, previous)
+
+    def test_rejects_changed_publication_identity_or_batch(self):
+        value = self.fixture()
+        for language in schema.LANGS:
+            altered = copy.deepcopy(value)
+            altered['articles'][0]['slugs'][language] += '-other'
+            self.reject([altered])
+        for key, changed in (('published', '2026-11-05'), ('primary_door', 'equestrian'),
+                             ('archives', ['hunting', 'science']), ('kind', 'gallery'),
+                             ('format', 'interview')):
+            altered = copy.deepcopy(value); altered['articles'][0][key] = changed
+            self.reject([altered])
+        for articles in ([], value['articles'] * 2):
+            altered = copy.deepcopy(value); altered['articles'] = articles
+            self.reject([altered])
+        self.reject([value, record()])
+
+    def test_rejects_other_distribution_or_untrusted_scope(self):
+        value = self.fixture()
+        self.reject([value], allow=False)
+        for placement in ('archive-only', 'latest', 'side', 'lead'):
+            altered = copy.deepcopy(value)
+            altered['articles'][0]['distribution']['placement'] = placement
+            self.reject([altered])
+        altered = copy.deepcopy(value)
+        altered['articles'][0]['distribution']['ticker'] = True
+        self.reject([altered])
+        altered = copy.deepcopy(value)
+        altered['articles'][0]['distribution']['rotation'] = {
+            'permanent_door': 'hunting', 'no_updates': True, 'no_ticker': True}
+        self.reject([altered])
+
+    def test_rejects_changed_or_missing_predecessor_source_and_pages(self):
+        for relative in self.scoped.OLD_FILES:
+            with self.subTest(path=relative):
+                path = self.stage / relative
+                path.write_bytes(self.originals[relative] + b'\n')
+                self.reject([self.fixture()])
+                path.unlink()
+                self.reject([self.fixture()])
+                path.write_bytes(self.originals[relative])
+
+    def test_rejects_missing_archive_membership(self):
+        from urllib.parse import unquote
+        for relative in self.archives:
+            with self.subTest(path=relative):
+                path = self.stage / relative
+                old = path.read_text()
+                slug = self.scoped.OLD_EN if '/en/' in relative or '/fr/' in relative else self.scoped.OLD_AR
+                cards = [card for card in re.findall(r'<article\b[^>]*>.*?</article>', old, re.S)
+                         if '/posts/' + slug + '/' in unquote(card)]
+                self.assertEqual(len(cards), 1)
+                path.write_text(old.replace(cards[0], '', 1))
+                self.reject([self.fixture()])
+                path.write_bytes(self.originals[relative])
+
+    def test_rejects_upper_slot_ticker_mapping_and_category_drift(self):
+        for key in ('featured', 'latest', 'ticker_slugs'):
+            home = copy.deepcopy(self.home); home[key].append(self.scoped.OLD_AR)
+            self.reject([self.fixture()], home)
+        home = copy.deepcopy(self.home)
+        home['ticker_entries'].append({'slug': self.scoped.OLD_AR})
+        self.reject([self.fixture()], home)
+        for key in ('important', 'latest'):
+            home = copy.deepcopy(self.home); home['ia_slots'][key].append(self.scoped.OLD_AR)
+            self.reject([self.fixture()], home)
+        home = copy.deepcopy(self.home); home['ia_slots']['main'] = self.scoped.OLD_AR
+        self.reject([self.fixture()], home)
+        home = copy.deepcopy(self.home); home['primary_door'][self.scoped.OLD_AR] = 'science'
+        self.reject([self.fixture()], home)
+        path = self.stage / 'content/en/pairs.json'
+        pairs = json.loads(path.read_text()); pairs['pairs'][self.scoped.OLD_AR] = 'changed-target'
+        path.write_text(json.dumps(pairs))
+        self.reject([self.fixture()])
+
+    def test_real_compilation_preserves_articles_archives_and_upper_slots(self):
+        from lxml import html
+        from urllib.parse import unquote
+        value = self.fixture()
+        stage, plan, _ = RealSiteTests.build(self, value, True)
+        before = json.loads(compiler.git(ROOT, 'show', self.base + ':content/homepage.json'))
+        after = json.loads((stage / 'content/homepage.json').read_text())
+        expected = copy.deepcopy(before['omit_from_home_desks']) + [self.scoped.OLD_AR]
+        self.assertEqual(after['omit_from_home_desks'], expected)
+        for key in ('featured', 'latest', 'ia_slots', 'ticker_entries', 'ticker_slugs',
+                    'omit_from_home', 'omit_from_latest'):
+            self.assertEqual(after[key], before[key], key)
+        for previous, current in zip(before['ia_door_sections'], after['ia_door_sections']):
+            if previous['door'] != 'hunting':
+                self.assertEqual(previous, current)
+        hunting = next(d['slugs'] for d in after['ia_door_sections'] if d['door'] == 'hunting')
+        self.assertEqual(len(hunting), 8)
+        self.assertNotIn(self.scoped.OLD_AR, hunting)
+        self.assertIn(self.scoped.SLUGS['ar'], hunting)
+        self.assertEqual(after['desk_slugs']['صيد'], hunting)
+        for relative in self.scoped.OLD_FILES:
+            self.assertEqual((stage / relative).read_bytes(), compiler.git(ROOT, 'show', self.base + ':' + relative))
+        for prefix, slug in (('', self.scoped.OLD_AR), ('en/', self.scoped.OLD_EN), ('fr/', self.scoped.OLD_EN)):
+            source = 'content/' + (prefix.rstrip('/') if prefix else 'posts') + '/' + slug + '.md'
+            self.assertEqual((stage / source).read_bytes(), compiler.git(ROOT, 'show', self.base + ':' + source))
+            for listing in ('category/صيد', 'stories' if prefix else 'articles'):
+                relative = f'docs/{prefix}{listing}/index.html'
+                original = compiler.git(ROOT, 'show', self.base + ':' + relative).decode()
+                cards = re.findall(r'<article\b[^>]*>.*?</article>', original, re.S)
+                for card in cards:
+                    self.assertIn(card, (stage / relative).read_text())
+            page = html.fromstring((stage / f'docs/{prefix}index.html').read_bytes())
+            links = [unquote(href) for href in page.xpath('//a/@href')]
+            self.assertFalse(any('/posts/' + slug + '/' in '/' + href.lstrip('/') for href in links))
+            language = prefix.rstrip('/') or 'ar'
+            self.assertTrue(any(self.scoped.SLUGS[language] in href for href in links))
+        changed = {entry['path'] for entry in plan['changes']}
+        self.assertFalse(changed.intersection(self.scoped.OLD_FILES))
+        self.assertFalse(any(path.startswith('scripts/') for path in changed))
+
+
 if __name__ == '__main__':
     unittest.main()
 

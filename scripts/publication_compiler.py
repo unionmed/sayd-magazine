@@ -482,6 +482,8 @@ def render(stage, records, allow_distribution):
     pairs = pairs_record['pairs']
     home_path = stage / 'content/homepage.json'
     home = loads(home_path.read_text())
+    from scoped_saluki_supersession import apply as apply_saluki_supersession
+    apply_saluki_supersession(stage, records, home, allow_distribution)
     links_path = stage / 'docs/s/links.json'
     links = loads(links_path.read_text())
     sitemap_path = stage / 'docs/sitemap.xml'
