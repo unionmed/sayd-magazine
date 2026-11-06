@@ -46,6 +46,32 @@ class StonechatOmanTests(unittest.TestCase):
      self.assertEqual(a.xpath('//article//img/@src'),z.xpath('//article//img/@src'));self.assertEqual(a.xpath('//article//img/@alt'),z.xpath('//article//img/@alt'));self.assertEqual(a.xpath('//h1/text()'),z.xpath('//h1/text()'))
    p='docs/assets/search/index-'+l+'.json';old=json.loads((self.root/p).read_bytes());new=json.loads(self.out[p]);self.assertEqual(len(old['articles']),len(new['articles']));changed=[(a,z)for a,z in zip(old['articles'],new['articles'])if a!=z];self.assertEqual(len(changed),1)
    a,z=changed[0];self.assertEqual({k:v for k,v in a.items()if k!='body'},{k:v for k,v in z.items()if k!='body'})
+ def test_real_source_compile_registry_and_finalizer_validation(self):
+  # The narrow fixture omits the full site's unrelated browser/schema assets.
+  # Only that later full-site validation is stubbed; source binding, exact output
+  # replay, registry allowlist, report hashes and finalizer path checks are real.
+  import publication_finalize as finalizer
+  with tempfile.TemporaryDirectory(prefix='sayd-stonechat-integration-')as temp:
+   temp=Path(temp);root=temp/'input'
+   subprocess.run(['git','clone','--quiet',str(self.root),str(root)],check=True)
+   path=root/self.path;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(self.value,ensure_ascii=False)+'\n')
+   c.git(root,'add',self.path)
+   c.git(root,'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','-qm','Bounded Stonechat source')
+   source=c.git(root,'rev-parse','HEAD').decode().strip();c.git(root,'checkout','--quiet','--detach',self.base)
+   with patch.object(c,'validate_stage')as full_site:
+    plan=c.compile_publication(root,self.base,source,temp/'output',temp/'plan.json',False)
+   full_site.assert_called_once()
+   self.assertEqual({x['path']for x in plan['changes']},set(self.out)|{self.path})
+   self.assertEqual(plan['policy'],{'allow_distribution':False})
+   for path,raw in self.out.items():self.assertEqual((temp/'output'/path).read_bytes(),raw)
+   self.assertEqual(c.sha256((temp/'output'/('content/publications/'+b.PUBLICATION+'.json')).read_bytes()),b.SOURCE_SHA256)
+   self.assertEqual(c.git(root,'show','-s','--format=%P',source).decode().strip(),self.base)
+   self.assertTrue(c.validate_report(temp/'output',plan,self.base,source,self.base,False))
+   self.assertEqual(len(finalizer.validate_plan(temp/'output',plan,self.base,source,self.base,plan['plan_sha256'])),12)
+   # A missing derived target is rejected even with recomputed self-consistent hashes.
+   bad=copy.deepcopy(plan);bad['changes']=[x for x in bad['changes']if x['path']!='docs/sitemap.xml'];del bad['plan_sha256'];bad['plan_sha256']=c.sha256(c.canonical(bad))
+   with self.assertRaisesRegex(ValueError,'Exact update registry maintenance outputs required'):
+    c.validate_report(temp/'output',bad,self.base,source,self.base,False)
  def test_wrong_repeated_or_already_changed_paragraph_rejected(self):
   original=c.read_blob;entry=c.tree(self.root,self.base)['docs/posts/'+SLUGS['ar']+'/index.html'];before=b.EDITS[0]['changes']['ar'][0][0].encode()
   for replacement in (b'altered',before+before):

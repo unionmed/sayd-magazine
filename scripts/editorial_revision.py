@@ -16,7 +16,7 @@ from caption_revision import changed_paths
 
 PREFIX = 'content/editorial-revisions/'
 SCHEMA = 'sayd-editorial-revision-v1'
-TARGETS = {'update-stonechat-oman-status-20261106': 'daily-birds-20261030', 'text-only-nov5-bird-references': 'daily-birds-20261105', 'update-qatar-shooting-results-nov4': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results': 'qatar-shooting-worlds-20261102', 'complete-two-bird-lifecycles': 'daily-birds-20261030', 'add-nathalie-interview-photos': 'nathalie-denolf-interview-20261028',
+TARGETS = {'update-stonechat-oman-status-20261106': 'daily-birds-20261030', 'update-qatar-shooting-results-nov5': 'qatar-shooting-worlds-20261102', 'text-only-nov5-bird-references': 'daily-birds-20261105', 'update-qatar-shooting-results-nov4': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results': 'qatar-shooting-worlds-20261102', 'complete-two-bird-lifecycles': 'daily-birds-20261030', 'add-nathalie-interview-photos': 'nathalie-denolf-interview-20261028',
            'homepage-only-ticker': None, 'add-adonis-ticker': 'adonis-respect-quarry-20261026',
            'replace-wanaameen-photo': 'riyadh-results-20261024',
            'promote-episode-three-lead': 'hunting-tourism-egypt-iraq-jordan-20261026'}
@@ -44,6 +44,9 @@ def validate_revision(value, path, base):
     if value['operation'] == 'update-qatar-shooting-results':
         keys(value['payload'], ())
         require(value['id'] == 'qatar-shooting-update-20261103', 'Exact Qatar update revision ID required')
+    if value['operation'] == 'update-qatar-shooting-results-nov5':
+        keys(value['payload'], ())
+        require(value['id'] == 'qatar-shooting-update-20261105', 'Exact November 5 Qatar update revision ID required')
     if value['operation'] == 'update-qatar-shooting-results-nov4':
         keys(value['payload'], ())
         require(value['id'] == 'qatar-shooting-update-20261104', 'Exact November 4 Qatar update revision ID required')
@@ -157,6 +160,9 @@ def expected_changes(root, base, value, path):
         if value['operation'] == 'update-qatar-shooting-results':
             import scoped_qatar_results_revision
             result, effective, article = scoped_qatar_results_revision.expected_changes(root, base, record)
+        elif value['operation'] == 'update-qatar-shooting-results-nov5':
+            import scoped_qatar_results_nov5
+            result, effective, article = scoped_qatar_results_nov5.expected_changes(root, base, record)
         elif value['operation'] == 'update-qatar-shooting-results-nov4':
             import scoped_qatar_results_nov4
             result, effective, article = scoped_qatar_results_nov4.expected_changes(root, base, record)
