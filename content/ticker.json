@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
+      "titles": {
+        "ar": "ليبيا: حظر صيد الحيوانات والطيور البرية في سرت ومحيطها لثلاث سنوات",
+        "en": "Libya bans hunting wild animals and birds in Sirte and surrounding areas for three years",
+        "fr": "Libye : la chasse aux animaux et oiseaux sauvages interdite à Syrte et dans ses environs pour trois ans"
+      },
+      "title": "ليبيا: حظر صيد الحيوانات والطيور البرية في سرت ومحيطها لثلاث سنوات"
+    },
+    {
       "slug": "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
       "titles": {
         "ar": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات بين الطيور البرية في دول مجاورة",
@@ -81,15 +90,6 @@
         "fr": "Quand vous humiliez votre gibier… vous vous humiliez vous-même !"
       },
       "title": "عندما تهين الطريدة… أنت تهين نفسك!"
-    },
-    {
-      "slug": "الصيد-السياحي-في-مصر-والعراق-والأردن",
-      "titles": {
-        "ar": "الصيد السياحي في مصر والعراق والأردن",
-        "en": "Hunting Tourism in Egypt, Iraq and Jordan",
-        "fr": "Le tourisme cynégétique en Égypte, en Irak et en Jordanie"
-      },
-      "title": "الصيد السياحي في مصر والعراق والأردن"
     }
   ]
 }

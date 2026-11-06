@@ -399,14 +399,14 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
       "كرنفال-دبي-ميدان-2026-2027",
       "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
       "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
       "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
       "طيور-في-الحقائب-تهريب-الطيور-2026",
       "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
-      "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
-      "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح"
+      "الصيد-الذكوري-الرجولة-بين-جثث-الطيور"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -429,14 +429,14 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "libya-sirte-three-year-hunting-ban",
       "dubai-racing-carnival-2026-2027",
       "bin-harmash-dark-saffron-breeders-cup-2026",
       "arabian-saluki-center-25-years",
       "arabian-saluki-championship-november-2026-april-2027",
       "birds-in-bags-illegal-bird-trade-2026",
       "riyadh-racing-season-2026-2027-begins",
-      "hunting-masculinity-dead-birds",
-      "akkar-sparrowhawk-backpack-raptor-poaching"
+      "hunting-masculinity-dead-birds"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -561,14 +561,14 @@
     {
       "door": "hunting",
       "slugs": [
+        "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
         "كرنفال-دبي-ميدان-2026-2027",
         "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
         "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
         "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
         "طيور-في-الحقائب-تهريب-الطيور-2026",
         "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
-        "الصيد-الذكوري-الرجولة-بين-جثث-الطيور",
-        "باشق-داخل-حقيبة-ظهر-عكار-صيد-الجوارح"
+        "الصيد-الذكوري-الرجولة-بين-جثث-الطيور"
       ]
     },
     {
@@ -853,7 +853,8 @@
     "مرزة-الدجاج": "birds",
     "المرزة-الباهتة": "birds",
     "العقاب-المنقط-الكبير": "birds",
-    "ملك-العقبان-الشرقي": "birds"
+    "ملك-العقبان-الشرقي": "birds",
+    "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات": "hunting"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -872,6 +873,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
     "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
     "كرنفال-دبي-ميدان-2026-2027",
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
@@ -880,8 +882,7 @@
     "مونديال-الرماية-قطر-2026",
     "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
     "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
-    "عندما-تهين-الطريدة-أنت-تهين-نفسك",
-    "الصيد-السياحي-في-مصر-والعراق-والأردن"
+    "عندما-تهين-الطريدة-أنت-تهين-نفسك"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -2407,11 +2408,28 @@
         "en": "Brown Eastern Imperial Eagle in flight showing its streaked head and upperparts",
         "fr": "Aigle impérial brun en vol montrant sa tête et ses parties supérieures striées"
       }
+    },
+    "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات": {
+      "image": "media/publications/libya-sirte-hunting-ban-20261106/authority-logo-lana.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "شعار الهيئة الليبية للتراث والحياة البرية على تصميم يحمل هوية وكالة الأنباء الليبية.",
+        "en": "The Libyan Authority for Heritage and Wildlife logo on a graphic carrying Libyan News Agency branding.",
+        "fr": "Le logo de l’Autorité libyenne du patrimoine et de la vie sauvage sur un visuel portant l’identité de l’Agence de presse libyenne."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
+      "titles": {
+        "ar": "ليبيا: حظر صيد الحيوانات والطيور البرية في سرت ومحيطها لثلاث سنوات",
+        "en": "Libya bans hunting wild animals and birds in Sirte and surrounding areas for three years",
+        "fr": "Libye : la chasse aux animaux et oiseaux sauvages interdite à Syrte et dans ses environs pour trois ans"
+      }
+    },
     {
       "slug": "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
       "titles": {
@@ -2482,14 +2500,6 @@
         "ar": "عندما تهين الطريدة… أنت تهين نفسك!",
         "en": "When You Humiliate Your Quarry… You Humiliate Yourself!",
         "fr": "Quand vous humiliez votre gibier… vous vous humiliez vous-même !"
-      }
-    },
-    {
-      "slug": "الصيد-السياحي-في-مصر-والعراق-والأردن",
-      "titles": {
-        "ar": "الصيد السياحي في مصر والعراق والأردن",
-        "en": "Hunting Tourism in Egypt, Iraq and Jordan",
-        "fr": "Le tourisme cynégétique en Égypte, en Irak et en Jordanie"
       }
     }
   ],
