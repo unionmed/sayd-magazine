@@ -451,6 +451,6 @@ six selected article mirrors, three matching search bodies, three sitemap
 lastmod entries and the normal update registry change, plus the new immutable
 revision. The original30Octoberpublication dates, image bytes, alt, captions,
 credits, taxonomy, category cards, homepage and ticker remain unchanged. The
-update date is 7 November 2026. Repetition, arbitrary text/paths, stale originals
+update date is 8 November 2026. Repetition, arbitrary text/paths, stale originals
 and nonempty payloads fail closed. Normal native compilation, independent
 review, exact-head checks, protected merge and live verification remain required.
