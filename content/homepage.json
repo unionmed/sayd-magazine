@@ -367,7 +367,9 @@
     "المرزة-الباهتة",
     "العقاب-المنقط-الكبير",
     "ملك-العقبان-الشرقي",
-    "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027"
+    "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027",
+    "دوري-الإمارات-للصيد-بالصقور-تسجيل-الفرق-2026-2027",
+    "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -401,14 +403,14 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "دوري-الإمارات-للصيد-بالصقور-تسجيل-الفرق-2026-2027",
       "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027",
       "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
       "كرنفال-دبي-ميدان-2026-2027",
       "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
       "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
       "طيور-في-الحقائب-تهريب-الطيور-2026",
-      "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
-      "الصيد-الذكوري-الرجولة-بين-جثث-الطيور"
+      "الرياض-تستعيد-صهيلها-موسم-السباقات-2026"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -431,14 +433,14 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "uae-falconers-league-team-registration-2026-2027",
       "arabian-saluki-championship-al-ain-al-dhafra-2026-2027",
       "libya-sirte-three-year-hunting-ban",
       "dubai-racing-carnival-2026-2027",
       "bin-harmash-dark-saffron-breeders-cup-2026",
       "arabian-saluki-center-25-years",
       "birds-in-bags-illegal-bird-trade-2026",
-      "riyadh-racing-season-2026-2027-begins",
-      "hunting-masculinity-dead-birds"
+      "riyadh-racing-season-2026-2027-begins"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -563,14 +565,14 @@
     {
       "door": "hunting",
       "slugs": [
+        "دوري-الإمارات-للصيد-بالصقور-تسجيل-الفرق-2026-2027",
         "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027",
         "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
         "كرنفال-دبي-ميدان-2026-2027",
         "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
         "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
         "طيور-في-الحقائب-تهريب-الطيور-2026",
-        "الرياض-تستعيد-صهيلها-موسم-السباقات-2026",
-        "الصيد-الذكوري-الرجولة-بين-جثث-الطيور"
+        "الرياض-تستعيد-صهيلها-موسم-السباقات-2026"
       ]
     },
     {
@@ -594,10 +596,10 @@
     {
       "door": "wildlife",
       "slugs": [
+        "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026",
         "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان",
         "عمان-تنظم-زيارة-المحميات-والتخييم",
-        "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026",
-        "دبي-سفاري-الموسم-الثامن-2026"
+        "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026"
       ]
     },
     {
@@ -857,7 +859,9 @@
     "العقاب-المنقط-الكبير": "birds",
     "ملك-العقبان-الشرقي": "birds",
     "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات": "hunting",
-    "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027": "hunting"
+    "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027": "hunting",
+    "دوري-الإمارات-للصيد-بالصقور-تسجيل-الفرق-2026-2027": "hunting",
+    "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026": "wildlife"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2428,6 +2432,24 @@
         "ar": "كلاب سلوقي تتسابق على مضمار رملي.",
         "en": "Salukis race along a sandy track.",
         "fr": "Des salukis courent sur une piste de sable."
+      }
+    },
+    "دوري-الإمارات-للصيد-بالصقور-تسجيل-الفرق-2026-2027": {
+      "image": "media/publications/uae-falconry-sailing-20261106/falcon-delta-2022.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "رأس صقر بنيّ الريش متجه إلى اليمين، أمام خلفية ضبابية.",
+        "en": "A brown-feathered falcon facing right against a blurred background.",
+        "fr": "Un faucon au plumage brun tourné vers la droite, devant un arrière-plan flou."
+      }
+    },
+    "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026": {
+      "image": "media/publications/uae-falconry-sailing-20261106/optimist-hossegor-2018.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قوارب أوبتيمست صغيرة بأشرعة بيضاء على بحيرة تحيط بها الأشجار.",
+        "en": "Small Optimist dinghies with white sails on a lake bordered by trees.",
+        "fr": "De petits dériveurs Optimist aux voiles blanches sur un lac bordé d’arbres."
       }
     }
   },
