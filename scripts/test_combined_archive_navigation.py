@@ -171,6 +171,40 @@ def approved_wanaameen_photo_cards(compiled, page, lang):
     return {slug: expected[slug]}
 
 
+def approved_dubai_results_cards(compiled, page, lang):
+    """Accept only Dubai's exact row from the independently replayed revision.
+
+    The proof is produced by trusted BASE code and covers the entire candidate
+    tree. This adapter grants no free-form text or archive-editing allowance.
+    """
+    if compiled is None or compiled.kind != 'verified-editorial-revision':
+        return {}
+    import scoped_dubai_results_revision as dubai
+    revision_path = 'content/editorial-revisions/' + dubai.REVISION_ID + '.json'
+    changed = subprocess.check_output(['git', 'diff', '--name-only', compiled.base,
+                                      compiled.candidate, '--', revision_path], cwd=ROOT).decode().splitlines()
+    if changed != [revision_path]:
+        return {}
+    revision = json.loads(compiled.read(revision_path))
+    assert revision['id'] == dubai.REVISION_ID
+    assert revision['operation'] == dubai.OPERATION
+    assert revision['expected_base'] == compiled.base
+    assert revision['expected_source_sha256'] == dubai.SOURCE_SHA256
+    assert revision['payload'] == {}
+    records = [record for record in compiled.revisions if record['id'] == dubai.PUBLICATION]
+    assert len(records) == 1 and len(records[0]['articles']) == 1
+    article = records[0]['articles'][0]
+    assert article['slugs'] == dubai.SLUGS and article['published'] == dubai.PUBLISHED
+    relative = page.relative_to(ROOT).as_posix()
+    prefix = 'docs/' + ('' if lang == 'ar' else lang + '/')
+    assert relative in {prefix + 'category/صيد/index.html', prefix + 'category/فروسية/index.html'}
+    slug = dubai.SLUGS[lang]
+    rows = [row for row in archive.cards(compiled.read(relative)) if archive.slug_of(row) == slug]
+    assert len(rows) == 1, (lang, 'exact one trusted Dubai archive row')
+    assert archive.stamp(rows[0]).date().isoformat() == dubai.PUBLISHED
+    return {slug: rows[0]}
+
+
 def assert_archive_card_rows(rows, original, additions, gulf_additions, lang, compiled_cards=None, revised_cards=None):
     compiled_cards = compiled_cards or {}
     revised_cards = revised_cards or {}
@@ -189,7 +223,7 @@ def assert_archive_card_rows(rows, original, additions, gulf_additions, lang, co
     for slug,a in gulf_additions.items():
         assert by_slug[slug] == exact_gulf_archive_card(a, lang), (lang, 'exact approved Gulf archive card')
     for slug, expected in revised_cards.items():
-        assert by_slug[slug] == expected, (lang, 'exact trusted photo-revision card', slug)
+        assert by_slug[slug] == expected, (lang, 'exact trusted editorial-revision card', slug)
     for row in original:
         # Card text, original publication date and selected photo are exact.
         assert (by_slug[archive.slug_of(row)] == row
@@ -253,6 +287,87 @@ def test_exact_photo_revision_row_guards():
                 raise AssertionError('Missing or unrelated revision proof accepted')
 
 
+def test_dubai_revision_proof_scope_guards():
+    import scoped_dubai_results_revision as dubai
+    path = 'content/editorial-revisions/' + dubai.REVISION_ID + '.json'
+    revision = {'id': dubai.REVISION_ID, 'operation': dubai.OPERATION, 'expected_base': 'base',
+                'expected_source_sha256': dubai.SOURCE_SHA256, 'payload': {}}
+    record = {'id': dubai.PUBLICATION, 'articles': [{'slugs': dubai.SLUGS.copy(), 'published': dubai.PUBLISHED}]}
+    for lang in ('ar', 'en', 'fr'):
+        slug = dubai.SLUGS[lang]
+        old = ('<article class="post-row"><h2><a href="../posts/' + quote(slug) + '/index.html">Old title</a></h2>'
+               '<img src="same.jpg" alt="Same photo"><div class="meta">5 November 2026</div>'
+               '<p class="excerpt">Old excerpt</p></article>')
+        expected = old.replace('Old title', 'Reviewed title').replace('Old excerpt', 'Reviewed excerpt')
+        proof = SimpleNamespace(kind='verified-editorial-revision', base='base', candidate='head', revisions=(record,),
+                                read=lambda target: json.dumps(revision) if target == path else '<main>' + expected + '</main>')
+        for folder in ('صيد', 'فروسية'):
+            page = DOCS / (lang if lang != 'ar' else '') / 'category' / folder / 'index.html'
+            with patch.object(subprocess, 'check_output', return_value=(path + '\n').encode()):
+                assert approved_dubai_results_cards(proof, page, lang) == {slug: expected}
+                proof.kind = 'baseline-publication'
+                assert approved_dubai_results_cards(proof, page, lang) == {}
+                proof.kind = 'verified-editorial-revision'
+                for obj, key, wrong in [(revision, 'id', 'other-revision'),
+                                        (revision, 'operation', 'replace-wanaameen-photo'),
+                                        (revision, 'expected_base', 'other'),
+                                        (revision, 'expected_source_sha256', '0' * 64),
+                                        (revision, 'payload', {'title': 'arbitrary'}),
+                                        (record, 'id', 'other-publication'),
+                                        (record['articles'][0], 'published', '2026-11-07'),
+                                        (record['articles'][0], 'slugs', dict(dubai.SLUGS, en='other-story'))]:
+                    original = obj[key]; obj[key] = wrong
+                    try:
+                        approved_dubai_results_cards(proof, page, lang)
+                    except AssertionError:
+                        pass
+                    else:
+                        raise AssertionError((lang, folder, 'Out-of-scope Dubai proof accepted', key))
+                    finally:
+                        obj[key] = original
+                reader = proof.read
+                for bad in ('<main></main>', '<main>' + expected + expected + '</main>',
+                            '<main>' + expected.replace('5 November', '7 November') + '</main>'):
+                    proof.read = lambda target: json.dumps(revision) if target == path else bad
+                    try:
+                        approved_dubai_results_cards(proof, page, lang)
+                    except AssertionError:
+                        pass
+                    else:
+                        raise AssertionError('Missing, duplicate or redated Dubai row accepted')
+                proof.read = reader
+                try:
+                    approved_dubai_results_cards(proof, DOCS / 'index.html', lang)
+                except AssertionError:
+                    pass
+                else:
+                    raise AssertionError('Non-archive Dubai proof target accepted')
+            with patch.object(subprocess, 'check_output', return_value=b''):
+                assert approved_dubai_results_cards(proof, page, lang) == {}
+            assert approved_dubai_results_cards(None, page, lang) == {}
+        with patch.object(archive, 'marine_registry', return_value={}):
+            assert_archive_card_rows([expected], [old], {}, {}, lang, revised_cards={slug: expected})
+            for bad in (expected.replace('Reviewed title', 'Unreviewed title'),
+                        expected.replace('Reviewed excerpt', 'Unreviewed excerpt'),
+                        expected.replace('same.jpg', 'other.jpg'),
+                        expected.replace('Same photo', 'Other alt'),
+                        expected.replace('5 November', '7 November'),
+                        expected.replace('href="../', 'href="other/'), expected + '<span>extra</span>'):
+                try:
+                    assert_archive_card_rows([bad], [old], {}, {}, lang, revised_cards={slug: expected})
+                except AssertionError:
+                    pass
+                else:
+                    raise AssertionError('Non-exact Dubai archive row accepted')
+            for missing in ({}, {'other-story': expected}):
+                try:
+                    assert_archive_card_rows([expected], [old], {}, {}, lang, revised_cards=missing)
+                except AssertionError:
+                    pass
+                else:
+                    raise AssertionError('Missing or unrelated Dubai proof accepted')
+
+
 def test_archives_keep_every_published_card():
     from publication_guard import verified_publication
     compiled = verified_publication(os.environ.get('SAYD_BASE_COMMIT', 'HEAD'))
@@ -274,6 +389,7 @@ def test_archives_keep_every_published_card():
             new_cards = {slug: row for slug, row in expected.items() if slug not in old_slugs}
             compiled_equestrian = {a['slugs'][lang] for r in compiled.additions for a in r['articles'] if a['primary_door'] == 'equestrian'}
         revised_cards = approved_wanaameen_photo_cards(compiled, page, lang)
+        revised_cards.update(approved_dubai_results_cards(compiled, page, lang))
         by_slug = assert_archive_card_rows(rows, original, additions, gulf, lang, new_cards, revised_cards)
         tree = html.fromstring(text)
         assert tree.xpath('//main//div[contains(@class,"section-head")]/h1/text() | //main//div[contains(@class,"section-head")]/h2/text()')[0].strip() == ia.door_label('hunting', lang)
@@ -299,6 +415,7 @@ def test_archives_keep_every_published_card():
             expected_legacy = {archive.slug_of(row): row for row in archive.cards(compiled.read(legacy.relative_to(ROOT).as_posix()))}
             assert legacy_after == expected_legacy, 'Legacy archive differs from exact trusted compilation'
         revised_legacy = approved_wanaameen_photo_cards(compiled, legacy, lang)
+        revised_legacy.update(approved_dubai_results_cards(compiled, legacy, lang))
         assert all(legacy_after[k] == revised_legacy.get(k, v) for k, v in legacy_before.items()), 'Retained old category cards changed'
 
 
@@ -439,6 +556,7 @@ if __name__ == '__main__':
     test_approved_card_text_guards()
     test_exact_photo_revision_row_guards()
     test_photo_revision_proof_scope_guards()
+    test_dubai_revision_proof_scope_guards()
     test_archives_keep_every_published_card()
     test_gulf_archive_negative_guards()
     test_sync_idempotence_and_new_legacy_publication()
