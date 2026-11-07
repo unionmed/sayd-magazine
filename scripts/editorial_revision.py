@@ -16,7 +16,7 @@ from caption_revision import changed_paths
 
 PREFIX = 'content/editorial-revisions/'
 SCHEMA = 'sayd-editorial-revision-v1'
-TARGETS = {'update-dubai-carnival-results-nov7': 'dubai-carnival-20261105', 'move-qatar-to-updates-nov6': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results-nov6': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results-nov5': 'qatar-shooting-worlds-20261102', 'text-only-nov5-bird-references': 'daily-birds-20261105', 'update-qatar-shooting-results-nov4': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results': 'qatar-shooting-worlds-20261102', 'complete-two-bird-lifecycles': 'daily-birds-20261030', 'add-nathalie-interview-photos': 'nathalie-denolf-interview-20261028',
+TARGETS = {'update-stonechat-oman-status-20261106': 'daily-birds-20261030', 'update-dubai-carnival-results-nov7': 'dubai-carnival-20261105', 'move-qatar-to-updates-nov6': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results-nov6': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results-nov5': 'qatar-shooting-worlds-20261102', 'text-only-nov5-bird-references': 'daily-birds-20261105', 'update-qatar-shooting-results-nov4': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results': 'qatar-shooting-worlds-20261102', 'complete-two-bird-lifecycles': 'daily-birds-20261030', 'add-nathalie-interview-photos': 'nathalie-denolf-interview-20261028',
            'homepage-only-ticker': None, 'add-adonis-ticker': 'adonis-respect-quarry-20261026',
            'replace-wanaameen-photo': 'riyadh-results-20261024',
            'promote-episode-three-lead': 'hunting-tourism-egypt-iraq-jordan-20261026'}
@@ -62,6 +62,9 @@ def validate_revision(value, path, base):
     if value['operation'] == 'text-only-nov5-bird-references':
         keys(value['payload'], ())
         require(value['id'] == 'nov5-bird-text-references-20261105', 'Exact November 5 bird reference revision ID required')
+    if value['operation'] == 'update-stonechat-oman-status-20261106':
+        keys(value['payload'], ())
+        require(value['id'] == 'stonechat-oman-status-20261106', 'Exact Stonechat Oman revision ID required')
     if value['operation'] == 'complete-two-bird-lifecycles':
         keys(value['payload'], ())
         require(value['id'] == 'two-bird-lifecycles-20261102', 'Exact two-bird revision ID required')
@@ -184,6 +187,9 @@ def expected_changes(root, base, value, path):
         elif value['operation'] == 'text-only-nov5-bird-references':
             import scoped_bird_reference_revision
             result, effective, article = scoped_bird_reference_revision.expected_changes(root, base, record)
+        elif value['operation'] == 'update-stonechat-oman-status-20261106':
+            import scoped_stonechat_oman_revision
+            result, effective, article = scoped_stonechat_oman_revision.expected_changes(root, base, record)
         elif value['operation'] == 'complete-two-bird-lifecycles':
             import scoped_bird_lifecycle_revision
             result, effective, article = scoped_bird_lifecycle_revision.expected_changes(root, base, record)

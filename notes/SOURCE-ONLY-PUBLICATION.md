@@ -431,3 +431,26 @@ review, protected merge and deployment gates still apply. Approval references
 are declarations, never publication authority. This code change carries no
 publication record or source request; the separately reviewed operation follows
 the November 6 article-only result update.
+
+
+## Exact Stonechat Oman status update — 6 November 2026
+
+The standing encyclopedia-repair authority of 1 November is implemented here
+only for European Stonechat in `daily-birds-20261030`. Operation
+`update-stonechat-oman-status-20261106` accepts only revision ID
+`stonechat-oman-status-20261106` and an empty payload. Trusted BASE code fixes
+the three country-paragraph replacements and reference label: OBRC8.0, dated
+1 January2026, records `Saxicola rubicola` as `Uncommon pm & wv`, adding winter
+presence to the previously attributed 2020 passage status. The original workbook
+was read on6November2026; its full institutional URL is retained in the bounded
+module and review evidence. Other countries and all biological text stay exact.
+
+The original publication record remains immutable. Exact BASE, original source
+hash, current derived-target hash and original paragraphs are required. Only
+six selected article mirrors, three matching search bodies, three sitemap
+lastmod entries and the normal update registry change, plus the new immutable
+revision. The original30Octoberpublication dates, image bytes, alt, captions,
+credits, taxonomy, category cards, homepage and ticker remain unchanged. The
+update date is 8 November 2026. Repetition, arbitrary text/paths, stale originals
+and nonempty payloads fail closed. Normal native compilation, independent
+review, exact-head checks, protected merge and live verification remain required.
