@@ -1,0 +1,22 @@
+{
+  "schema": "sayd-caption-revision-v1",
+  "id": "fulk-caption-simplify-20261107",
+  "expected_base": "d4ebede7ef31795cb4b4c8c20abc820f1eb6cda4",
+  "publication_id": "fulk-acre-heritage-20261107",
+  "article_slug": "يوم-مات-ملك-القدس-أثناء-صيد-الأرانب",
+  "photo_id": "fulk-acre-illustration",
+  "captions": {
+    "ar": {
+      "old": "صورة تعبيرية مولدة بالذكاء الاصطناعي؛ ليست توثيقًا تاريخيًا للحادثة.",
+      "new": "صورة تعبيرية مولدة بالذكاء الاصطناعي."
+    },
+    "en": {
+      "old": "AI-generated illustrative image; not historical documentation of the accident.",
+      "new": "AI-generated illustrative image."
+    },
+    "fr": {
+      "old": "Image d’illustration générée par IA ; elle ne constitue pas un document historique de l’accident.",
+      "new": "Image d’illustration générée par IA."
+    }
+  }
+}
