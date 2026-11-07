@@ -71,7 +71,7 @@ def validate_source(root, base, source):
     import editorial_revision
     if editorial_revision.revision_paths(tree(root, base), tree(root, source)):
         _, value, _, _, _ = editorial_revision.source_input(root, base, source)
-        require(scope == (value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead', 'update-qatar-shooting-results', 'move-qatar-to-updates-nov6'}), 'Exact editorial review scope required')
+        require(scope == (value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead', 'update-qatar-shooting-results', 'move-qatar-to-updates-nov6', 'update-dubai-carnival-results-nov7'}), 'Exact editorial review scope required')
         return scope
     import radar_tv_publication
     if radar_tv_publication.revision_paths(tree(root, base), tree(root, source)):
