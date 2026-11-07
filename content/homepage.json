@@ -206,7 +206,17 @@
     "المرزة-الباهتة",
     "العقاب-المنقط-الكبير",
     "ملك-العقبان-الشرقي",
-    "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027"
+    "بطولة-السلوقي-العربي-نوفمبر-2026-أبريل-2027",
+    "الحذف-الصيفي",
+    "الخرشنة-السبلاء",
+    "الخرشنة-الشائعة",
+    "زقزاق-مطوق-صغير",
+    "زقزاق-إسكندري",
+    "زقزاق-مذهب-أوراسي",
+    "طيطوى-نهقية",
+    "الدريجة-الحمراء",
+    "جشنة-حنائية",
+    "جشنة-الشجر"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -369,7 +379,17 @@
     "ملك-العقبان-الشرقي",
     "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027",
     "دوري-الإمارات-للصيد-بالصقور-تسجيل-الفرق-2026-2027",
-    "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026"
+    "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026",
+    "الحذف-الصيفي",
+    "الخرشنة-السبلاء",
+    "الخرشنة-الشائعة",
+    "زقزاق-مطوق-صغير",
+    "زقزاق-إسكندري",
+    "زقزاق-مذهب-أوراسي",
+    "طيطوى-نهقية",
+    "الدريجة-الحمراء",
+    "جشنة-حنائية",
+    "جشنة-الشجر"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -861,7 +881,17 @@
     "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات": "hunting",
     "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027": "hunting",
     "دوري-الإمارات-للصيد-بالصقور-تسجيل-الفرق-2026-2027": "hunting",
-    "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026": "wildlife"
+    "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026": "wildlife",
+    "الحذف-الصيفي": "birds",
+    "الخرشنة-السبلاء": "birds",
+    "الخرشنة-الشائعة": "birds",
+    "زقزاق-مطوق-صغير": "birds",
+    "زقزاق-إسكندري": "birds",
+    "زقزاق-مذهب-أوراسي": "birds",
+    "طيطوى-نهقية": "birds",
+    "الدريجة-الحمراء": "birds",
+    "جشنة-حنائية": "birds",
+    "جشنة-الشجر": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2450,6 +2480,96 @@
         "ar": "قوارب أوبتيمست صغيرة بأشرعة بيضاء على بحيرة تحيط بها الأشجار.",
         "en": "Small Optimist dinghies with white sails on a lake bordered by trees.",
         "fr": "De petits dériveurs Optimist aux voiles blanches sur un lac bordé d’arbres."
+      }
+    },
+    "الحذف-الصيفي": {
+      "image": "media/publications/daily-birds-20261107/garganey.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر حذف صيفي يسبح وحاجبه الأبيض العريض واضح",
+        "en": "Male Garganey swimming with a broad white eyebrow",
+        "fr": "Sarcelle d’été mâle nageant, avec un large sourcil blanc"
+      }
+    },
+    "الخرشنة-السبلاء": {
+      "image": "media/publications/daily-birds-20261107/whiskered-tern.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "خرشنة سبلاء ذات تاج أسود وخد أبيض وبطن داكن على غصن",
+        "en": "Whiskered Tern with black cap, white cheek and dark belly perched on a branch",
+        "fr": "Guifette moustac à calotte noire, joue blanche et ventre sombre, posée sur une branche"
+      }
+    },
+    "الخرشنة-الشائعة": {
+      "image": "media/publications/daily-birds-20261107/common-tern.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "خرشنة شائعة على صخرة بمنقار أحمر ذي طرف أسود",
+        "en": "Common Tern on a rock with a red bill tipped in black",
+        "fr": "Sterne pierregarin sur un rocher, au bec rouge terminé de noir"
+      }
+    },
+    "زقزاق-مطوق-صغير": {
+      "image": "media/publications/daily-birds-20261107/little-ringed-plover.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "زقزاق مطوق صغير بحلقة عين صفراء وطوق صدري أسود",
+        "en": "Little Ringed Plover with a yellow eye-ring and black breast band",
+        "fr": "Petit Gravelot au cercle oculaire jaune et au collier noir"
+      }
+    },
+    "زقزاق-إسكندري": {
+      "image": "media/publications/daily-birds-20261107/kentish-plover.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "زقزاق إسكندري بمنقار وساقين داكنين وبقعتين جانبيتين على الصدر",
+        "en": "Kentish Plover with dark bill and legs and lateral breast patches",
+        "fr": "Gravelot à collier interrompu, au bec et aux pattes sombres, avec des taches latérales sur la poitrine"
+      }
+    },
+    "زقزاق-مذهب-أوراسي": {
+      "image": "media/publications/daily-birds-20261107/european-golden-plover.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "زقزاق ذهبي أوروبي بريش علوي منقط بالذهبي في أرض عشبية",
+        "en": "European Golden Plover with gold-spangled upperparts in grassland",
+        "fr": "Pluvier doré au dessus moucheté d’or dans une prairie"
+      }
+    },
+    "طيطوى-نهقية": {
+      "image": "media/publications/daily-birds-20261107/curlew-sandpiper.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "دريجة كروانية بمنقار مقوس إلى أسفل في ماء ضحل",
+        "en": "Curlew Sandpiper with a downcurved bill standing in shallow water",
+        "fr": "Bécasseau cocorli au bec recourbé vers le bas, dans une eau peu profonde"
+      }
+    },
+    "الدريجة-الحمراء": {
+      "image": "media/publications/daily-birds-20261107/red-knot.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "دريجة حمراء ممتلئة الجسم بريش صدري محمر على الطين",
+        "en": "Stocky Red Knot with rusty underparts standing on mud",
+        "fr": "Bécasseau maubèche trapu au dessous roux, debout sur la vase"
+      }
+    },
+    "جشنة-حنائية": {
+      "image": "media/publications/daily-birds-20261107/red-throated-pipit.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "جشنة حمراء الزور بوجه محمر وظهر مخطط وسط العشب",
+        "en": "Red-throated Pipit with a reddish face and streaked back in grass",
+        "fr": "Pipit à gorge rousse au visage roux et au dos rayé dans l’herbe"
+      }
+    },
+    "جشنة-الشجر": {
+      "image": "media/publications/daily-birds-20261107/tree-pipit.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "جشنة شجر بصدر مخطط على قمة ساق نباتية",
+        "en": "Tree Pipit with a streaked breast perched on a plant stem",
+        "fr": "Pipit des arbres à la poitrine rayée, perché au sommet d’une tige"
       }
     }
   },
