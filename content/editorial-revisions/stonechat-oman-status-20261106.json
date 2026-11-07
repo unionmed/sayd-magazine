@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "stonechat-oman-status-20261106",
+  "expected_base": "d0b7b20bedbbeff8b47282deddc630defbf203b2",
+  "operation": "update-stonechat-oman-status-20261106",
+  "approval_reference": "private:nayef-stonechat-20261107",
+  "expected_source_sha256": "2f828892245da3b18ed8de768f6e2b18f637da057ffd7e3ed4f3b5afff1f4486",
+  "expected_targets_sha256": "2eaec25eb89fdfcf99497911a120c865444a67e0a6eb0684758043d30cb8cd06",
+  "payload": {}
+}
