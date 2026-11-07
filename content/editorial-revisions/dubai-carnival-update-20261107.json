@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "dubai-carnival-update-20261107",
+  "expected_base": "426d7c6bd2905a885e143dcd983c36d1fbdd8f2d",
+  "operation": "update-dubai-carnival-results-nov7",
+  "approval_reference": "private:Sentinel_2c7a83228c8c8191ae001f7646d05d1e",
+  "expected_source_sha256": "e7accf03955525b2cd061e3b0140ce21da0a9b05a7a17802ef72f154d54b65ac",
+  "expected_targets_sha256": "f8efa9be161b2227e9cfc5f55db6699ec577010a40bb439e94439d576f0545b6",
+  "payload": {}
+}

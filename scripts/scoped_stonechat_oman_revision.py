@@ -12,7 +12,7 @@ from caption_revision import article_paths
 PUBLICATION = 'daily-birds-20261030'
 OPERATION = 'update-stonechat-oman-status-20261106'
 REVISION_ID = 'stonechat-oman-status-20261106'
-UPDATED = '2026-11-06'
+UPDATED = '2026-11-07'
 SOURCE_SHA256 = '2f828892245da3b18ed8de768f6e2b18f637da057ffd7e3ed4f3b5afff1f4486'
 # Original OBRC8.0 workbook, dated1Jan2026, read6Nov2026: Saxicola rubicola = Uncommon pm & wv.
 # https://www.oman-birding.com/sitefiles/78/1/1/781112/Oman_Bird_List_ver_8-0_-_1_Jan_2026-_541_species.xlsx

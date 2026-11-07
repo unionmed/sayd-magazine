@@ -121,7 +121,10 @@ def safe_output_path(value):
                      "content/editorial-revisions/homepage-only-ticker-20261028.json",
                      "content/editorial-revisions/qatar-shooting-update-20261103.json",
                      "content/editorial-revisions/qatar-shooting-update-20261104.json",
-                     "content/editorial-revisions/qatar-shooting-update-20261105.json"}
+                     "content/editorial-revisions/qatar-shooting-update-20261105.json",
+                     "content/editorial-revisions/qatar-shooting-update-20261106.json",
+                     "content/editorial-revisions/qatar-updates-ticker-20261106.json",
+                     "content/editorial-revisions/dubai-carnival-update-20261107.json"}
         or (path.parts[:2] in {("content", "posts"), ("content", "en"), ("content", "fr")}
             and len(path.parts) == 3 and path.suffix == ".md")
         or (value.startswith("audit/image-catalog/manifest/release-")

@@ -38,7 +38,7 @@ class StonechatOmanTests(unittest.TestCase):
   for l in ('ar','en','fr'):
    pairs=b.EDITS[0]['changes'][l]
    for p in article_paths({'slugs':SLUGS},l):
-    old=(self.root/p).read_bytes();new=self.out[p];self.assertIn(b'2026-10-30',new);self.assertIn(b'2026-11-06',new)if p.endswith('.html')else None
+    old=(self.root/p).read_bytes();new=self.out[p];self.assertIn(b'2026-10-30',new);self.assertIn(b.UPDATED.encode(),new)if p.endswith('.html')else None
     for before,after in pairs:self.assertNotIn(before.encode(),new);self.assertIn(after.encode(),new)
     if p.endswith('.html'):
      from lxml import html

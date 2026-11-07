@@ -127,8 +127,11 @@ from test_scoped_qatar_results_nov4 import QatarNov4Tests
 
 from test_scoped_bird_reference_revision import BirdReferenceRevisionTests
 
+from test_scoped_qatar_results_nov5 import QatarNov5Tests
+from test_scoped_qatar_results_nov6 import QatarNov6Tests
+
+from test_scoped_qatar_placement_revision import ScopedQatarPlacementTests
+
 from test_scoped_stonechat_oman_revision import StonechatOmanTests
 
 if __name__=='__main__':unittest.main()
-
-from test_scoped_qatar_results_nov5 import QatarNov5Tests

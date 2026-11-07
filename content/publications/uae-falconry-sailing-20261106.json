@@ -1,0 +1,284 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "uae-falconry-sailing-20261106",
+  "expected_base": "3b2ccaa21944faf9786750b9935574385ff52dbe",
+  "approval_reference": "private:uae-two-stories-publish-with-licensed-photos-20261106",
+  "bank_search_reference": "Library exact title and falcon/sailing/Arabic subject searches on 2026-11-06 returned no suitable matching event photograph. Partial Sayd picture for use inventory reviewed; external illustrated alternatives selected only after verified licences. No claim of exhaustive bank search.",
+  "photos": [
+    {
+      "id": "falcon-illustration",
+      "path": "docs/media/publications/uae-falconry-sailing-20261106/falcon-delta-2022.jpg",
+      "sha256": "edb96866d2fe20dca8bb62a8376d89838a05194217361ee3ef1c33b4285d6585",
+      "source_sha256": "94f6a4900b213f96cff74ca50b84929d8097db5aec9e2844a8b6678d3f83f404",
+      "source_reference": "The Falcon - The National Bird of the UAE.jpg; Delta.jpg; 2022-11-29. Part of Images from UAE in Lens Competition; precise capture location not specified. Official 1280px rendition; source original retained unchanged. Illustrative photograph, not from the November 2026 event.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Falcon_-_The_National_Bird_of_the_UAE.jpg",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC BY-SA 4.0, published by photographer Delta.jpg. Attribution, source and licence links and resizing/card-display crop disclosure retained in all three articles. Official 1280px thumbnail downloaded without local modification; the photograph and all display versions remain under CC BY-SA 4.0. No endorsement implied.",
+        "evidence_reference": "https://commons.wikimedia.org/w/index.php?title=File:The_Falcon_-_The_National_Bird_of_the_UAE.jpg&oldid=1194688614",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "alt": {
+        "ar": "رأس صقر بنيّ الريش متجه إلى اليمين، أمام خلفية ضبابية.",
+        "en": "A brown-feathered falcon facing right against a blurred background.",
+        "fr": "Un faucon au plumage brun tourné vers la droite, devant un arrière-plan flou."
+      },
+      "caption": {
+        "ar": "صورة توضيحية لصقر، التُقطت عام 2022.",
+        "en": "Illustrative photograph of a falcon, taken in 2022.",
+        "fr": "Photo d’illustration d’un faucon, prise en 2022."
+      }
+    },
+    {
+      "id": "optimist-illustration",
+      "path": "docs/media/publications/uae-falconry-sailing-20261106/optimist-hossegor-2018.jpg",
+      "sha256": "f3e95364926393c6f2e3b9617450c3784bb9fef05c9d22e2b5c782019e8cc37e",
+      "source_sha256": "1b2fd4fade93e9a9ba0e02a18d098602ee76c0b2e38e92ce1cb48221d45042dc",
+      "source_reference": "Small sailing ships Optimist type on the Hossegor lake (Landes).jpg; Tangopaso; 2018-05-29. Lake Hossegor, Landes, France. Official 1280px rendition; source original retained unchanged. Illustrative photograph, not from the November 2026 event.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Small_sailing_ships_Optimist_type_on_the_Hossegor_lake_(Landes).jpg",
+      "rights": {
+        "status": "licensed",
+        "statement": "Public-domain dedication PD-self by photographer Tangopaso, permitting use for any purpose. Attribution retained for transparency; the original is preserved and the official 1280px thumbnail was downloaded without local modification.",
+        "evidence_reference": "https://commons.wikimedia.org/w/index.php?title=File:Small_sailing_ships_Optimist_type_on_the_Hossegor_lake_(Landes).jpg&oldid=1022839497",
+        "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self"
+      },
+      "alt": {
+        "ar": "قوارب أوبتيمست صغيرة بأشرعة بيضاء على بحيرة تحيط بها الأشجار.",
+        "en": "Small Optimist dinghies with white sails on a lake bordered by trees.",
+        "fr": "De petits dériveurs Optimist aux voiles blanches sur un lac bordé d’arbres."
+      },
+      "caption": {
+        "ar": "صورة توضيحية لقوارب أوبتيمست في بحيرة هوسيغور بفرنسا، مايو 2018.",
+        "en": "Illustrative photograph of Optimist dinghies on Lake Hossegor, France, in May 2018.",
+        "fr": "Photo d’illustration de dériveurs Optimist sur le lac d’Hossegor, en France, en mai 2018."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "kind": "article",
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      },
+      "slugs": {
+        "ar": "دوري-الإمارات-للصيد-بالصقور-تسجيل-الفرق-2026-2027",
+        "en": "uae-falconers-league-team-registration-2026-2027",
+        "fr": "ligue-emiratie-fauconnerie-inscriptions-2026-2027"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "translations": {
+        "ar": {
+          "title": "دوري الإمارات للصيد بالصقور يفتح تسجيل الفرق حتى 12 نوفمبر",
+          "subtitle": "التسجيل متاح حتى 12 نوفمبر لموسم 2026/2027، وانطلاق الدوري مقرر في العين يوم 3 ديسمبر.",
+          "meta_description": "نادي أبوظبي للصقارين يحدد 12 نوفمبر آخر موعد لتشكيل فرق دوري الإمارات للصيد بالصقور 2026/2027، بأربع فئات ومنافسة لمسافة 400 متر.",
+          "sections": [
+            {
+              "paragraphs": [
+                "فتح نادي أبوظبي للصقارين باب تسجيل الفرق في دوري الإمارات للصيد بالصقور لموسم 2026/2027، بالتعاون مع مركز حمدان بن محمد لإحياء التراث، وحدّد 12 نوفمبر 2026 آخر موعد لتقديم طلبات تشكيل الفرق.",
+                "وتُقدَّم الطلبات عبر الاستمارة الإلكترونية على موقع النادي، وتشمل بيانات الفريق وإداريه وقوائم الملاك والصقارين. ووفق شروط الموسم، تقتصر المشاركة على مواطني دولة الإمارات، ويشترط ألا يقل عمر أعضاء الفريق عن 18 عامًا.",
+                "ويجمع الدوري أربع فئات من الصقور: جير تبع، وجير شاهين، وقرموشة جير، وجير بيور. وتُحتسب نقاط الفرق بحسب المراكز التي تحققها صقورها في الأشواط، فيما تبلغ مسافة المنافسة 400 متر.",
+                "وتدرج روزنامة النادي انطلاق الدوري في منطقة العين يوم 3 ديسمبر 2026. ويمكن للراغبين في المشاركة مراجعة شروط الموسم وتعبئة طلب تشكيل الفريق عبر الموقع الرسمي لنادي أبوظبي للصقارين."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "إعلان التسجيل الرسمي",
+              "url": "https://efcad.ae/ar/alerts"
+            },
+            {
+              "label": "شروط دوري الإمارات للصيد بالصقور 2026/2027",
+              "url": "https://efcad.ae/ar/competitions/uae-falconers-league-20262027"
+            },
+            {
+              "label": "روزنامة موسم 2026/2027",
+              "url": "https://efcad.ae/ar/agenda-season-2026-2027"
+            },
+            {
+              "label": "استمارة تشكيل الفرق",
+              "url": "https://efcad.ae/ar/uae-falconers-league-20262027"
+            }
+          ],
+          "photo_credit": "الصورة: Delta.jpg / Wikimedia Commons، 2022، بترخيص CC BY-SA 4.0. نسخة مصغّرة، مع اقتطاع للعرض في البطاقات؛ تبقى الصورة ونسخ عرضها تحت الرخصة نفسها."
+        },
+        "en": {
+          "title": "UAE Falconers League team registration open until 12 November",
+          "subtitle": "Registration remains open until 12 November for the 2026/2027 season, with the league due to start in Al Ain on 3 December.",
+          "meta_description": "Abu Dhabi Falconers Club sets 12 November as the team application deadline for the 2026/2027 UAE Falconers League, with four categories and 400-metre races.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Abu Dhabi Falconers Club has opened team registration for the 2026/2027 UAE Falconers League, in cooperation with the Hamdan Bin Mohammed Heritage Center. Applications to form teams must be submitted by 12 November 2026.",
+                "Applications are submitted through the online form on the club’s website and include details of the team and its manager, together with lists of owners and falconers. Under the season’s rules, participation is restricted to UAE citizens, and team members must be at least 18 years old.",
+                "The league features four falcon categories: Jeer Taba, Jeer Shaheen, Garmousha Jeer and Pure Jeer. Teams earn points according to their falcons’ placings in the heats, which cover a distance of 400 metres.",
+                "The club’s calendar lists the league’s opening in the Al Ain region on 3 December 2026. Prospective participants can consult the season’s rules and complete the team application on the official Abu Dhabi Falconers Club website."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Official registration notice",
+              "url": "https://efcad.ae/ar/alerts"
+            },
+            {
+              "label": "UAE Falconers League 2026/2027 rules",
+              "url": "https://efcad.ae/ar/competitions/uae-falconers-league-20262027"
+            },
+            {
+              "label": "2026/2027 season calendar",
+              "url": "https://efcad.ae/ar/agenda-season-2026-2027"
+            },
+            {
+              "label": "Team application form",
+              "url": "https://efcad.ae/ar/uae-falconers-league-20262027"
+            }
+          ],
+          "photo_credit": "Photo: Delta.jpg / Wikimedia Commons, 2022, CC BY-SA 4.0. Reduced-size version, cropped for card display; the photograph and its display versions remain under the same licence."
+        },
+        "fr": {
+          "title": "Ligue émiratie de fauconnerie : inscriptions des équipes jusqu’au 12 novembre",
+          "subtitle": "Les inscriptions restent ouvertes jusqu’au 12 novembre pour la saison 2026/2027, dont le début est prévu à Al Ain le 3 décembre.",
+          "meta_description": "Le Club des fauconniers d’Abou Dhabi fixe au 12 novembre la clôture des inscriptions à la ligue 2026/2027, avec quatre catégories sur 400 mètres.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Le Club des fauconniers d’Abou Dhabi a ouvert les inscriptions des équipes à la Ligue émiratie de fauconnerie pour la saison 2026/2027, organisée en coopération avec le Centre du patrimoine Hamdan Bin Mohammed. La date limite de dépôt des demandes de constitution d’équipe est fixée au 12 novembre 2026.",
+                "Les demandes se font au moyen du formulaire en ligne du club. Elles comprennent les renseignements sur l’équipe et son responsable, ainsi que les listes des propriétaires et des fauconniers. Selon le règlement de la saison, la participation est réservée aux citoyens des Émirats arabes unis âgés d’au moins 18 ans.",
+                "La ligue comprend quatre catégories de faucons : Jeer Taba, Jeer Shaheen, Garmousha Jeer et Pure Jeer. Les équipes marquent des points en fonction des places obtenues par leurs faucons dans les manches, disputées sur une distance de 400 mètres.",
+                "Le calendrier du club prévoit le début de la ligue dans la région d’Al Ain le 3 décembre 2026. Les participants intéressés peuvent consulter le règlement de la saison et remplir le formulaire de constitution d’équipe sur le site officiel du Club des fauconniers d’Abou Dhabi."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Annonce officielle des inscriptions",
+              "url": "https://efcad.ae/ar/alerts"
+            },
+            {
+              "label": "Règlement de la Ligue émiratie de fauconnerie 2026/2027",
+              "url": "https://efcad.ae/ar/competitions/uae-falconers-league-20262027"
+            },
+            {
+              "label": "Calendrier de la saison 2026/2027",
+              "url": "https://efcad.ae/ar/agenda-season-2026-2027"
+            },
+            {
+              "label": "Formulaire de constitution d’équipe",
+              "url": "https://efcad.ae/ar/uae-falconers-league-20262027"
+            }
+          ],
+          "photo_credit": "Photo : Delta.jpg / Wikimedia Commons, 2022, CC BY-SA 4.0. Version réduite, recadrée dans les cartes ; la photographie et ses versions d’affichage restent sous la même licence."
+        }
+      },
+      "published": "2026-11-06",
+      "photos": [
+        "falcon-illustration"
+      ]
+    },
+    {
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "kind": "article",
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      },
+      "slugs": {
+        "ar": "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026",
+        "en": "abu-dhabi-academy-sailing-third-round-8-november-2026",
+        "fr": "abou-dhabi-academie-voile-troisieme-manche-8-novembre-2026"
+      },
+      "primary_door": "wildlife",
+      "archives": [
+        "wildlife"
+      ],
+      "translations": {
+        "ar": {
+          "title": "أبوظبي تستعد للجولة الثالثة للإبحار الشراعي في 8 نوفمبر",
+          "subtitle": "أكثر من 40 بحارًا وبحارة متوقعون في منافسات الأوبتيمست والإلكا ضمن برنامج إعداد الناشئين والشباب.",
+          "meta_description": "أكاديمية نادي أبوظبي للرياضات البحرية تنظم الجولة الثالثة للإبحار الشراعي الداخلي الأحد 8 نوفمبر، بمشاركة متوقعة تتجاوز 40 بحارًا وبحارة.",
+          "sections": [
+            {
+              "paragraphs": [
+                "تقيم أكاديمية نادي أبوظبي للرياضات البحرية، الأحد 8 نوفمبر 2026، الجولة الثالثة من سباق الإبحار الشراعي الداخلي، بمشاركة متوقعة تتجاوز 40 بحارًا وبحارة من منتسبيها في أبوظبي والمرفأ، بحسب وكالة أنباء الإمارات «وام».",
+                "وتضم الجولة منافسات لفئتي الأوبتيمست والإلكا، ضمن برنامج يتيح للناشئين والشباب اختبار مهاراتهم في السباق، من التحكم بالقارب إلى قراءة اتجاه الرياح والتعامل مع تغير ظروف الإبحار.",
+                "وتستفيد الأجهزة الفنية من هذه الجولات لتقييم مستوى المشاركين ومتابعة تقدمهم، تمهيدًا لإعدادهم للمنافسات المحلية والدولية.",
+                "وأوضح مدير الأكاديمية خليفة السويدي أن السباقات الداخلية تدعم التدريب المتواصل وإعداد البحارة الجدد، إلى جانب تنمية الانضباط وروح التنافس. وأشار إلى سعي الأكاديمية إلى استقطاب مزيد من الناشئين والشباب وتوفير بيئة تساعد المواهب الوطنية على التطور.",
+                "وتُختتم الجولة بتكريم المتقدمين في ترتيب الفئات المختلفة."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "وكالة أنباء الإمارات «وام»، 6 نوفمبر 2026",
+              "url": "https://www.wam.ae/ar/article/c34auqz-أكاديمية-أبوظبي-للرياضات-البحرية-تنظم-الجولة"
+            }
+          ],
+          "photo_credit": "الصورة: Tangopaso / Wikimedia Commons، 2018، ملك عام. نسخة مصغّرة."
+        },
+        "en": {
+          "title": "Abu Dhabi prepares for third academy sailing round on 8 November",
+          "subtitle": "More than 40 sailors are expected in Optimist and ILCA racing as part of the academy’s youth training programme.",
+          "meta_description": "Abu Dhabi Marine Sports Club Academy will stage its third internal sailing round on Sunday, 8 November, with more than 40 sailors expected.",
+          "sections": [
+            {
+              "paragraphs": [
+                "The Abu Dhabi Marine Sports Club Academy will hold the third round of its internal sailing competition on Sunday, 8 November 2026. More than 40 male and female sailors from its Abu Dhabi and Al Mirfa programmes are expected to take part, according to Emirates News Agency (WAM).",
+                "The round includes Optimist and ILCA racing, giving young sailors an opportunity to test their skills, from boat handling and reading wind direction to adapting to changing sailing conditions.",
+                "Coaches use these internal rounds to assess participants’ progress and prepare them for domestic and international competition.",
+                "Academy director Khalifa Al Suwaidi said the races support continuous training and the development of new sailors, alongside discipline and a competitive spirit. He also highlighted the academy’s efforts to attract more young participants and provide an environment in which Emirati talent can develop.",
+                "The round will conclude with awards for the leading competitors in the different categories."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Emirates News Agency (WAM), 6 November 2026",
+              "url": "https://www.wam.ae/ar/article/c34auqz-أكاديمية-أبوظبي-للرياضات-البحرية-تنظم-الجولة"
+            }
+          ],
+          "photo_credit": "Photo: Tangopaso / Wikimedia Commons, 2018, public domain. Reduced-size version."
+        },
+        "fr": {
+          "title": "Abou Dhabi prépare la troisième manche de voile de son académie le 8 novembre",
+          "subtitle": "Plus de 40 navigatrices et navigateurs sont attendus en Optimist et en ILCA dans le cadre du programme de formation des jeunes.",
+          "meta_description": "L’académie du Club des sports nautiques d’Abou Dhabi organise sa troisième manche interne de voile dimanche 8 novembre, avec plus de 40 participants attendus.",
+          "sections": [
+            {
+              "paragraphs": [
+                "L’académie du Club des sports nautiques d’Abou Dhabi organisera, le dimanche 8 novembre 2026, la troisième manche de sa compétition interne de voile. Plus de 40 navigatrices et navigateurs de ses programmes d’Abou Dhabi et d’Al Mirfa sont attendus, selon l’agence de presse des Émirats (WAM).",
+                "La manche comprendra des épreuves d’Optimist et d’ILCA. Elle permettra aux jeunes de mettre à l’épreuve leurs compétences, de la maîtrise du bateau à la lecture du vent et à l’adaptation aux conditions de navigation.",
+                "Les entraîneurs s’appuient sur ces rencontres internes pour évaluer les participants, suivre leur progression et les préparer aux compétitions nationales et internationales.",
+                "Le directeur de l’académie, Khalifa Al Suwaidi, a expliqué que ces courses favorisent un entraînement régulier et la formation de nouveaux navigateurs, tout en développant la discipline et l’esprit de compétition. Il a également souligné la volonté de l’académie d’attirer davantage de jeunes et d’offrir un cadre propice à l’épanouissement des talents émiratis.",
+                "La manche se terminera par une remise de prix aux concurrents les mieux classés dans les différentes catégories."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Agence de presse des Émirats (WAM), 6 novembre 2026",
+              "url": "https://www.wam.ae/ar/article/c34auqz-أكاديمية-أبوظبي-للرياضات-البحرية-تنظم-الجولة"
+            }
+          ],
+          "photo_credit": "Photo : Tangopaso / Wikimedia Commons, 2018, domaine public. Version réduite."
+        }
+      },
+      "published": "2026-11-06",
+      "photos": [
+        "optimist-illustration"
+      ]
+    }
+  ]
+}

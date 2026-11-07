@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
+      "titles": {
+        "ar": "ليبيا: حظر صيد الحيوانات والطيور البرية في سرت ومحيطها لثلاث سنوات",
+        "en": "Libya bans hunting wild animals and birds in Sirte and surrounding areas for three years",
+        "fr": "Libye : la chasse aux animaux et oiseaux sauvages interdite à Syrte et dans ses environs pour trois ans"
+      },
+      "title": "ليبيا: حظر صيد الحيوانات والطيور البرية في سرت ومحيطها لثلاث سنوات"
+    },
+    {
       "slug": "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
       "titles": {
         "ar": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات بين الطيور البرية في دول مجاورة",
@@ -13,11 +22,11 @@
     {
       "slug": "كرنفال-دبي-ميدان-2026-2027",
       "titles": {
-        "ar": "كرنفال سباقات دبي ينطلق في ميدان يوم ٦ نوفمبر بـ١٦ أمسية، والمنيف يشارك بخيلين في ليلة الافتتاح.",
-        "en": "The Dubai Racing Carnival opens at Meydan on 6 November with 16 race nights, and Al Monif fields two horses on opening night.",
-        "fr": "Le Carnaval des courses de Dubaï débute à Meydan le 6 novembre avec 16 soirées, et Al Monif présente deux chevaux lors de la soirée d’ouverture."
+        "ar": "كرنفال دبي: براذرلي لاف يفوز بكأس الافتتاح وكولور أب يعود للانتصارات في ميدان.",
+        "en": "Dubai Racing Carnival: Brotherly Love wins the opening-night cup as Colour Up returns to winning ways at Meydan.",
+        "fr": "Carnaval de Dubaï : Brotherly Love remporte la coupe d’ouverture et Colour Up renoue avec la victoire à Meydan."
       },
-      "title": "كرنفال سباقات دبي ينطلق في ميدان يوم ٦ نوفمبر بـ١٦ أمسية، والمنيف يشارك بخيلين في ليلة الافتتاح."
+      "title": "كرنفال دبي: براذرلي لاف يفوز بكأس الافتتاح وكولور أب يعود للانتصارات في ميدان."
     },
     {
       "slug": "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
@@ -49,11 +58,11 @@
     {
       "slug": "مونديال-الرماية-قطر-2026",
       "titles": {
-        "ar": "مونديال الرماية في قطر: أولى البطاقات الأولمبية للصين وكرواتيا وسلوفاكيا",
-        "en": "Qatar shooting worlds: first Olympic quotas for China, Croatia and Slovakia",
-        "fr": "Mondiaux de tir au Qatar : premiers quotas olympiques pour la Chine, la Croatie et la Slovaquie"
+        "ar": "مونديال الرماية في قطر: فضية عزمي محيلبة لمصر وبرونزية عبدالعزيز السعد للكويت وحصة أولمبية لكل بلد",
+        "en": "Qatar shooting worlds: silver for Egypt’s Azmy Mehelba, bronze for Kuwait’s Abdulaziz Alsaad and Olympic quota places for both countries",
+        "fr": "Mondiaux de tir au Qatar : argent pour l’Égyptien Azmy Mehelba, bronze pour le Koweïtien Abdulaziz Alsaad et quotas olympiques pour les deux pays"
       },
-      "title": "مونديال الرماية في قطر: أولى البطاقات الأولمبية للصين وكرواتيا وسلوفاكيا"
+      "title": "مونديال الرماية في قطر: فضية عزمي محيلبة لمصر وبرونزية عبدالعزيز السعد للكويت وحصة أولمبية لكل بلد"
     },
     {
       "slug": "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
@@ -81,15 +90,6 @@
         "fr": "Quand vous humiliez votre gibier… vous vous humiliez vous-même !"
       },
       "title": "عندما تهين الطريدة… أنت تهين نفسك!"
-    },
-    {
-      "slug": "الصيد-السياحي-في-مصر-والعراق-والأردن",
-      "titles": {
-        "ar": "الصيد السياحي في مصر والعراق والأردن",
-        "en": "Hunting Tourism in Egypt, Iraq and Jordan",
-        "fr": "Le tourisme cynégétique en Égypte, en Irak et en Jordanie"
-      },
-      "title": "الصيد السياحي في مصر والعراق والأردن"
     }
   ]
 }

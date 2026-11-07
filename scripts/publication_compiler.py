@@ -143,7 +143,7 @@ def validate_report(site, report, expected_base, expected_source, expected_compi
     if any(e.get('path') == 'content/article-updates.json' for e in report['changes']):
         import editorial_revision
         _, value, registry_outputs, _, _ = editorial_revision.source_input(site, expected_base, expected_source)
-        require(value['operation'] in {'update-stonechat-oman-status-20261106', 'complete-two-bird-lifecycles', 'update-qatar-shooting-results', 'update-qatar-shooting-results-nov4', 'update-qatar-shooting-results-nov5'},
+        require(value['operation'] in {'update-stonechat-oman-status-20261106', 'complete-two-bird-lifecycles', 'update-qatar-shooting-results', 'update-qatar-shooting-results-nov4', 'update-qatar-shooting-results-nov5', 'update-qatar-shooting-results-nov6', 'update-dubai-carnival-results-nov7'},
                 'Exact approved maintenance required for update registry')
         require({e['path'] for e in report['changes']} == set(registry_outputs), 'Exact update registry maintenance outputs required')
     radar_outputs = None
@@ -482,6 +482,8 @@ def render(stage, records, allow_distribution):
     pairs = pairs_record['pairs']
     home_path = stage / 'content/homepage.json'
     home = loads(home_path.read_text())
+    from scoped_saluki_supersession import apply as apply_saluki_supersession
+    apply_saluki_supersession(stage, records, home, allow_distribution)
     links_path = stage / 'docs/s/links.json'
     links = loads(links_path.read_text())
     sitemap_path = stage / 'docs/sitemap.xml'

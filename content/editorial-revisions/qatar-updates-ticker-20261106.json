@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "qatar-updates-ticker-20261106",
+  "expected_base": "f93c5099abb4defab44ed8d5d0a83948e8692753",
+  "operation": "move-qatar-to-updates-nov6",
+  "approval_reference": "private:Sentinel_4b27ed81f88481918953e26fce0c9ffe",
+  "expected_source_sha256": "a413b5aeaacb61c4fdf86ad87c5fc2dea13a8b29e4830f7a30ac86ac4bb2210b",
+  "expected_targets_sha256": "29a0e4472dd8f96c89f7bbee970a7714a00e546885d98f879086e166547f3602",
+  "payload": {}
+}

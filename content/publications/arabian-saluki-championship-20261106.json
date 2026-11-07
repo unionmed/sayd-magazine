@@ -1,0 +1,260 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "arabian-saluki-championship-20261106",
+  "expected_base": "339c9f9b9f33e9a063c619baee40a5a0747699ed",
+  "approval_reference": "Nayef explicitly authorized publication of the Saluki story and sending the published link to the club on 6 November 2026, then specified Hunting cards. Source-to-publication GitHub workflow only; no unrelated changes or social posting.",
+  "bank_search_reference": "SALUKI-20261106: searched Sayd picture for use for saluki and سلوقي on 6 November; no relevant event photographs returned. Reviewed the previously published Saluki Center package; selected three visually inspected archive images from the fresh 5 November club press packet, preserving original bytes and metadata.",
+  "photos": [
+    {
+      "id": "racing",
+      "path": "docs/media/publications/arabian-saluki-championship-20261106/saluki-racing.jpg",
+      "sha256": "384534214f9cbbfa4ac8c19ff1a33fbdf1c68dee43ceb755049f9ae91fa6ce34",
+      "source_sha256": "384534214f9cbbfa4ac8c19ff1a33fbdf1c68dee43ceb755049f9ae91fa6ce34",
+      "source_reference": "Emirates Falconers Club press packet of 5 November 2026, attachment asd21.jpg; source and permission verified against the 23 October 2026 institutional correspondence. Archive illustration supplied ahead of the inaugural race, not a photograph of the 7 November event. Photographer and capture date were not supplied; inspected EXIF, IPTC and XMP have no named credit.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied media image accompanying the authorized press release. The club confirmed permission to publish the media reports and press releases it supplies, in reply to a verification request covering its report and photographs. Used for this editorial coverage only, with institutional credit. No open licence or blanket ownership claim.",
+        "evidence_reference": "SALUKI-20261106: 5 November press packet; authenticated editorial mailbox review on 6 November of matching 23 October replies from the club PR address and its verified media consultant. Original correspondence retained privately."
+      },
+      "alt": {
+        "ar": "كلاب سلوقي تتسابق على مضمار رملي.",
+        "en": "Salukis race along a sandy track.",
+        "fr": "Des salukis courent sur une piste de sable."
+      },
+      "caption": {
+        "ar": "لقطة أرشيفية من سباقات السلوقي.",
+        "en": "An archive image of Saluki racing.",
+        "fr": "Une image d’archives de courses de salukis."
+      }
+    },
+    {
+      "id": "sprint",
+      "path": "docs/media/publications/arabian-saluki-championship-20261106/saluki-sprint.jpg",
+      "sha256": "f53b11d6c1a62d1e7b4ca239a8d6d3fc03760e295e2c31c6efae2c73e44f9803",
+      "source_sha256": "f53b11d6c1a62d1e7b4ca239a8d6d3fc03760e295e2c31c6efae2c73e44f9803",
+      "source_reference": "Emirates Falconers Club press packet of 5 November 2026, attachment asd24.jpg; source and permission verified against the 23 October 2026 institutional correspondence. Archive illustration supplied ahead of the inaugural race, not a photograph of the 7 November event. Photographer and capture date were not supplied; inspected EXIF, IPTC and XMP have no named credit.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied media image accompanying the authorized press release. The club confirmed permission to publish the media reports and press releases it supplies, in reply to a verification request covering its report and photographs. Used for this editorial coverage only, with institutional credit. No open licence or blanket ownership claim.",
+        "evidence_reference": "SALUKI-20261106: 5 November press packet; authenticated editorial mailbox review on 6 November of matching 23 October replies from the club PR address and its verified media consultant. Original correspondence retained privately."
+      },
+      "alt": {
+        "ar": "كلبا سلوقي يرتديان صدريتي سباق يتسابقان على الرمل.",
+        "en": "Two Salukis wearing racing jackets sprint across the sand.",
+        "fr": "Deux salukis portant des casaques de course sprintent sur le sable."
+      },
+      "caption": {
+        "ar": "السرعة إحدى فئات المنافسة، إلى جانب المسافات المتوسطة والتحمّل والقدرة.",
+        "en": "Sprint racing is one of the categories, alongside middle-distance, endurance and stamina races.",
+        "fr": "La vitesse figure parmi les catégories, aux côtés du demi-fond, de l’endurance et de la résistance."
+      }
+    },
+    {
+      "id": "owners",
+      "path": "docs/assets/images/2026/10/arabian-saluki-efc-asd26.jpg",
+      "sha256": "ac7a0abf5c6317ce22da914e9a680a47225085cff0052165028db28d764f3943",
+      "source_sha256": "ac7a0abf5c6317ce22da914e9a680a47225085cff0052165028db28d764f3943",
+      "source_reference": "Emirates Falconers Club press packet of 5 November 2026, attachment asd26.jpg; source and permission verified against the 23 October 2026 institutional correspondence. Archive illustration supplied ahead of the inaugural race, not a photograph of the 7 November event. Photographer and capture date were not supplied; inspected EXIF, IPTC and XMP have no named credit.",
+      "rights": {
+        "status": "permission",
+        "statement": "Institution-supplied media image accompanying the authorized press release. The club confirmed permission to publish the media reports and press releases it supplies, in reply to a verification request covering its report and photographs. Used for this editorial coverage only, with institutional credit. No open licence or blanket ownership claim.",
+        "evidence_reference": "SALUKI-20261106: 5 November press packet; authenticated editorial mailbox review on 6 November of matching 23 October replies from the club PR address and its verified media consultant. Original correspondence retained privately."
+      },
+      "alt": {
+        "ar": "ملاك يقفون مع كلاب سلوقي على أرض رملية.",
+        "en": "Owners stand with Salukis on sandy ground.",
+        "fr": "Des propriétaires se tiennent avec leurs salukis sur un terrain sablonneux."
+      },
+      "caption": {
+        "ar": "تستهدف البطولة توسيع مشاركة الملاك والمربين والهواة.",
+        "en": "The championship aims to broaden participation among owners, breeders and enthusiasts.",
+        "fr": "Le championnat vise à élargir la participation des propriétaires, des éleveurs et des amateurs."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027",
+        "en": "arabian-saluki-championship-al-ain-al-dhafra-2026-2027",
+        "fr": "championnat-saluki-arabe-al-ain-al-dhafra-2026-2027"
+      },
+      "published": "2026-11-06",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "racing",
+        "sprint",
+        "owners"
+      ],
+      "photo_placements": [
+        {
+          "photo_id": "sprint",
+          "after_section": 1
+        },
+        {
+          "photo_id": "owners",
+          "after_section": 2
+        }
+      ],
+      "translations": {
+        "ar": {
+          "title": "بطولة السلوقي العربي تنطلق في العين 7 نوفمبر بعشر محطات تنافسية",
+          "subtitle": "موسم أول يجمع العين والظفرة، بأربع مسافات من ألف إلى 2500 متر، ويُختتم في 20 مارس 2027.",
+          "meta_description": "تنطلق بطولة السلوقي العربي في العين 7 نوفمبر 2026، تليها الظفرة في 14 نوفمبر. عشر محطات وأربع مسافات في موسم يمتد إلى 20 مارس 2027.",
+          "sections": [
+            {
+              "paragraphs": [
+                "تستعد مدينة العين لاستضافة أولى جولات النسخة الأولى من بطولة السلوقي العربي يوم 7 نوفمبر 2026، على أن تبدأ منافسات الظفرة في 14 نوفمبر، ضمن موسم رياضي يمتد إلى مارس 2027 وينظمه نادي صقاري الإمارات ومركز السلوقي العربي بأبوظبي.",
+                "وتفتتح التصفيات على مسافة ألف متر في ميدان الروضة لسباقات الهجن بالعين. وتضم أجندة الموسم عشر محطات تنافسية موزعة على أربع مسافات: ألف متر للسرعة، و1500 متر للمسافة المتوسطة، وألفي متر للتحمّل، و2500 متر للقدرة، بحسب البيان الذي أصدره النادي في 5 نوفمبر."
+              ]
+            },
+            {
+              "heading": "من تصفيات نوفمبر إلى ختام مارس",
+              "paragraphs": [
+                "في فئة الألف متر، تُقام الجولة التأهيلية الأولى بالعين في 7 نوفمبر، والثانية في الظفرة في 14 نوفمبر، ثم النهائي في ميدان سباقات الهجن بالظفرة يوم 28 نوفمبر 2026.",
+                "وتنتقل المنافسات إلى مسافة 1500 متر في ديسمبر: تصفيات العين في 5 ديسمبر، وتصفيات الظفرة في 12 ديسمبر، والنهائي في الظفرة يوم 26 ديسمبر 2026.",
+                "أما مسافة ألفي متر فتبدأ تصفياتها في العين يوم 9 يناير 2027، وتليها الظفرة في 16 يناير، قبل إقامة النهائي في العين يوم 6 فبراير. ويُختتم الموسم بسباق القدرة لمسافة 2500 متر في الظفرة يوم 20 مارس 2027."
+              ]
+            },
+            {
+              "heading": "منافسات تحفظ صلة الرياضة بالموروث",
+              "paragraphs": [
+                "تُقام البطولة في الظفرة برعاية الشيخ حمدان بن زايد آل نهيان، ممثل الحاكم في منطقة الظفرة ورئيس نادي صقاري الإمارات، وفي العين برعاية الشيخ هزاع بن زايد آل نهيان، ممثل الحاكم في منطقة العين. وتستهدف دعم الملاك والمربين، وصون السلالات العربية الأصيلة، وتشجيع الأجيال الجديدة على المشاركة ضمن نظام للسباقات والتسجيل والتصنيف.",
+                "ويشمل برنامج الفعاليات المصاحبة مسابقة جمال السلوقي العربي «المزاين» ومسابقة محاكاة الصيد باستخدام الطعم الميكانيكي. وقد بدأت هذه الفعاليات خلال النسخة الأخيرة من معرض أبوظبي الدولي للصيد والفروسية، لتجمع بين إبراز الجمال والمهارات الفطرية للسلوقي."
+              ]
+            },
+            {
+              "heading": "رؤية للتدريب والبحث وتوسيع المشاركة",
+              "paragraphs": [
+                "وقال ماجد علي المنصوري، الأمين العام لنادي صقاري الإمارات، إن أهداف البطولة تتجاوز تنظيم السباقات إلى تطوير التربية والتدريب والتقييم ودعم البحث. وتشمل الرؤية بناء قاعدة بيانات علمية متخصصة لدراسة القدرات الجينية والبدنية للسلوقي العربي، وتطوير برامج تسهم في المحافظة على السلالات الأصيلة.",
+                "كما يسعى المنظمون إلى توسيع قاعدة الملاك والمربين والهواة، وتنشيط الأنشطة المرتبطة بالتربية والتدريب والمعدات والسياحة التراثية.",
+                "وأتاح المنظمون نموذجًا لتسجيل الإعلاميين والمصورين وصنّاع المحتوى الراغبين في تغطية البطولة عبر موقعها الرسمي."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "الموقع الرسمي لبطولة السلوقي العربي",
+              "url": "https://salukichampionship.ae/"
+            },
+            {
+              "label": "تسجيل الإعلاميين والمصورين لتغطية البطولة",
+              "url": "https://salukichampionship.ae/media/"
+            }
+          ],
+          "photo_credit": "مصدر الصور الأرشيفية: نادي صقاري الإمارات."
+        },
+        "en": {
+          "title": "Arabian Saluki Championship opens in Al Ain on 7 November with ten rounds",
+          "subtitle": "The inaugural season brings Al Ain and Al Dhafra together over four distances, from 1,000 to 2,500 metres, ending on 20 March 2027.",
+          "meta_description": "The Arabian Saluki Championship opens in Al Ain on 7 November 2026, followed by Al Dhafra on 14 November. Ten rounds run through 20 March 2027.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Al Ain will host the opening round of the inaugural Arabian Saluki Championship on 7 November 2026, followed by Al Dhafra on 14 November. Organised by the Emirates Falconers’ Club and the Arabian Saluki Center in Abu Dhabi, the sporting season runs through March 2027.",
+                "Qualifying begins over 1,000 metres at Al Rawdah Camel Racing Track in Al Ain. The season comprises ten competitive rounds across four distances: 1,000-metre sprints, 1,500-metre middle-distance races, 2,000-metre endurance races and 2,500-metre stamina races, according to the club’s 5 November release."
+              ]
+            },
+            {
+              "heading": "From November qualifiers to the March finale",
+              "paragraphs": [
+                "In the 1,000-metre category, Al Ain hosts the first qualifying round on 7 November and Al Dhafra the second on 14 November. The final takes place at the camel racing track in Al Dhafra on 28 November 2026.",
+                "December brings the 1,500-metre races: qualifying in Al Ain on 5 December, qualifying in Al Dhafra on 12 December, and the final in Al Dhafra on 26 December 2026.",
+                "Qualifying over 2,000 metres starts in Al Ain on 9 January 2027, followed by Al Dhafra on 16 January, before the final in Al Ain on 6 February. The season concludes with the 2,500-metre stamina race in Al Dhafra on 20 March 2027."
+              ]
+            },
+            {
+              "heading": "Keeping sport connected to heritage",
+              "paragraphs": [
+                "The championship is held in Al Dhafra under the patronage of Sheikh Hamdan bin Zayed Al Nahyan, the Ruler’s Representative in Al Dhafra Region and Chairman of the Emirates Falconers’ Club, and in Al Ain under the patronage of Sheikh Hazza bin Zayed Al Nahyan, the Ruler’s Representative in Al Ain Region. It aims to support owners and breeders, preserve native Arabian bloodlines and encourage younger generations to participate through an organised racing, registration and classification system.",
+                "The accompanying programme includes the Arabian Saluki Beauty Contest, known as Al Mazayen, and simulated hunting using a mechanical lure. These activities began during the latest Abu Dhabi International Hunting and Equestrian Exhibition, highlighting both the Saluki’s appearance and its natural abilities."
+              ]
+            },
+            {
+              "heading": "A vision for training, research and wider participation",
+              "paragraphs": [
+                "Majed Ali Al Mansouri, Secretary-General of the Emirates Falconers’ Club, said the championship’s ambitions extend beyond racing to breeding, training, assessment and research. The vision includes a specialised scientific database studying the Arabian Saluki’s genetic and physical capabilities, alongside programmes to help preserve native bloodlines.",
+                "Organisers also aim to expand participation among owners, breeders and enthusiasts, and to support activities linked to breeding, training, equipment and heritage tourism.",
+                "Media professionals, photographers and content creators wishing to cover the championship can access a registration form on its official website."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Official Arabian Saluki Championship website",
+              "url": "https://salukichampionship.ae/"
+            },
+            {
+              "label": "Media and photographer registration",
+              "url": "https://salukichampionship.ae/media/"
+            }
+          ],
+          "photo_credit": "Archive images supplied by the Emirates Falconers’ Club."
+        },
+        "fr": {
+          "title": "Le Championnat du saluki arabe débute à Al Ain le 7 novembre, avec dix rendez-vous",
+          "subtitle": "La première saison réunit Al Ain et Al Dhafra sur quatre distances, de 1 000 à 2 500 mètres, jusqu’au 20 mars 2027.",
+          "meta_description": "Le Championnat du saluki arabe débute à Al Ain le 7 novembre 2026, puis à Al Dhafra le 14 novembre. Dix rendez-vous jusqu’au 20 mars 2027.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Al Ain accueillera la première étape de la toute première édition du Championnat du saluki arabe le 7 novembre 2026, suivie d’Al Dhafra le 14 novembre. Organisée par le Club des fauconniers des Émirats et le Centre du saluki arabe d’Abou Dhabi, la saison sportive se poursuivra jusqu’en mars 2027.",
+                "Les qualifications s’ouvriront sur 1 000 mètres à la piste de courses de chameaux d’Al Rawdah, à Al Ain. Le calendrier comprend dix rendez-vous sur quatre distances : 1 000 mètres pour la vitesse, 1 500 mètres pour le demi-fond, 2 000 mètres pour l’endurance et 2 500 mètres pour la résistance, selon le communiqué du club daté du 5 novembre."
+              ]
+            },
+            {
+              "heading": "Des qualifications de novembre à la finale de mars",
+              "paragraphs": [
+                "Sur 1 000 mètres, la première qualification aura lieu à Al Ain le 7 novembre, puis la deuxième à Al Dhafra le 14 novembre. La finale se déroulera le 28 novembre 2026 sur la piste de courses de chameaux d’Al Dhafra.",
+                "Décembre sera consacré au 1 500 mètres : qualifications à Al Ain le 5 décembre, à Al Dhafra le 12 décembre, puis finale à Al Dhafra le 26 décembre 2026.",
+                "Les qualifications sur 2 000 mètres débuteront à Al Ain le 9 janvier 2027, avant une étape à Al Dhafra le 16 janvier et la finale à Al Ain le 6 février. La saison s’achèvera avec l’épreuve de résistance sur 2 500 mètres à Al Dhafra le 20 mars 2027."
+              ]
+            },
+            {
+              "heading": "Un sport lié au patrimoine",
+              "paragraphs": [
+                "Le championnat se tient à Al Dhafra sous le patronage du cheikh Hamdan ben Zayed Al Nahyane, représentant du souverain dans la région d’Al Dhafra et président du Club des fauconniers des Émirats, et à Al Ain sous celui du cheikh Hazza ben Zayed Al Nahyane, représentant du souverain dans la région d’Al Ain. Il vise à soutenir les propriétaires et les éleveurs, à préserver les lignées arabes d’origine et à encourager les nouvelles générations à participer dans le cadre d’un système organisé de courses, d’inscription et de classement.",
+                "Le programme associé comprend le concours de beauté du saluki arabe, appelé « Al Mazayen », ainsi qu’une compétition de chasse simulée avec un leurre mécanique. Ces activités ont débuté lors de la dernière édition du Salon international de la chasse et de l’équitation d’Abou Dhabi, mettant en valeur à la fois la beauté et les aptitudes naturelles du saluki."
+              ]
+            },
+            {
+              "heading": "Entraînement, recherche et participation élargie",
+              "paragraphs": [
+                "Majed Ali Al Mansouri, secrétaire général du Club des fauconniers des Émirats, a expliqué que les ambitions du championnat dépassent les courses pour englober l’élevage, l’entraînement, l’évaluation et la recherche. Cette vision prévoit une base de données scientifique spécialisée sur les capacités génétiques et physiques du saluki arabe, ainsi que des programmes contribuant à préserver les lignées d’origine.",
+                "Les organisateurs souhaitent également élargir la participation des propriétaires, des éleveurs et des amateurs, et soutenir les activités liées à l’élevage, à l’entraînement, aux équipements et au tourisme patrimonial.",
+                "Les journalistes, photographes et créateurs de contenu souhaitant couvrir le championnat disposent d’un formulaire d’inscription sur son site officiel."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Site officiel du Championnat du saluki arabe",
+              "url": "https://salukichampionship.ae/"
+            },
+            {
+              "label": "Inscription des journalistes et photographes",
+              "url": "https://salukichampionship.ae/media/"
+            }
+          ],
+          "photo_credit": "Images d’archives fournies par le Club des fauconniers des Émirats."
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      },
+      "related": [
+        "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار"
+      ]
+    }
+  ]
+}
