@@ -1,0 +1,153 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "fulk-acre-heritage-20261107",
+  "expected_base": "8fe2fb6df1afd4ea0d022adc91b1b069de94c1c7",
+  "approval_reference": "private:Sentinel_d387167ae81c81919b9a48ebc39eda9c",
+  "bank_search_reference": "The user explicitly commissioned and approved this generated illustration for this exact article. This is the final selected image, not a substitute archival photograph. No claim of an image-bank search is made.",
+  "photos": [
+    {
+      "id": "fulk-acre-illustration",
+      "path": "docs/media/publications/fulk-acre-heritage-20261107/fulk-acre-generated-illustration.png",
+      "sha256": "d17a30277d83dbbf8340c1122e14aa54a7956344fb080bf4400114824b88fbd2",
+      "source_sha256": "d17a30277d83dbbf8340c1122e14aa54a7956344fb080bf4400114824b88fbd2",
+      "source_reference": "Final AI-generated illustration commissioned by the user and approved in Sentinel_d387167ae81c81919b9a48ebc39eda9c; original PNG retained byte-for-byte. It is an illustrative reconstruction, not historical documentation or an authenticated likeness.",
+      "rights": {
+        "status": "permission",
+        "statement": "The user expressly authorized use and publication of this assistant-generated illustration for the Fulk article. No third-party archival source or exclusive copyright ownership is asserted.",
+        "evidence_reference": "private:Sentinel_d387167ae81c81919b9a48ebc39eda9c"
+      },
+      "alt": {
+        "ar": "صورة تعبيرية مولدة للملك فولك ملقى على الأرض بعد سقوطه عن حصانه، وإلى جانبه مرافق، وتظهر الملكة والحاشية في الخلفية.",
+        "en": "AI-generated illustration of King Fulk lying on the ground after falling from his horse, with an attendant beside him and the queen and entourage in the background.",
+        "fr": "Illustration générée par IA du roi Foulques étendu à terre après sa chute de cheval, avec un compagnon à ses côtés et la reine et sa suite à l’arrière-plan."
+      },
+      "caption": {
+        "ar": "صورة تعبيرية مولدة بالذكاء الاصطناعي؛ ليست توثيقًا تاريخيًا للحادثة.",
+        "en": "AI-generated illustrative image; not historical documentation of the accident.",
+        "fr": "Image d’illustration générée par IA ; elle ne constitue pas un document historique de l’accident."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "يوم-مات-ملك-القدس-أثناء-صيد-الأرانب",
+        "en": "king-jerusalem-fulk-hare-hunting-acre",
+        "fr": "roi-jerusalem-foulques-chasse-lievre-acre"
+      },
+      "published": "2026-11-07",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "poetry",
+      "archives": [
+        "poetry"
+      ],
+      "kind": "article",
+      "photos": [
+        "fulk-acre-illustration"
+      ],
+      "translations": {
+        "ar": {
+          "title": "يوم مات ملك القدس أثناء صيد الأرانب",
+          "subtitle": "عام 1142م كان فولك ملك مملكة القدس الصليبية، وزوجته الملكة ميليسند يقيمان في عكا حين رغبت الملكة في الخروج للتنزّه خارج المدينة. رافقها الملك وحاشيته، واتجهوا إلى مكان خارج عكا فيه بساتين وحقول ترويها ينابيع مياه متعددة.",
+          "meta_description": "عام 1142م كان فولك ملك مملكة القدس الصليبية، وزوجته الملكة ميليسند يقيمان في عكا حين رغبت الملكة في الخروج للتنزّه خارج المدينة.",
+          "sections": [
+            {
+              "paragraphs": [
+                "وفي الطريق، أثار صبيان كانوا يتقدمون الموكب أرنبًا مختبئًا بين أخاديد الأرض. تعالت صيحات الحاضرين، فأمسك الملك برمحه وحثّ حصانه على مطاردة الارنب.",
+                "لكن الحصان سقط خلال الاندفاع وطرح الملك أرضًا. وبحسب المؤرخ وليم الصوري، أصاب السرج رأس الملك فولك إصابة شديدة. أسرع المرافقون إليه، فوجدوه عاجزًا عن الكلام وفاقدًا الوعي. واضطرب الموكب وحزنت الملكة، فيما انتقل خبر الحادث إلى أهل عكا."
+              ]
+            },
+            {
+              "heading": "العودة الأخيرة إلى عكا",
+              "paragraphs": [
+                "حُمل فولك إلى المدينة وهو لا يزال يتنفس. وتذكر الرواية أنه بقي ثلاثة أيام فاقدًا الوعي، ثم توفي في اليوم الرابع. ونُقل جثمانه بعد ذلك إلى القدس، حيث دُفن في كنيسة القيامة.",
+                "كان فولك يحكم مملكة القدس الصليبية إلى جانب ميليسند، صاحبة الحق الوراثي في المملكة. وبعد وفاته، واصلت الملكة ممارسة الحكم في مرحلة كان فيها ابنهما بلدوين صغير السن.",
+                "وتختلف المصادر في تاريخ الوفاة. يورد متن وليم الصوري سنة 1142، بينما ترجّح دراسة المؤرخ برنارد هاملتون وقوعها في تشرين الثاني 1143، بالاستناد إلى تسلسل أحداث الأسرة الملكية. وتختلف إشارات المصدر أيضًا في تحديد يوم الوفاة."
+              ]
+            },
+            {
+              "heading": "عيون ماء وأخاديد حراثة",
+              "paragraphs": [
+                "يمنح وصف وليم الحادثة خلفية تتجاوز قصة المطاردة. فالوجهة، كما ترد في الترجمة الفرنسية، تسقيها عدة عيون، والأرنب خرج من أرض ذات «أخاديد حراثة».",
+                "هذه التفاصيل ترسم مشهدًا من ضواحي عكا، حيث كانت المياه والأرض المحروثة جزءًا من المكان الذي مرّ به الموكب. ولم يذكر المؤرخ اسم الموضع، لكنه حفظ صورة عابرة لريف المدينة: ملك على صهوة حصانه، وأرنب يخرج من مخبئه، ومطاردة قصيرة غيّرت مصير الحكم.",
+                "المصادر: وليم الصوري، تاريخ الأعمال التي جرت في بلاد ما وراء البحر، الكتاب الخامس عشر، الفصل 27، والترجمة الفرنسية، ص 443–445؛ وبرنارد هاملتون، «ملكات القدس، 1100–1190»."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "صورة تعبيرية مولّدة بالذكاء الاصطناعي، مستوحاة من حادثة فولك قرب عكا."
+        },
+        "en": {
+          "title": "The day the King of Jerusalem died while hunting hares",
+          "subtitle": "In 1142, Fulk, king of the Crusader Kingdom of Jerusalem, and his wife, Queen Melisende, were staying in Acre when the queen wished to go on an outing outside the city. The king and his entourage accompanied her, heading to a place outside Acre with gardens and fields watered by several springs.",
+          "meta_description": "In 1142, Fulk, king of the Crusader Kingdom of Jerusalem, and his wife, Queen Melisende, were staying in Acre when the queen wished to go on an outing outside the city.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Along the way, boys who were ahead of the procession startled a hare hiding among the furrows. Those present raised their voices, and the king seized his lance and urged his horse to chase the hare.",
+                "But the horse fell during the rush and threw the king to the ground. According to the historian William of Tyre, the saddle struck King Fulk’s head, causing a severe injury. His companions hurried to him and found him unable to speak and unconscious. The procession was thrown into confusion and the queen grieved, while news of the accident reached the people of Acre."
+              ]
+            },
+            {
+              "heading": "The final return to Acre",
+              "paragraphs": [
+                "Fulk was carried into the city while he was still breathing. The account says that he remained unconscious for three days and died on the fourth. His body was then taken to Jerusalem, where he was buried in the Church of the Holy Sepulchre.",
+                "Fulk ruled the Crusader Kingdom of Jerusalem alongside Melisende, who held the hereditary right to the kingdom. After his death, the queen continued to exercise power while their son Baldwin was still young.",
+                "The sources differ on the date of his death. William of Tyre’s text gives the year as 1142, while a study by the historian Bernard Hamilton favours November 1143, based on the sequence of events in the royal family. References within the source also differ on the exact day of his death."
+              ]
+            },
+            {
+              "heading": "Springs and ploughed furrows",
+              "paragraphs": [
+                "William’s description gives the incident a setting that extends beyond the story of the chase. The destination, as described in the French translation, was watered by several springs, and the hare emerged from ground with “ploughed furrows”.",
+                "These details depict a scene on the outskirts of Acre, where water and ploughed land formed part of the place through which the procession passed. The historian did not name the location, but he preserved a fleeting image of the city’s countryside: a king on horseback, a hare emerging from its hiding place, and a brief chase that changed the course of rule.",
+                "Sources: William of Tyre, A History of Deeds Done Beyond the Sea, Book XV, Chapter 27, and the French translation, pp. 443–445; and Bernard Hamilton, “The Queens of Jerusalem, 1100–1190”."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "AI-generated illustration inspired by Fulk’s accident near Acre."
+        },
+        "fr": {
+          "title": "Le jour où le roi de Jérusalem mourut en chassant les lièvres",
+          "subtitle": "En 1142, Foulques, roi du royaume croisé de Jérusalem, et son épouse, la reine Mélisende, séjournaient à Acre lorsque la reine souhaita se promener hors de la ville. Le roi et sa suite l’accompagnèrent vers un lieu situé à l’extérieur d’Acre, où des jardins et des champs étaient irrigués par plusieurs sources.",
+          "meta_description": "En 1142, Foulques, roi du royaume croisé de Jérusalem, et son épouse, la reine Mélisende, séjournaient à Acre lorsque la reine souhaita se promener hors de la ville.",
+          "sections": [
+            {
+              "paragraphs": [
+                "En chemin, des garçons qui précédaient le cortège firent lever un lièvre caché dans les sillons. Des cris s’élevèrent parmi les personnes présentes, et le roi saisit sa lance et pressa son cheval de poursuivre le lièvre.",
+                "Mais le cheval tomba dans son élan et projeta le roi à terre. Selon l’historien Guillaume de Tyr, la selle heurta la tête du roi Foulques, lui infligeant une grave blessure. Ses compagnons se précipitèrent vers lui et le trouvèrent incapable de parler et inconscient. Le désarroi s’empara du cortège et la reine fut saisie de chagrin, tandis que la nouvelle de l’accident parvenait aux habitants d’Acre."
+              ]
+            },
+            {
+              "heading": "Le dernier retour à Acre",
+              "paragraphs": [
+                "Foulques fut transporté en ville alors qu’il respirait encore. Le récit indique qu’il demeura inconscient pendant trois jours, puis mourut le quatrième. Son corps fut ensuite conduit à Jérusalem, où il fut inhumé dans l’église du Saint-Sépulcre.",
+                "Foulques gouvernait le royaume croisé de Jérusalem aux côtés de Mélisende, qui détenait le droit héréditaire sur le royaume. Après sa mort, la reine continua d’exercer le pouvoir alors que leur fils Baudouin était encore jeune.",
+                "Les sources divergent sur la date de sa mort. Le texte de Guillaume de Tyr indique l’année 1142, tandis qu’une étude de l’historien Bernard Hamilton privilégie novembre 1143, en s’appuyant sur la chronologie des événements de la famille royale. Les indications du récit divergent également quant au jour exact du décès."
+              ]
+            },
+            {
+              "heading": "Sources d’eau et sillons de labour",
+              "paragraphs": [
+                "La description de Guillaume donne à l’incident un cadre qui dépasse le récit de la poursuite. Le lieu de destination, tel qu’il apparaît dans la traduction française, était irrigué par plusieurs sources, et le lièvre sortit d’un terrain marqué de « sillons de labour ».",
+                "Ces détails dessinent une scène des environs d’Acre, où l’eau et les terres labourées faisaient partie du lieu traversé par le cortège. L’historien ne nomme pas cet endroit, mais il conserve une image fugitive de la campagne autour de la ville : un roi à cheval, un lièvre qui sort de sa cachette et une courte poursuite qui changea le destin du pouvoir.",
+                "Sources : Guillaume de Tyr, Histoire des faits et gestes dans les régions d’outre-mer, livre XV, chapitre 27, et la traduction française, p. 443–445 ; et Bernard Hamilton, « Les reines de Jérusalem, 1100–1190 »."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Illustration générée par intelligence artificielle, inspirée de l’accident de Foulques près d’Acre."
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      }
+    }
+  ]
+}
