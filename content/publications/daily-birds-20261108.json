@@ -1,0 +1,2211 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261108",
+  "expected_base": "42c8dd98e174decb4ceaddc1885e3e0a45d139ee",
+  "approval_reference": "private:Sentinel_4fc857ac29988191ab2cfd656cf652d6; private:bbb21aa2-2371-4086-af81-305030f69b0b; delegated daily encyclopedia publication, 25 October 2026, continuing ten-species daily target confirmed 1 November 2026. Eight November 2026 batch; independent review, protected checks and live verification required.",
+  "bank_search_reference": "Sayd picture for use / 02_Birds & Wildlife: all 245 existing files searched before external selection on 8 November 2026. Ten selected unmodified photo originals and ten individual rights records saved in the same bank; verified file IDs retained in each photo evidence record.",
+  "photos": [
+    {
+      "id": "eurasian-blue-tit",
+      "path": "docs/media/publications/daily-birds-20261108/eurasian-blue-tit.jpg",
+      "sha256": "c0fc0b0ea50154def197c7755472dfaa0e33859436a791b79c3aee4ec56c0482",
+      "source_sha256": "c0fc0b0ea50154def197c7755472dfaa0e33859436a791b79c3aee4ec56c0482",
+      "source_reference": "Лариса Артемьева; declared capture 2023-05-11, Гамсутль, Респ. Дагестан, Россия, 368354. iNaturalist observation 166259201, photo 287890672. Original actual pixels visually reviewed 8 November 2026. Exact species Cyanistes caeruleus; illustrative species image, not a current event. Date and place are source metadata, not independently geolocated. Primary source: https://www.inaturalist.org/photos/287890672",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes; any existing creator watermark retained. Storage and commercial reuse permitted without a required attribution hyperlink. Source and licence URLs retained in non-rendered evidence. No warranty of copyright ownership or unrelated third-party rights.",
+        "evidence_reference": "Primary iNaturalist API https://api.inaturalist.org/v1/observations/166259201, exact photo 287890672, photo-level license_code cc0 verified 8 November 2026 (distinct from observation data licence). Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/. Bank original: libfile_d5df8bfc40948191940480b9c308f961; source-rights record: libfile_2ec77e73f93c8191bd0f5c88e47b117c."
+      },
+      "alt": {
+        "ar": "قرقف أزرق أوراسي على غصن يحمل يرقة خضراء",
+        "en": "Eurasian Blue Tit on a branch holding a green caterpillar",
+        "fr": "Mésange bleue sur une branche tenant une chenille verte"
+      },
+      "caption": {
+        "ar": "القرقف الأزرق الأوراسي",
+        "en": "Eurasian Blue Tit",
+        "fr": "Mésange bleue"
+      }
+    },
+    {
+      "id": "common-firecrest",
+      "path": "docs/media/publications/daily-birds-20261108/common-firecrest.jpg",
+      "sha256": "18df9c23861940668983e662ca74570a7b12d017bcfc925523a953248ec0567b",
+      "source_sha256": "18df9c23861940668983e662ca74570a7b12d017bcfc925523a953248ec0567b",
+      "source_reference": "Paulo Caseirito; declared capture 2022-11-12, 2600 São João dos Montes, Portugal. iNaturalist observation 141832976, photo 243064725. Original actual pixels visually reviewed 8 November 2026. Exact species Regulus ignicapilla; illustrative species image, not a current event. Date and place are source metadata, not independently geolocated. Primary source: https://www.inaturalist.org/photos/243064725",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes; any existing creator watermark retained. Storage and commercial reuse permitted without a required attribution hyperlink. Source and licence URLs retained in non-rendered evidence. No warranty of copyright ownership or unrelated third-party rights.",
+        "evidence_reference": "Primary iNaturalist API https://api.inaturalist.org/v1/observations/141832976, exact photo 243064725, photo-level license_code cc0 verified 8 November 2026 (distinct from observation data licence). Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/. Bank original: libfile_545f5603515c81918fd3aed30d70f998; source-rights record: libfile_bdb7e09be9508191a62eb628bb21108a."
+      },
+      "alt": {
+        "ar": "ملك طيور ناري العرف على غصن بحاجب أبيض وشريط أسود عبر العين",
+        "en": "Common Firecrest on a branch with white eyebrow and black eye stripe",
+        "fr": "Roitelet à triple bandeau sur une branche, au sourcil blanc et au trait oculaire noir"
+      },
+      "caption": {
+        "ar": "الصعو أحمر العرف",
+        "en": "Common Firecrest",
+        "fr": "Roitelet triple-bandeau"
+      }
+    },
+    {
+      "id": "eurasian-nuthatch",
+      "path": "docs/media/publications/daily-birds-20261108/eurasian-nuthatch.jpg",
+      "sha256": "d5bd231026da4fd8cd4249e754b778e38025a3708b119abca6958319617653ac",
+      "source_sha256": "d5bd231026da4fd8cd4249e754b778e38025a3708b119abca6958319617653ac",
+      "source_reference": "Gordon Best; declared capture 2026-02-27, Dumfries and Galloway, UK. iNaturalist observation 394997877, photo 724210791. Original actual pixels visually reviewed 8 November 2026. Exact species Sitta europaea; illustrative species image, not a current event. Date and place are source metadata, not independently geolocated. Primary source: https://www.inaturalist.org/photos/724210791",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes; any existing creator watermark retained. Storage and commercial reuse permitted without a required attribution hyperlink. Source and licence URLs retained in non-rendered evidence. No warranty of copyright ownership or unrelated third-party rights.",
+        "evidence_reference": "Primary iNaturalist API https://api.inaturalist.org/v1/observations/394997877, exact photo 724210791, photo-level license_code cc0 verified 8 November 2026 (distinct from observation data licence). Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/. Bank original: libfile_8d8227239c9481919a0af33f60e70661; source-rights record: libfile_9b1a2387e2448191b0771fa5719fc1c6."
+      },
+      "alt": {
+        "ar": "خازن بندق أوراسي على جذع بخط عين أسود ومنقار طويل مدبب",
+        "en": "Eurasian Nuthatch on a stump with black eye stripe and long pointed bill",
+        "fr": "Sittelle torchepot sur une souche, au trait oculaire noir et au long bec pointu"
+      },
+      "caption": {
+        "ar": "خازن البندق الأوراسي",
+        "en": "Eurasian Nuthatch",
+        "fr": "Sittelle torchepot"
+      }
+    },
+    {
+      "id": "rock-bunting",
+      "path": "docs/media/publications/daily-birds-20261108/rock-bunting.jpg",
+      "sha256": "172a0644edf2791a22074dd9a4d9f46e1b06e124405f4ca444deabbbf81385e2",
+      "source_sha256": "172a0644edf2791a22074dd9a4d9f46e1b06e124405f4ca444deabbbf81385e2",
+      "source_reference": "Jean-Paul Boerekamps; declared capture 2024-03-12, Sierra de Grazalema Natural Park, Grazalema, Cádiz, ES. iNaturalist observation 202464599, photo 357578615. Original actual pixels visually reviewed 8 November 2026. Exact species Emberiza cia; illustrative species image, not a current event. Date and place are source metadata, not independently geolocated. Primary source: https://www.inaturalist.org/photos/357578615",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes; any existing creator watermark retained. Storage and commercial reuse permitted without a required attribution hyperlink. Source and licence URLs retained in non-rendered evidence. No warranty of copyright ownership or unrelated third-party rights.",
+        "evidence_reference": "Primary iNaturalist API https://api.inaturalist.org/v1/observations/202464599, exact photo 357578615, photo-level license_code cc0 verified 8 November 2026 (distinct from observation data licence). Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/. Bank original: libfile_f924df2a075881918ef02a78f7200808; source-rights record: libfile_395a38abf7488191986d8535aa422ea2."
+      },
+      "alt": {
+        "ar": "درسة صخور على صخرة برأس رمادي مخطط بالأسود",
+        "en": "Rock Bunting on a rock with a grey head striped in black",
+        "fr": "Bruant fou sur un rocher, à la tête grise rayée de noir"
+      },
+      "caption": {
+        "ar": "درسة الصخور",
+        "en": "Rock Bunting",
+        "fr": "Bruant fou"
+      }
+    },
+    {
+      "id": "eurasian-tree-sparrow",
+      "path": "docs/media/publications/daily-birds-20261108/eurasian-tree-sparrow.jpg",
+      "sha256": "2d42e1939d823919e8d54dfe7038f96e6ba97e811127df6117305f7266887ca4",
+      "source_sha256": "2d42e1939d823919e8d54dfe7038f96e6ba97e811127df6117305f7266887ca4",
+      "source_reference": "Chrissy McClarren and Andy Reago; declared capture 2021-11-24, Residence, St. Louis, MO 63116, USA. iNaturalist observation 101883329, photo 170208394. Original actual pixels visually reviewed 8 November 2026. Exact species Passer montanus; illustrative species image, not a current event. Date and place are source metadata, not independently geolocated. Primary source: https://www.inaturalist.org/photos/170208394",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes; any existing creator watermark retained. Storage and commercial reuse permitted without a required attribution hyperlink. Source and licence URLs retained in non-rendered evidence. No warranty of copyright ownership or unrelated third-party rights.",
+        "evidence_reference": "Primary iNaturalist API https://api.inaturalist.org/v1/observations/101883329, exact photo 170208394, photo-level license_code cc0 verified 8 November 2026 (distinct from observation data licence). Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/. Bank original: libfile_933e4f6bdef88191987858825b26d6f3; source-rights record: libfile_f246a988bad88191bb5d4c78ba91d717."
+      },
+      "alt": {
+        "ar": "عصفور شجر أوراسي على غصن بتاج بني وبقعة سوداء على الخد",
+        "en": "Eurasian Tree Sparrow on a branch with chestnut crown and black cheek patch",
+        "fr": "Moineau friquet sur une branche, à calotte brune et tache noire sur la joue"
+      },
+      "caption": {
+        "ar": "عصفور الشجر الأوراسي",
+        "en": "Eurasian Tree Sparrow",
+        "fr": "Moineau friquet"
+      }
+    },
+    {
+      "id": "rock-sparrow",
+      "path": "docs/media/publications/daily-birds-20261108/rock-sparrow.jpg",
+      "sha256": "7f2000a1ed314b54af7fa1d4d0cde12433fb4c915d7e43dc680bc26d41a775c3",
+      "source_sha256": "7f2000a1ed314b54af7fa1d4d0cde12433fb4c915d7e43dc680bc26d41a775c3",
+      "source_reference": "Лариса Артемьева; declared capture 2022-05-06, Республика Алтай, RU. iNaturalist observation 115697462, photo 195272742. Original actual pixels visually reviewed 8 November 2026. Exact species Petronia petronia; illustrative species image, not a current event. Date and place are source metadata, not independently geolocated. Primary source: https://www.inaturalist.org/photos/195272742",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes; any existing creator watermark retained. Storage and commercial reuse permitted without a required attribution hyperlink. Source and licence URLs retained in non-rendered evidence. No warranty of copyright ownership or unrelated third-party rights.",
+        "evidence_reference": "Primary iNaturalist API https://api.inaturalist.org/v1/observations/115697462, exact photo 195272742, photo-level license_code cc0 verified 8 November 2026 (distinct from observation data licence). Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/. Bank original: libfile_ad54b292d71c8191b4b3b4e842a5fad2; source-rights record: libfile_c7dd8a8b879c81918d2b04547e925313."
+      },
+      "alt": {
+        "ar": "عصفور صخور على صخرة بريش بني مخطط ومنقار مخروطي",
+        "en": "Rock Sparrow on a rock with streaked brown plumage and a conical bill",
+        "fr": "Moineau soulcie sur un rocher, au plumage brun strié et au bec conique"
+      },
+      "caption": {
+        "ar": "دوري الصخر",
+        "en": "Rock Sparrow",
+        "fr": "Moineau soulcie"
+      }
+    },
+    {
+      "id": "african-blue-tit",
+      "path": "docs/media/publications/daily-birds-20261108/african-blue-tit.jpg",
+      "sha256": "c45add711cc27837cef51711e364916dcfe55981f0b9927d604992ee69765c27",
+      "source_sha256": "c45add711cc27837cef51711e364916dcfe55981f0b9927d604992ee69765c27",
+      "source_reference": "karim Attouche; declared capture 2021-02-05, Djebel El Ouahch, Constantine, Algérie. iNaturalist observation 200391923, photo 353544971. Original actual pixels visually reviewed 8 November 2026. Exact species Cyanistes teneriffae; illustrative species image, not a current event. Date and place are source metadata, not independently geolocated. Primary source: https://www.inaturalist.org/photos/353544971",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes; any existing creator watermark retained. Storage and commercial reuse permitted without a required attribution hyperlink. Source and licence URLs retained in non-rendered evidence. No warranty of copyright ownership or unrelated third-party rights.",
+        "evidence_reference": "Primary iNaturalist API https://api.inaturalist.org/v1/observations/200391923, exact photo 353544971, photo-level license_code cc0 verified 8 November 2026 (distinct from observation data licence). Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/. Bank original: libfile_b85b217947f88191aa8cdb676627370e; source-rights record: libfile_cceceaa410ec8191a9751400640a22f5."
+      },
+      "alt": {
+        "ar": "قرقف أزرق إفريقي على ساق نبات بتاج أزرق داكن وخد أبيض",
+        "en": "African Blue Tit perched on a plant stem, with dark blue crown and white cheek",
+        "fr": "Mésange nord-africaine sur une tige, à calotte bleu foncé et joue blanche"
+      },
+      "caption": {
+        "ar": "القرقف الأزرق الإفريقي",
+        "en": "African Blue Tit",
+        "fr": "Mésange nord-africaine"
+      }
+    },
+    {
+      "id": "wallcreeper",
+      "path": "docs/media/publications/daily-birds-20261108/wallcreeper.jpg",
+      "sha256": "c266005373033951e9ccbd2c9b25e47d61bbf75768ac611a55d8788d097bca44",
+      "source_sha256": "c266005373033951e9ccbd2c9b25e47d61bbf75768ac611a55d8788d097bca44",
+      "source_reference": "Лариса Артемьева; declared capture 2025-05-06, Бао. iNaturalist observation 327859128, photo 594027889. Original actual pixels visually reviewed 8 November 2026. Exact species Tichodroma muraria; illustrative species image, not a current event. Date and place are source metadata, not independently geolocated. Primary source: https://www.inaturalist.org/photos/594027889",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes; any existing creator watermark retained. Storage and commercial reuse permitted without a required attribution hyperlink. Source and licence URLs retained in non-rendered evidence. No warranty of copyright ownership or unrelated third-party rights.",
+        "evidence_reference": "Primary iNaturalist API https://api.inaturalist.org/v1/observations/327859128, exact photo 594027889, photo-level license_code cc0 verified 8 November 2026 (distinct from observation data licence). Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/. Bank original: libfile_2e111429306881919aa451d081f3fe5d; source-rights record: libfile_39860f42ddcc81919e2ed13cfa02592d."
+      },
+      "alt": {
+        "ar": "متسلق جدران على صخرة بجناح قرمزي ومنقار طويل مقوس",
+        "en": "Wallcreeper on a rock showing crimson wing feathers and a long curved bill",
+        "fr": "Tichodrome échelette sur un rocher, aux plumes alaires cramoisies et au long bec courbé"
+      },
+      "caption": {
+        "ar": "متسلق الجدران",
+        "en": "Wallcreeper",
+        "fr": "Tichodrome échelette"
+      }
+    },
+    {
+      "id": "spanish-sparrow",
+      "path": "docs/media/publications/daily-birds-20261108/spanish-sparrow.jpg",
+      "sha256": "eb14474d00d3c8d880a42de115cc5ffe8802570b2f792b4cafc6ce4728c57ec8",
+      "source_sha256": "eb14474d00d3c8d880a42de115cc5ffe8802570b2f792b4cafc6ce4728c57ec8",
+      "source_reference": "karim Attouche; declared capture 2024-01-03, El Djamila, Aïn Benian, Algérie. iNaturalist observation 257918448, photo 462693086. Original actual pixels visually reviewed 8 November 2026. Exact species Passer hispaniolensis; illustrative species image, not a current event. Date and place are source metadata, not independently geolocated. Primary source: https://www.inaturalist.org/photos/462693086",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes; any existing creator watermark retained. Storage and commercial reuse permitted without a required attribution hyperlink. Source and licence URLs retained in non-rendered evidence. No warranty of copyright ownership or unrelated third-party rights.",
+        "evidence_reference": "Primary iNaturalist API https://api.inaturalist.org/v1/observations/257918448, exact photo 462693086, photo-level license_code cc0 verified 8 November 2026 (distinct from observation data licence). Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/. Bank original: libfile_c02062f217888191960e3073a75efae7; source-rights record: libfile_0fef8b3d95508191bc05faa14719314d."
+      },
+      "alt": {
+        "ar": "عصفور إسباني بمنقار غليظ وخد أبيض وصدر مخطط",
+        "en": "Spanish Sparrow with thick bill, white cheek and streaked breast",
+        "fr": "Moineau espagnol au bec épais, à joue blanche et poitrine striée"
+      },
+      "caption": {
+        "ar": "الدوري الإسباني",
+        "en": "Spanish Sparrow",
+        "fr": "Moineau espagnol"
+      }
+    },
+    {
+      "id": "bearded-reedling",
+      "path": "docs/media/publications/daily-birds-20261108/bearded-reedling.jpg",
+      "sha256": "f5ad87f7e6674c8c4e14ef98807d03c54c707b72825e2ac3e710afc26e68101e",
+      "source_sha256": "f5ad87f7e6674c8c4e14ef98807d03c54c707b72825e2ac3e710afc26e68101e",
+      "source_reference": "José Antonio León Mangado; declared capture 2025-08-17, 31230 Viana, Navarra, España. iNaturalist observation 306970569, photo 553633798. Original actual pixels visually reviewed 8 November 2026. Exact species Panurus biarmicus; illustrative species image, not a current event. Date and place are source metadata, not independently geolocated. Primary source: https://www.inaturalist.org/photos/553633798",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0. Unmodified original bytes; any existing creator watermark retained. Storage and commercial reuse permitted without a required attribution hyperlink. Source and licence URLs retained in non-rendered evidence. No warranty of copyright ownership or unrelated third-party rights.",
+        "evidence_reference": "Primary iNaturalist API https://api.inaturalist.org/v1/observations/306970569, exact photo 553633798, photo-level license_code cc0 verified 8 November 2026 (distinct from observation data licence). Legal instrument: https://creativecommons.org/publicdomain/zero/1.0/. Bank original: libfile_a8dac624acac81919cb37da6fb96dd67; source-rights record: libfile_54769fe4d4048191997fd4a662456fd9."
+      },
+      "alt": {
+        "ar": "طائر ملتحي بين القصب بريش بني مصفر وذيل طويل",
+        "en": "Bearded Reedling among reeds with tawny plumage and a long tail",
+        "fr": "Panure à moustaches parmi les roseaux, au plumage fauve et à la longue queue"
+      },
+      "caption": {
+        "ar": "قرقف أبو ذقن",
+        "en": "Bearded Reedling",
+        "fr": "Panure à moustaches"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "خازن-البندق-الأوراسي",
+        "en": "eurasian-nuthatch",
+        "fr": "sittelle-torchepot"
+      },
+      "published": "2026-11-08",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "eurasian-nuthatch"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "خازن البندق الأوراسي",
+          "subtitle": "Sitta europaea",
+          "meta_description": "خازن البندق الأوراسي: علامات التعرف والموائل والغذاء والتكاثر والحضور في البلدان العربية والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "يمنح طائر صغير ينزل على جذع شجرة ورأسه إلى الأسفل فرصة مميزة للتعرف إلى خازن البندق الأوراسي، Sitta europaea. ينتمي إلى فصيلة خازنات البندق Sittidae ضمن رتبة العصفوريات، ويسمى بالإنجليزية Eurasian Nuthatch وبالفرنسية Sittelle torchepot. ويستعمل دليل لبنان أيضًا اسم «كاسر الجوز الأوروبي». يبلغ طوله نحو 14 سنتيمترًا وباع جناحيه نحو 24 سنتيمترًا، ولذلك قد يختفي بسهولة خلف غصن. يمنحه المنقار القوي والذيل القصير هيئة مكتنزة تختلف عن هيئة كثير من الطيور التي تبحث عن غذائها على الأشجار."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "ظهره رمادي مزرق، ويمر خط داكن عبر العين، بينما الخدان والحلق فاتحان. يتدرج لون الأجزاء السفلية، بحسب الجماعة الجغرافية، من الأبيض إلى الأصفر البني الفاتح، مع لون كستنائي أوضح على الخاصرتين وتحت الذيل. وغالبًا تكون الخاصرتان أغنى لونًا عند الذكر، لكن اللون وحده لا يكفي لتحديد الجنس أو السلالة. أما متسلقات الأشجار فأسطحها العليا بنية دقيقة النقوش ومناقيرها أنحف ومقوسة. وكاسر الجوز الصخري الغربي Sitta neumayer نوع مستقل؛ يجب مقارنة الذيل والبطن والموئل، لا الاكتفاء بخط العين المشترك بينهما."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "توفر الغابات الناضجة مساحات للبحث عن الطعام وتجاويف للتعشيش. وتناسبه الغابات عريضة الأوراق والمختلطة والمتنزهات المشجرة والبساتين القديمة حيث تبقى أشجار كبيرة. يبحث على اللحاء والأغصان عن الحشرات ويرقاتها والعناكب، مستعينًا بقدميه في الحركة باتجاهات مختلفة. وتزداد أهمية البذور والثمار الجوزية خارج موسم التكاثر. قد يثبت الطعام القاسي في شق ثم يطرقه بمنقاره لفتحه، كما يخزن بعض الغذاء. تساعده هذه المرونة الموسمية في البقاء قريبًا من موطنه، ولا يعني اسمه أنه يعتمد على البندق وحده طوال العام."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يمتد نطاقه عبر مساحات واسعة من أوراسيا المعتدلة، ويصل إلى المغرب حيث يسجل التقييم العالمي وجودًا مقيمًا. ومع ذلك، يبقى حضوره العربي موضعيًا، ولا يشكل حزامًا متصلًا عبر شمال إفريقيا والجزيرة العربية. ويصف دليل «طيور لبنان» لعام 2026 النوع بأنه مقيم متكاثر شديد الندرة ومحلي الانتشار في الأحراج والغابات. ويختلف ذلك عن وصفه لكاسر الجوز الصخري الغربي الواسع الانتشار. لذلك لا يصح تسجيل طائر مألوف على جرف لبناني باسم Sitta europaea لمجرد أن ظهره رمادي مزرق، ولا تعميم وفرة النوع الصخري على قريبه الغابي."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يشغل العش تجويفًا قائمًا، غالبًا ثقبًا طبيعيًا في شجرة أو تجويفًا قديمًا حفره نقار خشب. تستطيع الأنثى تضييق المدخل بالطين، وتضع في الداخل قطعًا من اللحاء. يعطي مرجع BTO حضنة نموذجية من 6–8 بيضات، وحضانة تتولاها الأنثى لمدة 16–17 يومًا، وبقاءً للفراخ في العش يقارب 24–25 يومًا. ويشارك الأبوان في إطعامها. هذه مدد مرجعية لنمو النوع وليست تقويمًا محددًا للتكاثر في لبنان. كما أن خروج الفرخ من التجويف مرحلة من نموه، ولا يعني بالضرورة أنه استقل تمامًا عن والديه."
+              ]
+            },
+            {
+              "heading": "نوفمبر والمراقبة المسؤولة",
+              "paragraphs": [
+                "يتيح نوفمبر مراقبة تعامل طيور الغابات مع البذور وتخزينها. ولا يدل ظهور طائر مقيم في هذا الشهر على وصوله حديثًا مهاجرًا. التزم المسارات القائمة، واترك للطائر حرية التنقل بين الأشجار، وسجل طبيعة الموئل إلى جانب ملامح الريش. الصورة التي تبين الذيل والخاصرتين أفيد من صورة بعيدة لا تظهر سوى الهيئة العامة. لا تفتح التجاويف ولا تنزع اللحاء ولا تعبث بمخزن الطعام للحصول على مشاهدة أقرب. الزيارات الهادئة المتكررة تسمح بفهم السلوك أكثر من مطاردة طائر واحد بين الجذوع والأغصان."
+              ]
+            },
+            {
+              "heading": "الحماية",
+              "paragraphs": [
+                "يصنف النوع عالميًا ضمن «غير مهدد» LC، لكن هذا التصنيف لا يضمن سلامة كل جماعة صغيرة. يحافظ الإبقاء على الأشجار الناضجة والتجاويف الطبيعية واتصال المساحات الحرجية على موارده الأساسية. ويشير دليل لبنان إلى فقد الموائل وتدهورها والإزعاج وتغير المناخ بوصفها ضغوطًا عليه. اتساع الانتشار عبر قارات لا يعوض اختفاء حرش محلي معزول. ومن المفيد إبقاء الأشجار القديمة الآمنة وبنية غابية متنوعة، بدل التعامل مع كل غصن ميت أو جذع مجوف على أنه مادة يجب إزالتها من المكان."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Nuthatch; RSPB — Nuthatch; Oiseaux.net — Sittelle torchepot; BirdLife International / IUCN — Sitta europaea; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 338; GBIF — Sitta europaea."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Gordon Best"
+        },
+        "en": {
+          "title": "Eurasian Nuthatch",
+          "subtitle": "Sitta europaea",
+          "meta_description": "Eurasian Nuthatch: identification, habitat, food, breeding, occurrence in Arab countries and conservation.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "A compact bird moving headfirst down a trunk offers an excellent introduction to the Eurasian Nuthatch, Sitta europaea. It belongs to Sittidae within the passerines, and is called Sittelle torchepot in French and خازن البندق الأوراسي in Arabic; the Lebanese guide also uses the Arabic name كاسر الجوز الأوروبي. At approximately 14 cm long, with a wingspan around 24 cm, it is small enough to disappear behind a branch. Its powerful bill and short tail give it a distinctive outline."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "The upperparts are blue-grey, with a dark line passing through the eye and pale cheeks and throat. Underparts vary geographically from whitish to buff, with warmer chestnut on the flanks and beneath the tail; males often have richer flank colour. Colour alone is therefore a poor guide to sex or subspecies. Treecreepers are browner and finely patterned above, with slender curved bills. Western Rock Nuthatch, Sitta neumayer, is a different species: compare the tail, underparts and habitat rather than relying on the shared dark eye-stripe."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "Mature woodland offers both feeding surfaces and nesting cavities. Deciduous and mixed woods, wooded parks and old orchards can be suitable where large trees remain. The bird searches bark and branches for insects, larvae and spiders, using its feet to move in different directions. Seeds and nuts become particularly important outside the breeding season. Hard items can be wedged in a crevice and hammered open, while food is also cached. This seasonal flexibility helps explain its generally resident way of life."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range spans much of temperate Eurasia and reaches Morocco, where resident occurrence is recorded in the global assessment. Arab occurrence is nevertheless localized, not a continuous belt across North Africa and Arabia. The 2026 Birds of Lebanon guide describes a very rare, localized breeding resident in woodland and forest. That is quite different from its account of the widespread Western Rock Nuthatch. A familiar nuthatch seen on a Lebanese cliff should consequently not be assigned to Sitta europaea merely because it has a blue-grey back."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "The nest occupies an existing cavity, often a natural tree hole or an old woodpecker excavation. The female can narrow the entrance with mud and lay bark fragments inside. BTO gives a typical clutch of 6–8 eggs, female incubation of 16–17 days and a nestling period of roughly 24–25 days. Both parents feed the young. These are useful developmental references, not a Lebanese breeding calendar. Leaving the cavity is a stage in development and should not automatically be interpreted as complete independence."
+              ]
+            },
+            {
+              "heading": "November and responsible observation",
+              "paragraphs": [
+                "November is a good time to watch how woodland birds handle and store seeds. A resident encountered then need not have just arrived on migration. Remain on existing paths, allow the bird to move between trees and record habitat as well as plumage. A photograph showing the tail and flanks is more informative than a distant silhouette. Do not open cavities, remove bark or disturb a cache to obtain a closer view. Repeated visits made quietly can reveal more than pursuit of a single individual."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "The species is globally Least Concern, a category that does not describe the security of every small population. Retaining mature trees, natural cavities and connected woodland protects its essential resources. The Lebanese guide identifies habitat loss, degradation, disturbance and climate change as pressures. A global range extending across continents cannot compensate for the disappearance of an isolated local wood. Management should retain safe old trees and varied woodland structure rather than treating every dead branch or hollow trunk as material to remove."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Nuthatch; RSPB — Nuthatch; Oiseaux.net — Sittelle torchepot; BirdLife International / IUCN — Sitta europaea; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 338; GBIF — Sitta europaea."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Gordon Best"
+        },
+        "fr": {
+          "title": "Sittelle torchepot",
+          "subtitle": "Sitta europaea",
+          "meta_description": "Sittelle torchepot : identification, habitat, alimentation, reproduction, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "Un petit oiseau descendant un tronc la tête en bas offre une belle occasion de découvrir la Sittelle torchepot, Sitta europaea. Ce passereau appartient aux Sittidae. Son nom anglais est Eurasian Nuthatch et son nom arabe خازن البندق الأوراسي ; le guide libanais emploie également le nom arabe كاسر الجوز الأوروبي. Longue d’environ 14 cm, pour une envergure proche de 24 cm, elle disparaît facilement derrière une branche. Son bec robuste et sa courte queue composent une silhouette ramassée caractéristique."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Le dessus est gris bleu, avec un bandeau sombre traversant l’œil et des joues et une gorge claires. Selon les populations, le dessous varie du blanchâtre au chamois, avec du châtain sur les flancs et sous la queue. Les mâles présentent souvent des flancs plus vivement colorés, mais la couleur seule ne suffit pas à déterminer le sexe ou la sous-espèce. Les grimpereaux sont bruns et finement dessinés dessus, avec un bec plus mince et courbe. La Sittelle de Neumayer, Sitta neumayer, est une autre espèce : queue, dessous et habitat doivent compléter l’examen du bandeau oculaire."
+              ]
+            },
+            {
+              "heading": "Habitat et alimentation",
+              "paragraphs": [
+                "Les boisements anciens fournissent des surfaces de recherche alimentaire et des cavités de nidification. Forêts feuillues ou mixtes, parcs arborés et vieux vergers peuvent convenir si de grands arbres subsistent. La sittelle explore écorces et branches pour y trouver insectes, larves et araignées, se déplaçant dans différentes directions grâce à ses pattes. Graines et fruits à coque prennent davantage d’importance hors reproduction. Elle peut coincer un aliment dur dans une fente pour le marteler et constitue aussi des réserves. Cette souplesse alimentaire favorise son mode de vie généralement sédentaire."
+              ]
+            },
+            {
+              "heading": "Répartition et présence dans les pays arabes",
+              "paragraphs": [
+                "Son aire traverse une grande partie de l’Eurasie tempérée et atteint le Maroc, où l’évaluation mondiale indique une présence résidente. Dans les pays arabes, sa répartition reste néanmoins localisée, sans former une bande continue entre Afrique du Nord et péninsule Arabique. Le guide Birds of Lebanon de 2026 la décrit comme nicheuse sédentaire très rare et localisée dans les bois et forêts. Ce statut diffère fortement de celui de la Sittelle de Neumayer, largement répandue. Une sittelle observée sur une falaise libanaise ne doit donc pas être attribuée à Sitta europaea sur la seule couleur gris bleu du dos."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le nid occupe une cavité existante, souvent un trou naturel ou une ancienne loge de pic. La femelle peut réduire l’entrée avec de la boue et garnir l’intérieur de fragments d’écorce. BTO indique une ponte habituelle de 6–8 œufs, une incubation féminine de 16–17 jours et un séjour des jeunes au nid d’environ 24–25 jours. Les deux parents les nourrissent. Ces durées constituent des repères biologiques, pas un calendrier libanais de reproduction. La sortie de la cavité ne signifie pas nécessairement que les jeunes sont déjà entièrement indépendants."
+              ]
+            },
+            {
+              "heading": "Novembre et observation responsable",
+              "paragraphs": [
+                "Novembre permet d’observer la manipulation et le stockage des graines. Une sittelle résidente rencontrée alors n’est pas forcément une migratrice nouvellement arrivée. Restez sur les chemins, laissez-la circuler entre les arbres et notez le milieu autant que le plumage. Une photographie montrant la queue et les flancs est plus utile qu’une silhouette lointaine. N’ouvrez pas les cavités, n’arrachez pas l’écorce et ne dérangez pas les réserves alimentaires pour mieux voir. Des visites discrètes répétées apprennent davantage qu’une poursuite entre les branches."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "L’espèce est classée mondialement en Préoccupation mineure, LC, sans que cela garantisse la sécurité de chaque petite population. Conserver arbres matures, cavités naturelles et continuité des boisements protège ses ressources essentielles. Le guide libanais mentionne perte et dégradation des habitats, dérangement et changement climatique. Une vaste aire continentale ne compense pas la disparition d’un bois isolé. Une gestion favorable maintient les vieux arbres sans danger et une structure forestière variée, plutôt que d’éliminer systématiquement chaque branche morte ou tronc creux."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "British Trust for Ornithology — BirdFacts: Nuthatch; RSPB — Nuthatch; Oiseaux.net — Sittelle torchepot; BirdLife International / IUCN — Sitta europaea; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 338; GBIF — Sitta europaea."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographie : Gordon Best"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "متسلق-الجدران",
+        "en": "wallcreeper",
+        "fr": "tichodrome-echelette"
+      },
+      "published": "2026-11-08",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "wallcreeper"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "متسلق الجدران",
+          "subtitle": "Tichodroma muraria",
+          "meta_description": "متسلق الجدران: علامات التعرف والموائل والغذاء والتكاثر والحضور في البلدان العربية والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "قد تكشف ومضة حمراء على جرف رمادي عن متسلق الجدران، Tichodroma muraria، وهو عصفوري صغير من فصيلة Tichodromidae. يعرف بالإنجليزية باسم Wallcreeper وبالفرنسية Tichodrome échelette، وتستعمل المراجع العربية أيضًا اسمي «متسلق الحيطان» و«متسلق الصخور». تشير هذه التسميات إلى النوع نفسه، لا إلى عدة طيور مختلفة تعيش على الجروف. يعطي دليل لبنان طولًا يقارب 16.5 سنتيمترًا، وباع جناحين نحو 28 سنتيمترًا، ووزنًا يقارب 18 غرامًا. وهي مقاييس تقريبية لفهم حجمه، وليست أرقامًا يجب أن تتطابق عند كل فرد تتم مشاهدته."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "عندما يسكن على الصخر قد يندمج لونه معه أكثر مما توحي به أجنحته الزاهية. ريش الجسم رمادي، وريش الطيران أسود تتخلله بقع بيضاء في الجزء الخارجي من الجناح، وتظهر مساحات حمراء واضحة عند فتحه. ويساعد المنقار الطويل الرفيع المقوس إلى الأسفل على التعرف إليه. يفتح جناحيه ويغلقهما مرارًا أثناء التسلق، فتظهر ومضات اللون. حلق الذكر أسود في موسم التكاثر، لكنه يصبح فاتحًا شتاءً، وكذلك يكون حلق الأنثى فاتحًا خارج موسم التكاثر. لذلك لا يكفي غياب السواد لتحديد جنس طائر يشاهد في نوفمبر."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "الموئل الأساسي سطح صخري تشقه فجوات تختبئ فيها الفرائس. يعيش على الجروف والأودية الصخرية والمنحدرات الشديدة، وقد يستخدم خارج موسم التكاثر جروفًا منخفضة ومقالع ومباني حجرية كبيرة. يفحص الشقوق بمنقاره بحثًا عن الحشرات وغيرها من اللافقاريات، ومنها العناكب، ولا يتحول شتاءً إلى غذاء قائم على البذور. وقد يلتقط الحشرات في الطيران أيضًا. وتوضح مراقبته أثناء الحركة على الجدار كيف يمكن للصخر الذي يبدو عاريًا من الأسفل أن يوفر موارد غذائية دقيقة لا يراها المراقب من مكانه."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "ينتشر عبر سلاسل جبلية تمتد من جنوب أوروبا نحو وسط آسيا وشرقها، لكن حضوره في البلدان العربية يحتاج إلى تمييز دقيق. يصفه دليل «طيور لبنان» لعام 2026 بأنه زائر شتوي نادر للغاية، مع احتمال وجود جماعة مقيمة متكاثرة قليلة العدد. هذا الاحتمال لا يثبت التعشيش في لبنان. أما قائمة المغرب في أفيبيز فتصنف وجوده ضمن النادر أو العارض، فلا يصح تقديم البلاد بوصفها مركزًا منتظمًا لشتائه. وجود جروف مناسبة وحده لا يثبت وجود الطائر، كما أن تسجيل فرد شتاءً لا يكشف وحده مكان تكاثره السابق."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "في مناطق التكاثر المثبتة، يحتمي العش داخل شق عميق أو تجويف، غالبًا في جرف جبلي. تبنيه الأنثى من ألياف نباتية ومواد لينة أخرى. تصف المراجع المتخصصة حضنة تقارب أربع بيضات، تحضنها الأنثى نحو 18–20 يومًا، ثم تصبح الفراخ قادرة على الطيران بعد نحو شهر من الفقس. يشترك الأبوان في إطعامها وتستمر الرعاية بعد مغادرة العش. هذه معلومات عامة عن بيولوجيا النوع، وليست دليلًا على تعشيشه في موقع عربي يستخدمه شتاءً، ولا تقويمًا واحدًا يسري دون اختلاف على جميع السلاسل الجبلية."
+              ]
+            },
+            {
+              "heading": "نوفمبر والمراقبة المسؤولة",
+              "paragraphs": [
+                "يدعو نوفمبر إلى توسيع البحث نحو الجروف الأقل ارتفاعًا، إذ تنزل بعض الطيور من مناطق تكاثرها العالية. هذا الانتقال الرأسي موثق في جماعات جبال أوروبا، لكنه لا يضمن ظهور النوع في كل بلد مجاور. امسح واجهة الصخر بالمنظار على مراحل، وانتظر الحركة أو ومضة الجناح الأحمر. ابتعد عن الحواف الخطرة ومسارات التسلق التي يشغلها الطائر والتجاويف المحتملة. لا تستعمل تسجيلات الصوت لاستدراجه. سجل الموقع والارتفاع والتاريخ والسلوك، من دون نشر تفاصيل موقع تعشيش حساس قد تجذب إليه زيارات متكررة."
+              ]
+            },
+            {
+              "heading": "الحماية",
+              "paragraphs": [
+                "يصنف متسلق الجدران عالميًا ضمن «غير مهدد» LC، لكن موائله الصخرية المتخصصة قد تتضرر، كما أن خفاء الطائر يجعل تقدير أعداده صعبًا. يذكر دليل لبنان فقد الموائل وتدهورها والصيد والإزعاج المرتبط بالمقالع أو تسلق الصخور ضمن الضغوط. حماية الموقع تعني مراعاة واجهة الجرف وشقوقها كلها، لا النقطة التي التقطت فيها الصورة وحدها. تسمح المراقبة من مسافة مناسبة باستمرار البحث عن الغذاء، وتحول دون تحويل لقاء نادر وممتع إلى سلسلة من المطاردات والإزعاج المتكرر."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 340; Naturalis — Birds of Europe: Wallcreeper; Oiseaux.net — Tichodrome échelette; BTO — BirdFacts: Wallcreeper; Avibase — Morocco checklist; SEO/BirdLife — Treparriscos; BirdLife International / IUCN — Tichodroma muraria."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева"
+        },
+        "en": {
+          "title": "Wallcreeper",
+          "subtitle": "Tichodroma muraria",
+          "meta_description": "Wallcreeper: identification, habitat, food, breeding, occurrence in Arab countries and conservation.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "A flash of crimson against a grey cliff can reveal the Wallcreeper, Tichodroma muraria, a small passerine in the family Tichodromidae. French calls it Tichodrome échelette; Arabic references use متسلق الجدران, متسلق الحيطان or متسلق الصخور. These names describe one species, not several cliff birds. The Lebanon guide gives a length around 16.5 cm, wingspan around 28 cm and weight around 18 g. Such figures describe approximate size rather than measurements expected from every individual."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "At rest, the bird can blend surprisingly well with rock. Grey body plumage contrasts with black flight feathers, white spots on the outer wing and conspicuous red areas revealed when the wings open. The long, slender, downcurved bill is another useful character. Frequent wing-flicking produces brief flashes of colour as it climbs. A breeding male has a black throat, but this becomes pale in winter; females also have a pale throat outside breeding. A pale-throated November bird therefore cannot be sexed simply by the absence of black."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "The essential habitat is a rock face with fissures that shelter food. Mountain cliffs, ravines and precipices are typical, while lower cliffs, quarries and substantial stone buildings may be used outside the breeding season. The bird probes cracks for insects and other invertebrates, including spiders, rather than switching to a seed-based winter diet. It may also catch insects in flight. Watching it move slowly across a wall reveals how apparently bare rock can contain feeding opportunities hidden from an observer standing below."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "The species occurs through mountain systems from southern Europe towards central and eastern Asia, but its Arab distribution requires careful qualification. Birds of Lebanon 2026 describes an extremely rare winter visitor and only a possible scarce breeding resident. That wording does not establish confirmed Lebanese nesting. Avibase’s Morocco checklist marks it Rare/Accidental, so the country should not be presented as a regular winter stronghold. The occurrence of suitable cliffs alone cannot establish presence. A winter record also says little about where that individual bred."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "Where breeding is established, a deep crevice or cavity shelters the nest, usually on a mountain cliff. The female builds it with plant fibres and other soft material. Specialist accounts describe about four eggs, female incubation lasting roughly 18–20 days, and young becoming capable of flight at around one month. Both parents feed the brood and care continues after departure. These general figures concern the species’ breeding biology; they should not be turned into evidence of reproduction at an Arab wintering locality or applied as an identical calendar across mountain ranges."
+              ]
+            },
+            {
+              "heading": "November and responsible observation",
+              "paragraphs": [
+                "November brings a useful change in the observer’s search image: some birds descend from high breeding areas to lower rock faces. This altitudinal movement is documented in European mountain populations, but does not promise a sighting in every nearby country. Scan a cliff in sections and wait for movement or a red wing-flash. Keep away from edges, climbing routes occupied by birds and suspected cavities. Do not use playback to draw a rare visitor closer. Record the location, elevation, date and behaviour without advertising a sensitive nest site."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "Wallcreeper is globally Least Concern. Nevertheless, specialized rock habitats can be damaged, and an elusive species can be difficult to count accurately. The Lebanese guide lists habitat loss and degradation, hunting and disturbance associated with quarrying or climbing. Protecting a site means considering the entire face and its crevices, not merely the point where the bird was photographed. Observation at a distance allows feeding to continue and avoids turning an exceptional encounter into repeated disturbance."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 340; Naturalis — Birds of Europe: Wallcreeper; Oiseaux.net — Tichodrome échelette; BTO — BirdFacts: Wallcreeper; Avibase — Morocco checklist; SEO/BirdLife — Treparriscos; BirdLife International / IUCN — Tichodroma muraria."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева"
+        },
+        "fr": {
+          "title": "Tichodrome échelette",
+          "subtitle": "Tichodroma muraria",
+          "meta_description": "Tichodrome échelette : identification, habitat, alimentation, reproduction, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "Un éclair rouge sur une falaise grise peut révéler le Tichodrome échelette, Tichodroma muraria, petit passereau de la famille des Tichodromidae. Son nom anglais est Wallcreeper. Les appellations arabes متسلق الجدران, متسلق الحيطان et متسلق الصخور désignent la même espèce. Le guide libanais indique environ 16,5 cm de longueur, 28 cm d’envergure et 18 g. Ces valeurs donnent un ordre de grandeur, sans représenter des mesures identiques chez tous les individus."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Immobile, l’oiseau se confond étonnamment bien avec la roche. Le corps gris contraste avec les rémiges noires, les taches blanches de l’aile externe et les plages rouges visibles à l’ouverture des ailes. Le long bec mince et incurvé constitue un autre bon critère. En grimpant, il entrouvre fréquemment les ailes, produisant des éclairs colorés. Le mâle reproducteur porte une gorge noire, qui devient claire en hiver ; la femelle présente également une gorge claire hors reproduction. L’absence de noir ne permet donc pas, à elle seule, de sexer un oiseau observé en novembre."
+              ]
+            },
+            {
+              "heading": "Habitat et alimentation",
+              "paragraphs": [
+                "L’habitat essentiel est une paroi fissurée abritant des proies. Falaises de montagne, ravins et précipices sont typiques ; des falaises basses, carrières et grands édifices de pierre peuvent être fréquentés hors reproduction. L’oiseau sonde les crevasses pour capturer insectes et autres invertébrés, notamment des araignées, sans adopter un régime hivernal fondé sur les graines. Il peut également poursuivre des insectes en vol. Son déplacement sur la paroi révèle les possibilités alimentaires d’une roche apparemment nue lorsqu’on l’observe depuis le bas."
+              ]
+            },
+            {
+              "heading": "Répartition et présence dans les pays arabes",
+              "paragraphs": [
+                "L’espèce habite des massifs allant du sud de l’Europe vers l’Asie centrale et orientale, mais sa présence dans les pays arabes exige des nuances. Birds of Lebanon 2026 la décrit comme visiteur hivernal extrêmement rare et seulement comme possible nicheur sédentaire peu nombreux. Cette formulation ne constitue pas une preuve de nidification au Liban. La liste du Maroc publiée par Avibase la classe Rare/Accidental : le pays ne doit donc pas être présenté comme un bastion régulier d’hivernage. Une falaise favorable ne prouve pas sa présence, et une observation hivernale ne révèle pas le lieu de reproduction de l’individu."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Dans les régions où la reproduction est établie, une fissure profonde ou une cavité abrite le nid, généralement dans une falaise montagnarde. La femelle le construit avec des fibres végétales et d’autres matériaux souples. Les références spécialisées décrivent environ quatre œufs, une incubation féminine de 18–20 jours et des jeunes capables de voler vers l’âge d’un mois. Les deux parents nourrissent la nichée, puis poursuivent les soins après la sortie. Ces repères biologiques ne prouvent aucune reproduction dans un site arabe d’hivernage et ne constituent pas un calendrier uniforme pour tous les massifs."
+              ]
+            },
+            {
+              "heading": "Novembre et observation responsable",
+              "paragraphs": [
+                "En novembre, la recherche peut s’orienter vers des parois moins élevées : certains oiseaux quittent alors leurs secteurs de reproduction d’altitude. Ce déplacement est documenté dans les populations montagnardes européennes, sans garantir une observation dans chaque pays voisin. Examinez la falaise par portions et attendez un mouvement ou un éclair rouge. Évitez les bords dangereux, les voies d’escalade occupées et les cavités suspectées. N’utilisez pas de repasse pour attirer un visiteur rare. Notez lieu, altitude, date et comportement, sans diffuser la localisation d’un nid sensible."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "Le Tichodrome est mondialement classé en Préoccupation mineure, LC. Ses habitats spécialisés peuvent pourtant être altérés, et sa discrétion complique les comptages. Le guide libanais mentionne perte et dégradation des habitats, chasse et dérangement lié aux carrières ou à l’escalade. Protéger un site suppose de considérer toute la paroi et ses fissures, pas seulement l’endroit photographié. Observer à distance permet au nourrissage de continuer et évite de transformer une rencontre exceptionnelle en dérangement répété."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 340; Naturalis — Birds of Europe: Wallcreeper; Oiseaux.net — Tichodrome échelette; BTO — BirdFacts: Wallcreeper; Avibase — Morocco checklist; SEO/BirdLife — Treparriscos; BirdLife International / IUCN — Tichodroma muraria."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographie : Лариса Артемьева"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "درسة-الصخور",
+        "en": "rock-bunting",
+        "fr": "bruant-fou"
+      },
+      "published": "2026-11-08",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "rock-bunting"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "درسة الصخور",
+          "subtitle": "Emberiza cia",
+          "meta_description": "درسة الصخور: علامات التعرف والموائل والغذاء والتكاثر والحضور في البلدان العربية والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "درسة الصخور، Emberiza cia، طائر صغير من رتبة العصفوريات وفصيلة الدرسات Emberizidae. يعرف بالإنجليزية باسم Rock Bunting وبالفرنسية Bruant fou، وتستعمل المراجع العربية كذلك اسم «درسة الصخر». وهي تسميات للنوع نفسه، الذي لا ينبغي الخلط بينه وبين درسات أخرى تشاركه البيئات الصخرية. يعطي دليل لبنان لعام 2026 طولًا يقارب 16 سنتيمترًا، وباع جناحين نحو 26 سنتيمترًا، ووزنًا نحو 30 غرامًا. ويسهم المنقار القصير المخروطي والذيل الطويل نسبيًا في هيئته المميزة، لكن الحجم وحده ليس علامة كافية للتعرف إليه في الحقل."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "يجمع الذكر البالغ بين رأس رمادي فاتح وخطوط سوداء قوية، وظهر بني مخطط، وأجزاء سفلية دافئة تتدرج من الأصفر البني إلى الكستنائي. وتهم رسوم الوجه بقدر أهمية لون الجسم؛ راقب ترتيب الخطوط الداكنة فوق العين وعبرها وأسفل الخد. الأنثى واليافع أقل تباينًا، ورأسهما أكثر ميلًا إلى البني، وأجزاؤهما السفلية أفتح. ويفيد البياض في أطراف الذيل الخارجية حين يظهر بوضوح. لا يعني ضعف خطوط الرأس وحده أن الطائر نوع آخر، بل يجب جمع علامات الوجه والمنقار والجسم والذيل قبل تثبيت الهوية."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء",
+              "paragraphs": [
+                "توفر المنحدرات الصخرية ذات النبات المنخفض المتناثر مزيجًا من المخابئ والمجاثم والأرض المتاحة للتغذي. تناسبه الأحراج الجبلية المفتوحة والمراعي الحجرية وحواف الغابات الخفيفة وبعض المدرجات الزراعية. ويتغير الغذاء مع الموسم: للحشرات واللافقاريات الصغيرة أهمية في التكاثر، ولا سيما عند إطعام الفراخ النامية، بينما توفر الأعشاب ونباتات أخرى كثيرًا من البذور المأكولة خارج ذلك الموسم. يجمع الطعام من الأرض أو ينتزع البذور من النبات مباشرة. والإبقاء على نباتات طبيعية حول الصخور يحفظ رقعًا غذائية تضيع عند تنظيف المنحدر كله وتسوية غطائه."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يمتد نطاقه من شمال غرب إفريقيا عبر جنوب أوروبا وأجزاء من غرب آسيا ووسطها نحو الهيمالايا. وتوجد جماعات مقيمة في المغرب العربي، بما فيه المغرب والجزائر وتونس. وفي لبنان يصفه دليل 2026 بأنه مقيم متكاثر شائع في الجبال الصخرية، خصوصًا قرب حواف غابات الأرز، مع تكاثر أساسًا بين 1000 و2400 متر ونزول إلى ارتفاعات أقل شتاءً. لكن الكويت تقدم صورة مختلفة بوضوح؛ يصنفه المرجع المحلي زائرًا عارضًا شديد الندرة وغير متكاثر. لذلك لا تتحول إقامة النوع في جبال بلد ما إلى دليل على شتاء منتظم في مختلف البلدان العربية."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "تبني الأنثى عشًا كأسيًا على الأرض تحميه النباتات أو الصخور. وتصف المراجع المتخصصة حضنة معتادة من 3–5 بيضات، وحضانة تتولاها الأنثى نحو 13–15 يومًا. يشترك الأبوان في إطعام الفراخ، التي قد تغادر العش بعد نحو 9–13 يومًا، لكنها تبقى محتاجة إلى الرعاية؛ فالمغادرة لا تعني الاستقلال الفوري أو امتلاك طيران قوي متواصل. يحدد دليل لبنان موسم التكاثر المحلي من أواخر أبريل إلى أواخر يوليو. وتختلف المواعيد في أماكن أخرى، لذا يجب الفصل بين الموسم اللبناني وتقويم التكاثر الأوسع لهذا النوع."
+              ]
+            },
+            {
+              "heading": "نوفمبر والمراقبة المسؤولة",
+              "paragraphs": [
+                "في نوفمبر قد تصبح السفوح الأدنى أنسب للمراقبة من مواقع التعشيش الصيفية المرتفعة. وقد تتجمع الطيور خارج موسم التكاثر في مجموعات صغيرة للبحث عن الغذاء؛ ولا يثبت وجود مجموعة، أو تسجيل فرد في أواخر الخريف، وقوع هجرة بعيدة المسافة. راقب من مسار قائم أو نقطة ثابتة، وسجل الغطاء النباتي الأرضي والارتفاع وعدد الأفراد. تجنب دفع الطيور عبر أرض مكشوفة للحصول على صورة أثناء الطيران. كثيرًا ما تتيح وقفة هادئة استئناف التغذي، وتوفر وقتًا لفحص خطوط الرأس والمنقار والذيل من دون ملاحقة المجموعة."
+              ]
+            },
+            {
+              "heading": "الحماية",
+              "paragraphs": [
+                "يصنف النوع عالميًا ضمن «غير مهدد» LC، ولا يبرر ذلك إهمال تدهور الموائل المحلية أو الصيد العشوائي. يذكر دليل لبنان فقد الموائل وتدهورها والصيد غير القانوني والاحترار ضمن الضغوط. ويقتضي حفظ المشهد الجبلي المتنوع الإبقاء على النباتات الحاملة للبذور والشجيرات المتناثرة والغطاء الآمن للتعشيش إلى جانب الصخور. وتكتسب المشاهدات المسجلة بتاريخ ومكان وسلوك أهمية خاصة حيث يندر النوع؛ فهي تميز زيارة استثنائية موثقة عن ادعاء غير مسند بوجود موسمي منتظم، وتساعد على بناء معرفة أدق بتغير حضوره من موقع إلى آخر."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 429; Oiseaux.net — Bruant fou; BTO — BirdFacts: Rock Bunting; KuwaitBirds — Rock Bunting; Avibase — Emberiza cia; Museo Nacional de Ciencias Naturales / CSIC — Enciclopedia Virtual de los Vertebrados Españoles: Emberiza cia; State of India’s Birds — Rock Bunting."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Jean-Paul Boerekamps"
+        },
+        "en": {
+          "title": "Rock Bunting",
+          "subtitle": "Emberiza cia",
+          "meta_description": "Rock Bunting: identification, habitat, food, breeding, occurrence in Arab countries and conservation.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "Rock Bunting, Emberiza cia, is a small passerine of the bunting family Emberizidae. Its French name is Bruant fou; Arabic references use درسة الصخور or درسة الصخر. These are names for the same species, which should not be confused with other buntings sharing rocky landscapes. The 2026 Lebanon guide gives a length of about 16 cm, wingspan around 26 cm and weight around 30 g. A short conical bill and fairly long tail contribute to its recognizable shape."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "The adult male combines a pale grey head with strong black stripes, a streaked brown back and warm buff to chestnut underparts. The facial pattern matters as much as the body colour: look for the arrangement of dark lines above and through the eye and below the cheek. Females and juveniles are less contrasting, with a browner head and paler underparts. White on the outer tail is useful when visible. A faded head pattern should not be mistaken for proof of another species without examining the whole bird."
+              ]
+            },
+            {
+              "heading": "Habitat and food",
+              "paragraphs": [
+                "Rocky slopes with scattered low vegetation provide a mixture of cover, perches and accessible ground. Open mountain scrub, stony grassland, sparse woodland margins and some terraced landscapes can be suitable. Food changes with season: insects and other small invertebrates are important during breeding, particularly for growing chicks, while grasses and other plants supply many of the seeds eaten outside that season. Birds feed on the ground or take seeds directly from plants. Retaining rough vegetation around rocks preserves feeding patches that a uniformly cleared slope would lose."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "The range extends from northwestern Africa through southern Europe and parts of western and central Asia towards the Himalayas. Resident populations occur in the Maghreb, including Morocco, Algeria and Tunisia. In Lebanon, the 2026 guide describes a common breeding resident of rocky mountains, especially near cedar-grove margins, with breeding mainly at 1,000–2,400 m and downward movement in winter. Kuwait presents a sharply different picture: the local reference classifies Rock Bunting as an extremely rare vagrant and non-breeder. A mountain resident in one country is therefore not necessarily a regular winter visitor throughout the Arab world."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "The female builds a cup nest on the ground, sheltered by vegetation or rock. Specialist references describe a usual clutch of 3–5 eggs and female incubation lasting roughly 13–15 days. Both parents feed the chicks. Young may leave the nest after about 9–13 days but still need parental care; departure is not immediate independence or necessarily strong sustained flight. The Lebanese guide places local breeding from late April to late July. Nesting schedules vary elsewhere, so this country-specific season should remain distinct from the species’ wider breeding calendar."
+              ]
+            },
+            {
+              "heading": "November and responsible observation",
+              "paragraphs": [
+                "In November, lower slopes may become more relevant than the high summer nesting grounds. Outside breeding, birds can gather in small feeding groups; neither a group nor a single late-autumn record proves long-distance migration. Watch from a path or a stable viewpoint and note the ground vegetation, altitude and flock size. Avoid pushing birds across exposed terrain to obtain a flight photograph. A quiet pause often allows feeding to resume and gives time to examine the head stripes, bill and tail without chasing the group."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "The global conservation category is Least Concern, LC. This is not permission to overlook local habitat damage or indiscriminate shooting. The Lebanese guide identifies habitat loss and degradation, illegal hunting and warming among pressures. Conserving a varied mountain landscape means retaining seed-bearing vegetation, scattered shrubs and undisturbed nesting cover alongside the rocks. Records with dates, locations and behaviour are particularly valuable where the species is rare, because they distinguish a documented exceptional visitor from an unsupported claim of regular seasonal presence."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 429; Oiseaux.net — Bruant fou; BTO — BirdFacts: Rock Bunting; KuwaitBirds — Rock Bunting; Avibase — Emberiza cia; Museo Nacional de Ciencias Naturales / CSIC — Enciclopedia Virtual de los Vertebrados Españoles: Emberiza cia; State of India’s Birds — Rock Bunting."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Jean-Paul Boerekamps"
+        },
+        "fr": {
+          "title": "Bruant fou",
+          "subtitle": "Emberiza cia",
+          "meta_description": "Bruant fou : identification, habitat, alimentation, reproduction, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "Le Bruant fou, Emberiza cia, est un petit passereau de la famille des Emberizidae. Son nom anglais est Rock Bunting ; les références arabes emploient درسة الصخور ou درسة الصخر. Ces appellations désignent la même espèce, à distinguer des autres bruants fréquentant les terrains rocheux. Le guide libanais de 2026 donne environ 16 cm de longueur, 26 cm d’envergure et 30 g. Son bec court et conique et sa queue relativement longue contribuent à sa silhouette, sans que la taille suffise à l’identifier."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Le mâle adulte associe une tête gris pâle rayée de noir, un dos brun strié et un dessous chamois à châtain. Le dessin facial compte autant que la couleur du corps : observez la disposition des lignes sombres au-dessus de l’œil, à travers celui-ci et sous la joue. Femelles et juvéniles sont moins contrastés, avec une tête plus brune et un dessous plus clair. Le blanc des rectrices externes est utile lorsqu’il est visible. Des lignes faciales atténuées ne prouvent pas, à elles seules, qu’il s’agit d’une autre espèce."
+              ]
+            },
+            {
+              "heading": "Habitat et alimentation",
+              "paragraphs": [
+                "Les pentes rocheuses à végétation basse dispersée offrent abris, perchoirs et accès au sol. Fourrés montagnards ouverts, pelouses pierreuses, lisières de boisements clairsemés et certains paysages en terrasses peuvent convenir. L’alimentation change avec la saison : insectes et petits invertébrés sont importants pendant la reproduction, notamment pour les poussins, tandis que graminées et autres plantes fournissent de nombreuses graines hors de cette période. L’oiseau les prend au sol ou directement sur les plantes. Conserver une végétation spontanée autour des rochers maintient des zones alimentaires qu’un nettoyage uniforme ferait disparaître."
+              ]
+            },
+            {
+              "heading": "Répartition et présence dans les pays arabes",
+              "paragraphs": [
+                "Son aire s’étend du nord-ouest de l’Afrique au sud de l’Europe, puis à certaines régions d’Asie occidentale et centrale jusqu’à l’Himalaya. Des populations résidentes vivent au Maghreb, notamment au Maroc, en Algérie et en Tunisie. Au Liban, le guide de 2026 décrit un nicheur sédentaire commun des montagnes rocheuses, surtout près des lisières de cédraies, nichant principalement entre 1 000 et 2 400 m et descendant en hiver. Au Koweït, le tableau est très différent : le référentiel local le classe comme visiteur accidentel extrêmement rare et non nicheur. Une présence montagnarde résidente ne signifie donc pas un hivernage régulier dans tous les pays arabes."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "La femelle construit au sol une coupe abritée par la végétation ou un rocher. Les références spécialisées indiquent généralement 3–5 œufs et une incubation féminine d’environ 13–15 jours. Les deux parents nourrissent les jeunes. Ceux-ci peuvent quitter le nid vers 9–13 jours, tout en ayant encore besoin de soins : cette sortie ne signifie ni indépendance immédiate ni vol soutenu déjà maîtrisé. Le guide libanais situe la reproduction locale de fin avril à fin juillet. Les dates varient ailleurs et ne doivent pas être généralisées à l’ensemble de l’aire."
+              ]
+            },
+            {
+              "heading": "Novembre et observation responsable",
+              "paragraphs": [
+                "En novembre, les versants inférieurs peuvent devenir plus intéressants à prospecter que les sites estivaux d’altitude. Hors reproduction, de petits groupes cherchent leur nourriture ensemble ; leur présence, comme celle d’un individu isolé en fin d’automne, ne prouve pas une migration lointaine. Observez depuis un chemin ou un point stable et notez végétation au sol, altitude et effectif. Ne poussez pas les oiseaux sur un terrain découvert pour obtenir une photographie en vol. Une pause silencieuse leur permet souvent de reprendre leur activité et laisse examiner tête, bec et queue sans les poursuivre."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "L’espèce est mondialement classée en Préoccupation mineure, LC. Cela ne justifie pas de négliger les dégradations locales ou les tirs indiscriminés. Le guide libanais cite perte et dégradation des habitats, chasse illégale et réchauffement. Préserver un paysage montagnard varié suppose de garder plantes porteuses de graines, arbustes dispersés et couvert de nidification tranquille. Les observations datées, localisées et accompagnées du comportement sont particulièrement utiles là où le Bruant fou est rare : elles distinguent une visite exceptionnelle documentée d’une présence saisonnière régulière simplement supposée."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 429; Oiseaux.net — Bruant fou; BTO — BirdFacts: Rock Bunting; KuwaitBirds — Rock Bunting; Avibase — Emberiza cia; Museo Nacional de Ciencias Naturales / CSIC — Enciclopedia Virtual de los Vertebrados Españoles: Emberiza cia; State of India’s Birds — Rock Bunting."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographie : Jean-Paul Boerekamps"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "القرقف-الأزرق-الأوراسي",
+        "en": "eurasian-blue-tit",
+        "fr": "mesange-bleue"
+      },
+      "published": "2026-11-08",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "eurasian-blue-tit"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "en": {
+          "title": "Eurasian Blue Tit",
+          "subtitle": "Cyanistes caeruleus",
+          "meta_description": "Eurasian Blue Tit: identification, habitats, food, breeding, seasonal occurrence in Arab countries and conservation.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "The Eurasian Blue Tit, Cyanistes caeruleus, is a small member of the tit family Paridae and the order Passeriformes. Its French name is Mésange bleue; Arabic references use “blue tit”, with “Eurasian” distinguishing it from its African relative. It is about 11–12 cm long, with a wingspan around 18–19 cm and a mass near 11 g. Older books place it in Parus, so Parus caeruleus denotes the same species rather than another bird."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Adults combine a blue crown, wings and tail with a greenish back, yellow underparts and white cheeks crossed by a dark eye stripe. A narrow dark mark may run down the belly, unlike the conspicuous broad stripe of the larger Great Tit. The sexes look similar, although males tend to be brighter; colour alone is an unreliable field test of sex. Juveniles have duller plumage, a greener crown and yellowish cheeks. In shade, check the whole facial pattern rather than judging a single blue feather."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Broadleaved woodland, wooded valleys, orchards, parks and tree-filled gardens provide feeding places and cavities. The bird searches leaves, buds and fine branches for small invertebrates, frequently hanging upside down. Caterpillars are especially important for growing chicks; seeds and other plant foods supplement the adult diet outside the breeding season. Autumn and winter birds may travel with other tits in mixed feeding parties. A short burst of movement through several trees is therefore not necessarily directed migration, and a feeder visit is only one part of its feeding activity."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its main range covers much of Europe and western Asia, but abundance in a European garden is no guide to its status in an Arab country. The 2026 Lebanon guide describes a rare resident breeder, increasing over the preceding decade, a scarce winter visitor and an even scarcer passage migrant. Woodland and river valleys are relevant Lebanese habitats. In Morocco, the familiar breeding blue tit is the African Blue Tit, Cyanistes teneriffae. The Moroccan checklist treats Eurasian Blue Tit as a doubtful accidental visitor, not a widespread resident; old broadly defined “blue tit” records require taxonomic care."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "A tree hole or suitable nest box holds the nest. BTO gives a typical clutch of 8–10 eggs, female incubation of 13–14 days and fledging after 18–21 days from hatching. These reference values are not measurements of every Lebanese population. Both parents bring food to the young, whose dependence continues beyond their first flight. Nesting is generally concentrated in spring and linked to food availability; the laying date varies with locality and conditions. A bird examining a cavity is not sufficient evidence that eggs or chicks are present."
+              ]
+            },
+            {
+              "heading": "November and responsible observation",
+              "paragraphs": [
+                "November offers a chance to follow feeding parties through woodland without assuming that every individual has arrived from abroad. In Lebanon, resident birds and seasonal visitors must be distinguished at the population level; one brief sighting cannot establish origin. Record the date, habitat, number and diagnostic plumage, and photograph from an established path if possible. Do not tap nest boxes, open cavities or repeatedly play calls. Leave birds uninterrupted access to vegetation, especially during cold or wet weather when feeding time matters."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "The global IUCN category reported in AviList 2026 is Least Concern. This does not imply equal security everywhere or permission to capture the birds. The Lebanon guide identifies wildfire and climate change among pressures. Retaining old cavity-bearing trees, varied native vegetation and insect-rich foliage helps conserve both nesting and feeding opportunities. Avoid unnecessary insecticide use. Where feeders already operate, careful hygiene matters because congregation can spread disease; feeders are not a substitute for an intact, diverse habitat."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026; British Trust for Ornithology — BirdFacts: Blue Tit; The Wildlife Trusts — Blue Tit; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, second edition, 2026, p. 273; Bergier et al. — Liste des oiseaux du Maroc, 2017; Avibase — Eurasian Blue Tit."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева"
+        },
+        "ar": {
+          "title": "القرقف الأزرق الأوراسي",
+          "subtitle": "Cyanistes caeruleus",
+          "meta_description": "القرقف الأزرق الأوراسي: دليل التعرف والموائل والغذاء والتكاثر والحضور الموسمي في البلدان العربية وحماية النوع.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "القرقف الأزرق الأوراسي، واسمه العلمي Cyanistes caeruleus، طائر صغير من فصيلة القرقفيات Paridae ورتبة العصفوريات Passeriformes. يعرف بالإنجليزية باسم Eurasian Blue Tit وبالفرنسية باسم Mésange bleue. وتضيف تسمية «الأوراسي» تمييزًا مفيدًا عن قريبه الإفريقي، ولا تعني أن كل طائر أزرق في شمال إفريقيا ينتمي إليه. يبلغ طوله نحو 11–12 سم، وباع جناحيه قرابة 18–19 سم، ووزنه حوالي 11 غرامًا. وقد يظهر في الكتب القديمة باسم Parus caeruleus، وهو الاسم السابق للنوع نفسه وليس طائرًا آخر."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "يجمع البالغ بين تاج وأجنحة وذيل زرقاء، وظهر مائل إلى الأخضر، وأسفل أصفر، وخدين أبيضين يمر عبرهما خط داكن عند العين. وقد يمتد خط ضيق داكن على البطن، بخلاف الشريط العريض الواضح لدى القرقف الكبير الأكبر حجمًا. يتشابه الجنسان، وإن كان الذكر أميل إلى إشراق الألوان؛ لذلك لا يكفي اللون وحده لتحديد الجنس في الميدان. أما اليافع فأبهت، وتاجه أخضر نسبيًا وخداه مصفران. وفي الظل ينبغي جمع رسم الوجه وحجم الجسم وشكل التاج بدل الاعتماد على لمعة زرقاء واحدة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "توفر الغابات عريضة الأوراق والأودية المشجرة والبساتين والمتنزهات والحدائق الغنية بالأشجار مواضع للغذاء والتجاويف. يفتش بين الأوراق والبراعم والأغصان الدقيقة عن اللافقاريات الصغيرة، ويتعلق كثيرًا مقلوبًا للوصول إلى غذائه. وتكتسب اليساريع أهمية خاصة في إطعام الفراخ، بينما تكمل البذور ومواد نباتية أخرى غذاء البالغ خارج موسم التكاثر. وقد ينضم خريفًا وشتاءً إلى مجموعات تغذية مختلطة مع قراقف أخرى. ولا تدل حركة سريعة بين عدة أشجار بالضرورة على هجرة، كما أن زيارة المعلف ليست سوى جزء من نشاطه الغذائي."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يشمل نطاقه الأساسي معظم أوروبا وأجزاء من غرب آسيا، لكن شيوعه في حدائق أوروبية لا يحدد وضعه في بلد عربي. يصفه دليل لبنان لعام 2026 بأنه مقيم متكاثر نادر، ازداد خلال العقد السابق، وزائر شتوي قليل العدد ومهاجر عبور أشد ندرة، في الغابات والأودية النهرية. أما القرقف الأزرق المألوف المتكاثر في المغرب فهو قريبه الإفريقي Cyanistes teneriffae. وتضع القائمة المغربية النوع الأوراسي في مرتبة زائر عرضي مشكوك في وضعه، لا طائر مقيم واسع الانتشار. لذلك تستلزم السجلات القديمة التي تجمع القراقف الزرقاء تحت اسم واحد قراءة تصنيفية دقيقة."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يبنى العش داخل تجويف شجرة أو صندوق تعشيش مناسب. وتورد بيانات BTO حضنة معتادة من 8–10 بيضات، تحضنها الأنثى 13–14 يومًا، ثم تغادر الفراخ العش بالطيران بعد 18–21 يومًا من الفقس. هذه قيم مرجعية وليست قياسات لكل الجماعات اللبنانية. يجلب الأبوان الطعام للصغار، وتستمر حاجتها إلى الرعاية بعد أول طيران. يتركز التعشيش عادة في الربيع ويرتبط بتوفر الغذاء، لكن موعد وضع البيض يختلف بحسب الموقع والظروف. ولا يثبت تفقد طائر لتجويف وجود بيض أو فراخ داخله."
+              ]
+            },
+            {
+              "heading": "نوفمبر والمراقبة المسؤولة",
+              "paragraphs": [
+                "يتيح نوفمبر متابعة مجموعات التغذية بين الأشجار من دون افتراض أن كل فرد وصل من الخارج. ففي لبنان يوجد مكون مقيم وآخر موسمي، ولا تكشف مشاهدة عابرة وحدها أصل الطائر أو طريقه. يسجل الراصد التاريخ والموئل والعدد والعلامات المميزة، ويلتقط الصورة من مسار قائم إن أمكن. لا يطرق صناديق التعشيش ولا يفتح التجاويف ولا يكرر تشغيل النداءات لجذب الطيور. ومن المهم إبقاء وصولها إلى الغطاء النباتي متاحًا، خاصة في الجو البارد أو الماطر حين يصبح وقت البحث عن الطعام أكثر قيمة."
+              ]
+            },
+            {
+              "heading": "الحماية",
+              "paragraphs": [
+                "يظهر النوع ضمن فئة «أقل إثارة للقلق» LC عالميًا في بيانات الاتحاد الدولي لحفظ الطبيعة التي تنقلها AviList 2026. ولا يعني ذلك سلامة كل جماعة محلية أو السماح بإمساكه. ويذكر دليل لبنان حرائق الغابات وتغير المناخ ضمن الضغوط. تساعد الأشجار القديمة ذات التجاويف والنباتات المحلية المتنوعة والأوراق الغنية بالحشرات على حفظ الغذاء ومواقع الأعشاش. وينبغي تجنب المبيدات غير الضرورية، والعناية بنظافة المعالف القائمة لأن تجمع الطيور قد يسهل انتقال الأمراض؛ فالمعلف لا يعوض موئلًا متنوعًا وسليمًا."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026; British Trust for Ornithology — BirdFacts: Blue Tit; The Wildlife Trusts — Blue Tit; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, second edition, 2026, p. 273; Bergier et al. — Liste des oiseaux du Maroc, 2017; Avibase — Eurasian Blue Tit."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева"
+        },
+        "fr": {
+          "title": "Mésange bleue",
+          "subtitle": "Cyanistes caeruleus",
+          "meta_description": "Mésange bleue : identification, milieux, alimentation, reproduction, présence saisonnière dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "La Mésange bleue, Cyanistes caeruleus, appartient aux Paridés et à l’ordre des Passériformes. Son nom anglais est Eurasian Blue Tit ; en arabe, la précision « eurasiatique » permet de la distinguer de sa parente africaine. Elle mesure environ 11–12 cm, pour une envergure de 18–19 cm et un poids proche de 11 g. Les ouvrages anciens emploient parfois Parus caeruleus : ce nom désigne la même espèce, et non un autre oiseau."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "L’adulte associe calotte, ailes et queue bleues, dos verdâtre, dessous jaune et joues blanches traversées par un trait sombre à hauteur de l’œil. Une étroite marque sombre peut descendre sur le ventre, contrairement à la large bande de la Mésange charbonnière, plus grande. Les sexes se ressemblent, le mâle étant généralement plus vif ; la couleur seule ne permet pas un sexage fiable. Les jeunes sont plus ternes, avec une calotte verdâtre et des joues jaunâtres. À l’ombre, examiner tout le dessin facial plutôt qu’une plume bleue isolée."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Boisements feuillus, vallées arborées, vergers, parcs et jardins riches en arbres offrent nourriture et cavités. L’oiseau explore feuilles, bourgeons et rameaux fins à la recherche de petits invertébrés, souvent suspendu la tête en bas. Les chenilles comptent particulièrement pour les poussins ; graines et autres aliments végétaux complètent le régime hors reproduction. En automne et en hiver, il peut rejoindre des rondes mixtes avec d’autres mésanges. Un déplacement rapide entre plusieurs arbres n’est donc pas nécessairement une migration, et une visite à une mangeoire ne représente qu’une partie de son activité alimentaire."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "L’aire principale couvre une grande partie de l’Europe et de l’Asie occidentale, mais son abondance européenne ne préjuge pas du statut dans un pays arabe. Le guide du Liban de 2026 décrit une nicheuse résidente rare, en augmentation durant la décennie précédente, une hivernante peu commune et une migratrice de passage encore plus rare, dans les boisements et vallées fluviales. Au Maroc, la mésange bleue nicheuse familière est la Mésange nord-africaine, Cyanistes teneriffae. La liste marocaine considère l’espèce eurasiatique comme accidentelle avec doute, non comme résidente répandue. Les anciennes mentions regroupant ces oiseaux demandent donc une lecture taxonomique attentive."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le nid occupe un trou d’arbre ou un nichoir adapté. Le BTO indique habituellement 8–10 œufs, une incubation de 13–14 jours par la femelle et un envol à 18–21 jours après l’éclosion. Ces valeurs ne constituent pas des mesures de toutes les populations libanaises. Les deux parents nourrissent les jeunes, qui restent dépendants après leur premier vol. La reproduction se concentre généralement au printemps et suit les ressources alimentaires ; la ponte varie selon le lieu et les conditions. L’examen d’une cavité par un oiseau ne prouve pas la présence d’œufs ou de poussins."
+              ]
+            },
+            {
+              "heading": "Novembre et observation responsable",
+              "paragraphs": [
+                "Novembre permet de suivre les rondes alimentaires sans supposer que chaque individu vient de l’étranger. Au Liban, résidents et visiteurs saisonniers coexistent à l’échelle des populations ; une observation brève ne révèle pas l’origine d’un oiseau. Noter date, milieu, effectif et plumage, et photographier depuis un sentier existant. Ne pas frapper les nichoirs, ouvrir les cavités ou multiplier les repasses sonores. Laisser les oiseaux accéder librement à la végétation, surtout par temps froid ou pluvieux, lorsque le temps consacré à l’alimentation devient précieux."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "La catégorie mondiale UICN indiquée dans AviList 2026 est Préoccupation mineure. Elle ne garantit ni la sécurité de chaque population ni le droit de capturer les oiseaux. Le guide libanais mentionne notamment incendies et changement climatique. Conserver les vieux arbres à cavités, une végétation indigène variée et un feuillage riche en insectes protège nourriture et sites de nidification. Éviter les insecticides inutiles. Là où des mangeoires existent, leur hygiène reste importante : les rassemblements peuvent transmettre des maladies et ne remplacent pas un habitat diversifié."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026; British Trust for Ornithology — BirdFacts: Blue Tit; The Wildlife Trusts — Blue Tit; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, second edition, 2026, p. 273; Bergier et al. — Liste des oiseaux du Maroc, 2017; Avibase — Eurasian Blue Tit."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographie : Лариса Артемьева"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الصعو-أحمر-العرف",
+        "en": "common-firecrest",
+        "fr": "roitelet-triple-bandeau"
+      },
+      "published": "2026-11-08",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "common-firecrest"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "en": {
+          "title": "Common Firecrest",
+          "subtitle": "Regulus ignicapilla",
+          "meta_description": "Common Firecrest: identification, habitats, food, breeding, seasonal occurrence in Arab countries and conservation.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "The Common Firecrest, Regulus ignicapilla, is a tiny passerine in the kinglet family Regulidae. French calls it Roitelet triple-bandeau; Arabic names include “red-crested kinglet” and, in Moroccan references, “three-striped kinglet”. At about 9 cm long, with a wingspan around 14–15 cm and a mass near 5–6 g, it is much smaller than a sparrow. Its scientific name appears as Regulus ignicapillus in some guides, but current AviList uses ignicapilla. The similar Goldcrest is a separate species."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "The most useful feature is the face: a strong white eyebrow above a dark eye stripe. This contrasts with the relatively plain-faced Goldcrest. Olive upperparts, pale underparts, two white wing bars and bronze-toned shoulder patches complete the adult pattern. The male’s crown has an orange centre, while the female’s is yellow, both framed by dark feathers. A crown colour glimpsed through foliage is less dependable than a clear facial view, particularly with changing light. Avoid identifying every tiny yellow-crested bird as Firecrest without checking the eyebrow."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "It works through conifers, mixed woods, shrubs and sheltered leafy cover, taking very small invertebrates. Spiders and insect eggs are among its prey. Rather than relying on large seeds, it searches vegetation with a fine bill, moving quickly between twigs. In autumn and winter it may accompany other small woodland birds. This makes a moving feeding flock worth watching patiently from outside the vegetation. Shelter and prey-bearing foliage matter together: an apparently untidy wooded margin can provide useful feeding space that a closely cleared edge lacks."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "The species breeds across much of Europe and extends into northwestern Africa. The form balearicus occurs in the Balearic Islands and North Africa from Morocco to northern Tunisia, including Algeria. Morocco’s national checklist identifies both resident breeding and winter visitors, so its November presence there need not signify a recent arrival. Lebanon presents a very different picture: the 2026 national guide classifies it as a vagrant, citing historical records near Bcharre and above Yammouneh. These scarce Lebanese records do not establish a regular winter population, nor should Lebanese rarity be projected onto Maghreb breeding areas."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "A finely built cup nest is placed among branches or climbing vegetation, using materials such as moss, lichens and feathers. BTO reports a typical clutch of 7–10 eggs, female incubation of 14–16 days and fledging at about 19–20 days after hatching; two broods are typical in its reference account. These are developmental guides, not a fixed timetable for every North African forest. Young birds initially depend on adults for food. Inspecting or separating vegetation to reveal a nest can remove shelter and expose a small brood to disturbance."
+              ]
+            },
+            {
+              "heading": "November and responsible observation",
+              "paragraphs": [
+                "November observation is best organized around suitable habitat and the country’s actual status. In Moroccan woodland, quietly following a mixed flock may reveal a resident or wintering Firecrest. In Lebanon, any suspected bird deserves careful documentation because it is exceptional: record the white eyebrow, dark eye stripe, location and date, ideally with photographs that do not require pursuit. A November record from the past is not a promise of annual occurrence. Stay on paths, avoid repeated call playback and never force birds into the open for an identification photograph."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "AviList 2026 records the global IUCN category as Least Concern. Local scarcity and habitat quality still matter, and this category is not a hunting authorization. Conserving connected woodland, varied shrubs and insect-rich foliage supports the bird’s feeding requirements. The Lebanese guide mentions illegal hunting and climate change among threats. Avoid unnecessary pesticide use and repeated disturbance, particularly during cold weather. Conservation is served better by a reliably documented sighting and an undisturbed bird than by a closer image obtained at the cost of its feeding time."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026; British Trust for Ornithology — BirdFacts: Firecrest; The Wildlife Trusts — Firecrest; SongBird Survival — Firecrest; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, second edition, 2026, p. 335; Bergier et al. — Liste des oiseaux du Maroc, 2017; Avibase — Common Firecrest."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Paulo Caseirito"
+        },
+        "ar": {
+          "title": "الصعو أحمر العرف",
+          "subtitle": "Regulus ignicapilla",
+          "meta_description": "الصعو أحمر العرف: دليل التعرف والموائل والغذاء والتكاثر والحضور الموسمي في البلدان العربية وحماية النوع.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "الصعو أحمر العرف، Regulus ignicapilla، عصفوري بالغ الصغر من فصيلة الصعويات Regulidae. يعرف بالإنجليزية باسم Common Firecrest، وبالفرنسية باسم Roitelet triple-bandeau، وتستعمل مراجع مغربية اسم «صعوة ثلاثية الأشرطة». يبلغ طوله نحو 9 سم، وباع جناحيه حوالي 14–15 سم، ووزنه قرابة 5–6 غرامات، أي إنه أصغر كثيرًا من عصفور الدوري. وقد يرد اسمه العلمي بصيغة Regulus ignicapillus في بعض الأدلة، بينما تعتمد AviList الصيغة ignicapilla. أما الصعو أصفر العرف، المشابه له، فهو نوع مستقل وليس ريشًا موسميًا للطائر نفسه."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "أهم علامة للتعرف هي الوجه: حاجب أبيض طويل وواضح فوق خط عين داكن، بخلاف الوجه الأبسط نسبيًا عند الصعو أصفر العرف. وتكمل الصورة أجزاء علوية زيتونية وأسفل فاتح وشريطان أبيضان على الجناح وبقع كتفية برونزية اللون. يتوسط تاج الذكر لون برتقالي، بينما يكون تاج الأنثى أصفر، ويحد اللون ريش داكن. ولا تضاهي لمحة سريعة للتاج بين الأوراق وضوح رؤية الوجه، خاصة مع تغير الإضاءة وزاوية النظر. لذلك لا ينسب كل طائر صغير ذي تاج أصفر إلى هذا النوع قبل التحقق من الحاجب وخط العين."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يفتش بين الصنوبريات والأشجار المختلطة والشجيرات والغطاء الورقي المحمي عن لافقاريات دقيقة، منها العناكب وبيض الحشرات. ويستعمل منقاره الرفيع لفحص النباتات متنقلًا بسرعة بين الأغصان، بدل الاعتماد على البذور الكبيرة. وقد يرافق خريفًا وشتاءً طيورًا صغيرة أخرى في مجموعات الغابة المتحركة. ومن المفيد مراقبة هذه المجموعة بهدوء من خارج الغطاء النباتي بدل الدخول وراءها. فالمأوى والأوراق الحاملة للفرائس يكمل أحدهما الآخر؛ وقد توفر حافة غابة تبدو غير مرتبة مساحة غذاء لا تمنحها حافة أزيلت شجيراتها ونظفت بالكامل."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يتكاثر في مناطق واسعة من أوروبا ويمتد إلى شمال غرب إفريقيا. وتوجد السلالة balearicus في جزر البليار وشمال إفريقيا من المغرب إلى شمال تونس، بما يشمل الجزائر. وتعده قائمة طيور المغرب متكاثرًا مقيمًا وزائرًا شتويًا أيضًا؛ لذلك لا تعني رؤيته هناك في نوفمبر وصوله حديثًا من الخارج. أما لبنان فمختلف: يصنفه الدليل الوطني لعام 2026 زائرًا شاردًا، ويورد سجلات تاريخية قرب بشري وفوق اليمونة. هذه المشاهدات القليلة لا تثبت وجود جماعة شتوية منتظمة في لبنان، كما لا يجوز إسقاط ندرته اللبنانية على مناطق تكاثره المغاربية."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يقام عش كأسي دقيق بين الأغصان أو النباتات المتسلقة، باستعمال مواد منها الحزازيات والأشنات والريش. وتورد BTO حضنة معتادة من 7–10 بيضات، وحضانة أنثوية تستغرق 14–16 يومًا، ومغادرة للعش بالطيران بعد نحو 19–20 يومًا من الفقس، مع حضنتين عادة في حسابها المرجعي. هذه أزمنة تطور إرشادية وليست تقويمًا ثابتًا لكل غابة في شمال إفريقيا. تعتمد الصغار في البداية على البالغات لتغذيتها. وقد يزيل تفريق الأوراق أو كشف العش غطاءه الواقي، ويعرض الحضنة الصغيرة للإزعاج بدل أن يقدم للراصد فائدة ضرورية."
+              ]
+            },
+            {
+              "heading": "نوفمبر والمراقبة المسؤولة",
+              "paragraphs": [
+                "تبدأ مراقبته في نوفمبر باختيار الموئل المناسب وفهم وضعه في البلد. في غابات المغرب قد تكشف متابعة سرب مختلط بهدوء فردًا مقيمًا أو مشتيًا. أما في لبنان فتحتاج المشاهدة المشتبه بها إلى توثيق دقيق لندرتها: يسجل الحاجب الأبيض وخط العين الداكن والموقع والتاريخ، ويفضل تصويرها من دون مطاردة. ولا يشكل سجل قديم في نوفمبر وعدًا بحضور سنوي. ينبغي البقاء على المسارات وتجنب تكرار تشغيل النداءات وعدم إجبار الطائر على الخروج من الغطاء للحصول على صورة أو تأكيد التعرف."
+              ]
+            },
+            {
+              "heading": "الحماية",
+              "paragraphs": [
+                "تسجل AviList 2026 فئة الاتحاد الدولي لحفظ الطبيعة العالمية «أقل إثارة للقلق» LC. ومع ذلك تظل الندرة المحلية وجودة الموئل مهمتين، ولا يمثل التصنيف ترخيصًا بالصيد. يساعد اتصال الغابات وتنوع الشجيرات وبقاء الأوراق الغنية بالحشرات على تلبية احتياجاته الغذائية. ويذكر دليل لبنان الصيد غير القانوني وتغير المناخ ضمن التهديدات. لذلك يفيد تجنب المبيدات غير الضرورية والإزعاج المتكرر، خاصة في الطقس البارد. وتخدم الحماية مشاهدة موثقة وطائر يواصل التغذي أكثر مما تخدمها صورة أقرب تحرم الطائر من وقته وغذائه."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026; British Trust for Ornithology — BirdFacts: Firecrest; The Wildlife Trusts — Firecrest; SongBird Survival — Firecrest; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, second edition, 2026, p. 335; Bergier et al. — Liste des oiseaux du Maroc, 2017; Avibase — Common Firecrest."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Paulo Caseirito"
+        },
+        "fr": {
+          "title": "Roitelet triple-bandeau",
+          "subtitle": "Regulus ignicapilla",
+          "meta_description": "Roitelet triple-bandeau : identification, milieux, alimentation, reproduction, présence saisonnière dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "Le Roitelet triple-bandeau, Regulus ignicapilla, est un minuscule passereau de la famille des Régulidés. Son nom anglais est Common Firecrest ; les noms arabes évoquent une huppe rouge ou, dans les références marocaines, trois bandeaux. Il mesure environ 9 cm, pour une envergure de 14–15 cm et un poids de 5–6 g, bien inférieur à celui d’un moineau. Certains guides écrivent Regulus ignicapillus ; AviList retient actuellement ignicapilla. Le Roitelet huppé, malgré sa ressemblance, constitue une espèce distincte."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Le meilleur critère se trouve sur la face : un sourcil blanc net surmonte un trait oculaire sombre, contrairement à la face relativement simple du Roitelet huppé. Dessus olive, dessous clair, deux barres alaires blanches et plages bronzées aux épaules complètent le plumage adulte. La calotte du mâle possède un centre orange, celle de la femelle est jaune, toutes deux bordées de sombre. Une couleur entrevue dans le feuillage est moins fiable qu’une bonne vue du visage, surtout lorsque la lumière change. Vérifier le sourcil avant de nommer tout petit oiseau à calotte jaune."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il explore conifères, boisements mixtes, arbustes et feuillages abrités pour trouver de minuscules invertébrés, notamment araignées et œufs d’insectes. Son bec fin inspecte la végétation au fil de déplacements rapides entre les rameaux, plutôt que de traiter de grosses graines. En automne et en hiver, il peut accompagner d’autres petits oiseaux forestiers. Il est donc utile d’observer patiemment une ronde depuis l’extérieur du couvert. Abri et feuillage porteur de proies sont complémentaires : une lisière apparemment désordonnée peut offrir une nourriture absente d’une bordure entièrement dégagée."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "L’espèce niche dans une grande partie de l’Europe et atteint le nord-ouest de l’Afrique. La forme balearicus occupe les Baléares et l’Afrique du Nord, du Maroc au nord de la Tunisie, Algérie comprise. La liste marocaine indique à la fois reproduction sédentaire et hivernage : une présence en novembre n’implique donc pas une arrivée récente. Le Liban offre un contraste marqué. Le guide national de 2026 le classe comme accidentel, avec des mentions historiques près de Bcharré et au-dessus de Yammouné. Elles ne prouvent pas un hivernage régulier ; inversement, la rareté libanaise ne décrit pas les populations nicheuses maghrébines."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le nid en coupe, soigneusement construit, est placé parmi les branches ou dans des plantes grimpantes, avec mousses, lichens et plumes. Le BTO indique généralement 7–10 œufs, couvés par la femelle pendant 14–16 jours, puis un envol vers 19–20 jours après l’éclosion ; deux nichées sont habituelles dans ce compte rendu. Ces durées sont indicatives et ne constituent pas un calendrier uniforme pour les forêts nord-africaines. Les jeunes dépendent d’abord des adultes pour se nourrir. Écarter la végétation pour montrer un nid peut supprimer son abri et déranger la nichée."
+              ]
+            },
+            {
+              "heading": "Novembre et observation responsable",
+              "paragraphs": [
+                "En novembre, choisir un milieu favorable et tenir compte du statut national. Dans un bois marocain, suivre calmement une ronde peut révéler un résident ou un hivernant. Au Liban, une identification présumée mérite une documentation attentive puisqu’elle est exceptionnelle : noter sourcil blanc, trait oculaire, lieu et date, avec des photographies prises sans poursuite. Une ancienne mention de novembre ne promet pas une présence annuelle. Rester sur les chemins, éviter les repasses répétées et ne jamais faire sortir de force un oiseau pour obtenir une photographie d’identification."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "AviList 2026 indique la catégorie mondiale UICN Préoccupation mineure. La rareté locale et la qualité des milieux restent importantes ; ce classement n’autorise pas la chasse. Préserver des boisements connectés, des arbustes variés et un feuillage riche en insectes soutient son alimentation. Le guide libanais mentionne chasse illégale et changement climatique. Éviter pesticides inutiles et dérangements répétés, surtout par temps froid. Une observation bien documentée, laissant l’oiseau se nourrir, sert mieux la conservation qu’une image rapprochée obtenue au détriment de son temps d’alimentation."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026; British Trust for Ornithology — BirdFacts: Firecrest; The Wildlife Trusts — Firecrest; SongBird Survival — Firecrest; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, second edition, 2026, p. 335; Bergier et al. — Liste des oiseaux du Maroc, 2017; Avibase — Common Firecrest."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographie : Paulo Caseirito"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "القرقف-الأزرق-الإفريقي",
+        "en": "african-blue-tit",
+        "fr": "mesange-nord-africaine"
+      },
+      "published": "2026-11-08",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "african-blue-tit"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "en": {
+          "title": "African Blue Tit",
+          "subtitle": "Cyanistes teneriffae",
+          "meta_description": "African Blue Tit: identification, habitats, food, breeding, seasonal occurrence in Arab countries and conservation.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "The African Blue Tit, Cyanistes teneriffae, belongs to Paridae and Passeriformes. French uses Mésange nord-africaine; the mainland form is also called Mésange maghrébine, reflected in the Arabic name “Maghreb tit”. AviList 2026 includes the North African and Canary Island populations within this species, separate from Eurasian Blue Tit Cyanistes caeruleus. Some publications split these populations differently, so names must be read with their scientific context. The species measures about 11–12 cm and weighs roughly 10–13 g; these are approximate dimensions, not measurements unique to each subspecies."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "North African birds combine a dark blue crown and blue-toned upperparts with a white face, strong dark eye stripe and yellow underparts. The darker crown helps distinguish them from the familiar Eurasian species, but light and age can change appearances. Mainland ultramarinus has a pale wing bar: the absence of a wing bar in some Canary Island forms must not be presented as a universal identification feature. Young birds are duller and have yellower facial areas. Check the face, back and wing together, and retain locality information with any photograph."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "This is a bird of wooded habitats, not an inhabitant of open Sahara simply because it is African. Oak woods, including cork-oak woodland, and other forest types provide feeding surfaces and nesting cavities. Algerian studies have examined populations in oak forests and montane cedar stands. Birds search foliage and twigs for invertebrates and can hang beneath branches; plant foods may supplement the diet. Research in northeastern Algeria found caterpillars important in nestling food. Protecting the insects available on trees is therefore part of protecting the bird, not a separate conservation issue."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "AviList places ultramarinus from Morocco through Algeria to Tunisia, and also on Pantelleria, while cyrenaicae occurs in northeastern Libya. The Canary Islands support other named forms and are not Arab breeding localities. Morocco’s checklist identifies a resident breeder; Algerian field studies independently document breeding populations. These mainland birds should not be described as European winter migrants, nor should their distribution be assigned to Eurasian Blue Tit. The Libyan form has a separate, restricted geographic occurrence, not an uninterrupted range across every desert between Tunisia and Cyrenaica. Country and habitat remain essential parts of an accurate record."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "The nest occupies a cavity, including suitable nest boxes. Reproduction varies with woodland type and elevation: Algerian research found differences in laying dates and clutch sizes even between nearby study populations. Average clutches at some Algerian sites were around 6–7 eggs, with variation between sites and years. After incubation and hatching, chicks remain inside the cavity and depend on food brought by adults. They need a regular food supply at this stage, highlighting the importance of caterpillars collected from tree foliage. The cavity shelters the young until they are able to leave the nest."
+              ]
+            },
+            {
+              "heading": "November and responsible observation",
+              "paragraphs": [
+                "In November, interest lies in the daily life of resident woodland birds: where they find food, which trees they use and how they move through the canopy. Their presence is not itself evidence of autumn arrival. Observe from paths, record the locality and habitat, and avoid entering vegetation or repeatedly using recordings to draw birds closer. Viewing the face and wing together, in natural light and from a distance comfortable for the bird, helps reveal its markings. Do not open tree cavities for a better view or pursue a bird returning to cover to feed."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "AviList 2026 reports the global IUCN category as Least Concern for the species in its broad taxonomic sense. That assessment does not establish the condition of every isolated population. Conserving mature native woodland, cavity-bearing trees and connected feeding cover is valuable. Research on Algerian birds has investigated nest predation, parasites and pollution, showing why breeding outcomes must be studied locally. Avoid unnecessary insecticide use and disturbance around cavities. A global category also confers no permission to trap birds or remove eggs, and local protection requirements remain applicable."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026; Bergier et al. — Liste des oiseaux du Maroc, 2017; Oiseaux.net — Mésange nord-africaine; Chabi et al. — Breeding ecology of the North-African Blue Tit in two semi-evergreen oak forests in Algeria, 1995; Djenidi and Bouslama — Reproductive phenology and nestling diet of African Blue Tit, 2014; European Zoological Journal — Subtle differences in breeding performance between Great Tits and Afrocanarian Blue Tits in NE Algeria, 2020; Current Zoology — Sexual dichromatism, size dimorphism, and microscale anatomy of white wing stripe in blue tits, 2021."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: karim Attouche"
+        },
+        "ar": {
+          "title": "القرقف الأزرق الإفريقي",
+          "subtitle": "Cyanistes teneriffae",
+          "meta_description": "القرقف الأزرق الإفريقي: دليل التعرف والموائل والغذاء والتكاثر والحضور الموسمي في البلدان العربية وحماية النوع.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "القرقف الأزرق الإفريقي، Cyanistes teneriffae، من فصيلة القرقفيات Paridae ورتبة العصفوريات Passeriformes. يعرف بالإنجليزية باسم African Blue Tit، وبالفرنسية باسم Mésange nord-africaine، ويستعمل اسم Mésange maghrébine للشكل القاري، ويقابله في مراجع عربية اسم «القرقف المغاربي». تضم AviList 2026 جماعات شمال إفريقيا وجزر الكناري في هذا النوع، منفصلًا عن القرقف الأزرق الأوراسي Cyanistes caeruleus. وتقسم بعض المراجع هذه الجماعات بطريقة مختلفة، لذلك يقرأ الاسم مع سياقه العلمي. يبلغ طوله نحو 11–12 سم، ووزنه قرابة 10–13 غرامًا، وهي أبعاد تقريبية لا قياسات خاصة بكل سلالة."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "تجمع الطيور القارية بين تاج أزرق داكن وأجزاء علوية مزرقة ووجه أبيض وخط عين داكن واضح وأسفل أصفر. ويساعد التاج الأغمق في فصلها عن النوع الأوراسي المألوف، لكن العمر والإضاءة يغيران مظهر الألوان. وتحمل السلالة القارية ultramarinus شريطًا جناحيًا فاتحًا؛ فلا يجوز تقديم غياب هذا الشريط لدى بعض جماعات الكناري بوصفه علامة عامة لكل النوع. أما اليافع فأبهت ووجهه أكثر اصفرارًا. وتكون المقارنة أدق عندما تجمع الوجه والظهر والجناح، وتبقي معلومات المكان ملازمة للصورة بدل محاولة حسم السلالة من اللون وحده."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "هو طائر موائل مشجرة، وليس من سكان الصحراء المفتوحة لمجرد أن اسمه إفريقي. توفر غابات البلوط، ومنها البلوط الفليني، وأنماط غابية أخرى أسطحًا للبحث عن الغذاء وتجاويف للتعشيش. وقد درست بحوث جزائرية جماعات في غابات البلوط وأحراج الأرز الجبلية. يفتش بين الأوراق والأغصان عن اللافقاريات، ويمكن أن يتدلى تحتها، وتكمل مواد نباتية غذاءه. وبينت دراسة في شمال شرق الجزائر أهمية اليساريع في غذاء الفراخ. لذلك تعد حماية الحشرات المتاحة على الأشجار جزءًا من حماية الطائر نفسه، وليست قضية بيئية منفصلة عن احتياجاته."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "تضع AviList السلالة ultramarinus من المغرب مرورًا بالجزائر إلى تونس، وكذلك في جزيرة بانتيليريا، بينما توجد cyrenaicae في شمال شرق ليبيا. وتضم جزر الكناري سلالات أخرى وليست مواقع تكاثر عربية. تصنفه القائمة المغربية متكاثرًا مقيمًا، وتثبت الدراسات الميدانية الجزائرية جماعات متكاثرة بصورة مستقلة. ولا توصف هذه الطيور القارية بأنها مهاجرات شتوية أوروبية، ولا ينقل انتشارها إلى القرقف الأزرق الأوراسي. وللشكل الليبي نطاق منفصل ومحدود، وليس انتشارًا متصلًا عبر جميع الصحارى بين تونس وبرقة. ويظل تحديد البلد والموئل جزءًا أساسيًا من أي سجل دقيق."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يحتل العش تجويفًا، وقد يستعمل صندوق تعشيش مناسبًا. ويتغير التكاثر بحسب نوع الغابة والارتفاع؛ إذ رصدت البحوث الجزائرية فروقًا في موعد وضع البيض وحجم الحضنة حتى بين جماعات مدروسة متقاربة. وبلغت متوسطات الحضنات في بعض المواقع الجزائرية نحو 6–7 بيضات، مع تفاوت بين المواقع والسنوات. بعد الحضانة والفقس، تبقى الفراخ داخل التجويف وتعتمد على الطعام الذي تجلبه الطيور البالغة. وتحتاج في هذه المرحلة إلى إمداد منتظم بالغذاء، وتبرز أهمية اليساريع التي تلتقطها البالغات من أوراق الأشجار. ويوفر التجويف غطاءً للصغار حتى تصبح قادرة على مغادرة العش."
+              ]
+            },
+            {
+              "heading": "نوفمبر والمراقبة المسؤولة",
+              "paragraphs": [
+                "تتمثل أهمية نوفمبر في متابعة الحياة اليومية لطيور الغابات المقيمة: أين تجد غذاءها، وأي الأشجار تستعمل، وكيف تتحرك بين التيجان. ولا يشكل وجودها وحده دليلًا على وصول خريفي. يراقب الراصد من المسارات ويسجل الموقع والموئل، ويتجنب اقتحام النباتات أو تكرار التسجيلات الصوتية لجذب الطيور. ويساعد النظر إلى الوجه والجناح معًا، في إضاءة طبيعية ومن مسافة مريحة للطائر، على تمييز علاماته. ولا تفتح تجاويف الأشجار للحصول على رؤية أوضح، ولا تلاحق الطائر حين يتوارى ليعود إلى التغذي."
+              ]
+            },
+            {
+              "heading": "الحماية",
+              "paragraphs": [
+                "تنقل AviList 2026 تصنيف الاتحاد الدولي لحفظ الطبيعة العالمي «أقل إثارة للقلق» LC للنوع بمفهومه التصنيفي الواسع. ولا يحدد هذا التقييم حالة كل جماعة معزولة. تفيد حماية الغابات المحلية الناضجة والأشجار ذات التجاويف واتصال الغطاء الغذائي. وقد بحثت دراسات جزائرية افتراس الأعشاش والطفيليات والتلوث، بما يوضح أهمية فهم نجاح التكاثر محليًا. ينبغي تجنب المبيدات غير الضرورية والإزعاج حول التجاويف. كما أن التصنيف العالمي لا يمنح حق إمساك الطيور أو جمع بيضها؛ وتبقى متطلبات الحماية المحلية واجبة، بصرف النظر عن شيوع النوع في بعض المواقع."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026; Bergier et al. — Liste des oiseaux du Maroc, 2017; Oiseaux.net — Mésange nord-africaine; Chabi et al. — Breeding ecology of the North-African Blue Tit in two semi-evergreen oak forests in Algeria, 1995; Djenidi and Bouslama — Reproductive phenology and nestling diet of African Blue Tit, 2014; European Zoological Journal — Subtle differences in breeding performance between Great Tits and Afrocanarian Blue Tits in NE Algeria, 2020; Current Zoology — Sexual dichromatism, size dimorphism, and microscale anatomy of white wing stripe in blue tits, 2021."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: karim Attouche"
+        },
+        "fr": {
+          "title": "Mésange nord-africaine",
+          "subtitle": "Cyanistes teneriffae",
+          "meta_description": "Mésange nord-africaine : identification, milieux, alimentation, reproduction, présence saisonnière dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "La Mésange nord-africaine, Cyanistes teneriffae, appartient aux Paridés et aux Passériformes. Elle se nomme African Blue Tit en anglais ; la forme continentale est aussi appelée Mésange maghrébine, nom également présent en arabe. AviList 2026 réunit les populations nord-africaines et canariennes dans cette espèce, séparée de la Mésange bleue eurasiatique Cyanistes caeruleus. Certains ouvrages proposent d’autres découpages : il faut donc lire les noms dans leur contexte scientifique. L’espèce mesure environ 11–12 cm et pèse 10–13 g, valeurs indicatives qui ne caractérisent pas individuellement chaque sous-espèce."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Les oiseaux continentaux associent une calotte bleu sombre, un dessus bleuté, une face blanche barrée d’un trait oculaire foncé et un dessous jaune. La calotte plus sombre aide à les distinguer de l’espèce eurasiatique, mais lumière et âge modifient les couleurs. La forme ultramarinus possède une barre alaire claire : l’absence de cette barre chez certaines formes canariennes n’est pas un critère universel. Les jeunes sont plus ternes, avec une face plus jaune. Examiner ensemble visage, dos et aile, et conserver les informations de localité avec chaque photographie."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "C’est un oiseau des milieux arborés, non du Sahara ouvert sous prétexte qu’il est africain. Les chênaies, dont les bois de chênes-lièges, et d’autres forêts fournissent surfaces de recherche alimentaire et cavités. Des études algériennes concernent les chênaies et les cédraies montagnardes. L’oiseau inspecte feuilles et rameaux pour prendre des invertébrés, parfois suspendu sous les branches ; des aliments végétaux peuvent compléter ce régime. Une étude du nord-est algérien souligne l’importance des chenilles pour les poussins. Préserver les insectes des arbres participe ainsi directement à la conservation de l’oiseau."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "AviList situe ultramarinus du Maroc à la Tunisie, à travers l’Algérie, ainsi qu’à Pantelleria ; cyrenaicae occupe le nord-est libyen. Les Canaries abritent d’autres formes et ne constituent pas des sites de reproduction arabes. La liste marocaine décrit une nicheuse résidente ; les recherches algériennes confirment indépendamment la reproduction. Ces oiseaux continentaux ne sont pas des hivernants arrivant d’Europe, et leur aire ne doit pas être attribuée à la Mésange bleue eurasiatique. La forme libyenne possède une répartition séparée et restreinte, non une présence continue dans tous les déserts entre Tunisie et Cyrénaïque."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le nid occupe une cavité, éventuellement un nichoir adapté. La reproduction varie avec le type de forêt et l’altitude : les recherches algériennes montrent des différences de dates de ponte et de taille des pontes entre populations proches. Dans certains sites algériens, les pontes moyennes atteignaient environ 6–7 œufs, avec des variations entre sites et années. Après l’incubation et l’éclosion, les poussins restent dans la cavité et dépendent de la nourriture apportée par les adultes. Ils ont alors besoin d’un approvisionnement régulier, soulignant l’importance des chenilles prélevées dans le feuillage. La cavité abrite les jeunes jusqu’à leur départ du nid."
+              ]
+            },
+            {
+              "heading": "Novembre et observation responsable",
+              "paragraphs": [
+                "En novembre, l’intérêt réside dans la vie quotidienne de résidents forestiers : recherche alimentaire, arbres utilisés et déplacements dans les houppiers. Leur présence ne prouve pas une arrivée automnale. Observer depuis les chemins, noter localité et milieu, éviter de pénétrer dans la végétation ou de multiplier les enregistrements pour attirer les oiseaux. Examiner ensemble la face et l’aile, sous une lumière naturelle et à une distance confortable pour l’oiseau, aide à distinguer ses marques. Ne pas ouvrir les cavités pour mieux voir, ni poursuivre un oiseau qui regagne le couvert pour se nourrir."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "AviList 2026 rapporte la catégorie mondiale UICN Préoccupation mineure pour l’espèce au sens large. Elle ne décrit pas l’état de chaque population isolée. Préserver les forêts indigènes matures, les arbres à cavités et la continuité du couvert alimentaire est utile. Des recherches algériennes ont étudié prédation des nids, parasites et pollution, soulignant l’importance d’évaluer localement les résultats de reproduction. Éviter les insecticides inutiles et le dérangement près des cavités. La catégorie mondiale n’autorise ni capture ni collecte d’œufs ; les exigences locales de protection restent applicables."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — The Global Avian Checklist, v2026; Bergier et al. — Liste des oiseaux du Maroc, 2017; Oiseaux.net — Mésange nord-africaine; Chabi et al. — Breeding ecology of the North-African Blue Tit in two semi-evergreen oak forests in Algeria, 1995; Djenidi and Bouslama — Reproductive phenology and nestling diet of African Blue Tit, 2014; European Zoological Journal — Subtle differences in breeding performance between Great Tits and Afrocanarian Blue Tits in NE Algeria, 2020; Current Zoology — Sexual dichromatism, size dimorphism, and microscale anatomy of white wing stripe in blue tits, 2021."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographie : karim Attouche"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "عصفور-الشجر-الأوراسي",
+        "en": "eurasian-tree-sparrow",
+        "fr": "moineau-friquet"
+      },
+      "published": "2026-11-08",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "eurasian-tree-sparrow"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "عصفور الشجر الأوراسي",
+          "subtitle": "Passer montanus",
+          "meta_description": "عصفور الشجر الأوراسي: التعرف والموائل والتكاثر والحضور الموسمي في البلدان العربية وحماية النوع.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "عصفور الشجر الأوراسي، Eurasian Tree Sparrow بالإنجليزية وMoineau friquet بالفرنسية، هو Passer montanus من فصيلة الدوريات Passeridae ورتبة العصفوريات. يبلغ طوله نحو 14 سنتيمترًا ووزنه عادة نحو 20–24 غرامًا. لا يعني اسمه أنه طائر الغابات المغلقة وحدها؛ فالأشجار المجوفة والحقول والقرى قد تشكل معًا بيئته. وينبغي عدم الخلط بينه وبين عصفور الشجر الأمريكي، وهو نوع آخر لا ينتمي إلى الجنس نفسه، أو اعتبار كل دوري يقف على شجرة ممثلًا لهذا النوع."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "أوضح علاماته تاج كستنائي كامل وبقعة سوداء منفصلة في وسط كل خد أبيض، مع لطخة سوداء صغيرة على الحلق وطوق أبيض غير مكتمل. الظهر بني مخطط، وتظهر خطوط جناحية فاتحة. الذكر والأنثى متشابهان ظاهريًا، بخلاف الفرق الكبير بين جنسي الدوري المنزلي. اليافع أقل تباينًا، وقد تبدو بقعة الخد باهتة. أما ذكر الدوري الإسباني فله تاج كستنائي أيضًا، لكنه يفتقر إلى بقعة الخد المعزولة ويحمل تخطيطًا أسود أوضح على الصدر والجنبين."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يستفيد من أطراف الأراضي الزراعية والبساتين والأحراج المفتوحة، حيث تتجاور البذور والغطاء ومواقع التعشيش. يأكل بذور الأعشاب والحبوب، ويجمع حشرات ولافقاريات، ولا سيما لإطعام الفراخ. علاقته بالمدن ليست واحدة عبر نطاقه: يغلب ارتباطه بالريف في أجزاء واسعة من أوروبا، بينما يعيش قرب البيوت وفي المدن في شرق آسيا. وخارج التكاثر قد ينضم إلى أسراب مختلطة، فتساعد مراقبة أفراد السرب واحدًا واحدًا على كشفه بدل الاكتفاء بتسمية الجميع «عصافير»."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "ينتشر على نطاق واسع في أوراسيا، لكن حضوره العربي محدود ولا يشبه شيوع الدوري المنزلي. تصفه قائمة العراق المتخصصة زائرًا شتويًا نادرًا إلى الشمال والوسط. ويعده دليل لبنان لعام 2026 طائرًا شاردًا، مع سجل قديم غير مؤكد في وادي الليطاني، وسجل لطائرين في القاع في نوفمبر 2018. وتضعه القائمة العُمانية المنشورة ضمن الشوارد بسجل واحد. هذه أوضاع مختلفة عن الإقامة والتكاثر المنتظمين، ولا تسمح بتعميم وجوده الشتوي على الخليج أو المغرب العربي."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يبني العش داخل فجوة في شجرة أو مبنى، وقد يستخدم صندوق تعشيش مناسبًا، ويبطّنه بمواد نباتية وريش. تورد بيانات BTO حضنة معتادة من 5–6 بيضات وحضانة يشارك فيها الجنسان تستغرق 12–13 يومًا. تبقى الفراخ في العش نحو 15–18 يومًا قبل مغادرته. هذه مدد تقريبية للتطور وليست تقويمًا خاصًا بالبلدان العربية. ولا يثبت وقوف طائر عند فجوة حدوث التكاثر، كما لا تعني مغادرة الفراخ العش انتهاء اعتمادها على البالغين فورًا."
+              ]
+            },
+            {
+              "heading": "نوفمبر والمراقبة المسؤولة",
+              "paragraphs": [
+                "في نوفمبر تستحق مشاهدة محتملة في العراق أو المشرق توثيقًا هادئًا، لا افتراض أنها فرد عادي من سرب الدوري المنزلي. سجّل البلد والمكان والتاريخ والعدد، والتقط صورة جانبية تُظهر الخد وأخرى للرأس إن أمكن من الموضع نفسه. انتظر تبدل زاوية الطائر بدل ملاحقته. وقد يمنع الظل رؤية البقعة السوداء، لذلك يبقى التعرف المؤقت أفضل من الجزم اعتمادًا على اللون الكستنائي وحده. راقب مواقع التغذي دون تعطيل السرب أو دفعه إلى الطريق."
+              ]
+            },
+            {
+              "heading": "الحماية",
+              "paragraphs": [
+                "تصنيفه العالمي «أقل إثارة للقلق» LC، لكنه لا يلغي التراجع المحلي؛ فقد شهدت بريطانيا انخفاضًا تاريخيًا كبيرًا ما زالت آثاره واضحة. ترتبط حمايته بإبقاء بذور الشتاء والحشرات ومواقع الأعشاش ضمن المشهد الزراعي، وتقليل الضغط الناتج من المبيدات وإزالة الأشجار القديمة. وفي البلدان التي يرد فيها نادرًا، تكون قيمة السجل المصور الحي أكبر من جمع عينة أو اصطياد الطائر لإثبات هويته. تبقى القوانين المحلية واجبة الاحترام بصرف النظر عن التصنيف العالمي."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; British Trust for Ornithology — BirdFacts: Tree Sparrow; RSPB — Tree Sparrow; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 387; Salim et al. — An annotated checklist of the birds of Iraq, Sandgrouse 34, 2012; Oman Birds Records Committee — Official Oman Birdlist."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Chrissy McClarren and Andy Reago"
+        },
+        "en": {
+          "title": "Eurasian Tree Sparrow",
+          "subtitle": "Passer montanus",
+          "meta_description": "Eurasian Tree Sparrow: identification, habitat, breeding, seasonal occurrence in Arab countries and conservation.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "Eurasian Tree Sparrow, Passer montanus, is Moineau friquet in French and belongs to Passeridae within the order Passeriformes. It is approximately 14 cm long and usually weighs around 20–24 g. Its name does not confine it to closed forest: trees with cavities, fields and villages may together provide its requirements. It is unrelated at genus level to the American Tree Sparrow, and a sparrow perched in a tree is not necessarily this species."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Look for a fully chestnut crown and an isolated black spot on each white cheek, combined with a small black throat patch and an incomplete white collar. The brown back is streaked and the wings have pale bars. Males and females look alike, unlike the strongly different sexes of House Sparrow. Juveniles have a less contrasting face. Male Spanish Sparrows also have chestnut crowns, but lack the isolated cheek spot and show heavier black markings below."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Farmland edges, orchards and open woodland provide food, shelter and potential nest cavities. Adults eat seeds and grain and also collect insects and other invertebrates, particularly for their chicks. Its relationship with settlements varies geographically: a predominantly rural bird in much of Europe, it readily occupies towns in eastern Asia. Outside breeding, birds may join mixed flocks. Checking individuals rather than labelling an entire flock as ordinary sparrows is therefore a useful identification habit."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Although widespread across Eurasia, its Arab occurrence is limited. The specialist Iraqi checklist describes a rare winter visitor to northern and central Iraq. Lebanon’s 2026 guide treats it as a vagrant, with an uncertain old Litani Valley record and two birds recorded at Qaa in November 2018. The published Oman list classifies it as a vagrant with one record. These situations are not regular residence or breeding and cannot be extended to the Gulf or Maghreb generally."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "Nests occupy cavities in trees or buildings; suitable nest boxes may also be used. Plant material and feathers line the nest. BTO reports a usual clutch of 5–6 eggs, incubation by both sexes lasting 12–13 days, and young leaving after roughly 15–18 days. These are approximate development periods, not an Arab breeding calendar. A bird standing beside a hole does not establish nesting, and departure from the nest does not necessarily mean immediate independence from parental care."
+              ]
+            },
+            {
+              "heading": "November and responsible observation",
+              "paragraphs": [
+                "A possible November observation in Iraq or the Levant deserves careful documentation. Record country, site, date and numbers, seeking a side view of the cheek and a view of the crown without moving after the bird. Shade can conceal the cheek spot, so an uncertain identification is preferable to certainty based on a chestnut crown alone. Allow feeding flocks to continue undisturbed and avoid flushing them towards traffic or repeatedly interrupting access to shelter."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "Its global IUCN category is Least Concern, but local declines remain important: Britain experienced a severe historical decrease whose effects persist. Retaining winter seed, insects and nesting cavities in farmland helps meet different seasonal needs. Reducing pesticide pressure and keeping suitable old trees can protect these resources. Where this sparrow is rare, a photograph of a living bird is more valuable than capturing or killing one to establish identity. Local wildlife laws apply regardless of global category."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; British Trust for Ornithology — BirdFacts: Tree Sparrow; RSPB — Tree Sparrow; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 387; Salim et al. — An annotated checklist of the birds of Iraq, Sandgrouse 34, 2012; Oman Birds Records Committee — Official Oman Birdlist."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Chrissy McClarren and Andy Reago"
+        },
+        "fr": {
+          "title": "Moineau friquet",
+          "subtitle": "Passer montanus",
+          "meta_description": "Moineau friquet : identification, milieux, reproduction, présence saisonnière dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "Le Moineau friquet, Eurasian Tree Sparrow en anglais, est Passer montanus, de la famille des Passeridae et de l’ordre des Passeriformes. Il mesure environ 14 cm et pèse généralement autour de 20–24 g. Son nom anglais ne le limite pas aux forêts fermées : arbres creux, champs et villages peuvent réunir ses besoins. Il n’appartient pas au même genre que le Bruant hudsonien, appelé American Tree Sparrow, et tout moineau posé dans un arbre n’est pas un friquet."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Rechercher une calotte entièrement marron et une tache noire isolée sur chaque joue blanche, associées à une petite bavette noire et à un collier blanc incomplet. Le dos brun est strié et les ailes portent des barres claires. Les deux sexes se ressemblent, contrairement au Moineau domestique. Les jeunes ont une face moins contrastée. Le mâle du Moineau espagnol possède aussi une calotte marron, mais sans tache jugale isolée, avec davantage de noir sur le dessous."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Les lisières agricoles, vergers et boisements ouverts offrent nourriture, abri et cavités. Les adultes consomment graines et céréales, ainsi que des insectes et d’autres invertébrés, notamment pour leurs petits. Le lien avec les habitations varie : surtout rural dans une grande partie de l’Europe, le friquet fréquente volontiers les villes d’Asie orientale. Hors reproduction, il rejoint parfois des bandes mixtes. Examiner les individus plutôt que nommer globalement une bande de moineaux est donc utile pour le repérer."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Malgré sa vaste répartition eurasiatique, sa présence arabe reste limitée. La liste spécialisée d’Irak le décrit comme un hivernant rare dans le nord et le centre. Le guide libanais de 2026 le considère comme accidentel, avec une ancienne donnée incertaine de la vallée du Litani et deux oiseaux à Qaa en novembre 2018. La liste publiée d’Oman indique un accidentel avec une observation. Ces situations ne démontrent ni résidence ni reproduction régulières et ne s’étendent pas automatiquement au Golfe ou au Maghreb."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le nid occupe une cavité d’arbre ou de bâtiment, parfois un nichoir adapté, avec une garniture végétale et des plumes. Le BTO donne une ponte habituelle de 5–6 œufs, une incubation partagée de 12–13 jours et un départ des jeunes vers 15–18 jours. Ces durées approximatives décrivent le développement, pas un calendrier de reproduction arabe. Un oiseau près d’un trou ne prouve pas la nidification, et quitter le nid ne signifie pas devenir immédiatement indépendant des parents."
+              ]
+            },
+            {
+              "heading": "Novembre et observation responsable",
+              "paragraphs": [
+                "Une observation possible en novembre en Irak ou au Levant mérite une documentation attentive. Noter pays, lieu, date et effectif ; rechercher une vue de profil montrant la joue et une autre de la calotte sans poursuivre l’oiseau. L’ombre peut masquer la tache noire : mieux vaut conserver une identification provisoire que conclure sur la seule calotte marron. Laisser les bandes se nourrir et éviter de provoquer des envols vers la circulation ou d’interrompre leur accès au couvert."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "Sa catégorie mondiale UICN est Préoccupation mineure, sans exclure des déclins locaux. La Grande-Bretagne a subi une forte diminution historique dont les effets persistent. Conserver graines hivernales, insectes et cavités dans les paysages agricoles répond à des besoins saisonniers différents. Réduire la pression des pesticides et garder les vieux arbres appropriés protège ces ressources. Là où l’espèce est rare, photographier un oiseau vivant vaut mieux que le capturer ou le tuer pour l’identifier. Les lois locales restent applicables."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; British Trust for Ornithology — BirdFacts: Tree Sparrow; RSPB — Tree Sparrow; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 387; Salim et al. — An annotated checklist of the birds of Iraq, Sandgrouse 34, 2012; Oman Birds Records Committee — Official Oman Birdlist."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographie : Chrissy McClarren and Andy Reago"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الدوري-الإسباني",
+        "en": "spanish-sparrow",
+        "fr": "moineau-espagnol"
+      },
+      "published": "2026-11-08",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "spanish-sparrow"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الدوري الإسباني",
+          "subtitle": "Passer hispaniolensis",
+          "meta_description": "الدوري الإسباني: التعرف والموائل والتكاثر والحضور الموسمي في البلدان العربية وحماية النوع.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "الدوري الإسباني، المعروف أيضًا باسم العصفور الأندلسي، هو Passer hispaniolensis من فصيلة الدوريات Passeridae ورتبة العصفوريات. يقابله Spanish Sparrow بالإنجليزية وMoineau espagnol بالفرنسية. يبلغ طوله نحو 15–16 سنتيمترًا وباع جناحيه 23–26 سنتيمترًا. لا تحصر التسمية انتشاره في إسبانيا؛ فهو من طيور الحوض المتوسطي وأجزاء من آسيا، وتوجد له جماعات مقيمة وأخرى مهاجرة. والتمييز بينه وبين الدوري المنزلي يحتاج أكثر من حجم الطائر أو وجوده بالقرب من الناس."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "للذكر البالغ تاج وقفا كستنائيان وخدان أبيضان، مع سواد واسع على الحلق والصدر يمتد تخطيطًا قويًا على الجنبين. ظهره شديد التباين، ومنقاره متين. تصبح ألوان الذكر أقل حدة في الريش الشتوي. الأنثى واليافع أصعب تمييزًا من نظيريهما لدى الدوري المنزلي، ولا يكفي حاجب فاتح أو لطخة واحدة للحسم. وتزيد الهجن المعروفة بين النوعين في شمال إفريقيا صعوبة التعرف؛ لذلك قد يكون وصف طائر ملتبس بأنه دوري غير محدد أدق من إسناده قسرًا إلى نوع."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتبط بالمزارع والحقول والشجيرات والأشجار المتناثرة، ويستخدم أيضًا الأراضي القريبة من الماء. يتغذى أساسًا على البذور والحبوب ويأكل اللافقاريات، التي تكتسب أهمية خاصة في غذاء الفراخ. وهو اجتماعي في التغذي والمبيت والتكاثر، وقد تتجمع أعداد كبيرة في موضع واحد. عدد الطيور فوق حقل لا يساوي وحده مقدار ضرر زراعي مثبت؛ إذ يتطلب ذلك معرفة المحصول ومرحلة نموه وسلوك الطيور، مع التمييز بين التقاط الحبوب الساقطة والتغذي على المحصول القائم."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يشمل نطاقه شمال إفريقيا والمشرق وأجزاء من وسط آسيا. يورده المغرب ضمن طيور المناطق الزراعية، وتوثق دراسات الجزائر تكاثره ووجود هجن مع الدوري المنزلي. وفي لبنان يصفه دليل 2026 بمعشش صيفي غير شائع، ومهاجر عبور شائع، وزائر شتوي قليل. أما الكويت فتضم طيورًا مقيمة متكاثرة وزوارًا شتويين، مع مستعمرات موثقة في مزارع ومحميات. وفي عُمان هو مهاجر عبور وزائر شتوي غير شائع وفق القائمة المنشورة. لذلك لا يصلح وصف موسمي واحد لهذه البلدان جميعًا."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "غالبًا ما يتكاثر في مستعمرات، ويبني عشًا كبيرًا من الأعشاب والمواد النباتية في شجرة أو شجيرة، وقد يستخدم مواضع قرب أعشاش طيور أكبر. تشمل الحضنة عادة عدة بيضات، وتورد المراجع نحو 3–6، مع اختلافات محلية. تستغرق الحضانة نحو 11–14 يومًا، وتغادر الفراخ العش بعد نحو 12–15 يومًا. يشارك الأبوان في الرعاية، وقد تتعاقب أكثر من حضنة عندما تسمح الظروف. لا ينبغي تحويل هذه الأرقام إلى مواعيد ثابتة لكل جماعة أو اعتبار المبيت الجماعي مستعمرة أعشاش."
+              ]
+            },
+            {
+              "heading": "نوفمبر والمراقبة المسؤولة",
+              "paragraphs": [
+                "يفيد نوفمبر في مقارنة أسراب الحقول ورصد تغير أعدادها، خصوصًا حيث تنضم طيور الشتاء إلى المقيمين. وفي لبنان لا تجعل مشاهدة سرب واحد النوع شائعًا شتاءً على مستوى البلد. سجّل العدد التقريبي ونسبة الذكور التي يمكن التعرف إليها، وصوّر الجنبين والخدين من مسافة ثابتة. لا تستخدم غياب التخطيط القوي عن فرد صغير أو بعيد لإثبات أنه أنثى دوري منزلي. وقد تتغير زاوية الضوء وحواف الريش فتخفي علامات واضحة في موسم آخر."
+              ]
+            },
+            {
+              "heading": "الحماية",
+              "paragraphs": [
+                "التصنيف العالمي للنوع هو «أقل إثارة للقلق» LC، لكن تدهور الموائل والمبيدات والصيد غير القانوني تبقى ضغوطًا محلية. تدعم الحماية المحافظة على تنوع الحقول وحوافها والشجيرات، وعلى الغذاء الحشري المتاح للفراخ. وإذا ظهر خلاف زراعي، ينبغي قياس الضرر الفعلي وطلب حلول قانونية انتقائية تراعي الأنواع الأخرى، لا استهداف أسراب مختلطة دون تعرف. والمراقبة من خارج المستعمرة أو موقع المبيت تمنع إزعاج مئات الطيور من أجل صورة واحدة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; Oiseaux.net — Moineau espagnol; Oiseaux-Birds — Moineau espagnol; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 386; KuwaitBirds — Spanish Sparrow; Oman Birds Records Committee — Official Oman Birdlist; ONSSA — Moineaux; Päckert et al. — North African hybrid sparrows, Ecology and Evolution, 2016; Birds of Saudi Arabia — Spanish Sparrow."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: karim Attouche"
+        },
+        "en": {
+          "title": "Spanish Sparrow",
+          "subtitle": "Passer hispaniolensis",
+          "meta_description": "Spanish Sparrow: identification, habitat, breeding, seasonal occurrence in Arab countries and conservation.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "Spanish Sparrow, Passer hispaniolensis, is Moineau espagnol in French; Arabic usage includes both “Spanish” and “Andalusian” sparrow. It belongs to Passeridae within Passeriformes, measures approximately 15–16 cm and has a wingspan of 23–26 cm. Its name does not restrict it to Spain: Mediterranean and Asian populations include both residents and migrants. Separating it from House Sparrow requires more than judging size or noting proximity to people."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Adult males have chestnut crowns and napes, white cheeks and extensive black on the throat and breast, continuing as bold flank streaks. The strongly patterned back and substantial bill add useful clues. Winter males look less sharply marked. Females and juveniles are much harder to distinguish from House Sparrows; a pale eyebrow or one mark cannot settle every identification. Hybridisation in North Africa adds further difficulty, making “unidentified sparrow” preferable to forcing an uncertain bird into a species."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Farmland, fields, shrubs and scattered trees are important habitats, including sites close to water. Seeds and grain dominate the diet, with invertebrates especially important to growing chicks. It is sociable when feeding, roosting and breeding, sometimes gathering in large numbers. A count over a field alone does not measure crop damage: the crop, its growth stage and the birds’ behaviour must also be considered, distinguishing birds collecting fallen grain from those feeding directly on a standing crop."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Its range includes North Africa, the Levant and parts of Central Asia. Morocco recognises it among agricultural birds, while Algerian studies document breeding and hybridisation with House Sparrow. Lebanon’s 2026 guide describes an uncommon summer breeder, common passage migrant and scarce winter visitor. Kuwait supports resident breeders and winter visitors, with colonies recorded at farms and reserves. Oman’s published list describes uncommon passage and winter occurrence. A single seasonal label therefore cannot represent all these countries."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "Breeding often occurs in colonies. Bulky nests made from grass and other plant material occupy trees or bushes, sometimes beside larger birds’ nests. Clutches commonly contain several eggs, with approximately 3–6 reported and local variation. Incubation lasts roughly 11–14 days and young leave after about 12–15 days. Both parents contribute care, and more than one brood may follow when conditions allow. These intervals are not fixed local dates, and a communal roost is not necessarily a nesting colony."
+              ]
+            },
+            {
+              "heading": "November and responsible observation",
+              "paragraphs": [
+                "November offers opportunities to compare field flocks and changing numbers, particularly where winter visitors join residents. One Lebanese flock does not make the species a nationally common winter bird. Record approximate numbers and identifiable males, photographing cheeks and flanks from a fixed distance. Do not use weak streaking on a small or distant bird to prove it is a female House Sparrow. Light and feather edges may obscure markings that appear clearer in another season."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "Its global category is Least Concern, while habitat deterioration, pesticides and illegal hunting remain local pressures. Retaining diverse field margins, shrubs and insect food supports birds through different stages of their lives. Where agricultural conflict occurs, assess actual damage and seek lawful, selective solutions that consider other species rather than targeting unidentified mixed flocks. Watching from outside a breeding colony or roost avoids disturbing hundreds of birds for a single close photograph."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; Oiseaux.net — Moineau espagnol; Oiseaux-Birds — Moineau espagnol; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 386; KuwaitBirds — Spanish Sparrow; Oman Birds Records Committee — Official Oman Birdlist; ONSSA — Moineaux; Päckert et al. — North African hybrid sparrows, Ecology and Evolution, 2016; Birds of Saudi Arabia — Spanish Sparrow."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: karim Attouche"
+        },
+        "fr": {
+          "title": "Moineau espagnol",
+          "subtitle": "Passer hispaniolensis",
+          "meta_description": "Moineau espagnol : identification, milieux, reproduction, présence saisonnière dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "Le Moineau espagnol, Passer hispaniolensis, porte le nom anglais Spanish Sparrow ; en arabe, il est appelé moineau « espagnol » ou « andalou ». Ce Passeridae de l’ordre des Passeriformes mesure environ 15–16 cm pour une envergure de 23–26 cm. Son nom ne le limite pas à l’Espagne : ses populations méditerranéennes et asiatiques comprennent des sédentaires et des migrateurs. Pour le séparer du Moineau domestique, la taille ou la proximité des habitations ne suffisent pas."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Le mâle adulte présente calotte et nuque marron, joues blanches et une large zone noire sur la gorge et la poitrine, prolongée par de fortes stries aux flancs. Son dos très contrasté et son bec robuste complètent le tableau. En hiver, il paraît moins nettement marqué. Femelles et jeunes ressemblent beaucoup au Moineau domestique : un sourcil clair ou une seule marque ne tranche pas toujours. Les hybridations nord-africaines compliquent encore l’identification, qui peut raisonnablement rester indéterminée."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Champs, cultures, buissons et arbres dispersés constituent des milieux importants, y compris près de l’eau. Graines et céréales dominent l’alimentation ; les invertébrés sont particulièrement importants pour les poussins. Sociable pendant l’alimentation, au dortoir et lors de la reproduction, il se rassemble parfois en grand nombre. Un comptage au-dessus d’un champ ne mesure pas les dommages agricoles : il faut examiner culture, stade de développement et comportement, en distinguant la collecte de grains tombés de la consommation directe sur pied."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire comprend l’Afrique du Nord, le Levant et une partie de l’Asie centrale. Le Maroc le mentionne parmi les oiseaux agricoles ; des études algériennes documentent reproduction et hybridation avec le Moineau domestique. Au Liban, le guide de 2026 indique un nicheur estival peu commun, un migrateur commun et un hivernant peu fréquent. Le Koweït accueille des nicheurs résidents et des hivernants, avec des colonies dans des fermes et réserves. À Oman, passage et hivernage sont peu communs selon la liste publiée."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "La reproduction est souvent coloniale. Les nids volumineux de graminées et d’autres végétaux se trouvent dans des arbres ou buissons, parfois près de nids de grands oiseaux. Les pontes comprennent généralement plusieurs œufs, environ 3–6 selon les références, avec des variations locales. L’incubation dure approximativement 11–14 jours et les jeunes partent vers 12–15 jours. Les deux parents participent aux soins ; plusieurs nichées sont possibles. Ces durées ne constituent pas des dates locales fixes, et un dortoir collectif n’est pas forcément une colonie reproductrice."
+              ]
+            },
+            {
+              "heading": "Novembre et observation responsable",
+              "paragraphs": [
+                "Novembre permet de comparer les bandes des champs et leurs variations, notamment lorsque les hivernants rejoignent les résidents. Une seule bande libanaise ne rend pas l’espèce commune en hiver dans tout le pays. Noter l’effectif approximatif et les mâles identifiables, puis photographier joues et flancs sans poursuivre les oiseaux. Des stries peu visibles chez un individu petit ou éloigné ne prouvent pas qu’il s’agit d’une femelle domestique. Éclairage et bordures des plumes peuvent masquer des marques plus nettes à une autre saison."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "La catégorie mondiale est Préoccupation mineure, mais dégradation des milieux, pesticides et chasse illégale demeurent des pressions locales. Garder des bordures de champs diversifiées, des buissons et des insectes soutient différents besoins saisonniers. En cas de conflit agricole, évaluer les dommages réels et rechercher des solutions légales sélectives qui prennent en compte les autres espèces, plutôt que viser des bandes mixtes mal identifiées. Observer depuis l’extérieur d’une colonie ou d’un dortoir évite de déranger des centaines d’oiseaux pour une photographie."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; Oiseaux.net — Moineau espagnol; Oiseaux-Birds — Moineau espagnol; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 386; KuwaitBirds — Spanish Sparrow; Oman Birds Records Committee — Official Oman Birdlist; ONSSA — Moineaux; Päckert et al. — North African hybrid sparrows, Ecology and Evolution, 2016; Birds of Saudi Arabia — Spanish Sparrow."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographie : karim Attouche"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "دوري-الصخر",
+        "en": "rock-sparrow",
+        "fr": "moineau-soulcie"
+      },
+      "published": "2026-11-08",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "rock-sparrow"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "دوري الصخر",
+          "subtitle": "Petronia petronia",
+          "meta_description": "دوري الصخر: التعرف والموائل والتكاثر والحضور الموسمي في البلدان العربية وحماية النوع.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "دوري الصخر، Rock Sparrow بالإنجليزية وMoineau soulcie بالفرنسية، يحمل الاسم العلمي Petronia petronia وينتمي إلى فصيلة الدوريات Passeridae ورتبة العصفوريات. يبلغ طوله نحو 14–16 سنتيمترًا، ويبدو ممتلئًا ذا منقار قوي. وهو نوع مختلف عن عصفور الصخر الباهت Carpospiza brachydactyla، وعن الدوري أصفر الحنجرة Gymnoris xanthocollis. تشابه الأسماء العربية القديمة أو وجود لون أصفر عند نوعين لا يجعلهما طائرًا واحدًا؛ ولذلك يفيد إرفاق الاسم العلمي عند مقارنة السجلات والصور بين البلدان."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "تغلب عليه الألوان البنية والرمادية مع تخطيط على الظهر والصدر والجنبين. الرأس مخطط بوضوح، وفيه حاجب فاتح عريض وشريط وسطي فاتح على التاج. يحمل البالغ بقعة صفراء صغيرة في الحلق، لكنها قد تختفي خلف الريش أو بحسب زاوية النظر، فلا يُستبعد النوع لمجرد عدم رؤيتها. الجنسان متشابهان، واليافع أبهت ويفتقر إلى البقعة الصفراء. وتظهر بقع بيضاء عند أطراف ريش الذيل في الطيران؛ وهي علامة مفيدة مع هيئة الرأس والتخطيط، وليست بديلًا عن جمع العلامات."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يرتاد السفوح الحجرية والمروج القصيرة والأراضي الزراعية الجافة والقرى الجبلية، وقد يستفيد من الجدران القديمة والمباني التي توفر تجاويف. ليس وجود الصخور وحده كافيًا: يحتاج إلى غذاء ومساحات يستطيع التقاطه منها ومواضع آمنة للمبيت والتكاثر. يأكل البذور والحبوب وبعض الثمار، وتزداد أهمية الحشرات خلال موسم تربية الفراخ. يجمع طعامه كثيرًا على الأرض، ويصبح اجتماعيًا خارج التكاثر. وقد تكشف النداءات المتكررة سربًا يندمج لونه مع التراب والحجارة أكثر مما تكشفه النظرة الأولى."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "يمتد نطاقه من جنوب أوروبا وشمال إفريقيا شرقًا إلى آسيا. تعده بيانات الانتشار مقيمًا في المغرب والجزائر وتونس، ويعيش كذلك في أجزاء من المشرق. في لبنان يصفه دليل 2026 بمعشش مقيم شائع في المناطق الجبلية الصخرية، مع تكاثر من أوائل أبريل إلى أوائل أغسطس على ارتفاعات نحو 1300–2200 متر، وحركات إلى ارتفاعات أدنى شتاءً. أما قائمة العراق فتصفه بمعشش مقيم محلي في التلال والجبال الشمالية. لا تعني هذه الصورة أنه شائع في السهول الصحراوية أو في جميع دول الجزيرة العربية."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يقع العش في شق صخري أو فجوة جدار أو شجرة، وقد يستخدم أبنية قديمة. تتراوح الحضنة غالبًا بين 4 و7 بيضات، وتتولى الأنثى الحضانة. تضع المراجع مدة الحضانة تقريبًا ضمن 11–15 يومًا، ومغادرة الفراخ ضمن نحو 18–22 يومًا، مع اختلاف الجماعات والظروف وطريقة القياس. ويمكن حدوث حضنتين في الموسم المناسب. هذه النطاقات أصدق من يوم واحد ثابت، ولا تبرر فتح التجاويف لقياس النمو. حضور البالغين عند مدخل متكرر لا يستدعي الاقتراب منه أو إدخال آلة تصوير داخله."
+              ]
+            },
+            {
+              "heading": "نوفمبر والمراقبة المسؤولة",
+              "paragraphs": [
+                "في نوفمبر ينبغي النظر إلى الارتفاع، لا إلى خريطة البلد فقط. قد تعكس زيادة الطيور في موضع أخفض نزولًا شتويًا من الجبل، لا هجرة بعيدة من بلد آخر. يمكن مراقبة السفوح والحقول المحاذية من طريق قائم، وتدوين الارتفاع التقريبي وحجم السرب والطقس ونوع الأرض التي يتغذى عليها. تساعد المقارنات المتكررة في الموقع نفسه أكثر من جولة مطاردة طويلة. ولا ينبغي دفع الطيور إلى الطيران لمشاهدة بقع الذيل البيضاء؛ انتظر انتقالها الطبيعي بين التغذي والراحة."
+              ]
+            },
+            {
+              "heading": "الحماية",
+              "paragraphs": [
+                "يصنف عالميًا ضمن «أقل إثارة للقلق» LC، لكن حماية موائله تتطلب الانتباه إلى المحاجر وتدهور السفوح وإزالة النباتات والتجاويف المناسبة. يجمع المشهد الجبلي الصالح له بين أرض تغذية مفتوحة وأماكن اختباء وتعشيش، وقد يؤثر فقد أحدها حتى إذا بقي الآخر. ترميم جدار أو مبنى مأهول بالطيور يحتاج مراعاة الموسم والقانون المحلي. كما أن شيوع النوع في منطقة معينة ليس ترخيصًا لاصطياده أو تخريب الأعشاش، ولا دليلًا على سلامة كل جماعاته."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; Oiseaux.net — Moineau soulcie; Oiseaux-Birds — Rock Sparrow; BirdLife International / IUCN — Petronia petronia assessment; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 390; Salim et al. — An annotated checklist of the birds of Iraq, Sandgrouse 34, 2012; African Bird Club — Rock Sparrow records, Morocco."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева"
+        },
+        "en": {
+          "title": "Rock Sparrow",
+          "subtitle": "Petronia petronia",
+          "meta_description": "Rock Sparrow: identification, habitat, breeding, seasonal occurrence in Arab countries and conservation.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "Rock Sparrow, Petronia petronia, is Moineau soulcie in French and belongs to Passeridae within Passeriformes. At about 14–16 cm long, it looks stocky and strong-billed. It is distinct from Pale Rockfinch Carpospiza brachydactyla and Yellow-throated Sparrow Gymnoris xanthocollis. Similar vernacular names, or yellow appearing on two different species, do not make them interchangeable. Including the scientific name is particularly useful when comparing photographs and regional records."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Brown and grey dominate, with streaking above and on the breast and flanks. The head is boldly patterned, including a broad pale eyebrow and paler central crown stripe. Adults possess a small yellow throat patch that may be concealed by feathers or viewing angle; failure to see it does not exclude the species. The sexes resemble each other, while juveniles lack the yellow patch. White tips to tail feathers show in flight and complement, rather than replace, the other identification features."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Stony slopes, short grass, dry farmland and mountain villages provide suitable surroundings, sometimes including old walls and buildings with cavities. Rocks alone are insufficient: birds also need food, accessible feeding surfaces and safe nesting and resting places. Seeds, grain and some fruit are eaten, with insects increasingly important during chick rearing. Birds frequently forage on the ground and become sociable outside breeding. Repeated calls may reveal a flock whose brown plumage blends into earth and stones."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "The range extends from southern Europe and North Africa east into Asia. Distribution accounts list resident occurrence in Morocco, Algeria and Tunisia, as well as parts of the Levant. Lebanon’s 2026 guide describes a common resident mountain breeder, nesting from early April to early August around 1,300–2,200 m and descending in winter. Iraq’s specialist checklist describes a local resident breeder in northern hills and mountains. None of this implies abundance across desert plains or throughout the Arabian Peninsula."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "Nests occupy rock crevices, wall holes or tree cavities, sometimes in older buildings. A usual clutch contains approximately 4–7 eggs, incubated by the female. References place incubation broadly within 11–15 days and nest departure around 18–22 days, varying among populations, conditions and definitions. Two broods may occur when the season permits. These ranges are more useful than a universal single-day figure, and never justify opening cavities to check development. Repeated adult visits do not warrant inserting a camera into an entrance."
+              ]
+            },
+            {
+              "heading": "November and responsible observation",
+              "paragraphs": [
+                "In November, consider elevation as well as country. Increased numbers at a lower site may represent descent from nearby mountains rather than long-distance migration across borders. Watch slopes and adjoining fields from existing tracks and record approximate elevation, flock size, weather and feeding surfaces. Repeat visits to one site make changes easier to interpret than a lengthy pursuit of a moving flock. Do not flush birds to expose their white tail spots; wait for natural movements between feeding and resting places."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "Globally Least Concern, the species still benefits from protection against quarrying, damaged slopes and removal of vegetation or cavities. Suitable mountain landscapes combine open feeding ground with hiding and nesting places; losing either can matter even when the other remains. Repairs to occupied walls or buildings require attention to season and local law. Local abundance is neither permission to shoot birds or damage nests nor evidence that every population is secure."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; Oiseaux.net — Moineau soulcie; Oiseaux-Birds — Rock Sparrow; BirdLife International / IUCN — Petronia petronia assessment; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 390; Salim et al. — An annotated checklist of the birds of Iraq, Sandgrouse 34, 2012; African Bird Club — Rock Sparrow records, Morocco."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева"
+        },
+        "fr": {
+          "title": "Moineau soulcie",
+          "subtitle": "Petronia petronia",
+          "meta_description": "Moineau soulcie : identification, milieux, reproduction, présence saisonnière dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "Le Moineau soulcie, Petronia petronia, est Rock Sparrow en anglais. Il appartient aux Passeridae et à l’ordre des Passeriformes. Long d’environ 14–16 cm, il est trapu et possède un bec robuste. Il diffère du Moineau pâle Carpospiza brachydactyla et du Moineau à gorge jaune Gymnoris xanthocollis. Des noms vernaculaires voisins, ou du jaune chez deux espèces, ne les rendent pas interchangeables. Le nom scientifique aide donc à comparer correctement photographies et observations régionales."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Le plumage est surtout brun et gris, avec des stries sur le dessus, la poitrine et les flancs. La tête présente un large sourcil clair et une bande médiane plus pâle sur la calotte. La petite tache jaune à la gorge des adultes peut être cachée par les plumes ou l’angle de vue : son invisibilité n’exclut pas l’espèce. Les sexes se ressemblent ; les jeunes n’ont pas cette tache. Les extrémités blanches des rectrices apparaissent en vol et complètent les autres critères."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Il fréquente pentes pierreuses, herbes courtes, cultures sèches et villages montagnards, parfois avec de vieux murs ou bâtiments riches en cavités. Les rochers seuls ne suffisent pas : nourriture, surfaces accessibles et abris restent nécessaires. Il consomme graines, céréales et certains fruits ; les insectes prennent davantage d’importance pendant l’élevage des petits. Il cherche souvent sa nourriture au sol et devient sociable hors reproduction. Ses appels répétés peuvent révéler une bande dont le plumage se confond avec terre et pierres."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Son aire va de l’Europe méridionale et de l’Afrique du Nord jusqu’en Asie. Les données de répartition indiquent une présence résidente au Maroc, en Algérie et en Tunisie, ainsi que dans certaines parties du Levant. Le guide libanais de 2026 décrit un nicheur montagnard résident commun, se reproduisant du début avril au début août vers 1 300–2 200 m, puis descendant en hiver. La liste irakienne indique un nicheur résident local dans les collines et montagnes du nord. Cela ne signifie pas une abondance générale dans les plaines désertiques ou en Arabie."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le nid occupe une fissure rocheuse, un trou de mur ou une cavité d’arbre, parfois dans un bâtiment ancien. La ponte compte généralement environ 4–7 œufs, couvés par la femelle. Selon les références, l’incubation se situe approximativement entre 11 et 15 jours, et le départ des jeunes entre 18 et 22 jours. Populations, conditions et définitions expliquent une partie des différences. Deux nichées sont possibles. Ces intervalles ne justifient jamais d’ouvrir une cavité ou d’y introduire un appareil photographique."
+              ]
+            },
+            {
+              "heading": "Novembre et observation responsable",
+              "paragraphs": [
+                "En novembre, considérer l’altitude autant que le pays. Une augmentation à basse altitude peut correspondre à une descente depuis les montagnes voisines plutôt qu’à une migration lointaine. Observer pentes et champs depuis les chemins existants, en notant altitude approximative, effectif, météo et surfaces d’alimentation. Des visites répétées au même endroit rendent les changements plus lisibles qu’une longue poursuite. Ne pas provoquer l’envol pour voir les taches blanches de la queue ; attendre les déplacements naturels entre nourriture et repos."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "Classé mondialement en Préoccupation mineure, il bénéficie néanmoins de la protection contre carrières, dégradation des pentes et disparition de végétation ou de cavités. Le paysage favorable associe zones ouvertes pour manger, refuges et sites de nidification : perdre un élément compte même si l’autre subsiste. Réparer un mur ou bâtiment occupé exige de considérer saison et droit local. L’abondance locale n’autorise ni tir ni destruction des nids, et ne garantit pas la sécurité de toutes les populations."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; Oiseaux.net — Moineau soulcie; Oiseaux-Birds — Rock Sparrow; BirdLife International / IUCN — Petronia petronia assessment; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 390; Salim et al. — An annotated checklist of the birds of Iraq, Sandgrouse 34, 2012; African Bird Club — Rock Sparrow records, Morocco."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographie : Лариса Артемьева"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "قرقف-أبو-ذقن",
+        "en": "bearded-reedling",
+        "fr": "panure-a-moustaches"
+      },
+      "published": "2026-11-08",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "bearded-reedling"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "قرقف أبو ذقن",
+          "subtitle": "Panurus biarmicus",
+          "meta_description": "قرقف أبو ذقن: التعرف والموائل والتكاثر والحضور الموسمي في البلدان العربية وحماية النوع.",
+          "sections": [
+            {
+              "heading": "الهوية والأسماء",
+              "paragraphs": [
+                "قرقف أبو ذقن، ويعرف أيضًا بالقرقف الملتحي، هو Panurus biarmicus، واسمه الإنجليزي Bearded Reedling والفرنسي Panure à moustaches. رغم الاسم العربي واسم Bearded Tit المستخدم في بعض المراجع الإنجليزية، فهو ليس من فصيلة القراقف Paridae؛ بل يمثل فصيلة Panuridae ضمن العصفوريات. يبلغ طوله الكلي نحو 14–17 سنتيمترًا، ويشمل ذلك ذيلًا طويلًا بارزًا، ويزن نحو 15 غرامًا. وهذا الجمع بين جسم صغير مستدير وذيل طويل يعطيه هيئة تختلف عن معظم طيور القصب البنية."
+              ]
+            },
+            {
+              "heading": "علامات التعرف",
+              "paragraphs": [
+                "للذكر رأس أزرق رمادي وشاربان أسودان متدليان على جانبي الوجه، يتباينان مع حلق فاتح، وجسم يغلب عليه البني القرفي. فالعلامة المشهورة أقرب إلى شاربين منها إلى لحية. الأنثى أبسط لونًا ولا تحمل شاربي الذكر، واليافع قد يظهر بقعة سوداء على الظهر. الأجنحة قصيرة والمنقار صغير قوي نسبيًا. لا يكفي ذيل طويل وحده للتعرف؛ ينبغي ربط شكل الجسم والوجه والسلوك بالموئل، خصوصًا عند رؤية طائر لحظة واحدة بين سوق القصب المتحركة."
+              ]
+            },
+            {
+              "heading": "الموائل والغذاء والسلوك",
+              "paragraphs": [
+                "يتخصص في أحراج القصب الكثيفة الواسعة، ويتسلق السوق ويتنقل بينها، وقد يختفي تمامًا قبل أن يبرز على رأس نورة. يلتقط الحشرات ويرقاتها ولافقاريات أخرى في الموسم الدافئ، ثم يزداد اعتماده على البذور، ومنها بذور القصب، شتاءً. وقد يبتلع حبيبات صغيرة تساعد القانصة في طحن الغذاء النباتي. لا يعني هذا أنه يأكل الحصى بدل الغذاء. وتكشفه أحيانًا نداءات رنانة قصيرة قبل أن تراه العين، وتبقى مراقبة نباتات المستنقع نفسها أساسية لفهم وجوده."
+              ]
+            },
+            {
+              "heading": "الانتشار والحضور العربي",
+              "paragraphs": [
+                "انتشاره متقطع عبر أوروبا وآسيا تبعًا لتوفر القصب، وحضوره العربي غير متساوٍ. في سوريا توجد أدلة منشورة على التكاثر، منها فراخ غادرت العش عند سد وادي عبيد في أغسطس 1998، مع إقامة في موائل مناسبة حول الفرات وسبخة الجبول. هذه شواهد تاريخية ومحلية وليست تعدادًا حديثًا لكل سوريا. أما دليل لبنان لعام 2026 فيعده شاردًا، ويذكر ستة طيور في عميق في مارس 1996 وطائرين في عنجر في أبريل 2005. لذلك لا يصح وصفه بأنه زائر شتوي منتظم إلى كل مستنقعات المشرق."
+              ]
+            },
+            {
+              "heading": "التكاثر ونمو الفراخ",
+              "paragraphs": [
+                "يبني الزوج عشًا كأسيا بين النباتات المتشابكة على ارتفاع منخفض فوق الماء أو الطين. تورد بيانات BTO حضنة معتادة من 4–8 بيضات، وحضانة مشتركة تستغرق نحو 10–14 يومًا، ومغادرة الفراخ بعد نحو 12–13 يومًا من الفقس. تولد الفراخ عاجزة وتحتاج إلى الإطعام والحماية، وتستمر الرعاية بعد الخروج من العش. قد يتكرر التكاثر خلال الموسم الملائم، لكن ظروف الماء والنباتات والطقس تحدد النجاح، ولا يجوز نقل أشهر التكاثر الأوروبية تلقائيًا إلى موقع عربي بعينه."
+              ]
+            },
+            {
+              "heading": "نوفمبر والمراقبة المسؤولة",
+              "paragraphs": [
+                "في نوفمبر قد تتجمع الطيور في أسراب وتتحرك بين رقع القصب ضمن نطاق وجودها، مع إمكان حدوث تشتت أوسع. يفيد الاستماع من حافة المستنقع أكثر من شق ممر جديد داخله. سجّل عدد الطيور ومكان الرؤية ونوع الغطاء، وحاول تصوير الوجه والذيل دون تشغيل أصوات لاستدراج السرب. وفي لبنان تبقى مشاهدة محتملة حدثًا يحتاج توثيقًا جيدًا، لا إثباتًا فوريًا لتأسيس جماعة مقيمة. كذلك فإن غياب الرؤية في يوم عاصف لا يكفي للحكم باختفاء الطائر من الموقع."
+              ]
+            },
+            {
+              "heading": "الحماية",
+              "paragraphs": [
+                "يُصنف عالميًا ضمن «أقل إثارة للقلق» LC، لكن تخصصه في القصب يجعله مرتبطًا مباشرة بصحة الأراضي الرطبة. التجفيف وتدهور الموائل والإزعاج وفقد الغطاء قد تقلص المساحة القابلة للاستخدام. وتحتاج إدارة القصب إلى مراعاة مواقع التكاثر والمبيت ومواسمها بدل إزالة رقعة كبيرة دفعة واحدة. حماية الماء والغطاء المتصل تخدم طيورًا أخرى أيضًا. ولا يبرر جمال الذكر الاقتراب من عش أو قطع ساق للحصول على خلفية تصوير أنظف؛ تبقى سلامة الموئل أهم من اللقطة."
+              ]
+            },
+            {
+              "heading": "المراجع",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; British Trust for Ornithology — BirdFacts: Bearded Tit; RSPB — Bearded Tit; Oiseaux.net — Panure à moustaches; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 276; Murdoch and Betton — A checklist of the birds of Syria, Sandgrouse Supplement 2, 2008, p. 28."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: José Antonio León Mangado"
+        },
+        "en": {
+          "title": "Bearded Reedling",
+          "subtitle": "Panurus biarmicus",
+          "meta_description": "Bearded Reedling: identification, habitat, breeding, seasonal occurrence in Arab countries and conservation.",
+          "sections": [
+            {
+              "heading": "Identity and names",
+              "paragraphs": [
+                "Bearded Reedling, Panurus biarmicus, is Panure à moustaches in French and also known as Bearded Tit. Despite that alternative English name and Arabic names referring to a tit, it belongs to Panuridae, not the true-tit family Paridae. Its total length is about 14–17 cm, including a conspicuous long tail, and it weighs around 15 g. A small, rounded body combined with that tail creates a silhouette unlike most brown reedbed birds."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "The male has a blue-grey head and black drooping moustachial marks beside a pale throat, above a largely cinnamon-brown body. The famous facial feature is therefore closer to moustaches than a beard. Females are plainer and lack those black marks; juveniles may show a black patch on the back. Wings are short and the bill compact. A long tail alone is insufficient: combine body shape, facial pattern, behaviour and habitat, especially during brief views between moving reed stems."
+              ]
+            },
+            {
+              "heading": "Habitat, food and behaviour",
+              "paragraphs": [
+                "Extensive dense reedbeds are its characteristic habitat. Birds climb stems, disappear through vegetation and occasionally emerge on seed heads. Insects, larvae and other invertebrates feature strongly during warmer months, while seeds, including reed seeds, become more important in winter. Small swallowed grit particles help the gizzard process plant food; they are not a substitute for nourishment. Short ringing calls may reveal birds before they become visible. Understanding the reedbed itself is essential to interpreting their presence."
+              ]
+            },
+            {
+              "heading": "Range and Arab occurrence",
+              "paragraphs": [
+                "Distribution is patchy across Europe and Asia, following suitable reeds, and Arab occurrence varies sharply. Published Syrian evidence includes fledged young at Sed Wadi Abied in August 1998 and resident breeding populations in suitable Euphrates and Jabbul reedbeds. These are historical, site-based records, not a current census of all Syria. Lebanon’s 2026 guide instead treats it as a vagrant, citing six at Aammiq in March 1996 and two at Anjar in April 2005. It is not a regular winter visitor to every Levantine wetland."
+              ]
+            },
+            {
+              "heading": "Breeding and development",
+              "paragraphs": [
+                "The pair builds a cup nest among tangled vegetation low above water or mud. BTO gives a usual clutch of 4–8 eggs, shared incubation of about 10–14 days and fledging around 12–13 days after hatching. Chicks hatch helpless and need feeding and protection; care continues after nest departure. Further broods may follow in a suitable season, but water, vegetation and weather affect success. European breeding months should not automatically be transferred to an individual Arab locality."
+              ]
+            },
+            {
+              "heading": "November and responsible observation",
+              "paragraphs": [
+                "In November, birds may gather in flocks and move among reed patches within their range, with occasional wider dispersal. Listening from an existing wetland edge is preferable to opening a new route through reeds. Record numbers, location and vegetation, seeking photographs of face and tail without playback to draw birds out. A possible Lebanese observation needs careful documentation rather than an immediate claim of new residence. Conversely, failure to see birds during a windy visit does not demonstrate disappearance."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "Its global category is Least Concern, but specialisation ties its future to healthy wetlands. Drainage, degradation, disturbance and lost cover can reduce usable habitat. Reed management must consider breeding and roosting places and their seasons instead of clearing a large area indiscriminately. Protecting water and connected cover benefits other wetland species too. A male’s attractive appearance never justifies approaching a nest or cutting stems for a cleaner photograph; safeguarding habitat matters more than the image."
+              ]
+            },
+            {
+              "heading": "References",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; British Trust for Ornithology — BirdFacts: Bearded Tit; RSPB — Bearded Tit; Oiseaux.net — Panure à moustaches; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 276; Murdoch and Betton — A checklist of the birds of Syria, Sandgrouse Supplement 2, 2008, p. 28."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: José Antonio León Mangado"
+        },
+        "fr": {
+          "title": "Panure à moustaches",
+          "subtitle": "Panurus biarmicus",
+          "meta_description": "Panure à moustaches : identification, milieux, reproduction, présence saisonnière dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identité et noms",
+              "paragraphs": [
+                "La Panure à moustaches, Panurus biarmicus, est Bearded Reedling en anglais, avec l’autre nom Bearded Tit. Malgré ce dernier et des noms arabes évoquant une mésange, elle appartient aux Panuridae, non à la famille des véritables mésanges, les Paridae. Elle mesure environ 14–17 cm, longue queue comprise, et pèse autour de 15 g. L’association d’un petit corps arrondi et d’une queue très visible produit une silhouette différente de celle de nombreux oiseaux bruns des roseaux."
+              ]
+            },
+            {
+              "heading": "Identification",
+              "paragraphs": [
+                "Le mâle présente une tête gris bleuté et des marques noires tombantes de chaque côté de la face, près d’une gorge claire, sur un corps surtout brun cannelle. Ces marques ressemblent davantage à des moustaches qu’à une barbe. La femelle est plus uniforme et ne les possède pas ; les jeunes peuvent montrer une zone noire sur le dos. Les ailes sont courtes, le bec compact. Une longue queue ne suffit pas : associer silhouette, face, comportement et milieu, surtout lors de vues fugitives entre les tiges."
+              ]
+            },
+            {
+              "heading": "Milieux, alimentation et comportement",
+              "paragraphs": [
+                "Les grandes roselières denses constituent son habitat caractéristique. Elle grimpe sur les tiges, disparaît dans les plantes et émerge parfois sur les inflorescences. Insectes, larves et autres invertébrés dominent pendant la belle saison ; les graines, notamment celles des roseaux, prennent plus d’importance en hiver. Les petits graviers avalés aident le gésier à traiter les aliments végétaux et ne remplacent pas la nourriture. Ses appels sonores peuvent révéler sa présence avant toute observation. Comprendre la roselière est essentiel pour interpréter cette présence."
+              ]
+            },
+            {
+              "heading": "Répartition et présence arabe",
+              "paragraphs": [
+                "Sa répartition est morcelée en Europe et en Asie, suivant les roseaux disponibles, et varie fortement dans les pays arabes. Les données syriennes publiées comprennent des jeunes envolés à Sed Wadi Abied en août 1998 et des populations nicheuses résidentes dans des roselières favorables de l’Euphrate et du Jabbul. Il s’agit de données historiques localisées, non d’un recensement actuel de toute la Syrie. Le guide libanais de 2026 la classe accidentelle : six à Aammiq en mars 1996 et deux à Anjar en avril 2005. Elle n’hiverne donc pas régulièrement dans chaque marais levantin."
+              ]
+            },
+            {
+              "heading": "Reproduction et développement",
+              "paragraphs": [
+                "Le couple construit une coupe dans la végétation enchevêtrée, peu au-dessus de l’eau ou de la vase. Le BTO donne habituellement 4–8 œufs, une incubation partagée de 10–14 jours et un envol vers 12–13 jours après l’éclosion. Les poussins naissent dépendants ; nourriture et protection restent nécessaires après la sortie du nid. D’autres nichées peuvent suivre, mais eau, végétation et météo influencent le succès. Le calendrier européen ne doit pas être transposé automatiquement à une localité arabe."
+              ]
+            },
+            {
+              "heading": "Novembre et observation responsable",
+              "paragraphs": [
+                "En novembre, les oiseaux peuvent former des bandes et circuler entre roselières, avec parfois une dispersion plus large. Écouter depuis une bordure existante vaut mieux que créer un passage dans les roseaux. Noter effectif, lieu et végétation, puis photographier face et queue sans diffusion de cris pour attirer les oiseaux. Une observation libanaise éventuelle demande une documentation soigneuse, pas une conclusion immédiate sur une nouvelle population résidente. Inversement, l’absence d’observation lors d’une visite venteuse ne démontre pas une disparition."
+              ]
+            },
+            {
+              "heading": "Conservation",
+              "paragraphs": [
+                "Sa catégorie mondiale est Préoccupation mineure, mais sa spécialisation la lie à la santé des zones humides. Drainage, dégradation, dérangement et perte de couvert peuvent réduire l’habitat utilisable. La gestion des roseaux doit respecter sites de nidification, dortoirs et saisons, plutôt que supprimer indistinctement une grande surface. Protéger l’eau et la continuité végétale bénéficie aussi aux autres oiseaux. La beauté du mâle ne justifie jamais d’approcher un nid ou de couper des tiges pour améliorer une photographie."
+              ]
+            },
+            {
+              "heading": "Références",
+              "paragraphs": [
+                "AviList Core Team — AviList v2026; British Trust for Ornithology — BirdFacts: Bearded Tit; RSPB — Bearded Tit; Oiseaux.net — Panure à moustaches; UNDP / ABCL / Ministry of Environment — Birds of Lebanon, 2026, p. 276; Murdoch and Betton — A checklist of the birds of Syria, Sandgrouse Supplement 2, 2008, p. 28."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photographie : José Antonio León Mangado"
+        }
+      }
+    }
+  ]
+}
