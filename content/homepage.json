@@ -216,7 +216,17 @@
     "طيطوى-نهقية",
     "الدريجة-الحمراء",
     "جشنة-حنائية",
-    "جشنة-الشجر"
+    "جشنة-الشجر",
+    "خازن-البندق-الأوراسي",
+    "متسلق-الجدران",
+    "درسة-الصخور",
+    "القرقف-الأزرق-الأوراسي",
+    "الصعو-أحمر-العرف",
+    "القرقف-الأزرق-الإفريقي",
+    "عصفور-الشجر-الأوراسي",
+    "الدوري-الإسباني",
+    "دوري-الصخر",
+    "قرقف-أبو-ذقن"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -390,7 +400,17 @@
     "الدريجة-الحمراء",
     "جشنة-حنائية",
     "جشنة-الشجر",
-    "يوم-مات-ملك-القدس-أثناء-صيد-الأرانب"
+    "يوم-مات-ملك-القدس-أثناء-صيد-الأرانب",
+    "خازن-البندق-الأوراسي",
+    "متسلق-الجدران",
+    "درسة-الصخور",
+    "القرقف-الأزرق-الأوراسي",
+    "الصعو-أحمر-العرف",
+    "القرقف-الأزرق-الإفريقي",
+    "عصفور-الشجر-الأوراسي",
+    "الدوري-الإسباني",
+    "دوري-الصخر",
+    "قرقف-أبو-ذقن"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -894,7 +914,17 @@
     "الدريجة-الحمراء": "birds",
     "جشنة-حنائية": "birds",
     "جشنة-الشجر": "birds",
-    "يوم-مات-ملك-القدس-أثناء-صيد-الأرانب": "poetry"
+    "يوم-مات-ملك-القدس-أثناء-صيد-الأرانب": "poetry",
+    "خازن-البندق-الأوراسي": "birds",
+    "متسلق-الجدران": "birds",
+    "درسة-الصخور": "birds",
+    "القرقف-الأزرق-الأوراسي": "birds",
+    "الصعو-أحمر-العرف": "birds",
+    "القرقف-الأزرق-الإفريقي": "birds",
+    "عصفور-الشجر-الأوراسي": "birds",
+    "الدوري-الإسباني": "birds",
+    "دوري-الصخر": "birds",
+    "قرقف-أبو-ذقن": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2582,6 +2612,96 @@
         "ar": "صورة تعبيرية مولدة للملك فولك ملقى على الأرض بعد سقوطه عن حصانه، وإلى جانبه مرافق، وتظهر الملكة والحاشية في الخلفية.",
         "en": "AI-generated illustration of King Fulk lying on the ground after falling from his horse, with an attendant beside him and the queen and entourage in the background.",
         "fr": "Illustration générée par IA du roi Foulques étendu à terre après sa chute de cheval, avec un compagnon à ses côtés et la reine et sa suite à l’arrière-plan."
+      }
+    },
+    "خازن-البندق-الأوراسي": {
+      "image": "media/publications/daily-birds-20261108/eurasian-nuthatch.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "خازن بندق أوراسي على جذع بخط عين أسود ومنقار طويل مدبب",
+        "en": "Eurasian Nuthatch on a stump with black eye stripe and long pointed bill",
+        "fr": "Sittelle torchepot sur une souche, au trait oculaire noir et au long bec pointu"
+      }
+    },
+    "متسلق-الجدران": {
+      "image": "media/publications/daily-birds-20261108/wallcreeper.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "متسلق جدران على صخرة بجناح قرمزي ومنقار طويل مقوس",
+        "en": "Wallcreeper on a rock showing crimson wing feathers and a long curved bill",
+        "fr": "Tichodrome échelette sur un rocher, aux plumes alaires cramoisies et au long bec courbé"
+      }
+    },
+    "درسة-الصخور": {
+      "image": "media/publications/daily-birds-20261108/rock-bunting.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "درسة صخور على صخرة برأس رمادي مخطط بالأسود",
+        "en": "Rock Bunting on a rock with a grey head striped in black",
+        "fr": "Bruant fou sur un rocher, à la tête grise rayée de noir"
+      }
+    },
+    "القرقف-الأزرق-الأوراسي": {
+      "image": "media/publications/daily-birds-20261108/eurasian-blue-tit.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قرقف أزرق أوراسي على غصن يحمل يرقة خضراء",
+        "en": "Eurasian Blue Tit on a branch holding a green caterpillar",
+        "fr": "Mésange bleue sur une branche tenant une chenille verte"
+      }
+    },
+    "الصعو-أحمر-العرف": {
+      "image": "media/publications/daily-birds-20261108/common-firecrest.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ملك طيور ناري العرف على غصن بحاجب أبيض وشريط أسود عبر العين",
+        "en": "Common Firecrest on a branch with white eyebrow and black eye stripe",
+        "fr": "Roitelet à triple bandeau sur une branche, au sourcil blanc et au trait oculaire noir"
+      }
+    },
+    "القرقف-الأزرق-الإفريقي": {
+      "image": "media/publications/daily-birds-20261108/african-blue-tit.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قرقف أزرق إفريقي على ساق نبات بتاج أزرق داكن وخد أبيض",
+        "en": "African Blue Tit perched on a plant stem, with dark blue crown and white cheek",
+        "fr": "Mésange nord-africaine sur une tige, à calotte bleu foncé et joue blanche"
+      }
+    },
+    "عصفور-الشجر-الأوراسي": {
+      "image": "media/publications/daily-birds-20261108/eurasian-tree-sparrow.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "عصفور شجر أوراسي على غصن بتاج بني وبقعة سوداء على الخد",
+        "en": "Eurasian Tree Sparrow on a branch with chestnut crown and black cheek patch",
+        "fr": "Moineau friquet sur une branche, à calotte brune et tache noire sur la joue"
+      }
+    },
+    "الدوري-الإسباني": {
+      "image": "media/publications/daily-birds-20261108/spanish-sparrow.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "عصفور إسباني بمنقار غليظ وخد أبيض وصدر مخطط",
+        "en": "Spanish Sparrow with thick bill, white cheek and streaked breast",
+        "fr": "Moineau espagnol au bec épais, à joue blanche et poitrine striée"
+      }
+    },
+    "دوري-الصخر": {
+      "image": "media/publications/daily-birds-20261108/rock-sparrow.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "عصفور صخور على صخرة بريش بني مخطط ومنقار مخروطي",
+        "en": "Rock Sparrow on a rock with streaked brown plumage and a conical bill",
+        "fr": "Moineau soulcie sur un rocher, au plumage brun strié et au bec conique"
+      }
+    },
+    "قرقف-أبو-ذقن": {
+      "image": "media/publications/daily-birds-20261108/bearded-reedling.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طائر ملتحي بين القصب بريش بني مصفر وذيل طويل",
+        "en": "Bearded Reedling among reeds with tawny plumage and a long tail",
+        "fr": "Panure à moustaches parmi les roseaux, au plumage fauve et à la longue queue"
       }
     }
   },
