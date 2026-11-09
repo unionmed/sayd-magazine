@@ -95,5 +95,6 @@ class TVTests(unittest.TestCase):
 
 from test_adonis_tv_publication import AdonisTVTests
 from test_radar_tv_publication import RadarTVTests
+from test_jiad_tv_publication import JiadTVTests
 
 if __name__=='__main__':unittest.main()

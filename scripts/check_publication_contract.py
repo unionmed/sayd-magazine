@@ -192,6 +192,8 @@ def check(base=None):
         def selected(d):
             if d['door']=='tv':return adonis_tv_publication.selected_slugs(ROOT,d['slugs'])
             return homepage_slugs(lang,c) if d['door']=='interviews' else d['slugs']
+        import jiad_tv_publication
+        if (ROOT/jiad_tv_publication.SOURCE).is_file():jiad_tv_publication.check_published(ROOT)
         import radar_tv_publication
         if (ROOT/radar_tv_publication.SOURCE).is_file():radar_tv_publication.check_published(ROOT)
         import tv_publication
