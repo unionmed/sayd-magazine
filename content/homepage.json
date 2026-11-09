@@ -628,10 +628,10 @@
     {
       "door": "gear",
       "slugs": [
+        "الرماية-الدولية-عقوبة-راتنر-2026",
         "بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026",
         "بطولة-العالم-بندقية-300-متر-القاهرة-2026",
-        "أسلحة-الصيد-في-معرض-الرياض-2026",
-        "القاهرة-تستعد-لكأس-العالم-للبندقية-والمسدس"
+        "أسلحة-الصيد-في-معرض-الرياض-2026"
       ]
     },
     {
@@ -924,7 +924,8 @@
     "عصفور-الشجر-الأوراسي": "birds",
     "الدوري-الإسباني": "birds",
     "دوري-الصخر": "birds",
-    "قرقف-أبو-ذقن": "birds"
+    "قرقف-أبو-ذقن": "birds",
+    "الرماية-الدولية-عقوبة-راتنر-2026": "gear"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -943,6 +944,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "الرماية-الدولية-عقوبة-راتنر-2026",
     "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
     "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
     "كرنفال-دبي-ميدان-2026-2027",
@@ -951,8 +953,7 @@
     "طيور-تتعطر-بالنمل",
     "مونديال-الرماية-قطر-2026",
     "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
-    "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
-    "عندما-تهين-الطريدة-أنت-تهين-نفسك"
+    "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -2703,11 +2704,28 @@
         "en": "Bearded Reedling among reeds with tawny plumage and a long tail",
         "fr": "Panure à moustaches parmi les roseaux, au plumage fauve et à la longue queue"
       }
+    },
+    "الرماية-الدولية-عقوبة-راتنر-2026": {
+      "image": "media/publications/issf-ratner-sanction-20261109/hochbrueck-aerial-reinhard-fraunholz.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "مشهد جوي لميادين الرماية والمنشآت المحاطة بالأشجار في غارشينغ–هوخبروك قرب ميونيخ.",
+        "en": "Aerial view of shooting ranges and buildings surrounded by trees in Garching-Hochbrück near Munich.",
+        "fr": "Vue aérienne des stands de tir et des bâtiments entourés d’arbres à Garching-Hochbrück, près de Munich."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "الرماية-الدولية-عقوبة-راتنر-2026",
+      "titles": {
+        "ar": "الاتحاد الدولي للرماية يعلن عدم أهلية ألكسندر راتنر ثلاث سنوات وغرامة 30 ألف يورو.",
+        "en": "ISSF announces three-year ineligibility sanction and €30,000 fine for Alexander Ratner.",
+        "fr": "L’ISSF annonce trois ans d’inéligibilité et 30 000 euros d’amende pour Alexander Ratner."
+      }
+    },
     {
       "slug": "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
       "titles": {
@@ -2778,14 +2796,6 @@
         "ar": "من دبي إلى سباق المليوني دولار… بن حرمش يستلهم نجاح اليابان",
         "en": "From Dubai to a $2 million race… Bin Harmash takes inspiration from Japan",
         "fr": "De Dubaï à une course dotée de deux millions de dollars… Bin Harmash s’inspire du Japon"
-      }
-    },
-    {
-      "slug": "عندما-تهين-الطريدة-أنت-تهين-نفسك",
-      "titles": {
-        "ar": "عندما تهين الطريدة… أنت تهين نفسك!",
-        "en": "When You Humiliate Your Quarry… You Humiliate Yourself!",
-        "fr": "Quand vous humiliez votre gibier… vous vous humiliez vous-même !"
       }
     }
   ],
