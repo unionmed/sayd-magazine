@@ -1,0 +1,1065 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261110",
+  "expected_base": "fd544b10e9425db43ad80caa81c0f32593ff9c5f",
+  "approval_reference": "Owner approved the November 10 ten-species Bird Encyclopedia publication on 10 November 2026, after successful checks and independent review. Scope: complete AR/EN/FR, archive-only, no ticker or homepage promotion. This approval supersedes the preparation-only hold.",
+  "bank_search_reference": "Existing editorial image collection searched before selecting the ten verified external originals. Public photographic source and licence evidence are retained in each photo record.",
+  "photos": [
+    {
+      "id": "netta-rufina",
+      "path": "docs/media/publications/daily-birds-20261110/netta-rufina.jpg",
+      "sha256": "7bd7647bfd0a0f34238c9bbacdd56bc8c142cd300615947d07b3ee8389837da3",
+      "source_sha256": "7bd7647bfd0a0f34238c9bbacdd56bc8c142cd300615947d07b3ee8389837da3",
+      "source_reference": "Nick Blewden; source date 2021-05-12, source location Millwall Inner Dock, London, England, GB. Representative species illustration, not evidence of occurrence in an Arab country or of a current event. Captive status: False. https://www.inaturalist.org/photos/128438271",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license read from primary iNaturalist observation API. Commercial copying and reuse permitted without mandatory attribution hyperlink; courtesy attribution retained. No warranty of uploader copyright ownership or unrelated rights. No modifications to downloaded original bytes; watermark retained if present",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/78477918; exact photo 128438271 licence cc0 verified 10 November 2026. https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "ذكر من البط أحمر العرف يسبح على الماء",
+        "en": "Male Red-crested Pochard swimming on water",
+        "fr": "Nette rousse mâle nageant sur l’eau"
+      },
+      "caption": {
+        "ar": "البط أحمر العرف",
+        "en": "Red-crested Pochard",
+        "fr": "Nette rousse"
+      }
+    },
+    {
+      "id": "aythya-marila",
+      "path": "docs/media/publications/daily-birds-20261110/aythya-marila.jpg",
+      "sha256": "53aaa32154fc9daf95f9a01ea0f1021eca23677bb36c1c6825cc2ffc0e98e5a1",
+      "source_sha256": "53aaa32154fc9daf95f9a01ea0f1021eca23677bb36c1c6825cc2ffc0e98e5a1",
+      "source_reference": "Claude Lyneis; source date 2020-01-17, source location Berkeley, CA, USA. Representative species illustration, not evidence of occurrence in an Arab country or of a current event. Captive status: False. https://www.inaturalist.org/photos/59821804",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license read from primary iNaturalist observation API. Commercial copying and reuse permitted without mandatory attribution hyperlink; courtesy attribution retained. No warranty of uploader copyright ownership or unrelated rights. No modifications to downloaded original bytes; watermark retained if present",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/37701417; exact photo 59821804 licence cc0 verified 10 November 2026. https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "بط إسكاوب كبير بريش أنثوي يسبح على الماء",
+        "en": "Female-type Greater Scaup swimming on water",
+        "fr": "Fuligule milouinan au plumage de type femelle nageant sur l’eau"
+      },
+      "caption": {
+        "ar": "الإسكوب الكبير",
+        "en": "Greater Scaup",
+        "fr": "Fuligule milouinan"
+      }
+    },
+    {
+      "id": "mergus-serrator",
+      "path": "docs/media/publications/daily-birds-20261110/mergus-serrator.jpg",
+      "sha256": "ab97826ddf658770c3b812070a2463a06622cae48e921207455f15d19a7ea9db",
+      "source_sha256": "ab97826ddf658770c3b812070a2463a06622cae48e921207455f15d19a7ea9db",
+      "source_reference": "Hamilton Turner; source date 2020-04-15, source location Frederick County, VA, USA. Representative species illustration, not evidence of occurrence in an Arab country or of a current event. Captive status: False. https://www.inaturalist.org/photos/67765930",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license read from primary iNaturalist observation API. Commercial copying and reuse permitted without mandatory attribution hyperlink; courtesy attribution retained. No warranty of uploader copyright ownership or unrelated rights. No modifications to downloaded original bytes; watermark retained if present",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/42672477; exact photo 67765930 licence cc0 verified 10 November 2026. https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "بلقشة حمراء الصدر بريش أنثوي تسبح على الماء",
+        "en": "Female-type Red-breasted Merganser swimming on water",
+        "fr": "Harle huppé au plumage de type femelle nageant sur l’eau"
+      },
+      "caption": {
+        "ar": "البلقشة حمراء الصدر",
+        "en": "Red-breasted Merganser",
+        "fr": "Harle huppé"
+      }
+    },
+    {
+      "id": "mergellus-albellus",
+      "path": "docs/media/publications/daily-birds-20261110/mergellus-albellus.jpg",
+      "sha256": "c64ed399a6b6893b990678c253f5ab91e94fc71519bd4f6fc4470b48ba58a8fc",
+      "source_sha256": "c64ed399a6b6893b990678c253f5ab91e94fc71519bd4f6fc4470b48ba58a8fc",
+      "source_reference": "Лариса Артемьева; source date 2023-04-13, source location Пермский р-н, Пермский край, Россия. Representative species illustration, not evidence of occurrence in an Arab country or of a current event. Captive status: False. https://www.inaturalist.org/photos/267324564",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license read from primary iNaturalist observation API. Commercial copying and reuse permitted without mandatory attribution hyperlink; courtesy attribution retained. No warranty of uploader copyright ownership or unrelated rights. No modifications to downloaded original bytes; watermark retained if present",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/154696482; exact photo 267324564 licence cc0 verified 10 November 2026. https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "ذكر بلقشة صغيرة أبيض الريش بقناع أسود حول العين",
+        "en": "White male Smew with a black eye mask",
+        "fr": "Harle piette mâle blanc au masque oculaire noir"
+      },
+      "caption": {
+        "ar": "البلقشة الصغيرة",
+        "en": "Smew",
+        "fr": "Harle piette"
+      }
+    },
+    {
+      "id": "oxyura-leucocephala",
+      "path": "docs/media/publications/daily-birds-20261110/oxyura-leucocephala.jpg",
+      "sha256": "369250c7c1120e64f2128426d9271e9149b6270816c2b3ab904673c32e54b53c",
+      "source_sha256": "369250c7c1120e64f2128426d9271e9149b6270816c2b3ab904673c32e54b53c",
+      "source_reference": "karim Attouche; source date 2022-08-21, source location Algeria. Representative species illustration, not evidence of occurrence in an Arab country or of a current event. Captive status: False. https://www.inaturalist.org/photos/462332756",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license read from primary iNaturalist observation API. Commercial copying and reuse permitted without mandatory attribution hyperlink; courtesy attribution retained. No warranty of uploader copyright ownership or unrelated rights. No modifications to downloaded original bytes; watermark retained if present",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/257703937; exact photo 462332756 licence cc0 verified 10 November 2026. https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "ذكر بط أبيض الرأس بمنقار أزرق منتفخ يسبح على الماء",
+        "en": "Male White-headed Duck with a swollen blue bill swimming on water",
+        "fr": "Érismature à tête blanche mâle au bec bleu renflé nageant sur l’eau"
+      },
+      "caption": {
+        "ar": "البط أبيض الرأس",
+        "en": "White-headed Duck",
+        "fr": "Érismature à tête blanche"
+      }
+    },
+    {
+      "id": "bucephala-clangula",
+      "path": "docs/media/publications/daily-birds-20261110/bucephala-clangula.jpg",
+      "sha256": "a81d838f5c414cafed7e323b2f670718491a555a2fa43fc619b14b700e02ca46",
+      "source_sha256": "a81d838f5c414cafed7e323b2f670718491a555a2fa43fc619b14b700e02ca46",
+      "source_reference": "Sunny Zhang 张迎新; source date 2026-04-27, source location Vancouver, BC, Canada. Representative species illustration, not evidence of occurrence in an Arab country or of a current event. Captive status: False. https://www.inaturalist.org/photos/648773701",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license read from primary iNaturalist observation API. Commercial copying and reuse permitted without mandatory attribution hyperlink; courtesy attribution retained. No warranty of uploader copyright ownership or unrelated rights. No modifications to downloaded original bytes; watermark retained if present",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/355758242; exact photo 648773701 licence cc0 verified 10 November 2026. https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "بط ذهبي العين بريش أنثوي يسبح على الماء",
+        "en": "Female-type Common Goldeneye swimming on water",
+        "fr": "Garrot à œil d’or au plumage de type femelle nageant sur l’eau"
+      },
+      "caption": {
+        "ar": "البط ذهبي العين",
+        "en": "Common Goldeneye",
+        "fr": "Garrot à œil d’or"
+      }
+    },
+    {
+      "id": "marmaronetta-angustirostris",
+      "path": "docs/media/publications/daily-birds-20261110/marmaronetta-angustirostris.jpg",
+      "sha256": "ee76bf1f1daca444032b44a5b343e8df15a0859843e29261878503debdfb75bc",
+      "source_sha256": "ee76bf1f1daca444032b44a5b343e8df15a0859843e29261878503debdfb75bc",
+      "source_reference": "karim Attouche; source date 2023-05-20, source location Algeria. Representative species illustration, not evidence of occurrence in an Arab country or of a current event. Captive status: False. https://www.inaturalist.org/photos/462679813",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license read from primary iNaturalist observation API. Commercial copying and reuse permitted without mandatory attribution hyperlink; courtesy attribution retained. No warranty of uploader copyright ownership or unrelated rights. No modifications to downloaded original bytes; watermark retained if present",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/257912004; exact photo 462679813 licence cc0 verified 10 November 2026. https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "بط رخامي يطير بجناحين ممدودين",
+        "en": "Marbled Duck in flight with wings extended",
+        "fr": "Sarcelle marbrée en vol, les ailes déployées"
+      },
+      "caption": {
+        "ar": "البط الرخامي",
+        "en": "Marbled Duck",
+        "fr": "Sarcelle marbrée"
+      }
+    },
+    {
+      "id": "anser-erythropus",
+      "path": "docs/media/publications/daily-birds-20261110/anser-erythropus.jpg",
+      "sha256": "871ea6e5ff487f4215c89d054377bc6078f66ea7621fafb3db3b98d11e644422",
+      "source_sha256": "871ea6e5ff487f4215c89d054377bc6078f66ea7621fafb3db3b98d11e644422",
+      "source_reference": "andrew2285; source date 2023-08-16, source location Gloucestershire, England, GB. Representative species illustration, not evidence of occurrence in an Arab country or of a current event. Captive status: True. https://www.inaturalist.org/photos/610497778",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license read from primary iNaturalist observation API. Commercial copying and reuse permitted without mandatory attribution hyperlink; courtesy attribution retained. No warranty of uploader copyright ownership or unrelated rights. No modifications to downloaded original bytes; watermark retained if present",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/336000376; exact photo 610497778 licence cc0 verified 10 November 2026. https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "طائران من الإوز الصغير أبيض الجبهة في الأسر يسبحان على الماء",
+        "en": "Two captive Lesser White-fronted Geese swimming on water",
+        "fr": "Deux Oies naines captives nageant sur l’eau"
+      },
+      "caption": {
+        "ar": "الإوز الأغر الصغير — طيور في الأسر",
+        "en": "Lesser White-fronted Goose — captive birds",
+        "fr": "Oie naine — oiseaux captifs"
+      }
+    },
+    {
+      "id": "branta-bernicla",
+      "path": "docs/media/publications/daily-birds-20261110/branta-bernicla.jpg",
+      "sha256": "b5ec12d23af7e6129ff991eddfa35ec00d7836f28860392c54b31f959dbd64fd",
+      "source_sha256": "b5ec12d23af7e6129ff991eddfa35ec00d7836f28860392c54b31f959dbd64fd",
+      "source_reference": "Лариса Артемьева; source date 2020-10-14, source location Петропавловская крепость, Санкт-Петербург, Санкт-Петербург, RU. Representative species illustration, not evidence of occurrence in an Arab country or of a current event. Captive status: False. https://www.inaturalist.org/photos/100388782",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license read from primary iNaturalist observation API. Commercial copying and reuse permitted without mandatory attribution hyperlink; courtesy attribution retained. No warranty of uploader copyright ownership or unrelated rights. No modifications to downloaded original bytes; watermark retained if present",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/62634419; exact photo 100388782 licence cc0 verified 10 November 2026. https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "إوزة برنت تقف بين الأعشاب",
+        "en": "Brent Goose standing in grass",
+        "fr": "Bernache cravant debout dans l’herbe"
+      },
+      "caption": {
+        "ar": "الإوز البرنت",
+        "en": "Brent Goose",
+        "fr": "Bernache cravant"
+      }
+    },
+    {
+      "id": "branta-ruficollis",
+      "path": "docs/media/publications/daily-birds-20261110/branta-ruficollis.jpg",
+      "sha256": "2de6c15061842ad691b0af1afab1b1f3825df75825c48fc5d24ddfcad011b43c",
+      "source_sha256": "2de6c15061842ad691b0af1afab1b1f3825df75825c48fc5d24ddfcad011b43c",
+      "source_reference": "Лариса Артемьева; source date 2021-01-23, source location Ukraine. Representative species illustration, not evidence of occurrence in an Arab country or of a current event. Captive status: False. https://www.inaturalist.org/photos/110925912",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license read from primary iNaturalist observation API. Commercial copying and reuse permitted without mandatory attribution hyperlink; courtesy attribution retained. No warranty of uploader copyright ownership or unrelated rights. No modifications to downloaded original bytes; watermark retained if present",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/68492768; exact photo 110925912 licence cc0 verified 10 November 2026. https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "alt": {
+        "ar": "إوزة حمراء الصدر تخفض رأسها لتتغذى",
+        "en": "Red-breasted Goose lowering its head to feed",
+        "fr": "Bernache à cou roux baissant la tête pour se nourrir"
+      },
+      "caption": {
+        "ar": "الإوز أحمر الصدر",
+        "en": "Red-breasted Goose",
+        "fr": "Bernache à cou roux"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "البط-أحمر-العرف",
+        "en": "red-crested-pochard",
+        "fr": "nette-rousse"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "netta-rufina"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البط أحمر العرف",
+          "subtitle": "Netta rufina",
+          "meta_description": "البط أحمر العرف: الهوية والموائل والغذاء ودورة الحياة والحضور العربي والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "البط أحمر العرف Netta rufina من البطيات. يتميز الذكر برأس كبير مستدير بلون برتقالي صدئ ومنقار أحمر، مع صدر أسود وجانبين فاتحين. الأنثى بنية وأقل تباينًا، بخدين فاتحين. لا ينبغي الخلط بينه وبين البط كستنائي الرأس Aythya ferina ذي المنقار غير الأحمر. ويرد في مراجع عربية أيضًا باسم الونس أو بطة حمراء القنة. يبلغ طوله نحو 53–57 سم.",
+                "يستخدم البحيرات والمياه الهادئة ذات النباتات المائية. يستطيع الغوص والوصول إلى الغذاء قرب السطح، وتحتل النباتات مكانًا مهمًا في غذائه. تتغير كسوة الذكر بعد التكاثر، فلا يكفي غياب ألوانه الواضحة للحكم على الجنس أو العمر.",
+                "له تكاثر محلي موثق في شمال إفريقيا، من المغرب إلى الجزائر؛ وسجلت دراسة في مستنقع المخاضة بالقالة أنثى مع فراخها في يونيو 2025. أما مسوح كردستان العراق سنة 2008، المنشورة سنة 2009، فسجلته شتويًا وعابرًا. هكذا تجمع خريطته العربية بين مواقع تكاثر محلية ومناطق استقبال شتوية.",
+                "يبنى العش بين النباتات المائية أو على الأرض وسط غطاء كثيف، ويبطن بالنبات والزغب. تكون الحضنة عادة 8–10 بيضات، وتحضنها الأنثى نحو 26–28 يومًا. وقد تضع أكثر من أنثى بيضها في عش واحد، فلا يعادل عدد البيض الكبير إنتاج أنثى واحدة. تقود الأم الفراخ إلى الغذاء والغطاء بعد الفقس.",
+                "تصنيفه العالمي «غير مهدد» LC وفق مرجع BTO، لكن حماية المياه والنباتات وضمان أماكن هادئة للراحة تظل ضرورية. وقد تُربى هذه البطة في الأسر، لذا يحتاج تحديد أصل مشاهدة غير معتادة إلى توثيق، لا إلى المظهر الجميل وحده."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Nick Blewden"
+        },
+        "en": {
+          "title": "Red-crested Pochard",
+          "subtitle": "Netta rufina",
+          "meta_description": "Red-crested Pochard: identification, habitat, feeding, lifecycle, Arab-world occurrence and conservation.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Red-crested Pochard Netta rufina belongs to the duck family. The male has a large, rounded rusty-orange head and red bill, contrasting with a dark breast and pale flanks. Females are browner and less contrasting, with pale cheeks. Common Pochard Aythya ferina lacks the male’s red bill. Arabic references also use al-wans or the equivalent of red-crowned duck. Its length is about 53–57 cm.",
+                "It uses lakes and quiet waters with aquatic vegetation, obtaining food both by diving and near the surface. Plants form an important part of its diet. Males change plumage after breeding, so the absence of bright colours alone does not establish sex or age.",
+                "Local breeding is documented in North Africa, including Morocco and Algeria. A study recorded a female with ducklings at Mekhada marsh, El Kala, in June 2025. Iraqi Kurdistan surveys undertaken in 2008 and published in 2009 recorded winter and passage occurrence. Its Arab distribution therefore includes both local breeding areas and winter destinations.",
+                "The nest is built among aquatic vegetation or on the ground within dense cover, lined with plant material and down. A usual clutch has 8–10 eggs, incubated by the female for about 26–28 days. Several females may lay in the same nest, so an unusually large egg count need not be one female’s output. The mother guides the ducklings to food and cover after hatching.",
+                "BTO reports global Least Concern status. Protecting water, vegetation and undisturbed resting places nevertheless remains important. Because this attractive duck is also kept in captivity, the origin of an unusual record requires evidence rather than appearance alone."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Nick Blewden"
+        },
+        "fr": {
+          "title": "Nette rousse",
+          "subtitle": "Netta rufina",
+          "meta_description": "Nette rousse : identification, habitat, alimentation, cycle de vie, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identification, cycle de vie et répartition",
+              "paragraphs": [
+                "La Nette rousse Netta rufina appartient aux Anatidés. Le mâle présente une grosse tête arrondie orange roux et un bec rouge, contrastant avec la poitrine sombre et les flancs clairs. La femelle est plus brune, avec des joues pâles. Le Fuligule milouin Aythya ferina ne possède pas ce bec rouge. Les références arabes emploient aussi al-wans ou un nom signifiant canard à calotte rouge. Sa longueur est d’environ 53–57 cm.",
+                "Elle fréquente les lacs et les eaux calmes riches en végétation aquatique. Elle se nourrit en plongeant ou près de la surface, les végétaux occupant une place importante dans son alimentation. Le plumage du mâle change après la reproduction : des couleurs ternes ne suffisent donc pas à déterminer le sexe ou l’âge.",
+                "Une reproduction locale est documentée en Afrique du Nord, notamment au Maroc et en Algérie. Une étude a observé une femelle avec ses canetons au marais de Mekhada, à El Kala, en juin 2025. Les inventaires du Kurdistan irakien, réalisés en 2008 et publiés en 2009, documentent hivernage et passage. La répartition arabe associe donc foyers de nidification et secteurs d’accueil hivernal.",
+                "Le nid est installé dans la végétation aquatique ou au sol sous un couvert dense, et garni de végétaux et de duvet. Une ponte habituelle compte 8–10 œufs, couvés par la femelle pendant environ 26–28 jours. Plusieurs femelles peuvent pondre dans un même nid : un grand nombre d’œufs ne correspond donc pas nécessairement à une seule femelle. La mère conduit ensuite les canetons vers la nourriture et les abris.",
+                "Le BTO indique un statut mondial de préoccupation mineure, LC. La conservation des eaux, de leur végétation et des zones de repos reste nécessaire. L’espèce étant aussi élevée en captivité, une observation inhabituelle exige de vérifier son origine."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Nick Blewden"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الإسكوب-الكبير",
+        "en": "greater-scaup",
+        "fr": "fuligule-milouinan"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "aythya-marila"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الإسكوب الكبير",
+          "subtitle": "Aythya marila",
+          "meta_description": "الإسكوب الكبير: الهوية والموائل والغذاء ودورة الحياة والحضور العربي والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "الإسكوب الكبير Aythya marila بطة غطاسة شمالية. يحمل الذكر رأسًا داكنًا وظهرًا رماديًا وجانبين أبيضين، ولا تظهر له الخصلة الطويلة المميزة لذكر بطة قنبراء. الأنثى بنية، وغالبًا ما يحيط بقاعدة منقارها بياض؛ ليست هذه العلامة وحدها كافية للتعرف.",
+                "يستخدم مياه السواحل الضحلة والبحيرات، ويبحث بالغوص عن الغذاء، ولا سيما اللافقاريات المائية. يتكاثر في مناطق شمالية، وتضع الأنثى عادة 8–11 بيضة وتحضنها 26–28 يومًا. يورد BTO نحو 40–45 يومًا للوصول إلى الطيران؛ وهي قيم مرجعية لا وصف لكل عش.",
+                "يقع وجوده العربي على أطراف نطاقه الشمالي الواسع. وتعده قائمة طيور المغرب نادرًا أو عارضًا، بينما تشمل اتفاقية الأنواع المهاجرة المغرب وتونس ضمن نطاقه. يختلف هذا الحضور المحدود عن تجمعاته الشمالية الكبيرة.",
+                "تصنيفه العالمي LC، وهو لا يساوي استقرار كل جماعة محلية. مراقبته من مسافة وتجنب دفع الأسراب إلى الطيران يحفظان وقت الغذاء والراحة، خصوصًا للطيور التي وصلت خارج نطاقها المعتاد."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Claude Lyneis"
+        },
+        "en": {
+          "title": "Greater Scaup",
+          "subtitle": "Aythya marila",
+          "meta_description": "Greater Scaup: identification, habitat, feeding, lifecycle, Arab-world occurrence and conservation.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Greater Scaup Aythya marila is a northern diving duck. Males combine a dark head, grey back and white flanks, without the long crest of male Tufted Duck. Females are brown and often have white around the bill base, but that feature alone is insufficient for identification.",
+                "It uses shallow coastal waters and lakes, diving for food, particularly aquatic invertebrates. It breeds in northern regions. BTO gives a typical clutch of 8–11 eggs, female incubation of 26–28 days and fledging at about 40–45 days. These are reference values, not a timetable for every nest.",
+                "Its Arab-world occurrence lies at the edge of its broad northern distribution. The Moroccan checklist treats it as rare or accidental, while CMS includes Morocco and Tunisia in its range. This limited southern presence contrasts with its large northern concentrations.",
+                "Its global status is Least Concern, LC, which does not imply stability in every population. Watching from a distance rather than repeatedly flushing birds preserves feeding and resting time, especially for individuals outside their usual range."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Claude Lyneis"
+        },
+        "fr": {
+          "title": "Fuligule milouinan",
+          "subtitle": "Aythya marila",
+          "meta_description": "Fuligule milouinan : identification, habitat, alimentation, cycle de vie, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identification, cycle de vie et répartition",
+              "paragraphs": [
+                "Le Fuligule milouinan Aythya marila est un canard plongeur nordique. Le mâle associe une tête sombre, un dos gris et des flancs blancs, sans la longue huppe du Fuligule morillon mâle. La femelle brune porte souvent du blanc à la base du bec, caractère insuffisant à lui seul pour l’identification.",
+                "Il fréquente les eaux côtières peu profondes et les lacs, où il plonge notamment pour capturer des invertébrés aquatiques. Il niche dans les régions septentrionales. Le BTO indique généralement 8–11 œufs, une incubation de 26–28 jours assurée par la femelle et l’envol vers 40–45 jours. Ces repères ne décrivent pas chaque nichée.",
+                "Sa présence dans le monde arabe se situe en marge de sa vaste répartition septentrionale. La liste marocaine le considère comme rare ou accidentel, tandis que la CMS inclut le Maroc et la Tunisie dans son aire. Cette présence méridionale limitée contraste avec ses grandes concentrations du Nord.",
+                "Le statut mondial est de préoccupation mineure, LC, sans garantir la stabilité de chaque population. Une observation à distance préserve le temps de repos et d’alimentation. Éviter de les faire décoller à répétition est particulièrement utile aux individus éloignés de leur aire habituelle."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Claude Lyneis"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البلقشة-حمراء-الصدر",
+        "en": "red-breasted-merganser",
+        "fr": "harle-huppe"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "mergus-serrator"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البلقشة حمراء الصدر",
+          "subtitle": "Mergus serrator",
+          "meta_description": "البلقشة حمراء الصدر: الهوية والموائل والغذاء ودورة الحياة والحضور العربي والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "البلقشة حمراء الصدر Mergus serrator بطة ذات منقار رفيع مسنن يساعدها على الإمساك بالأسماك. يحمل الجنسان عرفًا أشعث؛ رأس الذكر داكن لامع، ورأس الأنثى بني محمر. ينبغي مقارنة المنقار والرأس وحدود ألوان العنق، لا الاعتماد على العرف وحده عند فصلها عن البلقشات المشابهة.",
+                "تتغذى بالغوص، وتستخدم السواحل والمياه الداخلية، مع أهمية البحر خارج موسم التكاثر. تتكاثر أساسًا في مناطق شمالية. يورد BTO عادة 8–10 بيضات؛ الفراخ قادرة على الحركة والسباحة قبل اكتمال الطيران.",
+                "يقام العش على الأرض في موضع مستور قريب من الماء، وتحضن الأنثى البيض نحو 31–32 يومًا، بينما يبلغ الصغار الطيران عادة في 60–65 يومًا وفق القيم المرجعية لـBTO. طول مرحلة الاعتماد على الماء يجعل اضطراب الضفاف المتكرر مؤثرًا في وقت الرعاية والراحة.",
+                "يتفاوت حضوره بين البلدان العربية. ونشرت جمعية حماية الطبيعة في لبنان سنة 2019 مشاهدة وصفتها بأنها الثانية للبلاد. ويسرد تقييم القائمة الحمراء الكويت وعمان والسعودية ضمن بلدان الظهور العارض، وهو نمط يختلف عن حضوره المعتاد في أجزاء من نطاقه الشمالي.",
+                "تصنيفها العالمي LC، فيما يختلف التقييم الأوروبي. تدهور المياه والتلوث وإزعاج مواقع الراحة أخطار تستحق الانتباه دون اختزال حالة النوع في مشاهدات قليلة."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Hamilton Turner"
+        },
+        "en": {
+          "title": "Red-breasted Merganser",
+          "subtitle": "Mergus serrator",
+          "meta_description": "Red-breasted Merganser: identification, habitat, feeding, lifecycle, Arab-world occurrence and conservation.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Red-breasted Merganser Mergus serrator has a slender, serrated bill suited to holding fish. Both sexes carry a shaggy crest: the male’s head is dark and glossy, the female’s reddish brown. Bill shape and neck-pattern boundaries matter when separating similar sawbills; the crest alone is insufficient.",
+                "It dives for food and uses both coastal and inland waters, with marine habitats important outside the breeding season. Breeding is mainly northern. BTO gives a typical clutch of 8–10 eggs. Young birds can move and swim before they acquire full flight capability.",
+                "The nest is on the ground in a sheltered place near water. The female incubates for about 31–32 days, while young typically fledge at 60–65 days in BTO’s reference data. Their extended dependence on aquatic habitats makes undisturbed shorelines important during brood-rearing.",
+                "Its occurrence varies among Arab countries. SPNL published a record in 2019 described as Lebanon’s second. The Red List assessment lists Kuwait, Oman and Saudi Arabia among countries of vagrant occurrence, contrasting with its regular presence in parts of its northern range.",
+                "Its global status is Least Concern, LC; the European assessment differs. Water degradation, pollution and disturbance at resting sites remain relevant concerns, and a few sightings cannot describe the condition of an entire species."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Hamilton Turner"
+        },
+        "fr": {
+          "title": "Harle huppé",
+          "subtitle": "Mergus serrator",
+          "meta_description": "Harle huppé : identification, habitat, alimentation, cycle de vie, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identification, cycle de vie et répartition",
+              "paragraphs": [
+                "Le Harle huppé Mergus serrator possède un bec mince et denticulé adapté à la capture des poissons. Les deux sexes portent une huppe ébouriffée : la tête du mâle est sombre et brillante, celle de la femelle brun roux. La forme du bec et les limites des couleurs du cou complètent l’identification. La huppe seule ne suffit pas à distinguer les harles proches.",
+                "Il plonge pour se nourrir et utilise les eaux côtières et intérieures, la mer étant importante hors reproduction. Il niche principalement dans les régions nordiques. Le BTO indique habituellement 8–10 œufs. Les jeunes peuvent se déplacer et nager avant de maîtriser le vol.",
+                "Le nid se trouve au sol, à couvert près de l’eau. La femelle couve environ 31–32 jours ; les jeunes prennent généralement leur envol à 60–65 jours selon les données de référence du BTO. Leur dépendance prolongée aux milieux aquatiques rend la tranquillité des berges importante pendant l’élevage.",
+                "Sa présence varie selon les pays arabes. En 2019, la SPNL a publié une observation présentée comme la deuxième pour le Liban. L’évaluation de la Liste rouge classe le Koweït, Oman et l’Arabie saoudite parmi les pays de présence accidentelle, contrairement à sa présence régulière dans certaines régions du Nord.",
+                "Le statut mondial est de préoccupation mineure, LC, contrairement à l’évaluation européenne. Dégradation de l’eau, pollution et dérangement des reposoirs restent préoccupants ; quelques observations ne résument pas l’état de l’espèce."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Hamilton Turner"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البلقشة-الصغيرة",
+        "en": "smew",
+        "fr": "harle-piette"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "mergellus-albellus"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البلقشة الصغيرة",
+          "subtitle": "Mergellus albellus",
+          "meta_description": "البلقشة الصغيرة: الهوية والموائل والغذاء ودورة الحياة والحضور العربي والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "البلقشة الصغيرة Mergellus albellus بطة غطاسة صغيرة من البطيات. الذكر في ريشه الواضح أبيض تتخلله خطوط وبقع سوداء، بينما يظهر رأس الأنثى بلون بني محمر مع خد فاتح. تشبه اليافعات الأنثى؛ لا يجوز تسمية كل طائر أحمر الرأس أنثى بالغة.",
+                "تستخدم البحيرات والخزانات والمياه الهادئة، وتلتقط الأسماك الصغيرة والفرائس المائية بالغوص. يرتبط تكاثرها بمناطق الغابات الشمالية وتجويفات الأشجار قرب الماء. تورد بيانات BTO عادة 7–9 بيضات وحضانة الأنثى 26–28 يومًا، وتفقس فراخ زغبية مبكرة الحركة.",
+                "سجلته مسوح كردستان العراق سنة 2008، المنشورة سنة 2009، زائرًا شتويًا، ومنها في دربندخان. يقضي موسم التكاثر في نطاقه الحرجي الشمالي، بينما تستخدم الطيور المهاجرة مياهًا مفتوحة جنوبه في الشتاء. يؤثر التجمد في تحركاته، فتتغير المشاهدات بين السنوات.",
+                "تصنيفها العالمي LC. أما إدراجها على قائمة حمراء وطنية، كما في بريطانيا، فيعبر عن تقييم مختلف النطاق. حماية المياه النظيفة وأماكن الراحة مهمة حتى عندما لا يكون النوع مهددًا عالميًا."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева"
+        },
+        "en": {
+          "title": "Smew",
+          "subtitle": "Mergellus albellus",
+          "meta_description": "Smew: identification, habitat, feeding, lifecycle, Arab-world occurrence and conservation.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Smew Mergellus albellus is a small diving duck. A male in distinctive plumage is white with black lines and patches; the female has a reddish-brown head and pale cheek. Young birds resemble females, so not every red-headed individual is an adult female.",
+                "It uses lakes, reservoirs and quiet waters, diving for small fish and other aquatic prey. Breeding is associated with northern forests and tree cavities near water. BTO gives a typical clutch of 7–9 eggs and female incubation of 26–28 days. The chicks hatch downy and mobile.",
+                "Surveys in Iraqi Kurdistan in 2008, published in 2009, recorded it as a winter visitor, including at Darbandikhan. It breeds in its northern forest range, while migrants use open waters farther south in winter. Freezing conditions influence movements, so observations vary between years.",
+                "The global category is Least Concern, LC. National red-listing, such as in Britain, represents an assessment at a different scale. Clean water and undisturbed resting places remain important even for a species not globally threatened."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева"
+        },
+        "fr": {
+          "title": "Harle piette",
+          "subtitle": "Mergellus albellus",
+          "meta_description": "Harle piette : identification, habitat, alimentation, cycle de vie, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identification, cycle de vie et répartition",
+              "paragraphs": [
+                "Le Harle piette Mergellus albellus est un petit canard plongeur. Le mâle en plumage caractéristique est blanc, marqué de lignes et de taches noires ; la femelle possède une tête brun roux et une joue claire. Les jeunes lui ressemblent : une tête rousse ne prouve donc pas qu’il s’agit d’une femelle adulte.",
+                "Il utilise lacs, réservoirs et eaux calmes, plongeant pour prendre de petits poissons et d’autres proies aquatiques. La reproduction est liée aux forêts nordiques et aux cavités des arbres proches de l’eau. Le BTO donne habituellement 7–9 œufs et 26–28 jours d’incubation par la femelle. Les poussins sont duveteux et mobiles dès leur jeune âge.",
+                "Des prospections réalisées au Kurdistan irakien en 2008 et publiées en 2009 l’ont signalé comme visiteur hivernal, notamment à Darbandikhan. Il niche dans les forêts du Nord, tandis que les migrateurs utilisent en hiver des eaux libres plus méridionales. Le gel influence les déplacements et les observations varient selon les années.",
+                "Le statut mondial est de préoccupation mineure, LC. Un classement national en liste rouge, comme en Grande-Bretagne, relève d’une autre échelle. La qualité des eaux et la tranquillité des reposoirs restent importantes."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Лариса Артемьева"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البط-أبيض-الرأس",
+        "en": "white-headed-duck",
+        "fr": "erismature-a-tete-blanche"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "oxyura-leucocephala"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البط أبيض الرأس",
+          "subtitle": "Oxyura leucocephala",
+          "meta_description": "البط أبيض الرأس: الهوية والموائل والغذاء ودورة الحياة والحضور العربي والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "البط أبيض الرأس Oxyura leucocephala بطة غطاسة مدمجة الجسم ذات ذيل صلب كثيرًا ما ترفعه. يظهر الذكر البالغ برأس يغلب عليه البياض وتاج داكن ومنقار أزرق في موسم التكاثر؛ الأنثى بنية الرأس ذات علامات وجه فاتحة وداكنة. لا تُعمم ألوان الذكر على كل الأعمار والفصول.",
+                "يرتبط بالبحيرات والأراضي الرطبة ذات أحزمة القصب والنباتات المغمورة. يبحث بالغوص عن غذائه، وتُعد اللافقاريات المائية موردًا مهمًا. تتأثر الأعشاش والفراخ بجفاف المياه وتبدل الغطاء النباتي خلال موسم التكاثر.",
+                "يبنى عش مقعر فوق الماء بين سيقان النباتات وأوراقها. وتضم الحضنة نحو 4–9 بيضات، تستغرق حضانتها 22–24 يومًا، ثم ترعى الأنثى الفراخ التي تكتسب الطيران بعد نحو 8–10 أسابيع. يبلغ طول الطائر قرابة 43–48 سم، وتظل المياه المستقرة والغطاء النباتي مهمين طوال هذه الدورة.",
+                "توجد جماعات متكاثرة محلية في شمال إفريقيا العربي. ووثقت دراسة منشورة سنة 2026 تكاثرًا ناجحًا رُصد في غرب الجزائر سنة 2020. كما وُثق التعشيش في دار بوعزة بالمغرب سنة 2025. وتكتسب هذه المواقع أهمية خاصة لاستمرار جماعاته المحلية.",
+                "تجعله خسارة الموائل والجفاف والتلوث أولوية للحماية. ويضيف التهجين مع البط الجامايكي الدخيل خطرًا على سلامة جماعاته؛ ولذلك تتناول برامج الحماية استعادة الأراضي الرطبة ومواجهة هذا التهجين معًا."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: karim Attouche"
+        },
+        "en": {
+          "title": "White-headed Duck",
+          "subtitle": "Oxyura leucocephala",
+          "meta_description": "White-headed Duck: identification, habitat, feeding, lifecycle, Arab-world occurrence and conservation.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "White-headed Duck Oxyura leucocephala is a compact diving duck with a stiff tail often held raised. Adult males have a largely white head, dark crown and blue bill in breeding condition. Females have browner heads with contrasting facial stripes. Male colours should not be applied to all ages or seasons.",
+                "It uses lakes and wetlands with reeds and submerged vegetation, diving for food that includes important aquatic-invertebrate resources. Nests and ducklings are vulnerable to drying and vegetation changes during the breeding season.",
+                "A cupped nest is built over water among emergent stems and leaves. A clutch contains about 4–9 eggs, incubated for 22–24 days; the female then tends the young, which fledge after about 8–10 weeks. The bird measures roughly 43–48 cm, and stable water and vegetation remain important throughout this cycle.",
+                "Local breeding populations occur in Arab North Africa. A study published in 2026 documented successful breeding observed in western Algeria in 2020. Nesting was also documented at Dar Bouazza, Morocco, in 2025. Such sites are particularly important for maintaining local populations.",
+                "Habitat loss, drought and pollution keep it a conservation priority. Hybridisation with introduced Ruddy Ducks adds a threat to the integrity of its populations. Conservation programmes therefore address both wetland restoration and this hybridisation risk."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: karim Attouche"
+        },
+        "fr": {
+          "title": "Érismature à tête blanche",
+          "subtitle": "Oxyura leucocephala",
+          "meta_description": "Érismature à tête blanche : identification, habitat, alimentation, cycle de vie, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identification, cycle de vie et répartition",
+              "paragraphs": [
+                "L’Érismature à tête blanche Oxyura leucocephala est un canard plongeur compact, à queue raide souvent dressée. Le mâle adulte présente une tête largement blanche, une calotte sombre et un bec bleu en période nuptiale. La femelle a la tête plus brune, marquée de bandes contrastées. Les couleurs du mâle ne valent pas pour tous les âges et toutes les saisons.",
+                "Elle utilise les lacs et zones humides à roselières et végétation submergée. Elle cherche sa nourriture en plongée, les invertébrés aquatiques constituant une ressource importante. Nids et canetons sont vulnérables à l’assèchement pendant la reproduction.",
+                "Le nid en coupe est construit au-dessus de l’eau parmi les tiges et feuilles émergentes. La ponte comprend environ 4–9 œufs, incubés pendant 22–24 jours ; la femelle s’occupe ensuite des jeunes, qui volent vers 8–10 semaines. L’oiseau mesure environ 43–48 cm. Eau stable et végétation restent essentielles durant tout ce cycle.",
+                "Des populations reproductrices locales existent en Afrique du Nord arabe. Une étude publiée en 2026 documente une reproduction réussie observée dans l’ouest algérien en 2020. La nidification a aussi été documentée à Dar Bouazza, au Maroc, en 2025. Ces sites sont essentiels au maintien des populations locales.",
+                "La perte d’habitats, la sécheresse et la pollution en font une priorité de conservation. L’hybridation avec l’Érismature rousse introduite menace aussi l’intégrité de ses populations. Les programmes de protection associent donc restauration des zones humides et lutte contre ce risque d’hybridation."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : karim Attouche"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البط-ذهبي-العين",
+        "en": "common-goldeneye",
+        "fr": "garrot-a-oeil-d-or"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "bucephala-clangula"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البط ذهبي العين",
+          "subtitle": "Bucephala clangula",
+          "meta_description": "البط ذهبي العين: الهوية والموائل والغذاء ودورة الحياة والحضور العربي والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "البط ذهبي العين Bucephala clangula من البط الغطاس. يتميز برأس كبير وعين صفراء؛ يحمل الذكر رأسًا داكنًا ورقعة وجه بيضاء، بينما رأس الأنثى بني وجسمها رمادي. يختلف نمط الوجه عن أنواع البط ذات البياض المحيط بقاعدة المنقار.",
+                "يغوص لالتقاط اللافقاريات المائية، ومنها القشريات والرخويات، وقد يأكل أسماكًا صغيرة. يستخدم المياه العذبة والساحلية خارج التكاثر، ويعشش في تجاويف الأشجار، كما يقبل صناديق الأعشاش المناسبة في بعض مناطق انتشاره الشمالية. تسجل BTO عادة 8–11 بيضة.",
+                "تتحمل الأنثى الحضانة، التي تستغرق نحو 29–30 يومًا. تخرج الفراخ من تجويف العش لتتجه إلى الماء، لكنها لا تطير إلا لاحقًا؛ تورد BTO عمر طيران مرجعيًا 57–66 يومًا. لذلك تؤدي الأشجار القديمة ذات التجاويف وظيفة لا يعوضها مجرد وجود سطح مائي مفتوح.",
+                "وثقت مسوح شمال العراق سنة 2008، المنشورة سنة 2009، وجوده الشتوي، ومنها في دربندخان. ويرتبط تكاثره بغابات الشمال ذات تجاويف التعشيش، بينما يستقبل العراق طيورًا خارج موسم التكاثر. تختلف حركة الطيور بين مناطق الشتاء والتكاثر باختلاف الجماعات والظروف.",
+                "حالة النوع عالميًا LC وفق BTO. التراجع في عدد الزوار الشتويين لبلد معين لا يساوي تلقائيًا تراجعًا عالميًا بالمقدار نفسه. وتبقى حماية الموائل المائية وأشجار التعشيش في مناطق التكاثر جزءين متكاملين من صون دورة حياته."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Sunny Zhang 张迎新"
+        },
+        "en": {
+          "title": "Common Goldeneye",
+          "subtitle": "Bucephala clangula",
+          "meta_description": "Common Goldeneye: identification, habitat, feeding, lifecycle, Arab-world occurrence and conservation.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Common Goldeneye Bucephala clangula is a diving duck with a large head and yellow eye. Males have a dark head and white facial patch; females have brown heads and grey bodies. The face pattern differs from ducks with a white band around the bill base.",
+                "It dives for aquatic invertebrates, including crustaceans and molluscs, and may take small fish. Outside breeding it uses fresh and coastal waters. It nests in tree cavities and also accepts suitable nest boxes in parts of its northern range. BTO records a typical clutch of 8–11 eggs.",
+                "The female incubates for about 29–30 days. Ducklings leave the nest cavity and move to water, but flight develops later: BTO gives a reference fledging age of 57–66 days. Old trees with cavities therefore provide a breeding resource that open water alone cannot replace.",
+                "Surveys in northern Iraq in 2008, published in 2009, documented winter occurrence, including at Darbandikhan. Breeding is associated with northern forests offering nest cavities, whereas Iraq receives birds outside the breeding season. Movements between wintering and breeding areas differ among populations and conditions.",
+                "BTO reports global Least Concern status, LC. A decline in one country’s winter visitors does not automatically represent an equal global decline. Aquatic habitats and nesting trees in the breeding range are complementary parts of conserving its annual cycle."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Sunny Zhang 张迎新"
+        },
+        "fr": {
+          "title": "Garrot à œil d’or",
+          "subtitle": "Bucephala clangula",
+          "meta_description": "Garrot à œil d’or : identification, habitat, alimentation, cycle de vie, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identification, cycle de vie et répartition",
+              "paragraphs": [
+                "Le Garrot à œil d’or Bucephala clangula est un canard plongeur à grosse tête et à iris jaune. Le mâle porte une tête sombre et une tache blanche sur la face ; la femelle a la tête brune et le corps gris. Ce dessin facial diffère du blanc entourant la base du bec chez certains autres canards.",
+                "Il capture en plongée des invertébrés aquatiques, notamment crustacés et mollusques, et parfois de petits poissons. Hors reproduction, il fréquente eaux douces et littorales. Il niche dans des cavités d’arbres et accepte aussi des nichoirs adaptés dans certaines régions nordiques. Le BTO indique habituellement 8–11 œufs.",
+                "La femelle assure une incubation d’environ 29–30 jours. Les canetons quittent la cavité pour rejoindre l’eau, mais le vol vient plus tard : le BTO indique un âge d’envol de 57–66 jours. Les vieux arbres creux offrent ainsi une ressource de nidification que l’eau libre seule ne remplace pas.",
+                "Des prospections dans le nord de l’Irak en 2008, publiées en 2009, ont documenté sa présence hivernale, notamment à Darbandikhan. La reproduction dépend des forêts septentrionales offrant des cavités, tandis que l’Irak accueille des oiseaux hors saison de reproduction. Les déplacements varient selon les populations et les conditions.",
+                "Le BTO donne un statut mondial de préoccupation mineure, LC. La baisse des hivernants dans un pays ne correspond pas nécessairement à une baisse mondiale équivalente. Protéger les milieux aquatiques et les arbres de nidification contribue à préserver l’ensemble du cycle annuel."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Sunny Zhang 张迎新"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البط-الرخامي",
+        "en": "marbled-duck",
+        "fr": "sarcelle-marbree"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "marmaronetta-angustirostris"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البط الرخامي",
+          "subtitle": "Marmaronetta angustirostris",
+          "meta_description": "البط الرخامي: الهوية والموائل والغذاء ودورة الحياة والحضور العربي والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "البط الرخامي Marmaronetta angustirostris بطة صغيرة بنية رمادية تتناثر على ريشها بقع فاتحة، مع منطقة داكنة حول العين. يتشابه الجنسان نسبيًا، فلا يصح تحديدهما من لون واحد في صورة بعيدة. الاسم الفرنسي Sarcelle marbrée والإنجليزي Marbled Duck يشيران إلى النوع نفسه.",
+                "يرتبط بالمياه الضحلة الغنية بالنباتات، ومنها الأراضي الرطبة الموسمية أو شبه الدائمة. يلتقط البذور وأجزاء النبات واللافقاريات قرب السطح. تتغير المواقع المستخدمة مع مناسيب المياه، وتحتاج دورة التكاثر إلى بقاء الماء والغطاء النباتي خلال نمو الفراخ، لا إلى وجود الماء يوم بناء العش فقط.",
+                "قد يكون العش فوق الماء بين النباتات المائية الناشئة، أو على أرض جافة داخل شجيرات. وتورد خطة العمل الدولية لعام 2008 حضانة تتولاها الأنثى نحو 25–27 يومًا، واكتساب الطيران في عمر 50–54 يومًا. لذلك تتطلب تربية الفراخ استمرار الغطاء النباتي والماء بعد انتهاء الحضانة.",
+                "تشمل مناطق تكاثره العربية المغرب والجزائر وتونس، وقد وُثق التكاثر في ليبيا أيضًا. وللعراق أهمية في نطاقه الشرقي. في المقابل تصفه AEWA بالعابر العرضي في لبنان وعدة بلدان خليجية؛ لذلك لا يجوز تعميم وضع جماعات شمال إفريقيا على كل المنطقة.",
+                "تصنيفه العالمي «معرض للانقراض» VU. تجفيف الأراضي الرطبة وتدهور نوعية المياه واضطراب المناسيب يهدد الموارد التي تعتمد عليها الطيور وفراخها. المحافظة على شبكة مواقع صالحة خلال السنوات الجافة لا تقل أهمية عن حماية موقع واحد في سنة رطبة."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: karim Attouche"
+        },
+        "en": {
+          "title": "Marbled Duck",
+          "subtitle": "Marmaronetta angustirostris",
+          "meta_description": "Marbled Duck: identification, habitat, feeding, lifecycle, Arab-world occurrence and conservation.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Marbled Duck Marmaronetta angustirostris is a small grey-brown duck with pale spotting and a dark area around the eye. The sexes are relatively similar, and a single colour in a distant photograph cannot reliably determine sex. The French name Sarcelle marbrée refers to the same species.",
+                "It depends on shallow, vegetated waters, including seasonal or semi-permanent wetlands. It takes seeds, plant material and invertebrates near the surface. Changing water levels influence site use; successful breeding requires water and cover throughout duckling development, not merely when nesting starts.",
+                "The nest may stand over water among bulrushes or on dry ground within shrubs. The 2008 international action plan gives female incubation of about 25–27 days and fledging at 50–54 days. Raising ducklings therefore requires vegetation and water to persist well beyond incubation.",
+                "Its Arab breeding range includes Morocco, Algeria and Tunisia, with breeding also documented in Libya. Iraq is important in its eastern range. In contrast, AEWA lists vagrant occurrence in Lebanon and several Gulf countries. North African breeding status cannot be extended to the whole region.",
+                "The global category is Vulnerable, VU. Wetland drainage, deteriorating water quality and disrupted water regimes threaten resources for adults and young. Maintaining a network of suitable sites through dry years matters as much as protecting one wetland in a favourable season."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: karim Attouche"
+        },
+        "fr": {
+          "title": "Sarcelle marbrée",
+          "subtitle": "Marmaronetta angustirostris",
+          "meta_description": "Sarcelle marbrée : identification, habitat, alimentation, cycle de vie, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identification, cycle de vie et répartition",
+              "paragraphs": [
+                "La Sarcelle marbrée Marmaronetta angustirostris est un petit canard gris brun ponctué de taches claires, avec une zone sombre autour de l’œil. Les sexes se ressemblent assez : une seule couleur sur une photographie éloignée ne suffit pas à les distinguer. Le nom anglais Marbled Duck désigne la même espèce.",
+                "Elle dépend des eaux peu profondes riches en végétation, notamment des zones humides saisonnières ou semi-permanentes. Elle prend graines, végétaux et invertébrés près de la surface. La variation des niveaux influence les sites utilisés ; la reproduction exige eau et couvert pendant la croissance des canetons, pas seulement lors de l’installation du nid.",
+                "Le nid peut être installé au-dessus de l’eau parmi les massettes ou sur un sol sec dans des buissons. Le plan d’action international de 2008 indique une incubation assurée par la femelle durant environ 25–27 jours et l’envol à 50–54 jours. Eau et végétation doivent donc persister bien après l’incubation.",
+                "Son aire de reproduction arabe comprend le Maroc, l’Algérie et la Tunisie ; la nidification est aussi documentée en Libye. L’Irak compte dans son aire orientale. À l’inverse, l’AEWA indique une présence accidentelle au Liban et dans plusieurs pays du Golfe. Le statut nord-africain ne s’applique donc pas partout.",
+                "Le statut mondial est vulnérable, VU. Drainage, dégradation des eaux et perturbation du régime hydrologique menacent adultes et jeunes. Un réseau de sites fonctionnels pendant les années sèches est essentiel."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : karim Attouche"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الإوز-الأغر-الصغير",
+        "en": "lesser-white-fronted-goose",
+        "fr": "oie-naine"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "anser-erythropus"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الإوز الأغر الصغير",
+          "subtitle": "Anser erythropus",
+          "meta_description": "الإوز الأغر الصغير: الهوية والموائل والغذاء ودورة الحياة والحضور العربي والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "الإوز الأغر الصغير Anser erythropus إوزة صغيرة رمادية بنية، ذات منقار قصير وردي وحلقة عين صفراء واضحة. يحمل البالغ بياضًا على الجبهة وعلامات داكنة على البطن. قد لا تكتمل هذه العلامات لدى اليافع؛ ويحتاج فصله عن الإوز الأغر الكبير إلى جمع حجم المنقار وشكل الرأس وحلقة العين، لا إلى الحجم الظاهر وحده.",
+                "يرعى النباتات في الأراضي المفتوحة ويستخدم المياه للراحة والمبيت. تتكاثر جماعاته في الشمال الأوراسي، وتتحرك جنوبًا إلى مواقع الشتاء. يخرج الصغار من العش مبكرًا ويبقون مرتبطين بالعائلة خلال مراحل من رحلتهم السنوية.",
+                "العش انخفاض أرضي يبطن بالنباتات والزغب في نطاق التكاثر الشمالي. تضع الأنثى عادة 4–6 بيضات وتحضنها نحو أربعة أسابيع. تغادر الفراخ العش مبكرًا، فتنتقل الأسرة بين مواضع التغذي والراحة؛ ولا يعني ترك العش أن الفراخ قادرة على الطيران.",
+                "يمثل العراق بلدًا مهمًا للشتاء. وتصف الدراسات وجودًا شتويًا محليًا في الشمال، وندرة أكبر في الأهوار الجنوبية. وتشمل المواقع الشمالية التي وردت في المسوح دوكان والموصل، ضمن شبكة مواقع يستعملها الطائر خارج موسم التكاثر.",
+                "تصنيفه العالمي «معرض للانقراض» VU وفق AEWA. يشكل التشابه مع أنواع إوز أكثر شيوعًا تحديًا للحماية. صون مواقع الغذاء والمبيت وتقليل الإزعاج وتوثيق المشاهدات يساعد على فهم جماعات قليلة العدد ومتباعدة."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: andrew2285"
+        },
+        "en": {
+          "title": "Lesser White-fronted Goose",
+          "subtitle": "Anser erythropus",
+          "meta_description": "Lesser White-fronted Goose: identification, habitat, feeding, lifecycle, Arab-world occurrence and conservation.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Lesser White-fronted Goose Anser erythropus is a small grey-brown goose with a short pink bill and conspicuous yellow eye-ring. Adults have a white forehead and dark belly markings. These may be incomplete in young birds. Separating it from Greater White-fronted Goose requires bill proportions, head shape and eye-ring, not apparent size alone.",
+                "It grazes vegetation in open habitats and uses water for resting and roosting. Populations breed in northern Eurasia and move south to wintering areas. Young leave the nest early and maintain family associations during parts of the annual cycle.",
+                "The nest is a ground scrape lined with vegetation and down in the northern breeding range. The female usually lays 4–6 eggs and incubates for about four weeks. Young leave the nest early, and the family moves between feeding and resting places; leaving the nest does not mean the young can already fly.",
+                "Iraq is an important wintering country. Studies describe local winter occurrence in the north and greater rarity in the southern marshes. Northern survey locations include Dukan and Mosul, within the network of sites used outside the breeding season.",
+                "AEWA reports global Vulnerable status, VU. Resemblance to more numerous geese complicates conservation. Protecting feeding and roosting sites, reducing disturbance and documenting sightings help track small and scattered populations."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: andrew2285"
+        },
+        "fr": {
+          "title": "Oie naine",
+          "subtitle": "Anser erythropus",
+          "meta_description": "Oie naine : identification, habitat, alimentation, cycle de vie, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identification, cycle de vie et répartition",
+              "paragraphs": [
+                "L’Oie naine Anser erythropus est une petite oie gris brun au bec rose court et au cercle oculaire jaune bien visible. Les adultes présentent un front blanc et des marques sombres sur le ventre, parfois incomplètes chez les jeunes. La distinction avec l’Oie rieuse repose sur le bec, la forme de la tête et le cercle oculaire, pas seulement sur la taille apparente.",
+                "Elle broute la végétation des espaces ouverts et utilise l’eau pour le repos. Ses populations nichent dans le nord de l’Eurasie et migrent vers leurs quartiers d’hiver. Les jeunes quittent tôt le nid et conservent des liens familiaux pendant certaines étapes du cycle annuel.",
+                "Le nid est une dépression du sol garnie de végétaux et de duvet, dans l’aire de reproduction septentrionale. La femelle pond généralement 4–6 œufs et couve environ quatre semaines. Les jeunes quittent rapidement le nid ; la famille se déplace entre lieux d’alimentation et de repos, bien avant que les oisons puissent voler.",
+                "L’Irak est un pays d’hivernage important. Les études décrivent une présence hivernale locale dans le Nord et une rareté plus marquée dans les marais méridionaux. Les sites prospectés comprennent Dukan et Mossoul, au sein du réseau utilisé hors saison de reproduction.",
+                "L’AEWA indique un statut mondial vulnérable, VU. La ressemblance avec des oies plus nombreuses complique sa protection. Préserver sites d’alimentation et dortoirs, réduire le dérangement et documenter les observations contribuent au suivi de populations dispersées."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : andrew2285"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الإوز-البرنت",
+        "en": "brent-goose",
+        "fr": "bernache-cravant"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "branta-bernicla"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الإوز البرنت",
+          "subtitle": "Branta bernicla",
+          "meta_description": "الإوز البرنت: الهوية والموائل والغذاء ودورة الحياة والحضور العربي والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "الإوز البرنت Branta bernicla إوزة صغيرة داكنة، برأس وعنق أسودين ومنقار قصير. يحمل البالغ رقعة بيضاء صغيرة على جانب العنق، بينما يختلف لون البطن بين الجماعات والنويعات. لا يكفي اختلاف البطن لإعلان نوع مستقل أو تحديد الأصل الجغرافي من صورة واحدة.",
+                "يرتبط بالسواحل والمصبات والسبخات الملحية، ويتغذى على الأعشاب البحرية والطحالب والنباتات، وقد يرعى في المروج. تتكاثر جماعاته في مناطق قطبية شمالية، ويورد BTO عادة 3–5 بيضات. يتباين مسار الهجرة وموضع الشتاء بين الجماعات.",
+                "يقام العش في منخفض أرضي ضمن التندرا، غالبًا قرب الماء، ويبطن بالأعشاب والزغب. تحضن الأنثى نحو 22–26 يومًا، ويرعى الأبوان الصغار بعد خروجها من العش خلال يوم أو يومين من الفقس. تلتقط الفراخ غذاءها بنفسها، وتبلغ الطيران في نحو 40–50 يومًا بحسب مرجع Audubon.",
+                "في المغرب، صنفته لجنة توثيق الطيور النادرة في تقريرها المنشور عام 2022 زائرًا شتويًا نادرًا، بعد اعتباره سابقًا عارضًا. هذه الدقة مهمة: ليس مقيمًا شائعًا، لكنه ليس مجرد حادثة وحيدة أيضًا. أما في مصر فيخضع لتوثيق لجنة الطيور النادرة.",
+                "تصنيفه العالمي LC. تعتمد جماعاته الشتوية على موائل ساحلية قد تضيق بسبب العمران وتغير الشواطئ. إبقاء مسافة من الأسراب وعدم طردها من الغذاء والراحة يدعم حمايتها."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева"
+        },
+        "en": {
+          "title": "Brent Goose",
+          "subtitle": "Branta bernicla",
+          "meta_description": "Brent Goose: identification, habitat, feeding, lifecycle, Arab-world occurrence and conservation.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Brent Goose Branta bernicla is a small dark goose with a black head and neck and short bill. Adults have a small white neck patch. Belly colour varies among populations and subspecies; colour differences alone do not establish a separate species or geographic origin from one photograph.",
+                "It uses coasts, estuaries and saltmarshes, feeding on seagrasses, algae and other plants, sometimes grazing grassland. Populations breed in the Arctic; BTO gives a typical clutch of 3–5 eggs. Migration routes and wintering areas differ among populations.",
+                "The nest is a ground depression in tundra, often near water, lined with grass and down. The female incubates for about 22–26 days. Both parents tend the young, which leave the nest within a day or two and find their own food. Audubon gives fledging at about 40–50 days.",
+                "In its report published in 2022, the Moroccan Rare Birds Committee treated it as a rare winter visitor, having previously considered it accidental. It is neither a common resident nor merely a single exceptional occurrence. In Egypt it falls within the rarities committee’s documentation remit.",
+                "Its global status is Least Concern, LC. Winter populations depend on coastal habitats vulnerable to development and shoreline change. Keeping a distance and avoiding repeated displacement protects feeding and resting opportunities."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева"
+        },
+        "fr": {
+          "title": "Bernache cravant",
+          "subtitle": "Branta bernicla",
+          "meta_description": "Bernache cravant : identification, habitat, alimentation, cycle de vie, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identification, cycle de vie et répartition",
+              "paragraphs": [
+                "La Bernache cravant Branta bernicla est une petite oie sombre, à tête et cou noirs et bec court. L’adulte porte une petite tache blanche au cou. La couleur du ventre varie selon les populations et sous-espèces ; elle ne suffit pas à établir une espèce distincte ou une origine géographique sur une photographie.",
+                "Elle fréquente côtes, estuaires et prés salés, consommant herbiers marins, algues et autres végétaux, parfois dans les prairies. Les populations nichent dans l’Arctique ; le BTO indique habituellement 3–5 œufs. Voies migratoires et quartiers d’hiver diffèrent entre populations.",
+                "Le nid est une dépression au sol dans la toundra, souvent près de l’eau, garnie d’herbe et de duvet. La femelle couve environ 22–26 jours. Les deux parents accompagnent les petits, qui quittent le nid après un ou deux jours et trouvent eux-mêmes leur nourriture. Audubon indique l’envol vers 40–50 jours.",
+                "Dans son rapport publié en 2022, la Commission d’homologation marocaine la considère comme un hivernant rare, après l’avoir classée accidentelle. Elle n’est donc ni une résidente commune ni une simple observation isolée. En Égypte, elle relève du suivi des espèces rares.",
+                "Son statut mondial est de préoccupation mineure, LC. Les populations hivernantes dépendent de milieux littoraux sensibles à l’aménagement et aux changements du rivage. Observer à distance évite de perturber alimentation et repos."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Лариса Артемьева"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الإوز-أحمر-الصدر",
+        "en": "red-breasted-goose",
+        "fr": "bernache-a-cou-roux"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "branta-ruficollis"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الإوز أحمر الصدر",
+          "subtitle": "Branta ruficollis",
+          "meta_description": "الإوز أحمر الصدر: الهوية والموائل والغذاء ودورة الحياة والحضور العربي والحماية.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "الإوز أحمر الصدر Branta ruficollis إوزة صغيرة ذات نقوش سوداء وبيضاء ومناطق كستنائية على العنق والصدر والخد. قد يخفي البعد بعض التفاصيل فتبدو داكنة، لذلك ينبغي فحص توزيع العلامات، لا توقع أن يظهر اللون الأحمر صارخًا دائمًا. الاسم الفرنسي «ذات العنق الأحمر» يشير إلى النوع نفسه.",
+                "يتغذى على النباتات في الأراضي المفتوحة، ويتحرك بين مناطق الغذاء والمبيت المائي. يتكاثر في الشمال الأوراسي ويقضي الشتاء جنوب مناطق التعشيش. تتطلب دورة حياته حماية متصلة لمواقع التكاثر ومحطات العبور والشتاء، لا حماية الطائر في موضع واحد فقط.",
+                "يعشش على الأرض في مستعمرات صغيرة، على ضفاف الأنهار والأخاديد والمنحدرات ذات الغطاء النباتي. وقد تقع الأعشاش قرب طيور جارحة أو نوارس تردع الثعالب. تضم الحضنة عادة 3–7 بيضات، تحضنها الأنثى وحدها نحو 23–25 يومًا بينما يبقى الذكر قريبًا.",
+                "يتركز شتاؤه أساسًا حول البحر الأسود، بينما يبقى حضوره العربي محدودًا وغير منتظم. وهو عارض نادر جدًا في مصر وتخضع مشاهداته لتوثيق لجنة السجلات. وتدرج اتفاقية أيوَا العراق ضمن نطاقه الطبيعي، لكن المعلومات المتاحة هنا لا تحدد حجم جماعة شتوية منتظمة فيه.",
+                "تصنيفه العالمي «معرض للانقراض» VU. رصد الأعداد بمواقعها وتواريخها، وحماية الأراضي الرطبة والحقول المستخدمة، يساعدان على تمييز التغير الحقيقي في الجماعات من مجرد انتقال الطيور بين مواقع الرصد."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Лариса Артемьева"
+        },
+        "en": {
+          "title": "Red-breasted Goose",
+          "subtitle": "Branta ruficollis",
+          "meta_description": "Red-breasted Goose: identification, habitat, feeding, lifecycle, Arab-world occurrence and conservation.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Red-breasted Goose Branta ruficollis is a small goose patterned in black and white, with chestnut areas on the neck, breast and cheek. Distance can conceal the details and make the bird look dark; identification requires the arrangement of markings rather than an expectation of vivid red.",
+                "It feeds on plants in open country and moves between feeding grounds and waters used for roosting. It breeds in northern Eurasia and winters farther south. Conservation must connect breeding grounds, migration stopovers and wintering sites rather than protect birds at only one location.",
+                "It nests on the ground in small colonies along riverbanks, gullies and vegetated slopes. Nests may occur near raptors or gulls that deter foxes. A usual clutch contains 3–7 eggs; the female incubates alone for about 23–25 days while the male remains nearby.",
+                "Its main wintering concentrations are around the Black Sea, while Arab occurrence is limited and irregular. It is a very rare vagrant in Egypt, where sightings require records-committee documentation. AEWA includes Iraq within its native range, but the evidence available here does not establish the size of a regular wintering population there.",
+                "Its global category is Vulnerable, VU. Counts tied to places and dates, alongside protection of wetlands and feeding areas, help distinguish population change from redistribution between survey sites."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Лариса Артемьева"
+        },
+        "fr": {
+          "title": "Bernache à cou roux",
+          "subtitle": "Branta ruficollis",
+          "meta_description": "Bernache à cou roux : identification, habitat, alimentation, cycle de vie, présence dans les pays arabes et conservation.",
+          "sections": [
+            {
+              "heading": "Identification, cycle de vie et répartition",
+              "paragraphs": [
+                "La Bernache à cou roux Branta ruficollis est une petite oie dessinée de noir et de blanc, avec des zones châtain au cou, à la poitrine et à la joue. La distance peut masquer ces détails et la faire paraître sombre : l’identification repose sur la disposition des marques plutôt que sur un rouge toujours éclatant.",
+                "Elle consomme des végétaux dans les milieux ouverts et se déplace entre zones d’alimentation et dortoirs aquatiques. Elle niche dans le nord de l’Eurasie et hiverne plus au sud. Sa conservation doit relier sites de reproduction, haltes migratoires et quartiers d’hiver.",
+                "Elle niche au sol en petites colonies sur les berges, dans les ravins et sur des pentes végétalisées. Les nids peuvent se trouver près de rapaces ou de laridés qui repoussent les renards. La ponte compte généralement 3–7 œufs ; la femelle couve seule environ 23–25 jours, tandis que le mâle reste à proximité.",
+                "Les principaux rassemblements hivernaux se situent autour de la mer Noire, tandis que la présence arabe est limitée et irrégulière. C’est un visiteur accidentel très rare en Égypte, où les observations relèvent du comité d’homologation. L’AEWA inclut l’Irak dans son aire naturelle, mais les données disponibles ici ne précisent pas l’effectif d’une population hivernante régulière.",
+                "Le statut mondial est vulnérable, VU. Des comptages datés et localisés, associés à la conservation des zones humides et d’alimentation, permettent de mieux distinguer évolution des populations et redistribution des oiseaux."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Лариса Артемьева"
+        }
+      }
+    }
+  ]
+}
