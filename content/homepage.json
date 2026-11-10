@@ -236,7 +236,17 @@
     "القرقف-المتوج",
     "درسة-سيرل",
     "عصفور-الشوك-الألبي",
-    "الغطاس-أبيض-الحنجرة"
+    "الغطاس-أبيض-الحنجرة",
+    "البط-أحمر-العرف",
+    "الإسكوب-الكبير",
+    "البلقشة-حمراء-الصدر",
+    "البلقشة-الصغيرة",
+    "البط-أبيض-الرأس",
+    "البط-ذهبي-العين",
+    "البط-الرخامي",
+    "الإوز-الأغر-الصغير",
+    "الإوز-البرنت",
+    "الإوز-أحمر-الصدر"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -430,7 +440,17 @@
     "القرقف-المتوج",
     "درسة-سيرل",
     "عصفور-الشوك-الألبي",
-    "الغطاس-أبيض-الحنجرة"
+    "الغطاس-أبيض-الحنجرة",
+    "البط-أحمر-العرف",
+    "الإسكوب-الكبير",
+    "البلقشة-حمراء-الصدر",
+    "البلقشة-الصغيرة",
+    "البط-أبيض-الرأس",
+    "البط-ذهبي-العين",
+    "البط-الرخامي",
+    "الإوز-الأغر-الصغير",
+    "الإوز-البرنت",
+    "الإوز-أحمر-الصدر"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -955,7 +975,17 @@
     "القرقف-المتوج": "birds",
     "درسة-سيرل": "birds",
     "عصفور-الشوك-الألبي": "birds",
-    "الغطاس-أبيض-الحنجرة": "birds"
+    "الغطاس-أبيض-الحنجرة": "birds",
+    "البط-أحمر-العرف": "birds",
+    "الإسكوب-الكبير": "birds",
+    "البلقشة-حمراء-الصدر": "birds",
+    "البلقشة-الصغيرة": "birds",
+    "البط-أبيض-الرأس": "birds",
+    "البط-ذهبي-العين": "birds",
+    "البط-الرخامي": "birds",
+    "الإوز-الأغر-الصغير": "birds",
+    "الإوز-البرنت": "birds",
+    "الإوز-أحمر-الصدر": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2832,6 +2862,96 @@
         "ar": "غطاس أبيض الحنجرة على صخرة مبللة في جدول جارٍ",
         "en": "White-throated Dipper on a wet rock in a flowing stream",
         "fr": "Cincle plongeur sur un rocher mouillé dans un cours d’eau"
+      }
+    },
+    "البط-أحمر-العرف": {
+      "image": "media/publications/daily-birds-20261110/netta-rufina.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر من البط أحمر العرف يسبح على الماء",
+        "en": "Male Red-crested Pochard swimming on water",
+        "fr": "Nette rousse mâle nageant sur l’eau"
+      }
+    },
+    "الإسكوب-الكبير": {
+      "image": "media/publications/daily-birds-20261110/aythya-marila.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بط إسكاوب كبير بريش أنثوي يسبح على الماء",
+        "en": "Female-type Greater Scaup swimming on water",
+        "fr": "Fuligule milouinan au plumage de type femelle nageant sur l’eau"
+      }
+    },
+    "البلقشة-حمراء-الصدر": {
+      "image": "media/publications/daily-birds-20261110/mergus-serrator.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بلقشة حمراء الصدر بريش أنثوي تسبح على الماء",
+        "en": "Female-type Red-breasted Merganser swimming on water",
+        "fr": "Harle huppé au plumage de type femelle nageant sur l’eau"
+      }
+    },
+    "البلقشة-الصغيرة": {
+      "image": "media/publications/daily-birds-20261110/mergellus-albellus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر بلقشة صغيرة أبيض الريش بقناع أسود حول العين",
+        "en": "White male Smew with a black eye mask",
+        "fr": "Harle piette mâle blanc au masque oculaire noir"
+      }
+    },
+    "البط-أبيض-الرأس": {
+      "image": "media/publications/daily-birds-20261110/oxyura-leucocephala.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر بط أبيض الرأس بمنقار أزرق منتفخ يسبح على الماء",
+        "en": "Male White-headed Duck with a swollen blue bill swimming on water",
+        "fr": "Érismature à tête blanche mâle au bec bleu renflé nageant sur l’eau"
+      }
+    },
+    "البط-ذهبي-العين": {
+      "image": "media/publications/daily-birds-20261110/bucephala-clangula.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بط ذهبي العين بريش أنثوي يسبح على الماء",
+        "en": "Female-type Common Goldeneye swimming on water",
+        "fr": "Garrot à œil d’or au plumage de type femelle nageant sur l’eau"
+      }
+    },
+    "البط-الرخامي": {
+      "image": "media/publications/daily-birds-20261110/marmaronetta-angustirostris.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بط رخامي يطير بجناحين ممدودين",
+        "en": "Marbled Duck in flight with wings extended",
+        "fr": "Sarcelle marbrée en vol, les ailes déployées"
+      }
+    },
+    "الإوز-الأغر-الصغير": {
+      "image": "media/publications/daily-birds-20261110/anser-erythropus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طائران من الإوز الصغير أبيض الجبهة في الأسر يسبحان على الماء",
+        "en": "Two captive Lesser White-fronted Geese swimming on water",
+        "fr": "Deux Oies naines captives nageant sur l’eau"
+      }
+    },
+    "الإوز-البرنت": {
+      "image": "media/publications/daily-birds-20261110/branta-bernicla.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "إوزة برنت تقف بين الأعشاب",
+        "en": "Brent Goose standing in grass",
+        "fr": "Bernache cravant debout dans l’herbe"
+      }
+    },
+    "الإوز-أحمر-الصدر": {
+      "image": "media/publications/daily-birds-20261110/branta-ruficollis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "إوزة حمراء الصدر تخفض رأسها لتتغذى",
+        "en": "Red-breasted Goose lowering its head to feed",
+        "fr": "Bernache à cou roux baissant la tête pour se nourrir"
       }
     }
   },
