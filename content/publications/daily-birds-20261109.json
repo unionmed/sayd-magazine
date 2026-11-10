@@ -1,0 +1,1533 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261109",
+  "expected_base": "047ab1e913bbb3b10e9f4ff6e3860e1f828ec1d9",
+  "approval_reference": "Nayef Karim explicitly authorized cautious sequential publication and fresh preparation of pending material on 10 November 2026, user message Sentinel_88a85c6ce0c081919fa3c12a474414b7. This release publishes the independently reviewed reconstructed November 9 ten-bird encyclopedia batch only, AR/EN/FR, archive-only with no ticker; use actual publication date 10 November 2026 for the previously unpublished November 9 batch, retaining its separate backlog identity and exact verified photos. Stop on conflicting deployment or live regression. Earlier preparation-only authority is superseded for this release.",
+  "bank_search_reference": "Recovered exact 10 selected original photos and exact 10 rights records from 9 November Space inventory. All SHA256, sizes and dimensions match. Archived exact-photo CC0 evidence checked; no live licence refetch in this reconstruction.",
+  "photos": [
+    {
+      "id": "strix-aluco",
+      "path": "docs/media/publications/daily-birds-20261109/strix-aluco.jpg",
+      "sha256": "555d2f086b45f6de6935c161150acd5ef5208763223a23a7a7122ca6d6edb476",
+      "source_sha256": "555d2f086b45f6de6935c161150acd5ef5208763223a23a7a7122ca6d6edb476",
+      "source_reference": "bobhunter2; declared capture date 2019-12-31; declared location Norfolk, UK. Illustrative species photograph, not Arab-locality or current-event evidence. https://www.inaturalist.org/photos/328521152",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; exact-photo archived API evidence checked 9 November 2026. Original bytes preserved. No live licence refetch during reconstruction; no warranty of uploader ownership or unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/187804757; photo 328521152; https://creativecommons.org/publicdomain/zero/1.0/; bank photo libfile_fde3_f-56a6169e7f748191b308c7b3d3e42fdf_15ee9b1d12a88191b8f4cd6d67c50ac5; bank rights libfile_fde3_f-203a450c42f88191a08e3258cfbc4bfe_15ee9b1d12a88191b8f4cd6d67c50ac5"
+      },
+      "alt": {
+        "ar": "بومة سمراء تستريح عند جذع شجرة",
+        "en": "Tawny Owl resting against a tree trunk",
+        "fr": "Chouette hulotte au repos contre un tronc d’arbre"
+      },
+      "caption": {
+        "ar": "البومة السمراء",
+        "en": "Tawny Owl",
+        "fr": "Chouette hulotte"
+      }
+    },
+    {
+      "id": "emberiza-citrinella",
+      "path": "docs/media/publications/daily-birds-20261109/emberiza-citrinella.jpg",
+      "sha256": "7e4ae193aa454c11d19c298d433660759ba09cd185b3b877c3600ae2ae81e6db",
+      "source_sha256": "7e4ae193aa454c11d19c298d433660759ba09cd185b3b877c3600ae2ae81e6db",
+      "source_reference": "steve b; declared capture date 2025-04-27; declared location Oslo Municipality, Norway. Illustrative species photograph, not Arab-locality or current-event evidence. https://www.inaturalist.org/photos/494249712",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; exact-photo archived API evidence checked 9 November 2026. Original bytes preserved. No live licence refetch during reconstruction; no warranty of uploader ownership or unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/275010651; photo 494249712; https://creativecommons.org/publicdomain/zero/1.0/; bank photo libfile_fde3_f-c3e421a4fdec8191858806875e267dd0_15ee9b1d12a88191b8f4cd6d67c50ac5; bank rights libfile_fde3_f-416006e117c481918ba557870249fce8_15ee9b1d12a88191b8f4cd6d67c50ac5"
+      },
+      "alt": {
+        "ar": "درسة صفراء على غصن ومنقارها مفتوح",
+        "en": "Yellowhammer perched on a branch with its bill open",
+        "fr": "Bruant jaune perché sur une branche, le bec ouvert"
+      },
+      "caption": {
+        "ar": "الدرسة الصفراء",
+        "en": "Yellowhammer",
+        "fr": "Bruant jaune"
+      }
+    },
+    {
+      "id": "sitta-neumayer",
+      "path": "docs/media/publications/daily-birds-20261109/sitta-neumayer.jpg",
+      "sha256": "7149f93a992e3237eb2ff68c80117ea35c527804b081d14d937d235ea4422425",
+      "source_sha256": "7149f93a992e3237eb2ff68c80117ea35c527804b081d14d937d235ea4422425",
+      "source_reference": "James Eaton; declared capture date 2016-05-31; declared location Alborz Mountains, Iran. Illustrative species photograph, not Arab-locality or current-event evidence. https://www.inaturalist.org/photos/351030804",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; exact-photo archived API evidence checked 9 November 2026. Original bytes preserved. No live licence refetch during reconstruction; no warranty of uploader ownership or unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/199088382; photo 351030804; https://creativecommons.org/publicdomain/zero/1.0/; bank photo libfile_fde3_f-6f17ef9bd4cc819193c9d50464939bde_15ee9b1d12a88191b8f4cd6d67c50ac5; bank rights libfile_fde3_f-76b550ffbcf0819182dfd59f203aad83_15ee9b1d12a88191b8f4cd6d67c50ac5"
+      },
+      "alt": {
+        "ar": "خازن بندق صخري غربي واقف على صخرة بخط أسود عبر العين",
+        "en": "Western Rock Nuthatch standing on a rock",
+        "fr": "Sittelle de Neumayer debout sur un rocher"
+      },
+      "caption": {
+        "ar": "خازن البندق الصخري الغربي",
+        "en": "Western Rock Nuthatch",
+        "fr": "Sittelle de Neumayer"
+      }
+    },
+    {
+      "id": "columba-oenas",
+      "path": "docs/media/publications/daily-birds-20261109/columba-oenas.jpg",
+      "sha256": "e85dcf40030dfcc0d3d18e557ebba632918a9cc8822c8072c75cac648454e951",
+      "source_sha256": "e85dcf40030dfcc0d3d18e557ebba632918a9cc8822c8072c75cac648454e951",
+      "source_reference": "Cristina Hutchison; declared capture date 2026-04-11; declared location Dumfries and Galloway, UK. Illustrative species photograph, not Arab-locality or current-event evidence. https://www.inaturalist.org/photos/638204638",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; exact-photo archived API evidence checked 9 November 2026. Original bytes preserved. No live licence refetch during reconstruction; no warranty of uploader ownership or unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/349839837; photo 638204638; https://creativecommons.org/publicdomain/zero/1.0/; bank photo libfile_fde3_f-f6cd8c04df088191baa258ce32696241_15ee9b1d12a88191b8f4cd6d67c50ac5; bank rights libfile_fde3_f-d6c6c61b2a748191b802b19a5b94c22f_15ee9b1d12a88191b8f4cd6d67c50ac5"
+      },
+      "alt": {
+        "ar": "حمام بري على العشب، بعين داكنة وبقعة خضراء لامعة على العنق",
+        "en": "Stock Dove standing on grass",
+        "fr": "Pigeon colombin debout dans l’herbe"
+      },
+      "caption": {
+        "ar": "الحمام البري",
+        "en": "Stock Dove",
+        "fr": "Pigeon colombin"
+      }
+    },
+    {
+      "id": "turdus-iliacus",
+      "path": "docs/media/publications/daily-birds-20261109/turdus-iliacus.jpg",
+      "sha256": "324fdf4ee17cc2ff8e847fa3586022390f8f8deb3f2e8d76da0552aa2b894bed",
+      "source_sha256": "324fdf4ee17cc2ff8e847fa3586022390f8f8deb3f2e8d76da0552aa2b894bed",
+      "source_reference": "Алексей Ябс; declared capture date 2021-05-13; declared location Карпинск, Свердловская обл., Россия. Illustrative species photograph, not Arab-locality or current-event evidence. https://www.inaturalist.org/photos/128588922",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; exact-photo archived API evidence checked 9 November 2026. Original bytes preserved. No live licence refetch during reconstruction; no warranty of uploader ownership or unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/78562131; photo 128588922; https://creativecommons.org/publicdomain/zero/1.0/; bank photo libfile_fde3_f-ccf605a9d8fc8191a1bd56be55336845_15ee9b1d12a88191b8f4cd6d67c50ac5; bank rights libfile_fde3_f-5c378f39aaa88191b1f8ac2bb3162dc3_15ee9b1d12a88191b8f4cd6d67c50ac5"
+      },
+      "alt": {
+        "ar": "سمنة حمراء الجناح تقف على غصن",
+        "en": "Redwing perched on a branch",
+        "fr": "Grive mauvis perchée sur une branche"
+      },
+      "caption": {
+        "ar": "السمنة حمراء الجناح",
+        "en": "Redwing",
+        "fr": "Grive mauvis"
+      }
+    },
+    {
+      "id": "asio-flammeus",
+      "path": "docs/media/publications/daily-birds-20261109/asio-flammeus.jpg",
+      "sha256": "0b2a2069d845f713ad65c1e368b3d006be73a2e1a74ff7864aa0e6f269e18d14",
+      "source_sha256": "0b2a2069d845f713ad65c1e368b3d006be73a2e1a74ff7864aa0e6f269e18d14",
+      "source_reference": "Chrissy McClarren and Andy Reago; declared capture date 2025-11-28; declared location Columbia Bottom Conservation Area, St Louis County, MO, USA. Illustrative species photograph, not Arab-locality or current-event evidence. https://www.inaturalist.org/photos/607371519",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; exact-photo archived API evidence checked 9 November 2026. Original bytes preserved. No live licence refetch during reconstruction; no warranty of uploader ownership or unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/334454157; photo 607371519; https://creativecommons.org/publicdomain/zero/1.0/; bank photo libfile_fde3_f-8e329c582cd481918d92f959de976305_15ee9b1d12a88191b8f4cd6d67c50ac5; bank rights libfile_fde3_f-22dfa4edcbb481918ac1bc6d811e9fac_15ee9b1d12a88191b8f4cd6d67c50ac5"
+      },
+      "alt": {
+        "ar": "بومة قصيرة الأذنين على أرض يكسوها قليل من الثلج",
+        "en": "Short-eared Owl on lightly snow-covered ground",
+        "fr": "Hibou des marais sur un sol légèrement enneigé"
+      },
+      "caption": {
+        "ar": "البومة قصيرة الأذنين",
+        "en": "Short-eared Owl",
+        "fr": "Hibou des marais"
+      }
+    },
+    {
+      "id": "lophophanes-cristatus",
+      "path": "docs/media/publications/daily-birds-20261109/lophophanes-cristatus.jpg",
+      "sha256": "87e96bfec5a797934225b153f9d3e313607e8d2684c00f3f17871bc5c1863ab7",
+      "source_sha256": "87e96bfec5a797934225b153f9d3e313607e8d2684c00f3f17871bc5c1863ab7",
+      "source_reference": "Yehor Yatsiuk; declared capture date 2026-01-03; declared location Taevaskoja, Põlva County, Estonia. Illustrative species photograph, not Arab-locality or current-event evidence. https://www.inaturalist.org/photos/605081824",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; exact-photo archived API evidence checked 9 November 2026. Original bytes preserved. No live licence refetch during reconstruction; no warranty of uploader ownership or unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/333303066; photo 605081824; https://creativecommons.org/publicdomain/zero/1.0/; bank photo libfile_fde3_f-fc6533e93dc4819184510c18f2287b72_15ee9b1d12a88191b8f4cd6d67c50ac5; bank rights libfile_fde3_f-1a1d2355a5a88191b89d401378457078_15ee9b1d12a88191b8f4cd6d67c50ac5"
+      },
+      "alt": {
+        "ar": "قرقف متوج على غصن مكسو بالثلج",
+        "en": "Crested Tit on a snow-covered branch",
+        "fr": "Mésange huppée sur une branche enneigée"
+      },
+      "caption": {
+        "ar": "القرقف المتوج",
+        "en": "Crested Tit",
+        "fr": "Mésange huppée"
+      }
+    },
+    {
+      "id": "emberiza-cirlus",
+      "path": "docs/media/publications/daily-birds-20261109/emberiza-cirlus.jpg",
+      "sha256": "daae703eb86212326b465d7bd74b5ca98d50f7fc519faf51bdbaa8b02056d082",
+      "source_sha256": "daae703eb86212326b465d7bd74b5ca98d50f7fc519faf51bdbaa8b02056d082",
+      "source_reference": "Ben Keen; declared capture date 2025-09-30; declared location Kaikōura Peninsula, Kaikōura 7300, New Zealand. Illustrative species photograph, not Arab-locality or current-event evidence. https://www.inaturalist.org/photos/575373065",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; exact-photo archived API evidence checked 9 November 2026. Original bytes preserved. No live licence refetch during reconstruction; no warranty of uploader ownership or unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/318360279; photo 575373065; https://creativecommons.org/publicdomain/zero/1.0/; bank photo libfile_fde3_f-c12b9926afac8191a9e23d570e84300f_15ee9b1d12a88191b8f4cd6d67c50ac5; bank rights libfile_fde3_f-e4cba71ea1e881919d8832d5ec69ea75_15ee9b1d12a88191b8f4cd6d67c50ac5"
+      },
+      "alt": {
+        "ar": "درسة سيرل تقف على جذع خشبي",
+        "en": "Cirl Bunting perched on wood",
+        "fr": "Bruant zizi perché sur du bois"
+      },
+      "caption": {
+        "ar": "درسة سيرل",
+        "en": "Cirl Bunting",
+        "fr": "Bruant zizi"
+      }
+    },
+    {
+      "id": "prunella-collaris",
+      "path": "docs/media/publications/daily-birds-20261109/prunella-collaris.jpg",
+      "sha256": "b32da73dc9ee390e595b78d8ad4714b3f742f28823eb0f1f159dd1fc0e128ebf",
+      "source_sha256": "b32da73dc9ee390e595b78d8ad4714b3f742f28823eb0f1f159dd1fc0e128ebf",
+      "source_reference": "Paulo Caseirito; declared capture date 2025-11-29; declared location Portugal. Illustrative species photograph, not Arab-locality or current-event evidence. https://www.inaturalist.org/photos/595871659",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; exact-photo archived API evidence checked 9 November 2026. Original bytes preserved. No live licence refetch during reconstruction; no warranty of uploader ownership or unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/328794363; photo 595871659; https://creativecommons.org/publicdomain/zero/1.0/; bank photo libfile_fde3_f-764949481dcc819194908c4c23d9eb09_15ee9b1d12a88191b8f4cd6d67c50ac5; bank rights libfile_fde3_f-3f95949ff2e0819187b80972f5a92838_15ee9b1d12a88191b8f4cd6d67c50ac5"
+      },
+      "alt": {
+        "ar": "عصفور شوك ألبي يقف على الصخور",
+        "en": "Alpine Accentor standing on rocks",
+        "fr": "Accenteur alpin debout sur des rochers"
+      },
+      "caption": {
+        "ar": "عصفور الشوك الألبي",
+        "en": "Alpine Accentor",
+        "fr": "Accenteur alpin"
+      }
+    },
+    {
+      "id": "cinclus-cinclus",
+      "path": "docs/media/publications/daily-birds-20261109/cinclus-cinclus.jpg",
+      "sha256": "85f4dff4435a719d0d550b117c588d8924301a9357a60a2f4e4188b6d35bb27f",
+      "source_sha256": "85f4dff4435a719d0d550b117c588d8924301a9357a60a2f4e4188b6d35bb27f",
+      "source_reference": "Dario Taraborelli; declared capture date 2021-07-15; declared location Parco del Mella, Concesio, Province of Brescia, Italy. Illustrative species photograph, not Arab-locality or current-event evidence. https://www.inaturalist.org/photos/143686438",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0; exact-photo archived API evidence checked 9 November 2026. Original bytes preserved. No live licence refetch during reconstruction; no warranty of uploader ownership or unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/87177852; photo 143686438; https://creativecommons.org/publicdomain/zero/1.0/; bank photo libfile_fde3_f-df7afcaed1e881918b287e459f82abbb_15ee9b1d12a88191b8f4cd6d67c50ac5; bank rights libfile_fde3_f-f5d749f41b208191a2509688006c4c26_15ee9b1d12a88191b8f4cd6d67c50ac5"
+      },
+      "alt": {
+        "ar": "غطاس أبيض الحنجرة على صخرة مبللة في جدول جارٍ",
+        "en": "White-throated Dipper on a wet rock in a flowing stream",
+        "fr": "Cincle plongeur sur un rocher mouillé dans un cours d’eau"
+      },
+      "caption": {
+        "ar": "الغطاس أبيض الحنجرة",
+        "en": "White-throated Dipper",
+        "fr": "Cincle plongeur"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "البومة-السمراء",
+        "en": "tawny-owl",
+        "fr": "chouette-hulotte"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "strix-aluco"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البومة السمراء",
+          "subtitle": "Strix aluco",
+          "meta_description": "البومة السمراء: الهوية والموئل والتكاثر والحضور العربي مع مصادر وصورة موثقة.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "البومة السمراء Strix aluco بومة متوسطة الحجم، مستديرة الرأس بلا خصل أذنية، ولها عينان داكنتان. يساعد ريشها البني أو الرمادي المرقط على اختفائها بين الجذوع. ولا يكفي اللون وحده للفصل بينها وبين أنواع البوم القريبة.",
+                "ترتبط بالغابات والأشجار الناضجة، وقد تسكن الحدائق الكبيرة. وهي ليلية في الأساس ومقيمة عادة؛ يتفرق الصغار بحثًا عن مناطق خاصة بهم، بينما يتمسك البالغان بمنطقة مستقرة. لذلك لا تعني رؤيتها نهارًا أنها نوع نهاري.",
+                "تتغذى أساسًا على الثدييات الصغيرة، لكنها قد تصطاد طيورًا صغيرة وبرمائيات وتأكل حشرات كبيرة وديدانًا. يختلف تركيب الغذاء بحسب الفرائس المتاحة في الموئل.",
+                "تستخدم تجاويف الأشجار وصناديق التعشيش. ويذكر BTO حضنة معتادة من بيضتين إلى ثلاث، تحضنها الأنثى نحو ثلاثين يومًا. هذه قيم مرجعية وليست جدولًا ثابتًا لكل منطقة أو زوج.",
+                "تحمي الأشجار القديمة المناسبة للتعشيش جزءًا مهمًا من موئلها. ينبغي مراقبتها من بعيد، وعدم الاقتراب من التجويف أو تشغيل النداءات لاستدعائها. الصورة توضيحية للنوع ولا توثق مشاهدة عربية.",
+                "تضم قائمة كليمنتس، بعد تحديث أكتوبر 2025 المتوافق مع AviList، بومة المغرب ضمن Strix aluco باسم S. a. mauritanica، بعدما فصلتها قوائم سابقة. لذلك قد تستخدم سجلات شمال إفريقيا اسم النوع أو النويع بحسب القائمة التصنيفية؛ والصورة البريطانية هنا لا توثق هيئة التجمع المغاربي."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — البومة السمراء",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/tawny-owl"
+            },
+            {
+              "label": "www.rspb.org.uk — البومة السمراء",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/tawny-owl"
+            },
+            {
+              "label": "www.bto.org — البومة السمراء",
+              "url": "https://www.bto.org/learn/about-birds/owls/tawny-owl"
+            },
+            {
+              "label": "www.birds.cornell.edu — البومة السمراء",
+              "url": "https://www.birds.cornell.edu/clementschecklist/updates-and-corrections-october-2025-page-2/"
+            }
+          ],
+          "photo_credit": "الصورة: bobhunter2"
+        },
+        "en": {
+          "title": "Tawny Owl",
+          "subtitle": "Strix aluco",
+          "meta_description": "Tawny Owl: identity, habitat, breeding and Arab-world occurrence, with sources and a documented photograph.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Tawny Owl Strix aluco is a medium-sized owl with a rounded head, no ear tufts and dark eyes. Mottled brown or grey plumage provides camouflage against bark. Colour alone is insufficient to separate it from related owls.",
+                "It inhabits woodland and mature trees, including large gardens. Mainly nocturnal and usually resident, it retains established territories while young birds disperse. A daytime sighting therefore does not make it a daytime specialist.",
+                "Small mammals form much of its diet, supplemented by small birds, amphibians, large insects and earthworms. The balance varies with prey availability in its habitat.",
+                "Tree cavities and nest boxes provide nesting sites. BTO gives a typical clutch of two or three eggs and female incubation of about thirty days. These are reference values, not a fixed schedule for every pair or region.",
+                "Retaining suitable old trees protects an important part of its habitat. Observe from a distance, without approaching cavities or using playback to attract birds. The photograph illustrates the species and does not document an Arab-world record.",
+                "Following AviList, the October 2025 Clements update includes Maghreb Owl within Strix aluco as S. a. mauritanica, reversing an earlier split. North African records may therefore use either the species or subspecies name, depending on the checklist; the British photograph here does not illustrate Maghreb plumage."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Tawny Owl",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/tawny-owl"
+            },
+            {
+              "label": "www.rspb.org.uk — Tawny Owl",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/tawny-owl"
+            },
+            {
+              "label": "www.bto.org — Tawny Owl",
+              "url": "https://www.bto.org/learn/about-birds/owls/tawny-owl"
+            },
+            {
+              "label": "www.birds.cornell.edu — Tawny Owl",
+              "url": "https://www.birds.cornell.edu/clementschecklist/updates-and-corrections-october-2025-page-2/"
+            }
+          ],
+          "photo_credit": "Photo: bobhunter2"
+        },
+        "fr": {
+          "title": "Chouette hulotte",
+          "subtitle": "Strix aluco",
+          "meta_description": "Chouette hulotte: identification, habitat, reproduction et présence dans le monde arabe, avec sources et photographie documentée.",
+          "sections": [
+            {
+              "heading": "Identification, écologie et répartition",
+              "paragraphs": [
+                "La Chouette hulotte Strix aluco est un rapace nocturne de taille moyenne, à tête ronde et yeux sombres, sans aigrettes. Son plumage brun ou gris marbré la dissimule contre l’écorce. La couleur seule ne suffit pas à la distinguer des espèces voisines.",
+                "Elle fréquente les bois et les arbres matures, jusque dans les grands jardins. Principalement nocturne et généralement sédentaire, elle conserve un territoire tandis que les jeunes se dispersent. Une observation de jour ne fait donc pas d’elle une spécialiste de la chasse diurne.",
+                "Les petits mammifères dominent souvent son régime, complété par de petits oiseaux, des amphibiens, de gros insectes et des vers de terre. La composition dépend des proies disponibles.",
+                "Les cavités des arbres et les nichoirs servent à la nidification. Le BTO indique habituellement deux ou trois œufs, couvés environ trente jours par la femelle. Ce sont des valeurs indicatives, non un calendrier immuable.",
+                "Conserver les vieux arbres favorables protège une composante essentielle de son habitat. Il convient de rester à distance des cavités et de renoncer à la repasse sonore. La photographie illustre l’espèce sans constituer une observation dans un pays arabe.",
+                "Suivant AviList, la mise à jour Clements d’octobre 2025 réintègre la Chouette du Maghreb dans Strix aluco sous S. a. mauritanica, après une séparation antérieure. Les données nord-africaines peuvent donc utiliser le nom d’espèce ou de sous-espèce selon la liste taxonomique ; l’image britannique n’illustre pas le plumage maghrébin."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Chouette hulotte",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/tawny-owl"
+            },
+            {
+              "label": "www.rspb.org.uk — Chouette hulotte",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/tawny-owl"
+            },
+            {
+              "label": "www.bto.org — Chouette hulotte",
+              "url": "https://www.bto.org/learn/about-birds/owls/tawny-owl"
+            },
+            {
+              "label": "www.birds.cornell.edu — Chouette hulotte",
+              "url": "https://www.birds.cornell.edu/clementschecklist/updates-and-corrections-october-2025-page-2/"
+            }
+          ],
+          "photo_credit": "Photo : bobhunter2"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الدرسة-الصفراء",
+        "en": "yellowhammer",
+        "fr": "bruant-jaune"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "emberiza-citrinella"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الدرسة الصفراء",
+          "subtitle": "Emberiza citrinella",
+          "meta_description": "الدرسة الصفراء: الهوية والموئل والتكاثر والحضور العربي مع مصادر وصورة موثقة.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "الدرسة الصفراء Emberiza citrinella عصفور ذو منقار قصير مناسب لتناول البذور. يبرز اصفرار رأس الذكر، بينما تبدو الأنثى أكثر تخطيطًا وأقل سطوعًا. يجب فحص الرأس والعجز معًا عند مقارنتها بدرسة سيرل.",
+                "تعيش في الأراضي الزراعية وحواف الغابات والأسيجة. توفر البذور غذاء مهمًا، وتدخل اللافقاريات في غذائها أيضًا. ولا يكفي وجود الأشجار وحده؛ فهي تحتاج إلى فسيفساء من الغطاء النباتي وأماكن التغذية المفتوحة.",
+                "تبني عشها على الأرض أو قريبًا منها في غطاء كثيف. يورد BTO ثلاثًا إلى أربع بيضات بوصفها حضنة نموذجية. وتوفر الحواف العشبية والأسيجة القصيرة الكثيفة مأوى للتعشيش.",
+                "يربط RSPB تراجعها البريطاني بنقص الغذاء ومواضع التعشيش. إبقاء بقايا المحاصيل الغنية بالبذور شتاءً وحماية حواف الحقول مثالان على إدارة موئلها. الاتجاه البريطاني لا يثبت اتجاه أعداد النوع في البلدان العربية.",
+                "في المغرب الكبير تُعد نادرة أو عارضة؛ ويعرض تقرير متخصص من الجزائر عام 2024 ندرة السجلات الإقليمية."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — الدرسة الصفراء",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/yellowhammer"
+            },
+            {
+              "label": "www.rspb.org.uk — الدرسة الصفراء",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/yellowhammer"
+            },
+            {
+              "label": "www.rspb.org.uk — الدرسة الصفراء",
+              "url": "https://www.rspb.org.uk/helping-nature/what-we-do/influence-government-and-business/farming/advice-for-farmers-helping-bird-species/yellowhammer-advice-for-farmers"
+            },
+            {
+              "label": "magornitho.org — الدرسة الصفراء",
+              "url": "https://magornitho.org/2024/03/yellowhammer-in-algeria/"
+            }
+          ],
+          "photo_credit": "الصورة: steve b"
+        },
+        "en": {
+          "title": "Yellowhammer",
+          "subtitle": "Emberiza citrinella",
+          "meta_description": "Yellowhammer: identity, habitat, breeding and Arab-world occurrence, with sources and a documented photograph.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Yellowhammer Emberiza citrinella is a bunting with a short seed-handling bill. Males show a conspicuously yellow head; females are more streaked and subdued. Head pattern and rump should be checked together when separating it from Cirl Bunting.",
+                "Farmland, woodland edges and hedges provide habitat. Seeds are important food, alongside invertebrates. Trees alone do not make suitable habitat: birds also need a combination of vegetation cover and open feeding ground.",
+                "The nest is on or close to the ground in dense vegetation. BTO reports a typical clutch of three or four eggs. Grassy margins and short, thick hedges provide shelter for nesting birds.",
+                "RSPB links British declines to insufficient food and nesting habitat. Seed-rich winter stubbles and protected field margins illustrate practical habitat management. The British trend does not establish population trends in Arab countries.",
+                "In the Maghreb it is rare or accidental; a specialist Algerian report from 2024 discusses the scarcity of regional records."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Yellowhammer",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/yellowhammer"
+            },
+            {
+              "label": "www.rspb.org.uk — Yellowhammer",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/yellowhammer"
+            },
+            {
+              "label": "www.rspb.org.uk — Yellowhammer",
+              "url": "https://www.rspb.org.uk/helping-nature/what-we-do/influence-government-and-business/farming/advice-for-farmers-helping-bird-species/yellowhammer-advice-for-farmers"
+            },
+            {
+              "label": "magornitho.org — Yellowhammer",
+              "url": "https://magornitho.org/2024/03/yellowhammer-in-algeria/"
+            }
+          ],
+          "photo_credit": "Photo: steve b"
+        },
+        "fr": {
+          "title": "Bruant jaune",
+          "subtitle": "Emberiza citrinella",
+          "meta_description": "Bruant jaune: identification, habitat, reproduction et présence dans le monde arabe, avec sources et photographie documentée.",
+          "sections": [
+            {
+              "heading": "Identification, écologie et répartition",
+              "paragraphs": [
+                "Le Bruant jaune Emberiza citrinella possède un bec court adapté aux graines. La tête jaune du mâle attire le regard ; la femelle est plus striée et plus discrète. Pour le distinguer du Bruant zizi, il faut examiner ensemble la tête et le croupion.",
+                "Il fréquente les terres agricoles, les lisières et les haies. Les graines occupent une place importante dans son alimentation, qui comprend aussi des invertébrés. Des arbres seuls ne suffisent pas : couvert végétal et espaces ouverts de nourrissage doivent se compléter.",
+                "Le nid est installé au sol ou très près, dans une végétation dense. Le BTO indique habituellement trois ou quatre œufs. Les bordures herbeuses et les haies basses et épaisses offrent des abris.",
+                "Le RSPB associe le déclin britannique au manque de nourriture et de sites de nidification. Chaumes riches en graines et bordures préservées illustrent des mesures utiles. La tendance britannique ne démontre pas celle des populations dans les pays arabes.",
+                "Au Maghreb, sa présence est rare ou accidentelle ; un compte rendu algérien spécialisé de 2024 souligne la rareté des observations régionales."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Bruant jaune",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/yellowhammer"
+            },
+            {
+              "label": "www.rspb.org.uk — Bruant jaune",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/yellowhammer"
+            },
+            {
+              "label": "www.rspb.org.uk — Bruant jaune",
+              "url": "https://www.rspb.org.uk/helping-nature/what-we-do/influence-government-and-business/farming/advice-for-farmers-helping-bird-species/yellowhammer-advice-for-farmers"
+            },
+            {
+              "label": "magornitho.org — Bruant jaune",
+              "url": "https://magornitho.org/2024/03/yellowhammer-in-algeria/"
+            }
+          ],
+          "photo_credit": "Photo : steve b"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "خازن-البندق-الصخري-الغربي",
+        "en": "western-rock-nuthatch",
+        "fr": "sittelle-de-neumayer"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "sitta-neumayer"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "خازن البندق الصخري الغربي",
+          "subtitle": "Sitta neumayer",
+          "meta_description": "خازن البندق الصخري الغربي: الهوية والموئل والتكاثر والحضور العربي مع مصادر وصورة موثقة.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "خازن البندق الصخري الغربي Sitta neumayer طائر صغير قوي البنية، رمادي الظهر وفاتح البطن، يمتد خط داكن عبر عينه. ينتمي إلى خازنات البندق، لكن الصخور أهم في حياته من جذوع الغابات.",
+                "يتحرك بخفة على المنحدرات والجروف وبين الشقوق. يأكل الحشرات وبذور النباتات ولافقاريات أخرى بحسب الموسم. وقد يزور الأشجار أيضًا، لذا لا يصح تعريفه من موضع الوقوف وحده.",
+                "يبني عشًا طينيًا عند شق أو تحت بروز صخري، بمدخل ضيق. ينبغي عدم لمس هذا البناء أو الوقوف طويلًا أمامه؛ فمشاهدة العش من بعيد تكفي لتقدير مهارته.",
+                "يوثق مرجع OSME إقامته في لبنان وسوريا وشمال شرق العراق. وهو مختلف عن خازن البندق الصخري الشرقي Sitta tephronota؛ يلزم التدقيق في السمات والموقع قبل اعتماد مشاهدة، خصوصًا في مناطق التقارب."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.oiseaux.net — خازن البندق الصخري الغربي",
+              "url": "https://www.oiseaux.net/oiseaux/sittelle.de.neumayer.html"
+            },
+            {
+              "label": "www.osme.org — خازن البندق الصخري الغربي",
+              "url": "https://www.osme.org/wp-content/uploads/2019/10/C_ORL-Pass-5.1.pdf"
+            },
+            {
+              "label": "wildlebanon.org — خازن البندق الصخري الغربي",
+              "url": "https://wildlebanon.org/en/animals/birds/"
+            }
+          ],
+          "photo_credit": "الصورة: James Eaton"
+        },
+        "en": {
+          "title": "Western Rock Nuthatch",
+          "subtitle": "Sitta neumayer",
+          "meta_description": "Western Rock Nuthatch: identity, habitat, breeding and Arab-world occurrence, with sources and a documented photograph.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Western Rock Nuthatch Sitta neumayer is a compact bird with grey upperparts, pale underparts and a dark eye stripe. It belongs to the nuthatch family, but rocky surfaces play a greater role in its life than woodland trunks.",
+                "It moves nimbly over slopes, cliffs and crevices. Food includes insects, plant seeds and other invertebrates, with seasonal changes. It sometimes visits trees, so its perch alone is not an identification character.",
+                "A mud-built nest occupies a fissure or sheltered rock overhang, with a narrow entrance. Do not touch the structure or linger in front of it; distant observation is enough to appreciate its construction.",
+                "OSME documents resident occurrence in Lebanon, Syria and northeastern Iraq. It is distinct from Eastern Rock Nuthatch Sitta tephronota. Identification requires attention to both features and locality, especially where the species approach one another."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.oiseaux.net — Western Rock Nuthatch",
+              "url": "https://www.oiseaux.net/oiseaux/sittelle.de.neumayer.html"
+            },
+            {
+              "label": "www.osme.org — Western Rock Nuthatch",
+              "url": "https://www.osme.org/wp-content/uploads/2019/10/C_ORL-Pass-5.1.pdf"
+            },
+            {
+              "label": "wildlebanon.org — Western Rock Nuthatch",
+              "url": "https://wildlebanon.org/en/animals/birds/"
+            }
+          ],
+          "photo_credit": "Photo: James Eaton"
+        },
+        "fr": {
+          "title": "Sittelle de Neumayer",
+          "subtitle": "Sitta neumayer",
+          "meta_description": "Sittelle de Neumayer: identification, habitat, reproduction et présence dans le monde arabe, avec sources et photographie documentée.",
+          "sections": [
+            {
+              "heading": "Identification, écologie et répartition",
+              "paragraphs": [
+                "La Sittelle de Neumayer Sitta neumayer est un oiseau compact, gris dessus et clair dessous, avec un trait sombre sur l’œil. Elle appartient aux sittelles, mais les rochers occupent dans sa vie une place plus grande que les troncs forestiers.",
+                "Elle se déplace avec agilité sur les pentes, les falaises et dans les fissures. Insectes, graines et autres invertébrés composent son alimentation selon la saison. Elle visite parfois les arbres : le perchoir seul ne permet donc pas l’identification.",
+                "Son nid maçonné de boue s’abrite dans une fissure ou sous un surplomb, avec une entrée étroite. Il ne faut ni toucher cette construction ni stationner devant elle. L’observation à distance suffit.",
+                "L’OSME documente sa présence sédentaire au Liban, en Syrie et dans le nord-est de l’Irak. Elle se distingue de la Sittelle des rochers Sitta tephronota. Caractères et localité doivent être examinés, notamment aux zones de proximité des deux espèces."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.oiseaux.net — Sittelle de Neumayer",
+              "url": "https://www.oiseaux.net/oiseaux/sittelle.de.neumayer.html"
+            },
+            {
+              "label": "www.osme.org — Sittelle de Neumayer",
+              "url": "https://www.osme.org/wp-content/uploads/2019/10/C_ORL-Pass-5.1.pdf"
+            },
+            {
+              "label": "wildlebanon.org — Sittelle de Neumayer",
+              "url": "https://wildlebanon.org/en/animals/birds/"
+            }
+          ],
+          "photo_credit": "Photo : James Eaton"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الحمام-البري",
+        "en": "stock-dove",
+        "fr": "pigeon-colombin"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "columba-oenas"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الحمام البري",
+          "subtitle": "Columba oenas",
+          "meta_description": "الحمام البري: الهوية والموئل والتكاثر والحضور العربي مع مصادر وصورة موثقة.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "الحمام البري Columba oenas، ويعرف بالإنجليزية باسم Stock Dove، حمام رمادي مزرق ذو لمعان أخضر على الرقبة. تسمية الحمام البري عامة في الاستعمال العربي، لذلك يبقى الاسم العلمي ضروريًا لتحديد المقصود.",
+                "يفتقر إلى رقعة الرقبة البيضاء المميزة لحمام الغابات، وتظهر على جناحه خطوط سوداء قصيرة. يحتاج تمييزه من الحمام الصخري وأشكاله المستأنسة إلى فحص عدة علامات، لا اللون الرمادي وحده.",
+                "يجمع موئله بين الأراضي الزراعية للتغذية والأشجار الكبيرة ذات التجاويف للتعشيش. يورد BTO بيضتين للحضنة المعتادة. لذا يمكن لفقد الأشجار القديمة أن يزيل مواقع التعشيش حتى لو بقيت الحقول متاحة.",
+                "وجوده قرب الزراعة لا يجعله مجرد حمام منزلي شارد. أفضل توثيق للمشاهدة يجمع صور الجناح والرقبة والسياق المكاني من دون مطاردة الطائر. والصورة المرفقة توضيحية، لا دليل على تكاثر محلي.",
+                "يشير African Bird Club إلى وجود النوع في المغرب. لا تقدم هذه الإشارة وحدها خريطة تفصيلية لمواسم وجوده في الدول العربية، ولا تسمح بوصفه بالمقيم المتكاثر في كل موضع يُشاهد فيه."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — الحمام البري",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/stock-dove"
+            },
+            {
+              "label": "www.rspb.org.uk — الحمام البري",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/stock-dove"
+            },
+            {
+              "label": "www.africanbirdclub.org — الحمام البري",
+              "url": "https://www.africanbirdclub.org/countries/morocco/morocco-introduction/"
+            }
+          ],
+          "photo_credit": "الصورة: Cristina Hutchison"
+        },
+        "en": {
+          "title": "Stock Dove",
+          "subtitle": "Columba oenas",
+          "meta_description": "Stock Dove: identity, habitat, breeding and Arab-world occurrence, with sources and a documented photograph.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Stock Dove Columba oenas is a blue-grey pigeon with an iridescent green neck patch. Its Arabic common name is a broad everyday expression for wild pigeon, making the scientific name especially important for precision.",
+                "It lacks the Woodpigeon’s white neck patch and shows short black wing bars. Separating it from Rock Dove and domestic forms requires several characters rather than grey colour alone.",
+                "Its habitat combines farmland for feeding with large, cavity-bearing trees for nesting. BTO reports a typical clutch of two eggs. Losing old trees can therefore remove nest sites even when feeding fields remain available.",
+                "Occurrence beside farmland does not make it a feral domestic pigeon. Useful documentation combines wing and neck views with locality, without chasing the bird. The accompanying photograph is illustrative, not evidence of local breeding.",
+                "The African Bird Club documents the species in Morocco. This alone does not provide a detailed seasonal map for Arab countries or establish resident breeding wherever it is observed."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Stock Dove",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/stock-dove"
+            },
+            {
+              "label": "www.rspb.org.uk — Stock Dove",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/stock-dove"
+            },
+            {
+              "label": "www.africanbirdclub.org — Stock Dove",
+              "url": "https://www.africanbirdclub.org/countries/morocco/morocco-introduction/"
+            }
+          ],
+          "photo_credit": "Photo: Cristina Hutchison"
+        },
+        "fr": {
+          "title": "Pigeon colombin",
+          "subtitle": "Columba oenas",
+          "meta_description": "Pigeon colombin: identification, habitat, reproduction et présence dans le monde arabe, avec sources et photographie documentée.",
+          "sections": [
+            {
+              "heading": "Identification, écologie et répartition",
+              "paragraphs": [
+                "Le Pigeon colombin Columba oenas est gris bleuté, avec des reflets verts sur le cou. Son nom commun arabe est une expression générale désignant le pigeon sauvage : le nom scientifique précise donc indispensablement l’espèce.",
+                "Il ne possède pas la tache blanche au cou du Pigeon ramier et montre de courtes barres noires sur l’aile. Le distinguer du Pigeon biset et des formes domestiques demande plusieurs critères, et non la seule couleur grise.",
+                "Il associe champs nourriciers et grands arbres creux pour nicher. Le BTO indique une ponte habituelle de deux œufs. La disparition des vieux arbres peut supprimer les sites de nidification alors que les champs restent disponibles.",
+                "Sa présence près des cultures n’en fait pas un pigeon domestique retourné à la liberté. Photographier aile et cou, tout en notant la localité sans poursuivre l’oiseau, améliore le relevé. L’image jointe n’atteste pas une reproduction locale.",
+                "L’African Bird Club documente l’espèce au Maroc. Cela ne fournit pas une carte saisonnière détaillée des pays arabes et ne démontre pas une nidification sédentaire dans chaque lieu d’observation."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Pigeon colombin",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/stock-dove"
+            },
+            {
+              "label": "www.rspb.org.uk — Pigeon colombin",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/stock-dove"
+            },
+            {
+              "label": "www.africanbirdclub.org — Pigeon colombin",
+              "url": "https://www.africanbirdclub.org/countries/morocco/morocco-introduction/"
+            }
+          ],
+          "photo_credit": "Photo : Cristina Hutchison"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "السمنة-حمراء-الجناح",
+        "en": "redwing",
+        "fr": "grive-mauvis"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "turdus-iliacus"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "السمنة حمراء الجناح",
+          "subtitle": "Turdus iliacus",
+          "meta_description": "السمنة حمراء الجناح: الهوية والموئل والتكاثر والحضور العربي مع مصادر وصورة موثقة.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "السمنة حمراء الجناح Turdus iliacus سمنة صغيرة نسبيًا، يميزها حاجب فاتح واضح وجانبان محمران. تظهر الحمرة تحت الجناحين في الطيران، لكن اسمها لا يعني أن الجناح كله أحمر.",
+                "تتحرك بحثًا عن الثمار والموارد الغذائية، وقد تتغير أعداد الزوار الشتويين كثيرًا بين السنوات. تمثل الحقول والأسيجة والأشجار المثمرة أجزاء متكاملة من موئلها خارج موسم التكاثر.",
+                "تعشش في الأقاليم الشمالية من نطاقها، ويذكر BTO حضنة معتادة من أربع إلى خمس بيضات. أرقام التكاثر البريطانية لا تصف انتشارها العالمي، كما لا تثبت المشاهدة الشتوية تعشيشًا في الموقع.",
+                "تفيد المحافظة على النباتات المثمرة وأماكن الراحة الهادئة الطيور الزائرة. وعند توثيقها، يساعد تصوير الحاجب والجنب على تجنب خلطها بسمنات أخرى.",
+                "ترد ضمن زوار الشتاء في أجزاء من المغرب الكبير، ومنها المغرب والجزائر وتونس. يختلف حضورها بين الأماكن والسنوات."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — السمنة حمراء الجناح",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/redwing"
+            },
+            {
+              "label": "www.rspb.org.uk — السمنة حمراء الجناح",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/redwing"
+            },
+            {
+              "label": "doi.org — السمنة حمراء الجناح",
+              "url": "https://doi.org/10.2305/IUCN.UK.2025-2.RLTS.T22708819A218591834.en"
+            },
+            {
+              "label": "avibase.bsc-eoc.org — السمنة حمراء الجناح",
+              "url": "https://avibase.bsc-eoc.org/checklist.jsp?lang=EN&region=MA"
+            }
+          ],
+          "photo_credit": "الصورة: Алексей Ябс"
+        },
+        "en": {
+          "title": "Redwing",
+          "subtitle": "Turdus iliacus",
+          "meta_description": "Redwing: identity, habitat, breeding and Arab-world occurrence, with sources and a documented photograph.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Redwing Turdus iliacus is a relatively small thrush with a conspicuous pale eyebrow and reddish flanks. Red also shows beneath the wings in flight; its name does not mean that the entire wing is red.",
+                "Birds move in response to fruit and other food supplies, and winter visitor numbers can vary greatly between years. Fields, hedges and fruit-bearing trees form complementary parts of its non-breeding habitat.",
+                "It nests in northern parts of its range. BTO gives a typical clutch of four or five eggs. British breeding figures do not describe its global distribution, and winter occurrence does not establish local nesting.",
+                "Retaining fruit-bearing vegetation and quiet resting places helps visiting birds. Photographs showing the eyebrow and flanks aid separation from other thrushes.",
+                "It occurs in the non-breeding season in parts of the Maghreb, including Morocco, Algeria and Tunisia. Presence varies among sites and years."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Redwing",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/redwing"
+            },
+            {
+              "label": "www.rspb.org.uk — Redwing",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/redwing"
+            },
+            {
+              "label": "doi.org — Redwing",
+              "url": "https://doi.org/10.2305/IUCN.UK.2025-2.RLTS.T22708819A218591834.en"
+            },
+            {
+              "label": "avibase.bsc-eoc.org — Redwing",
+              "url": "https://avibase.bsc-eoc.org/checklist.jsp?lang=EN&region=MA"
+            }
+          ],
+          "photo_credit": "Photo: Алексей Ябс"
+        },
+        "fr": {
+          "title": "Grive mauvis",
+          "subtitle": "Turdus iliacus",
+          "meta_description": "Grive mauvis: identification, habitat, reproduction et présence dans le monde arabe, avec sources et photographie documentée.",
+          "sections": [
+            {
+              "heading": "Identification, écologie et répartition",
+              "paragraphs": [
+                "La Grive mauvis Turdus iliacus est une grive relativement petite, reconnaissable à son sourcil clair et à ses flancs roux. Le roux apparaît aussi sous les ailes en vol ; le nom anglais Redwing ne signifie pas que toute l’aile est rouge.",
+                "Ses déplacements répondent aux ressources alimentaires, notamment aux fruits, et les effectifs hivernants varient fortement selon les années. Champs, haies et arbres à fruits constituent des éléments complémentaires de son habitat hors reproduction.",
+                "Elle niche dans les régions septentrionales de son aire. Le BTO indique habituellement quatre ou cinq œufs. Les chiffres britanniques ne décrivent pas sa répartition mondiale, et une présence hivernale ne démontre pas une nidification locale.",
+                "Préserver les végétaux à fruits et les lieux de repos tranquilles aide les visiteurs. Des vues du sourcil et des flancs facilitent l’identification.",
+                "Elle est présente hors reproduction dans certaines parties du Maghreb, notamment au Maroc, en Algérie et en Tunisie. Sa présence varie selon les lieux et les années."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Grive mauvis",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/redwing"
+            },
+            {
+              "label": "www.rspb.org.uk — Grive mauvis",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/redwing"
+            },
+            {
+              "label": "doi.org — Grive mauvis",
+              "url": "https://doi.org/10.2305/IUCN.UK.2025-2.RLTS.T22708819A218591834.en"
+            },
+            {
+              "label": "avibase.bsc-eoc.org — Grive mauvis",
+              "url": "https://avibase.bsc-eoc.org/checklist.jsp?lang=EN&region=MA"
+            }
+          ],
+          "photo_credit": "Photo : Алексей Ябс"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "البومة-قصيرة-الأذنين",
+        "en": "short-eared-owl",
+        "fr": "hibou-des-marais"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "asio-flammeus"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "البومة قصيرة الأذنين",
+          "subtitle": "Asio flammeus",
+          "meta_description": "البومة قصيرة الأذنين: الهوية والموئل والتكاثر والحضور العربي مع مصادر وصورة موثقة.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "البومة قصيرة الأذنين Asio flammeus بومة مرقطة بعينين صفراوين تحيط بهما مساحات داكنة. الخصل الأذنية صغيرة وقد لا تظهر، وهي ريش وليست الأذنين الحقيقيتين.",
+                "تصطاد فوق الأراضي العشبية والمستنقعات والمساحات المفتوحة، وقد تنشط نهارًا. تعتمد كثيرًا على الثدييات الصغيرة، وتتأثر تحركاتها ونجاح تكاثرها بتوفر الفرائس.",
+                "تعشش على الأرض. يورد BTO أربعًا إلى سبع بيضات بوصفها حضنة معتادة، لكن هذا الرقم لا يثبت أن أي طائر مرئي في الشتاء متكاثر محليًا. ينبغي ترك مسافة واسعة حول الطيور المستريحة.",
+                "وصفت دراسة منشورة عام 2016 لدى OSME وضعها في لبنان بأنها زائر شتوي نادر جدًا وعابر محتمل نادر جدًا. ندرتها هناك لا تعني أنها نادرة بالدرجة نفسها في جميع البلدان، والصورة الملتقطة في الولايات المتحدة لا توثق مشاهدة لبنانية."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — البومة قصيرة الأذنين",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/short-eared-owl"
+            },
+            {
+              "label": "www.rspb.org.uk — البومة قصيرة الأذنين",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/short-eared-owl"
+            },
+            {
+              "label": "osme.org — البومة قصيرة الأذنين",
+              "url": "https://osme.org/wp-content/uploads/2023/07/Six-interesting-bird-records-including-two-new-species-Common-Rosefinch-Carpodacus-erythrinus-and-White-crowned-Wheatear.pdf"
+            }
+          ],
+          "photo_credit": "الصورة: Chrissy McClarren and Andy Reago"
+        },
+        "en": {
+          "title": "Short-eared Owl",
+          "subtitle": "Asio flammeus",
+          "meta_description": "Short-eared Owl: identity, habitat, breeding and Arab-world occurrence, with sources and a documented photograph.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Short-eared Owl Asio flammeus has mottled plumage and yellow eyes surrounded by dark patches. Its small ear tufts can be difficult to see; these are feathers, not the actual ears.",
+                "It hunts over grassland, marshes and other open ground, sometimes by day. Small mammals are important prey, and food availability influences its movements and breeding success.",
+                "It nests on the ground. BTO gives a typical clutch of four to seven eggs, but this does not establish local breeding wherever a wintering bird is seen. Leave resting birds a wide buffer.",
+                "A 2016 OSME-published study describes it as a very rare winter visitor and probable very rare passage migrant in Lebanon. Its scarcity there does not establish equal scarcity elsewhere, and the photograph, taken in the United States, does not document a Lebanese observation."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Short-eared Owl",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/short-eared-owl"
+            },
+            {
+              "label": "www.rspb.org.uk — Short-eared Owl",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/short-eared-owl"
+            },
+            {
+              "label": "osme.org — Short-eared Owl",
+              "url": "https://osme.org/wp-content/uploads/2023/07/Six-interesting-bird-records-including-two-new-species-Common-Rosefinch-Carpodacus-erythrinus-and-White-crowned-Wheatear.pdf"
+            }
+          ],
+          "photo_credit": "Photo: Chrissy McClarren and Andy Reago"
+        },
+        "fr": {
+          "title": "Hibou des marais",
+          "subtitle": "Asio flammeus",
+          "meta_description": "Hibou des marais: identification, habitat, reproduction et présence dans le monde arabe, avec sources et photographie documentée.",
+          "sections": [
+            {
+              "heading": "Identification, écologie et répartition",
+              "paragraphs": [
+                "Le Hibou des marais Asio flammeus possède un plumage tacheté et des yeux jaunes entourés de sombre. Ses petites aigrettes se voient parfois difficilement ; ce sont des plumes, non les véritables oreilles.",
+                "Il chasse au-dessus des prairies, marais et autres espaces ouverts, parfois en journée. Les petits mammifères comptent parmi ses principales proies. Leur disponibilité influence déplacements et succès reproducteur.",
+                "Il niche au sol. Le BTO indique généralement quatre à sept œufs, sans que cela prouve une nidification dans chaque lieu d’observation hivernale. Il faut laisser une large distance aux oiseaux au repos.",
+                "Une étude de 2016 publiée par l’OSME le décrit au Liban comme un hivernant très rare et probablement un migrateur de passage très rare. Ce statut ne vaut pas uniformément ailleurs, et la photographie, prise aux États-Unis, ne documente pas une observation libanaise."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Hibou des marais",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/short-eared-owl"
+            },
+            {
+              "label": "www.rspb.org.uk — Hibou des marais",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/short-eared-owl"
+            },
+            {
+              "label": "osme.org — Hibou des marais",
+              "url": "https://osme.org/wp-content/uploads/2023/07/Six-interesting-bird-records-including-two-new-species-Common-Rosefinch-Carpodacus-erythrinus-and-White-crowned-Wheatear.pdf"
+            }
+          ],
+          "photo_credit": "Photo : Chrissy McClarren and Andy Reago"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "القرقف-المتوج",
+        "en": "crested-tit",
+        "fr": "mesange-huppee"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "lophophanes-cristatus"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "القرقف المتوج",
+          "subtitle": "Lophophanes cristatus",
+          "meta_description": "القرقف المتوج: الهوية والموئل والتكاثر والحضور العربي مع مصادر وصورة موثقة.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "القرقف المتوج Lophophanes cristatus طائر صغير، يتميز بعرف أسود وأبيض ونقوش واضحة على الوجه. يمكن أن يرتفع العرف أو ينسطح، لذا لا تعتمد هويته على ارتفاعه في لحظة التصوير.",
+                "يرتبط بالغابات الأوروبية، ولا سيما البيئات الصنوبرية. يبحث على الأغصان والجذوع عن الحشرات وبذور الصنوبر، ويخزن غذاءً يساعده في الشتاء. وقد ينضم إلى مجموعات مختلطة من القراقف.",
+                "تحفر الأنثى موضع العش في خشب ميت مناسب، وتبطّنه بمواد لينة. يورد BTO خمسًا إلى ست بيضات للحضنة النموذجية. بقاء الخشب الميت المناسب للتعشيش جزء من بنية الغابة الحية.",
+                "التُقطت الصورة في إستونيا وتوضح هوية النوع، لا وجوده في المغرب.",
+                "تذكر Avibase، وفق معالجة كليمنتس، شرودًا نادرًا إلى المغرب. هذا مختلف عن وجود جماعة مستقرة."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — القرقف المتوج",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/crested-tit"
+            },
+            {
+              "label": "www.rspb.org.uk — القرقف المتوج",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/crested-tit"
+            },
+            {
+              "label": "avibase.bsc-eoc.org — القرقف المتوج",
+              "url": "https://avibase.bsc-eoc.org/species.jsp?avibaseid=E553193354C74B21&lang=EN"
+            }
+          ],
+          "photo_credit": "الصورة: Yehor Yatsiuk"
+        },
+        "en": {
+          "title": "Crested Tit",
+          "subtitle": "Lophophanes cristatus",
+          "meta_description": "Crested Tit: identity, habitat, breeding and Arab-world occurrence, with sources and a documented photograph.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Crested Tit Lophophanes cristatus is a small bird with a black-and-white crest and strongly patterned face. The crest may be raised or flattened, so its height in a single photograph is not decisive.",
+                "It is associated with European woodland, especially coniferous habitats. It searches branches and trunks for insects and pine seeds, stores food for winter and may join mixed tit flocks.",
+                "The female excavates a nest site in suitable dead wood and lines it with soft material. BTO gives a typical clutch of five or six eggs. Suitable dead wood is therefore part of a living forest’s nesting infrastructure.",
+                "The photograph was taken in Estonia and illustrates the species, not its occurrence in Morocco.",
+                "Avibase, using Clements treatment, mentions rare vagrancy to Morocco. That differs from an established population."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Crested Tit",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/crested-tit"
+            },
+            {
+              "label": "www.rspb.org.uk — Crested Tit",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/crested-tit"
+            },
+            {
+              "label": "avibase.bsc-eoc.org — Crested Tit",
+              "url": "https://avibase.bsc-eoc.org/species.jsp?avibaseid=E553193354C74B21&lang=EN"
+            }
+          ],
+          "photo_credit": "Photo: Yehor Yatsiuk"
+        },
+        "fr": {
+          "title": "Mésange huppée",
+          "subtitle": "Lophophanes cristatus",
+          "meta_description": "Mésange huppée: identification, habitat, reproduction et présence dans le monde arabe, avec sources et photographie documentée.",
+          "sections": [
+            {
+              "heading": "Identification, écologie et répartition",
+              "paragraphs": [
+                "La Mésange huppée Lophophanes cristatus est un petit oiseau à huppe noire et blanche et à face nettement dessinée. La huppe peut se dresser ou s’aplatir : sa hauteur sur une photographie n’est pas déterminante.",
+                "Elle fréquente les bois européens, notamment les milieux résineux. Elle cherche insectes et graines de pin sur les branches et les troncs, constitue des réserves pour l’hiver et rejoint parfois des groupes mixtes de mésanges.",
+                "La femelle creuse une cavité dans du bois mort approprié, puis la garnit de matériaux souples. Le BTO indique habituellement cinq ou six œufs. Ce bois fait ainsi partie des ressources de nidification d’une forêt vivante.",
+                "La photographie a été prise en Estonie ; elle illustre l’espèce, non sa présence au Maroc.",
+                "Avibase, selon le traitement Clements, mentionne de rares apparitions accidentelles au Maroc. Cela diffère d’une population établie."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Mésange huppée",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/crested-tit"
+            },
+            {
+              "label": "www.rspb.org.uk — Mésange huppée",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/crested-tit"
+            },
+            {
+              "label": "avibase.bsc-eoc.org — Mésange huppée",
+              "url": "https://avibase.bsc-eoc.org/species.jsp?avibaseid=E553193354C74B21&lang=EN"
+            }
+          ],
+          "photo_credit": "Photo : Yehor Yatsiuk"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "درسة-سيرل",
+        "en": "cirl-bunting",
+        "fr": "bruant-zizi"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "emberiza-cirlus"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "درسة سيرل",
+          "subtitle": "Emberiza cirlus",
+          "meta_description": "درسة سيرل: الهوية والموئل والتكاثر والحضور العربي مع مصادر وصورة موثقة.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "درسة سيرل Emberiza cirlus من الدرسات، وللذكر نقوش سوداء وصفراء مميزة على الوجه. أما الإناث واليافعات فأقل تباينًا وقد تشبه الدرسة الصفراء، ما يستلزم الانتباه إلى نقش الرأس والعجز.",
+                "يوضح تعافيها في جنوب غرب إنجلترا أهمية موائل الزراعة الملائمة. فقد ساعد تعاون المزارعين وحماة الطبيعة على نمو الجماعة بعد تراجع شديد، مع إعادة إدخالها في كورنوال.",
+                "تحتاج صيفًا إلى لافقاريات، وتعد الجنادب مهمة لفراخها؛ وفي الشتاء تعتمد على بذور تجدها في الحقول وبقايا المحاصيل. وتوفر الأسيجة والأحراج الكثيفة مواضع للتعشيش، لذلك يفيدها تقارب هذه الموارد طوال السنة.",
+                "يورد BTO ثلاثًا إلى أربع بيضات للحضنة المعتادة. لا تمثل هذه القيمة وصفًا لكل تجمع أو موسم، ولا تكفي مشاهدة زوج لإثبات نجاح التعشيش.",
+                "تساعد حماية الأسيجة والأماكن الغنية بالغذاء على صون موئلها الزراعي. وتختلف اتجاهات أعدادها بين المناطق، فلا تصف التجربة البريطانية وحدها وضعها في جنوب أوروبا وشمال إفريقيا.",
+                "تشمل إقامتها الطبيعية المغرب والجزائر وتونس وفق BirdLife وIUCN. أما الصورة المختارة فمن نيوزيلندا، حيث أُدخل النوع؛ فهي توضيح للهوية وليست شاهدًا على موئل عربي."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — درسة سيرل",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/cirl-bunting"
+            },
+            {
+              "label": "www.rspb.org.uk — درسة سيرل",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/cirl-bunting"
+            },
+            {
+              "label": "www.rspb.org.uk — درسة سيرل",
+              "url": "https://www.rspb.org.uk/helping-nature/what-we-do/influence-government-and-business/farming/advice-for-farmers-helping-bird-species/cirl-bunting-advice-for-farmers"
+            },
+            {
+              "label": "datazone.birdlife.org — درسة سيرل",
+              "url": "https://datazone.birdlife.org/species/factsheet/cirl-bunting-emberiza-cirlus"
+            }
+          ],
+          "photo_credit": "الصورة: Ben Keen"
+        },
+        "en": {
+          "title": "Cirl Bunting",
+          "subtitle": "Emberiza cirlus",
+          "meta_description": "Cirl Bunting: identity, habitat, breeding and Arab-world occurrence, with sources and a documented photograph.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Cirl Bunting Emberiza cirlus is a bunting whose male has distinctive black-and-yellow facial markings. Females and young birds are less contrasting and can resemble Yellowhammers, requiring careful inspection of head and rump patterns.",
+                "Its recovery in southwestern England illustrates the value of suitable farmland habitat. Collaboration between farmers and conservationists helped the population grow after severe decline, with reintroduction in Cornwall.",
+                "In summer it needs invertebrates, with grasshoppers particularly important for chicks; winter food includes seeds in fields and stubbles. Thick hedges and scrub provide nesting cover, making nearby, year-round resources important.",
+                "BTO reports a typical clutch of three or four eggs. This is not a rule for every population or season, and seeing a pair alone does not demonstrate successful nesting.",
+                "Protecting hedges and food-rich places helps conserve its agricultural habitat. Population trends differ among regions; the British recovery alone does not describe its situation in southern Europe and North Africa.",
+                "BirdLife and IUCN include Morocco, Algeria and Tunisia in its native resident range. The selected photograph comes from New Zealand, where the species was introduced; it illustrates identity, not an Arab habitat."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Cirl Bunting",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/cirl-bunting"
+            },
+            {
+              "label": "www.rspb.org.uk — Cirl Bunting",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/cirl-bunting"
+            },
+            {
+              "label": "www.rspb.org.uk — Cirl Bunting",
+              "url": "https://www.rspb.org.uk/helping-nature/what-we-do/influence-government-and-business/farming/advice-for-farmers-helping-bird-species/cirl-bunting-advice-for-farmers"
+            },
+            {
+              "label": "datazone.birdlife.org — Cirl Bunting",
+              "url": "https://datazone.birdlife.org/species/factsheet/cirl-bunting-emberiza-cirlus"
+            }
+          ],
+          "photo_credit": "Photo: Ben Keen"
+        },
+        "fr": {
+          "title": "Bruant zizi",
+          "subtitle": "Emberiza cirlus",
+          "meta_description": "Bruant zizi: identification, habitat, reproduction et présence dans le monde arabe, avec sources et photographie documentée.",
+          "sections": [
+            {
+              "heading": "Identification, écologie et répartition",
+              "paragraphs": [
+                "Le Bruant zizi Emberiza cirlus présente chez le mâle un dessin facial noir et jaune caractéristique. Femelles et jeunes sont moins contrastés et peuvent rappeler le Bruant jaune ; tête et croupion demandent un examen attentif.",
+                "Son rétablissement dans le sud-ouest anglais illustre l’intérêt d’habitats agricoles adaptés. La collaboration entre agriculteurs et associations a favorisé la croissance des effectifs après un fort déclin, avec une réintroduction en Cornouailles.",
+                "En été, il recherche des invertébrés, les sauterelles étant importantes pour les poussins ; en hiver, il consomme notamment des graines dans les champs et les chaumes. Haies épaisses et broussailles abritent les nids, d’où l’importance de ressources proches toute l’année.",
+                "Le BTO indique une ponte habituelle de trois ou quatre œufs. Cette valeur ne vaut pas pour toute population ni toute saison, et observer un couple ne prouve pas à lui seul le succès d’une nidification.",
+                "Préserver haies et secteurs riches en nourriture contribue à conserver son habitat agricole. Les tendances démographiques diffèrent selon les régions ; le rétablissement britannique ne décrit pas à lui seul la situation en Europe méridionale et en Afrique du Nord.",
+                "BirdLife et l’UICN incluent le Maroc, l’Algérie et la Tunisie dans son aire de résidence naturelle. La photographie choisie provient de Nouvelle-Zélande, où l’espèce a été introduite ; elle illustre l’identification, non un habitat arabe."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Bruant zizi",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/cirl-bunting"
+            },
+            {
+              "label": "www.rspb.org.uk — Bruant zizi",
+              "url": "https://www.rspb.org.uk/birds-and-wildlife/cirl-bunting"
+            },
+            {
+              "label": "www.rspb.org.uk — Bruant zizi",
+              "url": "https://www.rspb.org.uk/helping-nature/what-we-do/influence-government-and-business/farming/advice-for-farmers-helping-bird-species/cirl-bunting-advice-for-farmers"
+            },
+            {
+              "label": "datazone.birdlife.org — Bruant zizi",
+              "url": "https://datazone.birdlife.org/species/factsheet/cirl-bunting-emberiza-cirlus"
+            }
+          ],
+          "photo_credit": "Photo : Ben Keen"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "عصفور-الشوك-الألبي",
+        "en": "alpine-accentor",
+        "fr": "accenteur-alpin"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "prunella-collaris"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "عصفور الشوك الألبي",
+          "subtitle": "Prunella collaris",
+          "meta_description": "عصفور الشوك الألبي: الهوية والموئل والتكاثر والحضور العربي مع مصادر وصورة موثقة.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "عصفور الشوك الألبي Prunella collaris من طيور المرتفعات الصخرية والمروج الجبلية. الاسم العلمي يحمي من الخلط بينه وبين عصفور الشوك الشائع وغيره من الطيور الصغيرة المتشابهة.",
+                "يبحث عن غذائه على الأرض بين الصخور والعشب. تدخل اللافقاريات في غذائه، وتزداد أهمية البذور مع تبدل الموسم. وقد ينخفض شتاءً إلى ارتفاعات أدنى بدل القيام بهجرة بعيدة منتظمة.",
+                "يختبئ العش في شق صخري. وقد تشترك الأنثى مع أكثر من ذكر في علاقات التكاثر ورعاية الصغار؛ لذلك ليس كل تجمع صغير مؤلفًا من زوج واحد وفراخه.",
+                "يشمل نطاقه جبالًا في المغرب العربي، وفق مادة الحديقة الوطنية للسيفين عن انتشاره. لا يعني وجوده في منطقة جبلية وجوده في جميع المرتفعات العربية. ينبغي تسجيل المكان والارتفاع والتاريخ من دون إزعاج الطيور أو البحث عن أعشاشها.",
+                "تدعم دراسة منشورة في مجلة Evolution عام 2023 وجود تجمعات متكاثرة في المغرب؛ فقد قارنت عينات مغربية وإسبانية."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — عصفور الشوك الألبي",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/alpine-accentor"
+            },
+            {
+              "label": "www.oiseaux.net — عصفور الشوك الألبي",
+              "url": "https://www.oiseaux.net/oiseaux/accenteur.alpin.html"
+            },
+            {
+              "label": "biodiversite.cevennes-parcnational.fr — عصفور الشوك الألبي",
+              "url": "https://biodiversite.cevennes-parcnational.fr/espece/3984"
+            },
+            {
+              "label": "academic.oup.com — عصفور الشوك الألبي",
+              "url": "https://academic.oup.com/evolut/article/77/11/2352/7240232"
+            }
+          ],
+          "photo_credit": "الصورة: Paulo Caseirito"
+        },
+        "en": {
+          "title": "Alpine Accentor",
+          "subtitle": "Prunella collaris",
+          "meta_description": "Alpine Accentor: identity, habitat, breeding and Arab-world occurrence, with sources and a documented photograph.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "Alpine Accentor Prunella collaris inhabits rocky uplands and mountain grassland. The scientific name helps avoid confusion with Dunnock and other small birds that may look superficially similar.",
+                "It searches the ground among rocks and grass. Invertebrates are part of its diet, with seeds becoming more important as seasons change. Winter movements may involve descending to lower elevations rather than a regular long-distance migration.",
+                "The nest is concealed in a rock fissure. Females may associate with more than one male in mating and chick care, so a small group cannot automatically be interpreted as a single pair and its young.",
+                "Its range includes mountains of the Maghreb, as described by the Cévennes National Park account. This does not imply occurrence in every Arab mountain range. Record place, elevation and date without disturbing birds or searching for nests.",
+                "A 2023 study in Evolution supports breeding populations in Morocco through comparison of Moroccan and Spanish samples."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Alpine Accentor",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/alpine-accentor"
+            },
+            {
+              "label": "www.oiseaux.net — Alpine Accentor",
+              "url": "https://www.oiseaux.net/oiseaux/accenteur.alpin.html"
+            },
+            {
+              "label": "biodiversite.cevennes-parcnational.fr — Alpine Accentor",
+              "url": "https://biodiversite.cevennes-parcnational.fr/espece/3984"
+            },
+            {
+              "label": "academic.oup.com — Alpine Accentor",
+              "url": "https://academic.oup.com/evolut/article/77/11/2352/7240232"
+            }
+          ],
+          "photo_credit": "Photo: Paulo Caseirito"
+        },
+        "fr": {
+          "title": "Accenteur alpin",
+          "subtitle": "Prunella collaris",
+          "meta_description": "Accenteur alpin: identification, habitat, reproduction et présence dans le monde arabe, avec sources et photographie documentée.",
+          "sections": [
+            {
+              "heading": "Identification, écologie et répartition",
+              "paragraphs": [
+                "L’Accenteur alpin Prunella collaris fréquente les reliefs rocheux et les pelouses montagnardes. Le nom scientifique évite la confusion avec l’Accenteur mouchet et d’autres petits oiseaux d’apparence voisine.",
+                "Il cherche sa nourriture au sol, entre pierres et herbes. Les invertébrés entrent dans son régime, tandis que les graines gagnent en importance selon la saison. Ses mouvements hivernaux peuvent consister à descendre en altitude plutôt qu’à accomplir une longue migration régulière.",
+                "Le nid se dissimule dans une fissure. Une femelle peut être associée à plusieurs mâles pour l’accouplement et les soins aux jeunes : un petit groupe ne correspond donc pas nécessairement à un couple et sa progéniture.",
+                "Son aire comprend des montagnes du Maghreb, comme le précise le Parc national des Cévennes. Cela ne signifie pas sa présence dans tous les massifs arabes. Lieu, altitude et date peuvent être notés sans dérangement ni recherche des nids.",
+                "Une étude publiée en 2023 dans Evolution étaye l’existence de populations reproductrices au Maroc à partir d’échantillons marocains et espagnols."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Accenteur alpin",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/alpine-accentor"
+            },
+            {
+              "label": "www.oiseaux.net — Accenteur alpin",
+              "url": "https://www.oiseaux.net/oiseaux/accenteur.alpin.html"
+            },
+            {
+              "label": "biodiversite.cevennes-parcnational.fr — Accenteur alpin",
+              "url": "https://biodiversite.cevennes-parcnational.fr/espece/3984"
+            },
+            {
+              "label": "academic.oup.com — Accenteur alpin",
+              "url": "https://academic.oup.com/evolut/article/77/11/2352/7240232"
+            }
+          ],
+          "photo_credit": "Photo : Paulo Caseirito"
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الغطاس-أبيض-الحنجرة",
+        "en": "white-throated-dipper",
+        "fr": "cincle-plongeur"
+      },
+      "published": "2026-11-10",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "cinclus-cinclus"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الغطاس أبيض الحنجرة",
+          "subtitle": "Cinclus cinclus",
+          "meta_description": "الغطاس أبيض الحنجرة: الهوية والموئل والتكاثر والحضور العربي مع مصادر وصورة موثقة.",
+          "sections": [
+            {
+              "heading": "الهوية والحياة والانتشار",
+              "paragraphs": [
+                "الغطاس أبيض الحنجرة Cinclus cinclus عصفور ممتلئ الجسم قصير الذيل، داكن الريش مع حنجرة وصدر أبيضين عند البالغ. وهو ليس من الغطاسيات المائية رغم اشتراك الاسم العربي في وصف الغوص.",
+                "يبحث تحت الماء عن لافقاريات صغيرة في الجداول السريعة، وينتقل بين الصخور بمحاذاة سطح الماء. لذلك ترتبط حياته بمجرى النهر وما يتيحه من غذاء وملاجئ، لا بوجود الماء وحده.",
+                "يورد BTO أربعًا إلى خمس بيضات للحضنة النموذجية. وقد يستفيد من مواضع محمية بجوار المياه، ومنها تجاويف المنشآت المناسبة. ولا ينبغي الاقتراب من موضع العش للحصول على صورة.",
+                "يمتد نطاقه إلى جبال شمال غرب إفريقيا وفق المراجع الفرنسية الرسمية. صون جريان المياه وجودتها وضفافها يفيد هذا النمط من الطيور. الصورة التوضيحية لا تثبت وجوده في نهر عربي بعينه، وتحتاج السجلات المحلية إلى توثيق مستقل.",
+                "تدرج BirdLife المغرب ضمن نطاقه الطبيعي المقيم. يبقى هذا الحضور مرتبطًا بموائل مناسبة ومتقطعة، ولا يعني أنه شائع في كل نهر مغربي أو عربي."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — الغطاس أبيض الحنجرة",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/dipper"
+            },
+            {
+              "label": "faunesauvagedecorse.oec.fr — الغطاس أبيض الحنجرة",
+              "url": "https://faunesauvagedecorse.oec.fr/Cinclus_cinclus_Linnaeus_1758_mpage_299_idtaxon%2C5190.htm"
+            },
+            {
+              "label": "datazone.birdlife.org — الغطاس أبيض الحنجرة",
+              "url": "https://datazone.birdlife.org/species/factsheet/white-throated-dipper-cinclus-cinclus"
+            },
+            {
+              "label": "www.mercantour-parcnational.fr — الغطاس أبيض الحنجرة",
+              "url": "https://www.mercantour-parcnational.fr/fr/des-connaissances/le-patrimoine-naturel/la-faune-du-mercantour/cincle-plongeur"
+            }
+          ],
+          "photo_credit": "الصورة: Dario Taraborelli"
+        },
+        "en": {
+          "title": "White-throated Dipper",
+          "subtitle": "Cinclus cinclus",
+          "meta_description": "White-throated Dipper: identity, habitat, breeding and Arab-world occurrence, with sources and a documented photograph.",
+          "sections": [
+            {
+              "heading": "Identity, life and distribution",
+              "paragraphs": [
+                "White-throated Dipper Cinclus cinclus is a compact, short-tailed songbird. Adults are dark with a white throat and chest. Despite its diving habits, it is not a member of the waterbird family of grebes.",
+                "It forages underwater for small invertebrates in fast streams and moves between rocks close to the water surface. Its habitat depends on the food and shelter provided by a river channel, not simply the presence of water.",
+                "BTO reports a typical clutch of four or five eggs. Sheltered sites beside water, including suitable artificial structures, can provide nest locations. Do not approach nests for photographs.",
+                "Official French accounts extend its range to northwestern African mountains. Maintaining flow, water quality and riverbanks benefits this ecological specialist. The illustrative photograph does not establish occurrence in a particular Arab river; local records require independent documentation.",
+                "BirdLife lists Morocco within its native resident range. This presence remains tied to suitable, patchy habitat and does not mean it is common in every Moroccan or Arab river."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — White-throated Dipper",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/dipper"
+            },
+            {
+              "label": "faunesauvagedecorse.oec.fr — White-throated Dipper",
+              "url": "https://faunesauvagedecorse.oec.fr/Cinclus_cinclus_Linnaeus_1758_mpage_299_idtaxon%2C5190.htm"
+            },
+            {
+              "label": "datazone.birdlife.org — White-throated Dipper",
+              "url": "https://datazone.birdlife.org/species/factsheet/white-throated-dipper-cinclus-cinclus"
+            },
+            {
+              "label": "www.mercantour-parcnational.fr — White-throated Dipper",
+              "url": "https://www.mercantour-parcnational.fr/fr/des-connaissances/le-patrimoine-naturel/la-faune-du-mercantour/cincle-plongeur"
+            }
+          ],
+          "photo_credit": "Photo: Dario Taraborelli"
+        },
+        "fr": {
+          "title": "Cincle plongeur",
+          "subtitle": "Cinclus cinclus",
+          "meta_description": "Cincle plongeur: identification, habitat, reproduction et présence dans le monde arabe, avec sources et photographie documentée.",
+          "sections": [
+            {
+              "heading": "Identification, écologie et répartition",
+              "paragraphs": [
+                "Le Cincle plongeur Cinclus cinclus est un passereau trapu à queue courte. L’adulte est sombre, avec la gorge et la poitrine blanches. Malgré sa plongée, il n’appartient pas à la famille des grèbes.",
+                "Il recherche sous l’eau de petits invertébrés dans les cours d’eau rapides et se déplace entre les rochers près de la surface. Son habitat dépend des ressources et des abris du chenal, et non de la simple présence d’eau.",
+                "Le BTO indique généralement quatre ou cinq œufs. Des emplacements abrités près de l’eau, y compris certains ouvrages artificiels, peuvent accueillir le nid. Il ne faut pas s’en approcher pour photographier les oiseaux.",
+                "Les références officielles françaises étendent son aire aux montagnes du nord-ouest africain. Préserver débit, qualité de l’eau et berges profite à ce spécialiste. L’image illustrative ne démontre pas sa présence dans une rivière arabe particulière ; les relevés locaux demandent une documentation indépendante.",
+                "BirdLife inclut le Maroc dans son aire naturelle de résidence. Cette présence reste liée à des habitats adaptés et discontinus ; elle ne signifie pas une abondance dans chaque rivière marocaine ou arabe."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "www.bto.org — Cincle plongeur",
+              "url": "https://www.bto.org/learn/about-birds/birdfacts/dipper"
+            },
+            {
+              "label": "faunesauvagedecorse.oec.fr — Cincle plongeur",
+              "url": "https://faunesauvagedecorse.oec.fr/Cinclus_cinclus_Linnaeus_1758_mpage_299_idtaxon%2C5190.htm"
+            },
+            {
+              "label": "datazone.birdlife.org — Cincle plongeur",
+              "url": "https://datazone.birdlife.org/species/factsheet/white-throated-dipper-cinclus-cinclus"
+            },
+            {
+              "label": "www.mercantour-parcnational.fr — Cincle plongeur",
+              "url": "https://www.mercantour-parcnational.fr/fr/des-connaissances/le-patrimoine-naturel/la-faune-du-mercantour/cincle-plongeur"
+            }
+          ],
+          "photo_credit": "Photo : Dario Taraborelli"
+        }
+      }
+    }
+  ]
+}
