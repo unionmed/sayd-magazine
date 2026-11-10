@@ -12,6 +12,10 @@ class JiadTVTests(unittest.TestCase):
     def setUp(self):
         self.poster=b'\xff\xd8\xffposter'
         self.value={'schema':'sayd-jiad-tv-publication-v1','id':tv.ID,'expected_base':BASE,'approval_reference':tv.APPROVAL_REFERENCE,'published':'2026-11-09','titles':tv.TITLES,'description':tv.DESCRIPTIONS,'poster_sha256':tv.POSTER_HASH,'expected_channel_sha256':c.sha256(c.git(ROOT,'show',BASE+':'+tv.CHANNEL))}
+    def test_approved_web_derivative_and_original_poster_are_pinned(self):
+        self.assertEqual(tv.VIDEO_HASH, '13d5b53a585571e4b94a6ce9278bfb455a2d46c95d095028697419dc78baafd4')
+        self.assertEqual(tv.VIDEO_BYTES, 20487595)
+        self.assertEqual(tv.POSTER_HASH, '02167fb7fddf770eac2ba66fe62851c5bb58b68155ae7b49bec7d8c6d74e6567')
     def test_identity_exact_text_date_and_keys(self):
         tv.validate(self.value,BASE)
         for field,value in [('id','other'),('titles',dict.fromkeys(tv.LANGS,'other')),('description',dict.fromkeys(tv.LANGS,'<script>')),('poster_sha256','a'*64),('published','2026-11-08'),('expected_base','a'*40),('approval_reference','other')]:
