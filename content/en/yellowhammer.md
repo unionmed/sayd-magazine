@@ -1,0 +1,11 @@
+---
+title: "Yellowhammer"
+slug: "yellowhammer"
+date: "2026-11-10"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261109/emberiza-citrinella.jpg"
+subtitle: "Emberiza citrinella"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261109/emberiza-citrinella.jpg" width="2048" height="1152" alt="Yellowhammer perched on a branch with its bill open" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Yellowhammer</figcaption></figure><p class="excerpt">Emberiza citrinella</p><h2>Identity, life and distribution</h2><p>Yellowhammer Emberiza citrinella is a bunting with a short seed-handling bill. Males show a conspicuously yellow head; females are more streaked and subdued. Head pattern and rump should be checked together when separating it from Cirl Bunting.</p><p>Farmland, woodland edges and hedges provide habitat. Seeds are important food, alongside invertebrates. Trees alone do not make suitable habitat: birds also need a combination of vegetation cover and open feeding ground.</p><p>The nest is on or close to the ground in dense vegetation. BTO reports a typical clutch of three or four eggs. Grassy margins and short, thick hedges provide shelter for nesting birds.</p><p>RSPB links British declines to insufficient food and nesting habitat. Seed-rich winter stubbles and protected field margins illustrate practical habitat management. The British trend does not establish population trends in Arab countries.</p><p>In the Maghreb it is rare or accidental; a specialist Algerian report from 2024 discusses the scarcity of regional records.</p><p class="article-sources"><a href="https://www.bto.org/learn/about-birds/birdfacts/yellowhammer">www.bto.org — Yellowhammer</a> · <a href="https://www.rspb.org.uk/birds-and-wildlife/yellowhammer">www.rspb.org.uk — Yellowhammer</a> · <a href="https://www.rspb.org.uk/helping-nature/what-we-do/influence-government-and-business/farming/advice-for-farmers-helping-bird-species/yellowhammer-advice-for-farmers">www.rspb.org.uk — Yellowhammer</a> · <a href="https://magornitho.org/2024/03/yellowhammer-in-algeria/">magornitho.org — Yellowhammer</a></p><p class="photo-credit">Photo: steve b</p>

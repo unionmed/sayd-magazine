@@ -226,7 +226,17 @@
     "عصفور-الشجر-الأوراسي",
     "الدوري-الإسباني",
     "دوري-الصخر",
-    "قرقف-أبو-ذقن"
+    "قرقف-أبو-ذقن",
+    "البومة-السمراء",
+    "الدرسة-الصفراء",
+    "خازن-البندق-الصخري-الغربي",
+    "الحمام-البري",
+    "السمنة-حمراء-الجناح",
+    "البومة-قصيرة-الأذنين",
+    "القرقف-المتوج",
+    "درسة-سيرل",
+    "عصفور-الشوك-الألبي",
+    "الغطاس-أبيض-الحنجرة"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -410,7 +420,17 @@
     "عصفور-الشجر-الأوراسي",
     "الدوري-الإسباني",
     "دوري-الصخر",
-    "قرقف-أبو-ذقن"
+    "قرقف-أبو-ذقن",
+    "البومة-السمراء",
+    "الدرسة-الصفراء",
+    "خازن-البندق-الصخري-الغربي",
+    "الحمام-البري",
+    "السمنة-حمراء-الجناح",
+    "البومة-قصيرة-الأذنين",
+    "القرقف-المتوج",
+    "درسة-سيرل",
+    "عصفور-الشوك-الألبي",
+    "الغطاس-أبيض-الحنجرة"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -925,7 +945,17 @@
     "الدوري-الإسباني": "birds",
     "دوري-الصخر": "birds",
     "قرقف-أبو-ذقن": "birds",
-    "الرماية-الدولية-عقوبة-راتنر-2026": "gear"
+    "الرماية-الدولية-عقوبة-راتنر-2026": "gear",
+    "البومة-السمراء": "birds",
+    "الدرسة-الصفراء": "birds",
+    "خازن-البندق-الصخري-الغربي": "birds",
+    "الحمام-البري": "birds",
+    "السمنة-حمراء-الجناح": "birds",
+    "البومة-قصيرة-الأذنين": "birds",
+    "القرقف-المتوج": "birds",
+    "درسة-سيرل": "birds",
+    "عصفور-الشوك-الألبي": "birds",
+    "الغطاس-أبيض-الحنجرة": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2712,6 +2742,96 @@
         "ar": "مشهد جوي لميادين الرماية والمنشآت المحاطة بالأشجار في غارشينغ–هوخبروك قرب ميونيخ.",
         "en": "Aerial view of shooting ranges and buildings surrounded by trees in Garching-Hochbrück near Munich.",
         "fr": "Vue aérienne des stands de tir et des bâtiments entourés d’arbres à Garching-Hochbrück, près de Munich."
+      }
+    },
+    "البومة-السمراء": {
+      "image": "media/publications/daily-birds-20261109/strix-aluco.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بومة سمراء تستريح عند جذع شجرة",
+        "en": "Tawny Owl resting against a tree trunk",
+        "fr": "Chouette hulotte au repos contre un tronc d’arbre"
+      }
+    },
+    "الدرسة-الصفراء": {
+      "image": "media/publications/daily-birds-20261109/emberiza-citrinella.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "درسة صفراء على غصن ومنقارها مفتوح",
+        "en": "Yellowhammer perched on a branch with its bill open",
+        "fr": "Bruant jaune perché sur une branche, le bec ouvert"
+      }
+    },
+    "خازن-البندق-الصخري-الغربي": {
+      "image": "media/publications/daily-birds-20261109/sitta-neumayer.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "خازن بندق صخري غربي واقف على صخرة بخط أسود عبر العين",
+        "en": "Western Rock Nuthatch standing on a rock",
+        "fr": "Sittelle de Neumayer debout sur un rocher"
+      }
+    },
+    "الحمام-البري": {
+      "image": "media/publications/daily-birds-20261109/columba-oenas.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "حمام بري على العشب، بعين داكنة وبقعة خضراء لامعة على العنق",
+        "en": "Stock Dove standing on grass",
+        "fr": "Pigeon colombin debout dans l’herbe"
+      }
+    },
+    "السمنة-حمراء-الجناح": {
+      "image": "media/publications/daily-birds-20261109/turdus-iliacus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "سمنة حمراء الجناح تقف على غصن",
+        "en": "Redwing perched on a branch",
+        "fr": "Grive mauvis perchée sur une branche"
+      }
+    },
+    "البومة-قصيرة-الأذنين": {
+      "image": "media/publications/daily-birds-20261109/asio-flammeus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "بومة قصيرة الأذنين على أرض يكسوها قليل من الثلج",
+        "en": "Short-eared Owl on lightly snow-covered ground",
+        "fr": "Hibou des marais sur un sol légèrement enneigé"
+      }
+    },
+    "القرقف-المتوج": {
+      "image": "media/publications/daily-birds-20261109/lophophanes-cristatus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قرقف متوج على غصن مكسو بالثلج",
+        "en": "Crested Tit on a snow-covered branch",
+        "fr": "Mésange huppée sur une branche enneigée"
+      }
+    },
+    "درسة-سيرل": {
+      "image": "media/publications/daily-birds-20261109/emberiza-cirlus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "درسة سيرل تقف على جذع خشبي",
+        "en": "Cirl Bunting perched on wood",
+        "fr": "Bruant zizi perché sur du bois"
+      }
+    },
+    "عصفور-الشوك-الألبي": {
+      "image": "media/publications/daily-birds-20261109/prunella-collaris.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "عصفور شوك ألبي يقف على الصخور",
+        "en": "Alpine Accentor standing on rocks",
+        "fr": "Accenteur alpin debout sur des rochers"
+      }
+    },
+    "الغطاس-أبيض-الحنجرة": {
+      "image": "media/publications/daily-birds-20261109/cinclus-cinclus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "غطاس أبيض الحنجرة على صخرة مبللة في جدول جارٍ",
+        "en": "White-throated Dipper on a wet rock in a flowing stream",
+        "fr": "Cincle plongeur sur un rocher mouillé dans un cours d’eau"
       }
     }
   },

@@ -1,0 +1,11 @@
+---
+title: "Accenteur alpin"
+slug: "accenteur-alpin"
+date: "2026-11-10"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261109/prunella-collaris.jpg"
+subtitle: "Prunella collaris"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261109/prunella-collaris.jpg" width="1104" height="1104" alt="Accenteur alpin debout sur des rochers" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Accenteur alpin</figcaption></figure><p class="excerpt">Prunella collaris</p><h2>Identification, écologie et répartition</h2><p>L’Accenteur alpin Prunella collaris fréquente les reliefs rocheux et les pelouses montagnardes. Le nom scientifique évite la confusion avec l’Accenteur mouchet et d’autres petits oiseaux d’apparence voisine.</p><p>Il cherche sa nourriture au sol, entre pierres et herbes. Les invertébrés entrent dans son régime, tandis que les graines gagnent en importance selon la saison. Ses mouvements hivernaux peuvent consister à descendre en altitude plutôt qu’à accomplir une longue migration régulière.</p><p>Le nid se dissimule dans une fissure. Une femelle peut être associée à plusieurs mâles pour l’accouplement et les soins aux jeunes : un petit groupe ne correspond donc pas nécessairement à un couple et sa progéniture.</p><p>Son aire comprend des montagnes du Maghreb, comme le précise le Parc national des Cévennes. Cela ne signifie pas sa présence dans tous les massifs arabes. Lieu, altitude et date peuvent être notés sans dérangement ni recherche des nids.</p><p>Une étude publiée en 2023 dans Evolution étaye l’existence de populations reproductrices au Maroc à partir d’échantillons marocains et espagnols.</p><p class="article-sources"><a href="https://www.bto.org/learn/about-birds/birdfacts/alpine-accentor">www.bto.org — Accenteur alpin</a> · <a href="https://www.oiseaux.net/oiseaux/accenteur.alpin.html">www.oiseaux.net — Accenteur alpin</a> · <a href="https://biodiversite.cevennes-parcnational.fr/espece/3984">biodiversite.cevennes-parcnational.fr — Accenteur alpin</a> · <a href="https://academic.oup.com/evolut/article/77/11/2352/7240232">academic.oup.com — Accenteur alpin</a></p><p class="photo-credit">Photo : Paulo Caseirito</p>
