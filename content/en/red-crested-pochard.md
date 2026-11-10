@@ -1,0 +1,11 @@
+---
+title: "Red-crested Pochard"
+slug: "red-crested-pochard"
+date: "2026-11-10"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261110/netta-rufina.jpg"
+subtitle: "Netta rufina"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261110/netta-rufina.jpg" width="2048" height="1536" alt="Male Red-crested Pochard swimming on water" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Red-crested Pochard</figcaption></figure><p class="excerpt">Netta rufina</p><h2>Identity, life and distribution</h2><p>Red-crested Pochard Netta rufina belongs to the duck family. The male has a large, rounded rusty-orange head and red bill, contrasting with a dark breast and pale flanks. Females are browner and less contrasting, with pale cheeks. Common Pochard Aythya ferina lacks the male’s red bill. Arabic references also use al-wans or the equivalent of red-crowned duck. Its length is about 53–57 cm.</p><p>It uses lakes and quiet waters with aquatic vegetation, obtaining food both by diving and near the surface. Plants form an important part of its diet. Males change plumage after breeding, so the absence of bright colours alone does not establish sex or age.</p><p>Local breeding is documented in North Africa, including Morocco and Algeria. A study recorded a female with ducklings at Mekhada marsh, El Kala, in June 2025. Iraqi Kurdistan surveys undertaken in 2008 and published in 2009 recorded winter and passage occurrence. Its Arab distribution therefore includes both local breeding areas and winter destinations.</p><p>The nest is built among aquatic vegetation or on the ground within dense cover, lined with plant material and down. A usual clutch has 8–10 eggs, incubated by the female for about 26–28 days. Several females may lay in the same nest, so an unusually large egg count need not be one female’s output. The mother guides the ducklings to food and cover after hatching.</p><p>BTO reports global Least Concern status. Protecting water, vegetation and undisturbed resting places nevertheless remains important. Because this attractive duck is also kept in captivity, the origin of an unusual record requires evidence rather than appearance alone.</p><p class="photo-credit">Photo: Nick Blewden</p>

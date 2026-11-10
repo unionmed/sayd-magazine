@@ -1,0 +1,11 @@
+---
+title: "Érismature à tête blanche"
+slug: "erismature-a-tete-blanche"
+date: "2026-11-10"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261110/oxyura-leucocephala.jpg"
+subtitle: "Oxyura leucocephala"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261110/oxyura-leucocephala.jpg" width="2048" height="1229" alt="Érismature à tête blanche mâle au bec bleu renflé nageant sur l’eau" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Érismature à tête blanche</figcaption></figure><p class="excerpt">Oxyura leucocephala</p><h2>Identification, cycle de vie et répartition</h2><p>L’Érismature à tête blanche Oxyura leucocephala est un canard plongeur compact, à queue raide souvent dressée. Le mâle adulte présente une tête largement blanche, une calotte sombre et un bec bleu en période nuptiale. La femelle a la tête plus brune, marquée de bandes contrastées. Les couleurs du mâle ne valent pas pour tous les âges et toutes les saisons.</p><p>Elle utilise les lacs et zones humides à roselières et végétation submergée. Elle cherche sa nourriture en plongée, les invertébrés aquatiques constituant une ressource importante. Nids et canetons sont vulnérables à l’assèchement pendant la reproduction.</p><p>Le nid en coupe est construit au-dessus de l’eau parmi les tiges et feuilles émergentes. La ponte comprend environ 4–9 œufs, incubés pendant 22–24 jours ; la femelle s’occupe ensuite des jeunes, qui volent vers 8–10 semaines. L’oiseau mesure environ 43–48 cm. Eau stable et végétation restent essentielles durant tout ce cycle.</p><p>Des populations reproductrices locales existent en Afrique du Nord arabe. Une étude publiée en 2026 documente une reproduction réussie observée dans l’ouest algérien en 2020. La nidification a aussi été documentée à Dar Bouazza, au Maroc, en 2025. Ces sites sont essentiels au maintien des populations locales.</p><p>La perte d’habitats, la sécheresse et la pollution en font une priorité de conservation. L’hybridation avec l’Érismature rousse introduite menace aussi l’intégrité de ses populations. Les programmes de protection associent donc restauration des zones humides et lutte contre ce risque d’hybridation.</p><p class="photo-credit">Photo : karim Attouche</p>

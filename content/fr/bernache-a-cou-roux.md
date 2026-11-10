@@ -1,0 +1,11 @@
+---
+title: "Bernache à cou roux"
+slug: "bernache-a-cou-roux"
+date: "2026-11-10"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261110/branta-ruficollis.jpg"
+subtitle: "Branta ruficollis"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261110/branta-ruficollis.jpg" width="1620" height="1080" alt="Bernache à cou roux baissant la tête pour se nourrir" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Bernache à cou roux</figcaption></figure><p class="excerpt">Branta ruficollis</p><h2>Identification, cycle de vie et répartition</h2><p>La Bernache à cou roux Branta ruficollis est une petite oie dessinée de noir et de blanc, avec des zones châtain au cou, à la poitrine et à la joue. La distance peut masquer ces détails et la faire paraître sombre : l’identification repose sur la disposition des marques plutôt que sur un rouge toujours éclatant.</p><p>Elle consomme des végétaux dans les milieux ouverts et se déplace entre zones d’alimentation et dortoirs aquatiques. Elle niche dans le nord de l’Eurasie et hiverne plus au sud. Sa conservation doit relier sites de reproduction, haltes migratoires et quartiers d’hiver.</p><p>Elle niche au sol en petites colonies sur les berges, dans les ravins et sur des pentes végétalisées. Les nids peuvent se trouver près de rapaces ou de laridés qui repoussent les renards. La ponte compte généralement 3–7 œufs ; la femelle couve seule environ 23–25 jours, tandis que le mâle reste à proximité.</p><p>Les principaux rassemblements hivernaux se situent autour de la mer Noire, tandis que la présence arabe est limitée et irrégulière. C’est un visiteur accidentel très rare en Égypte, où les observations relèvent du comité d’homologation. L’AEWA inclut l’Irak dans son aire naturelle, mais les données disponibles ici ne précisent pas l’effectif d’une population hivernante régulière.</p><p>Le statut mondial est vulnérable, VU. Des comptages datés et localisés, associés à la conservation des zones humides et d’alimentation, permettent de mieux distinguer évolution des populations et redistribution des oiseaux.</p><p class="photo-credit">Photo : Лариса Артемьева</p>

@@ -1,0 +1,11 @@
+---
+title: "Sarcelle marbrée"
+slug: "sarcelle-marbree"
+date: "2026-11-10"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261110/marmaronetta-angustirostris.jpg"
+subtitle: "Marmaronetta angustirostris"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261110/marmaronetta-angustirostris.jpg" width="2048" height="1243" alt="Sarcelle marbrée en vol, les ailes déployées" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Sarcelle marbrée</figcaption></figure><p class="excerpt">Marmaronetta angustirostris</p><h2>Identification, cycle de vie et répartition</h2><p>La Sarcelle marbrée Marmaronetta angustirostris est un petit canard gris brun ponctué de taches claires, avec une zone sombre autour de l’œil. Les sexes se ressemblent assez : une seule couleur sur une photographie éloignée ne suffit pas à les distinguer. Le nom anglais Marbled Duck désigne la même espèce.</p><p>Elle dépend des eaux peu profondes riches en végétation, notamment des zones humides saisonnières ou semi-permanentes. Elle prend graines, végétaux et invertébrés près de la surface. La variation des niveaux influence les sites utilisés ; la reproduction exige eau et couvert pendant la croissance des canetons, pas seulement lors de l’installation du nid.</p><p>Le nid peut être installé au-dessus de l’eau parmi les massettes ou sur un sol sec dans des buissons. Le plan d’action international de 2008 indique une incubation assurée par la femelle durant environ 25–27 jours et l’envol à 50–54 jours. Eau et végétation doivent donc persister bien après l’incubation.</p><p>Son aire de reproduction arabe comprend le Maroc, l’Algérie et la Tunisie ; la nidification est aussi documentée en Libye. L’Irak compte dans son aire orientale. À l’inverse, l’AEWA indique une présence accidentelle au Liban et dans plusieurs pays du Golfe. Le statut nord-africain ne s’applique donc pas partout.</p><p>Le statut mondial est vulnérable, VU. Drainage, dégradation des eaux et perturbation du régime hydrologique menacent adultes et jeunes. Un réseau de sites fonctionnels pendant les années sèches est essentiel.</p><p class="photo-credit">Photo : karim Attouche</p>

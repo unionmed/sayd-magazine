@@ -1,0 +1,11 @@
+---
+title: "Garrot à œil d’or"
+slug: "garrot-a-oeil-d-or"
+date: "2026-11-10"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261110/bucephala-clangula.jpg"
+subtitle: "Bucephala clangula"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261110/bucephala-clangula.jpg" width="2048" height="1542" alt="Garrot à œil d’or au plumage de type femelle nageant sur l’eau" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Garrot à œil d’or</figcaption></figure><p class="excerpt">Bucephala clangula</p><h2>Identification, cycle de vie et répartition</h2><p>Le Garrot à œil d’or Bucephala clangula est un canard plongeur à grosse tête et à iris jaune. Le mâle porte une tête sombre et une tache blanche sur la face ; la femelle a la tête brune et le corps gris. Ce dessin facial diffère du blanc entourant la base du bec chez certains autres canards.</p><p>Il capture en plongée des invertébrés aquatiques, notamment crustacés et mollusques, et parfois de petits poissons. Hors reproduction, il fréquente eaux douces et littorales. Il niche dans des cavités d’arbres et accepte aussi des nichoirs adaptés dans certaines régions nordiques. Le BTO indique habituellement 8–11 œufs.</p><p>La femelle assure une incubation d’environ 29–30 jours. Les canetons quittent la cavité pour rejoindre l’eau, mais le vol vient plus tard : le BTO indique un âge d’envol de 57–66 jours. Les vieux arbres creux offrent ainsi une ressource de nidification que l’eau libre seule ne remplace pas.</p><p>Des prospections dans le nord de l’Irak en 2008, publiées en 2009, ont documenté sa présence hivernale, notamment à Darbandikhan. La reproduction dépend des forêts septentrionales offrant des cavités, tandis que l’Irak accueille des oiseaux hors saison de reproduction. Les déplacements varient selon les populations et les conditions.</p><p>Le BTO donne un statut mondial de préoccupation mineure, LC. La baisse des hivernants dans un pays ne correspond pas nécessairement à une baisse mondiale équivalente. Protéger les milieux aquatiques et les arbres de nidification contribue à préserver l’ensemble du cycle annuel.</p><p class="photo-credit">Photo : Sunny Zhang 张迎新</p>
