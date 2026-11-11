@@ -1,0 +1,137 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "syria-migration-anti-poaching-20261110",
+  "expected_base": "53da8b429794cb54f87a0445285486909a9cf63a",
+  "approval_reference": "private:Sentinel_49d3bfff47bc8191a0a92363dafd39ee",
+  "bank_search_reference": "Existing approved Space image libfile_fde3_f-c6906e44a84c81918e6979a3babcb320_15ee9b1d12a88191b8f4cd6d67c50ac5; selected in the November 10 review and recovered without alteration on November 11.",
+  "photos": [
+    {
+      "id": "storks-migration",
+      "path": "docs/media/publications/syria-migration-anti-poaching-20261110/storks-migration-cc0.jpg",
+      "sha256": "d9987de4562df964923b2cf1757eb4deef2b2be32db21ca528fc2251b0ab0b1e",
+      "source_sha256": "d9987de4562df964923b2cf1757eb4deef2b2be32db21ca528fc2251b0ab0b1e",
+      "source_reference": "Hobbyfotowiki, Storchzug.jpg, Poda nature reserve, Bulgaria, 10 October 2013. Existing approved Space copy; illustrative migration photograph, not a photograph of the Syrian circular or enforcement operation.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Storchzug.jpg",
+      "alt": {
+        "ar": "ستة طيور من اللقلق الأبيض والأسود تحلق في سماء زرقاء",
+        "en": "Six white and black storks flying against a blue sky",
+        "fr": "Six cigognes blanches et noires en vol dans un ciel bleu"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 Universal public domain dedication by Hobbyfotowiki. Reuse, including commercial reuse, is permitted. The separate end credit is retained; no caption appears below the photograph.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Storchzug.jpg (checked 11 November 2026)",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
+        "en": "syria-illegal-hunting-bird-migration-2026",
+        "fr": "syrie-braconnage-migration-oiseaux-2026"
+      },
+      "published": "2026-11-11",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "storks-migration"
+      ],
+      "translations": {
+        "ar": {
+          "title": "سوريا تشدّد الرقابة على الصيد الجائر خلال هجرة الطيور",
+          "subtitle": "سوريا: تعميم للمحافظين لضبط الصيد الجائر خلال هجرة الطيور وتعزيز الرقابة.",
+          "meta_description": "سوريا: تعميم للمحافظين لضبط الصيد الجائر خلال هجرة الطيور وتعزيز الرقابة.",
+          "sections": [
+            {
+              "paragraphs": [
+                "أصدرت وزارة الإدارة المحلية والبيئة السورية، الثلاثاء 10 تشرين الثاني 2026، تعميمًا يطلب من المحافظين، بصفتهم رؤساء مجالس الصيد الفرعية، ضبط مخالفات الصيد الجائر خلال الهجرة الخريفية للطيور، وتطبيق الإجراءات القانونية بالتعاون مع الجهات المختصة.",
+                "وبحسب وكالة الأنباء السورية «سانا»، يهدف التحرك إلى حماية الأنواع البرية، وخصوصًا المهددة بالانقراض، وصون التنوع الحيوي. وفي موقف مكمّل، دعا وزير الإدارة المحلية والبيئة محمد عنجراني الوحدات الإدارية إلى تكثيف الرقابة والتنسيق، والتعامل بجدية مع المخالفات التي تطال الطيور ومسارات عبورها.",
+                "وأكد الوزير، في منشور نقلته الوكالة عن صفحته الرسمية على فيسبوك، أن حماية الطيور تحتاج إلى مشاركة المجتمع والتزامه، إلى جانب عمل المؤسسات الرسمية، وأن الحفاظ على البيئة يصون حق الأجيال المقبلة فيها."
+              ]
+            },
+            {
+              "heading": "الرقابة خلال موسم العبور",
+              "paragraphs": [
+                "تكتسب هذه التوجيهات أهمية خاصة مع مرور الطيور المهاجرة في سوريا واستراحتها فيها خلال انتقالها بين أفريقيا وأوراسيا. ويهدد اصطيادها عشوائيًا سلامة رحلتها، فضلًا عن الأدوار التي تؤديها في الحد من الحشرات والآفات ونشر البذور.",
+                "وسبق أن وثّق تقرير لسانا، نُشر في 27 تشرين الأول، حملة في منطقتي النبك ويبرود بريف دمشق، أتلفت خلالها الضابطة أكثر من 500 متر من الشباك المخالفة وحررت طيورًا عالقة فيها. وعرض التقرير مخاطر الشباك التي لا تميّز بين الأنواع، وقد تتسبب بإصابات تمنع بعض الطيور من استكمال هجرتها حتى بعد تحريرها.",
+                "ويشدّد التعميم الجديد على تطبيق القوانين الناظمة للصيد وملاحقة المخالفات خلال موسم العبور. وقد تابعت «صيد» حملات مكافحة الصيد المخالف في سوريا ضمن «رادار صيد العربي» لشهر تشرين الأول."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Hobbyfotowiki / Wikimedia Commons، بترخيص CC0 1.0.",
+          "ticker_title": "سوريا: تعميم للمحافظين لضبط الصيد الجائر خلال هجرة الطيور وتعزيز الرقابة."
+        },
+        "en": {
+          "title": "Syria tightens monitoring of illegal hunting during bird migration",
+          "subtitle": "Syria: circular calls on governors to curb illegal hunting during bird migration and strengthen monitoring.",
+          "meta_description": "Syria: circular calls on governors to curb illegal hunting during bird migration and strengthen monitoring.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Syria’s Ministry of Local Administration and Environment issued a circular on Tuesday, 10 November 2026, asking governors, in their capacity as heads of local hunting councils, to tackle illegal hunting during the autumn bird migration and take legal action in coordination with the relevant authorities.",
+                "According to the Syrian Arab News Agency (SANA), the move aims to protect wildlife, particularly endangered species, and preserve biodiversity. In a related statement, Minister of Local Administration and Environment Mohammad Anjarani called on local administrative units to step up monitoring and coordination and take violations affecting birds and their migration routes seriously.",
+                "In a post on his official Facebook page reported by the agency, the minister stressed that protecting birds requires community participation and commitment alongside the work of public institutions, and that safeguarding the environment protects future generations’ right to it."
+              ]
+            },
+            {
+              "heading": "Monitoring during the migration season",
+              "paragraphs": [
+                "These instructions are particularly important as migratory birds pass through Syria and stop there to rest while travelling between Africa and Eurasia. Indiscriminate hunting threatens their journeys, as well as the roles they play in controlling insects and pests and dispersing seeds.",
+                "A SANA report published on 27 October had documented an enforcement operation in the Nabk and Yabroud areas of rural Damascus, during which officers destroyed more than 500 metres of illegal nets and freed birds caught in them. The report highlighted the dangers of nets that do not distinguish between species and can cause injuries that prevent some birds from continuing their migration even after they are released.",
+                "The new circular stresses enforcing hunting regulations and pursuing violations during the migration season. Sayd previously covered campaigns against illegal hunting in Syria in the October edition of Sayd Arab Radar."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Hobbyfotowiki / Wikimedia Commons, CC0 1.0.",
+          "ticker_title": "Syria: circular calls on governors to curb illegal hunting during bird migration and strengthen monitoring."
+        },
+        "fr": {
+          "title": "La Syrie renforce les contrôles contre le braconnage pendant la migration des oiseaux",
+          "subtitle": "Syrie : une circulaire demande aux gouverneurs de lutter contre le braconnage pendant la migration des oiseaux et de renforcer les contrôles.",
+          "meta_description": "Syrie : une circulaire demande aux gouverneurs de lutter contre le braconnage pendant la migration des oiseaux et de renforcer les contrôles.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Le ministère syrien de l’Administration locale et de l’Environnement a publié, mardi 10 novembre 2026, une circulaire demandant aux gouverneurs, en leur qualité de présidents des conseils locaux de la chasse, de lutter contre les infractions liées au braconnage pendant la migration automnale des oiseaux et d’appliquer les mesures légales en coordination avec les autorités compétentes.",
+                "Selon l’Agence arabe syrienne de presse (SANA), cette démarche vise à protéger la faune sauvage, notamment les espèces menacées d’extinction, et à préserver la biodiversité. Dans une déclaration complémentaire, le ministre de l’Administration locale et de l’Environnement, Mohammad Anjarani, a appelé les collectivités locales à intensifier les contrôles et la coordination, et à traiter avec sérieux les infractions qui touchent les oiseaux et leurs voies de migration.",
+                "Dans une publication sur sa page Facebook officielle, rapportée par l’agence, le ministre a souligné que la protection des oiseaux exige la participation et l’engagement de la société, aux côtés de l’action des institutions publiques, et que préserver l’environnement protège le droit des générations futures à en bénéficier."
+              ]
+            },
+            {
+              "heading": "Des contrôles pendant la saison migratoire",
+              "paragraphs": [
+                "Ces directives revêtent une importance particulière alors que les oiseaux migrateurs traversent la Syrie et s’y reposent lors de leurs déplacements entre l’Afrique et l’Eurasie. La chasse sans discernement menace le bon déroulement de leur voyage, ainsi que leurs fonctions dans la limitation des insectes et des ravageurs et dans la dispersion des graines.",
+                "Un reportage de SANA publié le 27 octobre avait documenté une opération menée dans les secteurs de Nabk et de Yabroud, dans la campagne de Damas. Les agents y avaient détruit plus de 500 mètres de filets illégaux et libéré des oiseaux qui s’y trouvaient piégés. Le reportage exposait les dangers de ces filets, qui ne distinguent pas les espèces et peuvent provoquer des blessures empêchant certains oiseaux de poursuivre leur migration, même après leur libération.",
+                "La nouvelle circulaire insiste sur l’application de la réglementation de la chasse et la poursuite des infractions pendant la saison migratoire. Sayd avait déjà suivi les campagnes contre la chasse illégale en Syrie dans l’édition d’octobre de son Radar arabe."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Hobbyfotowiki / Wikimedia Commons, CC0 1.0.",
+          "ticker_title": "Syrie : une circulaire demande aux gouverneurs de lutter contre le braconnage pendant la migration des oiseaux et de renforcer les contrôles."
+        }
+      },
+      "distribution": {
+        "placement": "side",
+        "ticker": true
+      }
+    }
+  ]
+}
