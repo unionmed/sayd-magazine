@@ -511,6 +511,8 @@ def run(base,out):
                         page.locator(f'.lang-switch a[lang="{code}"]').click()
                         expect(page).to_have_url(new_url+route)
                         expect(page.locator('h1')).to_have_count(1)
+                from test_market_affiliate_browser import verify_market
+                screens.extend(verify_market(context, new_url, out))
                 browser.close()
         except Exception as error:
             errors.append({'fatal':repr(error),'traceback':__import__('traceback').format_exc(),'url':page.url if 'page' in locals() else ''})
