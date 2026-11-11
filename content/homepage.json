@@ -450,7 +450,8 @@
     "البط-الرخامي",
     "الإوز-الأغر-الصغير",
     "الإوز-البرنت",
-    "الإوز-أحمر-الصدر"
+    "الإوز-أحمر-الصدر",
+    "جورج-سكوت-19-خيلا-قاعدة-ميدان-دبي-2026"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -484,14 +485,14 @@
   ],
   "desk_slugs": {
     "صيد": [
+      "جورج-سكوت-19-خيلا-قاعدة-ميدان-دبي-2026",
+      "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026",
       "دوري-الإمارات-للصيد-بالصقور-تسجيل-الفرق-2026-2027",
       "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027",
       "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
       "كرنفال-دبي-ميدان-2026-2027",
       "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
-      "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
-      "تمبتد-غودولفين-إيفرست-2026",
-      "طيور-في-الحقائب-تهريب-الطيور-2026"
+      "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -514,14 +515,14 @@
       "سهيل-2026-بالصور-الصقور-والزوار-ووجوه-ا"
     ],
     "Hunting": [
+      "george-scott-19-horses-meydan-dubai-base-2026",
+      "brussels-firearms-trafficking-hunting-shooting-conference-2026",
       "uae-falconers-league-team-registration-2026-2027",
       "arabian-saluki-championship-al-ain-al-dhafra-2026-2027",
       "libya-sirte-three-year-hunting-ban",
       "dubai-racing-carnival-2026-2027",
       "bin-harmash-dark-saffron-breeders-cup-2026",
-      "arabian-saluki-center-25-years",
-      "godolphin-tempted-everest-2026",
-      "birds-in-bags-illegal-bird-trade-2026"
+      "arabian-saluki-center-25-years"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -646,14 +647,14 @@
     {
       "door": "hunting",
       "slugs": [
+        "جورج-سكوت-19-خيلا-قاعدة-ميدان-دبي-2026",
+        "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026",
         "دوري-الإمارات-للصيد-بالصقور-تسجيل-الفرق-2026-2027",
         "بطولة-السلوقي-العربي-العين-الظفرة-2026-2027",
         "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
         "كرنفال-دبي-ميدان-2026-2027",
         "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
-        "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار",
-        "تمبتد-غودولفين-إيفرست-2026",
-        "طيور-في-الحقائب-تهريب-الطيور-2026"
+        "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار"
       ]
     },
     {
@@ -986,7 +987,9 @@
     "البط-الرخامي": "birds",
     "الإوز-الأغر-الصغير": "birds",
     "الإوز-البرنت": "birds",
-    "الإوز-أحمر-الصدر": "birds"
+    "الإوز-أحمر-الصدر": "birds",
+    "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026": "hunting",
+    "جورج-سكوت-19-خيلا-قاعدة-ميدان-دبي-2026": "equestrian"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1005,6 +1008,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026",
     "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
     "الرماية-الدولية-عقوبة-راتنر-2026",
     "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
@@ -1013,8 +1017,7 @@
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
     "رادار-صيد-العربي-تشرين-الأول-2026",
     "طيور-تتعطر-بالنمل",
-    "مونديال-الرماية-قطر-2026",
-    "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح"
+    "مونديال-الرماية-قطر-2026"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -2963,11 +2966,37 @@
         "en": "Red-breasted Goose lowering its head to feed",
         "fr": "Bernache à cou roux baissant la tête pour se nourrir"
       }
+    },
+    "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026": {
+      "image": "media/publications/face-scott-20261111/european-parliament-brussels.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "منظر أرشيفي لمقر البرلمان الأوروبي في بروكسل من ساحة لوكسمبورغ.",
+        "en": "Archival exterior view of the European Parliament in Brussels from Place du Luxembourg.",
+        "fr": "Vue extérieure d’archives du Parlement européen à Bruxelles depuis la place du Luxembourg."
+      }
+    },
+    "جورج-سكوت-19-خيلا-قاعدة-ميدان-دبي-2026": {
+      "image": "media/publications/face-scott-20261111/horse-racing-archive-2017.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "صورة أرشيفية توضيحية لحصان سباق وفارس يرتدي الأحمر والأبيض على مضمار عشبي.",
+        "en": "Generic archival photograph of a racehorse and a jockey in red and white on turf.",
+        "fr": "Photo d’archives illustrative d’un cheval de course et d’un jockey en rouge et blanc sur gazon."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026",
+      "titles": {
+        "ar": "بروكسل: مؤتمر يناقش مكافحة تهريب الأسلحة وأثر القواعد المقترحة في الصيد والرماية.",
+        "en": "Brussels conference to examine firearms trafficking rules and their impact on hunting and sport shooting.",
+        "fr": "Bruxelles : une conférence examine les règles contre le trafic d’armes et leurs effets sur la chasse et le tir sportif."
+      }
+    },
     {
       "slug": "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
       "titles": {
@@ -3038,14 +3067,6 @@
         "ar": "مونديال الرماية في قطر: فضية عزمي محيلبة لمصر وبرونزية عبدالعزيز السعد للكويت وحصة أولمبية لكل بلد",
         "en": "Qatar shooting worlds: silver for Egypt’s Azmy Mehelba, bronze for Kuwait’s Abdulaziz Alsaad and Olympic quota places for both countries",
         "fr": "Mondiaux de tir au Qatar : argent pour l’Égyptien Azmy Mehelba, bronze pour le Koweïtien Abdulaziz Alsaad et quotas olympiques pour les deux pays"
-      }
-    },
-    {
-      "slug": "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
-      "titles": {
-        "ar": "عقاب وسط غابة كثيفة… كيف يجد طريقه إلى قفاز ناتالي؟",
-        "en": "An eagle in dense woodland… how does he find his way to Nathalie’s glove?",
-        "fr": "Un aigle au cœur d’un bois dense… comment rejoint-il le gant de Nathalie ?"
       }
     }
   ],
