@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
+      "titles": {
+        "ar": "سوريا: تعميم للمحافظين لضبط الصيد الجائر خلال هجرة الطيور وتعزيز الرقابة.",
+        "en": "Syria: circular calls on governors to curb illegal hunting during bird migration and strengthen monitoring.",
+        "fr": "Syrie : une circulaire demande aux gouverneurs de lutter contre le braconnage pendant la migration des oiseaux et de renforcer les contrôles."
+      },
+      "title": "سوريا: تعميم للمحافظين لضبط الصيد الجائر خلال هجرة الطيور وتعزيز الرقابة."
+    },
+    {
       "slug": "الرماية-الدولية-عقوبة-راتنر-2026",
       "titles": {
         "ar": "الاتحاد الدولي للرماية يعلن عدم أهلية ألكسندر راتنر ثلاث سنوات وغرامة 30 ألف يورو.",
@@ -81,15 +90,6 @@
         "fr": "Un aigle au cœur d’un bois dense… comment rejoint-il le gant de Nathalie ?"
       },
       "title": "عقاب وسط غابة كثيفة… كيف يجد طريقه إلى قفاز ناتالي؟"
-    },
-    {
-      "slug": "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
-      "titles": {
-        "ar": "من دبي إلى سباق المليوني دولار… بن حرمش يستلهم نجاح اليابان",
-        "en": "From Dubai to a $2 million race… Bin Harmash takes inspiration from Japan",
-        "fr": "De Dubaï à une course dotée de deux millions de dollars… Bin Harmash s’inspire du Japon"
-      },
-      "title": "من دبي إلى سباق المليوني دولار… بن حرمش يستلهم نجاح اليابان"
     }
   ]
 }
