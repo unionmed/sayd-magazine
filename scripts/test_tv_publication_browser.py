@@ -29,6 +29,78 @@ class MediaHandler(http.server.SimpleHTTPRequestHandler):
             if not data:break
             outputfile.write(data);remaining-=len(data)
 
+def check_jiad_playback(browser, base, out):
+    """Exercise current channel placement and the permanent landscape archive."""
+    from urllib.parse import unquote, urljoin
+    import jiad_tv_publication as jiad
+    if not (ROOT/jiad.SOURCE).is_file():return
+    record=jiad.check_published(ROOT)
+    channel=json.loads((ROOT/jiad.CHANNEL).read_text())
+    visible=[v['id'] for v in channel['videos'][:channel['home_limit']]]
+    assert len(visible)==7
+    results=[]
+    for lang in jiad.LANGS:
+        prefix='' if lang=='ar' else '/'+lang
+        target=base+prefix+'/'+jiad.TV_PATH+'#'+jiad.ANCHOR
+        for width in (320,390,820,1440):
+            page=browser.new_page(viewport={'width':width,'height':900})
+            # Keep local assets/media, but never issue external analytics requests.
+            page.route('**/*',lambda route: route.continue_() if route.request.url.startswith(base+'/') else route.abort())
+            def open_from_home(screenshot=False):
+                assert unquote(page.url)==base+prefix+'/index.html'
+                cards=page.locator('[data-tv-group="sayd-channel"] article')
+                assert cards.count()==7
+                assert cards.evaluate_all('(nodes)=>nodes.map(n=>n.dataset.videoId)')==visible
+                card=page.locator('[data-tv-group="sayd-channel"] article[data-video-id="'+jiad.ID+'"]')
+                assert card.count()==int(jiad.ID in visible)
+                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1')
+                if jiad.ID in visible:
+                    card.scroll_into_view_if_needed()
+                    page.wait_for_function('(id)=>{const i=document.querySelector(\'[data-video-id="\'+id+\'"] img\');return i && i.complete && i.naturalWidth>0}',arg=jiad.ID)
+                    assert card.locator('img').evaluate('(i)=>i.complete && i.naturalWidth>0')
+                    assert card.locator('h3 a').inner_text()==record['titles'][lang]
+                    assert unquote(urljoin(page.url,card.locator('h3 a').get_attribute('href')))==target
+                    if screenshot:card.screenshot(path=str(out/f'jiad-{lang}-{width}-home-card.png'))
+                    card.locator('h3 a').click()
+                else:
+                    # Approved future rotation may remove Jiad from the seven cards.
+                    if screenshot:page.screenshot(path=str(out/f'jiad-{lang}-{width}-home-archive-only.png'))
+                    page.goto(target,wait_until='domcontentloaded')
+            def play_archive():
+                section=page.locator('section[data-jiad-video="'+jiad.ID+'"]')
+                section.wait_for();assert section.count()==1
+                assert unquote(page.url)==target
+                assert section.locator('h2').inner_text()==record['titles'][lang]
+                assert section.locator('p').all_text_contents()==[line for line in record['description'][lang].split('\n') if line]
+                video=section.locator('video')
+                video.evaluate('(v)=>{v.muted=true;v.load()}')
+                page.wait_for_function('(()=>{const v=document.querySelector("[data-jiad-video] video");return v.readyState>=1||v.error})()')
+                facts=video.evaluate('(v)=>({duration:v.duration,width:v.videoWidth,height:v.videoHeight,src:v.currentSrc,controls:v.controls,inline:v.playsInline,error:v.error&&v.error.message})')
+                assert not facts['error'] and facts['controls'] and facts['inline']
+                assert abs(facts['duration']-76.1)<0.1 and (facts['width'],facts['height'])==(1280,704),facts
+                assert facts['src']==base+'/'+jiad.VIDEO[5:]
+                video.evaluate('(v)=>{v.currentTime=0;return v.play()}')
+                page.wait_for_function('document.querySelector("[data-jiad-video] video").currentTime>0.2')
+                video.evaluate('(v)=>v.pause()');assert video.evaluate('(v)=>v.paused')
+                section.scroll_into_view_if_needed()
+                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth + 1')
+                return section,facts
+            try:
+                page.goto(base+prefix+'/index.html',wait_until='domcontentloaded')
+                open_from_home(screenshot=True)
+                section,facts=play_archive()
+                section.screenshot(path=str(out/f'jiad-{lang}-{width}-player.png'))
+                page.go_back(wait_until='domcontentloaded')
+                open_from_home()
+                play_archive()
+                results.append({'language':lang,'viewport':width,'visible_on_homepage':jiad.ID in visible,'video':facts,'playback':'passed','history_navigation':'passed','reopen_playback':'passed'})
+            except Exception as exc:
+                (out/f'jiad-{lang}-{width}-failure.json').write_text(json.dumps({'error':str(exc),'url':page.url,'results':results},indent=2))
+                page.screenshot(path=str(out/f'jiad-{lang}-{width}-failure.png'))
+                raise
+            finally:page.close()
+    (out/'jiad-tv.json').write_text(json.dumps({'status':'passed','results':results},indent=2))
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--output',required=True);args=parser.parse_args()
     out=Path(args.output);out.mkdir(parents=True,exist_ok=True)
@@ -38,7 +110,12 @@ def main():
     head=c.git(ROOT,'rev-parse','HEAD').decode().strip()
     message=c.git(ROOT,'show','-s','--format=%B',head).decode().strip()
     if message.endswith('Sayd-Publication-Request: v1\nDistribution-Review-Scope: true'):
-        tv.source_input(ROOT,record['expected_base'],head)
+        import jiad_tv_publication as jiad
+        if (ROOT/jiad.SOURCE).is_file() and c.git(ROOT,'diff','--name-only',head+'^',head,'--',jiad.SOURCE).strip():
+            jiad_record=jiad.loads((ROOT/jiad.SOURCE).read_text())
+            jiad.source_input(ROOT,jiad_record['expected_base'],head)
+        else:
+            tv.source_input(ROOT,record['expected_base'],head)
         (out/'native-tv.json').write_text(json.dumps({'status':'source-only request: playback tested on generated candidate'}));return
     tv.check_published(ROOT)
     from playwright.sync_api import sync_playwright
@@ -95,6 +172,7 @@ def main():
                     assert page.locator('section[data-native-video]').count()==1
                     results.append({'language':lang,'viewport':width,'video':facts,'history_navigation':'passed'})
                     page.close()
+            check_jiad_playback(browser,base,out)
             browser.close()
     finally:server.shutdown()
     (out/'native-tv.json').write_text(json.dumps({'status':'passed','results':results},indent=2))

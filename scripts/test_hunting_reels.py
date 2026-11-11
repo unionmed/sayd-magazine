@@ -46,15 +46,17 @@ def check_reels():
     assert len(set(ids))==4 and all(re.fullmatch(r'[A-Za-z0-9_-]{11}',x) for x in ids)
     channel=json.loads((ROOT/'content/tv-channel.json').read_text())
     assert channel['home_limit']==7
-    # The approved Radar insertion advances this historical seven-card window.
-    # Its exact media, source and translated player are independently validated;
-    # removing only that record must reproduce the prior channel order.
+    # Validate each explicitly supported insertion before removing only its
+    # record for the unchanged historical order assertions below.
     import radar_tv_publication as radar
-    has_radar=(ROOT/radar.SOURCE).exists()
-    if has_radar:
-        radar.check_published(ROOT)
-        visible=[v['id'] for v in channel['videos'][:7]]
-        channel=dict(channel, videos=[v for v in channel['videos'] if v['id']!=radar.ID])
+    import jiad_tv_publication as jiad
+    visible=[v['id'] for v in channel['videos'][:7]]
+    has_native=False
+    for native in (jiad, radar):
+        if (ROOT/native.SOURCE).exists():
+            native.check_published(ROOT)
+            channel=dict(channel, videos=[v for v in channel['videos'] if v['id']!=native.ID])
+            has_native=True
     historical=historical_reel_fixture(os.environ.get('SAYD_BASE_COMMIT'))
     if historical:
         assert [r['id'] for r in channel['videos'][:7]]==ids+OLD_VISIBLE
@@ -66,7 +68,7 @@ def check_reels():
         assert first['published_at']=='2026-10-24' and first['source_published_at']=='2026-10-20'
         assert first['internal_href']=='category/استديو-صيد/index.html#isf-video-heading'
         expected=[ISF_VIDEO]+ids+OLD_VISIBLE[:2]
-    if has_radar:
+    if has_native:
         expected=visible
     for prefix in ('','en','fr'):
         home=html.parse(str(ROOT/'docs'/prefix/'index.html'))

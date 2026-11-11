@@ -1,0 +1,168 @@
+"""One approved Jiad native-video insertion, built only by trusted BASE code.
+
+No executable input, old-player edits, social actions, or publication authority.
+"""
+import base64, copy, html, json, os, re, subprocess
+from pathlib import Path
+from datetime import date
+from publication_schema import keys, localized, loads, require, COMMIT, SHA, LANGS
+from caption_revision import changed_paths
+
+ID = 'jiad-lebanon-equestrian-20261109'
+PREFIX = 'content/tv-publications/'
+SOURCE = PREFIX + ID + '.json'
+MEDIA = 'docs/media/publications/' + ID + '/'
+VIDEO = MEDIA + 'jiad.mp4'
+POSTER = MEDIA + 'jiad-poster.jpg'
+SHARD = 'audit/image-catalog/manifest/release-' + ID + '.tsv'
+VIDEO_HASH = '13d5b53a585571e4b94a6ce9278bfb455a2d46c95d095028697419dc78baafd4'
+VIDEO_BYTES = 20487595
+ANCHOR = 'jiad-lebanon-equestrian-heading'
+TV_PATH = 'category/استديو-صيد/index.html'
+CHANNEL = 'content/tv-channel.json'
+
+# Approved localized copy and poster are immutable for this release.
+TITLES = {'ar': '«جياد»: محطات من تاريخ الفروسية في لبنان', 'en': 'Jiad: Moments from the history of equestrianism in Lebanon', 'fr': 'Jiad : étapes de l’histoire équestre au Liban'}
+DESCRIPTIONS = {'ar': 'خاص صيد TV\nمقابلة مع الفنان علي حليحل: «الخيل دهر والصيد شهر!»\nمقابلة مع د. سارية المرزوق، جامعة هومبلدت في ألمانيا: ما مدى أهمية ميدان بيروت؟\nمقابلة مع د. علي بدوي، مسؤول المواقع الأثرية في جنوب لبنان: ما مكانة ميدان سباق العربات في صور في العالم القديم؟\nالوزير السابق نبيل دو فريج: كيف أنقذ الرئيس سركيس 350 حصانًا خلال اجتياح بيروت عام 1982؟', 'en': 'Exclusive to Sayd TV\nAn interview with artist Ali Hleyhel: “Horses are for a lifetime; hunting is for a month!”\nAn interview with Dr Saria Almarzook, Humboldt University, Germany: How important is Beirut Hippodrome?\nAn interview with Dr Ali Badawi, responsible for archaeological sites in southern Lebanon: What place did Tyre’s chariot-racing hippodrome hold in the ancient world?\nFormer minister Nabil de Freige: How did President Sarkis save 350 horses during the 1982 invasion of Beirut?', 'fr': 'En exclusivité sur Sayd TV\nEntretien avec l’artiste Ali Hleyhel : « Le cheval, c’est pour toute une vie ; la chasse, pour un mois ! »\nEntretien avec la Dre Saria Almarzook, de l’université Humboldt en Allemagne : quelle est l’importance de l’hippodrome de Beyrouth ?\nEntretien avec le Dr Ali Badawi, responsable des sites archéologiques du Liban-Sud : quelle place l’hippodrome de Tyr, consacré aux courses de chars, occupait-il dans le monde antique ?\nL’ancien ministre Nabil de Freige : comment le président Sarkis a-t-il sauvé 350 chevaux lors de l’invasion de Beyrouth en 1982 ?'}
+POSTER_HASH = '02167fb7fddf770eac2ba66fe62851c5bb58b68155ae7b49bec7d8c6d74e6567'
+APPROVAL_REFERENCE = 'private:owner-jiad-publication-20261109'
+
+def revision_paths(before, after):
+    return [p for p in changed_paths(before, after) if p == SOURCE]
+
+def validate(value, base):
+    keys(value, ('schema','id','expected_base','approval_reference','published','titles','description','poster_sha256','expected_channel_sha256'))
+    require(value['schema']=='sayd-jiad-tv-publication-v1' and value['id']==ID, 'Only Jiad TV insertion supported')
+    require(COMMIT.fullmatch(value['expected_base'] or '') and value['expected_base']==base, 'Stale Jiad TV base')
+    require(value['approval_reference']==APPROVAL_REFERENCE,'Exact publication approval reference required')
+    require(isinstance(value['published'],str) and re.fullmatch(r'20\d\d-\d\d-\d\d',value['published']), 'ISO TV publication date required')
+    require(date(2026,11,9) <= date.fromisoformat(value['published']) <= date.today(), 'Actual release date required')
+    require(set(TITLES)==set(LANGS) and set(DESCRIPTIONS)==set(LANGS),'Approved constants required')
+    require(value['titles']==TITLES and value['description']==DESCRIPTIONS,'Approved localized text required')
+    require(value['poster_sha256']==POSTER_HASH,'Approved poster required')
+    require(SHA.fullmatch(value['expected_channel_sha256'] or ''),'Missing channel source digest')
+    return value
+
+def video_record(value, poster):
+    return dict(id=ID, date=value['published'], published_at=value['published'], titles=value['titles'],
+                internal_href=TV_PATH+'#'+ANCHOR, image='data:image/jpeg;base64,'+base64.b64encode(poster).decode())
+
+def native_card(value, lang, poster):
+    from refresh_homepage_doors import render_card, channel_date
+    v=video_record(value,poster)
+    item=dict(title=v['titles'][lang],date=channel_date(v['published_at'],lang),image=v['image'],alt=v['titles'][lang],href=v['internal_href'])
+    return render_card(ID,item).replace('<article class="card">','<article class="card" data-video-id="'+ID+'">',1)
+
+def player(value, lang):
+    depth='../../' if lang=='ar' else '../../../'
+    esc=lambda s:html.escape(s,quote=True)
+    title=esc(value['titles'][lang])
+    return ('<section class="sayd-tv-jiad-video" data-jiad-video="'+ID+'" aria-labelledby="'+ANCHOR+'" style="margin:24px 0 32px;padding:18px;border:1px solid #d9dbd0">'
+            '<h2 id="'+ANCHOR+'">'+title+'</h2>'+''.join('<p>'+esc(line)+'</p>' for line in value['description'][lang].split('\n') if line)
+            +'<video controls playsinline preload="metadata" poster="'+depth+POSTER[5:]+'" style="display:block;width:100%;max-width:960px;height:auto;margin-inline:auto;background:#000">'
+            '<source src="'+depth+VIDEO[5:]+'" type="video/mp4"><a href="'+depth+VIDEO[5:]+'">'+title+'</a></video></section>')
+
+def expected_changes(root, base, value, poster):
+    import publication_compiler as c
+    value=validate(value,base);before=c.tree(root,base)
+    read=lambda p:c.read_blob(root,before[p])
+    require(c.sha256(read(CHANNEL))==value['expected_channel_sha256'],'TV channel source changed')
+    old_channel=json.loads(read(CHANNEL).decode());require(old_channel['home_limit']==7,'Seven channel cards required')
+    require(ID not in [v['id'] for v in old_channel['videos']],'Jiad already exists')
+    channel=copy.deepcopy(old_channel);channel['videos'].insert(0,video_record(value,poster))
+    channel['approved_order'].insert(0,ID)
+    # Preserve the historical order instruction; prepend only this authorized release.
+    channel['order_approval']='Owner approved Jiad first on 9 November 2026; retain the seven-card limit and prior order of all older videos. '+old_channel['order_approval']
+    result={CHANNEL:(json.dumps(channel,ensure_ascii=False,indent=2)+'\n').encode()}
+    for lang in LANGS:
+        prefix='' if lang=='ar' else lang+'/'
+        category='docs/'+prefix+TV_PATH
+        raw=read(category).decode();require(ANCHOR not in raw,'Player already exists')
+        marker='<section class="sayd-tv-radar-video"';require(raw.count(marker)==1,'Expected previous newest native player landmark')
+        result[category]=raw.replace(marker,player(value,lang)+marker,1).encode()
+        home='docs/'+prefix+'index.html';raw=read(home).decode()
+        pattern=r'(<div class="sayd-tv-group" data-tv-group="sayd-channel">.*?<div class="home-door-grid">)((?:\s*<article\b.*?</article>){7}\s*)(</div></div>)'
+        matches=list(re.finditer(pattern,raw,re.S));require(len(matches)==1,'Exact seven-card channel group required')
+        match=matches[0];cards=re.findall(r'<article\b.*?</article>',match[2],re.S)
+        require(len(cards)==7,'Expected seven preserved channel cards')
+        content='\n'+native_card(value,lang,poster)+'\n'+'\n'.join(cards[:6])+'\n'
+        result[home]=(raw[:match.start(2)]+content+raw[match.end(2):]).encode()
+    return result
+
+def source_input(root,base,source):
+    import publication_compiler as c
+    before,after=c.tree(root,base),c.tree(root,source)
+    paths={SOURCE,VIDEO,POSTER,SHARD}
+    require(set(changed_paths(before,after))==paths,'TV source contains unrelated inputs')
+    require(c.git(root,'show','-s','--format=%P',source).decode().split()==[base],'Exact TV source parent required')
+    require(all(p not in before and after.get(p,())[:2]==('100644','blob') for p in paths),'TV inputs must be new regular files')
+    require(not any(p.casefold() in {x.casefold() for x in before} for p in paths),'TV path collision')
+    inputs={p:c.read_blob(root,after[p]) for p in paths}
+    require(len(inputs[SOURCE])<=16000,'TV source too large')
+    value=validate(loads(inputs[SOURCE].decode()),base)
+    require(len(inputs[VIDEO])==VIDEO_BYTES and c.sha256(inputs[VIDEO])==VIDEO_HASH,'Approved web MP4 bytes required')
+    require(len(inputs[POSTER])<=1000000 and c.sha256(inputs[POSTER])==value['poster_sha256'],'Poster hash/size mismatch')
+    require(inputs[POSTER].startswith(b'\xff\xd8\xff'),'JPEG poster required')
+    inventory=('path\tgit_blob_sha\tsize_bytes\n'+POSTER+'\t'+after[POSTER][2]+'\t'+str(len(inputs[POSTER]))+'\n').encode()
+    require(inputs[SHARD]==inventory,'Exact poster inventory required')
+    return value,dict(expected_changes(root,base,value,inputs[POSTER]),**inputs)
+
+def compile_source(root,base,source,output,report_path,allow_distribution=False):
+    import publication_compiler as c
+    root,output=Path(root).resolve(),Path(output).resolve()
+    require(c.git(root,'rev-parse','HEAD').decode().strip()==base,'Trusted TV BASE required')
+    require(allow_distribution is True,'TV homepage distribution scope required')
+    value,expected=source_input(root,base,source)
+    require(not output.exists() and not output.is_relative_to(root),'Fresh external TV output required')
+    subprocess.run(['git','-c','core.hooksPath=/dev/null','clone','--quiet','--shared','--no-checkout',str(root),str(output)],check=True)
+    c.git(output,'checkout','--quiet','--detach',source)
+    for p,data in expected.items():
+        (output/p).parent.mkdir(parents=True,exist_ok=True);(output/p).write_bytes(data)
+    c.image_size(output/POSTER);c.git(output,'add','--all')
+    generated=c.git(output,'write-tree').decode().strip();before,after=c.tree(root,base),c.tree(output,generated)
+    require(set(changed_paths(before,after))==set(expected),'Exact TV output paths required')
+    entries=[]
+    for p,data in sorted(expected.items()):
+        require(after[p]==('100644','blob',c.blob_sha(data)),'Wrong TV output bytes/mode')
+        entries.append({'path':p,'mode':'100644','old_blob':before[p][2] if p in before else None,'new_blob':c.blob_sha(data),'sha256':c.sha256(data),'bytes':len(data),'status':'M' if p in before else 'A'})
+    report={'schema':c.SCHEMA,'base_commit':base,'source_commit':source,'compiler_commit':base,'policy':{'allow_distribution':True},'changes':entries}
+    report['plan_sha256']=c.sha256(c.canonical(report));c.validate_report(output,report,base,source,base,True)
+    env=dict(os.environ,GIT_AUTHOR_NAME='Sayd TV compiler',GIT_AUTHOR_EMAIL='validation@users.noreply.github.com',GIT_COMMITTER_NAME='Sayd TV compiler',GIT_COMMITTER_EMAIL='validation@users.noreply.github.com')
+    commit=subprocess.check_output(['git','-C',str(output),'commit-tree',generated,'-p',source],input=c.provenance_message(report).encode(),env=env).decode().strip()
+    c.git(output,'checkout','--quiet','--detach',commit);c.validate_stage(output,base,True)
+    require(c.git(output,'rev-parse','HEAD^{tree}').decode().strip()==generated and not c.git(output,'status','--porcelain','--untracked-files=all').strip(),'TV validation modified files')
+    c.save_json(Path(report_path),report);return report
+
+def verify(root,base,candidate,output,report_path):
+    import publication_compiler as c
+    require(c.git(root,'rev-parse','HEAD').decode().strip()==base,'Trusted TV verification required')
+    parents=c.git(root,'show','-s','--format=%P',candidate).decode().split();require(len(parents)==1,'Single TV source parent required')
+    plan=compile_source(root,base,parents[0],output,report_path,True)
+    require(c.git(root,'show','-s','--format=%B',candidate).decode().strip()==c.provenance_message(plan),'TV provenance mismatch')
+    require(c.git(output,'rev-parse','HEAD^{tree}')==c.git(root,'rev-parse',candidate+'^{tree}'),'TV whole-tree mismatch')
+    return plan
+
+def check_published(root):
+    """Exact media and translated player checks; channel retains its seven-card cap."""
+    import hashlib
+    from lxml import html as dom
+    root=Path(root);value=loads((root/SOURCE).read_text());validate(value,value['expected_base'])
+    require(hashlib.sha256((root/VIDEO).read_bytes()).hexdigest()==VIDEO_HASH and (root/VIDEO).stat().st_size==VIDEO_BYTES,'Published video changed')
+    poster=(root/POSTER).read_bytes();require(hashlib.sha256(poster).hexdigest()==POSTER_HASH,'Published poster changed')
+    channel=json.loads((root/CHANNEL).read_text())
+    records=[v for v in channel['videos'] if v['id']==ID]
+    require(records==[video_record(value,poster)] and channel['home_limit']==7,'Jiad channel record drift')
+    visible=[v['id'] for v in channel['videos'][:7]]
+    for lang in LANGS:
+        prefix='' if lang=='ar' else lang+'/'
+        doc=dom.parse(str(root/'docs'/prefix/TV_PATH))
+        nodes=doc.xpath('//*[@data-jiad-video=$id]',id=ID);require(len(nodes)==1,'Missing/duplicate Jiad player')
+        require(dom.tostring(nodes[0],with_tail=False)==dom.tostring(dom.fromstring(player(value,lang)),with_tail=False),'Jiad player drift')
+        home=dom.parse(str(root/'docs'/prefix/'index.html'))
+        cards=home.xpath('//*[@data-tv-group="sayd-channel"]//article')
+        require(len(cards)==7 and [n.get('data-video-id') for n in cards]==visible,'Seven channel cards must match current approved order')
+        jiad_cards=[n for n in cards if n.get('data-video-id')==ID]
+        require(len(jiad_cards)==int(ID in visible),'Jiad visibility must match current channel selection')
+        if jiad_cards:
+            require(dom.tostring(jiad_cards[0],with_tail=False)==dom.tostring(dom.fromstring(native_card(value,lang,poster)),with_tail=False),'Jiad card drift')
+    return value

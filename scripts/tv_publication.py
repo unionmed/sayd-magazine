@@ -170,6 +170,7 @@ def historical_placement_snapshot(root, base):
     if guard.unchanged_current_payload(base, root):return True
     import adonis_tv_publication
     import radar_tv_publication
-    changed=guard.git(root,'diff','--name-only',base,'HEAD','--',SOURCE,adonis_tv_publication.SOURCE,radar_tv_publication.SOURCE).decode().splitlines()
-    if changed not in ([SOURCE],[adonis_tv_publication.SOURCE],[radar_tv_publication.SOURCE]):return False
+    import jiad_tv_publication
+    changed=guard.git(root,'diff','--name-only',base,'HEAD','--',SOURCE,adonis_tv_publication.SOURCE,radar_tv_publication.SOURCE,jiad_tv_publication.SOURCE).decode().splitlines()
+    if changed not in ([SOURCE],[adonis_tv_publication.SOURCE],[radar_tv_publication.SOURCE],[jiad_tv_publication.SOURCE]):return False
     return guard.verified_publication(base,root) is not None

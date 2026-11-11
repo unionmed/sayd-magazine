@@ -73,6 +73,11 @@ def validate_source(root, base, source):
         _, value, _, _, _ = editorial_revision.source_input(root, base, source)
         require(scope == (value['operation'] in {'add-adonis-ticker', 'promote-episode-three-lead', 'update-qatar-shooting-results', 'move-qatar-to-updates-nov6', 'update-dubai-carnival-results-nov7'}), 'Exact editorial review scope required')
         return scope
+    import jiad_tv_publication
+    if jiad_tv_publication.revision_paths(tree(root, base), tree(root, source)):
+        require(scope is True, "Jiad TV homepage distribution scope required")
+        jiad_tv_publication.source_input(root, base, source)
+        return True
     import radar_tv_publication
     if radar_tv_publication.revision_paths(tree(root, base), tree(root, source)):
         require(scope is True, 'Radar TV homepage distribution scope required')
