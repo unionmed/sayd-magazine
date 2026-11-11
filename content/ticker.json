@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026",
+      "titles": {
+        "ar": "بروكسل: مؤتمر يناقش مكافحة تهريب الأسلحة وأثر القواعد المقترحة في الصيد والرماية.",
+        "en": "Brussels conference to examine firearms trafficking rules and their impact on hunting and sport shooting.",
+        "fr": "Bruxelles : une conférence examine les règles contre le trafic d’armes et leurs effets sur la chasse et le tir sportif."
+      },
+      "title": "بروكسل: مؤتمر يناقش مكافحة تهريب الأسلحة وأثر القواعد المقترحة في الصيد والرماية."
+    },
+    {
       "slug": "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
       "titles": {
         "ar": "سوريا: تعميم للمحافظين لضبط الصيد الجائر خلال هجرة الطيور وتعزيز الرقابة.",
@@ -81,15 +90,6 @@
         "fr": "Mondiaux de tir au Qatar : argent pour l’Égyptien Azmy Mehelba, bronze pour le Koweïtien Abdulaziz Alsaad et quotas olympiques pour les deux pays"
       },
       "title": "مونديال الرماية في قطر: فضية عزمي محيلبة لمصر وبرونزية عبدالعزيز السعد للكويت وحصة أولمبية لكل بلد"
-    },
-    {
-      "slug": "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
-      "titles": {
-        "ar": "عقاب وسط غابة كثيفة… كيف يجد طريقه إلى قفاز ناتالي؟",
-        "en": "An eagle in dense woodland… how does he find his way to Nathalie’s glove?",
-        "fr": "Un aigle au cœur d’un bois dense… comment rejoint-il le gant de Nathalie ?"
-      },
-      "title": "عقاب وسط غابة كثيفة… كيف يجد طريقه إلى قفاز ناتالي؟"
     }
   ]
 }
