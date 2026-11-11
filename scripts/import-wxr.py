@@ -1289,6 +1289,10 @@ def parse_wxr(xml_path: Path) -> dict:
             "parent": parent,
         }
 
+    # Reviewed archive metadata; original WXR and permalink slugs stay intact.
+    seo_path = CONTENT_DIR / "archive-seo-overrides.json"
+    seo_overrides = json.loads(seo_path.read_text(encoding="utf-8")) if seo_path.exists() else {}
+
     attachments: dict[str, str] = {}
     posts: list[dict] = []
     pages: list[dict] = []
@@ -1318,6 +1322,9 @@ def parse_wxr(xml_path: Path) -> dict:
         content = cdata_or_text(find(item, "content:encoded"))
         excerpt = cdata_or_text(find(item, "excerpt:encoded"))
         link = cdata_or_text(item.find("link"))
+        seo_override = seo_overrides.get(post_id, {})
+        title = seo_override.get("title", title)
+        excerpt = seo_override.get("excerpt", excerpt)
 
         cats = []
         for cat_el in item.findall("category"):
