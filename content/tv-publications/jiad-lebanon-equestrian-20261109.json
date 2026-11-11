@@ -1,0 +1,19 @@
+{
+  "schema": "sayd-jiad-tv-publication-v1",
+  "id": "jiad-lebanon-equestrian-20261109",
+  "expected_base": "507cd8bd0d9a903b46605031b2caca0a19d45412",
+  "approval_reference": "private:owner-jiad-publication-20261109",
+  "published": "2026-11-11",
+  "titles": {
+    "ar": "«جياد»: محطات من تاريخ الفروسية في لبنان",
+    "en": "Jiad: Moments from the history of equestrianism in Lebanon",
+    "fr": "Jiad : étapes de l’histoire équestre au Liban"
+  },
+  "description": {
+    "ar": "خاص صيد TV\nمقابلة مع الفنان علي حليحل: «الخيل دهر والصيد شهر!»\nمقابلة مع د. سارية المرزوق، جامعة هومبلدت في ألمانيا: ما مدى أهمية ميدان بيروت؟\nمقابلة مع د. علي بدوي، مسؤول المواقع الأثرية في جنوب لبنان: ما مكانة ميدان سباق العربات في صور في العالم القديم؟\nالوزير السابق نبيل دو فريج: كيف أنقذ الرئيس سركيس 350 حصانًا خلال اجتياح بيروت عام 1982؟",
+    "en": "Exclusive to Sayd TV\nAn interview with artist Ali Hleyhel: “Horses are for a lifetime; hunting is for a month!”\nAn interview with Dr Saria Almarzook, Humboldt University, Germany: How important is Beirut Hippodrome?\nAn interview with Dr Ali Badawi, responsible for archaeological sites in southern Lebanon: What place did Tyre’s chariot-racing hippodrome hold in the ancient world?\nFormer minister Nabil de Freige: How did President Sarkis save 350 horses during the 1982 invasion of Beirut?",
+    "fr": "En exclusivité sur Sayd TV\nEntretien avec l’artiste Ali Hleyhel : « Le cheval, c’est pour toute une vie ; la chasse, pour un mois ! »\nEntretien avec la Dre Saria Almarzook, de l’université Humboldt en Allemagne : quelle est l’importance de l’hippodrome de Beyrouth ?\nEntretien avec le Dr Ali Badawi, responsable des sites archéologiques du Liban-Sud : quelle place l’hippodrome de Tyr, consacré aux courses de chars, occupait-il dans le monde antique ?\nL’ancien ministre Nabil de Freige : comment le président Sarkis a-t-il sauvé 350 chevaux lors de l’invasion de Beyrouth en 1982 ?"
+  },
+  "poster_sha256": "02167fb7fddf770eac2ba66fe62851c5bb58b68155ae7b49bec7d8c6d74e6567",
+  "expected_channel_sha256": "4678908ecd5339213dbebb95dc42cd5be36629340d30e0cd1869f3310dc42441"
+}
