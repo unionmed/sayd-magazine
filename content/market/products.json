@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 3,
   "checked_at": "2026-11-05",
-  "link_type": "direct_seller",
+  "link_type": "awin_affiliate",
   "products": [
     {
       "id": "silverant-round-titanium-water-bottle",
@@ -41,7 +41,8 @@
         "width": 1600,
         "height": 1600,
         "sha256": "6539a3e5e18a7966d6794e6d38f861d6eb6b07460a2099ee7a699c6ab1318e9c"
-      }
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Fround-titanium-water-bottle%3Fvariant%3D44477767778482%26currency%3DUSD"
     },
     {
       "id": "silverant-ultralight-titanium-cup-with-lid",
@@ -81,7 +82,8 @@
         "width": 1600,
         "height": 1600,
         "sha256": "da566d0f72b2ec55ec6d444818a6977aeb71d3f063472309934e986238084bf9"
-      }
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Fultralight-titanium-cup-with-lid%3Fvariant%3D44542936121522%26currency%3DUSD"
     },
     {
       "id": "silverant-large-titanium-camping-pot-with-bail-handle",
@@ -121,7 +123,8 @@
         "width": 1600,
         "height": 1600,
         "sha256": "f0ee1fe5946f4d46ca0a9e4fe9311f6dc0d82e69dbafe6fb9156dcbca6cbc8dd"
-      }
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Flarge-titanium-camping-pot-with-bail-handle%3Fvariant%3D45297180180658%26currency%3DUSD"
     },
     {
       "id": "silverant-titanium-3-piece-cutlery-set",
@@ -161,7 +164,8 @@
         "width": 1600,
         "height": 1600,
         "sha256": "2ebe7baa4d0613093a214d8cf01afdca7aa8dab011f7f8bbfa66899defd2a613"
-      }
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Ftitanium-3-piece-cutlery-set%3Fvariant%3D41991615676594%26currency%3DUSD"
     },
     {
       "id": "silverant-titanium-camping-plates-900ml-30-43-fl-oz-1200ml-40-57-fl-oz",
@@ -201,7 +205,8 @@
         "width": 1600,
         "height": 1600,
         "sha256": "9ebe67cd842334959f3dbc200c237c1004dcef81d9f64ca8f9abd76973ad94de"
-      }
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Ftitanium-camping-plates-900ml-30-43-fl-oz-1200ml-40-57-fl-oz%3Fvariant%3D45048821645490%26currency%3DUSD"
     },
     {
       "id": "silverant-ultralight-titanium-coffee-french-press",
@@ -241,7 +246,8 @@
         "width": 1600,
         "height": 1600,
         "sha256": "5655a40ec6bf61fe6d9b3c1cfc49d06fabdf62533cbef8d0cddc8ca5c2b9c66a"
-      }
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Fultralight-titanium-coffee-french-press%3Fvariant%3D46008451006642%26currency%3DUSD"
     },
     {
       "id": "silverant-large-titanium-kettle-1400ml",
@@ -281,7 +287,8 @@
         "width": 1600,
         "height": 1600,
         "sha256": "6c9e73d01d5960b3aee98a6ed57c449d7d3b88055584b95b9b3b165a142f8ef8"
-      }
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Flarge-titanium-kettle-1400ml%3Fvariant%3D42100376436914%26currency%3DUSD"
     },
     {
       "id": "silverant-titanium-y-shape-tent-stakes-6-pack",
@@ -321,7 +328,8 @@
         "width": 1600,
         "height": 1600,
         "sha256": "c5ed0a08a2ef2c242efa6c693f7a8c458c2d8982c57730ae0333a17f97494bb4"
-      }
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Ftitanium-y-shape-tent-stakes-6-pack%3Fvariant%3D44549611061426%26currency%3DUSD"
     }
   ],
   "currency": "USD",
