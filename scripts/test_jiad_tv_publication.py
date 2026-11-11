@@ -81,6 +81,43 @@ class JiadTVTests(unittest.TestCase):
                     (root/path).write_bytes(c.git(ROOT,'show',BASE+':'+path))
                 tv.check_published(root)
 
+    def test_historical_reel_guard_accepts_jiad_and_rejects_tampering(self):
+        import test_hunting_reels as reels
+        import radar_tv_publication as radar
+        poster=self.poster;video=b'approved video'
+        value=dict(self.value,poster_sha256=c.sha256(poster))
+        with patch.multiple(tv,POSTER_HASH=c.sha256(poster),VIDEO_HASH=c.sha256(video),VIDEO_BYTES=len(video)):
+            changes=tv.expected_changes(ROOT,BASE,value,poster)
+            baseline_paths=[tv.CHANNEL,'content/features/hunting-reels-autumn-2026.json']
+            for prefix in ('','en/','fr/'):
+                baseline_paths += ['docs/'+prefix+'index.html','docs/'+prefix+tv.TV_PATH,'docs/'+prefix+'category/قوانين/index.html']
+            baseline={p:c.git(ROOT,'show',BASE+':'+p) for p in baseline_paths}
+            # Radar's independent media validator is covered by its own suite.
+            # Here confirm the legacy guard still invokes it while testing Jiad
+            # with its real validator and bounded fixture media.
+            baseline[radar.SOURCE]=b'{}'
+            payload=dict(baseline,**changes,**{tv.SOURCE:json.dumps(value).encode(),tv.POSTER:poster,tv.VIDEO:video})
+            with tempfile.TemporaryDirectory() as d:
+                root=Path(d)
+                def write(files):
+                    for path,data in files.items():
+                        q=root/path;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(data)
+                with patch.object(reels,'ROOT',root),patch.object(radar,'check_published') as radar_check:
+                    write(baseline);reels.check_reels();radar_check.assert_called_once_with(root)
+                    radar_check.reset_mock();write(payload);reels.check_reels();radar_check.assert_called_once_with(root)
+                    for mutation in ('unknown-record','reordered-history','eight-cards','video-bytes','missing-player'):
+                        with self.subTest(mutation=mutation):
+                            write(payload)
+                            channel=json.loads(payload[tv.CHANNEL])
+                            if mutation=='unknown-record':channel['videos'].insert(1,dict(channel['videos'][2],id='unapproved'))
+                            elif mutation=='reordered-history':channel['videos'][2],channel['videos'][3]=channel['videos'][3],channel['videos'][2]
+                            elif mutation=='eight-cards':channel['home_limit']=8
+                            elif mutation=='video-bytes':(root/tv.VIDEO).write_bytes(video+b'!')
+                            else:(root/'docs'/tv.TV_PATH).write_bytes(baseline['docs/'+tv.TV_PATH])
+                            if mutation in ('unknown-record','reordered-history','eight-cards'):
+                                (root/tv.CHANNEL).write_text(json.dumps(channel))
+                            with self.assertRaises((ValueError,AssertionError)):reels.check_reels()
+
     def test_request_routes_jiad_before_legacy_native(self):
         import publication_request as r
         with patch.object(r,'git',return_value=b'ignored'),patch.object(r,'request_scope',return_value=True),patch.object(c,'tree',return_value={}),patch.object(tv,'revision_paths',return_value=[tv.SOURCE]),patch.object(tv,'source_input',return_value=(self.value,{})) as load:

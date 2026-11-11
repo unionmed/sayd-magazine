@@ -1,0 +1,11 @@
+---
+title: "Bruant jaune"
+slug: "bruant-jaune"
+date: "2026-11-10"
+author: "Sayd"
+categories: ["موسوعة-الطيور"]
+featured: "media/publications/daily-birds-20261109/emberiza-citrinella.jpg"
+subtitle: "Emberiza citrinella"
+---
+
+<figure><img src="../../../media/publications/daily-birds-20261109/emberiza-citrinella.jpg" width="2048" height="1152" alt="Bruant jaune perché sur une branche, le bec ouvert" loading="lazy" decoding="async" style="display:block;width:100%;height:auto"><figcaption>Bruant jaune</figcaption></figure><p class="excerpt">Emberiza citrinella</p><h2>Identification, écologie et répartition</h2><p>Le Bruant jaune Emberiza citrinella possède un bec court adapté aux graines. La tête jaune du mâle attire le regard ; la femelle est plus striée et plus discrète. Pour le distinguer du Bruant zizi, il faut examiner ensemble la tête et le croupion.</p><p>Il fréquente les terres agricoles, les lisières et les haies. Les graines occupent une place importante dans son alimentation, qui comprend aussi des invertébrés. Des arbres seuls ne suffisent pas : couvert végétal et espaces ouverts de nourrissage doivent se compléter.</p><p>Le nid est installé au sol ou très près, dans une végétation dense. Le BTO indique habituellement trois ou quatre œufs. Les bordures herbeuses et les haies basses et épaisses offrent des abris.</p><p>Le RSPB associe le déclin britannique au manque de nourriture et de sites de nidification. Chaumes riches en graines et bordures préservées illustrent des mesures utiles. La tendance britannique ne démontre pas celle des populations dans les pays arabes.</p><p>Au Maghreb, sa présence est rare ou accidentelle ; un compte rendu algérien spécialisé de 2024 souligne la rareté des observations régionales.</p><p class="article-sources"><a href="https://www.bto.org/learn/about-birds/birdfacts/yellowhammer">www.bto.org — Bruant jaune</a> · <a href="https://www.rspb.org.uk/birds-and-wildlife/yellowhammer">www.rspb.org.uk — Bruant jaune</a> · <a href="https://www.rspb.org.uk/helping-nature/what-we-do/influence-government-and-business/farming/advice-for-farmers-helping-bird-species/yellowhammer-advice-for-farmers">www.rspb.org.uk — Bruant jaune</a> · <a href="https://magornitho.org/2024/03/yellowhammer-in-algeria/">magornitho.org — Bruant jaune</a></p><p class="photo-credit">Photo : steve b</p>

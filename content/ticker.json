@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "الرماية-الدولية-عقوبة-راتنر-2026",
+      "titles": {
+        "ar": "الاتحاد الدولي للرماية يعلن عدم أهلية ألكسندر راتنر ثلاث سنوات وغرامة 30 ألف يورو.",
+        "en": "ISSF announces three-year ineligibility sanction and €30,000 fine for Alexander Ratner.",
+        "fr": "L’ISSF annonce trois ans d’inéligibilité et 30 000 euros d’amende pour Alexander Ratner."
+      },
+      "title": "الاتحاد الدولي للرماية يعلن عدم أهلية ألكسندر راتنر ثلاث سنوات وغرامة 30 ألف يورو."
+    },
+    {
       "slug": "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
       "titles": {
         "ar": "ليبيا: حظر صيد الحيوانات والطيور البرية في سرت ومحيطها لثلاث سنوات",
@@ -81,15 +90,6 @@
         "fr": "De Dubaï à une course dotée de deux millions de dollars… Bin Harmash s’inspire du Japon"
       },
       "title": "من دبي إلى سباق المليوني دولار… بن حرمش يستلهم نجاح اليابان"
-    },
-    {
-      "slug": "عندما-تهين-الطريدة-أنت-تهين-نفسك",
-      "titles": {
-        "ar": "عندما تهين الطريدة… أنت تهين نفسك!",
-        "en": "When You Humiliate Your Quarry… You Humiliate Yourself!",
-        "fr": "Quand vous humiliez votre gibier… vous vous humiliez vous-même !"
-      },
-      "title": "عندما تهين الطريدة… أنت تهين نفسك!"
     }
   ]
 }

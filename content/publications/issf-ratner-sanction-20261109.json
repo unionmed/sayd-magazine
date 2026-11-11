@@ -1,0 +1,105 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "issf-ratner-sanction-20261109",
+  "expected_base": "fd5ed9bfebe015beb8b0bc10120629515e3760fb",
+  "approval_reference": "private:issf-ratner-20261109-approved-text-and-image-libfile_57e9d13be3b081919f83be90194479bd; homepage shooting door and shortened news ticker approved; no social publication requested.",
+  "bank_search_reference": "Checked all 302 image files in Sayd picture for use and the complete 04_Shooting & Gear folder on 2026-11-09. Three shooter photographs were unsuitable for an unrelated sanctions story. No Ratner photograph found. Official ISSF image had no verified reuse permission. Selected licensed Commons facility photograph approved separately.",
+  "photos": [
+    {
+      "id": "hochbrueck-aerial",
+      "path": "docs/media/publications/issf-ratner-sanction-20261109/hochbrueck-aerial-reinhard-fraunholz.jpg",
+      "sha256": "7e3a77f877bd0cfb246c252ae740f9167db7d26012728b345d79a60ad7176732",
+      "source_sha256": "3c6708251e92e238eb3fcdc6ef8b663ae35fbe02909bf4eccb602d9ec9ae8794",
+      "source_reference": "Reinhard Fraunholz in cooperation with Bayerischer Sportschützenbund (BSSB), own work. Olympic shooting facility in Garching-Hochbrück near Munich, Germany. Commons 1280px rendition, unchanged by Sayd. Archive illustration, not Ratner or the disciplinary proceedings. Exact capture date not asserted because source title, EXIF and description dates differ. Rights verified on 2026-11-09.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Luftbild_der_Olympia-Schie%C3%9Fanlage_Garching-Hochbr%C3%BCck_-_Sommer_2023_-_Komplette_%C3%9Cbersicht.jpg",
+      "rights": {
+        "status": "licensed",
+        "statement": "Copyright holder expressly licenses the photograph under CC BY-SA 4.0. Credit Reinhard Fraunholz in cooperation with Bayerischer Sportschützenbund, link Commons source and license, identify changes and preserve share-alike for adaptations. Published bytes are the unchanged Commons 1280px rendition. No endorsement implied.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Luftbild_der_Olympia-Schie%C3%9Fanlage_Garching-Hochbr%C3%BCck_-_Sommer_2023_-_Komplette_%C3%9Cbersicht.jpg",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "alt": {
+        "ar": "مشهد جوي لميادين الرماية والمنشآت المحاطة بالأشجار في غارشينغ–هوخبروك قرب ميونيخ.",
+        "en": "Aerial view of shooting ranges and buildings surrounded by trees in Garching-Hochbrück near Munich.",
+        "fr": "Vue aérienne des stands de tir et des bâtiments entourés d’arbres à Garching-Hochbrück, près de Munich."
+      },
+      "caption": {
+        "ar": "مشهد جوي أرشيفي لمنشأة الرماية الأولمبية قرب ميونيخ. صورة توضيحية لا توثق القضية الواردة في الخبر.",
+        "en": "Archive aerial view of the Olympic shooting facility near Munich. Illustrative image, unrelated to the case.",
+        "fr": "Vue aérienne d’archive du site olympique de tir près de Munich. Image d’illustration sans lien avec l’affaire."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الرماية-الدولية-عقوبة-راتنر-2026",
+        "en": "issf-ratner-three-year-ineligibility-2026",
+        "fr": "issf-ratner-trois-ans-ineligibilite-2026"
+      },
+      "published": "2026-11-09",
+      "author": {"ar": "صيد", "en": "Sayd", "fr": "Sayd"},
+      "primary_door": "gear",
+      "archives": ["gear"],
+      "kind": "article",
+      "photos": ["hochbrueck-aerial"],
+      "distribution": {"placement": "door", "ticker": true},
+      "translations": {
+        "ar": {
+          "title": "الرماية الدولية: عدم أهلية راتنر ثلاث سنوات وغرامة 30 ألف يورو",
+          "subtitle": "الاتحاد الدولي للرماية يعلن عقوبات مرتبطة بانتخابات رئاسة الاتحاد الأوروبي للرماية عام 2025.",
+          "meta_description": "أعلن الاتحاد الدولي للرماية عدم أهلية ألكسندر راتنر ثلاث سنوات وغرامة 30 ألف يورو على خلفية انتخابات رئاسة الاتحاد الأوروبي للرماية عام 2025.",
+          "ticker_title": "الاتحاد الدولي للرماية يعلن عدم أهلية ألكسندر راتنر ثلاث سنوات وغرامة 30 ألف يورو.",
+          "sections": [{"paragraphs": [
+            "أعلن الاتحاد الدولي لرياضة الرماية، في 8 تشرين الثاني 2026، فرض عقوبة عدم أهلية لمدة ثلاث سنوات وغرامة قدرها 30 ألف يورو على ألكسندر راتنر، عضو مجلس الاتحاد ولجنته التنفيذية، على خلفية انتخابات رئاسة الاتحاد الأوروبي للرماية التي جرت في يريفان في تشرين الأول 2025.",
+            "وبحسب البيان، خلصت الهيئة المستقلة للفصل في القضايا التابعة لوحدة النزاهة إلى مخالفات تتصل بالتأثير غير المشروع في العملية الانتخابية، وتصريحات تمييزية على أساس الجنس، وإخفاء تسجيلات الانتخابات خلال التحقيق.",
+            "صدر القرار في 6 تشرين الثاني، وهو نافذ فورًا. ويجوز الطعن فيه أمام محكمة التحكيم الرياضية، لكن الطعن لا يوقف تنفيذ العقوبات إلا بقرار من المحكمة.",
+            "أما أثر العقوبة على ترشح راتنر لرئاسة الاتحاد الدولي، فأحال البيان البت فيه إلى لجنة الانتخابات والترشيحات مطلع الأسبوع التالي.",
+            "وكان اسم راتنر ضمن قائمة المرشحين المنشورة في 14 تشرين الأول، قبل الانتخابات المقررة في روما يومي 13 و14 كانون الأول. ونبّه الاتحاد عند نشر القائمة إلى أن الأهلية قابلة لإعادة التقييم إذا ظهرت معلومات جديدة أو تغيّرت الظروف."
+          ]}],
+          "sources": [
+            {"label": "بيان الاتحاد الدولي للرماية، 8 تشرين الثاني 2026", "url": "https://www.issf-sports.org/news/5329"},
+            {"label": "إعلان قائمة المرشحين وشروط الأهلية، 14 تشرين الأول 2026", "url": "https://www.issf-sports.org/news/5275"}
+          ],
+          "photo_credit": "تصوير: Reinhard Fraunholz، بالتعاون مع Bayerischer Sportschützenbund. المصدر: Wikimedia Commons. الترخيص: CC BY-SA 4.0. نسخة المصدر بعرض 1280 بكسل، دون تعديل من صيد."
+        },
+        "en": {
+          "title": "International shooting: Ratner handed three-year ineligibility sanction and €30,000 fine",
+          "subtitle": "The ISSF announces sanctions against Alexander Ratner over the European Shooting Confederation’s 2025 presidential election.",
+          "meta_description": "The ISSF announces a three-year ineligibility sanction and €30,000 fine for Alexander Ratner over the European Shooting Confederation’s 2025 presidential election.",
+          "ticker_title": "ISSF announces three-year ineligibility sanction and €30,000 fine for Alexander Ratner.",
+          "sections": [{"paragraphs": [
+            "The International Shooting Sport Federation (ISSF) announced on 8 November 2026 that Alexander Ratner, a member of its Council and Executive Committee, had been sanctioned with a three-year period of ineligibility and a €30,000 fine in connection with the European Shooting Confederation’s presidential election held in Yerevan in October 2025.",
+            "According to the statement, the Integrity Unit’s independent Adjudicatory Panel found violations involving improper influence over the electoral process, gender-based discriminatory statements and the concealment of election recordings during the investigation.",
+            "The decision was issued on 6 November and is immediately enforceable. It may be appealed before the Court of Arbitration for Sport, but an appeal does not suspend enforcement of the sanctions unless the court orders otherwise.",
+            "As for the sanction’s implications for Ratner’s candidacy for the ISSF presidency, the statement said the Electoral and Nominations Commission would decide the matter early the following week.",
+            "Ratner’s name appeared on the candidate list published on 14 October, ahead of the elections scheduled for 13–14 December in Rome. When publishing the list, the federation noted that eligibility could be reassessed if new information emerged or circumstances changed."
+          ]}],
+          "sources": [
+            {"label": "ISSF statement, 8 November 2026", "url": "https://www.issf-sports.org/news/5329"},
+            {"label": "Candidate list and eligibility conditions, 14 October 2026", "url": "https://www.issf-sports.org/news/5275"}
+          ],
+          "photo_credit": "Photo: Reinhard Fraunholz, in cooperation with Bayerischer Sportschützenbund. Source: Wikimedia Commons. License: CC BY-SA 4.0. Source-provided 1280px rendition, unchanged by Sayd."
+        },
+        "fr": {
+          "title": "Tir international : trois ans d’inéligibilité et 30 000 euros d’amende pour Ratner",
+          "subtitle": "L’ISSF annonce des sanctions contre Alexander Ratner liées à l’élection présidentielle de la Confédération européenne de tir de 2025.",
+          "meta_description": "L’ISSF annonce trois ans d’inéligibilité et 30 000 euros d’amende pour Alexander Ratner après l’élection présidentielle de la Confédération européenne de tir de 2025.",
+          "ticker_title": "L’ISSF annonce trois ans d’inéligibilité et 30 000 euros d’amende pour Alexander Ratner.",
+          "sections": [{"paragraphs": [
+            "La Fédération internationale de tir sportif (ISSF) a annoncé, le 8 novembre 2026, qu’Alexander Ratner, membre de son Conseil et de son Comité exécutif, avait été sanctionné d’une période d’inéligibilité de trois ans et d’une amende de 30 000 euros dans le cadre de l’élection à la présidence de la Confédération européenne de tir, organisée à Erevan en octobre 2025.",
+            "Selon le communiqué, la formation de jugement indépendante de l’Unité d’intégrité a constaté des violations portant sur une influence indue sur le processus électoral, des déclarations discriminatoires fondées sur le sexe et la dissimulation d’enregistrements du scrutin au cours de l’enquête.",
+            "Rendue le 6 novembre, la décision est immédiatement exécutoire. Elle peut faire l’objet d’un recours devant le Tribunal arbitral du sport, mais ce recours ne suspend pas l’exécution des sanctions, sauf décision contraire du Tribunal.",
+            "Concernant les conséquences de la sanction sur la candidature de Ratner à la présidence de l’ISSF, le communiqué indique que la Commission électorale et des nominations se prononcerait au début de la semaine suivante.",
+            "Le nom de Ratner figurait sur la liste des candidats publiée le 14 octobre, avant les élections prévues à Rome les 13 et 14 décembre. Lors de la publication de cette liste, la Fédération avait précisé que l’éligibilité pourrait être réévaluée en cas de nouvelles informations ou de changement de circonstances."
+          ]}],
+          "sources": [
+            {"label": "Communiqué de l’ISSF, 8 novembre 2026", "url": "https://www.issf-sports.org/news/5329"},
+            {"label": "Liste des candidats et conditions d’éligibilité, 14 octobre 2026", "url": "https://www.issf-sports.org/news/5275"}
+          ],
+          "photo_credit": "Photo : Reinhard Fraunholz, en coopération avec le Bayerischer Sportschützenbund. Source : Wikimedia Commons. Licence : CC BY-SA 4.0. Version de 1280 pixels fournie par la source, sans modification par Sayd."
+        }
+      }
+    }
+  ]
+}
