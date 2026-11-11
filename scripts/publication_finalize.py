@@ -126,6 +126,7 @@ def safe_output_path(value):
                      "content/editorial-revisions/qatar-shooting-update-20261105.json",
                      "content/editorial-revisions/qatar-shooting-update-20261106.json",
                      "content/editorial-revisions/qatar-shooting-update-20261109.json",
+                     "content/editorial-revisions/qatar-shooting-update-20261111.json",
                      "content/editorial-revisions/qatar-updates-ticker-20261106.json",
                      "content/editorial-revisions/dubai-carnival-update-20261107.json"}
         or (path.parts[:2] in {("content", "posts"), ("content", "en"), ("content", "fr")}
