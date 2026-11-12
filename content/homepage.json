@@ -246,7 +246,17 @@
     "البط-الرخامي",
     "الإوز-الأغر-الصغير",
     "الإوز-البرنت",
-    "الإوز-أحمر-الصدر"
+    "الإوز-أحمر-الصدر",
+    "القبرة-الشرقية",
+    "قبرة-تمنك-القرناء",
+    "القبرة-قصيرة-الأصابع-الكبيرة",
+    "يمامة-ناماكوا",
+    "النورس-الأسحم",
+    "الخرشنة-العرفاء-الصغيرة",
+    "الأطيش-البني",
+    "نقار-الخشب-السوري",
+    "الأبلق-أبيض-التاج",
+    "الأبلق-الأسود"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -451,7 +461,17 @@
     "الإوز-الأغر-الصغير",
     "الإوز-البرنت",
     "الإوز-أحمر-الصدر",
-    "جورج-سكوت-19-خيلا-قاعدة-ميدان-دبي-2026"
+    "جورج-سكوت-19-خيلا-قاعدة-ميدان-دبي-2026",
+    "القبرة-الشرقية",
+    "قبرة-تمنك-القرناء",
+    "القبرة-قصيرة-الأصابع-الكبيرة",
+    "يمامة-ناماكوا",
+    "النورس-الأسحم",
+    "الخرشنة-العرفاء-الصغيرة",
+    "الأطيش-البني",
+    "نقار-الخشب-السوري",
+    "الأبلق-أبيض-التاج",
+    "الأبلق-الأسود"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -989,7 +1009,17 @@
     "الإوز-البرنت": "birds",
     "الإوز-أحمر-الصدر": "birds",
     "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026": "hunting",
-    "جورج-سكوت-19-خيلا-قاعدة-ميدان-دبي-2026": "equestrian"
+    "جورج-سكوت-19-خيلا-قاعدة-ميدان-دبي-2026": "equestrian",
+    "القبرة-الشرقية": "birds",
+    "قبرة-تمنك-القرناء": "birds",
+    "القبرة-قصيرة-الأصابع-الكبيرة": "birds",
+    "يمامة-ناماكوا": "birds",
+    "النورس-الأسحم": "birds",
+    "الخرشنة-العرفاء-الصغيرة": "birds",
+    "الأطيش-البني": "birds",
+    "نقار-الخشب-السوري": "birds",
+    "الأبلق-أبيض-التاج": "birds",
+    "الأبلق-الأسود": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -2983,6 +3013,96 @@
         "ar": "صورة أرشيفية توضيحية لحصان سباق وفارس يرتدي الأحمر والأبيض على مضمار عشبي.",
         "en": "Generic archival photograph of a racehorse and a jockey in red and white on turf.",
         "fr": "Photo d’archives illustrative d’un cheval de course et d’un jockey en rouge et blanc sur gazon."
+      }
+    },
+    "القبرة-الشرقية": {
+      "image": "media/publications/daily-birds-20261112/melanocorypha-calandra.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قبرة بنية تطير بجناحين ممدودين وتظهر بقعة سوداء على جانب العنق وحافة جناح فاتحة.",
+        "en": "A brown lark in flight, showing a black neck patch and a pale trailing wing edge.",
+        "fr": "Une alouette brune en vol, montrant une tache noire au cou et un bord postérieur des ailes clair."
+      }
+    },
+    "قبرة-تمنك-القرناء": {
+      "image": "media/publications/daily-birds-20261112/eremophila-bilopha.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قبرة رملية تقف فوق صخرة، بوجه أسود وأبيض وشريط أسود على الصدر.",
+        "en": "A sandy lark standing on a rock, with a black-and-white face and black breast band.",
+        "fr": "Une alouette couleur sable sur un rocher, au visage noir et blanc et à la bande pectorale noire."
+      }
+    },
+    "القبرة-قصيرة-الأصابع-الكبيرة": {
+      "image": "media/publications/daily-birds-20261112/calandrella-brachydactyla.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "قبرة صغيرة بنية مخططة تقف على أرض حمراء تتخللها نباتات خضراء.",
+        "en": "A small streaked brown lark standing on reddish ground among low green plants.",
+        "fr": "Une petite alouette brune striée sur un sol rougeâtre, parmi des plantes vertes basses."
+      }
+    },
+    "يمامة-ناماكوا": {
+      "image": "media/publications/daily-birds-20261112/oena-capensis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "ذكر يمامة ناماكوا على غصن، بوجه أسود ومنقار ثنائي اللون وذيل طويل مدبب.",
+        "en": "A male Namaqua Dove perched on a branch, showing a black face, two-toned bill and long pointed tail.",
+        "fr": "Une Tourterelle masquée mâle sur une branche, au visage noir, au bec bicolore et à la longue queue pointue."
+      }
+    },
+    "النورس-الأسحم": {
+      "image": "media/publications/daily-birds-20261112/ichthyaetus-hemprichii.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "نورس داكن الرأس يقلع من الماء، رافعًا جناحيه وتظهر ساقاه الصفراوان.",
+        "en": "A dark-headed gull taking off from the water with raised wings and yellow legs visible.",
+        "fr": "Un goéland à tête sombre décolle de l’eau, les ailes relevées et les pattes jaunes visibles."
+      }
+    },
+    "الخرشنة-العرفاء-الصغيرة": {
+      "image": "media/publications/daily-birds-20261112/thalasseus-bengalensis.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "سرب من الخراشن الرمادية والبيضاء يطير بمناقير برتقالية فوق خلفية خضراء وزرقاء.",
+        "en": "A flock of grey-and-white terns with orange bills flying against a green and blue background.",
+        "fr": "Une troupe de sternes grises et blanches aux becs orange vole sur un fond vert et bleu."
+      }
+    },
+    "الأطيش-البني": {
+      "image": "media/publications/daily-birds-20261112/sula-leucogaster.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "أطيش بالغ بني الرأس والصدر وأبيض البطن يقف بجوار فرخ زغبي على الرمل.",
+        "en": "An adult booby with a brown head and breast and white belly stands beside a downy chick on sand.",
+        "fr": "Un fou adulte à la tête et à la poitrine brunes et au ventre blanc se tient près d’un poussin duveteux sur le sable."
+      }
+    },
+    "نقار-الخشب-السوري": {
+      "image": "media/publications/daily-birds-20261112/dendrocopos-syriacus.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "نقار خشب أسود وأبيض يتمسك بجذع مائل، مع احمرار خلف الرأس وتحت الذيل.",
+        "en": "A black-and-white woodpecker clings to a sloping trunk, with red on the nape and beneath the tail.",
+        "fr": "Un pic noir et blanc s’agrippe à un tronc incliné, avec du rouge à la nuque et sous la queue."
+      }
+    },
+    "الأبلق-أبيض-التاج": {
+      "image": "media/publications/daily-birds-20261112/oenanthe-leucopyga.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "أبلق أسود ذو تاج أبيض يقف فوق أرض رملية مضاءة بالشمس.",
+        "en": "A black wheatear with a white crown standing on sunlit sandy ground.",
+        "fr": "Un traquet noir à la calotte blanche se tient sur un sol sableux ensoleillé."
+      }
+    },
+    "الأبلق-الأسود": {
+      "image": "media/publications/daily-birds-20261112/oenanthe-leucura.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "أبلق داكن الريش يقف فوق صخرة، ويظهر البياض أسفل الذيل.",
+        "en": "A dark-plumaged wheatear standing on a rock, with white visible beneath its tail.",
+        "fr": "Un traquet au plumage sombre se tient sur un rocher, avec du blanc visible sous la queue."
       }
     }
   },
