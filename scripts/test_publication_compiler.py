@@ -876,7 +876,8 @@ class RealSiteTests(unittest.TestCase):
             self.assertEqual(page.xpath('string(//main//h1)'), article['translations'][lang]['title'])
             self.assertNotIn('article-updated', path.read_text())
             self.assertEqual(page.xpath('//link[@rel="canonical"]/@href'), [compiler.public_url(article, lang)])
-            self.assertTrue(any(x['path'] == f'docs/assets/search/index-{lang}.json' for x in plan['changes']))
+            active = 'manifest' if (stage / f'docs/assets/search/manifest-{lang}.json').exists() else 'index'
+            self.assertTrue(any(x['path'] == f'docs/assets/search/{active}-{lang}.json' for x in plan['changes']))
         self.assertNotIn('docs/index.html', [x['path'] for x in plan['changes']])
         subprocess.run(['python', 'scripts/check_publication_contract.py', '--base', self.base], cwd=stage, check=True)
         subprocess.run(['python', 'scripts/test_archive_access.py'], cwd=stage, check=True)

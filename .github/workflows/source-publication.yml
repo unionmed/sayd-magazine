@@ -95,6 +95,8 @@ jobs:
         run: |
           python -m unittest discover -s scripts -p 'test_publication_compiler.py' -v
           python -m unittest discover -s scripts -p 'test_publication_finalize.py' -v
+          python -m unittest discover -s scripts -p 'test_search_storage.py' -v
+          python -m unittest discover -s scripts -p 'test_revision_search_v3.py' -v
           python -m unittest discover -s scripts -p 'test_publication_guard.py' -v
           python -m unittest discover -s scripts -p 'test_caption_revision.py' -v
           python -m unittest discover -s scripts -p 'test_editorial_revision.py' -v

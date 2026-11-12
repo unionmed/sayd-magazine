@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Search page, regeneration, exact chrome-only gate and archive invariants."""
-import hashlib, json, os, re, subprocess
+import hashlib, json, os, re, subprocess, tempfile
 from pathlib import Path
 from unittest.mock import patch
 from lxml import html
@@ -10,7 +10,29 @@ import seo_foundation as seo
 ROOT=search.ROOT
 BASE=os.environ.get('SAYD_BASE_COMMIT','591e345812138cb1a145d49a4a6c721b200ed99c')
 
+def test_script_version():
+    with tempfile.TemporaryDirectory() as directory, patch.object(search, 'DOCS', Path(directory)):
+        for lang in search.COPY:
+            assert search.search_script_version(lang) == '20261017-facets2'
+        manifests = Path(directory) / 'assets/search'
+        manifests.mkdir(parents=True)
+        (manifests / 'manifest-ar.json').write_text('{}')
+        for lang in search.COPY:
+            try:
+                search.search_script_version(lang)
+            except ValueError as error:
+                assert 'Partial search manifest' in str(error)
+            else:
+                raise AssertionError('Partial migration must not select a cached client')
+        for lang in ('en', 'fr'):
+            (manifests / f'manifest-{lang}.json').write_text('{}')
+        for lang in search.COPY:
+            assert search.search_script_version(lang) == '20261112-shards3'
+
+
+
 def run():
+    test_script_version()
     for lang,route in search.ROUTES.items():
         path=search.DOCS/route/'index.html'; text=path.read_text(); tree=html.fromstring(text)
         assert tree.get('lang')==lang

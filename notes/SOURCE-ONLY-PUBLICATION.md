@@ -454,3 +454,54 @@ credits, taxonomy, category cards, homepage and ticker remain unchanged. The
 update date is 8 November 2026. Repetition, arbitrary text/paths, stale originals
 and nonempty payloads fail closed. Normal native compilation, independent
 review, exact-head checks, protected merge and live verification remain required.
+
+## Bounded v3 search storage — November 12 infrastructure repair
+
+The separately reviewed infrastructure migration initializes language manifests
+`docs/assets/search/manifest-{ar,en,fr}.json` and immutable, SHA-256-addressed
+JSON shards under `docs/assets/search/shards/`. It contains only already published
+content. The legacy `index-{ar,en,fr}.json` files remain byte-identical snapshots;
+new v3 publications and revisions never rewrite or delete them. Existing articles,
+media, provenance, dates, archive cards, taxonomy and ranking stay unchanged.
+An already-open or cached old search client sees its old snapshot until reload;
+the three search pages select the cache-busted v3 client. New clients do not fall
+back to snapshots if any active shard fails.
+
+The logical corpus remains the exact version-2 record model produced from full
+HTML bodies. Only storage changes. Deterministic URL-hash partitions split until
+each complete-record shard fits 512 KiB of the writer's exact JSON wire encoding.
+One individually oversized record fails explicitly; nothing is shortened. Each
+manifest carries language, categories, complete article count and closed local
+shard paths with SHA-256, byte count and record count. The reader verifies all
+shards, rejects duplicate keys/URLs, and reconstructs the full sorted logical
+corpus before search. Four concurrent same-origin requests bound client fan-out;
+queries remain entirely local. Manifests revalidate; immutable shard names keep
+cached manifests internally consistent. Old shards are retained, not collected.
+The manifest itself and shard count have fail-closed resource limits.
+
+For source-only additions the compiler independently compares complete before and
+after logical corpora, preserves every historical record and all metadata, and
+requires exactly the deterministic changed storage outputs. Existing shard bytes
+are immutable. A source request cannot initiate a format migration or alter a
+legacy snapshot. A no-content build remains byte-identical. Historical bases
+without manifests continue to replay the original v2 format; malformed manifests
+or missing referenced shards never select that compatibility path.
+
+Caption and fixed editorial operations retain their original article preconditions,
+exact logical changes and authorization boundaries. The revision adapter maps
+only their previously bounded logical search outputs to manifests/new shards,
+reconstructs the result independently, and accepts only those exact generated
+bytes. Existing physical target preconditions are hashed, including changed manifests;
+photo-replacement payload search hashes identify the serialized complete logical
+index, not the frozen snapshot. New shards must be
+content-addressed and absent. This is not permission for new editorial changes,
+source-controlled output paths, arbitrary new files, or deletion. Documentation
+above that counts three physical search indexes describes historical v2 outputs;
+v3 uses the corresponding exact manifest and shard output set instead.
+
+The native writer is unchanged: 4 MiB per request, 64 entries, at most 64 batches,
+full preflight before mutation, intermediate/final tree identity, current-base
+checks and review-only ref creation all remain required. No fallback upload,
+credential, permission, workflow trust change, automatic retry, merge or deployment
+is introduced. The infrastructure repair must merge separately before rebuilding
+any pending approved source publication on the new exact current base.

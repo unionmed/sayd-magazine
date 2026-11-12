@@ -93,7 +93,7 @@ def expected_changes(root, base, record):
     import publication_compiler as compiler
     import sync_tickers
     import ticker_policy
-    from editorial_revision import read_base_blobs
+    from revision_search import logical_blobs as read_base_blobs
     from ticker_scope import homepage_only_contract
 
     root = Path(root)

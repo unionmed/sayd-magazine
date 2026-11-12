@@ -206,6 +206,8 @@ def source_input(root, base, source):
 def compile_source(root, base, source, output, report_path, allow_distribution=False):
     import publication_compiler as compiler
     import build_search_index as search
+    import search_storage
+    from revision_search import reader, physical_outputs
     import sys
     root, output = Path(root).resolve(), Path(output).resolve()
     require(compiler.git(root, 'rev-parse', 'HEAD').decode().strip() == base, 'Caption compilation must execute trusted BASE')
@@ -224,9 +226,8 @@ def compile_source(root, base, source, output, report_path, allow_distribution=F
     from urllib.parse import quote
     for language in LANGS:
         target = 'docs/assets/search/index-' + language + '.json'
-        old_raw = compiler.read_blob(root, before[target])
-        old_index = json.loads(old_raw)
-        new_index = json.loads((output / target).read_text())
+        old_index = search_storage.load_index(reader(root, before), language)
+        new_index = search_storage.load_index(lambda p: (output / p).read_bytes(), language)
         wanted = copy.deepcopy(old_index)
         route = '/' + ('' if language == 'ar' else language + '/') + 'posts/' + article['slugs'][language] + '/'
         rows = [row for row in wanted['articles'] if row['url'] == quote(route, safe='/@-._~')]
@@ -242,12 +243,14 @@ def compile_source(root, base, source, output, report_path, allow_distribution=F
             rows[0]['body'] = rows[0]['body'].replace(old_credit, new_credit)
         require(new_index == wanted, 'Only selected indexed caption and optional capture-year credit may change')
         expected[target] = search.serialize(wanted)
-        require((output / target).read_bytes() == expected[target], 'Search serialization mismatch')
+    expected = physical_outputs(root, before, expected)
+    for target, data in expected.items():
+        require((output / target).read_bytes() == data, 'Search serialization mismatch')
     expected[path] = raw
     compiler.git(output, 'add', '--all')
     generated_tree = compiler.git(output, 'write-tree').decode().strip()
     after = compiler.tree(output, generated_tree)
-    require(set(changed_paths(before, after)) == set(expected), 'Only six article mirrors, three derived indexes and one revision may change')
+    require(set(changed_paths(before, after)) == set(expected), 'Only exact article mirrors, computed search assets and one revision may change')
     entries = []
     for target, data in sorted(expected.items()):
         require(after.get(target) == ('100644', 'blob', compiler.blob_sha(data)), 'Unexpected caption output bytes/mode')

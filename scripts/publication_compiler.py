@@ -120,7 +120,7 @@ def allowed_output_path(path):
                 or re.fullmatch(r'content/(?:posts|en|fr)/[^/]+\.md', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?(?:posts/[^/]+|category/[^/]+|articles|stories|interviews)/index\.html', path)
                 or re.fullmatch(r'docs/(?:(?:en|fr)/)?index\.html', path)
-                or re.fullmatch(r'docs/assets/search/index-(?:ar|en|fr)\.json', path)
+                or __import__('search_storage').is_search_path(path)
                 or re.fullmatch(r'docs/s/[a-f0-9]{10}/index\.html', path)
                 # A changed ticker may touch existing static pages, but only its exact loops.
                 or (path.startswith('docs/') and path.endswith('.html')))
@@ -637,8 +637,31 @@ def preservation(root, stage, before, records, changes, allow_distribution):
     from ticker_scope import homepage_only
     ticker = allow_distribution and any(a['distribution']['ticker'] for a in articles)
     legacy_internal_ticker = ticker and not homepage_only(stage)
+    import search_storage as storage
+    def read_base(path):
+        if path not in before:
+            raise FileNotFoundError(path)
+        require(before[path][:2] == ('100644', 'blob'), 'Nonregular search storage')
+        return read_blob(root, before[path])
+    search_changes = {p for p in changes if storage.is_search_path(p)}
+    expected_search_changes = set()
+    if search_changes:
+        for lang in LANGS:
+            previous = storage.load_index(read_base, lang)
+            current = storage.load_index(lambda p: (stage / p).read_bytes(), lang)
+            require({k: v for k, v in previous.items() if k != 'articles'} == {k: v for k, v in current.items() if k != 'articles'}, 'Search metadata changed')
+            current_rows = {a['url']: a for a in current['articles']}
+            require(all(current_rows.get(a['url']) == a for a in previous['articles']), 'Historical search record changed/missing')
+            # Full deterministic storage proof rejects extra hidden shards, legacy
+            # snapshot edits, and format migration smuggled in a source request.
+            expected = storage.output_index(current, read_base)
+            expected_search_changes.update(expected)
+            require(all((stage / p).read_bytes() == raw for p, raw in expected.items()), 'Search output differs from deterministic storage')
+        require(search_changes == expected_search_changes, 'Unexpected search storage output set')
     for path in changes:
         require(allowed_output_path(path), 'Unexpected generated file: ' + path)
+        if storage.is_search_path(path):
+            continue  # Exact complete-corpus and storage proof above.
         if path not in before:
             continue
         old = read_blob(root, before[path])
@@ -696,11 +719,6 @@ def preservation(root, stage, before, records, changes, allow_distribution):
         elif path == 'content/ticker.json':
             previous, current = loads(old.decode()), loads(new.decode())
             require(ticker and {k: v for k, v in previous.items() if k != 'items'} == {k: v for k, v in current.items() if k != 'items'}, 'Ticker metadata changed')
-        elif re.fullmatch(r'docs/assets/search/index-(?:ar|en|fr)\.json', path):
-            previous, current = json.loads(old), json.loads(new)
-            require({k: v for k, v in previous.items() if k != 'articles'} == {k: v for k, v in current.items() if k != 'articles'}, 'Search metadata changed')
-            old_rows = previous['articles']; current_rows = {a['url']: a for a in current['articles']}
-            require(all(current_rows.get(a['url']) == a for a in old_rows), 'Historical search record changed/missing')
         elif path not in CONFIGS and not re.fullmatch(r'docs/(?:(?:en|fr)/)?index\.html|docs/assets/search/index-(?:ar|en|fr)\.json', path):
             raise ValueError('Historical source/asset modification: ' + path)
 

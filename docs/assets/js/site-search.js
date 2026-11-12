@@ -27,7 +27,124 @@
       return {article: a, score};
     }).filter(Boolean).sort((a,b) => b.score-a.score || b.article.date.localeCompare(a.article.date) || a.article.url.localeCompare(b.article.url)).map(row => row.article);
   }
-  if (typeof module !== 'undefined' && module.exports) module.exports = {normalize, prepare, search};
+  function strictJSON(text) {
+    let position = 0;
+    function space() { while (/[\t\n\r ]/.test(text[position] || '!')) position++; }
+    function string() {
+      const start = position++;
+      for (;;) {
+        if (position >= text.length) throw new Error('JSON string');
+        const c = text[position++];
+        if (c === '"') return JSON.parse(text.slice(start, position));
+        if (c === '\\') position++;
+      }
+    }
+    function value(depth) {
+      if (depth > 32) throw new Error('JSON nesting');
+      space(); const c = text[position];
+      if (c === '"') { string(); return; }
+      if (c === '{' || c === '[') {
+        const object = c === '{', end = object ? '}' : ']', keys = new Set();
+        position++; space();
+        if (text[position] === end) { position++; return; }
+        for (;;) {
+          space();
+          if (object) {
+            if (text[position] !== '"') throw new Error('JSON key');
+            const key = string();
+            if (keys.has(key)) throw new Error('duplicate JSON key');
+            keys.add(key); space();
+            if (text[position++] !== ':') throw new Error('JSON colon');
+          }
+          value(depth + 1); space();
+          const separator = text[position++];
+          if (separator === end) return;
+          if (separator !== ',') throw new Error('JSON separator');
+        }
+      }
+      const token = /^(?:true|false|null|-?(?:0|[1-9][0-9]*)(?:\.[0-9]+)?(?:[eE][+-]?[0-9]+)?)/.exec(text.slice(position));
+      if (!token) throw new Error('JSON value');
+      position += token[0].length;
+    }
+    value(0); space();
+    if (position !== text.length) throw new Error('JSON trailing content');
+    return JSON.parse(text);
+  }
+  function exactKeys(value, names) {
+    return value && typeof value === 'object' && !Array.isArray(value) &&
+      Object.keys(value).sort().join(',') === names.slice().sort().join(',');
+  }
+  function validArticle(a, lang) {
+    const fields = ['url','title','body','keywords','date','category','categories','image','excerpt'];
+    if (!exactKeys(a, fields) || fields.filter(k => k !== 'categories').some(k => typeof a[k] !== 'string') ||
+        !Array.isArray(a.categories) || a.categories.some(v => typeof v !== 'string')) return false;
+    const prefix = lang === 'ar' ? '' : lang + '/';
+    return new RegExp('^/' + prefix + 'posts/[^/?#]+/$').test(a.url);
+  }
+  async function boundedBytes(response, limit) {
+    if (!response.body || !response.body.getReader) {
+      const bytes = await response.arrayBuffer();
+      if (bytes.byteLength > limit) throw new Error('response size');
+      return bytes;
+    }
+    const reader = response.body.getReader(), chunks = [];
+    let total = 0;
+    try {
+      for (;;) {
+        const {done, value} = await reader.read();
+        if (done) break;
+        total += value.byteLength;
+        if (total > limit) { await reader.cancel(); throw new Error('response size'); }
+        chunks.push(value);
+      }
+    } finally { reader.releaseLock(); }
+    const bytes = new Uint8Array(total);
+    let offset = 0;
+    for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
+    return bytes.buffer;
+  }
+  async function loadIndex(lang, assetRoot, fetcher = root.fetch.bind(root), crypto = root.crypto) {
+    if (!['ar','en','fr'].includes(lang)) throw new Error('language');
+    const options = {credentials:'omit', referrerPolicy:'no-referrer', redirect:'error'};
+    const response = await fetcher(new URL('manifest-' + lang + '.json?v=3', assetRoot), {...options, cache:'no-cache'});
+    if (!response.ok) throw new Error('manifest');
+    const data = strictJSON(new TextDecoder('utf-8', {fatal:true}).decode(await boundedBytes(response, 512 * 1024)));
+    if (!exactKeys(data, ['version','lang','categories','article_count','shards']) || data.version !== 3 || data.lang !== lang ||
+        !Array.isArray(data.categories) || data.categories.some(v => typeof v !== 'string') ||
+        !Number.isSafeInteger(data.article_count) || data.article_count < 0 || !Array.isArray(data.shards) || !data.shards.length || data.shards.length > 2048) throw new Error('format');
+    const paths = new Set();
+    let declared = 0;
+    for (const shard of data.shards) {
+      if (!exactKeys(shard, ['path','sha256','bytes','count']) || typeof shard.sha256 !== 'string' ||
+          !/^[a-f0-9]{64}$/.test(shard.sha256) || shard.path !== 'shards/' + lang + '-' + shard.sha256 + '.json' ||
+          !Number.isSafeInteger(shard.bytes) || shard.bytes <= 0 || shard.bytes > 512 * 1024 || !Number.isSafeInteger(shard.count) || shard.count < 0 || paths.has(shard.path)) throw new Error('shard descriptor');
+      paths.add(shard.path); declared += shard.count;
+    }
+    if (!Number.isSafeInteger(declared) || declared !== data.article_count) throw new Error('article count');
+    const parts = new Array(data.shards.length);
+    let cursor = 0;
+    async function worker() {
+      while (cursor < data.shards.length) {
+        const position = cursor++, shard = data.shards[position];
+        const response = await fetcher(new URL(shard.path, assetRoot), options);
+        if (!response.ok) throw new Error('shard');
+        const bytes = await boundedBytes(response, shard.bytes);
+        if (bytes.byteLength !== shard.bytes) throw new Error('shard size');
+        const digest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), b => b.toString(16).padStart(2, '0')).join('');
+        if (digest !== shard.sha256) throw new Error('shard digest');
+        const part = strictJSON(new TextDecoder('utf-8', {fatal:true}).decode(bytes));
+        if (!exactKeys(part, ['version','lang','articles']) || part.version !== 3 || part.lang !== lang ||
+            !Array.isArray(part.articles) || part.articles.length !== shard.count || part.articles.some(a => !validArticle(a, lang))) throw new Error('shard format');
+        parts[position] = part.articles;
+      }
+    }
+    await Promise.all(Array.from({length:Math.min(4, data.shards.length)}, worker));
+    const articles = parts.flat(), urls = new Set(articles.map(a => a.url));
+    if (articles.length !== data.article_count || urls.size !== articles.length) throw new Error('duplicate article');
+    articles.sort((a,b) => a.url < b.url ? -1 : a.url > b.url ? 1 : 0);
+    return {rows:articles.map(prepare), categories:data.categories};
+  }
+  if (typeof module !== 'undefined' && module.exports) module.exports = {normalize, prepare, search, loadIndex, strictJSON};
   if (!root.document) return;
   const doc = root.document;
   const main = doc.querySelector('[data-search-language]');
@@ -44,7 +161,7 @@
   const cache = new Map();
   const script = Array.from(doc.scripts).find(s => /\/site-search\.js(?:\?|$)/.test(s.src));
   const assetRoot = new URL('../search/', script.src);
-  let active = 0, rows = [], matches = [], shown = 0, loadedLanguage = '';
+  let active = 0, rows = [], matches = [], shown = 0, loadedLanguage = '', ready = false;
   function element(tag, text, className) {
     const node = doc.createElement(tag);
     if (text !== undefined) node.textContent = text;
@@ -82,6 +199,7 @@
     results.append(batch); shown = Math.min(shown + 20, matches.length); more.hidden = shown >= matches.length;
   }
   function render() {
+    if (!ready) return;
     results.replaceChildren(); shown = 0; more.hidden = true;
     if (!normalize(query.value) && !year.value && !category.value) { status.textContent = copy.empty; return; }
     matches = search(rows, query.value, {year:year.value, category:category.value});
@@ -94,19 +212,18 @@
   }
   async function load() {
     const revision = ++active, lang = language.value;
+    ready = false; rows = []; matches = [];
     status.textContent = copy.loading; results.replaceChildren(); more.hidden = true;
     form.setAttribute('aria-busy', 'true');
     try {
       if (!cache.has(lang)) {
-        const promise = fetch(new URL('index-' + lang + '.json?v=2', assetRoot), {credentials:'omit', referrerPolicy:'no-referrer'})
-          .then(response => { if (!response.ok) throw new Error('index'); return response.json(); })
-          .then(data => { if (data.version !== 2 || data.lang !== lang || !Array.isArray(data.articles) || !Array.isArray(data.categories)) throw new Error('format'); return {rows:data.articles.map(prepare), categories:data.categories}; });
+        const promise = loadIndex(lang, assetRoot);
         cache.set(lang, promise);
         promise.catch(() => cache.delete(lang));
       }
       const loaded = await cache.get(lang);
       if (revision !== active) return;
-      rows = loaded.rows;
+      rows = loaded.rows; ready = true;
       if (loadedLanguage !== lang) {
         fill(year, [...new Set(rows.map(row => row.article.date.slice(0,4)).filter(Boolean))].sort().reverse());
         fill(category, loaded.categories);
