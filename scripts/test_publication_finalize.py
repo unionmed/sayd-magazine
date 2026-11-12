@@ -176,7 +176,7 @@ class FinalizerTests(unittest.TestCase):
         api = FakeAPI(self)
         receipt = self.finalize(api)
         trees = [call[2] for call in api.calls if call[:2] == ('POST', '/git/trees')]
-        self.assertEqual(len(trees), 18)
+        self.assertEqual(len(trees), 36)  # All 1132 outputs still fit the 64-request cap.
         self.assertFalse(any(call[:2] == ('POST', '/git/blobs') for call in api.calls))
         parent = run(self.repo, 'rev-parse', self.source + '^{tree}')
         seen = []
@@ -207,9 +207,9 @@ class FinalizerTests(unittest.TestCase):
 
     def test_tree_entry_count_cap_splits_even_tiny_outputs(self):
         changes = [({'path': f'docs/posts/t-{n}/index.html', 'new_blob': f.blob_sha(b'x')}, b'x')
-                   for n in range(65)]
+                   for n in range(f.TREE_BATCH_ENTRIES + 1)]
         batches, _ = f.prepare_tree_batches(changes, {}, f.tree_sha({}))
-        self.assertEqual([len(payload['tree']) for payload, _ in batches], [64, 1])
+        self.assertEqual([len(payload['tree']) for payload, _ in batches], [32, 1])
         self.assertEqual(batches[1][0]['base_tree'], batches[0][1])
 
     def test_exact_utf8_wire_boundary_accepts_then_rejects_one_more_byte(self):
@@ -228,7 +228,7 @@ class FinalizerTests(unittest.TestCase):
             f.prepare_tree_batches([({'path': path, 'new_blob': f.blob_sha(data)}, data)], {}, original)
 
     def test_large_multibyte_text_splits_by_wire_bytes_not_characters(self):
-        data = ('ش' * 1100000).encode()
+        data = ('ش' * (f.TREE_BATCH_BYTES // 3)).encode()
         changes = [({'path': f'docs/posts/large-{n}/index.html', 'new_blob': f.blob_sha(data)}, data)
                    for n in range(2)]
         batches, _ = f.prepare_tree_batches(changes, {}, f.tree_sha({}))
@@ -249,11 +249,51 @@ class FinalizerTests(unittest.TestCase):
                 f.prepare_tree_batches([(item, data)], {}, f.tree_sha({}))
 
     def test_batch_count_budget_rejects_entire_plan_before_api(self):
-        self.add_output_changes({f'docs/posts/over-{n:04d}/index.html': b'x' for n in range(4097)})
+        self.add_output_changes({f'docs/posts/over-{n:04d}/index.html': b'x' for n in range(f.TREE_BATCH_ENTRIES * f.TREE_BATCH_COUNT + 1)})
         api = FakeAPI(self)
         with self.assertRaisesRegex(f.Blocked, 'tree request budget'):
             self.finalize(api)
         self.assertEqual(api.calls, [])
+
+    def test_exact_batch_count_boundary_still_accepts_all_outputs(self):
+        changes = [({'path': f'docs/posts/boundary-{n}/index.html', 'new_blob': f.blob_sha(b'x')}, b'x')
+                   for n in range(f.TREE_BATCH_ENTRIES * f.TREE_BATCH_COUNT)]
+        batches, _ = f.prepare_tree_batches(changes, {}, f.tree_sha({}))
+        self.assertEqual(len(batches), 64)
+        self.assertTrue(all(len(payload['tree']) == 32 for payload, _ in batches))
+
+    def test_second_tree_422_stops_without_retry_commit_or_ref(self):
+        self.many_outputs(70)
+        class RejectSecondTree(FakeAPI):
+            tree_posts = 0
+            def request(self, method, endpoint, payload=None, missing=False):
+                if (method, endpoint) == ('POST', '/git/trees'):
+                    self.tree_posts += 1
+                    if self.tree_posts == 2:
+                        self.calls.append((method, endpoint, payload))
+                        raise f.Blocked('GitHub rejected POST /git/trees: HTTP 422 request timed out; no retry')
+                return super().request(method, endpoint, payload, missing)
+        api = RejectSecondTree(self)
+        with self.assertRaisesRegex(f.Blocked, 'HTTP 422'):
+            self.finalize(api)
+        self.assertEqual(api.tree_posts, 2)
+        self.assertEqual(len(api.trees), 2)  # Source plus orphan first intermediate; no ref.
+        self.assertFalse(any(endpoint in ('/git/blobs', '/git/commits', '/git/refs')
+                             for method, endpoint, _ in api.calls if method == 'POST'))
+        self.assertIsNone(api.existing)
+
+    def test_transport_422_is_one_attempt_and_never_reclassified_as_retryable(self):
+        import io
+        from urllib.error import HTTPError
+        api = f.GitHub('offline-fixture-not-a-token')
+        error = HTTPError('https://api.github.com/repos/unionmed/sayd-magazine/git/trees',
+                          422, 'Unprocessable Entity', {},
+                          io.BytesIO(b'{"message":"Sorry, your request timed out. Input too large."}'))
+        with patch.object(api.opener, 'open', side_effect=error) as opened:
+            with self.assertRaisesRegex(f.Blocked, 'HTTP 422.*no retry') as caught:
+                api.request('POST', '/git/trees', {'base_tree': 'a' * 40, 'tree': []})
+        self.assertEqual(opened.call_count, 1)
+        self.assertNotIsInstance(caught.exception, f.UncertainMutation)
 
     def test_unknown_binary_fails_before_any_remote_operation(self):
         self.add_output_changes({'docs/media/publications/new/unknown.jpg': b'\xff\xd8\x00new binary'})
