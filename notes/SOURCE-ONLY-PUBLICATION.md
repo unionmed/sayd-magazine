@@ -178,7 +178,7 @@ publication, not every historical repair process.
   contents token is itself intrinsically branch-scoped.
 * Generated UTF-8 output is written through bounded Git Trees inline-content
   batches, reusing exact existing source blobs (including binary photos). Each
-  batch is limited to 64 entries / 4 MiB of the exact UTF-8 JSON request; at most
+  batch is limited to 32 entries / 1 MiB of the exact UTF-8 JSON request; at most
   64 batches are allowed. These are internal conservative budgets, not documented
   GitHub maximum body sizes. All batches are planned before mutation, every
   intermediate tree SHA is independently verified, and main is checked before
@@ -499,9 +499,36 @@ source-controlled output paths, arbitrary new files, or deletion. Documentation
 above that counts three physical search indexes describes historical v2 outputs;
 v3 uses the corresponding exact manifest and shard output set instead.
 
-The native writer is unchanged: 4 MiB per request, 64 entries, at most 64 batches,
+The native writer retains its existing path and verification behavior: 1 MiB per
+request, 32 entries, at most 64 batches,
 full preflight before mutation, intermediate/final tree identity, current-base
 checks and review-only ref creation all remain required. No fallback upload,
 credential, permission, workflow trust change, automatic retry, merge or deployment
 is introduced. The infrastructure repair must merge separately before rebuilding
 any pending approved source publication on the new exact current base.
+
+
+## Conservative native Trees batching — November 12 processing repair
+
+A native Trees request received HTTP 422 with a processing-timeout message while
+inside the former 4 MiB / 64-entry limits. The first predicted intermediate tree was
+observed remotely; the next and final trees were absent. This is consistent with
+the second request failing, but the error itself does not number the batch or
+establish a GitHub service limit. That second request carried 3,497,941 bytes and 64
+entries across 59 parent directories; byte volume alone does not explain the
+observed outcome.
+
+The writer's hard per-request budgets are tightened to 1 MiB and 32 entries, retaining
+at most 64 batches. This deliberately lowers per-request capacity and bounds both
+inline content and path fan-out. The existing 1132-output positive regression
+remains required and fits 36 requests; it is not dropped or changed to a failure.
+Every singleton must obey the same hard byte cap; there is no oversized exception,
+soft-limit fallback, alternate upload route, binary upload, or automatic retry.
+
+All requests and every predicted intermediate tree remain precomputed before the
+first mutation. Exact source/blob reuse, current-main checks before every batch,
+independent final-tree/provenance verification and review-only ref creation remain
+unchanged. Failure after a successful tree POST can leave an unreachable object;
+that is not a candidate ref or publication. A 422 stops before any later batch,
+commit or ref. The smaller budgets are a conservative processing mitigation,
+not a guarantee of GitHub acceptance; any later failure remains explicit.

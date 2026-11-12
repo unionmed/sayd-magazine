@@ -23,9 +23,11 @@ REPOSITORY = "unionmed/sayd-magazine"
 WORKFLOW = f"{REPOSITORY}/.github/workflows/source-publication.yml@refs/heads/main"
 BRANCH_PREFIX = "review/source-publication-"
 SHA = re.compile(r"[0-9a-f]{40}\Z")
-# Conservative internal request budgets, not claimed GitHub API maxima.
-TREE_BATCH_BYTES = 4 * 1024 * 1024
-TREE_BATCH_ENTRIES = 64
+# Conservative processing budgets, not claimed GitHub API maxima.
+# A native multi-directory Trees request timed out below the former 4 MiB / 64
+# limits. Bound both inline bytes and path fan-out more tightly; do not retry.
+TREE_BATCH_BYTES = 1024 * 1024
+TREE_BATCH_ENTRIES = 32
 TREE_BATCH_COUNT = 64
 SHA256 = re.compile(r"[0-9a-f]{64}\Z")
 
