@@ -45,6 +45,15 @@ def links(text, path):
     text = re.sub(r'(section-navigation\.css)\?[^\"\s]+', r'\1?v=20261017-controls22', text)
     return text
 
+def search_script_version(lang):
+    # Historical BASE fixtures retain the v2 URL and rebuild byte-identically.
+    from search_storage import storage_format, LANGS
+    if lang not in LANGS:
+        raise ValueError('Unknown search language')
+    mode = storage_format(lambda path: (DOCS / Path(path).relative_to('docs')).read_bytes())
+    return '20261112-shards3' if mode == 3 else '20261017-facets2'
+
+
 def build_page(lang):
     c = COPY[lang]
     # Reuse current edition chrome using the existing rebasing/SEO shell builder,
@@ -79,10 +88,11 @@ def build_page(lang):
     page = re.sub(r'[ \t]*<link\b[^>]*href="https://fonts\.(?:googleapis|gstatic)\.com[^"]*"[^>]*>[ \t]*(?:\r?\n)?', '', page)
     # No query in history, no analytics or form tracking, no search-engine results index.
     page = page.replace('</head>', '<meta name="robots" content="noindex,follow">\n<meta name="referrer" content="no-referrer">\n<link rel="stylesheet" href="'+relative(path,'assets/css/search.css')+'?v=20261017">\n</head>')
-    page = page.replace('</body>', '<script id="search-copy" type="application/json">'+json.dumps(c,ensure_ascii=False).replace('<','\\u003c')+'</script>\n<script src="'+relative(path,'assets/js/site-search.js')+'?v=20261017-facets2" defer></script>\n</body>')
+    page = page.replace('</body>', '<script id="search-copy" type="application/json">'+json.dumps(c,ensure_ascii=False).replace('<','\\u003c')+'</script>\n<script src="'+relative(path,'assets/js/site-search.js')+'?v='+search_script_version(lang)+'" defer></script>\n</body>')
     path.write_text(page)
 
 def main():
+    search_script_version('ar')  # Reject partial migration before any page writes.
     # Establish source chrome before copying it, so a clean first build is stable.
     for lang in COPY:
         home = DOCS / ('' if lang == 'ar' else lang) / 'index.html'

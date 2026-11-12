@@ -158,7 +158,10 @@ class PublishedCorpusTests(unittest.TestCase):
     def test_assets_current_deterministic_and_bounded(self):
         for lang, index in self.indexes.items():
             data = search.serialize(index)
-            self.assertEqual(data, (self.docs / f'assets/search/index-{lang}.json').read_bytes())
+            import search_storage as storage
+            current = storage.load_index(lambda p: (self.docs.parent / p).read_bytes(), lang)
+            self.assertEqual(index, current)
+            self.assertEqual(storage.output_index(index, lambda p: (self.docs.parent / p).read_bytes()), {})
             self.assertLess(len(data), 5_000_000, f'{lang} lazy-loaded language budget')
             self.assertLess(len(gzip.compress(data, mtime=0)), 1_500_000)
             self.assertEqual(data, search.serialize(search.build_index(self.docs, lang)))

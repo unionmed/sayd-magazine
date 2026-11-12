@@ -48,6 +48,7 @@ def replace_fragments(raw, article, photo, language):
 def expected_changes(root, base, record):
     import publication_compiler as compiler
     import build_search_index as search
+    from revision_search import logical_bytes
     from lxml import html as dom
     before = compiler.tree(root, base)
     raw = compiler.read_blob(root, before['content/publications/' + PUBLICATION + '.json'])
@@ -64,8 +65,7 @@ def expected_changes(root, base, record):
                 'Only exact CC0 photo dedications may lose visible links')
     photos = {p['id']: p for p in record['photos']}
     result = {}
-    indices = {language: json.loads(compiler.read_blob(root, before[
-        'docs/assets/search/index-' + language + '.json'])) for language in LANGS}
+    indices = {language: json.loads(logical_bytes(root, before, language)) for language in LANGS}
     for article in record['articles']:
         require(len(article['photos']) == 1, 'Exact single-photo credit required')
         photo = photos[article['photos'][0]]

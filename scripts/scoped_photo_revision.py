@@ -27,6 +27,10 @@ def base_data(root, base):
     import publication_compiler as compiler
     tree = compiler.tree(root, base)
     def read(path):
+        from revision_search import INDEX, logical_bytes
+        match = INDEX.fullmatch(path)
+        if match:
+            return logical_bytes(root, tree, match[1])
         require(path in tree and tree[path][:2] == ('100644', 'blob'), 'Missing regular photo-revision input: ' + path)
         return compiler.read_blob(root, tree[path])
     record = validate(json.loads(read('content/publications/' + PUBLICATION + '.json')), PUBLICATION)

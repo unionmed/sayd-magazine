@@ -216,9 +216,14 @@ def expected_changes(root, base, value, path):
         else:
             import scoped_photo_revision
             result, effective, article = scoped_photo_revision.expected_changes(root, base, value['payload'])
-    require(result and all(p in before for p in result), 'Only existing derived targets may be modified')
-    originals = read_base_blobs(root, before, result)
-    digest = compiler.sha256(compiler.canonical({p: compiler.sha256(originals[p]) for p in sorted(result)}))
+    require(result and all(p in before for p in result), 'Only existing logical derived targets may be modified')
+    from revision_search import physical_outputs
+    result = physical_outputs(root, before, result)
+    # Existing manifests pin every current shard; new shard bytes are derived,
+    # not pre-existing inputs to hash. All non-search targets must still exist.
+    existing = [p for p in result if p in before]
+    originals = read_base_blobs(root, before, existing)
+    digest = compiler.sha256(compiler.canonical({p: compiler.sha256(originals[p]) for p in sorted(existing)}))
     require(digest == value['expected_targets_sha256'], 'Effective target hashes mismatch')
     return result, effective, article
 

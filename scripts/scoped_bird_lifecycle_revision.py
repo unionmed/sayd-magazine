@@ -20,6 +20,7 @@ EDITS = [{'slugs': {'ar': 'الدخلة-السوداء-الرأس', 'en': 'sardi
 def expected_changes(root, base, record):
     import publication_compiler as compiler
     import build_search_index as search
+    from revision_search import logical_bytes
     import article_dates
     before = compiler.tree(root, base)
     raw = compiler.read_blob(root, before['content/publications/' + PUBLICATION + '.json'])
@@ -31,7 +32,7 @@ def expected_changes(root, base, record):
     indices = {}
     for language in LANGS:
         target = 'docs/assets/search/index-' + language + '.json'
-        indices[language] = json.loads(compiler.read_blob(root, before[target]))
+        indices[language] = json.loads(logical_bytes(root, before, language))
     registry_path = 'content/article-updates.json'
     registry = json.loads(compiler.read_blob(root, before[registry_path]))
     for edit in EDITS:

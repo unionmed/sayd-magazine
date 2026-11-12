@@ -107,6 +107,7 @@ def splice(data, page, language, article):
 def expected_changes(root, base, payload):
     import publication_compiler as compiler
     import build_search_index as search
+    from revision_search import logical_bytes
     from lxml import html as dom
     keys(payload, ())
     before = compiler.tree(root, base)
@@ -125,7 +126,7 @@ def expected_changes(root, base, payload):
         for path in (page, markdown):
             changes[path] = splice(read(path), page, language, article)
         target = 'docs/assets/search/index-' + language + '.json'
-        index = json.loads(read(target))
+        index = json.loads(logical_bytes(root, before, language))
         route = '/' + ('' if language == 'ar' else language + '/') + 'posts/' + article['slugs'][language] + '/'
         rows = [row for row in index['articles'] if row['url'] == quote(route, safe='/@-._~')]
         require(len(rows) == 1, 'Exact existing search row required')

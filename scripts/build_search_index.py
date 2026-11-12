@@ -304,43 +304,41 @@ def serialize(index):
     return (json.dumps(index, ensure_ascii=False, separators=(',', ':')) + '\n').encode('utf-8')
 
 
-def build(docs=None, check=False):
-    """Build all language assets; return counts, or raise on stale check."""
+def build(docs=None, check=False, migrate=False):
+    """Build active format, preserving historical v2 snapshots after migration."""
+    import search_storage as storage
     docs = Path(docs) if docs is not None else ROOT / 'docs'
-    counts = {}
+    target_path = lambda path: docs / Path(path).relative_to('docs')
+    read = lambda path: target_path(path).read_bytes()
+    counts, planned = {}, {}
     for lang in FOLDERS:
         index = build_index(docs, lang)
-        target = docs / 'assets/search' / f'index-{lang}.json'
-        data = serialize(index)
-        if check:
-            if not target.exists() or target.read_bytes() != data:
-                raise ValueError(f'Stale search index: {target}; run scripts/build_search_index.py')
-        else:
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(data)
+        outputs = storage.output_index(index, read, migrate=migrate)
+        if check and outputs:
+            raise ValueError('Stale search index: ' + ', '.join(sorted(outputs)))
+        planned.update(outputs)
         counts[lang] = len(index['articles'])
+    # Precompute all languages before writing: initialization must not appear as
+    # partial v3 to its own next language, and corrupt input never partly writes.
+    for path, data in planned.items():
+        target = target_path(path)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
     return counts
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--check', action='store_true', help='Fail if committed indexes are stale')
+    parser.add_argument('--check', action='store_true', help='Fail if active indexes are stale')
+    parser.add_argument('--migrate-v3', action='store_true', help='Infrastructure-only initialization; retain v2 bytes')
     parser.add_argument('--docs', type=Path, default=ROOT / 'docs')
     args = parser.parse_args()
-    stale = []
-    for lang in FOLDERS:
-        index = build_index(args.docs, lang)
-        target = args.docs / 'assets/search' / f'index-{lang}.json'
-        data = serialize(index)
-        if args.check:
-            if not target.exists() or target.read_bytes() != data:
-                stale.append(str(target))
-        else:
-            target.parent.mkdir(parents=True, exist_ok=True)
-            target.write_bytes(data)
-        print(f'{lang}: {len(index["articles"])} articles, {len(data):,} bytes')
-    if stale:
-        parser.exit(1, 'Stale search indexes; run scripts/build_search_index.py:\n' + '\n'.join(stale) + '\n')
+    try:
+        counts = build(args.docs, check=args.check, migrate=args.migrate_v3)
+    except ValueError as error:
+        parser.exit(1, str(error) + '\n')
+    for lang, count in counts.items():
+        print(f'{lang}: {count} complete articles')
 
 
 if __name__ == '__main__':

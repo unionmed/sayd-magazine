@@ -94,10 +94,28 @@ def run():
                 expect(page.locator('#search-query')).to_be_visible()
             # A failed index fetch is recoverable by the same Search button.
             page2=context.new_page()
-            page2.route('**/index-ar.json*',lambda r:r.abort())
+            page2.route('**/manifest-ar.json*',lambda r:r.abort())
             page2.goto(url+'/search/');page2.wait_for_function('!document.querySelector("form").hasAttribute("aria-busy")')
             assert 'تعذّر' in page2.locator('#search-status').inner_text()
-            page2.unroute('**/index-ar.json*');page2.locator('#search-query').fill('طائر');page2.locator('#search-query').press('Enter');expect(page2.locator('.search-result').first).to_be_visible()
+            page2.unroute('**/manifest-ar.json*');page2.locator('#search-query').fill('طائر');page2.locator('#search-query').press('Enter');expect(page2.locator('.search-result').first).to_be_visible()
+            # Missing or corrupted individual shards must never show partial results.
+            for corrupt in (False, True):
+                failed=context.new_page()
+                def fail_shard(r):
+                    if corrupt:
+                        response=r.fetch();r.fulfill(response=response,body=b'{}')
+                    else:r.abort()
+                failed.route('**/search/shards/ar-*.json',fail_shard)
+                failed.goto(url+'/search/');failed.wait_for_function('!document.querySelector("form").hasAttribute("aria-busy")')
+                assert 'تعذّر' in failed.locator('#search-status').inner_text()
+                expect(failed.locator('.search-result')).to_have_count(0)
+                # Filter/empty-input events cannot replace the error with incomplete results.
+                failed.locator('#search-query').fill('')
+                assert 'تعذّر' in failed.locator('#search-status').inner_text()
+                failed.unroute('**/search/shards/ar-*.json')
+                failed.locator('#search-query').fill('طائر');failed.locator('#search-query').press('Enter')
+                expect(failed.locator('.search-result').first).to_be_visible()
+                failed.close()
             browser.close()
         assert not failures,failures
         for lang in ('ar','en','fr'):
