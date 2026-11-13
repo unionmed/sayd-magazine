@@ -43,8 +43,8 @@ PARAGRAPHS = {'ar': 'تسلّمت وزارة الإدارة المحلية وا�
        'vétérinaires, d’une évaluation sanitaire et de soins. Les oiseaux aptes à être relâchés retrouveront '
        'leur milieu naturel après réhabilitation et vérification de leur état.'}
 
-TITLES = {'ar': 'سوريا تتسلّم جوارح جوسية المضبوطة للرعاية والتأهيل قبل إعادتها إلى البرية.',
- 'en': 'Syria takes in raptors seized at Jousiyeh for care and rehabilitation before release.',
+TITLES = {'ar': 'سوريا تتسلّم جوارح جوسية المضبوطة للرعاية والتأهيل تمهيدًا لإطلاق المؤهل منها.',
+ 'en': 'Syria takes in raptors seized at Jousiyeh for care and rehabilitation ahead of possible release.',
  'fr': 'Syrie : les rapaces saisis à Jousiyeh pris en charge avant leur réhabilitation et leur remise en '
        'liberté.'}
 
