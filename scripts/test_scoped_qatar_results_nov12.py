@@ -152,7 +152,7 @@ class QatarNov12Tests(unittest.TestCase):
             self.assertEqual(finalizer.read_change(self.output, item), (self.output/item['path']).read_bytes())
     def test_finalizer_keeps_unregistered_paths_closed(self):
         import publication_finalize as finalizer
-        for path in ('content/editorial-revisions/qatar-shooting-update-20261113.json',
+        for path in ('content/editorial-revisions/qatar-shooting-update-20261114.json',
                      'content/editorial-revisions/nested/qatar-shooting-update-20261112.json',
                      'scripts/scoped_qatar_results_nov12.py'):
             with self.assertRaises(finalizer.Blocked):
