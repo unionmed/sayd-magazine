@@ -1,0 +1,463 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261113",
+  "expected_base": "acbb03812267aff5a9f7f0b8296b7ecb398e4e85",
+  "approval_reference": "Standing encyclopedia authority with latest owner quality-first direction; archive-only. Preparation pending independent review and protected publication checks.",
+  "bank_search_reference": "Species and synonym searches in Sayd picture for use returned no matching image; exact source originals saved with successful Library receipts on 13 November 2026.",
+  "photos": [
+    {
+      "id": "gulosus-aristotelis",
+      "path": "docs/media/publications/daily-birds-20261113/european-shag.jpg",
+      "sha256": "fd708e5dc3863683e6b474a419c1d848587e4e5fd60eda5198e19ae4d048408e",
+      "source_sha256": "fd708e5dc3863683e6b474a419c1d848587e4e5fd60eda5198e19ae4d048408e",
+      "source_reference": "Giorgio Zavattoni; 2026-04-06; Vardø, NO-FI, NO. Species illustration, not evidence of a current event or another location. https://www.inaturalist.org/photos/758376193",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license verified through the primary iNaturalist API on 13 November 2026. Commercial reuse permitted without mandatory attribution hyperlink; courtesy credit retained. Original bytes unchanged. This declaration does not warrant unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/412176508"
+      },
+      "alt": {
+        "ar": "غاق داكن بعرف وريش أخضر لامع وبقعة صفراء عند قاعدة المنقار يقف على صخرة.",
+        "en": "A dark shag with a crest, glossy green plumage and yellow gape stands on a rock.",
+        "fr": "Un cormoran sombre à huppe, au plumage vert brillant et à la commissure jaune, se tient sur un rocher."
+      },
+      "caption": {
+        "ar": "الغاق الأوروبي",
+        "en": "European Shag",
+        "fr": "Cormoran huppé"
+      }
+    },
+    {
+      "id": "phalacrocorax-nigrogularis",
+      "path": "docs/media/publications/daily-birds-20261113/socotra-cormorant.jpeg",
+      "sha256": "e0f1dc727e05ad96bf1fd2fddb0ffbe5e1762d6c835651fb0549ef99b4433d5b",
+      "source_sha256": "e0f1dc727e05ad96bf1fd2fddb0ffbe5e1762d6c835651fb0549ef99b4433d5b",
+      "source_reference": "James Eaton; 2022-03-20; Hadramawt, YE. Species illustration, not evidence of a current event or another location. https://www.inaturalist.org/photos/336780327",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 exact photo-level license verified through the primary iNaturalist API on 13 November 2026. Commercial reuse permitted without mandatory attribution hyperlink; courtesy credit retained. Original bytes unchanged. This declaration does not warrant unrelated rights.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/191907529"
+      },
+      "alt": {
+        "ar": "غاق داكن نحيل العنق يقف على حافة صخرية ويرفع منقاره إلى أعلى.",
+        "en": "A dark cormorant with a slender neck stands on a rocky ledge with its bill raised.",
+        "fr": "Un cormoran sombre au cou fin se tient sur une corniche rocheuse, le bec relevé."
+      },
+      "caption": {
+        "ar": "الغاق السقطري",
+        "en": "Socotra Cormorant",
+        "fr": "Cormoran de Socotra"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الغاق-الأوروبي",
+        "en": "european-shag",
+        "fr": "cormoran-huppe"
+      },
+      "published": "2026-11-13",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "gulosus-aristotelis"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الغاق الأوروبي",
+          "subtitle": "Gulosus aristotelis",
+          "meta_description": "الغاق الأوروبي: علامات البالغ واليافع، الفروق عن الغاق الكبير، الغذاء والتكاثر، الانتشار العربي وموسم نوفمبر وحماية السواحل.",
+          "sections": [
+            {
+              "heading": "غوّاص السواحل الصخرية",
+              "paragraphs": [
+                "الغاق الأوروبي، Gulosus aristotelis، طائر بحري من فصيلة الغاقيات، يرتبط بالسواحل الصخرية والجزر أكثر من ارتباطه بالبحيرات الداخلية. يتراوح طوله بين 65 و80 سنتيمترًا، ويجمع بين جسم ممدود وعنق نحيل وذيل واضح ومنقار دقيق معقوف الطرف. يبدو أسود من بعيد، لكن الضوء الجيد يكشف لمعانًا أخضر في ريش البالغين. وهو نوع مستقل عن الغاق الكبير، لا مجرد فرد صغير منه.",
+                "يرد النوع في مراجع أقدم باسم Phalacrocorax aristotelis. ويضم جماعات أطلسية ومتوسطية؛ السلالة desmarestii تخص البحر المتوسط والبحر الأسود. لذلك ينبغي قراءة الموقع الجغرافي إلى جانب الاسم العلمي عند مقارنة الصور ومواعيد التكاثر، فالطائر المصور على ساحل شمال الأطلسي لا يمثل بالضرورة مظهر كل غاق متوسطي أو توقيته الموسمي."
+              ]
+            },
+            {
+              "heading": "العمر والجنس والعرف الموسمي",
+              "paragraphs": [
+                "يحمل البالغ عنقًا داكنًا وعينًا خضراء ومنطقة صفراء صغيرة عند زاوية الفم. في موسم التزاوج يزداد بريق الريش وتظهر خصلة مقوسة على مقدمة الرأس. العرف علامة موسمية، وليس شرطًا دائمًا للتعرف إلى النوع. يتشابه الذكر والأنثى في الريش، وإن كان الذكر أكبر في المتوسط، ولا يكفي الحجم الظاهري في صورة منفردة للجزم بالجنس.",
+                "تختلف الطيور اليافعة عن البالغين بظهر بني وأجزاء سفلية أفتح. وقد يكون البطن شديد الشحوب عند يافعات السلالة المتوسطية، مع أغطية جناح فاتحة الحواف. لا يصح وصف كل طائر ذي بطن فاتح بأنه أنثى، ولا اعتبار كل طائر بني نوعًا آخر. العمر والإضاءة وابتلال الريش عناصر تغير الانطباع البصري، لذا تكون بنية الرأس والمنقار مهمة بقدر اللون."
+              ]
+            },
+            {
+              "heading": "كيف يختلف عن الغاق الكبير؟",
+              "paragraphs": [
+                "الغاق الكبير Phalacrocorax carbo أمتن عادةً، برأس ومنقار أثقل وعنق أعرض. في الغاق الأوروبي تبدو الجبهة أشد انحدارًا والمنقار أرفع، وتبقى مساحة الصفرة قرب الفم صغيرة. أما البالغ من الغاق الكبير فيحمل بياضًا أوضح حول الحلق والوجه، وقد تظهر بقعة بيضاء على الفخذ في ريش التكاثر. الأفضل جمع عدة علامات بدل الاعتماد على واحدة.",
+                "يتعقد الفصل بين اليافعات لأن كلا النوعين قد يظهر ببطن فاتح. راقب الرأس من الجانب ونسبة سمك المنقار إلى الرأس وحركة الطائر عند الإقلاع الطبيعي. الوجود على صخرة بحرية وحده لا يحسم الهوية، فالغاق الكبير يستخدم السواحل أيضًا. ومن المقبول إبقاء سجل بعيد تحت تسمية غاق غير محدد بدل إعطائه اسمًا يقينيًا لا تسنده المشاهدة."
+              ]
+            },
+            {
+              "heading": "الغذاء والموطن اليومي",
+              "paragraphs": [
+                "يبحث عن الأسماك بالغوص من سطح البحر، في المياه القريبة من الساحل وفوق قيعان صخرية أو رملية. تتغير الفرائس بحسب المنطقة والموسم، وتشمل أسماك القاع والأسماك التي تعيش في أسراب. وقد يتغذى منفردًا أو ضمن مجموعات. قرب الماء لا يكفي وحده لصلاحية الموطن؛ لا بد من إمكان الوصول إلى الغذاء ووجود مواقع آمنة للراحة.",
+                "يقف على الصخور بين جولات الغوص وقد يبسط جناحيه. تحتاج الطيور إلى هذه الفترات دون إقلاع متكرر تسببه القوارب أو الزوار. وفي المتوسط ترتبط بعض مناطق التغذية بموائل قاعية مثل مروج الأعشاب البحرية. لذلك تمتد حماية الغاق من موضع العش إلى المياه التي يرتادها، ولا تختزل في إبقاء جرف واحد دون بناء."
+              ]
+            },
+            {
+              "heading": "اختيار العش ورعاية البيض والفراخ",
+              "paragraphs": [
+                "يعشش في الشقوق والكهوف والحواف الصخرية، غالبًا ضمن مستعمرات. يختار الذكر موضعًا ويؤدي حركات للرأس والعنق أثناء المغازلة. تتكون الأعشاش من مواد مثل الأعشاب البحرية والأغصان، ويشارك الزوجان في دورة الرعاية. تختلف بداية الموسم بين المناطق والسنوات؛ وقد تظهر الاستعدادات للتعشيش في المتوسط قبل الشتاء، بدل انتظار الربيع كما قد يتوقع مراقب اعتاد الطيور البرية.",
+                "الحضنة المعتادة نحو ثلاث بيضات. يتناوب الأبوان الحضانة قرابة شهر، وتفقس فراخ عارية وعاجزة عن إعالة نفسها. تسجل بيانات هيئة علم الطيور البريطانية بلوغ الفراخ مرحلة الطيران عادة بعد 48–58 يومًا من الفقس، وهي مدة مرجعية لا موعد ثابت لكل مستعمرة عربية. خروج اليافع من العش لا يبرر الاقتراب منه؛ تبقى مرحلة تعلم الطيران والغوص حساسة للاضطراب."
+              ]
+            },
+            {
+              "heading": "انتشاره العربي ومعنى نوفمبر",
+              "paragraphs": [
+                "يصل النطاق الأطلسي إلى المغرب، بينما توجد مستعمرات متوسطية في الجزائر وتونس وليبيا. يوثق أطلس الطيور المائية الشتوية في ليبيا التعشيش في جزر ساحلية، ولا يعامل النوع كطائر منتشر بانتظام في جميع الأراضي الرطبة. وفي المرجع نفسه يوصف وجوده على الساحل المصري المتوسطي بأنه عرضي أو شتوي نادر محتمل، لا إقامة شائعة في البلاد.",
+                "كثير من الجماعات مقيم أو يتحرك لمسافات محدودة، لكن الإقامة لا تعني بقاء كل فرد على الصخرة نفسها طوال العام. يضع دليل اللجنة الدولية للاستكشاف العلمي للبحر المتوسط بدء وضع البيض من أواخر نوفمبر في بعض المواقع، مع اختلافات واسعة وتكاثر يمتد إلى أشهر لاحقة. ولذلك قد يجمع مشهد نوفمبر بين طيور متفرقة وعودة إلى المستعمرات وبدايات نشاط تكاثري، وليس مجرد وصول زوار الشتاء."
+              ]
+            },
+            {
+              "heading": "الحماية ومشاهدة لا تفسد الموطن",
+              "paragraphs": [
+                "الغاق الأوروبي مصنف عالميًا ضمن «أقل إثارة للقلق» LC، لكن ذلك لا ينفي تراجع جماعات محلية. تشمل الأخطار الوقوع العرضي في معدات الصيد والتلوث النفطي وإزعاج المستعمرات وتغيير الساحل. ويمكن للعواصف الطويلة وتراجع الفرائس أن يصعّبا التغذية. الفارق مهم بين حالة النوع على مستوى العالم وحالة مستعمرة صغيرة قد تكون شديدة الحساسية لفقد موضع تعشيشها.",
+                "تتم المشاهدة من مسافة تسمح للطيور بالراحة والاستمرار في سلوكها الطبيعي، دون النزول إلى جزر التعشيش أو إدخال القوارب إلى الكهوف. يفيد تدوين التاريخ وعدد الطيور وأعمارها التقريبية وحالة البحر، مع عدم تحويل مواقع الأعشاش الدقيقة إلى وجهات ازدحام. وتصنيف خطر الانقراض ليس ترخيصًا بالصيد؛ احترام المحميات والأنظمة المحلية واجب مستقل عن عدد الطيور المرئي.",
+                "مراجع للتوسع: هيئة علم الطيور البريطانية BTO؛ دليل SEO/BirdLife؛ دليل الطيور البحرية للجنة الدولية للاستكشاف العلمي للبحر المتوسط CIESM؛ أطلس الطيور المائية الشتوية في ليبيا 2005–2010؛ الموسوعة الافتراضية للفقاريات الإسبانية؛ بيردلايف إنترناشيونال."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Giorgio Zavattoni / iNaturalist (CC0 1.0)، Vardø، النرويج، 6 أبريل 2026."
+        },
+        "en": {
+          "title": "European Shag",
+          "subtitle": "Gulosus aristotelis",
+          "meta_description": "European Shag: adult and juvenile identification, comparison with Great Cormorant, feeding, breeding, Arab distribution, November and conservation.",
+          "sections": [
+            {
+              "heading": "A diver of rocky coasts",
+              "paragraphs": [
+                "The European Shag, Gulosus aristotelis, belongs to the cormorant family and is closely associated with rocky shores and islands rather than inland lakes. Measuring 65–80 centimetres, it has an elongated body, slender neck, conspicuous tail and narrow, hook-tipped bill. Adults can look black at a distance, but good light reveals a green sheen. This is a species in its own right, not simply a small Great Cormorant.",
+                "Older references call it Phalacrocorax aristotelis. Its populations include Atlantic and Mediterranean forms; the subspecies desmarestii inhabits the Mediterranean and Black Seas. Geography therefore matters when comparing photographs and breeding calendars. A bird photographed beside the North Atlantic does not necessarily represent the appearance or seasonal timing of every Mediterranean shag."
+              ]
+            },
+            {
+              "heading": "Age, sex and the seasonal crest",
+              "paragraphs": [
+                "An adult has a dark neck, green eye and a small yellow area at the gape. During courtship, its plumage becomes glossier and a curved tuft develops on the forehead. The crest is seasonal, not a feature required at every sighting. Males and females have similar plumage, although males average larger. Apparent size in a single photograph is insufficient to establish sex.",
+                "Young birds differ from adults in their brown upperparts and paler underparts. Juvenile Mediterranean birds can have very pale bellies and pale-edged wing coverts. A pale belly does not identify a female, nor does brown plumage automatically indicate another species. Age, lighting and wet feathers all alter appearance, making the shape of the head and bill as important as colour."
+              ]
+            },
+            {
+              "heading": "Separating it from Great Cormorant",
+              "paragraphs": [
+                "Great Cormorant, Phalacrocorax carbo, is generally more heavily built, with a larger head, heavier bill and broader neck. European Shag has a steeper forehead, a finer bill and only a small yellow gape area. Adult Great Cormorants show more obvious white around the throat and face and may carry a white thigh patch in breeding plumage. Several features together provide a safer identification than one alone.",
+                "Juveniles are harder to separate because both species may have pale bellies. Study the head in profile, the thickness of the bill relative to the head and the bird’s shape when it takes off naturally. A marine rock is not conclusive evidence, since Great Cormorants also use coasts. Recording a distant bird as an unidentified cormorant is preferable to certainty unsupported by the view."
+              ]
+            },
+            {
+              "heading": "Food and daily habitat",
+              "paragraphs": [
+                "The shag pursues fish by diving from the sea surface, usually in coastal waters over rocky or sandy bottoms. Prey varies geographically and seasonally and includes bottom-associated fish as well as schooling species. Birds may feed alone or in groups. Water alone does not make a suitable habitat: access to food and secure resting places both matter.",
+                "Between diving trips, birds rest on rocks and may spread their wings. These intervals should not be interrupted by repeated approaches from boats or visitors. Some Mediterranean feeding areas are associated with seabed habitats such as seagrass meadows. Protecting a shag colony consequently involves the surrounding feeding waters, not simply leaving one nesting cliff undeveloped."
+              ]
+            },
+            {
+              "heading": "Nests, eggs and dependent chicks",
+              "paragraphs": [
+                "Shags nest in crevices, caves and rocky ledges, often in colonies. The male selects a site and makes head and neck displays during courtship. Nests include materials such as seaweed and twigs, and both partners contribute to parental care. The season begins at different times among regions and years. Mediterranean birds may prepare to breed before winter rather than waiting for spring.",
+                "A typical clutch contains about three eggs. Both parents incubate for approximately a month, and the chicks hatch naked and helpless. British Trust for Ornithology data give a usual fledging interval of 48–58 days after hatching, a reference range rather than a fixed timetable for every Arab colony. Leaving the nest does not make a youngster safe to approach: developing flight and diving skills remain vulnerable to disturbance."
+              ]
+            },
+            {
+              "heading": "Arab distribution and the November scene",
+              "paragraphs": [
+                "The Atlantic range reaches Morocco, while Mediterranean colonies occur in Algeria, Tunisia and Libya. Libya’s wintering-waterbird atlas documents island breeding rather than treating the species as widespread across all wetlands. The same reference describes occurrence on Egypt’s Mediterranean coast as accidental or possibly a rare winter visit, not common nationwide residency.",
+                "Many populations are resident or make limited movements, but residency does not mean that every bird occupies the same rock throughout the year. The Mediterranean Science Commission’s guide places the beginning of laying in late November at some sites, with considerable variation and breeding continuing into later months. November can therefore bring dispersed birds, returns to colonies and early breeding activity, rather than simply the arrival of winter visitors."
+              ]
+            },
+            {
+              "heading": "Conservation and responsible observation",
+              "paragraphs": [
+                "European Shag is globally classified as Least Concern, LC, but this does not exclude local declines. Threats include accidental capture in fishing gear, oil pollution, disturbance of colonies and coastal development. Prolonged storms and reduced prey availability can also make feeding difficult. A species-wide category and the prospects of a small colony vulnerable to losing its nesting site describe different scales.",
+                "Watch from a distance that allows birds to rest and continue normal behaviour. Avoid landing on breeding islands or taking boats into nesting caves. Useful records include date, numbers, approximate age classes and sea conditions, without turning precise nest locations into crowded destinations. An extinction-risk category is not permission to hunt; reserve restrictions and local rules remain separate obligations.",
+                "Further reading: British Trust for Ornithology BirdFacts; SEO/BirdLife species guide; CIESM seabird guide; Atlas of Wintering Waterbirds of Libya 2005–2010; Spanish Virtual Encyclopaedia of Vertebrates; BirdLife International."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Giorgio Zavattoni / iNaturalist (CC0 1.0), Vardø, Norway, 6 April 2026."
+        },
+        "fr": {
+          "title": "Cormoran huppé",
+          "subtitle": "Gulosus aristotelis",
+          "meta_description": "Cormoran huppé : adultes et jeunes, distinction du Grand Cormoran, alimentation, reproduction, répartition arabe, novembre et conservation.",
+          "sections": [
+            {
+              "heading": "Un plongeur des côtes rocheuses",
+              "paragraphs": [
+                "Le Cormoran huppé, Gulosus aristotelis, appartient à la famille des Phalacrocoracidés et fréquente surtout les rivages rocheux et les îles, plutôt que les lacs intérieurs. Long de 65 à 80 centimètres, il présente un corps allongé, un cou mince, une queue bien visible et un bec fin à pointe crochue. Noir à distance, l’adulte révèle des reflets verts sous une bonne lumière. Il constitue une espèce distincte, et non un petit Grand Cormoran.",
+                "Les références anciennes le nomment Phalacrocorax aristotelis. Ses populations comprennent des formes atlantiques et méditerranéennes ; la sous-espèce desmarestii habite la Méditerranée et la mer Noire. Le lieu compte donc pour comparer les photographies et les calendriers de reproduction. Un oiseau photographié dans l’Atlantique Nord ne représente pas nécessairement l’apparence ou le rythme saisonnier de tous les cormorans huppés méditerranéens."
+              ]
+            },
+            {
+              "heading": "Âge, sexe et huppe saisonnière",
+              "paragraphs": [
+                "L’adulte possède un cou sombre, un œil vert et une petite zone jaune à la commissure du bec. Pendant la parade, le plumage devient plus brillant et une touffe recourbée apparaît sur le front. Cette huppe est saisonnière : son absence ne permet pas d’exclure l’espèce. Les sexes ont un plumage semblable, même si le mâle est plus grand en moyenne. La taille apparente sur une photographie isolée ne suffit pas à déterminer le sexe.",
+                "Les jeunes ont le dessus brun et le dessous plus clair que les adultes. Chez les juvéniles méditerranéens, le ventre peut être très pâle et les couvertures alaires bordées de clair. Un ventre clair ne désigne donc pas une femelle, et le brun ne signale pas automatiquement une autre espèce. L’âge, la lumière et les plumes mouillées modifient l’aspect ; la forme de la tête et du bec compte autant que la couleur."
+              ]
+            },
+            {
+              "heading": "Le distinguer du Grand Cormoran",
+              "paragraphs": [
+                "Le Grand Cormoran, Phalacrocorax carbo, est généralement plus massif, avec une tête plus forte, un bec plus épais et un cou plus large. Le Cormoran huppé montre un front plus abrupt, un bec plus fin et une petite zone jaune à sa commissure. Le Grand Cormoran adulte présente davantage de blanc à la gorge et à la face, et peut porter une tache blanche à la cuisse en plumage nuptial. Plusieurs caractères réunis valent mieux qu’un seul.",
+                "Les juvéniles sont plus difficiles à séparer, puisque les deux espèces peuvent avoir le ventre clair. Examiner la tête de profil, l’épaisseur relative du bec et la silhouette lors d’un envol spontané. La présence sur un rocher marin ne suffit pas : le Grand Cormoran fréquente aussi les côtes. Mieux vaut noter un cormoran indéterminé à distance que lui attribuer une identité certaine sans observation suffisante."
+              ]
+            },
+            {
+              "heading": "Nourriture et habitat quotidien",
+              "paragraphs": [
+                "Il poursuit les poissons en plongeant depuis la surface, généralement près du littoral, au-dessus de fonds rocheux ou sableux. Les proies varient avec la région et la saison : poissons associés au fond et espèces vivant en bancs. Il peut se nourrir seul ou en groupe. La présence d’eau ne suffit pas à définir un habitat favorable ; nourriture accessible et reposoirs sûrs sont également nécessaires.",
+                "Entre les sorties de pêche, les oiseaux se reposent sur des rochers et peuvent étendre leurs ailes. Des approches répétées de bateaux ou de visiteurs interrompent ce repos. En Méditerranée, certaines zones alimentaires sont liées à des habitats du fond, comme les herbiers marins. Protéger une colonie implique donc les eaux où elle se nourrit, et pas seulement le maintien d’une falaise sans construction."
+              ]
+            },
+            {
+              "heading": "Nids, œufs et poussins dépendants",
+              "paragraphs": [
+                "L’espèce niche dans les fissures, les grottes et les corniches rocheuses, souvent en colonies. Le mâle choisit un emplacement et parade par des mouvements de tête et de cou. Le nid comporte notamment algues et brindilles, et les deux partenaires participent aux soins parentaux. Le début de la saison varie selon les régions et les années. En Méditerranée, les préparatifs peuvent précéder l’hiver plutôt qu’attendre le printemps.",
+                "Une ponte habituelle compte environ trois œufs. Les deux parents couvent pendant près d’un mois ; les poussins naissent nus et dépendants. Les données du British Trust for Ornithology indiquent généralement un envol entre 48 et 58 jours après l’éclosion, intervalle de référence et non calendrier fixe pour chaque colonie arabe. Quitter le nid ne rend pas le jeune accessible sans risque : l’apprentissage du vol et de la plongée reste sensible au dérangement."
+              ]
+            },
+            {
+              "heading": "Répartition arabe et observations de novembre",
+              "paragraphs": [
+                "L’aire atlantique atteint le Maroc, tandis que des colonies méditerranéennes existent en Algérie, en Tunisie et en Libye. L’atlas des oiseaux d’eau hivernant en Libye documente la reproduction insulaire, sans présenter l’espèce comme répandue dans toutes les zones humides. La même référence décrit sa présence sur la côte méditerranéenne égyptienne comme accidentelle ou peut-être rarement hivernale, et non comme une résidence commune dans tout le pays.",
+                "Beaucoup de populations sont résidentes ou effectuent des déplacements limités, sans que chaque individu occupe le même rocher toute l’année. Le guide de la Commission internationale pour l’exploration scientifique de la mer Méditerranée situe le début des pontes à la fin novembre dans certains sites, avec de fortes variations et une reproduction prolongée durant les mois suivants. Novembre peut donc réunir dispersion, retour aux colonies et premières activités reproductrices, plutôt que la seule arrivée d’hivernants."
+              ]
+            },
+            {
+              "heading": "Protection et observation respectueuse",
+              "paragraphs": [
+                "Le Cormoran huppé est classé mondialement en Préoccupation mineure, LC, ce qui n’exclut pas des déclins locaux. Les captures accidentelles dans les engins de pêche, la pollution pétrolière, le dérangement des colonies et l’aménagement côtier sont des menaces. Les tempêtes prolongées et la raréfaction des proies peuvent aussi compliquer l’alimentation. Le statut mondial et la fragilité d’une petite colonie menacée de perdre son site décrivent deux échelles différentes.",
+                "Observer à une distance permettant le repos et les comportements habituels. Éviter de débarquer sur les îles de reproduction ou d’entrer en bateau dans les grottes occupées. Noter date, effectifs, âges approximatifs et état de la mer, sans transformer les emplacements précis des nids en lieux très fréquentés. Une catégorie de risque d’extinction n’autorise pas la chasse ; les restrictions des réserves et les règles locales demeurent des obligations distinctes.",
+                "Pour approfondir : BirdFacts du British Trust for Ornithology ; guide de SEO/BirdLife ; guide des oiseaux marins de la CIESM ; Atlas des oiseaux d’eau hivernant en Libye 2005–2010 ; Encyclopédie virtuelle des vertébrés espagnols ; BirdLife International."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Giorgio Zavattoni / iNaturalist (CC0 1.0), Vardø, Norvège, 6 avril 2026."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الغاق-السقطري",
+        "en": "socotra-cormorant",
+        "fr": "cormoran-de-socotra"
+      },
+      "published": "2026-11-13",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "phalacrocorax-nigrogularis"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الغاق السقطري",
+          "subtitle": "Phalacrocorax nigrogularis",
+          "meta_description": "الغاق السقطري: التعرف إلى البالغ واليافع، الصيد الجماعي، حياة المستعمرات والبيض والفراخ، الانتشار العربي والتكاثر في نوفمبر والتهديدات.",
+          "sections": [
+            {
+              "heading": "طائر عربي الانتشار لا تحصره تسمية سقطرى",
+              "paragraphs": [
+                "الغاق السقطري، Phalacrocorax nigrogularis، طائر بحري من فصيلة الغاقيات يبلغ طوله نحو 80 سنتيمترًا. يمتد نطاقه الأساسي حول الخليج العربي وخليج عُمان وسواحل جنوب شبه الجزيرة العربية. لا يعني اسمه أنه محصور بجزيرة سقطرى، ولا أنه الغاق الكبير نفسه بلباس داكن. فله مواضع تكاثر وحركات موسمية ومخاطر تستحق النظر إليه بوصفه نوعًا مستقلًا.",
+                "قد تجعل الأسراب الكثيفة المشهد يبدو وفيرًا بلا حدود، لكن تجمع آلاف الطيور في جزر قليلة يزيد أهمية تلك الجزر بدل أن يلغي هشاشتها. تُعد جزيرة السينية في أم القيوين من مواقع التكاثر المهمة، إلى جانب مستعمرات أخرى في المنطقة. ويمكن أن تتغير أعداد الطيور في جزيرة نتيجة انتقالها من موضع مجاور، لا نتيجة نمو العدد الإجمالي بالضرورة."
+              ]
+            },
+            {
+              "heading": "علامات البالغ واليافع والفصل بين الأنواع",
+              "paragraphs": [
+                "البالغ أسحم، برأس وعنق أنحف ومنقار أدق من الغاق الكبير. لا يحمل البقعة البيضاء الواسعة نفسها على الوجه والذقن. في موسم التكاثر يزداد اللمعان الأخضر أو الأرجواني، وقد تظهر ريشات بيضاء دقيقة حول الرأس والعنق. يشترك الجنسان في المظهر الداكن؛ لذا لا يجوز تحديد الجنس من السواد أو البريق وحدهما.",
+                "اليافع بني رمادي من الأعلى، بأطراف فاتحة لريش الجناح، وأفتح من الأسفل مع تبقع بني. وقد يلتبس بيافع الغاق الكبير Phalacrocorax carbo، الذي يزور بعض السواحل نفسها. للفصل بينهما، تُجمع نحافة الرأس والعنق وشكل المنقار مع نمط الوجه والصدر. لا يكفي البطن الفاتح أو وجود الطائر ضمن سرب كبير للحكم على نوعه، كما لا يثبت اسم الموقع هويته."
+              ]
+            },
+            {
+              "heading": "الصيد الجماعي تحت سطح البحر",
+              "paragraphs": [
+                "يتغذى أساسًا على أسماك صغيرة، ويغوص من سطح الماء لملاحقتها. وثقت دراسة بأجهزة تتبع على طيور تتكاثر في السينية تداخل مناطق تغذيتها وتجمعها في أسراب بحرية كبيرة. وتشير النتائج إلى أن الاجتماع يساعد في العثور على أسراب الأسماك واستغلالها؛ لكنه لا يثبت أن الطيور تتبع قائدًا واحدًا أو تتقاسم مهامًا محددة كما تفعل فرق البشر.",
+                "في دراسة للغذاء خلال موسمي 2011–2012 و2012–2013 في السينية، تغيرت الفرائس السائدة من الأسماك الطائرة والسردين إلى الأنشوفة. وكان التداخل محدودًا بين الفرائس الأكثر حضورًا ومصيد الأسماك التجاري المحلي. هذه نتيجة لمكان وموسمين، لا قاعدة لكل بحر وزمن، لكنها تبين لماذا لا يصح استنتاج ضرر الغاق بالصيد التجاري من حجم السرب وحده."
+              ]
+            },
+            {
+              "heading": "من المستعمرة إلى البيضة",
+              "paragraphs": [
+                "يتكاثر في مستعمرات كثيفة على الجزر، وتكون الأعشاش حفرًا سطحية على الأرض لا أعشاشًا معلقة في الأشجار. تحتوي الحضنة غالبًا على بيضتين أو ثلاث. وتبقى سلامة الأرض حول الأعشاش مهمة؛ فطائر بالغ يغادر مع اقتراب زائر قد يترك البيض مكشوفًا للحرارة أو للمفترسات، حتى إن لم يلمس الزائر العش.",
+                "تابعت دراسة منشورة عام 2017 التكاثر في السينية خلال 2011–2015، وسجلت بدء وضع البيض بين 13 سبتمبر و6 أكتوبر، وقدرت الحضانة بنحو 24–27 يومًا. هذه تواريخ ومدة من جماعة مدروسة، وليست جدولًا ملزمًا لجميع الجزر. كما أن تباين التوقيت داخل المستعمرة يعني إمكان وجود أعشاش في مراحل مختلفة في الزيارة نفسها."
+              ]
+            },
+            {
+              "heading": "الفراخ والتجمعات بعد الفقس",
+              "paragraphs": [
+                "تبدأ الفراخ حياتها معتمدة على الوالدين في التغذية، ثم تنمو وتغادر موضع العش إلى تجمعات للصغار. لا يعني هذا التحول أن كل فرخ صار قادرًا على الطيران أو الحصول على الطعام بنفسه. المشهد الذي يبدو تجمعًا لطيور حرة الحركة قد يضم مراحل مختلفة من الاعتماد على الأبوين، ولهذا لا تنتهي الحاجة إلى الحماية بمجرد اختفاء البيض.",
+                "أظهرت الأبحاث في السينية أن نجاح الفقس وبقاء الفراخ يتأثران بظروف المستعمرة. وتؤكد دراسات الافتراس أن وجود مفترسات برية يمكن أن يضيف ضغطًا على الطيور والبيض. تستلزم معالجة ذلك تقييمًا علميًا للموقع، لا تدخلات عشوائية من الزوار. حماية دورة التكاثر تشمل الأرض والممرات نحو البحر والمياه التي يعود منها الآباء بالغذاء."
+              ]
+            },
+            {
+              "heading": "بلدان الانتشار ومشهد نوفمبر",
+              "paragraphs": [
+                "يشمل النطاق العربي سواحل السعودية والبحرين وقطر والإمارات وعُمان واليمن، وتورده قائمة اتفاقية الأنواع المهاجرة أيضًا في الكويت والصومال. لا تعني هذه القائمة أنه يتكاثر في كل بلد أو يوجد فيه بالكثافة نفسها. تصفه مجموعة رصد طيور قطر مقيمًا متكاثرًا، بينما تفرّق القائمة الكويتية بين وجوده وبين التكاثر، وتعده غير متكاثر هناك.",
+                "في شمال الإمارات يرتبط الخريف بنشاط تكاثري واضح. تلخص مراجعة علمية موسمًا يمتد عادة من أغسطس إلى ديسمبر، وقد يطول إذا تأخر التكاثر أو تعطل. ووفق الدراسات التي جمعتها المراجعة، تبدأ بعض طيور السينية التحرك نحو مياه أبوظبي في ديسمبر. لذلك قد يكون نوفمبر شهر إطعام فراخ ونشاط مستعمرة، لا مجرد محطة لطائر مهاجر عابر، مع اختلاف الصورة من موقع إلى آخر."
+              ]
+            },
+            {
+              "heading": "نوع معرّض للخطر رغم وفرة أسرابه",
+              "paragraphs": [
+                "تصنفه القائمة الحمراء العالمية ضمن «معرّض للخطر» VU، وهو تصنيف تؤكده اتفاقية الأنواع المهاجرة وبيردلايف. تشمل الأخطار تطوير السواحل والجزر، وإزعاج مواقع التكاثر، والتلوث البحري، والوقوع في معدات الصيد. يضيف فقد مستعمرة واحدة ضغطًا مهمًا حين يتركز التكاثر في عدد محدود من المواضع، ولا تعوضه بالضرورة مشاهدة سرب كبير في مكان آخر.",
+                "أفضل مشاهدة تترك الطيور في مواقعها: باستخدام منظار من مسافة مناسبة، ومن دون النزول إلى المستعمرات أو المرور بالقارب وسط أسراب التغذية. لا تُجمع البيوض أو الفراخ ولا تُطعَم الطيور لجذبها إلى عدسة. ويساعد الرصد المتكرر والمتزامن بين المواقع على فهم انتقال الأسراب؛ أما صورة واحدة فلا تكفي لإعلان تحسن حالة النوع أو تدهورها في المنطقة كلها.",
+                "مراجع للتوسع: دراسات جامعة الإمارات العربية المتحدة عن التكاثر والتغذية في السينية؛ مجلة Ecology and Evolution؛ مجلة Oryx؛ اتفاقية الأنواع المهاجرة؛ مجموعة رصد طيور قطر؛ قائمة طيور الكويت؛ هيئة البيئة – أبوظبي؛ بيردلايف إنترناشيونال؛ كتاب طيور المملكة العربية السعودية."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: James Eaton / iNaturalist (CC0 1.0)، حضرموت، اليمن، 20 مارس 2022."
+        },
+        "en": {
+          "title": "Socotra Cormorant",
+          "subtitle": "Phalacrocorax nigrogularis",
+          "meta_description": "Socotra Cormorant: identification, group feeding, island colonies, eggs and chicks, Arab distribution, November breeding activity and threats.",
+          "sections": [
+            {
+              "heading": "A regional seabird beyond the island in its name",
+              "paragraphs": [
+                "The Socotra Cormorant, Phalacrocorax nigrogularis, is a marine member of the cormorant family, approximately 80 centimetres long. Its core range surrounds the Arabian Gulf, Gulf of Oman and southern Arabian Peninsula. Its name does not mean that it is confined to Socotra Island, nor is it simply a dark-plumaged Great Cormorant. Its breeding sites, seasonal movements and threats deserve attention in their own right.",
+                "Dense flocks can create an impression of limitless abundance, yet concentrating thousands of birds on relatively few islands makes those islands more important, not less vulnerable. Siniya Island in Umm Al Quwain is a significant breeding site among other regional colonies. Numbers on an individual island may change because birds have moved from a neighbouring site, rather than because the overall population has grown."
+              ]
+            },
+            {
+              "heading": "Recognising adults and young birds",
+              "paragraphs": [
+                "Adults are sooty dark, with a slimmer head and neck and a finer bill than Great Cormorant. They lack the same extensive white face and chin patch. Breeding plumage gains a greenish or purplish gloss and may include fine white filoplumes around the head and neck. Both sexes share the dark appearance, so blackness or sheen alone cannot establish sex.",
+                "Immatures are grey-brown above, with pale feather edges on the wings, and lighter below with brown spotting. They can be confused with immature Great Cormorants, Phalacrocorax carbo, which visit some of the same coasts. Combine the slender head and neck and bill shape with face and breast pattern. A pale belly or a large flock is insufficient to identify the species, and a place name cannot establish a bird’s identity."
+              ]
+            },
+            {
+              "heading": "Group fishing below the surface",
+              "paragraphs": [
+                "The species feeds mainly on small fish pursued by diving from the surface. A tracking study of birds breeding at Siniya documented overlapping feeding areas and large gatherings at sea. Its results suggest that aggregation helps birds locate and exploit fish schools. They do not establish that a flock follows one leader or divides tasks in the manner of a human team.",
+                "A dietary study at Siniya during the 2011–2012 and 2012–2013 breeding seasons found that dominant prey shifted from flying fish and sardines to anchovies. The most frequent prey had limited overlap with the local commercial catch. This is a finding from one place and two seasons, not a rule for every sea and year, but it shows why flock size alone cannot demonstrate damage to fisheries."
+              ]
+            },
+            {
+              "heading": "From colony to egg",
+              "paragraphs": [
+                "Socotra Cormorants breed in dense island colonies, using shallow ground scrapes rather than nests suspended in trees. Clutches usually contain two or three eggs. The ground around nests also needs protection: an adult leaving as a visitor approaches may expose eggs to heat or predators even when nobody touches the nest.",
+                "A study published in 2017 followed breeding at Siniya during 2011–2015. It recorded the start of laying between 13 September and 6 October and estimated incubation at 24–27 days. These dates and durations describe a studied population, not a universal timetable for every island. Variation within a colony also means that nests can be at different stages during the same visit."
+              ]
+            },
+            {
+              "heading": "Chicks and gatherings after hatching",
+              "paragraphs": [
+                "Chicks begin life dependent on their parents for food, then grow and leave the immediate nest site to join gatherings of young birds. This transition does not mean that every chick can fly or feed independently. An apparently mobile group can contain birds at different stages of parental dependence, so protection does not become unnecessary once eggs are no longer visible.",
+                "Research at Siniya shows that hatching success and chick survival are affected by colony conditions. Predation studies also demonstrate that terrestrial predators can place additional pressure on birds and eggs. Addressing that pressure requires site-specific scientific assessment, not improvised intervention by visitors. Protecting the breeding cycle involves nesting ground, routes towards the sea and the waters from which parents bring food."
+              ]
+            },
+            {
+              "heading": "Arab range and the November scene",
+              "paragraphs": [
+                "The Arab range includes the coasts of Saudi Arabia, Bahrain, Qatar, the United Arab Emirates, Oman and Yemen; the Convention on Migratory Species also lists Kuwait and Somalia. Country presence does not imply breeding or equal abundance in every country. The Qatar Bird Observation Group describes it as a resident breeder, whereas the Kuwaiti checklist distinguishes occurrence from breeding and lists it as a non-breeder there.",
+                "In the northern Emirates, autumn is associated with conspicuous breeding activity. A scientific review describes a season generally extending from August to December, sometimes longer after delays or disruption. The studies it assembles indicate that some Siniya birds begin moving towards Abu Dhabi waters in December. November may therefore involve chick provisioning and colony activity rather than merely passage migration, with the situation differing among sites."
+              ]
+            },
+            {
+              "heading": "Vulnerable despite impressive flocks",
+              "paragraphs": [
+                "The global Red List category is Vulnerable, VU, also confirmed by the Convention on Migratory Species and BirdLife. Threats include development of coasts and islands, disturbance at breeding sites, marine pollution and entanglement in fishing gear. Losing one colony matters when breeding is concentrated in a limited set of places; a large flock elsewhere does not necessarily compensate for that loss.",
+                "The best observations leave birds where they are: use binoculars at a suitable distance, avoid landing in colonies and never drive a boat through feeding flocks. Do not collect eggs or chicks or feed birds to attract them to a camera. Repeated, coordinated counts across sites help explain movements. One photograph cannot establish either recovery or decline throughout the region.",
+                "Further reading: United Arab Emirates University studies of breeding and feeding at Siniya; Ecology and Evolution; Oryx; Convention on Migratory Species; Qatar Bird Observation Group; Kuwait Birds checklist; Environment Agency – Abu Dhabi; BirdLife International; The Birds of Saudi Arabia."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: James Eaton / iNaturalist (CC0 1.0), Hadramawt, Yemen, 20 March 2022."
+        },
+        "fr": {
+          "title": "Cormoran de Socotra",
+          "subtitle": "Phalacrocorax nigrogularis",
+          "meta_description": "Cormoran de Socotra : identification, pêche collective, colonies insulaires, œufs et poussins, répartition arabe, reproduction en novembre et menaces.",
+          "sections": [
+            {
+              "heading": "Un oiseau régional au-delà de l’île qui lui donne son nom",
+              "paragraphs": [
+                "Le Cormoran de Socotra, Phalacrocorax nigrogularis, est un oiseau marin de la famille des Phalacrocoracidés, long d’environ 80 centimètres. Son aire principale entoure le golfe Arabo-Persique, le golfe d’Oman et le sud de la péninsule Arabique. Son nom ne signifie pas qu’il est limité à l’île de Socotra ; ce n’est pas non plus un Grand Cormoran simplement plus sombre. Ses sites de reproduction, déplacements et menaces méritent une attention propre.",
+                "Les troupes compactes donnent parfois une impression d’abondance sans limite. Pourtant, concentrer des milliers d’oiseaux sur relativement peu d’îles rend ces dernières plus importantes, et non moins vulnérables. L’île de Siniya, à Oumm al-Qaïwaïn, compte parmi les grands sites de reproduction régionaux. Une variation locale d’effectif peut résulter d’un déplacement depuis une île voisine plutôt que d’une croissance de la population totale."
+              ]
+            },
+            {
+              "heading": "Reconnaître adultes et jeunes",
+              "paragraphs": [
+                "L’adulte est sombre, couleur de suie, avec une tête et un cou plus minces et un bec plus fin que ceux du Grand Cormoran. Il ne porte pas la même large plage blanche à la face et au menton. Le plumage nuptial devient plus brillant, vert ou violacé, avec parfois de fines filoplumes blanches autour de la tête et du cou. Les sexes partagent l’aspect sombre : couleur noire ou brillance ne suffisent pas à les distinguer.",
+                "Les immatures sont gris-brun dessus, avec des liserés clairs aux plumes des ailes, et plus pâles dessous, avec des taches brunes. Ils peuvent être confondus avec les jeunes Grands Cormorans, Phalacrocorax carbo, présents sur certaines des mêmes côtes. Associer finesse de la tête et du cou, forme du bec et dessin de la face et de la poitrine. Ni ventre clair ni grand rassemblement ne suffisent ; le nom d’un lieu ne détermine pas davantage l’espèce."
+              ]
+            },
+            {
+              "heading": "La pêche collective sous la surface",
+              "paragraphs": [
+                "L’espèce consomme surtout de petits poissons, poursuivis en plongeant depuis la surface. Une étude par suivi électronique d’oiseaux nicheurs de Siniya a montré le chevauchement des zones d’alimentation et de grands rassemblements en mer. Ses résultats suggèrent que le groupe facilite la découverte et l’exploitation des bancs de poissons. Ils ne prouvent pas l’existence d’un chef unique ou d’une répartition des tâches comparable à celle d’une équipe humaine.",
+                "À Siniya, une étude des saisons reproductrices 2011–2012 et 2012–2013 a constaté que les proies dominantes passaient des poissons volants et des sardines aux anchois. Le chevauchement avec les principales prises de la pêche commerciale locale était limité. Ce résultat concerne un lieu et deux saisons, non toutes les mers et toutes les années. Il montre néanmoins pourquoi la taille d’un rassemblement ne démontre pas, à elle seule, un dommage aux pêcheries."
+              ]
+            },
+            {
+              "heading": "De la colonie à l’œuf",
+              "paragraphs": [
+                "Les colonies insulaires peuvent être denses. Les nids sont des cuvettes peu profondes au sol, et non des constructions suspendues dans les arbres. Une ponte comporte habituellement deux ou trois œufs. Le terrain autour des nids doit aussi être préservé : un adulte quittant sa place à l’approche d’un visiteur peut exposer les œufs à la chaleur ou aux prédateurs, même sans contact direct avec le nid.",
+                "Une étude publiée en 2017 a suivi la reproduction à Siniya de 2011 à 2015. Elle situe les premières pontes entre le 13 septembre et le 6 octobre et estime l’incubation à 24–27 jours. Ces dates et durées décrivent une population étudiée, non un calendrier universel pour toutes les îles. Les différences de rythme au sein d’une colonie permettent également de rencontrer plusieurs stades de reproduction au cours d’une même visite."
+              ]
+            },
+            {
+              "heading": "Poussins et regroupements après l’éclosion",
+              "paragraphs": [
+                "Les poussins dépendent d’abord des parents pour leur nourriture, puis grandissent et quittent l’emplacement immédiat du nid pour rejoindre des groupes de jeunes. Cette transition ne signifie pas que chacun sait voler ou se nourrir seul. Un groupe apparemment mobile peut comprendre plusieurs degrés de dépendance parentale. La protection ne devient donc pas inutile lorsque les œufs ne sont plus visibles.",
+                "Les recherches à Siniya montrent que les conditions de la colonie influencent l’éclosion et la survie des poussins. Les études de prédation soulignent aussi la pression supplémentaire que peuvent exercer des prédateurs terrestres sur les oiseaux et les œufs. Y répondre exige une évaluation scientifique du site, pas une intervention improvisée des visiteurs. Protéger le cycle reproducteur comprend le terrain de nidification, les passages vers la mer et les eaux fournissant la nourriture rapportée par les adultes."
+              ]
+            },
+            {
+              "heading": "Répartition arabe et observations de novembre",
+              "paragraphs": [
+                "L’aire arabe comprend les côtes d’Arabie saoudite, de Bahreïn, du Qatar, des Émirats arabes unis, d’Oman et du Yémen ; la Convention sur les espèces migratrices mentionne aussi le Koweït et la Somalie. La présence dans un pays n’implique ni reproduction ni abondance identique partout. Le Qatar Bird Observation Group le décrit comme résident nicheur, tandis que la liste koweïtienne distingue présence et nidification et le classe parmi les non-nicheurs.",
+                "Dans les Émirats du Nord, l’automne correspond à une activité reproductrice notable. Une synthèse scientifique décrit une saison allant généralement d’août à décembre, parfois prolongée après un retard ou une perturbation. Les études réunies indiquent que certains oiseaux de Siniya commencent à gagner les eaux d’Abou Dhabi en décembre. Novembre peut donc être une période de nourrissage des poussins et d’activité coloniale plutôt qu’un simple passage migratoire, avec des différences entre sites."
+              ]
+            },
+            {
+              "heading": "Vulnérable malgré des rassemblements impressionnants",
+              "paragraphs": [
+                "Le statut mondial est Vulnérable, VU, également confirmé par la Convention sur les espèces migratrices et BirdLife. Les menaces comprennent l’aménagement des côtes et des îles, le dérangement des colonies, la pollution marine et l’enchevêtrement dans les engins de pêche. Perdre une colonie compte lorsque la reproduction se concentre sur peu de sites ; une grande troupe ailleurs ne compense pas nécessairement cette perte.",
+                "Une bonne observation laisse les oiseaux sur place : utiliser des jumelles à distance adaptée, éviter de débarquer dans les colonies et ne jamais traverser en bateau un rassemblement en train de pêcher. Ne prélever ni œufs ni poussins et ne pas nourrir les oiseaux pour les attirer devant l’objectif. Des comptages répétés et coordonnés entre sites aident à comprendre les déplacements. Une photographie isolée ne démontre ni rétablissement ni déclin à l’échelle régionale.",
+                "Pour approfondir : études de l’Université des Émirats arabes unis sur la reproduction et l’alimentation à Siniya ; Ecology and Evolution ; Oryx ; Convention sur les espèces migratrices ; Qatar Bird Observation Group ; liste des oiseaux du Koweït ; Environment Agency – Abu Dhabi ; BirdLife International ; The Birds of Saudi Arabia."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : James Eaton / iNaturalist (CC0 1.0), Hadramaout, Yémen, 20 mars 2022."
+        }
+      }
+    }
+  ]
+}

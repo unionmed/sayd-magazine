@@ -256,7 +256,9 @@
     "الأطيش-البني",
     "نقار-الخشب-السوري",
     "الأبلق-أبيض-التاج",
-    "الأبلق-الأسود"
+    "الأبلق-الأسود",
+    "الغاق-الأوروبي",
+    "الغاق-السقطري"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -471,7 +473,9 @@
     "الأطيش-البني",
     "نقار-الخشب-السوري",
     "الأبلق-أبيض-التاج",
-    "الأبلق-الأسود"
+    "الأبلق-الأسود",
+    "الغاق-الأوروبي",
+    "الغاق-السقطري"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -1019,7 +1023,9 @@
     "الأطيش-البني": "birds",
     "نقار-الخشب-السوري": "birds",
     "الأبلق-أبيض-التاج": "birds",
-    "الأبلق-الأسود": "birds"
+    "الأبلق-الأسود": "birds",
+    "الغاق-الأوروبي": "birds",
+    "الغاق-السقطري": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -3103,6 +3109,24 @@
         "ar": "أبلق داكن الريش يقف فوق صخرة، ويظهر البياض أسفل الذيل.",
         "en": "A dark-plumaged wheatear standing on a rock, with white visible beneath its tail.",
         "fr": "Un traquet au plumage sombre se tient sur un rocher, avec du blanc visible sous la queue."
+      }
+    },
+    "الغاق-الأوروبي": {
+      "image": "media/publications/daily-birds-20261113/european-shag.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "غاق داكن بعرف وريش أخضر لامع وبقعة صفراء عند قاعدة المنقار يقف على صخرة.",
+        "en": "A dark shag with a crest, glossy green plumage and yellow gape stands on a rock.",
+        "fr": "Un cormoran sombre à huppe, au plumage vert brillant et à la commissure jaune, se tient sur un rocher."
+      }
+    },
+    "الغاق-السقطري": {
+      "image": "media/publications/daily-birds-20261113/socotra-cormorant.jpeg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "غاق داكن نحيل العنق يقف على حافة صخرية ويرفع منقاره إلى أعلى.",
+        "en": "A dark cormorant with a slender neck stands on a rocky ledge with its bill raised.",
+        "fr": "Un cormoran sombre au cou fin se tient sur une corniche rocheuse, le bec relevé."
       }
     }
   },
