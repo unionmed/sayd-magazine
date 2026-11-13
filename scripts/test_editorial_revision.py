@@ -136,4 +136,6 @@ from test_scoped_stonechat_oman_revision import StonechatOmanTests
 
 from test_scoped_qatar_results_nov12 import QatarNov12Tests
 
+from test_scoped_qatar_results_nov13 import QatarNov13Tests
+
 if __name__=='__main__':unittest.main()
