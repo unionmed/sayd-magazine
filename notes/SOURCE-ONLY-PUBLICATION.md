@@ -532,3 +532,28 @@ unchanged. Failure after a successful tree POST can leave an unreachable object;
 that is not a candidate ref or publication. A 422 stops before any later batch,
 commit or ref. The smaller budgets are a conservative processing mitigation,
 not a guarantee of GitHub acceptance; any later failure remains explicit.
+
+## Closed Syria Jousiyeh article and ticker update — November 14
+
+Operation `update-syria-jousiyeh-20261114` accepts only the matching immutable
+revision `syria-jousiyeh-update-20261114`, empty payload, exact current base,
+original Syria publication hash and aggregate target hashes. It prepends one
+fixed, reviewed paragraph in each language about the ministry receiving raptors
+seized at Jousiyeh on November 12 for veterinary care and rehabilitation.
+Release is conditional and prospective; no count or species is inferred.
+Source: Syrian Al-Ikhbariya, November 12, 2026, 22:00,
+https://alikhbariah.com/تمهيداً-لإعادتها-إلى-البرية-وزارة-الإ/ .
+
+Only the six existing article mirrors, independent update registry, corresponding
+sitemap dates and three logical search bodies change, together with the existing
+Syria ticker wording in the two ticker registries and the three homepage loops.
+The original November 11 publication date, titles, descriptions, slugs, all old
+paragraphs, photo bytes, credits and rights, card placement, ticker order and
+all unrelated content remain exact. The existing CC0 stork image is retained;
+no new event photograph or rights claim is introduced. V3 manifests and additive
+content-addressed shards use the existing revision adapter. No snapshot deletion.
+
+Normal separate support review, source-only request, trusted compilation,
+independent review, exact-head CI, protected merge and live verification remain
+mandatory. The support change does not publish the article and accepts no
+arbitrary replacement text or path. Approval references do not grant permission.
