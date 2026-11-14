@@ -557,3 +557,38 @@ Normal separate support review, source-only request, trusted compilation,
 independent review, exact-head CI, protected merge and live verification remain
 mandatory. The support change does not publish the article and accepts no
 arbitrary replacement text or path. Approval references do not grant permission.
+
+## Exact same-byte homepage images — November 14 processing repair
+
+Operation and revision ID `homepage-local-images-20261114` accept one new immutable
+`content/editorial-revisions/homepage-local-images-20261114.json`, an empty payload,
+the exact current base, a digest of the original channel/Adonis sources and three
+fixed existing image files, and the aggregate hash of the three current homepages.
+The source contains no map, path, replacement text, image or rights assertion.
+Distribution review scope is false: no story/video placement or order changes.
+
+Trusted BASE code substitutes only three `img src` spans in each AR/EN/FR homepage:
+the Saudi autumn cover, Gulf autumn cover and Adonis archive portrait. Each exact
+TV group/card identity is bound to its existing local path and decoded SHA-256.
+Canonical inline JPEG bytes must equal the existing regular local file byte for
+byte; missing files, symlinks (including parents), noncanonical paths, malformed
+UTF-8/base64, mismatched hashes, duplicate/missing cards and repeat migration fail
+closed. A byte-exact inverse proves that every other homepage byte is unchanged.
+Relative paths are specific to the three homepages. There is no image recompression,
+resize, extraction, new asset, source/license claim or generic image override.
+
+The exact reviewed revision activates current homepage rendering and checking.
+Absent markers preserve historical inline rendering; malformed markers fail rather
+than select a fallback. Historical Adonis compilation and TV archive cards retain
+their exact original representation. Original source JSON/data URIs, article and
+category pages, photo bytes, catalogs, search, audio/video, URLs, layout and credits
+remain unchanged. Subsequent homepage builds reverify the fixed image equivalence.
+
+The support PR contains code/tests/documentation only. After its separate protected
+merge, the source-only migration produces exactly three homepages plus its revision
+record through the existing trusted compiler/writer and normal generated-PR review.
+The finalizer adds only that exact revision path; its 1 MiB/32-entry/64-batch limits,
+1132-output regression, preflight, tree identity, provenance and race guards remain
+unchanged. No direct generated-output edit, alternate upload, oversized singleton,
+workflow permission, retry, auto-merge or deployment route is added. Pending article
+requests are rebuilt on the exact post-migration main only after protected merge.

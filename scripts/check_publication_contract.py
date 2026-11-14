@@ -213,7 +213,7 @@ def check(base=None):
                 if card.get('data-external-selection'):
                     assert external and card.get('data-external-selection')==adonis_tv_publication.ID
                     assert card.getparent().getparent().get('data-tv-group')=='sayd-selections'
-                    row.append(('external:'+adonis_tv_publication.ID,card.xpath('.//img/@src')))
+                    row.append(('external:'+adonis_tv_publication.ID,images(card,p)))
                     continue
                 if card.get('data-native-video'):
                     assert native and card.get('data-native-video')==tv_publication.ID
@@ -226,7 +226,10 @@ def check(base=None):
                     assert card.xpath('.//a/@href')==[channel_href(video)]*2
                     assert card.xpath('.//h3/a/text()')==[video['titles'][lang]]
                     assert card.xpath('.//div[@class="meta"]/text()')==[channel_date(video['published_at'],lang)],f'{lang}: channel publication date must be localized'
-                    assert card.xpath('.//img/@src')==[video['image']]
+                    from homepage_image_sources import image_src
+                    assert card.getparent().getparent().get('data-tv-group')=='sayd-channel'
+                    expected_image=image_src(ROOT,lang,p,'sayd-channel','data-video-id',video['id'],video['image'])
+                    assert card.xpath('.//img/@src')==[expected_image]
                     import base64
                     assert base64.b64decode(video['image'].split(',',1)[1],validate=True).startswith(b'\xff\xd8')
                     row.append(('youtube:'+video['id'],[video['image']]))

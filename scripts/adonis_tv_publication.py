@@ -66,7 +66,12 @@ def homepage_card(root, lang):
     value=loads((root/SOURCE).read_text());validate(value,value['expected_base'])
     poster=(root/POSTER).read_bytes()
     require(hashlib.sha256(poster).hexdigest()==value['poster_sha256'],'External poster hash mismatch')
-    return card(value,lang,poster)
+    from homepage_image_sources import image_src, HOMES
+    source='data:image/jpeg;base64,'+base64.b64encode(poster).decode()
+    image=image_src(root,lang,root/HOMES[lang],'sayd-selections','data-external-selection',ID,source)
+    # card()/archive_card() remain historical replay functions. Change only this
+    # current homepage representation, after exact byte equivalence is proved.
+    return card(value,lang,poster).replace('src="'+source+'"','src="'+image+'"',1)
 
 def expected_changes(root, base, value, poster):
     import publication_compiler as c
@@ -157,7 +162,7 @@ def check_published(root):
         poster=(root/POSTER).read_bytes()
         homepage_card(root,lang)  # Validate poster digest before either rendering.
         for path in ('index.html',TV_PATH):
-            expected=dom.fromstring(card(value,lang,poster) if path=='index.html' else archive_card(value,lang,poster))
+            expected=dom.fromstring(homepage_card(root,lang) if path=='index.html' else archive_card(value,lang,poster))
             tree=dom.parse(str(root/'docs'/prefix/path))
             found=tree.xpath('//article[@data-external-selection=$id]',id=ID)
             require(len(found)==1 and dom.tostring(found[0],with_tail=False)==dom.tostring(expected,with_tail=False),'External card drift')
