@@ -258,7 +258,9 @@
     "الأبلق-أبيض-التاج",
     "الأبلق-الأسود",
     "الغاق-الأوروبي",
-    "الغاق-السقطري"
+    "الغاق-السقطري",
+    "الغطاس-أحمر-الرقبة",
+    "الغطاس-المقرن"
   ],
   "omit_from_ticker": [
     "صيد-تعود-وهذا-ما-نريد-أن-نقدّمه-لكم",
@@ -476,7 +478,9 @@
     "الأبلق-الأسود",
     "الغاق-الأوروبي",
     "الغاق-السقطري",
-    "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء"
+    "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء",
+    "الغطاس-أحمر-الرقبة",
+    "الغطاس-المقرن"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -1028,7 +1032,9 @@
     "الغاق-الأوروبي": "birds",
     "الغاق-السقطري": "birds",
     "الكورة-توقيف-مخالفين-الصيد-الليلي-2026": "hunting",
-    "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء": "science"
+    "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء": "science",
+    "الغطاس-أحمر-الرقبة": "birds",
+    "الغطاس-المقرن": "birds"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -3148,6 +3154,24 @@
         "ar": "كثبان رملية وأرض صخرية قرب شرورة في جنوب الربع الخالي، في صورة لاندسات 7.",
         "en": "Sand dunes and rocky terrain near Sharurah in the southern Empty Quarter, in Landsat 7 imagery.",
         "fr": "Dunes et terrain rocheux près de Sharurah, dans le sud du Rub al-Khali, vus par Landsat 7."
+      }
+    },
+    "الغطاس-أحمر-الرقبة": {
+      "image": "media/publications/daily-birds-20261114/podiceps-grisegena.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "غطاس ممتلئ الجسم يسبح، بمنقار قوي أصفر القاعدة وعنق رمادي وقلنسوة داكنة.",
+        "en": "A stocky grebe swimming with a strong yellow-based bill, grey neck and dark cap.",
+        "fr": "Un grèbe robuste nage, montrant un bec puissant à base jaune, un cou gris et une calotte sombre."
+      }
+    },
+    "الغطاس-المقرن": {
+      "image": "media/publications/daily-birds-20261114/podiceps-auritus.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "غطاس صغير يسبح بعين حمراء وخد أبيض وقلنسوة داكنة ومنقار مستقيم.",
+        "en": "A small grebe swimming with a red eye, white cheek, dark cap and straight bill.",
+        "fr": "Un petit grèbe nage, avec un œil rouge, une joue blanche, une calotte sombre et un bec droit."
       }
     }
   },
