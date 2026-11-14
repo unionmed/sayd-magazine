@@ -45,8 +45,7 @@ PARAGRAPHS = {'ar': 'تسلّمت وزارة الإدارة المحلية وا�
 
 TITLES = {'ar': 'سوريا تتسلّم جوارح جوسية المضبوطة للرعاية والتأهيل تمهيدًا لإطلاق المؤهل منها.',
  'en': 'Syria takes in raptors seized at Jousiyeh for care and rehabilitation ahead of possible release.',
- 'fr': 'Syrie : les rapaces saisis à Jousiyeh pris en charge avant leur réhabilitation et leur remise en '
-       'liberté.'}
+ 'fr': 'Syrie : les rapaces saisis à Jousiyeh pris en charge pour soins et réhabilitation en vue d’une éventuelle remise en liberté.'}
 
 OLD_TITLES = {'ar': 'سوريا: تعميم للمحافظين لضبط الصيد الجائر خلال هجرة الطيور وتعزيز الرقابة.',
  'en': 'Syria: circular calls on governors to curb illegal hunting during bird migration and strengthen '

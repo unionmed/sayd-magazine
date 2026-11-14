@@ -68,6 +68,17 @@ class FakeAPI:
 
 
 class FinalizerTests(unittest.TestCase):
+    def test_syria_exact_revision_path_only(self):
+        allowed = "content/editorial-revisions/syria-jousiyeh-update-20261114.json"
+        self.assertEqual(str(f.safe_output_path(allowed)), allowed)
+        for path in (allowed.replace("20261114", "20261115"),
+                     allowed.replace("syria-jousiyeh", "other-story"),
+                     allowed.replace(".json", ".py"),
+                     allowed.replace("/syria", "/nested/syria"),
+                     "content/editorial-revisions/../publication-contract.json"):
+            with self.subTest(path=path), self.assertRaises(f.Blocked):
+                f.safe_output_path(path)
+
     def test_nov5_bird_reference_exact_revision_path_only(self):
         allowed = "content/editorial-revisions/nov5-bird-text-references-20261105.json"
         self.assertEqual(str(f.safe_output_path(allowed)), allowed)

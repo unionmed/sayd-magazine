@@ -115,7 +115,8 @@ def safe_output_path(value):
                   "content/interviews.json", "content/marine-fishing.json"}
         or (value.startswith("content/publications/") and len(path.parts) == 3 and path.suffix == ".json")
         or (value.startswith("content/caption-revisions/") and len(path.parts) == 3 and path.suffix == ".json")
-        or value in {"content/editorial-revisions/nov5-bird-text-references-20261105.json",
+        or value in {"content/editorial-revisions/syria-jousiyeh-update-20261114.json",
+                     "content/editorial-revisions/nov5-bird-text-references-20261105.json",
                      "content/editorial-revisions/two-bird-lifecycles-20261102.json",
                      "content/editorial-revisions/stonechat-oman-status-20261106.json",
                      "content/editorial-revisions/nathalie-five-photos-20261029.json",
