@@ -1,0 +1,209 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "koura-night-hunting-20261114",
+  "expected_base": "ea25ae33edeca663984561c22611fe18e17e8f42",
+  "approval_reference": "private:koura-20261114-editorial-approval",
+  "bank_search_reference": "private:koura-20261114-image-selection",
+  "photos": [
+    {
+      "id": "koura-field-team",
+      "path": "docs/media/publications/koura-night-hunting-20261114/koura-field-team.jpg",
+      "sha256": "68f0aaab7115e0174f8cb90cc7332fea990d85a293cc3bc9c29146ae9e3167f7",
+      "source_sha256": "68f0aaab7115e0174f8cb90cc7332fea990d85a293cc3bc9c29146ae9e3167f7",
+      "source_reference": "MECSHAP Koura night-hunting report published 13 November 2026; gallery image 7. https://uph4a0p5cqie4mab.public.blob.vercel-storage.com/mecshap/1794593643858-64r1bs.jpg Original pixels and source file retained unchanged; capture date and photographer not specified.",
+      "source_url": "https://www.mecshap.org/articles/night-hunting-crackdown-in-koura-arrests-vehicles-impounded-and-hunting-equipment-seized/ar",
+      "alt": {
+        "ar": "جانب من العمل الميداني لفرق مكافحة الصيد الجائر في الكورة",
+        "en": "Anti-poaching teams at work in Koura",
+        "fr": "Les équipes de lutte contre le braconnage sur le terrain dans le Koura"
+      },
+      "caption": {
+        "ar": "جانب من العمل الميداني لفرق مكافحة الصيد الجائر في الكورة",
+        "en": "Anti-poaching teams at work in Koura",
+        "fr": "Les équipes de lutte contre le braconnage sur le terrain dans le Koura"
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "Permission to republish these MECSHAP photographs in Sayd. Not a public or open licence.",
+        "evidence_reference": "private:koura-20261114-media-rights"
+      }
+    },
+    {
+      "id": "koura-hunting-equipment",
+      "path": "docs/media/publications/koura-night-hunting-20261114/koura-hunting-equipment.jpg",
+      "sha256": "55c19e234aa74dd89190ef24087d8d84fee0b0cada053659bfed7aada6c804b5",
+      "source_sha256": "55c19e234aa74dd89190ef24087d8d84fee0b0cada053659bfed7aada6c804b5",
+      "source_reference": "MECSHAP Koura night-hunting report published 13 November 2026; gallery image 8. https://uph4a0p5cqie4mab.public.blob.vercel-storage.com/mecshap/1794593646373-v8dt4r.jpg Original pixels and source file retained unchanged; capture date and photographer not specified.",
+      "source_url": "https://www.mecshap.org/articles/night-hunting-crackdown-in-koura-arrests-vehicles-impounded-and-hunting-equipment-seized/ar",
+      "alt": {
+        "ar": "بنادق صيد وذخائر موضوعة في صندوق مركبة.",
+        "en": "Shotguns and ammunition in the bed of a vehicle.",
+        "fr": "Des fusils de chasse et des munitions dans la benne d’un véhicule."
+      },
+      "caption": {
+        "ar": "بنادق صيد وذخائر موضوعة في صندوق مركبة.",
+        "en": "Shotguns and ammunition in the bed of a vehicle.",
+        "fr": "Des fusils de chasse et des munitions dans la benne d’un véhicule."
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "Permission to republish these MECSHAP photographs in Sayd. Not a public or open licence.",
+        "evidence_reference": "private:koura-20261114-media-rights"
+      }
+    },
+    {
+      "id": "koura-investigation-team",
+      "path": "docs/media/publications/koura-night-hunting-20261114/koura-investigation-team.jpg",
+      "sha256": "fa358cb16565369882e3cf0ce88c7af01dbfe86cb17418f13f5ad1fc675d4921",
+      "source_sha256": "fa358cb16565369882e3cf0ce88c7af01dbfe86cb17418f13f5ad1fc675d4921",
+      "source_reference": "MECSHAP Koura night-hunting report published 13 November 2026; gallery image 12. https://uph4a0p5cqie4mab.public.blob.vercel-storage.com/mecshap/1794593660893-bzpxle.jpg Original pixels and source file retained unchanged; capture date and photographer not specified.",
+      "source_url": "https://www.mecshap.org/articles/night-hunting-crackdown-in-koura-arrests-vehicles-impounded-and-hunting-equipment-seized/ar",
+      "alt": {
+        "ar": "عناصر من الاستقصاء خلال العمل الميداني الليلي",
+        "en": "Investigation personnel during the night operation",
+        "fr": "Des agents du détachement d’investigation pendant l’opération nocturne"
+      },
+      "caption": {
+        "ar": "عناصر من الاستقصاء خلال العمل الميداني الليلي",
+        "en": "Investigation personnel during the night operation",
+        "fr": "Des agents du détachement d’investigation pendant l’opération nocturne"
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "Permission to republish these MECSHAP photographs in Sayd. Not a public or open licence.",
+        "evidence_reference": "private:koura-20261114-media-rights"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
+        "en": "koura-night-hunting-arrests-seizures-2026",
+        "fr": "koura-chasse-nocturne-interpellations-saisies-2026"
+      },
+      "published": "2026-11-14",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "koura-field-team",
+        "koura-hunting-equipment",
+        "koura-investigation-team"
+      ],
+      "photo_placements": [
+        {
+          "photo_id": "koura-hunting-equipment",
+          "after_section": 1
+        },
+        {
+          "photo_id": "koura-investigation-team",
+          "after_section": 2
+        }
+      ],
+      "translations": {
+        "ar": {
+          "title": "توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد في الكورة- شمال لبنان",
+          "subtitle": "عمليات مشتركة في الكورة إثر بلاغ موثق من صيادين مستدامين، وإحالة الموقوفين والمضبوطات إلى فصيلة شكا.",
+          "meta_description": "عمليات مشتركة في الكورة إثر بلاغ موثق من صيادين مستدامين، وإحالة الموقوفين والمضبوطات إلى فصيلة شكا.",
+          "ticker_title": "توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد في الكورة- شمال لبنان",
+          "sections": [
+            {
+              "paragraphs": [
+                "أسفرت عمليات مشتركة لمكافحة الصيد الليلي في الكورة عن توقيف مخالفين وحجز سيارات وضبط بنادق وكشافات وأجهزة لبث أصوات الطيور."
+              ]
+            },
+            {
+              "paragraphs": [
+                "تحركت الفرق إثر بلاغ من صيادين مستدامين أرفقوه بصور وإحداثيات للمواقع. وشاركت في العمليات وحدة مكافحة الصيد الجائر (APU) ضمن غرفة العمليات المشتركة اللبنانية الدولية لمركز الشرق الاوسط للصيد المستدام ومكافحة الصيد الجائر، مكشاب، ومنظمة كابس (MECSHAP–CABS)، ومفرزة استقصاء الشمال بقوى الأمن الداخلي، ومكتب التنمية الريفية في الشمال التابع لوزارة الزراعة."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وأُحيل الموقوفون مع المضبوطات إلى فصيلة شكا لمتابعة الإجراءات القانونية، فيما نظمت وزارة الزراعة محاضر بالمخالفات."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وأوضح مكشاب أن جهود مكافحة الصيد الجائر تُنسّق مع غرفة عمليات قيادة الدرك وشعبة العلاقات العامة في قوى الأمن الداخلي ومخابرات الجيش ووزارة الزراعة. ويستند التعاون مع الوزارة إلى مذكرة تفاهم تجمعها بمكشاب ومنظمة IndyACT لحماية الحياة البرية والبحرية."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "مصدر الصور، مكشاب 13/11/2026"
+        },
+        "en": {
+          "title": "Suspects arrested, vehicles impounded and hunting weapons and equipment seized in Koura, North Lebanon",
+          "subtitle": "Joint operations in Koura followed a documented report by sustainable hunters. Detainees and seized equipment were referred to Chekka Police Station.",
+          "meta_description": "Joint operations in Koura followed a documented report by sustainable hunters. Detainees and seized equipment were referred to Chekka Police Station.",
+          "ticker_title": "Suspects arrested, vehicles impounded and hunting weapons and equipment seized in Koura, North Lebanon",
+          "sections": [
+            {
+              "paragraphs": [
+                "Joint operations targeting illegal night hunting in Koura led to arrests, vehicles being impounded and the seizure of shotguns, searchlights and electronic bird callers."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The teams acted on a report from sustainable hunters, accompanied by photographs and location coordinates. The operations involved the Anti-Poaching Unit (APU) of the joint Lebanese–international operations room of the Middle East Center for Sustainable Harvest and Anti-Poaching (MECSHAP) and CABS, the Internal Security Forces’ North Investigation Unit and the Ministry of Agriculture’s Rural Development Office in North Lebanon."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The detainees and seized equipment were referred to Chekka Police Station for legal proceedings. The Ministry of Agriculture also recorded the violations in official reports."
+              ]
+            },
+            {
+              "paragraphs": [
+                "MECSHAP said anti-poaching efforts are coordinated with the ISF Gendarmerie Command Operations Room, the ISF Public Relations Division, Lebanese Army Intelligence and the Ministry of Agriculture. Cooperation with the ministry is based on a memorandum of understanding with MECSHAP and IndyACT to protect terrestrial and marine wildlife."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo source: MECSHAP, 13/11/2026."
+        },
+        "fr": {
+          "title": "Interpellations, véhicules immobilisés et armes et matériel de chasse saisis dans le Koura, au Liban-Nord",
+          "subtitle": "Des opérations conjointes dans le Koura ont suivi un signalement documenté de chasseurs durables. Les personnes interpellées et le matériel saisi ont été remis au poste de Chekka.",
+          "meta_description": "Des opérations conjointes dans le Koura ont suivi un signalement documenté de chasseurs durables. Les personnes interpellées et le matériel saisi ont été remis au poste de Chekka.",
+          "ticker_title": "Interpellations, véhicules immobilisés et armes et matériel de chasse saisis dans le Koura, au Liban-Nord",
+          "sections": [
+            {
+              "paragraphs": [
+                "Des opérations conjointes contre la chasse nocturne illégale dans le Koura ont conduit à des interpellations, à l’immobilisation de véhicules et à la saisie de fusils, de projecteurs et d’appeaux électroniques."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Les équipes sont intervenues après un signalement de chasseurs durables, accompagné de photographies et de coordonnées géographiques. Les opérations ont réuni l’Unité de lutte contre le braconnage (APU), rattachée à la salle d’opérations conjointe libanaise et internationale du Centre du Moyen-Orient pour la chasse durable et la lutte contre le braconnage (MECSHAP) et de CABS, le détachement d’investigation du Nord des Forces de sécurité intérieure et le Bureau du développement rural au Liban-Nord du ministère de l’Agriculture."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Les personnes interpellées et le matériel saisi ont été remis au poste de Chekka pour les suites judiciaires. Le ministère de l’Agriculture a également dressé des procès-verbaux."
+              ]
+            },
+            {
+              "paragraphs": [
+                "MECSHAP précise que la lutte contre le braconnage est coordonnée avec la salle d’opérations du commandement de la gendarmerie, la division des relations publiques des Forces de sécurité intérieure, les renseignements de l’armée et le ministère de l’Agriculture. La coopération avec ce dernier repose sur un protocole d’accord avec MECSHAP et IndyACT pour protéger la faune terrestre et marine."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Source des photos : MECSHAP, 13/11/2026."
+        }
+      },
+      "distribution": {
+        "placement": "lead",
+        "ticker": true
+      }
+    }
+  ]
+}
