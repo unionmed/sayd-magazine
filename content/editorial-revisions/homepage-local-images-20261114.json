@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "homepage-local-images-20261114",
+  "expected_base": "7564783302649319e785691b125830ebacb23334",
+  "operation": "homepage-local-images-20261114",
+  "approval_reference": "private:owner-safe-publication-repair-20261114",
+  "expected_source_sha256": "c68d83b447311c8dee74a0144b3e68ee8916d0533df47362fa2ff09aba10a80e",
+  "expected_targets_sha256": "42370bbc930c137554fbb3c05c1e3349fc093c38169c574299f05add1fb1fd28",
+  "payload": {}
+}
