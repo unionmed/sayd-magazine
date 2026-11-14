@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "syria-jousiyeh-update-20261114",
+  "expected_base": "1c40e68b3bff82115c837db2c2029481759c4f9e",
+  "operation": "update-syria-jousiyeh-20261114",
+  "approval_reference": "private:Sentinel_d64daa6f21a48191870345562084ca28",
+  "expected_source_sha256": "442862806c7803bf9ccef4d6ab248473db3a008ae20451dfba44951efe2cdd3a",
+  "expected_targets_sha256": "ad5c893f1a3cc7a4fd3d07cdf61998b5ebb2e6410026fa093d01691627f94e2f",
+  "payload": {}
+}
