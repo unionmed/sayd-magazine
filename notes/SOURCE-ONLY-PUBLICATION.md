@@ -557,3 +557,118 @@ Normal separate support review, source-only request, trusted compilation,
 independent review, exact-head CI, protected merge and live verification remain
 mandatory. The support change does not publish the article and accepts no
 arbitrary replacement text or path. Approval references do not grant permission.
+
+## Exact same-byte homepage images — November 14 processing repair
+
+Operation and revision ID `homepage-local-images-20261114` accept one new immutable
+`content/editorial-revisions/homepage-local-images-20261114.json`, an empty payload,
+the exact current base, a digest of the original channel/Adonis sources and three
+fixed existing image files, and the aggregate hash of the three current homepages.
+The source contains no map, path, replacement text, image or rights assertion.
+Distribution review scope is false: no story/video placement or order changes.
+
+Trusted BASE code substitutes only three `img src` spans in each AR/EN/FR homepage:
+the Saudi autumn cover, Gulf autumn cover and Adonis archive portrait. Each exact
+TV group/card identity is bound to its existing local path and decoded SHA-256.
+Canonical inline JPEG bytes must equal the existing regular local file byte for
+byte; missing files, symlinks (including parents), noncanonical paths, malformed
+UTF-8/base64, mismatched hashes, duplicate/missing cards and repeat migration fail
+closed. A byte-exact inverse proves that every other homepage byte is unchanged.
+Relative paths are specific to the three homepages. There is no image recompression,
+resize, extraction, new asset, source/license claim or generic image override.
+
+The exact reviewed revision activates current homepage rendering and checking.
+Absent markers preserve historical inline rendering; malformed markers fail rather
+than select a fallback. Historical Adonis compilation and TV archive cards retain
+their exact original representation. Original source JSON/data URIs, article and
+category pages, photo bytes, catalogs, search, audio/video, URLs, layout and credits
+remain unchanged. Subsequent homepage builds reverify the fixed image equivalence.
+
+The support PR contains code/tests/documentation only. After its separate protected
+merge, the source-only migration produces exactly three homepages plus its revision
+record through the existing trusted compiler/writer and normal generated-PR review.
+The finalizer adds only that exact revision path; its 1 MiB/32-entry/64-batch limits,
+1132-output regression, preflight, tree identity, provenance and race guards remain
+unchanged. No direct generated-output edit, alternate upload, oversized singleton,
+workflow permission, retry, auto-merge or deployment route is added. Pending article
+requests are rebuilt on the exact post-migration main only after protected merge.
+
+The existing local-only browser job checks all three mirrors at four widths. Each
+selected image is exposed through real carousel scrolling, below the real sticky
+header, with a shared baseline-derived viewport/clip. No CSS, header or image is
+hidden. Encoded/HTTP bytes, full-natural decoded RGBA, normalized TV DOM, image
+identity/links, geometry and paint inputs stay exact. The independently reviewed
+scaled-raster criterion permits at most three RGB levels, with unchanged alpha,
+only inside the verified visible Saudi-cover rectangle; every other pixel must
+match exactly. All differences and fixed A/A, B/B and same-page A-to-B-to-A controls
+are retained. This is explicit same-content/same-layout equivalence, not a claim
+of bit-identical scaled screenshots or a proven Chromium-internal cause. Any
+outside change, greater residual or identity/layout mismatch fails. Adversarial
+proof tests run in the normal protected unit job without new dependencies.
+
+## Closed no-drift homepage image recovery — local proposal, November 14
+
+This support code does not activate migration or recovery, publish content, or
+establish production readiness. Separate independent review, complete local and
+exact-head protected checks, and the ordinary authorized publication flow remain
+required. No source marker is included in the support change.
+
+`homepage-inline-recovery-20261114` is one closed, append-only inverse with an
+empty payload. It preserves the activation marker, every source record, image,
+article, catalog, search object and all provenance. Its only generated changes
+are the exact original three homepage blobs and its own new immutable marker.
+There is no caller-supplied path, HTML, checkpoint, blob map or general rollback.
+
+Recovery support must be installed **before activation**. The inverse is admitted
+only when its exact current base has the entire tree produced by activation.
+Any later tree difference, including a change followed by an exact revert, Koura/news, an asset, source, catalog, search,
+code-only change or a note, makes this inverse unavailable. It does not undo later
+news, rebase itself, or silently substitute an older release. A newly scoped,
+independently reviewed design is required after drift. This is deliberately a
+narrow no-drift restoration, not durable recovery of arbitrary later states.
+Both activation and inverse must preserve their exact source and generated commits
+as ancestors through a normal merge. Squash/rebase integration can remove the
+required proof history despite identical final bytes and is not supported by this
+closed operation. This prerequisite changes no repository merge setting or workflow.
+
+Trusted code reads the original checkpoint only from the exact activation record,
+requires commit ancestry, reconstructs its original regular path/mode/blob bytes,
+checks pinned source/image hashes, and replays exactly nine image spans. It proves
+an ancestral source commit with exactly the original checkpoint as sole parent,
+and an ancestral generated commit with exactly that source as sole parent, exact
+complete output tree and exact compiler-plan provenance. Missing history, forged
+checkpoints, available-but-unrelated old objects, wrong modes, altered markers or
+any other output fail closed. The inverse's source digest binds activation bytes,
+original checkpoint/tree, complete activated tree, and each original path's mode,
+Git blob, SHA-256 and size. Standard target hashes and whole-tree trusted candidate
+replay remain mandatory. These proofs establish deterministic bytes, not owner
+approval or evidence that a particular GitHub workflow ran.
+
+The writer independently derives three **path-bound** historical SHA references
+from trusted root/base/source after its existing plan/byte/compiler validation.
+It never trusts a supplied allowlist or the generated site's Git database. The
+existing Trees representation reuses those exact already reachable Git objects;
+all batches and intermediate/final tree identities are computed before any POST.
+The 1 MiB, 32-entry and 64-batch caps, ordinary singleton rejection, no binary or
+alternate upload, current-main checks, provenance, review-only ref creation and
+no automatic retry remain unchanged. No workflow, permissions or credentials
+change is introduced.
+
+Once a valid inverse has been compiled and committed, rendering verifies its exact
+committed marker identities and historical source/generated transition. Merely
+adding a schema-valid inverse does not disable mapping. Later legitimate
+publications retain that proven state without applying the admission-time old-tree
+equality to their new content. Both markers remain immutable. Historical replay,
+no-content builds and homepage refresh must remain byte-stable.
+
+**Recovery restores the former oversized inline homepages as well as their exact
+public bytes. A later newly generated homepage can again exceed the unchanged
+writer cap. Recovery is not the publication-capacity repair and must not be sold
+as keeping future homepage publication unblocked.** Ordinary source-tree reuse
+still applies only when bytes are unchanged.
+
+Tests include a complete, unmocked local trusted compile, protected stage,
+whole-tree replay and offline finalizer chain; exact pre-migration public-byte
+restoration; stable no-content/refresh; and adversarial history, markers, paths,
+blobs, sources, drift, modes, symlinks, races and uncertain-write behavior. A local
+fake API success is not a real remote write, CI result, deployment or browser QA.

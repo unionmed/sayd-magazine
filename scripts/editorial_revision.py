@@ -17,6 +17,8 @@ from caption_revision import changed_paths
 PREFIX = 'content/editorial-revisions/'
 SCHEMA = 'sayd-editorial-revision-v1'
 TARGETS = {'update-syria-jousiyeh-20261114': 'syria-migration-anti-poaching-20261110', 'update-qatar-shooting-results-nov13': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results-nov12': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results-nov11': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results-nov9': 'qatar-shooting-worlds-20261102', 'update-stonechat-oman-status-20261106': 'daily-birds-20261030', 'update-dubai-carnival-results-nov7': 'dubai-carnival-20261105', 'move-qatar-to-updates-nov6': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results-nov6': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results-nov5': 'qatar-shooting-worlds-20261102', 'text-only-nov5-bird-references': 'daily-birds-20261105', 'update-qatar-shooting-results-nov4': 'qatar-shooting-worlds-20261102', 'update-qatar-shooting-results': 'qatar-shooting-worlds-20261102', 'complete-two-bird-lifecycles': 'daily-birds-20261030', 'add-nathalie-interview-photos': 'nathalie-denolf-interview-20261028',
+           'homepage-local-images-20261114': None,
+           'homepage-inline-recovery-20261114': None,
            'homepage-only-ticker': None, 'add-adonis-ticker': 'adonis-respect-quarry-20261026',
            'replace-wanaameen-photo': 'riyadh-results-20261024',
            'promote-episode-three-lead': 'hunting-tourism-egypt-iraq-jordan-20261026'}
@@ -50,6 +52,12 @@ def validate_revision(value, path, base):
         require(value['id'] == 'qatar-updates-ticker-20261106', 'Exact Qatar placement revision ID required')
     if value['operation'] == 'homepage-only-ticker':
         require(value['id'] == 'homepage-only-ticker-20261028', 'Exact ticker scope revision ID required')
+    if value['operation'] == 'homepage-inline-recovery-20261114':
+        keys(value['payload'], ())
+        require(value['id'] == 'homepage-inline-recovery-20261114', 'Exact homepage recovery revision ID required')
+    if value['operation'] == 'homepage-local-images-20261114':
+        keys(value['payload'], ())
+        require(value['id'] == 'homepage-local-images-20261114', 'Exact homepage image revision ID required')
     if value['operation'] == 'update-qatar-shooting-results':
         keys(value['payload'], ())
         require(value['id'] == 'qatar-shooting-update-20261103', 'Exact Qatar update revision ID required')
@@ -170,7 +178,13 @@ def expected_changes(root, base, value, path):
     import publication_compiler as compiler
     value = validate_revision(value, path, base)
     before = compiler.tree(root, base)
-    if value['operation'] == 'homepage-only-ticker':
+    if value['operation'] == 'homepage-local-images-20261114':
+        from homepage_image_sources import migration_changes
+        result, effective, article = migration_changes(root, base, value['expected_source_sha256'])
+    elif value['operation'] == 'homepage-inline-recovery-20261114':
+        from homepage_image_recovery import recovery_changes
+        result, effective, article = recovery_changes(root, base, value['expected_source_sha256'])
+    elif value['operation'] == 'homepage-only-ticker':
         contract_raw = compiler.read_blob(root, before['content/publication-contract.json'])
         require(compiler.sha256(contract_raw) == value['expected_source_sha256'], 'Protected contract source hash mismatch')
         from ticker_scope import migration_changes

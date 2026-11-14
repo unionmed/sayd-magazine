@@ -98,6 +98,8 @@ def main(output):
              'articles': 3, 'gallery_photos': 7, 'languages': ['ar','en','fr'], 'widths': [320,390,820,1440],
              'screenshots': len(screens)}, indent=2)+'\n')
     print('PASS: synthetic science side, seven-photo gallery and equestrian Updates news; 36 language/viewport cases')
+    from test_homepage_image_browser import main as check_homepage_images
+    check_homepage_images(output/'homepage-image-equivalence')
 
 
 if __name__ == '__main__':

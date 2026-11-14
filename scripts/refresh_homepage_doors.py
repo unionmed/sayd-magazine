@@ -323,7 +323,9 @@ def refresh(path,lang):
                 parts.append(f'<div class="sayd-tv-group" data-tv-group="{group}"><div style="display:flex;justify-content:space-between;align-items:center;margin:18px 0 12px"><h3>{label}</h3><a href="{base}#{group}">{labels[2]}</a></div><div class="home-door-grid">')
                 if group=='sayd-channel':
                     for v in channel['videos'][:channel['home_limit']]:
-                        item=dict(title=v['titles'][lang],date=channel_date(v['published_at'],lang),image=v['image'],alt=v['titles'][lang],href=channel_href(v))
+                        from homepage_image_sources import image_src
+                        image=image_src(ROOT,lang,path.absolute(),'sayd-channel','data-video-id',v['id'],v['image'])
+                        item=dict(title=v['titles'][lang],date=channel_date(v['published_at'],lang),image=image,alt=v['titles'][lang],href=channel_href(v))
                         card=render_card(v['id'],item).replace('<article class="card">',f'<article class="card" data-video-id="{v["id"]}">',1)
                         parts.append(card)
                 else:
