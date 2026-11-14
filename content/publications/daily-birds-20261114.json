@@ -1,0 +1,463 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "daily-birds-20261114",
+  "expected_base": "5bd67f65687767042d77b1bf4727fcd3b3e5708d",
+  "approval_reference": "Standing Nayef authority for daily encyclopedia additions, quality over number and detailed treatment; archive-only. Prepared pending independent review, current-main recheck and protected publication.",
+  "bank_search_reference": "Sayd picture for use searched by scientific and common names, then shorter taxon queries on 14 November 2026; no match returned. Two exact CC0 originals and rights records selected for the existing Birds & Wildlife bank.",
+  "photos": [
+    {
+      "id": "podiceps-grisegena",
+      "path": "docs/media/publications/daily-birds-20261114/podiceps-grisegena.jpg",
+      "sha256": "3d553acddd77b9cd8387f5f996f85778db2145458cc239afaf1db68481157843",
+      "source_sha256": "3d553acddd77b9cd8387f5f996f85778db2145458cc239afaf1db68481157843",
+      "source_reference": "Ben (ben142); 2026-10-24; Snohomish County, US-WA, US. Species illustration from the United States, not evidence of Arab occurrence or a current event. Original bytes and whole frame unchanged. https://www.inaturalist.org/photos/755219227",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 photo-level license verified using the primary iNaturalist observation API on 14 November 2026. Commercial reuse permitted; courtesy credit retained. Untouched original photograph, without image edits or cropping. No sex or subspecies claimed.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/410615734"
+      },
+      "alt": {
+        "ar": "غطاس ممتلئ الجسم يسبح، بمنقار قوي أصفر القاعدة وعنق رمادي وقلنسوة داكنة.",
+        "en": "A stocky grebe swimming with a strong yellow-based bill, grey neck and dark cap.",
+        "fr": "Un grèbe robuste nage, montrant un bec puissant à base jaune, un cou gris et une calotte sombre."
+      },
+      "caption": {
+        "ar": "الغطاس أحمر الرقبة في ريش غير تكاثري",
+        "en": "Red-necked Grebe in nonbreeding plumage",
+        "fr": "Grèbe jougris en plumage non nuptial"
+      }
+    },
+    {
+      "id": "podiceps-auritus",
+      "path": "docs/media/publications/daily-birds-20261114/podiceps-auritus.jpg",
+      "sha256": "5013f88762711a08561927053702c2e947e204b5d9f90fb0558f0c3bfc46e6f5",
+      "source_sha256": "5013f88762711a08561927053702c2e947e204b5d9f90fb0558f0c3bfc46e6f5",
+      "source_reference": "Claude Lyneis (lyneisfilm); 2025-01-14; Richmond, CA, USA. Species illustration from the United States, not evidence of Arab occurrence or a current event. Original bytes and whole frame unchanged. https://www.inaturalist.org/photos/463875329",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC0 1.0 photo-level license verified using the primary iNaturalist observation API on 14 November 2026. Commercial reuse permitted; courtesy credit retained. Untouched original photograph, without image edits or cropping. No sex or subspecies claimed.",
+        "evidence_reference": "https://api.inaturalist.org/v1/observations/258532688"
+      },
+      "alt": {
+        "ar": "غطاس صغير يسبح بعين حمراء وخد أبيض وقلنسوة داكنة ومنقار مستقيم.",
+        "en": "A small grebe swimming with a red eye, white cheek, dark cap and straight bill.",
+        "fr": "Un petit grèbe nage, avec un œil rouge, une joue blanche, une calotte sombre et un bec droit."
+      },
+      "caption": {
+        "ar": "الغطاس المقرن في ريش الشتاء",
+        "en": "Horned Grebe in winter plumage",
+        "fr": "Grèbe esclavon en plumage hivernal"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "الغطاس-أحمر-الرقبة",
+        "en": "red-necked-grebe",
+        "fr": "grebe-jougris"
+      },
+      "published": "2026-11-14",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "podiceps-grisegena"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الغطاس أحمر الرقبة",
+          "subtitle": "Podiceps grisegena",
+          "meta_description": "الغطاس أحمر الرقبة: ريش الصيف والشتاء، تمييزه عن الغطاسات المشابهة، غذاؤه وتكاثره وسجلاته النادرة في لبنان وحماية موائله.",
+          "sections": [
+            {
+              "heading": "طائر الماء ذو المظهر المتبدل",
+              "paragraphs": [
+                "الغطاس أحمر الرقبة، Podiceps grisegena، طائر مائي من فصيلة الغطاسيات، يقارب طوله 45 سنتيمترًا. جسمه ممتلئ ومنقاره مدبب وقوي، ويقضي معظم حياته فوق الماء أو تحته. يشبه البط في المشهد العام، لكنه ليس من فصيلته؛ فالغوص ومطاردة الفرائس تحت السطح يطبعان حركته وبنية جسمه.",
+                "ينتشر النوع في أجزاء من أوروبا وآسيا وأمريكا الشمالية، مع اختلافات جغرافية في الحجم ولون المنقار. الطيور الغربية الأوراسية أصغر عمومًا من نظيراتها في أمريكا الشمالية وشرقي آسيا. لذلك تصلح الصورة الأمريكية للتعريف بالنوع، لكنها لا تثبت وجوده في بلد عربي ولا تمثل بالضرورة كل تفاصيل الجماعات الأوراسية."
+              ]
+            },
+            {
+              "heading": "ماذا يتغير بين الصيف والشتاء؟",
+              "paragraphs": [
+                "في ريش التكاثر تصبح الرقبة والصدر بلون كستنائي محمر، ويتباين الخدان الرماديان الفاتحان مع قلنسوة سوداء. تبقى الصفرة عند قاعدة المنقار علامة مفيدة. يتشابه الجنسان في الريش، وإن كان الذكر أكبر في المتوسط؛ ولا يكفي حجم الطائر الظاهر في صورة منفردة لتحديد جنسه.",
+                "في الشتاء يبهت الأحمر وتغلب درجات الرمادي على العنق والوجه، فتغدو بنية الرأس والمنقار أهم من الاسم الشائع. قد تحتفظ الطيور اليافعة بخطوط داكنة على الخدين وبآثار لون محمر. التبدل تدريجي، لذا لا ينبغي توقع هيئة صيفية أو شتوية كاملة من كل فرد في الخريف."
+              ]
+            },
+            {
+              "heading": "التمييز عن الغطاسات المشابهة",
+              "paragraphs": [
+                "أكثر المقارنات فائدة مع الغطاس المتوج الكبير: رقبة أحمر الرقبة أقصر وأثخن عادةً، ورأسه أكثر امتلاءً، ومنقاره أمتن بقاعدة صفراء واضحة عند الرؤية الجيدة. أما المتوج الكبير فيبدو أطول رقبة وأنحف. غياب التاج الصيفي عن المتوج الكبير لا يجعله أحمر الرقبة تلقائيًا.",
+                "الغطاس المقرن أصغر وله منقار أقصر وأغمق وعين حمراء، بخلاف عين أحمر الرقبة غير الحمراء. والغطاس أسود الرقبة أصغر أيضًا ومنقاره أدق. تجمع المراقبة السليمة الحجم النسبي وشكل الرأس والمنقار وحدود بياض الوجه، ولا تعتمد على صورة بعيدة أو لون شوّهته إضاءة البحر."
+              ]
+            },
+            {
+              "heading": "الغذاء والموطن والحركة",
+              "paragraphs": [
+                "تشمل فرائسه الأسماك الصغيرة والقشريات والحشرات المائية، وتتغير النسب بحسب الموطن والفصل. تكون الحشرات مهمة في بعض بحيرات التكاثر، بينما تزداد أهمية الأسماك في المياه الساحلية الشتوية. يلتقط الطعام بالغوص، وقد يبحث عند القاع أو يأخذ حشرات من سطح الماء؛ وليس غذاؤه قائمة ثابتة في كل بلد.",
+                "تدفعه قدماه إلى الأمام تحت الماء، وتساعد فصوص الأصابع في السباحة. يناسبه الماء المفتوح المتصل بغطاء نباتي أثناء التكاثر، ويستخدم خلجانًا وسواحل وبحيرات كبيرة في الشتاء. الاقتراب الذي يجعله يغوص مرارًا هربًا يقطع تغذيته؛ فالاختفاء تحت الماء ليس دعوة لملاحقته حتى يظهر من جديد."
+              ]
+            },
+            {
+              "heading": "عش عائم ورعاية مشتركة",
+              "paragraphs": [
+                "يتضمن التودد حركات متقابلة ورفعًا للجسم وتقديم نباتات مائية ونداءات مرتفعة. يبني الزوجان منصة من النباتات في مياه ضحلة، غالبًا مثبتة بالنباتات القائمة. يتطلب نجاح العش ماءً ونباتًا واستقرارًا نسبيًا؛ وقد يضر تغير المنسوب أو اضطراب الحافة بالموقع حتى من دون لمس البيض.",
+                "الحضنة المعتادة أربع أو خمس بيضات، ويشارك الأبوان في حضانة تستغرق نحو 20–23 يومًا. تستطيع الفراخ الزغبية السباحة مبكرًا، لكنها تحتاج إلى الغذاء والرعاية وقد تركب ظهر أحد الأبوين. السباحة المبكرة ليست استقلالًا ولا قدرة على الطيران؛ فهذه مراحل مختلفة ينبغي عدم الخلط بينها."
+              ]
+            },
+            {
+              "heading": "في المنطقة العربية: ندرة يجب احترامها",
+              "paragraphs": [
+                "تقع مناطق شتائه الأوراسية الأساسية حول بحار الشمال والبلطيق والأسود وقزوين، وتصل أعداد أقل إلى المتوسط. في لبنان يصنفه دليل الطيور الوطني الصادر سنة 2026، الذي يغطي السجلات حتى ديسمبر 2025، طائرًا عارضًا. ويورد سجلين: مرفأ بيروت في 18 يناير 1942، وطائرًا عُثر عليه نافقًا على واجهة بيروت البحرية في 29 أكتوبر 2002.",
+                "هذه البيانات لا تصفه زائرًا شتويًا منتظمًا للبنان، ولا تسمح بتعميم وجوده على الخليج أو سائر البلاد العربية. في نوفمبر، يفيد التعرف إلى ريشه غير التكاثري عند مراقبة الغطاسات، لكن توقع العثور عليه يبقى مختلفًا عن إثباته. يحتاج السجل غير المعتاد إلى صور واضحة وملاحظات مؤرخة ومراجعة مختصة."
+              ]
+            },
+            {
+              "heading": "الحماية والمشاهدة المسؤولة",
+              "paragraphs": [
+                "تصنيفه العالمي المنشور لدى BTO هو «أقل إثارة للقلق» LC، وهو تقييم لخطر انقراض النوع عالميًا، لا ضمان لسلامة كل جماعة محلية. تشمل الأخطار تدهور الأراضي الرطبة والتلوث والوقوع العرضي في شباك الصيد. كما يذكر دليل لبنان الصيد غير القانوني ضمن التهديدات التي تستوجب الانتباه.",
+                "تبدأ المساهمة المفيدة بالمراقبة من الشاطئ أو من مخبأ مناسب، دون دفع الطائر إلى الإقلاع أو مقاطعة الراحة والغوص. تُسجل العلامات التشخيصية بدل مطاردة لقطة أقرب، وتُبلغ الجهات المختصة عن الطيور العالقة أو المصابة. ندرة الطائر سبب لحمايته وتوثيقه، وليست قيمة إضافية لاصطياده.",
+                "مراجع للتوسع: دليل طيور لبنان، الطبعة الثانية 2026؛ هيئة علم الطيور البريطانية BTO؛ الجمعية الملكية لحماية الطيور RSPB؛ مختبر كورنيل لعلم الطيور؛ أودوبون؛ شبكة التنوع الحيواني بجامعة ميشيغان؛ إدارة الموارد الطبيعية في مينيسوتا؛ إدارة الأسماك والحياة البرية في كاليفورنيا."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Ben (ben142) / iNaturalist، ترخيص CC0 1.0، مقاطعة سنوهوميش، واشنطن، الولايات المتحدة، 24 أكتوبر 2026."
+        },
+        "en": {
+          "title": "Red-necked Grebe",
+          "subtitle": "Podiceps grisegena",
+          "meta_description": "Red-necked Grebe: seasonal plumage, identification beside similar grebes, feeding, breeding, rare Lebanese records and wetland conservation.",
+          "sections": [
+            {
+              "heading": "A waterbird with a changing appearance",
+              "paragraphs": [
+                "The Red-necked Grebe, Podiceps grisegena, is a member of the grebe family, measuring about 45 centimetres. It has a substantial body and a strong, pointed bill, and spends most of its life on or below the water. Although superficially duck-like, it belongs to a different family, with diving and underwater pursuit shaping its movements and anatomy.",
+                "The species occurs in parts of Europe, Asia and North America, with geographical differences in size and bill colour. Western Eurasian birds are generally smaller than those from North America and eastern Asia. An American photograph can illustrate the species, but does not demonstrate occurrence in an Arab country or necessarily represent every detail of Eurasian populations."
+              ]
+            },
+            {
+              "heading": "What changes between summer and winter?",
+              "paragraphs": [
+                "In breeding plumage the neck and breast become chestnut-red, while pale grey cheeks contrast with a black cap. Yellow at the base of the bill remains a useful feature. The sexes have similar plumage, although males average larger; apparent size in a single photograph is not enough to determine sex.",
+                "In winter the red fades and grey tones dominate the neck and face, making head and bill structure more useful than the common name. Juveniles may retain dark cheek stripes and traces of reddish colour. The transition is gradual, so not every autumn bird has a complete summer or winter appearance."
+              ]
+            },
+            {
+              "heading": "Separating it from similar grebes",
+              "paragraphs": [
+                "Great Crested Grebe provides the most useful comparison: Red-necked usually has a shorter, thicker neck, a heavier-looking head and a stouter bill with a yellow base visible in good conditions. Great Crested looks longer-necked and slimmer. Losing its summer head ornaments does not turn a Great Crested into a Red-necked Grebe.",
+                "Horned Grebe is smaller, with a shorter, darker bill and red eyes, unlike the non-red eyes of Red-necked Grebe. Black-necked Grebe is also smaller and has a finer bill. Sound identification combines relative size, head and bill shape, and the boundary of the pale face rather than relying on a distant photograph or colours distorted by reflected light."
+              ]
+            },
+            {
+              "heading": "Food, habitat and movement",
+              "paragraphs": [
+                "Its prey includes small fish, crustaceans and aquatic insects, with proportions changing between habitats and seasons. Insects are important on some breeding lakes, while fish become more prominent in coastal wintering waters. It dives for food, sometimes searching near the bottom or taking insects from the surface; its diet is not identical everywhere.",
+                "The feet propel it underwater, and lobed toes help it swim. During breeding it needs open water adjoining vegetation; in winter it uses bays, coasts and large lakes. An approach that repeatedly forces a bird to dive interrupts feeding. Disappearing underwater should not be treated as an invitation to pursue it until it resurfaces."
+              ]
+            },
+            {
+              "heading": "A floating nest and shared care",
+              "paragraphs": [
+                "Courtship includes facing displays, raised bodies, offerings of aquatic plants and loud calls. Both partners build a plant platform in shallow water, usually anchored to standing vegetation. A successful nest needs water, cover and relative stability; changing water levels or disturbance along the margin can harm the site without anybody touching the eggs.",
+                "A typical clutch contains four or five eggs, incubated by both parents for around 20–23 days. Downy chicks can swim early, but still need food and care and may ride on a parent’s back. Early swimming, independence and flight are different developmental stages and should not be confused."
+              ]
+            },
+            {
+              "heading": "Arab occurrence: rarity matters",
+              "paragraphs": [
+                "Major Eurasian wintering areas lie around the North, Baltic, Black and Caspian Seas, with smaller numbers reaching the Mediterranean. Lebanon’s national bird guide, published in 2026 and covering records through December 2025, treats it as a vagrant. It lists two records: Beirut harbour on 18 January 1942, and a bird found dead on Beirut’s seafront on 29 October 2002.",
+                "These records do not establish regular wintering in Lebanon and cannot be extrapolated to the Gulf or the whole Arab region. In November, recognising nonbreeding plumage is useful when watching grebes, but anticipating a possible encounter differs from proving one. An unusual record needs clear photographs, dated notes and specialist assessment."
+              ]
+            },
+            {
+              "heading": "Conservation and responsible observation",
+              "paragraphs": [
+                "The global category published by BTO is Least Concern, LC. This evaluates worldwide extinction risk, not the security of every local population. Threats include wetland degradation, pollution and accidental capture in fishing nets. Lebanon’s guide also identifies illegal hunting as a threat requiring attention.",
+                "Useful observation starts from the shore or an appropriate hide, without forcing take-off or interrupting rest and diving. Record diagnostic features instead of pursuing a closer photograph, and notify the appropriate authorities about trapped or injured birds. Rarity is a reason to protect and document a bird, not an added incentive to shoot it.",
+                "Further reading: Birds of Lebanon, second edition, 2026; British Trust for Ornithology; RSPB; Cornell Lab of Ornithology; Audubon; University of Michigan Animal Diversity Web; Minnesota Department of Natural Resources; California Department of Fish and Wildlife."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Ben (ben142) / iNaturalist, CC0 1.0, Snohomish County, Washington, United States, 24 October 2026."
+        },
+        "fr": {
+          "title": "Grèbe jougris",
+          "subtitle": "Podiceps grisegena",
+          "meta_description": "Grèbe jougris : plumages saisonniers, distinction des autres grèbes, alimentation, reproduction, observations rares au Liban et protection des milieux humides.",
+          "sections": [
+            {
+              "heading": "Un oiseau aquatique à l’apparence changeante",
+              "paragraphs": [
+                "Le Grèbe jougris, Podiceps grisegena, appartient à la famille des Podicipédidés et mesure environ 45 centimètres. Son corps est robuste et son bec puissant et pointu. Il passe l’essentiel de sa vie sur l’eau ou sous sa surface. Malgré une silhouette évoquant un canard, il appartient à une autre famille, adaptée à la plongée et à la poursuite des proies sous l’eau.",
+                "L’espèce occupe certaines régions d’Europe, d’Asie et d’Amérique du Nord, avec des différences géographiques de taille et de coloration du bec. Les oiseaux de l’ouest de l’Eurasie sont généralement plus petits que ceux d’Amérique du Nord et d’Asie orientale. Une photographie américaine illustre l’espèce, sans prouver sa présence dans un pays arabe ni représenter nécessairement tous les caractères des populations eurasiatiques."
+              ]
+            },
+            {
+              "heading": "Ce qui change entre été et hiver",
+              "paragraphs": [
+                "En plumage nuptial, le cou et la poitrine deviennent roux, tandis que les joues gris pâle contrastent avec une calotte noire. Le jaune à la base du bec reste un indice utile. Les sexes ont un plumage semblable, même si les mâles sont en moyenne plus grands ; la taille apparente sur une photographie isolée ne suffit pas à déterminer le sexe.",
+                "En hiver, le roux s’atténue et les tons gris dominent le cou et la face. La forme de la tête et du bec devient alors plus informative que le nom anglais, qui évoque un cou rouge. Les jeunes peuvent garder des rayures sombres sur les joues et des traces rousses. La transition étant progressive, chaque individu automnal ne porte pas un plumage estival ou hivernal complet."
+              ]
+            },
+            {
+              "heading": "Le distinguer des espèces proches",
+              "paragraphs": [
+                "La comparaison la plus utile concerne le Grèbe huppé : le Jougris présente généralement un cou plus court et plus épais, une tête plus massive et un bec plus robuste dont la base jaune se voit bien dans de bonnes conditions. Le Huppé paraît plus élancé et possède un cou plus long. La disparition de ses ornements estivaux ne suffit pas à en faire un Jougris.",
+                "Le Grèbe esclavon est plus petit, avec un bec plus court et plus sombre et des yeux rouges, contrairement aux yeux non rouges du Jougris. Le Grèbe à cou noir est également plus petit et possède un bec plus fin. Une identification solide combine taille relative, profil de la tête, forme du bec et limite de la face pâle, sans dépendre d’une photographie lointaine ou d’une lumière trompeuse."
+              ]
+            },
+            {
+              "heading": "Alimentation, habitat et déplacements",
+              "paragraphs": [
+                "Ses proies comprennent petits poissons, crustacés et insectes aquatiques, dans des proportions variables selon le milieu et la saison. Les insectes comptent beaucoup sur certains lacs de reproduction, tandis que les poissons prennent davantage de place dans les eaux côtières hivernales. Il plonge pour se nourrir, parfois près du fond, ou saisit des insectes en surface ; son régime n’est pas uniforme partout.",
+                "Ses pattes le propulsent sous l’eau et ses doigts lobés facilitent la nage. En reproduction, il recherche une eau libre proche de la végétation ; en hiver, il fréquente baies, côtes et grands lacs. Une approche provoquant des plongées répétées de fuite interrompt son alimentation. Sa disparition sous la surface ne justifie pas de le poursuivre jusqu’à sa réapparition."
+              ]
+            },
+            {
+              "heading": "Un nid flottant et des soins partagés",
+              "paragraphs": [
+                "La parade comporte des face-à-face, des redressements du corps, des présentations de végétaux aquatiques et des cris sonores. Les deux partenaires construisent une plateforme végétale en eau peu profonde, généralement ancrée aux plantes émergentes. La réussite du nid dépend de l’eau, du couvert et d’une certaine stabilité ; les variations de niveau ou le dérangement des berges peuvent lui nuire sans contact avec les œufs.",
+                "La ponte comprend habituellement quatre ou cinq œufs, couvés par les deux parents durant environ 20–23 jours. Les poussins duveteux nagent précocement, mais restent tributaires de la nourriture et des soins parentaux et peuvent monter sur le dos d’un adulte. Nager, devenir indépendant et prendre son premier envol correspondent à des étapes différentes."
+              ]
+            },
+            {
+              "heading": "Présence arabe : respecter la rareté",
+              "paragraphs": [
+                "Les principales zones d’hivernage eurasiatiques bordent les mers du Nord, Baltique, Noire et Caspienne ; des effectifs plus faibles atteignent la Méditerranée. Le guide national des oiseaux du Liban, publié en 2026 et couvrant les observations jusqu’en décembre 2025, le classe comme visiteur accidentel. Il rapporte deux observations : au port de Beyrouth le 18 janvier 1942, puis un oiseau trouvé mort sur le front de mer de Beyrouth le 29 octobre 2002.",
+                "Ces données ne démontrent pas un hivernage régulier au Liban et ne peuvent être étendues au Golfe ni à l’ensemble du monde arabe. En novembre, connaître son plumage non nuptial aide à observer les grèbes, mais envisager une rencontre n’équivaut pas à la prouver. Toute observation inhabituelle nécessite des photographies nettes, des notes datées et une expertise."
+              ]
+            },
+            {
+              "heading": "Protection et observation responsable",
+              "paragraphs": [
+                "La catégorie mondiale publiée par le BTO est « Préoccupation mineure », LC. Elle mesure le risque d’extinction à l’échelle mondiale, sans garantir la sécurité de chaque population locale. La dégradation des zones humides, la pollution et les captures accidentelles dans les filets constituent des menaces. Le guide du Liban mentionne aussi la chasse illégale.",
+                "Une observation utile se pratique depuis la rive ou un observatoire adapté, sans provoquer l’envol ni interrompre repos et plongées. Il vaut mieux noter les caractères distinctifs que poursuivre une photographie plus proche, et signaler les oiseaux piégés ou blessés aux autorités compétentes. La rareté justifie la protection et la documentation, jamais un intérêt accru pour le tir.",
+                "Pour approfondir : Birds of Lebanon, deuxième édition, 2026 ; British Trust for Ornithology ; RSPB ; Cornell Lab of Ornithology ; Audubon ; Animal Diversity Web de l’Université du Michigan ; Minnesota Department of Natural Resources ; California Department of Fish and Wildlife."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Ben (ben142) / iNaturalist, CC0 1.0, comté de Snohomish, Washington, États-Unis, 24 octobre 2026."
+        }
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الغطاس-المقرن",
+        "en": "horned-grebe",
+        "fr": "grebe-esclavon"
+      },
+      "published": "2026-11-14",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "birds",
+      "archives": [
+        "birds"
+      ],
+      "kind": "article",
+      "photos": [
+        "podiceps-auritus"
+      ],
+      "distribution": {
+        "placement": "archive-only",
+        "ticker": false
+      },
+      "translations": {
+        "ar": {
+          "title": "الغطاس المقرن",
+          "subtitle": "Podiceps auritus",
+          "meta_description": "الغطاس المقرن: معنى القرون الريشية، التمييز الشتوي عن أسود الرقبة، الغذاء والعش ورعاية الفراخ وسجلات لبنان النادرة وحالة الحماية.",
+          "sections": [
+            {
+              "heading": "قرون من الريش لا من العظم",
+              "paragraphs": [
+                "الغطاس المقرن، أو الغطاس الأقرن، Podiceps auritus، طائر صغير نسبيًا من فصيلة الغطاسيات، يتراوح طوله بين 31 و38 سنتيمترًا. اسماه الإنجليزيان Horned Grebe وSlavonian Grebe يشيران إلى النوع نفسه، لا إلى نوعين منفصلين. أما القرون فخصل ريشية ذهبية مائلة إلى البرتقالي تظهر على جانبي الرأس في موسم التكاثر.",
+                "يمتد وجوده الطبيعي عبر أجزاء واسعة من شمال أوراسيا وأمريكا الشمالية. يرتبط التكاثر بالمياه العذبة، ثم تستخدم جماعات كثيرة المياه الساحلية في الشتاء. هذا الاتساع العالمي لا يجعل ظهوره شائعًا في جنوب المتوسط أو المشرق؛ فالمكان والفصل وحالة النوع في كل بلد ضرورية لفهم أي مشاهدة."
+              ]
+            },
+            {
+              "heading": "علامات الريش والعمر والجنس",
+              "paragraphs": [
+                "في موسم التكاثر تجتمع الرقبة والجوانب الكستنائية مع رأس داكن وعينين حمراوين وخصل ذهبية بارزة. في الشتاء تختفي الزينة ويصبح لون الخدين والحلق فاتحًا، في مقابل قلنسوة داكنة وظهر رمادي. يبقى المنقار قصيرًا نسبيًا ومستقيمًا ومدببًا، وهي هيئة تختلف بوضوح عن منقار البط العريض.",
+                "يتشابه الذكر والأنثى في المظهر ولا يسهل الفصل بينهما في الميدان، رغم فروق الحجم المتوسطة. الفراخ تحمل تخطيطًا في الرأس، ثم يقترب مظهر اليافعات تدريجيًا من الريش غير التكاثري. لا يدل غياب الخصل على أن الطائر أنثى، ولا يكفي احمرار العين وحده للتعرف إلى النوع."
+              ]
+            },
+            {
+              "heading": "الفصل الدقيق عن الغطاس أسود الرقبة",
+              "paragraphs": [
+                "في الشتاء قد يتشابه النوعان كثيرًا. يميل المقرن إلى رأس أكثر تسطحًا أو تربيعًا، ومنقار مستقيم وأمتن، وبياض خد أوضح تحت حد داكن محدد. أما أسود الرقبة Podiceps nigricollis فغالبًا ما يبدو أعلى جبهة وأكثر تحدبًا، بمنقار رفيع يميل إلى أعلى وبمساحة رمادية أوسع على الوجه.",
+                "تتغير هيئة الرأس بحسب وضع الريش وزاوية النظر، لذلك يجب جمع أكثر من علامة. المقرن أصغر من أحمر الرقبة ولا يحمل قاعدته الصفراء الواضحة في المنقار. عند تقلب الموج أو بعد المسافة، تكون ملاحظة غير محسومة أدق من اسم نادر يفتقر إلى أدلة كافية."
+              ]
+            },
+            {
+              "heading": "غوّاص بين البرك والساحل",
+              "paragraphs": [
+                "يستخدم في التكاثر بركًا وبحيرات ضحلة تجمع الماء المفتوح بالنباتات الناشئة مثل السعد والقصب. في الشتاء يوجد في مياه بحرية ساحلية، وقد يستخدم بحيرات وخزانات داخلية. ويمكن أن يبقى في منطقة مناسبة أو يتنقل مع توفر الغذاء؛ فلا تعني عودته إلى السطح في مكان آخر أنه طائر إضافي.",
+                "يتغذى على الحشرات ويرقاتها والقشريات وأسماك صغيرة وفرائس مائية أخرى، مع اختلاف الحمية بين الفصول. تقع قدماه في الجزء الخلفي من الجسم، وتعمل أصابعه المفصصة في الدفع، بينما تكون حركته على اليابسة صعبة. يحتاج إلى مساحة ماء للإقلاع؛ ولا ينبغي دفع طائر مرهق إلى الطيران لمجرد اختبار قدرته."
+              ]
+            },
+            {
+              "heading": "التودد والتعشيش ونمو الفراخ",
+              "paragraphs": [
+                "تشمل عروض الزوجين السباحة المتوازية وهز الرأس وإظهار الخصل وتقديم النباتات. يتعاونان في اختيار العش وبنائه من نباتات رطبة في مياه ضحلة، غالبًا بين الغطاء النباتي. يكون النوع إقليميًا حول العش، وقد يدافع عن حيزه بقوة؛ لذا تبقى المشاهدة عن بعد أفضل من الاقتراب عبر النباتات.",
+                "تذكر بيانات BTO حضنة معتادة من أربع أو خمس بيضات وحضانة تقارب 22–25 يومًا. يشارك الأبوان في الرعاية، وتحمل الفراخ على الظهر وتُطعم بعد الفقس. ويورد المرجع عمرًا يقارب 55–60 يومًا لبلوغ الطيران؛ القدرة على السباحة قبل ذلك بوقت طويل لا تعني أن الفراخ قادرة على مغادرة الموطن جوًا."
+              ]
+            },
+            {
+              "heading": "سجلات لبنان وحدود التوقع في نوفمبر",
+              "paragraphs": [
+                "يصف دليل طيور لبنان الصادر سنة 2026، المغطي للسجلات حتى ديسمبر 2025، الغطاس المقرن بأنه عارض، مع سجلين: مصب نهر الدامور في 20 ديسمبر 1996، وبركة اصطناعية في محمية شاطئ صور في 28 سبتمبر 2004. هذه حالة ندرة موثقة، وليست هجرة سنوية مثبتة أو دليلًا على التعشيش في البلاد.",
+                "تساعد معرفة ريش الشتاء في فصل هذا الضيف النادر عن الغطاس أسود الرقبة الأكثر انتظامًا في لبنان. ولا تكفي برودة نوفمبر للتنبؤ بوصوله إلى موقع معين. وعند ظهور طائر محتمل، تفيد صور جانبية واضحة للرأس والمنقار، وتسجيل التاريخ والموطن والعدد، ثم عرض السجل على جهة متخصصة."
+              ]
+            },
+            {
+              "heading": "نوع مهدد وحماية تتجاوز صورة جميلة",
+              "paragraphs": [
+                "يُدرج النوع عالميًا ضمن فئة «معرض لخطر الانقراض» VU في مرجع BTO. وتشمل الأخطار الموثقة فقد الأراضي الرطبة وتدهورها والجفاف والتلوث النفطي والتشابك في معدات الصيد. التقييم الكندي الحديث يناقش هذه الأخطار في جماعاته هناك؛ لا يجوز تحويل أرقامه المحلية إلى أعداد للجماعات العربية النادرة.",
+                "تحميه مياه نظيفة وغطاء نباتي ومناطق راحة يقل فيها الاضطراب. ينبغي تجنب القوارب التي تحاصره أو تفصل الفراخ عن الأبوين، وعدم نشر مواقع أعشاش حساسة بوصفها وجهات تصوير. أما الطائر النافق أو المتشابك فيحتاج إلى إبلاغ الجهة المختصة، لا إلى التعامل العشوائي الذي قد يزيد الضرر.",
+                "مراجع للتوسع: دليل طيور لبنان، الطبعة الثانية 2026؛ هيئة علم الطيور البريطانية BTO؛ الجمعية الملكية لحماية الطيور RSPB؛ مختبر كورنيل لعلم الطيور؛ أودوبون؛ شبكة التنوع الحيواني بجامعة ميشيغان؛ تقرير COSEWIC الكندي 2023؛ إدارة الأسماك والطرائد في ألاسكا."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: Claude Lyneis / iNaturalist، ترخيص CC0 1.0، ريتشموند، كاليفورنيا، الولايات المتحدة، 14 يناير 2025."
+        },
+        "en": {
+          "title": "Horned Grebe",
+          "subtitle": "Podiceps auritus",
+          "meta_description": "Horned Grebe: feather horns, winter identification beside Black-necked Grebe, food, nesting, chick development, rare Lebanese records and conservation.",
+          "sections": [
+            {
+              "heading": "Horns made of feathers",
+              "paragraphs": [
+                "The Horned Grebe, Podiceps auritus, is a relatively small member of the grebe family, measuring 31–38 centimetres. Horned Grebe and Slavonian Grebe are two English names for the same species, not separate birds. Its horns are golden to orange feather tufts projecting from the sides of the head in breeding plumage.",
+                "Its natural range spans large parts of northern Eurasia and North America. Breeding is associated with freshwater, while many populations use coastal waters in winter. A broad global range does not make it common on the southern Mediterranean or in the Levant: country, season and local status are essential to interpreting a sighting."
+              ]
+            },
+            {
+              "heading": "Plumage, age and sex",
+              "paragraphs": [
+                "In breeding plumage, chestnut neck and flanks contrast with a dark head, red eyes and prominent golden tufts. Winter removes the ornaments and brings pale cheeks and throat below a dark cap and grey back. The bill remains relatively short, straight and pointed, very different from the broad bill of a duck.",
+                "Males and females look similar and are difficult to separate in the field despite average size differences. Chicks have striped heads, and juveniles gradually approach the nonbreeding appearance. Missing tufts do not identify a female, and a red eye alone is not enough to establish the species."
+              ]
+            },
+            {
+              "heading": "Careful comparison with Black-necked Grebe",
+              "paragraphs": [
+                "The two species can look very similar in winter. Horned tends to have a flatter or more squared head, a straight and stronger bill, and cleaner white cheeks beneath a sharply defined dark boundary. Black-necked Grebe, Podiceps nigricollis, often has a steeper, more peaked forehead, a finer upturned-looking bill and more grey on the face.",
+                "Head shape changes with feather position and viewing angle, so several characters should be combined. Horned is smaller than Red-necked Grebe and lacks the latter’s conspicuous yellow bill base. In rough water or at long range, an unresolved identification is more accurate than a rare-species label without sufficient evidence."
+              ]
+            },
+            {
+              "heading": "A diver between ponds and coasts",
+              "paragraphs": [
+                "For breeding it uses shallow ponds and lakes combining open water with emergent vegetation such as sedges and reeds. Winter habitat includes coastal seawater and sometimes inland lakes and reservoirs. A bird may remain in a suitable area or move as food availability changes; resurfacing elsewhere does not necessarily mean that another individual has appeared.",
+                "Food includes insects and their larvae, crustaceans, small fish and other aquatic prey, with seasonal differences. Rear-positioned feet and lobed toes provide underwater propulsion but make walking on land awkward. The bird needs open water for take-off; an exhausted individual should never be driven to fly simply to test its ability."
+              ]
+            },
+            {
+              "heading": "Courtship, nesting and chick development",
+              "paragraphs": [
+                "Pair displays include parallel swimming, head shaking, spreading the head ornaments and presenting plants. Partners cooperate in choosing and building a nest of wet vegetation in shallow water, usually among plant cover. Birds are territorial near the nest and may defend the area vigorously, making distant observation preferable to entering the vegetation.",
+                "BTO gives a typical clutch of four or five eggs and an incubation period of about 22–25 days. Both parents contribute to care, carrying chicks on their backs and feeding them after hatching. The same reference places fledging at roughly 55–60 days: swimming much earlier does not mean that chicks can leave the wetland by air."
+              ]
+            },
+            {
+              "heading": "Lebanese records and November expectations",
+              "paragraphs": [
+                "The 2026 Birds of Lebanon guide, covering records through December 2025, treats Horned Grebe as a vagrant, with two records: the Damour river mouth on 20 December 1996, and an artificial pond in Tyre Coast Nature Reserve on 28 September 2004. This is documented rarity, not evidence of annual migration or breeding in the country.",
+                "Knowing winter plumage helps distinguish this rare visitor from Black-necked Grebe, which occurs more regularly in Lebanon. Cold November weather alone cannot predict its arrival at a particular site. For a possible sighting, clear side views of the head and bill, together with date, habitat and count, provide useful evidence for specialist review."
+              ]
+            },
+            {
+              "heading": "A threatened species needs more than a photograph",
+              "paragraphs": [
+                "BTO lists the species globally as Vulnerable, VU. Documented threats include wetland loss and degradation, drought, oil pollution and entanglement in fishing gear. The recent Canadian COSEWIC assessment discusses these pressures on Canadian populations; its local figures must not be presented as numbers for rare Arab occurrences.",
+                "Clean water, vegetation and undisturbed resting areas all matter. Boats should not surround birds or separate chicks from their parents, and sensitive nest sites should not be publicised as photography destinations. Dead or entangled birds should be reported to the appropriate authority rather than handled indiscriminately in ways that may cause further harm.",
+                "Further reading: Birds of Lebanon, second edition, 2026; British Trust for Ornithology; RSPB; Cornell Lab of Ornithology; Audubon; University of Michigan Animal Diversity Web; COSEWIC status report, Canada, 2023; Alaska Department of Fish and Game."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: Claude Lyneis / iNaturalist, CC0 1.0, Richmond, California, United States, 14 January 2025."
+        },
+        "fr": {
+          "title": "Grèbe esclavon",
+          "subtitle": "Podiceps auritus",
+          "meta_description": "Grèbe esclavon : aigrettes, identification hivernale, comparaison avec le Grèbe à cou noir, alimentation, reproduction, rareté au Liban et protection.",
+          "sections": [
+            {
+              "heading": "Des cornes constituées de plumes",
+              "paragraphs": [
+                "Le Grèbe esclavon, Podiceps auritus, est un petit représentant des Podicipédidés, long de 31–38 centimètres. Ses deux noms anglais, Horned Grebe et Slavonian Grebe, désignent la même espèce. Les cornes évoquées par le premier sont des touffes de plumes dorées à orangées qui se déploient sur les côtés de la tête en plumage nuptial.",
+                "Son aire naturelle couvre de vastes régions du nord de l’Eurasie et de l’Amérique du Nord. Il se reproduit en eau douce, puis de nombreuses populations fréquentent les eaux côtières en hiver. Cette large répartition mondiale ne le rend pas commun au sud de la Méditerranée ou au Levant : pays, saison et statut local restent essentiels pour interpréter une observation."
+              ]
+            },
+            {
+              "heading": "Plumage, âge et sexe",
+              "paragraphs": [
+                "En plumage nuptial, le cou et les flancs roux contrastent avec la tête sombre, les yeux rouges et les aigrettes dorées. En hiver, les ornements disparaissent, les joues et la gorge deviennent pâles sous une calotte sombre, et le dos est gris. Le bec reste relativement court, droit et pointu, très différent du large bec des canards.",
+                "Les sexes se ressemblent et sont difficiles à distinguer sur le terrain malgré des différences moyennes de taille. Les poussins ont la tête rayée, puis les jeunes se rapprochent progressivement du plumage non nuptial. L’absence d’aigrettes ne permet pas de reconnaître une femelle, et un œil rouge ne suffit pas à identifier l’espèce."
+              ]
+            },
+            {
+              "heading": "Une comparaison attentive avec le Grèbe à cou noir",
+              "paragraphs": [
+                "Les deux espèces peuvent beaucoup se ressembler en hiver. L’Esclavon présente généralement une tête plus plate ou carrée, un bec droit et plus robuste, et des joues d’un blanc plus net sous une limite sombre bien définie. Le Grèbe à cou noir, Podiceps nigricollis, montre souvent un front plus abrupt, un sommet plus bombé, un bec fin paraissant retroussé et davantage de gris sur la face.",
+                "Le profil de la tête varie avec la position des plumes et l’angle d’observation ; plusieurs critères doivent donc être associés. L’Esclavon est plus petit que le Jougris et n’a pas la base jaune bien visible de son bec. Par forte houle ou à grande distance, laisser une identification ouverte est plus exact que d’attribuer un nom rare sans preuves suffisantes."
+              ]
+            },
+            {
+              "heading": "Un plongeur entre étangs et littoral",
+              "paragraphs": [
+                "Pour nicher, il utilise des étangs et des lacs peu profonds associant eau libre et végétation émergente, notamment laîches et roseaux. En hiver, il fréquente les eaux côtières et parfois les grands lacs et réservoirs intérieurs. Il peut rester dans un secteur favorable ou se déplacer avec les ressources alimentaires ; une réapparition ailleurs ne signifie pas nécessairement la présence d’un individu supplémentaire.",
+                "Son alimentation comprend insectes et larves, crustacés, petits poissons et autres proies aquatiques, avec des variations saisonnières. Les pattes placées vers l’arrière et les doigts lobés assurent la propulsion sous l’eau mais rendent la marche maladroite. Il lui faut de l’eau libre pour décoller ; il ne faut jamais pousser un oiseau épuisé à s’envoler pour tester sa capacité."
+              ]
+            },
+            {
+              "heading": "Parade, nid et développement des jeunes",
+              "paragraphs": [
+                "Les partenaires paradent en nageant côte à côte, en secouant la tête, en déployant les aigrettes et en présentant des végétaux. Ils coopèrent pour choisir et construire un nid de plantes humides en eau peu profonde, généralement parmi la végétation. L’espèce défend vigoureusement son territoire autour du nid ; l’observation distante est préférable à une approche à travers les plantes.",
+                "Le BTO indique une ponte habituelle de quatre ou cinq œufs et une incubation d’environ 22–25 jours. Les deux parents participent aux soins, transportent les poussins sur leur dos et les nourrissent après l’éclosion. Le même organisme situe l’envol vers 55–60 jours : savoir nager bien plus tôt ne signifie pas pouvoir quitter la zone humide par les airs."
+              ]
+            },
+            {
+              "heading": "Observations libanaises et attentes en novembre",
+              "paragraphs": [
+                "Le guide Birds of Lebanon de 2026, couvrant les données jusqu’en décembre 2025, classe l’Esclavon comme visiteur accidentel, avec deux observations : à l’embouchure du Damour le 20 décembre 1996 et dans un bassin artificiel de la réserve naturelle côtière de Tyr le 28 septembre 2004. Il s’agit d’une rareté documentée, non d’une migration annuelle ou d’une reproduction démontrée au Liban.",
+                "Connaître son plumage hivernal aide à le distinguer du Grèbe à cou noir, plus régulier au Liban. Le froid de novembre ne suffit pas à prédire sa venue sur un site précis. Une observation possible gagne à être accompagnée de vues latérales nettes de la tête et du bec, de la date, du milieu et du nombre d’oiseaux, pour permettre une expertise."
+              ]
+            },
+            {
+              "heading": "Une espèce menacée ne se protège pas seulement en photo",
+              "paragraphs": [
+                "Le BTO donne à l’espèce la catégorie mondiale « Vulnérable », VU. Les menaces documentées comprennent la disparition et la dégradation des zones humides, la sécheresse, les pollutions pétrolières et les captures accidentelles dans les engins de pêche. Le récent rapport canadien du COSEPAC analyse ces pressions au Canada ; ses chiffres locaux ne décrivent pas les rares présences dans le monde arabe.",
+                "Une eau propre, de la végétation et des zones de repos peu dérangées sont essentielles. Les embarcations ne doivent pas encercler les oiseaux ni séparer les jeunes des parents, et les nids sensibles ne doivent pas devenir des destinations photographiques publiques. Les oiseaux morts ou pris dans des filets doivent être signalés aux autorités compétentes plutôt que manipulés sans précaution.",
+                "Pour approfondir : Birds of Lebanon, deuxième édition, 2026 ; British Trust for Ornithology ; RSPB ; Cornell Lab of Ornithology ; Audubon ; Animal Diversity Web de l’Université du Michigan ; rapport de situation du COSEPAC, Canada, 2023 ; Alaska Department of Fish and Game."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : Claude Lyneis / iNaturalist, CC0 1.0, Richmond, Californie, États-Unis, 14 janvier 2025."
+        }
+      }
+    }
+  ]
+}
