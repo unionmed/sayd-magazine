@@ -1,21 +1,21 @@
 {
   "memory_after_door": "science",
   "featured": [
-    "رادار-صيد-العربي-تشرين-الأول-2026",
+    "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
     "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
     "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
-    "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح"
+    "رادار-صيد-العربي-تشرين-الأول-2026"
   ],
   "latest": [
     "مونديال-الرماية-قطر-2026",
+    "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
     "عندما-تهين-الطريدة-أنت-تهين-نفسك",
     "الصيد-السياحي-في-مصر-والعراق-والأردن",
     "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
     "الصيد-السياحي-في-دول-المغرب-العربي",
     "الصيد-السياحي-في-بلدان-الخليج-العربية",
-    "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
-    "تعاون-مصري-إماراتي-الحبارى-محمية-العميد"
+    "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -649,22 +649,22 @@
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
-    "main": "رادار-صيد-العربي-تشرين-الأول-2026",
+    "main": "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
     "important": [
       "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
       "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
       "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
-      "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح"
+      "رادار-صيد-العربي-تشرين-الأول-2026"
     ],
     "latest": [
       "مونديال-الرماية-قطر-2026",
+      "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
       "عندما-تهين-الطريدة-أنت-تهين-نفسك",
       "الصيد-السياحي-في-مصر-والعراق-والأردن",
       "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
       "الصيد-السياحي-في-دول-المغرب-العربي",
       "الصيد-السياحي-في-بلدان-الخليج-العربية",
-      "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر",
-      "تعاون-مصري-إماراتي-الحبارى-محمية-العميد"
+      "الشمال-إزالة-24750-متر-شباك-الصيد-الجائر"
     ]
   },
   "ia_door_sections": [
@@ -705,7 +705,7 @@
         "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026",
         "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان",
         "عمان-تنظم-زيارة-المحميات-والتخييم",
-        "أبوظبي-شبكة-إنقاذ-الحياة-الفطرية-2026"
+        "تعاون-مصري-إماراتي-الحبارى-محمية-العميد"
       ]
     },
     {
@@ -1025,7 +1025,8 @@
     "الأبلق-أبيض-التاج": "birds",
     "الأبلق-الأسود": "birds",
     "الغاق-الأوروبي": "birds",
-    "الغاق-السقطري": "birds"
+    "الغاق-السقطري": "birds",
+    "الكورة-توقيف-مخالفين-الصيد-الليلي-2026": "hunting"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1044,6 +1045,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
     "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026",
     "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
     "الرماية-الدولية-عقوبة-راتنر-2026",
@@ -1052,8 +1054,7 @@
     "كرنفال-دبي-ميدان-2026-2027",
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
     "رادار-صيد-العربي-تشرين-الأول-2026",
-    "طيور-تتعطر-بالنمل",
-    "مونديال-الرماية-قطر-2026"
+    "طيور-تتعطر-بالنمل"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -3128,11 +3129,28 @@
         "en": "A dark cormorant with a slender neck stands on a rocky ledge with its bill raised.",
         "fr": "Un cormoran sombre au cou fin se tient sur une corniche rocheuse, le bec relevé."
       }
+    },
+    "الكورة-توقيف-مخالفين-الصيد-الليلي-2026": {
+      "image": "media/publications/koura-night-hunting-20261114/koura-field-team.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "جانب من العمل الميداني لفرق مكافحة الصيد الجائر في الكورة",
+        "en": "Anti-poaching teams at work in Koura",
+        "fr": "Les équipes de lutte contre le braconnage sur le terrain dans le Koura"
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
+      "titles": {
+        "ar": "توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد في الكورة- شمال لبنان",
+        "en": "Suspects arrested, vehicles impounded and hunting weapons and equipment seized in Koura, North Lebanon",
+        "fr": "Interpellations, véhicules immobilisés et armes et matériel de chasse saisis dans le Koura, au Liban-Nord"
+      }
+    },
     {
       "slug": "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026",
       "titles": {
@@ -3203,14 +3221,6 @@
         "ar": "طيور تتعطر بالنمل: دراسة على السمنة اليابانية تكشف أثر إفرازاته في إبعاد بعض الحشرات.",
         "en": "Birds perfume themselves with ants: a Japanese Thrush study finds ant secretions can repel some insects.",
         "fr": "Des oiseaux se parfument avec des fourmis : leurs sécrétions peuvent éloigner certains insectes, selon une étude sur la Grive du Japon."
-      }
-    },
-    {
-      "slug": "مونديال-الرماية-قطر-2026",
-      "titles": {
-        "ar": "مونديال الرماية في قطر: فضية عزمي محيلبة لمصر وبرونزية عبدالعزيز السعد للكويت وحصة أولمبية لكل بلد",
-        "en": "Qatar shooting worlds: silver for Egypt’s Azmy Mehelba, bronze for Kuwait’s Abdulaziz Alsaad and Olympic quota places for both countries",
-        "fr": "Mondiaux de tir au Qatar : argent pour l’Égyptien Azmy Mehelba, bronze pour le Koweïtien Abdulaziz Alsaad et quotas olympiques pour les deux pays"
       }
     }
   ],
