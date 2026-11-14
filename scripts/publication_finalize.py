@@ -118,6 +118,7 @@ def safe_output_path(value):
         or value in {"content/editorial-revisions/syria-jousiyeh-update-20261114.json",
                      "content/editorial-revisions/nov5-bird-text-references-20261105.json",
                      "content/editorial-revisions/homepage-local-images-20261114.json",
+                     "content/editorial-revisions/homepage-inline-recovery-20261114.json",
                      "content/editorial-revisions/two-bird-lifecycles-20261102.json",
                      "content/editorial-revisions/stonechat-oman-status-20261106.json",
                      "content/editorial-revisions/nathalie-five-photos-20261029.json",
@@ -243,13 +244,21 @@ def api_json(payload):
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
 
 
-def prepare_tree_batches(changes, source_entries, original_tree):
+def prepare_tree_batches(changes, source_entries, original_tree, *, recovery_context=None):
     """Prevalidate all bytes and bound every mutation before the first POST.
 
     Source/base objects are already present remotely. Reuse those exact SHAs;
     novel generated text is written inline by GitHub's documented Trees API.
     Unknown binary output fails closed instead of adding a second upload path.
     """
+    historical = {}
+    if recovery_context is not None:
+        from homepage_image_recovery import historical_homepage_blobs
+        root, base, source = recovery_context
+        require(source_entries == tree_entries(root, source)
+                and original_tree == git(root, "rev-parse", source + "^{tree}").decode().strip(),
+                "Recovery source tree context mismatch")
+        historical = historical_homepage_blobs(root, base, source, changes)
     known_blobs = {sha for mode, sha in source_entries.values() if mode == "100644"}
     entries = []
     for item, data in changes:
@@ -257,7 +266,7 @@ def prepare_tree_batches(changes, source_entries, original_tree):
         if source_entries.get(path) == ("100644", sha):
             continue
         entry = {"path": path, "mode": "100644", "type": "blob"}
-        if sha in known_blobs:
+        if sha in known_blobs or historical.get(path) == sha:
             entry["sha"] = sha
         else:
             try:
@@ -356,7 +365,8 @@ def finalize(root, site, plan, base, source, compiler, expected_plan, api, compi
     source_entries = tree_entries(root, source)
     original_tree = git(root, "rev-parse", source + "^{tree}").decode().strip()
     require(tree_sha(source_entries) == original_tree, "Source tree digest mismatch")
-    batches, batched_tree = prepare_tree_batches(changes, source_entries, original_tree)
+    batches, batched_tree = prepare_tree_batches(changes, source_entries, original_tree,
+                                                  recovery_context=(root, base, source))
     base_entries = tree_entries(root, base)
     for item, _ in changes:
         old = base_entries.get(item["path"])

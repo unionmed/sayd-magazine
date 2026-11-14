@@ -57,7 +57,10 @@ def read_regular(root, path, missing=False):
 
 def active(root):
     raw = read_regular(root, MARKER, missing=True)
+    from homepage_image_recovery import MARKER as inverse_marker, recovered
+    inverse = read_regular(root, inverse_marker, missing=True)
     if raw is None:
+        require(inverse is None, 'Recovery marker without activation')
         return False
     from editorial_revision import validate_revision
     from publication_schema import loads
@@ -66,6 +69,9 @@ def active(root):
     validate_revision(value, MARKER, value.get('expected_base'))
     require(value['operation'] == OPERATION and value['id'] == ID,
             'Invalid homepage image migration marker')
+    if inverse is not None:
+        require(recovered(root, raw, inverse), 'Unverified homepage recovery')
+        return False
     return True
 
 

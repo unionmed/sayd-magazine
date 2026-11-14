@@ -139,5 +139,8 @@ from test_scoped_qatar_results_nov12 import QatarNov12Tests
 from test_scoped_qatar_results_nov13 import QatarNov13Tests
 
 from test_homepage_image_sources import HomepageImageSourcesTests
+from test_homepage_image_browser_proof import HomepageImageBrowserProofTests
+
+from test_homepage_image_recovery import HomepageImageRecoveryTests
 
 if __name__=='__main__':unittest.main()
