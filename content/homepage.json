@@ -475,7 +475,8 @@
     "الأبلق-أبيض-التاج",
     "الأبلق-الأسود",
     "الغاق-الأوروبي",
-    "الغاق-السقطري"
+    "الغاق-السقطري",
+    "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -711,10 +712,10 @@
     {
       "door": "science",
       "slugs": [
+        "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء",
         "فرصة-للتعافي-أنواع-قاربت-الانقراض",
         "طيور-تتعطر-بالنمل",
-        "حوام-العسل-هجرة-بولندا-3750-كيلومترا",
-        "المدن-تغير-خريطة-الطيور-والشتاء-يكشف-الفارق"
+        "حوام-العسل-هجرة-بولندا-3750-كيلومترا"
       ]
     },
     {
@@ -1026,7 +1027,8 @@
     "الأبلق-الأسود": "birds",
     "الغاق-الأوروبي": "birds",
     "الغاق-السقطري": "birds",
-    "الكورة-توقيف-مخالفين-الصيد-الليلي-2026": "hunting"
+    "الكورة-توقيف-مخالفين-الصيد-الليلي-2026": "hunting",
+    "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء": "science"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -3137,6 +3139,15 @@
         "ar": "جانب من العمل الميداني لفرق مكافحة الصيد الجائر في الكورة",
         "en": "Anti-poaching teams at work in Koura",
         "fr": "Les équipes de lutte contre le braconnage sur le terrain dans le Koura"
+      }
+    },
+    "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء": {
+      "image": "media/publications/mundafan-green-arabia-20261114/rubalkhali-landsat-context.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "كثبان رملية وأرض صخرية قرب شرورة في جنوب الربع الخالي، في صورة لاندسات 7.",
+        "en": "Sand dunes and rocky terrain near Sharurah in the southern Empty Quarter, in Landsat 7 imagery.",
+        "fr": "Dunes et terrain rocheux près de Sharurah, dans le sud du Rub al-Khali, vus par Landsat 7."
       }
     }
   },

@@ -1,0 +1,165 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "mundafan-green-arabia-20261114",
+  "expected_base": "9868f881a8da7c9f7f72abf4fcb843527888b90d",
+  "approval_reference": "private:Sentinel_d64daa6f21a48191870345562084ca28; Nayef requested preparation, verification and publication of this study with a suitable image in Science. No ticker, latest, lead, side or social placement authorized.",
+  "bank_search_reference": "private:mundafan-photo-bank-review-20261114; topic/location searches found no suitable existing bank candidate; not an exhaustive visual inventory. NASA original was archived with verified receipt and visually reviewed before preparing the publication derivative.",
+  "photos": [
+    {
+      "id": "cover",
+      "path": "docs/media/publications/mundafan-green-arabia-20261114/rubalkhali-landsat-context.jpg",
+      "sha256": "eded6037eb1b0339c5b702016296d9fd2acacbc74ed115d12d0211a50b8552c5",
+      "source_sha256": "b0d4564e038ac5326a0c7032775cb9ca1031e823ab3c29247fabb85fa50dc98f",
+      "source_reference": "NASA Earth Observatory, Jesse Allen and Robert Simmon, USGS Landsat data. Acquired 2003-02-01 near Sharurah, southern Saudi Empty Quarter. Contextual landscape, NOT Mundafan site. Original7761x6961 archived unchanged; resized full-frame to1600x1435 JPEG quality90,423267 bytes. No crop, compositing, enhancement or generative alteration. Black margins retained. Source: https://science.nasa.gov/earth/earth-observatory/empty-quarter-arabian-peninsula-77714/",
+      "rights": {
+        "status": "permission",
+        "statement": "NASA informational/news-use permission permits factual news reproduction with acknowledgment, without implied endorsement; excludes marked third-party copyright. This image page credits NASA/USGS with no third-party copyright notice. No mandatory hyperlink stated. Not claimed as blanket CC0.",
+        "evidence_reference": "NASA media usage policy https://www.nasa.gov/nasa-brand-center/images-and-media/ and selected image page inspected 2026-11-13; private:mundafan-image-rights-receipt-20261114. No third-party copyright marker observed; attribution retained."
+      },
+      "alt": {
+        "ar": "كثبان رملية وأرض صخرية قرب شرورة في جنوب الربع الخالي، في صورة لاندسات 7.",
+        "en": "Sand dunes and rocky terrain near Sharurah in the southern Empty Quarter, in Landsat 7 imagery.",
+        "fr": "Dunes et terrain rocheux près de Sharurah, dans le sud du Rub al-Khali, vus par Landsat 7."
+      },
+      "caption": {
+        "ar": "صورة توضيحية للربع الخالي قرب شرورة في جنوب السعودية، التقطها لاندسات 7 في 1 فبراير 2003؛ لا تظهر موقع التنقيب في المندفن.",
+        "en": "Contextual Landsat 7 image of the Empty Quarter near Sharurah, southern Saudi Arabia, acquired on 1 February 2003; it does not show the Mundafan excavation.",
+        "fr": "Image de contexte du Rub al-Khali près de Sharurah, au sud de l’Arabie saoudite, acquise par Landsat 7 le 1er février 2003 ; elle ne montre pas les fouilles de Mundafan."
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء",
+        "en": "mundafan-lake-hunting-green-arabia",
+        "fr": "lac-mundafan-chasse-arabie-verte"
+      },
+      "published": "2026-11-14",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "science",
+      "archives": [
+        "science"
+      ],
+      "kind": "article",
+      "photos": [
+        "cover"
+      ],
+      "translations": {
+        "ar": {
+          "title": "بحيرة المندفن: آثار الصيد تكشف جانبًا من حياة الجزيرة العربية الخضراء",
+          "subtitle": "دراسة جديدة تجمع أدوات حجرية وبقايا حيوانية ونباتية في جنوب السعودية، وتطرح احتمال استخدام مواد سامة مع بقاء أسئلة حول عمر الأدوات ووظيفتها.",
+          "meta_description": "دراسة جديدة تجمع أدوات حجرية وبقايا حيوانية ونباتية في جنوب السعودية، وتطرح احتمال استخدام مواد سامة مع بقاء أسئلة حول عمر الأدوات ووظيفتها.",
+          "sections": [
+            {
+              "paragraphs": [
+                "في أرض تغطيها اليوم رمال الربع الخالي، تكشف آثار بحيرة قديمة عن بيئة كانت أغنى بالمياه والحياة. فعند موقع «عروق الجليبة» قرب بحيرة المندفن القديمة في جنوب السعودية، درس فريق دولي أدوات حجرية وبقايا حيوانية ونباتية تساعد على فهم كيف استخدم الإنسان موارد هذه البيئة.",
+                "نُشرت الدراسة في دورية Science في 12 نوفمبر 2026، وقادها باحثون من جامعة غريفيث وجامعة الملك عبدالله للعلوم والتقنية «كاوست» وهيئة التراث السعودية. وتشير كاوست إلى أن الهيئة دعمت العمل الميداني خلال موسم 2023."
+              ]
+            },
+            {
+              "heading": "أدوات تجمع الحجر والنبات",
+              "paragraphs": [
+                "تضم المكتشفات أكثر من 5500 قطعة حجرية. وتظهر بعض الرؤوس آثار صدمات وبقايا حيوانية قرب الأطراف، في مقابل بقايا راتنج وألياف نباتية عند القواعد. ويفسر الباحثون هذا التوزيع بوصفه دليلًا على تثبيت رؤوس حجرية ضمن أدوات صيد مركبة.",
+                "كما تدل البقايا النباتية على أن استعمال الموارد تجاوز الطعام إلى مواد يمكن توظيفها في تجهيز الأدوات. وبرزت مؤشرات كيميائية مرتبطة بنباتات سامة على بعض الرؤوس، ما يطرح احتمال استخدامها في الصيد. لكن وجود تلك المؤشرات لا يحسم كيفية تجهيز المواد أو تعمد وضعها على السلاح أو فعاليتها."
+              ]
+            },
+            {
+              "heading": "بحيرة قديمة وتاريخ يحتاج إلى تدقيق",
+              "paragraphs": [
+                "يربط الفريق الموقع بمرحلة رطبة قبل نحو 125 ألف سنة. وبحسب مركز CENIEH المشارك، اعتمد التأريخ أساسًا على رواسب خضعت للتألق المحفز ضوئيًا، مع فحوص مستقلة لأسنان فرس النهر المتحجرة.",
+                "غير أن عالم الآثار جيفري روز، غير المشارك في الدراسة، نبّه في تصريح إلى Live Science إلى أن الأدوات جُمعت من السطح، لا من الطبقات المؤرخة؛ ولذلك يعد عمر البحيرة حدًا أقصى محتملًا لعمرها. كما شدد كريس كلاركسون، أحد قادة البحث، على أن اعتبارها أقدم دليل على أسلحة صيد مسمومة يبقى احتمالًا غير محسوم."
+              ]
+            },
+            {
+              "heading": "صورة أوسع للحياة",
+              "paragraphs": [
+                "لم تُكتشف بقايا بشرية في الموقع. وتبقى قيمته الأساسية في اجتماع الأدوات والبقايا العضوية والأحافير، بما يتيح دراسة الصيد واستغلال النبات ضمن بيئة مائية قديمة. وهي نافذة على طرق التكيف في الجزيرة العربية، مع حاجة إلى مزيد من الأدلة لحسم عمر الأدوات وتفسير آثارها الكيميائية."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: مرصد الأرض التابع لناسا / جيسي ألين وروبرت سيمون، باستخدام بيانات هيئة المسح الجيولوجي الأمريكية."
+        },
+        "en": {
+          "title": "Lake Mundafan: hunting traces illuminate life in Green Arabia",
+          "subtitle": "A new study brings together stone tools and animal and plant remains in southern Saudi Arabia, raising the possibility of poison-assisted hunting while questions remain about the tools’ age and function.",
+          "meta_description": "A new study brings together stone tools and animal and plant remains in southern Saudi Arabia, raising the possibility of poison-assisted hunting while questions remain about the tools’ age and function.",
+          "sections": [
+            {
+              "paragraphs": [
+                "In a landscape now covered by the sands of the Empty Quarter, traces of an ancient lake reveal an environment once richer in water and life. At ‘Uruq Aljelibah, beside the former Lake Mundafan in southern Saudi Arabia, an international team examined stone tools and animal and plant remains to investigate how people used these resources.",
+                "Published in Science on 12 November 2026, the study was led by researchers from Griffith University, King Abdullah University of Science and Technology (KAUST) and the Saudi Heritage Commission. KAUST reports that the Commission supported fieldwork during the 2023 season."
+              ]
+            },
+            {
+              "heading": "Combining stone and plants",
+              "paragraphs": [
+                "The discoveries include more than 5,500 stone artifacts. Some points show impact damage and animal residues near their tips, with plant resin and fibers at their bases. Researchers interpret this distribution as evidence that stone points were mounted as components of composite hunting tools.",
+                "Plant remains also suggest uses beyond food, including materials that could be employed in making tools. Chemical markers associated with toxic plants were identified on some points, raising the possibility of their use in hunting. Those markers alone do not establish how the substances were prepared, whether they were deliberately applied to weapons, or whether they were effective."
+              ]
+            },
+            {
+              "heading": "An ancient lake, an age under scrutiny",
+              "paragraphs": [
+                "The team associates the site with a humid phase around 125,000 years ago. According to the participating CENIEH research center, dating relied primarily on optically stimulated luminescence analysis of sediments, alongside independent tests on fossil hippopotamus teeth.",
+                "However, archaeologist Jeffrey Rose, who was not involved in the study, told Live Science that the tools were collected from the surface rather than the dated layers. He therefore regards the lake’s age as a possible maximum age for the tools. Co-lead researcher Chris Clarkson also stressed that whether this represents the earliest evidence of poisoned hunting weapons remains unresolved."
+              ]
+            },
+            {
+              "heading": "A broader picture of life",
+              "paragraphs": [
+                "No human remains were found at the site. Its principal value lies in the combination of tools, organic traces and fossils, allowing hunting and plant use to be studied within an ancient freshwater environment. It offers a window into adaptation in Arabia, while further evidence is needed to resolve the tools’ age and interpret their chemical traces."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Image: NASA Earth Observatory / Jesse Allen and Robert Simmon, using United States Geological Survey Landsat data."
+        },
+        "fr": {
+          "title": "Le lac Mundafan : des traces de chasse éclairent la vie dans l’Arabie verte",
+          "subtitle": "Une nouvelle étude réunit outils en pierre et restes animaux et végétaux dans le sud de l’Arabie saoudite. Elle évoque un possible usage de poisons pour la chasse, sans clore les questions sur l’âge et la fonction des outils.",
+          "meta_description": "Une nouvelle étude réunit outils en pierre et restes animaux et végétaux dans le sud de l’Arabie saoudite. Elle évoque un possible usage de poisons pour la chasse, sans clore les questions sur l’âge et la fonction des outils.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Dans un paysage aujourd’hui couvert par les sables du Rub al-Khali, les traces d’un ancien lac révèlent un environnement autrefois plus riche en eau et en vie. À ‘Uruq Aljelibah, près de l’ancien lac Mundafan, dans le sud de l’Arabie saoudite, une équipe internationale a étudié des outils en pierre et des restes animaux et végétaux pour comprendre l’exploitation de ces ressources.",
+                "Publiée dans Science le 12 novembre 2026, l’étude a été menée par des chercheurs de l’université Griffith, de l’université des sciences et technologies du roi Abdallah (KAUST) et de la Commission saoudienne du patrimoine. Selon KAUST, cette dernière a soutenu les travaux de terrain de la saison 2023."
+              ]
+            },
+            {
+              "heading": "Associer pierre et végétaux",
+              "paragraphs": [
+                "Les découvertes comprennent plus de 5 500 objets en pierre. Certaines pointes présentent des traces d’impact et des résidus animaux près de leur extrémité, tandis que des résines et des fibres végétales subsistent à leur base. Les chercheurs y voient des indices de pointes emmanchées dans des outils de chasse composites.",
+                "Les restes végétaux suggèrent également des usages autres qu’alimentaires, notamment des matériaux utilisables pour fabriquer des outils. Des marqueurs chimiques associés à des plantes toxiques ont été repérés sur certaines pointes, évoquant leur possible emploi pour la chasse. Ils ne suffisent toutefois pas à établir la préparation des substances, leur application délibérée sur les armes ou leur efficacité."
+              ]
+            },
+            {
+              "heading": "Un lac ancien, une datation discutée",
+              "paragraphs": [
+                "L’équipe rattache le site à une phase humide remontant à environ 125 000 ans. Selon le centre de recherche CENIEH, associé à l’étude, la datation repose surtout sur la luminescence stimulée optiquement des sédiments, complétée par des analyses indépendantes de dents fossiles d’hippopotame.",
+                "L’archéologue Jeffrey Rose, extérieur à l’équipe, a cependant souligné auprès de Live Science que les outils provenaient de la surface et non des couches datées. Il considère donc l’âge du lac comme un âge maximal possible pour les outils. Chris Clarkson, l’un des responsables de l’étude, a également précisé qu’il reste incertain qu’il s’agisse des plus anciennes traces d’armes de chasse empoisonnées."
+              ]
+            },
+            {
+              "heading": "Une vision plus large de la vie",
+              "paragraphs": [
+                "Aucun reste humain n’a été découvert sur le site. Son intérêt majeur réside dans l’association des outils, des traces organiques et des fossiles, qui permet d’étudier la chasse et l’usage des végétaux dans un ancien milieu d’eau douce. Il éclaire l’adaptation en Arabie, même si de nouvelles preuves restent nécessaires pour préciser l’âge des outils et interpréter leurs traces chimiques."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Image : NASA Earth Observatory / Jesse Allen et Robert Simmon, à partir des données Landsat de l’United States Geological Survey."
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      }
+    }
+  ]
+}
