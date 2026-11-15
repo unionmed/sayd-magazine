@@ -10,8 +10,8 @@ from build_market_coming_soon import DOCS, ROUTES, COPY, ORIGIN, CATALOG, LABELS
 def test_pages():
     catalog=json.loads(CATALOG.read_text())
     products=catalog['products']
-    assert catalog['link_type']=='awin_affiliate' and catalog['version']==3
-    assert len({p['id'] for p in products})==len(products)==8
+    assert catalog['link_type']=='awin_affiliate' and catalog['version']==4
+    assert len({p['id'] for p in products})==len(products)==16
     for lang,route in ROUTES.items():
         p=DOCS/route/'index.html';t=html.parse(str(p))
         assert t.xpath('//h1/text()')==[COPY[lang][1]]
@@ -60,7 +60,7 @@ def test_pages():
             if dest.is_dir():dest=dest/'index.html'
             assert dest.exists(),(lang,raw)
         assert t.xpath('//nav[@class="header-social"]') and t.xpath('//footer')
-    print('PASS: eight real products and approved Awin links with visible disclosure and sponsored/security attributes in AR/EN/FR, original local product photographs and USD prices, reciprocal language links, local assets, no on-site checkout')
+    print('PASS: sixteen real products and approved Awin links with visible disclosure and sponsored/security attributes in AR/EN/FR, original local product photographs and USD prices, reciprocal language links, local assets, no on-site checkout')
 
 def test_unapproved_affiliate_links_fail_closed():
     product=json.loads(CATALOG.read_text())['products'][0]
