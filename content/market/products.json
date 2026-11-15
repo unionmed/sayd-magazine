@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "checked_at": "2026-11-05",
+  "version": 4,
+  "checked_at": "2026-11-14",
   "link_type": "awin_affiliate",
   "products": [
     {
@@ -10,26 +10,26 @@
         "ar": {
           "name": "قارورة ماء تيتانيوم · 500 مل",
           "category": "الماء والرحلات",
-          "description": "قارورة دائرية سعة 500 مل بجدار واحد وغطاء من التيتانيوم.",
+          "description": "سعة 500 مل، بجدار واحد وغطاء تيتانيوم.",
           "seller": "SilverAnt · المتجر الرسمي"
         },
         "en": {
           "name": "Titanium water bottle · 500ml",
           "category": "Hydration",
-          "description": "A 500 ml single-wall round bottle with a titanium lid.",
+          "description": "500 ml, single wall and titanium lid.",
           "seller": "SilverAnt · Official store"
         },
         "fr": {
           "name": "Gourde en titane · 500ml",
           "category": "Hydratation",
-          "description": "Gourde ronde de 500 ml à simple paroi avec bouchon en titane.",
+          "description": "500 ml, simple paroi et bouchon en titane.",
           "seller": "SilverAnt · Boutique officielle"
         }
       },
       "price": {
         "amount": "64.99",
         "currency": "USD",
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-14",
         "variant_id": 44477767778482,
         "variant_title": "500ml/17.6 fl oz Round Bottle"
       },
@@ -51,26 +51,26 @@
         "ar": {
           "name": "كوب تيتانيوم بغطاء · 350 مل",
           "category": "أكواب الرحلات",
-          "description": "كوب سعة 350 مل بجدار واحد ومقبضين قابلين للطي، مع غطاء مثقّب للتصفية.",
+          "description": "سعة 350 مل، بغطاء ومقبضين قابلين للطي.",
           "seller": "SilverAnt · المتجر الرسمي"
         },
         "en": {
           "name": "Titanium cup with lid · 350ml",
           "category": "Camping cups",
-          "description": "A 350 ml single-wall cup with folding handles and a lid with drainage holes.",
+          "description": "350 ml, with lid and folding handles.",
           "seller": "SilverAnt · Official store"
         },
         "fr": {
           "name": "Tasse en titane avec couvercle · 350ml",
           "category": "Tasses de camping",
-          "description": "Tasse de 350 ml à simple paroi, avec anses pliantes et couvercle à trous d’égouttage.",
+          "description": "350 ml, avec couvercle et anses pliantes.",
           "seller": "SilverAnt · Boutique officielle"
         }
       },
       "price": {
         "amount": "17.50",
         "currency": "USD",
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-14",
         "variant_id": 44542936121522,
         "variant_title": "350ml/12.3 fl oz"
       },
@@ -92,26 +92,26 @@
         "ar": {
           "name": "قدر تخييم تيتانيوم · 2L",
           "category": "الطبخ في الطبيعة",
-          "description": "قدر سعة لترين مع غطاء، ومقبض للتعليق ومقبض جانبي قابل للطي، لتحضير وجبات التخييم.",
+          "description": "سعة لترين، مع غطاء ومقبض تعليق.",
           "seller": "SilverAnt · المتجر الرسمي"
         },
         "en": {
           "name": "Titanium camping pot · 2L",
           "category": "Camp cooking",
-          "description": "A two-litre pot with a lid, a bail handle and a folding side handle for campsite meals.",
+          "description": "Two litres, with lid and bail handle.",
           "seller": "SilverAnt · Official store"
         },
         "fr": {
           "name": "Marmite en titane · 2L",
           "category": "Cuisine de plein air",
-          "description": "Marmite de deux litres avec couvercle, anse de suspension et poignée latérale pliante, pour les repas au camp.",
+          "description": "Deux litres, avec couvercle et anse de suspension.",
           "seller": "SilverAnt · Boutique officielle"
         }
       },
       "price": {
         "amount": "64.99",
         "currency": "USD",
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-14",
         "variant_id": 45297180180658,
         "variant_title": "Large Titanium Camping Pot with Lid 2L/67.63 fl oz (Single Pot Only)"
       },
@@ -133,26 +133,26 @@
         "ar": {
           "name": "طقم أدوات طعام تيتانيوم",
           "category": "أدوات الطعام",
-          "description": "طقم من ملعقة وشوكة وسكين طعام، بوزن إجمالي معلن 41 غراماً، مع كيس للتخزين.",
+          "description": "ملعقة وشوكة وسكين طعام، مع كيس تخزين.",
           "seller": "SilverAnt · المتجر الرسمي"
         },
         "en": {
           "name": "Titanium cutlery set",
           "category": "Camp tableware",
-          "description": "A spoon, fork and table knife with a stated total weight of 41 g and a storage bag.",
+          "description": "Spoon, fork and table knife, with storage bag.",
           "seller": "SilverAnt · Official store"
         },
         "fr": {
           "name": "Couverts en titane",
           "category": "Couverts de camping",
-          "description": "Une cuillère, une fourchette et un couteau de table, pour un poids total annoncé de 41 g, avec pochette de rangement.",
+          "description": "Cuillère, fourchette et couteau de table, avec pochette.",
           "seller": "SilverAnt · Boutique officielle"
         }
       },
       "price": {
         "amount": "27.49",
         "currency": "USD",
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-14",
         "variant_id": 41991615676594,
         "variant_title": "Sandblasted"
       },
@@ -174,26 +174,26 @@
         "ar": {
           "name": "طبق تخييم تيتانيوم · 900 مل",
           "category": "أدوات الطعام",
-          "description": "طبق تيتانيوم سعة 900 مل ووزن معلن 148 غراماً، لتقديم وجبات التخييم.",
+          "description": "طبق سعة 900 مل لوجبات التخييم.",
           "seller": "SilverAnt · المتجر الرسمي"
         },
         "en": {
           "name": "Titanium camping plate · 900ml",
           "category": "Camp tableware",
-          "description": "A 900 ml titanium plate with a stated weight of 148 g, for campsite meals.",
+          "description": "A 900 ml plate for campsite meals.",
           "seller": "SilverAnt · Official store"
         },
         "fr": {
           "name": "Assiette de camping en titane · 900ml",
           "category": "Vaisselle de camping",
-          "description": "Assiette en titane de 900 ml, d’un poids annoncé de 148 g, pour les repas au camp.",
+          "description": "Assiette de 900 ml pour les repas au camp.",
           "seller": "SilverAnt · Boutique officielle"
         }
       },
       "price": {
         "amount": "35.99",
         "currency": "USD",
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-14",
         "variant_id": 45048821645490,
         "variant_title": "Medium - 900ml/30.43 fl oz"
       },
@@ -215,26 +215,26 @@
         "ar": {
           "name": "مكبس قهوة تيتانيوم · 500ml",
           "category": "قهوة الرحلات",
-          "description": "مكبس قهوة سعة 500 مل بمقبضين قابلين للطي، وفلتر ومكبس داخلي من التيتانيوم.",
+          "description": "سعة 500 مل، مع فلتر ومكبس تيتانيوم.",
           "seller": "SilverAnt · المتجر الرسمي"
         },
         "en": {
           "name": "Titanium French press · 500ml",
           "category": "Camp coffee",
-          "description": "A 500 ml French press with folding handles, a titanium filter and a titanium internal plunger.",
+          "description": "500 ml, with titanium filter and plunger.",
           "seller": "SilverAnt · Official store"
         },
         "fr": {
           "name": "Cafetière à piston en titane · 500ml",
           "category": "Café en plein air",
-          "description": "Cafetière à piston de 500 ml avec anses pliantes, filtre et piston intérieur en titane.",
+          "description": "500 ml, avec filtre et piston en titane.",
           "seller": "SilverAnt · Boutique officielle"
         }
       },
       "price": {
         "amount": "79.99",
         "currency": "USD",
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-14",
         "variant_id": 46008451006642,
         "variant_title": "Sandblasted Titanium Coffee French Press"
       },
@@ -256,26 +256,26 @@
         "ar": {
           "name": "إبريق ماء تيتانيوم · 1.4L",
           "category": "الطبخ في الطبيعة",
-          "description": "إبريق تيتانيوم سعة 1.4 لتر بتشطيب بلوري، مع غطاء ومقبض علوي.",
+          "description": "سعة 1.4 لتر، بتشطيب بلوري ومقبض علوي.",
           "seller": "SilverAnt · المتجر الرسمي"
         },
         "en": {
           "name": "Titanium kettle · 1.4L",
           "category": "Camp cooking",
-          "description": "A 1.4-litre titanium kettle with a crystallized finish, lid and top handle.",
+          "description": "1.4 litres, crystallized finish and top handle.",
           "seller": "SilverAnt · Official store"
         },
         "fr": {
           "name": "Bouilloire en titane · 1,4L",
           "category": "Cuisine de plein air",
-          "description": "Bouilloire en titane de 1,4 litre à finition cristallisée, avec couvercle et anse supérieure.",
+          "description": "1,4 litre, finition cristallisée et anse supérieure.",
           "seller": "SilverAnt · Boutique officielle"
         }
       },
       "price": {
         "amount": "109.99",
         "currency": "USD",
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-14",
         "variant_id": 42100376436914,
         "variant_title": "Large Titanium Kettle Crystallised Finish - 1400ml/49 fl oz"
       },
@@ -297,26 +297,26 @@
         "ar": {
           "name": "طقم أوتاد تيتانيوم · 6 قطع · 120 مم",
           "category": "تجهيز الخيمة",
-          "description": "ستة أوتاد تيتانيوم بتصميم Y وطول 120 مم، مع حبال سحب وكيس للتخزين.",
+          "description": "ستة أوتاد بطول 120 مم، مع كيس تخزين.",
           "seller": "SilverAnt · المتجر الرسمي"
         },
         "en": {
           "name": "Titanium tent stakes · 6-pack · 120mm",
           "category": "Tent accessories",
-          "description": "Six 120 mm Y-shaped titanium tent stakes, with pull cords and a storage bag.",
+          "description": "Six 120 mm stakes, with storage bag.",
           "seller": "SilverAnt · Official store"
         },
         "fr": {
           "name": "Piquets en titane · lot de 6 · 120mm",
           "category": "Accessoires de tente",
-          "description": "Six piquets de tente en titane en Y, de 120 mm, avec cordelettes d’extraction et pochette de rangement.",
+          "description": "Six piquets de 120 mm, avec pochette.",
           "seller": "SilverAnt · Boutique officielle"
         }
       },
       "price": {
         "amount": "27.50",
         "currency": "USD",
-        "checked_at": "2026-11-05",
+        "checked_at": "2026-11-14",
         "variant_id": 44549611061426,
         "variant_title": "6-Pack - Small - 120mm/4.72 inches"
       },
@@ -330,6 +330,334 @@
         "sha256": "c5ed0a08a2ef2c242efa6c693f7a8c458c2d8982c57730ae0333a17f97494bb4"
       },
       "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Ftitanium-y-shape-tent-stakes-6-pack%3Fvariant%3D44549611061426%26currency%3DUSD"
+    },
+    {
+      "id": "silverant-crystallized-titanium-cutting-board-small-medium",
+      "url": "https://silverantoutdoors.com/products/crystallized-titanium-cutting-board-small-medium?variant=67788281905330&currency=USD",
+      "copy": {
+        "ar": {
+          "name": "لوح تقطيع تيتانيوم · صغير",
+          "category": "تجهيز الطعام",
+          "description": "مقاس 198 × 290 مم، بتشطيب بلوري ومقبض حمل.",
+          "seller": "SilverAnt · المتجر الرسمي"
+        },
+        "en": {
+          "name": "Titanium cutting board · small",
+          "category": "Food preparation",
+          "description": "198 × 290 mm, crystallized finish and carrying handle.",
+          "seller": "SilverAnt · Official store"
+        },
+        "fr": {
+          "name": "Planche en titane · petite",
+          "category": "Préparation des repas",
+          "description": "198 × 290 mm, finition cristallisée et poignée de transport.",
+          "seller": "SilverAnt · Boutique officielle"
+        }
+      },
+      "price": {
+        "amount": "31.99",
+        "currency": "USD",
+        "checked_at": "2026-11-14",
+        "variant_id": 67788281905330,
+        "variant_title": "Small: 198 × 290 mm / 7.8 × 11.42 inches"
+      },
+      "image": {
+        "path": "media/market/silverant/crystallized-titanium-cutting-board-small-medium.jpg",
+        "source_url": "https://cdn.shopify.com/s/files/1/0092/7173/8464/files/Titaniumcuttingboardsmall1.jpg?v=1792758596",
+        "source_page": "https://silverantoutdoors.com/products/crystallized-titanium-cutting-board-small-medium",
+        "credit": "SilverAnt",
+        "width": 4000,
+        "height": 4000,
+        "sha256": "d560ca92a978258a2bbeab47b117a75c74c76dc77b3304c5346fe273b7ea1ecb"
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Fcrystallized-titanium-cutting-board-small-medium%3Fvariant%3D67788281905330%26currency%3DUSD"
+    },
+    {
+      "id": "silverant-silverti-ultralight-titanium-gas-stove",
+      "url": "https://silverantoutdoors.com/products/silverti-ultralight-titanium-gas-stove?variant=45138362695858&currency=USD",
+      "copy": {
+        "ar": {
+          "name": "موقد غاز تيتانيوم · SilverTi",
+          "category": "مواقد التخييم",
+          "description": "موقد قابل للطي بوزن 102 غرام؛ عبوة الغاز منفصلة.",
+          "seller": "SilverAnt · المتجر الرسمي"
+        },
+        "en": {
+          "name": "SilverTi titanium gas stove",
+          "category": "Camping stoves",
+          "description": "Folding 102 g stove; gas canister sold separately.",
+          "seller": "SilverAnt · Official store"
+        },
+        "fr": {
+          "name": "Réchaud à gaz SilverTi en titane",
+          "category": "Réchauds de camping",
+          "description": "Réchaud pliant de 102 g ; cartouche de gaz vendue séparément.",
+          "seller": "SilverAnt · Boutique officielle"
+        }
+      },
+      "price": {
+        "amount": "49.99",
+        "currency": "USD",
+        "checked_at": "2026-11-14",
+        "variant_id": 45138362695858,
+        "variant_title": "Default Title"
+      },
+      "image": {
+        "path": "media/market/silverant/silverti-ultralight-titanium-gas-stove.jpg",
+        "source_url": "https://cdn.shopify.com/s/files/1/0092/7173/8464/files/SilverTi_Ultralight_Titanium_Gas_Stove_-_Image_1.jpg?v=1790090084",
+        "source_page": "https://silverantoutdoors.com/products/silverti-ultralight-titanium-gas-stove",
+        "credit": "SilverAnt",
+        "width": 1600,
+        "height": 1600,
+        "sha256": "353a3085fd4d47bf0e145f579402bad6f9dabb6b6a68e1ee170fcebf4ee78ec5"
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Fsilverti-ultralight-titanium-gas-stove%3Fvariant%3D45138362695858%26currency%3DUSD"
+    },
+    {
+      "id": "silverant-ultralight-leakproof-titanium-container-280ml",
+      "url": "https://silverantoutdoors.com/products/ultralight-leakproof-titanium-container-280ml?variant=45638593872050&currency=USD",
+      "copy": {
+        "ar": {
+          "name": "حافظة تيتانيوم · 280 مل",
+          "category": "حفظ الطعام",
+          "description": "سعة 280 مل، بغطاء محكم وتشطيب رملي.",
+          "seller": "SilverAnt · المتجر الرسمي"
+        },
+        "en": {
+          "name": "Titanium storage container · 280ml",
+          "category": "Food storage",
+          "description": "280 ml, with sealed lid and sandblasted finish.",
+          "seller": "SilverAnt · Official store"
+        },
+        "fr": {
+          "name": "Boîte en titane · 280ml",
+          "category": "Conservation des aliments",
+          "description": "280 ml, avec couvercle étanche et finition sablée.",
+          "seller": "SilverAnt · Boutique officielle"
+        }
+      },
+      "price": {
+        "amount": "32.49",
+        "currency": "USD",
+        "checked_at": "2026-11-14",
+        "variant_id": 45638593872050,
+        "variant_title": "Sandblasted"
+      },
+      "image": {
+        "path": "media/market/silverant/ultralight-leakproof-titanium-container-280ml.jpg",
+        "source_url": "https://cdn.shopify.com/s/files/1/0092/7173/8464/files/SilverAnt_Ultralight_Leakproof_Titanium_Container_280ml_9.47_fl_oz_-_Image_1.jpg?v=1789931353",
+        "source_page": "https://silverantoutdoors.com/products/ultralight-leakproof-titanium-container-280ml",
+        "credit": "SilverAnt",
+        "width": 1600,
+        "height": 1600,
+        "sha256": "006fff99b50bc59a6046fcffed35df21c12d7649764e340e47abc442a65aa957"
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Fultralight-leakproof-titanium-container-280ml%3Fvariant%3D45638593872050%26currency%3DUSD"
+    },
+    {
+      "id": "silverant-ultralight-titanium-mess-tins",
+      "url": "https://silverantoutdoors.com/products/ultralight-titanium-mess-tins?variant=43540235583666&currency=USD",
+      "copy": {
+        "ar": {
+          "name": "علبة طبخ تيتانيوم · متوسطة",
+          "category": "الطبخ في الطبيعة",
+          "description": "علبة طبخ واحدة بغطاء ومقبض قابل للطي.",
+          "seller": "SilverAnt · المتجر الرسمي"
+        },
+        "en": {
+          "name": "Titanium mess tin · medium",
+          "category": "Camp cooking",
+          "description": "One cooking tin with lid and folding handle.",
+          "seller": "SilverAnt · Official store"
+        },
+        "fr": {
+          "name": "Gamelle en titane · moyenne",
+          "category": "Cuisine de plein air",
+          "description": "Une gamelle avec couvercle et poignée pliante.",
+          "seller": "SilverAnt · Boutique officielle"
+        }
+      },
+      "price": {
+        "amount": "54.99",
+        "currency": "USD",
+        "checked_at": "2026-11-14",
+        "variant_id": 43540235583666,
+        "variant_title": "Medium Mess Tin"
+      },
+      "image": {
+        "path": "media/market/silverant/ultralight-titanium-mess-tins.jpg",
+        "source_url": "https://cdn.shopify.com/s/files/1/0092/7173/8464/files/SilverAnt_Ultralight_Titanium_Mess_Tins_-_Image_1.jpg?v=1789720320",
+        "source_page": "https://silverantoutdoors.com/products/ultralight-titanium-mess-tins",
+        "credit": "SilverAnt",
+        "width": 1600,
+        "height": 1600,
+        "sha256": "7d38e2863bf7f4580ace41300f4e087c6d24baea6228895ccee6a258c06dd7c4"
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Fultralight-titanium-mess-tins%3Fvariant%3D43540235583666%26currency%3DUSD"
+    },
+    {
+      "id": "silverant-ultralight-titanium-folding-spork-spoon",
+      "url": "https://silverantoutdoors.com/products/ultralight-titanium-folding-spork-spoon?variant=43332298965170&currency=USD",
+      "copy": {
+        "ar": {
+          "name": "ملعقة شوكة تيتانيوم قابلة للطي",
+          "category": "أدوات الطعام",
+          "description": "ملعقة وشوكة في قطعة واحدة، بتشطيب رملي.",
+          "seller": "SilverAnt · المتجر الرسمي"
+        },
+        "en": {
+          "name": "Folding titanium spork",
+          "category": "Camp tableware",
+          "description": "Combined spoon and fork, with sandblasted finish.",
+          "seller": "SilverAnt · Official store"
+        },
+        "fr": {
+          "name": "Cuillère-fourchette pliante en titane",
+          "category": "Couverts de camping",
+          "description": "Cuillère et fourchette combinées, avec finition sablée.",
+          "seller": "SilverAnt · Boutique officielle"
+        }
+      },
+      "price": {
+        "amount": "13.99",
+        "currency": "USD",
+        "checked_at": "2026-11-14",
+        "variant_id": 43332298965170,
+        "variant_title": "Folding Spork - Sandblasted Finish"
+      },
+      "image": {
+        "path": "media/market/silverant/ultralight-titanium-folding-spork-spoon.jpg",
+        "source_url": "https://cdn.shopify.com/s/files/1/0092/7173/8464/files/SilverAnt_Ultralight_Titanium_Folding_Spork_Spoon_-_Image_1.jpg?v=1790006333",
+        "source_page": "https://silverantoutdoors.com/products/ultralight-titanium-folding-spork-spoon",
+        "credit": "SilverAnt",
+        "width": 1600,
+        "height": 1600,
+        "sha256": "378c15d6637626b4a4d9f9bf7f03a923ee558e9572d7139399f6abba4a747399"
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Fultralight-titanium-folding-spork-spoon%3Fvariant%3D43332298965170%26currency%3DUSD"
+    },
+    {
+      "id": "silverant-crystallized-titanium-insulated-travel-coffee-mug-with-lid-5-colors",
+      "url": "https://silverantoutdoors.com/products/crystallized-titanium-insulated-travel-coffee-mug-with-lid-5-colors?variant=45425242276018&currency=USD",
+      "copy": {
+        "ar": {
+          "name": "كوب سفر معزول · 400 مل",
+          "category": "أكواب الرحلات",
+          "description": "كوب تيتانيوم معزول بغطاء، باللون الفضي.",
+          "seller": "SilverAnt · المتجر الرسمي"
+        },
+        "en": {
+          "name": "Insulated travel mug · 400ml",
+          "category": "Travel mugs",
+          "description": "Insulated titanium mug with lid, in Classic Silver.",
+          "seller": "SilverAnt · Official store"
+        },
+        "fr": {
+          "name": "Mug de voyage isotherme · 400ml",
+          "category": "Mugs de voyage",
+          "description": "Mug isotherme en titane avec couvercle, coloris argent.",
+          "seller": "SilverAnt · Boutique officielle"
+        }
+      },
+      "price": {
+        "amount": "69.99",
+        "currency": "USD",
+        "checked_at": "2026-11-14",
+        "variant_id": 45425242276018,
+        "variant_title": "Classic Silver"
+      },
+      "image": {
+        "path": "media/market/silverant/crystallized-titanium-insulated-travel-coffee-mug-with-lid-5-colors.jpg",
+        "source_url": "https://cdn.shopify.com/s/files/1/0092/7173/8464/files/SilverAnt_Ultralight_Crystallized_Titanium_Insulated_Travel_Coffee_Mug_with_Lid_400ml_14_fl_oz_-_Image_1.jpg?v=1790105800",
+        "source_page": "https://silverantoutdoors.com/products/crystallized-titanium-insulated-travel-coffee-mug-with-lid-5-colors",
+        "credit": "SilverAnt",
+        "width": 1600,
+        "height": 1600,
+        "sha256": "19f96bb84c27f4d263a6c5bbf9a898c2d5d90c68407394695b30699b2515dd6d"
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Fcrystallized-titanium-insulated-travel-coffee-mug-with-lid-5-colors%3Fvariant%3D45425242276018%26currency%3DUSD"
+    },
+    {
+      "id": "silverant-titanium-tea-filter",
+      "url": "https://silverantoutdoors.com/products/titanium-tea-filter?variant=42256724328626&currency=USD",
+      "copy": {
+        "ar": {
+          "name": "مصفاة شاي تيتانيوم",
+          "category": "شاي الرحلات",
+          "description": "مصفاة بشبكة تيتانيوم ومقبض، بوزن 16 غراماً.",
+          "seller": "SilverAnt · المتجر الرسمي"
+        },
+        "en": {
+          "name": "Titanium tea strainer",
+          "category": "Camp tea",
+          "description": "Titanium mesh strainer with handle, weighing 16 g.",
+          "seller": "SilverAnt · Official store"
+        },
+        "fr": {
+          "name": "Passoire à thé en titane",
+          "category": "Thé en plein air",
+          "description": "Passoire à maille de titane avec poignée, de 16 g.",
+          "seller": "SilverAnt · Boutique officielle"
+        }
+      },
+      "price": {
+        "amount": "15.99",
+        "currency": "USD",
+        "checked_at": "2026-11-14",
+        "variant_id": 42256724328626,
+        "variant_title": "Titanium Tea Filter - Sandblasted"
+      },
+      "image": {
+        "path": "media/market/silverant/titanium-tea-filter.jpg",
+        "source_url": "https://cdn.shopify.com/s/files/1/0092/7173/8464/products/SilverAnt_Ultralight_Titanium_Tea_Filter_-_Image_1.jpg?v=1789932828",
+        "source_page": "https://silverantoutdoors.com/products/titanium-tea-filter",
+        "credit": "SilverAnt",
+        "width": 1600,
+        "height": 1600,
+        "sha256": "b72a9b043ae707be53819927b246daf28b271a00348f08a2d2c03fb7ec7be951"
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Ftitanium-tea-filter%3Fvariant%3D42256724328626%26currency%3DUSD"
+    },
+    {
+      "id": "silverant-ultralight-titanium-multi-fuel-alcohol-stove",
+      "url": "https://silverantoutdoors.com/products/ultralight-titanium-multi-fuel-alcohol-stove?variant=44480571605170&currency=USD",
+      "copy": {
+        "ar": {
+          "name": "موقد كحول تيتانيوم",
+          "category": "مواقد التخييم",
+          "description": "الموقد وحده؛ الحامل وواقي الرياح والوقود منفصلة.",
+          "seller": "SilverAnt · المتجر الرسمي"
+        },
+        "en": {
+          "name": "Titanium alcohol stove",
+          "category": "Camping stoves",
+          "description": "Stove only; stand, windshield and fuel sold separately.",
+          "seller": "SilverAnt · Official store"
+        },
+        "fr": {
+          "name": "Réchaud à alcool en titane",
+          "category": "Réchauds de camping",
+          "description": "Réchaud seul ; support, pare-vent et combustible vendus séparément.",
+          "seller": "SilverAnt · Boutique officielle"
+        }
+      },
+      "price": {
+        "amount": "29.99",
+        "currency": "USD",
+        "checked_at": "2026-11-14",
+        "variant_id": 44480571605170,
+        "variant_title": "Titanium Multi-Fuel Alcohol Stove (Stove Only)"
+      },
+      "image": {
+        "path": "media/market/silverant/ultralight-titanium-multi-fuel-alcohol-stove.jpg",
+        "source_url": "https://cdn.shopify.com/s/files/1/0092/7173/8464/files/SilverAnt_Ultralight_Titanium_Multi-Fuel_Alcohol_Stove_Kit_-_Image_6.jpg?v=1790088877",
+        "source_page": "https://silverantoutdoors.com/products/ultralight-titanium-multi-fuel-alcohol-stove",
+        "credit": "SilverAnt",
+        "width": 1600,
+        "height": 1600,
+        "sha256": "4cb5e44ff1f30960c0cdf01906ee9c2b95d0d292a347b48ea2a68eb0a23e45ef"
+      },
+      "affiliate_url": "https://www.awin1.com/cread.php?awinmid=45577&awinaffid=3146890&ued=https%3A%2F%2Fsilverantoutdoors.com%2Fproducts%2Fultralight-titanium-multi-fuel-alcohol-stove%3Fvariant%3D44480571605170%26currency%3DUSD"
     }
   ],
   "currency": "USD",
