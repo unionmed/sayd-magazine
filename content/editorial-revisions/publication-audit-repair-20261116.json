@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "publication-audit-repair-20261116",
+  "expected_base": "b81accae398ba30e8a364884cc3c51b6036a90d6",
+  "operation": "repair-publication-audit-20261116",
+  "approval_reference": "private:site-audit-repairs-20261116",
+  "expected_source_sha256": "fc14193f09e070a436e68d013b0d54294653c0115a8394f1f5e683ced8147cbd",
+  "expected_targets_sha256": "e0435f163cbd3b49925bf256eacbca67a8e4b8ec4a1bad6a9dc62c4feaab4e25",
+  "payload": {}
+}
