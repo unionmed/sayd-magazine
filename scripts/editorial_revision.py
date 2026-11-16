@@ -21,7 +21,8 @@ TARGETS = {'update-syria-jousiyeh-20261114': 'syria-migration-anti-poaching-2026
            'homepage-inline-recovery-20261114': None,
            'homepage-only-ticker': None, 'add-adonis-ticker': 'adonis-respect-quarry-20261026',
            'replace-wanaameen-photo': 'riyadh-results-20261024',
-           'promote-episode-three-lead': 'hunting-tourism-egypt-iraq-jordan-20261026'}
+           'promote-episode-three-lead': 'hunting-tourism-egypt-iraq-jordan-20261026',
+           'repair-publication-audit-20261116': 'mundafan-green-arabia-20261114'}
 
 
 def revision_paths(before, after):
@@ -96,6 +97,9 @@ def validate_revision(value, path, base):
         require(value['id'] == 'nathalie-five-photos-20261029', 'Exact Nathalie photo revision ID required')
     if value['operation'] == 'promote-episode-three-lead':
         require(value['id'] == 'episode-three-lead-20261026', 'Exact episode promotion revision ID required')
+    if value['operation'] == 'repair-publication-audit-20261116':
+        keys(value['payload'], ())
+        require(value['id'] == 'publication-audit-repair-20261116', 'Exact publication audit repair ID required')
     return value
 
 
@@ -189,6 +193,14 @@ def expected_changes(root, base, value, path):
         require(compiler.sha256(contract_raw) == value['expected_source_sha256'], 'Protected contract source hash mismatch')
         from ticker_scope import migration_changes
         result, effective, article = migration_changes(root, base)
+    elif value['operation'] == 'repair-publication-audit-20261116':
+        source_path = 'content/publications/' + TARGETS[value['operation']] + '.json'
+        require(before.get(source_path, ())[:2] == ('100644', 'blob'), 'Approved existing publication required')
+        raw = compiler.read_blob(root, before[source_path])
+        require(compiler.sha256(raw) == value['expected_source_sha256'], 'Existing source hash mismatch')
+        record = validate(loads(raw.decode()), TARGETS[value['operation']])
+        import scoped_publication_audit_revision
+        result, effective, article = scoped_publication_audit_revision.expected_changes(root, base, record)
     else:
         source_path = 'content/publications/' + TARGETS[value['operation']] + '.json'
         require(before.get(source_path, ())[:2] == ('100644', 'blob'), 'Approved existing publication required')

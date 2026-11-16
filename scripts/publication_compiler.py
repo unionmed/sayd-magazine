@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 15042)
+Total output lines: 911
+
 #!/usr/bin/env python3
 """Compile additive publication DATA into an isolated review tree, never publish.
 
@@ -143,7 +146,7 @@ def validate_report(site, report, expected_base, expected_source, expected_compi
     if any(e.get('path') == 'content/article-updates.json' for e in report['changes']):
         import editorial_revision
         _, value, registry_outputs, _, _ = editorial_revision.source_input(site, expected_base, expected_source)
-        require(value['operation'] in {'update-stonechat-oman-status-20261106', 'complete-two-bird-lifecycles', 'update-qatar-shooting-results', 'update-qatar-shooting-results-nov4', 'update-qatar-shooting-results-nov5', 'update-qatar-shooting-results-nov6', 'update-qatar-shooting-results-nov9', 'update-qatar-shooting-results-nov11', 'update-qatar-shooting-results-nov12', 'update-qatar-shooting-results-nov13', 'update-syria-jousiyeh-20261114', 'update-dubai-carnival-results-nov7'},
+        require(value['operation'] in {'update-stonechat-oman-status-20261106', 'complete-two-bird-lifecycles', 'update-qatar-shooting-results', 'update-qatar-shooting-results-nov4', 'update-qatar-shooting-results-nov5', 'update-qatar-shooting-results-nov6', 'update-qatar-shooting-results-nov9', 'update-qatar-shooting-results-nov11', 'update-qatar-shooting-results-nov12', 'update-qatar-shooting-results-nov13', 'update-syria-jousiyeh-20261114', 'update-dubai-carnival-results-nov7', 'repair-publication-audit-20261116'},
                 'Exact approved maintenance required for update registry')
         require({e['path'] for e in report['changes']} == set(registry_outputs), 'Exact update registry maintenance outputs required')
     radar_outputs = None
@@ -386,188 +389,7 @@ def render_article(stage, article, language, photos, pairs, doors, seo):
     front = {'title': tr['title'], 'slug': article['slugs'][language], 'date': article['published'],
              'author': article['author'][language], 'categories': [doors[article['primary_door']]['folder']],
              'featured': photos[article['photos'][0]]['path'][5:], 'subtitle': tr['subtitle']}
-    source = stage / 'content' / ('posts' if language == 'ar' else language) / (article['slugs'][language] + '.md')
-    require(not source.exists(), 'Existing article source collision')
-    save(source, '---\n' + ''.join(k + ': ' + json.dumps(v, ensure_ascii=False) + '\n' for k, v in front.items()) + '---\n\n' + body + '\n')
-
-
-def contain_syria_podium(article, photo):
-    """Keep this exact approved portrait whole; not a general crop policy."""
-    return (article['slugs']['ar'] == 'بطولة-الجمهورية-رماية-الأطباق-المروحية-سوريا-2026'
-            and photo['path'] == 'docs/media/publications/syria-helice-championship-20261024/podium-a.jpg'
-            and photo['sha256'] == photo['source_sha256'] == 'f9f188d7844f0517df1138a71c7112bb2031b636e46766b1db237e15be1a7be0')
-
-
-def card_image_override(article, photo):
-    override = {'image': photo['path'][5:], 'position': '50% 50%', 'alt': photo['alt']}
-    if contain_syria_podium(article, photo):
-        override['fit'] = 'contain'
-    return override
-
-
-def interview_entry(article):
-    """Derive only the explicitly declared interview identity; never infer titles."""
-    return {'slug': article['slugs']['ar'], 'published_at': article['published'],
-            'reviewed_as': 'interview', 'languages': dict(article['slugs'])}
-
-
-def insert_listing(stage, article, language, photo, path):
-    require(path.is_file(), 'Missing existing archive; no implicit new section')
-    original = path.read_text()
-    match = re.search(r'<article\b[^>]*class="(?:post-row|card)[^"]*"', original)
-    require(match is not None, 'Unsupported archive template')
-    tr = article['translations'][language]
-    style = 'post-row' if 'post-row' in match[0] else 'card overlay' if 'overlay' in match[0] else 'card'
-    relative_href = os.path.relpath(page_path(stage, article, language), path.parent)
-    collection_root = stage / 'docs' / ('' if language == 'ar' else language)
-    interview_collections = {collection_root / 'interviews/index.html', collection_root / 'category/مقابلات/index.html'}
-    # Match both existing interview views' decoded paths; preserve historical cards.
-    href = html.escape(relative_href, quote=True) if path in interview_collections else quote(relative_href, safe='/')
-    image = os.path.relpath(stage / photo['path'], path.parent)
-    image_style = ' style="object-fit:contain"' if contain_syria_podium(article, photo) else ''
-    row = '<article class="' + style + '"><a class="thumb" href="' + href + '"><img src="' + image + '" alt="' + html.escape(photo['alt'][language], quote=True) + '" loading="lazy"' + image_style + '></a><div class="body"><h2><a href="' + href + '">' + html.escape(tr['title']) + '</a></h2><div class="meta">' + date_label(article['published'], language) + '</div><p class="excerpt">' + html.escape(tr['subtitle']) + '</p></div></article>\n'
-    # Insert in descending original-date order. Existing card bytes/order survive.
-    from lxml import html as dom
-    from seo_foundation import parse_date
-    position = match.start()
-    for card in re.finditer(r'<article\b[^>]*>.*?</article>', original, re.S):
-        element = dom.fromstring(card[0])
-        stamps = classes(element, 'meta') + classes(element, 'feed-date')
-        day = parse_date(stamps[0].text_content()) if stamps else None
-        if day is None or day <= article['published']:
-            position = card.start()
-            break
-        position = card.end()
-    updated = original[:position] + row + original[position:]
-    # The heading badge must count the actual cards, not retain a stale total.
-    # Replace only its digits so historical cards and surrounding chrome survive.
-    count = len(re.findall(r'<article\b[^>]*>.*?</article>', updated, re.S))
-    updated = re.sub(
-        r'(<div class="section-head"><h2>[^<]*<span class="badge">)\d+(</span>)',
-        lambda m: m[1] + str(count) + m[2], updated, count=1)
-    data = re.search(r'(<script type="application/json" id="combined-archive-data">)(.*?)(</script>)', updated, re.S)
-    if data:
-        filters = loads(data[2])
-        if article['primary_door'] == 'equestrian':
-            require(article['slugs'][language] not in filters['equestrian'], 'Duplicate combined archive filter entry')
-            filters['equestrian'].append(article['slugs'][language])
-        serialized = json.dumps(filters, ensure_ascii=False).replace('<', '\\u003c')
-        updated = updated[:data.start(2)] + serialized + updated[data.end(2):]
-        count = len(re.findall(r'<article\b[^>]*>.*?</article>', updated, re.S))
-        updated, replacements = re.subn(r'(<p class="archive-result-count"[^>]*>)\d+( )', lambda m: m[1] + str(count) + m[2], updated)
-        require(replacements == 1, 'Missing combined archive result count')
-    save(path, updated)
-
-
-def shortlink(stage, article, language, links):
-    from lxml import html as dom
-    key = ('/' if language == 'ar' else '/' + language + '/') + 'posts/' + article['slugs'][language] + '/'
-    short = '/s/' + sha256(key.encode())[:10] + '/'
-    require(key not in links and short not in links.values(), 'Short-link collision')
-    links[key] = short
-    target = public_url(article, language)
-    page = dom.fromstring(page_path(stage, article, language).read_text())
-    tags = ''.join(dom.tostring(m, encoding='unicode') for m in page.xpath('//meta[starts-with(@property,"og:") or starts-with(@name,"twitter:")]'))
-    save(stage / 'docs' / short.strip('/') / 'index.html', '<!doctype html>\n<html lang="' + language + '" dir="' + ('rtl' if language == 'ar' else 'ltr') + '"><head><meta charset="utf-8"><title>' + html.escape(article['translations'][language]['title']) + '</title><link rel="canonical" href="' + target + '"><meta name="robots" content="noindex,follow">' + tags + '<meta http-equiv="refresh" content="0;url=' + target + '"></head><body><a href="' + target + '">' + html.escape(article['translations'][language]['title']) + '</a></body></html>\n')
-
-
-def render(stage, records, allow_distribution):
-    from lxml import html as dom
-    modules = bind_modules(stage)
-    seo = modules['seo_foundation']
-    import site_ia
-    doors = {d['id']: d for d in site_ia.DOORS}
-    doors['equestrian'] = dict(site_ia.EQUESTRIAN_LEGACY_DOOR, fr='Équitation')
-    pairs_path = stage / 'content/en/pairs.json'
-    pairs_record = loads(pairs_path.read_text())
-    pairs = pairs_record['pairs']
-    home_path = stage / 'content/homepage.json'
-    home = loads(home_path.read_text())
-    from scoped_saluki_supersession import apply as apply_saluki_supersession
-    apply_saluki_supersession(stage, records, home, allow_distribution)
-    links_path = stage / 'docs/s/links.json'
-    links = loads(links_path.read_text())
-    sitemap_path = stage / 'docs/sitemap.xml'
-    sitemap = sitemap_path.read_text()
-    for record in records:
-        for photo in record['photos']:
-            image_size(stage / photo['path'])
-    article_records = [(record, article) for record in records for article in record['articles']]
-    if not article_records:
-        return
-    interviews = [a for _, a in article_records if a.get('format') == 'interview']
-    if interviews:
-        registry_path = stage / 'content/interviews.json'
-        registry = loads(registry_path.read_text())
-        identities = {row['slug'] for row in registry['entries']}
-        for article in interviews:
-            require(article['slugs']['ar'] not in identities, 'Existing interview registry identity')
-            registry['entries'].append(interview_entry(article))
-            identities.add(article['slugs']['ar'])
-        save_json(registry_path, registry)
-    route_names = {language: {p.name.casefold() for p in (stage / 'docs' / ('' if language == 'ar' else language) / 'posts').iterdir()} for language in LANGS}
-    for record, article in article_records:
-        ar, en = article['slugs']['ar'], article['slugs']['en']
-        require(ar not in pairs and en not in pairs.values(), 'Existing translation mapping collision')
-        for language in LANGS:
-            require(not page_path(stage, article, language).exists(), 'Historical route collision')
-            require(article['slugs'][language].casefold() not in route_names[language], 'Casefold route collision')
-            route_names[language].add(article['slugs'][language].casefold())
-        require(allow_distribution or (article['distribution']['placement'] == 'archive-only' and not article['distribution']['ticker']), 'Trusted distribution scope required')
-        pairs[ar] = en
-    save_json(pairs_path, pairs_record)
-    for record, article in article_records:
-        photos = {p['id']: p for p in record['photos']}
-        for language in LANGS:
-            render_article(stage, article, language, photos, pairs, doors, seo)
-        ar = article['slugs']['ar']
-        home['primary_door'][ar] = article['primary_door']
-        photo = photos[article['photos'][0]]
-        home['card_image_overrides'][ar] = card_image_override(article, photo)
-        if article['kind'] == 'gallery':
-            home['gallery'].extend(s for s in dict.fromkeys(article['slugs'].values()) if s not in home['gallery'])
-        if article['distribution']['placement'] == 'archive-only':
-            home['omit_from_home_desks'] = list(dict.fromkeys(home['omit_from_home_desks'] + [ar]))
-        if not article['distribution']['ticker']:
-            home['omit_from_ticker'] = list(dict.fromkeys(home['omit_from_ticker'] + [ar]))
-        if article['distribution'].get('rotation'):
-            rotation = article['distribution']['rotation']
-            home['omit_from_latest'] = list(dict.fromkeys(home['omit_from_latest'] + [ar]))
-            home.setdefault('editorial_rotation_handoffs', {})[ar] = {'trigger': 'When removed by a later explicitly reviewed publication; no date expiry', 'permanent_category': doors[rotation['permanent_door']]['folder'], 'no_updates': True, 'no_ticker': True, 'permanent_encyclopedia_listing_now': True}
-        for language in LANGS:
-            root = stage / 'docs' / ('' if language == 'ar' else language)
-            paths = [root / 'category' / doors[d]['folder'] / 'index.html' for d in article['archives']]
-            if article['primary_door'] == 'equestrian':
-                paths.append(root / 'category/صيد/index.html')
-            if article.get('format') == 'interview':
-                paths.extend([root / 'category/مقابلات/index.html', root / 'interviews/index.html'])
-            paths.append(root / ('articles' if language == 'ar' else 'stories') / 'index.html')
-            for path in dict.fromkeys(paths):
-                insert_listing(stage, article, language, photo, path)
-    save_json(home_path, home)
-    twins = seo.load_twins(stage / 'docs')
-    for record, article in article_records:
-        for language in LANGS:
-            path = page_path(stage, article, language)
-            normalized = seo.apply_html(path.read_text(), path, stage / 'docs', path.relative_to(stage / 'docs'), twins)
-            normalized = modules['rollout_mobile_nav_heritage_20261015'].nav_replace(normalized, path)[0]
-            save(path, modules['build_site_search'].links(normalized, path))
-            shortlink(stage, article, language, links)
-            if article['kind'] != 'gallery':
-                sitemap = sitemap.replace('</urlset>', '<url><loc>' + public_url(article, language) + '</loc><lastmod>' + article['published'] + '</lastmod></url>\n</urlset>')
-    save_json(links_path, links)
-    save(sitemap_path, sitemap)
-    require(sum(a['distribution']['placement'] == 'lead' for _, a in article_records) <= 1, 'At most one new lead per atomic publication')
-    old_latest = home['latest'].copy()
-    wide = False
-    def day(slug):
-        return modules['ticker_policy'].publication_date(slug, stage)
-    for record, article in article_records:
-        ar = article['slugs']['ar']
-        placement = article['distribution']['placement']
-        wide = wide or placement != 'archive-only' or article['distribution']['ticker']
-        if article['primary_door'] == 'science' and (placement in {'lead', 'side', 'latest'} or article['distribution']['ticker']):
-            home['approved_science_news'] = list(dict.fromkeys(home['approved_science_news'] + [ar]))
+    source = stage / 'content' / ('posts'…3042 tokens truncated…          home['approved_science_news'] = list(dict.fromkeys(home['approved_science_news'] + [ar]))
         if placement == 'door':
             door_id = 'hunting' if article['primary_door'] == 'equestrian' else article['primary_door']
             section = next((d for d in home['ia_door_sections'] if d['door'] == door_id), None)
