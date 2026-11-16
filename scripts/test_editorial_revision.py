@@ -142,5 +142,6 @@ from test_homepage_image_sources import HomepageImageSourcesTests
 from test_homepage_image_browser_proof import HomepageImageBrowserProofTests
 
 from test_homepage_image_recovery import HomepageImageRecoveryTests
+from test_scoped_publication_audit_revision import PublicationAuditRepairTests
 
 if __name__=='__main__':unittest.main()
