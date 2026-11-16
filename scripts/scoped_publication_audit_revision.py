@@ -59,8 +59,10 @@ ORIGINALS = {
 
 def expected_changes(root, base, record):
     import article_dates
+    import build_search_index as search
     import publication_compiler as compiler
     from caption_revision import article_paths
+    from revision_search import logical_bytes
 
     before = compiler.tree(root, base)
     path = 'content/publications/' + PUBLICATION + '.json'
@@ -79,6 +81,7 @@ def expected_changes(root, base, record):
     result = {}
     effective = copy.deepcopy(record)
     effective_article = effective['articles'][0]
+    indices = {language: json.loads(logical_bytes(root, before, language)) for language in LANGS}
 
     # Add three directly relevant primary references to all language mirrors.
     for language in LANGS:
@@ -102,6 +105,26 @@ def expected_changes(root, base, record):
                 require(updated.count(modified) == 1, 'Exact original modified date required: ' + target)
                 updated = updated.replace(modified, '"dateModified": "' + UPDATED + '"')
             result[target] = updated.encode('utf-8')
+
+        # Keep the active language search index in step with the new source links.
+        # Derive its body from the exact rendered page, and prove every other row
+        # and every non-body field remains byte-equivalent to the trusted BASE.
+        page_path = article_paths(article, language)[0]
+        page = search.html.fromstring(result[page_path])
+        bodies = search.by_class(page, 'article-content')
+        require(len(bodies) == 1, 'Exact rendered article body required for search update')
+        body, _ = search.article_body(bodies[0])
+        original_page = search.html.fromstring(compiler.read_blob(root, before[page_path]))
+        original_bodies = search.by_class(original_page, 'article-content')
+        require(len(original_bodies) == 1, 'Exact original article body required for search update')
+        original_body, _ = search.article_body(original_bodies[0])
+        route = '/' + ('' if language == 'ar' else language + '/') + 'posts/' + SLUGS[language] + '/'
+        indexed_url = quote(route, safe='/@-._~')
+        rows = [row for row in indices[language]['articles'] if row['url'] == indexed_url]
+        require(len(rows) == 1 and rows[0]['body'] == original_body,
+                'Exact original indexed Mundafan body required: ' + language)
+        rows[0]['body'] = body
+        result['docs/assets/search/index-' + language + '.json'] = search.serialize(indices[language])
 
     # Record the maintenance date and keep the sitemap's per-page lastmod in sync.
     updates_path = 'content/article-updates.json'
@@ -153,6 +176,7 @@ def expected_changes(root, base, record):
 
     expected = set(path for paths in MIRRORS.values() for path in paths)
     expected |= {updates_path, sitemap_path, heritage_path, category_path}
+    expected |= {'docs/assets/search/index-' + language + '.json' for language in LANGS}
     require(set(result) == expected == set(PINNED_TARGETS)
             and all(result[p] != compiler.read_blob(root, before[p]) for p in result),
             'Exact audit repair output scope required')
@@ -165,6 +189,9 @@ def expected_changes(root, base, record):
 # broaden this exact output without an explicit new operation and test update.
 PINNED_TARGETS = {
     'content/article-updates.json': '941b243eba64e6136944d1ed7f3d20d259054fe3ed2ee21544d31cd3e73346ad',
+    'docs/assets/search/index-ar.json': '06204d4cafab2fa605a9192882b0b85013630eb19cc7331231a13e2a9002ce1d',
+    'docs/assets/search/index-en.json': 'baa40545fbf7b82a9234f1a91eb5e7cea10d4cd857490f5273ab0aa0f28ef56b',
+    'docs/assets/search/index-fr.json': '48d5eab6ac2204ed5e37b542b8abc4baf1914086f7a18755ed9a30480cfbec4d',
     'content/en/mundafan-lake-hunting-green-arabia.md': 'd4b7ca3ee8e68f245c9efa2f8efc99164561b042f8d155393641562ff58ce8d8',
     'content/fr/lac-mundafan-chasse-arabie-verte.md': '2ae295c3498caa6d34436a372a52a32a6441354ebd33fdae30cdc5a24828aa81',
     'content/posts/' + SLUGS['ar'] + '.md': '5acbff3ba4f563a0b3f6833ca4787c27e2a64543711e95e5105d7f3ac45fa817',
