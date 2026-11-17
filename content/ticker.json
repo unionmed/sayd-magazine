@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
+      "titles": {
+        "ar": "المسيلحة: إنقاذ ضبع عالق في فخ للخنازير البرية وإعادته إلى الطبيعة.",
+        "en": "Mseilha: hyena rescued from a wild-boar trap and returned to the wild.",
+        "fr": "Mseilha : une hyène sauvée d’un piège à sangliers et remise en liberté."
+      },
+      "title": "المسيلحة: إنقاذ ضبع عالق في فخ للخنازير البرية وإعادته إلى الطبيعة."
+    },
+    {
       "slug": "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
       "titles": {
         "ar": "جبيل: إزالة 350 مترًا مربعًا من شباك الصيد غير القانونية في حبالين.",
@@ -81,15 +90,6 @@
         "fr": "Naameh : interpellations, véhicules mis en fourrière et saisie de matériel de chasse nocturne"
       },
       "title": "الناعمة: توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد ليلي"
-    },
-    {
-      "slug": "رادار-صيد-العربي-تشرين-الأول-2026",
-      "titles": {
-        "ar": "رادار صيد لشهر تشرين الأول: 23 عملية ضبط لأشخاص مرتبطة بالصيد البري و57 شخصًا مضبوطًا أو موقوفًا في ست دول عربية.",
-        "en": "Sayd October Radar: 23 wildlife-hunting enforcement operations and 57 people apprehended or detained across six Arab countries.",
-        "fr": "Radar Sayd d’octobre : 23 opérations de contrôle liées à la chasse et 57 personnes interpellées ou arrêtées dans six pays arabes."
-      },
-      "title": "رادار صيد لشهر تشرين الأول: 23 عملية ضبط لأشخاص مرتبطة بالصيد البري و57 شخصًا مضبوطًا أو موقوفًا في ست دول عربية."
     }
   ]
 }
