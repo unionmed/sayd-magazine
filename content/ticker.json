@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
+      "titles": {
+        "ar": "جبيل: إزالة 350 مترًا مربعًا من شباك الصيد غير القانونية في حبالين.",
+        "en": "Jbeil: 350 square metres of illegal hunting nets removed in Hbaline.",
+        "fr": "Jbeil : retrait de 350 mètres carrés de filets de chasse illégaux à Hbaline."
+      },
+      "title": "جبيل: إزالة 350 مترًا مربعًا من شباك الصيد غير القانونية في حبالين."
+    },
+    {
       "slug": "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
       "titles": {
         "ar": "توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد في الكورة- شمال لبنان",
@@ -81,15 +90,6 @@
         "fr": "Radar Sayd d’octobre : 23 opérations de contrôle liées à la chasse et 57 personnes interpellées ou arrêtées dans six pays arabes."
       },
       "title": "رادار صيد لشهر تشرين الأول: 23 عملية ضبط لأشخاص مرتبطة بالصيد البري و57 شخصًا مضبوطًا أو موقوفًا في ست دول عربية."
-    },
-    {
-      "slug": "طيور-تتعطر-بالنمل",
-      "titles": {
-        "ar": "طيور تتعطر بالنمل: دراسة على السمنة اليابانية تكشف أثر إفرازاته في إبعاد بعض الحشرات.",
-        "en": "Birds perfume themselves with ants: a Japanese Thrush study finds ant secretions can repel some insects.",
-        "fr": "Des oiseaux se parfument avec des fourmis : leurs sécrétions peuvent éloigner certains insectes, selon une étude sur la Grive du Japon."
-      },
-      "title": "طيور تتعطر بالنمل: دراسة على السمنة اليابانية تكشف أثر إفرازاته في إبعاد بعض الحشرات."
     }
   ]
 }
