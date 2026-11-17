@@ -2,20 +2,20 @@
   "memory_after_door": "science",
   "featured": [
     "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
+    "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
     "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
     "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
-    "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
-    "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026"
+    "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs"
   ],
   "latest": [
+    "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
     "رادار-صيد-العربي-تشرين-الأول-2026",
     "مونديال-الرماية-قطر-2026",
     "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
     "عندما-تهين-الطريدة-أنت-تهين-نفسك",
     "الصيد-السياحي-في-مصر-والعراق-والأردن",
     "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
-    "الصيد-السياحي-في-دول-المغرب-العربي",
-    "الصيد-السياحي-في-بلدان-الخليج-العربية"
+    "الصيد-السياحي-في-دول-المغرب-العربي"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -656,20 +656,20 @@
   "ia_slots": {
     "main": "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
     "important": [
+      "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
       "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
       "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
-      "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
-      "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026"
+      "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs"
     ],
     "latest": [
+      "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
       "رادار-صيد-العربي-تشرين-الأول-2026",
       "مونديال-الرماية-قطر-2026",
       "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
       "عندما-تهين-الطريدة-أنت-تهين-نفسك",
       "الصيد-السياحي-في-مصر-والعراق-والأردن",
       "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
-      "الصيد-السياحي-في-دول-المغرب-العربي",
-      "الصيد-السياحي-في-بلدان-الخليج-العربية"
+      "الصيد-السياحي-في-دول-المغرب-العربي"
     ]
   },
   "ia_door_sections": [
@@ -1035,7 +1035,8 @@
     "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء": "science",
     "الغطاس-أحمر-الرقبة": "birds",
     "الغطاس-المقرن": "birds",
-    "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026": "hunting"
+    "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026": "hunting",
+    "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026": "wildlife"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1054,6 +1055,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
     "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
     "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
     "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026",
@@ -1062,8 +1064,7 @@
     "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
     "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
     "كرنفال-دبي-ميدان-2026-2027",
-    "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
-    "رادار-صيد-العربي-تشرين-الأول-2026"
+    "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -3183,11 +3184,28 @@
         "en": "Anti-poaching team and Internal Security Forces personnel during the net-removal operation in Hbaline, Jbeil",
         "fr": "Équipe de lutte contre le braconnage et agents des Forces de sécurité intérieure lors de l’opération de retrait des filets à Hbaline, Jbeil"
       }
+    },
+    "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026": {
+      "image": "media/publications/mseilha-hyena-rescue-20261117/rescue-team.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "فريق وحدة مكافحة الصيد الجائر وطبيب بيطري خلال عملية إنقاذ الضبع ليلًا في المسيلحة",
+        "en": "Anti-Poaching Unit team and a veterinarian during the night-time hyena rescue in Mseilha",
+        "fr": "Équipe de lutte contre le braconnage et vétérinaire pendant le sauvetage nocturne de la hyène à Mseilha"
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
+      "titles": {
+        "ar": "المسيلحة: إنقاذ ضبع عالق في فخ للخنازير البرية وإعادته إلى الطبيعة.",
+        "en": "Mseilha: hyena rescued from a wild-boar trap and returned to the wild.",
+        "fr": "Mseilha : une hyène sauvée d’un piège à sangliers et remise en liberté."
+      }
+    },
     {
       "slug": "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
       "titles": {
@@ -3258,14 +3276,6 @@
         "ar": "الناعمة: توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد ليلي",
         "en": "Naameh: arrests, impounded vehicles and seized night-hunting equipment",
         "fr": "Naameh : interpellations, véhicules mis en fourrière et saisie de matériel de chasse nocturne"
-      }
-    },
-    {
-      "slug": "رادار-صيد-العربي-تشرين-الأول-2026",
-      "titles": {
-        "ar": "رادار صيد لشهر تشرين الأول: 23 عملية ضبط لأشخاص مرتبطة بالصيد البري و57 شخصًا مضبوطًا أو موقوفًا في ست دول عربية.",
-        "en": "Sayd October Radar: 23 wildlife-hunting enforcement operations and 57 people apprehended or detained across six Arab countries.",
-        "fr": "Radar Sayd d’octobre : 23 opérations de contrôle liées à la chasse et 57 personnes interpellées ou arrêtées dans six pays arabes."
       }
     }
   ],

@@ -1,0 +1,278 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "mseilha-hyena-rescue-20261117",
+  "expected_base": "41a4d015a993a4089059217dd8000cf094ecce25",
+  "approval_reference": "private:nayef-mseilha-hyena-publication-original-photos-side-ticker-20261117",
+  "bank_search_reference": "User-directed selection of the four original Mseilha hyena-rescue photographs attached to Editor-in-Chief Adonis El Khatib's APU editorial email of 16 November 2026. All nine email photographs were visually reviewed; the five Hbaline net-removal photographs belong to the separate, already published Jbeil report.",
+  "photos": [
+    {
+      "id": "rescue-team",
+      "path": "docs/media/publications/mseilha-hyena-rescue-20261117/rescue-team.jpg",
+      "sha256": "fe6784240c055351ad25dca985a8f46f17bd6f5909ac4a9be8d4994872a869d6",
+      "source_sha256": "fe6784240c055351ad25dca985a8f46f17bd6f5909ac4a9be8d4994872a869d6",
+      "source_reference": "Original MECSHAP event photograph IMG_20261115_175313.jpg, supplied by Editor-in-Chief Adonis El Khatib in the APU editorial email dated 16 November 2026. Original file bytes retained. Operation date, capture date and photographer were not specified.",
+      "alt": {
+        "ar": "فريق وحدة مكافحة الصيد الجائر وطبيب بيطري خلال عملية إنقاذ الضبع ليلًا في المسيلحة",
+        "en": "Anti-Poaching Unit team and a veterinarian during the night-time hyena rescue in Mseilha",
+        "fr": "Équipe de lutte contre le braconnage et vétérinaire pendant le sauvetage nocturne de la hyène à Mseilha"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "MECSHAP photographs supplied for Sayd republication under the standing permission confirmed by Nayef. Nayef explicitly authorized publication of this rescue report with its original photographs. This is not an open licence.",
+        "evidence_reference": "private:nayef-mecshap-republication-permission-apu-20261116-hyena-originals"
+      }
+    },
+    {
+      "id": "veterinary-care",
+      "path": "docs/media/publications/mseilha-hyena-rescue-20261117/veterinary-care.jpg",
+      "sha256": "9ad5cac5b053ad38daddebcdc68990be40c4588c448d7010a703a2c6dfd1e500",
+      "source_sha256": "9ad5cac5b053ad38daddebcdc68990be40c4588c448d7010a703a2c6dfd1e500",
+      "source_reference": "Original MECSHAP event photograph Screenshot_20261116_094145.jpg, supplied by Editor-in-Chief Adonis El Khatib in the APU editorial email dated 16 November 2026. Original file bytes retained. Operation date, capture date and photographer were not specified.",
+      "alt": {
+        "ar": "الطبيب البيطري وأفراد الفريق يعالجون الضبع خلال عملية الإنقاذ",
+        "en": "Veterinarian and team members treating the hyena during the rescue",
+        "fr": "Le vétérinaire et des membres de l’équipe soignent la hyène pendant le sauvetage"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "MECSHAP photographs supplied for Sayd republication under the standing permission confirmed by Nayef. Nayef explicitly authorized publication of this rescue report with its original photographs. This is not an open licence.",
+        "evidence_reference": "private:nayef-mecshap-republication-permission-apu-20261116-hyena-originals"
+      }
+    },
+    {
+      "id": "hyena-walking",
+      "path": "docs/media/publications/mseilha-hyena-rescue-20261117/hyena-walking.jpg",
+      "sha256": "484a16212af3adbcea00c4b1df5683a75d06e6efc0c3230cb44327ac114ba93c",
+      "source_sha256": "484a16212af3adbcea00c4b1df5683a75d06e6efc0c3230cb44327ac114ba93c",
+      "source_reference": "Original MECSHAP event photograph Screenshot_20261116_094459.jpg, supplied by Editor-in-Chief Adonis El Khatib in the APU editorial email dated 16 November 2026. Original file bytes retained. Operation date, capture date and photographer were not specified.",
+      "alt": {
+        "ar": "الضبع يسير في الموقع ليلًا بعد عملية الإنقاذ",
+        "en": "The hyena walking at the site at night after the rescue",
+        "fr": "La hyène marche sur le site de nuit après son sauvetage"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "MECSHAP photographs supplied for Sayd republication under the standing permission confirmed by Nayef. Nayef explicitly authorized publication of this rescue report with its original photographs. This is not an open licence.",
+        "evidence_reference": "private:nayef-mecshap-republication-permission-apu-20261116-hyena-originals"
+      }
+    },
+    {
+      "id": "hyena-release",
+      "path": "docs/media/publications/mseilha-hyena-rescue-20261117/hyena-release.jpg",
+      "sha256": "f071901512dfe7c00a87d21c3aa42421130e303d74ef7df2085d40f42c8221e2",
+      "source_sha256": "f071901512dfe7c00a87d21c3aa42421130e303d74ef7df2085d40f42c8221e2",
+      "source_reference": "Original MECSHAP event photograph Screenshot_20261116_102803.jpg, supplied by Editor-in-Chief Adonis El Khatib in the APU editorial email dated 16 November 2026. Original file bytes retained. Operation date, capture date and photographer were not specified.",
+      "alt": {
+        "ar": "الضبع يبتعد في محيطه الطبيعي بعد إطلاقه",
+        "en": "The hyena moving away in its natural surroundings after release",
+        "fr": "La hyène s’éloigne dans son milieu naturel après sa remise en liberté"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "MECSHAP photographs supplied for Sayd republication under the standing permission confirmed by Nayef. Nayef explicitly authorized publication of this rescue report with its original photographs. This is not an open licence.",
+        "evidence_reference": "private:nayef-mecshap-republication-permission-apu-20261116-hyena-originals"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
+        "en": "mseilha-hyena-rescue-release-2026",
+        "fr": "sauvetage-hyene-mseilha-retour-nature-2026"
+      },
+      "published": "2026-11-17",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "wildlife",
+      "archives": [
+        "wildlife"
+      ],
+      "kind": "article",
+      "photos": [
+        "rescue-team",
+        "veterinary-care",
+        "hyena-walking",
+        "hyena-release"
+      ],
+      "photo_placements": [
+        {
+          "photo_id": "veterinary-care",
+          "after_section": 2
+        },
+        {
+          "photo_id": "hyena-walking",
+          "after_section": 4
+        },
+        {
+          "photo_id": "hyena-release",
+          "after_section": 6
+        }
+      ],
+      "translations": {
+        "ar": {
+          "title": "إنقاذ ضبع عالق في فخ للخنازير البرية في المسيلحة وإعادته إلى الطبيعة",
+          "subtitle": "بلاغ من صيادي رأس نحاش يقود إلى عملية إنقاذ بالتنسيق مع وزارة الزراعة ومشاركة طبيب بيطري.",
+          "meta_description": "وحدة مكافحة الصيد الجائر تنقذ ضبعًا عالقًا في فخ للخنازير البرية في المسيلحة، بالتنسيق مع وزارة الزراعة، وتعيده إلى الطبيعة بعد علاجه.",
+          "ticker_title": "المسيلحة: إنقاذ ضبع عالق في فخ للخنازير البرية وإعادته إلى الطبيعة.",
+          "sections": [
+            {
+              "paragraphs": [
+                "أنقذت وحدة مكافحة الصيد الجائر (APU) ضبعًا عالقًا في فخ مخصّص لاصطياد الخنازير البرية في منطقة المسيلحة شمال لبنان، بعدما تلقت اتصالًا من صيادين في منطقة رأس نحاش. وتنتسب الوحدة إلى إدارة العمليات المشتركة اللبنانية–الدولية بين مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر (مكشاب – MECSHAP) ومنظمة كابس (CABS)."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وجرى التنسيق مع دائرتَي التنمية الريفية والثروة الحيوانية في الشمال، التابعتين لوزارة الزراعة. وشارك في الإنقاذ طبيب بيطري من الوزارة، إلى جانب أحد الصيادين المنتسبين إلى الدفاع المدني في منطقة البترون، للمساعدة في تنفيذ العملية وتأمين سلامة الحيوان."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وبعد تقييم الوضع، خُدّر الضبع بحقنة أُعطيت عن بُعد، ما أتاح للفريق الاقتراب منه بأمان وتحريره من الفخ. وأظهر الفحص البيطري أن ساقه لم تتعرّض للكسر، وأن إصابته اقتصرت على جرح جرت معالجته ميدانيًا."
+              ]
+            },
+            {
+              "paragraphs": [
+                "ونُقل الضبع من المنطقة الحرجية الوعرة إلى موقع أكثر ملاءمة لمتابعة حالته، حيث انتظر الفريق زوال مفعول التخدير، وأزال الأشرطة اللاصقة التي استُخدمت لتثبيت فمه وأطرافه خلال الإنقاذ."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وبعد استعادته وعيه والتأكد من استقرار حالته الصحية، أُطلق مجددًا في محيطه الطبيعي. وبقي الفريق في الموقع لمراقبة حركته، إلى أن تأكد من قدرته على السير بصورة طبيعية وابتعاده بمفرده باتجاه منطقة آمنة."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وتأتي العملية في إطار التعاون مع وزارة الزراعة، استنادًا إلى مذكرة التفاهم والتعاون الثلاثية الموقّعة بين الوزارة ومكشاب وجمعية إندي أكت (IndyACT)، والهادفة إلى تعزيز حماية الحياة البرية والبحرية وتفعيل التدخلات الميدانية بالتنسيق مع الجهات المختصة."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وأشاد مكشاب بمبادرة صيادي رأس نحاش الذين سارعوا إلى الإبلاغ عن الحيوان العالق، وبالتعاون والاستجابة الميدانية لوزارة الزراعة، مؤكدًا أهمية دور الصيادين المسؤولين في حماية الحياة البرية والمساهمة في إنقاذ الحيوانات المعرّضة للخطر."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "مصدر الصور: مكشاب – 16 تشرين الثاني 2026."
+        },
+        "en": {
+          "title": "Hyena rescued from a wild-boar trap in Mseilha and returned to the wild",
+          "subtitle": "A report from hunters in Ras Nhach led to a rescue coordinated with the Ministry of Agriculture and involving a veterinarian.",
+          "meta_description": "The Anti-Poaching Unit rescued a hyena caught in a wild-boar trap in Mseilha, in coordination with the Ministry of Agriculture, and released it after treatment.",
+          "ticker_title": "Mseilha: hyena rescued from a wild-boar trap and returned to the wild.",
+          "sections": [
+            {
+              "paragraphs": [
+                "The Anti-Poaching Unit (APU) rescued a hyena caught in a trap intended for wild boar in Mseilha, North Lebanon, after receiving a call from hunters in Ras Nhach. The unit is part of the joint Lebanese–international operations structure of the Middle East Center for Sustainable Harvest and Anti-Poaching (MECSHAP) and CABS."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The operation was coordinated with the Ministry of Agriculture’s Rural Development and Livestock departments in North Lebanon. A ministry veterinarian took part alongside a hunter who is a member of the Civil Defence in the Batroun area, helping the team carry out the rescue and safeguard the animal."
+              ]
+            },
+            {
+              "paragraphs": [
+                "After assessing the situation, the team sedated the hyena with an injection administered from a distance, allowing them to approach safely and free it from the trap. A veterinary examination found that its leg was not broken and that the injury was limited to a wound, which was treated in the field."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The hyena was moved from the rugged wooded area to a more suitable location for monitoring. The team waited for the sedation to wear off and removed the adhesive tape used to secure its mouth and limbs during the rescue."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Once the animal had regained consciousness and its condition was confirmed to be stable, it was released back into its natural surroundings. The team stayed to monitor its movement until they were satisfied that it could walk normally and move off independently towards a safe area."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The operation formed part of cooperation with the Ministry of Agriculture under the tripartite memorandum of understanding and cooperation signed by the ministry, MECSHAP and IndyACT. The agreement aims to strengthen the protection of terrestrial and marine wildlife and support field interventions coordinated with the relevant authorities."
+              ]
+            },
+            {
+              "paragraphs": [
+                "MECSHAP praised the Ras Nhach hunters for promptly reporting the trapped animal, as well as the Ministry of Agriculture’s cooperation and field response. The centre highlighted the role responsible hunters can play in protecting wildlife and helping rescue animals at risk."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo source: MECSHAP – 16 November 2026."
+        },
+        "fr": {
+          "title": "Une hyène sauvée d’un piège à sangliers à Mseilha et remise en liberté",
+          "subtitle": "Un signalement de chasseurs de Ras Nhach a permis une intervention coordonnée avec le ministère de l’Agriculture, avec la participation d’un vétérinaire.",
+          "meta_description": "L’Unité de lutte contre le braconnage a sauvé une hyène prise dans un piège à sangliers à Mseilha, avec le ministère de l’Agriculture, avant de la relâcher après des soins.",
+          "ticker_title": "Mseilha : une hyène sauvée d’un piège à sangliers et remise en liberté.",
+          "sections": [
+            {
+              "paragraphs": [
+                "L’Unité de lutte contre le braconnage (APU) a sauvé une hyène prise dans un piège destiné aux sangliers à Mseilha, au Liban-Nord, après avoir reçu un appel de chasseurs de Ras Nhach. L’unité relève de la structure opérationnelle conjointe libanaise et internationale du Centre du Moyen-Orient pour la chasse durable et la lutte contre le braconnage (MECSHAP) et de CABS."
+              ]
+            },
+            {
+              "paragraphs": [
+                "L’intervention a été coordonnée avec les services du développement rural et des ressources animales du ministère de l’Agriculture au Liban-Nord. Un vétérinaire du ministère y a participé aux côtés d’un chasseur membre de la Défense civile dans la région de Batroun, afin d’aider l’équipe à mener le sauvetage et à assurer la sécurité de l’animal."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Après évaluation de la situation, la hyène a été endormie au moyen d’une injection administrée à distance, permettant à l’équipe de s’approcher en sécurité et de la libérer du piège. L’examen vétérinaire a établi que sa patte n’était pas fracturée et que sa blessure se limitait à une plaie, soignée sur place."
+              ]
+            },
+            {
+              "paragraphs": [
+                "La hyène a été transportée de la zone boisée accidentée vers un endroit plus adapté au suivi de son état. L’équipe a attendu la dissipation des effets du sédatif et retiré les bandes adhésives utilisées pour maintenir sa gueule et ses membres pendant le sauvetage."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Après son réveil et la confirmation de la stabilité de son état de santé, l’animal a été relâché dans son milieu naturel. L’équipe est restée sur place pour observer ses déplacements jusqu’à s’assurer qu’il pouvait marcher normalement et s’éloigner seul vers une zone sûre."
+              ]
+            },
+            {
+              "paragraphs": [
+                "L’opération s’inscrit dans la coopération avec le ministère de l’Agriculture, fondée sur le protocole d’accord et de coopération tripartite signé entre le ministère, MECSHAP et IndyACT. Cet accord vise à renforcer la protection de la faune terrestre et marine et à soutenir les interventions de terrain coordonnées avec les autorités compétentes."
+              ]
+            },
+            {
+              "paragraphs": [
+                "MECSHAP a salué l’initiative des chasseurs de Ras Nhach, qui ont rapidement signalé l’animal piégé, ainsi que la coopération et la réponse sur le terrain du ministère de l’Agriculture. Le centre a souligné le rôle des chasseurs responsables dans la protection de la faune sauvage et le sauvetage des animaux en danger."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Source des photos : MECSHAP – 16 novembre 2026."
+        }
+      },
+      "distribution": {
+        "placement": "side",
+        "ticker": true
+      }
+    }
+  ]
+}
