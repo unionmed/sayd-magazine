@@ -1,0 +1,260 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "hbaline-jbeil-nets-20261117",
+  "expected_base": "b81accae398ba30e8a364884cc3c51b6036a90d6",
+  "approval_reference": "private:nayef-jbeil-publication-original-photos-under-lead-and-ticker-20261117",
+  "bank_search_reference": "User-directed original event photo selection: five Hbaline net-removal photographs in the 16 November 2026 APU editorial email; visually separated from the four Mseilha hyena-rescue photographs in that same message.",
+  "photos": [
+    {
+      "id": "field-team",
+      "path": "docs/media/publications/hbaline-jbeil-nets-20261117/1002708285.jpg",
+      "sha256": "860b5b023936cbe86a0ba8adb01e9bc05cd6263bacc0f37bd9eb1723a627e718",
+      "source_sha256": "860b5b023936cbe86a0ba8adb01e9bc05cd6263bacc0f37bd9eb1723a627e718",
+      "source_reference": "Original MECSHAP event photograph 1002708285.jpg, supplied by Editor-in-Chief Adonis El Khatib in the APU editorial email dated 16 November 2026. Original file bytes retained. Event date, capture date and photographer were not specified.",
+      "alt": {
+        "ar": "فريق مكافحة الصيد الجائر وعناصر قوى الأمن الداخلي خلال مهمة إزالة الشباك في حبالين – جبيل",
+        "en": "Anti-poaching team and Internal Security Forces personnel during the net-removal operation in Hbaline, Jbeil",
+        "fr": "Équipe de lutte contre le braconnage et agents des Forces de sécurité intérieure lors de l’opération de retrait des filets à Hbaline, Jbeil"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "MECSHAP photographs supplied for Sayd republication under the standing permission confirmed by Nayef; this publication and the original attached photographs were explicitly requested. No open licence or general third-party reuse is claimed.",
+        "evidence_reference": "private:nayef-mecshap-republication-permission-and-apu-20261116-originals"
+      }
+    },
+    {
+      "id": "hillside-nets",
+      "path": "docs/media/publications/hbaline-jbeil-nets-20261117/1002708259.jpg",
+      "sha256": "7e4c47ba8cd5ec0820654f7bed1c36424e959d562a5a3d72d79cd3428e3caa04",
+      "source_sha256": "7e4c47ba8cd5ec0820654f7bed1c36424e959d562a5a3d72d79cd3428e3caa04",
+      "source_reference": "Original MECSHAP event photograph 1002708259.jpg, supplied by Editor-in-Chief Adonis El Khatib in the APU editorial email dated 16 November 2026. Original file bytes retained. Event date, capture date and photographer were not specified.",
+      "alt": {
+        "ar": "شباك صيد منصوبة بين الأشجار على التلة في حبالين",
+        "en": "Hunting nets strung between trees on the hillside in Hbaline",
+        "fr": "Filets de chasse tendus entre les arbres sur la colline à Hbaline"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "MECSHAP photographs supplied for Sayd republication under the standing permission confirmed by Nayef; this publication and the original attached photographs were explicitly requested. No open licence or general third-party reuse is claimed.",
+        "evidence_reference": "private:nayef-mecshap-republication-permission-and-apu-20261116-originals"
+      }
+    },
+    {
+      "id": "fieldwork",
+      "path": "docs/media/publications/hbaline-jbeil-nets-20261117/1002708264.jpg",
+      "sha256": "e5e516408bb4f186d20293ecd22994440e603ffed82278a45accc5a1fae572ec",
+      "source_sha256": "e5e516408bb4f186d20293ecd22994440e603ffed82278a45accc5a1fae572ec",
+      "source_reference": "Original MECSHAP event photograph 1002708264.jpg, supplied by Editor-in-Chief Adonis El Khatib in the APU editorial email dated 16 November 2026. Original file bytes retained. Event date, capture date and photographer were not specified.",
+      "alt": {
+        "ar": "الفريق الميداني قرب شباك الصيد المنصوبة في حبالين",
+        "en": "Field team beside hunting nets in Hbaline",
+        "fr": "Équipe de terrain près des filets de chasse à Hbaline"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "MECSHAP photographs supplied for Sayd republication under the standing permission confirmed by Nayef; this publication and the original attached photographs were explicitly requested. No open licence or general third-party reuse is claimed.",
+        "evidence_reference": "private:nayef-mecshap-republication-permission-and-apu-20261116-originals"
+      }
+    },
+    {
+      "id": "removed-nets",
+      "path": "docs/media/publications/hbaline-jbeil-nets-20261117/1002708292.jpg",
+      "sha256": "db705d301de2f87a73545deddd62cd7bc2f61dd53acf7aea62c1c45815732405",
+      "source_sha256": "db705d301de2f87a73545deddd62cd7bc2f61dd53acf7aea62c1c45815732405",
+      "source_reference": "Original MECSHAP event photograph 1002708292.jpg, supplied by Editor-in-Chief Adonis El Khatib in the APU editorial email dated 16 November 2026. Original file bytes retained. Event date, capture date and photographer were not specified.",
+      "alt": {
+        "ar": "أحد عناصر قوى الأمن الداخلي يحمل حزمة من شباك الصيد بعد إزالتها",
+        "en": "An Internal Security Forces officer carrying a bundle of removed hunting nets",
+        "fr": "Un agent des Forces de sécurité intérieure porte un paquet de filets de chasse retirés"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "MECSHAP photographs supplied for Sayd republication under the standing permission confirmed by Nayef; this publication and the original attached photographs were explicitly requested. No open licence or general third-party reuse is claimed.",
+        "evidence_reference": "private:nayef-mecshap-republication-permission-and-apu-20261116-originals"
+      }
+    },
+    {
+      "id": "collected-nets",
+      "path": "docs/media/publications/hbaline-jbeil-nets-20261117/1002708312.jpg",
+      "sha256": "8c236f3ab626c9fd3a6fad167aa792bdd6648c89664aeda7ab5244fa47e186e5",
+      "source_sha256": "8c236f3ab626c9fd3a6fad167aa792bdd6648c89664aeda7ab5244fa47e186e5",
+      "source_reference": "Original MECSHAP event photograph 1002708312.jpg, supplied by Editor-in-Chief Adonis El Khatib in the APU editorial email dated 16 November 2026. Original file bytes retained. Event date, capture date and photographer were not specified.",
+      "alt": {
+        "ar": "شباك الصيد المجموعة ومعدات موضوعة على مركبة بعد المهمة في حبالين",
+        "en": "Collected hunting nets and equipment on a vehicle after the Hbaline operation",
+        "fr": "Filets de chasse rassemblés et matériel sur un véhicule après l’opération à Hbaline"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "rights": {
+        "status": "permission",
+        "statement": "MECSHAP photographs supplied for Sayd republication under the standing permission confirmed by Nayef; this publication and the original attached photographs were explicitly requested. No open licence or general third-party reuse is claimed.",
+        "evidence_reference": "private:nayef-mecshap-republication-permission-and-apu-20261116-originals"
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
+        "en": "hbaline-jbeil-350-square-metres-illegal-hunting-nets-2026",
+        "fr": "hbaline-jbeil-retrait-350-metres-carres-filets-chasse-2026"
+      },
+      "published": "2026-11-17",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd",
+        "fr": "Sayd"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "field-team",
+        "hillside-nets",
+        "fieldwork",
+        "removed-nets",
+        "collected-nets"
+      ],
+      "photo_placements": [
+        {
+          "photo_id": "hillside-nets",
+          "after_section": 0
+        },
+        {
+          "photo_id": "fieldwork",
+          "after_section": 1
+        },
+        {
+          "photo_id": "removed-nets",
+          "after_section": 2
+        },
+        {
+          "photo_id": "collected-nets",
+          "after_section": 3
+        }
+      ],
+      "translations": {
+        "ar": {
+          "title": "إزالة 350 مترًا مربعًا من شباك الصيد غير القانونية في حبالين – جبيل",
+          "subtitle": "تحرّك ميداني إثر بلاغ من صيادين مستدامين، بالتعاون مع فصيلة جبيل في قوى الأمن الداخلي.",
+          "meta_description": "إزالة 350 مترًا مربعًا من شباك الصيد غير القانونية في حبالين بقضاء جبيل، في مهمة لوحدة مكافحة الصيد الجائر بالتنسيق مع قوى الأمن الداخلي.",
+          "ticker_title": "جبيل: إزالة 350 مترًا مربعًا من شباك الصيد غير القانونية في حبالين.",
+          "sections": [
+            {
+              "paragraphs": [
+                "أزالت وحدة مكافحة الصيد الجائر (APU) 350 مترًا مربعًا من شباك الصيد غير القانونية، نُصبت على تلة مشرفة على أحد الأودية في منطقة حبالين بقضاء جبيل، في مهمة نُفذت بالتعاون والتنسيق مع فصيلة جبيل في قوى الأمن الداخلي."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وجاء التحرك بناءً على بلاغ من صيادين مستدامين في منطقة جبيل، بحسب مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر (مكشاب – MECSHAP). ونفّذت المهمة إدارة العمليات المشتركة اللبنانية–الدولية بين مكشاب ومنظمة كابس (CABS)، عبر وحدتها الميدانية لمكافحة الصيد الجائر."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وأوضح المركز أن الشباك تُستخدم في الصيد العشوائي غير الانتقائي، وتشكّل تهديدًا للطيور والحياة البرية، إذ تصطاد أنواعًا مختلفة من الطيور دون تمييز، بما فيها الأنواع المحمية."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وأفاد بأن فصيلة جبيل في قوى الأمن الداخلي تواصل تحرياتها لتحديد هوية المسؤول عن نصب الشباك، تمهيدًا لاتخاذ الإجراءات القانونية اللازمة بحقه."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "مصدر الصور: مكشاب – 16 تشرين الثاني 2026."
+        },
+        "en": {
+          "title": "350 square metres of illegal hunting nets removed in Hbaline, Jbeil",
+          "subtitle": "A field operation following a report by sustainable hunters, in cooperation with the Internal Security Forces’ Jbeil Police Station.",
+          "meta_description": "The Anti-Poaching Unit removed 350 square metres of illegal hunting nets in Hbaline, Jbeil, in coordination with Lebanon’s Internal Security Forces.",
+          "ticker_title": "Jbeil: 350 square metres of illegal hunting nets removed in Hbaline.",
+          "sections": [
+            {
+              "paragraphs": [
+                "The Anti-Poaching Unit (APU) removed 350 square metres of illegal hunting nets set on a hill overlooking a valley in Hbaline, in the Jbeil district. The operation was conducted in cooperation and coordination with the Internal Security Forces’ Jbeil Police Station."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The team acted on a report from sustainable hunters in the Jbeil area, according to the Middle East Center for Sustainable Harvest and Anti-Poaching (MECSHAP). The joint Lebanese–international operations structure of MECSHAP and CABS carried out the mission through its field Anti-Poaching Unit."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The centre said the nets are used for indiscriminate, non-selective hunting and threaten birds and wildlife by trapping different bird species without distinction, including protected species."
+              ]
+            },
+            {
+              "paragraphs": [
+                "It added that Jbeil Police Station is continuing its investigation to identify the person responsible for installing the nets, with a view to taking the necessary legal action."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo source: MECSHAP – 16 November 2026."
+        },
+        "fr": {
+          "title": "Retrait de 350 mètres carrés de filets de chasse illégaux à Hbaline, Jbeil",
+          "subtitle": "Une intervention menée après un signalement de chasseurs durables, en coopération avec le poste de Jbeil des Forces de sécurité intérieure.",
+          "meta_description": "L’Unité de lutte contre le braconnage a retiré 350 mètres carrés de filets de chasse illégaux à Hbaline, Jbeil, en coordination avec les Forces de sécurité intérieure.",
+          "ticker_title": "Jbeil : retrait de 350 mètres carrés de filets de chasse illégaux à Hbaline.",
+          "sections": [
+            {
+              "paragraphs": [
+                "L’Unité de lutte contre le braconnage (APU) a retiré 350 mètres carrés de filets de chasse illégaux installés sur une colline surplombant une vallée à Hbaline, dans le district de Jbeil. L’intervention a été menée en coopération et en coordination avec le poste de Jbeil des Forces de sécurité intérieure."
+              ]
+            },
+            {
+              "paragraphs": [
+                "L’équipe est intervenue à la suite d’un signalement de chasseurs durables de la région de Jbeil, selon le Centre du Moyen-Orient pour la chasse durable et la lutte contre le braconnage (MECSHAP). La structure opérationnelle conjointe libanaise et internationale de MECSHAP et de CABS a réalisé cette mission par l’intermédiaire de son unité de terrain de lutte contre le braconnage."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Le centre précise que ces filets servent à une chasse indiscriminée et non sélective. Ils menacent les oiseaux et la faune sauvage en capturant sans distinction différentes espèces d’oiseaux, y compris des espèces protégées."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Il indique que le poste de Jbeil poursuit ses investigations afin d’identifier la personne responsable de l’installation des filets et de prendre les mesures légales nécessaires à son encontre."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Source des photos : MECSHAP – 16 novembre 2026."
+        }
+      },
+      "distribution": {
+        "placement": "side",
+        "ticker": true
+      }
+    }
+  ]
+}
