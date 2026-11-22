@@ -480,7 +480,9 @@
     "الغاق-السقطري",
     "بحيرة-المندفن-الصيد-الجزيرة-العربية-الخضراء",
     "الغطاس-أحمر-الرقبة",
-    "الغطاس-المقرن"
+    "الغطاس-المقرن",
+    "السلوقي-العربي-في-محاكاة-الصيد-2026",
+    "الصقارة-والسلوقي-جناح-نادي-صقاري-الإمارات-2026"
   ],
   "omit_from_ticker_and_latest": [
     "البجع-الأبيض-الكبير-great-white-pelican-بعدسة-نايف-ك",
@@ -650,7 +652,11 @@
     "hooded-crows-khirbet-selm-qallawiyeh-nayef-krayem",
     "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي",
     "naameh-night-hunting-operation-in-photos",
-    "operation-nocturne-naameh-en-images"
+    "operation-nocturne-naameh-en-images",
+    "السلوقي-العربي-في-محاكاة-الصيد-2026",
+    "arabian-saluki-hunting-simulation-2026",
+    "الصقارة-والسلوقي-جناح-نادي-صقاري-الإمارات-2026",
+    "emirates-falconers-sheikh-zayed-festival-2026"
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
@@ -740,10 +746,10 @@
     {
       "door": "photos",
       "slugs": [
+        "الصقارة-والسلوقي-جناح-نادي-صقاري-الإمارات-2026",
+        "السلوقي-العربي-في-محاكاة-الصيد-2026",
         "بالصور-عملية-الناعمة-لمكافحة-الصيد-الليلي",
-        "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم",
-        "السلوقي-العربي-في-التدريب-سرعة-وقفز-وسباحة",
-        "طيور-خربة-سلم-بعدسة-جمانة-ماجد"
+        "الغراب-المقنع-خربة-سلم-قلويه-نايف-كريم"
       ]
     }
   ],
@@ -1036,7 +1042,9 @@
     "الغطاس-أحمر-الرقبة": "birds",
     "الغطاس-المقرن": "birds",
     "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026": "hunting",
-    "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026": "wildlife"
+    "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026": "wildlife",
+    "السلوقي-العربي-في-محاكاة-الصيد-2026": "photos",
+    "الصقارة-والسلوقي-جناح-نادي-صقاري-الإمارات-2026": "photos"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -3192,6 +3200,24 @@
         "ar": "فريق وحدة مكافحة الصيد الجائر وطبيب بيطري خلال عملية إنقاذ الضبع ليلًا في المسيلحة",
         "en": "Anti-Poaching Unit team and a veterinarian during the night-time hyena rescue in Mseilha",
         "fr": "Équipe de lutte contre le braconnage et vétérinaire pendant le sauvetage nocturne de la hyène à Mseilha"
+      }
+    },
+    "السلوقي-العربي-في-محاكاة-الصيد-2026": {
+      "image": "media/publications/efc-photo-cards-20261122/saluki-hunting-simulation-01.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "سلوقي عربي في منافسات محاكاة الصيد",
+        "en": "Arabian Saluki in a hunting simulation competition",
+        "fr": "Saluki arabe lors d’une épreuve de simulation de chasse"
+      }
+    },
+    "الصقارة-والسلوقي-جناح-نادي-صقاري-الإمارات-2026": {
+      "image": "media/publications/efc-photo-cards-20261122/emirates-falconers-pavilion-01.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "زوار جناح نادي صقّاري الإمارات مع الصقور والسلوقي العربي",
+        "en": "Visitors with falcons and Arabian Salukis at the Emirates Falconers’ Club pavilion",
+        "fr": "Visiteurs avec des faucons et des salukis arabes au pavillon du Club des fauconniers des Émirats"
       }
     }
   },
