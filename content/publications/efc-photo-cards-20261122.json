@@ -1,0 +1,492 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "efc-photo-cards-20261122",
+  "expected_base": "e612e813ff5b4b705925a0301c31cf000fe96016",
+  "approval_reference": "private:nayef-efc-photo-cards-publication-20261122",
+  "bank_search_reference": "Exact two reviewed photo selections already archived in /Sayd picture for use/03_Hunting/UAE/Abu-Dhabi. All 18 originals and both press documents retained. Use the reviewed 7 Saluki and 8 pavilion display copies; no new image search.",
+  "photos": [
+    {
+      "id": "saluki-01",
+      "path": "docs/media/publications/efc-photo-cards-20261122/saluki-hunting-simulation-01.jpg",
+      "sha256": "24b4d28dd77bcbc1e317113524f024b72c782243d574cf08bf3800c558c2b8b9",
+      "source_sha256": "ab5b5d13b7805e0fc819857c1b7a77cdca6299b5cc27b9a50c7c8a12b06d9adf",
+      "source_reference": "Original asd15.jpg; libfile_6ba5578636b481919432a479e5b61cd3. Emirates Falconers' Club press attachment received 2026-11-14. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-14"
+      },
+      "alt": {
+        "ar": "سلوقي عربي في منافسات محاكاة الصيد",
+        "en": "Arabian Saluki in a hunting simulation competition",
+        "fr": "Saluki arabe lors d’une épreuve de simulation de chasse"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "saluki-02",
+      "path": "docs/media/publications/efc-photo-cards-20261122/saluki-hunting-simulation-02.jpg",
+      "sha256": "c53ebcdfb13741ecdf9f488c9856376e80665b695b7d605b244eac4aa8d83145",
+      "source_sha256": "4d7be138ce80c5cbafc4c8136ea30cacdf5e597bd16c983e7fa3cc6c25ebaedd",
+      "source_reference": "Original asd19.jpg; libfile_f8f9f92c4cf48191a99590f469f8d760. Emirates Falconers' Club press attachment received 2026-11-14. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-14"
+      },
+      "alt": {
+        "ar": "سلوقي عربي في منافسات محاكاة الصيد",
+        "en": "Arabian Saluki in a hunting simulation competition",
+        "fr": "Saluki arabe lors d’une épreuve de simulation de chasse"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "saluki-03",
+      "path": "docs/media/publications/efc-photo-cards-20261122/saluki-hunting-simulation-03.jpg",
+      "sha256": "0df7c5c0698cc8c7540b0bacae3639ec5420a8af4bf3bfbb395a25c2783caf6f",
+      "source_sha256": "ad59b2c7504ae80e3c21680acfa8b422881aee065ff55edf3219982194e603a1",
+      "source_reference": "Original asd12.jpg; libfile_8e9fe4ef42808191a6f1294b98c43c4b. Emirates Falconers' Club press attachment received 2026-11-14. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-14"
+      },
+      "alt": {
+        "ar": "سلوقي عربي في منافسات محاكاة الصيد",
+        "en": "Arabian Saluki in a hunting simulation competition",
+        "fr": "Saluki arabe lors d’une épreuve de simulation de chasse"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "saluki-04",
+      "path": "docs/media/publications/efc-photo-cards-20261122/saluki-hunting-simulation-04.jpg",
+      "sha256": "b6e0da870eee2033e5f815f80b4558acce0cf3ad5a8a31be9d9cc6b1f762a498",
+      "source_sha256": "110ab12bd9cccc0eb51e6f5972276c1bbaa3e1bd63a06dfa2f5e35b9df41d7e1",
+      "source_reference": "Original asd16.jpg; libfile_4fa57685670081918532855688c73edd. Emirates Falconers' Club press attachment received 2026-11-14. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-14"
+      },
+      "alt": {
+        "ar": "سلوقي عربي في منافسات محاكاة الصيد",
+        "en": "Arabian Saluki in a hunting simulation competition",
+        "fr": "Saluki arabe lors d’une épreuve de simulation de chasse"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "saluki-05",
+      "path": "docs/media/publications/efc-photo-cards-20261122/saluki-hunting-simulation-05.jpg",
+      "sha256": "b69d39e4b9c14e5bab606f0b104af8964ffc56a3bab3e5f77d7ad13cd6ae7ed4",
+      "source_sha256": "08520106370e6bc601306f0c4d31727f84f867beb60e06510a6ae1e751632739",
+      "source_reference": "Original asd13.jpg; libfile_c20af401822481918457c51ce55f5bef. Emirates Falconers' Club press attachment received 2026-11-14. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-14"
+      },
+      "alt": {
+        "ar": "سلوقي عربي في منافسات محاكاة الصيد",
+        "en": "Arabian Saluki in a hunting simulation competition",
+        "fr": "Saluki arabe lors d’une épreuve de simulation de chasse"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "saluki-06",
+      "path": "docs/media/publications/efc-photo-cards-20261122/saluki-hunting-simulation-06.jpg",
+      "sha256": "d84beeaab696ac92b37e173f33b49f2467f7f1e06d35f07af5c3928a585a2214",
+      "source_sha256": "b06d33a6b4269681954fb654aaedcb4125f25cf398bfd3fed87a9367d34c6739",
+      "source_reference": "Original asd17.jpg; libfile_c0980850094c81918da3f48420bac054. Emirates Falconers' Club press attachment received 2026-11-14. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-14"
+      },
+      "alt": {
+        "ar": "سلوقي عربي في منافسات محاكاة الصيد",
+        "en": "Arabian Saluki in a hunting simulation competition",
+        "fr": "Saluki arabe lors d’une épreuve de simulation de chasse"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "saluki-07",
+      "path": "docs/media/publications/efc-photo-cards-20261122/saluki-hunting-simulation-07.jpg",
+      "sha256": "bb421d122858516cd114b5688c5df6ed688eb0a975adafd812d20ebf4bda9e63",
+      "source_sha256": "b603630227fc38a04e9338ee10cc179372e5daf9f458aa324d782eb3aef2b4f2",
+      "source_reference": "Original asd18.jpg; libfile_6ed3f798459081919f4bfec3b435f1ba. Emirates Falconers' Club press attachment received 2026-11-14. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-14"
+      },
+      "alt": {
+        "ar": "سلوقي عربي في منافسات محاكاة الصيد",
+        "en": "Arabian Saluki in a hunting simulation competition",
+        "fr": "Saluki arabe lors d’une épreuve de simulation de chasse"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "pavilion-01",
+      "path": "docs/media/publications/efc-photo-cards-20261122/emirates-falconers-pavilion-01.jpg",
+      "sha256": "672cab6688040b8060543d615aa8debdf79bff0d8ce5c0c487aa1ee207c23660",
+      "source_sha256": "efd9db409f4c77c2943557297e856a3618097c5dc8065bb79238fbefcc6b169f",
+      "source_reference": "Original ZFEFC1.JPG; libfile_8fe3051395b881918fc3a7c8b2ab7629. Emirates Falconers' Club press attachment received 2026-11-17. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-17"
+      },
+      "alt": {
+        "ar": "زوار جناح نادي صقّاري الإمارات مع الصقور والسلوقي العربي",
+        "en": "Visitors with falcons and Arabian Salukis at the Emirates Falconers’ Club pavilion",
+        "fr": "Visiteurs avec des faucons et des salukis arabes au pavillon du Club des fauconniers des Émirats"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "pavilion-02",
+      "path": "docs/media/publications/efc-photo-cards-20261122/emirates-falconers-pavilion-02.jpg",
+      "sha256": "a823fd74553b5db904c1f2e25b01bdacc8c9442dfd70544212781482103d71f3",
+      "source_sha256": "7c1223eb68c0ee1691a02fe271375a6bd66e17383584044e1552667c612ed111",
+      "source_reference": "Original ZFEFC8.jpeg; libfile_0867462cb9408191a1e7ec1afcd2c394. Emirates Falconers' Club press attachment received 2026-11-17. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-17"
+      },
+      "alt": {
+        "ar": "زوار جناح نادي صقّاري الإمارات مع الصقور والسلوقي العربي",
+        "en": "Visitors with falcons and Arabian Salukis at the Emirates Falconers’ Club pavilion",
+        "fr": "Visiteurs avec des faucons et des salukis arabes au pavillon du Club des fauconniers des Émirats"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "pavilion-03",
+      "path": "docs/media/publications/efc-photo-cards-20261122/emirates-falconers-pavilion-03.jpg",
+      "sha256": "db59b42b6117b51b4ac5ae4f8d2c8cae23a0e11197bdc061ef6ab3c3f0dff8f8",
+      "source_sha256": "0058bd034527b6b84f50b5cbf5cc4dbbf868ff8455fcb1db9833784a0cd06cbf",
+      "source_reference": "Original ZFEFC5.jpeg; libfile_9ac25571184481918123fe20601fbf81. Emirates Falconers' Club press attachment received 2026-11-17. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-17"
+      },
+      "alt": {
+        "ar": "زوار جناح نادي صقّاري الإمارات مع الصقور والسلوقي العربي",
+        "en": "Visitors with falcons and Arabian Salukis at the Emirates Falconers’ Club pavilion",
+        "fr": "Visiteurs avec des faucons et des salukis arabes au pavillon du Club des fauconniers des Émirats"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "pavilion-04",
+      "path": "docs/media/publications/efc-photo-cards-20261122/emirates-falconers-pavilion-04.jpg",
+      "sha256": "d9809192338ad11dbc251c259c9108567b317d84ec8b2b2d9aa36e92fe7bc185",
+      "source_sha256": "a14e6efd382e756fb1c7a5270af9b04f591e8944ccd3e71d46ccb2f26662eefc",
+      "source_reference": "Original ZFEFC10.jpeg; libfile_52130160dd488191ad75efb3c7836261. Emirates Falconers' Club press attachment received 2026-11-17. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-17"
+      },
+      "alt": {
+        "ar": "زوار جناح نادي صقّاري الإمارات مع الصقور والسلوقي العربي",
+        "en": "Visitors with falcons and Arabian Salukis at the Emirates Falconers’ Club pavilion",
+        "fr": "Visiteurs avec des faucons et des salukis arabes au pavillon du Club des fauconniers des Émirats"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "pavilion-05",
+      "path": "docs/media/publications/efc-photo-cards-20261122/emirates-falconers-pavilion-05.jpg",
+      "sha256": "ab6d8d2755a8c3d1384aca763952c114cf7edcbdc6f8951b7eba793dcec62cf4",
+      "source_sha256": "0a350a9dbff9907353c86f2dd294ed36e8c7da44c2c72d688318d4d215c43406",
+      "source_reference": "Original ZFEFC2.jpeg; libfile_6abc93c4a6708191b87f5012afdedeae. Emirates Falconers' Club press attachment received 2026-11-17. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-17"
+      },
+      "alt": {
+        "ar": "زوار جناح نادي صقّاري الإمارات مع الصقور والسلوقي العربي",
+        "en": "Visitors with falcons and Arabian Salukis at the Emirates Falconers’ Club pavilion",
+        "fr": "Visiteurs avec des faucons et des salukis arabes au pavillon du Club des fauconniers des Émirats"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "pavilion-06",
+      "path": "docs/media/publications/efc-photo-cards-20261122/emirates-falconers-pavilion-06.jpg",
+      "sha256": "41751ee3d5818dad0eba3ce9f93a017e3cb34e30b0fe7b8e4b95de5021db104b",
+      "source_sha256": "d742a6ef056f0e09b7e31225451bd56dd480c33ad3b30f3342a4fd9d9d10b2c1",
+      "source_reference": "Original ZFEFC11.jpeg; libfile_04bc70279c1881918f2434f8439cd88b. Emirates Falconers' Club press attachment received 2026-11-17. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-17"
+      },
+      "alt": {
+        "ar": "زوار جناح نادي صقّاري الإمارات مع الصقور والسلوقي العربي",
+        "en": "Visitors with falcons and Arabian Salukis at the Emirates Falconers’ Club pavilion",
+        "fr": "Visiteurs avec des faucons et des salukis arabes au pavillon du Club des fauconniers des Émirats"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "pavilion-07",
+      "path": "docs/media/publications/efc-photo-cards-20261122/emirates-falconers-pavilion-07.jpg",
+      "sha256": "61aed59bbd7a74bca2a9c163f6c419490c1a96d64a9f926e7c6d634c00491015",
+      "source_sha256": "ac1e976086670d3c3deba3d719549e63c09b1df1f5f42e5502659e010e82e07c",
+      "source_reference": "Original ZFEFC6.jpeg; libfile_f5aa9b6e110481918e959fdaedf429f7. Emirates Falconers' Club press attachment received 2026-11-17. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-17"
+      },
+      "alt": {
+        "ar": "زوار جناح نادي صقّاري الإمارات مع الصقور والسلوقي العربي",
+        "en": "Visitors with falcons and Arabian Salukis at the Emirates Falconers’ Club pavilion",
+        "fr": "Visiteurs avec des faucons et des salukis arabes au pavillon du Club des fauconniers des Émirats"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "pavilion-08",
+      "path": "docs/media/publications/efc-photo-cards-20261122/emirates-falconers-pavilion-08.jpg",
+      "sha256": "460cae899b22e3c4513adb4f8156a4c95bbac5ae8e40795ad5507def01c19eaf",
+      "source_sha256": "30d36c43ad8a5f0f865c010f6684fd9d8ea8479a6d94704503f748ab7fc0431f",
+      "source_reference": "Original ZFEFC3.jpeg; libfile_adaef6936afc81918c0da8cd69252bb6. Emirates Falconers' Club press attachment received 2026-11-17. Capture date and individual photographer unspecified. Display copy preserves full frame.",
+      "rights": {
+        "status": "permission",
+        "statement": "Photographs supplied by Emirates Falconers' Club with its press material to Sayd editorial mailbox for associated editorial coverage; club credited once. Originals retained.",
+        "evidence_reference": "private:efc-press-attachments-2026-11-17"
+      },
+      "alt": {
+        "ar": "زوار جناح نادي صقّاري الإمارات مع الصقور والسلوقي العربي",
+        "en": "Visitors with falcons and Arabian Salukis at the Emirates Falconers’ Club pavilion",
+        "fr": "Visiteurs avec des faucons et des salukis arabes au pavillon du Club des fauconniers des Émirats"
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "السلوقي-العربي-في-محاكاة-الصيد-2026",
+        "en": "arabian-saluki-hunting-simulation-2026",
+        "fr": "arabian-saluki-hunting-simulation-2026"
+      },
+      "published": "2026-11-22",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd Magazine",
+        "fr": "Sayd Magazine"
+      },
+      "primary_door": "photos",
+      "archives": [
+        "photos"
+      ],
+      "kind": "gallery",
+      "photos": [
+        "saluki-01",
+        "saluki-02",
+        "saluki-03",
+        "saluki-04",
+        "saluki-05",
+        "saluki-06",
+        "saluki-07"
+      ],
+      "translations": {
+        "ar": {
+          "title": "السلوقي العربي في محاكاة الصيد",
+          "subtitle": "لقطات من منافسات محاكاة الصيد بالسلوقي العربي، بتنظيم نادي صقّاري الإمارات. يطارد السلوقي طعمًا ميكانيكيًا متحركًا عبر مسار يختبر سرعته وتتبّعه ورشاقته وتحمّله، ويستحضر مهارات الصيد التقليدي.",
+          "meta_description": "لقطات من منافسات محاكاة الصيد بالسلوقي العربي، بتنظيم نادي صقّاري الإمارات. يطارد السلوقي طعمًا ميكانيكيًا متحركًا عبر مسار يختبر سرعته وتتبّعه ورشاقته وتحمّله، ويستحضر مهارات الصيد التقليدي.",
+          "sections": [
+            {
+              "paragraphs": [
+                "لقطات من منافسات محاكاة الصيد بالسلوقي العربي، بتنظيم نادي صقّاري الإمارات. يطارد السلوقي طعمًا ميكانيكيًا متحركًا عبر مسار يختبر سرعته وتتبّعه ورشاقته وتحمّله، ويستحضر مهارات الصيد التقليدي."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصور: نادي صقّاري الإمارات"
+        },
+        "en": {
+          "title": "Arabian Salukis in hunting simulation",
+          "subtitle": "Scenes from Arabian Saluki hunting simulation competitions organised by the Emirates Falconers’ Club. Each Saluki pursues a moving mechanical lure around a course that tests speed, tracking, agility and endurance, drawing on the skills of traditional hunting.",
+          "meta_description": "Scenes from Arabian Saluki hunting simulation competitions organised by the Emirates Falconers’ Club. Each Saluki pursues a moving mechanical lure around a course that tests speed, tracking, agility and endurance, drawing on the skills of traditional hunting.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Scenes from Arabian Saluki hunting simulation competitions organised by the Emirates Falconers’ Club. Each Saluki pursues a moving mechanical lure around a course that tests speed, tracking, agility and endurance, drawing on the skills of traditional hunting."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photos: Emirates Falconers’ Club"
+        },
+        "fr": {
+          "title": "Le saluki arabe en simulation de chasse",
+          "subtitle": "Images des épreuves de simulation de chasse au saluki arabe organisées par le Club des fauconniers des Émirats. Chaque saluki poursuit un leurre mécanique mobile sur un parcours qui met à l’épreuve sa vitesse, son suivi, son agilité et son endurance, rappelant les techniques de chasse traditionnelles.",
+          "meta_description": "Images des épreuves de simulation de chasse au saluki arabe organisées par le Club des fauconniers des Émirats. Chaque saluki poursuit un leurre mécanique mobile sur un parcours qui met à l’épreuve sa vitesse, son suivi, son agilité et son endurance, rappelant les techniques de chasse traditionnelles.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Images des épreuves de simulation de chasse au saluki arabe organisées par le Club des fauconniers des Émirats. Chaque saluki poursuit un leurre mécanique mobile sur un parcours qui met à l’épreuve sa vitesse, son suivi, son agilité et son endurance, rappelant les techniques de chasse traditionnelles."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photos : Club des fauconniers des Émirats"
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      }
+    },
+    {
+      "slugs": {
+        "ar": "الصقارة-والسلوقي-جناح-نادي-صقاري-الإمارات-2026",
+        "en": "emirates-falconers-sheikh-zayed-festival-2026",
+        "fr": "emirates-falconers-sheikh-zayed-festival-2026"
+      },
+      "published": "2026-11-22",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd Magazine",
+        "fr": "Sayd Magazine"
+      },
+      "primary_door": "photos",
+      "archives": [
+        "photos"
+      ],
+      "kind": "gallery",
+      "photos": [
+        "pavilion-01",
+        "pavilion-02",
+        "pavilion-03",
+        "pavilion-04",
+        "pavilion-05",
+        "pavilion-06",
+        "pavilion-07",
+        "pavilion-08"
+      ],
+      "translations": {
+        "ar": {
+          "title": "الصقارة والسلوقي في جناح نادي صقّاري الإمارات",
+          "subtitle": "من جناح نادي صقّاري الإمارات في مهرجان الشيخ زايد بالوثبة، أبوظبي، لقطات لتفاعل العائلات والأطفال والزوار مع الصقور والسلوقي العربي، ضمن تجربة تُعرّف بتراث الصقارة وصلته بالحياة في الصحراء.",
+          "meta_description": "من جناح نادي صقّاري الإمارات في مهرجان الشيخ زايد بالوثبة، أبوظبي، لقطات لتفاعل العائلات والأطفال والزوار مع الصقور والسلوقي العربي، ضمن تجربة تُعرّف بتراث الصقارة وصلته بالحياة في الصحراء.",
+          "sections": [
+            {
+              "paragraphs": [
+                "من جناح نادي صقّاري الإمارات في مهرجان الشيخ زايد بالوثبة، أبوظبي، لقطات لتفاعل العائلات والأطفال والزوار مع الصقور والسلوقي العربي، ضمن تجربة تُعرّف بتراث الصقارة وصلته بالحياة في الصحراء."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصور: نادي صقّاري الإمارات"
+        },
+        "en": {
+          "title": "Falconry and Salukis at the Emirates Falconers’ Club pavilion",
+          "subtitle": "At the Emirates Falconers’ Club pavilion at Sheikh Zayed Festival in Al Wathba, Abu Dhabi, families, children and visitors meet falcons and Arabian Salukis. These scenes offer a glimpse of an experience introducing falconry heritage and its connection with desert life.",
+          "meta_description": "At the Emirates Falconers’ Club pavilion at Sheikh Zayed Festival in Al Wathba, Abu Dhabi, families, children and visitors meet falcons and Arabian Salukis. These scenes offer a glimpse of an experience introducing falconry heritage and its connection with desert life.",
+          "sections": [
+            {
+              "paragraphs": [
+                "At the Emirates Falconers’ Club pavilion at Sheikh Zayed Festival in Al Wathba, Abu Dhabi, families, children and visitors meet falcons and Arabian Salukis. These scenes offer a glimpse of an experience introducing falconry heritage and its connection with desert life."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photos: Emirates Falconers’ Club"
+        },
+        "fr": {
+          "title": "Fauconnerie et salukis au pavillon du Club des fauconniers des Émirats",
+          "subtitle": "Au pavillon du Club des fauconniers des Émirats, au Festival Cheikh Zayed à Al Wathba, Abou Dhabi, familles, enfants et visiteurs découvrent les faucons et les salukis arabes. Ces images évoquent une expérience consacrée au patrimoine de la fauconnerie et à ses liens avec la vie dans le désert.",
+          "meta_description": "Au pavillon du Club des fauconniers des Émirats, au Festival Cheikh Zayed à Al Wathba, Abou Dhabi, familles, enfants et visiteurs découvrent les faucons et les salukis arabes. Ces images évoquent une expérience consacrée au patrimoine de la fauconnerie et à ses liens avec la vie dans le désert.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Au pavillon du Club des fauconniers des Émirats, au Festival Cheikh Zayed à Al Wathba, Abou Dhabi, familles, enfants et visiteurs découvrent les faucons et les salukis arabes. Ces images évoquent une expérience consacrée au patrimoine de la fauconnerie et à ses liens avec la vie dans le désert."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photos : Club des fauconniers des Émirats"
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": false
+      }
+    }
+  ]
+}
