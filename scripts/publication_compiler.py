@@ -259,7 +259,8 @@ def body_html(stage, article, language, photos, pairs, doors, seo):
                 'Photo cards have no individual captions')
         return ('<p class="excerpt">' + html.escape(tr['subtitle']) + '</p>'
                 + '<p class="photo-credit">' + html.escape(tr['photo_credit']) + '</p>'
-                + ''.join(figure(photos[p]) for p in article['photos']))
+                + '<div class="photo-card-gallery">'
+                + ''.join(figure(photos[p]) for p in article['photos']) + '</div>')
     result = figure(photos[article['photos'][0]]) + '<p class="excerpt">' + html.escape(tr['subtitle']) + '</p>'
     placements = article.get('photo_placements')
     for index, section in enumerate(tr['sections']):
@@ -302,21 +303,6 @@ def body_html(stage, article, language, photos, pairs, doors, seo):
             from refresh_related_reading import image_markup
             result += '<a class="reading-card" href="' + href + '">' + image_markup(page, href, title) + '<span>' + html.escape(title) + '</span></a>'
         result += '</div></section>'
-    return result
-
-
-def photo_card_intro_first(markup, article):
-    """Restore only the two approved introductions after SEO normalizes figures."""
-    if article['kind'] != 'gallery' or article['slugs']['en'] not in {
-            'arabian-saluki-hunting-simulation-2026',
-            'emirates-falconers-sheikh-zayed-festival-2026'}:
-        return markup
-    pattern = (r'(<div class="article-content">\s*)'
-               r'(<figure\b[^>]*>.*?</figure>\s*)'
-               r'(<p class="excerpt">.*?</p>\s*<p class="photo-credit">.*?</p>)')
-    result, count = re.subn(pattern, lambda m: m[1] + m[3] + m[2], markup, count=1, flags=re.S)
-    require(count == 1 or re.search(r'<div class="article-content">\s*<p class="excerpt">', markup),
-            'Approved photo-card introduction must precede every figure')
     return result
 
 
@@ -581,7 +567,6 @@ def render(stage, records, allow_distribution):
             path = page_path(stage, article, language)
             normalized = seo.apply_html(path.read_text(), path, stage / 'docs', path.relative_to(stage / 'docs'), twins)
             normalized = modules['rollout_mobile_nav_heritage_20261015'].nav_replace(normalized, path)[0]
-            normalized = photo_card_intro_first(normalized, article)
             save(path, modules['build_site_search'].links(normalized, path))
             shortlink(stage, article, language, links)
             if article['kind'] != 'gallery':

@@ -1240,11 +1240,11 @@ class ApprovedPhotoCardTests(unittest.TestCase):
             for language in schema.LANGS:
                 body = PullquoteTests.render(self, value, language)
                 node = dom.fragment_fromstring(body, create_parent='div')
-                self.assertEqual([e.tag for e in node], ['p', 'p'] + ['figure'] * count)
+                self.assertEqual([e.tag for e in node], ['p', 'p', 'div'])
                 self.assertEqual(node[0].text, value['articles'][0]['translations'][language]['subtitle'])
                 self.assertEqual(len(node.xpath('.//img')), count)
                 self.assertFalse(node.xpath('.//figcaption | .//a'))
-                for figure, photo in zip(node.xpath('./figure'), value['photos']):
+                for figure, photo in zip(node.xpath('./div/figure'), value['photos']):
                     self.assertTrue(figure.xpath('./img/@src')[0].endswith(Path(photo['path']).name))
 
     def test_extra_prose_and_captions_are_rejected(self):
@@ -1263,25 +1263,22 @@ class ApprovedPhotoCardTests(unittest.TestCase):
 
 
 class PhotoCardSeoOrderTests(unittest.TestCase):
-    def test_seo_moved_cover_returns_below_intro_without_other_changes(self):
-        for slug in ('arabian-saluki-hunting-simulation-2026',
-                     'emirates-falconers-sheikh-zayed-festival-2026'):
-            article = {'kind': 'gallery', 'slugs': {'en': slug}}
-            before = '<header>Keep</header><div class="article-content">\n'
-            cover = '<figure><img src="one.jpg"></figure>\n'
-            intro = '<p class="excerpt">Introduction &amp; context</p><p class="photo-credit">Club</p>'
-            rest = '<figure><img src="two.jpg"></figure></div><footer>Keep</footer>'
-            actual = compiler.photo_card_intro_first(before + cover + intro + rest, article)
-            self.assertEqual(actual, before + intro + cover + rest)
-            self.assertEqual(compiler.photo_card_intro_first(actual, article), actual)
+    def test_real_seo_promotion_keeps_introduction_before_grouped_photos(self):
+        import seo_foundation
+        from lxml import html as dom
+        for slug, count in (('arabian-saluki-hunting-simulation-2026', 7),
+                            ('emirates-falconers-sheikh-zayed-festival-2026', 8)):
+            value = ApprovedPhotoCardTests.fixture(self, slug, count)
+            for language in schema.LANGS:
+                body = PullquoteTests.render(self, value, language)
+                markup = '<header>Keep</header><article class="article-content">' + body + '</article><footer>Keep</footer>'
+                normalized = seo_foundation.promote_article_image(markup)
+                self.assertEqual(normalized, markup)
+                node = dom.fromstring(normalized).xpath('//article')[0]
+                self.assertEqual([child.tag for child in node], ['p', 'p', 'div'])
+                self.assertEqual(len(node.xpath('./div/figure/img')), count)
+                self.assertEqual(node[0].text, value['articles'][0]['translations'][language]['subtitle'])
 
-    def test_unrelated_pages_remain_byte_identical_and_missing_intro_fails(self):
-        markup = '<div class="article-content"><figure>Image</figure><p>Text</p></div>'
-        article = {'kind': 'gallery', 'slugs': {'en': 'unrelated'}}
-        self.assertEqual(compiler.photo_card_intro_first(markup, article), markup)
-        article['slugs']['en'] = 'arabian-saluki-hunting-simulation-2026'
-        with self.assertRaises(ValueError):
-            compiler.photo_card_intro_first(markup, article)
 
 
 if __name__ == '__main__':
