@@ -305,6 +305,21 @@ def body_html(stage, article, language, photos, pairs, doors, seo):
     return result
 
 
+def photo_card_intro_first(markup, article):
+    """Restore only the two approved introductions after SEO normalizes figures."""
+    if article['kind'] != 'gallery' or article['slugs']['en'] not in {
+            'arabian-saluki-hunting-simulation-2026',
+            'emirates-falconers-sheikh-zayed-festival-2026'}:
+        return markup
+    pattern = (r'(<div class="article-content">\\s*)'
+               r'(<figure\\b[^>]*>.*?</figure>\\s*)'
+               r'(<p class="excerpt">.*?</p>\\s*<p class="photo-credit">.*?</p>)')
+    result, count = re.subn(pattern, lambda m: m[1] + m[3] + m[2], markup, count=1, flags=re.S)
+    require(count == 1 or re.search(r'<div class="article-content">\\s*<p class="excerpt">', markup),
+            'Approved photo-card introduction must precede every figure')
+    return result
+
+
 def render_article_kicker(header, text):
     """Use the validated per-language series label, never the template's label."""
     from lxml import html as dom
@@ -566,6 +581,7 @@ def render(stage, records, allow_distribution):
             path = page_path(stage, article, language)
             normalized = seo.apply_html(path.read_text(), path, stage / 'docs', path.relative_to(stage / 'docs'), twins)
             normalized = modules['rollout_mobile_nav_heritage_20261015'].nav_replace(normalized, path)[0]
+            normalized = photo_card_intro_first(normalized, article)
             save(path, modules['build_site_search'].links(normalized, path))
             shortlink(stage, article, language, links)
             if article['kind'] != 'gallery':

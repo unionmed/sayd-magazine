@@ -1262,6 +1262,28 @@ class ApprovedPhotoCardTests(unittest.TestCase):
         self.assertTrue(PullquoteTests.render(self, value, 'en').startswith('<figure>'))
 
 
+class PhotoCardSeoOrderTests(unittest.TestCase):
+    def test_seo_moved_cover_returns_below_intro_without_other_changes(self):
+        for slug in ('arabian-saluki-hunting-simulation-2026',
+                     'emirates-falconers-sheikh-zayed-festival-2026'):
+            article = {'kind': 'gallery', 'slugs': {'en': slug}}
+            before = '<header>Keep</header><div class="article-content">\\n'
+            cover = '<figure><img src="one.jpg"></figure>\\n'
+            intro = '<p class="excerpt">Introduction &amp; context</p><p class="photo-credit">Club</p>'
+            rest = '<figure><img src="two.jpg"></figure></div><footer>Keep</footer>'
+            actual = compiler.photo_card_intro_first(before + cover + intro + rest, article)
+            self.assertEqual(actual, before + intro + cover + rest)
+            self.assertEqual(compiler.photo_card_intro_first(actual, article), actual)
+
+    def test_unrelated_pages_remain_byte_identical_and_missing_intro_fails(self):
+        markup = '<div class="article-content"><figure>Image</figure><p>Text</p></div>'
+        article = {'kind': 'gallery', 'slugs': {'en': 'unrelated'}}
+        self.assertEqual(compiler.photo_card_intro_first(markup, article), markup)
+        article['slugs']['en'] = 'arabian-saluki-hunting-simulation-2026'
+        with self.assertRaises(ValueError):
+            compiler.photo_card_intro_first(markup, article)
+
+
 if __name__ == '__main__':
     unittest.main()
 
