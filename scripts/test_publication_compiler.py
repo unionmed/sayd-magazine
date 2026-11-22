@@ -1267,8 +1267,8 @@ class PhotoCardSeoOrderTests(unittest.TestCase):
         for slug in ('arabian-saluki-hunting-simulation-2026',
                      'emirates-falconers-sheikh-zayed-festival-2026'):
             article = {'kind': 'gallery', 'slugs': {'en': slug}}
-            before = '<header>Keep</header><div class="article-content">\\n'
-            cover = '<figure><img src="one.jpg"></figure>\\n'
+            before = '<header>Keep</header><div class="article-content">\n'
+            cover = '<figure><img src="one.jpg"></figure>\n'
             intro = '<p class="excerpt">Introduction &amp; context</p><p class="photo-credit">Club</p>'
             rest = '<figure><img src="two.jpg"></figure></div><footer>Keep</footer>'
             actual = compiler.photo_card_intro_first(before + cover + intro + rest, article)

@@ -311,11 +311,11 @@ def photo_card_intro_first(markup, article):
             'arabian-saluki-hunting-simulation-2026',
             'emirates-falconers-sheikh-zayed-festival-2026'}:
         return markup
-    pattern = (r'(<div class="article-content">\\s*)'
-               r'(<figure\\b[^>]*>.*?</figure>\\s*)'
-               r'(<p class="excerpt">.*?</p>\\s*<p class="photo-credit">.*?</p>)')
+    pattern = (r'(<div class="article-content">\s*)'
+               r'(<figure\b[^>]*>.*?</figure>\s*)'
+               r'(<p class="excerpt">.*?</p>\s*<p class="photo-credit">.*?</p>)')
     result, count = re.subn(pattern, lambda m: m[1] + m[3] + m[2], markup, count=1, flags=re.S)
-    require(count == 1 or re.search(r'<div class="article-content">\\s*<p class="excerpt">', markup),
+    require(count == 1 or re.search(r'<div class="article-content">\s*<p class="excerpt">', markup),
             'Approved photo-card introduction must precede every figure')
     return result
 
