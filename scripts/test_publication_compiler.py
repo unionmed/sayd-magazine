@@ -1211,6 +1211,57 @@ class SalukiSupersessionTests(unittest.TestCase):
         self.assertFalse(any(path.startswith('scripts/') for path in changed))
 
 
+
+class ApprovedPhotoCardTests(unittest.TestCase):
+    def fixture(self, slug, count):
+        value = record(kind='gallery')
+        article = value['articles'][0]
+        article['slugs']['en'] = slug
+        for language in schema.LANGS:
+            tr = article['translations'][language]
+            tr['sections'] = [{'paragraphs': [tr['subtitle']]}]
+            tr['sources'] = []
+        for index in range(1, count):
+            photo = copy.deepcopy(value['photos'][0])
+            photo.update(id='photo-' + str(index),
+                         path=photo['path'].replace('cover.png', 'photo-' + str(index) + '.png'))
+            value['photos'].append(photo)
+            article['photos'].append(photo['id'])
+        for photo in value['photos']:
+            photo['caption'] = {language: '' for language in schema.LANGS}
+        return value
+
+    def test_introduction_then_all_photos_in_each_language(self):
+        from lxml import html as dom
+        for slug, count in (('arabian-saluki-hunting-simulation-2026', 7),
+                            ('emirates-falconers-sheikh-zayed-festival-2026', 8)):
+            value = self.fixture(slug, count)
+            schema.validate(value)
+            for language in schema.LANGS:
+                body = PullquoteTests.render(self, value, language)
+                node = dom.fragment_fromstring(body, create_parent='div')
+                self.assertEqual([e.tag for e in node], ['p', 'p'] + ['figure'] * count)
+                self.assertEqual(node[0].text, value['articles'][0]['translations'][language]['subtitle'])
+                self.assertEqual(len(node.xpath('.//img')), count)
+                self.assertFalse(node.xpath('.//figcaption | .//a'))
+                for figure, photo in zip(node.xpath('./figure'), value['photos']):
+                    self.assertTrue(figure.xpath('./img/@src')[0].endswith(Path(photo['path']).name))
+
+    def test_extra_prose_and_captions_are_rejected(self):
+        value = self.fixture('arabian-saluki-hunting-simulation-2026', 7)
+        value['articles'][0]['translations']['en']['sections'].append({'paragraphs': ['Review note']})
+        with self.assertRaises(ValueError):
+            PullquoteTests.render(self, value, 'en')
+        value = self.fixture('arabian-saluki-hunting-simulation-2026', 7)
+        value['photos'][0]['caption']['en'] = 'Unrequested caption'
+        with self.assertRaises(ValueError):
+            PullquoteTests.render(self, value, 'en')
+
+    def test_other_gallery_keeps_existing_cover_first(self):
+        value = self.fixture('unrelated-gallery', 3)
+        self.assertTrue(PullquoteTests.render(self, value, 'en').startswith('<figure>'))
+
+
 if __name__ == '__main__':
     unittest.main()
 
