@@ -245,6 +245,21 @@ def body_html(stage, article, language, photos, pairs, doors, seo):
         src = os.path.relpath(stage / photo['path'], page.parent)
         caption = '<figcaption>' + html.escape(photo['caption'][language]) + '</figcaption>' if photo['caption'][language] else ''
         return '<figure><img src="' + src + '" width="' + str(width) + '" height="' + str(height) + '" alt="' + html.escape(photo['alt'][language], quote=True) + '" loading="lazy" decoding="async" style="display:block;width:100%;height:auto">' + caption + '</figure>'
+    # Nayef's 22 November approval is limited to these two photo-card galleries.
+    # One introduction precedes every photograph; no review notes or mail links.
+    photo_cards = {'arabian-saluki-hunting-simulation-2026',
+                   'emirates-falconers-sheikh-zayed-festival-2026'}
+    if article['kind'] == 'gallery' and article['slugs']['en'] in photo_cards:
+        require(article['primary_door'] == 'photos' and article['archives'] == ['photos'],
+                'Photo cards remain in Photos only')
+        require(tr['sections'] == [{'paragraphs': [tr['subtitle']]}] and not tr['sources']
+                and not article.get('related') and 'photo_placements' not in article,
+                'Photo cards require exactly one introduction and no additional prose')
+        require(all(not photos[p]['caption'][language] for p in article['photos']),
+                'Photo cards have no individual captions')
+        return ('<p class="excerpt">' + html.escape(tr['subtitle']) + '</p>'
+                + '<p class="photo-credit">' + html.escape(tr['photo_credit']) + '</p>'
+                + ''.join(figure(photos[p]) for p in article['photos']))
     result = figure(photos[article['photos'][0]]) + '<p class="excerpt">' + html.escape(tr['subtitle']) + '</p>'
     placements = article.get('photo_placements')
     for index, section in enumerate(tr['sections']):
