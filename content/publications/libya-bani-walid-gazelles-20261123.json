@@ -1,0 +1,206 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "libya-bani-walid-gazelles-20261123",
+  "expected_base": "b143533901bd0765a12a6fd16051090babeb99c2",
+  "approval_reference": "private:nayef-bani-walid-gazelles-publication-20261123",
+  "bank_search_reference": "Nayef referenced the gazelle-release photograph already collected for Sayd Radar and selected it for this publication. Retrieved existing Library original libfile_b1b1c6a8a6c881919a3fed0a12c3dd8b (LY-BANI-WALID-GAZELLES-20261122.jpg); subject search returned no additional match. Byte-identical to the LANA 370557 article photograph; no duplicate archive item created.",
+  "photos": [
+    {
+      "id": "bani-walid-gazelles",
+      "path": "docs/media/publications/libya-bani-walid-gazelles-20261123/bani-walid-gazelles.jpg",
+      "sha256": "210af39a0b16c2397637017af12fa42c4447f006eac3a62ee590a94af9b24c13",
+      "source_sha256": "210af39a0b16c2397637017af12fa42c4447f006eac3a62ee590a94af9b24c13",
+      "source_url": "https://lana.gov.ly/images/src/370557.jpg",
+      "source_reference": "Existing Library image selected and supplied by reference by Nayef for the gazelle-release story. Matches the photograph on LANA report 370557, published 2026-11-22. Exact capture date, photographer, species and original copyright owner are not independently established. No image alteration.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Nayef supplied the previously collected image by reference to the Radar material and expressly selected its use in this story. This records that bounded editorial selection only; no verified external licence, ownership or authenticity claim.",
+        "evidence_reference": "private:nayef-bani-walid-photo-selection-20261123",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:nayef-bani-walid-photo-selection-20261123"
+      },
+      "alt": {
+        "ar": "غزلان أمام مجموعة من المشاركين في الصورة المنشورة مع خبر إطلاقها ببني وليد.",
+        "en": "Gazelles in front of participants in the photograph accompanying LANA’s Bani Walid release report.",
+        "fr": "Des gazelles devant des participants sur la photographie accompagnant la dépêche de LANA sur le lâcher à Bani Walid."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026",
+        "en": "libya-bani-walid-gazelles-fifth-release-2026",
+        "fr": "libye-bani-walid-gazelles-cinquieme-lacher-2026"
+      },
+      "published": "2026-11-23",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd Magazine",
+        "fr": "Sayd Magazine"
+      },
+      "primary_door": "wildlife",
+      "archives": [
+        "wildlife"
+      ],
+      "kind": "article",
+      "photos": [
+        "bani-walid-gazelles"
+      ],
+      "translations": {
+        "ar": {
+          "title": "ليبيا: 20 غزالًا تعود إلى أودية بني وليد في دفعة خامسة",
+          "subtitle": "مبادرات إعادة الغزلان إلى البرية تجمع العمل الميداني والمشاركة المجتمعية، بعد إطلاقات سابقة شهدتها المدينة في أيار.",
+          "meta_description": "جمعية الحياة لحماية الأحياء البرية تعلن إطلاق دفعة خامسة من 20 غزالًا في أودية بني وليد، وخلفية عن المبادرات السابقة وأهمية الحماية والمتابعة بعد الإطلاق.",
+          "ticker_title": "ليبيا: إطلاق دفعة خامسة تضم 20 غزالًا في أودية بني وليد لدعم عودتها إلى البرية.",
+          "sections": [
+            {
+              "paragraphs": [
+                "أعلنت جمعية الحياة لحماية الأحياء البرية إطلاق دفعة خامسة تضم 20 غزالًا في أودية بمدينة بني وليد، وفق خبر نشرته وكالة الأنباء الليبية «وال» في 22 تشرين الثاني 2026. وتهدف المبادرة إلى دعم عودة الغزلان إلى موائلها الطبيعية.",
+                "ونقلت الوكالة عن الجمعية أن العمل الميداني شمل التنقل في شعاب وأودية وعرة، وأنها تعتزم مواصلة جهود حماية الحياة البرية بمشاركة المتطوعين والداعمين."
+              ]
+            },
+            {
+              "heading": "محطات سابقة في بني وليد",
+              "paragraphs": [
+                "عرفت المدينة مبادرات سابقة؛ ففي 17 أيار 2026، أوردت «وال» إطلاق 28 غزالًا نفّذه فرع الجمعية الليبية لحماية الحياة البرية. وتحدث التقرير عن ميثاق اجتماعي لحماية الغزلان والودان والحبارى من الصيد، وربط المبادرة بمواجهة آثار الصيد الجائر.",
+                "وفي 19 تشرين الثاني، نشرت الوكالة إعلان جمعية الحياة عن فعالية لإطلاق غزلان بمنطقة طريق النهر ـ جابية النباق. ودعت الجمعية الأهالي والصيادين والمهتمين بالطبيعة إلى المشاركة، بما يعزز دور المجتمع المحلي في الحماية."
+              ]
+            },
+            {
+              "heading": "الحماية تستمر بعد الإطلاق",
+              "paragraphs": [
+                "تضع إرشادات الاتحاد الدولي لحفظ الطبيعة لإعادة التوطين اختيار الموائل المناسبة، وتقييم المخاطر، ومشاركة المجتمع، والمتابعة بعد الإطلاق ضمن عناصر التخطيط الأساسية. ويساعد رصد بقاء الحيوانات وتكاثرها على تقييم النتائج وتكييف إجراءات الحماية.",
+                "وبهذا المعنى، ترتبط عودة الغزلان إلى البرية باستمرار حماية مواقعها ومتابعة استقرارها، إلى جانب الجهد المبذول في إطلاقها."
+              ]
+            }
+          ],
+          "photo_credit": "الصورة المنشورة مع الخبر: وكالة الأنباء الليبية «وال».",
+          "sources": [
+            {
+              "label": "وكالة الأنباء الليبية: الدفعة الخامسة — 22 تشرين الثاني 2026",
+              "url": "https://lana.gov.ly/post.php?id=370557&lang=ar"
+            },
+            {
+              "label": "وكالة الأنباء الليبية: إطلاق 28 غزالًا — 17 أيار 2026",
+              "url": "https://lana.gov.ly/post.php?id=357625&lang=ar"
+            },
+            {
+              "label": "وكالة الأنباء الليبية: إعلان فعالية الإطلاق — 19 تشرين الثاني 2026",
+              "url": "https://lana.gov.ly/post.php?id=370395&lang=ar"
+            },
+            {
+              "label": "الاتحاد الدولي لحفظ الطبيعة: إرشادات إعادة التوطين ونقل الأنواع لأغراض الحفظ، 2013",
+              "url": "https://iucn.org/resources/publication/guidelines-reintroductions-and-other-conservation-translocations"
+            }
+          ]
+        },
+        "en": {
+          "title": "Libya: 20 gazelles released in Bani Walid’s valleys in fifth batch",
+          "subtitle": "Fieldwork and community participation support gazelles’ return to the wild, following earlier releases in the city in May.",
+          "meta_description": "Al-Hayat wildlife protection association announces a fifth batch of 20 gazelles released in Bani Walid’s valleys, with background on earlier initiatives and post-release protection.",
+          "ticker_title": "Libya: a fifth batch of 20 gazelles is released in Bani Walid’s valleys to support their return to the wild.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Al-Hayat wildlife protection association announced the release of a fifth batch of 20 gazelles in valleys around Bani Walid, according to a Libyan News Agency (LANA) report published on 22 November 2026. The initiative aims to support their return to natural habitats.",
+                "LANA said fieldwork involved travelling through rugged gullies and valleys. The association intends to continue its wildlife protection efforts with volunteers and supporters."
+              ]
+            },
+            {
+              "heading": "Earlier initiatives in Bani Walid",
+              "paragraphs": [
+                "The city has seen earlier initiatives. On 17 May 2026, LANA reported that the local branch of the Libyan wildlife protection association released 28 gazelles. Its report described a community pact to protect gazelles, Barbary sheep and houbara bustards from hunting, linking the initiative to tackling the effects of poaching.",
+                "On 19 November, LANA published Al-Hayat’s announcement of a gazelle release event in the Tareeq al-Nahr–Jabiyat al-Nabaq area. Residents, hunters and nature enthusiasts were invited, highlighting the community’s role in protection."
+              ]
+            },
+            {
+              "heading": "Protection continues after release",
+              "paragraphs": [
+                "IUCN guidelines on conservation translocations identify suitable habitat, risk assessment, community involvement and post-release monitoring as essential planning elements. Tracking survival and reproduction helps assess results and adapt protection measures.",
+                "Gazelles’ return to the wild therefore depends on continued habitat protection and monitoring of their establishment, alongside the effort invested in releasing them."
+              ]
+            }
+          ],
+          "photo_credit": "Photograph published with the report: Libyan News Agency (LANA).",
+          "sources": [
+            {
+              "label": "LANA: fifth batch — 22 November 2026",
+              "url": "https://lana.gov.ly/post.php?id=370557&lang=ar"
+            },
+            {
+              "label": "LANA: release of 28 gazelles — 17 May 2026",
+              "url": "https://lana.gov.ly/post.php?id=357625&lang=ar"
+            },
+            {
+              "label": "LANA: release event announcement — 19 November 2026",
+              "url": "https://lana.gov.ly/post.php?id=370395&lang=ar"
+            },
+            {
+              "label": "IUCN/SSC: Guidelines for Reintroductions and Other Conservation Translocations, 2013",
+              "url": "https://iucn.org/resources/publication/guidelines-reintroductions-and-other-conservation-translocations"
+            }
+          ]
+        },
+        "fr": {
+          "title": "Libye : 20 gazelles relâchées dans les vallées de Bani Walid, un cinquième groupe",
+          "subtitle": "Le travail de terrain et la participation locale soutiennent le retour des gazelles dans la nature, après de précédents lâchers en mai.",
+          "meta_description": "L’association Al-Hayat annonce le lâcher d’un cinquième groupe de 20 gazelles dans les vallées de Bani Walid : retour sur les initiatives antérieures et le suivi après lâcher.",
+          "ticker_title": "Libye : un cinquième groupe de 20 gazelles relâché dans les vallées de Bani Walid pour soutenir leur retour dans la nature.",
+          "sections": [
+            {
+              "paragraphs": [
+                "L’association Al-Hayat pour la protection de la faune a annoncé le lâcher d’un cinquième groupe de 20 gazelles dans les vallées de Bani Walid, selon une dépêche de l’Agence de presse libyenne (LANA) publiée le 22 novembre 2026. L’initiative vise à soutenir leur retour dans leurs habitats naturels.",
+                "Selon LANA, les opérations ont nécessité des déplacements dans des ravins et des vallées accidentés. L’association entend poursuivre ses efforts de protection avec des bénévoles et des soutiens locaux."
+              ]
+            },
+            {
+              "heading": "Des initiatives antérieures à Bani Walid",
+              "paragraphs": [
+                "La ville a déjà connu d’autres initiatives. Le 17 mai 2026, LANA rapportait le lâcher de 28 gazelles par la branche locale de l’association libyenne de protection de la faune. La dépêche évoquait un pacte communautaire protégeant gazelles, mouflons à manchettes et outardes houbara contre la chasse, face aux effets du braconnage.",
+                "Le 19 novembre, LANA publiait l’annonce par Al-Hayat d’un lâcher dans le secteur de Tareeq al-Nahr–Jabiyat al-Nabaq. Habitants, chasseurs et amateurs de nature étaient invités à participer, soulignant le rôle de la communauté dans la protection."
+              ]
+            },
+            {
+              "heading": "La protection se poursuit après le lâcher",
+              "paragraphs": [
+                "Les lignes directrices de l’UICN sur les translocations à des fins de conservation placent le choix d’un habitat adapté, l’évaluation des risques, la participation locale et le suivi après lâcher parmi les éléments essentiels de la planification. Le suivi de la survie et de la reproduction permet d’évaluer les résultats et d’adapter la gestion.",
+                "Le retour des gazelles dans la nature repose ainsi sur la protection durable de leurs habitats et le suivi de leur installation, en complément des efforts consacrés au lâcher."
+              ]
+            }
+          ],
+          "photo_credit": "Photographie publiée avec la dépêche : Agence de presse libyenne (LANA).",
+          "sources": [
+            {
+              "label": "LANA : cinquième groupe — 22 novembre 2026",
+              "url": "https://lana.gov.ly/post.php?id=370557&lang=ar"
+            },
+            {
+              "label": "LANA : lâcher de 28 gazelles — 17 mai 2026",
+              "url": "https://lana.gov.ly/post.php?id=357625&lang=ar"
+            },
+            {
+              "label": "LANA : annonce du lâcher — 19 novembre 2026",
+              "url": "https://lana.gov.ly/post.php?id=370395&lang=ar"
+            },
+            {
+              "label": "UICN/SSC : Lignes directrices relatives aux réintroductions et aux autres translocations à des fins de conservation, 2013",
+              "url": "https://iucn.org/resources/publication/guidelines-reintroductions-and-other-conservation-translocations"
+            }
+          ]
+        }
+      },
+      "distribution": {
+        "placement": "door",
+        "ticker": true
+      }
+    }
+  ]
+}
