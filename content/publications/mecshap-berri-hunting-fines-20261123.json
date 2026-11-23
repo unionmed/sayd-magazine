@@ -1,0 +1,154 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "mecshap-berri-hunting-fines-20261123",
+  "expected_base": "0319f32386070747ba9cc8dfec6cff034d8168d0",
+  "approval_reference": "private:nayef-mecshap-berri-publication-20261123",
+  "bank_search_reference": "Internal archive searched for this meeting; Nayef then supplied and selected the exact meeting photograph. Original archived as libfile_f734ca39d2988191b539f1d0534981b1 in /Sayd picture for use/01_Anti-Poaching & Violations/Lebanon/2026-11-23_MECSHAP-Berri-Meeting. This folder date is receipt/publication date, not capture date.",
+  "photos": [
+    {
+      "id": "berri-meeting",
+      "path": "docs/media/publications/mecshap-berri-hunting-fines-20261123/mecshap-berri-meeting.jpg",
+      "sha256": "6b5f933c1949073edf176ca735229e1319614fb36e20542b147ae4fcfff86e8a",
+      "source_sha256": "6b5f933c1949073edf176ca735229e1319614fb36e20542b147ae4fcfff86e8a",
+      "source_reference": "Original user-supplied 1000563484.jpg (libfile_f734ca39d2988191b539f1d0534981b1), supplied as the photograph of the meeting described in the accompanying news text. Original bytes retained. Meeting date, capture date and photographer were not supplied. Source attribution follows the accompanying MECSHAP material; no independent copyright or authenticity verification claimed.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Nayef supplied this exact photograph and explicitly authorized its use with this story. Independent copyright and authenticity evidence were not supplied; this is not a public licence.",
+        "evidence_reference": "private:nayef-mecshap-berri-photo-20261123",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:nayef-mecshap-berri-photo-20261123"
+      },
+      "alt": {
+        "ar": "صورة من لقاء وفد مركز مكشاب مع رئيس مجلس النواب نبيه بري.",
+        "en": "A photograph from the meeting between a MECSHAP delegation and Parliament Speaker Nabih Berri.",
+        "fr": "Photographie de la rencontre entre une délégation de MECSHAP et le président du Parlement, Nabih Berri."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
+        "en": "mecshap-berri-hunting-fines-2026",
+        "fr": "mecshap-berri-amendes-chasse-2026"
+      },
+      "published": "2026-11-23",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd Magazine",
+        "fr": "Sayd Magazine"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "berri-meeting"
+      ],
+      "translations": {
+        "ar": {
+          "title": "وفد من «مكشاب» يبحث مع بري رفع غرامات مخالفات الصيد",
+          "subtitle": "أدونيس الخطيب وشيرين بو رفول يعرضان أنشطة وحدة مكافحة الصيد الجائر والتعاون مع الأجهزة الأمنية والقضائية.",
+          "meta_description": "وفد من مركز مكشاب يزور رئيس مجلس النواب نبيه بري ويبحث معه رفع غرامات مخالفات الصيد لتعزيز مكافحة الصيد الجائر وحماية الحياة البرية في لبنان.",
+          "ticker_title": "وفد «مكشاب» يبحث مع نبيه بري رفع غرامات مخالفات الصيد لتعزيز مكافحة الصيد الجائر.",
+          "sections": [
+            {
+              "paragraphs": [
+                "زار رئيس مركز الشرق الأوسط للصيد المستدام ومكافحة الصيد الجائر (MECSHAP)، ورئيس تحرير مجلة «صيد»، أدونيس الخطيب، رئيس مجلس النواب نبيه بري، برفقة شيرين بو رفول، عضو الهيئة الإدارية في المركز وممثلة منظمة CABS الدولية لمكافحة إبادة الطيور في لبنان."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وأطلع الوفد بري على أبرز الأنشطة والعمليات الميدانية التي تنفذها وحدة مكافحة الصيد الجائر APU التابعة للمركز، بالتعاون مع منظمة CABS وبالتنسيق مع الأجهزة الأمنية والقضائية والجهات الرسمية المختصة."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وتناول اللقاء أهمية تعزيز التشريعات والإجراءات الرادعة، ولا سيما ضرورة رفع قيمة الغرامات المالية المفروضة على مخالفات الصيد، بما يتناسب مع خطورة الانتهاكات المرتكبة بحق الحياة البرية، ويساهم في الحد من هذه الممارسات وحماية الثروة الطبيعية في لبنان."
+              ]
+            },
+            {
+              "paragraphs": [
+                "من جهته، أثنى بري على جهود المركز والمنظمة، معربًا عن تقديره لهذه المبادرات ولروح المسؤولية لدى القائمين عليها، وحرصهم على أداء واجبهم تجاه الطبيعة والمجتمع بالتعاون مع مؤسسات الدولة."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "الصورة: مكشاب."
+        },
+        "en": {
+          "title": "MECSHAP delegation discusses higher hunting fines with Berri",
+          "subtitle": "Adonis El Khatib and Shireen Bou Rafoul present the Anti-Poaching Unit’s activities and its cooperation with security and judicial authorities.",
+          "meta_description": "A MECSHAP delegation meets Lebanese Parliament Speaker Nabih Berri to discuss higher fines for hunting violations and stronger action against poaching.",
+          "ticker_title": "MECSHAP delegation discusses higher hunting fines with Nabih Berri to strengthen action against poaching.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Adonis El Khatib, President of the Middle East Center for Sustainable Harvest and Anti-Poaching (MECSHAP) and Editor-in-Chief of Sayd Magazine, visited Lebanese Parliament Speaker Nabih Berri. He was accompanied by Shireen Bou Rafoul, a member of the centre’s governing board and the representative in Lebanon of the Committee Against Bird Slaughter (CABS)."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The delegation briefed Berri on the main activities and field operations carried out by the centre’s Anti-Poaching Unit (APU), in cooperation with CABS and in coordination with security and judicial authorities and the relevant official bodies."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The meeting addressed the importance of strengthening legislation and deterrent measures, particularly the need to increase fines for hunting violations in proportion to the seriousness of offences against wildlife. The aim is to curb these practices and protect Lebanon’s natural heritage."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Berri praised the efforts of the centre and CABS, expressing appreciation for their initiatives and for the sense of responsibility shown by those involved in serving nature and society in cooperation with state institutions."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo: MECSHAP."
+        },
+        "fr": {
+          "title": "Une délégation de MECSHAP évoque avec Berri le relèvement des amendes pour les infractions de chasse",
+          "subtitle": "Adonis El Khatib et Shireen Bou Rafoul présentent les activités de l’Unité de lutte contre le braconnage et sa coopération avec les autorités sécuritaires et judiciaires.",
+          "meta_description": "Une délégation de MECSHAP rencontre le président du Parlement libanais Nabih Berri pour évoquer le relèvement des amendes liées aux infractions de chasse.",
+          "ticker_title": "Une délégation de MECSHAP évoque avec Nabih Berri le relèvement des amendes pour renforcer la lutte contre le braconnage.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Adonis El Khatib, président du Centre du Moyen-Orient pour la chasse durable et la lutte contre le braconnage (MECSHAP) et rédacteur en chef de Sayd Magazine, a rendu visite au président du Parlement libanais, Nabih Berri. Il était accompagné de Shireen Bou Rafoul, membre du conseil d’administration du centre et représentante au Liban de l’organisation internationale CABS de lutte contre le massacre des oiseaux."
+              ]
+            },
+            {
+              "paragraphs": [
+                "La délégation a présenté à Berri les principales activités et opérations de terrain menées par l’Unité de lutte contre le braconnage (APU) du centre, en coopération avec CABS et en coordination avec les autorités sécuritaires et judiciaires ainsi qu’avec les organismes officiels compétents."
+              ]
+            },
+            {
+              "paragraphs": [
+                "L’entretien a porté sur l’importance de renforcer la législation et les mesures dissuasives, notamment sur la nécessité de relever les amendes sanctionnant les infractions de chasse, proportionnellement à la gravité des atteintes à la faune sauvage. L’objectif est de limiter ces pratiques et de protéger le patrimoine naturel du Liban."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Berri a salué les efforts du centre et de CABS, exprimant son estime pour leurs initiatives et pour le sens des responsabilités de leurs équipes, soucieuses d’agir en faveur de la nature et de la société en coopération avec les institutions de l’État."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Photo : MECSHAP."
+        }
+      },
+      "distribution": {
+        "placement": "latest",
+        "ticker": true
+      }
+    }
+  ]
+}
