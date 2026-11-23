@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026",
+      "titles": {
+        "ar": "أريتي باتسيورا تفوز بالجولة التاسعة لسباقات قرية الإمارات للقدرة في اليونان.",
+        "en": "Areti Patsioura wins the ninth EIEV endurance round in Greece.",
+        "fr": "Areti Patsioura remporte en Grèce la neuvième étape du circuit d’endurance EIEV."
+      },
+      "title": "أريتي باتسيورا تفوز بالجولة التاسعة لسباقات قرية الإمارات للقدرة في اليونان."
+    },
+    {
       "slug": "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026",
       "titles": {
         "ar": "ليبيا: إطلاق دفعة خامسة تضم 20 غزالًا في أودية بني وليد لدعم عودتها إلى البرية.",
@@ -81,15 +90,6 @@
         "fr": "Libye : la chasse aux animaux et oiseaux sauvages interdite à Syrte et dans ses environs pour trois ans"
       },
       "title": "ليبيا: حظر صيد الحيوانات والطيور البرية في سرت ومحيطها لثلاث سنوات"
-    },
-    {
-      "slug": "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
-      "titles": {
-        "ar": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات بين الطيور البرية في دول مجاورة",
-        "en": "France raises bird flu risk after cases increase in wild birds in neighbouring countries",
-        "fr": "La France relève le risque de grippe aviaire après une hausse des cas chez les oiseaux sauvages des pays voisins"
-      },
-      "title": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات بين الطيور البرية في دول مجاورة"
     }
   ]
 }
