@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
+      "titles": {
+        "ar": "وفد «مكشاب» يبحث مع نبيه بري رفع غرامات مخالفات الصيد لتعزيز مكافحة الصيد الجائر.",
+        "en": "MECSHAP delegation discusses higher hunting fines with Nabih Berri to strengthen action against poaching.",
+        "fr": "Une délégation de MECSHAP évoque avec Nabih Berri le relèvement des amendes pour renforcer la lutte contre le braconnage."
+      },
+      "title": "وفد «مكشاب» يبحث مع نبيه بري رفع غرامات مخالفات الصيد لتعزيز مكافحة الصيد الجائر."
+    },
+    {
       "slug": "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
       "titles": {
         "ar": "المسيلحة: إنقاذ ضبع عالق في فخ للخنازير البرية وإعادته إلى الطبيعة.",
@@ -81,15 +90,6 @@
         "fr": "Carnaval de Dubaï : Brotherly Love remporte la coupe d’ouverture et Colour Up renoue avec la victoire à Meydan."
       },
       "title": "كرنفال دبي: براذرلي لاف يفوز بكأس الافتتاح وكولور أب يعود للانتصارات في ميدان."
-    },
-    {
-      "slug": "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
-      "titles": {
-        "ar": "الناعمة: توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد ليلي",
-        "en": "Naameh: arrests, impounded vehicles and seized night-hunting equipment",
-        "fr": "Naameh : interpellations, véhicules mis en fourrière et saisie de matériel de chasse nocturne"
-      },
-      "title": "الناعمة: توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد ليلي"
     }
   ]
 }
