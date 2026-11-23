@@ -8,14 +8,14 @@
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs"
   ],
   "latest": [
+    "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
     "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
     "رادار-صيد-العربي-تشرين-الأول-2026",
     "مونديال-الرماية-قطر-2026",
     "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
     "عندما-تهين-الطريدة-أنت-تهين-نفسك",
     "الصيد-السياحي-في-مصر-والعراق-والأردن",
-    "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
-    "الصيد-السياحي-في-دول-المغرب-العربي"
+    "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -523,7 +523,7 @@
       "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
       "كرنفال-دبي-ميدان-2026-2027",
       "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
-      "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار"
+      "الصيد-السياحي-في-دول-المغرب-العربي"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -553,7 +553,7 @@
       "libya-sirte-three-year-hunting-ban",
       "dubai-racing-carnival-2026-2027",
       "bin-harmash-dark-saffron-breeders-cup-2026",
-      "arabian-saluki-center-25-years"
+      "hunting-tourism-maghreb"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -668,14 +668,14 @@
       "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs"
     ],
     "latest": [
+      "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
       "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
       "رادار-صيد-العربي-تشرين-الأول-2026",
       "مونديال-الرماية-قطر-2026",
       "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
       "عندما-تهين-الطريدة-أنت-تهين-نفسك",
       "الصيد-السياحي-في-مصر-والعراق-والأردن",
-      "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026",
-      "الصيد-السياحي-في-دول-المغرب-العربي"
+      "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026"
     ]
   },
   "ia_door_sections": [
@@ -689,7 +689,7 @@
         "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
         "كرنفال-دبي-ميدان-2026-2027",
         "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
-        "مركز-السلوقي-العربي-ربع-قرن-رفيق-الصقار"
+        "الصيد-السياحي-في-دول-المغرب-العربي"
       ]
     },
     {
@@ -1044,7 +1044,8 @@
     "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026": "hunting",
     "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026": "wildlife",
     "السلوقي-العربي-في-محاكاة-الصيد-2026": "photos",
-    "الصقارة-والسلوقي-جناح-نادي-صقاري-الإمارات-2026": "photos"
+    "الصقارة-والسلوقي-جناح-نادي-صقاري-الإمارات-2026": "photos",
+    "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026": "hunting"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1063,6 +1064,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
     "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
     "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
     "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
@@ -1071,8 +1073,7 @@
     "الرماية-الدولية-عقوبة-راتنر-2026",
     "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
     "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
-    "كرنفال-دبي-ميدان-2026-2027",
-    "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs"
+    "كرنفال-دبي-ميدان-2026-2027"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -3219,11 +3220,28 @@
         "en": "Visitors with falcons and Arabian Salukis at the Emirates Falconers’ Club pavilion",
         "fr": "Visiteurs avec des faucons et des salukis arabes au pavillon du Club des fauconniers des Émirats"
       }
+    },
+    "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026": {
+      "image": "media/publications/mecshap-berri-hunting-fines-20261123/mecshap-berri-meeting.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "صورة من لقاء وفد مركز مكشاب مع رئيس مجلس النواب نبيه بري.",
+        "en": "A photograph from the meeting between a MECSHAP delegation and Parliament Speaker Nabih Berri.",
+        "fr": "Photographie de la rencontre entre une délégation de MECSHAP et le président du Parlement, Nabih Berri."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
+      "titles": {
+        "ar": "وفد «مكشاب» يبحث مع نبيه بري رفع غرامات مخالفات الصيد لتعزيز مكافحة الصيد الجائر.",
+        "en": "MECSHAP delegation discusses higher hunting fines with Nabih Berri to strengthen action against poaching.",
+        "fr": "Une délégation de MECSHAP évoque avec Nabih Berri le relèvement des amendes pour renforcer la lutte contre le braconnage."
+      }
+    },
     {
       "slug": "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
       "titles": {
@@ -3294,14 +3312,6 @@
         "ar": "كرنفال دبي: براذرلي لاف يفوز بكأس الافتتاح وكولور أب يعود للانتصارات في ميدان.",
         "en": "Dubai Racing Carnival: Brotherly Love wins the opening-night cup as Colour Up returns to winning ways at Meydan.",
         "fr": "Carnaval de Dubaï : Brotherly Love remporte la coupe d’ouverture et Colour Up renoue avec la victoire à Meydan."
-      }
-    },
-    {
-      "slug": "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
-      "titles": {
-        "ar": "الناعمة: توقيف مخالفين وحجز سيارات وضبط أسلحة ومعدات صيد ليلي",
-        "en": "Naameh: arrests, impounded vehicles and seized night-hunting equipment",
-        "fr": "Naameh : interpellations, véhicules mis en fourrière et saisie de matériel de chasse nocturne"
       }
     }
   ],
