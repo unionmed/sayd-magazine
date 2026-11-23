@@ -713,10 +713,10 @@
     {
       "door": "wildlife",
       "slugs": [
+        "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026",
         "أبوظبي-الجولة-الثالثة-للإبحار-الشراعي-8-نوفمبر-2026",
         "٢٩٦-نوعا-من-الطيور-في-محمية-الملك-سلمان",
-        "عمان-تنظم-زيارة-المحميات-والتخييم",
-        "تعاون-مصري-إماراتي-الحبارى-محمية-العميد"
+        "عمان-تنظم-زيارة-المحميات-والتخييم"
       ]
     },
     {
@@ -1045,7 +1045,8 @@
     "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026": "wildlife",
     "السلوقي-العربي-في-محاكاة-الصيد-2026": "photos",
     "الصقارة-والسلوقي-جناح-نادي-صقاري-الإمارات-2026": "photos",
-    "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026": "hunting"
+    "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026": "hunting",
+    "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026": "wildlife"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1064,6 +1065,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026",
     "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
     "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
     "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
@@ -1072,8 +1074,7 @@
     "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
     "الرماية-الدولية-عقوبة-راتنر-2026",
     "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
-    "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
-    "كرنفال-دبي-ميدان-2026-2027"
+    "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -3229,11 +3230,28 @@
         "en": "A photograph from the meeting between a MECSHAP delegation and Parliament Speaker Nabih Berri.",
         "fr": "Photographie de la rencontre entre une délégation de MECSHAP et le président du Parlement, Nabih Berri."
       }
+    },
+    "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026": {
+      "image": "media/publications/libya-bani-walid-gazelles-20261123/bani-walid-gazelles.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "غزلان أمام مجموعة من المشاركين في الصورة المنشورة مع خبر إطلاقها ببني وليد.",
+        "en": "Gazelles in front of participants in the photograph accompanying LANA’s Bani Walid release report.",
+        "fr": "Des gazelles devant des participants sur la photographie accompagnant la dépêche de LANA sur le lâcher à Bani Walid."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026",
+      "titles": {
+        "ar": "ليبيا: إطلاق دفعة خامسة تضم 20 غزالًا في أودية بني وليد لدعم عودتها إلى البرية.",
+        "en": "Libya: a fifth batch of 20 gazelles is released in Bani Walid’s valleys to support their return to the wild.",
+        "fr": "Libye : un cinquième groupe de 20 gazelles relâché dans les vallées de Bani Walid pour soutenir leur retour dans la nature."
+      }
+    },
     {
       "slug": "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
       "titles": {
@@ -3304,14 +3322,6 @@
         "ar": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات بين الطيور البرية في دول مجاورة",
         "en": "France raises bird flu risk after cases increase in wild birds in neighbouring countries",
         "fr": "La France relève le risque de grippe aviaire après une hausse des cas chez les oiseaux sauvages des pays voisins"
-      }
-    },
-    {
-      "slug": "كرنفال-دبي-ميدان-2026-2027",
-      "titles": {
-        "ar": "كرنفال دبي: براذرلي لاف يفوز بكأس الافتتاح وكولور أب يعود للانتصارات في ميدان.",
-        "en": "Dubai Racing Carnival: Brotherly Love wins the opening-night cup as Colour Up returns to winning ways at Meydan.",
-        "fr": "Carnaval de Dubaï : Brotherly Love remporte la coupe d’ouverture et Colour Up renoue avec la victoire à Meydan."
       }
     }
   ],

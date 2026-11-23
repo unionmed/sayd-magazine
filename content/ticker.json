@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026",
+      "titles": {
+        "ar": "ليبيا: إطلاق دفعة خامسة تضم 20 غزالًا في أودية بني وليد لدعم عودتها إلى البرية.",
+        "en": "Libya: a fifth batch of 20 gazelles is released in Bani Walid’s valleys to support their return to the wild.",
+        "fr": "Libye : un cinquième groupe de 20 gazelles relâché dans les vallées de Bani Walid pour soutenir leur retour dans la nature."
+      },
+      "title": "ليبيا: إطلاق دفعة خامسة تضم 20 غزالًا في أودية بني وليد لدعم عودتها إلى البرية."
+    },
+    {
       "slug": "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
       "titles": {
         "ar": "وفد «مكشاب» يبحث مع نبيه بري رفع غرامات مخالفات الصيد لتعزيز مكافحة الصيد الجائر.",
@@ -81,15 +90,6 @@
         "fr": "La France relève le risque de grippe aviaire après une hausse des cas chez les oiseaux sauvages des pays voisins"
       },
       "title": "فرنسا ترفع خطر إنفلونزا الطيور بعد تزايد الإصابات بين الطيور البرية في دول مجاورة"
-    },
-    {
-      "slug": "كرنفال-دبي-ميدان-2026-2027",
-      "titles": {
-        "ar": "كرنفال دبي: براذرلي لاف يفوز بكأس الافتتاح وكولور أب يعود للانتصارات في ميدان.",
-        "en": "Dubai Racing Carnival: Brotherly Love wins the opening-night cup as Colour Up returns to winning ways at Meydan.",
-        "fr": "Carnaval de Dubaï : Brotherly Love remporte la coupe d’ouverture et Colour Up renoue avec la victoire à Meydan."
-      },
-      "title": "كرنفال دبي: براذرلي لاف يفوز بكأس الافتتاح وكولور أب يعود للانتصارات في ميدان."
     }
   ]
 }
