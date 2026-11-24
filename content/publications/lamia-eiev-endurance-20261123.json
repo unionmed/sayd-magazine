@@ -1,0 +1,232 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "lamia-eiev-endurance-20261123",
+  "expected_base": "3c3f29f4afc12ee9c7fe339ad55b6a93c74aa58d",
+  "approval_reference": "private:nayef-lamia-eiev-publication-20261123; explicit instruction to prepare and publish this email report below the lead, with cover and interior photograph, and a ticker item. Editorial preparation began 23 November UTC; event occurred 21 November.",
+  "bank_search_reference": "Internal bank searched for Lamia and attachment names; 05_Equestrian inventory contained no Greece/Lamia event photos. Selected the exact two photographs accompanying the report. Archived with original DOCX and source record in /Sayd picture for use/05_Equestrian/Greece/Lamia/2026-11-21_EIEV-Endurance_Editorial. Saved photos: libfile_8ff076c49d308191ba30c45182900cd4 and libfile_df13b2b08e5c81918590bf9cac776e24; original report libfile_f80f34e0e404819196090bb890dbbdc1; editorial source record libfile_eab14b02ef48819183cda71f5b05a883.",
+  "photos": [
+    {
+      "id": "lamia-awards-cover",
+      "path": "docs/media/publications/lamia-eiev-endurance-20261123/lamia-awards-cover.jpg",
+      "sha256": "3ab9bcdb403e34915827a0ed28fda8d731d387edaa2f9108f16eb0f564d9e02a",
+      "source_sha256": "3ab9bcdb403e34915827a0ed28fda8d731d387edaa2f9108f16eb0f564d9e02a",
+      "source_reference": "1002761716.jpg supplied with the Lamia press report by Adonis El Khatib, Editor-in-Chief, to Nayef on 23 November 2026. These are the exact connector-materialized bytes, preserved without local editing; declared mail attachment sizes differ, so byte identity to the mail server original is not independently claimed. Photographer unreported. Event context matches visible EIEV/Lamia branding; identities of individuals are not assigned from the photographs.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Nayef explicitly requested publication of this supplied report with a main photograph and the remaining photograph inside. Independent external copyright and authenticity evidence were not supplied. This is a bounded editorial selection, not a public licence.",
+        "evidence_reference": "private:nayef-lamia-eiev-photos-20261123",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:nayef-lamia-eiev-photos-20261123"
+      },
+      "alt": {
+        "ar": "مشاركات في التتويج ومسؤولون أمام منصة سباقات قرية الإمارات العالمية للقدرة في لاميا.",
+        "en": "Award recipients and officials at the EIEV endurance awards podium in Lamia.",
+        "fr": "Lauréates et responsables devant le podium des courses d’endurance EIEV à Lamia."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "lamia-awards-group",
+      "path": "docs/media/publications/lamia-eiev-endurance-20261123/lamia-awards-group.jpg",
+      "sha256": "c8693a8145e187f0f246de6ac061fe01f8be726301c94c916eb988aff1c116c4",
+      "source_sha256": "c8693a8145e187f0f246de6ac061fe01f8be726301c94c916eb988aff1c116c4",
+      "source_reference": "1002761717.jpg supplied with the Lamia press report by Adonis El Khatib, Editor-in-Chief, to Nayef on 23 November 2026. These are the exact connector-materialized bytes, preserved without local editing; declared mail attachment sizes differ, so byte identity to the mail server original is not independently claimed. Photographer unreported. Event context matches visible EIEV/Lamia branding; identities of individuals are not assigned from the photographs.",
+      "rights": {
+        "status": "user_selected_source_unresolved",
+        "statement": "Nayef explicitly requested publication of this supplied report with a main photograph and the remaining photograph inside. Independent external copyright and authenticity evidence were not supplied. This is a bounded editorial selection, not a public licence.",
+        "evidence_reference": "private:nayef-lamia-eiev-photos-20261123",
+        "user_supplied": true,
+        "external_rights_verified": false,
+        "authenticity_verified": false,
+        "editorial_authorization_reference": "private:nayef-lamia-eiev-photos-20261123"
+      },
+      "alt": {
+        "ar": "صورة جماعية من حفل تكريم المشاركين في سباقات القدرة في لاميا باليونان.",
+        "en": "A group photograph from the endurance racing awards ceremony in Lamia, Greece.",
+        "fr": "Photo de groupe lors de la remise des prix des courses d’endurance à Lamia, en Grèce."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026",
+        "en": "patsioura-lamia-eiev-endurance-greece-2026",
+        "fr": "patsioura-lamia-endurance-eiev-grece-2026"
+      },
+      "published": "2026-11-23",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd Magazine",
+        "fr": "Sayd Magazine"
+      },
+      "primary_door": "equestrian",
+      "archives": [
+        "equestrian"
+      ],
+      "kind": "article",
+      "photos": [
+        "lamia-awards-cover",
+        "lamia-awards-group"
+      ],
+      "photo_placements": [
+        {
+          "photo_id": "lamia-awards-group",
+          "after_section": 2
+        }
+      ],
+      "translations": {
+        "ar": {
+          "title": "أريتي باتسيورا تتوّج بالجولة التاسعة لسباقات قرية الإمارات للقدرة في اليونان",
+          "subtitle": "لاميا استضافت السباق الرئيسي لمسافة 143.7 كلم على خمس مراحل، وسانتا سوزانا الإسبانية المحطة المقبلة في ديسمبر.",
+          "meta_description": "أريتي باتسيورا تفوز بالجولة التاسعة لسلسلة قرية الإمارات العالمية للقدرة في لاميا اليونانية على صهوة سالامون إيكتوراس آر، وتكريم أبطال السباقات المصاحبة.",
+          "ticker_title": "أريتي باتسيورا تفوز بالجولة التاسعة لسباقات قرية الإمارات للقدرة في اليونان.",
+          "sections": [
+            {
+              "paragraphs": [
+                "أحرزت الفارسة اليونانية أريتي باتسيورا، على صهوة «سالامون إيكتوراس آر»، لقب السباق الرئيسي في الجولة التاسعة من سلسلة سباقات قرية الإمارات العالمية للقدرة، التي أُقيمت في لاميا باليونان يوم السبت 21 تشرين الثاني/نوفمبر 2026.",
+                "وجرى سباق الثلاث نجوم على خمس مراحل، لمسافة فعلية تبلغ 143.7 كلم وفق البرنامج المنشور للاتحاد اليوناني للفروسية."
+              ]
+            },
+            {
+              "heading": "تعاون إماراتي يوناني",
+              "paragraphs": [
+                "أُقيمت الجولة بشراكة بين قرية الإمارات العالمية للقدرة وEIEV PULSE والاتحاد اليوناني للفروسية، وتحت إشراف الاتحاد الدولي للفروسية. وجاءت المنافسات ضمن فعالية جمعت السباقات الدولية وبطولات اليونان الوطنية للقدرة.",
+                "وشمل البرنامج الدولي سباقات من فئتي النجمتين والنجمة الواحدة، بمسافات فعلية تبلغ 121.2 كلم و105.6 كلم، مع منافسات مخصصة للشباب والناشئين."
+              ]
+            },
+            {
+              "heading": "ألقاب السباقات والتتويج",
+              "paragraphs": [
+                "وحصدت ماريا روسي على «زاجيرا» لقب أحد سباقات النجمتين، فيما فازت سافينا ماريا ثيودورو على «أزيرا» بأحد سباقات النجمة الواحدة. وحققت صوفيا فيليلي على «هيفا» لقب سباق آخر من فئة النجمة الواحدة.",
+                "وشارك في تكريم الفائزين مهرة علي الشايع، القائم بالأعمال لدى سفارة الإمارات في اليونان، ولارا صوايا، المديرة التنفيذية للتسويق والرعاية في القرية وEIEV PULSE، وعمدة لاميا وممثلون عن المدينة."
+              ]
+            },
+            {
+              "heading": "إسبانيا المحطة المقبلة",
+              "paragraphs": [
+                "وبحسب المادة الإعلامية الخاصة بالجولة، تتجه السلسلة إلى محطتها العاشرة في سانتا سوزانا بإسبانيا، المقررة في 4 كانون الأول/ديسمبر 2026."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Hellenic Equestrian Federation — Lamia competition programme",
+              "url": "https://hef.gr/index.php/en/news-en/press-release/2176-cei3-2"
+            },
+            {
+              "label": "Emirates News Agency — Lamia results, 22 November 2026",
+              "url": "https://www.wam.ae/en/article/c3du0rl-patsioura-wins-eiev-global-endurance-series-140km"
+            }
+          ],
+          "photo_credit": "الصور: المادة الإعلامية المرافقة لسباقات قرية الإمارات العالمية للقدرة."
+        },
+        "en": {
+          "title": "Areti Patsioura wins the ninth EIEV endurance round in Greece",
+          "subtitle": "Lamia hosted the five-stage, 143.7km feature race, with Santa Susanna in Spain announced as the next stop in December.",
+          "meta_description": "Greek rider Areti Patsioura wins the ninth Emirates International Endurance Village Global Series round in Lamia aboard Salamon Ektoras R.",
+          "ticker_title": "Areti Patsioura wins the ninth EIEV endurance round in Greece.",
+          "sections": [
+            {
+              "paragraphs": [
+                "Greek rider Areti Patsioura, aboard Salamon Ektoras R, won the feature race at the ninth round of the Emirates International Endurance Village Global Series, held in Lamia, Greece, on Saturday, 21 November 2026.",
+                "The three-star race comprised five stages over an actual distance of 143.7km, according to the programme published by the Hellenic Equestrian Federation."
+              ]
+            },
+            {
+              "heading": "Emirati–Greek cooperation",
+              "paragraphs": [
+                "The round was held through a partnership between Emirates International Endurance Village, EIEV PULSE and the Hellenic Equestrian Federation, under the supervision of the International Equestrian Federation (FEI). The event brought together international races and the Greek national endurance competitions.",
+                "The international programme included two-star and one-star races over actual distances of 121.2km and 105.6km, including competitions for young riders and juniors."
+              ]
+            },
+            {
+              "heading": "Race titles and the awards ceremony",
+              "paragraphs": [
+                "Maria Roussi, riding Zagira, won one of the two-star races. Savvina Maria Theodorou, aboard Azira, won a one-star race, while Sofia Fileli, riding Hifa, claimed another one-star title.",
+                "The winners were honoured by Mahra Ali Al Shaya, Chargé d’Affaires at the UAE Embassy in Greece; Lara Sawaya, Executive Director of Marketing and Sponsorship at the village and EIEV PULSE; and the Mayor of Lamia and city representatives."
+              ]
+            },
+            {
+              "heading": "Spain is the next stop",
+              "paragraphs": [
+                "According to the round’s press material, the series will move to its tenth stop in Santa Susanna, Spain, scheduled for 4 December 2026."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Hellenic Equestrian Federation — Lamia competition programme",
+              "url": "https://hef.gr/index.php/en/news-en/press-release/2176-cei3-2"
+            },
+            {
+              "label": "Emirates News Agency — Lamia results, 22 November 2026",
+              "url": "https://www.wam.ae/en/article/c3du0rl-patsioura-wins-eiev-global-endurance-series-140km"
+            }
+          ],
+          "photo_credit": "Photos: press material accompanying the Emirates International Endurance Village races."
+        },
+        "fr": {
+          "title": "Areti Patsioura remporte la neuvième étape du circuit EIEV en Grèce",
+          "subtitle": "Lamia a accueilli l’épreuve principale de 143,7 km en cinq boucles. Santa Susanna, en Espagne, est annoncée comme prochaine étape en décembre.",
+          "meta_description": "La cavalière grecque Areti Patsioura remporte à Lamia la neuvième étape du circuit mondial de l’Emirates International Endurance Village avec Salamon Ektoras R.",
+          "ticker_title": "Areti Patsioura remporte en Grèce la neuvième étape du circuit d’endurance EIEV.",
+          "sections": [
+            {
+              "paragraphs": [
+                "La cavalière grecque Areti Patsioura, en selle sur Salamon Ektoras R, a remporté l’épreuve principale de la neuvième étape du circuit mondial de l’Emirates International Endurance Village, organisée à Lamia, en Grèce, le samedi 21 novembre 2026.",
+                "L’épreuve trois étoiles s’est déroulée en cinq boucles sur une distance réelle de 143,7 km, selon le programme publié par la Fédération équestre hellénique."
+              ]
+            },
+            {
+              "heading": "Une coopération entre les Émirats et la Grèce",
+              "paragraphs": [
+                "Cette étape a été organisée dans le cadre d’un partenariat entre l’Emirates International Endurance Village, EIEV PULSE et la Fédération équestre hellénique, sous l’égide de la Fédération équestre internationale (FEI). La manifestation réunissait des épreuves internationales et des compétitions nationales grecques d’endurance.",
+                "Le programme international comprenait des épreuves deux étoiles et une étoile sur des distances réelles de 121,2 km et 105,6 km, avec des compétitions réservées aux jeunes cavaliers et aux juniors."
+              ]
+            },
+            {
+              "heading": "Les titres et la remise des prix",
+              "paragraphs": [
+                "Maria Roussi, avec Zagira, a remporté l’une des épreuves deux étoiles. Savvina Maria Theodorou, avec Azira, s’est imposée dans une épreuve une étoile, tandis que Sofia Fileli, avec Hifa, a décroché un autre titre une étoile.",
+                "Les lauréats ont été récompensés en présence de Mahra Ali Al Shaya, chargée d’affaires à l’ambassade des Émirats arabes unis en Grèce, de Lara Sawaya, directrice exécutive du marketing et du parrainage du village et d’EIEV PULSE, ainsi que du maire et de représentants de Lamia."
+              ]
+            },
+            {
+              "heading": "Prochaine étape en Espagne",
+              "paragraphs": [
+                "Selon le dossier de presse de cette étape, le circuit se rendra ensuite à Santa Susanna, en Espagne, pour sa dixième étape, annoncée le 4 décembre 2026."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Hellenic Equestrian Federation — Lamia competition programme",
+              "url": "https://hef.gr/index.php/en/news-en/press-release/2176-cei3-2"
+            },
+            {
+              "label": "Emirates News Agency — Lamia results, 22 November 2026",
+              "url": "https://www.wam.ae/en/article/c3du0rl-patsioura-wins-eiev-global-endurance-series-140km"
+            }
+          ],
+          "photo_credit": "Photos : dossier de presse des courses de l’Emirates International Endurance Village."
+        }
+      },
+      "distribution": {
+        "placement": "side",
+        "ticker": true
+      }
+    }
+  ]
+}
