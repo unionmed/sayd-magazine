@@ -1,0 +1,276 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "mediterranean-ikb-platform-20261124",
+  "expected_base": "4f68caad260e003c336851169e4839acdff70119",
+  "approval_reference": "private:nayef-mediterranean-ikb-20261124; Explicit instruction: publish as front-page lead according to the protocol. Approved title, Saudi cover, Tunisia and Lebanon interior photos, one concise end credit, and exact approved ticker.",
+  "bank_search_reference": "Previously reviewed existing Sayd archive and prepared package. Final images selected and approved in this conversation; persistent sources libfile_feaaa5ab55f48191aa39dc4f74e421c4 (Tunisia), libfile_c0d7764fc8a08191accb065966818b39 (Saudi); reuse existing MECSHAP Hbaline photo without duplicate upload. Prepared article libfile_80fa54c3708881919cf8032af5f7f2c5 version 2.",
+  "photos": [
+    {
+      "id": "saudi-tarout-cover",
+      "path": "docs/media/publications/mediterranean-ikb-platform-20261124/saudi-tarout.jpg",
+      "sha256": "65bc3ed5124a5ccc2680dec8ec4ed5820f7ededd2ecae72d8e9e046ceb4a037a",
+      "source_sha256": "65bc3ed5124a5ccc2680dec8ec4ed5820f7ededd2ecae72d8e9e046ceb4a037a",
+      "source_reference": "{\"place\": \"Tarout Island, Saudi Arabia\", \"capture_date\": \"Unspecified\", \"source_page_date\": \"2026-07-07\", \"author\": \"Saudi Press Agency (SPA)\", \"source_url\": \"https://cc.spa.gov.sa/en/news/2629290\", \"source_asset_url\": \"https://cc-cdn.spa.gov.sa/mashaa/media/nzxlhuom/10411125.jpg\", \"changes\": \"None\", \"context\": \"Illustrative waterbird habitat photo. Does not imply Saudi participation in the eight-country platform or workshop.\"}",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC BY-SA 4.0. Attribution and licence link in the consolidated end credit. No local image editing; Tunisia uses the official proportional Wikimedia rendition.",
+        "evidence_reference": "https://cc.spa.gov.sa/en/terms",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "alt": {
+        "ar": "طيور النحام الوردي عند شاطئ جزيرة تاروت في السعودية.",
+        "en": "Illustrative photograph of flamingos at Tarout Island, Saudi Arabia.",
+        "fr": "Photographie illustrative de flamants sur le littoral de l’île de Tarout, en Arabie saoudite."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "source_url": "https://cc.spa.gov.sa/en/news/2629290"
+    },
+    {
+      "id": "tunisia-korba",
+      "path": "docs/media/publications/mediterranean-ikb-platform-20261124/tunisia-korba.jpg",
+      "sha256": "b4910d16d9680df6c0ecf7dd8eff6a1bb5390565042d17d79ca608554b520442",
+      "source_sha256": "aac3fef0154b6f787ae8eefdfc1d0f71ca022e5a7aa31b13ac7bbb7c0721e2be",
+      "source_reference": "{\"place\": \"Korba, Tunisia\", \"capture_date\": \"2021-03-22\", \"author\": \"Skander zarrad\", \"source_url\": \"https://commons.wikimedia.org/wiki/File:Large_envol_de_flamants_roses_-_Korba_-_Tunisie.jpg\", \"source_asset_url\": \"https://upload.wikimedia.org/wikipedia/commons/0/0a/Large_envol_de_flamants_roses_-_Korba_-_Tunisie.jpg\", \"rendition_url\": \"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Large_envol_de_flamants_roses_-_Korba_-_Tunisie.jpg/1280px-Large_envol_de_flamants_roses_-_Korba_-_Tunisie.jpg\", \"changes\": \"Official Wikimedia 1280 px proportional thumbnail; no local image editing.\", \"context\": \"Illustrative archival habitat photo, not a photograph of the 2026 workshop or an anti-poaching operation.\"}",
+      "rights": {
+        "status": "licensed",
+        "statement": "CC BY-SA 4.0. Attribution and licence link in the consolidated end credit. No local image editing; Tunisia uses the official proportional Wikimedia rendition.",
+        "evidence_reference": "https://commons.wikimedia.org/wiki/File:Large_envol_de_flamants_roses_-_Korba_-_Tunisie.jpg",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "alt": {
+        "ar": "طيور النحام الوردي تحلّق فوق الأراضي الرطبة في قربة بتونس.",
+        "en": "Archival illustrative photograph of flamingos flying over wetlands in Korba, Tunisia, in March 2021.",
+        "fr": "Photographie d’archives illustrative de flamants en vol au-dessus des zones humides de Korba, en Tunisie, en mars 2021."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      },
+      "source_url": "https://commons.wikimedia.org/wiki/File:Large_envol_de_flamants_roses_-_Korba_-_Tunisie.jpg"
+    },
+    {
+      "id": "lebanon-hbaline",
+      "path": "docs/media/publications/hbaline-jbeil-nets-20261117/1002708259.jpg",
+      "sha256": "7e4c47ba8cd5ec0820654f7bed1c36424e959d562a5a3d72d79cd3428e3caa04",
+      "source_sha256": "7e4c47ba8cd5ec0820654f7bed1c36424e959d562a5a3d72d79cd3428e3caa04",
+      "source_reference": "{\"place\": \"Hbaline, Jbeil, Lebanon\", \"capture_date\": \"Unspecified\", \"receipt_date\": \"2026-11-16\", \"changes\": \"None\", \"context\": \"Archive photograph of illegal nets in Lebanon; not Tunisia workshop or ROEM participation evidence.\"}",
+      "rights": {
+        "status": "permission",
+        "statement": "MECSHAP photographs supplied for Sayd republication under the standing permission confirmed by Nayef; this publication and the original attached photographs were explicitly requested. No open licence or general third-party reuse is claimed.",
+        "evidence_reference": "private:nayef-mecshap-republication-permission-and-apu-20261116-originals"
+      },
+      "alt": {
+        "ar": "شباك صيد منصوبة بين الأشجار في حبالين بلبنان.",
+        "en": "Illegal hunting nets in Hbaline, Jbeil, Lebanon, before removal.",
+        "fr": "Filets de chasse illégaux à Hbaline, dans la région de Jbeil, au Liban, avant leur enlèvement."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
+        "en": "mediterranean-platform-illegal-bird-hunting",
+        "fr": "plateforme-mediterraneenne-chasse-illegale-oiseaux"
+      },
+      "published": "2026-11-24",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd Magazine",
+        "fr": "Sayd Magazine"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "saudi-tarout-cover",
+        "tunisia-korba",
+        "lebanon-hbaline"
+      ],
+      "photo_placements": [
+        {
+          "photo_id": "tunisia-korba",
+          "after_section": 1
+        },
+        {
+          "photo_id": "lebanon-hbaline",
+          "after_section": 2
+        }
+      ],
+      "translations": {
+        "ar": {
+          "title": "منصة متوسطية لرصد الصيد غير القانوني للطيور",
+          "subtitle": "بروتوكول موحّد يوثّق الشباك والفخاخ والطيور المصابة والنافقة ويجمع المشاهدات الميدانية في قاعدة بيانات مشتركة",
+          "meta_description": "منصة متوسطية تجمع رصد الصيد غير القانوني للطيور المائية في ثماني دول، ببروتوكول يوحّد توثيق الشباك والفخاخ والطيور المصابة والنافقة.",
+          "ticker_title": "منصة متوسطية توحّد رصد الصيد غير القانوني للطيور وتوثيق مخالفاته في ثماني دول.",
+          "sections": [
+            {
+              "paragraphs": [
+                "أعلن معهد «تور دو فالا» في 17 تشرين الثاني/نوفمبر 2026 إطلاق منصة رقمية لشبكة الطيور المائية في المتوسط «ROEM»، تجمع معلومات رصد الصيد غير القانوني للطيور المائية في ثماني دول، بينها المغرب والجزائر وتونس وليبيا، إلى جانب ألبانيا وصربيا ومقدونيا الشمالية وتركيا.",
+                "وتستند المنصة إلى بروتوكول موحّد يتيح تسجيل المشاهدات الميدانية ومقارنتها بين المواقع والبلدان، للمساعدة في تحديد بؤر المخالفات وتوجيه جهود حماية الطيور على امتداد مسارات هجرتها."
+              ]
+            },
+            {
+              "paragraphs": [
+                "يدمج البروتوكول رصد مؤشرات الصيد غير القانوني في التعدادات الشتوية للطيور المائية، مستفيدًا من وجود فرق المراقبة في الأراضي الرطبة. وتُضاف إلى بيانات الموقع وتوقيت الزيارة وظروفها مشاهدات تتعلق بالصيادين أو أصوات إطلاق النار في الأماكن والأوقات التي يُحظر فيها الصيد، وبالشباك والفخاخ ووسائل استدراج الطيور.",
+                "ويشمل التوثيق بقايا الذخائر، والمخابئ المستحدثة عندما يمكن تحديد عدم قانونيتها، والطيور والحيوانات المصابة أو النافقة، مع تسجيل الأعداد والحالة. كما تُبيّن الاستمارة ما إذا كانت الوقائع قد أُبلغت إلى السلطات المختصة، بما يساعد على متابعة الاستجابة للمخالفات.",
+                "وتُسجّل نتائج الزيارة أيضًا عند عدم رصد مؤشرات على هذه الممارسات. وتتيح الطريقة المشتركة قراءة المشاهدات في سياق موقعها وتوقيتها وطبيعتها، بدل جمع وقائع متفرقة يصعب مقارنتها."
+              ],
+              "heading": "ماذا يرصد البروتوكول"
+            },
+            {
+              "paragraphs": [
+                "بدأ برنامج الرصد عام 2023، واستفاد بروتوكوله من تجارب أولية في تونس وألبانيا وصربيا. وتُدمج البيانات في المنصة مع إدخالها ميدانيًا، لتغذية ملخصات على مستوى كل دولة وعلى مستوى الشبكة، إلى جانب مراجع متخصصة في الموضوع.",
+                "وتشمل المخالفات التي تتناولها المنصة صيد الأنواع المحمية، والصيد خارج الفترات المسموحة أو داخل المناطق المحظورة، واستخدام تقنيات ممنوعة. وتكتسب معرفة طبيعة الممارسة ومكانها وتكرارها أهمية في تحديد أولويات الرقابة والحماية."
+              ],
+              "heading": "من التجارب الميدانية إلى قاعدة مشتركة"
+            },
+            {
+              "paragraphs": [
+                "وفي سياق التعاون الإقليمي لمكافحة قتل الطيور وأسرها والاتجار بها بصورة غير قانونية، استضافت تونس بين 16 و18 تشرين الأول/أكتوبر 2026 ورشة نظّمتها جمعية أحباء الطيور في تونس وجمعية حماية ودراسة الطيور في صربيا، ضمن مشاريع «PROZHUM».",
+                "وبحسب الجمعية الليبية للطيور المشاركة في الورشة، ضمّ اللقاء منظمات وجمعيات من بلدان عربية وأوروبية، بينها لبنان. وعرض المشاركون تجاربهم في الرصد والتوثيق والتوعية والتعاون مع الجهات المختصة، فيما تناول العرض الليبي التشريعات الوطنية وجهود حماية الطيور.",
+                "وشملت الأنشطة زيارتين ميدانيتين إلى سبخة سليمان وسبخة قربة في تونس، جمعتا مراقبة الطيور المائية وتوثيق مؤشرات القتل غير القانوني. وتُظهر هذه الممارسة كيف يمكن لزيارة مخصّصة لعدّ الطيور أن توفّر أيضًا معلومات عن التهديدات التي تواجهها في مواقع استراحتها وتغذيتها."
+              ],
+              "heading": "ورشة تونس وتبادل الخبرات"
+            }
+          ],
+          "sources": [
+            {
+              "label": "Tour du Valat — ROEM",
+              "url": "https://tourduvalat.org/en/actualites-en/launch-of-the-first-web-platform-dedicated-to-illegal-killing-of-birds-ikb-in-the-mediterranean/"
+            },
+            {
+              "label": "ROEM — Monitoring protocol",
+              "url": "https://ikb.tourduvalat.app/monitoring-protocol"
+            },
+            {
+              "label": "Libyan Society for Birds — Tunis workshop",
+              "url": "https://birds.ly/en/libyan-society-for-birds-participates-in-regional-workshop-on-combating-the-illegal-killing-of-birds-ikb/"
+            }
+          ],
+          "photo_credit": "الصور: السعودية — واس؛ تونس — Skander zarrad / Wikimedia Commons (الصورتان CC BY-SA 4.0)؛ لبنان — مكشاب."
+        },
+        "en": {
+          "title": "Mediterranean platform monitors illegal bird hunting",
+          "subtitle": "A shared protocol records nets, traps, injured and dead birds, bringing field observations into a common database.",
+          "meta_description": "A Mediterranean platform brings together illegal waterbird hunting monitoring in eight countries through a shared protocol for field documentation.",
+          "ticker_title": "A Mediterranean platform standardises monitoring and documentation of illegal bird hunting across eight countries.",
+          "sections": [
+            {
+              "paragraphs": [
+                "On 17 November 2026, the Tour du Valat research institute announced the launch of a digital platform for the Mediterranean Waterbird Network (ROEM), bringing together information on illegal waterbird hunting in eight countries: Morocco, Algeria, Tunisia, Libya, Albania, Serbia, North Macedonia and Türkiye.",
+                "The platform uses a shared protocol to record field observations and compare them across sites and countries, helping identify hotspots of illegal activity and guide bird conservation efforts along migration routes."
+              ]
+            },
+            {
+              "heading": "What the protocol records",
+              "paragraphs": [
+                "The protocol integrates monitoring of signs of illegal hunting into winter waterbird counts, drawing on the presence of survey teams in wetlands. Alongside information on the site, timing and conditions of each visit, observers record hunters or gunshots where and when hunting is prohibited, as well as nets, traps and bird-luring devices.",
+                "Documentation covers ammunition remains, newly established hides where their illegality can be determined, and injured or dead birds and other animals, including their numbers and condition. The recording form also indicates whether incidents have been reported to the competent authorities, helping track the response to violations.",
+                "Visits are recorded even when no signs of these practices are detected. The common approach places observations in the context of their location, timing and nature, rather than assembling isolated incidents that are difficult to compare."
+              ]
+            },
+            {
+              "heading": "From field trials to a shared database",
+              "paragraphs": [
+                "The monitoring programme began in 2023, with its protocol drawing on initial projects in Tunisia, Albania and Serbia. Data are integrated into the platform as they are entered in the field, feeding country-level and network-wide summaries alongside specialist references.",
+                "The violations covered include hunting protected species, hunting outside permitted periods or in prohibited areas, and using banned techniques. Understanding the nature, location and recurrence of these practices helps set monitoring and conservation priorities."
+              ]
+            },
+            {
+              "heading": "The Tunis workshop and exchange of experience",
+              "paragraphs": [
+                "As part of regional cooperation against the illegal killing, capture and trade of birds, Tunis hosted a workshop from 16 to 18 October 2026. It was organised by the Association Les Amis des Oiseaux in Tunisia and the Bird Protection and Study Society of Serbia under the PROZHUM projects.",
+                "According to the participating Libyan Society for Birds, the meeting brought together organisations and associations from Arab and European countries, including Lebanon. Participants presented their experience in monitoring, documentation, awareness-raising and cooperation with relevant authorities, while the Libyan presentation addressed national legislation and bird conservation efforts.",
+                "Activities included field visits to Sebkhet Soliman and Sebkhet Korba in Tunisia, combining waterbird observation with documentation of signs of illegal killing. This approach shows how a bird-counting visit can also provide information about threats at sites where birds rest and feed."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Tour du Valat — ROEM",
+              "url": "https://tourduvalat.org/en/actualites-en/launch-of-the-first-web-platform-dedicated-to-illegal-killing-of-birds-ikb-in-the-mediterranean/"
+            },
+            {
+              "label": "ROEM — Monitoring protocol",
+              "url": "https://ikb.tourduvalat.app/monitoring-protocol"
+            },
+            {
+              "label": "Libyan Society for Birds — Tunis workshop",
+              "url": "https://birds.ly/en/libyan-society-for-birds-participates-in-regional-workshop-on-combating-the-illegal-killing-of-birds-ikb/"
+            }
+          ],
+          "photo_credit": "Photos: Saudi Arabia — SPA; Tunisia — Skander zarrad / Wikimedia Commons (both CC BY-SA 4.0); Lebanon — MECSHAP."
+        },
+        "fr": {
+          "title": "Une plateforme méditerranéenne pour suivre la chasse illégale aux oiseaux",
+          "subtitle": "Un protocole commun documente filets, pièges, oiseaux blessés et morts et rassemble les observations de terrain dans une base de données partagée.",
+          "meta_description": "Une plateforme méditerranéenne rassemble le suivi de la chasse illégale aux oiseaux d’eau dans huit pays grâce à un protocole commun de documentation.",
+          "ticker_title": "Une plateforme méditerranéenne harmonise le suivi de la chasse illégale aux oiseaux et la documentation des infractions dans huit pays.",
+          "sections": [
+            {
+              "paragraphs": [
+                "L’institut de recherche de la Tour du Valat a annoncé, le 17 novembre 2026, le lancement d’une plateforme numérique du Réseau des oiseaux d’eau en Méditerranée (ROEM). Elle rassemble des informations sur le suivi de la chasse illégale aux oiseaux d’eau dans huit pays : le Maroc, l’Algérie, la Tunisie, la Libye, l’Albanie, la Serbie, la Macédoine du Nord et la Turquie.",
+                "La plateforme repose sur un protocole commun permettant de consigner les observations de terrain et de les comparer entre sites et pays, afin d’identifier les foyers d’infractions et d’orienter la protection des oiseaux le long de leurs voies de migration."
+              ]
+            },
+            {
+              "heading": "Ce que relève le protocole",
+              "paragraphs": [
+                "Le protocole intègre le suivi des indices de chasse illégale aux comptages hivernaux des oiseaux d’eau, en s’appuyant sur la présence des équipes dans les zones humides. Aux données sur le site, le moment et les conditions de la visite s’ajoutent des observations de chasseurs ou de coups de feu dans les lieux et aux périodes où la chasse est interdite, ainsi que de filets, de pièges et de dispositifs destinés à attirer les oiseaux.",
+                "La documentation comprend les restes de munitions, les nouveaux affûts lorsque leur illégalité peut être établie, ainsi que les oiseaux et autres animaux blessés ou morts, avec leur nombre et leur état. La fiche précise également si les faits ont été signalés aux autorités compétentes, pour faciliter le suivi des réponses apportées aux infractions.",
+                "Les visites sont aussi enregistrées lorsqu’aucun indice de ces pratiques n’est constaté. Cette méthode commune replace les observations dans leur contexte spatial, temporel et matériel, au lieu de réunir des faits isolés difficiles à comparer."
+              ]
+            },
+            {
+              "heading": "Des premières expériences à une base commune",
+              "paragraphs": [
+                "Le programme de suivi a débuté en 2023. Son protocole s’est nourri de premières expériences menées en Tunisie, en Albanie et en Serbie. Les données sont intégrées à la plateforme au fur et à mesure de leur saisie sur le terrain, alimentant des synthèses nationales et à l’échelle du réseau, accompagnées de références spécialisées.",
+                "Les infractions couvertes comprennent la chasse d’espèces protégées, la chasse en dehors des périodes autorisées ou dans les zones interdites, ainsi que l’utilisation de techniques prohibées. Connaître la nature de ces pratiques, leur localisation et leur répétition aide à définir les priorités de surveillance et de protection."
+              ]
+            },
+            {
+              "heading": "L’atelier de Tunis et le partage d’expérience",
+              "paragraphs": [
+                "Dans le cadre de la coopération régionale contre la mise à mort, la capture et le commerce illégaux des oiseaux, Tunis a accueilli, du 16 au 18 octobre 2026, un atelier organisé par l’Association Les Amis des Oiseaux en Tunisie et la Société de protection et d’étude des oiseaux de Serbie, dans le cadre des projets PROZHUM.",
+                "Selon la Société libyenne pour les oiseaux, qui y participait, la rencontre a réuni des organisations et associations de pays arabes et européens, dont le Liban. Les participants ont présenté leurs expériences de suivi, de documentation, de sensibilisation et de coopération avec les autorités compétentes. La présentation libyenne a porté sur la législation nationale et les efforts de protection des oiseaux.",
+                "Le programme comprenait des visites de terrain à Sebkhet Soliman et Sebkhet Korba, en Tunisie, associant observation des oiseaux d’eau et documentation d’indices de mise à mort illégale. Cette pratique montre qu’une visite consacrée au comptage des oiseaux peut également renseigner sur les menaces pesant sur leurs sites de repos et d’alimentation."
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Tour du Valat — ROEM",
+              "url": "https://tourduvalat.org/en/actualites-en/launch-of-the-first-web-platform-dedicated-to-illegal-killing-of-birds-ikb-in-the-mediterranean/"
+            },
+            {
+              "label": "ROEM — Monitoring protocol",
+              "url": "https://ikb.tourduvalat.app/monitoring-protocol"
+            },
+            {
+              "label": "Libyan Society for Birds — Tunis workshop",
+              "url": "https://birds.ly/en/libyan-society-for-birds-participates-in-regional-workshop-on-combating-the-illegal-killing-of-birds-ikb/"
+            }
+          ],
+          "photo_credit": "Photos : Arabie saoudite — SPA ; Tunisie — Skander zarrad / Wikimedia Commons (ces deux photos sous CC BY-SA 4.0) ; Liban — MECSHAP."
+        }
+      },
+      "distribution": {
+        "placement": "lead",
+        "ticker": true
+      }
+    }
+  ]
+}
