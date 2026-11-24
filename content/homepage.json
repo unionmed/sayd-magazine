@@ -1,21 +1,21 @@
 {
   "memory_after_door": "science",
   "featured": [
-    "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
+    "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
     "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026",
     "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
     "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
-    "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026"
+    "الكورة-توقيف-مخالفين-الصيد-الليلي-2026"
   ],
   "latest": [
     "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
+    "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
     "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
     "رادار-صيد-العربي-تشرين-الأول-2026",
     "مونديال-الرماية-قطر-2026",
     "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
-    "عندما-تهين-الطريدة-أنت-تهين-نفسك",
-    "الصيد-السياحي-في-مصر-والعراق-والأردن"
+    "عندما-تهين-الطريدة-أنت-تهين-نفسك"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -523,7 +523,7 @@
       "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
       "كرنفال-دبي-ميدان-2026-2027",
       "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
-      "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026"
+      "الصيد-السياحي-في-مصر-والعراق-والأردن"
     ],
     "رماية وعتاد": [
       "أسلحة-الصيد-في-معرض-الرياض-2026",
@@ -553,7 +553,7 @@
       "libya-sirte-three-year-hunting-ban",
       "dubai-racing-carnival-2026-2027",
       "bin-harmash-dark-saffron-breeders-cup-2026",
-      "wanaameen-riyadh-prince-mohammed-cup-prep-2026"
+      "hunting-tourism-egypt-iraq-jordan"
     ],
     "Shooting & Gear": [
       "riyadh-hunting-firearms-exhibition-2026",
@@ -660,22 +660,22 @@
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
-    "main": "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
+    "main": "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
     "important": [
       "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026",
       "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
       "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
-      "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026"
+      "الكورة-توقيف-مخالفين-الصيد-الليلي-2026"
     ],
     "latest": [
       "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
+      "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
       "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
       "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
       "رادار-صيد-العربي-تشرين-الأول-2026",
       "مونديال-الرماية-قطر-2026",
       "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
-      "عندما-تهين-الطريدة-أنت-تهين-نفسك",
-      "الصيد-السياحي-في-مصر-والعراق-والأردن"
+      "عندما-تهين-الطريدة-أنت-تهين-نفسك"
     ]
   },
   "ia_door_sections": [
@@ -689,7 +689,7 @@
         "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
         "كرنفال-دبي-ميدان-2026-2027",
         "بن-حرمش-دارك-سافرون-بريدرز-كاب-2026",
-        "ونعمين-تحضيري-كأس-الأمير-محمد-بن-سعود-الكبير-الرياض-2026"
+        "الصيد-السياحي-في-مصر-والعراق-والأردن"
       ]
     },
     {
@@ -1047,7 +1047,8 @@
     "الصقارة-والسلوقي-جناح-نادي-صقاري-الإمارات-2026": "photos",
     "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026": "hunting",
     "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026": "wildlife",
-    "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026": "equestrian"
+    "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026": "equestrian",
+    "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور": "hunting"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1066,6 +1067,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
     "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026",
     "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026",
     "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
@@ -1074,8 +1076,7 @@
     "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
     "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026",
     "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
-    "الرماية-الدولية-عقوبة-راتنر-2026",
-    "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات"
+    "الرماية-الدولية-عقوبة-راتنر-2026"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -3249,11 +3250,28 @@
         "en": "Award recipients and officials at the EIEV endurance awards podium in Lamia.",
         "fr": "Lauréates et responsables devant le podium des courses d’endurance EIEV à Lamia."
       }
+    },
+    "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور": {
+      "image": "media/publications/mediterranean-ikb-platform-20261124/saudi-tarout.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "طيور النحام الوردي عند شاطئ جزيرة تاروت في السعودية.",
+        "en": "Illustrative photograph of flamingos at Tarout Island, Saudi Arabia.",
+        "fr": "Photographie illustrative de flamants sur le littoral de l’île de Tarout, en Arabie saoudite."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
+      "titles": {
+        "ar": "منصة متوسطية توحّد رصد الصيد غير القانوني للطيور وتوثيق مخالفاته في ثماني دول.",
+        "en": "A Mediterranean platform standardises monitoring and documentation of illegal bird hunting across eight countries.",
+        "fr": "Une plateforme méditerranéenne harmonise le suivi de la chasse illégale aux oiseaux et la documentation des infractions dans huit pays."
+      }
+    },
     {
       "slug": "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026",
       "titles": {
@@ -3324,14 +3342,6 @@
         "ar": "الاتحاد الدولي للرماية يعلن عدم أهلية ألكسندر راتنر ثلاث سنوات وغرامة 30 ألف يورو.",
         "en": "ISSF announces three-year ineligibility sanction and €30,000 fine for Alexander Ratner.",
         "fr": "L’ISSF annonce trois ans d’inéligibilité et 30 000 euros d’amende pour Alexander Ratner."
-      }
-    },
-    {
-      "slug": "ليبيا-حظر-الصيد-في-سرت-ثلاث-سنوات",
-      "titles": {
-        "ar": "ليبيا: حظر صيد الحيوانات والطيور البرية في سرت ومحيطها لثلاث سنوات",
-        "en": "Libya bans hunting wild animals and birds in Sirte and surrounding areas for three years",
-        "fr": "Libye : la chasse aux animaux et oiseaux sauvages interdite à Syrte et dans ses environs pour trois ans"
       }
     }
   ],
