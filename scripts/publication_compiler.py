@@ -596,11 +596,12 @@ def render(stage, records, allow_distribution):
                       if a['distribution']['placement'] in {'lead', 'side', 'latest'}]
         modules['homepage_demotion'].apply_upper_distribution(home, placements, day)
         upper = set(home['featured'] + home['latest'])
+        reserved_interviews = set(modules['interview_collection'].homepage_slugs('ar', home))
         for section in home['ia_door_sections']:
             if section['door'] in {'hunting', 'interviews', 'tv'}:
                 continue
             additions = [s for s in old_latest if s not in home['latest'] and home['primary_door'].get(s) == section['door']]
-            section['slugs'] = sorted(dict.fromkeys(s for s in additions + section['slugs'] if s not in upper), key=day, reverse=True)[:4]
+            section['slugs'] = sorted(dict.fromkeys(s for s in additions + section['slugs'] if s not in upper and s not in reserved_interviews), key=day, reverse=True)[:4]
         for name, old in home['desk_slugs'].items():
             home['desk_slugs'][name] = [s for s in old if s not in upper and s not in {pairs[x] for x in upper if x in pairs}]
     save_json(home_path, home)
