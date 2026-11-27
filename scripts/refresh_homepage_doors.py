@@ -370,6 +370,8 @@ def refresh(path,lang):
     page=re.sub(r'(assets/css/home-doors\.css)\?[^"\s]+', r'\1?v=20261018-hunting-two-rows', page)
     from interview_sharing import friendly_navigation
     page = friendly_navigation(page, lang)
+    from homepage_card_framing import render as frame_homepage_photos
+    page = frame_homepage_photos(ROOT, page, lang)
     path.write_text(page)
     return page
 
