@@ -144,4 +144,7 @@ from test_homepage_image_browser_proof import HomepageImageBrowserProofTests
 from test_homepage_image_recovery import HomepageImageRecoveryTests
 from test_scoped_publication_audit_revision import PublicationAuditRepairTests
 
+# The existing editorial CI job exercises the scoped homepage framing operation.
+from test_homepage_card_framing import FramingTests
+
 if __name__=='__main__':unittest.main()

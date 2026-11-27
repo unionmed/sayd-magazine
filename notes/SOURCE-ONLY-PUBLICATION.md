@@ -690,3 +690,17 @@ has an exact target allowlist. Normal source validation, independent writer
 rebuild, review candidate, protected merge, Pages deployment and live verification
 remain required. A merged infrastructure PR or a passing source-validation run
 is not publication or proof of visitor visibility.
+
+## Scoped homepage card framing — 27 November 2026
+
+`homepage-card-framing-20261127` is a closed empty-payload editorial revision.
+It changes only inline image fit/position spans in the three existing homepages,
+for twelve explicitly pinned local photos (eleven shown in EN/FR, whose interview
+selection excludes the historical Arabic Sara article). Photos retain their
+original bytes and sources. Text, links, dates, CSS, dimensions, article/archive
+pages, lead image, slots, ticker and all other bytes stay exact. The renderer
+reapplies the fixed framing after activation so later homepage builds retain it.
+The operation accepts no arbitrary image, CSS, path, source or replacement text;
+source and target digests, the normal trusted compiler, whole-tree replay, writer
+limits, protected checks and reviewed merge remain required. Installing support
+does not activate or publish the correction.
