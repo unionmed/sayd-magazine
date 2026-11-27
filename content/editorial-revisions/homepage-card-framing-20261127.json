@@ -1,0 +1,10 @@
+{
+  "schema": "sayd-editorial-revision-v1",
+  "id": "homepage-card-framing-20261127",
+  "expected_base": "0ed26d847b1f3dbc01599ecd1f31c06c200b8fcc",
+  "operation": "homepage-card-framing-20261127",
+  "approval_reference": "private:nayef-homepage-image-correction-20261127",
+  "expected_source_sha256": "41b9bb0588607ed37fc92aa7751555f3f76f50f6430c2eb11456e8239ab0b165",
+  "expected_targets_sha256": "6b15a5327cb54881ba15ee86c46f2d5b0247834bfc2dd1eba0c72b9122965d31",
+  "payload": {}
+}
