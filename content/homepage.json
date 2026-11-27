@@ -1,21 +1,21 @@
 {
   "memory_after_door": "science",
   "featured": [
+    "العين-الصيد-والفروسية-2026",
     "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
     "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026",
     "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
-    "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
-    "الكورة-توقيف-مخالفين-الصيد-الليلي-2026"
+    "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026"
   ],
   "latest": [
     "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
+    "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
     "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
     "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
     "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
     "رادار-صيد-العربي-تشرين-الأول-2026",
     "مونديال-الرماية-قطر-2026",
-    "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
-    "عندما-تهين-الطريدة-أنت-تهين-نفسك"
+    "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح"
   ],
   "omit_from_home": [
     "صيد-تعود-بحلة-جديدة-ورؤية-اوسع",
@@ -660,22 +660,22 @@
   ],
   "taxonomy_note": "قوانين is for legislative hunting-law texts only. Season open/close executive decisions stay under صيد. Do not recategorize season stories into قوانين. While the قوانين landing has no post-2022 texts, it stays out of nav, the footer category cloud, and the sitemap. The door returns when those texts exist.",
   "ia_slots": {
-    "main": "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
+    "main": "العين-الصيد-والفروسية-2026",
     "important": [
+      "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
       "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026",
       "المسيلحة-إنقاذ-ضبع-عالق-في-فخ-2026",
-      "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
-      "الكورة-توقيف-مخالفين-الصيد-الليلي-2026"
+      "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026"
     ],
     "latest": [
       "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026",
+      "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
       "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
       "فرنسا-ترفع-خطر-إنفلونزا-الطيور-2026",
       "الناعمة-إزالة-مخالفات-الصيد-الليلي-استقصاء-apu-cabs",
       "رادار-صيد-العربي-تشرين-الأول-2026",
       "مونديال-الرماية-قطر-2026",
-      "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح",
-      "عندما-تهين-الطريدة-أنت-تهين-نفسك"
+      "ناتالي-دينولف-ثقة-العقاب-وذكاء-الجوارح"
     ]
   },
   "ia_door_sections": [
@@ -1048,7 +1048,8 @@
     "وفد-مكشاب-بري-رفع-غرامات-الصيد-2026": "hunting",
     "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026": "wildlife",
     "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026": "equestrian",
-    "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور": "hunting"
+    "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور": "hunting",
+    "العين-الصيد-والفروسية-2026": "hunting"
   },
   "demotion": "Approved trafficking main lead. Former main retained beneath main alongside Riyadh, Adonis and European warning, ordered by original publication date; displaced Malwah moved into eight Updates.",
   "approved_home_repeats": [],
@@ -1067,6 +1068,7 @@
     "tv_selections": 3
   },
   "ticker_slugs": [
+    "العين-الصيد-والفروسية-2026",
     "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
     "باتسيورا-لاميا-قرية-الإمارات-القدرة-اليونان-2026",
     "ليبيا-غزلان-بني-وليد-دفعة-خامسة-2026",
@@ -1075,8 +1077,7 @@
     "حبالين-جبيل-إزالة-350-متر-شباك-الصيد-2026",
     "الكورة-توقيف-مخالفين-الصيد-الليلي-2026",
     "بروكسل-مؤتمر-مكافحة-تهريب-الأسلحة-الصيد-الرماية-2026",
-    "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026",
-    "الرماية-الدولية-عقوبة-راتنر-2026"
+    "سوريا-الرقابة-الصيد-الجائر-هجرة-الطيور-2026"
   ],
   "card_image_overrides": {
     "الصمت-الذي-يتكلمه-الخيل": {
@@ -3259,11 +3260,28 @@
         "en": "Illustrative photograph of flamingos at Tarout Island, Saudi Arabia.",
         "fr": "Photographie illustrative de flamants sur le littoral de l’île de Tarout, en Arabie saoudite."
       }
+    },
+    "العين-الصيد-والفروسية-2026": {
+      "image": "media/publications/al-ain-exhibition-20261127/pavilion-wide.jpg",
+      "position": "50% 50%",
+      "alt": {
+        "ar": "منظر واسع لجناح نادي صقّاري الإمارات في معرض العين للصيد والفروسية 2026.",
+        "en": "A wide view of the Emirates Falconers’ Club pavilion at the 2026 Al Ain Hunting and Equestrian Exhibition.",
+        "fr": "Vue d’ensemble du pavillon de l’Emirates Falconers’ Club au Salon de la chasse et de l’équitation d’Al Ain 2026."
+      }
     }
   },
   "tv_channel_config": "content/tv-channel.json",
   "video_cards": {},
   "ticker_entries": [
+    {
+      "slug": "العين-الصيد-والفروسية-2026",
+      "titles": {
+        "ar": "العين تجمع عشّاق الصيد والفروسية: 1,020 عارضًا وعلامة تجارية من 50 دولة وتجارب للصقارة وحياة البر.",
+        "en": "Al Ain brings hunting and equestrian enthusiasts together: 1,020 exhibitors and brands from 50 countries.",
+        "fr": "Al Ain réunit les passionnés de chasse et d’équitation : 1 020 exposants et marques de 50 pays."
+      }
+    },
     {
       "slug": "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
       "titles": {
@@ -3334,14 +3352,6 @@
         "ar": "سوريا تتسلّم جوارح جوسية المضبوطة للرعاية والتأهيل تمهيدًا لإطلاق المؤهل منها.",
         "en": "Syria takes in raptors seized at Jousiyeh for care and rehabilitation ahead of possible release.",
         "fr": "Syrie : les rapaces saisis à Jousiyeh pris en charge pour soins et réhabilitation en vue d’une éventuelle remise en liberté."
-      }
-    },
-    {
-      "slug": "الرماية-الدولية-عقوبة-راتنر-2026",
-      "titles": {
-        "ar": "الاتحاد الدولي للرماية يعلن عدم أهلية ألكسندر راتنر ثلاث سنوات وغرامة 30 ألف يورو.",
-        "en": "ISSF announces three-year ineligibility sanction and €30,000 fine for Alexander Ratner.",
-        "fr": "L’ISSF annonce trois ans d’inéligibilité et 30 000 euros d’amende pour Alexander Ratner."
       }
     }
   ],

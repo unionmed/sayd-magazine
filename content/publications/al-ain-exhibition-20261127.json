@@ -1,0 +1,230 @@
+{
+  "schema": "sayd-publication-v1",
+  "id": "al-ain-exhibition-20261127",
+  "expected_base": "54e4f8062417f50aae16f61527c1632f745584f5",
+  "approval_reference": "private:nayef-al-ain-publication-20261127; explicit request to complete publication using image 1 for the lead and images 2 and 6 inside the approved article. Preserve the latest approved Arabic copy and its prepared English and French translations.",
+  "bank_search_reference": "Continuation of the approved prepared draft, Library libfile_1feb9b22b2b881919acc2de3c3731e5f. Six original press photographs had already been retrieved from the Club email and displayed to Nayef; use only the three selected photographs, with original bytes preserved. Audience measurement baseline unavailable for this approved release; distribution hypothesis remains untested.",
+  "photos": [
+    {
+      "id": "pavilion-wide",
+      "path": "docs/media/publications/al-ain-exhibition-20261127/pavilion-wide.jpg",
+      "sha256": "e8ac1b0dd950489750fda71338920b791873b7962ee92422d0f9fac69c9286ee",
+      "source_sha256": "e8ac1b0dd950489750fda71338920b791873b7962ee92422d0f9fac69c9286ee",
+      "source_reference": "Original attachment ZEN07827.jpg from Emirates Falconers’ Club press email to Sayd, 26 November 2026; original message and six photographs verified during approved draft preparation, recorded in Library libfile_1feb9b22b2b881919acc2de3c3731e5f. Selected by Nayef on 27 November as image 1.",
+      "rights": {
+        "status": "permission",
+        "statement": "مواد صحفية وصور أرسلها النادي مباشرةً إلى المجلة ضمن قائمة التوزيع؛ تستخدم في التغطية التحريرية لهذا البيان مع نسبتها إلى النادي. لا يُفترض ترخيص مفتوح أو حق استخدام تجاري منفصل.",
+        "evidence_reference": "private:efc-press-email-20261126-1795678451989004300"
+      },
+      "alt": {
+        "ar": "منظر واسع لجناح نادي صقّاري الإمارات في معرض العين للصيد والفروسية 2026.",
+        "en": "A wide view of the Emirates Falconers’ Club pavilion at the 2026 Al Ain Hunting and Equestrian Exhibition.",
+        "fr": "Vue d’ensemble du pavillon de l’Emirates Falconers’ Club au Salon de la chasse et de l’équitation d’Al Ain 2026."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "pavilion-anniversary",
+      "path": "docs/media/publications/al-ain-exhibition-20261127/pavilion-25-years.jpg",
+      "sha256": "ff94e7b61cdbd02ebb125124998307aa0198c486a428319d0f35bc4d5291f56f",
+      "source_sha256": "ff94e7b61cdbd02ebb125124998307aa0198c486a428319d0f35bc4d5291f56f",
+      "source_reference": "Original attachment ZEN07829.jpg from Emirates Falconers’ Club press email to Sayd, 26 November 2026; original message and six photographs verified during approved draft preparation, recorded in Library libfile_1feb9b22b2b881919acc2de3c3731e5f. Selected by Nayef on 27 November as image 2.",
+      "rights": {
+        "status": "permission",
+        "statement": "مواد صحفية وصور أرسلها النادي مباشرةً إلى المجلة ضمن قائمة التوزيع؛ تستخدم في التغطية التحريرية لهذا البيان مع نسبتها إلى النادي. لا يُفترض ترخيص مفتوح أو حق استخدام تجاري منفصل.",
+        "evidence_reference": "private:efc-press-email-20261126-1795678451989004300"
+      },
+      "alt": {
+        "ar": "جناح نادي صقّاري الإمارات وشعار مرور 25 عامًا على تأسيسه.",
+        "en": "The Emirates Falconers’ Club pavilion and its 25th anniversary display.",
+        "fr": "Le pavillon de l’Emirates Falconers’ Club et sa présentation du vingt-cinquième anniversaire."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "pavilion-entrance",
+      "path": "docs/media/publications/al-ain-exhibition-20261127/pavilion-entrance.jpg",
+      "sha256": "a8d092601c4016236fba14a869d73181d280695ecaa0fab88b1dee6e311a479f",
+      "source_sha256": "a8d092601c4016236fba14a869d73181d280695ecaa0fab88b1dee6e311a479f",
+      "source_reference": "Original attachment ZEN07802 copy.jpg from Emirates Falconers’ Club press email to Sayd, 26 November 2026; original message and six photographs verified during approved draft preparation, recorded in Library libfile_1feb9b22b2b881919acc2de3c3731e5f. Selected by Nayef on 27 November as image 6.",
+      "rights": {
+        "status": "permission",
+        "statement": "مواد صحفية وصور أرسلها النادي مباشرةً إلى المجلة ضمن قائمة التوزيع؛ تستخدم في التغطية التحريرية لهذا البيان مع نسبتها إلى النادي. لا يُفترض ترخيص مفتوح أو حق استخدام تجاري منفصل.",
+        "evidence_reference": "private:efc-press-email-20261126-1795678451989004300"
+      },
+      "alt": {
+        "ar": "مدخل جناح نادي صقّاري الإمارات مع زوّار المعرض.",
+        "en": "Visitors at the entrance to the Emirates Falconers’ Club pavilion.",
+        "fr": "Des visiteurs à l’entrée du pavillon de l’Emirates Falconers’ Club."
+      },
+      "caption": {
+        "ar": "",
+        "en": "",
+        "fr": ""
+      }
+    }
+  ],
+  "articles": [
+    {
+      "slugs": {
+        "ar": "العين-الصيد-والفروسية-2026",
+        "en": "al-ain-hunting-equestrian-exhibition-2026",
+        "fr": "al-ain-salon-chasse-equitation-2026"
+      },
+      "published": "2026-11-27",
+      "author": {
+        "ar": "صيد",
+        "en": "Sayd Magazine",
+        "fr": "Sayd Magazine"
+      },
+      "primary_door": "hunting",
+      "archives": [
+        "hunting"
+      ],
+      "kind": "article",
+      "photos": [
+        "pavilion-wide",
+        "pavilion-anniversary",
+        "pavilion-entrance"
+      ],
+      "photo_placements": [
+        {
+          "photo_id": "pavilion-anniversary",
+          "after_section": 1
+        },
+        {
+          "photo_id": "pavilion-entrance",
+          "after_section": 2
+        }
+      ],
+      "translations": {
+        "ar": {
+          "title": "العين تجمع عشّاق الصيد والفروسية… من تراث الصقارة إلى رحلات البر",
+          "subtitle": "1,020 عارضًا وعلامة تجارية من 50 دولة في مساحة تجمع الموروث الإماراتي وتجهيزات الأنشطة الخارجية",
+          "meta_description": "1,020 عارضًا وعلامة تجارية من 50 دولة في مساحة تجمع الموروث الإماراتي وتجهيزات الأنشطة الخارجية",
+          "ticker_title": "العين تجمع عشّاق الصيد والفروسية: 1,020 عارضًا وعلامة تجارية من 50 دولة وتجارب للصقارة وحياة البر.",
+          "sections": [
+            {
+              "paragraphs": [
+                "تلتقي تقاليد الصيد والصقارة والفروسية مع أحدث تجهيزات الرحلات البرية في الدورة الثانية من معرض العين الدولي للصيد والفروسية 2026، في مركز أدنيك العين. وأفادت وكالة أنباء الإمارات «وام» بأن اليوم الثالث، الجمعة 27 نوفمبر، سجّل أعلى إقبال للزوّار منذ افتتاح هذه الدورة.",
+                "ويجمع المعرض 1,020 عارضًا وعلامة تجارية من 50 دولة، على مساحة تبلغ 35 ألف متر مربع، بزيادة 46% عن الدورة الأولى. وتتوزّع المشاركة على 14 قطاعًا تشمل الصيد والرماية والصقارة والفروسية والإبل والسلوقي، إلى جانب معدات التخييم والمركبات والبيئة والتراث.",
+                "وفي أجنحة الصقارة، يتعرّف الزوّار إلى صقور الشاهين والحر والجير، وإلى أدوات التدريب والعناية بالطير، من البرقع والقفاز والملواح إلى أجهزة التتبّع. وبالقرب منها، تعرض الشركات تجهيزات التخييم والكرافانات ومركبات الدفع الرباعي، مع فرصة لمقارنة المعدات ومناقشة استخدامها مع المختصين.",
+                "ويمنح البرنامج العائلات والأطفال مساحة للتعلّم والمشاركة، من ورش «قرية الصيادين والفرسان الصغار» إلى عروض التراث والضيافة والقهوة العربية، فيما يقدّم جناح نادي صقّاري الإمارات تجارب خاصة للاقتراب من عالم الصقارة.",
+                "وتحضر مبادئ الرفق بالصقر وحماية التنوع البيولوجي ضمن مشاركة اتحاد الإمارات للصقور، الذي يعرّف الزوّار بوثيقة مبادئ الشيخ زايد في الصقارة وبرامجه الموجّهة إلى الناشئة، رابطًا انتقال المهارات بين الأجيال بأخلاقيات الممارسة وصون الموروث.",
+                "وتنظّم المعرض مجموعة أدنيك بالشراكة الاستراتيجية مع نادي صقّاري الإمارات، برعاية الشيخ هزاع بن زايد آل نهيان."
+              ]
+            },
+            {
+              "heading": "في جناح نادي صقّاري الإمارات: 25 عامًا من الصقارة وتجارب للأجيال الجديدة",
+              "paragraphs": [
+                "ومن المشاركين في المعرض نادي صقّاري الإمارات، الذي يحتفي في جناحه بمرور 25 عامًا على تأسيسه، ويقدّم أنشطة تراثية وتعليمية وتفاعلية موجّهة إلى العائلات والشباب."
+              ]
+            },
+            {
+              "paragraphs": [
+                "وتتيح حافلة مدرسة محمد بن زايد للصقارة للأطفال التعرّف إلى أدوات الصقّار وخصائص الصقور وتشريحها. وفي تجربة «حلّق كالصقر»، يستخدم المشاركون حركات أجسامهم وأذرعهم للتحكّم بصقر افتراضي على الشاشة والتحليق فوق بيئة صحراوية إماراتية، مع التعرّف إلى سرعة الطائر ورؤيته ومهاراته الجوية. ويضم الجناح أيضًا ركنًا يحوّل الصور الشخصية، باستخدام الذكاء الاصطناعي، إلى صور تذكارية مستوحاة من تراث الصقارة.",
+                "وتتوزّع الأنشطة بين عروض حيّة للصقور والسلوقي العربي، وأدوات الصقارة التقليدية، ومنطقة «الحضيرة والمقناص» التي تستحضر تقاليد الحياة البرية والقهوة والضيافة. وتبرز مبادرة «حُماة الصقارة» دور الشباب في حفظ هذا الموروث ونقل معارفه."
+              ]
+            },
+            {
+              "paragraphs": [
+                "ويوثّق الجناح مسيرة النادي عبر جدار زمني وعروض مرئية وجداريات تتناول إنجازاته في صون الصقارة والمحافظة على البيئة، ومساهمات أبوظبي في هذا المجال، ومحطات مهرجان الصداقة الدولي للبيزرة. كما يعرّف بمجلة «الصقّار» ودورها في نشر المعرفة المتخصصة.",
+                "وتشمل المشاركة أنشطة مرتبطة ببطولة السلوقي العربي لموسم 2026–2027، تجمع مسابقة الجمال ومحاكاة الصيد، للتعريف بهذه السلالة وصلتها بالصقارة والحياة الصحراوية. وأكد ماجد علي المنصوري، الأمين العام للنادي، أن المشاركة فرصة لإبراز الأبعاد الثقافية والإنسانية والبيئية لهذا التراث."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "المصادر: وكالة أنباء الإمارات «وام»، موقع المعرض، ومجلة صيد. الصور: نادي صقّاري الإمارات."
+        },
+        "en": {
+          "title": "Al Ain brings hunting and equestrian heritage together with outdoor innovation",
+          "subtitle": "The second edition brings together 1,020 exhibitors and brands from 50 countries, connecting Emirati heritage with outdoor equipment and experiences.",
+          "meta_description": "The second edition brings together 1,020 exhibitors and brands from 50 countries, connecting Emirati heritage with outdoor equipment and experiences.",
+          "ticker_title": "Al Ain brings hunting and equestrian enthusiasts together: 1,020 exhibitors and brands from 50 countries.",
+          "sections": [
+            {
+              "paragraphs": [
+                "The second Al Ain International Hunting and Equestrian Exhibition 2026 brings hunting and equestrian heritage together with outdoor equipment at ADNEC Centre Al Ain. According to Emirates News Agency (WAM), Friday, 27 November recorded the highest daily attendance of this edition so far.",
+                "The exhibition features 1,020 exhibitors and brands from 50 countries across 35,000 square metres, a 46% increase in space over its inaugural edition. Its 14 sectors cover hunting, shooting, falconry, equestrian activities, camels and salukis, alongside camping, vehicles, environmental conservation and heritage.",
+                "Visitors can learn about peregrine, saker and gyrfalcons and explore equipment used to care for and train them, including hoods, gloves, lures and tracking devices. Camping equipment, caravans and four-wheel-drive vehicles also give outdoor enthusiasts opportunities to compare products and consult specialists.",
+                "Families can explore workshops at the Young Hunters and Riders Village and displays of heritage, hospitality and Arabic coffee traditions. The Emirates Falconers’ Club pavilion adds dedicated experiences introducing visitors to falconry.",
+                "The UAE Falconers Federation also presents the Sheikh Zayed Principles of Falconry and initiatives for younger participants, highlighting falcon welfare, biodiversity and the transmission of knowledge between generations.",
+                "Organised by ADNEC Group in strategic partnership with the Emirates Falconers’ Club, the exhibition is held under the patronage of Sheikh Hazza bin Zayed Al Nahyan."
+              ]
+            },
+            {
+              "heading": "At the Emirates Falconers’ Club pavilion: 25 years of falconry and learning for a new generation",
+              "paragraphs": [
+                "Among the exhibitors, the Emirates Falconers’ Club marks its 25th anniversary with a pavilion offering heritage, educational and interactive activities for families and young visitors."
+              ]
+            },
+            {
+              "paragraphs": [
+                "The Mohamed bin Zayed Falconry School bus introduces children to falconry tools and falcon anatomy. In “Fly Like A Falcon”, participants use body and arm movements to control a virtual falcon above an Emirati desert landscape while learning about its speed, vision and flying skills. An AI photo booth also creates personalised souvenir images inspired by falconry heritage.",
+                "Live falcon and Arabian saluki displays accompany traditional falconry tools and the Al Hadhira and Al Maqnas area, which explores desert life, coffee and hospitality. The “Guardians of Falconry” initiative highlights young people’s role in passing on this knowledge."
+              ]
+            },
+            {
+              "paragraphs": [
+                "A timeline, visual displays and illustrated walls trace the club’s work in falconry and environmental conservation, Abu Dhabi’s contributions, and milestones of the International Festival of Falconry. The pavilion also presents Al Sakkar magazine and its role in sharing specialist knowledge.",
+                "Activities linked to the 2026–2027 Arabian Saluki Championship include a beauty competition and simulated hunting. Club Secretary-General Majed Ali Al Mansouri described the participation as an opportunity to highlight the cultural, human and environmental value of this heritage."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Sources: Emirates News Agency (WAM), the exhibition website and Sayd Magazine. Photos: Emirates Falconers’ Club."
+        },
+        "fr": {
+          "title": "À Al Ain, chasse et équitation réunissent patrimoine et vie au grand air",
+          "subtitle": "La deuxième édition rassemble 1 020 exposants et marques de 50 pays, entre patrimoine émirati et équipements de plein air.",
+          "meta_description": "La deuxième édition rassemble 1 020 exposants et marques de 50 pays, entre patrimoine émirati et équipements de plein air.",
+          "ticker_title": "Al Ain réunit les passionnés de chasse et d’équitation : 1 020 exposants et marques de 50 pays.",
+          "sections": [
+            {
+              "paragraphs": [
+                "La deuxième édition du Salon international de la chasse et de l’équitation d’Al Ain 2026 réunit patrimoine et équipements de plein air au centre ADNEC Al Ain. Selon l’agence de presse émiratie WAM, le vendredi 27 novembre a enregistré la plus forte fréquentation quotidienne de cette édition à ce jour.",
+                "Le salon rassemble 1 020 exposants et marques de 50 pays sur 35 000 mètres carrés, soit une augmentation de 46 % de sa superficie par rapport à la première édition. Ses 14 secteurs couvrent notamment la chasse, le tir, la fauconnerie, l’équitation, les chameaux et les salukis, ainsi que le camping, les véhicules, l’environnement et le patrimoine.",
+                "Les visiteurs découvrent les faucons pèlerins, sacres et gerfauts, ainsi que les équipements de soin et d’entraînement : chaperons, gants, leurres et dispositifs de suivi. Les stands de matériel de camping, de caravanes et de véhicules tout-terrain permettent aussi de comparer les équipements et d’échanger avec des spécialistes.",
+                "Les familles découvrent les ateliers du Village des jeunes chasseurs et cavaliers, ainsi que les traditions d’hospitalité et du café arabe. Le pavillon de l’Emirates Falconers’ Club propose des expériences consacrées à la découverte de la fauconnerie.",
+                "La Fédération émiratie des fauconniers présente les principes du cheikh Zayed pour la fauconnerie et ses programmes destinés aux jeunes, avec une place accordée au bien-être des faucons, à la biodiversité et à la transmission des savoirs.",
+                "Organisé par le groupe ADNEC en partenariat stratégique avec l’Emirates Falconers’ Club, sous le patronage du cheikh Hazza bin Zayed Al Nahyan, le salon associe traditions émiraties et activités de plein air."
+              ]
+            },
+            {
+              "heading": "Au pavillon de l’Emirates Falconers’ Club : 25 ans de fauconnerie et de transmission",
+              "paragraphs": [
+                "Parmi les exposants, l’Emirates Falconers’ Club célèbre son vingt-cinquième anniversaire dans un pavillon proposant des activités patrimoniales, éducatives et interactives aux familles et aux jeunes."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Le bus de l’École de fauconnerie Mohamed bin Zayed fait découvrir aux enfants les outils du fauconnier et l’anatomie du faucon. L’expérience « Fly Like A Falcon » permet de diriger un faucon virtuel avec les mouvements du corps et des bras au-dessus d’un paysage désertique émirati, tout en découvrant sa vitesse, sa vision et ses aptitudes au vol. Un photomaton utilisant l’intelligence artificielle crée aussi des portraits-souvenirs inspirés de la fauconnerie.",
+                "Des présentations de faucons et de salukis arabes accompagnent les outils traditionnels et l’espace Al Hadhira et Al Maqnas, consacré à la vie dans le désert, au café et à l’hospitalité. L’initiative « Guardians of Falconry » souligne le rôle des jeunes dans la transmission des savoirs."
+              ]
+            },
+            {
+              "paragraphs": [
+                "Une frise chronologique, des présentations visuelles et des panneaux retracent les actions du club en faveur de la fauconnerie et de l’environnement, les contributions d’Abou Dhabi et les étapes du Festival international de la fauconnerie. Le pavillon présente également la revue Al Sakkar et sa mission de diffusion des connaissances.",
+                "La participation comprend des activités du Championnat du saluki arabe 2026–2027, avec concours de beauté et simulation de chasse. Le secrétaire général du club, Majed Ali Al Mansouri, souligne les dimensions culturelles, humaines et environnementales de cet héritage."
+              ]
+            }
+          ],
+          "sources": [],
+          "photo_credit": "Sources : agence de presse émiratie WAM, site du salon et magazine Sayd. Photos : Emirates Falconers’ Club."
+        }
+      },
+      "distribution": {
+        "placement": "lead",
+        "ticker": true
+      }
+    }
+  ]
+}
