@@ -2,6 +2,15 @@
   "label": "من كل وادي خبر",
   "items": [
     {
+      "slug": "العين-الصيد-والفروسية-2026",
+      "titles": {
+        "ar": "العين تجمع عشّاق الصيد والفروسية: 1,020 عارضًا وعلامة تجارية من 50 دولة وتجارب للصقارة وحياة البر.",
+        "en": "Al Ain brings hunting and equestrian enthusiasts together: 1,020 exhibitors and brands from 50 countries.",
+        "fr": "Al Ain réunit les passionnés de chasse et d’équitation : 1 020 exposants et marques de 50 pays."
+      },
+      "title": "العين تجمع عشّاق الصيد والفروسية: 1,020 عارضًا وعلامة تجارية من 50 دولة وتجارب للصقارة وحياة البر."
+    },
+    {
       "slug": "منصة-متوسطية-رصد-الصيد-غير-القانوني-للطيور",
       "titles": {
         "ar": "منصة متوسطية توحّد رصد الصيد غير القانوني للطيور وتوثيق مخالفاته في ثماني دول.",
@@ -81,15 +90,6 @@
         "fr": "Syrie : les rapaces saisis à Jousiyeh pris en charge pour soins et réhabilitation en vue d’une éventuelle remise en liberté."
       },
       "title": "سوريا تتسلّم جوارح جوسية المضبوطة للرعاية والتأهيل تمهيدًا لإطلاق المؤهل منها."
-    },
-    {
-      "slug": "الرماية-الدولية-عقوبة-راتنر-2026",
-      "titles": {
-        "ar": "الاتحاد الدولي للرماية يعلن عدم أهلية ألكسندر راتنر ثلاث سنوات وغرامة 30 ألف يورو.",
-        "en": "ISSF announces three-year ineligibility sanction and €30,000 fine for Alexander Ratner.",
-        "fr": "L’ISSF annonce trois ans d’inéligibilité et 30 000 euros d’amende pour Alexander Ratner."
-      },
-      "title": "الاتحاد الدولي للرماية يعلن عدم أهلية ألكسندر راتنر ثلاث سنوات وغرامة 30 ألف يورو."
     }
   ]
 }
