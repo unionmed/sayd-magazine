@@ -695,7 +695,7 @@ is not publication or proof of visitor visibility.
 
 `homepage-card-framing-20261127` is a closed empty-payload editorial revision.
 It changes only inline image fit/position spans in the three existing homepages,
-for twelve explicitly pinned local photos (eleven shown in EN/FR, whose interview
+for eleven explicitly pinned local photos (ten shown in EN/FR, whose interview
 selection excludes the historical Arabic Sara article). Photos retain their
 original bytes and sources. Text, links, dates, CSS, dimensions, article/archive
 pages, lead image, slots, ticker and all other bytes stay exact. The renderer

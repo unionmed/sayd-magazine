@@ -1,4 +1,4 @@
-"""Twelve fixed homepage image framing corrections; activated by reviewed revision.
+"""Eleven fixed homepage image framing corrections; activated by reviewed revision.
 
 Only image fit and position change. Original photos, CSS, text, links and slots
 stay exact. Installing this module does not activate the correction.
@@ -23,7 +23,6 @@ IMAGES = {
     'media/publications/dubai-dark-saffron-20261028/dark-saffron.jpg': 'c053d3441f6cc6d0d4cc8399cf9d3fdea7e1a259cf710524f26033df307733b7',
     'media/uploads/2026/10/shireen-monitoring-new.jpg': 'e9512dcac12409ede7707f7f363c991b9ac733cc28c41a0f9e7ab455e8ffdb9d',
     'media/uploads/2024/02/سارة-8.jpg': '0d4ebcb8f4b80a092344b1bad65b1fbcf69f242fe544014b1cd2946e88412930',
-    'media/uploads/2026/09/sayd-returns-adonis-editor.jpg': 'e0d91bd95b8ae15c61d770b8b8354ef01c250bee9253dea68956364e0bc2347d',
     'media/publications/efc-photo-cards-20261122/saluki-hunting-simulation-01.jpg': '24b4d28dd77bcbc1e317113524f024b72c782243d574cf08bf3800c558c2b8b9',
     'media/publications/hooded-crows-nayef-krayem-20261103/crow-01.jpg': 'b1c404480f31280471e44a5dec0591871daff139fc74571a7009798a7bc4f39a',
 }
@@ -101,7 +100,7 @@ def expected_changes(root, base, expected_source):
         page = raw.decode()
         count = sum(identity(i.get('src', ''), lang) is not None
                     for i in html.fromstring(page).xpath('//main//img'))
-        require(count == (12 if lang == 'ar' else 11), 'Exact reviewed homepage photo selection required')
+        require(count == (11 if lang == 'ar' else 10), 'Exact reviewed homepage photo selection required')
         changed = patch(page, lang).encode()
         require(changed != raw, 'Homepage framing correction already applied')
         result[path] = changed

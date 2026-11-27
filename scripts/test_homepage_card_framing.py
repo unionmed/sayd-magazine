@@ -26,7 +26,7 @@ class FramingTests(unittest.TestCase):
                     b.attrib.pop('style', None)
                     a.attrib.pop('style', None)
                     count += 1
-            self.assertEqual(count, 12 if lang == 'ar' else 11)
+            self.assertEqual(count, 11 if lang == 'ar' else 10)
             self.assertEqual(html.tostring(old), html.tostring(new))
             # An exact inverse proves all non-IMG bytes also remain intact.
             oldtags = __import__('re').findall(r'<img\b[^>]*>', page)
